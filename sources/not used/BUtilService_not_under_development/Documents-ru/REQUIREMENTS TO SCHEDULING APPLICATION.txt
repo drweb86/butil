@@ -1,0 +1,14 @@
+Requirements
+
+1. Should be represented as a winforms application with icon in tray
+2. Should not watch on power state. This is delegates on user
+3. Should have minimum 4 functions
+- interact with desktop(Yes/No)
+If yes should be backup UI used
+If no console tool should be used
+- Exit(with killing backup process)
+- Start backup process --> backup UI(+ ability to configure)
+- Stop backup process(for console app)
+- Show exact time when backup will start
+- Warn user 10 minutes before with popup about backup(optionable)
+4. Should take as min system resources as possible

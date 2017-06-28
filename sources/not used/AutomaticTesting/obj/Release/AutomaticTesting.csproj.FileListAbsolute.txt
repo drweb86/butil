@@ -1,0 +1,16 @@
+D:\Siarhei Cuchuk@epam.com\myOwnProject\butil\sources\AutomaticTesting\obj\Release\ResolveAssemblyReference.cache
+D:\Siarhei Cuchuk@epam.com\myOwnProject\butil\ДЛЯ_КОМПИЛЯЦИИ_LIBS_TESTING\AutomaticTesting.exe
+D:\Siarhei Cuchuk@epam.com\myOwnProject\butil\sources\AutomaticTesting\obj\Release\AutomaticTesting.exe
+D:\Work\internalProjects\butil-fr-1\ДЛЯ_КОМПИЛЯЦИИ_LIBS_TESTING\AutomaticTesting.exe
+D:\Work\internalProjects\butil-fr-1\sources\AutomaticTesting\obj\Release\ResolveAssemblyReference.cache
+D:\Work\internalProjects\butil-fr-1\sources\AutomaticTesting\obj\Release\AutomaticTesting.exe
+D:\Siarhei Kuchuk\myOwnProject\butil\ДЛЯ_КОМПИЛЯЦИИ_LIBS_TESTING\AutomaticTesting.exe
+D:\Siarhei Kuchuk\myOwnProject\butil\sources\AutomaticTesting\obj\Release\ResolveAssemblyReference.cache
+D:\Siarhei Kuchuk\myOwnProject\butil\sources\AutomaticTesting\obj\Release\AutomaticTesting.exe
+D:\Siarhei Kuchuk\myOwnProject\butil\bin\AutomaticTesting.exe
+D:\Work\internalProjects\Fresh\butil\bin\AutomaticTesting.exe
+D:\Work\internalProjects\Fresh\butil\sources\AutomaticTesting\obj\Release\ResolveAssemblyReference.cache
+D:\Work\internalProjects\Fresh\butil\sources\AutomaticTesting\obj\Release\AutomaticTesting.exe
+D:\Siarhei Kuchuk\Проект BUtil\butil\bin\AutomaticTesting.exe
+D:\Siarhei Kuchuk\Проект BUtil\butil\sources\AutomaticTesting\obj\Release\ResolveAssemblyReference.cache
+D:\Siarhei Kuchuk\Проект BUtil\butil\sources\AutomaticTesting\obj\Release\AutomaticTesting.exe

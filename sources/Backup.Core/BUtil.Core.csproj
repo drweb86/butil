@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectGuid>{884325C6-9686-4D09-BCDE-38FF79279620}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>BUtil.Core</RootNamespace>
+    <AssemblyName>BUtil.Core</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\Development.key.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>False</DelaySign>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <SourceAnalysisOverrideSettingsFile>C:\Documents and Settings\Сергей\Application Data\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <PublishUrl>http://localhost/Backup.Core/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>..\..\Output\Debug\bin</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>..\..\Output\Release\bin</OutputPath>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>None</DebugType>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <OutputPath>..\..\Output\BUtil\bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <OutputPath>..\..\Output\BUtil\bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Deployment|AnyCPU'">
+    <OutputPath>bin\Deployment\</OutputPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="BackupProcess.cs" />
+    <Compile Include="BULocalization\ChooseLanguages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BULocalization\ChooseLanguages.Designer.cs" />
+    <Compile Include="BULocalization\Consts.cs" />
+    <Compile Include="BULocalization\Language.cs" />
+    <Compile Include="BULocalization\Languages.cs" />
+    <Compile Include="BULocalization\LanguagesManager.cs" />
+    <Compile Include="BULocalization\LocalizationGenericException.cs" />
+    <Compile Include="BULocalization\ManagerBehaviorSettings.cs" />
+    <Compile Include="BULocalization\Translation.cs" />
+    <Compile Include="BULocalization\TranslationItemState.cs" />
+    <Compile Include="ButilImage\CompressionDegree.cs" />
+    <Compile Include="ButilImage\RecoveryManager.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="CopyrightInfo.cs" />
+    <Compile Include="FileSystem\Directories.cs" />
+    <Compile Include="FileSystem\Files.cs" />
+    <Compile Include="LocalsHelper.cs" />
+    <Compile Include="Logs\BackupResult.cs" />
+    <Compile Include="Logs\LogException.cs" />
+    <Compile Include="Logs\LogInfo.cs" />
+    <Compile Include="Logs\LogMode.cs" />
+    <Compile Include="Logs\LogOperations.cs" />
+    <Compile Include="Misc\NativeMethods.cs" />
+    <Compile Include="Misc\PrettyTimeSpanFormatter.cs" />
+    <Compile Include="Misc\AfterBackupTask.cs" />
+    <Compile Include="Misc\BeforeBackupTask.cs" />
+    <Compile Include="Misc\CompressionJob.cs" />
+    <Compile Include="Misc\CpuUsage.cs" />
+    <Compile Include="Misc\IJob.cs" />
+    <Compile Include="Misc\ImageCreationJob.cs" />
+    <Compile Include="Misc\ImproveIt.cs" />
+    <Compile Include="Misc\JobThreadEventArgs.cs" />
+    <Compile Include="Misc\md5Check.cs" />
+    <Compile Include="Misc\PowerTask.cs" />
+    <Compile Include="Misc\ProcessesKiller.cs" />
+    <Compile Include="Misc\RelativePathDiscovery.cs" />
+    <Compile Include="Misc\TaskManager.cs" />
+    <Compile Include="Misc\UpdateChecker.cs" />
+    <Compile Include="Notifications.cs" />
+    <Compile Include="Options\BackupEventTaskInfo.cs" />
+    <Compile Include="Options\BackupTask.cs" />
+    <Compile Include="SchedulerParameters.cs" />
+    <Compile Include="PL\BackUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\BackUserControl.Designer.cs">
+      <DependentUpon>BackUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\EncryptionUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\EncryptionUserControl.Designer.cs">
+      <DependentUpon>EncryptionUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Messages.cs" />
+    <Compile Include="Storages\CopyJob.cs" />
+    <Compile Include="Storages\FtpConnection.cs" />
+    <Compile Include="Misc\Miscellaneous.cs" />
+    <Compile Include="Misc\SupportRequest.cs" />
+    <Compile Include="Misc\ArchiveTask.cs" />
+    <Compile Include="Logs\HtmlLogFormatter.cs" />
+    <Compile Include="Misc\PowerPC.cs" />
+    <Compile Include="Options\CompressionItem.cs" />
+    <Compile Include="Logs\LoggingEvent.cs" />
+    <Compile Include="Logs\LogLevel.cs" />
+    <Compile Include="Options\OptionsException.cs" />
+    <Compile Include="Options\ProgramOptions.cs" />
+    <Compile Include="Storages\NetworkStorage.cs" />
+    <Compile Include="Storages\StorageBase.cs" />
+    <Compile Include="Storages\FtpStorage.cs" />
+    <Compile Include="Storages\HddStorage.cs" />
+    <Compile Include="Options\ProgramOptionsManager.cs" />
+    <Compile Include="Misc\SupportManager.cs" />
+    <Compile Include="Logs\ConsoleLog.cs" />
+    <Compile Include="Logs\FileLog.cs" />
+    <Compile Include="Logs\LogBase.cs" />
+    <Compile Include="Options\ProgramOptionsKeeper.cs" />
+    <Compile Include="ButilImage\ImageCreator.cs" />
+    <Compile Include="ButilImage\ImageReader.cs" />
+    <Compile Include="ButilImage\ImageHeader.cs" />
+    <Compile Include="ButilImage\MetaRecord.cs" />
+    <Compile Include="Synchronization\SyncedFiles.cs" />
+    <Compile Include="Synchronization\SyncFile.cs" />
+    <Compile Include="ButilImage\UnpackArchive.cs" />
+    <Compile Include="ButilImage\UnpackParameters.cs" />
+    <Compile Include="PL\PasswordGeneratorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="BULocalization\ChooseLanguages.resx" />
+    <EmbeddedResource Include="PL\BackUserControl.resx">
+      <DependentUpon>BackUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\EncryptionUserControl.resx">
+      <DependentUpon>EncryptionUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\PasswordGeneratorForm.resx">
+      <DependentUpon>PasswordGeneratorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.VisualBasic.PowerPacks.10.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Basic PowerPacks 10.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <PreBuildEvent>rem Removal of files
+
+cd $(SolutionDir)..\Output
+rmdir Debug /s /q
+md Debug
+cd $(SolutionDir)
+
+rem Installation of 7-zip
+start "" $(SolutionDir)..\7-zip\7Zip32Installer.exe /S /D=$(SolutionDir)\..\Output\Debug\7-zip
+
+rem Copying of localization files
+md $(SolutionDir)\..\Output\Debug\local
+xcopy $(SolutionDir)\LocalizationProject $(SolutionDir)\..\Output\Debug\local
+
+rem Copying of data folder
+md $(SolutionDir)\..\Output\Debug\data
+xcopy $(SolutionDir)\..\data $(SolutionDir)\..\Output\Debug\data
+
+rem Copying of scripts
+md $(SolutionDir)\..\Output\Debug\bin
+xcopy $(SolutionDir)\..\Scripts $(SolutionDir)\..\Output\Debug\bin
+
+rem DEBUG configuration only - copying changes file for update feature testing
+xcopy $(SolutionDir)\..\Deploy\update.xml $(SolutionDir)\..\Output\Debug\bin</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <PreBuildEvent>rem Removal of files
+
+cd $(SolutionDir)..\Output
+rmdir Release /s /q
+md Release
+
+rem Installation of 7-zip
+start "" $(SolutionDir)..\7-zip\7Zip32Installer.exe /S /D=$(SolutionDir)\..\Output\Release\7-zip
+
+rem Copying of localization files
+md $(SolutionDir)\..\Output\Release\local
+xcopy $(SolutionDir)\LocalizationProject $(SolutionDir)\..\Output\Release\local
+
+rem Copying of data folder
+md $(SolutionDir)\..\Output\Release\data
+xcopy $(SolutionDir)\..\data $(SolutionDir)\..\Output\Release\data
+
+rem Copying of scripts
+md $(SolutionDir)\..\Output\Release\bin
+xcopy $(SolutionDir)\..\Scripts $(SolutionDir)\..\Output\Release\bin
+
+rem RELEASE configuration only - Building the help file
+md $(SolutionDir)..\Output\Release\end-user-docs
+cd $(SolutionDir)..\help
+start "" "C:\Program Files\HTML Help Workshop\hhc.exe" BUtil.hhp
+
+rem Building the Deploy folder
+cd $(SolutionDir)..\Output
+rmdir Deployment /s /q
+md Deployment
+
+rem 1.1 Setup
+
+cd Deployment
+md 1.UploadToSf
+"e:\2009\Inno Setup 5\ISCC.exe" $(SolutionDir)\Setup\install.iss</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>cd $(SolutionDir)..\Output
+rmdir BUtil /s /q
+md BUtil
+
+rem 7-zip
+md $(SolutionDir)..\Output\BUtil\7-zip
+xcopy $(SolutionDir)..\7-zip $(SolutionDir)..\Output\BUtil\7-zip /E
+
+rem Copying of localization files
+md $(SolutionDir)..\Output\BUtil\local
+xcopy $(SolutionDir)LocalizationProject $(SolutionDir)..\Output\BUtil\local
+
+rem Copying of data folder
+md $(SolutionDir)..\Output\BUtil\data
+xcopy $(SolutionDir)..\data $(SolutionDir)..\Output\BUtil\data
+
+
+rem Copying of scripts
+md $(SolutionDir)..\Output\BUtil\bin
+xcopy $(SolutionDir)..\Scripts $(SolutionDir)..\Output\BUtil\bin
+
+rem BUtil configuration only - Building the help file
+md $(SolutionDir)..\Output\BUtil\end-user-docs
+cd $(SolutionDir)..\help
+start "" "C:\Program Files\HTML Help Workshop\hhc.exe" BUtil.hhp
+
+rem Building the Deploy folder
+cd $(SolutionDir)..\Output
+rmdir Deployment /s /q
+md Deployment
+
+rem 1.1 Setup
+
+cd Deployment
+md 1.UploadToSf
+"C:\Program Files\Inno Setup 5\ISCC.exe" $(SolutionDir)Setup\install.iss
+"C:\Program Files\ZipSolution-5.3\ZipSolution.exe" "SolutionFile=$(SolutionDir)..\Deploy\BUtil-Bins-ZipSolution.xml" WaitMsec=2000
+"C:\Program Files\ZipSolution-5.3\ZipSolution.exe" "SolutionFile=$(SolutionDir)..\Deploy\BUtil-Srcs-ZipSolution.xml" WaitMsec=2000
+</PreBuildEvent>
+  </PropertyGroup>
+</Project>

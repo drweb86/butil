@@ -1,0 +1,12 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=..\Output\BUtil\end-user-docs\Manual.chm
+Contents file=Contents.hhc
+Default topic=start.htm
+Display compile progress=Yes
+Index file=Index.hhk
+Language=0x409 Английский (США)
+
+
+[INFOTYPES]
+

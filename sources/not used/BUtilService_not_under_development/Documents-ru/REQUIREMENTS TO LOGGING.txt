@@ -1,0 +1,19 @@
+﻿1. It should be scalable
+2. Common interface/base class is required
+3. Types of logs: console, file, UI
+4. File logs should be separated
+- by creation data
+- be in html format on standard pattern
+- fond courier
+- information should be separated with different colors to decrease time on previewing of it
+5. Logs should be kept in <user profile>\Application data\BUtil\logs
+6. Code for opening log should be in each application(outside of library)
+So any errors with opening should process application
+7. There should be 3 level of logging
+= support
+= minimum
+= normal
+8. No any passwords should be stored at log
+9. Logs should be not encrypted
+
+all requirements implemeted in 3.0.7

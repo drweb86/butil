@@ -1,0 +1,19 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>{0} - {1}</TITLE>
+	<META NAME="GENERATOR" CONTENT="BUtil backup operations log">
+</HEAD>
+<BODY>
+<table border = "0" align="center" cellpadding="5" cellspacing="0" width="100%">
+	<tr>
+		<td align="center" nowrap="nowrap" bgcolor="#264b99">
+			<a target="_new" href="{2}"><font color="#ffffff">{5}</font></a>
+			<a target="_new" href="{3}"><font color="#ffffff">{6}</font></a>
+			<a target="_new" href="{4}"><font color="#ffffff">{7}</font></a>
+		</td>
+	</tr>
+<table>
+</br>
+

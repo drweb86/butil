@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+  <META http-equiv="Content-Type" content="text/html; charset=Windows-1252">
+  <TITLE>Version History</TITLE>
+  <LINK href="style.css" rel="stylesheet" type="text/css">
+</HEAD>
+
+<BODY>
+
+<H1>Version History</H1>
+
+<H2>4.8 ( 22 November 2009 )</H2>
+
+<H3>New Features</H3>
+<P>Console log: colors markup added</P>
+
+<H3>Changes</H3>
+<P>Log Viewer: Ui changed again</P>
+
+<H3>Bug Fixes:</H3>
+<P>Improper EFS configuration could lead to fault of program</P>
+
+<H2>4.7 ( 23 August 2009 )</H2>
+
+<H3>New Features</H3>
+<P>Performance was speeded up</P>
+<P>Now amount of parralel packing processes can be setted up in Configurator</P>
+<P>Options became portable through versions</P>
+<P>Documentation now is under GOST RF on documentation of software</P>
+<P>Logs location now is possible to define again, however it has good default value</P>
+
+<H3>Changes</H3>
+<P>Scheduler now uses .net internal GC for performance</P>
+<P>Scheduler is more stable for not NT windows</P>
+<P>Restoration Tool merged to Configurator</P>
+<P>Logotype added</P>
+<P>KNeo package since now isn't used in application</P>
+<P>Installer now can increase speed of application Ui if user has asministrative privileges</P>
+<P>Logging simplified;</P>
+<P>Scheduler: messages added;</P>
+<P>In support mode settings are added to the file log</P>
+<P>Configuration change: schedule and configurator options were moved to profile options</P>
+<P>Desktop folder(with Documents one) is added to default backup task</P>
+<P>Now events before and after backup can be easily configured, also backup can be passed as parameter, those tasks can be turned off in backup master and cancelled</P>
+
+<H3>Bug Fixes:</H3>
+<P>HOT FIX: Blocking issue with reading output of an archiver</P>
+<P>Method not found: 'Void System.Runtime.GCSettings.set_LatencyMode(System.Runtime.GCLatencyMode)'. Fixed;</P>
+<P>Stopping of copying to storages could lead to backupUi fail;</P>
+<P>Configurator -removeLocalSettings could crash if there any data was in folders;</P>
+<P>Several logs in one day could lead to Configurator fail.</P>
+<P>When scheduler was disabled or there was nothing to schedule Configurator could not stop the running at this moment scheduler.</P>
+<P>Critial: Backup could not cancelled. This is a MS .Net Framework 2 bug. Workarounded</P>
+<P>Single instance of scheduler sometimes could lead to halt(mutexes issue)</P>
+<P>Cancellation of running events before backup fixed and does not crash program any more</P>
+<P>When there's not enough place in temp folder program crashed: now it outputs message to log with hint on issue</P>
+
+<H2>4.6 ( 9 July 2009 )</H2>
+
+<H3>Features</H3>
+<P>Password length check can be configured via Configurator\Misc\Don't care about password length</P>
+<P>Added possibility to review and delete logs in configurator. Keyboard shortcuts: Del, Enter, F5 works in logs list</P>
+<P>7-zip 32 installer now is included in this installer</P>
+<P>Configuration change: now option 'delete all files in destination place before backup' changed to 'delete all butil image files in target folder'</P>
+<P>Added possibility for synchronous storage processing(from 1 to 10 threads with default value 5, can be configured in Misc\Other tab)</P>
+<P>Added possibility to turn on and off compression items and storages in BackupUi tool</P>
+<P>Added possibility to reboot at finish of backup in backupUi application</P>
+
+<H3>Usability improvements:</H3>
+<P>Password entering simplified(exact error message is shown)</P>
+<P>Reduced time on reviewing logs by grouping them by result and then by date</P>
+<P>When option 'have no network and internet' is turned on, on pressing on + on storages tab - no context menu, just configuration form for hdd storage is shown</P>
+<P>Icons for folders and files fixed</P>
+<P>Size of column in configurator in source item now autochange it's size</P>
+<P>Removed check for storage unique name</P>
+
+<H3>Bugs:</H3>
+<P>Setting 'Run scheduler w/o icon in tray' was available when scheduler was turned off</P>
+<P>Fixed issue with location of log information in backup Ui</P>
+<P>Fixed issue with startup of browser at the end of backupUi</P>
+<P>Fixed issue with configuring OS to schedule show log</P>
+<P>Password check for encryption fixed</P>
+<P>Tray and from tray behaviour of backupUi fixed</P>
+<P>When computer account's session is locked and power off is planned at the end of backup: fixed</P>
+<P>Storages after modifying were changing order</P>
+<P>Caption of data in log files was adapted for russian culture only</P>
+
+<H3>Several key decisions:</H3>
+<P>For about a year since this summer project development may be freezed(army duty)</P>
+
+
+</BODY>
+</HTML>

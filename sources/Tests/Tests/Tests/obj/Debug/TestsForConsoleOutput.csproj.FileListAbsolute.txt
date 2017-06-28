@@ -1,0 +1,7 @@
+E:\Work\BUtil\BUtil-workingCopy\sources\Tests\Tests\Tests\bin\Debug\TestsForConsoleOutput.exe
+E:\Work\BUtil\BUtil-workingCopy\sources\Tests\Tests\Tests\bin\Debug\TestsForConsoleOutput.pdb
+E:\Work\BUtil\BUtil-workingCopy\sources\Tests\Tests\Tests\obj\Debug\ResolveAssemblyReference.cache
+E:\Work\BUtil\BUtil-workingCopy\sources\Tests\Tests\Tests\obj\Debug\TestsForConsoleOutput.exe
+E:\Work\BUtil\BUtil-workingCopy\sources\Tests\Tests\Tests\obj\Debug\TestsForConsoleOutput.pdb
+E:\Work\BUtil\BUtil-workingCopy\bin\TestsForConsoleOutput.exe
+E:\Work\BUtil\BUtil-workingCopy\bin\TestsForConsoleOutput.pdb

@@ -1,0 +1,240 @@
+1. [DONE] Улучшение ПИ с управлением логов
+{ФД-2, tested, reviewed}
+
+2. [DONE] когда доступно только один тип добавляемого хранилище, показывается выбор
+- убери его для таких случаев
+
+3. [DONE] Настройка Прочее\Запускать планировщик без иконки трея доступна даже когда Не нужен планировщик опция включена
+
+4. [DONE] На изображении QA-1 показаны неудобства использования
+{ФД-1, ТЕСТИРОВАНО, REVIEWED}
+
+5. [DONE] Логи не должны сохраняться на рабочем столе
+из запуск должен быть запланирован
+Сообщение контрола "По окончании резервного копирования..."
+некорректное
+
+->6. Ошибки при выключении ПК
+- нужна информация
+
+7. [DONE, tested] при проблемах с РК когда прогу bui запускается из проводника - не открывается броузер с файлом лога
+
+8. [DONE, FIXED] До сих пор не протсетирована возможность автозапуска броузера с логом при новом входе в систему
+
+9. [DONE, TESTED] Для упрощения поддержки, требуется чтобы 7-zip устанавливался куда надо из собственного установщика
+из цели упростить процесс сборки приложения,
+исключить из исходников 7-zip
+
+10. [DONE] Иконки выглядят ужасно
+- Конфигуратор
+- РК сейчас
+- Восстановление
+
+11. [DONE, Approved] решение по использованию только русского языка для разработки.документации
+
+12. [FIXED] Контекстное меню в восстановлении должно использовать System прорисовку
+
+13. [FIXED] Заголовок формы восстановления должен быть {0}-Restoration
+
+14. [FIXED] Должна использоваться иконка паки в восстановлении перед надписью папки
+
+15. [FIXED by removing of form] Форма восстановления: обработка 
+
+16. [FIXED] Объекты для РК в конфигураторе: размер колонки не изменяется при ресайзинге формы
+
+17. [Done, Reviewed, Tested] Удалить другие файлы опция реализовано неправильно
+- нужно удалять только образы РК *,butil
+{ФД-3}
+
+18. [DONE, reviewed, tested] Реализация контролов РК: сделай отдельные контролы со списком вещей для РК в РК UI в одном контроле
+Так удобнее просматривать и воспринимать обработку и это не привязано к происходящему в логике программы
+-Задание-		-Информация-		-Состояие обработки
+Упаковка каталогов
+Упаковка файлов
+Копирование образа в хранилища
+может быть стоит добавить чекбоксы в РК сейчас - пользователи смогут пропускать некоторые РК
+
+Прм этом копирование в хранилища должно осуществляться одновременно
+
+Количество потоков для РК должно задаваться в КОнифгиураторе\Разное\Количество хранилищ,в которые можно копировать одновременно _ по умолчанию 10(от 1 до 10)
+{ФД-4}
+
+аналогично сделай РК 77-яшз многопоточно
+класс воркер
+
+количество потоков для РК = по умолчанию количеству процессоров.
+если чилсо процессоров=1, то 2.
+
+конфигруция в конфигураторе
+
+19. [Done, Reviewed] Добавлена возможность перезагрузки по окончании РК
+
+20. [Исправлено] Когда компьютер залочен, завершение работы не происходит
+
+21. [DONE, Reviewed, Tested]при изменении хранилища их порядок меняется в списке!
++Рефакторинг: удалить класс хранения хранилищ
++использовать Tag поле
++убрать проверку на уникальность имени хранилища
+
+22. [Исправлено]Завершилось Успешно->регистр
+
+23. [DONE, tested]Упрощение поддержки локализации:
+локализация должна быть привязана к составным частям приложения
+{ФД-5, Reviewed}
+
+24. [Fixed]Консольное приложение не может работать с потоками как надо: ошибки в TaskManager ?
+
+==========================    Экспертиза исходных текстов по ФД2 ========================
+1. public enum LogResult// amount is used in code - комментарий убери
+[FIXED]	уровень доступа
+[FIXED] имя BackupResult
+2. 		public sealed class LogInfo
+		{
+			readonly string _log;
+[FIXED] поля должны называться как свойства
+[FIXED] доступ
+
+3.
+			public LogInfo(string log)
+			{
+				_log = log;
+[FIXED] проверка на null, string empty
+
+4. 				if (contents.Contains(Files.SuccesfullBackupMarkInHtmlLog))
+					_result = LogResult.Successfull;
+				else if (contents.Contains(Files.ErroneousBackupMarkInHtmlLog))
+					_result = LogResult.Erroneous;
+				else
+					_result = LogResult.Unknown;
+[FIXED] используй {}
+
+5.		ProgramOptions _profileOptions;
+[FIXED] к полям и в отельный region
+
+6. 			updateListLinkLabelLinkClicked(null, null);
+[FIXED] обновление вынеси в метод
+[FIXED] метод вызывается в конструкторе и в обработкике по событию
+[FIXED] из метода вынеси метод обновлвения состояния кнопок по состоянию списка
+[FIXED]  и вызывай его
+ 
+7. reviewLogOfLastBackupButtonClick
+[FIXED] должен использовать список доступных файлов, а не лезть в фс
+
+8. 		{
+			bool enable = Directory.Exists(Directories.LogsFolder) && (Directory.GetFiles(Directories.LogsFolder, "*"+Files.LogFilesExtension).Length > 0);
+			reviewLogOfLastBackupButton.Enabled = enable;
+
+[REJECTED] enable Должно быть информативным
+
+9. раздели в коде обновления списка бл и пи
+[FIXED] 
+
+ФД-2 [ЗАКРЫТ]
+==============================================================================================
+
+======================= Инспекция кода по ФД-3 ===================================
+1. [FIXED]     internal partial class HddStorageForm
+sealed
+
+2. [FIXED]     public partial class NetworkStorageForm
+internal sealed
+
+3. [FIXED]     internal partial class FtpStorageForm 
+sealed
+
+4. [FIXED] public class HddStorage: StorageBase
+	{
+        private const string _DELETEALLFILESFROM = "Deleting all files from {0}";
+        private const string
+        
+please remove private prefixes
+sealed
+please fix fields naming
+please fix constants
+
+5. [FIXED] NetworkStorage - the same
+
+ФД-3 [ЗАКРЫТ]
+==================================================================================
+
+======================= Инспекция кода по ФД-4 ===================================
+1. [FIXED] programOptions.cs
+
+-порядок спецификаторов доступа
+-удали префиксы private
+-отсутствуют xml-комментарии
+
+2. [FIXED] mainform\other
+
+- выберите приоритет И
+- отложенность
+
+должны быть сведены в общую таблицу расположения для более комфортного просмотра
+подсказку желательно сделать hint внизу формы
+
+3. [FIXED] backupProcess.cs
+
++добавь xml комментарии в свойства
++сгруппируй public и private методы в регионы
+
+4. [FIXED]taskmanager.cs
+
+- удали префиксы private
+- сгруппируй public и private методы
+- 2 класса не могут находиться в одном файле
+- отсутствуют xml комментарии
+
+5. [FIXED]internal partial class MainForm : Form
+
+- sealed
+[REJECTED]- сгруппируй в регион управление listbox-ом
+
+ФД-4 [ЗАКРЫТ]
+====================================================================================
+
+=================== Экспертиза кода по заданию 21 ==================================
+
+ОК
+
+====================================================================================
+
+[REJECTED: трей как раз и сделан для того, чтобы пользователь НЕ участвовал в принципе в этом
+Помимо того, сейчас происходит распараллеливание - и это реализовать невозможно,
+если это делать на уровне ИДет упаковка/Копирование/Задания - это не дело, поскольку такой информации все равно недостаточно]
+Х. Последнее сообщение должно отображаться в подсказке по иконке в трее
+и в Caption-е формы
+{0} - Идет процесс резервного копирования...
+Это нужно чтобы не открывая форму знать что происходит
+Цель: уменьшить время любования формой пользователя
+
+__закрыт
+
+================================== Deploy issues =====================================
+1. [FIXED] Обычно наиболее комфортен вариант низкий -положение на форме
+2. [FIXED] System.IO.IOException: The process cannot access the file 'c:\Documents and Settings\сергей\Application Data\BUtil-Development\Logs\09 июля (четверг) 13.19.20.BUtilLog.html' because it is being used by another process.
+   at System.IO.__Error.WinIOError
+   at System.IO.FileStream.Init
+   at System.IO.FileStream..ctor
+   at System.IO.StreamReader..ctor
+   at System.IO.StreamReader..ctor
+   at System.IO.File.ReadAllText
+   at System.IO.File.ReadAllText
+   at LogInfo..ctor in e:\Work\BUtil\BUtil-workingCopy\sources\Configurator\Controls\LoggingUserControl.cs:line 66
+   at Backup.Configurator.Controls.LoggingUserControl.updateList in e:\Work\BUtil\BUtil-workingCopy\sources\Configurator\Controls\LoggingUserControl.cs:line 250
+   at Backup.Configurator.Controls.LoggingUserControl.updateListLinkLabelLinkClicked in e:\Work\BUtil\BUtil-workingCopy\sources\Configurator\Controls\LoggingUserControl.cs:line 286
+   at System.Windows.Forms.LinkLabel.OnLinkClicked
+   at System.Windows.Forms.LinkLabel.OnMouseUp
+   at System.Windows.Forms.Control.WmMouseUp
+   at System.Windows.Forms.Control.WndProc
+   at System.Windows.Forms.Label.WndProc
+   at System.Windows.Forms.LinkLabel.WndProc
+   at ControlNativeWindow.OnMessage
+   at ControlNativeWindow.WndProc
+   at System.Windows.Forms.NativeWindow.DebuggableCallback
+   at ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop
+   at ThreadContext.RunMessageLoopInner
+   at ThreadContext.RunMessageLoop
+   at System.Windows.Forms.Application.Run
+   at Backup.Configurator.MainForm.Main in e:\Work\BUtil\BUtil-workingCopy\sources\Configurator\Forms\MainForm.cs:line 35
+3. [FIXED] Дата для логов только для российской локализации правильна
+4. [Approved, Done, Css learned] запрос перевода документации в формат chm

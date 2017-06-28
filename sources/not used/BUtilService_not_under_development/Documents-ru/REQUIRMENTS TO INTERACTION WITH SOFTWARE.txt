@@ -1,0 +1,23 @@
+﻿Для меня и Тома важно следующее:
+===========================================
+Implemented simplicity
+===========================================
+
+1. Logs
+Reduce spending time on logs
+- removed option with configuring of logs location
+- improved searching of errors in minimum log level
+- highlighting them with red color
+- opening log folder with 2 mouse clicks
+[2.7]
+
+2. Configurator
+- removed 3 tabs
+- removed 'save options' button
+- removed tab 'about' to separate form
+- removed confirmance "sure you want to close configurator"
+[2.7]
+
+3. Scheduling
+- service became user oriented
+- service should be replaced with ui program which does not require any permissions

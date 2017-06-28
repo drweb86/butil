@@ -1,0 +1,437 @@
+﻿Core tasks
+
+[DONE]
+1. Убери форму для выбора типа добавляемого хранилища и вместо этого делай открывающееся подменю
+- в меню
+- по клику на кнопке
+Для: упрощения конфигурирования и поддержки
+
+[REJECTED]
+[DON'T KNOW HOW TO IMPLEMENT IT]
+2. В форме резервного копирования нужно в главную форму добавить в ListView фоновое изображение
+
+Для: красоты интерфейса по мотивам Tortoise svn
+
+[FIXED]
+3. Use case issue
+Когда я нажимаю на кнопку прекращения РК, прога спрашивает меня
+в своем ли я уме. Никаких вопросов не должно быть для такого случая
+[DONE]
+4. Сделай сохранение выделения в лп
+[DONE]
+5. Возвращай надпись наввания раздела
+[DONE]
+6. Сделай подсказки для выбора в лп и пусть отображаются по наведению мышки
+[DONE]
+7. Выйти -> ОК и отмена -
+и вопрос по сохранению настроек - замени на применить
+для: абстрагирования от внутреннего устройтсва утилиты - сохр в файл к внешнему
+[DONE]
+8. Форму о программе и соотв пункты контекстного меню удали и перенеси все ее функции в конфигуратор на панель
+в виде отдельного контрола
+[DONE]
+9. Проверь все компоненты по табам
+[FIXED]
+10. Проверь код на соответствие гайдлайну по разработке
+[DONE]
+11. Code Review
+[DONE]
+12. Testing
+[DONE]
+13. в контроле шифрования второе сообщение при неправильном пароле должно быть фаталистическим
+[DONE]
+14. в утилите РК-ui нужно избавится от формы прогресса и 
+вынести настройки до в отдельный контрол
+Для прогресса нужно перенести все элементы на другой контрол
+и заменять управляющие элементы на ui как в конфигураторе
+
+Цель: подготовка к событийной обработке и уведомлениям пользователя
+Упрощение интерфейса и поддержки разработки
+Улучшение внешнего вида приложения
+Децентрализация бизнес-логики
+Внедрение компонентной модели
+
+Перенос БЛ в главную форму
+[DONE]
+- бл сворачивания и разворачивания из трея для случая
+	запущен бэкап
+	не запущен
+[REJECTED]
+- кнопки в трей и 
+[DONE]
+- останова РК
+[DONE]
+- бл закрытия формы в зависимости
+	запущен бэкап
+	не запущен
+
+15. Рассмотри вопрос добавления дублирующих меню иконок в конфигуратор для вызова мастера
+восстановления и гуишного РК
+для: централизованного управления
+
+[->i5]
+16. Запрос переименовать форму BackupNowForm->MainForm
+
+[DONE]
+17. уязвимость в безопасности - критическая
+
+если в настройках пароль не указан,
+а в backup Ui указан - то пароль не используется
+Affected: non win xp pro users
+
+[ГОТОВО]
+[сделано частичено - нужен внешний хостинг для файла]
+[ПОДГОТОВЛЕНО]
+18. ПРоверка обновлений через мой сайт
+Формат следующий
+<xml>
+	<version="4.4.8">
+	<changes>
+		Oh yes!
+	</changes>
+	<downloadPage>Url</downloadPage>
+	<nextReleaseDate>?|Day-MonthNo</nextReleaseDate>
+</xml>
+
+[Исправлена]
+19. Ошибка с изменением размера формы и свернутым окном при запущенном bui 
+[DONE]
+20. left user control - текст должен быть белым
+
+Дополнительные задания:
+
+[->i5]
+1. Открытие документации и броузера везде через отдельный поток кроме запуска архиватора
+
+Bugs
+
+[->i5]
+1. When stopping backup process, it fails
+System.ComponentModel.Win32Exception: Не удается найти указанный файл
+   at System.Windows.Forms.Form.CheckCloseDialog
+   at System.Windows.Forms.Form.WmClose
+   at System.Windows.Forms.Form.WndProc
+   at ControlNativeWindow.OnMessage
+   at ControlNativeWindow.WndProc
+   at System.Windows.Forms.NativeWindow.DebuggableCallback
+   at System.Windows.Forms.NativeWindow.DefWndProc
+   at System.Windows.Forms.Form.DefWndProc
+   at System.Windows.Forms.Control.WndProc
+   at System.Windows.Forms.ScrollableControl.WndProc
+   at System.Windows.Forms.ContainerControl.WndProc
+   at System.Windows.Forms.Form.WmSysCommand
+   at System.Windows.Forms.Form.WndProc
+   at ControlNativeWindow.OnMessage
+   at ControlNativeWindow.WndProc
+   at System.Windows.Forms.NativeWindow.DebuggableCallback
+   at System.Windows.Forms.NativeWindow.DefWndProc
+   at System.Windows.Forms.Form.DefWndProc
+   at System.Windows.Forms.Control.WndProc
+   at System.Windows.Forms.ScrollableControl.WndProc
+   at System.Windows.Forms.ContainerControl.WndProc
+   at System.Windows.Forms.Form.WmNcButtonDown
+   at System.Windows.Forms.Form.WndProc
+   at ControlNativeWindow.OnMessage
+   at ControlNativeWindow.WndProc
+   at System.Windows.Forms.NativeWindow.DebuggableCallback
+   at ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop
+   at ThreadContext.RunMessageLoopInner
+   at ThreadContext.RunMessageLoop
+   at System.Windows.Forms.Application.RunDialog
+   at System.Windows.Forms.Form.ShowDialog
+   at System.Windows.Forms.Form.ShowDialog
+   at Backup.BackupUi.AppController.StartBackup
+   at Backup.BackupUi.BackupNowForm.StartbuttonClick
+   at System.Windows.Forms.Control.OnClick
+   at System.Windows.Forms.Button.OnClick
+   at System.Windows.Forms.Button.OnMouseUp
+   at System.Windows.Forms.Control.WmMouseUp
+   at System.Windows.Forms.Control.WndProc
+   at System.Windows.Forms.ButtonBase.WndProc
+   at System.Windows.Forms.Button.WndProc
+   at ControlNativeWindow.OnMessage
+   at ControlNativeWindow.WndProc
+   at System.Windows.Forms.NativeWindow.DebuggableCallback
+   at ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop
+   at ThreadContext.RunMessageLoopInner
+   at ThreadContext.RunMessageLoop
+   at System.Windows.Forms.Application.Run
+   at Backup.BackupUi.BackupNowForm.Main
+
+[->i5]
+2. when killing during backup 7z processes message occurs
+
+System.ComponentModel.Win32Exception: Не удается найти указанный файл
+   at System.Diagnostics.Process.StartWithShellExecuteEx
+   at System.Diagnostics.Process.Start
+   at Backup.BackupUi.AppController.onBackupFinsihedHelper
+   at Backup.Core.BackupProcess.BackupThreadJob
+   at System.Threading.ThreadHelper.ThreadStart_Context
+   at System.Threading.ExecutionContext.Run
+   at System.Threading.ThreadHelper.ThreadStart
+
+[DONE]
+3. Fixed issues with unistallation of settings
+- exceptions
+- ghost integration
+
+[REJECTED: INTERNAL BUG OF SD]
+4. issue with storing of settings for ghost sturtup
+
+[REJECTED: INTERNAL BUG OF SD]
+5. issue with generic way of storing settings
+Improper folder setting(SD feedback)
+=====================================================reviewed===============
+[UPDATED]
+6. Inno Installer update for controller
+- app.config for controller in result form to copy
+
+[FIXED]
+7. Doc update
+- integrating with windows scheduler 6.3 - screenshots
+- documenting this
+
+8. Inno setup script BAD
+[FIXED]
+a.AppPublisherURL=http://www.codeplex.com/zipsolution
+AppSupportURL=http://www.codeplex.com/zipsolution
+AppUpdatesURL=http://www.codeplex.com/zipsolution
+
+[->i5]
+b. usage of isx_dll
+
+9. Размести у себя логотипы
+[DONE]
+7-zip->7-zip.org
+sf
+
+[FIXED]
+10. Use case: пожалуйста замени всплывающие подсказки на сообщения снизу(в конфигураторе)
+Поскольку подсказки небольшие и их появление меня крайне раздражает и будет раздражать пользователя
+часто использующего предложения
+Цель: эргономичность при требуемом уровне самодокументирования
+[FIXED]
+11. ПОжалуйста убери черные границы в контролах
+
+=================== code review CR 4================================
+For library CORE
+[FIXED]
+1. Test update environment should be 'update.xml' should be located for debug
+mode in project and should be linked and available from the project
+[DONE]
+2. Class UpdateChecker
++a. xml comments missing(class, method)
++b. it should rethrow exception of known type and catch exceptions of known types
++c. it should be tested on non-russian localization if all will be parsed well
+or it should be simplified by
+Major
+Minor views
+[FIXED]
+3. BackuserControl
+a. Please insert in NotImplementedException method name
+[FIXED]
+4. Encryption User Control
+a. Please research for resizability of controls automatically and set it if its possible
+b. Research the same thing for labels
+[FIXED]
+5. Password generator form
++a. Please do the same as in 4
++b. Please remove resources file(no purpose)
++c. Xml comments
++d. all private functions has improper namings
+
+For Configurator
+[FIXED]
+1. AboutProgramUserControl
++a. naming of ui elements - please fix all names of elements
++b. All event handlers aren't by guideline please fix it
++c. group overriden methods and place them in region
++d. localization reportAFeature->sugget feature
++e. xml comments
+[FIXED]
+2. ConfiguratorViewsEnum
+a. please add xml comments so you can easily remember its purpose
+[FIXED]
+3. LeftPanelUserControl
++a. xml comments - purpose, SelectedCategory
++b. improper naming
+AboutProgramButtonClick, LeftPanelUserControlLoad, 
+-c. group in region overrides
+[FIXED]
+4. LoggingUserControl
++a. group in region overrides
++b. autosize for label and button(+)
++c. xml comments-purpose
++d. please refactor using enum
+			if (logLevelComboBox.SelectedIndex < 0)
+            {
+            	logLevelComboBox.SelectedIndex = 0;//"Normal"
+            }
+[FIXED]            
+5. OptionsHeader
+a. xml comments-purpose
+[FIXED]
+6. OtherOptionsUserControl
++a. xml comments-purpose
++b. group in region overrides
++c. improper methods naming
++d. please refactor using enum
+			if (priorityComboBox.SelectedIndex == -1)
+				priorityComboBox.SelectedIndex = 3;
++e. control naming please fix
++f. autosize of labels and buttons please set
+[FIXED]
+7. SchedulerUserControl
++a. xml comments-purpose
++b. group in region overrides
++c. please refactor this
+if (_options.IsThisDayOfWeekScheduled(DayOfWeek.Monday))
+                scheduledDaysCheckedListBox.SetItemChecked(0, true);
+            if (_options.IsThisDayOfWeekScheduled(DayOfWeek.Tuesday))
+                scheduledDaysCheckedListBox.SetItemChecked(1, true);
+            if (_options.IsThisDayOfWeekScheduled(DayOfWeek.Wednesday))
+                scheduledDaysCheckedListBox.SetItemChecked(2, true);
+            if (_options.IsThisDayOfWeekScheduled(DayOfWeek.Thursday))
+                scheduledDaysCheckedListBox.SetItemChecked(3, true);
+            if (_options.IsThisDayOfWeekScheduled(DayOfWeek.Friday))
+                scheduledDaysCheckedListBox.SetItemChecked(4, true);
+            if (_options.IsThisDayOfWeekScheduled(DayOfWeek.Saturday))
+                scheduledDaysCheckedListBox.SetItemChecked(5, true);
+            if (_options.IsThisDayOfWeekScheduled(DayOfWeek.Sunday))
+                scheduledDaysCheckedListBox.SetItemChecked(6, true);
+and this
+            if (_options.IsThisDayOfWeekScheduled(DayOfWeek.Sunday))
+                scheduledDaysCheckedListBox.GetItemChecked(0);
+
+            if (hourComboBox.SelectedIndex > -1)
+                _options.Hours = (byte)hourComboBox.SelectedIndex;
+            else
+                _options.Hours = 0;
+
+            if (minuteComboBox.SelectedIndex > -1)
+                _options.Minutes = (byte)minuteComboBox.SelectedIndex;
+            else
+                _options.Minutes = 0;
++d.  autosize of labels and buttons
+[FIXED]
+8.SourceItemsUserControl
++a. group usings
++b. xml comments about purpose - just to not forget
++c. group in region overrides
++d. please refactor this
++CompressionItem[] folders = new CompressionItem[1];
+by overloaded function
++folders[0] = new CompressionItem();
+				folders[0].Target = MainfolderBrowserDialog.SelectedPath;
+				folders[0].CompressionDegree = CompressionDegree.Normal;
+				folders[0].IsFolder = true;
+by overloaded constructor
++e. remove prefixes private 
++f. erroneous register of private methods
++g. errpnoeous controls names on ui
+[FIXED]
+9. StoragesUserControl
++a. erroneous register of private methods
++b. xml comments about purpose - just to not forget
++c. group in region overrides
++d. remove private prefixes
+[FIXED]
+10. Main Form
++a. register of private methods
+b. icons for What Where About are missing
+
+Review of bui
+[FIXED]
+1. BackupProgressUserControl
+a. xml comments
+b. code guide for private functions
+c. naming
+d. region for locals
+e. Stop called?
+f. ui elements should be autosized
+[FIXED]
+2. BackUserControl
+a. xml comments
+b. code guide for private functions
+[FIXED]
+3.SettingsUserControl
+a. xml comments
+b. code guide for private functions
+c. naming
+d. region for locals
+e. ui elements should be autosized
+[FIXED]
+4.BackupNowForm
+a. code guide for private functions
+b. prefixes private
+c. naming of ui elemets
+
+====================== Installation issues ======================
+1. New version installation - error
+
+====================== Decision about associating ===============
+[DONE]
+1. Exclude this feature from sources
+[RESOLUTION: that's not possible, because program becomes less portable]
+2. add it to installer if possible
+[DONE]
+Review of Restoration tool
+1. form HowToRestoreForm
++a. please make autosize of all controls
++b. please fix orph mistakes in in controls' names
++c. refactor fbd and fbDialog
++d. xml comments
++e. any sence in
+public MetaRecord Record
+		{
+			set 
+			{ 
+				_record = value;
+
+				recoverItemTextBox.Text = _record.InitialTarget;
+				this.Text = _record.InitialTarget;
+			}
+		}
+
+->to constructor
++f. private members of class has improper first letter case
++d. please add possibility to specify location of 7z archive in this form
++e. please disable button restore untill all required parameters set
+
+Form InProcessForm
+a. please move it's functions to form Restoration
+b. add in restoration form log of 7-zip and do this async
+c. Instead of restore button use |> button with tooltip
++d. restore in separate thread(background worker)
+e. remove this form
+
+[DONE]
+Form MainForm
++a. autosize of controls
++b. naming of methods
++c. naming of controls
+
+[DONE]
+Form RestoreForm
+a. rename controls
+b. rename methods
+c. remove long line
+d. autosize of controls
+
+-QA report-
+---------------------- RELEASE installation issues ------------------
+[FIXED]
+1. at first start program cannot create BUtil-4.4 folder and cannot save settings
+[FIXED]
+2. System.InvalidOperationException: Cross-thread operation not valid: Control 'BackupNowForm' accessed from a thread other than the thread it was created on.
+   at System.Windows.Forms.Control.get_Handle
+   at System.Windows.Forms.Control.SetVisibleCore
+   at System.Windows.Forms.Form.SetVisibleCore
+   at System.Windows.Forms.Control.Show
+   at Backup.BackupUi.BackupNowForm.fromTray in d:\Work\BUtil\butil\sources\BackupUi\BackupNowForm.cs:line 176
+   at Backup.BackupUi.BackupNowForm.onBackupFinsihed in d:\Work\BUtil\butil\sources\BackupUi\BackupNowForm.cs:line 61
+   at Backup.BackupUi.AppController.onBackupFinsihedHelper in d:\Work\BUtil\butil\sources\BackupUi\AppController.cs:line 134
+   at Backup.Core.BackupProcess.BackupThreadJob in d:\Work\BUtil\butil\sources\Backup.Core\BackupProcess.cs:line 743
+   at System.Threading.ThreadHelper.ThreadStart_Context
+   at System.Threading.ExecutionContext.Run
+   at System.Threading.ThreadHelper.ThreadStart

@@ -1,0 +1,3 @@
+D:\Siarhei Cuchuk@epam.com\myOwnProject\butil\sources\BUtilService\obj\Release\ResolveAssemblyReference.cache
+D:\Siarhei Cuchuk@epam.com\myOwnProject\butil\bin\BUtilService.exe
+D:\Siarhei Cuchuk@epam.com\myOwnProject\butil\sources\BUtilService\obj\Release\BUtilService.exe

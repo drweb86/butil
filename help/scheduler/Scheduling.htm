@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+  <META http-equiv="Content-Type" content="text/html; charset=Windows-1252">
+  <TITLE>Scheduling</TITLE>
+  <LINK href="style.css" rel="stylesheet" type="text/css">
+</HEAD>
+
+<BODY>
+
+<H1>Scheduling</H1>
+
+<P><a href="../general/Glossary.htm#s">Scheduler</a> can run in 2 modes:</P>
+<UL>
+ <LI><B>Hidden</B>. In this mode program takes less system resources but does not provide additional functions such as Run or stop backup from context menu of tray icon, information about time to backup, warning message 8 minutes before backup.</LI>
+ <LI><B>Normal</B></LI>
+</UL>
+<P>Scheduling application stops / restarts automatically when you changed options in configurator(except cases when you enabled option 'don't care about scheduler startup'). If there's no scheduled days for backup/file with options – it closes itself automatically</P>
+<P>Scheduler is a separate component of application: it's installation is configured during setup process. In zipped binaries it's included also. You can remove it. After removal scheduling will be unavailable</P>
+
+<P>Tray application provides next functions:</P>
+<UL>
+ <LI>scheduling,</LI>
+ <LI>starting/stopping backup,</LI>
+ <LI>exiting,</LI>
+ <LI>showing time remained to the next scheduled backup,</LI>
+ <LI>showing popup in 8 minutes before backup,</LI>
+ <LI>showing popup that backup was started.</LI>
+</UL>
+
+<H2><a name="htkawiithm"></a>How To Kill Application When It's In She Hidden Mode?</H2>
+<UL>
+ <LI>Press Ctrl+Alt+Del;</LI>
+ <LI>Go to “Processes” tab;</LI>
+ <LI>Kill 'Butil.Ghost.exe' process.</LI>
+</UL>
+
+<H2><a name="bdosp"></a>Block-diagramm of scheduler processing</H2>
+<P>Diagram is shown on picture 1.</P>
+<IMG BORDER=0 SRC="schemeOfWorking.PNG" ALT="Block-diagramm of scheduler processing">
+<P align = "center">Image 1 - Scheduler Block Diagram</P>
+
+</BODY>
+</HTML>

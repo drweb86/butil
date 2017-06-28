@@ -1,0 +1,11 @@
+BUtil project
+=============
+
+Issues with priorities:
+
+1. Win9x, Me does not support priorities AboveNormal and BelowNormal. However this OS does not support encrypting that's why they are not supported. 
+
+Program logic in backup class sets Normal priority in this case
+
+2. Idle priority blocks 'Stand by' mode of OS so should not be used in TRAY program. However in the console or other tools it can be used freely
+(3.1.1)

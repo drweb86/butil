@@ -1,0 +1,10 @@
+﻿Завершенность
+
+Resistence to an error
+1) all assemblies are signed with keys[viruses, tampering]
+2) all binaries are signed with md5
+
+Восстанавливаемость
+
+Соотвествие надежности
+

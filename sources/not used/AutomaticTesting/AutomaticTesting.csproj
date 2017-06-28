@@ -1,0 +1,53 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <ProjectGuid>{11EC64D7-93DF-4AEF-96FF-33E1E04F69D2}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>AutomaticTesting</RootNamespace>
+    <AssemblyName>AutomaticTesting</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>..\..\bin\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>..\..\bin\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Main.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUtil.Common\BUtil.Common.csproj">
+      <Project>{62D44F2C-4402-4813-A20B-0BAF125BC61A}</Project>
+      <Name>BUtil.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\butil.kernel\BUtil.Kernel.csproj">
+      <Project>{884325C6-9686-4D09-BCDE-38FF79279620}</Project>
+      <Name>BUtil.Kernel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BUtil.Schedule\BUtil.Scheduling.csproj">
+      <Project>{4B35BD71-CC01-481B-A749-2C697C25E593}</Project>
+      <Name>BUtil.Scheduling</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+  <META http-equiv="Content-Type" content="text/html; charset=Windows-1252">
+  <TITLE>Security And Protection</TITLE>
+  <LINK href="style.css" rel="stylesheet" type="text/css">
+</HEAD>
+
+<BODY>
+
+<H1>Security And Protection</H1>
+<P>Here is the clarified a couples of security questions</P>
+
+<H2>Protection of Configuration Data</H2>
+<P>Configuration data is encrypted under windows user account if Windows supports encrypted file system EFS and if system partition is formatted in Ntfs. In all other cases it's not encrypted. </P>
+
+<H2>Network Storages and Encryption Under Local System Account</H2>
+<P>This is an additional level of protection.</P>
+<P>Requirements to remote server for encryption under local system account:</P>
+<UL>
+  <LI>Win 2k on remote machine;</LI>
+  <LI>NTFS file system on shared folder with support of EFS.</LI>
+</UL>
+<P>Notes:</P>
+<UL>
+  <LI>If you will lose and reset your password or reinstall OS or recreate your account – you could not gain access to data in backup on this remote storage.</LI>
+  <LI>Nobody(including you) acting from other account can access your data on this remote storage.</LI>
+</UL>
+
+<H2>Protection of Password Protected Images</H2>
+<P>Encryption of 7z archiver(built-in encryption) is AES-256</P>
+
+<H2>Generation Of Passwords</H2>
+<P>Implemented password generator uses .Net RNGCryptoServiceProvider and collects entropy for generating strong passwords from high Latin, low Latin symbols and and numbers.</P>
+<P>Passwords are stored securely in encrypted under your OS account file</P>
+<P>It will be a good idea if you will have different passwords for different programs, sites and so on. The best(IMHO) open-source program for such thing is KeePas <a href="http://www.sourceforge.net/projects/keepas" target="_blank">http://www.sourceforge.net/projects/keepas</a>(AES-128 encryption, good password generator, portable, Win).</P>
+
+<H2>Protection From Viruses</H2>
+<P>All assemblies use strong name</P>
+<P>7-zip binaries are checked for md5 checksumm each time on start of the program</P>
+
+<H2>Deletion Of Temporary Files For Password Protected Images</H2>
+<P>Program deletes files securely when your backup was encrypted when backups and restores data. Program overwrites this files with zeros and then after that deletes them. Archiver also encrypts its own temporary files, but it deletes them by itself.</P>
+
+<H2>How Can I Protect Software Logs?</H2>
+<P>You can open this folder in Windows Explorer and limit the access to this folder for other users or open properties of logs folder and check 'Encrypted' flag</P>
+
+</BODY>
+</HTML>

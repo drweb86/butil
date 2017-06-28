@@ -1,0 +1,5 @@
+Required work is
+- improving program quality
+- providing information about tool in different soft archives and soft portals
+- improving and simplifying as much as possible of tutorial
+- simplifying UI of configurator

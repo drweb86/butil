@@ -1,0 +1,40 @@
+﻿<Settings>
+  <Core>
+    <Performance>
+      <AmountOf7ZipProcessesToProcessSynchronously>2</AmountOf7ZipProcessesToProcessSynchronously>
+      <AmountOfStoragesToProcessSynchronously>5</AmountOfStoragesToProcessSynchronously>
+      <ProcessingPriority>BelowNormal</ProcessingPriority>
+    </Performance>
+    <Security>
+      <DontCareAboutPasswordLength>False</DontCareAboutPasswordLength>
+    </Security>
+    <Logging>
+      <Level>Normal</Level>
+    </Logging>
+    <ScheduleApplication>
+      <CreateTrayIconForScheduler>True</CreateTrayIconForScheduler>
+      <PuttingOffBackupCpuLoading>60</PuttingOffBackupCpuLoading>
+    </ScheduleApplication>
+  </Core>
+  <BackupTasks>
+    <BackupTask Name="default">
+      <RunBeforeBackup>
+      </RunBeforeBackup>
+      <SecretPassword>
+      </SecretPassword>
+      <WhatToBackup>
+        <CompressionItem Target="E:\Тест" IsFolder="True" CompressionDegree="Normal" />
+      </WhatToBackup>
+      <WhereToBackup>
+        <Storage Type="Backup.Core.Storages.HddStorage" Assembly="E:\Work\BUtil\BUtil-workingCopy\bin\Backup.Core.dll">
+          <DestinationFolder>E:\Тест2</DestinationFolder>
+          <DeleteBUtilFilesInDestinationFolderBeforeBackup>False</DeleteBUtilFilesInDestinationFolderBeforeBackup>
+        </Storage>
+      </WhereToBackup>
+      <Schedule>
+        <Time Hour="23" Minute="50" />
+        <Days Sunday="False" Monday="False" Tuesday="False" Wednesday="False" Thursday="False" Friday="False" Saturday="False" />
+      </Schedule>
+    </BackupTask>
+  </BackupTasks>
+</Settings>

@@ -1,0 +1,426 @@
+﻿General plans for version 4.5
+
+[CORE tasks]
+
+	[DONE] 1. Please store all configurator specific items
+	[DONE] in standard folder
+
+	[REJECTED: not simple] 2. Checks for correctness should be with XPath
+
+	[DONE] 3. Implementation requirements
+	[DONE] - cross-version support
+	[DONE] - very error-stable
+
+	[DONE] 4. Configurator functions that should be added
+	[DONE] have neither internet nor network
+	[DONE] [CF: Нет интернета и локальной сети - + в установщик=>конфигурационный файл Конфигуратора — исключить из меню связанное с сетью]
+	[DONE] will not use scheduler
+	[DONE] [CF: Не использую планировщик – и убрать вкладку с планировщиком]
+	[DONE] don't care about scheduler start up
+	[DONE] remove about tab
+	[DONE] [CF: Добавь дополнительное меню к конфигуратор
+	[DONE] 1)I
+	[DONE] have no Internet and network → disable ui features
+	[DONE] don't want to see about tab
+	[DONE] will not use scheduler]
+
+	[REJECTED: for pasting]Влияние отсутствие интернета - на ссылки и прочее
+
+	[DONE] 5. please exclude app.config file with moving functions to such file
+
+	[REJECTED: configurator does it by self]6. [CF: Выводи сообщения о требовании перезагрузки при отключенном стандартном интеграции с Windows]
+
+	[DONE] 7. [CF: В конфигураторе: добавить функцию посмотреть лог последнего резервного копирования]
+		Задача этих микроулучшений - сделать возможным убирание лишнего функционала из Конфигуратора
+	[DONE] 8. In Configurator.Logs - empty folder with logs
+
+	[DONE] 9. Перенеси документацию в html формат и откажись PDF
+	[DONE] для уменьшения зависимостей от установленного софта и уменьшения размера дистрибутива
+
+	[DONE]9. Высокоприоритетное: добавить в мастер рк ui 
+	[DONE]- колонку со степенью сжатия
+	[DONE]- колонку с прогресс обработки
+	[DONE]- label с информацией о том что происходит сейчас
+	[DONE]ЕСЛИ все получится то вопрос о миграции на низкопроизводительную обертку может отпасть
+
+	[DONE] 10. Высокоприоритетное: сделать кросс-butil-ковсвким файл
+	[DONE] с настройками Ghost.xml: Xml, XPath
+	[DONE] Допольнительно: зарефакторь хранение загрузки и ПРИМЕНЕНИЕ настроек,
+	[DONE] используя DayOfWeek .Net enum
+	[REJECTED: in inet a lot of such articles]+ Напиши статью по использованию XPath с кусками кода на С# для хранения настроек
+
+	[DONE] 	11. Восстанавливать архив с помощью стандартного средства восстановления
+	
+	Refactoring core tasks
+	[DONE] 4-16. Запрос переименовать форму BackupNowForm->MainForm
+
+	Code review core tasks
+	[DONE] 4-CR-1. Открытие документации и броузера везде через отдельный поток кроме запуска архиватора
+	[DONE] Requirements for implementation - should be done in one place(non-localized), removing all duplicates
+
+	[DONE] 4-CR-2. INSTALLER - пожалуйста убери isx и обнови инсталлятор на базе nomad/zipsolution
+	[DONE] - fixed deploy issues
+
+	[REJECTED: not reproduced]Bugs to investigate
+
+	[REJECTED: not reproduced]4-1. When stopping backup process, it fails
+	[REJECTED: not reproduced]System.ComponentModel.Win32Exception: Не удается найти указанный файл
+
+	[REJECTED: not reproduced]4-2. when killing during backup 7z processes message occurs
+	[REJECTED: not reproduced]System.ComponentModel.Win32Exception: Не удается найти указанный файл
+	[REJECTED: not reproduced]   at System.Diagnostics.Process.StartWithShellExecuteEx
+	[REJECTED: not reproduced]   at System.Diagnostics.Process.Start
+	[REJECTED: not reproduced]   at Backup.BackupUi.AppController.onBackupFinsihedHelper
+	[REJECTED: not reproduced]   at Backup.Core.BackupProcess.BackupThreadJob
+	[REJECTED: not reproduced]   at System.Threading.ThreadHelper.ThreadStart_Context
+	[REJECTED: not reproduced]   at System.Threading.ExecutionContext.Run
+	[REJECTED: not reproduced]   at System.Threading.ThreadHelper.ThreadStart
+   
+	[DONE]Core issues
+
+	[DONE]1. [CF: Цвета плохо смотряться конфигуратора на silver theme]
+	[DONE]Захардкодай для конфигуратора синюю тему
+
+	Малоприоритетное
+	[DONE]1. Подсказки не для всех вкладок есть, это радражает
+
+	[DONE]2. Дико бесит неграмотный русский язык
+
+	[REJECTED] 3. Решение об исключении или поддержке и обновлении белорусской локализации
+	[REJECTED] Белорусский язык мертв. Поддерживать или нет?
+
+	[DONE] 4. Пожалуйста добавь ярлыки на 
+	[DONE] ZipSolution
+	[DONE] BULocalization
+	[DONE] SharpDevelop
+		все то ПО, без которого развитие этого проекта было бы для меня в тягость
+
+	[DONE] 5. МНе надоело обновлять лицензию.(по мотивам номада)
+	[DONE] Сделай кнопку License... с открытием файла с лицензиями
+	[DONE] Убери лицензию из локализации - надоело поддерживать
+		Простота залог здоровья
+	[DONE] Пожалуйста добавь исключения гарантии в файл с лицензией
+
+	=============================== сторонние задания =================================
+	Bugs
+	[REJECTED: configuration issue]-Critical
+	[REJECTED: configuration issue]1. [mess] 15:15:40 - Storage opened successfully
+	[REJECTED: configuration issue][mess] 15:15:40 - Copying 'd:\temp\Backup -Sunday - 19 - April.2009 15.15.40.butil' to 'D:\temp\Backup -Sunday - 19 - April.2009 15.15.40.butil'
+	[REJECTED: configuration issue][error] 15:15:40 - Error discovered when copying file to storage '22': The process cannot access the file 'D:\temp\Backup -Sunday - 19 - April.2009 15.15.40.butil' because it is being used by another process.
+	[REJECTED: configuration issue][mess] 15:15:40 - AfterBackUp
+	[REJECTED: configuration issue][mess] 15:15:40 - Deleting all temporary files...
+
+	============================= issues ===============================
+	[DONE]1. в IE ссылки в логах выгдядят просто ужасно+скриншот. Ими не удобно пользоваться
+	[DONE]Пожалуйста реализуй вариант из psy forum
+	[DONE].\QA\scr1
+	[DONE] - таблица
+	[REJECTED: no need]- заголовок
+
+	============================= license issues ========================
+	[DONE]Критически
+	[DONE]1. It is forbidden to use this software in 
+	[DONE]- war organization and companies that do war-related products and services for any purpose related with their activity,
+	[DONE]- company BBC (for the lie about belorussian government and humiliation of belorussian people in article)
+	[DONE]1) военные организации способствующие смерти групп людей и компании, работающие на них
+	[DONE]2) ББС за ложь и унижение белор народа в своих статьях и новостях
+
+	Дополнительно
+	[REJECTED: too much efforts to support]3) лицензия на русском языке в установщике ?
+
+============================ core testings issues =====================
+1. Integration w/o integration wasn't tested yet!
+provide
+	[DONE]2. workaround of Sharp Develop issue with system folders
+	[DONE]3. automating testing of updates
+
+============================== TESTING issues =========================
+	[DONE]1. Unicode is not supported
+	[DONE]Please upgrade 7-zip internally
+
+	[REJECTED: this is an internal bug of Sharp Develop]2. Invalid opening of browser Firefox
+	[REJECTED: this is an internal bug of Sharp Develop]Please rewrite it
+	[REJECTED: this is an internal bug of Sharp Develop]- cannot open web-lonks
+	[REJECTED: this is an internal bug of Sharp Develop]- cannot open docs
+	[REJECTED: this is an internal bug of Sharp Develop]- update url
+	[REJECTED: this is an internal bug of Sharp Develop]- logs
+
+3. не удаляются временные файлы(при остановке? РК)
+
+
+4. компоненты 7-zip используются практически полностью
+- требуется включить дистрибутив 7-zip с предустановкой куда надо
+
+	[FIXED]5. когда лог находится в режиме НОРМАЛЬНЫЙ, броузер с логом  не открывается когда поврежден 7-zip
+
+	[FIXED]6.
+	[FIXED]System.ObjectDisposedException: Cannot access a closed file.
+	[FIXED]   at System.IO.__Error.FileNotOpen()
+	[FIXED]   at System.IO.FileStream.Write(Byte[] array, Int32 offset, Int32 count)
+	[FIXED]   at System.IO.StreamWriter.Flush(Boolean flushStream, Boolean flushEncoder)
+	[FIXED]   at System.IO.StreamWriter.Flush()
+	[FIXED]   at Backup.Core.Logs.FileLog.writeInFile(String message)
+	[FIXED]   at Backup.Core.Logs.FileLog.WriteLine(LoggingEvent loggingEvent, String message)
+	[FIXED]   at Backup.Core.Logs.FileLog.Close()
+	[FIXED]   at Backup.Core.Logs.FileLog.Finalize()
+
+	[REJECTED:not reproduced]7. Icon on desktop for configurator is semantically bad
+	[REJECTED:not reproduced]Should be Backup Configurator and Настройка резервного копирования
+	[FIXED]7. FIxed issue with md5
+========================== REVIEW =====================================
+	[FIXED]1. FtpStorageForm
+	[FIXED]a. autosize of elements should be turned on
+	[FIXED]-checkbox
+	[FIXED]-buttons
+	[FIXED]b. remove 'private' prefixes
+	[REJECTED]d. refactor connectionModeComboBox.SelectedIndex = 1;
+	[FIXED]e. private methods has improper naming
+	[FIXED]f. header should be in the form as in hddstorage
+
+	[FIXED]2. hddstorageform
+	[FIXED]a. autosize of labels and buttons
+	[FIXED]b. default size of buttons
+	[FIXED]c. replace 'Search' on ...
+	[FIXED]d. when in english header should be in Axx Bxx form
+	[FIXED]e. refactor
+	[FIXED]_private string _caption
+	[FIXED]remove 'private' prefixes
+
+	[FIXED]3.network storage form
+	[FIXED]a. autosize
+	[FIXED]b. default size of controls
+	[FIXED]c. header of a form ?
+	[DONE]d. remove private prefixes
+	[DONE]e. cases of methods
+[inc 6]	
+4. Реализация контролов РК
+a. Сделай отдельные контролы со списком вещей для РК в РК UI
+
+	[DONE]5. Please review added locals
+	[DONE]6. Ни одной ошибки или предупреждения было зарегестрированы во время резервного копирования!
+	[DONE]-> РК завершилось успешно!
+[inc 6]
+7. Сделать список хранилищ для одновременного РК
++ листбокс на форме
+
+
+	======================= Deploymnent issues =====================
+	[DONE]1. DOcumentation bugs
+	[DONE]	DOes not work
+	[DONE]	1.1 1.2 1.3 1.4+
+	[DONE]	7.5
+	[DONE]	11+
+	[DONE]	12+
+	[DONE]	13+
+
+
+============================== review RI6 ===============================
+	[DONE]1. please move to root
+	[DONE]Backup.Core.ButilImage.CompressionDegree
+	[DONE]locals helper
+
+	[DONE]and refactor usage of those enums  that are in it
+
+2. please fix FxCop issues
+
+	[DONE]3. RecoveryManager
+	[DONE]using (SyncFile tempFile = new SyncFile())
+	[DONE]				{
+	[DONE]					string tempFileName;
+	[DONE]					do
+	[DONE]					{
+	[DONE]						tempFileName = Path.Combine(Directories.TempFolder,
+	[DONE]							string.Format(CultureInfo.InvariantCulture, 
+	[DONE]								@"\butil_restore_{0}_tmp.7z", 
+	[DONE]								DateTime.Now.ToString("HH.mm.ss.ffffff", CultureInfo.CurrentCulture)));
+	[DONE]					}
+	[DONE]					while (!tempFile.TrySyncFile(tempFileName));
+	[DONE]please consider refactoring on Path,GetTempFile()
+	[DONE]if possible
+
+	[DONE]4. UnpackArchive.cs localizatio issue
+	[DONE]        private const string _CANNOTRUN7ZIP = "Cannot run 7zg.exe because {0}";
+
+	[DONE]5. readonly 
+	[DONE]UnpackParameters _parameters = null;
+
+	[DONE]6. UnpackParameters.cs
+	[DONE]ArgumentNull should contain those strings . Remove constants
+	[DONE]        private const string _PASSWORD = "password";
+	[DONE]        private const string _ARCHIVETOUNPACK = "archiveToUnpackName";
+	[DONE]        private const string _DESTINATIONFOLDER = "destinationFolder";
+        
+	[DONE]        private const string _NOTSETOREMPTY = "Not set or empty";
+
+	[DONE]readonly
+
+	[DONE]		private string _password = string.Empty;
+	[DONE]        private string _srcfilename = string.Empty;
+	[DONE]        private string _destFolder = string.Empty;
+
+	[REJECTED: impossible]constructor
+	[REJECTED: impossible]	password set to default
+
+	[DONE]7. Backup.Core.FileSystem.Files
+	[DONE]remove 'private' prefixes
+	[DONE]add regions
+
+	[DONE]8. ScheduleOptions
+	[DONE]<hours>16</hours>
+	[DONE] <minutes>59</minutes>
+	[DONE]to node ZeroHour
+
+	[DONE]9. <Sunday>False</Sunday>
+	[DONE]  <Monday>False</Monday>
+	[DONE]  <Tuesday>False</Tuesday>
+	[DONE]  <Wednesday>True</Wednesday>
+	[DONE]  <Thursday>False</Thursday>
+	[DONE]  <Friday>False</Friday>
+	[DONE]  <Saturday>False</Saturday>+
+	[DONE]to node ScheduledDays
+
+	[DONE]10/ ConfiguratorOptions.xml
+	[DONE]DontNeedScheduler - > d
+	[DONE]DontCareAboutScheulerStartup - > d
+
+	[DONE]11. GhostOptions.cs
+	[DONE]        // Defaults. If change - please update documentation
+	[DONE]        const int _DEFAULT_HOURS = 23;
+	[DONE]        const int _DEFAULT_MINUTES = 50;
+	[DONE]        const int _DEFAULT_CPULOADING = 60;
+	[DONE]move to constants
+
+	[DONE]in constants!
+	[DONE]a
+	[DONE]				if ((value < 5) || 
+	[DONE]                  (value > 95))
+	[DONE]            	{
+	[DONE]
+	[DONE]b				for (int i = 0; i < 7; i++)
+	[DONE]c
+    [REJECTED]            if (value > 59)
+
+
+	[DONE]12. Core,Misc,AcrvhiveParameter
+	[DONE]			string _arguments = string.Empty;
+	[DONE]            string _logEntry = string.Empty;
+	[DONE]readonly
+
+	[DONE]void CreateArgumentsForCompression()
+
+	[DONE]case
+
+	[DONE]13. Support Manager.cs
+
+	[DONE]// please localize
+	[DONE]private static string _cannotRunFormatString = "Coult not run '{0}' due to:\n{1}";
+
+	[DONE]14. EncryptionUserControl.cs
+	[DONE]- methods naming
+
+	[DONE]15. BackupProcess
+	[DONE]		#region locals
+	[DONE]		string _backupAbortedByUser = "Aborted by user!";
+	[DONE]		string mArchWereErrors = "Archivator: Warning (Non fatal error(s)). For example, one or more files were locked by some other application, so they were not compressed";
+	[DONE]		string mArchFatalError = "Archivator: Fatal error";
+	[DONE]		string mArchInvalidArguments = "Please, report this bug to me! Archivator: Command line error";
+	[DONE]		string mArchNotEnoughMem = "Archivator: Not enough memory for operation";
+	[DONE]		string mUserKilled = "User stopped the process";
+	[DONE]		string mErrStorageFlagEnEncrTurnOn = "Storage '{0}' requires option 'enable encryption' to be enabled. But in your case it was disabled. Copying to storage skipped";
+	[DONE]		string mErrOpeningStr = "Error discovered when opening storage '{0}': {1}";
+	[DONE]		string mErrCopyStr = "Error discovered when copying file to storage '{0}': {1}";
+	[DONE]		string _cou
+	[DONE]fix '_' remove 'm'
+
+	[DONE]			using (FileStream RFile = File.OpenWrite(fileName))
+	[DONE]			{
+	[DONE]				long MaxSize = RFile.Length;
+	[DONE]				for (long i = 0; i <= MaxSize; i++)
+	[DONE]				{
+	[DONE]					RFile.WriteByte(0);
+	[DONE]casing
+
+	[DONE]16. in console tool please message about broken 7z don't break backup because
+	[DONE]it should be written to log too(in localized form as in backup)
+	[DONE]and should be treated as error
+
+	[DONE]17. static Process CreateCompressProcess(string arguments)
+	[DONE]ArchiveParameter[] CreateArgsForCompressionAndMetaForImage(out Collection<MetaRecord> metarecords)
+	[DONE]case
+
+	[DONE]remove [rivate prefixes
+
+[->inc 6]
+18. logs location can be specified
+template for backup name can be specified
+
+	[DONE]19. md4signer proj->md5
+
+	[DONE]20. restoreform
+	[DONE]remove private prefixes
+[->inc 6]
+21. installer review
+please investigate .net 3.5 or even 4.0
+if they can operate without .net 2.0 installed, you should ask download the latest version
+RELATED: nomad install script
+
+	[REJECTED]22. empty folder appears after installation and running - inno setup issue
+	[REJECTED]4.5\bin\BUtil
+
+	[REJECTED: bug of sharp developp]22.b Restoration tool creates folder BUtil when running from sharp develop
+
+	[DONE]23. update.xml in miscellaneous
+	[DONE]?
+
+	[DONE]24, closing log issue
+	[DONE]</dody>
+	[DONE]</html>
+
+	[DONE]25.[CRITICAL] file names were not encrypted in image
+
+[->inc 6]
+26.[IMPORTANT FOR ME] in backup ui setting use/not use signals should be saved betwean runs
+that's incomfortable for me to manually set it each time
+
+	[DONE]27. in backupUi: please add column 'Process' only when backup started
+
+	[DONE][CRITICAL]	
+	[DONE]28. Archives were not encrypted with password from backup ui
+
+[->inc 6]
+29. Настройка Прочее\Запускать планировщик без иконки трея доступна даже когда Не нужен планировщик опция включена
+
+	[DONE] 30. Критическая: файл с настройками НЕ ШИФРУЕТСЯ
+
+
+	[DONE]31. use case: поскольку у некоторых людей зашифровать файл никогда не получиться
+	[DONE]нужно убирать эту возможность чтобы она их не соблазняла обновить
+	[DONE]винду до суперновой версии
+
+	[DONE]с другой стороны некоторым пользователям нужно разрешить обходить это ограничение
+
+	[DONE]в такой операционной системе если получить доступ к файловой системе,
+	[DONE]то нет смысла во взломе навороченной защиты - 
+	[DONE]но и умалчивать о проблеме - еще хуже
+
+	[DONE]Решение: если человеку насрать на защиту данных, он пользуется старой виндой и все могут смотреть его файлы - то смысла в пароле нет - то есть что он есть что гео нет - без разницы - пусть тогда будет
+	[DONE]если у чела 2000 винда - и кто-то может прочитать его файл с конфигурацией, то соответственно и поменять доступ к файлам тоже может - то есть что он есть что гео нет - без разницы - пусть тогда будет
+
+	[DONE]шифрование и введенные пароли сохраняются как открытый текст - об этом сообщать всегда но этому не препятствовать
+	[DONE]+ выводить рекомендации
+
+
+	[REJECTED: если ее сломали, значит доступ к данным есть]с третьей стороны слабое шифрование не предохраняет данные в принципе: 
+	[REJECTED: если ее сломали, значит доступ к данным есть]в такой защите нет смысла
+	[REJECTED: если ее сломали, значит доступ к данным есть]защита должна быть переписана - по возможности
+
+[->inc 6]
+32. когда доступно только один тип добавляемого хранилище, показывается выбор
+- убери его для таких случаев
+[->inc 6]
+33. параллельное копирование в хранилища
+
+
+
+
+[CLOSED]

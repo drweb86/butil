@@ -1,0 +1,268 @@
+Core features
+[I2.A] Inno setup install script
+Requiremetns
+[DONE]
+A) SharpDevelop multiversion installation type
+...\BUtil\<version>
+[DONE]
+B) no admin privileges
+
+[DONE]
+[I2.B] ghost running issue. 
+It should not run for all users all the time.
+It should run only for currrent user if configured program properly and link should include version(self-deploying issue)
+
+[DONE]
+[I2.C] running bat scripts before backup
+Purpose: integration with zipsolution for internal projects
+
+Main Features
+[rejected, прога на моно не будет портироваться из-за того что моно медленно работает и сырая платформа]
+1. удали опцию ожидания снижения загрузки процессора — она лишняя и не поддерживается вне винды
+[DONE]
+2. удали приоритет высокий
+[DONE]
+3. «Запустить ген паролей » на «Сгенерировать»
+[DONE]
+4. удали ПОЛНЫЙ ТИП лога — он мне не нужен а другим людям и подавно — им не зачем читать и вникать в тех тонкости процесса рез копирования — и замени требуемые перемены на
+[DONE]
+5. вычисть копирайты из кода
+[DONE]
+6. подними планку требуемой длины до 20 симоволов и параметризуй это. Минимальная длина пароля должна быть вынесена в настройку приложения или константу
+[DONE]
+7. удали логотип и информацию о пожертвованиях из локализаций
+прога уже давно не donation-ware
+[DONE]
+8. сделай выбр дней по одному клику. два раза - некомфортно
+[DONE]
+9. уточни слова «средняя» на «средняя  степень сжатия» и так далее
+[NOT REPRODUCED]
+11. для РК с ПИ убери показ прошедшего времени — он не нужен
+[REJECTED: лишено смысла]
+а время начала резервного копирования вынеси в заголовок
+
+[DONE]
+12. For home users low... -> <i> button либо в hint
+[DONE]
+13. Поддрежка - Минимальный -> <i> button либо в hint
+Use cases testing
+[FIXED]
+1) форма РК с ПИ
+a)Выбор приоритета сделать через комбобокс с типом отображения ListStyle
+б)второй domainupdown аналогично
+
+========================================
+Functional testing
+========================================
+
+[DONE]
+1) дефект с сохранением и ошибками - форма теряет фокус после соглашения с ошибкой
+- и так почти по всему проекту
+[REJECTED - она используется в двух приложениях и поэтому не должна иметь иконки вовсе]
+2) форма генератора паролей не имеет иконки 
+[FIXED]
+3) подозрительный запуск и остановка процесса ghost конфигуратором
+[FIXED]
+4) deploy issue: ghost не регистрируется в автозапуске системы локального пользователя
+[FIXED]
+5) отсутствует указание констрэйнтов на пароль в документации или программе
+[FIXED]
+и контролы некорректно подогнаны
+[FIXED indirectly]
+6) форма генератора паролей не выдает сообщения об ошибке на пробелы в пароле
+[FIXED indirectly]
+7) кнопка использовать доступна хотя и не работает когда пароль слишком маленький
+[FIXED]
+8) удали отвратительную иконку для генераторов паролей и замени ее на [...]
+[FIXED]
+9) buttons Edit and Remove available if no item is selected in storages tab
+[FIXED]
+10. Several requests to enter key for exit in md5signer(3)
+[FIXED]
+11. cannot save with password with min length
+[FIXED]
+12. error message about passw length
+[FIXED]
+13. backupUi second combobox is editable
+[FIXED]
+14. 'Backup is in progress '/
+[fixed]
+'Backup' tray message not localized
+[FIXED]
+15. When logs are minimum Support window opens when backup aborted by user
+[->i3]
+16. Run programs all in separate thread! program hangs up! config and backupnow
+[FIXED]
+17. cannot stopped itself
+[FIXED]
+18. invalid stopping backup
+[FIXED]
+19. invalid output formatting from 7-zip in log when loggging from winapp
+[CANNOT REPRODUCE]
+20. closing form - dialog caption is erroneous
+[FIXED by removing message]
+21. message for caption with box backup ended with erros missing
+[FIXED]
+22. caption of log in browser is not localized
+[FIXED]
+23. Please exlude from log "WARNINGS for files:"
+and "----------------" for min log mode
+[FIXED]
+24. 2 times try to close form with backup that is in progress
+See the end of this message for details on invoking 
+just-in-time (JIT) debugging instead of this dialog box.
+
+************** Exception Text **************
+System.InvalidOperationException: Log is not opened
+   at Backup.Core.Logs.LogBase.PreprocessLoggingInformation(LoggingEvent loggingEvent, String message) in d:\Work\BUtil\butil\sources\Backup.Core\Logs\LogBase.cs:line 154
+   at Backup.Core.Logs.FileLog.WriteLine(LoggingEvent loggingEvent, String message) in d:\Work\BUtil\butil\sources\Backup.Core\Logs\FileLog.cs:line 96
+   at Backup.Core.BackupProcess.StopForcibly() in d:\Work\BUtil\butil\sources\Backup.Core\BackupProcess.cs:line 385
+   
+System.InvalidOperationException: Log is not opened
+   at Backup.Core.Logs.LogBase.PreprocessLoggingInformation(LoggingEvent loggingEvent, String message) in d:\Work\BUtil\butil\sources\Backup.Core\Logs\LogBase.cs:line 154
+   at Backup.Core.Logs.FileLog.WriteLine(LoggingEvent loggingEvent, String message) in d:\Work\BUtil\butil\sources\Backup.Core\Logs\FileLog.cs:line 93
+   at Backup.Core.BackupProcess.StopForcibly() in d:\Work\BUtil\butil\sources\Backup.Core\BackupProcess.cs:line 385
+   at Backup.BackupUi.BackupProcessForm.CancelbuttonClick(Object sender, EventArgs e) in d:\Work\BUtil\butil\sources\BackupUi\BackupProcessForm.cs:line 59
+   at System.Windows.Forms.Control.OnClick(EventArgs e)
+   at System.Windows.Forms.Button.OnClick(EventArgs e)
+   at System.Windows.Forms.Button.OnMouseUp(MouseEventArgs mevent)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.ButtonBase.WndProc(Message& m)
+   at System.Windows.Forms.Button.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+[FIXED]
+25. Timing issue resolved
+[FIXED]
+26. Stoppage of backup process is invalid. Please make workaround
+[FIXED]
+27. use case: please remove all 'postfixes' at least from russian translations 'резервное копирование' on backupui tool
+28. операция провалена-> При завершилась ошибкой:\n
+[FIXED]
+29. нессоотв заголовка и названия в мастере РК
+[FIXED]
+30. убери возможность ресайза формы
+[FIXED]
+31. убери весь лишний текст в <i>
+[FIXED]
+32. замени textbox на listView с иконками
+[FIXED]
+33 "использвоать шифроание-> шифровать данные". чем немногословнее и проще надписи, тем легче из визуально охватить
+[FIXED]
+34. зарефакторь пожалуйста отображение времени в форме процесса РК
+[DONE]
+35. InnoSetup должен включать в себя русский язык и локализованные элементы меню и ярлыки
+поскольку программа создается в первую очередь для себя и я требую полноценный русский язык
+[DONE]
+36. требование к имени каталога в меню пуск Резервирование данных
+
+
+======================================
+Code review
+======================================
+
+[DONE]
+1. Please in conf in main form refactor according to the following example
+ 		private void showInformationBox(string message)
+		{
+			MessageBox.Show(message, _uiInfo, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+		}
+[REVERTED to 3.1 x]
+2. ghost cannot start console backup tool on request of user
+[DONE]
+2. Plase rename all variables/methods/controls to comply to code guide line of MainForm of conf
+[DONE]
+3. Please fix all fxCop issues on MainForm of conf
+[FIXED]
+4. Critical - ghost one app instance pattern implemented incorrectly. Please redo
+==============================================
+Release deployment issues
+==============================================
+[FIXED]
+1. Мастер РК при неконфигурировании Конфигуратора падает без ошибки
+? защита от исключений не работает
+? проверка на наличие конфигов
+
+[FIXED]
+2. Кнопка "Удалить из списка" доступна когда ни один элемент списка не выделен
+
+[FIXED]
+3. Форма какой тип хранилища вы бы хотели добавить не соотв гайдлайну
+Кнопка отмена
+Иконка
+
+[FIXED]
+4. Конфигурация хранилища на жестком диске
+ОК доступна без всех требуемых параметров
+Отсутствует иконка
+
+[FIXED]
+5. Конфигурация фтп
+ОК доступна без всех требуемых параметров
+Тест доступна без всех требуемых параметров
+Отсутствует иконка
+тип фтп не задается и некомфортно задавать по умолчанию
+
+[FIXED]
+6. Сеть
+Иконка
+ОК доступна без всех требуемых параметров
+при введении всех параметров ОК доступна, но без результата об ошибках в полях ввода
+
+[FIXED]
+7. ДОавбение 2-х одинаковых хранилищ
+- должно быть сообщение Storage file name is not unique - исправлено и локализовано
+
+[FIXED]
+8. О программе
+- нет иконки
+
+[FIXED]
+9. Инструменты
+- генератор паролей фунци привязан к полю ввода, удали его из главного меню Инструменты
+Утилита Восстановления там же -> Восстановление данных
+Резервирование данных
+
+[FIXED]
+10ю Длина колонки резервного копирования слишком большая, пожалуйста уменьши, чтобы
+исчезла нижняя прокрутка
+
+[частично]
+11ю Иконку с минусом замени на стандартную - свою, в т.ч. и из меню
+
+[FIXED]
+12. Заголовок формы некомфортен для восприятия- настройка рК
+[FIXED]
+13. Отвалилась синхронизация на Single Instance по Ghost-у
+[FIXED]
+14. Именование: GeneralInformation-> General Information
+[REJECTED]
+15. Переход по табам в мастере РК
+[FIXED]
+16. напрягает сигнал включенный по умолчанию
+поскольку я часто это тестирую, мне бы хотелось чтобы для сборки 
+-debug-
+он был по умолчанию всегда выключен
+[REJECTED - this is a feature]
+17. восстановление в выбранную папку
+Кнопка восстановить Активка даже если не выбрана папка
+выбор 
+[НЕТ возможности]
+18ю при выборе дней используй знак руки
+[DONE]
+19. должно быть рзарешено созранение без указанных хранилищ данных + регистрация варнингов
+[DONE]
+20/ добавитть группу Файлы и Папки в мастер РК
+[DONE]
+21. ввод пароля в мастере РК, если пароль пуст - выдается нелокализованное сообщдение
+[FIXED]
+22. Кнопка воостановить доступна когда ниче не выбрано в - rest 2 f
+[FIXED]
+23ю при ресайзинге формы восстановления не ресайзится колонка со списком вещей для рк
+в
+а) утилите восстановления
+б) в утилите резервного копирования
+
+Closed_

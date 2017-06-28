@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+  <META http-equiv="Content-Type" content="text/html; charset=Windows-1252">
+  <TITLE>Miscellanous</TITLE>
+  <LINK href="style.css" rel="stylesheet" type="text/css">
+</HEAD>
+
+<BODY>
+
+<H1>Miscellanous</H1>
+
+<H2>Before backup event</H2>
+
+<P>For integration with other programs you can run script in before backup event which is configured in Configurator. You can create .cmd / .bat script or executables without parameters for scheduling running of your programs before backup.</P>
+<P>Program will wait until program termination. If you will interrupt backup, running of this scripts will not be interrupted.</P>
+<P>If you want your programs to run synchronously please review the next example of .cmd script as a template
+ <table>
+  <tr>
+    <td>start "" /wait "c:\program files\7-zip\7z.exe"</td>
+  </tr>
+ </tbody></table>
+</P>
+<P>Asynchronous variant is the next:
+ <table>
+  <tr>
+    <td>start "" "c:\program files\7-zip\7z.exe"</td>
+  </tr>
+ </tbody></table>
+</P>
+
+<H2>Critical errors of tools</H2>
+<P>Critical errors of tools stored in “Butil Bug report.txt” file on Desktop</P>
+
+</BODY>
+</HTML>

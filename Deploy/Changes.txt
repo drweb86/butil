@@ -1,0 +1,14 @@
+BUtil 5.0 Alpha3
+
+New features:
++ F1 works as help
++ Opening logs in place where all can be configured
+
+Changes:
+* Removed About Tab
+
+Bug fixes:
+-
+
+Known Issues:
+!

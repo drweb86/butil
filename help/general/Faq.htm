@@ -1,0 +1,257 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+  <META http-equiv="Content-Type" content="text/html; charset=Windows-1252">
+  <TITLE>Frequently Asked Questions</TITLE>
+  <LINK href="style.css" rel="stylesheet" type="text/css">
+</HEAD>
+
+<BODY>
+
+<H1>Frequently Asked Questions</H1>
+
+<H4>1. Links in about tab are not opened</H4>
+<P>This is your OS issue. To fix it, please do the next with administrative privileges Start\Control Panel\Programs\Default programs tab and configure it. Then reboot.</P>
+
+<H4>2. Where can I configure the temporary folder?</H4>
+<P>In some cases free size of temp folder is too low. To change TEMP folder location please do:</P>
+<UL>
+ <LI>Right-click on "My Computer" icon on desktop, open Properties</LI>
+ <LI>Go to "Advanced" tab;</LI>
+ <LI>Open "Environment variables";</LI>
+ <LI>Set user variable "TEMP" to folder you want;</LI>
+ <LI>Set options;</LI>
+ <LI>Reboot PC.</LI>
+</UL>
+
+<H4>3. Where does the program keep settings and logs</H4>
+<P>
+<table>
+  <tbody><tr>
+    <th>What:</th>
+    <th>Where:</th>
+  </tr>
+  <tr>
+    <td>Configuration data</td>
+    <td>
+      %userprofile%\Application data\BUtil-x.y\Settings\<B>ProfileOptions.xml</B> - this file contains options in Xml-format and encrypted(when program run in full mode)</br>
+    </td>
+  </tr>
+  <tr>
+    <td>Logs</td>
+    <td>%userprofile%\Application data\BUtil-x.y\Logs</td>
+  </tr>
+
+</tbody></table>
+
+</P>
+<H4>4. What programming language and platform program was written for?</H4>
+<P>Components of program were written on the following languages
+<table>
+  <tbody><tr>
+    <th>Component:</th>
+    <th>Language:</th>
+  </tr>
+  <tr>
+    <td>Program and libraries</td>
+    <td>C#</td>
+  </tr>
+  <tr>
+    <td>Setup</td>
+    <td>InnoSetup 5.2.3</td>
+  </tr>
+  <tr>
+    <td>Chm help file</td>
+    <td>HTML Help Workshop 4.74.8702.0</td>
+  </tr>
+</tbody></table>
+</P>
+
+<H4>5. What is the structure of software?</H4>
+<P>Software has the next structure
+<table>
+  <tbody><tr>
+    <th>Component:</th>
+    <th>Description:</th>
+    <th>Functions:</th>
+  </tr>
+  <tr>
+    <td>7-zip</td>
+    <td>Installed 7-zip 32-bit software.</td>
+    <td>Compresses the data for backup and restoration in this software package.</td>
+  </tr>
+  <tr>
+    <td>end-user-docs\Manual.chm</td>
+    <td>The help file</td>
+    <td>Provides information about program and help for user</td>
+  </tr>
+  <tr>
+    <td>local</td>
+    <td>Folder with preinstalled translations of tool</td>
+    <td>Allows to show program ui and logs in localized way</td>
+  </tr>
+  <tr>
+    <td>data\logtemplate.dat</td>
+    <td>Template file for html logs that produced during backup</td>
+    <td>This file is used to generate log</td>
+  </tr>
+  <tr>
+    <td>data\RestorationMaster.ico</td>
+    <td>The icon for restoration master</td>
+    <td>Used for User Menu\Backup Master</td>
+  </tr>
+  <tr>
+    <td>data\BackupUi.ico</td>
+    <td>The icon for backup master</td>
+    <td>Used for User Menu\Restoration</td>
+  </tr>
+  <tr>
+    <td>bin\Backup.Core.dll</td>
+    <td>Library with the common functions</td>
+    <td>Provides functions for executables</td>
+  </tr>
+  <tr>
+    <td>bin\SpeedUp.bat</td>
+    <td>Batch script file for speeding up an application performance on .Net 2</td>
+    <td>Perfroms speed up of starting the program</td>
+  </tr>
+  <tr>
+    <td>bin\Backup.exe</td>
+    <td>Console backup tool</td>
+    <td>Performs the console based backup</td>
+  </tr>
+  <tr>
+    <td>bin\BUtil.Backup.Ghost.exe</td>
+    <td>Scheduler tool</td>
+    <td>Provides ability to schedule the backup</td>
+  </tr>
+  <tr>
+    <td>bin\Configurator.exe</td>
+    <td>The program configurator with built-in Restoration Master and Backup Ui Master</td>
+    <td>
+     - configures program; </BR>
+     - restores from backup; </BR>
+     - backups with Ui. </BR>
+    </td>
+  </tr>
+  <tr>
+    <td>bin\MD5.exe</td>
+    <td>Tool for making md5 checksumms</td>
+    <td>Counts md5 checksumms</td>
+  </tr>
+
+</tbody></table>
+</P>
+
+<H4>6. How was the program tested?</H4>
+<P>Program is tested in next ways
+<table>
+  <tbody><tr>
+    <th>Component:</th>
+    <th>How it tested:</th>
+  </tr>
+  <tr>
+    <td>Documentation</td>
+    <td>Hand testing according to ISO 9127-94 of chm help file.</td>
+  </tr>
+  <tr>
+    <td>Source codes</td>
+    <td>Code inspection with hands and Microsoft FxCop(rare)</td>
+  </tr>
+  <tr>
+    <td>Binaries</td>
+    <td>Hand testing</td>
+  </tr>
+  <tr>
+    <td>Program</td>
+    <td>Regression testing(rare)</br>Functional testing</br>Automated NUnit testing(rare). Such test cases are in the sources and in functional design documents to big tasks</td>
+  </tr>
+  <tr>
+    <td>Ui</td>
+    <td>Tabs testing</td>
+  </tr>
+</tbody></table>
+</P>
+
+<H4>7. How can I post a feedback about documentation?</H4>
+<P>You can do it at sourceforge.net forum <A href="https://sourceforge.net/tracker/?func=add&group_id=195114&atid=952142" target="_blank">https://sourceforge.net/tracker/?func=add&group_id=195114&atid=952142</A></P>
+
+<H4>8. What are the standards were used during development of software?</H4>
+<P>They are the GOST RF ISO 9127-94, internal code style guide and internal testing guide</P>
+
+<H4>9. What should I do if the configurator fails to load settings?</H4>
+<P>You should reset them either with running configurator with special switch or by removing configuration files</P>
+
+<H4>10. What should I do to make program to run in full mode?</H4>
+<P>You should use NTFS at system drive and install Windows OS that supports encrypted file system</P>
+
+<H4>11. What should I do if backup fails?</H4>
+<P>You should investigate reasons why backup failled. To do this please open Configurator and open the backup log. If there will be not enough information you can try to set log mode to Setup and repeat backup. There will be more information. If nothing helped you can ask for support</P>
+
+<H4>12. What should I do if I cannot run the program?</H4>
+<P>Make sure that all requirements are satisfied. If nothing helped you can ask for support</P>
+
+<H4>13. How to inegrate the Console Backup tool with Windows Scheduler</H4>
+<P>Please see the next <a href="../scheduler/IntergrationWithWindowsScheduler.htm">guide</a></P>
+
+<H4>14. BUtil Scheduler does not work when i didn't logged to the system!</H4>
+<P>Yes, it works in standard way only when you logged to the system, but you can either inegrate the Console Backup tool or this software with Windows Scheduler to avoid this. For the guide please see the next <a href="../scheduler/IntergrationWithWindowsScheduler.htm">document</a></P>
+
+<H4>15. What are the main sphears of using the software?</H4>
+<P>Sotware was written to be used at home as personal backup program on Windows OS.</P>
+
+<H4>16. How can i compile the software ?</H4>
+<P><B>How to compile solution without problems?</B></P>
+</P>
+Must be installed</P>
+<UL>
+ <LI>Microsoft .Net 2.0.5</LI>
+ <LI>Windows XP Professional SP2 or SP3</LI>
+ <LI>BULocalization 3.2 (sourceforge.net/projects/bulocalization)</LI>
+ <LI>Microsoft Visual Studio 2010 Beta2 or SharpDevelop4</LI>
+ <LI>Windows Html Help Workshop</LI>
+ <LI>InnoSetup</LI>
+</UL>
+</P>
+<P>Special note: sources must be unpacked to folder with english name. Folder path to sources should not contain blanks.</P>
+<P>1. Windows Html Help Workshop</P>
+<P>1.1. Change path to this tool in pre-build script in Core library on 'RELEASE' configuration in properties of a project</P>
+<P></P>
+<P>2. Updating 7-zip 32 package</P>
+<P>2.1. Package should installed to '7-zip' folder</P>
+<P>2.2. Md5-checksumms of some components should be updated in code</P>
+<P>2.2.1. open and compile solution in Visual Studio 2010</P>
+<P>2.2.2. go to 'Output\Debug\bin' folder and execute command</P>
+<P>md5 dev</P>
+<P>2.2.3. all md5 checksumms must be seted to appropriate constants in file</P>
+<P>\sources\Backup.Core\FileSystem\Files.cs:</P>
+<P>Packer7ZipExeMD5 = "93C7B7A3E3051BBB9630E41425CFDB3C";</P>
+<P>Packer7ZipGExeMD5 ="3F317B59A522F0BC19AC1620BBEA0718";</P>
+<P>Packer7ZipDllMD5 = "CA41D56630191E61565A343C59695CA1";</P>
+<P></P>
+<P>4. Inno Setup</P>
+<P>4.1. Edit the pre-build compilation for Core library in 'Release' configuration</P>
+<H4>17. What Should I Do If Program Faills To Load Settings?</H4>
+<P>You can either run program with special argument or delete options files in %appdata%\butil-xx folder.</P>
+
+<H4>18. How Can I Make The Software Work?</H4>
+<P>You can just install the software package. If you donloaded the binaries archive you can extract it any folder you like.</P>
+<P>First program configuration can be done in Configurator. After that you can use other tools and can perform backup.</P>
+
+<H4>19. What's About Support of Microsoft Outlook Mail Backups?</H4>
+<P>This feature is not supported, because program will have to terminate Outlook in order to correctly backup the PST file, find the file location and that start the Outlook again. Backups must be taken in MsExchange on server side, also free mail providers takes care about backups of data of their data.</P>
+<P>But if you want to do this using this tool, you may do the following workaround:</P>
+<UL>
+ <LI>In run before backup add a command to kill Outlook process: c:\windows\system32\taskkill.exe with arguments: /im outlook.exe</LI>
+ <LI>Add PST file to to 'What';</LI>
+ <LI>In run after backup add a command to start Outlook;</LI>
+ <LI>Configure computer to not sleep at 2 AM;</LI>
+ <LI>Schedule the backup at this time;</LI>
+</UL>
+<P>Also you may look for Microsoft Sync Toy and Data Mills</P>
+
+<H4>20. What's About Support of Internet Explorer Settings Backup?</H4>
+<P>Please download the special tools designed to do this and add running of them as a special task before backup in some folder, add this folder to backup items.</P>
+
+</BODY>
+</HTML>
