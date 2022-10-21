@@ -3,6 +3,7 @@ using System.Xml;
 using System.Globalization;
 using System.IO;
 using BUtil.Core.FileSystem;
+using System.Net;
 
 namespace BUtil.Core.Misc
 {
@@ -20,23 +21,36 @@ namespace BUtil.Core.Misc
 		/// <exception cref="InvalidOperationException">Any problems</exception>
 		public static bool CheckForUpdate(out string newVersion, out string changes)
 		{
-			try
+            var previous = ServicePointManager.SecurityProtocol;
+            
+            try
 			{
-				XmlDocument document = new XmlDocument();
+                ServicePointManager.SecurityProtocol = (SecurityProtocolType)768 | (SecurityProtocolType)3072;
 
-				var url = SupportManager.GetLink(SupportRequest.UpdateInfo);
-				document.Load(url);
+                using (WebClient client = new WebClient())
+                {
+                    var url = SupportManager.GetLink(SupportRequest.UpdateInfo);
+                    string updateInfoContent = client.DownloadString(url);
 
-				newVersion = document.SelectSingleNode("//xml/version").InnerText;
-				changes = document.SelectSingleNode("//xml/changes").InnerText.Replace(@"\n", Environment.NewLine);
-		
-				double versionCurrent = double.Parse(CopyrightInfo.Version, CultureInfo.InvariantCulture);
-				double thatVersion = double.Parse(newVersion, CultureInfo.InvariantCulture);
-				return versionCurrent < thatVersion;
+                    var document = new XmlDocument();
+                    document.LoadXml(updateInfoContent);
+
+                    newVersion = document.SelectSingleNode("//latest/version").InnerText;
+                    changes = document.SelectSingleNode("//latest/changes").InnerText.Replace(@"\n", Environment.NewLine);
+
+                    double versionCurrent = double.Parse(CopyrightInfo.Version, CultureInfo.InvariantCulture);
+                    double thatVersion = double.Parse(newVersion, CultureInfo.InvariantCulture);
+                    return versionCurrent < thatVersion;
+                }
 			}
 			catch(IOException e) { throw new InvalidOperationException(e.Message, e); }
 			catch(XmlException e) { throw new InvalidOperationException(e.Message, e); }
 			catch(System.Security.SecurityException e) { throw new InvalidOperationException(e.Message, e); }
+			finally
+			{
+				ServicePointManager.SecurityProtocol = previous;
+
+            }
 		}
 	}
 }

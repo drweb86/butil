@@ -46,7 +46,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <StartAction>Project</StartAction>
     <StartArguments>-debug</StartArguments>
-    <Optimize>False</Optimize>
     <StartProgram>..\md5Signer\bin\Debug\md5Signer.exe</StartProgram>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
