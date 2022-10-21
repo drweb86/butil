@@ -4,15 +4,16 @@ namespace BUtil.Core.Misc
 {
     public enum SupportRequest
     {
-        Support,
-        NewFeature,
-        BugReport,
-        VisitHomepage,
-        OpenDownloadPage,
+        Homepage,
+        Issue,
+        Documentation,
         SevenZip,
         ZipSolution,
         BULocalization,
-        SharpDevelop,
-        VirtuaWin
+        VirtuaWin,
+        BackupWizard,
+        ManageLogs,
+        RestorationWizard,
+        Releases
     }
 }

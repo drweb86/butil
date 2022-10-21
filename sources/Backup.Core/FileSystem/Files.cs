@@ -36,19 +36,11 @@ namespace BUtil.Core.FileSystem
 		static readonly string _SevenZipPackerDll = 
 			Path.Combine(Directories.SevenZipFolder, "7z.dll");
 		
-		static readonly string _HelpFile = 
-			Path.Combine(Directories.DocumentsDir, "Manual.chm");
-		
 		static readonly string _Scheduler = 
 			Path.Combine(Directories.BinariesDir, Constants.TrayApplicationProcessName + ".exe");
 		
-#if DEBUG // This is a workaround of Sharp Develop bug with desktop location
-        static readonly string _BugReportFile = 
-        	Path.Combine(@"C:\Documents and Settings\drweb86\Рабочий стол", "BUtil BUG report.txt");
-#else
         static readonly string _BugReportFile = 
         	Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), "BUtil BUG report.txt");
-#endif
 
         #endregion
 
@@ -94,11 +86,6 @@ namespace BUtil.Core.FileSystem
 		{
 			get { return _SevenZipGPacker; }
 		}
-
-		public static string HelpFile
-        {
-			get { return _HelpFile; }
-        }
 
 		public static string ProfileFile
 		{

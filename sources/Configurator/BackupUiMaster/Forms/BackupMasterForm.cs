@@ -6,7 +6,6 @@ using System.Windows.Forms;
 using System.Threading;
 using BULocalization;
 using BUtil.Core.PL;
-using BUtil.Core.FileSystem;
 using BUtil.Core;
 using BUtil.Core.Options;
 using BUtil.Core.Misc;
@@ -588,7 +587,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 		
 		void HelpButtonClick(object sender, EventArgs e)
 		{
-			Help.ShowHelp(this, Files.HelpFile, HelpNavigator.Topic, "backupMaster/index.htm");
+            SupportManager.DoSupport(SupportRequest.BackupWizard);
 		}
 	}
 }

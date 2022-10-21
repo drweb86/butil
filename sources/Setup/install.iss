@@ -7,9 +7,9 @@
 AppName=BUtil
 AppVerName=BUtil 5.0Alpha3
 AppPublisher=Siarhei Kuchuk
-AppPublisherURL=http://www.sourceforge.net/projects/butil
-AppSupportURL=http://www.sourceforge.net/projects/butil
-AppUpdatesURL=http://www.sourceforge.net/projects/butil
+AppPublisherURL=https://github.com/drweb86/butil
+AppSupportURL=https://github.com/drweb86/butil
+AppUpdatesURL=https://github.com/drweb86/butil
 DefaultDirName={pf}\BUtil\5.0Alpha
 DefaultGroupName={cm:Backup}\BUtil 5.0Alpha3
 AllowNoIcons=yes
@@ -97,7 +97,8 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Source: "..\..\Output\BUtil\*.*"; Excludes: ".svn"; DestDir: "{app}"; Flags: recursesubdirs
 
 [INI]
-Filename: "{app}\Configurator.url"; Section: "InternetShortcut"; Key: "URL"; String: "http://www.sourceforge.net/projects/butil"
+Filename: "{app}\Configurator.url"; Section: "InternetShortcut"; Key: "URL"; String: "https://github.com/drweb86/butil"
+Filename: "{app}\Help.url"; Section: "InternetShortcut"; Key: "URL"; String: "https://github.com/drweb86/butil/blob/master/help/TOC.md"
 
 [Icons]
 ; Main app data
@@ -111,7 +112,7 @@ Name: "{group}\{cm:Journals}"; Filename: "{app}\bin\Configurator.exe"; Parameter
 Name: "{group}\{cm:Toolkit}\{cm:Md5_Signer}"; Filename: "{app}\bin\MD5.exe"
 
 ; Documentation
-Name: "{group}\{cm:Documentation}\{cm:Manual}"; Filename: "{app}\end-user-docs\Manual.chm"
+Name: "{group}\{cm:Documentation}\{cm:Manual}"; Filename: "{app}\Help.url"
 Name: "{group}\{cm:Documentation}\{cm:ProgramOnTheWeb,BUtil}"; Filename: "{app}\Configurator.url"
 
 ; Uninstall
@@ -126,10 +127,4 @@ Filename: "{app}\bin\Configurator.exe"; Description: "{cm:LaunchProgram,{cm:Conf
 
 [UninstallDelete]
 Type: files; Name: "{app}\Configurator.url"
-
-
-
-
-
-
-
+Type: files; Name: "{app}\Help.url"

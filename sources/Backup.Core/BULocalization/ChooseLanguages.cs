@@ -1,8 +1,4 @@
-﻿//
-// BULocalization package 3.2 from http://www.sourceforge.net/projects/bulocalization
-//
-
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace BULocalization

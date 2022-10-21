@@ -13,7 +13,6 @@ namespace BUtil.Core.FileSystem
 		private static readonly string _sevenZipFolder = Path.Combine(_installdir, "7-zip");
 		private static readonly string _dataFolder = Path.Combine(_installdir, "data");
 		private static readonly string _localsFolder = Path.Combine(_installdir, "local");
-		private static readonly string _docsFolder = Path.Combine(_installdir, "end-user-docs");
 		
 		private static readonly string _applicationDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
@@ -30,11 +29,6 @@ namespace BUtil.Core.FileSystem
         {
             get { return _userDataFolder; }
         }
-
-		public static string DocumentsDir
-		{
-			get { return _docsFolder; }
-		}
 
 		public static string BinariesDir
 		{

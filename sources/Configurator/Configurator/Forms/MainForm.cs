@@ -211,7 +211,7 @@ namespace BUtil.Configurator.Configurator.Forms
 
         private void OnHelpToolStripMenuItemClick(object sender, EventArgs e)
         {
-            SupportManager.StartProcess(Files.HelpFile, true);
+            SupportManager.DoSupport(SupportRequest.Documentation);
         }
 
         private void OnAboutToolStripMenuItemClick(object sender, EventArgs e)

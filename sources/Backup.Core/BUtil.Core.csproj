@@ -270,11 +270,6 @@ rem Copying of scripts
 md $(SolutionDir)\..\Output\Release\bin
 xcopy $(SolutionDir)\..\Scripts $(SolutionDir)\..\Output\Release\bin
 
-rem //TODO:rem RELEASE configuration only - Building the help file
-rem //TODO: md $(SolutionDir)..\Output\Release\end-user-docs
-rem //TODO:cd $(SolutionDir)..\help
-rem //TODO:start "" "C:\Program Files\HTML Help Workshop\hhc.exe" BUtil.hhp
-
 rem Building the Deploy folder
 cd $(SolutionDir)..\Output
 rmdir Deployment /s /q
@@ -307,11 +302,6 @@ xcopy $(SolutionDir)..\data $(SolutionDir)..\Output\BUtil\data
 rem Copying of scripts
 md $(SolutionDir)..\Output\BUtil\bin
 xcopy $(SolutionDir)..\Scripts $(SolutionDir)..\Output\BUtil\bin
-
-rem //TODO: rem BUtil configuration only - Building the help file
-rem //TODO: md $(SolutionDir)..\Output\BUtil\end-user-docs
-rem //TODO: cd $(SolutionDir)..\help
-rem //TODO: start "" "C:\Program Files\HTML Help Workshop\hhc.exe" BUtil.hhp
 
 rem Building the Deploy folder
 cd $(SolutionDir)..\Output

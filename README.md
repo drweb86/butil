@@ -2,12 +2,12 @@
 
 Welcome to the 5.0 Alpha (16 May 2010) version BUtil!
 
-![BUtil Logotype](../../wiki/Readme%20Assets/Logotype.bmp)
+![BUtil Logotype](./help/Readme%20Assets/Logotype.bmp)
 
 BUtil is a powerfull set of tools for creating backups of documents and other data on your PC.
 
-![The main window of configurator](../../wiki/Readme%20Assets/Screenshot%201.jpg)
-![The backup ui master](../../wiki/Readme%20Assets/Screenshot%202.jpg)
+![The main window of configurator](./help/Readme%20Assets/Screenshot%201.jpg)
+![The backup ui master](./help/Readme%20Assets/Screenshot%202.jpg)
 
 ## Key Functions And Characteristics Of Software
 
@@ -31,11 +31,11 @@ Backup, Restoration, Desktop applications, Scheduling, AES-256, 7-zip, md5, .Net
 
 ## The documentation for BUtil includes:
 
-- [Congifurator](../../wiki/configurator/CommandLineArguments.htm)
-- [Command line version of backup tool](../../wiki/Backup-Console-Tool)
-- [Restorate](../../wiki/Restore/Restoration-Wizard)
-- [Checksum Console Tool](../../wiki/Checksum-Console-Tool)
-- [Scheduler](../../wiki/Schedule/Scheduler-Tray-Application/Scheduler-Tray-Application)
+- [Congifurator](./help/configurator/CommandLineArguments.htm)
+- [Command line version of backup tool](./help/Backup%20Console%20Tool.md)
+- [Restorate](./help/Restore/Restoration%20Wizard.md)
+- [Checksum Console Tool](./help/Checksum%20Console%20Tool.md)
+- [Scheduler](./help/Schedule/Scheduler%20Tray%20Application/Scheduler%20Tray%20Application.md)
 
 and many more. See [all topics](../../wiki) .
 
@@ -82,16 +82,9 @@ When you're providing logs, don't forget to set logging level to SUPPORT
 
 
 Copyright (c) 2008-2010 Siarhei Kuchuk
-[Web site:](http://butil.codeplex.com/)
-[Secondary web site](http://www.sourceforge.net/projects/butil)
-[Sources repository](http://butil.codeplex.com/SourceControl/list/changesets)
-[Support:](https://sourceforge.net/tracker/?func=add&group_id=195114&atid=952142)
-[Feature Request:](https://sourceforge.net/tracker/?func=add&group_id=195114&atid=952144)
-[Bug Report:](https://sourceforge.net/tracker/?func=add&group_id=195114&atid=952141)
-[Help:](https://sourceforge.net/forum/forum.php?forum_id=690646)
-[Discussion:](https://sourceforge.net/forum/forum.php?forum_id=690645)
-[Forum for developers:](https://sourceforge.net/forum/forum.php?forum_id=690647)
+[Sources repository](https://github.com/drweb86/butil)
+[Bug Report:](https://github.com/drweb86/butil/issues)
+[Help:](https://github.com/drweb86/butil/blob/master/help/TOC.md)
+[Discussion:](https://github.com/drweb86/butil/discussions)
 
 Support period is usually one time per week
-
-

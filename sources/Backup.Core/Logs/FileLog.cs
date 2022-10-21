@@ -77,9 +77,9 @@ namespace BUtil.Core.Logs
                                   	File.ReadAllText(Files.FileLogTemplate), 
                                   	DateTime.Now.ToString("f"),
                                   	Translation.Current[509],
-                                  	SupportManager.GetLink(SupportRequest.VisitHomepage),
-                                  	SupportManager.GetLink(SupportRequest.BugReport),
-                                  	SupportManager.GetLink(SupportRequest.Support),
+                                  	SupportManager.GetLink(SupportRequest.Homepage),
+                                  	SupportManager.GetLink(SupportRequest.Issue),
+                                  	SupportManager.GetLink(SupportRequest.Issue),
                                   	Translation.Current[288],
                                   	Translation.Current[290],
                                   	Translation.Current[291]));

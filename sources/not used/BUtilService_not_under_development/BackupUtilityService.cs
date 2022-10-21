@@ -1,16 +1,3 @@
-#region Copyright
-/*
- * Copyright (c)Cuchuk Sergey Alexandrovich, 2007-2008. All rights reserved
- * Project: BUtil
- * Link: http://www.sourceforge.net/projects/butil
- * License: GNU GPL or SPL with limitations
- * E-mail:
- * Cuchuk.Sergey@gmail.com
- * toCuchukSergey@yandex.ru
- */
-#endregion
-
-
 using System;
 using System.Collections.Generic;
 using System.ServiceProcess;

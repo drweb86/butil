@@ -97,7 +97,7 @@ namespace BUtil.RestorationMaster
 		
 		void helpButtonClick(object sender, EventArgs e)
 		{
-			Help.ShowHelp(this, Files.HelpFile, HelpNavigator.Topic, "restoration/Restoration.htm");
-		}
+            SupportManager.DoSupport(SupportRequest.RestorationWizard);
+        }
 	}
 }

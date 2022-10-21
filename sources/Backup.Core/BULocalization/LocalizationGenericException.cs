@@ -1,5 +1,3 @@
-// BULocalization package 3.2 from http://www.sourceforge.net/projects/bulocalization
-
 using System;
 using System.Runtime.Serialization;
 using System.Security.Permissions;

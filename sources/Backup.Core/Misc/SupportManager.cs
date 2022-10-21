@@ -17,19 +17,20 @@ namespace BUtil.Core.Misc
 			public bool UseShellExecute;
 		}
 		
-		static readonly string[] _LINKS = new string[]
+		static readonly string[] _LINKS_UPDATED = new string[]
 		{
-			@"https://sourceforge.net/tracker/?func=add&group_id=195114&atid=952142",
-			@"https://sourceforge.net/tracker/?func=add&group_id=195114&atid=952144",
-			@"https://sourceforge.net/tracker/?func=add&group_id=195114&atid=952141",
-			@"https://sourceforge.net/projects/butil/",
-			@"https://sourceforge.net/projects/butil/",
-			@"http://www.7-zip.org",
-			@"http://www.codeplex.com/zipsolution",
-			@"http://www.sourceforge.net/projects/bulocalization",
-			@"http://sharpdevelop.net",
-			@"http://virtuawin.sourceforge.net/"
-		};
+			"https://github.com/drweb86/butil",
+			"https://github.com/drweb86/butil/issues",
+			"https://github.com/drweb86/butil/blob/master/help/TOC.md",
+			"http://www.7-zip.org",
+			"http://www.codeplex.com/zipsolution",
+			"http://www.sourceforge.net/projects/bulocalization",
+			"http://virtuawin.sourceforge.net/",
+			"https://github.com/drweb86/butil/blob/master/help/Backup/Backup%20via%20Wizard/Backup%20Wizard.md",
+            "https://github.com/drweb86/butil/blob/master/help/Manage%20Logs/Manage%20Logs.md",
+            "https://github.com/drweb86/butil/blob/master/help/Restore/Restoration%20Wizard.md",
+            "https://github.com/drweb86/butil/releases",
+        };
 
 		/// <summary>
 		/// Performs support with providing information about errors. Does not throw exceptions
@@ -39,9 +40,9 @@ namespace BUtil.Core.Misc
 		{
 			int index = (int)kind;
 
-			if (index < _LINKS.Length)
+			if (index < _LINKS_UPDATED.Length)
 			{
-				string webLink = _LINKS[index];
+				string webLink = _LINKS_UPDATED[index];
 				OpenWebLink(webLink);
 			}
 			else
@@ -62,9 +63,9 @@ namespace BUtil.Core.Misc
 		{
 			int index = (int)kind;
 
-			if (index < _LINKS.Length)
+			if (index < _LINKS_UPDATED.Length)
 			{
-				return _LINKS[index];
+				return _LINKS_UPDATED[index];
 			}
 			else
 				throw new NotImplementedException(kind.ToString());

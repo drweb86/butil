@@ -4,8 +4,8 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Globalization;
 using BULocalization;
-using BUtil.Core.FileSystem;
 using BUtil.Core.Logs;
+using BUtil.Core.Misc;
 
 namespace BUtil.Configurator.LogsManagement
 {
@@ -269,8 +269,8 @@ namespace BUtil.Configurator.LogsManagement
 		
 		void helpButtonClick(object sender, EventArgs e)
 		{
-			Help.ShowHelp(this, Files.HelpFile, HelpNavigator.Topic, "logsViewer/index.htm");
-		}		
+            SupportManager.DoSupport(SupportRequest.ManageLogs);
+        }		
 
 		#endregion
 	}

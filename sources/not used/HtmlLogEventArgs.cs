@@ -1,15 +1,4 @@
-﻿#region Copyright
-/*
- * Copyright (c)Cuchuk Sergey Alexandrovich, 2007-2008. All rights reserved
- * Project: BUtil
- * Link: http://www.sourceforge.net/projects/butil
- * License: GNU GPL or SPL with limitations
- * E-mail:
- * Cuchuk.Sergey@gmail.com
- * toCuchukSergey@yandex.ru
- */
-#endregion
-/*
+﻿/*
 * configuring for formatting archiver output
 * if (_onLogEvent != null)
                     // some problems may occur with this -=_onLogEvent=-

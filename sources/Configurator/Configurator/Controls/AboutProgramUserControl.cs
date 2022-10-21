@@ -72,28 +72,28 @@ namespace BUtil.Configurator.Controls
 		
 		void VisitWebSiteLabelClick(object sender, EventArgs e)
 		{
-			SupportManager.DoSupport(SupportRequest.VisitHomepage);
+			SupportManager.DoSupport(SupportRequest.Homepage);
 		}
 		
 		void SuggestAFeatureLabelClick(object sender, EventArgs e)
 		{
-			SupportManager.DoSupport(SupportRequest.NewFeature);
+			SupportManager.DoSupport(SupportRequest.Issue);
 		}
 		
 		void ReportABugLabelClick(object sender, EventArgs e)
 		{
-			SupportManager.DoSupport(SupportRequest.BugReport);
+			SupportManager.DoSupport(SupportRequest.Issue);
 		}
 		
 		void SupportLabelClick(object sender, EventArgs e)
 		{
-			SupportManager.DoSupport(SupportRequest.Support);
+			SupportManager.DoSupport(SupportRequest.Issue);
 		}
 		
 		void DocumentationLabelClick(object sender, EventArgs e)
 		{
-			SupportManager.StartProcess(Files.HelpFile, true);
-		}
+            SupportManager.DoSupport(SupportRequest.Documentation);
+        }
 
 		void CheckForUpdatesLabelClick(object sender, EventArgs e)
 		{
@@ -104,7 +104,7 @@ namespace BUtil.Configurator.Controls
 				if (UpdateChecker.CheckForUpdate(out newVersion, out changes))
 				{
 					Messages.ShowInformationBox(string.Format(Translation.Current[531], newVersion, changes));
-					SupportManager.DoSupport(SupportRequest.OpenDownloadPage);
+					SupportManager.DoSupport(SupportRequest.Releases);
 				}
 				else
 				{
@@ -143,10 +143,7 @@ namespace BUtil.Configurator.Controls
 		
 		void SharpDevelopPictureBoxClick(object sender, EventArgs e)
 		{
-			if (!_options.HaveNoNetworkAndInternet)
-			{
-				SupportManager.DoSupport(SupportRequest.SharpDevelop);
-			}
+			// DELETE ME:
 		}
 		
 		void VirtuawinPictureBoxClick(object sender, EventArgs e)
@@ -161,7 +158,7 @@ namespace BUtil.Configurator.Controls
 		{
 			if (!_options.HaveNoNetworkAndInternet)
 			{
-				SupportManager.DoSupport(SupportRequest.VisitHomepage);
+				SupportManager.DoSupport(SupportRequest.Homepage);
 			}
 		}
 	}
