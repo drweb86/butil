@@ -35,8 +35,8 @@ namespace BUtil.Core.Misc
                     var document = new XmlDocument();
                     document.LoadXml(updateInfoContent);
 
-                    newVersion = document.SelectSingleNode("//latest/version").InnerText;
-                    changes = document.SelectSingleNode("//latest/changes").InnerText.Replace(@"\n", Environment.NewLine);
+                    newVersion = document.SelectSingleNode("//LatestUpdate/Version").InnerText;
+                    changes = document.SelectSingleNode("//LatestUpdate/Changes").InnerText.Replace(@"\n", Environment.NewLine);
 
                     double versionCurrent = double.Parse(CopyrightInfo.Version, CultureInfo.InvariantCulture);
                     double thatVersion = double.Parse(newVersion, CultureInfo.InvariantCulture);

@@ -213,24 +213,22 @@
   </ItemGroup>
   <PropertyGroup>
     <PreBuildEvent>cd $(SolutionDir)..\Output
-rmdir BUtil /s /q
-md BUtil
 
 rem 7-zip
 md $(SolutionDir)..\Output\BUtil\7-zip
-xcopy $(SolutionDir)..\7-zip $(SolutionDir)..\Output\BUtil\7-zip /E
+xcopy $(SolutionDir)..\7-zip $(SolutionDir)..\Output\BUtil\7-zip /E /Y
 
 rem Copying of localization files
 md $(SolutionDir)..\Output\BUtil\local
-xcopy $(SolutionDir)LocalizationProject $(SolutionDir)..\Output\BUtil\local
+xcopy $(SolutionDir)LocalizationProject $(SolutionDir)..\Output\BUtil\local /Y
 
 rem Copying of data folder
 md $(SolutionDir)..\Output\BUtil\data
-xcopy $(SolutionDir)..\data $(SolutionDir)..\Output\BUtil\data
+xcopy $(SolutionDir)..\data $(SolutionDir)..\Output\BUtil\data /Y
 
 rem Copying of scripts
 md $(SolutionDir)..\Output\BUtil\bin
-xcopy $(SolutionDir)..\Scripts $(SolutionDir)..\Output\BUtil\bin
+xcopy $(SolutionDir)..\Scripts $(SolutionDir)..\Output\BUtil\bin /Y
 
 rem Building the Deploy folder
 cd $(SolutionDir)..\Output

@@ -6,7 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E83F0C08-6D2B-467D-9572-1E8309426237}"
 	ProjectSection(SolutionItems) = preProject
 		Development.key.snk = Development.key.snk
-		..\update.xml = ..\update.xml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Increments", "Increments", "{785B02C5-B9C0-4D2E-A4F3-D98997915D8A}"
