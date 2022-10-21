@@ -7,6 +7,9 @@ BUtil
 
 BUtil is a powerfull set of tools for creating backups of documents and other data on your PC.
 
+![The main window of configurator](./help/screenshot-1.jpg)
+![The backup ui master](./help/screenshot-2.jpg)
+
 ## Key Functions And Characteristics Of Software
 
 - It can store backups on multiple HDD, flash, remote FTP servers and shared folders over the network;
@@ -30,7 +33,7 @@ Backup, Restoration, Desktop applications, Scheduling, AES-256, 7-zip, md5, .Net
 ## The documentation for BUtil includes:
 
 - [Congifurator](./help/configurator/CommandLineArguments.htm)
-- [Command line version of backup tool](./help/backup/index.htm)
+- [Command line version of backup tool](./help/console-backup-tool.md)
 - [Restoration tool](./help/restoration/CommandLineArguments.htm)
 - [Md5 checksumm tool](./help/md5/CommandLineArguments.htm)
 - [Scheduler tool](./help/scheduler/Scheduling.htm)
