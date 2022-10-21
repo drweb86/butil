@@ -2,8 +2,7 @@
 
 Welcome to the 5.0 Alpha (16 May 2010) version BUtil!
 
-BUtil
-![Logotype](./help/Logo.bmp)
+![BUtil Logotype](./help/logotype.bmp)
 
 BUtil is a powerfull set of tools for creating backups of documents and other data on your PC.
 
@@ -23,7 +22,7 @@ BUtil is a powerfull set of tools for creating backups of documents and other da
 - .Net based application;
 - [Unstructured Data repository model](./help/general/Glossary.htm#udrm)
 - [Copying files selection and extraction of file data](./help/general/Glossary.htm#cfsaeofd)
-- Built in 7-zip <a href="./general/Glossary.htm#cmodado">[compression](./help/general/Glossary.htm#cmodado)
+- Built in 7-zip [compression](./help/general/Glossary.htm#cmodado)
 - Built in 7-zip AES-256 [encryption](./help/general/Glossary.htm#emodado)
 
 ## Keywords
@@ -35,7 +34,7 @@ Backup, Restoration, Desktop applications, Scheduling, AES-256, 7-zip, md5, .Net
 - [Congifurator](./help/configurator/CommandLineArguments.htm)
 - [Command line version of backup tool](./help/console-backup-tool.md)
 - [Restoration tool](./help/restoration/CommandLineArguments.htm)
-- [Md5 checksumm tool](./help/md5/CommandLineArguments.htm)
+- [Md5 checksumm console tool](./help/console-md5-tool.md)
 - [Scheduler tool](./help/scheduler/Scheduling.htm)
 
 ## See Also
