@@ -41,8 +41,8 @@ and many more. See [all topics](../../wiki) .
 
 ## See Also
 
-- [Version history](../../wiki/general/VersionHistory.htm)
-- [Frequently Asked Questions (FAQ)](../../wiki/general/Faq.htm)
+- [Version history](./help/Other/Version%20History.md)
+- [Frequently Asked Questions (FAQ)](./help/Other/Frequently%20Asked%20Questions.md)
 
 ## Requirements
 
@@ -79,6 +79,20 @@ What behaviour do you expect(you can attach sreenshots and videorolics and descr
 How to reproduce the issue(you can attach sreenshots and videorolics
 
 When you're providing logs, don't forget to set logging level to SUPPORT
+
+## Compilation
+
+How to compile solution without problems?
+
+Must be installed:
+- Microsoft .Net 2.0.5;
+- Windows 11x64 Professional;
+- [BULocalization 3.2](sourceforge.net/projects/bulocalization);
+- Microsoft Visual Studio 2022;
+- InnoSetup 6.2.1 (must be installed in default directory).
+
+Special note: sources must be unpacked to folder with english name. Folder path to sources should not contain blanks.
+
 
 
 Copyright (c) 2008-2010 Siarhei Kuchuk
