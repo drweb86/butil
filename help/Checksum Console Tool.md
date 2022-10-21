@@ -1,4 +1,6 @@
-# Command Line Arguments of Md5 Tool
+# Checksum Console Tool
+
+md5
 
 ## Usage
 md5 'list of arguments separated with blank'

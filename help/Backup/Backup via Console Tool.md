@@ -1,4 +1,4 @@
-# Command Line Arguments of Console Backup Tool
+# Backup Console Tool
 
 ## Usage
 backup 'list of arguments separated with blank'

@@ -2,12 +2,12 @@
 
 Welcome to the 5.0 Alpha (16 May 2010) version BUtil!
 
-![BUtil Logotype](./help/logotype.bmp)
+![BUtil Logotype](./help/Readme%20Assets/Logotype.bmp)
 
 BUtil is a powerfull set of tools for creating backups of documents and other data on your PC.
 
-![The main window of configurator](./help/screenshot-1.jpg)
-![The backup ui master](./help/screenshot-2.jpg)
+![The main window of configurator](./help/Readme%20Assets/Screenshot%201.jpg)
+![The backup ui master](./help/Readme%20Assets/Screenshot%202.jpg)
 
 ## Key Functions And Characteristics Of Software
 
@@ -22,8 +22,8 @@ BUtil is a powerfull set of tools for creating backups of documents and other da
 - .Net based application;
 - [Unstructured Data repository model](./help/general/Glossary.htm#udrm)
 - [Copying files selection and extraction of file data](./help/general/Glossary.htm#cfsaeofd)
-- Built in 7-zip [compression](./help/general/Glossary.htm#cmodado)
-- Built in 7-zip AES-256 [encryption](./help/general/Glossary.htm#emodado)
+- Built in [7-zip](https://www.7-zip.org/) [compression](https://en.wikipedia.org/wiki/Data_compression)
+- Built in [7-zip](https://www.7-zip.org/) [AES-256](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) [encryption](https://en.wikipedia.org/wiki/Encryption).
 
 ## Keywords
 
@@ -32,10 +32,12 @@ Backup, Restoration, Desktop applications, Scheduling, AES-256, 7-zip, md5, .Net
 ## The documentation for BUtil includes:
 
 - [Congifurator](./help/configurator/CommandLineArguments.htm)
-- [Command line version of backup tool](./help/console-backup-tool.md)
-- [Restoration tool](./help/restoration/CommandLineArguments.htm)
-- [Md5 checksumm console tool](./help/console-md5-tool.md)
-- [Scheduler tool](./help/scheduler/Scheduling.htm)
+- [Command line version of backup tool](./help/Backup%20Console%20Tool.md)
+- [Restorate](./help/Restore/Restoration%20Wizard.md)
+- [Checksum Console Tool](./help/Checksum%20Console%20Tool.md)
+- [Scheduler](./help/Schedule/Scheduler%20Tray%20Application.md)
+
+and many more. See [all topics](./help/TOC.md) .
 
 ## See Also
 
@@ -55,6 +57,7 @@ To function in full mode also required:
 - Windows OS should support EFS
 
 ### Hardware:
+
 - Pentium 3 computer or better, IA-32 but should work and on IA-64 architecture
 - 256 mb RAM
 - about 5 mb on HDD
