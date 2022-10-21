@@ -32,12 +32,12 @@ Backup, Restoration, Desktop applications, Scheduling, AES-256, 7-zip, md5, .Net
 ## The documentation for BUtil includes:
 
 - [Congifurator](../../wiki/configurator/CommandLineArguments.htm)
-- [Command line version of backup tool](../../wiki/Backup%20Console%20Tool.md)
-- [Restorate](../../wiki/Restore/Restoration%20Wizard.md)
-- [Checksum Console Tool](../../wiki/Checksum%20Console%20Tool.md)
-- [Scheduler](../../wiki/Schedule/Scheduler%20Tray%20Application/Scheduler%20Tray%20Application.md)
+- [Command line version of backup tool](../../wiki/Backup-Console-Tool)
+- [Restorate](../../wiki/Restore/Restoration-Wizard)
+- [Checksum Console Tool](../../wiki/Checksum-Console-Tool)
+- [Scheduler](../../wiki/Schedule/Scheduler-Tray-Application/Scheduler-Tray-Application)
 
-and many more. See [all topics](../../wiki/TOC.md) .
+and many more. See [all topics](../../wiki) .
 
 ## See Also
 
