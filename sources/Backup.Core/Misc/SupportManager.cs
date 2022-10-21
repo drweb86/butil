@@ -29,7 +29,8 @@ namespace BUtil.Core.Misc
 			"https://github.com/drweb86/butil/blob/master/help/Backup/Backup%20via%20Wizard/Backup%20Wizard.md",
             "https://github.com/drweb86/butil/blob/master/help/Manage%20Logs/Manage%20Logs.md",
             "https://github.com/drweb86/butil/blob/master/help/Restore/Restoration%20Wizard.md",
-            "https://github.com/drweb86/butil/releases",
+            "https://github.com/drweb86/butil/releases/latest",
+            "https://raw.githubusercontent.com/drweb86/butil/master/update.xml"
         };
 
 		/// <summary>

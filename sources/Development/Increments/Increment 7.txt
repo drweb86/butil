@@ -6,8 +6,6 @@
 - инсталлятор
 
 2. [DONE] BUtil - Bug report: 11:07:36 AM
-Please report about it here: 
-https://sourceforge.net/tracker/?func=add&group_id=195114&atid=952141
 4.2 Beta
 Method not found: 'Void System.Runtime.GCSettings.set_LatencyMode(System.Runtime.GCLatencyMode)'.
    at Backup.Ghost.Controller..ctor()
@@ -174,7 +172,6 @@ A few words about override of logging + question
 [FIXED] 7. При повржеедении катаалога с логами конфигуратор падает
 BUtil 4.6 - Bug report (08/20/2009 19:27)
 Please report about it here: 
-https://sourceforge.net/tracker/?func=add&group_id=195114&atid=952141
 Could not find a part of the path 'D:\temp\РґРґРґ'.
    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
    at System.IO.Directory.InternalGetFileDirectoryNames(String path, String userPathOriginal, String searchPattern, Boolean includeFiles, Boolean includeDirs, SearchOption searchOption)

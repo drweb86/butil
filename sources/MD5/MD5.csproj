@@ -15,7 +15,6 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <RunCodeAnalysis>False</RunCodeAnalysis>
-    <SourceAnalysisOverrideSettingsFile>C:\Documents and Settings\Сергей\Application Data\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
     <DelaySign>False</DelaySign>
     <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>

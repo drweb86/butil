@@ -17,7 +17,6 @@
     </UpgradeBackupLocation>
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <RunCodeAnalysis>false</RunCodeAnalysis>
-    <SourceAnalysisOverrideSettingsFile>C:\Documents and Settings\Сергей\Application Data\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
     <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
@@ -38,18 +37,17 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+     <OutputPath>$(SolutionDir)..\Output\BUtil\bin\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <OutputPath>..\..\Output\Debug\bin</OutputPath>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>Full</DebugType>
     <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <OutputPath>..\..\Output\Release\bin</OutputPath>
     <DebugSymbols>false</DebugSymbols>
     <DebugType>None</DebugType>
     <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
@@ -64,14 +62,6 @@
     <BaseAddress>4194304</BaseAddress>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <FileAlignment>4096</FileAlignment>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <OutputPath>..\..\Output\BUtil\bin\</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <OutputPath>..\..\Output\BUtil\bin\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Deployment|AnyCPU'">
     <OutputPath>bin\Deployment\</OutputPath>
@@ -222,65 +212,6 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <PreBuildEvent>rem Removal of files
-
-cd $(SolutionDir)..\Output
-rmdir Debug /s /q
-md Debug
-cd $(SolutionDir)
-
-rem Installation of 7-zip
-start "" $(SolutionDir)..\7-zip\7Zip32Installer.exe /S /D=$(SolutionDir)\..\Output\Debug\7-zip
-
-rem Copying of localization files
-md $(SolutionDir)\..\Output\Debug\local
-xcopy $(SolutionDir)\LocalizationProject $(SolutionDir)\..\Output\Debug\local
-
-rem Copying of data folder
-md $(SolutionDir)\..\Output\Debug\data
-xcopy $(SolutionDir)\..\data $(SolutionDir)\..\Output\Debug\data
-
-rem Copying of scripts
-md $(SolutionDir)\..\Output\Debug\bin
-xcopy $(SolutionDir)\..\Scripts $(SolutionDir)\..\Output\Debug\bin
-
-rem DEBUG configuration only - copying changes file for update feature testing
-xcopy $(SolutionDir)\..\Deploy\update.xml $(SolutionDir)\..\Output\Debug\bin</PreBuildEvent>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <PreBuildEvent>rem Removal of files
-
-cd $(SolutionDir)..\Output
-rmdir Release /s /q
-md Release
-
-rem Installation of 7-zip
-start "" $(SolutionDir)..\7-zip\7Zip32Installer.exe /S /D=$(SolutionDir)\..\Output\Release\7-zip
-
-rem Copying of localization files
-md $(SolutionDir)\..\Output\Release\local
-xcopy $(SolutionDir)\LocalizationProject $(SolutionDir)\..\Output\Release\local
-
-rem Copying of data folder
-md $(SolutionDir)\..\Output\Release\data
-xcopy $(SolutionDir)\..\data $(SolutionDir)\..\Output\Release\data
-
-rem Copying of scripts
-md $(SolutionDir)\..\Output\Release\bin
-xcopy $(SolutionDir)\..\Scripts $(SolutionDir)\..\Output\Release\bin
-
-rem Building the Deploy folder
-cd $(SolutionDir)..\Output
-rmdir Deployment /s /q
-md Deployment
-
-rem 1.1 Setup
-
-rem //TODO:cd Deployment
-rem //TODO:md 1.UploadToSf
-rem //TODO:"e:\2009\Inno Setup 5\ISCC.exe" $(SolutionDir)\Setup\install.iss</PreBuildEvent>
-  </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>cd $(SolutionDir)..\Output
 rmdir BUtil /s /q
@@ -297,7 +228,6 @@ xcopy $(SolutionDir)LocalizationProject $(SolutionDir)..\Output\BUtil\local
 rem Copying of data folder
 md $(SolutionDir)..\Output\BUtil\data
 xcopy $(SolutionDir)..\data $(SolutionDir)..\Output\BUtil\data
-
 
 rem Copying of scripts
 md $(SolutionDir)..\Output\BUtil\bin

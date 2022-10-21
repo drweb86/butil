@@ -17,7 +17,6 @@
     <StartupObject>BUtil.Ghost.Program</StartupObject>
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <RunCodeAnalysis>False</RunCodeAnalysis>
-    <SourceAnalysisOverrideSettingsFile>C:\Documents and Settings\Сергей\Application Data\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
     <DelaySign>False</DelaySign>
     <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
     <ApplicationIcon>..\Media\Images and Icons\My\Scheduler.ico</ApplicationIcon>

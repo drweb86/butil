@@ -18,14 +18,9 @@ namespace BUtil.Ghost
     	
     	static ProgramOptions _options;
  	    
-    	#if DEBUG // workaround of sharp develop bug with getting environment folders
-        static readonly string _SchedulerStartupCmd = 
-        	@"C:\Documents and Settings\сергей\Главное меню\Программы\Автозагрузка\" + Constants.TrayApplicationProcessName + CopyrightInfo.Version + ".cmd";
-        #else
         static readonly string _SchedulerStartupCmd = 
         	Path.Combine(Environment.GetFolderPath( Environment.SpecialFolder.Startup), 
         	             Constants.TrayApplicationProcessName + CopyrightInfo.Version + ".cmd");
-        #endif
     	
     	#endregion
     	

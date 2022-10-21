@@ -1,12 +1,13 @@
-﻿using System.Globalization;
+﻿using BUtil.Core.Misc;
+using System.Globalization;
 
 namespace BUtil.Core
 {
 	public static class CopyrightInfo
 	{
-        const string AppVersion = "5.0";// version can contain only 2 numbers due to implementation mechanizm for update
+        const string AppVersion = "5.0";
         static readonly string CopyRightNotice =
-            string.Format(CultureInfo.CurrentCulture, "BUtil - {0}\nhttp://sourceforge.net/projects/butil/\nhttp://butil.codeplex.com\n", AppVersion);
+            string.Format(CultureInfo.CurrentCulture, "BUtil - {0}\n{1}\n", AppVersion, SupportManager.GetLink(SupportRequest.Homepage));
 
 	    public static string Copyright
 	    {

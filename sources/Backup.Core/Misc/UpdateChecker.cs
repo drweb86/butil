@@ -23,8 +23,9 @@ namespace BUtil.Core.Misc
 			try
 			{
 				XmlDocument document = new XmlDocument();
-        
-				document.Load(Files.UpdateUrlXml);
+
+				var url = SupportManager.GetLink(SupportRequest.UpdateInfo);
+				document.Load(url);
 
 				newVersion = document.SelectSingleNode("//xml/version").InnerText;
 				changes = document.SelectSingleNode("//xml/changes").InnerText.Replace(@"\n", Environment.NewLine);

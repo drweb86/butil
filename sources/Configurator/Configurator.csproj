@@ -18,7 +18,6 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <SourceAnalysisOverrideSettingsFile>C:\Documents and Settings\Сергей\Application Data\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
     <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
     <StartupObject>BUtil.Configurator.Program</StartupObject>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>

@@ -23,7 +23,6 @@
     </UpgradeBackupLocation>
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <RunCodeAnalysis>false</RunCodeAnalysis>
-    <SourceAnalysisOverrideSettingsFile>C:\Documents and Settings\Сергей\Application Data\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
     <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
     <StartupObject>BUtil.ConsoleBackup.MainClass</StartupObject>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>

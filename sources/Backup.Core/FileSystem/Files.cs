@@ -7,14 +7,6 @@ namespace BUtil.Core.FileSystem
     {
 		#region Private fields
         
-#if DEBUG // Providing testing ability
-		const string _UPDATE_URL_XML = 
-			@"E:\DOCUMENTS\My WEB\DoctorWEB\butil\update.xml";
-#else
-		const string _UPDATE_URL_XML =
-            @"http://butil.sourceforge.net/update.xml";
-#endif
-
         static readonly string ProfileConfigFile = 
 			Path.Combine(Directories.UserDataFolder, "ProfileOptions.xml");
 		
@@ -57,11 +49,6 @@ namespace BUtil.Core.FileSystem
 
 		#region Properties
 		
-		public static string UpdateUrlXml
-		{
-			get { return _UPDATE_URL_XML; }
-		}
-
 		public static string Configurator
 		{
 			get { return _Configurator; }

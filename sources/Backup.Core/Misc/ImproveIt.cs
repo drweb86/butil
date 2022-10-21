@@ -26,7 +26,7 @@ namespace BUtil.Core.Misc
                 builder.AppendLine();
                 builder.AppendLine("BUtil " + CopyrightInfo.Version + " - Bug report (" + DateTime.Now.ToString("g", CultureInfo.InvariantCulture) + ")");
                 builder.AppendLine("Please report about it here: ");
-                builder.AppendLine("https://sourceforge.net/tracker/?func=add&group_id=195114&atid=952141");
+                builder.AppendLine(SupportManager.GetLink(SupportRequest.Issue));
                 builder.AppendLine(exception.Message);
                 builder.AppendLine(exception.StackTrace);
                 builder.AppendLine(exception.Source);

@@ -14,6 +14,7 @@ namespace BUtil.Core.Misc
         BackupWizard,
         ManageLogs,
         RestorationWizard,
-        Releases
+        Releases,
+        UpdateInfo
     }
 }
