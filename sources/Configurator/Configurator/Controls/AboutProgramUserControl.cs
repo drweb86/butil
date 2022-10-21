@@ -124,28 +124,7 @@ namespace BUtil.Configurator.Controls
 				SupportManager.DoSupport(SupportRequest.SevenZip);
 			}
 		}
-		
-		void ZipSolutionPictureBoxClick(object sender, EventArgs e)
-		{
-			if (!_options.HaveNoNetworkAndInternet)
-			{
-				SupportManager.DoSupport(SupportRequest.ZipSolution);
-			}
-		}
-		
-		void BulocalizationPictureBoxClick(object sender, EventArgs e)
-		{
-			if (!_options.HaveNoNetworkAndInternet)
-			{
-				SupportManager.DoSupport(SupportRequest.BULocalization);
-			}
-		}
-		
-		void SharpDevelopPictureBoxClick(object sender, EventArgs e)
-		{
-			// DELETE ME:
-		}
-		
+
 		void VirtuawinPictureBoxClick(object sender, EventArgs e)
 		{
 			if (!_options.HaveNoNetworkAndInternet)

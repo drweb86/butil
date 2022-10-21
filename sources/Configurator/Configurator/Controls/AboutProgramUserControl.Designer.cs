@@ -37,15 +37,9 @@ namespace BUtil.Configurator.Controls
 			this.documentationLabel = new System.Windows.Forms.Label();
 			this.checkForUpdatesLabel = new System.Windows.Forms.Label();
 			this.sevenZipPictureBox = new System.Windows.Forms.PictureBox();
-			this.zipSolutionPictureBox = new System.Windows.Forms.PictureBox();
-			this.bulocalizationPictureBox = new System.Windows.Forms.PictureBox();
-			this.sharpDevelopPictureBox = new System.Windows.Forms.PictureBox();
 			this.virtuawinPictureBox = new System.Windows.Forms.PictureBox();
 			this.logoPictureBox = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.sevenZipPictureBox)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.zipSolutionPictureBox)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.bulocalizationPictureBox)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.sharpDevelopPictureBox)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.virtuawinPictureBox)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
 			this.SuspendLayout();
@@ -158,42 +152,6 @@ namespace BUtil.Configurator.Controls
 			this.sevenZipPictureBox.TabStop = false;
 			this.sevenZipPictureBox.Click += new System.EventHandler(this.SevenZipPictureBoxClick);
 			// 
-			// zipSolutionPictureBox
-			// 
-			this.zipSolutionPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.zipSolutionPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.zipSolutionPictureBox.Image = Icons.zipSolutionPictureBox_Image;
-			this.zipSolutionPictureBox.Location = new System.Drawing.Point(49, 240);
-			this.zipSolutionPictureBox.Name = "zipSolutionPictureBox";
-			this.zipSolutionPictureBox.Size = new System.Drawing.Size(34, 34);
-			this.zipSolutionPictureBox.TabIndex = 20;
-			this.zipSolutionPictureBox.TabStop = false;
-			this.zipSolutionPictureBox.Click += new System.EventHandler(this.ZipSolutionPictureBoxClick);
-			// 
-			// bulocalizationPictureBox
-			// 
-			this.bulocalizationPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.bulocalizationPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.bulocalizationPictureBox.Image = Icons.bulocalizationPictureBox_Image;
-			this.bulocalizationPictureBox.Location = new System.Drawing.Point(87, 246);
-			this.bulocalizationPictureBox.Name = "bulocalizationPictureBox";
-			this.bulocalizationPictureBox.Size = new System.Drawing.Size(35, 28);
-			this.bulocalizationPictureBox.TabIndex = 21;
-			this.bulocalizationPictureBox.TabStop = false;
-			this.bulocalizationPictureBox.Click += new System.EventHandler(this.BulocalizationPictureBoxClick);
-			// 
-			// sharpDevelopPictureBox
-			// 
-			this.sharpDevelopPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.sharpDevelopPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.sharpDevelopPictureBox.Image = Icons.sharpDevelopPictureBox_Image;
-			this.sharpDevelopPictureBox.Location = new System.Drawing.Point(126, 246);
-			this.sharpDevelopPictureBox.Name = "sharpDevelopPictureBox";
-			this.sharpDevelopPictureBox.Size = new System.Drawing.Size(35, 28);
-			this.sharpDevelopPictureBox.TabIndex = 22;
-			this.sharpDevelopPictureBox.TabStop = false;
-			this.sharpDevelopPictureBox.Click += new System.EventHandler(this.SharpDevelopPictureBoxClick);
-			// 
 			// virtuawinPictureBox
 			// 
 			this.virtuawinPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -224,9 +182,6 @@ namespace BUtil.Configurator.Controls
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.logoPictureBox);
 			this.Controls.Add(this.virtuawinPictureBox);
-			this.Controls.Add(this.sharpDevelopPictureBox);
-			this.Controls.Add(this.bulocalizationPictureBox);
-			this.Controls.Add(this.zipSolutionPictureBox);
 			this.Controls.Add(this.sevenZipPictureBox);
 			this.Controls.Add(this.checkForUpdatesLabel);
 			this.Controls.Add(this.documentationLabel);
@@ -239,9 +194,6 @@ namespace BUtil.Configurator.Controls
 			this.Name = "AboutProgramUserControl";
 			this.Size = new System.Drawing.Size(506, 286);
 			((System.ComponentModel.ISupportInitialize)(this.sevenZipPictureBox)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.zipSolutionPictureBox)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.bulocalizationPictureBox)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.sharpDevelopPictureBox)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.virtuawinPictureBox)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
 			this.ResumeLayout(false);
@@ -249,9 +201,6 @@ namespace BUtil.Configurator.Controls
 		}
 		private System.Windows.Forms.PictureBox logoPictureBox;
 		private System.Windows.Forms.PictureBox virtuawinPictureBox;
-		private System.Windows.Forms.PictureBox sharpDevelopPictureBox;
-		private System.Windows.Forms.PictureBox bulocalizationPictureBox;
-		private System.Windows.Forms.PictureBox zipSolutionPictureBox;
 		private System.Windows.Forms.PictureBox sevenZipPictureBox;
 		private System.Windows.Forms.Label checkForUpdatesLabel;
 		private System.Windows.Forms.Label documentationLabel;

@@ -8,8 +8,6 @@ namespace BUtil.Core.Misc
         Issue,
         Documentation,
         SevenZip,
-        ZipSolution,
-        BULocalization,
         VirtuaWin,
         BackupWizard,
         ManageLogs,

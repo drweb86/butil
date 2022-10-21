@@ -23,8 +23,6 @@ namespace BUtil.Core.Misc
 			"https://github.com/drweb86/butil/issues",
 			"https://github.com/drweb86/butil/blob/master/help/TOC.md",
 			"http://www.7-zip.org",
-			"http://www.codeplex.com/zipsolution",
-			"http://www.sourceforge.net/projects/bulocalization",
 			"http://virtuawin.sourceforge.net/",
 			"https://github.com/drweb86/butil/blob/master/help/Backup/Backup%20via%20Wizard/Backup%20Wizard.md",
             "https://github.com/drweb86/butil/blob/master/help/Manage%20Logs/Manage%20Logs.md",
