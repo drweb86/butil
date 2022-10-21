@@ -5,6 +5,8 @@
 ## Changes
 - update support web-sites
 - update self-update mechanism to use github
+- setup will no longer install .Net 2
+- setup is x64
 
 ## Bug Fixes
 
