@@ -2,12 +2,12 @@
 
 Welcome to the 5.0 Alpha (16 May 2010) version BUtil!
 
-![BUtil Logotype](./help/Readme%20Assets/Logotype.bmp)
+![BUtil Logotype](../../wiki/Readme%20Assets/Logotype.bmp)
 
 BUtil is a powerfull set of tools for creating backups of documents and other data on your PC.
 
-![The main window of configurator](./help/Readme%20Assets/Screenshot%201.jpg)
-![The backup ui master](./help/Readme%20Assets/Screenshot%202.jpg)
+![The main window of configurator](../../wiki/Readme%20Assets/Screenshot%201.jpg)
+![The backup ui master](../../wiki/Readme%20Assets/Screenshot%202.jpg)
 
 ## Key Functions And Characteristics Of Software
 
@@ -20,8 +20,8 @@ BUtil is a powerfull set of tools for creating backups of documents and other da
 - Scheduler is present;
 - Two modes of creating a backup exists: manual from UI and console tool and with scheduling possibilities;
 - .Net based application;
-- [Unstructured Data repository model](./help/general/Glossary.htm#udrm)
-- [Copying files selection and extraction of file data](./help/general/Glossary.htm#cfsaeofd)
+- [Unstructured Data repository model](../../wiki/general/Glossary.htm#udrm)
+- [Copying files selection and extraction of file data](../../wiki/general/Glossary.htm#cfsaeofd)
 - Built in [7-zip](https://www.7-zip.org/) [compression](https://en.wikipedia.org/wiki/Data_compression)
 - Built in [7-zip](https://www.7-zip.org/) [AES-256](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) [encryption](https://en.wikipedia.org/wiki/Encryption).
 
@@ -31,18 +31,18 @@ Backup, Restoration, Desktop applications, Scheduling, AES-256, 7-zip, md5, .Net
 
 ## The documentation for BUtil includes:
 
-- [Congifurator](./help/configurator/CommandLineArguments.htm)
-- [Command line version of backup tool](./help/Backup%20Console%20Tool.md)
-- [Restorate](./help/Restore/Restoration%20Wizard.md)
-- [Checksum Console Tool](./help/Checksum%20Console%20Tool.md)
-- [Scheduler](./help/Schedule/Scheduler%20Tray%20Application.md)
+- [Congifurator](../../wiki/configurator/CommandLineArguments.htm)
+- [Command line version of backup tool](../../wiki/Backup%20Console%20Tool.md)
+- [Restorate](../../wiki/Restore/Restoration%20Wizard.md)
+- [Checksum Console Tool](../../wiki/Checksum%20Console%20Tool.md)
+- [Scheduler](../../wiki/Schedule/Scheduler%20Tray%20Application/Scheduler%20Tray%20Application.md)
 
-and many more. See [all topics](./help/TOC.md) .
+and many more. See [all topics](../../wiki/TOC.md) .
 
 ## See Also
 
-- [Version history](./help/general/VersionHistory.htm)
-- [Frequently Asked Questions (FAQ)](./help/general/Faq.htm)
+- [Version history](../../wiki/general/VersionHistory.htm)
+- [Frequently Asked Questions (FAQ)](../../wiki/general/Faq.htm)
 
 ## Requirements
 
