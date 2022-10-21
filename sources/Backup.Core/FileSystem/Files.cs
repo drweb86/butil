@@ -37,9 +37,9 @@ namespace BUtil.Core.FileSystem
         #endregion
 
 		// Related document: DevelopmentInitiative.7-zip protection
-		public const string Packer7ZipExeMd5 = "93C7B7A3E3051BBB9630E41425CFDB3C";
-		public const string Packer7ZipGExeMd5 ="3F317B59A522F0BC19AC1620BBEA0718";
-		public const string Packer7ZipDllMd5 = "CA41D56630191E61565A343C59695CA1";
+		public const string Packer7ZipExeMd5 = "FE522D8659618E3A50AAFD8AC1518638";
+		public const string Packer7ZipGExeMd5 = "5AB26FFD7B3C23A796138640B1737B48";
+		public const string Packer7ZipDllMd5 = "BBF51226A8670475F283A2D57460D46C";
 		
 		public const string LogFilesExtension = ".BUtilLog.html";
 		public const string SuccesfullBackupMarkInHtmlLog = "<!-- SUCCESFULL BACKUP -->";

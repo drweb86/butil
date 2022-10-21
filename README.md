@@ -48,7 +48,7 @@ and many more. See [all topics](../../wiki) .
 
 ### Software
 
-- Microsoft Windows OS;
+- Microsoft Windows OS x64;
 - Microsoft .Net 2.0.5 Framework or higher is required(note: you do not need to download and install framework if you are Windows Vista or Windows 7 user). To download it you can open the following [url](http://www.microsoft.com/downloads/details.aspx?FamilyID=0856eacb-4362-4b0d-8edd-aab15c5e04f5&DisplayLang=en)
 - 7-zip 32-bit 4.65 or better(included in installation package)
 
@@ -58,8 +58,8 @@ To function in full mode also required:
 
 ### Hardware:
 
-- Pentium 3 computer or better, IA-32 but should work and on IA-64 architecture
-- 256 mb RAM
+- Pentium 3 computer or better, IA-64 but should work and on IA-64 architecture
+- 1 GB RAM
 - about 5 mb on HDD
 
 ## Feedback
@@ -89,10 +89,13 @@ Must be installed:
 - Windows 11x64 Professional;
 - [BULocalization 3.2](sourceforge.net/projects/bulocalization);
 - Microsoft Visual Studio 2022;
-- InnoSetup 6.2.1 (must be installed in default directory).
+- InnoSetup 6.2.1 (must be installed in default directory);
+- 7-zip x64 (must be installed in default directory).
 
-Special note: sources must be unpacked to folder with english name. Folder path to sources should not contain blanks.
-
+1. Compile all
+2. Run in ```output\butil\bin``` command ```md5 dev```
+3. Update in code ```Files.cs``` MD5 checksums of 7-zip.
+4. Done.
 
 
 Copyright (c) 2008-2010 Siarhei Kuchuk

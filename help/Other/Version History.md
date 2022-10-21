@@ -1,12 +1,14 @@
 # 6.0
 
 ## New Features
+- 7-zip was updated to 22.01 x64 (2022-07-15)
 
 ## Changes
 - update support web-sites
 - update self-update mechanism to use github
 - setup will no longer install .Net 2
 - setup is x64
+- Windows 64-bit support is required
 
 ## Bug Fixes
 

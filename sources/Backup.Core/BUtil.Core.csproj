@@ -212,26 +212,26 @@
     </BootstrapperPackage>
   </ItemGroup>
   <PropertyGroup>
-    <PreBuildEvent>cd $(SolutionDir)..\Output
+    <PreBuildEvent>cd &quot;$(SolutionDir)..\Output&quot;
 
 rem 7-zip
-md $(SolutionDir)..\Output\BUtil\7-zip
-xcopy $(SolutionDir)..\7-zip $(SolutionDir)..\Output\BUtil\7-zip /E /Y
+md &quot;$(SolutionDir)..\Output\BUtil\7-zip&quot;
+xcopy &quot;c:\Program Files\7-zip&quot; &quot;$(SolutionDir)..\Output\BUtil\7-zip&quot; /E /Y
 
 rem Copying of localization files
-md $(SolutionDir)..\Output\BUtil\local
-xcopy $(SolutionDir)LocalizationProject $(SolutionDir)..\Output\BUtil\local /Y
+md &quot;$(SolutionDir)..\Output\BUtil\local&quot;
+xcopy &quot;$(SolutionDir)LocalizationProject&quot; &quot;$(SolutionDir)..\Output\BUtil\local&quot; /Y
 
 rem Copying of data folder
-md $(SolutionDir)..\Output\BUtil\data
-xcopy $(SolutionDir)..\data $(SolutionDir)..\Output\BUtil\data /Y
+md &quot;$(SolutionDir)..\Output\BUtil\data&quot;
+xcopy &quot;$(SolutionDir)..\data&quot; &quot;$(SolutionDir)..\Output\BUtil\data&quot; /Y
 
 rem Copying of scripts
-md $(SolutionDir)..\Output\BUtil\bin
-xcopy $(SolutionDir)..\Scripts $(SolutionDir)..\Output\BUtil\bin /Y
+md &quot;$(SolutionDir)..\Output\BUtil\bin&quot;
+xcopy &quot;$(SolutionDir)..\Scripts&quot; &quot;$(SolutionDir)..\Output\BUtil\bin&quot; /Y
 
 rem Building the Deploy folder
-cd $(SolutionDir)..\Output
+cd &quot;$(SolutionDir)..\Output&quot;
 rmdir Deployment /s /q
 md Deployment
 
@@ -241,7 +241,6 @@ rem //TODO: cd Deployment
 rem //TODO: md 1.UploadToSf
 rem //TODO: "C:\Program Files\Inno Setup 5\ISCC.exe" $(SolutionDir)Setup\install.iss
 rem //TODO: "C:\Program Files\ZipSolution-5.3\ZipSolution.exe" "SolutionFile=$(SolutionDir)..\Deploy\BUtil-Bins-ZipSolution.xml" WaitMsec=2000
-rem //TODO: "C:\Program Files\ZipSolution-5.3\ZipSolution.exe" "SolutionFile=$(SolutionDir)..\Deploy\BUtil-Srcs-ZipSolution.xml" WaitMsec=2000
 </PreBuildEvent>
   </PropertyGroup>
 </Project>

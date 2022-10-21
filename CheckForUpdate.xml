@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LatestUpdate>
-	<Version>4.8</Version>
-	<Changes>BUtil 4.8\nFixed:\n-Update mechanizm was moved to sourceforge\n	</Changes>
+	<Version>5.1</Version>
+	<Changes>New Features\n
+- 7-zip was updated to 22.01 x64 (2022-07-15)\n
+\n
+Changes\n
+- update support web-sites\n
+- update self-update mechanism to use github\n
+- setup will no longer install .Net 2\n
+- setup is x64\n
+- Windows 64-bit support is required\n
+	</Changes>
 </LatestUpdate>

@@ -26,20 +26,8 @@ Source items:
 Storages items:
 1) enabled status is changed of context menu
 
-FAQ
-1) added info about backuping Outlook items (as a workaround). This feature will not be implemented.
-+ add this upper to tracker
-
-Backup Wizard, Configurator, BackupUi:
-1) Icons were fixed
-
-
-
 // Known issues:
 1. нельзя добавлять с одинаковым именем названия заданий на РК - до сих пор не пофикшено
 2. Аналогично с переименованием проекта при его редактировании
 3. Изменение названия проекта лучше всего вынести на новый контрол -- это важно!
-
-translation
-
 
