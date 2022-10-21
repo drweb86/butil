@@ -10,15 +10,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Increments", "Increments", "{785B02C5-B9C0-4D2E-A4F3-D98997915D8A}"
 	ProjectSection(SolutionItems) = preProject
-		Development\Increments\Increment 1.txt = Development\Increments\Increment 1.txt
-		Development\Increments\Increment 2.txt = Development\Increments\Increment 2.txt
-		Development\Increments\Increment 3.txt = Development\Increments\Increment 3.txt
-		Development\Increments\Increment 4.txt = Development\Increments\Increment 4.txt
-		Development\Increments\Increment 5.txt = Development\Increments\Increment 5.txt
-		Development\Increments\Increment 6.txt = Development\Increments\Increment 6.txt
-		Development\Increments\Increment 7.txt = Development\Increments\Increment 7.txt
-		Development\Increments\Increment 8.txt = Development\Increments\Increment 8.txt
-		Development\Increments\Increment 9.txt = Development\Increments\Increment 9.txt
 		Iteration 10.txt = Iteration 10.txt
 		Development\Increments\WAIT.txt = Development\Increments\WAIT.txt
 	EndProjectSection

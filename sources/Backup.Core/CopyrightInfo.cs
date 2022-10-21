@@ -5,7 +5,7 @@ namespace BUtil.Core
 {
 	public static class CopyrightInfo
 	{
-        const string AppVersion = "5.0";
+        const string AppVersion = "5.1";
         static readonly string CopyRightNotice =
             string.Format(CultureInfo.CurrentCulture, "BUtil - {0}\n{1}\n", AppVersion, SupportManager.GetLink(SupportRequest.Homepage));
 
