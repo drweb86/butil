@@ -15,11 +15,7 @@ namespace BUtil.Core.FileSystem
 		private static readonly string _localsFolder = Path.Combine(_installdir, "local");
 		private static readonly string _docsFolder = Path.Combine(_installdir, "end-user-docs");
 		
-		#if DEBUG // Workaround of sharp develop issue with getting application data folder
-		private const string _applicationDataFolder = @"c:\Documents and Settings\сергей\Application Data";
-		#else
 		private static readonly string _applicationDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-		#endif
 
 		#if DEBUG
 		private static readonly string _userDataFolder = Path.Combine(_applicationDataFolder, "BUtil-Development");
