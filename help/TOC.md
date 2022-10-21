@@ -24,4 +24,6 @@
 
 [Frequently Asked Questions](./Other/Frequently%20Asked%20Questions.md)
 
+[License](./Other/License.md)
+
 [Version History](./Other/Version%20History.md)
