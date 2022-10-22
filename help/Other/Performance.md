@@ -9,5 +9,4 @@ To speed up sending image to storages you can use parralel storage processing se
 # Software
 .Net virtual machine has size about 22Mb(for windows). Since Windows Vista it is in memory permanently.
 Tray application takes 12mb of memory. It does not affect much on performance.
-Another way to improve performance is to run file "app\bin\SpeedUp.bat" with administrative privileges.
 If you have multicore CPU or multiple CPUs you can speed up packing by setting amount of parallel packing processes in Configurator.
