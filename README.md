@@ -1,6 +1,6 @@
 # COMPRESSING, SAVING, STORING, PROVIDING easiest RESTORING
 
-Welcome to the 5.0 Alpha (16 May 2010) version BUtil!
+Welcome to the 5.1 (22 October 2022) version BUtil!
 
 ![BUtil Logotype](./help/Readme%20Assets/Logotype.bmp)
 
