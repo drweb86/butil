@@ -1,28 +1,18 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <ProjectGuid>{884325C6-9686-4D09-BCDE-38FF79279620}</ProjectGuid>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <OutputType>Library</OutputType>
-    <RootNamespace>BUtil.Core</RootNamespace>
-    <AssemblyName>BUtil.Core</AssemblyName>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\Development.key.snk</AssemblyOriginatorKeyFile>
     <DelaySign>False</DelaySign>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <OldToolsVersion>3.5</OldToolsVersion>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
     <IsWebBootstrapper>true</IsWebBootstrapper>
+<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+<UseCommonOutputDirectory>true</UseCommonOutputDirectory>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
     <NoStdLib>False</NoStdLib>
-    <WarningLevel>4</WarningLevel>
     <PublishUrl>http://localhost/Backup.Core/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
@@ -38,153 +28,35 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <OutputPath>$(SolutionDir)..\Output\BUtil\bin\</OutputPath>
-    <TargetFrameworkProfile />
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>Full</DebugType>
     <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DebugSymbols>false</DebugSymbols>
     <DebugType>None</DebugType>
-    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
     <UseVSHostingProcess>false</UseVSHostingProcess>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <PublishReadyToRun>true</PublishReadyToRun>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
     <RegisterForComInterop>False</RegisterForComInterop>
     <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
     <BaseAddress>4194304</BaseAddress>
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <FileAlignment>4096</FileAlignment>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Management" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
   <ItemGroup>
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>SharedAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="BackupProcess.cs" />
-    <Compile Include="BULocalization\ChooseLanguages.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BULocalization\ChooseLanguages.Designer.cs" />
-    <Compile Include="BULocalization\Consts.cs" />
-    <Compile Include="BULocalization\Language.cs" />
-    <Compile Include="BULocalization\Languages.cs" />
-    <Compile Include="BULocalization\LanguagesManager.cs" />
-    <Compile Include="BULocalization\LocalizationGenericException.cs" />
-    <Compile Include="BULocalization\ManagerBehaviorSettings.cs" />
-    <Compile Include="BULocalization\Translation.cs" />
-    <Compile Include="BULocalization\TranslationItemState.cs" />
-    <Compile Include="ButilImage\CompressionDegree.cs" />
-    <Compile Include="ButilImage\RecoveryManager.cs" />
-    <Compile Include="Constants.cs" />
-    <Compile Include="CopyrightInfo.cs" />
-    <Compile Include="FileSystem\Directories.cs" />
-    <Compile Include="FileSystem\Files.cs" />
-    <Compile Include="LocalsHelper.cs" />
-    <Compile Include="Logs\BackupResult.cs" />
-    <Compile Include="Logs\LogException.cs" />
-    <Compile Include="Logs\LogInfo.cs" />
-    <Compile Include="Logs\LogMode.cs" />
-    <Compile Include="Logs\LogOperations.cs" />
-    <Compile Include="Misc\NativeMethods.cs" />
-    <Compile Include="Misc\PrettyTimeSpanFormatter.cs" />
-    <Compile Include="Misc\AfterBackupTask.cs" />
-    <Compile Include="Misc\BeforeBackupTask.cs" />
-    <Compile Include="Misc\CompressionJob.cs" />
-    <Compile Include="Misc\CpuUsage.cs" />
-    <Compile Include="Misc\IJob.cs" />
-    <Compile Include="Misc\ImageCreationJob.cs" />
-    <Compile Include="Misc\ImproveIt.cs" />
-    <Compile Include="Misc\JobThreadEventArgs.cs" />
-    <Compile Include="Misc\md5Check.cs" />
-    <Compile Include="Misc\PowerTask.cs" />
-    <Compile Include="Misc\ProcessesKiller.cs" />
-    <Compile Include="Misc\RelativePathDiscovery.cs" />
-    <Compile Include="Misc\TaskManager.cs" />
-    <Compile Include="Misc\UpdateChecker.cs" />
-    <Compile Include="Notifications.cs" />
-    <Compile Include="Options\BackupEventTaskInfo.cs" />
-    <Compile Include="Options\BackupTask.cs" />
-    <Compile Include="SchedulerParameters.cs" />
-    <Compile Include="PL\BackUserControl.cs">
+    <Compile Update="PL\BackUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PL\BackUserControl.Designer.cs">
-      <DependentUpon>BackUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PL\EncryptionUserControl.cs">
+    <Compile Update="PL\EncryptionUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PL\EncryptionUserControl.Designer.cs">
-      <DependentUpon>EncryptionUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PL\Messages.cs" />
-    <Compile Include="Storages\CopyJob.cs" />
-    <Compile Include="Storages\FtpConnection.cs" />
-    <Compile Include="Misc\Miscellaneous.cs" />
-    <Compile Include="Misc\SupportRequest.cs" />
-    <Compile Include="Misc\ArchiveTask.cs" />
-    <Compile Include="Logs\HtmlLogFormatter.cs" />
-    <Compile Include="Misc\PowerPC.cs" />
-    <Compile Include="Options\CompressionItem.cs" />
-    <Compile Include="Logs\LoggingEvent.cs" />
-    <Compile Include="Logs\LogLevel.cs" />
-    <Compile Include="Options\OptionsException.cs" />
-    <Compile Include="Options\ProgramOptions.cs" />
-    <Compile Include="Storages\NetworkStorage.cs" />
-    <Compile Include="Storages\StorageBase.cs" />
-    <Compile Include="Storages\FtpStorage.cs" />
-    <Compile Include="Storages\HddStorage.cs" />
-    <Compile Include="Options\ProgramOptionsManager.cs" />
-    <Compile Include="Misc\SupportManager.cs" />
-    <Compile Include="Logs\ConsoleLog.cs" />
-    <Compile Include="Logs\FileLog.cs" />
-    <Compile Include="Logs\LogBase.cs" />
-    <Compile Include="Options\ProgramOptionsKeeper.cs" />
-    <Compile Include="ButilImage\ImageCreator.cs" />
-    <Compile Include="ButilImage\ImageReader.cs" />
-    <Compile Include="ButilImage\ImageHeader.cs" />
-    <Compile Include="ButilImage\MetaRecord.cs" />
-    <Compile Include="Synchronization\SyncedFiles.cs" />
-    <Compile Include="Synchronization\SyncFile.cs" />
-    <Compile Include="ButilImage\UnpackArchive.cs" />
-    <Compile Include="ButilImage\UnpackParameters.cs" />
-    <Compile Include="PL\PasswordGeneratorForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <EmbeddedResource Include="BULocalization\ChooseLanguages.resx" />
-    <EmbeddedResource Include="PL\BackUserControl.resx">
-      <DependentUpon>BackUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PL\EncryptionUserControl.resx">
-      <DependentUpon>EncryptionUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PL\PasswordGeneratorForm.resx">
-      <DependentUpon>PasswordGeneratorForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="app.manifest" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -218,6 +90,13 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.4.346202">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="6.0.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="6.0.0" />
+  </ItemGroup>
   <PropertyGroup>
     <PreBuildEvent>cd "$(SolutionDir)..\Output"
 
@@ -232,10 +111,6 @@ xcopy "$(SolutionDir)LocalizationProject" "$(SolutionDir)..\Output\BUtil\local" 
 rem Copying of data folder
 md "$(SolutionDir)..\Output\BUtil\data"
 xcopy "$(SolutionDir)..\data" "$(SolutionDir)..\Output\BUtil\data" /Y
-
-rem Copying of scripts
-md "$(SolutionDir)..\Output\BUtil\bin"
-xcopy "$(SolutionDir)..\Scripts" "$(SolutionDir)..\Output\BUtil\bin" /Y
 
 </PreBuildEvent>
   </PropertyGroup>

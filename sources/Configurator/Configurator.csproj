@@ -1,29 +1,20 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <OutputType>WinExe</OutputType>
     <RootNamespace>BUtil.Configurator</RootNamespace>
-    <AssemblyName>Configurator</AssemblyName>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6008A6E3-72F0-4C27-80D4-442F1764EAC2}</ProjectGuid>
     <ApplicationIcon>..\Media\Images and Icons\My\Configurator.ico</ApplicationIcon>
     <SignAssembly>true</SignAssembly>
+<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+<UseCommonOutputDirectory>true</UseCommonOutputDirectory>
     <AssemblyOriginatorKeyFile>..\Development.key.snk</AssemblyOriginatorKeyFile>
     <DelaySign>False</DelaySign>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <OldToolsVersion>3.5</OldToolsVersion>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
     <StartupObject>BUtil.Configurator.Program</StartupObject>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
     <NoStdLib>False</NoStdLib>
-    <WarningLevel>4</WarningLevel>
     <PublishUrl>http://localhost/BUtilConfigurator/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
@@ -38,13 +29,12 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <OutputPath>..\..\Output\BUtil\bin</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>Full</DebugType>
     <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <RunCodeAnalysis>false</RunCodeAnalysis>
@@ -52,342 +42,76 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <OutputPath>..\..\Output\BUtil\bin</OutputPath>
-    <Optimize>True</Optimize>
-    <DefineConstants>TRACE</DefineConstants>
-    <DebugSymbols>false</DebugSymbols>
     <DebugType>None</DebugType>
-    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PublishReadyToRun>true</PublishReadyToRun>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
     <RegisterForComInterop>False</RegisterForComInterop>
     <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
     <BaseAddress>4194304</BaseAddress>
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <FileAlignment>4096</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <OutputPath>..\..\Output\BUtil\bin\</OutputPath>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
   <ItemGroup>
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>SharedAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Arguments.cs" />
-    <Compile Include="AddBackupTaskWizard\AddBackupTaskWizard.cs" />
-    <Compile Include="AddBackupTaskWizard\Controller\AddBackupTaskWizardController.cs" />
-    <Compile Include="AddBackupTaskWizard\View\AddBackupTaskWizardForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddBackupTaskWizard\View\AddBackupTaskWizardForm.Designer.cs">
-      <DependentUpon>AddBackupTaskWizardForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AddBackupTaskWizard\View\AddBackupTaskWizardView.cs" />
-    <Compile Include="AddBackupTaskWizard\View\PageInfo.cs" />
-    <Compile Include="AddBackupTaskWizard\View\TaskNameUserControl.cs">
+    <Compile Update="AddBackupTaskWizard\View\TaskNameUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AddBackupTaskWizard\View\TaskNameUserControl.Designer.cs">
-      <DependentUpon>TaskNameUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BackupUiMaster\Forms\BackupMasterForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BackupUiMaster\Forms\BackupMasterForm.Designer.cs">
-      <DependentUpon>BackupMasterForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BackupUiMaster\Forms\SelectTaskToRunForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BackupUiMaster\Forms\SelectTaskToRunForm.Designer.cs">
-      <DependentUpon>SelectTaskToRunForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Configurator\CompressionItemsKeeper.cs" />
-    <Compile Include="Configurator\ConfiguratorController.cs" />
-    <Compile Include="Configurator\Controls\AboutProgramUserControl.cs">
+    <Compile Update="Configurator\Controls\AboutProgramUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Configurator\Controls\AboutProgramUserControl.Designer.cs">
-      <DependentUpon>AboutProgramUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Configurator\Controls\BackupTasksUserControl.cs">
+    <Compile Update="Configurator\Controls\BackupTasksUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Configurator\Controls\BackupTasksUserControl.Designer.cs">
-      <DependentUpon>BackupTasksUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Configurator\Controls\ConfiguratorViewsEnum.cs" />
-    <Compile Include="Configurator\Controls\EditTasksLeftPanelUserControl.cs">
+    <Compile Update="Configurator\Controls\EditTasksLeftPanelUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Configurator\Controls\EditTasksLeftPanelUserControl.Designer.cs">
-      <DependentUpon>EditTasksLeftPanelUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Configurator\Controls\TaskOtherOptionsUserControl.cs">
+    <Compile Update="Configurator\Controls\TaskOtherOptionsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Configurator\Controls\TaskOtherOptionsUserControl.Designer.cs">
-      <DependentUpon>TaskOtherOptionsUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Configurator\Controls\LeftPanelUserControl.cs">
+    <Compile Update="Configurator\Controls\LeftPanelUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Configurator\Controls\LeftPanelUserControl.Designer.cs">
-      <DependentUpon>LeftPanelUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Configurator\Controls\LoggingUserControl.cs">
+    <Compile Update="Configurator\Controls\LoggingUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Configurator\Controls\LoggingUserControl.Designer.cs">
-      <DependentUpon>LoggingUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Configurator\Controls\OptionsHeader.cs">
+    <Compile Update="Configurator\Controls\OptionsHeader.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Configurator\Controls\OptionsHeader.Designer.cs">
-      <DependentUpon>OptionsHeader.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Configurator\Controls\OtherOptionsUserControl.cs">
+    <Compile Update="Configurator\Controls\OtherOptionsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Configurator\Controls\OtherOptionsUserControl.Designer.cs">
-      <DependentUpon>OtherOptionsUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Configurator\Controls\SchedulerUserControl.cs">
+    <Compile Update="Configurator\Controls\SchedulerUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Configurator\Controls\SchedulerUserControl.Designer.cs">
-      <DependentUpon>SchedulerUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Configurator\Controls\SourceItemsUserControl.cs">
+    <Compile Update="Configurator\Controls\SourceItemsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Configurator\Controls\SourceItemsUserControl.Designer.cs">
-      <DependentUpon>SourceItemsUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Configurator\Controls\StoragesUserControl.cs">
+    <Compile Update="Configurator\Controls\StoragesUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Configurator\Controls\StoragesUserControl.Designer.cs">
-      <DependentUpon>StoragesUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Configurator\Controls\TasksChainToExecuteUserControl.cs">
+    <Compile Update="Configurator\Controls\TasksChainToExecuteUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Configurator\Controls\TasksChainToExecuteUserControl.Designer.cs">
-      <DependentUpon>TasksChainToExecuteUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Configurator\Forms\AboutForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Configurator\Forms\AboutForm.Designer.cs">
-      <DependentUpon>AboutForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Configurator\Forms\BackupEventTaskInfoEditingForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Configurator\Forms\BackupEventTaskInfoEditingForm.Designer.cs">
-      <DependentUpon>BackupEventTaskInfoEditingForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Configurator\Forms\BackupTaskEditForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Configurator\Forms\BackupTaskEditForm.Designer.cs">
-      <DependentUpon>BackupTaskEditForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Configurator\Forms\FtpStorageForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Configurator\Forms\FtpStorageForm.Designer.cs">
-      <DependentUpon>FtpStorageForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Configurator\Forms\HddStorageForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Configurator\Forms\HddStorageForm.Designer.cs">
-      <DependentUpon>HddStorageForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="Configurator\Forms\IStorageConfigurationForm.cs" />
-    <Compile Include="Configurator\Forms\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Configurator\Forms\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Configurator\Forms\NetworkStorageForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Configurator\Forms\NetworkStorageForm.Designer.cs">
-      <DependentUpon>NetworkStorageForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Configurator\Forms\StorageEnum.cs" />
-    <Compile Include="Icons.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Icons.resx</DependentUpon>
-    </Compile>
-    <Compile Include="LogsManagement\LogsManagementConftroller.cs" />
-    <Compile Include="LogsManagement\LogsViewerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LogsManagement\LogsViewerForm.Designer.cs">
-      <DependentUpon>LogsViewerForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="RestorationMaster\HowToRestoreForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RestorationMaster\HowToRestoreForm.Designer.cs">
-      <DependentUpon>HowToRestoreForm.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="AddBackupTaskWizard\View\AddBackupTaskWizardForm.resx">
-      <DependentUpon>AddBackupTaskWizardForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddBackupTaskWizard\View\TaskNameUserControl.resx">
-      <DependentUpon>TaskNameUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BackupUiMaster\Controls\BackupProgressUserControl.resx">
-      <DependentUpon>BackupProgressUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BackupUiMaster\Forms\BackupMasterForm.resx">
-      <DependentUpon>BackupMasterForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BackupUiMaster\Forms\SelectTaskToRunForm.resx">
-      <DependentUpon>SelectTaskToRunForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Configurator\Controls\BackupTasksUserControl.resx">
-      <DependentUpon>BackupTasksUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Configurator\Controls\EditTasksLeftPanelUserControl.resx">
-      <DependentUpon>EditTasksLeftPanelUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Configurator\Controls\LeftPanelUserControl.resx">
-      <DependentUpon>LeftPanelUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Configurator\Controls\OtherOptionsUserControl.resx">
-      <DependentUpon>OtherOptionsUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Configurator\Controls\SchedulerUserControl.resx">
-      <DependentUpon>SchedulerUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Configurator\Controls\SourceItemsUserControl.resx">
-      <DependentUpon>SourceItemsUserControl.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Configurator\Controls\TasksChainToExecuteUserControl.resx">
-      <DependentUpon>TasksChainToExecuteUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Configurator\Controls\TaskOtherOptionsUserControl.resx">
-      <DependentUpon>TaskOtherOptionsUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Configurator\Forms\AboutForm.resx">
-      <DependentUpon>AboutForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Configurator\Forms\BackupTaskEditForm.resx">
-      <DependentUpon>BackupTaskEditForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Configurator\Forms\FtpStorageForm.resx">
-      <DependentUpon>FtpStorageForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Configurator\Forms\HddStorageForm.resx">
-      <DependentUpon>HddStorageForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Configurator\Forms\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Configurator\Forms\NetworkStorageForm.resx">
-      <DependentUpon>NetworkStorageForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Icons.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Icons.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LogsManagement\LogsViewerForm.resx">
-      <DependentUpon>LogsViewerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <Compile Include="RestorationMaster\RestoreMasterMainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RestorationMaster\RestoreMasterMainForm.Designer.cs">
-      <DependentUpon>RestoreMasterMainForm.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="RestorationMaster\HowToRestoreForm.resx">
-      <DependentUpon>HowToRestoreForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RestorationMaster\RestoreMasterMainForm.resx">
-      <DependentUpon>RestoreMasterMainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <Compile Include="RestorationMaster\RestoreForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RestorationMaster\RestoreForm.Designer.cs">
-      <DependentUpon>RestoreForm.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="RestorationMaster\RestoreForm.resx">
-      <DependentUpon>RestoreForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <Compile Include="RestorationMaster\RestorationMasterController.cs" />
-    <Compile Include="RestorationMaster\RestoreTaskInfo.cs" />
-    <Compile Include="RestorationMaster\RestoreType.cs" />
-    <EmbeddedResource Include="Configurator\Controls\LoggingUserControl.resx">
-      <DependentUpon>LoggingUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Configurator\Controls\StoragesUserControl.resx">
-      <DependentUpon>StoragesUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <Compile Include="BackupUiMaster\BackupUiMaster.cs" />
-    <Compile Include="BackupUiMaster\Controls\BackupProgressUserControl.cs">
+    <Compile Update="BackupUiMaster\Controls\BackupProgressUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BackupUiMaster\Controls\BackupProgressUserControl.Designer.cs">
-      <DependentUpon>BackupProgressUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BackupUiMaster\Controls\BackUserControl.cs">
+    <Compile Update="BackupUiMaster\Controls\BackUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BackupUiMaster\Controls\BackUserControl.Designer.cs">
-      <DependentUpon>BackUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BackupUiMaster\Controls\SettingsUserControl.cs">
+    <Compile Update="BackupUiMaster\Controls\SettingsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BackupUiMaster\Controls\SettingsUserControl.Designer.cs">
-      <DependentUpon>SettingsUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BackupUiMaster\NativeMethods.cs" />
-    <Compile Include="StartShell\StartShellController.cs" />
-    <Compile Include="StartShell\Ui\SingleShellForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StartShell\Ui\SingleShellForm.Designer.cs">
-      <DependentUpon>SingleShellForm.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="BackupUiMaster\Controls\BackUserControl.resx">
-      <DependentUpon>BackUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BackupUiMaster\Controls\SettingsUserControl.resx">
-      <DependentUpon>SettingsUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StartShell\Ui\SingleShellForm.resx">
-      <DependentUpon>SingleShellForm.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -420,58 +144,7 @@
       <ProductName>Microsoft Visual Basic PowerPacks 10.0</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
-    <ProjectReference Include="..\Backup.Core\BUtil.Core.csproj">
-      <Project>{884325C6-9686-4D09-BCDE-38FF79279620}</Project>
-      <Name>BUtil.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Open.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cross_48.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\add_48.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Start.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Stop.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\deleteSelected.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ArrayUp.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ArrayDown.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\AddFiles.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Add_Files.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Add Folders.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\OpenSelectedLogs.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\RemoveSuccesfullLogs.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\folder_48.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\OpenRecentLog.png" />
+    <ProjectReference Include="..\Backup.Core\BUtil.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\BackupTask16x16.png" />
@@ -488,29 +161,18 @@
     <Content Include="Resources\Schedule48x48.png" />
     <Content Include="Resources\SourceItems48x48.png" />
     <Content Include="Resources\Storages48x48.png" />
-    <None Include="Resources\Share16x16.png" />
-    <None Include="Resources\Share48x48.png" />
-    <None Include="Resources\Start48x48.png" />
     <Content Include="Resources\BackupTask48x48.png" />
     <Content Include="Resources\box_download_48.png" />
-    <None Include="Resources\Logo48x48.PNG" />
-    <None Include="Resources\Hdd48x48.png" />
-    <None Include="Resources\Hdd16x16.png" />
     <Content Include="Resources\PanelUser.png" />
     <Content Include="Resources\Journals.png" />
-    <None Include="Resources\Add48x48.png" />
-    <None Include="Resources\Add_Files2.png" />
-    <None Include="Resources\AddFolder.png" />
-    <None Include="Resources\Add_Files1.png" />
-    <None Include="Resources\app_48.png" />
-    <None Include="Resources\Logs.ico" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
-  <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
-  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.4.346202">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
 </Project>

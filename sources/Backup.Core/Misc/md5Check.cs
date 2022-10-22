@@ -72,14 +72,16 @@ namespace BUtil.Core.Misc
 			if (string.IsNullOrEmpty(file))
 				throw new ArgumentNullException("file");
 
-			MD5CryptoServiceProvider md5Provider = new MD5CryptoServiceProvider();
 			string md5hash;
 
-			using (FileStream fs = new FileStream(file, FileMode.Open, FileAccess.Read))
-			{ 
-				Byte[] hashCode = md5Provider.ComputeHash(fs);
-				md5hash = BitConverter.ToString(hashCode).Replace("-", "");
-			}
+            using (var md5 = MD5.Create())
+            {
+                using (var fs = new FileStream(file, FileMode.Open, FileAccess.Read))
+                {
+                    var hashCode = md5.ComputeHash(fs);
+                    md5hash = BitConverter.ToString(hashCode).Replace("-", "");
+                }
+            }
 
 			return md5hash;
 		}

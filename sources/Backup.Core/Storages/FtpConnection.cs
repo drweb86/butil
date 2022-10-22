@@ -163,7 +163,9 @@ namespace BUtil.Core.Storages
         private FtpWebRequest LogOnHelper(string path)
         {
             FtpWebRequest reqFtp;
-            reqFtp = (FtpWebRequest)FtpWebRequest.Create(new Uri("ftp://" + ftpServerIP + "/" + path));
+#pragma warning disable SYSLIB0014 // Type or member is obsolete
+            reqFtp = (FtpWebRequest)WebRequest.Create(new Uri("ftp://" + ftpServerIP + "/" + path));
+#pragma warning restore SYSLIB0014 // Type or member is obsolete
             reqFtp.UseBinary = true;
             reqFtp.Credentials = new NetworkCredential(ftpUserID, ftpPassword);
             reqFtp.UsePassive = isPassive;

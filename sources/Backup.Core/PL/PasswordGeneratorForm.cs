@@ -52,32 +52,32 @@ namespace BUtil.Core.PL
 			string temp = string.Empty;
 			bool suit = false;
 			char ch;
-			
-			RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
 
             byte[] resultentropy = new byte[count];
 			byte[] tempentropy = new byte[count];
+
+            using (var randomNumberGenerator = RandomNumberGenerator.Create())
+            {
+                randomNumberGenerator.GetBytes(resultentropy);
+                randomNumberGenerator.GetBytes(tempentropy);
 			
-			rng.GetBytes(resultentropy);
-			rng.GetBytes(tempentropy);
-			
-			
-			for (int i = 0; i < count; i++)
-			{
-				suit = false;
-				do
-				{
-					rng.GetBytes(tempentropy);
-					ch = (char)(tempentropy[i]);
+			    for (int i = 0; i < count; i++)
+			    {
+				    suit = false;
+				    do
+				    {
+                        randomNumberGenerator.GetBytes(tempentropy);
+					    ch = (char)(tempentropy[i]);
 					
-					if (((ch >= 'a') && (ch <='z')) || ((ch >='0')&&(ch <= '9')) || ((ch >='A')&&(ch <='Z'))) suit = true;
-				}
-				while(!suit);
+					    if (((ch >= 'a') && (ch <='z')) || ((ch >='0')&&(ch <= '9')) || ((ch >='A')&&(ch <='Z'))) suit = true;
+				    }
+				    while(!suit);
 					
-				resultentropy[i] = tempentropy[i];
-			}
-			
-			for (int i = 0; i < count; i++) temp += Convert.ToChar(resultentropy[i]);
+				    resultentropy[i] = tempentropy[i];
+			    }
+            }
+
+            for (int i = 0; i < count; i++) temp += Convert.ToChar(resultentropy[i]);
 			
 			passwordTextBox.Text = temp.ToString();
 			useButton.Enabled = true;

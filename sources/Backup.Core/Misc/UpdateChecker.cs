@@ -4,6 +4,7 @@ using System.Globalization;
 using System.IO;
 using BUtil.Core.FileSystem;
 using System.Net;
+using System.Net.Http;
 
 namespace BUtil.Core.Misc
 {
@@ -23,10 +24,10 @@ namespace BUtil.Core.Misc
 		{
             try
 			{
-                using (WebClient client = new WebClient())
+                using (var client = new HttpClient())
                 {
                     var url = SupportManager.GetLink(SupportRequest.UpdateInfo);
-                    string updateInfoContent = client.DownloadString(url);
+                    string updateInfoContent = client.GetStringAsync(url).Result; // TODO: async!
 
                     var document = new XmlDocument();
                     document.LoadXml(updateInfoContent);

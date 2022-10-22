@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using BULocalization;
 using System.Windows.Forms;
@@ -168,6 +168,7 @@ namespace BUtil.Configurator
 		public static void Main(string[] args)
 		{
 			Application.EnableVisualStyles();
+			Application.SetHighDpiMode(HighDpiMode.SystemAware);
 			Application.SetCompatibleTextRenderingDefault(false);
 
 			ImproveIt.InitInfrastructure(true);

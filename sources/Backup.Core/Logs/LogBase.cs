@@ -17,11 +17,15 @@ namespace BUtil.Core.Logs
         private bool _errorsOrWarningsRegistered;// auto: false
         
         // Default encoding for processing packer messages
-		private Encoding _initialEncoding = Encoding.GetEncoding("cp866");
-		private Encoding _targetEncoding = Encoding.Default;
+		private Encoding _initialEncoding;
+		private Encoding _targetEncoding;
 
         internal LogBase(LogLevel level, LogMode mode, bool consoleApp)
         {
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+            _initialEncoding = Encoding.GetEncoding("cp866");
+            _targetEncoding = Encoding.Default;
+
             _loglevel = level;
 
             // packer encodings

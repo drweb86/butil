@@ -48,9 +48,8 @@ and many more. See [all topics](../../wiki) .
 
 ### Software
 
-- Microsoft Windows OS x64;
-- Microsoft .Net 2.0.5 Framework or higher is required(note: you do not need to download and install framework if you are Windows Vista or Windows 7 user). To download it you can open the following [url](http://www.microsoft.com/downloads/details.aspx?FamilyID=0856eacb-4362-4b0d-8edd-aab15c5e04f5&DisplayLang=en)
-- 7-zip 32-bit 4.65 or better(included in installation package)
+- Microsoft Windows OS x64 7SP1+;
+- Microsoft .Net Desktop Runtime 6 is required. To download it you can open the following [url](https://dotnet.microsoft.com/en-us/download/dotnet/6.0), see section **.NET Desktop Runtime 6.0.10**
 
 To function in full mode also required:
 - NTFS file system on system partition

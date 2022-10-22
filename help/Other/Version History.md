@@ -2,12 +2,12 @@
 
 ## New Features
 - 7-zip was updated to 22.01 x64 (2022-07-15);
-- .Net dependency was updated to 4.8.
+- .Net was updated to **.Net Desktop Runtime v 6**.
 
 ## Changes
 - update support web-sites;
 - update self-update mechanism to use github;
-- setup will no longer install .Net 2;
+- setup will no longer install .Net, but will requrie **.Net Desktop Runtime v.6**;
 - setup is x64 and demands x64 CPU;
 - Windows 64-bit support is required;
 - documentation was moved to web-site and excluded from project.
