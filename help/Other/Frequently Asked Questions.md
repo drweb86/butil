@@ -38,7 +38,7 @@ Software has the next structure
 | ```data\RestorationMaster.ico``` | The icon for restoration master | Used for User ```Menu\Backup Master``` |
 | ```data\BackupUi.ico``` | The icon for backup master | Used for User ```Menu\Restoration``` |
 | ```bin\Backup.Core.dll``` | Library with the common functions | Provides functions for executables |
-| ```bin\SpeedUp.bat``` | Batch script file for speeding up an application performance on .Net 2 | Perfroms speed up of starting the program |
+| ```bin\SpeedUp.bat``` | Batch script file for speeding up an application performance on .Net 4.8 | Perfroms speed up of starting the program |
 | ```bin\Backup.exe``` | Console backup tool | Performs the console based backup |
 | ```bin\BUtil.Backup.Ghost.exe``` | Scheduler tool | Provides ability to schedule the backup |
 | ```bin\Configurator.exe``` | The program configurator with built-in Restoration Master and Backup Ui Master | configures program; restores from backup; backups with Ui. |
@@ -55,7 +55,7 @@ Program is tested in next ways
 |  Ui | Tabs testing |
 
 # How can I post a feedback about documentation?
-You can do it at sourceforge.net forum <A href="https://sourceforge.net/tracker/?func=add&group_id=195114&atid=952142" target="_blank">https://sourceforge.net/tracker/?func=add&group_id=195114&atid=952142</A>
+You can do it [here](https://github.com/drweb86/butil/issues).
 
 # What are the standards were used during development of software?
 They are the GOST RF ISO 9127-94, internal code style guide and internal testing guide

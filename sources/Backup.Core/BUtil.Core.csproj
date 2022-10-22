@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
   <PropertyGroup>
     <ProjectGuid>{884325C6-9686-4D09-BCDE-38FF79279620}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -19,7 +19,7 @@
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
     <NoStdLib>False</NoStdLib>
     <WarningLevel>4</WarningLevel>
@@ -37,7 +37,8 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-     <OutputPath>$(SolutionDir)..\Output\BUtil\bin\</OutputPath>
+    <OutputPath>$(SolutionDir)..\Output\BUtil\bin\</OutputPath>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -61,6 +62,12 @@
     <BaseAddress>4194304</BaseAddress>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
   <ItemGroup>
@@ -209,23 +216,23 @@
     </BootstrapperPackage>
   </ItemGroup>
   <PropertyGroup>
-    <PreBuildEvent>cd &quot;$(SolutionDir)..\Output&quot;
+    <PreBuildEvent>cd "$(SolutionDir)..\Output"
 
 rem 7-zip
-md &quot;$(SolutionDir)..\Output\BUtil\7-zip&quot;
-xcopy &quot;c:\Program Files\7-zip&quot; &quot;$(SolutionDir)..\Output\BUtil\7-zip&quot; /E /Y
+md "$(SolutionDir)..\Output\BUtil\7-zip"
+xcopy "c:\Program Files\7-zip" "$(SolutionDir)..\Output\BUtil\7-zip" /E /Y
 
 rem Copying of localization files
-md &quot;$(SolutionDir)..\Output\BUtil\local&quot;
-xcopy &quot;$(SolutionDir)LocalizationProject&quot; &quot;$(SolutionDir)..\Output\BUtil\local&quot; /Y
+md "$(SolutionDir)..\Output\BUtil\local"
+xcopy "$(SolutionDir)LocalizationProject" "$(SolutionDir)..\Output\BUtil\local" /Y
 
 rem Copying of data folder
-md &quot;$(SolutionDir)..\Output\BUtil\data&quot;
-xcopy &quot;$(SolutionDir)..\data&quot; &quot;$(SolutionDir)..\Output\BUtil\data&quot; /Y
+md "$(SolutionDir)..\Output\BUtil\data"
+xcopy "$(SolutionDir)..\data" "$(SolutionDir)..\Output\BUtil\data" /Y
 
 rem Copying of scripts
-md &quot;$(SolutionDir)..\Output\BUtil\bin&quot;
-xcopy &quot;$(SolutionDir)..\Scripts&quot; &quot;$(SolutionDir)..\Output\BUtil\bin&quot; /Y
+md "$(SolutionDir)..\Output\BUtil\bin"
+xcopy "$(SolutionDir)..\Scripts" "$(SolutionDir)..\Output\BUtil\bin" /Y
 
 </PreBuildEvent>
   </PropertyGroup>

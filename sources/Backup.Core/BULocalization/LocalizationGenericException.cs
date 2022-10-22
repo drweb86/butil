@@ -2,7 +2,6 @@ using System;
 using System.Runtime.Serialization;
 using System.Security.Permissions;
 
-[assembly:FileIOPermission(SecurityAction.RequestMinimum, Unrestricted = true)]
 namespace BULocalization
 {
 

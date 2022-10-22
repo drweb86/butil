@@ -2,6 +2,7 @@
 
 ## New Features
 - 7-zip was updated to 22.01 x64 (2022-07-15)
+- .Net dependency was updated to 4.8
 
 ## Changes
 - update support web-sites
