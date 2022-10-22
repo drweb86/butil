@@ -20,8 +20,8 @@ BUtil is a powerfull set of tools for creating backups of documents and other da
 - Scheduler is present;
 - Two modes of creating a backup exists: manual from UI and console tool and with scheduling possibilities;
 - .Net based application;
-- [Unstructured Data repository model](../../wiki/general/Glossary.htm#udrm)
-- [Copying files selection and extraction of file data](../../wiki/general/Glossary.htm#cfsaeofd)
+- [Unstructured Data repository model](./help/Other/Glossary.md)
+- [Copying files selection and extraction of file data](./help/Other/Glossary.md)
 - Built in [7-zip](https://www.7-zip.org/) [compression](https://en.wikipedia.org/wiki/Data_compression)
 - Built in [7-zip](https://www.7-zip.org/) [AES-256](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) [encryption](https://en.wikipedia.org/wiki/Encryption).
 

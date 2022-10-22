@@ -1,5 +1,9 @@
 [Return to Main Page](../README.md)
 
+# Configure
+
+[Configurator](./Configure/Configurator.md)
+
 # Backup
 
 [Backup via Wizard](./Backup/Backup%20via%20Wizard/Backup%20Wizard.md)
@@ -24,6 +28,12 @@
 
 [Frequently Asked Questions](./Other/Frequently%20Asked%20Questions.md)
 
-[License](./Other/License.md)
+[Performance](./Other/Performance.md)
+
+[Glossary](./Other/Glossary.md)
+
+[Logging](./Other/Logging.md)
+
+[License](../License.md)
 
 [Version History](./Other/Version%20History.md)
