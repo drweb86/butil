@@ -12,8 +12,6 @@
 - Windows 64-bit support is required;
 - documentation was moved to web-site and excluded from project.
 
-## Bug Fixes
-
 # 4.8 ( 22 November 2009 )
 
 ## New Features
