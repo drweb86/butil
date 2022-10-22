@@ -58,25 +58,25 @@ Program is tested in next ways
 You can do it [here](https://github.com/drweb86/butil/issues).
 
 # What are the standards were used during development of software?
-They are the GOST RF ISO 9127-94, internal code style guide and internal testing guide
+They are the GOST RF ISO 9127-94, internal code style guide and internal testing guide.
 
 # What should I do if the configurator fails to load settings?
-You should reset them either with running configurator with special switch or by removing configuration files
+You should reset them either with running configurator with special switch or by removing configuration files.
 
 # What should I do to make program to run in full mode?
-You should use NTFS at system drive and install Windows OS that supports encrypted file system
+You should use NTFS at system drive and install Windows OS that supports encrypted file system.
 
 # What should I do if backup fails?
-You should investigate reasons why backup failled. To do this please open Configurator and open the backup log. If there will be not enough information you can try to set log mode to Setup and repeat backup. There will be more information. If nothing helped you can ask for support
+You should investigate reasons why backup failled. To do this please open Configurator and open the backup log. If there will be not enough information you can try to set log mode to Setup and repeat backup. There will be more information. If nothing helped you can ask for support.
 
 # What should I do if I cannot run the program?
-Make sure that all requirements are satisfied. If nothing helped you can ask for support
+Make sure that all requirements are satisfied. If nothing helped you can ask for support.
 
 # How to inegrate the Console Backup tool with Windows Scheduler
-Please see the next <a href="../scheduler/IntergrationWithWindowsScheduler.htm">guide</a>
+Please see the next [guide](../Schedule/Integration%20with%20Windows%20Scheduler.md).
 
 # BUtil Scheduler does not work when i didn't logged to the system!
-Yes, it works in standard way only when you logged to the system, but you can either inegrate the Console Backup tool or this software with Windows Scheduler to avoid this. For the guide please see the next <a href="../scheduler/IntergrationWithWindowsScheduler.htm">document</a>
+Yes, it works in standard way only when you logged to the system, but you can either inegrate the Console Backup tool or this software with Windows Scheduler to avoid this. For the guide please see the next [document](../Schedule/Integration%20with%20Windows%20Scheduler.md).
 
 # What are the main sphears of using the software?
 Sotware was written to be used at home as personal backup program on Windows OS.

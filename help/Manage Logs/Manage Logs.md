@@ -1,6 +1,6 @@
 To manage logs you can open Logs viewer either from start menu or from Configurator main menu\Tasks\Backup logs...
 
-!(Image 1 - Logs Viewer)[./Image%201%20-%20Logs%20Viewer.png]
+![Image 1 - Logs Viewer](./Image%201%20-%20Logs%20Viewer.png)
 
 # How Can I View Selected Logs?
 You can select logs you want to view(hold Ctrl and click on those logs) and open context menu (2) or press button (1).

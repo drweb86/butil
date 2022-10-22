@@ -26,4 +26,4 @@ Add new task into the system:
 - On the next tab please check 'When my computer starts';
 - On the next tab please enter your login and password(without password task may not run);
 - On the next tab please configure the way you want to run the scheduler
-- In the properties go to 'Task' tab and change the field Execute by adding parameter **-auto**. For example there was string "C:\PROGRA~1\BUtil\backup.exe": i this case you should change it to "C:\PROGRA~1\BUtil\backup.exe -auto "Task=My backup task 1"".
+- In the properties go to 'Task' tab and change the field Execute by adding parameter **-auto**. For example there was string ```C:\PROGRA~1\BUtil\backup.exe```: i this case you should change it to ```C:\PROGRA~1\BUtil\backup.exe -auto "Task=My backup task 1"```.

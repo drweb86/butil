@@ -22,8 +22,8 @@ Tray Application provides next functions:
 # Block-diagramm of scheduler processing
 
 Diagram is shown on picture 1.
+
 ![Image 1 - Scheduler Block Diagram](./Image%201%20-%20Scheduler%20Block%20Diagram.png)
-Image 1 - Scheduler Block Diagram
 
 # Command Line
 

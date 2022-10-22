@@ -1,7 +1,6 @@
 To configure application you should start the Configurator. Configurator is shown on picture 1. Description to program elements is ib table 1.
 
 ![Image 1 - View of configurator](./Image%201%20-%20View%20of%20configurator.png)
-Image 1 - View of configurator
 
 Table 1 - Description of elements(to the image 1)
 | Program element | Description |
@@ -18,7 +17,6 @@ Table 1 - Description of elements(to the image 1)
 The place where you can add the items which will be backupped. See picture 2.
 
 ![Image 2 - Managing items to backup](./Image%202%20-%20Managing%20items%20to%20backup.png)
-Image 2 - Managing items to backup
 
 You can add files and folders you want to backup in the following ways:
 - Drag from explorer (9) and drop to list (1);
@@ -34,7 +32,6 @@ To remove items from the list you should select those items (hold Ctrl and click
 Storages are the places where your backup will be copied to. They can be configured on 'Where' settings group of Configurator(see picture 3)
 
 ![Image 3 - Managing storages](./Image%203%20-%20Managing%20storages.png)
-Image 3 - Managing storages
 
 ## Adding Storages To The List
 Next storage types are supported: hdd, flash and network storages. You can add the storages to the list(1) in the following ways:
@@ -53,7 +50,6 @@ To remove the storage from the list (1) you should select it and press on button
 To set up the scheduler you can open the 'When' settings group (see image 4)
 
 ![Image 4 - Scheduler Configuration](./Image%204%20-%20Scheduler%20Configuration.png)
-Image 4 - Scheduler Configuration
 
 ## How To Set Up The Schduler?
 Scheduler configuration is available only when option 'Misc\Don't Need Scheduler' is turned off. Choose the days of week when backup will be started by clicking on list (1). Then choose the time (2, 3) when backup should be started on those days.
@@ -75,7 +71,6 @@ Please see the next <a href="../scheduler/IntergrationWithWindowsScheduler.htm">
 AES-256 7-zip protection is used to protect data in an image (see image 5).
 
 ![Image 5 - Encryption](./Image%205%20-%20Encryption.png)
-Image 5 - Encryption
 
 ## How Can I Protect My Image With The Password?
 You can open settings group 'Encryption' and input here a password. 
@@ -90,7 +85,6 @@ When password does not meet requirements an error messages will be shown under t
 To speed up the performance you can open in the Controller and open 'Other options' settings group (see image 6).
 
 ![Image 6 - Other Options](./Image%206%20-%20Other%20Options.png)
-Image 6 - Other Options
 
 ## How To Speed Up The Copying To Storages?
 You can speed up copying to storages in (1) by increasing setting value
@@ -105,7 +99,6 @@ To do this please decrease priority of backup in setting (3). Also you can set u
 This setting can be configured in Configurator in 'Other Options' setting group (see image 7).
 
 ![Image 7 - Other Options](./Image%206%20-%20Other%20Options.png)
-Image 7 - Other Options
 
 ## How To Make Programs to Run Before Backup?
 To do this you can add programs to list (5). Note: all programs in this list are performed sequentally one by one. Directory of each program is set to parent of executable. Links are not allowed
@@ -117,7 +110,6 @@ To do this you can add programs to list (6). Note: all programs in this list are
 You can configure logging in Configurator in 'Logging' settings group (see image 8).
 
 ![Image 8 - Logging](./Image%208%20-%20Logging.png)
-Image 8 - Logging
 
 ## How Can I Change Logs Location?
 You should use link label (13) to do this. To restore default location press at link label (12). If your specified location will be unavailable, program will fail to backup.
@@ -129,7 +121,6 @@ To get support with the logs you should set logging level (1) to 'Support', then
 You can open web-links of home page, feature request, bug report and support request from program and from this documentation. To do this from program please open in Configurator 'About' settings group (see image 9).
 
 ![Image 9 - About tab](./Image%209%20-%20About%20tab.png)
-Image 9 - About tab
 
 ## How Do I Check If I Have The Latest Version?
 To do this open link(6).

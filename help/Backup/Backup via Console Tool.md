@@ -34,4 +34,4 @@ After completion of backup program will hibernate the computer
 After completion of backup program will reboot the computer
 
 ## See also:
-[How to inegrate console backup tool with Windows Scheduler](../scheduler/IntergrationWithWindowsScheduler.htm)
+[How to inegrate console backup tool with Windows Scheduler](../Schedule/Integration%20with%20Windows%20Scheduler.md)
