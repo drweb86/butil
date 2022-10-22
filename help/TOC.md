@@ -34,6 +34,10 @@
 
 [Logging](./Other/Logging.md)
 
+[Localization](./Other/Localization.md)
+
 [License](../License.md)
 
 [Version History](./Other/Version%20History.md)
+
+[Thanks](./Other/Thanks.md)
