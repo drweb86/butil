@@ -21,12 +21,8 @@ namespace BUtil.Core.Misc
 		/// <exception cref="InvalidOperationException">Any problems</exception>
 		public static bool CheckForUpdate(out string newVersion, out string changes)
 		{
-            var previous = ServicePointManager.SecurityProtocol;
-            
             try
 			{
-                ServicePointManager.SecurityProtocol = (SecurityProtocolType)768 | (SecurityProtocolType)3072;
-
                 using (WebClient client = new WebClient())
                 {
                     var url = SupportManager.GetLink(SupportRequest.UpdateInfo);
@@ -38,19 +34,17 @@ namespace BUtil.Core.Misc
                     newVersion = document.SelectSingleNode("//LatestUpdate/Version").InnerText;
                     changes = document.SelectSingleNode("//LatestUpdate/Changes").InnerText.Replace(@"\n", Environment.NewLine);
 
-                    double versionCurrent = double.Parse(CopyrightInfo.Version, CultureInfo.InvariantCulture);
-                    double thatVersion = double.Parse(newVersion, CultureInfo.InvariantCulture);
-                    return versionCurrent < thatVersion;
+					var remoteVersion = Version.Parse(newVersion);
+                    return CopyrightInfo.Version < remoteVersion;
                 }
 			}
-			catch(IOException e) { throw new InvalidOperationException(e.Message, e); }
-			catch(XmlException e) { throw new InvalidOperationException(e.Message, e); }
-			catch(System.Security.SecurityException e) { throw new InvalidOperationException(e.Message, e); }
-			finally
-			{
-				ServicePointManager.SecurityProtocol = previous;
-
-            }
+            catch (ArgumentNullException e) { throw new InvalidOperationException(e.Message, e); }
+            catch (ArgumentException e) { throw new InvalidOperationException(e.Message, e); }
+            catch (FormatException e) { throw new InvalidOperationException(e.Message, e); }
+            catch (OverflowException e) { throw new InvalidOperationException(e.Message, e); }
+            catch (IOException e) { throw new InvalidOperationException(e.Message, e); }
+			catch (XmlException e) { throw new InvalidOperationException(e.Message, e); }
+			catch (System.Security.SecurityException e) { throw new InvalidOperationException(e.Message, e); }
 		}
 	}
 }

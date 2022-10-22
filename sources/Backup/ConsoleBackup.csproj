@@ -85,6 +85,9 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>SharedAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="Controller\ConsoleBackupController.cs" />
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="Main.cs" />

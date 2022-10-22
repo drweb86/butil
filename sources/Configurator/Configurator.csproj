@@ -84,6 +84,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>SharedAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="Arguments.cs" />
     <Compile Include="AddBackupTaskWizard\AddBackupTaskWizard.cs" />
     <Compile Include="AddBackupTaskWizard\Controller\AddBackupTaskWizardController.cs" />
