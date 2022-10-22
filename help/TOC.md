@@ -34,6 +34,8 @@
 
 [Logging](./Other/Logging.md)
 
+[Security and Protection](./Other/Security%20and%20Protection.md)
+
 [Localization](./Other/Localization.md)
 
 [License](../License.md)
