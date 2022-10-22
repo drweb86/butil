@@ -3,3 +3,4 @@ obj
 debug
 packages
 .vs
+sources/NUnitTests/bin/
