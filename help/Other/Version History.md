@@ -1,3 +1,8 @@
+# 5.2
+
+## Changes
+- phased out BU Localization because it is outdated.
+
 # 5.1
 
 ## New Features

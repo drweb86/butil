@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="OptionsAreDamagedPleaseReconfigureThemInConfigurator" xml:space="preserve">
+    <value>Настройки повреждены! Пожалуйста, настройте программу вновь в Конфигураторе</value>
+  </data>
+  <data name="In8MinutesScheduledBackupWillStart" xml:space="preserve">
+    <value>Через 8 минут начнется запланированное резервное копирование</value>
+  </data>
+  <data name="BackupStarted" xml:space="preserve">
+    <value>Началось резервное копирование данных...</value>
+  </data>
+  <data name="BackupToolButil" xml:space="preserve">
+    <value>Утилита резервного копирования BUtil</value>
+  </data>
+  <data name="StoppingTheBackup" xml:space="preserve">
+    <value>Резервное копирование останавливается...</value>
+  </data>
+  <data name="BackupNowInAProgress" xml:space="preserve">
+    <value>Идет резервное копирование...</value>
+  </data>
+  <data name="NewBackupWillStartIn0" xml:space="preserve">
+    <value>Резервное копирование начнется через {0}</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Пуск</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Выйти</value>
+  </data>
+  <data name="ThereAreNoOptionsFileNyouCanConfigureApplicationInConfiruratorNNapplicationWillNowClose" xml:space="preserve">
+    <value>Настройки не заданы.\nВы можете задать их в Конфигураторе.\n\nПриложение сейчас завершит свою работу.</value>
+  </data>
+  <data name="TheSecondCopyOfButilSchedulerRanNNnowThisCopyWillTerminate" xml:space="preserve">
+    <value>Запущена вторая копия планировщика BUtil.\n\nСейчас эта копия завершит свою работу.</value>
+  </data>
+  <data name="ApplicationComponent7ZipIsBroken0NyouShouldReinstallTheSoftwareNNapplicationWillNowClose" xml:space="preserve">
+    <value>Компонент приложения 7-zip {0} поврежден.\nВы должны переустановить утилиту.\n\nПриложение сейчас завершит свою работу.</value>
+  </data>
+  <data name="SchedulerStartUpIsForbiddenNtoChangeItYouCanOpenTheConfiguratorNNapplicationWillNowClose" xml:space="preserve">
+    <value>Запуск планировщика запрещен.\nЧтобы изменить это вы можете открыть Конфигуратор\n\nПриложение сейчас завершит свою работу.</value>
+  </data>
+  <data name="ParameterIsWrongNNforTheCompleteParametersListPleaseSeeDocumentation" xml:space="preserve">
+    <value>Неверный параметр.\n\nВ документации описаны все параметры Планировщика.</value>
+  </data>
+  <data name="ButilSchedulerIsRunningNNtoNotSeeThisMessageAgainYouShouldRunTheSchedulerWithParameterNpleaseSeeTheDocumentationForDetails" xml:space="preserve">
+    <value>Планировщик BUtil запущен...\n\nЕсли не хотите видеть это сообщение в следующий раз можете запустить планировщик с параметром.\nПодробности можете посмотреть в документации.</value>
+  </data>
+  <data name="NoOneTaskUsesSchedulerNyoudOpenConfiguratorOnWhenTabNNapplicationWillNowClose" xml:space="preserve">
+    <value>Ни в одном задании РК не используется планировщик.\nВы можете настроить запуск заданий во вкладке "Когда" конфигуратора.\n\nПриложение сейчас завершит свою работу.</value>
+  </data>
+  <data name="BackupFinished" xml:space="preserve">
+    <value>Резервное копирование завершено</value>
+  </data>
+  <data name="CannotOpenFileLogDueToCryticalError0" xml:space="preserve">
+    <value>Не могу открыть файл лога из-за критической ошибки {0}</value>
+  </data>
+</root>

@@ -1,11 +1,12 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using BULocalization;
+
 using BUtil.Configurator.Configurator.Controls;
 using BUtil.Configurator.Controls;
 using BUtil.Core.PL;
 using BUtil.Core.Options;
+using BUtil.Configurator.Localization;
 
 namespace BUtil.Configurator.Configurator.Forms
 {
@@ -65,16 +66,16 @@ namespace BUtil.Configurator.Configurator.Forms
 
         void ApplyLocalization()
         {
-            Text = string.Format(Translation.Current[639], _task.Name);
+            Text = string.Format(Resources.BackupTask0, _task.Name);
 
             foreach (KeyValuePair<BackupTaskViewsEnum, BackUserControl> pair in _views)
             {
                 pair.Value.ApplyLocalization();
             }
             choosePanelUserControl.ApplyLocalization();
-            backupTaskTitleLabel_.Text = Translation.Current[633];
-            _saveAndExecuteButton.Text = Translation.Current[640];
-            cancelButton.Text = Translation.Current[4];
+            backupTaskTitleLabel_.Text = Resources.Title;
+            _saveAndExecuteButton.Text = Resources.SaveAndRun;
+            cancelButton.Text = Resources.Cancel;
             
             ViewChangeNotification(BackupTaskViewsEnum.SourceItems);
         }

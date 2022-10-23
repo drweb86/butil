@@ -1,9 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using BULocalization;
+
 using BUtil.Core.Options;
 using BUtil.Configurator.Configurator.Forms;
+using BUtil.Configurator.Localization;
 
 namespace BUtil.Configurator.Configurator.Controls
 {
@@ -41,17 +42,17 @@ namespace BUtil.Configurator.Configurator.Controls
 
         public override void ApplyLocalization()
         {
-            SetHintForControl(_addButton, Translation.Current[144]);
-            SetHintForControl(_removeButton, Translation.Current[634]);
-            SetHintForControl(_editButton, Translation.Current[635]);
-            SetHintForControl(_executeButton, Translation.Current[150]);
+            SetHintForControl(_addButton, Resources.AddsTheNewBackupTask);
+            SetHintForControl(_removeButton, Resources.RemovesTheSelectedBackupTask);
+            SetHintForControl(_editButton, Resources.EditsTheSelectedBackupTask);
+            SetHintForControl(_executeButton, Resources.RunsBackup);
 
-            _addToolStripMenuItem.Text =Translation.Current[365];
-            _removeToolStripMenuItem.Text = Translation.Current[77];
-            _editToolStripMenuItem.Text=Translation.Current[364];
-            _executeToolStripMenuItem.Text = Translation.Current[638];
+            _addToolStripMenuItem.Text =Resources.Add;
+            _removeToolStripMenuItem.Text = Resources.Remove;
+            _editToolStripMenuItem.Text=Resources.Modify;
+            _executeToolStripMenuItem.Text = Resources.Run;
 
-            titleColumnHeader.Text = Translation.Current[360];
+            titleColumnHeader.Text = Resources.Title;
         }
 
         public override void SetOptionsToUi(object settings)
@@ -130,7 +131,7 @@ namespace BUtil.Configurator.Configurator.Controls
 
             foreach (var selectedTask in selectedTasks)
             {
-                if (MessageBox.Show(string.Format(Translation.Current[636], selectedTask.Text), Translation.Current[618], MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show(string.Format(Resources.WouldYouLileToRemoveTheBackupTask0, selectedTask.Text), BUtil.Core.Localization.Resources.QuestionButil, MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     _tasksListView.Items.Remove(selectedTask);
                 }

@@ -1,14 +1,15 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Collections.ObjectModel;
 using System.IO;
-using BULocalization;
+
 using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
 using BUtil.Core.Logs;
 using BUtil.Core;
 using BUtil.Core.Misc;
+using BUtil.ConsoleBackup.Localization;
 
 namespace BUtil.ConsoleBackup.Controller
 {
@@ -73,13 +74,13 @@ namespace BUtil.ConsoleBackup.Controller
                 }
                 else if (ArgumentIs(argument, HelpCommand))
                 {
-                    Console.WriteLine(Translation.Current[308]);
+                    Console.WriteLine(Resources.UsageVariantsNNbackupExeTaskMyTaskTitleNRunningWithoutParametersOutputsInformationToConsoleNNbackupExeTaskMyTask1TitleTaskMyTask2TitleTaskMyTask3TitleNRunsSeveralTasksOneByOneNNbackupExeTaskMyTaskTitleUsefilelogNOutputsInformationInFileLogNNbackupExeTaskMyTaskTitleShutdownNbackupExeTaskMyTaskTitleLogoffNbackupExeTaskMyTaskTitleSuspendNbackupExeTaskMyTaskTitleRebootNbackupExeTaskMyTaskTitleHibernateNNbackupExeHelpNOutputsBriefHelpN);
                     return false;
                 }
                 else
                 {
                     Console.WriteLine(argument);
-                    ShowInvalidUsageAndQuit(Translation.Current[310]);
+                    ShowInvalidUsageAndQuit(Resources.ErrorInvalidCommandParametersSpecified);
                     return false;
                 }
             }
@@ -97,7 +98,7 @@ namespace BUtil.ConsoleBackup.Controller
 
             if (_backupTaskTitles.Count == 0)
             {
-                log.WriteLine(LoggingEvent.Error, Translation.Current[620], TaskCommandLineArgument);
+                log.WriteLine(LoggingEvent.Error, Resources.PleaseSpecifyTheBackupTaskTitleUsingTheCommandLineArgument0MyBackupTaskTitleNexampleBackupExe0MyBackupTitle, TaskCommandLineArgument);
                 return false;
             }
 
@@ -105,7 +106,7 @@ namespace BUtil.ConsoleBackup.Controller
             {
                 if (!_options.BackupTasks.ContainsKey(backupTaskTitle))
                 {
-                    log.WriteLine(LoggingEvent.Error, Translation.Current[621], backupTaskTitle);
+                    log.WriteLine(LoggingEvent.Error, Resources.TherereNoBackupTaskWithTitle0, backupTaskTitle);
                     return false;
                 }
                 else
@@ -155,7 +156,7 @@ namespace BUtil.ConsoleBackup.Controller
 
         private static void ShowInvalidUsageAndQuit(string error)
         {
-            Console.WriteLine(Translation.Current[308]);
+            Console.WriteLine(Resources.UsageVariantsNNbackupExeTaskMyTaskTitleNRunningWithoutParametersOutputsInformationToConsoleNNbackupExeTaskMyTask1TitleTaskMyTask2TitleTaskMyTask3TitleNRunsSeveralTasksOneByOneNNbackupExeTaskMyTaskTitleUsefilelogNOutputsInformationInFileLogNNbackupExeTaskMyTaskTitleShutdownNbackupExeTaskMyTaskTitleLogoffNbackupExeTaskMyTaskTitleSuspendNbackupExeTaskMyTaskTitleRebootNbackupExeTaskMyTaskTitleHibernateNNbackupExeHelpNOutputsBriefHelpN);
             ShowErrorAndQuit(error);
         }
 
@@ -164,8 +165,6 @@ namespace BUtil.ConsoleBackup.Controller
             PerformCriticalChecks();
 
             LoadSettings();
-
-            LoadLocals();
 
             ValidateSettings();
 		}
@@ -190,26 +189,7 @@ namespace BUtil.ConsoleBackup.Controller
                 // backup process is not breaked here
                 // because this message should go in logs too
                 // because this tool usually runned from scheduler
-                Console.WriteLine(Translation.Current[541], e.Message);
-            }
-        }
-
-        private static void LoadLocals()
-        {
-            try
-            {
-                var namespaces = new [] { "Core Library", "Console backup Program" };
-                var collection = new ReadOnlyCollection<string>(namespaces);
-                var settings = new ManagerBehaviorSettings();
-                settings.RequestLanguageIfNotSpecified = false;
-                settings.UseToolGeneratedConfigFile = true;
-
-                var manager = new LanguagesManager(collection, Directories.LocalsFolder, "BUtil", settings);
-                manager.Init();
-            }
-            catch (Exception exc)
-            {
-                ShowErrorAndQuit(string.Format(CultureInfo.InstalledUICulture, "Could not load locals due to {0}", exc.Message));
+                Console.WriteLine(BUtil.Core.Localization.Resources.ButilSoftwarePackage7ZipComponent0HasInvalidCheckSummNprobablyItWasDamagedByVirusesNNyouShouldReinstallApplicationNNrestorationAndBackupFunctionsWillBeUnavailable, e.Message);
             }
         }
 
@@ -261,7 +241,7 @@ namespace BUtil.ConsoleBackup.Controller
                 catch (LogException e)
                 {
                     // "Cannot open file log due to crytical error {0}"
-                    ShowErrorAndQuit(string.Format(CultureInfo.InstalledUICulture, Translation.Current[312], e.Message));
+                    ShowErrorAndQuit(string.Format(CultureInfo.InstalledUICulture, Resources.CannotOpenFileLogDueToCryticalError0, e.Message));
                 }
             }
             else

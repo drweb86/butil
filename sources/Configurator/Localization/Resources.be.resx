@@ -1,0 +1,811 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="What" xml:space="preserve">
+    <value>Што?</value>
+  </data>
+  <data name="DragAndDropHereFilesAndFoldersWhichYoureGoingToBackupForSettingCompressionPriorityUseMenu" xml:space="preserve">
+    <value>Перацягнiце файлы и папки з файлавага мэнеджара, якiм вы карыстаецесь, у спic! Каб пазначыць сцепень упокоуки адкройце канцекстнае меню.</value>
+  </data>
+  <data name="AddFolders" xml:space="preserve">
+    <value>Дабавiць папкi...</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Удалiць</value>
+  </data>
+  <data name="AddFiles" xml:space="preserve">
+    <value>Дабавiць файлы...</value>
+  </data>
+  <data name="Where" xml:space="preserve">
+    <value>Куды?</value>
+  </data>
+  <data name="SpecifyTheFolderWhereToStoreBackUp" xml:space="preserve">
+    <value>Пакажыце папку  куды патрэбна памяшчаць рэзервовую копiю:</value>
+  </data>
+  <data name="Encryption" xml:space="preserve">
+    <value>Шыфраванне</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Шукаць...</value>
+  </data>
+  <data name="OtherOptions" xml:space="preserve">
+    <value>Iншыя опцыi</value>
+  </data>
+  <data name="AboveNormal" xml:space="preserve">
+    <value>Вышэй сярэдняга</value>
+  </data>
+  <data name="Normal" xml:space="preserve">
+    <value>Сярэднi</value>
+  </data>
+  <data name="BelowNormal" xml:space="preserve">
+    <value>Нiжэй сярэдняга</value>
+  </data>
+  <data name="Low" xml:space="preserve">
+    <value>Нiзкi</value>
+  </data>
+  <data name="ChooseBackupPriority" xml:space="preserve">
+    <value>Выберыце прыярытэт:</value>
+  </data>
+  <data name="DefaultIs60" xml:space="preserve">
+    <value>%  (60)</value>
+  </data>
+  <data name="PutOffMakingBackupTillProcessorSLoadingWillBeLessThen" xml:space="preserve">
+    <value>Адлажыць рэзервовае капiраванне пакуль загружанасць працэсара не паменшыцца да</value>
+  </data>
+  <data name="Logging" xml:space="preserve">
+    <value>Логi</value>
+  </data>
+  <data name="When" xml:space="preserve">
+    <value>Калi?</value>
+  </data>
+  <data name="ChooseDaysOfWeek" xml:space="preserve">
+    <value>Выберыце днi тыдзеня:</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>Серада</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>Чацвер</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>Пятнiца</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>Субота</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>Ауторак</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>Панядзелак</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>Нядзеля</value>
+  </data>
+  <data name="Minute" xml:space="preserve">
+    <value>Хвiлiны:</value>
+  </data>
+  <data name="Hour" xml:space="preserve">
+    <value>Гадзiны:</value>
+  </data>
+  <data name="Week" xml:space="preserve">
+    <value>тыдзень</value>
+  </data>
+  <data name="Day" xml:space="preserve">
+    <value>дзень</value>
+  </data>
+  <data name="BackupDataEvery" xml:space="preserve">
+    <value>Рабiць капiраванне кожны ...</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>А праграме</value>
+  </data>
+  <data name="UtilityForCreatingBackupsNNwebSitesHttpsGithubComDrweb86ButilNNlocalizationCreatedByN" xml:space="preserve">
+    <value>утылiта для стварэння рэзервовых копiй\n\nЛакалiзацыя створана:\n</value>
+  </data>
+  <data name="AddsTheNewBackupTask" xml:space="preserve">
+    <value>Стварыць рэзервовую копiю</value>
+  </data>
+  <data name="Tasks" xml:space="preserve">
+    <value>Задачы</value>
+  </data>
+  <data name="RunsBackup" xml:space="preserve">
+    <value>Стварыць рэзервовую копiю</value>
+  </data>
+  <data name="Configurator" xml:space="preserve">
+    <value>Канфiгуратар</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Пачаць</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Закрыць</value>
+  </data>
+  <data name="AboveNormal" xml:space="preserve">
+    <value>Вышэй сярэдняга</value>
+  </data>
+  <data name="Normal" xml:space="preserve">
+    <value>Сярэднi</value>
+  </data>
+  <data name="BelowNormal" xml:space="preserve">
+    <value>Нiжэй сярэдняга</value>
+  </data>
+  <data name="Low" xml:space="preserve">
+    <value>Нiзкi</value>
+  </data>
+  <data name="ProcessPriority" xml:space="preserve">
+    <value>Прыярытэт працэссу:</value>
+  </data>
+  <data name="Tasks" xml:space="preserve">
+    <value>Задачы</value>
+  </data>
+  <data name="WellcomeToBackupWizard" xml:space="preserve">
+    <value>Масцер рэзервовага капиравання витае вас!!!</value>
+  </data>
+  <data name="BackupProcessCompletedSuccesfully" xml:space="preserve">
+    <value>Працэс архiвiравання скончыуся паспяхова!!!</value>
+  </data>
+  <data name="DoYouReallyWantToStopBackupProcess" xml:space="preserve">
+    <value>Вы сапрауды жадаеце спынiць працэс рэзервовага капiравання?</value>
+  </data>
+  <data name="AreYouSure" xml:space="preserve">
+    <value>Падцвердзiце ваш выбар</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Адмянiць</value>
+  </data>
+  <data name="Elapsed" xml:space="preserve">
+    <value>Прайшло часу:</value>
+  </data>
+  <data name="BackupIsInAProgress" xml:space="preserve">
+    <value>Прагрэс архiвiравання iдзе...</value>
+  </data>
+  <data name="WouldYouLikeToApplyModifiedSettings" xml:space="preserve">
+    <value>Жадаеце прымениць настройкi праграмы перад выхадам?</value>
+  </data>
+  <data name="Exiting" xml:space="preserve">
+    <value>Выхад з праграмы...</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="ChooseLoggingLevel" xml:space="preserve">
+    <value>Выберыце узровень вядзення логау:</value>
+  </data>
+  <data name="Documentation" xml:space="preserve">
+    <value>Адкрыць дапамогу</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>ПАДТРЫМКА</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>ПАДТРЫМКА</value>
+  </data>
+  <data name="BugReport" xml:space="preserve">
+    <value>Памылка</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Зачыниць</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Памылка</value>
+  </data>
+  <data name="WasAskedToUpdateOptions" xml:space="preserve">
+    <value>Was asked to update options</value>
+  </data>
+  <data name="CouldNotContinueWorkAfterGettingOptionsBecause0" xml:space="preserve">
+    <value>Could not continue work after getting options because {0}</value>
+  </data>
+  <data name="TheBestChoiceIsLowInAlmostAllCases" xml:space="preserve">
+    <value>The best choice is "low" in almost all cases</value>
+  </data>
+  <data name="CannotExecuteRequiredManipulationsWithServerN" xml:space="preserve">
+    <value>Cannot execute required manipulations with server\n</value>
+  </data>
+  <data name="HddStorageConfiguration" xml:space="preserve">
+    <value>Канфiгурацыя хранiлiшча на HDD</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>ОК</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Адмена</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Назва</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Настройкi</value>
+  </data>
+  <data name="RemoveFromList" xml:space="preserve">
+    <value>Удалiць з спiсу</value>
+  </data>
+  <data name="Modify" xml:space="preserve">
+    <value>Змянiць...</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Дабавiць</value>
+  </data>
+  <data name="OpenLogsFolderInExplorer" xml:space="preserve">
+    <value>Адчынiць папку з логамi у Праваднiке...</value>
+  </data>
+  <data name="StorageName" xml:space="preserve">
+    <value>Назва хранiлiшча:</value>
+  </data>
+  <data name="_1BackupShouldBePasswordProtectedIfNotProgramWillSkipItsCopyingToThisStorageN2YourAuthorizationInformationIsGoingOverTheNetworkInUnprotectedModeAsPlainText" xml:space="preserve">
+    <value>1. Backup should be password protected. If NOT, program will SKIP its copying to this storage\n2. Your authorization information is going over the network in UNPROTECTED mode(as plain text).</value>
+  </data>
+  <data name="DestinationFolder" xml:space="preserve">
+    <value>Destination folder</value>
+  </data>
+  <data name="DeleteHereAllOtherButilImageFiles" xml:space="preserve">
+    <value>Delete here all other BUtil image files</value>
+  </data>
+  <data name="AuthorizationInformation" xml:space="preserve">
+    <value>Authorization information</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>User:</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="FtpServer" xml:space="preserve">
+    <value>FTP server</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="Passive" xml:space="preserve">
+    <value>Passive</value>
+  </data>
+  <data name="DataTransferMode" xml:space="preserve">
+    <value>Data transfer mode:</value>
+  </data>
+  <data name="DnsNameOrIpFtp" xml:space="preserve">
+    <value>Dns name or IP: ftp://</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Test" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="FtpStorageConfiguration" xml:space="preserve">
+    <value>FTP Storage Configuration</value>
+  </data>
+  <data name="WorksFine" xml:space="preserve">
+    <value>Работае добра!</value>
+  </data>
+  <data name="HardDriveStorage" xml:space="preserve">
+    <value>Hard drive storage...</value>
+  </data>
+  <data name="FtpStorage" xml:space="preserve">
+    <value>ФТП месца...</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Адмена</value>
+  </data>
+  <data name="BeepSeveralTimes" xml:space="preserve">
+    <value>Beep several times</value>
+  </data>
+  <data name="AfterCompletionOfBackup" xml:space="preserve">
+    <value>After completion of backup</value>
+  </data>
+  <data name="ShutdownPc" xml:space="preserve">
+    <value>Shutdown PC</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Log Off</value>
+  </data>
+  <data name="SuspendPc" xml:space="preserve">
+    <value>Suspend PC</value>
+  </data>
+  <data name="HibernatePc" xml:space="preserve">
+    <value>Hibernate PC</value>
+  </data>
+  <data name="DoNothing" xml:space="preserve">
+    <value>Нiчога не рабiць</value>
+  </data>
+  <data name="SetCompressionDegree" xml:space="preserve">
+    <value>Set compression degree</value>
+  </data>
+  <data name="ItemsToBackup" xml:space="preserve">
+    <value>Items to backup</value>
+  </data>
+  <data name="FirstSelectAnItem" xml:space="preserve">
+    <value>First, select an item!</value>
+  </data>
+  <data name="Folders" xml:space="preserve">
+    <value>Папки</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>Файлы</value>
+  </data>
+  <data name="Restore" xml:space="preserve">
+    <value>Restore....</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="Recover" xml:space="preserve">
+    <value>Recover!</value>
+  </data>
+  <data name="UseRightClickMouseOnSelectedItemToRestoreIt" xml:space="preserve">
+    <value>Use right-click mouse on selected item to restore it</value>
+  </data>
+  <data name="ItemsInImage" xml:space="preserve">
+    <value>Items in image</value>
+  </data>
+  <data name="_0Restoration" xml:space="preserve">
+    <value>{0} - Restoration</value>
+  </data>
+  <data name="OpenAnImage" xml:space="preserve">
+    <value>Open an image...</value>
+  </data>
+  <data name="ButilImagesButilButil" xml:space="preserve">
+    <value>BUTIL images(*.butil)|*.butil</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="IfYourBackupIsPasswordProtectedPleaseTypePasswordHere" xml:space="preserve">
+    <value>If your backup is password protected, please type password here:</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Continue &gt;</value>
+  </data>
+  <data name="ImageLocation" xml:space="preserve">
+    <value>Image location:</value>
+  </data>
+  <data name="NoteForRestorationOfDataAsArchivesPasswordIsNotNeeded" xml:space="preserve">
+    <value>Note: For restoration of data as archives password is not needed</value>
+  </data>
+  <data name="RestorationMaster" xml:space="preserve">
+    <value>Restoration master</value>
+  </data>
+  <data name="Restore" xml:space="preserve">
+    <value>Restore</value>
+  </data>
+  <data name="HowToRestoreYourInformation" xml:space="preserve">
+    <value>How to restore your information?</value>
+  </data>
+  <data name="ToSpecifiedFolder" xml:space="preserve">
+    <value>To specified folder</value>
+  </data>
+  <data name="RestoresAllDataToTheSourceFolderItWillRestorePreviousVersionOfFilesFromABackupArchiveUseItWhenNOriginalLocationEntirelyDamagedAndNThereWereNoErrorsDuringCreatingThisBackupNNnotRecommendedCanDamageExistingData" xml:space="preserve">
+    <value>Restores all data to the source folder. It will restore previous version of files from a backup archive. Use it when:\n- original location entirely damaged and \n- there were no errors during creating this backup\n\nNot recommended, can damage existing data</value>
+  </data>
+  <data name="ToOriginalLocation" xml:space="preserve">
+    <value>To original location</value>
+  </data>
+  <data name="RestorationOfInformationAsArchiveIsAnEfficientWayWhenYouWantToNRestoreSmallPiecesOfInformationFromALargeBackuppedFolderSavesTimeNAllDataInArchiveIsEncryptedIfYouUsedPasswordMoreSecureNhoweverFresh7ZipInstallationPackageIsRequiredToOpenExtractedArchive" xml:space="preserve">
+    <value>Restoration of information as archive is an efficient way when you want to \n- restore small pieces of information from a large backupped folder(saves time)\n- all data in archive is encrypted if you used password(more secure)\nHowever, fresh 7-zip installation package is required to open extracted archive</value>
+  </data>
+  <data name="RestoreAs7ZipArchive" xml:space="preserve">
+    <value>Restore as 7-zip archive</value>
+  </data>
+  <data name="Skip" xml:space="preserve">
+    <value>Прапусциць</value>
+  </data>
+  <data name="_7ZipArchive7Z" xml:space="preserve">
+    <value>7-zip archive|*.7z</value>
+  </data>
+  <data name="ChooseDestinationLocation" xml:space="preserve">
+    <value>Choose destination location</value>
+  </data>
+  <data name="NetworkStoragesAreNotAllowedToBePointedHere" xml:space="preserve">
+    <value>Network storages are not allowed to be pointed here!</value>
+  </data>
+  <data name="NetworkStorage" xml:space="preserve">
+    <value>Network storage...</value>
+  </data>
+  <data name="TargetFolderShouldHaveUncNameForExampleServer1Sharedresource1" xml:space="preserve">
+    <value>Target folder should have UNC name(for example:\\server1\sharedResource1)!</value>
+  </data>
+  <data name="NetworkStorageConfiguration" xml:space="preserve">
+    <value>Network Storage Configuration</value>
+  </data>
+  <data name="NetworkPlacesAreNotAllowedToBeAddedToTheListOfBackupItems" xml:space="preserve">
+    <value>Network places are not allowed to be added to the list of backup items!</value>
+  </data>
+  <data name="RestoreData" xml:space="preserve">
+    <value>Restore Data...</value>
+  </data>
+  <data name="Scheduling" xml:space="preserve">
+    <value>Scheduling</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Адмена</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Зачыниць</value>
+  </data>
+  <data name="ImportantNNbackupShouldBePasswordProtectedIfNotProgramWillSkipItsCopyingToThisStorage" xml:space="preserve">
+    <value>Important:\n\nBackup should be password protected. If NOT, program will SKIP its copying to this storage</value>
+  </data>
+  <data name="Hdd" xml:space="preserve">
+    <value>HDD</value>
+  </data>
+  <data name="Ftp" xml:space="preserve">
+    <value>ФТП</value>
+  </data>
+  <data name="NetworkStorages" xml:space="preserve">
+    <value>Network storages</value>
+  </data>
+  <data name="IfYouChooseSomethingOtherThanDoNothingNprogramWillConfigureOsToShowYouReportNonNextYourLogonToTheSystemIfAnyErrorsNorWarningsWillBeRegisteredDuringTheBackup" xml:space="preserve">
+    <value>If you choose something other than 'do nothing' \nprogram will configure OS to show you report\non next your logon to the system if any errors \nor warnings will be registered during the backup</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>Please wait...</value>
+  </data>
+  <data name="AdditionalEncryptionUnderYourLocalSystemAccountNrequiresNtfsFileSystemAndWin2kOsOnRemoteMachineBackupDataWillBeAvailableOnlyForYourOsAccountSeeDocumentationForDetails" xml:space="preserve">
+    <value>Additional encryption under your local system account. \nRequires NTFS file system and win2k OS on remote machine. Backup data will be available only for your OS account. See documentation for details</value>
+  </data>
+  <data name="RunBackupSchedulerInHiddenMode" xml:space="preserve">
+    <value>Run backup scheduler in hidden mode</value>
+  </data>
+  <data name="WhileBackupIsInProgressYouCanContinueWorkNNtoRestoreProgressFormJustClickOnThisIconInTray" xml:space="preserve">
+    <value>While backup is in progress you can continue work. \n\nTo restore progress form just click on this icon in tray</value>
+  </data>
+  <data name="SkipCopyingAndWriteAWarningIntoLogIfBackupExceeds" xml:space="preserve">
+    <value>Skip copying and write a warning into log if backup exceeds</value>
+  </data>
+  <data name="Backup" xml:space="preserve">
+    <value>Рэзервовае капираванне</value>
+  </data>
+  <data name="_0DayS1H2Min3Sec" xml:space="preserve">
+    <value>{0} дзен {1} г : {2} мин : {3} сек</value>
+  </data>
+  <data name="_0H1Min2Sec" xml:space="preserve">
+    <value>{0} г : {1} мин : {2} сек</value>
+  </data>
+  <data name="_0Min1Sec" xml:space="preserve">
+    <value>{0} мин : {1} сек</value>
+  </data>
+  <data name="_0Sec" xml:space="preserve">
+    <value>{0} сек</value>
+  </data>
+  <data name="BackupIsInProgress" xml:space="preserve">
+    <value>Backup is in progress...</value>
+  </data>
+  <data name="PackingFolders" xml:space="preserve">
+    <value>Папки</value>
+  </data>
+  <data name="PackingFiles" xml:space="preserve">
+    <value>Файлы</value>
+  </data>
+  <data name="ThereAreNoItemsToBackupNNyouCanSpecifyTheDataToBackupInConfiguratorInWhatSettingsGroup" xml:space="preserve">
+    <value>There are no items to backup!\n\nYou can specify the data to backup in Configurator in 'What' settings group.</value>
+  </data>
+  <data name="ThereAreNoSpecifiedPlacesWhereToStoreBackupNNyouCanAddSomeStoragesInConfiguratorInWhereSettingsGroup" xml:space="preserve">
+    <value>There are no specified places where to store backup!\n\nYou can add some storages in Configurator in 'Where' settings group.</value>
+  </data>
+  <data name="HereYouMayAddFoldersAndFilesYouWantToBackup" xml:space="preserve">
+    <value>Here you may add folders and files you want to backup</value>
+  </data>
+  <data name="InThisPlaceYouCanAddLocationsWhereYouWouldLikeYourBackupToBeCopiedAfterCompletionOfBackup" xml:space="preserve">
+    <value>In this place you can add locations where you would like your backup to be copied after completion of backup</value>
+  </data>
+  <data name="HereYouCanSetUpASchedulerShcedulerCanHelpYouToAutomateCreationOfBackups" xml:space="preserve">
+    <value>Here you can set up a scheduler. Shceduler can help you to automate creation of backups</value>
+  </data>
+  <data name="ProtectionOfBackupWithPasswordItIsRequiredWhenYouWantYourDataToBeCopiedSomewhereOverTheNetwork" xml:space="preserve">
+    <value>Protection of backup with password. It is required when you want your data to be copied somewhere over the network/</value>
+  </data>
+  <data name="MiscellaneousOptions" xml:space="preserve">
+    <value>Розныя опцыи</value>
+  </data>
+  <data name="HereYouCanSetUpLoggingProperties" xml:space="preserve">
+    <value>Тут вы можаце пазначыць опцыи пратакалиравання</value>
+  </data>
+  <data name="CheckForUpdates" xml:space="preserve">
+    <value>Праверыць абнауленни...</value>
+  </data>
+  <data name="New0VersionIsAvailableNNchangesAreN1NNprogramWillNowOpenBrowserWithTheDownloadPage" xml:space="preserve">
+    <value>Новая {0} версия ужо есць.\n\nЗмяненни:\n{1}\n\nПраграмма зараз адкрое браузер на старонцы загрузки</value>
+  </data>
+  <data name="YouHaveTheLatestVersion" xml:space="preserve">
+    <value>У вас апошняя версия!</value>
+  </data>
+  <data name="ReviewLogOfLastBackup" xml:space="preserve">
+    <value>Праглядзець лог апошняга рэзервовага капиравання...</value>
+  </data>
+  <data name="HaveNoNetworkAndInternet" xml:space="preserve">
+    <value>няма сяци и интэрнету</value>
+  </data>
+  <data name="DontNeedButilScheduler" xml:space="preserve">
+    <value>не патрэбен планироушчык</value>
+  </data>
+  <data name="DontCareAboutSchedulerStartup" xml:space="preserve">
+    <value>don't care about scheduler startup</value>
+  </data>
+  <data name="HideAboutTab" xml:space="preserve">
+    <value>схаваць укладку "Аб праграме"</value>
+  </data>
+  <data name="Misc" xml:space="preserve">
+    <value>Рознае</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Кампрэссiя</value>
+  </data>
+  <data name="InProgress" xml:space="preserve">
+    <value>In Progress...</value>
+  </data>
+  <data name="Waiting" xml:space="preserve">
+    <value>Waiting...</value>
+  </data>
+  <data name="FinishedSuccesfully" xml:space="preserve">
+    <value>Finished Succesfully</value>
+  </data>
+  <data name="FinishedWithErrors" xml:space="preserve">
+    <value>Finished With Errors</value>
+  </data>
+  <data name="ProcessingState" xml:space="preserve">
+    <value>Processing State</value>
+  </data>
+  <data name="CannotRun7ZgExeBecause0" xml:space="preserve">
+    <value>Не атрымлiваецца запусцiць 7zg.exe таму, што {0}</value>
+  </data>
+  <data name="SecurityWarningNNyourPasswordWasSavedInsecurelyAsPlainTextInFile0Because1NNtoStorePasswordsSecurelyPleaseNCheckThatYouUseNtfsFileSystemAtSystemDriveNYourWindowsVersionSupportsEncryptedFileSystemEfs" xml:space="preserve">
+    <value>Папярэджанне аб небяспецы\n\nВаш пароль быу захаваны без зашчыты у файле "{0}" таму, што '{1}'\n\nКаб вашы паролi захоувалшся надзейна, калш ласка:\n- праверце, што на сшстэмным падзеле выкарыстоуваецца файлавая систэма NTFS,\n- ваша версия Windows падтрымлшвае шыфрованую файлавую сшстэму EFS.</value>
+  </data>
+  <data name="DontCareAboutPasswordLength" xml:space="preserve">
+    <value>не патрабаваць длiнны пароль</value>
+  </data>
+  <data name="BackupJournals" xml:space="preserve">
+    <value>Журналы рэзервовага капiравання</value>
+  </data>
+  <data name="ErrorsAndWarningsWillBeSavedInLogs" xml:space="preserve">
+    <value>Памылкi i папярэджаннi будуць сахраняцца у логах</value>
+  </data>
+  <data name="ThisModeIsForGettingSupport" xml:space="preserve">
+    <value>Гэты рэжым для атрымання паддзержкi, звязанай з прадастауленнем логау</value>
+  </data>
+  <data name="ViewSelectedLogs" xml:space="preserve">
+    <value>Паглядзець</value>
+  </data>
+  <data name="RemoveSelectedLogs" xml:space="preserve">
+    <value>Удалiць</value>
+  </data>
+  <data name="RemoveSuccesfullLogs" xml:space="preserve">
+    <value>Удалiць\nпаспяховыя\nлогi</value>
+  </data>
+  <data name="Succesfull" xml:space="preserve">
+    <value>Паспяховыя</value>
+  </data>
+  <data name="Erroneous" xml:space="preserve">
+    <value>З памылками</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>З невядомым статусам</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Абнавiць</value>
+  </data>
+  <data name="CopyingToStorages" xml:space="preserve">
+    <value>Copying To Storages</value>
+  </data>
+  <data name="PleaseCheckItemsToCompress" xml:space="preserve">
+    <value>Please, check items to compress!</value>
+  </data>
+  <data name="PleaseCheckStoragesWhereToCopyBackupImage" xml:space="preserve">
+    <value>Please, check storages where to copy backup image!</value>
+  </data>
+  <data name="AmountOfStoragesToProcessSynchronously" xml:space="preserve">
+    <value>Amount of storages to process synchronously:</value>
+  </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>Disabled</value>
+  </data>
+  <data name="Reboot" xml:space="preserve">
+    <value>Reboot</value>
+  </data>
+  <data name="AmountOf7ZipProcessesToRunSynchronously" xml:space="preserve">
+    <value>Amount of 7-zip processes to run synchronously:</value>
+  </data>
+  <data name="OtherTasks" xml:space="preserve">
+    <value>Other Tasks</value>
+  </data>
+  <data name="PackingDataInAnImage" xml:space="preserve">
+    <value>Packing data in an image</value>
+  </data>
+  <data name="ButilSoftwarePackageComponent0IsMissingNNpleaseReinstallApplicationNNrestorationBackupAndHelpFunctionsWillBeUnavailable" xml:space="preserve">
+    <value>BUtil software package component '{0}' is missing.\n\nPlease reinstall application.\n\nRestoration, Backup and Help functions will be unavailable.</value>
+  </data>
+  <data name="InvalidArgumentSPassedToTheProgramNNpleaseReferToManualForTheCompleteListOfParameters" xml:space="preserve">
+    <value>Invalid argument(s) passed to the program.\n\nPlease refer to manual for the complete list of parameters!</value>
+  </data>
+  <data name="NewEventTaskConfigurator" xml:space="preserve">
+    <value>New Event Task - Configurator</value>
+  </data>
+  <data name="EditingEventTaskConfigurator" xml:space="preserve">
+    <value>Editing Event Task - Configurator</value>
+  </data>
+  <data name="TextBackupimagefileWillBeReplacedOnAnExistingBackupImageNameForExampleOnDTempBackupButil" xml:space="preserve">
+    <value>Text $BackupImageFile will be replaced on an existing backup image name. For example on d:\temp\backup.BUtil</value>
+  </data>
+  <data name="TaskToRun" xml:space="preserve">
+    <value>Task to run</value>
+  </data>
+  <data name="Program" xml:space="preserve">
+    <value>Program:</value>
+  </data>
+  <data name="CommandLineArguments" xml:space="preserve">
+    <value>Command line arguments:</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ChainOfProgramsToExecuteBeforeBackup" xml:space="preserve">
+    <value>Chain of programs to execute BEFORE backup</value>
+  </data>
+  <data name="ChainOfProgramsToExecuteAfterBackup" xml:space="preserve">
+    <value>Chain of programs to execute AFTER backup</value>
+  </data>
+  <data name="Program" xml:space="preserve">
+    <value>Program</value>
+  </data>
+  <data name="Arguments" xml:space="preserve">
+    <value>Arguments</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add...</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit...</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Удалiць</value>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>Уверх</value>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>Унiз</value>
+  </data>
+  <data name="LogsLocation" xml:space="preserve">
+    <value>Logs location:</value>
+  </data>
+  <data name="ChangeLogsLocation" xml:space="preserve">
+    <value>● Change logs location</value>
+  </data>
+  <data name="RestoreDefaultLogsLocation" xml:space="preserve">
+    <value>● Restore default logs location</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Дапамога</value>
+  </data>
+  <data name="NewBackupTaskTitle" xml:space="preserve">
+    <value>New Backup Task Title</value>
+  </data>
+  <data name="WellcomeToBackupTaskCreationWizard" xml:space="preserve">
+    <value>Wellcome to Backup Task Creation Wizard!</value>
+  </data>
+  <data name="ThisMasterWillHelpYouToCreateANewTask" xml:space="preserve">
+    <value>This master will help you to create a new task</value>
+  </data>
+  <data name="HereYouMayAddFilesAndFoldersYouWannaToBackup" xml:space="preserve">
+    <value>Here you may add files and folders you wanna to backup</value>
+  </data>
+  <data name="HereYouCanSpecifyWhereToSendBackups" xml:space="preserve">
+    <value>Here you can specify where to send backups</value>
+  </data>
+  <data name="YouCanSetDaysAndTimesWhenYouWantToStartThisBackupJob" xml:space="preserve">
+    <value>You can set days and times when you want to start this backup job</value>
+  </data>
+  <data name="HereYouCanProtectTheBackupWithPasswordThisIsAlsoRequiredForCopyingItOverNetwork" xml:space="preserve">
+    <value>Here you can protect the backup with password (this is also required for copying it over network)</value>
+  </data>
+  <data name="HereYouCanSpecifyOtherSettings" xml:space="preserve">
+    <value>Here you can specify other settings</value>
+  </data>
+  <data name="NewBackupTaskWizard" xml:space="preserve">
+    <value>New Backup Task Wizard</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next &gt;</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>&lt; Back</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Title:</value>
+  </data>
+  <data name="RemovesTheSelectedBackupTask" xml:space="preserve">
+    <value>Removes the selected backup task...</value>
+  </data>
+  <data name="EditsTheSelectedBackupTask" xml:space="preserve">
+    <value>Edits the selected backup task...</value>
+  </data>
+  <data name="WouldYouLileToRemoveTheBackupTask0" xml:space="preserve">
+    <value>Would you lile to remove the backup task '{0}' ?</value>
+  </data>
+  <data name="BackupTasks" xml:space="preserve">
+    <value>Backup tasks</value>
+  </data>
+  <data name="Run" xml:space="preserve">
+    <value>Run</value>
+  </data>
+  <data name="BackupTask0" xml:space="preserve">
+    <value>Backup Task '{0}'</value>
+  </data>
+  <data name="SaveAndRun" xml:space="preserve">
+    <value>Save and Run</value>
+  </data>
+  <data name="ChooseTheTaskYouWantToRun" xml:space="preserve">
+    <value>Choose the task you want to run:</value>
+  </data>
+  <data name="OpenLogs" xml:space="preserve">
+    <value>● Open Logs</value>
+  </data>
+  <data name="TranslationAuthor" xml:space="preserve">
+    <value>Copyright (c) 2009 Siarhei Kuchuk, Cuchuk.Sergey@gmail.com</value>
+  </data>
+</root>

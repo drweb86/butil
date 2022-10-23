@@ -6,11 +6,12 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Collections;
-using BULocalization;
+
 using BUtil.Core.Options;
 using BUtil.Core.PL;
 using BUtil.Core;
 using BUtil.Configurator.Controls;
+using BUtil.Configurator.Localization;
 
 namespace BUtil.Configurator.Controls
 {
@@ -44,13 +45,13 @@ namespace BUtil.Configurator.Controls
 		{
 			int priorityIndex = priorityComboBox.SelectedIndex;
 			priorityComboBox.Items.Clear();
-            priorityComboBox.Items.Add(Translation.Current[102]);
-            priorityComboBox.Items.Add(Translation.Current[101]);
-            priorityComboBox.Items.Add(Translation.Current[100]);
-            priorityComboBox.Items.Add(Translation.Current[99]);
-            chooseBackUpPriorityLabel.Text = Translation.Current[103];
-            SetHintForControl(priorityComboBox, Translation.Current[332]);
-            SetHintForControl(cpuLoadingNumericUpDown, Translation.Current[104]);
+            priorityComboBox.Items.Add(Resources.Low);
+            priorityComboBox.Items.Add(Resources.BelowNormal);
+            priorityComboBox.Items.Add(Resources.Normal);
+            priorityComboBox.Items.Add(Resources.AboveNormal);
+            chooseBackUpPriorityLabel.Text = Resources.ChooseBackupPriority;
+            SetHintForControl(priorityComboBox, Resources.TheBestChoiceIsLowInAlmostAllCases);
+            SetHintForControl(cpuLoadingNumericUpDown, Resources.DefaultIs60);
             if (priorityIndex < 0) 
             {
             	priorityIndex = (int)System.Threading.ThreadPriority.BelowNormal;
@@ -60,10 +61,10 @@ namespace BUtil.Configurator.Controls
 			priorityComboBox.SelectedItem = priorityComboBox.Items[priorityIndex];
 
 			priorityComboBox.Update();
-            putOffBackupTillLabel.Text = Translation.Current[105];
-            amountOfStoragesToProcessSynchronouslyLabel.Text = Translation.Current[572];
-            amountOf7ZipProcessesToRunSynchronouslyLabel.Text = Translation.Current[575];
-            minimizeUsageOfSystemResourcesCheckBox.Text = Translation.Current[474];
+            putOffBackupTillLabel.Text = Resources.PutOffMakingBackupTillProcessorSLoadingWillBeLessThen;
+            amountOfStoragesToProcessSynchronouslyLabel.Text = Resources.AmountOfStoragesToProcessSynchronously;
+            amountOf7ZipProcessesToRunSynchronouslyLabel.Text = Resources.AmountOf7ZipProcessesToRunSynchronously;
+            minimizeUsageOfSystemResourcesCheckBox.Text = Resources.RunBackupSchedulerInHiddenMode;
 		}
 	
 		public override void SetOptionsToUi(object settings)

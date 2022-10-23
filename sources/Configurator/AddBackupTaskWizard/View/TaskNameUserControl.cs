@@ -1,5 +1,6 @@
-﻿using BUtil.Core.Options;
-using BULocalization;
+using BUtil.Configurator.Localization;
+using BUtil.Core.Options;
+
 
 namespace BUtil.Configurator.AddBackupTaskWizard.View
 {
@@ -18,7 +19,7 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
 
         public override void ApplyLocalization()
         {
-            _titleLabel.Text = Translation.Current[633];
+            _titleLabel.Text = Resources.Title;
         }
 
         public override void SetOptionsToUi(object settings)

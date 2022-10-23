@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="IsABackupToolForRunningOnComputerForMoreInformationSeeManual" xml:space="preserve">
+    <value> утылита для стварэння резервовых копий. Каб атрымаць больш дакладную iнфармацыю, звярнiцеся да инструкцыи</value>
+  </data>
+  <data name="PasswordGenerator" xml:space="preserve">
+    <value>Генератар пароляу</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Закрыць</value>
+  </data>
+  <data name="CopyToClipboard" xml:space="preserve">
+    <value>Капiраваць</value>
+  </data>
+  <data name="Generate" xml:space="preserve">
+    <value>Згенерыраваць</value>
+  </data>
+  <data name="HereIsYourPassword" xml:space="preserve">
+    <value>&lt;Тут знаходзiцца Ваш пароль&gt;</value>
+  </data>
+  <data name="PasswordLength" xml:space="preserve">
+    <value>Длiна пороля:</value>
+  </data>
+  <data name="NotePasswordLengthShouldBeMoreThan20CharactersAndLessThan257CharactersRN" xml:space="preserve">
+    <value>Заувага: Длiна пароля павiнна перавышваць 20 знакау i быць меншай за 257 знакi\r\n</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Настройкi</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>А праграмме</value>
+  </data>
+  <data name="ErrorButil" xml:space="preserve">
+    <value>Памылка - BUtil</value>
+  </data>
+  <data name="PasswordIsInvalidNNitWasResetedN" xml:space="preserve">
+    <value>Няправiльны пароль.\n\nПароль будзе прынятым як пусты</value>
+  </data>
+  <data name="InformationButil" xml:space="preserve">
+    <value>Iнфармацыя - BUtil</value>
+  </data>
+  <data name="PasswordIfNeeded" xml:space="preserve">
+    <value>Пароль (калi патрэбен)</value>
+  </data>
+  <data name="GenerateNewRandomPassword" xml:space="preserve">
+    <value>Згенерыраваць новы пароль</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Падцвярдзице пароль:</value>
+  </data>
+  <data name="EnterPassword" xml:space="preserve">
+    <value>Увядзице пароль:</value>
+  </data>
+  <data name="LocalizationOptionsAreNotSetted" xml:space="preserve">
+    <value>опцыi лакалiзацыi не пазначаны</value>
+  </data>
+  <data name="_7ZMessage" xml:space="preserve">
+    <value>7z вывад:</value>
+  </data>
+  <data name="Normal" xml:space="preserve">
+    <value>Нармальны</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>Падтрымка</value>
+  </data>
+  <data name="VisitProjectHomepage" xml:space="preserve">
+    <value>Хатняя старонка</value>
+  </data>
+  <data name="SuggestAFeature" xml:space="preserve">
+    <value>Папрасiць аб новай магчымасцi</value>
+  </data>
+  <data name="ReportABug" xml:space="preserve">
+    <value>Паведамiць аб памылцы</value>
+  </data>
+  <data name="AskForSupport" xml:space="preserve">
+    <value>Падтрымка</value>
+  </data>
+  <data name="WithoutCompression" xml:space="preserve">
+    <value>Без кампрэссii</value>
+  </data>
+  <data name="FastestCompression" xml:space="preserve">
+    <value>Хутчэйшая кампрэссия</value>
+  </data>
+  <data name="FastCompression" xml:space="preserve">
+    <value>Хуткая кампрэссия</value>
+  </data>
+  <data name="NormalCompression" xml:space="preserve">
+    <value>Сярэдняя кампрэссия</value>
+  </data>
+  <data name="MaximumCompression" xml:space="preserve">
+    <value>Максiмальная кампрэссия</value>
+  </data>
+  <data name="UltraCompression" xml:space="preserve">
+    <value>Ультра кампрэссия</value>
+  </data>
+  <data name="Use" xml:space="preserve">
+    <value>Карыстацца</value>
+  </data>
+  <data name="CopyingFile0FromTempFolder1ToDestination2At3" xml:space="preserve">
+    <value>Капираванне файла "{0}" з часовай папцы "{1}" у месца пазначэння "{2}" на {3}</value>
+  </data>
+  <data name="AbortedByUser" xml:space="preserve">
+    <value>Адменена пользавацелем!</value>
+  </data>
+  <data name="ArchivatorWarningNonFatalErrorSForExampleOneOrMoreFilesWereLockedBySomeOtherApplicationSoTheyWereNotCompressed" xml:space="preserve">
+    <value>Archivator: Warning (Non fatal error(s)). For example, one or more files were locked by some other application, so they were not compressed</value>
+  </data>
+  <data name="ArchivatorFatalError" xml:space="preserve">
+    <value>Archivator: Fatal error</value>
+  </data>
+  <data name="PleaseReportThisBugToMeArchivatorCommandLineError" xml:space="preserve">
+    <value>Please, report this bug to me! Archivator: Command line error</value>
+  </data>
+  <data name="ArchivatorNotEnoughMemoryForOperation" xml:space="preserve">
+    <value>Archivator: Not enough memory for operation</value>
+  </data>
+  <data name="UserStoppedTheProcess" xml:space="preserve">
+    <value>Пользавацель спынiу працэс</value>
+  </data>
+  <data name="Storage0RequiresOptionEnableEncryptionToBeEnabledButInYourCaseItWasDisabledCopyingToStorageSkipped" xml:space="preserve">
+    <value>Storage '{0}' requires option 'enable encryption' to be enabled. But in your case it was disabled. Copying to storage skipped.</value>
+  </data>
+  <data name="ErrorDiscoveredWhenOpeningStorage01" xml:space="preserve">
+    <value>Error discovered when opening storage '{0}': {1}</value>
+  </data>
+  <data name="ErrorDiscoveredWhenCopyingFileToStorage01" xml:space="preserve">
+    <value>Error discovered when copying file to storage '{0}': {1}</value>
+  </data>
+  <data name="FileWasCopyiedToStorageSuccessfully" xml:space="preserve">
+    <value>File was copyied to storage successfully</value>
+  </data>
+  <data name="DuringOverwritingFile0WithZerosAnErrorOccured1" xml:space="preserve">
+    <value>During overwriting file '{0}' with zeros an error occured: {1}</value>
+  </data>
+  <data name="DuringDeletingOfAFile0AnErrorOccured1" xml:space="preserve">
+    <value>During deleting of a file '{0}' an error occured: {1}</value>
+  </data>
+  <data name="CouldNotKillPackerProcess0" xml:space="preserve">
+    <value>Could not kill packer process: {0}</value>
+  </data>
+  <data name="CouldNotStartPackerDueTo0AbortingBackup" xml:space="preserve">
+    <value>Could not start packer due to {0}. Aborting backup...</value>
+  </data>
+  <data name="CopyingOfBackupTo0NetworkStorageSkippedBecauseItsSize1ExceededSpecifiedLimit2" xml:space="preserve">
+    <value>Copying of backup to '{0}' network storage skipped because its size {1} exceeded specified limit {2}</value>
+  </data>
+  <data name="BackupFinishedSuccesfully" xml:space="preserve">
+    <value>Backup finished succesfully!</value>
+  </data>
+  <data name="BackupReport" xml:space="preserve">
+    <value>Backup Report</value>
+  </data>
+  <data name="ThereIsNoStoragesSpecifiedInConfigurationCompressionOfDataWasSkipped" xml:space="preserve">
+    <value>There is no storages specified in configuration. Compression of data was skipped</value>
+  </data>
+  <data name="ThereIsNoDataToBackupSpecifiedInConfiguration" xml:space="preserve">
+    <value>There is no data to backup specified in configuration</value>
+  </data>
+  <data name="ButilSoftwarePackage7ZipComponent0HasInvalidCheckSummNprobablyItWasDamagedByVirusesNNyouShouldReinstallApplicationNNrestorationAndBackupFunctionsWillBeUnavailable" xml:space="preserve">
+    <value>BUtil software package 7-zip component '{0}' has invalid check summ. \nProbably, it was damaged by viruses. \n\nYou should reinstall application.\n\nRestoration and Backup functions will be unavailable.</value>
+  </data>
+  <data name="CoultNotRun0DueToN1" xml:space="preserve">
+    <value>Не атрымлiваецца запусцiць "{0}" таму, што:\n{1}</value>
+  </data>
+  <data name="PasswordContainsForbiddenCharactersPleaseRemoveSpaces" xml:space="preserve">
+    <value>Пароль змяшчае у сабе забарененыя знакi! Калi ласка, убярыце прабелы</value>
+  </data>
+  <data name="PasswordHasInvalidLengthPasswordLengthShouldBeFrom0To1Characters" xml:space="preserve">
+    <value>Длина пароля памылковая. Павiнна быць ад {0} да {1} знакау</value>
+  </data>
+  <data name="ConfirmationIsNotEqualToPassword" xml:space="preserve">
+    <value>Падцверджанне не супадае з паролем</value>
+  </data>
+  <data name="PackingOfDataToAnImageWasAbortedByUser" xml:space="preserve">
+    <value>Packing of data to an image was aborted by user</value>
+  </data>
+  <data name="DuringPackingFilesToAnImage0AnErrorOccured1" xml:space="preserve">
+    <value>During packing files to an image '{0}' an error occured: {1}</value>
+  </data>
+  <data name="AnUnexpectedErrorOccuredNNpleaseContactTheDevelopersWithInformationSavedOnYourDesktopInN0NNapplicationWillNowClose" xml:space="preserve">
+    <value>An unexpected error occured\n\nPlease contact the developers with information saved on your desktop in\n"{0}"\n\nApplication will now close</value>
+  </data>
+  <data name="BeforeBackupTask" xml:space="preserve">
+    <value>Before backup task: </value>
+  </data>
+  <data name="CouldNotKillProcess01" xml:space="preserve">
+    <value>Could not kill process '{0}': {1}</value>
+  </data>
+  <data name="CouldNotStartProcess01" xml:space="preserve">
+    <value>Could not start process '{0}': {1}</value>
+  </data>
+  <data name="AfterBackupTask" xml:space="preserve">
+    <value>After backup task: </value>
+  </data>
+  <data name="PackingAbortedComponentOfAnImageFile0DoesNotExistIsItEnoughSpaceInTemporaryFolder" xml:space="preserve">
+    <value>Packing aborted: component of an image file '{0}' does not exist(Is it enough space in temporary folder ?)</value>
+  </data>
+  <data name="QuestionButil" xml:space="preserve">
+    <value>Пытанне - BUtil</value>
+  </data>
+  <data name="PleaseConfirmDeletionOf0Logs" xml:space="preserve">
+    <value>Калi ласка, падцвердзiце удаленне {0} логау.</value>
+  </data>
+  <data name="CannotRun7ZgExeBecause0" xml:space="preserve">
+    <value>Не атрымлiваецца запусцiць 7zg.exe таму, што {0}</value>
+  </data>
+  <data name="SecurityWarningNNyourPasswordWasSavedInsecurelyAsPlainTextInFile0Because1NNtoStorePasswordsSecurelyPleaseNCheckThatYouUseNtfsFileSystemAtSystemDriveNYourWindowsVersionSupportsEncryptedFileSystemEfs" xml:space="preserve">
+    <value>Папярэджанне аб небяспецы\n\nВаш пароль быу захаваны без зашчыты у файле "{0}" таму, што '{1}'\n\nКаб вашы паролi захоувалшся надзейна, калш ласка:\n- праверце, што на сшстэмным падзеле выкарыстоуваецца файлавая систэма NTFS,\n- ваша версия Windows падтрымлшвае шыфрованую файлавую сшстэму EFS.</value>
+  </data>
+  <data name="InProgress" xml:space="preserve">
+    <value>In Progress...</value>
+  </data>
+  <data name="Waiting" xml:space="preserve">
+    <value>Waiting...</value>
+  </data>
+  <data name="FinishedSuccesfully" xml:space="preserve">
+    <value>Finished Succesfully</value>
+  </data>
+  <data name="FinishedWithErrors" xml:space="preserve">
+    <value>Finished With Errors</value>
+  </data>
+</root>

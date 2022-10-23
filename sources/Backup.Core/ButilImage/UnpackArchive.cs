@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using System.Threading;
 using System.Diagnostics;
@@ -6,7 +6,7 @@ using BUtil.Core;
 using BUtil.Core.Misc;
 using BUtil.Core.ButilImage;
 using BUtil.Core.FileSystem;
-using BULocalization;
+using BUtil.Core.Localization;
 
 namespace BUtil.Core.ButilImage
 {
@@ -43,7 +43,7 @@ namespace BUtil.Core.ButilImage
 			}
 			catch (System.ComponentModel.Win32Exception exc)
 			{
-				throw new FieldAccessException(string.Format(CultureInfo.InvariantCulture, Translation.Current[550], exc.Message), exc);
+				throw new FieldAccessException(string.Format(CultureInfo.InvariantCulture, Resources.CannotRun7ZgExeBecause0, exc.Message), exc);
 			}
 
 			process.WaitForExit();

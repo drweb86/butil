@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
+using BUtil.Configurator.Localization;
 using BUtil.Core.ButilImage;
-using BULocalization;
+
 
 namespace BUtil.RestorationMaster
 {
@@ -25,17 +26,17 @@ namespace BUtil.RestorationMaster
 			this.Text = _record.InitialTarget;
 
 			// locals
-			restoreButton.Text = Translation.Current[438];
-			HowToRestoregroupBox.Text = Translation.Current[439];
-			toFolderRadioButton.Text = Translation.Current[440];
-            helpToolTip.SetToolTip(toOriginalLocationRadioButton, Translation.Current[441]);
-			toOriginalLocationRadioButton.Text = Translation.Current[442];
-			helpToolTip.SetToolTip(to7zipArchiveRadioButton, Translation.Current[443]);
-			to7zipArchiveRadioButton.Text = Translation.Current[444];
-			skipButton.Text = Translation.Current[445];
-			save7zipArchiveDialog.Filter = Translation.Current[446];
-			fbDialog.Description = Translation.Current[447];
-			this.Text = string.Format(Translation.Current[427], record.InitialTarget);
+			restoreButton.Text = Resources.Restore;
+			HowToRestoregroupBox.Text = Resources.HowToRestoreYourInformation;
+			toFolderRadioButton.Text = Resources.ToSpecifiedFolder;
+            helpToolTip.SetToolTip(toOriginalLocationRadioButton, Resources.RestoresAllDataToTheSourceFolderItWillRestorePreviousVersionOfFilesFromABackupArchiveUseItWhenNOriginalLocationEntirelyDamagedAndNThereWereNoErrorsDuringCreatingThisBackupNNnotRecommendedCanDamageExistingData);
+			toOriginalLocationRadioButton.Text = Resources.ToOriginalLocation;
+			helpToolTip.SetToolTip(to7zipArchiveRadioButton, Resources.RestorationOfInformationAsArchiveIsAnEfficientWayWhenYouWantToNRestoreSmallPiecesOfInformationFromALargeBackuppedFolderSavesTimeNAllDataInArchiveIsEncryptedIfYouUsedPasswordMoreSecureNhoweverFresh7ZipInstallationPackageIsRequiredToOpenExtractedArchive);
+			to7zipArchiveRadioButton.Text = Resources.RestoreAs7ZipArchive;
+			skipButton.Text = Resources.Skip;
+			save7zipArchiveDialog.Filter = Resources._7ZipArchive7Z;
+			fbDialog.Description = Resources.ChooseDestinationLocation;
+			this.Text = string.Format(Resources._0Restoration, record.InitialTarget);
 			restoreButton.Left = skipButton.Left - restoreButton.Width - 10;
 			
 			refreshRestoreButton();

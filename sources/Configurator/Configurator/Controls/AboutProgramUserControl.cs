@@ -1,11 +1,12 @@
 using System;
-using BULocalization;
+
 using BUtil.Core.Misc;
 using BUtil.Core.FileSystem;
 using BUtil.Core;
 using System.Text;
 using BUtil.Core.Options;
 using BUtil.Core.PL;
+using BUtil.Configurator.Localization;
 
 namespace BUtil.Configurator.Controls
 {
@@ -35,16 +36,16 @@ namespace BUtil.Configurator.Controls
 
         public override void ApplyLocalization() 
 		{
-			visitWebSiteLabel.Text = Translation.Current[288];
-            suggestAFeatureLabel.Text = Translation.Current[289];
-            reportABugLabel.Text = Translation.Current[290];
-            supportLabel.Text = Translation.Current[291];
-            documentationLabel.Text = Translation.Current[294];
-            checkForUpdatesLabel.Text = Translation.Current[530];
+			visitWebSiteLabel.Text = BUtil.Core.Localization.Resources.VisitProjectHomepage;
+            suggestAFeatureLabel.Text = BUtil.Core.Localization.Resources.SuggestAFeature;
+            reportABugLabel.Text = BUtil.Core.Localization.Resources.ReportABug;
+            supportLabel.Text = BUtil.Core.Localization.Resources.AskForSupport;
+            documentationLabel.Text = Resources.Documentation;
+            checkForUpdatesLabel.Text = Resources.CheckForUpdates;
             var aboutInfo = new StringBuilder();
             aboutInfo.Append(CopyrightInfo.Copyright);
-            aboutInfo.Append(Translation.Current[142]);
-            aboutInfo.Append(Translation.Current.Copyright);
+            aboutInfo.Append(Resources.UtilityForCreatingBackupsNNwebSitesHttpsGithubComDrweb86ButilNNlocalizationCreatedByN);
+            aboutInfo.Append(Resources.TranslationAuthor);
             aboutInfo.Append("\n\n");
             aboutInfo.Replace("\r", string.Empty);
             aboutInfo.Replace("\n", "\r\n");
@@ -103,12 +104,12 @@ namespace BUtil.Configurator.Controls
 			{
 				if (UpdateChecker.CheckForUpdate(out newVersion, out changes))
 				{
-					Messages.ShowInformationBox(string.Format(Translation.Current[531], newVersion, changes));
+					Messages.ShowInformationBox(string.Format(Resources.New0VersionIsAvailableNNchangesAreN1NNprogramWillNowOpenBrowserWithTheDownloadPage, newVersion, changes));
 					SupportManager.DoSupport(SupportRequest.Releases);
 				}
 				else
 				{
-					Messages.ShowInformationBox(Translation.Current[532]);
+					Messages.ShowInformationBox(Resources.YouHaveTheLatestVersion);
 				}
 			}
 			catch(InvalidOperationException exc)

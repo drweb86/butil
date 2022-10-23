@@ -1,11 +1,12 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Globalization;
 using System.Text;
 using System.Windows.Forms;
-using BULocalization;
+
 using BUtil.Core.FileSystem;
 using BUtil.Core.PL;
+using BUtil.Core.Localization;
 
 namespace BUtil.Core.Misc
 {
@@ -42,7 +43,7 @@ namespace BUtil.Core.Misc
                 File.AppendAllText(Files.BugReportFile, builder.ToString());
                 
                 if (_showMessageBox)
-                	Messages.ShowErrorBox(string.Format(Translation.Current[590], Files.BugReportFile));
+                	Messages.ShowErrorBox(string.Format(Resources.AnUnexpectedErrorOccuredNNpleaseContactTheDevelopersWithInformationSavedOnYourDesktopInN0NNapplicationWillNowClose, Files.BugReportFile));
             }
             finally
             {

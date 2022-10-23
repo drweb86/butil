@@ -5,8 +5,9 @@ using BUtil.Core.Options;
 using BUtil.Core.Misc;
 using BUtil.Core.PL;
 using BUtil.Core.Logs;
-using BULocalization;
+
 using BackUserControl = BUtil.BackupUiMaster.Controls.BackUserControl;
+using BUtil.Configurator.Localization;
 
 namespace BUtil.Configurator.BackupUiMaster.Controls
 {
@@ -32,19 +33,19 @@ namespace BUtil.Configurator.BackupUiMaster.Controls
 			encryptionUserControl.ApplyLocalization();
 			int previousIndex = backupPriorityComboBox.SelectedIndex;
 			backupPriorityComboBox.Items.Clear();
-            backupPriorityComboBox.Items.AddRange(new [] { Translation.Current[172], Translation.Current[171], Translation.Current[170], Translation.Current[169] });
+            backupPriorityComboBox.Items.AddRange(new [] { Resources.Low, Resources.BelowNormal, Resources.Normal, Resources.AboveNormal });
             backupPriorityComboBox.SelectedIndex = previousIndex;
             
-			chooseBackUpPriorityLabel.Text = Translation.Current[173];
-			hearBeepsCheckBox.Text = Translation.Current[410];
-			afterEndOfBackupGroupBox.Text = Translation.Current[411];
+			chooseBackUpPriorityLabel.Text = Resources.ProcessPriority;
+			hearBeepsCheckBox.Text = Resources.BeepSeveralTimes;
+			afterEndOfBackupGroupBox.Text = Resources.AfterCompletionOfBackup;
 			
 			previousIndex = jobAfterOkBackupComboBox.SelectedIndex;
 			jobAfterOkBackupComboBox.Items.Clear();
-			jobAfterOkBackupComboBox.Items.AddRange(new [] { Translation.Current[412], Translation.Current[413], Translation.Current[414], Translation.Current[415], Translation.Current[574], Translation.Current[416]});
+			jobAfterOkBackupComboBox.Items.AddRange(new [] { Resources.ShutdownPc, Resources.LogOff, Resources.SuspendPc, Resources.HibernatePc, Resources.Reboot, Resources.DoNothing});
 			jobAfterOkBackupComboBox.SelectedIndex = previousIndex;
 			
-			Title = Translation.Current[244];
+			Title = Resources.Settings;
 		}
 		
 		#endregion
@@ -84,7 +85,7 @@ namespace BUtil.Configurator.BackupUiMaster.Controls
 		
 		void HelpActionAfterBackupButtonClick(object sender, EventArgs e)
 		{
-			Messages.ShowInformationBox(Translation.Current[470]);
+			Messages.ShowInformationBox(Resources.IfYouChooseSomethingOtherThanDoNothingNprogramWillConfigureOsToShowYouReportNonNextYourLogonToTheSystemIfAnyErrorsNorWarningsWillBeRegisteredDuringTheBackup);
 		}
 	}
 }

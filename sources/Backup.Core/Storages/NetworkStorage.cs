@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using System.Collections.Generic;
 using System.Collections;
@@ -6,10 +6,11 @@ using System.Text;
 using System.IO;
 using System.Xml;
 
-using BULocalization;
+
 
 using BUtil.Core.Logs;
 using BUtil.Core.FileSystem;
+using BUtil.Core.Localization;
 
 namespace BUtil.Core.Storages
 {
@@ -158,7 +159,7 @@ namespace BUtil.Core.Storages
                 if (size > SkipCopyingToNetworkStorageLimit)
                 {
                     Log.WriteLine(LoggingEvent.Warning,
-                        string.Format(CultureInfo.CurrentCulture, Translation.Current[487], StorageName, size, SkipCopyingToNetworkStorageLimit));
+                        string.Format(CultureInfo.CurrentCulture, Resources.CopyingOfBackupTo0NetworkStorageSkippedBecauseItsSize1ExceededSpecifiedLimit2, StorageName, size, SkipCopyingToNetworkStorageLimit));
 
                     return;
                 }

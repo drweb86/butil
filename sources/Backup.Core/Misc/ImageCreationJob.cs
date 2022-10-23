@@ -4,13 +4,14 @@ using System.Threading;
 using System.IO;
 using System.Collections.ObjectModel;
 
-using BULocalization;
+
 using BUtil.Core.Storages;
 using BUtil.Core.Misc;
 using BUtil.Core.Logs;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Synchronization;
 using BUtil.Core.ButilImage;
+using BUtil.Core.Localization;
 
 namespace BUtil.Core.Storages
 {
@@ -63,17 +64,17 @@ namespace BUtil.Core.Storages
 			}
 			catch (FileNotFoundException e)
 			{
-				_log.WriteLine(LoggingEvent.Error, string.Format(Translation.Current[611],e.Message));
+				_log.WriteLine(LoggingEvent.Error, string.Format(Resources.PackingAbortedComponentOfAnImageFile0DoesNotExistIsItEnoughSpaceInTemporaryFolder,e.Message));
 				_log.WriteLine(LoggingEvent.Debug, e.ToString());			
 			}
 			catch(IOException e)
 			{
-				_log.WriteLine(LoggingEvent.Error, string.Format(Translation.Current[579],_imageFile.FileName, e.Message));
+				_log.WriteLine(LoggingEvent.Error, string.Format(Resources.DuringPackingFilesToAnImage0AnErrorOccured1,_imageFile.FileName, e.Message));
 				_log.WriteLine(LoggingEvent.Debug, e.ToString());			
 			}
 			catch(ThreadInterruptedException)
 			{
-				_log.WriteLine(LoggingEvent.Error, Translation.Current[578]);
+				_log.WriteLine(LoggingEvent.Error, Resources.PackingOfDataToAnImageWasAbortedByUser);
 			}
 			finally
 			{

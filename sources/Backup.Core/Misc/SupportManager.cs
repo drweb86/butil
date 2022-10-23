@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 using System.ComponentModel;
 using System.Globalization;
 using BUtil.Core.PL;
 using System.Threading;
 using System.Diagnostics;
-using BULocalization;
+using BUtil.Core.Localization;
 
 namespace BUtil.Core.Misc
 {
@@ -97,7 +97,7 @@ namespace BUtil.Core.Misc
 		
 		static void thread_process(object parameters)
         {
-			string cannotRunFormatString = Translation.Current[551];
+			string cannotRunFormatString = Resources.CoultNotRun0DueToN1;
 
 			Task task = (Task) parameters;
 			Process process = new Process();

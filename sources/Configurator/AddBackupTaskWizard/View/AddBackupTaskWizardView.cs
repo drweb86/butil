@@ -1,10 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using BUtil.Configurator.Configurator.Controls;
 using BUtil.Configurator.Controls;
+using BUtil.Configurator.Localization;
 using BUtil.Core.Options;
 using BUtil.Core.PL;
-using BULocalization;
+
 
 namespace BUtil.Configurator.AddBackupTaskWizard.View
 {
@@ -36,17 +37,17 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
         public AddBackupTaskWizardView(ProgramOptions options)
         {
             _options = options;
-            Task = ProgramOptionsManager.GetDefaultBackupTask(Translation.Current[622]);
-            _steps.Add(new PageInfo(Translation.Current[623], Translation.Current[624], RegisterControl(BackupTaskViewsEnum.Name, new TaskNameUserControl()), Icons.BackupTask48x48));
-            _steps.Add(new PageInfo(Translation.Current[72], Translation.Current[625], RegisterControl(BackupTaskViewsEnum.SourceItems, new SourceItemsUserControl()), Icons.SourceItems48x48));
-            _steps.Add(new PageInfo(Translation.Current[79], Translation.Current[626], RegisterControl(BackupTaskViewsEnum.Storages, new StoragesUserControl()), Icons.Storages48x48));
+            Task = ProgramOptionsManager.GetDefaultBackupTask(Resources.NewBackupTaskTitle);
+            _steps.Add(new PageInfo(Resources.WellcomeToBackupTaskCreationWizard, Resources.ThisMasterWillHelpYouToCreateANewTask, RegisterControl(BackupTaskViewsEnum.Name, new TaskNameUserControl()), Icons.BackupTask48x48));
+            _steps.Add(new PageInfo(Resources.What, Resources.HereYouMayAddFilesAndFoldersYouWannaToBackup, RegisterControl(BackupTaskViewsEnum.SourceItems, new SourceItemsUserControl()), Icons.SourceItems48x48));
+            _steps.Add(new PageInfo(Resources.Where, Resources.HereYouCanSpecifyWhereToSendBackups, RegisterControl(BackupTaskViewsEnum.Storages, new StoragesUserControl()), Icons.Storages48x48));
 
             if (Program.SchedulerInstalled && !options.DontNeedScheduler)
             {
-                _steps.Add(new PageInfo(Translation.Current[123], Translation.Current[627], RegisterControl(BackupTaskViewsEnum.Scheduler, new SchedulerUserControl()), Icons.Schedule48x48));
+                _steps.Add(new PageInfo(Resources.When, Resources.YouCanSetDaysAndTimesWhenYouWantToStartThisBackupJob, RegisterControl(BackupTaskViewsEnum.Scheduler, new SchedulerUserControl()), Icons.Schedule48x48));
             }
-            _steps.Add(new PageInfo(Translation.Current[83], Translation.Current[628], RegisterControl(BackupTaskViewsEnum.Encryption, new EncryptionUserControl()), Icons.Password48x48));
-            _steps.Add(new PageInfo(Translation.Current[96], Translation.Current[629], RegisterControl(BackupTaskViewsEnum.OtherOptions, new TaskOtherOptionsUserControl()), Icons.OtherSettings48x48));
+            _steps.Add(new PageInfo(Resources.Encryption, Resources.HereYouCanProtectTheBackupWithPasswordThisIsAlsoRequiredForCopyingItOverNetwork, RegisterControl(BackupTaskViewsEnum.Encryption, new EncryptionUserControl()), Icons.Password48x48));
+            _steps.Add(new PageInfo(Resources.OtherOptions, Resources.HereYouCanSpecifyOtherSettings, RegisterControl(BackupTaskViewsEnum.OtherOptions, new TaskOtherOptionsUserControl()), Icons.OtherSettings48x48));
 
             _step = 0;
         }

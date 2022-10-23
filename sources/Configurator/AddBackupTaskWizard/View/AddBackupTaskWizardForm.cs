@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 using BUtil.Configurator.AddBackupTaskWizard.Controller;
-using BULocalization;
+using BUtil.Configurator.Localization;
 
 namespace BUtil.Configurator.AddBackupTaskWizard.View
 {
@@ -34,10 +34,10 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
 
         private void ApplyLocals()
         {
-            Text = Translation.Current[630];
-            _nextButton.Text = Translation.Current[631];
-            _previousButton.Text = Translation.Current[632];
-            _cancelButton.Text = Translation.Current[186];
+            Text = Resources.NewBackupTaskWizard;
+            _nextButton.Text = Resources.Next;
+            _previousButton.Text = Resources.Back;
+            _cancelButton.Text = Resources.Cancel;
         }
 
         private void NextPageRequest(object sender, EventArgs e)
@@ -68,7 +68,7 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
         private void RefreshActivePage()
         {
             _nextButton.Text = _controller.AddBackupTaskWizardView.CanGoNextPage ? 
-                Translation.Current[631] : Translation.Current[423];
+                Resources.Next : Resources.Finish;
             _previousButton.Enabled = _controller.AddBackupTaskWizardView.CanGoPreviousPage;
 
             _titleLabel.Text = _controller.AddBackupTaskWizardView.CurrentPage.Title;

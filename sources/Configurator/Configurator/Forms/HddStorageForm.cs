@@ -1,10 +1,11 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
-using BULocalization;
+
 using BUtil.Core.Options;
 using BUtil.Core.Storages;
 using BUtil.Core.PL;
+using BUtil.Configurator.Localization;
 
 namespace BUtil.Configurator
 {
@@ -40,13 +41,13 @@ namespace BUtil.Configurator
 			}
 			
 			// locals
-			deleteHereAllOtherBUtilImageFilesCheckbox.Text = Translation.Current[371];
-			whereToStoreBackupLabel.Text = Translation.Current[82];
-			this.Text = Translation.Current[357];
-			acceptButton.Text = Translation.Current[358];
-			cancelButton.Text = Translation.Current[359];
-			captionLabel.Text = Translation.Current[360];
-			optionsGroupBox.Text = Translation.Current[361];
+			deleteHereAllOtherBUtilImageFilesCheckbox.Text = Resources.DeleteHereAllOtherButilImageFiles;
+			whereToStoreBackupLabel.Text = Resources.SpecifyTheFolderWhereToStoreBackUp;
+			this.Text = Resources.HddStorageConfiguration;
+			acceptButton.Text = Resources.Ok;
+			cancelButton.Text = Resources.Cancel;
+			captionLabel.Text = Resources.Title;
+			optionsGroupBox.Text = Resources.Options;
 		}
 		
 		void searchButtonClick(object sender, EventArgs e)
@@ -62,7 +63,7 @@ namespace BUtil.Configurator
             if (captionTextBox.Text.StartsWith(@"\\", StringComparison.InvariantCulture))
 			{
 				//"Network storages are not allowed to be pointed here!"
-				Messages.ShowErrorBox(Translation.Current[450]);
+				Messages.ShowErrorBox(Resources.NetworkStoragesAreNotAllowedToBePointedHere);
 				return;
 			}
 			this.DialogResult = DialogResult.OK;

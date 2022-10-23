@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Text;
-using BULocalization;
+
 
 using BUtil;
 using BUtil.Core;
@@ -9,6 +9,7 @@ using System.Globalization;
 using BUtil.Core.Synchronization;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Misc;
+using BUtil.Core.Localization;
 
 namespace BUtil.Core.Logs
 {
@@ -76,13 +77,13 @@ namespace BUtil.Core.Logs
                                   	CultureInfo.CurrentCulture, 
                                   	File.ReadAllText(Files.FileLogTemplate), 
                                   	DateTime.Now.ToString("f"),
-                                  	Translation.Current[509],
+                                  	Resources.BackupReport,
                                   	SupportManager.GetLink(SupportRequest.Homepage),
                                   	SupportManager.GetLink(SupportRequest.Issue),
                                   	SupportManager.GetLink(SupportRequest.Issue),
-                                  	Translation.Current[288],
-                                  	Translation.Current[290],
-                                  	Translation.Current[291]));
+                                  	Resources.VisitProjectHomepage,
+                                  	Resources.ReportABug,
+                                  	Resources.AskForSupport));
 				_logFile = File.AppendText(_fileName);
 			}
 			catch (Exception e)
@@ -116,7 +117,7 @@ namespace BUtil.Core.Logs
                 if (!ErrorsOrWarningsRegistered)
                 {
                     //No any error or warning registered during backup!
-                    writeInFile(Translation.Current[503]);
+                    writeInFile(Resources.BackupFinishedSuccesfully);
                 }
                 
                 writeInFile("</dody>");

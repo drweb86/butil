@@ -84,9 +84,7 @@ When you're providing logs, don't forget to set logging level to SUPPORT
 How to compile solution without problems?
 
 Must be installed:
-- Microsoft .Net 2.0.5;
 - Windows 11x64 Professional;
-- [BULocalization 3.2](sourceforge.net/projects/bulocalization);
 - Microsoft Visual Studio 2022;
 - InnoSetup 6.2.1 (must be installed in default directory);
 - 7-zip x64 (must be installed in default directory).

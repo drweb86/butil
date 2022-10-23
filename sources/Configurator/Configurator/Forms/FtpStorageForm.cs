@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
-using BULocalization;
+
 using BUtil.Core.Storages;
 using BUtil.Core.PL;
+using BUtil.Configurator.Localization;
 
 namespace BUtil.Configurator
 {
@@ -55,22 +56,22 @@ namespace BUtil.Configurator
 			InitializeComponent();
 			
 			// applying locals
-			StorageNamelabel.Text = Translation.Current[368];
-			destinationFolderGroupBox.Text = Translation.Current[370];
-			deleteHereAllOtherBUtilImageFilesCheckbox.Text = Translation.Current[371];
-			AuthorizationInformationGroupBox.Text = Translation.Current[373];
-			userLabel.Text = Translation.Current[374];
-			passwordLabel.Text = Translation.Current[375];
-			RemoteServergroupBox.Text = Translation.Current[376];
+			StorageNamelabel.Text = Resources.StorageName;
+			destinationFolderGroupBox.Text = Resources.DestinationFolder;
+			deleteHereAllOtherBUtilImageFilesCheckbox.Text = Resources.DeleteHereAllOtherButilImageFiles;
+			AuthorizationInformationGroupBox.Text = Resources.AuthorizationInformation;
+			userLabel.Text = Resources.User;
+			passwordLabel.Text = Resources.Password;
+			RemoteServergroupBox.Text = Resources.FtpServer;
 			connectionModeComboBox.Items.Clear();
-			connectionModeComboBox.Items.Add(Translation.Current[377]);
-			connectionModeComboBox.Items.Add(Translation.Current[378]);
-			dataTransferModeLabel.Text = Translation.Current[379];
-			hostlabel.Text = Translation.Current[380];
-			acceptButton.Text = Translation.Current[381];
-			CANCELbutton.Text = Translation.Current[382];
-			testButton.Text = Translation.Current[383];
-			this.Text = Translation.Current[384];
+			connectionModeComboBox.Items.Add(Resources.Active);
+			connectionModeComboBox.Items.Add(Resources.Passive);
+			dataTransferModeLabel.Text = Resources.DataTransferMode;
+			hostlabel.Text = Resources.DnsNameOrIpFtp;
+			acceptButton.Text = Resources.Ok;
+			CANCELbutton.Text = Resources.Cancel;
+			testButton.Text = Resources.Test;
+			this.Text = Resources.FtpStorageConfiguration;
 			
 			connectionModeComboBox.SelectedIndex = 1;
 			
@@ -109,13 +110,13 @@ namespace BUtil.Configurator
 			if (ok) 
 			{
 				// "Works fine!"
-				Messages.ShowInformationBox(Translation.Current[385]);
+				Messages.ShowInformationBox(Resources.WorksFine);
 			}
 		}
 		
 		void helpButtonClick(object sender, EventArgs e)
 		{
-			Messages.ShowInformationBox(Translation.Current[369]);
+			Messages.ShowInformationBox(Resources._1BackupShouldBePasswordProtectedIfNotProgramWillSkipItsCopyingToThisStorageN2YourAuthorizationInformationIsGoingOverTheNetworkInUnprotectedModeAsPlainText);
 		}
 		
 		void requiredFieldsTextChanged(object sender, EventArgs e)

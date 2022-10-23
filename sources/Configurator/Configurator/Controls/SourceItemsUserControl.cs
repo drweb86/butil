@@ -2,12 +2,13 @@ using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using BULocalization;
+
 using System.IO;
 using BUtil.Core.Options;
 using BUtil.Configurator;
 using BUtil.Core.ButilImage;
 using BUtil.Core;
+using BUtil.Configurator.Localization;
 
 namespace BUtil.Configurator.Controls
 {
@@ -166,7 +167,7 @@ namespace BUtil.Configurator.Controls
 			addFoldersToTheBackupItemsList();
 		}
 
-		void ñompressionItemsListViewResize(object sender, EventArgs e)
+		void compressionItemsListViewResize(object sender, EventArgs e)
 		{
 			compressionItemsListView.Columns[0].Width = compressionItemsListView.Width - 40;
 		}
@@ -211,16 +212,16 @@ namespace BUtil.Configurator.Controls
 			maximumToolStripMenuItem.Text = LocalsHelper.ToString(CompressionDegree.Maximum);
 			ultraToolStripMenuItem.Text = LocalsHelper.ToString(CompressionDegree.Ultra);
 			
-			itemsToCompressColumnHeader.Text = Translation.Current[418];
-			setCompressionDegreeToolStripMenuItem.Text = Translation.Current[417];
+			itemsToCompressColumnHeader.Text = Resources.ItemsToBackup;
+			setCompressionDegreeToolStripMenuItem.Text = Resources.SetCompressionDegree;
 			
-			SetHintForControl(compressionItemsListView, Translation.Current[73]);
-            SetHintForControl(addFoldersButton, Translation.Current[74]);
-            addFoldersToolStripMenuItem.Text = Translation.Current[74];
-            SetHintForControl(removeCompressionItemButton, Translation.Current[77]);
-            removeFromListToolStripMenuItem.Text = Translation.Current[77];
-            SetHintForControl(addFilesButton, Translation.Current[78]);
-            addFilesToolStripMenuItem.Text = Translation.Current[78];
+			SetHintForControl(compressionItemsListView, Resources.DragAndDropHereFilesAndFoldersWhichYoureGoingToBackupForSettingCompressionPriorityUseMenu);
+            SetHintForControl(addFoldersButton, Resources.AddFolders);
+            addFoldersToolStripMenuItem.Text = Resources.AddFolders;
+            SetHintForControl(removeCompressionItemButton, Resources.Remove);
+            removeFromListToolStripMenuItem.Text = Resources.Remove;
+            SetHintForControl(addFilesButton, Resources.AddFiles);
+            addFilesToolStripMenuItem.Text = Resources.AddFiles;
 		}
 	
 		public override void SetOptionsToUi(object settings)

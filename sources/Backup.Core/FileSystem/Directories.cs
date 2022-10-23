@@ -12,7 +12,6 @@ namespace BUtil.Core.FileSystem
 		private static readonly string _installdir = Path.GetDirectoryName(_binariesDir);
 		private static readonly string _sevenZipFolder = Path.Combine(_installdir, "7-zip");
 		private static readonly string _dataFolder = Path.Combine(_installdir, "data");
-		private static readonly string _localsFolder = Path.Combine(_installdir, "local");
 		
 		private static readonly string _applicationDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
@@ -50,11 +49,6 @@ namespace BUtil.Core.FileSystem
 	        get { return _sevenZipFolder; }
 	    }
 
-        public static string LocalsFolder
-        {
-            get { return _localsFolder; }
-        }
-
         private static void createPersonnel(string path)
         {
             if (!Directory.Exists(path))
@@ -85,9 +79,6 @@ namespace BUtil.Core.FileSystem
 				throw new DirectoryNotFoundException(_sevenZipFolder);
             if (!Directory.Exists(_dataFolder))
 				throw new DirectoryNotFoundException(_dataFolder);
-            if (!Directory.Exists(_localsFolder))
-				throw new DirectoryNotFoundException(_localsFolder);
-
         }
 	}
 }

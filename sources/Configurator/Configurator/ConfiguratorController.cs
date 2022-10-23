@@ -6,7 +6,7 @@ using System.IO;
 using BUtil.Configurator.BackupUiMaster.Forms;
 using System.Diagnostics;
 using System.Globalization;
-using BULocalization;
+
 using BUtil.Core.Misc;
 using BUtil.Core;
 using BUtil.Core.FileSystem;
@@ -28,13 +28,6 @@ namespace BUtil.Configurator.Configurator
 
         ProgramOptions _profileOptions = ProgramOptionsManager.Default;
         
-		readonly LanguagesManager _localsManager;
-		
-        public LanguagesManager LocalManager
-        {
-            get { return _localsManager; }
-        }
-
 		static void CheckSchedulerStartup()
         {
 			Process.Start(Files.Scheduler, SchedulerParameters.CREATE_STARTUP_SCRIPT);
@@ -174,11 +167,6 @@ namespace BUtil.Configurator.Configurator
 				Environment.Exit(0);
 			}
 		}
-		
-		public ConfiguratorController(LanguagesManager manager)
-		{
-			_localsManager = manager;
-		}
 
         public ProgramOptions ProgramOptions
         {
@@ -255,23 +243,5 @@ namespace BUtil.Configurator.Configurator
 
             return true;
         }
-
-		/// <summary>
-		/// Loads language settigns
-		/// Constraints: should be called only form main form!
-		/// </summary>
-		public void LoadLanguage(ToolStripMenuItem chooseLanguagesMenu)
-		{
-			try
-			{
-                _localsManager.Init();
-                _localsManager.Apply();
-                _localsManager.GenerateMenuWithLanguages(chooseLanguagesMenu);
-			}
-			catch (Exception exc)
-			{
-				MessageBox.Show(exc.Message, Error, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-			}
-		}
     }
 }

@@ -1,13 +1,14 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using BULocalization;
+
 using BUtil.Core.Storages;
 using BUtil.Core.PL;
+using BUtil.Configurator.Localization;
 
 namespace BUtil.Configurator
 {
@@ -50,15 +51,15 @@ namespace BUtil.Configurator
 			}
 
 			// locals
-			deleteHereAllOtherBUtilImageFilesCheckbox.Text = Translation.Current[371];
-			WhereToStoreBackupslabel.Text = Translation.Current[82];
-			this.Text = Translation.Current[453];
-			acceptButton.Text = Translation.Current[358];
-			Cancelbutton.Text = Translation.Current[359];
-			namelabel.Text = Translation.Current[360];
-			OptionsgroupBox.Text = Translation.Current[361];
-            _EncryptUnderLsaCheckBox.Text = Translation.Current[473];
-            skipIfExceedsLimitCheckBox.Text = Translation.Current[486];
+			deleteHereAllOtherBUtilImageFilesCheckbox.Text = Resources.DeleteHereAllOtherButilImageFiles;
+			WhereToStoreBackupslabel.Text = Resources.SpecifyTheFolderWhereToStoreBackUp;
+			this.Text = Resources.NetworkStorageConfiguration;
+			acceptButton.Text = Resources.Ok;
+			Cancelbutton.Text = Resources.Cancel;
+			namelabel.Text = Resources.Title;
+			OptionsgroupBox.Text = Resources.Options;
+            _EncryptUnderLsaCheckBox.Text = Resources.AdditionalEncryptionUnderYourLocalSystemAccountNrequiresNtfsFileSystemAndWin2kOsOnRemoteMachineBackupDataWillBeAvailableOnlyForYourOsAccountSeeDocumentationForDetails;
+            skipIfExceedsLimitCheckBox.Text = Resources.SkipCopyingAndWriteAWarningIntoLogIfBackupExceeds;
 
             requiredFieldsTextChanged(null, null);
 		}
@@ -82,7 +83,7 @@ namespace BUtil.Configurator
 		{
 			if (!uncPath.StartsWith(@"\\", StringComparison.CurrentCulture))
 			{
-				Messages.ShowErrorBox(Translation.Current[452]);
+				Messages.ShowErrorBox(Resources.TargetFolderShouldHaveUncNameForExampleServer1Sharedresource1);
 				return false;
 			}
 			else
@@ -107,7 +108,7 @@ namespace BUtil.Configurator
 		
 		void helpButtonClick(object sender, EventArgs e)
 		{
-			Messages.ShowInformationBox(Translation.Current[460]);
+			Messages.ShowInformationBox(Resources.ImportantNNbackupShouldBePasswordProtectedIfNotProgramWillSkipItsCopyingToThisStorage);
 		}
 		
 		void requiredFieldsTextChanged(object sender, EventArgs e)

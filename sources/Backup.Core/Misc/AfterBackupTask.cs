@@ -5,11 +5,12 @@ using System.Diagnostics;
 using System.ComponentModel;
 using System.Text;
 using System.IO;
-using BULocalization;
+
 using BUtil.Core.Storages;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
 using BUtil.Core.FileSystem;
+using BUtil.Core.Localization;
 
 namespace BUtil.Core.Misc
 {
@@ -80,7 +81,7 @@ namespace BUtil.Core.Misc
 				throw new InvalidOperationException("Log is not opened");
 			}
 			
-			_taskName = Translation.Current[610] + taskInfo.ToString() + " :";
+			_taskName = Resources.AfterBackupTask + taskInfo.ToString() + " :";
 			_taskInfo = taskInfo;
 			_backupImageLocation = backupImageLocation;
 			_priority = priority;
@@ -138,26 +139,26 @@ namespace BUtil.Core.Misc
 				catch (InvalidOperationException e)
 				{
 					_log.WriteLine(LoggingEvent.Error,
-			              string.Format(CultureInfo.CurrentCulture, _taskName + Translation.Current[592], _taskInfo.Program, e.Message));
+			              string.Format(CultureInfo.CurrentCulture, _taskName + Resources.CouldNotKillProcess01, _taskInfo.Program, e.Message));
 					_log.WriteLine(LoggingEvent.Debug, _taskName + e.ToString());
 				}
 				catch (Win32Exception e)
 				{
 					_log.WriteLine(LoggingEvent.Error,
-			              string.Format(CultureInfo.CurrentCulture, _taskName + Translation.Current[592], _taskInfo.Program, e.Message));
+			              string.Format(CultureInfo.CurrentCulture, _taskName + Resources.CouldNotKillProcess01, _taskInfo.Program, e.Message));
 					_log.WriteLine(LoggingEvent.Debug, _taskName + e.ToString());
 				}
 			}			
 			catch (ObjectDisposedException e)
 			{
 				_log.WriteLine(LoggingEvent.Error,
-		              string.Format(CultureInfo.CurrentCulture, _taskName + Translation.Current[593], _taskInfo.Program, e.Message));
+		              string.Format(CultureInfo.CurrentCulture, _taskName + Resources.CouldNotStartProcess01, _taskInfo.Program, e.Message));
 				_log.WriteLine(LoggingEvent.Debug, _taskName + e.ToString());
 			}
 			catch (Win32Exception e)
 			{
 				_log.WriteLine(LoggingEvent.Error,
-		              string.Format(CultureInfo.CurrentCulture, _taskName + Translation.Current[593], _taskInfo.Program, e.Message));
+		              string.Format(CultureInfo.CurrentCulture, _taskName + Resources.CouldNotStartProcess01, _taskInfo.Program, e.Message));
 				_log.WriteLine(LoggingEvent.Debug, _taskName + e.ToString());
 			}
 			finally

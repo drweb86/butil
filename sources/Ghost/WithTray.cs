@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using BUtil.Core;
-using BULocalization;
+using BUtil.Ghost.Localization;
 
 namespace BUtil.Ghost
 {
@@ -39,9 +39,9 @@ namespace BUtil.Ghost
             _controller = controller;
             
             //locals
-            _Start = Translation.Current[483];
-            _Cancel = Translation.Current[484];
-            _Exit = Translation.Current[485];
+            _Start = Resources.Start;
+            _Cancel = Resources.Cancel;
+            _Exit = Resources.Exit;
             //--
 
             InitializeComponent();
@@ -78,7 +78,7 @@ namespace BUtil.Ghost
 			//--  this is a bug fix and should be removed when microsoft will fix their class
 			_trayIcon.BalloonTipIcon = ToolTipIcon.Info;
 			_trayIcon.BalloonTipText = text;
-            _trayIcon.BalloonTipTitle = Translation.Current[479];
+            _trayIcon.BalloonTipTitle = Resources.BackupToolButil;
 
 			_trayIcon.ShowBalloonTip(3000);
         }

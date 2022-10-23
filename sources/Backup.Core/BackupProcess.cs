@@ -1,11 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.IO;
 using System.Globalization;
 using System.Collections.ObjectModel;
-
-using BULocalization;
 using BUtil.Core.Synchronization;
 using BUtil.Core.ButilImage;
 using BUtil.Core.Logs;
@@ -13,6 +11,7 @@ using BUtil.Core.Storages;
 using BUtil.Core.Options;
 using BUtil.Core.Misc;
 using BUtil.Core.FileSystem;
+using BUtil.Core.Localization;
 
 namespace BUtil.Core
 {
@@ -304,7 +303,7 @@ namespace BUtil.Core
 			}
 			catch (InvalidSignException signException)
 			{
-				_log.WriteLine(LoggingEvent.Error, string.Format(Translation.Current[541], signException.Message));
+				_log.WriteLine(LoggingEvent.Error, string.Format(Resources.ButilSoftwarePackage7ZipComponent0HasInvalidCheckSummNprobablyItWasDamagedByVirusesNNyouShouldReinstallApplicationNNrestorationAndBackupFunctionsWillBeUnavailable, signException.Message));
 				return false;
 			}
 			
@@ -591,13 +590,13 @@ namespace BUtil.Core
 		
 		void ApplyTranslation()
 		{
-			//GUIMesSTARTOFArchMess = Translation.Current[275];
-			_backupAbortedByUser = Translation.Current[391];
-			//mProcStrOK = Translation.Current[407];
-			_couldNotVanishFileFormatString = Translation.Current[465];
-			_couldNotDeleteFileFormatString = Translation.Current[466];
-			_noStoragesSpecified = Translation.Current[519];
-			_noDataToBackupSpecified = Translation.Current[520];
+			//GUIMesSTARTOFArchMess = Resources.7ZMessage;
+			_backupAbortedByUser = Resources.AbortedByUser;
+			//mProcStrOK = Resources.FileWasCopyiedToStorageSuccessfully;
+			_couldNotVanishFileFormatString = Resources.DuringOverwritingFile0WithZerosAnErrorOccured1;
+			_couldNotDeleteFileFormatString = Resources.DuringDeletingOfAFile0AnErrorOccured1;
+			_noStoragesSpecified = Resources.ThereIsNoStoragesSpecifiedInConfigurationCompressionOfDataWasSkipped;
+			_noDataToBackupSpecified = Resources.ThereIsNoDataToBackupSpecifiedInConfiguration;
 		}
 		
 		#endregion

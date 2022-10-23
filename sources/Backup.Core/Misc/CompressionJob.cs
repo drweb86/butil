@@ -6,11 +6,12 @@ using System.ComponentModel;
 using System.Text;
 using System.IO;
 
-using BULocalization;
+
 using BUtil.Core.Storages;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
 using BUtil.Core.FileSystem;
+using BUtil.Core.Localization;
 
 namespace BUtil.Core.Misc
 {
@@ -106,26 +107,26 @@ namespace BUtil.Core.Misc
 					catch (InvalidOperationException e)
 					{
 						_log.WriteLine(LoggingEvent.Error,
-				              string.Format(CultureInfo.CurrentCulture, _packingParameter.ItemToCompress.Target + ":" + Translation.Current[467], e.Message));
+				              string.Format(CultureInfo.CurrentCulture, _packingParameter.ItemToCompress.Target + ":" + Resources.CouldNotKillPackerProcess0, e.Message));
 					}
 					catch (Win32Exception e)
 					{
 						_log.WriteLine(LoggingEvent.Error,
-				              string.Format(CultureInfo.CurrentCulture, _packingParameter.ItemToCompress.Target + ":" + Translation.Current[467], e.Message));
+				              string.Format(CultureInfo.CurrentCulture, _packingParameter.ItemToCompress.Target + ":" + Resources.CouldNotKillPackerProcess0, e.Message));
 					}
 				}			
 				catch (ObjectDisposedException e)
 				{
 					_log.WriteLine(LoggingEvent.Error,
 					               string.Format(CultureInfo.CurrentCulture,
-					                             _packingParameter.ItemToCompress.Target + ": " + Translation.Current[469],
+					                             _packingParameter.ItemToCompress.Target + ": " + Resources.CouldNotStartPackerDueTo0AbortingBackup,
 					                             e.Message));
 				}
 				catch (Win32Exception e)
 				{
 					_log.WriteLine(LoggingEvent.Error,
 					               string.Format(CultureInfo.CurrentCulture,
-					                             _packingParameter.ItemToCompress.Target + ": " + Translation.Current[469],
+					                             _packingParameter.ItemToCompress.Target + ": " + Resources.CouldNotStartPackerDueTo0AbortingBackup,
 					                             e.Message));
 				}
 				finally
@@ -205,11 +206,11 @@ namespace BUtil.Core.Misc
 					_log.WriteLine(LoggingEvent.Debug, "Archivator did it work OK");
 					result = true;
 					break;
-				case (int)SevenZipReturnCodes.ErrorsOccured: _log.WriteLine(LoggingEvent.Error, _packingParameter.ItemToCompress.Target + ": " + Translation.Current[394]); break;
-				case (int)SevenZipReturnCodes.FatalErrorsOccured: _log.WriteLine(LoggingEvent.Error, _packingParameter.ItemToCompress.Target + ": " + Translation.Current[395]); break;
-				case (int)SevenZipReturnCodes.InvalidArguments: _log.WriteLine(LoggingEvent.Error, _packingParameter.ItemToCompress.Target + ": " + Translation.Current[396]); break;
-				case (int)SevenZipReturnCodes.NotEnoughMemory: _log.WriteLine(LoggingEvent.Error, _packingParameter.ItemToCompress.Target + ": " + Translation.Current[397]); break;
-				case (int)SevenZipReturnCodes.ExternalTermination: _log.WriteLine(LoggingEvent.Error, _packingParameter.ItemToCompress.Target + ": " + Translation.Current[398]); break;
+				case (int)SevenZipReturnCodes.ErrorsOccured: _log.WriteLine(LoggingEvent.Error, _packingParameter.ItemToCompress.Target + ": " + Resources.ArchivatorWarningNonFatalErrorSForExampleOneOrMoreFilesWereLockedBySomeOtherApplicationSoTheyWereNotCompressed); break;
+				case (int)SevenZipReturnCodes.FatalErrorsOccured: _log.WriteLine(LoggingEvent.Error, _packingParameter.ItemToCompress.Target + ": " + Resources.ArchivatorFatalError); break;
+				case (int)SevenZipReturnCodes.InvalidArguments: _log.WriteLine(LoggingEvent.Error, _packingParameter.ItemToCompress.Target + ": " + Resources.PleaseReportThisBugToMeArchivatorCommandLineError); break;
+				case (int)SevenZipReturnCodes.NotEnoughMemory: _log.WriteLine(LoggingEvent.Error, _packingParameter.ItemToCompress.Target + ": " + Resources.ArchivatorNotEnoughMemoryForOperation); break;
+				case (int)SevenZipReturnCodes.ExternalTermination: _log.WriteLine(LoggingEvent.Error, _packingParameter.ItemToCompress.Target + ": " + Resources.UserStoppedTheProcess); break;
 				default:
 					_log.WriteLine(LoggingEvent.Error, string.Format(CultureInfo.InvariantCulture, _packingParameter.ItemToCompress.Target + ": Abnormal 7-zip exit code: {0}. Please report this bug!", code.ToString(CultureInfo.InvariantCulture)));
 					break;

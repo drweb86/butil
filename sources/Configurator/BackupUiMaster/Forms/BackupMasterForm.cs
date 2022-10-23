@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Threading;
-using BULocalization;
+
 using BUtil.Core.PL;
 using BUtil.Core;
 using BUtil.Core.Options;
@@ -12,6 +12,7 @@ using BUtil.Core.Misc;
 using BUtil.Core.Logs;
 using BUtil.BackupUiMaster.Controls;
 using BUtil.Core.Storages;
+using BUtil.Configurator.Localization;
 
 namespace BUtil.Configurator.BackupUiMaster.Forms
 {
@@ -95,7 +96,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             _controller.BackupFinished += OnBackupFinsihed;
             CompressionItemsListViewResize(null, null);
             
-            ApplyLocalization(Translation.Current);
+            ApplyLocalization();
 		}
 		
 		void OnBackupFinsihed()
@@ -259,13 +260,13 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 			
 			if (_task.FilesFoldersList.Count < 1)
 			{
-				Messages.ShowInformationBox(Translation.Current[569]);
+				Messages.ShowInformationBox(Resources.PleaseCheckItemsToCompress);
 				return;
 			}
 			
 			if (_task.Storages.Count < 1)
 			{
-				Messages.ShowInformationBox(Translation.Current[570]);
+				Messages.ShowInformationBox(Resources.PleaseCheckStoragesWhereToCopyBackupImage);
 				return;
 			}
 
@@ -273,7 +274,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 			tasksListView.CheckBoxes = false;
 			
 			// adding internal tasks
-			var listItem = new ListViewItem(Translation.Current[577]);
+			var listItem = new ListViewItem(Resources.PackingDataInAnImage);
 			listItem.ImageIndex = (int)ImagesEnum.CompressIntoAnImage;
            	listItem.SubItems.Add("-");
            	listItem.SubItems.Add(string.Empty);
@@ -287,7 +288,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 				if (!item.Checked)
 				{
 					item.BackColor = Color.Gray;
-					item.SubItems[2].Text = Translation.Current[573];
+					item.SubItems[2].Text = Resources.Disabled;
 				}
 			}
 
@@ -325,26 +326,26 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 			backupBackgroundWorker.RunWorkerAsync();
 		}
 		
-		void ApplyLocalization(Translation translation)
+		void ApplyLocalization()
 		{
 			settingsUserControl.ApplyLocalization();
-            toolTip.SetToolTip(startButton, translation[160]);
-            closeButton.Text = translation[161];
+            toolTip.SetToolTip(startButton, Resources.Start);
+            closeButton.Text = Resources.Close;
 
-            taskNameColumnHeader.Text = translation[174];
-            informationAboutTaskColumnHeader.Text = translation[542];
-            processingStateInformationColumnHeader.Text = translation[547];
+            taskNameColumnHeader.Text = Resources.Tasks;
+            informationAboutTaskColumnHeader.Text = Resources.Information;
+            processingStateInformationColumnHeader.Text = Resources.ProcessingState;
 
-            Text = translation[179];
-            toolTip.SetToolTip(cancelButton, translation[186]);
-            tasksListView.Groups[0].Header = translation[516];
-            tasksListView.Groups[1].Header = translation[517];
-            tasksListView.Groups[2].Header = translation[568];
-            tasksListView.Groups[3].Header = translation[576];
-            tasksListView.Groups[(int)GroupEnum.BeforeBackupChain].Header = translation[601]; // before backup event chain
-            tasksListView.Groups[5].Header = translation[602];
+            Text = Resources.WellcomeToBackupWizard;
+            toolTip.SetToolTip(cancelButton, Resources.Cancel);
+            tasksListView.Groups[0].Header = Resources.PackingFolders;
+            tasksListView.Groups[1].Header = Resources.PackingFiles;
+            tasksListView.Groups[2].Header = Resources.CopyingToStorages;
+            tasksListView.Groups[3].Header = Resources.OtherTasks;
+            tasksListView.Groups[(int)GroupEnum.BeforeBackupChain].Header = Resources.ChainOfProgramsToExecuteBeforeBackup; // before backup event chain
+            tasksListView.Groups[5].Header = Resources.ChainOfProgramsToExecuteAfterBackup;
 
-            notifyIcon.Text = translation[510];
+            notifyIcon.Text = Resources.BackupIsInProgress;
 		}
 		
 		void LoadForm(object sender, EventArgs e)
@@ -427,13 +428,13 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             // If they are not correct, just closing the Master
             if (items.Count == 0)
             {
-            	Messages.ShowInformationBox(Translation.Current[522]);
+            	Messages.ShowInformationBox(Resources.ThereAreNoItemsToBackupNNyouCanSpecifyTheDataToBackupInConfiguratorInWhatSettingsGroup);
             	Close();
             }
             
             if (_task.Storages.Count < 1)
             {
-            	Messages.ShowInformationBox(Translation.Current[523]);
+            	Messages.ShowInformationBox(Resources.ThereAreNoSpecifiedPlacesWhereToStoreBackupNNyouCanAddSomeStoragesInConfiguratorInWhereSettingsGroup);
             	Close();
             }
 		}
@@ -468,7 +469,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 				}
         	    if (_firstTimeApplicationInTray)
             	{
-	            	notifyIcon.ShowBalloonTip(5000, Translation.Current[504], Translation.Current[475], ToolTipIcon.Info);
+	            	notifyIcon.ShowBalloonTip(5000, Resources.Backup, Resources.WhileBackupIsInProgressYouCanContinueWorkNNtoRestoreProgressFormJustClickOnThisIconInTray, ToolTipIcon.Info);
     	        	_firstTimeApplicationInTray = false;
         	    }
 				Hide();        	    
@@ -551,7 +552,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 						abortBackupBackgroundWorker.RunWorkerAsync();
 					}
 					// questioning of user if he is sure he knows what happened if he closes this significant form
-					else if (MessageBox.Show(Translation.Current[182], Translation.Current[183], MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1, 0 ) == DialogResult.OK)
+					else if (MessageBox.Show(Resources.DoYouReallyWantToStopBackupProcess, Resources.AreYouSure, MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1, 0 ) == DialogResult.OK)
 					{
 						cancelButton.Enabled = false;
 						abortBackupBackgroundWorker.RunWorkerAsync();

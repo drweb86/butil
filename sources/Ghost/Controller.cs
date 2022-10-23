@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Diagnostics;
@@ -12,8 +12,9 @@ using BUtil.Core.Misc;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
 using BUtil.Core.PL;
-using BULocalization;
+
 using BUtil.Ghost.BL;
+using BUtil.Ghost.Localization;
 
 namespace BUtil.Ghost
 {
@@ -65,7 +66,7 @@ namespace BUtil.Ghost
                 {
                     var scheduler = new Scheduler(pair.Value);
         			scheduler.DoAction += (p) => { DoBackup(p, true); };
-                    scheduler.EightMinutesRemainedEventHandler += () => {  notifyUser(Translation.Current[477]); };
+                    scheduler.EightMinutesRemainedEventHandler += () => {  notifyUser(Resources.In8MinutesScheduledBackupWillStart); };
                     scheduler.Resume();
 
                     _schedulers.Add(scheduler);
@@ -86,7 +87,7 @@ namespace BUtil.Ghost
         	{
 	        	_processor.Dispose();
     	    	_processor = null;
-    	    	notifyUser(Translation.Current[589]);// that backup is finished
+    	    	notifyUser(Resources.BackupFinished);// that backup is finished
         	}
 
             foreach (var scheduler in _schedulers)
@@ -136,7 +137,7 @@ namespace BUtil.Ghost
 			catch (LogException e)
 			{
 				// "Cannot open file log due to crytical error {0}"
-				Messages.ShowErrorBox(string.Format(CultureInfo.InstalledUICulture, Translation.Current[312], e.Message));
+				Messages.ShowErrorBox(string.Format(CultureInfo.InstalledUICulture, Resources.CannotOpenFileLogDueToCryticalError0, e.Message));
 				onBackupFinished();
 			}
 
@@ -172,7 +173,7 @@ namespace BUtil.Ghost
                     }
                 }
 
-                notifyUser(Translation.Current[478]);// that backup is started
+                notifyUser(Resources.BackupStarted);// that backup is started
                 var paramThread = new ParameterizedThreadStart(thread_process);
                 new Thread(paramThread).Start(scheduler);
             }
@@ -205,12 +206,12 @@ namespace BUtil.Ghost
                 }
                 return string.Format(
                     CultureInfo.CurrentCulture,
-                    Translation.Current[482],
+                    Resources.NewBackupWillStartIn0,
                     PrettyTimeSpanFormatter.Format(zeroHour));
             }
             else
             {
-                return Translation.Current[481];
+                return Resources.BackupNowInAProgress;
             }
         }
 
@@ -225,7 +226,7 @@ namespace BUtil.Ghost
         		throw new InvalidOperationException("Backup isn't in progress");
         	}
 
-        	notifyUser(Translation.Current[480]);// that cancelling in a progress
+        	notifyUser(Resources.StoppingTheBackup);// that cancelling in a progress
             
             // start: here refactoring the
             foreach (var scheduler in _schedulers)

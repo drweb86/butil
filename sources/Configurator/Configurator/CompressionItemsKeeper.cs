@@ -1,15 +1,16 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using BULocalization;
+
 using BUtil.Core.Options;
 using BUtil.Core.ButilImage;
 using BUtil.Core;
 using System.Diagnostics;
+using BUtil.Configurator.Localization;
 
 namespace BUtil.Configurator
 {
@@ -86,7 +87,7 @@ namespace BUtil.Configurator
 			if (newItem.Target.StartsWith(@"\\", StringComparison.InvariantCulture))
 			{
 				// "Network places are not allowed to be added to the list of backup items!"
-				MessageBox.Show(Translation.Current[454], String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 0);
+				MessageBox.Show(Resources.NetworkPlacesAreNotAllowedToBeAddedToTheListOfBackupItems, String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 0);
 				return;
 			}
 			

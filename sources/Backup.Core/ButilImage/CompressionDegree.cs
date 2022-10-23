@@ -1,5 +1,5 @@
 ﻿using System;
-using BULocalization;
+
 
 namespace BUtil.Core.ButilImage
 {

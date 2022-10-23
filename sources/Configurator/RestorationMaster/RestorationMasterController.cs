@@ -8,7 +8,7 @@ using BUtil.Core.ButilImage;
 using BUtil.Core.Synchronization;
 using BUtil.Core;
 using BUtil.Core.FileSystem;
-using BULocalization;
+
 
 namespace BUtil.RestorationMaster
 {

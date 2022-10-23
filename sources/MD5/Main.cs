@@ -1,11 +1,12 @@
-﻿using System;
+using System;
 using BUtil.Core.Misc;
 using BUtil.Core.FileSystem;
 using System.IO;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using BUtil.Tools.Md5.Localization;
 
-using BULocalization;
+
 // related documents:
 // 7-zip protection
 // Deploying sources
@@ -233,29 +234,22 @@ namespace BUtil.Tools.Md5
         public static void Main(string[] args)
         {
         	Environment.ExitCode = 0;
-            ManagerBehaviorSettings settings = new ManagerBehaviorSettings();
-            settings.RequestLanguageIfNotSpecified = true;
-            settings.UseToolGeneratedConfigFile = true;
-            LanguagesManager localManager = new LanguagesManager(new System.Collections.ObjectModel.ReadOnlyCollection<string>(new string[] { "md5 Program" }), Directories.LocalsFolder, "BUtil", settings);
-            localManager.Init();
-            localManager.Apply();
-
             // applying locals
-			_Usage = Translation.Current[488];
-			_EnterCommand = Translation.Current[489];
-			_AskEnterArguments = Translation.Current[490];
-			_Md5OfPackerFormatString = Translation.Current[491];
-			_OperationFailledFormatString = Translation.Current[492];
-			_EnterParam1 = Translation.Current[493];
-			_EnterParam2 = Translation.Current[494];
-			_Ok = Translation.Current[495];
-			_Bad = Translation.Current[496];
-			_Md5Commands = Translation.Current[497];
-			_Md5Question = Translation.Current[498];
-			_NoParameters = Translation.Current[499];
-			_InvalidOperation = Translation.Current[500];
-			_InputFileNotSpecified = Translation.Current[501];
-			_PressKeyToQuit = Translation.Current[502];
+			_Usage = Resources.CommandLineArgumentsNNhelpNShowsThisHelpNNdevNShowsMd5SummsOfPackerAndInternallyStoredMd5ChecksummsNNmd5FilenameNShowsMd5OfASpecifiedFileNNverifyFilenameNComparesMd5OfASpecifiedFileWithItsMd5NNverifyFilenameFileWithMd5NComparesMd5OfASpecifiedFileMd5StoredInSecondFileNNsignFilenameNSignsFileWithMd5AndStoresComputedMd5InFilenameMd5NNsignFilenameFileWhereToStoreMd5NSignsFileWithMd5AndStoresComputedMd5InSecondFile;
+			_EnterCommand = Resources.PleaseEnterCommand;
+			_AskEnterArguments = Resources.WouldYouLikeToEnterRequiredArgumentsInInteractiveMode;
+			_Md5OfPackerFormatString = Resources.File0Nmd51NoldMd52N;
+			_OperationFailledFormatString = Resources.OperationFailledN0;
+			_EnterParam1 = Resources.EnterParameter1OrJustEnterIfTheresNoParameter1InCommand;
+			_EnterParam2 = Resources.EnterParameter2OrJustEnterIfTheresNoParameter2InCommand;
+			_Ok = Resources.CorrectN;
+			_Bad = Resources.DoesNotMatchN;
+			_Md5Commands = Resources.Md5signerCommands;
+			_Md5Question = Resources.Md5signerQuestion;
+			_NoParameters = Resources.YouDidntSpecifiedParameterS;
+			_InvalidOperation = Resources.OperationNotSupported;
+			_InputFileNotSpecified = Resources.InputFileWasntSpecified;
+			_PressKeyToQuit = Resources.PressAnyKeyToQuit;
             
             main(args);
             Console.WriteLine(_PressKeyToQuit);

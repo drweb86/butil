@@ -1,11 +1,10 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.ObjectModel;
 using BUtil.Core.ButilImage;
 using BUtil.Core.FileSystem;
-
-using BULocalization;
+using BUtil.Configurator.Localization;
 
 namespace BUtil.RestorationMaster
 {
@@ -24,14 +23,14 @@ namespace BUtil.RestorationMaster
 			InitializeComponent();
 
 			// locals
-			itemsListView.Groups[0].Header = Translation.Current[420];
-			itemsListView.Groups[1].Header = Translation.Current[421];
-			restoreToolStripMenuItem.Text = Translation.Current[422];
-			finishButton.Text = Translation.Current[423];
-			restoreButton.Text = Translation.Current[424];
-			//Translation.Current[425];
-			itemsColumnHeader.Text = Translation.Current[426];
-			this.Text = string.Format(Translation.Current[427], controller.ImageLocation);
+			itemsListView.Groups[0].Header = Resources.Folders;
+			itemsListView.Groups[1].Header = Resources.Files;
+			restoreToolStripMenuItem.Text = Resources.Restore;
+			finishButton.Text = Resources.Finish;
+			restoreButton.Text = Resources.Recover;
+			//Resources.UseRightClickMouseOnSelectedItemToRestoreIt;
+			itemsColumnHeader.Text = Resources.ItemsInImage;
+			this.Text = string.Format(Resources._0Restoration, controller.ImageLocation);
 			restoreButton.Left = finishButton.Left - restoreButton.Width - 10;
 
 			_records = _controller.MetaRecords;
@@ -77,7 +76,7 @@ namespace BUtil.RestorationMaster
 			if (itemsListView.SelectedIndices.Count == 0) 
 			{
 				// "First, select an item!"
-				MessageBox.Show(Translation.Current[419], string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 0);
+				MessageBox.Show(Resources.FirstSelectAnItem, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 0);
 				return;
 			}
 			

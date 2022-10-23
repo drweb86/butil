@@ -8,7 +8,10 @@ Currently program was translated into the following languages
 # How to Create A New Translation
 
 To translate a program please follow next steps:
-- Download and install [bulocaloization package](http://www.sourceforge.net/projects/bulocalization);
-- Test your translation(see bulocalization documentation);
-- Register at [Github](https://github.com);
-- Send your translation to me via e-mail Cuchuk.Sergey@gmail.com.
+- Install Visual Studio 2022
+- Install Resx Manager Visual Studio Extension
+- Create a fork of butil repository
+- Open Localization\Resources.resx files in Resx Manager
+- Translate it
+- Commit & Push
+- Make a Merge Request from your fork to original repository.

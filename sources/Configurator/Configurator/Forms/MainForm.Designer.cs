@@ -27,7 +27,6 @@ namespace BUtil.Configurator.Configurator.Forms
 		{
             this.components = new System.ComponentModel.Container();
             this.MainmenuStrip = new System.Windows.Forms.MenuStrip();
-            this.languageToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restorationToolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.journalsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,7 +55,6 @@ namespace BUtil.Configurator.Configurator.Forms
             // MainmenuStrip
             // 
             this.MainmenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.languageToolStripMenuItem1,
             this.toolsToolStripMenuItem,
             this.miscToolStripMenuItem,
             this._questionToolStripMenuItem});
@@ -66,12 +64,6 @@ namespace BUtil.Configurator.Configurator.Forms
             this.MainmenuStrip.Size = new System.Drawing.Size(716, 24);
             this.MainmenuStrip.TabIndex = 3;
             this.MainmenuStrip.Text = "MainmenuStrip";
-            // 
-            // languageToolStripMenuItem1
-            // 
-            this.languageToolStripMenuItem1.Name = "languageToolStripMenuItem1";
-            this.languageToolStripMenuItem1.Size = new System.Drawing.Size(71, 20);
-            this.languageToolStripMenuItem1.Text = "Language";
             // 
             // toolsToolStripMenuItem
             // 
@@ -308,7 +300,6 @@ namespace BUtil.Configurator.Configurator.Forms
 		private System.Windows.Forms.ToolStripMenuItem miscToolStripMenuItem;
 		private System.Windows.Forms.ToolStripStatusLabel helpToolStripStatusLabel;
 		private System.Windows.Forms.StatusStrip helpStatusStrip;
-		private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem1;
 		private System.Windows.Forms.Button okButton;
 		private System.Windows.Forms.Button cancelButton;
 		private System.Windows.Forms.Panel nestingControlsPanel;

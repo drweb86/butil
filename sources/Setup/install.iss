@@ -1,8 +1,3 @@
-; Review of script before creation of installer
-; 1. Verify links for existence
-;   a)	DOT_NET_2_URL = 'http://www.microsoft.com/downloads/details.aspx?FamilyID=0856eacb-4362-4b0d-8edd-aab15c5e04f5&DisplayLang=en';
-;   b)  MSI_URL = 'http://support.microsoft.com/kb/942288/en-us';  1
-
 #define ApplicationVersion GetVersionNumbersString('..\..\Output\BUtil\bin\Configurator.exe')
 
 [Setup]

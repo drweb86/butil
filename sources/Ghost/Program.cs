@@ -1,13 +1,14 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 using System.IO;
 using System.Threading;
-using BULocalization;
+
 using BUtil.Core;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
 using BUtil.Core.PL;
 using BUtil.Core.FileSystem;
+using BUtil.Ghost.Localization;
 
 [assembly: CLSCompliant(true)]
 namespace BUtil.Ghost
@@ -38,19 +39,6 @@ namespace BUtil.Ghost
     	
     	#region Private Methods
 
-    	/// <summary>
-    	/// Loads the locals
-    	/// </summary>
-    	static void loadLocalization()
-    	{
-    	    ManagerBehaviorSettings settings = new ManagerBehaviorSettings();
-            settings.RequestLanguageIfNotSpecified = true;
-            settings.UseToolGeneratedConfigFile = true;
-            LanguagesManager localManager = new LanguagesManager(new System.Collections.ObjectModel.ReadOnlyCollection<string>(new string[] { "Ghost Program", "Core Library" }), Directories.LocalsFolder, "BUtil", settings);
-            localManager.Init();
-            localManager.Apply();
-    	}
-    	
     	/// <summary>
     	/// ThreadPool function for closing
     	/// </summary>
@@ -160,19 +148,19 @@ namespace BUtil.Ghost
 			}
 			catch(OptionsException)
 			{
-				showErrorAndCloseApplicationIn10Seconds(Translation.Current[476]);
+				showErrorAndCloseApplicationIn10Seconds(Resources.OptionsAreDamagedPleaseReconfigureThemInConfigurator);
 			}
 
            	if (_options.DontNeedScheduler)
            	{
-           		showErrorAndCloseApplicationIn10Seconds(Translation.Current[585]);
+           		showErrorAndCloseApplicationIn10Seconds(Resources.SchedulerStartUpIsForbiddenNtoChangeItYouCanOpenTheConfiguratorNNapplicationWillNowClose);
            	}
            		//TODO:
             // if there's no scheduling
             if (!_options.BackupTasks["default"].EnableScheduling)
             {
                 // we're exiting to free system resources
-                showErrorAndCloseApplicationIn10Seconds(Translation.Current[588]);
+                showErrorAndCloseApplicationIn10Seconds(Resources.NoOneTaskUsesSchedulerNyoudOpenConfiguratorOnWhenTabNNapplicationWillNowClose);
             }
         }
 		
@@ -195,18 +183,17 @@ namespace BUtil.Ghost
         public static void Main(string[] args)
         {
             ImproveIt.InitInfrastructure(true);
-			loadLocalization();
-			
+
 			processInternalArguments(args);
 			
             if (!File.Exists(Files.ProfileFile))
             {
-            	showErrorAndCloseApplicationIn10Seconds(Translation.Current[582]);
+            	showErrorAndCloseApplicationIn10Seconds(Resources.ThereAreNoOptionsFileNyouCanConfigureApplicationInConfiruratorNNapplicationWillNowClose);
             }
             
             if (!SingleInstance.FirstInstance)
             {
-            	showErrorAndCloseApplicationIn10Seconds(Translation.Current[583]);
+            	showErrorAndCloseApplicationIn10Seconds(Resources.TheSecondCopyOfButilSchedulerRanNNnowThisCopyWillTerminate);
             }
             
             try
@@ -215,7 +202,7 @@ namespace BUtil.Ghost
             }
             catch (InvalidSignException e)
             {
-                showErrorAndCloseApplicationIn10Seconds(string.Format(Translation.Current[584], e.Message));
+                showErrorAndCloseApplicationIn10Seconds(string.Format(Resources.ApplicationComponent7ZipIsBroken0NyouShouldReinstallTheSoftwareNNapplicationWillNowClose, e.Message));
             }
             
             loadConfiguration();
@@ -225,12 +212,12 @@ namespace BUtil.Ghost
             {
             	if ( !(args.Length == 1 && args[0] == SchedulerParameters.START_WITHOUT_MESSAGE) )
             	{
-            		showErrorAndCloseApplicationIn10Seconds(Translation.Current[586]);
+            		showErrorAndCloseApplicationIn10Seconds(Resources.ParameterIsWrongNNforTheCompleteParametersListPleaseSeeDocumentation);
 				}
             }
             else
             {
-				ThreadPool.QueueUserWorkItem(new WaitCallback(showMessageFor10Seconds), Translation.Current[587]);
+				ThreadPool.QueueUserWorkItem(new WaitCallback(showMessageFor10Seconds), Resources.ButilSchedulerIsRunningNNtoNotSeeThisMessageAgainYouShouldRunTheSchedulerWithParameterNpleaseSeeTheDocumentationForDetails);
             }
             
             try

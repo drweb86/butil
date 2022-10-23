@@ -51,6 +51,11 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Update="Localization\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Update="PL\BackUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -97,16 +102,18 @@
     <PackageReference Include="Microsoft.Windows.Compatibility" Version="6.0.0" />
     <PackageReference Include="System.Text.Encoding.CodePages" Version="6.0.0" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Localization\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <PropertyGroup>
     <PreBuildEvent>cd "$(SolutionDir)..\Output"
 
 rem 7-zip
 md "$(SolutionDir)..\Output\BUtil\7-zip"
 xcopy "c:\Program Files\7-zip" "$(SolutionDir)..\Output\BUtil\7-zip" /E /Y
-
-rem Copying of localization files
-md "$(SolutionDir)..\Output\BUtil\local"
-xcopy "$(SolutionDir)LocalizationProject" "$(SolutionDir)..\Output\BUtil\local" /Y
 
 rem Copying of data folder
 md "$(SolutionDir)..\Output\BUtil\data"

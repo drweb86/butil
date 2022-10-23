@@ -1,8 +1,9 @@
+using BUtil.Configurator.Localization;
 using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using BULocalization;
+
 
 namespace BUtil.Configurator.Configurator.Controls
 {
@@ -55,12 +56,12 @@ namespace BUtil.Configurator.Configurator.Controls
 
 		    var buttons = new[] {_otherOptionsButton, _loggingButton, _tasksButton};
 
-			_otherOptionsButton.Text = Translation.Current[96];
-			_loggingButton.Text = Translation.Current[114];
-            _tasksButton.Text = Translation.Current[637];
-			SetHintForControl(_otherOptionsButton, Translation.Current[528]);
-			SetHintForControl(_loggingButton, Translation.Current[529]);
-            SetHintForControl(_tasksButton, Translation.Current[637]);
+			_otherOptionsButton.Text = Resources.OtherOptions;
+			_loggingButton.Text = Resources.Logging;
+            _tasksButton.Text = Resources.BackupTasks;
+			SetHintForControl(_otherOptionsButton, Resources.MiscellaneousOptions);
+			SetHintForControl(_loggingButton, Resources.HereYouCanSetUpLoggingProperties);
+            SetHintForControl(_tasksButton, Resources.BackupTasks);
             
 		    foreach (var button in buttons)
 		    {

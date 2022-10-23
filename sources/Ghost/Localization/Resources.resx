@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="OptionsAreDamagedPleaseReconfigureThemInConfigurator" xml:space="preserve">
+    <value>Options are damaged. Please reconfigure them in Configurator</value>
+  </data>
+  <data name="In8MinutesScheduledBackupWillStart" xml:space="preserve">
+    <value>In 8 minutes scheduled backup will start</value>
+  </data>
+  <data name="BackupStarted" xml:space="preserve">
+    <value>Backup started...</value>
+  </data>
+  <data name="BackupToolButil" xml:space="preserve">
+    <value>Backup tool BUtil</value>
+  </data>
+  <data name="StoppingTheBackup" xml:space="preserve">
+    <value>Stopping the backup...</value>
+  </data>
+  <data name="BackupNowInAProgress" xml:space="preserve">
+    <value>Backup now in a progress...</value>
+  </data>
+  <data name="NewBackupWillStartIn0" xml:space="preserve">
+    <value>New backup will start in {0}</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="ThereAreNoOptionsFileNyouCanConfigureApplicationInConfiruratorNNapplicationWillNowClose" xml:space="preserve">
+    <value>There are no options file. \nYou can configure application in Confirurator.\n\nApplication will now close.</value>
+  </data>
+  <data name="TheSecondCopyOfButilSchedulerRanNNnowThisCopyWillTerminate" xml:space="preserve">
+    <value>The second copy of BUtil scheduler ran.\n\nNow this copy will terminate.</value>
+  </data>
+  <data name="ApplicationComponent7ZipIsBroken0NyouShouldReinstallTheSoftwareNNapplicationWillNowClose" xml:space="preserve">
+    <value>Application component 7-zip is broken ({0}).\nYou should reinstall the software.\n\nApplication will now close.</value>
+  </data>
+  <data name="SchedulerStartUpIsForbiddenNtoChangeItYouCanOpenTheConfiguratorNNapplicationWillNowClose" xml:space="preserve">
+    <value>Scheduler start up is forbidden.\nTo change it you can open the Configurator.\n\nApplication will now close.</value>
+  </data>
+  <data name="ParameterIsWrongNNforTheCompleteParametersListPleaseSeeDocumentation" xml:space="preserve">
+    <value>Parameter is wrong. \n\nFor the complete parameters list please see documentation.</value>
+  </data>
+  <data name="ButilSchedulerIsRunningNNtoNotSeeThisMessageAgainYouShouldRunTheSchedulerWithParameterNpleaseSeeTheDocumentationForDetails" xml:space="preserve">
+    <value>BUtil Scheduler is running...\n\nTo not see this message again you should run the scheduler with parameter.\nPlease see the documentation for details.</value>
+  </data>
+  <data name="NoOneTaskUsesSchedulerNyoudOpenConfiguratorOnWhenTabNNapplicationWillNowClose" xml:space="preserve">
+    <value>No one task uses scheduler.\nYou'd open Configurator on 'When' tab.\n\nApplication will now close.</value>
+  </data>
+  <data name="BackupFinished" xml:space="preserve">
+    <value>Backup finished</value>
+  </data>
+  <data name="CannotOpenFileLogDueToCryticalError0" xml:space="preserve">
+    <value>Cannot open file log due to crytical error {0}</value>
+  </data>
+</root>

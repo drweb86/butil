@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
@@ -9,10 +9,11 @@ using System.Xml;
 
 using BUtil.Core.ButilImage;
 using BUtil.Core.FileSystem;
+using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.PL;
 using BUtil.Core.Storages;
-using BULocalization;
+
 
 namespace BUtil.Core.Options
 {
@@ -369,7 +370,7 @@ namespace BUtil.Core.Options
             if (notSecure && options.RequiresEncryptionForSafety())
             {
             	// warning about security problem
-                Messages.ShowErrorBox(string.Format(CultureInfo.InvariantCulture, Translation.Current[552], Files.ProfileFile, message));
+                Messages.ShowErrorBox(string.Format(CultureInfo.InvariantCulture, Resources.SecurityWarningNNyourPasswordWasSavedInsecurelyAsPlainTextInFile0Because1NNtoStorePasswordsSecurelyPleaseNCheckThatYouUseNtfsFileSystemAtSystemDriveNYourWindowsVersionSupportsEncryptedFileSystemEfs, Files.ProfileFile, message));
             }
 
         }

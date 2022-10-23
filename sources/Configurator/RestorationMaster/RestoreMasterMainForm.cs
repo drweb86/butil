@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -6,8 +6,7 @@ using BUtil.Core.FileSystem;
 using BUtil.Core;
 using BUtil.Core.Misc;
 using BUtil.Core.PL;
-
-using BULocalization;
+using BUtil.Configurator.Localization;
 
 namespace BUtil.RestorationMaster
 {
@@ -41,15 +40,15 @@ namespace BUtil.RestorationMaster
 
         void applyLocals()
         { 
-            openImageButton.Text = Translation.Current[428];
-			ofd.Filter = Translation.Current[429];
-			closeButton.Text = Translation.Current[430];
-			passwordGroupBox.Text = Translation.Current[431];
-			passwordLabel.Text = Translation.Current[432];
-			continueButton.Text = Translation.Current[433];
-			imageLocationLabel.Text = Translation.Current[434];
-			passwordHintLabel.Text = Translation.Current[435];
-			this.Text = Translation.Current[436];
+            openImageButton.Text = Resources.OpenAnImage;
+			ofd.Filter = Resources.ButilImagesButilButil;
+			closeButton.Text = Resources.Close;
+			passwordGroupBox.Text = Resources.Password;
+			passwordLabel.Text = Resources.IfYourBackupIsPasswordProtectedPleaseTypePasswordHere;
+			continueButton.Text = Resources.Continue;
+			imageLocationLabel.Text = Resources.ImageLocation;
+			passwordHintLabel.Text = Resources.NoteForRestorationOfDataAsArchivesPasswordIsNotNeeded;
+			this.Text = Resources.RestorationMaster;
 			continueButton.Left = closeButton.Left - continueButton.Width - 10;
         }
 

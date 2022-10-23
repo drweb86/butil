@@ -1,9 +1,10 @@
 using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
-using BULocalization;
+
 using BUtil.Core.Options;
 using BUtil.Configurator.Forms;
+using BUtil.Configurator.Localization;
 
 namespace BUtil.Configurator.Controls
 {
@@ -73,14 +74,14 @@ namespace BUtil.Configurator.Controls
 		/// </summary>
 		public void ApplyLocalization()
 		{
-			headerGroupBox.Text = _isBeforeBackupEvent ? Translation.Current[601] : Translation.Current[602];
-			programColumnHeader.Text = Translation.Current[603];
-			argumentsColumnHeader.Text = Translation.Current[604];
-			addToolStripMenuItem.Text = Translation.Current[605];
-			editToolStripMenuItem.Text = Translation.Current[606];
-			removeToolStripMenuItem.Text = Translation.Current[607];
-			moveUpToolStripMenuItem.Text = Translation.Current[608];
-			moveDownToolStripMenuItem.Text = Translation.Current[609];
+			headerGroupBox.Text = _isBeforeBackupEvent ? Resources.ChainOfProgramsToExecuteBeforeBackup : Resources.ChainOfProgramsToExecuteAfterBackup;
+			programColumnHeader.Text = Resources.Program;
+			argumentsColumnHeader.Text = Resources.Arguments;
+			addToolStripMenuItem.Text = Resources.Add;
+			editToolStripMenuItem.Text = Resources.Edit;
+			removeToolStripMenuItem.Text = Resources.Remove;
+			moveUpToolStripMenuItem.Text = Resources.MoveUp;
+			moveDownToolStripMenuItem.Text = Resources.MoveDown;
 		}
 		
 		#endregion

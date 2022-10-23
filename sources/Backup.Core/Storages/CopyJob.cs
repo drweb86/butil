@@ -2,11 +2,11 @@ using System;
 using System.Globalization;
 using System.Threading;
 
-using BULocalization;
+
 using BUtil.Core.Storages;
 using BUtil.Core.Misc;
 using BUtil.Core.Logs;
-
+using BUtil.Core.Localization;
 
 namespace BUtil.Core.Storages
 {
@@ -46,7 +46,7 @@ namespace BUtil.Core.Storages
 					bool succesfull = true;
 					if (_storage.RequireSecurity && (!_enableEncryption))
 					{
-						_log.WriteLine(LoggingEvent.Error, string.Format(CultureInfo.InstalledUICulture, Translation.Current[399], _storage.StorageName));
+						_log.WriteLine(LoggingEvent.Error, string.Format(CultureInfo.InstalledUICulture, Resources.Storage0RequiresOptionEnableEncryptionToBeEnabledButInYourCaseItWasDisabledCopyingToStorageSkipped, _storage.StorageName));
 						succesfull = false;
 					}
 					else
@@ -63,7 +63,7 @@ namespace BUtil.Core.Storages
 						}
 						catch (LogException e)
 						{
-							_log.WriteLine(LoggingEvent.Error, string.Format(CultureInfo.InstalledUICulture, Translation.Current[404], _storage.StorageName, e.Message));
+							_log.WriteLine(LoggingEvent.Error, string.Format(CultureInfo.InstalledUICulture, Resources.ErrorDiscoveredWhenOpeningStorage01, _storage.StorageName, e.Message));
 							succesfull = false;
 						}
 						catch (Exception exc)// ok
@@ -73,7 +73,7 @@ namespace BUtil.Core.Storages
 								_log.WriteLine(LoggingEvent.Error, string.Format("Copying to storage {0} aborted by user", _storage.Hint));
 							}
 
-							_log.WriteLine(LoggingEvent.Error, string.Format(CultureInfo.InstalledUICulture, Translation.Current[406], _storage.StorageName, exc.Message));
+							_log.WriteLine(LoggingEvent.Error, string.Format(CultureInfo.InstalledUICulture, Resources.ErrorDiscoveredWhenCopyingFileToStorage01, _storage.StorageName, exc.Message));
 							succesfull = false;
 						}
 					}

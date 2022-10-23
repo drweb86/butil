@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Windows.Forms;
-using BULocalization;
+using BUtil.Configurator.Localization;
 using BUtil.Core.Options;
 
 namespace BUtil.Configurator.BackupUiMaster.Forms
@@ -25,7 +25,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             }
             _tasksComboBox.DataSource = titles;
 
-            ApplyLocalization(Translation.Current);
+            ApplyLocalization();
         }
 
         #endregion
@@ -52,11 +52,11 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             }
         }
 
-        void ApplyLocalization(Translation translation)
+        void ApplyLocalization()
         {
-            Text = translation[179];
-            _cancelButton.Text = translation[359];
-            _chooseTaskLabel.Text = translation[641];
+            Text = Resources.WellcomeToBackupWizard;
+            _cancelButton.Text = Resources.Cancel;
+            _chooseTaskLabel.Text = Resources.ChooseTheTaskYouWantToRun;
         }
 
         #endregion

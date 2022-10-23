@@ -1,9 +1,10 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using BUtil.Configurator.Localization;
 using BUtil.Core.Options;
 
-using BULocalization;
+
 
 namespace BUtil.Configurator.Forms
 {
@@ -36,12 +37,12 @@ namespace BUtil.Configurator.Forms
 			
 			helpForPostBackupTasksLabel.Visible = !taskWillGoBeforeBackup;
 			
-			this.Text = Translation.Current[594];
-			helpForPostBackupTasksLabel.Text = Translation.Current[596];
-			taskToRunGroupBox.Text = Translation.Current[597];
-			programLabel.Text = Translation.Current[598];
-			commandLineArgumentsLabel.Text = Translation.Current[599];
-			cancelButton.Text = Translation.Current[600];
+			this.Text = Resources.NewEventTaskConfigurator;
+			helpForPostBackupTasksLabel.Text = Resources.TextBackupimagefileWillBeReplacedOnAnExistingBackupImageNameForExampleOnDTempBackupButil;
+			taskToRunGroupBox.Text = Resources.TaskToRun;
+			programLabel.Text = Resources.Program;
+			commandLineArgumentsLabel.Text = Resources.CommandLineArguments;
+			cancelButton.Text = Resources.Cancel;
 			
 			programTextBoxTextChanged(null, null);
 		}
@@ -66,12 +67,12 @@ namespace BUtil.Configurator.Forms
 			
 			helpForPostBackupTasksLabel.Visible = !taskWillGoBeforeBackup;
 			
-			this.Text = Translation.Current[595];
-			helpForPostBackupTasksLabel.Text = Translation.Current[596];
-			taskToRunGroupBox.Text = Translation.Current[597];
-			programLabel.Text = Translation.Current[598];
-			commandLineArgumentsLabel.Text = Translation.Current[599];
-			cancelButton.Text = Translation.Current[600];
+			this.Text = Resources.EditingEventTaskConfigurator;
+			helpForPostBackupTasksLabel.Text = Resources.TextBackupimagefileWillBeReplacedOnAnExistingBackupImageNameForExampleOnDTempBackupButil;
+			taskToRunGroupBox.Text = Resources.TaskToRun;
+			programLabel.Text = Resources.Program;
+			commandLineArgumentsLabel.Text = Resources.CommandLineArguments;
+			cancelButton.Text = Resources.Cancel;
 			
 			programTextBoxTextChanged(null, null);
 		}

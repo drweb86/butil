@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using BUtil.Core;
 using BUtil.Core.PL;
 using BUtil.Core.Options;
-using BULocalization;
+using BUtil.Core.Localization;
 
 namespace BUtil.Core.PL
 {
@@ -100,10 +100,10 @@ namespace BUtil.Core.PL
 		
 		public override void ApplyLocalization() 
 		{
-			passwordGroupBox.Text = Translation.Current[85];
-			passwordControlToolTip.SetToolTip(generatePasswordButton, Translation.Current[86]);
-            confirmPasswordLabel.Text = Translation.Current[87];
-            passwordLabel.Text = Translation.Current[88];
+			passwordGroupBox.Text = Resources.PasswordIfNeeded;
+			passwordControlToolTip.SetToolTip(generatePasswordButton, Resources.GenerateNewRandomPassword);
+            confirmPasswordLabel.Text = Resources.ConfirmPassword;
+            passwordLabel.Text = Resources.EnterPassword;
 		}
 	
 		public override void SetOptionsToUi(object settings)
@@ -120,7 +120,7 @@ namespace BUtil.Core.PL
 		{
 			if (! (_passwordIsValid && _confirmationOfPasswordIsValid))
             {
-            	Messages.ShowErrorBox(Translation.Current[59]);
+            	Messages.ShowErrorBox(Resources.PasswordIsInvalidNNitWasResetedN);
 				passwordTextBox.Text = string.Empty;
 			}
             
@@ -139,13 +139,13 @@ namespace BUtil.Core.PL
 					
 				case Result.PasswordContainsForbiddenCharacters:
 					passwordTextBox.BackColor = _defaultTextboxColor;
-					passwordErrorMessageLabel.Text = Translation.Current[553];
+					passwordErrorMessageLabel.Text = Resources.PasswordContainsForbiddenCharactersPleaseRemoveSpaces;
 					_passwordIsValid = false;
 					break;
 					
 				case Result.PasswordHasInvalidSize:
 					passwordTextBox.BackColor = _defaultTextboxColor;
-					passwordErrorMessageLabel.Text = string.Format(Translation.Current[554], Constants.MinimumPasswordLength, Constants.MaximumPasswordLength);
+					passwordErrorMessageLabel.Text = string.Format(Resources.PasswordHasInvalidLengthPasswordLengthShouldBeFrom0To1Characters, Constants.MinimumPasswordLength, Constants.MaximumPasswordLength);
 					_passwordIsValid = false;
 					break;
 					
@@ -157,7 +157,7 @@ namespace BUtil.Core.PL
 					
 				case Result.ConfirmationIsNotEqualToPassword:
 					passwordConfirmationTextBox.BackColor = _defaultTextboxColor;
-					confirmationErrorMessageLabel.Text = Translation.Current[555];
+					confirmationErrorMessageLabel.Text = Resources.ConfirmationIsNotEqualToPassword;
 					_confirmationOfPasswordIsValid = false;
 					break;
 					

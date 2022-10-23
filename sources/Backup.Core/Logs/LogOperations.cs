@@ -1,10 +1,11 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
-using BULocalization;
+
 using BUtil.Core.FileSystem;
 using BUtil.Core.Misc;
 using BUtil.Core.PL;
+using BUtil.Core.Localization;
 
 namespace BUtil.Core.Logs
 {
@@ -113,7 +114,7 @@ namespace BUtil.Core.Logs
 			
 			if (infos.Count > 1 && confirmationRequired)
 			{
-				if (!Messages.ShowYesNoDialog(string.Format(Translation.Current[619], infos.Count)))
+				if (!Messages.ShowYesNoDialog(string.Format(Resources.PleaseConfirmDeletionOf0Logs, infos.Count)))
 				{
 					return false;
 				}

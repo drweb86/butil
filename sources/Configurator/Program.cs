@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using BULocalization;
+
 using System.Windows.Forms;
 using BUtil.Configurator.Configurator;
 using BUtil.Configurator.Configurator.Forms;
@@ -9,6 +9,7 @@ using BUtil.Core.PL;
 using BUtil.Core.FileSystem;
 using System.IO;
 using System.Collections.ObjectModel;
+using BUtil.Configurator.Localization;
 
 namespace BUtil.Configurator
 {
@@ -19,7 +20,6 @@ namespace BUtil.Configurator
 		static bool _packageIsBroken;
 		static bool _7ZipIsBroken;
 		static bool _schedulerInstalled;
-		static LanguagesManager _localsManager;
 		
 		#endregion
 		
@@ -45,22 +45,6 @@ namespace BUtil.Configurator
 		#region Private methods
 		
 		/// <summary>
-		/// Loading the localization
-		/// </summary>
-		static void LoadLanguage()
-		{
-			var settings = new ManagerBehaviorSettings
-			                   {
-			                       RequestLanguageIfNotSpecified = true,
-			                       UseToolGeneratedConfigFile = true
-			                   };
-
-		    _localsManager = new LanguagesManager(new ReadOnlyCollection<string>(new [] { "Configurator Program", "Core Library",	}), Directories.LocalsFolder, "BUtil", settings);
-			_localsManager.Init();
-			_localsManager.Apply();
-		}
-		
-		/// <summary>
 		/// Checking the integrity: Checking if the all components present and Checking 7-zip intergrity
 		/// </summary>
 		static void CheckIntergrity()
@@ -73,12 +57,12 @@ namespace BUtil.Configurator
             catch (DirectoryNotFoundException e)
             {
                 _packageIsBroken = true;
-                Messages.ShowErrorBox(string.Format(Translation.Current[580], e.Message));
+                Messages.ShowErrorBox(string.Format(Resources.ButilSoftwarePackageComponent0IsMissingNNpleaseReinstallApplicationNNrestorationBackupAndHelpFunctionsWillBeUnavailable, e.Message));
             }
             catch (FileNotFoundException e)
             {
                 _packageIsBroken = true;
-                Messages.ShowErrorBox(string.Format(Translation.Current[580], e.Message));
+                Messages.ShowErrorBox(string.Format(Resources.ButilSoftwarePackageComponent0IsMissingNNpleaseReinstallApplicationNNrestorationBackupAndHelpFunctionsWillBeUnavailable, e.Message));
             }
             
             // Checking 7-zip intergrity
@@ -89,7 +73,7 @@ namespace BUtil.Configurator
             catch (InvalidSignException ee)
             {
             	_7ZipIsBroken = true;
-            	Messages.ShowErrorBox(string.Format(Translation.Current[541], ee.Message));
+            	Messages.ShowErrorBox(string.Format(BUtil.Core.Localization.Resources.ButilSoftwarePackage7ZipComponent0HasInvalidCheckSummNprobablyItWasDamagedByVirusesNNyouShouldReinstallApplicationNNrestorationAndBackupFunctionsWillBeUnavailable, ee.Message));
             }
             
             _schedulerInstalled = File.Exists(Files.Scheduler);
@@ -101,7 +85,7 @@ namespace BUtil.Configurator
 		/// <param name="args">Arguments</param>
 		static void ProcessArguments(string[] args)
 		{
-			var controller = new ConfiguratorController(_localsManager);
+			var controller = new ConfiguratorController();
 		    args = args ?? new string[] {};
             if (args.Length == 0)
             {
@@ -135,7 +119,7 @@ namespace BUtil.Configurator
                 }
 				else
 				{
-					Messages.ShowErrorBox(Translation.Current[581]);
+					Messages.ShowErrorBox(Resources.InvalidArgumentSPassedToTheProgramNNpleaseReferToManualForTheCompleteListOfParameters);
 				}
 			}
             else if (args.Length > 1 && args[0].ToUpperInvariant() == Arguments.RunBackupMaster)
@@ -152,7 +136,7 @@ namespace BUtil.Configurator
 			}
 			else if (args.Length > 1)
     		{
-					Messages.ShowErrorBox(Translation.Current[581]);
+					Messages.ShowErrorBox(Resources.InvalidArgumentSPassedToTheProgramNNpleaseReferToManualForTheCompleteListOfParameters);
 				}
 				else
 				{
@@ -173,7 +157,6 @@ namespace BUtil.Configurator
 
 			ImproveIt.InitInfrastructure(true);
 	
-			LoadLanguage();
 			CheckIntergrity();
 			ProcessArguments(args);
 		}

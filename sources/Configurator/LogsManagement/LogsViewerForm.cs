@@ -3,9 +3,10 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Globalization;
-using BULocalization;
+
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
+using BUtil.Configurator.Localization;
 
 namespace BUtil.Configurator.LogsManagement
 {
@@ -37,31 +38,31 @@ namespace BUtil.Configurator.LogsManagement
 			listViewResize(this, null);
 			
 			// applying localization
-			Text = Translation.Current[557];
+			Text = Resources.BackupJournals;
 			
-            toolTip.SetToolTip(openLogsFolderButton, Translation.Current[366]);
-            toolTip.SetToolTip(refreshLogsButton, Translation.Current[567]);
-            toolTip.SetToolTip(openRecentLogButton, Translation.Current[534]);
-            toolTip.SetToolTip(openSelectedLogsButton, Translation.Current[560]);
-            toolTip.SetToolTip(helpButton, Translation.Current[617]);
+            toolTip.SetToolTip(openLogsFolderButton, Resources.OpenLogsFolderInExplorer);
+            toolTip.SetToolTip(refreshLogsButton, Resources.Refresh);
+            toolTip.SetToolTip(openRecentLogButton, Resources.ReviewLogOfLastBackup);
+            toolTip.SetToolTip(openSelectedLogsButton, Resources.ViewSelectedLogs);
+            toolTip.SetToolTip(helpButton, Resources.Help);
 
-		    toolTip.SetToolTip(deleteSelectedLogsButton, Translation.Current[561]);
+		    toolTip.SetToolTip(deleteSelectedLogsButton, Resources.RemoveSelectedLogs);
 			removeSelectedLogsToolStripMenuItem.Text = 
 				removeSelectedLogsToolStripMenuItem.ToolTipText = 
-				Translation.Current[561];
+				Resources.RemoveSelectedLogs;
 
-            toolTip.SetToolTip(removeSuccesfullLogsButton, Translation.Current[562]);
+            toolTip.SetToolTip(removeSuccesfullLogsButton, Resources.RemoveSuccesfullLogs);
 			
-			journalsListView.Columns[0].Text = Translation.Current[557];
-			journalsListView.Groups[(int) BackupResult.Successfull].Header = Translation.Current[564];
-            journalsListView.Groups[(int) BackupResult.Erroneous].Header = Translation.Current[565];
-            journalsListView.Groups[(int) BackupResult.Unknown].Header = Translation.Current[566];
+			journalsListView.Columns[0].Text = Resources.BackupJournals;
+			journalsListView.Groups[(int) BackupResult.Successfull].Header = Resources.Succesfull;
+            journalsListView.Groups[(int) BackupResult.Erroneous].Header = Resources.Erroneous;
+            journalsListView.Groups[(int) BackupResult.Unknown].Header = Resources.Unknown;
 
             
 			viewSelectedLogsToolStripMenuItem.Text = 
-				Translation.Current[560];
+				Resources.ViewSelectedLogs;
 			
-//? subj to be removed			actionsPanel.Header = Translation.Current[616];
+//? subj to be removed			actionsPanel.Header = Resources.Actions;
 			
 			dataBind();
 		}

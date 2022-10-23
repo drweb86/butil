@@ -3,8 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Globalization;
-
-using BULocalization;
+using BUtil.Configurator.Localization;
 
 namespace BUtil.BackupUiMaster.Controls
 {
@@ -37,20 +36,20 @@ namespace BUtil.BackupUiMaster.Controls
 		{
 			if (timeSpan.Days > 0)
 				//{0} day(s) {1} h : {2} min : {3} sec
-				return string.Format(CultureInfo.InstalledUICulture, Translation.Current[505], timeSpan.Days, timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds);
+				return string.Format(CultureInfo.InstalledUICulture, Resources._0DayS1H2Min3Sec, timeSpan.Days, timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds);
 			else
 			{
 				if (timeSpan.Hours > 0)
 					//{0} h : {1} min : {2} sec
-					return string.Format(CultureInfo.InstalledUICulture, Translation.Current[506], timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds);
+					return string.Format(CultureInfo.InstalledUICulture, Resources._0H1Min2Sec, timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds);
 				else
 				{
 					if (timeSpan.Minutes > 0)
 						//{0} min : {1} sec
-						return string.Format(CultureInfo.InstalledUICulture, Translation.Current[507], timeSpan.Minutes, timeSpan.Seconds);
+						return string.Format(CultureInfo.InstalledUICulture, Resources._0Min1Sec, timeSpan.Minutes, timeSpan.Seconds);
 					else
 						//{0} sec
-						return string.Format(CultureInfo.InstalledUICulture, Translation.Current[508], timeSpan.Seconds);
+						return string.Format(CultureInfo.InstalledUICulture, Resources._0Sec, timeSpan.Seconds);
 				}
 			}
 		}
@@ -59,8 +58,8 @@ namespace BUtil.BackupUiMaster.Controls
 		
 		public override void ApplyLocalization()
 		{
-			passedLabel.Text = Translation.Current[191];
-			Title = Translation.Current[193];
+			passedLabel.Text = Resources.Elapsed;
+			Title = Resources.BackupIsInAProgress;
 		}
 		
 		#endregion

@@ -1,9 +1,10 @@
 using System;
 using System.Windows.Forms;
+using BUtil.Configurator.Localization;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
-using BULocalization;
+
 
 namespace BUtil.Configurator.Configurator.Controls
 {
@@ -40,16 +41,16 @@ namespace BUtil.Configurator.Configurator.Controls
 
         public override void ApplyLocalization() 
 		{
-			logLevelLabel.Text = Translation.Current[284];
+			logLevelLabel.Text = Resources.ChooseLoggingLevel;
 			int loggingLevelIndex = logLevelComboBox.SelectedIndex;
 			logLevelComboBox.Items.Clear();
-            logLevelComboBox.Items.AddRange(new [] {Translation.Current[281], Translation.Current[283]});
+            logLevelComboBox.Items.AddRange(new [] {Resources.Normal, Resources.Support});
             logLevelComboBox.SelectedIndex = loggingLevelIndex;
 
-            logsLocationLabel.Text = Translation.Current[613];
-            chooseOtherLogsLocationLinkLabel.Text = Translation.Current[614];
-            restoreDefaultLogsLocationLinkLabel.Text = Translation.Current[615];
-            _manageLogsLinkLabel.Text = Translation.Current[642];
+            logsLocationLabel.Text = Resources.LogsLocation;
+            chooseOtherLogsLocationLinkLabel.Text = Resources.ChangeLogsLocation;
+            restoreDefaultLogsLocationLinkLabel.Text = Resources.RestoreDefaultLogsLocation;
+            _manageLogsLinkLabel.Text = Resources.OpenLogs;
 		}
 	
 		public override void SetOptionsToUi(object settings)
@@ -81,7 +82,7 @@ namespace BUtil.Configurator.Configurator.Controls
 		
 		void LogLevelComboBoxSelectedIndexChanged(object sender, EventArgs e)
 		{
-			helpAboutLogTypeLabel.Text = Translation.Current[558+logLevelComboBox.SelectedIndex];
+			helpAboutLogTypeLabel.Text = logLevelComboBox.SelectedIndex == 0 ? Resources.ErrorsAndWarningsWillBeSavedInLogs : Resources.ThisModeIsForGettingSupport;
 		}
 		
 		void RestoreDefaultLogsLocationLinkLabelLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -208,7 +208,7 @@ namespace BUtil.Configurator.Controls
             this.compressionItemsListView.DragEnter += new System.Windows.Forms.DragEventHandler(this.compressionItemsListViewDragEnter);
             this.compressionItemsListView.DoubleClick += new System.EventHandler(this.compressionItemsListViewDoubleClick);
             this.compressionItemsListView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.compressionItemsListViewKeyDown);
-            this.compressionItemsListView.Resize += new System.EventHandler(this.сompressionItemsListViewResize);
+            this.compressionItemsListView.Resize += new System.EventHandler(this.compressionItemsListViewResize);
             // 
             // itemsToCompressColumnHeader
             // 

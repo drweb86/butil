@@ -2,8 +2,9 @@ using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using BULocalization;
+
 using BUtil.Configurator.Configurator.Controls;
+using BUtil.Configurator.Localization;
 using BUtil.Core.Options;
 
 namespace BUtil.Configurator.Controls
@@ -75,16 +76,16 @@ namespace BUtil.Configurator.Controls
 		{
 		    var buttons = new[] {itemsForBackupButton, storagesButton, schedulerButton, encryptionButton, otherOptionsButton};
 
-			itemsForBackupButton.Text = Translation.Current[72];
-			storagesButton.Text = Translation.Current[79];
-			schedulerButton.Text = Translation.Current[123];
-			encryptionButton.Text = Translation.Current[83];
-			otherOptionsButton.Text = Translation.Current[96];
-			SetHintForControl(itemsForBackupButton, Translation.Current[524]);
-			SetHintForControl(storagesButton, Translation.Current[525]);
-			SetHintForControl(schedulerButton, Translation.Current[526]);
-			SetHintForControl(encryptionButton, Translation.Current[527]);
-			SetHintForControl(otherOptionsButton, Translation.Current[528]); // TODO: localization 83 maybe is not needed
+			itemsForBackupButton.Text = Resources.What;
+			storagesButton.Text = Resources.Where;
+			schedulerButton.Text = Resources.When;
+			encryptionButton.Text = Resources.Encryption;
+			otherOptionsButton.Text = Resources.OtherOptions;
+			SetHintForControl(itemsForBackupButton, Resources.HereYouMayAddFoldersAndFilesYouWantToBackup);
+			SetHintForControl(storagesButton, Resources.InThisPlaceYouCanAddLocationsWhereYouWouldLikeYourBackupToBeCopiedAfterCompletionOfBackup);
+			SetHintForControl(schedulerButton, Resources.HereYouCanSetUpASchedulerShcedulerCanHelpYouToAutomateCreationOfBackups);
+			SetHintForControl(encryptionButton, Resources.ProtectionOfBackupWithPasswordItIsRequiredWhenYouWantYourDataToBeCopiedSomewhereOverTheNetwork);
+			SetHintForControl(otherOptionsButton, Resources.MiscellaneousOptions); // TODO: localization 83 maybe is not needed
 
 		    foreach (var button in buttons)
 		    {

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 using BUtil.Configurator.Configurator.Controls;
 using BUtil.Configurator.Controls;
@@ -6,8 +6,9 @@ using BUtil.Core.FileSystem;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
 using System.Collections.Generic;
-using BULocalization;
+
 using BUtil.Core.PL;
+using BUtil.Configurator.Localization;
 
 namespace BUtil.Configurator.Configurator.Forms
 {
@@ -42,10 +43,9 @@ namespace BUtil.Configurator.Configurator.Forms
 		    foreach (KeyValuePair<ConfiguratorViewsEnum, BackUserControl> pair in _views)
         	{
         		pair.Value.HelpLabel = helpToolStripStatusLabel;
-        	}			
-            _controller.LocalManager.OnApplyLanguage += ApplyLocalization;
+        	}
+			ApplyLocalization();
 			_controller.LoadSettings();
-			_controller.LoadLanguage(languageToolStripMenuItem1);
 
 			ApplyOptionsToUi();
 			ChoosePanelUserControlViewChanged(ConfiguratorViewsEnum.Tasks);
@@ -66,7 +66,7 @@ namespace BUtil.Configurator.Configurator.Forms
 		{
 			if (!_skipSavingOnExitRequest)
 			{
-				if (MessageBox.Show(Translation.Current[242], Translation.Current[243], MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1,0) == DialogResult.Yes)
+				if (MessageBox.Show(Resources.WouldYouLikeToApplyModifiedSettings, Resources.Exiting, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1,0) == DialogResult.Yes)
 				{
 					e.Cancel = !SaveOptions(); 
 				}
@@ -77,7 +77,7 @@ namespace BUtil.Configurator.Configurator.Forms
 			}
 		}
 		
-        void ApplyLocalization(Translation translation)
+        void ApplyLocalization()
         {
         	foreach (KeyValuePair<ConfiguratorViewsEnum, BackUserControl> pair in _views)
         	{
@@ -85,19 +85,19 @@ namespace BUtil.Configurator.Configurator.Forms
         	}
             choosePanelUserControl.ApplyLocalization();
             
-            toolsToolStripMenuItem.Text = translation[148];
-            Text = translation[153];
-            cancelButton.Text = translation[359];
-            restorationToolToolStripMenuItem.Text = translation[455];
-            haveNoNetworkAndInternetToolStripMenuItem.Text = translation[536];
-            dontNeedSchedulerToolStripMenuItem.Text = translation[537];
-            dontCareAboutScheulerStartupToolStripMenuItem.Text = translation[538];
-            hideAboutTabToolStripMenuItem.Text = translation[539];
-            miscToolStripMenuItem.Text = translation[540];
-            dontCareAboutPasswordLengthToolStripMenuItem.Text = translation[556];
-            journalsToolStripMenuItem.Text = translation[557];
-            helpToolStripMenuItem.Text = translation[294];
-            _aboutToolStripMenuItem.Text = translation[141];
+            toolsToolStripMenuItem.Text = Resources.Tasks;
+            Text = Resources.Configurator;
+            cancelButton.Text = Resources.Cancel;
+            restorationToolToolStripMenuItem.Text = Resources.RestoreData;
+            haveNoNetworkAndInternetToolStripMenuItem.Text = Resources.HaveNoNetworkAndInternet;
+            dontNeedSchedulerToolStripMenuItem.Text = Resources.DontNeedButilScheduler;
+            dontCareAboutScheulerStartupToolStripMenuItem.Text = Resources.DontCareAboutSchedulerStartup;
+            hideAboutTabToolStripMenuItem.Text = Resources.HideAboutTab;
+            miscToolStripMenuItem.Text = Resources.Misc;
+            dontCareAboutPasswordLengthToolStripMenuItem.Text = Resources.DontCareAboutPasswordLength;
+            journalsToolStripMenuItem.Text = Resources.BackupJournals;
+            helpToolStripMenuItem.Text = Resources.Documentation;
+            _aboutToolStripMenuItem.Text = Resources.About;
 
             ChoosePanelUserControlViewChanged(ConfiguratorViewsEnum.Tasks);
         }

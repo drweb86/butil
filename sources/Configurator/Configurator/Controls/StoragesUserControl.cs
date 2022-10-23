@@ -1,9 +1,10 @@
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
-using BULocalization;
+
 using BUtil.Core.Storages;
 using BUtil.Core.Options;
+using BUtil.Configurator.Localization;
 
 namespace BUtil.Configurator.Configurator.Controls
 {
@@ -24,21 +25,21 @@ namespace BUtil.Configurator.Configurator.Controls
 		
 		public override void ApplyLocalization() 
 		{
-			networkStorageToolStripMenuItem1.Text = Translation.Current[451];
-			ftpStorageToolStripMenuItem1.Text = Translation.Current[388];
-			hardDriveStorageToolStripMenuItem1.Text = Translation.Current[387];
-			storagesListView.Groups[0].Header = Translation.Current[461];
-			storagesListView.Groups[1].Header = Translation.Current[462];
-			storagesListView.Groups[2].Header = Translation.Current[463];
-			SetHintForControl(addStorageButton, Translation.Current[365]);
-			removeToolStripMenuItem.Text = Translation.Current[363];
-			modifyToolStripMenuItem.Text = Translation.Current[364];
-			networkStorageToolStripMenuItem.Text = Translation.Current[451];
-			ftpStorageToolStripMenuItem.Text = Translation.Current[388];
-			hardDriveStorageToolStripMenuItem.Text = Translation.Current[387];
-			addNewToolStripMenuItem.Text = Translation.Current[365];
-			SetHintForControl(modifyStorageButton, Translation.Current[364]);
-			SetHintForControl(removeStorageButton, Translation.Current[363]);
+			networkStorageToolStripMenuItem1.Text = Resources.NetworkStorage;
+			ftpStorageToolStripMenuItem1.Text = Resources.FtpStorage;
+			hardDriveStorageToolStripMenuItem1.Text = Resources.HardDriveStorage;
+			storagesListView.Groups[0].Header = Resources.Hdd;
+			storagesListView.Groups[1].Header = Resources.Ftp;
+			storagesListView.Groups[2].Header = Resources.NetworkStorages;
+			SetHintForControl(addStorageButton, Resources.Add);
+			removeToolStripMenuItem.Text = Resources.RemoveFromList;
+			modifyToolStripMenuItem.Text = Resources.Modify;
+			networkStorageToolStripMenuItem.Text = Resources.NetworkStorage;
+			ftpStorageToolStripMenuItem.Text = Resources.FtpStorage;
+			hardDriveStorageToolStripMenuItem.Text = Resources.HardDriveStorage;
+			addNewToolStripMenuItem.Text = Resources.Add;
+			SetHintForControl(modifyStorageButton, Resources.Modify);
+			SetHintForControl(removeStorageButton, Resources.RemoveFromList);
 		}
 	
 		public override void SetOptionsToUi(object settings)

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -6,9 +6,10 @@ using System.Security.Cryptography;
 using System.Security;
 using System.IO;
 using System.Globalization;
-using BULocalization;
+
 using BUtil;
 using BUtil.Core.Options;
+using BUtil.Core.Localization;
 
 namespace BUtil.Core.PL
 {
@@ -36,14 +37,14 @@ namespace BUtil.Core.PL
 			passwordLengthNumericUpDown.Maximum = Constants.MaximumPasswordLength;
 
 			// localization initialization ("Password generator Program Interface" namespace);
-			this.Text = Translation.Current[3];
-			cancelButton.Text = Translation.Current[4];
-			copyToClipboardButton.Text = Translation.Current[5];
-			generateButton.Text = Translation.Current[6];
-			passwordTextBox.Text = Translation.Current[7];
-			passwordLengthLabel.Text = Translation.Current[8];
-			optionsGroupBox.Text = Translation.Current[10];
-			useButton.Text = Translation.Current[307];
+			this.Text = Resources.PasswordGenerator;
+			cancelButton.Text = Resources.Cancel;
+			copyToClipboardButton.Text = Resources.CopyToClipboard;
+			generateButton.Text = Resources.Generate;
+			passwordTextBox.Text = Resources.HereIsYourPassword;
+			passwordLengthLabel.Text = Resources.PasswordLength;
+			optionsGroupBox.Text = Resources.Options;
+			useButton.Text = Resources.Use;
 		}
 		
 		void generatePasswordButtonClick(object sender, EventArgs e)

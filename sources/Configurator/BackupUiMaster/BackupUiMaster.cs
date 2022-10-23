@@ -1,14 +1,15 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Forms;
-using BULocalization;
+
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
 using BUtil.Core;
 using BUtil.Core.PL;
 using NativeMethods = BUtil.BackupUiMaster.NativeMethods;
+using BUtil.Configurator.Localization;
 
 [assembly: CLSCompliant(true)]
 namespace BUtil.Configurator.BackupUiMaster
@@ -143,7 +144,7 @@ namespace BUtil.Configurator.BackupUiMaster
                     // user is here and we can show him the message
 					if (PowerTask == PowerTask.None)
 					{
-						MessageBox.Show(Translation.Current[180], ";-)", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 0);
+						MessageBox.Show(Resources.BackupProcessCompletedSuccesfully, ";-)", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 0);
 					}
 				}
 				

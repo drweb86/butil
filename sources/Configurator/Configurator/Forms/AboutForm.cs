@@ -1,5 +1,6 @@
-﻿using System.Windows.Forms;
-using BULocalization;
+using BUtil.Configurator.Localization;
+using System.Windows.Forms;
+
 
 namespace BUtil.Configurator.Configurator.Forms
 {
@@ -21,7 +22,7 @@ namespace BUtil.Configurator.Configurator.Forms
 
         void ApplyLocalization()
         {
-            Text = Translation.Current[141];
+            Text = Resources.About;
             _aboutProgramUserControl.ApplyLocalization();
         }
 

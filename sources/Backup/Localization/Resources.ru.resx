@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="UsageVariantsNNbackupExeTaskMyTaskTitleNRunningWithoutParametersOutputsInformationToConsoleNNbackupExeTaskMyTask1TitleTaskMyTask2TitleTaskMyTask3TitleNRunsSeveralTasksOneByOneNNbackupExeTaskMyTaskTitleUsefilelogNOutputsInformationInFileLogNNbackupExeTaskMyTaskTitleShutdownNbackupExeTaskMyTaskTitleLogoffNbackupExeTaskMyTaskTitleSuspendNbackupExeTaskMyTaskTitleRebootNbackupExeTaskMyTaskTitleHibernateNNbackupExeHelpNOutputsBriefHelpN" xml:space="preserve">
+    <value>Использование:\n\nbackup.exe "Task=Заголовок задания РК"\n   Запуск без параметров. Выводит информацию на консоль\n\nbackup.exe "Task=Заголовок задания 1" "Task=Заголовок задания 2" "Task=Заголовок задания 3"\n   Запуск нескольких заданий последовательно\n\nbackup.exe "Task=Заголовок задания РК" UseFileLog\n   Выводит информацию в логи.\n\nbackup.exe "Task=Заголовок задания РК" Shutdown\nbackup.exe "Task=Заголовок задания РК" LogOff \nbackup.exe "Task=Заголовок задания РК" Suspend \nbackup.exe "Task=Заголовок задания РК" Reboot\nbackup.exe "Task=Заголовок задания РК" Hibernate \n   Также можно запланировать выключение ПК, выход из сеанса, спящий режим, перезагрузку, режим ожидания по окончании РК\n\nbackup.exe Help\n   Выводит краткую подсказку</value>
+  </data>
+  <data name="ErrorInvalidCommandParametersSpecified" xml:space="preserve">
+    <value>Ошибка: Указаны неверные аргументы!!!</value>
+  </data>
+  <data name="ToRunProgramWithThisSwitchYouShouldDisableSchedulingInOptionsFirstPleaseReferToManual" xml:space="preserve">
+    <value>Чтобы запустить программу с этой опцией, вы должны отключить планирование в конфигураторе. Для деталей смотрите документацию!</value>
+  </data>
+  <data name="CannotOpenFileLogDueToCryticalError0" xml:space="preserve">
+    <value>Не могу открыть файл лога из-за критической ошибки {0}</value>
+  </data>
+  <data name="PleaseSpecifyTheBackupTaskTitleUsingTheCommandLineArgument0MyBackupTaskTitleNexampleBackupExe0MyBackupTitle" xml:space="preserve">
+    <value>Пожалуйста, укажите заголовок задания на резервное копирование через аргумент коммандной строки "{0}Мой заголовок задания на РК"\nПример: backup.exe "{0}Мой заголовок задания на РК"</value>
+  </data>
+  <data name="TherereNoBackupTaskWithTitle0" xml:space="preserve">
+    <value>Задания на резервное копирование с заголовком "{0}" не существует.</value>
+  </data>
+</root>

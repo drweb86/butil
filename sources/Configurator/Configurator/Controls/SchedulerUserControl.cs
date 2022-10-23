@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using BULocalization;
+using BUtil.Configurator.Localization;
 using BUtil.Core.Options;
 
 namespace BUtil.Configurator.Controls
@@ -23,16 +23,16 @@ namespace BUtil.Configurator.Controls
 
 		public override void ApplyLocalization() 
 		{
-			chooseDaysOfWeekLabel.Text = Translation.Current[126];
-            scheduledDaysCheckedListBox.Items[2] = Translation.Current[127];
-            scheduledDaysCheckedListBox.Items[3] = Translation.Current[128];
-            scheduledDaysCheckedListBox.Items[4] = Translation.Current[129];
-            scheduledDaysCheckedListBox.Items[5] = Translation.Current[130];
-            scheduledDaysCheckedListBox.Items[1] = Translation.Current[131];
-            scheduledDaysCheckedListBox.Items[0] = Translation.Current[132];
-            scheduledDaysCheckedListBox.Items[6] = Translation.Current[133];
-            minuteLabel.Text = Translation.Current[134];
-            hourLabel.Text = Translation.Current[135];
+			chooseDaysOfWeekLabel.Text = Resources.ChooseDaysOfWeek;
+            scheduledDaysCheckedListBox.Items[2] = Resources.Wednesday;
+            scheduledDaysCheckedListBox.Items[3] = Resources.Thursday;
+            scheduledDaysCheckedListBox.Items[4] = Resources.Friday;
+            scheduledDaysCheckedListBox.Items[5] = Resources.Saturday;
+            scheduledDaysCheckedListBox.Items[1] = Resources.Tuesday;
+            scheduledDaysCheckedListBox.Items[0] = Resources.Monday;
+            scheduledDaysCheckedListBox.Items[6] = Resources.Sunday;
+            minuteLabel.Text = Resources.Minute;
+            hourLabel.Text = Resources.Hour;
 		}
 	
 		public override void SetOptionsToUi(object settings)
