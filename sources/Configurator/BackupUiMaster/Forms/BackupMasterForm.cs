@@ -67,7 +67,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 		{
 			InitializeComponent();
 			
-			if (Program.PackageIsBroken || Program.SevenZipIsBroken)
+			if (Program.PackageIsBroken)
 			{
 				throw new InvalidOperationException("Tried to perform operation that requires package state is ok.");
 			}

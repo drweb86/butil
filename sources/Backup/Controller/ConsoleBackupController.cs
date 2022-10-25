@@ -179,18 +179,6 @@ namespace BUtil.ConsoleBackup.Controller
             {
                 ShowErrorAndQuit(exc);
             }
-
-            try
-            {
-                MD5Class.Verify7ZipBinaries();
-            }
-            catch (InvalidSignException e)
-            {
-                // backup process is not breaked here
-                // because this message should go in logs too
-                // because this tool usually runned from scheduler
-                Console.WriteLine(BUtil.Core.Localization.Resources.ButilSoftwarePackage7ZipComponent0HasInvalidCheckSummNprobablyItWasDamagedByVirusesNNyouShouldReinstallApplicationNNrestorationAndBackupFunctionsWillBeUnavailable, e.Message);
-            }
         }
 
         private void LoadSettings()

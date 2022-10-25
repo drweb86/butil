@@ -22,7 +22,6 @@ WizardImageFile=BUTilWizardImageFile164x314.bmp
 WizardSmallImageFile=BUtilWizModernSmallImage.bmp
 SetupIconFile=..\Media\Images and Icons\Other's guys\Crystal Clear (Everaldo Coelho)\SetupIcon.ico
 ArchitecturesInstallIn64BitMode=x64
-ArchitecturesAllowed=x64
 
 [Languages]
 Name: "en"; MessagesFile: ".\BUtil-Default.isl"
@@ -73,16 +72,39 @@ begin
   DeleteFile(FileName);
 end;
 
+function Is7ZipInstalled(): Boolean;
+begin
+  Result := True;
+  if Is64BitInstallMode then
+  begin
+    Result := FileExists(ExpandConstant('{commonpf32}\7-zip\7z.exe')) or FileExists(ExpandConstant('{commonpf64}\7-zip\7z.exe'));
+  end
+  else
+  begin
+    Result := FileExists(ExpandConstant('{commonpf32}\7-zip\7z.exe'));
+  end
+end;
+
 function InitializeSetup: Boolean;
 begin
   Result := IsDotNetCoreInstalled('Microsoft.WindowsDesktop.App 6');
   if not Result then
     SuppressibleMsgBox(FmtMessage(SetupMessage(msgWinVersionTooLowError), ['.NET Desktop Runtime', '6']), mbCriticalError, MB_OK, IDOK);
+
+  if not Is7ZipInstalled() then
+  begin
+      SuppressibleMsgBox('Please install 7-zip before continuing the installation'
+    + #13#10#13#10
+    + 'Application uses 7-zip for compression and decompression.'
+    + #13#10#13#10
+    + 'Please install 7-zip to default location and restart the installation.', mbCriticalError, MB_OK, IDOK);
+    Result := False;
+  end
 end;
 
 [Files]
 
-Source: "..\..\Output\BUtil\*.*"; Excludes: ".svn"; DestDir: "{app}"; Flags: recursesubdirs
+Source: "..\..\Output\BUtil\*.*"; DestDir: "{app}"; Flags: recursesubdirs
 
 [INI]
 Filename: "{app}\Configurator.url"; Section: "InternetShortcut"; Key: "URL"; String: "https://github.com/drweb86/butil"

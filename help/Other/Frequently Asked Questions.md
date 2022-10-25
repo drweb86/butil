@@ -80,18 +80,12 @@ Yes, it works in standard way only when you logged to the system, but you can ei
 # What are the main sphears of using the software?
 Sotware was written to be used at home as personal backup program on Windows OS.
 
-## Updating 7-zip 32 package
+# Where 7-zip Package is Being Searched For
 
-Package should installed to '7-zip' folder
-Md5-checksumms of some components should be updated in code
-- open and compile solution in Visual Studio
-- go to 'Output\BUtil\bin' folder and execute command
-```md5 dev```
-- all md5 checksumms must be seted to appropriate constants in file
-\sources\Backup.Core\FileSystem\Files.cs:
-Packer7ZipExeMD5 = "93C7B7A3E3051BBB9630E41425CFDB3C";
-Packer7ZipGExeMD5 ="3F317B59A522F0BC19AC1620BBEA0718";
-Packer7ZipDllMD5 = "CA41D56630191E61565A343C59695CA1";
+Package should installed in
+- Program Files or
+- Program Files (x86) or
+- be in any path that is in PATH environment variable.
 
 # What Should I Do If Program Faills To Load Settings?
 You can either run program with special argument or delete options files in %appdata%\butil-xx folder.

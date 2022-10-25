@@ -29,7 +29,7 @@ namespace BUtil.RestorationMaster
 		{
 			InitializeComponent();
             
-			if (BUtil.Configurator.Program.PackageIsBroken || BUtil.Configurator.Program.SevenZipIsBroken)
+			if (BUtil.Configurator.Program.PackageIsBroken)
 			{
 				throw new InvalidOperationException("Tried to perform operation that requires package state is ok.");
 			}
@@ -86,14 +86,6 @@ namespace BUtil.RestorationMaster
 			_controller.OpenImage();
 		}
 
-		void mainFormLoad(object sender, EventArgs e)
-		{
-			if (BUtil.Configurator.Program.SevenZipIsBroken)
-			{
-            	Close();
-			}
-		}
-		
 		void helpButtonClick(object sender, EventArgs e)
 		{
             SupportManager.DoSupport(SupportRequest.RestorationWizard);

@@ -214,9 +214,6 @@
   <data name="ThereIsNoDataToBackupSpecifiedInConfiguration" xml:space="preserve">
     <value>There is no data to backup specified in configuration</value>
   </data>
-  <data name="ButilSoftwarePackage7ZipComponent0HasInvalidCheckSummNprobablyItWasDamagedByVirusesNNyouShouldReinstallApplicationNNrestorationAndBackupFunctionsWillBeUnavailable" xml:space="preserve">
-    <value>BUtil software package 7-zip component '{0}' has invalid check summ. \nProbably, it was damaged by viruses. \n\nYou should reinstall application.\n\nRestoration and Backup functions will be unavailable.</value>
-  </data>
   <data name="CoultNotRun0DueToN1" xml:space="preserve">
     <value>Coult not run '{0}' due to:\n{1}</value>
   </data>

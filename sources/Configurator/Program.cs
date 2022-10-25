@@ -18,7 +18,6 @@ namespace BUtil.Configurator
 		#region Fields
 		
 		static bool _packageIsBroken;
-		static bool _7ZipIsBroken;
 		static bool _schedulerInstalled;
 		
 		#endregion
@@ -28,11 +27,6 @@ namespace BUtil.Configurator
 		public static bool PackageIsBroken
 		{
 			get { return _packageIsBroken; }
-		}
-		
-		public static bool SevenZipIsBroken
-		{
-			get { return _7ZipIsBroken; }
 		}
 		
 		public static bool SchedulerInstalled
@@ -63,17 +57,6 @@ namespace BUtil.Configurator
             {
                 _packageIsBroken = true;
                 Messages.ShowErrorBox(string.Format(Resources.ButilSoftwarePackageComponent0IsMissingNNpleaseReinstallApplicationNNrestorationBackupAndHelpFunctionsWillBeUnavailable, e.Message));
-            }
-            
-            // Checking 7-zip intergrity
-            try
-           	{
-	            MD5Class.Verify7ZipBinaries();
-            }
-            catch (InvalidSignException ee)
-            {
-            	_7ZipIsBroken = true;
-            	Messages.ShowErrorBox(string.Format(BUtil.Core.Localization.Resources.ButilSoftwarePackage7ZipComponent0HasInvalidCheckSummNprobablyItWasDamagedByVirusesNNyouShouldReinstallApplicationNNrestorationAndBackupFunctionsWillBeUnavailable, ee.Message));
             }
             
             _schedulerInstalled = File.Exists(Files.Scheduler);

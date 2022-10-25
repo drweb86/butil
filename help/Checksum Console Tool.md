@@ -8,9 +8,6 @@ md5
 ## -Help
 Outputs localized help about parameters
 
-## -Dev
-Counts md5 for some packer components
-
 ## -md5 "Filename"
 Counts md5 of file and outputs it to console
 

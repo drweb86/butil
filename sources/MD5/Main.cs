@@ -8,7 +8,6 @@ using BUtil.Tools.Md5.Localization;
 
 
 // related documents:
-// 7-zip protection
 // Deploying sources
 
 [assembly: CLSCompliant(true)]
@@ -17,7 +16,6 @@ namespace BUtil.Tools.Md5
 	class MainClass
 	{
         private const string _COPYRIGHT = "BUtil toolkit - Tool for signing files with md5 checksumm, (c) 2007-2009 BUtil project\n";
-        private const string _DevelopmentCommand = "DEV";
         private const string _MD5Command = "MD5";
         private const string _VerifyCommand = "VERIFY";
         private const string _SignCommand = "SIGN";
@@ -28,8 +26,6 @@ namespace BUtil.Tools.Md5
         private static string _EnterCommand;
         //Would you like to enter required arguments in interactive mode?
         private static string _AskEnterArguments;
-        //File '{0}':\nmd5: {1}\nOld md5: {2}\n
-        private static string _Md5OfPackerFormatString;
         //Operation failled:\n{0}
         private static string _OperationFailledFormatString;
         //Enter Parameter 1(or just <Enter> if there's no parameter 1 in command): 
@@ -58,13 +54,6 @@ namespace BUtil.Tools.Md5
         	MessageBox.Show(_Usage, _Md5Commands, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 0);
         }
         
-        private static void showMd5OfPacker()
-        {
-            Console.WriteLine(_Md5OfPackerFormatString, Files.SevenZipPacker, MD5Class.GetFileMD5(Files.SevenZipPacker), Files.Packer7ZipExeMd5);
-            Console.WriteLine(_Md5OfPackerFormatString, Files.SevenZipGPacker, MD5Class.GetFileMD5(Files.SevenZipGPacker), Files.Packer7ZipGExeMd5);
-            Console.WriteLine(_Md5OfPackerFormatString, Files.SevenZipPackerDll, MD5Class.GetFileMD5(Files.SevenZipPackerDll), Files.Packer7ZipDllMd5);
-        }
-
         private static void showMd5(string file)
         {
             if (!string.IsNullOrEmpty(file))
@@ -166,10 +155,6 @@ namespace BUtil.Tools.Md5
                 {
                     switch (operation.ToUpperInvariant())
                     {
-                        case _DevelopmentCommand:
-                            showMd5OfPacker();
-                            break;
-
                         case _MD5Command:
                             showMd5(srcFile);
                             break;
@@ -238,7 +223,6 @@ namespace BUtil.Tools.Md5
 			_Usage = Resources.CommandLineArgumentsNNhelpNShowsThisHelpNNdevNShowsMd5SummsOfPackerAndInternallyStoredMd5ChecksummsNNmd5FilenameNShowsMd5OfASpecifiedFileNNverifyFilenameNComparesMd5OfASpecifiedFileWithItsMd5NNverifyFilenameFileWithMd5NComparesMd5OfASpecifiedFileMd5StoredInSecondFileNNsignFilenameNSignsFileWithMd5AndStoresComputedMd5InFilenameMd5NNsignFilenameFileWhereToStoreMd5NSignsFileWithMd5AndStoresComputedMd5InSecondFile;
 			_EnterCommand = Resources.PleaseEnterCommand;
 			_AskEnterArguments = Resources.WouldYouLikeToEnterRequiredArgumentsInInteractiveMode;
-			_Md5OfPackerFormatString = Resources.File0Nmd51NoldMd52N;
 			_OperationFailledFormatString = Resources.OperationFailledN0;
 			_EnterParam1 = Resources.EnterParameter1OrJustEnterIfTheresNoParameter1InCommand;
 			_EnterParam2 = Resources.EnterParameter2OrJustEnterIfTheresNoParameter2InCommand;

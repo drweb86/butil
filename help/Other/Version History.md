@@ -1,9 +1,15 @@
 # 5.2
 
 ## Changes
+- Setup is x32/x64
+- 7-zip is not bundled with app
+- Setup demands 7-zip to be installed in order to continue
+- 7-zip is searched in 
+Program Files, Program Files (x86), PATH environment variable directories
+- MD5 tool DEV command is dropped
 - phased out BU Localization because it is outdated.
 
-# 5.1
+# 5.1 ( 22 October 2022 )
 
 ## New Features
 - 7-zip was updated to 22.01 x64 (2022-07-15);

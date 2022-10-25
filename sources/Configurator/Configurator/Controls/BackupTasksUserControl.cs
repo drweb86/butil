@@ -167,7 +167,7 @@ namespace BUtil.Configurator.Configurator.Controls
                     _tasksListView.SelectedItems.Count > 0;
 
             _executeToolStripMenuItem.Enabled =
-                _executeButton.Enabled = _executeButton.Enabled && !Program.PackageIsBroken && !Program.SevenZipIsBroken;
+                _executeButton.Enabled = _executeButton.Enabled && !Program.PackageIsBroken;
         }
 
         private void OnTasksListViewResize(object sender, EventArgs e)

@@ -61,16 +61,6 @@ namespace BUtil.Ghost.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Application component 7-zip is broken ({0}).\nYou should reinstall the software.\n\nApplication will now close..
-        /// </summary>
-        internal static string ApplicationComponent7ZipIsBroken0NyouShouldReinstallTheSoftwareNNapplicationWillNowClose {
-            get {
-                return ResourceManager.GetString("ApplicationComponent7ZipIsBroken0NyouShouldReinstallTheSoftwareNNapplicationWillN" +
-                        "owClose", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Backup finished.
         /// </summary>
         internal static string BackupFinished {

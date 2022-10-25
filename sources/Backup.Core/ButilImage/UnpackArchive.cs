@@ -31,7 +31,6 @@ namespace BUtil.Core.ButilImage
         /// <exception cref="FieldAccessException">Problems with 7-zip</exception>
 		public void StartJob()
 		{
-			MD5Class.Verify7ZipBinaries();
 			Process process = new Process();
 			process.StartInfo.UseShellExecute = false;
 			process.StartInfo.FileName = Files.SevenZipGPacker;

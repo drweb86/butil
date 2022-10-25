@@ -196,15 +196,6 @@ namespace BUtil.Ghost
             	showErrorAndCloseApplicationIn10Seconds(Resources.TheSecondCopyOfButilSchedulerRanNNnowThisCopyWillTerminate);
             }
             
-            try
-            {
-                MD5Class.Verify7ZipBinaries();
-            }
-            catch (InvalidSignException e)
-            {
-                showErrorAndCloseApplicationIn10Seconds(string.Format(Resources.ApplicationComponent7ZipIsBroken0NyouShouldReinstallTheSoftwareNNapplicationWillNowClose, e.Message));
-            }
-            
             loadConfiguration();
             Controller controller = new Controller(_options);
             

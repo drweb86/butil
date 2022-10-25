@@ -51,7 +51,7 @@ namespace BUtil.Configurator.Configurator.Forms
 			ChoosePanelUserControlViewChanged(ConfiguratorViewsEnum.Tasks);
 			UpdateAccessibilitiesView();
 			
-			restorationToolToolStripMenuItem.Enabled = !Program.PackageIsBroken && !Program.SevenZipIsBroken;
+			restorationToolToolStripMenuItem.Enabled = !Program.PackageIsBroken;
 //            helpToolStripMenuItem.Enabled = Program.
 		}
 

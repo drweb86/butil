@@ -94,9 +94,6 @@
   <data name="TheSecondCopyOfButilSchedulerRanNNnowThisCopyWillTerminate" xml:space="preserve">
     <value>The second copy of BUtil scheduler ran.\n\nNow this copy will terminate.</value>
   </data>
-  <data name="ApplicationComponent7ZipIsBroken0NyouShouldReinstallTheSoftwareNNapplicationWillNowClose" xml:space="preserve">
-    <value>Application component 7-zip is broken ({0}).\nYou should reinstall the software.\n\nApplication will now close.</value>
-  </data>
   <data name="SchedulerStartUpIsForbiddenNtoChangeItYouCanOpenTheConfiguratorNNapplicationWillNowClose" xml:space="preserve">
     <value>Scheduler start up is forbidden.\nTo change it you can open the Configurator.\n\nApplication will now close.</value>
   </data>

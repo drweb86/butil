@@ -25,9 +25,6 @@ namespace BUtil.Core.FileSystem
 		static readonly string _SevenZipGPacker = 
 			Path.Combine(Directories.SevenZipFolder , "7zg.exe");
 		
-		static readonly string _SevenZipPackerDll = 
-			Path.Combine(Directories.SevenZipFolder, "7z.dll");
-		
 		static readonly string _Scheduler = 
 			Path.Combine(Directories.BinariesDir, Constants.TrayApplicationProcessName + ".exe");
 		
@@ -36,11 +33,6 @@ namespace BUtil.Core.FileSystem
 
         #endregion
 
-		// Related document: DevelopmentInitiative.7-zip protection
-		public const string Packer7ZipExeMd5 = "FE522D8659618E3A50AAFD8AC1518638";
-		public const string Packer7ZipGExeMd5 = "5AB26FFD7B3C23A796138640B1737B48";
-		public const string Packer7ZipDllMd5 = "BBF51226A8670475F283A2D57460D46C";
-		
 		public const string LogFilesExtension = ".BUtilLog.html";
 		public const string SuccesfullBackupMarkInHtmlLog = "<!-- SUCCESFULL BACKUP -->";
 		public const string ErroneousBackupMarkInHtmlLog = "<!-- ERRONEOUS BACKUP -->";
@@ -64,11 +56,6 @@ namespace BUtil.Core.FileSystem
             get { return _BugReportFile; }
         }
 
-		public static string SevenZipPackerDll
-		{
-			get { return _SevenZipPackerDll; }
-		}
-		
 		public static string SevenZipGPacker
 		{
 			get { return _SevenZipGPacker; }
@@ -109,7 +96,6 @@ namespace BUtil.Core.FileSystem
         public static void CriticalFilesCheck()
         {
         	CheckExistenceCritical(_SevenZipPacker); 
-        	CheckExistenceCritical(_SevenZipPackerDll);
         	CheckExistenceCritical(_SevenZipGPacker);
         	CheckExistenceCritical(_ConsoleBackupTool);
         	CheckExistenceCritical(_FileLogTemplate);

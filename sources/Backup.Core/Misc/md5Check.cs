@@ -8,38 +8,6 @@ using BUtil.Core.FileSystem;
 
 namespace BUtil.Core.Misc
 {
-    [Serializable]  
-    public class InvalidSignException : Exception
-    {
-        #region Constructors
-
-        public InvalidSignException(string message)
-            : base(message)
-        {
-
-        }
-
-        public InvalidSignException()
-            : base()
-        { 
-        
-        }
-
-        public InvalidSignException(string message, Exception innerException)
-            : base(message, innerException)
-        { 
-        
-        }
-
-        protected InvalidSignException(SerializationInfo info, StreamingContext sc)
-			: base(info, sc)
-        {
-
-        }
-
-        #endregion
-    }
-
     /// <summary>
     /// Description of md5Class.
     /// </summary>
@@ -84,30 +52,6 @@ namespace BUtil.Core.Misc
             }
 
 			return md5hash;
-		}
-		
-		/// <summary>
-		/// Verifies 7-zip binaries
-		/// </summary>
-		/// <exception cref="InvalidSignException">Invalid sign of 7-zip binary</exception>
-		/// <exception cref="others">Other exceptions are not handled</exception>
-		public static void Verify7ZipBinaries()
-		{
-			if (!File.Exists(Files.SevenZipPacker))
-				throw new InvalidSignException("Missing " + Files.SevenZipPacker);
-			if (!File.Exists(Files.SevenZipPackerDll))
-				throw new InvalidSignException("Missing " + Files.SevenZipPackerDll);
-			if (!File.Exists(Files.SevenZipGPacker))
-				throw new InvalidSignException("Missing " + Files.SevenZipGPacker);
-			
-			if (GetFileMD5(Files.SevenZipPacker) != Files.Packer7ZipExeMd5)
-				throw new InvalidSignException(Files.SevenZipPacker);
-
-			if (GetFileMD5(Files.SevenZipPackerDll) != Files.Packer7ZipDllMd5)
-				throw new InvalidSignException(Files.SevenZipPackerDll);
-			
-			if (GetFileMD5(Files.SevenZipGPacker) != Files.Packer7ZipGExeMd5)
-				throw new InvalidSignException(Files.SevenZipGPacker);
 		}
     }
 }

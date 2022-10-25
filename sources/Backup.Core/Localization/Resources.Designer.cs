@@ -171,17 +171,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to BUtil software package 7-zip component &apos;{0}&apos; has invalid check summ. \nProbably, it was damaged by viruses. \n\nYou should reinstall application.\n\nRestoration and Backup functions will be unavailable..
-        /// </summary>
-        public static string ButilSoftwarePackage7ZipComponent0HasInvalidCheckSummNprobablyItWasDamagedByVirusesNNyouShouldReinstallApplicationNNrestorationAndBackupFunctionsWillBeUnavailable {
-            get {
-                return ResourceManager.GetString("ButilSoftwarePackage7ZipComponent0HasInvalidCheckSummNprobablyItWasDamagedByVirus" +
-                        "esNNyouShouldReinstallApplicationNNrestorationAndBackupFunctionsWillBeUnavailabl" +
-                        "e", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Cancel {

@@ -106,15 +106,6 @@ namespace BUtil.Tools.Md5.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to File &apos;{0}&apos;:\nmd5: {1}\nOld md5: {2}\n.
-        /// </summary>
-        internal static string File0Nmd51NoldMd52N {
-            get {
-                return ResourceManager.GetString("File0Nmd51NoldMd52N", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Input file wasn&apos;t specified.
         /// </summary>
         internal static string InputFileWasntSpecified {

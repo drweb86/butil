@@ -297,16 +297,6 @@ namespace BUtil.Core
 			
 			Notify(new ImagePackingNotificationEventArgs(ProcessingState.NotStarted));
 			
-			try
-			{
-				MD5Class.Verify7ZipBinaries();
-			}
-			catch (InvalidSignException signException)
-			{
-				_log.WriteLine(LoggingEvent.Error, string.Format(Resources.ButilSoftwarePackage7ZipComponent0HasInvalidCheckSummNprobablyItWasDamagedByVirusesNNyouShouldReinstallApplicationNNrestorationAndBackupFunctionsWillBeUnavailable, signException.Message));
-				return false;
-			}
-			
 			return IsAnySenceInPacking();
 		}
 		

@@ -67,9 +67,6 @@
   <data name="WouldYouLikeToEnterRequiredArgumentsInInteractiveMode" xml:space="preserve">
     <value>Would you like to enter required arguments in interactive mode?</value>
   </data>
-  <data name="File0Nmd51NoldMd52N" xml:space="preserve">
-    <value>File '{0}':\nmd5: {1}\nOld md5: {2}\n</value>
-  </data>
   <data name="OperationFailledN0" xml:space="preserve">
     <value>Operation failled:\n{0}</value>
   </data>

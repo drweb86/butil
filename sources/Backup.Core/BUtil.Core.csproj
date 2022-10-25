@@ -111,10 +111,6 @@
   <PropertyGroup>
     <PreBuildEvent>cd "$(SolutionDir)..\Output"
 
-rem 7-zip
-md "$(SolutionDir)..\Output\BUtil\7-zip"
-xcopy "c:\Program Files\7-zip" "$(SolutionDir)..\Output\BUtil\7-zip" /E /Y
-
 rem Copying of data folder
 md "$(SolutionDir)..\Output\BUtil\data"
 xcopy "$(SolutionDir)..\data" "$(SolutionDir)..\Output\BUtil\data" /Y

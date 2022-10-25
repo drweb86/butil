@@ -50,7 +50,7 @@ namespace BUtil.Configurator.Configurator
 
 		public void OpenRestorationMaster(string image, bool runFormAsApplication)
 		{
-			if (Program.PackageIsBroken || Program.SevenZipIsBroken)
+			if (Program.PackageIsBroken)
 			{
 				return;
 			}
@@ -92,7 +92,7 @@ namespace BUtil.Configurator.Configurator
                 throw new ArgumentNullException("taskTitles");
             }
 
-		    if (Program.PackageIsBroken || Program.SevenZipIsBroken)
+		    if (Program.PackageIsBroken)
             {
                 return;
             }

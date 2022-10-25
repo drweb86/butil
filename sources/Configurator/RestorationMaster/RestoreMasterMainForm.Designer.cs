@@ -173,7 +173,6 @@
 			this.Name = "RestoreMasterMainForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Restoration master";
-			this.Load += new System.EventHandler(this.mainFormLoad);
 			this.passwordGroupBox.ResumeLayout(false);
 			this.passwordGroupBox.PerformLayout();
 			this.ResumeLayout(false);
