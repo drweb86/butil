@@ -52,6 +52,12 @@ namespace BUtil.Core
 
 		#endregion
 
+		#region Public Properties
+
+		public LogBase Log => _log;
+
+        #endregion
+
         #region Constructors
 
         public BackupProcess(List<BackupTask> tasks, ProgramOptions options, LogBase openedLog)

@@ -1,6 +1,8 @@
 using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using System.Windows.Forms;
 
 using BUtil.Configurator.Configurator.Controls;
@@ -90,9 +92,18 @@ namespace BUtil.Configurator.Controls
 		    foreach (var button in buttons)
 		    {
 		        registerVisualEffectsForButton(button);
-                button.Font = new Font(button.Font, FontStyle.Bold);
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+				{
+					setBoldFont(button);
+				}
 		    }
 		}
+
+        [SupportedOSPlatform("windows")]
+        void setBoldFont(Button button)
+		{
+            button.Font = new Font(button.Font, FontStyle.Bold);
+        }
 		
 		void registerVisualEffectsForButton(Button button)
 		{

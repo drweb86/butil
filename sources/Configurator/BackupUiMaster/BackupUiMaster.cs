@@ -10,6 +10,7 @@ using BUtil.Core;
 using BUtil.Core.PL;
 using NativeMethods = BUtil.BackupUiMaster.NativeMethods;
 using BUtil.Configurator.Localization;
+using System.Runtime.InteropServices;
 
 [assembly: CLSCompliant(true)]
 namespace BUtil.Configurator.BackupUiMaster
@@ -128,7 +129,14 @@ namespace BUtil.Configurator.BackupUiMaster
 	                    (PowerTask == PowerTask.Reboot) || 
 	                    (PowerTask == PowerTask.LogOff))
 	                {
-	                    NativeMethods.ScheduleOpeningFileAfterLoginOfUserIntoTheSystem(_fileLogFile);
+                        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                        {
+                            NativeMethods.ScheduleOpeningFileAfterLoginOfUserIntoTheSystem(_fileLogFile);
+                        }
+                        else
+                        {
+                            _backupper.Log.WriteLine(LoggingEvent.Error, "Cannot schedule opening file after logging user into the system");
+                        }
 	                }
 	                else
 	                // Hibernate, Sleep, Nothing

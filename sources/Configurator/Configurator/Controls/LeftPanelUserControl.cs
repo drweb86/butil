@@ -2,6 +2,8 @@ using BUtil.Configurator.Localization;
 using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using System.Windows.Forms;
 
 
@@ -66,11 +68,20 @@ namespace BUtil.Configurator.Configurator.Controls
 		    foreach (var button in buttons)
 		    {
 		        RegisterVisualEffectsForButton(button);
-		        button.Font = new Font(button.Font, FontStyle.Bold);
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                {
+                    setBoldFont(button);
+                }
 		    }
 		}
-		
-		void RegisterVisualEffectsForButton(Button button)
+
+        [SupportedOSPlatform("windows")]
+        void setBoldFont(Button button)
+        {
+            button.Font = new Font(button.Font, FontStyle.Bold);
+        }
+
+        void RegisterVisualEffectsForButton(Button button)
 		{
 			button.MouseMove += ControlMouseMove;
 			button.GotFocus += ControlGotFocus;
