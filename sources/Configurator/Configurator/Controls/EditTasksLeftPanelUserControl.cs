@@ -59,7 +59,7 @@ namespace BUtil.Configurator.Controls
 			int displacement = storagesButton.Top - itemsForBackupButton.Top;
 			schedulerButton.Visible = !options.DontNeedScheduler;
 
-			if (options.DontNeedScheduler || (!Program.SchedulerInstalled))
+			if (options.DontNeedScheduler)
 			{
 				// moving buttons up
 				encryptionButton.Top = storagesButton.Top + displacement;

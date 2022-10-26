@@ -10,6 +10,8 @@ using BUtil.Core.Logs;
 using BUtil.Core;
 using BUtil.Core.Misc;
 using BUtil.ConsoleBackup.Localization;
+using BUtil.Core.PL;
+using System.Linq;
 
 namespace BUtil.ConsoleBackup.Controller
 {
@@ -93,8 +95,8 @@ namespace BUtil.ConsoleBackup.Controller
         /// </summary>
         /// <returns>True when preparation finished OK, otherwise we should exit</returns>
 		public bool Prepare()
-		{
-			var log = OpenLog();
+        {
+            var log = OpenLog();
 
             if (_backupTaskTitles.Count == 0)
             {
@@ -102,24 +104,15 @@ namespace BUtil.ConsoleBackup.Controller
                 return false;
             }
 
-            foreach (var backupTaskTitle in _backupTaskTitles)
-            {
-                if (!_options.BackupTasks.ContainsKey(backupTaskTitle))
-                {
-                    log.WriteLine(LoggingEvent.Error, Resources.TherereNoBackupTaskWithTitle0, backupTaskTitle);
-                    return false;
-                }
-                else
-                {
-                    var task = _options.BackupTasks[backupTaskTitle];
-                    if (!_backupTasks.Contains(task))
-                    {
-                        _backupTasks.Add(task);
-                    }
-                }
-            }
+            var backupTaskStoreService = new BackupTaskStoreService();
+            var backupTasks = backupTaskStoreService.Load(_backupTaskTitles, out var missingTasks);
+            foreach (var missingTask in missingTasks)
+                log.WriteLine(LoggingEvent.Error, Resources.TherereNoBackupTaskWithTitle0, missingTask);
 
-            _backup = new BackupProcess(_backupTasks, _options, log);
+            if (missingTasks.Any())
+                return false;
+            
+            _backup = new BackupProcess(backupTasks.ToList(), _options, log);
 
             return true;
 		}
@@ -165,21 +158,7 @@ namespace BUtil.ConsoleBackup.Controller
             PerformCriticalChecks();
 
             LoadSettings();
-
-            ValidateSettings();
 		}
-
-        private void ValidateSettings()
-        {
-            try
-            {
-                ProgramOptionsManager.ValidateOptions(_options);
-            }
-            catch (InvalidDataException exc)
-            {
-                ShowErrorAndQuit(exc);
-            }
-        }
 
         private void LoadSettings()
         {
@@ -284,7 +263,6 @@ namespace BUtil.ConsoleBackup.Controller
         ProgramOptions _options;
 		BackupProcess _backup;
         readonly List<string> _backupTaskTitles = new List<string>();
-        readonly List<BackupTask> _backupTasks = new List<BackupTask>();
         PowerTask _powerTask = PowerTask.None;
 
         #endregion

@@ -29,30 +29,10 @@ namespace BUtil.Core.Options
         const string _SECURITY_TAG = "Security";
         const string _GORE_TAG = "Core";
         const string _LOGS_TAG = "Logging";
-        const string _HOUR_TAG = "Hour";
-        const string _MINUTE_TAG = "Minute";
-        const string _TIME_TAG = "Time";
-        const string _TARGET_TAG = "Target";
-        const string _TYPE_TAG = "Type";
-        const string _ASSEMBLY_TAG = "Assembly";
-        const string _DAYS_TAG = "Days";
-        const string _COMPRESSION_DEGREE_TAG = "CompressionDegree";
-        const string _SCHEDULE_TAG = "Schedule";
-        const string _IS_FOLDER = "IsFolder";
-        const string _WHERE_TAG = "WhereToBackup";
-        const string _WHAT_TAG = "WhatToBackup";
-        const string _PASSWORD = "SecretPassword";
-        const string _NAME = "Name";
         const string _DONT_NEED_SCHEDULER_TAG = "DontNeedScheduler";
         const string _CONFIGURATOR_TAG = "Configurator";
-		const string _HAVE_NO_INTERNET_AND_NETWORK_TAG = "HaveNoNetworkAndInternet";
 		const string _DONT_CARE_ABOUT_SCHEDULER_STARTUP_TAG = "DontCareAboutSchedulerStartup";
 		const string _HIDE_ABOUT_TAB_TAG = "HideAboutTab";
-		const string _CHAIN_OF_PROGRAMS_TO_RUN = "ChainOfProgramsToRun";
-		const string _BEFORE_BACKUP = "BeforeBackup";
-		const string _AFTER_BACKUP = "AfterBackup";
-		const string _PROGRAM = "Program";
-		const string _ARGUMENTS = "Arguments";
 		
         
         #endregion
@@ -226,7 +206,6 @@ namespace BUtil.Core.Options
 				XmlNode configuratorApplicationNode = document.CreateNode(XmlNodeType.Element, _CONFIGURATOR_TAG, string.Empty);
 				coreNode.AppendChild(configuratorApplicationNode);
 				
-				addTextNode(document, configuratorApplicationNode, _HAVE_NO_INTERNET_AND_NETWORK_TAG, options.HaveNoNetworkAndInternet.ToString());
 				addTextNode(document, configuratorApplicationNode, _DONT_CARE_ABOUT_SCHEDULER_STARTUP_TAG, options.DontCareAboutSchedulerStartup.ToString());
 				addTextNode(document, configuratorApplicationNode, _HIDE_ABOUT_TAB_TAG, options.HideAboutTab.ToString());
 				
@@ -238,102 +217,8 @@ namespace BUtil.Core.Options
 				addTextNode(document, performanceNode, "AmountOfStoragesToProcessSynchronously", options.AmountOfStoragesToProcessSynchronously.ToString());
 				addTextNode(document, performanceNode, "ProcessingPriority", options.Priority.ToString());
 
-				addTextNode(document, securityNode, "DontCareAboutPasswordLength", options.DontCareAboutPasswordLength.ToString());
-                
 				addTextNode(document, logsNode, "Level", options.LoggingLevel.ToString());
 				addTextNode(document, logsNode, "Location", options.LogsFolder);
-
-				foreach (KeyValuePair<string, BackupTask> pair in options.BackupTasks)
-				{
-					BackupTask task = pair.Value;
-					
-					XmlNode backupTaskNode = document.CreateNode(XmlNodeType.Element, "Task", string.Empty);
-					backupTasksNode.AppendChild(backupTaskNode);
-					
-					XmlNode chainsNode = document.CreateNode(XmlNodeType.Element, _CHAIN_OF_PROGRAMS_TO_RUN, string.Empty);
-					backupTaskNode.AppendChild(chainsNode);
-					
-					XmlNode beforeNode = document.CreateNode(XmlNodeType.Element, _BEFORE_BACKUP, string.Empty);
-					chainsNode.AppendChild(beforeNode);
-					
-					XmlNode afterNode = document.CreateNode(XmlNodeType.Element, _AFTER_BACKUP, string.Empty);
-					chainsNode.AppendChild(afterNode);
-					
-					foreach (BackupEventTaskInfo info in task.BeforeBackupTasksChain)
-					{
-						XmlNode chainNode = document.CreateNode(XmlNodeType.Element, _PROGRAM, string.Empty);
-						beforeNode.AppendChild(chainNode);
-
-						addAttributeToNode(document, chainNode, _NAME, info.Program);
-						addAttributeToNode(document, chainNode, _ARGUMENTS, info.Arguments);
-					}
-
-					foreach (BackupEventTaskInfo info in task.AfterBackupTasksChain)
-					{
-						XmlNode chainNode = document.CreateNode(XmlNodeType.Element, _PROGRAM, string.Empty);
-						afterNode.AppendChild(chainNode);
-
-						addAttributeToNode(document, chainNode, _NAME, info.Program);
-						addAttributeToNode(document, chainNode, _ARGUMENTS, info.Arguments);
-					}
-					
-					addAttributeToNode(document, backupTaskNode, _NAME, task.Name);
-								
-					addTextNode(document, backupTaskNode, _PASSWORD, task.SecretPassword);
-
-					XmlNode whatToBackupNode = document.CreateNode(XmlNodeType.Element, _WHAT_TAG, string.Empty);
-					backupTaskNode.AppendChild(whatToBackupNode);
-					
-					XmlNode whereToBackupNode = document.CreateNode(XmlNodeType.Element, _WHERE_TAG, string.Empty);
-					backupTaskNode.AppendChild(whereToBackupNode);
-					
-					XmlNode scheduleNode = document.CreateNode(XmlNodeType.Element, _SCHEDULE_TAG, string.Empty);
-					backupTaskNode.AppendChild(scheduleNode);
-
-					foreach (CompressionItem item in task.FilesFoldersList)
-					{
-						XmlNode itemTaskNode = document.CreateNode(XmlNodeType.Element, "Item", string.Empty);
-						whatToBackupNode.AppendChild(itemTaskNode);
-//TODO: this tag is saved only to decrease complexity of porting settings						
-//TODO: so when 'Hint' task will be created, this setting must be read
-						addAttributeToNode(document, itemTaskNode, _NAME, item.Target);
-						addAttributeToNode(document, itemTaskNode, _TARGET_TAG, item.Target);
-						addAttributeToNode(document, itemTaskNode, _IS_FOLDER, item.IsFolder.ToString());
-						addAttributeToNode(document, itemTaskNode, _COMPRESSION_DEGREE_TAG, item.CompressionDegree.ToString());
-					}
-					
-					foreach (StorageBase storage in task.Storages)
-					{
-						XmlNode storageNode = document.CreateNode(XmlNodeType.Element, "Storage", string.Empty);
-						whereToBackupNode.AppendChild(storageNode);
-						
-						Dictionary<string, string> values = storage.SaveSettings();
-						addAttributeToNode(document, storageNode, _TYPE_TAG, storage.GetType().FullName);
-						if (storage.GetType().Assembly != Assembly.GetExecutingAssembly())
-						{
-							addAttributeToNode(document, storageNode, _ASSEMBLY_TAG, storage.GetType().Assembly.Location);
-						}
-
-						foreach (KeyValuePair<string, string> setting in values)
-						{
-							addTextNode(document, storageNode, setting.Key, setting.Value);
-						}
-					}
-					
-					XmlNode zeroHourNode = document.CreateNode(XmlNodeType.Element, _TIME_TAG, string.Empty);
-					scheduleNode.AppendChild(zeroHourNode);
-					
-					XmlNode scheduledDaysNode = document.CreateNode(XmlNodeType.Element, _DAYS_TAG, string.Empty);
-					scheduleNode.AppendChild(scheduledDaysNode);
-		
-					addAttributeToNode(document, zeroHourNode, _HOUR_TAG, task.Hours.ToString());
-					addAttributeToNode(document, zeroHourNode, _MINUTE_TAG, task.Minutes.ToString());
-					
-					foreach(DayOfWeek enumItem in DayOfWeek.GetValues(typeof(DayOfWeek)))
-					{
-						addAttributeToNode(document, scheduledDaysNode, enumItem.ToString(), task.IsThisDayOfWeekScheduled(enumItem).ToString());
-					}
-				}
 				
                 document.Save(Files.ProfileFile);
             }
@@ -396,8 +281,6 @@ namespace BUtil.Core.Options
 					string priority = readNode(document, "/Settings/Core/Performance/ProcessingPriority", ThreadPriority.BelowNormal.ToString());
 					options.Priority =  (ThreadPriority)ThreadPriorityLevel.Parse(typeof(ThreadPriority), priority);
 
-					options.DontCareAboutPasswordLength = readNode(document, "/Settings/Core/Security/DontCareAboutPasswordLength", false);
-					
 					string logLevel = readNode(document, "/Settings/Core/Logging/Level", LogLevel.Normal.ToString());
 					options.LoggingLevel =  (LogLevel)ThreadPriorityLevel.Parse(typeof(LogLevel), logLevel);
 					
@@ -407,84 +290,8 @@ namespace BUtil.Core.Options
 					options.PuttingOffBackupCpuLoading = (byte)readNode(document, "/Settings/Core/ScheduleApplication/PuttingOffBackupCpuLoading", Constants.MinimumCpuLoading, Constants.MaximumCpuLoading, Constants.DefaultCpuLoading);
 					options.DontNeedScheduler = readNode(document, "/Settings/Core/ScheduleApplication/" + _DONT_NEED_SCHEDULER_TAG, false);
 					
-					options.HaveNoNetworkAndInternet = readNode(document, "/Settings/Core/" + _CONFIGURATOR_TAG + "/" + _HAVE_NO_INTERNET_AND_NETWORK_TAG, false);
 					options.DontCareAboutSchedulerStartup = readNode(document, "/Settings/Core/" + _CONFIGURATOR_TAG + "/" + _DONT_CARE_ABOUT_SCHEDULER_STARTUP_TAG, false);
 					options.HideAboutTab = readNode(document, "/Settings/Core/" + _CONFIGURATOR_TAG + "/" + _HIDE_ABOUT_TAB_TAG, false);
-					
-					XmlNodeList taskNodes = document.SelectNodes("/Settings/BackupTasks/Task");
-					
-					foreach (XmlNode taskNode in taskNodes)
-					{
-						BackupTask task = new BackupTask();
-						
-						task.Name = taskNode.Attributes[_NAME].Value;
-						task.SecretPassword = taskNode[_PASSWORD].InnerText;
-
-						XmlNodeList compressionItemsNodes = taskNode[_WHAT_TAG].ChildNodes;
-						XmlNodeList storagesNodes = taskNode[_WHERE_TAG].ChildNodes;
-						XmlNodeList beforeNodes = taskNode[_CHAIN_OF_PROGRAMS_TO_RUN][_BEFORE_BACKUP].ChildNodes;
-						XmlNodeList afterNodes = taskNode[_CHAIN_OF_PROGRAMS_TO_RUN][_AFTER_BACKUP].ChildNodes;
-
-						foreach (XmlNode nodeItem in beforeNodes)
-						{
-							BackupEventTaskInfo info = new BackupEventTaskInfo(
-								nodeItem.Attributes[_NAME].Value,
-								nodeItem.Attributes[_ARGUMENTS].Value);
-							task.BeforeBackupTasksChain.Add(info);
-						}
-						
-						foreach (XmlNode nodeItem in afterNodes)
-						{
-							BackupEventTaskInfo info = new BackupEventTaskInfo(
-								nodeItem.Attributes[_NAME].Value,
-								nodeItem.Attributes[_ARGUMENTS].Value);
-							task.AfterBackupTasksChain.Add(info);
-						}
-						
-						foreach (XmlNode compressionItemNode in compressionItemsNodes)
-						{
-							CompressionItem item = new CompressionItem(
-								compressionItemNode.Attributes[_TARGET_TAG].Value,
-								bool.Parse(compressionItemNode.Attributes[_IS_FOLDER].Value),
-								(CompressionDegree)CompressionDegree.Parse(typeof(CompressionDegree), compressionItemNode.Attributes[_COMPRESSION_DEGREE_TAG].Value));
-							
-							task.FilesFoldersList.Add(item);
-						}
-						
-						XmlNode schedule = taskNode[_SCHEDULE_TAG];
-						XmlNode zeroHour = schedule[_TIME_TAG];
-						XmlNode days = schedule[_DAYS_TAG];
-						
-						task.Hours = byte.Parse(zeroHour.Attributes[_HOUR_TAG].Value);
-						task.Minutes = byte.Parse(zeroHour.Attributes[_MINUTE_TAG].Value);
-						
-						foreach(DayOfWeek enumItem in DayOfWeek.GetValues(typeof(DayOfWeek)))
-						{
-							task.SetSchedulingStateOfDay(enumItem, bool.Parse(days.Attributes[enumItem.ToString()].Value));
-						}
-						
-						foreach (XmlNode storageNode in storagesNodes)
-						{
-							Dictionary<string, string> settings = new Dictionary<string, string>();
-							foreach (XmlNode node in storageNode.ChildNodes)
-							{
-								settings.Add(node.Name, node.InnerText);
-							}				
-							
-							XmlAttribute assemblyAttribute = storageNode.Attributes[_ASSEMBLY_TAG];
-							
-							// this is done to prevent using different assemblies of a different copies of a program 
-							Assembly assembly = (assemblyAttribute != null) ? 
-								Assembly.LoadFrom(assemblyAttribute.Value) : 
-								Assembly.GetExecutingAssembly();
-							string type = storageNode.Attributes[_TYPE_TAG].Value;
-							StorageBase storage = (StorageBase)Activator.CreateInstance(assembly.GetType(type), settings);
-														
-							task.Storages.Add(storage);
-						}
-						
-						options.BackupTasks.Add(task.Name, task);
-					}
                 }
             }
             catch (Exception exc)

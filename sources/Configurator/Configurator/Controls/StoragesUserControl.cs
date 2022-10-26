@@ -13,7 +13,6 @@ namespace BUtil.Configurator.Configurator.Controls
 	/// </summary>
 	internal sealed partial class StoragesUserControl : Core.PL.BackUserControl
 	{
-		bool _hddStorageIsTheOneStorage;
 		BackupTask _task;
 		
 		public StoragesUserControl()
@@ -97,14 +96,7 @@ namespace BUtil.Configurator.Configurator.Controls
 		
 		void AddStorageButtonClick(object sender, EventArgs e)
 		{
-			if (_hddStorageIsTheOneStorage)
-			{
-				AddStorage(StorageEnum.Hdd);
-			}
-			else
-			{
-				addStorageContextMenuStrip.Show(addStorageButton, addStorageButton.Width / 2, addStorageButton.Height / 2);
-			}
+			addStorageContextMenuStrip.Show(addStorageButton, addStorageButton.Width / 2, addStorageButton.Height / 2);
 		}
 		
 		void ModifyStorageButtonClick(object sender, EventArgs e)
@@ -217,15 +209,6 @@ namespace BUtil.Configurator.Configurator.Controls
 			                    };
 
 		    storagesListView.Items.Add(listValue);
-		}
-		
-		public void TurnInternetAndLocalNetworkFunctions(bool on)
-		{
-			_hddStorageIsTheOneStorage = !on;
-			ftpStorageToolStripMenuItem1.Visible = on;
-			networkStorageToolStripMenuItem1.Visible = on;
-			ftpStorageToolStripMenuItem.Visible = on;
-			networkStorageToolStripMenuItem.Visible = on;
 		}
 	}
 }

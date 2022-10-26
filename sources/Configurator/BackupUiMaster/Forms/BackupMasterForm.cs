@@ -13,6 +13,7 @@ using BUtil.Core.Logs;
 using BUtil.BackupUiMaster.Controls;
 using BUtil.Core.Storages;
 using BUtil.Configurator.Localization;
+using System.Linq;
 
 namespace BUtil.Configurator.BackupUiMaster.Forms
 {
@@ -78,7 +79,10 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             //TODO: please move to controller
             if (backupTasksChain.Count == 0)
             {
-                using (var form = new SelectTaskToRunForm(options.BackupTasks))
+                var backupTaskStoreService = new BackupTaskStoreService();
+				var backupTasks = backupTaskStoreService.LoadAll();
+
+                using (var form = new SelectTaskToRunForm(backupTasks.ToDictionary(t=> t.Name, t=> t)))
                 {
                     if (form.ShowDialog() == DialogResult.OK)
                     {

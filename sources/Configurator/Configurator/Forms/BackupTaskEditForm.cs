@@ -88,8 +88,6 @@ namespace BUtil.Configurator.Configurator.Forms
             {
                 ((SchedulerUserControl)_views[BackupTaskViewsEnum.Scheduler]).ResetScheduler();
             }
-            ((EncryptionUserControl)_views[BackupTaskViewsEnum.Encryption]).DontCareAboutPasswordLength = _profileOptions.DontCareAboutPasswordLength;
-            ((StoragesUserControl)_views[BackupTaskViewsEnum.Storages]).TurnInternetAndLocalNetworkFunctions(!_profileOptions.HaveNoNetworkAndInternet);
         }
 
         void SaveTask()
@@ -116,11 +114,6 @@ namespace BUtil.Configurator.Configurator.Forms
             _views[BackupTaskViewsEnum.Scheduler].SetOptionsToUi(_task);
             _views[BackupTaskViewsEnum.Encryption].SetOptionsToUi(new object[] { _profileOptions, _task });
             _views[BackupTaskViewsEnum.OtherOptions].SetOptionsToUi(new object[] { _task });
-
-            if (!Program.SchedulerInstalled)
-            {
-                _views[BackupTaskViewsEnum.Scheduler].Enabled = false;
-            }
         }
 
         void ViewChangeNotification(BackupTaskViewsEnum newView)

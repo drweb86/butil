@@ -42,7 +42,7 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
             _steps.Add(new PageInfo(Resources.What, Resources.HereYouMayAddFilesAndFoldersYouWannaToBackup, RegisterControl(BackupTaskViewsEnum.SourceItems, new SourceItemsUserControl()), Icons.SourceItems48x48));
             _steps.Add(new PageInfo(Resources.Where, Resources.HereYouCanSpecifyWhereToSendBackups, RegisterControl(BackupTaskViewsEnum.Storages, new StoragesUserControl()), Icons.Storages48x48));
 
-            if (Program.SchedulerInstalled && !options.DontNeedScheduler)
+            if (!options.DontNeedScheduler)
             {
                 _steps.Add(new PageInfo(Resources.When, Resources.YouCanSetDaysAndTimesWhenYouWantToStartThisBackupJob, RegisterControl(BackupTaskViewsEnum.Scheduler, new SchedulerUserControl()), Icons.Schedule48x48));
             }
@@ -75,8 +75,6 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
             _controls[BackupTaskViewsEnum.Scheduler].SetOptionsToUi(Task);
             _controls[BackupTaskViewsEnum.Encryption].SetOptionsToUi(new object[] { _options, Task });
             _controls[BackupTaskViewsEnum.OtherOptions].SetOptionsToUi(new object[] { Task });
-            ((EncryptionUserControl)_controls[BackupTaskViewsEnum.Encryption]).DontCareAboutPasswordLength = _options.DontCareAboutPasswordLength;
-            ((StoragesUserControl)_controls[BackupTaskViewsEnum.Storages]).TurnInternetAndLocalNetworkFunctions(!_options.HaveNoNetworkAndInternet);
         }
 
         public void ApplyLocalization()

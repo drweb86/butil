@@ -18,7 +18,6 @@ namespace BUtil.Configurator
 		#region Fields
 		
 		static bool _packageIsBroken;
-		static bool _schedulerInstalled;
 		
 		#endregion
 		
@@ -27,11 +26,6 @@ namespace BUtil.Configurator
 		public static bool PackageIsBroken
 		{
 			get { return _packageIsBroken; }
-		}
-		
-		public static bool SchedulerInstalled
-		{
-			get { return _schedulerInstalled; }
 		}
 		
 		#endregion
@@ -58,8 +52,6 @@ namespace BUtil.Configurator
                 _packageIsBroken = true;
                 Messages.ShowErrorBox(string.Format(Resources.ButilSoftwarePackageComponent0IsMissingNNpleaseReinstallApplicationNNrestorationBackupAndHelpFunctionsWillBeUnavailable, e.Message));
             }
-            
-            _schedulerInstalled = File.Exists(Files.Scheduler);
 		}
 		
 		/// <summary>

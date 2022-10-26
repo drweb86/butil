@@ -89,12 +89,10 @@ namespace BUtil.Configurator.Configurator.Forms
             Text = Resources.Configurator;
             cancelButton.Text = Resources.Cancel;
             restorationToolToolStripMenuItem.Text = Resources.RestoreData;
-            haveNoNetworkAndInternetToolStripMenuItem.Text = Resources.HaveNoNetworkAndInternet;
             dontNeedSchedulerToolStripMenuItem.Text = Resources.DontNeedButilScheduler;
             dontCareAboutScheulerStartupToolStripMenuItem.Text = Resources.DontCareAboutSchedulerStartup;
             hideAboutTabToolStripMenuItem.Text = Resources.HideAboutTab;
             miscToolStripMenuItem.Text = Resources.Misc;
-            dontCareAboutPasswordLengthToolStripMenuItem.Text = Resources.DontCareAboutPasswordLength;
             journalsToolStripMenuItem.Text = Resources.BackupJournals;
             helpToolStripMenuItem.Text = Resources.Documentation;
             _aboutToolStripMenuItem.Text = Resources.About;
@@ -115,27 +113,13 @@ namespace BUtil.Configurator.Configurator.Forms
         private void ApplyOptionsToUi()
         {
             ProgramOptions profileOptions = _controller.ProgramOptions;
-            if (!Program.SchedulerInstalled) 
-            {
-            	foreach (KeyValuePair<string, BackupTask> pair in profileOptions.BackupTasks)
-            	{
-	            	pair.Value.UnscheduleAllDays();
-            	}
-            }
             _views[ConfiguratorViewsEnum.Tasks].SetOptionsToUi( profileOptions);
             _views[ConfiguratorViewsEnum.Logging].SetOptionsToUi(profileOptions);
             _views[ConfiguratorViewsEnum.OtherOptions].SetOptionsToUi(profileOptions);
             
-            haveNoNetworkAndInternetToolStripMenuItem.Checked = profileOptions.HaveNoNetworkAndInternet;
 			dontNeedSchedulerToolStripMenuItem.Checked = profileOptions.DontNeedScheduler;
-            if (!Program.SchedulerInstalled) 
-            {
-            	dontNeedSchedulerToolStripMenuItem.Enabled = false;
-            	dontCareAboutScheulerStartupToolStripMenuItem.Enabled = false;
-            }
 			dontCareAboutScheulerStartupToolStripMenuItem.Checked = profileOptions.DontCareAboutSchedulerStartup;
 			hideAboutTabToolStripMenuItem.Checked = profileOptions.HideAboutTab;
-			dontCareAboutPasswordLengthToolStripMenuItem.Checked = profileOptions.DontCareAboutPasswordLength;
         }
 
 		void RestorationToolToolStripMenuItemClick(object sender, EventArgs e)
@@ -167,12 +151,6 @@ namespace BUtil.Configurator.Configurator.Forms
 			Close();
 		}
 		
-		void HaveNoNetworkAndInternetToolStripMenuItemClick(object sender, EventArgs e)
-		{
-			_controller.ProgramOptions.HaveNoNetworkAndInternet = haveNoNetworkAndInternetToolStripMenuItem.Checked;
-			UpdateAccessibilitiesView();
-		}
-		
 		void DontNeedSchedulerToolStripMenuItemClick(object sender, EventArgs e)
 		{
 			_controller.ProgramOptions.DontNeedScheduler = dontNeedSchedulerToolStripMenuItem.Checked;
@@ -189,12 +167,6 @@ namespace BUtil.Configurator.Configurator.Forms
 		{
 			_controller.ProgramOptions.HideAboutTab = hideAboutTabToolStripMenuItem.Checked;
 	        UpdateAccessibilitiesView();
-		}
-
-		void DontCareAboutPasswordLengthToolStripMenuItemClick(object sender, EventArgs e)
-		{
-			_controller.ProgramOptions.DontCareAboutPasswordLength = dontCareAboutPasswordLengthToolStripMenuItem.Checked;
-			UpdateAccessibilitiesView();
 		}
 
 		void UpdateAccessibilitiesView()

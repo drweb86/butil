@@ -56,12 +56,6 @@ namespace BUtil.Configurator.Controls
 		public override void SetOptionsToUi(object settings)
 		{
 			_options = (ProgramOptions)settings;
-			
-			visitWebSiteLabel.Enabled = !_options.HaveNoNetworkAndInternet;
-			suggestAFeatureLabel.Enabled = !_options.HaveNoNetworkAndInternet;
-			reportABugLabel.Enabled = !_options.HaveNoNetworkAndInternet;
-			supportLabel.Enabled = !_options.HaveNoNetworkAndInternet;
-			checkForUpdatesLabel.Enabled = !_options.HaveNoNetworkAndInternet;
 		}
 		
 		public override void GetOptionsFromUi()
@@ -120,26 +114,17 @@ namespace BUtil.Configurator.Controls
 		
 		void SevenZipPictureBoxClick(object sender, EventArgs e)
 		{
-			if (!_options.HaveNoNetworkAndInternet)
-			{
-				SupportManager.DoSupport(SupportRequest.SevenZip);
-			}
+			SupportManager.DoSupport(SupportRequest.SevenZip);
 		}
 
 		void VirtuawinPictureBoxClick(object sender, EventArgs e)
 		{
-			if (!_options.HaveNoNetworkAndInternet)
-			{
-				SupportManager.DoSupport(SupportRequest.VirtuaWin);
-			}
+			SupportManager.DoSupport(SupportRequest.VirtuaWin);
 		}
 		
 		void LogoPictureBoxClick(object sender, EventArgs e)
 		{
-			if (!_options.HaveNoNetworkAndInternet)
-			{
-				SupportManager.DoSupport(SupportRequest.Homepage);
-			}
+			SupportManager.DoSupport(SupportRequest.Homepage);
 		}
 	}
 }

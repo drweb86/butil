@@ -58,10 +58,11 @@ namespace BUtil.Configurator.Configurator.Controls
         public override void SetOptionsToUi(object settings)
         {
             _profileOptions = (ProgramOptions)settings;
-
-            foreach (var taskPair in _profileOptions.BackupTasks)
+            var backupTaskStoreService = new BackupTaskStoreService();
+            var taskNames = backupTaskStoreService.GetNames();
+            foreach (var taskName in taskNames)
             {
-                AddTask(taskPair.Value);
+                AddTask(taskName);
             }
 
             RefreshTaskControls(this, null);
@@ -69,30 +70,27 @@ namespace BUtil.Configurator.Configurator.Controls
 
         public override void GetOptionsFromUi()
         {
-            _profileOptions.BackupTasks.Clear();
-            
-            foreach (ListViewItem item in _tasksListView.Items)
-            {
-                _profileOptions.BackupTasks.Add(item.Text, (BackupTask)item.Tag);
-            }
         }
 
         #endregion
 
         #region Private Methods
 
-        void AddTask(BackupTask task)
+        void AddTask(string taskName)
         {
-            var item = new ListViewItem(task.Name, 0) {Tag = task};
+            var item = new ListViewItem(taskName, 0);
             _tasksListView.Items.Add(item);
         }
 
         void AddTaskRequest(object sender, EventArgs e)
         {
             var newTask = AddBackupTaskWizard.AddBackupTaskWizard.OpenAddBackupTaskWizard(_profileOptions, false);
+            var backupTaskStoreService = new BackupTaskStoreService();
+            backupTaskStoreService.Save(newTask);
+
             if (newTask != null)
             {
-                AddTask(newTask);
+                AddTask(newTask.Name);
             }
 
             RefreshTaskControls(this, e);
@@ -106,7 +104,8 @@ namespace BUtil.Configurator.Configurator.Controls
             }
 
             ListViewItem item = _tasksListView.SelectedItems[0];
-            var task = (BackupTask)item.Tag;
+            var backupTaskStoreService = new BackupTaskStoreService();
+            var task = backupTaskStoreService.Load(item.Text);
             using (var form = new BackupTaskEditForm(_profileOptions, task))
             {
                 if (form.ShowDialog() == DialogResult.OK)
@@ -150,7 +149,7 @@ namespace BUtil.Configurator.Configurator.Controls
             var selectedTasks = new List<string>();
             foreach (ListViewItem taskToExecute in _tasksListView.SelectedItems)
             {
-                selectedTasks.Add(((BackupTask)taskToExecute.Tag).Name);
+                selectedTasks.Add(taskToExecute.Text);
             }
 
             _controller.OpenBackupUiMaster(selectedTasks.ToArray(), false);

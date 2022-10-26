@@ -36,25 +36,6 @@ namespace BUtil.Core.Options
                 throw new ArgumentException(
 					string.Format(CultureInfo.CurrentCulture, "Password size is out of range [{0}..{1}]", Constants.MinimumPasswordLength, Constants.MaximumPasswordLength));
         }
-
-        /// <summary>
-        /// Validates the options
-        /// </summary>
-        /// <param name="options">The options to check</param>
-        /// <exception cref="InvalidDataException">Something is invalid</exception>
-		public static void ValidateOptions(ProgramOptions options)
-		{
-			if (options == null)
-				throw new ArgumentException("options");
-
-			foreach (KeyValuePair<string, BackupTask> pair in options.BackupTasks)
-			{
-				if (pair.Value.EnableEncryption)
-				{
-	                ValidatePassword(!options.DontCareAboutPasswordLength, pair.Value.SecretPassword);
-				}
-			}
-		}
 		
 		/// <summary>
 		/// Stores the settings
@@ -131,7 +112,6 @@ namespace BUtil.Core.Options
 				ProgramOptions options = new ProgramOptions();
 				options.Priority = System.Threading.ThreadPriority.BelowNormal;
 				options.DontNeedScheduler = false;
-				options.HaveNoNetworkAndInternet = false;
 				options.DontCareAboutSchedulerStartup = false;
 				options.HideAboutTab = false;
 				options.DontNeedScheduler = false;
@@ -142,7 +122,6 @@ namespace BUtil.Core.Options
 				options.LoggingLevel = LogLevel.Normal;
 				options.AmountOfStoragesToProcessSynchronously = Constants.AmountOfStoragesToProcessSynchronouslyDefault;
 				options.AmountOf7ZipProcessesToProcessSynchronously = Constants.AmountOf7ZipProcessesToProcessSynchronouslyDefault;
-				options.DontCareAboutPasswordLength = false;
 				
 				return options;
 			}

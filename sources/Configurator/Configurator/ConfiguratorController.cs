@@ -14,6 +14,7 @@ using BUtil.Core.Options;
 using BUtil.Core.PL;
 using BUtil.RestorationMaster;
 using BUtil.Configurator.LogsManagement;
+using System.Linq;
 
 namespace BUtil.Configurator.Configurator
 {
@@ -85,9 +86,9 @@ namespace BUtil.Configurator.Configurator
 				Directory.Delete(Directories.UserDataFolder, true);
 		}
 		
-		public void OpenBackupUiMaster(string[] taskTitles, bool runFormAsApplication)
+		public void OpenBackupUiMaster(string[] taskNames, bool runFormAsApplication)
 		{
-            if (taskTitles == null)
+            if (taskNames == null)
             {
                 throw new ArgumentNullException("taskTitles");
             }
@@ -101,7 +102,7 @@ namespace BUtil.Configurator.Configurator
             {
                 var arguments = new StringBuilder(Arguments.RunBackupMaster);
 
-                foreach (var taskTitle in taskTitles)
+                foreach (var taskTitle in taskNames)
                 {
                     arguments.Append(string.Format(" \"{0}={1}\"", Arguments.RunTask, taskTitle));
                 }
@@ -115,29 +116,13 @@ namespace BUtil.Configurator.Configurator
             //TODO: now we suppoprt execution of just one task. But it will be great if we could execute each tasl one by one
             // here among checked in task selection form
 
-		    var backupTasksChain = new List<BackupTask>();
-		    foreach (var taskTitle in taskTitles)
-		    {
-                BackupTask backupTask = null;
-                foreach (var task in ProgramOptions.BackupTasks)
-                {
-                    if (task.Key == taskTitle)
-                    {
-                        backupTask = task.Value;
-                    }
-                }
-                if (backupTask == null)
-                {
-                    Messages.ShowErrorBox(string.Format("Missing task '{0}' is missing.", taskTitle));
-                }
-                else
-                {
-                    backupTasksChain.Add(backupTask);
-                }
-		    }
+            var backupTaskStoreService = new BackupTaskStoreService();
+            var backupTasks = backupTaskStoreService.Load(taskNames, out var missingTasks);
+            if (missingTasks.Any())
+                Messages.ShowErrorBox($"Missing task '{string.Join(",", missingTasks)}' is missing.");
 
 // This must be refactored in order to use something like Tool pattern
-            using (var form = new BackupMasterForm(_profileOptions, backupTasksChain))
+            using (var form = new BackupMasterForm(_profileOptions, backupTasks.ToList()))
             {
                 Application.Run(form);
             }
@@ -197,29 +182,9 @@ namespace BUtil.Configurator.Configurator
         {
         	ProcessesKiller.FindAndKillProcess(Constants.TrayApplicationProcessName);
 
-            try
-            {
-                ProgramOptionsManager.ValidateOptions(_profileOptions);
-            }
-            catch (InvalidDataException exc)
-            {
-            	Messages.ShowErrorBox(exc.Message);
-                return false;
-            }
-            catch (ArgumentNullException exc)
-            {
-                Messages.ShowErrorBox(exc.Message);
-                return false;
-            }
-
-            bool taskNeedScheduling = false;
-            foreach (var pair in _profileOptions.BackupTasks)
-            {
-                if (pair.Value.EnableScheduling)
-                {
-                    taskNeedScheduling = true;
-                }
-            }
+            var backupTaskStoreService = new BackupTaskStoreService();
+            var tasks = backupTaskStoreService.LoadAll();
+            bool taskNeedScheduling = tasks.Any(item => item.EnableScheduling);
 
             try
             {

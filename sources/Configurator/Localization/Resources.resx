@@ -574,9 +574,6 @@
   <data name="ReviewLogOfLastBackup" xml:space="preserve">
     <value>Review log of last backup...</value>
   </data>
-  <data name="HaveNoNetworkAndInternet" xml:space="preserve">
-    <value>have no network and Internet</value>
-  </data>
   <data name="DontNeedButilScheduler" xml:space="preserve">
     <value>don't need BUtil scheduler</value>
   </data>
@@ -612,9 +609,6 @@
   </data>
   <data name="SecurityWarningNNyourPasswordWasSavedInsecurelyAsPlainTextInFile0Because1NNtoStorePasswordsSecurelyPleaseNCheckThatYouUseNtfsFileSystemAtSystemDriveNYourWindowsVersionSupportsEncryptedFileSystemEfs" xml:space="preserve">
     <value>Security Warning\n\nYour password was saved insecurely as plain text in file '{0}' because '{1}'\n\nTo store passwords securely please:\n- check that you use NTFS file system at system drive,\n- your Windows version supports encrypted file system EFS.</value>
-  </data>
-  <data name="DontCareAboutPasswordLength" xml:space="preserve">
-    <value>don't care about password length</value>
   </data>
   <data name="BackupJournals" xml:space="preserve">
     <value>Backup journals</value>

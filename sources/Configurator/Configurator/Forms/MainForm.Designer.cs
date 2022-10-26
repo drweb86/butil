@@ -31,11 +31,9 @@ namespace BUtil.Configurator.Configurator.Forms
             this.restorationToolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.journalsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miscToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.haveNoNetworkAndInternetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dontNeedSchedulerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dontCareAboutScheulerStartupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hideAboutTabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dontCareAboutPasswordLengthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._questionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._beforeAboutToolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -93,22 +91,13 @@ namespace BUtil.Configurator.Configurator.Forms
             // miscToolStripMenuItem
             // 
             this.miscToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.haveNoNetworkAndInternetToolStripMenuItem,
             this.dontNeedSchedulerToolStripMenuItem,
             this.dontCareAboutScheulerStartupToolStripMenuItem,
-            this.hideAboutTabToolStripMenuItem,
-            this.dontCareAboutPasswordLengthToolStripMenuItem});
+            this.hideAboutTabToolStripMenuItem
+            });
             this.miscToolStripMenuItem.Name = "miscToolStripMenuItem";
             this.miscToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.miscToolStripMenuItem.Text = "Misc";
-            // 
-            // haveNoNetworkAndInternetToolStripMenuItem
-            // 
-            this.haveNoNetworkAndInternetToolStripMenuItem.CheckOnClick = true;
-            this.haveNoNetworkAndInternetToolStripMenuItem.Name = "haveNoNetworkAndInternetToolStripMenuItem";
-            this.haveNoNetworkAndInternetToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
-            this.haveNoNetworkAndInternetToolStripMenuItem.Text = "have no network and Internet";
-            this.haveNoNetworkAndInternetToolStripMenuItem.Click += new System.EventHandler(this.HaveNoNetworkAndInternetToolStripMenuItemClick);
             // 
             // dontNeedSchedulerToolStripMenuItem
             // 
@@ -133,14 +122,6 @@ namespace BUtil.Configurator.Configurator.Forms
             this.hideAboutTabToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
             this.hideAboutTabToolStripMenuItem.Text = "hide \'About\' tab";
             this.hideAboutTabToolStripMenuItem.Click += new System.EventHandler(this.HideAboutTabToolStripMenuItemClick);
-            // 
-            // dontCareAboutPasswordLengthToolStripMenuItem
-            // 
-            this.dontCareAboutPasswordLengthToolStripMenuItem.CheckOnClick = true;
-            this.dontCareAboutPasswordLengthToolStripMenuItem.Name = "dontCareAboutPasswordLengthToolStripMenuItem";
-            this.dontCareAboutPasswordLengthToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
-            this.dontCareAboutPasswordLengthToolStripMenuItem.Text = "don\'t care about password length";
-            this.dontCareAboutPasswordLengthToolStripMenuItem.Click += new System.EventHandler(this.DontCareAboutPasswordLengthToolStripMenuItemClick);
             // 
             // _questionToolStripMenuItem
             // 
@@ -292,11 +273,9 @@ namespace BUtil.Configurator.Configurator.Forms
 
 		}
 		private System.Windows.Forms.ToolStripMenuItem journalsToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem dontCareAboutPasswordLengthToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem hideAboutTabToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem dontCareAboutScheulerStartupToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem dontNeedSchedulerToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem haveNoNetworkAndInternetToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem miscToolStripMenuItem;
 		private System.Windows.Forms.ToolStripStatusLabel helpToolStripStatusLabel;
 		private System.Windows.Forms.StatusStrip helpStatusStrip;

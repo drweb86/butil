@@ -34,11 +34,6 @@ namespace BUtil.Core.Options
 		#region Properties
 		
 		/// <summary>
-		/// Hides some functional in Configurator
-		/// </summary>
-		public bool HaveNoNetworkAndInternet {get; set;}
-		
-		/// <summary>
 		/// Disables configuring start up of  scheduler in current user account
 		/// </summary>
 		public bool DontCareAboutSchedulerStartup { get; set; }
@@ -53,6 +48,7 @@ namespace BUtil.Core.Options
 		/// </summary>
 		public bool DontNeedScheduler { get; set; }
 
+		[Obsolete]
 		/// <summary>
 		/// Backup tasks
 		/// </summary>
@@ -60,11 +56,6 @@ namespace BUtil.Core.Options
 		{
 			get { return _backupTasks; }
 		}
-		
-		/// <summary>
-		/// Enables or disables length checking for password
-		/// </summary>
-		public bool DontCareAboutPasswordLength { get; set; }
 		
 		/// <summary>
 		/// Synchronous storage processing amount

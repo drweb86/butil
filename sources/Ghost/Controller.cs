@@ -60,11 +60,15 @@ namespace BUtil.Ghost
 
             _schedulers = new List<Scheduler>();
 			_options = options;
-            foreach (var pair in _options.BackupTasks)
+
+            var backupTaskStoreService = new BackupTaskStoreService();
+            var backupTasks = backupTaskStoreService.LoadAll();
+
+            foreach (var backupTask in backupTasks)
             {
-                if (pair.Value.EnableScheduling)
+                if (backupTask.EnableScheduling)
                 {
-                    var scheduler = new Scheduler(pair.Value);
+                    var scheduler = new Scheduler(backupTask);
         			scheduler.DoAction += (p) => { DoBackup(p, true); };
                     scheduler.EightMinutesRemainedEventHandler += () => {  notifyUser(Resources.In8MinutesScheduledBackupWillStart); };
                     scheduler.Resume();

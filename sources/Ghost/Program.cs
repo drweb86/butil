@@ -155,13 +155,6 @@ namespace BUtil.Ghost
            	{
            		showErrorAndCloseApplicationIn10Seconds(Resources.SchedulerStartUpIsForbiddenNtoChangeItYouCanOpenTheConfiguratorNNapplicationWillNowClose);
            	}
-           		//TODO:
-            // if there's no scheduling
-            if (!_options.BackupTasks["default"].EnableScheduling)
-            {
-                // we're exiting to free system resources
-                showErrorAndCloseApplicationIn10Seconds(Resources.NoOneTaskUsesSchedulerNyoudOpenConfiguratorOnWhenTabNNapplicationWillNowClose);
-            }
         }
 		
     	/// <summary>

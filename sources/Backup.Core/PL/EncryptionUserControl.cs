@@ -16,8 +16,6 @@ namespace BUtil.Core.PL
 	{
 		bool _passwordIsValid;
 		bool _confirmationOfPasswordIsValid;
-		bool _dontCareAboutPasswordLength;		
-		ProgramOptions _profileOptions;
 		BackupTask _task;
 		readonly Color _greenColor = Color.LightGreen;
 		readonly Color _defaultTextboxColor;
@@ -75,20 +73,6 @@ namespace BUtil.Core.PL
 		
 		#endregion
 		
-		public bool DontCareAboutPasswordLength
-		{
-			get { return _dontCareAboutPasswordLength; }
-			set 
-			{
-				_dontCareAboutPasswordLength = value; 
-				
-				string confirmation = passwordConfirmationTextBox.Text;
-				applyToUi(Behaviour.PasswordChanged(passwordTextBox.Text, _dontCareAboutPasswordLength));
-				passwordConfirmationTextBox.Text = confirmation;
-				applyToUi(Behaviour.ConfirmationOfPasswordChanged(passwordTextBox.Text, passwordConfirmationTextBox.Text));
-			}
-		}
-		
 		public EncryptionUserControl()
 		{
 			InitializeComponent();
@@ -109,7 +93,6 @@ namespace BUtil.Core.PL
 		public override void SetOptionsToUi(object settings)
 		{
 			object[] objects = (object[]) settings;
-			_profileOptions = (ProgramOptions)objects[0];
 			_task = (BackupTask)objects[1];
 			
 			passwordTextBox.Text = _task.SecretPassword;
@@ -168,7 +151,7 @@ namespace BUtil.Core.PL
 		
 		void passwordTextBoxTextChanged(object sender, EventArgs e)
 		{
-			applyToUi(Behaviour.PasswordChanged(passwordTextBox.Text, _dontCareAboutPasswordLength));
+			applyToUi(Behaviour.PasswordChanged(passwordTextBox.Text, false));
 			passwordConfirmationTextBox.Text = string.Empty;
 			applyToUi(Behaviour.ConfirmationOfPasswordChanged(passwordTextBox.Text, passwordConfirmationTextBox.Text));
 		}

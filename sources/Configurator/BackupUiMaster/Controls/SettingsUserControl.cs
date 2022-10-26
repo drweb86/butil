@@ -57,7 +57,6 @@ namespace BUtil.Configurator.BackupUiMaster.Controls
 			
 			encryptionUserControl.SetOptionsToUi(new object[] {_options, backupTask});
 			
-			encryptionUserControl.DontCareAboutPasswordLength = _options.DontCareAboutPasswordLength;
 			backupPriorityComboBox.SelectedIndex = (int)_options.Priority;
 			jobAfterOkBackupComboBox.SelectedIndex = (int)task;
             hearBeepsCheckBox.Checked = beepWhenFinished;
