@@ -11,6 +11,7 @@ using BUtil.Core.ButilImage;
 using BUtil.Core;
 using System.Diagnostics;
 using BUtil.Configurator.Localization;
+using System.Linq;
 
 namespace BUtil.Configurator
 {
@@ -21,12 +22,12 @@ namespace BUtil.Configurator
 	public class CompressionItemsKeeper
 	{
 		readonly ListView _listView;
-		readonly Collection<CompressionItem> _items;
+		readonly List<SourceItem> _items;
 
 		/// <summary>
 		/// Warning: this class should be inited with locals before loading!!!
 		/// </summary>
-		public CompressionItemsKeeper(ListView listView, Collection<CompressionItem> items)
+		public CompressionItemsKeeper(ListView listView, List<SourceItem> items)
 		{
 			if (listView == null)
 				throw new ArgumentNullException("listView");
@@ -50,7 +51,7 @@ namespace BUtil.Configurator
 
 		public void InitWith()
 		{
-			foreach (CompressionItem item in _items)
+			foreach (SourceItem item in _items)
 			{
 				addItem(item, false);
 			}
@@ -61,7 +62,7 @@ namespace BUtil.Configurator
 			_listView.BeginUpdate();
 
 			_listView.Items.Clear();
-			foreach (CompressionItem item in _items)
+			foreach (SourceItem item in _items)
 			{
 				ListViewItem newlistViewItem = new ListViewItem(item.Target);
 				newlistViewItem.ImageIndex = item.IsFolder ? 0 : 1;
@@ -82,7 +83,7 @@ namespace BUtil.Configurator
 			updateGuiControlHelper();
 		}
 
-		void addItem(CompressionItem newItem, bool add)
+		void addItem(SourceItem newItem, bool add)
 		{
 			if (newItem.Target.StartsWith(@"\\", StringComparison.InvariantCulture))
 			{
@@ -138,14 +139,14 @@ namespace BUtil.Configurator
 			updateGuiControlHelper();
 		}
 
-		public void VerifyNewItem(CompressionItem newItem)
+		public void VerifyNewItem(SourceItem newItem)
 		{
-			VerifyNewItems(new CompressionItem[] {newItem});
+			VerifyNewItems(new SourceItem[] {newItem});
 		}
 		/// <summary>
 		/// Required: all files or folders should be added from one folder level.
 		/// </summary>
-		public void VerifyNewItems(CompressionItem[] newItems)
+		public void VerifyNewItems(SourceItem[] newItems)
 		{
 			bool AddFlag;
 			string itemrepresentation;

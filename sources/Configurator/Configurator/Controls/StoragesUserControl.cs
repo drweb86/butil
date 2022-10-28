@@ -45,29 +45,29 @@ namespace BUtil.Configurator.Configurator.Controls
 		{
             _task = (BackupTask)settings;
 
-			foreach (StorageBase storage in _task.Storages)
+			foreach (var storageSettings in _task.Storages)
             {
 				StorageEnum kind;
 
-				switch (storage.GetType().Name)
+				switch (storageSettings.ProviderName.ToLowerInvariant())
                 {
-                    case "HddStorage":
+                    case "hdd":
 						kind = StorageEnum.Hdd;
 						break;
 
-                    case "FtpStorage":
+                    case "ftp":
 						kind = StorageEnum.Ftp;
 						break;
 
-					case "NetworkStorage":
+					case "samba":
 						kind = StorageEnum.Network;
 						break;
 
                 	default:
-                		throw new NotImplementedException(storage.GetType().Name);
+                		throw new NotImplementedException(storageSettings.ProviderName);
                 }
 
-				AddStorageToListView(storage, kind);
+				AddStorageToListView(storageSettings, kind);
             }
 		}
 		
@@ -77,7 +77,7 @@ namespace BUtil.Configurator.Configurator.Controls
 
 			foreach (ListViewItem item in storagesListView.Items)
 			{
-				_task.Storages.Add((StorageBase)item.Tag);
+				_task.Storages.Add((StorageSettings)item.Tag);
 			}
 		}
 		#endregion
@@ -139,33 +139,30 @@ namespace BUtil.Configurator.Configurator.Controls
 		void ModifyStorage()
 		{
 			ListViewItem storageToChangeListViewItem = storagesListView.SelectedItems[0];
-			var storageToChange = (StorageBase)storageToChangeListViewItem.Tag;
+			var storageSettings = (StorageSettings)storageToChangeListViewItem.Tag;
             IStorageConfigurationForm configForm;
 
-            if (storageToChange is HddStorage) 
+            switch (storageSettings.ProviderName.ToLowerInvariant())
             {
-            	configForm = new HddStorageForm((HddStorage)storageToChange);
-            }
-            else if (storageToChange is FtpStorage) 
-            {
-            	configForm = new FtpStorageForm((FtpStorage)storageToChange);
-            }
-            else if (storageToChange is NetworkStorage) 
-            {
-            	configForm = new NetworkStorageForm((NetworkStorage)storageToChange);
-            }
-            else
-            {
-            	throw new NotImplementedException(storageToChange.GetType().Name);
+                case "hdd":
+                    configForm = new HddStorageForm(storageSettings);
+					break;
+                case "ftp":
+                    configForm = new FtpStorageForm(storageSettings);
+					break;
+                case "samba":
+                    configForm = new NetworkStorageForm(storageSettings);
+					break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(storageSettings));
             }
 
             if (configForm.ShowDialog() == DialogResult.OK)
             {
-                StorageBase storage = configForm.Storage;
+                var updatedStorageSettings = configForm.GetStorageSettings();
 
-				storageToChangeListViewItem.Text = storage.StorageName;
-				storageToChangeListViewItem.ToolTipText = storage.Hint;
-				storageToChangeListViewItem.Tag = storage;
+				storageToChangeListViewItem.Text = updatedStorageSettings.Name;
+				storageToChangeListViewItem.Tag = updatedStorageSettings;
             }
 		}
 		
@@ -190,22 +187,22 @@ namespace BUtil.Configurator.Configurator.Controls
 
 			if (configForm.ShowDialog() == DialogResult.OK)
 			{ 
-				StorageBase storage = configForm.Storage;
-				AddStorageToListView(storage, kind);
+				var updatedStorageSettings = configForm.GetStorageSettings();
+				AddStorageToListView(updatedStorageSettings, kind);
 			}
 
 			configForm.Dispose();
 		}
 		
-		void AddStorageToListView(StorageBase storage, StorageEnum kind)
+		void AddStorageToListView(StorageSettings storageSettings, StorageEnum kind)
 		{
 			var listValue = new ListViewItem
 			                    {
-			                        Tag = storage,
+			                        Tag = storageSettings,
 			                        Group = storagesListView.Groups[(int) kind],
-			                        Text = storage.StorageName,
+			                        Text = storageSettings.Name,
 			                        ImageIndex = (int) kind,
-			                        ToolTipText = storage.Hint
+			                        
 			                    };
 
 		    storagesListView.Items.Add(listValue);

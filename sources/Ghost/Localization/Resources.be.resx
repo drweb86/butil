@@ -106,9 +106,6 @@
   <data name="ButilSchedulerIsRunningNNtoNotSeeThisMessageAgainYouShouldRunTheSchedulerWithParameterNpleaseSeeTheDocumentationForDetails" xml:space="preserve">
     <value>BUtil Scheduler is running...\n\nTo not see this message again you should run the scheduler with parameter.\nPlease see the documentation for details.</value>
   </data>
-  <data name="NoOneTaskUsesSchedulerNyoudOpenConfiguratorOnWhenTabNNapplicationWillNowClose" xml:space="preserve">
-    <value>No one task uses scheduler.\nYou'd open Configurator on 'When' tab.\n\nApplication will now close.</value>
-  </data>
   <data name="BackupFinished" xml:space="preserve">
     <value>Backup finished</value>
   </data>

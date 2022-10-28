@@ -229,35 +229,13 @@ namespace BUtil.Core.Options
                     string.Format(CultureInfo.CurrentCulture, "During working with file '{0}' an error occured: {1}. \n\nSettings are not saved", Files.ProfileFile, e.Message));
             }
 
-            bool notSecure = false;
-            string message = string.Empty;
-            
             try
             {
                 File.Encrypt(Files.ProfileFile);
             }
-            catch (PlatformNotSupportedException e)
-            {
-                notSecure = true;
-                message = e.Message;
-            }
-            catch (NotSupportedException e)
-            { 
-                notSecure = true;
-                message = e.Message;
-            }
-            catch (IOException e)
-            {
-                notSecure = true;
-                message = e.Message;
-            }
-
-            if (notSecure && options.RequiresEncryptionForSafety())
-            {
-            	// warning about security problem
-                Messages.ShowErrorBox(string.Format(CultureInfo.InvariantCulture, Resources.SecurityWarningNNyourPasswordWasSavedInsecurelyAsPlainTextInFile0Because1NNtoStorePasswordsSecurelyPleaseNCheckThatYouUseNtfsFileSystemAtSystemDriveNYourWindowsVersionSupportsEncryptedFileSystemEfs, Files.ProfileFile, message));
-            }
-
+            catch (PlatformNotSupportedException) { }
+            catch (NotSupportedException) { }
+            catch (IOException) { }
         }
         
         /// <summary>

@@ -1679,17 +1679,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Security Warning\n\nYour password was saved insecurely as plain text in file &apos;{0}&apos; because &apos;{1}&apos;\n\nTo store passwords securely please:\n- check that you use NTFS file system at system drive,\n- your Windows version supports encrypted file system EFS..
-        /// </summary>
-        internal static string SecurityWarningNNyourPasswordWasSavedInsecurelyAsPlainTextInFile0Because1NNtoStorePasswordsSecurelyPleaseNCheckThatYouUseNtfsFileSystemAtSystemDriveNYourWindowsVersionSupportsEncryptedFileSystemEfs {
-            get {
-                return ResourceManager.GetString("SecurityWarningNNyourPasswordWasSavedInsecurelyAsPlainTextInFile0Because1NNtoStor" +
-                        "ePasswordsSecurelyPleaseNCheckThatYouUseNtfsFileSystemAtSystemDriveNYourWindowsV" +
-                        "ersionSupportsEncryptedFileSystemEfs", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Set compression degree.
         /// </summary>
         internal static string SetCompressionDegree {

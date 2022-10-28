@@ -152,15 +152,6 @@ namespace BUtil.Ghost.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No one task uses scheduler.\nYou&apos;d open Configurator on &apos;When&apos; tab.\n\nApplication will now close..
-        /// </summary>
-        internal static string NoOneTaskUsesSchedulerNyoudOpenConfiguratorOnWhenTabNNapplicationWillNowClose {
-            get {
-                return ResourceManager.GetString("NoOneTaskUsesSchedulerNyoudOpenConfiguratorOnWhenTabNNapplicationWillNowClose", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Options are damaged. Please reconfigure them in Configurator.
         /// </summary>
         internal static string OptionsAreDamagedPleaseReconfigureThemInConfigurator {

@@ -27,8 +27,6 @@ namespace BUtil.Core.Options
         byte _puttingOffBackupCpuLoading;
         bool _showSchedulerInTray = true;
 
-		readonly Dictionary<string, BackupTask> _backupTasks = new Dictionary<string, BackupTask> ();
-        
         #endregion
 	  
 		#region Properties
@@ -47,15 +45,6 @@ namespace BUtil.Core.Options
 		/// Shows wheather scheduler configuration should be available in Configurator
 		/// </summary>
 		public bool DontNeedScheduler { get; set; }
-
-		[Obsolete]
-		/// <summary>
-		/// Backup tasks
-		/// </summary>
-		public Dictionary<string, BackupTask> BackupTasks
-		{
-			get { return _backupTasks; }
-		}
 		
 		/// <summary>
 		/// Synchronous storage processing amount
@@ -134,41 +123,5 @@ namespace BUtil.Core.Options
 		}
         
         #endregion
-        
-        #region Public Methods
-		
-		/// <summary>
-		/// Checks if settings contains any password
-		/// </summary>
-		/// <returns>True if requires</returns>
-		public bool RequiresEncryptionForSafety()
-		{
-			bool requireEncryption = false;
-            
-            foreach (KeyValuePair<string, BackupTask> pair  in _backupTasks)
-            {
-            	if (pair.Value.EnableEncryption)
-            	{
-            		requireEncryption = true;
-            		break;
-            	}
-            	
-            	foreach ( StorageBase storage in pair.Value.Storages)
-            	{
-            		if (storage is FtpStorage)
-            		{
-            			if (!string.IsNullOrEmpty(((FtpStorage)storage).Password))
-            			{
-            				requireEncryption = true;
-            				break;
-            			}
-            		}
-            	}
-            }
-            
-            return requireEncryption;
-		}
-		
-	    #endregion
-	}
+    }
 }

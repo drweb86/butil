@@ -113,6 +113,7 @@ namespace BUtil.Configurator.Configurator.Forms
         private void ApplyOptionsToUi()
         {
             ProgramOptions profileOptions = _controller.ProgramOptions;
+
             _views[ConfiguratorViewsEnum.Tasks].SetOptionsToUi( profileOptions);
             _views[ConfiguratorViewsEnum.Logging].SetOptionsToUi(profileOptions);
             _views[ConfiguratorViewsEnum.OtherOptions].SetOptionsToUi(profileOptions);

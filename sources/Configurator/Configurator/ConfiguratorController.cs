@@ -184,7 +184,7 @@ namespace BUtil.Configurator.Configurator
 
             var backupTaskStoreService = new BackupTaskStoreService();
             var tasks = backupTaskStoreService.LoadAll();
-            bool taskNeedScheduling = tasks.Any(item => item.EnableScheduling);
+            bool taskNeedScheduling = tasks.Any(item => item.SchedulerDays.Any());
 
             try
             {

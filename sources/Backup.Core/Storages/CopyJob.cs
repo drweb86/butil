@@ -14,7 +14,6 @@ namespace BUtil.Core.Storages
 	{
 		readonly StorageBase _storage;
 		readonly string _imageFileToCopy;
-		readonly bool _enableEncryption;
 		readonly LogBase _log;
 		EventHandler<JobThreadEventArgs> _finished;
 
@@ -31,63 +30,57 @@ namespace BUtil.Core.Storages
 			set { _finished = value; }
 		}
 		
-		public CopyJob(StorageBase storage, string imageFileToCopy, bool enableEncryption, LogBase log)
+		public CopyJob(StorageBase storage, string imageFileToCopy, LogBase log)
 		{
 			_storage = storage;
 			_imageFileToCopy = imageFileToCopy;
-			_enableEncryption = enableEncryption;
 			_log = log;
 		}
 		
 		public void DoJob()
 		{
+			try
+			{
+				bool succesfull = true;
+
+
+				_log.WriteLine(LoggingEvent.Debug, string.Format(CultureInfo.InstalledUICulture, "Processing storage '{0}'", _storage.StorageName));
+
 				try
 				{
-					bool succesfull = true;
-					if (_storage.RequireSecurity && (!_enableEncryption))
+					notify(new CopyingToStorageNotificationEventArgs(_storage.StorageName, ProcessingState.InProgress));
+					_storage.Open(_log);
+					_log.WriteLine(LoggingEvent.Debug, "Storage opened successfully");
+					_storage.Process(_imageFileToCopy);
+					_log.WriteLine(LoggingEvent.Debug, "File was copyied to storage successfully");
+				}
+				catch (LogException e)
+				{
+					_log.WriteLine(LoggingEvent.Error, string.Format(CultureInfo.InstalledUICulture, Resources.ErrorDiscoveredWhenOpeningStorage01, _storage.StorageName, e.Message));
+					succesfull = false;
+				}
+				catch (Exception exc)// ok
+				{
+					if (exc is ThreadInterruptedException)
 					{
-						_log.WriteLine(LoggingEvent.Error, string.Format(CultureInfo.InstalledUICulture, Resources.Storage0RequiresOptionEnableEncryptionToBeEnabledButInYourCaseItWasDisabledCopyingToStorageSkipped, _storage.StorageName));
-						succesfull = false;
+						_log.WriteLine(LoggingEvent.Error, string.Format("Copying to storage {0} aborted by user", _storage.StorageName));
 					}
-					else
-					{
-						_log.WriteLine(LoggingEvent.Debug, string.Format(CultureInfo.InstalledUICulture, "Processing storage '{0}'", _storage.StorageName));
-						
-						try
-						{
-							notify(new CopyingToStorageNotificationEventArgs(_storage, ProcessingState.InProgress));
-							_storage.Open(_log);
-							_log.WriteLine(LoggingEvent.Debug, "Storage opened successfully");
-							_storage.Process(_imageFileToCopy);
-							_log.WriteLine(LoggingEvent.Debug, "File was copyied to storage successfully");
-						}
-						catch (LogException e)
-						{
-							_log.WriteLine(LoggingEvent.Error, string.Format(CultureInfo.InstalledUICulture, Resources.ErrorDiscoveredWhenOpeningStorage01, _storage.StorageName, e.Message));
-							succesfull = false;
-						}
-						catch (Exception exc)// ok
-						{
-							if (exc is ThreadInterruptedException)
-							{
-								_log.WriteLine(LoggingEvent.Error, string.Format("Copying to storage {0} aborted by user", _storage.Hint));
-							}
 
-							_log.WriteLine(LoggingEvent.Error, string.Format(CultureInfo.InstalledUICulture, Resources.ErrorDiscoveredWhenCopyingFileToStorage01, _storage.StorageName, exc.Message));
-							succesfull = false;
-						}
-					}
-					notify(new CopyingToStorageNotificationEventArgs(_storage, succesfull ? ProcessingState.FinishedSuccesfully : ProcessingState.FinishedWithErrors));
+					_log.WriteLine(LoggingEvent.Error, string.Format(CultureInfo.InstalledUICulture, Resources.ErrorDiscoveredWhenCopyingFileToStorage01, _storage.StorageName, exc.Message));
+					succesfull = false;
 				}
-				catch(ThreadInterruptedException)
-				{
-					_log.WriteLine(LoggingEvent.Error, string.Format("Copying to storage {0} aborted by user", _storage.Hint));
-				}
-				finally
-				{
-					if (_finished != null)
-						_finished.Invoke(this, new JobThreadEventArgs(Thread.CurrentThread));
-				}
+
+				notify(new CopyingToStorageNotificationEventArgs(_storage.StorageName, succesfull ? ProcessingState.FinishedSuccesfully : ProcessingState.FinishedWithErrors));
+			}
+			catch (ThreadInterruptedException)
+			{
+				_log.WriteLine(LoggingEvent.Error, string.Format("Copying to storage {0} aborted by user", _storage.StorageName));
+			}
+			finally
+			{
+				if (_finished != null)
+					_finished.Invoke(this, new JobThreadEventArgs(Thread.CurrentThread));
+			}
 		}
 
 		void notify(EventArgs e)

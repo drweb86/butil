@@ -11,6 +11,20 @@ Program Files, Program Files (x86), PATH environment variable directories
 - dropped EFS encryption for configuration files (it is phased out by MS and not cross-platform)
 - dropped 'No internet' option
 
+
+
+-----------------
+- removed overwriting files with zeros since there's no sence in it: if someone has access to user files, then he won't need temp files with them stored as backup
+- removed overwriting setting files with zeros since there's no sence in it: if someone has access to user files, then he won't need temp files with them stored as backup
+- removed NTFS EFS for network copies, since Microsoft phases out it.
+- removed password presence check for those items that are copied to network shares since it is up to user responsibility to take care of it and since private NAS had appeared and became popular
+- removed FTP password check because usually for FTP backup purpose a dedicated user is created.
+-----------------
+
+
+
+
+
 # 5.1 ( 22 October 2022 )
 
 ## New Features

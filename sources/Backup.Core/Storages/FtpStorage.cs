@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Globalization;
-using System.IO;
-using System.Xml;
-using System.Collections;
-using System.Collections.Generic;
 
 using BUtil.Core.Logs;
 using BUtil.Core.FileSystem;
 
 namespace BUtil.Core.Storages
 {
-	public sealed class FtpStorage: StorageBase
+
+	class FtpStorage: StorageBase
 	{
 		#region Locals
 
@@ -20,123 +17,35 @@ namespace BUtil.Core.Storages
 
 		#endregion
 
-        bool _ftpModeIsActive;
-        string _user;
-        string _password;
-        string _remoteServer;
-        string _destinationFolder;
-        bool _deleteBUtilFilesInDestinationFolderBeforeBackup;
+		private readonly FtpStorageSettings _settings;
 
 		FtpConnection _connection;
-		
-		public bool FtpModeIsActive
+
+		internal FtpStorage(FtpStorageSettings settings):
+			base(settings.Name)
 		{
-            get { return _ftpModeIsActive; }
-            set { _ftpModeIsActive = value; }
+			_settings = settings;
 		}
 
-		public string User
-		{
-            get { return _user; }
-			set 
-			{
-                if (string.IsNullOrEmpty(value))
-                    throw new ArgumentException("User");
-
-                _user = value;
-			}
-		}
-
-		public string Password
-		{
-            get { return _password; }
-			set 
-			{
-                if (string.IsNullOrEmpty(value))
-                    throw new ArgumentNullException("Password");
-
-                _password = value;
-			}
-		}
-		
-		
-		public string RemoteHostServer
-		{
-            get { return _remoteServer; }
-			set 
-			{
-                if (string.IsNullOrEmpty(value))
-                    throw new ArgumentException("RemoteServer");
-
-                _remoteServer = value;
-			}
-		}
-		
-		public string DestinationFolder
-		{
-            get { return _destinationFolder; }
-			set 
-			{
-                if (string.IsNullOrEmpty(value))
-                    throw new ArgumentException("DestinationFolder");
-
-                _destinationFolder = value;
-			}
-		}
-		
-		public bool DeleteBUtilFilesInDestinationFolderBeforeBackup
-		{
-            get { return _deleteBUtilFilesInDestinationFolderBeforeBackup; }
-            set { _deleteBUtilFilesInDestinationFolderBeforeBackup = value; }
-		}
-
-        public override string Hint
-        {
-            get { return _remoteServer + DestinationFolder; }
-        }
-
-        public FtpStorage(string storageName, string destinationFolder, bool deleteBUtilFilesInDestinationFolderBeforeBackup,
-		                 string host, string user, string password, bool activeFtpMode):
-			base(storageName, true)
-		{
-			DestinationFolder = destinationFolder;
-			DeleteBUtilFilesInDestinationFolderBeforeBackup = deleteBUtilFilesInDestinationFolderBeforeBackup;
-            RemoteHostServer = host;
-            User = user;
-            Password = password;
-            FtpModeIsActive = activeFtpMode;
-		}
-
-        /// <summary>
-        /// For reflection purpose only!
-        /// </summary>
-        /// <param name="settings"></param>
-        public FtpStorage(Dictionary<string, string> settings):
-        	this(settings["Name"], settings["DestinationFolder"], bool.Parse(settings["DeleteBUtilFilesInDestinationFolderBeforeBackup"]), 
-        	     settings["RemoteServer"], settings["User"], settings["Password"], bool.Parse(settings["FtpModeIsActive"]))
-		{
-        	;
-		}
-        
 		public override void Open(LogBase log)
 		{
             log.ProcedureCall("Open");
 			Log = log;
 
             _connection = new FtpConnection();
-			_connection.SetLogOnInformation(User, Password);
-			_connection.ServerLocation = this.RemoteHostServer;
-			_connection.IsPassive = !this.FtpModeIsActive;
+			_connection.SetLogOnInformation(_settings.User, _settings.Password);
+			_connection.ServerLocation = _settings.Host;
+			_connection.IsPassive = !_settings.ActiveFtpMode;
 
-            if (_deleteBUtilFilesInDestinationFolderBeforeBackup)
+            if (_settings.DeleteBUtilFilesInDestinationFolderBeforeBackup)
 			{
-				log.WriteLine(LoggingEvent.Debug, string.Format(CultureInfo.CurrentCulture, _DeletingAllBUtilImageFilesFromTargetFolder, DestinationFolder));
+				log.WriteLine(LoggingEvent.Debug, string.Format(CultureInfo.CurrentCulture, _DeletingAllBUtilImageFilesFromTargetFolder, _settings.DestinationFolder));
 				
 				string [] filesToDelete = null;
 			
 				try
 				{
-					filesToDelete = _connection.GetFileList(DestinationFolder);
+					filesToDelete = _connection.GetFileList(_settings.DestinationFolder);
 				}
 				catch (Exception e)
 				{
@@ -165,35 +74,22 @@ namespace BUtil.Core.Storages
 		public override void Test()
 		{
 			_connection = new FtpConnection();
-			_connection.SetLogOnInformation(User, Password);
-			_connection.ServerLocation = this.RemoteHostServer;
-            _connection.IsPassive = !this.FtpModeIsActive;
-			_connection.GetFileList(this.DestinationFolder);
+			_connection.SetLogOnInformation(_settings.User, _settings.Password);
+			_connection.ServerLocation = _settings.Host;
+            _connection.IsPassive = !_settings.ActiveFtpMode;
+			_connection.GetFileList(_settings.DestinationFolder);
 		}
 		
 		public override void Process(string fileName)
 		{
 			_connection = new FtpConnection();
-            _connection.SetLogOnInformation(User, Password);
-			_connection.ServerLocation = this.RemoteHostServer;
-            _connection.IsPassive = !this.FtpModeIsActive;
+            _connection.SetLogOnInformation(_settings.User, _settings.Password);
+			_connection.ServerLocation = _settings.Host;
+            _connection.IsPassive = !_settings.ActiveFtpMode;
 
-			Log.WriteLine(LoggingEvent.Debug, String.Format(CultureInfo.CurrentCulture, _CopyingFormatString, fileName, DestinationFolder));
+			Log.WriteLine(LoggingEvent.Debug, String.Format(CultureInfo.CurrentCulture, _CopyingFormatString, fileName, _settings.DestinationFolder));
 			
-			_connection.Upload(this.DestinationFolder, fileName);
-		}
-		
-        public override Dictionary<string, string> SaveSettings()
-		{
-        	Dictionary<string, string> result = new Dictionary<string, string>();
-			result.Add("Name", StorageName);
-        	result.Add("DestinationFolder", _destinationFolder);
-			result.Add("DeleteBUtilFilesInDestinationFolderBeforeBackup", _deleteBUtilFilesInDestinationFolderBeforeBackup.ToString());
-			result.Add("RemoteServer", _remoteServer);
-			result.Add("FtpModeIsActive", _ftpModeIsActive.ToString());
-			result.Add("User", _user);
-			result.Add("Password", _password);
-			return result;
+			_connection.Upload(_settings.DestinationFolder, fileName);
 		}
 	}
 }

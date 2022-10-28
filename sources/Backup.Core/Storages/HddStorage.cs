@@ -7,65 +7,26 @@ using System.IO;
 
 using BUtil.Core.Logs;
 using BUtil.Core.FileSystem;
+using System.Reflection;
 
 namespace BUtil.Core.Storages
 {
-	public sealed class HddStorage: StorageBase
+
+	class HddStorage: StorageBase
 	{
         const string _DeletingBUtilImagesInTargetFolderBeforeBackup = "Deleting BUtil image files from target folder {0}";
         const string _CANNOTDELETEDUETOACESSVIOLATIONS = "Cannot delete file '{0}' due to access violation {1}";
         const string _COPYING = "Copying '{0}' to '{1}'";
         const string _NETWORK_STORAGES_ARE_NOT_ALLOWED_HERE = "Network storages are not allowed to be the destination folder";
 
-        string _destinationFolder;
-        bool _deleteBUtilFilesInDestinationFolderBeforeBackup;
+		private readonly HddStorageSettings _settings;
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <exception cref="ArgumentException"></exception>
-        /// <exception cref="InvalidDataException">tried to add network storage</exception>
-		public string DestinationFolder
+
+		internal HddStorage(HddStorageSettings settings)
+			:base(settings.Name)
 		{
-            get { return _destinationFolder; }
-			set 
-			{
-                if (string.IsNullOrEmpty(value))
-                    throw new ArgumentException("DestinationFolder");
-
-				if (value.StartsWith(@"\\", StringComparison.Ordinal))
-					throw new InvalidDataException(_NETWORK_STORAGES_ARE_NOT_ALLOWED_HERE);
-
-                _destinationFolder = value;
-			}
-		}
-
-        public override string Hint
-        {
-            get { return _destinationFolder; }
-        }
-
-		public bool DeleteBUtilFilesInDestinationFolderBeforeBackup
-		{
-            get { return _deleteBUtilFilesInDestinationFolderBeforeBackup; }
-            set { _deleteBUtilFilesInDestinationFolderBeforeBackup = value; }
-		}
-
-        public HddStorage(string storageName, string destinationFolder, bool deleteBUtilFilesInDestinationFolderBeforeBackup):
-            base(storageName, false)
-		{
-			DestinationFolder = destinationFolder;
-			DeleteBUtilFilesInDestinationFolderBeforeBackup = deleteBUtilFilesInDestinationFolderBeforeBackup;
-		}
-		
-		/// <summary>
-		/// This constructor is for Reflection only!
-		/// </summary>
-		public HddStorage(Dictionary<string, string> settings):
-			this (settings["Name"], settings["DestinationFolder"], bool.Parse(settings["DeleteBUtilFilesInDestinationFolderBeforeBackup"]))
-		{
-			;
-		}
+			_settings = settings;
+		}		
 		
 		public override void Open(LogBase log)
 		{
@@ -75,16 +36,16 @@ namespace BUtil.Core.Storages
 			log.ProcedureCall("Open");
 			Log = log;
 			
-			if (DeleteBUtilFilesInDestinationFolderBeforeBackup)
+			if (_settings.DeleteBUtilFilesInDestinationFolderBeforeBackup)
 			{
                 log.WriteLine(LoggingEvent.Debug,
-					string.Format(CultureInfo.CurrentCulture, _DeletingBUtilImagesInTargetFolderBeforeBackup, DestinationFolder));
+					string.Format(CultureInfo.CurrentCulture, _DeletingBUtilImagesInTargetFolderBeforeBackup, _settings.DestinationFolder));
 				
 				string [] filesToDelete = null;
 			
 				try
 				{
-					filesToDelete = Directory.GetFiles(DestinationFolder, "*"+Files.ImageFilesExtension);
+					filesToDelete = Directory.GetFiles(_settings.DestinationFolder, "*"+Files.ImageFilesExtension);
 				}
 				catch (DirectoryNotFoundException e)
 				{
@@ -116,7 +77,7 @@ namespace BUtil.Core.Storages
 			if (string.IsNullOrEmpty(file))
 				throw new ArgumentNullException("file");
 
-            string dest = DestinationFolder + file.Substring(file.LastIndexOf('\\'));
+            string dest = _settings.DestinationFolder + file.Substring(file.LastIndexOf('\\'));
 			Log.WriteLine(LoggingEvent.Debug, String.Format(CultureInfo.CurrentCulture, _COPYING, file, dest));
             File.Copy(file, dest, true);
 		}
@@ -126,14 +87,5 @@ namespace BUtil.Core.Storages
             ;
         }
         
-		public override Dictionary<string, string> SaveSettings()
-		{
-			Dictionary<string, string> result = new Dictionary<string, string>();
-			result.Add("Name", StorageName);
-			result.Add("DestinationFolder", _destinationFolder);
-			result.Add("DeleteBUtilFilesInDestinationFolderBeforeBackup", _deleteBUtilFilesInDestinationFolderBeforeBackup.ToString());
-			
-			return result;
-		}
 	}
 }

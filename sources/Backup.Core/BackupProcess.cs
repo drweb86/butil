@@ -12,6 +12,7 @@ using BUtil.Core.Options;
 using BUtil.Core.Misc;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
+using System.Linq;
 
 namespace BUtil.Core
 {
@@ -22,7 +23,6 @@ namespace BUtil.Core
 	{
 		#region locals
 		string _backupAbortedByUser = "Aborted by user!";
-		string _couldNotVanishFileFormatString = "During overwriting file '{0}' with zeros an error occured: {1}";
 		string _couldNotDeleteFileFormatString = "During deleting of a file '{0}' an error occured: {1}";
 		string _noStoragesSpecified = "There is no storages specified in configuration. Compression of data was skipped";
 		string _noDataToBackupSpecified = "There is no data to backup specified in configuration";
@@ -234,7 +234,7 @@ namespace BUtil.Core
 		{
 			_log.ProcedureCall("runProgramsChainBeforeBackup");
 
-			foreach (BackupEventTaskInfo taskInfo in _task.BeforeBackupTasksChain)
+			foreach (ExecuteProgramTaskInfo taskInfo in _task.ExecuteBeforeBackup)
 			{
 				var task = new BeforeBackupTask(taskInfo, _options.ProcessPriority, _log);
                 if (NotificationEventHandler != null)
@@ -253,7 +253,7 @@ namespace BUtil.Core
 		{
 			_log.ProcedureCall("runProgramsChainAfterBackup");
 			
-			foreach (BackupEventTaskInfo taskInfo in _task.AfterBackupTasksChain)
+			foreach (ExecuteProgramTaskInfo taskInfo in _task.ExecuteAfterBackup)
 			{
 				var task = new AfterBackupTask(taskInfo, _imageFile.FileName, _options.ProcessPriority, _log);
                 if (NotificationEventHandler != null)
@@ -284,12 +284,12 @@ namespace BUtil.Core
 				}
 			}
 
-			foreach (BackupEventTaskInfo taskInfo in _task.BeforeBackupTasksChain)
+			foreach (ExecuteProgramTaskInfo taskInfo in _task.ExecuteBeforeBackup)
 			{
 				Notify(new RunProgramBeforeOrAfterBackupEventArgs(taskInfo, ProcessingState.NotStarted));
 			}
 
-			foreach (BackupEventTaskInfo taskInfo in _task.AfterBackupTasksChain)
+			foreach (ExecuteProgramTaskInfo taskInfo in _task.ExecuteAfterBackup)
 			{
 				Notify(new RunProgramBeforeOrAfterBackupEventArgs(taskInfo, ProcessingState.NotStarted));
 			}
@@ -298,8 +298,8 @@ namespace BUtil.Core
 			foreach (ArchiveTask archiveParameter in archiveParameters)
 				Notify(new PackingNotificationEventArgs(archiveParameter.ItemToCompress, ProcessingState.NotStarted));
 
-			foreach (StorageBase storage in _task.Storages)
-				Notify(new CopyingToStorageNotificationEventArgs(storage, ProcessingState.NotStarted));
+			foreach (var storageSettings in _task.Storages)
+				Notify(new CopyingToStorageNotificationEventArgs(storageSettings.Name, ProcessingState.NotStarted));
 			
 			Notify(new ImagePackingNotificationEventArgs(ProcessingState.NotStarted));
 			
@@ -315,19 +315,18 @@ namespace BUtil.Core
 			_log.ProcedureCall("AfterBackUp");
 			_log.WriteLine(LoggingEvent.Debug, "Deleting all temporary files...");
 			
-			RemoveAllFilesAtFolder(_temporaryFiles, _task.SecureDeletingOfFiles);
-			RemoveAllFilesAtFolder(_imageFile, _task.SecureDeletingOfFiles);
+			RemoveAllFilesAtFolder(_temporaryFiles);
+			RemoveAllFilesAtFolder(_imageFile);
 		}
 		
 		ArchiveTask[] CreateArgsForCompressionAndMetaForImage(out Collection<MetaRecord> metarecords)
 		{
 			metarecords = new Collection<MetaRecord>();
-			Collection<CompressionItem> compressionItems = _task.FilesFoldersList;
-			var parametersSet = new ArchiveTask[_task.FilesFoldersList.Count];
+			var parametersSet = new ArchiveTask[_task.Items.Count];
 
 		    int syncIndex = 0;
 			int itemIndex = 0;
-			foreach (CompressionItem item in compressionItems)
+			foreach (SourceItem item in _task.Items)
 			{
 				// Compression item
 			    string tempFileName;
@@ -338,7 +337,7 @@ namespace BUtil.Core
 				}
 				while(!_temporaryFiles.TryRegisterNewName(tempFileName));
 
-				parametersSet[itemIndex] = _task.EnableEncryption ? new ArchiveTask(_options.ProcessPriority, tempFileName, item, _task.SecretPassword) : new ArchiveTask(_options.ProcessPriority, tempFileName, item);
+				parametersSet[itemIndex] = new ArchiveTask(_options.ProcessPriority, tempFileName, item, _task.Password);
 				
 				// Metainformation
 				var record = new MetaRecord(item.IsFolder, item.Target);
@@ -362,7 +361,7 @@ namespace BUtil.Core
 			}
 			
 			// nothing to backup
-			if (_task.FilesFoldersList.Count < 1)
+			if (!_task.Items.Any())
 			{
 				_log.WriteLine(LoggingEvent.Warning, _noDataToBackupSpecified);
 				return false;
@@ -377,7 +376,7 @@ namespace BUtil.Core
 
 			foreach (ArchiveTask archiveParameter in archiveParameters)
 			{
-				var job = new CompressionJob(archiveParameter, _task.EnableEncryption, _log);
+				var job = new CompressionJob(archiveParameter, _log);
 
                 if (NotificationEventHandler != null)
                 {
@@ -407,9 +406,11 @@ namespace BUtil.Core
 				return;
 			}
 			
-			foreach (StorageBase storage in _task.Storages)
+			foreach (StorageSettings storageSettings in _task.Storages)
 			{
-				var job = new CopyJob(storage, _imageFile.FileName, _task.EnableEncryption, _log);
+				var storage = StorageFactory.Create(storageSettings);
+
+				var job = new CopyJob(storage, _imageFile.FileName, _log);
                 if (NotificationEventHandler != null)
                 {
                     job.NotificationEventHandler += NotificationEventHandler;
@@ -432,15 +433,7 @@ namespace BUtil.Core
 				return;
 			}
 			
-			// removing
-			if (_task.SecureDeletingOfFiles)
-			{
-				OverWriteFileWithZeros(_imageFile.FileName);
-			}
-			else
-			{
-				File.Delete(_imageFile.FileName);
-			}
+			File.Delete(_imageFile.FileName);
 		}
 
 		void Notify(EventArgs e)
@@ -452,69 +445,15 @@ namespace BUtil.Core
 		}		
 		
 		/// <summary>
-		/// Overwrites file with zeros
-		/// </summary>
-		void OverWriteFileWithZeros(string fileName)
-		{
-			_log.ProcedureCall("OverWriteFileWithZeros", fileName);
-
-			if (!string.IsNullOrEmpty(fileName) && File.Exists(fileName))
-			{
-				try
-				{
-					using (var file = File.OpenWrite(fileName))
-					{
-					    _log.WriteLine(LoggingEvent.Debug,
-						               string.Format(CultureInfo.CurrentCulture,
-						                             "Overwriting file '{0}' with zeros", fileName));
-
-
-						long size = file.Length;
-
-						for (long i = 0; i < size; i++)
-						{
-							file.WriteByte(0);
-						}
-
-						file.Flush();
-					}
-				}
-				catch (DirectoryNotFoundException e)
-				{
-					_log.WriteLine(LoggingEvent.Warning, _couldNotVanishFileFormatString, fileName, e.Message);
-				}
-				catch (PathTooLongException e)
-				{
-					_log.WriteLine(LoggingEvent.Warning, _couldNotVanishFileFormatString, fileName, e.Message);
-				}
-				catch (FileNotFoundException e)
-				{
-					_log.WriteLine(LoggingEvent.Warning, _couldNotVanishFileFormatString, fileName, e.Message);
-				}
-				catch (UnauthorizedAccessException e)
-				{
-					_log.WriteLine(LoggingEvent.Warning, _couldNotVanishFileFormatString, fileName, e.Message);
-				}
-				catch (IOException e)
-				{
-					_log.WriteLine(LoggingEvent.Warning,
-					               string.Format(CultureInfo.CurrentCulture, _couldNotVanishFileFormatString, fileName, e.Message));
-				}
-			}
-			else
-				_log.WriteLine(LoggingEvent.Debug, "Empty file to vanish");
-		}
-		
-		/// <summary>
 		/// Removes all specified files
 		/// </summary>
-		void RemoveAllFilesAtFolder(SyncedFiles files, bool secureDeleting)
+		void RemoveAllFilesAtFolder(SyncedFiles files)
 		{
-			_log.ProcedureCall("RemoveAllFilesAtFolder", secureDeleting.ToString());
+			_log.ProcedureCall("RemoveAllFilesAtFolder");
 			
 			foreach (SyncFile file in files.SynchronizedFiles)
 			{
-				RemoveAllFilesAtFolder(file, secureDeleting);
+				RemoveAllFilesAtFolder(file);
 			}
 		}
 		
@@ -523,16 +462,11 @@ namespace BUtil.Core
 		/// </summary>
 		/// <param name="file">sync object</param>
 		/// <param name="secureDeleting">if true - does ovewrites file with zeros</param>
-		void RemoveAllFilesAtFolder(SyncFile file, bool secureDeleting)
+		void RemoveAllFilesAtFolder(SyncFile file)
 		{
-			_log.ProcedureCall("RemoveAllFilesAtFolder", secureDeleting.ToString());
+			_log.ProcedureCall("RemoveAllFilesAtFolder");
 
 			file.Dispose();
-
-            if (secureDeleting)
-            {
-                OverWriteFileWithZeros(file.FileName);
-            }
 
 		    _log.WriteLine(LoggingEvent.Debug, "X " + file.FileName);
 
@@ -586,10 +520,8 @@ namespace BUtil.Core
 		
 		void ApplyTranslation()
 		{
-			//GUIMesSTARTOFArchMess = Resources.7ZMessage;
 			_backupAbortedByUser = Resources.AbortedByUser;
 			//mProcStrOK = Resources.FileWasCopyiedToStorageSuccessfully;
-			_couldNotVanishFileFormatString = Resources.DuringOverwritingFile0WithZerosAnErrorOccured1;
 			_couldNotDeleteFileFormatString = Resources.DuringDeletingOfAFile0AnErrorOccured1;
 			_noStoragesSpecified = Resources.ThereIsNoStoragesSpecifiedInConfigurationCompressionOfDataWasSkipped;
 			_noDataToBackupSpecified = Resources.ThereIsNoDataToBackupSpecifiedInConfiguration;

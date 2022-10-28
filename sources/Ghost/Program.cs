@@ -9,6 +9,7 @@ using BUtil.Core.Options;
 using BUtil.Core.PL;
 using BUtil.Core.FileSystem;
 using BUtil.Ghost.Localization;
+using System.Linq;
 
 [assembly: CLSCompliant(true)]
 namespace BUtil.Ghost

@@ -106,9 +106,6 @@
   <data name="ButilSchedulerIsRunningNNtoNotSeeThisMessageAgainYouShouldRunTheSchedulerWithParameterNpleaseSeeTheDocumentationForDetails" xml:space="preserve">
     <value>Планировщик BUtil запущен...\n\nЕсли не хотите видеть это сообщение в следующий раз можете запустить планировщик с параметром.\nПодробности можете посмотреть в документации.</value>
   </data>
-  <data name="NoOneTaskUsesSchedulerNyoudOpenConfiguratorOnWhenTabNNapplicationWillNowClose" xml:space="preserve">
-    <value>Ни в одном задании РК не используется планировщик.\nВы можете настроить запуск заданий во вкладке "Когда" конфигуратора.\n\nПриложение сейчас завершит свою работу.</value>
-  </data>
   <data name="BackupFinished" xml:space="preserve">
     <value>Резервное копирование завершено</value>
   </data>

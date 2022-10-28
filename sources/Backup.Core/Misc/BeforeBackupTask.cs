@@ -23,7 +23,7 @@ namespace BUtil.Core.Misc
 		
 		// log messages
 		readonly string _taskName;
-		readonly BackupEventTaskInfo _taskInfo;
+		readonly ExecuteProgramTaskInfo _taskInfo;
 		readonly LogBase _log;
 		EventHandler<JobThreadEventArgs> _finished;
 		ProcessPriorityClass _priority;
@@ -51,7 +51,7 @@ namespace BUtil.Core.Misc
 		/// <param name="log">The opened log instance</param>
 		/// <exception cref="ArgumentNullException">taskInfo or log is null</exception>
 		/// <exception cref="InvalidOperationException">Log is not opened</exception>
-		public BeforeBackupTask(BackupEventTaskInfo taskInfo, ProcessPriorityClass priority, LogBase log)
+		public BeforeBackupTask(ExecuteProgramTaskInfo taskInfo, ProcessPriorityClass priority, LogBase log)
 		{
 			if (taskInfo == null)
 			{

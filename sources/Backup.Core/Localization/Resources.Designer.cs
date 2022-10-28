@@ -61,15 +61,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 7z message:.
-        /// </summary>
-        public static string _7ZMessage {
-            get {
-                return ResourceManager.GetString("_7ZMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Aborted by user!.
         /// </summary>
         public static string AbortedByUser {
@@ -284,15 +275,6 @@ namespace BUtil.Core.Localization {
         public static string DuringDeletingOfAFile0AnErrorOccured1 {
             get {
                 return ResourceManager.GetString("DuringDeletingOfAFile0AnErrorOccured1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to During overwriting file &apos;{0}&apos; with zeros an error occured: {1}.
-        /// </summary>
-        public static string DuringOverwritingFile0WithZerosAnErrorOccured1 {
-            get {
-                return ResourceManager.GetString("DuringOverwritingFile0WithZerosAnErrorOccured1", resourceCulture);
             }
         }
         
@@ -604,23 +586,11 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Security Warning\n\nYour password was saved insecurely as plain text in file &apos;{0}&apos; because &apos;{1}&apos;\n\nTo store passwords securely please:\n- check that you use NTFS file system at system drive,\n- your Windows version supports encrypted file system EFS..
+        ///   Looks up a localized string similar to 7z message:.
         /// </summary>
-        public static string SecurityWarningNNyourPasswordWasSavedInsecurelyAsPlainTextInFile0Because1NNtoStorePasswordsSecurelyPleaseNCheckThatYouUseNtfsFileSystemAtSystemDriveNYourWindowsVersionSupportsEncryptedFileSystemEfs {
+        public static string SevenZMessage {
             get {
-                return ResourceManager.GetString("SecurityWarningNNyourPasswordWasSavedInsecurelyAsPlainTextInFile0Because1NNtoStor" +
-                        "ePasswordsSecurelyPleaseNCheckThatYouUseNtfsFileSystemAtSystemDriveNYourWindowsV" +
-                        "ersionSupportsEncryptedFileSystemEfs", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Storage &apos;{0}&apos; requires option &apos;enable encryption&apos; to be enabled. But in your case it was disabled. Copying to storage skipped..
-        /// </summary>
-        public static string Storage0RequiresOptionEnableEncryptionToBeEnabledButInYourCaseItWasDisabledCopyingToStorageSkipped {
-            get {
-                return ResourceManager.GetString("Storage0RequiresOptionEnableEncryptionToBeEnabledButInYourCaseItWasDisabledCopyin" +
-                        "gToStorageSkipped", resourceCulture);
+                return ResourceManager.GetString("SevenZMessage", resourceCulture);
             }
         }
         

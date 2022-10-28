@@ -33,13 +33,13 @@ namespace BUtil.Configurator.Controls
 		
 		#region Public Methods
 		
-		public List<BackupEventTaskInfo> GetResultChainOfTasks()
+		public List<ExecuteProgramTaskInfo> GetResultChainOfTasks()
 		{
-			List<BackupEventTaskInfo> result = new List<BackupEventTaskInfo>();
+			List<ExecuteProgramTaskInfo> result = new List<ExecuteProgramTaskInfo>();
 			
 			foreach (ListViewItem item in tasksListView.Items)
 			{
-				result.Add((BackupEventTaskInfo)item.Tag);
+				result.Add((ExecuteProgramTaskInfo)item.Tag);
 			}
 			
 			return result;
@@ -51,7 +51,7 @@ namespace BUtil.Configurator.Controls
 		/// <param name="list">The chain of items to edit</param>
 		/// <param name="isBeforeBackupEvent">Shows wheather here before backup event tasks are edited</param>
 		/// <exception cref="ArgumentNullException">list is nullable</exception>
-		public void Init(List<BackupEventTaskInfo> list, bool isBeforeBackupEvent)
+		public void Init(List<ExecuteProgramTaskInfo> list, bool isBeforeBackupEvent)
 		{
 			if (list == null)
 			{
@@ -60,7 +60,7 @@ namespace BUtil.Configurator.Controls
 			_isBeforeBackupEvent = isBeforeBackupEvent;
 			
 			tasksListView.BeginUpdate();
-			foreach(BackupEventTaskInfo item in list)
+			foreach(ExecuteProgramTaskInfo item in list)
 			{
 				addTaskInfoToList(item);
 			}
@@ -88,7 +88,7 @@ namespace BUtil.Configurator.Controls
 		
 		#region Private Methods
 		
-		void addTaskInfoToList(BackupEventTaskInfo taskInfo)
+		void addTaskInfoToList(ExecuteProgramTaskInfo taskInfo)
 		{
 			ListViewItem listViewItem = new ListViewItem(new string[] {taskInfo.Program, taskInfo.Arguments});
 			listViewItem.Tag = taskInfo;
@@ -167,11 +167,11 @@ namespace BUtil.Configurator.Controls
 
 			int indexOfItem = tasksListView.SelectedItems[0].Index;
 			
-			using (BackupEventTaskInfoEditingForm form = new BackupEventTaskInfoEditingForm(_isBeforeBackupEvent, (BackupEventTaskInfo)tasksListView.SelectedItems[0].Tag))
+			using (BackupEventTaskInfoEditingForm form = new BackupEventTaskInfoEditingForm(_isBeforeBackupEvent, (ExecuteProgramTaskInfo)tasksListView.SelectedItems[0].Tag))
 			{
 				if (form.ShowDialog() == DialogResult.OK)
 				{
-					BackupEventTaskInfo task = form.EventTask;
+					ExecuteProgramTaskInfo task = form.EventTask;
 					
 					tasksListView.SelectedItems[0].SubItems[0].Text = task.Program;
 					tasksListView.SelectedItems[0].SubItems[1].Text = task.Arguments;

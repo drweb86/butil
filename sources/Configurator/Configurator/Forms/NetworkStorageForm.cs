@@ -28,25 +28,41 @@ namespace BUtil.Configurator
     		set { destinationFolderTextBox.Text = value; }
     	}
 
-        StorageBase IStorageConfigurationForm.Storage
+		private SambaStorageSettings GetSambaStorageSettings()
 		{
-            get { return new NetworkStorage(Caption, UncLocation, deleteHereAllOtherBUtilImageFilesCheckbox.Checked, _EncryptUnderLsaCheckBox.Checked, skipIfExceedsLimitCheckBox.Checked, Convert.ToInt64(limitSizeNumericUpDown.Value)); }
+			return new SambaStorageSettings
+			{
+				Name = Caption,
+				DestinationFolder = UncLocation,
+				DeleteBUtilFilesInDestinationFolderBeforeBackup = deleteHereAllOtherBUtilImageFilesCheckbox.Checked,
+			    EncryptUnderLocalSystemAccount = _EncryptUnderLsaCheckBox.Checked,
+                SkipCopyingToNetworkStorageAndWriteWarningInLogIfBackupExceeds = skipIfExceedsLimitCheckBox.Checked, 
+				SkipCopyingToNetworkStorageLimitMb = Convert.ToInt64(limitSizeNumericUpDown.Value)
+			};
 		}
+
+        StorageSettings IStorageConfigurationForm.GetStorageSettings()
+		{
+			var sambaStorageSettings = GetSambaStorageSettings();
+			return StorageFactory.CreateStorageSettings(sambaStorageSettings);
+        }
 
         #endregion
 
-		public NetworkStorageForm(NetworkStorage storage)
+		public NetworkStorageForm(StorageSettings storageSettings)
 		{
 			InitializeComponent();
 
-			if (storage != null)
+			if (storageSettings != null)
 			{
-				Caption = storage.StorageName;
-				UncLocation = storage.DestinationFolder;
-				deleteHereAllOtherBUtilImageFilesCheckbox.Checked = storage.DeleteBUtilFilesInDestinationFolderBeforeBackup;
-                _EncryptUnderLsaCheckBox.Checked = storage.EncryptUnderLocalSystemAccount;
-                skipIfExceedsLimitCheckBox.Checked = storage.SkipCopyingToNetworkStorageAndWriteWarningInLogIfBackupExceeds;
-                limitSizeNumericUpDown.Value = storage.SkipCopyingToNetworkStorageLimitMb;
+				var sambaStorageSettings = StorageFactory.CreateSambaStorageSettings(storageSettings);
+
+				Caption = sambaStorageSettings.Name;
+				UncLocation = sambaStorageSettings.DestinationFolder;
+				deleteHereAllOtherBUtilImageFilesCheckbox.Checked = sambaStorageSettings.DeleteBUtilFilesInDestinationFolderBeforeBackup;
+                _EncryptUnderLsaCheckBox.Checked = sambaStorageSettings.EncryptUnderLocalSystemAccount;
+                skipIfExceedsLimitCheckBox.Checked = sambaStorageSettings.SkipCopyingToNetworkStorageAndWriteWarningInLogIfBackupExceeds;
+                limitSizeNumericUpDown.Value = sambaStorageSettings.SkipCopyingToNetworkStorageLimitMb;
                 skipIfExceedsLimitCheckBox_CheckedChanged(null, null);
 			}
 

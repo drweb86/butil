@@ -9,7 +9,6 @@ namespace BUtil.Configurator
 {
     internal sealed partial class FtpStorageForm : Form, IStorageConfigurationForm
 	{
-    	#region Properties
     	
     	string Caption
     	{
@@ -40,18 +39,30 @@ namespace BUtil.Configurator
     		get { return passwordTextBox.Text; }
     		set { passwordTextBox.Text = value; }
     	}
-    	
-        StorageBase IStorageConfigurationForm.Storage
-		{
-			get { 
-				bool isActive = (connectionModeComboBox.SelectedIndex == 0);
-				return new FtpStorage(Caption, DestinationFolder, deleteHereAllOtherBUtilImageFilesCheckbox.Checked,
-			                            FtpServer, User, Password, isActive); }
-		}
-		
-        #endregion
 
-		public FtpStorageForm(FtpStorage storage)
+		FtpStorageSettings GetFtpStorageSettings()
+		{
+			return new FtpStorageSettings
+			{
+				ActiveFtpMode = connectionModeComboBox.SelectedIndex == 0,
+				Name = Caption,
+				DestinationFolder = DestinationFolder,
+				DeleteBUtilFilesInDestinationFolderBeforeBackup = deleteHereAllOtherBUtilImageFilesCheckbox.Checked,
+				Host = FtpServer,
+				User = User,
+				Password = Password
+			};
+
+
+		}
+
+
+		StorageSettings IStorageConfigurationForm.GetStorageSettings()
+		{
+			var ftpStorageSettings = GetFtpStorageSettings();
+			return StorageFactory.CreateStorageSettings(ftpStorageSettings);
+		}        
+		public FtpStorageForm(StorageSettings storageSettings)
 		{
 			InitializeComponent();
 			
@@ -75,15 +86,17 @@ namespace BUtil.Configurator
 			
 			connectionModeComboBox.SelectedIndex = 1;
 			
-			if (storage != null)
+			if (storageSettings != null)
 			{
-				Caption = storage.StorageName;
-				DestinationFolder = storage.DestinationFolder;
-				deleteHereAllOtherBUtilImageFilesCheckbox.Checked = storage.DeleteBUtilFilesInDestinationFolderBeforeBackup;
-				FtpServer = storage.RemoteHostServer;
-				User = storage.User;
-				Password = storage.Password;
-				connectionModeComboBox.SelectedIndex = storage.FtpModeIsActive ? 0 : 1;
+				var ftpStorageSettings = StorageFactory.CreateFtpStorageSettings(storageSettings);
+
+				Caption = ftpStorageSettings.Name;
+				DestinationFolder = ftpStorageSettings.DestinationFolder;
+				deleteHereAllOtherBUtilImageFilesCheckbox.Checked = ftpStorageSettings.DeleteBUtilFilesInDestinationFolderBeforeBackup;
+				FtpServer = ftpStorageSettings.Host;
+				User = ftpStorageSettings.User;
+				Password = ftpStorageSettings.Password;
+				connectionModeComboBox.SelectedIndex = ftpStorageSettings.ActiveFtpMode ? 0 : 1;
 			}
 
 			requiredFieldsTextChanged(null, null);
@@ -99,7 +112,9 @@ namespace BUtil.Configurator
 			bool ok = true;
 			try
 			{
-                (((IStorageConfigurationForm)this).Storage as FtpStorage).Test();
+				var settings = GetFtpStorageSettings();
+				var storage = StorageFactory.Create(settings);
+				storage.Test();
 			}
 			catch (Exception exc)
 			{

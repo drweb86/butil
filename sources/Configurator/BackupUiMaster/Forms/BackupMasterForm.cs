@@ -174,7 +174,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 					
 					foreach(ListViewItem item in tasksListView.Items)
 					{
-						if (item.Tag == notification.Storage)
+						if ( (item.Tag as StorageSettings)?.Name == notification.StorageName)
 						{
 							item.SubItems[2].Text = LocalsHelper.ToString(notification.State);
 							if (notification.State != ProcessingState.NotStarted)
@@ -207,7 +207,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 					
 					foreach(ListViewItem item in tasksListView.Items)
 					{
-						if (item.Tag is BackupEventTaskInfo)
+						if (item.Tag is ExecuteProgramTaskInfo)
 						if (item.Tag == notification.TaskInfo)
 						{
 							item.SubItems[2].Text = LocalsHelper.ToString(notification.State);
@@ -229,31 +229,31 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 		void StartButtonClick(object sender, EventArgs e)
 		{
 			// here some logival verification
-			_task.FilesFoldersList.Clear();
+			_task.Items.Clear();
 			_task.Storages.Clear();
-			_task.BeforeBackupTasksChain.Clear();
-			_task.AfterBackupTasksChain.Clear();
+			_task.ExecuteBeforeBackup.Clear();
+			_task.ExecuteAfterBackup.Clear();
 			
 			foreach (ListViewItem item in tasksListView.CheckedItems)
 			{
-				if (item.Tag is CompressionItem)
+				if (item.Tag is SourceItem)
 				{
-					_task.FilesFoldersList.Add((CompressionItem) item.Tag);
+					_task.Items.Add((SourceItem) item.Tag);
 				}
-				else if (item.Tag is StorageBase)
+				else if (item.Tag is StorageSettings)
 				{
-					_task.Storages.Add((StorageBase) item.Tag);
+					_task.Storages.Add((StorageSettings) item.Tag);
 				}
-				else if (item.Tag is BackupEventTaskInfo)
+				else if (item.Tag is ExecuteProgramTaskInfo)
 				{
 					int groupIndex = tasksListView.Groups.IndexOf(item.Group);
 					if (groupIndex == (int)GroupEnum.BeforeBackupChain)
 					{
-						_task.BeforeBackupTasksChain.Add((BackupEventTaskInfo) item.Tag);
+						_task.ExecuteBeforeBackup.Add((ExecuteProgramTaskInfo) item.Tag);
 					}
 					else if (groupIndex == (int)GroupEnum.AfterBackupChain)
 					{
-						_task.AfterBackupTasksChain.Add((BackupEventTaskInfo) item.Tag);
+						_task.ExecuteAfterBackup.Add((ExecuteProgramTaskInfo) item.Tag);
 					}
 					else
 					{
@@ -262,7 +262,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 				}
 			}
 			
-			if (_task.FilesFoldersList.Count < 1)
+			if (!_task.Items.Any())
 			{
 				Messages.ShowInformationBox(Resources.PleaseCheckItemsToCompress);
 				return;
@@ -359,8 +359,8 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             settingsUserControl.SetSettingsToUi(_controller.Options, PowerTask.None, _task, false, ThreadPriority.BelowNormal);
 
 			tasksListView.BeginUpdate();
-            ReadOnlyCollection<CompressionItem> items = _controller.ListOfFiles;
-            foreach(CompressionItem item in items)
+            ReadOnlyCollection<SourceItem> items = _controller.ListOfFiles;
+            foreach(SourceItem item in items)
             {
             	var listItem = new ListViewItem(item.Target, item.IsFolder ? (int)ImagesEnum.Folder : (int)ImagesEnum.File);
             	listItem.SubItems.Add(LocalsHelper.ToString(item.CompressionDegree));
@@ -371,36 +371,33 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             	tasksListView.Items.Add(listItem);
             }
             
-            foreach(StorageBase item in _task.Storages)
+            foreach(var storageSettings in _task.Storages)
             {
-            	var listItem = new ListViewItem(item.StorageName);
+            	var listItem = new ListViewItem(storageSettings.Name);
+                switch (storageSettings.ProviderName.ToLowerInvariant())
+                {
+                    case "hdd":
+                        listItem.ImageIndex = (int)ImagesEnum.Hdd;
+						break;
+                    case "ftp":
+                        listItem.ImageIndex = (int)ImagesEnum.Ftp;
+						break;
+                    case "samba":
+                        listItem.ImageIndex = (int)ImagesEnum.Network;
+						break;
+                    default:
+                        throw new ArgumentOutOfRangeException(nameof(storageSettings));
+                }
 
-            	if (item is FtpStorage)
-            	{
-            		listItem.ImageIndex = (int)ImagesEnum.Ftp;
-            	}
-            	else if (item is HddStorage)
-            	{
-            		listItem.ImageIndex = (int)ImagesEnum.Hdd;
-            	}
-            	else if (item is NetworkStorage)
-            	{
-            		listItem.ImageIndex = (int)ImagesEnum.Network;
-            	}
-            	else
-            	{
-            		throw new NotImplementedException(item.GetType().ToString());
-            	}
-
-            	listItem.SubItems.Add(item.Hint);
+            	listItem.SubItems.Add(String.Empty);
             	listItem.SubItems.Add(string.Empty);
             	listItem.Group = tasksListView.Groups[(int)GroupEnum.Storages];
-            	listItem.Tag = item;
+            	listItem.Tag = storageSettings;
             	listItem.Checked = true;
             	tasksListView.Items.Add(listItem);
             }
 
-            foreach (BackupEventTaskInfo taskInfo in _task.BeforeBackupTasksChain)
+            foreach (ExecuteProgramTaskInfo taskInfo in _task.ExecuteBeforeBackup)
             {
             	var listItem = new ListViewItem(taskInfo.Program);
             	listItem.ImageIndex = (int)ImagesEnum.ProgramInRunBeforeAfterBackupChain;
@@ -413,7 +410,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             	tasksListView.Items.Add(listItem);
             }
             
-            foreach (BackupEventTaskInfo taskInfo in _task.AfterBackupTasksChain)
+            foreach (ExecuteProgramTaskInfo taskInfo in _task.ExecuteAfterBackup)
             {
             	var listItem = new ListViewItem(taskInfo.Program);
             	listItem.ImageIndex = (int)ImagesEnum.ProgramInRunBeforeAfterBackupChain;

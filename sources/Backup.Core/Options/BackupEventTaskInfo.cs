@@ -3,66 +3,24 @@ using System;
 
 namespace BUtil.Core.Options
 {
-	/// <summary>
-	/// This is a base class for backup tasks before or after the backup
-	/// </summary>
-	public sealed class BackupEventTaskInfo
+	public sealed class ExecuteProgramTaskInfo
 	{
-		#region Private Fields
 		
-		readonly string _program;
-		readonly string _arguments;
+		public string Program { get; set; }
 		
-		#endregion
-		
-		#region Public Properties
-		
-		/// <summary>
-		/// The program to run
-		/// </summary>
-		public string Program
-		{
-			get { return _program; }
-		}
+		public string Arguments { get; set; }
 
-		/// <summary>
-		/// The arguments to pass to program
-		/// </summary>
-		public string Arguments
+        public ExecuteProgramTaskInfo() { } // deserialization
+        
+		public ExecuteProgramTaskInfo(string program, string arguments)
 		{
-			get { return _arguments; }
+			Program = program;
+			Arguments = arguments;
 		}
-		
-		#endregion
-		
-		#region Contructors
-		
-		/// <summary>
-		/// The default constructor
-		/// </summary>
-		/// <param name="program">The program to run</param>
-		/// <param name="arguments">The arguments to pass to program</param>
-		/// <exception cref="ArgumentNullException">Program is null or empty</exception>
-		public BackupEventTaskInfo(string program, string arguments)
-		{
-			if (string.IsNullOrEmpty(program))
-				{
-					throw new ArgumentNullException("program");
-				}
-
-			_program = program;
-			_arguments = arguments;
-		}
-		
-		#endregion
-		
-		#region Public Methods
 		
 		public override string ToString()
 		{
-			return _program + ' ' + _arguments;
+			return $"{Program} {Arguments}";
 		}
-		
-		#endregion
 	}
 }

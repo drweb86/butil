@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using BUtil.Configurator.Localization;
 using BUtil.Core.Options;
@@ -41,38 +42,26 @@ namespace BUtil.Configurator.Controls
 			
 			foreach(DayOfWeek enumItem in DayOfWeek.GetValues(typeof(DayOfWeek)))
 			{
-				scheduledDaysCheckedListBox.SetItemChecked((int) enumItem, _task.IsThisDayOfWeekScheduled(enumItem));
+				scheduledDaysCheckedListBox.SetItemChecked((int) enumItem, _task.SchedulerDays.Contains(enumItem));
 			}
             
-            hourComboBox.SelectedIndex = _task.Hours;
-            minuteComboBox.SelectedIndex = _task.Minutes;
+            hourComboBox.SelectedIndex = _task.SchedulerTime.Hours;
+            minuteComboBox.SelectedIndex = _task.SchedulerTime.Minutes;
             
 		}
 		
 		public override void GetOptionsFromUi()
 		{
-			foreach(DayOfWeek enumItem in DayOfWeek.GetValues(typeof(DayOfWeek)))
-			{
-				_task.SetSchedulingStateOfDay(enumItem, scheduledDaysCheckedListBox.GetItemChecked((int) enumItem));
-			}
-            
-            if (hourComboBox.SelectedIndex > -1)
-            {
-                _task.Hours = (byte)hourComboBox.SelectedIndex;
-            }
-            else
-            {
-                _task.Hours = 0;
-            }
+			_task.SchedulerDays = Enum
+				.GetValues(typeof(DayOfWeek))
+                .Cast<DayOfWeek>()
+                .Where(x => scheduledDaysCheckedListBox.GetItemChecked((int)x))
+				.ToList();
 
-            if (minuteComboBox.SelectedIndex > -1)
-            {
-                _task.Minutes = (byte)minuteComboBox.SelectedIndex;
-            }
-            else
-            {
-                _task.Minutes = 0;
-            }
+			_task.SchedulerTime = new TimeSpan(
+				hourComboBox.SelectedIndex != -1 ? hourComboBox.SelectedIndex : 0,
+                minuteComboBox.SelectedIndex != -1 ? minuteComboBox.SelectedIndex : 0,
+				0);
 		}
 		
 		#endregion
