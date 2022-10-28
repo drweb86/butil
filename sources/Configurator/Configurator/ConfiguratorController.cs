@@ -216,7 +216,7 @@ namespace BUtil.Configurator.Configurator
             bool taskNeedScheduling = false;
             foreach (var pair in _profileOptions.BackupTasks)
             {
-                if (pair.Value.ScheduledDays.Any())
+                if (pair.Value.SchedulerDays.Any())
                 {
                     taskNeedScheduling = true;
                 }

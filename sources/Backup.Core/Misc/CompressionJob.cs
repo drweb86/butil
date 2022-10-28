@@ -31,7 +31,7 @@ namespace BUtil.Core.Misc
 		
 		#region Properties
 		
-		public CompressionItem ItemToCompress
+		public SourceItem ItemToCompress
 		{
 			get { return _packingParameter.ItemToCompress; }
 		}

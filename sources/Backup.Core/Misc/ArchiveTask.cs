@@ -14,7 +14,7 @@ namespace BUtil.Core.Misc
 		public sealed class ArchiveTask
 		{
 			readonly string _archiveName;
-			readonly CompressionItem _compressionItem;
+			readonly SourceItem _compressionItem;
 			ProcessPriorityClass _priority;
 			string _arguments = string.Empty;
             string _logEntry = string.Empty;
@@ -29,7 +29,7 @@ namespace BUtil.Core.Misc
 				get { return _arguments; }
 			}
 			
-			public CompressionItem ItemToCompress
+			public SourceItem ItemToCompress
 			{
 				get { return _compressionItem; }
 			}
@@ -67,7 +67,7 @@ namespace BUtil.Core.Misc
 						
 			
 
-			public ArchiveTask(ProcessPriorityClass priority, string resultArchive, CompressionItem item, string password)
+			public ArchiveTask(ProcessPriorityClass priority, string resultArchive, SourceItem item, string password)
 			{
 				if (item == null)
 					throw new ArgumentNullException("item");

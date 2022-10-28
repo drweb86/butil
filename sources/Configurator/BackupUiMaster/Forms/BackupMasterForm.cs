@@ -204,7 +204,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 					
 					foreach(ListViewItem item in tasksListView.Items)
 					{
-						if (item.Tag is BackupEventTaskInfo)
+						if (item.Tag is ExecuteProgramTaskInfo)
 						if (item.Tag == notification.TaskInfo)
 						{
 							item.SubItems[2].Text = LocalsHelper.ToString(notification.State);
@@ -226,31 +226,31 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 		void StartButtonClick(object sender, EventArgs e)
 		{
 			// here some logival verification
-			_task.What.Clear();
+			_task.Items.Clear();
 			_task.Storages.Clear();
-			_task.BeforeBackupTasksChain.Clear();
-			_task.AfterBackupTasksChain.Clear();
+			_task.ExecuteBeforeBackup.Clear();
+			_task.ExecuteAfterBackup.Clear();
 			
 			foreach (ListViewItem item in tasksListView.CheckedItems)
 			{
-				if (item.Tag is CompressionItem)
+				if (item.Tag is SourceItem)
 				{
-					_task.What.Add((CompressionItem) item.Tag);
+					_task.Items.Add((SourceItem) item.Tag);
 				}
 				else if (item.Tag is StorageBase)
 				{
 					_task.Storages.Add((StorageBase) item.Tag);
 				}
-				else if (item.Tag is BackupEventTaskInfo)
+				else if (item.Tag is ExecuteProgramTaskInfo)
 				{
 					int groupIndex = tasksListView.Groups.IndexOf(item.Group);
 					if (groupIndex == (int)GroupEnum.BeforeBackupChain)
 					{
-						_task.BeforeBackupTasksChain.Add((BackupEventTaskInfo) item.Tag);
+						_task.ExecuteBeforeBackup.Add((ExecuteProgramTaskInfo) item.Tag);
 					}
 					else if (groupIndex == (int)GroupEnum.AfterBackupChain)
 					{
-						_task.AfterBackupTasksChain.Add((BackupEventTaskInfo) item.Tag);
+						_task.ExecuteAfterBackup.Add((ExecuteProgramTaskInfo) item.Tag);
 					}
 					else
 					{
@@ -259,7 +259,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 				}
 			}
 			
-			if (!_task.What.Any())
+			if (!_task.Items.Any())
 			{
 				Messages.ShowInformationBox(Resources.PleaseCheckItemsToCompress);
 				return;
@@ -356,8 +356,8 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             settingsUserControl.SetSettingsToUi(_controller.Options, PowerTask.None, _task, false, ThreadPriority.BelowNormal);
 
 			tasksListView.BeginUpdate();
-            ReadOnlyCollection<CompressionItem> items = _controller.ListOfFiles;
-            foreach(CompressionItem item in items)
+            ReadOnlyCollection<SourceItem> items = _controller.ListOfFiles;
+            foreach(SourceItem item in items)
             {
             	var listItem = new ListViewItem(item.Target, item.IsFolder ? (int)ImagesEnum.Folder : (int)ImagesEnum.File);
             	listItem.SubItems.Add(LocalsHelper.ToString(item.CompressionDegree));
@@ -397,7 +397,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             	tasksListView.Items.Add(listItem);
             }
 
-            foreach (BackupEventTaskInfo taskInfo in _task.BeforeBackupTasksChain)
+            foreach (ExecuteProgramTaskInfo taskInfo in _task.ExecuteBeforeBackup)
             {
             	var listItem = new ListViewItem(taskInfo.Program);
             	listItem.ImageIndex = (int)ImagesEnum.ProgramInRunBeforeAfterBackupChain;
@@ -410,7 +410,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             	tasksListView.Items.Add(listItem);
             }
             
-            foreach (BackupEventTaskInfo taskInfo in _task.AfterBackupTasksChain)
+            foreach (ExecuteProgramTaskInfo taskInfo in _task.ExecuteAfterBackup)
             {
             	var listItem = new ListViewItem(taskInfo.Program);
             	listItem.ImageIndex = (int)ImagesEnum.ProgramInRunBeforeAfterBackupChain;

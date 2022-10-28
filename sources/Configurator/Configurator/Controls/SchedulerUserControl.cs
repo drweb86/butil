@@ -42,7 +42,7 @@ namespace BUtil.Configurator.Controls
 			
 			foreach(DayOfWeek enumItem in DayOfWeek.GetValues(typeof(DayOfWeek)))
 			{
-				scheduledDaysCheckedListBox.SetItemChecked((int) enumItem, _task.ScheduledDays.Contains(enumItem));
+				scheduledDaysCheckedListBox.SetItemChecked((int) enumItem, _task.SchedulerDays.Contains(enumItem));
 			}
             
             hourComboBox.SelectedIndex = _task.SchedulerTime.Hours;
@@ -52,7 +52,7 @@ namespace BUtil.Configurator.Controls
 		
 		public override void GetOptionsFromUi()
 		{
-			_task.ScheduledDays = Enum
+			_task.SchedulerDays = Enum
 				.GetValues(typeof(DayOfWeek))
                 .Cast<DayOfWeek>()
                 .Where(x => scheduledDaysCheckedListBox.GetItemChecked((int)x))

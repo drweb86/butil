@@ -77,9 +77,9 @@ namespace BUtil.Configurator.BackupUiMaster
         {
             get { return _backupper; }
         }
-        public ReadOnlyCollection<CompressionItem> ListOfFiles
+        public ReadOnlyCollection<SourceItem> ListOfFiles
         {
-        	get { return new ReadOnlyCollection<CompressionItem>(_task.What); }
+        	get { return new ReadOnlyCollection<SourceItem>(_task.Items); }
 		}
 
 		#endregion

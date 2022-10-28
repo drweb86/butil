@@ -234,7 +234,7 @@ namespace BUtil.Core
 		{
 			_log.ProcedureCall("runProgramsChainBeforeBackup");
 
-			foreach (BackupEventTaskInfo taskInfo in _task.BeforeBackupTasksChain)
+			foreach (ExecuteProgramTaskInfo taskInfo in _task.ExecuteBeforeBackup)
 			{
 				var task = new BeforeBackupTask(taskInfo, _options.ProcessPriority, _log);
                 if (NotificationEventHandler != null)
@@ -253,7 +253,7 @@ namespace BUtil.Core
 		{
 			_log.ProcedureCall("runProgramsChainAfterBackup");
 			
-			foreach (BackupEventTaskInfo taskInfo in _task.AfterBackupTasksChain)
+			foreach (ExecuteProgramTaskInfo taskInfo in _task.ExecuteAfterBackup)
 			{
 				var task = new AfterBackupTask(taskInfo, _imageFile.FileName, _options.ProcessPriority, _log);
                 if (NotificationEventHandler != null)
@@ -284,12 +284,12 @@ namespace BUtil.Core
 				}
 			}
 
-			foreach (BackupEventTaskInfo taskInfo in _task.BeforeBackupTasksChain)
+			foreach (ExecuteProgramTaskInfo taskInfo in _task.ExecuteBeforeBackup)
 			{
 				Notify(new RunProgramBeforeOrAfterBackupEventArgs(taskInfo, ProcessingState.NotStarted));
 			}
 
-			foreach (BackupEventTaskInfo taskInfo in _task.AfterBackupTasksChain)
+			foreach (ExecuteProgramTaskInfo taskInfo in _task.ExecuteAfterBackup)
 			{
 				Notify(new RunProgramBeforeOrAfterBackupEventArgs(taskInfo, ProcessingState.NotStarted));
 			}
@@ -322,11 +322,11 @@ namespace BUtil.Core
 		ArchiveTask[] CreateArgsForCompressionAndMetaForImage(out Collection<MetaRecord> metarecords)
 		{
 			metarecords = new Collection<MetaRecord>();
-			var parametersSet = new ArchiveTask[_task.What.Count];
+			var parametersSet = new ArchiveTask[_task.Items.Count];
 
 		    int syncIndex = 0;
 			int itemIndex = 0;
-			foreach (CompressionItem item in _task.What)
+			foreach (SourceItem item in _task.Items)
 			{
 				// Compression item
 			    string tempFileName;
@@ -361,7 +361,7 @@ namespace BUtil.Core
 			}
 			
 			// nothing to backup
-			if (!_task.What.Any())
+			if (!_task.Items.Any())
 			{
 				_log.WriteLine(LoggingEvent.Warning, _noDataToBackupSpecified);
 				return false;

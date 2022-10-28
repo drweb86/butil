@@ -18,9 +18,9 @@ namespace BUtil.Configurator.Forms
 		/// <summary>
 		/// Returns the task instance
 		/// </summary>
-		public BackupEventTaskInfo EventTask
+		public ExecuteProgramTaskInfo EventTask
 		{
-			get { return new BackupEventTaskInfo(programTextBox.Text.Trim(), argumentsTextBox.Text.Trim()) ; }
+			get { return new ExecuteProgramTaskInfo(programTextBox.Text.Trim(), argumentsTextBox.Text.Trim()) ; }
 		}
 		
 		#endregion
@@ -53,7 +53,7 @@ namespace BUtil.Configurator.Forms
 		/// <param name="taskWillGoBeforeBackup">Shows when the task will go</param>
 		/// <param name="taskToEdit">The task</param>
 		/// <exception cref="ArgumentNullException">taskToEdit is null</exception>
-		public BackupEventTaskInfoEditingForm(bool taskWillGoBeforeBackup, BackupEventTaskInfo taskToEdit)
+		public BackupEventTaskInfoEditingForm(bool taskWillGoBeforeBackup, ExecuteProgramTaskInfo taskToEdit)
 		{
 			InitializeComponent();
 			

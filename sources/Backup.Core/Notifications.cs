@@ -10,9 +10,9 @@ namespace BUtil.Core
 	public sealed class PackingNotificationEventArgs: EventArgs
 	{
 		readonly ProcessingState _state;
-		readonly CompressionItem _item;
+		readonly SourceItem _item;
 
-		public CompressionItem Item
+		public SourceItem Item
 		{
 			get { return _item; }
 		}
@@ -22,7 +22,7 @@ namespace BUtil.Core
 			get { return _state; }
 		}
 		
-		public PackingNotificationEventArgs(CompressionItem item, ProcessingState state)
+		public PackingNotificationEventArgs(SourceItem item, ProcessingState state)
 			:base()
 		{
 			_item = item;
@@ -83,7 +83,7 @@ namespace BUtil.Core
 		#region Private Fields
 		
 		readonly ProcessingState _state;
-		readonly BackupEventTaskInfo _taskInfo;
+		readonly ExecuteProgramTaskInfo _taskInfo;
 
 		#endregion
 		
@@ -92,7 +92,7 @@ namespace BUtil.Core
 		/// <summary>
 		/// The task
 		/// </summary>
-		public BackupEventTaskInfo TaskInfo
+		public ExecuteProgramTaskInfo TaskInfo
 		{
 			get { return _taskInfo; }
 		}
@@ -115,7 +115,7 @@ namespace BUtil.Core
 		/// <param name="taskInfo">The task is served now</param>
 		/// <param name="state">The state of an operation</param>
 		/// <exception cref="ArgumentNullException">taskInfo is null</exception>
-		public RunProgramBeforeOrAfterBackupEventArgs(BackupEventTaskInfo taskInfo, ProcessingState state)
+		public RunProgramBeforeOrAfterBackupEventArgs(ExecuteProgramTaskInfo taskInfo, ProcessingState state)
 			:base()
 		{
 			if (taskInfo == null)

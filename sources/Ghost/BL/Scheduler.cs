@@ -94,14 +94,14 @@ namespace BUtil.Ghost.BL
 	    /// <exception cref="ArgumentNullException">ActionProc not setted</exception>
 	    public void Resume()
 	    {
-            if (!_task.ScheduledDays.Any()) return;
+            if (!_task.SchedulerDays.Any()) return;
             if (!_actionTimer.Enabled) return;
 
 	        double difference = -1;
 			var now = DateTime.Now;
 			_zeroHour = now + _task.SchedulerTime;
             
-            if (_task.ScheduledDays.Contains(_zeroHour.DayOfWeek))
+            if (_task.SchedulerDays.Contains(_zeroHour.DayOfWeek))
             {
                 difference = _zeroHour.Subtract(now).TotalMilliseconds;
             }
@@ -118,7 +118,7 @@ namespace BUtil.Ghost.BL
 				{
                     _zeroHour = _zeroHour.AddDays(1);
 				}
-                while (!_task.ScheduledDays.Contains(_zeroHour.DayOfWeek));
+                while (!_task.SchedulerDays.Contains(_zeroHour.DayOfWeek));
 
                 difference = _zeroHour.Subtract(now).TotalMilliseconds;
 			}

@@ -81,39 +81,39 @@ namespace BUtil.Core.Options
             BackupTask task = new BackupTask();
             task.Name = name;
 
-            CompressionItem item = new CompressionItem();
+            SourceItem item = new SourceItem();
             item.CompressionDegree = CompressionDegree.Normal;
             item.IsFolder = true;
             item.Target = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-            task.What.Add(item);
+            task.Items.Add(item);
 
-            item = new CompressionItem();
+            item = new SourceItem();
             item.CompressionDegree = CompressionDegree.Normal;
             item.IsFolder = true;
             item.Target = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);
-            task.What.Add(item);
+            task.Items.Add(item);
 
             string firefoxSettings = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Mozilla\Firefox\Profiles");
             if (Directory.Exists(firefoxSettings))
             {
-                item = new CompressionItem();
+                item = new SourceItem();
                 item.CompressionDegree = CompressionDegree.Normal;
                 item.IsFolder = true;
                 item.Target = firefoxSettings;
-                task.What.Add(item);
+                task.Items.Add(item);
             }
 
             string thunderBirdSettings = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Thunderbird\Profiles");
             if (Directory.Exists(thunderBirdSettings))
             {
-                item = new CompressionItem();
+                item = new SourceItem();
                 item.CompressionDegree = CompressionDegree.Normal;
                 item.IsFolder = true;
                 item.Target = thunderBirdSettings;
-                task.What.Add(item);
+                task.Items.Add(item);
             }
 
-            task.ScheduledDays.Clear();
+            task.SchedulerDays.Clear();
             task.SchedulerTime = new TimeSpan(Constants.DefaultHours, Constants.DefaultMinutes, 0);
 
             return task;

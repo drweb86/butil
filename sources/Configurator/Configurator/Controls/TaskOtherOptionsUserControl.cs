@@ -18,8 +18,8 @@ namespace BUtil.Configurator.Controls
 		{
 			InitializeComponent();
 			
-			beforeBackupEventsControl.Init(new List<BackupEventTaskInfo>(), true);
-			_afterBackupTasksChainToExecuteUserControl.Init(new List<BackupEventTaskInfo>(), false);
+			beforeBackupEventsControl.Init(new List<ExecuteProgramTaskInfo>(), true);
+			_afterBackupTasksChainToExecuteUserControl.Init(new List<ExecuteProgramTaskInfo>(), false);
 		}
 		
 		#region Overrides
@@ -33,14 +33,14 @@ namespace BUtil.Configurator.Controls
 		public override void SetOptionsToUi(object settings)
 		{
 			_task = (BackupTask)(((object[])settings)[0]);
-			beforeBackupEventsControl.Init(_task.BeforeBackupTasksChain, true);
-			_afterBackupTasksChainToExecuteUserControl.Init(_task.AfterBackupTasksChain, false);
+			beforeBackupEventsControl.Init(_task.ExecuteBeforeBackup, true);
+			_afterBackupTasksChainToExecuteUserControl.Init(_task.ExecuteAfterBackup, false);
 		}
 
 		public override void GetOptionsFromUi()
 		{
-			_task.BeforeBackupTasksChain = beforeBackupEventsControl.GetResultChainOfTasks();
-			_task.AfterBackupTasksChain = _afterBackupTasksChainToExecuteUserControl.GetResultChainOfTasks();
+			_task.ExecuteBeforeBackup = beforeBackupEventsControl.GetResultChainOfTasks();
+			_task.ExecuteAfterBackup = _afterBackupTasksChainToExecuteUserControl.GetResultChainOfTasks();
 		}
 
 		#endregion

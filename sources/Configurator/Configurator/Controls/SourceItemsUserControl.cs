@@ -29,11 +29,11 @@ namespace BUtil.Configurator.Controls
         {
             while (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-            	CompressionItem[] files = new CompressionItem[openFileDialog.FileNames.Length];
+            	SourceItem[] files = new SourceItem[openFileDialog.FileNames.Length];
 
                 for (int i = 0; i < files.Length; i++)
                 {
-					files[i] = new CompressionItem(openFileDialog.FileNames[i], false, CompressionDegree.Normal);
+					files[i] = new SourceItem(openFileDialog.FileNames[i], false, CompressionDegree.Normal);
                 }
 
                 _itemsToBackup.VerifyNewItems(files);
@@ -44,7 +44,7 @@ namespace BUtil.Configurator.Controls
         {
             while (ofd.ShowDialog() == DialogResult.OK)
             {
-            	CompressionItem folder = new CompressionItem(ofd.SelectedPath, true, CompressionDegree.Normal);
+            	SourceItem folder = new SourceItem(ofd.SelectedPath, true, CompressionDegree.Normal);
 
 				_itemsToBackup.VerifyNewItem(folder);
             }
@@ -96,10 +96,10 @@ namespace BUtil.Configurator.Controls
 			if( e.Data.GetDataPresent(DataFormats.FileDrop, false) )
 			{
 				string[] newitems = (string[])e.Data.GetData(DataFormats.FileDrop);
-				CompressionItem[] files = new CompressionItem[newitems.Length];
+				SourceItem[] files = new SourceItem[newitems.Length];
 				for (int i = 0; i < newitems.Length; i++)
 				{
-					files[i] = new CompressionItem(newitems[i], Directory.Exists(newitems[i]), CompressionDegree.Normal);
+					files[i] = new SourceItem(newitems[i], Directory.Exists(newitems[i]), CompressionDegree.Normal);
 				}
 
 				_itemsToBackup.VerifyNewItems(files);
@@ -228,7 +228,7 @@ namespace BUtil.Configurator.Controls
 		{
             _task = (BackupTask)settings;
 				
-			_itemsToBackup = new CompressionItemsKeeper(compressionItemsListView, _task.What);
+			_itemsToBackup = new CompressionItemsKeeper(compressionItemsListView, _task.Items);
 			_itemsToBackup.ApplyNewDegreesOfCompression();
 			_itemsToBackup.InitWith();
 		}

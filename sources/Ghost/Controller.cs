@@ -63,7 +63,7 @@ namespace BUtil.Ghost
 			_options = options;
             foreach (var pair in _options.BackupTasks)
             {
-                if (pair.Value.ScheduledDays.Any())
+                if (pair.Value.SchedulerDays.Any())
                 {
                     var scheduler = new Scheduler(pair.Value);
         			scheduler.DoAction += (p) => { DoBackup(p, true); };

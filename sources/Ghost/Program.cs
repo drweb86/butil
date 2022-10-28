@@ -158,7 +158,7 @@ namespace BUtil.Ghost
            	}
            		//TODO:
             // if there's no scheduling
-            if (!_options.BackupTasks["default"].ScheduledDays.Any())
+            if (!_options.BackupTasks["default"].SchedulerDays.Any())
             {
                 // we're exiting to free system resources
                 showErrorAndCloseApplicationIn10Seconds(Resources.NoOneTaskUsesSchedulerNyoudOpenConfiguratorOnWhenTabNNapplicationWillNowClose);

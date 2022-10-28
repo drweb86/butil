@@ -259,7 +259,7 @@ namespace BUtil.Core.Options
 					XmlNode afterNode = document.CreateNode(XmlNodeType.Element, _AFTER_BACKUP, string.Empty);
 					chainsNode.AppendChild(afterNode);
 					
-					foreach (BackupEventTaskInfo info in task.BeforeBackupTasksChain)
+					foreach (ExecuteProgramTaskInfo info in task.ExecuteBeforeBackup)
 					{
 						XmlNode chainNode = document.CreateNode(XmlNodeType.Element, _PROGRAM, string.Empty);
 						beforeNode.AppendChild(chainNode);
@@ -268,7 +268,7 @@ namespace BUtil.Core.Options
 						addAttributeToNode(document, chainNode, _ARGUMENTS, info.Arguments);
 					}
 
-					foreach (BackupEventTaskInfo info in task.AfterBackupTasksChain)
+					foreach (ExecuteProgramTaskInfo info in task.ExecuteAfterBackup)
 					{
 						XmlNode chainNode = document.CreateNode(XmlNodeType.Element, _PROGRAM, string.Empty);
 						afterNode.AppendChild(chainNode);
@@ -385,28 +385,28 @@ namespace BUtil.Core.Options
 
 						foreach (XmlNode nodeItem in beforeNodes)
 						{
-							BackupEventTaskInfo info = new BackupEventTaskInfo(
+							ExecuteProgramTaskInfo info = new ExecuteProgramTaskInfo(
 								nodeItem.Attributes[_NAME].Value,
 								nodeItem.Attributes[_ARGUMENTS].Value);
-							task.BeforeBackupTasksChain.Add(info);
+							task.ExecuteBeforeBackup.Add(info);
 						}
 						
 						foreach (XmlNode nodeItem in afterNodes)
 						{
-							BackupEventTaskInfo info = new BackupEventTaskInfo(
+							ExecuteProgramTaskInfo info = new ExecuteProgramTaskInfo(
 								nodeItem.Attributes[_NAME].Value,
 								nodeItem.Attributes[_ARGUMENTS].Value);
-							task.AfterBackupTasksChain.Add(info);
+							task.ExecuteAfterBackup.Add(info);
 						}
 						
 						foreach (XmlNode compressionItemNode in compressionItemsNodes)
 						{
-							CompressionItem item = new CompressionItem(
+							SourceItem item = new SourceItem(
 								compressionItemNode.Attributes[_TARGET_TAG].Value,
 								bool.Parse(compressionItemNode.Attributes[_IS_FOLDER].Value),
 								(CompressionDegree)CompressionDegree.Parse(typeof(CompressionDegree), compressionItemNode.Attributes[_COMPRESSION_DEGREE_TAG].Value));
 							
-							task.What.Add(item);
+							task.Items.Add(item);
 						}
 						
 						XmlNode schedule = taskNode[_SCHEDULE_TAG];
