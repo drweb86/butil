@@ -14,7 +14,7 @@ namespace BUtil.Core.Options
 			SchedulerDays = new List<DayOfWeek>();
 			SchedulerTime = new TimeSpan(Constants.DefaultHours, Constants.DefaultMinutes, 0);
             Items = new List<SourceItem>();
-			Storages = new List<StorageBase>();
+			Storages = new List<StorageSettings>();
         }
 
         public string Name { get; set; }
@@ -30,7 +30,7 @@ namespace BUtil.Core.Options
 		public List<ExecuteProgramTaskInfo> ExecuteAfterBackup { get; set; }
       
         
-		public List<StorageBase> Storages { get; set; }
+		public List<StorageSettings> Storages { get; set; }
 	    
 	    public string Password { get; set; }
 		

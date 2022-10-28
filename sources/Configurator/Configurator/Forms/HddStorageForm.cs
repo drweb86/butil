@@ -14,11 +14,20 @@ namespace BUtil.Configurator
 	/// </summary>
     internal sealed partial class HddStorageForm : Form, IStorageConfigurationForm
 	{
-    	#region Properties
-    	
-        StorageBase IStorageConfigurationForm.Storage
+		private HddStorageSettings GetHddStorageSettings()
+		{ 
+			return new HddStorageSettings
+            {
+                Name = Caption,
+                DestinationFolder = destinationFolderTextBox.Text,
+                DeleteBUtilFilesInDestinationFolderBeforeBackup = deleteHereAllOtherBUtilImageFilesCheckbox.Checked
+            };
+        }
+
+        public StorageSettings GetStorageSettings()
 		{
-			get { return new HddStorage(Caption, destinationFolderTextBox.Text, deleteHereAllOtherBUtilImageFilesCheckbox.Checked); }
+			var hddStorageSettings = GetHddStorageSettings();
+			return StorageFactory.CreateStorageSettings(hddStorageSettings);
 		}
         
         string Caption
@@ -26,17 +35,18 @@ namespace BUtil.Configurator
         	get { return captionTextBox.Text.Trim(); }
         }
 		
-        #endregion
-		
-		public HddStorageForm(HddStorage storage)
+        
+		public HddStorageForm(StorageSettings storageSettings)
 		{
 			InitializeComponent();
 			
-			if (storage != null)
+			if (storageSettings != null)
 			{
-				captionTextBox.Text = storage.StorageName;
-				destinationFolderTextBox.Text = storage.DestinationFolder;
-				deleteHereAllOtherBUtilImageFilesCheckbox.Checked = storage.DeleteBUtilFilesInDestinationFolderBeforeBackup;
+				var hddStorageSettings = StorageFactory.CreateHddStorageSettings(storageSettings);
+
+				captionTextBox.Text = hddStorageSettings.Name;
+				destinationFolderTextBox.Text = hddStorageSettings.DestinationFolder;
+				deleteHereAllOtherBUtilImageFilesCheckbox.Checked = hddStorageSettings.DeleteBUtilFilesInDestinationFolderBeforeBackup;
 				acceptButton.Enabled = true;
 			}
 			

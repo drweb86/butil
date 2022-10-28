@@ -48,7 +48,7 @@ namespace BUtil.Core.Storages
 
 				try
 				{
-					notify(new CopyingToStorageNotificationEventArgs(_storage, ProcessingState.InProgress));
+					notify(new CopyingToStorageNotificationEventArgs(_storage.StorageName, ProcessingState.InProgress));
 					_storage.Open(_log);
 					_log.WriteLine(LoggingEvent.Debug, "Storage opened successfully");
 					_storage.Process(_imageFileToCopy);
@@ -63,18 +63,18 @@ namespace BUtil.Core.Storages
 				{
 					if (exc is ThreadInterruptedException)
 					{
-						_log.WriteLine(LoggingEvent.Error, string.Format("Copying to storage {0} aborted by user", _storage.Hint));
+						_log.WriteLine(LoggingEvent.Error, string.Format("Copying to storage {0} aborted by user", _storage.StorageName));
 					}
 
 					_log.WriteLine(LoggingEvent.Error, string.Format(CultureInfo.InstalledUICulture, Resources.ErrorDiscoveredWhenCopyingFileToStorage01, _storage.StorageName, exc.Message));
 					succesfull = false;
 				}
 
-				notify(new CopyingToStorageNotificationEventArgs(_storage, succesfull ? ProcessingState.FinishedSuccesfully : ProcessingState.FinishedWithErrors));
+				notify(new CopyingToStorageNotificationEventArgs(_storage.StorageName, succesfull ? ProcessingState.FinishedSuccesfully : ProcessingState.FinishedWithErrors));
 			}
 			catch (ThreadInterruptedException)
 			{
-				_log.WriteLine(LoggingEvent.Error, string.Format("Copying to storage {0} aborted by user", _storage.Hint));
+				_log.WriteLine(LoggingEvent.Error, string.Format("Copying to storage {0} aborted by user", _storage.StorageName));
 			}
 			finally
 			{

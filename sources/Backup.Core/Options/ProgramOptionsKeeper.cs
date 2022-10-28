@@ -289,24 +289,6 @@ namespace BUtil.Core.Options
 					XmlNode scheduleNode = document.CreateNode(XmlNodeType.Element, _SCHEDULE_TAG, string.Empty);
 					backupTaskNode.AppendChild(scheduleNode);
 
-					foreach (StorageBase storage in task.Storages)
-					{
-						XmlNode storageNode = document.CreateNode(XmlNodeType.Element, "Storage", string.Empty);
-						whereToBackupNode.AppendChild(storageNode);
-						
-						Dictionary<string, string> values = storage.SaveSettings();
-						addAttributeToNode(document, storageNode, _TYPE_TAG, storage.GetType().FullName);
-						if (storage.GetType().Assembly != Assembly.GetExecutingAssembly())
-						{
-							addAttributeToNode(document, storageNode, _ASSEMBLY_TAG, storage.GetType().Assembly.Location);
-						}
-
-						foreach (KeyValuePair<string, string> setting in values)
-						{
-							addTextNode(document, storageNode, setting.Key, setting.Value);
-						}
-					}
-					
 					XmlNode zeroHourNode = document.CreateNode(XmlNodeType.Element, _TIME_TAG, string.Empty);
 					scheduleNode.AppendChild(zeroHourNode);
 					
@@ -430,9 +412,7 @@ namespace BUtil.Core.Options
 								Assembly.LoadFrom(assemblyAttribute.Value) : 
 								Assembly.GetExecutingAssembly();
 							string type = storageNode.Attributes[_TYPE_TAG].Value;
-							StorageBase storage = (StorageBase)Activator.CreateInstance(assembly.GetType(type), settings);
-														
-							task.Storages.Add(storage);
+	
 						}
 						
 						options.BackupTasks.Add(task.Name, task);

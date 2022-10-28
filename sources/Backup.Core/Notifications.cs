@@ -55,11 +55,11 @@ namespace BUtil.Core
 	public sealed class CopyingToStorageNotificationEventArgs: EventArgs
 	{
 		readonly ProcessingState _state;
-		readonly StorageBase _storage;
+		readonly string _storageName;
 
-		public StorageBase Storage
+		public string StorageName
 		{
-			get { return _storage; }
+			get { return _storageName; }
 		}
 		
 		public ProcessingState State
@@ -67,10 +67,10 @@ namespace BUtil.Core
 			get { return _state; }
 		}
 		
-		public CopyingToStorageNotificationEventArgs(StorageBase storage, ProcessingState state)
+		public CopyingToStorageNotificationEventArgs(string storageName, ProcessingState state)
 			:base()
 		{
-			_storage = storage;
+			_storageName = storageName;
 			_state = state;
 		}
 	}

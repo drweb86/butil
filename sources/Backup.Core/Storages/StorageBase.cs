@@ -7,7 +7,8 @@ using BUtil.Core.Logs;
 
 namespace BUtil.Core.Storages
 {
-	public abstract class StorageBase
+
+    public abstract class StorageBase
 	{
         private bool _demandsSecurity;
         private string _StorageName;
@@ -62,15 +63,6 @@ namespace BUtil.Core.Storages
         public abstract void Test();
         
         public abstract Dictionary<string, string> SaveSettings();
-
-        /// <summary>
-        /// Gets hint for showing in Storage places in Configurator
-        /// </summary>
-        /// <returns>hint</returns>
-        public abstract string Hint
-        {
-            get;
-        }
 
 	}
 }

@@ -14,7 +14,8 @@ using BUtil.Core.Localization;
 
 namespace BUtil.Core.Storages
 {
-	public sealed class NetworkStorage: StorageBase
+
+    class SambaStorage: StorageBase
 	{
         const string _deletingAllBUtilImageFilesFromTargetFolder = "Deleting all BUtil image files from target folder '{0}'";
         const string _NOT_A_NETWORK_DIR = "Not a network location";
@@ -77,12 +78,15 @@ namespace BUtil.Core.Storages
             set { _encryptUnderLocalSystemAccount = value; }
         }
 
-        public override string Hint
+        public SambaStorage(SambaStorageSettings settings)
+            : this(settings.Name, settings.DestinationFolder, settings.DeleteBUtilFilesInDestinationFolderBeforeBackup,
+                  settings.EncryptUnderLocalSystemAccount, settings.SkipCopyingToNetworkStorageAndWriteWarningInLogIfBackupExceeds,
+                  settings.SkipCopyingToNetworkStorageLimitMb)
         {
-            get { return DestinationFolder; }
+
         }
 
-        public NetworkStorage(string storageName, string destinationFolder, bool deleteBUtilFilesInDestinationFolderBeforeBackup, bool encryptUnderLocalSystemAccount, bool skipCopyingToNetworkStorageAndWriteWarningInLogIfBackupExceeds, long skipCopyingToNetworkStorageLimitMb) :
+        public SambaStorage(string storageName, string destinationFolder, bool deleteBUtilFilesInDestinationFolderBeforeBackup, bool encryptUnderLocalSystemAccount, bool skipCopyingToNetworkStorageAndWriteWarningInLogIfBackupExceeds, long skipCopyingToNetworkStorageLimitMb) :
             base(storageName, true)
 		{
 			DestinationFolder = destinationFolder;
@@ -92,7 +96,7 @@ namespace BUtil.Core.Storages
             _skipCopyingToNetworkStorageLimitMb = skipCopyingToNetworkStorageLimitMb;
 		}
         
-        public NetworkStorage(Dictionary<string, string> settings):
+        public SambaStorage(Dictionary<string, string> settings):
         	this(settings["Name"], settings["DestinationFolder"], 
         	     bool.Parse(settings["DeleteBUtilFilesInDestinationFolderBeforeBackup"]),
         	     bool.Parse(settings["EncryptUnderLocalSystemAccount"]),

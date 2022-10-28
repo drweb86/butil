@@ -171,7 +171,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 					
 					foreach(ListViewItem item in tasksListView.Items)
 					{
-						if (item.Tag == notification.Storage)
+						if ( (item.Tag as StorageSettings)?.Name == notification.StorageName)
 						{
 							item.SubItems[2].Text = LocalsHelper.ToString(notification.State);
 							if (notification.State != ProcessingState.NotStarted)
@@ -237,9 +237,9 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 				{
 					_task.Items.Add((SourceItem) item.Tag);
 				}
-				else if (item.Tag is StorageBase)
+				else if (item.Tag is StorageSettings)
 				{
-					_task.Storages.Add((StorageBase) item.Tag);
+					_task.Storages.Add((StorageSettings) item.Tag);
 				}
 				else if (item.Tag is ExecuteProgramTaskInfo)
 				{
@@ -368,31 +368,28 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             	tasksListView.Items.Add(listItem);
             }
             
-            foreach(StorageBase item in _task.Storages)
+            foreach(var storageSettings in _task.Storages)
             {
-            	var listItem = new ListViewItem(item.StorageName);
+            	var listItem = new ListViewItem(storageSettings.Name);
+                switch (storageSettings.ProviderName.ToLowerInvariant())
+                {
+                    case "hdd":
+                        listItem.ImageIndex = (int)ImagesEnum.Hdd;
+						break;
+                    case "ftp":
+                        listItem.ImageIndex = (int)ImagesEnum.Ftp;
+						break;
+                    case "samba":
+                        listItem.ImageIndex = (int)ImagesEnum.Network;
+						break;
+                    default:
+                        throw new ArgumentOutOfRangeException(nameof(storageSettings));
+                }
 
-            	if (item is FtpStorage)
-            	{
-            		listItem.ImageIndex = (int)ImagesEnum.Ftp;
-            	}
-            	else if (item is HddStorage)
-            	{
-            		listItem.ImageIndex = (int)ImagesEnum.Hdd;
-            	}
-            	else if (item is NetworkStorage)
-            	{
-            		listItem.ImageIndex = (int)ImagesEnum.Network;
-            	}
-            	else
-            	{
-            		throw new NotImplementedException(item.GetType().ToString());
-            	}
-
-            	listItem.SubItems.Add(item.Hint);
+            	listItem.SubItems.Add(String.Empty);
             	listItem.SubItems.Add(string.Empty);
             	listItem.Group = tasksListView.Groups[(int)GroupEnum.Storages];
-            	listItem.Tag = item;
+            	listItem.Tag = storageSettings;
             	listItem.Checked = true;
             	tasksListView.Items.Add(listItem);
             }

@@ -298,8 +298,8 @@ namespace BUtil.Core
 			foreach (ArchiveTask archiveParameter in archiveParameters)
 				Notify(new PackingNotificationEventArgs(archiveParameter.ItemToCompress, ProcessingState.NotStarted));
 
-			foreach (StorageBase storage in _task.Storages)
-				Notify(new CopyingToStorageNotificationEventArgs(storage, ProcessingState.NotStarted));
+			foreach (var storageSettings in _task.Storages)
+				Notify(new CopyingToStorageNotificationEventArgs(storageSettings.Name, ProcessingState.NotStarted));
 			
 			Notify(new ImagePackingNotificationEventArgs(ProcessingState.NotStarted));
 			
@@ -406,8 +406,10 @@ namespace BUtil.Core
 				return;
 			}
 			
-			foreach (StorageBase storage in _task.Storages)
+			foreach (StorageSettings storageSettings in _task.Storages)
 			{
+				var storage = StorageFactory.Create(storageSettings);
+
 				var job = new CopyJob(storage, _imageFile.FileName, _log);
                 if (NotificationEventHandler != null)
                 {

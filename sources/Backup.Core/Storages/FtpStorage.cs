@@ -10,7 +10,8 @@ using BUtil.Core.FileSystem;
 
 namespace BUtil.Core.Storages
 {
-	public sealed class FtpStorage: StorageBase
+
+	class FtpStorage: StorageBase
 	{
 		#region Locals
 
@@ -90,10 +91,12 @@ namespace BUtil.Core.Storages
             set { _deleteBUtilFilesInDestinationFolderBeforeBackup = value; }
 		}
 
-        public override string Hint
-        {
-            get { return _remoteServer + DestinationFolder; }
-        }
+		internal FtpStorage(FtpStorageSettings settings):
+			this(settings.Name, settings.DestinationFolder, settings.DeleteBUtilFilesInDestinationFolderBeforeBackup,
+				settings.Host, settings.User, settings.Password, settings.ActiveFtpMode)
+		{
+
+		}
 
         public FtpStorage(string storageName, string destinationFolder, bool deleteBUtilFilesInDestinationFolderBeforeBackup,
 		                 string host, string user, string password, bool activeFtpMode):

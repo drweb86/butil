@@ -7,10 +7,12 @@ using System.IO;
 
 using BUtil.Core.Logs;
 using BUtil.Core.FileSystem;
+using System.Reflection;
 
 namespace BUtil.Core.Storages
 {
-	public sealed class HddStorage: StorageBase
+
+	class HddStorage: StorageBase
 	{
         const string _DeletingBUtilImagesInTargetFolderBeforeBackup = "Deleting BUtil image files from target folder {0}";
         const string _CANNOTDELETEDUETOACESSVIOLATIONS = "Cannot delete file '{0}' due to access violation {1}";
@@ -40,15 +42,15 @@ namespace BUtil.Core.Storages
 			}
 		}
 
-        public override string Hint
-        {
-            get { return _destinationFolder; }
-        }
-
 		public bool DeleteBUtilFilesInDestinationFolderBeforeBackup
 		{
             get { return _deleteBUtilFilesInDestinationFolderBeforeBackup; }
             set { _deleteBUtilFilesInDestinationFolderBeforeBackup = value; }
+		}
+
+		internal HddStorage(HddStorageSettings settings)
+			:this(settings.Name, settings.DestinationFolder, settings.DeleteBUtilFilesInDestinationFolderBeforeBackup)
+		{
 		}
 
         public HddStorage(string storageName, string destinationFolder, bool deleteBUtilFilesInDestinationFolderBeforeBackup):
