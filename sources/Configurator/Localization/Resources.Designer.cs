@@ -65,7 +65,7 @@ namespace BUtil.Configurator.Localization {
         /// </summary>
         internal static string _0DayS1H2Min3Sec {
             get {
-                return ResourceManager.GetString("0DayS1H2Min3Sec", resourceCulture);
+                return ResourceManager.GetString("_0DayS1H2Min3Sec", resourceCulture);
             }
         }
         
@@ -74,7 +74,7 @@ namespace BUtil.Configurator.Localization {
         /// </summary>
         internal static string _0H1Min2Sec {
             get {
-                return ResourceManager.GetString("0H1Min2Sec", resourceCulture);
+                return ResourceManager.GetString("_0H1Min2Sec", resourceCulture);
             }
         }
         
@@ -83,7 +83,7 @@ namespace BUtil.Configurator.Localization {
         /// </summary>
         internal static string _0Min1Sec {
             get {
-                return ResourceManager.GetString("0Min1Sec", resourceCulture);
+                return ResourceManager.GetString("_0Min1Sec", resourceCulture);
             }
         }
         
@@ -92,7 +92,7 @@ namespace BUtil.Configurator.Localization {
         /// </summary>
         internal static string _0Restoration {
             get {
-                return ResourceManager.GetString("0Restoration", resourceCulture);
+                return ResourceManager.GetString("_0Restoration", resourceCulture);
             }
         }
         
@@ -101,7 +101,7 @@ namespace BUtil.Configurator.Localization {
         /// </summary>
         internal static string _0Sec {
             get {
-                return ResourceManager.GetString("0Sec", resourceCulture);
+                return ResourceManager.GetString("_0Sec", resourceCulture);
             }
         }
         
@@ -110,8 +110,8 @@ namespace BUtil.Configurator.Localization {
         /// </summary>
         internal static string _1BackupShouldBePasswordProtectedIfNotProgramWillSkipItsCopyingToThisStorageN2YourAuthorizationInformationIsGoingOverTheNetworkInUnprotectedModeAsPlainText {
             get {
-                return ResourceManager.GetString("1BackupShouldBePasswordProtectedIfNotProgramWillSkipItsCopyingToThisStorageN2Your" +
-                        "AuthorizationInformationIsGoingOverTheNetworkInUnprotectedModeAsPlainText", resourceCulture);
+                return ResourceManager.GetString("_1BackupShouldBePasswordProtectedIfNotProgramWillSkipItsCopyingToThisStorageN2You" +
+                        "rAuthorizationInformationIsGoingOverTheNetworkInUnprotectedModeAsPlainText", resourceCulture);
             }
         }
         
@@ -120,7 +120,7 @@ namespace BUtil.Configurator.Localization {
         /// </summary>
         internal static string _7ZipArchive7Z {
             get {
-                return ResourceManager.GetString("7ZipArchive7Z", resourceCulture);
+                return ResourceManager.GetString("_7ZipArchive7Z", resourceCulture);
             }
         }
         
@@ -1693,17 +1693,6 @@ namespace BUtil.Configurator.Localization {
         internal static string Scheduling {
             get {
                 return ResourceManager.GetString("Scheduling", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Security Warning\n\nYour password was saved insecurely as plain text in file &apos;{0}&apos; because &apos;{1}&apos;\n\nTo store passwords securely please:\n- check that you use NTFS file system at system drive,\n- your Windows version supports encrypted file system EFS..
-        /// </summary>
-        internal static string SecurityWarningNNyourPasswordWasSavedInsecurelyAsPlainTextInFile0Because1NNtoStorePasswordsSecurelyPleaseNCheckThatYouUseNtfsFileSystemAtSystemDriveNYourWindowsVersionSupportsEncryptedFileSystemEfs {
-            get {
-                return ResourceManager.GetString("SecurityWarningNNyourPasswordWasSavedInsecurelyAsPlainTextInFile0Because1NNtoStor" +
-                        "ePasswordsSecurelyPleaseNCheckThatYouUseNtfsFileSystemAtSystemDriveNYourWindowsV" +
-                        "ersionSupportsEncryptedFileSystemEfs", resourceCulture);
             }
         }
         

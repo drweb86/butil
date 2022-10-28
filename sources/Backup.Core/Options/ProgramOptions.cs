@@ -143,41 +143,5 @@ namespace BUtil.Core.Options
 		}
         
         #endregion
-        
-        #region Public Methods
-		
-		/// <summary>
-		/// Checks if settings contains any password
-		/// </summary>
-		/// <returns>True if requires</returns>
-		public bool RequiresEncryptionForSafety()
-		{
-			bool requireEncryption = false;
-            
-            foreach (KeyValuePair<string, BackupTask> pair  in _backupTasks)
-            {
-            	if (pair.Value.EnableEncryption)
-            	{
-            		requireEncryption = true;
-            		break;
-            	}
-            	
-            	foreach ( StorageBase storage in pair.Value.Storages)
-            	{
-            		if (storage is FtpStorage)
-            		{
-            			if (!string.IsNullOrEmpty(((FtpStorage)storage).Password))
-            			{
-            				requireEncryption = true;
-            				break;
-            			}
-            		}
-            	}
-            }
-            
-            return requireEncryption;
-		}
-		
-	    #endregion
-	}
+    }
 }

@@ -112,8 +112,8 @@ namespace BUtil.Core.PL
 			_profileOptions = (ProgramOptions)objects[0];
 			_task = (BackupTask)objects[1];
 			
-			passwordTextBox.Text = _task.SecretPassword;
-            passwordConfirmationTextBox.Text = _task.SecretPassword;
+			passwordTextBox.Text = _task.Password;
+            passwordConfirmationTextBox.Text = _task.Password;
 		}
 		
 		public override void GetOptionsFromUi()
@@ -124,7 +124,7 @@ namespace BUtil.Core.PL
 				passwordTextBox.Text = string.Empty;
 			}
             
-            _task.SecretPassword = passwordTextBox.Text;
+            _task.Password = passwordTextBox.Text;
 		}
 		
 		void applyToUi(Result result)

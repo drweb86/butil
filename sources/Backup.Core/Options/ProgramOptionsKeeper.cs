@@ -279,7 +279,6 @@ namespace BUtil.Core.Options
 					
 					addAttributeToNode(document, backupTaskNode, _NAME, task.Name);
 								
-					addTextNode(document, backupTaskNode, _PASSWORD, task.SecretPassword);
 
 					XmlNode whatToBackupNode = document.CreateNode(XmlNodeType.Element, _WHAT_TAG, string.Empty);
 					backupTaskNode.AppendChild(whatToBackupNode);
@@ -290,18 +289,6 @@ namespace BUtil.Core.Options
 					XmlNode scheduleNode = document.CreateNode(XmlNodeType.Element, _SCHEDULE_TAG, string.Empty);
 					backupTaskNode.AppendChild(scheduleNode);
 
-					foreach (CompressionItem item in task.FilesFoldersList)
-					{
-						XmlNode itemTaskNode = document.CreateNode(XmlNodeType.Element, "Item", string.Empty);
-						whatToBackupNode.AppendChild(itemTaskNode);
-//TODO: this tag is saved only to decrease complexity of porting settings						
-//TODO: so when 'Hint' task will be created, this setting must be read
-						addAttributeToNode(document, itemTaskNode, _NAME, item.Target);
-						addAttributeToNode(document, itemTaskNode, _TARGET_TAG, item.Target);
-						addAttributeToNode(document, itemTaskNode, _IS_FOLDER, item.IsFolder.ToString());
-						addAttributeToNode(document, itemTaskNode, _COMPRESSION_DEGREE_TAG, item.CompressionDegree.ToString());
-					}
-					
 					foreach (StorageBase storage in task.Storages)
 					{
 						XmlNode storageNode = document.CreateNode(XmlNodeType.Element, "Storage", string.Empty);
@@ -326,13 +313,7 @@ namespace BUtil.Core.Options
 					XmlNode scheduledDaysNode = document.CreateNode(XmlNodeType.Element, _DAYS_TAG, string.Empty);
 					scheduleNode.AppendChild(scheduledDaysNode);
 		
-					addAttributeToNode(document, zeroHourNode, _HOUR_TAG, task.Hours.ToString());
-					addAttributeToNode(document, zeroHourNode, _MINUTE_TAG, task.Minutes.ToString());
 					
-					foreach(DayOfWeek enumItem in DayOfWeek.GetValues(typeof(DayOfWeek)))
-					{
-						addAttributeToNode(document, scheduledDaysNode, enumItem.ToString(), task.IsThisDayOfWeekScheduled(enumItem).ToString());
-					}
 				}
 				
                 document.Save(Files.ProfileFile);
@@ -344,35 +325,13 @@ namespace BUtil.Core.Options
                     string.Format(CultureInfo.CurrentCulture, "During working with file '{0}' an error occured: {1}. \n\nSettings are not saved", Files.ProfileFile, e.Message));
             }
 
-            bool notSecure = false;
-            string message = string.Empty;
-            
             try
             {
                 File.Encrypt(Files.ProfileFile);
             }
-            catch (PlatformNotSupportedException e)
-            {
-                notSecure = true;
-                message = e.Message;
-            }
-            catch (NotSupportedException e)
-            { 
-                notSecure = true;
-                message = e.Message;
-            }
-            catch (IOException e)
-            {
-                notSecure = true;
-                message = e.Message;
-            }
-
-            if (notSecure && options.RequiresEncryptionForSafety())
-            {
-            	// warning about security problem
-                Messages.ShowErrorBox(string.Format(CultureInfo.InvariantCulture, Resources.SecurityWarningNNyourPasswordWasSavedInsecurelyAsPlainTextInFile0Because1NNtoStorePasswordsSecurelyPleaseNCheckThatYouUseNtfsFileSystemAtSystemDriveNYourWindowsVersionSupportsEncryptedFileSystemEfs, Files.ProfileFile, message));
-            }
-
+            catch (PlatformNotSupportedException) { }
+            catch (NotSupportedException) { }
+            catch (IOException) { }
         }
         
         /// <summary>
@@ -418,7 +377,6 @@ namespace BUtil.Core.Options
 						BackupTask task = new BackupTask();
 						
 						task.Name = taskNode.Attributes[_NAME].Value;
-						task.SecretPassword = taskNode[_PASSWORD].InnerText;
 
 						XmlNodeList compressionItemsNodes = taskNode[_WHAT_TAG].ChildNodes;
 						XmlNodeList storagesNodes = taskNode[_WHERE_TAG].ChildNodes;
@@ -448,20 +406,14 @@ namespace BUtil.Core.Options
 								bool.Parse(compressionItemNode.Attributes[_IS_FOLDER].Value),
 								(CompressionDegree)CompressionDegree.Parse(typeof(CompressionDegree), compressionItemNode.Attributes[_COMPRESSION_DEGREE_TAG].Value));
 							
-							task.FilesFoldersList.Add(item);
+							task.What.Add(item);
 						}
 						
 						XmlNode schedule = taskNode[_SCHEDULE_TAG];
 						XmlNode zeroHour = schedule[_TIME_TAG];
 						XmlNode days = schedule[_DAYS_TAG];
 						
-						task.Hours = byte.Parse(zeroHour.Attributes[_HOUR_TAG].Value);
-						task.Minutes = byte.Parse(zeroHour.Attributes[_MINUTE_TAG].Value);
 						
-						foreach(DayOfWeek enumItem in DayOfWeek.GetValues(typeof(DayOfWeek)))
-						{
-							task.SetSchedulingStateOfDay(enumItem, bool.Parse(days.Attributes[enumItem.ToString()].Value));
-						}
 						
 						foreach (XmlNode storageNode in storagesNodes)
 						{

@@ -49,9 +49,9 @@ namespace BUtil.Core.Options
 
 			foreach (KeyValuePair<string, BackupTask> pair in options.BackupTasks)
 			{
-				if (pair.Value.EnableEncryption)
+				if (!string.IsNullOrWhiteSpace(pair.Value.Password))
 				{
-	                ValidatePassword(!options.DontCareAboutPasswordLength, pair.Value.SecretPassword);
+	                ValidatePassword(!options.DontCareAboutPasswordLength, pair.Value.Password);
 				}
 			}
 		}
@@ -81,18 +81,17 @@ namespace BUtil.Core.Options
             BackupTask task = new BackupTask();
             task.Name = name;
 
-            Collection<CompressionItem> items = task.FilesFoldersList;
             CompressionItem item = new CompressionItem();
             item.CompressionDegree = CompressionDegree.Normal;
             item.IsFolder = true;
             item.Target = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-            items.Add(item);
+            task.What.Add(item);
 
             item = new CompressionItem();
             item.CompressionDegree = CompressionDegree.Normal;
             item.IsFolder = true;
             item.Target = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);
-            items.Add(item);
+            task.What.Add(item);
 
             string firefoxSettings = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Mozilla\Firefox\Profiles");
             if (Directory.Exists(firefoxSettings))
@@ -101,7 +100,7 @@ namespace BUtil.Core.Options
                 item.CompressionDegree = CompressionDegree.Normal;
                 item.IsFolder = true;
                 item.Target = firefoxSettings;
-                items.Add(item);
+                task.What.Add(item);
             }
 
             string thunderBirdSettings = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Thunderbird\Profiles");
@@ -111,12 +110,11 @@ namespace BUtil.Core.Options
                 item.CompressionDegree = CompressionDegree.Normal;
                 item.IsFolder = true;
                 item.Target = thunderBirdSettings;
-                items.Add(item);
+                task.What.Add(item);
             }
 
-            task.UnscheduleAllDays();
-            task.Hours = Constants.DefaultHours;
-            task.Minutes = Constants.DefaultMinutes;
+            task.ScheduledDays.Clear();
+            task.SchedulerTime = new TimeSpan(Constants.DefaultHours, Constants.DefaultMinutes, 0);
 
             return task;
         }

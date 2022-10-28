@@ -228,7 +228,7 @@ namespace BUtil.Configurator.Controls
 		{
             _task = (BackupTask)settings;
 				
-			_itemsToBackup = new CompressionItemsKeeper(compressionItemsListView, _task.FilesFoldersList);
+			_itemsToBackup = new CompressionItemsKeeper(compressionItemsListView, _task.What);
 			_itemsToBackup.ApplyNewDegreesOfCompression();
 			_itemsToBackup.InitWith();
 		}

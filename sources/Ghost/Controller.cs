@@ -15,6 +15,7 @@ using BUtil.Core.PL;
 
 using BUtil.Ghost.BL;
 using BUtil.Ghost.Localization;
+using System.Linq;
 
 namespace BUtil.Ghost
 {
@@ -62,7 +63,7 @@ namespace BUtil.Ghost
 			_options = options;
             foreach (var pair in _options.BackupTasks)
             {
-                if (pair.Value.EnableScheduling)
+                if (pair.Value.ScheduledDays.Any())
                 {
                     var scheduler = new Scheduler(pair.Value);
         			scheduler.DoAction += (p) => { DoBackup(p, true); };

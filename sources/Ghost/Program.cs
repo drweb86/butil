@@ -9,6 +9,7 @@ using BUtil.Core.Options;
 using BUtil.Core.PL;
 using BUtil.Core.FileSystem;
 using BUtil.Ghost.Localization;
+using System.Linq;
 
 [assembly: CLSCompliant(true)]
 namespace BUtil.Ghost
@@ -157,7 +158,7 @@ namespace BUtil.Ghost
            	}
            		//TODO:
             // if there's no scheduling
-            if (!_options.BackupTasks["default"].EnableScheduling)
+            if (!_options.BackupTasks["default"].ScheduledDays.Any())
             {
                 // we're exiting to free system resources
                 showErrorAndCloseApplicationIn10Seconds(Resources.NoOneTaskUsesSchedulerNyoudOpenConfiguratorOnWhenTabNNapplicationWillNowClose);

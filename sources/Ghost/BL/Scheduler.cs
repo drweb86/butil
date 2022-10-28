@@ -2,6 +2,7 @@
 using System.Timers;
 using BUtil.Core.Options;
 using System.Diagnostics;
+using System.Linq;
 
 namespace BUtil.Ghost.BL
 {
@@ -93,14 +94,14 @@ namespace BUtil.Ghost.BL
 	    /// <exception cref="ArgumentNullException">ActionProc not setted</exception>
 	    public void Resume()
 	    {
-            if (!_task.EnableScheduling) return;
+            if (!_task.ScheduledDays.Any()) return;
             if (!_actionTimer.Enabled) return;
 
 	        double difference = -1;
-	        DateTime now = DateTime.Now;
-            _zeroHour = new DateTime(now.Year, now.Month, now.Day, _task.Hours, _task.Minutes, 0);
-
-            if (_task.IsThisDayOfWeekScheduled(_zeroHour.DayOfWeek))
+			var now = DateTime.Now;
+			_zeroHour = now + _task.SchedulerTime;
+            
+            if (_task.ScheduledDays.Contains(_zeroHour.DayOfWeek))
             {
                 difference = _zeroHour.Subtract(now).TotalMilliseconds;
             }
@@ -117,7 +118,7 @@ namespace BUtil.Ghost.BL
 				{
                     _zeroHour = _zeroHour.AddDays(1);
 				}
-                while (!_task.IsThisDayOfWeekScheduled(_zeroHour.DayOfWeek));
+                while (!_task.ScheduledDays.Contains(_zeroHour.DayOfWeek));
 
                 difference = _zeroHour.Subtract(now).TotalMilliseconds;
 			}

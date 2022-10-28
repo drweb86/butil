@@ -11,6 +11,7 @@ using BUtil.Core.ButilImage;
 using BUtil.Core;
 using System.Diagnostics;
 using BUtil.Configurator.Localization;
+using System.Linq;
 
 namespace BUtil.Configurator
 {
@@ -21,12 +22,12 @@ namespace BUtil.Configurator
 	public class CompressionItemsKeeper
 	{
 		readonly ListView _listView;
-		readonly Collection<CompressionItem> _items;
+		readonly List<CompressionItem> _items;
 
 		/// <summary>
 		/// Warning: this class should be inited with locals before loading!!!
 		/// </summary>
-		public CompressionItemsKeeper(ListView listView, Collection<CompressionItem> items)
+		public CompressionItemsKeeper(ListView listView, List<CompressionItem> items)
 		{
 			if (listView == null)
 				throw new ArgumentNullException("listView");

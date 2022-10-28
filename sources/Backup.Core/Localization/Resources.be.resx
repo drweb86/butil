@@ -112,7 +112,7 @@
   <data name="LocalizationOptionsAreNotSetted" xml:space="preserve">
     <value>опцыi лакалiзацыi не пазначаны</value>
   </data>
-  <data name="_7ZMessage" xml:space="preserve">
+  <data name="SevenZMessage" xml:space="preserve">
     <value>7z вывад:</value>
   </data>
   <data name="Normal" xml:space="preserve">
@@ -175,9 +175,6 @@
   <data name="UserStoppedTheProcess" xml:space="preserve">
     <value>Пользавацель спынiу працэс</value>
   </data>
-  <data name="Storage0RequiresOptionEnableEncryptionToBeEnabledButInYourCaseItWasDisabledCopyingToStorageSkipped" xml:space="preserve">
-    <value>Storage '{0}' requires option 'enable encryption' to be enabled. But in your case it was disabled. Copying to storage skipped.</value>
-  </data>
   <data name="ErrorDiscoveredWhenOpeningStorage01" xml:space="preserve">
     <value>Error discovered when opening storage '{0}': {1}</value>
   </data>
@@ -186,9 +183,6 @@
   </data>
   <data name="FileWasCopyiedToStorageSuccessfully" xml:space="preserve">
     <value>File was copyied to storage successfully</value>
-  </data>
-  <data name="DuringOverwritingFile0WithZerosAnErrorOccured1" xml:space="preserve">
-    <value>During overwriting file '{0}' with zeros an error occured: {1}</value>
   </data>
   <data name="DuringDeletingOfAFile0AnErrorOccured1" xml:space="preserve">
     <value>During deleting of a file '{0}' an error occured: {1}</value>
@@ -261,9 +255,6 @@
   </data>
   <data name="CannotRun7ZgExeBecause0" xml:space="preserve">
     <value>Не атрымлiваецца запусцiць 7zg.exe таму, што {0}</value>
-  </data>
-  <data name="SecurityWarningNNyourPasswordWasSavedInsecurelyAsPlainTextInFile0Because1NNtoStorePasswordsSecurelyPleaseNCheckThatYouUseNtfsFileSystemAtSystemDriveNYourWindowsVersionSupportsEncryptedFileSystemEfs" xml:space="preserve">
-    <value>Папярэджанне аб небяспецы\n\nВаш пароль быу захаваны без зашчыты у файле "{0}" таму, што '{1}'\n\nКаб вашы паролi захоувалшся надзейна, калш ласка:\n- праверце, што на сшстэмным падзеле выкарыстоуваецца файлавая систэма NTFS,\n- ваша версия Windows падтрымлшвае шыфрованую файлавую сшстэму EFS.</value>
   </data>
   <data name="InProgress" xml:space="preserve">
     <value>In Progress...</value>

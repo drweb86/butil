@@ -112,7 +112,7 @@
   <data name="LocalizationOptionsAreNotSetted" xml:space="preserve">
     <value>localization options are not setted</value>
   </data>
-  <data name="_7ZMessage" xml:space="preserve">
+  <data name="SevenZMessage" xml:space="preserve">
     <value>7z message:</value>
   </data>
   <data name="Normal" xml:space="preserve">
@@ -175,9 +175,6 @@
   <data name="UserStoppedTheProcess" xml:space="preserve">
     <value>User stopped the process</value>
   </data>
-  <data name="Storage0RequiresOptionEnableEncryptionToBeEnabledButInYourCaseItWasDisabledCopyingToStorageSkipped" xml:space="preserve">
-    <value>Storage '{0}' requires option 'enable encryption' to be enabled. But in your case it was disabled. Copying to storage skipped.</value>
-  </data>
   <data name="ErrorDiscoveredWhenOpeningStorage01" xml:space="preserve">
     <value>Error discovered when opening storage '{0}': {1}</value>
   </data>
@@ -186,9 +183,6 @@
   </data>
   <data name="FileWasCopyiedToStorageSuccessfully" xml:space="preserve">
     <value>File was copyied to storage successfully</value>
-  </data>
-  <data name="DuringOverwritingFile0WithZerosAnErrorOccured1" xml:space="preserve">
-    <value>During overwriting file '{0}' with zeros an error occured: {1}</value>
   </data>
   <data name="DuringDeletingOfAFile0AnErrorOccured1" xml:space="preserve">
     <value>During deleting of a file '{0}' an error occured: {1}</value>
@@ -270,8 +264,5 @@
   </data>
   <data name="FinishedWithErrors" xml:space="preserve">
     <value>Finished With Errors</value>
-  </data>
-  <data name="SecurityWarningNNyourPasswordWasSavedInsecurelyAsPlainTextInFile0Because1NNtoStorePasswordsSecurelyPleaseNCheckThatYouUseNtfsFileSystemAtSystemDriveNYourWindowsVersionSupportsEncryptedFileSystemEfs" xml:space="preserve">
-    <value>Security Warning\n\nYour password was saved insecurely as plain text in file '{0}' because '{1}'\n\nTo store passwords securely please:\n- check that you use NTFS file system at system drive,\n- your Windows version supports encrypted file system EFS.</value>
   </data>
 </root>

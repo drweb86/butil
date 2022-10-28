@@ -11,3 +11,4 @@ using System.Runtime.Versioning;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
+[assembly: System.Runtime.Versioning.SupportedOSPlatform("windows7.0")]

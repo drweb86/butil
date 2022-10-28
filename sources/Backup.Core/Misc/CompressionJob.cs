@@ -24,7 +24,6 @@ namespace BUtil.Core.Misc
 		
 		readonly ArchiveTask _packingParameter;
 		string _compressionOutput = null;
-		readonly bool _enableEncryption;
 		readonly LogBase _log;
 		EventHandler<JobThreadEventArgs> _finished;
 
@@ -49,10 +48,9 @@ namespace BUtil.Core.Misc
 		
 		#region Constructors
 		
-		public CompressionJob(ArchiveTask parameter, bool enableEncryption, LogBase log)
+		public CompressionJob(ArchiveTask parameter, LogBase log)
 		{
 			_packingParameter = parameter;
-			_enableEncryption = enableEncryption;
 			_log = log;
 		}
 		

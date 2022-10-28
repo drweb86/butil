@@ -14,6 +14,7 @@ using BUtil.Core.Options;
 using BUtil.Core.PL;
 using BUtil.RestorationMaster;
 using BUtil.Configurator.LogsManagement;
+using System.Linq;
 
 namespace BUtil.Configurator.Configurator
 {
@@ -215,7 +216,7 @@ namespace BUtil.Configurator.Configurator
             bool taskNeedScheduling = false;
             foreach (var pair in _profileOptions.BackupTasks)
             {
-                if (pair.Value.EnableScheduling)
+                if (pair.Value.ScheduledDays.Any())
                 {
                     taskNeedScheduling = true;
                 }

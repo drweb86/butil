@@ -65,16 +65,7 @@ namespace BUtil.Core.Misc
                 _logEntry += " -pXXXXXXXX" + " -mhe";
 			}
 						
-			public ArchiveTask(ProcessPriorityClass priority, string resultArchive, CompressionItem item)
-			{
-				if (item == null)
-					throw new ArgumentNullException("item");
-
-				_priority = priority;
-				_archiveName = resultArchive;
-				_compressionItem = item;
-				сreateArgumentsForCompression();
-			}
+			
 
 			public ArchiveTask(ProcessPriorityClass priority, string resultArchive, CompressionItem item, string password)
 			{
@@ -84,7 +75,8 @@ namespace BUtil.Core.Misc
 				_priority = priority;
 				_archiveName = resultArchive;
 				_compressionItem = item;
-				сreateArgumentsForCompressionWithPassword(password);
+				if (!string.IsNullOrWhiteSpace(password))
+					сreateArgumentsForCompressionWithPassword(password);
 			}
 
             public override string ToString()

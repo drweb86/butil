@@ -119,7 +119,7 @@ namespace BUtil.Configurator.Configurator.Forms
             {
             	foreach (KeyValuePair<string, BackupTask> pair in profileOptions.BackupTasks)
             	{
-	            	pair.Value.UnscheduleAllDays();
+	            	// pair.Value.UnscheduleAllDays();
             	}
             }
             _views[ConfiguratorViewsEnum.Tasks].SetOptionsToUi( profileOptions);

@@ -13,6 +13,7 @@ using BUtil.Core.Logs;
 using BUtil.BackupUiMaster.Controls;
 using BUtil.Core.Storages;
 using BUtil.Configurator.Localization;
+using System.Linq;
 
 namespace BUtil.Configurator.BackupUiMaster.Forms
 {
@@ -225,7 +226,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 		void StartButtonClick(object sender, EventArgs e)
 		{
 			// here some logival verification
-			_task.FilesFoldersList.Clear();
+			_task.What.Clear();
 			_task.Storages.Clear();
 			_task.BeforeBackupTasksChain.Clear();
 			_task.AfterBackupTasksChain.Clear();
@@ -234,7 +235,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 			{
 				if (item.Tag is CompressionItem)
 				{
-					_task.FilesFoldersList.Add((CompressionItem) item.Tag);
+					_task.What.Add((CompressionItem) item.Tag);
 				}
 				else if (item.Tag is StorageBase)
 				{
@@ -258,7 +259,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 				}
 			}
 			
-			if (_task.FilesFoldersList.Count < 1)
+			if (!_task.What.Any())
 			{
 				Messages.ShowInformationBox(Resources.PleaseCheckItemsToCompress);
 				return;

@@ -112,7 +112,7 @@
   <data name="LocalizationOptionsAreNotSetted" xml:space="preserve">
     <value>языковые опции не установлены</value>
   </data>
-  <data name="_7ZMessage" xml:space="preserve">
+  <data name="SevenZMessage" xml:space="preserve">
     <value>Сообщение архиватора 7-zip:</value>
   </data>
   <data name="Normal" xml:space="preserve">
@@ -175,9 +175,6 @@
   <data name="UserStoppedTheProcess" xml:space="preserve">
     <value>Пользователь остановил процесс</value>
   </data>
-  <data name="Storage0RequiresOptionEnableEncryptionToBeEnabledButInYourCaseItWasDisabledCopyingToStorageSkipped" xml:space="preserve">
-    <value>Для копирования в хранилище '{0}' требуется, чтобы образ был защищен паролем, однако образ не защищен, поэтому копирование в хранилище пропущено.</value>
-  </data>
   <data name="ErrorDiscoveredWhenOpeningStorage01" xml:space="preserve">
     <value>При открытии хранилища '{0}' произошли ошибки : {1}</value>
   </data>
@@ -186,9 +183,6 @@
   </data>
   <data name="FileWasCopyiedToStorageSuccessfully" xml:space="preserve">
     <value>Файл был скопирован в хранилище успешно</value>
-  </data>
-  <data name="DuringOverwritingFile0WithZerosAnErrorOccured1" xml:space="preserve">
-    <value>Во время перезаписи файла '{0}' нулями, произошла ошибка: {1}</value>
   </data>
   <data name="DuringDeletingOfAFile0AnErrorOccured1" xml:space="preserve">
     <value>Во время удаления файла '{0}' произошла ошибка: {1}</value>
@@ -261,9 +255,6 @@
   </data>
   <data name="CannotRun7ZgExeBecause0" xml:space="preserve">
     <value>Не получается запустить 7zg.exe, поскольку {0}</value>
-  </data>
-  <data name="SecurityWarningNNyourPasswordWasSavedInsecurelyAsPlainTextInFile0Because1NNtoStorePasswordsSecurelyPleaseNCheckThatYouUseNtfsFileSystemAtSystemDriveNYourWindowsVersionSupportsEncryptedFileSystemEfs" xml:space="preserve">
-    <value>Уведомление Защиты\n\nВаш пароль был сохранен без защиты в виде текста в файле "{0}", поскольку "{1}"\n\nЧтобы в дальнейшем пароли хранились сравнительно более защищенно, можете:\n- проверить, что на системном разделе используется файловая система NTFS,\n- что в вашей версии Windows поддерживается шифрованная файловая система EFS.</value>
   </data>
   <data name="InProgress" xml:space="preserve">
     <value>Обработка...</value>

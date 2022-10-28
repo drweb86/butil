@@ -610,9 +610,7 @@
   <data name="CannotRun7ZgExeBecause0" xml:space="preserve">
     <value>Не атрымлiваецца запусцiць 7zg.exe таму, што {0}</value>
   </data>
-  <data name="SecurityWarningNNyourPasswordWasSavedInsecurelyAsPlainTextInFile0Because1NNtoStorePasswordsSecurelyPleaseNCheckThatYouUseNtfsFileSystemAtSystemDriveNYourWindowsVersionSupportsEncryptedFileSystemEfs" xml:space="preserve">
-    <value>Папярэджанне аб небяспецы\n\nВаш пароль быу захаваны без зашчыты у файле "{0}" таму, што '{1}'\n\nКаб вашы паролi захоувалшся надзейна, калш ласка:\n- праверце, што на сшстэмным падзеле выкарыстоуваецца файлавая систэма NTFS,\n- ваша версия Windows падтрымлшвае шыфрованую файлавую сшстэму EFS.</value>
-  </data>
+  
   <data name="DontCareAboutPasswordLength" xml:space="preserve">
     <value>не патрабаваць длiнны пароль</value>
   </data>
