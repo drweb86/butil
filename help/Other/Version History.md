@@ -7,7 +7,9 @@
 - 7-zip is searched in 
 Program Files, Program Files (x86), PATH environment variable directories
 - MD5 tool DEV command is dropped
-- phased out BU Localization because it is outdated.
+- phased out BU Localization because it is outdated
+- dropped EFS encryption for configuration files (it is phased out by MS and not cross-platform)
+- dropped 'No internet' option
 
 # 5.1 ( 22 October 2022 )
 

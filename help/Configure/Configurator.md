@@ -38,8 +38,6 @@ Next storage types are supported: hdd, flash and network storages. You can add t
 - Press on button (2) and context menu with list of storages will be opened (3, 4, 5);
 - Open context menu (10) on empty space of list (1) and storages (11, 12, 13) will be available.
 
-**NOTE:** Storages Ftp(4, 12) and Network(5, 13) are available only if option 'Misc\Have No Network And Internet' is turned off.
-
 ## Modifying The Storage
 To modify the storage you should select it in the list (1) and click on button (6) or open context menu (8) or double click on storage icon
 

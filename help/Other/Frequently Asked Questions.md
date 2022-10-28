@@ -104,6 +104,3 @@ But if you want to do this using this tool, you may do the following workaround:
 - Schedule the backup at this time;
 
 Also you may look for Microsoft Sync Toy and Data Mills
-
-# What's About Support of Internet Explorer Settings Backup?
-Please download the special tools designed to do this and add running of them as a special task before backup in some folder, add this folder to backup items.
