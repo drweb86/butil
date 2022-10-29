@@ -1,5 +1,7 @@
-﻿using System;
+﻿using BUtil.Core.Options;
+using System;
 using System.Collections.Generic;
+using System.Text.Json;
 
 namespace BUtil.Core.Storages
 {
@@ -30,58 +32,54 @@ namespace BUtil.Core.Storages
 
         public static FtpStorageSettings CreateFtpStorageSettings(StorageSettings storageSettings)
         {
-            var ftpSettings = SemicolumnSeparatedStringSerializer.Deserialize<FtpStorageSettings>(storageSettings.ConnectionString);
+            var ftpSettings = JsonSerializer.Deserialize<FtpStorageSettings>(storageSettings.Options);
             ftpSettings.Name = storageSettings.Name;
             return ftpSettings;
         }
 
         public static SambaStorageSettings CreateSambaStorageSettings(StorageSettings storageSettings)
         {
-            var sambaSettings = SemicolumnSeparatedStringSerializer.Deserialize<SambaStorageSettings>(storageSettings.ConnectionString);
+            var sambaSettings = JsonSerializer.Deserialize<SambaStorageSettings>(storageSettings.Options);
             sambaSettings.Name = storageSettings.Name;
             return sambaSettings;
         }
 
         public static HddStorageSettings CreateHddStorageSettings(StorageSettings storageSettings)
         {
-            var hddSettings = SemicolumnSeparatedStringSerializer.Deserialize<HddStorageSettings>(storageSettings.ConnectionString);
+            var hddSettings = JsonSerializer.Deserialize<HddStorageSettings>(storageSettings.Options);
             hddSettings.Name = storageSettings.Name;
             return hddSettings;
         }
 
         public static StorageSettings CreateStorageSettings(HddStorageSettings settings)
         {
-            var hddStorageSettings = (HddStorageSettings)settings;
             return new StorageSettings
             {
-                Name = hddStorageSettings.Name,
+                Name = settings.Name,
                 ProviderName = "Hdd",
-                ConnectionString = SemicolumnSeparatedStringSerializer.Serialize(settings, new List<string>() { "Name" })
+                Options = JsonSerializer.Serialize(settings)
             };
         }
 
 
         public static StorageSettings CreateStorageSettings(FtpStorageSettings settings)
         {
-
-            var ftpStorageSettings = (FtpStorageSettings)settings;
             return new StorageSettings
             {
-                Name = ftpStorageSettings.Name,
+                Name = settings.Name,
                 ProviderName = "Ftp",
-                ConnectionString = SemicolumnSeparatedStringSerializer.Serialize(settings, new List<string>() { "Name" })
+                Options = JsonSerializer.Serialize(settings)
             };
         }
 
 
         public static StorageSettings CreateStorageSettings(SambaStorageSettings settings)
         {
-            var sambaStorageSettings = (SambaStorageSettings)settings;
             return new StorageSettings
             {
-                Name = sambaStorageSettings.Name,
+                Name = settings.Name,
                 ProviderName = "Samba",
-                ConnectionString = SemicolumnSeparatedStringSerializer.Serialize(settings, new List<string>() { "Name" })
+                Options = JsonSerializer.Serialize(settings)
             };
 
         }
