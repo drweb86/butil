@@ -1,3 +1,4 @@
+using BUtil.Configurator.Configurator;
 using BUtil.Configurator.Localization;
 using BUtil.Core.Options;
 
@@ -32,6 +33,15 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
         public override void GetOptionsFromUi()
         {
             _task.Name = _titleTextBox.Text; 
+        }
+
+        private void OnNameChange(object sender, System.EventArgs e)
+        {
+            var trimmedText = TaskNameStringHelper.TrimIllegalChars(_titleTextBox.Text);
+            if (trimmedText != _titleTextBox.Text)
+            {
+                _titleTextBox.Text = trimmedText;
+            }
         }
     }
 }

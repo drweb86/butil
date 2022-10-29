@@ -47,6 +47,7 @@
             this._titleTextBox.Name = "_titleTextBox";
             this._titleTextBox.Size = new System.Drawing.Size(228, 20);
             this._titleTextBox.TabIndex = 1;
+            this._titleTextBox.TextChanged += new System.EventHandler(this.OnNameChange);
             // 
             // TaskNameUserControl
             // 

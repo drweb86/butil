@@ -109,6 +109,7 @@
             this._taskTitleTextBox.Name = "_taskTitleTextBox";
             this._taskTitleTextBox.Size = new System.Drawing.Size(185, 20);
             this._taskTitleTextBox.TabIndex = 12;
+            this._taskTitleTextBox.TextChanged += new System.EventHandler(this.OnNameChange);
             // 
             // optionsHeader
             // 

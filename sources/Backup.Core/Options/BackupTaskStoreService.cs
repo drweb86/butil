@@ -79,6 +79,9 @@ namespace BUtil.Core.Options
 
         private string GetFileName(string name)
         {
+            if (name.Contains("..") || name.Contains("/") || name.Contains("\\"))
+                throw new ArgumentException(nameof(name));
+
             return Path.Combine(_folder, $"{name}{_extension}");
         }
     }

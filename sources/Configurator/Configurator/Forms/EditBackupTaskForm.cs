@@ -134,5 +134,14 @@ namespace BUtil.Configurator.Configurator.Forms
         }
 
         #endregion
+
+        private void OnNameChange(object sender, EventArgs e)
+        {
+            var trimmedText = TaskNameStringHelper.TrimIllegalChars(_taskTitleTextBox.Text);
+            if (trimmedText != _taskTitleTextBox.Text)
+            {
+                _taskTitleTextBox.Text = trimmedText;
+            }
+        }
     }
 }

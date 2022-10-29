@@ -29,7 +29,7 @@
     <Compile Update="Configurator\Forms\BackupEventTaskInfoEditingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Configurator\Forms\BackupTaskEditForm.cs">
+    <Compile Update="Configurator\Forms\EditBackupTaskForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Configurator\Forms\FtpStorageForm.cs">
