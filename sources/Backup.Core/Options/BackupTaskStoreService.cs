@@ -61,6 +61,12 @@ namespace BUtil.Core.Options
             File.WriteAllText(fileName, json);
         }
 
+        public void Delete(string name)
+        {
+            var fileName = GetFileName(name);
+            File.Delete(fileName);
+        }
+
         public IEnumerable<string> GetNames()
         {
             return Directory

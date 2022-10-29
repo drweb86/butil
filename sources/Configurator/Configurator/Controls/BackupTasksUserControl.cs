@@ -133,6 +133,8 @@ namespace BUtil.Configurator.Configurator.Controls
                 if (MessageBox.Show(string.Format(Resources.WouldYouLileToRemoveTheBackupTask0, selectedTask.Text), BUtil.Core.Localization.Resources.QuestionButil, MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     _tasksListView.Items.Remove(selectedTask);
+                    var backupTasksService = new BackupTaskStoreService();
+                    backupTasksService.Delete(selectedTask.Text);
                 }
             }
             
