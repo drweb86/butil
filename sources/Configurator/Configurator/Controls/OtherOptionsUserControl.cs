@@ -34,9 +34,9 @@ namespace BUtil.Configurator.Controls
 			amountOfStoragesToProcessSynchronouslyNumericUpDown.Maximum = Constants.AmountOfStoragesToProcessSynchronouslyMaximum;
 			amountOfStoragesToProcessSynchronouslyNumericUpDown.Value = Constants.AmountOfStoragesToProcessSynchronouslyDefault;
 			
-			amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Minimum = Constants.AmountOf7ZipProcessesToProcessSynchronouslyMinimum;
-			amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Maximum = Constants.AmountOf7ZipProcessesToProcessSynchronouslyMaximum;
-			amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Value = Constants.AmountOf7ZipProcessesToProcessSynchronouslyDefault;
+			amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Minimum = 1;
+			amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Maximum = Environment.ProcessorCount;
+			amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Value = Environment.ProcessorCount;
 		}
 		
 		#region Overrides

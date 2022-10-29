@@ -254,7 +254,7 @@ namespace BUtil.Core.Options
 					XmlDocument document = new XmlDocument();
 					document.Load(Files.ProfileFile);
 					
-					options.AmountOf7ZipProcessesToProcessSynchronously = readNode(document, "/Settings/Core/Performance/AmountOf7ZipProcessesToProcessSynchronously", Constants.AmountOf7ZipProcessesToProcessSynchronouslyMinimum, Constants.AmountOf7ZipProcessesToProcessSynchronouslyMaximum, Constants.AmountOf7ZipProcessesToProcessSynchronouslyDefault);
+					options.AmountOf7ZipProcessesToProcessSynchronously = readNode(document, "/Settings/Core/Performance/AmountOf7ZipProcessesToProcessSynchronously", 1, Environment.ProcessorCount, Environment.ProcessorCount);
 					options.AmountOfStoragesToProcessSynchronously = readNode(document, "/Settings/Core/Performance/AmountOfStoragesToProcessSynchronously", Constants.AmountOfStoragesToProcessSynchronouslyMinimum, Constants.AmountOfStoragesToProcessSynchronouslyMaximum, Constants.AmountOfStoragesToProcessSynchronouslyDefault);
 					string priority = readNode(document, "/Settings/Core/Performance/ProcessingPriority", ThreadPriority.BelowNormal.ToString());
 					options.Priority =  (ThreadPriority)ThreadPriorityLevel.Parse(typeof(ThreadPriority), priority);

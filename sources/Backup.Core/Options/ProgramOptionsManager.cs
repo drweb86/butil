@@ -119,7 +119,7 @@ namespace BUtil.Core.Options
         		options.PuttingOffBackupCpuLoading = Constants.DefaultCpuLoading;
 				options.LoggingLevel = LogLevel.Normal;
 				options.AmountOfStoragesToProcessSynchronously = Constants.AmountOfStoragesToProcessSynchronouslyDefault;
-				options.AmountOf7ZipProcessesToProcessSynchronously = Constants.AmountOf7ZipProcessesToProcessSynchronouslyDefault;
+				options.AmountOf7ZipProcessesToProcessSynchronously = Environment.ProcessorCount;
 				
 				return options;
 			}

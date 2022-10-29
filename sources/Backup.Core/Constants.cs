@@ -23,9 +23,6 @@ namespace BUtil.Core
         public const int AmountOfStoragesToProcessSynchronouslyMinimum = 1;
         public const int AmountOfStoragesToProcessSynchronouslyDefault = 5;
         public const int AmountOfStoragesToProcessSynchronouslyMaximum = 10;
-        public const int AmountOf7ZipProcessesToProcessSynchronouslyMinimum = 1;
-        public const int AmountOf7ZipProcessesToProcessSynchronouslyDefault = 2;
-        public const int AmountOf7ZipProcessesToProcessSynchronouslyMaximum = 10;
 	}
 	
 	internal enum SevenZipReturnCodes
