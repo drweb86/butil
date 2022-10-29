@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using BUtil.Core.Options;
 using BUtil.Configurator.Configurator.Forms;
 using BUtil.Configurator.Localization;
+using BUtil.Configurator.AddBackupTaskWizard.View;
 
 namespace BUtil.Configurator.Configurator.Controls
 {
@@ -57,14 +58,8 @@ namespace BUtil.Configurator.Configurator.Controls
 
         public override void SetOptionsToUi(object settings)
         {
-            _profileOptions = (ProgramOptions)settings;
-            var backupTaskStoreService = new BackupTaskStoreService();
-            var taskNames = backupTaskStoreService.GetNames();
-            foreach (var taskName in taskNames)
-            {
-                AddTask(taskName);
-            }
-
+            _programOptions = (ProgramOptions)settings;
+            ReloadTasks();
             RefreshTaskControls(this, null);
         }
 
@@ -76,41 +71,50 @@ namespace BUtil.Configurator.Configurator.Controls
 
         #region Private Methods
 
-        void AddTask(string taskName)
+        private void ReloadTasks()
         {
-            var item = new ListViewItem(taskName, 0);
-            _tasksListView.Items.Add(item);
+            var backupTaskStoreService = new BackupTaskStoreService();
+            var taskNames = backupTaskStoreService.GetNames();
+            _tasksListView.BeginUpdate();
+            _tasksListView.Items.Clear();
+            foreach (var taskName in taskNames)
+            {
+                _tasksListView.Items.Add(new ListViewItem(taskName, 0));
+            }
+            _tasksListView.EndUpdate();
         }
 
         void AddTaskRequest(object sender, EventArgs e)
         {
-            var newTask = AddBackupTaskWizard.AddBackupTaskWizard.OpenAddBackupTaskWizard(_profileOptions, false);
-            var backupTaskStoreService = new BackupTaskStoreService();
-            backupTaskStoreService.Save(newTask);
-
-            if (newTask != null)
+            using (var form = new CreateBackupTaskWizardForm(_programOptions))
             {
-                AddTask(newTask.Name);
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    var backupTaskStoreService = new BackupTaskStoreService();
+                    backupTaskStoreService.Save(form.BackupTask);
+
+                    ReloadTasks();
+                    RefreshTaskControls(this, e);
+                }
             }
-
-            RefreshTaskControls(this, e);
         }
-
-        void ChangeTaskRequest(object sender, EventArgs e)
+        private void OnEditBackupTask(object sender, EventArgs e)
         {
             if (_tasksListView.SelectedItems.Count == 0)
             {
                 return;
             }
 
-            ListViewItem item = _tasksListView.SelectedItems[0];
+            var taskName = _tasksListView.SelectedItems[0].Text;
             var backupTaskStoreService = new BackupTaskStoreService();
-            var task = backupTaskStoreService.Load(item.Text);
-            using (var form = new BackupTaskEditForm(_profileOptions, task))
+            var task = backupTaskStoreService.Load(taskName);
+            using (var form = new EditBackupTaskForm(_programOptions, task))
             {
                 if (form.ShowDialog() == DialogResult.OK)
                 {
-                    item.Text = task.Name;
+                    backupTaskStoreService.Delete(taskName);
+                    backupTaskStoreService.Save(task);
+                    ReloadTasks();
 
                     if (form.ExecuteTask)
                     {
@@ -132,12 +136,11 @@ namespace BUtil.Configurator.Configurator.Controls
             {
                 if (MessageBox.Show(string.Format(Resources.WouldYouLileToRemoveTheBackupTask0, selectedTask.Text), BUtil.Core.Localization.Resources.QuestionButil, MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
-                    _tasksListView.Items.Remove(selectedTask);
                     var backupTasksService = new BackupTaskStoreService();
                     backupTasksService.Delete(selectedTask.Text);
                 }
             }
-            
+            ReloadTasks();
             RefreshTaskControls(this, e);
         }
 
@@ -180,7 +183,7 @@ namespace BUtil.Configurator.Configurator.Controls
 
         #region Fields
 
-        ProgramOptions _profileOptions;
+        ProgramOptions _programOptions;
         readonly ConfiguratorController _controller;
 
         #endregion

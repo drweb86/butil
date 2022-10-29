@@ -188,4 +188,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AddBackupTaskWizard\Controller\" />
+  </ItemGroup>
 </Project>

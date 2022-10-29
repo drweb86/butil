@@ -1,6 +1,6 @@
 ﻿namespace BUtil.Configurator.Configurator.Forms
 {
-    partial class BackupTaskEditForm
+    partial class EditBackupTaskForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BackupTaskEditForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditBackupTaskForm));
             this.nestingControlsPanel = new System.Windows.Forms.Panel();
             this.okButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();

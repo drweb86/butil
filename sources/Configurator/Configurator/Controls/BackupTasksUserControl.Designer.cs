@@ -64,7 +64,7 @@
             this._tasksListView.UseCompatibleStateImageBehavior = false;
             this._tasksListView.View = System.Windows.Forms.View.Details;
             this._tasksListView.SelectedIndexChanged += new System.EventHandler(this.RefreshTaskControls);
-            this._tasksListView.DoubleClick += new System.EventHandler(this.ChangeTaskRequest);
+            this._tasksListView.DoubleClick += new System.EventHandler(this.OnEditBackupTask);
             this._tasksListView.Resize += new System.EventHandler(this.OnTasksListViewResize);
             // 
             // titleColumnHeader
@@ -105,7 +105,7 @@
             this._editToolStripMenuItem.Name = "_editToolStripMenuItem";
             this._editToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this._editToolStripMenuItem.Text = "Edit...";
-            this._editToolStripMenuItem.Click += new System.EventHandler(this.ChangeTaskRequest);
+            this._editToolStripMenuItem.Click += new System.EventHandler(this.OnEditBackupTask);
             // 
             // toolStripSeparator1
             // 
@@ -168,7 +168,7 @@
             this._editButton.Size = new System.Drawing.Size(61, 58);
             this._editButton.TabIndex = 3;
             this._editButton.UseVisualStyleBackColor = true;
-            this._editButton.Click += new System.EventHandler(this.ChangeTaskRequest);
+            this._editButton.Click += new System.EventHandler(this.OnEditBackupTask);
             // 
             // BackupTasksUserControl
             // 

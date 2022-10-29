@@ -64,7 +64,8 @@ namespace BUtil.Core.Options
         public void Delete(string name)
         {
             var fileName = GetFileName(name);
-            File.Delete(fileName);
+            if (File.Exists(fileName))
+                File.Delete(fileName);
         }
 
         public IEnumerable<string> GetNames()
@@ -72,6 +73,7 @@ namespace BUtil.Core.Options
             return Directory
                 .GetFiles(_folder, $"*{_extension}")
                 .Select(Path.GetFileNameWithoutExtension)
+                .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)
                 .ToList();
         }
 

@@ -1,36 +1,28 @@
 using System;
 using System.Windows.Forms;
-using BUtil.Configurator.AddBackupTaskWizard.Controller;
 using BUtil.Configurator.Localization;
+using BUtil.Core.Options;
 
 namespace BUtil.Configurator.AddBackupTaskWizard.View
 {
-    public partial class AddBackupTaskWizardForm : Form
+    partial class CreateBackupTaskWizardForm : Form
     {
-        #region Fields
+        private readonly AddBackupTaskWizardView _addBackupTaskWizardView;
 
-        readonly AddBackupTaskWizardController _controller;
-
-        #endregion
-
-        #region Constructors
-
-        internal AddBackupTaskWizardForm(AddBackupTaskWizardController controller)
+        public CreateBackupTaskWizardForm(ProgramOptions options)
         {
-            _controller = controller;
+            _addBackupTaskWizardView = new AddBackupTaskWizardView(options);
 
             InitializeComponent();
 
-            _controller.AddBackupTaskWizardView.Configure();
-            _controller.AddBackupTaskWizardView.ApplyLocalization();
+            _addBackupTaskWizardView.Configure();
+            _addBackupTaskWizardView.ApplyLocalization();
             ApplyLocals();
 
             RefreshActivePage();
         }
 
-        #endregion
-
-        #region Private Methods
+        public BackupTask BackupTask { get; private set; }
 
         private void ApplyLocals()
         {
@@ -42,24 +34,25 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
 
         private void NextPageRequest(object sender, EventArgs e)
         {
-            if (_controller.AddBackupTaskWizardView.CanGoNextPage)
+            if (_addBackupTaskWizardView.CanGoNextPage)
             {
-                _controller.AddBackupTaskWizardView.GoNext();
+                _addBackupTaskWizardView.GoNext();
                 RefreshActivePage();
             }
             else
             {
-                _controller.AddBackupTaskWizardView.GetOptions();
+                _addBackupTaskWizardView.GetOptions();
                 DialogResult = DialogResult.OK;
+                BackupTask = _addBackupTaskWizardView.Task;
                 Close();
             }
         }
 
         private void PreviousPageRequest(object sender, EventArgs e)
         {
-            if (_controller.AddBackupTaskWizardView.CanGoPreviousPage)
+            if (_addBackupTaskWizardView.CanGoPreviousPage)
             {
-                _controller.AddBackupTaskWizardView.GoPrevious();
+                _addBackupTaskWizardView.GoPrevious();
             }
 
             RefreshActivePage();
@@ -67,17 +60,17 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
 
         private void RefreshActivePage()
         {
-            _nextButton.Text = _controller.AddBackupTaskWizardView.CanGoNextPage ? 
+            _nextButton.Text = _addBackupTaskWizardView.CanGoNextPage ? 
                 Resources.Next : Resources.Finish;
-            _previousButton.Enabled = _controller.AddBackupTaskWizardView.CanGoPreviousPage;
+            _previousButton.Enabled = _addBackupTaskWizardView.CanGoPreviousPage;
 
-            _titleLabel.Text = _controller.AddBackupTaskWizardView.CurrentPage.Title;
-            _descriptionLabel.Text = _controller.AddBackupTaskWizardView.CurrentPage.Description;
+            _titleLabel.Text = _addBackupTaskWizardView.CurrentPage.Title;
+            _descriptionLabel.Text = _addBackupTaskWizardView.CurrentPage.Description;
             _panel.BackgroundImageLayout = ImageLayout.None;
-            _panel.BackgroundImage = _controller.AddBackupTaskWizardView.CurrentPage.Image;
+            _panel.BackgroundImage = _addBackupTaskWizardView.CurrentPage.Image;
             _containerPanel.Controls.Clear();
             
-            var control = _controller.AddBackupTaskWizardView.CurrentPage.ControlToShow;
+            var control = _addBackupTaskWizardView.CurrentPage.ControlToShow;
 
             if (control != null)
             {
@@ -91,7 +84,5 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
             DialogResult = DialogResult.Cancel;
             Close();
         }
-
-        #endregion
     }
 }

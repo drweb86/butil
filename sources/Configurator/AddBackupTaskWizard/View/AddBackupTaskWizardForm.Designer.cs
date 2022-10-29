@@ -1,6 +1,6 @@
 ﻿namespace BUtil.Configurator.AddBackupTaskWizard.View
 {
-    partial class AddBackupTaskWizardForm
+    partial class CreateBackupTaskWizardForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddBackupTaskWizardForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateBackupTaskWizardForm));
             this._panel = new System.Windows.Forms.Panel();
             this._descriptionLabel = new System.Windows.Forms.Label();
             this._titleLabel = new System.Windows.Forms.Label();

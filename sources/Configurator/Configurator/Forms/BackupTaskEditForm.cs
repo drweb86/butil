@@ -10,7 +10,7 @@ using BUtil.Configurator.Localization;
 
 namespace BUtil.Configurator.Configurator.Forms
 {
-    public partial class BackupTaskEditForm : Form
+    public partial class EditBackupTaskForm : Form
     {
         #region Fields
 
@@ -28,7 +28,7 @@ namespace BUtil.Configurator.Configurator.Forms
 
         #region Constructors
 
-        public BackupTaskEditForm(ProgramOptions profileOptions, BackupTask task)
+        public EditBackupTaskForm(ProgramOptions profileOptions, BackupTask task)
         {
             InitializeComponent();
             
