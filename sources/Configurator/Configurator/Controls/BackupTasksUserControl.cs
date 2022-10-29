@@ -93,6 +93,9 @@ namespace BUtil.Configurator.Configurator.Controls
                     var backupTaskStoreService = new BackupTaskStoreService();
                     backupTaskStoreService.Save(form.BackupTask);
 
+                    var backupTaskSchedulerService = new BackupTaskSchedulerService();
+                    backupTaskSchedulerService.Schedule(form.BackupTask.Name, form.ScheduleInfo);
+
                     ReloadTasks();
                     RefreshTaskControls(this, e);
                 }
@@ -108,12 +111,18 @@ namespace BUtil.Configurator.Configurator.Controls
             var taskName = _tasksListView.SelectedItems[0].Text;
             var backupTaskStoreService = new BackupTaskStoreService();
             var task = backupTaskStoreService.Load(taskName);
-            using (var form = new EditBackupTaskForm(_programOptions, task))
+
+            var backupTaskSchedulerService = new BackupTaskSchedulerService();
+            var scheduleInfo = backupTaskSchedulerService.GetSchedule(taskName);
+            using (var form = new EditBackupTaskForm(_programOptions, task, scheduleInfo))
             {
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     backupTaskStoreService.Delete(taskName);
                     backupTaskStoreService.Save(task);
+
+                    backupTaskSchedulerService.Schedule(task.Name, scheduleInfo);
+
                     ReloadTasks();
 
                     if (form.ExecuteTask)
@@ -138,6 +147,8 @@ namespace BUtil.Configurator.Configurator.Controls
                 {
                     var backupTasksService = new BackupTaskStoreService();
                     backupTasksService.Delete(selectedTask.Text);
+                    var backupTaskSchedulerService = new BackupTaskSchedulerService();
+                    backupTaskSchedulerService.Unschedule(selectedTask.Text);
                 }
             }
             ReloadTasks();

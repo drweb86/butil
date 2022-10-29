@@ -580,9 +580,6 @@
   <data name="DontNeedButilScheduler" xml:space="preserve">
     <value>не патрэбен планироушчык</value>
   </data>
-  <data name="DontCareAboutSchedulerStartup" xml:space="preserve">
-    <value>don't care about scheduler startup</value>
-  </data>
   <data name="HideAboutTab" xml:space="preserve">
     <value>схаваць укладку "Аб праграме"</value>
   </data>

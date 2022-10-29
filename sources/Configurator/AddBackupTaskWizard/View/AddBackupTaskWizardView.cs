@@ -30,6 +30,9 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
 
         public BackupTask Task { get; private set; }
 
+        public ScheduleInfo ScheduleInfo { get; private set; }
+
+
         #endregion
 
         #region Constructors
@@ -50,6 +53,8 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
             _steps.Add(new PageInfo(Resources.OtherOptions, Resources.HereYouCanSpecifyOtherSettings, RegisterControl(BackupTaskViewsEnum.OtherOptions, new TaskOtherOptionsUserControl()), Icons.OtherSettings48x48));
 
             _step = 0;
+
+            ScheduleInfo = new ScheduleInfo();
         }
 
         #endregion
@@ -72,7 +77,7 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
             _controls[BackupTaskViewsEnum.Name].SetOptionsToUi(Task);
             _controls[BackupTaskViewsEnum.Storages].SetOptionsToUi(Task);
             _controls[BackupTaskViewsEnum.SourceItems].SetOptionsToUi(Task);
-            _controls[BackupTaskViewsEnum.Scheduler].SetOptionsToUi(Task);
+            _controls[BackupTaskViewsEnum.Scheduler].SetOptionsToUi(ScheduleInfo);
             _controls[BackupTaskViewsEnum.Encryption].SetOptionsToUi(new object[] { _options, Task });
             _controls[BackupTaskViewsEnum.OtherOptions].SetOptionsToUi(new object[] { Task });
         }

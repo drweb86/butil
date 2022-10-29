@@ -15,17 +15,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Increments", "Increments", 
 		Development\Increments\WAIT.txt = Development\Increments\WAIT.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MD5", "MD5\MD5.csproj", "{124F3E67-56FE-4951-8449-C85CA5815AB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MD5", "MD5\MD5.csproj", "{124F3E67-56FE-4951-8449-C85CA5815AB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BUtil.Core", "Backup.Core\BUtil.Core.csproj", "{884325C6-9686-4D09-BCDE-38FF79279620}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BUtil.Core", "Backup.Core\BUtil.Core.csproj", "{884325C6-9686-4D09-BCDE-38FF79279620}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ghost", "Ghost\Ghost.csproj", "{A35986DD-D32F-4F5E-AB33-F147CF3CBBD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configurator", "Configurator\Configurator.csproj", "{6008A6E3-72F0-4C27-80D4-442F1764EAC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configurator", "Configurator\Configurator.csproj", "{6008A6E3-72F0-4C27-80D4-442F1764EAC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnitTests", "NUnitTests\NUnitTests.csproj", "{C3670EF3-58F0-42AE-9A5D-CE3A44B22130}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitTests", "NUnitTests\NUnitTests.csproj", "{C3670EF3-58F0-42AE-9A5D-CE3A44B22130}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleBackup", "Backup\ConsoleBackup.csproj", "{91E9A433-7160-4773-9B11-B8B30DF4893D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleBackup", "Backup\ConsoleBackup.csproj", "{91E9A433-7160-4773-9B11-B8B30DF4893D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,16 +55,6 @@ Global
 		{884325C6-9686-4D09-BCDE-38FF79279620}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{884325C6-9686-4D09-BCDE-38FF79279620}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{884325C6-9686-4D09-BCDE-38FF79279620}.Release|x86.ActiveCfg = Release|Any CPU
-		{A35986DD-D32F-4F5E-AB33-F147CF3CBBD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A35986DD-D32F-4F5E-AB33-F147CF3CBBD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A35986DD-D32F-4F5E-AB33-F147CF3CBBD0}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{A35986DD-D32F-4F5E-AB33-F147CF3CBBD0}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{A35986DD-D32F-4F5E-AB33-F147CF3CBBD0}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{A35986DD-D32F-4F5E-AB33-F147CF3CBBD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A35986DD-D32F-4F5E-AB33-F147CF3CBBD0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A35986DD-D32F-4F5E-AB33-F147CF3CBBD0}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{A35986DD-D32F-4F5E-AB33-F147CF3CBBD0}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{A35986DD-D32F-4F5E-AB33-F147CF3CBBD0}.Release|x86.ActiveCfg = Release|Any CPU
 		{6008A6E3-72F0-4C27-80D4-442F1764EAC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6008A6E3-72F0-4C27-80D4-442F1764EAC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6008A6E3-72F0-4C27-80D4-442F1764EAC2}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU

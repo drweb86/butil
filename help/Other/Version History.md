@@ -16,6 +16,7 @@ Program Files, Program Files (x86), PATH environment variable directories
 - removed password presence check for those items that are copied to network shares since it is up to user responsibility to take care of it and since private NAS had appeared and became popular
 - removed FTP password check because usually for FTP backup purpose a dedicated user is created.
 - 7-zip process count now takes into account logical cores. Default setting is changed to amount of logical cores.
+- phased out Ghost application (it is replaced with console tool integrated with Windows Scheduler).
 
 # 5.1 ( 22 October 2022 )
 

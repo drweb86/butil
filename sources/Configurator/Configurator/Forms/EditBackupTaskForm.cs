@@ -12,37 +12,25 @@ namespace BUtil.Configurator.Configurator.Forms
 {
     public partial class EditBackupTaskForm : Form
     {
-        #region Fields
-
         readonly Dictionary<BackupTaskViewsEnum, BackUserControl> _views;
         readonly BackupTask _task;
+        readonly ScheduleInfo _scheduleInfo;
         readonly ProgramOptions _profileOptions;
-
-        #endregion
-
-        #region Properties
 
         public bool ExecuteTask { get; private set; }
 
-        #endregion
-
-        #region Constructors
-
-        public EditBackupTaskForm(ProgramOptions profileOptions, BackupTask task)
+        public EditBackupTaskForm(ProgramOptions profileOptions, BackupTask task, ScheduleInfo scheduleInfo)
         {
             InitializeComponent();
             
             _task = task;
+            _scheduleInfo = scheduleInfo;
             _profileOptions = profileOptions;
             _views = new Dictionary<BackupTaskViewsEnum, BackUserControl>();
 
             SetupUiComponents();
             ApplyLocalization();
         }
-
-        #endregion
-
-        #region Private Methods
 
         void SetupUiComponents()
         {
@@ -111,7 +99,7 @@ namespace BUtil.Configurator.Configurator.Forms
         {
             _views[BackupTaskViewsEnum.Storages].SetOptionsToUi(_task);
             _views[BackupTaskViewsEnum.SourceItems].SetOptionsToUi(_task);
-            _views[BackupTaskViewsEnum.Scheduler].SetOptionsToUi(_task);
+            _views[BackupTaskViewsEnum.Scheduler].SetOptionsToUi(_scheduleInfo);
             _views[BackupTaskViewsEnum.Encryption].SetOptionsToUi(new object[] { _profileOptions, _task });
             _views[BackupTaskViewsEnum.OtherOptions].SetOptionsToUi(new object[] { _task });
         }
@@ -132,8 +120,6 @@ namespace BUtil.Configurator.Configurator.Forms
             DialogResult = DialogResult.OK;
             Close();
         }
-
-        #endregion
 
         private void OnNameChange(object sender, EventArgs e)
         {

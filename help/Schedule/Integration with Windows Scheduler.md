@@ -1,20 +1,6 @@
-**Sometimes you wanna integrate backup process with your own scheduler**
+Application is integrated with Windows Scheduler under current user account. When you provide scheduled days and time, they are used to create/update dedicated tasks in Windows scheduler. It is expected that you are logined into the system at the moment of backup.
 
-# Integrating BUtil Scheduler With Windows Scheduler
-
-Standard startup way of Scheduler tool has disadvantage: you should be logged into the system, when you want your scheduled backup to be started. To avoid this disadvantage you may integrate Ghost startup with Windows Scheduler. The following guide shows you how to do it.
-
-1. Change program configuration
-- Run Configurator;
-- Check 'Misc\don't care about scheduler startup';
-- Close Configurator;
-2. Add new task into the system
-- Open Control Panel\Scheduled tasks\Add Scheduled Task\Next;
-- Browse for ghost scheduler executable 'BUtil.Backup.Ghost.exe' in 'bin' directory of BUtil installation folder;
-- On the next tab please check 'When my computer starts';
-- On the next tab please enter your login and password;
-- On the next tab please check **Open advanced properties for this task when I click Finish**
-- In the properties go to 'Settings' tab and uncheck **Stop the task if it runs for:** and check **Wake the computer to run this task**
+**Sometimes you wanna integrate backup process with your own scheduler or without being required to be authorized in your account.**
 
 # Integrating BUtil Console Tool With Windows Scheduler
 

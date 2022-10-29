@@ -641,15 +641,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to don&apos;t care about scheduler startup.
-        /// </summary>
-        internal static string DontCareAboutSchedulerStartup {
-            get {
-                return ResourceManager.GetString("DontCareAboutSchedulerStartup", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to don&apos;t need BUtil scheduler.
         /// </summary>
         internal static string DontNeedButilScheduler {

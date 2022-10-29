@@ -577,9 +577,6 @@
   <data name="DontNeedButilScheduler" xml:space="preserve">
     <value>don't need BUtil scheduler</value>
   </data>
-  <data name="DontCareAboutSchedulerStartup" xml:space="preserve">
-    <value>don't care about scheduler startup</value>
-  </data>
   <data name="HideAboutTab" xml:space="preserve">
     <value>hide 'About' tab</value>
   </data>

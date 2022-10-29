@@ -1,8 +1,5 @@
 using System;
-using System.ComponentModel;
-using System.Drawing;
 using System.Linq;
-using System.Windows.Forms;
 using BUtil.Configurator.Localization;
 using BUtil.Core.Options;
 
@@ -13,8 +10,8 @@ namespace BUtil.Configurator.Controls
 	/// </summary>
 	internal sealed partial class SchedulerUserControl : BUtil.Core.PL.BackUserControl
 	{
-		BackupTask _task;
-		
+		private ScheduleInfo _scheduleInfo;
+
 		public SchedulerUserControl()
 		{
 			InitializeComponent();
@@ -38,27 +35,27 @@ namespace BUtil.Configurator.Controls
 	
 		public override void SetOptionsToUi(object settings)
 		{
-            _task = (BackupTask)settings;
-			
-			foreach(DayOfWeek enumItem in DayOfWeek.GetValues(typeof(DayOfWeek)))
+			_scheduleInfo = (ScheduleInfo)settings;
+
+            foreach (DayOfWeek enumItem in DayOfWeek.GetValues(typeof(DayOfWeek)))
 			{
-				scheduledDaysCheckedListBox.SetItemChecked((int) enumItem, _task.SchedulerDays.Contains(enumItem));
+				scheduledDaysCheckedListBox.SetItemChecked((int) enumItem, _scheduleInfo.Days.Contains(enumItem));
 			}
             
-            hourComboBox.SelectedIndex = _task.SchedulerTime.Hours;
-            minuteComboBox.SelectedIndex = _task.SchedulerTime.Minutes;
+            hourComboBox.SelectedIndex = _scheduleInfo.Time.Hours;
+            minuteComboBox.SelectedIndex = _scheduleInfo.Time.Minutes;
             
 		}
 		
 		public override void GetOptionsFromUi()
 		{
-			_task.SchedulerDays = Enum
+            _scheduleInfo.Days = Enum
 				.GetValues(typeof(DayOfWeek))
                 .Cast<DayOfWeek>()
                 .Where(x => scheduledDaysCheckedListBox.GetItemChecked((int)x))
 				.ToList();
 
-			_task.SchedulerTime = new TimeSpan(
+            _scheduleInfo.Time = new TimeSpan(
 				hourComboBox.SelectedIndex != -1 ? hourComboBox.SelectedIndex : 0,
                 minuteComboBox.SelectedIndex != -1 ? minuteComboBox.SelectedIndex : 0,
 				0);

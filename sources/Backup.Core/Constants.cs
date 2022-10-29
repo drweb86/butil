@@ -10,7 +10,6 @@ namespace BUtil.Core
 		public const int MinimumPasswordLength = 20;
 		public const int MaximumPasswordLength = 255;
 		public const string ConsoleBackupTitle = "Console backup - BUtil";
-		public const string TrayApplicationProcessName = "BUtil.Backup.Ghost";
 		
         // Defaults for scheduler options. If change - please update documentation
         public const int DefaultHours = 23;

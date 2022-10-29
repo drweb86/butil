@@ -31,7 +31,6 @@ namespace BUtil.Core.Options
         const string _LOGS_TAG = "Logging";
         const string _DONT_NEED_SCHEDULER_TAG = "DontNeedScheduler";
         const string _CONFIGURATOR_TAG = "Configurator";
-		const string _DONT_CARE_ABOUT_SCHEDULER_STARTUP_TAG = "DontCareAboutSchedulerStartup";
 		const string _HIDE_ABOUT_TAB_TAG = "HideAboutTab";
 		
         
@@ -206,7 +205,6 @@ namespace BUtil.Core.Options
 				XmlNode configuratorApplicationNode = document.CreateNode(XmlNodeType.Element, _CONFIGURATOR_TAG, string.Empty);
 				coreNode.AppendChild(configuratorApplicationNode);
 				
-				addTextNode(document, configuratorApplicationNode, _DONT_CARE_ABOUT_SCHEDULER_STARTUP_TAG, options.DontCareAboutSchedulerStartup.ToString());
 				addTextNode(document, configuratorApplicationNode, _HIDE_ABOUT_TAB_TAG, options.HideAboutTab.ToString());
 				
 				addTextNode(document, scheduleApplicationNode, "ShowInTray", options.ShowSchedulerInTray.ToString());
@@ -268,7 +266,6 @@ namespace BUtil.Core.Options
 					options.PuttingOffBackupCpuLoading = (byte)readNode(document, "/Settings/Core/ScheduleApplication/PuttingOffBackupCpuLoading", Constants.MinimumCpuLoading, Constants.MaximumCpuLoading, Constants.DefaultCpuLoading);
 					options.DontNeedScheduler = readNode(document, "/Settings/Core/ScheduleApplication/" + _DONT_NEED_SCHEDULER_TAG, false);
 					
-					options.DontCareAboutSchedulerStartup = readNode(document, "/Settings/Core/" + _CONFIGURATOR_TAG + "/" + _DONT_CARE_ABOUT_SCHEDULER_STARTUP_TAG, false);
 					options.HideAboutTab = readNode(document, "/Settings/Core/" + _CONFIGURATOR_TAG + "/" + _HIDE_ABOUT_TAB_TAG, false);
                 }
             }

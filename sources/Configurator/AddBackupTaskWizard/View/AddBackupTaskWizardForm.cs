@@ -23,6 +23,7 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
         }
 
         public BackupTask BackupTask { get; private set; }
+        public ScheduleInfo ScheduleInfo { get; private set; }
 
         private void ApplyLocals()
         {
@@ -44,6 +45,7 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
                 _addBackupTaskWizardView.GetOptions();
                 DialogResult = DialogResult.OK;
                 BackupTask = _addBackupTaskWizardView.Task;
+                ScheduleInfo = _addBackupTaskWizardView.ScheduleInfo;
                 Close();
             }
         }

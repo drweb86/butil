@@ -25,9 +25,6 @@ namespace BUtil.Core.FileSystem
 		static readonly string _SevenZipGPacker = 
 			Path.Combine(Directories.SevenZipFolder , "7zg.exe");
 		
-		static readonly string _Scheduler = 
-			Path.Combine(Directories.BinariesDir, Constants.TrayApplicationProcessName + ".exe");
-		
         static readonly string _BugReportFile = 
         	Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), "BUtil BUG report.txt");
 
@@ -44,11 +41,6 @@ namespace BUtil.Core.FileSystem
 		public static string Configurator
 		{
 			get { return _Configurator; }
-		}
-
-		public static string Scheduler
-		{
-			get { return _Scheduler; }
 		}
 
         public static string BugReportFile

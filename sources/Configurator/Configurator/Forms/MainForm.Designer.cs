@@ -32,7 +32,6 @@ namespace BUtil.Configurator.Configurator.Forms
             this.journalsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miscToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dontNeedSchedulerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dontCareAboutScheulerStartupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hideAboutTabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._questionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -92,7 +91,6 @@ namespace BUtil.Configurator.Configurator.Forms
             // 
             this.miscToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dontNeedSchedulerToolStripMenuItem,
-            this.dontCareAboutScheulerStartupToolStripMenuItem,
             this.hideAboutTabToolStripMenuItem
             });
             this.miscToolStripMenuItem.Name = "miscToolStripMenuItem";
@@ -106,14 +104,6 @@ namespace BUtil.Configurator.Configurator.Forms
             this.dontNeedSchedulerToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
             this.dontNeedSchedulerToolStripMenuItem.Text = "don\'t need scheduler";
             this.dontNeedSchedulerToolStripMenuItem.Click += new System.EventHandler(this.DontNeedSchedulerToolStripMenuItemClick);
-            // 
-            // dontCareAboutScheulerStartupToolStripMenuItem
-            // 
-            this.dontCareAboutScheulerStartupToolStripMenuItem.CheckOnClick = true;
-            this.dontCareAboutScheulerStartupToolStripMenuItem.Name = "dontCareAboutScheulerStartupToolStripMenuItem";
-            this.dontCareAboutScheulerStartupToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
-            this.dontCareAboutScheulerStartupToolStripMenuItem.Text = "don\'t care about scheduler startup";
-            this.dontCareAboutScheulerStartupToolStripMenuItem.Click += new System.EventHandler(this.DontCareAboutScheulerStartupToolStripMenuItemClick);
             // 
             // hideAboutTabToolStripMenuItem
             // 
@@ -274,7 +264,6 @@ namespace BUtil.Configurator.Configurator.Forms
 		}
 		private System.Windows.Forms.ToolStripMenuItem journalsToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem hideAboutTabToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem dontCareAboutScheulerStartupToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem dontNeedSchedulerToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem miscToolStripMenuItem;
 		private System.Windows.Forms.ToolStripStatusLabel helpToolStripStatusLabel;

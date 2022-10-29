@@ -46,12 +46,6 @@ namespace BUtil.Core.Options
 			ProgramOptionsKeeper.StoreSettings(options);
 		}
 	
-	    /// <summary>
-	    /// Loads the settings
-	    /// </summary>
-	    /// <remarks>! Fixes some issue with default options</remarks>
-	    /// <returns>The options</returns>
-	    /// <exception cref="OptionsException">Invalid options</exception>
 		public static ProgramOptions LoadSettings()
 		{
             return ProgramOptionsKeeper.LoadSettings(); 
@@ -74,29 +68,6 @@ namespace BUtil.Core.Options
             item.Target = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);
             task.Items.Add(item);
 
-            string firefoxSettings = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Mozilla\Firefox\Profiles");
-            if (Directory.Exists(firefoxSettings))
-            {
-                item = new SourceItem();
-                item.CompressionDegree = CompressionDegree.Normal;
-                item.IsFolder = true;
-                item.Target = firefoxSettings;
-                task.Items.Add(item);
-            }
-
-            string thunderBirdSettings = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Thunderbird\Profiles");
-            if (Directory.Exists(thunderBirdSettings))
-            {
-                item = new SourceItem();
-                item.CompressionDegree = CompressionDegree.Normal;
-                item.IsFolder = true;
-                item.Target = thunderBirdSettings;
-                task.Items.Add(item);
-            }
-
-            task.SchedulerDays.Clear();
-            task.SchedulerTime = new TimeSpan(Constants.DefaultHours, Constants.DefaultMinutes, 0);
-
             return task;
         }
 
@@ -110,7 +81,6 @@ namespace BUtil.Core.Options
 				ProgramOptions options = new ProgramOptions();
 				options.Priority = System.Threading.ThreadPriority.BelowNormal;
 				options.DontNeedScheduler = false;
-				options.DontCareAboutSchedulerStartup = false;
 				options.HideAboutTab = false;
 				options.DontNeedScheduler = false;
 				options.ShowSchedulerInTray = true;

@@ -90,7 +90,6 @@ namespace BUtil.Configurator.Configurator.Forms
             cancelButton.Text = Resources.Cancel;
             restorationToolToolStripMenuItem.Text = Resources.RestoreData;
             dontNeedSchedulerToolStripMenuItem.Text = Resources.DontNeedButilScheduler;
-            dontCareAboutScheulerStartupToolStripMenuItem.Text = Resources.DontCareAboutSchedulerStartup;
             hideAboutTabToolStripMenuItem.Text = Resources.HideAboutTab;
             miscToolStripMenuItem.Text = Resources.Misc;
             journalsToolStripMenuItem.Text = Resources.BackupJournals;
@@ -119,7 +118,6 @@ namespace BUtil.Configurator.Configurator.Forms
             _views[ConfiguratorViewsEnum.OtherOptions].SetOptionsToUi(profileOptions);
             
 			dontNeedSchedulerToolStripMenuItem.Checked = profileOptions.DontNeedScheduler;
-			dontCareAboutScheulerStartupToolStripMenuItem.Checked = profileOptions.DontCareAboutSchedulerStartup;
 			hideAboutTabToolStripMenuItem.Checked = profileOptions.HideAboutTab;
         }
 
@@ -155,12 +153,6 @@ namespace BUtil.Configurator.Configurator.Forms
 		void DontNeedSchedulerToolStripMenuItemClick(object sender, EventArgs e)
 		{
 			_controller.ProgramOptions.DontNeedScheduler = dontNeedSchedulerToolStripMenuItem.Checked;
-			UpdateAccessibilitiesView();
-		}
-		
-		void DontCareAboutScheulerStartupToolStripMenuItemClick(object sender, EventArgs e)
-		{
-			_controller.ProgramOptions.DontCareAboutSchedulerStartup = dontCareAboutScheulerStartupToolStripMenuItem.Checked;
 			UpdateAccessibilitiesView();
 		}
 		

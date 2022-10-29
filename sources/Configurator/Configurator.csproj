@@ -72,9 +72,7 @@
     <Compile Update="AddBackupTaskWizard\View\TaskNameUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Configurator\Controls\AboutProgramUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Update="Configurator\Controls\AboutProgramUserControl.cs" />
     <Compile Update="Configurator\Controls\BackupTasksUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -84,18 +82,14 @@
     <Compile Update="Configurator\Controls\TaskOtherOptionsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Configurator\Controls\LeftPanelUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Update="Configurator\Controls\LeftPanelUserControl.cs" />
     <Compile Update="Configurator\Controls\LoggingUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Configurator\Controls\OptionsHeader.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Configurator\Controls\OtherOptionsUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Update="Configurator\Controls\OtherOptionsUserControl.cs" />
     <Compile Update="Configurator\Controls\SchedulerUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -111,9 +105,7 @@
     <Compile Update="BackupUiMaster\Controls\BackupProgressUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="BackupUiMaster\Controls\BackUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Update="BackupUiMaster\Controls\BackUserControl.cs" />
     <Compile Update="BackupUiMaster\Controls\SettingsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

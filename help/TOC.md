@@ -16,8 +16,6 @@
 
 # Schedule
 
-[Scheduler Tray Application](./Schedule/Scheduler%20Tray%20Application/Scheduler%20Tray%20Application.md)
-
 [Integration with Windows Scheduler](./Schedule/Integration%20with%20Windows%20Scheduler.md)
 
 # Other

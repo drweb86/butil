@@ -39,7 +39,6 @@ Software has the next structure
 | ```data\BackupUi.ico``` | The icon for backup master | Used for User ```Menu\Restoration``` |
 | ```bin\Backup.Core.dll``` | Library with the common functions | Provides functions for executables |
 | ```bin\Backup.exe``` | Console backup tool | Performs the console based backup |
-| ```bin\BUtil.Backup.Ghost.exe``` | Scheduler tool | Provides ability to schedule the backup |
 | ```bin\Configurator.exe``` | The program configurator with built-in Restoration Master and Backup Ui Master | configures program; restores from backup; backups with Ui. |
 | ```bin\MD5.exe``` | Tool for making md5 checksumms | Counts md5 checksumms |
 

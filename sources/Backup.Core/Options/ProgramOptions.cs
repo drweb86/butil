@@ -32,11 +32,6 @@ namespace BUtil.Core.Options
 		#region Properties
 		
 		/// <summary>
-		/// Disables configuring start up of  scheduler in current user account
-		/// </summary>
-		public bool DontCareAboutSchedulerStartup { get; set; }
-		
-		/// <summary>
 		/// Hides about tab of Configurator
 		/// </summary>
 		public bool HideAboutTab { get; set; }

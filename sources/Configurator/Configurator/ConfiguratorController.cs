@@ -28,26 +28,6 @@ namespace BUtil.Configurator.Configurator
         #endregion
 
         ProgramOptions _profileOptions = ProgramOptionsManager.Default;
-        
-		static void CheckSchedulerStartup()
-        {
-			Process.Start(Files.Scheduler, SchedulerParameters.CREATE_STARTUP_SCRIPT);
-        }
-		
-		void ManageSchedulerStartup(bool enable)
-		{
-			if (enable)
-			{
-				if (!_profileOptions.DontCareAboutSchedulerStartup)
-				{
-					CheckSchedulerStartup();
-				}
-			}
-			else
-			{
-				Process.Start(Files.Scheduler, SchedulerParameters.REMOVE_STARTUP_SCRIPT_IF_ANY);
-			}
-		}
 
 		public void OpenRestorationMaster(string image, bool runFormAsApplication)
 		{
@@ -73,8 +53,6 @@ namespace BUtil.Configurator.Configurator
 		
 		public void RemoveLocalUserSettings()
 		{
-			Process.Start(Files.Scheduler, SchedulerParameters.REMOVE_STARTUP_SCRIPT_IF_ANY);
-               			
 			if (File.Exists(Files.ProfileFile))
 				File.Delete(Files.ProfileFile);
 		               	
@@ -180,30 +158,17 @@ namespace BUtil.Configurator.Configurator
         
         public bool StoreSettings()
         {
-        	ProcessesKiller.FindAndKillProcess(Constants.TrayApplicationProcessName);
-
             var backupTaskStoreService = new BackupTaskStoreService();
             var tasks = backupTaskStoreService.LoadAll();
-            bool taskNeedScheduling = tasks.Any(item => item.SchedulerDays.Any());
 
             try
             {
                 ProgramOptionsManager.StoreSettings(_profileOptions);
-
-                ManageSchedulerStartup(taskNeedScheduling && (!_profileOptions.DontCareAboutSchedulerStartup));
             }
             catch (Exception ee)
             {
             	Messages.ShowErrorBox(ee.Message);
                 return false;
-            }
-
-            if (!_profileOptions.DontCareAboutSchedulerStartup)
-            {
-                if (taskNeedScheduling && !_profileOptions.DontNeedScheduler)
-            	{
-		            Process.Start(Files.Scheduler, SchedulerParameters.START_WITHOUT_MESSAGE);
-            	}
             }
 
             return true;
