@@ -22,8 +22,6 @@
 
 [Manage Logs](./Manage%20Logs/Manage%20Logs.md)
 
-[Checksum Console Tool](./Checksum%20Console%20Tool.md)
-
 [BUtil Application Command Line Arguments](./BUtil%20Application/Command%20Line%20Arguments%20of%20Configurator%20Application.md)
 
 [Frequently Asked Questions](./Other/Frequently%20Asked%20Questions.md)

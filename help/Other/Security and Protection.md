@@ -24,8 +24,8 @@ Passwords are stored securely in encrypted under your OS account file
 It will be a good idea if you will have different passwords for different programs, sites and so on. The best(IMHO) open-source program for such thing is [KeePas](http://www.sourceforge.net/projects/keepas) (AES-256 encryption, good password generator, portable, Win).
 
 # Protection From Viruses
-All assemblies use strong name
-7-zip binaries are checked for md5 checksumm each time on start of the program
+All assemblies use strong name.
+7-zip is expected to be protected by OS means.
 
 # Deletion Of Temporary Files For Password Protected Images
 Program deletes files securely when your backup was encrypted when backups and restores data. Program overwrites this files with zeros and then after that deletes them. Archiver also encrypts its own temporary files, but it deletes them by itself.

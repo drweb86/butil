@@ -1,13 +1,7 @@
 using System;
 using System.Globalization;
 using System.Collections.Generic;
-using System.Collections;
-using System.Text;
 using System.IO;
-using System.Xml;
-
-
-
 using BUtil.Core.Logs;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
@@ -18,8 +12,6 @@ namespace BUtil.Core.Storages
     class SambaStorage: StorageBase
 	{
         const string _deletingAllBUtilImageFilesFromTargetFolder = "Deleting all BUtil image files from target folder '{0}'";
-        const string _NOT_A_NETWORK_DIR = "Not a network location";
-        const string _CANNOTDELETEDUETOACESSVIOLATIONS = "Cannot delete file '{0}' due to access violation {1}";
         const string _COPYING = "Copying '{0}' to '{1}'";
         const string _EncryptingFormatString = "Encrypting '{0}'";
 
@@ -73,14 +65,23 @@ namespace BUtil.Core.Storages
 						catch (UnauthorizedAccessException e)
 						{
 							log.WriteLine(LoggingEvent.Warning,
-								string.Format(CultureInfo.CurrentCulture, _CANNOTDELETEDUETOACESSVIOLATIONS, filesToDelete[i], e.Message));
+								string.Format(CultureInfo.CurrentCulture, "Cannot delete file '{0}' due to access violation {1}", filesToDelete[i], e.Message));
 						}
 					}
 				}
 			}
 		}
-		
-		public override void Process(string file)
+
+        public override void StoreFiles(string sourceDir, List<string> sourceFiles, string directory = null)
+        {
+            throw new NotImplementedException();
+        }
+        public override byte[] ReadFile(string file)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Put(string file, string directory = null)
 		{
 			if (string.IsNullOrEmpty(file))
 				throw new ArgumentNullException("file");
@@ -99,7 +100,8 @@ namespace BUtil.Core.Storages
                 }
             }
 
-            string dest = _settings.DestinationFolder + file.Substring(file.LastIndexOf('\\'));
+            var folder = string.IsNullOrEmpty(directory) ? _settings.DestinationFolder : Path.Combine(_settings.DestinationFolder, directory);
+            string dest = folder + file.Substring(file.LastIndexOf('\\'));
 			Log.WriteLine(LoggingEvent.Debug, String.Format(CultureInfo.CurrentCulture, _COPYING, file, dest));
             File.Copy(file, dest, true);
             if (_settings.EncryptUnderLocalSystemAccount)
@@ -113,11 +115,5 @@ namespace BUtil.Core.Storages
         {
 
         }
-        
-        
-		public void LoadSettings(Dictionary<string, string> dictionary)
-		{
-
-		}
 	}
 }

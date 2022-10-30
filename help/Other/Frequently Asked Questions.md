@@ -40,7 +40,7 @@ Software has the next structure
 | ```bin\Backup.Core.dll``` | Library with the common functions | Provides functions for executables |
 | ```bin\Backup.exe``` | Console backup tool | Performs the console based backup |
 | ```bin\Configurator.exe``` | The program configurator with built-in Restoration Master and Backup Ui Master | configures program; restores from backup; backups with Ui. |
-| ```bin\MD5.exe``` | Tool for making md5 checksumms | Counts md5 checksumms |
+
 
 # How was the program tested?
 Program is tested in next ways

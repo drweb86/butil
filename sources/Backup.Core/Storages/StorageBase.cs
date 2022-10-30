@@ -4,7 +4,6 @@ using BUtil.Core.Logs;
 
 namespace BUtil.Core.Storages
 {
-
     public abstract class StorageBase
 	{
         private string _StorageName;
@@ -48,7 +47,9 @@ namespace BUtil.Core.Storages
         /// </summary>
         /// <param name="log"></param>
         public abstract void Open(LogBase log);
-        public abstract void Process(string file);
+        public abstract void Put(string file, string directory = null);
+        public abstract void StoreFiles(string sourceDir, List<string> sourceFiles, string directory = null);
+        public abstract byte[] ReadFile(string file);
         public abstract void Test();
 
 	}

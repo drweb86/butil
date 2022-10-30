@@ -3,6 +3,8 @@ using System.Globalization;
 
 using BUtil.Core.Logs;
 using BUtil.Core.FileSystem;
+using System.IO;
+using System.Collections.Generic;
 
 namespace BUtil.Core.Storages
 {
@@ -27,7 +29,16 @@ namespace BUtil.Core.Storages
 			_settings = settings;
 		}
 
-		public override void Open(LogBase log)
+        public override void StoreFiles(string sourceDir, List<string> sourceFiles, string directory = null)
+		{
+			throw new NotImplementedException();
+		}
+        public override byte[] ReadFile(string file)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Open(LogBase log)
 		{
             log.ProcedureCall("Open");
 			Log = log;
@@ -80,7 +91,7 @@ namespace BUtil.Core.Storages
 			_connection.GetFileList(_settings.DestinationFolder);
 		}
 		
-		public override void Process(string fileName)
+		public override void Put(string fileName, string directory = null)
 		{
 			_connection = new FtpConnection();
             _connection.SetLogOnInformation(_settings.User, _settings.Password);
@@ -89,7 +100,8 @@ namespace BUtil.Core.Storages
 
 			Log.WriteLine(LoggingEvent.Debug, String.Format(CultureInfo.CurrentCulture, _CopyingFormatString, fileName, _settings.DestinationFolder));
 			
-			_connection.Upload(_settings.DestinationFolder, fileName);
+			var folder = string.IsNullOrEmpty(directory) ? _settings.DestinationFolder : Path.Combine(_settings.DestinationFolder, directory);
+			_connection.Upload(folder, fileName);
 		}
 	}
 }

@@ -26,9 +26,18 @@ namespace BUtil.Core.Storages
 			:base(settings.Name)
 		{
 			_settings = settings;
-		}		
-		
-		public override void Open(LogBase log)
+		}
+
+        public override void StoreFiles(string sourceDir, List<string> sourceFiles, string directory = null)
+        {
+            throw new NotImplementedException();
+        }
+        public override byte[] ReadFile(string file)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Open(LogBase log)
 		{
 			if (log == null)
 				throw new ArgumentNullException("log");
@@ -72,14 +81,17 @@ namespace BUtil.Core.Storages
 			}
 		}
 		
-		public override void Process(string file)
+		public override void Put(string file, string directory = null)
 		{
 			if (string.IsNullOrEmpty(file))
 				throw new ArgumentNullException("file");
 
-            string dest = _settings.DestinationFolder + file.Substring(file.LastIndexOf('\\'));
-			Log.WriteLine(LoggingEvent.Debug, String.Format(CultureInfo.CurrentCulture, _COPYING, file, dest));
-            File.Copy(file, dest, true);
+            var folder = string.IsNullOrEmpty(directory) ? _settings.DestinationFolder : Path.Combine(_settings.DestinationFolder, directory);
+            string dest = folder + file.Substring(file.LastIndexOf('\\'));
+            
+            Log.WriteLine(LoggingEvent.Debug, String.Format(CultureInfo.CurrentCulture, _COPYING, file, dest));
+            
+			File.Copy(file, dest, true);
 		}
 
         public override void Test()

@@ -51,7 +51,7 @@ namespace BUtil.Core.Storages
 					notify(new CopyingToStorageNotificationEventArgs(_storage.StorageName, ProcessingState.InProgress));
 					_storage.Open(_log);
 					_log.WriteLine(LoggingEvent.Debug, "Storage opened successfully");
-					_storage.Process(_imageFileToCopy);
+					_storage.Put(_imageFileToCopy);
 					_log.WriteLine(LoggingEvent.Debug, "File was copyied to storage successfully");
 				}
 				catch (LogException e)
