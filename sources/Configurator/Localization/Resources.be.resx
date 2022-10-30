@@ -178,23 +178,8 @@
   <data name="Close" xml:space="preserve">
     <value>Закрыць</value>
   </data>
-  <data name="AboveNormal" xml:space="preserve">
-    <value>Вышэй сярэдняга</value>
-  </data>
-  <data name="Normal" xml:space="preserve">
-    <value>Сярэднi</value>
-  </data>
-  <data name="BelowNormal" xml:space="preserve">
-    <value>Нiжэй сярэдняга</value>
-  </data>
-  <data name="Low" xml:space="preserve">
-    <value>Нiзкi</value>
-  </data>
   <data name="ProcessPriority" xml:space="preserve">
     <value>Прыярытэт працэссу:</value>
-  </data>
-  <data name="Tasks" xml:space="preserve">
-    <value>Задачы</value>
   </data>
   <data name="WellcomeToBackupWizard" xml:space="preserve">
     <value>Масцер рэзервовага капиравання витае вас!!!</value>
@@ -235,14 +220,8 @@
   <data name="Support" xml:space="preserve">
     <value>ПАДТРЫМКА</value>
   </data>
-  <data name="Support" xml:space="preserve">
-    <value>ПАДТРЫМКА</value>
-  </data>
   <data name="BugReport" xml:space="preserve">
     <value>Памылка</value>
-  </data>
-  <data name="Close" xml:space="preserve">
-    <value>Зачыниць</value>
   </data>
   <data name="Error" xml:space="preserve">
     <value>Памылка</value>
@@ -319,9 +298,6 @@
   <data name="DnsNameOrIpFtp" xml:space="preserve">
     <value>Dns name or IP: ftp://</value>
   </data>
-  <data name="Ok" xml:space="preserve">
-    <value>OK</value>
-  </data>
   <data name="Test" xml:space="preserve">
     <value>Test</value>
   </data>
@@ -336,9 +312,6 @@
   </data>
   <data name="FtpStorage" xml:space="preserve">
     <value>ФТП месца...</value>
-  </data>
-  <data name="Cancel" xml:space="preserve">
-    <value>Адмена</value>
   </data>
   <data name="BeepSeveralTimes" xml:space="preserve">
     <value>Beep several times</value>
@@ -400,12 +373,6 @@
   <data name="ButilImagesButilButil" xml:space="preserve">
     <value>BUTIL images(*.butil)|*.butil</value>
   </data>
-  <data name="Close" xml:space="preserve">
-    <value>Close</value>
-  </data>
-  <data name="Password" xml:space="preserve">
-    <value>Password</value>
-  </data>
   <data name="IfYourBackupIsPasswordProtectedPleaseTypePasswordHere" xml:space="preserve">
     <value>If your backup is password protected, please type password here:</value>
   </data>
@@ -420,9 +387,6 @@
   </data>
   <data name="RestorationMaster" xml:space="preserve">
     <value>Restoration master</value>
-  </data>
-  <data name="Restore" xml:space="preserve">
-    <value>Restore</value>
   </data>
   <data name="HowToRestoreYourInformation" xml:space="preserve">
     <value>How to restore your information?</value>
@@ -471,12 +435,6 @@
   </data>
   <data name="Scheduling" xml:space="preserve">
     <value>Scheduling</value>
-  </data>
-  <data name="Cancel" xml:space="preserve">
-    <value>Адмена</value>
-  </data>
-  <data name="Close" xml:space="preserve">
-    <value>Зачыниць</value>
   </data>
   <data name="ImportantNNbackupShouldBePasswordProtectedIfNotProgramWillSkipItsCopyingToThisStorage" xml:space="preserve">
     <value>Important:\n\nBackup should be password protected. If NOT, program will SKIP its copying to this storage</value>
@@ -682,29 +640,17 @@
   <data name="CommandLineArguments" xml:space="preserve">
     <value>Command line arguments:</value>
   </data>
-  <data name="Cancel" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
   <data name="ChainOfProgramsToExecuteBeforeBackup" xml:space="preserve">
     <value>Chain of programs to execute BEFORE backup</value>
   </data>
   <data name="ChainOfProgramsToExecuteAfterBackup" xml:space="preserve">
     <value>Chain of programs to execute AFTER backup</value>
   </data>
-  <data name="Program" xml:space="preserve">
-    <value>Program</value>
-  </data>
   <data name="Arguments" xml:space="preserve">
     <value>Arguments</value>
   </data>
-  <data name="Add" xml:space="preserve">
-    <value>Add...</value>
-  </data>
   <data name="Edit" xml:space="preserve">
     <value>Edit...</value>
-  </data>
-  <data name="Remove" xml:space="preserve">
-    <value>Удалiць</value>
   </data>
   <data name="MoveUp" xml:space="preserve">
     <value>Уверх</value>
@@ -759,9 +705,6 @@
   </data>
   <data name="Back" xml:space="preserve">
     <value>&lt; Back</value>
-  </data>
-  <data name="Title" xml:space="preserve">
-    <value>Title:</value>
   </data>
   <data name="RemovesTheSelectedBackupTask" xml:space="preserve">
     <value>Removes the selected backup task...</value>

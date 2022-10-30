@@ -161,7 +161,7 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add....
+        ///   Looks up a localized string similar to Add.
         /// </summary>
         internal static string Add {
             get {
@@ -1385,7 +1385,7 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Password.
+        ///   Looks up a localized string similar to Password:.
         /// </summary>
         internal static string Password {
             get {
@@ -1439,7 +1439,7 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Program.
+        ///   Looks up a localized string similar to Program:.
         /// </summary>
         internal static string Program {
             get {
@@ -1560,7 +1560,7 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Restore.
+        ///   Looks up a localized string similar to Restore.....
         /// </summary>
         internal static string Restore {
             get {
@@ -1880,7 +1880,7 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Title:.
+        ///   Looks up a localized string similar to Title.
         /// </summary>
         internal static string Title {
             get {

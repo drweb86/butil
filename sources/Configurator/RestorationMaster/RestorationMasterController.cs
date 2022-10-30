@@ -21,9 +21,9 @@ namespace BUtil.RestorationMaster
 		
 		private ImageHeader _metaData;
 
-		private ImageReader _imageReader = new ImageReader();
+		private ImageReader _imageReader = new();
 
-		private bool imageDataIsPasswordProtected
+		private bool ImageDataIsPasswordProtected
 		{
 			get { return !string.IsNullOrEmpty(_password); }
 		}
@@ -58,10 +58,12 @@ namespace BUtil.RestorationMaster
 
 		public void OpenImage()
 		{
-            _imageReader = new ImageReader();
-			_imageReader.FileName = this.ImageLocation;
+			_imageReader = new ImageReader
+			{
+				FileName = ImageLocation
+			};
 
-            try
+			try
             {
                 _metaData = _imageReader.Open();
             }
@@ -71,10 +73,8 @@ namespace BUtil.RestorationMaster
                 return;
             }
 
-			using (RestoreForm restoreForm = new RestoreForm(this))
-			{
-				restoreForm.ShowDialog();
-			}
+			using var restoreForm = new RestoreForm(this);
+			restoreForm.ShowDialog();
 		}
 
         public void RunRecovering(RestoreTaskInfo task)
@@ -85,10 +85,10 @@ namespace BUtil.RestorationMaster
         			RecoveryManager.RestoreAs7ZipArchiveHelper(_imageReader, task.Record, task.Parameter); 
         			break;
 				case RestoreType.ToPointedFolder: 
-        			RecoveryManager.RestoreToPointedFolderHelper(_imageReader, task.Record, task.Parameter, this.imageDataIsPasswordProtected, this.Password); 
+        			RecoveryManager.RestoreToPointedFolderHelper(_imageReader, task.Record, task.Parameter, this.ImageDataIsPasswordProtected, this.Password); 
         			break;
 				case RestoreType.ToOriginal: 
-        			RecoveryManager.RestoreToOriginalLocation(_imageReader, task.Record, this.imageDataIsPasswordProtected, this.Password); 
+        			RecoveryManager.RestoreToOriginalLocation(_imageReader, task.Record, this.ImageDataIsPasswordProtected, this.Password); 
         			break;
 			}
         }

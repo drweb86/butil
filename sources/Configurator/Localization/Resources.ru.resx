@@ -178,23 +178,8 @@
   <data name="Close" xml:space="preserve">
     <value>Закрыть</value>
   </data>
-  <data name="AboveNormal" xml:space="preserve">
-    <value>Выше среднего</value>
-  </data>
-  <data name="Normal" xml:space="preserve">
-    <value>Нормальный</value>
-  </data>
-  <data name="BelowNormal" xml:space="preserve">
-    <value>Ниже среднего</value>
-  </data>
-  <data name="Low" xml:space="preserve">
-    <value>Низкий</value>
-  </data>
   <data name="ProcessPriority" xml:space="preserve">
     <value>Приоритет обработки:</value>
-  </data>
-  <data name="Tasks" xml:space="preserve">
-    <value>Задания</value>
   </data>
   <data name="WellcomeToBackupWizard" xml:space="preserve">
     <value>Добро пожаловать в Мастер резервного копирования!</value>
@@ -235,14 +220,8 @@
   <data name="Support" xml:space="preserve">
     <value>ПОДДЕРЖКА</value>
   </data>
-  <data name="Support" xml:space="preserve">
-    <value>ПОДДЕРЖКА</value>
-  </data>
   <data name="BugReport" xml:space="preserve">
     <value>ОШИБКА</value>
-  </data>
-  <data name="Close" xml:space="preserve">
-    <value>Закрыть</value>
   </data>
   <data name="Error" xml:space="preserve">
     <value>Ошибка</value>
@@ -264,9 +243,6 @@
   </data>
   <data name="Ok" xml:space="preserve">
     <value>OK</value>
-  </data>
-  <data name="Cancel" xml:space="preserve">
-    <value>Отмена</value>
   </data>
   <data name="Title" xml:space="preserve">
     <value>Заголовок</value>
@@ -322,12 +298,6 @@
   <data name="DnsNameOrIpFtp" xml:space="preserve">
     <value>Dns имя или IP: ftp://</value>
   </data>
-  <data name="Ok" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="Cancel" xml:space="preserve">
-    <value>Отмена</value>
-  </data>
   <data name="Test" xml:space="preserve">
     <value>Тест</value>
   </data>
@@ -342,9 +312,6 @@
   </data>
   <data name="FtpStorage" xml:space="preserve">
     <value>Хранилище на ФТП сервере</value>
-  </data>
-  <data name="Cancel" xml:space="preserve">
-    <value>Отмена</value>
   </data>
   <data name="BeepSeveralTimes" xml:space="preserve">
     <value>Подать звуковой сигнал</value>
@@ -406,12 +373,6 @@
   <data name="ButilImagesButilButil" xml:space="preserve">
     <value>Образ BUTIL(*.butil)|*.butil</value>
   </data>
-  <data name="Close" xml:space="preserve">
-    <value>Закрыть</value>
-  </data>
-  <data name="Password" xml:space="preserve">
-    <value>Пароль</value>
-  </data>
   <data name="IfYourBackupIsPasswordProtectedPleaseTypePasswordHere" xml:space="preserve">
     <value>Если ваша резервная копия защищена паролем, укажите его здесь:</value>
   </data>
@@ -426,9 +387,6 @@
   </data>
   <data name="RestorationMaster" xml:space="preserve">
     <value>Мастер восстановления</value>
-  </data>
-  <data name="Restore" xml:space="preserve">
-    <value>Восстановить</value>
   </data>
   <data name="HowToRestoreYourInformation" xml:space="preserve">
     <value>Как восстановить эти данные?</value>
@@ -477,12 +435,6 @@
   </data>
   <data name="Scheduling" xml:space="preserve">
     <value>Планировщик</value>
-  </data>
-  <data name="Cancel" xml:space="preserve">
-    <value>Отмена</value>
-  </data>
-  <data name="Close" xml:space="preserve">
-    <value>Закрыть</value>
   </data>
   <data name="ImportantNNbackupShouldBePasswordProtectedIfNotProgramWillSkipItsCopyingToThisStorage" xml:space="preserve">
     <value>Внимание:\n\nРезервная копия должна быть защищена паролем. Если НЕ БУДЕТ - то программа ПРОПУСТИТ копирование данных в такое хранилище</value>
@@ -688,29 +640,17 @@
   <data name="CommandLineArguments" xml:space="preserve">
     <value>Аргументы коммандной строки:</value>
   </data>
-  <data name="Cancel" xml:space="preserve">
-    <value>Отмена</value>
-  </data>
   <data name="ChainOfProgramsToExecuteBeforeBackup" xml:space="preserve">
     <value>Цепочка программ для выполнения ДО резервного копирования</value>
   </data>
   <data name="ChainOfProgramsToExecuteAfterBackup" xml:space="preserve">
     <value>Цепочка программ для выполнения ПОСЛЕ резервного копирования</value>
   </data>
-  <data name="Program" xml:space="preserve">
-    <value>Программа</value>
-  </data>
   <data name="Arguments" xml:space="preserve">
     <value>Аргументы</value>
   </data>
-  <data name="Add" xml:space="preserve">
-    <value>Добавить...</value>
-  </data>
   <data name="Edit" xml:space="preserve">
     <value>Изменить...</value>
-  </data>
-  <data name="Remove" xml:space="preserve">
-    <value>Удалить</value>
   </data>
   <data name="MoveUp" xml:space="preserve">
     <value>Переместить выше</value>
@@ -765,9 +705,6 @@
   </data>
   <data name="Back" xml:space="preserve">
     <value>&lt; Назад</value>
-  </data>
-  <data name="Title" xml:space="preserve">
-    <value>Заголовок:</value>
   </data>
   <data name="RemovesTheSelectedBackupTask" xml:space="preserve">
     <value>Удаляет выбранное задание РК...</value>
