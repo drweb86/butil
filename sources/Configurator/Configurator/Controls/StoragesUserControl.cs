@@ -49,17 +49,17 @@ namespace BUtil.Configurator.Configurator.Controls
             {
 				StorageEnum kind;
 
-				switch (storageSettings.ProviderName.ToLowerInvariant())
+				switch (storageSettings.ProviderName)
                 {
-                    case "hdd":
+                    case StorageProviderNames.Hdd:
 						kind = StorageEnum.Hdd;
 						break;
 
-                    case "ftp":
+                    case StorageProviderNames.Ftp:
 						kind = StorageEnum.Ftp;
 						break;
 
-					case "samba":
+					case StorageProviderNames.Samba:
 						kind = StorageEnum.Network;
 						break;
 
@@ -142,15 +142,15 @@ namespace BUtil.Configurator.Configurator.Controls
 			var storageSettings = (StorageSettings)storageToChangeListViewItem.Tag;
             IStorageConfigurationForm configForm;
 
-            switch (storageSettings.ProviderName.ToLowerInvariant())
+            switch (storageSettings.ProviderName)
             {
-                case "hdd":
+                case StorageProviderNames.Hdd:
                     configForm = new HddStorageForm(storageSettings);
 					break;
-                case "ftp":
+                case StorageProviderNames.Ftp:
                     configForm = new FtpStorageForm(storageSettings);
 					break;
-                case "samba":
+                case StorageProviderNames.Samba:
                     configForm = new NetworkStorageForm(storageSettings);
 					break;
                 default:

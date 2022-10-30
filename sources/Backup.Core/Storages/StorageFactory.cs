@@ -5,19 +5,20 @@ using System.Text.Json;
 
 namespace BUtil.Core.Storages
 {
+
     public class StorageFactory
     {
         public static StorageBase Create(StorageSettings storageSettings)
         {
-            switch (storageSettings.ProviderName.ToLowerInvariant())
+            switch (storageSettings.ProviderName)
             {
-                case "hdd":
+                case StorageProviderNames.Hdd:
                     var hddSettings = CreateHddStorageSettings(storageSettings);
                     return new HddStorage(hddSettings);
-                case "ftp":
+                case StorageProviderNames.Ftp:
                     var ftpSettings = CreateFtpStorageSettings(storageSettings);
                     return Create(ftpSettings);
-                case "samba":
+                case StorageProviderNames.Samba:
                     var sambaSettings = CreateSambaStorageSettings(storageSettings);
                     return new SambaStorage(sambaSettings);
                 default:
@@ -56,7 +57,7 @@ namespace BUtil.Core.Storages
             return new StorageSettings
             {
                 Name = settings.Name,
-                ProviderName = "Hdd",
+                ProviderName = StorageProviderNames.Hdd,
                 Options = JsonSerializer.Serialize(settings)
             };
         }
@@ -67,7 +68,7 @@ namespace BUtil.Core.Storages
             return new StorageSettings
             {
                 Name = settings.Name,
-                ProviderName = "Ftp",
+                ProviderName = StorageProviderNames.Ftp,
                 Options = JsonSerializer.Serialize(settings)
             };
         }
@@ -78,7 +79,7 @@ namespace BUtil.Core.Storages
             return new StorageSettings
             {
                 Name = settings.Name,
-                ProviderName = "Samba",
+                ProviderName = StorageProviderNames.Samba,
                 Options = JsonSerializer.Serialize(settings)
             };
 

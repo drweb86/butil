@@ -11,7 +11,10 @@ namespace BUtil.Core.Options
 			ExecuteAfterBackup = new List<ExecuteProgramTaskInfo>();
             Items = new List<SourceItem>();
 			Storages = new List<StorageSettings>();
+			BackupModel = new BackupModel() { ProviderName = BackupModelProviderNames.Image, Options = null };
         }
+
+		public BackupModel BackupModel { get; set; }
 
         public string Name { get; set; }
         
@@ -19,7 +22,6 @@ namespace BUtil.Core.Options
 
 		public List<ExecuteProgramTaskInfo> ExecuteAfterBackup { get; set; }
       
-        
 		public List<StorageSettings> Storages { get; set; }
 	    
 	    public string Password { get; set; }

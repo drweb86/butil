@@ -265,9 +265,6 @@
   <data name="Ok" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="Cancel" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
   <data name="Title" xml:space="preserve">
     <value>Title</value>
   </data>
@@ -325,9 +322,6 @@
   <data name="Ok" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="Cancel" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
   <data name="Test" xml:space="preserve">
     <value>Test</value>
   </data>
@@ -342,9 +336,6 @@
   </data>
   <data name="FtpStorage" xml:space="preserve">
     <value>Ftp storage...</value>
-  </data>
-  <data name="Cancel" xml:space="preserve">
-    <value>Cancel</value>
   </data>
   <data name="BeepSeveralTimes" xml:space="preserve">
     <value>Beep several times</value>
@@ -477,9 +468,6 @@
   </data>
   <data name="Scheduling" xml:space="preserve">
     <value>Scheduling</value>
-  </data>
-  <data name="Cancel" xml:space="preserve">
-    <value>Cancel</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Close</value>
@@ -684,9 +672,6 @@
   </data>
   <data name="CommandLineArguments" xml:space="preserve">
     <value>Command line arguments:</value>
-  </data>
-  <data name="Cancel" xml:space="preserve">
-    <value>Cancel</value>
   </data>
   <data name="ChainOfProgramsToExecuteBeforeBackup" xml:space="preserve">
     <value>Chain of programs to execute BEFORE backup</value>

@@ -374,15 +374,15 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             foreach(var storageSettings in _task.Storages)
             {
             	var listItem = new ListViewItem(storageSettings.Name);
-                switch (storageSettings.ProviderName.ToLowerInvariant())
+                switch (storageSettings.ProviderName)
                 {
-                    case "hdd":
+                    case StorageProviderNames.Hdd:
                         listItem.ImageIndex = (int)ImagesEnum.Hdd;
 						break;
-                    case "ftp":
+                    case StorageProviderNames.Ftp:
                         listItem.ImageIndex = (int)ImagesEnum.Ftp;
 						break;
-                    case "samba":
+                    case StorageProviderNames.Samba:
                         listItem.ImageIndex = (int)ImagesEnum.Network;
 						break;
                     default:
