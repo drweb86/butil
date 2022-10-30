@@ -7,11 +7,11 @@ namespace BUtil.Core.Options
 	{
 		public BackupTask()
 		{
-			ExecuteBeforeBackup = new List<ExecuteProgramTaskInfo>();
-			ExecuteAfterBackup = new List<ExecuteProgramTaskInfo>();
-            Items = new List<SourceItem>();
-			Storages = new List<StorageSettings>();
-			BackupModel = new BackupModel() { ProviderName = BackupModelProviderNames.Image, Options = null };
+			ExecuteBeforeBackup = new ();
+			ExecuteAfterBackup = new ();
+            Items = new ();
+			Storages = new ();
+			BackupModel = new () { ProviderName = BackupModelProviderNames.Image };
         }
 
 		public BackupModel BackupModel { get; set; }
