@@ -36,22 +36,6 @@ namespace BUtil.Core.Options
                 .ToList();
         }
 
-        public IEnumerable<BackupTask> Load(IEnumerable<string> taskNames, out IEnumerable<string> missingTasks)
-        {
-            var tasks = new List<BackupTask>();
-            var missingTasksList = new List<string>();
-            foreach (var taskName in taskNames)
-            {
-                var task = Load(taskName);
-                if (task == null)
-                    missingTasksList.Add(taskName);
-                else
-                    tasks.Add(task);
-            }
-            missingTasks = missingTasksList;
-            return tasks;
-        }
-
         public void Save(BackupTask task)
         {
             var fileName = GetFileName(task.Name);
@@ -79,7 +63,7 @@ namespace BUtil.Core.Options
 
         private string GetFileName(string name)
         {
-            if (name.Contains("..") || name.Contains("/") || name.Contains("\\"))
+            if (name.Contains("..") || name.Contains('/') || name.Contains('\\'))
                 throw new ArgumentException(nameof(name));
 
             return Path.Combine(_folder, $"{name}{_extension}");

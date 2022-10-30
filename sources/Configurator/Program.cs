@@ -90,7 +90,7 @@ namespace BUtil.Configurator
 				}
                 else if (firstArgumentUpper == Arguments.RunBackupMaster)
                 {
-                    controller.OpenBackupUiMaster(new string[] {}, true);
+                    controller.OpenBackupUiMaster(null, true);
                 }
 				else
 				{
@@ -99,15 +99,15 @@ namespace BUtil.Configurator
 			}
             else if (args.Length > 1 && args[0].ToUpperInvariant() == Arguments.RunBackupMaster)
 			{
-				var listOfTasksToExecute = new List<string>();
+				string taskName = null;
                 foreach (var argument in args)
                 {
                     if (argument.StartsWith(Arguments.RunTask) && argument.Length > Arguments.RunTask.Length)
                     {
-                        listOfTasksToExecute.Add(argument.Substring(Arguments.RunTask.Length + 1));
+                        taskName = argument.Substring(Arguments.RunTask.Length + 1);
                     }
                 }
-				controller.OpenBackupUiMaster(listOfTasksToExecute.ToArray(), true);
+				controller.OpenBackupUiMaster(taskName, true);
 			}
 			else if (args.Length > 1)
     		{

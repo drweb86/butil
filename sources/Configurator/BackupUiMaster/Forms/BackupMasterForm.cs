@@ -64,7 +64,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 		
 		#endregion
 
-        public BackupMasterForm(ProgramOptions options, List<BackupTask> backupTasksChain)
+        public BackupMasterForm(ProgramOptions options, BackupTask task)
 		{
 			InitializeComponent();
 			
@@ -77,7 +77,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 			processingStateInformationColumnHeader.Width = 0;
 
             //TODO: please move to controller
-            if (backupTasksChain.Count == 0)
+            if (task == null)
             {
                 var backupTaskStoreService = new BackupTaskStoreService();
 				var backupTasks = backupTaskStoreService.LoadAll();
@@ -86,7 +86,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
                 {
                     if (form.ShowDialog() == DialogResult.OK)
                     {
-                        backupTasksChain = form.TasksToRun;
+                        task = form.TaskToRun;
                     }
                     else
                     {
@@ -95,7 +95,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
                 }
             }
 
-            _task = backupTasksChain[0];
+            _task = task;
             _controller = new BackupUiMaster(_task, options);
             _controller.BackupFinished += OnBackupFinsihed;
             CompressionItemsListViewResize(null, null);

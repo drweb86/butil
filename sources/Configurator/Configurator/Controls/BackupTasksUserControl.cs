@@ -86,19 +86,17 @@ namespace BUtil.Configurator.Configurator.Controls
 
         void AddTaskRequest(object sender, EventArgs e)
         {
-            using (var form = new CreateBackupTaskWizardForm(_programOptions))
+            using var form = new CreateBackupTaskWizardForm(_programOptions);
+            if (form.ShowDialog() == DialogResult.OK)
             {
-                if (form.ShowDialog() == DialogResult.OK)
-                {
-                    var backupTaskStoreService = new BackupTaskStoreService();
-                    backupTaskStoreService.Save(form.BackupTask);
+                var backupTaskStoreService = new BackupTaskStoreService();
+                backupTaskStoreService.Save(form.BackupTask);
 
-                    var backupTaskSchedulerService = new BackupTaskSchedulerService();
-                    backupTaskSchedulerService.Schedule(form.BackupTask.Name, form.ScheduleInfo);
+                var backupTaskSchedulerService = new BackupTaskSchedulerService();
+                backupTaskSchedulerService.Schedule(form.BackupTask.Name, form.ScheduleInfo);
 
-                    ReloadTasks();
-                    RefreshTaskControls(this, e);
-                }
+                ReloadTasks();
+                RefreshTaskControls(this, e);
             }
         }
         private void OnEditBackupTask(object sender, EventArgs e)
@@ -114,21 +112,19 @@ namespace BUtil.Configurator.Configurator.Controls
 
             var backupTaskSchedulerService = new BackupTaskSchedulerService();
             var scheduleInfo = backupTaskSchedulerService.GetSchedule(taskName);
-            using (var form = new EditBackupTaskForm(_programOptions, task, scheduleInfo))
+            using var form = new EditBackupTaskForm(_programOptions, task, scheduleInfo);
+            if (form.ShowDialog() == DialogResult.OK)
             {
-                if (form.ShowDialog() == DialogResult.OK)
+                backupTaskStoreService.Delete(taskName);
+                backupTaskStoreService.Save(task);
+
+                backupTaskSchedulerService.Schedule(task.Name, scheduleInfo);
+
+                ReloadTasks();
+
+                if (form.ExecuteTask)
                 {
-                    backupTaskStoreService.Delete(taskName);
-                    backupTaskStoreService.Save(task);
-
-                    backupTaskSchedulerService.Schedule(task.Name, scheduleInfo);
-
-                    ReloadTasks();
-
-                    if (form.ExecuteTask)
-                    {
-                        ExecuteRequest(this, e);
-                    }
+                    ExecuteRequest(this, e);
                 }
             }
         }
@@ -168,7 +164,7 @@ namespace BUtil.Configurator.Configurator.Controls
                 selectedTasks.Add(taskToExecute.Text);
             }
 
-            _controller.OpenBackupUiMaster(selectedTasks.ToArray(), false);
+            _controller.OpenBackupUiMaster(selectedTasks[0], false);
         }
 
         void RefreshTaskControls(object sender, EventArgs e)

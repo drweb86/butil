@@ -17,3 +17,6 @@ Shows restoration Master with this file opened.
 
 ## JustJournals
 Shows the Logs Viewer.
+
+## "Task=My task title"
+Informs the program to use the specified task during backup process.

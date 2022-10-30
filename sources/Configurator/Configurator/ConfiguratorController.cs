@@ -1,20 +1,14 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using BUtil.Configurator.BackupUiMaster.Forms;
 using System.Diagnostics;
 using System.Globalization;
-
-using BUtil.Core.Misc;
-using BUtil.Core;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
 using BUtil.Core.PL;
 using BUtil.RestorationMaster;
 using BUtil.Configurator.LogsManagement;
-using System.Linq;
 
 namespace BUtil.Configurator.Configurator
 {
@@ -64,13 +58,8 @@ namespace BUtil.Configurator.Configurator
 				Directory.Delete(Directories.UserDataFolder, true);
 		}
 		
-		public void OpenBackupUiMaster(string[] taskNames, bool runFormAsApplication)
+		public void OpenBackupUiMaster(string taskName, bool runFormAsApplication)
 		{
-            if (taskNames == null)
-            {
-                throw new ArgumentNullException("taskTitles");
-            }
-
 		    if (Program.PackageIsBroken)
             {
                 return;
@@ -78,14 +67,7 @@ namespace BUtil.Configurator.Configurator
 
             if (!runFormAsApplication)
             {
-                var arguments = new StringBuilder(Arguments.RunBackupMaster);
-
-                foreach (var taskTitle in taskNames)
-                {
-                    arguments.Append(string.Format(" \"{0}={1}\"", Arguments.RunTask, taskTitle));
-                }
-
-                Process.Start(Application.ExecutablePath, arguments.ToString());
+                Process.Start(Application.ExecutablePath, $"{Arguments.RunBackupMaster} \"{Arguments.RunTask}={taskName}\"");
                 return;
             }
 
@@ -95,12 +77,12 @@ namespace BUtil.Configurator.Configurator
             // here among checked in task selection form
 
             var backupTaskStoreService = new BackupTaskStoreService();
-            var backupTasks = backupTaskStoreService.Load(taskNames, out var missingTasks);
-            if (missingTasks.Any())
-                Messages.ShowErrorBox($"Missing task '{string.Join(",", missingTasks)}' is missing.");
+            var task = backupTaskStoreService.Load(taskName);
+            if (task == null)
+                Messages.ShowErrorBox($"Task '{taskName}' is missing.");
 
 // This must be refactored in order to use something like Tool pattern
-            using (var form = new BackupMasterForm(_profileOptions, backupTasks.ToList()))
+            using (var form = new BackupMasterForm(_profileOptions, task))
             {
                 Application.Run(form);
             }
@@ -158,9 +140,6 @@ namespace BUtil.Configurator.Configurator
         
         public bool StoreSettings()
         {
-            var backupTaskStoreService = new BackupTaskStoreService();
-            var tasks = backupTaskStoreService.LoadAll();
-
             try
             {
                 ProgramOptionsManager.StoreSettings(_profileOptions);

@@ -6,9 +6,6 @@
 ## "Task=My task title"
 Informs the program to use the specified task during backup process.
 
-## "Task=My task 1 title" "Task=My task 2 title" "Task=My task 3 title"
-Informs the program to execute the specified tasks one by one during backup process. Titles are case dependant. Each backup task is executed once independently on how much time it was mentioned in chain.
-
 ## Help
 Shows brief help about all commands
 

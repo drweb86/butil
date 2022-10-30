@@ -25,7 +25,7 @@ namespace BUtil.Configurator.BackupUiMaster
 
         private readonly ProgramOptions _options;
         private readonly BackupTask _task;
-        private BackupProcess _backupper;
+        private IBackupModelStrategy _backupper;
         private string _fileLogFile;
 
         #endregion
@@ -73,7 +73,7 @@ namespace BUtil.Configurator.BackupUiMaster
             get { return _options; }
         }
 
-        public BackupProcess BackupClass
+        public IBackupModelStrategy BackupClass
         {
             get { return _backupper; }
         }
@@ -174,7 +174,7 @@ namespace BUtil.Configurator.BackupUiMaster
             var log = new FileLog(_options.LogsFolder, _options.LoggingLevel, false);
             _fileLogFile = log.LogFilename;
             log.Open();
-            _backupper = new BackupProcess(new List<BackupTask>{_task}, Options, log);
+            _backupper = BackupModelStrategyFactory.Create(log, _task, Options);
 
             _backupper.BackupFinished +=
 				new BackupFinished(onBackupFinsihedHelper);

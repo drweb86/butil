@@ -32,12 +32,9 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 
         #region Properties
 
-        /// <summary>
-        /// Tasks to execute
-        /// </summary>
-        public List<BackupTask> TasksToRun
+        public BackupTask TaskToRun
         {
-            get { return new List<BackupTask> { _tasks[(string)_tasksComboBox.SelectedItem ]}; }
+            get { return _tasks[(string)_tasksComboBox.SelectedItem ]; }
         }
 
         #endregion

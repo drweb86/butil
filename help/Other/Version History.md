@@ -18,6 +18,7 @@ Program Files, Program Files (x86), PATH environment variable directories
 - 7-zip process count now takes into account logical cores. Default setting is changed to amount of logical cores.
 - phased out Ghost application (it is replaced with console tool integrated with Windows Scheduler).
 - md5 tool was dropped (certuil -hashfile) since getting MD5 is part of Windows OS and powershell now.
+- Task name command line argument now only one is accepted by both UI and console. The idea is to simplify the tool.
 
 # 5.1 ( 22 October 2022 )
 

@@ -35,13 +35,13 @@ namespace BUtil.ConsoleBackup.Controller
         /// <returns>true when all arguments were recognized</returns>
         public bool ParseCommandLineArguments(string[] args)
 		{
-            args = args ?? new string[] { };
+            args ??= Array.Empty<string>();
 
             foreach (string argument in args)
             {
                 if (argument.StartsWith(TaskCommandLineArgument, StringComparison.InvariantCultureIgnoreCase))
                 {
-                    _backupTaskTitles.Add(argument.Substring(TaskCommandLineArgument.Length));
+                    _taskName = argument[TaskCommandLineArgument.Length..];
                     continue;
                 }
                 else if (ArgumentIs(argument, Shutdown))
@@ -98,21 +98,21 @@ namespace BUtil.ConsoleBackup.Controller
         {
             var log = OpenLog();
 
-            if (_backupTaskTitles.Count == 0)
+            if (string.IsNullOrWhiteSpace(_taskName))
             {
                 log.WriteLine(LoggingEvent.Error, Resources.PleaseSpecifyTheBackupTaskTitleUsingTheCommandLineArgument0MyBackupTaskTitleNexampleBackupExe0MyBackupTitle, TaskCommandLineArgument);
                 return false;
             }
 
             var backupTaskStoreService = new BackupTaskStoreService();
-            var backupTasks = backupTaskStoreService.Load(_backupTaskTitles, out var missingTasks);
-            foreach (var missingTask in missingTasks)
-                log.WriteLine(LoggingEvent.Error, Resources.TherereNoBackupTaskWithTitle0, missingTask);
-
-            if (missingTasks.Any())
+            var task = backupTaskStoreService.Load(_taskName);
+            if (task == null)
+            {
+                log.WriteLine(LoggingEvent.Error, Resources.TherereNoBackupTaskWithTitle0, _taskName);
                 return false;
-            
-            _backup = new BackupProcess(backupTasks.ToList(), _options, log);
+            }
+
+            _backup = BackupModelStrategyFactory.Create(log, task, _options);
 
             return true;
 		}
@@ -261,8 +261,8 @@ namespace BUtil.ConsoleBackup.Controller
 
         bool _useFileLog;
         ProgramOptions _options;
-		BackupProcess _backup;
-        readonly List<string> _backupTaskTitles = new List<string>();
+		IBackupModelStrategy _backup;
+        string _taskName;
         PowerTask _powerTask = PowerTask.None;
 
         #endregion

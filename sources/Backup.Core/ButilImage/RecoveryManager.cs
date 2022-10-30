@@ -37,14 +37,11 @@ namespace BUtil.Core.ButilImage
 					{
 						openedReader.Extract(record, tempFile);
 
-						UnpackArchive aup = new UnpackArchive(unpackParameters);
+						var aup = new UnpackArchive(unpackParameters);
 						aup.StartJob();
 					}
 					finally
 					{
-						if (imageDataIsPasswordProtected)
-							BackupProcess.OverwriteFileWithZerosWithoutLogging(tempFile);
-
 						File.Delete(tempFile);
 					}
 			}
