@@ -23,7 +23,6 @@ namespace BUtil.Core.Storages
         }
 
         internal SambaStorage(SambaStorageSettings settings)
-            : base(settings.Name)
         {
             _settings = settings;
         }
@@ -94,7 +93,7 @@ namespace BUtil.Core.Storages
                 if (size > SkipCopyingToNetworkStorageLimit)
                 {
                     Log.WriteLine(LoggingEvent.Warning,
-                        string.Format(CultureInfo.CurrentCulture, Resources.CopyingOfBackupTo0NetworkStorageSkippedBecauseItsSize1ExceededSpecifiedLimit2, StorageName, size, SkipCopyingToNetworkStorageLimit));
+                        string.Format(CultureInfo.CurrentCulture, Resources.CopyingOfBackupTo0NetworkStorageSkippedBecauseItsSize1ExceededSpecifiedLimit2, _settings.Name, size, SkipCopyingToNetworkStorageLimit));
 
                     return;
                 }

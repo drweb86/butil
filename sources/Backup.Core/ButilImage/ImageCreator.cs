@@ -15,25 +15,11 @@ namespace BUtil.Core.ButilImage
 
         private const string _FILE_EXISTS = "File '{0}' exists!!!";
 
-		ImageHeader _metadata = new ImageHeader();
+		private readonly ImageHeader _metadata = new();
 		private readonly string _file;
 
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="FileName">File name of an image</param>
 		public ImageCreator(string file, ImageHeader metadata)
 		{
-			if (string.IsNullOrEmpty(file))
-			{
-				throw new ArgumentNullException("file");
-			}
-			
-			if (metadata == null)
-			{
-				throw new ArgumentException("metadata");
-			}
-
 			_metadata = metadata;
 			_file = file;
 		}
@@ -59,32 +45,28 @@ namespace BUtil.Core.ButilImage
 					throw new FileNotFoundException(record.LinkedFile);
             }
 
-            using (BinaryWriter writer = new BinaryWriter(File.OpenWrite(_file)))
+            using var writer = new BinaryWriter(File.OpenWrite(_file));
+            writer.Write(_IMAGE_FORMAT_VERSION);
+            byte[] metadatabytes = _metadata.ToArray();
+            writer.Write(BitConverter.GetBytes(metadatabytes.Length));
+            writer.Write(metadatabytes);
+
+            byte[] buffer;
+
+            foreach (var record in records)
             {
-				writer.Write(_IMAGE_FORMAT_VERSION);
-                byte[] metadatabytes = _metadata.ToArray();
-                writer.Write(BitConverter.GetBytes(metadatabytes.Length));
-                writer.Write(metadatabytes);
-
-                byte[] buffer;
-
-                foreach (MetaRecord record in records)
+                using var reader = new BinaryReader(File.OpenRead(record.LinkedFile));
+                do
                 {
-                    using (BinaryReader reader = new BinaryReader(File.OpenRead(record.LinkedFile)))
-                    {
-                        do
-                        {
-                            buffer = reader.ReadBytes(_BUFFER_SIZE);
-                            writer.Write(buffer);
-                        }
-                        while (buffer.Length == _BUFFER_SIZE);
-
-                        reader.Close();
-                    }
+                    buffer = reader.ReadBytes(_BUFFER_SIZE);
+                    writer.Write(buffer);
                 }
-                writer.Flush();
-                writer.Close();
+                while (buffer.Length == _BUFFER_SIZE);
+
+                reader.Close();
             }
-		}
+            writer.Flush();
+            writer.Close();
+        }
 	}
 }

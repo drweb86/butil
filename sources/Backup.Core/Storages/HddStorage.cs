@@ -11,7 +11,6 @@ using System.Reflection;
 
 namespace BUtil.Core.Storages
 {
-
 	class HddStorage: StorageBase
 	{
         const string _DeletingBUtilImagesInTargetFolderBeforeBackup = "Deleting BUtil image files from target folder {0}";
@@ -23,7 +22,6 @@ namespace BUtil.Core.Storages
 
 
 		internal HddStorage(HddStorageSettings settings)
-			:base(settings.Name)
 		{
 			_settings = settings;
 		}

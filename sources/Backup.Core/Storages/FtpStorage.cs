@@ -23,8 +23,7 @@ namespace BUtil.Core.Storages
 
 		FtpConnection _connection;
 
-		internal FtpStorage(FtpStorageSettings settings):
-			base(settings.Name)
+		internal FtpStorage(FtpStorageSettings settings)
 		{
 			_settings = settings;
 		}

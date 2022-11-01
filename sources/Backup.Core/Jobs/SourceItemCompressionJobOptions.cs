@@ -8,9 +8,6 @@ using BUtil.Core.FileSystem;
 [assembly: CLSCompliant(true)]
 namespace BUtil.Core.Jobs
 {
-    /// <summary>
-    /// Description of ArchiveParameter.
-    /// </summary>
     public sealed class SourceItemCompressionJobOptions
     {
         readonly string _archiveName;
@@ -72,6 +69,8 @@ namespace BUtil.Core.Jobs
             _compressionItem = item;
             if (!string.IsNullOrWhiteSpace(password))
                 СreateArgumentsForCompressionWithPassword(password);
+            else
+                СreateArgumentsForCompression();
         }
 
         public override string ToString()

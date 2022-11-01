@@ -212,9 +212,19 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 			tasksListView.CheckBoxes = false;
 
 
-			
+            foreach (ListViewItem item in tasksListView.Items)
+            {
+                if (!item.Checked)
+                {
+                    item.BackColor = Color.Gray;
+                    item.SubItems[2].Text = Resources.Disabled;
+                }
+            }
 
-			processingStateInformationColumnHeader.Width = 154;
+
+
+
+            processingStateInformationColumnHeader.Width = 154;
 			CompressionItemsListViewResize(null, null);
 
 			settingsUserControl.GetSettingsFromUi(out PowerTask task, out bool beepWhenCompleted);
@@ -258,14 +268,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 				tasksListView.Items.Add(listItem);
 			}
 
-            foreach (ListViewItem item in tasksListView.Items)
-            {
-                if (!item.Checked)
-                {
-                    item.BackColor = Color.Gray;
-                    item.SubItems[2].Text = Resources.Disabled;
-                }
-            }
 
             _controller.BackupClass.Events.OnSourceItemStatusUpdate += OnSourceItemStatusUpdate;
             _controller.BackupClass.Events.OnStorageStatusUpdate += OnStorageStatusUpdate;
