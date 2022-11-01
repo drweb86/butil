@@ -20,6 +20,7 @@ namespace BUtil.Core.Jobs
         readonly SyncFile _imageFile;
         readonly LogBase _log;
         private readonly BackupEvents _events;
+        private readonly object _eventKey;
         EventHandler<JobThreadEventArgs> _finished;
         readonly Collection<MetaRecord> _metarecords;
         public EventHandler NotificationEventHandler = null;
@@ -37,12 +38,14 @@ namespace BUtil.Core.Jobs
         public CreateButilImageJob(
             LogBase log,
             BackupEvents events,
+            object eventKey,
             SyncFile imageFile,
             Collection<MetaRecord> metarecords)
         {
             _imageFile = imageFile;
             _log = log;
             _events = events;
+            _eventKey = eventKey;
             _metarecords = metarecords;
         }
 
@@ -92,7 +95,7 @@ namespace BUtil.Core.Jobs
 
         void StatusUpdate(ProcessingStatus status)
         {
-            _events.ImagePacking(status);
+            _events.CustomUpdate(_eventKey, status);
         }
 
         void ReserveFileForBackupImage()

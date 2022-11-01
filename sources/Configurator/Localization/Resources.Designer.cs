@@ -1349,15 +1349,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Packing data in an image.
-        /// </summary>
-        internal static string PackingDataInAnImage {
-            get {
-                return ResourceManager.GetString("PackingDataInAnImage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Packing Files.
         /// </summary>
         internal static string PackingFiles {

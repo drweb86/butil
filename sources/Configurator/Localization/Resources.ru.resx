@@ -613,9 +613,6 @@
   <data name="OtherTasks" xml:space="preserve">
     <value>Другие задания</value>
   </data>
-  <data name="PackingDataInAnImage" xml:space="preserve">
-    <value>Упаковка данных в образ</value>
-  </data>
   <data name="ButilSoftwarePackageComponent0IsMissingNNpleaseReinstallApplicationNNrestorationBackupAndHelpFunctionsWillBeUnavailable" xml:space="preserve">
     <value>Компонент приложения BUtil "{0}" не найден.\n\nПожалуйста, переустановите приложение.\n\nФункции Восстановления, Резервного копирования и Помощи будут недоступны.</value>
   </data>

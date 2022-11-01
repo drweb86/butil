@@ -18,7 +18,7 @@ using BUtil.Core.Jobs;
 
 namespace BUtil.Core
 {
-	class ImageBackupModelStrategy: IBackupModelStrategy
+	class ImageBackupModelStrategy : IBackupModelStrategy
 	{
 		#region locals
 
@@ -26,8 +26,10 @@ namespace BUtil.Core
 		string _couldNotDeleteFileFormatString = "During deleting of a file '{0}' an error occured: {1}";
 		string _noStoragesSpecified = "There is no storages specified in configuration. Compression of data was skipped";
 		string _noDataToBackupSpecified = "There is no data to backup specified in configuration";
-		
+
 		#endregion
+
+		const string ImagePacking = "ImagePacking";
 
 		#region Fields
 
@@ -40,7 +42,7 @@ namespace BUtil.Core
 		readonly TaskManager _compressionManager;
 		readonly TaskManager _imageCreationManager;
 		bool _aborting;
-	    bool _runExecuted;
+		bool _runExecuted;
 		readonly BackupTask _task;
 
 		// keeps temporary file names
@@ -54,28 +56,28 @@ namespace BUtil.Core
 		public LogBase Log => _log;
 		public BackupEvents Events { get; private set; } = new BackupEvents();
 
-        #endregion
+		#endregion
 
-        #region Constructors
+		#region Constructors
 
-        public ImageBackupModelStrategy(LogBase openedLog, BackupTask task, ProgramOptions options)
-        {
-            if (!openedLog.IsOpened)
-                throw new InvalidDataException("Log is not opened!");// do not localize!
+		public ImageBackupModelStrategy(LogBase openedLog, BackupTask task, ProgramOptions options)
+		{
+			if (!openedLog.IsOpened)
+				throw new InvalidDataException("Log is not opened!");// do not localize!
 
-            _log = openedLog;
-            _task = task;
-            _options = options;
-            _beforeBackupEventManager = new TaskManager(1);
-            _afterBackupEventManager = new TaskManager(1);
-            _copyManager = new TaskManager(_options.AmountOfStoragesToProcessSynchronously);
-            _compressionManager = new TaskManager(_options.AmountOf7ZipProcessesToProcessSynchronously);
-            _imageCreationManager = new TaskManager(1);
-            HtmlLogFormatter.IncludeLoggingEventPrefixes = (options.LoggingLevel == LogLevel.Support);
-            ApplyTranslation();
-        }
+			_log = openedLog;
+			_task = task;
+			_options = options;
+			_beforeBackupEventManager = new TaskManager(1);
+			_afterBackupEventManager = new TaskManager(1);
+			_copyManager = new TaskManager(_options.AmountOfStoragesToProcessSynchronously);
+			_compressionManager = new TaskManager(_options.AmountOf7ZipProcessesToProcessSynchronously);
+			_imageCreationManager = new TaskManager(1);
+			HtmlLogFormatter.IncludeLoggingEventPrefixes = (options.LoggingLevel == LogLevel.Support);
+			ApplyTranslation();
+		}
 
-        #endregion
+		#endregion
 
 		#region Properties
 
@@ -87,14 +89,17 @@ namespace BUtil.Core
 			get { return _log.ErrorsOrWarningsRegistered; }
 		}
 
+		public Dictionary<object, string> CustomJobs => new Dictionary<object, string> {
+			{ ImagePacking, Resources.PackingDataInAnImage }};
+
 		#endregion
 
 		#region Public methods
-	
-        /// <summary>
-        /// Non-reenterable
-        /// </summary>
-        public void Run()
+
+		/// <summary>
+		/// Non-reenterable
+		/// </summary>
+		public void Run()
         {
             if (_runExecuted)
             {
@@ -229,7 +234,7 @@ namespace BUtil.Core
 			foreach (var storageSettings in _task.Storages)
 				Events.StorageStatusUpdate(storageSettings, ProcessingStatus.NotStarted);
 			
-			Events.ImagePacking(ProcessingStatus.NotStarted);
+			Events.CustomUpdate(ImagePacking, ProcessingStatus.NotStarted);
 			
 			return IsAnySenceInPacking();
 		}
@@ -317,7 +322,7 @@ namespace BUtil.Core
 				return;
 			}
 			
-			var imageCreationJob = new CreateButilImageJob(_log, Events, _imageFile, metarecords);
+			var imageCreationJob = new CreateButilImageJob(_log, Events, ImagePacking, _imageFile, metarecords);
 			_imageCreationManager.AddJob(imageCreationJob);
 			_imageCreationManager.WaitUntilAllJobsAreDone();
 

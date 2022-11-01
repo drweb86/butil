@@ -613,9 +613,6 @@
   <data name="OtherTasks" xml:space="preserve">
     <value>Other Tasks</value>
   </data>
-  <data name="PackingDataInAnImage" xml:space="preserve">
-    <value>Packing data in an image</value>
-  </data>
   <data name="ButilSoftwarePackageComponent0IsMissingNNpleaseReinstallApplicationNNrestorationBackupAndHelpFunctionsWillBeUnavailable" xml:space="preserve">
     <value>BUtil software package component '{0}' is missing.\n\nPlease reinstall application.\n\nRestoration, Backup and Help functions will be unavailable.</value>
   </data>

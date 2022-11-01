@@ -48,12 +48,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 		
 		#endregion
 		
-		#region Constants
-		
-		const string ImagePacking = "ImagePacking";
-		
-		#endregion
-		
 		#region Fields
 		
 		bool _firstTimeApplicationInTray = true;
@@ -217,26 +211,8 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 			// applying settings
 			tasksListView.CheckBoxes = false;
 
-			// adding internal tasks
-			var listItem = new ListViewItem(Resources.PackingDataInAnImage)
-			{
-				ImageIndex = (int)ImagesEnum.CompressIntoAnImage
-			};
-			listItem.SubItems.Add("-");
-           	listItem.SubItems.Add(string.Empty);
-           	listItem.Group = tasksListView.Groups[(int)GroupEnum.OtherTasks];
-           	listItem.Tag = ImagePacking;
-           	listItem.Checked = true;
-           	tasksListView.Items.Add(listItem);
+
 			
-			foreach (ListViewItem item in tasksListView.Items)
-			{
-				if (!item.Checked)
-				{
-					item.BackColor = Color.Gray;
-					item.SubItems[2].Text = Resources.Disabled;
-				}
-			}
 
 			processingStateInformationColumnHeader.Width = 154;
 			CompressionItemsListViewResize(null, null);
@@ -266,9 +242,34 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 			// starting machinery
 			_backupInProgress = true;
 			_controller.PrepareBackup();
-			_controller.BackupClass.Events.OnSourceItemStatusUpdate += OnSourceItemStatusUpdate;
+
+			foreach (var customTag in _controller.BackupClass.CustomJobs)
+			{
+				var listItem = new ListViewItem(customTag.Value)
+				{
+					ImageIndex = (int)ImagesEnum.CompressIntoAnImage
+				};
+				listItem.SubItems.Add("-");
+				listItem.SubItems.Add(string.Empty);
+				listItem.Group = tasksListView.Groups[(int)GroupEnum.OtherTasks];
+				listItem.Tag = customTag.Key;
+				listItem.Checked = true;
+
+				tasksListView.Items.Add(listItem);
+			}
+
+            foreach (ListViewItem item in tasksListView.Items)
+            {
+                if (!item.Checked)
+                {
+                    item.BackColor = Color.Gray;
+                    item.SubItems[2].Text = Resources.Disabled;
+                }
+            }
+
+            _controller.BackupClass.Events.OnSourceItemStatusUpdate += OnSourceItemStatusUpdate;
             _controller.BackupClass.Events.OnStorageStatusUpdate += OnStorageStatusUpdate;
-            _controller.BackupClass.Events.OnImagePacking += OnImagePacking;
+            _controller.BackupClass.Events.OnCustomUpdate += OnCustomUpdate;
             _controller.BackupClass.Events.OnExecuteProgramStatusUpdate += OnExecuteProgramStatusUpdate;
 			backupBackgroundWorker.RunWorkerAsync();
 		}
@@ -278,9 +279,9 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             UpdateListViewItem(e.TaskInfo, e.Status);
         }
 
-		private void OnImagePacking(object sender, ImagePackingEventArgs e)
+		private void OnCustomUpdate(object sender, CustomEventArgs e)
 		{
-            UpdateListViewItem(ImagePacking, e.Status);
+            UpdateListViewItem(e.Tag, e.Status);
         }
 
 		private void OnStorageStatusUpdate(object sender, StorageStatusEventArgs e)

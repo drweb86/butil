@@ -9,7 +9,7 @@ namespace BUtil.Core.Events
         public event EventHandler<ExecuteProgramStatusEventArgs> OnExecuteProgramStatusUpdate;
         public event EventHandler<SourceItemStatusEventArgs> OnSourceItemStatusUpdate;
         public event EventHandler<StorageStatusEventArgs> OnStorageStatusUpdate;
-        public event EventHandler<ImagePackingEventArgs> OnImagePacking;// TODO:
+        public event EventHandler<CustomEventArgs> OnCustomUpdate;
 
         public event EventHandler OnFinished;
         public event EventHandler<ErrorEventArgs> OnError;
@@ -37,12 +37,12 @@ namespace BUtil.Core.Events
             handler(this, new StorageStatusEventArgs(settings, status));
         }
 
-        public void ImagePacking(ProcessingStatus status)
+        public void CustomUpdate(object tag, ProcessingStatus status)
         {
-            var handler = OnImagePacking;
+            var handler = OnCustomUpdate;
             if (handler == null)
                 return;
-            handler(this, new ImagePackingEventArgs(status));
+            handler(this, new CustomEventArgs(tag, status));
         }
 
         public void Finished()
