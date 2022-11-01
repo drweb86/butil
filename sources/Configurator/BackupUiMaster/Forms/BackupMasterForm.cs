@@ -14,6 +14,8 @@ using BUtil.BackupUiMaster.Controls;
 using BUtil.Core.Storages;
 using BUtil.Configurator.Localization;
 using System.Linq;
+using BUtil.Core.Events;
+using System.IO;
 
 namespace BUtil.Configurator.BackupUiMaster.Forms
 {
@@ -82,18 +84,16 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
                 var backupTaskStoreService = new BackupTaskStoreService();
 				var backupTasks = backupTaskStoreService.LoadAll();
 
-                using (var form = new SelectTaskToRunForm(backupTasks.ToDictionary(t=> t.Name, t=> t)))
-                {
-                    if (form.ShowDialog() == DialogResult.OK)
-                    {
-                        task = form.TaskToRun;
-                    }
-                    else
-                    {
-                        Environment.Exit(-1);
-                    }
-                }
-            }
+				using var form = new SelectTaskToRunForm(backupTasks.ToDictionary(t => t.Name, t => t));
+				if (form.ShowDialog() == DialogResult.OK)
+				{
+					task = form.TaskToRun;
+				}
+				else
+				{
+					Environment.Exit(-1);
+				}
+			}
 
             _task = task;
             _controller = new BackupUiMaster(_task, options);
@@ -122,111 +122,51 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 			}
 		}
 		
-		static Color GetResultColor(ProcessingState state)
+		static Color GetResultColor(ProcessingStatus state)
 		{
-			switch (state)
+			return state switch
 			{
-				case ProcessingState.FinishedSuccesfully:
-					return Color.LightGreen;
-				case ProcessingState.FinishedWithErrors:
-					return Color.LightCoral;
-				case ProcessingState.InProgress:
-					return Color.Yellow;
-				case ProcessingState.NotStarted:
-					throw new InvalidOperationException(state.ToString());
-				default:
-					throw new NotImplementedException(state.ToString());
-			}
+				ProcessingStatus.FinishedSuccesfully => Color.LightGreen,
+				ProcessingStatus.FinishedWithErrors => Color.LightCoral,
+				ProcessingStatus.InProgress => Color.Yellow,
+				ProcessingStatus.NotStarted => throw new InvalidOperationException(state.ToString()),
+				_ => throw new NotImplementedException(state.ToString()),
+			};
 		}
-		
-		void OnNotificationReceived(object sender, EventArgs e)
+
+		private void OnSourceItemStatusUpdate(object sender, SourceItemStatusEventArgs e)
 		{
-			if (InvokeRequired)
-			{
-				Invoke(new EventHandler(OnNotificationReceived), new [] {sender, e});
-			}
-			else
-			{
-				if (e == null)
-				{
-					throw new InvalidOperationException();
-				}
-				
-                
-                if (e is PackingNotificationEventArgs)
-				{
-					var notification = (PackingNotificationEventArgs)e;
-					foreach(ListViewItem item in tasksListView.Items)
-					{
-						if (item.Tag == notification.Item)
-						{
-							item.SubItems[2].Text = LocalsHelper.ToString(notification.State);
-							if (notification.State != ProcessingState.NotStarted)
-							{
-								item.BackColor =  GetResultColor(notification.State);
-							}
-						}
-					}
-				}
-				else if (e is CopyingToStorageNotificationEventArgs)
-				{
-					var notification = (CopyingToStorageNotificationEventArgs)e;
-					
-					foreach(ListViewItem item in tasksListView.Items)
-					{
-						if ( (item.Tag as StorageSettings)?.Name == notification.StorageName)
-						{
-							item.SubItems[2].Text = LocalsHelper.ToString(notification.State);
-							if (notification.State != ProcessingState.NotStarted)
-							{
-								item.BackColor =  GetResultColor(notification.State);
-							}
-						}
-					}
-				}
-				else if (e is ImagePackingNotificationEventArgs)
-				{
-					var notification = (ImagePackingNotificationEventArgs)e;
-					
-					foreach(ListViewItem item in tasksListView.Items)
-					{
-						if (item.Tag is string)
-						if ((string)item.Tag == ImagePacking)
-						{
-							item.SubItems[2].Text = LocalsHelper.ToString(notification.State);
-							if (notification.State != ProcessingState.NotStarted)
-							{
-								item.BackColor =  GetResultColor(notification.State);
-							}
-						}
-					}
-				}
-				else if (e is RunProgramBeforeOrAfterBackupEventArgs)
-				{
-					var notification = (RunProgramBeforeOrAfterBackupEventArgs)e;
-					
-					foreach(ListViewItem item in tasksListView.Items)
-					{
-						if (item.Tag is ExecuteProgramTaskInfo)
-						if (item.Tag == notification.TaskInfo)
-						{
-							item.SubItems[2].Text = LocalsHelper.ToString(notification.State);
-							if (notification.State != ProcessingState.NotStarted)
-							{
-								item.BackColor =  GetResultColor(notification.State);
-							}
-						}
-					}
-				}
-			}
+			UpdateListViewItem(e.Item, e.Status);
 		}
-		
+
+		private void UpdateListViewItem(object tag, ProcessingStatus status)
+		{
+            if (InvokeRequired)
+            {
+                Invoke(UpdateListViewItem, new[] { tag, status });
+                return;
+            }
+
+            foreach (ListViewItem item in tasksListView.Items)
+            {
+                if (item.Tag == tag)
+                {
+                    item.SubItems[2].Text = LocalsHelper.ToString(status);
+                    if (status != ProcessingStatus.NotStarted)
+                    {
+                        item.BackColor = GetResultColor(status);
+                    }
+					break;
+                }
+            }
+        }
+
 		void CloseButtonClick(object sender, EventArgs e)
 		{
 		    Close();
 		}
 		
-		void StartButtonClick(object sender, EventArgs e)
+		void StartButtonClick(object _, EventArgs e)
 		{
 			// here some logival verification
 			_task.Items.Clear();
@@ -276,11 +216,13 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 
 			// applying settings
 			tasksListView.CheckBoxes = false;
-			
+
 			// adding internal tasks
-			var listItem = new ListViewItem(Resources.PackingDataInAnImage);
-			listItem.ImageIndex = (int)ImagesEnum.CompressIntoAnImage;
-           	listItem.SubItems.Add("-");
+			var listItem = new ListViewItem(Resources.PackingDataInAnImage)
+			{
+				ImageIndex = (int)ImagesEnum.CompressIntoAnImage
+			};
+			listItem.SubItems.Add("-");
            	listItem.SubItems.Add(string.Empty);
            	listItem.Group = tasksListView.Groups[(int)GroupEnum.OtherTasks];
            	listItem.Tag = ImagePacking;
@@ -299,9 +241,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 			processingStateInformationColumnHeader.Width = 154;
 			CompressionItemsListViewResize(null, null);
 
-			PowerTask task;
-			bool beepWhenCompleted;
-			settingsUserControl.GetSettingsFromUi(out task, out beepWhenCompleted);
+			settingsUserControl.GetSettingsFromUi(out PowerTask task, out bool beepWhenCompleted);
 			_controller.PowerTask = task;
 			_controller.HearSoundWhenBackupCompleted = beepWhenCompleted;
 			
@@ -326,10 +266,28 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 			// starting machinery
 			_backupInProgress = true;
 			_controller.PrepareBackup();
-			_controller.BackupClass.NotificationEventHandler += OnNotificationReceived;
+			_controller.BackupClass.Events.OnSourceItemStatusUpdate += OnSourceItemStatusUpdate;
+            _controller.BackupClass.Events.OnStorageStatusUpdate += OnStorageStatusUpdate;
+            _controller.BackupClass.Events.OnImagePacking += OnImagePacking;
+            _controller.BackupClass.Events.OnExecuteProgramStatusUpdate += OnExecuteProgramStatusUpdate;
 			backupBackgroundWorker.RunWorkerAsync();
 		}
-		
+
+		private void OnExecuteProgramStatusUpdate(object sender, ExecuteProgramStatusEventArgs e)
+		{
+            UpdateListViewItem(e.TaskInfo, e.Status);
+        }
+
+		private void OnImagePacking(object sender, ImagePackingEventArgs e)
+		{
+            UpdateListViewItem(ImagePacking, e.Status);
+        }
+
+		private void OnStorageStatusUpdate(object sender, StorageStatusEventArgs e)
+		{
+            UpdateListViewItem(e.Settings, e.Status);
+        }
+
 		void ApplyLocalization()
 		{
 			settingsUserControl.ApplyLocalization();
@@ -373,23 +331,17 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             
             foreach(var storageSettings in _task.Storages)
             {
-            	var listItem = new ListViewItem(storageSettings.Name);
-                switch (storageSettings.ProviderName)
-                {
-                    case StorageProviderNames.Hdd:
-                        listItem.ImageIndex = (int)ImagesEnum.Hdd;
-						break;
-                    case StorageProviderNames.Ftp:
-                        listItem.ImageIndex = (int)ImagesEnum.Ftp;
-						break;
-                    case StorageProviderNames.Samba:
-                        listItem.ImageIndex = (int)ImagesEnum.Network;
-						break;
-                    default:
-                        throw new ArgumentOutOfRangeException(nameof(storageSettings));
-                }
-
-            	listItem.SubItems.Add(String.Empty);
+				var listItem = new ListViewItem(storageSettings.Name)
+				{
+					ImageIndex = storageSettings.ProviderName switch
+					{
+						StorageProviderNames.Hdd => (int)ImagesEnum.Hdd,
+						StorageProviderNames.Ftp => (int)ImagesEnum.Ftp,
+						StorageProviderNames.Samba => (int)ImagesEnum.Network,
+						_ => throw new InvalidDataException(nameof(storageSettings.ProviderName)),
+					}
+				};
+				listItem.SubItems.Add(String.Empty);
             	listItem.SubItems.Add(string.Empty);
             	listItem.Group = tasksListView.Groups[(int)GroupEnum.Storages];
             	listItem.Tag = storageSettings;
@@ -399,10 +351,12 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 
             foreach (ExecuteProgramTaskInfo taskInfo in _task.ExecuteBeforeBackup)
             {
-            	var listItem = new ListViewItem(taskInfo.Program);
-            	listItem.ImageIndex = (int)ImagesEnum.ProgramInRunBeforeAfterBackupChain;
+				var listItem = new ListViewItem(taskInfo.Program)
+				{
+					ImageIndex = (int)ImagesEnum.ProgramInRunBeforeAfterBackupChain
+				};
 
-            	listItem.SubItems.Add(taskInfo.Arguments);
+				listItem.SubItems.Add(taskInfo.Arguments);
             	listItem.SubItems.Add(string.Empty);
             	listItem.Group = tasksListView.Groups[(int) GroupEnum.BeforeBackupChain];
             	listItem.Tag = taskInfo;
@@ -412,10 +366,12 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             
             foreach (ExecuteProgramTaskInfo taskInfo in _task.ExecuteAfterBackup)
             {
-            	var listItem = new ListViewItem(taskInfo.Program);
-            	listItem.ImageIndex = (int)ImagesEnum.ProgramInRunBeforeAfterBackupChain;
+				var listItem = new ListViewItem(taskInfo.Program)
+				{
+					ImageIndex = (int)ImagesEnum.ProgramInRunBeforeAfterBackupChain
+				};
 
-            	listItem.SubItems.Add(taskInfo.Arguments);
+				listItem.SubItems.Add(taskInfo.Arguments);
             	listItem.SubItems.Add(string.Empty);
             	listItem.Group = tasksListView.Groups[(int) GroupEnum.AfterBackupChain];
             	listItem.Tag = taskInfo;

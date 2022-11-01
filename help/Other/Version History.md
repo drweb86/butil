@@ -19,6 +19,8 @@ Program Files, Program Files (x86), PATH environment variable directories
 - phased out Ghost application (it is replaced with console tool integrated with Windows Scheduler).
 - md5 tool was dropped (certuil -hashfile) since getting MD5 is part of Windows OS and powershell now.
 - Task name command line argument now only one is accepted by both UI and console. The idea is to simplify the tool.
+- event integration was upated.
+- dropped $backupFileName after backup task parameter support because none of new strategies will support it.
 
 # 5.1 ( 22 October 2022 )
 

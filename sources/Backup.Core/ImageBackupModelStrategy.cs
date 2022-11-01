@@ -13,10 +13,12 @@ using BUtil.Core.Misc;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using System.Linq;
+using BUtil.Core.Events;
+using BUtil.Core.Jobs;
 
 namespace BUtil.Core
 {
-    class ImageBackupModelStrategy: IBackupModelStrategy
+	class ImageBackupModelStrategy: IBackupModelStrategy
 	{
 		#region locals
 
@@ -29,8 +31,6 @@ namespace BUtil.Core
 
 		#region Fields
 
-		BackupFinished _onBackupFinished;
-		CriticalErrorOccur _onCriticalErrorOccured;
 		readonly ProgramOptions _options;
 		readonly LogBase _log;
 		Thread _job;
@@ -41,7 +41,7 @@ namespace BUtil.Core
 		readonly TaskManager _imageCreationManager;
 		bool _aborting;
 	    bool _runExecuted;
-		BackupTask _task;
+		readonly BackupTask _task;
 
 		// keeps temporary file names
 		readonly SyncedFiles _temporaryFiles = new();
@@ -52,6 +52,7 @@ namespace BUtil.Core
 		#region Public Properties
 
 		public LogBase Log => _log;
+		public BackupEvents Events { get; private set; } = new BackupEvents();
 
         #endregion
 
@@ -78,26 +79,6 @@ namespace BUtil.Core
 
 		#region Properties
 
-		public event EventHandler NotificationEventHandler = null;
-		
-		/// <summary>
-		/// Notification event handler that current backup was finished. Occurs in normal way
-		/// </summary>
-		public BackupFinished BackupFinished
-		{
-			get { return _onBackupFinished; }
-			set { _onBackupFinished = value; }
-		}
-
-		/// <summary>
-		/// Notification event handler that something critical happened and program cannot continue
-		/// </summary>
-		public CriticalErrorOccur CriticalErrorOccur
-		{
-			get { return _onCriticalErrorOccured; }
-			set { _onCriticalErrorOccured = value; }
-		}
-		
 		/// <summary>
 		/// Shows that during backup some unexpected things occured.
 		/// </summary>
@@ -142,9 +123,7 @@ namespace BUtil.Core
 			_copyManager.Abort();
 			_imageCreationManager.Abort();
 
-			// Alarming that all finished
-			if (_onBackupFinished != null)
-				_onBackupFinished.Invoke();
+			Events.Finished();
 		}
 		
 		#endregion
@@ -162,8 +141,10 @@ namespace BUtil.Core
 			// initialization of job thread instance
 			Thread.CurrentThread.Priority = _options.Priority;
 
-			_job = new Thread(BackupThreadJob);
-			_job.IsBackground = true;
+			_job = new Thread(BackupThreadJob)
+			{
+				IsBackground = true
+			};
 			_job.Start();
 			
 			while (_job.IsAlive)
@@ -189,44 +170,28 @@ namespace BUtil.Core
 
 			_log.Close();
 
-			// Alarming that all finished
-			if (_onBackupFinished != null)
-				_onBackupFinished.Invoke();
+			Events.Finished();
 		}
 		
-		/// <summary>
-		/// Occurs before any processing
-		/// </summary>
-		void RunProgramsChainBeforeBackup()
+		private void RunProgramsChainBeforeBackup()
 		{
 			_log.ProcedureCall("runProgramsChainBeforeBackup");
 
-			foreach (ExecuteProgramTaskInfo taskInfo in _task.ExecuteBeforeBackup)
+			foreach (var taskInfo in _task.ExecuteBeforeBackup)
 			{
-				var task = new BeforeBackupTask(taskInfo, _options.ProcessPriority, _log);
-                if (NotificationEventHandler != null)
-                {
-                    task.NotificationEventHandler += NotificationEventHandler;
-                }
+				var task = new ExecuteProgramJob(_log, Events, taskInfo, _options.ProcessPriority, Resources.BeforeBackupTask);
 				_beforeBackupEventManager.AddJob(task);
 			}
 			_beforeBackupEventManager.WaitUntilAllJobsAreDone();
 		}
 		
-		/// <summary>
-		/// Occurs after copying to storages right before the deletion of backup image file from temporary folder
-		/// </summary>
-		void RunProgramsChainAfterBackup()
+		private void RunProgramsChainAfterBackup()
 		{
 			_log.ProcedureCall("runProgramsChainAfterBackup");
 			
 			foreach (ExecuteProgramTaskInfo taskInfo in _task.ExecuteAfterBackup)
 			{
-				var task = new AfterBackupTask(taskInfo, _imageFile.FileName, _options.ProcessPriority, _log);
-                if (NotificationEventHandler != null)
-                {
-                    task.NotificationEventHandler += NotificationEventHandler;
-                }
+                var task = new ExecuteProgramJob(_log, Events, taskInfo, _options.ProcessPriority, Resources.AfterBackupTask);
 				_afterBackupEventManager.AddJob(task);
 			}
 			_afterBackupEventManager.WaitUntilAllJobsAreDone();
@@ -235,7 +200,7 @@ namespace BUtil.Core
 		/// <summary>
 		/// Called in the very beginning of backup lifetime cycle
 		/// </summary>
-		bool BeforeBackup(out Collection<MetaRecord> metarecords, out ArchiveTask[] archiveParameters)
+		bool BeforeBackup(out Collection<MetaRecord> metarecords, out SourceItemCompressionJobOptions[] archiveParameters)
 		{
 			_log.ProcedureCall("BeforeBackUp");
 			_log.WriteLine(LoggingEvent.Debug, string.Format(CultureInfo.InvariantCulture, "Temp folder: {0}", Directories.TempFolder));
@@ -251,24 +216,20 @@ namespace BUtil.Core
 				}
 			}
 
-			foreach (ExecuteProgramTaskInfo taskInfo in _task.ExecuteBeforeBackup)
-			{
-				Notify(new RunProgramBeforeOrAfterBackupEventArgs(taskInfo, ProcessingState.NotStarted));
-			}
+			foreach (var taskInfo in _task.ExecuteBeforeBackup)
+				Events.ExecuteProgramStatusUpdate(taskInfo, ProcessingStatus.NotStarted);
 
-			foreach (ExecuteProgramTaskInfo taskInfo in _task.ExecuteAfterBackup)
-			{
-				Notify(new RunProgramBeforeOrAfterBackupEventArgs(taskInfo, ProcessingState.NotStarted));
-			}
-			
-			archiveParameters = CreateArgsForCompressionAndMetaForImage(out metarecords);			
-			foreach (ArchiveTask archiveParameter in archiveParameters)
-				Notify(new PackingNotificationEventArgs(archiveParameter.ItemToCompress, ProcessingState.NotStarted));
+			foreach (var taskInfo in _task.ExecuteAfterBackup)
+                Events.ExecuteProgramStatusUpdate(taskInfo, ProcessingStatus.NotStarted);
+
+            archiveParameters = CreateArgsForCompressionAndMetaForImage(out metarecords);			
+			foreach (var archiveParameter in archiveParameters)
+				Events.SourceItemStatusUpdate(archiveParameter.ItemToCompress, ProcessingStatus.NotStarted);
 
 			foreach (var storageSettings in _task.Storages)
-				Notify(new CopyingToStorageNotificationEventArgs(storageSettings.Name, ProcessingState.NotStarted));
+				Events.StorageStatusUpdate(storageSettings, ProcessingStatus.NotStarted);
 			
-			Notify(new ImagePackingNotificationEventArgs(ProcessingState.NotStarted));
+			Events.ImagePacking(ProcessingStatus.NotStarted);
 			
 			return IsAnySenceInPacking();
 		}
@@ -286,10 +247,10 @@ namespace BUtil.Core
 			RemoveAllFilesAtFolder(_imageFile);
 		}
 		
-		ArchiveTask[] CreateArgsForCompressionAndMetaForImage(out Collection<MetaRecord> metarecords)
+		SourceItemCompressionJobOptions[] CreateArgsForCompressionAndMetaForImage(out Collection<MetaRecord> metarecords)
 		{
 			metarecords = new Collection<MetaRecord>();
-			var parametersSet = new ArchiveTask[_task.Items.Count];
+			var parametersSet = new SourceItemCompressionJobOptions[_task.Items.Count];
 
 		    int syncIndex = 0;
 			int itemIndex = 0;
@@ -304,11 +265,13 @@ namespace BUtil.Core
 				}
 				while(!_temporaryFiles.TryRegisterNewName(tempFileName));
 
-				parametersSet[itemIndex] = new ArchiveTask(_options.ProcessPriority, tempFileName, item, _task.Password);
-				
+				parametersSet[itemIndex] = new SourceItemCompressionJobOptions(_options.ProcessPriority, tempFileName, item, _task.Password);
+
 				// Metainformation
-				var record = new MetaRecord(item.IsFolder, item.Target);
-				record.LinkedFile = tempFileName;
+				var record = new MetaRecord(item.IsFolder, item.Target)
+				{
+					LinkedFile = tempFileName
+				};
 				metarecords.Add( record );
 				itemIndex++;
 			}
@@ -337,18 +300,13 @@ namespace BUtil.Core
 			return true;
 		}
 		
-		void Start(Collection<MetaRecord> metarecords, IEnumerable<ArchiveTask> archiveParameters)
+		void Start(Collection<MetaRecord> metarecords, IEnumerable<SourceItemCompressionJobOptions> archiveParameters)
 		{
 			_log.ProcedureCall("Start");
 
-			foreach (ArchiveTask archiveParameter in archiveParameters)
+			foreach (var archiveParameter in archiveParameters)
 			{
-				var job = new CompressionJob(archiveParameter, _log);
-
-                if (NotificationEventHandler != null)
-                {
-                    job.NotificationEventHandler += NotificationEventHandler;
-                }
+				var job = new SourceItemCompressionJob(_log, archiveParameter, Events);
 				_compressionManager.AddJob(job);
 			}
 			_compressionManager.WaitUntilAllJobsAreDone();
@@ -359,11 +317,7 @@ namespace BUtil.Core
 				return;
 			}
 			
-			var imageCreationJob = new ImageCreationJob(_log, _imageFile, metarecords);
-            if (NotificationEventHandler != null)
-            {
-                imageCreationJob.NotificationEventHandler += NotificationEventHandler;
-            }
+			var imageCreationJob = new CreateButilImageJob(_log, Events, _imageFile, metarecords);
 			_imageCreationManager.AddJob(imageCreationJob);
 			_imageCreationManager.WaitUntilAllJobsAreDone();
 
@@ -375,13 +329,7 @@ namespace BUtil.Core
 			
 			foreach (StorageSettings storageSettings in _task.Storages)
 			{
-				var storage = StorageFactory.Create(storageSettings);
-
-				var job = new CopyJob(storage, _imageFile.FileName, _log);
-                if (NotificationEventHandler != null)
-                {
-                    job.NotificationEventHandler += NotificationEventHandler;
-                }
+				var job = new CopyFileToStorageJob(_log, Events, storageSettings, _imageFile.FileName);
 				_copyManager.AddJob(job);
 			}
 			_copyManager.WaitUntilAllJobsAreDone();
@@ -402,18 +350,7 @@ namespace BUtil.Core
 			
 			File.Delete(_imageFile.FileName);
 		}
-
-		void Notify(EventArgs e)
-		{
-			if (NotificationEventHandler != null)
-			{
-				NotificationEventHandler(this, e);
-			}
-		}		
 		
-		/// <summary>
-		/// Removes all specified files
-		/// </summary>
 		void RemoveAllFilesAtFolder(SyncedFiles files)
 		{
 			_log.ProcedureCall("RemoveAllFilesAtFolder");

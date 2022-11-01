@@ -23,6 +23,7 @@ namespace BUtil.Configurator.BackupUiMaster
 
         #region Fields
 
+        private FileLog _temporaryLog;
         private readonly ProgramOptions _options;
         private readonly BackupTask _task;
         private IBackupModelStrategy _backupper;
@@ -39,7 +40,7 @@ namespace BUtil.Configurator.BackupUiMaster
 			GC.SuppressFinalize(this);
 		}
 
-		private void Dispose(bool flag)
+		private void Dispose(bool _)
 		{
 			if (!_isDisposed)
 			{
@@ -101,7 +102,7 @@ namespace BUtil.Configurator.BackupUiMaster
         	BackupClass.StopForcibly();
         }
 
-        private void onBackupFinsihedHelper()
+        private void OnBackupFinsihedHelper(object sender, EventArgs e)
         {
         	BackupClass.Dispose();
 
@@ -135,7 +136,7 @@ namespace BUtil.Configurator.BackupUiMaster
                         }
                         else
                         {
-                            _backupper.Log.WriteLine(LoggingEvent.Error, "Cannot schedule opening file after logging user into the system");
+                            _temporaryLog.WriteLine(LoggingEvent.Error, "Cannot schedule opening file after logging user into the system");
                         }
 	                }
 	                else
@@ -171,15 +172,13 @@ namespace BUtil.Configurator.BackupUiMaster
 
         public void PrepareBackup()
         {
-            var log = new FileLog(_options.LogsFolder, _options.LoggingLevel, false);
-            _fileLogFile = log.LogFilename;
-            log.Open();
-            _backupper = BackupModelStrategyFactory.Create(log, _task, Options);
+            _temporaryLog = new FileLog(_options.LogsFolder, _options.LoggingLevel, false);
+            _fileLogFile = _temporaryLog.LogFilename;
+            _temporaryLog.Open();
+            _backupper = BackupModelStrategyFactory.Create(_temporaryLog, _task, Options);
 
-            _backupper.BackupFinished +=
-				new BackupFinished(onBackupFinsihedHelper);
-            _backupper.CriticalErrorOccur +=
-				new CriticalErrorOccur(Messages.ShowErrorBox);
+            _backupper.Events.OnFinished += OnBackupFinsihedHelper;
+            _backupper.Events.OnError += (sender, e) => Messages.ShowErrorBox(e.Error);
         }
     }
 }

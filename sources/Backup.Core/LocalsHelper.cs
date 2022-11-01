@@ -1,6 +1,7 @@
 using System;
 
 using BUtil.Core.ButilImage;
+using BUtil.Core.Events;
 using BUtil.Core.Localization;
 
 namespace BUtil.Core
@@ -22,14 +23,14 @@ namespace BUtil.Core
 			}
 		}
 		
-		public static string ToString(ProcessingState state)
+		public static string ToString(ProcessingStatus state)
 		{
 			switch (state)
 			{
-				case ProcessingState.NotStarted: return Resources.Waiting;
-				case ProcessingState.InProgress: return Resources.InProgress;
-				case ProcessingState.FinishedSuccesfully: return Resources.FinishedSuccesfully;
-				case ProcessingState.FinishedWithErrors: return Resources.FinishedWithErrors;
+				case ProcessingStatus.NotStarted: return Resources.Waiting;
+				case ProcessingStatus.InProgress: return Resources.InProgress;
+				case ProcessingStatus.FinishedSuccesfully: return Resources.FinishedSuccesfully;
+				case ProcessingStatus.FinishedWithErrors: return Resources.FinishedWithErrors;
 				default: 
 					throw new NotImplementedException("State " + state + " is not implemented");
 			}

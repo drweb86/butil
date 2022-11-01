@@ -1,15 +1,11 @@
 ﻿using System;
-using BUtil.Core.Logs;
+using BUtil.Core.Events;
 
 namespace BUtil.Core
 {
     public interface IBackupModelStrategy : IDisposable
     {
-        LogBase Log { get; }
-
-        event EventHandler NotificationEventHandler;
-        BackupFinished BackupFinished { get; set; }
-        CriticalErrorOccur CriticalErrorOccur { get; set; }
+        BackupEvents Events { get; }
         bool ErrorsOrWarningsRegistered { get; }
         void Run();
 		void StopForcibly();

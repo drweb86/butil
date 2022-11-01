@@ -17,7 +17,4 @@ namespace BUtil.Core
             }
         }
 	}
-
-    public delegate void BackupFinished();
-	public delegate void CriticalErrorOccur(string message);
 }

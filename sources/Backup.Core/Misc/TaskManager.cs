@@ -1,13 +1,14 @@
 using System;
 using System.Threading;
 using System.Collections.Generic;
+using BUtil.Core.Jobs;
 
 namespace BUtil.Core.Misc
 {
-	/// <summary>
-	/// This class makes possible parralel executing of some tasks
-	/// </summary>
-	internal sealed class TaskManager
+    /// <summary>
+    /// This class makes possible parralel executing of some tasks
+    /// </summary>
+    internal sealed class TaskManager
 	{
 		#region Constants
 
@@ -23,7 +24,7 @@ namespace BUtil.Core.Misc
 
 		readonly List<IJob> _poolOfInactuveJobs = new List<IJob>();
 		readonly List<Thread> _poolOfThreads = new List<Thread>();
-		readonly object _syncJobs = new object();
+		readonly object _syncJobs = new();
 		readonly object _syncTaskThreadRequests = new object();
 		readonly int _concurrentThreadsAmount;
 		readonly Thread _taskThread;
