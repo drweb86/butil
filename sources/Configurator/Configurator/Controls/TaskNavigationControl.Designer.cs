@@ -1,7 +1,9 @@
 ﻿
+using BUtil.Configurator.Configurator.Controls;
+
 namespace BUtil.Configurator.Controls
 {
-    partial class EditTasksLeftPanelUserControl
+    partial class TaskNavigationControl
 	{
 		/// <summary>
 		/// Designer variable used to keep track of non-visual components.
@@ -35,7 +37,7 @@ namespace BUtil.Configurator.Controls
             this.encryptionButton = new System.Windows.Forms.Button();
             this.otherOptionsButton = new System.Windows.Forms.Button();
             this.howButton = new System.Windows.Forms.Button();
-            this._tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this._tableLayoutPanel = new TransparentTableLayoutPanel();
             this._tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -195,6 +197,6 @@ namespace BUtil.Configurator.Controls
 		private System.Windows.Forms.Button storagesButton;
         private System.Windows.Forms.Button itemsForBackupButton;
         private System.Windows.Forms.Button howButton;
-        private System.Windows.Forms.TableLayoutPanel _tableLayoutPanel;
+        private TransparentTableLayoutPanel _tableLayoutPanel;
     }
 }

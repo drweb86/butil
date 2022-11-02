@@ -76,7 +76,7 @@
     <Compile Update="Configurator\Controls\BackupTasksUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Configurator\Controls\EditTasksLeftPanelUserControl.cs">
+    <Compile Update="Configurator\Controls\TaskNavigationControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Configurator\Controls\HowUserControl.cs">

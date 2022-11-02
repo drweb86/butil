@@ -14,7 +14,7 @@ namespace BUtil.Configurator.Controls
 	/// <summary>
 	/// Switcher between views
 	/// </summary>
-	internal sealed partial class EditTasksLeftPanelUserControl : BUtil.Core.PL.BackUserControl
+	internal sealed partial class TaskNavigationControl : BUtil.Core.PL.BackUserControl
     {
         #region Fields
 
@@ -40,7 +40,7 @@ namespace BUtil.Configurator.Controls
 		[Browsable(true)]
 		public event ChangeViewEventHandler ViewChanged;
 
-        public EditTasksLeftPanelUserControl()
+        public TaskNavigationControl()
 		{
 			InitializeComponent();
 
@@ -69,26 +69,23 @@ namespace BUtil.Configurator.Controls
 			schedulerButton.Text = Resources.When;
 			encryptionButton.Text = Resources.Encryption;
 			otherOptionsButton.Text = Resources.OtherOptions;
-			SetHintForControl(itemsForBackupButton, Resources.HereYouMayAddFoldersAndFilesYouWantToBackup);
+            howButton.Text = Resources.How;
+            SetHintForControl(itemsForBackupButton, Resources.HereYouMayAddFoldersAndFilesYouWantToBackup);
 			SetHintForControl(storagesButton, Resources.InThisPlaceYouCanAddLocationsWhereYouWouldLikeYourBackupToBeCopiedAfterCompletionOfBackup);
 			SetHintForControl(schedulerButton, Resources.HereYouCanSetUpASchedulerShcedulerCanHelpYouToAutomateCreationOfBackups);
 			SetHintForControl(encryptionButton, Resources.ProtectionOfBackupWithPasswordItIsRequiredWhenYouWantYourDataToBeCopiedSomewhereOverTheNetwork);
-			SetHintForControl(otherOptionsButton, Resources.MiscellaneousOptions); // TODO: localization 83 maybe is not needed
-
-			howButton.Text = Resources.How;
+			SetHintForControl(otherOptionsButton, Resources.MiscellaneousOptions);
             SetHintForControl(howButton, Resources.HowHint);
-
 
             foreach (var button in buttons)
 		    {
-		        registerVisualEffectsForButton(button);
+                button.BackColor = _normalButtonColor;
+                registerVisualEffectsForButton(button);
                 if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
 				{
 					setBoldFont(button);
 				}
 		    }
-
-			// TODO: localize HOW
 		}
 
         [SupportedOSPlatform("windows")]

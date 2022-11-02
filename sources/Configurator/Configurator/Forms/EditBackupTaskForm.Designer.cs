@@ -37,7 +37,7 @@
             this.backupTaskTitleLabel_ = new System.Windows.Forms.Label();
             this._taskTitleTextBox = new System.Windows.Forms.TextBox();
             this.optionsHeader = new BUtil.Configurator.Controls.OptionsHeader();
-            this.choosePanelUserControl = new BUtil.Configurator.Controls.EditTasksLeftPanelUserControl();
+            this.choosePanelUserControl = new BUtil.Configurator.Controls.TaskNavigationControl();
             this._saveAndExecuteButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -138,7 +138,7 @@
             this.choosePanelUserControl.Name = "choosePanelUserControl";
             this.choosePanelUserControl.Size = new System.Drawing.Size(138, 369);
             this.choosePanelUserControl.TabIndex = 0;
-            this.choosePanelUserControl.ViewChanged += new BUtil.Configurator.Controls.EditTasksLeftPanelUserControl.ChangeViewEventHandler(this.ViewChangeNotification);
+            this.choosePanelUserControl.ViewChanged += new BUtil.Configurator.Controls.TaskNavigationControl.ChangeViewEventHandler(this.ViewChangeNotification);
             // 
             // _saveAndExecuteButton
             // 
@@ -180,7 +180,7 @@
 
         #endregion
 
-        private BUtil.Configurator.Controls.EditTasksLeftPanelUserControl choosePanelUserControl;
+        private BUtil.Configurator.Controls.TaskNavigationControl choosePanelUserControl;
         private System.Windows.Forms.Panel nestingControlsPanel;
         private BUtil.Configurator.Controls.OptionsHeader optionsHeader;
         private System.Windows.Forms.Button okButton;
