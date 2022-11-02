@@ -207,7 +207,6 @@ namespace BUtil.Core.Options
 				
 				addTextNode(document, configuratorApplicationNode, _HIDE_ABOUT_TAB_TAG, options.HideAboutTab.ToString());
 				
-				addTextNode(document, scheduleApplicationNode, "ShowInTray", options.ShowSchedulerInTray.ToString());
 				addTextNode(document, scheduleApplicationNode, "PuttingOffBackupCpuLoading", options.PuttingOffBackupCpuLoading.ToString());
 				addTextNode(document, scheduleApplicationNode, _DONT_NEED_SCHEDULER_TAG, options.DontNeedScheduler.ToString());
 				
@@ -262,7 +261,6 @@ namespace BUtil.Core.Options
 					
 					options.LogsFolder = readNode(document, "/Settings/Core/Logging/Location", Directories.LogsFolder);
 					
-					options.ShowSchedulerInTray = readNode(document, "/Settings/Core/ScheduleApplication/ShowInTray", true);
 					options.PuttingOffBackupCpuLoading = (byte)readNode(document, "/Settings/Core/ScheduleApplication/PuttingOffBackupCpuLoading", Constants.MinimumCpuLoading, Constants.MaximumCpuLoading, Constants.DefaultCpuLoading);
 					options.DontNeedScheduler = readNode(document, "/Settings/Core/ScheduleApplication/" + _DONT_NEED_SCHEDULER_TAG, false);
 					

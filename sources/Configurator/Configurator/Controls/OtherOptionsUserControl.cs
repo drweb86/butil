@@ -64,7 +64,6 @@ namespace BUtil.Configurator.Controls
             putOffBackupTillLabel.Text = Resources.PutOffMakingBackupTillProcessorSLoadingWillBeLessThen;
             amountOfStoragesToProcessSynchronouslyLabel.Text = Resources.AmountOfStoragesToProcessSynchronously;
             amountOf7ZipProcessesToRunSynchronouslyLabel.Text = Resources.AmountOf7ZipProcessesToRunSynchronously;
-            minimizeUsageOfSystemResourcesCheckBox.Text = Resources.RunBackupSchedulerInHiddenMode;
 		}
 	
 		public override void SetOptionsToUi(object settings)
@@ -81,7 +80,6 @@ namespace BUtil.Configurator.Controls
 			cpuLoadingNumericUpDown.Value = _profileOptions.PuttingOffBackupCpuLoading;
 			amountOfStoragesToProcessSynchronouslyNumericUpDown.Value = _profileOptions.AmountOfStoragesToProcessSynchronously;
 			amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Value = _profileOptions.AmountOf7ZipProcessesToProcessSynchronously;
-            minimizeUsageOfSystemResourcesCheckBox.Checked = !_profileOptions.ShowSchedulerInTray;
 		}
 
 		public override void GetOptionsFromUi()
@@ -90,7 +88,6 @@ namespace BUtil.Configurator.Controls
 			_profileOptions.PuttingOffBackupCpuLoading = Convert.ToByte(cpuLoadingNumericUpDown.Value);
 			_profileOptions.AmountOfStoragesToProcessSynchronously = Convert.ToInt32(amountOfStoragesToProcessSynchronouslyNumericUpDown.Value);
 			_profileOptions.AmountOf7ZipProcessesToProcessSynchronously = Convert.ToInt32(amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Value);
-            _profileOptions.ShowSchedulerInTray = !minimizeUsageOfSystemResourcesCheckBox.Checked;
 		}
 
 		#endregion

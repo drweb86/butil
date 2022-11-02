@@ -38,7 +38,6 @@ namespace BUtil.Configurator.Controls
             this.amountOf7ZipProcessesToRunSynchronouslyLabel = new System.Windows.Forms.Label();
             this.amountOfStoragesToProcessSynchronouslyNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.amountOfStoragesToProcessSynchronouslyLabel = new System.Windows.Forms.Label();
-            this.minimizeUsageOfSystemResourcesCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.cpuLoadingNumericUpDown)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.amountOf7ZipProcessesToRunSynchronouslyNumericUpDown)).BeginInit();
@@ -54,18 +53,20 @@ namespace BUtil.Configurator.Controls
             "Below normal",
             "Normal",
             "Above normal"});
-            this.priorityComboBox.Location = new System.Drawing.Point(308, 55);
+            this.priorityComboBox.Location = new System.Drawing.Point(350, 61);
+            this.priorityComboBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.priorityComboBox.Name = "priorityComboBox";
-            this.priorityComboBox.Size = new System.Drawing.Size(119, 21);
+            this.priorityComboBox.Size = new System.Drawing.Size(138, 23);
             this.priorityComboBox.TabIndex = 3;
             // 
             // chooseBackUpPriorityLabel
             // 
             this.chooseBackUpPriorityLabel.AutoSize = true;
             this.chooseBackUpPriorityLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chooseBackUpPriorityLabel.Location = new System.Drawing.Point(3, 52);
+            this.chooseBackUpPriorityLabel.Location = new System.Drawing.Point(4, 58);
+            this.chooseBackUpPriorityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.chooseBackUpPriorityLabel.Name = "chooseBackUpPriorityLabel";
-            this.chooseBackUpPriorityLabel.Size = new System.Drawing.Size(299, 27);
+            this.chooseBackUpPriorityLabel.Size = new System.Drawing.Size(338, 29);
             this.chooseBackUpPriorityLabel.TabIndex = 22;
             this.chooseBackUpPriorityLabel.Text = "Choose backup priority:";
             this.chooseBackUpPriorityLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -74,16 +75,18 @@ namespace BUtil.Configurator.Controls
             // 
             this.putOffBackupTillLabel.AutoSize = true;
             this.putOffBackupTillLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.putOffBackupTillLabel.Location = new System.Drawing.Point(3, 79);
+            this.putOffBackupTillLabel.Location = new System.Drawing.Point(4, 87);
+            this.putOffBackupTillLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.putOffBackupTillLabel.Name = "putOffBackupTillLabel";
-            this.putOffBackupTillLabel.Size = new System.Drawing.Size(299, 26);
+            this.putOffBackupTillLabel.Size = new System.Drawing.Size(338, 29);
             this.putOffBackupTillLabel.TabIndex = 23;
             this.putOffBackupTillLabel.Text = "Put off making backup till processor\'s  loading will be less then";
             this.putOffBackupTillLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cpuLoadingNumericUpDown
             // 
-            this.cpuLoadingNumericUpDown.Location = new System.Drawing.Point(308, 82);
+            this.cpuLoadingNumericUpDown.Location = new System.Drawing.Point(350, 90);
+            this.cpuLoadingNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cpuLoadingNumericUpDown.Maximum = new decimal(new int[] {
             95,
             0,
@@ -96,7 +99,7 @@ namespace BUtil.Configurator.Controls
             0});
             this.cpuLoadingNumericUpDown.Name = "cpuLoadingNumericUpDown";
             this.cpuLoadingNumericUpDown.ReadOnly = true;
-            this.cpuLoadingNumericUpDown.Size = new System.Drawing.Size(119, 20);
+            this.cpuLoadingNumericUpDown.Size = new System.Drawing.Size(139, 23);
             this.cpuLoadingNumericUpDown.TabIndex = 4;
             this.cpuLoadingNumericUpDown.Value = new decimal(new int[] {
             60,
@@ -119,76 +122,69 @@ namespace BUtil.Configurator.Controls
             this.tableLayoutPanel1.Controls.Add(this.putOffBackupTillLabel, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.priorityComboBox, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.chooseBackUpPriorityLabel, 0, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 8);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 3);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 7;
+            this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(430, 105);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(493, 116);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // amountOf7ZipProcessesToRunSynchronouslyNumericUpDown
             // 
-            this.amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Location = new System.Drawing.Point(308, 29);
+            this.amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Location = new System.Drawing.Point(350, 32);
+            this.amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Name = "amountOf7ZipProcessesToRunSynchronouslyNumericUpDown";
-            this.amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Size = new System.Drawing.Size(119, 20);
+            this.amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Size = new System.Drawing.Size(139, 23);
             this.amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.TabIndex = 2;
             // 
             // amountOf7ZipProcessesToRunSynchronouslyLabel
             // 
             this.amountOf7ZipProcessesToRunSynchronouslyLabel.AutoSize = true;
             this.amountOf7ZipProcessesToRunSynchronouslyLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.amountOf7ZipProcessesToRunSynchronouslyLabel.Location = new System.Drawing.Point(3, 26);
+            this.amountOf7ZipProcessesToRunSynchronouslyLabel.Location = new System.Drawing.Point(4, 29);
+            this.amountOf7ZipProcessesToRunSynchronouslyLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.amountOf7ZipProcessesToRunSynchronouslyLabel.Name = "amountOf7ZipProcessesToRunSynchronouslyLabel";
-            this.amountOf7ZipProcessesToRunSynchronouslyLabel.Size = new System.Drawing.Size(299, 26);
+            this.amountOf7ZipProcessesToRunSynchronouslyLabel.Size = new System.Drawing.Size(338, 29);
             this.amountOf7ZipProcessesToRunSynchronouslyLabel.TabIndex = 26;
             this.amountOf7ZipProcessesToRunSynchronouslyLabel.Text = "Amount of 7-zip processes to run synchronously:";
             this.amountOf7ZipProcessesToRunSynchronouslyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // amountOfStoragesToProcessSynchronouslyNumericUpDown
             // 
-            this.amountOfStoragesToProcessSynchronouslyNumericUpDown.Location = new System.Drawing.Point(308, 3);
+            this.amountOfStoragesToProcessSynchronouslyNumericUpDown.Location = new System.Drawing.Point(350, 3);
+            this.amountOfStoragesToProcessSynchronouslyNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.amountOfStoragesToProcessSynchronouslyNumericUpDown.Name = "amountOfStoragesToProcessSynchronouslyNumericUpDown";
-            this.amountOfStoragesToProcessSynchronouslyNumericUpDown.Size = new System.Drawing.Size(119, 20);
+            this.amountOfStoragesToProcessSynchronouslyNumericUpDown.Size = new System.Drawing.Size(139, 23);
             this.amountOfStoragesToProcessSynchronouslyNumericUpDown.TabIndex = 1;
             // 
             // amountOfStoragesToProcessSynchronouslyLabel
             // 
             this.amountOfStoragesToProcessSynchronouslyLabel.AutoSize = true;
             this.amountOfStoragesToProcessSynchronouslyLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.amountOfStoragesToProcessSynchronouslyLabel.Location = new System.Drawing.Point(3, 0);
+            this.amountOfStoragesToProcessSynchronouslyLabel.Location = new System.Drawing.Point(4, 0);
+            this.amountOfStoragesToProcessSynchronouslyLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.amountOfStoragesToProcessSynchronouslyLabel.Name = "amountOfStoragesToProcessSynchronouslyLabel";
-            this.amountOfStoragesToProcessSynchronouslyLabel.Size = new System.Drawing.Size(299, 26);
+            this.amountOfStoragesToProcessSynchronouslyLabel.Size = new System.Drawing.Size(338, 29);
             this.amountOfStoragesToProcessSynchronouslyLabel.TabIndex = 0;
             this.amountOfStoragesToProcessSynchronouslyLabel.Text = "Amount of storages to process synchronously:";
             this.amountOfStoragesToProcessSynchronouslyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // minimizeUsageOfSystemResourcesCheckBox
-            // 
-            this.minimizeUsageOfSystemResourcesCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.minimizeUsageOfSystemResourcesCheckBox.AutoSize = true;
-            this.minimizeUsageOfSystemResourcesCheckBox.Location = new System.Drawing.Point(9, 128);
-            this.minimizeUsageOfSystemResourcesCheckBox.Name = "minimizeUsageOfSystemResourcesCheckBox";
-            this.minimizeUsageOfSystemResourcesCheckBox.Size = new System.Drawing.Size(209, 17);
-            this.minimizeUsageOfSystemResourcesCheckBox.TabIndex = 25;
-            this.minimizeUsageOfSystemResourcesCheckBox.Text = "Run backup scheduler in hidden mode";
-            this.minimizeUsageOfSystemResourcesCheckBox.UseVisualStyleBackColor = true;
-            // 
             // OtherOptionsUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.minimizeUsageOfSystemResourcesCheckBox);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.MinimumSize = new System.Drawing.Size(491, 158);
+            this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.MinimumSize = new System.Drawing.Size(573, 182);
             this.Name = "OtherOptionsUserControl";
-            this.Size = new System.Drawing.Size(497, 164);
+            this.Size = new System.Drawing.Size(580, 189);
             ((System.ComponentModel.ISupportInitialize)(this.cpuLoadingNumericUpDown)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -207,6 +203,5 @@ namespace BUtil.Configurator.Controls
 		private System.Windows.Forms.Label putOffBackupTillLabel;
 		private System.Windows.Forms.Label chooseBackUpPriorityLabel;
 		private System.Windows.Forms.ComboBox priorityComboBox;
-        private System.Windows.Forms.CheckBox minimizeUsageOfSystemResourcesCheckBox;
 	}
 }

@@ -457,9 +457,6 @@
   <data name="AdditionalEncryptionUnderYourLocalSystemAccountNrequiresNtfsFileSystemAndWin2kOsOnRemoteMachineBackupDataWillBeAvailableOnlyForYourOsAccountSeeDocumentationForDetails" xml:space="preserve">
     <value>Дополнительное шифрование под вашей учетной записью.\nТребует наличия файловой системы NTFS и Win2k на удаленной машине. Резервная копия будет доступна только вашей учетной записи. Смотрите документацию для подробностей</value>
   </data>
-  <data name="RunBackupSchedulerInHiddenMode" xml:space="preserve">
-    <value>Запускать планировщик без иконки в трее</value>
-  </data>
   <data name="WhileBackupIsInProgressYouCanContinueWorkNNtoRestoreProgressFormJustClickOnThisIconInTray" xml:space="preserve">
     <value>Пока создается резервная копия, вы можете продолжить работу\n\nЧтобы отобразить форму, кликните по иконке в трее</value>
   </data>

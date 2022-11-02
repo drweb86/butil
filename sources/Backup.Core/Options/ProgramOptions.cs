@@ -25,7 +25,6 @@ namespace BUtil.Core.Options
 		#region Private Fields
 		
         byte _puttingOffBackupCpuLoading;
-        bool _showSchedulerInTray = true;
 
         #endregion
 	  
@@ -89,15 +88,6 @@ namespace BUtil.Core.Options
 						throw new NotSupportedException(Priority.ToString());
 				}
 			}
-		}
-
-		/// <summary>
-		/// Shows the icon of scheduler in tray
-		/// </summary>
-		public bool ShowSchedulerInTray 
-		{
-			get { return _showSchedulerInTray; }
-			set { _showSchedulerInTray = value; }
 		}
         
         /// <summary>

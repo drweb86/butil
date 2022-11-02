@@ -1,34 +1,21 @@
-﻿using System;
+﻿using BUtil.ConsoleBackup;
 using BUtil.Core;
 using BUtil.Core.Misc;
-using BUtil.ConsoleBackup.Controller;
+using System;
 
-[assembly: CLSCompliant(true)]
-namespace BUtil.ConsoleBackup
+ImproveIt.InitInfrastructure(false);
+Console.WriteLine(CopyrightInfo.Copyright);
+
+try
 {
-	internal class MainClass
-    {
-        public static void Main(string[] args)
-		{
-            ImproveIt.InitInfrastructure(false);
-            try
-            {
-                using (var controller = new ConsoleBackupController())
-                {
-                    if (controller.ParseCommandLineArguments(args))
-                    {
-                        if (controller.Prepare())
-                        {
-                            controller.Backup();
-                        }
-                    }
-                }
-                Console.WriteLine(CopyrightInfo.Copyright);
-            }
-            catch (Exception e)
-            {
-                ImproveIt.ProcessUnhandledException(e);
-            }
-		}
-	}
+    using var controller = new Controller();
+    if (!controller.ParseCommandLineArguments(args))
+        return;
+
+    if (controller.Prepare())
+        controller.Backup();
+}
+catch (Exception e)
+{
+    ImproveIt.ProcessUnhandledException(e);
 }

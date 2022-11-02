@@ -22,6 +22,10 @@ Program Files, Program Files (x86), PATH environment variable directories
 - event integration was upated.
 - dropped $backupFileName after backup task parameter support because none of new strategies will support it.
 
+## Bug Fixes
+- Passwords are not in debug log anymore
+- Passwordless butil images were not created due to missing packer arguments
+
 # 5.1 ( 22 October 2022 )
 
 ## New Features

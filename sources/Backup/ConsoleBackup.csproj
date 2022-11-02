@@ -17,7 +17,6 @@
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
-    <StartupObject>BUtil.ConsoleBackup.MainClass</StartupObject>
     <PublishUrl>http://localhost/butilconsole/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>

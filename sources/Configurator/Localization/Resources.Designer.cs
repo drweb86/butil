@@ -1616,15 +1616,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Run backup scheduler in hidden mode.
-        /// </summary>
-        internal static string RunBackupSchedulerInHiddenMode {
-            get {
-                return ResourceManager.GetString("RunBackupSchedulerInHiddenMode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Runs backup....
         /// </summary>
         internal static string RunsBackup {

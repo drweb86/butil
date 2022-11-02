@@ -83,9 +83,7 @@ namespace BUtil.Core.Options
 				options.DontNeedScheduler = false;
 				options.HideAboutTab = false;
 				options.DontNeedScheduler = false;
-				options.ShowSchedulerInTray = true;
 				options.LogsFolder = Directories.LogsFolder;
-        		options.ShowSchedulerInTray = true;
         		options.PuttingOffBackupCpuLoading = Constants.DefaultCpuLoading;
 				options.LoggingLevel = LogLevel.Normal;
 				options.AmountOfStoragesToProcessSynchronously = Constants.AmountOfStoragesToProcessSynchronouslyDefault;

@@ -457,9 +457,6 @@
   <data name="AdditionalEncryptionUnderYourLocalSystemAccountNrequiresNtfsFileSystemAndWin2kOsOnRemoteMachineBackupDataWillBeAvailableOnlyForYourOsAccountSeeDocumentationForDetails" xml:space="preserve">
     <value>Additional encryption under your local system account. \nRequires NTFS file system and win2k OS on remote machine. Backup data will be available only for your OS account. See documentation for details</value>
   </data>
-  <data name="RunBackupSchedulerInHiddenMode" xml:space="preserve">
-    <value>Run backup scheduler in hidden mode</value>
-  </data>
   <data name="WhileBackupIsInProgressYouCanContinueWorkNNtoRestoreProgressFormJustClickOnThisIconInTray" xml:space="preserve">
     <value>While backup is in progress you can continue work. \n\nTo restore progress form just click on this icon in tray</value>
   </data>

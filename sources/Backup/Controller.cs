@@ -1,40 +1,24 @@
 using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Collections.ObjectModel;
 using System.IO;
-
 using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
 using BUtil.Core.Logs;
 using BUtil.Core;
 using BUtil.Core.Misc;
 using BUtil.ConsoleBackup.Localization;
-using BUtil.Core.PL;
-using System.Linq;
 
-namespace BUtil.ConsoleBackup.Controller
+namespace BUtil.ConsoleBackup
 {
-	internal class ConsoleBackupController: IDisposable
-	{
-        #region Constructor
-
-        public ConsoleBackupController()
+    internal class Controller : IDisposable
+    {
+        public Controller()
         {
             LoadAndValidateOptions();
         }
 
-        #endregion
-
-        #region Public Methods
-
-        /// <summary>
-        /// Parses the command line arguments
-        /// </summary>
-        /// <param name="args">command line arguments</param>
-        /// <returns>true when all arguments were recognized</returns>
         public bool ParseCommandLineArguments(string[] args)
-		{
+        {
             args ??= Array.Empty<string>();
 
             foreach (string argument in args)
@@ -88,12 +72,8 @@ namespace BUtil.ConsoleBackup.Controller
             }
 
             return true;
-		}
+        }
 
-        /// <summary>
-        /// Prepares the backup
-        /// </summary>
-        /// <returns>True when preparation finished OK, otherwise we should exit</returns>
 		public bool Prepare()
         {
             var log = OpenLog();
@@ -115,14 +95,11 @@ namespace BUtil.ConsoleBackup.Controller
             _backup = BackupModelStrategyFactory.Create(log, task, _options);
 
             return true;
-		}
+        }
 
-        /// <summary>
-        /// Backups the task
-        /// </summary>
 		public void Backup()
-		{
-			_backup.Run();
+        {
+            _backup.Run();
 
             if (!_useFileLog && _backup.ErrorsOrWarningsRegistered)
             {
@@ -132,20 +109,16 @@ namespace BUtil.ConsoleBackup.Controller
             PowerPC.DoTask(_powerTask);
         }
 
-        #endregion
-
-        #region Private Methods
-
         private static void ShowErrorAndQuit(Exception exception)
         {
             ShowErrorAndQuit(exception.ToString());
         }
 
         private static void ShowErrorAndQuit(string message)
-		{
-			Console.WriteLine("\n{0}", message);
-			Environment.Exit(-1);
-		}
+        {
+            Console.WriteLine("\n{0}", message);
+            Environment.Exit(-1);
+        }
 
         private static void ShowInvalidUsageAndQuit(string error)
         {
@@ -153,12 +126,12 @@ namespace BUtil.ConsoleBackup.Controller
             ShowErrorAndQuit(error);
         }
 
-		private void LoadAndValidateOptions()
-		{
+        private void LoadAndValidateOptions()
+        {
             PerformCriticalChecks();
 
             LoadSettings();
-		}
+        }
 
         private void LoadSettings()
         {
@@ -219,11 +192,7 @@ namespace BUtil.ConsoleBackup.Controller
             return result;
         }
 
-        #endregion
-
-        #region IDisposable Implementation
-
-        ~ConsoleBackupController()
+        ~Controller()
         {
             ((IDisposable)this).Dispose();
         }
@@ -240,14 +209,12 @@ namespace BUtil.ConsoleBackup.Controller
                 GC.SuppressFinalize(this);
             }
         }
-        
-        #endregion
 
-		#region Constants
+        #region Constants
 
         const string UseFileLog = "UseFileLog";
-		const string HelpCommand = "Help";
-		const string Shutdown = "ShutDown";
+        const string HelpCommand = "Help";
+        const string Shutdown = "ShutDown";
         const string LogOff = "LogOff";
         const string Suspend = "Suspend";
         const string Hibernate = "Hibernate";
@@ -255,13 +222,13 @@ namespace BUtil.ConsoleBackup.Controller
         const string Auto = "Auto";
         const string TaskCommandLineArgument = "Task=";
 
-		#endregion
+        #endregion
 
         #region Fields
 
         bool _useFileLog;
         ProgramOptions _options;
-		IBackupModelStrategy _backup;
+        IBackupModelStrategy _backup;
         string _taskName;
         PowerTask _powerTask = PowerTask.None;
 
