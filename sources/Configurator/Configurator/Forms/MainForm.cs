@@ -89,7 +89,6 @@ namespace BUtil.Configurator.Configurator.Forms
             Text = Resources.Configurator;
             cancelButton.Text = Resources.Cancel;
             restorationToolToolStripMenuItem.Text = Resources.RestoreData;
-            dontNeedSchedulerToolStripMenuItem.Text = Resources.DontNeedButilScheduler;
             hideAboutTabToolStripMenuItem.Text = Resources.HideAboutTab;
             miscToolStripMenuItem.Text = Resources.Misc;
             journalsToolStripMenuItem.Text = Resources.BackupJournals;
@@ -117,7 +116,6 @@ namespace BUtil.Configurator.Configurator.Forms
             _views[ConfiguratorViewsEnum.Logging].SetOptionsToUi(profileOptions);
             _views[ConfiguratorViewsEnum.OtherOptions].SetOptionsToUi(profileOptions);
             
-			dontNeedSchedulerToolStripMenuItem.Checked = profileOptions.DontNeedScheduler;
 			hideAboutTabToolStripMenuItem.Checked = profileOptions.HideAboutTab;
         }
 
@@ -148,12 +146,6 @@ namespace BUtil.Configurator.Configurator.Forms
 		{
 			_skipSavingOnExitRequest = true;
 			Close();
-		}
-		
-		void DontNeedSchedulerToolStripMenuItemClick(object sender, EventArgs e)
-		{
-			_controller.ProgramOptions.DontNeedScheduler = dontNeedSchedulerToolStripMenuItem.Checked;
-			UpdateAccessibilitiesView();
 		}
 		
 		void HideAboutTabToolStripMenuItemClick(object sender, EventArgs e)

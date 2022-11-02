@@ -44,11 +44,8 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
             _steps.Add(new PageInfo(Resources.WellcomeToBackupTaskCreationWizard, Resources.ThisMasterWillHelpYouToCreateANewTask, RegisterControl(BackupTaskViewsEnum.Name, new TaskNameUserControl()), Icons.BackupTask48x48));
             _steps.Add(new PageInfo(Resources.What, Resources.HereYouMayAddFilesAndFoldersYouWannaToBackup, RegisterControl(BackupTaskViewsEnum.SourceItems, new SourceItemsUserControl()), Icons.SourceItems48x48));
             _steps.Add(new PageInfo(Resources.Where, Resources.HereYouCanSpecifyWhereToSendBackups, RegisterControl(BackupTaskViewsEnum.Storages, new StoragesUserControl()), Icons.Storages48x48));
-
-            if (!options.DontNeedScheduler)
-            {
-                _steps.Add(new PageInfo(Resources.When, Resources.YouCanSetDaysAndTimesWhenYouWantToStartThisBackupJob, RegisterControl(BackupTaskViewsEnum.Scheduler, new SchedulerUserControl()), Icons.Schedule48x48));
-            }
+            _steps.Add(new PageInfo(Resources.When, Resources.YouCanSetDaysAndTimesWhenYouWantToStartThisBackupJob, RegisterControl(BackupTaskViewsEnum.Scheduler, new SchedulerUserControl()), Icons.Schedule48x48));
+            _steps.Add(new PageInfo(Resources.How, Resources.HowHint, RegisterControl(BackupTaskViewsEnum.How, new HowUserControl()), Icons.SourceItems48x48));
             _steps.Add(new PageInfo(Resources.Encryption, Resources.HereYouCanProtectTheBackupWithPasswordThisIsAlsoRequiredForCopyingItOverNetwork, RegisterControl(BackupTaskViewsEnum.Encryption, new EncryptionUserControl()), Icons.Password48x48));
             _steps.Add(new PageInfo(Resources.OtherOptions, Resources.HereYouCanSpecifyOtherSettings, RegisterControl(BackupTaskViewsEnum.OtherOptions, new TaskOtherOptionsUserControl()), Icons.OtherSettings48x48));
 
@@ -78,6 +75,7 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
             _controls[BackupTaskViewsEnum.Storages].SetOptionsToUi(Task);
             _controls[BackupTaskViewsEnum.SourceItems].SetOptionsToUi(Task);
             _controls[BackupTaskViewsEnum.Scheduler].SetOptionsToUi(ScheduleInfo);
+            _controls[BackupTaskViewsEnum.How].SetOptionsToUi(Task);
             _controls[BackupTaskViewsEnum.Encryption].SetOptionsToUi(new object[] { _options, Task });
             _controls[BackupTaskViewsEnum.OtherOptions].SetOptionsToUi(new object[] { Task });
         }

@@ -62,13 +62,5 @@ namespace BUtil.Configurator.Controls
 		}
 		
 		#endregion
-		
-		public void ResetScheduler()
-		{
-			for (int i = 0; i < 7; i++)
-			{
-				scheduledDaysCheckedListBox.SetItemChecked(i, false);
-			}
-		}
 	}
 }

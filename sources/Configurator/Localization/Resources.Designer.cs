@@ -461,6 +461,15 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Choose backup model.
+        /// </summary>
+        internal static string ChooseBackupModel {
+            get {
+                return ResourceManager.GetString("ChooseBackupModel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Choose backup priority:.
         /// </summary>
         internal static string ChooseBackupPriority {
@@ -605,6 +614,26 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Disable compression and encryption.
+        /// </summary>
+        internal static string DisableCompressionAndEncryption {
+            get {
+                return ResourceManager.GetString("DisableCompressionAndEncryption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disabling compression and encryption is designed for the following usages:
+        ///a) storing information on drives protected by BitLocker (BitLocker requires Professional Windows Edition) or protected by encrypted proxy file system software like encryptfs. On NTFS file system you can enable compression.
+        ///b) storing information on a cloud FTP, SFTP, WebDAV, Amazon S3, OpenStack Swift, Backblaze B2, Microsoft Azure &amp; OneDrive, Google Drive, and Dropbox by encrypted proxy file system Cryptomator/CyberDuck. Mounting  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string DisableCompressionAndEncryptionDescription {
+            get {
+                return ResourceManager.GetString("DisableCompressionAndEncryptionDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Disabled.
         /// </summary>
         internal static string Disabled {
@@ -637,15 +666,6 @@ namespace BUtil.Configurator.Localization {
         internal static string DoNothing {
             get {
                 return ResourceManager.GetString("DoNothing", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to don&apos;t need BUtil scheduler.
-        /// </summary>
-        internal static string DontNeedButilScheduler {
-            get {
-                return ResourceManager.GetString("DontNeedButilScheduler", resourceCulture);
             }
         }
         
@@ -975,6 +995,24 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to How ?.
+        /// </summary>
+        internal static string How {
+            get {
+                return ResourceManager.GetString("How", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Here you can specify the backup model that will be used for compression..
+        /// </summary>
+        internal static string HowHint {
+            get {
+                return ResourceManager.GetString("HowHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to How to restore your information?.
         /// </summary>
         internal static string HowToRestoreYourInformation {
@@ -1018,6 +1056,24 @@ namespace BUtil.Configurator.Localization {
             get {
                 return ResourceManager.GetString("ImportantNNbackupShouldBePasswordProtectedIfNotProgramWillSkipItsCopyingToThisSto" +
                         "rage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Incremental backup.
+        /// </summary>
+        internal static string IncrementalBackup {
+            get {
+                return ResourceManager.GetString("IncrementalBackup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The most basic form of incremental backup consists of identifying, recording and thus, preserving only those files that have changed since the last backup. Since changes are typically low, incremental backups are much smaller and quicker than full backups. For instance, following a full backup on Friday, a Monday backup will contain only those files that changed since Friday. A Tuesday backup contains only those files that changed since Monday, and so on. A full restoration of data will naturally be slower, [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string IncrementalBackupDescription {
+            get {
+                return ResourceManager.GetString("IncrementalBackupDescription", resourceCulture);
             }
         }
         

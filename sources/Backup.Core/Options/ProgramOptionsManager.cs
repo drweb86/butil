@@ -80,9 +80,7 @@ namespace BUtil.Core.Options
 			{
 				ProgramOptions options = new ProgramOptions();
 				options.Priority = System.Threading.ThreadPriority.BelowNormal;
-				options.DontNeedScheduler = false;
-				options.HideAboutTab = false;
-				options.DontNeedScheduler = false;
+                options.HideAboutTab = false;
 				options.LogsFolder = Directories.LogsFolder;
         		options.PuttingOffBackupCpuLoading = Constants.DefaultCpuLoading;
 				options.LoggingLevel = LogLevel.Normal;

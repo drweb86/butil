@@ -17,6 +17,7 @@ namespace BUtil.Configurator.Configurator.Controls
     {
         Name,
         SourceItems,
+        How,
         Storages,
         Scheduler,
         Encryption,

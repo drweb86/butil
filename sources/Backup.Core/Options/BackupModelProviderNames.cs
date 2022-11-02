@@ -2,7 +2,6 @@
 {
     public static class BackupModelProviderNames
 	{
-		public const string Image = "Image";
-        public const string Versioning = "Versioning";
+        public const string Incremental = "Versioning";
     }
 }

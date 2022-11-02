@@ -17,9 +17,6 @@ using BUtil.Core.Storages;
 
 namespace BUtil.Core.Options
 {
-	/// <summary>
-	/// Saves and loads options to xml file
-	/// </summary>
     public static class ProgramOptionsKeeper
     {
     	#region Xml Tags
@@ -29,7 +26,6 @@ namespace BUtil.Core.Options
         const string _SECURITY_TAG = "Security";
         const string _GORE_TAG = "Core";
         const string _LOGS_TAG = "Logging";
-        const string _DONT_NEED_SCHEDULER_TAG = "DontNeedScheduler";
         const string _CONFIGURATOR_TAG = "Configurator";
 		const string _HIDE_ABOUT_TAB_TAG = "HideAboutTab";
 		
@@ -167,17 +163,8 @@ namespace BUtil.Core.Options
 		
 		#region Public Methods
 		
-        /// <summary>
-		/// Stores the settings to an Xml file and encrypts it under local system account
-		/// </summary>
-		/// <param name="options">The target options object</param>
-        /// <exception cref="OptionsException">Any problems with options</exception>
-		/// <exception cref="ArgumentException">options argument is null</exception>
         public static void StoreSettings(ProgramOptions options)
         {
-			if (options == null)
-				throw new ArgumentException("options");
-
             try
             {
 				XmlDocument document = new XmlDocument();
@@ -208,7 +195,6 @@ namespace BUtil.Core.Options
 				addTextNode(document, configuratorApplicationNode, _HIDE_ABOUT_TAB_TAG, options.HideAboutTab.ToString());
 				
 				addTextNode(document, scheduleApplicationNode, "PuttingOffBackupCpuLoading", options.PuttingOffBackupCpuLoading.ToString());
-				addTextNode(document, scheduleApplicationNode, _DONT_NEED_SCHEDULER_TAG, options.DontNeedScheduler.ToString());
 				
 				addTextNode(document, performanceNode, "AmountOf7ZipProcessesToProcessSynchronously", options.AmountOf7ZipProcessesToProcessSynchronously.ToString());
 				addTextNode(document, performanceNode, "AmountOfStoragesToProcessSynchronously", options.AmountOfStoragesToProcessSynchronously.ToString());
@@ -262,7 +248,6 @@ namespace BUtil.Core.Options
 					options.LogsFolder = readNode(document, "/Settings/Core/Logging/Location", Directories.LogsFolder);
 					
 					options.PuttingOffBackupCpuLoading = (byte)readNode(document, "/Settings/Core/ScheduleApplication/PuttingOffBackupCpuLoading", Constants.MinimumCpuLoading, Constants.MaximumCpuLoading, Constants.DefaultCpuLoading);
-					options.DontNeedScheduler = readNode(document, "/Settings/Core/ScheduleApplication/" + _DONT_NEED_SCHEDULER_TAG, false);
 					
 					options.HideAboutTab = readNode(document, "/Settings/Core/" + _CONFIGURATOR_TAG + "/" + _HIDE_ABOUT_TAB_TAG, false);
                 }

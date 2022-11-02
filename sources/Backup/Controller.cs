@@ -7,6 +7,7 @@ using BUtil.Core.Logs;
 using BUtil.Core;
 using BUtil.Core.Misc;
 using BUtil.ConsoleBackup.Localization;
+using BUtil.Core.BackupModels;
 
 namespace BUtil.ConsoleBackup
 {

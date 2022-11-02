@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using BUtil.Core.BackupModels;
 using BUtil.Core.Storages;
 
 namespace BUtil.Core.Options
@@ -11,7 +12,7 @@ namespace BUtil.Core.Options
 			ExecuteAfterBackup = new ();
             Items = new ();
 			Storages = new ();
-			BackupModel = new () { ProviderName = BackupModelProviderNames.Image };
+			BackupModel = BackupModelStrategyFactory.CreateBackupModel(new IncrementalBackupModelOptions());
         }
 
 		public BackupModel BackupModel { get; set; }

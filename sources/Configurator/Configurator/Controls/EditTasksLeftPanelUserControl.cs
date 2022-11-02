@@ -43,8 +43,9 @@ namespace BUtil.Configurator.Controls
         public EditTasksLeftPanelUserControl()
 		{
 			InitializeComponent();
-			
-			this.BorderStyle = BorderStyle.None;
+
+            BackColor = SystemColors.Window;
+            this.BorderStyle = BorderStyle.None;
 			_selectedButton = itemsForBackupButton;
             changeView(itemsForBackupButton, BackupTaskViewsEnum.SourceItems);
 			_selectedButtonColor = Color.FromArgb(_halfSelectedButtonColor.A, 
@@ -56,27 +57,12 @@ namespace BUtil.Configurator.Controls
 		
 		public void UpdateView(ProgramOptions options)
 		{
-			int displacement = storagesButton.Top - itemsForBackupButton.Top;
-			schedulerButton.Visible = !options.DontNeedScheduler;
-
-			if (options.DontNeedScheduler)
-			{
-				// moving buttons up
-				encryptionButton.Top = storagesButton.Top + displacement;
-				otherOptionsButton.Top = storagesButton.Top + 2*displacement;
-			}
-			else
-			{
-				encryptionButton.Top = storagesButton.Top + 2*displacement;
-				otherOptionsButton.Top = storagesButton.Top + 3*displacement;
-			}
-
             changeView(itemsForBackupButton, BackupTaskViewsEnum.SourceItems);
 		}
 		
 		override public void ApplyLocalization()
 		{
-		    var buttons = new[] {itemsForBackupButton, storagesButton, schedulerButton, encryptionButton, otherOptionsButton};
+		    var buttons = new[] {itemsForBackupButton, howButton, storagesButton, schedulerButton, encryptionButton, otherOptionsButton};
 
 			itemsForBackupButton.Text = Resources.What;
 			storagesButton.Text = Resources.Where;
@@ -89,7 +75,11 @@ namespace BUtil.Configurator.Controls
 			SetHintForControl(encryptionButton, Resources.ProtectionOfBackupWithPasswordItIsRequiredWhenYouWantYourDataToBeCopiedSomewhereOverTheNetwork);
 			SetHintForControl(otherOptionsButton, Resources.MiscellaneousOptions); // TODO: localization 83 maybe is not needed
 
-		    foreach (var button in buttons)
+			howButton.Text = Resources.How;
+            SetHintForControl(howButton, Resources.HowHint);
+
+
+            foreach (var button in buttons)
 		    {
 		        registerVisualEffectsForButton(button);
                 if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
@@ -97,6 +87,8 @@ namespace BUtil.Configurator.Controls
 					setBoldFont(button);
 				}
 		    }
+
+			// TODO: localize HOW
 		}
 
         [SupportedOSPlatform("windows")]
@@ -180,11 +172,20 @@ namespace BUtil.Configurator.Controls
 		
 		void leftPanelUserControlLoad(object sender, EventArgs e)
 		{
-			foreach (Button control in Controls)
+			foreach (var control in Controls)
 			{
-				control.BackColor = _normalButtonColor;
-				control.ForeColor = Color.White;
+				var button = control as Button;
+				if (button != null)
+				{
+                    button.BackColor = _normalButtonColor;
+                    button.ForeColor = Color.White;
+				}
 			}
 		}
+
+		private void HowButtonClick(object sender, EventArgs e)
+		{
+            changeView(sender, BackupTaskViewsEnum.How);
+        }
 	}
 }

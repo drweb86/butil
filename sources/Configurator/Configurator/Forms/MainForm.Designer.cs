@@ -31,7 +31,6 @@ namespace BUtil.Configurator.Configurator.Forms
             this.restorationToolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.journalsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miscToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dontNeedSchedulerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hideAboutTabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._questionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -90,20 +89,11 @@ namespace BUtil.Configurator.Configurator.Forms
             // miscToolStripMenuItem
             // 
             this.miscToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dontNeedSchedulerToolStripMenuItem,
             this.hideAboutTabToolStripMenuItem
             });
             this.miscToolStripMenuItem.Name = "miscToolStripMenuItem";
             this.miscToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.miscToolStripMenuItem.Text = "Misc";
-            // 
-            // dontNeedSchedulerToolStripMenuItem
-            // 
-            this.dontNeedSchedulerToolStripMenuItem.CheckOnClick = true;
-            this.dontNeedSchedulerToolStripMenuItem.Name = "dontNeedSchedulerToolStripMenuItem";
-            this.dontNeedSchedulerToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
-            this.dontNeedSchedulerToolStripMenuItem.Text = "don\'t need scheduler";
-            this.dontNeedSchedulerToolStripMenuItem.Click += new System.EventHandler(this.DontNeedSchedulerToolStripMenuItemClick);
             // 
             // hideAboutTabToolStripMenuItem
             // 
@@ -264,7 +254,6 @@ namespace BUtil.Configurator.Configurator.Forms
 		}
 		private System.Windows.Forms.ToolStripMenuItem journalsToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem hideAboutTabToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem dontNeedSchedulerToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem miscToolStripMenuItem;
 		private System.Windows.Forms.ToolStripStatusLabel helpToolStripStatusLabel;
 		private System.Windows.Forms.StatusStrip helpStatusStrip;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using BUtil.Core.Events;
 
-namespace BUtil.Core
+namespace BUtil.Core.BackupModels
 {
     public interface IBackupModelStrategy : IDisposable
     {
@@ -10,6 +10,6 @@ namespace BUtil.Core
         BackupEvents Events { get; }
         bool ErrorsOrWarningsRegistered { get; }
         void Run();
-		void StopForcibly();
+        void StopForcibly();
     }
 }

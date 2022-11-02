@@ -526,9 +526,6 @@
   <data name="HaveNoNetworkAndInternet" xml:space="preserve">
     <value>няма сяци и интэрнету</value>
   </data>
-  <data name="DontNeedButilScheduler" xml:space="preserve">
-    <value>не патрэбен планироушчык</value>
-  </data>
   <data name="HideAboutTab" xml:space="preserve">
     <value>схаваць укладку "Аб праграме"</value>
   </data>

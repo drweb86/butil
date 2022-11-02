@@ -6,11 +6,11 @@ using System.Windows.Forms;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
-using BUtil.Core;
 using BUtil.Core.PL;
 using NativeMethods = BUtil.BackupUiMaster.NativeMethods;
 using BUtil.Configurator.Localization;
 using System.Runtime.InteropServices;
+using BUtil.Core.BackupModels;
 
 [assembly: CLSCompliant(true)]
 namespace BUtil.Configurator.BackupUiMaster

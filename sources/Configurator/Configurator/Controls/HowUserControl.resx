@@ -57,4 +57,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="_disableCompressionAndEncryptionUsagesLabel.Text" xml:space="preserve">
+    <value>Disabling compression and encryption is designed for the following usages:
+a) storing information on drives protected by BitLocker (BitLocker requires Professional Windows Edition) or protected by encrypted proxy file system software like encryptfs. On NTFS file system you can enable compression.
+b) storing information on a cloud FTP, SFTP, WebDAV, Amazon S3, OpenStack Swift, Backblaze B2, Microsoft Azure &amp; OneDrive, Google Drive, and Dropbox by encrypted proxy file system Cryptomator/CyberDuck. Mounting and unmounting those storages can be done via CyberDuck CLI by adding tasks before and after backup.
+c) copying photos, large static files like films and non-sensitive information.
+In this case you can restore data by copying required files by your favourite file manager which is more convinient.</value>
+  </data>
+  <data name="_backupModelLabel.Text" xml:space="preserve">
+    <value>The most basic form of incremental backup consists of identifying, recording and thus, preserving only those files that have changed since the last backup. Since changes are typically low, incremental backups are much smaller and quicker than full backups. For instance, following a full backup on Friday, a Monday backup will contain only those files that changed since Friday. A Tuesday backup contains only those files that changed since Monday, and so on. A full restoration of data will naturally be slower, since all increments must be restored. Should any one of the copies created fail, including the first (full), restoration will be incomplete.</value>
+  </data>
 </root>

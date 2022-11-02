@@ -36,11 +36,6 @@ namespace BUtil.Core.Options
 		public bool HideAboutTab { get; set; }
 		
 		/// <summary>
-		/// Shows wheather scheduler configuration should be available in Configurator
-		/// </summary>
-		public bool DontNeedScheduler { get; set; }
-		
-		/// <summary>
 		/// Synchronous storage processing amount
 		/// </summary>
 		public int AmountOfStoragesToProcessSynchronously {get; set;}

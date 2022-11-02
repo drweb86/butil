@@ -37,6 +37,7 @@ namespace BUtil.Configurator.Configurator.Forms
             _views.Add(BackupTaskViewsEnum.SourceItems, new SourceItemsUserControl());
             _views.Add(BackupTaskViewsEnum.Storages, new StoragesUserControl());
             _views.Add(BackupTaskViewsEnum.Scheduler, new SchedulerUserControl());
+            _views.Add(BackupTaskViewsEnum.How, new HowUserControl());
             _views.Add(BackupTaskViewsEnum.Encryption, new EncryptionUserControl());
             _views.Add(BackupTaskViewsEnum.OtherOptions, new TaskOtherOptionsUserControl());
             foreach (KeyValuePair<BackupTaskViewsEnum, BackUserControl> pair in _views)
@@ -71,11 +72,6 @@ namespace BUtil.Configurator.Configurator.Forms
         void UpdateAccessibilitiesView()
         {
             choosePanelUserControl.UpdateView(_profileOptions);
-
-            if (_profileOptions.DontNeedScheduler)
-            {
-                ((SchedulerUserControl)_views[BackupTaskViewsEnum.Scheduler]).ResetScheduler();
-            }
         }
 
         void SaveTask()
@@ -97,8 +93,9 @@ namespace BUtil.Configurator.Configurator.Forms
 
         void ApplyOptionsToUi()
         {
-            _views[BackupTaskViewsEnum.Storages].SetOptionsToUi(_task);
             _views[BackupTaskViewsEnum.SourceItems].SetOptionsToUi(_task);
+            _views[BackupTaskViewsEnum.How].SetOptionsToUi(_task);
+            _views[BackupTaskViewsEnum.Storages].SetOptionsToUi(_task);
             _views[BackupTaskViewsEnum.Scheduler].SetOptionsToUi(_scheduleInfo);
             _views[BackupTaskViewsEnum.Encryption].SetOptionsToUi(new object[] { _profileOptions, _task });
             _views[BackupTaskViewsEnum.OtherOptions].SetOptionsToUi(new object[] { _task });
