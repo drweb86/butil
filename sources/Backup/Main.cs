@@ -8,7 +8,7 @@ Console.WriteLine(CopyrightInfo.Copyright);
 
 try
 {
-    using var controller = new Controller();
+    var controller = new Controller();
     if (!controller.ParseCommandLineArguments(args))
         return;
 

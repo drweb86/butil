@@ -31,15 +31,14 @@ namespace BUtil.Configurator.Controls
 		{
             this.components = new System.ComponentModel.Container();
             this.headerGroupBox = new System.Windows.Forms.GroupBox();
-            this.tasksListView = new System.Windows.Forms.ListView();
-            this.programColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.argumentsColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editButton = new System.Windows.Forms.Button();
             this.moveDownButton = new System.Windows.Forms.Button();
             this.moveUpButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
+            this.tasksListView = new System.Windows.Forms.ListView();
+            this._nameColumnHeader = new System.Windows.Forms.ColumnHeader();
+            this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,25 +58,87 @@ namespace BUtil.Configurator.Controls
             this.headerGroupBox.Controls.Add(this.tasksListView);
             this.headerGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.headerGroupBox.Location = new System.Drawing.Point(0, 0);
+            this.headerGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.headerGroupBox.Name = "headerGroupBox";
-            this.headerGroupBox.Size = new System.Drawing.Size(411, 338);
+            this.headerGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.headerGroupBox.Size = new System.Drawing.Size(479, 390);
             this.headerGroupBox.TabIndex = 0;
             this.headerGroupBox.TabStop = false;
             this.headerGroupBox.Text = "<Header>";
             // 
+            // editButton
+            // 
+            this.editButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.editButton.Image = global::BUtil.Configurator.Icons.OtherOptions48x48;
+            this.editButton.Location = new System.Drawing.Point(401, 96);
+            this.editButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(71, 67);
+            this.editButton.TabIndex = 2;
+            this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editSelectedItem);
+            // 
+            // moveDownButton
+            // 
+            this.moveDownButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.moveDownButton.Image = global::BUtil.Configurator.Icons.ArrayDown;
+            this.moveDownButton.Location = new System.Drawing.Point(401, 317);
+            this.moveDownButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.moveDownButton.Name = "moveDownButton";
+            this.moveDownButton.Size = new System.Drawing.Size(71, 67);
+            this.moveDownButton.TabIndex = 5;
+            this.moveDownButton.UseVisualStyleBackColor = true;
+            this.moveDownButton.Click += new System.EventHandler(this.moveDownSelectedItem);
+            // 
+            // moveUpButton
+            // 
+            this.moveUpButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.moveUpButton.Image = global::BUtil.Configurator.Icons.ArrayUp;
+            this.moveUpButton.Location = new System.Drawing.Point(401, 243);
+            this.moveUpButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.moveUpButton.Name = "moveUpButton";
+            this.moveUpButton.Size = new System.Drawing.Size(71, 67);
+            this.moveUpButton.TabIndex = 4;
+            this.moveUpButton.UseVisualStyleBackColor = true;
+            this.moveUpButton.Click += new System.EventHandler(this.moveUpSelectedItem);
+            // 
+            // removeButton
+            // 
+            this.removeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.removeButton.Image = global::BUtil.Configurator.Icons.cross_48;
+            this.removeButton.Location = new System.Drawing.Point(401, 170);
+            this.removeButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.removeButton.Name = "removeButton";
+            this.removeButton.Size = new System.Drawing.Size(71, 67);
+            this.removeButton.TabIndex = 3;
+            this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.removeSelectedItems);
+            // 
+            // addButton
+            // 
+            this.addButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.addButton.Image = global::BUtil.Configurator.Icons.Add48x48;
+            this.addButton.Location = new System.Drawing.Point(401, 22);
+            this.addButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(71, 67);
+            this.addButton.TabIndex = 1;
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addItem);
+            // 
             // tasksListView
             // 
-            this.tasksListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tasksListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tasksListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.programColumnHeader,
-            this.argumentsColumnHeader});
+            this._nameColumnHeader});
             this.tasksListView.ContextMenuStrip = this.contextMenuStrip;
             this.tasksListView.FullRowSelect = true;
-            this.tasksListView.Location = new System.Drawing.Point(6, 19);
+            this.tasksListView.Location = new System.Drawing.Point(7, 22);
+            this.tasksListView.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tasksListView.Name = "tasksListView";
-            this.tasksListView.Size = new System.Drawing.Size(332, 313);
+            this.tasksListView.Size = new System.Drawing.Size(387, 361);
             this.tasksListView.TabIndex = 0;
             this.tasksListView.UseCompatibleStateImageBehavior = false;
             this.tasksListView.View = System.Windows.Forms.View.Details;
@@ -85,14 +146,10 @@ namespace BUtil.Configurator.Controls
             this.tasksListView.DoubleClick += new System.EventHandler(this.editSelectedItem);
             this.tasksListView.Resize += new System.EventHandler(this.tasksListViewResize);
             // 
-            // programColumnHeader
+            // _nameColumnHeader
             // 
-            this.programColumnHeader.Text = "Program";
-            // 
-            // argumentsColumnHeader
-            // 
-            this.argumentsColumnHeader.Text = "Arguments";
-            this.argumentsColumnHeader.Width = 100;
+            this._nameColumnHeader.Text = "Name";
+            this._nameColumnHeader.Width = 350;
             // 
             // contextMenuStrip
             // 
@@ -104,61 +161,6 @@ namespace BUtil.Configurator.Controls
             this.moveDownToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip";
             this.contextMenuStrip.Size = new System.Drawing.Size(139, 114);
-            // 
-            // editButton
-            // 
-            this.editButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.editButton.Image = global::BUtil.Configurator.Icons.OtherOptions48x48;
-            this.editButton.Location = new System.Drawing.Point(344, 83);
-            this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(61, 58);
-            this.editButton.TabIndex = 2;
-            this.editButton.UseVisualStyleBackColor = true;
-            this.editButton.Click += new System.EventHandler(this.editSelectedItem);
-            // 
-            // moveDownButton
-            // 
-            this.moveDownButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.moveDownButton.Image = global::BUtil.Configurator.Icons.ArrayDown;
-            this.moveDownButton.Location = new System.Drawing.Point(344, 275);
-            this.moveDownButton.Name = "moveDownButton";
-            this.moveDownButton.Size = new System.Drawing.Size(61, 58);
-            this.moveDownButton.TabIndex = 5;
-            this.moveDownButton.UseVisualStyleBackColor = true;
-            this.moveDownButton.Click += new System.EventHandler(this.moveDownSelectedItem);
-            // 
-            // moveUpButton
-            // 
-            this.moveUpButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.moveUpButton.Image = global::BUtil.Configurator.Icons.ArrayUp;
-            this.moveUpButton.Location = new System.Drawing.Point(344, 211);
-            this.moveUpButton.Name = "moveUpButton";
-            this.moveUpButton.Size = new System.Drawing.Size(61, 58);
-            this.moveUpButton.TabIndex = 4;
-            this.moveUpButton.UseVisualStyleBackColor = true;
-            this.moveUpButton.Click += new System.EventHandler(this.moveUpSelectedItem);
-            // 
-            // removeButton
-            // 
-            this.removeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.removeButton.Image = global::BUtil.Configurator.Icons.cross_48;
-            this.removeButton.Location = new System.Drawing.Point(344, 147);
-            this.removeButton.Name = "removeButton";
-            this.removeButton.Size = new System.Drawing.Size(61, 58);
-            this.removeButton.TabIndex = 3;
-            this.removeButton.UseVisualStyleBackColor = true;
-            this.removeButton.Click += new System.EventHandler(this.removeSelectedItems);
-            // 
-            // addButton
-            // 
-            this.addButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.addButton.Image = global::BUtil.Configurator.Icons.Add48x48;
-            this.addButton.Location = new System.Drawing.Point(344, 19);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(61, 58);
-            this.addButton.TabIndex = 1;
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addItem);
             // 
             // addToolStripMenuItem
             // 
@@ -202,11 +204,12 @@ namespace BUtil.Configurator.Controls
             // 
             // TasksChainToExecuteUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.headerGroupBox);
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "TasksChainToExecuteUserControl";
-            this.Size = new System.Drawing.Size(411, 338);
+            this.Size = new System.Drawing.Size(479, 390);
             this.headerGroupBox.ResumeLayout(false);
             this.contextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -219,8 +222,7 @@ namespace BUtil.Configurator.Controls
 		private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
 		private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
-		private System.Windows.Forms.ColumnHeader argumentsColumnHeader;
-		private System.Windows.Forms.ColumnHeader programColumnHeader;
+		private System.Windows.Forms.ColumnHeader _nameColumnHeader;
 		private System.Windows.Forms.ListView tasksListView;
 		private System.Windows.Forms.Button addButton;
 		private System.Windows.Forms.Button removeButton;

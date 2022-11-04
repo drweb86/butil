@@ -76,10 +76,10 @@
     <Compile Update="Configurator\Controls\BackupTasksUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Configurator\Controls\TaskNavigationControl.cs">
+    <Compile Update="Configurator\Controls\Tasks\TaskNavigationControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Configurator\Controls\HowUserControl.cs">
+    <Compile Update="Configurator\Controls\Tasks\HowUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Configurator\Controls\TaskOtherOptionsUserControl.cs">
@@ -89,7 +89,7 @@
     <Compile Update="Configurator\Controls\LoggingUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Configurator\Controls\OptionsHeader.cs">
+    <Compile Update="Configurator\Controls\Common\OptionsHeader.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Configurator\Controls\OtherOptionsUserControl.cs" />

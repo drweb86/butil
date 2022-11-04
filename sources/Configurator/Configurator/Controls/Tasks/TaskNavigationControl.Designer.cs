@@ -1,5 +1,4 @@
-﻿
-using BUtil.Configurator.Configurator.Controls;
+﻿using BUtil.Configurator.Configurator.Controls.Common;
 
 namespace BUtil.Configurator.Controls
 {

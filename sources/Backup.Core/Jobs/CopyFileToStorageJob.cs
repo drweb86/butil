@@ -79,7 +79,7 @@ namespace BUtil.Core.Jobs
 
         void StatusUpdate(ProcessingStatus status)
         {
-            _events.StorageStatusUpdate(_storageSettings, status);
+            //_events.StorageStatusUpdate(_storageSettings, status);
         }
     }
 }

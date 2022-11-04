@@ -481,12 +481,6 @@
   <data name="BackupIsInProgress" xml:space="preserve">
     <value>Идет резервное копирование...</value>
   </data>
-  <data name="PackingFolders" xml:space="preserve">
-    <value>Упаковка каталогов</value>
-  </data>
-  <data name="PackingFiles" xml:space="preserve">
-    <value>Упаковка файлов</value>
-  </data>
   <data name="ThereAreNoItemsToBackupNNyouCanSpecifyTheDataToBackupInConfiguratorInWhatSettingsGroup" xml:space="preserve">
     <value>Не указаны объекты для резервного копирования!\n\nЧтобы указать их, запустите Конфигуратор и добавьте файлы и папки в вкладке "Что?"</value>
   </data>
@@ -531,9 +525,6 @@
   </data>
   <data name="Misc" xml:space="preserve">
     <value>Прочее</value>
-  </data>
-  <data name="Information" xml:space="preserve">
-    <value>Информация</value>
   </data>
   <data name="InProgress" xml:space="preserve">
     <value>Обработка...</value>
@@ -583,9 +574,6 @@
   <data name="Refresh" xml:space="preserve">
     <value>Обновить</value>
   </data>
-  <data name="CopyingToStorages" xml:space="preserve">
-    <value>Копирование в хранилища</value>
-  </data>
   <data name="PleaseCheckItemsToCompress" xml:space="preserve">
     <value>Выберите по меньшей мере один файл или папку для сжатия!</value>
   </data>
@@ -595,17 +583,11 @@
   <data name="AmountOfStoragesToProcessSynchronously" xml:space="preserve">
     <value>Количество хранилищ, которые обрабатывать параллельно:</value>
   </data>
-  <data name="Disabled" xml:space="preserve">
-    <value>Отменено</value>
-  </data>
   <data name="Reboot" xml:space="preserve">
     <value>Перезагрузка</value>
   </data>
   <data name="AmountOf7ZipProcessesToRunSynchronously" xml:space="preserve">
     <value>Количество процессов 7-zip, которые запускать одновременно:</value>
-  </data>
-  <data name="OtherTasks" xml:space="preserve">
-    <value>Другие задания</value>
   </data>
   <data name="ButilSoftwarePackageComponent0IsMissingNNpleaseReinstallApplicationNNrestorationBackupAndHelpFunctionsWillBeUnavailable" xml:space="preserve">
     <value>Компонент приложения BUtil "{0}" не найден.\n\nПожалуйста, переустановите приложение.\n\nФункции Восстановления, Резервного копирования и Помощи будут недоступны.</value>
@@ -618,9 +600,6 @@
   </data>
   <data name="EditingEventTaskConfigurator" xml:space="preserve">
     <value>Изменение задания - Конфигуратор</value>
-  </data>
-  <data name="TextBackupimagefileWillBeReplacedOnAnExistingBackupImageNameForExampleOnDTempBackupButil" xml:space="preserve">
-    <value>Текст в поле $BackupImageFile будет заменен на полный путь и имя к образу резерной копии, на пример на d:\temp\backup.BUtil</value>
   </data>
   <data name="TaskToRun" xml:space="preserve">
     <value>Задание для выполнения</value>
@@ -636,9 +615,6 @@
   </data>
   <data name="ChainOfProgramsToExecuteAfterBackup" xml:space="preserve">
     <value>Цепочка программ для выполнения ПОСЛЕ резервного копирования</value>
-  </data>
-  <data name="Arguments" xml:space="preserve">
-    <value>Аргументы</value>
   </data>
   <data name="Edit" xml:space="preserve">
     <value>Изменить...</value>

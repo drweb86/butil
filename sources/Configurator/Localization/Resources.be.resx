@@ -481,12 +481,6 @@
   <data name="BackupIsInProgress" xml:space="preserve">
     <value>Backup is in progress...</value>
   </data>
-  <data name="PackingFolders" xml:space="preserve">
-    <value>Папки</value>
-  </data>
-  <data name="PackingFiles" xml:space="preserve">
-    <value>Файлы</value>
-  </data>
   <data name="ThereAreNoItemsToBackupNNyouCanSpecifyTheDataToBackupInConfiguratorInWhatSettingsGroup" xml:space="preserve">
     <value>There are no items to backup!\n\nYou can specify the data to backup in Configurator in 'What' settings group.</value>
   </data>
@@ -531,9 +525,6 @@
   </data>
   <data name="Misc" xml:space="preserve">
     <value>Рознае</value>
-  </data>
-  <data name="Information" xml:space="preserve">
-    <value>Кампрэссiя</value>
   </data>
   <data name="InProgress" xml:space="preserve">
     <value>In Progress...</value>
@@ -583,9 +574,6 @@
   <data name="Refresh" xml:space="preserve">
     <value>Абнавiць</value>
   </data>
-  <data name="CopyingToStorages" xml:space="preserve">
-    <value>Copying To Storages</value>
-  </data>
   <data name="PleaseCheckItemsToCompress" xml:space="preserve">
     <value>Please, check items to compress!</value>
   </data>
@@ -595,17 +583,11 @@
   <data name="AmountOfStoragesToProcessSynchronously" xml:space="preserve">
     <value>Amount of storages to process synchronously:</value>
   </data>
-  <data name="Disabled" xml:space="preserve">
-    <value>Disabled</value>
-  </data>
   <data name="Reboot" xml:space="preserve">
     <value>Reboot</value>
   </data>
   <data name="AmountOf7ZipProcessesToRunSynchronously" xml:space="preserve">
     <value>Amount of 7-zip processes to run synchronously:</value>
-  </data>
-  <data name="OtherTasks" xml:space="preserve">
-    <value>Other Tasks</value>
   </data>
   <data name="ButilSoftwarePackageComponent0IsMissingNNpleaseReinstallApplicationNNrestorationBackupAndHelpFunctionsWillBeUnavailable" xml:space="preserve">
     <value>BUtil software package component '{0}' is missing.\n\nPlease reinstall application.\n\nRestoration, Backup and Help functions will be unavailable.</value>
@@ -618,9 +600,6 @@
   </data>
   <data name="EditingEventTaskConfigurator" xml:space="preserve">
     <value>Editing Event Task - Configurator</value>
-  </data>
-  <data name="TextBackupimagefileWillBeReplacedOnAnExistingBackupImageNameForExampleOnDTempBackupButil" xml:space="preserve">
-    <value>Text $BackupImageFile will be replaced on an existing backup image name. For example on d:\temp\backup.BUtil</value>
   </data>
   <data name="TaskToRun" xml:space="preserve">
     <value>Task to run</value>
@@ -636,9 +615,6 @@
   </data>
   <data name="ChainOfProgramsToExecuteAfterBackup" xml:space="preserve">
     <value>Chain of programs to execute AFTER backup</value>
-  </data>
-  <data name="Arguments" xml:space="preserve">
-    <value>Arguments</value>
   </data>
   <data name="Edit" xml:space="preserve">
     <value>Edit...</value>

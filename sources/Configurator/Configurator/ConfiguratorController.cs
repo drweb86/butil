@@ -9,6 +9,7 @@ using BUtil.Core.Options;
 using BUtil.Core.PL;
 using BUtil.RestorationMaster;
 using BUtil.Configurator.LogsManagement;
+using System.Linq;
 
 namespace BUtil.Configurator.Configurator
 {
@@ -59,8 +60,8 @@ namespace BUtil.Configurator.Configurator
 		}
 		
 		public void OpenBackupUiMaster(string taskName, bool runFormAsApplication)
-		{
-		    if (Program.PackageIsBroken)
+        {
+            if (Program.PackageIsBroken)
             {
                 return;
             }
@@ -71,26 +72,45 @@ namespace BUtil.Configurator.Configurator
                 return;
             }
 
-		    LoadSettings();
+            LoadSettings();
 
-            //TODO: now we suppoprt execution of just one task. But it will be great if we could execute each tasl one by one
-            // here among checked in task selection form
+            var task = GetBackupTaskToExecute(taskName);
+
+            using var form = new BackupMasterForm(_profileOptions, task);
+            Application.Run(form);
+            Environment.Exit(0);
+        }
+
+        private static BackupTask GetBackupTaskToExecute(string taskName)
+        {
+            BackupTask task = null;
 
             var backupTaskStoreService = new BackupTaskStoreService();
-            var task = backupTaskStoreService.Load(taskName);
-            if (task == null)
-                Messages.ShowErrorBox($"Task '{taskName}' is missing.");
-
-// This must be refactored in order to use something like Tool pattern
-            using (var form = new BackupMasterForm(_profileOptions, task))
+            if (taskName == null)
             {
-                Application.Run(form);
+                var backupTasks = backupTaskStoreService.LoadAll();
+
+                using var selectTaskForm = new SelectTaskToRunForm(backupTasks.ToDictionary(t => t.Name, t => t));
+                if (selectTaskForm.ShowDialog() == DialogResult.OK)
+                    task = selectTaskForm.TaskToRun;
+                else
+                    Environment.Exit(-1);
+            }
+            else
+            {
+                task = backupTaskStoreService.Load(taskName);
             }
 
-            Environment.Exit(0);
-		}
-		
-		public void OpenJournals(bool runFormAsApplication)
+            if (task == null)
+            {
+                Messages.ShowErrorBox($"Task '{taskName}' is missing.");
+                Environment.Exit(-1);
+            }
+
+            return task;
+        }
+
+        public void OpenJournals(bool runFormAsApplication)
 		{
 			if (runFormAsApplication)
 			{

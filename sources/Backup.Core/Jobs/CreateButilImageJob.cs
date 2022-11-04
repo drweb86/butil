@@ -95,7 +95,7 @@ namespace BUtil.Core.Jobs
 
         void StatusUpdate(ProcessingStatus status)
         {
-            _events.CustomUpdate(_eventKey, status);
+            //_events.CustomUpdate(_eventKey, status);
         }
 
         void ReserveFileForBackupImage()

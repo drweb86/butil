@@ -244,15 +244,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Arguments.
-        /// </summary>
-        internal static string Arguments {
-            get {
-                return ResourceManager.GetString("Arguments", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Authorization information.
         /// </summary>
         internal static string AuthorizationInformation {
@@ -551,15 +542,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copying To Storages.
-        /// </summary>
-        internal static string CopyingToStorages {
-            get {
-                return ResourceManager.GetString("CopyingToStorages", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Could not continue work after getting options because {0}.
         /// </summary>
         internal static string CouldNotContinueWorkAfterGettingOptionsBecause0 {
@@ -630,15 +612,6 @@ namespace BUtil.Configurator.Localization {
         internal static string DisableCompressionAndEncryptionDescription {
             get {
                 return ResourceManager.GetString("DisableCompressionAndEncryptionDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Disabled.
-        /// </summary>
-        internal static string Disabled {
-            get {
-                return ResourceManager.GetString("Disabled", resourceCulture);
             }
         }
         
@@ -1078,15 +1051,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Information.
-        /// </summary>
-        internal static string Information {
-            get {
-                return ResourceManager.GetString("Information", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to In Progress....
         /// </summary>
         internal static string InProgress {
@@ -1392,33 +1356,6 @@ namespace BUtil.Configurator.Localization {
         internal static string OtherOptions {
             get {
                 return ResourceManager.GetString("OtherOptions", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Other Tasks.
-        /// </summary>
-        internal static string OtherTasks {
-            get {
-                return ResourceManager.GetString("OtherTasks", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Packing Files.
-        /// </summary>
-        internal static string PackingFiles {
-            get {
-                return ResourceManager.GetString("PackingFiles", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Packing Folders.
-        /// </summary>
-        internal static string PackingFolders {
-            get {
-                return ResourceManager.GetString("PackingFolders", resourceCulture);
             }
         }
         
@@ -1848,16 +1785,6 @@ namespace BUtil.Configurator.Localization {
         internal static string Test {
             get {
                 return ResourceManager.GetString("Test", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Text $BackupImageFile will be replaced on an existing backup image name. For example on d:\temp\backup.BUtil.
-        /// </summary>
-        internal static string TextBackupimagefileWillBeReplacedOnAnExistingBackupImageNameForExampleOnDTempBackupButil {
-            get {
-                return ResourceManager.GetString("TextBackupimagefileWillBeReplacedOnAnExistingBackupImageNameForExampleOnDTempBack" +
-                        "upButil", resourceCulture);
             }
         }
         

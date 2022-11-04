@@ -15,10 +15,12 @@ using BUtil.Core.Localization;
 using System.Linq;
 using BUtil.Core.Events;
 using BUtil.Core.Jobs;
+using System.Threading.Tasks;
+using BUtil.Core.TasksTree;
 
 namespace BUtil.Core.BackupModels
 {
-    class ImageBackupModelStrategy : IBackupModelStrategy
+    class IncrementalBackupModelStrategy : IBackupModelStrategy
     {
         #region locals
 
@@ -29,8 +31,6 @@ namespace BUtil.Core.BackupModels
 
         #endregion
 
-        const string ImagePacking = "ImagePacking";
-
         #region Fields
 
         readonly ProgramOptions _options;
@@ -38,8 +38,6 @@ namespace BUtil.Core.BackupModels
         readonly LogBase _log;
         Thread _job;
         readonly TaskManager _copyManager;
-        readonly TaskManager _beforeBackupEventManager;
-        readonly TaskManager _afterBackupEventManager;
         readonly TaskManager _compressionManager;
         readonly TaskManager _imageCreationManager;
         bool _aborting;
@@ -55,13 +53,12 @@ namespace BUtil.Core.BackupModels
         #region Public Properties
 
         public LogBase Log => _log;
-        public BackupEvents Events { get; private set; } = new BackupEvents();
 
         #endregion
 
         #region Constructors
 
-        public ImageBackupModelStrategy(LogBase openedLog, BackupTask task, IncrementalBackupModelOptions modelOptions, ProgramOptions options)
+        public IncrementalBackupModelStrategy(LogBase openedLog, BackupTask task, IncrementalBackupModelOptions modelOptions, ProgramOptions options)
         {
             if (!openedLog.IsOpened)
                 throw new InvalidDataException("Log is not opened!");// do not localize!
@@ -69,8 +66,6 @@ namespace BUtil.Core.BackupModels
             _log = openedLog;
             _task = task;
             _options = options;
-            _beforeBackupEventManager = new TaskManager(1);
-            _afterBackupEventManager = new TaskManager(1);
             _copyManager = new TaskManager(_options.AmountOfStoragesToProcessSynchronously);
             _compressionManager = new TaskManager(_options.AmountOf7ZipProcessesToProcessSynchronously);
             _imageCreationManager = new TaskManager(1);
@@ -90,12 +85,15 @@ namespace BUtil.Core.BackupModels
             get { return _log.ErrorsOrWarningsRegistered; }
         }
 
-        public Dictionary<object, string> CustomJobs => new Dictionary<object, string> {
-            { ImagePacking, Resources.PackingDataInAnImage }};
-
         #endregion
 
         #region Public methods
+
+        public BuTask GetTask(BackupEvents events)
+        {
+            var task = new IncrementalBackupTask(_log, events, _task, _options);
+            return task;
+        }
 
         /// <summary>
         /// Non-reenterable
@@ -122,14 +120,9 @@ namespace BUtil.Core.BackupModels
 
             _aborting = true;
             _log.WriteLine(LoggingEvent.Error, _backupAbortedByUser);
-            // cleaning tasls about copying
-            _afterBackupEventManager.Abort();
-            _beforeBackupEventManager.Abort();
             _compressionManager.Abort();
             _copyManager.Abort();
             _imageCreationManager.Abort();
-
-            Events.Finished();
         }
 
         #endregion
@@ -169,38 +162,11 @@ namespace BUtil.Core.BackupModels
 
             if (BeforeBackup(out var metarecords, out var archiveParameters))
             {
-                if (!_aborting) RunProgramsChainBeforeBackup();
                 if (!_aborting) Start(metarecords, archiveParameters);
                 if (!_aborting) AfterBackup();
             }
 
             _log.Close();
-
-            Events.Finished();
-        }
-
-        private void RunProgramsChainBeforeBackup()
-        {
-            _log.ProcedureCall("runProgramsChainBeforeBackup");
-
-            foreach (var taskInfo in _task.ExecuteBeforeBackup)
-            {
-                var task = new ExecuteProgramJob(_log, Events, taskInfo, _options.ProcessPriority, Resources.BeforeBackupTask);
-                _beforeBackupEventManager.AddJob(task);
-            }
-            _beforeBackupEventManager.WaitUntilAllJobsAreDone();
-        }
-
-        private void RunProgramsChainAfterBackup()
-        {
-            _log.ProcedureCall("runProgramsChainAfterBackup");
-
-            foreach (ExecuteProgramTaskInfo taskInfo in _task.ExecuteAfterBackup)
-            {
-                var task = new ExecuteProgramJob(_log, Events, taskInfo, _options.ProcessPriority, Resources.AfterBackupTask);
-                _afterBackupEventManager.AddJob(task);
-            }
-            _afterBackupEventManager.WaitUntilAllJobsAreDone();
         }
 
         /// <summary>
@@ -222,22 +188,22 @@ namespace BUtil.Core.BackupModels
                 }
             }
 
-            foreach (var taskInfo in _task.ExecuteBeforeBackup)
-                Events.ExecuteProgramStatusUpdate(taskInfo, ProcessingStatus.NotStarted);
+            //foreach (var taskInfo in _task.ExecuteBeforeBackup)
+            //    Events.ExecuteProgramStatusUpdate(taskInfo, ProcessingStatus.NotStarted);
 
-            foreach (var taskInfo in _task.ExecuteAfterBackup)
-                Events.ExecuteProgramStatusUpdate(taskInfo, ProcessingStatus.NotStarted);
+            //foreach (var taskInfo in _task.ExecuteAfterBackup)
+            //    Events.ExecuteProgramStatusUpdate(taskInfo, ProcessingStatus.NotStarted);
 
-            archiveParameters = CreateArgsForCompressionAndMetaForImage(out metarecords);
-            foreach (var archiveParameter in archiveParameters)
-                Events.SourceItemStatusUpdate(archiveParameter.ItemToCompress, ProcessingStatus.NotStarted);
+            //archiveParameters = CreateArgsForCompressionAndMetaForImage(out metarecords);
+            //foreach (var archiveParameter in archiveParameters)
+            //    Events.SourceItemStatusUpdate(archiveParameter.ItemToCompress, ProcessingStatus.NotStarted);
 
-            foreach (var storageSettings in _task.Storages)
-                Events.StorageStatusUpdate(storageSettings, ProcessingStatus.NotStarted);
+            //foreach (var storageSettings in _task.Storages)
+            //    Events.StorageStatusUpdate(storageSettings, ProcessingStatus.NotStarted);
 
-            Events.CustomUpdate(ImagePacking, ProcessingStatus.NotStarted);
-
-            return IsAnySenceInPacking();
+            metarecords = null;
+            archiveParameters = null;
+            return true; // IsAnySenceInPacking();
         }
 
 
@@ -312,7 +278,7 @@ namespace BUtil.Core.BackupModels
 
             foreach (var archiveParameter in archiveParameters)
             {
-                var job = new SourceItemCompressionJob(_log, archiveParameter, Events);
+                var job = new SourceItemCompressionJob(_log, archiveParameter, null);
                 _compressionManager.AddJob(job);
             }
             _compressionManager.WaitUntilAllJobsAreDone();
@@ -323,7 +289,7 @@ namespace BUtil.Core.BackupModels
                 return;
             }
 
-            var imageCreationJob = new CreateButilImageJob(_log, Events, ImagePacking, _imageFile, metarecords);
+            var imageCreationJob = new CreateButilImageJob(_log, null, "lala", _imageFile, metarecords);
             _imageCreationManager.AddJob(imageCreationJob);
             _imageCreationManager.WaitUntilAllJobsAreDone();
 
@@ -335,7 +301,7 @@ namespace BUtil.Core.BackupModels
 
             foreach (StorageSettings storageSettings in _task.Storages)
             {
-                var job = new CopyFileToStorageJob(_log, Events, storageSettings, _imageFile.FileName);
+                var job = new CopyFileToStorageJob(_log, null, storageSettings, _imageFile.FileName);
                 _copyManager.AddJob(job);
             }
             _copyManager.WaitUntilAllJobsAreDone();
@@ -345,8 +311,6 @@ namespace BUtil.Core.BackupModels
                 _log.ProcedureCall("Start::copying storage aborted");
                 return;
             }
-
-            RunProgramsChainAfterBackup();
 
             if (_aborting)
             {
@@ -467,7 +431,7 @@ namespace BUtil.Core.BackupModels
             }
         }
 
-        ~ImageBackupModelStrategy()
+        ~IncrementalBackupModelStrategy()
         {
             DoDispose(true);
         }

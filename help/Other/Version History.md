@@ -1,5 +1,8 @@
 # 5.2
 
+## New Features
+- New section for setting up incremental model options.
+
 ## Changes
 - Setup is x32/x64
 - 7-zip is not bundled with app

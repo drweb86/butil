@@ -14,7 +14,7 @@ namespace BUtil.Core.BackupModels
             {
                 case BackupModelProviderNames.Incremental:
                     var modelOptions = CreateIncrementalBackupModelOptions(task.BackupModel);
-                    return new ImageBackupModelStrategy(log, task, modelOptions, options);
+                    return new IncrementalBackupModelStrategy(log, task, modelOptions, options);
                 default:
                     throw new ArgumentOutOfRangeException(nameof(task));
             }

@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using BUtil.Core.Events;
+using BUtil.Core.TasksTree;
 
 namespace BUtil.Core.BackupModels
 {
-    public interface IBackupModelStrategy : IDisposable
+    public interface IBackupModelStrategy
     {
-        Dictionary<object, string> CustomJobs { get; }
-        BackupEvents Events { get; }
-        bool ErrorsOrWarningsRegistered { get; }
-        void Run();
-        void StopForcibly();
+        BuTask GetTask(BackupEvents events);
     }
 }

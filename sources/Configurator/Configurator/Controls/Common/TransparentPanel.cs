@@ -1,8 +1,8 @@
 ﻿using System.Windows.Forms;
 
-namespace BUtil.Configurator.Configurator.Controls
+namespace BUtil.Configurator.Configurator.Controls.Common
 {
-    public class TransparentTableLayoutPanel : System.Windows.Forms.TableLayoutPanel
+    public class TransparentTableLayoutPanel : TableLayoutPanel
     {
         protected override CreateParams CreateParams
         {

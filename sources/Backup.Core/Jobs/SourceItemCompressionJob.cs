@@ -161,7 +161,7 @@ namespace BUtil.Core.Jobs
 
         void StatusUpdate(SourceItem item, ProcessingStatus status)
         {
-            _events.SourceItemStatusUpdate(item, status);
+            //_events.SourceItemStatusUpdate(item, status);
         }
 
         bool IsSuccessfull7ZipPacking(int code)

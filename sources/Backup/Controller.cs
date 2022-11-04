@@ -8,10 +8,12 @@ using BUtil.Core;
 using BUtil.Core.Misc;
 using BUtil.ConsoleBackup.Localization;
 using BUtil.Core.BackupModels;
+using System.Threading;
+using Microsoft.VisualBasic.Logging;
 
 namespace BUtil.ConsoleBackup
 {
-    internal class Controller : IDisposable
+    internal class Controller
     {
         public Controller()
         {
@@ -75,13 +77,14 @@ namespace BUtil.ConsoleBackup
             return true;
         }
 
+        LogBase _log;
 		public bool Prepare()
         {
-            var log = OpenLog();
+            _log = OpenLog();
 
             if (string.IsNullOrWhiteSpace(_taskName))
             {
-                log.WriteLine(LoggingEvent.Error, Resources.PleaseSpecifyTheBackupTaskTitleUsingTheCommandLineArgument0MyBackupTaskTitleNexampleBackupExe0MyBackupTitle, TaskCommandLineArgument);
+                _log.WriteLine(LoggingEvent.Error, Resources.PleaseSpecifyTheBackupTaskTitleUsingTheCommandLineArgument0MyBackupTaskTitleNexampleBackupExe0MyBackupTitle, TaskCommandLineArgument);
                 return false;
             }
 
@@ -89,20 +92,22 @@ namespace BUtil.ConsoleBackup
             var task = backupTaskStoreService.Load(_taskName);
             if (task == null)
             {
-                log.WriteLine(LoggingEvent.Error, Resources.TherereNoBackupTaskWithTitle0, _taskName);
+                _log.WriteLine(LoggingEvent.Error, Resources.TherereNoBackupTaskWithTitle0, _taskName);
                 return false;
             }
 
-            _backup = BackupModelStrategyFactory.Create(log, task, _options);
+            _backup = BackupModelStrategyFactory.Create(_log, task, _options);
 
             return true;
         }
 
 		public void Backup()
         {
-            _backup.Run();
+            var task = _backup.GetTask(new Core.Events.BackupEvents());
+            var cancellationTokenSource = new CancellationTokenSource();
+            task.Execute(cancellationTokenSource.Token);
 
-            if (!_useFileLog && _backup.ErrorsOrWarningsRegistered)
+            if (!_useFileLog && _log.ErrorsOrWarningsRegistered)
             {
                 Console.ReadKey();
             }
@@ -191,24 +196,6 @@ namespace BUtil.ConsoleBackup
                 result.Open();
             }
             return result;
-        }
-
-        ~Controller()
-        {
-            ((IDisposable)this).Dispose();
-        }
-
-        bool _isDisposed; // auto: false;
-        void IDisposable.Dispose()
-        {
-            if (!_isDisposed)
-            {
-                if (_backup != null)
-                    _backup.Dispose();
-
-                _isDisposed = true;
-                GC.SuppressFinalize(this);
-            }
         }
 
         #region Constants

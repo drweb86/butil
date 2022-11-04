@@ -32,10 +32,10 @@ namespace BUtil.Configurator.Controls
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HowUserControl));
             this._tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._chooseBackupModel = new System.Windows.Forms.Label();
-            this._disableCompressionEncryptionCheckBox = new System.Windows.Forms.CheckBox();
             this._incrementalBackupRadioButton = new System.Windows.Forms.RadioButton();
-            this._backupModelLabel = new System.Windows.Forms.Label();
+            this._disableCompressionEncryptionCheckBox = new System.Windows.Forms.CheckBox();
             this._disableCompressionAndEncryptionUsagesLabel = new System.Windows.Forms.Label();
+            this._backupModelLabel = new System.Windows.Forms.Label();
             this._tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,20 +71,6 @@ namespace BUtil.Configurator.Controls
             this._chooseBackupModel.TabIndex = 1;
             this._chooseBackupModel.Text = "Choose backup model";
             // 
-            // _disableCompressionEncryptionCheckBox
-            // 
-            this._disableCompressionEncryptionCheckBox.AutoSize = true;
-            this._disableCompressionEncryptionCheckBox.Checked = true;
-            this._disableCompressionEncryptionCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this._disableCompressionEncryptionCheckBox.Enabled = false;
-            this._disableCompressionEncryptionCheckBox.Location = new System.Drawing.Point(11, 157);
-            this._disableCompressionEncryptionCheckBox.Name = "_disableCompressionEncryptionCheckBox";
-            this._disableCompressionEncryptionCheckBox.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this._disableCompressionEncryptionCheckBox.Size = new System.Drawing.Size(218, 27);
-            this._disableCompressionEncryptionCheckBox.TabIndex = 4;
-            this._disableCompressionEncryptionCheckBox.Text = "Disable compression and encryption";
-            this._disableCompressionEncryptionCheckBox.UseVisualStyleBackColor = true;
-            // 
             // _incrementalBackupRadioButton
             // 
             this._incrementalBackupRadioButton.AutoSize = true;
@@ -98,14 +84,18 @@ namespace BUtil.Configurator.Controls
             this._incrementalBackupRadioButton.Text = "Incremental backup";
             this._incrementalBackupRadioButton.UseVisualStyleBackColor = true;
             // 
-            // _backupModelLabel
+            // _disableCompressionEncryptionCheckBox
             // 
-            this._backupModelLabel.AutoSize = true;
-            this._backupModelLabel.Location = new System.Drawing.Point(11, 64);
-            this._backupModelLabel.Name = "_backupModelLabel";
-            this._backupModelLabel.Size = new System.Drawing.Size(661, 90);
-            this._backupModelLabel.TabIndex = 3;
-            this._backupModelLabel.Text = resources.GetString("_backupModelLabel.Text");
+            this._disableCompressionEncryptionCheckBox.AutoSize = true;
+            this._disableCompressionEncryptionCheckBox.Checked = true;
+            this._disableCompressionEncryptionCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this._disableCompressionEncryptionCheckBox.Location = new System.Drawing.Point(11, 157);
+            this._disableCompressionEncryptionCheckBox.Name = "_disableCompressionEncryptionCheckBox";
+            this._disableCompressionEncryptionCheckBox.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this._disableCompressionEncryptionCheckBox.Size = new System.Drawing.Size(218, 27);
+            this._disableCompressionEncryptionCheckBox.TabIndex = 4;
+            this._disableCompressionEncryptionCheckBox.Text = "Disable compression and encryption";
+            this._disableCompressionEncryptionCheckBox.UseVisualStyleBackColor = true;
             // 
             // _disableCompressionAndEncryptionUsagesLabel
             // 
@@ -115,6 +105,15 @@ namespace BUtil.Configurator.Controls
             this._disableCompressionAndEncryptionUsagesLabel.Size = new System.Drawing.Size(658, 120);
             this._disableCompressionAndEncryptionUsagesLabel.TabIndex = 5;
             this._disableCompressionAndEncryptionUsagesLabel.Text = resources.GetString("_disableCompressionAndEncryptionUsagesLabel.Text");
+            // 
+            // _backupModelLabel
+            // 
+            this._backupModelLabel.AutoSize = true;
+            this._backupModelLabel.Location = new System.Drawing.Point(11, 64);
+            this._backupModelLabel.Name = "_backupModelLabel";
+            this._backupModelLabel.Size = new System.Drawing.Size(661, 90);
+            this._backupModelLabel.TabIndex = 3;
+            this._backupModelLabel.Text = resources.GetString("_backupModelLabel.Text");
             // 
             // HowUserControl
             // 

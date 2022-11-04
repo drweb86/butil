@@ -60,7 +60,7 @@ namespace BUtil.Configurator.Controls
 			_isBeforeBackupEvent = isBeforeBackupEvent;
 			
 			tasksListView.BeginUpdate();
-			foreach(ExecuteProgramTaskInfo item in list)
+			foreach(var item in list)
 			{
 				addTaskInfoToList(item);
 			}
@@ -75,8 +75,7 @@ namespace BUtil.Configurator.Controls
 		public void ApplyLocalization()
 		{
 			headerGroupBox.Text = _isBeforeBackupEvent ? Resources.ChainOfProgramsToExecuteBeforeBackup : Resources.ChainOfProgramsToExecuteAfterBackup;
-			programColumnHeader.Text = Resources.Program;
-			argumentsColumnHeader.Text = Resources.Arguments;
+			_nameColumnHeader.Text = Resources.Program;
 			addToolStripMenuItem.Text = Resources.Add;
 			editToolStripMenuItem.Text = Resources.Edit;
 			removeToolStripMenuItem.Text = Resources.Remove;
@@ -90,15 +89,16 @@ namespace BUtil.Configurator.Controls
 		
 		void addTaskInfoToList(ExecuteProgramTaskInfo taskInfo)
 		{
-			ListViewItem listViewItem = new ListViewItem(new string[] {taskInfo.Program, taskInfo.Arguments});
-			listViewItem.Tag = taskInfo;
+			var listViewItem = new ListViewItem(taskInfo.Name)
+			{
+				Tag = taskInfo
+			};
 			tasksListView.Items.Add(listViewItem);
 		}
 		
 		void tasksListViewResize(object sender, EventArgs e)
 		{
-			tasksListView.Columns[1].Width = 100;
-			tasksListView.Columns[0].Width = tasksListView.Width - tasksListView.Columns[1].Width - 40;
+			tasksListView.Columns[0].Width = tasksListView.Width - 8;
 		}
 		
 		void tasksListViewSelectedIndexChanged(object sender, EventArgs e)
@@ -114,13 +114,9 @@ namespace BUtil.Configurator.Controls
 		
 		void addItem(object sender, EventArgs e)
 		{
-			using (BackupEventTaskInfoEditingForm form = new BackupEventTaskInfoEditingForm(_isBeforeBackupEvent))
-			{
-				if (form.ShowDialog() == DialogResult.OK)
-				{
-					addTaskInfoToList( form.EventTask );
-				}
-			}
+			using var form = new BackupEventTaskInfoEditingForm();
+			if (form.ShowDialog() == DialogResult.OK)
+				addTaskInfoToList( form.EventTask );
 			
 			tasksListViewSelectedIndexChanged(sender, e);
 		}
@@ -167,7 +163,7 @@ namespace BUtil.Configurator.Controls
 
 			int indexOfItem = tasksListView.SelectedItems[0].Index;
 			
-			using (BackupEventTaskInfoEditingForm form = new BackupEventTaskInfoEditingForm(_isBeforeBackupEvent, (ExecuteProgramTaskInfo)tasksListView.SelectedItems[0].Tag))
+			using (BackupEventTaskInfoEditingForm form = new BackupEventTaskInfoEditingForm((ExecuteProgramTaskInfo)tasksListView.SelectedItems[0].Tag))
 			{
 				if (form.ShowDialog() == DialogResult.OK)
 				{

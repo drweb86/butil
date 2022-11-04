@@ -29,136 +29,159 @@ namespace BUtil.Configurator.Forms
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.taskToRunGroupBox = new System.Windows.Forms.GroupBox();
-			this.helpForPostBackupTasksLabel = new System.Windows.Forms.Label();
-			this.argumentsTextBox = new System.Windows.Forms.TextBox();
-			this.commandLineArgumentsLabel = new System.Windows.Forms.Label();
-			this.browseForProgramButton = new System.Windows.Forms.Button();
-			this.programTextBox = new System.Windows.Forms.TextBox();
-			this.programLabel = new System.Windows.Forms.Label();
-			this.okButton = new System.Windows.Forms.Button();
-			this.cancelButton = new System.Windows.Forms.Button();
-			this.ofd = new System.Windows.Forms.OpenFileDialog();
-			this.taskToRunGroupBox.SuspendLayout();
-			this.SuspendLayout();
-			// 
-			// taskToRunGroupBox
-			// 
-			this.taskToRunGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-									| System.Windows.Forms.AnchorStyles.Right)));
-			this.taskToRunGroupBox.Controls.Add(this.helpForPostBackupTasksLabel);
-			this.taskToRunGroupBox.Controls.Add(this.argumentsTextBox);
-			this.taskToRunGroupBox.Controls.Add(this.commandLineArgumentsLabel);
-			this.taskToRunGroupBox.Controls.Add(this.browseForProgramButton);
-			this.taskToRunGroupBox.Controls.Add(this.programTextBox);
-			this.taskToRunGroupBox.Controls.Add(this.programLabel);
-			this.taskToRunGroupBox.Location = new System.Drawing.Point(12, 12);
-			this.taskToRunGroupBox.Name = "taskToRunGroupBox";
-			this.taskToRunGroupBox.Size = new System.Drawing.Size(421, 137);
-			this.taskToRunGroupBox.TabIndex = 0;
-			this.taskToRunGroupBox.TabStop = false;
-			this.taskToRunGroupBox.Text = "Task to run";
-			// 
-			// helpForPostBackupTasksLabel
-			// 
-			this.helpForPostBackupTasksLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-									| System.Windows.Forms.AnchorStyles.Right)));
-			this.helpForPostBackupTasksLabel.Location = new System.Drawing.Point(6, 94);
-			this.helpForPostBackupTasksLabel.Name = "helpForPostBackupTasksLabel";
-			this.helpForPostBackupTasksLabel.Size = new System.Drawing.Size(409, 40);
-			this.helpForPostBackupTasksLabel.TabIndex = 5;
-			this.helpForPostBackupTasksLabel.Text = "<Help for post backup event>";
-			// 
-			// argumentsTextBox
-			// 
-			this.argumentsTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-									| System.Windows.Forms.AnchorStyles.Right)));
-			this.argumentsTextBox.Location = new System.Drawing.Point(6, 71);
-			this.argumentsTextBox.Name = "argumentsTextBox";
-			this.argumentsTextBox.Size = new System.Drawing.Size(409, 20);
-			this.argumentsTextBox.TabIndex = 3;
-			// 
-			// commandLineArgumentsLabel
-			// 
-			this.commandLineArgumentsLabel.AutoSize = true;
-			this.commandLineArgumentsLabel.Location = new System.Drawing.Point(6, 55);
-			this.commandLineArgumentsLabel.Name = "commandLineArgumentsLabel";
-			this.commandLineArgumentsLabel.Size = new System.Drawing.Size(128, 13);
-			this.commandLineArgumentsLabel.TabIndex = 3;
-			this.commandLineArgumentsLabel.Text = "Command line arguments:";
-			// 
-			// browseForProgramButton
-			// 
-			this.browseForProgramButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.browseForProgramButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.browseForProgramButton.Location = new System.Drawing.Point(372, 30);
-			this.browseForProgramButton.Name = "browseForProgramButton";
-			this.browseForProgramButton.Size = new System.Drawing.Size(43, 23);
-			this.browseForProgramButton.TabIndex = 2;
-			this.browseForProgramButton.Text = "...";
-			this.browseForProgramButton.UseVisualStyleBackColor = true;
-			this.browseForProgramButton.Click += new System.EventHandler(this.browseForProgramButtonClick);
-			// 
-			// programTextBox
-			// 
-			this.programTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-									| System.Windows.Forms.AnchorStyles.Right)));
-			this.programTextBox.Location = new System.Drawing.Point(6, 32);
-			this.programTextBox.Name = "programTextBox";
-			this.programTextBox.Size = new System.Drawing.Size(360, 20);
-			this.programTextBox.TabIndex = 1;
-			this.programTextBox.TextChanged += new System.EventHandler(this.programTextBoxTextChanged);
-			// 
-			// programLabel
-			// 
-			this.programLabel.AutoSize = true;
-			this.programLabel.Location = new System.Drawing.Point(6, 16);
-			this.programLabel.Name = "programLabel";
-			this.programLabel.Size = new System.Drawing.Size(49, 13);
-			this.programLabel.TabIndex = 0;
-			this.programLabel.Text = "Program:";
-			// 
-			// okButton
-			// 
-			this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.okButton.Location = new System.Drawing.Point(277, 154);
-			this.okButton.Name = "okButton";
-			this.okButton.Size = new System.Drawing.Size(75, 23);
-			this.okButton.TabIndex = 4;
-			this.okButton.Text = "OK";
-			this.okButton.UseVisualStyleBackColor = true;
-			this.okButton.Click += new System.EventHandler(this.okButtonClick);
-			// 
-			// cancelButton
-			// 
-			this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.cancelButton.Location = new System.Drawing.Point(358, 154);
-			this.cancelButton.Name = "cancelButton";
-			this.cancelButton.Size = new System.Drawing.Size(75, 23);
-			this.cancelButton.TabIndex = 5;
-			this.cancelButton.Text = "Cancel";
-			this.cancelButton.UseVisualStyleBackColor = true;
-			// 
-			// BackupEventTaskInfoEditingForm
-			// 
-			this.AcceptButton = this.okButton;
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.CancelButton = this.cancelButton;
-			this.ClientSize = new System.Drawing.Size(445, 189);
-			this.Controls.Add(this.cancelButton);
-			this.Controls.Add(this.okButton);
-			this.Controls.Add(this.taskToRunGroupBox);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = BUtil.Configurator.Icons.BUtilIcon;
-			this.MaximizeBox = false;
-			this.Name = "BackupEventTaskInfoEditingForm";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "<New|Edit> - Configurator";
-			this.taskToRunGroupBox.ResumeLayout(false);
-			this.taskToRunGroupBox.PerformLayout();
-			this.ResumeLayout(false);
+            this.taskToRunGroupBox = new System.Windows.Forms.GroupBox();
+            this._nameTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.argumentsTextBox = new System.Windows.Forms.TextBox();
+            this.commandLineArgumentsLabel = new System.Windows.Forms.Label();
+            this.browseForProgramButton = new System.Windows.Forms.Button();
+            this.programTextBox = new System.Windows.Forms.TextBox();
+            this.programLabel = new System.Windows.Forms.Label();
+            this.okButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.ofd = new System.Windows.Forms.OpenFileDialog();
+            this.taskToRunGroupBox.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // taskToRunGroupBox
+            // 
+            this.taskToRunGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.taskToRunGroupBox.Controls.Add(this._nameTextBox);
+            this.taskToRunGroupBox.Controls.Add(this.label1);
+            this.taskToRunGroupBox.Controls.Add(this.argumentsTextBox);
+            this.taskToRunGroupBox.Controls.Add(this.commandLineArgumentsLabel);
+            this.taskToRunGroupBox.Controls.Add(this.browseForProgramButton);
+            this.taskToRunGroupBox.Controls.Add(this.programTextBox);
+            this.taskToRunGroupBox.Controls.Add(this.programLabel);
+            this.taskToRunGroupBox.Location = new System.Drawing.Point(14, 14);
+            this.taskToRunGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.taskToRunGroupBox.Name = "taskToRunGroupBox";
+            this.taskToRunGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.taskToRunGroupBox.Size = new System.Drawing.Size(500, 166);
+            this.taskToRunGroupBox.TabIndex = 0;
+            this.taskToRunGroupBox.TabStop = false;
+            this.taskToRunGroupBox.Text = "Task to run";
+            // 
+            // _nameTextBox
+            // 
+            this._nameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this._nameTextBox.Location = new System.Drawing.Point(8, 35);
+            this._nameTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this._nameTextBox.Name = "_nameTextBox";
+            this._nameTextBox.Size = new System.Drawing.Size(484, 23);
+            this._nameTextBox.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 15);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Name:";
+            // 
+            // argumentsTextBox
+            // 
+            this.argumentsTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.argumentsTextBox.Location = new System.Drawing.Point(8, 125);
+            this.argumentsTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.argumentsTextBox.Name = "argumentsTextBox";
+            this.argumentsTextBox.Size = new System.Drawing.Size(485, 23);
+            this.argumentsTextBox.TabIndex = 4;
+            // 
+            // commandLineArgumentsLabel
+            // 
+            this.commandLineArgumentsLabel.AutoSize = true;
+            this.commandLineArgumentsLabel.Location = new System.Drawing.Point(8, 106);
+            this.commandLineArgumentsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.commandLineArgumentsLabel.Name = "commandLineArgumentsLabel";
+            this.commandLineArgumentsLabel.Size = new System.Drawing.Size(149, 15);
+            this.commandLineArgumentsLabel.TabIndex = 3;
+            this.commandLineArgumentsLabel.Text = "Command line arguments:";
+            // 
+            // browseForProgramButton
+            // 
+            this.browseForProgramButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.browseForProgramButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.browseForProgramButton.Location = new System.Drawing.Point(444, 78);
+            this.browseForProgramButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.browseForProgramButton.Name = "browseForProgramButton";
+            this.browseForProgramButton.Size = new System.Drawing.Size(50, 27);
+            this.browseForProgramButton.TabIndex = 3;
+            this.browseForProgramButton.Text = "...";
+            this.browseForProgramButton.UseVisualStyleBackColor = true;
+            this.browseForProgramButton.Click += new System.EventHandler(this.browseForProgramButtonClick);
+            // 
+            // programTextBox
+            // 
+            this.programTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.programTextBox.Location = new System.Drawing.Point(8, 80);
+            this.programTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.programTextBox.Name = "programTextBox";
+            this.programTextBox.Size = new System.Drawing.Size(428, 23);
+            this.programTextBox.TabIndex = 2;
+            this.programTextBox.TextChanged += new System.EventHandler(this.programTextBoxTextChanged);
+            // 
+            // programLabel
+            // 
+            this.programLabel.AutoSize = true;
+            this.programLabel.Location = new System.Drawing.Point(8, 61);
+            this.programLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.programLabel.Name = "programLabel";
+            this.programLabel.Size = new System.Drawing.Size(56, 15);
+            this.programLabel.TabIndex = 0;
+            this.programLabel.Text = "Program:";
+            // 
+            // okButton
+            // 
+            this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.okButton.Location = new System.Drawing.Point(332, 190);
+            this.okButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.okButton.Name = "okButton";
+            this.okButton.Size = new System.Drawing.Size(88, 27);
+            this.okButton.TabIndex = 5;
+            this.okButton.Text = "OK";
+            this.okButton.UseVisualStyleBackColor = true;
+            this.okButton.Click += new System.EventHandler(this.okButtonClick);
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancelButton.Location = new System.Drawing.Point(427, 190);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(88, 27);
+            this.cancelButton.TabIndex = 6;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            // 
+            // BackupEventTaskInfoEditingForm
+            // 
+            this.AcceptButton = this.okButton;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.cancelButton;
+            this.ClientSize = new System.Drawing.Size(528, 230);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.okButton);
+            this.Controls.Add(this.taskToRunGroupBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = global::BUtil.Configurator.Icons.BUtilIcon;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.MaximizeBox = false;
+            this.Name = "BackupEventTaskInfoEditingForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "<New|Edit> - Configurator";
+            this.taskToRunGroupBox.ResumeLayout(false);
+            this.taskToRunGroupBox.PerformLayout();
+            this.ResumeLayout(false);
+
 		}
 		private System.Windows.Forms.OpenFileDialog ofd;
 		private System.Windows.Forms.TextBox argumentsTextBox;
@@ -168,7 +191,8 @@ namespace BUtil.Configurator.Forms
 		private System.Windows.Forms.TextBox programTextBox;
 		private System.Windows.Forms.Button browseForProgramButton;
 		private System.Windows.Forms.Label commandLineArgumentsLabel;
-		private System.Windows.Forms.Label helpForPostBackupTasksLabel;
 		private System.Windows.Forms.GroupBox taskToRunGroupBox;
+		private System.Windows.Forms.TextBox _nameTextBox;
+		private System.Windows.Forms.Label label1;
 	}
 }

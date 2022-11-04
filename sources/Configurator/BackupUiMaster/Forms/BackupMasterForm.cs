@@ -1,21 +1,17 @@
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Threading;
-
 using BUtil.Core.PL;
 using BUtil.Core;
 using BUtil.Core.Options;
 using BUtil.Core.Misc;
 using BUtil.Core.Logs;
 using BUtil.BackupUiMaster.Controls;
-using BUtil.Core.Storages;
 using BUtil.Configurator.Localization;
-using System.Linq;
 using BUtil.Core.Events;
-using System.IO;
+using BUtil.Core.TasksTree;
+using BUtil.Core.BackupModels;
 
 namespace BUtil.Configurator.BackupUiMaster.Forms
 {
@@ -23,44 +19,16 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 	
 	internal sealed partial class BackupMasterForm : Form
 	{
-		#region Types
-		
-		enum GroupEnum
-		{
-			CompressionOfFolders = 0,
-			CompressionOfFiles = 1,
-			Storages = 2,
-			OtherTasks = 3,
-			BeforeBackupChain = 4,
-			AfterBackupChain = 5
-		}
-		
-		enum ImagesEnum
-		{
-			Folder = 0,
-			File = 1,
-			Ftp = 2,
-			Hdd = 3,
-			Network = 4,
-			CompressIntoAnImage = 5,
-			ProgramInRunBeforeAfterBackupChain = 6
-		}
-		
-		#endregion
-		
-		#region Fields
-		
-		bool _firstTimeApplicationInTray = true;
-		bool _trayModeActivated;
-		bool _backupInProgress;
-		bool _strongIntentionToCancelBackup;
-		readonly BackupUiMaster _controller;
-		readonly BackupTask _task;
+        private bool _firstTimeApplicationInTray = true;
+        private bool _trayModeActivated;
+        private bool _backupInProgress;
+        private bool _strongIntentionToCancelBackup;
+        private readonly BackupTask _backupTask;
 		BackupProgressUserControl _backupProgressUserControl;
-		
-		#endregion
+		private readonly ProgramOptions _programOptions;
+        private readonly CancellationTokenSource _cancelTokenSource = new ();
 
-        public BackupMasterForm(ProgramOptions options, BackupTask task)
+        public BackupMasterForm(ProgramOptions programOptions, BackupTask backupTask)
 		{
 			InitializeComponent();
 			
@@ -69,51 +37,28 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 				throw new InvalidOperationException("Tried to perform operation that requires package state is ok.");
 			}
 
-			tasksListView.Columns[0].Width = tasksListView.Width - 40;
-			processingStateInformationColumnHeader.Width = 0;
-
-            //TODO: please move to controller
-            if (task == null)
-            {
-                var backupTaskStoreService = new BackupTaskStoreService();
-				var backupTasks = backupTaskStoreService.LoadAll();
-
-				using var form = new SelectTaskToRunForm(backupTasks.ToDictionary(t => t.Name, t => t));
-				if (form.ShowDialog() == DialogResult.OK)
-				{
-					task = form.TaskToRun;
-				}
-				else
-				{
-					Environment.Exit(-1);
-				}
-			}
-
-            _task = task;
-            _controller = new BackupUiMaster(_task, options);
-            _controller.BackupFinished += OnBackupFinsihed;
-            CompressionItemsListViewResize(null, null);
-            
+            _backupTask = backupTask;
+			_programOptions = programOptions;
+            OnTasksListViewResize(this, new EventArgs());
             ApplyLocalization();
 		}
-		
-		void OnBackupFinsihed()
+
+		void OnBackupFinsihed(object sender, EventArgs e)
 		{
-			if (!InvokeRequired)
+			if (InvokeRequired)
 			{
-				_backupInProgress = false;
-				cancelButton.Enabled = false; 
-				
-				if (_backupProgressUserControl != null)
-				{
-					_backupProgressUserControl.Stop();
-				}
-				ReturnFromTray();
+				Invoke(OnBackupFinsihed);
+				return;
 			}
-			else
+
+			_backupInProgress = false;
+			cancelButton.Enabled = false;
+
+			if (_backupProgressUserControl != null)
 			{
-				Invoke(new Stub(OnBackupFinsihed));
+				_backupProgressUserControl.Stop();
 			}
+			ReturnFromTray();
 		}
 		
 		static Color GetResultColor(ProcessingStatus state)
@@ -128,24 +73,19 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 			};
 		}
 
-		private void OnSourceItemStatusUpdate(object sender, SourceItemStatusEventArgs e)
-		{
-			UpdateListViewItem(e.Item, e.Status);
-		}
-
-		private void UpdateListViewItem(object tag, ProcessingStatus status)
+		private void UpdateListViewItem(Guid taskId, ProcessingStatus status)
 		{
             if (InvokeRequired)
             {
-                Invoke(UpdateListViewItem, new[] { tag, status });
+                Invoke(UpdateListViewItem, taskId, status);
                 return;
             }
 
             foreach (ListViewItem item in tasksListView.Items)
             {
-                if (item.Tag == tag)
+                if ((Guid)item.Tag == taskId)
                 {
-                    item.SubItems[2].Text = LocalsHelper.ToString(status);
+                    item.SubItems[1].Text = LocalsHelper.ToString(status);
                     if (status != ProcessingStatus.NotStarted)
                     {
                         item.BackColor = GetResultColor(status);
@@ -163,6 +103,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 		void StartButtonClick(object _, EventArgs e)
 		{
 			// here some logival verification
+			/*
 			_task.Items.Clear();
 			_task.Storages.Clear();
 			_task.ExecuteBeforeBackup.Clear();
@@ -206,30 +147,11 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 			{
 				Messages.ShowInformationBox(Resources.PleaseCheckStoragesWhereToCopyBackupImage);
 				return;
-			}
-
-			// applying settings
-			tasksListView.CheckBoxes = false;
-
-
-            foreach (ListViewItem item in tasksListView.Items)
-            {
-                if (!item.Checked)
-                {
-                    item.BackColor = Color.Gray;
-                    item.SubItems[2].Text = Resources.Disabled;
-                }
-            }
-
-
-
-
-            processingStateInformationColumnHeader.Width = 154;
-			CompressionItemsListViewResize(null, null);
+			} */
 
 			settingsUserControl.GetSettingsFromUi(out PowerTask task, out bool beepWhenCompleted);
-			_controller.PowerTask = task;
-			_controller.HearSoundWhenBackupCompleted = beepWhenCompleted;
+			// _controller.PowerTask = task;
+			// _controller.HearSoundWhenBackupCompleted = beepWhenCompleted;
 			
 			// performing changes in UI
 			_backupProgressUserControl = new BackupProgressUserControl();
@@ -251,45 +173,10 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 			
 			// starting machinery
 			_backupInProgress = true;
-			_controller.PrepareBackup();
+			// _controller.PrepareBackup();
 
-			foreach (var customTag in _controller.BackupClass.CustomJobs)
-			{
-				var listItem = new ListViewItem(customTag.Value)
-				{
-					ImageIndex = (int)ImagesEnum.CompressIntoAnImage
-				};
-				listItem.SubItems.Add("-");
-				listItem.SubItems.Add(string.Empty);
-				listItem.Group = tasksListView.Groups[(int)GroupEnum.OtherTasks];
-				listItem.Tag = customTag.Key;
-				listItem.Checked = true;
-
-				tasksListView.Items.Add(listItem);
-			}
-
-
-            _controller.BackupClass.Events.OnSourceItemStatusUpdate += OnSourceItemStatusUpdate;
-            _controller.BackupClass.Events.OnStorageStatusUpdate += OnStorageStatusUpdate;
-            _controller.BackupClass.Events.OnCustomUpdate += OnCustomUpdate;
-            _controller.BackupClass.Events.OnExecuteProgramStatusUpdate += OnExecuteProgramStatusUpdate;
-			backupBackgroundWorker.RunWorkerAsync();
+			_backgroundWorker.RunWorkerAsync();
 		}
-
-		private void OnExecuteProgramStatusUpdate(object sender, ExecuteProgramStatusEventArgs e)
-		{
-            UpdateListViewItem(e.TaskInfo, e.Status);
-        }
-
-		private void OnCustomUpdate(object sender, CustomEventArgs e)
-		{
-            UpdateListViewItem(e.Tag, e.Status);
-        }
-
-		private void OnStorageStatusUpdate(object sender, StorageStatusEventArgs e)
-		{
-            UpdateListViewItem(e.Settings, e.Status);
-        }
 
 		void ApplyLocalization()
 		{
@@ -298,118 +185,68 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             closeButton.Text = Resources.Close;
 
             taskNameColumnHeader.Text = Resources.Tasks;
-            informationAboutTaskColumnHeader.Text = Resources.Information;
             processingStateInformationColumnHeader.Text = Resources.ProcessingState;
 
             Text = Resources.WellcomeToBackupWizard;
             toolTip.SetToolTip(cancelButton, Resources.Cancel);
-            tasksListView.Groups[0].Header = Resources.PackingFolders;
-            tasksListView.Groups[1].Header = Resources.PackingFiles;
-            tasksListView.Groups[2].Header = Resources.CopyingToStorages;
-            tasksListView.Groups[3].Header = Resources.OtherTasks;
-            tasksListView.Groups[(int)GroupEnum.BeforeBackupChain].Header = Resources.ChainOfProgramsToExecuteBeforeBackup; // before backup event chain
-            tasksListView.Groups[5].Header = Resources.ChainOfProgramsToExecuteAfterBackup;
 
             notifyIcon.Text = Resources.BackupIsInProgress;
 		}
-		
+
 		void LoadForm(object sender, EventArgs e)
 		{
-			// displaying the current settings
-
-            settingsUserControl.SetSettingsToUi(_controller.Options, PowerTask.None, _task, false, ThreadPriority.BelowNormal);
-
-			tasksListView.BeginUpdate();
-            ReadOnlyCollection<SourceItem> items = _controller.ListOfFiles;
-            foreach(SourceItem item in items)
-            {
-            	var listItem = new ListViewItem(item.Target, item.IsFolder ? (int)ImagesEnum.Folder : (int)ImagesEnum.File);
-            	listItem.SubItems.Add(LocalsHelper.ToString(item.CompressionDegree));
-            	listItem.SubItems.Add(string.Empty);
-            	listItem.Group = item.IsFolder ? tasksListView.Groups[(int)GroupEnum.CompressionOfFolders] : tasksListView.Groups[(int)GroupEnum.CompressionOfFiles];
-            	listItem.Tag = item;
-            	listItem.Checked = true;
-            	tasksListView.Items.Add(listItem);
-            }
+			_log = new FileLog(_programOptions.LogsFolder, _programOptions.LoggingLevel, false);
+            _logFile = _log.LogFilename;
+			_log.Open();
+            _strategy = BackupModelStrategyFactory.Create(_log, _backupTask, _programOptions);
+			_backupEvents = new BackupEvents();
+			_backupEvents.OnTaskProgress += OnTaskProgress;
+			_rootTask = _strategy.GetTask(_backupEvents);
             
-            foreach(var storageSettings in _task.Storages)
-            {
-				var listItem = new ListViewItem(storageSettings.Name)
-				{
-					ImageIndex = storageSettings.ProviderName switch
-					{
-						StorageProviderNames.Hdd => (int)ImagesEnum.Hdd,
-						StorageProviderNames.Ftp => (int)ImagesEnum.Ftp,
-						StorageProviderNames.Samba => (int)ImagesEnum.Network,
-						_ => throw new InvalidDataException(nameof(storageSettings.ProviderName)),
-					}
-				};
-				listItem.SubItems.Add(String.Empty);
-            	listItem.SubItems.Add(string.Empty);
-            	listItem.Group = tasksListView.Groups[(int)GroupEnum.Storages];
-            	listItem.Tag = storageSettings;
-            	listItem.Checked = true;
-            	tasksListView.Items.Add(listItem);
+            settingsUserControl.SetSettingsToUi(_programOptions, PowerTask.None, _backupTask, false, ThreadPriority.BelowNormal);
+
+            var allTasks = _rootTask.GetChildren();
+            foreach (var task in allTasks)
+			{
+				var listItem = new ListViewItem(task.Title, (int)task.TaskArea);
+                listItem.SubItems.Add(LocalsHelper.ToString(ProcessingStatus.NotStarted));
+                listItem.Tag = task.Id;
+                tasksListView.Items.Add(listItem);
             }
-
-            foreach (ExecuteProgramTaskInfo taskInfo in _task.ExecuteBeforeBackup)
-            {
-				var listItem = new ListViewItem(taskInfo.Program)
-				{
-					ImageIndex = (int)ImagesEnum.ProgramInRunBeforeAfterBackupChain
-				};
-
-				listItem.SubItems.Add(taskInfo.Arguments);
-            	listItem.SubItems.Add(string.Empty);
-            	listItem.Group = tasksListView.Groups[(int) GroupEnum.BeforeBackupChain];
-            	listItem.Tag = taskInfo;
-            	listItem.Checked = true;
-            	tasksListView.Items.Add(listItem);
-            }
-            
-            foreach (ExecuteProgramTaskInfo taskInfo in _task.ExecuteAfterBackup)
-            {
-				var listItem = new ListViewItem(taskInfo.Program)
-				{
-					ImageIndex = (int)ImagesEnum.ProgramInRunBeforeAfterBackupChain
-				};
-
-				listItem.SubItems.Add(taskInfo.Arguments);
-            	listItem.SubItems.Add(string.Empty);
-            	listItem.Group = tasksListView.Groups[(int) GroupEnum.AfterBackupChain];
-            	listItem.Tag = taskInfo;
-            	listItem.Checked = true;
-            	tasksListView.Items.Add(listItem);
-            }
-            
-            tasksListView.EndUpdate();
-
-            // logical verifying of settings
-            // If they are not correct, just closing the Master
-            if (items.Count == 0)
+			
+            if (_backupTask.Items.Count == 0)
             {
             	Messages.ShowInformationBox(Resources.ThereAreNoItemsToBackupNNyouCanSpecifyTheDataToBackupInConfiguratorInWhatSettingsGroup);
             	Close();
             }
             
-            if (_task.Storages.Count < 1)
+            if (_backupTask.Storages.Count < 1)
             {
             	Messages.ShowInformationBox(Resources.ThereAreNoSpecifiedPlacesWhereToStoreBackupNNyouCanAddSomeStoragesInConfiguratorInWhereSettingsGroup);
             	Close();
             }
 		}
-	
-		void CompressionItemsListViewResize(object sender, EventArgs e)
+
+		private void OnTaskProgress(object sender, TaskProgressEventArgs e)
 		{
-			taskNameColumnHeader.Width = 180;
-			
-			int newWidth = tasksListView.Width - 35 - informationAboutTaskColumnHeader.Width - processingStateInformationColumnHeader.Width;
+			UpdateListViewItem(e.TaskId, e.Status);
+		}
+
+		private void OnTasksListViewResize(object sender, EventArgs e)
+		{
+			int newWidth = tasksListView.Width - 35 - processingStateInformationColumnHeader.Width;
 			taskNameColumnHeader.Width = newWidth < 35 ? 35 : newWidth;
 		}
 		
 		#region Tray Interaction
 
 		FormWindowState _previousFormState = FormWindowState.Maximized;
+		private FileLog _log;
+		private object _logFile;
+		private IBackupModelStrategy _strategy;
+		private BackupEvents _backupEvents;
+		private BuTask _rootTask;
+
 		void SwapToTray(bool changeFormState)
 		{
 			if (_trayModeActivated)
@@ -466,17 +303,17 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 		}
 		#endregion
 		
-		void BackupBackgroundWorkerDoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+		void OnDoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
 		{
-			_controller.BackupClass.Run();
+			_rootTask.Execute(_cancelTokenSource.Token);
 		}
 		
-		void BackupBackgroundWorkerRunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+		void OnRunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
 		{
 			_backupInProgress = false;
-            if (_controller.Options.LoggingLevel == LogLevel.Support)
+            /*if (_controller.Options.LoggingLevel == LogLevel.Support)
             {
-				_controller.OpenLogFileInBrowser();
+        	SupportManager.OpenWebLink(_fileLogFile);
             }
 
             if (_controller.PowerTask == PowerTask.None && _controller.ErrorsOrWarningsRegistered)
@@ -484,8 +321,69 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             	cancelButton.Enabled = false;
             	return;
             }
+            */
+
+            /*if (HearSoundWhenBackupCompleted)
+                Miscellaneous.DoBeeps();
             
-            Close();
+            // in support mode we always opening log and do not perform power task
+            if (_options.LoggingLevel == LogLevel.Support)
+            {
+				SupportManager.OpenWebLinkAsync(_fileLogFile);
+            	
+				Environment.Exit(0);
+            }
+            else
+            {
+				if (ErrorsOrWarningsRegistered)
+				{
+	                // user chose to shutdown PC or logoff from it. In this case we should
+	                // add a registry key in RunOnce section to show him log in browser
+	                // of backup when he will login into the system next time
+	                if ((PowerTask == PowerTask.Shutdown) || 
+	                    (PowerTask == PowerTask.Reboot) || 
+	                    (PowerTask == PowerTask.LogOff))
+	                {
+                        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                        {
+                            NativeMethods.ScheduleOpeningFileAfterLoginOfUserIntoTheSystem(_fileLogFile);
+                        }
+                        else
+{
+    _temporaryLog.WriteLine(LoggingEvent.Error, "Cannot schedule opening file after logging user into the system");
+}
+	                }
+
+                    else
+// Hibernate, Sleep, Nothing
+// we should open browser and perform required power operation
+{
+    SupportManager.OpenWebLinkAsync(_fileLogFile);
+}
+	            }
+                // No problems during backup registered. In this case we should notify
+                // user that's all is ok
+                else
+{
+    // user is here and we can show him the message
+    if (PowerTask == PowerTask.None)
+    {
+        MessageBox.Show(Resources.BackupProcessCompletedSuccesfully, ";-)", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 0);
+    }
+}
+
+PowerPC.DoTask(PowerTask);
+
+if (PowerTask == PowerTask.None && ErrorsOrWarningsRegistered)
+{
+    ;
+}
+else
+{
+    Environment.Exit(0);
+}*/
+
+            // TODO: Close();
 		}
 		
 		void CancelButtonClick(object sender, EventArgs e)
@@ -534,12 +432,12 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 		
 		void AbortBackupBackgroundWorkerDoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
 		{
-			_controller.Abort();
+			_cancelTokenSource.Cancel();
 		}
 		
 		void AbortBackupBackgroundWorkerRunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
 		{
-			_backupInProgress = false;
+            _backupInProgress = false;
 			DialogResult = DialogResult.Cancel;
 			Close();
 		}
