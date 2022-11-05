@@ -59,7 +59,7 @@ namespace BUtil.Configurator.Configurator.Forms
 
         void RunRestorationTool()
 		{
-			_controller.OpenRestorationMaster(string.Empty, false);
+			_controller.OpenRestorationMaster(null, false);
 		}
 
 		void MainFormFormClosing(object sender, FormClosingEventArgs e)

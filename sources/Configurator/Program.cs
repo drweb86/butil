@@ -78,9 +78,9 @@ namespace BUtil.Configurator
 				}
                 else if (firstArgumentUpper == Arguments.RunRestorationMaster)
 				{
-					controller.OpenRestorationMaster(string.Empty, true);
+					controller.OpenRestorationMaster(null, true);
 				}
-                else if (firstArgumentUpper.EndsWith(Files.ImageFilesExtension.ToUpperInvariant()))
+                else if (args[0] == IncrementalBackupModelConstants.StorageStateFile)
 				{
 					controller.OpenRestorationMaster(args[0], true);
 				}

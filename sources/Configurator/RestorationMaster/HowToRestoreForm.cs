@@ -13,9 +13,9 @@ namespace BUtil.RestorationMaster
 	internal partial class HowToRestoreForm : Form
 	{
 		readonly MetaRecord _record;
-		readonly RestorationMasterController _controller;
+		readonly RestoreController _controller;
 
-		public HowToRestoreForm(MetaRecord record, RestorationMasterController controller)
+		public HowToRestoreForm(MetaRecord record, RestoreController controller)
 		{
 			InitializeComponent();
 

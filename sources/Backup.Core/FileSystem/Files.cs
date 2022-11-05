@@ -34,8 +34,6 @@ namespace BUtil.Core.FileSystem
 		public const string SuccesfullBackupMarkInHtmlLog = "<!-- SUCCESFULL BACKUP -->";
 		public const string ErroneousBackupMarkInHtmlLog = "<!-- ERRONEOUS BACKUP -->";
 		
-		public const string ImageFilesExtension = ".BUtil";
-
 		#region Properties
 		
 		public static string Configurator

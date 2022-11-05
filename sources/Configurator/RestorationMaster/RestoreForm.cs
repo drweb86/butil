@@ -13,10 +13,10 @@ namespace BUtil.RestorationMaster
 	/// </summary>
 	internal partial class RestoreForm : Form
 	{
-		readonly RestorationMasterController _controller;
+		readonly RestoreController _controller;
 		readonly Collection<MetaRecord> _records;
 
-		public RestoreForm(RestorationMasterController controller)
+		public RestoreForm(RestoreController controller)
 		{
 			_controller = controller;
 

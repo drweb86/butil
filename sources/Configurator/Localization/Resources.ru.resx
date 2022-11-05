@@ -367,23 +367,11 @@
   <data name="_0Restoration" xml:space="preserve">
     <value>{0} - Восстановление</value>
   </data>
-  <data name="OpenAnImage" xml:space="preserve">
-    <value>Открыть образ...</value>
-  </data>
-  <data name="ButilImagesButilButil" xml:space="preserve">
-    <value>Образ BUTIL(*.butil)|*.butil</value>
-  </data>
   <data name="IfYourBackupIsPasswordProtectedPleaseTypePasswordHere" xml:space="preserve">
     <value>Если ваша резервная копия защищена паролем, укажите его здесь:</value>
   </data>
   <data name="Continue" xml:space="preserve">
     <value>Продолжить &gt;</value>
-  </data>
-  <data name="ImageLocation" xml:space="preserve">
-    <value>Расположение образа:</value>
-  </data>
-  <data name="NoteForRestorationOfDataAsArchivesPasswordIsNotNeeded" xml:space="preserve">
-    <value>Внимание: для воостановления данных в виде архивов пароль не требуется</value>
   </data>
   <data name="RestorationMaster" xml:space="preserve">
     <value>Мастер восстановления</value>

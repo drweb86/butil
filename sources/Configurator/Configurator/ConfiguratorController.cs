@@ -24,29 +24,26 @@ namespace BUtil.Configurator.Configurator
 
         ProgramOptions _profileOptions = ProgramOptionsManager.Default;
 
-		public void OpenRestorationMaster(string image, bool runFormAsApplication)
+		public void OpenRestorationMaster(string backupFolder, bool runFormAsApplication)
 		{
 			if (Program.PackageIsBroken)
 			{
 				return;
 			}
 
-			using (var form = new RestoreMasterMainForm())
-			{
-				form.ImageFileToShow = image;
-				if (runFormAsApplication)
-					Application.Run(form);
-				else
-					form.ShowDialog();
-			}
-			
-			if (runFormAsApplication)
-			{
-				Environment.Exit(0);
-			}
+            using var form = new RestoreMasterMainForm(backupFolder);
+            if (runFormAsApplication)
+            {
+                Application.Run(form);
+                Environment.Exit(0);
+            }
+            else
+            {
+                form.ShowDialog();
+            }
 		}
 		
-		public void RemoveLocalUserSettings()
+        public void RemoveLocalUserSettings()
 		{
 			if (File.Exists(Files.ProfileFile))
 				File.Delete(Files.ProfileFile);

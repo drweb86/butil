@@ -370,15 +370,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to BUTIL images(*.butil)|*.butil.
-        /// </summary>
-        internal static string ButilImagesButilButil {
-            get {
-                return ResourceManager.GetString("ButilImagesButilButil", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to BUtil software package component &apos;{0}&apos; is missing.\n\nPlease reinstall application.\n\nRestoration, Backup and Help functions will be unavailable..
         /// </summary>
         internal static string ButilSoftwarePackageComponent0IsMissingNNpleaseReinstallApplicationNNrestorationBackupAndHelpFunctionsWillBeUnavailable {
@@ -1014,15 +1005,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Image location:.
-        /// </summary>
-        internal static string ImageLocation {
-            get {
-                return ResourceManager.GetString("ImageLocation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Important:\n\nBackup should be password protected. If NOT, program will SKIP its copying to this storage.
         /// </summary>
         internal static string ImportantNNbackupShouldBePasswordProtectedIfNotProgramWillSkipItsCopyingToThisStorage {
@@ -1297,29 +1279,11 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Note: For restoration of data as archives password is not needed.
-        /// </summary>
-        internal static string NoteForRestorationOfDataAsArchivesPasswordIsNotNeeded {
-            get {
-                return ResourceManager.GetString("NoteForRestorationOfDataAsArchivesPasswordIsNotNeeded", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to OK.
         /// </summary>
         internal static string Ok {
             get {
                 return ResourceManager.GetString("Ok", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Open an image....
-        /// </summary>
-        internal static string OpenAnImage {
-            get {
-                return ResourceManager.GetString("OpenAnImage", resourceCulture);
             }
         }
         

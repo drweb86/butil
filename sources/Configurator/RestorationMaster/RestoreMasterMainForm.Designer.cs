@@ -28,166 +28,163 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RestoreMasterMainForm));
-			this.openImageButton = new System.Windows.Forms.Button();
-			this.ofd = new System.Windows.Forms.OpenFileDialog();
-			this.closeButton = new System.Windows.Forms.Button();
-			this.passwordGroupBox = new System.Windows.Forms.GroupBox();
-			this.passwordHintLabel = new System.Windows.Forms.Label();
-			this.passwordMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-			this.passwordLabel = new System.Windows.Forms.Label();
-			this.continueButton = new System.Windows.Forms.Button();
-			this.imageLocationLabel = new System.Windows.Forms.Label();
-			this.imageLocationTextBox = new System.Windows.Forms.TextBox();
-			this.helpButton = new System.Windows.Forms.Button();
-			this.passwordGroupBox.SuspendLayout();
-			this.SuspendLayout();
-			// 
-			// openImageButton
-			// 
-			this.openImageButton.AutoSize = true;
-			this.openImageButton.BackColor = System.Drawing.SystemColors.Control;
-			this.openImageButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.openImageButton.Location = new System.Drawing.Point(314, 26);
-			this.openImageButton.Name = "openImageButton";
-			this.openImageButton.Size = new System.Drawing.Size(121, 23);
-			this.openImageButton.TabIndex = 2;
-			this.openImageButton.Text = "Open an image...";
-			this.openImageButton.UseVisualStyleBackColor = true;
-			this.openImageButton.Click += new System.EventHandler(this.openImageButtonClick);
-			// 
-			// ofd
-			// 
-			this.ofd.DefaultExt = "butil";
-			this.ofd.Filter = "BUTIL images(*.butil)|*.butil";
-			// 
-			// closeButton
-			// 
-			this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.closeButton.AutoSize = true;
-			this.closeButton.Location = new System.Drawing.Point(360, 159);
-			this.closeButton.Name = "closeButton";
-			this.closeButton.Size = new System.Drawing.Size(74, 23);
-			this.closeButton.TabIndex = 5;
-			this.closeButton.Text = "Close";
-			this.closeButton.UseVisualStyleBackColor = true;
-			this.closeButton.Click += new System.EventHandler(this.closeButtonClick);
-			// 
-			// passwordGroupBox
-			// 
-			this.passwordGroupBox.Controls.Add(this.passwordHintLabel);
-			this.passwordGroupBox.Controls.Add(this.passwordMaskedTextBox);
-			this.passwordGroupBox.Controls.Add(this.passwordLabel);
-			this.passwordGroupBox.Enabled = false;
-			this.passwordGroupBox.Location = new System.Drawing.Point(12, 55);
-			this.passwordGroupBox.Name = "passwordGroupBox";
-			this.passwordGroupBox.Size = new System.Drawing.Size(422, 98);
-			this.passwordGroupBox.TabIndex = 7;
-			this.passwordGroupBox.TabStop = false;
-			this.passwordGroupBox.Text = "Password";
-			// 
-			// passwordHintLabel
-			// 
-			this.passwordHintLabel.AutoSize = true;
-			this.passwordHintLabel.Location = new System.Drawing.Point(5, 65);
-			this.passwordHintLabel.Name = "passwordHintLabel";
-			this.passwordHintLabel.Size = new System.Drawing.Size(311, 13);
-			this.passwordHintLabel.TabIndex = 2;
-			this.passwordHintLabel.Text = "Note: For restoration of data as archives password is not needed";
-			// 
-			// passwordMaskedTextBox
-			// 
-			this.passwordMaskedTextBox.Location = new System.Drawing.Point(16, 42);
-			this.passwordMaskedTextBox.Name = "passwordMaskedTextBox";
-			this.passwordMaskedTextBox.PasswordChar = '*';
-			this.passwordMaskedTextBox.Size = new System.Drawing.Size(375, 20);
-			this.passwordMaskedTextBox.TabIndex = 1;
-			// 
-			// passwordLabel
-			// 
-			this.passwordLabel.AutoSize = true;
-			this.passwordLabel.Location = new System.Drawing.Point(16, 21);
-			this.passwordLabel.Name = "passwordLabel";
-			this.passwordLabel.Size = new System.Drawing.Size(316, 13);
-			this.passwordLabel.TabIndex = 0;
-			this.passwordLabel.Text = "If your backup is password protected, please type password here:";
-			// 
-			// continueButton
-			// 
-			this.continueButton.AutoSize = true;
-			this.continueButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.continueButton.Enabled = false;
-			this.continueButton.Location = new System.Drawing.Point(286, 159);
-			this.continueButton.Name = "continueButton";
-			this.continueButton.Size = new System.Drawing.Size(68, 23);
-			this.continueButton.TabIndex = 8;
-			this.continueButton.Text = "Continue >";
-			this.continueButton.UseVisualStyleBackColor = true;
-			this.continueButton.Click += new System.EventHandler(this.nextButtonClick);
-			// 
-			// imageLocationLabel
-			// 
-			this.imageLocationLabel.AutoSize = true;
-			this.imageLocationLabel.Location = new System.Drawing.Point(10, 13);
-			this.imageLocationLabel.Name = "imageLocationLabel";
-			this.imageLocationLabel.Size = new System.Drawing.Size(79, 13);
-			this.imageLocationLabel.TabIndex = 9;
-			this.imageLocationLabel.Text = "Image location:";
-			// 
-			// imageLocationTextBox
-			// 
-			this.imageLocationTextBox.Location = new System.Drawing.Point(13, 29);
-			this.imageLocationTextBox.Name = "imageLocationTextBox";
-			this.imageLocationTextBox.ReadOnly = true;
-			this.imageLocationTextBox.Size = new System.Drawing.Size(287, 20);
-			this.imageLocationTextBox.TabIndex = 10;
-			this.imageLocationTextBox.TabStop = false;
-			// 
-			// helpButton
-			// 
-			this.helpButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.helpButton.Location = new System.Drawing.Point(10, 154);
-			this.helpButton.Name = "helpButton";
-			this.helpButton.Size = new System.Drawing.Size(33, 33);
-			this.helpButton.TabIndex = 11;
-			this.helpButton.Text = "?";
-			this.helpButton.UseVisualStyleBackColor = true;
-			this.helpButton.Click += new System.EventHandler(this.helpButtonClick);
-			// 
-			// RestoreMasterMainForm
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(447, 195);
-			this.Controls.Add(this.helpButton);
-			this.Controls.Add(this.imageLocationTextBox);
-			this.Controls.Add(this.imageLocationLabel);
-			this.Controls.Add(this.continueButton);
-			this.Controls.Add(this.passwordGroupBox);
-			this.Controls.Add(this.closeButton);
-			this.Controls.Add(this.openImageButton);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.MaximizeBox = false;
-			this.MinimizeBox = false;
-			this.Name = "RestoreMasterMainForm";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Restoration master";
-			this.passwordGroupBox.ResumeLayout(false);
-			this.passwordGroupBox.PerformLayout();
-			this.ResumeLayout(false);
-			this.PerformLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RestoreMasterMainForm));
+            this._openBackupFolderButton = new System.Windows.Forms.Button();
+            this.closeButton = new System.Windows.Forms.Button();
+            this.passwordMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.passwordLabel = new System.Windows.Forms.Label();
+            this.continueButton = new System.Windows.Forms.Button();
+            this._backupFolderLabel = new System.Windows.Forms.Label();
+            this._backupLocationTextBox = new System.Windows.Forms.TextBox();
+            this.helpButton = new System.Windows.Forms.Button();
+            this._fbd = new System.Windows.Forms.FolderBrowserDialog();
+            this._helpLabel = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // _openBackupFolderButton
+            // 
+            this._openBackupFolderButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._openBackupFolderButton.AutoSize = true;
+            this._openBackupFolderButton.BackColor = System.Drawing.SystemColors.Control;
+            this._openBackupFolderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._openBackupFolderButton.Location = new System.Drawing.Point(365, 53);
+            this._openBackupFolderButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this._openBackupFolderButton.Name = "_openBackupFolderButton";
+            this._openBackupFolderButton.Size = new System.Drawing.Size(141, 27);
+            this._openBackupFolderButton.TabIndex = 2;
+            this._openBackupFolderButton.Text = "Open folder...";
+            this._openBackupFolderButton.UseVisualStyleBackColor = true;
+            this._openBackupFolderButton.Click += new System.EventHandler(this.OnSelectBackupLocationClick);
+            // 
+            // closeButton
+            // 
+            this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeButton.AutoSize = true;
+            this.closeButton.Location = new System.Drawing.Point(420, 159);
+            this.closeButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(86, 27);
+            this.closeButton.TabIndex = 5;
+            this.closeButton.Text = "Close";
+            this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.OnCloseButtonClick);
+            // 
+            // passwordMaskedTextBox
+            // 
+            this.passwordMaskedTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.passwordMaskedTextBox.Location = new System.Drawing.Point(11, 117);
+            this.passwordMaskedTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.passwordMaskedTextBox.Name = "passwordMaskedTextBox";
+            this.passwordMaskedTextBox.PasswordChar = '*';
+            this.passwordMaskedTextBox.Size = new System.Drawing.Size(495, 23);
+            this.passwordMaskedTextBox.TabIndex = 1;
+            // 
+            // passwordLabel
+            // 
+            this.passwordLabel.AutoSize = true;
+            this.passwordLabel.Location = new System.Drawing.Point(11, 93);
+            this.passwordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(348, 15);
+            this.passwordLabel.TabIndex = 0;
+            this.passwordLabel.Text = "If your backup is password protected, please type password here:";
+            // 
+            // continueButton
+            // 
+            this.continueButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.continueButton.AutoSize = true;
+            this.continueButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.continueButton.Enabled = false;
+            this.continueButton.Location = new System.Drawing.Point(335, 160);
+            this.continueButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.continueButton.Name = "continueButton";
+            this.continueButton.Size = new System.Drawing.Size(77, 25);
+            this.continueButton.TabIndex = 8;
+            this.continueButton.Text = "Continue >";
+            this.continueButton.UseVisualStyleBackColor = true;
+            this.continueButton.Click += new System.EventHandler(this.OnNextButtonClick);
+            // 
+            // _backupFolderLabel
+            // 
+            this._backupFolderLabel.AutoSize = true;
+            this._backupFolderLabel.Location = new System.Drawing.Point(11, 38);
+            this._backupFolderLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this._backupFolderLabel.Name = "_backupFolderLabel";
+            this._backupFolderLabel.Size = new System.Drawing.Size(83, 15);
+            this._backupFolderLabel.TabIndex = 9;
+            this._backupFolderLabel.Text = "Backup folder:";
+            // 
+            // _backupFolderTextBox
+            // 
+            this._backupLocationTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this._backupLocationTextBox.Location = new System.Drawing.Point(11, 56);
+            this._backupLocationTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this._backupLocationTextBox.Name = "_backupFolderTextBox";
+            this._backupLocationTextBox.ReadOnly = true;
+            this._backupLocationTextBox.Size = new System.Drawing.Size(346, 23);
+            this._backupLocationTextBox.TabIndex = 10;
+            this._backupLocationTextBox.TabStop = false;
+            // 
+            // helpButton
+            // 
+            this.helpButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.helpButton.Location = new System.Drawing.Point(12, 154);
+            this.helpButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.helpButton.Name = "helpButton";
+            this.helpButton.Size = new System.Drawing.Size(38, 38);
+            this.helpButton.TabIndex = 11;
+            this.helpButton.Text = "?";
+            this.helpButton.UseVisualStyleBackColor = true;
+            this.helpButton.Click += new System.EventHandler(this.OnHelpClick);
+            // 
+            // _helpLabel
+            // 
+            this._helpLabel.AutoSize = true;
+            this._helpLabel.Location = new System.Drawing.Point(11, 9);
+            this._helpLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this._helpLabel.Name = "_helpLabel";
+            this._helpLabel.Size = new System.Drawing.Size(446, 15);
+            this._helpLabel.TabIndex = 12;
+            this._helpLabel.Text = "Mount your backup location as disk or copy it to any folder and specify its locat" +
+    "ion.";
+            // 
+            // RestoreMasterMainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(522, 201);
+            this.Controls.Add(this._helpLabel);
+            this.Controls.Add(this.passwordMaskedTextBox);
+            this.Controls.Add(this.passwordLabel);
+            this.Controls.Add(this.helpButton);
+            this.Controls.Add(this._backupLocationTextBox);
+            this.Controls.Add(this._backupFolderLabel);
+            this.Controls.Add(this.continueButton);
+            this.Controls.Add(this.closeButton);
+            this.Controls.Add(this._openBackupFolderButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "RestoreMasterMainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Restoration master";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
 		}
 		private System.Windows.Forms.Button helpButton;
-		private System.Windows.Forms.Button openImageButton;
-		private System.Windows.Forms.OpenFileDialog ofd;
+		private System.Windows.Forms.Button _openBackupFolderButton;
         private System.Windows.Forms.Button closeButton;
-		private System.Windows.Forms.GroupBox passwordGroupBox;
 		private System.Windows.Forms.MaskedTextBox passwordMaskedTextBox;
 		private System.Windows.Forms.Label passwordLabel;
 		private System.Windows.Forms.Button continueButton;
-		private System.Windows.Forms.Label imageLocationLabel;
-		private System.Windows.Forms.TextBox imageLocationTextBox;
-		private System.Windows.Forms.Label passwordHintLabel;
-	}
+		private System.Windows.Forms.Label _backupFolderLabel;
+		private System.Windows.Forms.TextBox _backupLocationTextBox;
+        private System.Windows.Forms.FolderBrowserDialog _fbd;
+        private System.Windows.Forms.Label _helpLabel;
+    }
 }

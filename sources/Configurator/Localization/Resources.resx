@@ -426,23 +426,11 @@
   <data name="_0Restoration" xml:space="preserve">
     <value>{0} - Restoration</value>
   </data>
-  <data name="OpenAnImage" xml:space="preserve">
-    <value>Open an image...</value>
-  </data>
-  <data name="ButilImagesButilButil" xml:space="preserve">
-    <value>BUTIL images(*.butil)|*.butil</value>
-  </data>
   <data name="IfYourBackupIsPasswordProtectedPleaseTypePasswordHere" xml:space="preserve">
     <value>If your backup is password protected, please type password here:</value>
   </data>
   <data name="Continue" xml:space="preserve">
     <value>Continue &gt;</value>
-  </data>
-  <data name="ImageLocation" xml:space="preserve">
-    <value>Image location:</value>
-  </data>
-  <data name="NoteForRestorationOfDataAsArchivesPasswordIsNotNeeded" xml:space="preserve">
-    <value>Note: For restoration of data as archives password is not needed</value>
   </data>
   <data name="RestorationMaster" xml:space="preserve">
     <value>Restoration master</value>
