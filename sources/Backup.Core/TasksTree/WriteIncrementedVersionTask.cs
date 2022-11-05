@@ -23,6 +23,7 @@ namespace BUtil.Core.TasksTree
             childTaks.Add(getDeltaTask);
             childTaks.Add(new WriteUpdatedFilesToStorageTask( log, events, getDeltaTask));
             childTaks.Add(new WriteStateTask(log, events, getDeltaTask));
+            childTaks.Add(new WriteBackupIntegrityVerificationScriptsTask(log, events, getDeltaTask));
 
             Children = childTaks;
         }
