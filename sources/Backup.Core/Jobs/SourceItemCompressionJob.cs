@@ -46,7 +46,6 @@ namespace BUtil.Core.Jobs
                     Thread thread = new(new ParameterizedThreadStart(ReadOutput));
                     thread.Start(compressionProcess.StandardOutput);
 
-                    StatusUpdate(_packingParameter.ItemToCompress, ProcessingStatus.InProgress);
                     SetPriorityHelper(compressionProcess);
 
                     // FIXME: This is a workaround of .Net 2 bugs with processing ThreadAbortException and ThreadInterruptException
@@ -65,7 +64,6 @@ namespace BUtil.Core.Jobs
 
                     succesfull = IsSuccessfull7ZipPacking(compressionProcess.ExitCode);
                     _log.ProcessPackerMessage(_compressionOutput, succesfull);
-                    StatusUpdate(_packingParameter.ItemToCompress, succesfull ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
                 }
                 catch (ThreadInterruptedException)
                 {
@@ -157,11 +155,6 @@ namespace BUtil.Core.Jobs
             result.StartInfo.Arguments = arguments;
 
             return result;
-        }
-
-        void StatusUpdate(SourceItem item, ProcessingStatus status)
-        {
-            //_events.SourceItemStatusUpdate(item, status);
         }
 
         bool IsSuccessfull7ZipPacking(int code)

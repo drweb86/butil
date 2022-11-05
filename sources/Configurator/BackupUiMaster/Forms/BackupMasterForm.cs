@@ -196,7 +196,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 		void LoadForm(object sender, EventArgs e)
 		{
 			_log = new FileLog(_programOptions.LogsFolder, _programOptions.LoggingLevel, false);
-            _logFile = _log.LogFilename;
 			_log.Open();
             _strategy = BackupModelStrategyFactory.Create(_log, _backupTask, _programOptions);
 			_backupEvents = new BackupEvents();
@@ -272,7 +271,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 
 		FormWindowState _previousFormState = FormWindowState.Maximized;
 		private FileLog _log;
-		private object _logFile;
 		private IBackupModelStrategy _strategy;
 		private BackupEvents _backupEvents;
 		private BuTask _rootTask;

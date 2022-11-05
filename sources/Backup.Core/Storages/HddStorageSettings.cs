@@ -4,6 +4,5 @@
 	{
 		public string Name { get; set; }
 		public string DestinationFolder { get; set; }
-		public bool DeleteBUtilFilesInDestinationFolderBeforeBackup { get; set; }
     }
 }

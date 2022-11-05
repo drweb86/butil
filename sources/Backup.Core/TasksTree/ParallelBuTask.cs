@@ -7,19 +7,19 @@ using System.Threading;
 
 namespace BUtil.Core.TasksTree
 {
-
-    public abstract class SequentialBuTask : BuTask
+    public abstract class ParallelBuTask : BuTask
     {
         public IEnumerable<BuTask> Children { get; set; }
 
-        protected SequentialBuTask(LogBase log, BackupEvents events, string title, TaskArea taskArea, IEnumerable<BuTask> children)
-            :base(log, events, title, taskArea)
+        protected ParallelBuTask(LogBase log, BackupEvents events, string title, TaskArea taskArea, IEnumerable<BuTask> children)
+            : base(log, events, title, taskArea)
         {
             Children = children;
         }
 
         public override void Execute(CancellationToken token)
         {
+            var children = (Children ?? Array.Empty<BuTask>()).ToList();
             Events.TaskProgessUpdate(Id, ProcessingStatus.InProgress);
             foreach (var child in Children)
             {
@@ -28,13 +28,14 @@ namespace BUtil.Core.TasksTree
 
                 child.Execute(token);
             }
+
             Events.TaskProgessUpdate(Id, ProcessingStatus.FinishedSuccesfully);
         }
 
         public override IEnumerable<BuTask> GetChildren()
         {
             var children = (Children ?? Array.Empty<BuTask>()).ToList();
-            foreach (var child in Children)
+            foreach (var child in children)
             {
                 children.AddRange(child.GetChildren());
             }

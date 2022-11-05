@@ -1,4 +1,5 @@
-﻿using BUtil.Core.Events;
+﻿using BUtil.Core.BackupModels;
+using BUtil.Core.Events;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
 using System.Collections.Generic;
@@ -7,7 +8,12 @@ namespace BUtil.Core.TasksTree
 {
     class IncrementalBackupTask : SequentialBuTask
     {
-        public IncrementalBackupTask(LogBase log, BackupEvents backupEvents, BackupTask backupTask, ProgramOptions programOptions)
+#pragma warning disable IDE0052 // Remove unread private members
+        private readonly IncrementalBackupModelOptions _incrementalBackupModelOptions;
+#pragma warning restore IDE0052 // Remove unread private members
+
+        public IncrementalBackupTask(LogBase log, BackupEvents backupEvents, BackupTask backupTask,
+            ProgramOptions programOptions, IncrementalBackupModelOptions incrementalBackupModelOptions)
             : base(log, backupEvents, "Incremental Backup", TaskArea.ProgramInRunBeforeAfterBackupChain, null)
         {
             var tasks = new List<BuTask>();
@@ -30,6 +36,7 @@ namespace BUtil.Core.TasksTree
                 tasks.Add(new ExecuteProgramTask(log, backupEvents, executeAfterBackup, programOptions.ProcessPriority));
             }
             Children = tasks;
+            this._incrementalBackupModelOptions = incrementalBackupModelOptions;
         }
     }
 }

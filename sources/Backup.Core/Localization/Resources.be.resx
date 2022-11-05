@@ -216,9 +216,6 @@
   <data name="CopyingFile0FromTempFolder1ToDestination2At3" xml:space="preserve">
     <value>Капираванне файла "{0}" з часовай папцы "{1}" у месца пазначэння "{2}" на {3}</value>
   </data>
-  <data name="AbortedByUser" xml:space="preserve">
-    <value>Адменена пользавацелем!</value>
-  </data>
   <data name="ArchivatorWarningNonFatalErrorSForExampleOneOrMoreFilesWereLockedBySomeOtherApplicationSoTheyWereNotCompressed" xml:space="preserve">
     <value>Archivator: Warning (Non fatal error(s)). For example, one or more files were locked by some other application, so they were not compressed</value>
   </data>
@@ -240,12 +237,6 @@
   <data name="ErrorDiscoveredWhenCopyingFileToStorage01" xml:space="preserve">
     <value>Error discovered when copying file to storage '{0}': {1}</value>
   </data>
-  <data name="FileWasCopyiedToStorageSuccessfully" xml:space="preserve">
-    <value>File was copyied to storage successfully</value>
-  </data>
-  <data name="DuringDeletingOfAFile0AnErrorOccured1" xml:space="preserve">
-    <value>During deleting of a file '{0}' an error occured: {1}</value>
-  </data>
   <data name="CouldNotKillPackerProcess0" xml:space="preserve">
     <value>Could not kill packer process: {0}</value>
   </data>
@@ -260,12 +251,6 @@
   </data>
   <data name="BackupReport" xml:space="preserve">
     <value>Backup Report</value>
-  </data>
-  <data name="ThereIsNoStoragesSpecifiedInConfigurationCompressionOfDataWasSkipped" xml:space="preserve">
-    <value>There is no storages specified in configuration. Compression of data was skipped</value>
-  </data>
-  <data name="ThereIsNoDataToBackupSpecifiedInConfiguration" xml:space="preserve">
-    <value>There is no data to backup specified in configuration</value>
   </data>
   <data name="ButilSoftwarePackage7ZipComponent0HasInvalidCheckSummNprobablyItWasDamagedByVirusesNNyouShouldReinstallApplicationNNrestorationAndBackupFunctionsWillBeUnavailable" xml:space="preserve">
     <value>BUtil software package 7-zip component '{0}' has invalid check summ. \nProbably, it was damaged by viruses. \n\nYou should reinstall application.\n\nRestoration and Backup functions will be unavailable.</value>
@@ -282,12 +267,6 @@
   <data name="ConfirmationIsNotEqualToPassword" xml:space="preserve">
     <value>Падцверджанне не супадае з паролем</value>
   </data>
-  <data name="PackingOfDataToAnImageWasAbortedByUser" xml:space="preserve">
-    <value>Packing of data to an image was aborted by user</value>
-  </data>
-  <data name="DuringPackingFilesToAnImage0AnErrorOccured1" xml:space="preserve">
-    <value>During packing files to an image '{0}' an error occured: {1}</value>
-  </data>
   <data name="AnUnexpectedErrorOccuredNNpleaseContactTheDevelopersWithInformationSavedOnYourDesktopInN0NNapplicationWillNowClose" xml:space="preserve">
     <value>An unexpected error occured\n\nPlease contact the developers with information saved on your desktop in\n"{0}"\n\nApplication will now close</value>
   </data>
@@ -302,9 +281,6 @@
   </data>
   <data name="AfterBackupTask" xml:space="preserve">
     <value>After backup task: </value>
-  </data>
-  <data name="PackingAbortedComponentOfAnImageFile0DoesNotExistIsItEnoughSpaceInTemporaryFolder" xml:space="preserve">
-    <value>Packing aborted: component of an image file '{0}' does not exist(Is it enough space in temporary folder ?)</value>
   </data>
   <data name="QuestionButil" xml:space="preserve">
     <value>Пытанне - BUtil</value>

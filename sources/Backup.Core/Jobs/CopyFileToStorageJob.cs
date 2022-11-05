@@ -45,7 +45,7 @@ namespace BUtil.Core.Jobs
                     StatusUpdate(ProcessingStatus.InProgress);
                     storage.Open(_log);
                     _log.WriteLine(LoggingEvent.Debug, "Storage opened successfully");
-                    storage.Put(_imageFileToCopy);
+                    // storage.Put(_imageFileToCopy);
                     _log.WriteLine(LoggingEvent.Debug, "File was copyied to storage successfully");
                 }
                 catch (LogException e)

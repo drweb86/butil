@@ -24,13 +24,8 @@ namespace BUtil.Core.Storages
 		
         #endregion
 
-        /// <summary>
-        /// Here you should set Log property
-        /// </summary>
-        /// <param name="log"></param>
         public abstract void Open(LogBase log);
-        public abstract void Put(string file, string directory = null);
-        public abstract void StoreFiles(string sourceDir, List<string> sourceFiles, string directory = null);
+        public abstract string Upload(string sourceFile, string relativeFileName);
         public abstract string ReadAllText(string file);
         public abstract void Test();
 

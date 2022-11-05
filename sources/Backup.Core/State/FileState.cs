@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics.CodeAnalysis;
 
 namespace BUtil.Core.State
 {
-    public class FileState
+    public class FileState: IEqualityComparer<FileState>
     {
         public string FileName { get; set; }
         public DateTime LastWriteTimeUtc { get; set; }
@@ -21,6 +19,19 @@ namespace BUtil.Core.State
             LastWriteTimeUtc = lastWriteTimeUtc;
             Size = size;
             Sha512 = sha512;
+        }
+
+        public bool Equals(FileState x, FileState y)
+        {
+            return x.FileName == y.FileName && 
+                x.Size == y.Size && 
+                x.Sha512 == y.Sha512 && 
+                x.LastWriteTimeUtc == y.LastWriteTimeUtc;
+        }
+
+        public int GetHashCode([DisallowNull] FileState obj)
+        {
+            return obj.FileName.GetHashCode();
         }
     }
 }

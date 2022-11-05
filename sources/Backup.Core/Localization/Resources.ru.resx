@@ -216,9 +216,6 @@
   <data name="CopyingFile0FromTempFolder1ToDestination2At3" xml:space="preserve">
     <value>Копирование файла '{0}' из временного каталога '{1}' в папку назначения '{2}' в хранилище '{3}'</value>
   </data>
-  <data name="AbortedByUser" xml:space="preserve">
-    <value>Остановлено пользователем!</value>
-  </data>
   <data name="ArchivatorWarningNonFatalErrorSForExampleOneOrMoreFilesWereLockedBySomeOtherApplicationSoTheyWereNotCompressed" xml:space="preserve">
     <value>Архиватор: При выполнении операции возникли ошибки</value>
   </data>
@@ -240,12 +237,6 @@
   <data name="ErrorDiscoveredWhenCopyingFileToStorage01" xml:space="preserve">
     <value>При копировании в хранилище '{0}' произошла ошибка : {1}</value>
   </data>
-  <data name="FileWasCopyiedToStorageSuccessfully" xml:space="preserve">
-    <value>Файл был скопирован в хранилище успешно</value>
-  </data>
-  <data name="DuringDeletingOfAFile0AnErrorOccured1" xml:space="preserve">
-    <value>Во время удаления файла '{0}' произошла ошибка: {1}</value>
-  </data>
   <data name="CouldNotKillPackerProcess0" xml:space="preserve">
     <value>Процесс архиватора не убивается: {0}</value>
   </data>
@@ -260,12 +251,6 @@
   </data>
   <data name="BackupReport" xml:space="preserve">
     <value>Отчет о резервном копировании</value>
-  </data>
-  <data name="ThereIsNoStoragesSpecifiedInConfigurationCompressionOfDataWasSkipped" xml:space="preserve">
-    <value>В настройках не указано ни одно хранилище для РК. Сжатие данных пропущено</value>
-  </data>
-  <data name="ThereIsNoDataToBackupSpecifiedInConfiguration" xml:space="preserve">
-    <value>В настройках не указаны данные для РК</value>
   </data>
   <data name="ButilSoftwarePackage7ZipComponent0HasInvalidCheckSummNprobablyItWasDamagedByVirusesNNyouShouldReinstallApplicationNNrestorationAndBackupFunctionsWillBeUnavailable" xml:space="preserve">
     <value>Контрольная сумма Файла "{0}" компонента приложения BUtil 7-zip изменилась. \nВероятно, файл поврежден вирусами. \n\nВам нужно переустановить приложение.\n\nФункции восстановления и резервного копирования будут недоступны.</value>
@@ -282,12 +267,6 @@
   <data name="ConfirmationIsNotEqualToPassword" xml:space="preserve">
     <value>Подтверждение не идентично введенному паролю</value>
   </data>
-  <data name="PackingOfDataToAnImageWasAbortedByUser" xml:space="preserve">
-    <value>Упаковка данных в образ была прервана пользователем</value>
-  </data>
-  <data name="DuringPackingFilesToAnImage0AnErrorOccured1" xml:space="preserve">
-    <value>Во время упаковки данных в образ "{0}" произошла ошибка: {1}</value>
-  </data>
   <data name="AnUnexpectedErrorOccuredNNpleaseContactTheDevelopersWithInformationSavedOnYourDesktopInN0NNapplicationWillNowClose" xml:space="preserve">
     <value>В приложении произошла непредвиденная ошибка\n\nВы можете улучшить качество приложения, передав информацию, сохраненную на рабочем столе в файле\n"{0}"\nразработчикам\n\nПриложение сейчас завершит свою работу</value>
   </data>
@@ -302,9 +281,6 @@
   </data>
   <data name="AfterBackupTask" xml:space="preserve">
     <value>Задание после резервного копирования: </value>
-  </data>
-  <data name="PackingAbortedComponentOfAnImageFile0DoesNotExistIsItEnoughSpaceInTemporaryFolder" xml:space="preserve">
-    <value>Не удалось упаковать результирующие данные в образ: компонент образа файл "{0}" не существует(Достаточно ли места во временном каталоге ?)</value>
   </data>
   <data name="QuestionButil" xml:space="preserve">
     <value>Вопрос - BUtil</value>

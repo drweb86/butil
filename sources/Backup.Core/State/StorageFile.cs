@@ -18,5 +18,10 @@
             StorageIntegrityMethod = storageIntegrityMethodInfo;
             StorageIntegrityMethodInfo = storageIntegriyMethod;
         }
+
+        public StorageFile(FileState fileState)
+        {
+            FileState = fileState;
+        }
     }
 }

@@ -61,15 +61,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Aborted by user!.
-        /// </summary>
-        public static string AbortedByUser {
-            get {
-                return ResourceManager.GetString("AbortedByUser", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to About.
         /// </summary>
         public static string About {
@@ -270,24 +261,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to During deleting of a file &apos;{0}&apos; an error occured: {1}.
-        /// </summary>
-        public static string DuringDeletingOfAFile0AnErrorOccured1 {
-            get {
-                return ResourceManager.GetString("DuringDeletingOfAFile0AnErrorOccured1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to During packing files to an image &apos;{0}&apos; an error occured: {1}.
-        /// </summary>
-        public static string DuringPackingFilesToAnImage0AnErrorOccured1 {
-            get {
-                return ResourceManager.GetString("DuringPackingFilesToAnImage0AnErrorOccured1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Enter password:.
         /// </summary>
         public static string EnterPassword {
@@ -338,15 +311,6 @@ namespace BUtil.Core.Localization {
         public static string FastestCompression {
             get {
                 return ResourceManager.GetString("FastestCompression", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to File was copyied to storage successfully.
-        /// </summary>
-        public static string FileWasCopyiedToStorageSuccessfully {
-            get {
-                return ResourceManager.GetString("FileWasCopyiedToStorageSuccessfully", resourceCulture);
             }
         }
         
@@ -477,30 +441,11 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Packing aborted: component of an image file &apos;{0}&apos; does not exist(Is it enough space in temporary folder ?).
-        /// </summary>
-        public static string PackingAbortedComponentOfAnImageFile0DoesNotExistIsItEnoughSpaceInTemporaryFolder {
-            get {
-                return ResourceManager.GetString("PackingAbortedComponentOfAnImageFile0DoesNotExistIsItEnoughSpaceInTemporaryFolder" +
-                        "", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Packing data in an image.
         /// </summary>
         public static string PackingDataInAnImage {
             get {
                 return ResourceManager.GetString("PackingDataInAnImage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Packing of data to an image was aborted by user.
-        /// </summary>
-        public static string PackingOfDataToAnImageWasAbortedByUser {
-            get {
-                return ResourceManager.GetString("PackingOfDataToAnImageWasAbortedByUser", resourceCulture);
             }
         }
         
@@ -618,24 +563,6 @@ namespace BUtil.Core.Localization {
         public static string Support {
             get {
                 return ResourceManager.GetString("Support", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to There is no data to backup specified in configuration.
-        /// </summary>
-        public static string ThereIsNoDataToBackupSpecifiedInConfiguration {
-            get {
-                return ResourceManager.GetString("ThereIsNoDataToBackupSpecifiedInConfiguration", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to There is no storages specified in configuration. Compression of data was skipped.
-        /// </summary>
-        public static string ThereIsNoStoragesSpecifiedInConfigurationCompressionOfDataWasSkipped {
-            get {
-                return ResourceManager.GetString("ThereIsNoStoragesSpecifiedInConfigurationCompressionOfDataWasSkipped", resourceCulture);
             }
         }
         

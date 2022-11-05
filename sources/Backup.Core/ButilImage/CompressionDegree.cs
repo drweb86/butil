@@ -1,9 +1,7 @@
 ﻿using System;
 
-
 namespace BUtil.Core.ButilImage
 {
-    [Serializable]
 	public enum CompressionDegree
 	{
 		Store = 0,// required
