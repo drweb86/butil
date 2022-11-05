@@ -120,7 +120,7 @@ namespace BUtil.Configurator
         {
             if (_items[itemIndex].IsFolder)
             {
-                Process.Start(_items[itemIndex].Target);
+                Process.Start("explorer.exe", _items[itemIndex].Target);
             }
         }
 

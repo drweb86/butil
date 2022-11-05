@@ -31,7 +31,7 @@ namespace BUtil.Core.Storages
         public abstract void Open(LogBase log);
         public abstract void Put(string file, string directory = null);
         public abstract void StoreFiles(string sourceDir, List<string> sourceFiles, string directory = null);
-        public abstract byte[] ReadFile(string file);
+        public abstract string ReadAllText(string file);
         public abstract void Test();
 
 	}

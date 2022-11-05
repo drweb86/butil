@@ -75,7 +75,7 @@ namespace BUtil.Core.Storages
         {
             throw new NotImplementedException();
         }
-        public override byte[] ReadFile(string file)
+        public override string ReadAllText(string file)
         {
             throw new NotImplementedException();
         }

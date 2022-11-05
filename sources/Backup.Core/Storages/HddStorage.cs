@@ -30,9 +30,14 @@ namespace BUtil.Core.Storages
         {
             throw new NotImplementedException();
         }
-        public override byte[] ReadFile(string file)
+        public override string ReadAllText(string file)
         {
-            throw new NotImplementedException();
+			var fullPathName = Path.Combine(_settings.DestinationFolder, file);
+
+			if (!File.Exists(fullPathName))
+				return null;
+
+            return File.ReadAllText(fullPathName);
         }
 
         public override void Open(LogBase log)

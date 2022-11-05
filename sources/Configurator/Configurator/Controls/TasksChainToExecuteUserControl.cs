@@ -153,7 +153,6 @@ namespace BUtil.Configurator.Controls
 			
 			tasksListViewSelectedIndexChanged(sender, e);
 		}
-		
 		void editSelectedItem(object sender, EventArgs e)
 		{
 			if (tasksListView.SelectedItems.Count != 1)
@@ -162,19 +161,15 @@ namespace BUtil.Configurator.Controls
 			}
 
 			int indexOfItem = tasksListView.SelectedItems[0].Index;
-			
-			using (BackupEventTaskInfoEditingForm form = new BackupEventTaskInfoEditingForm((ExecuteProgramTaskInfo)tasksListView.SelectedItems[0].Tag))
+
+			using var form = new BackupEventTaskInfoEditingForm((ExecuteProgramTaskInfo)tasksListView.SelectedItems[0].Tag);
+			if (form.ShowDialog() == DialogResult.OK)
 			{
-				if (form.ShowDialog() == DialogResult.OK)
-				{
-					ExecuteProgramTaskInfo task = form.EventTask;
-					
-					tasksListView.SelectedItems[0].SubItems[0].Text = task.Program;
-					tasksListView.SelectedItems[0].SubItems[1].Text = task.Arguments;
-					tasksListView.SelectedItems[0].Tag = task;					
-				}
+				var task = form.EventTask;
+
+				tasksListView.SelectedItems[0].SubItems[0].Text = task.Name;
+				tasksListView.SelectedItems[0].Tag = task;
 			}
-			
 		}
 		
 		#endregion

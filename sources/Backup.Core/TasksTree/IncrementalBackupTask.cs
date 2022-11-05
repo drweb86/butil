@@ -17,6 +17,14 @@ namespace BUtil.Core.TasksTree
                 tasks.Add(new ExecuteProgramTask(log, backupEvents, executeBeforeBackup, programOptions.ProcessPriority));
             }
 
+            var readSatesTask = new ReadStatesTask(Log, Events, backupTask);
+            tasks.Add(readSatesTask);
+
+            foreach (var storageStateTask in readSatesTask.StorageStateTasks)
+            {
+                tasks.Add(new WriteIncrementedVersionTask(Log, Events, storageStateTask, readSatesTask.GetSourceItemStateTasks));
+            }
+
             foreach (var executeAfterBackup in backupTask.ExecuteAfterBackup)
             {
                 tasks.Add(new ExecuteProgramTask(log, backupEvents, executeAfterBackup, programOptions.ProcessPriority));

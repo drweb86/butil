@@ -201,7 +201,8 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             _strategy = BackupModelStrategyFactory.Create(_log, _backupTask, _programOptions);
 			_backupEvents = new BackupEvents();
 			_backupEvents.OnTaskProgress += OnTaskProgress;
-			_rootTask = _strategy.GetTask(_backupEvents);
+            _backupEvents.OnDuringExecutionTasksAdded += OnDuringExecutionTasksAdded;
+            _rootTask = _strategy.GetTask(_backupEvents);
             
             settingsUserControl.SetSettingsToUi(_programOptions, PowerTask.None, _backupTask, false, ThreadPriority.BelowNormal);
 
@@ -226,6 +227,35 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             	Close();
             }
 		}
+
+		private void OnDuringExecutionTasksAdded(object sender, DuringExecutionTasksAddedEventArgs e)
+		{
+			if (InvokeRequired)
+			{
+				Invoke(OnDuringExecutionTasksAdded, e);
+				return;
+			}
+
+			tasksListView.BeginUpdate();
+
+			int index = 0;
+			foreach (ListViewItem item in tasksListView.Items)
+			{
+				index++;
+				if ((Guid)item.Tag == e.TaskId)
+					break;
+			}
+
+            foreach (var task in e.Tasks)
+            {
+                var listItem = new ListViewItem(task.Title, (int)task.TaskArea);
+                listItem.SubItems.Add(LocalsHelper.ToString(ProcessingStatus.NotStarted));
+                listItem.Tag = task.Id;
+                tasksListView.Items.Insert(index, listItem);
+				index++;
+            }
+			tasksListView.EndUpdate();
+        }
 
 		private void OnTaskProgress(object sender, TaskProgressEventArgs e)
 		{

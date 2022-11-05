@@ -39,6 +39,11 @@ namespace BUtil.Core.TasksTree
         }
 
         public abstract void Execute(CancellationToken token);
+
+        public void LogDebug(string message)
+        {
+            Log.WriteLine(LoggingEvent.Debug, $"{Id} {Title} {message}");
+        }
     }
 
     public abstract class SequentialBuTask : BuTask
@@ -53,6 +58,7 @@ namespace BUtil.Core.TasksTree
 
         public override void Execute(CancellationToken token)
         {
+            Events.TaskProgessUpdate(Id, ProcessingStatus.InProgress);
             foreach (var child in Children)
             {
                 if (token.IsCancellationRequested)
@@ -60,6 +66,7 @@ namespace BUtil.Core.TasksTree
 
                 child.Execute(token);
             }
+            Events.TaskProgessUpdate(Id, ProcessingStatus.FinishedSuccesfully);
         }
 
         public override IEnumerable<BuTask> GetChildren()
@@ -86,6 +93,7 @@ namespace BUtil.Core.TasksTree
         public override void Execute(CancellationToken token)
         {
             var children = (Children ?? Array.Empty<BuTask>()).ToList();
+            Events.TaskProgessUpdate(Id, ProcessingStatus.InProgress);
             foreach (var child in Children)
             {
                 if (token.IsCancellationRequested)
@@ -93,6 +101,8 @@ namespace BUtil.Core.TasksTree
 
                 child.Execute(token);
             }
+
+            Events.TaskProgessUpdate(Id, ProcessingStatus.FinishedSuccesfully);
         }
 
         public override IEnumerable<BuTask> GetChildren()
