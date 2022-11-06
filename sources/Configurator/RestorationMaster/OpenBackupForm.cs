@@ -57,7 +57,7 @@ namespace BUtil.RestorationMaster
             var json = File.ReadAllText(backupFileName);
 			var incrementalBackupState = JsonSerializer.Deserialize<IncrementalBackupState>(json);
 
-			using var restoreForm = new VersionsViewerForm(incrementalBackupState);
+			using var restoreForm = new VersionsViewerForm(backupFolder, incrementalBackupState);
             restoreForm.ShowDialog();
 		}
 
