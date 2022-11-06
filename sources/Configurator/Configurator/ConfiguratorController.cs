@@ -31,7 +31,7 @@ namespace BUtil.Configurator.Configurator
 				return;
 			}
 
-            using var form = new RestoreMasterMainForm(backupFolder);
+            using var form = new OpenBackupForm(backupFolder);
             if (runFormAsApplication)
             {
                 Application.Run(form);

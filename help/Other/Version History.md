@@ -2,6 +2,7 @@
 
 ## New Features
 - New section for setting up incremental model options.
+- Incremental backup without compression and encryption.
 
 ## Changes
 - Setup is x32/x64
@@ -24,6 +25,7 @@ Program Files, Program Files (x86), PATH environment variable directories
 - Task name command line argument now only one is accepted by both UI and console. The idea is to simplify the tool.
 - event integration was upated.
 - dropped $backupFileName after backup task parameter support because none of new strategies will support it.
+- dropped image file backup functionality
 
 ## Bug Fixes
 - Passwords are not in debug log anymore

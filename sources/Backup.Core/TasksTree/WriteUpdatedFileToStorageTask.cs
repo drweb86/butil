@@ -28,7 +28,7 @@ namespace BUtil.Core.TasksTree
 
             var storage = StorageFactory.Create(_storageSettings);
             var storageRelativeFileName = _storageFile.StorageFileName;
-            _storageFile.StorageFileName = storage.Upload(_storageFile.FileState.FileName, storageRelativeFileName);
+            _storageFile.StorageFileName = storage.Upload(_storageFile.FileState.FileName, _storageFile.StorageRelativeFileName);
             Events.TaskProgessUpdate(Id, ProcessingStatus.FinishedSuccesfully);
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace BUtil.RestorationMaster
 {
-	partial class RestoreMasterMainForm
+	partial class OpenBackupForm
 	{
 		/// <summary>
 		/// Designer variable used to keep track of non-visual components.
@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RestoreMasterMainForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OpenBackupForm));
             this._openBackupFolderButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
             this.passwordMaskedTextBox = new System.Windows.Forms.MaskedTextBox();

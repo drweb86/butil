@@ -34,7 +34,6 @@ namespace BUtil.Configurator
 			{
 				Name = Caption,
 				DestinationFolder = UncLocation,
-				DeleteBUtilFilesInDestinationFolderBeforeBackup = deleteHereAllOtherBUtilImageFilesCheckbox.Checked,
 			    EncryptUnderLocalSystemAccount = _EncryptUnderLsaCheckBox.Checked,
                 SkipCopyingToNetworkStorageAndWriteWarningInLogIfBackupExceeds = skipIfExceedsLimitCheckBox.Checked, 
 				SkipCopyingToNetworkStorageLimitMb = Convert.ToInt64(limitSizeNumericUpDown.Value)
@@ -59,15 +58,12 @@ namespace BUtil.Configurator
 
 				Caption = sambaStorageSettings.Name;
 				UncLocation = sambaStorageSettings.DestinationFolder;
-				deleteHereAllOtherBUtilImageFilesCheckbox.Checked = sambaStorageSettings.DeleteBUtilFilesInDestinationFolderBeforeBackup;
                 _EncryptUnderLsaCheckBox.Checked = sambaStorageSettings.EncryptUnderLocalSystemAccount;
                 skipIfExceedsLimitCheckBox.Checked = sambaStorageSettings.SkipCopyingToNetworkStorageAndWriteWarningInLogIfBackupExceeds;
                 limitSizeNumericUpDown.Value = sambaStorageSettings.SkipCopyingToNetworkStorageLimitMb;
                 skipIfExceedsLimitCheckBox_CheckedChanged(null, null);
 			}
 
-			// locals
-			deleteHereAllOtherBUtilImageFilesCheckbox.Text = Resources.DeleteHereAllOtherButilImageFiles;
 			WhereToStoreBackupslabel.Text = Resources.SpecifyTheFolderWhereToStoreBackUp;
 			this.Text = Resources.NetworkStorageConfiguration;
 			acceptButton.Text = Resources.Ok;

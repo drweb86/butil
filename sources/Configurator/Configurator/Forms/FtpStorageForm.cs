@@ -47,13 +47,10 @@ namespace BUtil.Configurator
 				ActiveFtpMode = connectionModeComboBox.SelectedIndex == 0,
 				Name = Caption,
 				DestinationFolder = DestinationFolder,
-				DeleteBUtilFilesInDestinationFolderBeforeBackup = deleteHereAllOtherBUtilImageFilesCheckbox.Checked,
 				Host = FtpServer,
 				User = User,
 				Password = Password
 			};
-
-
 		}
 
 
@@ -69,7 +66,6 @@ namespace BUtil.Configurator
 			// applying locals
 			StorageNamelabel.Text = Resources.StorageName;
 			destinationFolderGroupBox.Text = Resources.DestinationFolder;
-			deleteHereAllOtherBUtilImageFilesCheckbox.Text = Resources.DeleteHereAllOtherButilImageFiles;
 			AuthorizationInformationGroupBox.Text = Resources.AuthorizationInformation;
 			userLabel.Text = Resources.User;
 			passwordLabel.Text = Resources.Password;
@@ -92,7 +88,6 @@ namespace BUtil.Configurator
 
 				Caption = ftpStorageSettings.Name;
 				DestinationFolder = ftpStorageSettings.DestinationFolder;
-				deleteHereAllOtherBUtilImageFilesCheckbox.Checked = ftpStorageSettings.DeleteBUtilFilesInDestinationFolderBeforeBackup;
 				FtpServer = ftpStorageSettings.Host;
 				User = ftpStorageSettings.User;
 				Password = ftpStorageSettings.Password;

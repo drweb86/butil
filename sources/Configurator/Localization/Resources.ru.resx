@@ -271,9 +271,6 @@
   <data name="DestinationFolder" xml:space="preserve">
     <value>Папка назначения</value>
   </data>
-  <data name="DeleteHereAllOtherButilImageFiles" xml:space="preserve">
-    <value>Удалять здесь все прочие образы РК BUtil</value>
-  </data>
   <data name="AuthorizationInformation" xml:space="preserve">
     <value>Авторизация:</value>
   </data>
@@ -340,18 +337,6 @@
   <data name="ItemsToBackup" xml:space="preserve">
     <value>Объекты для резервного копирования</value>
   </data>
-  <data name="FirstSelectAnItem" xml:space="preserve">
-    <value>Сперва выберите объект!</value>
-  </data>
-  <data name="Folders" xml:space="preserve">
-    <value>Папки</value>
-  </data>
-  <data name="Files" xml:space="preserve">
-    <value>Файлы</value>
-  </data>
-  <data name="Restore" xml:space="preserve">
-    <value>Восстановить...</value>
-  </data>
   <data name="Finish" xml:space="preserve">
     <value>Закончить</value>
   </data>
@@ -361,12 +346,6 @@
   <data name="UseRightClickMouseOnSelectedItemToRestoreIt" xml:space="preserve">
     <value>Используйте правый щелчок мышкой по выбранному объекту, чтобы восстановить его</value>
   </data>
-  <data name="ItemsInImage" xml:space="preserve">
-    <value>Данные в образе</value>
-  </data>
-  <data name="_0Restoration" xml:space="preserve">
-    <value>{0} - Восстановление</value>
-  </data>
   <data name="IfYourBackupIsPasswordProtectedPleaseTypePasswordHere" xml:space="preserve">
     <value>Если ваша резервная копия защищена паролем, укажите его здесь:</value>
   </data>
@@ -375,33 +354,6 @@
   </data>
   <data name="RestorationMaster" xml:space="preserve">
     <value>Мастер восстановления</value>
-  </data>
-  <data name="HowToRestoreYourInformation" xml:space="preserve">
-    <value>Как восстановить эти данные?</value>
-  </data>
-  <data name="ToSpecifiedFolder" xml:space="preserve">
-    <value>В выбранную папку</value>
-  </data>
-  <data name="RestoresAllDataToTheSourceFolderItWillRestorePreviousVersionOfFilesFromABackupArchiveUseItWhenNOriginalLocationEntirelyDamagedAndNThereWereNoErrorsDuringCreatingThisBackupNNnotRecommendedCanDamageExistingData" xml:space="preserve">
-    <value>Восстанавливает все данные в исходном каталоге. Восстановит предыдущие версии файлов из архива. Используйте это когда:\n- исходная папка полностю повреждена И\n- не было зарегестрировано ошибок во время создания этой части РК\n\nНе рекомендуется, может повредить существующие данные</value>
-  </data>
-  <data name="ToOriginalLocation" xml:space="preserve">
-    <value>В исходное месторасположение</value>
-  </data>
-  <data name="RestorationOfInformationAsArchiveIsAnEfficientWayWhenYouWantToNRestoreSmallPiecesOfInformationFromALargeBackuppedFolderSavesTimeNAllDataInArchiveIsEncryptedIfYouUsedPasswordMoreSecureNhoweverFresh7ZipInstallationPackageIsRequiredToOpenExtractedArchive" xml:space="preserve">
-    <value>Восстановление информации в архиве - лучший выбор, когда нужно:\n- восстановить небольшую часть информации из большой папки (уменьшает время)\n- все данные в архиве зашифрованы, если вы использовали пароль (более безопасно)\nТем не менее свежая версия 7-zip необходима для открытия извлеченного архива</value>
-  </data>
-  <data name="RestoreAs7ZipArchive" xml:space="preserve">
-    <value>Восстановить в виде архива 7-zip</value>
-  </data>
-  <data name="Skip" xml:space="preserve">
-    <value>Пропустить</value>
-  </data>
-  <data name="_7ZipArchive7Z" xml:space="preserve">
-    <value>Архив 7-zip|*.7z</value>
-  </data>
-  <data name="ChooseDestinationLocation" xml:space="preserve">
-    <value>Выберите папку, в которую хотите восстановить данные</value>
   </data>
   <data name="NetworkStoragesAreNotAllowedToBePointedHere" xml:space="preserve">
     <value>Сетевые ресурсы НЕ МОГУТ указываться здесь!</value>

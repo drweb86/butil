@@ -2,14 +2,16 @@ using System;
 using System.Windows.Forms;
 using BUtil.Core.Misc;
 using BUtil.Configurator.Localization;
+using System.IO;
+using BUtil.Core.Options;
+using System.Text.Json;
+using BUtil.Core.State;
 
 namespace BUtil.RestorationMaster
 {
-	public partial class RestoreMasterMainForm : Form
+	public partial class OpenBackupForm : Form
 	{
-		private readonly RestoreController _controller = new ();
-		
-		public RestoreMasterMainForm(string backupFolder = null)
+		public OpenBackupForm(string backupFolder = null)
 		{
 			InitializeComponent();
 
@@ -50,7 +52,13 @@ namespace BUtil.RestorationMaster
 
         private void OnNextButtonClick(object sender, EventArgs e)
 		{
-			_controller.OpenImage(_backupLocationTextBox.Text, passwordMaskedTextBox.Text);
+			var backupFolder = _backupLocationTextBox.Text;
+            var backupFileName = Path.Combine(backupFolder, IncrementalBackupModelConstants.StorageStateFile);
+            var json = File.ReadAllText(backupFileName);
+			var incrementalBackupState = JsonSerializer.Deserialize<IncrementalBackupState>(json);
+
+			using var restoreForm = new RestoreForm(incrementalBackupState);
+            restoreForm.ShowDialog();
 		}
 
         private void OnHelpClick(object sender, EventArgs e)

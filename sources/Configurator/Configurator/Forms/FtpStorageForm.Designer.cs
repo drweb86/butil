@@ -31,7 +31,6 @@
             this.captionTextBox = new System.Windows.Forms.TextBox();
             this.StorageNamelabel = new System.Windows.Forms.Label();
             this.destinationFolderGroupBox = new System.Windows.Forms.GroupBox();
-            this.deleteHereAllOtherBUtilImageFilesCheckbox = new System.Windows.Forms.CheckBox();
             this.destinationFolderTextBox = new System.Windows.Forms.TextBox();
             this.AuthorizationInformationGroupBox = new System.Windows.Forms.GroupBox();
             this.userLabel = new System.Windows.Forms.Label();
@@ -72,7 +71,6 @@
             // 
             // destinationFolderGroupBox
             // 
-            this.destinationFolderGroupBox.Controls.Add(this.deleteHereAllOtherBUtilImageFilesCheckbox);
             this.destinationFolderGroupBox.Controls.Add(this.destinationFolderTextBox);
             this.destinationFolderGroupBox.Location = new System.Drawing.Point(12, 198);
             this.destinationFolderGroupBox.Name = "destinationFolderGroupBox";
@@ -80,15 +78,6 @@
             this.destinationFolderGroupBox.TabIndex = 7;
             this.destinationFolderGroupBox.TabStop = false;
             this.destinationFolderGroupBox.Text = "Destination folder";
-            // 
-            // deleteHereAllOtherBUtilImageFilesCheckbox
-            // 
-            this.deleteHereAllOtherBUtilImageFilesCheckbox.Location = new System.Drawing.Point(15, 45);
-            this.deleteHereAllOtherBUtilImageFilesCheckbox.Name = "deleteHereAllOtherBUtilImageFilesCheckbox";
-            this.deleteHereAllOtherBUtilImageFilesCheckbox.Size = new System.Drawing.Size(316, 30);
-            this.deleteHereAllOtherBUtilImageFilesCheckbox.TabIndex = 9;
-            this.deleteHereAllOtherBUtilImageFilesCheckbox.Text = "Delete here all other BUtil image files";
-            this.deleteHereAllOtherBUtilImageFilesCheckbox.UseVisualStyleBackColor = true;
             // 
             // destinationFolderTextBox
             // 
@@ -282,7 +271,6 @@
             this.PerformLayout();
 
 		}
-		private System.Windows.Forms.CheckBox deleteHereAllOtherBUtilImageFilesCheckbox;
 		private System.Windows.Forms.GroupBox destinationFolderGroupBox;
 		private System.Windows.Forms.Label passwordLabel;
 		private System.Windows.Forms.Label dataTransferModeLabel;

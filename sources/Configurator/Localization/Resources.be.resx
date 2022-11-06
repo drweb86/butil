@@ -271,9 +271,6 @@
   <data name="DestinationFolder" xml:space="preserve">
     <value>Destination folder</value>
   </data>
-  <data name="DeleteHereAllOtherButilImageFiles" xml:space="preserve">
-    <value>Delete here all other BUtil image files</value>
-  </data>
   <data name="AuthorizationInformation" xml:space="preserve">
     <value>Authorization information</value>
   </data>
@@ -340,18 +337,6 @@
   <data name="ItemsToBackup" xml:space="preserve">
     <value>Items to backup</value>
   </data>
-  <data name="FirstSelectAnItem" xml:space="preserve">
-    <value>First, select an item!</value>
-  </data>
-  <data name="Folders" xml:space="preserve">
-    <value>Папки</value>
-  </data>
-  <data name="Files" xml:space="preserve">
-    <value>Файлы</value>
-  </data>
-  <data name="Restore" xml:space="preserve">
-    <value>Restore....</value>
-  </data>
   <data name="Finish" xml:space="preserve">
     <value>Finish</value>
   </data>
@@ -361,12 +346,6 @@
   <data name="UseRightClickMouseOnSelectedItemToRestoreIt" xml:space="preserve">
     <value>Use right-click mouse on selected item to restore it</value>
   </data>
-  <data name="ItemsInImage" xml:space="preserve">
-    <value>Items in image</value>
-  </data>
-  <data name="_0Restoration" xml:space="preserve">
-    <value>{0} - Restoration</value>
-  </data>
   <data name="IfYourBackupIsPasswordProtectedPleaseTypePasswordHere" xml:space="preserve">
     <value>If your backup is password protected, please type password here:</value>
   </data>
@@ -375,33 +354,6 @@
   </data>
   <data name="RestorationMaster" xml:space="preserve">
     <value>Restoration master</value>
-  </data>
-  <data name="HowToRestoreYourInformation" xml:space="preserve">
-    <value>How to restore your information?</value>
-  </data>
-  <data name="ToSpecifiedFolder" xml:space="preserve">
-    <value>To specified folder</value>
-  </data>
-  <data name="RestoresAllDataToTheSourceFolderItWillRestorePreviousVersionOfFilesFromABackupArchiveUseItWhenNOriginalLocationEntirelyDamagedAndNThereWereNoErrorsDuringCreatingThisBackupNNnotRecommendedCanDamageExistingData" xml:space="preserve">
-    <value>Restores all data to the source folder. It will restore previous version of files from a backup archive. Use it when:\n- original location entirely damaged and \n- there were no errors during creating this backup\n\nNot recommended, can damage existing data</value>
-  </data>
-  <data name="ToOriginalLocation" xml:space="preserve">
-    <value>To original location</value>
-  </data>
-  <data name="RestorationOfInformationAsArchiveIsAnEfficientWayWhenYouWantToNRestoreSmallPiecesOfInformationFromALargeBackuppedFolderSavesTimeNAllDataInArchiveIsEncryptedIfYouUsedPasswordMoreSecureNhoweverFresh7ZipInstallationPackageIsRequiredToOpenExtractedArchive" xml:space="preserve">
-    <value>Restoration of information as archive is an efficient way when you want to \n- restore small pieces of information from a large backupped folder(saves time)\n- all data in archive is encrypted if you used password(more secure)\nHowever, fresh 7-zip installation package is required to open extracted archive</value>
-  </data>
-  <data name="RestoreAs7ZipArchive" xml:space="preserve">
-    <value>Restore as 7-zip archive</value>
-  </data>
-  <data name="Skip" xml:space="preserve">
-    <value>Прапусциць</value>
-  </data>
-  <data name="_7ZipArchive7Z" xml:space="preserve">
-    <value>7-zip archive|*.7z</value>
-  </data>
-  <data name="ChooseDestinationLocation" xml:space="preserve">
-    <value>Choose destination location</value>
   </data>
   <data name="NetworkStoragesAreNotAllowedToBePointedHere" xml:space="preserve">
     <value>Network storages are not allowed to be pointed here!</value>

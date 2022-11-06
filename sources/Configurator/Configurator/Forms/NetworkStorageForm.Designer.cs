@@ -32,7 +32,6 @@
             this.fbd = new System.Windows.Forms.FolderBrowserDialog();
             this.acceptButton = new System.Windows.Forms.Button();
             this.OptionsgroupBox = new System.Windows.Forms.GroupBox();
-            this.deleteHereAllOtherBUtilImageFilesCheckbox = new System.Windows.Forms.CheckBox();
             this.mbLabel = new System.Windows.Forms.Label();
             this.limitSizeNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.skipIfExceedsLimitCheckBox = new System.Windows.Forms.CheckBox();
@@ -72,7 +71,6 @@
             // OptionsgroupBox
             // 
             this.OptionsgroupBox.BackColor = System.Drawing.Color.Transparent;
-            this.OptionsgroupBox.Controls.Add(this.deleteHereAllOtherBUtilImageFilesCheckbox);
             this.OptionsgroupBox.Controls.Add(this.mbLabel);
             this.OptionsgroupBox.Controls.Add(this.limitSizeNumericUpDown);
             this.OptionsgroupBox.Controls.Add(this.skipIfExceedsLimitCheckBox);
@@ -86,15 +84,6 @@
             this.OptionsgroupBox.TabIndex = 1;
             this.OptionsgroupBox.TabStop = false;
             this.OptionsgroupBox.Text = "Options";
-            // 
-            // deleteHereAllOtherBUtilImageFilesCheckbox
-            // 
-            this.deleteHereAllOtherBUtilImageFilesCheckbox.Location = new System.Drawing.Point(11, 67);
-            this.deleteHereAllOtherBUtilImageFilesCheckbox.Name = "deleteHereAllOtherBUtilImageFilesCheckbox";
-            this.deleteHereAllOtherBUtilImageFilesCheckbox.Size = new System.Drawing.Size(527, 30);
-            this.deleteHereAllOtherBUtilImageFilesCheckbox.TabIndex = 4;
-            this.deleteHereAllOtherBUtilImageFilesCheckbox.Text = "Delete here all other BUtil image files";
-            this.deleteHereAllOtherBUtilImageFilesCheckbox.UseVisualStyleBackColor = true;
             // 
             // mbLabel
             // 
@@ -239,7 +228,6 @@
             this.PerformLayout();
 
 		}
-		private System.Windows.Forms.CheckBox deleteHereAllOtherBUtilImageFilesCheckbox;
 		private System.Windows.Forms.TextBox destinationFolderTextBox;
 		private System.Windows.Forms.TextBox captionTextBox;
 		private System.Windows.Forms.Button acceptButton;

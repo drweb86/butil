@@ -88,15 +88,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} - Restoration.
-        /// </summary>
-        internal static string _0Restoration {
-            get {
-                return ResourceManager.GetString("_0Restoration", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to {0} sec.
         /// </summary>
         internal static string _0Sec {
@@ -112,15 +103,6 @@ namespace BUtil.Configurator.Localization {
             get {
                 return ResourceManager.GetString("_1BackupShouldBePasswordProtectedIfNotProgramWillSkipItsCopyingToThisStorageN2You" +
                         "rAuthorizationInformationIsGoingOverTheNetworkInUnprotectedModeAsPlainText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 7-zip archive|*.7z.
-        /// </summary>
-        internal static string _7ZipArchive7Z {
-            get {
-                return ResourceManager.GetString("_7ZipArchive7Z", resourceCulture);
             }
         }
         
@@ -470,15 +452,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Choose destination location.
-        /// </summary>
-        internal static string ChooseDestinationLocation {
-            get {
-                return ResourceManager.GetString("ChooseDestinationLocation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Choose logging level:.
         /// </summary>
         internal static string ChooseLoggingLevel {
@@ -565,15 +538,6 @@ namespace BUtil.Configurator.Localization {
         internal static string DefaultIs60 {
             get {
                 return ResourceManager.GetString("DefaultIs60", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Delete here all other BUtil image files.
-        /// </summary>
-        internal static string DeleteHereAllOtherButilImageFiles {
-            get {
-                return ResourceManager.GetString("DeleteHereAllOtherButilImageFiles", resourceCulture);
             }
         }
         
@@ -734,15 +698,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Files.
-        /// </summary>
-        internal static string Files {
-            get {
-                return ResourceManager.GetString("Files", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Finish.
         /// </summary>
         internal static string Finish {
@@ -766,24 +721,6 @@ namespace BUtil.Configurator.Localization {
         internal static string FinishedWithErrors {
             get {
                 return ResourceManager.GetString("FinishedWithErrors", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to First, select an item!.
-        /// </summary>
-        internal static string FirstSelectAnItem {
-            get {
-                return ResourceManager.GetString("FirstSelectAnItem", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Folders.
-        /// </summary>
-        internal static string Folders {
-            get {
-                return ResourceManager.GetString("Folders", resourceCulture);
             }
         }
         
@@ -977,15 +914,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to How to restore your information?.
-        /// </summary>
-        internal static string HowToRestoreYourInformation {
-            get {
-                return ResourceManager.GetString("HowToRestoreYourInformation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to If you choose something other than &apos;do nothing&apos; \nprogram will configure OS to show you report\non next your logon to the system if any errors \nor warnings will be registered during the backup.
         /// </summary>
         internal static string IfYouChooseSomethingOtherThanDoNothingNprogramWillConfigureOsToShowYouReportNonNextYourLogonToTheSystemIfAnyErrorsNorWarningsWillBeRegisteredDuringTheBackup {
@@ -1058,15 +986,6 @@ namespace BUtil.Configurator.Localization {
             get {
                 return ResourceManager.GetString("InvalidArgumentSPassedToTheProgramNNpleaseReferToManualForTheCompleteListOfParame" +
                         "ters", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Items in image.
-        /// </summary>
-        internal static string ItemsInImage {
-            get {
-                return ResourceManager.GetString("ItemsInImage", resourceCulture);
             }
         }
         
@@ -1496,36 +1415,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Restoration of information as archive is an efficient way when you want to \n- restore small pieces of information from a large backupped folder(saves time)\n- all data in archive is encrypted if you used password(more secure)\nHowever, fresh 7-zip installation package is required to open extracted archive.
-        /// </summary>
-        internal static string RestorationOfInformationAsArchiveIsAnEfficientWayWhenYouWantToNRestoreSmallPiecesOfInformationFromALargeBackuppedFolderSavesTimeNAllDataInArchiveIsEncryptedIfYouUsedPasswordMoreSecureNhoweverFresh7ZipInstallationPackageIsRequiredToOpenExtractedArchive {
-            get {
-                return ResourceManager.GetString("RestorationOfInformationAsArchiveIsAnEfficientWayWhenYouWantToNRestoreSmallPieces" +
-                        "OfInformationFromALargeBackuppedFolderSavesTimeNAllDataInArchiveIsEncryptedIfYou" +
-                        "UsedPasswordMoreSecureNhoweverFresh7ZipInstallationPackageIsRequiredToOpenExtrac" +
-                        "tedArchive", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Restore.....
-        /// </summary>
-        internal static string Restore {
-            get {
-                return ResourceManager.GetString("Restore", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Restore as 7-zip archive.
-        /// </summary>
-        internal static string RestoreAs7ZipArchive {
-            get {
-                return ResourceManager.GetString("RestoreAs7ZipArchive", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Restore Data....
         /// </summary>
         internal static string RestoreData {
@@ -1540,17 +1429,6 @@ namespace BUtil.Configurator.Localization {
         internal static string RestoreDefaultLogsLocation {
             get {
                 return ResourceManager.GetString("RestoreDefaultLogsLocation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Restores all data to the source folder. It will restore previous version of files from a backup archive. Use it when:\n- original location entirely damaged and \n- there were no errors during creating this backup\n\nNot recommended, can damage existing data.
-        /// </summary>
-        internal static string RestoresAllDataToTheSourceFolderItWillRestorePreviousVersionOfFilesFromABackupArchiveUseItWhenNOriginalLocationEntirelyDamagedAndNThereWereNoErrorsDuringCreatingThisBackupNNnotRecommendedCanDamageExistingData {
-            get {
-                return ResourceManager.GetString("RestoresAllDataToTheSourceFolderItWillRestorePreviousVersionOfFilesFromABackupArc" +
-                        "hiveUseItWhenNOriginalLocationEntirelyDamagedAndNThereWereNoErrorsDuringCreating" +
-                        "ThisBackupNNnotRecommendedCanDamageExistingData", resourceCulture);
             }
         }
         
@@ -1632,15 +1510,6 @@ namespace BUtil.Configurator.Localization {
         internal static string ShutdownPc {
             get {
                 return ResourceManager.GetString("ShutdownPc", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Skip.
-        /// </summary>
-        internal static string Skip {
-            get {
-                return ResourceManager.GetString("Skip", resourceCulture);
             }
         }
         
@@ -1814,24 +1683,6 @@ namespace BUtil.Configurator.Localization {
         internal static string Title {
             get {
                 return ResourceManager.GetString("Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to To original location.
-        /// </summary>
-        internal static string ToOriginalLocation {
-            get {
-                return ResourceManager.GetString("ToOriginalLocation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to To specified folder.
-        /// </summary>
-        internal static string ToSpecifiedFolder {
-            get {
-                return ResourceManager.GetString("ToSpecifiedFolder", resourceCulture);
             }
         }
         

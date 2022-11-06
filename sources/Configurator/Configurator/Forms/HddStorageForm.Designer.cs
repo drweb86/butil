@@ -29,7 +29,6 @@
 		private void InitializeComponent()
 		{
             this.optionsGroupBox = new System.Windows.Forms.GroupBox();
-            this.deleteHereAllOtherBUtilImageFilesCheckbox = new System.Windows.Forms.CheckBox();
             this.searchButton = new System.Windows.Forms.Button();
             this.destinationFolderTextBox = new System.Windows.Forms.TextBox();
             this.whereToStoreBackupLabel = new System.Windows.Forms.Label();
@@ -44,7 +43,6 @@
             // optionsGroupBox
             // 
             this.optionsGroupBox.BackColor = System.Drawing.Color.Transparent;
-            this.optionsGroupBox.Controls.Add(this.deleteHereAllOtherBUtilImageFilesCheckbox);
             this.optionsGroupBox.Controls.Add(this.searchButton);
             this.optionsGroupBox.Controls.Add(this.destinationFolderTextBox);
             this.optionsGroupBox.Controls.Add(this.whereToStoreBackupLabel);
@@ -54,15 +52,6 @@
             this.optionsGroupBox.TabIndex = 1;
             this.optionsGroupBox.TabStop = false;
             this.optionsGroupBox.Text = "Options";
-            // 
-            // deleteHereAllOtherBUtilImageFilesCheckbox
-            // 
-            this.deleteHereAllOtherBUtilImageFilesCheckbox.Location = new System.Drawing.Point(12, 53);
-            this.deleteHereAllOtherBUtilImageFilesCheckbox.Name = "deleteHereAllOtherBUtilImageFilesCheckbox";
-            this.deleteHereAllOtherBUtilImageFilesCheckbox.Size = new System.Drawing.Size(436, 30);
-            this.deleteHereAllOtherBUtilImageFilesCheckbox.TabIndex = 4;
-            this.deleteHereAllOtherBUtilImageFilesCheckbox.Text = "Delete here all other BUtil image files";
-            this.deleteHereAllOtherBUtilImageFilesCheckbox.UseVisualStyleBackColor = true;
             // 
             // searchButton
             // 
@@ -161,7 +150,6 @@
             this.PerformLayout();
 
 		}
-        private System.Windows.Forms.CheckBox deleteHereAllOtherBUtilImageFilesCheckbox;
 		private System.Windows.Forms.Button searchButton;
 		private System.Windows.Forms.TextBox destinationFolderTextBox;
 		private System.Windows.Forms.Label whereToStoreBackupLabel;

@@ -1,17 +1,11 @@
 using System;
-using System.Drawing;
 using System.Windows.Forms;
-
-using BUtil.Core.Options;
 using BUtil.Core.Storages;
 using BUtil.Core.PL;
 using BUtil.Configurator.Localization;
 
 namespace BUtil.Configurator
 {
-	/// <summary>
-	/// Description of HDDStorageForm.
-	/// </summary>
     internal sealed partial class HddStorageForm : Form, IStorageConfigurationForm
 	{
 		private HddStorageSettings GetHddStorageSettings()
@@ -20,7 +14,6 @@ namespace BUtil.Configurator
             {
                 Name = Caption,
                 DestinationFolder = destinationFolderTextBox.Text,
-                DeleteBUtilFilesInDestinationFolderBeforeBackup = deleteHereAllOtherBUtilImageFilesCheckbox.Checked
             };
         }
 
@@ -46,12 +39,9 @@ namespace BUtil.Configurator
 
 				captionTextBox.Text = hddStorageSettings.Name;
 				destinationFolderTextBox.Text = hddStorageSettings.DestinationFolder;
-				deleteHereAllOtherBUtilImageFilesCheckbox.Checked = hddStorageSettings.DeleteBUtilFilesInDestinationFolderBeforeBackup;
 				acceptButton.Enabled = true;
 			}
 			
-			// locals
-			deleteHereAllOtherBUtilImageFilesCheckbox.Text = Resources.DeleteHereAllOtherButilImageFiles;
 			whereToStoreBackupLabel.Text = Resources.SpecifyTheFolderWhereToStoreBackUp;
 			this.Text = Resources.HddStorageConfiguration;
 			acceptButton.Text = Resources.Ok;

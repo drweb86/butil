@@ -47,7 +47,7 @@ namespace BUtil.Core.TasksTree
 
                         var sourceItemRelativeFileName = x.FileState.FileName.Substring(sourceItemDir.Length);
 
-                        x.StorageFileName = Path.Combine(
+                        x.StorageRelativeFileName = Path.Combine(
                             versionState.BackupDateUtc.ToString("yyyyMMddTHHmmss"),
                             sourceItemChange.SourceItem.Target.GetHashCode().ToString(),
                             sourceItemRelativeFileName);
