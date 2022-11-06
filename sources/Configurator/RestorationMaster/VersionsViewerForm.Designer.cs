@@ -37,11 +37,25 @@
             this._versionsTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._versionsListBox = new System.Windows.Forms.ListBox();
             this._versionsLabel = new System.Windows.Forms.Label();
+            this._treeToChangesSplitContainer = new System.Windows.Forms.SplitContainer();
+            this._filesTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this._changesTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this._changesLabel = new System.Windows.Forms.Label();
+            this._dataLabel = new System.Windows.Forms.Label();
+            this._changesListBox = new System.Windows.Forms.ListBox();
+            this._filesTreeView = new System.Windows.Forms.TreeView();
             this._statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._versionToContentSplitContainer)).BeginInit();
             this._versionToContentSplitContainer.Panel1.SuspendLayout();
+            this._versionToContentSplitContainer.Panel2.SuspendLayout();
             this._versionToContentSplitContainer.SuspendLayout();
             this._versionsTableLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._treeToChangesSplitContainer)).BeginInit();
+            this._treeToChangesSplitContainer.Panel1.SuspendLayout();
+            this._treeToChangesSplitContainer.Panel2.SuspendLayout();
+            this._treeToChangesSplitContainer.SuspendLayout();
+            this._filesTableLayoutPanel.SuspendLayout();
+            this._changesTableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // imagesList
@@ -76,6 +90,10 @@
             // _versionToContentSplitContainer.Panel1
             // 
             this._versionToContentSplitContainer.Panel1.Controls.Add(this._versionsTableLayoutPanel);
+            // 
+            // _versionToContentSplitContainer.Panel2
+            // 
+            this._versionToContentSplitContainer.Panel2.Controls.Add(this._treeToChangesSplitContainer);
             this._versionToContentSplitContainer.Size = new System.Drawing.Size(604, 355);
             this._versionToContentSplitContainer.SplitterDistance = 162;
             this._versionToContentSplitContainer.TabIndex = 1;
@@ -115,6 +133,90 @@
             this._versionsLabel.TabIndex = 1;
             this._versionsLabel.Text = "Versions:";
             // 
+            // _treeToChangesSplitContainer
+            // 
+            this._treeToChangesSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._treeToChangesSplitContainer.Location = new System.Drawing.Point(0, 0);
+            this._treeToChangesSplitContainer.Name = "_treeToChangesSplitContainer";
+            this._treeToChangesSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // _treeToChangesSplitContainer.Panel1
+            // 
+            this._treeToChangesSplitContainer.Panel1.Controls.Add(this._filesTableLayoutPanel);
+            // 
+            // _treeToChangesSplitContainer.Panel2
+            // 
+            this._treeToChangesSplitContainer.Panel2.Controls.Add(this._changesTableLayoutPanel);
+            this._treeToChangesSplitContainer.Size = new System.Drawing.Size(438, 355);
+            this._treeToChangesSplitContainer.SplitterDistance = 176;
+            this._treeToChangesSplitContainer.TabIndex = 0;
+            // 
+            // _filesTableLayoutPanel
+            // 
+            this._filesTableLayoutPanel.ColumnCount = 1;
+            this._filesTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this._filesTableLayoutPanel.Controls.Add(this._dataLabel, 0, 0);
+            this._filesTableLayoutPanel.Controls.Add(this._filesTreeView, 0, 1);
+            this._filesTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._filesTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this._filesTableLayoutPanel.Name = "_filesTableLayoutPanel";
+            this._filesTableLayoutPanel.RowCount = 2;
+            this._filesTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this._filesTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this._filesTableLayoutPanel.Size = new System.Drawing.Size(438, 176);
+            this._filesTableLayoutPanel.TabIndex = 0;
+            // 
+            // _changesTableLayoutPanel
+            // 
+            this._changesTableLayoutPanel.ColumnCount = 1;
+            this._changesTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this._changesTableLayoutPanel.Controls.Add(this._changesLabel, 0, 0);
+            this._changesTableLayoutPanel.Controls.Add(this._changesListBox, 0, 1);
+            this._changesTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._changesTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this._changesTableLayoutPanel.Name = "_changesTableLayoutPanel";
+            this._changesTableLayoutPanel.RowCount = 2;
+            this._changesTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this._changesTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this._changesTableLayoutPanel.Size = new System.Drawing.Size(438, 175);
+            this._changesTableLayoutPanel.TabIndex = 1;
+            // 
+            // _changesLabel
+            // 
+            this._changesLabel.AutoSize = true;
+            this._changesLabel.Location = new System.Drawing.Point(3, 0);
+            this._changesLabel.Name = "_changesLabel";
+            this._changesLabel.Size = new System.Drawing.Size(56, 15);
+            this._changesLabel.TabIndex = 0;
+            this._changesLabel.Text = "Changes:";
+            // 
+            // _dataLabel
+            // 
+            this._dataLabel.AutoSize = true;
+            this._dataLabel.Location = new System.Drawing.Point(3, 0);
+            this._dataLabel.Name = "_dataLabel";
+            this._dataLabel.Size = new System.Drawing.Size(33, 15);
+            this._dataLabel.TabIndex = 1;
+            this._dataLabel.Text = "Files:";
+            // 
+            // _changesListBox
+            // 
+            this._changesListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._changesListBox.FormattingEnabled = true;
+            this._changesListBox.ItemHeight = 15;
+            this._changesListBox.Location = new System.Drawing.Point(3, 18);
+            this._changesListBox.Name = "_changesListBox";
+            this._changesListBox.Size = new System.Drawing.Size(432, 154);
+            this._changesListBox.TabIndex = 1;
+            // 
+            // _filesTreeView
+            // 
+            this._filesTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._filesTreeView.Location = new System.Drawing.Point(3, 18);
+            this._filesTreeView.Name = "_filesTreeView";
+            this._filesTreeView.Size = new System.Drawing.Size(432, 155);
+            this._filesTreeView.TabIndex = 2;
+            // 
             // VersionsViewerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -132,10 +234,19 @@
             this._statusStrip.ResumeLayout(false);
             this._statusStrip.PerformLayout();
             this._versionToContentSplitContainer.Panel1.ResumeLayout(false);
+            this._versionToContentSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._versionToContentSplitContainer)).EndInit();
             this._versionToContentSplitContainer.ResumeLayout(false);
             this._versionsTableLayoutPanel.ResumeLayout(false);
             this._versionsTableLayoutPanel.PerformLayout();
+            this._treeToChangesSplitContainer.Panel1.ResumeLayout(false);
+            this._treeToChangesSplitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this._treeToChangesSplitContainer)).EndInit();
+            this._treeToChangesSplitContainer.ResumeLayout(false);
+            this._filesTableLayoutPanel.ResumeLayout(false);
+            this._filesTableLayoutPanel.PerformLayout();
+            this._changesTableLayoutPanel.ResumeLayout(false);
+            this._changesTableLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,5 +258,12 @@
         private System.Windows.Forms.TableLayoutPanel _versionsTableLayoutPanel;
         private System.Windows.Forms.ListBox _versionsListBox;
         private System.Windows.Forms.Label _versionsLabel;
+        private System.Windows.Forms.SplitContainer _treeToChangesSplitContainer;
+        private System.Windows.Forms.TableLayoutPanel _filesTableLayoutPanel;
+        private System.Windows.Forms.TableLayoutPanel _changesTableLayoutPanel;
+        private System.Windows.Forms.Label _dataLabel;
+        private System.Windows.Forms.Label _changesLabel;
+        private System.Windows.Forms.TreeView _filesTreeView;
+        private System.Windows.Forms.ListBox _changesListBox;
     }
 }
