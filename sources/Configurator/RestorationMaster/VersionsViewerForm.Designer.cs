@@ -1,6 +1,6 @@
 ﻿namespace BUtil.RestorationMaster
 {
-	partial class RestoreForm
+	partial class VersionsViewerForm
 	{
 		/// <summary>
 		/// Designer variable used to keep track of non-visual components.
@@ -29,7 +29,7 @@
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RestoreForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VersionsViewerForm));
             this.imagesList = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 
@@ -41,7 +41,7 @@
             this.imagesList.Images.SetKeyName(0, "16x16 Binary.png");
             this.imagesList.Images.SetKeyName(1, "16x16 Folder.png");
             // 
-            // RestoreForm
+            // VersionsViewerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -49,9 +49,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MinimumSize = new System.Drawing.Size(437, 301);
-            this.Name = "RestoreForm";
+            this.Name = "VersionsViewerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "{Image location} - Restoration";
+            this.Text = "Restoration";
             this.ResumeLayout(false);
 
 		}

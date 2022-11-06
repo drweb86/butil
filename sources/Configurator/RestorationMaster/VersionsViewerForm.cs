@@ -3,11 +3,11 @@ using BUtil.Core.State;
 
 namespace BUtil.RestorationMaster
 {
-	internal partial class RestoreForm : Form
+	internal partial class VersionsViewerForm : Form
 	{
 		private readonly IncrementalBackupState _incrementalBackupState;
 
-		public RestoreForm(IncrementalBackupState incrementalBackupState = null)
+		public VersionsViewerForm(IncrementalBackupState incrementalBackupState = null)
 		{
 			InitializeComponent();
 			_incrementalBackupState = incrementalBackupState;
