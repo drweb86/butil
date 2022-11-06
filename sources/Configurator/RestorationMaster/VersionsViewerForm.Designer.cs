@@ -31,6 +31,17 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VersionsViewerForm));
             this.imagesList = new System.Windows.Forms.ImageList(this.components);
+            this._statusStrip = new System.Windows.Forms.StatusStrip();
+            this._toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this._versionToContentSplitContainer = new System.Windows.Forms.SplitContainer();
+            this._versionsTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this._versionsListBox = new System.Windows.Forms.ListBox();
+            this._versionsLabel = new System.Windows.Forms.Label();
+            this._statusStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._versionToContentSplitContainer)).BeginInit();
+            this._versionToContentSplitContainer.Panel1.SuspendLayout();
+            this._versionToContentSplitContainer.SuspendLayout();
+            this._versionsTableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // imagesList
@@ -41,20 +52,100 @@
             this.imagesList.Images.SetKeyName(0, "16x16 Binary.png");
             this.imagesList.Images.SetKeyName(1, "16x16 Folder.png");
             // 
+            // _statusStrip
+            // 
+            this._statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._toolStripStatusLabel});
+            this._statusStrip.Location = new System.Drawing.Point(0, 355);
+            this._statusStrip.Name = "_statusStrip";
+            this._statusStrip.Size = new System.Drawing.Size(604, 22);
+            this._statusStrip.TabIndex = 0;
+            // 
+            // _toolStripStatusLabel
+            // 
+            this._toolStripStatusLabel.Name = "_toolStripStatusLabel";
+            this._toolStripStatusLabel.Size = new System.Drawing.Size(383, 17);
+            this._toolStripStatusLabel.Text = "Click on item you want to restore and open context menu by right click";
+            // 
+            // _versionToContentSplitContainer
+            // 
+            this._versionToContentSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._versionToContentSplitContainer.Location = new System.Drawing.Point(0, 0);
+            this._versionToContentSplitContainer.Name = "_versionToContentSplitContainer";
+            // 
+            // _versionToContentSplitContainer.Panel1
+            // 
+            this._versionToContentSplitContainer.Panel1.Controls.Add(this._versionsTableLayoutPanel);
+            this._versionToContentSplitContainer.Size = new System.Drawing.Size(604, 355);
+            this._versionToContentSplitContainer.SplitterDistance = 162;
+            this._versionToContentSplitContainer.TabIndex = 1;
+            // 
+            // _versionsTableLayoutPanel
+            // 
+            this._versionsTableLayoutPanel.ColumnCount = 1;
+            this._versionsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this._versionsTableLayoutPanel.Controls.Add(this._versionsListBox, 0, 1);
+            this._versionsTableLayoutPanel.Controls.Add(this._versionsLabel, 0, 0);
+            this._versionsTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._versionsTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this._versionsTableLayoutPanel.Name = "_versionsTableLayoutPanel";
+            this._versionsTableLayoutPanel.RowCount = 2;
+            this._versionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this._versionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this._versionsTableLayoutPanel.Size = new System.Drawing.Size(162, 355);
+            this._versionsTableLayoutPanel.TabIndex = 0;
+            // 
+            // _versionsListBox
+            // 
+            this._versionsListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._versionsListBox.FormattingEnabled = true;
+            this._versionsListBox.ItemHeight = 15;
+            this._versionsListBox.Location = new System.Drawing.Point(3, 18);
+            this._versionsListBox.Name = "_versionsListBox";
+            this._versionsListBox.Size = new System.Drawing.Size(156, 334);
+            this._versionsListBox.TabIndex = 0;
+            this._versionsListBox.SelectedIndexChanged += new System.EventHandler(this.OnVersionListChange);
+            // 
+            // _versionsLabel
+            // 
+            this._versionsLabel.AutoSize = true;
+            this._versionsLabel.Location = new System.Drawing.Point(3, 0);
+            this._versionsLabel.Name = "_versionsLabel";
+            this._versionsLabel.Size = new System.Drawing.Size(53, 15);
+            this._versionsLabel.TabIndex = 1;
+            this._versionsLabel.Text = "Versions:";
+            // 
             // VersionsViewerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(604, 377);
+            this.Controls.Add(this._versionToContentSplitContainer);
+            this.Controls.Add(this._statusStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MinimumSize = new System.Drawing.Size(437, 301);
             this.Name = "VersionsViewerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Restoration";
+            this.Load += new System.EventHandler(this.OnLoad);
+            this._statusStrip.ResumeLayout(false);
+            this._statusStrip.PerformLayout();
+            this._versionToContentSplitContainer.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this._versionToContentSplitContainer)).EndInit();
+            this._versionToContentSplitContainer.ResumeLayout(false);
+            this._versionsTableLayoutPanel.ResumeLayout(false);
+            this._versionsTableLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 		private System.Windows.Forms.ImageList imagesList;
-	}
+		private System.Windows.Forms.StatusStrip _statusStrip;
+        private System.Windows.Forms.ToolStripStatusLabel _toolStripStatusLabel;
+        private System.Windows.Forms.SplitContainer _versionToContentSplitContainer;
+        private System.Windows.Forms.TableLayoutPanel _versionsTableLayoutPanel;
+        private System.Windows.Forms.ListBox _versionsListBox;
+        private System.Windows.Forms.Label _versionsLabel;
+    }
 }
