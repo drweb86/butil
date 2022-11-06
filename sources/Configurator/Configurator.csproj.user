@@ -62,10 +62,10 @@
     <Compile Update="LogsManagement\LogsViewerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="RestorationMaster\OpenBackupForm.cs">
+    <Compile Update="Restore\OpenBackupForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="RestorationMaster\VersionsViewerForm.cs">
+    <Compile Update="Restore\VersionsViewerForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="StartShell\Ui\SingleShellForm.cs">

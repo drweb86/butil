@@ -1,8 +1,12 @@
-# 5.2
+# 5.2a
+
+This is alpha version.
+Functional is unstable.
 
 ## New Features
 - New section for setting up incremental model options.
 - Incremental backup without compression and encryption.
+- Incremental backup restoration without compression and encryption.
 
 ## Changes
 - Setup is x32/x64
