@@ -6,18 +6,20 @@ using System.Linq;
 using System.Windows.Forms;
 using BUtil.Core.Options;
 using BUtil.Core.State;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BUtil.RestorationMaster
 {
 	internal partial class VersionsViewerForm : Form
 	{
 		private readonly IncrementalBackupState _incrementalBackupState;
+        private readonly string _backupLocation;
 
-		public VersionsViewerForm(IncrementalBackupState incrementalBackupState = null)
+
+        public VersionsViewerForm(string backupLocation = null, IncrementalBackupState incrementalBackupState = null)
 		{
 			InitializeComponent();
 			_incrementalBackupState = incrementalBackupState;
+            _backupLocation = backupLocation;
 
             //Resources.Recover;
 			//Resources.UseRightClickMouseOnSelectedItemToRestoreIt;
@@ -200,5 +202,59 @@ namespace BUtil.RestorationMaster
 
             _changesListBox.EndUpdate();
         }
-	}
+
+        private IEnumerable<TreeNode> GetChildren(TreeNode Parent)
+        {
+            return Parent.Nodes.Cast<TreeNode>().Concat(
+                   Parent.Nodes.Cast<TreeNode>().SelectMany(GetChildren));
+        }
+
+        private void OnRecover(object sender, EventArgs e)
+        {
+            if (_filesTreeView.SelectedNode == null)
+                return;
+
+            var storageFiles = new List<StorageFile>();
+
+            if (_fbdialog.ShowDialog() == DialogResult.OK)
+            {
+                var destinationFolder = _fbdialog.SelectedPath;
+
+                var tags = GetChildren(_filesTreeView.SelectedNode)
+                    .Select(x => x.Tag as StorageFile)
+                    .Where(x => x != null)
+                    .ToList();
+                if (_filesTreeView.SelectedNode.Tag != null &&
+                    _filesTreeView.SelectedNode.Tag is StorageFile)
+                    tags.Add(_filesTreeView.SelectedNode.Tag as StorageFile);
+
+                TreeNode rootNode = _filesTreeView.SelectedNode;
+                while (rootNode.Parent != null)
+                {
+                    rootNode = rootNode.Parent;
+                }
+
+                Recover(tags, destinationFolder, rootNode.Tag as SourceItem);
+            }
+        }
+
+        private void Recover(List<StorageFile> storageFiles, string destinationFolder, SourceItem sourceItem)
+        {
+            foreach (var storageFile in storageFiles)
+            {
+                var sourceItemDir = sourceItem.IsFolder ?
+                            sourceItem.Target :
+                            Path.GetDirectoryName(sourceItem.Target);
+
+                var sourceItemRelativeFileName = storageFile.FileState.FileName.Substring(sourceItemDir.Length);
+
+                var destinationFileName = Path.Combine(destinationFolder, sourceItemRelativeFileName);
+                var destinationDir = Path.GetDirectoryName(destinationFileName);
+                if (!Directory.Exists(destinationDir))
+                    Directory.CreateDirectory(destinationDir);
+                var sourceFile = Path.Combine(_backupLocation, storageFile.StorageRelativeFileName);
+                File.Copy(sourceFile, destinationFileName, true);
+            }
+        }
+    }
 }

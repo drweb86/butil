@@ -39,11 +39,14 @@
             this._versionsLabel = new System.Windows.Forms.Label();
             this._treeToChangesSplitContainer = new System.Windows.Forms.SplitContainer();
             this._filesTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this._dataLabel = new System.Windows.Forms.Label();
+            this._filesTreeView = new System.Windows.Forms.TreeView();
             this._changesTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._changesLabel = new System.Windows.Forms.Label();
-            this._dataLabel = new System.Windows.Forms.Label();
             this._changesListBox = new System.Windows.Forms.ListBox();
-            this._filesTreeView = new System.Windows.Forms.TreeView();
+            this._treeContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.recoverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this._fbdialog = new System.Windows.Forms.FolderBrowserDialog();
             this._statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._versionToContentSplitContainer)).BeginInit();
             this._versionToContentSplitContainer.Panel1.SuspendLayout();
@@ -56,6 +59,7 @@
             this._treeToChangesSplitContainer.SuspendLayout();
             this._filesTableLayoutPanel.SuspendLayout();
             this._changesTableLayoutPanel.SuspendLayout();
+            this._treeContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // imagesList
@@ -166,6 +170,24 @@
             this._filesTableLayoutPanel.Size = new System.Drawing.Size(438, 176);
             this._filesTableLayoutPanel.TabIndex = 0;
             // 
+            // _dataLabel
+            // 
+            this._dataLabel.AutoSize = true;
+            this._dataLabel.Location = new System.Drawing.Point(3, 0);
+            this._dataLabel.Name = "_dataLabel";
+            this._dataLabel.Size = new System.Drawing.Size(33, 15);
+            this._dataLabel.TabIndex = 1;
+            this._dataLabel.Text = "Files:";
+            // 
+            // _filesTreeView
+            // 
+            this._filesTreeView.ContextMenuStrip = this._treeContextMenuStrip;
+            this._filesTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._filesTreeView.Location = new System.Drawing.Point(3, 18);
+            this._filesTreeView.Name = "_filesTreeView";
+            this._filesTreeView.Size = new System.Drawing.Size(432, 155);
+            this._filesTreeView.TabIndex = 2;
+            // 
             // _changesTableLayoutPanel
             // 
             this._changesTableLayoutPanel.ColumnCount = 1;
@@ -190,15 +212,6 @@
             this._changesLabel.TabIndex = 0;
             this._changesLabel.Text = "Changes:";
             // 
-            // _dataLabel
-            // 
-            this._dataLabel.AutoSize = true;
-            this._dataLabel.Location = new System.Drawing.Point(3, 0);
-            this._dataLabel.Name = "_dataLabel";
-            this._dataLabel.Size = new System.Drawing.Size(33, 15);
-            this._dataLabel.TabIndex = 1;
-            this._dataLabel.Text = "Files:";
-            // 
             // _changesListBox
             // 
             this._changesListBox.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -209,13 +222,19 @@
             this._changesListBox.Size = new System.Drawing.Size(432, 154);
             this._changesListBox.TabIndex = 1;
             // 
-            // _filesTreeView
+            // _treeContextMenuStrip
             // 
-            this._filesTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._filesTreeView.Location = new System.Drawing.Point(3, 18);
-            this._filesTreeView.Name = "_filesTreeView";
-            this._filesTreeView.Size = new System.Drawing.Size(432, 155);
-            this._filesTreeView.TabIndex = 2;
+            this._treeContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.recoverToolStripMenuItem});
+            this._treeContextMenuStrip.Name = "_treeContextMenuStrip";
+            this._treeContextMenuStrip.Size = new System.Drawing.Size(181, 48);
+            // 
+            // recoverToolStripMenuItem
+            // 
+            this.recoverToolStripMenuItem.Name = "recoverToolStripMenuItem";
+            this.recoverToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.recoverToolStripMenuItem.Text = "Recover...";
+            this.recoverToolStripMenuItem.Click += new System.EventHandler(this.OnRecover);
             // 
             // VersionsViewerForm
             // 
@@ -247,6 +266,7 @@
             this._filesTableLayoutPanel.PerformLayout();
             this._changesTableLayoutPanel.ResumeLayout(false);
             this._changesTableLayoutPanel.PerformLayout();
+            this._treeContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -265,5 +285,8 @@
         private System.Windows.Forms.Label _changesLabel;
         private System.Windows.Forms.TreeView _filesTreeView;
         private System.Windows.Forms.ListBox _changesListBox;
+        private System.Windows.Forms.ContextMenuStrip _treeContextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem recoverToolStripMenuItem;
+        private System.Windows.Forms.FolderBrowserDialog _fbdialog;
     }
 }
