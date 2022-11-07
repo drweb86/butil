@@ -21,10 +21,6 @@ namespace BUtil.Core.PL
 		
 		public ToolStripStatusLabel HelpLabel { get; set; }
 		
-		/// <summary>
-		/// Shows help in external status strip 'HelpStatusStrip' if it set
-		/// </summary>
-		/// <param name="text"></param>
 		public void SetHintForControl(Control control, string hint)
 		{
 			if (_hints.ContainsKey(control))
@@ -33,9 +29,10 @@ namespace BUtil.Core.PL
 			}
 			else
 			{
-				control.MouseMove += new MouseEventHandler(controlMouseMove);
-				control.GotFocus += new EventHandler(controlGotFocus);
-				_hints.Add(control, hint);
+				control.MouseMove += controlMouseMove;
+				control.GotFocus += controlGotFocus;
+				control.MouseLeave += ControlLostFocus;
+                _hints.Add(control, hint);
 			}
 		}
 		
@@ -75,7 +72,13 @@ namespace BUtil.Core.PL
 			showHelp(sender);
 		}
 
-		void controlMouseMove(object sender, MouseEventArgs e)
+        private void ControlLostFocus(object sender, EventArgs e)
+        {
+            if (HelpLabel != null)
+				HelpLabel.Text = null;
+        }
+
+        void controlMouseMove(object sender, MouseEventArgs e)
 		{
 			showHelp(sender);
 		}
