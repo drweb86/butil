@@ -79,11 +79,7 @@ namespace BUtil.Core.Logs
                                   	DateTime.Now.ToString("f"),
                                   	Resources.BackupReport,
                                   	SupportManager.GetLink(SupportRequest.Homepage),
-                                  	SupportManager.GetLink(SupportRequest.Issue),
-                                  	SupportManager.GetLink(SupportRequest.Issue),
-                                  	Resources.VisitProjectHomepage,
-                                  	Resources.ReportABug,
-                                  	Resources.AskForSupport));
+                                  	Resources.VisitProjectHomepage));
 				_logFile = File.AppendText(_fileName);
 			}
 			catch (Exception e)

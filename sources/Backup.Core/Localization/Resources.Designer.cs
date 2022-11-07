@@ -117,15 +117,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ask for support.
-        /// </summary>
-        public static string AskForSupport {
-            get {
-                return ResourceManager.GetString("AskForSupport", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Backup finished succesfully!.
         /// </summary>
         public static string BackupFinishedSuccesfully {
@@ -531,29 +522,11 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Report a bug.
-        /// </summary>
-        public static string ReportABug {
-            get {
-                return ResourceManager.GetString("ReportABug", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to 7z message:.
         /// </summary>
         public static string SevenZMessage {
             get {
                 return ResourceManager.GetString("SevenZMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Suggest a feature.
-        /// </summary>
-        public static string SuggestAFeature {
-            get {
-                return ResourceManager.GetString("SuggestAFeature", resourceCulture);
             }
         }
         

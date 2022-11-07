@@ -5,7 +5,7 @@ namespace BUtil.Core.Misc
     public enum SupportRequest
     {
         Homepage,
-        Issue,
+        Issue1,
         Documentation,
         SevenZip,
         VirtuaWin,

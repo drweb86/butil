@@ -183,15 +183,6 @@
   <data name="VisitProjectHomepage" xml:space="preserve">
     <value>Visit project homepage</value>
   </data>
-  <data name="SuggestAFeature" xml:space="preserve">
-    <value>Suggest a feature</value>
-  </data>
-  <data name="ReportABug" xml:space="preserve">
-    <value>Report a bug</value>
-  </data>
-  <data name="AskForSupport" xml:space="preserve">
-    <value>Ask for support</value>
-  </data>
   <data name="WithoutCompression" xml:space="preserve">
     <value>Without Compression</value>
   </data>

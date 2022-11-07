@@ -183,15 +183,6 @@
   <data name="VisitProjectHomepage" xml:space="preserve">
     <value>Посетить домашнюю страничку проекта</value>
   </data>
-  <data name="SuggestAFeature" xml:space="preserve">
-    <value>Попросить о новых возможностях</value>
-  </data>
-  <data name="ReportABug" xml:space="preserve">
-    <value>Сообщить об ошибке</value>
-  </data>
-  <data name="AskForSupport" xml:space="preserve">
-    <value>Поддержка</value>
-  </data>
   <data name="WithoutCompression" xml:space="preserve">
     <value>Без сжатия</value>
   </data>

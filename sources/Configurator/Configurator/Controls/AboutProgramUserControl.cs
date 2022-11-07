@@ -1,45 +1,24 @@
 using System;
-
 using BUtil.Core.Misc;
-using BUtil.Core.FileSystem;
 using BUtil.Core;
 using System.Text;
-using BUtil.Core.Options;
 using BUtil.Core.PL;
 using BUtil.Configurator.Localization;
 
 namespace BUtil.Configurator.Controls
 {
-	/// <summary>
-	/// Control with update and links to developer page
-	/// </summary>
 	internal sealed partial class AboutProgramUserControl : BUtil.Core.PL.BackUserControl
     {
-        #region Fields
-
-        ProgramOptions _options;
-
-        #endregion
-
-        #region Constructors
-
         public AboutProgramUserControl()
 		{
 			InitializeComponent();
-			
-			documentationLabel.Enabled = !Program.PackageIsBroken;
 		}
-
-        #endregion
 
         #region Overrides
 
         public override void ApplyLocalization() 
 		{
 			visitWebSiteLabel.Text = BUtil.Core.Localization.Resources.VisitProjectHomepage;
-            suggestAFeatureLabel.Text = BUtil.Core.Localization.Resources.SuggestAFeature;
-            reportABugLabel.Text = BUtil.Core.Localization.Resources.ReportABug;
-            supportLabel.Text = BUtil.Core.Localization.Resources.AskForSupport;
             documentationLabel.Text = Resources.Documentation;
             checkForUpdatesLabel.Text = Resources.CheckForUpdates;
             var aboutInfo = new StringBuilder();
@@ -53,36 +32,15 @@ namespace BUtil.Configurator.Controls
             aboutTextBox.Select(0, 0);
 		}
 	
-		public override void SetOptionsToUi(object settings)
-		{
-			_options = (ProgramOptions)settings;
-		}
+		public override void SetOptionsToUi(object settings) { }
 		
-		public override void GetOptionsFromUi()
-		{
-			;
-		}
+		public override void GetOptionsFromUi() { }
 		
 		#endregion
 		
 		void VisitWebSiteLabelClick(object sender, EventArgs e)
 		{
 			SupportManager.DoSupport(SupportRequest.Homepage);
-		}
-		
-		void SuggestAFeatureLabelClick(object sender, EventArgs e)
-		{
-			SupportManager.DoSupport(SupportRequest.Issue);
-		}
-		
-		void ReportABugLabelClick(object sender, EventArgs e)
-		{
-			SupportManager.DoSupport(SupportRequest.Issue);
-		}
-		
-		void SupportLabelClick(object sender, EventArgs e)
-		{
-			SupportManager.DoSupport(SupportRequest.Issue);
 		}
 		
 		void DocumentationLabelClick(object sender, EventArgs e)
