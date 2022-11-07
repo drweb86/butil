@@ -49,7 +49,6 @@ namespace BUtil.Configurator.Configurator.Forms
 
 			ApplyOptionsToUi();
 			ChoosePanelUserControlViewChanged(ConfiguratorViewsEnum.Tasks);
-			UpdateAccessibilitiesView();
 			
 			restorationToolToolStripMenuItem.Enabled = !Program.PackageIsBroken;
 //            helpToolStripMenuItem.Enabled = Program.
@@ -89,8 +88,7 @@ namespace BUtil.Configurator.Configurator.Forms
             Text = Resources.Configurator;
             cancelButton.Text = Resources.Cancel;
             restorationToolToolStripMenuItem.Text = Resources.RestoreData;
-            hideAboutTabToolStripMenuItem.Text = Resources.HideAboutTab;
-            miscToolStripMenuItem.Text = Resources.Misc;
+            _helpToolStripMenuItem.Text= Resources.Help;
             journalsToolStripMenuItem.Text = Resources.BackupJournals;
             helpToolStripMenuItem.Text = Resources.Documentation;
             _aboutToolStripMenuItem.Text = Resources.About;
@@ -115,8 +113,6 @@ namespace BUtil.Configurator.Configurator.Forms
             _views[ConfiguratorViewsEnum.Tasks].SetOptionsToUi( profileOptions);
             _views[ConfiguratorViewsEnum.Logging].SetOptionsToUi(profileOptions);
             _views[ConfiguratorViewsEnum.OtherOptions].SetOptionsToUi(profileOptions);
-            
-			hideAboutTabToolStripMenuItem.Checked = profileOptions.HideAboutTab;
         }
 
 		void RestorationToolToolStripMenuItemClick(object sender, EventArgs e)
@@ -147,20 +143,7 @@ namespace BUtil.Configurator.Configurator.Forms
 			_skipSavingOnExitRequest = true;
 			Close();
 		}
-		
-		void HideAboutTabToolStripMenuItemClick(object sender, EventArgs e)
-		{
-			_controller.ProgramOptions.HideAboutTab = hideAboutTabToolStripMenuItem.Checked;
-	        UpdateAccessibilitiesView();
-		}
-
-		void UpdateAccessibilitiesView()
-		{
-            _beforeAboutToolStripSeparator.Visible =
-                _aboutToolStripMenuItem.Visible =
-                !_controller.ProgramOptions.HideAboutTab;
-		}
-	
+			
 		void JournalsToolStripMenuItemClick(object sender, EventArgs e)
 		{
 			_controller.OpenJournals(false);
@@ -180,17 +163,3 @@ namespace BUtil.Configurator.Configurator.Forms
         }
 	}
 }
-/* Placing of left panel requirements
- * (explorer like)
- * 
- * 0 pixels from top
- * 1 from left
- * 1 from bottom
- * 
- * Placing of right controls
- * (alchogol like)
- * 
- * 3 from left
- * 0 from right
- * 0 from top
- */

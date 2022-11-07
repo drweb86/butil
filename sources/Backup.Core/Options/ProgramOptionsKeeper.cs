@@ -27,7 +27,6 @@ namespace BUtil.Core.Options
         const string _GORE_TAG = "Core";
         const string _LOGS_TAG = "Logging";
         const string _CONFIGURATOR_TAG = "Configurator";
-		const string _HIDE_ABOUT_TAB_TAG = "HideAboutTab";
 		
         
         #endregion
@@ -192,8 +191,6 @@ namespace BUtil.Core.Options
 				XmlNode configuratorApplicationNode = document.CreateNode(XmlNodeType.Element, _CONFIGURATOR_TAG, string.Empty);
 				coreNode.AppendChild(configuratorApplicationNode);
 				
-				addTextNode(document, configuratorApplicationNode, _HIDE_ABOUT_TAB_TAG, options.HideAboutTab.ToString());
-				
 				addTextNode(document, scheduleApplicationNode, "PuttingOffBackupCpuLoading", options.PuttingOffBackupCpuLoading.ToString());
 				
 				addTextNode(document, performanceNode, "AmountOf7ZipProcessesToProcessSynchronously", options.AmountOf7ZipProcessesToProcessSynchronously.ToString());
@@ -248,8 +245,6 @@ namespace BUtil.Core.Options
 					options.LogsFolder = readNode(document, "/Settings/Core/Logging/Location", Directories.LogsFolder);
 					
 					options.PuttingOffBackupCpuLoading = (byte)readNode(document, "/Settings/Core/ScheduleApplication/PuttingOffBackupCpuLoading", Constants.MinimumCpuLoading, Constants.MaximumCpuLoading, Constants.DefaultCpuLoading);
-					
-					options.HideAboutTab = readNode(document, "/Settings/Core/" + _CONFIGURATOR_TAG + "/" + _HIDE_ABOUT_TAB_TAG, false);
                 }
             }
             catch (Exception exc)

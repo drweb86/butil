@@ -72,7 +72,7 @@
     <Compile Update="AddBackupTaskWizard\View\TaskNameUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Configurator\Controls\AboutProgramUserControl.cs" />
+    <Compile Update="Configurator\AboutProgramUI\AboutProgramUserControl.cs" />
     <Compile Update="Configurator\Controls\BackupTasksUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

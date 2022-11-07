@@ -460,12 +460,6 @@
   <data name="HaveNoNetworkAndInternet" xml:space="preserve">
     <value>няма сяци и интэрнету</value>
   </data>
-  <data name="HideAboutTab" xml:space="preserve">
-    <value>схаваць укладку "Аб праграме"</value>
-  </data>
-  <data name="Misc" xml:space="preserve">
-    <value>Рознае</value>
-  </data>
   <data name="InProgress" xml:space="preserve">
     <value>In Progress...</value>
   </data>

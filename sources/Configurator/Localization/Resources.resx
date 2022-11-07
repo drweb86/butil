@@ -516,12 +516,6 @@
   <data name="ReviewLogOfLastBackup" xml:space="preserve">
     <value>Review log of last backup...</value>
   </data>
-  <data name="HideAboutTab" xml:space="preserve">
-    <value>hide 'About' tab</value>
-  </data>
-  <data name="Misc" xml:space="preserve">
-    <value>Misc</value>
-  </data>
   <data name="InProgress" xml:space="preserve">
     <value>In Progress...</value>
   </data>

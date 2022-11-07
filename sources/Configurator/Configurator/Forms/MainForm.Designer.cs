@@ -30,14 +30,12 @@ namespace BUtil.Configurator.Configurator.Forms
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restorationToolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.journalsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.miscToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hideAboutTabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this._questionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this._helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._beforeAboutToolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this._aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.choosePanelUserControl = new LeftPanelUserControl();
+            this.choosePanelUserControl = new BUtil.Configurator.Configurator.Controls.LeftPanelUserControl();
             this.helpToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.optionsHeader = new BUtil.Configurator.Controls.OptionsHeader();
             this.nestingControlsPanel = new System.Windows.Forms.Panel();
@@ -52,12 +50,12 @@ namespace BUtil.Configurator.Configurator.Forms
             // 
             this.MainmenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolsToolStripMenuItem,
-            this.miscToolStripMenuItem,
-            this._questionToolStripMenuItem});
+            this._helpToolStripMenuItem});
             this.MainmenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MainmenuStrip.Name = "MainmenuStrip";
+            this.MainmenuStrip.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
             this.MainmenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.MainmenuStrip.Size = new System.Drawing.Size(716, 24);
+            this.MainmenuStrip.Size = new System.Drawing.Size(835, 24);
             this.MainmenuStrip.TabIndex = 3;
             this.MainmenuStrip.Text = "MainmenuStrip";
             // 
@@ -67,7 +65,7 @@ namespace BUtil.Configurator.Configurator.Forms
             this.restorationToolToolStripMenuItem,
             this.journalsToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.toolsToolStripMenuItem.Text = "Tasks";
             // 
             // restorationToolToolStripMenuItem
@@ -86,53 +84,35 @@ namespace BUtil.Configurator.Configurator.Forms
             this.journalsToolStripMenuItem.Text = "Journals...";
             this.journalsToolStripMenuItem.Click += new System.EventHandler(this.JournalsToolStripMenuItemClick);
             // 
-            // miscToolStripMenuItem
+            // _helpToolStripMenuItem
             // 
-            this.miscToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.hideAboutTabToolStripMenuItem
-            });
-            this.miscToolStripMenuItem.Name = "miscToolStripMenuItem";
-            this.miscToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.miscToolStripMenuItem.Text = "Misc";
-            // 
-            // hideAboutTabToolStripMenuItem
-            // 
-            this.hideAboutTabToolStripMenuItem.CheckOnClick = true;
-            this.hideAboutTabToolStripMenuItem.Name = "hideAboutTabToolStripMenuItem";
-            this.hideAboutTabToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
-            this.hideAboutTabToolStripMenuItem.Text = "hide \'About\' tab";
-            this.hideAboutTabToolStripMenuItem.Click += new System.EventHandler(this.HideAboutTabToolStripMenuItemClick);
-            // 
-            // _questionToolStripMenuItem
-            // 
-            this._questionToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this._questionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.helpToolStripMenuItem,
             this._beforeAboutToolStripSeparator,
             this._aboutToolStripMenuItem});
-            this._questionToolStripMenuItem.Name = "_questionToolStripMenuItem";
-            this._questionToolStripMenuItem.Size = new System.Drawing.Size(24, 20);
-            this._questionToolStripMenuItem.Text = "?";
+            this._helpToolStripMenuItem.Name = "_helpToolStripMenuItem";
+            this._helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this._helpToolStripMenuItem.Text = "Help";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Image = global::BUtil.Configurator.Icons.Lamp48x48;
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.helpToolStripMenuItem.Text = "Manual";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.OnHelpToolStripMenuItemClick);
             // 
             // _beforeAboutToolStripSeparator
             // 
             this._beforeAboutToolStripSeparator.Name = "_beforeAboutToolStripSeparator";
-            this._beforeAboutToolStripSeparator.Size = new System.Drawing.Size(149, 6);
+            this._beforeAboutToolStripSeparator.Size = new System.Drawing.Size(177, 6);
             // 
             // _aboutToolStripMenuItem
             // 
             this._aboutToolStripMenuItem.Image = global::BUtil.Configurator.Icons.ProgramInfo48x48;
             this._aboutToolStripMenuItem.Name = "_aboutToolStripMenuItem";
-            this._aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this._aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this._aboutToolStripMenuItem.Text = "About...";
             this._aboutToolStripMenuItem.Click += new System.EventHandler(this.OnAboutToolStripMenuItemClick);
             // 
@@ -142,19 +122,20 @@ namespace BUtil.Configurator.Configurator.Forms
             // 
             // choosePanelUserControl
             // 
-            this.choosePanelUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.choosePanelUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.choosePanelUserControl.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.choosePanelUserControl.BackgroundImage = global::BUtil.Configurator.Icons.PanelUser;
             this.choosePanelUserControl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.choosePanelUserControl.DrawAtractiveBorders = false;
             this.choosePanelUserControl.HelpLabel = this.helpToolStripStatusLabel;
-            this.choosePanelUserControl.Location = new System.Drawing.Point(1, 23);
-            this.choosePanelUserControl.MinimumSize = new System.Drawing.Size(140, 215);
+            this.choosePanelUserControl.Location = new System.Drawing.Point(1, 27);
+            this.choosePanelUserControl.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
+            this.choosePanelUserControl.MinimumSize = new System.Drawing.Size(163, 248);
             this.choosePanelUserControl.Name = "choosePanelUserControl";
-            this.choosePanelUserControl.Size = new System.Drawing.Size(140, 475);
+            this.choosePanelUserControl.Size = new System.Drawing.Size(163, 548);
             this.choosePanelUserControl.TabIndex = 0;
-            this.choosePanelUserControl.ViewChanged += new LeftPanelUserControl.ChangeViewEventHandler(this.ChoosePanelUserControlViewChanged);
+            this.choosePanelUserControl.ViewChanged += new BUtil.Configurator.Configurator.Controls.LeftPanelUserControl.ChangeViewEventHandler(this.ChoosePanelUserControlViewChanged);
             // 
             // helpToolStripStatusLabel
             // 
@@ -163,25 +144,27 @@ namespace BUtil.Configurator.Configurator.Forms
             // 
             // optionsHeader
             // 
-            this.optionsHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.optionsHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.optionsHeader.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.optionsHeader.ForeColor = System.Drawing.Color.White;
-            this.optionsHeader.Location = new System.Drawing.Point(144, 23);
-            this.optionsHeader.MinimumSize = new System.Drawing.Size(163, 29);
+            this.optionsHeader.Location = new System.Drawing.Point(168, 27);
+            this.optionsHeader.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.optionsHeader.MinimumSize = new System.Drawing.Size(190, 33);
             this.optionsHeader.Name = "optionsHeader";
-            this.optionsHeader.Size = new System.Drawing.Size(570, 29);
+            this.optionsHeader.Size = new System.Drawing.Size(665, 33);
             this.optionsHeader.TabIndex = 5;
             this.optionsHeader.Title = "Title";
             // 
             // nestingControlsPanel
             // 
-            this.nestingControlsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.nestingControlsPanel.Location = new System.Drawing.Point(144, 53);
+            this.nestingControlsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nestingControlsPanel.Location = new System.Drawing.Point(168, 61);
+            this.nestingControlsPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.nestingControlsPanel.Name = "nestingControlsPanel";
-            this.nestingControlsPanel.Size = new System.Drawing.Size(570, 407);
+            this.nestingControlsPanel.Size = new System.Drawing.Size(665, 470);
             this.nestingControlsPanel.TabIndex = 1;
             // 
             // cancelButton
@@ -190,10 +173,11 @@ namespace BUtil.Configurator.Configurator.Forms
             this.cancelButton.AutoSize = true;
             this.cancelButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Location = new System.Drawing.Point(629, 466);
-            this.cancelButton.MinimumSize = new System.Drawing.Size(75, 23);
+            this.cancelButton.Location = new System.Drawing.Point(734, 538);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cancelButton.MinimumSize = new System.Drawing.Size(88, 27);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.Size = new System.Drawing.Size(88, 27);
             this.cancelButton.TabIndex = 3;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
@@ -204,10 +188,11 @@ namespace BUtil.Configurator.Configurator.Forms
             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.okButton.AutoSize = true;
             this.okButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.okButton.Location = new System.Drawing.Point(548, 466);
-            this.okButton.MinimumSize = new System.Drawing.Size(75, 23);
+            this.okButton.Location = new System.Drawing.Point(639, 538);
+            this.okButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.okButton.MinimumSize = new System.Drawing.Size(88, 27);
             this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(75, 23);
+            this.okButton.Size = new System.Drawing.Size(88, 27);
             this.okButton.TabIndex = 2;
             this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = true;
@@ -217,19 +202,20 @@ namespace BUtil.Configurator.Configurator.Forms
             // 
             this.helpStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.helpToolStripStatusLabel});
-            this.helpStatusStrip.Location = new System.Drawing.Point(0, 501);
+            this.helpStatusStrip.Location = new System.Drawing.Point(0, 581);
             this.helpStatusStrip.Name = "helpStatusStrip";
-            this.helpStatusStrip.Size = new System.Drawing.Size(716, 22);
+            this.helpStatusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
+            this.helpStatusStrip.Size = new System.Drawing.Size(835, 22);
             this.helpStatusStrip.TabIndex = 6;
             this.helpStatusStrip.Text = "statusStrip1";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(716, 523);
+            this.ClientSize = new System.Drawing.Size(835, 603);
             this.Controls.Add(this.helpStatusStrip);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.cancelButton);
@@ -239,7 +225,8 @@ namespace BUtil.Configurator.Configurator.Forms
             this.Controls.Add(this.MainmenuStrip);
             this.Icon = global::BUtil.Configurator.Icons.BUtilIcon;
             this.MainMenuStrip = this.MainmenuStrip;
-            this.MinimumSize = new System.Drawing.Size(678, 561);
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.MinimumSize = new System.Drawing.Size(788, 641);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Configurator";
@@ -253,8 +240,7 @@ namespace BUtil.Configurator.Configurator.Forms
 
 		}
 		private System.Windows.Forms.ToolStripMenuItem journalsToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem hideAboutTabToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem miscToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem _helpToolStripMenuItem;
 		private System.Windows.Forms.ToolStripStatusLabel helpToolStripStatusLabel;
 		private System.Windows.Forms.StatusStrip helpStatusStrip;
 		private System.Windows.Forms.Button okButton;
@@ -266,7 +252,6 @@ namespace BUtil.Configurator.Configurator.Forms
 		private System.Windows.Forms.MenuStrip MainmenuStrip;
         private System.Windows.Forms.ToolTip toolTip;
 		private System.Windows.Forms.ToolStripMenuItem restorationToolToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem _questionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator _beforeAboutToolStripSeparator;
         private System.Windows.Forms.ToolStripMenuItem _aboutToolStripMenuItem;

@@ -71,23 +71,19 @@ namespace BUtil.Core.Options
             return task;
         }
 
-		/// <summary>
-		/// Returns the default options
-		/// </summary>
 		public static ProgramOptions Default
 		{
 			get 
 			{
-				ProgramOptions options = new ProgramOptions();
-				options.Priority = System.Threading.ThreadPriority.BelowNormal;
-                options.HideAboutTab = false;
-				options.LogsFolder = Directories.LogsFolder;
-        		options.PuttingOffBackupCpuLoading = Constants.DefaultCpuLoading;
-				options.LoggingLevel = LogLevel.Normal;
-				options.AmountOfStoragesToProcessSynchronously = Constants.AmountOfStoragesToProcessSynchronouslyDefault;
-				options.AmountOf7ZipProcessesToProcessSynchronously = Environment.ProcessorCount;
-				
-				return options;
+				return new ProgramOptions
+				{
+					Priority = System.Threading.ThreadPriority.BelowNormal,
+					LogsFolder = Directories.LogsFolder,
+					PuttingOffBackupCpuLoading = Constants.DefaultCpuLoading,
+					LoggingLevel = LogLevel.Normal,
+					AmountOfStoragesToProcessSynchronously = Constants.AmountOfStoragesToProcessSynchronouslyDefault,
+					AmountOf7ZipProcessesToProcessSynchronously = Environment.ProcessorCount
+				};
 			}
 		}
 	}

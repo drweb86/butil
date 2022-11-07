@@ -878,15 +878,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to hide &apos;About&apos; tab.
-        /// </summary>
-        internal static string HideAboutTab {
-            get {
-                return ResourceManager.GetString("HideAboutTab", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Hour:.
         /// </summary>
         internal static string Hour {
@@ -1040,15 +1031,6 @@ namespace BUtil.Configurator.Localization {
         internal static string Minute {
             get {
                 return ResourceManager.GetString("Minute", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Misc.
-        /// </summary>
-        internal static string Misc {
-            get {
-                return ResourceManager.GetString("Misc", resourceCulture);
             }
         }
         

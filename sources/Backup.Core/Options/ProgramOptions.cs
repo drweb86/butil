@@ -31,11 +31,6 @@ namespace BUtil.Core.Options
 		#region Properties
 		
 		/// <summary>
-		/// Hides about tab of Configurator
-		/// </summary>
-		public bool HideAboutTab { get; set; }
-		
-		/// <summary>
 		/// Synchronous storage processing amount
 		/// </summary>
 		public int AmountOfStoragesToProcessSynchronously {get; set;}
