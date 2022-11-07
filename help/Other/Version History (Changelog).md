@@ -1,6 +1,9 @@
 # 5.2a
 
 This is alpha version.
+FTP & Samba are not working.
+Compression is not reworked.
+Password protection is not reworked.
 Functional is unstable.
 
 ## New Features

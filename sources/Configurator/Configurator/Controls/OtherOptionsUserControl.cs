@@ -1,30 +1,13 @@
 using System;
-using System.ComponentModel;
-using System.Drawing;
-using System.Windows.Forms;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
-using System.Collections;
-
 using BUtil.Core.Options;
-using BUtil.Core.PL;
 using BUtil.Core;
-using BUtil.Configurator.Controls;
 using BUtil.Configurator.Localization;
 
 namespace BUtil.Configurator.Controls
 {
-	/// <summary>
-	/// Set of various uncategorized options
-	/// </summary>
 	internal sealed partial class OtherOptionsUserControl : BUtil.Core.PL.BackUserControl
 	{
-		#region Fields
-		
-		ProgramOptions _profileOptions;
-		
-		#endregion
+		ProgramOptions _programOptions;
 		
 		public OtherOptionsUserControl()
 		{
@@ -68,8 +51,8 @@ namespace BUtil.Configurator.Controls
 	
 		public override void SetOptionsToUi(object settings)
 		{
-            _profileOptions = (ProgramOptions)settings;
-			priorityComboBox.SelectedIndex = (int)_profileOptions.Priority;
+            _programOptions = (ProgramOptions)settings;
+			priorityComboBox.SelectedIndex = (int)_programOptions.Priority;
             
 			// performing additional checks for UI
 			if (priorityComboBox.SelectedIndex < 0)
@@ -77,17 +60,17 @@ namespace BUtil.Configurator.Controls
 				priorityComboBox.SelectedIndex = (int)System.Threading.ThreadPriority.BelowNormal;
 			}
 
-			cpuLoadingNumericUpDown.Value = _profileOptions.PuttingOffBackupCpuLoading;
-			amountOfStoragesToProcessSynchronouslyNumericUpDown.Value = _profileOptions.AmountOfStoragesToProcessSynchronously;
-			amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Value = _profileOptions.AmountOf7ZipProcessesToProcessSynchronously;
+			cpuLoadingNumericUpDown.Value = _programOptions.PuttingOffBackupCpuLoading;
+			amountOfStoragesToProcessSynchronouslyNumericUpDown.Value = _programOptions.AmountOfStoragesToProcessSynchronously;
+			amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Value = _programOptions.AmountOf7ZipProcessesToProcessSynchronously;
 		}
 
 		public override void GetOptionsFromUi()
 		{
-			_profileOptions.Priority = (System.Threading.ThreadPriority)priorityComboBox.SelectedIndex;
-			_profileOptions.PuttingOffBackupCpuLoading = Convert.ToByte(cpuLoadingNumericUpDown.Value);
-			_profileOptions.AmountOfStoragesToProcessSynchronously = Convert.ToInt32(amountOfStoragesToProcessSynchronouslyNumericUpDown.Value);
-			_profileOptions.AmountOf7ZipProcessesToProcessSynchronously = Convert.ToInt32(amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Value);
+			_programOptions.Priority = (System.Threading.ThreadPriority)priorityComboBox.SelectedIndex;
+			_programOptions.PuttingOffBackupCpuLoading = Convert.ToByte(cpuLoadingNumericUpDown.Value);
+			_programOptions.AmountOfStoragesToProcessSynchronously = Convert.ToInt32(amountOfStoragesToProcessSynchronouslyNumericUpDown.Value);
+			_programOptions.AmountOf7ZipProcessesToProcessSynchronously = Convert.ToInt32(amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Value);
 		}
 
 		#endregion
