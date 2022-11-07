@@ -79,7 +79,8 @@ namespace BUtil.ConsoleBackup.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please, specify the backup task title using the command line argument &quot;{0}My backup task title&quot;\nExample: backup.exe &quot;{0}My backup title&quot;.
+        ///   Looks up a localized string similar to Please, specify the backup task title using the command line argument &quot;{0}My backup task title&quot;
+        ///Example: backup.exe &quot;{0}My backup title&quot;.
         /// </summary>
         internal static string PleaseSpecifyTheBackupTaskTitleUsingTheCommandLineArgument0MyBackupTaskTitleNexampleBackupExe0MyBackupTitle {
             get {
@@ -108,7 +109,22 @@ namespace BUtil.ConsoleBackup.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Usage variants:\n\nbackup.exe &quot;Task=My task title&quot;\n   Running without parameters. Outputs information to console\n\nbackup.exe &quot;Task=My task 1 title&quot; &quot;Task=My task 2 title&quot; &quot;Task=My task 3 title&quot;\n   Runs several tasks one by one\n\nbackup.exe &quot;Task=My task title&quot; UseFileLog\n   Outputs information in file log\n\nbackup.exe &quot;Task=My task title&quot; Shutdown\nbackup.exe &quot;Task=My task title&quot; LogOff \nbackup.exe &quot;Task=My task title&quot; Suspend \nbackup.exe &quot;Task=My task title&quot; Reboot\nbackup.exe &quot;Task=My task title&quot; [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to Usage variants:
+        ///
+        ///backup.exe &quot;Task=My task title&quot;
+        ///   Running without parameters. Outputs information to console
+        ///
+        ///backup.exe &quot;Task=My task 1 title&quot; &quot;Task=My task 2 title&quot; &quot;Task=My task 3 title&quot;
+        ///   Runs several tasks one by one
+        ///
+        ///backup.exe &quot;Task=My task title&quot; UseFileLog
+        ///   Outputs information in file log
+        ///
+        ///backup.exe &quot;Task=My task title&quot; Shutdown
+        ///backup.exe &quot;Task=My task title&quot; LogOff 
+        ///backup.exe &quot;Task=My task title&quot; Suspend 
+        ///backup.exe &quot;Task=My task title&quot; Reboot
+        ///backup.exe &quot;Task=My task title&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string UsageVariantsNNbackupExeTaskMyTaskTitleNRunningWithoutParametersOutputsInformationToConsoleNNbackupExeTaskMyTask1TitleTaskMyTask2TitleTaskMyTask3TitleNRunsSeveralTasksOneByOneNNbackupExeTaskMyTaskTitleUsefilelogNOutputsInformationInFileLogNNbackupExeTaskMyTaskTitleShutdownNbackupExeTaskMyTaskTitleLogoffNbackupExeTaskMyTaskTitleSuspendNbackupExeTaskMyTaskTitleRebootNbackupExeTaskMyTaskTitleHibernateNNbackupExeHelpNOutputsBriefHelpN {
             get {

@@ -59,7 +59,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="UsageVariantsNNbackupExeTaskMyTaskTitleNRunningWithoutParametersOutputsInformationToConsoleNNbackupExeTaskMyTask1TitleTaskMyTask2TitleTaskMyTask3TitleNRunsSeveralTasksOneByOneNNbackupExeTaskMyTaskTitleUsefilelogNOutputsInformationInFileLogNNbackupExeTaskMyTaskTitleShutdownNbackupExeTaskMyTaskTitleLogoffNbackupExeTaskMyTaskTitleSuspendNbackupExeTaskMyTaskTitleRebootNbackupExeTaskMyTaskTitleHibernateNNbackupExeHelpNOutputsBriefHelpN" xml:space="preserve">
-    <value>Usage variants:\n\nbackup.exe "Task=My task title"\n   Running without parameters. Outputs information to console\n\nbackup.exe "Task=My task 1 title" "Task=My task 2 title" "Task=My task 3 title"\n   Runs several tasks one by one\n\nbackup.exe "Task=My task title" UseFileLog\n   Outputs information in file log\n\nbackup.exe "Task=My task title" Shutdown\nbackup.exe "Task=My task title" LogOff \nbackup.exe "Task=My task title" Suspend \nbackup.exe "Task=My task title" Reboot\nbackup.exe "Task=My task title" Hibernate \n\nbackup.exe Help\n   Outputs brief help\n</value>
+    <value>Usage variants:
+
+backup.exe "Task=My task title"
+   Running without parameters. Outputs information to console
+
+backup.exe "Task=My task 1 title" "Task=My task 2 title" "Task=My task 3 title"
+   Runs several tasks one by one
+
+backup.exe "Task=My task title" UseFileLog
+   Outputs information in file log
+
+backup.exe "Task=My task title" Shutdown
+backup.exe "Task=My task title" LogOff 
+backup.exe "Task=My task title" Suspend 
+backup.exe "Task=My task title" Reboot
+backup.exe "Task=My task title" Hibernate 
+
+backup.exe Help
+   Outputs brief help
+</value>
   </data>
   <data name="ErrorInvalidCommandParametersSpecified" xml:space="preserve">
     <value>Error: Invalid command parameters specified!!!</value>
@@ -71,7 +90,8 @@
     <value>Cannot open file log due to crytical error {0}</value>
   </data>
   <data name="PleaseSpecifyTheBackupTaskTitleUsingTheCommandLineArgument0MyBackupTaskTitleNexampleBackupExe0MyBackupTitle" xml:space="preserve">
-    <value>Please, specify the backup task title using the command line argument "{0}My backup task title"\nExample: backup.exe "{0}My backup title"</value>
+    <value>Please, specify the backup task title using the command line argument "{0}My backup task title"
+Example: backup.exe "{0}My backup title"</value>
   </data>
   <data name="TherereNoBackupTaskWithTitle0" xml:space="preserve">
     <value>There're no backup task with title '{0}'.</value>

@@ -79,7 +79,12 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to An unexpected error occured\n\nPlease contact the developers with information saved on your desktop in\n&quot;{0}&quot;\n\nApplication will now close.
+        ///   Looks up a localized string similar to An unexpected error occured
+        ///
+        ///Please contact the developers with information saved on your desktop in
+        ///&quot;{0}&quot;
+        ///
+        ///Application will now close.
         /// </summary>
         public static string AnUnexpectedErrorOccuredNNpleaseContactTheDevelopersWithInformationSavedOnYourDesktopInN0NNapplicationWillNowClose {
             get {
@@ -243,7 +248,8 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Coult not run &apos;{0}&apos; due to:\n{1}.
+        ///   Looks up a localized string similar to Coult not run &apos;{0}&apos; due to:
+        ///{1}.
         /// </summary>
         public static string CoultNotRun0DueToN1 {
             get {
@@ -414,7 +420,8 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Note: Password length should be more than 20 characters and less than 257 characters\r\n.
+        ///   Looks up a localized string similar to Note: Password length should be more than 20 characters and less than 257 characters
+        ///.
         /// </summary>
         public static string NotePasswordLengthShouldBeMoreThan20CharactersAndLessThan257CharactersRN {
             get {
@@ -477,7 +484,10 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Password is invalid.\n\nIt was reseted\n.
+        ///   Looks up a localized string similar to Password is invalid.
+        ///
+        ///It was reseted
+        ///.
         /// </summary>
         public static string PasswordIsInvalidNNitWasResetedN {
             get {

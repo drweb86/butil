@@ -59,7 +59,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="UsageVariantsNNbackupExeTaskMyTaskTitleNRunningWithoutParametersOutputsInformationToConsoleNNbackupExeTaskMyTask1TitleTaskMyTask2TitleTaskMyTask3TitleNRunsSeveralTasksOneByOneNNbackupExeTaskMyTaskTitleUsefilelogNOutputsInformationInFileLogNNbackupExeTaskMyTaskTitleShutdownNbackupExeTaskMyTaskTitleLogoffNbackupExeTaskMyTaskTitleSuspendNbackupExeTaskMyTaskTitleRebootNbackupExeTaskMyTaskTitleHibernateNNbackupExeHelpNOutputsBriefHelpN" xml:space="preserve">
-    <value>Использование:\n\nbackup.exe "Task=Заголовок задания РК"\n   Запуск без параметров. Выводит информацию на консоль\n\nbackup.exe "Task=Заголовок задания 1" "Task=Заголовок задания 2" "Task=Заголовок задания 3"\n   Запуск нескольких заданий последовательно\n\nbackup.exe "Task=Заголовок задания РК" UseFileLog\n   Выводит информацию в логи.\n\nbackup.exe "Task=Заголовок задания РК" Shutdown\nbackup.exe "Task=Заголовок задания РК" LogOff \nbackup.exe "Task=Заголовок задания РК" Suspend \nbackup.exe "Task=Заголовок задания РК" Reboot\nbackup.exe "Task=Заголовок задания РК" Hibernate \n   Также можно запланировать выключение ПК, выход из сеанса, спящий режим, перезагрузку, режим ожидания по окончании РК\n\nbackup.exe Help\n   Выводит краткую подсказку</value>
+    <value>Использование:
+
+backup.exe "Task=Заголовок задания РК"
+   Запуск без параметров. Выводит информацию на консоль
+
+backup.exe "Task=Заголовок задания 1" "Task=Заголовок задания 2" "Task=Заголовок задания 3"
+   Запуск нескольких заданий последовательно
+
+backup.exe "Task=Заголовок задания РК" UseFileLog
+   Выводит информацию в логи.
+
+backup.exe "Task=Заголовок задания РК" Shutdown
+backup.exe "Task=Заголовок задания РК" LogOff 
+backup.exe "Task=Заголовок задания РК" Suspend 
+backup.exe "Task=Заголовок задания РК" Reboot
+backup.exe "Task=Заголовок задания РК" Hibernate 
+   Также можно запланировать выключение ПК, выход из сеанса, спящий режим, перезагрузку, режим ожидания по окончании РК
+
+backup.exe Help
+   Выводит краткую подсказку</value>
   </data>
   <data name="ErrorInvalidCommandParametersSpecified" xml:space="preserve">
     <value>Ошибка: Указаны неверные аргументы!!!</value>
@@ -71,7 +90,8 @@
     <value>Не могу открыть файл лога из-за критической ошибки {0}</value>
   </data>
   <data name="PleaseSpecifyTheBackupTaskTitleUsingTheCommandLineArgument0MyBackupTaskTitleNexampleBackupExe0MyBackupTitle" xml:space="preserve">
-    <value>Пожалуйста, укажите заголовок задания на резервное копирование через аргумент коммандной строки "{0}Мой заголовок задания на РК"\nПример: backup.exe "{0}Мой заголовок задания на РК"</value>
+    <value>Пожалуйста, укажите заголовок задания на резервное копирование через аргумент коммандной строки "{0}Мой заголовок задания на РК"
+Пример: backup.exe "{0}Мой заголовок задания на РК"</value>
   </data>
   <data name="TherereNoBackupTaskWithTitle0" xml:space="preserve">
     <value>Задания на резервное копирование с заголовком "{0}" не существует.</value>

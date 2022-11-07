@@ -59,7 +59,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="UsageVariantsNNbackupExeTaskMyTaskTitleNRunningWithoutParametersOutputsInformationToConsoleNNbackupExeTaskMyTask1TitleTaskMyTask2TitleTaskMyTask3TitleNRunsSeveralTasksOneByOneNNbackupExeTaskMyTaskTitleUsefilelogNOutputsInformationInFileLogNNbackupExeTaskMyTaskTitleShutdownNbackupExeTaskMyTaskTitleLogoffNbackupExeTaskMyTaskTitleSuspendNbackupExeTaskMyTaskTitleRebootNbackupExeTaskMyTaskTitleHibernateNNbackupExeHelpNOutputsBriefHelpN" xml:space="preserve">
-    <value>Выкарыстанне\n\nbackupconsole.exe\n   Пуск без параметрау. Выводзиць инфармацыю у кансоль\n\nbackupconsole.exe -DoOutputInLogs\n   Выводзиць инфармацыю у лог\n\nbackupconsole.exe -Shutdown\nbackupconsole.exe -LogOff \nbackupconsole.exe -Suspend \nbackupconsole.exe -Reboot\nbackupconsole.exe -Hibernate \n\nbackupconsole.exe -Help\n   Выводзиць кароткую дапамогу</value>
+    <value>Выкарыстанне
+
+backupconsole.exe
+   Пуск без параметрау. Выводзиць инфармацыю у кансоль
+
+backupconsole.exe -DoOutputInLogs
+   Выводзиць инфармацыю у лог
+
+backupconsole.exe -Shutdown
+backupconsole.exe -LogOff 
+backupconsole.exe -Suspend 
+backupconsole.exe -Reboot
+backupconsole.exe -Hibernate 
+
+backupconsole.exe -Help
+   Выводзиць кароткую дапамогу</value>
   </data>
   <data name="ErrorInvalidCommandParametersSpecified" xml:space="preserve">
     <value>Памылка: некаррэктны параметр пазначаны!!!</value>
@@ -71,7 +86,8 @@
     <value>Не магу адчыниць файл з логам з-за крытычнай памылки {0}</value>
   </data>
   <data name="PleaseSpecifyTheBackupTaskTitleUsingTheCommandLineArgument0MyBackupTaskTitleNexampleBackupExe0MyBackupTitle" xml:space="preserve">
-    <value>Please, specify the backup task title using the command line argument "{0}My backup task title"\nExample: backup.exe "{0}My backup title"</value>
+    <value>Please, specify the backup task title using the command line argument "{0}My backup task title"
+Example: backup.exe "{0}My backup title"</value>
   </data>
   <data name="TherereNoBackupTaskWithTitle0" xml:space="preserve">
     <value>There're no backup task with title '{0}'.</value>

@@ -217,7 +217,12 @@
     <value>About</value>
   </data>
   <data name="UtilityForCreatingBackupsNNwebSitesHttpsGithubComDrweb86ButilNNlocalizationCreatedByN" xml:space="preserve">
-    <value>utility for creating backups.\n\nWeb-sites: https://github.com/drweb86/butil\n\nLocalization created by:\n</value>
+    <value>utility for creating backups.
+
+Web-sites: https://github.com/drweb86/butil
+
+Localization created by:
+</value>
   </data>
   <data name="AddsTheNewBackupTask" xml:space="preserve">
     <value>Adds the new backup task...</value>
@@ -295,7 +300,8 @@
     <value>The best choice is "low" in almost all cases</value>
   </data>
   <data name="CannotExecuteRequiredManipulationsWithServerN" xml:space="preserve">
-    <value>Cannot execute required manipulations with server\n</value>
+    <value>Cannot execute required manipulations with server
+</value>
   </data>
   <data name="HddStorageConfiguration" xml:space="preserve">
     <value>HDD Storage Configuration</value>
@@ -325,7 +331,8 @@
     <value>Storage name:</value>
   </data>
   <data name="_1BackupShouldBePasswordProtectedIfNotProgramWillSkipItsCopyingToThisStorageN2YourAuthorizationInformationIsGoingOverTheNetworkInUnprotectedModeAsPlainText" xml:space="preserve">
-    <value>1. Backup should be password protected. If NOT, program will SKIP its copying to this storage\n2. Your authorization information is going over the network in UNPROTECTED mode(as plain text).</value>
+    <value>1. Backup should be password protected. If NOT, program will SKIP its copying to this storage
+2. Your authorization information is going over the network in UNPROTECTED mode(as plain text).</value>
   </data>
   <data name="DestinationFolder" xml:space="preserve">
     <value>Destination folder</value>
@@ -436,7 +443,9 @@
     <value>Scheduling</value>
   </data>
   <data name="ImportantNNbackupShouldBePasswordProtectedIfNotProgramWillSkipItsCopyingToThisStorage" xml:space="preserve">
-    <value>Important:\n\nBackup should be password protected. If NOT, program will SKIP its copying to this storage</value>
+    <value>Important:
+
+Backup should be password protected. If NOT, program will SKIP its copying to this storage</value>
   </data>
   <data name="Hdd" xml:space="preserve">
     <value>HDD</value>
@@ -448,16 +457,22 @@
     <value>Network storages</value>
   </data>
   <data name="IfYouChooseSomethingOtherThanDoNothingNprogramWillConfigureOsToShowYouReportNonNextYourLogonToTheSystemIfAnyErrorsNorWarningsWillBeRegisteredDuringTheBackup" xml:space="preserve">
-    <value>If you choose something other than 'do nothing' \nprogram will configure OS to show you report\non next your logon to the system if any errors \nor warnings will be registered during the backup</value>
+    <value>If you choose something other than 'do nothing' 
+program will configure OS to show you report
+on next your logon to the system if any errors 
+or warnings will be registered during the backup</value>
   </data>
   <data name="PleaseWait" xml:space="preserve">
     <value>Please wait...</value>
   </data>
   <data name="AdditionalEncryptionUnderYourLocalSystemAccountNrequiresNtfsFileSystemAndWin2kOsOnRemoteMachineBackupDataWillBeAvailableOnlyForYourOsAccountSeeDocumentationForDetails" xml:space="preserve">
-    <value>Additional encryption under your local system account. \nRequires NTFS file system and win2k OS on remote machine. Backup data will be available only for your OS account. See documentation for details</value>
+    <value>Additional encryption under your local system account. 
+Requires NTFS file system and win2k OS on remote machine. Backup data will be available only for your OS account. See documentation for details</value>
   </data>
   <data name="WhileBackupIsInProgressYouCanContinueWorkNNtoRestoreProgressFormJustClickOnThisIconInTray" xml:space="preserve">
-    <value>While backup is in progress you can continue work. \n\nTo restore progress form just click on this icon in tray</value>
+    <value>While backup is in progress you can continue work. 
+
+To restore progress form just click on this icon in tray</value>
   </data>
   <data name="SkipCopyingAndWriteAWarningIntoLogIfBackupExceeds" xml:space="preserve">
     <value>Skip copying and write a warning into log if backup exceeds</value>
@@ -481,10 +496,14 @@
     <value>Backup is in progress...</value>
   </data>
   <data name="ThereAreNoItemsToBackupNNyouCanSpecifyTheDataToBackupInConfiguratorInWhatSettingsGroup" xml:space="preserve">
-    <value>There are no items to backup!\n\nYou can specify the data to backup in Configurator in 'What' settings group.</value>
+    <value>There are no items to backup!
+
+You can specify the data to backup in Configurator in 'What' settings group.</value>
   </data>
   <data name="ThereAreNoSpecifiedPlacesWhereToStoreBackupNNyouCanAddSomeStoragesInConfiguratorInWhereSettingsGroup" xml:space="preserve">
-    <value>There are no specified places where to store backup!\n\nYou can add some storages in Configurator in 'Where' settings group.</value>
+    <value>There are no specified places where to store backup!
+
+You can add some storages in Configurator in 'Where' settings group.</value>
   </data>
   <data name="HereYouMayAddFoldersAndFilesYouWantToBackup" xml:space="preserve">
     <value>Here you may add folders and files you want to backup</value>
@@ -508,7 +527,12 @@
     <value>Check For Updates...</value>
   </data>
   <data name="New0VersionIsAvailableNNchangesAreN1NNprogramWillNowOpenBrowserWithTheDownloadPage" xml:space="preserve">
-    <value>New {0} version is available.\n\nChanges are:\n{1}\n\nProgram will now open browser with the download page</value>
+    <value>New {0} version is available.
+
+Changes are:
+{1}
+
+Program will now open browser with the download page</value>
   </data>
   <data name="YouHaveTheLatestVersion" xml:space="preserve">
     <value>You have the latest version!</value>
@@ -580,10 +604,16 @@
     <value>Amount of 7-zip processes to run synchronously:</value>
   </data>
   <data name="ButilSoftwarePackageComponent0IsMissingNNpleaseReinstallApplicationNNrestorationBackupAndHelpFunctionsWillBeUnavailable" xml:space="preserve">
-    <value>BUtil software package component '{0}' is missing.\n\nPlease reinstall application.\n\nRestoration, Backup and Help functions will be unavailable.</value>
+    <value>BUtil software package component '{0}' is missing.
+
+Please reinstall application.
+
+Restoration, Backup and Help functions will be unavailable.</value>
   </data>
   <data name="InvalidArgumentSPassedToTheProgramNNpleaseReferToManualForTheCompleteListOfParameters" xml:space="preserve">
-    <value>Invalid argument(s) passed to the program.\n\nPlease refer to manual for the complete list of parameters!</value>
+    <value>Invalid argument(s) passed to the program.
+
+Please refer to manual for the complete list of parameters!</value>
   </data>
   <data name="NewEventTaskConfigurator" xml:space="preserve">
     <value>New Event Task - Configurator</value>

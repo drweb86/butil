@@ -158,7 +158,12 @@
     <value>О программе</value>
   </data>
   <data name="UtilityForCreatingBackupsNNwebSitesHttpsGithubComDrweb86ButilNNlocalizationCreatedByN" xml:space="preserve">
-    <value>утилита резервного копирования\n\nВеб-сайты: https://github.com/drweb86/butil\n\nПеревод на текущий язык сделан:\n</value>
+    <value>утилита резервного копирования
+
+Веб-сайты: https://github.com/drweb86/butil
+
+Перевод на текущий язык сделан:
+</value>
   </data>
   <data name="AddsTheNewBackupTask" xml:space="preserve">
     <value>Добавляет новое задание РК...</value>
@@ -266,7 +271,8 @@
     <value>Заголовок:</value>
   </data>
   <data name="_1BackupShouldBePasswordProtectedIfNotProgramWillSkipItsCopyingToThisStorageN2YourAuthorizationInformationIsGoingOverTheNetworkInUnprotectedModeAsPlainText" xml:space="preserve">
-    <value>1. Резервная копия должна быть защищена паролем. Если НЕ БУДЕТ, программа ПРОПУСТИТ копирование в это хранилище\n2. Ваши авторизационные данные в открытом виде будут распространятся по сети в незащищенном виде.</value>
+    <value>1. Резервная копия должна быть защищена паролем. Если НЕ БУДЕТ, программа ПРОПУСТИТ копирование в это хранилище
+2. Ваши авторизационные данные в открытом виде будут распространятся по сети в незащищенном виде.</value>
   </data>
   <data name="DestinationFolder" xml:space="preserve">
     <value>Папка назначения</value>
@@ -377,7 +383,9 @@
     <value>Планировщик</value>
   </data>
   <data name="ImportantNNbackupShouldBePasswordProtectedIfNotProgramWillSkipItsCopyingToThisStorage" xml:space="preserve">
-    <value>Внимание:\n\nРезервная копия должна быть защищена паролем. Если НЕ БУДЕТ - то программа ПРОПУСТИТ копирование данных в такое хранилище</value>
+    <value>Внимание:
+
+Резервная копия должна быть защищена паролем. Если НЕ БУДЕТ - то программа ПРОПУСТИТ копирование данных в такое хранилище</value>
   </data>
   <data name="Hdd" xml:space="preserve">
     <value>Жесткий диск</value>
@@ -389,16 +397,22 @@
     <value>Сеть</value>
   </data>
   <data name="IfYouChooseSomethingOtherThanDoNothingNprogramWillConfigureOsToShowYouReportNonNextYourLogonToTheSystemIfAnyErrorsNorWarningsWillBeRegisteredDuringTheBackup" xml:space="preserve">
-    <value>Если вы выберите что-либо кроме "ничего не делала", программа \nнастроит ОС таким образом, чтобы был показан отчет об РК\nпри следующим вашем входе в систему если \nбудут зарегестрированы ошибки или предупреждения.</value>
+    <value>Если вы выберите что-либо кроме "ничего не делала", программа 
+настроит ОС таким образом, чтобы был показан отчет об РК
+при следующим вашем входе в систему если 
+будут зарегестрированы ошибки или предупреждения.</value>
   </data>
   <data name="PleaseWait" xml:space="preserve">
     <value>Подождите, пожалуйста...</value>
   </data>
   <data name="AdditionalEncryptionUnderYourLocalSystemAccountNrequiresNtfsFileSystemAndWin2kOsOnRemoteMachineBackupDataWillBeAvailableOnlyForYourOsAccountSeeDocumentationForDetails" xml:space="preserve">
-    <value>Дополнительное шифрование под вашей учетной записью.\nТребует наличия файловой системы NTFS и Win2k на удаленной машине. Резервная копия будет доступна только вашей учетной записи. Смотрите документацию для подробностей</value>
+    <value>Дополнительное шифрование под вашей учетной записью.
+Требует наличия файловой системы NTFS и Win2k на удаленной машине. Резервная копия будет доступна только вашей учетной записи. Смотрите документацию для подробностей</value>
   </data>
   <data name="WhileBackupIsInProgressYouCanContinueWorkNNtoRestoreProgressFormJustClickOnThisIconInTray" xml:space="preserve">
-    <value>Пока создается резервная копия, вы можете продолжить работу\n\nЧтобы отобразить форму, кликните по иконке в трее</value>
+    <value>Пока создается резервная копия, вы можете продолжить работу
+
+Чтобы отобразить форму, кликните по иконке в трее</value>
   </data>
   <data name="SkipCopyingAndWriteAWarningIntoLogIfBackupExceeds" xml:space="preserve">
     <value>Не копировать и заносить предупреждение в лог, если размер резервной копии превысит</value>
@@ -422,10 +436,14 @@
     <value>Идет резервное копирование...</value>
   </data>
   <data name="ThereAreNoItemsToBackupNNyouCanSpecifyTheDataToBackupInConfiguratorInWhatSettingsGroup" xml:space="preserve">
-    <value>Не указаны объекты для резервного копирования!\n\nЧтобы указать их, запустите Конфигуратор и добавьте файлы и папки в вкладке "Что?"</value>
+    <value>Не указаны объекты для резервного копирования!
+
+Чтобы указать их, запустите Конфигуратор и добавьте файлы и папки в вкладке "Что?"</value>
   </data>
   <data name="ThereAreNoSpecifiedPlacesWhereToStoreBackupNNyouCanAddSomeStoragesInConfiguratorInWhereSettingsGroup" xml:space="preserve">
-    <value>Не указано ни одно хранилище данных для резервных копий!\n\nЧтобы указать хранилище, запустите Конфигуратор и во вкладке "Куда?" добавьте минимум одно хранилище.</value>
+    <value>Не указано ни одно хранилище данных для резервных копий!
+
+Чтобы указать хранилище, запустите Конфигуратор и во вкладке "Куда?" добавьте минимум одно хранилище.</value>
   </data>
   <data name="HereYouMayAddFoldersAndFilesYouWantToBackup" xml:space="preserve">
     <value>Сюда можете добавлять файлы и папки, предназначенные для резервного копирования</value>
@@ -449,7 +467,12 @@
     <value>Проверить обновления...</value>
   </data>
   <data name="New0VersionIsAvailableNNchangesAreN1NNprogramWillNowOpenBrowserWithTheDownloadPage" xml:space="preserve">
-    <value>Доступна новая {0} версия.\n\nВ этой версии:\n{1}\n\nСейчас программа откроет броузер со страничкой загрузки программы</value>
+    <value>Доступна новая {0} версия.
+
+В этой версии:
+{1}
+
+Сейчас программа откроет броузер со страничкой загрузки программы</value>
   </data>
   <data name="YouHaveTheLatestVersion" xml:space="preserve">
     <value>У вас последняя версия!</value>
@@ -524,10 +547,16 @@
     <value>Количество процессов 7-zip, которые запускать одновременно:</value>
   </data>
   <data name="ButilSoftwarePackageComponent0IsMissingNNpleaseReinstallApplicationNNrestorationBackupAndHelpFunctionsWillBeUnavailable" xml:space="preserve">
-    <value>Компонент приложения BUtil "{0}" не найден.\n\nПожалуйста, переустановите приложение.\n\nФункции Восстановления, Резервного копирования и Помощи будут недоступны.</value>
+    <value>Компонент приложения BUtil "{0}" не найден.
+
+Пожалуйста, переустановите приложение.
+
+Функции Восстановления, Резервного копирования и Помощи будут недоступны.</value>
   </data>
   <data name="InvalidArgumentSPassedToTheProgramNNpleaseReferToManualForTheCompleteListOfParameters" xml:space="preserve">
-    <value>Неверные аргументы переданы программе.\n\nОбратитесь к руководству пользователя, если хотите посмотреть весь список корректных аргументов!</value>
+    <value>Неверные аргументы переданы программе.
+
+Обратитесь к руководству пользователя, если хотите посмотреть весь список корректных аргументов!</value>
   </data>
   <data name="NewEventTaskConfigurator" xml:space="preserve">
     <value>Новое задание - Конфигуратор</value>

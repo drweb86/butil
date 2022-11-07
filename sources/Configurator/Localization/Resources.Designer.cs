@@ -97,7 +97,8 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1. Backup should be password protected. If NOT, program will SKIP its copying to this storage\n2. Your authorization information is going over the network in UNPROTECTED mode(as plain text)..
+        ///   Looks up a localized string similar to 1. Backup should be password protected. If NOT, program will SKIP its copying to this storage
+        ///2. Your authorization information is going over the network in UNPROTECTED mode(as plain text)..
         /// </summary>
         internal static string _1BackupShouldBePasswordProtectedIfNotProgramWillSkipItsCopyingToThisStorageN2YourAuthorizationInformationIsGoingOverTheNetworkInUnprotectedModeAsPlainText {
             get {
@@ -170,7 +171,8 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Additional encryption under your local system account. \nRequires NTFS file system and win2k OS on remote machine. Backup data will be available only for your OS account. See documentation for details.
+        ///   Looks up a localized string similar to Additional encryption under your local system account. 
+        ///Requires NTFS file system and win2k OS on remote machine. Backup data will be available only for your OS account. See documentation for details.
         /// </summary>
         internal static string AdditionalEncryptionUnderYourLocalSystemAccountNrequiresNtfsFileSystemAndWin2kOsOnRemoteMachineBackupDataWillBeAvailableOnlyForYourOsAccountSeeDocumentationForDetails {
             get {
@@ -352,7 +354,11 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to BUtil software package component &apos;{0}&apos; is missing.\n\nPlease reinstall application.\n\nRestoration, Backup and Help functions will be unavailable..
+        ///   Looks up a localized string similar to BUtil software package component &apos;{0}&apos; is missing.
+        ///
+        ///Please reinstall application.
+        ///
+        ///Restoration, Backup and Help functions will be unavailable..
         /// </summary>
         internal static string ButilSoftwarePackageComponent0IsMissingNNpleaseReinstallApplicationNNrestorationBackupAndHelpFunctionsWillBeUnavailable {
             get {
@@ -371,7 +377,8 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cannot execute required manipulations with server\n.
+        ///   Looks up a localized string similar to Cannot execute required manipulations with server
+        ///.
         /// </summary>
         internal static string CannotExecuteRequiredManipulationsWithServerN {
             get {
@@ -905,7 +912,10 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If you choose something other than &apos;do nothing&apos; \nprogram will configure OS to show you report\non next your logon to the system if any errors \nor warnings will be registered during the backup.
+        ///   Looks up a localized string similar to If you choose something other than &apos;do nothing&apos; 
+        ///program will configure OS to show you report
+        ///on next your logon to the system if any errors 
+        ///or warnings will be registered during the backup.
         /// </summary>
         internal static string IfYouChooseSomethingOtherThanDoNothingNprogramWillConfigureOsToShowYouReportNonNextYourLogonToTheSystemIfAnyErrorsNorWarningsWillBeRegisteredDuringTheBackup {
             get {
@@ -924,7 +934,9 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Important:\n\nBackup should be password protected. If NOT, program will SKIP its copying to this storage.
+        ///   Looks up a localized string similar to Important:
+        ///
+        ///Backup should be password protected. If NOT, program will SKIP its copying to this storage.
         /// </summary>
         internal static string ImportantNNbackupShouldBePasswordProtectedIfNotProgramWillSkipItsCopyingToThisStorage {
             get {
@@ -971,7 +983,9 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid argument(s) passed to the program.\n\nPlease refer to manual for the complete list of parameters!.
+        ///   Looks up a localized string similar to Invalid argument(s) passed to the program.
+        ///
+        ///Please refer to manual for the complete list of parameters!.
         /// </summary>
         internal static string InvalidArgumentSPassedToTheProgramNNpleaseReferToManualForTheCompleteListOfParameters {
             get {
@@ -1134,7 +1148,12 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New {0} version is available.\n\nChanges are:\n{1}\n\nProgram will now open browser with the download page.
+        ///   Looks up a localized string similar to New {0} version is available.
+        ///
+        ///Changes are:
+        ///{1}
+        ///
+        ///Program will now open browser with the download page.
         /// </summary>
         internal static string New0VersionIsAvailableNNchangesAreN1NNprogramWillNowOpenBrowserWithTheDownloadPage {
             get {
@@ -1622,7 +1641,9 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There are no items to backup!\n\nYou can specify the data to backup in Configurator in &apos;What&apos; settings group..
+        ///   Looks up a localized string similar to There are no items to backup!
+        ///
+        ///You can specify the data to backup in Configurator in &apos;What&apos; settings group..
         /// </summary>
         internal static string ThereAreNoItemsToBackupNNyouCanSpecifyTheDataToBackupInConfiguratorInWhatSettingsGroup {
             get {
@@ -1632,7 +1653,9 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There are no specified places where to store backup!\n\nYou can add some storages in Configurator in &apos;Where&apos; settings group..
+        ///   Looks up a localized string similar to There are no specified places where to store backup!
+        ///
+        ///You can add some storages in Configurator in &apos;Where&apos; settings group..
         /// </summary>
         internal static string ThereAreNoSpecifiedPlacesWhereToStoreBackupNNyouCanAddSomeStoragesInConfiguratorInWhereSettingsGroup {
             get {
@@ -1723,7 +1746,12 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to utility for creating backups.\n\nWeb-sites: https://github.com/drweb86/butil\n\nLocalization created by:\n.
+        ///   Looks up a localized string similar to utility for creating backups.
+        ///
+        ///Web-sites: https://github.com/drweb86/butil
+        ///
+        ///Localization created by:
+        ///.
         /// </summary>
         internal static string UtilityForCreatingBackupsNNwebSitesHttpsGithubComDrweb86ButilNNlocalizationCreatedByN {
             get {
@@ -1823,7 +1851,9 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to While backup is in progress you can continue work. \n\nTo restore progress form just click on this icon in tray.
+        ///   Looks up a localized string similar to While backup is in progress you can continue work. 
+        ///
+        ///To restore progress form just click on this icon in tray.
         /// </summary>
         internal static string WhileBackupIsInProgressYouCanContinueWorkNNtoRestoreProgressFormJustClickOnThisIconInTray {
             get {

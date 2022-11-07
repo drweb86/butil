@@ -139,7 +139,8 @@
     <value>Длина пароля:</value>
   </data>
   <data name="NotePasswordLengthShouldBeMoreThan20CharactersAndLessThan257CharactersRN" xml:space="preserve">
-    <value>Обратите внимание: длина пароля должна быть от 20 до 255 символов\n</value>
+    <value>Обратите внимание: длина пароля должна быть от 20 до 255 символов
+</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Настройки</value>
@@ -151,7 +152,9 @@
     <value>Ошибка - BUtil</value>
   </data>
   <data name="PasswordIsInvalidNNitWasResetedN" xml:space="preserve">
-    <value>Некорректный пароль.\n\nПароль сброшен</value>
+    <value>Некорректный пароль.
+
+Пароль сброшен</value>
   </data>
   <data name="InformationButil" xml:space="preserve">
     <value>Информация - BUtil</value>
@@ -244,10 +247,16 @@
     <value>Отчет о резервном копировании</value>
   </data>
   <data name="ButilSoftwarePackage7ZipComponent0HasInvalidCheckSummNprobablyItWasDamagedByVirusesNNyouShouldReinstallApplicationNNrestorationAndBackupFunctionsWillBeUnavailable" xml:space="preserve">
-    <value>Контрольная сумма Файла "{0}" компонента приложения BUtil 7-zip изменилась. \nВероятно, файл поврежден вирусами. \n\nВам нужно переустановить приложение.\n\nФункции восстановления и резервного копирования будут недоступны.</value>
+    <value>Контрольная сумма Файла "{0}" компонента приложения BUtil 7-zip изменилась. 
+Вероятно, файл поврежден вирусами. 
+
+Вам нужно переустановить приложение.
+
+Функции восстановления и резервного копирования будут недоступны.</value>
   </data>
   <data name="CoultNotRun0DueToN1" xml:space="preserve">
-    <value>Не получается запустить "{0}", поскольку:\n{1}</value>
+    <value>Не получается запустить "{0}", поскольку:
+{1}</value>
   </data>
   <data name="PasswordContainsForbiddenCharactersPleaseRemoveSpaces" xml:space="preserve">
     <value>В пароле содержатся запрещенные символы! Пожалуйста, уберите пробелы</value>
@@ -259,7 +268,13 @@
     <value>Подтверждение не идентично введенному паролю</value>
   </data>
   <data name="AnUnexpectedErrorOccuredNNpleaseContactTheDevelopersWithInformationSavedOnYourDesktopInN0NNapplicationWillNowClose" xml:space="preserve">
-    <value>В приложении произошла непредвиденная ошибка\n\nВы можете улучшить качество приложения, передав информацию, сохраненную на рабочем столе в файле\n"{0}"\nразработчикам\n\nПриложение сейчас завершит свою работу</value>
+    <value>В приложении произошла непредвиденная ошибка
+
+Вы можете улучшить качество приложения, передав информацию, сохраненную на рабочем столе в файле
+"{0}"
+разработчикам
+
+Приложение сейчас завершит свою работу</value>
   </data>
   <data name="BeforeBackupTask" xml:space="preserve">
     <value>Задание ДО резервного копирования:</value>
