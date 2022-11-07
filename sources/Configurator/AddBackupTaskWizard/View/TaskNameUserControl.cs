@@ -20,7 +20,7 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
 
         public override void ApplyLocalization()
         {
-            _titleLabel.Text = Resources.Title;
+            _nameLabel.Text = Resources.Name;
         }
 
         public override void SetOptionsToUi(object settings)

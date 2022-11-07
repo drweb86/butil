@@ -718,4 +718,7 @@ In this case you can restore data by copying required files by your favourite fi
   <data name="IncrementalBackupDescription" xml:space="preserve">
     <value>The most basic form of incremental backup consists of identifying, recording and thus, preserving only those files that have changed since the last backup. Since changes are typically low, incremental backups are much smaller and quicker than full backups. For instance, following a full backup on Friday, a Monday backup will contain only those files that changed since Friday. A Tuesday backup contains only those files that changed since Monday, and so on. A full restoration of data will naturally be slower, since all increments must be restored. Should any one of the copies created fail, including the first (full), restoration will be incomplete.</value>
   </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
 </root>

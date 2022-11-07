@@ -11,17 +11,8 @@ namespace BUtil.Configurator.Configurator.Controls
 {
     internal delegate bool RequestToSaveOptions();
 
-    /// <summary>
-    /// Manages the tasks
-    /// </summary>
     public partial class BackupTasksUserControl : Core.PL.BackUserControl
     {
-        #region Constructors
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BackupTasksUserControl"/> class.
-        /// </summary>
-        /// <param name="controller">The controller.</param>
         public BackupTasksUserControl(ConfiguratorController controller)
         {
             InitializeComponent();
@@ -31,13 +22,7 @@ namespace BUtil.Configurator.Configurator.Controls
             OnTasksListViewResize(this, null);
         }
 
-        #endregion
-
-        #region Properties
-
         internal RequestToSaveOptions OnRequestToSaveOptions;
-
-        #endregion
 
         #region Public Methods
 
@@ -53,7 +38,7 @@ namespace BUtil.Configurator.Configurator.Controls
             _editToolStripMenuItem.Text=Resources.Modify;
             _executeToolStripMenuItem.Text = Resources.Run;
 
-            titleColumnHeader.Text = Resources.Title;
+            _nameColumn.Text = Resources.Name;
         }
 
         public override void SetOptionsToUi(object settings)
@@ -183,7 +168,7 @@ namespace BUtil.Configurator.Configurator.Controls
 
         private void OnTasksListViewResize(object sender, EventArgs e)
         {
-            titleColumnHeader.Width = _tasksListView.Width > DisplacementToBorder ? _tasksListView.Width - DisplacementToBorder : DisplacementToBorder;
+            _nameColumn.Width = _tasksListView.Width > DisplacementToBorder ? _tasksListView.Width - DisplacementToBorder : DisplacementToBorder;
         }
 
         #endregion

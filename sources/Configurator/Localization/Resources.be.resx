@@ -637,4 +637,7 @@
   <data name="TranslationAuthor" xml:space="preserve">
     <value>Copyright (c) 2009 Siarhei Kuchuk, Cuchuk.Sergey@gmail.com</value>
   </data>
+  <data name="Name" xml:space="preserve">
+    <value>Iмя</value>
+  </data>
 </root>

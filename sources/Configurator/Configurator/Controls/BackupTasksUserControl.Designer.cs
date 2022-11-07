@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BackupTasksUserControl));
             this._tasksListView = new System.Windows.Forms.ListView();
-            this.titleColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this._nameColumn = new System.Windows.Forms.ColumnHeader();
             this._contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this._executeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,17 +48,18 @@
             // 
             // _tasksListView
             // 
-            this._tasksListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this._tasksListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this._tasksListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.titleColumnHeader});
+            this._nameColumn});
             this._tasksListView.ContextMenuStrip = this._contextMenuStrip;
             this._tasksListView.FullRowSelect = true;
             this._tasksListView.LargeImageList = this._imageList;
-            this._tasksListView.Location = new System.Drawing.Point(3, 3);
+            this._tasksListView.Location = new System.Drawing.Point(4, 3);
+            this._tasksListView.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this._tasksListView.Name = "_tasksListView";
-            this._tasksListView.Size = new System.Drawing.Size(459, 283);
+            this._tasksListView.Size = new System.Drawing.Size(535, 326);
             this._tasksListView.SmallImageList = this._imageList;
             this._tasksListView.TabIndex = 0;
             this._tasksListView.UseCompatibleStateImageBehavior = false;
@@ -67,10 +68,10 @@
             this._tasksListView.DoubleClick += new System.EventHandler(this.OnEditBackupTask);
             this._tasksListView.Resize += new System.EventHandler(this.OnTasksListViewResize);
             // 
-            // titleColumnHeader
+            // _nameColumn
             // 
-            this.titleColumnHeader.Text = "Title";
-            this.titleColumnHeader.Width = 434;
+            this._nameColumn.Text = "Name";
+            this._nameColumn.Width = 434;
             // 
             // _contextMenuStrip
             // 
@@ -81,13 +82,13 @@
             this.toolStripSeparator1,
             this._removeToolStripMenuItem});
             this._contextMenuStrip.Name = "_contextMenuStrip";
-            this._contextMenuStrip.Size = new System.Drawing.Size(124, 98);
+            this._contextMenuStrip.Size = new System.Drawing.Size(125, 98);
             // 
             // _executeToolStripMenuItem
             // 
             this._executeToolStripMenuItem.Image = global::BUtil.Configurator.Icons.Start;
             this._executeToolStripMenuItem.Name = "_executeToolStripMenuItem";
-            this._executeToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this._executeToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this._executeToolStripMenuItem.Text = "Execute...";
             this._executeToolStripMenuItem.Click += new System.EventHandler(this.ExecuteRequest);
             // 
@@ -95,7 +96,7 @@
             // 
             this._addToolStripMenuItem.Image = global::BUtil.Configurator.Icons.Add;
             this._addToolStripMenuItem.Name = "_addToolStripMenuItem";
-            this._addToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this._addToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this._addToolStripMenuItem.Text = "Add...";
             this._addToolStripMenuItem.Click += new System.EventHandler(this.AddTaskRequest);
             // 
@@ -103,25 +104,26 @@
             // 
             this._editToolStripMenuItem.Image = global::BUtil.Configurator.Icons.OtherOptions48x48;
             this._editToolStripMenuItem.Name = "_editToolStripMenuItem";
-            this._editToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this._editToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this._editToolStripMenuItem.Text = "Edit...";
             this._editToolStripMenuItem.Click += new System.EventHandler(this.OnEditBackupTask);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(120, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(121, 6);
             // 
             // _removeToolStripMenuItem
             // 
             this._removeToolStripMenuItem.Image = global::BUtil.Configurator.Icons.removeFromListToolStripMenuItem_Image;
             this._removeToolStripMenuItem.Name = "_removeToolStripMenuItem";
-            this._removeToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this._removeToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this._removeToolStripMenuItem.Text = "Remove";
             this._removeToolStripMenuItem.Click += new System.EventHandler(this.RemoveTaskRequest);
             // 
             // _imageList
             // 
+            this._imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this._imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("_imageList.ImageStream")));
             this._imageList.TransparentColor = System.Drawing.Color.Transparent;
             this._imageList.Images.SetKeyName(0, "BackupTask16x16.png");
@@ -130,9 +132,10 @@
             // 
             this._executeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._executeButton.Image = global::BUtil.Configurator.Icons.Start48x48;
-            this._executeButton.Location = new System.Drawing.Point(468, 5);
+            this._executeButton.Location = new System.Drawing.Point(546, 6);
+            this._executeButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this._executeButton.Name = "_executeButton";
-            this._executeButton.Size = new System.Drawing.Size(61, 58);
+            this._executeButton.Size = new System.Drawing.Size(71, 67);
             this._executeButton.TabIndex = 1;
             this._executeButton.UseVisualStyleBackColor = true;
             this._executeButton.Click += new System.EventHandler(this.ExecuteRequest);
@@ -141,9 +144,10 @@
             // 
             this._addButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._addButton.Image = global::BUtil.Configurator.Icons.add_48;
-            this._addButton.Location = new System.Drawing.Point(468, 69);
+            this._addButton.Location = new System.Drawing.Point(546, 80);
+            this._addButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this._addButton.Name = "_addButton";
-            this._addButton.Size = new System.Drawing.Size(61, 58);
+            this._addButton.Size = new System.Drawing.Size(71, 67);
             this._addButton.TabIndex = 2;
             this._addButton.UseVisualStyleBackColor = true;
             this._addButton.Click += new System.EventHandler(this.AddTaskRequest);
@@ -152,9 +156,10 @@
             // 
             this._removeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._removeButton.Image = global::BUtil.Configurator.Icons.cross_48;
-            this._removeButton.Location = new System.Drawing.Point(468, 197);
+            this._removeButton.Location = new System.Drawing.Point(546, 227);
+            this._removeButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this._removeButton.Name = "_removeButton";
-            this._removeButton.Size = new System.Drawing.Size(61, 58);
+            this._removeButton.Size = new System.Drawing.Size(71, 67);
             this._removeButton.TabIndex = 4;
             this._removeButton.UseVisualStyleBackColor = true;
             this._removeButton.Click += new System.EventHandler(this.RemoveTaskRequest);
@@ -163,24 +168,26 @@
             // 
             this._editButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._editButton.Image = global::BUtil.Configurator.Icons.OtherOptions48x48;
-            this._editButton.Location = new System.Drawing.Point(468, 133);
+            this._editButton.Location = new System.Drawing.Point(546, 153);
+            this._editButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this._editButton.Name = "_editButton";
-            this._editButton.Size = new System.Drawing.Size(61, 58);
+            this._editButton.Size = new System.Drawing.Size(71, 67);
             this._editButton.TabIndex = 3;
             this._editButton.UseVisualStyleBackColor = true;
             this._editButton.Click += new System.EventHandler(this.OnEditBackupTask);
             // 
             // BackupTasksUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this._removeButton);
             this.Controls.Add(this._editButton);
             this.Controls.Add(this._executeButton);
             this.Controls.Add(this._addButton);
             this.Controls.Add(this._tasksListView);
+            this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.Name = "BackupTasksUserControl";
-            this.Size = new System.Drawing.Size(534, 289);
+            this.Size = new System.Drawing.Size(623, 333);
             this._contextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -197,7 +204,7 @@
         private System.Windows.Forms.ToolStripMenuItem _editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem _removeToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ColumnHeader titleColumnHeader;
+        private System.Windows.Forms.ColumnHeader _nameColumn;
         private System.Windows.Forms.ImageList _imageList;
         private System.Windows.Forms.ToolStripMenuItem _executeToolStripMenuItem;
         private System.Windows.Forms.Button _executeButton;

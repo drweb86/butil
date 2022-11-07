@@ -39,8 +39,6 @@ namespace BUtil.Configurator.Configurator.Forms
             this.helpToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.optionsHeader = new BUtil.Configurator.Controls.OptionsHeader();
             this.nestingControlsPanel = new System.Windows.Forms.Panel();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.okButton = new System.Windows.Forms.Button();
             this.helpStatusStrip = new System.Windows.Forms.StatusStrip();
             this.MainmenuStrip.SuspendLayout();
             this.helpStatusStrip.SuspendLayout();
@@ -99,20 +97,20 @@ namespace BUtil.Configurator.Configurator.Forms
             this.helpToolStripMenuItem.Image = global::BUtil.Configurator.Icons.Lamp48x48;
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.helpToolStripMenuItem.Text = "Manual";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.OnHelpToolStripMenuItemClick);
             // 
             // _beforeAboutToolStripSeparator
             // 
             this._beforeAboutToolStripSeparator.Name = "_beforeAboutToolStripSeparator";
-            this._beforeAboutToolStripSeparator.Size = new System.Drawing.Size(177, 6);
+            this._beforeAboutToolStripSeparator.Size = new System.Drawing.Size(130, 6);
             // 
             // _aboutToolStripMenuItem
             // 
             this._aboutToolStripMenuItem.Image = global::BUtil.Configurator.Icons.ProgramInfo48x48;
             this._aboutToolStripMenuItem.Name = "_aboutToolStripMenuItem";
-            this._aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this._aboutToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this._aboutToolStripMenuItem.Text = "About...";
             this._aboutToolStripMenuItem.Click += new System.EventHandler(this.OnAboutToolStripMenuItemClick);
             // 
@@ -164,39 +162,8 @@ namespace BUtil.Configurator.Configurator.Forms
             this.nestingControlsPanel.Location = new System.Drawing.Point(168, 61);
             this.nestingControlsPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.nestingControlsPanel.Name = "nestingControlsPanel";
-            this.nestingControlsPanel.Size = new System.Drawing.Size(665, 470);
+            this.nestingControlsPanel.Size = new System.Drawing.Size(665, 514);
             this.nestingControlsPanel.TabIndex = 1;
-            // 
-            // cancelButton
-            // 
-            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancelButton.AutoSize = true;
-            this.cancelButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Location = new System.Drawing.Point(734, 538);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cancelButton.MinimumSize = new System.Drawing.Size(88, 27);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(88, 27);
-            this.cancelButton.TabIndex = 3;
-            this.cancelButton.Text = "Cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.CancelButtonClick);
-            // 
-            // okButton
-            // 
-            this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.okButton.AutoSize = true;
-            this.okButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.okButton.Location = new System.Drawing.Point(639, 538);
-            this.okButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.okButton.MinimumSize = new System.Drawing.Size(88, 27);
-            this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(88, 27);
-            this.okButton.TabIndex = 2;
-            this.okButton.Text = "OK";
-            this.okButton.UseVisualStyleBackColor = true;
-            this.okButton.Click += new System.EventHandler(this.OkButtonClick);
             // 
             // helpStatusStrip
             // 
@@ -214,11 +181,8 @@ namespace BUtil.Configurator.Configurator.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(835, 603);
             this.Controls.Add(this.helpStatusStrip);
-            this.Controls.Add(this.okButton);
-            this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.nestingControlsPanel);
             this.Controls.Add(this.optionsHeader);
             this.Controls.Add(this.choosePanelUserControl);
@@ -243,8 +207,6 @@ namespace BUtil.Configurator.Configurator.Forms
 		private System.Windows.Forms.ToolStripMenuItem _helpToolStripMenuItem;
 		private System.Windows.Forms.ToolStripStatusLabel helpToolStripStatusLabel;
 		private System.Windows.Forms.StatusStrip helpStatusStrip;
-		private System.Windows.Forms.Button okButton;
-		private System.Windows.Forms.Button cancelButton;
 		private System.Windows.Forms.Panel nestingControlsPanel;
 		private BUtil.Configurator.Controls.OptionsHeader optionsHeader;
         private LeftPanelUserControl choosePanelUserControl;

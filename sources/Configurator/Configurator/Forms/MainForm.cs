@@ -2,7 +2,6 @@ using System;
 using System.Windows.Forms;
 using BUtil.Configurator.Configurator.Controls;
 using BUtil.Configurator.Controls;
-using BUtil.Core.FileSystem;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
 using System.Collections.Generic;
@@ -51,7 +50,6 @@ namespace BUtil.Configurator.Configurator.Forms
 			ChoosePanelUserControlViewChanged(ConfiguratorViewsEnum.Tasks);
 			
 			restorationToolToolStripMenuItem.Enabled = !Program.PackageIsBroken;
-//            helpToolStripMenuItem.Enabled = Program.
 		}
 
         #endregion
@@ -86,7 +84,6 @@ namespace BUtil.Configurator.Configurator.Forms
             
             toolsToolStripMenuItem.Text = Resources.Tasks;
             Text = Resources.Configurator;
-            cancelButton.Text = Resources.Cancel;
             restorationToolToolStripMenuItem.Text = Resources.RestoreData;
             _helpToolStripMenuItem.Text= Resources.Help;
             journalsToolStripMenuItem.Text = Resources.BackupJournals;
@@ -127,15 +124,6 @@ namespace BUtil.Configurator.Configurator.Forms
 			nestingControlsPanel.Controls[0].Dock = DockStyle.Fill;
 			nestingControlsPanel.AutoScrollMinSize = new System.Drawing.Size(_views[newView].MinimumSize.Width, _views[newView].MinimumSize.Height);
 			optionsHeader.Title = choosePanelUserControl.SelectedCategory;
-		}
-		
-		void OkButtonClick(object sender, EventArgs e)
-		{
-			if (SaveOptions())
-			{
-				_skipSavingOnExitRequest = true;
-				Close();
-			}
 		}
 		
 		void CancelButtonClick(object sender, EventArgs e)

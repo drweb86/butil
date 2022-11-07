@@ -1080,6 +1080,15 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        internal static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Network places are not allowed to be added to the list of backup items!.
         /// </summary>
         internal static string NetworkPlacesAreNotAllowedToBeAddedToTheListOfBackupItems {
