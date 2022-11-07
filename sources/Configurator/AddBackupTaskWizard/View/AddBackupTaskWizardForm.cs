@@ -68,8 +68,7 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
 
             _titleLabel.Text = _addBackupTaskWizardView.CurrentPage.Title;
             _descriptionLabel.Text = _addBackupTaskWizardView.CurrentPage.Description;
-            _panel.BackgroundImageLayout = ImageLayout.None;
-            _panel.BackgroundImage = _addBackupTaskWizardView.CurrentPage.Image;
+            _pictureBox.Image = _addBackupTaskWizardView.CurrentPage.Image;
             _containerPanel.Controls.Clear();
             
             var control = _addBackupTaskWizardView.CurrentPage.ControlToShow;
