@@ -39,16 +39,6 @@ namespace BUtil.Configurator
 			_items = items;
 		}
 
-		public void ApplyNewDegreesOfCompression()
-		{
-			_listView.BeginUpdate();
-
-			foreach (CompressionDegree degree in CompressionDegree.GetValues(typeof(CompressionDegree)))
-				_listView.Groups[(int)degree].Header = LocalsHelper.ToString(degree);
-
-			_listView.EndUpdate();
-		}
-
 		public void InitWith()
 		{
 			foreach (SourceItem item in _items)
@@ -66,21 +56,11 @@ namespace BUtil.Configurator
 			{
 				ListViewItem newlistViewItem = new ListViewItem(item.Target);
 				newlistViewItem.ImageIndex = item.IsFolder ? 0 : 1;
-				newlistViewItem.Group = _listView.Groups[(int)item.CompressionDegree];
 
 				_listView.Items.Add(newlistViewItem);
 
 			}
 			_listView.EndUpdate();
-		}
-
-		public void UpdateCompressionLevelForSelectedItems(int newCompressionLevel)
-		{
-			foreach (int index in _listView.SelectedIndices)
-			{
-				_items[index].CompressionDegree = (CompressionDegree)newCompressionLevel;
-			}
-			updateGuiControlHelper();
 		}
 
 		void addItem(SourceItem newItem, bool add)
@@ -108,8 +88,6 @@ namespace BUtil.Configurator
 			{
 				newlistViewItem.ImageIndex = 1;
 			}
-
-			newlistViewItem.Group = _listView.Groups[(int)newItem.CompressionDegree];
 
 			_listView.Items.Add(newlistViewItem);
 

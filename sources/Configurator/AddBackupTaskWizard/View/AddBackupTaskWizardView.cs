@@ -94,9 +94,10 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
         public void GoNext()
         {
             if (!CanGoNextPage)
-            {
                 throw new InvalidOperationException();
-            }
+
+            if (!_steps[_step].ControlToShow.ValidateUi())
+                return;
 
             _step++;
         }

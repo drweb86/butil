@@ -121,7 +121,7 @@
     <value>What?</value>
   </data>
   <data name="DragAndDropHereFilesAndFoldersWhichYoureGoingToBackupForSettingCompressionPriorityUseMenu" xml:space="preserve">
-    <value>Drag and drop here files and folders which you're going to backup! For setting compression priority use menu</value>
+    <value>Drag and drop here files and folders which you're going to backup!</value>
   </data>
   <data name="AddFolders" xml:space="preserve">
     <value>Add folders...</value>

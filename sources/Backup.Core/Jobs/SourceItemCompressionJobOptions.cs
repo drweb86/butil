@@ -39,18 +39,18 @@ namespace BUtil.Core.Jobs
 
         void СreateArgumentsForCompression()
         {
-            var compressionDegree = _compressionItem.CompressionDegree switch
-            {
-                CompressionDegree.Store => '0',
-                CompressionDegree.Fastest => '1',
-                CompressionDegree.Fast => '3',
-                CompressionDegree.Normal => '5',
-                CompressionDegree.Maximum => '7',
-                CompressionDegree.Ultra => '9',
-                _ => throw new InvalidOperationException("Invalid CompressionDegree specified!"),
-            };
-            _arguments = "a \"" + ArchiveName + "\" \"" + _compressionItem.Target + "\" -w\"" + Directories.TempFolder + "\" -mX" + compressionDegree;
-            _logEntry = _arguments;
+            //var compressionDegree = _compressionItem.CompressionDegree switch
+            //{
+            //    CompressionDegree.Store => '0',
+            //    CompressionDegree.Fastest => '1',
+            //    CompressionDegree.Fast => '3',
+            //    CompressionDegree.Normal => '5',
+            //    CompressionDegree.Maximum => '7',
+            //    CompressionDegree.Ultra => '9',
+            //    _ => throw new InvalidOperationException("Invalid CompressionDegree specified!"),
+            //};
+            //_arguments = "a \"" + ArchiveName + "\" \"" + _compressionItem.Target + "\" -w\"" + Directories.TempFolder + "\" -mX" + compressionDegree;
+            //_logEntry = _arguments;
         }
 
         void СreateArgumentsForCompressionWithPassword(string password)

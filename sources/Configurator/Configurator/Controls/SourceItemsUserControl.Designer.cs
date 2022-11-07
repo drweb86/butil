@@ -31,22 +31,9 @@ namespace BUtil.Configurator.Controls
 		{
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SourceItemsUserControl));
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Store compression", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Fastest compression", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("Fast compression", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("Normal compression", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("Maximum compression", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup6 = new System.Windows.Forms.ListViewGroup("Ultra compression", System.Windows.Forms.HorizontalAlignment.Left);
             this.ofd = new System.Windows.Forms.FolderBrowserDialog();
             this.itemsToCompressImageList = new System.Windows.Forms.ImageList(this.components);
             this.filesFoldersContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.setCompressionDegreeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.storeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fastestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fastToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.normalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.maximumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ultraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeFromListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.addFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,7 +58,6 @@ namespace BUtil.Configurator.Controls
             // filesFoldersContextMenuStrip
             // 
             this.filesFoldersContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.setCompressionDegreeToolStripMenuItem,
             this.removeFromListToolStripMenuItem,
             this.toolStripSeparator6,
             this.addFilesToolStripMenuItem,
@@ -80,61 +66,6 @@ namespace BUtil.Configurator.Controls
             this.filesFoldersContextMenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.filesFoldersContextMenuStrip.Size = new System.Drawing.Size(201, 98);
             this.filesFoldersContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.filesFoldersContextMenuStripOpening);
-            // 
-            // setCompressionDegreeToolStripMenuItem
-            // 
-            this.setCompressionDegreeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.storeToolStripMenuItem,
-            this.fastestToolStripMenuItem,
-            this.fastToolStripMenuItem,
-            this.normalToolStripMenuItem,
-            this.maximumToolStripMenuItem,
-            this.ultraToolStripMenuItem});
-            this.setCompressionDegreeToolStripMenuItem.Name = "setCompressionDegreeToolStripMenuItem";
-            this.setCompressionDegreeToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.setCompressionDegreeToolStripMenuItem.Text = "Set compression degree";
-            // 
-            // storeToolStripMenuItem
-            // 
-            this.storeToolStripMenuItem.Name = "storeToolStripMenuItem";
-            this.storeToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
-            this.storeToolStripMenuItem.Text = "Store";
-            this.storeToolStripMenuItem.Click += new System.EventHandler(this.storeToolStripMenuItemClick);
-            // 
-            // fastestToolStripMenuItem
-            // 
-            this.fastestToolStripMenuItem.Name = "fastestToolStripMenuItem";
-            this.fastestToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
-            this.fastestToolStripMenuItem.Text = "Fastest";
-            this.fastestToolStripMenuItem.Click += new System.EventHandler(this.fastestToolStripMenuItemClick);
-            // 
-            // fastToolStripMenuItem
-            // 
-            this.fastToolStripMenuItem.Name = "fastToolStripMenuItem";
-            this.fastToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
-            this.fastToolStripMenuItem.Text = "Fast";
-            this.fastToolStripMenuItem.Click += new System.EventHandler(this.fastToolStripMenuItemClick);
-            // 
-            // normalToolStripMenuItem
-            // 
-            this.normalToolStripMenuItem.Name = "normalToolStripMenuItem";
-            this.normalToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
-            this.normalToolStripMenuItem.Text = "Normal";
-            this.normalToolStripMenuItem.Click += new System.EventHandler(this.normalToolStripMenuItemClick);
-            // 
-            // maximumToolStripMenuItem
-            // 
-            this.maximumToolStripMenuItem.Name = "maximumToolStripMenuItem";
-            this.maximumToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
-            this.maximumToolStripMenuItem.Text = "Maximum";
-            this.maximumToolStripMenuItem.Click += new System.EventHandler(this.maximumToolStripMenuItemClick);
-            // 
-            // ultraToolStripMenuItem
-            // 
-            this.ultraToolStripMenuItem.Name = "ultraToolStripMenuItem";
-            this.ultraToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
-            this.ultraToolStripMenuItem.Text = "Ultra";
-            this.ultraToolStripMenuItem.Click += new System.EventHandler(this.ultraToolStripMenuItemClick);
             // 
             // removeFromListToolStripMenuItem
             // 
@@ -175,25 +106,6 @@ namespace BUtil.Configurator.Controls
             this.compressionItemsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.itemsToCompressColumnHeader});
             this.compressionItemsListView.ContextMenuStrip = this.filesFoldersContextMenuStrip;
-            listViewGroup1.Header = "Store compression";
-            listViewGroup1.Name = "Cl0listViewGroup";
-            listViewGroup2.Header = "Fastest compression";
-            listViewGroup2.Name = "Cl1listViewGroup";
-            listViewGroup3.Header = "Fast compression";
-            listViewGroup3.Name = "Cl2listViewGroup";
-            listViewGroup4.Header = "Normal compression";
-            listViewGroup4.Name = "Cl3listViewGroup";
-            listViewGroup5.Header = "Maximum compression";
-            listViewGroup5.Name = "Cl4listViewGroup";
-            listViewGroup6.Header = "Ultra compression";
-            listViewGroup6.Name = "Cl5listViewGroup";
-            this.compressionItemsListView.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1,
-            listViewGroup2,
-            listViewGroup3,
-            listViewGroup4,
-            listViewGroup5,
-            listViewGroup6});
             this.compressionItemsListView.LargeImageList = this.itemsToCompressImageList;
             this.compressionItemsListView.Location = new System.Drawing.Point(3, 3);
             this.compressionItemsListView.Name = "compressionItemsListView";
@@ -285,13 +197,6 @@ namespace BUtil.Configurator.Controls
 		private System.Windows.Forms.ToolStripMenuItem addFilesToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
 		private System.Windows.Forms.ToolStripMenuItem removeFromListToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem ultraToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem maximumToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem normalToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem fastToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem fastestToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem storeToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem setCompressionDegreeToolStripMenuItem;
 		private System.Windows.Forms.ContextMenuStrip filesFoldersContextMenuStrip;
 		private System.Windows.Forms.ImageList itemsToCompressImageList;
 		private System.Windows.Forms.FolderBrowserDialog ofd;

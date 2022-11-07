@@ -11,9 +11,6 @@ using BUtil.Core.Options;
 
 namespace BUtil.Configurator.Controls
 {
-	/// <summary>
-	/// Switcher between views
-	/// </summary>
 	internal sealed partial class TaskNavigationControl : BUtil.Core.PL.BackUserControl
     {
         #region Fields
@@ -27,11 +24,12 @@ namespace BUtil.Configurator.Controls
         #endregion
 
         public delegate void ChangeViewEventHandler(BackupTaskViewsEnum newView);
-		
-		/// <summary>
-		/// Returns localized name of selected category
-		/// </summary>
-		public string SelectedCategory
+        public delegate bool CanChangeViewEventHandler(BackupTaskViewsEnum oldView);
+
+        /// <summary>
+        /// Returns localized name of selected category
+        /// </summary>
+        public string SelectedCategory
 		{
 			get { return _selectedButton.Text; }
 		}
@@ -39,6 +37,12 @@ namespace BUtil.Configurator.Controls
 		[Description("Occurs when user selects the other tab")]
 		[Browsable(true)]
 		public event ChangeViewEventHandler ViewChanged;
+
+        [Description("Check if old view can be left")]
+        [Browsable(true)]
+        public event CanChangeViewEventHandler CanChangeView;
+
+		private BackupTaskViewsEnum _currentView = BackupTaskViewsEnum.SourceItems;
 
         public TaskNavigationControl()
 		{
@@ -127,7 +131,14 @@ namespace BUtil.Configurator.Controls
 
         void changeView(object sender, BackupTaskViewsEnum newView)
 		{
-			if (_selectedButton != null)
+			if (_currentView != newView && !CanChangeView.Invoke(_currentView))
+			{
+				return;
+			}
+
+			_currentView = newView;
+
+            if (_selectedButton != null)
 			{
 				_selectedButton.BackColor = _normalButtonColor;
 			}

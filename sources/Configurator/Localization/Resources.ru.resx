@@ -62,7 +62,7 @@
     <value>Что?</value>
   </data>
   <data name="DragAndDropHereFilesAndFoldersWhichYoureGoingToBackupForSettingCompressionPriorityUseMenu" xml:space="preserve">
-    <value>Перетащите сюда файлы и папки в список из Проводника! Чтобы установить уровень сжатия, используйте контекстное меню</value>
+    <value>Перетащите сюда файлы и папки в список из Проводника!</value>
   </data>
   <data name="AddFolders" xml:space="preserve">
     <value>Добавить папки...</value>

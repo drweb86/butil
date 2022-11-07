@@ -56,17 +56,19 @@ namespace BUtil.Core.Options
             BackupTask task = new BackupTask();
             task.Name = name;
 
-            SourceItem item = new SourceItem();
-            item.CompressionDegree = CompressionDegree.Normal;
-            item.IsFolder = true;
-            item.Target = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-            task.Items.Add(item);
+			var personalItem = new SourceItem
+			{
+				IsFolder = true,
+				Target = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal)
+			};
+			task.Items.Add(personalItem);
 
-            item = new SourceItem();
-            item.CompressionDegree = CompressionDegree.Normal;
-            item.IsFolder = true;
-            item.Target = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);
-            task.Items.Add(item);
+			var item = new SourceItem
+			{
+				IsFolder = true,
+				Target = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop)
+			};
+			task.Items.Add(item);
 
             return task;
         }

@@ -61,8 +61,11 @@
     <OutputPath>..\..\Output\BUtil\bin\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="AddBackupTaskWizard\Controller\**" />
     <Compile Remove="Properties\**" />
+    <EmbeddedResource Remove="AddBackupTaskWizard\Controller\**" />
     <EmbeddedResource Remove="Properties\**" />
+    <None Remove="AddBackupTaskWizard\Controller\**" />
     <None Remove="Properties\**" />
   </ItemGroup>
   <ItemGroup>
@@ -182,8 +185,5 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AddBackupTaskWizard\Controller\" />
   </ItemGroup>
 </Project>

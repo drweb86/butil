@@ -42,7 +42,7 @@ namespace BUtil.Configurator.Configurator.Forms
             _views.Add(BackupTaskViewsEnum.OtherOptions, new TaskOtherOptionsUserControl());
             foreach (KeyValuePair<BackupTaskViewsEnum, BackUserControl> pair in _views)
             {
-                pair.Value.HelpLabel = helpToolStripStatusLabel;
+                pair.Value.HelpLabel = _toolStripStatusLabel;
             }
 
             _taskTitleTextBox.Text = _task.Name;
@@ -74,19 +74,25 @@ namespace BUtil.Configurator.Configurator.Forms
             choosePanelUserControl.UpdateView(_profileOptions);
         }
 
-        void SaveTask()
-        { 
+        bool SaveTask()
+        {
+            bool isValid = true;
             foreach (KeyValuePair<BackupTaskViewsEnum, BackUserControl> pair in _views)
             {
+                isValid = isValid && pair.Value.ValidateUi();
                 pair.Value.GetOptionsFromUi();
             }
-            _task.Name = _taskTitleTextBox.Text;        
+            _task.Name = _taskTitleTextBox.Text;
+            return isValid;
         }
 
         void SaveRequest(object sender, EventArgs e)
         {
+            if (!SaveTask())
+                return;
+
             ExecuteTask = false;
-            SaveTask();
+            
             DialogResult = DialogResult.OK;
             Close();
         }
@@ -112,8 +118,10 @@ namespace BUtil.Configurator.Configurator.Forms
 
         void SaveAndExecuteTaskButtonRequest(object sender, EventArgs e)
         {
+            if (!SaveTask())
+                return;
+
             ExecuteTask = true;
-            SaveTask();
             DialogResult = DialogResult.OK;
             Close();
         }
@@ -125,6 +133,11 @@ namespace BUtil.Configurator.Configurator.Forms
             {
                 _taskTitleTextBox.Text = trimmedText;
             }
+        }
+
+        private bool OnCanChangeView(BackupTaskViewsEnum oldView)
+        {
+            return _views[oldView].ValidateUi();
         }
     }
 }

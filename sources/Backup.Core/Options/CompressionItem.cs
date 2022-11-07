@@ -7,18 +7,15 @@ namespace BUtil.Core.Options
 {
 	public class SourceItem: IEqualityComparer<SourceItem>
     {
-		public SourceItem() : this(String.Empty, false, CompressionDegree.Normal) { } // deserialization
+		public SourceItem() : this(String.Empty, false) { } // deserialization
 
-		public SourceItem(string target, bool isFolder, CompressionDegree compressionDegree)
+		public SourceItem(string target, bool isFolder)
 		{
 			Target = target;
 			IsFolder = isFolder;
-			CompressionDegree = compressionDegree;
 		}
 
 		public string Target { get; set; }
-
-		public CompressionDegree CompressionDegree { get; set; }
 
 		public bool IsFolder { get; set; }
 

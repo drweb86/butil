@@ -8,7 +8,6 @@ namespace BUtil.Core.PL
 {
 	public partial class BackUserControl : UserControl
 	{
-		ToolStripStatusLabel _helpLabel = null;
 		bool _drawAtractiveBorders = true;
 		Dictionary<Control, string> _hints = new Dictionary<Control, string>();
 
@@ -20,14 +19,7 @@ namespace BUtil.Core.PL
 			set { _drawAtractiveBorders = value; }
 		}
 		
-		/// <summary>
-		/// Status strip label for help messages on ui of program
-		/// </summary>
-		public ToolStripStatusLabel HelpLabel
-		{
-			get { return _helpLabel; }
-			set { _helpLabel = value; }
-		}
+		public ToolStripStatusLabel HelpLabel { get; set; }
 		
 		/// <summary>
 		/// Shows help in external status strip 'HelpStatusStrip' if it set
@@ -71,6 +63,11 @@ namespace BUtil.Core.PL
 			throw new NotImplementedException("GetOptionsFromUi");
 		}
 
+		public virtual bool ValidateUi()
+		{
+			return true;
+		}
+
         #endregion
 
         void controlGotFocus(object sender, EventArgs e)
@@ -85,9 +82,9 @@ namespace BUtil.Core.PL
 		
 		void showHelp(object sender)
 		{
-			if (_helpLabel != null && (sender != null))
+			if (HelpLabel != null && (sender != null))
 			{
-				_helpLabel.Text = _hints[(Control)sender];
+                HelpLabel.Text = _hints[(Control)sender];
 			}
 		}
 		

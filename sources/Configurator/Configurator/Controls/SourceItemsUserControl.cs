@@ -1,20 +1,16 @@
 using System;
 using System.ComponentModel;
-using System.Drawing;
 using System.Windows.Forms;
 
 using System.IO;
 using BUtil.Core.Options;
-using BUtil.Configurator;
 using BUtil.Core.ButilImage;
 using BUtil.Core;
 using BUtil.Configurator.Localization;
+using BUtil.Core.PL;
 
 namespace BUtil.Configurator.Controls
 {
-	/// <summary>
-	/// Manages source items
-	/// </summary>
 	internal sealed partial class SourceItemsUserControl : BUtil.Core.PL.BackUserControl
 	{
 		CompressionItemsKeeper _itemsToBackup;
@@ -33,7 +29,7 @@ namespace BUtil.Configurator.Controls
 
                 for (int i = 0; i < files.Length; i++)
                 {
-					files[i] = new SourceItem(openFileDialog.FileNames[i], false, CompressionDegree.Normal);
+					files[i] = new SourceItem(openFileDialog.FileNames[i], false);
                 }
 
                 _itemsToBackup.VerifyNewItems(files);
@@ -44,7 +40,7 @@ namespace BUtil.Configurator.Controls
         {
             while (ofd.ShowDialog() == DialogResult.OK)
             {
-            	SourceItem folder = new SourceItem(ofd.SelectedPath, true, CompressionDegree.Normal);
+            	SourceItem folder = new SourceItem(ofd.SelectedPath, true);
 
 				_itemsToBackup.VerifyNewItem(folder);
             }
@@ -99,7 +95,7 @@ namespace BUtil.Configurator.Controls
 				SourceItem[] files = new SourceItem[newitems.Length];
 				for (int i = 0; i < newitems.Length; i++)
 				{
-					files[i] = new SourceItem(newitems[i], Directory.Exists(newitems[i]), CompressionDegree.Normal);
+					files[i] = new SourceItem(newitems[i], Directory.Exists(newitems[i]));
 				}
 
 				_itemsToBackup.VerifyNewItems(files);
@@ -119,37 +115,6 @@ namespace BUtil.Configurator.Controls
 		void filesFoldersContextMenuStripOpening(object sender, CancelEventArgs e)
 		{
 			removeFromListToolStripMenuItem.Enabled = (compressionItemsListView.SelectedItems.Count > 0);
-			setCompressionDegreeToolStripMenuItem.Enabled = (compressionItemsListView.SelectedItems.Count > 0);
-		}
-		
-		void storeToolStripMenuItemClick(object sender, EventArgs e)
-		{
-			_itemsToBackup.UpdateCompressionLevelForSelectedItems(0);
-		}
-		
-		void fastestToolStripMenuItemClick(object sender, EventArgs e)
-		{
-			_itemsToBackup.UpdateCompressionLevelForSelectedItems(1);
-		}
-		
-		void fastToolStripMenuItemClick(object sender, EventArgs e)
-		{
-			_itemsToBackup.UpdateCompressionLevelForSelectedItems(2);
-		}
-		
-		void normalToolStripMenuItemClick(object sender, EventArgs e)
-		{
-			_itemsToBackup.UpdateCompressionLevelForSelectedItems(3);
-		}
-		
-		void maximumToolStripMenuItemClick(object sender, EventArgs e)
-		{
-			_itemsToBackup.UpdateCompressionLevelForSelectedItems(4);
-		}
-		
-		void ultraToolStripMenuItemClick(object sender, EventArgs e)
-		{
-			_itemsToBackup.UpdateCompressionLevelForSelectedItems(5);
 		}
 		
 		void removeFromListToolStripMenuItemClick(object sender, EventArgs e)
@@ -200,21 +165,7 @@ namespace BUtil.Configurator.Controls
 		
 		public override void ApplyLocalization() 
 		{
-			if (_itemsToBackup != null)
-			{
-				_itemsToBackup.ApplyNewDegreesOfCompression();
-			}
-
-			storeToolStripMenuItem.Text = LocalsHelper.ToString(CompressionDegree.Store);
-			fastestToolStripMenuItem.Text = LocalsHelper.ToString(CompressionDegree.Fastest);
-			fastToolStripMenuItem.Text = LocalsHelper.ToString(CompressionDegree.Fast);
-			normalToolStripMenuItem.Text = LocalsHelper.ToString(CompressionDegree.Normal);
-			maximumToolStripMenuItem.Text = LocalsHelper.ToString(CompressionDegree.Maximum);
-			ultraToolStripMenuItem.Text = LocalsHelper.ToString(CompressionDegree.Ultra);
-			
 			itemsToCompressColumnHeader.Text = Resources.ItemsToBackup;
-			setCompressionDegreeToolStripMenuItem.Text = Resources.SetCompressionDegree;
-			
 			SetHintForControl(compressionItemsListView, Resources.DragAndDropHereFilesAndFoldersWhichYoureGoingToBackupForSettingCompressionPriorityUseMenu);
             SetHintForControl(addFoldersButton, Resources.AddFolders);
             addFoldersToolStripMenuItem.Text = Resources.AddFolders;
@@ -229,7 +180,6 @@ namespace BUtil.Configurator.Controls
             _task = (BackupTask)settings;
 				
 			_itemsToBackup = new CompressionItemsKeeper(compressionItemsListView, _task.Items);
-			_itemsToBackup.ApplyNewDegreesOfCompression();
 			_itemsToBackup.InitWith();
 		}
 		
@@ -237,7 +187,20 @@ namespace BUtil.Configurator.Controls
 		{
 			;
 		}
-		
+
+		public override bool ValidateUi()
+		{
+            if (compressionItemsListView.Items.Count == 0)
+			{
+				Messages.ShowErrorBox(Resources.ThereAreNoItemsToBackupNNyouCanSpecifyTheDataToBackupInConfiguratorInWhatSettingsGroup);
+
+                return false;
+			}
+
+			return true;
+
+        }
+
 		#endregion
 	}
 }
