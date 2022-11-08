@@ -112,12 +112,12 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="Logo48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Logo48x48.PNG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -127,7 +127,7 @@
   <data name="folder_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\folder_48.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="sevenZipPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         Qk2WCQAAAAAAADYAAAAoAAAAIAAAABkAAAABABgAAAAAAAAAAADEDgAAxA4AAAAAAAAAAAAAAAAAAAAA
@@ -176,7 +176,7 @@
   <data name="BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAAoAAAAUCAIAAAA7jDsBAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsNAAALDQHtB8AsAAABdklE
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsMAAALDAE/QCLIAAABdklE
         QVQoUz3M51LCUBCG4b1XShJiCgTSVAQEC1XEAiiWm5KchIRUr8PdE4eZd/bPPvOBvSvsj8LBPgvn69f5
         Ltzv31NgvWXWW26/5+R2OdHPwv3i4dvcZOYmt7aELETkCJUOOq9pZ80jl5nbzERX0l0B7ae0/Zy2X1J0
         7XXWWXO0yWhvm0NrFRurxHhKyL3waA8dXWg+HJvLuPmYECKHY4lBewnugT4/6ihKtIxbj1jS4nuIQJtG
@@ -2466,7 +2466,7 @@
   <data name="virtuawinPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsSAAALEgHS3X78AAAETElE
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsRAAALEQF/ZF+RAAAETElE
         QVRYR8VXTWxUVRh9/hBRUFZQoTFiMCHKVIIJpFUrG4ydamkrLdDSjTYhgRA2mo4d6c+EttNWpQnttFUC
         zYQS2wgFIYEFlhrQUFYQ6cZ0QcJCo3Gvro7nfDMdXl9ux7fpeJOTvn7373vfPee8Ox6A/xXOYCHhDBYS
         zqAL7Se+Qd/IFJKp848wfAG9RP/oRag/OCcMnEEXvOd24cXyo9hW3YmtVW3Y+n4bIpVxlBDFZYfhrdnF
@@ -2554,7 +2554,7 @@
   <data name="addNewToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsNAAALDQHtB8AsAAAA3klE
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsMAAALDAE/QCLIAAAA3klE
         QVQ4T7WUWQ6DMAxEzVYhVer9b9XPHoXP1OPEqaEDSCyxXgjOZIQSYkkpNcpTwdjpRCStoW0M2hnoYPhQ
         Bk8CW8wiG2JN1UbQtQoEeP4mjhm2LGnsGP7pHZoEZwxfSlfwiXwoLLJh3G/fLluPZiIKC6YrwFSf+nJF
         3GTYX20Iv5A8EzcZNtlwDRYik/IuYFz12upNwX8Ur95gIhYiH51nxcGu4zJZ2TCcmN6hSbBhqNPb1YaB
@@ -2623,5 +2623,8 @@
   </data>
   <data name="Lamp48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>resources\lamp48x48.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ActionsOfficeChartPieIcon48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\ActionsOfficeChartPieIcon48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -30,13 +30,14 @@ namespace BUtil.Configurator.Controls
 		/// </summary>
 		private void InitializeComponent()
 		{
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaskNavigationControl));
             this.itemsForBackupButton = new System.Windows.Forms.Button();
             this.storagesButton = new System.Windows.Forms.Button();
             this.schedulerButton = new System.Windows.Forms.Button();
             this.encryptionButton = new System.Windows.Forms.Button();
             this.otherOptionsButton = new System.Windows.Forms.Button();
             this.howButton = new System.Windows.Forms.Button();
-            this._tableLayoutPanel = new TransparentTableLayoutPanel();
+            this._tableLayoutPanel = new BUtil.Configurator.Configurator.Controls.Common.TransparentTableLayoutPanel();
             this._tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -136,7 +137,7 @@ namespace BUtil.Configurator.Controls
             this.howButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.howButton.FlatAppearance.BorderSize = 0;
             this.howButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.howButton.Image = global::BUtil.Configurator.Icons.SourceItems48x48;
+            this.howButton.Image = ((System.Drawing.Image)(resources.GetObject("howButton.Image")));
             this.howButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.howButton.Location = new System.Drawing.Point(4, 174);
             this.howButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -173,7 +174,7 @@ namespace BUtil.Configurator.Controls
             this._tableLayoutPanel.Size = new System.Drawing.Size(175, 357);
             this._tableLayoutPanel.TabIndex = 6;
             // 
-            // EditTasksLeftPanelUserControl
+            // TaskNavigationControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -183,7 +184,7 @@ namespace BUtil.Configurator.Controls
             this.Controls.Add(this._tableLayoutPanel);
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.MinimumSize = new System.Drawing.Size(161, 357);
-            this.Name = "EditTasksLeftPanelUserControl";
+            this.Name = "TaskNavigationControl";
             this.Size = new System.Drawing.Size(175, 357);
             this.Load += new System.EventHandler(this.leftPanelUserControlLoad);
             this._tableLayoutPanel.ResumeLayout(false);
