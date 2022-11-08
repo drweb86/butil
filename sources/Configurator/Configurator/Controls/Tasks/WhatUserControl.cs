@@ -11,12 +11,12 @@ using BUtil.Core.PL;
 
 namespace BUtil.Configurator.Controls
 {
-	internal sealed partial class SourceItemsUserControl : BUtil.Core.PL.BackUserControl
+	internal sealed partial class WhatUserControl : BUtil.Core.PL.BackUserControl
 	{
 		CompressionItemsKeeper _itemsToBackup;
 		BackupTask _task;
 		
-		public SourceItemsUserControl()
+		public WhatUserControl()
 		{
 			InitializeComponent();
 		}

@@ -1,7 +1,7 @@
 ﻿
 namespace BUtil.Configurator.Controls
 {
-	partial class SchedulerUserControl
+	partial class WhenUserControl
 	{
 		/// <summary>
 		/// Designer variable used to keep track of non-visual components.

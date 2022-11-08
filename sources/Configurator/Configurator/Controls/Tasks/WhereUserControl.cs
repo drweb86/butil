@@ -1,7 +1,6 @@
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
-
 using BUtil.Core.Storages;
 using BUtil.Core.Options;
 using BUtil.Configurator.Localization;
@@ -11,11 +10,11 @@ namespace BUtil.Configurator.Configurator.Controls
 	/// <summary>
 	/// Manages target places for backup
 	/// </summary>
-	internal sealed partial class StoragesUserControl : Core.PL.BackUserControl
+	internal sealed partial class WhereUserControl : Core.PL.BackUserControl
 	{
 		BackupTask _task;
 		
-		public StoragesUserControl()
+		public WhereUserControl()
 		{
 			InitializeComponent();
 		}

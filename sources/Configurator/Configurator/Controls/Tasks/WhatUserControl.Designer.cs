@@ -1,7 +1,7 @@
 ﻿
 namespace BUtil.Configurator.Controls
 {
-	partial class SourceItemsUserControl
+	partial class WhatUserControl
 	{
 		/// <summary>
 		/// Designer variable used to keep track of non-visual components.
@@ -30,7 +30,7 @@ namespace BUtil.Configurator.Controls
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SourceItemsUserControl));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WhatUserControl));
             this.ofd = new System.Windows.Forms.FolderBrowserDialog();
             this.itemsToCompressImageList = new System.Windows.Forms.ImageList(this.components);
             this.filesFoldersContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);

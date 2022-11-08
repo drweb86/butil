@@ -36,9 +36,9 @@ namespace BUtil.Configurator.Configurator.Forms
         private void SetupUiComponents()
         {
             _views.Add(BackupTaskViewsEnum.Name, new TaskNameUserControl());
-            _views.Add(BackupTaskViewsEnum.SourceItems, new SourceItemsUserControl());
-            _views.Add(BackupTaskViewsEnum.Storages, new StoragesUserControl());
-            _views.Add(BackupTaskViewsEnum.Scheduler, new SchedulerUserControl());
+            _views.Add(BackupTaskViewsEnum.SourceItems, new WhatUserControl());
+            _views.Add(BackupTaskViewsEnum.Storages, new WhereUserControl());
+            _views.Add(BackupTaskViewsEnum.Scheduler, new WhenUserControl());
             _views.Add(BackupTaskViewsEnum.How, new HowUserControl());
             _views.Add(BackupTaskViewsEnum.Encryption, new EncryptionUserControl());
             _views.Add(BackupTaskViewsEnum.OtherOptions, new TaskOtherOptionsUserControl());

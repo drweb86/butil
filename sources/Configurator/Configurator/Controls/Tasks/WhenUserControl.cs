@@ -8,11 +8,11 @@ namespace BUtil.Configurator.Controls
 	/// <summary>
 	/// Setups scheduler
 	/// </summary>
-	internal sealed partial class SchedulerUserControl : BUtil.Core.PL.BackUserControl
+	internal sealed partial class WhenUserControl : BUtil.Core.PL.BackUserControl
 	{
 		private ScheduleInfo _scheduleInfo;
 
-		public SchedulerUserControl()
+		public WhenUserControl()
 		{
 			InitializeComponent();
 		}

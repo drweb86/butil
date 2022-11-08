@@ -1,7 +1,7 @@
 
 namespace BUtil.Configurator.Configurator.Controls
 {
-	partial class StoragesUserControl
+	partial class WhereUserControl
 	{
 		/// <summary>
 		/// Designer variable used to keep track of non-visual components.
@@ -30,7 +30,7 @@ namespace BUtil.Configurator.Configurator.Controls
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StoragesUserControl));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WhereUserControl));
             System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("HDD", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("FTP", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("Network storages", System.Windows.Forms.HorizontalAlignment.Left);
