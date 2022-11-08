@@ -1103,6 +1103,15 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name is empty..
+        /// </summary>
+        internal static string NameIsEmpty {
+            get {
+                return ResourceManager.GetString("NameIsEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Network places are not allowed to be added to the list of backup items!.
         /// </summary>
         internal static string NetworkPlacesAreNotAllowedToBeAddedToTheListOfBackupItems {

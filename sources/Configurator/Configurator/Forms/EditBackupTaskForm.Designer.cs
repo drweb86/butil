@@ -34,8 +34,6 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.helpStatusStrip = new System.Windows.Forms.StatusStrip();
             this._toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.backupTaskTitleLabel_ = new System.Windows.Forms.Label();
-            this._taskTitleTextBox = new System.Windows.Forms.TextBox();
             this.optionsHeader = new BUtil.Configurator.Controls.OptionsHeader();
             this.choosePanelUserControl = new BUtil.Configurator.Controls.TaskNavigationControl();
             this._saveAndExecuteButton = new System.Windows.Forms.Button();
@@ -99,27 +97,6 @@
             this._toolStripStatusLabel.Name = "_toolStripStatusLabel";
             this._toolStripStatusLabel.Size = new System.Drawing.Size(0, 17);
             // 
-            // backupTaskTitleLabel_
-            // 
-            this.backupTaskTitleLabel_.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.backupTaskTitleLabel_.AutoSize = true;
-            this.backupTaskTitleLabel_.Location = new System.Drawing.Point(170, 406);
-            this.backupTaskTitleLabel_.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.backupTaskTitleLabel_.Name = "backupTaskTitleLabel_";
-            this.backupTaskTitleLabel_.Size = new System.Drawing.Size(55, 15);
-            this.backupTaskTitleLabel_.TabIndex = 11;
-            this.backupTaskTitleLabel_.Text = "Task title:";
-            // 
-            // _taskTitleTextBox
-            // 
-            this._taskTitleTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this._taskTitleTextBox.Location = new System.Drawing.Point(239, 403);
-            this._taskTitleTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this._taskTitleTextBox.Name = "_taskTitleTextBox";
-            this._taskTitleTextBox.Size = new System.Drawing.Size(215, 23);
-            this._taskTitleTextBox.TabIndex = 12;
-            this._taskTitleTextBox.TextChanged += new System.EventHandler(this.OnNameChange);
-            // 
             // optionsHeader
             // 
             this.optionsHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -173,8 +150,6 @@
             this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(789, 456);
             this.Controls.Add(this._saveAndExecuteButton);
-            this.Controls.Add(this._taskTitleTextBox);
-            this.Controls.Add(this.backupTaskTitleLabel_);
             this.Controls.Add(this.helpStatusStrip);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.cancelButton);
@@ -202,8 +177,6 @@
         private System.Windows.Forms.Button okButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.StatusStrip helpStatusStrip;
-        private System.Windows.Forms.Label backupTaskTitleLabel_;
-        private System.Windows.Forms.TextBox _taskTitleTextBox;
         private System.Windows.Forms.Button _saveAndExecuteButton;
         private System.Windows.Forms.ToolStripStatusLabel _toolStripStatusLabel;
     }

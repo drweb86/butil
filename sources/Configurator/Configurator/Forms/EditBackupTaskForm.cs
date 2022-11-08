@@ -7,6 +7,7 @@ using BUtil.Configurator.Controls;
 using BUtil.Core.PL;
 using BUtil.Core.Options;
 using BUtil.Configurator.Localization;
+using BUtil.Configurator.AddBackupTaskWizard.View;
 
 namespace BUtil.Configurator.Configurator.Forms
 {
@@ -32,8 +33,9 @@ namespace BUtil.Configurator.Configurator.Forms
             ApplyLocalization();
         }
 
-        void SetupUiComponents()
+        private void SetupUiComponents()
         {
+            _views.Add(BackupTaskViewsEnum.Name, new TaskNameUserControl());
             _views.Add(BackupTaskViewsEnum.SourceItems, new SourceItemsUserControl());
             _views.Add(BackupTaskViewsEnum.Storages, new StoragesUserControl());
             _views.Add(BackupTaskViewsEnum.Scheduler, new SchedulerUserControl());
@@ -45,11 +47,8 @@ namespace BUtil.Configurator.Configurator.Forms
                 pair.Value.HelpLabel = _toolStripStatusLabel;
             }
 
-            _taskTitleTextBox.Text = _task.Name;
-            
-
             ApplyOptionsToUi();
-            ViewChangeNotification(BackupTaskViewsEnum.SourceItems);
+            ViewChangeNotification(BackupTaskViewsEnum.Name);
             UpdateAccessibilitiesView();
         }
 
@@ -62,7 +61,6 @@ namespace BUtil.Configurator.Configurator.Forms
                 pair.Value.ApplyLocalization();
             }
             choosePanelUserControl.ApplyLocalization();
-            backupTaskTitleLabel_.Text = Resources.Title;
             _saveAndExecuteButton.Text = Resources.SaveAndRun;
             cancelButton.Text = Resources.Cancel;
             
@@ -82,7 +80,6 @@ namespace BUtil.Configurator.Configurator.Forms
                 isValid = isValid && pair.Value.ValidateUi();
                 pair.Value.GetOptionsFromUi();
             }
-            _task.Name = _taskTitleTextBox.Text;
             return isValid;
         }
 
@@ -99,6 +96,7 @@ namespace BUtil.Configurator.Configurator.Forms
 
         void ApplyOptionsToUi()
         {
+            _views[BackupTaskViewsEnum.Name].SetOptionsToUi(_task);
             _views[BackupTaskViewsEnum.SourceItems].SetOptionsToUi(_task);
             _views[BackupTaskViewsEnum.How].SetOptionsToUi(_task);
             _views[BackupTaskViewsEnum.Storages].SetOptionsToUi(_task);
@@ -124,15 +122,6 @@ namespace BUtil.Configurator.Configurator.Forms
             ExecuteTask = true;
             DialogResult = DialogResult.OK;
             Close();
-        }
-
-        private void OnNameChange(object sender, EventArgs e)
-        {
-            var trimmedText = TaskNameStringHelper.TrimIllegalChars(_taskTitleTextBox.Text);
-            if (trimmedText != _taskTitleTextBox.Text)
-            {
-                _taskTitleTextBox.Text = trimmedText;
-            }
         }
 
         private bool OnCanChangeView(BackupTaskViewsEnum oldView)

@@ -38,6 +38,7 @@ namespace BUtil.Configurator.Controls
             this.otherOptionsButton = new System.Windows.Forms.Button();
             this.howButton = new System.Windows.Forms.Button();
             this._tableLayoutPanel = new BUtil.Configurator.Configurator.Controls.Common.TransparentTableLayoutPanel();
+            this._nameButton = new System.Windows.Forms.Button();
             this._tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,10 +50,10 @@ namespace BUtil.Configurator.Controls
             this.itemsForBackupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.itemsForBackupButton.Image = global::BUtil.Configurator.Icons.SourceItems48x48;
             this.itemsForBackupButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.itemsForBackupButton.Location = new System.Drawing.Point(4, 3);
+            this.itemsForBackupButton.Location = new System.Drawing.Point(4, 64);
             this.itemsForBackupButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.itemsForBackupButton.Name = "itemsForBackupButton";
-            this.itemsForBackupButton.Size = new System.Drawing.Size(167, 51);
+            this.itemsForBackupButton.Size = new System.Drawing.Size(167, 55);
             this.itemsForBackupButton.TabIndex = 0;
             this.itemsForBackupButton.Text = "What ?";
             this.itemsForBackupButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -67,10 +68,10 @@ namespace BUtil.Configurator.Controls
             this.storagesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.storagesButton.Image = global::BUtil.Configurator.Icons.Storages48x48;
             this.storagesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.storagesButton.Location = new System.Drawing.Point(4, 117);
+            this.storagesButton.Location = new System.Drawing.Point(4, 186);
             this.storagesButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.storagesButton.Name = "storagesButton";
-            this.storagesButton.Size = new System.Drawing.Size(167, 51);
+            this.storagesButton.Size = new System.Drawing.Size(167, 55);
             this.storagesButton.TabIndex = 1;
             this.storagesButton.Text = "Where ?";
             this.storagesButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -85,10 +86,10 @@ namespace BUtil.Configurator.Controls
             this.schedulerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.schedulerButton.Image = global::BUtil.Configurator.Icons.Schedule48x48;
             this.schedulerButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.schedulerButton.Location = new System.Drawing.Point(4, 60);
+            this.schedulerButton.Location = new System.Drawing.Point(4, 125);
             this.schedulerButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.schedulerButton.Name = "schedulerButton";
-            this.schedulerButton.Size = new System.Drawing.Size(167, 51);
+            this.schedulerButton.Size = new System.Drawing.Size(167, 55);
             this.schedulerButton.TabIndex = 2;
             this.schedulerButton.Text = "When ?";
             this.schedulerButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -103,10 +104,10 @@ namespace BUtil.Configurator.Controls
             this.encryptionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.encryptionButton.Image = global::BUtil.Configurator.Icons.Password48x48;
             this.encryptionButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.encryptionButton.Location = new System.Drawing.Point(4, 231);
+            this.encryptionButton.Location = new System.Drawing.Point(4, 308);
             this.encryptionButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.encryptionButton.Name = "encryptionButton";
-            this.encryptionButton.Size = new System.Drawing.Size(167, 51);
+            this.encryptionButton.Size = new System.Drawing.Size(167, 55);
             this.encryptionButton.TabIndex = 3;
             this.encryptionButton.Text = "Encryption";
             this.encryptionButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -121,10 +122,10 @@ namespace BUtil.Configurator.Controls
             this.otherOptionsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.otherOptionsButton.Image = global::BUtil.Configurator.Icons.OtherSettings48x48;
             this.otherOptionsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.otherOptionsButton.Location = new System.Drawing.Point(4, 288);
+            this.otherOptionsButton.Location = new System.Drawing.Point(4, 369);
             this.otherOptionsButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.otherOptionsButton.Name = "otherOptionsButton";
-            this.otherOptionsButton.Size = new System.Drawing.Size(167, 51);
+            this.otherOptionsButton.Size = new System.Drawing.Size(167, 55);
             this.otherOptionsButton.TabIndex = 4;
             this.otherOptionsButton.Text = "Other options";
             this.otherOptionsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -139,10 +140,10 @@ namespace BUtil.Configurator.Controls
             this.howButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.howButton.Image = ((System.Drawing.Image)(resources.GetObject("howButton.Image")));
             this.howButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.howButton.Location = new System.Drawing.Point(4, 174);
+            this.howButton.Location = new System.Drawing.Point(4, 247);
             this.howButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.howButton.Name = "howButton";
-            this.howButton.Size = new System.Drawing.Size(167, 51);
+            this.howButton.Size = new System.Drawing.Size(167, 55);
             this.howButton.TabIndex = 5;
             this.howButton.Text = "How ?";
             this.howButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -154,25 +155,45 @@ namespace BUtil.Configurator.Controls
             this._tableLayoutPanel.BackColor = System.Drawing.SystemColors.Control;
             this._tableLayoutPanel.ColumnCount = 1;
             this._tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this._tableLayoutPanel.Controls.Add(this.otherOptionsButton, 0, 5);
-            this._tableLayoutPanel.Controls.Add(this.encryptionButton, 0, 4);
-            this._tableLayoutPanel.Controls.Add(this.storagesButton, 0, 2);
-            this._tableLayoutPanel.Controls.Add(this.itemsForBackupButton, 0, 0);
-            this._tableLayoutPanel.Controls.Add(this.schedulerButton, 0, 1);
-            this._tableLayoutPanel.Controls.Add(this.howButton, 0, 3);
+            this._tableLayoutPanel.Controls.Add(this.otherOptionsButton, 0, 6);
+            this._tableLayoutPanel.Controls.Add(this.encryptionButton, 0, 5);
+            this._tableLayoutPanel.Controls.Add(this.howButton, 0, 4);
+            this._tableLayoutPanel.Controls.Add(this.storagesButton, 0, 3);
+            this._tableLayoutPanel.Controls.Add(this.schedulerButton, 0, 2);
+            this._tableLayoutPanel.Controls.Add(this.itemsForBackupButton, 0, 1);
+            this._tableLayoutPanel.Controls.Add(this._nameButton, 0, 0);
             this._tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this._tableLayoutPanel.Name = "_tableLayoutPanel";
-            this._tableLayoutPanel.RowCount = 7;
-            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this._tableLayoutPanel.Size = new System.Drawing.Size(175, 357);
+            this._tableLayoutPanel.RowCount = 8;
+            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this._tableLayoutPanel.Size = new System.Drawing.Size(175, 427);
             this._tableLayoutPanel.TabIndex = 6;
+            // 
+            // _nameButton
+            // 
+            this._nameButton.BackColor = System.Drawing.SystemColors.Control;
+            this._nameButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._nameButton.FlatAppearance.BorderSize = 0;
+            this._nameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._nameButton.Image = ((System.Drawing.Image)(resources.GetObject("_nameButton.Image")));
+            this._nameButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this._nameButton.Location = new System.Drawing.Point(4, 3);
+            this._nameButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this._nameButton.Name = "_nameButton";
+            this._nameButton.Size = new System.Drawing.Size(167, 55);
+            this._nameButton.TabIndex = 6;
+            this._nameButton.Text = "Name";
+            this._nameButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this._nameButton.UseVisualStyleBackColor = false;
+            this._nameButton.Click += new System.EventHandler(this.OnNameButtonClick);
             // 
             // TaskNavigationControl
             // 
@@ -185,7 +206,7 @@ namespace BUtil.Configurator.Controls
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.MinimumSize = new System.Drawing.Size(161, 357);
             this.Name = "TaskNavigationControl";
-            this.Size = new System.Drawing.Size(175, 357);
+            this.Size = new System.Drawing.Size(175, 427);
             this.Load += new System.EventHandler(this.leftPanelUserControlLoad);
             this._tableLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -198,5 +219,6 @@ namespace BUtil.Configurator.Controls
         private System.Windows.Forms.Button itemsForBackupButton;
         private System.Windows.Forms.Button howButton;
         private TransparentTableLayoutPanel _tableLayoutPanel;
+        private System.Windows.Forms.Button _nameButton;
     }
 }

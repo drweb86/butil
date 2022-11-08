@@ -1,17 +1,13 @@
 using BUtil.Configurator.Configurator;
 using BUtil.Configurator.Localization;
 using BUtil.Core.Options;
-
+using BUtil.Core.PL;
 
 namespace BUtil.Configurator.AddBackupTaskWizard.View
 {
     public partial class TaskNameUserControl : Core.PL.BackUserControl
     {
-        #region Fields
-
-        BackupTask _task;
-
-        #endregion
+        private BackupTask _task;
 
         public TaskNameUserControl()
         {
@@ -28,6 +24,18 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
             _task = (BackupTask) settings;
 
             _titleTextBox.Text = _task.Name;
+        }
+
+        public override bool ValidateUi()
+        {
+            var name = _titleTextBox.Text;
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.NameIsEmpty);
+                return false;
+            }
+
+            return true;
         }
 
         public override void GetOptionsFromUi()

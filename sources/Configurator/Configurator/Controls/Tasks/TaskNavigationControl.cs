@@ -42,7 +42,7 @@ namespace BUtil.Configurator.Controls
         [Browsable(true)]
         public event CanChangeViewEventHandler CanChangeView;
 
-		private BackupTaskViewsEnum _currentView = BackupTaskViewsEnum.SourceItems;
+		private BackupTaskViewsEnum _currentView = BackupTaskViewsEnum.Name;
 
         public TaskNavigationControl()
 		{
@@ -51,7 +51,7 @@ namespace BUtil.Configurator.Controls
             BackColor = SystemColors.Window;
             this.BorderStyle = BorderStyle.None;
 			_selectedButton = itemsForBackupButton;
-            changeView(itemsForBackupButton, BackupTaskViewsEnum.SourceItems);
+            changeView(itemsForBackupButton, BackupTaskViewsEnum.Name);
 			_selectedButtonColor = Color.FromArgb(_halfSelectedButtonColor.A, 
 			    Math.Abs((_halfSelectedButtonColor.R + 5) % 256),
 			    Math.Abs((_halfSelectedButtonColor.G + 5) % 256),
@@ -66,14 +66,17 @@ namespace BUtil.Configurator.Controls
 		
 		override public void ApplyLocalization()
 		{
-		    var buttons = new[] {itemsForBackupButton, howButton, storagesButton, schedulerButton, encryptionButton, otherOptionsButton};
+		    var buttons = new[] {_nameButton, itemsForBackupButton, howButton,
+				storagesButton, schedulerButton, encryptionButton, otherOptionsButton};
 
+			_nameButton.Text = Resources.Name;
 			itemsForBackupButton.Text = Resources.What;
 			storagesButton.Text = Resources.Where;
 			schedulerButton.Text = Resources.When;
 			encryptionButton.Text = Resources.Encryption;
 			otherOptionsButton.Text = Resources.OtherOptions;
             howButton.Text = Resources.How;
+            SetHintForControl(_nameButton, Resources.Name);
             SetHintForControl(itemsForBackupButton, Resources.HereYouMayAddFoldersAndFilesYouWantToBackup);
 			SetHintForControl(storagesButton, Resources.InThisPlaceYouCanAddLocationsWhereYouWouldLikeYourBackupToBeCopiedAfterCompletionOfBackup);
 			SetHintForControl(schedulerButton, Resources.HereYouCanSetUpASchedulerShcedulerCanHelpYouToAutomateCreationOfBackups);
@@ -194,6 +197,11 @@ namespace BUtil.Configurator.Controls
 		private void HowButtonClick(object sender, EventArgs e)
 		{
             changeView(sender, BackupTaskViewsEnum.How);
+        }
+
+		private void OnNameButtonClick(object sender, EventArgs e)
+		{
+            changeView(sender, BackupTaskViewsEnum.Name);
         }
 	}
 }
