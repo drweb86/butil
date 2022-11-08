@@ -8,6 +8,7 @@ using BUtil.Core.PL;
 using BUtil.Core.Options;
 using BUtil.Configurator.Localization;
 using BUtil.Configurator.AddBackupTaskWizard.View;
+using BUtil.Configurator.Configurator.Controls.Tasks;
 
 namespace BUtil.Configurator.Configurator.Forms
 {
@@ -41,7 +42,7 @@ namespace BUtil.Configurator.Configurator.Forms
             _views.Add(BackupTaskViewsEnum.Scheduler, new WhenUserControl());
             _views.Add(BackupTaskViewsEnum.How, new HowUserControl());
             _views.Add(BackupTaskViewsEnum.Encryption, new EncryptionUserControl());
-            _views.Add(BackupTaskViewsEnum.OtherOptions, new TaskOtherOptionsUserControl());
+            _views.Add(BackupTaskViewsEnum.OtherOptions, new OtherTaskOptionsUserControl());
             foreach (KeyValuePair<BackupTaskViewsEnum, BackUserControl> pair in _views)
             {
                 pair.Value.HelpLabel = _toolStripStatusLabel;

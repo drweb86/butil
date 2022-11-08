@@ -88,7 +88,8 @@ namespace BUtil.Core.PL
 			passwordControlToolTip.SetToolTip(generatePasswordButton, Resources.GenerateNewRandomPassword);
             confirmPasswordLabel.Text = Resources.ConfirmPassword;
             passwordLabel.Text = Resources.EnterPassword;
-		}
+			generatePasswordButton.Text = BUtil.Configurator.Localization.Resources.GeneratePassword;
+        }
 	
 		public override void SetOptionsToUi(object settings)
 		{

@@ -754,4 +754,7 @@ In this case you can restore data by copying required files by your favourite fi
   <data name="NameIsEmpty" xml:space="preserve">
     <value>Name is empty.</value>
   </data>
+  <data name="GeneratePassword" xml:space="preserve">
+    <value>Generate password...</value>
+  </data>
 </root>

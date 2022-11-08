@@ -54,48 +54,50 @@ namespace BUtil.Core.PL
             this.passwordGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.passwordGroupBox.Name = "passwordGroupBox";
             this.passwordGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.passwordGroupBox.Size = new System.Drawing.Size(808, 145);
+            this.passwordGroupBox.Size = new System.Drawing.Size(757, 129);
             this.passwordGroupBox.TabIndex = 0;
             this.passwordGroupBox.TabStop = false;
             this.passwordGroupBox.Text = "Password (if needed)";
             // 
             // passwordControlTableLayoutPanel
             // 
-            this.passwordControlTableLayoutPanel.ColumnCount = 3;
+            this.passwordControlTableLayoutPanel.ColumnCount = 2;
             this.passwordControlTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.passwordControlTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.passwordControlTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.passwordControlTableLayoutPanel.Controls.Add(this.generatePasswordButton, 2, 0);
             this.passwordControlTableLayoutPanel.Controls.Add(this.passwordLabel, 0, 0);
             this.passwordControlTableLayoutPanel.Controls.Add(this.passwordTextBox, 1, 0);
             this.passwordControlTableLayoutPanel.Controls.Add(this.passwordConfirmationTextBox, 1, 2);
             this.passwordControlTableLayoutPanel.Controls.Add(this.passwordErrorMessageLabel, 1, 1);
             this.passwordControlTableLayoutPanel.Controls.Add(this.confirmationErrorMessageLabel, 1, 3);
             this.passwordControlTableLayoutPanel.Controls.Add(this.confirmPasswordLabel, 0, 2);
+            this.passwordControlTableLayoutPanel.Controls.Add(this.generatePasswordButton, 1, 4);
             this.passwordControlTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.passwordControlTableLayoutPanel.Location = new System.Drawing.Point(4, 19);
             this.passwordControlTableLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.passwordControlTableLayoutPanel.Name = "passwordControlTableLayoutPanel";
-            this.passwordControlTableLayoutPanel.RowCount = 4;
+            this.passwordControlTableLayoutPanel.RowCount = 5;
             this.passwordControlTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.passwordControlTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.passwordControlTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.passwordControlTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.passwordControlTableLayoutPanel.Size = new System.Drawing.Size(800, 123);
+            this.passwordControlTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.passwordControlTableLayoutPanel.Size = new System.Drawing.Size(749, 107);
             this.passwordControlTableLayoutPanel.TabIndex = 0;
             // 
             // generatePasswordButton
             // 
+            this.generatePasswordButton.AutoSize = true;
+            this.generatePasswordButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.generatePasswordButton.BackColor = System.Drawing.SystemColors.Control;
-            this.generatePasswordButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.generatePasswordButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.generatePasswordButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.generatePasswordButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.generatePasswordButton.Location = new System.Drawing.Point(763, 3);
+            this.generatePasswordButton.Location = new System.Drawing.Point(619, 79);
             this.generatePasswordButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.generatePasswordButton.Name = "generatePasswordButton";
-            this.generatePasswordButton.Size = new System.Drawing.Size(33, 27);
+            this.generatePasswordButton.Size = new System.Drawing.Size(126, 25);
             this.generatePasswordButton.TabIndex = 2;
-            this.generatePasswordButton.Text = "...";
+            this.generatePasswordButton.Text = "Generate password...";
             this.passwordControlToolTip.SetToolTip(this.generatePasswordButton, "Generate new random password");
             this.generatePasswordButton.UseVisualStyleBackColor = false;
             this.generatePasswordButton.Click += new System.EventHandler(this.generatePasswordButtonClick);
@@ -104,24 +106,23 @@ namespace BUtil.Core.PL
             // 
             this.passwordLabel.AutoSize = true;
             this.passwordLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.passwordLabel.Location = new System.Drawing.Point(4, 0);
-            this.passwordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.passwordLabel.Location = new System.Drawing.Point(0, 0);
+            this.passwordLabel.Margin = new System.Windows.Forms.Padding(0);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(107, 33);
+            this.passwordLabel.Size = new System.Drawing.Size(115, 23);
             this.passwordLabel.TabIndex = 3;
             this.passwordLabel.Text = "Enter password:";
-            this.passwordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.passwordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.passwordTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.passwordTextBox.Location = new System.Drawing.Point(119, 3);
-            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.passwordTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.passwordTextBox.Location = new System.Drawing.Point(115, 0);
+            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(0);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '●';
-            this.passwordTextBox.Size = new System.Drawing.Size(636, 23);
+            this.passwordTextBox.Size = new System.Drawing.Size(634, 23);
             this.passwordTextBox.TabIndex = 1;
             this.passwordTextBox.TextChanged += new System.EventHandler(this.passwordTextBoxTextChanged);
             // 
@@ -131,33 +132,35 @@ namespace BUtil.Core.PL
             | System.Windows.Forms.AnchorStyles.Right)));
             this.passwordConfirmationTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.passwordConfirmationTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.passwordConfirmationTextBox.Location = new System.Drawing.Point(119, 51);
-            this.passwordConfirmationTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.passwordConfirmationTextBox.Location = new System.Drawing.Point(115, 38);
+            this.passwordConfirmationTextBox.Margin = new System.Windows.Forms.Padding(0);
             this.passwordConfirmationTextBox.Name = "passwordConfirmationTextBox";
             this.passwordConfirmationTextBox.PasswordChar = '●';
-            this.passwordConfirmationTextBox.Size = new System.Drawing.Size(636, 23);
+            this.passwordConfirmationTextBox.Size = new System.Drawing.Size(634, 23);
             this.passwordConfirmationTextBox.TabIndex = 3;
             this.passwordConfirmationTextBox.TextChanged += new System.EventHandler(this.passwordConfirmationTextBoxTextChanged);
             // 
             // passwordErrorMessageLabel
             // 
             this.passwordErrorMessageLabel.AutoSize = true;
+            this.passwordErrorMessageLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.passwordErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
-            this.passwordErrorMessageLabel.Location = new System.Drawing.Point(119, 33);
+            this.passwordErrorMessageLabel.Location = new System.Drawing.Point(119, 23);
             this.passwordErrorMessageLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.passwordErrorMessageLabel.Name = "passwordErrorMessageLabel";
-            this.passwordErrorMessageLabel.Size = new System.Drawing.Size(69, 15);
+            this.passwordErrorMessageLabel.Size = new System.Drawing.Size(626, 15);
             this.passwordErrorMessageLabel.TabIndex = 5;
             this.passwordErrorMessageLabel.Text = "<Message>";
             // 
             // confirmationErrorMessageLabel
             // 
             this.confirmationErrorMessageLabel.AutoSize = true;
+            this.confirmationErrorMessageLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.confirmationErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
-            this.confirmationErrorMessageLabel.Location = new System.Drawing.Point(119, 77);
+            this.confirmationErrorMessageLabel.Location = new System.Drawing.Point(119, 61);
             this.confirmationErrorMessageLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.confirmationErrorMessageLabel.Name = "confirmationErrorMessageLabel";
-            this.confirmationErrorMessageLabel.Size = new System.Drawing.Size(143, 15);
+            this.confirmationErrorMessageLabel.Size = new System.Drawing.Size(626, 15);
             this.confirmationErrorMessageLabel.TabIndex = 6;
             this.confirmationErrorMessageLabel.Text = "<Confirmation message>";
             // 
@@ -165,13 +168,13 @@ namespace BUtil.Core.PL
             // 
             this.confirmPasswordLabel.AutoSize = true;
             this.confirmPasswordLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.confirmPasswordLabel.Location = new System.Drawing.Point(4, 48);
+            this.confirmPasswordLabel.Location = new System.Drawing.Point(4, 38);
             this.confirmPasswordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.confirmPasswordLabel.Name = "confirmPasswordLabel";
-            this.confirmPasswordLabel.Size = new System.Drawing.Size(107, 29);
+            this.confirmPasswordLabel.Size = new System.Drawing.Size(107, 23);
             this.confirmPasswordLabel.TabIndex = 4;
             this.confirmPasswordLabel.Text = "Confirm password:";
-            this.confirmPasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.confirmPasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // EncryptionUserControl
             // 
@@ -180,7 +183,7 @@ namespace BUtil.Core.PL
             this.Controls.Add(this.passwordGroupBox);
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.Name = "EncryptionUserControl";
-            this.Size = new System.Drawing.Size(816, 162);
+            this.Size = new System.Drawing.Size(765, 381);
             this.passwordGroupBox.ResumeLayout(false);
             this.passwordControlTableLayoutPanel.ResumeLayout(false);
             this.passwordControlTableLayoutPanel.PerformLayout();

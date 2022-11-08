@@ -1,7 +1,7 @@
 ﻿
 namespace BUtil.Configurator.Controls
 {
-	partial class TasksChainToExecuteUserControl
+	partial class ProgramsToExecuteUserControl
 	{
 		/// <summary>
 		/// Designer variable used to keep track of non-visual components.

@@ -56,12 +56,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Update="PL\BackUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="PL\EncryptionUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

@@ -777,6 +777,15 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Generate password....
+        /// </summary>
+        internal static string GeneratePassword {
+            get {
+                return ResourceManager.GetString("GeneratePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hard drive storage....
         /// </summary>
         internal static string HardDriveStorage {

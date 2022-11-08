@@ -11,7 +11,7 @@ namespace BUtil.Configurator.Controls
 	/// <summary>
 	/// TasksChainToExecuteUserControl is a control where user can manage the tasks queue.
 	/// </summary>
-	public partial class TasksChainToExecuteUserControl : UserControl
+	public partial class ProgramsToExecuteUserControl : UserControl
 	{
 		#region Fields
 		
@@ -24,7 +24,7 @@ namespace BUtil.Configurator.Controls
 		/// <summary>
 		/// The default constructor
 		/// </summary>
-		public TasksChainToExecuteUserControl()
+		public ProgramsToExecuteUserControl()
 		{
 			InitializeComponent();
 		}

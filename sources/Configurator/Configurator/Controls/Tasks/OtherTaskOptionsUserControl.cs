@@ -6,7 +6,7 @@ namespace BUtil.Configurator.Controls
 	/// <summary>
 	/// Set of various uncategorized options
 	/// </summary>
-	internal sealed partial class TaskOtherOptionsUserControl : Core.PL.BackUserControl
+	internal sealed partial class OtherTaskOptionsUserControl : Core.PL.BackUserControl
 	{
 		#region Fields
 		
@@ -14,7 +14,7 @@ namespace BUtil.Configurator.Controls
 		
 		#endregion
 
-        public TaskOtherOptionsUserControl()
+        public OtherTaskOptionsUserControl()
 		{
 			InitializeComponent();
 			

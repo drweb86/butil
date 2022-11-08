@@ -1,7 +1,7 @@
 ﻿
 namespace BUtil.Configurator.Controls
 {
-    partial class TaskOtherOptionsUserControl
+    partial class OtherTaskOptionsUserControl
 	{
 		/// <summary>
 		/// Designer variable used to keep track of non-visual components.
@@ -29,8 +29,8 @@ namespace BUtil.Configurator.Controls
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.beforeBackupEventsControl = new BUtil.Configurator.Controls.TasksChainToExecuteUserControl();
-            this._afterBackupTasksChainToExecuteUserControl = new BUtil.Configurator.Controls.TasksChainToExecuteUserControl();
+            this.beforeBackupEventsControl = new BUtil.Configurator.Controls.ProgramsToExecuteUserControl();
+            this._afterBackupTasksChainToExecuteUserControl = new BUtil.Configurator.Controls.ProgramsToExecuteUserControl();
             this.SuspendLayout();
             // 
             // beforeBackupEventsControl
@@ -63,7 +63,7 @@ namespace BUtil.Configurator.Controls
             this.ResumeLayout(false);
 
 		}
-		private BUtil.Configurator.Controls.TasksChainToExecuteUserControl _afterBackupTasksChainToExecuteUserControl;
-        private BUtil.Configurator.Controls.TasksChainToExecuteUserControl beforeBackupEventsControl;
+		private BUtil.Configurator.Controls.ProgramsToExecuteUserControl _afterBackupTasksChainToExecuteUserControl;
+        private BUtil.Configurator.Controls.ProgramsToExecuteUserControl beforeBackupEventsControl;
 	}
 }

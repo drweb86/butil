@@ -4,14 +4,13 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using System.Windows.Forms;
-
-using BUtil.Configurator.Configurator.Controls;
+using BUtil.Configurator.Configurator.Controls.Tasks;
 using BUtil.Configurator.Localization;
 using BUtil.Core.Options;
 
 namespace BUtil.Configurator.Controls
 {
-	internal sealed partial class TaskNavigationControl : BUtil.Core.PL.BackUserControl
+    internal sealed partial class TaskNavigationControl : BUtil.Core.PL.BackUserControl
     {
         #region Fields
 

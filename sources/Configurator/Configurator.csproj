@@ -79,13 +79,22 @@
     <Compile Update="Configurator\Controls\BackupTasksUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Configurator\Controls\Common\BackUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Configurator\Controls\Tasks\EncryptionUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Configurator\Controls\Tasks\PasswordGeneratorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Configurator\Controls\Tasks\TaskNavigationControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Configurator\Controls\Tasks\HowUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Configurator\Controls\TaskOtherOptionsUserControl.cs">
+    <Compile Update="Configurator\Controls\Tasks\OtherTaskOptionsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Configurator\Controls\LeftPanelUserControl.cs" />
@@ -105,7 +114,7 @@
     <Compile Update="Configurator\Controls\Tasks\WhereUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Configurator\Controls\TasksChainToExecuteUserControl.cs">
+    <Compile Update="Configurator\Controls\Tasks\ProgramsToExecuteUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="BackupUiMaster\Controls\BackupProgressUserControl.cs">
@@ -194,5 +203,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\" />
   </ItemGroup>
 </Project>
