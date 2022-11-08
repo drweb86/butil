@@ -89,6 +89,7 @@ namespace BUtil.Configurator.Controls
             this._disableCompressionEncryptionCheckBox.AutoSize = true;
             this._disableCompressionEncryptionCheckBox.Checked = true;
             this._disableCompressionEncryptionCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this._disableCompressionEncryptionCheckBox.Enabled = false;
             this._disableCompressionEncryptionCheckBox.Location = new System.Drawing.Point(11, 157);
             this._disableCompressionEncryptionCheckBox.Name = "_disableCompressionEncryptionCheckBox";
             this._disableCompressionEncryptionCheckBox.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
