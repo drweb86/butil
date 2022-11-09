@@ -29,10 +29,6 @@ namespace BUtil.Configurator.Controls
 		
 		public void Init(List<ExecuteProgramTaskInfo> list, bool isBeforeBackupEvent)
 		{
-			if (list == null)
-			{
-				throw new ArgumentNullException("list");
-			}
 			_isBeforeBackupEvent = isBeforeBackupEvent;
 			
 			tasksListView.BeginUpdate();
@@ -76,7 +72,7 @@ namespace BUtil.Configurator.Controls
 		
 		void tasksListViewResize(object sender, EventArgs e)
 		{
-			tasksListView.Columns[0].Width = tasksListView.Width - 8;
+			tasksListView.Columns[0].Width = tasksListView.Width - 24;
 		}
 		
 		void tasksListViewSelectedIndexChanged(object sender, EventArgs e)

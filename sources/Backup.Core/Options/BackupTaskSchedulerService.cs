@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using Microsoft.Win32.TaskScheduler;
+using System.IO;
 
 namespace BUtil.Core.Options
 {
