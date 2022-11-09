@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using BUtil.Core.Storages;
 using BUtil.Core.Options;
 using BUtil.Configurator.Localization;
+using BUtil.Core.PL;
 
 namespace BUtil.Configurator.Configurator.Controls
 {
@@ -122,7 +123,18 @@ namespace BUtil.Configurator.Configurator.Controls
 		{
 			AddStorage(StorageEnum.Network);
 		}
-		
+
+		public override bool ValidateUi()
+		{
+			if (storagesListView.Items.Count == 0)
+			{
+				Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.PleaseAddAtLeastOneDestinationPlace);
+				return false;
+			}
+
+			return true;
+		}
+
 		void StoragesContextMenuStripOpening(object sender, CancelEventArgs e)
 		{
 			modifyToolStripMenuItem.Enabled = (storagesListView.SelectedItems.Count > 0);

@@ -57,6 +57,7 @@ namespace BUtil.Configurator.Configurator.Controls
             // 
             // storageTypesImageList
             // 
+            this.storageTypesImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth24Bit;
             this.storageTypesImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("storageTypesImageList.ImageStream")));
             this.storageTypesImageList.TransparentColor = System.Drawing.Color.White;
             this.storageTypesImageList.Images.SetKeyName(0, "Hdd48x48.png");
@@ -72,7 +73,7 @@ namespace BUtil.Configurator.Configurator.Controls
             this.removeToolStripMenuItem});
             this.storagesContextMenuStrip.Name = "StoragescontextMenuStrip";
             this.storagesContextMenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.storagesContextMenuStrip.Size = new System.Drawing.Size(153, 98);
+            this.storagesContextMenuStrip.Size = new System.Drawing.Size(181, 98);
             this.storagesContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.StoragesContextMenuStripOpening);
             // 
             // addNewToolStripMenuItem
@@ -83,7 +84,7 @@ namespace BUtil.Configurator.Configurator.Controls
             this.networkStorageToolStripMenuItem});
             this.addNewToolStripMenuItem.Image = global::BUtil.Configurator.Icons.addNewToolStripMenuItem_Image;
             this.addNewToolStripMenuItem.Name = "addNewToolStripMenuItem";
-            this.addNewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addNewToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addNewToolStripMenuItem.Text = "Add";
             // 
             // hardDriveStorageToolStripMenuItem
@@ -96,6 +97,7 @@ namespace BUtil.Configurator.Configurator.Controls
             // 
             // ftpStorageToolStripMenuItem
             // 
+            this.ftpStorageToolStripMenuItem.Enabled = false;
             this.ftpStorageToolStripMenuItem.Image = global::BUtil.Configurator.Icons.Ftp16x16;
             this.ftpStorageToolStripMenuItem.Name = "ftpStorageToolStripMenuItem";
             this.ftpStorageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
@@ -104,6 +106,7 @@ namespace BUtil.Configurator.Configurator.Controls
             // 
             // networkStorageToolStripMenuItem
             // 
+            this.networkStorageToolStripMenuItem.Enabled = false;
             this.networkStorageToolStripMenuItem.Image = global::BUtil.Configurator.Icons.Share16x16;
             this.networkStorageToolStripMenuItem.Name = "networkStorageToolStripMenuItem";
             this.networkStorageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
@@ -114,20 +117,20 @@ namespace BUtil.Configurator.Configurator.Controls
             // 
             this.modifyToolStripMenuItem.Image = global::BUtil.Configurator.Icons.OtherOptions48x48;
             this.modifyToolStripMenuItem.Name = "modifyToolStripMenuItem";
-            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modifyToolStripMenuItem.Text = "Modify...";
             this.modifyToolStripMenuItem.Click += new System.EventHandler(this.ModifyStorageButtonClick);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(177, 6);
             // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Image = global::BUtil.Configurator.Icons.removeFromListToolStripMenuItem_Image;
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.removeToolStripMenuItem.Text = "Remove";
             this.removeToolStripMenuItem.Click += new System.EventHandler(this.RemoveStorageButtonClick);
             // 
@@ -151,6 +154,7 @@ namespace BUtil.Configurator.Configurator.Controls
             // 
             // ftpStorageToolStripMenuItem1
             // 
+            this.ftpStorageToolStripMenuItem1.Enabled = false;
             this.ftpStorageToolStripMenuItem1.Image = global::BUtil.Configurator.Icons.Ftp16x16;
             this.ftpStorageToolStripMenuItem1.Name = "ftpStorageToolStripMenuItem1";
             this.ftpStorageToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
@@ -159,6 +163,7 @@ namespace BUtil.Configurator.Configurator.Controls
             // 
             // networkStorageToolStripMenuItem1
             // 
+            this.networkStorageToolStripMenuItem1.Enabled = false;
             this.networkStorageToolStripMenuItem1.Image = global::BUtil.Configurator.Icons.Share16x16;
             this.networkStorageToolStripMenuItem1.Name = "networkStorageToolStripMenuItem1";
             this.networkStorageToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
@@ -167,9 +172,9 @@ namespace BUtil.Configurator.Configurator.Controls
             // 
             // storagesListView
             // 
-            this.storagesListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.storagesListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.storagesListView.ContextMenuStrip = this.storagesContextMenuStrip;
             listViewGroup1.Header = "HDD";
             listViewGroup1.Name = "HDDCopylistViewGroup";
@@ -182,11 +187,12 @@ namespace BUtil.Configurator.Configurator.Controls
             listViewGroup2,
             listViewGroup3});
             this.storagesListView.LargeImageList = this.storageTypesImageList;
-            this.storagesListView.Location = new System.Drawing.Point(3, 3);
+            this.storagesListView.Location = new System.Drawing.Point(4, 3);
+            this.storagesListView.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.storagesListView.MultiSelect = false;
             this.storagesListView.Name = "storagesListView";
             this.storagesListView.ShowItemToolTips = true;
-            this.storagesListView.Size = new System.Drawing.Size(329, 209);
+            this.storagesListView.Size = new System.Drawing.Size(383, 241);
             this.storagesListView.SmallImageList = this.storageTypesImageList;
             this.storagesListView.TabIndex = 0;
             this.storagesListView.UseCompatibleStateImageBehavior = false;
@@ -198,9 +204,10 @@ namespace BUtil.Configurator.Configurator.Controls
             this.addStorageButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.addStorageButton.ContextMenuStrip = this.addStorageContextMenuStrip;
             this.addStorageButton.Image = global::BUtil.Configurator.Icons.Add48x48;
-            this.addStorageButton.Location = new System.Drawing.Point(338, 3);
+            this.addStorageButton.Location = new System.Drawing.Point(394, 3);
+            this.addStorageButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.addStorageButton.Name = "addStorageButton";
-            this.addStorageButton.Size = new System.Drawing.Size(61, 58);
+            this.addStorageButton.Size = new System.Drawing.Size(71, 67);
             this.addStorageButton.TabIndex = 1;
             this.addStorageButton.UseVisualStyleBackColor = true;
             this.addStorageButton.Click += new System.EventHandler(this.AddStorageButtonClick);
@@ -210,9 +217,10 @@ namespace BUtil.Configurator.Configurator.Controls
             this.removeStorageButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.removeStorageButton.Enabled = false;
             this.removeStorageButton.Image = global::BUtil.Configurator.Icons.cross_48;
-            this.removeStorageButton.Location = new System.Drawing.Point(338, 131);
+            this.removeStorageButton.Location = new System.Drawing.Point(394, 151);
+            this.removeStorageButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.removeStorageButton.Name = "removeStorageButton";
-            this.removeStorageButton.Size = new System.Drawing.Size(61, 58);
+            this.removeStorageButton.Size = new System.Drawing.Size(71, 67);
             this.removeStorageButton.TabIndex = 3;
             this.removeStorageButton.UseVisualStyleBackColor = true;
             this.removeStorageButton.Click += new System.EventHandler(this.RemoveStorageButtonClick);
@@ -222,24 +230,26 @@ namespace BUtil.Configurator.Configurator.Controls
             this.modifyStorageButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.modifyStorageButton.Enabled = false;
             this.modifyStorageButton.Image = global::BUtil.Configurator.Icons.OtherOptions48x48;
-            this.modifyStorageButton.Location = new System.Drawing.Point(338, 67);
+            this.modifyStorageButton.Location = new System.Drawing.Point(394, 77);
+            this.modifyStorageButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.modifyStorageButton.Name = "modifyStorageButton";
-            this.modifyStorageButton.Size = new System.Drawing.Size(61, 58);
+            this.modifyStorageButton.Size = new System.Drawing.Size(71, 67);
             this.modifyStorageButton.TabIndex = 2;
             this.modifyStorageButton.UseVisualStyleBackColor = true;
             this.modifyStorageButton.Click += new System.EventHandler(this.ModifyStorageButtonClick);
             // 
-            // StoragesUserControl
+            // WhereUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.storagesListView);
             this.Controls.Add(this.addStorageButton);
             this.Controls.Add(this.removeStorageButton);
             this.Controls.Add(this.modifyStorageButton);
-            this.MinimumSize = new System.Drawing.Size(285, 200);
-            this.Name = "StoragesUserControl";
-            this.Size = new System.Drawing.Size(402, 215);
+            this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.MinimumSize = new System.Drawing.Size(332, 231);
+            this.Name = "WhereUserControl";
+            this.Size = new System.Drawing.Size(469, 248);
             this.storagesContextMenuStrip.ResumeLayout(false);
             this.addStorageContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);

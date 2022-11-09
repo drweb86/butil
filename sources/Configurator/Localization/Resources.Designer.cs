@@ -1289,6 +1289,15 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please add at least one destination place..
+        /// </summary>
+        internal static string PleaseAddAtLeastOneDestinationPlace {
+            get {
+                return ResourceManager.GetString("PleaseAddAtLeastOneDestinationPlace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please, check items to compress!.
         /// </summary>
         internal static string PleaseCheckItemsToCompress {
@@ -1343,7 +1352,7 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Protection of backup with password. It is required when you want your data to be copied somewhere over the network/.
+        ///   Looks up a localized string similar to Protection of backup with password. It is required when you want your data to be copied somewhere over the network.
         /// </summary>
         internal static string ProtectionOfBackupWithPasswordItIsRequiredWhenYouWantYourDataToBeCopiedSomewhereOverTheNetwork {
             get {

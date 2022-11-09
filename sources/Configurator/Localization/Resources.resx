@@ -515,7 +515,7 @@ You can add some storages in Configurator in 'Where' settings group.</value>
     <value>Here you can set up a scheduler. Shceduler can help you to automate creation of backups</value>
   </data>
   <data name="ProtectionOfBackupWithPasswordItIsRequiredWhenYouWantYourDataToBeCopiedSomewhereOverTheNetwork" xml:space="preserve">
-    <value>Protection of backup with password. It is required when you want your data to be copied somewhere over the network/</value>
+    <value>Protection of backup with password. It is required when you want your data to be copied somewhere over the network</value>
   </data>
   <data name="MiscellaneousOptions" xml:space="preserve">
     <value>Miscellaneous options</value>
@@ -759,5 +759,8 @@ In this case you can restore data by copying required files by your favourite fi
   </data>
   <data name="WorkingDirectory" xml:space="preserve">
     <value>Working directory:</value>
+  </data>
+  <data name="PleaseAddAtLeastOneDestinationPlace" xml:space="preserve">
+    <value>Please add at least one destination place.</value>
   </data>
 </root>
