@@ -631,10 +631,10 @@ Please refer to manual for the complete list of parameters!</value>
     <value>Command line arguments:</value>
   </data>
   <data name="ChainOfProgramsToExecuteBeforeBackup" xml:space="preserve">
-    <value>Chain of programs to execute BEFORE backup</value>
+    <value>Execute BEFORE backup</value>
   </data>
   <data name="ChainOfProgramsToExecuteAfterBackup" xml:space="preserve">
-    <value>Chain of programs to execute AFTER backup</value>
+    <value>Execute AFTER backup</value>
   </data>
   <data name="Edit" xml:space="preserve">
     <value>Edit...</value>
@@ -756,5 +756,8 @@ In this case you can restore data by copying required files by your favourite fi
   </data>
   <data name="GeneratePassword" xml:space="preserve">
     <value>Generate password...</value>
+  </data>
+  <data name="WorkingDirectory" xml:space="preserve">
+    <value>Working directory:</value>
   </data>
 </root>

@@ -1,37 +1,19 @@
 using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
-
 using BUtil.Core.Options;
-using BUtil.Configurator.Forms;
 using BUtil.Configurator.Localization;
 
 namespace BUtil.Configurator.Controls
 {
-	/// <summary>
-	/// TasksChainToExecuteUserControl is a control where user can manage the tasks queue.
-	/// </summary>
-	public partial class ProgramsToExecuteUserControl : UserControl
+	public partial class ExecuteProgramTaskInfoListControl : UserControl
 	{
-		#region Fields
-		
 		bool _isBeforeBackupEvent;
 		
-		#endregion
-		
-		#region Constructors
-		
-		/// <summary>
-		/// The default constructor
-		/// </summary>
-		public ProgramsToExecuteUserControl()
+		public ExecuteProgramTaskInfoListControl()
 		{
 			InitializeComponent();
 		}
-		
-		#endregion
-		
-		#region Public Methods
 		
 		public List<ExecuteProgramTaskInfo> GetResultChainOfTasks()
 		{
@@ -45,12 +27,6 @@ namespace BUtil.Configurator.Controls
 			return result;
 		}
 		
-		/// <summary>
-		/// Initializes the component state
-		/// </summary>
-		/// <param name="list">The chain of items to edit</param>
-		/// <param name="isBeforeBackupEvent">Shows wheather here before backup event tasks are edited</param>
-		/// <exception cref="ArgumentNullException">list is nullable</exception>
 		public void Init(List<ExecuteProgramTaskInfo> list, bool isBeforeBackupEvent)
 		{
 			if (list == null)
@@ -69,23 +45,25 @@ namespace BUtil.Configurator.Controls
 			tasksListView.EndUpdate();
 		}
 		
-		/// <summary>
-		/// Sets the configuration to ui
-		/// </summary>
-		public void ApplyLocalization()
+		public void SetHintToControls(Action<Control, string> setHint)
+		{
+			setHint(addButton, Resources.Add);
+            setHint(editButton, Resources.Edit);
+            setHint(removeButton, Resources.Remove);
+            setHint(moveUpButton, Resources.MoveUp);
+            setHint(moveDownButton, Resources.MoveDown);
+        }
+
+        public void ApplyLocalization()
 		{
 			headerGroupBox.Text = _isBeforeBackupEvent ? Resources.ChainOfProgramsToExecuteBeforeBackup : Resources.ChainOfProgramsToExecuteAfterBackup;
-			_nameColumnHeader.Text = Resources.Program;
+			_nameColumnHeader.Text = Resources.Name;
 			addToolStripMenuItem.Text = Resources.Add;
 			editToolStripMenuItem.Text = Resources.Edit;
 			removeToolStripMenuItem.Text = Resources.Remove;
 			moveUpToolStripMenuItem.Text = Resources.MoveUp;
 			moveDownToolStripMenuItem.Text = Resources.MoveDown;
 		}
-		
-		#endregion
-		
-		#region Private Methods
 		
 		void addTaskInfoToList(ExecuteProgramTaskInfo taskInfo)
 		{
@@ -114,7 +92,7 @@ namespace BUtil.Configurator.Controls
 		
 		void addItem(object sender, EventArgs e)
 		{
-			using var form = new BackupEventTaskInfoEditingForm();
+			using var form = new Forms.ExecuteProgramTaskInfoForm();
 			if (form.ShowDialog() == DialogResult.OK)
 				addTaskInfoToList( form.EventTask );
 			
@@ -162,7 +140,7 @@ namespace BUtil.Configurator.Controls
 
 			int indexOfItem = tasksListView.SelectedItems[0].Index;
 
-			using var form = new BackupEventTaskInfoEditingForm((ExecuteProgramTaskInfo)tasksListView.SelectedItems[0].Tag);
+			using var form = new Forms.ExecuteProgramTaskInfoForm((ExecuteProgramTaskInfo)tasksListView.SelectedItems[0].Tag);
 			if (form.ShowDialog() == DialogResult.OK)
 			{
 				var task = form.EventTask;
@@ -171,7 +149,5 @@ namespace BUtil.Configurator.Controls
 				tasksListView.SelectedItems[0].Tag = task;
 			}
 		}
-		
-		#endregion
 	}
 }

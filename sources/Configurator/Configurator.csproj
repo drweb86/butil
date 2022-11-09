@@ -114,7 +114,7 @@
     <Compile Update="Configurator\Controls\Tasks\WhereUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Configurator\Controls\Tasks\ProgramsToExecuteUserControl.cs">
+    <Compile Update="Configurator\Controls\Tasks\ExecuteProgramTaskInfoListControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="BackupUiMaster\Controls\BackupProgressUserControl.cs">

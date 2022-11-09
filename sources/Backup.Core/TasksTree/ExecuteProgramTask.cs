@@ -26,12 +26,11 @@ namespace BUtil.Core.TasksTree
             if (token.IsCancellationRequested)
                 return;
 
-            var workDir = Path.GetDirectoryName(_executeProgramTaskInfo.Program);
-            Log.WriteLine(Logs.LoggingEvent.Debug, $"{Id} {Title}: program: {_executeProgramTaskInfo.Program} with arguments {_executeProgramTaskInfo.Arguments} at {workDir} with {_processPriority} priority");
+            Log.WriteLine(Logs.LoggingEvent.Debug, $"{Id} {Title}: program: {_executeProgramTaskInfo.Program} at working directort {_executeProgramTaskInfo.WorkingDirectory} with arguments {_executeProgramTaskInfo.Arguments} with {_processPriority} priority");
             Events.TaskProgessUpdate(Id, Core.Events.ProcessingStatus.InProgress);
             try
             {
-                ProcessHelper.Execute(_executeProgramTaskInfo.Program, _executeProgramTaskInfo.Arguments, workDir,
+                ProcessHelper.Execute(_executeProgramTaskInfo.Program, _executeProgramTaskInfo.Arguments, _executeProgramTaskInfo.WorkingDirectory,
                     _processPriority, token,
                     out var stdOutput, out var error, out var returnCode);
 

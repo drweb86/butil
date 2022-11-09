@@ -1,92 +1,68 @@
 using System;
-using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using BUtil.Configurator.Localization;
 using BUtil.Core.Options;
 
-
-
 namespace BUtil.Configurator.Forms
 {
-	internal sealed partial class BackupEventTaskInfoEditingForm : Form
+	internal sealed partial class ExecuteProgramTaskInfoForm : Form
 	{
-		#region Properties
-		
 		public ExecuteProgramTaskInfo EventTask
 		{
-			get { return new ExecuteProgramTaskInfo(_nameTextBox.Text, programTextBox.Text.Trim(), argumentsTextBox.Text.Trim()) ; }
+			get { 
+				return new ExecuteProgramTaskInfo(
+					_nameTextBox.Text,
+					programTextBox.Text.Trim(),
+					_workingDirectoryTextBox.Text,
+					argumentsTextBox.Text.Trim()); 
+			}
 		}
 		
-		#endregion
-		
-		#region Constructors
-		
-		public BackupEventTaskInfoEditingForm()
+		public ExecuteProgramTaskInfoForm(ExecuteProgramTaskInfo task = null)
 		{
 			InitializeComponent();
 			
-			this.Text = Resources.NewEventTaskConfigurator;
+			this.Text = task == null ? Resources.NewEventTaskConfigurator : Resources.EditingEventTaskConfigurator;
+			if (task != null)
+			{
+                _nameTextBox.Text = task.Name;
+                _workingDirectoryTextBox.Text = task.WorkingDirectory;
+                programTextBox.Text = task.Program;
+                argumentsTextBox.Text = task.Arguments;
+            }
             ApplyLocals();
 
             programTextBoxTextChanged(null, null);
 		}
-
-		/// <summary>
-		/// The constructor of form for editing the task
-		/// </summary>
-		/// <param name="taskWillGoBeforeBackup">Shows when the task will go</param>
-		/// <param name="taskToEdit">The task</param>
-		/// <exception cref="ArgumentNullException">taskToEdit is null</exception>
-		public BackupEventTaskInfoEditingForm(ExecuteProgramTaskInfo taskToEdit)
-		{
-			InitializeComponent();
-			
-			if (taskToEdit == null)
-			{
-				throw new ArgumentNullException("taskToEdit");
-			}
-
-			_nameTextBox.Text = taskToEdit.Name;
-			programTextBox.Text = taskToEdit.Program;
-			argumentsTextBox.Text = taskToEdit.Arguments;
-			
-			this.Text = Resources.EditingEventTaskConfigurator;
-			ApplyLocals();
-
-            programTextBoxTextChanged(null, null);
-		}
-		
-		#endregion
-		
-		#region Private Methods
 		
 		private void ApplyLocals()
 		{
+			this._nameLabel.Text = Resources.Name;
             taskToRunGroupBox.Text = Resources.TaskToRun;
             programLabel.Text = Resources.Program;
             commandLineArgumentsLabel.Text = Resources.CommandLineArguments;
             cancelButton.Text = Resources.Cancel;
+			_workingDirectoryLabel.Text = BUtil.Configurator.Localization.Resources.WorkingDirectory;
         }
 
-		void programTextBoxTextChanged(object sender, EventArgs e)
+        private void programTextBoxTextChanged(object sender, EventArgs e)
 		{
 			okButton.Enabled = !string.IsNullOrEmpty(programTextBox.Text.Trim());
 		}
-		
-		void browseForProgramButtonClick(object sender, EventArgs e)
+
+        private void browseForProgramButtonClick(object sender, EventArgs e)
 		{
 			if (ofd.ShowDialog() == DialogResult.OK)
 			{
 				programTextBox.Text = ofd.FileName;
+				_workingDirectoryTextBox.Text = Path.GetDirectoryName(ofd.FileName);
 			}
 		}
-		
-		void okButtonClick(object sender, EventArgs e)
+
+        private void okButtonClick(object sender, EventArgs e)
 		{
 			this.DialogResult = DialogResult.OK;
 		}		
-		#endregion
-		
-
 	}
 }

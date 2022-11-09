@@ -396,7 +396,7 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Chain of programs to execute AFTER backup.
+        ///   Looks up a localized string similar to Execute AFTER backup.
         /// </summary>
         internal static string ChainOfProgramsToExecuteAfterBackup {
             get {
@@ -405,7 +405,7 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Chain of programs to execute BEFORE backup.
+        ///   Looks up a localized string similar to Execute BEFORE backup.
         /// </summary>
         internal static string ChainOfProgramsToExecuteBeforeBackup {
             get {
@@ -1877,6 +1877,15 @@ namespace BUtil.Configurator.Localization {
             get {
                 return ResourceManager.GetString("WhileBackupIsInProgressYouCanContinueWorkNNtoRestoreProgressFormJustClickOnThisIc" +
                         "onInTray", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Working directory:.
+        /// </summary>
+        internal static string WorkingDirectory {
+            get {
+                return ResourceManager.GetString("WorkingDirectory", resourceCulture);
             }
         }
         

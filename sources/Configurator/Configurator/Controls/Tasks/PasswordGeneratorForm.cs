@@ -128,17 +128,17 @@ namespace BUtil.Core.PL
         private void InitializeComponent()
         {
             this.optionsGroupBox = new System.Windows.Forms.GroupBox();
-            this.passwordLengthNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this._tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.passwordLengthLabel = new System.Windows.Forms.Label();
+            this.passwordLengthNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.generateButton = new System.Windows.Forms.Button();
             this.copyToClipboardButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.useButton = new System.Windows.Forms.Button();
-            this._tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.optionsGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.passwordLengthNumericUpDown)).BeginInit();
             this._tableLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordLengthNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // optionsGroupBox
@@ -154,6 +154,33 @@ namespace BUtil.Core.PL
             this.optionsGroupBox.TabIndex = 1;
             this.optionsGroupBox.TabStop = false;
             this.optionsGroupBox.Text = "Options";
+            // 
+            // _tableLayoutPanel
+            // 
+            this._tableLayoutPanel.ColumnCount = 2;
+            this._tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this._tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this._tableLayoutPanel.Controls.Add(this.passwordLengthLabel, 0, 0);
+            this._tableLayoutPanel.Controls.Add(this.passwordLengthNumericUpDown, 1, 0);
+            this._tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._tableLayoutPanel.Location = new System.Drawing.Point(4, 19);
+            this._tableLayoutPanel.Name = "_tableLayoutPanel";
+            this._tableLayoutPanel.RowCount = 1;
+            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this._tableLayoutPanel.Size = new System.Drawing.Size(561, 31);
+            this._tableLayoutPanel.TabIndex = 4;
+            // 
+            // passwordLengthLabel
+            // 
+            this.passwordLengthLabel.AutoSize = true;
+            this.passwordLengthLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.passwordLengthLabel.Location = new System.Drawing.Point(4, 0);
+            this.passwordLengthLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.passwordLengthLabel.Name = "passwordLengthLabel";
+            this.passwordLengthLabel.Size = new System.Drawing.Size(97, 31);
+            this.passwordLengthLabel.TabIndex = 0;
+            this.passwordLengthLabel.Text = "Password length:";
+            this.passwordLengthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // passwordLengthNumericUpDown
             // 
@@ -178,18 +205,6 @@ namespace BUtil.Core.PL
             0,
             0,
             0});
-            // 
-            // passwordLengthLabel
-            // 
-            this.passwordLengthLabel.AutoSize = true;
-            this.passwordLengthLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.passwordLengthLabel.Location = new System.Drawing.Point(4, 0);
-            this.passwordLengthLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.passwordLengthLabel.Name = "passwordLengthLabel";
-            this.passwordLengthLabel.Size = new System.Drawing.Size(97, 31);
-            this.passwordLengthLabel.TabIndex = 0;
-            this.passwordLengthLabel.Text = "Password length:";
-            this.passwordLengthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // passwordTextBox
             // 
@@ -269,21 +284,6 @@ namespace BUtil.Core.PL
             this.useButton.UseVisualStyleBackColor = true;
             this.useButton.Click += new System.EventHandler(this.useButtonClick);
             // 
-            // _tableLayoutPanel
-            // 
-            this._tableLayoutPanel.ColumnCount = 2;
-            this._tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this._tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this._tableLayoutPanel.Controls.Add(this.passwordLengthLabel, 0, 0);
-            this._tableLayoutPanel.Controls.Add(this.passwordLengthNumericUpDown, 1, 0);
-            this._tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._tableLayoutPanel.Location = new System.Drawing.Point(4, 19);
-            this._tableLayoutPanel.Name = "_tableLayoutPanel";
-            this._tableLayoutPanel.RowCount = 1;
-            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this._tableLayoutPanel.Size = new System.Drawing.Size(561, 31);
-            this._tableLayoutPanel.TabIndex = 4;
-            // 
             // PasswordGeneratorForm
             // 
             this.AcceptButton = this.generateButton;
@@ -308,9 +308,9 @@ namespace BUtil.Core.PL
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Password generator";
             this.optionsGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.passwordLengthNumericUpDown)).EndInit();
             this._tableLayoutPanel.ResumeLayout(false);
             this._tableLayoutPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordLengthNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

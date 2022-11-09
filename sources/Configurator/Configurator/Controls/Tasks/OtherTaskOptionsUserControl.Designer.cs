@@ -29,41 +29,69 @@ namespace BUtil.Configurator.Controls
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.beforeBackupEventsControl = new BUtil.Configurator.Controls.ProgramsToExecuteUserControl();
-            this._afterBackupTasksChainToExecuteUserControl = new BUtil.Configurator.Controls.ProgramsToExecuteUserControl();
+            this.beforeBackupEventsControl = new BUtil.Configurator.Controls.ExecuteProgramTaskInfoListControl();
+            this._afterBackupTasksChainToExecuteUserControl = new BUtil.Configurator.Controls.ExecuteProgramTaskInfoListControl();
+            this._splitContainer = new System.Windows.Forms.SplitContainer();
+            ((System.ComponentModel.ISupportInitialize)(this._splitContainer)).BeginInit();
+            this._splitContainer.Panel1.SuspendLayout();
+            this._splitContainer.Panel2.SuspendLayout();
+            this._splitContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // beforeBackupEventsControl
             // 
-            this.beforeBackupEventsControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.beforeBackupEventsControl.Location = new System.Drawing.Point(3, 6);
+            this.beforeBackupEventsControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.beforeBackupEventsControl.Location = new System.Drawing.Point(0, 0);
+            this.beforeBackupEventsControl.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.beforeBackupEventsControl.Name = "beforeBackupEventsControl";
-            this.beforeBackupEventsControl.Size = new System.Drawing.Size(485, 339);
+            this.beforeBackupEventsControl.Size = new System.Drawing.Size(573, 400);
             this.beforeBackupEventsControl.TabIndex = 1;
             // 
             // _afterBackupTasksChainToExecuteUserControl
             // 
-            this._afterBackupTasksChainToExecuteUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this._afterBackupTasksChainToExecuteUserControl.Location = new System.Drawing.Point(3, 351);
+            this._afterBackupTasksChainToExecuteUserControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._afterBackupTasksChainToExecuteUserControl.Location = new System.Drawing.Point(0, 0);
+            this._afterBackupTasksChainToExecuteUserControl.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this._afterBackupTasksChainToExecuteUserControl.Name = "_afterBackupTasksChainToExecuteUserControl";
-            this._afterBackupTasksChainToExecuteUserControl.Size = new System.Drawing.Size(485, 340);
+            this._afterBackupTasksChainToExecuteUserControl.Size = new System.Drawing.Size(573, 413);
             this._afterBackupTasksChainToExecuteUserControl.TabIndex = 2;
             // 
-            // TaskOtherOptionsUserControl
+            // _splitContainer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this._splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._splitContainer.Location = new System.Drawing.Point(0, 0);
+            this._splitContainer.Name = "_splitContainer";
+            this._splitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // _splitContainer.Panel1
+            // 
+            this._splitContainer.Panel1.Controls.Add(this.beforeBackupEventsControl);
+            // 
+            // _splitContainer.Panel2
+            // 
+            this._splitContainer.Panel2.Controls.Add(this._afterBackupTasksChainToExecuteUserControl);
+            this._splitContainer.Size = new System.Drawing.Size(573, 817);
+            this._splitContainer.SplitterDistance = 400;
+            this._splitContainer.TabIndex = 3;
+            // 
+            // OtherTaskOptionsUserControl
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this._afterBackupTasksChainToExecuteUserControl);
-            this.Controls.Add(this.beforeBackupEventsControl);
-            this.MinimumSize = new System.Drawing.Size(491, 708);
-            this.Name = "TaskOtherOptionsUserControl";
-            this.Size = new System.Drawing.Size(491, 708);
+            this.Controls.Add(this._splitContainer);
+            this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.MinimumSize = new System.Drawing.Size(573, 817);
+            this.Name = "OtherTaskOptionsUserControl";
+            this.Size = new System.Drawing.Size(573, 817);
+            this._splitContainer.Panel1.ResumeLayout(false);
+            this._splitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this._splitContainer)).EndInit();
+            this._splitContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
 		}
-		private BUtil.Configurator.Controls.ProgramsToExecuteUserControl _afterBackupTasksChainToExecuteUserControl;
-        private BUtil.Configurator.Controls.ProgramsToExecuteUserControl beforeBackupEventsControl;
-	}
+		private BUtil.Configurator.Controls.ExecuteProgramTaskInfoListControl _afterBackupTasksChainToExecuteUserControl;
+        private BUtil.Configurator.Controls.ExecuteProgramTaskInfoListControl beforeBackupEventsControl;
+        private System.Windows.Forms.SplitContainer _splitContainer;
+    }
 }

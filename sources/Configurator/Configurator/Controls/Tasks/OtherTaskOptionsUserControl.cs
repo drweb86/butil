@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Windows.Forms;
 using BUtil.Core.Options;
 
 namespace BUtil.Configurator.Controls
@@ -28,7 +29,10 @@ namespace BUtil.Configurator.Controls
 		{
 			beforeBackupEventsControl.ApplyLocalization();
 			_afterBackupTasksChainToExecuteUserControl.ApplyLocalization();
-		}
+
+			beforeBackupEventsControl.SetHintToControls(SetHintForControl);
+            _afterBackupTasksChainToExecuteUserControl.SetHintToControls(SetHintForControl);
+        }
 	
 		public override void SetOptionsToUi(object settings)
 		{

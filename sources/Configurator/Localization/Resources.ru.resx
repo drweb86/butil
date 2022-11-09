@@ -574,10 +574,10 @@
     <value>Аргументы коммандной строки:</value>
   </data>
   <data name="ChainOfProgramsToExecuteBeforeBackup" xml:space="preserve">
-    <value>Цепочка программ для выполнения ДО резервного копирования</value>
+    <value>Выполнить ДО резервного копирования</value>
   </data>
   <data name="ChainOfProgramsToExecuteAfterBackup" xml:space="preserve">
-    <value>Цепочка программ для выполнения ПОСЛЕ резервного копирования</value>
+    <value>Выполнить ПОСЛЕ резервного копирования</value>
   </data>
   <data name="Edit" xml:space="preserve">
     <value>Изменить...</value>
@@ -696,5 +696,8 @@
   </data>
   <data name="GeneratePassword" xml:space="preserve">
     <value>Сгенерировать пароль...</value>
+  </data>
+  <data name="WorkingDirectory" xml:space="preserve">
+    <value>Рабочий каталог:</value>
   </data>
 </root>
