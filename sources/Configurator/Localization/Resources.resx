@@ -763,4 +763,9 @@ In this case you can restore data by copying required files by your favourite fi
   <data name="PleaseAddAtLeastOneDestinationPlace" xml:space="preserve">
     <value>Please add at least one destination place.</value>
   </data>
+  <data name="BackupFailedPleaseReviewOpenedLog" xml:space="preserve">
+    <value>Backup failed.
+
+Please review opened log.</value>
+  </data>
 </root>

@@ -24,13 +24,12 @@ namespace BUtil.Core.TasksTree
             if (token.IsCancellationRequested)
                 return;
 
-            LogDebug("Copying");
-            Events.TaskProgessUpdate(Id, ProcessingStatus.InProgress);
+            UpdateStatus(ProcessingStatus.InProgress);
 
             var storage = StorageFactory.Create(Log, _storageSettings);
             var storageRelativeFileName = _storageFile.StorageFileName;
             _storageFile.StorageFileName = storage.Upload(_storageFile.FileState.FileName, _storageFile.StorageRelativeFileName);
-            Events.TaskProgessUpdate(Id, ProcessingStatus.FinishedSuccesfully);
+            UpdateStatus(ProcessingStatus.FinishedSuccesfully);
         }
     }
 }

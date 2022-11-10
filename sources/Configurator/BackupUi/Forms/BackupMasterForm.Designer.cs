@@ -103,7 +103,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             // processingStateInformationColumnHeader
             // 
             this.processingStateInformationColumnHeader.Text = "Processing";
-            this.processingStateInformationColumnHeader.Width = 154;
+            this.processingStateInformationColumnHeader.Width = 200;
             // 
             // compressionItemsListViewImageList
             // 
@@ -159,7 +159,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             this.abortBackupBackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.AbortBackupBackgroundWorkerDoWork);
             this.abortBackupBackgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.AbortBackupBackgroundWorkerRunWorkerCompleted);
             // 
-            // backupBackgroundWorker
+            // _backgroundWorker
             // 
             this._backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.OnDoWork);
             this._backgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.OnRunWorkerCompleted);

@@ -25,8 +25,7 @@ namespace BUtil.Core.TasksTree.States
             if (token.IsCancellationRequested)
                 return;
 
-            LogDebug($"Get hash");
-            Events.TaskProgessUpdate(Id, ProcessingStatus.InProgress);
+            UpdateStatus(ProcessingStatus.InProgress);
             var fileInfo = new FileInfo(_fileName);
 
             using var fileStream = File.OpenRead(_fileName);
@@ -36,7 +35,7 @@ namespace BUtil.Core.TasksTree.States
 
             State = new FileState(_fileName, fileInfo.LastWriteTimeUtc, fileInfo.Length, HashToString(hash));
 
-            Events.TaskProgessUpdate(Id, ProcessingStatus.FinishedSuccesfully);
+            UpdateStatus(ProcessingStatus.FinishedSuccesfully);
         }
 
         private string HashToString(byte[] hash)

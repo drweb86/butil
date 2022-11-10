@@ -31,8 +31,7 @@ namespace BUtil.Core.TasksTree
                 return;
             }
 
-            Events.TaskProgessUpdate(Id, ProcessingStatus.InProgress);
-            LogDebug("Reading content");
+            UpdateStatus(ProcessingStatus.InProgress);
             var files = new List<string>();
             if (SourceItem.IsFolder)
             {

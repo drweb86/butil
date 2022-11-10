@@ -10,9 +10,6 @@ namespace BUtil.Core.FileSystem
         static readonly string ProfileConfigFile = 
 			Path.Combine(Directories.UserDataFolder, "ProfileOptions.xml");
 		
-		static readonly string _FileLogTemplate = 
-			Path.Combine(Directories.DataDir, "logtemplate.dat");
-		
 		static readonly string _ConsoleBackupTool = 
 			Path.Combine(Directories.BinariesDir, "Backup.exe");
 		
@@ -66,11 +63,6 @@ namespace BUtil.Core.FileSystem
 			get { return _SevenZipPacker; }
         }
 
-        public static string FileLogTemplate
-        {
-            get { return _FileLogTemplate; }
-        }
-        
         #endregion
         
         static void CheckExistenceCritical(string file)
@@ -79,16 +71,11 @@ namespace BUtil.Core.FileSystem
 				throw new FileNotFoundException(file);
         }
 
-        /// <summary>
-        /// Checks for existence of critical files
-        /// </summary>
-        /// <exception cref="FileNotFoundException"></exception>
         public static void CriticalFilesCheck()
         {
         	CheckExistenceCritical(_SevenZipPacker); 
         	CheckExistenceCritical(_SevenZipGPacker);
         	CheckExistenceCritical(_ConsoleBackupTool);
-        	CheckExistenceCritical(_FileLogTemplate);
         }
     }
 }

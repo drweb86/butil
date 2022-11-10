@@ -27,8 +27,7 @@ namespace BUtil.Core.TasksTree.States
             if (token.IsCancellationRequested)
                 return;
 
-            LogDebug("Write state");
-            Events.TaskProgessUpdate(Id, ProcessingStatus.InProgress);
+            UpdateStatus(ProcessingStatus.InProgress);
 
             var storage = StorageFactory.Create(Log, _storageSettings);
             var tempFile = Path.GetRandomFileName();
@@ -36,7 +35,7 @@ namespace BUtil.Core.TasksTree.States
             File.WriteAllText(tempFile, json);
             storage.Upload(tempFile, IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile);
             File.Delete(tempFile);
-            Events.TaskProgessUpdate(Id, ProcessingStatus.FinishedSuccesfully);
+            UpdateStatus(ProcessingStatus.FinishedSuccesfully);
         }
     }
 }

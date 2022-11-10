@@ -30,8 +30,7 @@ namespace BUtil.Core.TasksTree
             if (token.IsCancellationRequested)
                 return;
 
-            LogDebug("Calculating");
-            Events.TaskProgessUpdate(Id, ProcessingStatus.InProgress);
+            UpdateStatus(ProcessingStatus.InProgress);
 
             var storageState = _storageStateTask.StorageState;
             var sourceItemStates = _getSourceItemStateTasks
@@ -44,7 +43,7 @@ namespace BUtil.Core.TasksTree
             IncrementalBackupState = storageState;
             VersionIsNeeded = versionState.SourceItemChanges.Any(x => x.CreatedFiles.Any() || x.UpdatedFiles.Any() || x.CreatedFiles.Any());
 
-            Events.TaskProgessUpdate(Id, ProcessingStatus.FinishedSuccesfully);
+            UpdateStatus(ProcessingStatus.FinishedSuccesfully);
         }
 
         private VersionState Compare(IEnumerable<SourceItemState> a, IEnumerable<SourceItemState> b)

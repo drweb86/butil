@@ -264,6 +264,17 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Backup failed.
+        ///
+        ///Please review opened log..
+        /// </summary>
+        internal static string BackupFailedPleaseReviewOpenedLog {
+            get {
+                return ResourceManager.GetString("BackupFailedPleaseReviewOpenedLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Backup is in a progress... .
         /// </summary>
         internal static string BackupIsInAProgress {

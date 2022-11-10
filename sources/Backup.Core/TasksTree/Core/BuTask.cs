@@ -27,9 +27,35 @@ namespace BUtil.Core.TasksTree.Core
 
         public abstract void Execute(CancellationToken token);
 
-        public void LogDebug(string message)
+        protected void LogDebug(string message)
         {
-            Log.WriteLine(LoggingEvent.Debug, $"{Id} {Title} {message}");
+            LogEvent(LoggingEvent.Debug, message);
+        }
+
+        protected void LogError(string message)
+        {
+            LogEvent(LoggingEvent.Error, message);
+        }
+
+        protected void LogWarning(string message)
+        {
+            LogEvent(LoggingEvent.Warning, message);
+        }
+
+        protected void UpdateStatus(ProcessingStatus status)
+        {
+            LogDebug(LocalsHelper.ToString(status));
+            Events.TaskProgessUpdate(Id, status);
+        }
+
+        protected void LogEvent(LoggingEvent logEvent, string message)
+        {
+            var lines = message
+                .Replace("\r\n", "\n")
+                .Split("\n", StringSplitOptions.RemoveEmptyEntries);
+            foreach (var line in lines)
+                if (!string.IsNullOrWhiteSpace(line))
+                    Log.WriteLine(logEvent, $"<b>{Title}</b>: {line}");
         }
     }
 }

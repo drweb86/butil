@@ -703,4 +703,9 @@
   <data name="PleaseAddAtLeastOneDestinationPlace" xml:space="preserve">
     <value>Добавьте как минимум одно место назначения.</value>
   </data>
+  <data name="BackupFailedPleaseReviewOpenedLog" xml:space="preserve">
+    <value>Резервное копирование завершилось с ошибкой.
+
+Посмотрите лог резервного копирования.</value>
+  </data>
 </root>

@@ -28,8 +28,7 @@ namespace BUtil.Core.TasksTree.Storage
             if (token.IsCancellationRequested)
                 return;
 
-            LogDebug("Create tasks");
-            Events.TaskProgessUpdate(Id, ProcessingStatus.InProgress);
+            UpdateStatus(ProcessingStatus.InProgress);
             var childTasks = new List<BuTask>();
 
             var versionState = _getIncrementedVersionTask.IncrementalBackupState.VersionStates.Last();
@@ -63,7 +62,7 @@ namespace BUtil.Core.TasksTree.Storage
             Events.DuringExecutionTasksAdded(Id, childTasks);
             Children = childTasks;
             base.Execute(token);
-            Events.TaskProgessUpdate(Id, ProcessingStatus.FinishedSuccesfully);
+            UpdateStatus(ProcessingStatus.FinishedSuccesfully);
         }
     }
 }

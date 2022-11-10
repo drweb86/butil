@@ -1,10 +1,5 @@
 using System;
 using System.IO;
-using System.Text;
-
-
-using BUtil;
-using BUtil.Core;
 using System.Globalization;
 using BUtil.Core.Synchronization;
 using BUtil.Core.FileSystem;
@@ -13,9 +8,6 @@ using BUtil.Core.Localization;
 
 namespace BUtil.Core.Logs
 {
-    /// <summary>
-    /// Logs and outputs information to File
-    /// </summary>
     public sealed class FileLog : LogBase
 	{
         const string _TIME_FORMATSTRING = "dd MMMM (dddd) HH.mm.ss";
@@ -68,18 +60,18 @@ namespace BUtil.Core.Logs
         /// <exception cref="LogException">any problems</exception>
 		public override void Open()
 		{
-            // creating log on the base of template
-            // required to reduce problems with encoding
 			try
 			{
                 File.WriteAllText(_fileName, 
-                                  string.Format(
-                                  	CultureInfo.CurrentCulture, 
-                                  	File.ReadAllText(Files.FileLogTemplate), 
-                                  	DateTime.Now.ToString("f"),
-                                  	Resources.BackupReport,
-                                  	SupportManager.GetLink(SupportRequest.Homepage),
-                                  	Resources.VisitProjectHomepage));
+@$"<!DOCTYPE HTML PUBLIC ""-//W3C//DTD HTML 4.0 Transitional//EN"">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV=""CONTENT-TYPE"" CONTENT=""text/html; charset=utf-8"">
+	<TITLE>{DateTime.Now.ToString("f")} - {Resources.BackupReport}</TITLE>
+</HEAD>
+<BODY>
+	<a target=""_new"" href=""{SupportManager.GetLink(SupportRequest.Homepage)}"">{Resources.VisitProjectHomepage}</a>
+	<br />");
 				_logFile = File.AppendText(_fileName);
 			}
 			catch (Exception e)

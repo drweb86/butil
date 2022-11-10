@@ -25,8 +25,7 @@ namespace BUtil.Core.TasksTree
             if (token.IsCancellationRequested)
                 return;
 
-            LogDebug("Reading state");
-            Events.TaskProgessUpdate(Id, ProcessingStatus.InProgress);
+            UpdateStatus(ProcessingStatus.InProgress);
             var storage = StorageFactory.Create(Log, StorageSettings);
             var content = storage.ReadAllText(IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile);
             if (content == null)
@@ -39,6 +38,7 @@ namespace BUtil.Core.TasksTree
                 LogDebug("Deserializing.");
                 StorageState = JsonSerializer.Deserialize<IncrementalBackupState>(content);
             }
+            UpdateStatus(ProcessingStatus.FinishedSuccesfully);
         }
     }
 }

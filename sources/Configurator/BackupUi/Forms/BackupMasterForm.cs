@@ -12,6 +12,7 @@ using BUtil.Configurator.Localization;
 using BUtil.Core.Events;
 using BUtil.Core.BackupModels;
 using BUtil.Core.TasksTree.Core;
+using System.Runtime.InteropServices;
 
 namespace BUtil.Configurator.BackupUiMaster.Forms
 {
@@ -42,25 +43,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             OnTasksListViewResize(this, new EventArgs());
             ApplyLocalization();
 		}
-
-		void OnBackupFinsihed(object sender, EventArgs e)
-		{
-			if (InvokeRequired)
-			{
-				Invoke(OnBackupFinsihed);
-				return;
-			}
-
-			_backupInProgress = false;
-			cancelButton.Enabled = false;
-
-			if (_backupProgressUserControl != null)
-			{
-				_backupProgressUserControl.Stop();
-			}
-			ReturnFromTray();
-		}
-		
+				
 		static Color GetResultColor(ProcessingStatus state)
 		{
 			return state switch
@@ -149,7 +132,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 				return;
 			} */
 
-			settingsUserControl.GetSettingsFromUi(out PowerTask task, out bool beepWhenCompleted);
 			// _controller.PowerTask = task;
 			// _controller.HearSoundWhenBackupCompleted = beepWhenCompleted;
 			
@@ -263,7 +245,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 
 		private void OnTasksListViewResize(object sender, EventArgs e)
 		{
-			int newWidth = tasksListView.Width - 35 - processingStateInformationColumnHeader.Width;
+			int newWidth = tasksListView.Width - processingStateInformationColumnHeader.Width - 35;
 			taskNameColumnHeader.Width = newWidth < 35 ? 35 : newWidth;
 		}
 		
@@ -329,90 +311,47 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 				_previousFormState = WindowState;
 			}
 		}
-		#endregion
-		
-		void OnDoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        #endregion
+
+        private void OnDoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
 		{
 			_rootTask.Execute(_cancelTokenSource.Token);
 		}
 		
-		void OnRunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+		private void OnRunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
 		{
-			_backupInProgress = false;
-            /*if (_controller.Options.LoggingLevel == LogLevel.Support)
-            {
-        	SupportManager.OpenWebLink(_fileLogFile);
-            }
+            _backupInProgress = false;
+            cancelButton.Enabled = false;
+            _backupProgressUserControl.Stop();
+            ReturnFromTray();
+			_log.Close();
 
-            if (_controller.PowerTask == PowerTask.None && _controller.ErrorsOrWarningsRegistered)
-            {
-            	cancelButton.Enabled = false;
-            	return;
-            }
-            */
-
-            /*if (HearSoundWhenBackupCompleted)
+            settingsUserControl.GetSettingsFromUi(out PowerTask powerTask, out bool beepWhenCompleted);
+            if (beepWhenCompleted)
                 Miscellaneous.DoBeeps();
-            
-            // in support mode we always opening log and do not perform power task
-            if (_options.LoggingLevel == LogLevel.Support)
-            {
-				SupportManager.OpenWebLinkAsync(_fileLogFile);
-            	
-				Environment.Exit(0);
-            }
-            else
-            {
-				if (ErrorsOrWarningsRegistered)
+
+			var appStaysAlive = powerTask == PowerTask.None || powerTask == PowerTask.Hibernate || powerTask == PowerTask.Suspend;
+
+            if (appStaysAlive)
+			{
+                PowerPC.DoTask(powerTask);
+                if (_log.ErrorsOrWarningsRegistered)
 				{
-	                // user chose to shutdown PC or logoff from it. In this case we should
-	                // add a registry key in RunOnce section to show him log in browser
-	                // of backup when he will login into the system next time
-	                if ((PowerTask == PowerTask.Shutdown) || 
-	                    (PowerTask == PowerTask.Reboot) || 
-	                    (PowerTask == PowerTask.LogOff))
-	                {
-                        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-                        {
-                            NativeMethods.ScheduleOpeningFileAfterLoginOfUserIntoTheSystem(_fileLogFile);
-                        }
-                        else
-{
-    _temporaryLog.WriteLine(LoggingEvent.Error, "Cannot schedule opening file after logging user into the system");
-}
-	                }
-
-                    else
-// Hibernate, Sleep, Nothing
-// we should open browser and perform required power operation
-{
-    SupportManager.OpenWebLinkAsync(_fileLogFile);
-}
-	            }
-                // No problems during backup registered. In this case we should notify
-                // user that's all is ok
-                else
-{
-    // user is here and we can show him the message
-    if (PowerTask == PowerTask.None)
-    {
-        MessageBox.Show(Resources.BackupProcessCompletedSuccesfully, ";-)", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 0);
-    }
-}
-
-PowerPC.DoTask(PowerTask);
-
-if (PowerTask == PowerTask.None && ErrorsOrWarningsRegistered)
-{
-    ;
-}
-else
-{
-    Environment.Exit(0);
-}*/
-
-            // TODO: Close();
-		}
+					SupportManager.OpenWebLink(_log.LogFilename);
+                    Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.BackupFailedPleaseReviewOpenedLog);
+                }
+				else
+				{
+                    MessageBox.Show(Resources.BackupProcessCompletedSuccesfully, ";-)", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 0);
+                }
+				return;
+            }
+			if (_log.ErrorsOrWarningsRegistered &&
+                RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                BUtil.BackupUiMaster.NativeMethods.ScheduleOpeningFileAfterLoginOfUserIntoTheSystem(_log.LogFilename);
+			PowerPC.DoTask(powerTask);
+            Close();
+        }
 		
 		void CancelButtonClick(object sender, EventArgs e)
 		{

@@ -5,7 +5,6 @@ using BUtil.Core.Options;
 using BUtil.Core.TasksTree.Core;
 using System;
 using System.Diagnostics;
-using System.IO;
 using System.Threading;
 
 namespace BUtil.Core.TasksTree.Apps
@@ -27,23 +26,23 @@ namespace BUtil.Core.TasksTree.Apps
             if (token.IsCancellationRequested)
                 return;
 
-            Log.WriteLine(LoggingEvent.Debug, $"{Id} {Title}: program: {_executeProgramTaskInfo.Program} at working directort {_executeProgramTaskInfo.WorkingDirectory} with arguments {_executeProgramTaskInfo.Arguments} with {_processPriority} priority");
-            Events.TaskProgessUpdate(Id, ProcessingStatus.InProgress);
+            LogDebug($"Program: {_executeProgramTaskInfo.Program} at working directort {_executeProgramTaskInfo.WorkingDirectory} with arguments {_executeProgramTaskInfo.Arguments} with {_processPriority} priority");
+            UpdateStatus(ProcessingStatus.InProgress);
             try
             {
                 ProcessHelper.Execute(_executeProgramTaskInfo.Program, _executeProgramTaskInfo.Arguments, _executeProgramTaskInfo.WorkingDirectory,
                     _processPriority, token,
                     out var stdOutput, out var error, out var returnCode);
 
-                Log.WriteLine(LoggingEvent.Debug, $"{Id} {Title}: return code: {returnCode}");
-                Log.WriteLine(LoggingEvent.Debug, $"{Id} {Title}: output: {stdOutput}");
-                Log.WriteLine(LoggingEvent.Debug, $"{Id} {Title}: error: {error}");
-                Events.TaskProgessUpdate(Id, returnCode == 0 ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
+                LogDebug($"Exit code: {returnCode}");
+                LogDebug(stdOutput);
+                LogError(error);
+                UpdateStatus(returnCode == 0 ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
             }
             catch (Exception e)
             {
-                Log.WriteLine(LoggingEvent.Error, $"{Id} {Title}: failed: {e}");
-                Events.TaskProgessUpdate(Id, ProcessingStatus.FinishedWithErrors);
+                LogError(e.ToString());
+                UpdateStatus(ProcessingStatus.FinishedWithErrors);
             }
 
         }
