@@ -103,7 +103,6 @@ begin
 end;
 
 [Files]
-
 Source: "..\..\Output\BUtil\*.*"; DestDir: "{app}"; Flags: recursesubdirs
 
 [INI]
@@ -117,9 +116,6 @@ Name: "{group}\{cm:Console_Backup}"; Filename: "{app}\bin\Backup.exe"
 Name: "{group}\{cm:Backup_Wizard}"; Filename: "{app}\bin\Configurator.exe"; Parameters: "JustBackupMaster"; IconFilename: "{app}\data\BackupUi.ico"
 Name: "{group}\{cm:Restoration}"; Filename: "{app}\bin\Configurator.exe"; Parameters: "JustRestorationMaster"; IconFilename: "{app}\data\RestorationMaster.ico"
 Name: "{group}\{cm:Journals}"; Filename: "{app}\bin\Configurator.exe"; Parameters: "JustJournals"; IconFilename: "{app}\data\Journals.ico"
-
-; Toolkit
-Name: "{group}\{cm:Toolkit}\{cm:Md5_Signer}"; Filename: "{app}\bin\MD5.exe"
 
 ; Documentation
 Name: "{group}\{cm:Documentation}\{cm:Manual}"; Filename: "{app}\Help.url"

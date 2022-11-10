@@ -72,7 +72,7 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>SharedAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Update="AddBackupTaskWizard\View\TaskNameUserControl.cs">
+    <Compile Update="Configurator\Controls\Tasks\TaskNameUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Configurator\AboutProgramUI\AboutProgramUserControl.cs" />

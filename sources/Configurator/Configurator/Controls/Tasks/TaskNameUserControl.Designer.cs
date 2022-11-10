@@ -38,7 +38,7 @@
             // 
             this._nameLabel.AutoSize = true;
             this._nameLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._nameLabel.Location = new System.Drawing.Point(4, 0);
+            this._nameLabel.Location = new System.Drawing.Point(20, 16);
             this._nameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._nameLabel.Name = "_nameLabel";
             this._nameLabel.Size = new System.Drawing.Size(32, 29);
@@ -49,15 +49,16 @@
             // _titleTextBox
             // 
             this._titleTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._titleTextBox.Location = new System.Drawing.Point(44, 3);
+            this._titleTextBox.Location = new System.Drawing.Point(60, 19);
             this._titleTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this._titleTextBox.Name = "_titleTextBox";
-            this._titleTextBox.Size = new System.Drawing.Size(699, 23);
+            this._titleTextBox.Size = new System.Drawing.Size(518, 23);
             this._titleTextBox.TabIndex = 1;
             this._titleTextBox.TextChanged += new System.EventHandler(this.OnNameChange);
             // 
             // _tableLayoutPanel
             // 
+            this._tableLayoutPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this._tableLayoutPanel.ColumnCount = 2;
             this._tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this._tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -65,11 +66,13 @@
             this._tableLayoutPanel.Controls.Add(this._titleTextBox, 1, 0);
             this._tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this._tableLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this._tableLayoutPanel.Name = "_tableLayoutPanel";
+            this._tableLayoutPanel.Padding = new System.Windows.Forms.Padding(16, 16, 16, 0);
             this._tableLayoutPanel.RowCount = 2;
             this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this._tableLayoutPanel.Size = new System.Drawing.Size(747, 383);
+            this._tableLayoutPanel.Size = new System.Drawing.Size(598, 383);
             this._tableLayoutPanel.TabIndex = 2;
             // 
             // TaskNameUserControl
@@ -79,6 +82,7 @@
             this.Controls.Add(this._tableLayoutPanel);
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.Name = "TaskNameUserControl";
+            this.Size = new System.Drawing.Size(598, 383);
             this._tableLayoutPanel.ResumeLayout(false);
             this._tableLayoutPanel.PerformLayout();
             this.ResumeLayout(false);

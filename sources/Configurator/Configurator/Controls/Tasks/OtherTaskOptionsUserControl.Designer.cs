@@ -44,7 +44,7 @@ namespace BUtil.Configurator.Controls
             this.beforeBackupEventsControl.Location = new System.Drawing.Point(0, 0);
             this.beforeBackupEventsControl.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.beforeBackupEventsControl.Name = "beforeBackupEventsControl";
-            this.beforeBackupEventsControl.Size = new System.Drawing.Size(573, 400);
+            this.beforeBackupEventsControl.Size = new System.Drawing.Size(291, 390);
             this.beforeBackupEventsControl.TabIndex = 1;
             // 
             // _afterBackupTasksChainToExecuteUserControl
@@ -53,7 +53,7 @@ namespace BUtil.Configurator.Controls
             this._afterBackupTasksChainToExecuteUserControl.Location = new System.Drawing.Point(0, 0);
             this._afterBackupTasksChainToExecuteUserControl.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this._afterBackupTasksChainToExecuteUserControl.Name = "_afterBackupTasksChainToExecuteUserControl";
-            this._afterBackupTasksChainToExecuteUserControl.Size = new System.Drawing.Size(573, 413);
+            this._afterBackupTasksChainToExecuteUserControl.Size = new System.Drawing.Size(278, 390);
             this._afterBackupTasksChainToExecuteUserControl.TabIndex = 2;
             // 
             // _splitContainer
@@ -61,7 +61,6 @@ namespace BUtil.Configurator.Controls
             this._splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this._splitContainer.Location = new System.Drawing.Point(0, 0);
             this._splitContainer.Name = "_splitContainer";
-            this._splitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // _splitContainer.Panel1
             // 
@@ -70,8 +69,8 @@ namespace BUtil.Configurator.Controls
             // _splitContainer.Panel2
             // 
             this._splitContainer.Panel2.Controls.Add(this._afterBackupTasksChainToExecuteUserControl);
-            this._splitContainer.Size = new System.Drawing.Size(573, 817);
-            this._splitContainer.SplitterDistance = 400;
+            this._splitContainer.Size = new System.Drawing.Size(573, 390);
+            this._splitContainer.SplitterDistance = 291;
             this._splitContainer.TabIndex = 3;
             // 
             // OtherTaskOptionsUserControl
@@ -80,9 +79,9 @@ namespace BUtil.Configurator.Controls
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this._splitContainer);
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.MinimumSize = new System.Drawing.Size(573, 817);
+            this.MinimumSize = new System.Drawing.Size(573, 390);
             this.Name = "OtherTaskOptionsUserControl";
-            this.Size = new System.Drawing.Size(573, 817);
+            this.Size = new System.Drawing.Size(573, 390);
             this._splitContainer.Panel1.ResumeLayout(false);
             this._splitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._splitContainer)).EndInit();
