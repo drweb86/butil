@@ -4,15 +4,15 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 
-namespace BUtil.Core.TasksTree
+namespace BUtil.Core.TasksTree.Core
 {
     public abstract class BuTask
     {
         public Guid Id { get; } = Guid.NewGuid();
         public string Title { get; }
         public TaskArea TaskArea { get; }
-        protected BackupEvents Events { get; }
-        protected LogBase Log { get; }
+        protected readonly BackupEvents Events;
+        protected readonly LogBase Log;
         public virtual IEnumerable<BuTask> GetChildren()
         {
             return Array.Empty<BuTask>();

@@ -312,4 +312,37 @@
   <data name="PackingDataInAnImage" xml:space="preserve">
     <value>Упаковка данных в образ</value>
   </data>
+  <data name="GetStateOfSourceItemsAndStorages" xml:space="preserve">
+    <value>Получение состояний исходных файлов и источников</value>
+  </data>
+  <data name="GetStateOfStorage" xml:space="preserve">
+    <value>Получение состояния хранилища "{0}"</value>
+  </data>
+  <data name="GetStateOfSourceItem" xml:space="preserve">
+    <value>Получение состояния источника "{0}"</value>
+  </data>
+  <data name="GetStateOfFileFileName" xml:space="preserve">
+    <value>Получение состояния файла "{0}"</value>
+  </data>
+  <data name="WriteStateToStorage" xml:space="preserve">
+    <value>Сохранение состояния хранилища "{0}"</value>
+  </data>
+  <data name="IncrementalBackup" xml:space="preserve">
+    <value>Инкрементное резервное копирование</value>
+  </data>
+  <data name="CalculateIncrementedVersionForStorage" xml:space="preserve">
+    <value>Вычисление инкрементной версии для хранилища "{0}"</value>
+  </data>
+  <data name="WriteSourceFilesToStorage" xml:space="preserve">
+    <value>Сохранение исходных файлов в хранилище "{0}"</value>
+  </data>
+  <data name="WriteSourceFileToStorage" xml:space="preserve">
+    <value>Сохранение исходного файла "{0}" в хранилище "{1}"</value>
+  </data>
+  <data name="WriteIncrementedVersionToStorage" xml:space="preserve">
+    <value>Сохранение инкрементной версии в хранилище "{0}"</value>
+  </data>
+  <data name="WriteIntegrityVerificationScriptsToStorage" xml:space="preserve">
+    <value>Сохранение скриптов проверки целостности в хранилище "{0}"</value>
+  </data>
 </root>

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 
-namespace BUtil.Core.TasksTree
+namespace BUtil.Core.TasksTree.Core
 {
     public abstract class ParallelBuTask : BuTask
     {
@@ -34,9 +34,11 @@ namespace BUtil.Core.TasksTree
 
         public override IEnumerable<BuTask> GetChildren()
         {
-            var children = (Children ?? Array.Empty<BuTask>()).ToList();
-            foreach (var child in children)
+            var actualSelfChildren = Children ?? Array.Empty<BuTask>();
+            var children = new List<BuTask>();
+            foreach (var child in actualSelfChildren)
             {
+                children.Add(child);
                 children.AddRange(child.GetChildren());
             }
             return children;

@@ -53,7 +53,7 @@ namespace BUtil.RestorationMaster
         private void OnNextButtonClick(object sender, EventArgs e)
 		{
 			var backupFolder = _backupLocationTextBox.Text;
-            var backupFileName = Path.Combine(backupFolder, IncrementalBackupModelConstants.StorageStateFile);
+            var backupFileName = Path.Combine(backupFolder, IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile);
             var json = File.ReadAllText(backupFileName);
 			var incrementalBackupState = JsonSerializer.Deserialize<IncrementalBackupState>(json);
 

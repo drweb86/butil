@@ -304,4 +304,37 @@ Application will now close</value>
   <data name="PackingDataInAnImage" xml:space="preserve">
     <value>Packing data in an image</value>
   </data>
+  <data name="GetStateOfSourceItemsAndStorages" xml:space="preserve">
+    <value>Get state of source items and storages</value>
+  </data>
+  <data name="GetStateOfStorage" xml:space="preserve">
+    <value>Get state of storage "{0}"</value>
+  </data>
+  <data name="GetStateOfSourceItem" xml:space="preserve">
+    <value>Get state of source item "{0}"</value>
+  </data>
+  <data name="GetStateOfFileFileName" xml:space="preserve">
+    <value>Get state of file "{0}"</value>
+  </data>
+  <data name="WriteStateToStorage" xml:space="preserve">
+    <value>Write state to storage "{0}"</value>
+  </data>
+  <data name="IncrementalBackup" xml:space="preserve">
+    <value>Incremental Backup</value>
+  </data>
+  <data name="CalculateIncrementedVersionForStorage" xml:space="preserve">
+    <value>Calculate incremented version for storage "{0}"</value>
+  </data>
+  <data name="WriteSourceFilesToStorage" xml:space="preserve">
+    <value>Write source files to storage "{0}"</value>
+  </data>
+  <data name="WriteSourceFileToStorage" xml:space="preserve">
+    <value>Write source file "{0} to storage "{1}"</value>
+  </data>
+  <data name="WriteIncrementedVersionToStorage" xml:space="preserve">
+    <value>Write incremented version to storage "{0}"</value>
+  </data>
+  <data name="WriteIntegrityVerificationScriptsToStorage" xml:space="preserve">
+    <value>Write integrity verification scripts to storage "{0}"</value>
+  </data>
 </root>

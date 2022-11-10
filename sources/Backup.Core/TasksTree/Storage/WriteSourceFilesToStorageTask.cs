@@ -2,21 +2,22 @@
 using BUtil.Core.Logs;
 using BUtil.Core.State;
 using BUtil.Core.Storages;
+using BUtil.Core.TasksTree.Core;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 
-namespace BUtil.Core.TasksTree
+namespace BUtil.Core.TasksTree.Storage
 {
-    internal class WriteUpdatedFilesToStorageTask : ParallelBuTask
+    internal class WriteSourceFilesToStorageTask : ParallelBuTask
     {
-        private GetIncrementedVersionTask _getIncrementedVersionTask;
+        private CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask;
         private StorageSettings _storageSettings;
 
-        public WriteUpdatedFilesToStorageTask(LogBase log, BackupEvents events,
-            GetIncrementedVersionTask getIncrementedVersionTask, StorageSettings storageSettings)
-            : base(log, events, $"Write updated files to storage \"{storageSettings.Name}\"", TaskArea.Hdd, null)
+        public WriteSourceFilesToStorageTask(LogBase log, BackupEvents events,
+            CalculateIncrementedVersionForStorageTask getIncrementedVersionTask, StorageSettings storageSettings)
+            : base(log, events, string.Format(BUtil.Core.Localization.Resources.WriteSourceFilesToStorage, storageSettings.Name), TaskArea.Hdd, null)
         {
             _getIncrementedVersionTask = getIncrementedVersionTask;
             _storageSettings = storageSettings;
@@ -56,7 +57,7 @@ namespace BUtil.Core.TasksTree
                         x.StorageIntegrityMethodInfo = x.FileState.Sha512;
                         return x;
                     })
-                    .Select(x => new WriteUpdatedFileToStorageTask(Log, Events, x, _storageSettings))
+                    .Select(x => new WriteSourceFileToStorageTask(Log, Events, x, _storageSettings))
                     .ToList();
             }
             Events.DuringExecutionTasksAdded(Id, childTasks);

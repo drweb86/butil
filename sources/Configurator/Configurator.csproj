@@ -61,11 +61,11 @@
     <OutputPath>..\..\Output\BUtil\bin\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="AddBackupTaskWizard\Controller\**" />
+    <Compile Remove="Configurator\AddBackupTaskWizard\Controller\**" />
     <Compile Remove="Properties\**" />
-    <EmbeddedResource Remove="AddBackupTaskWizard\Controller\**" />
+    <EmbeddedResource Remove="Configurator\AddBackupTaskWizard\Controller\**" />
     <EmbeddedResource Remove="Properties\**" />
-    <None Remove="AddBackupTaskWizard\Controller\**" />
+    <None Remove="Configurator\AddBackupTaskWizard\Controller\**" />
     <None Remove="Properties\**" />
   </ItemGroup>
   <ItemGroup>
@@ -117,11 +117,11 @@
     <Compile Update="Configurator\Controls\Tasks\ExecuteProgramTaskInfoListControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="BackupUiMaster\Controls\BackupProgressUserControl.cs">
+    <Compile Update="BackupUi\Controls\BackupProgressUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="BackupUiMaster\Controls\BackUserControl.cs" />
-    <Compile Update="BackupUiMaster\Controls\SettingsUserControl.cs">
+    <Compile Update="BackupUi\Controls\BackUserControl.cs" />
+    <Compile Update="BackupUi\Controls\SettingsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Icons.Designer.cs">

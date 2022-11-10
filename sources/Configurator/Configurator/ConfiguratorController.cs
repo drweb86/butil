@@ -85,11 +85,11 @@ namespace BUtil.Configurator.Configurator
             var backupTaskStoreService = new BackupTaskStoreService();
             if (taskName == null)
             {
-                var backupTasks = backupTaskStoreService.LoadAll();
+                var backupTaskNames = backupTaskStoreService.GetNames();
 
-                using var selectTaskForm = new SelectTaskToRunForm(backupTasks.ToDictionary(t => t.Name, t => t));
+                using var selectTaskForm = new SelectTaskToRunForm(backupTaskNames);
                 if (selectTaskForm.ShowDialog() == DialogResult.OK)
-                    task = selectTaskForm.TaskToRun;
+                    task = backupTaskStoreService.Load(selectTaskForm.TaskToRun);
                 else
                     Environment.Exit(-1);
             }

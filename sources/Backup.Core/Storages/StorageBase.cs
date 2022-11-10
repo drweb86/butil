@@ -1,30 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using BUtil.Core.Logs;
+﻿using BUtil.Core.Logs;
 
 namespace BUtil.Core.Storages
 {
-    public abstract class StorageBase
+    public abstract class StorageBase<TStorageSettings>: IStorage
 	{
-		private LogBase _Log;
-
-        #region Properties
-
-        protected LogBase Log
+        protected StorageBase(LogBase log, TStorageSettings settings)
         {
-            get { return _Log; }
-            set 
-            {
-                if (value == null)
-                    throw new ArgumentNullException("Log");
-
-                _Log = value;
-            }
+            Log = log;
+            Settings = settings;
         }
-		
-        #endregion
 
-        public abstract void Open(LogBase log);
+        protected readonly LogBase Log;
+        protected readonly TStorageSettings Settings;
+
         public abstract string Upload(string sourceFile, string relativeFileName);
         public abstract string ReadAllText(string file);
         public abstract void Test();

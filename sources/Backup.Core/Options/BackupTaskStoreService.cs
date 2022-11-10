@@ -29,12 +29,6 @@ namespace BUtil.Core.Options
             return JsonSerializer.Deserialize<BackupTask>(json);
         }
 
-        public IEnumerable<BackupTask> LoadAll()
-        {
-            return GetNames()
-                .Select(this.Load)
-                .ToList();
-        }
 
         public void Save(BackupTask task)
         {

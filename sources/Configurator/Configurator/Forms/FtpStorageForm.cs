@@ -108,8 +108,8 @@ namespace BUtil.Configurator
 			try
 			{
 				var settings = GetFtpStorageSettings();
-				var storage = StorageFactory.Create(settings);
-				storage.Test();
+				// var storage = StorageFactory.Create(settings);
+				// storage.Test();
 			}
 			catch (Exception exc)
 			{

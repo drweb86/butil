@@ -1,4 +1,4 @@
-﻿namespace BUtil.Core.TasksTree
+﻿namespace BUtil.Core.TasksTree.Core
 {
     public enum TaskArea
     {

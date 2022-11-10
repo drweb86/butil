@@ -41,9 +41,8 @@ namespace BUtil.Core.Jobs
 
                 try
                 {
-                    var storage = StorageFactory.Create(_storageSettings);
+                    var storage = StorageFactory.Create(_log, _storageSettings);
                     StatusUpdate(ProcessingStatus.InProgress);
-                    storage.Open(_log);
                     _log.WriteLine(LoggingEvent.Debug, "Storage opened successfully");
                     // storage.Put(_imageFileToCopy);
                     _log.WriteLine(LoggingEvent.Debug, "File was copyied to storage successfully");

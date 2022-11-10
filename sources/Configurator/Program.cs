@@ -80,7 +80,7 @@ namespace BUtil.Configurator
 				{
 					controller.OpenRestorationMaster(null, true);
 				}
-                else if (args[0] == IncrementalBackupModelConstants.StorageStateFile)
+                else if (args[0] == IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile)
 				{
 					controller.OpenRestorationMaster(args[0], true);
 				}

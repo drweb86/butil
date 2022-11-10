@@ -1,6 +1,7 @@
 ﻿using BUtil.Core.Events;
 using BUtil.Core.Logs;
 using BUtil.Core.State;
+using BUtil.Core.TasksTree.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,16 +9,16 @@ using System.Threading;
 
 namespace BUtil.Core.TasksTree
 {
-    internal class GetIncrementedVersionTask: BuTask
+    internal class CalculateIncrementedVersionForStorageTask: BuTask
     {
         public bool VersionIsNeeded { get; private set; }
         public IncrementalBackupState IncrementalBackupState { get; private set; }
 
-        private readonly GetStorageStateTask _storageStateTask;
-        private readonly IEnumerable<GetSourceItemStateTask> _getSourceItemStateTasks;
-        public GetIncrementedVersionTask(LogBase log, BackupEvents events, GetStorageStateTask storageStateTask,
-            IEnumerable<GetSourceItemStateTask> getSourceItemStateTasks) :
-            base(log, events, $"Calculate version changes for storage\"{storageStateTask.StorageSettings.Name}\"",
+        private readonly GetStateOfStorageTask _storageStateTask;
+        private readonly IEnumerable<GetStateOfSourceItemTask> _getSourceItemStateTasks;
+        public CalculateIncrementedVersionForStorageTask(LogBase log, BackupEvents events, GetStateOfStorageTask storageStateTask,
+            IEnumerable<GetStateOfSourceItemTask> getSourceItemStateTasks) :
+            base(log, events, string.Format(BUtil.Core.Localization.Resources.CalculateIncrementedVersionForStorage, storageStateTask.StorageSettings.Name),
                 TaskArea.Hdd)
         {
             _storageStateTask = storageStateTask;

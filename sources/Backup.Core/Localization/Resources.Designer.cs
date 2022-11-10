@@ -149,6 +149,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Calculate incremented version for storage &quot;{0}&quot;.
+        /// </summary>
+        public static string CalculateIncrementedVersionForStorage {
+            get {
+                return ResourceManager.GetString("CalculateIncrementedVersionForStorage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Cancel {
@@ -348,11 +357,56 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Get state of file &quot;{0}&quot;.
+        /// </summary>
+        public static string GetStateOfFileFileName {
+            get {
+                return ResourceManager.GetString("GetStateOfFileFileName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Get state of source item &quot;{0}&quot;.
+        /// </summary>
+        public static string GetStateOfSourceItem {
+            get {
+                return ResourceManager.GetString("GetStateOfSourceItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Get state of source items and storages.
+        /// </summary>
+        public static string GetStateOfSourceItemsAndStorages {
+            get {
+                return ResourceManager.GetString("GetStateOfSourceItemsAndStorages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Get state of storage &quot;{0}&quot;.
+        /// </summary>
+        public static string GetStateOfStorage {
+            get {
+                return ResourceManager.GetString("GetStateOfStorage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;Here is your password&gt;.
         /// </summary>
         public static string HereIsYourPassword {
             get {
                 return ResourceManager.GetString("HereIsYourPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Incremental Backup.
+        /// </summary>
+        public static string IncrementalBackup {
+            get {
+                return ResourceManager.GetString("IncrementalBackup", resourceCulture);
             }
         }
         
@@ -600,6 +654,51 @@ namespace BUtil.Core.Localization {
         public static string WithoutCompression {
             get {
                 return ResourceManager.GetString("WithoutCompression", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Write incremented version to storage &quot;{0}&quot;.
+        /// </summary>
+        public static string WriteIncrementedVersionToStorage {
+            get {
+                return ResourceManager.GetString("WriteIncrementedVersionToStorage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Write integrity verification scripts to storage &quot;{0}&quot;.
+        /// </summary>
+        public static string WriteIntegrityVerificationScriptsToStorage {
+            get {
+                return ResourceManager.GetString("WriteIntegrityVerificationScriptsToStorage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Write source files to storage &quot;{0}&quot;.
+        /// </summary>
+        public static string WriteSourceFilesToStorage {
+            get {
+                return ResourceManager.GetString("WriteSourceFilesToStorage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Write source file &quot;{0} to storage &quot;{1}&quot;.
+        /// </summary>
+        public static string WriteSourceFileToStorage {
+            get {
+                return ResourceManager.GetString("WriteSourceFileToStorage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Write state to storage &quot;{0}&quot;.
+        /// </summary>
+        public static string WriteStateToStorage {
+            get {
+                return ResourceManager.GetString("WriteStateToStorage", resourceCulture);
             }
         }
     }

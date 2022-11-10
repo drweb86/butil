@@ -1,20 +1,21 @@
 ﻿using BUtil.Core.Events;
 using BUtil.Core.Logs;
 using BUtil.Core.State;
+using BUtil.Core.TasksTree.Core;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 
-namespace BUtil.Core.TasksTree
+namespace BUtil.Core.TasksTree.States
 {
-    internal class GetFileStateTask : BuTask
+    internal class GetStateOfFileTask : BuTask
     {
         private string _fileName;
         public FileState State { get; private set; }
 
-        public GetFileStateTask(LogBase log, BackupEvents events, string fileName) : 
-            base(log, events, $"Get state of file {fileName}", TaskArea.File)
+        public GetStateOfFileTask(LogBase log, BackupEvents events, string fileName) :
+            base(log, events, string.Format(BUtil.Core.Localization.Resources.GetStateOfFileFileName, fileName), TaskArea.File)
         {
             _fileName = fileName;
         }
@@ -34,7 +35,7 @@ namespace BUtil.Core.TasksTree
             var hash = sha256Hash.ComputeHash(fileStream);
 
             State = new FileState(_fileName, fileInfo.LastWriteTimeUtc, fileInfo.Length, HashToString(hash));
-           
+
             Events.TaskProgessUpdate(Id, ProcessingStatus.FinishedSuccesfully);
         }
 

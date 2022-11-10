@@ -3,18 +3,19 @@ using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.State;
 using BUtil.Core.Storages;
+using BUtil.Core.TasksTree.Core;
 using System.Text.Json;
 using System.Threading;
 
 namespace BUtil.Core.TasksTree
 {
-    internal class GetStorageStateTask : BuTask
+    internal class GetStateOfStorageTask : BuTask
     {
         public StorageSettings StorageSettings { get; }
         public IncrementalBackupState StorageState { get; private set; }
 
-        public GetStorageStateTask(LogBase log, BackupEvents events, StorageSettings storageSettings) : 
-            base(log, events, $"Get storage \"{storageSettings.Name}\" state", TaskArea.Hdd)
+        public GetStateOfStorageTask(LogBase log, BackupEvents events, StorageSettings storageSettings) : 
+            base(log, events, string.Format(BUtil.Core.Localization.Resources.GetStateOfStorage, storageSettings.Name), TaskArea.Hdd)
         {
             StorageSettings = storageSettings;
         }
@@ -26,8 +27,8 @@ namespace BUtil.Core.TasksTree
 
             LogDebug("Reading state");
             Events.TaskProgessUpdate(Id, ProcessingStatus.InProgress);
-            var storage = StorageFactory.Create(StorageSettings);
-            var content = storage.ReadAllText(IncrementalBackupModelConstants.StorageStateFile);
+            var storage = StorageFactory.Create(Log, StorageSettings);
+            var content = storage.ReadAllText(IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile);
             if (content == null)
             {
                 LogDebug("State is missing. Vanilla backup.");

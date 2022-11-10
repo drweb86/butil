@@ -2,6 +2,8 @@
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
 using BUtil.Core.State;
+using BUtil.Core.TasksTree.Core;
+using BUtil.Core.TasksTree.States;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,15 +11,15 @@ using System.Threading;
 
 namespace BUtil.Core.TasksTree
 {
-    internal class GetSourceItemStateTask : SequentialBuTask
+    internal class GetStateOfSourceItemTask : SequentialBuTask
     {
-        private List<GetFileStateTask> _getFileStateTasks;
+        private List<GetStateOfFileTask> _getFileStateTasks;
         public SourceItemState SourceItemState { get; private set; } 
 
         public SourceItem SourceItem { get; }
 
-        public GetSourceItemStateTask(LogBase log, BackupEvents events, SourceItem sourceItem) : 
-            base(log, events, $"Get \"{sourceItem.Target}\" state", sourceItem.IsFolder ? TaskArea.Folder : TaskArea.File, null)
+        public GetStateOfSourceItemTask(LogBase log, BackupEvents events, SourceItem sourceItem) : 
+            base(log, events, string.Format(BUtil.Core.Localization.Resources.GetStateOfSourceItem, sourceItem.Target), sourceItem.IsFolder ? TaskArea.Folder : TaskArea.File, null)
         {
             SourceItem = sourceItem;
         }
@@ -42,7 +44,7 @@ namespace BUtil.Core.TasksTree
             }
 
             _getFileStateTasks = files
-                .Select(file => new GetFileStateTask(Log, Events, file))
+                .Select(file => new GetStateOfFileTask(Log, Events, file))
                 .ToList();
             Children = _getFileStateTasks;
             Events.DuringExecutionTasksAdded(Id, Children);

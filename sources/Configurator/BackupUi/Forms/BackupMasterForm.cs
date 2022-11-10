@@ -10,8 +10,8 @@ using BUtil.Core.Logs;
 using BUtil.BackupUiMaster.Controls;
 using BUtil.Configurator.Localization;
 using BUtil.Core.Events;
-using BUtil.Core.TasksTree;
 using BUtil.Core.BackupModels;
+using BUtil.Core.TasksTree.Core;
 
 namespace BUtil.Configurator.BackupUiMaster.Forms
 {
@@ -231,7 +231,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 		{
 			if (InvokeRequired)
 			{
-				Invoke(OnDuringExecutionTasksAdded, e);
+				Invoke(OnDuringExecutionTasksAdded, sender, e);
 				return;
 			}
 

@@ -3,27 +3,20 @@ using BUtil.Core.Logs;
 
 namespace BUtil.Core.Storages
 {
-    class SambaStorage: StorageBase
+    class SambaStorage: StorageBase<SambaStorageSettings>
 	{
         const string _COPYING = "Copying '{0}' to '{1}'";
         const string _EncryptingFormatString = "Encrypting '{0}'";
 
-        private readonly SambaStorageSettings _settings;
-
         long SkipCopyingToNetworkStorageLimit
         {
-            get { return _settings.SkipCopyingToNetworkStorageLimitMb * 1024 * 1024; }
+            get { return Settings.SkipCopyingToNetworkStorageLimitMb * 1024 * 1024; }
         }
 
-        internal SambaStorage(SambaStorageSettings settings)
+        internal SambaStorage(LogBase log, SambaStorageSettings settings)
+            :base(log, settings)
         {
-            _settings = settings;
         }
-
-		public override void Open(LogBase log)
-		{
-			Log = log;
-		}
 
         public override string ReadAllText(string file)
         {

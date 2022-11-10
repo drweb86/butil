@@ -2,17 +2,18 @@
 using BUtil.Core.Logs;
 using BUtil.Core.State;
 using BUtil.Core.Storages;
+using BUtil.Core.TasksTree.Core;
 using System.Threading;
 
 namespace BUtil.Core.TasksTree
 {
-    internal class WriteUpdatedFileToStorageTask : BuTask
+    internal class WriteSourceFileToStorageTask : BuTask
     {
         private readonly StorageFile _storageFile;
         private readonly StorageSettings _storageSettings;
 
-        public WriteUpdatedFileToStorageTask(LogBase log, BackupEvents events, StorageFile storageFile, StorageSettings storageSettings) : 
-            base(log, events, $"Write file {storageFile.FileState.FileName} to storage \"{storageSettings.Name}\"", TaskArea.File)
+        public WriteSourceFileToStorageTask(LogBase log, BackupEvents events, StorageFile storageFile, StorageSettings storageSettings) : 
+            base(log, events, string.Format(BUtil.Core.Localization.Resources.WriteSourceFileToStorage, storageFile.FileState.FileName, storageSettings.Name), TaskArea.File)
         {
             this._storageFile = storageFile;
             this._storageSettings = storageSettings;
@@ -26,7 +27,7 @@ namespace BUtil.Core.TasksTree
             LogDebug("Copying");
             Events.TaskProgessUpdate(Id, ProcessingStatus.InProgress);
 
-            var storage = StorageFactory.Create(_storageSettings);
+            var storage = StorageFactory.Create(Log, _storageSettings);
             var storageRelativeFileName = _storageFile.StorageFileName;
             _storageFile.StorageFileName = storage.Upload(_storageFile.FileState.FileName, _storageFile.StorageRelativeFileName);
             Events.TaskProgessUpdate(Id, ProcessingStatus.FinishedSuccesfully);

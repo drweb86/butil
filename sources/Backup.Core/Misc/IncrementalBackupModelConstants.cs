@@ -2,6 +2,6 @@
 {
     public static class IncrementalBackupModelConstants
     {
-        public const string StorageStateFile = "Backup.BUtil v1";
+        public const string StorageIncrementedNonEncryptedNonCompressedStateFile = "Backup Incremented Non-Encrypted Non-Compressed.BUtil v1";
     }
 }

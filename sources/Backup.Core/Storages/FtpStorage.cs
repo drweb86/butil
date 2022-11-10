@@ -4,41 +4,28 @@ using BUtil.Core.Logs;
 namespace BUtil.Core.Storages
 {
 
-	class FtpStorage: StorageBase
+	class FtpStorage: StorageBase<FtpStorageSettings>
 	{
 		// const string _CopyingFormatString = "Copying '{0}' to '{1}'";
 
-		private readonly FtpStorageSettings _settings;
-
 		FtpConnection _connection;
 
-		internal FtpStorage(FtpStorageSettings settings)
+		internal FtpStorage(LogBase log, FtpStorageSettings settings)
+			:base(log, settings)
 		{
-			_settings = settings;
 		}
         public override string ReadAllText(string file)
         {
             throw new NotImplementedException();
         }
 
-        public override void Open(LogBase log)
-		{
-            log.ProcedureCall("Open");
-			Log = log;
-
-            _connection = new FtpConnection();
-			_connection.SetLogOnInformation(_settings.User, _settings.Password);
-			_connection.ServerLocation = _settings.Host;
-			_connection.IsPassive = !_settings.ActiveFtpMode;
-		}
-		
 		public override void Test()
 		{
 			_connection = new FtpConnection();
-			_connection.SetLogOnInformation(_settings.User, _settings.Password);
-			_connection.ServerLocation = _settings.Host;
-            _connection.IsPassive = !_settings.ActiveFtpMode;
-			_connection.GetFileList(_settings.DestinationFolder);
+			_connection.SetLogOnInformation(Settings.User, Settings.Password);
+			_connection.ServerLocation = Settings.Host;
+            _connection.IsPassive = !Settings.ActiveFtpMode;
+			_connection.GetFileList(Settings.DestinationFolder);
 		}
 		
 		//public override void Put(string fileName, string directory = null)

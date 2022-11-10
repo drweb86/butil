@@ -1,6 +1,5 @@
-﻿using BUtil.Core.Options;
+﻿using BUtil.Core.Logs;
 using System;
-using System.Collections.Generic;
 using System.Text.Json;
 
 namespace BUtil.Core.Storages
@@ -8,27 +7,27 @@ namespace BUtil.Core.Storages
 
     public class StorageFactory
     {
-        public static StorageBase Create(StorageSettings storageSettings)
+        public static IStorage Create(LogBase log, StorageSettings storageSettings)
         {
             switch (storageSettings.ProviderName)
             {
                 case StorageProviderNames.Hdd:
                     var hddSettings = CreateHddStorageSettings(storageSettings);
-                    return new HddStorage(hddSettings);
+                    return new HddStorage(log, hddSettings);
                 case StorageProviderNames.Ftp:
                     var ftpSettings = CreateFtpStorageSettings(storageSettings);
-                    return Create(ftpSettings);
+                    return Create(log, ftpSettings);
                 case StorageProviderNames.Samba:
                     var sambaSettings = CreateSambaStorageSettings(storageSettings);
-                    return new SambaStorage(sambaSettings);
+                    return new SambaStorage(log, sambaSettings);
                 default:
                     throw new ArgumentOutOfRangeException(nameof(storageSettings));
             }
         }
 
-        public static StorageBase Create(FtpStorageSettings settings)
+        public static IStorage Create(LogBase log, FtpStorageSettings settings)
         {
-            return new FtpStorage(settings);
+            return new FtpStorage(log, settings);
         }
 
         public static FtpStorageSettings CreateFtpStorageSettings(StorageSettings storageSettings)
