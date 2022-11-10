@@ -44,7 +44,7 @@ namespace BUtil.Core.TasksTree.Core
 
         protected void UpdateStatus(ProcessingStatus status)
         {
-            LogDebug(LocalsHelper.ToString(status));
+            LogEvent(status == ProcessingStatus.FinishedWithErrors ? LoggingEvent.Error : LoggingEvent.Debug, LocalsHelper.ToString(status));
             Events.TaskProgessUpdate(Id, status);
         }
 

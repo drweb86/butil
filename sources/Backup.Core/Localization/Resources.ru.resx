@@ -345,4 +345,10 @@
   <data name="WriteIntegrityVerificationScriptsToStorage" xml:space="preserve">
     <value>Сохранение скриптов проверки целостности в хранилище "{0}"</value>
   </data>
+  <data name="IntegrityVerificationScriptPs1" xml:space="preserve">
+    <value>Скрипт проверки целостности.ps1</value>
+  </data>
+  <data name="IntegrityVerificationScriptSh" xml:space="preserve">
+    <value>Скрипт проверки целостности.sh</value>
+  </data>
 </root>

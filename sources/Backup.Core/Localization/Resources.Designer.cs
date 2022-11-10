@@ -429,6 +429,24 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Integrity verification script.ps1.
+        /// </summary>
+        public static string IntegrityVerificationScriptPs1 {
+            get {
+                return ResourceManager.GetString("IntegrityVerificationScriptPs1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Integrity verification script.sh.
+        /// </summary>
+        public static string IntegrityVerificationScriptSh {
+            get {
+                return ResourceManager.GetString("IntegrityVerificationScriptSh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to  is a backup tool for running on computer. For more information see Manual.
         /// </summary>
         public static string IsABackupToolForRunningOnComputerForMoreInformationSeeManual {

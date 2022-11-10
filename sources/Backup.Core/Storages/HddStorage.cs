@@ -36,7 +36,7 @@ namespace BUtil.Core.Storages
 
             System.IO.File.Copy(sourceFile, destinationFile, true);
 
-			return destinationDirectory;
+			return destinationFile;
         }
 
 

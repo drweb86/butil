@@ -31,9 +31,8 @@ namespace BUtil.Core.TasksTree.Storage
             var storage = StorageFactory.Create(Log, _storageSettings);
             var tempFile = Path.GetRandomFileName();
             File.WriteAllText(tempFile, string.Empty);
-            var versionState = _getIncrementedVersionTask.IncrementalBackupState.VersionStates.Last();
-            var ps1VerificationScript = $"{versionState.BackupDateUtc.ToString("yyyyMMddTHHmmss")} integrity verification script.ps1";
-            var shVerificationScript = $"{versionState.BackupDateUtc.ToString("yyyyMMddTHHmmss")} integrity verification script.sh";
+            var ps1VerificationScript = BUtil.Core.Localization.Resources.IntegrityVerificationScriptPs1;
+            var shVerificationScript = BUtil.Core.Localization.Resources.IntegrityVerificationScriptSh;
             storage.Upload(tempFile, ps1VerificationScript);
             storage.Upload(tempFile, shVerificationScript);
             File.Delete(tempFile);

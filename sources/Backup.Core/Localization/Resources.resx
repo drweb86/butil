@@ -337,4 +337,10 @@ Application will now close</value>
   <data name="WriteIntegrityVerificationScriptsToStorage" xml:space="preserve">
     <value>Write integrity verification scripts to storage "{0}"</value>
   </data>
+  <data name="IntegrityVerificationScriptPs1" xml:space="preserve">
+    <value>Integrity verification script.ps1</value>
+  </data>
+  <data name="IntegrityVerificationScriptSh" xml:space="preserve">
+    <value>Integrity verification script.sh</value>
+  </data>
 </root>
