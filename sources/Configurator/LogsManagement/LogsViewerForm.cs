@@ -92,7 +92,7 @@ namespace BUtil.Configurator.LogsManagement
 			
 			foreach (KeyValuePair<TimeSpan, LogInfo> pair in sortedByDateDecreasingLogs)
 			{
-				var item = new ListViewItem( pair.Value.TimeStamp.ToString(ViewLogTime, CultureInfo.CurrentCulture), (int)pair.Value.Result);
+				var item = new ListViewItem( pair.Value.TimeStamp.ToString(ViewLogTime, CultureInfo.CurrentUICulture), (int)pair.Value.Result);
 				item.ForeColor = colors[(int) pair.Value.Result];
 				item.Group = journalsListView.Groups[(int) pair.Value.Result];
 				item.Tag = pair.Value;

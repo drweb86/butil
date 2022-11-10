@@ -206,7 +206,7 @@ namespace BUtil.Core.Options
             {
             	System.Diagnostics.Debug.WriteLine(e.ToString());
                 throw new OptionsException(
-                    string.Format(CultureInfo.CurrentCulture, "During working with file '{0}' an error occured: {1}. \n\nSettings are not saved", Files.ProfileFile, e.Message));
+                    string.Format(CultureInfo.CurrentUICulture, "During working with file '{0}' an error occured: {1}. \n\nSettings are not saved", Files.ProfileFile, e.Message));
             }
 
             try
@@ -251,7 +251,7 @@ namespace BUtil.Core.Options
             {
             	Debug.WriteLine(exc.ToString());
                 throw new OptionsException(
-                    string.Format(CultureInfo.CurrentCulture, _fileInaccessibleOrCorrupted, Files.ProfileFile, exc.Message));
+                    string.Format(CultureInfo.CurrentUICulture, _fileInaccessibleOrCorrupted, Files.ProfileFile, exc.Message));
             }
 
             return options;

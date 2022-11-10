@@ -5,6 +5,8 @@ using BUtil.Core.Storages;
 using BUtil.Core.Options;
 using BUtil.Configurator.Localization;
 using BUtil.Core.PL;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace BUtil.Configurator.Configurator.Controls
 {
@@ -156,7 +158,11 @@ namespace BUtil.Configurator.Configurator.Controls
             switch (storageSettings.ProviderName)
             {
                 case StorageProviderNames.Hdd:
-                    configForm = new HddStorageForm(storageSettings);
+                    configForm = new HddStorageForm(
+						storageSettings,
+						GetNames()
+							.Except(new List<string> { storageSettings.Name })
+							.ToList());
 					break;
                 case StorageProviderNames.Ftp:
                     configForm = new FtpStorageForm(storageSettings);
@@ -176,15 +182,25 @@ namespace BUtil.Configurator.Configurator.Controls
 				storageToChangeListViewItem.Tag = updatedStorageSettings;
             }
 		}
-		
-		void AddStorage(StorageEnum kind)
+
+        private IEnumerable<string> GetNames()
+        {
+            var names = new List<string>();
+            foreach (ListViewItem task in storagesListView.Items)
+            {
+                names.Add(task.Text);
+            }
+            return names;
+        }
+
+        void AddStorage(StorageEnum kind)
 		{
 			IStorageConfigurationForm configForm;
 				
 			switch (kind)
 			{
 				case StorageEnum.Hdd: 
-					configForm = new HddStorageForm(null);
+					configForm = new HddStorageForm(null, GetNames());
 					break;
 				case StorageEnum.Ftp: 
 					configForm = new FtpStorageForm(null);

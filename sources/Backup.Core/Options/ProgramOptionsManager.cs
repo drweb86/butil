@@ -26,15 +26,15 @@ namespace BUtil.Core.Options
         {
             if (string.IsNullOrEmpty(password))
 				throw new ArgumentException(
-					string.Format(CultureInfo.CurrentCulture, "Password is empty"));
+					string.Format(CultureInfo.CurrentUICulture, "Password is empty"));
 				
             if (password.Contains(" "))
 				throw new ArgumentException(
-					string.Format(CultureInfo.CurrentCulture, "Password contains blank"));
+					string.Format(CultureInfo.CurrentUICulture, "Password contains blank"));
       
 			if (lengthCheck && ( password.Length < Constants.MinimumPasswordLength || password.Length > Constants.MaximumPasswordLength))
                 throw new ArgumentException(
-					string.Format(CultureInfo.CurrentCulture, "Password size is out of range [{0}..{1}]", Constants.MinimumPasswordLength, Constants.MaximumPasswordLength));
+					string.Format(CultureInfo.CurrentUICulture, "Password size is out of range [{0}..{1}]", Constants.MinimumPasswordLength, Constants.MaximumPasswordLength));
         }
 		
 		/// <summary>

@@ -1,13 +1,20 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
+using BUtil.Configurator.Configurator;
 using BUtil.Configurator.Localization;
 using BUtil.Core.Options;
+using BUtil.Core.PL;
 
 namespace BUtil.Configurator.Forms
 {
 	internal sealed partial class ExecuteProgramTaskInfoForm : Form
 	{
+		private readonly IEnumerable<string> _forbiddenNames;
+
 		public ExecuteProgramTaskInfo EventTask
 		{
 			get { 
@@ -19,7 +26,7 @@ namespace BUtil.Configurator.Forms
 			}
 		}
 		
-		public ExecuteProgramTaskInfoForm(ExecuteProgramTaskInfo task = null)
+		public ExecuteProgramTaskInfoForm(ExecuteProgramTaskInfo task = null, IEnumerable<string> forbiddenNames = null)
 		{
 			InitializeComponent();
 			
@@ -34,6 +41,7 @@ namespace BUtil.Configurator.Forms
             ApplyLocals();
 
             programTextBoxTextChanged(null, null);
+			this._forbiddenNames = forbiddenNames;
 		}
 		
 		private void ApplyLocals()
@@ -62,7 +70,40 @@ namespace BUtil.Configurator.Forms
 
         private void okButtonClick(object sender, EventArgs e)
 		{
-			this.DialogResult = DialogResult.OK;
-		}		
+			if (string.IsNullOrWhiteSpace(_nameTextBox.Text))
+			{
+				Messages.ShowErrorBox(Resources.NameIsEmpty);
+				return;
+			}
+
+			if (_forbiddenNames.Any(x => x == _nameTextBox.Text))
+			{
+                Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.ThisNameIsAlreadyTakenTryAnotherOne);
+                return;
+            }
+
+			if (!File.Exists(programTextBox.Text))
+			{
+                Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.ProgramDoesNotExist);
+                return;
+            }
+
+            if (!Directory.Exists(_workingDirectoryTextBox.Text))
+            {
+                Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.WorkingDirectoryDoesNotExist);
+                return;
+            }
+
+            this.DialogResult = DialogResult.OK;
+		}
+
+		private void OnNameChanged(object sender, EventArgs e)
+		{
+            var trimmedText = TaskNameStringHelper.TrimIllegalChars(_nameTextBox.Text);
+            if (trimmedText != _nameTextBox.Text)
+            {
+                _nameTextBox.Text = trimmedText;
+            }
+        }
 	}
 }

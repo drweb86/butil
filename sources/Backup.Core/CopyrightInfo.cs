@@ -27,7 +27,7 @@ namespace BUtil.Core
                 .GetName()
 				.Version;
 
-            _copyRightNotice = string.Format(CultureInfo.CurrentCulture, "BUtil - {0}\n{1}\n", _appVersion, SupportManager.GetLink(SupportRequest.Homepage));
+            _copyRightNotice = string.Format(CultureInfo.CurrentUICulture, "BUtil - {0}\n{1}\n", _appVersion, SupportManager.GetLink(SupportRequest.Homepage));
         }
     }
 }

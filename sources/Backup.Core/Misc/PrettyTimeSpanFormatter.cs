@@ -25,9 +25,9 @@ namespace BUtil.Core.Misc
             else
             {
                 if (num == 1)
-                    return num.ToString(CultureInfo.CurrentCulture) + word;
+                    return num.ToString(CultureInfo.CurrentUICulture) + word;
                 else
-                    return num.ToString(CultureInfo.CurrentCulture) + word + "s";
+                    return num.ToString(CultureInfo.CurrentUICulture) + word + "s";
             }
         }
 

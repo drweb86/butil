@@ -82,7 +82,7 @@ namespace BUtil.Core.Logs
         /// <param name="arguments">The arguments</param>
         public void WriteLine(LoggingEvent loggingEvent, string message, params string[] arguments)
         {
-            WriteLine(loggingEvent, string.Format(CultureInfo.CurrentCulture, message, arguments));
+            WriteLine(loggingEvent, string.Format(CultureInfo.CurrentUICulture, message, arguments));
         }
 
 		/// <summary>

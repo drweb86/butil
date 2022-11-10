@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using BUtil.Core.Options;
 using BUtil.Configurator.Localization;
+using System.Linq;
 
 namespace BUtil.Configurator.Controls
 {
@@ -85,10 +86,20 @@ namespace BUtil.Configurator.Controls
 			moveDownToolStripMenuItem.Enabled = moveDownButton.Enabled = oneItemIsSelected && tasksListView.Items.Count > 1 && (tasksListView.SelectedItems[0].Index != tasksListView.Items.Count - 1);
 			moveUpToolStripMenuItem.Enabled = moveUpButton.Enabled = oneItemIsSelected && tasksListView.SelectedItems[0].Index != 0 && tasksListView.Items.Count > 1;
 		}
+
+		private IEnumerable<string> GetNames()
+		{
+			var names = new List<string>();
+            foreach (ListViewItem task in tasksListView.Items)
+            {
+				names.Add(task.Text);
+			}
+			return names;
+        }
 		
 		void addItem(object sender, EventArgs e)
 		{
-			using var form = new Forms.ExecuteProgramTaskInfoForm();
+            using var form = new Forms.ExecuteProgramTaskInfoForm(null, GetNames());
 			if (form.ShowDialog() == DialogResult.OK)
 				addTaskInfoToList( form.EventTask );
 			
@@ -136,7 +147,14 @@ namespace BUtil.Configurator.Controls
 
 			int indexOfItem = tasksListView.SelectedItems[0].Index;
 
-			using var form = new Forms.ExecuteProgramTaskInfoForm((ExecuteProgramTaskInfo)tasksListView.SelectedItems[0].Tag);
+			var existingTask = (ExecuteProgramTaskInfo)tasksListView.SelectedItems[0].Tag;
+
+			using var form = new Forms.ExecuteProgramTaskInfoForm(
+				existingTask,
+				GetNames()
+					.Except(new List<string>{ existingTask.Name })
+					.ToList()
+			);
 			if (form.ShowDialog() == DialogResult.OK)
 			{
 				var task = form.EventTask;

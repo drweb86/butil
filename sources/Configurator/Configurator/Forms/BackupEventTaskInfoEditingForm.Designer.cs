@@ -96,6 +96,7 @@ namespace BUtil.Configurator.Forms
             this._nameTextBox.Name = "_nameTextBox";
             this._nameTextBox.Size = new System.Drawing.Size(463, 23);
             this._nameTextBox.TabIndex = 1;
+            this._nameTextBox.TextChanged += new System.EventHandler(this.OnNameChanged);
             // 
             // _nameLabel
             // 
@@ -185,7 +186,7 @@ namespace BUtil.Configurator.Forms
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
-            // BackupEventTaskInfoEditingForm
+            // ExecuteProgramTaskInfoForm
             // 
             this.AcceptButton = this.okButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -199,7 +200,7 @@ namespace BUtil.Configurator.Forms
             this.Icon = global::BUtil.Configurator.Icons.BUtilIcon;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
-            this.Name = "BackupEventTaskInfoEditingForm";
+            this.Name = "ExecuteProgramTaskInfoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "<New|Edit> - Configurator";
             this.taskToRunGroupBox.ResumeLayout(false);

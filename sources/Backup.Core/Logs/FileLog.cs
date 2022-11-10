@@ -41,7 +41,7 @@ namespace BUtil.Core.Logs
                     do
                     {
                         _fileName = Path.Combine(logsFolder,
-                            DateTime.Now.ToString(_TIME_FORMATSTRING, CultureInfo.CurrentCulture) +
+                            DateTime.Now.ToString(_TIME_FORMATSTRING, CultureInfo.CurrentUICulture) +
                             Files.LogFilesExtension);
                     }
                     while (File.Exists(_fileName));

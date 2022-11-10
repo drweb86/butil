@@ -79,25 +79,25 @@ namespace BUtil.Core.Jobs
                     catch (InvalidOperationException e)
                     {
                         _log.WriteLine(LoggingEvent.Error,
-                              string.Format(CultureInfo.CurrentCulture, _packingParameter.ItemToCompress.Target + ":" + Resources.CouldNotKillPackerProcess0, e.Message));
+                              string.Format(CultureInfo.CurrentUICulture, _packingParameter.ItemToCompress.Target + ":" + Resources.CouldNotKillPackerProcess0, e.Message));
                     }
                     catch (Win32Exception e)
                     {
                         _log.WriteLine(LoggingEvent.Error,
-                              string.Format(CultureInfo.CurrentCulture, _packingParameter.ItemToCompress.Target + ":" + Resources.CouldNotKillPackerProcess0, e.Message));
+                              string.Format(CultureInfo.CurrentUICulture, _packingParameter.ItemToCompress.Target + ":" + Resources.CouldNotKillPackerProcess0, e.Message));
                     }
                 }
                 catch (ObjectDisposedException e)
                 {
                     _log.WriteLine(LoggingEvent.Error,
-                                   string.Format(CultureInfo.CurrentCulture,
+                                   string.Format(CultureInfo.CurrentUICulture,
                                                  _packingParameter.ItemToCompress.Target + ": " + Resources.CouldNotStartPackerDueTo0AbortingBackup,
                                                  e.Message));
                 }
                 catch (Win32Exception e)
                 {
                     _log.WriteLine(LoggingEvent.Error,
-                                   string.Format(CultureInfo.CurrentCulture,
+                                   string.Format(CultureInfo.CurrentUICulture,
                                                  _packingParameter.ItemToCompress.Target + ": " + Resources.CouldNotStartPackerDueTo0AbortingBackup,
                                                  e.Message));
                 }

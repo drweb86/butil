@@ -3,11 +3,18 @@ using System.Windows.Forms;
 using BUtil.Core.Storages;
 using BUtil.Core.PL;
 using BUtil.Configurator.Localization;
+using BUtil.Configurator.Configurator;
+using System.IO;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace BUtil.Configurator
 {
     internal sealed partial class HddStorageForm : Form, IStorageConfigurationForm
 	{
+		private readonly IEnumerable<string> _forbiddenNames;
+
 		private HddStorageSettings GetHddStorageSettings()
 		{ 
 			return new HddStorageSettings
@@ -25,11 +32,11 @@ namespace BUtil.Configurator
         
         string Caption
         {
-        	get { return captionTextBox.Text.Trim(); }
+        	get { return _nameTextBox.Text.Trim(); }
         }
 		
         
-		public HddStorageForm(StorageSettings storageSettings)
+		public HddStorageForm(StorageSettings storageSettings, IEnumerable<string> forbiddenNames)
 		{
 			InitializeComponent();
 			
@@ -37,7 +44,7 @@ namespace BUtil.Configurator
 			{
 				var hddStorageSettings = StorageFactory.CreateHddStorageSettings(storageSettings);
 
-				captionTextBox.Text = hddStorageSettings.Name;
+				_nameTextBox.Text = hddStorageSettings.Name;
 				destinationFolderTextBox.Text = hddStorageSettings.DestinationFolder;
 				acceptButton.Enabled = true;
 			}
@@ -47,7 +54,7 @@ namespace BUtil.Configurator
 			acceptButton.Text = Resources.Ok;
 			cancelButton.Text = Resources.Cancel;
 			captionLabel.Text = Resources.Title;
-			optionsGroupBox.Text = Resources.Options;
+			this._forbiddenNames = forbiddenNames;
 		}
 		
 		void searchButtonClick(object sender, EventArgs e)
@@ -60,18 +67,50 @@ namespace BUtil.Configurator
 		
 		void acceptButtonClick(object sender, EventArgs e)
 		{
-            if (captionTextBox.Text.StartsWith(@"\\", StringComparison.InvariantCulture))
+            if (string.IsNullOrWhiteSpace(_nameTextBox.Text))
+            {
+                Messages.ShowErrorBox(Resources.NameIsEmpty);
+                return;
+            }
+
+            if (_nameTextBox.Text.StartsWith(@"\\", StringComparison.InvariantCulture))
 			{
 				//"Network storages are not allowed to be pointed here!"
 				Messages.ShowErrorBox(Resources.NetworkStoragesAreNotAllowedToBePointedHere);
 				return;
 			}
-			this.DialogResult = DialogResult.OK;
+
+            if (_forbiddenNames.Any(x => x == _nameTextBox.Text))
+            {
+                Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.ThisNameIsAlreadyTakenTryAnotherOne);
+                return;
+            }
+
+            if (!Directory.Exists(destinationFolderTextBox.Text))
+            {
+                Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.DestinationFolderDoesNotExist);
+                return;
+            }
+
+
+            this.DialogResult = DialogResult.OK;
 		}
 		
 		void requiredFieldsTextChanged(object sender, EventArgs e)
 		{
 			acceptButton.Enabled = (!string.IsNullOrEmpty(destinationFolderTextBox.Text)) && (!string.IsNullOrEmpty(Caption));
 		}
+
+		private void OnNameChange(object sender, EventArgs e)
+		{
+            var trimmedText = TaskNameStringHelper.TrimIllegalChars(_nameTextBox.Text);
+            if (trimmedText != _nameTextBox.Text)
+            {
+                _nameTextBox.Text = trimmedText;
+            }
+
+            requiredFieldsTextChanged(sender, e);
+
+        }
 	}
 }

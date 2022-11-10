@@ -708,4 +708,16 @@
 
 Посмотрите лог резервного копирования.</value>
   </data>
+  <data name="ThisNameIsAlreadyTakenTryAnotherOne" xml:space="preserve">
+    <value>Это имя уже задано. Введите другое.</value>
+  </data>
+  <data name="ProgramDoesNotExist" xml:space="preserve">
+    <value>Программа не найдена.</value>
+  </data>
+  <data name="WorkingDirectoryDoesNotExist" xml:space="preserve">
+    <value>Рабочий каталог не найден.</value>
+  </data>
+  <data name="DestinationFolderDoesNotExist" xml:space="preserve">
+    <value>Папка назначения не существует.</value>
+  </data>
 </root>

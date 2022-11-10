@@ -569,6 +569,15 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Destination folder does not exist..
+        /// </summary>
+        internal static string DestinationFolderDoesNotExist {
+            get {
+                return ResourceManager.GetString("DestinationFolderDoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Disable compression and encryption.
         /// </summary>
         internal static string DisableCompressionAndEncryption {
@@ -1363,6 +1372,15 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Program does not exist..
+        /// </summary>
+        internal static string ProgramDoesNotExist {
+            get {
+                return ResourceManager.GetString("ProgramDoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Protection of backup with password. It is required when you want your data to be copied somewhere over the network.
         /// </summary>
         internal static string ProtectionOfBackupWithPasswordItIsRequiredWhenYouWantYourDataToBeCopiedSomewhereOverTheNetwork {
@@ -1721,6 +1739,15 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This name is already taken. Try another one..
+        /// </summary>
+        internal static string ThisNameIsAlreadyTakenTryAnotherOne {
+            get {
+                return ResourceManager.GetString("ThisNameIsAlreadyTakenTryAnotherOne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thursday.
         /// </summary>
         internal static string Thursday {
@@ -1906,6 +1933,15 @@ namespace BUtil.Configurator.Localization {
         internal static string WorkingDirectory {
             get {
                 return ResourceManager.GetString("WorkingDirectory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Working directory does not exist..
+        /// </summary>
+        internal static string WorkingDirectoryDoesNotExist {
+            get {
+                return ResourceManager.GetString("WorkingDirectoryDoesNotExist", resourceCulture);
             }
         }
         

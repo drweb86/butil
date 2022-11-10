@@ -22,12 +22,12 @@ namespace BUtil.Core.Logs
         public static string GetHtmlFormattedLogMessage(LoggingEvent loggingEvent, string message)
         {
         	string information = _includeLoggingEventPrefixes ?
-				string.Format(CultureInfo.CurrentCulture,
+				string.Format(CultureInfo.CurrentUICulture,
 							_INFORMATION_FORMATSTRING, 
 							_loggingEventsStrings[(int)loggingEvent],  
 							DateTime.Now.ToLongTimeString(), 
 							message) :
-        		string.Format(CultureInfo.CurrentCulture,
+        		string.Format(CultureInfo.CurrentUICulture,
 							_INFORMATION_FORMATSTRING_WITHOUT_PREFIX, 
 							DateTime.Now.ToLongTimeString(), 
 							message);

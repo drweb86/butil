@@ -28,48 +28,39 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.optionsGroupBox = new System.Windows.Forms.GroupBox();
             this.searchButton = new System.Windows.Forms.Button();
             this.destinationFolderTextBox = new System.Windows.Forms.TextBox();
             this.whereToStoreBackupLabel = new System.Windows.Forms.Label();
-            this.captionTextBox = new System.Windows.Forms.TextBox();
+            this._nameTextBox = new System.Windows.Forms.TextBox();
             this.captionLabel = new System.Windows.Forms.Label();
             this.acceptButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.fbd = new System.Windows.Forms.FolderBrowserDialog();
-            this.optionsGroupBox.SuspendLayout();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // optionsGroupBox
-            // 
-            this.optionsGroupBox.BackColor = System.Drawing.Color.Transparent;
-            this.optionsGroupBox.Controls.Add(this.searchButton);
-            this.optionsGroupBox.Controls.Add(this.destinationFolderTextBox);
-            this.optionsGroupBox.Controls.Add(this.whereToStoreBackupLabel);
-            this.optionsGroupBox.Location = new System.Drawing.Point(3, 51);
-            this.optionsGroupBox.Name = "optionsGroupBox";
-            this.optionsGroupBox.Size = new System.Drawing.Size(454, 89);
-            this.optionsGroupBox.TabIndex = 1;
-            this.optionsGroupBox.TabStop = false;
-            this.optionsGroupBox.Text = "Options";
             // 
             // searchButton
             // 
+            this.searchButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchButton.Location = new System.Drawing.Point(404, 29);
+            this.searchButton.Location = new System.Drawing.Point(660, 32);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(44, 24);
+            this.searchButton.Size = new System.Drawing.Size(48, 23);
             this.searchButton.TabIndex = 3;
             this.searchButton.Text = "...";
+            this.searchButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.searchButtonClick);
             // 
             // destinationFolderTextBox
             // 
-            this.destinationFolderTextBox.Location = new System.Drawing.Point(12, 32);
+            this.destinationFolderTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.destinationFolderTextBox.Location = new System.Drawing.Point(202, 32);
+            this.destinationFolderTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.destinationFolderTextBox.Name = "destinationFolderTextBox";
-            this.destinationFolderTextBox.ReadOnly = true;
-            this.destinationFolderTextBox.Size = new System.Drawing.Size(386, 20);
+            this.destinationFolderTextBox.Size = new System.Drawing.Size(450, 23);
             this.destinationFolderTextBox.TabIndex = 2;
             this.destinationFolderTextBox.TabStop = false;
             this.destinationFolderTextBox.TextChanged += new System.EventHandler(this.requiredFieldsTextChanged);
@@ -77,36 +68,45 @@
             // whereToStoreBackupLabel
             // 
             this.whereToStoreBackupLabel.AutoSize = true;
-            this.whereToStoreBackupLabel.Location = new System.Drawing.Point(9, 16);
+            this.whereToStoreBackupLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.whereToStoreBackupLabel.Location = new System.Drawing.Point(4, 29);
+            this.whereToStoreBackupLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.whereToStoreBackupLabel.Name = "whereToStoreBackupLabel";
-            this.whereToStoreBackupLabel.Size = new System.Drawing.Size(171, 13);
+            this.whereToStoreBackupLabel.Size = new System.Drawing.Size(190, 29);
             this.whereToStoreBackupLabel.TabIndex = 4;
             this.whereToStoreBackupLabel.Text = "Folder where to store your backup:";
+            this.whereToStoreBackupLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // captionTextBox
             // 
-            this.captionTextBox.Location = new System.Drawing.Point(148, 13);
-            this.captionTextBox.Name = "captionTextBox";
-            this.captionTextBox.Size = new System.Drawing.Size(242, 20);
-            this.captionTextBox.TabIndex = 0;
-            this.captionTextBox.TextChanged += new System.EventHandler(this.requiredFieldsTextChanged);
+            this._nameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._nameTextBox.Location = new System.Drawing.Point(202, 3);
+            this._nameTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this._nameTextBox.Name = "captionTextBox";
+            this._nameTextBox.Size = new System.Drawing.Size(450, 23);
+            this._nameTextBox.TabIndex = 0;
+            this._nameTextBox.TextChanged += new System.EventHandler(this.OnNameChange);
             // 
             // captionLabel
             // 
             this.captionLabel.BackColor = System.Drawing.Color.Transparent;
-            this.captionLabel.Location = new System.Drawing.Point(50, 16);
+            this.captionLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.captionLabel.Location = new System.Drawing.Point(4, 0);
+            this.captionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.captionLabel.Name = "captionLabel";
-            this.captionLabel.Size = new System.Drawing.Size(92, 23);
+            this.captionLabel.Size = new System.Drawing.Size(190, 29);
             this.captionLabel.TabIndex = 2;
-            this.captionLabel.Text = "Caption:";
-            this.captionLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.captionLabel.Text = "Name:";
+            this.captionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // acceptButton
             // 
+            this.acceptButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.acceptButton.Enabled = false;
-            this.acceptButton.Location = new System.Drawing.Point(301, 146);
+            this.acceptButton.Location = new System.Drawing.Point(540, 130);
+            this.acceptButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.acceptButton.Name = "acceptButton";
-            this.acceptButton.Size = new System.Drawing.Size(75, 23);
+            this.acceptButton.Size = new System.Drawing.Size(88, 27);
             this.acceptButton.TabIndex = 5;
             this.acceptButton.Text = "OK";
             this.acceptButton.UseVisualStyleBackColor = true;
@@ -114,50 +114,72 @@
             // 
             // cancelButton
             // 
+            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Location = new System.Drawing.Point(382, 146);
+            this.cancelButton.Location = new System.Drawing.Point(635, 130);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.Size = new System.Drawing.Size(88, 27);
             this.cancelButton.TabIndex = 6;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.Controls.Add(this.searchButton, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.captionLabel, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.destinationFolderTextBox, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this._nameTextBox, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.whereToStoreBackupLabel, 0, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(712, 112);
+            this.tableLayoutPanel1.TabIndex = 7;
+            // 
             // HddStorageForm
             // 
             this.AcceptButton = this.acceptButton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::BUtil.Configurator.Icons.Hdd48x48;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(466, 180);
+            this.ClientSize = new System.Drawing.Size(736, 169);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.acceptButton);
-            this.Controls.Add(this.optionsGroupBox);
-            this.Controls.Add(this.captionTextBox);
-            this.Controls.Add(this.captionLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = global::BUtil.Configurator.Icons.BUtilIcon;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "HddStorageForm";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HDD Storage Configuration";
-            this.optionsGroupBox.ResumeLayout(false);
-            this.optionsGroupBox.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
 		}
 		private System.Windows.Forms.Button searchButton;
 		private System.Windows.Forms.TextBox destinationFolderTextBox;
 		private System.Windows.Forms.Label whereToStoreBackupLabel;
-		private System.Windows.Forms.TextBox captionTextBox;
+		private System.Windows.Forms.TextBox _nameTextBox;
 		private System.Windows.Forms.Label captionLabel;
 		private System.Windows.Forms.Button acceptButton;
 		private System.Windows.Forms.Button cancelButton;
-		private System.Windows.Forms.GroupBox optionsGroupBox;
 		private System.Windows.Forms.FolderBrowserDialog fbd;
-	}
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+    }
 }

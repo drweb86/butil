@@ -768,4 +768,16 @@ In this case you can restore data by copying required files by your favourite fi
 
 Please review opened log.</value>
   </data>
+  <data name="ThisNameIsAlreadyTakenTryAnotherOne" xml:space="preserve">
+    <value>This name is already taken. Try another one.</value>
+  </data>
+  <data name="ProgramDoesNotExist" xml:space="preserve">
+    <value>Program does not exist.</value>
+  </data>
+  <data name="WorkingDirectoryDoesNotExist" xml:space="preserve">
+    <value>Working directory does not exist.</value>
+  </data>
+  <data name="DestinationFolderDoesNotExist" xml:space="preserve">
+    <value>Destination folder does not exist.</value>
+  </data>
 </root>

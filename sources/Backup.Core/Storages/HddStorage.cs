@@ -29,7 +29,7 @@ namespace BUtil.Core.Storages
 			var destinationFile = Path.Combine(Settings.DestinationFolder, relativeFileName);
 			var destinationDirectory = Path.GetDirectoryName(destinationFile);
 
-            Log.WriteLine(LoggingEvent.Debug, String.Format(CultureInfo.CurrentCulture, _COPYING, sourceFile, destinationFile));
+            Log.WriteLine(LoggingEvent.Debug, String.Format(CultureInfo.CurrentUICulture, _COPYING, sourceFile, destinationFile));
 
             if (!Directory.Exists(destinationDirectory))
 				Directory.CreateDirectory(destinationDirectory);

@@ -110,19 +110,19 @@ namespace BUtil.Core.Misc
 			}
 			catch (System.ComponentModel.Win32Exception e)
 			{
-				Messages.ShowErrorBox(string.Format(CultureInfo.CurrentCulture, cannotRunFormatString, process.StartInfo.FileName, e.Message));
+				Messages.ShowErrorBox(string.Format(CultureInfo.CurrentUICulture, cannotRunFormatString, process.StartInfo.FileName, e.Message));
 			}
 			catch (ObjectDisposedException e)
 			{
-				Messages.ShowErrorBox(string.Format(CultureInfo.CurrentCulture, cannotRunFormatString, process.StartInfo.FileName, e.Message));
+				Messages.ShowErrorBox(string.Format(CultureInfo.CurrentUICulture, cannotRunFormatString, process.StartInfo.FileName, e.Message));
 			}
 			catch (InvalidOperationException e)
 			{
-				Messages.ShowErrorBox(string.Format(CultureInfo.CurrentCulture, cannotRunFormatString, process.StartInfo.FileName, e.Message));
+				Messages.ShowErrorBox(string.Format(CultureInfo.CurrentUICulture, cannotRunFormatString, process.StartInfo.FileName, e.Message));
 			}
 			catch (Exception e)
 			{
-				Messages.ShowErrorBox(string.Format(CultureInfo.CurrentCulture, cannotRunFormatString, process.StartInfo.FileName, e.Message));
+				Messages.ShowErrorBox(string.Format(CultureInfo.CurrentUICulture, cannotRunFormatString, process.StartInfo.FileName, e.Message));
 			}
 		}
 	}
