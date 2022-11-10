@@ -7,6 +7,8 @@ using BUtil.Core.TasksTree.Apps;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.States;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
 
 namespace BUtil.Core.TasksTree.IncrementalModel
 {
@@ -41,6 +43,13 @@ namespace BUtil.Core.TasksTree.IncrementalModel
             }
             Children = tasks;
             _incrementalBackupModelOptions = incrementalBackupModelOptions;
+        }
+
+        public override void Execute(CancellationToken token)
+        {
+            UpdateStatus(ProcessingStatus.InProgress);
+            base.Execute(token);
+            UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
         }
     }
 }

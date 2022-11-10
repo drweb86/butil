@@ -35,6 +35,7 @@ namespace BUtil.Core.TasksTree.States
 
             State = new FileState(_fileName, fileInfo.LastWriteTimeUtc, fileInfo.Length, HashToString(hash));
 
+            IsSuccess = true;
             UpdateStatus(ProcessingStatus.FinishedSuccesfully);
         }
 

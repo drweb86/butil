@@ -55,7 +55,9 @@ namespace BUtil.Core.TasksTree.Core
                 .Split("\n", StringSplitOptions.RemoveEmptyEntries);
             foreach (var line in lines)
                 if (!string.IsNullOrWhiteSpace(line))
-                    Log.WriteLine(logEvent, $"<b>{Title}</b>: {line}");
+                    Log.WriteLine(logEvent, $"{Title}: {line}");
         }
+
+        public bool IsSuccess { get; protected set; }
     }
 }

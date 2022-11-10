@@ -20,7 +20,6 @@ namespace BUtil.Core.TasksTree.Core
 
         public override void Execute(CancellationToken token)
         {
-            UpdateStatus(ProcessingStatus.InProgress);
             foreach (var child in Children)
             {
                 if (token.IsCancellationRequested)
@@ -28,7 +27,7 @@ namespace BUtil.Core.TasksTree.Core
 
                 child.Execute(token);
             }
-            UpdateStatus(ProcessingStatus.FinishedSuccesfully);
+            IsSuccess = Children.All(x => x.IsSuccess);
         }
 
         public override IEnumerable<BuTask> GetChildren()

@@ -54,6 +54,8 @@ namespace BUtil.Core.TasksTree
                 _getFileStateTasks
                 .Select(x => x.State)
                 .ToList());
+
+            UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
         }
     }
 }

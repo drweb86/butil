@@ -44,6 +44,7 @@ namespace BUtil.Core.TasksTree
             VersionIsNeeded = versionState.SourceItemChanges.Any(x => x.CreatedFiles.Any() || x.UpdatedFiles.Any() || x.CreatedFiles.Any());
 
             UpdateStatus(ProcessingStatus.FinishedSuccesfully);
+            IsSuccess = true;
         }
 
         private VersionState Compare(IEnumerable<SourceItemState> a, IEnumerable<SourceItemState> b)

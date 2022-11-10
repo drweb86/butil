@@ -35,6 +35,7 @@ namespace BUtil.Core.TasksTree.States
             File.WriteAllText(tempFile, json);
             storage.Upload(tempFile, IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile);
             File.Delete(tempFile);
+            IsSuccess = true;
             UpdateStatus(ProcessingStatus.FinishedSuccesfully);
         }
     }

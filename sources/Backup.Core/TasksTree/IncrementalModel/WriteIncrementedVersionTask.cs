@@ -4,6 +4,8 @@ using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.States;
 using BUtil.Core.TasksTree.Storage;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
 
 namespace BUtil.Core.TasksTree
 {
@@ -23,6 +25,13 @@ namespace BUtil.Core.TasksTree
             childTaks.Add(new WriteIntegrityVerificationScriptsToStorageTask(log, events, getIncrementedVersionTask, storageStateTask.StorageSettings));
 
             Children = childTaks;
+        }
+
+        public override void Execute(CancellationToken token)
+        {
+            UpdateStatus(ProcessingStatus.InProgress);
+            base.Execute(token);
+            UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
         }
     }
 }

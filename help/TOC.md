@@ -38,6 +38,6 @@
 
 [License](../License.md)
 
-[Version History](./Other/Version%20History(Changelog).md)
+[Version History](./Other/Version%20History%20(Changelog).md)
 
 [Thanks](./Other/Thanks.md)

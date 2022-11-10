@@ -37,6 +37,7 @@ namespace BUtil.Core.TasksTree.Storage
             storage.Upload(tempFile, ps1VerificationScript);
             storage.Upload(tempFile, shVerificationScript);
             File.Delete(tempFile);
+            IsSuccess = true;
             UpdateStatus(ProcessingStatus.FinishedSuccesfully);
         }
     }

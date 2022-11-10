@@ -30,6 +30,7 @@ namespace BUtil.Core.TasksTree
             var storageRelativeFileName = _storageFile.StorageFileName;
             _storageFile.StorageFileName = storage.Upload(_storageFile.FileState.FileName, _storageFile.StorageRelativeFileName);
             UpdateStatus(ProcessingStatus.FinishedSuccesfully);
+            IsSuccess = true;
         }
     }
 }

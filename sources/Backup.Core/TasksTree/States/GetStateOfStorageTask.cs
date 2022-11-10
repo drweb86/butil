@@ -38,6 +38,7 @@ namespace BUtil.Core.TasksTree
                 LogDebug("Deserializing.");
                 StorageState = JsonSerializer.Deserialize<IncrementalBackupState>(content);
             }
+            IsSuccess = true;
             UpdateStatus(ProcessingStatus.FinishedSuccesfully);
         }
     }

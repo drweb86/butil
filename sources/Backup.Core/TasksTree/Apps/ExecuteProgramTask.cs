@@ -38,6 +38,7 @@ namespace BUtil.Core.TasksTree.Apps
                 LogDebug(stdOutput);
                 LogError(error);
                 UpdateStatus(returnCode == 0 ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
+                IsSuccess = returnCode == 0;
             }
             catch (Exception e)
             {

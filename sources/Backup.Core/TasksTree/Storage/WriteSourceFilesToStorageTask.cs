@@ -62,7 +62,7 @@ namespace BUtil.Core.TasksTree.Storage
             Events.DuringExecutionTasksAdded(Id, childTasks);
             Children = childTasks;
             base.Execute(token);
-            UpdateStatus(ProcessingStatus.FinishedSuccesfully);
+            UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
         }
     }
 }

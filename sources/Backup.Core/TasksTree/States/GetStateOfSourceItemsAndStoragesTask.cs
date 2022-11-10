@@ -3,6 +3,8 @@ using BUtil.Core.Logs;
 using BUtil.Core.Options;
 using BUtil.Core.TasksTree.Core;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
 
 namespace BUtil.Core.TasksTree.States
 {
@@ -36,6 +38,13 @@ namespace BUtil.Core.TasksTree.States
             StorageStateTasks = storageStateTasks;
 
             Children = childTasks;
+        }
+
+        public override void Execute(CancellationToken token)
+        {
+            UpdateStatus(ProcessingStatus.InProgress);
+            base.Execute(token);
+            UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
         }
     }
 }

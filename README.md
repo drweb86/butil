@@ -34,14 +34,12 @@ Backup, Restoration, Desktop applications, Scheduling, AES-256, 7-zip, md5, .Net
 - [Congifurator](./help/configurator/CommandLineArguments.htm)
 - [Command line version of backup tool](./help/Backup%20Console%20Tool.md)
 - [Restorate](./help/Restore/Restoration%20Wizard.md)
-- [Checksum Console Tool](./help/Checksum%20Console%20Tool.md)
-- [Scheduler](./help/Schedule/Scheduler%20Tray%20Application/Scheduler%20Tray%20Application.md)
 
 and many more. See [all topics](../../wiki) .
 
 ## See Also
 
-- [Version history](./help/Other/Version%20History.md)
+- [Version history](./help/Other/Version%20History%20(Changelog).md)
 - [Frequently Asked Questions (FAQ)](./help/Other/Frequently%20Asked%20Questions.md)
 
 ## Requirements
