@@ -6,7 +6,7 @@ namespace BUtil.Configurator
 {
     internal interface IStorageConfigurationForm: IDisposable
     {
-        StorageSettings GetStorageSettings();
+        IStorageSettings GetStorageSettings();
 
         DialogResult ShowDialog();
     }

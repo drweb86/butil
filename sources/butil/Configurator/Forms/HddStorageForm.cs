@@ -23,10 +23,9 @@ namespace BUtil.Configurator
             };
         }
 
-        public StorageSettings GetStorageSettings()
+        public IStorageSettings GetStorageSettings()
 		{
-			var hddStorageSettings = GetHddStorageSettings();
-			return StorageFactory.CreateStorageSettings(hddStorageSettings);
+			return GetHddStorageSettings();
 		}
         
         string Caption
@@ -35,14 +34,12 @@ namespace BUtil.Configurator
         }
 		
         
-		public HddStorageForm(StorageSettings storageSettings, IEnumerable<string> forbiddenNames)
+		public HddStorageForm(HddStorageSettings hddStorageSettings, IEnumerable<string> forbiddenNames)
 		{
 			InitializeComponent();
 			
-			if (storageSettings != null)
+			if (hddStorageSettings != null)
 			{
-				var hddStorageSettings = StorageFactory.CreateHddStorageSettings(storageSettings);
-
 				_nameTextBox.Text = hddStorageSettings.Name;
 				destinationFolderTextBox.Text = hddStorageSettings.DestinationFolder;
 				acceptButton.Enabled = true;

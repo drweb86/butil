@@ -13,10 +13,10 @@ namespace BUtil.Core.TasksTree.Storage
     internal class WriteSourceFilesToStorageTask : ParallelBuTask
     {
         private CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask;
-        private StorageSettings _storageSettings;
+        private IStorageSettings _storageSettings;
 
         public WriteSourceFilesToStorageTask(ILog log, BackupEvents events,
-            CalculateIncrementedVersionForStorageTask getIncrementedVersionTask, StorageSettings storageSettings)
+            CalculateIncrementedVersionForStorageTask getIncrementedVersionTask, IStorageSettings storageSettings)
             : base(log, events, string.Format(BUtil.Core.Localization.Resources.WriteSourceFilesToStorage, storageSettings.Name), TaskArea.Hdd, null)
         {
             _getIncrementedVersionTask = getIncrementedVersionTask;

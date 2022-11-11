@@ -12,10 +12,10 @@ namespace BUtil.Core.TasksTree.States
     internal class WriteStateToStorageTask : BuTask
     {
         private CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask;
-        private StorageSettings _storageSettings;
+        private IStorageSettings _storageSettings;
 
         public WriteStateToStorageTask(ILog log, BackupEvents events,
-            CalculateIncrementedVersionForStorageTask getIncrementedVersionTask, StorageSettings storageSettings)
+            CalculateIncrementedVersionForStorageTask getIncrementedVersionTask, IStorageSettings storageSettings)
             : base(log, events, string.Format(BUtil.Core.Localization.Resources.WriteStateToStorage, storageSettings.Name), TaskArea.Hdd)
         {
             _getIncrementedVersionTask = getIncrementedVersionTask;
@@ -31,7 +31,7 @@ namespace BUtil.Core.TasksTree.States
 
             var storage = StorageFactory.Create(Log, _storageSettings);
             var tempFile = Path.GetRandomFileName();
-            var json = JsonSerializer.Serialize(_getIncrementedVersionTask.IncrementalBackupState);
+            var json = JsonSerializer.Serialize(_getIncrementedVersionTask.IncrementalBackupState, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(tempFile, json);
             storage.Upload(tempFile, IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile);
             File.Delete(tempFile);

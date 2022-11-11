@@ -28,11 +28,11 @@ namespace BUtil.Configurator.Controls
 		{
             _task = (BackupTask)settings;
 
-			_incrementalBackupRadioButton.Checked = _task.BackupModel.ProviderName == BackupModelProviderNames.Incremental;
+			_incrementalBackupRadioButton.Checked = _task.Model is IncrementalBackupModelOptions;
 
-			if (_task.BackupModel.ProviderName == BackupModelProviderNames.Incremental)
+			if (_task.Model is IncrementalBackupModelOptions)
 			{
-				var options = BackupModelStrategyFactory.CreateIncrementalBackupModelOptions(_task.BackupModel);
+				var options = _task.Model as IncrementalBackupModelOptions;
 
 				_disableCompressionEncryptionCheckBox.Checked = options.DisableCompressionAndEncryption;
 			}
@@ -43,8 +43,7 @@ namespace BUtil.Configurator.Controls
 		{
             if (_incrementalBackupRadioButton.Checked)
 			{
-				var options = new IncrementalBackupModelOptions { DisableCompressionAndEncryption = _disableCompressionEncryptionCheckBox.Checked };
-				_task.BackupModel = BackupModelStrategyFactory.CreateBackupModel(options);
+                _task.Model = new IncrementalBackupModelOptions { DisableCompressionAndEncryption = _disableCompressionEncryptionCheckBox.Checked };
 			}
         }
 		

@@ -50,23 +50,14 @@ namespace BUtil.Configurator.Configurator.Controls
             {
 				StorageEnum kind;
 
-				switch (storageSettings.ProviderName)
-                {
-                    case StorageProviderNames.Hdd:
-						kind = StorageEnum.Hdd;
-						break;
-
-                    case StorageProviderNames.Ftp:
-						kind = StorageEnum.Ftp;
-						break;
-
-					case StorageProviderNames.Samba:
-						kind = StorageEnum.Network;
-						break;
-
-                	default:
-                		throw new NotImplementedException(storageSettings.ProviderName);
-                }
+                if (storageSettings is HddStorageSettings)
+                    kind = StorageEnum.Hdd;
+                else if (storageSettings is FtpStorageSettings)
+                    kind = StorageEnum.Ftp;
+                else if (storageSettings is SambaStorageSettings)
+                    kind = StorageEnum.Network;
+                else
+                    throw new ArgumentOutOfRangeException(nameof(storageSettings));
 
 				AddStorageToListView(storageSettings, kind);
             }
@@ -78,7 +69,7 @@ namespace BUtil.Configurator.Configurator.Controls
 
 			foreach (ListViewItem item in storagesListView.Items)
 			{
-				_task.Storages.Add((StorageSettings)item.Tag);
+				_task.Storages.Add((IStorageSettings)item.Tag);
 			}
 		}
 		#endregion
@@ -151,27 +142,21 @@ namespace BUtil.Configurator.Configurator.Controls
 		void ModifyStorage()
 		{
 			ListViewItem storageToChangeListViewItem = storagesListView.SelectedItems[0];
-			var storageSettings = (StorageSettings)storageToChangeListViewItem.Tag;
+			var storageSettings = (IStorageSettings)storageToChangeListViewItem.Tag;
             IStorageConfigurationForm configForm;
 
-            switch (storageSettings.ProviderName)
-            {
-                case StorageProviderNames.Hdd:
-                    configForm = new HddStorageForm(
-						storageSettings,
-						GetNames()
-							.Except(new List<string> { storageSettings.Name })
-							.ToList());
-					break;
-                case StorageProviderNames.Ftp:
-                    configForm = new FtpStorageForm(storageSettings);
-					break;
-                case StorageProviderNames.Samba:
-                    configForm = new NetworkStorageForm(storageSettings);
-					break;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(storageSettings));
-            }
+			if (storageSettings is HddStorageSettings)
+                configForm = new HddStorageForm(
+                        storageSettings as HddStorageSettings,
+                        GetNames()
+                            .Except(new List<string> { storageSettings.Name })
+                            .ToList());
+            else if (storageSettings is FtpStorageSettings)
+                configForm = new FtpStorageForm(storageSettings as FtpStorageSettings);
+            else if (storageSettings is SambaStorageSettings)
+                configForm = new NetworkStorageForm(storageSettings as SambaStorageSettings);
+            else
+                throw new ArgumentOutOfRangeException(nameof(storageSettings));
 
             if (configForm.ShowDialog() == DialogResult.OK)
             {
@@ -220,7 +205,7 @@ namespace BUtil.Configurator.Configurator.Controls
 			configForm.Dispose();
 		}
 		
-		void AddStorageToListView(StorageSettings storageSettings, StorageEnum kind)
+		void AddStorageToListView(IStorageSettings storageSettings, StorageEnum kind)
 		{
 			var listValue = new ListViewItem
 			                    {

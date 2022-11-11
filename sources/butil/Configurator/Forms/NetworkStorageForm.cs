@@ -39,22 +39,19 @@ namespace BUtil.Configurator
 			};
 		}
 
-        StorageSettings IStorageConfigurationForm.GetStorageSettings()
+        IStorageSettings IStorageConfigurationForm.GetStorageSettings()
 		{
-			var sambaStorageSettings = GetSambaStorageSettings();
-			return StorageFactory.CreateStorageSettings(sambaStorageSettings);
+			return GetSambaStorageSettings();
         }
 
         #endregion
 
-		public NetworkStorageForm(StorageSettings storageSettings)
+		public NetworkStorageForm(SambaStorageSettings sambaStorageSettings)
 		{
 			InitializeComponent();
 
-			if (storageSettings != null)
+			if (sambaStorageSettings != null)
 			{
-				var sambaStorageSettings = StorageFactory.CreateSambaStorageSettings(storageSettings);
-
 				Caption = sambaStorageSettings.Name;
 				UncLocation = sambaStorageSettings.DestinationFolder;
                 _EncryptUnderLsaCheckBox.Checked = sambaStorageSettings.EncryptUnderLocalSystemAccount;

@@ -1,7 +1,7 @@
 ﻿namespace BUtil.Core.Storages
 {
-    public class FtpStorageSettings
-	{
+    public class FtpStorageSettings: IStorageSettings
+    {
         public string Name { get; set; }
 		public string DestinationFolder { get; set; } 
         public	string Host { get; set; } 

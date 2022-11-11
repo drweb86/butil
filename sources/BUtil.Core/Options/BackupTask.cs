@@ -12,10 +12,10 @@ namespace BUtil.Core.Options
 			ExecuteAfterBackup = new ();
             Items = new ();
 			Storages = new ();
-			BackupModel = BackupModelStrategyFactory.CreateBackupModel(new IncrementalBackupModelOptions());
+			Model = new IncrementalBackupModelOptions();
         }
 
-		public BackupModel BackupModel { get; set; }
+		public IBackupModelOptions Model { get; set; }
 
         public string Name { get; set; }
         
@@ -23,7 +23,7 @@ namespace BUtil.Core.Options
 
 		public List<ExecuteProgramTaskInfo> ExecuteAfterBackup { get; set; }
       
-		public List<StorageSettings> Storages { get; set; }
+		public List<IStorageSettings> Storages { get; set; }
 	    
 	    public string Password { get; set; }
 		

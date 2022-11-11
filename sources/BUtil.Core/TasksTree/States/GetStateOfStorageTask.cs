@@ -11,10 +11,10 @@ namespace BUtil.Core.TasksTree
 {
     internal class GetStateOfStorageTask : BuTask
     {
-        public StorageSettings StorageSettings { get; }
+        public IStorageSettings StorageSettings { get; }
         public IncrementalBackupState StorageState { get; private set; }
 
-        public GetStateOfStorageTask(ILog log, BackupEvents events, StorageSettings storageSettings) : 
+        public GetStateOfStorageTask(ILog log, BackupEvents events, IStorageSettings storageSettings) : 
             base(log, events, string.Format(BUtil.Core.Localization.Resources.GetStateOfStorage, storageSettings.Name), TaskArea.Hdd)
         {
             StorageSettings = storageSettings;

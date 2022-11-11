@@ -1,6 +1,6 @@
 ﻿namespace BUtil.Core.Storages
 {
-    public class SambaStorageSettings
+    public class SambaStorageSettings: IStorageSettings
     {
         public string Name { get; set; }
         public string DestinationFolder { get; set; }

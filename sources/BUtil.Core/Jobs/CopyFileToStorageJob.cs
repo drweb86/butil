@@ -11,7 +11,7 @@ namespace BUtil.Core.Jobs
 {
     class CopyFileToStorageJob : IJob
     {
-        readonly StorageSettings _storageSettings;
+        readonly IStorageSettings _storageSettings;
         readonly string _imageFileToCopy;
         readonly LogBase _log;
         private readonly BackupEvents _events;
@@ -23,7 +23,7 @@ namespace BUtil.Core.Jobs
             set { _finished = value; }
         }
 
-        public CopyFileToStorageJob(LogBase log, BackupEvents events, StorageSettings storageSettings, string imageFileToCopy)
+        public CopyFileToStorageJob(LogBase log, BackupEvents events, IStorageSettings storageSettings, string imageFileToCopy)
         {
             _storageSettings = storageSettings;
             _imageFileToCopy = imageFileToCopy;

@@ -53,12 +53,12 @@ namespace BUtil.Configurator
 		}
 
 
-		StorageSettings IStorageConfigurationForm.GetStorageSettings()
+		IStorageSettings IStorageConfigurationForm.GetStorageSettings()
 		{
-			var ftpStorageSettings = GetFtpStorageSettings();
-			return StorageFactory.CreateStorageSettings(ftpStorageSettings);
-		}        
-		public FtpStorageForm(StorageSettings storageSettings)
+			return GetFtpStorageSettings();
+		}
+
+		public FtpStorageForm(FtpStorageSettings ftpStorageSettings)
 		{
 			InitializeComponent();
 			
@@ -81,10 +81,8 @@ namespace BUtil.Configurator
 			
 			connectionModeComboBox.SelectedIndex = 1;
 			
-			if (storageSettings != null)
+			if (ftpStorageSettings != null)
 			{
-				var ftpStorageSettings = StorageFactory.CreateFtpStorageSettings(storageSettings);
-
 				Caption = ftpStorageSettings.Name;
 				DestinationFolder = ftpStorageSettings.DestinationFolder;
 				FtpServer = ftpStorageSettings.Host;

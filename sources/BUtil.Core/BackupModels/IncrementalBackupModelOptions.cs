@@ -1,6 +1,6 @@
 ﻿namespace BUtil.Core.BackupModels
 {
-    public class IncrementalBackupModelOptions
+    public class IncrementalBackupModelOptions: IBackupModelOptions
     {
         public bool DisableCompressionAndEncryption { get; set; }
 

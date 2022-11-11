@@ -9,7 +9,7 @@ namespace BUtil.Core.Options
     public class BackupTaskStoreService
     {
         private readonly string _folder;
-        private const string _extension = ".BUtil Backup Task v1";
+        private const string _extension = ".json";
 
         public BackupTaskStoreService()
         {
@@ -31,7 +31,7 @@ namespace BUtil.Core.Options
         public void Save(BackupTask task)
         {
             var fileName = GetFileName(task.Name);
-            var json = JsonSerializer.Serialize(task);
+            var json = JsonSerializer.Serialize(task, new JsonSerializerOptions { WriteIndented = true });
             if (File.Exists(fileName))
                 File.Delete(fileName);
             File.WriteAllText(fileName, json);
