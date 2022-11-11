@@ -388,12 +388,6 @@ Localization created by:
   <data name="LogOff" xml:space="preserve">
     <value>Log Off</value>
   </data>
-  <data name="SuspendPc" xml:space="preserve">
-    <value>Suspend PC</value>
-  </data>
-  <data name="HibernatePc" xml:space="preserve">
-    <value>Hibernate PC</value>
-  </data>
   <data name="DoNothing" xml:space="preserve">
     <value>Do nothing</value>
   </data>

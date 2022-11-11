@@ -43,14 +43,6 @@ namespace BUtil.ConsoleBackup
                 {
                     _powerTask = PowerTask.Reboot;
                 }
-                else if (ArgumentIs(argument, Suspend))
-                {
-                    _powerTask = PowerTask.Suspend;
-                }
-                else if (ArgumentIs(argument, Hibernate))
-                {
-                    _powerTask = PowerTask.Hibernate;
-                }
                 else if (ArgumentIs(argument, UseFileLog))
                 {
                     _useFileLog = true;
@@ -204,8 +196,6 @@ namespace BUtil.ConsoleBackup
         const string HelpCommand = "Help";
         const string Shutdown = "ShutDown";
         const string LogOff = "LogOff";
-        const string Suspend = "Suspend";
-        const string Hibernate = "Hibernate";
         const string Reboot = "Reboot";
         const string Auto = "Auto";
         const string TaskCommandLineArgument = "Task=";

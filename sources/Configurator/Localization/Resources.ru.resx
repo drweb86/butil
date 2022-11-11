@@ -328,12 +328,6 @@
   <data name="LogOff" xml:space="preserve">
     <value>Завершить мой сеанс</value>
   </data>
-  <data name="SuspendPc" xml:space="preserve">
-    <value>Перевести ПК в спящий режим</value>
-  </data>
-  <data name="HibernatePc" xml:space="preserve">
-    <value>Перевести ПК в режим Hibernate</value>
-  </data>
   <data name="DoNothing" xml:space="preserve">
     <value>Ничего не делать</value>
   </data>

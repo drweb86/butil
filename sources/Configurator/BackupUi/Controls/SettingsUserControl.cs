@@ -41,7 +41,7 @@ namespace BUtil.Configurator.BackupUiMaster.Controls
 			
 			previousIndex = jobAfterOkBackupComboBox.SelectedIndex;
 			jobAfterOkBackupComboBox.Items.Clear();
-			jobAfterOkBackupComboBox.Items.AddRange(new [] { Resources.ShutdownPc, Resources.LogOff, Resources.SuspendPc, Resources.HibernatePc, Resources.Reboot, Resources.DoNothing});
+			jobAfterOkBackupComboBox.Items.AddRange(new [] { Resources.ShutdownPc, Resources.LogOff, Resources.Reboot, Resources.DoNothing});
 			jobAfterOkBackupComboBox.SelectedIndex = previousIndex;
 			
 			Title = Resources.Settings;

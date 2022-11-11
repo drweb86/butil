@@ -329,7 +329,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             if (beepWhenCompleted)
                 Miscellaneous.DoBeeps();
 
-			var appStaysAlive = powerTask == PowerTask.None || powerTask == PowerTask.Hibernate || powerTask == PowerTask.Suspend;
+			var appStaysAlive = powerTask == PowerTask.None;
 
             if (appStaysAlive)
 			{

@@ -914,15 +914,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hibernate PC.
-        /// </summary>
-        internal static string HibernatePc {
-            get {
-                return ResourceManager.GetString("HibernatePc", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Hour:.
         /// </summary>
         internal static string Hour {
@@ -1675,15 +1666,6 @@ namespace BUtil.Configurator.Localization {
         internal static string Support {
             get {
                 return ResourceManager.GetString("Support", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Suspend PC.
-        /// </summary>
-        internal static string SuspendPc {
-            get {
-                return ResourceManager.GetString("SuspendPc", resourceCulture);
             }
         }
         
