@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configurator", "Configurato
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnitTests", "NUnitTests\NUnitTests.csproj", "{C3670EF3-58F0-42AE-9A5D-CE3A44B22130}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleBackup", "Backup\ConsoleBackup.csproj", "{91E9A433-7160-4773-9B11-B8B30DF4893D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleBackup", "butilc\ConsoleBackup.csproj", "{91E9A433-7160-4773-9B11-B8B30DF4893D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

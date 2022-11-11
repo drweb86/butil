@@ -11,7 +11,7 @@ namespace BUtil.Core.FileSystem
 			Path.Combine(Directories.UserDataFolder, "ProfileOptions.xml");
 		
 		static readonly string _ConsoleBackupTool = 
-			Path.Combine(Directories.BinariesDir, "Backup.exe");
+			Path.Combine(Directories.BinariesDir, "butilc.exe");
 		
 		static readonly string _Configurator = 
 			Path.Combine(Directories.BinariesDir, "Configurator.exe");

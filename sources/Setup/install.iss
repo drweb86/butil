@@ -112,7 +112,7 @@ Filename: "{app}\Help.url"; Section: "InternetShortcut"; Key: "URL"; String: "ht
 [Icons]
 ; Main app data
 Name: "{group}\{cm:Configurator}"; Filename: "{app}\bin\Configurator.exe"
-Name: "{group}\{cm:Console_Backup}"; Filename: "{app}\bin\Backup.exe"
+Name: "{group}\{cm:Console_Backup}"; Filename: "{app}\bin\butilc.exe"
 Name: "{group}\{cm:Backup_Wizard}"; Filename: "{app}\bin\Configurator.exe"; Parameters: "JustBackupMaster"; IconFilename: "{app}\data\BackupUi.ico"
 Name: "{group}\{cm:Restoration}"; Filename: "{app}\bin\Configurator.exe"; Parameters: "JustRestorationMaster"; IconFilename: "{app}\data\RestorationMaster.ico"
 Name: "{group}\{cm:Journals}"; Filename: "{app}\bin\Configurator.exe"; Parameters: "JustJournals"; IconFilename: "{app}\data\Journals.ico"

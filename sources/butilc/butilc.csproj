@@ -3,7 +3,7 @@
     <TargetFramework>net7.0-windows</TargetFramework>
     <OutputType>Exe</OutputType>
     <RootNamespace>BUtil.ConsoleBackup</RootNamespace>
-    <AssemblyName>Backup</AssemblyName>
+    <AssemblyName>butilc</AssemblyName>
     <SignAssembly>true</SignAssembly>
 <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>

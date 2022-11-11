@@ -61,23 +61,21 @@
   <data name="UsageVariantsNNbackupExeTaskMyTaskTitleNRunningWithoutParametersOutputsInformationToConsoleNNbackupExeTaskMyTask1TitleTaskMyTask2TitleTaskMyTask3TitleNRunsSeveralTasksOneByOneNNbackupExeTaskMyTaskTitleUsefilelogNOutputsInformationInFileLogNNbackupExeTaskMyTaskTitleShutdownNbackupExeTaskMyTaskTitleLogoffNbackupExeTaskMyTaskTitleSuspendNbackupExeTaskMyTaskTitleRebootNbackupExeTaskMyTaskTitleHibernateNNbackupExeHelpNOutputsBriefHelpN" xml:space="preserve">
     <value>Использование:
 
-backup.exe "Task=Заголовок задания РК"
+butilc.exe "Task=Заголовок задания РК"
    Запуск без параметров. Выводит информацию на консоль
 
-backup.exe "Task=Заголовок задания 1" "Task=Заголовок задания 2" "Task=Заголовок задания 3"
+butilc.exe "Task=Заголовок задания 1" "Task=Заголовок задания 2" "Task=Заголовок задания 3"
    Запуск нескольких заданий последовательно
 
-backup.exe "Task=Заголовок задания РК" UseFileLog
+butilc.exe "Task=Заголовок задания РК" UseFileLog
    Выводит информацию в логи.
 
-backup.exe "Task=Заголовок задания РК" Shutdown
-backup.exe "Task=Заголовок задания РК" LogOff 
-backup.exe "Task=Заголовок задания РК" Suspend 
-backup.exe "Task=Заголовок задания РК" Reboot
-backup.exe "Task=Заголовок задания РК" Hibernate 
-   Также можно запланировать выключение ПК, выход из сеанса, спящий режим, перезагрузку, режим ожидания по окончании РК
+butilc.exe "Task=Заголовок задания РК" Shutdown
+butilc.exe "Task=Заголовок задания РК" LogOff 
+butilc.exe "Task=Заголовок задания РК" Reboot
+   Также можно запланировать выключение ПК, выход из сеанса, перезагрузку по окончании РК
 
-backup.exe Help
+butilc.exe Help
    Выводит краткую подсказку</value>
   </data>
   <data name="ErrorInvalidCommandParametersSpecified" xml:space="preserve">
@@ -91,7 +89,7 @@ backup.exe Help
   </data>
   <data name="PleaseSpecifyTheBackupTaskTitleUsingTheCommandLineArgument0MyBackupTaskTitleNexampleBackupExe0MyBackupTitle" xml:space="preserve">
     <value>Пожалуйста, укажите заголовок задания на резервное копирование через аргумент коммандной строки "{0}Мой заголовок задания на РК"
-Пример: backup.exe "{0}Мой заголовок задания на РК"</value>
+Пример: butilc.exe "{0}Мой заголовок задания на РК"</value>
   </data>
   <data name="TherereNoBackupTaskWithTitle0" xml:space="preserve">
     <value>Задания на резервное копирование с заголовком "{0}" не существует.</value>

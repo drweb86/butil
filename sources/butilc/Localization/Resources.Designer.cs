@@ -80,7 +80,7 @@ namespace BUtil.ConsoleBackup.Localization {
         
         /// <summary>
         ///   Looks up a localized string similar to Please, specify the backup task title using the command line argument &quot;{0}My backup task title&quot;
-        ///Example: backup.exe &quot;{0}My backup title&quot;.
+        ///Example: butilc.exe &quot;{0}My backup title&quot;.
         /// </summary>
         internal static string PleaseSpecifyTheBackupTaskTitleUsingTheCommandLineArgument0MyBackupTaskTitleNexampleBackupExe0MyBackupTitle {
             get {
@@ -111,20 +111,22 @@ namespace BUtil.ConsoleBackup.Localization {
         /// <summary>
         ///   Looks up a localized string similar to Usage variants:
         ///
-        ///backup.exe &quot;Task=My task title&quot;
+        ///butilc.exe &quot;Task=My task title&quot;
         ///   Running without parameters. Outputs information to console
         ///
-        ///backup.exe &quot;Task=My task 1 title&quot; &quot;Task=My task 2 title&quot; &quot;Task=My task 3 title&quot;
+        ///butilc.exe &quot;Task=My task 1 title&quot; &quot;Task=My task 2 title&quot; &quot;Task=My task 3 title&quot;
         ///   Runs several tasks one by one
         ///
-        ///backup.exe &quot;Task=My task title&quot; UseFileLog
+        ///butilc.exe &quot;Task=My task title&quot; UseFileLog
         ///   Outputs information in file log
         ///
-        ///backup.exe &quot;Task=My task title&quot; Shutdown
-        ///backup.exe &quot;Task=My task title&quot; LogOff 
-        ///backup.exe &quot;Task=My task title&quot; Suspend 
-        ///backup.exe &quot;Task=My task title&quot; Reboot
-        ///backup.exe &quot;Task=My task title&quot; [rest of string was truncated]&quot;;.
+        ///butilc.exe &quot;Task=My task title&quot; Shutdown
+        ///butilc.exe &quot;Task=My task title&quot; LogOff 
+        ///butilc.exe &quot;Task=My task title&quot; Reboot
+        ///
+        ///butilc.exe Help
+        ///   Outputs brief help
+        ///.
         /// </summary>
         internal static string UsageVariantsNNbackupExeTaskMyTaskTitleNRunningWithoutParametersOutputsInformationToConsoleNNbackupExeTaskMyTask1TitleTaskMyTask2TitleTaskMyTask3TitleNRunsSeveralTasksOneByOneNNbackupExeTaskMyTaskTitleUsefilelogNOutputsInformationInFileLogNNbackupExeTaskMyTaskTitleShutdownNbackupExeTaskMyTaskTitleLogoffNbackupExeTaskMyTaskTitleSuspendNbackupExeTaskMyTaskTitleRebootNbackupExeTaskMyTaskTitleHibernateNNbackupExeHelpNOutputsBriefHelpN {
             get {
