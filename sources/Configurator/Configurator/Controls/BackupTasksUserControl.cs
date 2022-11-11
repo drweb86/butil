@@ -124,7 +124,7 @@ namespace BUtil.Configurator.Configurator.Controls
 
             foreach (var selectedTask in selectedTasks)
             {
-                if (MessageBox.Show(string.Format(Resources.WouldYouLileToRemoveTheBackupTask0, selectedTask.Text), BUtil.Core.Localization.Resources.QuestionButil, MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (Messages.ShowYesNoDialog(string.Format(Resources.WouldYouLileToRemoveTheBackupTask0, selectedTask.Text)))
                 {
                     var backupTasksService = new BackupTaskStoreService();
                     backupTasksService.Delete(selectedTask.Text);

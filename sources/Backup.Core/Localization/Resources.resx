@@ -148,17 +148,11 @@
   <data name="About" xml:space="preserve">
     <value>About</value>
   </data>
-  <data name="ErrorButil" xml:space="preserve">
-    <value>Error - BUtil</value>
-  </data>
   <data name="PasswordIsInvalidNNitWasResetedN" xml:space="preserve">
     <value>Password is invalid.
 
 It was reseted
 </value>
-  </data>
-  <data name="InformationButil" xml:space="preserve">
-    <value>Information - BUtil</value>
   </data>
   <data name="PasswordIfNeeded" xml:space="preserve">
     <value>Password (if needed)</value>
@@ -247,10 +241,6 @@ It was reseted
   <data name="BackupReport" xml:space="preserve">
     <value>Backup Report</value>
   </data>
-  <data name="CoultNotRun0DueToN1" xml:space="preserve">
-    <value>Coult not run '{0}' due to:
-{1}</value>
-  </data>
   <data name="PasswordContainsForbiddenCharactersPleaseRemoveSpaces" xml:space="preserve">
     <value>Password contains forbidden characters! Please remove spaces</value>
   </data>
@@ -279,12 +269,6 @@ Application will now close</value>
   </data>
   <data name="AfterBackupTask" xml:space="preserve">
     <value>After backup task: </value>
-  </data>
-  <data name="QuestionButil" xml:space="preserve">
-    <value>Question - BUtil</value>
-  </data>
-  <data name="PleaseConfirmDeletionOf0Logs" xml:space="preserve">
-    <value>Please confirm deletion of {0} logs.</value>
   </data>
   <data name="CannotRun7ZgExeBecause0" xml:space="preserve">
     <value>Cannot run 7zg.exe because {0}</value>

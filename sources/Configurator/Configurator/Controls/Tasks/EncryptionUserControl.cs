@@ -3,16 +3,16 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using BUtil.Core;
-using BUtil.Core.PL;
 using BUtil.Core.Options;
 using BUtil.Core.Localization;
+using BUtil.Configurator;
 
 namespace BUtil.Core.PL
 {
-	/// <summary>
-	/// Encryption control. 
-	/// </summary>
-	public sealed partial class EncryptionUserControl : BackUserControl
+    /// <summary>
+    /// Encryption control. 
+    /// </summary>
+    public sealed partial class EncryptionUserControl : BackUserControl
 	{
 		bool _passwordIsValid;
 		bool _confirmationOfPasswordIsValid;

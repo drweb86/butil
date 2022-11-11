@@ -2,12 +2,11 @@ using System;
 using BUtil.Core.Misc;
 using BUtil.Core;
 using System.Text;
-using BUtil.Core.PL;
 using BUtil.Configurator.Localization;
 
 namespace BUtil.Configurator.Controls
 {
-	internal sealed partial class AboutProgramUserControl : BUtil.Core.PL.BackUserControl
+    internal sealed partial class AboutProgramUserControl : BUtil.Core.PL.BackUserControl
     {
         public AboutProgramUserControl()
 		{

@@ -1,11 +1,8 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
-
 using BUtil.Core.FileSystem;
 using BUtil.Core.Misc;
-using BUtil.Core.PL;
-using BUtil.Core.Localization;
 
 namespace BUtil.Core.Logs
 {
@@ -40,12 +37,9 @@ namespace BUtil.Core.Logs
 		
 		#region Public methods
 		
-		/// <summary>
-		/// Opens the logs folder in explorer
-		/// </summary>
 		public void OpenLogsFolderInExplorer()
 		{
-			SupportManager.StartProcess(_logsFolder, true);
+            ProcessHelper.ShellExecute(_logsFolder);
 		}
 		
 		/// <summary>
@@ -71,10 +65,6 @@ namespace BUtil.Core.Logs
 			return result;
 		}
 		
-		/// <summary>
-		/// Requests OS to open the log
-		/// </summary>
-		/// <param name="info">Log information</param>
 		public void OpenLogInBrowser(LogInfo info)
 		{
 			if (info == null)
@@ -82,50 +72,18 @@ namespace BUtil.Core.Logs
 				throw new ArgumentNullException("info");
 			}
 			
-			SupportManager.OpenWebLink(info.LogFile);
+			ProcessHelper.ShellExecute(info.LogFile);
 		}
 		
-		/// <summary>
-		/// Deletes the specified log
-		/// </summary>
-		/// <param name="info">The log to delete</param>
 		public void DeleteLog(LogInfo info)
 		{
-			if (info == null)
-			{
-				throw new ArgumentNullException("info");
-			}
-			
 			File.Delete(info.LogFile);
 		}
 		
-		/// <summary>
-		/// Deletes set of logs
-		/// </summary>
-		/// <param name="infos">The logs to delete</param>
-		/// <param name="confirmationRequired">Shows wheather to show confirm dialog when needed</param>
-		/// <returns>True if deleted log</returns>
-		public bool DeleteSetOfLogs(List<LogInfo> infos, bool confirmationRequired)
+		public void DeleteSetOfLogs(IEnumerable<LogInfo> infos)
 		{
-			if (infos == null)
-			{
-				throw new ArgumentNullException("info");
-			}
-			
-			if (infos.Count > 1 && confirmationRequired)
-			{
-				if (!Messages.ShowYesNoDialog(string.Format(Resources.PleaseConfirmDeletionOf0Logs, infos.Count)))
-				{
-					return false;
-				}
-			}
-			
 			foreach (var info in infos)
-			{
 				DeleteLog(info);
-			}
-			
-			return true;
 		}
 		
 		#endregion

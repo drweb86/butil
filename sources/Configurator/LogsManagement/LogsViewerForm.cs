@@ -219,31 +219,6 @@ namespace BUtil.Configurator.LogsManagement
 				updateLogsListButtonsState();
 			}
 		}
-
-// Method excluded due to overloaded ui and because it is dangerous
-//		void removeAllLogs(object sender, EventArgs e)
-//		{
-//			ListView.ListViewItemCollection items = journalsListView.Items;
-//			
-//			var infos = new List<LogInfo>();
-//			foreach(ListViewItem item in items)
-//			{
-//				infos.Add((LogInfo)item.Tag);
-//			}
-//			
-//			if (_controller.DeleteSetOfLogs(infos))
-//			{
-//				journalsListView.BeginUpdate();
-//			
-//				foreach(ListViewItem item in items)
-//				{
-//					journalsListView.Items.Remove(item);
-//				}
-//				journalsListView.EndUpdate();
-//	
-//				updateLogsListButtonsState();
-//			}
-//		}
 		
 		void openSelectedLogsInBrowser(object sender, EventArgs e)
 		{

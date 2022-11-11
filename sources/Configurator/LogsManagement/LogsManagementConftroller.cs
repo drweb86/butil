@@ -1,13 +1,14 @@
 using System;
 using System.Collections.Generic;
+using BUtil.Configurator.Localization;
 using BUtil.Core.Logs;
 
 namespace BUtil.Configurator.LogsManagement
 {
-	/// <summary>
-	/// Controller for logs management
-	/// </summary>
-	public sealed class LogManagementConftroller
+    /// <summary>
+    /// Controller for logs management
+    /// </summary>
+    public sealed class LogManagementConftroller
 	{
 		#region Fields
 
@@ -97,8 +98,13 @@ namespace BUtil.Configurator.LogsManagement
 			{
 				throw new ArgumentNullException("info");
 			}
-			
-			return _logOperations.DeleteSetOfLogs(infos, true);
+
+            if (!Messages.ShowYesNoDialog(string.Format(Resources.PleaseConfirmDeletionOf0Logs, infos.Count)))
+            {
+                return false;
+            }
+            _logOperations.DeleteSetOfLogs(infos);
+			return true;
 		}
 		
 		#endregion

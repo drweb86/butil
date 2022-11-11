@@ -5,7 +5,6 @@ using System.Windows.Forms;
 using BUtil.Configurator.Configurator;
 using BUtil.Configurator.Configurator.Forms;
 using BUtil.Core.Misc;
-using BUtil.Core.PL;
 using BUtil.Core.FileSystem;
 using System.IO;
 using System.Collections.ObjectModel;
@@ -13,7 +12,7 @@ using BUtil.Configurator.Localization;
 
 namespace BUtil.Configurator
 {
-	public static class Program
+    public static class Program
 	{
 		#region Fields
 		
@@ -130,7 +129,7 @@ namespace BUtil.Configurator
 			Application.SetHighDpiMode(HighDpiMode.SystemAware);
 			Application.SetCompatibleTextRenderingDefault(false);
 
-			ImproveIt.InitInfrastructure(true);
+			ImproveIt.HandleUiError = message => Messages.ShowErrorBox(message);
 	
 			CheckIntergrity();
 			ProcessArguments(args);

@@ -667,4 +667,16 @@ Please refer to manual for the complete list of parameters!</value>
   <data name="Name" xml:space="preserve">
     <value>Iмя</value>
   </data>
+  <data name="InformationButil" xml:space="preserve">
+    <value>Iнфармацыя - BUtil</value>
+  </data>
+  <data name="ErrorButil" xml:space="preserve">
+    <value>Памылка - BUtil</value>
+  </data>
+  <data name="QuestionButil" xml:space="preserve">
+    <value>Пытанне - BUtil</value>
+  </data>
+  <data name="PleaseConfirmDeletionOf0Logs" xml:space="preserve">
+    <value>Калi ласка, падцвердзiце удаленне {0} логау.</value>
+  </data>
 </root>

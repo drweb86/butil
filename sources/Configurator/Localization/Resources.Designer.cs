@@ -707,6 +707,15 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error - BUtil.
+        /// </summary>
+        internal static string ErrorButil {
+            get {
+                return ResourceManager.GetString("ErrorButil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Errors and warnings will be saved in logs.
         /// </summary>
         internal static string ErrorsAndWarningsWillBeSavedInLogs {
@@ -989,6 +998,15 @@ namespace BUtil.Configurator.Localization {
         internal static string IncrementalBackupDescription {
             get {
                 return ResourceManager.GetString("IncrementalBackupDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Information - BUtil.
+        /// </summary>
+        internal static string InformationButil {
+            get {
+                return ResourceManager.GetString("InformationButil", resourceCulture);
             }
         }
         
@@ -1336,6 +1354,15 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please confirm deletion of {0} logs..
+        /// </summary>
+        internal static string PleaseConfirmDeletionOf0Logs {
+            get {
+                return ResourceManager.GetString("PleaseConfirmDeletionOf0Logs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please wait....
         /// </summary>
         internal static string PleaseWait {
@@ -1396,6 +1423,15 @@ namespace BUtil.Configurator.Localization {
         internal static string PutOffMakingBackupTillProcessorSLoadingWillBeLessThen {
             get {
                 return ResourceManager.GetString("PutOffMakingBackupTillProcessorSLoadingWillBeLessThen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Question - BUtil.
+        /// </summary>
+        internal static string QuestionButil {
+            get {
+                return ResourceManager.GetString("QuestionButil", resourceCulture);
             }
         }
         

@@ -7,11 +7,10 @@ using BUtil.Core.Options;
 using BUtil.Core.ButilImage;
 using BUtil.Core;
 using BUtil.Configurator.Localization;
-using BUtil.Core.PL;
 
 namespace BUtil.Configurator.Controls
 {
-	internal sealed partial class WhatUserControl : BUtil.Core.PL.BackUserControl
+    internal sealed partial class WhatUserControl : BUtil.Core.PL.BackUserControl
 	{
 		CompressionItemsKeeper _itemsToBackup;
 		BackupTask _task;

@@ -1,7 +1,6 @@
 using BUtil.Configurator.Configurator;
 using BUtil.Configurator.Localization;
 using BUtil.Core.Options;
-using BUtil.Core.PL;
 
 namespace BUtil.Configurator.AddBackupTaskWizard.View
 {

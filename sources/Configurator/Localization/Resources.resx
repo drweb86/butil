@@ -780,4 +780,16 @@ Please review opened log.</value>
   <data name="DestinationFolderDoesNotExist" xml:space="preserve">
     <value>Destination folder does not exist.</value>
   </data>
+  <data name="InformationButil" xml:space="preserve">
+    <value>Information - BUtil</value>
+  </data>
+  <data name="ErrorButil" xml:space="preserve">
+    <value>Error - BUtil</value>
+  </data>
+  <data name="QuestionButil" xml:space="preserve">
+    <value>Question - BUtil</value>
+  </data>
+  <data name="PleaseConfirmDeletionOf0Logs" xml:space="preserve">
+    <value>Please confirm deletion of {0} logs.</value>
+  </data>
 </root>

@@ -7,11 +7,10 @@ using System.Windows.Forms;
 using BUtil.Configurator.Configurator;
 using BUtil.Configurator.Localization;
 using BUtil.Core.Options;
-using BUtil.Core.PL;
 
 namespace BUtil.Configurator.Forms
 {
-	internal sealed partial class ExecuteProgramTaskInfoForm : Form
+    internal sealed partial class ExecuteProgramTaskInfoForm : Form
 	{
 		private readonly IEnumerable<string> _forbiddenNames;
 

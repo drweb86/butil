@@ -257,30 +257,11 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Coult not run &apos;{0}&apos; due to:
-        ///{1}.
-        /// </summary>
-        public static string CoultNotRun0DueToN1 {
-            get {
-                return ResourceManager.GetString("CoultNotRun0DueToN1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Enter password:.
         /// </summary>
         public static string EnterPassword {
             get {
                 return ResourceManager.GetString("EnterPassword", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Error - BUtil.
-        /// </summary>
-        public static string ErrorButil {
-            get {
-                return ResourceManager.GetString("ErrorButil", resourceCulture);
             }
         }
         
@@ -407,15 +388,6 @@ namespace BUtil.Core.Localization {
         public static string IncrementalBackup {
             get {
                 return ResourceManager.GetString("IncrementalBackup", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Information - BUtil.
-        /// </summary>
-        public static string InformationButil {
-            get {
-                return ResourceManager.GetString("InformationButil", resourceCulture);
             }
         }
         
@@ -577,29 +549,11 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please confirm deletion of {0} logs..
-        /// </summary>
-        public static string PleaseConfirmDeletionOf0Logs {
-            get {
-                return ResourceManager.GetString("PleaseConfirmDeletionOf0Logs", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Please, report this bug to me! Archivator: Command line error.
         /// </summary>
         public static string PleaseReportThisBugToMeArchivatorCommandLineError {
             get {
                 return ResourceManager.GetString("PleaseReportThisBugToMeArchivatorCommandLineError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Question - BUtil.
-        /// </summary>
-        public static string QuestionButil {
-            get {
-                return ResourceManager.GetString("QuestionButil", resourceCulture);
             }
         }
         

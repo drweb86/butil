@@ -4,16 +4,15 @@ using System.Windows.Forms;
 using BUtil.Core.Storages;
 using BUtil.Core.Options;
 using BUtil.Configurator.Localization;
-using BUtil.Core.PL;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace BUtil.Configurator.Configurator.Controls
 {
-	/// <summary>
-	/// Manages target places for backup
-	/// </summary>
-	internal sealed partial class WhereUserControl : Core.PL.BackUserControl
+    /// <summary>
+    /// Manages target places for backup
+    /// </summary>
+    internal sealed partial class WhereUserControl : Core.PL.BackUserControl
 	{
 		BackupTask _task;
 		

@@ -2,7 +2,6 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Threading;
-using BUtil.Core.PL;
 using BUtil.Core;
 using BUtil.Core.Options;
 using BUtil.Core.Misc;
@@ -16,7 +15,7 @@ using System.Runtime.InteropServices;
 
 namespace BUtil.Configurator.BackupUiMaster.Forms
 {
-	internal delegate void Stub();
+    internal delegate void Stub();
 	
 	internal sealed partial class BackupMasterForm : Form
 	{
@@ -337,7 +336,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
                 PowerPC.DoTask(powerTask);
                 if (_log.ErrorsOrWarningsRegistered)
 				{
-					SupportManager.OpenWebLink(_log.LogFilename);
+					ProcessHelper.ShellExecute(_log.LogFilename);
                     Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.BackupFailedPleaseReviewOpenedLog);
                 }
 				else

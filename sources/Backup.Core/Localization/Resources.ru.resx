@@ -148,16 +148,10 @@
   <data name="About" xml:space="preserve">
     <value>О программе</value>
   </data>
-  <data name="ErrorButil" xml:space="preserve">
-    <value>Ошибка - BUtil</value>
-  </data>
   <data name="PasswordIsInvalidNNitWasResetedN" xml:space="preserve">
     <value>Некорректный пароль.
 
 Пароль сброшен</value>
-  </data>
-  <data name="InformationButil" xml:space="preserve">
-    <value>Информация - BUtil</value>
   </data>
   <data name="PasswordIfNeeded" xml:space="preserve">
     <value>Пароль (по желанию)</value>
@@ -254,10 +248,6 @@
 
 Функции восстановления и резервного копирования будут недоступны.</value>
   </data>
-  <data name="CoultNotRun0DueToN1" xml:space="preserve">
-    <value>Не получается запустить "{0}", поскольку:
-{1}</value>
-  </data>
   <data name="PasswordContainsForbiddenCharactersPleaseRemoveSpaces" xml:space="preserve">
     <value>В пароле содержатся запрещенные символы! Пожалуйста, уберите пробелы</value>
   </data>
@@ -287,12 +277,6 @@
   </data>
   <data name="AfterBackupTask" xml:space="preserve">
     <value>Задание после резервного копирования: </value>
-  </data>
-  <data name="QuestionButil" xml:space="preserve">
-    <value>Вопрос - BUtil</value>
-  </data>
-  <data name="PleaseConfirmDeletionOf0Logs" xml:space="preserve">
-    <value>Пожалуйста, подтвердите удаление {0} логов.</value>
   </data>
   <data name="CannotRun7ZgExeBecause0" xml:space="preserve">
     <value>Не получается запустить 7zg.exe, поскольку {0}</value>

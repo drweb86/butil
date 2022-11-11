@@ -3,7 +3,6 @@ using System.Windows.Forms;
 using System.Threading;
 using BUtil.Core.Options;
 using BUtil.Core.Misc;
-using BUtil.Core.PL;
 using BUtil.Core.Logs;
 
 using BackUserControl = BUtil.BackupUiMaster.Controls.BackUserControl;
@@ -11,10 +10,10 @@ using BUtil.Configurator.Localization;
 
 namespace BUtil.Configurator.BackupUiMaster.Controls
 {
-	/// <summary>
-	/// Settings that can be adjusted just before backup
-	/// </summary>
-	internal sealed partial class SettingsUserControl : BackUserControl
+    /// <summary>
+    /// Settings that can be adjusted just before backup
+    /// </summary>
+    internal sealed partial class SettingsUserControl : BackUserControl
 	{
 		ProgramOptions _options;
 		

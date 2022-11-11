@@ -1,10 +1,12 @@
-﻿using System.Diagnostics;
+﻿using BUtil.Core.Localization;
+using System;
+using System.Diagnostics;
 using System.Text;
 using System.Threading;
 
 namespace BUtil.Core.Misc
 {
-    static class ProcessHelper
+    public static class ProcessHelper
     {
         public static void Execute(
             string executable,
@@ -54,6 +56,19 @@ namespace BUtil.Core.Misc
                 stdError = "Processed was killed due to cancellation.";
                 returnCode = -1;
             }
+        }
+
+        public static void ShellExecute(string argument)
+        {
+            var process = new Process()
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = argument,
+                    UseShellExecute = true,
+                }
+            };
+            process.Start();
         }
     }
 }

@@ -1,7 +1,6 @@
 using System;
 using System.Windows.Forms;
 using BUtil.Core.Storages;
-using BUtil.Core.PL;
 using BUtil.Configurator.Localization;
 using BUtil.Configurator.Configurator;
 using System.IO;

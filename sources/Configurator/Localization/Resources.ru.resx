@@ -720,4 +720,16 @@
   <data name="DestinationFolderDoesNotExist" xml:space="preserve">
     <value>Папка назначения не существует.</value>
   </data>
+  <data name="InformationButil" xml:space="preserve">
+    <value>Информация - BUtil</value>
+  </data>
+  <data name="ErrorButil" xml:space="preserve">
+    <value>Ошибка - BUtil</value>
+  </data>
+  <data name="QuestionButil" xml:space="preserve">
+    <value>Вопрос - BUtil</value>
+  </data>
+  <data name="PleaseConfirmDeletionOf0Logs" xml:space="preserve">
+    <value>Пожалуйста, подтвердите удаление {0} логов.</value>
+  </data>
 </root>
