@@ -1,59 +1,19 @@
 ﻿using System;
-using System.Collections.ObjectModel;
-using System.Windows.Forms;
 using System.Threading;
-using System.Reflection;
-using System.Collections.Generic;
-using System.IO;
 using System.Diagnostics;
-using BUtil.Core.Logs;
-using BUtil.Core.Storages;
 
 namespace BUtil.Core.Options
 {
-	/// <summary>
-	/// Profile options
-	/// </summary>
-    public sealed class ProgramOptions
+    public sealed class ProgramOptions: ICloneable
 	{
-    	#region Consts
-    	
     	const string _INVALID_CPU_LOADING = "CPU loading is out of bounds of valid values!";
     	
-    	#endregion
-    	
-		#region Private Fields
-		
         byte _puttingOffBackupCpuLoading;
-
-        #endregion
 	  
-		#region Properties
-		
-		/// <summary>
-		/// Synchronous storage processing amount
-		/// </summary>
 		public int AmountOfStoragesToProcessSynchronously {get; set;}
-
-		/// <summary>
-		/// Synchronous 7-zip processing amount
-		/// </summary>
 		public int AmountOf7ZipProcessesToProcessSynchronously { get; set; }
-		
-		/// <summary>
-		/// Folder were the logs must be
-		/// Setting overrides directories.logsfolder setting
-		/// </summary>
 		public string LogsFolder { get; set; }
-		
-	    /// <summary>
-	    /// Priority of the 7-zip processes and threads of main processing
-	    /// </summary>
 	    public ThreadPriority Priority { get; set; }
-		
-		/// <summary>
-		/// Converts ThreadPriority to ProcessPriorityClass
-		/// </summary>
 		public ProcessPriorityClass ProcessPriority
 		{
 			get
@@ -75,9 +35,6 @@ namespace BUtil.Core.Options
 			}
 		}
         
-        /// <summary>
-        /// The cpu loading that postpones backup(in scheduler only)
-        /// </summary>
         public byte PuttingOffBackupCpuLoading
 		{
             get { return _puttingOffBackupCpuLoading; }
@@ -91,7 +48,23 @@ namespace BUtil.Core.Options
             	_puttingOffBackupCpuLoading = value;
             }
 		}
-        
-        #endregion
+
+        public object Clone()
+        {
+			return this.MemberwiseClone();
+        }
+
+        public bool Equals(ProgramOptions other)
+        {
+			if (other == null)
+				return false;
+
+			return other.LogsFolder == LogsFolder &&
+				other.PuttingOffBackupCpuLoading == PuttingOffBackupCpuLoading &&
+				other.AmountOf7ZipProcessesToProcessSynchronously == AmountOf7ZipProcessesToProcessSynchronously &&
+				other.AmountOfStoragesToProcessSynchronously == AmountOfStoragesToProcessSynchronously &&
+                other.Priority == Priority;
+
+        }
     }
 }

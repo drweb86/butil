@@ -15,7 +15,6 @@ namespace BUtil.Configurator.Configurator.Forms
 	{
 		#region Fields
 
-		bool _skipSavingOnExitRequest;
         readonly ConfiguratorController _controller;
 	    readonly Dictionary<ConfiguratorViewsEnum, BackUserControl> _views;
 		
@@ -37,7 +36,7 @@ namespace BUtil.Configurator.Configurator.Forms
 			                 {ConfiguratorViewsEnum.Logging, new LoggingUserControl(controller)}
 			             };
 
-		    backupTasksControl.OnRequestToSaveOptions += SaveOptions;
+		    backupTasksControl.OnRequestToSaveOptions += OnRequestToSaveOptions;
 
 		    foreach (KeyValuePair<ConfiguratorViewsEnum, BackUserControl> pair in _views)
         	{
@@ -61,16 +60,13 @@ namespace BUtil.Configurator.Configurator.Forms
 
 		void MainFormFormClosing(object sender, FormClosingEventArgs e)
 		{
-			if (!_skipSavingOnExitRequest)
+			GetOptionsFromUi();
+            e.Cancel = false;
+
+            if (_controller.ProgramOptionsChanged() &&
+                Messages.ShowYesNoDialog(Resources.WouldYouLikeToApplyModifiedSettings))
 			{
-				if (MessageBox.Show(Resources.WouldYouLikeToApplyModifiedSettings, Resources.Exiting, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1,0) == DialogResult.Yes)
-				{
-					e.Cancel = !SaveOptions(); 
-				}
-			}
-			else
-			{
-				e.Cancel = false;
+				e.Cancel = !SaveOptions(); 
 			}
 		}
 		
@@ -93,13 +89,23 @@ namespace BUtil.Configurator.Configurator.Forms
             ChoosePanelUserControlViewChanged(ConfiguratorViewsEnum.Tasks);
         }
 
-        private bool SaveOptions()
+		private void GetOptionsFromUi()
+		{
+            foreach (KeyValuePair<ConfiguratorViewsEnum, BackUserControl> pair in _views)
+            {
+                pair.Value.GetOptionsFromUi();
+            }
+        }
+
+		private bool OnRequestToSaveOptions()
+		{
+            GetOptionsFromUi();
+            _controller.StoreSettings();
+			return true;
+        }
+
+        bool SaveOptions()
         {
-        	foreach (KeyValuePair<ConfiguratorViewsEnum, BackUserControl> pair in _views)
-        	{
-        		pair.Value.GetOptionsFromUi();
-        	}
-            
             return _controller.StoreSettings();
         }
 
@@ -128,7 +134,6 @@ namespace BUtil.Configurator.Configurator.Forms
 		
 		void CancelButtonClick(object sender, EventArgs e)
 		{
-			_skipSavingOnExitRequest = true;
 			Close();
 		}
 			

@@ -21,9 +21,10 @@ namespace BUtil.Configurator.Configurator
 
         #endregion
 
-        ProgramOptions _profileOptions = ProgramOptionsManager.Default;
+        private ProgramOptions _profileOptions = ProgramOptionsManager.Default;
+        private ProgramOptions _optionsDuringProgramLoad = ProgramOptionsManager.Default;
 
-		public void OpenRestorationMaster(string backupFolder, bool runFormAsApplication)
+        public void OpenRestorationMaster(string backupFolder, bool runFormAsApplication)
 		{
 			if (Program.PackageIsBroken)
 			{
@@ -144,7 +145,7 @@ namespace BUtil.Configurator.Configurator
                 }
                 catch (OptionsException noOptions)
                 {
-                    MessageBox.Show(string.Format(CultureInfo.InvariantCulture, NoProfileOptions, Files.ProfileFile, noOptions.Message), Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Messages.ShowErrorBox(string.Format(CultureInfo.InvariantCulture, NoProfileOptions, Files.ProfileFile, noOptions.Message));
                     _profileOptions = ProgramOptionsManager.Default;
                 }
             }
@@ -152,6 +153,13 @@ namespace BUtil.Configurator.Configurator
             {
                 _profileOptions = ProgramOptionsManager.Default;
             }
+
+            _optionsDuringProgramLoad = _profileOptions.Clone() as ProgramOptions;
+        }
+
+        public bool ProgramOptionsChanged()
+        {
+            return !_optionsDuringProgramLoad.Equals(_profileOptions); // bug in .Net 7
         }
         
         public bool StoreSettings()
@@ -159,6 +167,7 @@ namespace BUtil.Configurator.Configurator
             try
             {
                 ProgramOptionsManager.StoreSettings(_profileOptions);
+                _optionsDuringProgramLoad = _profileOptions.Clone() as ProgramOptions;
             }
             catch (Exception ee)
             {
