@@ -87,9 +87,9 @@ end;
 
 function InitializeSetup: Boolean;
 begin
-  Result := IsDotNetCoreInstalled('Microsoft.WindowsDesktop.App 6');
+  Result := IsDotNetCoreInstalled('Microsoft.WindowsDesktop.App 7');
   if not Result then
-    SuppressibleMsgBox(FmtMessage(SetupMessage(msgWinVersionTooLowError), ['.NET Desktop Runtime', '6']), mbCriticalError, MB_OK, IDOK);
+    SuppressibleMsgBox(FmtMessage(SetupMessage(msgWinVersionTooLowError), ['.NET Desktop Runtime', '7']), mbCriticalError, MB_OK, IDOK);
 
   if not Is7ZipInstalled() then
   begin
