@@ -167,7 +167,7 @@
       <ProductName>Microsoft Visual Basic PowerPacks 10.0</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
-    <ProjectReference Include="..\Backup.Core\BUtil.Core.csproj" />
+    <ProjectReference Include="..\BUtil.Core\BUtil.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\BackupTask16x16.png" />

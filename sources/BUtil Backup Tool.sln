@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Increments", "Increments", 
 		Development\Increments\WAIT.txt = Development\Increments\WAIT.txt
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BUtil.Core", "Backup.Core\BUtil.Core.csproj", "{884325C6-9686-4D09-BCDE-38FF79279620}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BUtil.Core", "BUtil.Core\BUtil.Core.csproj", "{884325C6-9686-4D09-BCDE-38FF79279620}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configurator", "butil\butil.csproj", "{6008A6E3-72F0-4C27-80D4-442F1764EAC2}"
 EndProject

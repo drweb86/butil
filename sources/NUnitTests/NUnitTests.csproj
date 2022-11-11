@@ -49,7 +49,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Backup.Core\BUtil.Core.csproj" />
+    <ProjectReference Include="..\BUtil.Core\BUtil.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
