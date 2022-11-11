@@ -41,7 +41,7 @@ namespace BUtil.Core.Storages
 		//	_connection.Upload(folder, fileName);
 		//}
 
-		public override string Upload(string sourceFile, string relativeFileName)
+		public override IStorageUploadResult Upload(string sourceFile, string relativeFileName)
 		{
 			throw new NotImplementedException();
 		}

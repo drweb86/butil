@@ -1,7 +1,6 @@
 using System;
 using System.IO;
 using System.Globalization;
-using BUtil.Core.Synchronization;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Misc;
 using BUtil.Core.Localization;
@@ -12,7 +11,6 @@ namespace BUtil.Core.Logs
 	{
         const string _TIME_FORMATSTRING = "dd MMMM (dddd) HH.mm.ss";
 
-        readonly SyncFile _syncfile = new SyncFile();
         readonly string _fileName;
         StreamWriter _logFile;
 
@@ -35,8 +33,6 @@ namespace BUtil.Core.Logs
         	
             try
             {
-                do
-                {
                     do
                     {
                         _fileName = Path.Combine(logsFolder,
@@ -44,8 +40,6 @@ namespace BUtil.Core.Logs
                             Files.LogFilesExtension);
                     }
                     while (File.Exists(_fileName));
-                }
-                while (!_syncfile.TrySyncFile(_fileName));
             }
             catch (ArgumentException e)
             {
@@ -120,7 +114,6 @@ namespace BUtil.Core.Logs
 
 				_logFile.Flush();
 				_logFile.Close();
-                _syncfile.Dispose();
                 IsOpened = false;
 
                 GC.SuppressFinalize(this);

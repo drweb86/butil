@@ -159,7 +159,7 @@ namespace BUtil.Configurator.Configurator
 
         public bool ProgramOptionsChanged()
         {
-            return !_optionsDuringProgramLoad.Equals(_profileOptions); // bug in .Net 7
+            return !_optionsDuringProgramLoad.CompareTo(_profileOptions); // bug in .Net 7
         }
         
         public bool StoreSettings()

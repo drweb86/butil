@@ -27,8 +27,9 @@ namespace BUtil.Core.TasksTree
             UpdateStatus(ProcessingStatus.InProgress);
 
             var storage = StorageFactory.Create(Log, _storageSettings);
-            var storageRelativeFileName = _storageFile.StorageFileName;
-            _storageFile.StorageFileName = storage.Upload(_storageFile.FileState.FileName, _storageFile.StorageRelativeFileName);
+            var uploadResult = storage.Upload(_storageFile.FileState.FileName, _storageFile.StorageRelativeFileName);
+            _storageFile.StorageFileName = uploadResult.StorageFileName;
+            _storageFile.StorageFileNameSize = uploadResult.StorageFileNameSize;
             UpdateStatus(ProcessingStatus.FinishedSuccesfully);
             IsSuccess = true;
         }

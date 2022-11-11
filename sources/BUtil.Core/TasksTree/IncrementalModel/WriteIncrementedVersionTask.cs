@@ -18,11 +18,11 @@ namespace BUtil.Core.TasksTree
         {
             var childTaks = new List<BuTask>();
 
-            var getIncrementedVersionTask = new CalculateIncrementedVersionForStorageTask(Log, Events, storageStateTask, getSourceItemStateTasks);
-            childTaks.Add(getIncrementedVersionTask);
-            childTaks.Add(new WriteSourceFilesToStorageTask(log, events, getIncrementedVersionTask, storageStateTask.StorageSettings));
-            childTaks.Add(new WriteStateToStorageTask(log, events, getIncrementedVersionTask, storageStateTask.StorageSettings));
-            childTaks.Add(new WriteIntegrityVerificationScriptsToStorageTask(log, events, getIncrementedVersionTask, storageStateTask.StorageSettings));
+            var calculateIncrementedVersionForStorageTask = new CalculateIncrementedVersionForStorageTask(Log, Events, storageStateTask, getSourceItemStateTasks);
+            childTaks.Add(calculateIncrementedVersionForStorageTask);
+            childTaks.Add(new WriteSourceFilesToStorageTask(log, events, calculateIncrementedVersionForStorageTask, storageStateTask.StorageSettings));
+            childTaks.Add(new WriteStateToStorageTask(log, events, calculateIncrementedVersionForStorageTask, storageStateTask.StorageSettings));
+            childTaks.Add(new WriteIntegrityVerificationScriptsToStorageTask(log, events, calculateIncrementedVersionForStorageTask, storageStateTask.StorageSettings));
 
             Children = childTaks;
         }

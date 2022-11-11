@@ -56,7 +56,7 @@ namespace BUtil.Core.TasksTree
             {
                 foreach (var pair in matchingBtoA)
                 {
-                    if (pair.Key.SourceItem == item.SourceItem)
+                    if (pair.Key.SourceItem.CompareTo(item.SourceItem))
                     {
                         matchingBtoA[pair.Key] = item;
                         break;
@@ -106,7 +106,7 @@ namespace BUtil.Core.TasksTree
                         deletedFiles.Remove(aItem);
                         createdFiles.Remove(bItem);
 
-                        if (aItem != bItem)
+                        if (!aItem.CompareTo(bItem))
                             updatedFiles.Add(bItem);
 
                         break;

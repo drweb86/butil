@@ -1,5 +1,6 @@
 ﻿using BUtil.Core.Events;
 using BUtil.Core.Logs;
+using BUtil.Core.Misc;
 using BUtil.Core.State;
 using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.Core;
@@ -29,6 +30,16 @@ namespace BUtil.Core.TasksTree.Storage
                 return;
 
             UpdateStatus(ProcessingStatus.InProgress);
+
+            if (!_getIncrementedVersionTask.VersionIsNeeded)
+            {
+                LogDebug("Version is not needed.");
+                IsSuccess = true;
+                Children = new List<BuTask>();
+                UpdateStatus(ProcessingStatus.FinishedSuccesfully);
+                return;
+            }
+
             var childTasks = new List<BuTask>();
 
             var versionState = _getIncrementedVersionTask.IncrementalBackupState.VersionStates.Last();
@@ -38,19 +49,19 @@ namespace BUtil.Core.TasksTree.Storage
                 itemsToCopy.AddRange(sourceItemChange.UpdatedFiles);
                 itemsToCopy.AddRange(sourceItemChange.CreatedFiles);
 
-                itemsToCopy
+                var sourceItemDir = SourceItemHelper.GetSourceItemDirectory(sourceItemChange.SourceItem);
+
+                var copyTasks = itemsToCopy
                     .Select(x =>
                     {
-                        var sourceItemDir = sourceItemChange.SourceItem.IsFolder ?
-                            sourceItemChange.SourceItem.Target :
-                            Path.GetDirectoryName(sourceItemChange.SourceItem.Target);
+                        var sourceItemRelativeFileName = SourceItemHelper.GetSourceItemRelativeFileName(sourceItemDir, x.FileState);
 
-                        var sourceItemRelativeFileName = x.FileState.FileName.Substring(sourceItemDir.Length);
-
-                        x.StorageRelativeFileName = Path.Combine(
-                            versionState.BackupDateUtc.ToString("yyyyMMddTHHmmss"),
-                            sourceItemChange.SourceItem.Target.GetHashCode().ToString(),
+                        var storageRelativeFileName = SourceItemHelper.GetUnencryptedUncompressedStorageRelativeFileName(
+                            versionState,
+                            sourceItemChange.SourceItem,
                             sourceItemRelativeFileName);
+
+                        x.StorageRelativeFileName = storageRelativeFileName;
                         x.StorageMethod = StorageMethodNames.Plain;
                         x.StorageIntegrityMethod = StorageIntegrityMethod.Sha256;
                         x.StorageIntegrityMethodInfo = x.FileState.Sha512;
@@ -58,6 +69,7 @@ namespace BUtil.Core.TasksTree.Storage
                     })
                     .Select(x => new WriteSourceFileToStorageTask(Log, Events, x, _storageSettings))
                     .ToList();
+                childTasks.AddRange(copyTasks);
             }
             Events.DuringExecutionTasksAdded(Id, childTasks);
             Children = childTasks;

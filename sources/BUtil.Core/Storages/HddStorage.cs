@@ -24,7 +24,7 @@ namespace BUtil.Core.Storages
             return File.ReadAllText(fullPathName);
         }
 
-        public override string Upload(string sourceFile, string relativeFileName)
+        public override IStorageUploadResult Upload(string sourceFile, string relativeFileName)
 		{
 			var destinationFile = Path.Combine(Settings.DestinationFolder, relativeFileName);
 			var destinationDirectory = Path.GetDirectoryName(destinationFile);
@@ -36,9 +36,12 @@ namespace BUtil.Core.Storages
 
             System.IO.File.Copy(sourceFile, destinationFile, true);
 
-			return destinationFile;
+            return new IStorageUploadResult
+            {
+                StorageFileName = destinationFile,
+                StorageFileNameSize = new FileInfo(destinationFile).Length,
+            };
         }
-
 
         public override void Test()
         {

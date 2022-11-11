@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace BUtil.Core.State
 {
-    public class FileState: IEqualityComparer<FileState>
+    public class FileState
     {
         public string FileName { get; set; }
         public DateTime LastWriteTimeUtc { get; set; }
@@ -21,17 +21,12 @@ namespace BUtil.Core.State
             Sha512 = sha512;
         }
 
-        public bool Equals(FileState x, FileState y)
+        public bool CompareTo(FileState x)
         {
-            return x.FileName == y.FileName && 
-                x.Size == y.Size && 
-                x.Sha512 == y.Sha512 && 
-                x.LastWriteTimeUtc == y.LastWriteTimeUtc;
-        }
-
-        public int GetHashCode([DisallowNull] FileState obj)
-        {
-            return obj.FileName.GetHashCode();
+            return x.FileName == FileName && 
+                x.Size == Size && 
+                x.Sha512 == Sha512 && 
+                x.LastWriteTimeUtc == LastWriteTimeUtc;
         }
     }
 }

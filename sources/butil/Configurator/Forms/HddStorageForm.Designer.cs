@@ -77,14 +77,14 @@
             this.whereToStoreBackupLabel.Text = "Folder where to store your backup:";
             this.whereToStoreBackupLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // captionTextBox
+            // _nameTextBox
             // 
             this._nameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this._nameTextBox.Location = new System.Drawing.Point(202, 3);
             this._nameTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this._nameTextBox.Name = "captionTextBox";
+            this._nameTextBox.Name = "_nameTextBox";
             this._nameTextBox.Size = new System.Drawing.Size(450, 23);
-            this._nameTextBox.TabIndex = 0;
+            this._nameTextBox.TabIndex = 1;
             this._nameTextBox.TextChanged += new System.EventHandler(this.OnNameChange);
             // 
             // captionLabel
@@ -107,7 +107,7 @@
             this.acceptButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.acceptButton.Name = "acceptButton";
             this.acceptButton.Size = new System.Drawing.Size(88, 27);
-            this.acceptButton.TabIndex = 5;
+            this.acceptButton.TabIndex = 4;
             this.acceptButton.Text = "OK";
             this.acceptButton.UseVisualStyleBackColor = true;
             this.acceptButton.Click += new System.EventHandler(this.acceptButtonClick);
@@ -120,7 +120,7 @@
             this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(88, 27);
-            this.cancelButton.TabIndex = 6;
+            this.cancelButton.TabIndex = 5;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 

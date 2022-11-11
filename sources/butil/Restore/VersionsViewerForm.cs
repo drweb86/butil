@@ -20,17 +20,6 @@ namespace BUtil.RestorationMaster
 			InitializeComponent();
 			_incrementalBackupState = incrementalBackupState;
             _backupLocation = backupLocation;
-
-            //Resources.Recover;
-			//Resources.UseRightClickMouseOnSelectedItemToRestoreIt;
-		}
-		
-		private void Restore()
-		{
-				//using (HowToRestoreForm form = new HowToRestoreForm(_records[index], _controller))
-				//{
-				//	form.ShowDialog();
-				//}
 		}
 
 		private void OnLoad(object sender, System.EventArgs e)
@@ -88,7 +77,7 @@ namespace BUtil.RestorationMaster
 
             foreach (var versionState in _incrementalBackupState.VersionStates)
             {
-                var sourceItemChanges = versionState.SourceItemChanges.FirstOrDefault(x => x.SourceItem == sourceItem);
+                var sourceItemChanges = versionState.SourceItemChanges.FirstOrDefault(x => x.SourceItem.CompareTo(sourceItem));
                 if (sourceItemChanges == null)
                 {
                     result = null;

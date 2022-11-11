@@ -13,7 +13,7 @@ namespace BUtil.Core.Storages
         protected readonly ILog Log;
         protected readonly TStorageSettings Settings;
 
-        public abstract string Upload(string sourceFile, string relativeFileName);
+        public abstract IStorageUploadResult Upload(string sourceFile, string relativeFileName);
         public abstract string ReadAllText(string file);
         public abstract void Test();
 

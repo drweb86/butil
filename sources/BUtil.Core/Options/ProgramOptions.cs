@@ -54,11 +54,8 @@ namespace BUtil.Core.Options
 			return this.MemberwiseClone();
         }
 
-        public bool Equals(ProgramOptions other)
+        public bool CompareTo(ProgramOptions other)
         {
-			if (other == null)
-				return false;
-
 			return other.LogsFolder == LogsFolder &&
 				other.PuttingOffBackupCpuLoading == PuttingOffBackupCpuLoading &&
 				other.AmountOf7ZipProcessesToProcessSynchronously == AmountOf7ZipProcessesToProcessSynchronously &&

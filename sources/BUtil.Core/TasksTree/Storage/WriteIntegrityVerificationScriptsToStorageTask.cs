@@ -28,6 +28,14 @@ namespace BUtil.Core.TasksTree.Storage
 
             UpdateStatus(ProcessingStatus.InProgress);
 
+            if (!_getIncrementedVersionTask.VersionIsNeeded)
+            {
+                LogDebug("Version is not needed.");
+                IsSuccess = true;
+                UpdateStatus(ProcessingStatus.FinishedSuccesfully);
+                return;
+            }
+
             var storage = StorageFactory.Create(Log, _storageSettings);
             var tempFile = Path.GetRandomFileName();
             File.WriteAllText(tempFile, string.Empty);

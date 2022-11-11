@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using BUtil.Core.ButilImage;
 
 namespace BUtil.Core.Options
 {
-	public class SourceItem: IEqualityComparer<SourceItem>
+	public class SourceItem
     {
+		public Guid Id { get; set; } = Guid.NewGuid();
+
 		public SourceItem() : this(String.Empty, false) { } // deserialization
 
 		public SourceItem(string target, bool isFolder)
@@ -19,16 +18,11 @@ namespace BUtil.Core.Options
 
 		public bool IsFolder { get; set; }
 
-		public bool Equals(SourceItem x, SourceItem y)
+		public bool CompareTo(SourceItem x)
 		{
 			return 
-				x.Target == y.Target &&
+				x.Target == Target &&
 				x.IsFolder == IsFolder;
-		}
-
-		public int GetHashCode([DisallowNull] SourceItem obj)
-		{
-			return obj.Target.GetHashCode();
 		}
 	}
 }
