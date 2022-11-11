@@ -12,7 +12,7 @@ namespace BUtil.Core.TasksTree
         private readonly StorageFile _storageFile;
         private readonly StorageSettings _storageSettings;
 
-        public WriteSourceFileToStorageTask(LogBase log, BackupEvents events, StorageFile storageFile, StorageSettings storageSettings) : 
+        public WriteSourceFileToStorageTask(ILog log, BackupEvents events, StorageFile storageFile, StorageSettings storageSettings) : 
             base(log, events, string.Format(BUtil.Core.Localization.Resources.WriteSourceFileToStorage, storageFile.FileState.FileName, storageSettings.Name), TaskArea.File)
         {
             this._storageFile = storageFile;

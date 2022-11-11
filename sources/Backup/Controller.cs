@@ -42,14 +42,9 @@ namespace BUtil.ConsoleBackup
                 {
                     _powerTask = PowerTask.Reboot;
                 }
-                else if (ArgumentIs(argument, UseFileLog))
-                {
-                    _useFileLog = true;
-                }
                 else if (ArgumentIs(argument, Auto))
                 {
                     Console.Title = Constants.ConsoleBackupTitle;
-                    _useFileLog = true;
                     NativeMethods.SetWindowVisibility(false, Constants.ConsoleBackupTitle);
                 }
                 else if (ArgumentIs(argument, HelpCommand))
@@ -68,7 +63,7 @@ namespace BUtil.ConsoleBackup
             return true;
         }
 
-        LogBase _log;
+        ILog _log;
 		public bool Prepare()
         {
             _log = OpenLog();
@@ -97,12 +92,6 @@ namespace BUtil.ConsoleBackup
             var task = _backup.GetTask(new Core.Events.BackupEvents());
             var cancellationTokenSource = new CancellationTokenSource();
             task.Execute(cancellationTokenSource.Token);
-
-            if (!_useFileLog && _log.ErrorsOrWarningsRegistered)
-            {
-                Console.ReadKey();
-            }
-
             PowerPC.DoTask(_powerTask);
         }
 
@@ -113,7 +102,7 @@ namespace BUtil.ConsoleBackup
 
         private static void ShowErrorAndQuit(string message)
         {
-            Console.WriteLine("\n{0}", message);
+            Console.Error.WriteLine("\n{0}", message);
             Environment.Exit(-1);
         }
 
@@ -164,34 +153,23 @@ namespace BUtil.ConsoleBackup
             return string.Compare(enteredArg, expectedArg, true, CultureInfo.InvariantCulture) == 0;
         }
 
-        private LogBase OpenLog()
+        private ILog OpenLog()
         {
-            LogBase result = null;
-
-            if (_useFileLog)
+            var log = new ChainLog(_options);
+            try
             {
-                try
-                {
-                    result = new FileLog(_options.LogsFolder, true);
-                    result.Open();
-                }
-                catch (LogException e)
-                {
-                    // "Cannot open file log due to crytical error {0}"
-                    ShowErrorAndQuit(string.Format(CultureInfo.InstalledUICulture, Resources.CannotOpenFileLogDueToCryticalError0, e.Message));
-                }
+                log.Open();
             }
-            else
+            catch (LogException e)
             {
-                result = new ConsoleLog();
-                result.Open();
+                // "Cannot open file log due to crytical error {0}"
+                ShowErrorAndQuit(string.Format(CultureInfo.InstalledUICulture, Resources.CannotOpenFileLogDueToCryticalError0, e.Message));
             }
-            return result;
+            return log;
         }
 
         #region Constants
 
-        const string UseFileLog = "UseFileLog";
         const string HelpCommand = "Help";
         const string Shutdown = "ShutDown";
         const string LogOff = "LogOff";
@@ -203,7 +181,6 @@ namespace BUtil.ConsoleBackup
 
         #region Fields
 
-        bool _useFileLog;
         ProgramOptions _options;
         IBackupModelStrategy _backup;
         string _taskName;

@@ -14,7 +14,7 @@ namespace BUtil.Core.TasksTree.Apps
         private readonly ExecuteProgramTaskInfo _executeProgramTaskInfo;
         private readonly ProcessPriorityClass _processPriority;
 
-        public ExecuteProgramTask(LogBase log, BackupEvents events, ExecuteProgramTaskInfo executeProgramTaskInfo, ProcessPriorityClass processPriority)
+        public ExecuteProgramTask(ILog log, BackupEvents events, ExecuteProgramTaskInfo executeProgramTaskInfo, ProcessPriorityClass processPriority)
             : base(log, events, executeProgramTaskInfo.Name, TaskArea.ProgramInRunBeforeAfterBackupChain)
         {
             _executeProgramTaskInfo = executeProgramTaskInfo;

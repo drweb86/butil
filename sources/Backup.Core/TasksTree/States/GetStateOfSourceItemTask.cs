@@ -18,7 +18,7 @@ namespace BUtil.Core.TasksTree
 
         public SourceItem SourceItem { get; }
 
-        public GetStateOfSourceItemTask(LogBase log, BackupEvents events, SourceItem sourceItem) : 
+        public GetStateOfSourceItemTask(ILog log, BackupEvents events, SourceItem sourceItem) : 
             base(log, events, string.Format(BUtil.Core.Localization.Resources.GetStateOfSourceItem, sourceItem.Target), sourceItem.IsFolder ? TaskArea.Folder : TaskArea.File, null)
         {
             SourceItem = sourceItem;

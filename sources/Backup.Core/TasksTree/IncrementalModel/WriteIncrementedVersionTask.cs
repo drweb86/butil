@@ -11,7 +11,7 @@ namespace BUtil.Core.TasksTree
 {
     internal class WriteIncrementedVersionTask: SequentialBuTask
     {
-        public WriteIncrementedVersionTask(LogBase log, BackupEvents events, GetStateOfStorageTask storageStateTask,
+        public WriteIncrementedVersionTask(ILog log, BackupEvents events, GetStateOfStorageTask storageStateTask,
             IEnumerable<GetStateOfSourceItemTask> getSourceItemStateTasks) :
             base(log, events, string.Format(BUtil.Core.Localization.Resources.WriteIncrementedVersionToStorage, storageStateTask.StorageSettings.Name),
                 TaskArea.Hdd, null)

@@ -18,7 +18,7 @@ namespace BUtil.Core.TasksTree.IncrementalModel
         private readonly IncrementalBackupModelOptions _incrementalBackupModelOptions;
 #pragma warning restore IDE0052 // Remove unread private members
 
-        public IncrementalBackupTask(LogBase log, BackupEvents backupEvents, BackupTask backupTask,
+        public IncrementalBackupTask(ILog log, BackupEvents backupEvents, BackupTask backupTask,
             ProgramOptions programOptions, IncrementalBackupModelOptions incrementalBackupModelOptions)
             : base(log, backupEvents, Resources.IncrementalBackup, TaskArea.ProgramInRunBeforeAfterBackupChain, null)
         {

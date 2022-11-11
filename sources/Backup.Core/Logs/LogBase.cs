@@ -4,8 +4,9 @@ using System.Globalization;
 
 namespace BUtil.Core.Logs
 {
-	public abstract class LogBase
-	{
+
+    public abstract class LogBase: ILog
+    {
         private const string _LOG_NOT_OPENED = "Log is not opened";
 
         private bool _opened;// auto: false

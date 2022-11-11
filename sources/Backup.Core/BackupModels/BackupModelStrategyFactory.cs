@@ -8,7 +8,7 @@ namespace BUtil.Core.BackupModels
 {
     public static class BackupModelStrategyFactory
     {
-        public static IBackupModelStrategy Create(LogBase log, BackupTask task, ProgramOptions options)
+        public static IBackupModelStrategy Create(ILog log, BackupTask task, ProgramOptions options)
         {
             switch (task.BackupModel.ProviderName)
             {

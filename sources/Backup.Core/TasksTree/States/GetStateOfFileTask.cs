@@ -14,7 +14,7 @@ namespace BUtil.Core.TasksTree.States
         private string _fileName;
         public FileState State { get; private set; }
 
-        public GetStateOfFileTask(LogBase log, BackupEvents events, string fileName) :
+        public GetStateOfFileTask(ILog log, BackupEvents events, string fileName) :
             base(log, events, string.Format(BUtil.Core.Localization.Resources.GetStateOfFileFileName, fileName), TaskArea.File)
         {
             _fileName = fileName;

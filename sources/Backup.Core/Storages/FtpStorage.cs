@@ -10,7 +10,7 @@ namespace BUtil.Core.Storages
 
 		FtpConnection _connection;
 
-		internal FtpStorage(LogBase log, FtpStorageSettings settings)
+		internal FtpStorage(ILog log, FtpStorageSettings settings)
 			:base(log, settings)
 		{
 		}

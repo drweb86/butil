@@ -13,7 +13,7 @@ namespace BUtil.Core.Storages
             get { return Settings.SkipCopyingToNetworkStorageLimitMb * 1024 * 1024; }
         }
 
-        internal SambaStorage(LogBase log, SambaStorageSettings settings)
+        internal SambaStorage(ILog log, SambaStorageSettings settings)
             :base(log, settings)
         {
         }

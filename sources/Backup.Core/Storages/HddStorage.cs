@@ -9,7 +9,7 @@ namespace BUtil.Core.Storages
 	{
         const string _COPYING = "Copying '{0}' to '{1}'";
 
-		internal HddStorage(LogBase log, HddStorageSettings settings)
+		internal HddStorage(ILog log, HddStorageSettings settings)
             :base (log, settings)
 		{
 		}

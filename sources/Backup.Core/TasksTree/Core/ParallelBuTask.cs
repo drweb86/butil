@@ -11,7 +11,7 @@ namespace BUtil.Core.TasksTree.Core
     {
         public IEnumerable<BuTask> Children { get; set; }
 
-        protected ParallelBuTask(LogBase log, BackupEvents events, string title, TaskArea taskArea, IEnumerable<BuTask> children)
+        protected ParallelBuTask(ILog log, BackupEvents events, string title, TaskArea taskArea, IEnumerable<BuTask> children)
             : base(log, events, title, taskArea)
         {
             Children = children;

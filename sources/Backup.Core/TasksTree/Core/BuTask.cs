@@ -12,12 +12,12 @@ namespace BUtil.Core.TasksTree.Core
         public string Title { get; }
         public TaskArea TaskArea { get; }
         protected readonly BackupEvents Events;
-        protected readonly LogBase Log;
+        protected readonly ILog Log;
         public virtual IEnumerable<BuTask> GetChildren()
         {
             return Array.Empty<BuTask>();
         }
-        protected BuTask(LogBase log, BackupEvents events, string title, TaskArea taskArea)
+        protected BuTask(ILog log, BackupEvents events, string title, TaskArea taskArea)
         {
             Log = log;
             Events = events;

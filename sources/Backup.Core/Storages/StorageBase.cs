@@ -4,13 +4,13 @@ namespace BUtil.Core.Storages
 {
     public abstract class StorageBase<TStorageSettings>: IStorage
 	{
-        protected StorageBase(LogBase log, TStorageSettings settings)
+        protected StorageBase(ILog log, TStorageSettings settings)
         {
             Log = log;
             Settings = settings;
         }
 
-        protected readonly LogBase Log;
+        protected readonly ILog Log;
         protected readonly TStorageSettings Settings;
 
         public abstract string Upload(string sourceFile, string relativeFileName);

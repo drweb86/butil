@@ -7,7 +7,7 @@ namespace BUtil.Core.Storages
 
     public class StorageFactory
     {
-        public static IStorage Create(LogBase log, StorageSettings storageSettings)
+        public static IStorage Create(ILog log, StorageSettings storageSettings)
         {
             switch (storageSettings.ProviderName)
             {
@@ -25,7 +25,7 @@ namespace BUtil.Core.Storages
             }
         }
 
-        public static IStorage Create(LogBase log, FtpStorageSettings settings)
+        public static IStorage Create(ILog log, FtpStorageSettings settings)
         {
             return new FtpStorage(log, settings);
         }

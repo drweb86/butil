@@ -15,7 +15,7 @@ namespace BUtil.Core.TasksTree.Storage
         private CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask;
         private StorageSettings _storageSettings;
 
-        public WriteSourceFilesToStorageTask(LogBase log, BackupEvents events,
+        public WriteSourceFilesToStorageTask(ILog log, BackupEvents events,
             CalculateIncrementedVersionForStorageTask getIncrementedVersionTask, StorageSettings storageSettings)
             : base(log, events, string.Format(BUtil.Core.Localization.Resources.WriteSourceFilesToStorage, storageSettings.Name), TaskArea.Hdd, null)
         {

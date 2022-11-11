@@ -12,7 +12,7 @@ namespace BUtil.Core.TasksTree.Core
     {
         public IEnumerable<BuTask> Children { get; set; }
 
-        protected SequentialBuTask(LogBase log, BackupEvents events, string title, TaskArea taskArea, IEnumerable<BuTask> children)
+        protected SequentialBuTask(ILog log, BackupEvents events, string title, TaskArea taskArea, IEnumerable<BuTask> children)
             : base(log, events, title, taskArea)
         {
             Children = children;

@@ -10,10 +10,10 @@ namespace BUtil.Core.BackupModels
     {
         readonly ProgramOptions _options;
         private readonly IncrementalBackupModelOptions _modelOptions;
-        readonly LogBase _log;
+        readonly ILog _log;
         readonly BackupTask _task;
 
-        public IncrementalBackupModelStrategy(LogBase openedLog, BackupTask task, IncrementalBackupModelOptions modelOptions, ProgramOptions options)
+        public IncrementalBackupModelStrategy(ILog openedLog, BackupTask task, IncrementalBackupModelOptions modelOptions, ProgramOptions options)
         {
             _modelOptions = modelOptions;
             _log = openedLog;

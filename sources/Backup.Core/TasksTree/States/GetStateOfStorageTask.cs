@@ -14,7 +14,7 @@ namespace BUtil.Core.TasksTree
         public StorageSettings StorageSettings { get; }
         public IncrementalBackupState StorageState { get; private set; }
 
-        public GetStateOfStorageTask(LogBase log, BackupEvents events, StorageSettings storageSettings) : 
+        public GetStateOfStorageTask(ILog log, BackupEvents events, StorageSettings storageSettings) : 
             base(log, events, string.Format(BUtil.Core.Localization.Resources.GetStateOfStorage, storageSettings.Name), TaskArea.Hdd)
         {
             StorageSettings = storageSettings;

@@ -13,7 +13,7 @@ namespace BUtil.Core.TasksTree.Storage
         private CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask;
         private StorageSettings _storageSettings;
 
-        public WriteIntegrityVerificationScriptsToStorageTask(LogBase log, BackupEvents events,
+        public WriteIntegrityVerificationScriptsToStorageTask(ILog log, BackupEvents events,
             CalculateIncrementedVersionForStorageTask getIncrementedVersionTask, StorageSettings storageSettings)
             : base(log, events, string.Format(BUtil.Core.Localization.Resources.WriteIntegrityVerificationScriptsToStorage, storageSettings.Name), TaskArea.Hdd)
         {
