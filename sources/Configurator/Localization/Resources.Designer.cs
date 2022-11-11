@@ -470,15 +470,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Choose logging level:.
-        /// </summary>
-        internal static string ChooseLoggingLevel {
-            get {
-                return ResourceManager.GetString("ChooseLoggingLevel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Choose the task you want to run:.
         /// </summary>
         internal static string ChooseTheTaskYouWantToRun {
@@ -712,15 +703,6 @@ namespace BUtil.Configurator.Localization {
         internal static string ErrorButil {
             get {
                 return ResourceManager.GetString("ErrorButil", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Errors and warnings will be saved in logs.
-        /// </summary>
-        internal static string ErrorsAndWarningsWillBeSavedInLogs {
-            get {
-                return ResourceManager.GetString("ErrorsAndWarningsWillBeSavedInLogs", resourceCulture);
             }
         }
         
@@ -1661,15 +1643,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SUPPORT.
-        /// </summary>
-        internal static string Support {
-            get {
-                return ResourceManager.GetString("Support", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Target folder should have UNC name(for example:\\server1\sharedResource1)!.
         /// </summary>
         internal static string TargetFolderShouldHaveUncNameForExampleServer1Sharedresource1 {
@@ -1744,15 +1717,6 @@ namespace BUtil.Configurator.Localization {
         internal static string ThisMasterWillHelpYouToCreateANewTask {
             get {
                 return ResourceManager.GetString("ThisMasterWillHelpYouToCreateANewTask", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to This mode is for getting support.
-        /// </summary>
-        internal static string ThisModeIsForGettingSupport {
-            get {
-                return ResourceManager.GetString("ThisModeIsForGettingSupport", resourceCulture);
             }
         }
         

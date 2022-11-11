@@ -275,14 +275,8 @@ Localization created by:
   <data name="Settings" xml:space="preserve">
     <value>Settings</value>
   </data>
-  <data name="ChooseLoggingLevel" xml:space="preserve">
-    <value>Choose logging level:</value>
-  </data>
   <data name="Documentation" xml:space="preserve">
     <value>Documentation</value>
-  </data>
-  <data name="Support" xml:space="preserve">
-    <value>SUPPORT</value>
   </data>
   <data name="BugReport" xml:space="preserve">
     <value>BUG REPORT</value>
@@ -554,12 +548,6 @@ Program will now open browser with the download page</value>
   </data>
   <data name="BackupJournals" xml:space="preserve">
     <value>Backup journals</value>
-  </data>
-  <data name="ErrorsAndWarningsWillBeSavedInLogs" xml:space="preserve">
-    <value>Errors and warnings will be saved in logs</value>
-  </data>
-  <data name="ThisModeIsForGettingSupport" xml:space="preserve">
-    <value>This mode is for getting support</value>
   </data>
   <data name="ViewSelectedLogs" xml:space="preserve">
     <value>View selected logs...</value>

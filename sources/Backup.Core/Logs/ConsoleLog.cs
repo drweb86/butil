@@ -44,7 +44,7 @@ namespace BUtil.Core.Logs
 			IsOpened = true;
         }
 
-        public ConsoleLog(LogLevel level) : base(level, LogMode.Console, true) { ; }
+        public ConsoleLog() : base(LogMode.Console, true) { ; }
         public override void Close() { ; }
 	}
 }

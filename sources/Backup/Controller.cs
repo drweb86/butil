@@ -9,7 +9,6 @@ using BUtil.Core.Misc;
 using BUtil.ConsoleBackup.Localization;
 using BUtil.Core.BackupModels;
 using System.Threading;
-using Microsoft.VisualBasic.Logging;
 
 namespace BUtil.ConsoleBackup
 {
@@ -173,7 +172,7 @@ namespace BUtil.ConsoleBackup
             {
                 try
                 {
-                    result = new FileLog(_options.LogsFolder, _options.LoggingLevel, true);
+                    result = new FileLog(_options.LogsFolder, true);
                     result.Open();
                 }
                 catch (LogException e)
@@ -184,7 +183,7 @@ namespace BUtil.ConsoleBackup
             }
             else
             {
-                result = new ConsoleLog(_options.LoggingLevel);
+                result = new ConsoleLog();
                 result.Open();
             }
             return result;

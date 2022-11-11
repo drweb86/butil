@@ -82,7 +82,6 @@ namespace BUtil.Core.Options
 					Priority = System.Threading.ThreadPriority.BelowNormal,
 					LogsFolder = Directories.LogsFolder,
 					PuttingOffBackupCpuLoading = Constants.DefaultCpuLoading,
-					LoggingLevel = LogLevel.Normal,
 					AmountOfStoragesToProcessSynchronously = Constants.AmountOfStoragesToProcessSynchronouslyDefault,
 					AmountOf7ZipProcessesToProcessSynchronously = Environment.ProcessorCount
 				};

@@ -8,20 +8,10 @@ using BUtil.Core.Options;
 
 namespace BUtil.Configurator.Configurator.Controls
 {
-	/// <summary>
-	/// Configures logging and provides access to logs
-	/// Related document FD-2, FD-11
-	/// </summary>
 	internal sealed partial class LoggingUserControl : Core.PL.BackUserControl
     {
-        #region Fields
-
         ProgramOptions _profileOptions;
 	    readonly ConfiguratorController _controller;
-
-        #endregion
-
-        #region Constructors
 
         public LoggingUserControl(ConfiguratorController controller)
 		{
@@ -35,18 +25,10 @@ namespace BUtil.Configurator.Configurator.Controls
 			InitializeComponent();
 		}
 
-        #endregion
-
         #region Overrides
 
         public override void ApplyLocalization() 
 		{
-			logLevelLabel.Text = Resources.ChooseLoggingLevel;
-			int loggingLevelIndex = logLevelComboBox.SelectedIndex;
-			logLevelComboBox.Items.Clear();
-            logLevelComboBox.Items.AddRange(new [] {Resources.Normal, Resources.Support});
-            logLevelComboBox.SelectedIndex = loggingLevelIndex;
-
             logsLocationLabel.Text = Resources.LogsLocation;
             chooseOtherLogsLocationLinkLabel.Text = Resources.ChangeLogsLocation;
             restoreDefaultLogsLocationLinkLabel.Text = Resources.RestoreDefaultLogsLocation;
@@ -56,18 +38,11 @@ namespace BUtil.Configurator.Configurator.Controls
 		public override void SetOptionsToUi(object settings)
 		{
 			_profileOptions = (ProgramOptions)settings;
-			
-			logLevelComboBox.SelectedIndex = (int)_profileOptions.LoggingLevel; 
 			logsLocationLinkLabel.Text = _profileOptions.LogsFolder;
 		}
 		
 		public override void GetOptionsFromUi()
 		{
-			if (logLevelComboBox.SelectedIndex < 0)
-            {
-				logLevelComboBox.SelectedIndex = (int)LogLevel.Normal;
-            }
-            _profileOptions.LoggingLevel = (LogLevel)logLevelComboBox.SelectedIndex;
 		}
 		
 		#endregion
@@ -78,11 +53,6 @@ namespace BUtil.Configurator.Configurator.Controls
 		{
 			var operations = new LogOperations(_profileOptions.LogsFolder);
 			operations.OpenLogsFolderInExplorer();
-		}
-		
-		void LogLevelComboBoxSelectedIndexChanged(object sender, EventArgs e)
-		{
-			helpAboutLogTypeLabel.Text = logLevelComboBox.SelectedIndex == 0 ? Resources.ErrorsAndWarningsWillBeSavedInLogs : Resources.ThisModeIsForGettingSupport;
 		}
 		
 		void RestoreDefaultLogsLocationLinkLabelLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

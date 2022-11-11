@@ -26,8 +26,7 @@ namespace BUtil.Core.Logs
             Close();
 		}
 
-        /// <exception cref="LogException">Synchronization failled</exception>
-        public FileLog(string logsFolder, LogLevel level, bool consoleApp) : base(level, LogMode.File, consoleApp)
+        public FileLog(string logsFolder, bool consoleApp) : base(LogMode.File, consoleApp)
 		{
         	if (string.IsNullOrEmpty(logsFolder))
         	{

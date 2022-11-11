@@ -59,18 +59,7 @@ namespace BUtil.Configurator.BackupUiMaster.Controls
 			backupPriorityComboBox.SelectedIndex = (int)_options.Priority;
 			jobAfterOkBackupComboBox.SelectedIndex = (int)task;
             hearBeepsCheckBox.Checked = beepWhenFinished;
-            
-            // if our logging level set to support
-            // then user wants to get support with our log
-            // so disabling power control
-            if (_options.LoggingLevel == LogLevel.Support)
-            {
-                jobAfterOkBackupComboBox.SelectedIndex = (int)PowerTask.None;
-                jobAfterOkBackupComboBox.Enabled = false;
-            }
-            
             backupPriorityComboBox.SelectedIndex = (int)_options.Priority;
-			
 		}
 		
 		public void GetSettingsFromUi(out PowerTask task, out bool beepWhenFinished)

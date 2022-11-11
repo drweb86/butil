@@ -176,7 +176,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 
 		void LoadForm(object sender, EventArgs e)
 		{
-			_log = new FileLog(_programOptions.LogsFolder, _programOptions.LoggingLevel, false);
+			_log = new FileLog(_programOptions.LogsFolder, false);
 			_log.Open();
             _strategy = BackupModelStrategyFactory.Create(_log, _backupTask, _programOptions);
 			_backupEvents = new BackupEvents();

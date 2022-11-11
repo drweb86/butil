@@ -46,11 +46,6 @@ namespace BUtil.Core.Options
 		/// </summary>
 		public string LogsFolder { get; set; }
 		
-		/// <summary>
-		/// Logging level
-		/// </summary>
-		public LogLevel LoggingLevel { get; set; }
-
 	    /// <summary>
 	    /// Priority of the 7-zip processes and threads of main processing
 	    /// </summary>

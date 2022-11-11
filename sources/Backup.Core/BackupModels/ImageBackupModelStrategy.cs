@@ -1,7 +1,6 @@
 ﻿using BUtil.Core.Logs;
 using BUtil.Core.Options;
 using BUtil.Core.Events;
-using BUtil.Core.TasksTree;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
 
@@ -20,7 +19,6 @@ namespace BUtil.Core.BackupModels
             _log = openedLog;
             _task = task;
             _options = options;
-            HtmlLogFormatter.IncludeLoggingEventPrefixes = options.LoggingLevel == LogLevel.Support;
         }
 
         public BuTask GetTask(BackupEvents events)

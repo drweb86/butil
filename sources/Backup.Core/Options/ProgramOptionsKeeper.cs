@@ -190,7 +190,6 @@ namespace BUtil.Core.Options
 				addTextNode(document, performanceNode, "AmountOfStoragesToProcessSynchronously", options.AmountOfStoragesToProcessSynchronously.ToString());
 				addTextNode(document, performanceNode, "ProcessingPriority", options.Priority.ToString());
 
-				addTextNode(document, logsNode, "Level", options.LoggingLevel.ToString());
 				addTextNode(document, logsNode, "Location", options.LogsFolder);
 				
                 document.Save(Files.ProfileFile);
@@ -232,9 +231,6 @@ namespace BUtil.Core.Options
 					string priority = readNode(document, "/Settings/Core/Performance/ProcessingPriority", ThreadPriority.BelowNormal.ToString());
 					options.Priority =  (ThreadPriority)ThreadPriorityLevel.Parse(typeof(ThreadPriority), priority);
 
-					string logLevel = readNode(document, "/Settings/Core/Logging/Level", LogLevel.Normal.ToString());
-					options.LoggingLevel =  (LogLevel)ThreadPriorityLevel.Parse(typeof(LogLevel), logLevel);
-					
 					options.LogsFolder = readNode(document, "/Settings/Core/Logging/Location", Directories.LogsFolder);
 					
 					options.PuttingOffBackupCpuLoading = (byte)readNode(document, "/Settings/Core/ScheduleApplication/PuttingOffBackupCpuLoading", Constants.MinimumCpuLoading, Constants.MaximumCpuLoading, Constants.DefaultCpuLoading);

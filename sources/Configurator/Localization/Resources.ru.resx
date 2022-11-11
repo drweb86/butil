@@ -216,14 +216,8 @@
   <data name="Settings" xml:space="preserve">
     <value>Настройки</value>
   </data>
-  <data name="ChooseLoggingLevel" xml:space="preserve">
-    <value>Выберите уровень ведения логов:</value>
-  </data>
   <data name="Documentation" xml:space="preserve">
     <value>Руководство пользователя</value>
-  </data>
-  <data name="Support" xml:space="preserve">
-    <value>ПОДДЕРЖКА</value>
   </data>
   <data name="BugReport" xml:space="preserve">
     <value>ОШИБКА</value>
@@ -494,12 +488,6 @@
   </data>
   <data name="BackupJournals" xml:space="preserve">
     <value>Журналы резервного копирования</value>
-  </data>
-  <data name="ErrorsAndWarningsWillBeSavedInLogs" xml:space="preserve">
-    <value>Ошибки и предупреждения будут сохраняться в логах</value>
-  </data>
-  <data name="ThisModeIsForGettingSupport" xml:space="preserve">
-    <value>Этот режим предназначен для получения поддержки, связанной с предоставлением логов</value>
   </data>
   <data name="ViewSelectedLogs" xml:space="preserve">
     <value>Посмотреть выбранные логи...</value>

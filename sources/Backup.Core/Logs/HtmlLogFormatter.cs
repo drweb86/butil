@@ -1,34 +1,18 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Globalization;
-
 
 namespace BUtil.Core.Logs
 {
     internal static class HtmlLogFormatter
     {
 		const string _INFORMATION_FORMATSTRING = "{0} {1} - {2}";
-		const string _INFORMATION_FORMATSTRING_WITHOUT_PREFIX = "{0} - {1}";
         static readonly string[] _loggingEventsStrings = { "[error]", "[warning]", "[packer]", "[debug]" };
-        static bool _includeLoggingEventPrefixes = false;
        
-        public static bool IncludeLoggingEventPrefixes
-        {
-        	get { return _includeLoggingEventPrefixes; }
-        	set { _includeLoggingEventPrefixes = value; }
-        }
-        
         public static string GetHtmlFormattedLogMessage(LoggingEvent loggingEvent, string message)
         {
-        	string information = _includeLoggingEventPrefixes ?
-				string.Format(CultureInfo.CurrentUICulture,
+        	string information = string.Format(CultureInfo.CurrentUICulture,
 							_INFORMATION_FORMATSTRING, 
 							_loggingEventsStrings[(int)loggingEvent],  
-							DateTime.Now.ToLongTimeString(), 
-							message) :
-        		string.Format(CultureInfo.CurrentUICulture,
-							_INFORMATION_FORMATSTRING_WITHOUT_PREFIX, 
 							DateTime.Now.ToLongTimeString(), 
 							message);
 
