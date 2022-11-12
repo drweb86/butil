@@ -53,9 +53,9 @@ namespace BUtil.Core.Storages
   //          }
 		//}
 
-        public override void Test()
+        public override string Test()
         {
-
+            return null;
         }
 
         public override IStorageUploadResult Upload(string sourceFile, string relativeFileName)

@@ -774,4 +774,9 @@ Please review opened log.</value>
   <data name="PleaseConfirmDeletionOf0Logs" xml:space="preserve">
     <value>Please confirm deletion of {0} logs.</value>
   </data>
+  <data name="SourceItemFailure" xml:space="preserve">
+    <value>Source item "{0}" does not exist.
+
+Please correct list of source items.</value>
+  </data>
 </root>

@@ -43,10 +43,12 @@ namespace BUtil.Core.Storages
             };
         }
 
-        public override void Test()
+        public override string Test()
         {
-            ;
+            if (!Directory.Exists(Settings.DestinationFolder))
+                return string.Format(BUtil.Core.Localization.Resources.HddStorageFailure, Settings.Name, Settings.DestinationFolder);
+
+            return null;
         }
-        
 	}
 }

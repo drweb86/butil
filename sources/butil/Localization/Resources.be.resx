@@ -328,7 +328,7 @@
     <value>Set compression degree</value>
   </data>
   <data name="ItemsToBackup" xml:space="preserve">
-    <value>Items to backup</value>
+    <value>Source items to backup</value>
   </data>
   <data name="Finish" xml:space="preserve">
     <value>Finish</value>

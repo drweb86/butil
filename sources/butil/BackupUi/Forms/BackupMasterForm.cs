@@ -12,6 +12,8 @@ using BUtil.Core.Events;
 using BUtil.Core.BackupModels;
 using BUtil.Core.TasksTree.Core;
 using System.Runtime.InteropServices;
+using BUtil.Core.Storages;
+using System.IO;
 
 namespace BUtil.Configurator.BackupUiMaster.Forms
 {
@@ -206,7 +208,38 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             	Messages.ShowInformationBox(Resources.ThereAreNoSpecifiedPlacesWhereToStoreBackupNNyouCanAddSomeStoragesInConfiguratorInWhereSettingsGroup);
             	Close();
             }
-		}
+
+			foreach (var storageSettings in _backupTask.Storages)
+			{
+				var storage = StorageFactory.Create(_log, storageSettings);
+				var error = storage.Test();
+				if (error != null)
+				{
+					Messages.ShowErrorBox(error);
+					Close();
+				}
+			}
+
+            foreach (var item in _backupTask.Items)
+            {
+				if (item.IsFolder)
+				{
+					if (!Directory.Exists(item.Target))
+					{
+						Messages.ShowErrorBox(string.Format(BUtil.Configurator.Localization.Resources.SourceItemFailure, item.Target));
+						Close();
+					}
+                }
+				else
+				{
+                    if (!File.Exists(item.Target))
+                    {
+                        Messages.ShowErrorBox(string.Format(BUtil.Configurator.Localization.Resources.SourceItemFailure, item.Target));
+                        Close();
+                    }
+                }
+            }
+        }
 
 		private void OnDuringExecutionTasksAdded(object sender, DuringExecutionTasksAddedEventArgs e)
 		{

@@ -48,6 +48,11 @@
     <FileAlignment>4096</FileAlignment>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Synchronization\**" />
+    <EmbeddedResource Remove="Synchronization\**" />
+    <None Remove="Synchronization\**" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>SharedAssemblyInfo.cs</Link>
     </Compile>
@@ -101,9 +106,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Synchronization\" />
   </ItemGroup>
   <PropertyGroup>
     <PreBuildEvent>

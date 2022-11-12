@@ -4,12 +4,13 @@ This is alpha version.
 FTP & Samba are not working.
 Compression is not reworked.
 Password protection is not reworked.
-Functional is unstable.
 
 ## New Features
 - New section for setting up incremental model options.
 - Incremental backup without compression and encryption.
 - Incremental backup restoration without compression and encryption.
+- Tools were renamed.
+- Update to .Net 7
 
 ## Changes
 - Setup is x32/x64
@@ -32,7 +33,8 @@ Program Files, Program Files (x86), PATH environment variable directories
 - Task name command line argument now only one is accepted by both UI and console. The idea is to simplify the tool.
 - event integration was upated.
 - dropped $backupFileName after backup task parameter support because none of new strategies will support it.
-- dropped image file backup functionality
+- dropped image file backup functionality.
+- dropped Suspend, Hibernate modes since they are not supported by Windows 11 by default.
 
 ## Bug Fixes
 - Passwords are not in debug log anymore

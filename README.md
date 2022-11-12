@@ -56,8 +56,8 @@ To function in full mode also required:
 ### Hardware:
 
 - Pentium 3 computer or better, IA-64 but should work and on IA-64 architecture
-- 1 GB RAM
-- about 5 mb on HDD
+- 2 GB RAM
+- about 10 mb on HDD
 
 ## Feedback
 

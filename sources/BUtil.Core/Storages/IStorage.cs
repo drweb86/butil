@@ -6,5 +6,6 @@ namespace BUtil.Core.Storages
     {
         IStorageUploadResult Upload(string sourceFile, string relativeFileName);
         string ReadAllText(string file);
+        string Test();
     }
 }

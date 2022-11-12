@@ -327,4 +327,9 @@ Application will now close</value>
   <data name="IntegrityVerificationScriptSh" xml:space="preserve">
     <value>Integrity verification script.sh</value>
   </data>
+  <data name="HddStorageFailure" xml:space="preserve">
+    <value>Storage "{0}" directory "{1}" was not found.
+
+Please update storage "{0}" settings.</value>
+  </data>
 </root>

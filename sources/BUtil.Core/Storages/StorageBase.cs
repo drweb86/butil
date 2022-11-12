@@ -15,7 +15,7 @@ namespace BUtil.Core.Storages
 
         public abstract IStorageUploadResult Upload(string sourceFile, string relativeFileName);
         public abstract string ReadAllText(string file);
-        public abstract void Test();
+        public abstract string Test();
 
 	}
 }

@@ -196,7 +196,18 @@ namespace BUtil.Configurator.Controls
                 return false;
 			}
 
-			return true;
+            foreach (ListViewItem listItem in compressionItemsListView.Items)
+            {
+				var item = listItem.Text;
+				if (!Directory.Exists(item) &&
+					!File.Exists(item))
+				{
+					Messages.ShowErrorBox(string.Format(BUtil.Configurator.Localization.Resources.SourceItemFailure, item));
+                    return false;
+                }
+            }
+
+            return true;
 
         }
 

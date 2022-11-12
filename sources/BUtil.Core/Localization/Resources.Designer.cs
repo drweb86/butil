@@ -374,6 +374,17 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Storage &quot;{0}&quot; directory &quot;{1}&quot; was not found.
+        ///
+        ///Please update storage &quot;{0}&quot; settings..
+        /// </summary>
+        public static string HddStorageFailure {
+            get {
+                return ResourceManager.GetString("HddStorageFailure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;Here is your password&gt;.
         /// </summary>
         public static string HereIsYourPassword {

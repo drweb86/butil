@@ -7,12 +7,14 @@ using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using BUtil.Core.Logs;
+using Microsoft.VisualBasic.Logging;
 
 namespace BUtil.Configurator
 {
     internal sealed partial class HddStorageForm : Form, IStorageConfigurationForm
 	{
-		private readonly IEnumerable<string> _forbiddenNames;
+        private readonly IEnumerable<string> _forbiddenNames;
 
 		private HddStorageSettings GetHddStorageSettings()
 		{ 
@@ -50,7 +52,7 @@ namespace BUtil.Configurator
 			acceptButton.Text = Resources.Ok;
 			cancelButton.Text = Resources.Cancel;
 			captionLabel.Text = Resources.Title;
-			this._forbiddenNames = forbiddenNames;
+            this._forbiddenNames = forbiddenNames;
 		}
 		
 		void searchButtonClick(object sender, EventArgs e)
@@ -82,9 +84,13 @@ namespace BUtil.Configurator
                 return;
             }
 
-            if (!Directory.Exists(destinationFolderTextBox.Text))
+			var storageSettings = GetStorageSettings();
+            var storage = StorageFactory.Create(new StubLog(), storageSettings);
+			var error = storage.Test();
+
+            if (error != null)
             {
-                Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.DestinationFolderDoesNotExist);
+                Messages.ShowErrorBox(error);
                 return;
             }
 

@@ -19,13 +19,14 @@ namespace BUtil.Core.Storages
             throw new NotImplementedException();
         }
 
-		public override void Test()
+		public override string Test()
 		{
 			_connection = new FtpConnection();
 			_connection.SetLogOnInformation(Settings.User, Settings.Password);
 			_connection.ServerLocation = Settings.Host;
             _connection.IsPassive = !Settings.ActiveFtpMode;
 			_connection.GetFileList(Settings.DestinationFolder);
+			return null;
 		}
 		
 		//public override void Put(string fileName, string directory = null)

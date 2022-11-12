@@ -1598,6 +1598,17 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Source item &quot;{0}&quot; does not exist.
+        ///
+        ///Please correct list of source items..
+        /// </summary>
+        internal static string SourceItemFailure {
+            get {
+                return ResourceManager.GetString("SourceItemFailure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Specify the folder where to store back-up:.
         /// </summary>
         internal static string SpecifyTheFolderWhereToStoreBackUp {

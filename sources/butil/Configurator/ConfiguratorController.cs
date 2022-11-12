@@ -8,7 +8,6 @@ using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
 using BUtil.RestorationMaster;
 using BUtil.Configurator.LogsManagement;
-using System.Linq;
 
 namespace BUtil.Configurator.Configurator
 {
@@ -17,7 +16,6 @@ namespace BUtil.Configurator.Configurator
         #region Constants
 
         const string NoProfileOptions = "File with profile settings '{0}' absent. It will be set to defaults.\n\nReason:\n{1}";
-        const string Error = "Error";
 
         #endregion
 

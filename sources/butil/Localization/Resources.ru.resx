@@ -329,7 +329,7 @@
     <value>Установить степень сжатия</value>
   </data>
   <data name="ItemsToBackup" xml:space="preserve">
-    <value>Объекты для резервного копирования</value>
+    <value>Источники данных для резервного копирования</value>
   </data>
   <data name="Finish" xml:space="preserve">
     <value>Закончить</value>
@@ -713,5 +713,10 @@
   </data>
   <data name="PleaseConfirmDeletionOf0Logs" xml:space="preserve">
     <value>Пожалуйста, подтвердите удаление {0} логов.</value>
+  </data>
+  <data name="SourceItemFailure" xml:space="preserve">
+    <value>Источник "{0}" не существует.
+
+Пожалуйста, исправьте список источников.</value>
   </data>
 </root>
