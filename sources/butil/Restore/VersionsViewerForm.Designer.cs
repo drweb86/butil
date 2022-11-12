@@ -41,11 +41,11 @@
             this._filesTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._dataLabel = new System.Windows.Forms.Label();
             this._filesTreeView = new System.Windows.Forms.TreeView();
-            this._changesTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this._changesLabel = new System.Windows.Forms.Label();
-            this._changesListBox = new System.Windows.Forms.ListBox();
             this._treeContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.recoverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this._changesTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this._changesLabel = new System.Windows.Forms.Label();
+            this._changesTextBox = new System.Windows.Forms.TextBox();
             this._fbdialog = new System.Windows.Forms.FolderBrowserDialog();
             this._statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._versionToContentSplitContainer)).BeginInit();
@@ -58,8 +58,8 @@
             this._treeToChangesSplitContainer.Panel2.SuspendLayout();
             this._treeToChangesSplitContainer.SuspendLayout();
             this._filesTableLayoutPanel.SuspendLayout();
-            this._changesTableLayoutPanel.SuspendLayout();
             this._treeContextMenuStrip.SuspendLayout();
+            this._changesTableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // imagesList
@@ -74,9 +74,9 @@
             // 
             this._statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._toolStripStatusLabel});
-            this._statusStrip.Location = new System.Drawing.Point(0, 355);
+            this._statusStrip.Location = new System.Drawing.Point(0, 507);
             this._statusStrip.Name = "_statusStrip";
-            this._statusStrip.Size = new System.Drawing.Size(604, 22);
+            this._statusStrip.Size = new System.Drawing.Size(1079, 22);
             this._statusStrip.TabIndex = 0;
             // 
             // _toolStripStatusLabel
@@ -98,8 +98,8 @@
             // _versionToContentSplitContainer.Panel2
             // 
             this._versionToContentSplitContainer.Panel2.Controls.Add(this._treeToChangesSplitContainer);
-            this._versionToContentSplitContainer.Size = new System.Drawing.Size(604, 355);
-            this._versionToContentSplitContainer.SplitterDistance = 162;
+            this._versionToContentSplitContainer.Size = new System.Drawing.Size(1079, 507);
+            this._versionToContentSplitContainer.SplitterDistance = 289;
             this._versionToContentSplitContainer.TabIndex = 1;
             // 
             // _versionsTableLayoutPanel
@@ -114,7 +114,7 @@
             this._versionsTableLayoutPanel.RowCount = 2;
             this._versionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this._versionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this._versionsTableLayoutPanel.Size = new System.Drawing.Size(162, 355);
+            this._versionsTableLayoutPanel.Size = new System.Drawing.Size(289, 507);
             this._versionsTableLayoutPanel.TabIndex = 0;
             // 
             // _versionsListBox
@@ -124,7 +124,7 @@
             this._versionsListBox.ItemHeight = 15;
             this._versionsListBox.Location = new System.Drawing.Point(3, 18);
             this._versionsListBox.Name = "_versionsListBox";
-            this._versionsListBox.Size = new System.Drawing.Size(156, 334);
+            this._versionsListBox.Size = new System.Drawing.Size(283, 486);
             this._versionsListBox.TabIndex = 0;
             this._versionsListBox.SelectedIndexChanged += new System.EventHandler(this.OnVersionListChange);
             // 
@@ -133,9 +133,9 @@
             this._versionsLabel.AutoSize = true;
             this._versionsLabel.Location = new System.Drawing.Point(3, 0);
             this._versionsLabel.Name = "_versionsLabel";
-            this._versionsLabel.Size = new System.Drawing.Size(53, 15);
+            this._versionsLabel.Size = new System.Drawing.Size(82, 15);
             this._versionsLabel.TabIndex = 1;
-            this._versionsLabel.Text = "Versions:";
+            this._versionsLabel.Text = "Select version:";
             // 
             // _treeToChangesSplitContainer
             // 
@@ -151,8 +151,8 @@
             // _treeToChangesSplitContainer.Panel2
             // 
             this._treeToChangesSplitContainer.Panel2.Controls.Add(this._changesTableLayoutPanel);
-            this._treeToChangesSplitContainer.Size = new System.Drawing.Size(438, 355);
-            this._treeToChangesSplitContainer.SplitterDistance = 176;
+            this._treeToChangesSplitContainer.Size = new System.Drawing.Size(786, 507);
+            this._treeToChangesSplitContainer.SplitterDistance = 251;
             this._treeToChangesSplitContainer.TabIndex = 0;
             // 
             // _filesTableLayoutPanel
@@ -167,7 +167,7 @@
             this._filesTableLayoutPanel.RowCount = 2;
             this._filesTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this._filesTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this._filesTableLayoutPanel.Size = new System.Drawing.Size(438, 176);
+            this._filesTableLayoutPanel.Size = new System.Drawing.Size(786, 251);
             this._filesTableLayoutPanel.TabIndex = 0;
             // 
             // _dataLabel
@@ -175,9 +175,9 @@
             this._dataLabel.AutoSize = true;
             this._dataLabel.Location = new System.Drawing.Point(3, 0);
             this._dataLabel.Name = "_dataLabel";
-            this._dataLabel.Size = new System.Drawing.Size(33, 15);
+            this._dataLabel.Size = new System.Drawing.Size(220, 15);
             this._dataLabel.TabIndex = 1;
-            this._dataLabel.Text = "Files:";
+            this._dataLabel.Text = "State of source items at selected version:";
             // 
             // _filesTreeView
             // 
@@ -185,22 +185,36 @@
             this._filesTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._filesTreeView.Location = new System.Drawing.Point(3, 18);
             this._filesTreeView.Name = "_filesTreeView";
-            this._filesTreeView.Size = new System.Drawing.Size(432, 155);
+            this._filesTreeView.Size = new System.Drawing.Size(780, 230);
             this._filesTreeView.TabIndex = 2;
+            // 
+            // _treeContextMenuStrip
+            // 
+            this._treeContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.recoverToolStripMenuItem});
+            this._treeContextMenuStrip.Name = "_treeContextMenuStrip";
+            this._treeContextMenuStrip.Size = new System.Drawing.Size(126, 26);
+            // 
+            // recoverToolStripMenuItem
+            // 
+            this.recoverToolStripMenuItem.Name = "recoverToolStripMenuItem";
+            this.recoverToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.recoverToolStripMenuItem.Text = "Recover...";
+            this.recoverToolStripMenuItem.Click += new System.EventHandler(this.OnRecover);
             // 
             // _changesTableLayoutPanel
             // 
             this._changesTableLayoutPanel.ColumnCount = 1;
             this._changesTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this._changesTableLayoutPanel.Controls.Add(this._changesLabel, 0, 0);
-            this._changesTableLayoutPanel.Controls.Add(this._changesListBox, 0, 1);
+            this._changesTableLayoutPanel.Controls.Add(this._changesTextBox, 0, 1);
             this._changesTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._changesTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this._changesTableLayoutPanel.Name = "_changesTableLayoutPanel";
             this._changesTableLayoutPanel.RowCount = 2;
             this._changesTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this._changesTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this._changesTableLayoutPanel.Size = new System.Drawing.Size(438, 175);
+            this._changesTableLayoutPanel.Size = new System.Drawing.Size(786, 252);
             this._changesTableLayoutPanel.TabIndex = 1;
             // 
             // _changesLabel
@@ -212,35 +226,22 @@
             this._changesLabel.TabIndex = 0;
             this._changesLabel.Text = "Changes:";
             // 
-            // _changesListBox
+            // _changesTextBox
             // 
-            this._changesListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._changesListBox.FormattingEnabled = true;
-            this._changesListBox.ItemHeight = 15;
-            this._changesListBox.Location = new System.Drawing.Point(3, 18);
-            this._changesListBox.Name = "_changesListBox";
-            this._changesListBox.Size = new System.Drawing.Size(432, 154);
-            this._changesListBox.TabIndex = 1;
-            // 
-            // _treeContextMenuStrip
-            // 
-            this._treeContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.recoverToolStripMenuItem});
-            this._treeContextMenuStrip.Name = "_treeContextMenuStrip";
-            this._treeContextMenuStrip.Size = new System.Drawing.Size(181, 48);
-            // 
-            // recoverToolStripMenuItem
-            // 
-            this.recoverToolStripMenuItem.Name = "recoverToolStripMenuItem";
-            this.recoverToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.recoverToolStripMenuItem.Text = "Recover...";
-            this.recoverToolStripMenuItem.Click += new System.EventHandler(this.OnRecover);
+            this._changesTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._changesTextBox.Location = new System.Drawing.Point(3, 18);
+            this._changesTextBox.Multiline = true;
+            this._changesTextBox.Name = "_changesTextBox";
+            this._changesTextBox.ReadOnly = true;
+            this._changesTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this._changesTextBox.Size = new System.Drawing.Size(780, 231);
+            this._changesTextBox.TabIndex = 1;
             // 
             // VersionsViewerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 377);
+            this.ClientSize = new System.Drawing.Size(1079, 529);
             this.Controls.Add(this._versionToContentSplitContainer);
             this.Controls.Add(this._statusStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -264,9 +265,9 @@
             this._treeToChangesSplitContainer.ResumeLayout(false);
             this._filesTableLayoutPanel.ResumeLayout(false);
             this._filesTableLayoutPanel.PerformLayout();
+            this._treeContextMenuStrip.ResumeLayout(false);
             this._changesTableLayoutPanel.ResumeLayout(false);
             this._changesTableLayoutPanel.PerformLayout();
-            this._treeContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,9 +285,9 @@
         private System.Windows.Forms.Label _dataLabel;
         private System.Windows.Forms.Label _changesLabel;
         private System.Windows.Forms.TreeView _filesTreeView;
-        private System.Windows.Forms.ListBox _changesListBox;
         private System.Windows.Forms.ContextMenuStrip _treeContextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem recoverToolStripMenuItem;
         private System.Windows.Forms.FolderBrowserDialog _fbdialog;
+        private System.Windows.Forms.TextBox _changesTextBox;
     }
 }

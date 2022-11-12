@@ -719,4 +719,45 @@
 
 Пожалуйста, исправьте список источников.</value>
   </data>
+  <data name="MountYourBackupLocationAsDiskOrCopyItToAnyFolderAndSpecifyItsLocation" xml:space="preserve">
+    <value>Подмонтируйте вашу резервную копию как диск или скопируйте в любую папку и укажите ее расположение.</value>
+  </data>
+  <data name="BackupFolder" xml:space="preserve">
+    <value>Расположение резервной копии:</value>
+  </data>
+  <data name="OpenFolder" xml:space="preserve">
+    <value>Указать папку...</value>
+  </data>
+  <data name="BackupDirectoryDoesNotExist" xml:space="preserve">
+    <value>Каталог с резервной копией не существует.</value>
+  </data>
+  <data name="CannotLocateFile0InDirectoryPointToADirectoryContainingThisFile" xml:space="preserve">
+    <value>В указанном каталоге нет файла "{0}". 
+
+Укажите на каталог, содержащий этот файл.</value>
+  </data>
+  <data name="SelectVersion" xml:space="preserve">
+    <value>Выберите версию:</value>
+  </data>
+  <data name="Changes" xml:space="preserve">
+    <value>Изменения:</value>
+  </data>
+  <data name="StateOfSourceItemsAtSelectedVersion" xml:space="preserve">
+    <value>Состояние источников данных выбранной версии:</value>
+  </data>
+  <data name="ClickOnItemYouWantToRestoreAndOpenContextMenuByRightClick" xml:space="preserve">
+    <value>Кликните по элементам, которые хотите восстановить, и откройте контекстное меню правой кнопкой мыши.</value>
+  </data>
+  <data name="SourceItemChanges" xml:space="preserve">
+    <value>Изменения в источнике "{0}":</value>
+  </data>
+  <data name="DeletedFile" xml:space="preserve">
+    <value>- удален файл "{0}"</value>
+  </data>
+  <data name="UpdatedFile" xml:space="preserve">
+    <value>- изменен файл "{0}"</value>
+  </data>
+  <data name="AddedFile" xml:space="preserve">
+    <value>- добавлен файл "{0}"</value>
+  </data>
 </root>

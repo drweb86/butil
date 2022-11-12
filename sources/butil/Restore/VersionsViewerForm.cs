@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 using BUtil.Core.Options;
 using BUtil.Core.State;
@@ -14,13 +15,17 @@ namespace BUtil.RestorationMaster
 		private readonly IncrementalBackupState _incrementalBackupState;
         private readonly string _backupLocation;
 
-
         public VersionsViewerForm(string backupLocation = null, IncrementalBackupState incrementalBackupState = null)
 		{
 			InitializeComponent();
 			_incrementalBackupState = incrementalBackupState;
             _backupLocation = backupLocation;
-		}
+
+            _versionsLabel.Text = BUtil.Configurator.Localization.Resources.SelectVersion;
+            _dataLabel.Text = BUtil.Configurator.Localization.Resources.StateOfSourceItemsAtSelectedVersion;
+            _changesLabel.Text = BUtil.Configurator.Localization.Resources.Changes;
+            _toolStripStatusLabel.Text = BUtil.Configurator.Localization.Resources.ClickOnItemYouWantToRestoreAndOpenContextMenuByRightClick;
+        }
 
 		private void OnLoad(object sender, System.EventArgs e)
 		{
@@ -32,6 +37,8 @@ namespace BUtil.RestorationMaster
 
 			_versionsListBox.DataSource = versionsDesc;
             _versionsListBox.DisplayMember = nameof(VersionState.BackupDateUtc);
+            _versionsListBox.FormatString = "dd MMMM (dddd) HH:mm";
+            _versionsListBox.FormatInfo = CultureInfo.CurrentUICulture;
             _versionsListBox.EndUpdate();
 
             _versionsListBox.SelectedItem = versionsDesc.First();
@@ -155,41 +162,35 @@ namespace BUtil.RestorationMaster
 		{
             var selectedVersion = _versionsListBox.SelectedItem as VersionState;
 
-            _changesListBox.BeginUpdate();
-            _changesListBox.Items.Clear();
-            foreach (var sourceItemChanges in selectedVersion.SourceItemChanges)
+            var builder = new StringBuilder();
+            foreach (var sourceItemChanges in selectedVersion.SourceItemChanges
+                .OrderBy(x => x.SourceItem.Target)
+                .ToList())
             {
-                _changesListBox.Items.Add($"{sourceItemChanges.SourceItem.Target}:");
+                if (!sourceItemChanges.CreatedFiles.Any() &&
+                    !sourceItemChanges.UpdatedFiles.Any() &&
+                    !sourceItemChanges.DeletedFiles.Any())
+                    continue;
 
-                var updatedFiles = sourceItemChanges.UpdatedFiles
+                builder.AppendLine(string.Format(BUtil.Configurator.Localization.Resources.SourceItemChanges, sourceItemChanges.SourceItem.Target));
+
+                sourceItemChanges.UpdatedFiles
                     .OrderBy(x => x.StorageRelativeFileName)
-                    .ToList();
+                    .ToList()
+                    .ForEach(updateFile => builder.AppendLine(string.Format(BUtil.Configurator.Localization.Resources.UpdatedFile, updateFile.FileState.FileName)));
 
-                foreach (var updateFile in updatedFiles)
-                {
-                    _changesListBox.Items.Add($"Updated {updateFile.FileState.FileName} (size: {updateFile.FileState.Size}, modified at: {updateFile.FileState.LastWriteTimeUtc})");
-                }
-
-                var createdFiles = sourceItemChanges.CreatedFiles
+                sourceItemChanges.CreatedFiles
                     .OrderBy(x => x.StorageRelativeFileName)
-                    .ToList();
+                    .ToList()
+                    .ForEach(updateFile => builder.AppendLine(string.Format(BUtil.Configurator.Localization.Resources.AddedFile, updateFile.FileState.FileName)));
 
-                foreach (var createdFile in createdFiles)
-                {
-                    _changesListBox.Items.Add($"Created {createdFile.StorageRelativeFileName}");
-                }
-
-                var deletedFiles = sourceItemChanges.DeletedFiles
+                sourceItemChanges.DeletedFiles
                     .OrderBy(x => x)
-                    .ToList();
-
-                foreach (var deletedFile in deletedFiles)
-                {
-                    _changesListBox.Items.Add($"Deleted {deletedFile}");
-                }
+                    .ToList()
+                    .ForEach(deletedFile => builder.AppendLine(string.Format(BUtil.Configurator.Localization.Resources.DeletedFile, deletedFile)));
             }
 
-            _changesListBox.EndUpdate();
+            _changesTextBox.Text = builder.ToString();
         }
 
         private IEnumerable<TreeNode> GetChildren(TreeNode Parent)

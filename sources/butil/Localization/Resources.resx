@@ -779,4 +779,45 @@ Please review opened log.</value>
 
 Please correct list of source items.</value>
   </data>
+  <data name="MountYourBackupLocationAsDiskOrCopyItToAnyFolderAndSpecifyItsLocation" xml:space="preserve">
+    <value>Mount your backup location as disk or copy it to any folder and specify its location.</value>
+  </data>
+  <data name="BackupFolder" xml:space="preserve">
+    <value>Backup folder:</value>
+  </data>
+  <data name="OpenFolder" xml:space="preserve">
+    <value>Open folder...</value>
+  </data>
+  <data name="BackupDirectoryDoesNotExist" xml:space="preserve">
+    <value>Backup directory does not exist.</value>
+  </data>
+  <data name="CannotLocateFile0InDirectoryPointToADirectoryContainingThisFile" xml:space="preserve">
+    <value>Cannot locate file "{0}" in directory. 
+
+Point to a directory containing this file.</value>
+  </data>
+  <data name="SelectVersion" xml:space="preserve">
+    <value>Select version:</value>
+  </data>
+  <data name="Changes" xml:space="preserve">
+    <value>Changes:</value>
+  </data>
+  <data name="StateOfSourceItemsAtSelectedVersion" xml:space="preserve">
+    <value>State of source items at selected version:</value>
+  </data>
+  <data name="ClickOnItemYouWantToRestoreAndOpenContextMenuByRightClick" xml:space="preserve">
+    <value>Click on item you want to restore and open context menu by right click</value>
+  </data>
+  <data name="SourceItemChanges" xml:space="preserve">
+    <value>Source item "{0}" changes:</value>
+  </data>
+  <data name="DeletedFile" xml:space="preserve">
+    <value>- deleted file "{0}"</value>
+  </data>
+  <data name="UpdatedFile" xml:space="preserve">
+    <value>- changed file "{0}"</value>
+  </data>
+  <data name="AddedFile" xml:space="preserve">
+    <value>- added file "{0}"</value>
+  </data>
 </root>

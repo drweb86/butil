@@ -153,6 +153,15 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to - added file &quot;{0}&quot;.
+        /// </summary>
+        internal static string AddedFile {
+            get {
+                return ResourceManager.GetString("AddedFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add files....
         /// </summary>
         internal static string AddFiles {
@@ -264,6 +273,15 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Backup directory does not exist..
+        /// </summary>
+        internal static string BackupDirectoryDoesNotExist {
+            get {
+                return ResourceManager.GetString("BackupDirectoryDoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Backup failed.
         ///
         ///Please review opened log..
@@ -271,6 +289,15 @@ namespace BUtil.Configurator.Localization {
         internal static string BackupFailedPleaseReviewOpenedLog {
             get {
                 return ResourceManager.GetString("BackupFailedPleaseReviewOpenedLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backup folder:.
+        /// </summary>
+        internal static string BackupFolder {
+            get {
+                return ResourceManager.GetString("BackupFolder", resourceCulture);
             }
         }
         
@@ -398,6 +425,17 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cannot locate file &quot;{0}&quot; in directory. 
+        ///
+        ///Point to a directory containing this file..
+        /// </summary>
+        internal static string CannotLocateFile0InDirectoryPointToADirectoryContainingThisFile {
+            get {
+                return ResourceManager.GetString("CannotLocateFile0InDirectoryPointToADirectoryContainingThisFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cannot run 7zg.exe because {0}.
         /// </summary>
         internal static string CannotRun7ZgExeBecause0 {
@@ -430,6 +468,15 @@ namespace BUtil.Configurator.Localization {
         internal static string ChangeLogsLocation {
             get {
                 return ResourceManager.GetString("ChangeLogsLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Changes:.
+        /// </summary>
+        internal static string Changes {
+            get {
+                return ResourceManager.GetString("Changes", resourceCulture);
             }
         }
         
@@ -475,6 +522,15 @@ namespace BUtil.Configurator.Localization {
         internal static string ChooseTheTaskYouWantToRun {
             get {
                 return ResourceManager.GetString("ChooseTheTaskYouWantToRun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click on item you want to restore and open context menu by right click.
+        /// </summary>
+        internal static string ClickOnItemYouWantToRestoreAndOpenContextMenuByRightClick {
+            get {
+                return ResourceManager.GetString("ClickOnItemYouWantToRestoreAndOpenContextMenuByRightClick", resourceCulture);
             }
         }
         
@@ -547,6 +603,15 @@ namespace BUtil.Configurator.Localization {
         internal static string DefaultIs60 {
             get {
                 return ResourceManager.GetString("DefaultIs60", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - deleted file &quot;{0}&quot;.
+        /// </summary>
+        internal static string DeletedFile {
+            get {
+                return ResourceManager.GetString("DeletedFile", resourceCulture);
             }
         }
         
@@ -1096,6 +1161,15 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mount your backup location as disk or copy it to any folder and specify its location..
+        /// </summary>
+        internal static string MountYourBackupLocationAsDiskOrCopyItToAnyFolderAndSpecifyItsLocation {
+            get {
+                return ResourceManager.GetString("MountYourBackupLocationAsDiskOrCopyItToAnyFolderAndSpecifyItsLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Move Down.
         /// </summary>
         internal static string MoveDown {
@@ -1242,6 +1316,15 @@ namespace BUtil.Configurator.Localization {
         internal static string Ok {
             get {
                 return ResourceManager.GetString("Ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open folder....
+        /// </summary>
+        internal static string OpenFolder {
+            get {
+                return ResourceManager.GetString("OpenFolder", resourceCulture);
             }
         }
         
@@ -1562,6 +1645,15 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select version:.
+        /// </summary>
+        internal static string SelectVersion {
+            get {
+                return ResourceManager.GetString("SelectVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Set compression degree.
         /// </summary>
         internal static string SetCompressionDegree {
@@ -1598,6 +1690,15 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Source item &quot;{0}&quot; changes:.
+        /// </summary>
+        internal static string SourceItemChanges {
+            get {
+                return ResourceManager.GetString("SourceItemChanges", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Source item &quot;{0}&quot; does not exist.
         ///
         ///Please correct list of source items..
@@ -1623,6 +1724,15 @@ namespace BUtil.Configurator.Localization {
         internal static string Start {
             get {
                 return ResourceManager.GetString("Start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to State of source items at selected version:.
+        /// </summary>
+        internal static string StateOfSourceItemsAtSelectedVersion {
+            get {
+                return ResourceManager.GetString("StateOfSourceItemsAtSelectedVersion", resourceCulture);
             }
         }
         
@@ -1782,6 +1892,15 @@ namespace BUtil.Configurator.Localization {
         internal static string Unknown {
             get {
                 return ResourceManager.GetString("Unknown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - changed file &quot;{0}&quot;.
+        /// </summary>
+        internal static string UpdatedFile {
+            get {
+                return ResourceManager.GetString("UpdatedFile", resourceCulture);
             }
         }
         
