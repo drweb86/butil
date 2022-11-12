@@ -9,6 +9,7 @@ using BUtil.Configurator.Localization;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
 using BUtil.Core.State;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BUtil.RestorationMaster
 {
@@ -28,6 +29,7 @@ namespace BUtil.RestorationMaster
             _changesLabel.Text = BUtil.Configurator.Localization.Resources.Changes;
             _toolStripStatusLabel.Text = BUtil.Configurator.Localization.Resources.ClickOnItemYouWantToRestoreAndOpenContextMenuByRightClick;
             recoverToolStripMenuItem.Text = BUtil.Configurator.Localization.Resources.Recover;
+            this.Text = Resources.RestorationMaster;
         }
 
 		private void OnLoad(object sender, System.EventArgs e)
@@ -252,19 +254,34 @@ namespace BUtil.RestorationMaster
 
         private void Recover(List<StorageFile> storageFiles, string destinationFolder, SourceItem sourceItem)
         {
-            foreach (var storageFile in storageFiles)
-            {
-                var sourceFile = Path.Combine(_backupLocation, storageFile.StorageRelativeFileName);
+            if (!storageFiles.Any())
+                return;
 
-                var sourceItemDiectory = SourceItemHelper.GetSourceItemDirectory(sourceItem);
-                var sourceItemRelativeFileName = SourceItemHelper.GetSourceItemRelativeFileName(sourceItemDiectory, storageFile.FileState);
-                var destinationFileName = Path.Combine(destinationFolder, sourceItemRelativeFileName);
-                var destinationDir = Path.GetDirectoryName(destinationFileName);
-                if (!Directory.Exists(destinationDir))
-                    Directory.CreateDirectory(destinationDir);
-                
-                File.Copy(sourceFile, destinationFileName, true);
-            }
+            using var form = new ProgressForm(reportProgress =>
+            {
+                foreach (var storageFile in storageFiles)
+                {
+                    int percent = ((storageFiles.IndexOf(storageFile) + 1) * 100) / storageFiles.Count;
+                    reportProgress(percent);
+
+                    var sourceFile = Path.Combine(_backupLocation, storageFile.StorageRelativeFileName);
+
+                    var sourceItemDiectory = SourceItemHelper.GetSourceItemDirectory(sourceItem);
+                    var sourceItemRelativeFileName = SourceItemHelper.GetSourceItemRelativeFileName(sourceItemDiectory, storageFile.FileState);
+                    var destinationFileName = Path.Combine(destinationFolder, sourceItemRelativeFileName);
+                    var destinationDir = Path.GetDirectoryName(destinationFileName);
+                    if (!Directory.Exists(destinationDir))
+                        Directory.CreateDirectory(destinationDir);
+
+                    File.Copy(sourceFile, destinationFileName, true);
+                }
+            });
+            form.ShowDialog();
+        }
+
+        private void OnMouseDown(object sender, MouseEventArgs e)
+        {
+            _filesTreeView.SelectedNode = _filesTreeView.GetNodeAt(e.X, e.Y);
         }
     }
 }

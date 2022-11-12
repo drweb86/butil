@@ -191,6 +191,7 @@
             this._filesTreeView.SelectedImageIndex = 0;
             this._filesTreeView.Size = new System.Drawing.Size(780, 230);
             this._filesTreeView.TabIndex = 2;
+            this._filesTreeView.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnMouseDown);
             // 
             // _treeContextMenuStrip
             // 
@@ -201,6 +202,7 @@
             // 
             // recoverToolStripMenuItem
             // 
+            this.recoverToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("recoverToolStripMenuItem.Image")));
             this.recoverToolStripMenuItem.Name = "recoverToolStripMenuItem";
             this.recoverToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.recoverToolStripMenuItem.Text = "Recover...";

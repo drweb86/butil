@@ -62,6 +62,9 @@
     <Compile Update="LogsManagement\LogsViewerForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Restore\ProgressForm.Designer.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Restore\OpenBackupForm.cs">
       <SubType>Form</SubType>
     </Compile>
