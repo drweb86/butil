@@ -1,10 +1,9 @@
 ﻿using BUtil.Core.Events;
 using BUtil.Core.Logs;
+using BUtil.Core.Misc;
 using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;
 using System.IO;
-using System.Security.Cryptography;
-using System.Text;
 using System.Threading;
 
 namespace BUtil.Core.TasksTree.States
@@ -28,27 +27,10 @@ namespace BUtil.Core.TasksTree.States
             UpdateStatus(ProcessingStatus.InProgress);
             var fileInfo = new FileInfo(_fileName);
 
-            using var fileStream = File.OpenRead(_fileName);
-            using var sha256Hash = SHA256.Create();
-
-            var hash = sha256Hash.ComputeHash(fileStream);
-
-            State = new FileState(_fileName, fileInfo.LastWriteTimeUtc, fileInfo.Length, HashToString(hash));
+            State = new FileState(_fileName, fileInfo.LastWriteTimeUtc, fileInfo.Length, HashHelper.GetSha512(_fileName));
 
             IsSuccess = true;
             UpdateStatus(ProcessingStatus.FinishedSuccesfully);
-        }
-
-        private string HashToString(byte[] hash)
-        {
-            var sBuilder = new StringBuilder();
-
-            for (int i = 0; i < hash.Length; i++)
-            {
-                sBuilder.Append(hash[i].ToString("x2"));
-            }
-
-            return sBuilder.ToString();
         }
     }
 }

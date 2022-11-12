@@ -47,6 +47,7 @@ namespace BUtil.Core.TasksTree.IncrementalModel
         public override void Execute(CancellationToken token)
         {
             UpdateStatus(ProcessingStatus.InProgress);
+
             base.Execute(token);
             UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
         }
