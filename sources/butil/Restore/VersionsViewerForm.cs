@@ -5,6 +5,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using BUtil.Configurator.Localization;
+using BUtil.Core.Misc;
 using BUtil.Core.Options;
 using BUtil.Core.State;
 
@@ -25,6 +27,7 @@ namespace BUtil.RestorationMaster
             _dataLabel.Text = BUtil.Configurator.Localization.Resources.StateOfSourceItemsAtSelectedVersion;
             _changesLabel.Text = BUtil.Configurator.Localization.Resources.Changes;
             _toolStripStatusLabel.Text = BUtil.Configurator.Localization.Resources.ClickOnItemYouWantToRestoreAndOpenContextMenuByRightClick;
+            recoverToolStripMenuItem.Text = BUtil.Configurator.Localization.Resources.Recover;
         }
 
 		private void OnLoad(object sender, System.EventArgs e)
@@ -51,6 +54,10 @@ namespace BUtil.RestorationMaster
             RefreshTreeView();
         }
 
+        private const int _fileImageIndex = 0;
+        private const int _folderImageIndex = 1;
+        private const int _storageImageIndex = 2;
+
         private void RefreshTreeView()
         {
             var selectedVersion = _versionsListBox.SelectedItem as VersionState;
@@ -60,15 +67,21 @@ namespace BUtil.RestorationMaster
 
             var sourceItems = selectedVersion.SourceItemChanges
                 .Select(a => a.SourceItem)
+                .OrderBy(x => x.Target)
                 .ToList();
 
             foreach (var sourceItem in sourceItems)
             {
-                List<StorageFile> storageFiles = BuildVersionFiles(sourceItem, selectedVersion);
-
-                var sourceItemNode = new TreeNode(sourceItem.Target) { Tag = sourceItem };
+                var sourceItemNode = new TreeNode(sourceItem.Target)
+                {
+                    Tag = sourceItem,
+                    ImageIndex = _storageImageIndex,
+                    SelectedImageIndex = _storageImageIndex,
+                };
                 _filesTreeView.Nodes.Add(sourceItemNode);
 
+
+                var storageFiles = BuildVersionFiles(sourceItem, selectedVersion);
                 foreach (var storageFile in storageFiles)
                 {
                     AddAsLeaves(sourceItemNode, sourceItem, storageFile);
@@ -130,22 +143,31 @@ namespace BUtil.RestorationMaster
 
             var sourceItemRelativeFileName = storageFile.FileState.FileName.Substring(sourceItemDir.Length);
 
-            AddLeaf(sourceItemRelativeFileName, storageFile);
+            AddLeaf(sourceItemRelativeFileName, storageFile, sourceItemNode);
         }
 
-        private void AddLeaf(string relativePath, StorageFile storageFile)
+        private void AddLeaf(string relativePath, StorageFile storageFile, TreeNode sourceItemNode)
         {
             string[] names = relativePath.Split(new char[] { '\\' }, StringSplitOptions.RemoveEmptyEntries);
             TreeNode node = null;
             for (int i = 0; i < names.Length; i++)
             {
-                TreeNodeCollection nodes = node == null ? _filesTreeView.Nodes : node.Nodes;
+                TreeNodeCollection nodes = node == null ? sourceItemNode.Nodes : node.Nodes;
                 node = FindNode(nodes, names[i]);
                 if (node == null)
                 {
                     node = nodes.Add(names[i]);
                     if (i == names.Length - 1)
+                    {
+                        node.ImageIndex = _fileImageIndex;
+                        node.SelectedImageIndex = _fileImageIndex;
                         node.Tag = storageFile;
+                    }
+                    else
+                    {
+                        node.ImageIndex = _folderImageIndex;
+                        node.SelectedImageIndex = _folderImageIndex;
+                    }
                 }
             }
         }
@@ -209,7 +231,7 @@ namespace BUtil.RestorationMaster
             if (_fbdialog.ShowDialog() == DialogResult.OK)
             {
                 var destinationFolder = _fbdialog.SelectedPath;
-
+                //D:\reco-1
                 var tags = GetChildren(_filesTreeView.SelectedNode)
                     .Select(x => x.Tag as StorageFile)
                     .Where(x => x != null)
@@ -232,17 +254,15 @@ namespace BUtil.RestorationMaster
         {
             foreach (var storageFile in storageFiles)
             {
-                var sourceItemDir = sourceItem.IsFolder ?
-                            sourceItem.Target :
-                            Path.GetDirectoryName(sourceItem.Target);
+                var sourceFile = Path.Combine(_backupLocation, storageFile.StorageRelativeFileName);
 
-                var sourceItemRelativeFileName = storageFile.FileState.FileName.Substring(sourceItemDir.Length);
-
+                var sourceItemDiectory = SourceItemHelper.GetSourceItemDirectory(sourceItem);
+                var sourceItemRelativeFileName = SourceItemHelper.GetSourceItemRelativeFileName(sourceItemDiectory, storageFile.FileState);
                 var destinationFileName = Path.Combine(destinationFolder, sourceItemRelativeFileName);
                 var destinationDir = Path.GetDirectoryName(destinationFileName);
                 if (!Directory.Exists(destinationDir))
                     Directory.CreateDirectory(destinationDir);
-                var sourceFile = Path.Combine(_backupLocation, storageFile.StorageRelativeFileName);
+                
                 File.Copy(sourceFile, destinationFileName, true);
             }
         }

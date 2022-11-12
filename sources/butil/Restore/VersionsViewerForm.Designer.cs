@@ -69,6 +69,7 @@
             this.imagesList.TransparentColor = System.Drawing.Color.White;
             this.imagesList.Images.SetKeyName(0, "16x16 Binary.png");
             this.imagesList.Images.SetKeyName(1, "16x16 Folder.png");
+            this.imagesList.Images.SetKeyName(2, "SourceItems48x48.png");
             // 
             // _statusStrip
             // 
@@ -183,8 +184,11 @@
             // 
             this._filesTreeView.ContextMenuStrip = this._treeContextMenuStrip;
             this._filesTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._filesTreeView.ImageIndex = 0;
+            this._filesTreeView.ImageList = this.imagesList;
             this._filesTreeView.Location = new System.Drawing.Point(3, 18);
             this._filesTreeView.Name = "_filesTreeView";
+            this._filesTreeView.SelectedImageIndex = 0;
             this._filesTreeView.Size = new System.Drawing.Size(780, 230);
             this._filesTreeView.TabIndex = 2;
             // 

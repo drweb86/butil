@@ -47,10 +47,10 @@
             this._openBackupFolderButton.AutoSize = true;
             this._openBackupFolderButton.BackColor = System.Drawing.SystemColors.Control;
             this._openBackupFolderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._openBackupFolderButton.Location = new System.Drawing.Point(469, 77);
+            this._openBackupFolderButton.Location = new System.Drawing.Point(445, 80);
             this._openBackupFolderButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this._openBackupFolderButton.Name = "_openBackupFolderButton";
-            this._openBackupFolderButton.Size = new System.Drawing.Size(141, 27);
+            this._openBackupFolderButton.Size = new System.Drawing.Size(141, 23);
             this._openBackupFolderButton.TabIndex = 2;
             this._openBackupFolderButton.Text = "Open folder...";
             this._openBackupFolderButton.UseVisualStyleBackColor = true;
@@ -60,7 +60,7 @@
             // 
             this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.closeButton.AutoSize = true;
-            this.closeButton.Location = new System.Drawing.Point(524, 176);
+            this.closeButton.Location = new System.Drawing.Point(500, 187);
             this.closeButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(86, 27);
@@ -78,7 +78,7 @@
             this.passwordMaskedTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.passwordMaskedTextBox.Name = "passwordMaskedTextBox";
             this.passwordMaskedTextBox.PasswordChar = '*';
-            this.passwordMaskedTextBox.Size = new System.Drawing.Size(599, 23);
+            this.passwordMaskedTextBox.Size = new System.Drawing.Size(575, 23);
             this.passwordMaskedTextBox.TabIndex = 1;
             // 
             // passwordLabel
@@ -95,12 +95,10 @@
             // continueButton
             // 
             this.continueButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.continueButton.AutoSize = true;
-            this.continueButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.continueButton.Location = new System.Drawing.Point(439, 177);
+            this.continueButton.Location = new System.Drawing.Point(343, 187);
             this.continueButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.continueButton.Name = "continueButton";
-            this.continueButton.Size = new System.Drawing.Size(77, 25);
+            this.continueButton.Size = new System.Drawing.Size(149, 27);
             this.continueButton.TabIndex = 8;
             this.continueButton.Text = "Continue >";
             this.continueButton.UseVisualStyleBackColor = true;
@@ -123,14 +121,14 @@
             this._backupLocationTextBox.Location = new System.Drawing.Point(11, 80);
             this._backupLocationTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this._backupLocationTextBox.Name = "_backupLocationTextBox";
-            this._backupLocationTextBox.Size = new System.Drawing.Size(450, 23);
+            this._backupLocationTextBox.Size = new System.Drawing.Size(426, 23);
             this._backupLocationTextBox.TabIndex = 10;
             this._backupLocationTextBox.TabStop = false;
             // 
             // helpButton
             // 
             this.helpButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.helpButton.Location = new System.Drawing.Point(11, 170);
+            this.helpButton.Location = new System.Drawing.Point(11, 181);
             this.helpButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.helpButton.Name = "helpButton";
             this.helpButton.Size = new System.Drawing.Size(38, 38);
@@ -147,7 +145,7 @@
             this._helpLabel.Location = new System.Drawing.Point(11, 9);
             this._helpLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._helpLabel.Name = "_helpLabel";
-            this._helpLabel.Size = new System.Drawing.Size(599, 42);
+            this._helpLabel.Size = new System.Drawing.Size(575, 53);
             this._helpLabel.TabIndex = 12;
             this._helpLabel.Text = "Mount your backup location as disk or copy it to any folder and specify its locat" +
     "ion.";
@@ -156,7 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 218);
+            this.ClientSize = new System.Drawing.Size(602, 229);
             this.Controls.Add(this._helpLabel);
             this.Controls.Add(this.passwordMaskedTextBox);
             this.Controls.Add(this.passwordLabel);
