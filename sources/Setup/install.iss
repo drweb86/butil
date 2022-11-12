@@ -1,4 +1,4 @@
-#define ApplicationVersion GetVersionNumbersString('..\..\Output\BUtil\bin\Configurator.exe')
+#define ApplicationVersion GetVersionNumbersString('..\..\Output\BUtil\bin\butil.exe')
 
 [Setup]
 AppName=BUtil
@@ -125,10 +125,10 @@ Name: "{group}\{cm:Documentation}\{cm:ProgramOnTheWeb,BUtil}"; Filename: "{app}\
 Name: "{group}\{cm:Uninstall}\{cm:UninstallProgram,BUtil}"; Filename: "{uninstallexe}"
 
 ; Destop
-Name: "{userdesktop}\{cm:Backup_Wizard}"; Filename: "{app}\bin\Configurator.exe"; Parameters: "JustBackupMaster"; IconFilename: "{app}\data\BackupUi.ico"; Tasks: desktopicon
+Name: "{userdesktop}\{cm:Backup_Wizard}"; Filename: "{app}\bin\butil.exe"; Parameters: "JustBackupMaster"; IconFilename: "{app}\data\BackupUi.ico"; Tasks: desktopicon
 
 [Run]
-Filename: "{app}\bin\Configurator.exe"; Description: "{cm:LaunchProgram,{cm:Configurator}}"; Flags: nowait postinstall skipifsilent
+Filename: "{app}\bin\butil.exe"; Description: "{cm:LaunchProgram,{cm:Configurator}}"; Flags: nowait postinstall skipifsilent
 
 [UninstallDelete]
 Type: files; Name: "{app}\Configurator.url"
