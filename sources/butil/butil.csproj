@@ -1,5 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+	  <VisualStudioVersion>17</VisualStudioVersion>
     <TargetFramework>net7.0-windows</TargetFramework>
     <AssemblyName>butil</AssemblyName>
     <OutputType>WinExe</OutputType>
@@ -55,10 +56,9 @@
     <FileAlignment>4096</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <OutputPath>..\..\Output\BUtil\bin\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
