@@ -109,9 +109,7 @@
     <Compile Update="Configurator\Controls\Tasks\WhenUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Configurator\Controls\Tasks\WhatUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Update="Configurator\Controls\Tasks\WhatUserControl.cs" />
     <Compile Update="Configurator\Controls\Tasks\WhereUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

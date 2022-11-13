@@ -34,93 +34,96 @@ namespace BUtil.Configurator.Controls
             this.ofd = new System.Windows.Forms.FolderBrowserDialog();
             this.itemsToCompressImageList = new System.Windows.Forms.ImageList(this.components);
             this.filesFoldersContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.removeFromListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.addFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addFoldersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.compressionItemsListView = new System.Windows.Forms.ListView();
-            this.itemsToCompressColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this._itemsListView = new System.Windows.Forms.ListView();
+            this.itemsToCompressColumnHeader = new System.Windows.Forms.ColumnHeader();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.addFoldersButton = new System.Windows.Forms.Button();
-            this.removeCompressionItemButton = new System.Windows.Forms.Button();
+            this.removeButton = new System.Windows.Forms.Button();
             this.addFilesButton = new System.Windows.Forms.Button();
             this.filesFoldersContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // itemsToCompressImageList
             // 
+            this.itemsToCompressImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
             this.itemsToCompressImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("itemsToCompressImageList.ImageStream")));
             this.itemsToCompressImageList.TransparentColor = System.Drawing.Color.Transparent;
             this.itemsToCompressImageList.Images.SetKeyName(0, "folder_48.png");
             this.itemsToCompressImageList.Images.SetKeyName(1, "AddFiles48x48.ico");
+            this.itemsToCompressImageList.Images.SetKeyName(2, "Exclude16x16.png");
             // 
             // filesFoldersContextMenuStrip
             // 
             this.filesFoldersContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.removeFromListToolStripMenuItem,
+            this.removeToolStripMenuItem,
             this.toolStripSeparator6,
             this.addFilesToolStripMenuItem,
             this.addFoldersToolStripMenuItem});
             this.filesFoldersContextMenuStrip.Name = "filesFoldersContextMenuStrip";
             this.filesFoldersContextMenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.filesFoldersContextMenuStrip.Size = new System.Drawing.Size(201, 98);
-            this.filesFoldersContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.filesFoldersContextMenuStripOpening);
+            this.filesFoldersContextMenuStrip.Size = new System.Drawing.Size(165, 76);
+            this.filesFoldersContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.OnMenuOpening);
             // 
             // removeFromListToolStripMenuItem
             // 
-            this.removeFromListToolStripMenuItem.Image = global::BUtil.Configurator.Icons.removeFromListToolStripMenuItem_Image;
-            this.removeFromListToolStripMenuItem.Name = "removeFromListToolStripMenuItem";
-            this.removeFromListToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.removeFromListToolStripMenuItem.Text = "Remove from list";
-            this.removeFromListToolStripMenuItem.Click += new System.EventHandler(this.removeFromListToolStripMenuItemClick);
+            this.removeToolStripMenuItem.Image = global::BUtil.Configurator.Icons.removeFromListToolStripMenuItem_Image;
+            this.removeToolStripMenuItem.Name = "removeFromListToolStripMenuItem";
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.removeToolStripMenuItem.Text = "Remove from list";
+            this.removeToolStripMenuItem.Click += new System.EventHandler(this.OnRemoveToolStripMenuItemClick);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(197, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(161, 6);
             // 
             // addFilesToolStripMenuItem
             // 
             this.addFilesToolStripMenuItem.Image = global::BUtil.Configurator.Icons.Add_Files;
             this.addFilesToolStripMenuItem.Name = "addFilesToolStripMenuItem";
-            this.addFilesToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.addFilesToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.addFilesToolStripMenuItem.Text = "Add files...";
-            this.addFilesToolStripMenuItem.Click += new System.EventHandler(this.addFilesToolStripMenuItemClick);
+            this.addFilesToolStripMenuItem.Click += new System.EventHandler(this.OnAddFilesToolStripMenuItemClick);
             // 
             // addFoldersToolStripMenuItem
             // 
             this.addFoldersToolStripMenuItem.Image = global::BUtil.Configurator.Icons.AddFolder;
             this.addFoldersToolStripMenuItem.Name = "addFoldersToolStripMenuItem";
-            this.addFoldersToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.addFoldersToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.addFoldersToolStripMenuItem.Text = "Add folders...";
-            this.addFoldersToolStripMenuItem.Click += new System.EventHandler(this.addFoldersToolStripMenuItemClick);
+            this.addFoldersToolStripMenuItem.Click += new System.EventHandler(this.OnAddFoldersToolStripMenuItemClick);
             // 
             // compressionItemsListView
             // 
-            this.compressionItemsListView.AllowDrop = true;
-            this.compressionItemsListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.compressionItemsListView.BackColor = System.Drawing.SystemColors.Window;
-            this.compressionItemsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this._itemsListView.AllowDrop = true;
+            this._itemsListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this._itemsListView.BackColor = System.Drawing.SystemColors.Window;
+            this._itemsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.itemsToCompressColumnHeader});
-            this.compressionItemsListView.ContextMenuStrip = this.filesFoldersContextMenuStrip;
-            this.compressionItemsListView.LargeImageList = this.itemsToCompressImageList;
-            this.compressionItemsListView.Location = new System.Drawing.Point(3, 3);
-            this.compressionItemsListView.Name = "compressionItemsListView";
-            this.compressionItemsListView.Size = new System.Drawing.Size(295, 201);
-            this.compressionItemsListView.SmallImageList = this.itemsToCompressImageList;
-            this.compressionItemsListView.StateImageList = this.itemsToCompressImageList;
-            this.compressionItemsListView.TabIndex = 0;
-            this.compressionItemsListView.UseCompatibleStateImageBehavior = false;
-            this.compressionItemsListView.View = System.Windows.Forms.View.Details;
-            this.compressionItemsListView.SelectedIndexChanged += new System.EventHandler(this.compressionItemsListViewSelectedIndexChanged);
-            this.compressionItemsListView.DragDrop += new System.Windows.Forms.DragEventHandler(this.compressionItemsListViewDragDrop);
-            this.compressionItemsListView.DragEnter += new System.Windows.Forms.DragEventHandler(this.compressionItemsListViewDragEnter);
-            this.compressionItemsListView.DoubleClick += new System.EventHandler(this.compressionItemsListViewDoubleClick);
-            this.compressionItemsListView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.compressionItemsListViewKeyDown);
-            this.compressionItemsListView.Resize += new System.EventHandler(this.compressionItemsListViewResize);
+            this._itemsListView.ContextMenuStrip = this.filesFoldersContextMenuStrip;
+            this._itemsListView.LargeImageList = this.itemsToCompressImageList;
+            this._itemsListView.Location = new System.Drawing.Point(4, 3);
+            this._itemsListView.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this._itemsListView.Name = "compressionItemsListView";
+            this._itemsListView.Size = new System.Drawing.Size(344, 231);
+            this._itemsListView.SmallImageList = this.itemsToCompressImageList;
+            this._itemsListView.StateImageList = this.itemsToCompressImageList;
+            this._itemsListView.TabIndex = 0;
+            this._itemsListView.UseCompatibleStateImageBehavior = false;
+            this._itemsListView.View = System.Windows.Forms.View.Details;
+            this._itemsListView.SelectedIndexChanged += new System.EventHandler(this.OnSelectedIndexChanged);
+            this._itemsListView.DragDrop += new System.Windows.Forms.DragEventHandler(this.OnDragDrop);
+            this._itemsListView.DragEnter += new System.Windows.Forms.DragEventHandler(this.OnDragEnter);
+            this._itemsListView.DoubleClick += new System.EventHandler(this.OnItemDoubleClick);
+            this._itemsListView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnKeyDown);
+            this._itemsListView.Resize += new System.EventHandler(this.OnResize);
             // 
             // itemsToCompressColumnHeader
             // 
@@ -139,64 +142,68 @@ namespace BUtil.Configurator.Controls
             // 
             this.addFoldersButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.addFoldersButton.Image = global::BUtil.Configurator.Icons.AddFolder;
-            this.addFoldersButton.Location = new System.Drawing.Point(304, 67);
+            this.addFoldersButton.Location = new System.Drawing.Point(355, 77);
+            this.addFoldersButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.addFoldersButton.Name = "addFoldersButton";
-            this.addFoldersButton.Size = new System.Drawing.Size(61, 58);
+            this.addFoldersButton.Size = new System.Drawing.Size(71, 67);
             this.addFoldersButton.TabIndex = 2;
             this.addFoldersButton.UseVisualStyleBackColor = true;
-            this.addFoldersButton.Click += new System.EventHandler(this.addFoldersButtonClick);
+            this.addFoldersButton.Click += new System.EventHandler(this.OnAddFoldersButtonClick);
             // 
             // removeCompressionItemButton
             // 
-            this.removeCompressionItemButton.AccessibleDescription = "";
-            this.removeCompressionItemButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.removeCompressionItemButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.removeCompressionItemButton.Enabled = false;
-            this.removeCompressionItemButton.Image = global::BUtil.Configurator.Icons.cross_48;
-            this.removeCompressionItemButton.Location = new System.Drawing.Point(304, 131);
-            this.removeCompressionItemButton.Name = "removeCompressionItemButton";
-            this.removeCompressionItemButton.Size = new System.Drawing.Size(61, 58);
-            this.removeCompressionItemButton.TabIndex = 3;
-            this.removeCompressionItemButton.UseVisualStyleBackColor = true;
-            this.removeCompressionItemButton.Click += new System.EventHandler(this.removeCompressionItemButtonClick);
+            this.removeButton.AccessibleDescription = "";
+            this.removeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.removeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.removeButton.Enabled = false;
+            this.removeButton.Image = global::BUtil.Configurator.Icons.cross_48;
+            this.removeButton.Location = new System.Drawing.Point(355, 151);
+            this.removeButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.removeButton.Name = "removeCompressionItemButton";
+            this.removeButton.Size = new System.Drawing.Size(71, 67);
+            this.removeButton.TabIndex = 3;
+            this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.OnRemoveItemsButtonClick);
             // 
             // addFilesButton
             // 
             this.addFilesButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.addFilesButton.Image = global::BUtil.Configurator.Icons.Add_Files1;
-            this.addFilesButton.Location = new System.Drawing.Point(304, 3);
+            this.addFilesButton.Location = new System.Drawing.Point(355, 3);
+            this.addFilesButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.addFilesButton.Name = "addFilesButton";
-            this.addFilesButton.Size = new System.Drawing.Size(61, 58);
+            this.addFilesButton.Size = new System.Drawing.Size(71, 67);
             this.addFilesButton.TabIndex = 1;
             this.addFilesButton.UseVisualStyleBackColor = true;
-            this.addFilesButton.Click += new System.EventHandler(this.addFilesButtonClick);
+            this.addFilesButton.Click += new System.EventHandler(this.OnAddFilesButtonClick);
             // 
-            // SourceItemsUserControl
+            // WhatUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.compressionItemsListView);
+            this.Controls.Add(this._itemsListView);
             this.Controls.Add(this.addFoldersButton);
-            this.Controls.Add(this.removeCompressionItemButton);
+            this.Controls.Add(this.removeButton);
             this.Controls.Add(this.addFilesButton);
-            this.MinimumSize = new System.Drawing.Size(368, 207);
-            this.Name = "SourceItemsUserControl";
-            this.Size = new System.Drawing.Size(368, 207);
+            this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.MinimumSize = new System.Drawing.Size(429, 239);
+            this.Name = "WhatUserControl";
+            this.Size = new System.Drawing.Size(429, 239);
             this.filesFoldersContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
 		}
 		private System.Windows.Forms.ToolTip toolTip;
 		private System.Windows.Forms.Button addFilesButton;
-		private System.Windows.Forms.Button removeCompressionItemButton;
+		private System.Windows.Forms.Button removeButton;
 		private System.Windows.Forms.Button addFoldersButton;
 		private System.Windows.Forms.OpenFileDialog openFileDialog;
 		private System.Windows.Forms.ColumnHeader itemsToCompressColumnHeader;
-		private System.Windows.Forms.ListView compressionItemsListView;
+		private System.Windows.Forms.ListView _itemsListView;
 		private System.Windows.Forms.ToolStripMenuItem addFoldersToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem addFilesToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-		private System.Windows.Forms.ToolStripMenuItem removeFromListToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
 		private System.Windows.Forms.ContextMenuStrip filesFoldersContextMenuStrip;
 		private System.Windows.Forms.ImageList itemsToCompressImageList;
 		private System.Windows.Forms.FolderBrowserDialog ofd;

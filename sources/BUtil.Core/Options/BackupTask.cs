@@ -13,6 +13,7 @@ namespace BUtil.Core.Options
             Items = new ();
 			Storages = new ();
 			Model = new IncrementalBackupModelOptions();
+			ExcludeMasks= new List<string> ();
         }
 
 		public IBackupModelOptions Model { get; set; }
@@ -28,5 +29,6 @@ namespace BUtil.Core.Options
 	    public string Password { get; set; }
 		
 		public List<SourceItem> Items { get; set; }
-	}
+		public List<string> ExcludeMasks { get; set; }
+    }
 }

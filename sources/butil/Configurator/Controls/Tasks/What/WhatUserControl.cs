@@ -1,0 +1,282 @@
+using System;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.IO;
+using BUtil.Core.Options;
+using BUtil.Configurator.Localization;
+using System.Diagnostics;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace BUtil.Configurator.Controls
+{
+    internal sealed partial class WhatUserControl : BUtil.Core.PL.BackUserControl
+	{
+		private readonly BackupTask _task;
+		
+		public WhatUserControl(BackupTask task)
+		{
+            _task = task;
+
+			InitializeComponent();
+
+            itemsToCompressColumnHeader.Text = Resources.ItemsToBackup;
+            SetHintForControl(_itemsListView, Resources.DragAndDropHereFilesAndFoldersWhichYoureGoingToBackupForSettingCompressionPriorityUseMenu);
+            SetHintForControl(addFoldersButton, Resources.AddFolders);
+            addFoldersToolStripMenuItem.Text = Resources.AddFolders;
+            SetHintForControl(removeButton, Resources.Remove);
+            removeToolStripMenuItem.Text = Resources.Remove;
+            SetHintForControl(addFilesButton, Resources.AddFiles);
+            addFilesToolStripMenuItem.Text = Resources.AddFiles;
+
+            _task.Items
+                .Select(item => new WhatItemViewModel { Id = item.Id, Title = item.Target, Type = item.IsFolder ? WhatItemType.Folder : WhatItemType.File })
+                .OrderBy(item => item.Title)
+                .ToList()
+                .ForEach(AddItem);
+            (_task.ExcludeMasks ?? new List<string>())
+                .Select(x => new WhatItemViewModel { Id = Guid.NewGuid(), Title = x, Type = WhatItemType.Exclude })
+                .OrderBy(item => item.Title)
+                .ToList()
+                .ForEach(AddItem);
+        }
+		
+	
+		void OnAddFoldersButtonClick(object sender, EventArgs e)
+		{
+            AddFolders();
+		}
+
+        private void OnAddFoldersToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            AddFolders();
+        }
+
+        private void AddFolders()
+        {
+            while (ofd.ShowDialog() == DialogResult.OK)
+            {
+                AddItem(new WhatItemViewModel { Id = Guid.NewGuid(), Title = ofd.SelectedPath, Type = WhatItemType.Folder });
+            }
+        }
+
+        private void OnAddFilesButtonClick(object sender, EventArgs e)
+		{
+			AddFiles();
+		}
+
+        private void OnAddFilesToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            AddFiles();
+        }
+
+        private void AddFiles()
+        {
+            while (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                openFileDialog
+                    .FileNames
+                    .Select(x => new WhatItemViewModel { Id = Guid.NewGuid(), Title = x, Type = WhatItemType.File })
+                    .ToList()
+                    .ForEach(AddItem);
+            }
+        }
+
+        private void OnDragDrop(object sender, DragEventArgs e)
+		{
+			if( e.Data.GetDataPresent(DataFormats.FileDrop, false) )
+			{
+				((string[])e.Data.GetData(DataFormats.FileDrop))
+                    .Select(x => new WhatItemViewModel 
+                    {
+                        Id = Guid.NewGuid(),
+                        Title = x,
+                        Type = Directory.Exists(x) ? WhatItemType.Folder : WhatItemType.File
+                    })
+                    .ToList()
+                    .ForEach(AddItem);
+			}
+		}
+		
+		private void OnDragEnter(object sender, DragEventArgs e)
+		{
+			e.Effect = DragDropEffects.All;
+		}
+		
+		private void OnSelectedIndexChanged(object sender, EventArgs e)
+		{
+			removeButton.Enabled = _itemsListView.SelectedItems.Count > 0;
+		}
+		
+		private void OnMenuOpening(object sender, CancelEventArgs e)
+		{
+			removeToolStripMenuItem.Enabled = (_itemsListView.SelectedItems.Count > 0);
+		}
+
+        private void OnRemoveItemsButtonClick(object sender, EventArgs e)
+        {
+            RemoveSelectedItems();
+        }
+
+        private void OnRemoveToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			RemoveSelectedItems();
+		}
+
+        private void RemoveSelectedItems()
+        {
+            var itemsToDelete = new List<ListViewItem>();
+            var indexes = new List<int>();
+            foreach (ListViewItem item in _itemsListView.SelectedItems)
+                itemsToDelete.Add(item);
+            foreach (int index in _itemsListView.SelectedIndices)
+                indexes.Add(index);
+            itemsToDelete.ForEach(_itemsListView.Items.Remove);
+            if (indexes.Any())
+            {
+                var minIndex = indexes.Min() - 1;
+                if (minIndex < 0)
+                    minIndex = 0;
+                if (_itemsListView.Items.Count > minIndex)
+                    _itemsListView.Items[minIndex].Selected = true;
+            }
+
+            OnSelectedIndexChanged(null, null);
+        }
+
+        private void OnResize(object sender, EventArgs e)
+		{
+			_itemsListView.Columns[0].Width = _itemsListView.Width - 40;
+		}
+
+        private void OnKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.A && e.Control)
+            {
+                foreach (ListViewItem item in _itemsListView.Items)
+                    item.Selected = true;
+            }
+
+            if (e.KeyCode == Keys.Delete)
+            {
+                RemoveSelectedItems();
+            }
+        }
+
+        private void OnItemDoubleClick(object sender, EventArgs e)
+        {
+            if (_itemsListView.SelectedItems.Count > 0)
+			{
+                var item = _itemsListView.SelectedItems[0].Tag as WhatItemViewModel;
+
+                if (item.Type == WhatItemType.Folder)
+                    Process.Start("explorer.exe", $"\"{item.Title}\"");
+
+                if (item.Type == WhatItemType.File)
+                    Process.Start("explorer.exe", $"/select,\"{item.Title}\"");
+            }
+        }
+
+		#region Overrides
+				
+		public override void GetOptionsFromUi()
+		{
+            var excludeItems = new List<string>();
+            var sourceItems = new List<SourceItem>();
+            foreach (ListViewItem item in _itemsListView.Items)
+            {
+                var model = item.Tag as WhatItemViewModel;
+
+                if (model.Type == WhatItemType.Exclude)
+                    excludeItems.Add(model.Title);
+                if (model.Type == WhatItemType.File)
+                    sourceItems.Add(new SourceItem { Id = model.Id, IsFolder = false, Target = model.Title });
+                if (model.Type == WhatItemType.Folder)
+                    sourceItems.Add(new SourceItem { Id = model.Id, IsFolder = true, Target = model.Title });
+            }
+        }
+
+		public override bool ValidateUi()
+		{
+            GetOptionsFromUi();
+
+            if (_task.Items.Count == 0)
+			{
+				Messages.ShowErrorBox(Resources.ThereAreNoItemsToBackupNNyouCanSpecifyTheDataToBackupInConfiguratorInWhatSettingsGroup);
+                return false;
+			}
+
+            foreach (var item in _task.Items)
+            {
+                if (item.IsFolder &&
+                    !Directory.Exists(item.Target))
+                {
+                    Messages.ShowErrorBox(string.Format(BUtil.Configurator.Localization.Resources.SourceItemFailure, item));
+                    return false;
+                }
+
+                if (!item.IsFolder &&
+                    !File.Exists(item.Target))
+                {
+                    Messages.ShowErrorBox(string.Format(BUtil.Configurator.Localization.Resources.SourceItemFailure, item));
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        #endregion
+
+        private void AddItem(WhatItemViewModel item)
+        {
+            var listItem = new ListViewItem(item.Title) { Tag = item };
+            switch (item.Type)
+            {
+                case WhatItemType.File:
+                    listItem.ImageIndex = 1;
+                    break;
+
+                case WhatItemType.Folder:
+                    listItem.ImageIndex = 0;
+                    break;
+
+                case WhatItemType.Exclude:
+                    listItem.ImageIndex = 2;
+                    break;
+            }
+            _itemsListView.Items.Add(listItem);
+        }
+
+        void addItem(SourceItem newItem, bool add)
+        {
+            if (newItem.Target.StartsWith(@"\\", StringComparison.InvariantCulture))
+            {
+                // "Network places are not allowed to be added to the list of backup items!"
+                MessageBox.Show(Resources.NetworkPlacesAreNotAllowedToBeAddedToTheListOfBackupItems, String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 0);
+                return;
+            }
+
+            if (add)
+            {
+                _task.Items.Add(newItem);
+            }
+
+            _itemsListView.BeginUpdate();
+
+            ListViewItem newlistViewItem = new ListViewItem(newItem.Target);
+            if (newItem.IsFolder)
+            {
+                newlistViewItem.ImageIndex = 0;
+            }
+            else
+            {
+                newlistViewItem.ImageIndex = 1;
+            }
+
+            _itemsListView.Items.Add(newlistViewItem);
+
+            _itemsListView.EndUpdate();
+        }
+    }
+}
