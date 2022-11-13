@@ -6,7 +6,7 @@
 
         public IncrementalBackupModelOptions()
         {
-            DisableCompressionAndEncryption = true;
+            DisableCompressionAndEncryption = false;
         }
     }
 }

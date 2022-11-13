@@ -241,12 +241,6 @@ It was reseted
   <data name="BackupReport" xml:space="preserve">
     <value>Backup Report</value>
   </data>
-  <data name="PasswordContainsForbiddenCharactersPleaseRemoveSpaces" xml:space="preserve">
-    <value>Password contains forbidden characters! Please remove spaces</value>
-  </data>
-  <data name="PasswordHasInvalidLengthPasswordLengthShouldBeFrom0To1Characters" xml:space="preserve">
-    <value>Password has invalid length. Password length should be from {0} to {1} characters</value>
-  </data>
   <data name="ConfirmationIsNotEqualToPassword" xml:space="preserve">
     <value>Confirmation is not equal to password</value>
   </data>

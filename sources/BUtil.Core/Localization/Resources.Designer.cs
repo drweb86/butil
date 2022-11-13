@@ -503,29 +503,11 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Password contains forbidden characters! Please remove spaces.
-        /// </summary>
-        public static string PasswordContainsForbiddenCharactersPleaseRemoveSpaces {
-            get {
-                return ResourceManager.GetString("PasswordContainsForbiddenCharactersPleaseRemoveSpaces", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Password generator.
         /// </summary>
         public static string PasswordGenerator {
             get {
                 return ResourceManager.GetString("PasswordGenerator", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Password has invalid length. Password length should be from {0} to {1} characters.
-        /// </summary>
-        public static string PasswordHasInvalidLengthPasswordLengthShouldBeFrom0To1Characters {
-            get {
-                return ResourceManager.GetString("PasswordHasInvalidLengthPasswordLengthShouldBeFrom0To1Characters", resourceCulture);
             }
         }
         

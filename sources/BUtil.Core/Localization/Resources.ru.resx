@@ -248,12 +248,6 @@
 
 Функции восстановления и резервного копирования будут недоступны.</value>
   </data>
-  <data name="PasswordContainsForbiddenCharactersPleaseRemoveSpaces" xml:space="preserve">
-    <value>В пароле содержатся запрещенные символы! Пожалуйста, уберите пробелы</value>
-  </data>
-  <data name="PasswordHasInvalidLengthPasswordLengthShouldBeFrom0To1Characters" xml:space="preserve">
-    <value>Пароль имеет некорректную длину. Длина пароля должна быть от {0} до {1} символов</value>
-  </data>
   <data name="ConfirmationIsNotEqualToPassword" xml:space="preserve">
     <value>Подтверждение не идентично введенному паролю</value>
   </data>

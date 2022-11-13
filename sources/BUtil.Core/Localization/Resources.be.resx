@@ -248,12 +248,6 @@ You should reinstall application.
 
 Restoration and Backup functions will be unavailable.</value>
   </data>
-  <data name="PasswordContainsForbiddenCharactersPleaseRemoveSpaces" xml:space="preserve">
-    <value>Пароль змяшчае у сабе забарененыя знакi! Калi ласка, убярыце прабелы</value>
-  </data>
-  <data name="PasswordHasInvalidLengthPasswordLengthShouldBeFrom0To1Characters" xml:space="preserve">
-    <value>Длина пароля памылковая. Павiнна быць ад {0} да {1} знакау</value>
-  </data>
   <data name="ConfirmationIsNotEqualToPassword" xml:space="preserve">
     <value>Падцверджанне не супадае з паролем</value>
   </data>

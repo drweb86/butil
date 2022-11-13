@@ -123,7 +123,7 @@ namespace BUtil.ConsoleBackup
         {
             try
             {
-                _options = ProgramOptionsManager.LoadSettings();
+                _options = ProgramOptionsKeeper.LoadSettings();
             }
             catch (OptionsException e)
             {

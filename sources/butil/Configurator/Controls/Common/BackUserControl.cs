@@ -43,17 +43,11 @@ namespace BUtil.Core.PL
 			BackColor = SystemColors.Window;
 		}
 
-        #region Methods to Overrides
+		#region Methods to Overrides
 
-        public virtual void ApplyLocalization()
-		{
-			throw new NotImplementedException("ApplyLocalization");
-		}
+        public virtual void ApplyLocalization()	{ }
 
-		public virtual void SetOptionsToUi(object settings)
-		{
-			throw new NotImplementedException("SetOptionsToUi");
-		}
+		public virtual void SetOptionsToUi(object settings) { }
 
 		public virtual void GetOptionsFromUi()
 		{

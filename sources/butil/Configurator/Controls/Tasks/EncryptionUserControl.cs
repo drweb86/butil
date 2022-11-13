@@ -1,22 +1,18 @@
 using System;
-using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using BUtil.Core;
 using BUtil.Core.Options;
 using BUtil.Core.Localization;
 using BUtil.Configurator;
+using BUtil.Core.BackupModels;
 
 namespace BUtil.Core.PL
 {
-    /// <summary>
-    /// Encryption control. 
-    /// </summary>
     public sealed partial class EncryptionUserControl : BackUserControl
 	{
 		bool _passwordIsValid;
 		bool _confirmationOfPasswordIsValid;
-		BackupTask _task;
+		private BackupTask _task;
 		readonly Color _greenColor = Color.LightGreen;
 		readonly Color _defaultTextboxColor;
 		
@@ -24,8 +20,6 @@ namespace BUtil.Core.PL
 		
 		public enum Result
 		{
-			PasswordHasInvalidSize,
-			PasswordContainsForbiddenCharacters,
 			PasswordIsValid,
 			ConfirmationIsNotEqualToPassword,
 			ConfirmationOfPasswordIsValid
@@ -33,25 +27,14 @@ namespace BUtil.Core.PL
 			
 		public static class Behaviour
 		{
-			public static Result PasswordChanged(string password, bool dontCareAboutPasswordLength)
+			public static Result PasswordChanged(string password)
 			{
 				if (string.IsNullOrEmpty(password))
 				{
 					return Result.PasswordIsValid;
 				}
-				else if (password.Contains(" "))
-				{
-					return Result.PasswordContainsForbiddenCharacters;
-				}
-				else if ( !dontCareAboutPasswordLength && ((password.Length < Constants.MinimumPasswordLength) || 
-				                                          (password.Length > Constants.MaximumPasswordLength) ))
-				{
-					return Result.PasswordHasInvalidSize;
-				}
-				else
-				{
-					return Result.PasswordIsValid;
-				}
+				
+				return Result.PasswordIsValid;
 			}
 			
 			public static Result ConfirmationOfPasswordChanged(string password, string confirmation)
@@ -73,34 +56,72 @@ namespace BUtil.Core.PL
 		
 		#endregion
 		
-		public EncryptionUserControl()
+		public EncryptionUserControl(BackupTask task = null)
 		{
+			_task = task;
+
 			InitializeComponent();
 			
 			_defaultTextboxColor = passwordTextBox.BackColor;
-			applyToUi(Result.PasswordIsValid);
+
+            applyToUi(Result.PasswordIsValid);
 			applyToUi(Result.ConfirmationOfPasswordIsValid);
-		}
-		
-		public override void ApplyLocalization() 
-		{
-			passwordGroupBox.Text = Resources.PasswordIfNeeded;
-			passwordControlToolTip.SetToolTip(generatePasswordButton, Resources.GenerateNewRandomPassword);
+
+            _passwordIfNeededLabel.Text = Resources.PasswordIfNeeded;
+            passwordControlToolTip.SetToolTip(generatePasswordButton, Resources.GenerateNewRandomPassword);
             confirmPasswordLabel.Text = Resources.ConfirmPassword;
             passwordLabel.Text = Resources.EnterPassword;
-			generatePasswordButton.Text = BUtil.Configurator.Localization.Resources.GeneratePassword;
+            generatePasswordButton.Text = BUtil.Configurator.Localization.Resources.GeneratePassword;
+			_recommendationsLabel.Text = BUtil.Configurator.Localization.Resources.RecommendedMinimumPasswordLengthIs50CharactersAndMore;
+
+
+            if (task != null)
+				UpdateModel(task);
         }
-	
-		public override void SetOptionsToUi(object settings)
+
+		public void UpdateModel(BackupTask task)
 		{
-			object[] objects = (object[]) settings;
-			_task = (BackupTask)objects[1];
-			
-			passwordTextBox.Text = _task.Password;
-            passwordConfirmationTextBox.Text = _task.Password;
+			if (task != null)
+				_task = task;
+
+
+			if (_task.Model is IncrementalBackupModelOptions)
+			{
+				var options = _task.Model as IncrementalBackupModelOptions;
+
+                _tableLayoutPanel.Enabled = !options.DisableCompressionAndEncryption;
+
+                if (options.DisableCompressionAndEncryption)
+				{
+					passwordTextBox.Text = string.Empty;
+					passwordConfirmationTextBox.Text = string.Empty;
+				}
+				else
+				{
+                    passwordTextBox.Text = _task.Password;
+                    passwordConfirmationTextBox.Text = _task.Password;
+                }
+            }
 		}
-		
-		public override void GetOptionsFromUi()
+
+        public override bool ValidateUi()
+        {
+            if (passwordTextBox.Text != passwordConfirmationTextBox.Text)
+			{
+                Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.PasswordsDoNotMatch);
+                return false;
+			}
+
+            if (passwordTextBox.Text.Contains(" "))
+            {
+                Messages.ShowErrorBox("Password should not contain");
+                return false;
+            }
+
+            return true;
+        }
+
+        public override void GetOptionsFromUi()
 		{
 			if (! (_passwordIsValid && _confirmationOfPasswordIsValid))
             {
@@ -120,19 +141,7 @@ namespace BUtil.Core.PL
 					passwordErrorMessageLabel.Text = string.Empty;
 					_passwordIsValid = true;
 					break;
-					
-				case Result.PasswordContainsForbiddenCharacters:
-					passwordTextBox.BackColor = _defaultTextboxColor;
-					passwordErrorMessageLabel.Text = Resources.PasswordContainsForbiddenCharactersPleaseRemoveSpaces;
-					_passwordIsValid = false;
-					break;
-					
-				case Result.PasswordHasInvalidSize:
-					passwordTextBox.BackColor = _defaultTextboxColor;
-					passwordErrorMessageLabel.Text = string.Format(Resources.PasswordHasInvalidLengthPasswordLengthShouldBeFrom0To1Characters, Constants.MinimumPasswordLength, Constants.MaximumPasswordLength);
-					_passwordIsValid = false;
-					break;
-					
+				
 				case Result.ConfirmationOfPasswordIsValid:
 					passwordConfirmationTextBox.BackColor = _greenColor;
 					confirmationErrorMessageLabel.Text = string.Empty;
@@ -152,7 +161,7 @@ namespace BUtil.Core.PL
 		
 		void passwordTextBoxTextChanged(object sender, EventArgs e)
 		{
-			applyToUi(Behaviour.PasswordChanged(passwordTextBox.Text, false));
+			applyToUi(Behaviour.PasswordChanged(passwordTextBox.Text));
 			passwordConfirmationTextBox.Text = string.Empty;
 			applyToUi(Behaviour.ConfirmationOfPasswordChanged(passwordTextBox.Text, passwordConfirmationTextBox.Text));
 		}
@@ -161,19 +170,17 @@ namespace BUtil.Core.PL
 		{
 			applyToUi(Behaviour.ConfirmationOfPasswordChanged(passwordTextBox.Text, passwordConfirmationTextBox.Text));
 		}
-		
+
 		void generatePasswordButtonClick(object sender, EventArgs e)
 		{
-		    generatePasswordButton.Focus();
+			generatePasswordButton.Focus();
 
-            using (PasswordGeneratorForm form = new PasswordGeneratorForm())
-            {
-                if (form.ShowDialog() == DialogResult.OK)
-                {
-                    passwordTextBox.Text = form.Password;
-                    passwordConfirmationTextBox.Text = form.Password;
-                }
-            }
+			using var form = new PasswordGeneratorForm();
+			if (form.ShowDialog() == DialogResult.OK)
+			{
+				passwordTextBox.Text = form.Password;
+				passwordConfirmationTextBox.Text = form.Password;
+			}
 		}
 	}
 }

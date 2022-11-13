@@ -1,28 +1,16 @@
 using System;
-using System.Collections.Generic;
-using System.Drawing;
 using System.Windows.Forms;
 using System.Security.Cryptography;
-using System.Security;
-using System.IO;
 using System.Globalization;
-
-using BUtil;
 using BUtil.Core.Options;
 using BUtil.Core.Localization;
 
 namespace BUtil.Core.PL
 {
-	/// <summary>
-	/// Password generator
-	/// </summary>
 	public partial class PasswordGeneratorForm : Form
 	{
         NumericUpDown passwordLengthNumericUpDown;
 
-        /// <summary>
-        /// Returns generated password
-        /// </summary>
         public string Password
         {
             get { return passwordTextBox.Text; }
@@ -32,9 +20,9 @@ namespace BUtil.Core.PL
 		{
 			InitializeComponent();
 
-			passwordLengthNumericUpDown.Value = Constants.MinimumPasswordLength;
-			passwordLengthNumericUpDown.Minimum = Constants.MinimumPasswordLength;
-			passwordLengthNumericUpDown.Maximum = Constants.MaximumPasswordLength;
+			passwordLengthNumericUpDown.Value = 50;
+			passwordLengthNumericUpDown.Minimum = 1;
+			passwordLengthNumericUpDown.Maximum = 8000;
 
 			// localization initialization ("Password generator Program Interface" namespace);
 			this.Text = Resources.PasswordGenerator;
@@ -328,8 +316,6 @@ namespace BUtil.Core.PL
 
         private void useButtonClick(object sender, EventArgs e)
         {
-			ProgramOptionsManager.ValidatePassword(true, passwordTextBox.Text);
-
             this.DialogResult = DialogResult.OK;
         }
     }

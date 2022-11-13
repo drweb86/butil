@@ -54,7 +54,7 @@ namespace BUtil.Configurator.BackupUiMaster.Controls
 			_options = options;
 			_options.Priority = priority;
 			
-			encryptionUserControl.SetOptionsToUi(new object[] {_options, backupTask});
+			encryptionUserControl.UpdateModel(backupTask);
 			
 			backupPriorityComboBox.SelectedIndex = (int)_options.Priority;
 			jobAfterOkBackupComboBox.SelectedIndex = (int)task;

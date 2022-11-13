@@ -820,4 +820,10 @@ Point to a directory containing this file.</value>
   <data name="AddedFile" xml:space="preserve">
     <value>- added file "{0}"</value>
   </data>
+  <data name="PasswordsDoNotMatch" xml:space="preserve">
+    <value>Passwords do not match.</value>
+  </data>
+  <data name="RecommendedMinimumPasswordLengthIs50CharactersAndMore" xml:space="preserve">
+    <value>Recommended minimum password length is 50 characters and more. 7-zip AES-256 encryption is used with specified password.</value>
+  </data>
 </root>

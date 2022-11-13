@@ -8,6 +8,7 @@ using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
 using BUtil.RestorationMaster;
 using BUtil.Configurator.LogsManagement;
+using static System.Windows.Forms.Design.AxImporter;
 
 namespace BUtil.Configurator.Configurator
 {
@@ -139,7 +140,7 @@ namespace BUtil.Configurator.Configurator
             {
                 try
                 {
-                    _profileOptions = ProgramOptionsManager.LoadSettings();
+                    _profileOptions = ProgramOptionsKeeper.LoadSettings();
                 }
                 catch (OptionsException noOptions)
                 {
@@ -164,7 +165,7 @@ namespace BUtil.Configurator.Configurator
         {
             try
             {
-                ProgramOptionsManager.StoreSettings(_profileOptions);
+                ProgramOptionsKeeper.StoreSettings(_profileOptions);
                 _optionsDuringProgramLoad = _profileOptions.Clone() as ProgramOptions;
             }
             catch (Exception ee)

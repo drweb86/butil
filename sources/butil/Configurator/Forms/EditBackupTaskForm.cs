@@ -36,12 +36,14 @@ namespace BUtil.Configurator.Configurator.Forms
 
         private void SetupUiComponents()
         {
+            var encryptionControl = new EncryptionUserControl(_task);
+
             _views.Add(BackupTaskViewsEnum.Name, new TaskNameUserControl());
             _views.Add(BackupTaskViewsEnum.SourceItems, new WhatUserControl());
             _views.Add(BackupTaskViewsEnum.Storages, new WhereUserControl());
             _views.Add(BackupTaskViewsEnum.Scheduler, new WhenUserControl());
-            _views.Add(BackupTaskViewsEnum.How, new HowUserControl());
-            _views.Add(BackupTaskViewsEnum.Encryption, new EncryptionUserControl());
+            _views.Add(BackupTaskViewsEnum.How, new HowUserControl(_task, () => encryptionControl.UpdateModel(_task)));
+            _views.Add(BackupTaskViewsEnum.Encryption, encryptionControl);
             _views.Add(BackupTaskViewsEnum.OtherOptions, new OtherTaskOptionsUserControl());
             foreach (KeyValuePair<BackupTaskViewsEnum, BackUserControl> pair in _views)
             {
@@ -99,10 +101,8 @@ namespace BUtil.Configurator.Configurator.Forms
         {
             _views[BackupTaskViewsEnum.Name].SetOptionsToUi(_task);
             _views[BackupTaskViewsEnum.SourceItems].SetOptionsToUi(_task);
-            _views[BackupTaskViewsEnum.How].SetOptionsToUi(_task);
             _views[BackupTaskViewsEnum.Storages].SetOptionsToUi(_task);
             _views[BackupTaskViewsEnum.Scheduler].SetOptionsToUi(_scheduleInfo);
-            _views[BackupTaskViewsEnum.Encryption].SetOptionsToUi(new object[] { _profileOptions, _task });
             _views[BackupTaskViewsEnum.OtherOptions].SetOptionsToUi(new object[] { _task });
         }
 

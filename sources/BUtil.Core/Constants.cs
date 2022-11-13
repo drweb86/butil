@@ -1,14 +1,7 @@
-using System;
-
 namespace BUtil.Core
 {
-	/// <summary>
-	/// Contains general information about program behaviour
-	/// </summary>
 	public static class Constants
 	{
-		public const int MinimumPasswordLength = 20;
-		public const int MaximumPasswordLength = 255;
 		public const string ConsoleBackupTitle = "Console backup - BUtil";
 		
         // Defaults for scheduler options. If change - please update documentation

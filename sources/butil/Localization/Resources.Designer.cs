@@ -1383,6 +1383,15 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Passwords do not match..
+        /// </summary>
+        internal static string PasswordsDoNotMatch {
+            get {
+                return ResourceManager.GetString("PasswordsDoNotMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please add at least one destination place..
         /// </summary>
         internal static string PleaseAddAtLeastOneDestinationPlace {
@@ -1497,6 +1506,15 @@ namespace BUtil.Configurator.Localization {
         internal static string Reboot {
             get {
                 return ResourceManager.GetString("Reboot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recommended minimum password length is 50 characters and more. 7-zip AES-256 encryption is used with specified password..
+        /// </summary>
+        internal static string RecommendedMinimumPasswordLengthIs50CharactersAndMore {
+            get {
+                return ResourceManager.GetString("RecommendedMinimumPasswordLengthIs50CharactersAndMore", resourceCulture);
             }
         }
         
