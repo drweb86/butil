@@ -27,6 +27,10 @@ namespace BUtil.Configurator.Controls
             SetHintForControl(removeButton, Resources.Remove);
             removeToolStripMenuItem.Text = Resources.Remove;
             SetHintForControl(addFilesButton, Resources.AddFiles);
+            SetHintForControl(_ignoreButton, BUtil.Configurator.Localization.Resources.Ignore);
+            _ignoreToolStripMenuItem.Text = Resources.Ignore;
+            _ignoreToolStripMenuItem.ToolTipText = BUtil.Configurator.Localization.Resources.IgnoreFilesFromBackupByMask;
+            SetHintForControl(_ignoreButton, BUtil.Configurator.Localization.Resources.IgnoreFilesFromBackupByMask);
             addFilesToolStripMenuItem.Text = Resources.AddFiles;
 
             _task.Items
@@ -42,7 +46,7 @@ namespace BUtil.Configurator.Controls
         }
 		
 	
-		void OnAddFoldersButtonClick(object sender, EventArgs e)
+		private void OnAddFoldersButtonClick(object sender, EventArgs e)
 		{
             AddFolders();
 		}
@@ -111,7 +115,12 @@ namespace BUtil.Configurator.Controls
 		private void OnMenuOpening(object sender, CancelEventArgs e)
 		{
 			removeToolStripMenuItem.Enabled = (_itemsListView.SelectedItems.Count > 0);
-		}
+            var items = new List<WhatItemViewModel>();
+            foreach (ListViewItem item in _itemsListView.SelectedItems)
+                items.Add(item.Tag as WhatItemViewModel);
+
+            _openInExplorerToolStripMenuItem.Enabled = items.Any(x => x.Type == WhatItemType.File || x.Type == WhatItemType.Folder);
+        }
 
         private void OnRemoveItemsButtonClick(object sender, EventArgs e)
         {
@@ -165,15 +174,19 @@ namespace BUtil.Configurator.Controls
 
         private void OnItemDoubleClick(object sender, EventArgs e)
         {
-            if (_itemsListView.SelectedItems.Count > 0)
+            var items = new List<WhatItemViewModel>();
+            foreach (ListViewItem item in _itemsListView.SelectedItems)
+                items.Add(item.Tag as WhatItemViewModel);
+
+            var itemToOpen = items.FirstOrDefault(x => x.Type == WhatItemType.File || x.Type == WhatItemType.Folder);
+
+            if (itemToOpen != null)
 			{
-                var item = _itemsListView.SelectedItems[0].Tag as WhatItemViewModel;
+                if (itemToOpen.Type == WhatItemType.Folder)
+                    Process.Start("explorer.exe", $"\"{itemToOpen.Title}\"");
 
-                if (item.Type == WhatItemType.Folder)
-                    Process.Start("explorer.exe", $"\"{item.Title}\"");
-
-                if (item.Type == WhatItemType.File)
-                    Process.Start("explorer.exe", $"/select,\"{item.Title}\"");
+                if (itemToOpen.Type == WhatItemType.File)
+                    Process.Start("explorer.exe", $"/select,\"{itemToOpen.Title}\"");
             }
         }
 
@@ -277,6 +290,11 @@ namespace BUtil.Configurator.Controls
             _itemsListView.Items.Add(newlistViewItem);
 
             _itemsListView.EndUpdate();
+        }
+
+        private void OnExcludeAdd(object sender, EventArgs e)
+        {
+            // TODO:
         }
     }
 }

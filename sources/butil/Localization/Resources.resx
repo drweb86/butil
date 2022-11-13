@@ -826,4 +826,10 @@ Point to a directory containing this file.</value>
   <data name="RecommendedMinimumPasswordLengthIs50CharactersAndMore" xml:space="preserve">
     <value>Recommended minimum password length is 50 characters and more. 7-zip AES-256 encryption is used with specified password.</value>
   </data>
+  <data name="Ignore" xml:space="preserve">
+    <value>Ignore...</value>
+  </data>
+  <data name="IgnoreFilesFromBackupByMask" xml:space="preserve">
+    <value>Ignores (skips) files from backup by mask...</value>
+  </data>
 </root>

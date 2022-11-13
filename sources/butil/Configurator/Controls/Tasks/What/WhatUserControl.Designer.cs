@@ -38,6 +38,7 @@ namespace BUtil.Configurator.Controls
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.addFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addFoldersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this._ignoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._itemsListView = new System.Windows.Forms.ListView();
             this.itemsToCompressColumnHeader = new System.Windows.Forms.ColumnHeader();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
@@ -45,6 +46,8 @@ namespace BUtil.Configurator.Controls
             this.addFoldersButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
             this.addFilesButton = new System.Windows.Forms.Button();
+            this._ignoreButton = new System.Windows.Forms.Button();
+            this._openInExplorerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filesFoldersContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,30 +66,32 @@ namespace BUtil.Configurator.Controls
             this.removeToolStripMenuItem,
             this.toolStripSeparator6,
             this.addFilesToolStripMenuItem,
-            this.addFoldersToolStripMenuItem});
+            this.addFoldersToolStripMenuItem,
+            this._ignoreToolStripMenuItem,
+            this._openInExplorerToolStripMenuItem});
             this.filesFoldersContextMenuStrip.Name = "filesFoldersContextMenuStrip";
             this.filesFoldersContextMenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.filesFoldersContextMenuStrip.Size = new System.Drawing.Size(165, 76);
+            this.filesFoldersContextMenuStrip.Size = new System.Drawing.Size(181, 142);
             this.filesFoldersContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.OnMenuOpening);
             // 
-            // removeFromListToolStripMenuItem
+            // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Image = global::BUtil.Configurator.Icons.removeFromListToolStripMenuItem_Image;
-            this.removeToolStripMenuItem.Name = "removeFromListToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.removeToolStripMenuItem.Text = "Remove from list";
             this.removeToolStripMenuItem.Click += new System.EventHandler(this.OnRemoveToolStripMenuItemClick);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(161, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(177, 6);
             // 
             // addFilesToolStripMenuItem
             // 
             this.addFilesToolStripMenuItem.Image = global::BUtil.Configurator.Icons.Add_Files;
             this.addFilesToolStripMenuItem.Name = "addFilesToolStripMenuItem";
-            this.addFilesToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.addFilesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addFilesToolStripMenuItem.Text = "Add files...";
             this.addFilesToolStripMenuItem.Click += new System.EventHandler(this.OnAddFilesToolStripMenuItemClick);
             // 
@@ -94,11 +99,19 @@ namespace BUtil.Configurator.Controls
             // 
             this.addFoldersToolStripMenuItem.Image = global::BUtil.Configurator.Icons.AddFolder;
             this.addFoldersToolStripMenuItem.Name = "addFoldersToolStripMenuItem";
-            this.addFoldersToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.addFoldersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addFoldersToolStripMenuItem.Text = "Add folders...";
             this.addFoldersToolStripMenuItem.Click += new System.EventHandler(this.OnAddFoldersToolStripMenuItemClick);
             // 
-            // compressionItemsListView
+            // _ignoreToolStripMenuItem
+            // 
+            this._ignoreToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("_ignoreToolStripMenuItem.Image")));
+            this._ignoreToolStripMenuItem.Name = "_ignoreToolStripMenuItem";
+            this._ignoreToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this._ignoreToolStripMenuItem.Text = "Ignore...";
+            this._ignoreToolStripMenuItem.Click += new System.EventHandler(this.OnExcludeAdd);
+            // 
+            // _itemsListView
             // 
             this._itemsListView.AllowDrop = true;
             this._itemsListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -111,8 +124,8 @@ namespace BUtil.Configurator.Controls
             this._itemsListView.LargeImageList = this.itemsToCompressImageList;
             this._itemsListView.Location = new System.Drawing.Point(4, 3);
             this._itemsListView.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this._itemsListView.Name = "compressionItemsListView";
-            this._itemsListView.Size = new System.Drawing.Size(344, 231);
+            this._itemsListView.Name = "_itemsListView";
+            this._itemsListView.Size = new System.Drawing.Size(344, 303);
             this._itemsListView.SmallImageList = this.itemsToCompressImageList;
             this._itemsListView.StateImageList = this.itemsToCompressImageList;
             this._itemsListView.TabIndex = 0;
@@ -150,7 +163,7 @@ namespace BUtil.Configurator.Controls
             this.addFoldersButton.UseVisualStyleBackColor = true;
             this.addFoldersButton.Click += new System.EventHandler(this.OnAddFoldersButtonClick);
             // 
-            // removeCompressionItemButton
+            // removeButton
             // 
             this.removeButton.AccessibleDescription = "";
             this.removeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -159,7 +172,7 @@ namespace BUtil.Configurator.Controls
             this.removeButton.Image = global::BUtil.Configurator.Icons.cross_48;
             this.removeButton.Location = new System.Drawing.Point(355, 151);
             this.removeButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.removeButton.Name = "removeCompressionItemButton";
+            this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(71, 67);
             this.removeButton.TabIndex = 3;
             this.removeButton.UseVisualStyleBackColor = true;
@@ -177,18 +190,41 @@ namespace BUtil.Configurator.Controls
             this.addFilesButton.UseVisualStyleBackColor = true;
             this.addFilesButton.Click += new System.EventHandler(this.OnAddFilesButtonClick);
             // 
+            // _ignoreButton
+            // 
+            this._ignoreButton.AccessibleDescription = "";
+            this._ignoreButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._ignoreButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._ignoreButton.Image = ((System.Drawing.Image)(resources.GetObject("_ignoreButton.Image")));
+            this._ignoreButton.Location = new System.Drawing.Point(355, 224);
+            this._ignoreButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this._ignoreButton.Name = "_ignoreButton";
+            this._ignoreButton.Size = new System.Drawing.Size(71, 67);
+            this._ignoreButton.TabIndex = 4;
+            this._ignoreButton.UseVisualStyleBackColor = true;
+            this._ignoreButton.Click += new System.EventHandler(this.OnExcludeAdd);
+            // 
+            // _openInExplorerToolStripMenuItem
+            // 
+            this._openInExplorerToolStripMenuItem.Image = global::BUtil.Configurator.Icons.folder_48;
+            this._openInExplorerToolStripMenuItem.Name = "_openInExplorerToolStripMenuItem";
+            this._openInExplorerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this._openInExplorerToolStripMenuItem.Text = "Open in Explorer...";
+            this._openInExplorerToolStripMenuItem.Click += new System.EventHandler(this.OnItemDoubleClick);
+            // 
             // WhatUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this._ignoreButton);
             this.Controls.Add(this._itemsListView);
             this.Controls.Add(this.addFoldersButton);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.addFilesButton);
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.MinimumSize = new System.Drawing.Size(429, 239);
+            this.MinimumSize = new System.Drawing.Size(429, 311);
             this.Name = "WhatUserControl";
-            this.Size = new System.Drawing.Size(429, 239);
+            this.Size = new System.Drawing.Size(429, 311);
             this.filesFoldersContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -207,5 +243,8 @@ namespace BUtil.Configurator.Controls
 		private System.Windows.Forms.ContextMenuStrip filesFoldersContextMenuStrip;
 		private System.Windows.Forms.ImageList itemsToCompressImageList;
 		private System.Windows.Forms.FolderBrowserDialog ofd;
-	}
+        private System.Windows.Forms.Button _ignoreButton;
+        private System.Windows.Forms.ToolStripMenuItem _ignoreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem _openInExplorerToolStripMenuItem;
+    }
 }

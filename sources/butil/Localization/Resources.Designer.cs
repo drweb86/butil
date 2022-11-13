@@ -1010,6 +1010,24 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ignore....
+        /// </summary>
+        internal static string Ignore {
+            get {
+                return ResourceManager.GetString("Ignore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ignores (skips) files from backup by mask....
+        /// </summary>
+        internal static string IgnoreFilesFromBackupByMask {
+            get {
+                return ResourceManager.GetString("IgnoreFilesFromBackupByMask", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Important:
         ///
         ///Backup should be password protected. If NOT, program will SKIP its copying to this storage.

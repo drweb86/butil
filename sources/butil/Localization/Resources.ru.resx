@@ -766,4 +766,10 @@
   <data name="RecommendedMinimumPasswordLengthIs50CharactersAndMore" xml:space="preserve">
     <value>Рекомендуемая минимальная длина пароля - 50 символов. В качестве шифрования используется 7-zip шифрование AES-256 с заданным паролем.</value>
   </data>
+  <data name="Ignore" xml:space="preserve">
+    <value>Игнорировать...</value>
+  </data>
+  <data name="IgnoreFilesFromBackupByMask" xml:space="preserve">
+    <value>Игнорирует (не включает) файлы в резервную копию по маске...</value>
+  </data>
 </root>
