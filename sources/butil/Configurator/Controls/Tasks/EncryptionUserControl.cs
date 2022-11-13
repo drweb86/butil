@@ -112,12 +112,6 @@ namespace BUtil.Core.PL
                 return false;
 			}
 
-            if (passwordTextBox.Text.Contains(" "))
-            {
-                Messages.ShowErrorBox("Password should not contain");
-                return false;
-            }
-
             return true;
         }
 

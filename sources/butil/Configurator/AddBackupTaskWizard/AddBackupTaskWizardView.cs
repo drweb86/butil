@@ -46,7 +46,7 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
             var encryptionUserControl = new EncryptionUserControl(Task);
 
             _steps.Add(new PageInfo(Resources.WellcomeToBackupTaskCreationWizard, Resources.ThisMasterWillHelpYouToCreateANewTask, RegisterControl(BackupTaskViewsEnum.Name, new TaskNameUserControl()), Icons.BackupTask48x48));
-            _steps.Add(new PageInfo(Resources.What, Resources.HereYouMayAddFilesAndFoldersYouWannaToBackup, RegisterControl(BackupTaskViewsEnum.SourceItems, new WhatUserControl()), Icons.SourceItems48x48));
+            _steps.Add(new PageInfo(Resources.What, Resources.HereYouMayAddFilesAndFoldersYouWannaToBackup, RegisterControl(BackupTaskViewsEnum.SourceItems, new WhatUserControl(Task)), Icons.SourceItems48x48));
             _steps.Add(new PageInfo(Resources.Where, Resources.HereYouCanSpecifyWhereToSendBackups, RegisterControl(BackupTaskViewsEnum.Storages, new WhereUserControl()), Icons.Storages48x48));
             _steps.Add(new PageInfo(Resources.When, Resources.YouCanSetDaysAndTimesWhenYouWantToStartThisBackupJob, RegisterControl(BackupTaskViewsEnum.Scheduler, new WhenUserControl()), Icons.Schedule48x48));
             _steps.Add(new PageInfo(Resources.How, Resources.HowHint, RegisterControl(BackupTaskViewsEnum.How, new HowUserControl(Task, () => encryptionUserControl.UpdateModel(Task))), Icons.ActionsOfficeChartPieIcon48x48));
@@ -77,7 +77,6 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
         {
             _controls[BackupTaskViewsEnum.Name].SetOptionsToUi(Task);
             _controls[BackupTaskViewsEnum.Storages].SetOptionsToUi(Task);
-            _controls[BackupTaskViewsEnum.SourceItems].SetOptionsToUi(Task);
             _controls[BackupTaskViewsEnum.Scheduler].SetOptionsToUi(ScheduleInfo);
             _controls[BackupTaskViewsEnum.OtherOptions].SetOptionsToUi(new object[] { Task });
         }
