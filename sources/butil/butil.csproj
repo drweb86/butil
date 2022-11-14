@@ -63,10 +63,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Configurator\AddBackupTaskWizard\Controller\**" />
+    <Compile Remove="Controls\**" />
     <Compile Remove="Properties\**" />
     <EmbeddedResource Remove="Configurator\AddBackupTaskWizard\Controller\**" />
+    <EmbeddedResource Remove="Controls\**" />
     <EmbeddedResource Remove="Properties\**" />
     <None Remove="Configurator\AddBackupTaskWizard\Controller\**" />
+    <None Remove="Controls\**" />
     <None Remove="Properties\**" />
   </ItemGroup>
   <ItemGroup>
@@ -205,8 +208,5 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controls\" />
   </ItemGroup>
 </Project>

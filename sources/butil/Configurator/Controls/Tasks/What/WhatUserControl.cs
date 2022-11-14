@@ -7,6 +7,7 @@ using BUtil.Configurator.Localization;
 using System.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
+using BUtil.Configurator.Configurator.Controls.Tasks.What;
 
 namespace BUtil.Configurator.Controls
 {
@@ -24,21 +25,25 @@ namespace BUtil.Configurator.Controls
             SetHintForControl(_itemsListView, Resources.DragAndDropHereFilesAndFoldersWhichYoureGoingToBackupForSettingCompressionPriorityUseMenu);
             SetHintForControl(addFoldersButton, Resources.AddFolders);
             addFoldersToolStripMenuItem.Text = Resources.AddFolders;
+
             SetHintForControl(removeButton, Resources.Remove);
             removeToolStripMenuItem.Text = Resources.Remove;
+
             SetHintForControl(addFilesButton, Resources.AddFiles);
-            SetHintForControl(_ignoreButton, BUtil.Configurator.Localization.Resources.Ignore);
-            _ignoreToolStripMenuItem.Text = Resources.Ignore;
-            _ignoreToolStripMenuItem.ToolTipText = BUtil.Configurator.Localization.Resources.IgnoreFilesFromBackupByMask;
-            SetHintForControl(_ignoreButton, BUtil.Configurator.Localization.Resources.IgnoreFilesFromBackupByMask);
             addFilesToolStripMenuItem.Text = Resources.AddFiles;
+
+            _addFileExcludePatternToolStripMenuItem.Text = Resources.AddFileExcludePattern;
+            _addFileExcludePatternToolStripMenuItem.ToolTipText = BUtil.Configurator.Localization.Resources.ExcludesFilesFromBackupByPattern;
+            SetHintForControl(_addFIleExcludePatternButton, BUtil.Configurator.Localization.Resources.ExcludesFilesFromBackupByPattern);
+            _editFileExcludePatternToolStripMenuItem.Text = BUtil.Configurator.Localization.Resources.EditFileExcludePattern;
+            _openInExplorerToolStripMenuItem.Text = BUtil.Configurator.Localization.Resources.OpenInExplorer;
 
             _task.Items
                 .Select(item => new WhatItemViewModel { Id = item.Id, Title = item.Target, Type = item.IsFolder ? WhatItemType.Folder : WhatItemType.File })
                 .OrderBy(item => item.Title)
                 .ToList()
                 .ForEach(AddItem);
-            (_task.ExcludeMasks ?? new List<string>())
+            (_task.FileExcludePatterns ?? new List<string>())
                 .Select(x => new WhatItemViewModel { Id = Guid.NewGuid(), Title = x, Type = WhatItemType.Exclude })
                 .OrderBy(item => item.Title)
                 .ToList()
@@ -115,11 +120,17 @@ namespace BUtil.Configurator.Controls
 		private void OnMenuOpening(object sender, CancelEventArgs e)
 		{
 			removeToolStripMenuItem.Enabled = (_itemsListView.SelectedItems.Count > 0);
-            var items = new List<WhatItemViewModel>();
-            foreach (ListViewItem item in _itemsListView.SelectedItems)
-                items.Add(item.Tag as WhatItemViewModel);
+            var canOpenInExplorer = 
+                _itemsListView.SelectedItems.Count == 1 &&
+                ((_itemsListView.SelectedItems[0].Tag as WhatItemViewModel).Type == WhatItemType.File ||
+                     (_itemsListView.SelectedItems[0].Tag as WhatItemViewModel).Type == WhatItemType.Folder);
 
-            _openInExplorerToolStripMenuItem.Enabled = items.Any(x => x.Type == WhatItemType.File || x.Type == WhatItemType.Folder);
+            var canEditPattern =
+                _itemsListView.SelectedItems.Count == 1 &&
+                (_itemsListView.SelectedItems[0].Tag as WhatItemViewModel).Type == WhatItemType.Exclude;
+
+            _openInExplorerToolStripMenuItem.Enabled = canOpenInExplorer;
+            _editFileExcludePatternToolStripMenuItem.Enabled = canEditPattern;
         }
 
         private void OnRemoveItemsButtonClick(object sender, EventArgs e)
@@ -178,7 +189,7 @@ namespace BUtil.Configurator.Controls
             foreach (ListViewItem item in _itemsListView.SelectedItems)
                 items.Add(item.Tag as WhatItemViewModel);
 
-            var itemToOpen = items.FirstOrDefault(x => x.Type == WhatItemType.File || x.Type == WhatItemType.Folder);
+            var itemToOpen = items.FirstOrDefault();
 
             if (itemToOpen != null)
 			{
@@ -187,6 +198,16 @@ namespace BUtil.Configurator.Controls
 
                 if (itemToOpen.Type == WhatItemType.File)
                     Process.Start("explorer.exe", $"/select,\"{itemToOpen.Title}\"");
+
+                if (itemToOpen.Type == WhatItemType.Exclude)
+                {
+                    using FileExcludePatternForm form = new(itemToOpen.Title);
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        itemToOpen.Title = form.Pattern;
+                        _itemsListView.SelectedItems[0].Text = form.Pattern;
+                    }
+                }
             }
         }
 
@@ -194,19 +215,22 @@ namespace BUtil.Configurator.Controls
 				
 		public override void GetOptionsFromUi()
 		{
-            var excludeItems = new List<string>();
+            var fileExcludePatterns = new List<string>();
             var sourceItems = new List<SourceItem>();
             foreach (ListViewItem item in _itemsListView.Items)
             {
                 var model = item.Tag as WhatItemViewModel;
 
                 if (model.Type == WhatItemType.Exclude)
-                    excludeItems.Add(model.Title);
+                    fileExcludePatterns.Add(model.Title);
                 if (model.Type == WhatItemType.File)
                     sourceItems.Add(new SourceItem { Id = model.Id, IsFolder = false, Target = model.Title });
                 if (model.Type == WhatItemType.Folder)
                     sourceItems.Add(new SourceItem { Id = model.Id, IsFolder = true, Target = model.Title });
             }
+
+            _task.Items = sourceItems;
+            _task.FileExcludePatterns = fileExcludePatterns;
         }
 
 		public override bool ValidateUi()
@@ -292,9 +316,11 @@ namespace BUtil.Configurator.Controls
             _itemsListView.EndUpdate();
         }
 
-        private void OnExcludeAdd(object sender, EventArgs e)
+        private void OnAddFileExcludePattern(object sender, EventArgs e)
         {
-            // TODO:
+            using FileExcludePatternForm form = new();
+            if (form.ShowDialog() == DialogResult.OK)
+                AddItem(new WhatItemViewModel { Id = Guid.NewGuid(), Title = form.Pattern, Type = WhatItemType.Exclude });
         }
     }
 }

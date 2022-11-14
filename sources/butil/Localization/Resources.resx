@@ -826,10 +826,35 @@ Point to a directory containing this file.</value>
   <data name="RecommendedMinimumPasswordLengthIs50CharactersAndMore" xml:space="preserve">
     <value>Recommended minimum password length is 50 characters and more. 7-zip AES-256 encryption is used with specified password.</value>
   </data>
-  <data name="Ignore" xml:space="preserve">
-    <value>Ignore...</value>
+  <data name="AddFileExcludePattern" xml:space="preserve">
+    <value>Add File Exclude Pattern...</value>
   </data>
-  <data name="IgnoreFilesFromBackupByMask" xml:space="preserve">
-    <value>Ignores (skips) files from backup by mask...</value>
+  <data name="ExcludesFilesFromBackupByPattern" xml:space="preserve">
+    <value>Excludes files from backup by pattern...</value>
+  </data>
+  <data name="FileExclusionPattern" xml:space="preserve">
+    <value>File Exclusion Pattern:</value>
+  </data>
+  <data name="HereYouCanSpecifyFileGlobbingExclusionPatternsItCanBeAFileNameOrFolderNameOrWildcardExamplesDTempDTempFileTxtDTempTxtOrBinSeeDetailedDescriptionInTheFollowingLink" xml:space="preserve">
+    <value>Here you can specify file globbing exclusion patterns. 
+It can be a file name or folder name or wildcard. 
+Examples: 
+d:\temp, 
+d:\temp\file.txt, 
+d:\temp\**\*.txt or 
+bin. 
+See detailed description in the following link.</value>
+  </data>
+  <data name="FileGlobbingInNETPatterns" xml:space="preserve">
+    <value>File globbing in .NET: Patterns</value>
+  </data>
+  <data name="PatternIsEmpty" xml:space="preserve">
+    <value>Pattern is empty.</value>
+  </data>
+  <data name="EditFileExcludePattern" xml:space="preserve">
+    <value>Edit File Exclude Pattern...</value>
+  </data>
+  <data name="OpenInExplorer" xml:space="preserve">
+    <value>Open in Explorer...</value>
   </data>
 </root>

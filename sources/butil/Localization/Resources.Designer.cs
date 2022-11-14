@@ -162,6 +162,15 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add File Exclude Pattern....
+        /// </summary>
+        internal static string AddFileExcludePattern {
+            get {
+                return ResourceManager.GetString("AddFileExcludePattern", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add files....
         /// </summary>
         internal static string AddFiles {
@@ -709,6 +718,15 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit File Exclude Pattern....
+        /// </summary>
+        internal static string EditFileExcludePattern {
+            get {
+                return ResourceManager.GetString("EditFileExcludePattern", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Editing Event Task - Configurator.
         /// </summary>
         internal static string EditingEventTaskConfigurator {
@@ -772,11 +790,38 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Excludes files from backup by pattern....
+        /// </summary>
+        internal static string ExcludesFilesFromBackupByPattern {
+            get {
+                return ResourceManager.GetString("ExcludesFilesFromBackupByPattern", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Exiting....
         /// </summary>
         internal static string Exiting {
             get {
                 return ResourceManager.GetString("Exiting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File Exclusion Pattern:.
+        /// </summary>
+        internal static string FileExclusionPattern {
+            get {
+                return ResourceManager.GetString("FileExclusionPattern", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File globbing in .NET: Patterns.
+        /// </summary>
+        internal static string FileGlobbingInNETPatterns {
+            get {
+                return ResourceManager.GetString("FileGlobbingInNETPatterns", resourceCulture);
             }
         }
         
@@ -925,6 +970,24 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Here you can specify file globbing exclusion patterns. 
+        ///It can be a file name or folder name or wildcard. 
+        ///Examples: 
+        ///d:\temp, 
+        ///d:\temp\file.txt, 
+        ///d:\temp\**\*.txt or 
+        ///bin. 
+        ///See detailed description in the following link..
+        /// </summary>
+        internal static string HereYouCanSpecifyFileGlobbingExclusionPatternsItCanBeAFileNameOrFolderNameOrWildcardExamplesDTempDTempFileTxtDTempTxtOrBinSeeDetailedDescriptionInTheFollowingLink {
+            get {
+                return ResourceManager.GetString("HereYouCanSpecifyFileGlobbingExclusionPatternsItCanBeAFileNameOrFolderNameOrWildc" +
+                        "ardExamplesDTempDTempFileTxtDTempTxtOrBinSeeDetailedDescriptionInTheFollowingLin" +
+                        "k", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Here you can specify other settings.
         /// </summary>
         internal static string HereYouCanSpecifyOtherSettings {
@@ -1006,24 +1069,6 @@ namespace BUtil.Configurator.Localization {
         internal static string IfYourBackupIsPasswordProtectedPleaseTypePasswordHere {
             get {
                 return ResourceManager.GetString("IfYourBackupIsPasswordProtectedPleaseTypePasswordHere", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ignore....
-        /// </summary>
-        internal static string Ignore {
-            get {
-                return ResourceManager.GetString("Ignore", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ignores (skips) files from backup by mask....
-        /// </summary>
-        internal static string IgnoreFilesFromBackupByMask {
-            get {
-                return ResourceManager.GetString("IgnoreFilesFromBackupByMask", resourceCulture);
             }
         }
         
@@ -1347,6 +1392,15 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Open in Explorer....
+        /// </summary>
+        internal static string OpenInExplorer {
+            get {
+                return ResourceManager.GetString("OpenInExplorer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ● Open Logs.
         /// </summary>
         internal static string OpenLogs {
@@ -1406,6 +1460,15 @@ namespace BUtil.Configurator.Localization {
         internal static string PasswordsDoNotMatch {
             get {
                 return ResourceManager.GetString("PasswordsDoNotMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pattern is empty..
+        /// </summary>
+        internal static string PatternIsEmpty {
+            get {
+                return ResourceManager.GetString("PatternIsEmpty", resourceCulture);
             }
         }
         

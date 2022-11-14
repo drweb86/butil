@@ -766,10 +766,35 @@
   <data name="RecommendedMinimumPasswordLengthIs50CharactersAndMore" xml:space="preserve">
     <value>Рекомендуемая минимальная длина пароля - 50 символов. В качестве шифрования используется 7-zip шифрование AES-256 с заданным паролем.</value>
   </data>
-  <data name="Ignore" xml:space="preserve">
-    <value>Игнорировать...</value>
+  <data name="AddFileExcludePattern" xml:space="preserve">
+    <value>Добавить маску исключения файлов...</value>
   </data>
-  <data name="IgnoreFilesFromBackupByMask" xml:space="preserve">
-    <value>Игнорирует (не включает) файлы в резервную копию по маске...</value>
+  <data name="ExcludesFilesFromBackupByPattern" xml:space="preserve">
+    <value>Исключает файлы из резервной копии по маске...</value>
+  </data>
+  <data name="FileExclusionPattern" xml:space="preserve">
+    <value>Маска исключения файлов:</value>
+  </data>
+  <data name="HereYouCanSpecifyFileGlobbingExclusionPatternsItCanBeAFileNameOrFolderNameOrWildcardExamplesDTempDTempFileTxtDTempTxtOrBinSeeDetailedDescriptionInTheFollowingLink" xml:space="preserve">
+    <value>Здесь можно задать исключения файлов по маске.
+Маской может быть имя файла, имя папки или шаблон подстановки маски. 
+Примеры:
+d:\temp,
+d:\temp\file.txt,
+d:\temp\**\*.txt или 
+bin. 
+Смотрите детальное описание масок по следующей ссылке.</value>
+  </data>
+  <data name="FileGlobbingInNETPatterns" xml:space="preserve">
+    <value>Форматы шаблонов подстановки имен файлов</value>
+  </data>
+  <data name="PatternIsEmpty" xml:space="preserve">
+    <value>Маска не указана.</value>
+  </data>
+  <data name="EditFileExcludePattern" xml:space="preserve">
+    <value>Изменить маску исключения файлов...</value>
+  </data>
+  <data name="OpenInExplorer" xml:space="preserve">
+    <value>Открыть в Проводнике...</value>
   </data>
 </root>
