@@ -1,4 +1,4 @@
-# 5.2a
+# 5.3a
 
 This is alpha version.
 FTP & Samba are not working.
@@ -11,6 +11,7 @@ Password protection is not reworked.
 - Incremental backup restoration without compression and encryption.
 - Tools were renamed.
 - Update to .Net 7
+- Support for Wildcard exclusions for Folder Source Items based on Microsoft https://learn.microsoft.com/en-us/dotnet/core/extensions/file-globbing#pattern-formats
 
 ## Changes
 - Setup is x32/x64

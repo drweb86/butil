@@ -21,7 +21,7 @@ namespace BUtil.Core.TasksTree.States
 
             foreach (var item in backupTask.Items)
             {
-                var getSourceItemStateTask = new GetStateOfSourceItemTask(log, Events, item);
+                var getSourceItemStateTask = new GetStateOfSourceItemTask(log, Events, item, backupTask.FileExcludePatterns);
                 setSourceItemStateTasks.Add(getSourceItemStateTask);
                 childTasks.Add(getSourceItemStateTask);
             }

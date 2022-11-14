@@ -97,11 +97,15 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.4.346202">
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="System.Text.Encoding.CodePages" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="7.0.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="7.0.0" />
     <PackageReference Include="TaskScheduler" Version="2.10.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Extensions.FileSystemGlobbing">
+      <HintPath>%userprofile%\.nuget\packages\microsoft.extensions.filesystemglobbing\7.0.0\lib\net7.0\Microsoft.Extensions.FileSystemGlobbing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Localization\Resources.resx">

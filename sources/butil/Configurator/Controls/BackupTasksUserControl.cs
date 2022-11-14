@@ -6,6 +6,7 @@ using BUtil.Core.Options;
 using BUtil.Configurator.Configurator.Forms;
 using BUtil.Configurator.Localization;
 using BUtil.Configurator.AddBackupTaskWizard.View;
+using System.Linq;
 
 namespace BUtil.Configurator.Configurator.Controls
 {
@@ -149,7 +150,8 @@ namespace BUtil.Configurator.Configurator.Controls
                 selectedTasks.Add(taskToExecute.Text);
             }
 
-            _controller.OpenBackupUiMaster(selectedTasks[0], false);
+            if (selectedTasks.Any())
+                _controller.OpenBackupUiMaster(selectedTasks[0], false);
         }
 
         void RefreshTaskControls(object sender, EventArgs e)
