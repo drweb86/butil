@@ -30,8 +30,6 @@ namespace BUtil.Configurator.BackupUiMaster.Controls
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsUserControl));
-			this.backupPriorityComboBox = new System.Windows.Forms.ComboBox();
-			this.chooseBackUpPriorityLabel = new System.Windows.Forms.Label();
 			this.afterEndOfBackupGroupBox = new System.Windows.Forms.GroupBox();
 			this.jobAfterOkBackupComboBox = new System.Windows.Forms.ComboBox();
 			this.hearBeepsCheckBox = new System.Windows.Forms.CheckBox();
@@ -39,24 +37,6 @@ namespace BUtil.Configurator.BackupUiMaster.Controls
 			this.encryptionUserControl = new BUtil.Core.PL.EncryptionUserControl();
 			this.afterEndOfBackupGroupBox.SuspendLayout();
 			this.SuspendLayout();
-			// 
-			// backupPriorityComboBox
-			// 
-			this.backupPriorityComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.backupPriorityComboBox.FormattingEnabled = true;
-			this.backupPriorityComboBox.Location = new System.Drawing.Point(131, 40);
-			this.backupPriorityComboBox.Name = "backupPriorityComboBox";
-			this.backupPriorityComboBox.Size = new System.Drawing.Size(149, 21);
-			this.backupPriorityComboBox.TabIndex = 11;
-			// 
-			// chooseBackUpPriorityLabel
-			// 
-			this.chooseBackUpPriorityLabel.AutoSize = true;
-			this.chooseBackUpPriorityLabel.Location = new System.Drawing.Point(3, 43);
-			this.chooseBackUpPriorityLabel.Name = "chooseBackUpPriorityLabel";
-			this.chooseBackUpPriorityLabel.Size = new System.Drawing.Size(81, 13);
-			this.chooseBackUpPriorityLabel.TabIndex = 12;
-			this.chooseBackUpPriorityLabel.Text = "Process priority:";
 			// 
 			// afterEndOfBackupGroupBox
 			// 
@@ -119,14 +99,10 @@ namespace BUtil.Configurator.BackupUiMaster.Controls
 			this.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.Controls.Add(this.encryptionUserControl);
 			this.Controls.Add(this.afterEndOfBackupGroupBox);
-			this.Controls.Add(this.backupPriorityComboBox);
-			this.Controls.Add(this.chooseBackUpPriorityLabel);
 			this.MinimumSize = new System.Drawing.Size(517, 243);
 			this.Name = "SettingsUserControl";
 			this.Size = new System.Drawing.Size(519, 245);
 			this.Title = "Settings";
-			this.Controls.SetChildIndex(this.chooseBackUpPriorityLabel, 0);
-			this.Controls.SetChildIndex(this.backupPriorityComboBox, 0);
 			this.Controls.SetChildIndex(this.afterEndOfBackupGroupBox, 0);
 			this.Controls.SetChildIndex(this.encryptionUserControl, 0);
 			this.afterEndOfBackupGroupBox.ResumeLayout(false);
@@ -139,7 +115,5 @@ namespace BUtil.Configurator.BackupUiMaster.Controls
 		private System.Windows.Forms.CheckBox hearBeepsCheckBox;
 		private System.Windows.Forms.ComboBox jobAfterOkBackupComboBox;
 		private System.Windows.Forms.GroupBox afterEndOfBackupGroupBox;
-		private System.Windows.Forms.Label chooseBackUpPriorityLabel;
-		private System.Windows.Forms.ComboBox backupPriorityComboBox;
 	}
 }
