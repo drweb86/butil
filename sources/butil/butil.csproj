@@ -122,7 +122,7 @@
     <Compile Update="BackupUi\Controls\BackupProgressUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="BackupUi\Controls\BackUserControl.cs" />
+    <Compile Update="BackupUi\Controls\TitledBackUserControl.cs" />
     <Compile Update="BackupUi\Controls\SettingsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

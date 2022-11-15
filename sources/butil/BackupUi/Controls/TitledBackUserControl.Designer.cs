@@ -1,7 +1,7 @@
 ﻿
 namespace BUtil.BackupUiMaster.Controls
 {
-	partial class BackUserControl
+	partial class TitledBackUserControl
 	{
 		/// <summary>
 		/// Designer variable used to keep track of non-visual components.

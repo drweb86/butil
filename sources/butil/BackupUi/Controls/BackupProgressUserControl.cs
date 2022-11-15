@@ -10,7 +10,7 @@ namespace BUtil.BackupUiMaster.Controls
 	/// <summary>
 	/// Shows state of backup process
 	/// </summary>
-	internal sealed partial class BackupProgressUserControl : BackUserControl
+	internal sealed partial class BackupProgressUserControl : TitledBackUserControl
 	{
 		DateTime _start = DateTime.Now;
 		

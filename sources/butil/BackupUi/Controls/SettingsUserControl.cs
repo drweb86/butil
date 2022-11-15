@@ -5,7 +5,7 @@ using BUtil.Core.Options;
 using BUtil.Core.Misc;
 using BUtil.Core.Logs;
 
-using BackUserControl = BUtil.BackupUiMaster.Controls.BackUserControl;
+using TitledBackUserControl = BUtil.BackupUiMaster.Controls.TitledBackUserControl;
 using BUtil.Configurator.Localization;
 
 namespace BUtil.Configurator.BackupUiMaster.Controls
@@ -13,7 +13,7 @@ namespace BUtil.Configurator.BackupUiMaster.Controls
     /// <summary>
     /// Settings that can be adjusted just before backup
     /// </summary>
-    internal sealed partial class SettingsUserControl : BackUserControl
+    internal sealed partial class SettingsUserControl : TitledBackUserControl
 	{
 		ProgramOptions _options;
 		

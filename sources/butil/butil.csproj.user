@@ -17,7 +17,7 @@
     <Compile Update="Configurator\AddBackupTaskWizard\AddBackupTaskWizardForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="BackupUi\Controls\BackUserControl.cs">
+    <Compile Update="BackupUi\Controls\TitledBackUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="BackupUi\Forms\BackupMasterForm.cs">
