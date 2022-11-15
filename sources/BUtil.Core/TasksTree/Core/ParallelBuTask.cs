@@ -30,29 +30,8 @@ namespace BUtil.Core.TasksTree.Core
                 return;
             }
 
-            ThreadPool.SetMinThreads(ProgramOptions.Parallel, ProgramOptions.Parallel);
-            ThreadPool.SetMaxThreads(ProgramOptions.Parallel, ProgramOptions.Parallel);
-
-            using var resetEvent = new ManualResetEvent(false);
-            int toProcess = children.Count;
-            foreach (var child in children)
-            {
-                ThreadPool.QueueUserWorkItem(a =>
-                {
-                    try
-                    {
-                        if (!token.IsCancellationRequested)
-                            child.Execute(token);
-                    }
-                    finally
-                    {
-                        if (Interlocked.Decrement(ref toProcess) == 0)
-                            resetEvent.Set();
-                    }
-                });
-            }
-
-            resetEvent.WaitOne();
+            var executer = new ParallelExecuter(children, token, ProgramOptions.Parallel);
+            executer.Wait();
             IsSuccess = Children.All(x => x.IsSuccess);
         }
 

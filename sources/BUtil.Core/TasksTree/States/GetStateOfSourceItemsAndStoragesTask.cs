@@ -3,6 +3,8 @@ using BUtil.Core.Logs;
 using BUtil.Core.Options;
 using BUtil.Core.TasksTree.Core;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Threading;
 
 namespace BUtil.Core.TasksTree.States
@@ -42,7 +44,20 @@ namespace BUtil.Core.TasksTree.States
         public override void Execute(CancellationToken token)
         {
             UpdateStatus(ProcessingStatus.InProgress);
-            base.Execute(token);
+
+            var storageTasksExecuter = new ParallelExecuter(StorageStateTasks, token, 10);
+            storageTasksExecuter.Wait();
+
+            var sourceItemGroupTasks = GetSourceItemStateTasks
+                .GroupBy(x => Directory.GetDirectoryRoot(x.SourceItem.Target))
+                .Select(x => new SequentialBuTask(new StubLog(), new BackupEvents(), string.Empty, TaskArea.File, x.ToList()))
+                .ToList();
+            var sourceItemGroupTasksExecuter = new ParallelExecuter(sourceItemGroupTasks, token, 10);
+
+            sourceItemGroupTasksExecuter.Wait();
+            storageTasksExecuter.Wait();
+
+            IsSuccess = Children.All(x => x.IsSuccess);
             UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
         }
     }

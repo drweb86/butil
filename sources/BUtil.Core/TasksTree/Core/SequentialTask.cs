@@ -8,11 +8,11 @@ using System.Threading;
 namespace BUtil.Core.TasksTree.Core
 {
 
-    public abstract class SequentialBuTask : BuTask
+    public class SequentialBuTask : BuTask
     {
         public IEnumerable<BuTask> Children { get; set; }
 
-        protected SequentialBuTask(ILog log, BackupEvents events, string title, TaskArea taskArea, IEnumerable<BuTask> children)
+        public SequentialBuTask(ILog log, BackupEvents events, string title, TaskArea taskArea, IEnumerable<BuTask> children)
             : base(log, events, title, taskArea)
         {
             Children = children;

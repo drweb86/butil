@@ -86,55 +86,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 		
 		void StartButtonClick(object _, EventArgs e)
 		{
-			// here some logival verification
-			/*
-			_task.Items.Clear();
-			_task.Storages.Clear();
-			_task.ExecuteBeforeBackup.Clear();
-			_task.ExecuteAfterBackup.Clear();
-			
-			foreach (ListViewItem item in tasksListView.CheckedItems)
-			{
-				if (item.Tag is SourceItem)
-				{
-					_task.Items.Add((SourceItem) item.Tag);
-				}
-				else if (item.Tag is StorageSettings)
-				{
-					_task.Storages.Add((StorageSettings) item.Tag);
-				}
-				else if (item.Tag is ExecuteProgramTaskInfo)
-				{
-					int groupIndex = tasksListView.Groups.IndexOf(item.Group);
-					if (groupIndex == (int)GroupEnum.BeforeBackupChain)
-					{
-						_task.ExecuteBeforeBackup.Add((ExecuteProgramTaskInfo) item.Tag);
-					}
-					else if (groupIndex == (int)GroupEnum.AfterBackupChain)
-					{
-						_task.ExecuteAfterBackup.Add((ExecuteProgramTaskInfo) item.Tag);
-					}
-					else
-					{
-						throw new NotImplementedException();
-					}
-				}
-			}
-			
-			if (!_task.Items.Any())
-			{
-				Messages.ShowInformationBox(Resources.PleaseCheckItemsToCompress);
-				return;
-			}
-			
-			if (_task.Storages.Count < 1)
-			{
-				Messages.ShowInformationBox(Resources.PleaseCheckStoragesWhereToCopyBackupImage);
-				return;
-			} */
-
-			// _controller.PowerTask = task;
-			// _controller.HearSoundWhenBackupCompleted = beepWhenCompleted;
 			
 			// performing changes in UI
 			_backupProgressUserControl = new BackupProgressUserControl();
@@ -154,10 +105,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 			_trayModeActivated = true;
 			SwapToTray(true);
 			
-			// starting machinery
 			_backupInProgress = true;
-			// _controller.PrepareBackup();
-
 			_backgroundWorker.RunWorkerAsync();
 		}
 
@@ -186,7 +134,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             _backupEvents.OnDuringExecutionTasksAdded += OnDuringExecutionTasksAdded;
             _rootTask = _strategy.GetTask(_backupEvents);
             
-            settingsUserControl.SetSettingsToUi(_programOptions, PowerTask.None, _backupTask, false);
+            settingsUserControl.SetSettingsToUi(PowerTask.None, _backupTask, false);
 
             var allTasks = _rootTask.GetChildren();
             foreach (var task in allTasks)
