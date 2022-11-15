@@ -4,11 +4,14 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using BUtil.Configurator.Localization;
+using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
 using BUtil.Core.State;
+using BUtil.Core.Storages;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BUtil.RestorationMaster
@@ -199,12 +202,12 @@ namespace BUtil.RestorationMaster
                 builder.AppendLine(string.Format(BUtil.Configurator.Localization.Resources.SourceItemChanges, sourceItemChanges.SourceItem.Target));
 
                 sourceItemChanges.UpdatedFiles
-                    .OrderBy(x => x.StorageRelativeFileName)
+                    .OrderBy(x => x.FileState.FileName)
                     .ToList()
                     .ForEach(updateFile => builder.AppendLine(string.Format(BUtil.Configurator.Localization.Resources.UpdatedFile, updateFile.FileState.FileName)));
 
                 sourceItemChanges.CreatedFiles
-                    .OrderBy(x => x.StorageRelativeFileName)
+                    .OrderBy(x => x.FileState.FileName)
                     .ToList()
                     .ForEach(updateFile => builder.AppendLine(string.Format(BUtil.Configurator.Localization.Resources.AddedFile, updateFile.FileState.FileName)));
 
@@ -257,23 +260,23 @@ namespace BUtil.RestorationMaster
             if (!storageFiles.Any())
                 return;
 
+            var log = new StubLog();
+            IStorageSettings storageSettings = new HddStorageSettings
+            { 
+                Name = string.Empty, 
+                DestinationFolder = _backupLocation
+            };
+
+            var service = new IncrementalBackupFileService(log, storageSettings, ProgramOptionsManager.Default);
+            var cancellationTokenSource = new CancellationTokenSource();
+            var token = cancellationTokenSource.Token;
             using var form = new ProgressForm(reportProgress =>
             {
                 foreach (var storageFile in storageFiles)
                 {
                     int percent = ((storageFiles.IndexOf(storageFile) + 1) * 100) / storageFiles.Count;
                     reportProgress(percent);
-
-                    var sourceFile = Path.Combine(_backupLocation, storageFile.StorageRelativeFileName);
-
-                    var sourceItemDiectory = SourceItemHelper.GetSourceItemDirectory(sourceItem);
-                    var sourceItemRelativeFileName = SourceItemHelper.GetSourceItemRelativeFileName(sourceItemDiectory, storageFile.FileState);
-                    var destinationFileName = Path.Combine(destinationFolder, sourceItemRelativeFileName);
-                    var destinationDir = Path.GetDirectoryName(destinationFileName);
-                    if (!Directory.Exists(destinationDir))
-                        Directory.CreateDirectory(destinationDir);
-
-                    File.Copy(sourceFile, destinationFileName, true);
+                    service.Download(token, sourceItem, storageFile, destinationFolder);
                 }
             });
             form.ShowDialog();

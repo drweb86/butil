@@ -34,6 +34,15 @@ namespace BUtil.Core.Misc
                 sourceItemRelativeFileName);
         }
 
+        public static string GetCompressedStorageRelativeFileName(VersionState versionState)
+        {
+            var readableDate = versionState.BackupDateUtc.ToString("yyyy-MM-dd-T-HH-mm-ss");
+
+            return Path.Combine(
+                readableDate,
+                $"{Guid.NewGuid()}.7z");
+        }
+
         public static string GetUnencryptedUncompressedSourceItemTargetFriendlyName(SourceItem sourceItem)
         {
             var lastPart = Path.GetFileName(sourceItem.Target);

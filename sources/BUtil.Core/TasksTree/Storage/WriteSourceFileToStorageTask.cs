@@ -1,5 +1,6 @@
 ﻿using BUtil.Core.Events;
 using BUtil.Core.Logs;
+using BUtil.Core.Options;
 using BUtil.Core.State;
 using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.Core;
@@ -9,12 +10,19 @@ namespace BUtil.Core.TasksTree
 {
     internal class WriteSourceFileToStorageTask : BuTask
     {
+        private readonly ProgramOptions programOptions;
         private readonly StorageFile _storageFile;
         private readonly IStorageSettings _storageSettings;
 
-        public WriteSourceFileToStorageTask(ILog log, BackupEvents events, StorageFile storageFile, IStorageSettings storageSettings) : 
+        public WriteSourceFileToStorageTask(
+            ILog log,
+            BackupEvents events,
+            ProgramOptions programOptions,
+            StorageFile storageFile,
+            IStorageSettings storageSettings) : 
             base(log, events, string.Format(BUtil.Core.Localization.Resources.WriteSourceFileToStorage, storageFile.FileState.FileName, storageSettings.Name), TaskArea.File)
         {
+            this.programOptions = programOptions;
             this._storageFile = storageFile;
             this._storageSettings = storageSettings;
         }
@@ -26,12 +34,10 @@ namespace BUtil.Core.TasksTree
 
             UpdateStatus(ProcessingStatus.InProgress);
 
-            var storage = StorageFactory.Create(Log, _storageSettings);
-            var uploadResult = storage.Upload(_storageFile.FileState.FileName, _storageFile.StorageRelativeFileName);
-            _storageFile.StorageFileName = uploadResult.StorageFileName;
-            _storageFile.StorageFileNameSize = uploadResult.StorageFileNameSize;
-            UpdateStatus(ProcessingStatus.FinishedSuccesfully);
-            IsSuccess = true;
+            var service = new IncrementalBackupFileService(Log, _storageSettings, programOptions);
+            IsSuccess = service.Upload(token, _storageFile);
+            
+            UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
         }
     }
 }

@@ -8,6 +8,7 @@ namespace BUtil.Core.Storages
         string ReadAllText(string file);
         byte[] ReadAllBytes(string file);
         void Delete(string file);
+        void Download(StorageFile storageFile, string targetFileName);
         string Test();
     }
 }

@@ -9,6 +9,7 @@
         public string StorageMethod { get; set; } // TBD: Plain, XDelta, 7z
         public string StorageIntegrityMethod { get; set; }
         public string StorageIntegrityMethodInfo { get; set; }
+        public string StoragePassword { get; set; }
 
         public StorageFile() { }
 
@@ -19,7 +20,8 @@
             long storageFileNameSize,
             string storageMethod, 
             string storageIntegriyMethod,
-            string storageIntegrityMethodInfo)
+            string storageIntegrityMethodInfo,
+            string storagePassword)
         {
             FileState = fileState;
             StorageRelativeFileName = storageRelativeFileName;
@@ -28,6 +30,7 @@
             StorageMethod = storageMethod;
             StorageIntegrityMethod = storageIntegrityMethodInfo;
             StorageIntegrityMethodInfo = storageIntegriyMethod;
+            StoragePassword = storagePassword;
         }
 
         public StorageFile(FileState fileState)

@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.IO;
 using BUtil.Core.Logs;
+using BUtil.Core.State;
 
 namespace BUtil.Core.Storages
 {
@@ -67,6 +68,12 @@ namespace BUtil.Core.Storages
 
             if (File.Exists(file))
                 File.Delete(file);
+        }
+
+        public override void Download(StorageFile storageFile, string targetFileName)
+        {
+            var file = Path.Combine(Settings.DestinationFolder, storageFile.StorageRelativeFileName);
+            File.Copy(file, targetFileName, true);
         }
 
     }

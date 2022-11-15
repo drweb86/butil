@@ -22,7 +22,7 @@ namespace BUtil.Core.TasksTree
             var calculateIncrementedVersionForStorageTask = new CalculateIncrementedVersionForStorageTask(Log, Events, storageStateTask, getSourceItemStateTasks);
             childTaks.Add(calculateIncrementedVersionForStorageTask);
 
-            var writeSourceFilesToStorageTask = new WriteSourceFilesToStorageTask(log, events, calculateIncrementedVersionForStorageTask, storageStateTask.StorageSettings);
+            var writeSourceFilesToStorageTask = new WriteSourceFilesToStorageTask(log, events, task, programOptions, calculateIncrementedVersionForStorageTask, storageStateTask.StorageSettings);
             childTaks.Add(writeSourceFilesToStorageTask);
 
             var writeStateToStorageTask = new WriteStateToStorageTask(

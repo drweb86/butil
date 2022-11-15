@@ -1,4 +1,5 @@
 ﻿using BUtil.Core.Logs;
+using BUtil.Core.State;
 
 namespace BUtil.Core.Storages
 {
@@ -22,6 +23,11 @@ namespace BUtil.Core.Storages
         }
 
         public virtual void Delete(string file)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public virtual void Download(StorageFile storageFile, string targetFileName)
         {
             throw new System.NotImplementedException();
         }

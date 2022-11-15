@@ -7,13 +7,11 @@ Password protection is not reworked.
 
 ## New Features
 - New section for setting up incremental model options.
-- Incremental backup without compression and encryption.
-- Incremental backup restoration without compression and encryption.
-- Tools were renamed.
-- Update to .Net 7
+- Incremental backup.
 - Support for Wildcard exclusions for Folder Source Items based on Microsoft https://learn.microsoft.com/en-us/dotnet/core/extensions/file-globbing#pattern-formats
 
 ## Changes
+- Update to .Net 7
 - Setup is x32/x64
 - 7-zip is not bundled with app
 - Setup demands 7-zip to be installed in order to continue
