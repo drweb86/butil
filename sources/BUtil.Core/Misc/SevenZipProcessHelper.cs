@@ -1,5 +1,6 @@
 ﻿using BUtil.Core.Logs;
 using System.Diagnostics;
+using System.IO;
 using System.Threading;
 
 namespace BUtil.Core.Misc
@@ -72,14 +73,15 @@ namespace BUtil.Core.Misc
                     return false;
 
                 string arguments;
+                var compressionLevel = GetCompressionLevel(Path.GetExtension(file).ToLowerInvariant());
                 if (string.IsNullOrWhiteSpace(password))
                 {
-                    arguments = $@"a -y ""{archive}"" ""{file}"" -t7z -m0=lzma2 -ms=on -mx=9";
+                    arguments = $@"a -y ""{archive}"" ""{file}"" -t7z -m0=lzma2 -ms=on -mx={compressionLevel}";
                     log.WriteLine(LoggingEvent.Debug, $"Compressing \"{file}\" to \"{archive}\"");
                 }
                 else
                 {
-                    arguments = $@"a -y ""{archive}"" ""{file}"" -p""{password}"" -t7z -m0=lzma2 -ms=on -mx=9 -mhe=on";
+                    arguments = $@"a -y ""{archive}"" ""{file}"" -p""{password}"" -t7z -m0=lzma2 -ms=on -mx={compressionLevel} -mhe=on";
                     log.WriteLine(LoggingEvent.Debug, $"Compressing \"{file}\" to \"{archive}\" with password");
                 }
 
@@ -100,6 +102,36 @@ namespace BUtil.Core.Misc
                 if (isSuccess)
                     log.WriteLine(LoggingEvent.Error, "Pack failed.");
                 return isSuccess;
+            }
+        }
+
+        private static int GetCompressionLevel(string extension)
+        {
+            switch (extension)
+            {
+                case ".mp4":
+                case ".mov":
+                case ".avi":
+                case ".flv":
+                case ".mkv":
+                    return 0;
+
+                case ".mp3":
+                case ".ogg":
+                    return 0;
+
+                case ".rar":
+                case ".7z":
+                case ".zip":
+                    return 0;
+
+                case ".docx":
+                case ".pptx":
+                case ".xlsx":
+                    return 0;
+
+                default:
+                    return 9;
             }
         }
     }
