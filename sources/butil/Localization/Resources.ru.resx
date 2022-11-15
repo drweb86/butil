@@ -88,21 +88,6 @@
   <data name="OtherOptions" xml:space="preserve">
     <value>Прочие настройки</value>
   </data>
-  <data name="AboveNormal" xml:space="preserve">
-    <value>Выше среднего</value>
-  </data>
-  <data name="Normal" xml:space="preserve">
-    <value>Средний</value>
-  </data>
-  <data name="BelowNormal" xml:space="preserve">
-    <value>Ниже среднего</value>
-  </data>
-  <data name="Low" xml:space="preserve">
-    <value>Низкий</value>
-  </data>
-  <data name="ChooseBackupPriority" xml:space="preserve">
-    <value>Выберите приоритет:</value>
-  </data>
   <data name="DefaultIs60" xml:space="preserve">
     <value>% (по умолчанию 60)</value>
   </data>
@@ -183,9 +168,6 @@
   <data name="Close" xml:space="preserve">
     <value>Закрыть</value>
   </data>
-  <data name="ProcessPriority" xml:space="preserve">
-    <value>Приоритет обработки:</value>
-  </data>
   <data name="WellcomeToBackupWizard" xml:space="preserve">
     <value>Добро пожаловать в Мастер резервного копирования!</value>
   </data>
@@ -230,9 +212,6 @@
   </data>
   <data name="CouldNotContinueWorkAfterGettingOptionsBecause0" xml:space="preserve">
     <value>Не могу продолжать работать с новыми настройками, так как:</value>
-  </data>
-  <data name="TheBestChoiceIsLowInAlmostAllCases" xml:space="preserve">
-    <value>Обычно, наиболее комфортен вариант "Низкий"</value>
   </data>
   <data name="CannotExecuteRequiredManipulationsWithServerN" xml:space="preserve">
     <value>Не могу выполнить требуемые манипуляции с службой</value>
@@ -513,8 +492,8 @@
   <data name="PleaseCheckStoragesWhereToCopyBackupImage" xml:space="preserve">
     <value>Выберите по меньшей мере одно хранилище, куда будет помещен образ РК!</value>
   </data>
-  <data name="AmountOfStoragesToProcessSynchronously" xml:space="preserve">
-    <value>Количество хранилищ, которые обрабатывать параллельно:</value>
+  <data name="ParallelDegree" xml:space="preserve">
+    <value>Степень распараллеливания</value>
   </data>
   <data name="Reboot" xml:space="preserve">
     <value>Перезагрузка</value>

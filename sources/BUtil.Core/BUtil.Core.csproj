@@ -50,8 +50,11 @@
     <FileAlignment>4096</FileAlignment>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Jobs\**" />
     <Compile Remove="Synchronization\**" />
+    <EmbeddedResource Remove="Jobs\**" />
     <EmbeddedResource Remove="Synchronization\**" />
+    <None Remove="Jobs\**" />
     <None Remove="Synchronization\**" />
   </ItemGroup>
   <ItemGroup>
@@ -113,9 +116,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Jobs\" />
-  </ItemGroup>
   <PropertyGroup>
     <PreBuildEvent>
 		cd "$(SolutionDir)..\Output"
@@ -127,6 +127,9 @@
 		rem Copying of data folder
 		md "$(SolutionDir)..\Output\BUtil\data"
 		xcopy "$(SolutionDir)..\data" "$(SolutionDir)..\Output\BUtil\data" /Y
+
+		rem Copy MS System Globbing
+		xcopy "%userprofile%\.nuget\packages\microsoft.extensions.filesystemglobbing\7.0.0\lib\net7.0" "$(SolutionDir)..\Output\BUtil\bin" /Y
 
 	</PreBuildEvent>
   </PropertyGroup>

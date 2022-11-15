@@ -25,7 +25,7 @@ namespace BUtil.Core.TasksTree.IncrementalModel
 
             foreach (var executeBeforeBackup in backupTask.ExecuteBeforeBackup)
             {
-                tasks.Add(new ExecuteProgramTask(log, backupEvents, executeBeforeBackup, programOptions.ProcessPriority));
+                tasks.Add(new ExecuteProgramTask(log, backupEvents, executeBeforeBackup));
             }
 
             var readSatesTask = new GetStateOfSourceItemsAndStoragesTask(Log, Events, backupTask, programOptions);
@@ -38,7 +38,7 @@ namespace BUtil.Core.TasksTree.IncrementalModel
 
             foreach (var executeAfterBackup in backupTask.ExecuteAfterBackup)
             {
-                tasks.Add(new ExecuteProgramTask(log, backupEvents, executeAfterBackup, programOptions.ProcessPriority));
+                tasks.Add(new ExecuteProgramTask(log, backupEvents, executeAfterBackup));
             }
             Children = tasks;
             _incrementalBackupModelOptions = incrementalBackupModelOptions;

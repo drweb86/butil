@@ -14,10 +14,8 @@ BUtil is a powerfull set of tools for creating backups of documents and other da
 - It can store backups on multiple HDD, flash, remote FTP servers and shared folders over the network;
 - Simple configuring takes less time and goes easily and with comfort;
 - AES-256 7-zip encyption makes your data securely protected;
-- It includes console md5 signer tool;
 - Multiple backup tasks are supported;
 - Html format is uded for file logs. It takes less time on reviewing of it;
-- Scheduler is present;
 - Two modes of creating a backup exists: manual from UI and console tool and with scheduling possibilities;
 - .Net based application;
 - [Unstructured Data repository model](./help/Other/Glossary.md)
@@ -47,11 +45,7 @@ and many more. See [all topics](../../wiki) .
 ### Software
 
 - Microsoft Windows OS x64 7SP1+;
-- Microsoft .Net Desktop Runtime 6 is required. To download it you can open the following [url](https://dotnet.microsoft.com/en-us/download/dotnet/6.0), see section **.NET Desktop Runtime 6.0.10**
-
-To function in full mode also required:
-- NTFS file system on system partition
-- Windows OS should support EFS
+- Microsoft .Net Desktop Runtime 6 is required. To download it you can open the following [url](https://dotnet.microsoft.com/en-us/download/dotnet/7.0), see section **.NET Desktop Runtime 7.0.10**
 
 ### Hardware:
 

@@ -13,7 +13,6 @@ namespace BUtil.Core.TasksTree.States
     internal class WriteStateToStorageTask : BuTask
     {
         private readonly BackupTask task;
-        private readonly ProgramOptions programOptions;
         private readonly CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask;
         private readonly IStorageSettings _storageSettings;
         private readonly WriteSourceFilesToStorageTask _writeSourceFilesToStorageTask;
@@ -24,14 +23,12 @@ namespace BUtil.Core.TasksTree.States
             ILog log,
             BackupEvents events,
             BackupTask task,
-            ProgramOptions programOptions,
             CalculateIncrementedVersionForStorageTask getIncrementedVersionTask,
             IStorageSettings storageSettings, 
             Storage.WriteSourceFilesToStorageTask writeSourceFilesToStorageTask)
             : base(log, events, string.Format(BUtil.Core.Localization.Resources.WriteStateToStorage, storageSettings.Name), TaskArea.Hdd)
         {
             this.task = task;
-            this.programOptions = programOptions;
             _getIncrementedVersionTask = getIncrementedVersionTask;
             _storageSettings = storageSettings;
             _writeSourceFilesToStorageTask = writeSourceFilesToStorageTask;
@@ -60,7 +57,7 @@ namespace BUtil.Core.TasksTree.States
                 return;
             }
 
-            var service = new IncrementalBackupStateService(Log, _storageSettings, task, programOptions);
+            var service = new IncrementalBackupStateService(Log, _storageSettings, task);
             UploadedVersionState = service.Write(token, _getIncrementedVersionTask.IncrementalBackupState);
 
             IsSuccess = UploadedVersionState != null;

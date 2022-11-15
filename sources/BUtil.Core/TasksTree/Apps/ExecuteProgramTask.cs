@@ -12,13 +12,11 @@ namespace BUtil.Core.TasksTree.Apps
     internal class ExecuteProgramTask : BuTask
     {
         private readonly ExecuteProgramTaskInfo _executeProgramTaskInfo;
-        private readonly ProcessPriorityClass _processPriority;
 
-        public ExecuteProgramTask(ILog log, BackupEvents events, ExecuteProgramTaskInfo executeProgramTaskInfo, ProcessPriorityClass processPriority)
+        public ExecuteProgramTask(ILog log, BackupEvents events, ExecuteProgramTaskInfo executeProgramTaskInfo)
             : base(log, events, executeProgramTaskInfo.Name, TaskArea.ProgramInRunBeforeAfterBackupChain)
         {
             _executeProgramTaskInfo = executeProgramTaskInfo;
-            _processPriority = processPriority;
         }
 
         public override void Execute(CancellationToken token)
@@ -26,12 +24,12 @@ namespace BUtil.Core.TasksTree.Apps
             if (token.IsCancellationRequested)
                 return;
 
-            LogDebug($"Program: {_executeProgramTaskInfo.Program} at working directort {_executeProgramTaskInfo.WorkingDirectory} with {_processPriority} priority");
+            LogDebug($"Program: {_executeProgramTaskInfo.Program} at working directort {_executeProgramTaskInfo.WorkingDirectory}");
             UpdateStatus(ProcessingStatus.InProgress);
             try
             {
                 ProcessHelper.Execute(_executeProgramTaskInfo.Program, _executeProgramTaskInfo.Arguments, _executeProgramTaskInfo.WorkingDirectory,
-                    _processPriority, token,
+                    ProcessPriorityClass.Idle, token,
                     out var stdOutput, out var error, out var returnCode);
 
                 LogDebug($"Exit code: {returnCode}");

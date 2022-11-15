@@ -1,4 +1,5 @@
-﻿using BUtil.Core.Options;
+﻿using BUtil.Core.BackupModels;
+using BUtil.Core.Options;
 using BUtil.Core.State;
 using System;
 using System.IO;

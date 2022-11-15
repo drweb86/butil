@@ -2,6 +2,6 @@
 {
     public static class StorageIntegrityMethod
     {
-        public const string Sha256 = "SHA256";
+        public const string Sha512 = "SHA512";
     }
 }

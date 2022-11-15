@@ -186,7 +186,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             _backupEvents.OnDuringExecutionTasksAdded += OnDuringExecutionTasksAdded;
             _rootTask = _strategy.GetTask(_backupEvents);
             
-            settingsUserControl.SetSettingsToUi(_programOptions, PowerTask.None, _backupTask, false, ThreadPriority.BelowNormal);
+            settingsUserControl.SetSettingsToUi(_programOptions, PowerTask.None, _backupTask, false);
 
             var allTasks = _rootTask.GetChildren();
             foreach (var task in allTasks)

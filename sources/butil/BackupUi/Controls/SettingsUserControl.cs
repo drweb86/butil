@@ -30,16 +30,11 @@ namespace BUtil.Configurator.BackupUiMaster.Controls
 		public override void ApplyLocalization()
 		{
 			encryptionUserControl.ApplyLocalization();
-			int previousIndex = backupPriorityComboBox.SelectedIndex;
-			backupPriorityComboBox.Items.Clear();
-            backupPriorityComboBox.Items.AddRange(new [] { Resources.Low, Resources.BelowNormal, Resources.Normal, Resources.AboveNormal });
-            backupPriorityComboBox.SelectedIndex = previousIndex;
             
-			chooseBackUpPriorityLabel.Text = Resources.ProcessPriority;
 			hearBeepsCheckBox.Text = Resources.BeepSeveralTimes;
 			afterEndOfBackupGroupBox.Text = Resources.AfterCompletionOfBackup;
 			
-			previousIndex = jobAfterOkBackupComboBox.SelectedIndex;
+			var previousIndex = jobAfterOkBackupComboBox.SelectedIndex;
 			jobAfterOkBackupComboBox.Items.Clear();
 			jobAfterOkBackupComboBox.Items.AddRange(new [] { Resources.ShutdownPc, Resources.LogOff, Resources.Reboot, Resources.DoNothing});
 			jobAfterOkBackupComboBox.SelectedIndex = previousIndex;
@@ -49,24 +44,20 @@ namespace BUtil.Configurator.BackupUiMaster.Controls
 		
 		#endregion
 		
-		public void SetSettingsToUi(ProgramOptions options, PowerTask task, BackupTask backupTask, bool beepWhenFinished, ThreadPriority priority)
+		public void SetSettingsToUi(ProgramOptions options, PowerTask task, BackupTask backupTask, bool beepWhenFinished)
 		{
 			_options = options;
-			_options.Priority = priority;
 			
 			encryptionUserControl.UpdateModel(backupTask);
 			
-			backupPriorityComboBox.SelectedIndex = (int)_options.Priority;
 			jobAfterOkBackupComboBox.SelectedIndex = (int)task;
             hearBeepsCheckBox.Checked = beepWhenFinished;
-            backupPriorityComboBox.SelectedIndex = (int)_options.Priority;
 		}
 		
 		public void GetSettingsFromUi(out PowerTask task, out bool beepWhenFinished)
 		{
 			encryptionUserControl.GetOptionsFromUi();
 			task = (PowerTask)jobAfterOkBackupComboBox.SelectedIndex;
-            _options.Priority = (ThreadPriority)backupPriorityComboBox.SelectedIndex;
             beepWhenFinished = hearBeepsCheckBox.Checked;
 		}
 		

@@ -117,15 +117,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Above normal.
-        /// </summary>
-        internal static string AboveNormal {
-            get {
-                return ResourceManager.GetString("AboveNormal", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Actions.
         /// </summary>
         internal static string Actions {
@@ -215,15 +206,6 @@ namespace BUtil.Configurator.Localization {
         internal static string AfterCompletionOfBackup {
             get {
                 return ResourceManager.GetString("AfterCompletionOfBackup", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Amount of storages to process synchronously:.
-        /// </summary>
-        internal static string AmountOfStoragesToProcessSynchronously {
-            get {
-                return ResourceManager.GetString("AmountOfStoragesToProcessSynchronously", resourceCulture);
             }
         }
         
@@ -365,15 +347,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Below normal.
-        /// </summary>
-        internal static string BelowNormal {
-            get {
-                return ResourceManager.GetString("BelowNormal", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Browse....
         /// </summary>
         internal static string Browse {
@@ -504,15 +477,6 @@ namespace BUtil.Configurator.Localization {
         internal static string ChooseBackupModel {
             get {
                 return ResourceManager.GetString("ChooseBackupModel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Choose backup priority:.
-        /// </summary>
-        internal static string ChooseBackupPriority {
-            get {
-                return ResourceManager.GetString("ChooseBackupPriority", resourceCulture);
             }
         }
         
@@ -1179,15 +1143,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Low.
-        /// </summary>
-        internal static string Low {
-            get {
-                return ResourceManager.GetString("Low", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Minute:.
         /// </summary>
         internal static string Minute {
@@ -1356,15 +1311,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Normal.
-        /// </summary>
-        internal static string Normal {
-            get {
-                return ResourceManager.GetString("Normal", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to OK.
         /// </summary>
         internal static string Ok {
@@ -1424,6 +1370,15 @@ namespace BUtil.Configurator.Localization {
         internal static string OtherOptions {
             get {
                 return ResourceManager.GetString("OtherOptions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parallelization degree.
+        /// </summary>
+        internal static string ParallelDegree {
+            get {
+                return ResourceManager.GetString("ParallelDegree", resourceCulture);
             }
         }
         
@@ -1514,15 +1469,6 @@ namespace BUtil.Configurator.Localization {
         internal static string ProcessingState {
             get {
                 return ResourceManager.GetString("ProcessingState", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Process priority:.
-        /// </summary>
-        internal static string ProcessPriority {
-            get {
-                return ResourceManager.GetString("ProcessPriority", resourceCulture);
             }
         }
         
@@ -1886,15 +1832,6 @@ namespace BUtil.Configurator.Localization {
         internal static string Test {
             get {
                 return ResourceManager.GetString("Test", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The best choice is &quot;low&quot; in almost all cases.
-        /// </summary>
-        internal static string TheBestChoiceIsLowInAlmostAllCases {
-            get {
-                return ResourceManager.GetString("TheBestChoiceIsLowInAlmostAllCases", resourceCulture);
             }
         }
         

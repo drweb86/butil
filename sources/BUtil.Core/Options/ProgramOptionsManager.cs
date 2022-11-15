@@ -32,7 +32,6 @@ namespace BUtil.Core.Options
 			{
 				return new ProgramOptions
 				{
-					Priority = System.Threading.ThreadPriority.BelowNormal,
 					LogsFolder = Directories.LogsFolder,
 					PuttingOffBackupCpuLoading = Constants.DefaultCpuLoading,
 					Parallel = Environment.ProcessorCount

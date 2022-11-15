@@ -3,7 +3,6 @@ using BUtil.Core.Logs;
 using BUtil.Core.Options;
 using BUtil.Core.TasksTree.Core;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 
 namespace BUtil.Core.TasksTree.States
@@ -30,7 +29,7 @@ namespace BUtil.Core.TasksTree.States
             var storageStateTasks = new List<GetStateOfStorageTask>();
             foreach (var storage in backupTask.Storages)
             {
-                var getStorageStateTask = new GetStateOfStorageTask(Log, Events, storage, backupTask, programOptions);
+                var getStorageStateTask = new GetStateOfStorageTask(Log, Events, storage, backupTask);
                 storageStateTasks.Add(getStorageStateTask);
                 childTasks.Add(getStorageStateTask);
             }

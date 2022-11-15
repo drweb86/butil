@@ -187,7 +187,6 @@ namespace BUtil.Core.Options
 				addTextNode(document, scheduleApplicationNode, "PuttingOffBackupCpuLoading", options.PuttingOffBackupCpuLoading.ToString());
 				
 				addTextNode(document, performanceNode, "Parallel", options.Parallel.ToString());
-				addTextNode(document, performanceNode, "ProcessingPriority", options.Priority.ToString());
 
 				addTextNode(document, logsNode, "Location", options.LogsFolder);
 				
@@ -218,8 +217,6 @@ namespace BUtil.Core.Options
 					document.Load(Files.ProfileFile);
 					
 					options.Parallel = readNode(document, "/Settings/Core/Performance/Parallel", 1, 99999, Environment.ProcessorCount);
-					string priority = readNode(document, "/Settings/Core/Performance/ProcessingPriority", ThreadPriority.BelowNormal.ToString());
-					options.Priority =  (ThreadPriority)ThreadPriorityLevel.Parse(typeof(ThreadPriority), priority);
 
 					options.LogsFolder = readNode(document, "/Settings/Core/Logging/Location", Directories.LogsFolder);
 					

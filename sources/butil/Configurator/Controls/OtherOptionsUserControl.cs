@@ -12,57 +12,31 @@ namespace BUtil.Configurator.Controls
 		public OtherOptionsUserControl()
 		{
 			InitializeComponent();
-			amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Minimum = 1;
-			amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Maximum = Environment.ProcessorCount;
-			amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Value = Environment.ProcessorCount;
+			_parallelNumericUpDown.Minimum = 1;
+			_parallelNumericUpDown.Maximum = Environment.ProcessorCount;
+			_parallelNumericUpDown.Value = Environment.ProcessorCount;
 		}
 		
 		#region Overrides
 		
 		public override void ApplyLocalization() 
 		{
-			int priorityIndex = priorityComboBox.SelectedIndex;
-			priorityComboBox.Items.Clear();
-            priorityComboBox.Items.Add(Resources.Low);
-            priorityComboBox.Items.Add(Resources.BelowNormal);
-            priorityComboBox.Items.Add(Resources.Normal);
-            priorityComboBox.Items.Add(Resources.AboveNormal);
-            chooseBackUpPriorityLabel.Text = Resources.ChooseBackupPriority;
-            SetHintForControl(priorityComboBox, Resources.TheBestChoiceIsLowInAlmostAllCases);
             SetHintForControl(cpuLoadingNumericUpDown, Resources.DefaultIs60);
-            if (priorityIndex < 0) 
-            {
-            	priorityIndex = (int)System.Threading.ThreadPriority.BelowNormal;
-            }
-			priorityComboBox.SelectedIndex = priorityIndex;
-			priorityComboBox.Text = priorityComboBox.Items[priorityIndex] as string;
-			priorityComboBox.SelectedItem = priorityComboBox.Items[priorityIndex];
-
-			priorityComboBox.Update();
             putOffBackupTillLabel.Text = Resources.PutOffMakingBackupTillProcessorSLoadingWillBeLessThen;
-            amountOfStoragesToProcessSynchronouslyLabel.Text = Resources.AmountOfStoragesToProcessSynchronously;
+            _parallelLabel.Text = Resources.ParallelDegree;
 		}
 	
 		public override void SetOptionsToUi(object settings)
 		{
             _programOptions = (ProgramOptions)settings;
-			priorityComboBox.SelectedIndex = (int)_programOptions.Priority;
-            
-			// performing additional checks for UI
-			if (priorityComboBox.SelectedIndex < 0)
-			{
-				priorityComboBox.SelectedIndex = (int)System.Threading.ThreadPriority.BelowNormal;
-			}
-
 			cpuLoadingNumericUpDown.Value = _programOptions.PuttingOffBackupCpuLoading;
-			amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Value = _programOptions.Parallel;
+			_parallelNumericUpDown.Value = _programOptions.Parallel;
 		}
 
 		public override void GetOptionsFromUi()
 		{
-			_programOptions.Priority = (System.Threading.ThreadPriority)priorityComboBox.SelectedIndex;
 			_programOptions.PuttingOffBackupCpuLoading = Convert.ToByte(cpuLoadingNumericUpDown.Value);
-			_programOptions.Parallel = Convert.ToInt32(amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Value);
+			_programOptions.Parallel = Convert.ToInt32(_parallelNumericUpDown.Value);
 		}
 
 		#endregion

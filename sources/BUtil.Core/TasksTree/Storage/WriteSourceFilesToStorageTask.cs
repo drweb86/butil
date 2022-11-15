@@ -15,7 +15,6 @@ namespace BUtil.Core.TasksTree.Storage
     internal class WriteSourceFilesToStorageTask : ParallelBuTask
     {
         private readonly BackupTask task;
-        private readonly ProgramOptions programOptions;
         private CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask;
         private IStorageSettings _storageSettings;
 
@@ -28,7 +27,6 @@ namespace BUtil.Core.TasksTree.Storage
             : base(log, events, string.Format(BUtil.Core.Localization.Resources.WriteSourceFilesToStorage, storageSettings.Name), TaskArea.Hdd, programOptions, null)
         {
             this.task = task;
-            this.programOptions = programOptions;
             _getIncrementedVersionTask = getIncrementedVersionTask;
             _storageSettings = storageSettings;
         }
@@ -68,12 +66,10 @@ namespace BUtil.Core.TasksTree.Storage
 
                         x.StorageRelativeFileName = storageRelativeFileName;
                         x.StorageMethod = GetStorageMethod();
-                        x.StorageIntegrityMethod = StorageIntegrityMethod.Sha256;
-                        x.StorageIntegrityMethodInfo = x.FileState.Sha512;
                         return x;
                     })
                     .Select(x => new WriteSourceFileToStorageTask(
-                        Log, Events, programOptions, x, _storageSettings))
+                        Log, Events, x, _storageSettings))
                     .ToList();
                 childTasks.AddRange(copyTasks);
             }

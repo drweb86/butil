@@ -87,7 +87,7 @@ namespace BUtil.RestorationMaster
 				Password = _passwordTextBox.Text, 
 				Model = new IncrementalBackupModelOptions()
 			};
-			var service = new IncrementalBackupStateService(log, storageSettings, task, ProgramOptionsManager.Default);
+			var service = new IncrementalBackupStateService(log, storageSettings, task);
 			var cancellationTokenSource = new CancellationTokenSource();
 			var cancellationToken = cancellationTokenSource.Token;
 			if (!service.TryRead(cancellationToken, out var state))

@@ -4,8 +4,6 @@ using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
 using BUtil.Core.Storages;
-using Microsoft.VisualBasic.Logging;
-using System;
 using System.IO;
 using System.Text.Json;
 using System.Threading;
@@ -17,14 +15,12 @@ namespace BUtil.Core.State
         private readonly ILog log;
         private readonly IStorageSettings storageSettings;
         private readonly BackupTask task;
-        private readonly ProgramOptions programOptions;
 
-        public IncrementalBackupStateService(ILog log, IStorageSettings storageSettings, BackupTask task, ProgramOptions programOptions)
+        public IncrementalBackupStateService(ILog log, IStorageSettings storageSettings, BackupTask task)
         {
             this.log = log;
             this.storageSettings = storageSettings;
             this.task = task;
-            this.programOptions = programOptions;
         }
 
         public bool TryRead(CancellationToken cancellationToken, out IncrementalBackupState state)
@@ -52,7 +48,7 @@ namespace BUtil.Core.State
                 using var tempFolder = new TempFolder();
                 var archive = Path.Combine(tempFolder.Folder, "archive.7z");
                 File.WriteAllBytes(archive, bytes);
-                if (!SevenZipProcessHelper.Extract(log, archive, null, tempFolder.Folder, programOptions.ProcessPriority, cancellationToken))
+                if (!SevenZipProcessHelper.Extract(log, archive, null, tempFolder.Folder, cancellationToken))
                 {
                     log.WriteLine(LoggingEvent.Error, $"Storage \"{storageSettings.Name}\": Failed to read state");
                     state = null;
@@ -73,7 +69,7 @@ namespace BUtil.Core.State
                 using var tempFolder = new TempFolder();
                 var archive = Path.Combine(tempFolder.Folder, "archive.7z");
                 File.WriteAllBytes(archive, bytes);
-                if (!SevenZipProcessHelper.Extract(log, archive, task.Password, tempFolder.Folder, programOptions.ProcessPriority, cancellationToken))
+                if (!SevenZipProcessHelper.Extract(log, archive, task.Password, tempFolder.Folder, cancellationToken))
                 {
                     log.WriteLine(LoggingEvent.Error, $"Storage \"{storageSettings.Name}\": Failed to read state");
                     state = null;
@@ -109,8 +105,8 @@ namespace BUtil.Core.State
 
             var storageFile = new StorageFile
             {
-                StorageMethod = StorageMethodNames.Plain,
-                StorageIntegrityMethod = StorageIntegrityMethod.Sha256
+                StorageMethod = GetStorageMethod(),
+                StorageIntegrityMethod = StorageIntegrityMethod.Sha512
             };
 
             string fileToUpload;
@@ -125,7 +121,7 @@ namespace BUtil.Core.State
                 storageFile.StorageRelativeFileName = encryptionEnabled ? IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile : IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile;
                 fileToUpload = Path.Combine(tempFolder.Folder, storageFile.StorageRelativeFileName);
 
-                if (!SevenZipProcessHelper.CompressFile(log, file, task.Password, fileToUpload, programOptions.ProcessPriority, cancellationToken))
+                if (!SevenZipProcessHelper.CompressFile(log, file, task.Password, fileToUpload, cancellationToken))
                 {
                     log.WriteLine(LoggingEvent.Error, $"Storage \"{storageSettings.Name}\": Failed state");
                     return null;
@@ -138,6 +134,20 @@ namespace BUtil.Core.State
             storageFile.StorageIntegrityMethodInfo = HashHelper.GetSha512(fileToUpload);
 
             return storageFile;
+        }
+
+        private string GetStorageMethod()
+        {
+            var model = task.Model as IncrementalBackupModelOptions;
+
+            if (model.DisableCompressionAndEncryption)
+                return StorageMethodNames.Plain;
+
+            if (string.IsNullOrEmpty(task.Password))
+                return StorageMethodNames.SevenZip;
+
+            return StorageMethodNames.SevenZipEncrypted;
+
         }
     }
 }

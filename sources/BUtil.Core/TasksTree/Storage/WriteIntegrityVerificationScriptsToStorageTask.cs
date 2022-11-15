@@ -141,10 +141,10 @@ $isBackupValid = $true;
 
 ForEach ($fileInfo in $fileInfos)
 {
-    $isSha256Valid = (Get-FileHash $fileInfo.RelativeFileName -Algorithm SHA512).Hash -eq $fileInfo.SHA512
+    $isSha512Valid = (Get-FileHash $fileInfo.RelativeFileName -Algorithm SHA512).Hash -eq $fileInfo.SHA512
     $isSizeValid = (Get-Item -Path $fileInfo.RelativeFileName).Length -eq $fileInfo.Size
 
-    if ( $isSha256Valid -And $isSizeValid )
+    if ( $isSha512Valid -And $isSizeValid )
     {
         Write-Host ""[Good] $($fileInfo.RelativeFileName)"" -ForegroundColor green
     }

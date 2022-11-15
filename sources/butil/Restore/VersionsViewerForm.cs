@@ -267,7 +267,7 @@ namespace BUtil.RestorationMaster
                 DestinationFolder = _backupLocation
             };
 
-            var service = new IncrementalBackupFileService(log, storageSettings, ProgramOptionsManager.Default);
+            var service = new IncrementalBackupFileService(log, storageSettings);
             var cancellationTokenSource = new CancellationTokenSource();
             var token = cancellationTokenSource.Token;
             using var form = new ProgressForm(reportProgress =>

@@ -4,14 +4,9 @@ using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
 using BUtil.Core.Storages;
-using Microsoft.VisualBasic.Logging;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
-using System.Text.Json;
 using System.Threading;
 
 namespace BUtil.Core.State
@@ -20,13 +15,11 @@ namespace BUtil.Core.State
     {
         private readonly ILog log;
         private readonly IStorageSettings storageSettings;
-        private readonly ProgramOptions programOptions;
 
-        public IncrementalBackupFileService(ILog log, IStorageSettings storageSettings, ProgramOptions programOptions)
+        public IncrementalBackupFileService(ILog log, IStorageSettings storageSettings)
         {
             this.log = log;
             this.storageSettings = storageSettings;
-            this.programOptions = programOptions;
         }
 
         public bool Download(CancellationToken cancellationToken, SourceItem sourceItem, StorageFile storageFile, string destinationFolder)
@@ -55,7 +48,7 @@ namespace BUtil.Core.State
                 using var tempFolder = new TempFolder();
                 var tempArchive = Path.Combine(tempFolder.Folder, "archive.7z");
                 storage.Download(storageFile, tempArchive);
-                if (!SevenZipProcessHelper.Extract(log, tempArchive, storageFile.StoragePassword, destinationDir, programOptions.ProcessPriority, cancellationToken))
+                if (!SevenZipProcessHelper.Extract(log, tempArchive, storageFile.StoragePassword, destinationDir, cancellationToken))
                 {
                     log.WriteLine(LoggingEvent.Error, $"Storage \"{storageSettings.Name}\": extracting \"{storageFile.FileState.FileName}\" failed");
                     return false;
@@ -74,7 +67,11 @@ namespace BUtil.Core.State
 
             if (storageFile.StorageMethod == StorageMethodNames.Plain)
             {
-                storage.Upload(storageFile.FileState.FileName, storageFile.StorageRelativeFileName);
+                var uploadResult = storage.Upload(storageFile.FileState.FileName, storageFile.StorageRelativeFileName);
+                storageFile.StorageFileNameSize = uploadResult.StorageFileNameSize;
+                storageFile.StorageFileName= uploadResult.StorageFileName;
+                storageFile.StorageIntegrityMethod = StorageIntegrityMethod.Sha512;
+                storageFile.StorageIntegrityMethodInfo = storageFile.FileState.Sha512;
                 return true;
             }
             else
@@ -92,13 +89,17 @@ namespace BUtil.Core.State
                     storageFile.FileState.FileName,
                     storageFile.StoragePassword,
                     archiveFile,
-                    programOptions.ProcessPriority,
                     cancellationToken))
                 {
                     log.WriteLine(LoggingEvent.Error, $"Upload \"{storageSettings.Name}\": Error compressing \"{storageFile.FileState.FileName}\"");
                     return false;
                 }
-                storage.Upload(archiveFile, storageFile.StorageRelativeFileName);
+
+                var uploadResult = storage.Upload(archiveFile, storageFile.StorageRelativeFileName);
+                storageFile.StorageFileNameSize = uploadResult.StorageFileNameSize;
+                storageFile.StorageFileName = uploadResult.StorageFileName;
+                storageFile.StorageIntegrityMethod = StorageIntegrityMethod.Sha512;
+                storageFile.StorageIntegrityMethodInfo = HashHelper.GetSha512(archiveFile);
                 return true;
             }
         }

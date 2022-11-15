@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Threading;
-using System.Diagnostics;
 
 namespace BUtil.Core.Options
 {
@@ -12,27 +10,6 @@ namespace BUtil.Core.Options
 	  
 		public int Parallel { get; set; }
 		public string LogsFolder { get; set; }
-	    public ThreadPriority Priority { get; set; }
-		public ProcessPriorityClass ProcessPriority
-		{
-			get
-			{
-				switch (Priority)
-				{
-					case ThreadPriority.AboveNormal:
-						return ProcessPriorityClass.AboveNormal;
-					case ThreadPriority.BelowNormal:
-						return ProcessPriorityClass.BelowNormal;
-					case ThreadPriority.Normal:
-						return ProcessPriorityClass.Normal;
-					case ThreadPriority.Lowest:
-						return ProcessPriorityClass.Idle;
-					default:
-						// Highest case
-						throw new NotSupportedException(Priority.ToString());
-				}
-			}
-		}
         
         public byte PuttingOffBackupCpuLoading
 		{
@@ -57,8 +34,7 @@ namespace BUtil.Core.Options
         {
 			return other.LogsFolder == LogsFolder &&
 				other.PuttingOffBackupCpuLoading == PuttingOffBackupCpuLoading &&
-				other.Parallel == Parallel &&
-                other.Priority == Priority;
+				other.Parallel == Parallel;
 
         }
     }

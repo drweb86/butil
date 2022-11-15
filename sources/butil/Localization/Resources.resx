@@ -147,21 +147,6 @@
   <data name="OtherOptions" xml:space="preserve">
     <value>Other options</value>
   </data>
-  <data name="AboveNormal" xml:space="preserve">
-    <value>Above normal</value>
-  </data>
-  <data name="Normal" xml:space="preserve">
-    <value>Normal</value>
-  </data>
-  <data name="BelowNormal" xml:space="preserve">
-    <value>Below normal</value>
-  </data>
-  <data name="Low" xml:space="preserve">
-    <value>Low</value>
-  </data>
-  <data name="ChooseBackupPriority" xml:space="preserve">
-    <value>Choose backup priority:</value>
-  </data>
   <data name="DefaultIs60" xml:space="preserve">
     <value>%  (default is 60)</value>
   </data>
@@ -242,9 +227,6 @@ Localization created by:
   <data name="Close" xml:space="preserve">
     <value>Close</value>
   </data>
-  <data name="ProcessPriority" xml:space="preserve">
-    <value>Process priority:</value>
-  </data>
   <data name="WellcomeToBackupWizard" xml:space="preserve">
     <value>Wellcome to Backup Wizard!</value>
   </data>
@@ -289,9 +271,6 @@ Localization created by:
   </data>
   <data name="CouldNotContinueWorkAfterGettingOptionsBecause0" xml:space="preserve">
     <value>Could not continue work after getting options because {0}</value>
-  </data>
-  <data name="TheBestChoiceIsLowInAlmostAllCases" xml:space="preserve">
-    <value>The best choice is "low" in almost all cases</value>
   </data>
   <data name="CannotExecuteRequiredManipulationsWithServerN" xml:space="preserve">
     <value>Cannot execute required manipulations with server
@@ -573,8 +552,8 @@ Program will now open browser with the download page</value>
   <data name="PleaseCheckStoragesWhereToCopyBackupImage" xml:space="preserve">
     <value>Please, check storages where to copy backup image!</value>
   </data>
-  <data name="AmountOfStoragesToProcessSynchronously" xml:space="preserve">
-    <value>Amount of storages to process synchronously:</value>
+  <data name="ParallelDegree" xml:space="preserve">
+    <value>Parallelization degree</value>
   </data>
   <data name="Reboot" xml:space="preserve">
     <value>Reboot</value>

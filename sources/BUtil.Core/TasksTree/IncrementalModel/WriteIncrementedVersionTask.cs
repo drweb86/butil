@@ -29,7 +29,6 @@ namespace BUtil.Core.TasksTree
                 log,
                 events,
                 task,
-                programOptions,
                 calculateIncrementedVersionForStorageTask,
                 storageStateTask.StorageSettings,
                 writeSourceFilesToStorageTask);
