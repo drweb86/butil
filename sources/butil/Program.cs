@@ -9,6 +9,7 @@ using BUtil.Core.FileSystem;
 using System.IO;
 using System.Collections.ObjectModel;
 using BUtil.Configurator.Localization;
+using System.Linq;
 
 namespace BUtil.Configurator
 {
@@ -79,7 +80,7 @@ namespace BUtil.Configurator
 				{
 					controller.OpenRestorationMaster(null, true);
 				}
-                else if (args[0] == IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile)
+                else if (IncrementalBackupModelConstants.Files.Any(x => args[0].EndsWith(x)))
 				{
 					controller.OpenRestorationMaster(args[0], true);
 				}

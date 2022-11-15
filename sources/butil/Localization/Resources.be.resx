@@ -360,9 +360,6 @@
   <data name="NetworkStorageConfiguration" xml:space="preserve">
     <value>Network Storage Configuration</value>
   </data>
-  <data name="NetworkPlacesAreNotAllowedToBeAddedToTheListOfBackupItems" xml:space="preserve">
-    <value>Network places are not allowed to be added to the list of backup items!</value>
-  </data>
   <data name="RestoreData" xml:space="preserve">
     <value>Restore Data...</value>
   </data>

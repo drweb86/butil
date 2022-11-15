@@ -62,7 +62,7 @@ namespace BUtil.Core.Jobs
                         Thread.Sleep(1000);
                     }
 
-                    succesfull = IsSuccessfull7ZipPacking(compressionProcess.ExitCode);
+                    succesfull = true;
                     _log.ProcessPackerMessage(_compressionOutput, succesfull);
                 }
                 catch (ThreadInterruptedException)
@@ -157,26 +157,5 @@ namespace BUtil.Core.Jobs
             return result;
         }
 
-        bool IsSuccessfull7ZipPacking(int code)
-        {
-            bool result = false;
-            switch (code)
-            {
-                case (int)SevenZipReturnCodes.OK:
-                    _log.WriteLine(LoggingEvent.Debug, "Archivator did it work OK");
-                    result = true;
-                    break;
-                case (int)SevenZipReturnCodes.ErrorsOccured: _log.WriteLine(LoggingEvent.Error, _packingParameter.ItemToCompress.Target + ": " + Resources.ArchivatorWarningNonFatalErrorSForExampleOneOrMoreFilesWereLockedBySomeOtherApplicationSoTheyWereNotCompressed); break;
-                case (int)SevenZipReturnCodes.FatalErrorsOccured: _log.WriteLine(LoggingEvent.Error, _packingParameter.ItemToCompress.Target + ": " + Resources.ArchivatorFatalError); break;
-                case (int)SevenZipReturnCodes.InvalidArguments: _log.WriteLine(LoggingEvent.Error, _packingParameter.ItemToCompress.Target + ": " + Resources.PleaseReportThisBugToMeArchivatorCommandLineError); break;
-                case (int)SevenZipReturnCodes.NotEnoughMemory: _log.WriteLine(LoggingEvent.Error, _packingParameter.ItemToCompress.Target + ": " + Resources.ArchivatorNotEnoughMemoryForOperation); break;
-                case (int)SevenZipReturnCodes.ExternalTermination: _log.WriteLine(LoggingEvent.Error, _packingParameter.ItemToCompress.Target + ": " + Resources.UserStoppedTheProcess); break;
-                default:
-                    _log.WriteLine(LoggingEvent.Error, string.Format(CultureInfo.InvariantCulture, _packingParameter.ItemToCompress.Target + ": Abnormal 7-zip exit code: {0}. Please report this bug!", code.ToString(CultureInfo.InvariantCulture)));
-                    break;
-            }
-
-            return result;
-        }
     }
 }

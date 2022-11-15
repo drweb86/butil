@@ -1,11 +1,10 @@
-﻿using BUtil.Core.Localization;
-using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Text;
 using System.Threading;
 
 namespace BUtil.Core.Misc
 {
+
     public static class ProcessHelper
     {
         public static void Execute(
@@ -29,6 +28,7 @@ namespace BUtil.Core.Misc
             process.StartInfo.WorkingDirectory = workingDirectory;
             process.StartInfo.Arguments = args;
             process.StartInfo.UseShellExecute = false;
+            process.StartInfo.CreateNoWindow = true;
 
             process.StartInfo.RedirectStandardError = true;
             process.StartInfo.RedirectStandardOutput = true;

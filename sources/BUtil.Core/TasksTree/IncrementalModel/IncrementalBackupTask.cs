@@ -28,12 +28,12 @@ namespace BUtil.Core.TasksTree.IncrementalModel
                 tasks.Add(new ExecuteProgramTask(log, backupEvents, executeBeforeBackup, programOptions.ProcessPriority));
             }
 
-            var readSatesTask = new GetStateOfSourceItemsAndStoragesTask(Log, Events, backupTask);
+            var readSatesTask = new GetStateOfSourceItemsAndStoragesTask(Log, Events, backupTask, programOptions);
             tasks.Add(readSatesTask);
 
             foreach (var storageStateTask in readSatesTask.StorageStateTasks)
             {
-                tasks.Add(new WriteIncrementedVersionTask(Log, Events, storageStateTask, readSatesTask.GetSourceItemStateTasks));
+                tasks.Add(new WriteIncrementedVersionTask(Log, Events, backupTask, programOptions, storageStateTask, readSatesTask.GetSourceItemStateTasks));
             }
 
             foreach (var executeAfterBackup in backupTask.ExecuteAfterBackup)

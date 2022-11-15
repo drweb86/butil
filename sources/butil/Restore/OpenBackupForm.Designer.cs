@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OpenBackupForm));
             this._openBackupFolderButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
-            this.passwordMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this._passwordTextBox = new System.Windows.Forms.MaskedTextBox();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.continueButton = new System.Windows.Forms.Button();
             this._backupFolderLabel = new System.Windows.Forms.Label();
@@ -69,17 +69,17 @@
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.OnCloseButtonClick);
             // 
-            // passwordMaskedTextBox
+            // _passwordTextBox
             // 
-            this.passwordMaskedTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this._passwordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.passwordMaskedTextBox.Enabled = false;
-            this.passwordMaskedTextBox.Location = new System.Drawing.Point(11, 141);
-            this.passwordMaskedTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.passwordMaskedTextBox.Name = "passwordMaskedTextBox";
-            this.passwordMaskedTextBox.PasswordChar = '*';
-            this.passwordMaskedTextBox.Size = new System.Drawing.Size(575, 23);
-            this.passwordMaskedTextBox.TabIndex = 1;
+            this._passwordTextBox.Enabled = false;
+            this._passwordTextBox.Location = new System.Drawing.Point(11, 141);
+            this._passwordTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this._passwordTextBox.Name = "_passwordTextBox";
+            this._passwordTextBox.PasswordChar = '*';
+            this._passwordTextBox.Size = new System.Drawing.Size(575, 23);
+            this._passwordTextBox.TabIndex = 1;
             // 
             // passwordLabel
             // 
@@ -156,7 +156,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(602, 229);
             this.Controls.Add(this._helpLabel);
-            this.Controls.Add(this.passwordMaskedTextBox);
+            this.Controls.Add(this._passwordTextBox);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this._backupLocationTextBox);
@@ -179,7 +179,7 @@
 		private System.Windows.Forms.Button helpButton;
 		private System.Windows.Forms.Button _openBackupFolderButton;
         private System.Windows.Forms.Button closeButton;
-		private System.Windows.Forms.MaskedTextBox passwordMaskedTextBox;
+		private System.Windows.Forms.MaskedTextBox _passwordTextBox;
 		private System.Windows.Forms.Label passwordLabel;
 		private System.Windows.Forms.Button continueButton;
 		private System.Windows.Forms.Label _backupFolderLabel;

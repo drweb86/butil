@@ -421,9 +421,6 @@ Localization created by:
   <data name="NetworkStorageConfiguration" xml:space="preserve">
     <value>Network Storage Configuration</value>
   </data>
-  <data name="NetworkPlacesAreNotAllowedToBeAddedToTheListOfBackupItems" xml:space="preserve">
-    <value>Network places are not allowed to be added to the list of backup items!</value>
-  </data>
   <data name="RestoreData" xml:space="preserve">
     <value>Restore Data...</value>
   </data>
@@ -856,5 +853,8 @@ See detailed description in the following link.</value>
   </data>
   <data name="OpenInExplorer" xml:space="preserve">
     <value>Open in Explorer...</value>
+  </data>
+  <data name="CannotOpenBackupFolder" xml:space="preserve">
+    <value>Cannot open backup folder.</value>
   </data>
 </root>

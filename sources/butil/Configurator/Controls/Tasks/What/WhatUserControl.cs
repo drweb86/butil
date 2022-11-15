@@ -285,37 +285,6 @@ namespace BUtil.Configurator.Controls
             _itemsListView.Items.Add(listItem);
         }
 
-        void addItem(SourceItem newItem, bool add)
-        {
-            if (newItem.Target.StartsWith(@"\\", StringComparison.InvariantCulture))
-            {
-                // "Network places are not allowed to be added to the list of backup items!"
-                MessageBox.Show(Resources.NetworkPlacesAreNotAllowedToBeAddedToTheListOfBackupItems, String.Empty, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 0);
-                return;
-            }
-
-            if (add)
-            {
-                _task.Items.Add(newItem);
-            }
-
-            _itemsListView.BeginUpdate();
-
-            ListViewItem newlistViewItem = new ListViewItem(newItem.Target);
-            if (newItem.IsFolder)
-            {
-                newlistViewItem.ImageIndex = 0;
-            }
-            else
-            {
-                newlistViewItem.ImageIndex = 1;
-            }
-
-            _itemsListView.Items.Add(newlistViewItem);
-
-            _itemsListView.EndUpdate();
-        }
-
         private void OnAddFileExcludePattern(object sender, EventArgs e)
         {
             using FileExcludePatternForm form = new();

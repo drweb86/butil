@@ -7,6 +7,11 @@ using BUtil.Core.Options;
 using System.Text.Json;
 using BUtil.Core.State;
 using BUtil.Configurator;
+using System.Linq;
+using BUtil.Core.Logs;
+using BUtil.Core.Storages;
+using BUtil.Core.BackupModels;
+using System.Threading;
 
 namespace BUtil.RestorationMaster
 {
@@ -64,19 +69,35 @@ namespace BUtil.RestorationMaster
 				return;
 			}
 
-            var backupFileName = Path.Combine(backupFolder, IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile);
-            
-			
-			if (!File.Exists(backupFileName))
+			if (!IncrementalBackupModelConstants.Files.Any(x => File.Exists(Path.Combine(backupFolder, x))))
 			{
-                Messages.ShowErrorBox(string.Format(BUtil.Configurator.Localization.Resources.CannotLocateFile0InDirectoryPointToADirectoryContainingThisFile, IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile));
+				var allowedFiles = string.Join(", ", IncrementalBackupModelConstants.Files);
+                Messages.ShowErrorBox(string.Format(BUtil.Configurator.Localization.Resources.CannotLocateFile0InDirectoryPointToADirectoryContainingThisFile, allowedFiles));
                 return;
             }
 
-			var json = File.ReadAllText(backupFileName);
-			var incrementalBackupState = JsonSerializer.Deserialize<IncrementalBackupState>(json);
+			var log = new StubLog();
+			IStorageSettings storageSettings = new HddStorageSettings
+			{
+				Name = string.Empty,
+				DestinationFolder = backupFolder
+			};
+			var task = new BackupTask
+			{ 
+				Password = _passwordTextBox.Text, 
+				Model = new IncrementalBackupModelOptions()
+			};
+			var service = new IncrementalBackupStateService(log, storageSettings, task, ProgramOptionsManager.Default);
+			var cancellationTokenSource = new CancellationTokenSource();
+			var cancellationToken = cancellationTokenSource.Token;
+			if (!service.TryRead(cancellationToken, out var state))
+			{
+				Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.CannotOpenBackupFolder);
+				return;
+			}
+
 			Hide();
-			using var restoreForm = new VersionsViewerForm(backupFolder, incrementalBackupState);
+			using var restoreForm = new VersionsViewerForm(backupFolder, state);
             restoreForm.ShowDialog();
 			Close();
 		}

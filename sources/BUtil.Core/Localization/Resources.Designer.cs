@@ -94,34 +94,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Archivator: Fatal error.
-        /// </summary>
-        public static string ArchivatorFatalError {
-            get {
-                return ResourceManager.GetString("ArchivatorFatalError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Archivator: Not enough memory for operation.
-        /// </summary>
-        public static string ArchivatorNotEnoughMemoryForOperation {
-            get {
-                return ResourceManager.GetString("ArchivatorNotEnoughMemoryForOperation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Archivator: Warning (Non fatal error(s)). For example, one or more files were locked by some other application, so they were not compressed.
-        /// </summary>
-        public static string ArchivatorWarningNonFatalErrorSForExampleOneOrMoreFilesWereLockedBySomeOtherApplicationSoTheyWereNotCompressed {
-            get {
-                return ResourceManager.GetString("ArchivatorWarningNonFatalErrorSForExampleOneOrMoreFilesWereLockedBySomeOtherAppli" +
-                        "cationSoTheyWereNotCompressed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Backup finished succesfully!.
         /// </summary>
         public static string BackupFinishedSuccesfully {
@@ -542,15 +514,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please, report this bug to me! Archivator: Command line error.
-        /// </summary>
-        public static string PleaseReportThisBugToMeArchivatorCommandLineError {
-            get {
-                return ResourceManager.GetString("PleaseReportThisBugToMeArchivatorCommandLineError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to 7z message:.
         /// </summary>
         public static string SevenZMessage {
@@ -583,15 +546,6 @@ namespace BUtil.Core.Localization {
         public static string Use {
             get {
                 return ResourceManager.GetString("Use", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to User stopped the process.
-        /// </summary>
-        public static string UserStoppedTheProcess {
-            get {
-                return ResourceManager.GetString("UserStoppedTheProcess", resourceCulture);
             }
         }
         

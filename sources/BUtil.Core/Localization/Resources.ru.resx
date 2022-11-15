@@ -204,21 +204,6 @@
   <data name="CopyingFile0FromTempFolder1ToDestination2At3" xml:space="preserve">
     <value>Копирование файла '{0}' из временного каталога '{1}' в папку назначения '{2}' в хранилище '{3}'</value>
   </data>
-  <data name="ArchivatorWarningNonFatalErrorSForExampleOneOrMoreFilesWereLockedBySomeOtherApplicationSoTheyWereNotCompressed" xml:space="preserve">
-    <value>Архиватор: При выполнении операции возникли ошибки</value>
-  </data>
-  <data name="ArchivatorFatalError" xml:space="preserve">
-    <value>Архиватор: Фатальная ошибка</value>
-  </data>
-  <data name="PleaseReportThisBugToMeArchivatorCommandLineError" xml:space="preserve">
-    <value>Пожалуйста, сообщите об этой ошибке! Архиватор: некорректные аргументы коммандной строки</value>
-  </data>
-  <data name="ArchivatorNotEnoughMemoryForOperation" xml:space="preserve">
-    <value>Архиватор: недостаточно памяти для выполнения операции</value>
-  </data>
-  <data name="UserStoppedTheProcess" xml:space="preserve">
-    <value>Пользователь остановил процесс</value>
-  </data>
   <data name="ErrorDiscoveredWhenOpeningStorage01" xml:space="preserve">
     <value>При открытии хранилища '{0}' произошли ошибки : {1}</value>
   </data>

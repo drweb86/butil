@@ -26,7 +26,7 @@ namespace BUtil.Core.TasksTree.Apps
             if (token.IsCancellationRequested)
                 return;
 
-            LogDebug($"Program: {_executeProgramTaskInfo.Program} at working directort {_executeProgramTaskInfo.WorkingDirectory} with arguments {_executeProgramTaskInfo.Arguments} with {_processPriority} priority");
+            LogDebug($"Program: {_executeProgramTaskInfo.Program} at working directort {_executeProgramTaskInfo.WorkingDirectory} with {_processPriority} priority");
             UpdateStatus(ProcessingStatus.InProgress);
             try
             {

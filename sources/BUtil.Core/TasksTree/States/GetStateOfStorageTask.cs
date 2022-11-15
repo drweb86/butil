@@ -1,23 +1,27 @@
 ﻿using BUtil.Core.Events;
 using BUtil.Core.Logs;
-using BUtil.Core.Misc;
+using BUtil.Core.Options;
 using BUtil.Core.State;
 using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.Core;
-using System.Text.Json;
 using System.Threading;
 
 namespace BUtil.Core.TasksTree
 {
     internal class GetStateOfStorageTask : BuTask
     {
+        private readonly BackupTask task;
+        private readonly ProgramOptions programOptions;
+
         public IStorageSettings StorageSettings { get; }
         public IncrementalBackupState StorageState { get; private set; }
 
-        public GetStateOfStorageTask(ILog log, BackupEvents events, IStorageSettings storageSettings) : 
+        public GetStateOfStorageTask(ILog log, BackupEvents events, IStorageSettings storageSettings, BackupTask task, ProgramOptions programOptions) : 
             base(log, events, string.Format(BUtil.Core.Localization.Resources.GetStateOfStorage, storageSettings.Name), TaskArea.Hdd)
         {
             StorageSettings = storageSettings;
+            this.task = task;
+            this.programOptions = programOptions;
         }
 
         public override void Execute(CancellationToken token)
@@ -26,20 +30,10 @@ namespace BUtil.Core.TasksTree
                 return;
 
             UpdateStatus(ProcessingStatus.InProgress);
-            var storage = StorageFactory.Create(Log, StorageSettings);
-            var content = storage.ReadAllText(IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile);
-            if (content == null)
-            {
-                LogDebug("State is missing. Vanilla backup.");
-                StorageState = new IncrementalBackupState();
-            }
-            else
-            {
-                LogDebug("Deserializing.");
-                StorageState = JsonSerializer.Deserialize<IncrementalBackupState>(content);
-            }
-            IsSuccess = true;
-            UpdateStatus(ProcessingStatus.FinishedSuccesfully);
+            var service = new IncrementalBackupStateService(Log, StorageSettings, task, programOptions);
+            IsSuccess = service.TryRead(token, out var state);
+            StorageState = state;
+            UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
         }
     }
 }

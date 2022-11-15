@@ -16,6 +16,14 @@ namespace BUtil.Core.Storages
         public abstract IStorageUploadResult Upload(string sourceFile, string relativeFileName);
         public abstract string ReadAllText(string file);
         public abstract string Test();
+        public virtual byte[] ReadAllBytes(string file)
+        {
+            throw new System.NotImplementedException();
+        }
 
-	}
+        public virtual void Delete(string file)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
 }

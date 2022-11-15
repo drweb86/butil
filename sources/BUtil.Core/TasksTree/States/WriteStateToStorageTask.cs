@@ -1,30 +1,37 @@
 ﻿using BUtil.Core.Events;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
+using BUtil.Core.Options;
 using BUtil.Core.State;
 using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.Storage;
-using Microsoft.VisualBasic;
-using System.IO;
-using System.Text.Json;
 using System.Threading;
 
 namespace BUtil.Core.TasksTree.States
 {
     internal class WriteStateToStorageTask : BuTask
     {
-        private CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask;
-        private IStorageSettings _storageSettings;
+        private readonly BackupTask task;
+        private readonly ProgramOptions programOptions;
+        private readonly CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask;
+        private readonly IStorageSettings _storageSettings;
         private readonly WriteSourceFilesToStorageTask _writeSourceFilesToStorageTask;
 
         public StorageFile UploadedVersionState { get; private set; }
 
-        public WriteStateToStorageTask(ILog log, BackupEvents events,
-            CalculateIncrementedVersionForStorageTask getIncrementedVersionTask, IStorageSettings storageSettings, 
+        public WriteStateToStorageTask(
+            ILog log,
+            BackupEvents events,
+            BackupTask task,
+            ProgramOptions programOptions,
+            CalculateIncrementedVersionForStorageTask getIncrementedVersionTask,
+            IStorageSettings storageSettings, 
             Storage.WriteSourceFilesToStorageTask writeSourceFilesToStorageTask)
             : base(log, events, string.Format(BUtil.Core.Localization.Resources.WriteStateToStorage, storageSettings.Name), TaskArea.Hdd)
         {
+            this.task = task;
+            this.programOptions = programOptions;
             _getIncrementedVersionTask = getIncrementedVersionTask;
             _storageSettings = storageSettings;
             _writeSourceFilesToStorageTask = writeSourceFilesToStorageTask;
@@ -53,25 +60,11 @@ namespace BUtil.Core.TasksTree.States
                 return;
             }
 
-            var storage = StorageFactory.Create(Log, _storageSettings);
-            var tempFile = Path.GetRandomFileName();
-            var json = JsonSerializer.Serialize(_getIncrementedVersionTask.IncrementalBackupState, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(tempFile, json);
-            UploadedVersionState = new StorageFile
-            {
-                StorageRelativeFileName = IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile,
-                StorageMethod = StorageMethodNames.Plain,
-                StorageIntegrityMethod = StorageIntegrityMethod.Sha256
-            };
+            var service = new IncrementalBackupStateService(Log, _storageSettings, task, programOptions);
+            UploadedVersionState = service.Write(token, _getIncrementedVersionTask.IncrementalBackupState);
 
-            var uploadResult = storage.Upload(tempFile, IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile);
-            UploadedVersionState.StorageFileName = uploadResult.StorageFileName;
-            UploadedVersionState.StorageFileNameSize = uploadResult.StorageFileNameSize;
-            UploadedVersionState.StorageIntegrityMethodInfo = HashHelper.GetSha512(tempFile);
-
-            File.Delete(tempFile);
-            IsSuccess = true;
-            UpdateStatus(ProcessingStatus.FinishedSuccesfully);
+            IsSuccess = UploadedVersionState != null;
+            UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
         }
     }
 }

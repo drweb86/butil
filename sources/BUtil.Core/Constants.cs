@@ -16,14 +16,4 @@ namespace BUtil.Core
         public const int AmountOfStoragesToProcessSynchronouslyDefault = 5;
         public const int AmountOfStoragesToProcessSynchronouslyMaximum = 10;
 	}
-	
-	internal enum SevenZipReturnCodes
-	{
-		OK = 0,
-		ErrorsOccured = 1,
-		FatalErrorsOccured = 2,
-		InvalidArguments = 7,
-		NotEnoughMemory = 8,
-		ExternalTermination = 255
-	}
 }

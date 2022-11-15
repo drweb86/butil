@@ -200,14 +200,6 @@ namespace BUtil.Core.Options
                 throw new OptionsException(
                     string.Format(CultureInfo.CurrentUICulture, "During working with file '{0}' an error occured: {1}. \n\nSettings are not saved", Files.ProfileFile, e.Message));
             }
-
-            try
-            {
-                File.Encrypt(Files.ProfileFile);
-            }
-            catch (PlatformNotSupportedException) { }
-            catch (NotSupportedException) { }
-            catch (IOException) { }
         }
         
         /// <summary>

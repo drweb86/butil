@@ -445,6 +445,15 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cannot open backup folder..
+        /// </summary>
+        internal static string CannotOpenBackupFolder {
+            get {
+                return ResourceManager.GetString("CannotOpenBackupFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cannot run 7zg.exe because {0}.
         /// </summary>
         internal static string CannotRun7ZgExeBecause0 {
@@ -1265,15 +1274,6 @@ namespace BUtil.Configurator.Localization {
         internal static string NameIsEmpty {
             get {
                 return ResourceManager.GetString("NameIsEmpty", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Network places are not allowed to be added to the list of backup items!.
-        /// </summary>
-        internal static string NetworkPlacesAreNotAllowedToBeAddedToTheListOfBackupItems {
-            get {
-                return ResourceManager.GetString("NetworkPlacesAreNotAllowedToBeAddedToTheListOfBackupItems", resourceCulture);
             }
         }
         

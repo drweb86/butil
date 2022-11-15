@@ -23,14 +23,14 @@ namespace BUtil.Configurator.Configurator
         private ProgramOptions _profileOptions = ProgramOptionsManager.Default;
         private ProgramOptions _optionsDuringProgramLoad = ProgramOptionsManager.Default;
 
-        public void OpenRestorationMaster(string backupFolder, bool runFormAsApplication)
+        public void OpenRestorationMaster(string file, bool runFormAsApplication)
 		{
 			if (Program.PackageIsBroken)
 			{
 				return;
 			}
 
-            using var form = new OpenBackupForm(backupFolder);
+            using var form = new OpenBackupForm(file != null ? Path.GetDirectoryName(file) : null);
             if (runFormAsApplication)
             {
                 Application.Run(form);

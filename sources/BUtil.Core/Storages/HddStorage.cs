@@ -24,6 +24,16 @@ namespace BUtil.Core.Storages
             return File.ReadAllText(fullPathName);
         }
 
+        public override byte[] ReadAllBytes(string file)
+        {
+            var fullPathName = Path.Combine(Settings.DestinationFolder, file);
+
+            if (!File.Exists(file))
+                return null;
+
+            return File.ReadAllBytes(fullPathName);
+        }
+
         public override IStorageUploadResult Upload(string sourceFile, string relativeFileName)
 		{
 			var destinationFile = Path.Combine(Settings.DestinationFolder, relativeFileName);
@@ -50,5 +60,14 @@ namespace BUtil.Core.Storages
 
             return null;
         }
-	}
+
+        public override void Delete(string file)
+        {
+            var fullPathName = Path.Combine(Settings.DestinationFolder, file);
+
+            if (File.Exists(file))
+                File.Delete(file);
+        }
+
+    }
 }

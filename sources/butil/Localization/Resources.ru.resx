@@ -361,9 +361,6 @@
   <data name="NetworkStorageConfiguration" xml:space="preserve">
     <value>Конфигурация Сетевого Хранилища</value>
   </data>
-  <data name="NetworkPlacesAreNotAllowedToBeAddedToTheListOfBackupItems" xml:space="preserve">
-    <value>Сетевые пути нельзя добавлять в список объектов для резервного копирования!</value>
-  </data>
   <data name="RestoreData" xml:space="preserve">
     <value>Восстановить данные...</value>
   </data>
@@ -796,5 +793,8 @@ bin.
   </data>
   <data name="OpenInExplorer" xml:space="preserve">
     <value>Открыть в Проводнике...</value>
+  </data>
+  <data name="CannotOpenBackupFolder" xml:space="preserve">
+    <value>Не удается открыть папку резервного копирования.</value>
   </data>
 </root>
