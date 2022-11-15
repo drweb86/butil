@@ -204,15 +204,6 @@
   <data name="CopyingFile0FromTempFolder1ToDestination2At3" xml:space="preserve">
     <value>Копирование файла '{0}' из временного каталога '{1}' в папку назначения '{2}' в хранилище '{3}'</value>
   </data>
-  <data name="ErrorDiscoveredWhenOpeningStorage01" xml:space="preserve">
-    <value>При открытии хранилища '{0}' произошли ошибки : {1}</value>
-  </data>
-  <data name="ErrorDiscoveredWhenCopyingFileToStorage01" xml:space="preserve">
-    <value>При копировании в хранилище '{0}' произошла ошибка : {1}</value>
-  </data>
-  <data name="CouldNotKillPackerProcess0" xml:space="preserve">
-    <value>Процесс архиватора не убивается: {0}</value>
-  </data>
   <data name="CouldNotStartPackerDueTo0AbortingBackup" xml:space="preserve">
     <value>Не получается запустить процесс архивирования из-за {0}. Отмена резервного копирования...</value>
   </data>

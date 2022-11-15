@@ -113,6 +113,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Jobs\" />
+  </ItemGroup>
   <PropertyGroup>
     <PreBuildEvent>
 		cd "$(SolutionDir)..\Output"

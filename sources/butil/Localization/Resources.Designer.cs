@@ -219,15 +219,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Amount of 7-zip processes to run synchronously:.
-        /// </summary>
-        internal static string AmountOf7ZipProcessesToRunSynchronously {
-            get {
-                return ResourceManager.GetString("AmountOf7ZipProcessesToRunSynchronously", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Amount of storages to process synchronously:.
         /// </summary>
         internal static string AmountOfStoragesToProcessSynchronously {

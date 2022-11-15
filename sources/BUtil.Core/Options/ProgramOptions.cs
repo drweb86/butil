@@ -10,8 +10,7 @@ namespace BUtil.Core.Options
     	
         byte _puttingOffBackupCpuLoading;
 	  
-		public int AmountOfStoragesToProcessSynchronously {get; set;}
-		public int AmountOf7ZipProcessesToProcessSynchronously { get; set; }
+		public int Parallel { get; set; }
 		public string LogsFolder { get; set; }
 	    public ThreadPriority Priority { get; set; }
 		public ProcessPriorityClass ProcessPriority
@@ -58,8 +57,7 @@ namespace BUtil.Core.Options
         {
 			return other.LogsFolder == LogsFolder &&
 				other.PuttingOffBackupCpuLoading == PuttingOffBackupCpuLoading &&
-				other.AmountOf7ZipProcessesToProcessSynchronously == AmountOf7ZipProcessesToProcessSynchronously &&
-				other.AmountOfStoragesToProcessSynchronously == AmountOfStoragesToProcessSynchronously &&
+				other.Parallel == Parallel &&
                 other.Priority == Priority;
 
         }

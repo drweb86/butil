@@ -579,9 +579,6 @@ Program will now open browser with the download page</value>
   <data name="Reboot" xml:space="preserve">
     <value>Reboot</value>
   </data>
-  <data name="AmountOf7ZipProcessesToRunSynchronously" xml:space="preserve">
-    <value>Amount of 7-zip processes to run synchronously:</value>
-  </data>
   <data name="ButilSoftwarePackageComponent0IsMissingNNpleaseReinstallApplicationNNrestorationBackupAndHelpFunctionsWillBeUnavailable" xml:space="preserve">
     <value>BUtil software package component '{0}' is missing.
 

@@ -10,10 +10,5 @@ namespace BUtil.Core
         public const int DefaultCpuLoading = 60;
         public const int MinimumCpuLoading = 5;
         public const int MaximumCpuLoading = 95;
-        
-        // Defaults for parralel processing
-        public const int AmountOfStoragesToProcessSynchronouslyMinimum = 1;
-        public const int AmountOfStoragesToProcessSynchronouslyDefault = 5;
-        public const int AmountOfStoragesToProcessSynchronouslyMaximum = 10;
 	}
 }

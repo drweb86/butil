@@ -204,15 +204,6 @@
   <data name="CopyingFile0FromTempFolder1ToDestination2At3" xml:space="preserve">
     <value>Капираванне файла "{0}" з часовай папцы "{1}" у месца пазначэння "{2}" на {3}</value>
   </data>
-  <data name="ErrorDiscoveredWhenOpeningStorage01" xml:space="preserve">
-    <value>Error discovered when opening storage '{0}': {1}</value>
-  </data>
-  <data name="ErrorDiscoveredWhenCopyingFileToStorage01" xml:space="preserve">
-    <value>Error discovered when copying file to storage '{0}': {1}</value>
-  </data>
-  <data name="CouldNotKillPackerProcess0" xml:space="preserve">
-    <value>Could not kill packer process: {0}</value>
-  </data>
   <data name="CouldNotStartPackerDueTo0AbortingBackup" xml:space="preserve">
     <value>Could not start packer due to {0}. Aborting backup...</value>
   </data>

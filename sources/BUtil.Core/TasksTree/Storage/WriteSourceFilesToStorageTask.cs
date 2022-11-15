@@ -25,7 +25,7 @@ namespace BUtil.Core.TasksTree.Storage
             BackupTask task,
             ProgramOptions programOptions,
             CalculateIncrementedVersionForStorageTask getIncrementedVersionTask, IStorageSettings storageSettings)
-            : base(log, events, string.Format(BUtil.Core.Localization.Resources.WriteSourceFilesToStorage, storageSettings.Name), TaskArea.Hdd, null)
+            : base(log, events, string.Format(BUtil.Core.Localization.Resources.WriteSourceFilesToStorage, storageSettings.Name), TaskArea.Hdd, programOptions, null)
         {
             this.task = task;
             this.programOptions = programOptions;

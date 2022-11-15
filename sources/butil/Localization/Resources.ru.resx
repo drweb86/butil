@@ -519,9 +519,6 @@
   <data name="Reboot" xml:space="preserve">
     <value>Перезагрузка</value>
   </data>
-  <data name="AmountOf7ZipProcessesToRunSynchronously" xml:space="preserve">
-    <value>Количество процессов 7-zip, которые запускать одновременно:</value>
-  </data>
   <data name="ButilSoftwarePackageComponent0IsMissingNNpleaseReinstallApplicationNNrestorationBackupAndHelpFunctionsWillBeUnavailable" xml:space="preserve">
     <value>Компонент приложения BUtil "{0}" не найден.
 

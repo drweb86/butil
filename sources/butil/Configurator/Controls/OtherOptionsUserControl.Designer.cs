@@ -35,13 +35,10 @@ namespace BUtil.Configurator.Controls
             this.cpuLoadingNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this._tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.amountOf7ZipProcessesToRunSynchronouslyNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.amountOf7ZipProcessesToRunSynchronouslyLabel = new System.Windows.Forms.Label();
-            this.amountOfStoragesToProcessSynchronouslyNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.amountOfStoragesToProcessSynchronouslyLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.cpuLoadingNumericUpDown)).BeginInit();
             this._tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.amountOf7ZipProcessesToRunSynchronouslyNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.amountOfStoragesToProcessSynchronouslyNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // priorityComboBox
@@ -118,8 +115,6 @@ namespace BUtil.Configurator.Controls
             this._tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this._tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this._tableLayoutPanel.Controls.Add(this.amountOf7ZipProcessesToRunSynchronouslyNumericUpDown, 1, 1);
-            this._tableLayoutPanel.Controls.Add(this.amountOf7ZipProcessesToRunSynchronouslyLabel, 0, 1);
-            this._tableLayoutPanel.Controls.Add(this.amountOfStoragesToProcessSynchronouslyNumericUpDown, 1, 0);
             this._tableLayoutPanel.Controls.Add(this.amountOfStoragesToProcessSynchronouslyLabel, 0, 0);
             this._tableLayoutPanel.Controls.Add(this.cpuLoadingNumericUpDown, 1, 3);
             this._tableLayoutPanel.Controls.Add(this.putOffBackupTillLabel, 0, 3);
@@ -148,29 +143,6 @@ namespace BUtil.Configurator.Controls
             this.amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Size = new System.Drawing.Size(226, 23);
             this.amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.TabIndex = 2;
             // 
-            // amountOf7ZipProcessesToRunSynchronouslyLabel
-            // 
-            this.amountOf7ZipProcessesToRunSynchronouslyLabel.AutoSize = true;
-            this.amountOf7ZipProcessesToRunSynchronouslyLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.amountOf7ZipProcessesToRunSynchronouslyLabel.Enabled = false;
-            this.amountOf7ZipProcessesToRunSynchronouslyLabel.Location = new System.Drawing.Point(4, 29);
-            this.amountOf7ZipProcessesToRunSynchronouslyLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.amountOf7ZipProcessesToRunSynchronouslyLabel.Name = "amountOf7ZipProcessesToRunSynchronouslyLabel";
-            this.amountOf7ZipProcessesToRunSynchronouslyLabel.Size = new System.Drawing.Size(338, 29);
-            this.amountOf7ZipProcessesToRunSynchronouslyLabel.TabIndex = 26;
-            this.amountOf7ZipProcessesToRunSynchronouslyLabel.Text = "Amount of 7-zip processes to run synchronously:";
-            this.amountOf7ZipProcessesToRunSynchronouslyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // amountOfStoragesToProcessSynchronouslyNumericUpDown
-            // 
-            this.amountOfStoragesToProcessSynchronouslyNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.amountOfStoragesToProcessSynchronouslyNumericUpDown.Enabled = false;
-            this.amountOfStoragesToProcessSynchronouslyNumericUpDown.Location = new System.Drawing.Point(350, 3);
-            this.amountOfStoragesToProcessSynchronouslyNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.amountOfStoragesToProcessSynchronouslyNumericUpDown.Name = "amountOfStoragesToProcessSynchronouslyNumericUpDown";
-            this.amountOfStoragesToProcessSynchronouslyNumericUpDown.Size = new System.Drawing.Size(226, 23);
-            this.amountOfStoragesToProcessSynchronouslyNumericUpDown.TabIndex = 1;
-            // 
             // amountOfStoragesToProcessSynchronouslyLabel
             // 
             this.amountOfStoragesToProcessSynchronouslyLabel.AutoSize = true;
@@ -197,13 +169,10 @@ namespace BUtil.Configurator.Controls
             this._tableLayoutPanel.ResumeLayout(false);
             this._tableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.amountOf7ZipProcessesToRunSynchronouslyNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.amountOfStoragesToProcessSynchronouslyNumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
-		private System.Windows.Forms.Label amountOf7ZipProcessesToRunSynchronouslyLabel;
 		private System.Windows.Forms.NumericUpDown amountOf7ZipProcessesToRunSynchronouslyNumericUpDown;
-		private System.Windows.Forms.NumericUpDown amountOfStoragesToProcessSynchronouslyNumericUpDown;
 		private System.Windows.Forms.Label amountOfStoragesToProcessSynchronouslyLabel;
 		private System.Windows.Forms.TableLayoutPanel _tableLayoutPanel;
 		private System.Windows.Forms.NumericUpDown cpuLoadingNumericUpDown;

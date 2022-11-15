@@ -12,11 +12,6 @@ namespace BUtil.Configurator.Controls
 		public OtherOptionsUserControl()
 		{
 			InitializeComponent();
-			
-			amountOfStoragesToProcessSynchronouslyNumericUpDown.Minimum = Constants.AmountOfStoragesToProcessSynchronouslyMinimum;
-			amountOfStoragesToProcessSynchronouslyNumericUpDown.Maximum = Constants.AmountOfStoragesToProcessSynchronouslyMaximum;
-			amountOfStoragesToProcessSynchronouslyNumericUpDown.Value = Constants.AmountOfStoragesToProcessSynchronouslyDefault;
-			
 			amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Minimum = 1;
 			amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Maximum = Environment.ProcessorCount;
 			amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Value = Environment.ProcessorCount;
@@ -46,7 +41,6 @@ namespace BUtil.Configurator.Controls
 			priorityComboBox.Update();
             putOffBackupTillLabel.Text = Resources.PutOffMakingBackupTillProcessorSLoadingWillBeLessThen;
             amountOfStoragesToProcessSynchronouslyLabel.Text = Resources.AmountOfStoragesToProcessSynchronously;
-            amountOf7ZipProcessesToRunSynchronouslyLabel.Text = Resources.AmountOf7ZipProcessesToRunSynchronously;
 		}
 	
 		public override void SetOptionsToUi(object settings)
@@ -61,16 +55,14 @@ namespace BUtil.Configurator.Controls
 			}
 
 			cpuLoadingNumericUpDown.Value = _programOptions.PuttingOffBackupCpuLoading;
-			amountOfStoragesToProcessSynchronouslyNumericUpDown.Value = _programOptions.AmountOfStoragesToProcessSynchronously;
-			amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Value = _programOptions.AmountOf7ZipProcessesToProcessSynchronously;
+			amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Value = _programOptions.Parallel;
 		}
 
 		public override void GetOptionsFromUi()
 		{
 			_programOptions.Priority = (System.Threading.ThreadPriority)priorityComboBox.SelectedIndex;
 			_programOptions.PuttingOffBackupCpuLoading = Convert.ToByte(cpuLoadingNumericUpDown.Value);
-			_programOptions.AmountOfStoragesToProcessSynchronously = Convert.ToInt32(amountOfStoragesToProcessSynchronouslyNumericUpDown.Value);
-			_programOptions.AmountOf7ZipProcessesToProcessSynchronously = Convert.ToInt32(amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Value);
+			_programOptions.Parallel = Convert.ToInt32(amountOf7ZipProcessesToRunSynchronouslyNumericUpDown.Value);
 		}
 
 		#endregion

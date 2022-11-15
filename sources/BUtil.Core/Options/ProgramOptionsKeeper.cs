@@ -186,8 +186,7 @@ namespace BUtil.Core.Options
 				
 				addTextNode(document, scheduleApplicationNode, "PuttingOffBackupCpuLoading", options.PuttingOffBackupCpuLoading.ToString());
 				
-				addTextNode(document, performanceNode, "AmountOf7ZipProcessesToProcessSynchronously", options.AmountOf7ZipProcessesToProcessSynchronously.ToString());
-				addTextNode(document, performanceNode, "AmountOfStoragesToProcessSynchronously", options.AmountOfStoragesToProcessSynchronously.ToString());
+				addTextNode(document, performanceNode, "Parallel", options.Parallel.ToString());
 				addTextNode(document, performanceNode, "ProcessingPriority", options.Priority.ToString());
 
 				addTextNode(document, logsNode, "Location", options.LogsFolder);
@@ -218,8 +217,7 @@ namespace BUtil.Core.Options
 					XmlDocument document = new XmlDocument();
 					document.Load(Files.ProfileFile);
 					
-					options.AmountOf7ZipProcessesToProcessSynchronously = readNode(document, "/Settings/Core/Performance/AmountOf7ZipProcessesToProcessSynchronously", 1, Environment.ProcessorCount, Environment.ProcessorCount);
-					options.AmountOfStoragesToProcessSynchronously = readNode(document, "/Settings/Core/Performance/AmountOfStoragesToProcessSynchronously", Constants.AmountOfStoragesToProcessSynchronouslyMinimum, Constants.AmountOfStoragesToProcessSynchronouslyMaximum, Constants.AmountOfStoragesToProcessSynchronouslyDefault);
+					options.Parallel = readNode(document, "/Settings/Core/Performance/Parallel", 1, 99999, Environment.ProcessorCount);
 					string priority = readNode(document, "/Settings/Core/Performance/ProcessingPriority", ThreadPriority.BelowNormal.ToString());
 					options.Priority =  (ThreadPriority)ThreadPriorityLevel.Parse(typeof(ThreadPriority), priority);
 

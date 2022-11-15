@@ -193,15 +193,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Could not kill packer process: {0}.
-        /// </summary>
-        public static string CouldNotKillPackerProcess0 {
-            get {
-                return ResourceManager.GetString("CouldNotKillPackerProcess0", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Could not kill process &apos;{0}&apos;: {1}.
         /// </summary>
         public static string CouldNotKillProcess01 {
@@ -234,24 +225,6 @@ namespace BUtil.Core.Localization {
         public static string EnterPassword {
             get {
                 return ResourceManager.GetString("EnterPassword", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Error discovered when copying file to storage &apos;{0}&apos;: {1}.
-        /// </summary>
-        public static string ErrorDiscoveredWhenCopyingFileToStorage01 {
-            get {
-                return ResourceManager.GetString("ErrorDiscoveredWhenCopyingFileToStorage01", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Error discovered when opening storage &apos;{0}&apos;: {1}.
-        /// </summary>
-        public static string ErrorDiscoveredWhenOpeningStorage01 {
-            get {
-                return ResourceManager.GetString("ErrorDiscoveredWhenOpeningStorage01", resourceCulture);
             }
         }
         

@@ -35,8 +35,7 @@ namespace BUtil.Core.Options
 					Priority = System.Threading.ThreadPriority.BelowNormal,
 					LogsFolder = Directories.LogsFolder,
 					PuttingOffBackupCpuLoading = Constants.DefaultCpuLoading,
-					AmountOfStoragesToProcessSynchronously = Constants.AmountOfStoragesToProcessSynchronouslyDefault,
-					AmountOf7ZipProcessesToProcessSynchronously = Environment.ProcessorCount
+					Parallel = Environment.ProcessorCount
 				};
 			}
 		}
