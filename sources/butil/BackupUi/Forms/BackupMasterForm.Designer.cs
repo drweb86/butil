@@ -1,4 +1,5 @@
 ﻿using BUtil.Configurator.BackupUiMaster.Controls;
+using BUtil.Configurator.Configurator.Controls.Common;
 
 namespace BUtil.Configurator.BackupUiMaster.Forms
 {
@@ -35,7 +36,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             this.startButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.tasksListView = new System.Windows.Forms.ListView();
+            this.tasksListView = new ListViewDoubleBuffered();
             this.taskNameColumnHeader = new System.Windows.Forms.ColumnHeader();
             this.processingStateInformationColumnHeader = new System.Windows.Forms.ColumnHeader();
             this.compressionItemsListViewImageList = new System.Windows.Forms.ImageList(this.components);
@@ -207,7 +208,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 		private System.ComponentModel.BackgroundWorker abortBackupBackgroundWorker;
 		private System.Windows.Forms.ColumnHeader taskNameColumnHeader;
 		private System.Windows.Forms.ColumnHeader processingStateInformationColumnHeader;
-		private System.Windows.Forms.ListView tasksListView;
+		private ListViewDoubleBuffered tasksListView;
 		private System.Windows.Forms.NotifyIcon notifyIcon;
 		private System.Windows.Forms.Button cancelButton;
 		private SettingsUserControl settingsUserControl;

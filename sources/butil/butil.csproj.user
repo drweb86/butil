@@ -29,6 +29,9 @@
     <Compile Update="Configurator\AboutProgramUI\AboutProgramUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Configurator\Controls\Common\ListViewDoubleBuffered.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Update="Configurator\Controls\MainNavigationUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

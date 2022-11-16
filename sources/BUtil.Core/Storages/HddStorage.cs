@@ -29,7 +29,7 @@ namespace BUtil.Core.Storages
         {
             var fullPathName = Path.Combine(Settings.DestinationFolder, file);
 
-            if (!File.Exists(file))
+            if (!File.Exists(fullPathName))
                 return null;
 
             return File.ReadAllBytes(fullPathName);
