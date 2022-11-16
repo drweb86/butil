@@ -51,7 +51,7 @@ namespace BUtil.Core.Misc
                     log.ProcessPackerMessage(stdError, isSuccess);
                 if (isSuccess)
                     log.WriteLine(LoggingEvent.Debug, "Unpack successfull.");
-                if (isSuccess)
+                if (!isSuccess)
                     log.WriteLine(LoggingEvent.Error, "Unpack failed.");
                 return isSuccess;
             }

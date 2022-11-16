@@ -41,7 +41,7 @@ namespace BUtil.Core.TasksTree
             storageState.VersionStates.Add(versionState);
             storageState.LastSourceItemStates = sourceItemStates;
             IncrementalBackupState = storageState;
-            VersionIsNeeded = versionState.SourceItemChanges.Any(x => x.CreatedFiles.Any() || x.UpdatedFiles.Any() || x.CreatedFiles.Any());
+            VersionIsNeeded = versionState.SourceItemChanges.Any(x => x.CreatedFiles.Any() || x.UpdatedFiles.Any() || x.DeletedFiles.Any());
 
             UpdateStatus(ProcessingStatus.FinishedSuccesfully);
             IsSuccess = true;
