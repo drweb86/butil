@@ -1,9 +1,7 @@
-# 5.3a
+# 5.3b
 
-This is alpha version.
+This is beta version.
 FTP & Samba are not working.
-Compression is not reworked.
-Password protection is not reworked.
 
 ## New Features
 - New section for setting up incremental model options.

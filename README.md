@@ -1,6 +1,6 @@
 # COMPRESSING, SAVING, STORING, PROVIDING easiest RESTORING
 
-Welcome to the 5.1 (22 October 2022) version BUtil!
+Welcome to the 5.3 (16 November 2022) version BUtil!
 
 ![BUtil Logotype](./help/Readme%20Assets/Logotype.bmp)
 
@@ -11,7 +11,7 @@ BUtil is a powerfull set of tools for creating backups of documents and other da
 
 ## Key Functions And Characteristics Of Software
 
-- It can store backups on multiple HDD, flash, remote FTP servers and shared folders over the network;
+- It can store backups on multiple mounted drives;
 - Simple configuring takes less time and goes easily and with comfort;
 - AES-256 7-zip encyption makes your data securely protected;
 - Multiple backup tasks are supported;
@@ -44,12 +44,12 @@ and many more. See [all topics](../../wiki) .
 
 ### Software
 
-- Microsoft Windows OS x64 7SP1+;
-- Microsoft .Net Desktop Runtime 6 is required. To download it you can open the following [url](https://dotnet.microsoft.com/en-us/download/dotnet/7.0), see section **.NET Desktop Runtime 7.0.10**
+- Microsoft Windows 10 or later;
+- Microsoft .Net Desktop Runtime 7 is required. To download it you can open the following [url](https://dotnet.microsoft.com/en-us/download/dotnet/7.0), see section **.NET Desktop Runtime 7.0.0**
 
 ### Hardware:
 
-- Pentium 3 computer or better, IA-64 but should work and on IA-64 architecture
+- Pentium 3 computer or better
 - 2 GB RAM
 - about 10 mb on HDD
 
@@ -67,9 +67,7 @@ Bug reports is advised to contain:
 - Problem definition(why this is a bug):
 What behaviour do you see(you can attach sreenshots and videorolics)
 What behaviour do you expect(you can attach sreenshots and videorolics and describe why your variant is the better)
-How to reproduce the issue(you can attach sreenshots and videorolics
-
-When you're providing logs, don't forget to set logging level to SUPPORT
+How to reproduce the issue(you can attach sreenshots and videos
 
 ## Compilation
 
@@ -81,16 +79,9 @@ Must be installed:
 - InnoSetup 6.2.1 (must be installed in default directory);
 - 7-zip x64 (must be installed in default directory).
 
-1. Compile all
-2. Run in ```output\butil\bin``` command ```md5 dev```
-3. Update in code ```Files.cs``` MD5 checksums of 7-zip.
-4. Done.
+Compile all
 
-
-Copyright (c) 2008-2010 Siarhei Kuchuk
+Copyright (c) 2008-2022 Siarhei Kuchuk
 [Sources repository](https://github.com/drweb86/butil)
 [Bug Report:](https://github.com/drweb86/butil/issues)
 [Help:](https://github.com/drweb86/butil/blob/master/help/TOC.md)
-[Discussion:](https://github.com/drweb86/butil/discussions)
-
-Support period is usually one time per week

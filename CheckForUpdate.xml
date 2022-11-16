@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LatestUpdate>
-	<Version>5.1.0.0</Version>
-	<Changes>New Features\n
-- 7-zip was updated to 22.01 x64 (2022-07-15);\n
-- .Net was updated to .Net Desktop Runtime v 6.\n
+	<Version>5.3.0.0</Version>
+	<Changes>This is beta version.\n
+FTP & Samba are not working.\n
 \n
-Changes\n
-- update support web-sites;\n
-- update self-update mechanism to use github;\n
-- setup will no longer install .Net, but will requrie .Net Desktop Runtime v.6;\n
-- setup is x64 and demands x64 CPU;\n
-- Windows 64-bit support is required;\n
-- documentation was moved to web-site and excluded from project.\n
+New Features\n
+- New section for setting up incremental model options.\n
+- Incremental backup.\n
+- Support for Wildcard exclusions for Folder Source Items based on Microsoft\n
 	</Changes>
 </LatestUpdate>
