@@ -68,6 +68,7 @@ namespace BUtil.Configurator.Configurator.Controls
 		    foreach (var button in buttons)
 		    {
 		        RegisterVisualEffectsForButton(button);
+                button.BackColor = _normalButtonColor;
                 if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
                 {
                     setBoldFont(button);
@@ -141,10 +142,14 @@ namespace BUtil.Configurator.Configurator.Controls
 		
 		void LeftPanelUserControlLoad(object sender, EventArgs e)
 		{
-			foreach (Button control in Controls)
+			foreach (var control in Controls)
 			{
-				control.BackColor = _normalButtonColor;
-				control.ForeColor = Color.White;
+				var button = control as Button;
+				if (button != null)
+				{
+                    button.BackColor = _normalButtonColor;
+                    button.ForeColor = Color.White;
+				}
 			}
 		}
 
