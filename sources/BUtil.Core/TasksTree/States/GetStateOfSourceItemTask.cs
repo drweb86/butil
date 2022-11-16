@@ -83,7 +83,7 @@ namespace BUtil.Core.TasksTree
             return matcher
                 .Execute(new DirectoryInfoWrapper(new DirectoryInfo(folder)))
                 .Files
-                .Select(x => Path.Combine(folder, x.Path))
+                .Select(x => new FileInfo(Path.Combine(folder, x.Path)).FullName)
                 .ToList();
         }
     }

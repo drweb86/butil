@@ -631,7 +631,7 @@ Please refer to manual for the complete list of parameters!</value>
     <value>Would you lile to remove the backup task '{0}' ?</value>
   </data>
   <data name="BackupTasks" xml:space="preserve">
-    <value>Backup tasks</value>
+    <value>Tasks</value>
   </data>
   <data name="Run" xml:space="preserve">
     <value>Run</value>

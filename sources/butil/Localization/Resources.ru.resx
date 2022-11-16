@@ -571,7 +571,7 @@
     <value>Хотите удалить задание РК "{0}"?</value>
   </data>
   <data name="BackupTasks" xml:space="preserve">
-    <value>Задания РК</value>
+    <value>Задания</value>
   </data>
   <data name="Run" xml:space="preserve">
     <value>Пуск</value>

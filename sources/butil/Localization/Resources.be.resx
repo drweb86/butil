@@ -565,9 +565,6 @@ Please refer to manual for the complete list of parameters!</value>
   <data name="WouldYouLileToRemoveTheBackupTask0" xml:space="preserve">
     <value>Would you lile to remove the backup task '{0}' ?</value>
   </data>
-  <data name="BackupTasks" xml:space="preserve">
-    <value>Backup tasks</value>
-  </data>
   <data name="Run" xml:space="preserve">
     <value>Run</value>
   </data>

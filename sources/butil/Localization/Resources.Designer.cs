@@ -329,7 +329,7 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Backup tasks.
+        ///   Looks up a localized string similar to Tasks.
         /// </summary>
         internal static string BackupTasks {
             get {

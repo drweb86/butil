@@ -64,12 +64,15 @@
   <ItemGroup>
     <Compile Remove="Configurator\AddBackupTaskWizard\Controller\**" />
     <Compile Remove="Controls\**" />
+    <Compile Remove="LogsManagement\**" />
     <Compile Remove="Properties\**" />
     <EmbeddedResource Remove="Configurator\AddBackupTaskWizard\Controller\**" />
     <EmbeddedResource Remove="Controls\**" />
+    <EmbeddedResource Remove="LogsManagement\**" />
     <EmbeddedResource Remove="Properties\**" />
     <None Remove="Configurator\AddBackupTaskWizard\Controller\**" />
     <None Remove="Controls\**" />
+    <None Remove="LogsManagement\**" />
     <None Remove="Properties\**" />
   </ItemGroup>
   <ItemGroup>
@@ -202,8 +205,5 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="LogsManagement\" />
   </ItemGroup>
 </Project>
