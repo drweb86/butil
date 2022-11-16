@@ -1,7 +1,7 @@
 ﻿
 namespace BUtil.Configurator.LogsManagement
 {
-	partial class LogsViewerForm
+	partial class LogsViewerUserControl
 	{
 		/// <summary>
 		/// Designer variable used to keep track of non-visual components.
@@ -30,7 +30,7 @@ namespace BUtil.Configurator.LogsManagement
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogsViewerForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogsViewerUserControl));
             System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Succesfull", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Erroneous", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("Unknown", System.Windows.Forms.HorizontalAlignment.Left);
@@ -44,7 +44,6 @@ namespace BUtil.Configurator.LogsManagement
             this.rightPanel = new System.Windows.Forms.Panel();
             this.helpButton = new System.Windows.Forms.Button();
             this.openRecentLogButton = new System.Windows.Forms.Button();
-            this.openLogsFolderButton = new System.Windows.Forms.Button();
             this.refreshLogsButton = new System.Windows.Forms.Button();
             this.removeSuccesfullLogsButton = new System.Windows.Forms.Button();
             this.deleteSelectedLogsButton = new System.Windows.Forms.Button();
@@ -140,7 +139,6 @@ namespace BUtil.Configurator.LogsManagement
             this.rightPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.rightPanel.Controls.Add(this.helpButton);
             this.rightPanel.Controls.Add(this.openRecentLogButton);
-            this.rightPanel.Controls.Add(this.openLogsFolderButton);
             this.rightPanel.Controls.Add(this.refreshLogsButton);
             this.rightPanel.Controls.Add(this.removeSuccesfullLogsButton);
             this.rightPanel.Controls.Add(this.deleteSelectedLogsButton);
@@ -171,17 +169,6 @@ namespace BUtil.Configurator.LogsManagement
             this.openRecentLogButton.TabIndex = 5;
             this.openRecentLogButton.UseVisualStyleBackColor = true;
             this.openRecentLogButton.Click += new System.EventHandler(this.openTheRecentLog);
-            // 
-            // openLogsFolderButton
-            // 
-            this.openLogsFolderButton.Image = global::BUtil.Configurator.Icons.RedFolder48x48;
-            this.openLogsFolderButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.openLogsFolderButton.Location = new System.Drawing.Point(9, 287);
-            this.openLogsFolderButton.Name = "openLogsFolderButton";
-            this.openLogsFolderButton.Size = new System.Drawing.Size(64, 64);
-            this.openLogsFolderButton.TabIndex = 4;
-            this.openLogsFolderButton.UseVisualStyleBackColor = true;
-            this.openLogsFolderButton.Click += new System.EventHandler(this.openLogsFolderInExplorer);
             // 
             // refreshLogsButton
             // 
@@ -232,10 +219,8 @@ namespace BUtil.Configurator.LogsManagement
             this.ClientSize = new System.Drawing.Size(444, 506);
             this.Controls.Add(this.journalsListView);
             this.Controls.Add(this.rightPanel);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(452, 540);
             this.Name = "LogsViewerForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Backup Journals";
             this.backupJournalsContextMenuStrip.ResumeLayout(false);
             this.rightPanel.ResumeLayout(false);
@@ -250,7 +235,6 @@ namespace BUtil.Configurator.LogsManagement
 		private System.Windows.Forms.ListView journalsListView;
         private System.Windows.Forms.ImageList journalsImageList;
         private System.Windows.Forms.Panel rightPanel;
-        private System.Windows.Forms.Button openLogsFolderButton;
         private System.Windows.Forms.Button refreshLogsButton;
         private System.Windows.Forms.Button removeSuccesfullLogsButton;
         private System.Windows.Forms.Button deleteSelectedLogsButton;

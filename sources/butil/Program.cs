@@ -84,10 +84,6 @@ namespace BUtil.Configurator
 				{
 					controller.OpenRestorationMaster(args[0], true);
 				}
-                else if (firstArgumentUpper == Arguments.RunJournals)
-				{
-					controller.OpenJournals(true);
-				}
                 else if (firstArgumentUpper == Arguments.RunBackupMaster)
                 {
                     controller.OpenBackupUiMaster(null, true);

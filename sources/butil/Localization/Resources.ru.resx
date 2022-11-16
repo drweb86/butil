@@ -231,9 +231,6 @@
   <data name="Add" xml:space="preserve">
     <value>Добавить</value>
   </data>
-  <data name="OpenLogsFolderInExplorer" xml:space="preserve">
-    <value>Посмотреть логи в Проводнике...</value>
-  </data>
   <data name="StorageName" xml:space="preserve">
     <value>Заголовок:</value>
   </data>

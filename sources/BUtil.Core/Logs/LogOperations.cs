@@ -3,59 +3,29 @@ using System.IO;
 using System.Collections.Generic;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Misc;
+using BUtil.Core.Options;
 
 namespace BUtil.Core.Logs
 {
-	/// <summary>
-	/// Operations with logs
-	/// </summary>
-	public class LogOperations
+	public class LogOperations // !
 	{
-		#region Fields
+		private readonly ProgramOptions _programOptions;
 		
-		readonly string _logsFolder;
-
-		#endregion
-		
-		#region Constructors
-		
-		/// <summary>
-		/// The default constructor
-		/// </summary>
-		/// <param name="logsFolder">The logs folder</param>
-		public LogOperations(string logsFolder)
+		public LogOperations(ProgramOptions programOptions)
 		{
-			if (string.IsNullOrEmpty(logsFolder))
-			{
-				throw new ArgumentNullException("logsFolder");
-			}
-
-			_logsFolder = logsFolder;
+            _programOptions = programOptions;
 		}
 		
-		#endregion
-		
-		#region Public methods
-		
-		public void OpenLogsFolderInExplorer()
-		{
-            ProcessHelper.ShellExecute(_logsFolder);
-		}
-		
-		/// <summary>
-		/// Gets the logs information
-		/// </summary>
-		/// <returns>Set of information types</returns>
 		public List<LogInfo> GetLogsInformation()
 		{
 			var result = new List<LogInfo>();
 				
-			if (!Directory.Exists(_logsFolder))
+			if (!Directory.Exists(_programOptions.LogsFolder))
 			{
 				return result;
 			}
 
-			var logsList = Directory.GetFiles(_logsFolder, "*"+Files.LogFilesExtension);
+			var logsList = Directory.GetFiles(_programOptions.LogsFolder, "*"+Files.LogFilesExtension);
 
 			foreach (var log in logsList)
 			{
@@ -64,28 +34,5 @@ namespace BUtil.Core.Logs
 			
 			return result;
 		}
-		
-		public void OpenLogInBrowser(LogInfo info)
-		{
-			if (info == null)
-			{
-				throw new ArgumentNullException("info");
-			}
-			
-			ProcessHelper.ShellExecute(info.LogFile);
-		}
-		
-		public void DeleteLog(LogInfo info)
-		{
-			File.Delete(info.LogFile);
-		}
-		
-		public void DeleteSetOfLogs(IEnumerable<LogInfo> infos)
-		{
-			foreach (var info in infos)
-				DeleteLog(info);
-		}
-		
-		#endregion
 	}
 }

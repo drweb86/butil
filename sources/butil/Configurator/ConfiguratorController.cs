@@ -96,30 +96,7 @@ namespace BUtil.Configurator.Configurator
             }
 
             return task;
-        }
-
-        public void OpenJournals(bool runFormAsApplication)
-		{
-			if (runFormAsApplication)
-			{
-				LoadSettings();
-			}
-			
-			using (var form = new LogsViewerForm(new LogManagementConftroller(_profileOptions.LogsFolder)))
-			{
-				if (runFormAsApplication)
-				{
-					Application.Run(form);
-				}
-				else
-					form.ShowDialog();
-			}
-			
-			if (runFormAsApplication)
-			{
-				Environment.Exit(0);
-			}
-		}
+        }      
 
         public ProgramOptions ProgramOptions
         {

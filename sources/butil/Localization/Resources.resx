@@ -291,9 +291,6 @@ Localization created by:
   <data name="Add" xml:space="preserve">
     <value>Add</value>
   </data>
-  <data name="OpenLogsFolderInExplorer" xml:space="preserve">
-    <value>Open logs folder in Explorer...</value>
-  </data>
   <data name="StorageName" xml:space="preserve">
     <value>Storage name:</value>
   </data>

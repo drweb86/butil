@@ -1329,15 +1329,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Open logs folder in Explorer....
-        /// </summary>
-        internal static string OpenLogsFolderInExplorer {
-            get {
-                return ResourceManager.GetString("OpenLogsFolderInExplorer", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Options.
         /// </summary>
         internal static string Options {

@@ -81,7 +81,6 @@ namespace BUtil.Configurator.Configurator.Forms
             Text = Resources.Configurator;
             restorationToolToolStripMenuItem.Text = Resources.RestoreData;
             _helpToolStripMenuItem.Text= Resources.Help;
-            journalsToolStripMenuItem.Text = Resources.BackupJournals;
             helpToolStripMenuItem.Text = Resources.Documentation;
             _aboutToolStripMenuItem.Text = Resources.About;
 
@@ -133,11 +132,6 @@ namespace BUtil.Configurator.Configurator.Forms
 		void CancelButtonClick(object sender, EventArgs e)
 		{
 			Close();
-		}
-			
-		void JournalsToolStripMenuItemClick(object sender, EventArgs e)
-		{
-			_controller.OpenJournals(false);
 		}
 
         private void OnHelpToolStripMenuItemClick(object sender, EventArgs e)

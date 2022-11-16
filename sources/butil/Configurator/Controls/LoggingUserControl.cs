@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using BUtil.Configurator.Localization;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Logs;
+using BUtil.Core.Misc;
 using BUtil.Core.Options;
 
 
@@ -32,13 +33,13 @@ namespace BUtil.Configurator.Configurator.Controls
             logsLocationLabel.Text = Resources.LogsLocation;
             chooseOtherLogsLocationLinkLabel.Text = Resources.ChangeLogsLocation;
             restoreDefaultLogsLocationLinkLabel.Text = Resources.RestoreDefaultLogsLocation;
-            _manageLogsLinkLabel.Text = Resources.OpenLogs;
 		}
 	
 		public override void SetOptionsToUi(object settings)
 		{
 			_profileOptions = (ProgramOptions)settings;
 			logsLocationLinkLabel.Text = _profileOptions.LogsFolder;
+			logsViewerUserControl1.SetSettings(_profileOptions);
 		}
 		
 		public override void GetOptionsFromUi()
@@ -49,10 +50,9 @@ namespace BUtil.Configurator.Configurator.Controls
 
         #region Private Methods
 
-        void OpenJournalsFolderLinkLabelLinkClicked(object sender, EventArgs e)
+        private void OpenJournalsFolderLinkLabelLinkClicked(object sender, EventArgs e)
 		{
-			var operations = new LogOperations(_profileOptions.LogsFolder);
-			operations.OpenLogsFolderInExplorer();
+            ProcessHelper.ShellExecute(_profileOptions.LogsFolder);
 		}
 		
 		void RestoreDefaultLogsLocationLinkLabelLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -68,11 +68,6 @@ namespace BUtil.Configurator.Configurator.Controls
 				_profileOptions.LogsFolder = fbd.SelectedPath;
 				SetOptionsToUi(_profileOptions);
 			}
-        }
-
-        private void OnManageLogsLinkLabelLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            _controller.OpenJournals(false);
         }
 
         #endregion

@@ -1,4 +1,6 @@
 ﻿
+using BUtil.Configurator.LogsManagement;
+
 namespace BUtil.Configurator.Configurator.Controls
 {
 	partial class LoggingUserControl
@@ -35,7 +37,7 @@ namespace BUtil.Configurator.Configurator.Controls
             this.logsLocationLinkLabel = new System.Windows.Forms.LinkLabel();
             this.restoreDefaultLogsLocationLinkLabel = new System.Windows.Forms.LinkLabel();
             this.chooseOtherLogsLocationLinkLabel = new System.Windows.Forms.LinkLabel();
-            this._manageLogsLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.logsViewerUserControl1 = new BUtil.Configurator.LogsManagement.LogsViewerUserControl();
             this.fbd = new System.Windows.Forms.FolderBrowserDialog();
             this.logsTypeTableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
@@ -50,8 +52,8 @@ namespace BUtil.Configurator.Configurator.Controls
             this.logsCaptionTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.logsCaptionTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.logsCaptionTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.logsCaptionTableLayoutPanel.Location = new System.Drawing.Point(18, 192);
-            this.logsCaptionTableLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.logsCaptionTableLayoutPanel.Location = new System.Drawing.Point(21, 256);
+            this.logsCaptionTableLayoutPanel.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.logsCaptionTableLayoutPanel.Name = "logsCaptionTableLayoutPanel";
             this.logsCaptionTableLayoutPanel.RowCount = 1;
             this.logsCaptionTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -68,29 +70,29 @@ namespace BUtil.Configurator.Configurator.Controls
             this.logsTypeTableLayoutPanel.Controls.Add(this.logsLocationLinkLabel, 1, 0);
             this.logsTypeTableLayoutPanel.Controls.Add(this.restoreDefaultLogsLocationLinkLabel, 1, 1);
             this.logsTypeTableLayoutPanel.Controls.Add(this.chooseOtherLogsLocationLinkLabel, 1, 2);
-            this.logsTypeTableLayoutPanel.Controls.Add(this._manageLogsLinkLabel, 1, 3);
+            this.logsTypeTableLayoutPanel.Controls.Add(this.logsViewerUserControl1, 0, 4);
             this.logsTypeTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.logsTypeTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.logsTypeTableLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.logsTypeTableLayoutPanel.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.logsTypeTableLayoutPanel.Name = "logsTypeTableLayoutPanel";
-            this.logsTypeTableLayoutPanel.Padding = new System.Windows.Forms.Padding(16);
+            this.logsTypeTableLayoutPanel.Padding = new System.Windows.Forms.Padding(18, 21, 18, 21);
             this.logsTypeTableLayoutPanel.RowCount = 5;
             this.logsTypeTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.logsTypeTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.logsTypeTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.logsTypeTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.logsTypeTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.logsTypeTableLayoutPanel.Size = new System.Drawing.Size(460, 215);
+            this.logsTypeTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.logsTypeTableLayoutPanel.Size = new System.Drawing.Size(677, 929);
             this.logsTypeTableLayoutPanel.TabIndex = 0;
             // 
             // logsLocationLabel
             // 
             this.logsLocationLabel.AutoSize = true;
             this.logsLocationLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.logsLocationLabel.Location = new System.Drawing.Point(20, 16);
-            this.logsLocationLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.logsLocationLabel.Location = new System.Drawing.Point(23, 21);
+            this.logsLocationLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.logsLocationLabel.Name = "logsLocationLabel";
-            this.logsLocationLabel.Size = new System.Drawing.Size(81, 15);
+            this.logsLocationLabel.Size = new System.Drawing.Size(101, 20);
             this.logsLocationLabel.TabIndex = 16;
             this.logsLocationLabel.Text = "Logs location:";
             this.logsLocationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -99,10 +101,10 @@ namespace BUtil.Configurator.Configurator.Controls
             // 
             this.logsLocationLinkLabel.AutoSize = true;
             this.logsLocationLinkLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.logsLocationLinkLabel.Location = new System.Drawing.Point(109, 16);
-            this.logsLocationLinkLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.logsLocationLinkLabel.Location = new System.Drawing.Point(134, 21);
+            this.logsLocationLinkLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.logsLocationLinkLabel.Name = "logsLocationLinkLabel";
-            this.logsLocationLinkLabel.Size = new System.Drawing.Size(331, 15);
+            this.logsLocationLinkLabel.Size = new System.Drawing.Size(520, 20);
             this.logsLocationLinkLabel.TabIndex = 17;
             this.logsLocationLinkLabel.TabStop = true;
             this.logsLocationLinkLabel.Text = "<Log location>";
@@ -112,10 +114,10 @@ namespace BUtil.Configurator.Configurator.Controls
             // 
             this.restoreDefaultLogsLocationLinkLabel.AutoSize = true;
             this.restoreDefaultLogsLocationLinkLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.restoreDefaultLogsLocationLinkLabel.Location = new System.Drawing.Point(109, 31);
-            this.restoreDefaultLogsLocationLinkLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.restoreDefaultLogsLocationLinkLabel.Location = new System.Drawing.Point(134, 41);
+            this.restoreDefaultLogsLocationLinkLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.restoreDefaultLogsLocationLinkLabel.Name = "restoreDefaultLogsLocationLinkLabel";
-            this.restoreDefaultLogsLocationLinkLabel.Size = new System.Drawing.Size(331, 15);
+            this.restoreDefaultLogsLocationLinkLabel.Size = new System.Drawing.Size(520, 20);
             this.restoreDefaultLogsLocationLinkLabel.TabIndex = 18;
             this.restoreDefaultLogsLocationLinkLabel.TabStop = true;
             this.restoreDefaultLogsLocationLinkLabel.Text = "● Restore default logs location";
@@ -125,38 +127,36 @@ namespace BUtil.Configurator.Configurator.Controls
             // 
             this.chooseOtherLogsLocationLinkLabel.AutoSize = true;
             this.chooseOtherLogsLocationLinkLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chooseOtherLogsLocationLinkLabel.Location = new System.Drawing.Point(109, 46);
-            this.chooseOtherLogsLocationLinkLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.chooseOtherLogsLocationLinkLabel.Location = new System.Drawing.Point(134, 61);
+            this.chooseOtherLogsLocationLinkLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.chooseOtherLogsLocationLinkLabel.Name = "chooseOtherLogsLocationLinkLabel";
-            this.chooseOtherLogsLocationLinkLabel.Size = new System.Drawing.Size(331, 15);
+            this.chooseOtherLogsLocationLinkLabel.Size = new System.Drawing.Size(520, 20);
             this.chooseOtherLogsLocationLinkLabel.TabIndex = 19;
             this.chooseOtherLogsLocationLinkLabel.TabStop = true;
             this.chooseOtherLogsLocationLinkLabel.Text = "● Change logs location";
             this.chooseOtherLogsLocationLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ChooseOtherLogsLocationLinkLabelLinkClicked);
             // 
-            // _manageLogsLinkLabel
+            // logsViewerUserControl1
             // 
-            this._manageLogsLinkLabel.AutoSize = true;
-            this._manageLogsLinkLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._manageLogsLinkLabel.Location = new System.Drawing.Point(109, 61);
-            this._manageLogsLinkLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this._manageLogsLinkLabel.Name = "_manageLogsLinkLabel";
-            this._manageLogsLinkLabel.Size = new System.Drawing.Size(331, 15);
-            this._manageLogsLinkLabel.TabIndex = 20;
-            this._manageLogsLinkLabel.TabStop = true;
-            this._manageLogsLinkLabel.Text = "● View Logs...";
-            this._manageLogsLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OnManageLogsLinkLabelLinkClicked);
+            this.logsTypeTableLayoutPanel.SetColumnSpan(this.logsViewerUserControl1, 2);
+            this.logsViewerUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.logsViewerUserControl1.Location = new System.Drawing.Point(22, 86);
+            this.logsViewerUserControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.logsViewerUserControl1.MinimumSize = new System.Drawing.Size(603, 831);
+            this.logsViewerUserControl1.Name = "logsViewerUserControl1";
+            this.logsViewerUserControl1.Size = new System.Drawing.Size(633, 831);
+            this.logsViewerUserControl1.TabIndex = 20;
             // 
             // LoggingUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.logsTypeTableLayoutPanel);
             this.Controls.Add(this.logsCaptionTableLayoutPanel);
-            this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.MinimumSize = new System.Drawing.Size(460, 215);
+            this.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.MinimumSize = new System.Drawing.Size(526, 287);
             this.Name = "LoggingUserControl";
-            this.Size = new System.Drawing.Size(460, 215);
+            this.Size = new System.Drawing.Size(677, 929);
             this.logsTypeTableLayoutPanel.ResumeLayout(false);
             this.logsTypeTableLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -170,6 +170,6 @@ namespace BUtil.Configurator.Configurator.Controls
 		private System.Windows.Forms.Label logsLocationLabel;
 		private System.Windows.Forms.TableLayoutPanel logsTypeTableLayoutPanel;
 		private System.Windows.Forms.TableLayoutPanel logsCaptionTableLayoutPanel;
-        private System.Windows.Forms.LinkLabel _manageLogsLinkLabel;
-	}
+        private LogsViewerUserControl logsViewerUserControl1;
+    }
 }

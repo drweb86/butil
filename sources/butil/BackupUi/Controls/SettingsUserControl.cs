@@ -5,6 +5,8 @@ using BUtil.Core.Misc;
 
 using TitledBackUserControl = BUtil.BackupUiMaster.Controls.TitledBackUserControl;
 using BUtil.Configurator.Localization;
+using BUtil.Core.PL;
+using BUtil.Core.BackupModels;
 
 namespace BUtil.Configurator.BackupUiMaster.Controls
 {
@@ -43,8 +45,15 @@ namespace BUtil.Configurator.BackupUiMaster.Controls
 		public void SetSettingsToUi(PowerTask task, BackupTask backupTask, bool beepWhenFinished)
 		{
 			encryptionUserControl.UpdateModel(backupTask);
-			
-			jobAfterOkBackupComboBox.SelectedIndex = (int)task;
+			if (backupTask.Model is IncrementalBackupModelOptions)
+			{
+				var options = backupTask.Model as IncrementalBackupModelOptions;
+
+				encryptionUserControl.Visible = !options.DisableCompressionAndEncryption;
+            }
+
+
+            jobAfterOkBackupComboBox.SelectedIndex = (int)task;
             hearBeepsCheckBox.Checked = beepWhenFinished;
 		}
 		

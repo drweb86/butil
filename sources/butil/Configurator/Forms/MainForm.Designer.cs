@@ -29,7 +29,6 @@ namespace BUtil.Configurator.Configurator.Forms
             this.MainmenuStrip = new System.Windows.Forms.MenuStrip();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restorationToolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.journalsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._beforeAboutToolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -60,8 +59,7 @@ namespace BUtil.Configurator.Configurator.Forms
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.restorationToolToolStripMenuItem,
-            this.journalsToolStripMenuItem});
+            this.restorationToolToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.toolsToolStripMenuItem.Text = "Tasks";
@@ -73,15 +71,7 @@ namespace BUtil.Configurator.Configurator.Forms
             this.restorationToolToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.restorationToolToolStripMenuItem.Text = "Restore Data...";
             this.restorationToolToolStripMenuItem.Click += new System.EventHandler(this.RestorationToolToolStripMenuItemClick);
-            // 
-            // journalsToolStripMenuItem
-            // 
-            this.journalsToolStripMenuItem.Image = global::BUtil.Configurator.Icons.Journals;
-            this.journalsToolStripMenuItem.Name = "journalsToolStripMenuItem";
-            this.journalsToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
-            this.journalsToolStripMenuItem.Text = "Journals...";
-            this.journalsToolStripMenuItem.Click += new System.EventHandler(this.JournalsToolStripMenuItemClick);
-            // 
+           // 
             // _helpToolStripMenuItem
             // 
             this._helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -203,7 +193,6 @@ namespace BUtil.Configurator.Configurator.Forms
             this.PerformLayout();
 
 		}
-		private System.Windows.Forms.ToolStripMenuItem journalsToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem _helpToolStripMenuItem;
 		private System.Windows.Forms.ToolStripStatusLabel helpToolStripStatusLabel;
 		private System.Windows.Forms.StatusStrip helpStatusStrip;

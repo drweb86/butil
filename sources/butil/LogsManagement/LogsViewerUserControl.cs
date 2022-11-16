@@ -7,40 +7,23 @@ using System.Globalization;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Configurator.Localization;
+using BUtil.Core.Options;
 
 namespace BUtil.Configurator.LogsManagement
 {
-	/// <summary>
-	/// The form where we can manage the logs
-	/// </summary>
-	internal sealed partial class LogsViewerForm : Form
+	public partial class LogsViewerUserControl : UserControl
 	{
-		#region Constants
+		private const string ViewLogTime = "dd MMMM (dddd) HH:mm";
 		
-		const string ViewLogTime = "dd MMMM (dddd) HH:mm";
+		private LogOperations _controller;
 		
-		#endregion
-		
-		#region Fields
-		
-		readonly LogManagementConftroller _controller;
-		
-		#endregion
-		
-		#region Constructors
-		
-		public LogsViewerForm(LogManagementConftroller controller)
+		public LogsViewerUserControl()
 		{
 			InitializeComponent();
-
-			_controller = controller;
 			
 			listViewResize(this, null);
 			
-			// applying localization
-			Text = Resources.BackupJournals;
 			
-            toolTip.SetToolTip(openLogsFolderButton, Resources.OpenLogsFolderInExplorer);
             toolTip.SetToolTip(refreshLogsButton, Resources.Refresh);
             toolTip.SetToolTip(openRecentLogButton, Resources.ReviewLogOfLastBackup);
             toolTip.SetToolTip(openSelectedLogsButton, Resources.ViewSelectedLogs);
@@ -62,15 +45,20 @@ namespace BUtil.Configurator.LogsManagement
 			viewSelectedLogsToolStripMenuItem.Text = 
 				Resources.ViewSelectedLogs;
 			
-//? subj to be removed			actionsPanel.Header = Resources.Actions;
-			
-			dataBind();
 		}
 		
-		#endregion
+
+		public void SetSettings(ProgramOptions options)
+		{
+			_controller = new LogOperations(options);
+
+            dataBind();
+
+		}
 		
 		#region Private methods
-		
+
+				
 		void dataBind()
 		{
 			List<LogInfo> infos = _controller.GetLogsInformation();
@@ -115,11 +103,6 @@ namespace BUtil.Configurator.LogsManagement
 			updateLocalOperationsButtonsState(this, null);
 		}
 		
-		void openLogsFolderInExplorer(object sender, EventArgs e)
-		{
-			_controller.OpenLogsFolderInExplorer();
-		}
-		
 		void listViewResize(object sender, EventArgs e)
 		{
 			journalsColumnHeader.Width = journalsListView.Width - 40;
@@ -129,27 +112,30 @@ namespace BUtil.Configurator.LogsManagement
 		{
 			dataBind();
 		}
-		
+
 		void removeSelected(object sender, EventArgs e)
 		{
 			ListView.SelectedListViewItemCollection items = journalsListView.SelectedItems;
 			var infos = new List<LogInfo>();
-			foreach(ListViewItem item in items)
+			foreach (ListViewItem item in items)
 			{
 				infos.Add((LogInfo)item.Tag);
 			}
-			
-			if (_controller.DeleteSetOfLogs(infos))
+
+			if (!Messages.ShowYesNoDialog(string.Format(Resources.PleaseConfirmDeletionOf0Logs, infos.Count)))
+				return;
+
+            foreach (var info in infos)
+                System.IO.File.Delete(info.LogFile);
+
+            journalsListView.BeginUpdate();
+			foreach (ListViewItem item in items)
 			{
-				journalsListView.BeginUpdate();
-				foreach(ListViewItem item in items)
-				{
-					journalsListView.Items.Remove(item);
-				}
-				journalsListView.EndUpdate();
-	
-				updateLogsListButtonsState();
+				journalsListView.Items.Remove(item);
 			}
+			journalsListView.EndUpdate();
+
+			updateLogsListButtonsState();
 		}
 		
 		void journalsListViewKeyDown(object sender, KeyEventArgs e)
@@ -188,13 +174,13 @@ namespace BUtil.Configurator.LogsManagement
 				viewSelectedLogsToolStripMenuItem.Enabled =
                 openSelectedLogsButton.Enabled = enable;
 		}
-		
+
 		void removeSuccessfullLogs(object sender, EventArgs e)
 		{
 			ListView.ListViewItemCollection items = journalsListView.Items;
-			
+
 			var infos = new List<LogInfo>();
-			foreach(ListViewItem item in items)
+			foreach (ListViewItem item in items)
 			{
 				var info = (LogInfo)item.Tag;
 				if (info.Result == BackupResult.Successfull)
@@ -202,29 +188,31 @@ namespace BUtil.Configurator.LogsManagement
 					infos.Add((info));
 				}
 			}
-			
-			if (_controller.DeleteSetOfLogs(infos))
+
+			if (!Messages.ShowYesNoDialog(string.Format(Resources.PleaseConfirmDeletionOf0Logs, infos.Count)))
+				return;
+            foreach (var info in infos)
+                System.IO.File.Delete(info.LogFile);
+            journalsListView.BeginUpdate();
+			foreach (ListViewItem item in items)
 			{
-				journalsListView.BeginUpdate();
-				foreach(ListViewItem item in items)
+				var info = (LogInfo)item.Tag;
+				if (info.Result == BackupResult.Successfull)
 				{
-					var info = (LogInfo)item.Tag;
-					if (info.Result == BackupResult.Successfull)
-					{
-						journalsListView.Items.Remove(item);
-					}
+					journalsListView.Items.Remove(item);
 				}
-				journalsListView.EndUpdate();
-	
-				updateLogsListButtonsState();
 			}
+			journalsListView.EndUpdate();
+
+			updateLogsListButtonsState();
+
 		}
 		
 		void openSelectedLogsInBrowser(object sender, EventArgs e)
 		{
 			foreach(ListViewItem item in journalsListView.SelectedItems)
 			{
-				_controller.OpenLogInBrowser((LogInfo)item.Tag);
+                ProcessHelper.ShellExecute(((LogInfo)item.Tag).LogFile);
 			}
 		}
 		
@@ -239,8 +227,8 @@ namespace BUtil.Configurator.LogsManagement
 					latest = (LogInfo)item.Tag;
 				}
 			}
-			
-			_controller.OpenLogInBrowser(latest);
+
+            ProcessHelper.ShellExecute(latest.LogFile);
 		}
 		
 		void helpButtonClick(object sender, EventArgs e)

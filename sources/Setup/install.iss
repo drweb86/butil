@@ -115,7 +115,6 @@ Name: "{group}\{cm:Configurator}"; Filename: "{app}\bin\butil.exe"
 Name: "{group}\{cm:Console_Backup}"; Filename: "{app}\bin\butilc.exe"
 Name: "{group}\{cm:Backup_Wizard}"; Filename: "{app}\bin\butil.exe"; Parameters: "JustBackupMaster"; IconFilename: "{app}\data\BackupUi.ico"
 Name: "{group}\{cm:Restoration}"; Filename: "{app}\bin\butil.exe"; Parameters: "JustRestorationMaster"; IconFilename: "{app}\data\RestorationMaster.ico"
-Name: "{group}\{cm:Journals}"; Filename: "{app}\bin\butil.exe"; Parameters: "JustJournals"; IconFilename: "{app}\data\Journals.ico"
 
 ; Documentation
 Name: "{group}\{cm:Documentation}\{cm:Manual}"; Filename: "{app}\Help.url"
