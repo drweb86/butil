@@ -1555,6 +1555,15 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Restoration is completed..
+        /// </summary>
+        internal static string RestorationIsCompleted {
+            get {
+                return ResourceManager.GetString("RestorationIsCompleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Restoration master.
         /// </summary>
         internal static string RestorationMaster {

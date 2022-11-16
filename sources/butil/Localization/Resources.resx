@@ -803,4 +803,7 @@ See detailed description in the following link.</value>
   <data name="CannotOpenBackupFolder" xml:space="preserve">
     <value>Cannot open backup folder.</value>
   </data>
+  <data name="RestorationIsCompleted" xml:space="preserve">
+    <value>Restoration is completed.</value>
+  </data>
 </root>

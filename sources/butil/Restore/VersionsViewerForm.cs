@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using BUtil.Configurator;
 using BUtil.Configurator.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
@@ -280,6 +281,8 @@ namespace BUtil.RestorationMaster
                 }
             });
             form.ShowDialog();
+
+            Messages.ShowInformationBox(BUtil.Configurator.Localization.Resources.RestorationIsCompleted);
         }
 
         private void OnMouseDown(object sender, MouseEventArgs e)

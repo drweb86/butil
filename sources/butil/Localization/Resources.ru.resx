@@ -743,4 +743,7 @@ bin.
   <data name="CannotOpenBackupFolder" xml:space="preserve">
     <value>Не удается открыть папку резервного копирования.</value>
   </data>
+  <data name="RestorationIsCompleted" xml:space="preserve">
+    <value>Восстановление завершено.</value>
+  </data>
 </root>
