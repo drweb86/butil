@@ -12,7 +12,7 @@ namespace BUtil.Configurator.Configurator.Controls
 	/// <summary>
 	/// Switcher between views
 	/// </summary>
-	internal sealed partial class LeftPanelUserControl : Core.PL.BackUserControl
+	internal sealed partial class MainNavigationUserControl : Core.PL.BackUserControl
     {
         #region Fields
 
@@ -38,7 +38,7 @@ namespace BUtil.Configurator.Configurator.Controls
 		[Browsable(true)]
 		public event ChangeViewEventHandler ViewChanged;
 
-		public LeftPanelUserControl()
+		public MainNavigationUserControl()
 		{
 			InitializeComponent();
 			

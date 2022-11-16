@@ -29,7 +29,7 @@
     <Compile Update="Configurator\AboutProgramUI\AboutProgramUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Configurator\Controls\LeftPanelUserControl.cs">
+    <Compile Update="Configurator\Controls\MainNavigationUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Configurator\Controls\OtherOptionsUserControl.cs">

@@ -1,7 +1,7 @@
 ﻿
 namespace BUtil.Configurator.Configurator.Controls
 {
-	partial class LeftPanelUserControl
+	partial class MainNavigationUserControl
 	{
 		/// <summary>
 		/// Designer variable used to keep track of non-visual components.

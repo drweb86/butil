@@ -101,7 +101,7 @@
     <Compile Update="Configurator\Controls\Tasks\OtherTaskOptionsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Configurator\Controls\LeftPanelUserControl.cs" />
+    <Compile Update="Configurator\Controls\MainNavigationUserControl.cs" />
     <Compile Update="Configurator\Controls\LoggingUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

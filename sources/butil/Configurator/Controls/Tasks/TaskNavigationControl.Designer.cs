@@ -50,10 +50,10 @@ namespace BUtil.Configurator.Controls
             this.itemsForBackupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.itemsForBackupButton.Image = global::BUtil.Configurator.Icons.SourceItems48x48;
             this.itemsForBackupButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.itemsForBackupButton.Location = new System.Drawing.Point(4, 64);
-            this.itemsForBackupButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.itemsForBackupButton.Location = new System.Drawing.Point(5, 85);
+            this.itemsForBackupButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.itemsForBackupButton.Name = "itemsForBackupButton";
-            this.itemsForBackupButton.Size = new System.Drawing.Size(167, 55);
+            this.itemsForBackupButton.Size = new System.Drawing.Size(190, 73);
             this.itemsForBackupButton.TabIndex = 0;
             this.itemsForBackupButton.Text = "What ?";
             this.itemsForBackupButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -68,10 +68,10 @@ namespace BUtil.Configurator.Controls
             this.storagesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.storagesButton.Image = global::BUtil.Configurator.Icons.Storages48x48;
             this.storagesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.storagesButton.Location = new System.Drawing.Point(4, 186);
-            this.storagesButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.storagesButton.Location = new System.Drawing.Point(5, 247);
+            this.storagesButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.storagesButton.Name = "storagesButton";
-            this.storagesButton.Size = new System.Drawing.Size(167, 55);
+            this.storagesButton.Size = new System.Drawing.Size(190, 73);
             this.storagesButton.TabIndex = 1;
             this.storagesButton.Text = "Where ?";
             this.storagesButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -86,10 +86,10 @@ namespace BUtil.Configurator.Controls
             this.schedulerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.schedulerButton.Image = global::BUtil.Configurator.Icons.Schedule48x48;
             this.schedulerButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.schedulerButton.Location = new System.Drawing.Point(4, 125);
-            this.schedulerButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.schedulerButton.Location = new System.Drawing.Point(5, 166);
+            this.schedulerButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.schedulerButton.Name = "schedulerButton";
-            this.schedulerButton.Size = new System.Drawing.Size(167, 55);
+            this.schedulerButton.Size = new System.Drawing.Size(190, 73);
             this.schedulerButton.TabIndex = 2;
             this.schedulerButton.Text = "When ?";
             this.schedulerButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -104,10 +104,10 @@ namespace BUtil.Configurator.Controls
             this.encryptionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.encryptionButton.Image = global::BUtil.Configurator.Icons.Password48x48;
             this.encryptionButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.encryptionButton.Location = new System.Drawing.Point(4, 308);
-            this.encryptionButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.encryptionButton.Location = new System.Drawing.Point(5, 409);
+            this.encryptionButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.encryptionButton.Name = "encryptionButton";
-            this.encryptionButton.Size = new System.Drawing.Size(167, 55);
+            this.encryptionButton.Size = new System.Drawing.Size(190, 73);
             this.encryptionButton.TabIndex = 3;
             this.encryptionButton.Text = "Encryption";
             this.encryptionButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -122,10 +122,10 @@ namespace BUtil.Configurator.Controls
             this.otherOptionsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.otherOptionsButton.Image = global::BUtil.Configurator.Icons.OtherSettings48x48;
             this.otherOptionsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.otherOptionsButton.Location = new System.Drawing.Point(4, 369);
-            this.otherOptionsButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.otherOptionsButton.Location = new System.Drawing.Point(5, 490);
+            this.otherOptionsButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.otherOptionsButton.Name = "otherOptionsButton";
-            this.otherOptionsButton.Size = new System.Drawing.Size(167, 55);
+            this.otherOptionsButton.Size = new System.Drawing.Size(190, 73);
             this.otherOptionsButton.TabIndex = 4;
             this.otherOptionsButton.Text = "Other options";
             this.otherOptionsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -140,10 +140,10 @@ namespace BUtil.Configurator.Controls
             this.howButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.howButton.Image = ((System.Drawing.Image)(resources.GetObject("howButton.Image")));
             this.howButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.howButton.Location = new System.Drawing.Point(4, 247);
-            this.howButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.howButton.Location = new System.Drawing.Point(5, 328);
+            this.howButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.howButton.Name = "howButton";
-            this.howButton.Size = new System.Drawing.Size(167, 55);
+            this.howButton.Size = new System.Drawing.Size(190, 73);
             this.howButton.TabIndex = 5;
             this.howButton.Text = "How ?";
             this.howButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -164,6 +164,7 @@ namespace BUtil.Configurator.Controls
             this._tableLayoutPanel.Controls.Add(this._nameButton, 0, 0);
             this._tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this._tableLayoutPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this._tableLayoutPanel.Name = "_tableLayoutPanel";
             this._tableLayoutPanel.RowCount = 8;
             this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
@@ -174,7 +175,7 @@ namespace BUtil.Configurator.Controls
             this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this._tableLayoutPanel.Size = new System.Drawing.Size(175, 427);
+            this._tableLayoutPanel.Size = new System.Drawing.Size(200, 569);
             this._tableLayoutPanel.TabIndex = 6;
             // 
             // _nameButton
@@ -185,10 +186,10 @@ namespace BUtil.Configurator.Controls
             this._nameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._nameButton.Image = ((System.Drawing.Image)(resources.GetObject("_nameButton.Image")));
             this._nameButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this._nameButton.Location = new System.Drawing.Point(4, 3);
-            this._nameButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this._nameButton.Location = new System.Drawing.Point(5, 4);
+            this._nameButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this._nameButton.Name = "_nameButton";
-            this._nameButton.Size = new System.Drawing.Size(167, 55);
+            this._nameButton.Size = new System.Drawing.Size(190, 73);
             this._nameButton.TabIndex = 6;
             this._nameButton.Text = "Name";
             this._nameButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -197,16 +198,16 @@ namespace BUtil.Configurator.Controls
             // 
             // TaskNavigationControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImage = global::BUtil.Configurator.Icons.BackgroundImage;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this._tableLayoutPanel);
-            this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.MinimumSize = new System.Drawing.Size(161, 357);
+            this.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.MinimumSize = new System.Drawing.Size(184, 476);
             this.Name = "TaskNavigationControl";
-            this.Size = new System.Drawing.Size(175, 427);
+            this.Size = new System.Drawing.Size(200, 569);
             this.Load += new System.EventHandler(this.leftPanelUserControlLoad);
             this._tableLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);

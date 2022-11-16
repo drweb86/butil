@@ -35,7 +35,7 @@ namespace BUtil.Configurator.Configurator.Forms
             this._beforeAboutToolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this._aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.choosePanelUserControl = new BUtil.Configurator.Configurator.Controls.LeftPanelUserControl();
+            this.choosePanelUserControl = new BUtil.Configurator.Configurator.Controls.MainNavigationUserControl();
             this.helpToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.optionsHeader = new BUtil.Configurator.Controls.OptionsHeader();
             this.nestingControlsPanel = new System.Windows.Forms.Panel();
@@ -133,7 +133,7 @@ namespace BUtil.Configurator.Configurator.Forms
             this.choosePanelUserControl.Name = "choosePanelUserControl";
             this.choosePanelUserControl.Size = new System.Drawing.Size(163, 548);
             this.choosePanelUserControl.TabIndex = 0;
-            this.choosePanelUserControl.ViewChanged += new BUtil.Configurator.Configurator.Controls.LeftPanelUserControl.ChangeViewEventHandler(this.ChoosePanelUserControlViewChanged);
+            this.choosePanelUserControl.ViewChanged += new BUtil.Configurator.Configurator.Controls.MainNavigationUserControl.ChangeViewEventHandler(this.ChoosePanelUserControlViewChanged);
             // 
             // helpToolStripStatusLabel
             // 
@@ -209,7 +209,7 @@ namespace BUtil.Configurator.Configurator.Forms
 		private System.Windows.Forms.StatusStrip helpStatusStrip;
 		private System.Windows.Forms.Panel nestingControlsPanel;
 		private BUtil.Configurator.Controls.OptionsHeader optionsHeader;
-        private LeftPanelUserControl choosePanelUserControl;
+        private MainNavigationUserControl choosePanelUserControl;
 		private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
 		private System.Windows.Forms.MenuStrip MainmenuStrip;
         private System.Windows.Forms.ToolTip toolTip;
