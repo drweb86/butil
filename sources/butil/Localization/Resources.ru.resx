@@ -432,9 +432,6 @@
   <data name="YouHaveTheLatestVersion" xml:space="preserve">
     <value>У вас последняя версия!</value>
   </data>
-  <data name="ReviewLogOfLastBackup" xml:space="preserve">
-    <value>Посмотреть лог последнего резервного копирования...</value>
-  </data>
   <data name="InProgress" xml:space="preserve">
     <value>Обработка...</value>
   </data>
@@ -451,7 +448,7 @@
     <value>Состояние Обработки</value>
   </data>
   <data name="BackupJournals" xml:space="preserve">
-    <value>Журналы резервного копирования</value>
+    <value>Логи</value>
   </data>
   <data name="ViewSelectedLogs" xml:space="preserve">
     <value>Посмотреть выбранные логи...</value>
@@ -460,16 +457,7 @@
     <value>Удалить выбранные логи</value>
   </data>
   <data name="RemoveSuccesfullLogs" xml:space="preserve">
-    <value>Удалить логи успешного РК</value>
-  </data>
-  <data name="Succesfull" xml:space="preserve">
-    <value>Успешные</value>
-  </data>
-  <data name="Erroneous" xml:space="preserve">
-    <value>С ошибками</value>
-  </data>
-  <data name="Unknown" xml:space="preserve">
-    <value>С неопределенным статусом</value>
+    <value>Удалить успешные логи</value>
   </data>
   <data name="Refresh" xml:space="preserve">
     <value>Обновить</value>
@@ -526,13 +514,13 @@
     <value>Переместить ниже</value>
   </data>
   <data name="LogsLocation" xml:space="preserve">
-    <value>Расположение журналов:</value>
+    <value>Папка с логами:</value>
   </data>
   <data name="ChangeLogsLocation" xml:space="preserve">
-    <value>● Изменить месторасположение журналов</value>
+    <value>● Изменить месторасположение логов</value>
   </data>
   <data name="RestoreDefaultLogsLocation" xml:space="preserve">
-    <value>● Восстановить место хранения журналов по умолчанию</value>
+    <value>● Восстановить место хранения логов по умолчанию</value>
   </data>
   <data name="Actions" xml:space="preserve">
     <value>Действия</value>
@@ -590,9 +578,6 @@
   </data>
   <data name="BackupTask0" xml:space="preserve">
     <value>Задание Резервного Копирования "{0}"</value>
-  </data>
-  <data name="SaveAndRun" xml:space="preserve">
-    <value>Сохранить и запустить</value>
   </data>
   <data name="ChooseTheTaskYouWantToRun" xml:space="preserve">
     <value>Выберите задание РК для запуска:</value>

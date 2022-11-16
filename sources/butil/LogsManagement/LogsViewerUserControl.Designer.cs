@@ -31,9 +31,6 @@ namespace BUtil.Configurator.LogsManagement
 		{
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogsViewerUserControl));
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Succesfull", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Erroneous", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("Unknown", System.Windows.Forms.HorizontalAlignment.Left);
             this.journalsImageList = new System.Windows.Forms.ImageList(this.components);
             this.journalsListView = new System.Windows.Forms.ListView();
             this.journalsColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -42,8 +39,6 @@ namespace BUtil.Configurator.LogsManagement
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.removeSelectedLogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rightPanel = new System.Windows.Forms.Panel();
-            this.helpButton = new System.Windows.Forms.Button();
-            this.openRecentLogButton = new System.Windows.Forms.Button();
             this.refreshLogsButton = new System.Windows.Forms.Button();
             this.removeSuccesfullLogsButton = new System.Windows.Forms.Button();
             this.deleteSelectedLogsButton = new System.Windows.Forms.Button();
@@ -71,16 +66,6 @@ namespace BUtil.Configurator.LogsManagement
             this.journalsListView.ContextMenuStrip = this.backupJournalsContextMenuStrip;
             this.journalsListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.journalsListView.FullRowSelect = true;
-            listViewGroup1.Header = "Succesfull";
-            listViewGroup1.Name = "okListViewGroup";
-            listViewGroup2.Header = "Erroneous";
-            listViewGroup2.Name = "erroneousListViewGroup";
-            listViewGroup3.Header = "Unknown";
-            listViewGroup3.Name = "unknownListViewGroup";
-            this.journalsListView.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1,
-            listViewGroup2,
-            listViewGroup3});
             this.journalsListView.LabelWrap = false;
             this.journalsListView.LargeImageList = this.journalsImageList;
             this.journalsListView.Location = new System.Drawing.Point(3, 4);
@@ -137,8 +122,6 @@ namespace BUtil.Configurator.LogsManagement
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.rightPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rightPanel.BackgroundImage")));
             this.rightPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.rightPanel.Controls.Add(this.helpButton);
-            this.rightPanel.Controls.Add(this.openRecentLogButton);
             this.rightPanel.Controls.Add(this.refreshLogsButton);
             this.rightPanel.Controls.Add(this.removeSuccesfullLogsButton);
             this.rightPanel.Controls.Add(this.deleteSelectedLogsButton);
@@ -147,28 +130,6 @@ namespace BUtil.Configurator.LogsManagement
             this.rightPanel.Name = "rightPanel";
             this.rightPanel.Size = new System.Drawing.Size(76, 501);
             this.rightPanel.TabIndex = 4;
-            // 
-            // helpButton
-            // 
-            this.helpButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.helpButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.helpButton.Image = global::BUtil.Configurator.Icons.Help48x48;
-            this.helpButton.Location = new System.Drawing.Point(9, 434);
-            this.helpButton.Name = "helpButton";
-            this.helpButton.Size = new System.Drawing.Size(64, 64);
-            this.helpButton.TabIndex = 10;
-            this.helpButton.UseVisualStyleBackColor = true;
-            this.helpButton.Click += new System.EventHandler(this.helpButtonClick);
-            // 
-            // openRecentLogButton
-            // 
-            this.openRecentLogButton.Image = ((System.Drawing.Image)(resources.GetObject("openRecentLogButton.Image")));
-            this.openRecentLogButton.Location = new System.Drawing.Point(9, 357);
-            this.openRecentLogButton.Name = "openRecentLogButton";
-            this.openRecentLogButton.Size = new System.Drawing.Size(64, 64);
-            this.openRecentLogButton.TabIndex = 5;
-            this.openRecentLogButton.UseVisualStyleBackColor = true;
-            this.openRecentLogButton.Click += new System.EventHandler(this.openTheRecentLog);
             // 
             // refreshLogsButton
             // 
@@ -240,7 +201,5 @@ namespace BUtil.Configurator.LogsManagement
         private System.Windows.Forms.Button deleteSelectedLogsButton;
         private System.Windows.Forms.Button openSelectedLogsButton;
         private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.Button openRecentLogButton;
-        private System.Windows.Forms.Button helpButton;
 	}
 }

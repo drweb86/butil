@@ -19,8 +19,6 @@ namespace BUtil.Configurator.Configurator.Forms
         readonly ScheduleInfo _scheduleInfo;
         readonly ProgramOptions _profileOptions;
 
-        public bool ExecuteTask { get; private set; }
-
         public EditBackupTaskForm(ProgramOptions profileOptions, BackupTask task, ScheduleInfo scheduleInfo)
         {
             InitializeComponent();
@@ -64,7 +62,6 @@ namespace BUtil.Configurator.Configurator.Forms
                 pair.Value.ApplyLocalization();
             }
             choosePanelUserControl.ApplyLocalization();
-            _saveAndExecuteButton.Text = Resources.SaveAndRun;
             cancelButton.Text = Resources.Cancel;
             
             ViewChangeNotification(BackupTaskViewsEnum.SourceItems);
@@ -90,8 +87,6 @@ namespace BUtil.Configurator.Configurator.Forms
         {
             if (!SaveTask())
                 return;
-
-            ExecuteTask = false;
             
             DialogResult = DialogResult.OK;
             Close();
@@ -112,16 +107,6 @@ namespace BUtil.Configurator.Configurator.Forms
             nestingControlsPanel.Controls[0].Dock = DockStyle.Fill;
             nestingControlsPanel.AutoScrollMinSize = new System.Drawing.Size(_views[newView].MinimumSize.Width, _views[newView].MinimumSize.Height);
             optionsHeader.Title = choosePanelUserControl.SelectedCategory;
-        }
-
-        void SaveAndExecuteTaskButtonRequest(object sender, EventArgs e)
-        {
-            if (!SaveTask())
-                return;
-
-            ExecuteTask = true;
-            DialogResult = DialogResult.OK;
-            Close();
         }
 
         private bool OnCanChangeView(BackupTaskViewsEnum oldView)

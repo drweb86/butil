@@ -8,6 +8,9 @@ using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Configurator.Localization;
 using BUtil.Core.Options;
+using System.Linq;
+using BUtil.Core.FileSystem;
+using System.IO;
 
 namespace BUtil.Configurator.LogsManagement
 {
@@ -15,7 +18,7 @@ namespace BUtil.Configurator.LogsManagement
 	{
 		private const string ViewLogTime = "dd MMMM (dddd) HH:mm";
 		
-		private LogOperations _controller;
+		private ProgramOptions _programOptions;
 		
 		public LogsViewerUserControl()
 		{
@@ -25,9 +28,7 @@ namespace BUtil.Configurator.LogsManagement
 			
 			
             toolTip.SetToolTip(refreshLogsButton, Resources.Refresh);
-            toolTip.SetToolTip(openRecentLogButton, Resources.ReviewLogOfLastBackup);
             toolTip.SetToolTip(openSelectedLogsButton, Resources.ViewSelectedLogs);
-            toolTip.SetToolTip(helpButton, Resources.Help);
 
 		    toolTip.SetToolTip(deleteSelectedLogsButton, Resources.RemoveSelectedLogs);
 			removeSelectedLogsToolStripMenuItem.Text = 
@@ -35,70 +36,45 @@ namespace BUtil.Configurator.LogsManagement
 				Resources.RemoveSelectedLogs;
 
             toolTip.SetToolTip(removeSuccesfullLogsButton, Resources.RemoveSuccesfullLogs);
-			
 			journalsListView.Columns[0].Text = Resources.BackupJournals;
-			journalsListView.Groups[(int) BackupResult.Successfull].Header = Resources.Succesfull;
-            journalsListView.Groups[(int) BackupResult.Erroneous].Header = Resources.Erroneous;
-            journalsListView.Groups[(int) BackupResult.Unknown].Header = Resources.Unknown;
-
-            
 			viewSelectedLogsToolStripMenuItem.Text = 
 				Resources.ViewSelectedLogs;
-			
 		}
-		
 
 		public void SetSettings(ProgramOptions options)
 		{
-			_controller = new LogOperations(options);
+            _programOptions = options;
 
-            dataBind();
+            RefreshList();
 
 		}
 		
-		#region Private methods
-
-				
-		void dataBind()
+		private void RefreshList()
 		{
-			List<LogInfo> infos = _controller.GetLogsInformation();
-			
-			var sortedByDateDecreasingLogs = new SortedDictionary<TimeSpan, LogInfo>();
-			foreach (var info in infos)
-			{
-				TimeSpan span = DateTime.MaxValue - info.TimeStamp;
-				while (sortedByDateDecreasingLogs.ContainsKey(span))
-				{
-					span = span.Add(new TimeSpan(1));
-				}
-				sortedByDateDecreasingLogs.Add(span, info);
-			}
-			
-			var colors = new [] {Color.Green, Color.Red, Color.Brown};
-			journalsListView.BeginUpdate();
-			journalsListView.Items.Clear();
-			
-			foreach (KeyValuePair<TimeSpan, LogInfo> pair in sortedByDateDecreasingLogs)
-			{
-				var item = new ListViewItem( pair.Value.TimeStamp.ToString(ViewLogTime, CultureInfo.CurrentUICulture), (int)pair.Value.Result);
-				item.ForeColor = colors[(int) pair.Value.Result];
-				item.Group = journalsListView.Groups[(int) pair.Value.Result];
-				item.Tag = pair.Value;
-				
-				journalsListView.Items.Add(item);
-			}
+            var colors = new[] { Color.Green, Color.Red, Color.Brown };
+            journalsListView.BeginUpdate();
+            journalsListView.Items.Clear();
+            
+			GetLogsInformation()
+				.OrderByDescending(x => x.CreatedAt)
+				.Select(log => new ListViewItem(log.CreatedAt.ToString(ViewLogTime, CultureInfo.CurrentUICulture), (int)log.Status)
+                {
+                    ForeColor = colors[(int)log.Status],
+                    Tag = log
+                })
+				.ToList()
+				.ForEach(x => journalsListView.Items.Add(x));
+
 			journalsListView.EndUpdate();
-			
-			updateLogsListButtonsState();
+			RefreshEnabledButtons();
 		}
 		
-		void updateLogsListButtonsState()
+		private void RefreshEnabledButtons()
 		{
 			bool anyDataPresent = journalsListView.Items.Count > 0;
 			
 			journalsListView.Enabled =
-                removeSuccesfullLogsButton.Enabled =
-				openRecentLogButton.Enabled = anyDataPresent;
+                removeSuccesfullLogsButton.Enabled = anyDataPresent;
 				
 			updateLocalOperationsButtonsState(this, null);
 		}
@@ -110,7 +86,7 @@ namespace BUtil.Configurator.LogsManagement
 		
 		void refresh(object sender, EventArgs e)
 		{
-			dataBind();
+			RefreshList();
 		}
 
 		void removeSelected(object sender, EventArgs e)
@@ -126,7 +102,7 @@ namespace BUtil.Configurator.LogsManagement
 				return;
 
             foreach (var info in infos)
-                System.IO.File.Delete(info.LogFile);
+                System.IO.File.Delete(info.File);
 
             journalsListView.BeginUpdate();
 			foreach (ListViewItem item in items)
@@ -135,7 +111,7 @@ namespace BUtil.Configurator.LogsManagement
 			}
 			journalsListView.EndUpdate();
 
-			updateLogsListButtonsState();
+			RefreshEnabledButtons();
 		}
 		
 		void journalsListViewKeyDown(object sender, KeyEventArgs e)
@@ -160,7 +136,7 @@ namespace BUtil.Configurator.LogsManagement
 			}
 			else if (e.KeyCode == Keys.F5)
 			{
-				dataBind();
+				RefreshList();
 			}
 		}
 		
@@ -183,7 +159,7 @@ namespace BUtil.Configurator.LogsManagement
 			foreach (ListViewItem item in items)
 			{
 				var info = (LogInfo)item.Tag;
-				if (info.Result == BackupResult.Successfull)
+				if (info.Status == BackupResult.Successfull)
 				{
 					infos.Add((info));
 				}
@@ -192,19 +168,19 @@ namespace BUtil.Configurator.LogsManagement
 			if (!Messages.ShowYesNoDialog(string.Format(Resources.PleaseConfirmDeletionOf0Logs, infos.Count)))
 				return;
             foreach (var info in infos)
-                System.IO.File.Delete(info.LogFile);
+                System.IO.File.Delete(info.File);
             journalsListView.BeginUpdate();
 			foreach (ListViewItem item in items)
 			{
 				var info = (LogInfo)item.Tag;
-				if (info.Result == BackupResult.Successfull)
+				if (info.Status == BackupResult.Successfull)
 				{
 					journalsListView.Items.Remove(item);
 				}
 			}
 			journalsListView.EndUpdate();
 
-			updateLogsListButtonsState();
+			RefreshEnabledButtons();
 
 		}
 		
@@ -212,30 +188,27 @@ namespace BUtil.Configurator.LogsManagement
 		{
 			foreach(ListViewItem item in journalsListView.SelectedItems)
 			{
-                ProcessHelper.ShellExecute(((LogInfo)item.Tag).LogFile);
+                ProcessHelper.ShellExecute(((LogInfo)item.Tag).File);
 			}
 		}
-		
-		void openTheRecentLog(object sender, EventArgs e)
-		{
-			LogInfo latest = (LogInfo)journalsListView.Items[0].Tag;
 
-			foreach(ListViewItem item in journalsListView.Items)
-			{
-				if (((LogInfo)item.Tag).TimeStamp > latest.TimeStamp)
-				{
-					latest = (LogInfo)item.Tag;
-				}
-			}
+        private List<LogInfo> GetLogsInformation()
+        {
+            var result = new List<LogInfo>();
 
-            ProcessHelper.ShellExecute(latest.LogFile);
-		}
-		
-		void helpButtonClick(object sender, EventArgs e)
-		{
-            SupportManager.DoSupport(SupportRequest.ManageLogs);
-        }		
+            if (!Directory.Exists(_programOptions.LogsFolder))
+            {
+                return result;
+            }
 
-		#endregion
-	}
+            var logsList = Directory.GetFiles(_programOptions.LogsFolder, "*" + Files.LogFilesExtension);
+
+            foreach (var log in logsList)
+            {
+                result.Add(new LogInfo(log));
+            }
+
+            return result;
+        }
+    }
 }

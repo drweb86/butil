@@ -4,57 +4,36 @@ using BUtil.Core.FileSystem;
 
 namespace BUtil.Core.Logs
 {
-	public sealed class LogInfo
+	public class LogInfo
 	{
-		readonly string _logFile;
-		readonly BackupResult _result;
-		readonly DateTime _timeStamp;
-		
-		public string LogFile
-		{
-			get { return _logFile; }
-		}
-			
-		public BackupResult Result
-		{
-			get { return _result; }
-		}
-			
-		public DateTime TimeStamp
-		{
-			get { return _timeStamp; }
-		}
-		
-		public LogInfo(string file)
-		{
-			if (string.IsNullOrEmpty(file))
-			{
-				throw new ArgumentNullException("file");
-			}
+		public string File { get; }
+		public BackupResult Status { get; }
+        public DateTime CreatedAt { get; }
 
-			_logFile = file;
-			_timeStamp = File.GetCreationTime(_logFile);
+        public LogInfo(string file)
+		{
+            File = file;
+            CreatedAt = System.IO.File.GetCreationTime(File);
 
 			try
 			{
-				string contents = File.ReadAllText(_logFile);
+				string contents = System.IO.File.ReadAllText(File);
 				if (contents.Contains(Files.SuccesfullBackupMarkInHtmlLog))
 				{
-					_result = BackupResult.Successfull;
+					Status = BackupResult.Successfull;
 				}
 				else if (contents.Contains(Files.ErroneousBackupMarkInHtmlLog))
 				{
-				_result = BackupResult.Erroneous;
+					Status = BackupResult.Erroneous;
 				}
 				else
 				{
-					_result = BackupResult.Unknown;
+					Status = BackupResult.Unknown;
 				}
 			}
-			catch (IOException e)
+			catch
 			{
-				_result = BackupResult.Unknown;
-				System.Diagnostics.Debug.WriteLine("Cannot open file: " + file + ". This log file is still opened so it marked with unknown status:" + e.ToString());
+				Status = BackupResult.Unknown;
 			}
 		}
 	}

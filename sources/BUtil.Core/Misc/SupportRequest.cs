@@ -10,7 +10,6 @@ namespace BUtil.Core.Misc
         SevenZip,
         VirtuaWin,
         BackupWizard,
-        ManageLogs,
         RestorationWizard,
         Releases,
         UpdateInfo

@@ -492,9 +492,6 @@ Program will now open browser with the download page</value>
   <data name="YouHaveTheLatestVersion" xml:space="preserve">
     <value>You have the latest version!</value>
   </data>
-  <data name="ReviewLogOfLastBackup" xml:space="preserve">
-    <value>Review log of last backup...</value>
-  </data>
   <data name="InProgress" xml:space="preserve">
     <value>In Progress...</value>
   </data>
@@ -521,15 +518,6 @@ Program will now open browser with the download page</value>
   </data>
   <data name="RemoveSuccesfullLogs" xml:space="preserve">
     <value>Remove succesfull logs</value>
-  </data>
-  <data name="Succesfull" xml:space="preserve">
-    <value>Succesfull</value>
-  </data>
-  <data name="Erroneous" xml:space="preserve">
-    <value>Erroneous</value>
-  </data>
-  <data name="Unknown" xml:space="preserve">
-    <value>Unknown</value>
   </data>
   <data name="Refresh" xml:space="preserve">
     <value>Refresh</value>
@@ -650,9 +638,6 @@ Please refer to manual for the complete list of parameters!</value>
   </data>
   <data name="BackupTask0" xml:space="preserve">
     <value>Backup Task '{0}'</value>
-  </data>
-  <data name="SaveAndRun" xml:space="preserve">
-    <value>Save and Run</value>
   </data>
   <data name="ChooseTheTaskYouWantToRun" xml:space="preserve">
     <value>Choose the task you want to run:</value>

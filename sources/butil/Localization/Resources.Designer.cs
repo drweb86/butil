@@ -709,15 +709,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erroneous.
-        /// </summary>
-        internal static string Erroneous {
-            get {
-                return ResourceManager.GetString("Erroneous", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         internal static string Error {
@@ -1582,15 +1573,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Review log of last backup....
-        /// </summary>
-        internal static string ReviewLogOfLastBackup {
-            get {
-                return ResourceManager.GetString("ReviewLogOfLastBackup", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Run.
         /// </summary>
         internal static string Run {
@@ -1614,15 +1596,6 @@ namespace BUtil.Configurator.Localization {
         internal static string Saturday {
             get {
                 return ResourceManager.GetString("Saturday", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Save and Run.
-        /// </summary>
-        internal static string SaveAndRun {
-            get {
-                return ResourceManager.GetString("SaveAndRun", resourceCulture);
             }
         }
         
@@ -1733,15 +1706,6 @@ namespace BUtil.Configurator.Localization {
         internal static string StorageName {
             get {
                 return ResourceManager.GetString("StorageName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Succesfull.
-        /// </summary>
-        internal static string Succesfull {
-            get {
-                return ResourceManager.GetString("Succesfull", resourceCulture);
             }
         }
         
@@ -1865,15 +1829,6 @@ namespace BUtil.Configurator.Localization {
         internal static string Tuesday {
             get {
                 return ResourceManager.GetString("Tuesday", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Unknown.
-        /// </summary>
-        internal static string Unknown {
-            get {
-                return ResourceManager.GetString("Unknown", resourceCulture);
             }
         }
         

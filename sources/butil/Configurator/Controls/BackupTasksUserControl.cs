@@ -107,11 +107,6 @@ namespace BUtil.Configurator.Configurator.Controls
                 backupTaskSchedulerService.Schedule(task.Name, scheduleInfo);
 
                 ReloadTasks();
-
-                if (form.ExecuteTask)
-                {
-                    ExecuteRequest(this, e);
-                }
             }
         }
 
