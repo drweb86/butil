@@ -18,7 +18,7 @@ namespace BUtil.Core.TasksTree.IncrementalModel
 #pragma warning restore IDE0052 // Remove unread private members
 
         public IncrementalBackupTask(ILog log, BackupEvents backupEvents, BackupTask backupTask,
-            ProgramOptions programOptions, IncrementalBackupModelOptions incrementalBackupModelOptions)
+            IncrementalBackupModelOptions incrementalBackupModelOptions)
             : base(log, backupEvents, Resources.IncrementalBackup, TaskArea.ProgramInRunBeforeAfterBackupChain, null)
         {
             var tasks = new List<BuTask>();
@@ -28,12 +28,12 @@ namespace BUtil.Core.TasksTree.IncrementalModel
                 tasks.Add(new ExecuteProgramTask(log, backupEvents, executeBeforeBackup));
             }
 
-            var readSatesTask = new GetStateOfSourceItemsAndStoragesTask(Log, Events, backupTask, programOptions);
+            var readSatesTask = new GetStateOfSourceItemsAndStoragesTask(Log, Events, backupTask);
             tasks.Add(readSatesTask);
 
             foreach (var storageStateTask in readSatesTask.StorageStateTasks)
             {
-                tasks.Add(new WriteIncrementedVersionTask(Log, Events, backupTask, programOptions, storageStateTask, readSatesTask.GetSourceItemStateTasks));
+                tasks.Add(new WriteIncrementedVersionTask(Log, Events, backupTask, storageStateTask, readSatesTask.GetSourceItemStateTasks));
             }
 
             foreach (var executeAfterBackup in backupTask.ExecuteAfterBackup)

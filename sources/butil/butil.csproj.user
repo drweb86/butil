@@ -32,9 +32,6 @@
     <Compile Update="Configurator\Controls\MainNavigationUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Configurator\Controls\OtherOptionsUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="Configurator\Controls\Common\TransparentPanel.cs">
       <SubType>Component</SubType>
     </Compile>

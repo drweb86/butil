@@ -32,7 +32,6 @@ namespace BUtil.Configurator.Configurator.Forms
 			_views = new Dictionary<ConfiguratorViewsEnum, BackUserControl>
 			             {
 			                 {ConfiguratorViewsEnum.Tasks, backupTasksControl},
-			                 {ConfiguratorViewsEnum.OtherOptions, new OtherOptionsUserControl()},
 			                 {ConfiguratorViewsEnum.Logging, new LoggingUserControl(controller)}
 			             };
 
@@ -115,7 +114,6 @@ namespace BUtil.Configurator.Configurator.Forms
 
             _views[ConfiguratorViewsEnum.Tasks].SetOptionsToUi( profileOptions);
             _views[ConfiguratorViewsEnum.Logging].SetOptionsToUi(profileOptions);
-            _views[ConfiguratorViewsEnum.OtherOptions].SetOptionsToUi(profileOptions);
         }
 
 		void RestorationToolToolStripMenuItemClick(object sender, EventArgs e)

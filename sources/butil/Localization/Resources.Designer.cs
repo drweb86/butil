@@ -418,15 +418,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cannot run 7zg.exe because {0}.
-        /// </summary>
-        internal static string CannotRun7ZgExeBecause0 {
-            get {
-                return ResourceManager.GetString("CannotRun7ZgExeBecause0", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Execute AFTER backup.
         /// </summary>
         internal static string ChainOfProgramsToExecuteAfterBackup {
@@ -567,15 +558,6 @@ namespace BUtil.Configurator.Localization {
         internal static string Day {
             get {
                 return ResourceManager.GetString("Day", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to %  (default is 60).
-        /// </summary>
-        internal static string DefaultIs60 {
-            get {
-                return ResourceManager.GetString("DefaultIs60", resourceCulture);
             }
         }
         
@@ -1374,15 +1356,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Parallelization degree.
-        /// </summary>
-        internal static string ParallelDegree {
-            get {
-                return ResourceManager.GetString("ParallelDegree", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Passive.
         /// </summary>
         internal static string Passive {
@@ -1497,15 +1470,6 @@ namespace BUtil.Configurator.Localization {
             get {
                 return ResourceManager.GetString("ProtectionOfBackupWithPasswordItIsRequiredWhenYouWantYourDataToBeCopiedSomewhereO" +
                         "verTheNetwork", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Put off making backup till processor\&apos;s  loading will be less then.
-        /// </summary>
-        internal static string PutOffMakingBackupTillProcessorSLoadingWillBeLessThen {
-            get {
-                return ResourceManager.GetString("PutOffMakingBackupTillProcessorSLoadingWillBeLessThen", resourceCulture);
             }
         }
         

@@ -11,13 +11,11 @@ namespace BUtil.Core.TasksTree.Core
 {
     public abstract class ParallelBuTask : BuTask
     {
-        public ProgramOptions ProgramOptions { get; }
         public IEnumerable<BuTask> Children { get; set; }
 
-        protected ParallelBuTask(ILog log, BackupEvents events, string title, TaskArea taskArea, ProgramOptions programOptions, IEnumerable<BuTask> children)
+        protected ParallelBuTask(ILog log, BackupEvents events, string title, TaskArea taskArea, IEnumerable<BuTask> children)
             : base(log, events, title, taskArea)
         {
-            ProgramOptions = programOptions;
             Children = children;
         }
 
@@ -30,7 +28,7 @@ namespace BUtil.Core.TasksTree.Core
                 return;
             }
 
-            var executer = new ParallelExecuter(children, token, ProgramOptions.Parallel);
+            var executer = new ParallelExecuter(children, token, Environment.ProcessorCount);
             executer.Wait();
             IsSuccess = Children.All(x => x.IsSuccess);
         }

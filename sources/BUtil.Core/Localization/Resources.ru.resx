@@ -248,9 +248,6 @@
   <data name="AfterBackupTask" xml:space="preserve">
     <value>Задание после резервного копирования: </value>
   </data>
-  <data name="CannotRun7ZgExeBecause0" xml:space="preserve">
-    <value>Не получается запустить 7zg.exe, поскольку {0}</value>
-  </data>
   <data name="InProgress" xml:space="preserve">
     <value>Обработка...</value>
   </data>

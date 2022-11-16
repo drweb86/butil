@@ -139,15 +139,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cannot run 7zg.exe because {0}.
-        /// </summary>
-        public static string CannotRun7ZgExeBecause0 {
-            get {
-                return ResourceManager.GetString("CannotRun7ZgExeBecause0", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Confirmation is not equal to password.
         /// </summary>
         public static string ConfirmationIsNotEqualToPassword {

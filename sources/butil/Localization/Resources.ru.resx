@@ -88,12 +88,6 @@
   <data name="OtherOptions" xml:space="preserve">
     <value>Прочие настройки</value>
   </data>
-  <data name="DefaultIs60" xml:space="preserve">
-    <value>% (по умолчанию 60)</value>
-  </data>
-  <data name="PutOffMakingBackupTillProcessorSLoadingWillBeLessThen" xml:space="preserve">
-    <value>Отложить архивирование данных, пока загруженность CPU не снизится до</value>
-  </data>
   <data name="Logging" xml:space="preserve">
     <value>Логи</value>
   </data>
@@ -459,9 +453,6 @@
   <data name="ProcessingState" xml:space="preserve">
     <value>Состояние Обработки</value>
   </data>
-  <data name="CannotRun7ZgExeBecause0" xml:space="preserve">
-    <value>Не получается запустить 7zg.exe, поскольку {0}</value>
-  </data>
   <data name="BackupJournals" xml:space="preserve">
     <value>Журналы резервного копирования</value>
   </data>
@@ -491,9 +482,6 @@
   </data>
   <data name="PleaseCheckStoragesWhereToCopyBackupImage" xml:space="preserve">
     <value>Выберите по меньшей мере одно хранилище, куда будет помещен образ РК!</value>
-  </data>
-  <data name="ParallelDegree" xml:space="preserve">
-    <value>Степень распараллеливания</value>
   </data>
   <data name="Reboot" xml:space="preserve">
     <value>Перезагрузка</value>

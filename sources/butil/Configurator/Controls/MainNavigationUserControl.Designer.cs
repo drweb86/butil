@@ -29,31 +29,11 @@ namespace BUtil.Configurator.Configurator.Controls
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this._otherOptionsButton = new System.Windows.Forms.Button();
             this._loggingButton = new System.Windows.Forms.Button();
             this._tasksButton = new System.Windows.Forms.Button();
             this._tableLayoutPanel = new BUtil.Configurator.Configurator.Controls.Common.TransparentTableLayoutPanel();
             this._tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // _otherOptionsButton
-            // 
-            this._otherOptionsButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this._otherOptionsButton.BackColor = System.Drawing.SystemColors.Control;
-            this._otherOptionsButton.FlatAppearance.BorderSize = 0;
-            this._otherOptionsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._otherOptionsButton.Image = global::BUtil.Configurator.Icons.OtherSettings48x48;
-            this._otherOptionsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this._otherOptionsButton.Location = new System.Drawing.Point(4, 103);
-            this._otherOptionsButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this._otherOptionsButton.Name = "_otherOptionsButton";
-            this._otherOptionsButton.Size = new System.Drawing.Size(261, 88);
-            this._otherOptionsButton.TabIndex = 1;
-            this._otherOptionsButton.Text = "Other options";
-            this._otherOptionsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this._otherOptionsButton.UseVisualStyleBackColor = false;
-            this._otherOptionsButton.Click += new System.EventHandler(this.OtherOptionsButtonClick);
             // 
             // _loggingButton
             // 
@@ -98,13 +78,11 @@ namespace BUtil.Configurator.Configurator.Controls
             this._tableLayoutPanel.ColumnCount = 1;
             this._tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this._tableLayoutPanel.Controls.Add(this._tasksButton, 0, 0);
-            this._tableLayoutPanel.Controls.Add(this._loggingButton, 0, 2);
-            this._tableLayoutPanel.Controls.Add(this._otherOptionsButton, 0, 1);
+            this._tableLayoutPanel.Controls.Add(this._loggingButton, 0, 1);
             this._tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this._tableLayoutPanel.Name = "_tableLayoutPanel";
             this._tableLayoutPanel.RowCount = 4;
-            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -129,7 +107,6 @@ namespace BUtil.Configurator.Configurator.Controls
 
         }
 		private System.Windows.Forms.Button _loggingButton;
-        private System.Windows.Forms.Button _otherOptionsButton;
         private System.Windows.Forms.Button _tasksButton;
         private Common.TransparentTableLayoutPanel _tableLayoutPanel;
     }

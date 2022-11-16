@@ -14,8 +14,8 @@ namespace BUtil.Core.TasksTree.States
         public IEnumerable<GetStateOfSourceItemTask> GetSourceItemStateTasks { get; }
         public IEnumerable<GetStateOfStorageTask> StorageStateTasks { get; }
 
-        public GetStateOfSourceItemsAndStoragesTask(ILog log, BackupEvents events, BackupTask backupTask, ProgramOptions programOptions )
-            : base(log, events, Localization.Resources.GetStateOfSourceItemsAndStorages, TaskArea.File, programOptions, null)
+        public GetStateOfSourceItemsAndStoragesTask(ILog log, BackupEvents events, BackupTask backupTask )
+            : base(log, events, Localization.Resources.GetStateOfSourceItemsAndStorages, TaskArea.File, null)
         {
             var childTasks = new List<BuTask>();
             var setSourceItemStateTasks = new List<GetStateOfSourceItemTask>();

@@ -56,12 +56,10 @@ namespace BUtil.Configurator.Configurator.Controls
 		{
 //TODO: refactor to make as input a special structure - with localization
 
-		    var buttons = new[] {_otherOptionsButton, _loggingButton, _tasksButton};
+		    var buttons = new[] { _loggingButton, _tasksButton};
 
-			_otherOptionsButton.Text = Resources.OtherOptions;
 			_loggingButton.Text = Resources.Logging;
             _tasksButton.Text = Resources.BackupTasks;
-			SetHintForControl(_otherOptionsButton, Resources.MiscellaneousOptions);
 			SetHintForControl(_loggingButton, Resources.HereYouCanSetUpLoggingProperties);
             SetHintForControl(_tasksButton, Resources.BackupTasks);
             
@@ -130,10 +128,6 @@ namespace BUtil.Configurator.Configurator.Controls
 			}
 		}
 		
-		void OtherOptionsButtonClick(object sender, EventArgs e)
-		{
-			ChangeView(sender, ConfiguratorViewsEnum.OtherOptions);
-		}
 		
 		void LoggingButtonClick(object sender, EventArgs e)
 		{

@@ -14,12 +14,7 @@ namespace BUtil.Configurator.Configurator
 {
     public class ConfiguratorController
     {
-        #region Constants
-
-        const string NoProfileOptions = "File with profile settings '{0}' absent. It will be set to defaults.\n\nReason:\n{1}";
-
-        #endregion
-
+        
         private ProgramOptions _profileOptions = ProgramOptionsManager.Default;
         private ProgramOptions _optionsDuringProgramLoad = ProgramOptionsManager.Default;
 
@@ -44,9 +39,6 @@ namespace BUtil.Configurator.Configurator
 		
         public void RemoveLocalUserSettings()
 		{
-			if (File.Exists(Files.ProfileFile))
-				File.Delete(Files.ProfileFile);
-		               	
 			// we're deleting only default logs folder location
 			if (Directory.Exists(Directories.LogsFolder))
 				Directory.Delete(Directories.LogsFolder, true);
@@ -136,22 +128,9 @@ namespace BUtil.Configurator.Configurator
 
         public void LoadSettings()
         {
-            if (File.Exists(Files.ProfileFile))
-            {
-                try
-                {
-                    _profileOptions = ProgramOptionsKeeper.LoadSettings();
-                }
-                catch (OptionsException noOptions)
-                {
-                    Messages.ShowErrorBox(string.Format(CultureInfo.InvariantCulture, NoProfileOptions, Files.ProfileFile, noOptions.Message));
-                    _profileOptions = ProgramOptionsManager.Default;
-                }
-            }
-            else
-            {
-                _profileOptions = ProgramOptionsManager.Default;
-            }
+
+            var programOptionsStoreService = new ProgramOptionsStoreService();
+            _profileOptions = programOptionsStoreService.Load();
 
             _optionsDuringProgramLoad = _profileOptions.Clone() as ProgramOptions;
         }
@@ -165,7 +144,8 @@ namespace BUtil.Configurator.Configurator
         {
             try
             {
-                ProgramOptionsKeeper.StoreSettings(_profileOptions);
+                var programOptionsStoreService = new ProgramOptionsStoreService();
+                programOptionsStoreService.Save(_profileOptions);
                 _optionsDuringProgramLoad = _profileOptions.Clone() as ProgramOptions;
             }
             catch (Exception ee)

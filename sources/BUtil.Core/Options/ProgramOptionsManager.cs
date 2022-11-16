@@ -1,4 +1,5 @@
 ﻿using System;
+using BUtil.Core.BackupModels;
 using BUtil.Core.FileSystem;
 
 namespace BUtil.Core.Options
@@ -10,6 +11,7 @@ namespace BUtil.Core.Options
             return new BackupTask
 			{
 				Name = name,
+				Model = new IncrementalBackupModelOptions { DisableCompressionAndEncryption = false },
 				Items =
 				{
                     new SourceItem
@@ -33,8 +35,6 @@ namespace BUtil.Core.Options
 				return new ProgramOptions
 				{
 					LogsFolder = Directories.LogsFolder,
-					PuttingOffBackupCpuLoading = Constants.DefaultCpuLoading,
-					Parallel = Environment.ProcessorCount
 				};
 			}
 		}

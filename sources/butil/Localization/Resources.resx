@@ -147,12 +147,6 @@
   <data name="OtherOptions" xml:space="preserve">
     <value>Other options</value>
   </data>
-  <data name="DefaultIs60" xml:space="preserve">
-    <value>%  (default is 60)</value>
-  </data>
-  <data name="PutOffMakingBackupTillProcessorSLoadingWillBeLessThen" xml:space="preserve">
-    <value>Put off making backup till processor\'s  loading will be less then</value>
-  </data>
   <data name="Logging" xml:space="preserve">
     <value>Logging</value>
   </data>
@@ -519,9 +513,6 @@ Program will now open browser with the download page</value>
   <data name="ProcessingState" xml:space="preserve">
     <value>Processing State</value>
   </data>
-  <data name="CannotRun7ZgExeBecause0" xml:space="preserve">
-    <value>Cannot run 7zg.exe because {0}</value>
-  </data>
   <data name="BackupJournals" xml:space="preserve">
     <value>Backup journals</value>
   </data>
@@ -551,9 +542,6 @@ Program will now open browser with the download page</value>
   </data>
   <data name="PleaseCheckStoragesWhereToCopyBackupImage" xml:space="preserve">
     <value>Please, check storages where to copy backup image!</value>
-  </data>
-  <data name="ParallelDegree" xml:space="preserve">
-    <value>Parallelization degree</value>
   </data>
   <data name="Reboot" xml:space="preserve">
     <value>Reboot</value>

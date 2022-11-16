@@ -82,7 +82,7 @@ namespace BUtil.ConsoleBackup
                 return false;
             }
 
-            _backup = BackupModelStrategyFactory.Create(_log, task, _options);
+            _backup = BackupModelStrategyFactory.Create(_log, task);
 
             return true;
         }
@@ -121,14 +121,8 @@ namespace BUtil.ConsoleBackup
 
         private void LoadSettings()
         {
-            try
-            {
-                _options = ProgramOptionsKeeper.LoadSettings();
-            }
-            catch (OptionsException e)
-            {
-                ShowErrorAndQuit(e);
-            }
+            var programOptionsStoreService = new ProgramOptionsStoreService();
+            _options = programOptionsStoreService.Load();
         }
 
         private static void PerformCriticalChecks()

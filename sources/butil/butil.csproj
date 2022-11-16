@@ -108,7 +108,6 @@
     <Compile Update="Configurator\Controls\Common\OptionsHeader.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Configurator\Controls\OtherOptionsUserControl.cs" />
     <Compile Update="Configurator\Controls\Tasks\WhenUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

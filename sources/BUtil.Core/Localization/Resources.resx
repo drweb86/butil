@@ -240,9 +240,6 @@ Application will now close</value>
   <data name="AfterBackupTask" xml:space="preserve">
     <value>After backup task: </value>
   </data>
-  <data name="CannotRun7ZgExeBecause0" xml:space="preserve">
-    <value>Cannot run 7zg.exe because {0}</value>
-  </data>
   <data name="InProgress" xml:space="preserve">
     <value>In Progress...</value>
   </data>

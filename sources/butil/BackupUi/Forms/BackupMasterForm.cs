@@ -128,7 +128,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 		{
 			_log = new FileLog(_programOptions.LogsFolder, false);
 			_log.Open();
-            _strategy = BackupModelStrategyFactory.Create(_log, _backupTask, _programOptions);
+            _strategy = BackupModelStrategyFactory.Create(_log, _backupTask);
 			_backupEvents = new BackupEvents();
 			_backupEvents.OnTaskProgress += OnTaskProgress;
             _backupEvents.OnDuringExecutionTasksAdded += OnDuringExecutionTasksAdded;
