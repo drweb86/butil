@@ -29,7 +29,7 @@ namespace BUtil.Core.TasksTree.Apps
             try
             {
                 ProcessHelper.Execute(_executeProgramTaskInfo.Program, _executeProgramTaskInfo.Arguments, _executeProgramTaskInfo.WorkingDirectory,
-                    ProcessPriorityClass.Idle, token,
+                    false, ProcessPriorityClass.Idle, token,
                     out var stdOutput, out var error, out var returnCode);
 
                 LogDebug($"Exit code: {returnCode}");

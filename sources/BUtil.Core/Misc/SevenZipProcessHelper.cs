@@ -1,4 +1,5 @@
 ﻿using BUtil.Core.Logs;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Threading;
@@ -25,6 +26,7 @@ namespace BUtil.Core.Misc
                     return false;
 
                 var passwordIsSet = !string.IsNullOrWhiteSpace(password);
+                string input = Environment.NewLine; // to handle wrong password
                 string arguments;
                 if (!passwordIsSet)
                 {
@@ -37,7 +39,11 @@ namespace BUtil.Core.Misc
                     log.WriteLine(LoggingEvent.Debug, $"Extracting \"{archive}\" to \"{outputDirectory}\" with password");
                 }
 
-                ProcessHelper.Execute(FileSystem.Files.SevenZipPacker, arguments, System.IO.Path.GetDirectoryName(FileSystem.Files.SevenZipPacker),
+                ProcessHelper.Execute(
+                    FileSystem.Files.SevenZipPacker, 
+                    arguments, 
+                    System.IO.Path.GetDirectoryName(FileSystem.Files.SevenZipPacker),
+                    true,
                     ProcessPriorityClass.Idle,
                     cancellationToken,
                     out var stdOutput,
@@ -103,6 +109,7 @@ namespace BUtil.Core.Misc
             }
 
             ProcessHelper.Execute(FileSystem.Files.SevenZipPacker, arguments, System.IO.Path.GetDirectoryName(FileSystem.Files.SevenZipPacker),
+                false,
                 ProcessPriorityClass.Idle,
                 cancellationToken,
                 out var stdOutput,

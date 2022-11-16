@@ -12,6 +12,7 @@ namespace BUtil.Core.Misc
             string args,
             string workingDirectory,
 
+            bool sendNewLine,
             ProcessPriorityClass processPriority,
             CancellationToken cancellationToken,
 
@@ -35,10 +36,21 @@ namespace BUtil.Core.Misc
 
             process.OutputDataReceived += (s, a) => stdOutputBuilder.Append(a.Data);
             process.ErrorDataReceived += (s, a) => stdErrorBuilder.Append(a.Data);
-
+            if (sendNewLine)
+            {
+                process.StartInfo.RedirectStandardInput = true;
+            }
             process.Start();
             process.PriorityClass = processPriority;
-
+            if (sendNewLine)
+            {
+                try
+                {
+                    process.StandardInput.WriteLine();
+                }
+                catch // process might end here.
+                { }
+            }
             process.BeginErrorReadLine();
             process.BeginOutputReadLine();
 
