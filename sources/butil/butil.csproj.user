@@ -62,7 +62,7 @@
     <Compile Update="Configurator\Forms\NetworkStorageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="LogsManagement\LogsViewerUserControl.cs">
+    <Compile Update="Configurator\Logs\LogsListUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Restore\ProgressForm.Designer.cs">

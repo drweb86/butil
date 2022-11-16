@@ -32,7 +32,7 @@ namespace BUtil.Configurator.Configurator.Forms
 			_views = new Dictionary<ConfiguratorViewsEnum, BackUserControl>
 			             {
 			                 {ConfiguratorViewsEnum.Tasks, backupTasksControl},
-			                 {ConfiguratorViewsEnum.Logging, new LoggingUserControl(controller)}
+			                 {ConfiguratorViewsEnum.Logging, new LogsUserControl(controller)}
 			             };
 
 		    backupTasksControl.OnRequestToSaveOptions += OnRequestToSaveOptions;

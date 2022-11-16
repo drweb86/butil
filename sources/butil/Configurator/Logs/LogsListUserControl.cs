@@ -14,13 +14,13 @@ using System.IO;
 
 namespace BUtil.Configurator.LogsManagement
 {
-	public partial class LogsViewerUserControl : UserControl
+	public partial class LogsListUserControl : UserControl
 	{
 		private const string ViewLogTime = "dd MMMM (dddd) HH:mm";
 		
 		private ProgramOptions _programOptions;
 		
-		public LogsViewerUserControl()
+		public LogsListUserControl()
 		{
 			InitializeComponent();
 			
@@ -81,7 +81,7 @@ namespace BUtil.Configurator.LogsManagement
 		
 		void listViewResize(object sender, EventArgs e)
 		{
-			journalsColumnHeader.Width = journalsListView.Width - 40;
+			_logsColumnHeader.Width = journalsListView.Width - 40;
 		}
 		
 		void refresh(object sender, EventArgs e)

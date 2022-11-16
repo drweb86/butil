@@ -517,12 +517,6 @@ Please refer to manual for the complete list of parameters!</value>
   <data name="LogsLocation" xml:space="preserve">
     <value>Logs location:</value>
   </data>
-  <data name="ChangeLogsLocation" xml:space="preserve">
-    <value>● Change logs location</value>
-  </data>
-  <data name="RestoreDefaultLogsLocation" xml:space="preserve">
-    <value>● Restore default logs location</value>
-  </data>
   <data name="Actions" xml:space="preserve">
     <value>Actions</value>
   </data>

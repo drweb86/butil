@@ -102,7 +102,7 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Configurator\Controls\MainNavigationUserControl.cs" />
-    <Compile Update="Configurator\Controls\LoggingUserControl.cs">
+    <Compile Update="Configurator\Logs\LogsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Configurator\Controls\Common\OptionsHeader.cs">
@@ -202,5 +202,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="LogsManagement\" />
   </ItemGroup>
 </Project>

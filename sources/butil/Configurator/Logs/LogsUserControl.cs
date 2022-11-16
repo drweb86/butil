@@ -9,12 +9,12 @@ using BUtil.Core.Options;
 
 namespace BUtil.Configurator.Configurator.Controls
 {
-	internal sealed partial class LoggingUserControl : Core.PL.BackUserControl
+	internal sealed partial class LogsUserControl : Core.PL.BackUserControl
     {
         ProgramOptions _profileOptions;
 	    readonly ConfiguratorController _controller;
 
-        public LoggingUserControl(ConfiguratorController controller)
+        public LogsUserControl(ConfiguratorController controller)
 		{
             if (controller == null)
             {
@@ -31,15 +31,15 @@ namespace BUtil.Configurator.Configurator.Controls
         public override void ApplyLocalization() 
 		{
             logsLocationLabel.Text = Resources.LogsLocation;
-            chooseOtherLogsLocationLinkLabel.Text = Resources.ChangeLogsLocation;
-            restoreDefaultLogsLocationLinkLabel.Text = Resources.RestoreDefaultLogsLocation;
+            _changeLogsLocationLinkLabel.Text = Resources.Change;
+            _resetLogsLocationLinkLabel.Text = Resources.Reset;
 		}
 	
 		public override void SetOptionsToUi(object settings)
 		{
 			_profileOptions = (ProgramOptions)settings;
 			logsLocationLinkLabel.Text = _profileOptions.LogsFolder;
-			logsViewerUserControl1.SetSettings(_profileOptions);
+            logsListUserControl1.SetSettings(_profileOptions);
 		}
 		
 		public override void GetOptionsFromUi()

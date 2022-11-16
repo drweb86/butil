@@ -436,11 +436,11 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ● Change logs location.
+        ///   Looks up a localized string similar to Change....
         /// </summary>
-        internal static string ChangeLogsLocation {
+        internal static string Change {
             get {
-                return ResourceManager.GetString("ChangeLogsLocation", resourceCulture);
+                return ResourceManager.GetString("Change", resourceCulture);
             }
         }
         
@@ -1546,6 +1546,15 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reset.
+        /// </summary>
+        internal static string Reset {
+            get {
+                return ResourceManager.GetString("Reset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Restoration master.
         /// </summary>
         internal static string RestorationMaster {
@@ -1560,15 +1569,6 @@ namespace BUtil.Configurator.Localization {
         internal static string RestoreData {
             get {
                 return ResourceManager.GetString("RestoreData", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ● Restore default logs location.
-        /// </summary>
-        internal static string RestoreDefaultLogsLocation {
-            get {
-                return ResourceManager.GetString("RestoreDefaultLogsLocation", resourceCulture);
             }
         }
         

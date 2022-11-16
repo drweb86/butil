@@ -516,11 +516,11 @@
   <data name="LogsLocation" xml:space="preserve">
     <value>Папка с логами:</value>
   </data>
-  <data name="ChangeLogsLocation" xml:space="preserve">
-    <value>● Изменить месторасположение логов</value>
+  <data name="Change" xml:space="preserve">
+    <value>Изменить...</value>
   </data>
-  <data name="RestoreDefaultLogsLocation" xml:space="preserve">
-    <value>● Восстановить место хранения логов по умолчанию</value>
+  <data name="Reset" xml:space="preserve">
+    <value>Сбросить</value>
   </data>
   <data name="Actions" xml:space="preserve">
     <value>Действия</value>
