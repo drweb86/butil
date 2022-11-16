@@ -131,7 +131,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             this.settingsUserControl.Name = "settingsUserControl";
             this.settingsUserControl.Size = new System.Drawing.Size(768, 205);
             this.settingsUserControl.TabIndex = 18;
-            this.settingsUserControl.Title = "Settings";
             // 
             // cancelButton
             // 

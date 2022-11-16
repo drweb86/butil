@@ -53,10 +53,16 @@ namespace BUtil.Core.PL
 				}
 			}
 		}
-		
-		#endregion
-		
-		public EncryptionUserControl(BackupTask task = null)
+
+        #endregion
+
+        public EncryptionUserControl()
+			:this(null)
+		{
+
+		}
+
+        public EncryptionUserControl(BackupTask task)
 		{
 			_task = task;
 

@@ -2,32 +2,26 @@ using System;
 using System.Windows.Forms;
 using BUtil.Core.Options;
 using BUtil.Core.Misc;
-
-using TitledBackUserControl = BUtil.BackupUiMaster.Controls.TitledBackUserControl;
 using BUtil.Configurator.Localization;
-using BUtil.Core.PL;
 using BUtil.Core.BackupModels;
 
 namespace BUtil.Configurator.BackupUiMaster.Controls
 {
-    /// <summary>
-    /// Settings that can be adjusted just before backup
-    /// </summary>
-    internal sealed partial class SettingsUserControl : TitledBackUserControl
-	{
-		public SettingsUserControl()
+    internal sealed partial class SettingsUserControl : BUtil.Core.PL.BackUserControl
+    {
+        public SettingsUserControl()
 		{
 			InitializeComponent();
 
-			encryptionUserControl.BorderStyle = BorderStyle.None;
-			encryptionUserControl.DrawAtractiveBorders = false;
+			encryptionUserControl1.BorderStyle = BorderStyle.None;
+			encryptionUserControl1.DrawAtractiveBorders = false;
 		}
 		
 		#region Locals
 		
 		public override void ApplyLocalization()
 		{
-			encryptionUserControl.ApplyLocalization();
+			encryptionUserControl1.ApplyLocalization();
             
 			hearBeepsCheckBox.Text = Resources.BeepSeveralTimes;
 			afterEndOfBackupGroupBox.Text = Resources.AfterCompletionOfBackup;
@@ -37,19 +31,19 @@ namespace BUtil.Configurator.BackupUiMaster.Controls
 			jobAfterOkBackupComboBox.Items.AddRange(new [] { Resources.ShutdownPc, Resources.LogOff, Resources.Reboot, Resources.DoNothing});
 			jobAfterOkBackupComboBox.SelectedIndex = previousIndex;
 			
-			Title = Resources.Settings;
+			titleLabel.Text = Resources.Settings;
 		}
 		
 		#endregion
 		
 		public void SetSettingsToUi(PowerTask task, BackupTask backupTask, bool beepWhenFinished)
 		{
-			encryptionUserControl.UpdateModel(backupTask);
+			encryptionUserControl1.UpdateModel(backupTask);
 			if (backupTask.Model is IncrementalBackupModelOptions)
 			{
 				var options = backupTask.Model as IncrementalBackupModelOptions;
 
-				encryptionUserControl.Visible = !options.DisableCompressionAndEncryption;
+				encryptionUserControl1.Visible = !options.DisableCompressionAndEncryption;
             }
 
 
@@ -59,7 +53,7 @@ namespace BUtil.Configurator.BackupUiMaster.Controls
 		
 		public void GetSettingsFromUi(out PowerTask task, out bool beepWhenFinished)
 		{
-			encryptionUserControl.GetOptionsFromUi();
+			encryptionUserControl1.GetOptionsFromUi();
 			task = (PowerTask)jobAfterOkBackupComboBox.SelectedIndex;
             beepWhenFinished = hearBeepsCheckBox.Checked;
 		}
