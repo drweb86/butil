@@ -43,7 +43,9 @@ namespace BUtil.Configurator.LogsManagement
             this.deleteSelectedLogsButton = new System.Windows.Forms.Button();
             this.openSelectedLogsButton = new System.Windows.Forms.Button();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this._tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.backupJournalsContextMenuStrip.SuspendLayout();
+            this._tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // journalsImageList
@@ -67,10 +69,11 @@ namespace BUtil.Configurator.LogsManagement
             this.journalsListView.FullRowSelect = true;
             this.journalsListView.LabelWrap = false;
             this.journalsListView.LargeImageList = this.journalsImageList;
-            this.journalsListView.Location = new System.Drawing.Point(4, 6);
-            this.journalsListView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.journalsListView.Location = new System.Drawing.Point(4, 4);
+            this.journalsListView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.journalsListView.Name = "journalsListView";
-            this.journalsListView.Size = new System.Drawing.Size(337, 432);
+            this._tableLayoutPanel.SetRowSpan(this.journalsListView, 5);
+            this.journalsListView.Size = new System.Drawing.Size(690, 436);
             this.journalsListView.SmallImageList = this.journalsImageList;
             this.journalsListView.TabIndex = 0;
             this.journalsListView.UseCompatibleStateImageBehavior = false;
@@ -94,93 +97,120 @@ namespace BUtil.Configurator.LogsManagement
             this.removeSelectedLogsToolStripMenuItem});
             this.backupJournalsContextMenuStrip.Name = "backupJournalsContextMenuStrip";
             this.backupJournalsContextMenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.backupJournalsContextMenuStrip.Size = new System.Drawing.Size(137, 62);
+            this.backupJournalsContextMenuStrip.Size = new System.Drawing.Size(122, 62);
             // 
             // viewSelectedLogsToolStripMenuItem
             // 
             this.viewSelectedLogsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("viewSelectedLogsToolStripMenuItem.Image")));
             this.viewSelectedLogsToolStripMenuItem.Name = "viewSelectedLogsToolStripMenuItem";
-            this.viewSelectedLogsToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
+            this.viewSelectedLogsToolStripMenuItem.Size = new System.Drawing.Size(121, 26);
             this.viewSelectedLogsToolStripMenuItem.Text = "View...";
             this.viewSelectedLogsToolStripMenuItem.Click += new System.EventHandler(this.openSelectedLogsInBrowser);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(133, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(118, 6);
             // 
             // removeSelectedLogsToolStripMenuItem
             // 
             this.removeSelectedLogsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("removeSelectedLogsToolStripMenuItem.Image")));
             this.removeSelectedLogsToolStripMenuItem.Name = "removeSelectedLogsToolStripMenuItem";
-            this.removeSelectedLogsToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
+            this.removeSelectedLogsToolStripMenuItem.Size = new System.Drawing.Size(121, 26);
             this.removeSelectedLogsToolStripMenuItem.Text = "Remove";
             this.removeSelectedLogsToolStripMenuItem.Click += new System.EventHandler(this.removeSelected);
             // 
             // refreshLogsButton
             // 
-            this.refreshLogsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.refreshLogsButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.refreshLogsButton.Image = global::BUtil.Configurator.Icons.Refresh48x48;
-            this.refreshLogsButton.Location = new System.Drawing.Point(349, 333);
-            this.refreshLogsButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.refreshLogsButton.Location = new System.Drawing.Point(702, 250);
+            this.refreshLogsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.refreshLogsButton.MaximumSize = new System.Drawing.Size(74, 74);
+            this.refreshLogsButton.MinimumSize = new System.Drawing.Size(74, 74);
             this.refreshLogsButton.Name = "refreshLogsButton";
-            this.refreshLogsButton.Size = new System.Drawing.Size(85, 98);
+            this.refreshLogsButton.Size = new System.Drawing.Size(74, 74);
             this.refreshLogsButton.TabIndex = 3;
             this.refreshLogsButton.UseVisualStyleBackColor = true;
             this.refreshLogsButton.Click += new System.EventHandler(this.refresh);
             // 
             // removeSuccesfullLogsButton
             // 
-            this.removeSuccesfullLogsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.removeSuccesfullLogsButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.removeSuccesfullLogsButton.Image = ((System.Drawing.Image)(resources.GetObject("removeSuccesfullLogsButton.Image")));
-            this.removeSuccesfullLogsButton.Location = new System.Drawing.Point(349, 225);
-            this.removeSuccesfullLogsButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.removeSuccesfullLogsButton.Location = new System.Drawing.Point(702, 168);
+            this.removeSuccesfullLogsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.removeSuccesfullLogsButton.MaximumSize = new System.Drawing.Size(74, 74);
+            this.removeSuccesfullLogsButton.MinimumSize = new System.Drawing.Size(74, 74);
             this.removeSuccesfullLogsButton.Name = "removeSuccesfullLogsButton";
-            this.removeSuccesfullLogsButton.Size = new System.Drawing.Size(85, 98);
+            this.removeSuccesfullLogsButton.Size = new System.Drawing.Size(74, 74);
             this.removeSuccesfullLogsButton.TabIndex = 2;
             this.removeSuccesfullLogsButton.UseVisualStyleBackColor = true;
             this.removeSuccesfullLogsButton.Click += new System.EventHandler(this.removeSuccessfullLogs);
             // 
             // deleteSelectedLogsButton
             // 
-            this.deleteSelectedLogsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.deleteSelectedLogsButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.deleteSelectedLogsButton.Image = global::BUtil.Configurator.Icons.cross_48;
-            this.deleteSelectedLogsButton.Location = new System.Drawing.Point(349, 117);
-            this.deleteSelectedLogsButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.deleteSelectedLogsButton.Location = new System.Drawing.Point(702, 86);
+            this.deleteSelectedLogsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deleteSelectedLogsButton.MaximumSize = new System.Drawing.Size(74, 74);
+            this.deleteSelectedLogsButton.MinimumSize = new System.Drawing.Size(74, 74);
             this.deleteSelectedLogsButton.Name = "deleteSelectedLogsButton";
-            this.deleteSelectedLogsButton.Size = new System.Drawing.Size(85, 98);
+            this.deleteSelectedLogsButton.Size = new System.Drawing.Size(74, 74);
             this.deleteSelectedLogsButton.TabIndex = 1;
             this.deleteSelectedLogsButton.UseVisualStyleBackColor = true;
             this.deleteSelectedLogsButton.Click += new System.EventHandler(this.removeSelected);
             // 
             // openSelectedLogsButton
             // 
-            this.openSelectedLogsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.openSelectedLogsButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.openSelectedLogsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.openSelectedLogsButton.ForeColor = System.Drawing.Color.Blue;
             this.openSelectedLogsButton.Image = global::BUtil.Configurator.Icons.OpenSelectedLogs;
-            this.openSelectedLogsButton.Location = new System.Drawing.Point(349, 10);
-            this.openSelectedLogsButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.openSelectedLogsButton.Location = new System.Drawing.Point(702, 4);
+            this.openSelectedLogsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.openSelectedLogsButton.MaximumSize = new System.Drawing.Size(74, 74);
+            this.openSelectedLogsButton.MinimumSize = new System.Drawing.Size(74, 74);
             this.openSelectedLogsButton.Name = "openSelectedLogsButton";
-            this.openSelectedLogsButton.Size = new System.Drawing.Size(85, 98);
+            this.openSelectedLogsButton.Size = new System.Drawing.Size(74, 74);
             this.openSelectedLogsButton.TabIndex = 0;
             this.openSelectedLogsButton.UseVisualStyleBackColor = true;
             this.openSelectedLogsButton.Click += new System.EventHandler(this.openSelectedLogsInBrowser);
             // 
-            // LogsViewerUserControl
+            // _tableLayoutPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this._tableLayoutPanel.ColumnCount = 2;
+            this._tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this._tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this._tableLayoutPanel.Controls.Add(this.openSelectedLogsButton, 1, 0);
+            this._tableLayoutPanel.Controls.Add(this.deleteSelectedLogsButton, 1, 1);
+            this._tableLayoutPanel.Controls.Add(this.journalsListView, 0, 0);
+            this._tableLayoutPanel.Controls.Add(this.refreshLogsButton, 1, 3);
+            this._tableLayoutPanel.Controls.Add(this.removeSuccesfullLogsButton, 1, 2);
+            this._tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this._tableLayoutPanel.Name = "_tableLayoutPanel";
+            this._tableLayoutPanel.RowCount = 5;
+            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this._tableLayoutPanel.Size = new System.Drawing.Size(780, 444);
+            this._tableLayoutPanel.TabIndex = 4;
+            // 
+            // LogsListUserControl
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.refreshLogsButton);
-            this.Controls.Add(this.removeSuccesfullLogsButton);
-            this.Controls.Add(this.journalsListView);
-            this.Controls.Add(this.deleteSelectedLogsButton);
-            this.Controls.Add(this.openSelectedLogsButton);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.MinimumSize = new System.Drawing.Size(438, 435);
-            this.Name = "LogsViewerUserControl";
-            this.Size = new System.Drawing.Size(438, 447);
+            this.Controls.Add(this._tableLayoutPanel);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(383, 326);
+            this.Name = "LogsListUserControl";
+            this.Size = new System.Drawing.Size(780, 444);
             this.backupJournalsContextMenuStrip.ResumeLayout(false);
+            this._tableLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -196,5 +226,6 @@ namespace BUtil.Configurator.LogsManagement
         private System.Windows.Forms.Button deleteSelectedLogsButton;
         private System.Windows.Forms.Button openSelectedLogsButton;
         private System.Windows.Forms.ToolTip toolTip;
-	}
+        private System.Windows.Forms.TableLayoutPanel _tableLayoutPanel;
+    }
 }
