@@ -299,4 +299,7 @@ Application will now close</value>
 
 Please update storage "{0}" settings.</value>
   </data>
+  <data name="WriteIncrementedVersionToStorages" xml:space="preserve">
+    <value>Write incremented version to storages</value>
+  </data>
 </root>

@@ -307,4 +307,7 @@
 
 Пожалуйста, обновите настройки хранилища "{0}".</value>
   </data>
+  <data name="WriteIncrementedVersionToStorages" xml:space="preserve">
+    <value>Сохранение инкрементных версии в хранилища</value>
+  </data>
 </root>

@@ -9,7 +9,7 @@ namespace BUtil.Core.BackupModels
         public static IBackupModelStrategy Create(ILog log, BackupTask task)
         {
             if (task.Model is IncrementalBackupModelOptions)
-                return new IncrementalBackupModelStrategy(log, task, task.Model as IncrementalBackupModelOptions);
+                return new IncrementalBackupModelStrategy(log, task);
             throw new ArgumentOutOfRangeException(nameof(task));
         }
     }

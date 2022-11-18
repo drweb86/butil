@@ -8,21 +8,18 @@ namespace BUtil.Core.BackupModels
 {
     class IncrementalBackupModelStrategy : IBackupModelStrategy
     {
-        private readonly IncrementalBackupModelOptions _modelOptions;
         readonly ILog _log;
         readonly BackupTask _task;
 
-        public IncrementalBackupModelStrategy(ILog openedLog, BackupTask task, IncrementalBackupModelOptions modelOptions)
+        public IncrementalBackupModelStrategy(ILog openedLog, BackupTask task)
         {
-            _modelOptions = modelOptions;
             _log = openedLog;
             _task = task;
         }
 
         public BuTask GetTask(BackupEvents events)
         {
-            var task = new IncrementalBackupTask(_log, events, _task, _modelOptions);
-            return task;
+            return new IncrementalBackupTask(_log, events, _task);
         }
     }
 }

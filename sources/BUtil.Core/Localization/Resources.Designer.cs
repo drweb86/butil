@@ -550,6 +550,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Write incremented version to storages.
+        /// </summary>
+        public static string WriteIncrementedVersionToStorages {
+            get {
+                return ResourceManager.GetString("WriteIncrementedVersionToStorages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Write integrity verification scripts to storage &quot;{0}&quot;.
         /// </summary>
         public static string WriteIntegrityVerificationScriptsToStorage {
