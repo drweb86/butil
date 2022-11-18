@@ -262,7 +262,7 @@ namespace BUtil.RestorationMaster
                 return;
 
             var log = new StubLog();
-            IStorageSettings storageSettings = new HddStorageSettings
+            IStorageSettings storageSettings = new FolderStorageSettings
             { 
                 Name = string.Empty, 
                 DestinationFolder = _backupLocation,

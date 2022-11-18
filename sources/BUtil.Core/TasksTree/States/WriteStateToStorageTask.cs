@@ -1,7 +1,6 @@
-﻿using BUtil.Core.Events;
+﻿using BUtil.Core.BackupModels;
+using BUtil.Core.Events;
 using BUtil.Core.Logs;
-using BUtil.Core.Misc;
-using BUtil.Core.Options;
 using BUtil.Core.State;
 using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.Core;
@@ -12,23 +11,26 @@ namespace BUtil.Core.TasksTree.States
 {
     internal class WriteStateToStorageTask : BuTask
     {
-        private readonly BackupTask task;
+        private readonly IncrementalBackupModelOptions _incrementalBackupModelOptions;
+        private readonly string _password;
         private readonly CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask;
         private readonly IStorageSettings _storageSettings;
         private readonly WriteSourceFilesToStorageTask _writeSourceFilesToStorageTask;
 
-        public StorageFile UploadedVersionState { get; private set; }
+        public StorageFile StateStorageFile { get; private set; }
 
         public WriteStateToStorageTask(
             ILog log,
             BackupEvents events,
-            BackupTask task,
             CalculateIncrementedVersionForStorageTask getIncrementedVersionTask,
-            IStorageSettings storageSettings, 
-            Storage.WriteSourceFilesToStorageTask writeSourceFilesToStorageTask)
-            : base(log, events, string.Format(BUtil.Core.Localization.Resources.WriteStateToStorage, storageSettings.Name), TaskArea.Hdd)
+            WriteSourceFilesToStorageTask writeSourceFilesToStorageTask,
+            IncrementalBackupModelOptions incrementalBackupModelOptions,
+            IStorageSettings storageSettings,
+            string password)
+            : base(log, events, string.Format(Localization.Resources.WriteStateToStorage, storageSettings.Name), TaskArea.Hdd)
         {
-            this.task = task;
+            _incrementalBackupModelOptions = incrementalBackupModelOptions;
+            _password = password;
             _getIncrementedVersionTask = getIncrementedVersionTask;
             _storageSettings = storageSettings;
             _writeSourceFilesToStorageTask = writeSourceFilesToStorageTask;
@@ -57,10 +59,9 @@ namespace BUtil.Core.TasksTree.States
                 return;
             }
 
-            var service = new IncrementalBackupStateService(Log, _storageSettings, task);
-            UploadedVersionState = service.Write(token, _getIncrementedVersionTask.IncrementalBackupState);
-
-            IsSuccess = UploadedVersionState != null;
+            var service = new IncrementalBackupStateService(Log, _storageSettings);
+            StateStorageFile = service.Write(token, _incrementalBackupModelOptions, _password, _getIncrementedVersionTask.IncrementalBackupState);
+            IsSuccess = StateStorageFile != null;
             UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
         }
     }

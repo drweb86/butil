@@ -1,6 +1,7 @@
 ﻿using BUtil.Core.Events;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
+using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.Core;
 using System.Collections.Generic;
 using System.IO;
@@ -14,24 +15,33 @@ namespace BUtil.Core.TasksTree.States
         public IEnumerable<GetStateOfSourceItemTask> GetSourceItemStateTasks { get; }
         public IEnumerable<GetStateOfStorageTask> StorageStateTasks { get; }
 
-        public GetStateOfSourceItemsAndStoragesTask(ILog log, BackupEvents events, BackupTask backupTask )
+        public GetStateOfSourceItemsAndStoragesTask(
+            ILog log,
+            BackupEvents events, 
+            IEnumerable<SourceItem> sourceItems,
+            IEnumerable<IStorageSettings> storageSettings,
+            IEnumerable<string> fileExcludePatterns,
+            string password)
             : base(log, events, Localization.Resources.GetStateOfSourceItemsAndStorages, TaskArea.File, null)
         {
             var childTasks = new List<BuTask>();
             var setSourceItemStateTasks = new List<GetStateOfSourceItemTask>();
 
-            foreach (var item in backupTask.Items)
+            foreach (var item in sourceItems)
             {
-                var getSourceItemStateTask = new GetStateOfSourceItemTask(log, Events, item, backupTask.FileExcludePatterns);
+                var getSourceItemStateTask = new GetStateOfSourceItemTask(log, Events, item, fileExcludePatterns);
                 setSourceItemStateTasks.Add(getSourceItemStateTask);
                 childTasks.Add(getSourceItemStateTask);
             }
             GetSourceItemStateTasks = setSourceItemStateTasks;
 
             var storageStateTasks = new List<GetStateOfStorageTask>();
-            foreach (var storage in backupTask.Storages)
+            foreach (var storage in storageSettings)
             {
-                var getStorageStateTask = new GetStateOfStorageTask(Log, Events, storage, backupTask);
+                if (!storage.Enabled)
+                    continue;
+
+                var getStorageStateTask = new GetStateOfStorageTask(Log, Events, storage, password);
                 storageStateTasks.Add(getStorageStateTask);
                 childTasks.Add(getStorageStateTask);
             }

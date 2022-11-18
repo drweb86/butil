@@ -1,20 +1,24 @@
-﻿using BUtil.Core.Events;
+﻿using BUtil.Core.BackupModels;
+using BUtil.Core.Events;
 using BUtil.Core.Logs;
-using BUtil.Core.Options;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.States;
 using BUtil.Core.TasksTree.Storage;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 
 namespace BUtil.Core.TasksTree
 {
     internal class WriteIncrementedVersionTask: SequentialBuTask
     {
-        public WriteIncrementedVersionTask(ILog log, BackupEvents events, BackupTask task, GetStateOfStorageTask storageStateTask,
-            IEnumerable<GetStateOfSourceItemTask> getSourceItemStateTasks) :
-            base(log, events, string.Format(BUtil.Core.Localization.Resources.WriteIncrementedVersionToStorage, storageStateTask.StorageSettings.Name),
+        public WriteIncrementedVersionTask(
+            ILog log,
+            BackupEvents events, 
+            GetStateOfStorageTask storageStateTask,
+            IEnumerable<GetStateOfSourceItemTask> getSourceItemStateTasks,
+            IncrementalBackupModelOptions incrementalBackupModelOptions,
+            string password) :
+            base(log, events, string.Format(Localization.Resources.WriteIncrementedVersionToStorage, storageStateTask.StorageSettings.Name),
                 TaskArea.Hdd, null)
         {
             var childTaks = new List<BuTask>();
@@ -22,16 +26,17 @@ namespace BUtil.Core.TasksTree
             var calculateIncrementedVersionForStorageTask = new CalculateIncrementedVersionForStorageTask(Log, Events, storageStateTask, getSourceItemStateTasks);
             childTaks.Add(calculateIncrementedVersionForStorageTask);
 
-            var writeSourceFilesToStorageTask = new WriteSourceFilesToStorageTask(log, events, task, calculateIncrementedVersionForStorageTask, storageStateTask.StorageSettings);
+            var writeSourceFilesToStorageTask = new WriteSourceFilesToStorageTask(log, events, calculateIncrementedVersionForStorageTask, incrementalBackupModelOptions, password, storageStateTask.StorageSettings);
             childTaks.Add(writeSourceFilesToStorageTask);
 
             var writeStateToStorageTask = new WriteStateToStorageTask(
                 log,
                 events,
-                task,
                 calculateIncrementedVersionForStorageTask,
+                writeSourceFilesToStorageTask,
+                incrementalBackupModelOptions,
                 storageStateTask.StorageSettings,
-                writeSourceFilesToStorageTask);
+                password);
 
             childTaks.Add(writeStateToStorageTask);
             childTaks.Add(new WriteIntegrityVerificationScriptsToStorageTask(log, events,

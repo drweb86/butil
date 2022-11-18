@@ -3,14 +3,11 @@ using System.Windows.Forms;
 using BUtil.Core.Misc;
 using BUtil.Configurator.Localization;
 using System.IO;
-using BUtil.Core.Options;
-using System.Text.Json;
 using BUtil.Core.State;
 using BUtil.Configurator;
 using System.Linq;
 using BUtil.Core.Logs;
 using BUtil.Core.Storages;
-using BUtil.Core.BackupModels;
 using System.Threading;
 
 namespace BUtil.RestorationMaster
@@ -65,34 +62,29 @@ namespace BUtil.RestorationMaster
 
 			if (!Directory.Exists(backupFolder))
 			{
-				Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.BackupDirectoryDoesNotExist);
+				Messages.ShowErrorBox(Resources.BackupDirectoryDoesNotExist);
 				return;
 			}
 
 			if (!IncrementalBackupModelConstants.Files.Any(x => File.Exists(Path.Combine(backupFolder, x))))
 			{
 				var allowedFiles = string.Join(", ", IncrementalBackupModelConstants.Files);
-                Messages.ShowErrorBox(string.Format(BUtil.Configurator.Localization.Resources.CannotLocateFile0InDirectoryPointToADirectoryContainingThisFile, allowedFiles));
+                Messages.ShowErrorBox(string.Format(Resources.CannotLocateFile0InDirectoryPointToADirectoryContainingThisFile, allowedFiles));
                 return;
             }
 
 			var log = new StubLog();
-			IStorageSettings storageSettings = new HddStorageSettings
+			IStorageSettings storageSettings = new FolderStorageSettings
 			{
 				Name = string.Empty,
 				DestinationFolder = backupFolder
 			};
-			var task = new BackupTask
-			{ 
-				Password = _passwordTextBox.Text, 
-				Model = new IncrementalBackupModelOptions()
-			};
-			var service = new IncrementalBackupStateService(log, storageSettings, task);
+			var service = new IncrementalBackupStateService(log, storageSettings);
 			var cancellationTokenSource = new CancellationTokenSource();
 			var cancellationToken = cancellationTokenSource.Token;
-			if (!service.TryRead(cancellationToken, out var state))
+			if (!service.TryRead(cancellationToken, _passwordTextBox.Text, out var state))
 			{
-				Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.CannotOpenBackupFolder);
+				Messages.ShowErrorBox(Resources.CannotOpenBackupFolder);
 				return;
 			}
 

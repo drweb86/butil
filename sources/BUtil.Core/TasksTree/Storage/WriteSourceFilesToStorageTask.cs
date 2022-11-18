@@ -2,7 +2,6 @@
 using BUtil.Core.Events;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
-using BUtil.Core.Options;
 using BUtil.Core.State;
 using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.Core;
@@ -14,19 +13,23 @@ namespace BUtil.Core.TasksTree.Storage
 {
     internal class WriteSourceFilesToStorageTask : ParallelBuTask
     {
-        private readonly BackupTask task;
-        private CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask;
-        private IStorageSettings _storageSettings;
+        private readonly CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask;
+        private readonly IncrementalBackupModelOptions _incrementalBackupModelOptions;
+        private readonly string _password;
+        private readonly IStorageSettings _storageSettings;
 
         public WriteSourceFilesToStorageTask(
             ILog log,
             BackupEvents events,
-            BackupTask task,
-            CalculateIncrementedVersionForStorageTask getIncrementedVersionTask, IStorageSettings storageSettings)
-            : base(log, events, string.Format(BUtil.Core.Localization.Resources.WriteSourceFilesToStorage, storageSettings.Name), TaskArea.Hdd, null)
+            CalculateIncrementedVersionForStorageTask getIncrementedVersionTask,
+            IncrementalBackupModelOptions incrementalBackupModelOptions,
+            string password,
+            IStorageSettings storageSettings)
+            : base(log, events, string.Format(Localization.Resources.WriteSourceFilesToStorage, storageSettings.Name), TaskArea.Hdd, null)
         {
-            this.task = task;
             _getIncrementedVersionTask = getIncrementedVersionTask;
+            _incrementalBackupModelOptions = incrementalBackupModelOptions;
+            _password = password;
             _storageSettings = storageSettings;
         }
 
@@ -80,12 +83,10 @@ namespace BUtil.Core.TasksTree.Storage
 
         private string GetStorageMethod()
         {
-            var model = task.Model as IncrementalBackupModelOptions;
-
-            if (model.DisableCompressionAndEncryption)
+            if (_incrementalBackupModelOptions.DisableCompressionAndEncryption)
                 return StorageMethodNames.Plain;
 
-            if (string.IsNullOrEmpty(task.Password))
+            if (string.IsNullOrEmpty(_password))
                 return StorageMethodNames.SevenZip;
 
             return StorageMethodNames.SevenZipEncrypted;
@@ -94,9 +95,7 @@ namespace BUtil.Core.TasksTree.Storage
 
         private string GetStorageRelativeFileName(VersionState versionState, SourceItemChanges sourceItemChange, string sourceItemRelativeFileName)
         {
-            var model = task.Model as IncrementalBackupModelOptions;
-
-            if (model.DisableCompressionAndEncryption)
+            if (_incrementalBackupModelOptions.DisableCompressionAndEncryption)
                 return SourceItemHelper.GetUnencryptedUncompressedStorageRelativeFileName(
                                             versionState,
                                             sourceItemChange.SourceItem,

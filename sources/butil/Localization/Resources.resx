@@ -270,8 +270,8 @@ Localization created by:
     <value>Cannot execute required manipulations with server
 </value>
   </data>
-  <data name="HddStorageConfiguration" xml:space="preserve">
-    <value>HDD Storage Configuration</value>
+  <data name="FolderStorageConfiguration" xml:space="preserve">
+    <value>Folder Storage Configuration</value>
   </data>
   <data name="Ok" xml:space="preserve">
     <value>OK</value>
@@ -335,7 +335,7 @@ Localization created by:
     <value>Works fine!</value>
   </data>
   <data name="HardDriveStorage" xml:space="preserve">
-    <value>Hard drive storage...</value>
+    <value>Folder storage...</value>
   </data>
   <data name="FtpStorage" xml:space="preserve">
     <value>Ftp storage...</value>
@@ -402,8 +402,8 @@ Localization created by:
 
 Backup should be password protected. If NOT, program will SKIP its copying to this storage</value>
   </data>
-  <data name="Hdd" xml:space="preserve">
-    <value>HDD</value>
+  <data name="Folder" xml:space="preserve">
+    <value>Folder</value>
   </data>
   <data name="Ftp" xml:space="preserve">
     <value>FTP</value>
@@ -816,5 +816,8 @@ See detailed description in the following link.</value>
     <value>Limits amount of data being sent during one backup session to storage. 0 - no limit.
 When backup exceeds this quota, some files will be skipped and will be backuped next time.
 Usage scenario: You mounted some cloud storage as disk and perform backup on it. There's a problem: ISP drops upload speed after several gigabytes. This setting allows you to handle it.</value>
+  </data>
+  <data name="FolderStorage" xml:space="preserve">
+    <value>Folder Storage...</value>
   </data>
 </root>

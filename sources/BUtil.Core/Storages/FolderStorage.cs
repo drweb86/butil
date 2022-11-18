@@ -6,11 +6,9 @@ using BUtil.Core.State;
 
 namespace BUtil.Core.Storages
 {
-	class HddStorage: StorageBase<HddStorageSettings>
+	class FolderStorage: StorageBase<FolderStorageSettings>
 	{
-        const string _COPYING = "Copying '{0}' to '{1}'";
-
-		internal HddStorage(ILog log, HddStorageSettings settings)
+		internal FolderStorage(ILog log, FolderStorageSettings settings)
             :base (log, settings)
 		{
 		}
@@ -40,7 +38,7 @@ namespace BUtil.Core.Storages
 			var destinationFile = Path.Combine(Settings.DestinationFolder, relativeFileName);
 			var destinationDirectory = Path.GetDirectoryName(destinationFile);
 
-            Log.WriteLine(LoggingEvent.Debug, String.Format(CultureInfo.CurrentUICulture, _COPYING, sourceFile, destinationFile));
+            Log.WriteLine(LoggingEvent.Debug, $"Copying \"{sourceFile}\" to \"{destinationFile}\"");
 
             if (!Directory.Exists(destinationDirectory))
 				Directory.CreateDirectory(destinationDirectory);
@@ -57,7 +55,7 @@ namespace BUtil.Core.Storages
         public override string Test()
         {
             if (!Directory.Exists(Settings.DestinationFolder))
-                return string.Format(BUtil.Core.Localization.Resources.HddStorageFailure, Settings.Name, Settings.DestinationFolder);
+                return string.Format(BUtil.Core.Localization.Resources.FolderStorageFailure, Settings.Name, Settings.DestinationFolder);
 
             return null;
         }

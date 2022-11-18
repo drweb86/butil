@@ -799,6 +799,33 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Folder.
+        /// </summary>
+        internal static string Folder {
+            get {
+                return ResourceManager.GetString("Folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Folder Storage....
+        /// </summary>
+        internal static string FolderStorage {
+            get {
+                return ResourceManager.GetString("FolderStorage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Folder Storage Configuration.
+        /// </summary>
+        internal static string FolderStorageConfiguration {
+            get {
+                return ResourceManager.GetString("FolderStorageConfiguration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Friday.
         /// </summary>
         internal static string Friday {
@@ -853,29 +880,11 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hard drive storage....
+        ///   Looks up a localized string similar to Folder storage....
         /// </summary>
         internal static string HardDriveStorage {
             get {
                 return ResourceManager.GetString("HardDriveStorage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to HDD.
-        /// </summary>
-        internal static string Hdd {
-            get {
-                return ResourceManager.GetString("Hdd", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to HDD Storage Configuration.
-        /// </summary>
-        internal static string HddStorageConfiguration {
-            get {
-                return ResourceManager.GetString("HddStorageConfiguration", resourceCulture);
             }
         }
         

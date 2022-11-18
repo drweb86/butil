@@ -28,7 +28,7 @@ namespace BUtil.Configurator.Configurator.Controls
 			networkStorageToolStripMenuItem1.Text = Resources.NetworkStorage;
 			ftpStorageToolStripMenuItem1.Text = Resources.FtpStorage;
 			hardDriveStorageToolStripMenuItem1.Text = Resources.HardDriveStorage;
-			storagesListView.Groups[0].Header = Resources.Hdd;
+			storagesListView.Groups[0].Header = Resources.Folder;
 			storagesListView.Groups[1].Header = Resources.Ftp;
 			storagesListView.Groups[2].Header = Resources.NetworkStorages;
 			SetHintForControl(addStorageButton, Resources.Add);
@@ -50,8 +50,8 @@ namespace BUtil.Configurator.Configurator.Controls
             {
 				StorageEnum kind;
 
-                if (storageSettings is HddStorageSettings)
-                    kind = StorageEnum.Hdd;
+                if (storageSettings is FolderStorageSettings)
+                    kind = StorageEnum.Folder;
                 else if (storageSettings is FtpStorageSettings)
                     kind = StorageEnum.Ftp;
                 else if (storageSettings is SambaStorageSettings)
@@ -103,7 +103,7 @@ namespace BUtil.Configurator.Configurator.Controls
 		
 		void HardDriveStorageToolStripMenuItem1Click(object sender, EventArgs e)
 		{
-			AddStorage(StorageEnum.Hdd);
+			AddStorage(StorageEnum.Folder);
 		}
 		
 		void FtpStorageToolStripMenuItem1Click(object sender, EventArgs e)
@@ -145,9 +145,9 @@ namespace BUtil.Configurator.Configurator.Controls
 			var storageSettings = (IStorageSettings)storageToChangeListViewItem.Tag;
             IStorageConfigurationForm configForm;
 
-			if (storageSettings is HddStorageSettings)
-                configForm = new HddStorageForm(
-                        storageSettings as HddStorageSettings,
+			if (storageSettings is FolderStorageSettings)
+                configForm = new FolderStorageForm(
+                        storageSettings as FolderStorageSettings,
                         GetNames()
                             .Except(new List<string> { storageSettings.Name })
                             .ToList());
@@ -183,8 +183,8 @@ namespace BUtil.Configurator.Configurator.Controls
 				
 			switch (kind)
 			{
-				case StorageEnum.Hdd: 
-					configForm = new HddStorageForm(null, GetNames());
+				case StorageEnum.Folder: 
+					configForm = new FolderStorageForm(null, GetNames());
 					break;
 				case StorageEnum.Ftp: 
 					configForm = new FtpStorageForm(null);

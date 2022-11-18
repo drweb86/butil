@@ -302,7 +302,7 @@
   <data name="IntegrityVerificationScriptSh" xml:space="preserve">
     <value>Скрипт проверки целостности.sh</value>
   </data>
-  <data name="HddStorageFailure" xml:space="preserve">
+  <data name="FolderStorageFailure" xml:space="preserve">
     <value>В хранилище "{0}" каталог "{1}" не был найден.
 
 Пожалуйста, обновите настройки хранилища "{0}".</value>

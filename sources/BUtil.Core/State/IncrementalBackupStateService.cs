@@ -2,7 +2,6 @@
 using BUtil.Core.FileSystem;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
-using BUtil.Core.Options;
 using BUtil.Core.Storages;
 using System.IO;
 using System.Text.Json;
@@ -14,16 +13,14 @@ namespace BUtil.Core.State
     {
         private readonly ILog log;
         private readonly IStorageSettings storageSettings;
-        private readonly BackupTask task;
 
-        public IncrementalBackupStateService(ILog log, IStorageSettings storageSettings, BackupTask task)
+        public IncrementalBackupStateService(ILog log, IStorageSettings storageSettings)
         {
             this.log = log;
             this.storageSettings = storageSettings;
-            this.task = task;
         }
 
-        public bool TryRead(CancellationToken cancellationToken, out IncrementalBackupState state)
+        public bool TryRead(CancellationToken cancellationToken, string password, out IncrementalBackupState state)
         {
             if (cancellationToken.IsCancellationRequested)
             {
@@ -69,7 +66,7 @@ namespace BUtil.Core.State
                 using var tempFolder = new TempFolder();
                 var archive = Path.Combine(tempFolder.Folder, "archive.7z");
                 File.WriteAllBytes(archive, bytes);
-                if (!SevenZipProcessHelper.Extract(log, archive, task.Password, tempFolder.Folder, cancellationToken))
+                if (!SevenZipProcessHelper.Extract(log, archive, password, tempFolder.Folder, cancellationToken))
                 {
                     log.WriteLine(LoggingEvent.Error, $"Storage \"{storageSettings.Name}\": Failed to read state");
                     state = null;
@@ -86,10 +83,8 @@ namespace BUtil.Core.State
             return true;
         }
 
-        public StorageFile Write(CancellationToken cancellationToken, IncrementalBackupState state)
+        public StorageFile Write(CancellationToken cancellationToken, IncrementalBackupModelOptions incrementalBackupModelOptions, string password, IncrementalBackupState state)
         {
-            var model = task.Model as IncrementalBackupModelOptions;
-
             log.WriteLine(LoggingEvent.Debug, $"Storage \"{storageSettings.Name}\": Writing state");
             var storage = StorageFactory.Create(log, storageSettings);
             storage.Delete(IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile);
@@ -105,23 +100,23 @@ namespace BUtil.Core.State
 
             var storageFile = new StorageFile
             {
-                StorageMethod = GetStorageMethod(),
+                StorageMethod = GetStorageMethod(incrementalBackupModelOptions, password),
                 StorageIntegrityMethod = StorageIntegrityMethod.Sha512
             };
 
             string fileToUpload;
-            if (model.DisableCompressionAndEncryption)
+            if (incrementalBackupModelOptions.DisableCompressionAndEncryption)
             {
                 storageFile.StorageRelativeFileName = IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile;
                 fileToUpload = file;
             }
             else
             {
-                var encryptionEnabled = !string.IsNullOrWhiteSpace(task.Password);
+                var encryptionEnabled = !string.IsNullOrWhiteSpace(password);
                 storageFile.StorageRelativeFileName = encryptionEnabled ? IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile : IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile;
                 fileToUpload = Path.Combine(tempFolder.Folder, storageFile.StorageRelativeFileName);
 
-                if (!SevenZipProcessHelper.CompressFile(log, file, task.Password, fileToUpload, cancellationToken))
+                if (!SevenZipProcessHelper.CompressFile(log, file, password, fileToUpload, cancellationToken))
                 {
                     log.WriteLine(LoggingEvent.Error, $"Storage \"{storageSettings.Name}\": Failed state");
                     return null;
@@ -136,14 +131,12 @@ namespace BUtil.Core.State
             return storageFile;
         }
 
-        private string GetStorageMethod()
+        private string GetStorageMethod(IncrementalBackupModelOptions incrementalBackupModelOptions, string password)
         {
-            var model = task.Model as IncrementalBackupModelOptions;
-
-            if (model.DisableCompressionAndEncryption)
+            if (incrementalBackupModelOptions.DisableCompressionAndEncryption)
                 return StorageMethodNames.Plain;
 
-            if (string.IsNullOrEmpty(task.Password))
+            if (string.IsNullOrEmpty(password))
                 return StorageMethodNames.SevenZip;
 
             return StorageMethodNames.SevenZipEncrypted;

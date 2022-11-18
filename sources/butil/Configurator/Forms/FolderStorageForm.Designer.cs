@@ -1,6 +1,6 @@
 ﻿namespace BUtil.Configurator
 {
-	partial class HddStorageForm
+	partial class FolderStorageForm
 	{
 		/// <summary>
 		/// Designer variable used to keep track of non-visual components.
@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HddStorageForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FolderStorageForm));
             this.searchButton = new System.Windows.Forms.Button();
             this.destinationFolderTextBox = new System.Windows.Forms.TextBox();
             this.whereToStoreBackupLabel = new System.Windows.Forms.Label();
@@ -210,6 +210,7 @@
             this._enabledCheckBox.Size = new System.Drawing.Size(192, 19);
             this._enabledCheckBox.TabIndex = 8;
             this._enabledCheckBox.Text = "Enabled";
+            this._enabledCheckBox.Checked = true;
             this._enabledCheckBox.UseVisualStyleBackColor = true;
             // 
             // HddStorageForm
@@ -227,10 +228,10 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "HddStorageForm";
+            this.Name = "FolderStorageForm";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HDD Storage Configuration";
+            this.Text = "Folder Storage Configuration";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this._uploadLimitGbNumericUpDown)).EndInit();

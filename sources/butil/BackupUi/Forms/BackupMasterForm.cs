@@ -14,6 +14,7 @@ using BUtil.Core.TasksTree.Core;
 using System.Runtime.InteropServices;
 using BUtil.Core.Storages;
 using System.IO;
+using System.Linq;
 
 namespace BUtil.Configurator.BackupUiMaster.Forms
 {
@@ -125,61 +126,50 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 		}
 
 		void LoadForm(object sender, EventArgs e)
-		{
-			_log = new FileLog(_programOptions.LogsFolder, false);
-			_log.Open();
+        {
+            _log = new FileLog(_programOptions.LogsFolder, false);
+            _log.Open();
             _strategy = BackupModelStrategyFactory.Create(_log, _backupTask);
-			_backupEvents = new BackupEvents();
-			_backupEvents.OnTaskProgress += OnTaskProgress;
+            _backupEvents = new BackupEvents();
+            _backupEvents.OnTaskProgress += OnTaskProgress;
             _backupEvents.OnDuringExecutionTasksAdded += OnDuringExecutionTasksAdded;
             _rootTask = _strategy.GetTask(_backupEvents);
-            
+
             settingsUserControl.SetSettingsToUi(PowerTask.None, _backupTask, false);
 
             var allTasks = _rootTask.GetChildren();
             foreach (var task in allTasks)
-			{
-				var listItem = new ListViewItem(task.Title, (int)task.TaskArea);
+            {
+                var listItem = new ListViewItem(task.Title, (int)task.TaskArea);
                 listItem.SubItems.Add(LocalsHelper.ToString(ProcessingStatus.NotStarted));
                 listItem.Tag = task.Id;
                 tasksListView.Items.Add(listItem);
             }
-			
+
+            VerifyStorages();
+            VerifySourceItems();
+        }
+
+        private void VerifySourceItems()
+        {
             if (_backupTask.Items.Count == 0)
             {
-            	Messages.ShowInformationBox(Resources.ThereAreNoItemsToBackupNNyouCanSpecifyTheDataToBackupInConfiguratorInWhatSettingsGroup);
-            	Close();
+                Messages.ShowInformationBox(Resources.ThereAreNoItemsToBackupNNyouCanSpecifyTheDataToBackupInConfiguratorInWhatSettingsGroup);
+                Close();
             }
-            
-            if (_backupTask.Storages.Count < 1)
-            {
-            	Messages.ShowInformationBox(Resources.ThereAreNoSpecifiedPlacesWhereToStoreBackupNNyouCanAddSomeStoragesInConfiguratorInWhereSettingsGroup);
-            	Close();
-            }
-
-			foreach (var storageSettings in _backupTask.Storages)
-			{
-				var storage = StorageFactory.Create(_log, storageSettings);
-				var error = storage.Test();
-				if (error != null)
-				{
-					Messages.ShowErrorBox(error);
-					Close();
-				}
-			}
 
             foreach (var item in _backupTask.Items)
             {
-				if (item.IsFolder)
-				{
-					if (!Directory.Exists(item.Target))
-					{
-						Messages.ShowErrorBox(string.Format(BUtil.Configurator.Localization.Resources.SourceItemFailure, item.Target));
-						Close();
-					}
+                if (item.IsFolder)
+                {
+                    if (!Directory.Exists(item.Target))
+                    {
+                        Messages.ShowErrorBox(string.Format(BUtil.Configurator.Localization.Resources.SourceItemFailure, item.Target));
+                        Close();
+                    }
                 }
-				else
-				{
+                else
+                {
                     if (!File.Exists(item.Target))
                     {
                         Messages.ShowErrorBox(string.Format(BUtil.Configurator.Localization.Resources.SourceItemFailure, item.Target));
@@ -189,7 +179,31 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             }
         }
 
-		private void OnDuringExecutionTasksAdded(object sender, DuringExecutionTasksAddedEventArgs e)
+        private void VerifyStorages()
+        {
+            var enabledStorages = _backupTask.Storages
+                            .Where(x => x.Enabled)
+                            .ToList();
+
+            if (enabledStorages.Count < 1)
+            {
+                Messages.ShowInformationBox(Resources.ThereAreNoSpecifiedPlacesWhereToStoreBackupNNyouCanAddSomeStoragesInConfiguratorInWhereSettingsGroup);
+                Close();
+            }
+
+            foreach (var storageSettings in enabledStorages)
+            {
+                var storage = StorageFactory.Create(_log, storageSettings);
+                var error = storage.Test();
+                if (error != null)
+                {
+                    Messages.ShowErrorBox(error);
+                    Close();
+                }
+            }
+        }
+
+        private void OnDuringExecutionTasksAdded(object sender, DuringExecutionTasksAddedEventArgs e)
 		{
 			if (InvokeRequired)
 			{

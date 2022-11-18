@@ -7,8 +7,8 @@ namespace BUtil.Core.Storages
     {
         public static IStorage Create(ILog log, IStorageSettings storageSettings)
         {
-            if (storageSettings is HddStorageSettings)
-                return new HddStorage(log, storageSettings as HddStorageSettings);
+            if (storageSettings is FolderStorageSettings)
+                return new FolderStorage(log, storageSettings as FolderStorageSettings);
 
             if (storageSettings is FtpStorageSettings)
                 return new FtpStorage(log, storageSettings as FtpStorageSettings);

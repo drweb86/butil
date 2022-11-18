@@ -31,7 +31,7 @@ namespace BUtil.Configurator.Configurator.Controls
 		{
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WhereUserControl));
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("HDD", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Folder", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("FTP", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("Network storages", System.Windows.Forms.HorizontalAlignment.Left);
             this.storageTypesImageList = new System.Windows.Forms.ImageList(this.components);
@@ -176,7 +176,7 @@ namespace BUtil.Configurator.Configurator.Controls
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.storagesListView.ContextMenuStrip = this.storagesContextMenuStrip;
-            listViewGroup1.Header = "HDD";
+            listViewGroup1.Header = "Folder";
             listViewGroup1.Name = "HDDCopylistViewGroup";
             listViewGroup2.Header = "FTP";
             listViewGroup2.Name = "FTPlistViewGroup";

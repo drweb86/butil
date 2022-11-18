@@ -81,7 +81,7 @@ namespace BUtil.Core.TasksTree.Storage
                     return items;
                 })
                 .ToList();
-            storageFiles.Add(_writeStateToStorageTask.UploadedVersionState);
+            storageFiles.Add(_writeStateToStorageTask.StateStorageFile);
 
             var lines = storageFiles
                 .Select(x => $@"[void]$fileInfos.Add([FileInfo]::new(""{x.StorageRelativeFileName}"", {x.StorageFileNameSize}, ""{x.StorageIntegrityMethodInfo}""))")
@@ -93,7 +93,7 @@ namespace BUtil.Core.TasksTree.Storage
 This script verifies integrity of all backup files.
 
 It is meant to be launched for 
-a) HDD storage - directly
+a) folder storage - directly
 b) server side scripts - on server (via SSH or remote desktop)
 
 To be able to launch this script

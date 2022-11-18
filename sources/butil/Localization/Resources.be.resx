@@ -209,9 +209,6 @@
     <value>Cannot execute required manipulations with server
 </value>
   </data>
-  <data name="HddStorageConfiguration" xml:space="preserve">
-    <value>Канфiгурацыя хранiлiшча на HDD</value>
-  </data>
   <data name="Ok" xml:space="preserve">
     <value>ОК</value>
   </data>
@@ -272,9 +269,6 @@
   </data>
   <data name="WorksFine" xml:space="preserve">
     <value>Работае добра!</value>
-  </data>
-  <data name="HardDriveStorage" xml:space="preserve">
-    <value>Hard drive storage...</value>
   </data>
   <data name="FtpStorage" xml:space="preserve">
     <value>ФТП месца...</value>
@@ -340,9 +334,6 @@
     <value>Important:
 
 Backup should be password protected. If NOT, program will SKIP its copying to this storage</value>
-  </data>
-  <data name="Hdd" xml:space="preserve">
-    <value>HDD</value>
   </data>
   <data name="Ftp" xml:space="preserve">
     <value>ФТП</value>

@@ -9,13 +9,13 @@ using BUtil.Core.Logs;
 
 namespace BUtil.Configurator
 {
-    internal sealed partial class HddStorageForm : Form, IStorageConfigurationForm
+    internal sealed partial class FolderStorageForm : Form, IStorageConfigurationForm
 	{
         private readonly IEnumerable<string> _forbiddenNames;
 
-		private HddStorageSettings GetHddStorageSettings()
+		private FolderStorageSettings GetFolderStorageSettings()
 		{ 
-			return new HddStorageSettings
+			return new FolderStorageSettings
             {
                 Name = Caption,
                 DestinationFolder = destinationFolderTextBox.Text,
@@ -26,7 +26,7 @@ namespace BUtil.Configurator
 
         public IStorageSettings GetStorageSettings()
 		{
-			return GetHddStorageSettings();
+			return GetFolderStorageSettings();
 		}
         
         string Caption
@@ -35,21 +35,21 @@ namespace BUtil.Configurator
         }
 		
         
-		public HddStorageForm(HddStorageSettings hddStorageSettings, IEnumerable<string> forbiddenNames)
+		public FolderStorageForm(FolderStorageSettings folderStorageSettings, IEnumerable<string> forbiddenNames)
 		{
 			InitializeComponent();
 			
-			if (hddStorageSettings != null)
+			if (folderStorageSettings != null)
 			{
-				_nameTextBox.Text = hddStorageSettings.Name;
-				destinationFolderTextBox.Text = hddStorageSettings.DestinationFolder;
+				_nameTextBox.Text = folderStorageSettings.Name;
+				destinationFolderTextBox.Text = folderStorageSettings.DestinationFolder;
 				acceptButton.Enabled = true;
-				_enabledCheckBox.Checked = hddStorageSettings.Enabled;
-				_uploadLimitGbNumericUpDown.Value= hddStorageSettings.UploadLimitGb;
+				_enabledCheckBox.Checked = folderStorageSettings.Enabled;
+				_uploadLimitGbNumericUpDown.Value= folderStorageSettings.UploadLimitGb;
 			}
 			
 			whereToStoreBackupLabel.Text = Resources.SpecifyTheFolderWhereToStoreBackUp;
-			this.Text = Resources.HddStorageConfiguration;
+			this.Text = Resources.FolderStorageConfiguration;
 			acceptButton.Text = Resources.Ok;
 			cancelButton.Text = Resources.Cancel;
 			captionLabel.Text = Resources.Title;

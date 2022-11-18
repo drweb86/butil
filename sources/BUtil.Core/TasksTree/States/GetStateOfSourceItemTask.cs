@@ -17,13 +17,13 @@ namespace BUtil.Core.TasksTree
     internal class GetStateOfSourceItemTask : SequentialBuTask
     {
         private List<GetStateOfFileTask> _getFileStateTasks;
-        private readonly List<string> _fileExcludePatterns;
+        private readonly IEnumerable<string> _fileExcludePatterns;
 
         public SourceItemState SourceItemState { get; private set; } 
 
         public SourceItem SourceItem { get; }
 
-        public GetStateOfSourceItemTask(ILog log, BackupEvents events, SourceItem sourceItem, List<string> fileExcludePatterns) : 
+        public GetStateOfSourceItemTask(ILog log, BackupEvents events, SourceItem sourceItem, IEnumerable<string> fileExcludePatterns) : 
             base(log, events, string.Format(BUtil.Core.Localization.Resources.GetStateOfSourceItem, sourceItem.Target), sourceItem.IsFolder ? TaskArea.Folder : TaskArea.File, null)
         {
             SourceItem = sourceItem;

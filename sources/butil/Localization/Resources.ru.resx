@@ -210,8 +210,8 @@
   <data name="CannotExecuteRequiredManipulationsWithServerN" xml:space="preserve">
     <value>Не могу выполнить требуемые манипуляции с службой</value>
   </data>
-  <data name="HddStorageConfiguration" xml:space="preserve">
-    <value>Конфигурация хранилища на жестком диске</value>
+  <data name="FolderStorageConfiguration" xml:space="preserve">
+    <value>Конфигурация хранилища в папке</value>
   </data>
   <data name="Ok" xml:space="preserve">
     <value>OK</value>
@@ -342,8 +342,8 @@
 
 Резервная копия должна быть защищена паролем. Если НЕ БУДЕТ - то программа ПРОПУСТИТ копирование данных в такое хранилище</value>
   </data>
-  <data name="Hdd" xml:space="preserve">
-    <value>Жесткий диск</value>
+  <data name="Folder" xml:space="preserve">
+    <value>Папка</value>
   </data>
   <data name="Ftp" xml:space="preserve">
     <value>ФТП</value>
@@ -756,5 +756,8 @@ bin.
     <value>Ограничивает количество отправляемых в хранилище данных во время одной РК. 0 - без ограничений.
 Когда РК превышает эту квоту, некоторые файлы будут пропущены и будут скопированы в следующий раз.
 Сценарий использования: Вы подмонтировали какое-то облачное хранилище как диск и совершаете на него РК. Есть проблема - провайдер режет скорость при выгрузке данных, размер которых превышает несколько ГБ. Эта настройка позволяет разрешить эту ситуацию.</value>
+  </data>
+  <data name="FolderStorage" xml:space="preserve">
+    <value>Хранилище в папке...</value>
   </data>
 </root>
