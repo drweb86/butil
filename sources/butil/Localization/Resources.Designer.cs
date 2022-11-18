@@ -700,6 +700,15 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enabled.
+        /// </summary>
+        internal static string Enabled {
+            get {
+                return ResourceManager.GetString("Enabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Encryption.
         /// </summary>
         internal static string Encryption {
@@ -1847,6 +1856,26 @@ namespace BUtil.Configurator.Localization {
         internal static string UpdatedFile {
             get {
                 return ResourceManager.GetString("UpdatedFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Limits amount of data being sent during one backup session to storage. 0 - no limit.
+        ///When backup exceeds this quota, some files will be skipped and will be backuped next time.
+        ///Usage scenario: You mounted some cloud storage as disk and perform backup on it. There&apos;s a problem: ISP drops upload speed after several gigabytes. This setting allows you to handle it..
+        /// </summary>
+        internal static string UploadLimitDescription {
+            get {
+                return ResourceManager.GetString("UploadLimitDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload limit, GB:.
+        /// </summary>
+        internal static string UploadLimitGB {
+            get {
+                return ResourceManager.GetString("UploadLimitGB", resourceCulture);
             }
         }
         

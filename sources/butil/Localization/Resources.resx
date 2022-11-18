@@ -806,4 +806,15 @@ See detailed description in the following link.</value>
   <data name="RestorationIsCompleted" xml:space="preserve">
     <value>Restoration is completed.</value>
   </data>
+  <data name="UploadLimitGB" xml:space="preserve">
+    <value>Upload limit, GB:</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Enabled</value>
+  </data>
+  <data name="UploadLimitDescription" xml:space="preserve">
+    <value>Limits amount of data being sent during one backup session to storage. 0 - no limit.
+When backup exceeds this quota, some files will be skipped and will be backuped next time.
+Usage scenario: You mounted some cloud storage as disk and perform backup on it. There's a problem: ISP drops upload speed after several gigabytes. This setting allows you to handle it.</value>
+  </data>
 </root>

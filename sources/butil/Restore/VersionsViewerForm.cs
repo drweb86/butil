@@ -265,7 +265,8 @@ namespace BUtil.RestorationMaster
             IStorageSettings storageSettings = new HddStorageSettings
             { 
                 Name = string.Empty, 
-                DestinationFolder = _backupLocation
+                DestinationFolder = _backupLocation,
+                Enabled= false,
             };
 
             var service = new IncrementalBackupFileService(log, storageSettings);

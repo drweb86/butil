@@ -8,5 +8,6 @@ namespace BUtil.Core.Storages
     public interface IStorageSettings
     {
         string Name { get; }
+        bool Enabled { get; set; }
     }
 }
