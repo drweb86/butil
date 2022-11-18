@@ -29,7 +29,6 @@ namespace BUtil.Core.Misc
             catch (FormatException e) { throw new InvalidOperationException(e.Message, e); }
             catch (OverflowException e) { throw new InvalidOperationException(e.Message, e); }
             catch (IOException e) { throw new InvalidOperationException(e.Message, e); }
-			catch (XmlException e) { throw new InvalidOperationException(e.Message, e); }
 			catch (System.Security.SecurityException e) { throw new InvalidOperationException(e.Message, e); }
 		}
 	}
