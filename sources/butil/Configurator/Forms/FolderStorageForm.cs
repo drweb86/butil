@@ -20,7 +20,7 @@ namespace BUtil.Configurator
                 Name = Caption,
                 DestinationFolder = destinationFolderTextBox.Text,
 				Enabled= _enabledCheckBox.Checked,
-				UploadLimitGb = (long)_uploadLimitGbNumericUpDown.Value,
+				SingleBackupQuotaGb = (long)_uploadLimitGbNumericUpDown.Value,
             };
         }
 
@@ -45,7 +45,7 @@ namespace BUtil.Configurator
 				destinationFolderTextBox.Text = folderStorageSettings.DestinationFolder;
 				acceptButton.Enabled = true;
 				_enabledCheckBox.Checked = folderStorageSettings.Enabled;
-				_uploadLimitGbNumericUpDown.Value= folderStorageSettings.UploadLimitGb;
+				_uploadLimitGbNumericUpDown.Value= folderStorageSettings.SingleBackupQuotaGb;
 			}
 			
 			whereToStoreBackupLabel.Text = Resources.SpecifyTheFolderWhereToStoreBackUp;
