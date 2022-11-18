@@ -17,10 +17,6 @@ namespace BUtil.Core.Misc
             "https://raw.githubusercontent.com/drweb86/butil/master/LastVersion.txt"
         };
 
-		/// <summary>
-		/// Performs support with providing information about errors. Does not throw exceptions
-		/// </summary>
-		/// <param name="kind">kind of support</param>
 		public static void DoSupport(SupportRequest kind)
 		{
 			int index = (int)kind;
