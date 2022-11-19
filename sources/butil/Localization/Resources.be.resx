@@ -354,11 +354,6 @@ or warnings will be registered during the backup</value>
     <value>Additional encryption under your local system account. 
 Requires NTFS file system and win2k OS on remote machine. Backup data will be available only for your OS account. See documentation for details</value>
   </data>
-  <data name="WhileBackupIsInProgressYouCanContinueWorkNNtoRestoreProgressFormJustClickOnThisIconInTray" xml:space="preserve">
-    <value>While backup is in progress you can continue work. 
-
-To restore progress form just click on this icon in tray</value>
-  </data>
   <data name="SkipCopyingAndWriteAWarningIntoLogIfBackupExceeds" xml:space="preserve">
     <value>Skip copying and write a warning into log if backup exceeds</value>
   </data>
@@ -376,9 +371,6 @@ To restore progress form just click on this icon in tray</value>
   </data>
   <data name="_0Sec" xml:space="preserve">
     <value>{0} сек</value>
-  </data>
-  <data name="BackupIsInProgress" xml:space="preserve">
-    <value>Backup is in progress...</value>
   </data>
   <data name="ThereAreNoItemsToBackupNNyouCanSpecifyTheDataToBackupInConfiguratorInWhatSettingsGroup" xml:space="preserve">
     <value>There are no items to backup!

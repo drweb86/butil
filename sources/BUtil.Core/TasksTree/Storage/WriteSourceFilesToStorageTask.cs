@@ -6,6 +6,7 @@ using BUtil.Core.State;
 using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.Core;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms.VisualStyles;
@@ -61,7 +62,7 @@ namespace BUtil.Core.TasksTree.Storage
                 itemsToCopy.AddRange(sourceItemChange.CreatedFiles);
 
                 var sourceItemDir = SourceItemHelper.GetSourceItemDirectory(sourceItemChange.SourceItem);
-                
+
                 var copyTasks = itemsToCopy
                     .Select(x =>
                     {
@@ -87,27 +88,22 @@ namespace BUtil.Core.TasksTree.Storage
 
             // TODO: think of design.
 
-            foreach (var task in childTasks)
+            var skippedFiles = childTasks
+                .Select(x => x as WriteSourceFileToStorageTask)
+                .Where(x => x.IsSkipped || !x.IsSuccess)
+                .Select(x => x.StorageFile.FileState.FileName)
+                .ToList();
+
+            foreach (var sourceItemChange in versionState.SourceItemChanges)
             {
-                var typedTask = task as WriteSourceFileToStorageTask;
-                if (!typedTask.IsSkipped && typedTask.IsSuccess)
-                    continue;
+                sourceItemChange.UpdatedFiles.RemoveAll(x => skippedFiles.Contains(x.FileState.FileName));
+                sourceItemChange.CreatedFiles.RemoveAll(x => skippedFiles.Contains(x.FileState.FileName));
+            }
 
-                foreach (var sourceItemChange in versionState.SourceItemChanges)
-                {
-                    if (sourceItemChange.UpdatedFiles.Contains(typedTask.StorageFile))
-                        sourceItemChange.UpdatedFiles.Remove(typedTask.StorageFile);
-                    if (sourceItemChange.CreatedFiles.Contains(typedTask.StorageFile))
-                        sourceItemChange.CreatedFiles.Remove(typedTask.StorageFile);
-                }
-
-                foreach (var sis in _getIncrementedVersionTask.IncrementalBackupState.LastSourceItemStates)
-                {
-                    var remove = sis.FileStates.FirstOrDefault(x => x.CompareTo(typedTask.StorageFile.FileState));
-
-                    if (remove != null)
-                        sis.FileStates.Remove(remove);
-                }
+            foreach (var lastSourceItemState in _getIncrementedVersionTask.IncrementalBackupState.LastSourceItemStates)
+            {
+                var updatedArray = lastSourceItemState.FileStates.Where(x => !skippedFiles.Contains(x.FileName)).ToList();
+                lastSourceItemState.FileStates = updatedArray;
             }
 
             UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);

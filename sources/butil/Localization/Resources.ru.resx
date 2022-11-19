@@ -364,11 +364,6 @@
     <value>Дополнительное шифрование под вашей учетной записью.
 Требует наличия файловой системы NTFS и Win2k на удаленной машине. Резервная копия будет доступна только вашей учетной записи. Смотрите документацию для подробностей</value>
   </data>
-  <data name="WhileBackupIsInProgressYouCanContinueWorkNNtoRestoreProgressFormJustClickOnThisIconInTray" xml:space="preserve">
-    <value>Пока создается резервная копия, вы можете продолжить работу
-
-Чтобы отобразить форму, кликните по иконке в трее</value>
-  </data>
   <data name="SkipCopyingAndWriteAWarningIntoLogIfBackupExceeds" xml:space="preserve">
     <value>Не копировать и заносить предупреждение в лог, если размер резервной копии превысит</value>
   </data>
@@ -386,9 +381,6 @@
   </data>
   <data name="_0Sec" xml:space="preserve">
     <value>{0} сек</value>
-  </data>
-  <data name="BackupIsInProgress" xml:space="preserve">
-    <value>Идет резервное копирование...</value>
   </data>
   <data name="ThereAreNoItemsToBackupNNyouCanSpecifyTheDataToBackupInConfiguratorInWhatSettingsGroup" xml:space="preserve">
     <value>Не указаны объекты для резервного копирования!

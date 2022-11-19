@@ -22,8 +22,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 	
 	internal sealed partial class BackupMasterForm : Form
 	{
-        private bool _firstTimeApplicationInTray = true;
-        private bool _trayModeActivated;
         private bool _backupInProgress;
         private bool _strongIntentionToCancelBackup;
         private readonly BackupTask _backupTask;
@@ -103,9 +101,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 			startButton.Enabled = false;
 			cancelButton.Enabled = true;
 			
-			_trayModeActivated = true;
-			SwapToTray(true);
-			
 			_backupInProgress = true;
 			_backgroundWorker.RunWorkerAsync();
 		}
@@ -121,8 +116,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 
             Text = Resources.WellcomeToBackupWizard;
             toolTip.SetToolTip(cancelButton, Resources.Cancel);
-
-            notifyIcon.Text = Resources.BackupIsInProgress;
 		}
 
 		void LoadForm(object sender, EventArgs e)
@@ -243,69 +236,10 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 			taskNameColumnHeader.Width = newWidth < 35 ? 35 : newWidth;
 		}
 		
-		#region Tray Interaction
-
-		FormWindowState _previousFormState = FormWindowState.Maximized;
 		private FileLog _log;
 		private IBackupModelStrategy _strategy;
 		private BackupEvents _backupEvents;
 		private BuTask _rootTask;
-
-		void SwapToTray(bool changeFormState)
-		{
-			if (_trayModeActivated)
-			{
-				if (!notifyIcon.Visible)
-					notifyIcon.Visible = true;
-
-                if (!ShowInTaskbar)
-                {
-                    ShowInTaskbar = false;
-                }
-
-			    if (changeFormState)
-				{
-	    	        WindowState = FormWindowState.Minimized;
-	    	        
-				}
-        	    if (_firstTimeApplicationInTray)
-            	{
-	            	notifyIcon.ShowBalloonTip(5000, Resources.Backup, Resources.WhileBackupIsInProgressYouCanContinueWorkNNtoRestoreProgressFormJustClickOnThisIconInTray, ToolTipIcon.Info);
-    	        	_firstTimeApplicationInTray = false;
-        	    }
-				Hide();        	    
-			}
-		}
-		
-		void ReturnFromTray()
-		{
-			if (_trayModeActivated)
-			{
-				Show();
-
-				notifyIcon.Visible = false;
-				ShowInTaskbar = true;
-        	    WindowState = _previousFormState; 
-			}
-		}
-		
-		void NotifyIconClick(object sender, EventArgs e)
-		{
-			ReturnFromTray();
-		}
-		
-		void ResizeForm(object sender, EventArgs e)
-		{
-			if (WindowState == FormWindowState.Minimized)
-   	        {
-				SwapToTray(false);
-   	        } 
-			else
-			{
-				_previousFormState = WindowState;
-			}
-		}
-        #endregion
 
         private void OnDoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
 		{
@@ -317,7 +251,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             _backupInProgress = false;
             cancelButton.Enabled = false;
             _backupProgressUserControl.Stop();
-            ReturnFromTray();
 			_log.Close();
 
             settingsUserControl.GetSettingsFromUi(out PowerTask powerTask, out bool beepWhenCompleted);

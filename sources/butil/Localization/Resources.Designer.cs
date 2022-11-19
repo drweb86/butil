@@ -293,15 +293,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Backup is in progress....
-        /// </summary>
-        internal static string BackupIsInProgress {
-            get {
-                return ResourceManager.GetString("BackupIsInProgress", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Backup journals.
         /// </summary>
         internal static string BackupJournals {
@@ -2008,18 +1999,6 @@ namespace BUtil.Configurator.Localization {
         internal static string Where {
             get {
                 return ResourceManager.GetString("Where", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to While backup is in progress you can continue work. 
-        ///
-        ///To restore progress form just click on this icon in tray.
-        /// </summary>
-        internal static string WhileBackupIsInProgressYouCanContinueWorkNNtoRestoreProgressFormJustClickOnThisIconInTray {
-            get {
-                return ResourceManager.GetString("WhileBackupIsInProgressYouCanContinueWorkNNtoRestoreProgressFormJustClickOnThisIc" +
-                        "onInTray", resourceCulture);
             }
         }
         

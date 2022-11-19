@@ -1,8 +1,7 @@
-5.3.0.0
+5.4.0.0
 This is beta version.
 FTP & Samba are not working.
 
 New Features
-- New section for setting up incremental model options.
-- Incremental backup.
-- Support for Wildcard exclusions for Folder Source Items based on Microsoft
+- Added quotas for single backup side to support ISP
+- Added possibility to disable storages

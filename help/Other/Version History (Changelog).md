@@ -1,4 +1,18 @@
-# 5.3b
+# 5.4b (20 January 2022)
+
+This is beta version.
+FTP & Samba are not working.
+
+## New Features
+- Added quotas for single backup side to support ISP
+- Added possibility to disable storages
+
+## Changes
+
+## Bug Fixes
+- UI fixes.
+
+# 5.3b (16 November 2022)
 
 This is beta version.
 FTP & Samba are not working.

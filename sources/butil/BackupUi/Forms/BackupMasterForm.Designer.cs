@@ -36,13 +36,12 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             this.startButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.tasksListView = new ListViewDoubleBuffered();
+            this.tasksListView = new BUtil.Configurator.Configurator.Controls.Common.ListViewDoubleBuffered();
             this.taskNameColumnHeader = new System.Windows.Forms.ColumnHeader();
             this.processingStateInformationColumnHeader = new System.Windows.Forms.ColumnHeader();
             this.compressionItemsListViewImageList = new System.Windows.Forms.ImageList(this.components);
             this.settingsUserControl = new BUtil.Configurator.BackupUiMaster.Controls.SettingsUserControl();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.abortBackupBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this._backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.helpButton = new System.Windows.Forms.Button();
@@ -147,13 +146,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.CancelButtonClick);
             // 
-            // notifyIcon
-            // 
-            this.notifyIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
-            this.notifyIcon.Text = "Backup is in progress...";
-            this.notifyIcon.Click += new System.EventHandler(this.NotifyIconClick);
-            // 
             // abortBackupBackgroundWorker
             // 
             this.abortBackupBackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.AbortBackupBackgroundWorkerDoWork);
@@ -193,12 +185,9 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MinimumSize = new System.Drawing.Size(792, 408);
             this.Name = "BackupMasterForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Wellcome to Backup Wizard!";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClosingForm);
             this.Load += new System.EventHandler(this.LoadForm);
-            this.Resize += new System.EventHandler(this.ResizeForm);
             this.ResumeLayout(false);
 
 		}
@@ -208,7 +197,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 		private System.Windows.Forms.ColumnHeader taskNameColumnHeader;
 		private System.Windows.Forms.ColumnHeader processingStateInformationColumnHeader;
 		private ListViewDoubleBuffered tasksListView;
-		private System.Windows.Forms.NotifyIcon notifyIcon;
 		private System.Windows.Forms.Button cancelButton;
 		private SettingsUserControl settingsUserControl;
 		private System.Windows.Forms.Button startButton;
