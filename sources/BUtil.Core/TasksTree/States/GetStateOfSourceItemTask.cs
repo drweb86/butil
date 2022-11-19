@@ -81,10 +81,52 @@ namespace BUtil.Core.TasksTree
             matcher.AddIncludePatterns(new[] { "**/*" });
 
             return matcher
-                .Execute(new DirectoryInfoWrapper(new DirectoryInfo(folder)))
+                .Execute(new DirectoryInfoWrapperEx(new DirectoryInfo(folder)))
                 .Files
                 .Select(x => new FileInfo(Path.Combine(folder, x.Path)).FullName)
                 .ToList();
+        }
+    }
+
+    class DirectoryInfoWrapperEx : DirectoryInfoWrapper
+    {
+        private readonly DirectoryInfo _directoryInfo;
+
+        public DirectoryInfoWrapperEx(DirectoryInfo directoryInfo) : base(directoryInfo)
+        {
+            _directoryInfo = directoryInfo;
+        }
+
+        public override IEnumerable<FileSystemInfoBase> EnumerateFileSystemInfos()
+        {
+            if (_directoryInfo.Exists)
+            {
+                IEnumerable<FileSystemInfo> fileSystemInfos;
+                try
+                {
+                    fileSystemInfos = _directoryInfo.EnumerateFileSystemInfos("*", SearchOption.TopDirectoryOnly);
+                }
+                catch (DirectoryNotFoundException)
+                {
+                    yield break;
+                }
+                catch (UnauthorizedAccessException)
+                {
+                    yield break;
+                }
+
+                foreach (FileSystemInfo fileSystemInfo in fileSystemInfos)
+                {
+                    if (fileSystemInfo is DirectoryInfo directoryInfo)
+                    {
+                        yield return new DirectoryInfoWrapperEx(directoryInfo);
+                    }
+                    else
+                    {
+                        yield return new FileInfoWrapper((FileInfo)fileSystemInfo);
+                    }
+                }
+            }
         }
     }
 }
