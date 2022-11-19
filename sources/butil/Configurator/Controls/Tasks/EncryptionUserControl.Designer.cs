@@ -144,6 +144,7 @@ namespace BUtil.Core.PL
             this._tableLayoutPanel.SetColumnSpan(this._recommendationsLabel, 3);
             this._recommendationsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._recommendationsLabel.Location = new System.Drawing.Point(3, 91);
+            this._recommendationsLabel.MaximumSize = new System.Drawing.Size(532, 0);
             this._recommendationsLabel.Name = "_recommendationsLabel";
             this._recommendationsLabel.Size = new System.Drawing.Size(532, 15);
             this._recommendationsLabel.TabIndex = 1;
