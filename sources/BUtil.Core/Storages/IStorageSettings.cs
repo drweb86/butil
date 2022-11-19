@@ -8,6 +8,7 @@ namespace BUtil.Core.Storages
     public interface IStorageSettings
     {
         string Name { get; }
-        bool Enabled { get; set; }
+        bool Enabled { get; }
+        long SingleBackupQuotaGb { get; }
     }
 }

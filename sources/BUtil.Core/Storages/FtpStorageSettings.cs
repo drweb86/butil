@@ -9,5 +9,7 @@
 		public string User { get; set; } 
 		public string Password { get; set; }
 		public bool ActiveFtpMode { get; set; }
+
+        public long SingleBackupQuotaGb { get; set; }
     }
 }

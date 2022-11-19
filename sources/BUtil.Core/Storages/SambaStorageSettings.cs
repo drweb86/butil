@@ -8,5 +8,7 @@
         public bool EncryptUnderLocalSystemAccount { get; set; }
         public bool SkipCopyingToNetworkStorageAndWriteWarningInLogIfBackupExceeds { get; set; }
         public long SkipCopyingToNetworkStorageLimitMb { get; set; }
+
+        public long SingleBackupQuotaGb { get; set; }
     }
 }

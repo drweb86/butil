@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace BUtil.Core.State
 {
@@ -6,11 +7,21 @@ namespace BUtil.Core.State
     {
         public List<VersionState> VersionStates { get; set; }
         public IEnumerable<SourceItemState> LastSourceItemStates { get; set; }
-        public IncrementalBackupState(): this(new List<VersionState>(), new List<SourceItemState>()) { }
-        public IncrementalBackupState(List<VersionState> versionStates, IEnumerable<SourceItemState> lastSourceItemStates)
+        public IncrementalBackupState()
         {
-            VersionStates = versionStates;
-            LastSourceItemStates = lastSourceItemStates;
+            VersionStates = new List<VersionState>();
+            LastSourceItemStates = new List<SourceItemState>();
+        }
+
+        public IncrementalBackupState ShallowClone()
+        {
+            return new IncrementalBackupState { 
+                LastSourceItemStates = LastSourceItemStates
+                    .Select(x => x.ShallowClone())
+                    .ToList(), 
+                
+                VersionStates = VersionStates
+            };
         }
     }
 }

@@ -8,6 +8,7 @@ using BUtil.Core.TasksTree.Core;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using System.Windows.Forms.VisualStyles;
 
 namespace BUtil.Core.TasksTree.Storage
 {
@@ -52,6 +53,7 @@ namespace BUtil.Core.TasksTree.Storage
             var childTasks = new List<BuTask>();
 
             var versionState = _getIncrementedVersionTask.IncrementalBackupState.VersionStates.Last();
+            var singleBackupQuotaGb = new Quota(_storageSettings.SingleBackupQuotaGb * 1024 * 1024 * 1024);
             foreach (var sourceItemChange in versionState.SourceItemChanges)
             {
                 var itemsToCopy = new List<StorageFile>();
@@ -59,7 +61,7 @@ namespace BUtil.Core.TasksTree.Storage
                 itemsToCopy.AddRange(sourceItemChange.CreatedFiles);
 
                 var sourceItemDir = SourceItemHelper.GetSourceItemDirectory(sourceItemChange.SourceItem);
-
+                
                 var copyTasks = itemsToCopy
                     .Select(x =>
                     {
@@ -71,13 +73,43 @@ namespace BUtil.Core.TasksTree.Storage
                         return x;
                     })
                     .Select(x => new WriteSourceFileToStorageTask(
-                        Log, Events, x, _storageSettings))
+                        Log,
+                        Events,
+                        x,
+                        _storageSettings,
+                        singleBackupQuotaGb))
                     .ToList();
                 childTasks.AddRange(copyTasks);
             }
             Events.DuringExecutionTasksAdded(Id, childTasks);
             Children = childTasks;
             base.Execute(token);
+
+            // TODO: think of design.
+
+            foreach (var task in childTasks)
+            {
+                var typedTask = task as WriteSourceFileToStorageTask;
+                if (!typedTask.IsSkipped && typedTask.IsSuccess)
+                    continue;
+
+                foreach (var sourceItemChange in versionState.SourceItemChanges)
+                {
+                    if (sourceItemChange.UpdatedFiles.Contains(typedTask.StorageFile))
+                        sourceItemChange.UpdatedFiles.Remove(typedTask.StorageFile);
+                    if (sourceItemChange.CreatedFiles.Contains(typedTask.StorageFile))
+                        sourceItemChange.CreatedFiles.Remove(typedTask.StorageFile);
+                }
+
+                foreach (var sis in _getIncrementedVersionTask.IncrementalBackupState.LastSourceItemStates)
+                {
+                    var remove = sis.FileStates.FirstOrDefault(x => x.CompareTo(typedTask.StorageFile.FileState));
+
+                    if (remove != null)
+                        sis.FileStates.Remove(remove);
+                }
+            }
+
             UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
         }
 

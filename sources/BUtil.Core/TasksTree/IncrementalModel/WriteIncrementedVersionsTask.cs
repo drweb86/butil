@@ -17,7 +17,7 @@ namespace BUtil.Core.TasksTree
             IEnumerable<GetStateOfSourceItemTask> getSourceItemStateTasks,
             IncrementalBackupModelOptions incrementalBackupModelOptions,
             string password) :
-            base(log, events, "BUtil.Core.Localization.Resources.WriteIncrementedVersionToStorages",
+            base(log, events, BUtil.Core.Localization.Resources.WriteIncrementedVersionToStorages,
                 TaskArea.Hdd, null)
         {
             Children = storageStateTasks

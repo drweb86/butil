@@ -39,7 +39,7 @@ namespace BUtil.Core.TasksTree
 
             var versionState = Compare(storageState.LastSourceItemStates, sourceItemStates);
             storageState.VersionStates.Add(versionState);
-            storageState.LastSourceItemStates = sourceItemStates;
+            storageState.LastSourceItemStates = sourceItemStates.Select(x => x.ShallowClone());
             IncrementalBackupState = storageState;
             VersionIsNeeded = versionState.SourceItemChanges.Any(x => x.CreatedFiles.Any() || x.UpdatedFiles.Any() || x.DeletedFiles.Any());
 
