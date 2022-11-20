@@ -19,11 +19,8 @@ namespace BUtil.Core.TasksTree.States
             _fileName = fileName;
         }
 
-        public override void Execute(CancellationToken token)
+        public override void Execute()
         {
-            if (token.IsCancellationRequested)
-                return;
-
             UpdateStatus(ProcessingStatus.InProgress);
             var fileInfo = new FileInfo(_fileName);
 

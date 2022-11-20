@@ -5,7 +5,6 @@ using BUtil.Core.TasksTree.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 
 namespace BUtil.Core.TasksTree
 {
@@ -25,11 +24,8 @@ namespace BUtil.Core.TasksTree
             _getSourceItemStateTasks = getSourceItemStateTasks;
         }
         
-        public override void Execute(CancellationToken token)
+        public override void Execute()
         {
-            if (token.IsCancellationRequested)
-                return;
-
             UpdateStatus(ProcessingStatus.InProgress);
 
             var storageState = _storageStateTask.StorageState;

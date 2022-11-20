@@ -35,11 +35,8 @@ namespace BUtil.Core.TasksTree.Storage
             _storageSettings = storageSettings;
         }
 
-        public override void Execute(CancellationToken token)
+        public override void Execute()
         {
-            if (token.IsCancellationRequested)
-                return;
-
             UpdateStatus(ProcessingStatus.InProgress);
 
             if (!_getIncrementedVersionTask.VersionIsNeeded)
@@ -84,7 +81,7 @@ namespace BUtil.Core.TasksTree.Storage
             }
             Events.DuringExecutionTasksAdded(Id, childTasks);
             Children = childTasks;
-            base.Execute(token);
+            base.Execute();
 
             // TODO: think of design.
 

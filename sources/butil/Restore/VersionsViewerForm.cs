@@ -270,15 +270,13 @@ namespace BUtil.RestorationMaster
             };
 
             var service = new IncrementalBackupFileService(log, storageSettings);
-            var cancellationTokenSource = new CancellationTokenSource();
-            var token = cancellationTokenSource.Token;
             using var form = new ProgressForm(reportProgress =>
             {
                 foreach (var storageFile in storageFiles)
                 {
                     int percent = ((storageFiles.IndexOf(storageFile) + 1) * 100) / storageFiles.Count;
                     reportProgress(percent);
-                    service.Download(token, sourceItem, storageFile, destinationFolder);
+                    service.Download(sourceItem, storageFile, destinationFolder);
                 }
             });
             form.ShowDialog();

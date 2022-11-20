@@ -25,7 +25,7 @@ namespace BUtil.Core.TasksTree.Core
             TaskArea = taskArea;
         }
 
-        public abstract void Execute(CancellationToken token);
+        public abstract void Execute();
 
         protected void LogDebug(string message)
         {

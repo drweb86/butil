@@ -22,13 +22,8 @@ namespace BUtil.Core.State
             this.storageSettings = storageSettings;
         }
 
-        public bool Download(CancellationToken cancellationToken, SourceItem sourceItem, StorageFile storageFile, string destinationFolder)
+        public bool Download(SourceItem sourceItem, StorageFile storageFile, string destinationFolder)
         {
-            if (cancellationToken.IsCancellationRequested)
-            {
-                return false;
-            }
-
             log.WriteLine(LoggingEvent.Debug, $"Storage \"{storageSettings.Name}\": downloading \"{storageFile.FileState.FileName}\"");
             var storage = StorageFactory.Create(log, storageSettings);
 
@@ -48,7 +43,7 @@ namespace BUtil.Core.State
                 using var tempFolder = new TempFolder();
                 var tempArchive = Path.Combine(tempFolder.Folder, "archive.7z");
                 storage.Download(storageFile, tempArchive);
-                if (!SevenZipProcessHelper.Extract(log, tempArchive, storageFile.StoragePassword, destinationDir, cancellationToken))
+                if (!SevenZipProcessHelper.Extract(log, tempArchive, storageFile.StoragePassword, destinationDir))
                 {
                     log.WriteLine(LoggingEvent.Error, $"Storage \"{storageSettings.Name}\": extracting \"{storageFile.FileState.FileName}\" failed");
                     return false;
@@ -57,11 +52,8 @@ namespace BUtil.Core.State
             return true;
         }
 
-        public bool Upload(CancellationToken cancellationToken, StorageFile storageFile)
+        public bool Upload(StorageFile storageFile)
         {
-            if (cancellationToken.IsCancellationRequested)
-                return false;
-
             log.WriteLine(LoggingEvent.Debug, $"Upload \"{storageSettings.Name}\": Upload \"{storageFile.FileState.FileName}\"");
             var storage = StorageFactory.Create(log, storageSettings);
 
@@ -88,8 +80,7 @@ namespace BUtil.Core.State
                 if (!SevenZipProcessHelper.CompressFile(log,
                     storageFile.FileState.FileName,
                     storageFile.StoragePassword,
-                    archiveFile,
-                    cancellationToken))
+                    archiveFile))
                 {
                     log.WriteLine(LoggingEvent.Error, $"Upload \"{storageSettings.Name}\": Error compressing \"{storageFile.FileState.FileName}\"");
                     return false;

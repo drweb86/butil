@@ -39,11 +39,10 @@ namespace BUtil.Core.TasksTree.IncrementalModel
             Children = tasks;
         }
 
-        public override void Execute(CancellationToken token)
+        public override void Execute()
         {
             UpdateStatus(ProcessingStatus.InProgress);
-
-            base.Execute(token);
+            base.Execute();
             UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
         }
     }

@@ -19,17 +19,14 @@ namespace BUtil.Core.TasksTree.Apps
             _executeProgramTaskInfo = executeProgramTaskInfo;
         }
 
-        public override void Execute(CancellationToken token)
+        public override void Execute()
         {
-            if (token.IsCancellationRequested)
-                return;
-
             LogDebug($"Program: {_executeProgramTaskInfo.Program} at working directort {_executeProgramTaskInfo.WorkingDirectory}");
             UpdateStatus(ProcessingStatus.InProgress);
             try
             {
                 ProcessHelper.Execute(_executeProgramTaskInfo.Program, _executeProgramTaskInfo.Arguments, _executeProgramTaskInfo.WorkingDirectory,
-                    false, ProcessPriorityClass.Idle, token,
+                    false, ProcessPriorityClass.Idle, 
                     out var stdOutput, out var error, out var returnCode);
 
                 LogDebug($"Exit code: {returnCode}");

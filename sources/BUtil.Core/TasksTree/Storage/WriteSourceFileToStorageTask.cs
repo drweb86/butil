@@ -28,17 +28,14 @@ namespace BUtil.Core.TasksTree
             _singleBackupQuotaGb = singleBackupQuotaGb;
         }
 
-        public override void Execute(CancellationToken token)
+        public override void Execute()
         {
-            if (token.IsCancellationRequested)
-                return;
-
             UpdateStatus(ProcessingStatus.InProgress);
 
             if (_singleBackupQuotaGb.TryQuota(StorageFile.FileState.Size))
             {
                 var service = new IncrementalBackupFileService(Log, _storageSettings);
-                IsSuccess = service.Upload(token, StorageFile);
+                IsSuccess = service.Upload(StorageFile);
             }
             else
             {

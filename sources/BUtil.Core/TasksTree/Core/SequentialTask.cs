@@ -18,14 +18,11 @@ namespace BUtil.Core.TasksTree.Core
             Children = children;
         }
 
-        public override void Execute(CancellationToken token)
+        public override void Execute()
         {
             foreach (var child in Children)
             {
-                if (token.IsCancellationRequested)
-                    break;
-
-                child.Execute(token);
+                child.Execute();
             }
             IsSuccess = Children.All(x => x.IsSuccess);
         }

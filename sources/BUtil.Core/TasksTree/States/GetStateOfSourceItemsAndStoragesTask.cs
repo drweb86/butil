@@ -51,18 +51,18 @@ namespace BUtil.Core.TasksTree.States
             Children = childTasks;
         }
 
-        public override void Execute(CancellationToken token)
+        public override void Execute()
         {
             UpdateStatus(ProcessingStatus.InProgress);
 
-            var storageTasksExecuter = new ParallelExecuter(StorageStateTasks, token, 10);
+            var storageTasksExecuter = new ParallelExecuter(StorageStateTasks, 10);
             storageTasksExecuter.Wait();
 
             var sourceItemGroupTasks = GetSourceItemStateTasks
                 .GroupBy(x => Directory.GetDirectoryRoot(x.SourceItem.Target))
                 .Select(x => new SequentialBuTask(new StubLog(), new BackupEvents(), string.Empty, TaskArea.File, x.ToList()))
                 .ToList();
-            var sourceItemGroupTasksExecuter = new ParallelExecuter(sourceItemGroupTasks, token, 10);
+            var sourceItemGroupTasksExecuter = new ParallelExecuter(sourceItemGroupTasks, 10);
 
             sourceItemGroupTasksExecuter.Wait();
             storageTasksExecuter.Wait();

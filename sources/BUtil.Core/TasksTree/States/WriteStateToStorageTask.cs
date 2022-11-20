@@ -36,11 +36,8 @@ namespace BUtil.Core.TasksTree.States
             _writeSourceFilesToStorageTask = writeSourceFilesToStorageTask;
         }
 
-        public override void Execute(CancellationToken token)
+        public override void Execute()
         {
-            if (token.IsCancellationRequested)
-                return;
-
             UpdateStatus(ProcessingStatus.InProgress);
 
             if (!_getIncrementedVersionTask.VersionIsNeeded)
@@ -60,7 +57,7 @@ namespace BUtil.Core.TasksTree.States
             }
 
             var service = new IncrementalBackupStateService(Log, _storageSettings);
-            StateStorageFile = service.Write(token, _incrementalBackupModelOptions, _password, _getIncrementedVersionTask.IncrementalBackupState);
+            StateStorageFile = service.Write(_incrementalBackupModelOptions, _password, _getIncrementedVersionTask.IncrementalBackupState);
             IsSuccess = StateStorageFile != null;
             UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
         }

@@ -19,7 +19,7 @@ namespace BUtil.Core.TasksTree.Core
             Children = children;
         }
 
-        public override void Execute(CancellationToken token)
+        public override void Execute()
         {
             var children = (Children ?? Array.Empty<BuTask>()).ToList();
             if (children.Count == 0)
@@ -28,7 +28,7 @@ namespace BUtil.Core.TasksTree.Core
                 return;
             }
 
-            var executer = new ParallelExecuter(children, token, Environment.ProcessorCount);
+            var executer = new ParallelExecuter(children, Environment.ProcessorCount);
             executer.Wait();
             IsSuccess = Children.All(x => x.IsSuccess);
         }

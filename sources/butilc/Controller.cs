@@ -85,8 +85,7 @@ namespace BUtil.ConsoleBackup
 		public void Backup()
         {
             var task = _backup.GetTask(new Core.Events.BackupEvents());
-            var cancellationTokenSource = new CancellationTokenSource();
-            task.Execute(cancellationTokenSource.Token);
+            task.Execute();
             PowerPC.DoTask(_powerTask);
         }
 

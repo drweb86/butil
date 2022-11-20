@@ -30,11 +30,8 @@ namespace BUtil.Core.TasksTree.Storage
             _writeStateToStorageTask = writeStateToStorageTask;
         }
 
-        public override void Execute(CancellationToken token)
+        public override void Execute()
         {
-            if (token.IsCancellationRequested)
-                return;
-
             UpdateStatus(ProcessingStatus.InProgress);
 
             if (!_getIncrementedVersionTask.VersionIsNeeded)

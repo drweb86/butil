@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics;
 using System.Text;
-using System.Threading;
 
 namespace BUtil.Core.Misc
 {
@@ -14,7 +13,6 @@ namespace BUtil.Core.Misc
 
             bool sendNewLine,
             ProcessPriorityClass processPriority,
-            CancellationToken cancellationToken,
 
             out string stdOutput,
             out string stdError,
@@ -54,7 +52,7 @@ namespace BUtil.Core.Misc
             process.BeginErrorReadLine();
             process.BeginOutputReadLine();
 
-            process.WaitForExitAsync(cancellationToken).Wait();
+            process.WaitForExit();
             if (process.HasExited)
             {
                 stdOutput = stdOutputBuilder.ToString();

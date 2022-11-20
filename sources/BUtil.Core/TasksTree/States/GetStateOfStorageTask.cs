@@ -21,15 +21,12 @@ namespace BUtil.Core.TasksTree
             this.password = password;
         }
 
-        public override void Execute(CancellationToken token)
+        public override void Execute()
         {
-            if (token.IsCancellationRequested)
-                return;
-
             UpdateStatus(ProcessingStatus.InProgress);
 
             var service = new IncrementalBackupStateService(Log, StorageSettings);
-            IsSuccess = service.TryRead(token, password, out var state);
+            IsSuccess = service.TryRead(password, out var state);
             StorageState = state;
             UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
         }

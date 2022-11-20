@@ -28,13 +28,8 @@ namespace BUtil.Core.TasksTree
             this._fileExcludePatterns = fileExcludePatterns;
         }
 
-        public override void Execute(CancellationToken token)
+        public override void Execute()
         {
-            if (token.IsCancellationRequested)
-            {
-                return;
-            }
-
             UpdateStatus(ProcessingStatus.InProgress);
             var files = new List<string>();
             if (SourceItem.IsFolder)
@@ -54,7 +49,7 @@ namespace BUtil.Core.TasksTree
             Children = _getFileStateTasks;
             Events.DuringExecutionTasksAdded(Id, Children);
 
-            base.Execute(token);
+            base.Execute();
 
             SourceItemState = new SourceItemState(SourceItem,
                 _getFileStateTasks

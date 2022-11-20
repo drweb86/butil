@@ -80,9 +80,7 @@ namespace BUtil.RestorationMaster
 				DestinationFolder = backupFolder
 			};
 			var service = new IncrementalBackupStateService(log, storageSettings);
-			var cancellationTokenSource = new CancellationTokenSource();
-			var cancellationToken = cancellationTokenSource.Token;
-			if (!service.TryRead(cancellationToken, _passwordTextBox.Text, out var state))
+			if (!service.TryRead(_passwordTextBox.Text, out var state))
 			{
 				Messages.ShowErrorBox(Resources.CannotOpenBackupFolder);
 				return;

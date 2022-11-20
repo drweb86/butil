@@ -15,16 +15,11 @@ namespace BUtil.Core.Misc
 
             string archive,
             string password,
-            string outputDirectory,
-
-            CancellationToken cancellationToken)
+            string outputDirectory)
         {
             lock (_lock) // 7-zip utilizes all CPU cores, parallel compression will freeze PC.
                 // we explicitely avoid it via locking.
             {
-                if (cancellationToken.IsCancellationRequested)
-                    return false;
-
                 var passwordIsSet = !string.IsNullOrWhiteSpace(password);
                 string input = Environment.NewLine; // to handle wrong password
                 string arguments;
@@ -45,7 +40,6 @@ namespace BUtil.Core.Misc
                     System.IO.Path.GetDirectoryName(FileSystem.Files.SevenZipPacker),
                     true,
                     ProcessPriorityClass.Idle,
-                    cancellationToken,
                     out var stdOutput,
                     out var stdError,
                     out var returnCode);
@@ -68,18 +62,16 @@ namespace BUtil.Core.Misc
 
             string file,
             string password,
-            string archive,
-
-            CancellationToken cancellationToken)
+            string archive)
         {
             var compressionLevel = GetCompressionLevel(Path.GetExtension(file).ToLowerInvariant());
 
             if (compressionLevel == 0)
-                return CompressFileInternal(log, file, password, archive, cancellationToken);
+                return CompressFileInternal(log, file, password, archive);
             else
             {
                 lock(_lock)
-                    return CompressFileInternal(log, file, password, archive, cancellationToken);
+                    return CompressFileInternal(log, file, password, archive);
             }
         }
 
@@ -88,13 +80,8 @@ namespace BUtil.Core.Misc
 
             string file,
             string password,
-            string archive,
-
-            CancellationToken cancellationToken)
+            string archive)
         {
-            if (cancellationToken.IsCancellationRequested)
-                return false;
-
             var compressionLevel = GetCompressionLevel(Path.GetExtension(file).ToLowerInvariant());
             string arguments;
             if (string.IsNullOrWhiteSpace(password))
@@ -108,10 +95,11 @@ namespace BUtil.Core.Misc
                 log.WriteLine(LoggingEvent.Debug, $"Compressing \"{file}\" to \"{archive}\" with password");
             }
 
-            ProcessHelper.Execute(FileSystem.Files.SevenZipPacker, arguments, System.IO.Path.GetDirectoryName(FileSystem.Files.SevenZipPacker),
+            ProcessHelper.Execute(FileSystem.Files.SevenZipPacker, 
+                arguments, 
+                System.IO.Path.GetDirectoryName(FileSystem.Files.SevenZipPacker),
                 false,
                 ProcessPriorityClass.Idle,
-                cancellationToken,
                 out var stdOutput,
                 out var stdError,
                 out var returnCode);

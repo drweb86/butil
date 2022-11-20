@@ -20,14 +20,8 @@ namespace BUtil.Core.State
             this.storageSettings = storageSettings;
         }
 
-        public bool TryRead(CancellationToken cancellationToken, string password, out IncrementalBackupState state)
+        public bool TryRead(string password, out IncrementalBackupState state)
         {
-            if (cancellationToken.IsCancellationRequested)
-            {
-                state = null;
-                return false;
-            }
-
             log.WriteLine(LoggingEvent.Debug, $"Storage \"{storageSettings.Name}\": Reading state");
             var storage = StorageFactory.Create(log, storageSettings);
             var content = storage.ReadAllText(IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile);
@@ -45,7 +39,7 @@ namespace BUtil.Core.State
                 using var tempFolder = new TempFolder();
                 var archive = Path.Combine(tempFolder.Folder, "archive.7z");
                 File.WriteAllBytes(archive, bytes);
-                if (!SevenZipProcessHelper.Extract(log, archive, null, tempFolder.Folder, cancellationToken))
+                if (!SevenZipProcessHelper.Extract(log, archive, null, tempFolder.Folder))
                 {
                     log.WriteLine(LoggingEvent.Error, $"Storage \"{storageSettings.Name}\": Failed to read state");
                     state = null;
@@ -66,7 +60,7 @@ namespace BUtil.Core.State
                 using var tempFolder = new TempFolder();
                 var archive = Path.Combine(tempFolder.Folder, "archive.7z");
                 File.WriteAllBytes(archive, bytes);
-                if (!SevenZipProcessHelper.Extract(log, archive, password, tempFolder.Folder, cancellationToken))
+                if (!SevenZipProcessHelper.Extract(log, archive, password, tempFolder.Folder))
                 {
                     log.WriteLine(LoggingEvent.Error, $"Storage \"{storageSettings.Name}\": Failed to read state");
                     state = null;
@@ -83,7 +77,7 @@ namespace BUtil.Core.State
             return true;
         }
 
-        public StorageFile Write(CancellationToken cancellationToken, IncrementalBackupModelOptions incrementalBackupModelOptions, string password, IncrementalBackupState state)
+        public StorageFile Write(IncrementalBackupModelOptions incrementalBackupModelOptions, string password, IncrementalBackupState state)
         {
             log.WriteLine(LoggingEvent.Debug, $"Storage \"{storageSettings.Name}\": Writing state");
             var storage = StorageFactory.Create(log, storageSettings);
@@ -116,7 +110,7 @@ namespace BUtil.Core.State
                 storageFile.StorageRelativeFileName = encryptionEnabled ? IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile : IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile;
                 fileToUpload = Path.Combine(tempFolder.Folder, storageFile.StorageRelativeFileName);
 
-                if (!SevenZipProcessHelper.CompressFile(log, file, password, fileToUpload, cancellationToken))
+                if (!SevenZipProcessHelper.CompressFile(log, file, password, fileToUpload))
                 {
                     log.WriteLine(LoggingEvent.Error, $"Storage \"{storageSettings.Name}\": Failed state");
                     return null;

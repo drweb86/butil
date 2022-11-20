@@ -12,9 +12,8 @@ namespace BUtil.Core.TasksTree.Core
     {
         private readonly List<Thread> _threads = new();
         private readonly ConcurrentQueue<BuTask> tasks = new ();
-        private readonly CancellationToken token;
 
-        public ParallelExecuter(IEnumerable<BuTask> tasks, CancellationToken token, int parallel)
+        public ParallelExecuter(IEnumerable<BuTask> tasks, int parallel)
         {
             tasks
                 .ToList()
@@ -25,14 +24,13 @@ namespace BUtil.Core.TasksTree.Core
                 _threads.Add(thread);
                 thread.Start();
             }
-            this.token = token;
         }
 
         private void ExecuteThread()
         {
-            while (!token.IsCancellationRequested && tasks.TryDequeue(out var task))
+            while (tasks.TryDequeue(out var task))
             {
-                task.Execute(token);
+                task.Execute();
             }
         }
 

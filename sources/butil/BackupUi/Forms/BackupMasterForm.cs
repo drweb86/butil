@@ -25,7 +25,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
         private readonly BackupTask _backupTask;
 		BackupProgressUserControl _backupProgressUserControl;
 		private readonly ProgramOptions _programOptions;
-        private readonly CancellationTokenSource _cancelTokenSource = new ();
 
         public BackupMasterForm(ProgramOptions programOptions, BackupTask backupTask)
 		{
@@ -241,7 +240,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 
         private void OnDoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
 		{
-			_rootTask.Execute(_cancelTokenSource.Token);
+			_rootTask.Execute();
 		}
 		
 		private void OnRunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
