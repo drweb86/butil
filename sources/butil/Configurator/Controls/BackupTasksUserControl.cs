@@ -146,7 +146,7 @@ namespace BUtil.Configurator.Configurator.Controls
             }
 
             if (selectedTasks.Any())
-                _controller.OpenBackupUiMaster(selectedTasks[0], false);
+                _controller.LaunchBackupUIToolInSeparateProcess(selectedTasks[0]);
         }
 
         void RefreshTaskControls(object sender, EventArgs e)

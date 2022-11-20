@@ -227,9 +227,6 @@ Localization created by:
   <data name="BackupProcessCompletedSuccesfully" xml:space="preserve">
     <value>Backup process completed succesfully!!!</value>
   </data>
-  <data name="DoYouReallyWantToStopBackupProcess" xml:space="preserve">
-    <value>Do you really want to stop backup process?</value>
-  </data>
   <data name="AreYouSure" xml:space="preserve">
     <value>Are you sure?</value>
   </data>

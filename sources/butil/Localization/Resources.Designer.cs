@@ -627,15 +627,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you really want to stop backup process?.
-        /// </summary>
-        internal static string DoYouReallyWantToStopBackupProcess {
-            get {
-                return ResourceManager.GetString("DoYouReallyWantToStopBackupProcess", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Drag and drop here files and folders which you&apos;re going to backup!.
         /// </summary>
         internal static string DragAndDropHereFilesAndFoldersWhichYoureGoingToBackupForSettingCompressionPriorityUseMenu {

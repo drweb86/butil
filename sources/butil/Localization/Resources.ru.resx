@@ -168,9 +168,6 @@
   <data name="BackupProcessCompletedSuccesfully" xml:space="preserve">
     <value>Резервное копирование успешно завершено</value>
   </data>
-  <data name="DoYouReallyWantToStopBackupProcess" xml:space="preserve">
-    <value>Хотите прервать процесс резервного копирования?</value>
-  </data>
   <data name="AreYouSure" xml:space="preserve">
     <value>Вы уверены?</value>
   </data>

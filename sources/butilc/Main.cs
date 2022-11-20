@@ -3,6 +3,7 @@ using BUtil.Core;
 using BUtil.Core.Misc;
 using System;
 
+NativeMethods.PreventSleep();
 Console.WriteLine(CopyrightInfo.Copyright);
 
 try

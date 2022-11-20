@@ -1,32 +1,17 @@
-﻿using System;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 
 namespace BUtil.Core.Misc
 {
     public static class NativeMethods
     {
-        [DllImport("user32.dll")]
-        private static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
+        [DllImport("kernel32.dll")]
+        private static extern uint SetThreadExecutionState(uint esFlags);
+        private const uint ES_CONTINUOUS = 0x80000000;
+        private const uint ES_SYSTEM_REQUIRED = 0x00000001;
 
-        [DllImport("user32.dll")]
-        private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
-
-        public static void SetWindowVisibility(bool visible, string title)
+        public static void PreventSleep()
         {
-            if (string.IsNullOrEmpty(title))
-                throw new ArgumentNullException("title");
-
-            IntPtr hWnd = NativeMethods.FindWindow(null, title);
-
-            if (hWnd != IntPtr.Zero)
-            {
-                if (!visible)
-                    //Hide the window                   
-                    NativeMethods.ShowWindow(hWnd, 0); // 0 = SW_HIDE               
-                else
-                    //Show window again                   
-                    NativeMethods.ShowWindow(hWnd, 1); //1 = SW_SHOWNORMA          
-            }
+            SetThreadExecutionState(ES_CONTINUOUS | ES_SYSTEM_REQUIRED);
         }
     }
 }

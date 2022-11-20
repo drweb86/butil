@@ -86,7 +86,7 @@ namespace BUtil.Configurator
 				}
                 else if (firstArgumentUpper == Arguments.RunBackupMaster)
                 {
-                    controller.OpenBackupUiMaster(null, true);
+                    controller.OpenBackupUi(null);
                 }
 				else
 				{
@@ -103,7 +103,7 @@ namespace BUtil.Configurator
                         taskName = argument.Substring(Arguments.RunTask.Length + 1);
                     }
                 }
-				controller.OpenBackupUiMaster(taskName, true);
+				controller.OpenBackupUi(taskName);
 			}
 			else if (args.Length > 1)
     		{

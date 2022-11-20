@@ -42,11 +42,6 @@ namespace BUtil.ConsoleBackup
                 {
                     _powerTask = PowerTask.Reboot;
                 }
-                else if (ArgumentIs(argument, Auto))
-                {
-                    Console.Title = Constants.ConsoleBackupTitle;
-                    NativeMethods.SetWindowVisibility(false, Constants.ConsoleBackupTitle);
-                }
                 else if (ArgumentIs(argument, HelpCommand))
                 {
                     Console.WriteLine(Resources.UsageVariantsNNbackupExeTaskMyTaskTitleNRunningWithoutParametersOutputsInformationToConsoleNNbackupExeTaskMyTask1TitleTaskMyTask2TitleTaskMyTask3TitleNRunsSeveralTasksOneByOneNNbackupExeTaskMyTaskTitleUsefilelogNOutputsInformationInFileLogNNbackupExeTaskMyTaskTitleShutdownNbackupExeTaskMyTaskTitleLogoffNbackupExeTaskMyTaskTitleSuspendNbackupExeTaskMyTaskTitleRebootNbackupExeTaskMyTaskTitleHibernateNNbackupExeHelpNOutputsBriefHelpN);
@@ -168,7 +163,6 @@ namespace BUtil.ConsoleBackup
         const string Shutdown = "ShutDown";
         const string LogOff = "LogOff";
         const string Reboot = "Reboot";
-        const string Auto = "Auto";
         const string TaskCommandLineArgument = "Task=";
 
         #endregion

@@ -22,8 +22,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 	
 	internal sealed partial class BackupMasterForm : Form
 	{
-        private bool _backupInProgress;
-        private bool _strongIntentionToCancelBackup;
         private readonly BackupTask _backupTask;
 		BackupProgressUserControl _backupProgressUserControl;
 		private readonly ProgramOptions _programOptions;
@@ -42,6 +40,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 			_programOptions = programOptions;
             OnTasksListViewResize(this, new EventArgs());
             ApplyLocalization();
+			NativeMethods.PreventSleep();
 		}
 				
 		static Color GetResultColor(ProcessingStatus state)
@@ -101,7 +100,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 			startButton.Enabled = false;
 			cancelButton.Enabled = true;
 			
-			_backupInProgress = true;
 			_backgroundWorker.RunWorkerAsync();
 		}
 
@@ -248,7 +246,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 		
 		private void OnRunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
 		{
-            _backupInProgress = false;
             cancelButton.Enabled = false;
             _backupProgressUserControl.Stop();
 			_log.Close();
@@ -282,62 +279,13 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 		
 		void CancelButtonClick(object sender, EventArgs e)
 		{
-			_strongIntentionToCancelBackup = true;
-			Close();
+			Environment.Exit(0);
 		}
 		
 		void ClosingForm(object sender, FormClosingEventArgs e)
 		{
-			if (abortBackupBackgroundWorker.IsBusy)
-			{
-				e.Cancel = true;
-				return;
-			}
-			
-            if (_backupInProgress)
-			{
-				if (e.CloseReason == CloseReason.UserClosing)
-				{
-					if (_strongIntentionToCancelBackup)
-					{
-						cancelButton.Enabled = false;
-						abortBackupBackgroundWorker.RunWorkerAsync();
-					}
-					// questioning of user if he is sure he knows what happened if he closes this significant form
-					else if (MessageBox.Show(Resources.DoYouReallyWantToStopBackupProcess, Resources.AreYouSure, MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1, 0 ) == DialogResult.OK)
-					{
-						cancelButton.Enabled = false;
-						abortBackupBackgroundWorker.RunWorkerAsync();
-					}
-					
-					e.Cancel = true;
-				}
-				else
-				{
-					if (_backupInProgress)
-					{
-						e.Cancel = true;
-					}
-				}
-			}
+            Environment.Exit(0);
 		}
-		
-		#region Aborting backup operation
-		
-		void AbortBackupBackgroundWorkerDoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
-		{
-			_cancelTokenSource.Cancel();
-		}
-		
-		void AbortBackupBackgroundWorkerRunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
-		{
-            _backupInProgress = false;
-			DialogResult = DialogResult.Cancel;
-			Close();
-		}
-		
-		#endregion
-		
 		void HelpButtonClick(object sender, EventArgs e)
 		{
             SupportManager.DoSupport(SupportRequest.BackupWizard);

@@ -42,7 +42,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             this.compressionItemsListViewImageList = new System.Windows.Forms.ImageList(this.components);
             this.settingsUserControl = new BUtil.Configurator.BackupUiMaster.Controls.SettingsUserControl();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.abortBackupBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this._backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.helpButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -146,11 +145,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.CancelButtonClick);
             // 
-            // abortBackupBackgroundWorker
-            // 
-            this.abortBackupBackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.AbortBackupBackgroundWorkerDoWork);
-            this.abortBackupBackgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.AbortBackupBackgroundWorkerRunWorkerCompleted);
-            // 
             // _backgroundWorker
             // 
             this._backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.OnDoWork);
@@ -193,7 +187,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 		}
 		private System.Windows.Forms.Button helpButton;
 		private System.ComponentModel.BackgroundWorker _backgroundWorker;
-		private System.ComponentModel.BackgroundWorker abortBackupBackgroundWorker;
 		private System.Windows.Forms.ColumnHeader taskNameColumnHeader;
 		private System.Windows.Forms.ColumnHeader processingStateInformationColumnHeader;
 		private ListViewDoubleBuffered tasksListView;

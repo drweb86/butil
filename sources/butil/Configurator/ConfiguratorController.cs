@@ -47,26 +47,23 @@ namespace BUtil.Configurator.Configurator
 				Directory.Delete(Directories.UserDataFolder, true);
 		}
 		
-		public void OpenBackupUiMaster(string taskName, bool runFormAsApplication)
+		public void OpenBackupUi(string taskName)
         {
             if (Program.PackageIsBroken)
             {
                 return;
             }
 
-            if (!runFormAsApplication)
-            {
-                Process.Start(Application.ExecutablePath, $"{Arguments.RunBackupMaster} \"{Arguments.RunTask}={taskName}\"");
-                return;
-            }
-
             LoadSettings();
-
             var task = GetBackupTaskToExecute(taskName);
-
             using var form = new BackupMasterForm(_profileOptions, task);
             Application.Run(form);
             Environment.Exit(0);
+        }
+
+        public void LaunchBackupUIToolInSeparateProcess(string taskName)
+        {
+            Process.Start(Application.ExecutablePath, $"{Arguments.RunBackupMaster} \"{Arguments.RunTask}={taskName}\"");
         }
 
         private static BackupTask GetBackupTaskToExecute(string taskName)
