@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.IO;
 using BUtil.Core.Logs;
+using BUtil.Core.Misc;
 using BUtil.Core.State;
 
 namespace BUtil.Core.Storages
@@ -34,7 +35,7 @@ namespace BUtil.Core.Storages
         }
 
         public override IStorageUploadResult Upload(string sourceFile, string relativeFileName)
-		{
+        {
 			var destinationFile = Path.Combine(Settings.DestinationFolder, relativeFileName);
 			var destinationDirectory = Path.GetDirectoryName(destinationFile);
 

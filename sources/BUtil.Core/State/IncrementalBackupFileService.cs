@@ -94,7 +94,6 @@ namespace BUtil.Core.State
                 return true;
             }
         }
-
         private static string RandomString()
         {
             using var generator = RandomNumberGenerator.Create();
