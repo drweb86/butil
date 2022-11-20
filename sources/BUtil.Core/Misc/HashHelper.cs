@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace BUtil.Core.Misc
 {
@@ -12,7 +8,7 @@ namespace BUtil.Core.Misc
     {
         public static string GetSha512(string file)
         {
-            using var fileStream = File.OpenRead(file);
+            using var fileStream = new FileStream(file, FileMode.Open, FileAccess.Read, FileShare.ReadWrite, 16 * 1024 * 1024);
             using var sha512Hash = SHA512.Create();
 
             var hash = sha512Hash.ComputeHash(fileStream);

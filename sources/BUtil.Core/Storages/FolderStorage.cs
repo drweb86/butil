@@ -43,7 +43,7 @@ namespace BUtil.Core.Storages
             if (!Directory.Exists(destinationDirectory))
 				Directory.CreateDirectory(destinationDirectory);
 
-            System.IO.File.Copy(sourceFile, destinationFile, true);
+            Copy(sourceFile, destinationFile);
 
             return new IStorageUploadResult
             {
@@ -64,15 +64,30 @@ namespace BUtil.Core.Storages
         {
             var fullPathName = Path.Combine(Settings.DestinationFolder, file);
 
-            if (File.Exists(file))
-                File.Delete(file);
+            if (File.Exists(fullPathName))
+                File.Delete(fullPathName);
         }
 
         public override void Download(StorageFile storageFile, string targetFileName)
         {
             var file = Path.Combine(Settings.DestinationFolder, storageFile.StorageRelativeFileName);
-            File.Copy(file, targetFileName, true);
+            Copy(file, targetFileName);
         }
 
+        public static void Copy(string inputFile, string outputFilePath)
+        {
+            int bufferSize = 16 * 1024 * 1024;
+
+            using var inputFileStream = new FileStream(inputFile, FileMode.Open, FileAccess.Read, FileShare.ReadWrite, bufferSize);
+            using var outputFileStream = new FileStream(outputFilePath, FileMode.OpenOrCreate, FileAccess.Write, FileShare.None, bufferSize);
+            outputFileStream.SetLength(inputFileStream.Length);
+            int bytesRead = -1;
+            byte[] bytes = new byte[bufferSize];
+
+            while ((bytesRead = inputFileStream.Read(bytes, 0, bufferSize)) > 0)
+            {
+                outputFileStream.Write(bytes, 0, bytesRead);
+            }
+        }
     }
 }
