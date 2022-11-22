@@ -1,7 +1,11 @@
-5.4.0.0
-This is beta version.
-FTP & Samba are not working.
+5.5.0.0
 
 New Features
-- Added quotas for single backup side to support ISP
-- Added possibility to disable storages
+- Workaround of sporadic disconnects/reconnects of external USB in Windows 11
+- Significant performance increase in file copy and SHA512 calculating.
+- Skipping non-accessible folders
+- Retry in case storage failures, 5 attempts with 30 seconds delay between them.
+- Speedup console log and UI backup responsibilities.
+
+Changes
+- FTP & Samba were removed (use proxy file system tools like cryptomator, etc.)

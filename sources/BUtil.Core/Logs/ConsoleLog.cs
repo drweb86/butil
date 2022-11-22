@@ -6,7 +6,7 @@ namespace BUtil.Core.Logs
 	{
         public override void WriteLine(LoggingEvent loggingEvent, string message)
         {
-            PreprocessLoggingInformation(loggingEvent, message);
+            PreprocessLoggingInformation(loggingEvent);
 
             if (loggingEvent == LoggingEvent.Error)
             {

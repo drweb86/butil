@@ -7,14 +7,13 @@ using BUtil.Core.TasksTree.States;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 
 namespace BUtil.Core.TasksTree.Storage
 {
     internal class WriteIntegrityVerificationScriptsToStorageTask : BuTask
     {
-        private CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask;
-        private IStorageSettings _storageSettings;
+        private readonly CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask;
+        private readonly IStorageSettings _storageSettings;
         private readonly WriteSourceFilesToStorageTask _writeSourceFilesToStorageTask;
         private readonly WriteStateToStorageTask _writeStateToStorageTask;
 
@@ -57,10 +56,11 @@ namespace BUtil.Core.TasksTree.Storage
             storage.Upload(powershellFile, BUtil.Core.Localization.Resources.IntegrityVerificationScriptPs1);
             File.Delete(powershellFile);
 
-            var tempFile = Path.GetRandomFileName();
-            File.WriteAllText(tempFile, string.Empty);
-            storage.Upload(tempFile, BUtil.Core.Localization.Resources.IntegrityVerificationScriptSh);
-            File.Delete(tempFile);
+            // TBD: 
+            //var tempFile = Path.GetRandomFileName();
+            //File.WriteAllText(tempFile, string.Empty);
+            //storage.Upload(tempFile, BUtil.Core.Localization.Resources.IntegrityVerificationScriptSh);
+            //File.Delete(tempFile);
             
             IsSuccess = true;
             UpdateStatus(ProcessingStatus.FinishedSuccesfully);

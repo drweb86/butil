@@ -8,8 +8,8 @@ namespace BUtil.Core.Logs
         private bool _errorsOrWarningsRegistered;
         
         // Default encoding for processing packer messages
-		private Encoding _initialEncoding;
-		private Encoding _targetEncoding;
+		private readonly Encoding _initialEncoding;
+		private readonly Encoding _targetEncoding;
 
         internal LogBase(LogMode mode, bool consoleApp)
         {
@@ -50,7 +50,7 @@ namespace BUtil.Core.Logs
         /// </summary>
         /// <param name="data">data from packer output</param>
         /// <param name="putInLogAs">how to output them</param>
-        private void outputPackerMessageHelper(string[] data, LoggingEvent putInLogAs)
+        private void OutputPackerMessageHelper(string[] data, LoggingEvent putInLogAs)
         {
             for (int i = 0; i < data.Length; i++)
                 if (!string.IsNullOrEmpty(data[i]))
@@ -65,7 +65,7 @@ namespace BUtil.Core.Logs
         public void ProcessPackerMessage(string consoleOutput, bool finishedSuccessfully)
         {
             // Preparation of string to process
-            string DestinationString = convertPackerOutputInLogEncoding(consoleOutput);
+            string DestinationString = ConvertPackerOutputInLogEncoding(consoleOutput);
             DestinationString = DestinationString.Replace("\r", string.Empty);
             string[] data = DestinationString.Split(new Char[] { '\n' });// errors /r - remains
             for (int i = 0; i < data.Length; i++)
@@ -74,18 +74,18 @@ namespace BUtil.Core.Logs
             // in all other log types we should output all
             // 7-zip output entirely
             if (finishedSuccessfully)
-                outputPackerMessageHelper(data, LoggingEvent.PackerMessage);
+                OutputPackerMessageHelper(data, LoggingEvent.PackerMessage);
             else
-                outputPackerMessageHelper(data, LoggingEvent.Error);
+                OutputPackerMessageHelper(data, LoggingEvent.Error);
         }
 
-        protected void PreprocessLoggingInformation(LoggingEvent loggingEvent, string message)
+        protected void PreprocessLoggingInformation(LoggingEvent loggingEvent)
         {
         	if (loggingEvent == LoggingEvent.Error)
         		_errorsOrWarningsRegistered = true;
         }
        
-        private string convertPackerOutputInLogEncoding(string packerOutput)
+        private string ConvertPackerOutputInLogEncoding(string packerOutput)
 		{
             Decoder dec = _initialEncoding.GetDecoder();
             byte[] ba = _targetEncoding.GetBytes(packerOutput);

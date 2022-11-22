@@ -67,7 +67,7 @@ namespace BUtil.Core.Logs
 			}
 		}
 	
-        private void writeInFile(string message)
+        private void WriteInFile(string message)
         {
             lock (_logFile)
                 _logFile.WriteLine(message);
@@ -75,10 +75,10 @@ namespace BUtil.Core.Logs
 
         public override void WriteLine(LoggingEvent loggingEvent, string message)
         {
-            PreprocessLoggingInformation(loggingEvent, message);
+            PreprocessLoggingInformation(loggingEvent);
 
             string output = HtmlLogFormatter.GetHtmlFormattedLogMessage(loggingEvent, message);
-            writeInFile(output);
+            WriteInFile(output);
             if (loggingEvent == LoggingEvent.Error)
                 lock (_logFile)
                     _logFile.Flush();
@@ -91,18 +91,18 @@ namespace BUtil.Core.Logs
                 if (!ErrorsOrWarningsRegistered)
                 {
                     //No any error or warning registered during backup!
-                    writeInFile(Resources.BackupFinishedSuccesfully);
+                    WriteInFile(Resources.BackupFinishedSuccesfully);
                 }
                 
-                writeInFile("</dody>");
-				writeInFile("</html>");
+                WriteInFile("</dody>");
+				WriteInFile("</html>");
 				if (ErrorsOrWarningsRegistered)
 				{
-					writeInFile(Files.ErroneousBackupMarkInHtmlLog);
+					WriteInFile(Files.ErroneousBackupMarkInHtmlLog);
 				}
 				else
 				{
-					writeInFile(Files.SuccesfullBackupMarkInHtmlLog);
+					WriteInFile(Files.SuccesfullBackupMarkInHtmlLog);
 				}
 
 				_logFile.Flush();

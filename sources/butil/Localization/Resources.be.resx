@@ -143,7 +143,7 @@
 </value>
   </data>
   <data name="AddsTheNewBackupTask" xml:space="preserve">
-    <value>Стварыць рэзервовую копiю</value>
+    <value>Adds the new backup task...</value>
   </data>
   <data name="Tasks" xml:space="preserve">
     <value>Задачы</value>
@@ -167,7 +167,7 @@
     <value>Працэс архiвiравання скончыуся паспяхова!!!</value>
   </data>
   <data name="AreYouSure" xml:space="preserve">
-    <value>Падцвердзiце ваш выбар</value>
+    <value>Are you sure?</value>
   </data>
   <data name="Cancel" xml:space="preserve">
     <value>Адмянiць</value>
@@ -176,7 +176,7 @@
     <value>Прайшло часу:</value>
   </data>
   <data name="BackupIsInAProgress" xml:space="preserve">
-    <value>Прагрэс архiвiравання iдзе...</value>
+    <value>Backup is in a progress... </value>
   </data>
   <data name="WouldYouLikeToApplyModifiedSettings" xml:space="preserve">
     <value>Жадаеце прымениць настройкi праграмы перад выхадам?</value>
@@ -386,7 +386,7 @@ You can add some storages in Configurator in 'Where' settings group.</value>
     <value>Журналы рэзервовага капiравання</value>
   </data>
   <data name="ViewSelectedLogs" xml:space="preserve">
-    <value>Паглядзець</value>
+    <value>View selected logs...</value>
   </data>
   <data name="RemoveSelectedLogs" xml:space="preserve">
     <value>Удалiць</value>
@@ -530,5 +530,180 @@ Please refer to manual for the complete list of parameters!</value>
   </data>
   <data name="PleaseConfirmDeletionOf0Logs" xml:space="preserve">
     <value>Калi ласка, падцвердзiце удаленне {0} логау.</value>
+  </data>
+  <data name="AddedFile" xml:space="preserve">
+    <value>- added file "{0}"</value>
+  </data>
+  <data name="AddFileExcludePattern" xml:space="preserve">
+    <value>Add File Exclude Pattern...</value>
+  </data>
+  <data name="BackupDirectoryDoesNotExist" xml:space="preserve">
+    <value>Backup directory does not exist.</value>
+  </data>
+  <data name="BackupFailedPleaseReviewOpenedLog" xml:space="preserve">
+    <value>Backup failed.
+
+Please review opened log.</value>
+  </data>
+  <data name="BackupFolder" xml:space="preserve">
+    <value>Backup folder:</value>
+  </data>
+  <data name="BackupTasks" xml:space="preserve">
+    <value>Tasks</value>
+  </data>
+  <data name="CannotLocateFile0InDirectoryPointToADirectoryContainingThisFile" xml:space="preserve">
+    <value>Cannot locate file "{0}" in directory. 
+
+Point to a directory containing this file.</value>
+  </data>
+  <data name="CannotOpenBackupFolder" xml:space="preserve">
+    <value>Cannot open backup folder.</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>Change...</value>
+  </data>
+  <data name="Changes" xml:space="preserve">
+    <value>Changes:</value>
+  </data>
+  <data name="ChooseBackupModel" xml:space="preserve">
+    <value>Choose backup model</value>
+  </data>
+  <data name="ClickOnItemYouWantToRestoreAndOpenContextMenuByRightClick" xml:space="preserve">
+    <value>Click on item you want to restore and open context menu by right click</value>
+  </data>
+  <data name="DeletedFile" xml:space="preserve">
+    <value>- deleted file "{0}"</value>
+  </data>
+  <data name="DestinationFolderDoesNotExist" xml:space="preserve">
+    <value>Destination folder does not exist.</value>
+  </data>
+  <data name="DisableCompressionAndEncryption" xml:space="preserve">
+    <value>Disable compression and encryption</value>
+  </data>
+  <data name="DisableCompressionAndEncryptionDescription" xml:space="preserve">
+    <value>Disabling compression and encryption is designed for the following usages:
+a) storing information on drives protected by BitLocker (BitLocker requires Professional Windows Edition) or protected by encrypted proxy file system software like encryptfs. On NTFS file system you can enable compression.
+b) storing information on a cloud FTP, SFTP, WebDAV, Amazon S3, OpenStack Swift, Backblaze B2, Microsoft Azure &amp; OneDrive, Google Drive, and Dropbox by encrypted proxy file system Cryptomator/CyberDuck. Mounting and unmounting those storages can be done via CyberDuck CLI by adding tasks before and after backup.
+c) copying photos, large static files like films and non-sensitive information.
+In this case you can restore data by copying required files by your favourite file manager which is more convinient.</value>
+  </data>
+  <data name="EditFileExcludePattern" xml:space="preserve">
+    <value>Edit File Exclude Pattern...</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Enabled</value>
+  </data>
+  <data name="ExcludesFilesFromBackupByPattern" xml:space="preserve">
+    <value>Excludes files from backup by pattern...</value>
+  </data>
+  <data name="FileExclusionPattern" xml:space="preserve">
+    <value>File Exclusion Pattern:</value>
+  </data>
+  <data name="FileGlobbingInNETPatterns" xml:space="preserve">
+    <value>File globbing in .NET: Patterns</value>
+  </data>
+  <data name="Folder" xml:space="preserve">
+    <value>Folder</value>
+  </data>
+  <data name="FolderStorage" xml:space="preserve">
+    <value>Folder Storage...</value>
+  </data>
+  <data name="FolderStorageConfiguration" xml:space="preserve">
+    <value>Folder Storage Configuration</value>
+  </data>
+  <data name="GeneratePassword" xml:space="preserve">
+    <value>Generate password...</value>
+  </data>
+  <data name="HardDriveStorage" xml:space="preserve">
+    <value>Folder storage...</value>
+  </data>
+  <data name="HereYouCanSpecifyFileGlobbingExclusionPatternsItCanBeAFileNameOrFolderNameOrWildcardExamplesDTempDTempFileTxtDTempTxtOrBinSeeDetailedDescriptionInTheFollowingLink" xml:space="preserve">
+    <value>Here you can specify file globbing exclusion patterns. 
+It can be a file name or folder name or wildcard. 
+Examples: 
+d:\temp, 
+d:\temp\file.txt, 
+d:\temp\**\*.txt or 
+bin. 
+See detailed description in the following link.</value>
+  </data>
+  <data name="How" xml:space="preserve">
+    <value>How ?</value>
+  </data>
+  <data name="HowHint" xml:space="preserve">
+    <value>Here you can specify the backup model that will be used for compression.</value>
+  </data>
+  <data name="IncrementalBackup" xml:space="preserve">
+    <value>Incremental backup</value>
+  </data>
+  <data name="IncrementalBackupDescription" xml:space="preserve">
+    <value>The most basic form of incremental backup consists of identifying, recording and thus, preserving only those files that have changed since the last backup. Since changes are typically low, incremental backups are much smaller and quicker than full backups. For instance, following a full backup on Friday, a Monday backup will contain only those files that changed since Friday. A Tuesday backup contains only those files that changed since Monday, and so on. A full restoration of data will naturally be slower, since all increments must be restored. Should any one of the copies created fail, including the first (full), restoration will be incomplete.</value>
+  </data>
+  <data name="MountYourBackupLocationAsDiskOrCopyItToAnyFolderAndSpecifyItsLocation" xml:space="preserve">
+    <value>Mount your backup location as disk or copy it to any folder and specify its location.</value>
+  </data>
+  <data name="NameIsEmpty" xml:space="preserve">
+    <value>Name is empty.</value>
+  </data>
+  <data name="WorkingDirectoryDoesNotExist" xml:space="preserve">
+    <value>Working directory does not exist.</value>
+  </data>
+  <data name="WorkingDirectory" xml:space="preserve">
+    <value>Working directory:</value>
+  </data>
+  <data name="UploadLimitGB" xml:space="preserve">
+    <value>Upload limit, GB:</value>
+  </data>
+  <data name="UploadLimitDescription" xml:space="preserve">
+    <value>Limits amount of data being sent during one backup session to storage. 0 - no limit.
+When backup exceeds this quota, some files will be skipped and will be backuped next time.
+Usage scenario: You mounted some cloud storage as disk and perform backup on it. There's a problem: ISP drops upload speed after several gigabytes. This setting allows you to handle it.</value>
+  </data>
+  <data name="UpdatedFile" xml:space="preserve">
+    <value>- changed file "{0}"</value>
+  </data>
+  <data name="ThisNameIsAlreadyTakenTryAnotherOne" xml:space="preserve">
+    <value>This name is already taken. Try another one.</value>
+  </data>
+  <data name="OpenFolder" xml:space="preserve">
+    <value>Open folder...</value>
+  </data>
+  <data name="OpenInExplorer" xml:space="preserve">
+    <value>Open in Explorer...</value>
+  </data>
+  <data name="PasswordsDoNotMatch" xml:space="preserve">
+    <value>Passwords do not match.</value>
+  </data>
+  <data name="PatternIsEmpty" xml:space="preserve">
+    <value>Pattern is empty.</value>
+  </data>
+  <data name="PleaseAddAtLeastOneDestinationPlace" xml:space="preserve">
+    <value>Please add at least one destination place.</value>
+  </data>
+  <data name="ProgramDoesNotExist" xml:space="preserve">
+    <value>Program does not exist.</value>
+  </data>
+  <data name="RecommendedMinimumPasswordLengthIs50CharactersAndMore" xml:space="preserve">
+    <value>Recommended minimum password length is 50 characters and more. 7-zip AES-256 encryption is used with specified password.</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="RestorationIsCompleted" xml:space="preserve">
+    <value>Restoration is completed.</value>
+  </data>
+  <data name="SelectVersion" xml:space="preserve">
+    <value>Select version:</value>
+  </data>
+  <data name="SourceItemChanges" xml:space="preserve">
+    <value>Source item "{0}" changes:</value>
+  </data>
+  <data name="SourceItemFailure" xml:space="preserve">
+    <value>Source item "{0}" does not exist.
+
+Please correct list of source items.</value>
+  </data>
+  <data name="StateOfSourceItemsAtSelectedVersion" xml:space="preserve">
+    <value>State of source items at selected version:</value>
   </data>
 </root>
