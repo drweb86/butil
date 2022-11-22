@@ -14,26 +14,6 @@ namespace BUtil.Core.Storages
 		{
 		}
 
-        public override string ReadAllText(string file)
-        {
-			var fullPathName = Path.Combine(Settings.DestinationFolder, file);
-
-			if (!File.Exists(fullPathName))
-				return null;
-
-            return File.ReadAllText(fullPathName);
-        }
-
-        public override byte[] ReadAllBytes(string file)
-        {
-            var fullPathName = Path.Combine(Settings.DestinationFolder, file);
-
-            if (!File.Exists(fullPathName))
-                return null;
-
-            return File.ReadAllBytes(fullPathName);
-        }
-
         public override IStorageUploadResult Upload(string sourceFile, string relativeFileName)
         {
 			var destinationFile = Path.Combine(Settings.DestinationFolder, relativeFileName);
@@ -61,17 +41,24 @@ namespace BUtil.Core.Storages
             return null;
         }
 
-        public override void Delete(string file)
+        public override bool Exists(string relativeFileName)
         {
-            var fullPathName = Path.Combine(Settings.DestinationFolder, file);
+            var fullPathName = Path.Combine(Settings.DestinationFolder, relativeFileName);
+
+            return File.Exists(fullPathName);
+        }
+
+        public override void Delete(string relativeFileName)
+        {
+            var fullPathName = Path.Combine(Settings.DestinationFolder, relativeFileName);
 
             if (File.Exists(fullPathName))
                 File.Delete(fullPathName);
         }
 
-        public override void Download(StorageFile storageFile, string targetFileName)
+        public override void Download(string relativeFileName, string targetFileName)
         {
-            var file = Path.Combine(Settings.DestinationFolder, storageFile.StorageRelativeFileName);
+            var file = Path.Combine(Settings.DestinationFolder, relativeFileName);
             Copy(file, targetFileName);
         }
 

@@ -12,11 +12,15 @@ using System.Threading;
 
 namespace BUtil.ConsoleBackup
 {
-    internal class Controller
+    internal class Controller : IDisposable
     {
+        ILog _log;
+
         public Controller()
         {
-            LoadAndValidateOptions();
+            PerformCriticalChecks();
+
+            LoadSettings();
         }
 
         public bool ParseCommandLineArguments(string[] args)
@@ -58,14 +62,14 @@ namespace BUtil.ConsoleBackup
             return true;
         }
 
-        ILog _log;
+        
 		public bool Prepare()
         {
             _log = OpenLog();
 
             if (string.IsNullOrWhiteSpace(_taskName))
             {
-                _log.WriteLine(LoggingEvent.Error, Resources.PleaseSpecifyTheBackupTaskTitleUsingTheCommandLineArgument0MyBackupTaskTitleNexampleBackupExe0MyBackupTitle, TaskCommandLineArgument);
+                _log.WriteLine(LoggingEvent.Error, string.Format(Resources.PleaseSpecifyTheBackupTaskTitleUsingTheCommandLineArgument0MyBackupTaskTitleNexampleBackupExe0MyBackupTitle, TaskCommandLineArgument));
                 return false;
             }
 
@@ -73,7 +77,7 @@ namespace BUtil.ConsoleBackup
             var task = backupTaskStoreService.Load(_taskName);
             if (task == null)
             {
-                _log.WriteLine(LoggingEvent.Error, Resources.TherereNoBackupTaskWithTitle0, _taskName);
+                _log.WriteLine(LoggingEvent.Error, string.Format(Resources.TherereNoBackupTaskWithTitle0, _taskName));
                 return false;
             }
 
@@ -104,13 +108,6 @@ namespace BUtil.ConsoleBackup
         {
             Console.WriteLine(Resources.UsageVariantsNNbackupExeTaskMyTaskTitleNRunningWithoutParametersOutputsInformationToConsoleNNbackupExeTaskMyTask1TitleTaskMyTask2TitleTaskMyTask3TitleNRunsSeveralTasksOneByOneNNbackupExeTaskMyTaskTitleUsefilelogNOutputsInformationInFileLogNNbackupExeTaskMyTaskTitleShutdownNbackupExeTaskMyTaskTitleLogoffNbackupExeTaskMyTaskTitleSuspendNbackupExeTaskMyTaskTitleRebootNbackupExeTaskMyTaskTitleHibernateNNbackupExeHelpNOutputsBriefHelpN);
             ShowErrorAndQuit(error);
-        }
-
-        private void LoadAndValidateOptions()
-        {
-            PerformCriticalChecks();
-
-            LoadSettings();
         }
 
         private void LoadSettings()
@@ -154,6 +151,11 @@ namespace BUtil.ConsoleBackup
                 ShowErrorAndQuit(string.Format(CultureInfo.InstalledUICulture, Resources.CannotOpenFileLogDueToCryticalError0, e.Message));
             }
             return log;
+        }
+
+        public void Dispose()
+        {
+            _log?.Close();
         }
 
         #region Constants

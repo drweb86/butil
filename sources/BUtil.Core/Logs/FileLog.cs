@@ -9,11 +9,8 @@ namespace BUtil.Core.Logs
 {
     public sealed class FileLog : LogBase
 	{
-        const string _TIME_FORMATSTRING = "dd MMMM (dddd) HH.mm.ss";
-
         readonly string _fileName;
         StreamWriter _logFile;
-
         public string LogFilename
         {
             get { return _fileName; }
@@ -26,11 +23,8 @@ namespace BUtil.Core.Logs
 
         public FileLog(string logsFolder, bool consoleApp) : base(LogMode.File, consoleApp)
 		{
-        	if (string.IsNullOrEmpty(logsFolder))
-        	{
-        		throw new ArgumentNullException("logsFolder");
-        	}
-        	
+            const string _TIME_FORMATSTRING = "dd MMMM (dddd) HH.mm.ss";
+
             try
             {
                     do
@@ -71,29 +65,28 @@ namespace BUtil.Core.Logs
 			{
                 throw new LogException(e.Message, e);
 			}
-			
-            IsOpened = true;
 		}
 	
         private void writeInFile(string message)
         {
-            _logFile.WriteLine(message);
-            _logFile.Flush();
+            lock (_logFile)
+                _logFile.WriteLine(message);
         }
 
-        public override void WriteLine(LoggingEvent loggingEvent,string message)
+        public override void WriteLine(LoggingEvent loggingEvent, string message)
         {
-            if (PreprocessLoggingInformation(loggingEvent, message))
-            {
-                string output =
-                    HtmlLogFormatter.GetHtmlFormattedLogMessage(loggingEvent, message);
-                writeInFile(output);
-            }
+            PreprocessLoggingInformation(loggingEvent, message);
+
+            string output = HtmlLogFormatter.GetHtmlFormattedLogMessage(loggingEvent, message);
+            writeInFile(output);
+            if (loggingEvent == LoggingEvent.Error)
+                lock (_logFile)
+                    _logFile.Flush();
         }
 	  
         public override void Close()
         {
-            if (IsOpened)
+            if (_logFile != null)
             {
                 if (!ErrorsOrWarningsRegistered)
                 {
@@ -114,7 +107,7 @@ namespace BUtil.Core.Logs
 
 				_logFile.Flush();
 				_logFile.Close();
-                IsOpened = false;
+                _logFile = null;
 
                 GC.SuppressFinalize(this);
             }

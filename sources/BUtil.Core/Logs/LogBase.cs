@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Text;
-using System.Globalization;
 
 namespace BUtil.Core.Logs
 {
-
     public abstract class LogBase: ILog
     {
-        private const string _LOG_NOT_OPENED = "Log is not opened";
-
-        private bool _opened;// auto: false
-        private bool _errorsOrWarningsRegistered;// auto: false
+        private bool _errorsOrWarningsRegistered;
         
         // Default encoding for processing packer messages
 		private Encoding _initialEncoding;
@@ -45,12 +40,6 @@ namespace BUtil.Core.Logs
             }
         }
 
-        public bool IsOpened
-        {
-            get { return _opened; }
-            protected set { _opened = value; }
-        }
-        
         public bool ErrorsOrWarningsRegistered
         {
             get { return _errorsOrWarningsRegistered; }
@@ -68,17 +57,6 @@ namespace BUtil.Core.Logs
                     WriteLine(putInLogAs, data[i]);
         }
         
-        /// <summary>
-        /// Writes message to log using formatting
-        /// </summary>
-        /// <param name="loggingEvent">The logging event</param>
-        /// <param name="message">The format string</param>
-        /// <param name="arguments">The arguments</param>
-        public void WriteLine(LoggingEvent loggingEvent, string message, params string[] arguments)
-        {
-            WriteLine(loggingEvent, string.Format(CultureInfo.CurrentUICulture, message, arguments));
-        }
-
         /// <summary>
         /// Grabs output from console and converts it readable format, writes to log
         /// </summary>
@@ -101,43 +79,10 @@ namespace BUtil.Core.Logs
                 outputPackerMessageHelper(data, LoggingEvent.Error);
         }
 
-		/// <summary>
-		/// Validates information
-		/// </summary>
-		/// <param name="loggingEvent">kind of event</param>
-		/// <param name="message">message</param>
-		/// <returns>true - if this message should be processed</returns>
-		/// <exception cref="ArgumentException">message set invalidly or null</exception>
-		/// <exception cref="InvalidOperationException">log not opened</exception>
-        protected bool PreprocessLoggingInformation(LoggingEvent loggingEvent, string message)
+        protected void PreprocessLoggingInformation(LoggingEvent loggingEvent, string message)
         {
-            if (!_opened) 
-            {
-            	System.Diagnostics.Debug.WriteLine("Not opened");
-           		System.Diagnostics.Debug.WriteLine(Environment.StackTrace);
-                throw new InvalidOperationException(_LOG_NOT_OPENED);
-            }
-
-        	if ((loggingEvent == LoggingEvent.Error) || 
-                (loggingEvent == LoggingEvent.Warning))
+        	if (loggingEvent == LoggingEvent.Error)
         		_errorsOrWarningsRegistered = true;
-        	
-        	System.Diagnostics.Debug.WriteLine(loggingEvent.ToString());
-        	System.Diagnostics.Debug.WriteLine(message);
-
-            if (string.IsNullOrEmpty(message))
-            {
-            	if ((loggingEvent == LoggingEvent.Error) || (loggingEvent == LoggingEvent.Warning))
-            	{
-            		System.Diagnostics.Debug.WriteLine("Empty message");
-            		System.Diagnostics.Debug.WriteLine(Environment.StackTrace);
-                    throw new ArgumentException("message");
-            	}
-            	else 
-					return false;
-            }
-            
-            return true;
         }
        
         private string convertPackerOutputInLogEncoding(string packerOutput)

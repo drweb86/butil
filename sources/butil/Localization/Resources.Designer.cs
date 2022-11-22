@@ -97,17 +97,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1. Backup should be password protected. If NOT, program will SKIP its copying to this storage
-        ///2. Your authorization information is going over the network in UNPROTECTED mode(as plain text)..
-        /// </summary>
-        internal static string _1BackupShouldBePasswordProtectedIfNotProgramWillSkipItsCopyingToThisStorageN2YourAuthorizationInformationIsGoingOverTheNetworkInUnprotectedModeAsPlainText {
-            get {
-                return ResourceManager.GetString("_1BackupShouldBePasswordProtectedIfNotProgramWillSkipItsCopyingToThisStorageN2You" +
-                        "rAuthorizationInformationIsGoingOverTheNetworkInUnprotectedModeAsPlainText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to About.
         /// </summary>
         internal static string About {
@@ -122,15 +111,6 @@ namespace BUtil.Configurator.Localization {
         internal static string Actions {
             get {
                 return ResourceManager.GetString("Actions", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Active.
-        /// </summary>
-        internal static string Active {
-            get {
-                return ResourceManager.GetString("Active", resourceCulture);
             }
         }
         
@@ -180,18 +160,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Additional encryption under your local system account. 
-        ///Requires NTFS file system and win2k OS on remote machine. Backup data will be available only for your OS account. See documentation for details.
-        /// </summary>
-        internal static string AdditionalEncryptionUnderYourLocalSystemAccountNrequiresNtfsFileSystemAndWin2kOsOnRemoteMachineBackupDataWillBeAvailableOnlyForYourOsAccountSeeDocumentationForDetails {
-            get {
-                return ResourceManager.GetString("AdditionalEncryptionUnderYourLocalSystemAccountNrequiresNtfsFileSystemAndWin2kOsO" +
-                        "nRemoteMachineBackupDataWillBeAvailableOnlyForYourOsAccountSeeDocumentationForDe" +
-                        "tails", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Adds the new backup task....
         /// </summary>
         internal static string AddsTheNewBackupTask {
@@ -215,15 +183,6 @@ namespace BUtil.Configurator.Localization {
         internal static string AreYouSure {
             get {
                 return ResourceManager.GetString("AreYouSure", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Authorization information.
-        /// </summary>
-        internal static string AuthorizationInformation {
-            get {
-                return ResourceManager.GetString("AuthorizationInformation", resourceCulture);
             }
         }
         
@@ -535,15 +494,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Data transfer mode:.
-        /// </summary>
-        internal static string DataTransferMode {
-            get {
-                return ResourceManager.GetString("DataTransferMode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to day.
         /// </summary>
         internal static string Day {
@@ -596,15 +546,6 @@ namespace BUtil.Configurator.Localization {
         internal static string DisableCompressionAndEncryptionDescription {
             get {
                 return ResourceManager.GetString("DisableCompressionAndEncryptionDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Dns name or IP: ftp://.
-        /// </summary>
-        internal static string DnsNameOrIpFtp {
-            get {
-                return ResourceManager.GetString("DnsNameOrIpFtp", resourceCulture);
             }
         }
         
@@ -822,33 +763,6 @@ namespace BUtil.Configurator.Localization {
         internal static string Ftp {
             get {
                 return ResourceManager.GetString("Ftp", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to FTP server.
-        /// </summary>
-        internal static string FtpServer {
-            get {
-                return ResourceManager.GetString("FtpServer", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ftp storage....
-        /// </summary>
-        internal static string FtpStorage {
-            get {
-                return ResourceManager.GetString("FtpStorage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to FTP Storage Configuration.
-        /// </summary>
-        internal static string FtpStorageConfiguration {
-            get {
-                return ResourceManager.GetString("FtpStorageConfiguration", resourceCulture);
             }
         }
         
@@ -1197,24 +1111,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Network storage....
-        /// </summary>
-        internal static string NetworkStorage {
-            get {
-                return ResourceManager.GetString("NetworkStorage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Network Storage Configuration.
-        /// </summary>
-        internal static string NetworkStorageConfiguration {
-            get {
-                return ResourceManager.GetString("NetworkStorageConfiguration", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Network storages.
         /// </summary>
         internal static string NetworkStorages {
@@ -1334,15 +1230,6 @@ namespace BUtil.Configurator.Localization {
         internal static string OtherOptions {
             get {
                 return ResourceManager.GetString("OtherOptions", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Passive.
-        /// </summary>
-        internal static string Passive {
-            get {
-                return ResourceManager.GetString("Passive", resourceCulture);
             }
         }
         
@@ -1650,15 +1537,6 @@ namespace BUtil.Configurator.Localization {
         internal static string ShutdownPc {
             get {
                 return ResourceManager.GetString("ShutdownPc", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Skip copying and write a warning into log if backup exceeds.
-        /// </summary>
-        internal static string SkipCopyingAndWriteAWarningIntoLogIfBackupExceeds {
-            get {
-                return ResourceManager.GetString("SkipCopyingAndWriteAWarningIntoLogIfBackupExceeds", resourceCulture);
             }
         }
         
@@ -2008,15 +1886,6 @@ namespace BUtil.Configurator.Localization {
         internal static string WorkingDirectoryDoesNotExist {
             get {
                 return ResourceManager.GetString("WorkingDirectoryDoesNotExist", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Works fine!.
-        /// </summary>
-        internal static string WorksFine {
-            get {
-                return ResourceManager.GetString("WorksFine", resourceCulture);
             }
         }
         

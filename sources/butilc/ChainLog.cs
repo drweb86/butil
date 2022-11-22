@@ -18,22 +18,18 @@ namespace BUtil.ConsoleBackup
             logs.Add(new ConsoleLog());
         }
 
-        public bool IsOpened { get; private set; }
-
         public bool ErrorsOrWarningsRegistered => _logs.Any(x => x.ErrorsOrWarningsRegistered);
 
         public void Close()
         {
             foreach (var log in _logs)
                 log.Close();
-            IsOpened = false;
         }
 
         public void Open()
         {
             foreach (var log in _logs)
                 log.Open();
-            IsOpened = true;
         }
 
         public void ProcessPackerMessage(string consoleOutput, bool finishedSuccessfully)
@@ -42,11 +38,6 @@ namespace BUtil.ConsoleBackup
                 log.ProcessPackerMessage(consoleOutput, finishedSuccessfully);
         }
 
-        public void WriteLine(LoggingEvent loggingEvent, string message, params string[] arguments)
-        {
-            foreach (var log in _logs)
-                log.WriteLine(loggingEvent, message, arguments);
-        }
 
         public void WriteLine(LoggingEvent loggingEvent, string message)
         {

@@ -24,25 +24,18 @@ namespace BUtil.Core.Storages
                 () => _storage.Delete(file));
         }
 
-        public void Download(StorageFile storageFile, string targetFileName)
+        public void Download(string relativeFileName, string targetFileName)
         {
             ExecuteFailover.TryNTimes(
-                error => _log.WriteLine(LoggingEvent.Error, $"Storage \"{_settings.Name}\": Download \"{storageFile.StorageRelativeFileName}\" to \"{targetFileName}\""),
-                () => _storage.Download(storageFile, targetFileName));
+                error => _log.WriteLine(LoggingEvent.Error, $"Storage \"{_settings.Name}\": Download \"{relativeFileName}\" to \"{targetFileName}\""),
+                () => _storage.Download(relativeFileName, targetFileName));
         }
 
-        public byte[] ReadAllBytes(string file)
+        public bool Exists(string relativeFileName)
         {
             return ExecuteFailover.TryNTimes(
-                error => _log.WriteLine(LoggingEvent.Error, $"Storage \"{_settings.Name}\": ReadAllBytes \"{file}\""),
-                () => _storage.ReadAllBytes(file));
-        }
-
-        public string ReadAllText(string file)
-        {
-            return ExecuteFailover.TryNTimes(
-                error => _log.WriteLine(LoggingEvent.Error, $"Storage \"{_settings.Name}\": ReadAllText \"{file}\""),
-                () => _storage.ReadAllText(file));
+                error => _log.WriteLine(LoggingEvent.Error, $"Storage \"{_settings.Name}\": Exists \"{relativeFileName}\""),
+                () => _storage.Exists(relativeFileName));
         }
 
         public string Test()

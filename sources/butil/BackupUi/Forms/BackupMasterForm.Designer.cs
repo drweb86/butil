@@ -44,6 +44,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             this.cancelButton = new System.Windows.Forms.Button();
             this._backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.helpButton = new System.Windows.Forms.Button();
+            this._listViewUpdateTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // startButton
@@ -162,6 +163,12 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             this.helpButton.UseVisualStyleBackColor = true;
             this.helpButton.Click += new System.EventHandler(this.HelpButtonClick);
             // 
+            // _listViewUpdateTimer
+            // 
+            this._listViewUpdateTimer.Enabled = true;
+            this._listViewUpdateTimer.Interval = 5000;
+            this._listViewUpdateTimer.Tick += new System.EventHandler(this.OnListViewFlushUpdates);
+            // 
             // BackupMasterForm
             // 
             this.AcceptButton = this.startButton;
@@ -196,5 +203,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 		private System.Windows.Forms.ImageList compressionItemsListViewImageList;
 		private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.ToolTip toolTip;
-	}
+        private System.Windows.Forms.Timer _listViewUpdateTimer;
+    }
 }

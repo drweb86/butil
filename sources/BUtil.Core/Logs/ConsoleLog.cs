@@ -2,49 +2,28 @@
 
 namespace BUtil.Core.Logs
 {
-	/// <summary>
-	/// Logs output to console. Works with dos output from archiver
-	/// </summary>
-	public sealed class ConsoleLog: LogBase
+    public class ConsoleLog: LogBase
 	{
         public override void WriteLine(LoggingEvent loggingEvent, string message)
         {
-            if (PreprocessLoggingInformation(loggingEvent, message))
+            PreprocessLoggingInformation(loggingEvent, message);
+
+            if (loggingEvent == LoggingEvent.Error)
             {
-            	ConsoleColor previousColor = Console.ForegroundColor;
-            	
-            	switch (loggingEvent)
-            	{
-            		case LoggingEvent.Error:
-            			Console.ForegroundColor = ConsoleColor.Red;
-            			break;
-            		case LoggingEvent.Warning:
-            			Console.ForegroundColor = ConsoleColor.Yellow;
-            			break;
-            		case LoggingEvent.Debug:
-            			Console.ForegroundColor = ConsoleColor.Gray;
-            			break;
-            		case LoggingEvent.PackerMessage:
-            			Console.ForegroundColor = ConsoleColor.Blue;
-            			break;
-            			
-            		default:
-            			throw new NotImplementedException(string.Format("Color selection for {0} is not implemented",loggingEvent));
-            	}
-            	
-            	Console.WriteLine(message);
-            	
-            	Console.ForegroundColor = previousColor;
-                
+                FastStdConsole.Flush();
+                ConsoleColor previousColor = Console.ForegroundColor;
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Error.WriteLine(message);
+                Console.ForegroundColor = previousColor;
+            }
+            else
+            {
+                FastStdConsole.WriteLine(message);
             }
         }
-        
-        public override void Open()
-        {
-			IsOpened = true;
-        }
 
+        public override void Open() { }
         public ConsoleLog() : base(LogMode.Console, true) { ; }
-        public override void Close() { ; }
+        public override void Close() => FastStdConsole.Flush();
 	}
 }

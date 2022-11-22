@@ -12,6 +12,7 @@ namespace BUtil.Core.Misc
                 try
                 {
                     func();
+                    return;
                 }
                 catch (Exception e)
                 {

@@ -26,8 +26,6 @@ namespace BUtil.Core.Logs
                     output += "000000\">" + information; break;
                 case LoggingEvent.Debug:
                     output += "2323dc\">" + information; break;
-                case LoggingEvent.Warning:
-                    output += "2300dc\"><B>" + information + "</B>"; break;
             }
 			return output + "</FONT></P>";
         }

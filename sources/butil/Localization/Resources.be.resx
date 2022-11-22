@@ -227,15 +227,8 @@
   <data name="StorageName" xml:space="preserve">
     <value>Назва хранiлiшча:</value>
   </data>
-  <data name="_1BackupShouldBePasswordProtectedIfNotProgramWillSkipItsCopyingToThisStorageN2YourAuthorizationInformationIsGoingOverTheNetworkInUnprotectedModeAsPlainText" xml:space="preserve">
-    <value>1. Backup should be password protected. If NOT, program will SKIP its copying to this storage
-2. Your authorization information is going over the network in UNPROTECTED mode(as plain text).</value>
-  </data>
   <data name="DestinationFolder" xml:space="preserve">
     <value>Destination folder</value>
-  </data>
-  <data name="AuthorizationInformation" xml:space="preserve">
-    <value>Authorization information</value>
   </data>
   <data name="User" xml:space="preserve">
     <value>User:</value>
@@ -243,32 +236,8 @@
   <data name="Password" xml:space="preserve">
     <value>Password:</value>
   </data>
-  <data name="FtpServer" xml:space="preserve">
-    <value>FTP server</value>
-  </data>
-  <data name="Active" xml:space="preserve">
-    <value>Active</value>
-  </data>
-  <data name="Passive" xml:space="preserve">
-    <value>Passive</value>
-  </data>
-  <data name="DataTransferMode" xml:space="preserve">
-    <value>Data transfer mode:</value>
-  </data>
-  <data name="DnsNameOrIpFtp" xml:space="preserve">
-    <value>Dns name or IP: ftp://</value>
-  </data>
   <data name="Test" xml:space="preserve">
     <value>Test</value>
-  </data>
-  <data name="FtpStorageConfiguration" xml:space="preserve">
-    <value>FTP Storage Configuration</value>
-  </data>
-  <data name="WorksFine" xml:space="preserve">
-    <value>Работае добра!</value>
-  </data>
-  <data name="FtpStorage" xml:space="preserve">
-    <value>ФТП месца...</value>
   </data>
   <data name="BeepSeveralTimes" xml:space="preserve">
     <value>Beep several times</value>
@@ -312,14 +281,8 @@
   <data name="NetworkStoragesAreNotAllowedToBePointedHere" xml:space="preserve">
     <value>Network storages are not allowed to be pointed here!</value>
   </data>
-  <data name="NetworkStorage" xml:space="preserve">
-    <value>Network storage...</value>
-  </data>
   <data name="TargetFolderShouldHaveUncNameForExampleServer1Sharedresource1" xml:space="preserve">
     <value>Target folder should have UNC name(for example:\\server1\sharedResource1)!</value>
-  </data>
-  <data name="NetworkStorageConfiguration" xml:space="preserve">
-    <value>Network Storage Configuration</value>
   </data>
   <data name="RestoreData" xml:space="preserve">
     <value>Restore Data...</value>
@@ -346,13 +309,6 @@ or warnings will be registered during the backup</value>
   </data>
   <data name="PleaseWait" xml:space="preserve">
     <value>Please wait...</value>
-  </data>
-  <data name="AdditionalEncryptionUnderYourLocalSystemAccountNrequiresNtfsFileSystemAndWin2kOsOnRemoteMachineBackupDataWillBeAvailableOnlyForYourOsAccountSeeDocumentationForDetails" xml:space="preserve">
-    <value>Additional encryption under your local system account. 
-Requires NTFS file system and win2k OS on remote machine. Backup data will be available only for your OS account. See documentation for details</value>
-  </data>
-  <data name="SkipCopyingAndWriteAWarningIntoLogIfBackupExceeds" xml:space="preserve">
-    <value>Skip copying and write a warning into log if backup exceeds</value>
   </data>
   <data name="Backup" xml:space="preserve">
     <value>Рэзервовае капираванне</value>

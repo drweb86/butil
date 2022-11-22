@@ -5,10 +5,9 @@ namespace BUtil.Core.Storages
     public interface IStorage
     {
         IStorageUploadResult Upload(string sourceFile, string relativeFileName);
-        string ReadAllText(string file);
-        byte[] ReadAllBytes(string file);
-        void Delete(string file);
-        void Download(StorageFile storageFile, string targetFileName);
+        void Delete(string relativeFileName);
+        void Download(string relativeFileName, string targetFileName);
+        bool Exists(string relativeFileName);
         string Test();
     }
 }

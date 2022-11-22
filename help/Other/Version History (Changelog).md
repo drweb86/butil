@@ -1,3 +1,14 @@
+# 5.5c (22 January 2022)
+
+## New Features
+- Workaround of sporadic disconnects/reconnects of external USB in Windows 11
+- Significant performance increase in file copy and SHA512 calculating.
+- Skipping non-accessible folders
+- Retry in case storage failures, 5 attempts with 30 seconds delay between them.
+
+# Changes
+- FTP & Samba were removed (use proxy file system tools like cryptomator, etc.)
+
 # 5.4b (20 January 2022)
 
 This is beta version.

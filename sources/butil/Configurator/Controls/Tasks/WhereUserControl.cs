@@ -9,9 +9,6 @@ using System.Linq;
 
 namespace BUtil.Configurator.Configurator.Controls
 {
-    /// <summary>
-    /// Manages target places for backup
-    /// </summary>
     internal sealed partial class WhereUserControl : Core.PL.BackUserControl
 	{
 		BackupTask _task;
@@ -25,8 +22,6 @@ namespace BUtil.Configurator.Configurator.Controls
 		
 		public override void ApplyLocalization() 
 		{
-			networkStorageToolStripMenuItem1.Text = Resources.NetworkStorage;
-			ftpStorageToolStripMenuItem1.Text = Resources.FtpStorage;
 			hardDriveStorageToolStripMenuItem1.Text = Resources.HardDriveStorage;
 			storagesListView.Groups[0].Header = Resources.Folder;
 			storagesListView.Groups[1].Header = Resources.Ftp;
@@ -34,8 +29,6 @@ namespace BUtil.Configurator.Configurator.Controls
 			SetHintForControl(addStorageButton, Resources.Add);
 			removeToolStripMenuItem.Text = Resources.RemoveFromList;
 			modifyToolStripMenuItem.Text = Resources.Modify;
-			networkStorageToolStripMenuItem.Text = Resources.NetworkStorage;
-			ftpStorageToolStripMenuItem.Text = Resources.FtpStorage;
 			hardDriveStorageToolStripMenuItem.Text = Resources.HardDriveStorage;
 			addNewToolStripMenuItem.Text = Resources.Add;
 			SetHintForControl(modifyStorageButton, Resources.Modify);
@@ -52,10 +45,6 @@ namespace BUtil.Configurator.Configurator.Controls
 
                 if (storageSettings is FolderStorageSettings)
                     kind = StorageEnum.Folder;
-                else if (storageSettings is FtpStorageSettings)
-                    kind = StorageEnum.Ftp;
-                else if (storageSettings is SambaStorageSettings)
-                    kind = StorageEnum.Network;
                 else
                     throw new ArgumentOutOfRangeException(nameof(storageSettings));
 
@@ -105,16 +94,6 @@ namespace BUtil.Configurator.Configurator.Controls
 		{
 			AddStorage(StorageEnum.Folder);
 		}
-		
-		void FtpStorageToolStripMenuItem1Click(object sender, EventArgs e)
-		{
-			AddStorage(StorageEnum.Ftp);
-		}
-		
-		void NetworkStorageToolStripMenuItem1Click(object sender, EventArgs e)
-		{
-			AddStorage(StorageEnum.Network);
-		}
 
 		public override bool ValidateUi()
 		{
@@ -151,10 +130,6 @@ namespace BUtil.Configurator.Configurator.Controls
                         GetNames()
                             .Except(new List<string> { storageSettings.Name })
                             .ToList());
-            else if (storageSettings is FtpStorageSettings)
-                configForm = new FtpStorageForm(storageSettings as FtpStorageSettings);
-            else if (storageSettings is SambaStorageSettings)
-                configForm = new NetworkStorageForm(storageSettings as SambaStorageSettings);
             else
                 throw new ArgumentOutOfRangeException(nameof(storageSettings));
 
@@ -185,12 +160,6 @@ namespace BUtil.Configurator.Configurator.Controls
 			{
 				case StorageEnum.Folder: 
 					configForm = new FolderStorageForm(null, GetNames());
-					break;
-				case StorageEnum.Ftp: 
-					configForm = new FtpStorageForm(null);
-					break;
-				case StorageEnum.Network: 
-					configForm = new NetworkStorageForm(null);
 					break;
 				default: 
 					throw new NotImplementedException(kind.ToString());

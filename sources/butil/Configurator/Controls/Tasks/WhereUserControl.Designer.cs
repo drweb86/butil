@@ -38,15 +38,11 @@ namespace BUtil.Configurator.Configurator.Controls
             this.storagesContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addNewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hardDriveStorageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ftpStorageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.networkStorageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modifyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addStorageContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.hardDriveStorageToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ftpStorageToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.networkStorageToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.storagesListView = new System.Windows.Forms.ListView();
             this.addStorageButton = new System.Windows.Forms.Button();
             this.removeStorageButton = new System.Windows.Forms.Button();
@@ -79,9 +75,7 @@ namespace BUtil.Configurator.Configurator.Controls
             // addNewToolStripMenuItem
             // 
             this.addNewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.hardDriveStorageToolStripMenuItem,
-            this.ftpStorageToolStripMenuItem,
-            this.networkStorageToolStripMenuItem});
+            this.hardDriveStorageToolStripMenuItem});
             this.addNewToolStripMenuItem.Image = global::BUtil.Configurator.Icons.addNewToolStripMenuItem_Image;
             this.addNewToolStripMenuItem.Name = "addNewToolStripMenuItem";
             this.addNewToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
@@ -94,24 +88,6 @@ namespace BUtil.Configurator.Configurator.Controls
             this.hardDriveStorageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.hardDriveStorageToolStripMenuItem.Text = "Hard drive storage...";
             this.hardDriveStorageToolStripMenuItem.Click += new System.EventHandler(this.HardDriveStorageToolStripMenuItem1Click);
-            // 
-            // ftpStorageToolStripMenuItem
-            // 
-            this.ftpStorageToolStripMenuItem.Enabled = false;
-            this.ftpStorageToolStripMenuItem.Image = global::BUtil.Configurator.Icons.Ftp16x16;
-            this.ftpStorageToolStripMenuItem.Name = "ftpStorageToolStripMenuItem";
-            this.ftpStorageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.ftpStorageToolStripMenuItem.Text = "Ftp storage...";
-            this.ftpStorageToolStripMenuItem.Click += new System.EventHandler(this.FtpStorageToolStripMenuItem1Click);
-            // 
-            // networkStorageToolStripMenuItem
-            // 
-            this.networkStorageToolStripMenuItem.Enabled = false;
-            this.networkStorageToolStripMenuItem.Image = global::BUtil.Configurator.Icons.Share16x16;
-            this.networkStorageToolStripMenuItem.Name = "networkStorageToolStripMenuItem";
-            this.networkStorageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.networkStorageToolStripMenuItem.Text = "Network storage...";
-            this.networkStorageToolStripMenuItem.Click += new System.EventHandler(this.NetworkStorageToolStripMenuItem1Click);
             // 
             // modifyToolStripMenuItem
             // 
@@ -137,9 +113,7 @@ namespace BUtil.Configurator.Configurator.Controls
             // addStorageContextMenuStrip
             // 
             this.addStorageContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.hardDriveStorageToolStripMenuItem1,
-            this.ftpStorageToolStripMenuItem1,
-            this.networkStorageToolStripMenuItem1});
+            this.hardDriveStorageToolStripMenuItem1});
             this.addStorageContextMenuStrip.Name = "addStorageContextMenuStrip";
             this.addStorageContextMenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.addStorageContextMenuStrip.Size = new System.Drawing.Size(181, 70);
@@ -151,24 +125,6 @@ namespace BUtil.Configurator.Configurator.Controls
             this.hardDriveStorageToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.hardDriveStorageToolStripMenuItem1.Text = "Hard drive storage...";
             this.hardDriveStorageToolStripMenuItem1.Click += new System.EventHandler(this.HardDriveStorageToolStripMenuItem1Click);
-            // 
-            // ftpStorageToolStripMenuItem1
-            // 
-            this.ftpStorageToolStripMenuItem1.Enabled = false;
-            this.ftpStorageToolStripMenuItem1.Image = global::BUtil.Configurator.Icons.Ftp16x16;
-            this.ftpStorageToolStripMenuItem1.Name = "ftpStorageToolStripMenuItem1";
-            this.ftpStorageToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.ftpStorageToolStripMenuItem1.Text = "Ftp storage...";
-            this.ftpStorageToolStripMenuItem1.Click += new System.EventHandler(this.FtpStorageToolStripMenuItem1Click);
-            // 
-            // networkStorageToolStripMenuItem1
-            // 
-            this.networkStorageToolStripMenuItem1.Enabled = false;
-            this.networkStorageToolStripMenuItem1.Image = global::BUtil.Configurator.Icons.Share16x16;
-            this.networkStorageToolStripMenuItem1.Name = "networkStorageToolStripMenuItem1";
-            this.networkStorageToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.networkStorageToolStripMenuItem1.Text = "Network storage...";
-            this.networkStorageToolStripMenuItem1.Click += new System.EventHandler(this.NetworkStorageToolStripMenuItem1Click);
             // 
             // storagesListView
             // 
@@ -256,8 +212,6 @@ namespace BUtil.Configurator.Configurator.Controls
 
 		}
 		private System.Windows.Forms.ImageList storageTypesImageList;
-		private System.Windows.Forms.ToolStripMenuItem networkStorageToolStripMenuItem1;
-		private System.Windows.Forms.ToolStripMenuItem ftpStorageToolStripMenuItem1;
 		private System.Windows.Forms.ToolStripMenuItem hardDriveStorageToolStripMenuItem1;
 		private System.Windows.Forms.ContextMenuStrip addStorageContextMenuStrip;
 		private System.Windows.Forms.ListView storagesListView;
@@ -265,8 +219,6 @@ namespace BUtil.Configurator.Configurator.Controls
 		private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
 		private System.Windows.Forms.ToolStripMenuItem modifyToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem networkStorageToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem ftpStorageToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem hardDriveStorageToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem addNewToolStripMenuItem;
 		private System.Windows.Forms.ContextMenuStrip storagesContextMenuStrip;

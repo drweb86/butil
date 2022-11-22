@@ -8,6 +8,7 @@ namespace BUtil.Core.TasksTree
     class DirectoryInfoWrapperEx : DirectoryInfoWrapper
     {
         private readonly DirectoryInfo _directoryInfo;
+        private readonly List<string> _skipDirectories = new List<string> { "System Volume Information", "$RECYCLE.BIN", "Recovery" };
 
         public DirectoryInfoWrapperEx(DirectoryInfo directoryInfo) : base(directoryInfo)
         {
@@ -34,14 +35,13 @@ namespace BUtil.Core.TasksTree
 
                 foreach (FileSystemInfo fileSystemInfo in fileSystemInfos)
                 {
+                    if (_skipDirectories.Contains(fileSystemInfo.Name))
+                        continue;
+
                     if (fileSystemInfo is DirectoryInfo directoryInfo)
-                    {
                         yield return new DirectoryInfoWrapperEx(directoryInfo);
-                    }
                     else
-                    {
                         yield return new FileInfoWrapper((FileInfo)fileSystemInfo);
-                    }
                 }
             }
         }

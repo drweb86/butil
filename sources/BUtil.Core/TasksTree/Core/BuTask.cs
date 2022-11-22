@@ -37,11 +37,6 @@ namespace BUtil.Core.TasksTree.Core
             LogEvent(LoggingEvent.Error, message);
         }
 
-        protected void LogWarning(string message)
-        {
-            LogEvent(LoggingEvent.Warning, message);
-        }
-
         protected void UpdateStatus(ProcessingStatus status)
         {
             LogEvent(status == ProcessingStatus.FinishedWithErrors ? LoggingEvent.Error : LoggingEvent.Debug, LocalsHelper.ToString(status));

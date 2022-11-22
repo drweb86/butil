@@ -15,6 +15,7 @@ using System.Runtime.InteropServices;
 using BUtil.Core.Storages;
 using System.IO;
 using System.Linq;
+using System.Collections.Concurrent;
 
 namespace BUtil.Configurator.BackupUiMaster.Forms
 {
@@ -25,6 +26,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
         private readonly BackupTask _backupTask;
 		BackupProgressUserControl _backupProgressUserControl;
 		private readonly ProgramOptions _programOptions;
+        private readonly ConcurrentQueue<Action> _listViewUpdates = new ConcurrentQueue<Action>();
 
         public BackupMasterForm(ProgramOptions programOptions, BackupTask backupTask)
 		{
@@ -56,12 +58,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 
 		private void UpdateListViewItem(Guid taskId, ProcessingStatus status)
 		{
-            if (InvokeRequired)
-            {
-                Invoke(UpdateListViewItem, taskId, status);
-                return;
-            }
-
             foreach (ListViewItem item in tasksListView.Items)
             {
                 if ((Guid)item.Tag == taskId)
@@ -194,15 +190,12 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
         }
 
         private void OnDuringExecutionTasksAdded(object sender, DuringExecutionTasksAddedEventArgs e)
+        {
+            _listViewUpdates.Enqueue(() => OnDuringExecutionTasksAddedInternal(sender, e));
+        }
+
+        private void OnDuringExecutionTasksAddedInternal(object sender, DuringExecutionTasksAddedEventArgs e)
 		{
-			if (InvokeRequired)
-			{
-				Invoke(OnDuringExecutionTasksAdded, sender, e);
-				return;
-			}
-
-			tasksListView.BeginUpdate();
-
 			int index = 0;
 			foreach (ListViewItem item in tasksListView.Items)
 			{
@@ -219,12 +212,11 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
                 tasksListView.Items.Insert(index, listItem);
 				index++;
             }
-			tasksListView.EndUpdate();
         }
 
 		private void OnTaskProgress(object sender, TaskProgressEventArgs e)
 		{
-			UpdateListViewItem(e.TaskId, e.Status);
+            _listViewUpdates.Enqueue(() => UpdateListViewItem(e.TaskId, e.Status));
 		}
 
 		private void OnTasksListViewResize(object sender, EventArgs e)
@@ -289,5 +281,13 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 		{
             SupportManager.DoSupport(SupportRequest.BackupWizard);
 		}
-	}
+
+        private void OnListViewFlushUpdates(object sender, EventArgs e)
+        {
+            tasksListView.BeginUpdate();
+            while (_listViewUpdates.TryDequeue(out var action))
+                action();
+            tasksListView.EndUpdate();
+        }
+    }
 }

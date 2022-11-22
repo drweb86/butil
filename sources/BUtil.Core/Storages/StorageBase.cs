@@ -15,21 +15,10 @@ namespace BUtil.Core.Storages
         protected readonly TStorageSettings Settings;
 
         public abstract IStorageUploadResult Upload(string sourceFile, string relativeFileName);
-        public abstract string ReadAllText(string file);
         public abstract string Test();
-        public virtual byte[] ReadAllBytes(string file)
-        {
-            throw new System.NotImplementedException();
-        }
 
-        public virtual void Delete(string file)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public virtual void Download(StorageFile storageFile, string targetFileName)
-        {
-            throw new System.NotImplementedException();
-        }
+        public abstract void Delete(string relativeFileName);
+        public abstract void Download(string relativeFileName, string targetFileName);
+        public abstract bool Exists(string relativeFileName);
     }
 }

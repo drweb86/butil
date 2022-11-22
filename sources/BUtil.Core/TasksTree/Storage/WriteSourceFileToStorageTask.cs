@@ -3,7 +3,6 @@ using BUtil.Core.Logs;
 using BUtil.Core.State;
 using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.Core;
-using System.Threading;
 
 namespace BUtil.Core.TasksTree
 {
@@ -34,8 +33,16 @@ namespace BUtil.Core.TasksTree
 
             if (_singleBackupQuotaGb.TryQuota(StorageFile.FileState.Size))
             {
-                var service = new IncrementalBackupFileService(Log, _storageSettings);
-                IsSuccess = service.Upload(StorageFile);
+                try
+                {
+                    var service = new IncrementalBackupFileService(Log, _storageSettings);
+                    IsSuccess = service.Upload(StorageFile);
+                }
+                catch
+                {
+                    IsSkipped = true; // because some files can be locked
+                    IsSuccess = true;
+                }
             }
             else
             {

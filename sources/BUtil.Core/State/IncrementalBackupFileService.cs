@@ -36,13 +36,13 @@ namespace BUtil.Core.State
 
             if (storageFile.StorageMethod == StorageMethodNames.Plain)
             {
-                storage.Download(storageFile, destinationFileName);
+                storage.Download(storageFile.StorageRelativeFileName, destinationFileName);
             }
             else
             {
                 using var tempFolder = new TempFolder();
                 var tempArchive = Path.Combine(tempFolder.Folder, "archive.7z");
-                storage.Download(storageFile, tempArchive);
+                storage.Download(storageFile.StorageRelativeFileName, tempArchive);
                 if (!SevenZipProcessHelper.Extract(log, tempArchive, storageFile.StoragePassword, destinationDir))
                 {
                     log.WriteLine(LoggingEvent.Error, $"Storage \"{storageSettings.Name}\": extracting \"{storageFile.FileState.FileName}\" failed");

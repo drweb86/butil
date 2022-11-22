@@ -231,15 +231,8 @@
   <data name="StorageName" xml:space="preserve">
     <value>Заголовок:</value>
   </data>
-  <data name="_1BackupShouldBePasswordProtectedIfNotProgramWillSkipItsCopyingToThisStorageN2YourAuthorizationInformationIsGoingOverTheNetworkInUnprotectedModeAsPlainText" xml:space="preserve">
-    <value>1. Резервная копия должна быть защищена паролем. Если НЕ БУДЕТ, программа ПРОПУСТИТ копирование в это хранилище
-2. Ваши авторизационные данные в открытом виде будут распространятся по сети в незащищенном виде.</value>
-  </data>
   <data name="DestinationFolder" xml:space="preserve">
     <value>Папка назначения</value>
-  </data>
-  <data name="AuthorizationInformation" xml:space="preserve">
-    <value>Авторизация</value>
   </data>
   <data name="User" xml:space="preserve">
     <value>Пользователь:</value>
@@ -247,35 +240,11 @@
   <data name="Password" xml:space="preserve">
     <value>Пароль:</value>
   </data>
-  <data name="FtpServer" xml:space="preserve">
-    <value>ФТП сервер</value>
-  </data>
-  <data name="Active" xml:space="preserve">
-    <value>Активный</value>
-  </data>
-  <data name="Passive" xml:space="preserve">
-    <value>Пассивный</value>
-  </data>
-  <data name="DataTransferMode" xml:space="preserve">
-    <value>Режим передачи данных:</value>
-  </data>
-  <data name="DnsNameOrIpFtp" xml:space="preserve">
-    <value>Dns имя или IP: ftp://</value>
-  </data>
   <data name="Test" xml:space="preserve">
     <value>Тест</value>
   </data>
-  <data name="FtpStorageConfiguration" xml:space="preserve">
-    <value>Настройки ФТП Хранилища</value>
-  </data>
-  <data name="WorksFine" xml:space="preserve">
-    <value>Работает отлично!</value>
-  </data>
   <data name="HardDriveStorage" xml:space="preserve">
     <value>Хранилище на жестком диске...</value>
-  </data>
-  <data name="FtpStorage" xml:space="preserve">
-    <value>Хранилище на ФТП сервере...</value>
   </data>
   <data name="BeepSeveralTimes" xml:space="preserve">
     <value>Подать звуковой сигнал</value>
@@ -319,14 +288,8 @@
   <data name="NetworkStoragesAreNotAllowedToBePointedHere" xml:space="preserve">
     <value>Сетевые ресурсы НЕ МОГУТ указываться здесь!</value>
   </data>
-  <data name="NetworkStorage" xml:space="preserve">
-    <value>Сетевое хранилище...</value>
-  </data>
   <data name="TargetFolderShouldHaveUncNameForExampleServer1Sharedresource1" xml:space="preserve">
     <value>Папка назначения должна иметь UNC имя(к примеру \\сервер1\расшаренныйРесурс1)!</value>
-  </data>
-  <data name="NetworkStorageConfiguration" xml:space="preserve">
-    <value>Конфигурация Сетевого Хранилища</value>
   </data>
   <data name="RestoreData" xml:space="preserve">
     <value>Восстановить данные...</value>
@@ -356,13 +319,6 @@
   </data>
   <data name="PleaseWait" xml:space="preserve">
     <value>Подождите, пожалуйста...</value>
-  </data>
-  <data name="AdditionalEncryptionUnderYourLocalSystemAccountNrequiresNtfsFileSystemAndWin2kOsOnRemoteMachineBackupDataWillBeAvailableOnlyForYourOsAccountSeeDocumentationForDetails" xml:space="preserve">
-    <value>Дополнительное шифрование под вашей учетной записью.
-Требует наличия файловой системы NTFS и Win2k на удаленной машине. Резервная копия будет доступна только вашей учетной записи. Смотрите документацию для подробностей</value>
-  </data>
-  <data name="SkipCopyingAndWriteAWarningIntoLogIfBackupExceeds" xml:space="preserve">
-    <value>Не копировать и заносить предупреждение в лог, если размер резервной копии превысит</value>
   </data>
   <data name="Backup" xml:space="preserve">
     <value>Резервное копирование</value>
