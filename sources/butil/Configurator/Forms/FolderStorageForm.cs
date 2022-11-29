@@ -143,7 +143,7 @@ namespace BUtil.Configurator
         private void OnRunMountScript(object sender, EventArgs e)
         {
             if (PowershellProcessHelper.Execute(new StubLog(), _mountTextBox.Text))
-                Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.FinishedSuccesfully);
+                Messages.ShowInformationBox(BUtil.Configurator.Localization.Resources.FinishedSuccesfully);
             else
                 Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.FinishedWithErrors);
         }
@@ -151,9 +151,15 @@ namespace BUtil.Configurator
         private void OnMountRun(object sender, EventArgs e)
         {
             if (PowershellProcessHelper.Execute(new StubLog(), _unmountTextBox.Text))
-                Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.FinishedSuccesfully);
+                Messages.ShowInformationBox(BUtil.Configurator.Localization.Resources.FinishedSuccesfully);
             else
                 Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.FinishedWithErrors);
+        }
+
+        private void OnSambaButtonClick(object sender, EventArgs e)
+        {
+			_mountTextBox.Text = @"net use H: \\100.100.100.100\share /user:josh pwd1";
+            _unmountTextBox.Text = @"net use /delete H:";
         }
     }
 }

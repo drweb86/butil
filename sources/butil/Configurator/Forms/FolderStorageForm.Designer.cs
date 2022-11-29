@@ -183,7 +183,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(781, 350);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(781, 355);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // _limitUploadLabel
@@ -313,6 +313,7 @@
             this._sambaButton.TabIndex = 15;
             this._sambaButton.Text = "Samba...";
             this._sambaButton.UseVisualStyleBackColor = true;
+            this._sambaButton.Click += new System.EventHandler(this.OnSambaButtonClick);
             // 
             // _scriptsLabel
             // 
@@ -327,7 +328,7 @@
             this._scriptsLabel.TabIndex = 16;
             this._scriptsLabel.Text = "If folder becomes accessible after mounting, specify PowerShell scripts for  moun" +
     "ting and unmounting";
-            this._scriptsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this._scriptsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FolderStorageForm
             // 
@@ -338,7 +339,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(781, 350);
+            this.ClientSize = new System.Drawing.Size(781, 355);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = global::BUtil.Configurator.Icons.BUtilIcon;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
