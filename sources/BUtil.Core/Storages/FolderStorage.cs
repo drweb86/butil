@@ -1,28 +1,27 @@
 ﻿using System;
-using System.Globalization;
 using System.IO;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
-using BUtil.Core.State;
 
 namespace BUtil.Core.Storages
 {
-	class FolderStorage: StorageBase<FolderStorageSettings>
-	{
-		internal FolderStorage(ILog log, FolderStorageSettings settings)
-            :base (log, settings)
-		{
-		}
+    class FolderStorage : StorageBase<FolderStorageSettings>
+    {
+        internal FolderStorage(ILog log, FolderStorageSettings settings)
+            : base(log, settings)
+        {
+            Mount();
+        }
 
         public override IStorageUploadResult Upload(string sourceFile, string relativeFileName)
         {
-			var destinationFile = Path.Combine(Settings.DestinationFolder, relativeFileName);
-			var destinationDirectory = Path.GetDirectoryName(destinationFile);
+            var destinationFile = Path.Combine(Settings.DestinationFolder, relativeFileName);
+            var destinationDirectory = Path.GetDirectoryName(destinationFile);
 
             Log.WriteLine(LoggingEvent.Debug, $"Copying \"{sourceFile}\" to \"{destinationFile}\"");
 
             if (!Directory.Exists(destinationDirectory))
-				Directory.CreateDirectory(destinationDirectory);
+                Directory.CreateDirectory(destinationDirectory);
 
             Copy(sourceFile, destinationFile);
 
@@ -31,6 +30,26 @@ namespace BUtil.Core.Storages
                 StorageFileName = destinationFile,
                 StorageFileNameSize = new FileInfo(destinationFile).Length,
             };
+        }
+
+        private void Mount()
+        {
+            Log.WriteLine(LoggingEvent.Debug, $"Mount \"{Settings.Name}\"");
+            if (!string.IsNullOrWhiteSpace(this.Settings.MountPowershellScript))
+            {
+                if (!PowershellProcessHelper.Execute(Log, this.Settings.MountPowershellScript))
+                    throw new InvalidOperationException($"Cannot mount \"{Settings.Name}\"");
+            }
+        }
+
+        private void Unmount()
+        {
+            Log.WriteLine(LoggingEvent.Debug, $"Unmount \"{Settings.Name}\"");
+            if (!string.IsNullOrWhiteSpace(this.Settings.UnmountPowershellScript))
+            {
+                if (!PowershellProcessHelper.Execute(Log, this.Settings.UnmountPowershellScript))
+                    throw new InvalidOperationException($"Cannot unmount \"{Settings.Name}\"");
+            }
         }
 
         public override string Test()
@@ -76,6 +95,11 @@ namespace BUtil.Core.Storages
             {
                 outputFileStream.Write(bytes, 0, bytesRead);
             }
+        }
+
+        public override void Dispose()
+        {
+            Unmount();
         }
     }
 }

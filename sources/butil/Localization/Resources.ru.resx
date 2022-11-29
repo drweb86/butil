@@ -705,4 +705,13 @@ bin.
   <data name="FolderStorage" xml:space="preserve">
     <value>Хранилище в папке...</value>
   </data>
+  <data name="Mount" xml:space="preserve">
+    <value>Монтировать:</value>
+  </data>
+  <data name="Unmount" xml:space="preserve">
+    <value>Размонтировать:</value>
+  </data>
+  <data name="HelpMountUnmountScript" xml:space="preserve">
+    <value>Если папка становится доступной после монтирования, укажите PowerShell скрипты для монтирования и размонтирования</value>
+  </data>
 </root>

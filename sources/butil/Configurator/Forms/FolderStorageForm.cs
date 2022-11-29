@@ -6,6 +6,7 @@ using BUtil.Configurator.Configurator;
 using System.Collections.Generic;
 using System.Linq;
 using BUtil.Core.Logs;
+using BUtil.Core.Misc;
 
 namespace BUtil.Configurator
 {
@@ -21,6 +22,8 @@ namespace BUtil.Configurator
                 DestinationFolder = destinationFolderTextBox.Text,
 				Enabled= _enabledCheckBox.Checked,
 				SingleBackupQuotaGb = (long)_uploadLimitGbNumericUpDown.Value,
+				MountPowershellScript = _mountTextBox.Text,
+				UnmountPowershellScript = _unmountTextBox.Text,
             };
         }
 
@@ -46,7 +49,9 @@ namespace BUtil.Configurator
 				acceptButton.Enabled = true;
 				_enabledCheckBox.Checked = folderStorageSettings.Enabled;
 				_uploadLimitGbNumericUpDown.Value= folderStorageSettings.SingleBackupQuotaGb;
-			}
+				_mountTextBox.Text = folderStorageSettings.MountPowershellScript;
+                _unmountTextBox.Text = folderStorageSettings.UnmountPowershellScript;
+            }
 			
 			whereToStoreBackupLabel.Text = Resources.SpecifyTheFolderWhereToStoreBackUp;
 			this.Text = Resources.FolderStorageConfiguration;
@@ -57,6 +62,10 @@ namespace BUtil.Configurator
 			_limitUploadLabel.Text = BUtil.Configurator.Localization.Resources.UploadLimitGB;
 			_limitUploadDescriptionLabel.Text = BUtil.Configurator.Localization.Resources.UploadLimitDescription;
 			_enabledCheckBox.Text = BUtil.Configurator.Localization.Resources.Enabled;
+			_scriptsLabel.Text = BUtil.Configurator.Localization.Resources.HelpMountUnmountScript;
+			_mountScriptLabel.Text = BUtil.Configurator.Localization.Resources.Mount;
+            _unmountScriptLabel.Text = BUtil.Configurator.Localization.Resources.Unmount;
+			_mountButton.Text = _unmountButton.Text = BUtil.Configurator.Localization.Resources.Run;
 
             this._forbiddenNames = forbiddenNames;
 		}
@@ -91,15 +100,25 @@ namespace BUtil.Configurator
             }
 
 			var storageSettings = GetStorageSettings();
-            var storage = StorageFactory.Create(new StubLog(), storageSettings);
-			var error = storage.Test();
 
-            if (error != null)
-            {
-                Messages.ShowErrorBox(error);
+			try
+			{
+				using (var storage = StorageFactory.Create(new StubLog(), storageSettings))
+				{
+					var error = storage.Test();
+
+					if (error != null)
+					{
+						Messages.ShowErrorBox(error);
+						return;
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+                Messages.ShowErrorBox(ex.Message);
                 return;
             }
-
 
             this.DialogResult = DialogResult.OK;
 		}
@@ -120,5 +139,21 @@ namespace BUtil.Configurator
             requiredFieldsTextChanged(sender, e);
 
         }
-	}
+
+        private void OnRunMountScript(object sender, EventArgs e)
+        {
+            if (PowershellProcessHelper.Execute(new StubLog(), _mountTextBox.Text))
+                Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.FinishedSuccesfully);
+            else
+                Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.FinishedWithErrors);
+        }
+
+        private void OnMountRun(object sender, EventArgs e)
+        {
+            if (PowershellProcessHelper.Execute(new StubLog(), _unmountTextBox.Text))
+                Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.FinishedSuccesfully);
+            else
+                Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.FinishedWithErrors);
+        }
+    }
 }

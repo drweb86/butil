@@ -1,8 +1,8 @@
-﻿using BUtil.Core.State;
+﻿using System;
 
 namespace BUtil.Core.Storages
 {
-    public interface IStorage
+    public interface IStorage: IDisposable
     {
         IStorageUploadResult Upload(string sourceFile, string relativeFileName);
         void Delete(string relativeFileName);

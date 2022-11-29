@@ -42,6 +42,14 @@
             this._uploadLimitGbNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this._limitUploadDescriptionLabel = new System.Windows.Forms.Label();
             this._enabledCheckBox = new System.Windows.Forms.CheckBox();
+            this._unmountScriptLabel = new System.Windows.Forms.Label();
+            this._mountScriptLabel = new System.Windows.Forms.Label();
+            this._unmountTextBox = new System.Windows.Forms.TextBox();
+            this._mountTextBox = new System.Windows.Forms.TextBox();
+            this._mountButton = new System.Windows.Forms.Button();
+            this._unmountButton = new System.Windows.Forms.Button();
+            this._sambaButton = new System.Windows.Forms.Button();
+            this._scriptsLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._uploadLimitGbNumericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -109,7 +117,7 @@
             // 
             this.acceptButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.acceptButton.Enabled = false;
-            this.acceptButton.Location = new System.Drawing.Point(584, 190);
+            this.acceptButton.Location = new System.Drawing.Point(584, 303);
             this.acceptButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.acceptButton.MaximumSize = new System.Drawing.Size(88, 27);
             this.acceptButton.MinimumSize = new System.Drawing.Size(88, 27);
@@ -124,7 +132,7 @@
             // 
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cancelButton.Location = new System.Drawing.Point(680, 190);
+            this.cancelButton.Location = new System.Drawing.Point(680, 303);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cancelButton.MaximumSize = new System.Drawing.Size(88, 27);
             this.cancelButton.MinimumSize = new System.Drawing.Size(88, 27);
@@ -142,10 +150,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.searchButton, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.acceptButton, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.cancelButton, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.captionLabel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.destinationFolderTextBox, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this._nameTextBox, 1, 0);
@@ -153,19 +158,32 @@
             this.tableLayoutPanel1.Controls.Add(this._limitUploadLabel, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this._uploadLimitGbNumericUpDown, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this._limitUploadDescriptionLabel, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this._enabledCheckBox, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this._enabledCheckBox, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.acceptButton, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.cancelButton, 2, 8);
+            this.tableLayoutPanel1.Controls.Add(this._unmountScriptLabel, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this._mountScriptLabel, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this._unmountTextBox, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this._mountTextBox, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this._mountButton, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this._unmountButton, 2, 6);
+            this.tableLayoutPanel1.Controls.Add(this._sambaButton, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this._scriptsLabel, 0, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(20);
-            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowCount = 9;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(781, 319);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(781, 350);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // _limitUploadLabel
@@ -204,16 +222,114 @@
             // _enabledCheckBox
             // 
             this._enabledCheckBox.AutoSize = true;
+            this._enabledCheckBox.Checked = true;
+            this._enabledCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this._enabledCheckBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this._enabledCheckBox.Location = new System.Drawing.Point(23, 190);
+            this._enabledCheckBox.Location = new System.Drawing.Point(23, 303);
             this._enabledCheckBox.Name = "_enabledCheckBox";
             this._enabledCheckBox.Size = new System.Drawing.Size(192, 19);
             this._enabledCheckBox.TabIndex = 8;
             this._enabledCheckBox.Text = "Enabled";
-            this._enabledCheckBox.Checked = true;
             this._enabledCheckBox.UseVisualStyleBackColor = true;
             // 
-            // HddStorageForm
+            // _unmountScriptLabel
+            // 
+            this._unmountScriptLabel.AutoSize = true;
+            this._unmountScriptLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._unmountScriptLabel.Location = new System.Drawing.Point(24, 250);
+            this._unmountScriptLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this._unmountScriptLabel.Name = "_unmountScriptLabel";
+            this._unmountScriptLabel.Size = new System.Drawing.Size(190, 50);
+            this._unmountScriptLabel.TabIndex = 10;
+            this._unmountScriptLabel.Text = "Unmount:";
+            this._unmountScriptLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // _mountScriptLabel
+            // 
+            this._mountScriptLabel.AutoSize = true;
+            this._mountScriptLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._mountScriptLabel.Location = new System.Drawing.Point(24, 200);
+            this._mountScriptLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this._mountScriptLabel.Name = "_mountScriptLabel";
+            this._mountScriptLabel.Size = new System.Drawing.Size(190, 50);
+            this._mountScriptLabel.TabIndex = 9;
+            this._mountScriptLabel.Text = "Mount:";
+            this._mountScriptLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // _unmountTextBox
+            // 
+            this._unmountTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._unmountTextBox.Location = new System.Drawing.Point(221, 253);
+            this._unmountTextBox.Multiline = true;
+            this._unmountTextBox.Name = "_unmountTextBox";
+            this._unmountTextBox.Size = new System.Drawing.Size(452, 44);
+            this._unmountTextBox.TabIndex = 12;
+            // 
+            // _mountTextBox
+            // 
+            this._mountTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._mountTextBox.Location = new System.Drawing.Point(221, 203);
+            this._mountTextBox.Multiline = true;
+            this._mountTextBox.Name = "_mountTextBox";
+            this._mountTextBox.Size = new System.Drawing.Size(452, 44);
+            this._mountTextBox.TabIndex = 11;
+            // 
+            // _mountButton
+            // 
+            this._mountButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._mountButton.Location = new System.Drawing.Point(680, 203);
+            this._mountButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this._mountButton.MaximumSize = new System.Drawing.Size(88, 27);
+            this._mountButton.MinimumSize = new System.Drawing.Size(88, 27);
+            this._mountButton.Name = "_mountButton";
+            this._mountButton.Size = new System.Drawing.Size(88, 27);
+            this._mountButton.TabIndex = 13;
+            this._mountButton.Text = "Run";
+            this._mountButton.UseVisualStyleBackColor = true;
+            this._mountButton.Click += new System.EventHandler(this.OnRunMountScript);
+            // 
+            // _unmountButton
+            // 
+            this._unmountButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._unmountButton.Location = new System.Drawing.Point(680, 253);
+            this._unmountButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this._unmountButton.MaximumSize = new System.Drawing.Size(88, 27);
+            this._unmountButton.MinimumSize = new System.Drawing.Size(88, 27);
+            this._unmountButton.Name = "_unmountButton";
+            this._unmountButton.Size = new System.Drawing.Size(88, 27);
+            this._unmountButton.TabIndex = 14;
+            this._unmountButton.Text = "Run";
+            this._unmountButton.UseVisualStyleBackColor = true;
+            this._unmountButton.Click += new System.EventHandler(this.OnMountRun);
+            // 
+            // _sambaButton
+            // 
+            this._sambaButton.Location = new System.Drawing.Point(680, 170);
+            this._sambaButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this._sambaButton.MaximumSize = new System.Drawing.Size(88, 27);
+            this._sambaButton.MinimumSize = new System.Drawing.Size(88, 27);
+            this._sambaButton.Name = "_sambaButton";
+            this._sambaButton.Size = new System.Drawing.Size(88, 27);
+            this._sambaButton.TabIndex = 15;
+            this._sambaButton.Text = "Samba...";
+            this._sambaButton.UseVisualStyleBackColor = true;
+            // 
+            // _scriptsLabel
+            // 
+            this._scriptsLabel.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this._scriptsLabel, 2);
+            this._scriptsLabel.Dock = System.Windows.Forms.DockStyle.Right;
+            this._scriptsLabel.Location = new System.Drawing.Point(123, 167);
+            this._scriptsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this._scriptsLabel.MaximumSize = new System.Drawing.Size(600, 0);
+            this._scriptsLabel.Name = "_scriptsLabel";
+            this._scriptsLabel.Size = new System.Drawing.Size(549, 33);
+            this._scriptsLabel.TabIndex = 16;
+            this._scriptsLabel.Text = "If folder becomes accessible after mounting, specify PowerShell scripts for  moun" +
+    "ting and unmounting";
+            this._scriptsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // FolderStorageForm
             // 
             this.AcceptButton = this.acceptButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -222,7 +338,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(781, 319);
+            this.ClientSize = new System.Drawing.Size(781, 350);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = global::BUtil.Configurator.Icons.BUtilIcon;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -252,5 +368,13 @@
         private System.Windows.Forms.Label _limitUploadDescriptionLabel;
         private System.Windows.Forms.NumericUpDown _uploadLimitGbNumericUpDown;
         private System.Windows.Forms.CheckBox _enabledCheckBox;
+        private System.Windows.Forms.Label _unmountScriptLabel;
+        private System.Windows.Forms.Label _mountScriptLabel;
+        private System.Windows.Forms.TextBox _unmountTextBox;
+        private System.Windows.Forms.TextBox _mountTextBox;
+        private System.Windows.Forms.Button _mountButton;
+        private System.Windows.Forms.Button _unmountButton;
+        private System.Windows.Forms.Button _sambaButton;
+        private System.Windows.Forms.Label _scriptsLabel;
     }
 }

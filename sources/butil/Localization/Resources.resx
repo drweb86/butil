@@ -765,4 +765,13 @@ Usage scenario: You mounted some cloud storage as disk and perform backup on it.
   <data name="FolderStorage" xml:space="preserve">
     <value>Folder Storage...</value>
   </data>
+  <data name="Mount" xml:space="preserve">
+    <value>Mount:</value>
+  </data>
+  <data name="Unmount" xml:space="preserve">
+    <value>Unmount:</value>
+  </data>
+  <data name="HelpMountUnmountScript" xml:space="preserve">
+    <value>If folder becomes accessible after mounting, specify PowerShell scripts for  mounting and unmounting</value>
+  </data>
 </root>

@@ -1,5 +1,4 @@
 ﻿using BUtil.Core.Logs;
-using BUtil.Core.State;
 
 namespace BUtil.Core.Storages
 {
@@ -20,5 +19,6 @@ namespace BUtil.Core.Storages
         public abstract void Delete(string relativeFileName);
         public abstract void Download(string relativeFileName, string targetFileName);
         public abstract bool Exists(string relativeFileName);
+        public abstract void Dispose();
     }
 }

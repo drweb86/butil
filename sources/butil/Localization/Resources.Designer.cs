@@ -794,6 +794,15 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to If folder becomes accessible after mounting, specify PowerShell scripts for  mounting and unmounting.
+        /// </summary>
+        internal static string HelpMountUnmountScript {
+            get {
+                return ResourceManager.GetString("HelpMountUnmountScript", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Here you can protect the backup with password (this is also required for copying it over network).
         /// </summary>
         internal static string HereYouCanProtectTheBackupWithPasswordThisIsAlsoRequiredForCopyingItOverNetwork {
@@ -1062,6 +1071,15 @@ namespace BUtil.Configurator.Localization {
         internal static string Monday {
             get {
                 return ResourceManager.GetString("Monday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mount:.
+        /// </summary>
+        internal static string Mount {
+            get {
+                return ResourceManager.GetString("Mount", resourceCulture);
             }
         }
         
@@ -1716,6 +1734,15 @@ namespace BUtil.Configurator.Localization {
         internal static string Tuesday {
             get {
                 return ResourceManager.GetString("Tuesday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unmount:.
+        /// </summary>
+        internal static string Unmount {
+            get {
+                return ResourceManager.GetString("Unmount", resourceCulture);
             }
         }
         

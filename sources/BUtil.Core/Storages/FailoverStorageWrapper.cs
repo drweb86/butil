@@ -1,6 +1,5 @@
 ﻿using BUtil.Core.Logs;
 using BUtil.Core.Misc;
-using BUtil.Core.State;
 
 namespace BUtil.Core.Storages
 {
@@ -24,6 +23,11 @@ namespace BUtil.Core.Storages
                 () => _storage.Delete(file));
         }
 
+        public void Dispose()
+        {
+            _storage.Dispose();
+        }
+
         public void Download(string relativeFileName, string targetFileName)
         {
             ExecuteFailover.TryNTimes(
@@ -40,9 +44,7 @@ namespace BUtil.Core.Storages
 
         public string Test()
         {
-            return ExecuteFailover.TryNTimes(
-                error => _log.WriteLine(LoggingEvent.Error, $"Storage \"{_settings.Name}\": Test"),
-                () => _storage.Test());
+            return _storage.Test();
         }
 
         public IStorageUploadResult Upload(string sourceFile, string relativeFileName)
