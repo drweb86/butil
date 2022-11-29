@@ -269,14 +269,14 @@ namespace BUtil.RestorationMaster
                 Enabled= false,
             };
 
-            var service = new IncrementalBackupFileService(log, storageSettings);
+            var services = new Core.TasksTree.IncrementalModel.StorageSpecificServicesIoc(log, storageSettings);
             using var form = new ProgressForm(reportProgress =>
             {
                 foreach (var storageFile in storageFiles)
                 {
                     int percent = ((storageFiles.IndexOf(storageFile) + 1) * 100) / storageFiles.Count;
                     reportProgress(percent);
-                    service.Download(sourceItem, storageFile, destinationFolder);
+                    services.IncrementalBackupFileService.Download(sourceItem, storageFile, destinationFolder);
                 }
             });
             form.ShowDialog();

@@ -5,6 +5,7 @@ using BUtil.Core.Misc;
 using BUtil.Core.State;
 using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.Core;
+using BUtil.Core.TasksTree.IncrementalModel;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -12,24 +13,23 @@ namespace BUtil.Core.TasksTree.Storage
 {
     internal class WriteSourceFilesToStorageTask : ParallelBuTask
     {
+        private readonly StorageSpecificServicesIoc _services;
         private readonly CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask;
         private readonly IncrementalBackupModelOptions _incrementalBackupModelOptions;
         private readonly string _password;
-        private readonly IStorageSettings _storageSettings;
 
         public WriteSourceFilesToStorageTask(
-            ILog log,
+            StorageSpecificServicesIoc services,
             BackupEvents events,
             CalculateIncrementedVersionForStorageTask getIncrementedVersionTask,
             IncrementalBackupModelOptions incrementalBackupModelOptions,
-            string password,
-            IStorageSettings storageSettings)
-            : base(log, events, string.Format(Localization.Resources.WriteSourceFilesToStorage, storageSettings.Name), TaskArea.Hdd, null)
+            string password)
+            : base(services.Log, events, string.Format(Localization.Resources.WriteSourceFilesToStorage, services.StorageSettings.Name), TaskArea.Hdd, null)
         {
+            _services = services;
             _getIncrementedVersionTask = getIncrementedVersionTask;
             _incrementalBackupModelOptions = incrementalBackupModelOptions;
             _password = password;
-            _storageSettings = storageSettings;
         }
 
         public override void Execute()
@@ -48,7 +48,7 @@ namespace BUtil.Core.TasksTree.Storage
             var childTasks = new List<BuTask>();
 
             var versionState = _getIncrementedVersionTask.IncrementalBackupState.VersionStates.Last();
-            var singleBackupQuotaGb = new Quota(_storageSettings.SingleBackupQuotaGb * 1024 * 1024 * 1024);
+            var singleBackupQuotaGb = new Quota(_services.StorageSettings.SingleBackupQuotaGb * 1024 * 1024 * 1024);
             foreach (var sourceItemChange in versionState.SourceItemChanges)
             {
                 var itemsToCopy = new List<StorageFile>();
@@ -68,10 +68,9 @@ namespace BUtil.Core.TasksTree.Storage
                         return x;
                     })
                     .Select(x => new WriteSourceFileToStorageTask(
-                        Log,
+                        _services,
                         Events,
                         x,
-                        _storageSettings,
                         singleBackupQuotaGb))
                     .ToList();
                 childTasks.AddRange(copyTasks);

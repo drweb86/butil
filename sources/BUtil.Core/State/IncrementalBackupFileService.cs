@@ -1,31 +1,31 @@
-﻿using BUtil.Core.BackupModels;
-using BUtil.Core.FileSystem;
+﻿using BUtil.Core.FileSystem;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
 using BUtil.Core.Storages;
+using BUtil.Core.TasksTree.IncrementalModel;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
-using System.Threading;
 
 namespace BUtil.Core.State
 {
     public class IncrementalBackupFileService
     {
-        private readonly ILog log;
-        private readonly IStorageSettings storageSettings;
+        private readonly ILog _log;
+        private readonly IStorageSettings _storageSettings;
+        private readonly StorageSpecificServicesIoc _services;
 
-        public IncrementalBackupFileService(ILog log, IStorageSettings storageSettings)
+        public IncrementalBackupFileService(StorageSpecificServicesIoc services)
         {
-            this.log = log;
-            this.storageSettings = storageSettings;
+            _log = services.Log;
+            _storageSettings = services.StorageSettings;
+            _services = services;
         }
 
         public bool Download(SourceItem sourceItem, StorageFile storageFile, string destinationFolder)
         {
-            log.WriteLine(LoggingEvent.Debug, $"Storage \"{storageSettings.Name}\": downloading \"{storageFile.FileState.FileName}\"");
-            var storage = StorageFactory.Create(log, storageSettings);
+            _log.WriteLine(LoggingEvent.Debug, $"Storage \"{_storageSettings.Name}\": downloading \"{storageFile.FileState.FileName}\"");
 
             var sourceItemDiectory = SourceItemHelper.GetSourceItemDirectory(sourceItem);
             var sourceItemRelativeFileName = SourceItemHelper.GetSourceItemRelativeFileName(sourceItemDiectory, storageFile.FileState);
@@ -36,16 +36,16 @@ namespace BUtil.Core.State
 
             if (storageFile.StorageMethod == StorageMethodNames.Plain)
             {
-                storage.Download(storageFile.StorageRelativeFileName, destinationFileName);
+                _services.Storage.Download(storageFile.StorageRelativeFileName, destinationFileName);
             }
             else
             {
                 using var tempFolder = new TempFolder();
                 var tempArchive = Path.Combine(tempFolder.Folder, "archive.7z");
-                storage.Download(storageFile.StorageRelativeFileName, tempArchive);
-                if (!SevenZipProcessHelper.Extract(log, tempArchive, storageFile.StoragePassword, destinationDir))
+                _services.Storage.Download(storageFile.StorageRelativeFileName, tempArchive);
+                if (!SevenZipProcessHelper.Extract(_log, tempArchive, storageFile.StoragePassword, destinationDir))
                 {
-                    log.WriteLine(LoggingEvent.Error, $"Storage \"{storageSettings.Name}\": extracting \"{storageFile.FileState.FileName}\" failed");
+                    _log.WriteLine(LoggingEvent.Error, $"Storage \"{_storageSettings.Name}\": extracting \"{storageFile.FileState.FileName}\" failed");
                     return false;
                 }
             }
@@ -54,12 +54,11 @@ namespace BUtil.Core.State
 
         public bool Upload(StorageFile storageFile)
         {
-            log.WriteLine(LoggingEvent.Debug, $"Upload \"{storageSettings.Name}\": Upload \"{storageFile.FileState.FileName}\"");
-            var storage = StorageFactory.Create(log, storageSettings);
+            _log.WriteLine(LoggingEvent.Debug, $"Upload \"{_storageSettings.Name}\": Upload \"{storageFile.FileState.FileName}\"");
 
             if (storageFile.StorageMethod == StorageMethodNames.Plain)
             {
-                var uploadResult = storage.Upload(storageFile.FileState.FileName, storageFile.StorageRelativeFileName);
+                var uploadResult = _services.Storage.Upload(storageFile.FileState.FileName, storageFile.StorageRelativeFileName);
                 storageFile.StorageFileNameSize = uploadResult.StorageFileNameSize;
                 storageFile.StorageFileName= uploadResult.StorageFileName;
                 storageFile.StorageIntegrityMethod = StorageIntegrityMethod.Sha512;
@@ -77,16 +76,16 @@ namespace BUtil.Core.State
                     storageFile.StoragePassword = RandomString();
                 }
 
-                if (!SevenZipProcessHelper.CompressFile(log,
+                if (!SevenZipProcessHelper.CompressFile(_log,
                     storageFile.FileState.FileName,
                     storageFile.StoragePassword,
                     archiveFile))
                 {
-                    log.WriteLine(LoggingEvent.Error, $"Upload \"{storageSettings.Name}\": Error compressing \"{storageFile.FileState.FileName}\"");
+                    _log.WriteLine(LoggingEvent.Error, $"Upload \"{_storageSettings.Name}\": Error compressing \"{storageFile.FileState.FileName}\"");
                     return false;
                 }
 
-                var uploadResult = storage.Upload(archiveFile, storageFile.StorageRelativeFileName);
+                var uploadResult = _services.Storage.Upload(archiveFile, storageFile.StorageRelativeFileName);
                 storageFile.StorageFileNameSize = uploadResult.StorageFileNameSize;
                 storageFile.StorageFileName = uploadResult.StorageFileName;
                 storageFile.StorageIntegrityMethod = StorageIntegrityMethod.Sha512;

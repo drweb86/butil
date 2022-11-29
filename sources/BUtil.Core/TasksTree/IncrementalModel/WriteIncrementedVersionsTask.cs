@@ -2,6 +2,7 @@
 using BUtil.Core.Events;
 using BUtil.Core.Logs;
 using BUtil.Core.TasksTree.Core;
+using BUtil.Core.TasksTree.IncrementalModel;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -13,6 +14,7 @@ namespace BUtil.Core.TasksTree
         public WriteIncrementedVersionsTask(
             ILog log,
             BackupEvents events,
+            IEnumerable<StorageSpecificServicesIoc> services,
             IEnumerable<GetStateOfStorageTask> storageStateTasks,
             IEnumerable<GetStateOfSourceItemTask> getSourceItemStateTasks,
             IncrementalBackupModelOptions incrementalBackupModelOptions,
@@ -21,7 +23,10 @@ namespace BUtil.Core.TasksTree
                 TaskArea.Hdd, null)
         {
             Children = storageStateTasks
-                .Select(storageStateTask => new WriteIncrementedVersionTask(Log, Events, storageStateTask, getSourceItemStateTasks, incrementalBackupModelOptions, password))
+                .Select(storageStateTask => {
+                    var servicesIoc = services.Single(x => x.StorageSettings == storageStateTask.StorageSettings);
+                    return new WriteIncrementedVersionTask(servicesIoc, Events, storageStateTask, getSourceItemStateTasks, incrementalBackupModelOptions, password);
+                })
                 .ToList();
         }
 

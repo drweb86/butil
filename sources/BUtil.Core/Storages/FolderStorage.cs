@@ -13,23 +13,27 @@ namespace BUtil.Core.Storages
             Mount();
         }
 
+        private readonly object _uploadLock = new object();
         public override IStorageUploadResult Upload(string sourceFile, string relativeFileName)
         {
-            var destinationFile = Path.Combine(Settings.DestinationFolder, relativeFileName);
-            var destinationDirectory = Path.GetDirectoryName(destinationFile);
-
-            Log.WriteLine(LoggingEvent.Debug, $"Copying \"{sourceFile}\" to \"{destinationFile}\"");
-
-            if (!Directory.Exists(destinationDirectory))
-                Directory.CreateDirectory(destinationDirectory);
-
-            Copy(sourceFile, destinationFile);
-
-            return new IStorageUploadResult
+            lock (_uploadLock) // because we're limited by upload speed and Samba has limit of 6 parallel uploads usually
             {
-                StorageFileName = destinationFile,
-                StorageFileNameSize = new FileInfo(destinationFile).Length,
-            };
+                var destinationFile = Path.Combine(Settings.DestinationFolder, relativeFileName);
+                var destinationDirectory = Path.GetDirectoryName(destinationFile);
+
+                Log.WriteLine(LoggingEvent.Debug, $"Copying \"{sourceFile}\" to \"{destinationFile}\"");
+
+                if (!Directory.Exists(destinationDirectory))
+                    Directory.CreateDirectory(destinationDirectory);
+
+                Copy(sourceFile, destinationFile);
+
+                return new IStorageUploadResult
+                {
+                    StorageFileName = destinationFile,
+                    StorageFileNameSize = new FileInfo(destinationFile).Length,
+                };
+            }
         }
 
         private void Mount()

@@ -1,29 +1,27 @@
 ﻿using BUtil.Core.Events;
-using BUtil.Core.Logs;
 using BUtil.Core.State;
-using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.Core;
+using BUtil.Core.TasksTree.IncrementalModel;
 
 namespace BUtil.Core.TasksTree
 {
     internal class WriteSourceFileToStorageTask : BuTask
     {
-        private readonly IStorageSettings _storageSettings;
+        private readonly StorageSpecificServicesIoc _services;
         private readonly Quota _singleBackupQuotaGb;
 
         public StorageFile StorageFile { get; }
         public bool IsSkipped { get; private set; }
 
         public WriteSourceFileToStorageTask(
-            ILog log,
+            StorageSpecificServicesIoc services,
             BackupEvents events,
             StorageFile storageFile,
-            IStorageSettings storageSettings,
             Quota singleBackupQuotaGb) : 
-            base(log, events, string.Format(BUtil.Core.Localization.Resources.WriteSourceFileToStorage, storageFile.FileState.FileName, storageSettings.Name), TaskArea.File)
+            base(services.Log, events, string.Format(BUtil.Core.Localization.Resources.WriteSourceFileToStorage, storageFile.FileState.FileName, services.StorageSettings.Name), TaskArea.File)
         {
+            _services = services;
             StorageFile = storageFile;
-            this._storageSettings = storageSettings;
             _singleBackupQuotaGb = singleBackupQuotaGb;
         }
 
@@ -35,8 +33,7 @@ namespace BUtil.Core.TasksTree
             {
                 try
                 {
-                    var service = new IncrementalBackupFileService(Log, _storageSettings);
-                    IsSuccess = service.Upload(StorageFile);
+                    IsSuccess = _services.IncrementalBackupFileService.Upload(StorageFile);
                 }
                 catch
                 {

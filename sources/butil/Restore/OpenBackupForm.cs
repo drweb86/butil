@@ -9,6 +9,7 @@ using System.Linq;
 using BUtil.Core.Logs;
 using BUtil.Core.Storages;
 using System.Threading;
+using BUtil.Core.TasksTree.IncrementalModel;
 
 namespace BUtil.RestorationMaster
 {
@@ -79,8 +80,8 @@ namespace BUtil.RestorationMaster
 				Name = string.Empty,
 				DestinationFolder = backupFolder
 			};
-			var service = new IncrementalBackupStateService(log, storageSettings);
-			if (!service.TryRead(_passwordTextBox.Text, out var state))
+			var services = new StorageSpecificServicesIoc(log, storageSettings);
+			if (!services.IncrementalBackupStateService.TryRead(_passwordTextBox.Text, out var state))
 			{
 				Messages.ShowErrorBox(Resources.CannotOpenBackupFolder);
 				return;

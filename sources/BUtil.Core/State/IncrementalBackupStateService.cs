@@ -3,6 +3,7 @@ using BUtil.Core.FileSystem;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Storages;
+using BUtil.Core.TasksTree.IncrementalModel;
 using System.IO;
 using System.Text.Json;
 using System.Threading;
@@ -13,11 +14,13 @@ namespace BUtil.Core.State
     {
         private readonly ILog log;
         private readonly IStorageSettings storageSettings;
+        private readonly StorageSpecificServicesIoc _services;
 
-        public IncrementalBackupStateService(ILog log, IStorageSettings storageSettings)
+        public IncrementalBackupStateService(StorageSpecificServicesIoc services)
         {
-            this.log = log;
-            this.storageSettings = storageSettings;
+            this.log = services.Log;
+            this.storageSettings = services.StorageSettings;
+            _services = services;
         }
 
         public bool TryRead(string password, out IncrementalBackupState state)
@@ -25,22 +28,21 @@ namespace BUtil.Core.State
             log.WriteLine(LoggingEvent.Debug, $"Storage \"{storageSettings.Name}\": Reading state");
             using var tempFolder = new TempFolder();
 
-            var storage = StorageFactory.Create(log, storageSettings);
-            if (storage.Exists(IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile))
+            if (_services.Storage.Exists(IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile))
             {
                 log.WriteLine(LoggingEvent.Debug, $"Storage \"{storageSettings.Name}\": Reading non-encrypted non-compressed state");
                 var destFile = Path.Combine(tempFolder.Folder, IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile);
-                storage.Download(IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile, destFile);
+                _services.Storage.Download(IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile, destFile);
                 using var destFileStream = File.OpenRead(destFile);
                 state = JsonSerializer.Deserialize<IncrementalBackupState>(destFileStream);
                 return true;
             }
 
-            if (storage.Exists(IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile))
+            if (_services.Storage.Exists(IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile))
             {
                 log.WriteLine(LoggingEvent.Debug, $"Storage \"{storageSettings.Name}\": Reading non-encrypted compressed state");
                 var destFile = Path.Combine(tempFolder.Folder, IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile);
-                storage.Download(IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile, destFile);
+                _services.Storage.Download(IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile, destFile);
                 if (!SevenZipProcessHelper.Extract(log, destFile, null, tempFolder.Folder))
                 {
                     log.WriteLine(LoggingEvent.Error, $"Storage \"{storageSettings.Name}\": Failed to read state");
@@ -54,11 +56,11 @@ namespace BUtil.Core.State
                 return true;
             }
 
-            if (storage.Exists(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile))
+            if (_services.Storage.Exists(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile))
             {
                 log.WriteLine(LoggingEvent.Debug, $"Storage \"{storageSettings.Name}\": Reading encrypted compressed state");
                 var destFile = Path.Combine(tempFolder.Folder, IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile);
-                storage.Download(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile, destFile);
+                _services.Storage.Download(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile, destFile);
                 if (!SevenZipProcessHelper.Extract(log, destFile, password, tempFolder.Folder))
                 {
                     log.WriteLine(LoggingEvent.Error, $"Storage \"{storageSettings.Name}\": Failed to read state");
@@ -79,10 +81,9 @@ namespace BUtil.Core.State
         public StorageFile Write(IncrementalBackupModelOptions incrementalBackupModelOptions, string password, IncrementalBackupState state)
         {
             log.WriteLine(LoggingEvent.Debug, $"Storage \"{storageSettings.Name}\": Writing state");
-            var storage = StorageFactory.Create(log, storageSettings);
-            storage.Delete(IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile);
-            storage.Delete(IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile);
-            storage.Delete(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile);
+            _services.Storage.Delete(IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile);
+            _services.Storage.Delete(IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile);
+            _services.Storage.Delete(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile);
 
             using var tempFolder = new TempFolder();
             var jsonFile = Path.Combine(tempFolder.Folder, IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile);
@@ -114,7 +115,7 @@ namespace BUtil.Core.State
                 }
             }
 
-            var uploadResult = storage.Upload(fileToUpload, storageFile.StorageRelativeFileName);
+            var uploadResult = _services.Storage.Upload(fileToUpload, storageFile.StorageRelativeFileName);
             storageFile.StorageFileName = uploadResult.StorageFileName;
             storageFile.StorageFileNameSize = uploadResult.StorageFileNameSize;
             storageFile.StorageIntegrityMethodInfo = HashHelper.GetSha512(fileToUpload);

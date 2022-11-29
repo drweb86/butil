@@ -45,7 +45,7 @@ namespace BUtil.Core.TasksTree
             IsSuccess = true;
         }
 
-        private VersionState Compare(IEnumerable<SourceItemState> a, IEnumerable<SourceItemState> b)
+        private static VersionState Compare(IEnumerable<SourceItemState> a, IEnumerable<SourceItemState> b)
         {
             var matchingBtoA = b
                 .ToDictionary(x => x, x => (SourceItemState)null);
@@ -89,7 +89,7 @@ namespace BUtil.Core.TasksTree
             return versionState;
         }
 
-        private SourceItemChanges CompareSourceItemStates(SourceItemState a, SourceItemState b)
+        private static SourceItemChanges CompareSourceItemStates(SourceItemState a, SourceItemState b)
         {
             var createdFiles = b.FileStates.ToList();
             var updatedFiles = new List<FileState>();

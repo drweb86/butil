@@ -8,12 +8,13 @@ using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.States;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 
 namespace BUtil.Core.TasksTree.IncrementalModel
 {
     class IncrementalBackupTask : SequentialBuTask
     {
+        private readonly IEnumerable<StorageSpecificServicesIoc> _storageServices;
+
         public IncrementalBackupTask(ILog log, BackupEvents backupEvents, BackupTask backupTask)
             : base(log, backupEvents, Resources.IncrementalBackup, TaskArea.ProgramInRunBeforeAfterBackupChain, null)
         {
@@ -25,10 +26,16 @@ namespace BUtil.Core.TasksTree.IncrementalModel
                 .ToList()
                 .ForEach(tasks.Add);
 
-            var readSatesTask = new GetStateOfSourceItemsAndStoragesTask(Log, Events, backupTask.Items, backupTask.Storages, backupTask.FileExcludePatterns, backupTask.Password);
+            _storageServices = backupTask
+                .Storages
+                .Where(x => x.Enabled)
+                .Select(x => new StorageSpecificServicesIoc(Log, x))
+                .ToArray();
+
+            var readSatesTask = new GetStateOfSourceItemsAndStoragesTask(Log, Events, backupTask.Items, _storageServices, backupTask.FileExcludePatterns, backupTask.Password);
             tasks.Add(readSatesTask);
 
-            tasks.Add(new WriteIncrementedVersionsTask(Log, Events, readSatesTask.StorageStateTasks, readSatesTask.GetSourceItemStateTasks, backupTask.Model as IncrementalBackupModelOptions, backupTask.Password));
+            tasks.Add(new WriteIncrementedVersionsTask(Log, Events, _storageServices, readSatesTask.StorageStateTasks, readSatesTask.GetSourceItemStateTasks, backupTask.Model as IncrementalBackupModelOptions, backupTask.Password));
 
             backupTask
                 .ExecuteAfterBackup
@@ -43,6 +50,11 @@ namespace BUtil.Core.TasksTree.IncrementalModel
         {
             UpdateStatus(ProcessingStatus.InProgress);
             base.Execute();
+
+            _storageServices
+                .ToList()
+                .ForEach(x => x.Dispose());
+
             UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
         }
     }

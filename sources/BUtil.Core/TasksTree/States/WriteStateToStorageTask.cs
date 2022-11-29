@@ -4,6 +4,7 @@ using BUtil.Core.Logs;
 using BUtil.Core.State;
 using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.Core;
+using BUtil.Core.TasksTree.IncrementalModel;
 using BUtil.Core.TasksTree.Storage;
 using System.Threading;
 
@@ -13,26 +14,25 @@ namespace BUtil.Core.TasksTree.States
     {
         private readonly IncrementalBackupModelOptions _incrementalBackupModelOptions;
         private readonly string _password;
+        private readonly StorageSpecificServicesIoc _services;
         private readonly CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask;
-        private readonly IStorageSettings _storageSettings;
         private readonly WriteSourceFilesToStorageTask _writeSourceFilesToStorageTask;
 
         public StorageFile StateStorageFile { get; private set; }
 
         public WriteStateToStorageTask(
-            ILog log,
+            StorageSpecificServicesIoc services,
             BackupEvents events,
             CalculateIncrementedVersionForStorageTask getIncrementedVersionTask,
             WriteSourceFilesToStorageTask writeSourceFilesToStorageTask,
             IncrementalBackupModelOptions incrementalBackupModelOptions,
-            IStorageSettings storageSettings,
             string password)
-            : base(log, events, string.Format(Localization.Resources.WriteStateToStorage, storageSettings.Name), TaskArea.Hdd)
+            : base(services.Log, events, string.Format(Localization.Resources.WriteStateToStorage, services.StorageSettings.Name), TaskArea.Hdd)
         {
             _incrementalBackupModelOptions = incrementalBackupModelOptions;
             _password = password;
+            _services = services;
             _getIncrementedVersionTask = getIncrementedVersionTask;
-            _storageSettings = storageSettings;
             _writeSourceFilesToStorageTask = writeSourceFilesToStorageTask;
         }
 
@@ -55,9 +55,8 @@ namespace BUtil.Core.TasksTree.States
                 UpdateStatus(ProcessingStatus.FinishedWithErrors);
                 return;
             }
-
-            var service = new IncrementalBackupStateService(Log, _storageSettings);
-            StateStorageFile = service.Write(_incrementalBackupModelOptions, _password, _getIncrementedVersionTask.IncrementalBackupState);
+            
+            StateStorageFile = _services.IncrementalBackupStateService.Write(_incrementalBackupModelOptions, _password, _getIncrementedVersionTask.IncrementalBackupState);
             IsSuccess = StateStorageFile != null;
             UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
         }

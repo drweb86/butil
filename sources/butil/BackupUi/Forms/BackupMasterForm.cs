@@ -16,6 +16,7 @@ using BUtil.Core.Storages;
 using System.IO;
 using System.Linq;
 using System.Collections.Concurrent;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace BUtil.Configurator.BackupUiMaster.Forms
 {
@@ -179,8 +180,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 
             foreach (var storageSettings in enabledStorages)
             {
-                var storage = StorageFactory.Create(_log, storageSettings);
-                var error = storage.Test();
+                var error = StorageFactory.Test(_log, storageSettings);
                 if (error != null)
                 {
                     Messages.ShowErrorBox(error);

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
+using BUtil.RestorationMaster;
 
 namespace BUtil.Configurator
 {
@@ -60,7 +61,6 @@ namespace BUtil.Configurator
 			captionLabel.Text = Resources.Title;
 
 			_limitUploadLabel.Text = BUtil.Configurator.Localization.Resources.UploadLimitGB;
-			_limitUploadDescriptionLabel.Text = BUtil.Configurator.Localization.Resources.UploadLimitDescription;
 			_enabledCheckBox.Text = BUtil.Configurator.Localization.Resources.Enabled;
 			_scriptsLabel.Text = BUtil.Configurator.Localization.Resources.HelpMountUnmountScript;
 			_mountScriptLabel.Text = BUtil.Configurator.Localization.Resources.Mount;
@@ -101,29 +101,23 @@ namespace BUtil.Configurator
 
 			var storageSettings = GetStorageSettings();
 
-			try
+			string error = null;
+			using var progressForm = new ProgressForm(progress =>
 			{
-				using (var storage = StorageFactory.Create(new StubLog(), storageSettings))
-				{
-					var error = storage.Test();
+				progress(50);
+                error = StorageFactory.Test(new StubLog(), storageSettings);
+			});
 
-					if (error != null)
-					{
-						Messages.ShowErrorBox(error);
-						return;
-					}
-				}
-			}
-			catch (Exception ex)
-			{
-                Messages.ShowErrorBox(ex.Message);
+            if (error != null)
+            {
+                Messages.ShowErrorBox(error);
                 return;
             }
 
             this.DialogResult = DialogResult.OK;
 		}
 		
-		void requiredFieldsTextChanged(object sender, EventArgs e)
+		void RequiredFieldsTextChanged(object sender, EventArgs e)
 		{
 			acceptButton.Enabled = (!string.IsNullOrEmpty(destinationFolderTextBox.Text)) && (!string.IsNullOrEmpty(Caption));
 		}
@@ -136,7 +130,7 @@ namespace BUtil.Configurator
                 _nameTextBox.Text = trimmedText;
             }
 
-            requiredFieldsTextChanged(sender, e);
+            RequiredFieldsTextChanged(sender, e);
 
         }
 
@@ -159,7 +153,12 @@ namespace BUtil.Configurator
         private void OnSambaButtonClick(object sender, EventArgs e)
         {
 			_mountTextBox.Text = @"net use H: \\100.100.100.100\share /user:josh pwd1";
-            _unmountTextBox.Text = @"net use /delete H:";
+            _unmountTextBox.Text = @"net use /delete H: /y";
+        }
+
+        private void OnUploadLimitClick(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+			Messages.ShowInformationBox(Resources.UploadLimitDescription);
         }
     }
 }

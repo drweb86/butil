@@ -1,32 +1,31 @@
 ﻿using BUtil.Core.Events;
-using BUtil.Core.Logs;
 using BUtil.Core.State;
 using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.Core;
-using System.Threading;
+using BUtil.Core.TasksTree.IncrementalModel;
 
 namespace BUtil.Core.TasksTree
 {
     internal class GetStateOfStorageTask : BuTask
     {
-        private readonly string password;
+        public StorageSpecificServicesIoc _services;
+        private readonly string _password;
 
         public IStorageSettings StorageSettings { get; }
         public IncrementalBackupState StorageState { get; private set; }
 
-        public GetStateOfStorageTask(ILog log, BackupEvents events, IStorageSettings storageSettings, string password) : 
-            base(log, events, string.Format(Localization.Resources.GetStateOfStorage, storageSettings.Name), TaskArea.Hdd)
+        public GetStateOfStorageTask(StorageSpecificServicesIoc services, BackupEvents events, string password) : 
+            base(services.Log, events, string.Format(Localization.Resources.GetStateOfStorage, services.StorageSettings.Name), TaskArea.Hdd)
         {
-            StorageSettings = storageSettings;
-            this.password = password;
+            StorageSettings = services.StorageSettings;
+            _services = services;
+            this._password = password;
         }
 
         public override void Execute()
         {
             UpdateStatus(ProcessingStatus.InProgress);
-
-            var service = new IncrementalBackupStateService(Log, StorageSettings);
-            IsSuccess = service.TryRead(password, out var state);
+            IsSuccess = _services.IncrementalBackupStateService.TryRead(_password, out var state);
             StorageState = state;
             UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
         }

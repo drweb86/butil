@@ -3,6 +3,7 @@ using BUtil.Core.Logs;
 using BUtil.Core.State;
 using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.Core;
+using BUtil.Core.TasksTree.IncrementalModel;
 using BUtil.Core.TasksTree.States;
 using System.Collections.Generic;
 using System.IO;
@@ -12,19 +13,21 @@ namespace BUtil.Core.TasksTree.Storage
 {
     internal class WriteIntegrityVerificationScriptsToStorageTask : BuTask
     {
+        private readonly StorageSpecificServicesIoc _services;
         private readonly CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask;
         private readonly IStorageSettings _storageSettings;
         private readonly WriteSourceFilesToStorageTask _writeSourceFilesToStorageTask;
         private readonly WriteStateToStorageTask _writeStateToStorageTask;
 
-        public WriteIntegrityVerificationScriptsToStorageTask(ILog log, BackupEvents events,
-            CalculateIncrementedVersionForStorageTask getIncrementedVersionTask, IStorageSettings storageSettings,
+        public WriteIntegrityVerificationScriptsToStorageTask(StorageSpecificServicesIoc services, BackupEvents events,
+            CalculateIncrementedVersionForStorageTask getIncrementedVersionTask,
             WriteSourceFilesToStorageTask writeSourceFilesToStorageTask,
             States.WriteStateToStorageTask writeStateToStorageTask)
-            : base(log, events, string.Format(BUtil.Core.Localization.Resources.WriteIntegrityVerificationScriptsToStorage, storageSettings.Name), TaskArea.Hdd)
+            : base(services.Log, events, string.Format(BUtil.Core.Localization.Resources.WriteIntegrityVerificationScriptsToStorage, services.StorageSettings.Name), TaskArea.Hdd)
         {
+            _services = services;
             _getIncrementedVersionTask = getIncrementedVersionTask;
-            _storageSettings = storageSettings;
+            _storageSettings = services.StorageSettings;
             _writeSourceFilesToStorageTask = writeSourceFilesToStorageTask;
             _writeStateToStorageTask = writeStateToStorageTask;
         }
@@ -49,7 +52,7 @@ namespace BUtil.Core.TasksTree.Storage
                 return;
             }
 
-            var storage = StorageFactory.Create(Log, _storageSettings);
+            var storage = _services.Storage;
             
             var powershellFile = Path.GetRandomFileName();
             File.WriteAllText(powershellFile, GetPowershellScriptContent());

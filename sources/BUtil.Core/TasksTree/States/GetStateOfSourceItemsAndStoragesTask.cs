@@ -1,12 +1,11 @@
 ﻿using BUtil.Core.Events;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
-using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.Core;
+using BUtil.Core.TasksTree.IncrementalModel;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 
 namespace BUtil.Core.TasksTree.States
 {
@@ -19,7 +18,7 @@ namespace BUtil.Core.TasksTree.States
             ILog log,
             BackupEvents events, 
             IEnumerable<SourceItem> sourceItems,
-            IEnumerable<IStorageSettings> storageSettings,
+            IEnumerable<StorageSpecificServicesIoc> services,
             IEnumerable<string> fileExcludePatterns,
             string password)
             : base(log, events, Localization.Resources.GetStateOfSourceItemsAndStorages, TaskArea.File, null)
@@ -36,12 +35,9 @@ namespace BUtil.Core.TasksTree.States
             GetSourceItemStateTasks = setSourceItemStateTasks;
 
             var storageStateTasks = new List<GetStateOfStorageTask>();
-            foreach (var storage in storageSettings)
+            foreach (var servicesIoc in services)
             {
-                if (!storage.Enabled)
-                    continue;
-
-                var getStorageStateTask = new GetStateOfStorageTask(Log, Events, storage, password);
+                var getStorageStateTask = new GetStateOfStorageTask(servicesIoc, Events, password);
                 storageStateTasks.Add(getStorageStateTask);
                 childTasks.Add(getStorageStateTask);
             }
