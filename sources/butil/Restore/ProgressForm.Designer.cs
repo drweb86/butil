@@ -35,14 +35,10 @@
             // 
             // _progressBar
             // 
-            this._progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this._progressBar.Location = new System.Drawing.Point(14, 16);
-            this._progressBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this._progressBar.MaximumSize = new System.Drawing.Size(752, 64);
+            this._progressBar.Location = new System.Drawing.Point(12, 12);
+            this._progressBar.MaximumSize = new System.Drawing.Size(658, 48);
             this._progressBar.Name = "_progressBar";
-            this._progressBar.Size = new System.Drawing.Size(752, 64);
+            this._progressBar.Size = new System.Drawing.Size(658, 48);
             this._progressBar.TabIndex = 0;
             this._progressBar.Value = 1;
             // 
@@ -55,14 +51,15 @@
             // 
             // ProgressForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 103);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(682, 77);
             this.ControlBox = false;
             this.Controls.Add(this._progressBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "ProgressForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Restoration";

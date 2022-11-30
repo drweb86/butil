@@ -105,6 +105,9 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Configurator\Controls\MainNavigationUserControl.cs" />
+    <Compile Update="Configurator\Forms\SambaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Configurator\Logs\LogsUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

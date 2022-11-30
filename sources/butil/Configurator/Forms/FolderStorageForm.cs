@@ -107,6 +107,7 @@ namespace BUtil.Configurator
 				progress(50);
                 error = StorageFactory.Test(new StubLog(), storageSettings);
 			});
+            progressForm.ShowDialog();
 
             if (error != null)
             {
@@ -152,8 +153,12 @@ namespace BUtil.Configurator
 
         private void OnSambaButtonClick(object sender, EventArgs e)
         {
-			_mountTextBox.Text = @"net use H: \\100.100.100.100\share /user:josh pwd1";
-            _unmountTextBox.Text = @"net use /delete H: /y";
+			using var form = new SambaForm();
+			if (form.ShowDialog() == DialogResult.OK)
+			{
+                _mountTextBox.Text = form.MountScript;
+                _unmountTextBox.Text = form.UnmountScript;
+            }
         }
 
         private void OnUploadLimitClick(object sender, LinkLabelLinkClickedEventArgs e)

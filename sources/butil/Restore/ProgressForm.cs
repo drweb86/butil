@@ -13,6 +13,8 @@ namespace BUtil.RestorationMaster
 		{
 			InitializeComponent();
             this.Text = Resources.RestorationMaster;
+            Height = _progressBar.Height + _progressBar.Location.Y + 50;
+            Width = _progressBar.Width + _progressBar.Location.X * 2 + 20;
             _backgroundWorker.RunWorkerAsync();
             _action = action;
         }

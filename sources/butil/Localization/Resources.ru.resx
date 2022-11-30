@@ -714,4 +714,10 @@ bin.
   <data name="HelpMountUnmountScript" xml:space="preserve">
     <value>Если папка становится доступной после монтирования, укажите PowerShell скрипты для монтирования и размонтирования</value>
   </data>
+  <data name="Host" xml:space="preserve">
+    <value>Хост:</value>
+  </data>
+  <data name="ShareName" xml:space="preserve">
+    <value>Имя шары:</value>
+  </data>
 </root>

@@ -774,4 +774,10 @@ Usage scenario: You mounted some cloud storage as disk and perform backup on it.
   <data name="HelpMountUnmountScript" xml:space="preserve">
     <value>If folder becomes accessible after mounting, specify PowerShell scripts for  mounting and unmounting</value>
   </data>
+  <data name="Host" xml:space="preserve">
+    <value>Host:</value>
+  </data>
+  <data name="ShareName" xml:space="preserve">
+    <value>Share name:</value>
+  </data>
 </root>

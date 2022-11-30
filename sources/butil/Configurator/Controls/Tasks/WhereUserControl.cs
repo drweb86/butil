@@ -187,5 +187,22 @@ namespace BUtil.Configurator.Configurator.Controls
 
 		    storagesListView.Items.Add(listValue);
 		}
-	}
+
+        private void OnAddSamba(object sender, EventArgs e)
+        {
+			using var form = new SambaForm();
+			if (form.ShowDialog() == DialogResult.OK)
+			{
+				var item = new FolderStorageSettings { MountPowershellScript = form.MountScript, UnmountPowershellScript = form.UnmountScript, Enabled = true };
+                var configForm = new FolderStorageForm(item, GetNames());
+                if (configForm.ShowDialog() == DialogResult.OK)
+                {
+                    var updatedStorageSettings = configForm.GetStorageSettings();
+                    AddStorageToListView(updatedStorageSettings, StorageEnum.Folder);
+                }
+
+                configForm.Dispose();
+            }
+        }
+    }
 }

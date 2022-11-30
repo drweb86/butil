@@ -38,6 +38,7 @@ namespace BUtil.Configurator.Configurator.Controls
             this.storagesContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addNewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hardDriveStorageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this._sambaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modifyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,6 +48,7 @@ namespace BUtil.Configurator.Configurator.Controls
             this.addStorageButton = new System.Windows.Forms.Button();
             this.removeStorageButton = new System.Windows.Forms.Button();
             this.modifyStorageButton = new System.Windows.Forms.Button();
+            this._sambaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.storagesContextMenuStrip.SuspendLayout();
             this.addStorageContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -69,16 +71,17 @@ namespace BUtil.Configurator.Configurator.Controls
             this.removeToolStripMenuItem});
             this.storagesContextMenuStrip.Name = "StoragescontextMenuStrip";
             this.storagesContextMenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.storagesContextMenuStrip.Size = new System.Drawing.Size(181, 98);
+            this.storagesContextMenuStrip.Size = new System.Drawing.Size(122, 76);
             this.storagesContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.StoragesContextMenuStripOpening);
             // 
             // addNewToolStripMenuItem
             // 
             this.addNewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.hardDriveStorageToolStripMenuItem});
+            this.hardDriveStorageToolStripMenuItem,
+            this._sambaToolStripMenuItem});
             this.addNewToolStripMenuItem.Image = global::BUtil.Configurator.Icons.addNewToolStripMenuItem_Image;
             this.addNewToolStripMenuItem.Name = "addNewToolStripMenuItem";
-            this.addNewToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addNewToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.addNewToolStripMenuItem.Text = "Add";
             // 
             // hardDriveStorageToolStripMenuItem
@@ -89,31 +92,40 @@ namespace BUtil.Configurator.Configurator.Controls
             this.hardDriveStorageToolStripMenuItem.Text = "Hard drive storage...";
             this.hardDriveStorageToolStripMenuItem.Click += new System.EventHandler(this.HardDriveStorageToolStripMenuItem1Click);
             // 
+            // _sambaToolStripMenuItem
+            // 
+            this._sambaToolStripMenuItem.Image = global::BUtil.Configurator.Icons.Share16x16;
+            this._sambaToolStripMenuItem.Name = "_sambaToolStripMenuItem";
+            this._sambaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this._sambaToolStripMenuItem.Text = "Samba...";
+            this._sambaToolStripMenuItem.Click += new System.EventHandler(this.OnAddSamba);
+            // 
             // modifyToolStripMenuItem
             // 
             this.modifyToolStripMenuItem.Image = global::BUtil.Configurator.Icons.OtherOptions48x48;
             this.modifyToolStripMenuItem.Name = "modifyToolStripMenuItem";
-            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.modifyToolStripMenuItem.Text = "Modify...";
             this.modifyToolStripMenuItem.Click += new System.EventHandler(this.ModifyStorageButtonClick);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(118, 6);
             // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Image = global::BUtil.Configurator.Icons.removeFromListToolStripMenuItem_Image;
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.removeToolStripMenuItem.Text = "Remove";
             this.removeToolStripMenuItem.Click += new System.EventHandler(this.RemoveStorageButtonClick);
             // 
             // addStorageContextMenuStrip
             // 
             this.addStorageContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.hardDriveStorageToolStripMenuItem1});
+            this.hardDriveStorageToolStripMenuItem1,
+            this._sambaToolStripMenuItem2});
             this.addStorageContextMenuStrip.Name = "addStorageContextMenuStrip";
             this.addStorageContextMenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.addStorageContextMenuStrip.Size = new System.Drawing.Size(181, 70);
@@ -194,6 +206,14 @@ namespace BUtil.Configurator.Configurator.Controls
             this.modifyStorageButton.UseVisualStyleBackColor = true;
             this.modifyStorageButton.Click += new System.EventHandler(this.ModifyStorageButtonClick);
             // 
+            // _sambaToolStripMenuItem2
+            // 
+            this._sambaToolStripMenuItem2.Image = global::BUtil.Configurator.Icons.Share16x16;
+            this._sambaToolStripMenuItem2.Name = "_sambaToolStripMenuItem2";
+            this._sambaToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this._sambaToolStripMenuItem2.Text = "Samba...";
+            this._sambaToolStripMenuItem2.Click += new System.EventHandler(this.OnAddSamba);
+            // 
             // WhereUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -224,5 +244,7 @@ namespace BUtil.Configurator.Configurator.Controls
 		private System.Windows.Forms.ContextMenuStrip storagesContextMenuStrip;
 		private System.Windows.Forms.Button modifyStorageButton;
 		private System.Windows.Forms.Button removeStorageButton;
-	}
+        private System.Windows.Forms.ToolStripMenuItem _sambaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem _sambaToolStripMenuItem2;
+    }
 }
