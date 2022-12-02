@@ -32,8 +32,8 @@ namespace BUtil.Configurator.Configurator.Controls
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WhereUserControl));
             System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Folder", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("FTP", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("Network storages", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Samba", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("FTP", System.Windows.Forms.HorizontalAlignment.Left);
             this.storageTypesImageList = new System.Windows.Forms.ImageList(this.components);
             this.storagesContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addNewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,11 +44,11 @@ namespace BUtil.Configurator.Configurator.Controls
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addStorageContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.hardDriveStorageToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this._sambaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.storagesListView = new System.Windows.Forms.ListView();
             this.addStorageButton = new System.Windows.Forms.Button();
             this.removeStorageButton = new System.Windows.Forms.Button();
             this.modifyStorageButton = new System.Windows.Forms.Button();
-            this._sambaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.storagesContextMenuStrip.SuspendLayout();
             this.addStorageContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -59,8 +59,8 @@ namespace BUtil.Configurator.Configurator.Controls
             this.storageTypesImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("storageTypesImageList.ImageStream")));
             this.storageTypesImageList.TransparentColor = System.Drawing.Color.White;
             this.storageTypesImageList.Images.SetKeyName(0, "Hdd48x48.png");
-            this.storageTypesImageList.Images.SetKeyName(1, "Ftp16x16.png");
-            this.storageTypesImageList.Images.SetKeyName(2, "Share48x48.png");
+            this.storageTypesImageList.Images.SetKeyName(1, "Share48x48.png");
+            this.storageTypesImageList.Images.SetKeyName(2, "Ftp16x16.png");
             // 
             // storagesContextMenuStrip
             // 
@@ -128,7 +128,7 @@ namespace BUtil.Configurator.Configurator.Controls
             this._sambaToolStripMenuItem2});
             this.addStorageContextMenuStrip.Name = "addStorageContextMenuStrip";
             this.addStorageContextMenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.addStorageContextMenuStrip.Size = new System.Drawing.Size(181, 70);
+            this.addStorageContextMenuStrip.Size = new System.Drawing.Size(181, 48);
             // 
             // hardDriveStorageToolStripMenuItem1
             // 
@@ -138,6 +138,14 @@ namespace BUtil.Configurator.Configurator.Controls
             this.hardDriveStorageToolStripMenuItem1.Text = "Hard drive storage...";
             this.hardDriveStorageToolStripMenuItem1.Click += new System.EventHandler(this.HardDriveStorageToolStripMenuItem1Click);
             // 
+            // _sambaToolStripMenuItem2
+            // 
+            this._sambaToolStripMenuItem2.Image = global::BUtil.Configurator.Icons.Share16x16;
+            this._sambaToolStripMenuItem2.Name = "_sambaToolStripMenuItem2";
+            this._sambaToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this._sambaToolStripMenuItem2.Text = "Samba...";
+            this._sambaToolStripMenuItem2.Click += new System.EventHandler(this.OnAddSamba);
+            // 
             // storagesListView
             // 
             this.storagesListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -146,10 +154,10 @@ namespace BUtil.Configurator.Configurator.Controls
             this.storagesListView.ContextMenuStrip = this.storagesContextMenuStrip;
             listViewGroup1.Header = "Folder";
             listViewGroup1.Name = "HDDCopylistViewGroup";
-            listViewGroup2.Header = "FTP";
-            listViewGroup2.Name = "FTPlistViewGroup";
-            listViewGroup3.Header = "Network storages";
-            listViewGroup3.Name = "networkStoragesListViewGroup";
+            listViewGroup2.Header = "Samba";
+            listViewGroup2.Name = "_sambaStoragesListViewGroup";
+            listViewGroup3.Header = "FTP";
+            listViewGroup3.Name = "FTPlistViewGroup";
             this.storagesListView.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
             listViewGroup1,
             listViewGroup2,
@@ -205,14 +213,6 @@ namespace BUtil.Configurator.Configurator.Controls
             this.modifyStorageButton.TabIndex = 2;
             this.modifyStorageButton.UseVisualStyleBackColor = true;
             this.modifyStorageButton.Click += new System.EventHandler(this.ModifyStorageButtonClick);
-            // 
-            // _sambaToolStripMenuItem2
-            // 
-            this._sambaToolStripMenuItem2.Image = global::BUtil.Configurator.Icons.Share16x16;
-            this._sambaToolStripMenuItem2.Name = "_sambaToolStripMenuItem2";
-            this._sambaToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
-            this._sambaToolStripMenuItem2.Text = "Samba...";
-            this._sambaToolStripMenuItem2.Click += new System.EventHandler(this.OnAddSamba);
             // 
             // WhereUserControl
             // 

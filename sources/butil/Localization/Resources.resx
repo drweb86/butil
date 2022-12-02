@@ -274,7 +274,7 @@ Localization created by:
     <value>OK</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>Title</value>
+    <value>Name</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Options</value>
@@ -367,9 +367,6 @@ Backup should be password protected. If NOT, program will SKIP its copying to th
   </data>
   <data name="Ftp" xml:space="preserve">
     <value>FTP</value>
-  </data>
-  <data name="NetworkStorages" xml:space="preserve">
-    <value>Network storages</value>
   </data>
   <data name="IfYouChooseSomethingOtherThanDoNothingNprogramWillConfigureOsToShowYouReportNonNextYourLogonToTheSystemIfAnyErrorsNorWarningsWillBeRegisteredDuringTheBackup" xml:space="preserve">
     <value>If you choose something other than 'do nothing' 
@@ -779,5 +776,8 @@ Usage scenario: You mounted some cloud storage as disk and perform backup on it.
   </data>
   <data name="ShareName" xml:space="preserve">
     <value>Share name:</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Url:</value>
   </data>
 </root>

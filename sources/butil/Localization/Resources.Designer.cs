@@ -1138,15 +1138,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Network storages.
-        /// </summary>
-        internal static string NetworkStorages {
-            get {
-                return ResourceManager.GetString("NetworkStorages", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Network storages are not allowed to be pointed here!.
         /// </summary>
         internal static string NetworkStoragesAreNotAllowedToBePointedHere {
@@ -1729,7 +1720,7 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Title.
+        ///   Looks up a localized string similar to Name.
         /// </summary>
         internal static string Title {
             get {
@@ -1790,6 +1781,15 @@ namespace BUtil.Configurator.Localization {
         internal static string UploadLimitGB {
             get {
                 return ResourceManager.GetString("UploadLimitGB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Url:.
+        /// </summary>
+        internal static string Url {
+            get {
+                return ResourceManager.GetString("Url", resourceCulture);
             }
         }
         

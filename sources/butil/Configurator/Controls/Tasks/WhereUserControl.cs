@@ -24,9 +24,8 @@ namespace BUtil.Configurator.Configurator.Controls
 		{
 			hardDriveStorageToolStripMenuItem1.Text = Resources.HardDriveStorage;
 			storagesListView.Groups[0].Header = Resources.Folder;
-			storagesListView.Groups[1].Header = Resources.Ftp;
-			storagesListView.Groups[2].Header = Resources.NetworkStorages;
-			SetHintForControl(addStorageButton, Resources.Add);
+            storagesListView.Groups[2].Header = Resources.Ftp;
+            SetHintForControl(addStorageButton, Resources.Add);
 			removeToolStripMenuItem.Text = Resources.RemoveFromList;
 			modifyToolStripMenuItem.Text = Resources.Modify;
 			hardDriveStorageToolStripMenuItem.Text = Resources.HardDriveStorage;
@@ -45,6 +44,8 @@ namespace BUtil.Configurator.Configurator.Controls
 
                 if (storageSettings is FolderStorageSettings)
                     kind = StorageEnum.Folder;
+				else if (storageSettings is SambaStorageSettings)
+                    kind = StorageEnum.Samba;
                 else
                     throw new ArgumentOutOfRangeException(nameof(storageSettings));
 
@@ -124,12 +125,18 @@ namespace BUtil.Configurator.Configurator.Controls
 			var storageSettings = (IStorageSettings)storageToChangeListViewItem.Tag;
             IStorageConfigurationForm configForm;
 
-			if (storageSettings is FolderStorageSettings)
+			var forbiddenNames = GetNames()
+							.Except(new List<string> { storageSettings.Name })
+							.ToList();
+
+            if (storageSettings is FolderStorageSettings)
                 configForm = new FolderStorageForm(
                         storageSettings as FolderStorageSettings,
-                        GetNames()
-                            .Except(new List<string> { storageSettings.Name })
-                            .ToList());
+                        forbiddenNames);
+			else if (storageSettings is SambaStorageSettings)
+                configForm = new SambaStorageForm(
+                        storageSettings as SambaStorageSettings,
+                        forbiddenNames);
             else
                 throw new ArgumentOutOfRangeException(nameof(storageSettings));
 
@@ -161,7 +168,10 @@ namespace BUtil.Configurator.Configurator.Controls
 				case StorageEnum.Folder: 
 					configForm = new FolderStorageForm(null, GetNames());
 					break;
-				default: 
+                case StorageEnum.Samba:
+                    configForm = new SambaStorageForm(null, GetNames());
+                    break;
+                default: 
 					throw new NotImplementedException(kind.ToString());
 			}
 
@@ -188,21 +198,9 @@ namespace BUtil.Configurator.Configurator.Controls
 		    storagesListView.Items.Add(listValue);
 		}
 
-        private void OnAddSamba(object sender, EventArgs e)
-        {
-			using var form = new SambaForm();
-			if (form.ShowDialog() == DialogResult.OK)
-			{
-				var item = new FolderStorageSettings { MountPowershellScript = form.MountScript, UnmountPowershellScript = form.UnmountScript, Enabled = true };
-                var configForm = new FolderStorageForm(item, GetNames());
-                if (configForm.ShowDialog() == DialogResult.OK)
-                {
-                    var updatedStorageSettings = configForm.GetStorageSettings();
-                    AddStorageToListView(updatedStorageSettings, StorageEnum.Folder);
-                }
-
-                configForm.Dispose();
-            }
-        }
+		private void OnAddSamba(object sender, EventArgs e)
+		{
+            AddStorage(StorageEnum.Samba);
+		}
     }
 }

@@ -298,9 +298,6 @@ Backup should be password protected. If NOT, program will SKIP its copying to th
   <data name="Ftp" xml:space="preserve">
     <value>ФТП</value>
   </data>
-  <data name="NetworkStorages" xml:space="preserve">
-    <value>Network storages</value>
-  </data>
   <data name="IfYouChooseSomethingOtherThanDoNothingNprogramWillConfigureOsToShowYouReportNonNextYourLogonToTheSystemIfAnyErrorsNorWarningsWillBeRegisteredDuringTheBackup" xml:space="preserve">
     <value>If you choose something other than 'do nothing' 
 program will configure OS to show you report
@@ -705,5 +702,8 @@ Please correct list of source items.</value>
   </data>
   <data name="StateOfSourceItemsAtSelectedVersion" xml:space="preserve">
     <value>State of source items at selected version:</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Url:</value>
   </data>
 </root>

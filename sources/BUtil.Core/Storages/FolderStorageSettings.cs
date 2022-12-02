@@ -1,4 +1,6 @@
-﻿namespace BUtil.Core.Storages
+﻿using System;
+
+namespace BUtil.Core.Storages
 {
     public class FolderStorageSettings: IStorageSettings
     {

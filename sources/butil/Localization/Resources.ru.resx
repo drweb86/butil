@@ -214,7 +214,7 @@
     <value>OK</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>Заголовок</value>
+    <value>Имя</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Настройки</value>
@@ -307,9 +307,6 @@
   </data>
   <data name="Ftp" xml:space="preserve">
     <value>ФТП</value>
-  </data>
-  <data name="NetworkStorages" xml:space="preserve">
-    <value>Сеть</value>
   </data>
   <data name="IfYouChooseSomethingOtherThanDoNothingNprogramWillConfigureOsToShowYouReportNonNextYourLogonToTheSystemIfAnyErrorsNorWarningsWillBeRegisteredDuringTheBackup" xml:space="preserve">
     <value>Если вы выберите что-либо кроме "ничего не делала", программа 
@@ -719,5 +716,8 @@ bin.
   </data>
   <data name="ShareName" xml:space="preserve">
     <value>Имя шары:</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Урл:</value>
   </data>
 </root>

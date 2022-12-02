@@ -3,5 +3,6 @@
     internal enum StorageEnum
     {
         Folder = 0,
+        Samba
     }
 }
