@@ -1,3 +1,9 @@
+# 5.6RC1 (3 December 2022)
+
+## New Features
+- Ability to execute mount and unmount commands for Folder Storage (adds support of CLI tools to mount SFTP as drive via third-party tools)
+- Samba
+
 # 5.5c (23 November 2022)
 
 ## New Features

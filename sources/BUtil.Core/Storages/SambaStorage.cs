@@ -13,12 +13,12 @@ namespace BUtil.Core.Storages
             Mount();
         }
 
-        private readonly object _uploadLock = new object();
+        private readonly object _uploadLock = new();
         public override IStorageUploadResult Upload(string sourceFile, string relativeFileName)
         {
             lock (_uploadLock) // because we're limited by upload speed and Samba has limit of 6 parallel uploads usually
             {
-                var destinationFile = Path.Combine(Settings.DestinationFolder, relativeFileName);
+                var destinationFile = Path.Combine(Settings.Url, relativeFileName);
                 var destinationDirectory = Path.GetDirectoryName(destinationFile);
 
                 Log.WriteLine(LoggingEvent.Debug, $"Copying \"{sourceFile}\" to \"{destinationFile}\"");
@@ -39,41 +39,42 @@ namespace BUtil.Core.Storages
         private void Mount()
         {
             Log.WriteLine(LoggingEvent.Debug, $"Mount \"{Settings.Name}\"");
-            if (!string.IsNullOrWhiteSpace(this.Settings.MountPowershellScript))
-            {
-                if (!PowershellProcessHelper.Execute(Log, this.Settings.MountPowershellScript))
-                    throw new InvalidOperationException($"Cannot mount \"{Settings.Name}\"");
-            }
+
+            var command = string.IsNullOrWhiteSpace(Settings.User)
+                ? @$"net use {Settings.Url}"
+                : @$"net use {Settings.Url} /user:{Settings.User} {Settings.Password}";
+
+            if (!CmdProcessHelper.Execute(Log, command))
+                throw new InvalidOperationException($"Cannot mount \"{Settings.Name}\"");
         }
 
         private void Unmount()
         {
             Log.WriteLine(LoggingEvent.Debug, $"Unmount \"{Settings.Name}\"");
-            if (!string.IsNullOrWhiteSpace(this.Settings.UnmountPowershellScript))
-            {
-                if (!PowershellProcessHelper.Execute(Log, this.Settings.UnmountPowershellScript))
-                    throw new InvalidOperationException($"Cannot unmount \"{Settings.Name}\"");
-            }
+
+            var command = @$"net use {Settings.Url} /delete /y";
+            if (!CmdProcessHelper.Execute(Log, command))
+                throw new InvalidOperationException($"Cannot unmount \"{Settings.Name}\"");
         }
 
         public override string Test()
         {
-            if (!Directory.Exists(Settings.DestinationFolder))
-                return string.Format(BUtil.Core.Localization.Resources.FolderStorageFailure, Settings.Name, Settings.DestinationFolder);
+            if (!Directory.Exists(Settings.Url))
+                return string.Format(BUtil.Core.Localization.Resources.FolderStorageFailure, Settings.Name, Settings.Url);
 
             return null;
         }
 
         public override bool Exists(string relativeFileName)
         {
-            var fullPathName = Path.Combine(Settings.DestinationFolder, relativeFileName);
+            var fullPathName = Path.Combine(Settings.Url, relativeFileName);
 
             return File.Exists(fullPathName);
         }
 
         public override void Delete(string relativeFileName)
         {
-            var fullPathName = Path.Combine(Settings.DestinationFolder, relativeFileName);
+            var fullPathName = Path.Combine(Settings.Url, relativeFileName);
 
             if (File.Exists(fullPathName))
                 File.Delete(fullPathName);
@@ -81,7 +82,7 @@ namespace BUtil.Core.Storages
 
         public override void Download(string relativeFileName, string targetFileName)
         {
-            var file = Path.Combine(Settings.DestinationFolder, relativeFileName);
+            var file = Path.Combine(Settings.Url, relativeFileName);
             Copy(file, targetFileName);
         }
 

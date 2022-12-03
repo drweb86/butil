@@ -884,15 +884,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Host:.
-        /// </summary>
-        internal static string Host {
-            get {
-                return ResourceManager.GetString("Host", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Hour:.
         /// </summary>
         internal static string Hour {
@@ -1546,15 +1537,6 @@ namespace BUtil.Configurator.Localization {
         internal static string Settings {
             get {
                 return ResourceManager.GetString("Settings", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Share name:.
-        /// </summary>
-        internal static string ShareName {
-            get {
-                return ResourceManager.GetString("ShareName", resourceCulture);
             }
         }
         

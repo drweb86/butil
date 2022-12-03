@@ -12,9 +12,6 @@ Runs only restoration Master.
 ## JustBackupMaster
 Runs only Backup Master.
 
-## "some file.BUtil"
-Shows restoration Master with this file opened.
-
 ## JustJournals
 Shows the Logs Viewer.
 

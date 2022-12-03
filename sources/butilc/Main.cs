@@ -4,6 +4,7 @@ using BUtil.Core.Misc;
 using System;
 
 NativeMethods.PreventSleep();
+Console.OutputEncoding = System.Text.Encoding.UTF8;
 Console.WriteLine(CopyrightInfo.Copyright);
 
 try

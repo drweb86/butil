@@ -62,13 +62,7 @@
     <value>Usage variants:
 
 butilc.exe "Task=My task title"
-   Running without parameters. Outputs information to console
-
-butilc.exe "Task=My task 1 title" "Task=My task 2 title" "Task=My task 3 title"
-   Runs several tasks one by one
-
-butilc.exe "Task=My task title" UseFileLog
-   Outputs information in file log
+   Runs specified task.
 
 butilc.exe "Task=My task title" Shutdown
 butilc.exe "Task=My task title" LogOff 

@@ -112,13 +112,7 @@ namespace BUtil.ConsoleBackup.Localization {
         ///   Looks up a localized string similar to Usage variants:
         ///
         ///butilc.exe &quot;Task=My task title&quot;
-        ///   Running without parameters. Outputs information to console
-        ///
-        ///butilc.exe &quot;Task=My task 1 title&quot; &quot;Task=My task 2 title&quot; &quot;Task=My task 3 title&quot;
-        ///   Runs several tasks one by one
-        ///
-        ///butilc.exe &quot;Task=My task title&quot; UseFileLog
-        ///   Outputs information in file log
+        ///   Runs specified task.
         ///
         ///butilc.exe &quot;Task=My task title&quot; Shutdown
         ///butilc.exe &quot;Task=My task title&quot; LogOff 

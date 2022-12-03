@@ -75,13 +75,6 @@ namespace BUtil.Configurator
                 return;
             }
 
-            if (_nameTextBox.Text.StartsWith(@"\\", StringComparison.InvariantCulture))
-			{
-				//"Network storages are not allowed to be pointed here!"
-				Messages.ShowErrorBox(Resources.NetworkStoragesAreNotAllowedToBePointedHere);
-				return;
-			}
-
             if (_forbiddenNames.Any(x => x == _nameTextBox.Text))
             {
                 Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.ThisNameIsAlreadyTakenTryAnotherOne);
@@ -90,18 +83,21 @@ namespace BUtil.Configurator
 
 			var storageSettings = GetStorageSettings();
 
-			string error = null;
-			using var progressForm = new ProgressForm(progress =>
-			{
-				progress(50);
-                error = StorageFactory.Test(new StubLog(), storageSettings);
-			});
-            progressForm.ShowDialog();
-
-            if (error != null)
+            if (storageSettings.Enabled)
             {
-                Messages.ShowErrorBox(error);
-                return;
+                string error = null;
+                using var progressForm = new ProgressForm(progress =>
+                {
+                    progress(50);
+                    error = StorageFactory.Test(new StubLog(), storageSettings);
+                });
+                progressForm.ShowDialog();
+
+                if (error != null)
+                {
+                    Messages.ShowErrorBox(error);
+                    return;
+                }
             }
 
             this.DialogResult = DialogResult.OK;

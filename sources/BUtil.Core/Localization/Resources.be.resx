@@ -180,24 +180,6 @@
   <data name="VisitProjectHomepage" xml:space="preserve">
     <value>Хатняя старонка</value>
   </data>
-  <data name="WithoutCompression" xml:space="preserve">
-    <value>Без кампрэссii</value>
-  </data>
-  <data name="FastestCompression" xml:space="preserve">
-    <value>Хутчэйшая кампрэссия</value>
-  </data>
-  <data name="FastCompression" xml:space="preserve">
-    <value>Хуткая кампрэссия</value>
-  </data>
-  <data name="NormalCompression" xml:space="preserve">
-    <value>Сярэдняя кампрэссия</value>
-  </data>
-  <data name="MaximumCompression" xml:space="preserve">
-    <value>Максiмальная кампрэссия</value>
-  </data>
-  <data name="UltraCompression" xml:space="preserve">
-    <value>Ультра кампрэссия</value>
-  </data>
   <data name="Use" xml:space="preserve">
     <value>Карыстацца</value>
   </data>

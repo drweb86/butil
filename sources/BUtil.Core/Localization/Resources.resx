@@ -181,24 +181,6 @@ It was reseted
   <data name="VisitProjectHomepage" xml:space="preserve">
     <value>Visit project homepage</value>
   </data>
-  <data name="WithoutCompression" xml:space="preserve">
-    <value>Without Compression</value>
-  </data>
-  <data name="FastestCompression" xml:space="preserve">
-    <value>Fastest Compression</value>
-  </data>
-  <data name="FastCompression" xml:space="preserve">
-    <value>Fast Compression</value>
-  </data>
-  <data name="NormalCompression" xml:space="preserve">
-    <value>Normal Compression</value>
-  </data>
-  <data name="MaximumCompression" xml:space="preserve">
-    <value>Maximum Compression</value>
-  </data>
-  <data name="UltraCompression" xml:space="preserve">
-    <value>Ultra Compression</value>
-  </data>
   <data name="Use" xml:space="preserve">
     <value>Use</value>
   </data>

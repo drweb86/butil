@@ -220,24 +220,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fast Compression.
-        /// </summary>
-        public static string FastCompression {
-            get {
-                return ResourceManager.GetString("FastCompression", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Fastest Compression.
-        /// </summary>
-        public static string FastestCompression {
-            get {
-                return ResourceManager.GetString("FastestCompression", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Finished Succesfully.
         /// </summary>
         public static string FinishedSuccesfully {
@@ -384,29 +366,11 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Maximum Compression.
-        /// </summary>
-        public static string MaximumCompression {
-            get {
-                return ResourceManager.GetString("MaximumCompression", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Normal.
         /// </summary>
         public static string Normal {
             get {
                 return ResourceManager.GetString("Normal", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Normal Compression.
-        /// </summary>
-        public static string NormalCompression {
-            get {
-                return ResourceManager.GetString("NormalCompression", resourceCulture);
             }
         }
         
@@ -496,15 +460,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ultra Compression.
-        /// </summary>
-        public static string UltraCompression {
-            get {
-                return ResourceManager.GetString("UltraCompression", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Use.
         /// </summary>
         public static string Use {
@@ -528,15 +483,6 @@ namespace BUtil.Core.Localization {
         public static string Waiting {
             get {
                 return ResourceManager.GetString("Waiting", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Without Compression.
-        /// </summary>
-        public static string WithoutCompression {
-            get {
-                return ResourceManager.GetString("WithoutCompression", resourceCulture);
             }
         }
         

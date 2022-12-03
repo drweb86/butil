@@ -1,11 +1,4 @@
-5.5.0.0
+5.6.0.0
 
 New Features
-- Workaround of sporadic disconnects/reconnects of external USB in Windows 11
-- Significant performance increase in file copy and SHA512 calculating.
-- Skipping non-accessible folders
-- Retry in case storage failures, 5 attempts with 30 seconds delay between them.
-- Speedup console log and UI backup responsibilities.
-
-Changes
-- FTP & Samba were removed (use proxy file system tools like cryptomator, etc.)
+- Samba
