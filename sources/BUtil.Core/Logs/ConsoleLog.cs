@@ -23,7 +23,6 @@ namespace BUtil.Core.Logs
         }
 
         public override void Open() { }
-        public ConsoleLog() : base(LogMode.Console, true) { ; }
         public override void Close() => FastStdConsole.Flush();
 	}
 }

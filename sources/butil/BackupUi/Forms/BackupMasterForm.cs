@@ -27,7 +27,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
         private readonly BackupTask _backupTask;
 		BackupProgressUserControl _backupProgressUserControl;
 		private readonly ProgramOptions _programOptions;
-        private readonly ConcurrentQueue<Action> _listViewUpdates = new ConcurrentQueue<Action>();
+        private readonly ConcurrentQueue<Action> _listViewUpdates = new();
 
         public BackupMasterForm(ProgramOptions programOptions, BackupTask backupTask)
 		{
@@ -114,7 +114,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 
 		void LoadForm(object sender, EventArgs e)
         {
-            _log = new FileLog(_programOptions.LogsFolder, false);
+            _log = new FileLog(_programOptions.LogsFolder);
             _log.Open();
             _strategy = BackupModelStrategyFactory.Create(_log, _backupTask);
             _backupEvents = new BackupEvents();

@@ -1,7 +1,6 @@
 ﻿using BUtil.Core.Events;
-using BUtil.Core.Logs;
+using BUtil.Core.FileSystem;
 using BUtil.Core.State;
-using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
 using BUtil.Core.TasksTree.States;
@@ -15,7 +14,6 @@ namespace BUtil.Core.TasksTree.Storage
     {
         private readonly StorageSpecificServicesIoc _services;
         private readonly CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask;
-        private readonly IStorageSettings _storageSettings;
         private readonly WriteSourceFilesToStorageTask _writeSourceFilesToStorageTask;
         private readonly WriteStateToStorageTask _writeStateToStorageTask;
 
@@ -27,7 +25,6 @@ namespace BUtil.Core.TasksTree.Storage
         {
             _services = services;
             _getIncrementedVersionTask = getIncrementedVersionTask;
-            _storageSettings = services.StorageSettings;
             _writeSourceFilesToStorageTask = writeSourceFilesToStorageTask;
             _writeStateToStorageTask = writeStateToStorageTask;
         }
@@ -53,11 +50,14 @@ namespace BUtil.Core.TasksTree.Storage
             }
 
             var storage = _services.Storage;
-            
-            var powershellFile = Path.GetRandomFileName();
-            File.WriteAllText(powershellFile, GetPowershellScriptContent());
-            storage.Upload(powershellFile, BUtil.Core.Localization.Resources.IntegrityVerificationScriptPs1);
-            File.Delete(powershellFile);
+
+            using (var tempFolder = new TempFolder())
+            {
+                var powershellFile = Path.Combine(tempFolder.Folder, BUtil.Core.Localization.Resources.IntegrityVerificationScriptPs1);
+                File.WriteAllText(powershellFile, GetPowershellScriptContent());
+                storage.Upload(powershellFile, BUtil.Core.Localization.Resources.IntegrityVerificationScriptPs1);
+                File.Delete(powershellFile);
+            }
 
             // TBD: 
             //var tempFile = Path.GetRandomFileName();

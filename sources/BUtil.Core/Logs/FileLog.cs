@@ -21,7 +21,7 @@ namespace BUtil.Core.Logs
             Close();
 		}
 
-        public FileLog(string logsFolder, bool consoleApp) : base(LogMode.File, consoleApp)
+        public FileLog(string logsFolder)
 		{
             const string _TIME_FORMATSTRING = "dd MMMM (dddd) HH.mm.ss";
 

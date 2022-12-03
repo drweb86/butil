@@ -96,6 +96,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SelectTaskToRunForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Wellcome to Backup Master!!!";
             this.ResumeLayout(false);
             this.PerformLayout();

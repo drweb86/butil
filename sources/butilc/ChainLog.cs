@@ -14,7 +14,7 @@ namespace BUtil.ConsoleBackup
         {
             var logs = new List<LogBase>();
             _logs = logs;
-            logs.Add(new FileLog(programOptions.LogsFolder, true));
+            logs.Add(new FileLog(programOptions.LogsFolder));
             logs.Add(new ConsoleLog());
         }
 
