@@ -27,7 +27,6 @@ namespace BUtil.Configurator.Configurator.Forms
 		{
             this.components = new System.ComponentModel.Container();
             this.MainmenuStrip = new System.Windows.Forms.MenuStrip();
-            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restorationToolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,7 +45,7 @@ namespace BUtil.Configurator.Configurator.Forms
             // MainmenuStrip
             // 
             this.MainmenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolsToolStripMenuItem,
+            this.restorationToolToolStripMenuItem,
             this._helpToolStripMenuItem});
             this.MainmenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MainmenuStrip.Name = "MainmenuStrip";
@@ -56,22 +55,14 @@ namespace BUtil.Configurator.Configurator.Forms
             this.MainmenuStrip.TabIndex = 3;
             this.MainmenuStrip.Text = "MainmenuStrip";
             // 
-            // toolsToolStripMenuItem
-            // 
-            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.restorationToolToolStripMenuItem});
-            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
-            this.toolsToolStripMenuItem.Text = "Tasks";
-            // 
             // restorationToolToolStripMenuItem
             // 
             this.restorationToolToolStripMenuItem.Image = global::BUtil.Configurator.Icons.Refresh48x48;
             this.restorationToolToolStripMenuItem.Name = "restorationToolToolStripMenuItem";
-            this.restorationToolToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.restorationToolToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.restorationToolToolStripMenuItem.Text = "Restore Data...";
             this.restorationToolToolStripMenuItem.Click += new System.EventHandler(this.RestorationToolToolStripMenuItemClick);
-           // 
+            // 
             // _helpToolStripMenuItem
             // 
             this._helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -199,7 +190,6 @@ namespace BUtil.Configurator.Configurator.Forms
 		private System.Windows.Forms.Panel nestingControlsPanel;
 		private BUtil.Configurator.Controls.OptionsHeader optionsHeader;
         private MainNavigationUserControl choosePanelUserControl;
-		private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
 		private System.Windows.Forms.MenuStrip MainmenuStrip;
         private System.Windows.Forms.ToolTip toolTip;
 		private System.Windows.Forms.ToolStripMenuItem restorationToolToolStripMenuItem;

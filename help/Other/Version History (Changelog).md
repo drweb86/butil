@@ -4,6 +4,7 @@
 ! Subsequent encrypted or compressed backups were failing because sate could not be read.
 ! .Net Core 7 has issues with encodings in console. Transcoding of packer messages was dropped because it causes random crashes. It will mean - no longer packer in non-english messages can contain issues with encodings with non-english file names.
 ! Recovery scripts were saved to wrong folder.
+- Samba share with spaces, user, password support was fixed
 
 # 5.6RC1 (3 December 2022)
 

@@ -1,7 +1,6 @@
 using System;
 using System.Windows.Forms;
 using BUtil.Configurator.Configurator.Controls;
-using BUtil.Configurator.Controls;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
 using System.Collections.Generic;
@@ -77,7 +76,6 @@ namespace BUtil.Configurator.Configurator.Forms
         	}
             choosePanelUserControl.ApplyLocalization();
             
-            toolsToolStripMenuItem.Text = Resources.Tasks;
             Text = Resources.Configurator;
             restorationToolToolStripMenuItem.Text = Resources.RestoreData;
             _helpToolStripMenuItem.Text= Resources.Help;

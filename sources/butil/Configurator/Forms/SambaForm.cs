@@ -24,8 +24,8 @@ namespace BUtil.Configurator
         private void OnAccept(object sender, EventArgs e)
         {
 			MountScript = string.IsNullOrWhiteSpace(_userTextBox.Text)
-				? @$"net use H: {_urlTextBox.Text}"
-				: @$"net use H: {_urlTextBox.Text} /user:{_userTextBox.Text} {_passwordTextBox.Text}";
+				? @$"net use H: ""{_urlTextBox.Text}"""
+				: @$"net use H: ""{_urlTextBox.Text}"" ""/user:{_userTextBox.Text}"" ""{_passwordTextBox.Text}""";
 			UnmountScript = @"net use /delete H: /y";
 
             DialogResult = DialogResult.OK;

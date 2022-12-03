@@ -41,8 +41,8 @@ namespace BUtil.Core.Storages
             Log.WriteLine(LoggingEvent.Debug, $"Mount \"{Settings.Name}\"");
 
             var command = string.IsNullOrWhiteSpace(Settings.User)
-                ? @$"net use {Settings.Url}"
-                : @$"net use {Settings.Url} /user:{Settings.User} {Settings.Password}";
+                ? @$"net use ""{Settings.Url}"""
+                : @$"net use ""{Settings.Url}"" ""/user:{Settings.User}"" ""{Settings.Password}""";
 
             if (!CmdProcessHelper.Execute(Log, command))
                 throw new InvalidOperationException($"Cannot mount \"{Settings.Name}\"");
@@ -52,7 +52,7 @@ namespace BUtil.Core.Storages
         {
             Log.WriteLine(LoggingEvent.Debug, $"Unmount \"{Settings.Name}\"");
 
-            var command = @$"net use {Settings.Url} /delete /y";
+            var command = @$"net use ""{Settings.Url}"" /delete /y";
             if (!CmdProcessHelper.Execute(Log, command))
                 throw new InvalidOperationException($"Cannot unmount \"{Settings.Name}\"");
         }
