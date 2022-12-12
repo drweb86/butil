@@ -1,7 +1,6 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Threading;
 using BUtil.Core;
 using BUtil.Core.Options;
 using BUtil.Core.Misc;
@@ -16,18 +15,17 @@ using BUtil.Core.Storages;
 using System.IO;
 using System.Linq;
 using System.Collections.Concurrent;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Collections.Generic;
 
 namespace BUtil.Configurator.BackupUiMaster.Forms
 {
-    internal delegate void Stub();
-	
 	internal sealed partial class BackupMasterForm : Form
 	{
         private readonly BackupTask _backupTask;
 		BackupProgressUserControl _backupProgressUserControl;
 		private readonly ProgramOptions _programOptions;
         private readonly ConcurrentQueue<Action> _listViewUpdates = new();
+        private readonly List<ListViewItem> _items = new List< ListViewItem>();
 
         public BackupMasterForm(ProgramOptions programOptions, BackupTask backupTask)
 		{
@@ -59,7 +57,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 
 		private void UpdateListViewItem(Guid taskId, ProcessingStatus status)
 		{
-            foreach (ListViewItem item in tasksListView.Items)
+            foreach (ListViewItem item in _items)
             {
                 if ((Guid)item.Tag == taskId)
                 {
@@ -130,8 +128,9 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
                 var listItem = new ListViewItem(task.Title, (int)task.TaskArea);
                 listItem.SubItems.Add(LocalsHelper.ToString(ProcessingStatus.NotStarted));
                 listItem.Tag = task.Id;
-                tasksListView.Items.Add(listItem);
+                _items.Add(listItem);
             }
+            tasksListView.VirtualListSize = _items.Count;
 
             VerifyStorages();
             VerifySourceItems();
@@ -196,8 +195,8 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 
         private void OnDuringExecutionTasksAddedInternal(object sender, DuringExecutionTasksAddedEventArgs e)
 		{
-			int index = 0;
-			foreach (ListViewItem item in tasksListView.Items)
+            int index = 0;
+			foreach (var item in _items)
 			{
 				index++;
 				if ((Guid)item.Tag == e.TaskId)
@@ -209,9 +208,10 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
                 var listItem = new ListViewItem(task.Title, (int)task.TaskArea);
                 listItem.SubItems.Add(LocalsHelper.ToString(ProcessingStatus.NotStarted));
                 listItem.Tag = task.Id;
-                tasksListView.Items.Insert(index, listItem);
+                _items.Insert(index, listItem);
 				index++;
             }
+            tasksListView.VirtualListSize = _items.Count;
         }
 
 		private void OnTaskProgress(object sender, TaskProgressEventArgs e)
@@ -288,6 +288,14 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             while (_listViewUpdates.TryDequeue(out var action))
                 action();
             tasksListView.EndUpdate();
+        }
+
+        private void OnRetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
+        {
+            if (e.ItemIndex >= 0 && e.ItemIndex < _items.Count)
+            {
+                e.Item = _items[e.ItemIndex];
+            }
         }
     }
 }

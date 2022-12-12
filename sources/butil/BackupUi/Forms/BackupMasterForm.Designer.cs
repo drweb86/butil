@@ -93,6 +93,9 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             this.tasksListView.TabIndex = 0;
             this.tasksListView.UseCompatibleStateImageBehavior = false;
             this.tasksListView.View = System.Windows.Forms.View.Details;
+            this.tasksListView.VirtualListSize = 10000;
+            this.tasksListView.VirtualMode = true;
+            this.tasksListView.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.OnRetrieveVirtualItem);
             this.tasksListView.Resize += new System.EventHandler(this.OnTasksListViewResize);
             // 
             // taskNameColumnHeader

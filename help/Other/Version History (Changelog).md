@@ -1,3 +1,8 @@
+# 5.7.0.0 (13 December 2022)
+
+## Bug Fixes
+! GUI tool was freezing during processing large amount of files.
+
 # 5.6.1.0 RC1 (3 December 2022)
 
 ## Bug Fixes

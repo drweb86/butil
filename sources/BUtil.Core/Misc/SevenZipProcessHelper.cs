@@ -8,7 +8,7 @@ namespace BUtil.Core.Misc
 {
     public static class SevenZipProcessHelper
     {
-        private static readonly object _lock = new object();
+        private static readonly object _lock = new();
 
         public static bool Extract(
             ILog log,
@@ -118,47 +118,17 @@ namespace BUtil.Core.Misc
 
         private static int GetCompressionLevel(string extension)
         {
-            switch (extension)
+            return extension switch
             {
-                case ".ico":
-                case ".jpg":
-                case ".png":
-                    return 0;
-
-                case ".mp4":
-                case ".mov":
-                case ".avi":
-                case ".flv":
-                case ".vob":
-                case ".mkv":
-                    return 0;
-
-                case ".mp3":
-                case ".m4a":
-                case ".ogg":
-                    return 0;
-
-                case ".rar":
-                case ".7z":
-                case ".zip":
-                    return 0;
-
-                case ".docx":
-                case ".pptx":
-                case ".xlsx":
-                    return 0;
-
-                case ".chm":
-                case ".pdf":
-                case ".epub":
-                    return 0;
-
-                case ".raf":
-                    return 5;
-
-                default:
-                    return 9;
-            }
+                ".ico" or ".jpg" or ".png" => 0,
+                ".mp4" or ".mov" or ".avi" or ".flv" or ".vob" or ".mkv" => 0,
+                ".mp3" or ".m4a" or ".ogg" => 0,
+                ".rar" or ".7z" or ".zip" => 0,
+                ".docx" or ".pptx" or ".xlsx" => 0,
+                ".chm" or ".pdf" or ".epub" => 0,
+                ".raf" => 5,
+                _ => 9,
+            };
         }
     }
 }

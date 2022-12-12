@@ -1,15 +1,10 @@
 using System;
-using System.ComponentModel;
-using System.Drawing;
 using System.Windows.Forms;
 using System.Globalization;
 using BUtil.Configurator.Localization;
 
 namespace BUtil.BackupUiMaster.Controls
 {
-	/// <summary>
-	/// Shows state of backup process
-	/// </summary>
 	internal sealed partial class BackupProgressUserControl : TitledBackUserControl
 	{
 		DateTime _start = DateTime.Now;

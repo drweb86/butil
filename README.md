@@ -1,6 +1,6 @@
 # COMPRESSING, SAVING, STORING, PROVIDING easiest RESTORING
 
-Welcome to the 5.6 (4 December 2022) version BUtil!
+Welcome to the 5.7 (13 December 2022) version BUtil!
 
 ![BUtil Logotype](./help/Readme%20Assets/Logotype.bmp)
 
@@ -17,7 +17,6 @@ BUtil is a powerfull set of tools for creating backups of documents and other da
 - Multiple backup tasks are supported;
 - Html format is uded for file logs. It takes less time on reviewing of it;
 - Two modes of creating a backup exists: manual from UI and console tool and with scheduling possibilities;
-- .Net based application;
 - [Unstructured Data repository model](./help/Other/Glossary.md)
 - [Copying files selection and extraction of file data](./help/Other/Glossary.md)
 - Built in [7-zip](https://www.7-zip.org/) [compression](https://en.wikipedia.org/wiki/Data_compression)
@@ -55,10 +54,7 @@ and many more. See [all topics](../../wiki) .
 
 ## Feedback
 
-You can ask for support on next languages:
-- English,
-- Russian,
-- Belorussian.
+https://github.com/drweb86/butil/issues
 
 ### Advices
 

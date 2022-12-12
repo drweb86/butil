@@ -6,7 +6,7 @@ namespace BUtil.Core.Logs
     internal static class HtmlLogFormatter
     {
 		const string _INFORMATION_FORMATSTRING = "{0} {1} - {2}";
-        static readonly string[] _loggingEventsStrings = { "[error]", "[warning]", "[packer]", "[debug]" };
+        static readonly string[] _loggingEventsStrings = { "[error]", "[packer]", "[info]" };
        
         public static string GetHtmlFormattedLogMessage(LoggingEvent loggingEvent, string message)
         {
