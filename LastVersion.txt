@@ -1,4 +1,5 @@
-5.7.0.0
+5.7.1.0
 
-Fixes
-! GUI tool was freezing during processing large amount of files.
+New Features
+- Allow non-administrative installations. Archive deployment was dropped. Dialogs are removed.
+

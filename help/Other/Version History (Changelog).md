@@ -1,3 +1,8 @@
+# 5.7.1.0 (23 December 2022)
+
+## New Features
+- Allow non-administrative installations. Archive deployment was dropped. Dialogs are removed.
+
 # 5.7.0.0 (13 December 2022)
 
 ## Bug Fixes

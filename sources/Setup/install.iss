@@ -7,28 +7,29 @@ AppPublisher=Siarhei Kuchuk
 AppPublisherURL=https://github.com/drweb86/butil
 AppSupportURL=https://github.com/drweb86/butil
 AppUpdatesURL=https://github.com/drweb86/butil
-DefaultDirName={pf}\BUtil\{#ApplicationVersion}
-DefaultGroupName={cm:Backup}\BUtil {#ApplicationVersion}
+DisableWelcomePage=yes
+DefaultDirName={autopf}\BUtil
+DefaultGroupName=BUtil {cm:Backup}
 AllowNoIcons=yes
 OutputDir=..\..\Output\Deployment
 OutputBaseFilename=BUtil_v{#ApplicationVersion}_(.NET_Desktop_Runtime_v7)_Setup
 Compression=lzma2/ultra64
 SolidCompression=yes
 PrivilegesRequired=none
-UsePreviousAppDir=no
+PrivilegesRequiredOverridesAllowed=commandline dialog
 UsePreviousGroup=no
 RestartIfNeededByRun=no
-WizardImageFile=BUTilWizardImageFile164x314.bmp
-WizardSmallImageFile=BUtilWizModernSmallImage.bmp
 SetupIconFile=..\Media\Images and Icons\Other's guys\Crystal Clear (Everaldo Coelho)\SetupIcon.ico
 ArchitecturesInstallIn64BitMode=x64
+DisableFinishedPage=yes
+DisableProgramGroupPage=yes
+DisableDirPage=yes
+DisableReadyPage=yes
+UsePreviousAppDir=no
 
 [Languages]
 Name: "en"; MessagesFile: ".\BUtil-Default.isl"
 Name: "ru"; MessagesFile: ".\BUtil-Russian.isl"
-
-[Tasks]
-Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Code]
 function IsDotNetCoreInstalled(DotNetName: string): Boolean;
@@ -102,33 +103,38 @@ begin
   end
 end;
 
+const
+  BN_CLICKED = 0;
+  WM_COMMAND = $0111;
+  CN_BASE = $BC00;
+  CN_COMMAND = CN_BASE + WM_COMMAND;
+
+procedure CurPageChanged(CurPageID: Integer);
+var
+  Param: Longint;
+begin
+  { if we are on the ready page, then... }
+  if CurPageID = wpReady then
+  begin
+    { the result of this is 0, just to be precise... }
+    Param := 0 or BN_CLICKED shl 16;
+    { post the click notification message to the next button }
+    PostMessage(WizardForm.NextButton.Handle, CN_COMMAND, Param, 0);
+  end;
+end;
+
 [Files]
 Source: "..\..\Output\BUtil\*.*"; DestDir: "{app}"; Flags: recursesubdirs
 
-[INI]
-Filename: "{app}\Configurator.url"; Section: "InternetShortcut"; Key: "URL"; String: "https://github.com/drweb86/butil"
-Filename: "{app}\Help.url"; Section: "InternetShortcut"; Key: "URL"; String: "https://github.com/drweb86/butil/blob/master/help/TOC.md"
-
 [Icons]
 ; Main app data
-Name: "{group}\{cm:Configurator}"; Filename: "{app}\bin\butil.exe"
-Name: "{group}\{cm:Console_Backup}"; Filename: "{app}\bin\butilc.exe"
-Name: "{group}\{cm:Backup_Wizard}"; Filename: "{app}\bin\butil.exe"; Parameters: "JustBackupMaster"; IconFilename: "{app}\data\BackupUi.ico"
-Name: "{group}\{cm:Restoration}"; Filename: "{app}\bin\butil.exe"; Parameters: "JustRestorationMaster"; IconFilename: "{app}\data\RestorationMaster.ico"
+Name: "{group}\BUtil {cm:Configurator}"; Filename: "{app}\bin\butil.exe"
+Name: "{group}\BUtil {cm:Backup_Wizard}"; Filename: "{app}\bin\butil.exe"; Parameters: "JustBackupMaster"; IconFilename: "{app}\data\BackupUi.ico"
+Name: "{group}\BUtil {cm:Restoration}"; Filename: "{app}\bin\butil.exe"; Parameters: "JustRestorationMaster"; IconFilename: "{app}\data\RestorationMaster.ico"
 
-; Documentation
-Name: "{group}\{cm:Documentation}\{cm:Manual}"; Filename: "{app}\Help.url"
-Name: "{group}\{cm:Documentation}\{cm:ProgramOnTheWeb,BUtil}"; Filename: "{app}\Configurator.url"
-
-; Uninstall
-Name: "{group}\{cm:Uninstall}\{cm:UninstallProgram,BUtil}"; Filename: "{uninstallexe}"
-
-; Destop
-Name: "{userdesktop}\{cm:Backup_Wizard}"; Filename: "{app}\bin\butil.exe"; Parameters: "JustBackupMaster"; IconFilename: "{app}\data\BackupUi.ico"; Tasks: desktopicon
+; Desktop
+Name: "{autodesktop}\BUtil {cm:Configurator}"; Filename: "{app}\bin\butil.exe"
 
 [Run]
-Filename: "{app}\bin\butil.exe"; Description: "{cm:LaunchProgram,{cm:Configurator}}"; Flags: nowait postinstall skipifsilent
+Filename: "{app}\bin\butil.exe"; Description: "{cm:LaunchProgram,BUtil {cm:Configurator}}"; Flags: nowait postinstall skipifsilent
 
-[UninstallDelete]
-Type: files; Name: "{app}\Configurator.url"
-Type: files; Name: "{app}\Help.url"
