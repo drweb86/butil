@@ -35,7 +35,6 @@ namespace BUtil.Configurator.BackupUiMaster.Controls
             this.hearBeepsCheckBox = new System.Windows.Forms.CheckBox();
             this.helpActionAfterBackupButton = new System.Windows.Forms.Button();
             this.titleLabel = new System.Windows.Forms.Label();
-            this.encryptionUserControl1 = new BUtil.Core.PL.EncryptionUserControl();
             this.afterEndOfBackupGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,13 +43,13 @@ namespace BUtil.Configurator.BackupUiMaster.Controls
             this.afterEndOfBackupGroupBox.Controls.Add(this.jobAfterOkBackupComboBox);
             this.afterEndOfBackupGroupBox.Controls.Add(this.hearBeepsCheckBox);
             this.afterEndOfBackupGroupBox.Controls.Add(this.helpActionAfterBackupButton);
-            this.afterEndOfBackupGroupBox.Location = new System.Drawing.Point(4, 38);
-            this.afterEndOfBackupGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.afterEndOfBackupGroupBox.MaximumSize = new System.Drawing.Size(300, 100);
+            this.afterEndOfBackupGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.afterEndOfBackupGroupBox.Location = new System.Drawing.Point(0, 34);
+            this.afterEndOfBackupGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.afterEndOfBackupGroupBox.MinimumSize = new System.Drawing.Size(300, 100);
             this.afterEndOfBackupGroupBox.Name = "afterEndOfBackupGroupBox";
-            this.afterEndOfBackupGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.afterEndOfBackupGroupBox.Size = new System.Drawing.Size(300, 100);
+            this.afterEndOfBackupGroupBox.Padding = new System.Windows.Forms.Padding(4);
+            this.afterEndOfBackupGroupBox.Size = new System.Drawing.Size(737, 149);
             this.afterEndOfBackupGroupBox.TabIndex = 13;
             this.afterEndOfBackupGroupBox.TabStop = false;
             this.afterEndOfBackupGroupBox.Text = "After completion of backup";
@@ -62,16 +61,16 @@ namespace BUtil.Configurator.BackupUiMaster.Controls
             this.jobAfterOkBackupComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.jobAfterOkBackupComboBox.FormattingEnabled = true;
             this.jobAfterOkBackupComboBox.Location = new System.Drawing.Point(6, 22);
-            this.jobAfterOkBackupComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.jobAfterOkBackupComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.jobAfterOkBackupComboBox.Name = "jobAfterOkBackupComboBox";
-            this.jobAfterOkBackupComboBox.Size = new System.Drawing.Size(236, 23);
+            this.jobAfterOkBackupComboBox.Size = new System.Drawing.Size(673, 23);
             this.jobAfterOkBackupComboBox.TabIndex = 3;
             // 
             // hearBeepsCheckBox
             // 
             this.hearBeepsCheckBox.AutoSize = true;
             this.hearBeepsCheckBox.Location = new System.Drawing.Point(6, 53);
-            this.hearBeepsCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.hearBeepsCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.hearBeepsCheckBox.Name = "hearBeepsCheckBox";
             this.hearBeepsCheckBox.Size = new System.Drawing.Size(123, 19);
             this.hearBeepsCheckBox.TabIndex = 5;
@@ -82,8 +81,8 @@ namespace BUtil.Configurator.BackupUiMaster.Controls
             // 
             this.helpActionAfterBackupButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.helpActionAfterBackupButton.Image = ((System.Drawing.Image)(resources.GetObject("helpActionAfterBackupButton.Image")));
-            this.helpActionAfterBackupButton.Location = new System.Drawing.Point(250, 12);
-            this.helpActionAfterBackupButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.helpActionAfterBackupButton.Location = new System.Drawing.Point(687, 12);
+            this.helpActionAfterBackupButton.Margin = new System.Windows.Forms.Padding(4);
             this.helpActionAfterBackupButton.Name = "helpActionAfterBackupButton";
             this.helpActionAfterBackupButton.Size = new System.Drawing.Size(42, 41);
             this.helpActionAfterBackupButton.TabIndex = 4;
@@ -92,7 +91,7 @@ namespace BUtil.Configurator.BackupUiMaster.Controls
             // 
             // titleLabel
             // 
-            this.titleLabel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.titleLabel.BackColor = System.Drawing.Color.DodgerBlue;
             this.titleLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.titleLabel.Dock = System.Windows.Forms.DockStyle.Top;
             this.titleLabel.Font = new System.Drawing.Font("Courier New", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -105,24 +104,10 @@ namespace BUtil.Configurator.BackupUiMaster.Controls
             this.titleLabel.Text = "Title";
             this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // encryptionUserControl1
-            // 
-            this.encryptionUserControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.encryptionUserControl1.BackColor = System.Drawing.SystemColors.Window;
-            this.encryptionUserControl1.HelpLabel = null;
-            this.encryptionUserControl1.Location = new System.Drawing.Point(313, 38);
-            this.encryptionUserControl1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.encryptionUserControl1.Name = "encryptionUserControl1";
-            this.encryptionUserControl1.Size = new System.Drawing.Size(419, 142);
-            this.encryptionUserControl1.TabIndex = 16;
-            // 
             // SettingsUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.encryptionUserControl1);
             this.Controls.Add(this.afterEndOfBackupGroupBox);
             this.Controls.Add(this.titleLabel);
             this.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
@@ -139,6 +124,5 @@ namespace BUtil.Configurator.BackupUiMaster.Controls
 		private System.Windows.Forms.ComboBox jobAfterOkBackupComboBox;
 		private System.Windows.Forms.GroupBox afterEndOfBackupGroupBox;
         private System.Windows.Forms.Label titleLabel;
-        private Core.PL.EncryptionUserControl encryptionUserControl1;
     }
 }

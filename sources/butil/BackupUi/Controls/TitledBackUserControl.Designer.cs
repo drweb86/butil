@@ -29,34 +29,37 @@ namespace BUtil.BackupUiMaster.Controls
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.titleLabel = new System.Windows.Forms.Label();
-			this.SuspendLayout();
-			// 
-			// titleLabel
-			// 
-			this.titleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-									| System.Windows.Forms.AnchorStyles.Right)));
-			this.titleLabel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-			this.titleLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.titleLabel.Font = new System.Drawing.Font("Courier New", 20.25F, System.Drawing.FontStyle.Bold);
-			this.titleLabel.ForeColor = System.Drawing.Color.White;
-			this.titleLabel.Location = new System.Drawing.Point(0, 0);
-			this.titleLabel.Name = "titleLabel";
-			this.titleLabel.Size = new System.Drawing.Size(222, 30);
-			this.titleLabel.TabIndex = 1;
-			this.titleLabel.Text = "Title";
-			this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// BackUserControl
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.SystemColors.Window;
-			this.Controls.Add(this.titleLabel);
-			this.Name = "BackUserControl";
-			this.Size = new System.Drawing.Size(225, 213);
-			this.Resize += new System.EventHandler(this.titleLabelResize);
-			this.ResumeLayout(false);
+            this.titleLabel = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.titleLabel.BackColor = System.Drawing.Color.DodgerBlue;
+            this.titleLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.titleLabel.Font = new System.Drawing.Font("Courier New", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.titleLabel.ForeColor = System.Drawing.Color.White;
+            this.titleLabel.Location = new System.Drawing.Point(0, 0);
+            this.titleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(259, 34);
+            this.titleLabel.TabIndex = 1;
+            this.titleLabel.Text = "Title";
+            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TitledBackUserControl
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.titleLabel);
+            this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.Name = "TitledBackUserControl";
+            this.Size = new System.Drawing.Size(262, 246);
+            this.Resize += new System.EventHandler(this.titleLabelResize);
+            this.ResumeLayout(false);
+
 		}
 		private System.Windows.Forms.Label titleLabel;
 	}

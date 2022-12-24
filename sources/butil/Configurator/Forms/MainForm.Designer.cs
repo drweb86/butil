@@ -59,7 +59,7 @@ namespace BUtil.Configurator.Configurator.Forms
             // 
             this.restorationToolToolStripMenuItem.Image = global::BUtil.Configurator.Icons.Refresh48x48;
             this.restorationToolToolStripMenuItem.Name = "restorationToolToolStripMenuItem";
-            this.restorationToolToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.restorationToolToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
             this.restorationToolToolStripMenuItem.Text = "Restore Data...";
             this.restorationToolToolStripMenuItem.Click += new System.EventHandler(this.RestorationToolToolStripMenuItemClick);
             // 
@@ -125,7 +125,7 @@ namespace BUtil.Configurator.Configurator.Forms
             // 
             this.optionsHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.optionsHeader.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.optionsHeader.BackColor = System.Drawing.Color.DodgerBlue;
             this.optionsHeader.ForeColor = System.Drawing.Color.White;
             this.optionsHeader.Location = new System.Drawing.Point(168, 27);
             this.optionsHeader.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
