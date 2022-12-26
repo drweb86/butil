@@ -82,13 +82,13 @@
             this.toolStripSeparator1,
             this._removeToolStripMenuItem});
             this._contextMenuStrip.Name = "_contextMenuStrip";
-            this._contextMenuStrip.Size = new System.Drawing.Size(125, 98);
+            this._contextMenuStrip.Size = new System.Drawing.Size(181, 120);
             // 
             // _executeToolStripMenuItem
             // 
-            this._executeToolStripMenuItem.Image = global::BUtil.Configurator.Icons.Start;
+            this._executeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("_executeToolStripMenuItem.Image")));
             this._executeToolStripMenuItem.Name = "_executeToolStripMenuItem";
-            this._executeToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this._executeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this._executeToolStripMenuItem.Text = "Execute...";
             this._executeToolStripMenuItem.Click += new System.EventHandler(this.ExecuteRequest);
             // 
@@ -96,7 +96,7 @@
             // 
             this._addToolStripMenuItem.Image = global::BUtil.Configurator.Icons.Add;
             this._addToolStripMenuItem.Name = "_addToolStripMenuItem";
-            this._addToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this._addToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this._addToolStripMenuItem.Text = "Add...";
             this._addToolStripMenuItem.Click += new System.EventHandler(this.AddTaskRequest);
             // 
@@ -104,20 +104,20 @@
             // 
             this._editToolStripMenuItem.Image = global::BUtil.Configurator.Icons.OtherOptions48x48;
             this._editToolStripMenuItem.Name = "_editToolStripMenuItem";
-            this._editToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this._editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this._editToolStripMenuItem.Text = "Edit...";
             this._editToolStripMenuItem.Click += new System.EventHandler(this.OnEditBackupTask);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(121, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // _removeToolStripMenuItem
             // 
             this._removeToolStripMenuItem.Image = global::BUtil.Configurator.Icons.removeFromListToolStripMenuItem_Image;
             this._removeToolStripMenuItem.Name = "_removeToolStripMenuItem";
-            this._removeToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this._removeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this._removeToolStripMenuItem.Text = "Remove";
             this._removeToolStripMenuItem.Click += new System.EventHandler(this.RemoveTaskRequest);
             // 

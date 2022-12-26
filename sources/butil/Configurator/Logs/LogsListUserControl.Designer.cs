@@ -97,26 +97,26 @@ namespace BUtil.Configurator.LogsManagement
             this.removeSelectedLogsToolStripMenuItem});
             this.backupJournalsContextMenuStrip.Name = "backupJournalsContextMenuStrip";
             this.backupJournalsContextMenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.backupJournalsContextMenuStrip.Size = new System.Drawing.Size(122, 62);
+            this.backupJournalsContextMenuStrip.Size = new System.Drawing.Size(185, 84);
             // 
             // viewSelectedLogsToolStripMenuItem
             // 
             this.viewSelectedLogsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("viewSelectedLogsToolStripMenuItem.Image")));
             this.viewSelectedLogsToolStripMenuItem.Name = "viewSelectedLogsToolStripMenuItem";
-            this.viewSelectedLogsToolStripMenuItem.Size = new System.Drawing.Size(121, 26);
+            this.viewSelectedLogsToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.viewSelectedLogsToolStripMenuItem.Text = "View...";
             this.viewSelectedLogsToolStripMenuItem.Click += new System.EventHandler(this.openSelectedLogsInBrowser);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(118, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(181, 6);
             // 
             // removeSelectedLogsToolStripMenuItem
             // 
             this.removeSelectedLogsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("removeSelectedLogsToolStripMenuItem.Image")));
             this.removeSelectedLogsToolStripMenuItem.Name = "removeSelectedLogsToolStripMenuItem";
-            this.removeSelectedLogsToolStripMenuItem.Size = new System.Drawing.Size(121, 26);
+            this.removeSelectedLogsToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.removeSelectedLogsToolStripMenuItem.Text = "Remove";
             this.removeSelectedLogsToolStripMenuItem.Click += new System.EventHandler(this.removeSelected);
             // 

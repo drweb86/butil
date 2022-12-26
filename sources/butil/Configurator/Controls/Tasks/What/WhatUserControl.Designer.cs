@@ -74,27 +74,27 @@ namespace BUtil.Configurator.Controls
             this._openInExplorerToolStripMenuItem});
             this.filesFoldersContextMenuStrip.Name = "filesFoldersContextMenuStrip";
             this.filesFoldersContextMenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.filesFoldersContextMenuStrip.Size = new System.Drawing.Size(252, 194);
+            this.filesFoldersContextMenuStrip.Size = new System.Drawing.Size(216, 188);
             this.filesFoldersContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.OnMenuOpening);
             // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Image = global::BUtil.Configurator.Icons.removeFromListToolStripMenuItem_Image;
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(251, 26);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
             this.removeToolStripMenuItem.Text = "Remove from list";
             this.removeToolStripMenuItem.Click += new System.EventHandler(this.OnRemoveToolStripMenuItemClick);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(248, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(212, 6);
             // 
             // addFilesToolStripMenuItem
             // 
             this.addFilesToolStripMenuItem.Image = global::BUtil.Configurator.Icons.Add_Files;
             this.addFilesToolStripMenuItem.Name = "addFilesToolStripMenuItem";
-            this.addFilesToolStripMenuItem.Size = new System.Drawing.Size(251, 26);
+            this.addFilesToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
             this.addFilesToolStripMenuItem.Text = "Add files...";
             this.addFilesToolStripMenuItem.Click += new System.EventHandler(this.OnAddFilesToolStripMenuItemClick);
             // 
@@ -102,15 +102,15 @@ namespace BUtil.Configurator.Controls
             // 
             this.addFoldersToolStripMenuItem.Image = global::BUtil.Configurator.Icons.AddFolder;
             this.addFoldersToolStripMenuItem.Name = "addFoldersToolStripMenuItem";
-            this.addFoldersToolStripMenuItem.Size = new System.Drawing.Size(251, 26);
+            this.addFoldersToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
             this.addFoldersToolStripMenuItem.Text = "Add folders...";
             this.addFoldersToolStripMenuItem.Click += new System.EventHandler(this.OnAddFoldersToolStripMenuItemClick);
             // 
-            // _ignoreToolStripMenuItem
+            // _addFileExcludePatternToolStripMenuItem
             // 
-            this._addFileExcludePatternToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("_ignoreToolStripMenuItem.Image")));
-            this._addFileExcludePatternToolStripMenuItem.Name = "_ignoreToolStripMenuItem";
-            this._addFileExcludePatternToolStripMenuItem.Size = new System.Drawing.Size(251, 26);
+            this._addFileExcludePatternToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("_addFileExcludePatternToolStripMenuItem.Image")));
+            this._addFileExcludePatternToolStripMenuItem.Name = "_addFileExcludePatternToolStripMenuItem";
+            this._addFileExcludePatternToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
             this._addFileExcludePatternToolStripMenuItem.Text = "Add File Exclude Pattern...";
             this._addFileExcludePatternToolStripMenuItem.Click += new System.EventHandler(this.OnAddFileExcludePattern);
             // 
@@ -118,7 +118,7 @@ namespace BUtil.Configurator.Controls
             // 
             this._editFileExcludePatternToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("_editFileExcludePatternToolStripMenuItem.Image")));
             this._editFileExcludePatternToolStripMenuItem.Name = "_editFileExcludePatternToolStripMenuItem";
-            this._editFileExcludePatternToolStripMenuItem.Size = new System.Drawing.Size(251, 26);
+            this._editFileExcludePatternToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
             this._editFileExcludePatternToolStripMenuItem.Text = "Edit File Exclude Pattern...";
             this._editFileExcludePatternToolStripMenuItem.Click += new System.EventHandler(this.OnItemDoubleClick);
             // 
@@ -126,7 +126,7 @@ namespace BUtil.Configurator.Controls
             // 
             this._openInExplorerToolStripMenuItem.Image = global::BUtil.Configurator.Icons.folder_48;
             this._openInExplorerToolStripMenuItem.Name = "_openInExplorerToolStripMenuItem";
-            this._openInExplorerToolStripMenuItem.Size = new System.Drawing.Size(251, 26);
+            this._openInExplorerToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
             this._openInExplorerToolStripMenuItem.Text = "Open in Explorer...";
             this._openInExplorerToolStripMenuItem.Click += new System.EventHandler(this.OnItemDoubleClick);
             // 
@@ -141,10 +141,10 @@ namespace BUtil.Configurator.Controls
             this.itemsToCompressColumnHeader});
             this._itemsListView.ContextMenuStrip = this.filesFoldersContextMenuStrip;
             this._itemsListView.LargeImageList = this.itemsToCompressImageList;
-            this._itemsListView.Location = new System.Drawing.Point(5, 4);
-            this._itemsListView.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this._itemsListView.Location = new System.Drawing.Point(4, 3);
+            this._itemsListView.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this._itemsListView.Name = "_itemsListView";
-            this._itemsListView.Size = new System.Drawing.Size(393, 403);
+            this._itemsListView.Size = new System.Drawing.Size(344, 303);
             this._itemsListView.SmallImageList = this.itemsToCompressImageList;
             this._itemsListView.StateImageList = this.itemsToCompressImageList;
             this._itemsListView.TabIndex = 0;
@@ -174,10 +174,10 @@ namespace BUtil.Configurator.Controls
             // 
             this.addFoldersButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.addFoldersButton.Image = global::BUtil.Configurator.Icons.AddFolder;
-            this.addFoldersButton.Location = new System.Drawing.Point(406, 103);
-            this.addFoldersButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.addFoldersButton.Location = new System.Drawing.Point(355, 77);
+            this.addFoldersButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.addFoldersButton.Name = "addFoldersButton";
-            this.addFoldersButton.Size = new System.Drawing.Size(81, 89);
+            this.addFoldersButton.Size = new System.Drawing.Size(71, 67);
             this.addFoldersButton.TabIndex = 2;
             this.addFoldersButton.UseVisualStyleBackColor = true;
             this.addFoldersButton.Click += new System.EventHandler(this.OnAddFoldersButtonClick);
@@ -189,10 +189,10 @@ namespace BUtil.Configurator.Controls
             this.removeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.removeButton.Enabled = false;
             this.removeButton.Image = global::BUtil.Configurator.Icons.cross_48;
-            this.removeButton.Location = new System.Drawing.Point(406, 201);
-            this.removeButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.removeButton.Location = new System.Drawing.Point(355, 151);
+            this.removeButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.removeButton.Name = "removeButton";
-            this.removeButton.Size = new System.Drawing.Size(81, 89);
+            this.removeButton.Size = new System.Drawing.Size(71, 67);
             this.removeButton.TabIndex = 3;
             this.removeButton.UseVisualStyleBackColor = true;
             this.removeButton.Click += new System.EventHandler(this.OnRemoveItemsButtonClick);
@@ -201,41 +201,41 @@ namespace BUtil.Configurator.Controls
             // 
             this.addFilesButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.addFilesButton.Image = global::BUtil.Configurator.Icons.Add_Files1;
-            this.addFilesButton.Location = new System.Drawing.Point(406, 4);
-            this.addFilesButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.addFilesButton.Location = new System.Drawing.Point(355, 3);
+            this.addFilesButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.addFilesButton.Name = "addFilesButton";
-            this.addFilesButton.Size = new System.Drawing.Size(81, 89);
+            this.addFilesButton.Size = new System.Drawing.Size(71, 67);
             this.addFilesButton.TabIndex = 1;
             this.addFilesButton.UseVisualStyleBackColor = true;
             this.addFilesButton.Click += new System.EventHandler(this.OnAddFilesButtonClick);
             // 
-            // _ignoreButton
+            // _addFIleExcludePatternButton
             // 
             this._addFIleExcludePatternButton.AccessibleDescription = "";
             this._addFIleExcludePatternButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._addFIleExcludePatternButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._addFIleExcludePatternButton.Image = ((System.Drawing.Image)(resources.GetObject("_ignoreButton.Image")));
-            this._addFIleExcludePatternButton.Location = new System.Drawing.Point(406, 299);
-            this._addFIleExcludePatternButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this._addFIleExcludePatternButton.Name = "_ignoreButton";
-            this._addFIleExcludePatternButton.Size = new System.Drawing.Size(81, 89);
+            this._addFIleExcludePatternButton.Image = ((System.Drawing.Image)(resources.GetObject("_addFIleExcludePatternButton.Image")));
+            this._addFIleExcludePatternButton.Location = new System.Drawing.Point(355, 224);
+            this._addFIleExcludePatternButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this._addFIleExcludePatternButton.Name = "_addFIleExcludePatternButton";
+            this._addFIleExcludePatternButton.Size = new System.Drawing.Size(71, 67);
             this._addFIleExcludePatternButton.TabIndex = 4;
             this._addFIleExcludePatternButton.UseVisualStyleBackColor = true;
             this._addFIleExcludePatternButton.Click += new System.EventHandler(this.OnAddFileExcludePattern);
             // 
             // WhatUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this._addFIleExcludePatternButton);
             this.Controls.Add(this._itemsListView);
             this.Controls.Add(this.addFoldersButton);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.addFilesButton);
-            this.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
-            this.MinimumSize = new System.Drawing.Size(490, 415);
+            this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.MinimumSize = new System.Drawing.Size(429, 311);
             this.Name = "WhatUserControl";
-            this.Size = new System.Drawing.Size(490, 415);
+            this.Size = new System.Drawing.Size(429, 311);
             this.filesFoldersContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
