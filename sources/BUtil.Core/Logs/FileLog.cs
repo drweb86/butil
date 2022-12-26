@@ -19,7 +19,7 @@ namespace BUtil.Core.Logs
             Close();
 		}
 
-        public FileLog(string logsFolder)
+        public FileLog(string logsFolder, string taskName)
 		{
             const string _TIME_FORMATSTRING = "dd MMMM (dddd) HH.mm.ss";
 
@@ -27,9 +27,9 @@ namespace BUtil.Core.Logs
             {
                     do
                     {
-                        _fileName = Path.Combine(logsFolder,
-                            DateTime.Now.ToString(_TIME_FORMATSTRING, CultureInfo.CurrentUICulture) +
-                            Files.LogFilesExtension);
+                        _fileName = Path.Combine(
+                            logsFolder,
+                            $"{taskName} {DateTime.Now.ToString(_TIME_FORMATSTRING, CultureInfo.CurrentUICulture)}{Files.LogFilesExtension}");
                     }
                     while (File.Exists(_fileName));
             }

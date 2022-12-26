@@ -10,11 +10,11 @@ namespace BUtil.ConsoleBackup
     {
         private readonly IEnumerable<LogBase> _logs;
 
-        public ChainLog(ProgramOptions programOptions)
+        public ChainLog(ProgramOptions programOptions, string taskName)
         {
             var logs = new List<LogBase>();
             _logs = logs;
-            logs.Add(new FileLog(programOptions.LogsFolder));
+            logs.Add(new FileLog(programOptions.LogsFolder, taskName));
             logs.Add(new ConsoleLog());
         }
 

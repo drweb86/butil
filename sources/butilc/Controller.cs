@@ -29,24 +29,24 @@ namespace BUtil.ConsoleBackup
 
             foreach (string argument in args)
             {
-                if (argument.StartsWith(TaskCommandLineArgument, StringComparison.InvariantCultureIgnoreCase))
+                if (argument.StartsWith(_taskCommandLineArgument, StringComparison.InvariantCultureIgnoreCase))
                 {
-                    _taskName = argument[TaskCommandLineArgument.Length..];
+                    _taskName = argument[_taskCommandLineArgument.Length..];
                     continue;
                 }
-                else if (ArgumentIs(argument, Shutdown))
+                else if (ArgumentIs(argument, _shutdown))
                 {
                     _powerTask = PowerTask.Shutdown;
                 }
-                else if (ArgumentIs(argument, LogOff))
+                else if (ArgumentIs(argument, _logOff))
                 {
                     _powerTask = PowerTask.LogOff;
                 }
-                else if (ArgumentIs(argument, Reboot))
+                else if (ArgumentIs(argument, _reboot))
                 {
                     _powerTask = PowerTask.Reboot;
                 }
-                else if (ArgumentIs(argument, HelpCommand))
+                else if (ArgumentIs(argument, _helpCommand))
                 {
                     Console.WriteLine(Resources.UsageVariantsNNbackupExeTaskMyTaskTitleNRunningWithoutParametersOutputsInformationToConsoleNNbackupExeTaskMyTask1TitleTaskMyTask2TitleTaskMyTask3TitleNRunsSeveralTasksOneByOneNNbackupExeTaskMyTaskTitleUsefilelogNOutputsInformationInFileLogNNbackupExeTaskMyTaskTitleShutdownNbackupExeTaskMyTaskTitleLogoffNbackupExeTaskMyTaskTitleSuspendNbackupExeTaskMyTaskTitleRebootNbackupExeTaskMyTaskTitleHibernateNNbackupExeHelpNOutputsBriefHelpN);
                     return false;
@@ -69,7 +69,7 @@ namespace BUtil.ConsoleBackup
 
             if (string.IsNullOrWhiteSpace(_taskName))
             {
-                _log.WriteLine(LoggingEvent.Error, string.Format(Resources.PleaseSpecifyTheBackupTaskTitleUsingTheCommandLineArgument0MyBackupTaskTitleNexampleBackupExe0MyBackupTitle, TaskCommandLineArgument));
+                _log.WriteLine(LoggingEvent.Error, string.Format(Resources.PleaseSpecifyTheBackupTaskTitleUsingTheCommandLineArgument0MyBackupTaskTitleNexampleBackupExe0MyBackupTitle, _taskCommandLineArgument));
                 return false;
             }
 
@@ -140,7 +140,7 @@ namespace BUtil.ConsoleBackup
 
         private ILog OpenLog()
         {
-            var log = new ChainLog(_options);
+            var log = new ChainLog(_options, _taskName);
             try
             {
                 log.Open();
@@ -160,11 +160,11 @@ namespace BUtil.ConsoleBackup
 
         #region Constants
 
-        const string HelpCommand = "Help";
-        const string Shutdown = "ShutDown";
-        const string LogOff = "LogOff";
-        const string Reboot = "Reboot";
-        const string TaskCommandLineArgument = "Task=";
+        private const string _helpCommand = "Help";
+        private const string _shutdown = "ShutDown";
+        private const string _logOff = "LogOff";
+        private const string _reboot = "Reboot";
+        private const string _taskCommandLineArgument = "Task=";
 
         #endregion
 
