@@ -1,13 +1,14 @@
 # 5.8.0.0 (26 December 2022)
 
 ## New Features
-- Inrecemented backup model is documented
+- Inrecemented backup model is documented.
 
 ## Bug Fixes
-- Packer output was fixed
+- Packer output was fixed.
 
 ## Changes
-- Logs were simplified
+- Logs were simplified;
+- Icons were updated.
 
 # 5.7.1.0 (23 December 2022)
 
