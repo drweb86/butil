@@ -1,5 +1,4 @@
 using System;
-using System.IO;
 using BUtil.Core.FileSystem;
 
 namespace BUtil.Core.Logs

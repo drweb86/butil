@@ -7,14 +7,12 @@ using BUtil.Core.Localization;
 
 namespace BUtil.Core.Logs
 {
-    public sealed class FileLog : LogBase
+    public class FileLog : LogBase
 	{
-        readonly string _fileName;
-        StreamWriter _logFile;
-        public string LogFilename
-        {
-            get { return _fileName; }
-        }
+        private readonly string _fileName;
+        private StreamWriter _logFile;
+
+        public string LogFilename => _fileName;
         
 		~FileLog()
 		{
@@ -41,24 +39,28 @@ namespace BUtil.Core.Logs
             }
         }
 
-		/// <summary>
-		/// Opens file log
-		/// </summary>
-        /// <exception cref="LogException">any problems</exception>
 		public override void Open()
 		{
 			try
 			{
                 File.WriteAllText(_fileName, 
 @$"<!DOCTYPE HTML PUBLIC ""-//W3C//DTD HTML 4.0 Transitional//EN"">
-<HTML>
-<HEAD>
-	<META HTTP-EQUIV=""CONTENT-TYPE"" CONTENT=""text/html; charset=utf-8"">
-	<TITLE>{DateTime.Now.ToString("f")} - {Resources.BackupReport}</TITLE>
-</HEAD>
-<BODY>
-	<a target=""_new"" href=""{SupportManager.GetLink(SupportRequest.Homepage)}"">{Resources.VisitProjectHomepage}</a>
-	<br />");
+<html>
+    <head>
+	    <META HTTP-EQUIV=""CONTENT-TYPE"" CONTENT=""text/html; charset=utf-8"">
+	    <TITLE>{DateTime.Now.ToString("f", CultureInfo.CurrentUICulture)} - {Resources.BackupReport}</TITLE>
+		<style>
+			body {{
+                margin-bottom: 0cm;
+				font-family: 'Courier New', Courier, monospace;
+			}}
+			p {{
+                color: #ff0000;
+				font-weight: 800;
+			}}
+		</style>
+    </head>
+    <body>");
 				_logFile = File.AppendText(_fileName);
 			}
 			catch (Exception e)
@@ -94,7 +96,7 @@ namespace BUtil.Core.Logs
                     WriteInFile(Resources.BackupFinishedSuccesfully);
                 }
                 
-                WriteInFile("</dody>");
+                WriteInFile("</body>");
 				WriteInFile("</html>");
 				if (ErrorsOrWarningsRegistered)
 				{
@@ -111,8 +113,6 @@ namespace BUtil.Core.Logs
 
                 GC.SuppressFinalize(this);
             }
-            
-            System.Diagnostics.Debug.WriteLine("log::close::finished");
         }
     }
 }

@@ -12,7 +12,7 @@
         {
         }
 
-        public void ProcessPackerMessage(string consoleOutput, bool finishedSuccessfully)
+        public void LogProcessOutput(string consoleOutput, bool finishedSuccessfully)
         {
         }
 

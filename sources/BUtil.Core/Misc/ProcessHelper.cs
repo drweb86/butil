@@ -3,8 +3,6 @@ using System.Text;
 
 namespace BUtil.Core.Misc
 {
-
-
     public static class ProcessHelper
     {
         public static void Execute(
@@ -33,8 +31,8 @@ namespace BUtil.Core.Misc
             process.StartInfo.RedirectStandardError = true;
             process.StartInfo.RedirectStandardOutput = true;
 
-            process.OutputDataReceived += (s, a) => stdOutputBuilder.Append(a.Data);
-            process.ErrorDataReceived += (s, a) => stdErrorBuilder.Append(a.Data);
+            process.OutputDataReceived += (s, a) => stdOutputBuilder.AppendLine(a.Data);
+            process.ErrorDataReceived += (s, a) => stdErrorBuilder.AppendLine(a.Data);
             if (sendNewLine)
             {
                 process.StartInfo.RedirectStandardInput = true;

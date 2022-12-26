@@ -32,10 +32,10 @@ namespace BUtil.ConsoleBackup
                 log.Open();
         }
 
-        public void ProcessPackerMessage(string consoleOutput, bool finishedSuccessfully)
+        public void LogProcessOutput(string consoleOutput, bool finishedSuccessfully)
         {
             foreach (var log in _logs)
-                log.ProcessPackerMessage(consoleOutput, finishedSuccessfully);
+                log.LogProcessOutput(consoleOutput, finishedSuccessfully);
         }
 
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace BUtil.Core.Logs
 {
@@ -6,33 +7,13 @@ namespace BUtil.Core.Logs
     {
         private bool _errorsOrWarningsRegistered;
 
-        public bool ErrorsOrWarningsRegistered
+        public bool ErrorsOrWarningsRegistered => _errorsOrWarningsRegistered;
+        public void LogProcessOutput(string consoleOutput, bool finishedSuccessfully)
         {
-            get { return _errorsOrWarningsRegistered; }
-        }
-		
-        private void OutputPackerMessageHelper(string[] data, LoggingEvent putInLogAs)
-        {
-            for (int i = 0; i < data.Length; i++)
-                if (!string.IsNullOrEmpty(data[i]))
-                    WriteLine(putInLogAs, data[i]);
-        }
-        
-        public void ProcessPackerMessage(string consoleOutput, bool finishedSuccessfully)
-        {
-            // Preparation of string to process
-            string DestinationString = consoleOutput;
-            DestinationString = DestinationString.Replace("\r", string.Empty);
-            string[] data = DestinationString.Split(new Char[] { '\n' });// errors /r - remains
-            for (int i = 0; i < data.Length; i++)
-                data[i] = data[i].Trim();// Trim required because output from archiver is bad
-
-            // in all other log types we should output all
-            // 7-zip output entirely
-            if (finishedSuccessfully)
-                OutputPackerMessageHelper(data, LoggingEvent.PackerMessage);
-            else
-                OutputPackerMessageHelper(data, LoggingEvent.Error);
+            consoleOutput
+                .Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries)
+                .ToList()
+                .ForEach(x => WriteLine(finishedSuccessfully ? LoggingEvent.Debug : LoggingEvent.Error, x));
         }
 
         protected void PreprocessLoggingInformation(LoggingEvent loggingEvent)

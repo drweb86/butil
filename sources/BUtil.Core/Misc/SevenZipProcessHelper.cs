@@ -46,9 +46,9 @@ namespace BUtil.Core.Misc
 
                 var isSuccess = returnCode == 0;
                 if (!string.IsNullOrWhiteSpace(stdOutput))
-                    log.ProcessPackerMessage(stdOutput, isSuccess);
+                    log.LogProcessOutput(stdOutput, isSuccess);
                 if (!string.IsNullOrWhiteSpace(stdError))
-                    log.ProcessPackerMessage(stdError, isSuccess);
+                    log.LogProcessOutput(stdError, isSuccess);
                 if (isSuccess)
                     log.WriteLine(LoggingEvent.Debug, "Unpack successfull.");
                 if (!isSuccess)
@@ -106,9 +106,9 @@ namespace BUtil.Core.Misc
 
             var isSuccess = returnCode == 0;
             if (!string.IsNullOrWhiteSpace(stdOutput))
-                log.ProcessPackerMessage(stdOutput, isSuccess);
+                log.LogProcessOutput(stdOutput, isSuccess);
             if (!string.IsNullOrWhiteSpace(stdError))
-                log.ProcessPackerMessage(stdError, isSuccess);
+                log.LogProcessOutput(stdError, isSuccess);
             if (isSuccess)
                 log.WriteLine(LoggingEvent.Debug, "Pack successfull.");
             if (!isSuccess)
