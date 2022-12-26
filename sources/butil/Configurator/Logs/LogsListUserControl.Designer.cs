@@ -70,7 +70,7 @@ namespace BUtil.Configurator.LogsManagement
             this.journalsListView.LabelWrap = false;
             this.journalsListView.LargeImageList = this.journalsImageList;
             this.journalsListView.Location = new System.Drawing.Point(4, 4);
-            this.journalsListView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.journalsListView.Margin = new System.Windows.Forms.Padding(4);
             this.journalsListView.Name = "journalsListView";
             this._tableLayoutPanel.SetRowSpan(this.journalsListView, 5);
             this.journalsListView.Size = new System.Drawing.Size(690, 436);
@@ -123,9 +123,9 @@ namespace BUtil.Configurator.LogsManagement
             // refreshLogsButton
             // 
             this.refreshLogsButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.refreshLogsButton.Image = global::BUtil.Configurator.Icons.Refresh48x48;
+            this.refreshLogsButton.Image = ((System.Drawing.Image)(resources.GetObject("refreshLogsButton.Image")));
             this.refreshLogsButton.Location = new System.Drawing.Point(702, 250);
-            this.refreshLogsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.refreshLogsButton.Margin = new System.Windows.Forms.Padding(4);
             this.refreshLogsButton.MaximumSize = new System.Drawing.Size(74, 74);
             this.refreshLogsButton.MinimumSize = new System.Drawing.Size(74, 74);
             this.refreshLogsButton.Name = "refreshLogsButton";
@@ -139,7 +139,7 @@ namespace BUtil.Configurator.LogsManagement
             this.removeSuccesfullLogsButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.removeSuccesfullLogsButton.Image = ((System.Drawing.Image)(resources.GetObject("removeSuccesfullLogsButton.Image")));
             this.removeSuccesfullLogsButton.Location = new System.Drawing.Point(702, 168);
-            this.removeSuccesfullLogsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.removeSuccesfullLogsButton.Margin = new System.Windows.Forms.Padding(4);
             this.removeSuccesfullLogsButton.MaximumSize = new System.Drawing.Size(74, 74);
             this.removeSuccesfullLogsButton.MinimumSize = new System.Drawing.Size(74, 74);
             this.removeSuccesfullLogsButton.Name = "removeSuccesfullLogsButton";
@@ -153,7 +153,7 @@ namespace BUtil.Configurator.LogsManagement
             this.deleteSelectedLogsButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.deleteSelectedLogsButton.Image = global::BUtil.Configurator.Icons.cross_48;
             this.deleteSelectedLogsButton.Location = new System.Drawing.Point(702, 86);
-            this.deleteSelectedLogsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deleteSelectedLogsButton.Margin = new System.Windows.Forms.Padding(4);
             this.deleteSelectedLogsButton.MaximumSize = new System.Drawing.Size(74, 74);
             this.deleteSelectedLogsButton.MinimumSize = new System.Drawing.Size(74, 74);
             this.deleteSelectedLogsButton.Name = "deleteSelectedLogsButton";
@@ -167,9 +167,9 @@ namespace BUtil.Configurator.LogsManagement
             this.openSelectedLogsButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.openSelectedLogsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.openSelectedLogsButton.ForeColor = System.Drawing.Color.Blue;
-            this.openSelectedLogsButton.Image = global::BUtil.Configurator.Icons.OpenSelectedLogs;
+            this.openSelectedLogsButton.Image = ((System.Drawing.Image)(resources.GetObject("openSelectedLogsButton.Image")));
             this.openSelectedLogsButton.Location = new System.Drawing.Point(702, 4);
-            this.openSelectedLogsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.openSelectedLogsButton.Margin = new System.Windows.Forms.Padding(4);
             this.openSelectedLogsButton.MaximumSize = new System.Drawing.Size(74, 74);
             this.openSelectedLogsButton.MinimumSize = new System.Drawing.Size(74, 74);
             this.openSelectedLogsButton.Name = "openSelectedLogsButton";
@@ -205,7 +205,7 @@ namespace BUtil.Configurator.LogsManagement
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this._tableLayoutPanel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(383, 326);
             this.Name = "LogsListUserControl";
             this.Size = new System.Drawing.Size(780, 444);

@@ -52,10 +52,10 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             this.startButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.startButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.startButton.Image = ((System.Drawing.Image)(resources.GetObject("startButton.Image")));
-            this.startButton.Location = new System.Drawing.Point(492, 481);
+            this.startButton.Location = new System.Drawing.Point(492, 469);
             this.startButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(88, 31);
+            this.startButton.Size = new System.Drawing.Size(88, 43);
             this.startButton.TabIndex = 11;
             this.toolTip.SetToolTip(this.startButton, "Start");
             this.startButton.UseVisualStyleBackColor = true;
@@ -64,10 +64,10 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             // closeButton
             // 
             this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.closeButton.Location = new System.Drawing.Point(681, 481);
+            this.closeButton.Location = new System.Drawing.Point(681, 469);
             this.closeButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(90, 31);
+            this.closeButton.Size = new System.Drawing.Size(90, 43);
             this.closeButton.TabIndex = 12;
             this.closeButton.Text = "Close";
             this.closeButton.UseVisualStyleBackColor = true;
@@ -131,7 +131,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             this.settingsUserControl.Margin = new System.Windows.Forms.Padding(7, 3, 7, 3);
             this.settingsUserControl.MinimumSize = new System.Drawing.Size(764, 194);
             this.settingsUserControl.Name = "settingsUserControl";
-            this.settingsUserControl.Size = new System.Drawing.Size(768, 205);
+            this.settingsUserControl.Size = new System.Drawing.Size(768, 194);
             this.settingsUserControl.TabIndex = 18;
             // 
             // cancelButton
@@ -141,10 +141,10 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.Enabled = false;
             this.cancelButton.Image = ((System.Drawing.Image)(resources.GetObject("cancelButton.Image")));
-            this.cancelButton.Location = new System.Drawing.Point(587, 481);
+            this.cancelButton.Location = new System.Drawing.Point(587, 469);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(88, 31);
+            this.cancelButton.Size = new System.Drawing.Size(88, 43);
             this.cancelButton.TabIndex = 19;
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.CancelButtonClick);
@@ -157,12 +157,12 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             // helpButton
             // 
             this.helpButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.helpButton.Location = new System.Drawing.Point(8, 478);
+            this.helpButton.Image = ((System.Drawing.Image)(resources.GetObject("helpButton.Image")));
+            this.helpButton.Location = new System.Drawing.Point(8, 469);
             this.helpButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.helpButton.Name = "helpButton";
-            this.helpButton.Size = new System.Drawing.Size(38, 38);
+            this.helpButton.Size = new System.Drawing.Size(48, 47);
             this.helpButton.TabIndex = 20;
-            this.helpButton.Text = "?";
             this.helpButton.UseVisualStyleBackColor = true;
             this.helpButton.Click += new System.EventHandler(this.HelpButtonClick);
             // 

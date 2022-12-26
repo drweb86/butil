@@ -30,6 +30,7 @@ namespace BUtil.BackupUiMaster.Controls
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BackupProgressUserControl));
             this.elapsedLabel = new System.Windows.Forms.Label();
             this.passedLabel = new System.Windows.Forms.Label();
             this.progressBar = new System.Windows.Forms.ProgressBar();
@@ -41,28 +42,31 @@ namespace BUtil.BackupUiMaster.Controls
             // elapsedLabel
             // 
             this.elapsedLabel.AutoSize = true;
-            this.elapsedLabel.Location = new System.Drawing.Point(129, 68);
+            this.elapsedLabel.Location = new System.Drawing.Point(150, 78);
+            this.elapsedLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.elapsedLabel.Name = "elapsedLabel";
-            this.elapsedLabel.Size = new System.Drawing.Size(13, 13);
+            this.elapsedLabel.Size = new System.Drawing.Size(13, 15);
             this.elapsedLabel.TabIndex = 25;
             this.elapsedLabel.Text = "0";
             // 
             // passedLabel
             // 
             this.passedLabel.AutoSize = true;
-            this.passedLabel.Location = new System.Drawing.Point(59, 68);
+            this.passedLabel.Location = new System.Drawing.Point(69, 78);
+            this.passedLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.passedLabel.Name = "passedLabel";
-            this.passedLabel.Size = new System.Drawing.Size(48, 13);
+            this.passedLabel.Size = new System.Drawing.Size(50, 15);
             this.passedLabel.TabIndex = 24;
             this.passedLabel.Text = "Elapsed:";
             // 
             // progressBar
             // 
-            this.progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar.Location = new System.Drawing.Point(59, 38);
+            this.progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBar.Location = new System.Drawing.Point(69, 44);
+            this.progressBar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(442, 23);
+            this.progressBar.Size = new System.Drawing.Size(516, 27);
             this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBar.TabIndex = 23;
             // 
@@ -74,24 +78,27 @@ namespace BUtil.BackupUiMaster.Controls
             // 
             // backupIconPictureBox
             // 
-            this.backupIconPictureBox.Image = global::BUtil.Configurator.Icons.box_download_48;
-            this.backupIconPictureBox.Location = new System.Drawing.Point(2, 33);
+            this.backupIconPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("backupIconPictureBox.Image")));
+            this.backupIconPictureBox.Location = new System.Drawing.Point(4, 42);
+            this.backupIconPictureBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.backupIconPictureBox.Name = "backupIconPictureBox";
-            this.backupIconPictureBox.Size = new System.Drawing.Size(50, 50);
+            this.backupIconPictureBox.Size = new System.Drawing.Size(57, 51);
+            this.backupIconPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.backupIconPictureBox.TabIndex = 27;
             this.backupIconPictureBox.TabStop = false;
             // 
             // BackupProgressUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.elapsedLabel);
             this.Controls.Add(this.backupIconPictureBox);
             this.Controls.Add(this.passedLabel);
             this.Controls.Add(this.progressBar);
-            this.MinimumSize = new System.Drawing.Size(502, 90);
+            this.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
+            this.MinimumSize = new System.Drawing.Size(586, 104);
             this.Name = "BackupProgressUserControl";
-            this.Size = new System.Drawing.Size(504, 90);
+            this.Size = new System.Drawing.Size(588, 104);
             this.Title = "Backup is in a progress...";
             this.Controls.SetChildIndex(this.progressBar, 0);
             this.Controls.SetChildIndex(this.passedLabel, 0);

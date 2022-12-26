@@ -131,7 +131,7 @@
             // _executeButton
             // 
             this._executeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._executeButton.Image = global::BUtil.Configurator.Icons.Start48x48;
+            this._executeButton.Image = ((System.Drawing.Image)(resources.GetObject("_executeButton.Image")));
             this._executeButton.Location = new System.Drawing.Point(546, 6);
             this._executeButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this._executeButton.Name = "_executeButton";
