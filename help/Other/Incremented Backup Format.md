@@ -35,3 +35,7 @@ Structure of files in storage:
 - Folder with version contains files with random guids instead of names in 7z format.
 
 If encryption is used, then 7z encryption of headers and content is used.
+
+If encryption is used, state file is encrypted with specified password. Each stored file is encrypted with unique password stored in state file.
+
+Compression degrees are predefined for some formats. For other formats - ultra.
