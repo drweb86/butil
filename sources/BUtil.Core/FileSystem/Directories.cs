@@ -46,9 +46,9 @@ namespace BUtil.Core.FileSystem
 #if DEBUG
 		private static readonly string _userDataFolder = Path.Combine(_applicationDataFolder, "BUtil-Development");
 #else
-        private static readonly string _userDataFolder = Path.Combine(_applicationDataFolder, "BUtil-" + CopyrightInfo.Version);
+        private static readonly string _userDataFolder = Path.Combine(_applicationDataFolder, "BUtil");
 		#endif
-		private static readonly string _logsDir = Path.Combine(_userDataFolder, "Logs");
+		private static readonly string _logsDir = Path.Combine(_userDataFolder, "Logs", "v1");
 		
         public static readonly string TempFolder = System.Environment.GetEnvironmentVariable("TEMP");
 
