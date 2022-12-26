@@ -1,3 +1,8 @@
+# 5.8.0.0 (26 December 2022)
+
+## New Features
+- Format of backup is declared
+
 # 5.7.1.0 (23 December 2022)
 
 ## New Features

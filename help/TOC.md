@@ -34,6 +34,8 @@
 
 [Security and Protection](./Other/Security%20and%20Protection.md)
 
+[Incremented Backup Format](./Other/Incremented%20Backup%20Format.md)
+
 [Localization](./Other/Localization.md)
 
 [License](../License.md)
