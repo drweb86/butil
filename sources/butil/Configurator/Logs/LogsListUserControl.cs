@@ -2,8 +2,6 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
-using System.Globalization;
-
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Configurator.Localization;
@@ -16,15 +14,13 @@ namespace BUtil.Configurator.LogsManagement
 {
 	public partial class LogsListUserControl : UserControl
 	{
-		private const string ViewLogTime = "dd MMMM (dddd) HH:mm";
-		
 		private ProgramOptions _programOptions;
 		
 		public LogsListUserControl()
 		{
 			InitializeComponent();
 			
-			listViewResize(this, null);
+			OnListViewResize(this, null);
 			
 			
             toolTip.SetToolTip(refreshLogsButton, Resources.Refresh);
@@ -57,7 +53,9 @@ namespace BUtil.Configurator.LogsManagement
             
 			GetLogsInformation()
 				.OrderByDescending(x => x.CreatedAt)
-				.Select(log => new ListViewItem(log.CreatedAt.ToString(ViewLogTime, CultureInfo.CurrentUICulture), (int)log.Status)
+				.Select(log => new ListViewItem(Path.GetFileName(
+					log.File.Replace(Files.LogFilesExtension, string.Empty)),
+					(int)log.Status)
                 {
                     ForeColor = colors[(int)log.Status],
                     Tag = log
@@ -76,20 +74,20 @@ namespace BUtil.Configurator.LogsManagement
 			journalsListView.Enabled =
                 removeSuccesfullLogsButton.Enabled = anyDataPresent;
 				
-			updateLocalOperationsButtonsState(this, null);
+			UpdateLocalOperationsButtonsState(this, null);
 		}
-		
-		void listViewResize(object sender, EventArgs e)
+
+        private void OnListViewResize(object sender, EventArgs e)
 		{
 			_logsColumnHeader.Width = journalsListView.Width - 40;
 		}
 		
-		void refresh(object sender, EventArgs e)
+		private void Refresh(object sender, EventArgs e)
 		{
 			RefreshList();
 		}
 
-		void removeSelected(object sender, EventArgs e)
+        private void RemoveSelected(object sender, EventArgs e)
 		{
 			ListView.SelectedListViewItemCollection items = journalsListView.SelectedItems;
 			var infos = new List<LogInfo>();
@@ -113,19 +111,19 @@ namespace BUtil.Configurator.LogsManagement
 
 			RefreshEnabledButtons();
 		}
-		
-		void journalsListViewKeyDown(object sender, KeyEventArgs e)
+
+        private void JournalsListViewKeyDown(object sender, KeyEventArgs e)
 		{
 			if (e.KeyCode == Keys.Delete)
 			{
 				if (journalsListView.SelectedItems.Count > 0)
 				{
-					removeSelected(sender, e);
+					RemoveSelected(sender, e);
 				}
 			} 
 			else if (e.KeyCode == Keys.Enter)
 			{
-				openSelectedLogsInBrowser(sender, e);
+				OpenSelectedLogsInBrowser(sender, e);
 			}
 			else if (e.Control && e.KeyCode == Keys.A)
 			{
@@ -139,8 +137,8 @@ namespace BUtil.Configurator.LogsManagement
 				RefreshList();
 			}
 		}
-		
-		void updateLocalOperationsButtonsState(object sender, EventArgs e)
+
+        private void UpdateLocalOperationsButtonsState(object sender, EventArgs e)
 		{
 			bool enable = journalsListView.SelectedItems.Count > 0;
 			
@@ -151,7 +149,7 @@ namespace BUtil.Configurator.LogsManagement
                 openSelectedLogsButton.Enabled = enable;
 		}
 
-		void removeSuccessfullLogs(object sender, EventArgs e)
+        private void RemoveSuccessfullLogs(object sender, EventArgs e)
 		{
 			ListView.ListViewItemCollection items = journalsListView.Items;
 
@@ -184,7 +182,7 @@ namespace BUtil.Configurator.LogsManagement
 
 		}
 		
-		void openSelectedLogsInBrowser(object sender, EventArgs e)
+		private void OpenSelectedLogsInBrowser(object sender, EventArgs e)
 		{
 			foreach(ListViewItem item in journalsListView.SelectedItems)
 			{

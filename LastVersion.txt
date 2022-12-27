@@ -1,5 +1,11 @@
-5.7.1.0
+5.8.0.0
 
-New Features
-- Allow non-administrative installations. Archive deployment was dropped. Dialogs are removed.
+## New Features
+- Inrecemented backup model is documented.
 
+## Bug Fixes
+- Packer output was fixed.
+
+## Changes
+- Logs were simplified;
+- Icons were updated.

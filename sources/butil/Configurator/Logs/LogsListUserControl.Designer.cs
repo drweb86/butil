@@ -78,10 +78,10 @@ namespace BUtil.Configurator.LogsManagement
             this.journalsListView.TabIndex = 0;
             this.journalsListView.UseCompatibleStateImageBehavior = false;
             this.journalsListView.View = System.Windows.Forms.View.Details;
-            this.journalsListView.SelectedIndexChanged += new System.EventHandler(this.updateLocalOperationsButtonsState);
-            this.journalsListView.DoubleClick += new System.EventHandler(this.openSelectedLogsInBrowser);
-            this.journalsListView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.journalsListViewKeyDown);
-            this.journalsListView.Resize += new System.EventHandler(this.listViewResize);
+            this.journalsListView.SelectedIndexChanged += new System.EventHandler(this.UpdateLocalOperationsButtonsState);
+            this.journalsListView.DoubleClick += new System.EventHandler(this.OpenSelectedLogsInBrowser);
+            this.journalsListView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.JournalsListViewKeyDown);
+            this.journalsListView.Resize += new System.EventHandler(this.OnListViewResize);
             // 
             // _logsColumnHeader
             // 
@@ -105,7 +105,7 @@ namespace BUtil.Configurator.LogsManagement
             this.viewSelectedLogsToolStripMenuItem.Name = "viewSelectedLogsToolStripMenuItem";
             this.viewSelectedLogsToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.viewSelectedLogsToolStripMenuItem.Text = "View...";
-            this.viewSelectedLogsToolStripMenuItem.Click += new System.EventHandler(this.openSelectedLogsInBrowser);
+            this.viewSelectedLogsToolStripMenuItem.Click += new System.EventHandler(this.OpenSelectedLogsInBrowser);
             // 
             // toolStripSeparator1
             // 
@@ -118,7 +118,7 @@ namespace BUtil.Configurator.LogsManagement
             this.removeSelectedLogsToolStripMenuItem.Name = "removeSelectedLogsToolStripMenuItem";
             this.removeSelectedLogsToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.removeSelectedLogsToolStripMenuItem.Text = "Remove";
-            this.removeSelectedLogsToolStripMenuItem.Click += new System.EventHandler(this.removeSelected);
+            this.removeSelectedLogsToolStripMenuItem.Click += new System.EventHandler(this.RemoveSelected);
             // 
             // refreshLogsButton
             // 
@@ -132,7 +132,7 @@ namespace BUtil.Configurator.LogsManagement
             this.refreshLogsButton.Size = new System.Drawing.Size(74, 74);
             this.refreshLogsButton.TabIndex = 3;
             this.refreshLogsButton.UseVisualStyleBackColor = true;
-            this.refreshLogsButton.Click += new System.EventHandler(this.refresh);
+            this.refreshLogsButton.Click += new System.EventHandler(this.Refresh);
             // 
             // removeSuccesfullLogsButton
             // 
@@ -146,7 +146,7 @@ namespace BUtil.Configurator.LogsManagement
             this.removeSuccesfullLogsButton.Size = new System.Drawing.Size(74, 74);
             this.removeSuccesfullLogsButton.TabIndex = 2;
             this.removeSuccesfullLogsButton.UseVisualStyleBackColor = true;
-            this.removeSuccesfullLogsButton.Click += new System.EventHandler(this.removeSuccessfullLogs);
+            this.removeSuccesfullLogsButton.Click += new System.EventHandler(this.RemoveSuccessfullLogs);
             // 
             // deleteSelectedLogsButton
             // 
@@ -160,7 +160,7 @@ namespace BUtil.Configurator.LogsManagement
             this.deleteSelectedLogsButton.Size = new System.Drawing.Size(74, 74);
             this.deleteSelectedLogsButton.TabIndex = 1;
             this.deleteSelectedLogsButton.UseVisualStyleBackColor = true;
-            this.deleteSelectedLogsButton.Click += new System.EventHandler(this.removeSelected);
+            this.deleteSelectedLogsButton.Click += new System.EventHandler(this.RemoveSelected);
             // 
             // openSelectedLogsButton
             // 
@@ -176,7 +176,7 @@ namespace BUtil.Configurator.LogsManagement
             this.openSelectedLogsButton.Size = new System.Drawing.Size(74, 74);
             this.openSelectedLogsButton.TabIndex = 0;
             this.openSelectedLogsButton.UseVisualStyleBackColor = true;
-            this.openSelectedLogsButton.Click += new System.EventHandler(this.openSelectedLogsInBrowser);
+            this.openSelectedLogsButton.Click += new System.EventHandler(this.OpenSelectedLogsInBrowser);
             // 
             // _tableLayoutPanel
             // 
