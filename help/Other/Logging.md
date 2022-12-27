@@ -2,7 +2,7 @@
 Logs can be produced in 2 modes: in html file log and console application.
 
 # Logs Location
-Logs are stored in folder '%userprofile%\Application Data\BUtil-x.x\Logs'.
+Logs are stored in folder '%appdata%\Butil\Logs\v1'.
 You can override logs location in Configurator in logging tab.
 Backup Wizard program stores logs in logs folder too.
 
@@ -18,5 +18,5 @@ In normal logging mode program parses 7-zip messages and extracts errors and war
 # Logs Start Up After Completion Of Backup Master Work
 If any errors or warnings occur during backup, program configures the system to open log independently on chosen power pc options.
 
-# See also:</H4>
+# See also:
 [Configuring of Logging](../Configure/Configurator.md)
