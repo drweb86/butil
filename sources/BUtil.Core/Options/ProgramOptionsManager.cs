@@ -1,6 +1,4 @@
-﻿using System;
-using BUtil.Core.BackupModels;
-using BUtil.Core.FileSystem;
+﻿using BUtil.Core.BackupModels;
 
 namespace BUtil.Core.Options
 {
@@ -27,16 +25,5 @@ namespace BUtil.Core.Options
                 }
 			};
         }
-
-		public static ProgramOptions Default
-		{
-			get 
-			{
-				return new ProgramOptions
-				{
-					LogsFolder = Directories.LogsFolder,
-				};
-			}
-		}
 	}
 }

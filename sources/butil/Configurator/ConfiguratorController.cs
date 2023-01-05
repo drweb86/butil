@@ -3,22 +3,15 @@ using System.Windows.Forms;
 using System.IO;
 using BUtil.Configurator.BackupUiMaster.Forms;
 using System.Diagnostics;
-using System.Globalization;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
 using BUtil.RestorationMaster;
-using BUtil.Configurator.LogsManagement;
-using static System.Windows.Forms.Design.AxImporter;
 
 namespace BUtil.Configurator.Configurator
 {
-    public class ConfiguratorController
+    public static class ConfiguratorController
     {
-        
-        private ProgramOptions _profileOptions = ProgramOptionsManager.Default;
-        private ProgramOptions _optionsDuringProgramLoad = ProgramOptionsManager.Default;
-
-        public void OpenRestorationMaster(string file, bool runFormAsApplication)
+        public static void OpenRestorationMaster(string file, bool runFormAsApplication)
 		{
 			if (Program.PackageIsBroken)
 			{
@@ -37,7 +30,7 @@ namespace BUtil.Configurator.Configurator
             }
 		}
 		
-        public void RemoveLocalUserSettings()
+        public static void RemoveLocalUserSettings()
 		{
 			// we're deleting only default logs folder location
 			if (Directory.Exists(Directories.LogsFolder))
@@ -47,21 +40,20 @@ namespace BUtil.Configurator.Configurator
 				Directory.Delete(Directories.UserDataFolder, true);
 		}
 		
-		public void OpenBackupUi(string taskName)
+		public static void OpenBackupUi(string taskName)
         {
             if (Program.PackageIsBroken)
             {
                 return;
             }
 
-            LoadSettings();
             var task = GetBackupTaskToExecute(taskName);
-            using var form = new BackupMasterForm(_profileOptions, task);
+            using var form = new BackupMasterForm(task);
             Application.Run(form);
             Environment.Exit(0);
         }
 
-        public void LaunchBackupUIToolInSeparateProcess(string taskName)
+        public static void LaunchBackupUIToolInSeparateProcess(string taskName)
         {
             Process.Start(Application.ExecutablePath, $"{Arguments.RunBackupMaster} \"{Arguments.RunTask}={taskName}\"");
         }
@@ -94,41 +86,5 @@ namespace BUtil.Configurator.Configurator
 
             return task;
         }      
-
-        public ProgramOptions ProgramOptions
-        {
-            get { return _profileOptions; }
-        }
-
-        public void LoadSettings()
-        {
-
-            var programOptionsStoreService = new ProgramOptionsStoreService();
-            _profileOptions = programOptionsStoreService.Load();
-
-            _optionsDuringProgramLoad = _profileOptions.Clone() as ProgramOptions;
-        }
-
-        public bool ProgramOptionsChanged()
-        {
-            return !_optionsDuringProgramLoad.CompareTo(_profileOptions); // bug in .Net 7
-        }
-        
-        public bool StoreSettings()
-        {
-            try
-            {
-                var programOptionsStoreService = new ProgramOptionsStoreService();
-                programOptionsStoreService.Save(_profileOptions);
-                _optionsDuringProgramLoad = _profileOptions.Clone() as ProgramOptions;
-            }
-            catch (Exception ee)
-            {
-            	Messages.ShowErrorBox(ee.Message);
-                return false;
-            }
-
-            return true;
-        }
     }
 }

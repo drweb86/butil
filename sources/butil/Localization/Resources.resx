@@ -239,9 +239,6 @@ Localization created by:
   <data name="BackupIsInAProgress" xml:space="preserve">
     <value>Backup is in a progress... </value>
   </data>
-  <data name="WouldYouLikeToApplyModifiedSettings" xml:space="preserve">
-    <value>Would you like to apply modified settings?</value>
-  </data>
   <data name="Exiting" xml:space="preserve">
     <value>Exiting...</value>
   </data>
@@ -514,15 +511,6 @@ Please refer to manual for the complete list of parameters!</value>
   </data>
   <data name="MoveDown" xml:space="preserve">
     <value>Move Down</value>
-  </data>
-  <data name="LogsLocation" xml:space="preserve">
-    <value>Logs location:</value>
-  </data>
-  <data name="Change" xml:space="preserve">
-    <value>Change...</value>
-  </data>
-  <data name="Reset" xml:space="preserve">
-    <value>Reset</value>
   </data>
   <data name="Actions" xml:space="preserve">
     <value>Actions</value>

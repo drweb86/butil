@@ -1,9 +1,0 @@
-1. For installer check for minimum permissions this
-processInstaller.Account = ServiceAccount.LocalSystem;
-
-2. Know temp folder - and change docs s if required
-
-3. Know where log stored and how to access it - update docs*2
-
-Проблемы со службой
-- не работает планировщик

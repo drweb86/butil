@@ -2,9 +2,7 @@ using System;
 using System.Windows.Forms;
 using BUtil.Configurator.Configurator.Controls;
 using BUtil.Core.Misc;
-using BUtil.Core.Options;
 using System.Collections.Generic;
-
 using BUtil.Core.PL;
 using BUtil.Configurator.Localization;
 
@@ -14,24 +12,21 @@ namespace BUtil.Configurator.Configurator.Forms
 	{
 		#region Fields
 
-        readonly ConfiguratorController _controller;
 	    readonly Dictionary<ConfiguratorViewsEnum, BackUserControl> _views;
 		
 		#endregion
 
         #region Constructors
 
-        public MainForm(ConfiguratorController controller)
+        public MainForm()
 		{
-			_controller = controller;
-			
 			InitializeComponent();
 
-		    var backupTasksControl = new BackupTasksUserControl(_controller);
+		    var backupTasksControl = new BackupTasksUserControl();
 			_views = new Dictionary<ConfiguratorViewsEnum, BackUserControl>
 			             {
 			                 {ConfiguratorViewsEnum.Tasks, backupTasksControl},
-			                 {ConfiguratorViewsEnum.Logging, new LogsUserControl(controller)}
+			                 {ConfiguratorViewsEnum.Logging, new LogsUserControl()}
 			             };
 
 		    backupTasksControl.OnRequestToSaveOptions += OnRequestToSaveOptions;
@@ -41,7 +36,6 @@ namespace BUtil.Configurator.Configurator.Forms
         		pair.Value.HelpLabel = helpToolStripStatusLabel;
         	}
 			ApplyLocalization();
-			_controller.LoadSettings();
 
 			ApplyOptionsToUi();
 			ChoosePanelUserControlViewChanged(ConfiguratorViewsEnum.Tasks);
@@ -51,21 +45,15 @@ namespace BUtil.Configurator.Configurator.Forms
 
         #endregion
 
-        void RunRestorationTool()
+        private static void RunRestorationTool()
 		{
-			_controller.OpenRestorationMaster(null, false);
+            ConfiguratorController.OpenRestorationMaster(null, false);
 		}
 
 		void MainFormFormClosing(object sender, FormClosingEventArgs e)
 		{
 			GetOptionsFromUi();
             e.Cancel = false;
-
-            if (_controller.ProgramOptionsChanged() &&
-                Messages.ShowYesNoDialog(Resources.WouldYouLikeToApplyModifiedSettings))
-			{
-				e.Cancel = !SaveOptions(); 
-			}
 		}
 		
         void ApplyLocalization()
@@ -96,21 +84,13 @@ namespace BUtil.Configurator.Configurator.Forms
 		private bool OnRequestToSaveOptions()
 		{
             GetOptionsFromUi();
-            _controller.StoreSettings();
 			return true;
-        }
-
-        bool SaveOptions()
-        {
-            return _controller.StoreSettings();
         }
 
         private void ApplyOptionsToUi()
         {
-            ProgramOptions profileOptions = _controller.ProgramOptions;
-
-            _views[ConfiguratorViewsEnum.Tasks].SetOptionsToUi( profileOptions);
-            _views[ConfiguratorViewsEnum.Logging].SetOptionsToUi(profileOptions);
+            _views[ConfiguratorViewsEnum.Tasks].SetOptionsToUi(null);
+            _views[ConfiguratorViewsEnum.Logging].SetOptionsToUi(null);
         }
 
 		void RestorationToolToolStripMenuItemClick(object sender, EventArgs e)
@@ -139,10 +119,8 @@ namespace BUtil.Configurator.Configurator.Forms
 
         private void OnAboutToolStripMenuItemClick(object sender, EventArgs e)
         {
-            using (var aboutForm = new AboutForm(_controller))
-            {
-                aboutForm.ShowDialog();
-            }
+			using var aboutForm = new AboutForm();
+            aboutForm.ShowDialog();
         }
 	}
 }

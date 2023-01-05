@@ -16,6 +16,7 @@ using System.IO;
 using System.Linq;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using BUtil.Core.FileSystem;
 
 namespace BUtil.Configurator.BackupUiMaster.Forms
 {
@@ -23,11 +24,10 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 	{
         private readonly BackupTask _backupTask;
 		BackupProgressUserControl _backupProgressUserControl;
-		private readonly ProgramOptions _programOptions;
         private readonly ConcurrentQueue<Action> _listViewUpdates = new();
         private readonly List<ListViewItem> _items = new();
 
-        public BackupMasterForm(ProgramOptions programOptions, BackupTask backupTask)
+        public BackupMasterForm(BackupTask backupTask)
 		{
 			InitializeComponent();
 			
@@ -37,7 +37,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 			}
 
             _backupTask = backupTask;
-			_programOptions = programOptions;
             OnTasksListViewResize(this, new EventArgs());
             ApplyLocalization();
 			NativeMethods.PreventSleep();
@@ -112,7 +111,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 
 		void LoadForm(object sender, EventArgs e)
         {
-            _log = new FileLog(_programOptions.LogsFolder, _backupTask.Name);
+            _log = new FileLog(_backupTask.Name);
             _log.Open();
             _strategy = BackupModelStrategyFactory.Create(_log, _backupTask);
             _backupEvents = new BackupEvents();

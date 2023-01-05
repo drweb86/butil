@@ -17,15 +17,13 @@ namespace BUtil.Configurator.Configurator.Forms
         readonly Dictionary<BackupTaskViewsEnum, BackUserControl> _views;
         readonly BackupTask _task;
         readonly ScheduleInfo _scheduleInfo;
-        readonly ProgramOptions _profileOptions;
 
-        public EditBackupTaskForm(ProgramOptions profileOptions, BackupTask task, ScheduleInfo scheduleInfo)
+        public EditBackupTaskForm(BackupTask task, ScheduleInfo scheduleInfo)
         {
             InitializeComponent();
             
             _task = task;
             _scheduleInfo = scheduleInfo;
-            _profileOptions = profileOptions;
             _views = new Dictionary<BackupTaskViewsEnum, BackUserControl>();
 
             SetupUiComponents();
@@ -67,12 +65,12 @@ namespace BUtil.Configurator.Configurator.Forms
             ViewChangeNotification(BackupTaskViewsEnum.SourceItems);
         }
 
-        void UpdateAccessibilitiesView()
+        private void UpdateAccessibilitiesView()
         {
-            choosePanelUserControl.UpdateView(_profileOptions);
+            choosePanelUserControl.UpdateView();
         }
 
-        bool SaveTask()
+        private bool SaveTask()
         {
             bool isValid = true;
             foreach (KeyValuePair<BackupTaskViewsEnum, BackUserControl> pair in _views)
@@ -83,7 +81,7 @@ namespace BUtil.Configurator.Configurator.Forms
             return isValid;
         }
 
-        void SaveRequest(object sender, EventArgs e)
+        private void SaveRequest(object sender, EventArgs e)
         {
             if (!SaveTask())
                 return;
@@ -92,7 +90,7 @@ namespace BUtil.Configurator.Configurator.Forms
             Close();
         }
 
-        void ApplyOptionsToUi()
+        private void ApplyOptionsToUi()
         {
             _views[BackupTaskViewsEnum.Name].SetOptionsToUi(_task);
             _views[BackupTaskViewsEnum.Storages].SetOptionsToUi(_task);
@@ -100,7 +98,7 @@ namespace BUtil.Configurator.Configurator.Forms
             _views[BackupTaskViewsEnum.OtherOptions].SetOptionsToUi(new object[] { _task });
         }
 
-        void ViewChangeNotification(BackupTaskViewsEnum newView)
+        private void ViewChangeNotification(BackupTaskViewsEnum newView)
         {
             nestingControlsPanel.Controls.Clear();
             nestingControlsPanel.Controls.Add(_views[newView]);

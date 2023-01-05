@@ -4,11 +4,9 @@ using System.IO;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
 using BUtil.Core.Logs;
-using BUtil.Core;
 using BUtil.Core.Misc;
 using BUtil.ConsoleBackup.Localization;
 using BUtil.Core.BackupModels;
-using System.Threading;
 
 namespace BUtil.ConsoleBackup
 {
@@ -19,8 +17,6 @@ namespace BUtil.ConsoleBackup
         public Controller()
         {
             PerformCriticalChecks();
-
-            LoadSettings();
         }
 
         public bool ParseCommandLineArguments(string[] args)
@@ -110,12 +106,6 @@ namespace BUtil.ConsoleBackup
             ShowErrorAndQuit(error);
         }
 
-        private void LoadSettings()
-        {
-            var programOptionsStoreService = new ProgramOptionsStoreService();
-            _options = programOptionsStoreService.Load();
-        }
-
         private static void PerformCriticalChecks()
         {
             try
@@ -140,7 +130,7 @@ namespace BUtil.ConsoleBackup
 
         private ILog OpenLog()
         {
-            var log = new ChainLog(_options, _taskName);
+            var log = new ChainLog(_taskName);
             try
             {
                 log.Open();
@@ -170,10 +160,9 @@ namespace BUtil.ConsoleBackup
 
         #region Fields
 
-        ProgramOptions _options;
-        IBackupModelStrategy _backup;
-        string _taskName;
-        PowerTask _powerTask = PowerTask.None;
+        private IBackupModelStrategy _backup;
+        private string _taskName;
+        private PowerTask _powerTask = PowerTask.None;
 
         #endregion
     }

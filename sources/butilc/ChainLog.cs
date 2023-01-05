@@ -1,7 +1,5 @@
 ﻿using BUtil.Core.Logs;
-using BUtil.Core.Options;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 
 namespace BUtil.ConsoleBackup
@@ -10,11 +8,11 @@ namespace BUtil.ConsoleBackup
     {
         private readonly IEnumerable<LogBase> _logs;
 
-        public ChainLog(ProgramOptions programOptions, string taskName)
+        public ChainLog(string taskName)
         {
             var logs = new List<LogBase>();
             _logs = logs;
-            logs.Add(new FileLog(programOptions.LogsFolder, taskName));
+            logs.Add(new FileLog(taskName));
             logs.Add(new ConsoleLog());
         }
 

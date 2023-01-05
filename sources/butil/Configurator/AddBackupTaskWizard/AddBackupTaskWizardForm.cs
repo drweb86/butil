@@ -9,9 +9,9 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
     {
         private readonly AddBackupTaskWizardView _addBackupTaskWizardView;
 
-        public CreateBackupTaskWizardForm(ProgramOptions options)
+        public CreateBackupTaskWizardForm()
         {
-            _addBackupTaskWizardView = new AddBackupTaskWizardView(options);
+            _addBackupTaskWizardView = new AddBackupTaskWizardView();
 
             InitializeComponent();
 

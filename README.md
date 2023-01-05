@@ -1,10 +1,10 @@
 # COMPRESSING, SAVING, STORING, PROVIDING easiest RESTORING
 
-Welcome to the 5.8 (27 December 2022) version BUtil!
+Welcome!
 
 ![BUtil Logotype](./help/Readme%20Assets/Logotype.bmp)
 
-BUtil is a powerfull set of tools for creating backups of documents and other data on your PC.
+BUtil is a powerful set of tools for creating backups of documents and other data on your PC.
 
 ![The main window of configurator](./help/Readme%20Assets/Screenshot%201.jpg)
 ![The backup ui master](./help/Readme%20Assets/Screenshot%202.jpg)
@@ -13,9 +13,9 @@ BUtil is a powerfull set of tools for creating backups of documents and other da
 
 - It can store backups on multiple mounted drives;
 - Simple configuring takes less time and goes easily and with comfort;
-- AES-256 7-zip encyption makes your data securely protected;
+- AES-256 7-zip encryption makes your data securely protected;
 - Multiple backup tasks are supported;
-- Html format is uded for file logs. It takes less time on reviewing of it;
+- Html format for log files takes less time on reviewing of it;
 - Two modes of creating a backup exists: manual from UI and console tool and with scheduling possibilities;
 - [Unstructured Data repository model](./help/Other/Glossary.md)
 - [Copying files selection and extraction of file data](./help/Other/Glossary.md)
@@ -46,24 +46,20 @@ and many more. See [all topics](../../wiki) .
 - Microsoft Windows 10 or later;
 - Microsoft .Net Desktop Runtime 7 is required. To download it you can open the following [url](https://dotnet.microsoft.com/en-us/download/dotnet/7.0), see section **.NET Desktop Runtime 7.0.0**
 
-### Hardware:
+### Hardware
 
 - Pentium 3 computer or better
 - 2 GB RAM
 - about 10 mb on HDD
 
-## Feedback
-
-https://github.com/drweb86/butil/issues
-
 ### Advices
 
 Bug reports is advised to contain:
-- Name of program, Version, Component name, OS;
+- Version, OS;
 - Problem definition(why this is a bug):
-What behaviour do you see(you can attach sreenshots and videorolics)
-What behaviour do you expect(you can attach sreenshots and videorolics and describe why your variant is the better)
-How to reproduce the issue(you can attach sreenshots and videos
+What behavior do you see(you can attach screenshots and videos)
+What behavior do you expect(you can attach screenshots and videos and describe why your variant is the better)
+How to reproduce the issue(you can attach screenshots and videos
 
 ## Compilation
 
@@ -77,7 +73,4 @@ Must be installed:
 
 Compile all
 
-Copyright (c) 2008-2022 Siarhei Kuchuk
-[Sources repository](https://github.com/drweb86/butil)
-[Bug Report:](https://github.com/drweb86/butil/issues)
 [Help:](https://github.com/drweb86/butil/blob/master/help/TOC.md)

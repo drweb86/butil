@@ -54,17 +54,12 @@ namespace BUtil.Configurator
             }
 		}
 		
-		/// <summary>
-		/// Processing command line argument
-		/// </summary>
-		/// <param name="args">Arguments</param>
 		static void ProcessArguments(string[] args)
 		{
-			var controller = new ConfiguratorController();
-		    args = args ?? new string[] {};
+		    args ??= Array.Empty<string>();
             if (args.Length == 0)
             {
-                Application.Run(new MainForm(controller));
+                Application.Run(new MainForm());
                 return;
             }
 
@@ -74,19 +69,19 @@ namespace BUtil.Configurator
                 
                 if (firstArgumentUpper == Arguments.RemoveLocalSettings)
 				{
-					controller.RemoveLocalUserSettings();
+					ConfiguratorController.RemoveLocalUserSettings();
 				}
                 else if (firstArgumentUpper == Arguments.RunRestorationMaster)
 				{
-					controller.OpenRestorationMaster(null, true);
+					ConfiguratorController.OpenRestorationMaster(null, true);
 				}
                 else if (IncrementalBackupModelConstants.Files.Any(x => args[0].EndsWith(x)))
 				{
-					controller.OpenRestorationMaster(args[0], true);
+                    ConfiguratorController.OpenRestorationMaster(args[0], true);
 				}
                 else if (firstArgumentUpper == Arguments.RunBackupMaster)
                 {
-                    controller.OpenBackupUi(null);
+                    ConfiguratorController.OpenBackupUi(null);
                 }
 				else
 				{
@@ -103,7 +98,7 @@ namespace BUtil.Configurator
                         taskName = argument.Substring(Arguments.RunTask.Length + 1);
                     }
                 }
-				controller.OpenBackupUi(taskName);
+                ConfiguratorController.OpenBackupUi(taskName);
 			}
 			else if (args.Length > 1)
     		{
@@ -111,7 +106,7 @@ namespace BUtil.Configurator
 				}
 				else
 				{
-					Application.Run(new MainForm(controller));
+					Application.Run(new MainForm());
 				}
 
 				

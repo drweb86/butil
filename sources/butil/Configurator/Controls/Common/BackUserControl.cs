@@ -8,8 +8,8 @@ namespace BUtil.Core.PL
 {
 	public partial class BackUserControl : UserControl
 	{
-		bool _drawAtractiveBorders = true;
-		Dictionary<Control, string> _hints = new Dictionary<Control, string>();
+        private bool _drawAtractiveBorders = true;
+		private readonly Dictionary<Control, string> _hints = new();
 
 		[Category("Appearance")]
     	[DefaultValue(true)]
@@ -29,8 +29,8 @@ namespace BUtil.Core.PL
 			}
 			else
 			{
-				control.MouseMove += controlMouseMove;
-				control.GotFocus += controlGotFocus;
+				control.MouseMove += ControlMouseMove;
+				control.GotFocus += ControlGotFocus;
 				control.MouseLeave += ControlLostFocus;
                 _hints.Add(control, hint);
 			}
@@ -61,9 +61,9 @@ namespace BUtil.Core.PL
 
         #endregion
 
-        void controlGotFocus(object sender, EventArgs e)
+        void ControlGotFocus(object sender, EventArgs e)
 		{
-			showHelp(sender);
+			ShowHelp(sender);
 		}
 
         private void ControlLostFocus(object sender, EventArgs e)
@@ -72,12 +72,12 @@ namespace BUtil.Core.PL
 				HelpLabel.Text = null;
         }
 
-        void controlMouseMove(object sender, MouseEventArgs e)
+        private void ControlMouseMove(object sender, MouseEventArgs e)
 		{
-			showHelp(sender);
+			ShowHelp(sender);
 		}
-		
-		void showHelp(object sender)
+
+        private void ShowHelp(object sender)
 		{
 			if (HelpLabel != null && (sender != null))
 			{
@@ -97,7 +97,7 @@ namespace BUtil.Core.PL
 					e.Graphics.FillRectangle(BackBrush, Rect);
 				}
 
-				using (Pen BorderPen = new Pen(SystemColors.InactiveCaption))
+				using (Pen BorderPen = new(SystemColors.InactiveCaption))
 				{
 					e.Graphics.DrawLine(BorderPen, ClientRectangle.Left, ClientRectangle.Top, ClientRectangle.Right - 1, ClientRectangle.Top);
 					Rect.X++;
@@ -119,7 +119,7 @@ namespace BUtil.Core.PL
 			base.OnPaint(e);
 		}
 		
-		void backUserControlResize(object sender, EventArgs e)
+		private void BackUserControlResize(object sender, EventArgs e)
 		{
 			Invalidate();
 		}

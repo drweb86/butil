@@ -14,12 +14,9 @@ namespace BUtil.Configurator.Configurator.Controls
 
     public partial class BackupTasksUserControl : Core.PL.BackUserControl
     {
-        public BackupTasksUserControl(ConfiguratorController controller)
+        public BackupTasksUserControl()
         {
             InitializeComponent();
-
-            _controller = controller;
-
             OnTasksListViewResize(this, null);
         }
 
@@ -44,7 +41,6 @@ namespace BUtil.Configurator.Configurator.Controls
 
         public override void SetOptionsToUi(object settings)
         {
-            _programOptions = (ProgramOptions)settings;
             ReloadTasks();
             RefreshTaskControls(this, null);
         }
@@ -72,7 +68,7 @@ namespace BUtil.Configurator.Configurator.Controls
 
         void AddTaskRequest(object sender, EventArgs e)
         {
-            using var form = new CreateBackupTaskWizardForm(_programOptions);
+            using var form = new CreateBackupTaskWizardForm();
             if (form.ShowDialog() == DialogResult.OK)
             {
                 var backupTaskStoreService = new BackupTaskStoreService();
@@ -98,7 +94,7 @@ namespace BUtil.Configurator.Configurator.Controls
 
             var backupTaskSchedulerService = new BackupTaskSchedulerService();
             var scheduleInfo = backupTaskSchedulerService.GetSchedule(taskName);
-            using var form = new EditBackupTaskForm(_programOptions, task, scheduleInfo);
+            using var form = new EditBackupTaskForm(task, scheduleInfo);
             if (form.ShowDialog() == DialogResult.OK)
             {
                 backupTaskStoreService.Delete(taskName);
@@ -146,7 +142,7 @@ namespace BUtil.Configurator.Configurator.Controls
             }
 
             if (selectedTasks.Any())
-                _controller.LaunchBackupUIToolInSeparateProcess(selectedTasks[0]);
+                ConfiguratorController.LaunchBackupUIToolInSeparateProcess(selectedTasks[0]);
         }
 
         void RefreshTaskControls(object sender, EventArgs e)
@@ -165,22 +161,11 @@ namespace BUtil.Configurator.Configurator.Controls
 
         private void OnTasksListViewResize(object sender, EventArgs e)
         {
-            _nameColumn.Width = _tasksListView.Width > DisplacementToBorder ? _tasksListView.Width - DisplacementToBorder : DisplacementToBorder;
+            _nameColumn.Width = _tasksListView.Width > _displacementToBorder ? _tasksListView.Width - _displacementToBorder : _displacementToBorder;
         }
 
         #endregion
 
-        #region Fields
-
-        ProgramOptions _programOptions;
-        readonly ConfiguratorController _controller;
-
-        #endregion
-
-        #region Constants
-
-        const int DisplacementToBorder = 40;
-
-        #endregion
+        private const int _displacementToBorder = 40;
     }
 }

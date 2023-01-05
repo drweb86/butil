@@ -38,9 +38,8 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
 
         #region Constructors
 
-        public AddBackupTaskWizardView(ProgramOptions options)
+        public AddBackupTaskWizardView()
         {
-            _options = options;
             Task = ProgramOptionsManager.GetDefaultBackupTask(Resources.NewBackupTaskTitle);
 
             var encryptionUserControl = new EncryptionUserControl(Task);
@@ -66,10 +65,7 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
         {
             foreach (var page in _steps)
             {
-                if (page.ControlToShow != null)
-                {
-                    page.ControlToShow.GetOptionsFromUi();
-                }
+                page.ControlToShow?.GetOptionsFromUi();
             }
         }
 
@@ -123,10 +119,9 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
 
         #region Fields
 
-        readonly List<PageInfo> _steps = new List<PageInfo>();
+        readonly List<PageInfo> _steps = new();
         readonly Dictionary<BackupTaskViewsEnum, BackUserControl> _controls = new Dictionary<BackupTaskViewsEnum, BackUserControl>();
         int _step;
-        readonly ProgramOptions _options;
 
         #endregion
     }

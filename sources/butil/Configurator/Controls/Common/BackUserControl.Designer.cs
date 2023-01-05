@@ -38,7 +38,7 @@ namespace BUtil.Core.PL
 			this.BackColor = System.Drawing.SystemColors.Window;
 			this.Name = "BackUserControl";
 			this.Size = new System.Drawing.Size(640, 332);
-			this.Resize += new System.EventHandler(this.backUserControlResize);
+			this.Resize += new System.EventHandler(this.BackUserControlResize);
 			this.ResumeLayout(false);
 		}
 	}

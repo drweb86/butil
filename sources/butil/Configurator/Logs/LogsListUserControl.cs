@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Configurator.Localization;
-using BUtil.Core.Options;
 using System.Linq;
 using BUtil.Core.FileSystem;
 using System.IO;
@@ -14,8 +13,6 @@ namespace BUtil.Configurator.LogsManagement
 {
 	public partial class LogsListUserControl : UserControl
 	{
-		private ProgramOptions _programOptions;
-		
 		public LogsListUserControl()
 		{
 			InitializeComponent();
@@ -37,12 +34,9 @@ namespace BUtil.Configurator.LogsManagement
 				Resources.ViewSelectedLogs;
 		}
 
-		public void SetSettings(ProgramOptions options)
+		public void SetSettings()
 		{
-            _programOptions = options;
-
             RefreshList();
-
 		}
 		
 		private void RefreshList()
@@ -190,23 +184,19 @@ namespace BUtil.Configurator.LogsManagement
 			}
 		}
 
-        private List<LogInfo> GetLogsInformation()
+        private static List<LogInfo> GetLogsInformation()
         {
             var result = new List<LogInfo>();
 
-            if (!Directory.Exists(_programOptions.LogsFolder))
+            if (!Directory.Exists(Directories.LogsFolder))
             {
                 return result;
             }
 
-            var logsList = Directory.GetFiles(_programOptions.LogsFolder, "*" + Files.LogFilesExtension);
-
-            foreach (var log in logsList)
-            {
-                result.Add(new LogInfo(log));
-            }
-
-            return result;
+            return Directory
+				.GetFiles(Directories.LogsFolder, "*" + Files.LogFilesExtension)
+				.Select(x => new LogInfo(x))
+				.ToList();
         }
     }
 }

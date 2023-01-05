@@ -180,9 +180,6 @@
   <data name="BackupIsInAProgress" xml:space="preserve">
     <value>Идёт резервное копирование...</value>
   </data>
-  <data name="WouldYouLikeToApplyModifiedSettings" xml:space="preserve">
-    <value>Применить изменения в настройках?</value>
-  </data>
   <data name="Exiting" xml:space="preserve">
     <value>Выход...</value>
   </data>
@@ -454,15 +451,6 @@
   </data>
   <data name="MoveDown" xml:space="preserve">
     <value>Переместить ниже</value>
-  </data>
-  <data name="LogsLocation" xml:space="preserve">
-    <value>Папка с логами:</value>
-  </data>
-  <data name="Change" xml:space="preserve">
-    <value>Изменить...</value>
-  </data>
-  <data name="Reset" xml:space="preserve">
-    <value>Сбросить</value>
   </data>
   <data name="Actions" xml:space="preserve">
     <value>Действия</value>

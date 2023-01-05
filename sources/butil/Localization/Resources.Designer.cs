@@ -386,15 +386,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Change....
-        /// </summary>
-        internal static string Change {
-            get {
-                return ResourceManager.GetString("Change", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Changes:.
         /// </summary>
         internal static string Changes {
@@ -1030,15 +1021,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Logs location:.
-        /// </summary>
-        internal static string LogsLocation {
-            get {
-                return ResourceManager.GetString("LogsLocation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Minute:.
         /// </summary>
         internal static string Minute {
@@ -1438,15 +1420,6 @@ namespace BUtil.Configurator.Localization {
         internal static string RemoveSuccesfullLogs {
             get {
                 return ResourceManager.GetString("RemoveSuccesfullLogs", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Reset.
-        /// </summary>
-        internal static string Reset {
-            get {
-                return ResourceManager.GetString("Reset", resourceCulture);
             }
         }
         
@@ -1913,15 +1886,6 @@ namespace BUtil.Configurator.Localization {
         internal static string WorkingDirectoryDoesNotExist {
             get {
                 return ResourceManager.GetString("WorkingDirectoryDoesNotExist", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Would you like to apply modified settings?.
-        /// </summary>
-        internal static string WouldYouLikeToApplyModifiedSettings {
-            get {
-                return ResourceManager.GetString("WouldYouLikeToApplyModifiedSettings", resourceCulture);
             }
         }
         

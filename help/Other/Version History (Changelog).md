@@ -1,3 +1,9 @@
+# 5.9.0.0 (5 January 2023)
+
+## New Features
+- Logs list includes now task name;
+- Logs location change was dropped because this feature is useless.
+
 # 5.8.0.0 (26 December 2022)
 
 ## New Features

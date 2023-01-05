@@ -6,26 +6,18 @@ namespace BUtil.Configurator.Configurator.Forms
 {
     public partial class AboutForm : Form
     {
-        #region Constructors
-
-        public AboutForm(ConfiguratorController controller)
+        public AboutForm()
         {
             InitializeComponent();
 
             ApplyLocalization();
-            _aboutProgramUserControl.SetOptionsToUi(controller.ProgramOptions);
+            _aboutProgramUserControl.SetOptionsToUi(null);
         }
-
-        #endregion
-
-        #region Private Methods
 
         void ApplyLocalization()
         {
             Text = Resources.About;
             _aboutProgramUserControl.ApplyLocalization();
         }
-
-        #endregion
     }
 }

@@ -6,7 +6,6 @@ using System.Runtime.Versioning;
 using System.Windows.Forms;
 using BUtil.Configurator.Configurator.Controls.Tasks;
 using BUtil.Configurator.Localization;
-using BUtil.Core.Options;
 
 namespace BUtil.Configurator.Controls
 {
@@ -58,7 +57,7 @@ namespace BUtil.Configurator.Controls
 			DrawAtractiveBorders = false;
 		}
 		
-		public void UpdateView(ProgramOptions options)
+		public void UpdateView()
 		{
             changeView(itemsForBackupButton, BackupTaskViewsEnum.SourceItems);
 		}
@@ -95,7 +94,7 @@ namespace BUtil.Configurator.Controls
 		}
 
         [SupportedOSPlatform("windows")]
-        void setBoldFont(Button button)
+        static void setBoldFont(Button button)
 		{
             button.Font = new Font(button.Font, FontStyle.Bold);
         }
@@ -103,10 +102,10 @@ namespace BUtil.Configurator.Controls
 		void registerVisualEffectsForButton(Button button)
 		{
 			button.MouseMove += new MouseEventHandler(controlMouseMove);
-			button.GotFocus += new EventHandler(controlGotFocus);
+			button.GotFocus += new EventHandler(ControlGotFocus);
 		}
 		
-		void controlGotFocus(object sender, EventArgs e)
+		void ControlGotFocus(object sender, EventArgs e)
 		{
 			showHalfSelected(sender);
 		}
@@ -155,27 +154,27 @@ namespace BUtil.Configurator.Controls
 			}
 		}
 		
-		void itemsForBackupButtonClick(object sender, EventArgs e)
+		void ItemsForBackupButtonClick(object sender, EventArgs e)
 		{
             changeView(sender, BackupTaskViewsEnum.SourceItems);
 		}
 		
-		void storagesButtonClick(object sender, EventArgs e)
+		void StoragesButtonClick(object sender, EventArgs e)
 		{
             changeView(sender, BackupTaskViewsEnum.Storages);
 		}
 		
-		void schedulerButtonClick(object sender, EventArgs e)
+		void SchedulerButtonClick(object sender, EventArgs e)
 		{
             changeView(sender, BackupTaskViewsEnum.Scheduler);
 		}
 		
-		void encryptionButtonClick(object sender, EventArgs e)
+		void EncryptionButtonClick(object sender, EventArgs e)
 		{
             changeView(sender, BackupTaskViewsEnum.Encryption);
 		}
 		
-		void otherOptionsButtonClick(object sender, EventArgs e)
+		void OtherOptionsButtonClick(object sender, EventArgs e)
 		{
             changeView(sender, BackupTaskViewsEnum.OtherOptions);
 		}

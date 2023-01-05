@@ -58,7 +58,7 @@ namespace BUtil.Configurator.Controls
             this.itemsForBackupButton.Text = "What ?";
             this.itemsForBackupButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.itemsForBackupButton.UseVisualStyleBackColor = false;
-            this.itemsForBackupButton.Click += new System.EventHandler(this.itemsForBackupButtonClick);
+            this.itemsForBackupButton.Click += new System.EventHandler(this.ItemsForBackupButtonClick);
             // 
             // storagesButton
             // 
@@ -76,7 +76,7 @@ namespace BUtil.Configurator.Controls
             this.storagesButton.Text = "Where ?";
             this.storagesButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.storagesButton.UseVisualStyleBackColor = false;
-            this.storagesButton.Click += new System.EventHandler(this.storagesButtonClick);
+            this.storagesButton.Click += new System.EventHandler(this.StoragesButtonClick);
             // 
             // schedulerButton
             // 
@@ -94,7 +94,7 @@ namespace BUtil.Configurator.Controls
             this.schedulerButton.Text = "When ?";
             this.schedulerButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.schedulerButton.UseVisualStyleBackColor = false;
-            this.schedulerButton.Click += new System.EventHandler(this.schedulerButtonClick);
+            this.schedulerButton.Click += new System.EventHandler(this.SchedulerButtonClick);
             // 
             // encryptionButton
             // 
@@ -112,7 +112,7 @@ namespace BUtil.Configurator.Controls
             this.encryptionButton.Text = "Encryption";
             this.encryptionButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.encryptionButton.UseVisualStyleBackColor = false;
-            this.encryptionButton.Click += new System.EventHandler(this.encryptionButtonClick);
+            this.encryptionButton.Click += new System.EventHandler(this.EncryptionButtonClick);
             // 
             // otherOptionsButton
             // 
@@ -130,7 +130,7 @@ namespace BUtil.Configurator.Controls
             this.otherOptionsButton.Text = "Other options";
             this.otherOptionsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.otherOptionsButton.UseVisualStyleBackColor = false;
-            this.otherOptionsButton.Click += new System.EventHandler(this.otherOptionsButtonClick);
+            this.otherOptionsButton.Click += new System.EventHandler(this.OtherOptionsButtonClick);
             // 
             // howButton
             // 
