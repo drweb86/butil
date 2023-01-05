@@ -1,4 +1,5 @@
-﻿using BUtil.Core.FileSystem;
+﻿using BUtil.Core.Compression;
+using BUtil.Core.FileSystem;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
@@ -43,7 +44,8 @@ namespace BUtil.Core.State
                 using var tempFolder = new TempFolder();
                 var tempArchive = Path.Combine(tempFolder.Folder, "archive.7z");
                 _services.Storage.Download(storageFile.StorageRelativeFileName, tempArchive);
-                if (!SevenZipProcessHelper.Extract(_log, tempArchive, storageFile.StoragePassword, destinationDir))
+                var archiver = ArchiverFactory.CreateByExtension(_log, tempArchive);
+                if (!archiver.Extract(tempArchive, storageFile.StoragePassword, destinationDir))
                 {
                     _log.WriteLine(LoggingEvent.Error, $"Storage \"{_storageSettings.Name}\": extracting \"{storageFile.FileState.FileName}\" failed");
                     return false;
@@ -76,7 +78,8 @@ namespace BUtil.Core.State
                     storageFile.StoragePassword = RandomString();
                 }
 
-                if (!SevenZipProcessHelper.CompressFile(_log,
+                var archiver = ArchiverFactory.CreateByExtension(_log, archiveFile);
+                if (!archiver.CompressFile(
                     storageFile.FileState.FileName,
                     storageFile.StoragePassword,
                     archiveFile))

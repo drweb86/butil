@@ -40,7 +40,6 @@ namespace BUtil.Configurator
 			try
             {
                 Directories.CriticalFoldersCheck();
-                Files.CriticalFilesCheck();
             }
             catch (DirectoryNotFoundException e)
             {

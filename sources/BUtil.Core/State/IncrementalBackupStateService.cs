@@ -1,4 +1,5 @@
 ﻿using BUtil.Core.BackupModels;
+using BUtil.Core.Compression;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
@@ -43,7 +44,8 @@ namespace BUtil.Core.State
                 _log.WriteLine(LoggingEvent.Debug, $"Storage \"{_storageSettings.Name}\": Reading non-encrypted compressed state");
                 var destFile = Path.Combine(tempFolder.Folder, IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile);
                 _services.Storage.Download(IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile, destFile);
-                if (!SevenZipProcessHelper.Extract(_log, destFile, null, tempFolder.Folder))
+                var archiver = ArchiverFactory.CreateByExtension(_log, destFile);
+                if (!archiver.Extract(destFile, null, tempFolder.Folder))
                 {
                     _log.WriteLine(LoggingEvent.Error, $"Storage \"{_storageSettings.Name}\": Failed to read state");
                     state = null;
@@ -61,7 +63,8 @@ namespace BUtil.Core.State
                 _log.WriteLine(LoggingEvent.Debug, $"Storage \"{_storageSettings.Name}\": Reading encrypted compressed state");
                 var destFile = Path.Combine(tempFolder.Folder, IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile);
                 _services.Storage.Download(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile, destFile);
-                if (!SevenZipProcessHelper.Extract(_log, destFile, password, tempFolder.Folder))
+                var archiver = ArchiverFactory.CreateByExtension(_log, destFile);
+                if (!archiver.Extract(destFile, password, tempFolder.Folder))
                 {
                     _log.WriteLine(LoggingEvent.Error, $"Storage \"{_storageSettings.Name}\": Failed to read state");
                     state = null;
@@ -107,8 +110,8 @@ namespace BUtil.Core.State
                 var encryptionEnabled = !string.IsNullOrWhiteSpace(password);
                 storageFile.StorageRelativeFileName = encryptionEnabled ? IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile : IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile;
                 fileToUpload = Path.Combine(tempFolder.Folder, storageFile.StorageRelativeFileName);
-
-                if (!SevenZipProcessHelper.CompressFile(_log, jsonFile, password, fileToUpload))
+                var archiver = ArchiverFactory.CreateByExtension(_log, fileToUpload);
+                if (!archiver.CompressFile(jsonFile, password, fileToUpload))
                 {
                     _log.WriteLine(LoggingEvent.Error, $"Storage \"{_storageSettings.Name}\": Failed state");
                     return null;

@@ -1,16 +1,76 @@
 ﻿using BUtil.Core.Logs;
+using BUtil.Core.Misc;
 using System;
 using System.Diagnostics;
 using System.IO;
-using System.Threading;
+using System.Linq;
 
-namespace BUtil.Core.Misc
+namespace BUtil.Core.Compression
 {
-    public static class SevenZipProcessHelper
+    class SevenZipArchiver : IArchiver
     {
+        private readonly ILog _log;
+        private static readonly string _sevenZipFolder;
+        private static readonly string _sevenZipPacker;
+
+        static SevenZipArchiver()
+        {
+            _sevenZipFolder = Resolve7ZipDirectory();
+            if (_sevenZipFolder != null)
+                _sevenZipPacker = Path.Combine(_sevenZipFolder, "7z.exe");
+        }
+
+        internal SevenZipArchiver(ILog log) 
+        {
+            _log = log;
+        }
+
+        private static string Resolve7ZipDirectory()
+        {
+            var appDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), "7-zip");
+            if (Directory.Exists(appDir))
+                return appDir;
+
+            if (System.Environment.Is64BitOperatingSystem)
+            {
+                appDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "7-zip");
+                if (Directory.Exists(appDir))
+                    return appDir;
+            }
+
+            string exe = "7z.exe";
+            string result = Environment.GetEnvironmentVariable("PATH")
+                .Split(';')
+                .Where(s => File.Exists(Path.Combine(s, exe)))
+                .FirstOrDefault();
+
+            return result ?? appDir;
+        }
+
+        public bool IsAvailable()
+        {
+            return Directory.Exists(_sevenZipFolder);
+        }
+
+        public bool Extract(
+            string archive,
+            string password,
+            string outputDirectory)
+        {
+            return Extract(_log, archive, password, outputDirectory);
+        }
+
+        public bool CompressFile(
+            string file,
+            string password,
+            string archive)
+        {
+            return CompressFile(_log, file, password, archive);
+        }
+
         private static readonly object _lock = new();
 
-        public static bool Extract(
+        private static bool Extract(
             ILog log,
 
             string archive,
@@ -18,7 +78,7 @@ namespace BUtil.Core.Misc
             string outputDirectory)
         {
             lock (_lock) // 7-zip utilizes all CPU cores, parallel compression will freeze PC.
-                // we explicitely avoid it via locking.
+                         // we explicitely avoid it via locking.
             {
                 var passwordIsSet = !string.IsNullOrWhiteSpace(password);
                 string input = Environment.NewLine; // to handle wrong password
@@ -35,9 +95,9 @@ namespace BUtil.Core.Misc
                 }
 
                 ProcessHelper.Execute(
-                    FileSystem.Files.SevenZipPacker, 
-                    arguments, 
-                    System.IO.Path.GetDirectoryName(FileSystem.Files.SevenZipPacker),
+                    _sevenZipPacker,
+                    arguments,
+                    _sevenZipFolder,
                     true,
                     ProcessPriorityClass.Idle,
                     out var stdOutput,
@@ -57,7 +117,7 @@ namespace BUtil.Core.Misc
             }
         }
 
-        public static bool CompressFile(
+        private static bool CompressFile(
             ILog log,
 
             string file,
@@ -70,7 +130,7 @@ namespace BUtil.Core.Misc
                 return CompressFileInternal(log, file, password, archive);
             else
             {
-                lock(_lock)
+                lock (_lock)
                     return CompressFileInternal(log, file, password, archive);
             }
         }
@@ -95,9 +155,9 @@ namespace BUtil.Core.Misc
                 log.WriteLine(LoggingEvent.Debug, $"Compressing \"{file}\" to \"{archive}\" with password");
             }
 
-            ProcessHelper.Execute(FileSystem.Files.SevenZipPacker, 
-                arguments, 
-                System.IO.Path.GetDirectoryName(FileSystem.Files.SevenZipPacker),
+            ProcessHelper.Execute(_sevenZipPacker,
+                arguments,
+                _sevenZipFolder,
                 false,
                 ProcessPriorityClass.Idle,
                 out var stdOutput,

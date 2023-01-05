@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -11,37 +10,8 @@ namespace BUtil.Core.FileSystem
 		private static readonly string _assembly = Assembly.GetExecutingAssembly().Location;
 		private static readonly string _binariesDir = Path.GetDirectoryName(_assembly);
 		private static readonly string _installdir = Path.GetDirectoryName(_binariesDir);
-		private static readonly string _sevenZipFolder;
 		private static readonly string _dataFolder = Path.Combine(_installdir, "data");
-		
 		private static readonly string _applicationDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-
-        static Directories()
-        {
-            _sevenZipFolder = Resolve7ZipDirectory();
-        }
-
-        private static string Resolve7ZipDirectory()
-        {
-            var appDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), "7-zip");
-            if (Directory.Exists(appDir))
-                return appDir;
-
-            if (System.Environment.Is64BitOperatingSystem)
-            {
-                appDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "7-zip");
-                if (Directory.Exists(appDir))
-                    return appDir;
-            }
-
-            string exe = "7z.exe";
-            string result = Environment.GetEnvironmentVariable("PATH")
-                .Split(';')
-                .Where(s => File.Exists(Path.Combine(s, exe)))
-                .FirstOrDefault();
-
-            return result ?? appDir;
-        }
 
 #if DEBUG
 		private static readonly string _userDataFolder = Path.Combine(_applicationDataFolder, "BUtil-Development");
@@ -52,32 +22,15 @@ namespace BUtil.Core.FileSystem
 		
         public static readonly string TempFolder = System.Environment.GetEnvironmentVariable("TEMP");
 
-        public static string UserDataFolder
-        {
-            get { return _userDataFolder; }
-        }
+        public static string UserDataFolder => _userDataFolder;
 
-		public static string BinariesDir
-		{
-			get { return _binariesDir; }
-		}
-        
-        public static string DataDir
-        {
-            get { return _dataFolder; }
-        }
-		
-		public static string LogsFolder
-		{
-			get { return _logsDir; }
-		}
+        public static string BinariesDir => _binariesDir;
 
-	    public static string SevenZipFolder
-	    {
-	        get { return _sevenZipFolder; }
-	    }
+        public static string DataDir => _dataFolder;
 
-        private static void createPersonnel(string path)
+        public static string LogsFolder => _logsDir;
+
+        private static void CreateDirectory(string path)
         {
             if (!Directory.Exists(path))
             {
@@ -98,13 +51,11 @@ namespace BUtil.Core.FileSystem
         /// <exception cref="DirectoryNotFoundException"></exception>
         public static void CriticalFoldersCheck()
         {
-        	createPersonnel(_userDataFolder);
-            createPersonnel(_logsDir);
+        	CreateDirectory(_userDataFolder);
+            CreateDirectory(_logsDir);
             
             if (!Directory.Exists(_binariesDir))
                 throw new DirectoryNotFoundException(_binariesDir);
-            if (!Directory.Exists(_sevenZipFolder))
-				throw new DirectoryNotFoundException(_sevenZipFolder);
             if (!Directory.Exists(_dataFolder))
 				throw new DirectoryNotFoundException(_dataFolder);
         }

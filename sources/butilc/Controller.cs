@@ -111,7 +111,6 @@ namespace BUtil.ConsoleBackup
             try
             {
                 Directories.CriticalFoldersCheck();
-                Files.CriticalFilesCheck();
             }
             catch (DirectoryNotFoundException e)
             {

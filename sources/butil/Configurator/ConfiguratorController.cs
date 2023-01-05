@@ -32,12 +32,8 @@ namespace BUtil.Configurator.Configurator
 		
         public static void RemoveLocalUserSettings()
 		{
-			// we're deleting only default logs folder location
 			if (Directory.Exists(Directories.LogsFolder))
 				Directory.Delete(Directories.LogsFolder, true);
-		               	
-			if (Directory.Exists(Directories.UserDataFolder))
-				Directory.Delete(Directories.UserDataFolder, true);
 		}
 		
 		public static void OpenBackupUi(string taskName)
