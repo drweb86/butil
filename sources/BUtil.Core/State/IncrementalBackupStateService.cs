@@ -45,6 +45,7 @@ namespace BUtil.Core.State
                 var destFile = Path.Combine(tempFolder.Folder, IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile);
                 _services.Storage.Download(IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile, destFile);
                 var archiver = ArchiverFactory.CreateByExtension(_log, destFile);
+                x
                 if (!archiver.Extract(destFile, null, tempFolder.Folder))
                 {
                     _log.WriteLine(LoggingEvent.Error, $"Storage \"{_storageSettings.Name}\": Failed to read state");
@@ -64,6 +65,7 @@ namespace BUtil.Core.State
                 var destFile = Path.Combine(tempFolder.Folder, IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile);
                 _services.Storage.Download(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile, destFile);
                 var archiver = ArchiverFactory.CreateByExtension(_log, destFile);
+                x
                 if (!archiver.Extract(destFile, password, tempFolder.Folder))
                 {
                     _log.WriteLine(LoggingEvent.Error, $"Storage \"{_storageSettings.Name}\": Failed to read state");
@@ -111,6 +113,7 @@ namespace BUtil.Core.State
                 storageFile.StorageRelativeFileName = encryptionEnabled ? IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile : IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile;
                 fileToUpload = Path.Combine(tempFolder.Folder, storageFile.StorageRelativeFileName);
                 var archiver = ArchiverFactory.CreateByExtension(_log, fileToUpload);
+                x
                 if (!archiver.CompressFile(jsonFile, password, fileToUpload))
                 {
                     _log.WriteLine(LoggingEvent.Error, $"Storage \"{_storageSettings.Name}\": Failed state");

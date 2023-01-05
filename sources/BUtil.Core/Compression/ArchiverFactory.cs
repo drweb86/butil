@@ -18,8 +18,13 @@ namespace BUtil.Core.Compression
             if (extension == null || extension == ".7z")
                 return null;
 
-            // TODO: create ZipArchive
-            return null;
+            return new SharpZipLibArchiver(log);
+        }
+
+        public static bool IsSevenZipAvailable(ILog log)
+        {
+            var sevenZipFileArchiver = new SevenZipArchiver(log);
+            return sevenZipFileArchiver.IsAvailable();
         }
     }
 }
