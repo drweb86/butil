@@ -249,7 +249,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             if (appStaysAlive)
 			{
                 PowerPC.DoTask(powerTask);
-                if (_log.ErrorsOrWarningsRegistered)
+                if (_log.HasErrors)
 				{
 					ProcessHelper.ShellExecute(_log.LogFilename);
                     Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.BackupFailedPleaseReviewOpenedLog);
@@ -260,7 +260,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
                 }
 				return;
             }
-			if (_log.ErrorsOrWarningsRegistered &&
+			if (_log.HasErrors &&
                 RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
                 BUtil.BackupUiMaster.NativeMethods.ScheduleOpeningFileAfterLoginOfUserIntoTheSystem(_log.LogFilename);
 			PowerPC.DoTask(powerTask);

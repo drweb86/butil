@@ -90,7 +90,7 @@ namespace BUtil.Core.Logs
         {
             if (_logFile != null)
             {
-                if (!ErrorsOrWarningsRegistered)
+                if (!HasErrors)
                 {
                     //No any error or warning registered during backup!
                     WriteInFile(Resources.BackupFinishedSuccesfully);
@@ -98,7 +98,7 @@ namespace BUtil.Core.Logs
                 
                 WriteInFile("</body>");
 				WriteInFile("</html>");
-				if (ErrorsOrWarningsRegistered)
+				if (HasErrors)
 				{
 					WriteInFile(Files.ErroneousBackupMarkInHtmlLog);
 				}

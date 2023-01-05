@@ -2,7 +2,7 @@
 {
     public class StubLog : ILog
     {
-        public bool ErrorsOrWarningsRegistered => false;
+        public bool HasErrors => false;
 
         public void Close()
         {

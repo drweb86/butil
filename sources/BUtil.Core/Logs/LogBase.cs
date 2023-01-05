@@ -5,9 +5,9 @@ namespace BUtil.Core.Logs
 {
     public abstract class LogBase: ILog
     {
-        private bool _errorsOrWarningsRegistered;
+        private bool _errorsRegistered;
 
-        public bool ErrorsOrWarningsRegistered => _errorsOrWarningsRegistered;
+        public bool HasErrors => _errorsRegistered;
         public void LogProcessOutput(string consoleOutput, bool finishedSuccessfully)
         {
             consoleOutput
@@ -19,7 +19,7 @@ namespace BUtil.Core.Logs
         protected void PreprocessLoggingInformation(LoggingEvent loggingEvent)
         {
         	if (loggingEvent == LoggingEvent.Error)
-        		_errorsOrWarningsRegistered = true;
+                _errorsRegistered = true;
         }
 
         public abstract void Open();
