@@ -1,11 +1,9 @@
-5.8.0.0
+5.9.0.0
 
 ## New Features
-- Inrecemented backup model is documented.
+- Logs list includes now task name;
+- Logs location change was dropped because this feature is useless.
 
 ## Bug Fixes
-- Packer output was fixed.
 
 ## Changes
-- Logs were simplified;
-- Icons were updated.

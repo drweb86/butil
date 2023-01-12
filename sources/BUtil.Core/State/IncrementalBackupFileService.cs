@@ -44,7 +44,6 @@ namespace BUtil.Core.State
                 using var tempFolder = new TempFolder();
                 var tempArchive = Path.Combine(tempFolder.Folder, "archive.7z");
                 _services.Storage.Download(storageFile.StorageRelativeFileName, tempArchive);
-                x
                 var archiver = ArchiverFactory.CreateByExtension(_log, tempArchive);
                 if (!archiver.Extract(tempArchive, storageFile.StoragePassword, destinationDir))
                 {
@@ -80,7 +79,6 @@ namespace BUtil.Core.State
                 }
 
                 var archiver = ArchiverFactory.CreateByExtension(_log, archiveFile);
-                x
                 if (!archiver.CompressFile(
                     storageFile.FileState.FileName,
                     storageFile.StoragePassword,

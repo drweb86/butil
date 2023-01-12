@@ -11,14 +11,7 @@ namespace BUtil.Core.Compression
             if (sevenZipFileArchiver.IsAvailable())
                 return sevenZipFileArchiver;
 
-            if (file == null)
-                return null;
-
-            var extension = Path.GetExtension(file)?.ToLowerInvariant();
-            if (extension == null || extension == ".7z")
-                return null;
-
-            return new SharpZipLibArchiver(log);
+            return null; // Currently no other archive that does that job.
         }
 
         public static bool IsSevenZipAvailable(ILog log)
