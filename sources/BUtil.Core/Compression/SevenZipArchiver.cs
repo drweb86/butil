@@ -47,11 +47,6 @@ namespace BUtil.Core.Compression
             return result ?? appDir;
         }
 
-        public bool IsAvailable()
-        {
-            return Directory.Exists(_sevenZipFolder);
-        }
-
         public bool Extract(
             string archive,
             string password,

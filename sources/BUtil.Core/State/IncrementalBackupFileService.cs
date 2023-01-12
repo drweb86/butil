@@ -44,7 +44,7 @@ namespace BUtil.Core.State
                 using var tempFolder = new TempFolder();
                 var tempArchive = Path.Combine(tempFolder.Folder, "archive.7z");
                 _services.Storage.Download(storageFile.StorageRelativeFileName, tempArchive);
-                var archiver = ArchiverFactory.CreateByExtension(_log, tempArchive);
+                var archiver = ArchiverFactory.Create(_log);
                 if (!archiver.Extract(tempArchive, storageFile.StoragePassword, destinationDir))
                 {
                     _log.WriteLine(LoggingEvent.Error, $"Storage \"{_storageSettings.Name}\": extracting \"{storageFile.FileState.FileName}\" failed");
@@ -78,7 +78,7 @@ namespace BUtil.Core.State
                     storageFile.StoragePassword = RandomString();
                 }
 
-                var archiver = ArchiverFactory.CreateByExtension(_log, archiveFile);
+                var archiver = ArchiverFactory.Create(_log);
                 if (!archiver.CompressFile(
                     storageFile.FileState.FileName,
                     storageFile.StoragePassword,

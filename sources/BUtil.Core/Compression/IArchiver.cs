@@ -2,8 +2,6 @@
 {
     interface IArchiver
     {
-        bool IsAvailable();
-
         bool Extract(
             string archive,
             string password,
