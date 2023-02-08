@@ -97,13 +97,18 @@ begin
 
   if not Is7ZipInstalled() then
   begin
-    Result := Exec('winget', 'install -e --id 7zip.7zip --disable-interactivity --accept-source-agreements --accept-package-agreements', '', SW_SHOW, ewWaitUntilTerminated, ResultCode);
-    if not Result then
-      SuppressibleMsgBox('Please install 7-zip before continuing the installation'
+    Result := Exec('winget', 'install -e --id 7zip.7zip --disable-interactivity --accept-source-agreements --accept-package-agreements', '', SW_HIDE, ewWaitUntilTerminated, ResultCode);
+    if (not Result) or (ResultCode <> 0) then
+    begin
+      SuppressibleMsgBox('Failed to install 7-zip'
     + #13#10#13#10
     + 'Application uses 7-zip for compression and decompression.'
     + #13#10#13#10
-    + 'Please install 7-zip to default location and restart the installation.', mbCriticalError, MB_OK, IDOK);
+    + 'Setup will continue, but application will not be able to comress or decompress files.'
+    + #13#10#13#10
+    + 'Please install 7-zip to default location before running the application.', mbCriticalError, MB_OK, IDOK);
+	Result := true;
+    end
   end
 end;
 

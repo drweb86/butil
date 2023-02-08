@@ -1,8 +1,13 @@
-# 5.9.0.0 (5 January 2023)
+# 5.9.0.0 (8 February 2023)
 
 ## New Features
 - Logs list includes now task name;
 - Logs location change was dropped because this feature is useless.
+- Setup will attempt to install 7-zip if its missing in a system.
+
+## Changes
+- Updates are checked on Configurator start. Update check was removed from About screen.
+- Update check was reworked to use Github API.
 
 # 5.8.0.0 (26 December 2022)
 
