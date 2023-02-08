@@ -357,9 +357,6 @@
   <data name="HereYouCanSetUpLoggingProperties" xml:space="preserve">
     <value>Здесь настраивается протоколирование и можно посмотреть логи</value>
   </data>
-  <data name="CheckForUpdates" xml:space="preserve">
-    <value>Проверить обновления...</value>
-  </data>
   <data name="New0VersionIsAvailableNNchangesAreN1NNprogramWillNowOpenBrowserWithTheDownloadPage" xml:space="preserve">
     <value>Доступна новая {0} версия.
 
@@ -367,9 +364,6 @@
 {1}
 
 Сейчас программа откроет броузер со страничкой загрузки программы</value>
-  </data>
-  <data name="YouHaveTheLatestVersion" xml:space="preserve">
-    <value>У вас последняя версия!</value>
   </data>
   <data name="InProgress" xml:space="preserve">
     <value>Обработка...</value>

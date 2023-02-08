@@ -46,12 +46,6 @@ and many more. See [all topics](../../wiki) .
 - Microsoft Windows 10 or later;
 - Microsoft .Net Desktop Runtime 7 is required. To download it you can open the following [url](https://dotnet.microsoft.com/en-us/download/dotnet/7.0), see section **.NET Desktop Runtime 7.0.0**
 
-### Hardware
-
-- Pentium 3 computer or better
-- 2 GB RAM
-- about 10 mb on HDD
-
 ### Advices
 
 Bug reports is advised to contain:

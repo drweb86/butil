@@ -32,7 +32,6 @@ namespace BUtil.Configurator.Controls
             this.visitWebSiteLabel = new System.Windows.Forms.Label();
             this.aboutTextBox = new System.Windows.Forms.TextBox();
             this.documentationLabel = new System.Windows.Forms.Label();
-            this.checkForUpdatesLabel = new System.Windows.Forms.Label();
             this.sevenZipPictureBox = new System.Windows.Forms.PictureBox();
             this.virtuawinPictureBox = new System.Windows.Forms.PictureBox();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
@@ -74,8 +73,7 @@ namespace BUtil.Configurator.Controls
             this.aboutTextBox.Multiline = true;
             this.aboutTextBox.Name = "aboutTextBox";
             this.aboutTextBox.ReadOnly = true;
-            this.aboutTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.aboutTextBox.Size = new System.Drawing.Size(451, 237);
+            this.aboutTextBox.Size = new System.Drawing.Size(451, 488);
             this.aboutTextBox.TabIndex = 16;
             this.aboutTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -94,20 +92,6 @@ namespace BUtil.Configurator.Controls
             this.documentationLabel.Text = "Documentation";
             this.documentationLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.documentationLabel.Click += new System.EventHandler(this.DocumentationLabelClick);
-            // 
-            // checkForUpdatesLabel
-            // 
-            this.checkForUpdatesLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkForUpdatesLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkForUpdatesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
-            this.checkForUpdatesLabel.ForeColor = System.Drawing.Color.Blue;
-            this.checkForUpdatesLabel.Location = new System.Drawing.Point(242, 243);
-            this.checkForUpdatesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.checkForUpdatesLabel.Name = "checkForUpdatesLabel";
-            this.checkForUpdatesLabel.Size = new System.Drawing.Size(451, 16);
-            this.checkForUpdatesLabel.TabIndex = 17;
-            this.checkForUpdatesLabel.Text = "Check for updates...";
-            this.checkForUpdatesLabel.Click += new System.EventHandler(this.CheckForUpdatesLabelClick);
             // 
             // sevenZipPictureBox
             // 
@@ -130,7 +114,7 @@ namespace BUtil.Configurator.Controls
             this.virtuawinPictureBox.Location = new System.Drawing.Point(187, 188);
             this.virtuawinPictureBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.virtuawinPictureBox.Name = "virtuawinPictureBox";
-            this.virtuawinPictureBox.Size = new System.Drawing.Size(41, 46);
+            this.virtuawinPictureBox.Size = new System.Drawing.Size(41, 297);
             this.virtuawinPictureBox.TabIndex = 23;
             this.virtuawinPictureBox.TabStop = false;
             this.virtuawinPictureBox.Click += new System.EventHandler(this.VirtuawinPictureBoxClick);
@@ -156,13 +140,10 @@ namespace BUtil.Configurator.Controls
             this._leftToRightTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.71019F));
             this._leftToRightTableLayoutPanel.Controls.Add(this.aboutTextBox, 1, 0);
             this._leftToRightTableLayoutPanel.Controls.Add(this._leftTableLayoutPanel, 0, 0);
-            this._leftToRightTableLayoutPanel.Controls.Add(this.checkForUpdatesLabel, 1, 1);
             this._leftToRightTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._leftToRightTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this._leftToRightTableLayoutPanel.Name = "_leftToRightTableLayoutPanel";
-            this._leftToRightTableLayoutPanel.RowCount = 3;
-            this._leftToRightTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this._leftToRightTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this._leftToRightTableLayoutPanel.RowCount = 1;
             this._leftToRightTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this._leftToRightTableLayoutPanel.Size = new System.Drawing.Size(697, 494);
             this._leftToRightTableLayoutPanel.TabIndex = 25;
@@ -186,7 +167,7 @@ namespace BUtil.Configurator.Controls
             this._leftTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this._leftTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this._leftTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this._leftTableLayoutPanel.Size = new System.Drawing.Size(232, 237);
+            this._leftTableLayoutPanel.Size = new System.Drawing.Size(232, 488);
             this._leftTableLayoutPanel.TabIndex = 17;
             // 
             // AboutProgramUserControl
@@ -211,7 +192,6 @@ namespace BUtil.Configurator.Controls
 		private System.Windows.Forms.PictureBox logoPictureBox;
 		private System.Windows.Forms.PictureBox virtuawinPictureBox;
 		private System.Windows.Forms.PictureBox sevenZipPictureBox;
-		private System.Windows.Forms.Label checkForUpdatesLabel;
 		private System.Windows.Forms.Label documentationLabel;
 		private System.Windows.Forms.TextBox aboutTextBox;
 		private System.Windows.Forms.Label visitWebSiteLabel;

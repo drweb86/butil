@@ -1,9 +1,0 @@
-5.9.0.0
-
-## New Features
-- Logs list includes now task name;
-- Logs location change was dropped because this feature is useless.
-
-## Bug Fixes
-
-## Changes

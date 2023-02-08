@@ -395,15 +395,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Check For Updates....
-        /// </summary>
-        internal static string CheckForUpdates {
-            get {
-                return ResourceManager.GetString("CheckForUpdates", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Choose backup model.
         /// </summary>
         internal static string ChooseBackupModel {
@@ -1904,15 +1895,6 @@ namespace BUtil.Configurator.Localization {
         internal static string YouCanSetDaysAndTimesWhenYouWantToStartThisBackupJob {
             get {
                 return ResourceManager.GetString("YouCanSetDaysAndTimesWhenYouWantToStartThisBackupJob", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to You have the latest version!.
-        /// </summary>
-        internal static string YouHaveTheLatestVersion {
-            get {
-                return ResourceManager.GetString("YouHaveTheLatestVersion", resourceCulture);
             }
         }
     }

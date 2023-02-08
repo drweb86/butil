@@ -2,28 +2,44 @@ using System;
 using System.IO;
 using System.Net.Http;
 using System.Linq;
+using System.Collections.Generic;
+using System.Net.Http.Headers;
+using System.Text.Json.Serialization;
+using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace BUtil.Core.Misc
 {
 	public static class UpdateChecker
 	{
-		public static bool CheckForUpdate(out string newVersion, out string changes)
+		public static async Task<GithubUpdateInfo> CheckForUpdate()
 		{
             try
 			{
-                using (var client = new HttpClient())
+                using HttpClient client = new();
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
+                client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
+                
+                await using var releasesStream = await client.GetStreamAsync("https://api.github.com/repos/drweb86/butil/releases");
+                var releases = await JsonSerializer.DeserializeAsync<List<GithubRelease>>(releasesStream);
+                var updatedRelease = releases
+                    .Where(x => !x.Prerelease && !x.Draft)
+                    .FirstOrDefault(x => Version.TryParse(x.Tag, out var version) && CopyrightInfo.Version < version);
+
+                if (updatedRelease == null)
                 {
-                    var url = SupportManager.GetLink(SupportRequest.UpdateInfo);
-                    string updateInfoContent = client.GetStringAsync(url).Result; // TODO: async!
-
-                    var items = updateInfoContent.Split('\n');
-                    newVersion = items[0];
-                    changes = string.Join('\n', items.Skip(1));
-
-					var remoteVersion = Version.Parse(newVersion);
-                    return CopyrightInfo.Version < remoteVersion;
+                    return new GithubUpdateInfo(false, null, null);
                 }
-			}
+
+                await using var versionRelease = await client.GetStreamAsync(updatedRelease.ApiUrl);
+                var release = await JsonSerializer.DeserializeAsync<GithubReleaseV2>(versionRelease);
+
+                return new GithubUpdateInfo(true, updatedRelease.Tag, release.Markdown
+                    .Replace("\\r", "\r")
+                    .Replace("\\n", "\n")
+                    .Replace("#", ""));
+            }
             catch (ArgumentNullException e) { throw new InvalidOperationException(e.Message, e); }
             catch (ArgumentException e) { throw new InvalidOperationException(e.Message, e); }
             catch (FormatException e) { throw new InvalidOperationException(e.Message, e); }
@@ -32,4 +48,22 @@ namespace BUtil.Core.Misc
 			catch (System.Security.SecurityException e) { throw new InvalidOperationException(e.Message, e); }
 		}
 	}
+
+    public record class GithubRelease(
+        [property: JsonPropertyName("id")] long Id,
+        [property: JsonPropertyName("url")] Uri ApiUrl,
+        [property: JsonPropertyName("tag_name")] string Tag,
+        [property: JsonPropertyName("draft")] bool Draft,
+        [property: JsonPropertyName("prerelease")] bool Prerelease
+    );
+
+    public record class GithubReleaseV2(
+       [property: JsonPropertyName("body")] string Markdown
+   );
+
+    public record class GithubUpdateInfo(
+        bool HasUpdate,
+        string Version,
+        string Changes
+    );
 }
