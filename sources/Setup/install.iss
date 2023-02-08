@@ -87,19 +87,23 @@ begin
 end;
 
 function InitializeSetup: Boolean;
+var
+  ResultCode: integer;
 begin
+  
   Result := IsDotNetCoreInstalled('Microsoft.WindowsDesktop.App 7');
   if not Result then
     SuppressibleMsgBox(FmtMessage(SetupMessage(msgWinVersionTooLowError), ['.NET Desktop Runtime', '7']), mbCriticalError, MB_OK, IDOK);
 
   if not Is7ZipInstalled() then
   begin
+    Result := Exec('winget', 'install -e --id 7zip.7zip --disable-interactivity --accept-source-agreements --accept-package-agreements', '', SW_SHOW, ewWaitUntilTerminated, ResultCode);
+    if not Result then
       SuppressibleMsgBox('Please install 7-zip before continuing the installation'
     + #13#10#13#10
     + 'Application uses 7-zip for compression and decompression.'
     + #13#10#13#10
     + 'Please install 7-zip to default location and restart the installation.', mbCriticalError, MB_OK, IDOK);
-    Result := False;
   end
 end;
 
