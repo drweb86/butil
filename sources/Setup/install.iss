@@ -93,7 +93,20 @@ begin
   
   Result := IsDotNetCoreInstalled('Microsoft.WindowsDesktop.App 7');
   if not Result then
-    SuppressibleMsgBox(FmtMessage(SetupMessage(msgWinVersionTooLowError), ['.NET Desktop Runtime', '7']), mbCriticalError, MB_OK, IDOK);
+  begin
+    Result := Exec('winget', 'install -e --id Microsoft.DotNet.DesktopRuntime.7 --disable-interactivity --accept-source-agreements --accept-package-agreements', '', SW_HIDE, ewWaitUntilTerminated, ResultCode);
+    if (not Result) or (ResultCode <> 0) then
+    begin
+      SuppressibleMsgBox('Failed to install Microsoft .Net Desktop Runtime 7'
+    + #13#10#13#10
+    + 'Application uses Microsoft .Net Desktop Runtime 7 for running.'
+    + #13#10#13#10
+    + 'Setup will continue, but application will not be able to start.'
+    + #13#10#13#10
+    + 'Please install Microsoft .Net Desktop Runtime 7 before running the application.', mbCriticalError, MB_OK, IDOK);
+      Result := true;
+    end
+  end
 
   if not Is7ZipInstalled() then
   begin
@@ -107,7 +120,7 @@ begin
     + 'Setup will continue, but application will not be able to comress or decompress files.'
     + #13#10#13#10
     + 'Please install 7-zip to default location before running the application.', mbCriticalError, MB_OK, IDOK);
-	Result := true;
+      Result := true;
     end
   end
 end;

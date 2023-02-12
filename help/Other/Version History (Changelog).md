@@ -9,6 +9,7 @@
 ## Changes
 - Updates are checked on Configurator start. Update check was removed from About screen.
 - Update check was reworked to use Github API.
+- Setup will install .Net Desktop Runtime 7 when it is not installed.
 
 # 5.8.0.0 (26 December 2022)
 

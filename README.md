@@ -44,16 +44,8 @@ and many more. See [all topics](../../wiki) .
 ### Software
 
 - Microsoft Windows 10 or later;
-- Microsoft .Net Desktop Runtime 7 is required. To download it you can open the following [url](https://dotnet.microsoft.com/en-us/download/dotnet/7.0), see section **.NET Desktop Runtime 7.0.0**
-
-### Advices
-
-Bug reports is advised to contain:
-- Version, OS;
-- Problem definition(why this is a bug):
-What behavior do you see(you can attach screenshots and videos)
-What behavior do you expect(you can attach screenshots and videos and describe why your variant is the better)
-How to reproduce the issue(you can attach screenshots and videos
+- Microsoft .Net Desktop Runtime 7 is required. Setup will install it.
+- Igor Pavlov's 7-zip. Setup will install it.
 
 ## Compilation
 
