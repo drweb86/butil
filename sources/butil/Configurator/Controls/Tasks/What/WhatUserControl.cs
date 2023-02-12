@@ -248,14 +248,14 @@ namespace BUtil.Configurator.Controls
                 if (item.IsFolder &&
                     !Directory.Exists(item.Target))
                 {
-                    Messages.ShowErrorBox(string.Format(BUtil.Configurator.Localization.Resources.SourceItemFailure, item));
+                    Messages.ShowErrorBox(string.Format(BUtil.Configurator.Localization.Resources.SourceItemFailure, item.Target));
                     return false;
                 }
 
                 if (!item.IsFolder &&
                     !File.Exists(item.Target))
                 {
-                    Messages.ShowErrorBox(string.Format(BUtil.Configurator.Localization.Resources.SourceItemFailure, item));
+                    Messages.ShowErrorBox(string.Format(BUtil.Configurator.Localization.Resources.SourceItemFailure, item.Target));
                     return false;
                 }
             }

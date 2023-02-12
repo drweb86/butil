@@ -1,6 +1,7 @@
 ﻿using BUtil.Core.BackupModels;
 using BUtil.Core.Compression;
 using BUtil.Core.FileSystem;
+using BUtil.Core.Hashing;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Storages;
@@ -16,12 +17,14 @@ namespace BUtil.Core.State
         private readonly ILog _log;
         private readonly IStorageSettings _storageSettings;
         private readonly StorageSpecificServicesIoc _services;
+        private readonly IHashService _hashService;
 
-        public IncrementalBackupStateService(StorageSpecificServicesIoc services)
+        public IncrementalBackupStateService(StorageSpecificServicesIoc services, IHashService hashService)
         {
             this._log = services.Log;
             this._storageSettings = services.StorageSettings;
             _services = services;
+            _hashService = hashService;
         }
 
         public bool TryRead(string password, out IncrementalBackupState state)
@@ -121,7 +124,7 @@ namespace BUtil.Core.State
             var uploadResult = _services.Storage.Upload(fileToUpload, storageFile.StorageRelativeFileName);
             storageFile.StorageFileName = uploadResult.StorageFileName;
             storageFile.StorageFileNameSize = uploadResult.StorageFileNameSize;
-            storageFile.StorageIntegrityMethodInfo = HashHelper.GetSha512(fileToUpload);
+            storageFile.StorageIntegrityMethodInfo = _hashService.GetSha512(fileToUpload, false);
 
             return storageFile;
         }

@@ -54,12 +54,12 @@ namespace BUtil.Configurator
             }
 		}
 
-		static async Task ProcessArguments(string[] args)
+		private static void ProcessArguments(string[] args)
 		{
 			args ??= Array.Empty<string>();
 			if (args.Length == 0)
 			{
-                await CheckForUpdates();
+                CheckForUpdates();
                 Application.Run(new MainForm());
 				return;
 			}
@@ -107,16 +107,16 @@ namespace BUtil.Configurator
 			}
 			else
 			{
-				await CheckForUpdates();
+				CheckForUpdates();
 				Application.Run(new MainForm());
 			}
 		}
 
-        private static async Task CheckForUpdates()
+        private static void CheckForUpdates()
         {
             try
             {
-                var update = await UpdateChecker.CheckForUpdate();
+                var update = UpdateChecker.CheckForUpdate().GetAwaiter().GetResult(); // not supported by .Net (STA for WinForms)
 
                 if (update.HasUpdate)
                 {
@@ -133,7 +133,7 @@ namespace BUtil.Configurator
         #endregion
 
         [STAThread]
-		public static async Task Main(string[] args)
+		public static void Main(string[] args)
 		{
 			Application.EnableVisualStyles();
 			Application.SetHighDpiMode(HighDpiMode.SystemAware);
@@ -142,7 +142,7 @@ namespace BUtil.Configurator
 			ImproveIt.HandleUiError = message => Messages.ShowErrorBox(message);
 	
 			CheckIntergrity();
-			await ProcessArguments(args);
+			ProcessArguments(args);
 		}
 	}
 }

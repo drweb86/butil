@@ -20,7 +20,7 @@ namespace BUtil.Configurator.Controls
 			visitWebSiteLabel.Text = BUtil.Core.Localization.Resources.VisitProjectHomepage;
             documentationLabel.Text = Resources.Documentation;
             var aboutInfo = new StringBuilder();
-            aboutInfo.Append(CopyrightInfo.Copyright);
+            aboutInfo.AppendLine(CopyrightInfo.Copyright);
             aboutInfo.Append(Resources.UtilityForCreatingBackupsNNwebSitesHttpsGithubComDrweb86ButilNNlocalizationCreatedByN);
             aboutInfo.Append(Resources.TranslationAuthor);
             aboutInfo.Append("\n\n");

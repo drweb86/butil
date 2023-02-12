@@ -13,6 +13,7 @@ using BUtil.Core.Misc;
 using BUtil.Core.Options;
 using BUtil.Core.State;
 using BUtil.Core.Storages;
+using BUtil.Core.TasksTree.IncrementalModel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BUtil.RestorationMaster
@@ -269,7 +270,8 @@ namespace BUtil.RestorationMaster
                 Enabled= false,
             };
 
-            var services = new Core.TasksTree.IncrementalModel.StorageSpecificServicesIoc(log, storageSettings);
+            var commonServicesIoc = new CommonServicesIoc();
+            var services = new Core.TasksTree.IncrementalModel.StorageSpecificServicesIoc(log, storageSettings, commonServicesIoc.HashService);
             using var form = new ProgressForm(reportProgress =>
             {
                 foreach (var storageFile in storageFiles)

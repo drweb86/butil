@@ -1,9 +1,10 @@
-# 5.9.0.0 (8 February 2023)
+# 5.9.0.0 (12 February 2023)
 
 ## New Features
 - Logs list includes now task name;
 - Logs location change was dropped because this feature is useless.
 - Setup will attempt to install 7-zip if its missing in a system.
+- Source items hashes calculation was improved. Hash cache was implemented. Hash is calculated when size or last write time of file is changed.
 
 ## Changes
 - Updates are checked on Configurator start. Update check was removed from About screen.

@@ -18,6 +18,7 @@ namespace BUtil.Core.TasksTree.States
             ILog log,
             BackupEvents events, 
             IEnumerable<SourceItem> sourceItems,
+            CommonServicesIoc commonServicesIoc,
             IEnumerable<StorageSpecificServicesIoc> services,
             IEnumerable<string> fileExcludePatterns,
             string password)
@@ -28,7 +29,7 @@ namespace BUtil.Core.TasksTree.States
 
             foreach (var item in sourceItems)
             {
-                var getSourceItemStateTask = new GetStateOfSourceItemTask(log, Events, item, fileExcludePatterns);
+                var getSourceItemStateTask = new GetStateOfSourceItemTask(log, Events, item, fileExcludePatterns, commonServicesIoc);
                 setSourceItemStateTasks.Add(getSourceItemStateTask);
                 childTasks.Add(getSourceItemStateTask);
             }

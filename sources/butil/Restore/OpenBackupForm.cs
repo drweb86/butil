@@ -80,7 +80,8 @@ namespace BUtil.RestorationMaster
 				Name = string.Empty,
 				DestinationFolder = backupFolder
 			};
-			var services = new StorageSpecificServicesIoc(log, storageSettings);
+			var commonServicesIoc = new CommonServicesIoc();
+			var services = new StorageSpecificServicesIoc(log, storageSettings, commonServicesIoc.HashService);
 			if (!services.IncrementalBackupStateService.TryRead(_passwordTextBox.Text, out var state))
 			{
 				Messages.ShowErrorBox(Resources.CannotOpenBackupFolder);

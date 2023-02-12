@@ -1,5 +1,4 @@
-﻿using BUtil.Core.Misc;
-using System;
+﻿using System;
 using System.Globalization;
 using System.Reflection;
 
@@ -7,27 +6,18 @@ namespace BUtil.Core
 {
 	public static class CopyrightInfo
 	{
-        readonly static Version _appVersion;
-        static readonly string _copyRightNotice;
-
-	    public static string Copyright
-	    {
-	    	get { return _copyRightNotice; }
-	    }
+	    public static string Copyright { get; }
         
-	    public static Version Version
-	    {
-            get { return _appVersion; }
-	    }
+	    public static Version Version { get; }
 
 		static CopyrightInfo()
 		{
-            _appVersion = Assembly
+			Version = Assembly
 				.GetExecutingAssembly()
                 .GetName()
 				.Version;
 
-            _copyRightNotice = string.Format(CultureInfo.CurrentUICulture, "BUtil - {0}\n{1}\n", _appVersion, SupportManager.GetLink(SupportRequest.Homepage));
+            Copyright = string.Format(CultureInfo.CurrentUICulture, "BUtil {0} : Copyright (c) 2010-2023 Siarhei Kuchuk", Version);
         }
     }
 }

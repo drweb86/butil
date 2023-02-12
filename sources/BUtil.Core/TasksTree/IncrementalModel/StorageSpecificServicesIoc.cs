@@ -1,4 +1,5 @@
-﻿using BUtil.Core.Logs;
+﻿using BUtil.Core.Hashing;
+using BUtil.Core.Logs;
 using BUtil.Core.State;
 using BUtil.Core.Storages;
 using System;
@@ -19,14 +20,13 @@ namespace BUtil.Core.TasksTree.IncrementalModel
         private readonly Lazy<IncrementalBackupFileService> _incrementalBackupFileService;
         public IncrementalBackupFileService IncrementalBackupFileService { get { return _incrementalBackupFileService.Value; } }
 
-        
-        public StorageSpecificServicesIoc(ILog log, IStorageSettings storageSettings)
+        public StorageSpecificServicesIoc(ILog log, IStorageSettings storageSettings, IHashService hashService)
         {
             Log = log;
             StorageSettings = storageSettings;
             _storage = new Lazy<IStorage> (() => StorageFactory.Create(log, storageSettings));
-            _incrementalBackupStateService = new Lazy<IncrementalBackupStateService>(() => new IncrementalBackupStateService(this));
-            _incrementalBackupFileService = new Lazy<IncrementalBackupFileService>(() => new IncrementalBackupFileService(this));
+            _incrementalBackupStateService = new Lazy<IncrementalBackupStateService>(() => new IncrementalBackupStateService(this, hashService));
+            _incrementalBackupFileService = new Lazy<IncrementalBackupFileService>(() => new IncrementalBackupFileService(hashService, this));
         }
 
         public void Dispose()

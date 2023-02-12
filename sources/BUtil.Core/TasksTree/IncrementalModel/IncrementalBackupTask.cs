@@ -1,5 +1,6 @@
 ﻿using BUtil.Core.BackupModels;
 using BUtil.Core.Events;
+using BUtil.Core.Hashing;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
@@ -13,12 +14,15 @@ namespace BUtil.Core.TasksTree.IncrementalModel
 {
     class IncrementalBackupTask : SequentialBuTask
     {
+        private readonly CommonServicesIoc _commonServicesIoc;
         private readonly IEnumerable<StorageSpecificServicesIoc> _storageServices;
 
         public IncrementalBackupTask(ILog log, BackupEvents backupEvents, BackupTask backupTask)
             : base(log, backupEvents, Resources.IncrementalBackup, TaskArea.ProgramInRunBeforeAfterBackupChain, null)
         {
             var tasks = new List<BuTask>();
+
+            _commonServicesIoc = new CommonServicesIoc();
 
             backupTask
                 .ExecuteBeforeBackup
@@ -29,10 +33,10 @@ namespace BUtil.Core.TasksTree.IncrementalModel
             _storageServices = backupTask
                 .Storages
                 .Where(x => x.Enabled)
-                .Select(x => new StorageSpecificServicesIoc(Log, x))
+                .Select(x => new StorageSpecificServicesIoc(Log, x, _commonServicesIoc.HashService))
                 .ToArray();
 
-            var readSatesTask = new GetStateOfSourceItemsAndStoragesTask(Log, Events, backupTask.Items, _storageServices, backupTask.FileExcludePatterns, backupTask.Password);
+            var readSatesTask = new GetStateOfSourceItemsAndStoragesTask(Log, Events, backupTask.Items, _commonServicesIoc, _storageServices, backupTask.FileExcludePatterns, backupTask.Password);
             tasks.Add(readSatesTask);
 
             tasks.Add(new WriteIncrementedVersionsTask(Log, Events, _storageServices, readSatesTask.StorageStateTasks, readSatesTask.GetSourceItemStateTasks, backupTask.Model as IncrementalBackupModelOptions, backupTask.Password));
@@ -54,6 +58,8 @@ namespace BUtil.Core.TasksTree.IncrementalModel
             _storageServices
                 .ToList()
                 .ForEach(x => x.Dispose());
+
+            _commonServicesIoc.Dispose();
 
             UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
         }

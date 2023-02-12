@@ -3,12 +3,12 @@ using BUtil.Core.Logs;
 using BUtil.Core.Options;
 using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;
+using BUtil.Core.TasksTree.IncrementalModel;
 using BUtil.Core.TasksTree.States;
 using Microsoft.Extensions.FileSystemGlobbing;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading;
 
 namespace BUtil.Core.TasksTree
 {
@@ -16,16 +16,18 @@ namespace BUtil.Core.TasksTree
     {
         private List<GetStateOfFileTask> _getFileStateTasks;
         private readonly IEnumerable<string> _fileExcludePatterns;
+        private readonly CommonServicesIoc _commonServicesIoc;
 
         public SourceItemState SourceItemState { get; private set; } 
 
         public SourceItem SourceItem { get; }
 
-        public GetStateOfSourceItemTask(ILog log, BackupEvents events, SourceItem sourceItem, IEnumerable<string> fileExcludePatterns) : 
+        public GetStateOfSourceItemTask(ILog log, BackupEvents events, SourceItem sourceItem, IEnumerable<string> fileExcludePatterns, CommonServicesIoc commonServicesIoc) : 
             base(log, events, string.Format(BUtil.Core.Localization.Resources.GetStateOfSourceItem, sourceItem.Target), sourceItem.IsFolder ? TaskArea.Folder : TaskArea.File, null)
         {
             SourceItem = sourceItem;
             this._fileExcludePatterns = fileExcludePatterns;
+            _commonServicesIoc = commonServicesIoc;
         }
 
         public override void Execute()
@@ -44,7 +46,7 @@ namespace BUtil.Core.TasksTree
             }
 
             _getFileStateTasks = files
-                .Select(file => new GetStateOfFileTask(Log, Events, file))
+                .Select(file => new GetStateOfFileTask(Log, Events, _commonServicesIoc, file))
                 .ToList();
             Children = _getFileStateTasks;
             Events.DuringExecutionTasksAdded(Id, Children);
