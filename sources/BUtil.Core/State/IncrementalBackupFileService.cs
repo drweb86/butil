@@ -46,13 +46,17 @@ namespace BUtil.Core.State
             {
                 using var tempFolder = new TempFolder();
                 var tempArchive = Path.Combine(tempFolder.Folder, "archive.7z");
+                var extractedFolder = Path.Combine(tempFolder.Folder, "Extracted");
                 _services.Storage.Download(storageFile.StorageRelativeFileName, tempArchive);
                 var archiver = ArchiverFactory.Create(_log);
-                if (!archiver.Extract(tempArchive, storageFile.StoragePassword, destinationDir))
+                // file can be renamed in real life.
+                if (!archiver.Extract(tempArchive, storageFile.StoragePassword, extractedFolder))
                 {
                     _log.WriteLine(LoggingEvent.Error, $"Storage \"{_storageSettings.Name}\": extracting \"{storageFile.FileState.FileName}\" failed");
                     return false;
                 }
+                var sourceFile = Directory.GetFiles(extractedFolder).Single();
+                File.Move(sourceFile, destinationFileName);
             }
             return true;
         }

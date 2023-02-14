@@ -2,7 +2,7 @@
   "profiles": {
     "Configurator": {
       "commandName": "Project",
-      "commandLineArgs": "JUSTBACKUPMASTER \"Task=Test\""
+      "commandLineArgs": "JUSTRESTORATIONMASTER"
     }
   }
 }
