@@ -5,6 +5,8 @@
 - Logs location change was dropped because this feature is useless.
 - Setup will attempt to install 7-zip if its missing in a system.
 - Source items hashes calculation was improved. Hash cache was implemented. Hash is calculated when size or last write time of file is changed.
+- Renamed, copies, moved files will be optimized in the storage (except for Plain Incremental Backup Model). 
+- Cleanup of unfinished backups from storage is performed on start of backup.
 
 ## Changes
 - Updates are checked on Configurator start. Update check was removed from About screen.

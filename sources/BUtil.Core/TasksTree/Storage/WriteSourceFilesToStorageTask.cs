@@ -1,9 +1,7 @@
 ﻿using BUtil.Core.BackupModels;
 using BUtil.Core.Events;
-using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.State;
-using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
 using System.Collections.Generic;
@@ -47,7 +45,8 @@ namespace BUtil.Core.TasksTree.Storage
 
             var childTasks = new List<BuTask>();
 
-            var versionState = _getIncrementedVersionTask.IncrementalBackupState.VersionStates.Last();
+            var versionStates = _getIncrementedVersionTask.IncrementalBackupState.VersionStates;
+            var versionState = versionStates.Last();
             var singleBackupQuotaGb = new Quota(_services.StorageSettings.SingleBackupQuotaGb * 1024 * 1024 * 1024);
             foreach (var sourceItemChange in versionState.SourceItemChanges)
             {
@@ -71,7 +70,8 @@ namespace BUtil.Core.TasksTree.Storage
                         _services,
                         Events,
                         x,
-                        singleBackupQuotaGb))
+                        singleBackupQuotaGb,
+                        versionStates))
                     .ToList();
                 childTasks.AddRange(copyTasks);
             }
@@ -122,8 +122,7 @@ namespace BUtil.Core.TasksTree.Storage
                                             sourceItemChange.SourceItem,
                                             sourceItemRelativeFileName);
 
-            return SourceItemHelper.GetCompressedStorageRelativeFileName();
-
+            return SourceItemHelper.GetCompressedStorageRelativeFileName(versionState);
         }
     }
 }

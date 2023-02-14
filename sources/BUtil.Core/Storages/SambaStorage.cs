@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 
@@ -34,6 +35,29 @@ namespace BUtil.Core.Storages
                     StorageFileNameSize = new FileInfo(destinationFile).Length,
                 };
             }
+        }
+
+        public override void DeleteFolder(string relativeFolderName)
+        {
+            var fullPathName = string.IsNullOrWhiteSpace(relativeFolderName)
+                ? Settings.Url
+                : Path.Combine(Settings.Url, relativeFolderName);
+
+            if (Directory.Exists(fullPathName))
+                Directory.Delete(fullPathName, true);
+        }
+
+        public override string[] GetFolders(string relativeFolderName, string mask = null)
+        {
+            var fullPathName = string.IsNullOrWhiteSpace(relativeFolderName)
+                ? Settings.Url
+                : Path.Combine(Settings.Url, relativeFolderName);
+
+            return Directory
+                .GetDirectories(fullPathName, mask)
+                .Select(x => x.Substring(fullPathName.Length))
+                .Select(x => x.Trim(new[] { '\\', '/' }))
+                .ToArray();
         }
 
         private void Mount()

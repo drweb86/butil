@@ -22,12 +22,23 @@ namespace BUtil.Core.Misc
             return fileState.FileName.Substring(sourceItemDirectory.Length + 1);
         }
 
+        public static string GetVersionFolder(
+            DateTime backupDateUtc)
+        {
+            return backupDateUtc.ToString("yyyy-MM-dd-T-HH-mm-ss");
+        }
+
+        public static string GetVersionFolderMask()
+        {
+            return "????-??-??-T-??-??-??";
+        }
+
         public static string GetUnencryptedUncompressedStorageRelativeFileName(
             VersionState versionState,
             SourceItem sourceItem,
             string sourceItemRelativeFileName)
         {
-            var readableDate = versionState.BackupDateUtc.ToString("yyyy-MM-dd-T-HH-mm-ss");
+            var readableDate = GetVersionFolder(versionState.BackupDateUtc);
 
             return Path.Combine(
                 readableDate,
@@ -35,10 +46,12 @@ namespace BUtil.Core.Misc
                 sourceItemRelativeFileName);
         }
 
-        public static string GetCompressedStorageRelativeFileName()
+        public static string GetCompressedStorageRelativeFileName(VersionState versionState)
         {
+            var readableDate = GetVersionFolder(versionState.BackupDateUtc);
+
             return Path.Combine(
-                "data",
+                readableDate,
                 $"{Guid.NewGuid()}.7z");
         }
 

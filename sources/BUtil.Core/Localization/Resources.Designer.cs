@@ -211,6 +211,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Get state of storage &quot;{0}&quot;.
+        /// </summary>
+        public static string DeleteUnversionedFilesStorage {
+            get {
+                return ResourceManager.GetString("DeleteUnversionedFilesStorage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter password:.
         /// </summary>
         public static string EnterPassword {

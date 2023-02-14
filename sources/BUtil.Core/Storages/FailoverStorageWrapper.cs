@@ -42,6 +42,20 @@ namespace BUtil.Core.Storages
                 () => _storage.Exists(relativeFileName));
         }
 
+        public void DeleteFolder(string relativeFolderName)
+        {
+            ExecuteFailover.TryNTimes(
+                error => _log.WriteLine(LoggingEvent.Error, $"Storage \"{_settings.Name}\": Delete folder \"{relativeFolderName}\""),
+                () => _storage.DeleteFolder(relativeFolderName));
+        }
+
+        public string[] GetFolders(string relativeFolderName, string mask = null)
+        {
+            return ExecuteFailover.TryNTimes(
+                error => _log.WriteLine(LoggingEvent.Error, $"Storage \"{_settings.Name}\": Get folders \"{relativeFolderName}\" by mask \"{mask}\""),
+                () => _storage.GetFolders(relativeFolderName, mask));
+        }
+
         public string Test()
         {
             return _storage.Test();

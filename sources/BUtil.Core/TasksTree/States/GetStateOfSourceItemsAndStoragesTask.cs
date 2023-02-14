@@ -13,6 +13,7 @@ namespace BUtil.Core.TasksTree.States
     {
         public IEnumerable<GetStateOfSourceItemTask> GetSourceItemStateTasks { get; }
         public IEnumerable<GetStateOfStorageTask> StorageStateTasks { get; }
+        public IEnumerable<DeleteUnversionedFilesStorageTask> DeleteUnversionedFilesStorageTasks { get; }
 
         public GetStateOfSourceItemsAndStoragesTask(
             ILog log,
@@ -36,14 +37,19 @@ namespace BUtil.Core.TasksTree.States
             GetSourceItemStateTasks = setSourceItemStateTasks;
 
             var storageStateTasks = new List<GetStateOfStorageTask>();
+            var deleteUnversionedFilesStorageTasks = new List<DeleteUnversionedFilesStorageTask>();
             foreach (var servicesIoc in services)
             {
                 var getStorageStateTask = new GetStateOfStorageTask(servicesIoc, Events, password);
                 storageStateTasks.Add(getStorageStateTask);
                 childTasks.Add(getStorageStateTask);
-            }
 
+                var deleteUnversionedFilesStorageTask = new DeleteUnversionedFilesStorageTask(servicesIoc, Events, password, getStorageStateTask);
+                deleteUnversionedFilesStorageTasks.Add(deleteUnversionedFilesStorageTask);
+                childTasks.Add(deleteUnversionedFilesStorageTask);
+            }
             StorageStateTasks = storageStateTasks;
+            DeleteUnversionedFilesStorageTasks = deleteUnversionedFilesStorageTasks;
 
             Children = childTasks;
         }
@@ -53,16 +59,17 @@ namespace BUtil.Core.TasksTree.States
             UpdateStatus(ProcessingStatus.InProgress);
 
             var storageTasksExecuter = new ParallelExecuter(StorageStateTasks, 10);
-            storageTasksExecuter.Wait();
-
             var sourceItemGroupTasks = GetSourceItemStateTasks
                 .GroupBy(x => Directory.GetDirectoryRoot(x.SourceItem.Target))
                 .Select(x => new SequentialBuTask(new StubLog(), new BackupEvents(), string.Empty, TaskArea.File, x.ToList()))
                 .ToList();
             var sourceItemGroupTasksExecuter = new ParallelExecuter(sourceItemGroupTasks, 10);
-
+            
             sourceItemGroupTasksExecuter.Wait();
             storageTasksExecuter.Wait();
+
+            var deleteUnversionedFilesStorageTasksExecuter = new ParallelExecuter(DeleteUnversionedFilesStorageTasks, 10);
+            deleteUnversionedFilesStorageTasksExecuter.Wait();
 
             IsSuccess = Children.All(x => x.IsSuccess);
             UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);

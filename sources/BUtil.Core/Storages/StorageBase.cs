@@ -17,6 +17,8 @@ namespace BUtil.Core.Storages
         public abstract string Test();
 
         public abstract void Delete(string relativeFileName);
+        public abstract void DeleteFolder(string relativeFolderName);
+        public abstract string[] GetFolders(string relativeFolderName, string mask = null);
         public abstract void Download(string relativeFileName, string targetFileName);
         public abstract bool Exists(string relativeFileName);
         public abstract void Dispose();

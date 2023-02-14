@@ -292,4 +292,7 @@
   <data name="WriteIncrementedVersionToStorages" xml:space="preserve">
     <value>Сохранение инкрементных версии в хранилища</value>
   </data>
+  <data name="DeleteUnversionedFilesStorage" xml:space="preserve">
+    <value>Удаление незавершенных резервных копий в хранилище "{0}"</value>
+  </data>
 </root>

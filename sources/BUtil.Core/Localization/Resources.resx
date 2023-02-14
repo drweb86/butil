@@ -284,4 +284,7 @@ Please update storage "{0}" settings.</value>
   <data name="WriteIncrementedVersionToStorages" xml:space="preserve">
     <value>Write incremented version to storages</value>
   </data>
+  <data name="DeleteUnversionedFilesStorage" xml:space="preserve">
+    <value>Delete uncompleted backups from storage "{0}"</value>
+  </data>
 </root>
