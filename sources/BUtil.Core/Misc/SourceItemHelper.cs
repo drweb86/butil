@@ -35,12 +35,10 @@ namespace BUtil.Core.Misc
                 sourceItemRelativeFileName);
         }
 
-        public static string GetCompressedStorageRelativeFileName(VersionState versionState)
+        public static string GetCompressedStorageRelativeFileName()
         {
-            var readableDate = versionState.BackupDateUtc.ToString("yyyy-MM-dd-T-HH-mm-ss");
-
             return Path.Combine(
-                readableDate,
+                "data",
                 $"{Guid.NewGuid()}.7z");
         }
 

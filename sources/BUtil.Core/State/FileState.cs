@@ -19,12 +19,12 @@ namespace BUtil.Core.State
             Sha512 = sha512;
         }
 
-        public bool CompareTo(FileState x)
+        public bool CompareTo(FileState x, bool excludeFileName = false, bool excludeLastWriteTimeUtc = false)
         {
-            return x.FileName == FileName && 
+            return ( (!excludeFileName && x.FileName == FileName) || excludeFileName) && 
                 x.Size == Size && 
                 x.Sha512 == Sha512 && 
-                x.LastWriteTimeUtc == LastWriteTimeUtc;
+                ( (!excludeLastWriteTimeUtc && x.LastWriteTimeUtc == LastWriteTimeUtc) || excludeLastWriteTimeUtc);
         }
     }
 }

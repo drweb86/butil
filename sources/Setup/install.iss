@@ -105,8 +105,8 @@ begin
     + #13#10#13#10
     + 'Please install Microsoft .Net Desktop Runtime 7 before running the application.', mbCriticalError, MB_OK, IDOK);
       Result := true;
-    end
-  end
+    end;
+  end;
 
   if not Is7ZipInstalled() then
   begin
@@ -121,8 +121,8 @@ begin
     + #13#10#13#10
     + 'Please install 7-zip to default location before running the application.', mbCriticalError, MB_OK, IDOK);
       Result := true;
-    end
-  end
+    end;
+  end;
 end;
 
 const

@@ -1,4 +1,6 @@
-﻿namespace BUtil.Core.State
+﻿using System;
+
+namespace BUtil.Core.State
 {
     public class StorageFile
     {
@@ -13,29 +15,20 @@
 
         public StorageFile() { }
 
-        public StorageFile(
-            FileState fileState,
-            string storageRelativeFileName,
-            string storageFileName,
-            long storageFileNameSize,
-            string storageMethod, 
-            string storageIntegriyMethod,
-            string storageIntegrityMethodInfo,
-            string storagePassword)
-        {
-            FileState = fileState;
-            StorageRelativeFileName = storageRelativeFileName;
-            StorageFileNameSize = storageFileNameSize;
-            StorageFileName = storageFileName;
-            StorageMethod = storageMethod;
-            StorageIntegrityMethod = storageIntegrityMethodInfo;
-            StorageIntegrityMethodInfo = storageIntegriyMethod;
-            StoragePassword = storagePassword;
-        }
-
         public StorageFile(FileState fileState)
         {
             FileState = fileState;
+        }
+
+        internal void SetStoragePropertiesFrom(StorageFile matchingFile)
+        {
+            StorageRelativeFileName = matchingFile.StorageRelativeFileName;
+            StorageFileNameSize = matchingFile.StorageFileNameSize;
+            StorageFileName = matchingFile.StorageFileName;
+            StorageMethod = matchingFile.StorageMethod;
+            StorageIntegrityMethod = matchingFile.StorageIntegrityMethod;
+            StorageIntegrityMethodInfo = matchingFile.StorageIntegrityMethodInfo;
+            StoragePassword = matchingFile.StoragePassword;
         }
     }
 }

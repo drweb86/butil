@@ -122,7 +122,7 @@ namespace BUtil.Core.TasksTree.Storage
                                             sourceItemChange.SourceItem,
                                             sourceItemRelativeFileName);
 
-            return SourceItemHelper.GetCompressedStorageRelativeFileName(versionState);
+            return SourceItemHelper.GetCompressedStorageRelativeFileName();
 
         }
     }
