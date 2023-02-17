@@ -2,15 +2,16 @@ using System;
 using System.IO;
 using System.Globalization;
 using BUtil.Core.FileSystem;
-using BUtil.Core.Misc;
 using BUtil.Core.Localization;
 
 namespace BUtil.Core.Logs
 {
     public class FileLog : LogBase
 	{
-        private readonly string _fileName;
+        private string _fileName;
+        private readonly string _taskName;
         private StreamWriter _logFile;
+        private DateTime _dateTime;
 
         public string LogFilename => _fileName;
         
@@ -21,15 +22,14 @@ namespace BUtil.Core.Logs
 
         public FileLog(string taskName)
 		{
-            const string _TIME_FORMATSTRING = "dd MMMM (dddd) HH.mm.ss";
-
+            _taskName = taskName;
             try
             {
                     do
                     {
-                        _fileName = Path.Combine(
-                            Directories.LogsFolder,
-                            $"{taskName} {DateTime.Now.ToString(_TIME_FORMATSTRING, CultureInfo.CurrentUICulture)}{Files.LogFilesExtension}");
+                        _dateTime = DateTime.Now;
+
+                        _fileName = GetFileName(null);
                     }
                     while (File.Exists(_fileName));
             }
@@ -37,6 +37,14 @@ namespace BUtil.Core.Logs
             {
                 throw new LogException(e.Message);
             }
+            _taskName = taskName;
+        }
+
+        private string GetFileName(bool? isSuccess)
+        {
+            var postfix = isSuccess.HasValue ? (isSuccess.Value ? BUtil.Core.Localization.Resources.Successful : BUtil.Core.Localization.Resources.Errors) : BUtil.Core.Localization.Resources.Unknown;
+            return Path.Combine(Directories.LogsFolder,
+                $"{_dateTime.ToString("yyyy-MM-dd HH-mm-ss", CultureInfo.CurrentUICulture)} {_taskName} ({postfix}).html");
         }
 
 		public override void Open()
@@ -48,7 +56,7 @@ namespace BUtil.Core.Logs
 <html>
     <head>
 	    <META HTTP-EQUIV=""CONTENT-TYPE"" CONTENT=""text/html; charset=utf-8"">
-	    <TITLE>{DateTime.Now.ToString("f", CultureInfo.CurrentUICulture)} - {Resources.BackupReport}</TITLE>
+	    <TITLE>{_dateTime.ToString("f", CultureInfo.CurrentUICulture)} - {Resources.BackupReport}</TITLE>
 		<style>
 			body {{
                 margin-bottom: 0cm;
@@ -98,17 +106,14 @@ namespace BUtil.Core.Logs
                 
                 WriteInFile("</body>");
 				WriteInFile("</html>");
-				if (HasErrors)
-				{
-					WriteInFile(Files.ErroneousBackupMarkInHtmlLog);
-				}
-				else
-				{
-					WriteInFile(Files.SuccesfullBackupMarkInHtmlLog);
-				}
 
-				_logFile.Flush();
-				_logFile.Close();
+                _logFile.Flush();
+                _logFile.Close();
+
+                var fileNameUpdated = GetFileName(!HasErrors);
+                File.Move(_fileName, fileNameUpdated);
+                _fileName = fileNameUpdated;
+
                 _logFile = null;
 
                 GC.SuppressFinalize(this);

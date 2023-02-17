@@ -414,9 +414,6 @@ You can add some storages in Configurator in 'Where' settings group.</value>
   <data name="MiscellaneousOptions" xml:space="preserve">
     <value>Miscellaneous options</value>
   </data>
-  <data name="HereYouCanSetUpLoggingProperties" xml:space="preserve">
-    <value>Here you can set up logging properties</value>
-  </data>
   <data name="New0VersionIsAvailableNNchangesAreN1NNprogramWillNowOpenBrowserWithTheDownloadPage" xml:space="preserve">
     <value>New {0} version is available.
 
@@ -439,21 +436,6 @@ Program will now open browser with the download page</value>
   </data>
   <data name="ProcessingState" xml:space="preserve">
     <value>Processing State</value>
-  </data>
-  <data name="BackupJournals" xml:space="preserve">
-    <value>Backup journals</value>
-  </data>
-  <data name="ViewSelectedLogs" xml:space="preserve">
-    <value>View selected logs...</value>
-  </data>
-  <data name="RemoveSelectedLogs" xml:space="preserve">
-    <value>Remove selected logs</value>
-  </data>
-  <data name="RemoveSuccesfullLogs" xml:space="preserve">
-    <value>Remove succesfull logs</value>
-  </data>
-  <data name="Refresh" xml:space="preserve">
-    <value>Refresh</value>
   </data>
   <data name="PleaseCheckItemsToCompress" xml:space="preserve">
     <value>Please, check items to compress!</value>
@@ -554,9 +536,6 @@ Please refer to manual for the complete list of parameters!</value>
   <data name="WouldYouLileToRemoveTheBackupTask0" xml:space="preserve">
     <value>Would you lile to remove the backup task '{0}' ?</value>
   </data>
-  <data name="BackupTasks" xml:space="preserve">
-    <value>Tasks</value>
-  </data>
   <data name="Run" xml:space="preserve">
     <value>Run</value>
   </data>
@@ -637,9 +616,6 @@ Please review opened log.</value>
   </data>
   <data name="QuestionButil" xml:space="preserve">
     <value>Question - BUtil</value>
-  </data>
-  <data name="PleaseConfirmDeletionOf0Logs" xml:space="preserve">
-    <value>Please confirm deletion of {0} logs.</value>
   </data>
   <data name="SourceItemFailure" xml:space="preserve">
     <value>Source item "{0}" does not exist.

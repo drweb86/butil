@@ -344,9 +344,6 @@ You can add some storages in Configurator in 'Where' settings group.</value>
   <data name="MiscellaneousOptions" xml:space="preserve">
     <value>Розныя опцыи</value>
   </data>
-  <data name="HereYouCanSetUpLoggingProperties" xml:space="preserve">
-    <value>Тут вы можаце пазначыць опцыи пратакалиравання</value>
-  </data>
   <data name="New0VersionIsAvailableNNchangesAreN1NNprogramWillNowOpenBrowserWithTheDownloadPage" xml:space="preserve">
     <value>Новая {0} версия ужо есць.
 
@@ -369,23 +366,6 @@ You can add some storages in Configurator in 'Where' settings group.</value>
   </data>
   <data name="ProcessingState" xml:space="preserve">
     <value>Processing State</value>
-  </data>
-  <data name="BackupJournals" xml:space="preserve">
-    <value>Журналы рэзервовага капiравання</value>
-  </data>
-  <data name="ViewSelectedLogs" xml:space="preserve">
-    <value>View selected logs...</value>
-  </data>
-  <data name="RemoveSelectedLogs" xml:space="preserve">
-    <value>Удалiць</value>
-  </data>
-  <data name="RemoveSuccesfullLogs" xml:space="preserve">
-    <value>Удалiць
-паспяховыя
-логi</value>
-  </data>
-  <data name="Refresh" xml:space="preserve">
-    <value>Абнавiць</value>
   </data>
   <data name="PleaseCheckItemsToCompress" xml:space="preserve">
     <value>Please, check items to compress!</value>
@@ -513,9 +493,6 @@ Please refer to manual for the complete list of parameters!</value>
   <data name="QuestionButil" xml:space="preserve">
     <value>Пытанне - BUtil</value>
   </data>
-  <data name="PleaseConfirmDeletionOf0Logs" xml:space="preserve">
-    <value>Калi ласка, падцвердзiце удаленне {0} логау.</value>
-  </data>
   <data name="AddedFile" xml:space="preserve">
     <value>- added file "{0}"</value>
   </data>
@@ -532,9 +509,6 @@ Please review opened log.</value>
   </data>
   <data name="BackupFolder" xml:space="preserve">
     <value>Backup folder:</value>
-  </data>
-  <data name="BackupTasks" xml:space="preserve">
-    <value>Tasks</value>
   </data>
   <data name="CannotLocateFile0InDirectoryPointToADirectoryContainingThisFile" xml:space="preserve">
     <value>Cannot locate file "{0}" in directory. 
@@ -687,5 +661,8 @@ Please correct list of source items.</value>
   </data>
   <data name="Url" xml:space="preserve">
     <value>Url:</value>
+  </data>
+  <data name="Unmount" xml:space="preserve">
+    <value>Unmount:</value>
   </data>
 </root>

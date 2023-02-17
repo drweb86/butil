@@ -354,9 +354,6 @@
   <data name="MiscellaneousOptions" xml:space="preserve">
     <value>Разные настройки</value>
   </data>
-  <data name="HereYouCanSetUpLoggingProperties" xml:space="preserve">
-    <value>Здесь настраивается протоколирование и можно посмотреть логи</value>
-  </data>
   <data name="New0VersionIsAvailableNNchangesAreN1NNprogramWillNowOpenBrowserWithTheDownloadPage" xml:space="preserve">
     <value>Доступна новая {0} версия.
 
@@ -379,21 +376,6 @@
   </data>
   <data name="ProcessingState" xml:space="preserve">
     <value>Состояние Обработки</value>
-  </data>
-  <data name="BackupJournals" xml:space="preserve">
-    <value>Логи</value>
-  </data>
-  <data name="ViewSelectedLogs" xml:space="preserve">
-    <value>Посмотреть выбранные логи...</value>
-  </data>
-  <data name="RemoveSelectedLogs" xml:space="preserve">
-    <value>Удалить выбранные логи</value>
-  </data>
-  <data name="RemoveSuccesfullLogs" xml:space="preserve">
-    <value>Удалить успешные логи</value>
-  </data>
-  <data name="Refresh" xml:space="preserve">
-    <value>Обновить</value>
   </data>
   <data name="PleaseCheckItemsToCompress" xml:space="preserve">
     <value>Выберите по меньшей мере один файл или папку для сжатия!</value>
@@ -494,9 +476,6 @@
   <data name="WouldYouLileToRemoveTheBackupTask0" xml:space="preserve">
     <value>Хотите удалить задание РК "{0}"?</value>
   </data>
-  <data name="BackupTasks" xml:space="preserve">
-    <value>Задания</value>
-  </data>
   <data name="Run" xml:space="preserve">
     <value>Пуск</value>
   </data>
@@ -577,9 +556,6 @@
   </data>
   <data name="QuestionButil" xml:space="preserve">
     <value>Вопрос - BUtil</value>
-  </data>
-  <data name="PleaseConfirmDeletionOf0Logs" xml:space="preserve">
-    <value>Пожалуйста, подтвердите удаление {0} логов.</value>
   </data>
   <data name="SourceItemFailure" xml:space="preserve">
     <value>Источник "{0}" не существует.

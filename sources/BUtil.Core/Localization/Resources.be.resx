@@ -244,4 +244,13 @@ Application will now close</value>
   <data name="PackingDataInAnImage" xml:space="preserve">
     <value>Packing data in an image</value>
   </data>
+  <data name="Successful" xml:space="preserve">
+    <value>Successful</value>
+  </data>
+  <data name="Errors" xml:space="preserve">
+    <value>Errors</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
 </root>

@@ -295,4 +295,13 @@
   <data name="DeleteUnversionedFilesStorage" xml:space="preserve">
     <value>Удаление незавершенных резервных копий в хранилище "{0}"</value>
   </data>
+  <data name="Successful" xml:space="preserve">
+    <value>Успешно</value>
+  </data>
+  <data name="Errors" xml:space="preserve">
+    <value>Ошибки</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Неизвестно</value>
+  </data>
 </root>

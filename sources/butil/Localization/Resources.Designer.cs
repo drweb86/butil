@@ -252,15 +252,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Backup journals.
-        /// </summary>
-        internal static string BackupJournals {
-            get {
-                return ResourceManager.GetString("BackupJournals", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Backup process completed succesfully!!!.
         /// </summary>
         internal static string BackupProcessCompletedSuccesfully {
@@ -275,15 +266,6 @@ namespace BUtil.Configurator.Localization {
         internal static string BackupTask0 {
             get {
                 return ResourceManager.GetString("BackupTask0", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Tasks.
-        /// </summary>
-        internal static string BackupTasks {
-            get {
-                return ResourceManager.GetString("BackupTasks", resourceCulture);
             }
         }
         
@@ -803,15 +785,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Here you can set up logging properties.
-        /// </summary>
-        internal static string HereYouCanSetUpLoggingProperties {
-            get {
-                return ResourceManager.GetString("HereYouCanSetUpLoggingProperties", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Here you can specify file globbing exclusion patterns. 
         ///It can be a file name or folder name or wildcard. 
         ///Examples: 
@@ -1270,15 +1243,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please confirm deletion of {0} logs..
-        /// </summary>
-        internal static string PleaseConfirmDeletionOf0Logs {
-            get {
-                return ResourceManager.GetString("PleaseConfirmDeletionOf0Logs", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Please wait....
         /// </summary>
         internal static string PleaseWait {
@@ -1361,15 +1325,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Refresh.
-        /// </summary>
-        internal static string Refresh {
-            get {
-                return ResourceManager.GetString("Refresh", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Remove.
         /// </summary>
         internal static string Remove {
@@ -1388,29 +1343,11 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remove selected logs.
-        /// </summary>
-        internal static string RemoveSelectedLogs {
-            get {
-                return ResourceManager.GetString("RemoveSelectedLogs", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Removes the selected backup task....
         /// </summary>
         internal static string RemovesTheSelectedBackupTask {
             get {
                 return ResourceManager.GetString("RemovesTheSelectedBackupTask", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Remove succesfull logs.
-        /// </summary>
-        internal static string RemoveSuccesfullLogs {
-            get {
-                return ResourceManager.GetString("RemoveSuccesfullLogs", resourceCulture);
             }
         }
         
@@ -1769,15 +1706,6 @@ namespace BUtil.Configurator.Localization {
             get {
                 return ResourceManager.GetString("UtilityForCreatingBackupsNNwebSitesHttpsGithubComDrweb86ButilNNlocalizationCreate" +
                         "dByN", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to View selected logs....
-        /// </summary>
-        internal static string ViewSelectedLogs {
-            get {
-                return ResourceManager.GetString("ViewSelectedLogs", resourceCulture);
             }
         }
         

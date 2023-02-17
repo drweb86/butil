@@ -287,4 +287,13 @@ Please update storage "{0}" settings.</value>
   <data name="DeleteUnversionedFilesStorage" xml:space="preserve">
     <value>Delete uncompleted backups from storage "{0}"</value>
   </data>
+  <data name="Successful" xml:space="preserve">
+    <value>Successful</value>
+  </data>
+  <data name="Errors" xml:space="preserve">
+    <value>Errors</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
 </root>

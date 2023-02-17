@@ -1,49 +1,25 @@
 using System;
 using System.Windows.Forms;
-using BUtil.Configurator.Configurator.Controls;
 using BUtil.Core.Misc;
-using System.Collections.Generic;
-using BUtil.Core.PL;
 using BUtil.Configurator.Localization;
+using BUtil.Core.FileSystem;
 
 namespace BUtil.Configurator.Configurator.Forms
 {
 	internal partial class MainForm
 	{
-		#region Fields
-
-	    readonly Dictionary<ConfiguratorViewsEnum, BackUserControl> _views;
-		
-		#endregion
-
-        #region Constructors
-
         public MainForm()
 		{
 			InitializeComponent();
 
-		    var backupTasksControl = new BackupTasksUserControl();
-			_views = new Dictionary<ConfiguratorViewsEnum, BackUserControl>
-			             {
-			                 {ConfiguratorViewsEnum.Tasks, backupTasksControl},
-			                 {ConfiguratorViewsEnum.Logging, new LogsUserControl()}
-			             };
+            this._backupTasksUserControl.OnRequestToSaveOptions += OnRequestToSaveOptions;
+            this._backupTasksUserControl.HelpLabel = helpToolStripStatusLabel;
 
-		    backupTasksControl.OnRequestToSaveOptions += OnRequestToSaveOptions;
-
-		    foreach (KeyValuePair<ConfiguratorViewsEnum, BackUserControl> pair in _views)
-        	{
-        		pair.Value.HelpLabel = helpToolStripStatusLabel;
-        	}
 			ApplyLocalization();
-
 			ApplyOptionsToUi();
-			ChoosePanelUserControlViewChanged(ConfiguratorViewsEnum.Tasks);
-			
+
 			restorationToolToolStripMenuItem.Enabled = !Program.PackageIsBroken;
 		}
-
-        #endregion
 
         private static void RunRestorationTool()
 		{
@@ -58,27 +34,18 @@ namespace BUtil.Configurator.Configurator.Forms
 		
         void ApplyLocalization()
         {
-        	foreach (KeyValuePair<ConfiguratorViewsEnum, BackUserControl> pair in _views)
-        	{
-        		pair.Value.ApplyLocalization();
-        	}
-            choosePanelUserControl.ApplyLocalization();
-            
+            _backupTasksUserControl.ApplyLocalization();
             Text = Resources.Configurator;
             restorationToolToolStripMenuItem.Text = Resources.RestoreData;
             _helpToolStripMenuItem.Text= Resources.Help;
             helpToolStripMenuItem.Text = Resources.Documentation;
             _aboutToolStripMenuItem.Text = Resources.About;
-
-            ChoosePanelUserControlViewChanged(ConfiguratorViewsEnum.Tasks);
+            _logsToolStripMenuItem.Text = Resources.Logging;
         }
 
 		private void GetOptionsFromUi()
 		{
-            foreach (KeyValuePair<ConfiguratorViewsEnum, BackUserControl> pair in _views)
-            {
-                pair.Value.GetOptionsFromUi();
-            }
+            _backupTasksUserControl.GetOptionsFromUi();
         }
 
 		private bool OnRequestToSaveOptions()
@@ -89,22 +56,12 @@ namespace BUtil.Configurator.Configurator.Forms
 
         private void ApplyOptionsToUi()
         {
-            _views[ConfiguratorViewsEnum.Tasks].SetOptionsToUi(null);
-            _views[ConfiguratorViewsEnum.Logging].SetOptionsToUi(null);
+            _backupTasksUserControl.SetOptionsToUi(null);
         }
 
 		void RestorationToolToolStripMenuItemClick(object sender, EventArgs e)
 		{
 			RunRestorationTool();
-		}
-
-		void ChoosePanelUserControlViewChanged(ConfiguratorViewsEnum newView)
-		{
-			nestingControlsPanel.Controls.Clear();
-			nestingControlsPanel.Controls.Add(_views[newView]);
-			nestingControlsPanel.Controls[0].Dock = DockStyle.Fill;
-			nestingControlsPanel.AutoScrollMinSize = new System.Drawing.Size(_views[newView].MinimumSize.Width, _views[newView].MinimumSize.Height);
-			optionsHeader.Title = choosePanelUserControl.SelectedCategory;
 		}
 		
 		void CancelButtonClick(object sender, EventArgs e)
@@ -122,5 +79,10 @@ namespace BUtil.Configurator.Configurator.Forms
 			using var aboutForm = new AboutForm();
             aboutForm.ShowDialog();
         }
-	}
+
+        private void OnOpenLogsFolder(object sender, EventArgs e)
+        {
+            ProcessHelper.ShellExecute(Directories.LogsFolder);
+        }
+    }
 }

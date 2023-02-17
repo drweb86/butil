@@ -26,18 +26,18 @@ namespace BUtil.Configurator.Configurator.Forms
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.MainmenuStrip = new System.Windows.Forms.MenuStrip();
+            this._logsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restorationToolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._beforeAboutToolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this._aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.choosePanelUserControl = new BUtil.Configurator.Configurator.Controls.MainNavigationUserControl();
             this.helpToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.optionsHeader = new BUtil.Configurator.Controls.OptionsHeader();
-            this.nestingControlsPanel = new System.Windows.Forms.Panel();
             this.helpStatusStrip = new System.Windows.Forms.StatusStrip();
+            this._backupTasksUserControl = new BUtil.Configurator.Configurator.Controls.BackupTasksUserControl();
             this.MainmenuStrip.SuspendLayout();
             this.helpStatusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -45,6 +45,7 @@ namespace BUtil.Configurator.Configurator.Forms
             // MainmenuStrip
             // 
             this.MainmenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._logsToolStripMenuItem,
             this.restorationToolToolStripMenuItem,
             this._helpToolStripMenuItem});
             this.MainmenuStrip.Location = new System.Drawing.Point(0, 0);
@@ -54,6 +55,14 @@ namespace BUtil.Configurator.Configurator.Forms
             this.MainmenuStrip.Size = new System.Drawing.Size(835, 24);
             this.MainmenuStrip.TabIndex = 3;
             this.MainmenuStrip.Text = "MainmenuStrip";
+            // 
+            // _logsToolStripMenuItem
+            // 
+            this._logsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("_logsToolStripMenuItem.Image")));
+            this._logsToolStripMenuItem.Name = "_logsToolStripMenuItem";
+            this._logsToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this._logsToolStripMenuItem.Text = "Logs...";
+            this._logsToolStripMenuItem.Click += new System.EventHandler(this.OnOpenLogsFolder);
             // 
             // restorationToolToolStripMenuItem
             // 
@@ -99,52 +108,10 @@ namespace BUtil.Configurator.Configurator.Forms
             // 
             this.toolTip.IsBalloon = true;
             // 
-            // choosePanelUserControl
-            // 
-            this.choosePanelUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.choosePanelUserControl.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.choosePanelUserControl.BackgroundImage = global::BUtil.Configurator.Icons.PanelUser;
-            this.choosePanelUserControl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.choosePanelUserControl.DrawAtractiveBorders = false;
-            this.choosePanelUserControl.HelpLabel = this.helpToolStripStatusLabel;
-            this.choosePanelUserControl.Location = new System.Drawing.Point(1, 27);
-            this.choosePanelUserControl.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
-            this.choosePanelUserControl.MinimumSize = new System.Drawing.Size(163, 248);
-            this.choosePanelUserControl.Name = "choosePanelUserControl";
-            this.choosePanelUserControl.Size = new System.Drawing.Size(163, 548);
-            this.choosePanelUserControl.TabIndex = 0;
-            this.choosePanelUserControl.ViewChanged += new BUtil.Configurator.Configurator.Controls.MainNavigationUserControl.ChangeViewEventHandler(this.ChoosePanelUserControlViewChanged);
-            // 
             // helpToolStripStatusLabel
             // 
             this.helpToolStripStatusLabel.Name = "helpToolStripStatusLabel";
             this.helpToolStripStatusLabel.Size = new System.Drawing.Size(0, 17);
-            // 
-            // optionsHeader
-            // 
-            this.optionsHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.optionsHeader.BackColor = System.Drawing.Color.DodgerBlue;
-            this.optionsHeader.ForeColor = System.Drawing.Color.White;
-            this.optionsHeader.Location = new System.Drawing.Point(168, 27);
-            this.optionsHeader.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.optionsHeader.MinimumSize = new System.Drawing.Size(190, 33);
-            this.optionsHeader.Name = "optionsHeader";
-            this.optionsHeader.Size = new System.Drawing.Size(665, 33);
-            this.optionsHeader.TabIndex = 5;
-            this.optionsHeader.Title = "Title";
-            // 
-            // nestingControlsPanel
-            // 
-            this.nestingControlsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.nestingControlsPanel.Location = new System.Drawing.Point(168, 61);
-            this.nestingControlsPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.nestingControlsPanel.Name = "nestingControlsPanel";
-            this.nestingControlsPanel.Size = new System.Drawing.Size(665, 514);
-            this.nestingControlsPanel.TabIndex = 1;
             // 
             // helpStatusStrip
             // 
@@ -157,16 +124,25 @@ namespace BUtil.Configurator.Configurator.Forms
             this.helpStatusStrip.TabIndex = 6;
             this.helpStatusStrip.Text = "statusStrip1";
             // 
+            // _backupTasksUserControl
+            // 
+            this._backupTasksUserControl.BackColor = System.Drawing.SystemColors.Window;
+            this._backupTasksUserControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._backupTasksUserControl.HelpLabel = null;
+            this._backupTasksUserControl.Location = new System.Drawing.Point(0, 24);
+            this._backupTasksUserControl.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this._backupTasksUserControl.Name = "_backupTasksUserControl";
+            this._backupTasksUserControl.Size = new System.Drawing.Size(835, 557);
+            this._backupTasksUserControl.TabIndex = 7;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(835, 603);
+            this.Controls.Add(this._backupTasksUserControl);
             this.Controls.Add(this.helpStatusStrip);
-            this.Controls.Add(this.nestingControlsPanel);
-            this.Controls.Add(this.optionsHeader);
-            this.Controls.Add(this.choosePanelUserControl);
             this.Controls.Add(this.MainmenuStrip);
             this.Icon = global::BUtil.Configurator.Icons.BUtilIcon;
             this.MainMenuStrip = this.MainmenuStrip;
@@ -187,15 +163,13 @@ namespace BUtil.Configurator.Configurator.Forms
 		private System.Windows.Forms.ToolStripMenuItem _helpToolStripMenuItem;
 		private System.Windows.Forms.ToolStripStatusLabel helpToolStripStatusLabel;
 		private System.Windows.Forms.StatusStrip helpStatusStrip;
-		private System.Windows.Forms.Panel nestingControlsPanel;
-		private BUtil.Configurator.Controls.OptionsHeader optionsHeader;
-        private MainNavigationUserControl choosePanelUserControl;
 		private System.Windows.Forms.MenuStrip MainmenuStrip;
         private System.Windows.Forms.ToolTip toolTip;
 		private System.Windows.Forms.ToolStripMenuItem restorationToolToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator _beforeAboutToolStripSeparator;
         private System.Windows.Forms.ToolStripMenuItem _aboutToolStripMenuItem;
-		
-	}
+        private System.Windows.Forms.ToolStripMenuItem _logsToolStripMenuItem;
+        private BackupTasksUserControl _backupTasksUserControl;
+    }
 }

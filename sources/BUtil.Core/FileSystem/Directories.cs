@@ -18,7 +18,7 @@ namespace BUtil.Core.FileSystem
 #else
         private static readonly string _userDataFolder = Path.Combine(_applicationDataFolder, "BUtil");
 		#endif
-		private static readonly string _logsDir = Path.Combine(_userDataFolder, "Logs", "v1");
+		private static readonly string _logsDir = Path.Combine(_userDataFolder, "Logs", "v2");
 		
         public static readonly string TempFolder = System.Environment.GetEnvironmentVariable("TEMP");
 

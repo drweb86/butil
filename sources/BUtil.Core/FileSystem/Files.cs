@@ -15,10 +15,6 @@ namespace BUtil.Core.FileSystem
 
         #endregion
 
-		public const string LogFilesExtension = ".BUtilLog.html";
-		public const string SuccesfullBackupMarkInHtmlLog = "<!-- SUCCESFULL BACKUP -->";
-		public const string ErroneousBackupMarkInHtmlLog = "<!-- ERRONEOUS BACKUP -->";
-
         public static string BugReportFile => _BugReportFile;
 
         public static string ConsoleBackupTool => _ConsoleBackupTool;
