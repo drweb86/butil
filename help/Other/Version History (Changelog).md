@@ -1,4 +1,4 @@
-# 6.0 (17 February 2023)
+# 6.0 (22 February 2023)
 
 ## New Features
 - Logs list was removed from application. Status of log is added to log name, so reviewing of logs is done easy with Explorer.
