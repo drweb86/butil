@@ -12,15 +12,15 @@ BUtil is a powerful set of tools for creating backups of documents and other dat
 ## Key Functions And Characteristics Of Software
 
 - It can store backups on multiple mounted drives;
+- Incremental backup model;
 - Simple configuring takes less time and goes easily and with comfort;
-- AES-256 7-zip encryption makes your data securely protected;
 - Multiple backup tasks are supported;
 - Html format for log files takes less time on reviewing of it;
 - Two modes of creating a backup exists: manual from UI and console tool and with scheduling possibilities;
 - [Unstructured Data repository model](./help/Other/Glossary.md)
 - [Copying files selection and extraction of file data](./help/Other/Glossary.md)
-- Built in [7-zip](https://www.7-zip.org/) [compression](https://en.wikipedia.org/wiki/Data_compression)
-- Built in [7-zip](https://www.7-zip.org/) [AES-256](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) [encryption](https://en.wikipedia.org/wiki/Encryption).
+- Built in [7-zip](https://www.7-zip.org/) [compression](https://en.wikipedia.org/wiki/Data_compression) and [AES-256 encryption](https://www.7-zip.org/) [AES-256](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard);
+- Deduplication of files.
 
 ## Keywords
 
