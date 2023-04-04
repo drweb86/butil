@@ -4,3 +4,5 @@ debug
 packages
 .vs
 sources/NUnitTests/bin/
+sources/backend/node_modules/
+sources/backend/dist/
