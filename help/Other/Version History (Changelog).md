@@ -1,3 +1,5 @@
+# 6.1 (28 March 2023)
+
 # 6.0 (22 February 2023)
 
 ## New Features
