@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx tsc",
+    "setup": "npm i && cd ..\\frontend && npm i && cd ..\\backend && npx tsc",
     "start": "node dist/index.js",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\" \"cd ..\\frontend && np run watch:build\""
   },
   "author": "",
   "license": "ISC",

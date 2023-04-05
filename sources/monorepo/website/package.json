@@ -1,0 +1,8 @@
+{
+  "name": "@monorepo-starter/docs-website",
+  "version": "1.0.0",
+  "description": "This is a shell for where an app could go",
+  "private": true,
+  "main": "index.js",
+  "license": "MIT"
+}

@@ -1,0 +1,47 @@
+{
+  "name": "@monorepo-starter/root",
+  "version": "1.0.0",
+  "description": "An example setup of how to do a monorepo, used in our monorepo 'getting started' guide",
+  "repository": "git@github.com:Thinkmill/monorepo-example.git",
+  "author": "Ben Conolly <ben@thinkmill.com.au>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "services/*",
+    "apps/*",
+    "website"
+  ],
+  "scripts": {
+    "postinstall": "preconstruct dev && manypkg check",
+    "build": "preconstruct build",
+    "release": "yarn build && changeset publish",
+    "test": "jest",
+    "clean": "manypkg exec rm -rf node_modules && manypkg exec rm -rf dist && rm -rf node_modules",
+    "start:next": "yarn manypkg run next-app start",
+    "start:server": "yarn manypkg run graphql-api start",
+    "start": "echo figure out how to start both services simultaneously here",
+    "lint": "yarn eslint ."
+  },
+  "dependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "@changesets/cli": "^2.5.0",
+    "@manypkg/cli": "^0.10.0",
+    "@preconstruct/cli": "^1.1.4",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^25.1.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "jest": "^25.1.0",
+    "prettier": "^1.19.1"
+  },
+  "preconstruct": {
+    "packages": [
+      "packages/*",
+      "services/*"
+    ]
+  }
+}
