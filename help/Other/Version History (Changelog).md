@@ -2,6 +2,7 @@
 
 ## Changes
 - Backup UI: successful items are removed over some iterations count to make ui be oriented on work in progress.
+- Restoration UI: open large backups speed increased in 4 times.
 
 # 6.0 (22 February 2023)
 

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using BUtil.BackupUiMaster;
 using BUtil.Configurator;
 using BUtil.Configurator.Localization;
 using BUtil.Core.Logs;
@@ -15,6 +16,7 @@ using BUtil.Core.State;
 using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.IncrementalModel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using NativeMethods = BUtil.BackupUiMaster.NativeMethods;
 
 namespace BUtil.RestorationMaster
 {
@@ -45,32 +47,43 @@ namespace BUtil.RestorationMaster
 				.OrderByDescending(x => x.BackupDateUtc)
 				.ToList();
 
-			_versionsListBox.DataSource = versionsDesc;
             _versionsListBox.DisplayMember = nameof(VersionState.BackupDateUtc);
             _versionsListBox.FormatString = "dd MMMM (dddd) HH:mm";
             _versionsListBox.FormatInfo = CultureInfo.CurrentUICulture;
+            _versionsListBox.DataSource = versionsDesc;
             _versionsListBox.EndUpdate();
 
             _versionsListBox.SelectedItem = versionsDesc.First();
-            this.OnVersionListChange(sender, e);
         }
 
 		private void OnVersionListChange(object sender, System.EventArgs e)
 		{
-            RefreshChangesView();
-            RefreshTreeView();
+            var selectedVersion = _versionsListBox.SelectedItem as VersionState;
+            string changesViewText = null;
+            List<Tuple<SourceItem, List<StorageFile>>> treeViewFiles = null;
+            using var progressForm = new ProgressForm(reportProgress =>
+            {
+                reportProgress(15);
+                changesViewText = GetChangesViewText(selectedVersion);
+                reportProgress(65);
+                treeViewFiles = GetTreeViewFiles(_incrementalBackupState, selectedVersion);
+
+            });
+            progressForm.ShowDialog();
+
+            _changesTextBox.Text = changesViewText;
+            RefreshTreeView(treeViewFiles);
         }
 
         private const int _fileImageIndex = 0;
         private const int _folderImageIndex = 1;
         private const int _storageImageIndex = 2;
 
-        private void RefreshTreeView()
+        private static List<Tuple<SourceItem, List<StorageFile>>> GetTreeViewFiles(
+            IncrementalBackupState state,
+            VersionState selectedVersion)
         {
-            var selectedVersion = _versionsListBox.SelectedItem as VersionState;
-
-            _filesTreeView.BeginUpdate();
-            _filesTreeView.Nodes.Clear();
+            var result = new List<Tuple<SourceItem, List<StorageFile>>>();
 
             var sourceItems = selectedVersion.SourceItemChanges
                 .Select(a => a.SourceItem)
@@ -79,6 +92,24 @@ namespace BUtil.RestorationMaster
 
             foreach (var sourceItem in sourceItems)
             {
+                result.Add(new Tuple<SourceItem, List<StorageFile>>(
+                    sourceItem,
+                    BuildVersionFiles(state, sourceItem, selectedVersion)
+                    ));
+            }
+
+            return result;
+        }
+
+        private void RefreshTreeView(List<Tuple<SourceItem, List<StorageFile>>> treeViewFiles)
+        {
+            _filesTreeView.BeginUpdate();
+            _filesTreeView.Nodes.Clear();
+
+            foreach (var treeViewFileTuple in treeViewFiles)
+            {
+                var sourceItem = treeViewFileTuple.Item1;
+
                 var sourceItemNode = new TreeNode(sourceItem.Target)
                 {
                     Tag = sourceItem,
@@ -87,8 +118,7 @@ namespace BUtil.RestorationMaster
                 };
                 _filesTreeView.Nodes.Add(sourceItemNode);
 
-
-                var storageFiles = BuildVersionFiles(sourceItem, selectedVersion);
+                var storageFiles = treeViewFileTuple.Item2;
                 foreach (var storageFile in storageFiles)
                 {
                     AddAsLeaves(sourceItemNode, sourceItem, storageFile);
@@ -98,11 +128,11 @@ namespace BUtil.RestorationMaster
             _filesTreeView.EndUpdate();
         }
 
-        private List<StorageFile> BuildVersionFiles(SourceItem sourceItem, VersionState selectedVersion)
+        private static List<StorageFile> BuildVersionFiles(IncrementalBackupState state, SourceItem sourceItem, VersionState selectedVersion)
         {
             List<StorageFile> result = null;
 
-            foreach (var versionState in _incrementalBackupState.VersionStates)
+            foreach (var versionState in state.VersionStates)
             {
                 var sourceItemChanges = versionState.SourceItemChanges.FirstOrDefault(x => x.SourceItem.CompareTo(sourceItem));
                 if (sourceItemChanges == null)
@@ -187,12 +217,10 @@ namespace BUtil.RestorationMaster
             return null;
         }
 
-        private void RefreshChangesView()
-		{
-            var selectedVersion = _versionsListBox.SelectedItem as VersionState;
-
+        private static string GetChangesViewText(VersionState state)
+        {
             var builder = new StringBuilder();
-            foreach (var sourceItemChanges in selectedVersion.SourceItemChanges
+            foreach (var sourceItemChanges in state.SourceItemChanges
                 .OrderBy(x => x.SourceItem.Target)
                 .ToList())
             {
@@ -218,8 +246,7 @@ namespace BUtil.RestorationMaster
                     .ToList()
                     .ForEach(deletedFile => builder.AppendLine(string.Format(BUtil.Configurator.Localization.Resources.DeletedFile, deletedFile)));
             }
-
-            _changesTextBox.Text = builder.ToString();
+            return builder.ToString();
         }
 
         private IEnumerable<TreeNode> GetChildren(TreeNode Parent)

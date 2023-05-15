@@ -74,22 +74,51 @@ namespace BUtil.RestorationMaster
                 return;
             }
 
-			var log = new StubLog();
-			IStorageSettings storageSettings = new FolderStorageSettings
-			{
-				Name = string.Empty,
-				DestinationFolder = backupFolder
-			};
-			var commonServicesIoc = new CommonServicesIoc();
-			var services = new StorageSpecificServicesIoc(log, storageSettings, commonServicesIoc.HashService);
-			if (!services.IncrementalBackupStateService.TryRead(_passwordTextBox.Text, out var state))
-			{
-				Messages.ShowErrorBox(Resources.CannotOpenBackupFolder);
-				return;
-			}
+			string error = null;
+            IncrementalBackupState state = null;
 
-			Hide();
-			using var restoreForm = new VersionsViewerForm(backupFolder, state);
+            using (var progressForm = new ProgressForm((Action<int> reportProgress) =>
+			{
+                reportProgress(5);
+                if (!Directory.Exists(backupFolder))
+                {
+                    error = Resources.BackupDirectoryDoesNotExist;
+                    return;
+                }
+
+                reportProgress(10);
+                if (!IncrementalBackupModelConstants.Files.Any(x => File.Exists(Path.Combine(backupFolder, x))))
+                {
+                    var allowedFiles = string.Join(", ", IncrementalBackupModelConstants.Files);
+                    error = string.Format(Resources.CannotLocateFile0InDirectoryPointToADirectoryContainingThisFile, allowedFiles);
+                    return;
+                }
+
+                reportProgress(20);
+                var log = new StubLog();
+                IStorageSettings storageSettings = new FolderStorageSettings
+                {
+                    Name = string.Empty,
+                    DestinationFolder = backupFolder
+                };
+                var commonServicesIoc = new CommonServicesIoc();
+                var services = new StorageSpecificServicesIoc(log, storageSettings, commonServicesIoc.HashService);
+                if (!services.IncrementalBackupStateService.TryRead(_passwordTextBox.Text, out state))
+                {
+                    error = Resources.CannotOpenBackupFolder;
+                    return;
+                }
+            }))
+                progressForm.ShowDialog();
+
+            if (!string.IsNullOrWhiteSpace(error))
+            {
+                Messages.ShowErrorBox(error);
+                return;
+            }
+
+            Hide();
+            using var restoreForm = new VersionsViewerForm(backupFolder, state);
             restoreForm.ShowDialog();
 			Close();
 		}
