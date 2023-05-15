@@ -1,8 +1,14 @@
 # 6.1 (15 May 2023)
 
+## New Features
+- Restoration UI: versions now show its year
+
 ## Changes
 - Backup UI: successful items are removed over some iterations count to make ui be oriented on work in progress.
 - Restoration UI: open large backups speed increased in 4 times.
+
+## Bug fixes
+- Restoration UI: tab stops were fixed on main form
 
 # 6.0 (22 February 2023)
 
