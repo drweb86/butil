@@ -16,7 +16,7 @@ using System.IO;
 using System.Linq;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using BUtil.Core.FileSystem;
+using System.Reflection;
 
 namespace BUtil.Configurator.BackupUiMaster.Forms
 {
@@ -25,6 +25,8 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
         private readonly BackupTask _backupTask;
 		BackupProgressUserControl _backupProgressUserControl;
         private readonly ConcurrentQueue<Action> _listViewUpdates = new();
+        private readonly Dictionary<Guid, int> _existingSuccessfullTasksLifespan = new();
+        private readonly int SuccessfullTasksLifeSpanUpdates = 10;
         private readonly List<ListViewItem> _items = new();
 
         public BackupMasterForm(BackupTask backupTask)
@@ -56,6 +58,12 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 
 		private void UpdateListViewItem(Guid taskId, ProcessingStatus status)
 		{
+            if (status == ProcessingStatus.FinishedSuccesfully)
+            {
+                if (!_existingSuccessfullTasksLifespan.ContainsKey(taskId))
+                    _existingSuccessfullTasksLifespan.Add(taskId, 0);
+            }
+
             foreach (ListViewItem item in _items)
             {
                 if ((Guid)item.Tag == taskId)
@@ -286,7 +294,45 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             tasksListView.BeginUpdate();
             while (_listViewUpdates.TryDequeue(out var action))
                 action();
+
+            IncreaseSuccessfullTasksAge();
+            RemoveRetiredSuccessfullTasks();
+
             tasksListView.EndUpdate();
+        }
+
+        private void RemoveRetiredSuccessfullTasks()
+        {
+            if (_existingSuccessfullTasksLifespan.Any(x => x.Value > SuccessfullTasksLifeSpanUpdates))
+            {
+                var halfLifeSpan = SuccessfullTasksLifeSpanUpdates / 2;
+
+                var retentionedTasks = _existingSuccessfullTasksLifespan
+                    .Where(x => x.Value > halfLifeSpan)
+                    .Select(x => x.Key)
+                    .ToList();
+
+                if (retentionedTasks.Any())
+                {
+                    foreach (var retentionedTask in retentionedTasks)
+                    {
+                        _existingSuccessfullTasksLifespan.Remove(retentionedTask);
+
+                        var index = _items.FindIndex(x => (Guid)x.Tag == retentionedTask);
+                        if (index == -1)
+                            continue;
+
+                        _items.RemoveAt(index);
+                    }
+                    tasksListView.VirtualListSize = _items.Count;
+                }
+            }
+        }
+
+        private void IncreaseSuccessfullTasksAge()
+        {
+            foreach (var item in _existingSuccessfullTasksLifespan)
+                _existingSuccessfullTasksLifespan[item.Key] = item.Value + 1;
         }
 
         private void OnRetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)

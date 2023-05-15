@@ -1,4 +1,7 @@
-# 6.1 (28 March 2023)
+# 6.1 (15 May 2023)
+
+## Changes
+- Backup UI: successful items are removed over some iterations count to make ui be oriented on work in progress.
 
 # 6.0 (22 February 2023)
 
