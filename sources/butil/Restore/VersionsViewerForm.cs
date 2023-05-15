@@ -48,7 +48,7 @@ namespace BUtil.RestorationMaster
 				.ToList();
 
             _versionsListBox.DisplayMember = nameof(VersionState.BackupDateUtc);
-            _versionsListBox.FormatString = "dd MMMM (dddd) HH:mm";
+            _versionsListBox.FormatString = "dd MMMM (dddd) HH:mm yyyy";
             _versionsListBox.FormatInfo = CultureInfo.CurrentUICulture;
             _versionsListBox.DataSource = versionsDesc;
             _versionsListBox.EndUpdate();
@@ -124,6 +124,9 @@ namespace BUtil.RestorationMaster
                     AddAsLeaves(sourceItemNode, sourceItem, storageFile);
                 }
             }
+
+            if (_filesTreeView.Nodes.Count == 1)
+                _filesTreeView.Nodes[0].Expand();
 
             _filesTreeView.EndUpdate();
         }
