@@ -251,8 +251,8 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             if (beepWhenCompleted)
                 Miscellaneous.DoBeeps();
 
-			var appStaysAlive = powerTask == PowerTask.None;
-
+            var appStaysAlive = powerTask == PowerTask.None;
+            NativeMethods.StopPreventSleep();
             if (appStaysAlive)
 			{
                 PowerPC.DoTask(powerTask);

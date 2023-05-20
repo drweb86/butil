@@ -13,5 +13,10 @@ namespace BUtil.Core.Misc
         {
             SetThreadExecutionState(ES_CONTINUOUS | ES_SYSTEM_REQUIRED);
         }
+
+        public static void StopPreventSleep()
+        {
+            SetThreadExecutionState(ES_CONTINUOUS);
+        }
     }
 }
