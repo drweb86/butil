@@ -28,169 +28,160 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BackupTasksUserControl));
-            this._tasksListView = new System.Windows.Forms.ListView();
-            this._nameColumn = new System.Windows.Forms.ColumnHeader();
-            this._contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this._executeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this._addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this._editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this._removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this._imageList = new System.Windows.Forms.ImageList(this.components);
-            this._executeButton = new System.Windows.Forms.Button();
-            this._addButton = new System.Windows.Forms.Button();
-            this._removeButton = new System.Windows.Forms.Button();
-            this._editButton = new System.Windows.Forms.Button();
-            this._contextMenuStrip.SuspendLayout();
-            this.SuspendLayout();
+            _tasksListView = new System.Windows.Forms.ListView();
+            _nameColumn = new System.Windows.Forms.ColumnHeader();
+            _contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(components);
+            _executeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            _addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            _editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            _removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            _imageList = new System.Windows.Forms.ImageList(components);
+            _executeButton = new System.Windows.Forms.Button();
+            _addButton = new System.Windows.Forms.Button();
+            _removeButton = new System.Windows.Forms.Button();
+            _editButton = new System.Windows.Forms.Button();
+            _contextMenuStrip.SuspendLayout();
+            SuspendLayout();
             // 
             // _tasksListView
             // 
-            this._tasksListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this._tasksListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this._nameColumn});
-            this._tasksListView.ContextMenuStrip = this._contextMenuStrip;
-            this._tasksListView.FullRowSelect = true;
-            this._tasksListView.LargeImageList = this._imageList;
-            this._tasksListView.Location = new System.Drawing.Point(4, 3);
-            this._tasksListView.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this._tasksListView.Name = "_tasksListView";
-            this._tasksListView.Size = new System.Drawing.Size(535, 326);
-            this._tasksListView.SmallImageList = this._imageList;
-            this._tasksListView.TabIndex = 0;
-            this._tasksListView.UseCompatibleStateImageBehavior = false;
-            this._tasksListView.View = System.Windows.Forms.View.Details;
-            this._tasksListView.SelectedIndexChanged += new System.EventHandler(this.RefreshTaskControls);
-            this._tasksListView.DoubleClick += new System.EventHandler(this.OnEditBackupTask);
-            this._tasksListView.Resize += new System.EventHandler(this.OnTasksListViewResize);
+            _tasksListView.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            _tasksListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { _nameColumn });
+            _tasksListView.ContextMenuStrip = _contextMenuStrip;
+            _tasksListView.FullRowSelect = true;
+            _tasksListView.LargeImageList = _imageList;
+            _tasksListView.Location = new System.Drawing.Point(4, 3);
+            _tasksListView.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            _tasksListView.Name = "_tasksListView";
+            _tasksListView.Size = new System.Drawing.Size(535, 326);
+            _tasksListView.SmallImageList = _imageList;
+            _tasksListView.TabIndex = 0;
+            _tasksListView.UseCompatibleStateImageBehavior = false;
+            _tasksListView.View = System.Windows.Forms.View.Details;
+            _tasksListView.SelectedIndexChanged += RefreshTaskControls;
+            _tasksListView.DoubleClick += ExecuteRequest;
+            _tasksListView.Resize += OnTasksListViewResize;
             // 
             // _nameColumn
             // 
-            this._nameColumn.Text = "Name";
-            this._nameColumn.Width = 434;
+            _nameColumn.Text = "Name";
+            _nameColumn.Width = 434;
             // 
             // _contextMenuStrip
             // 
-            this._contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this._executeToolStripMenuItem,
-            this._addToolStripMenuItem,
-            this._editToolStripMenuItem,
-            this.toolStripSeparator1,
-            this._removeToolStripMenuItem});
-            this._contextMenuStrip.Name = "_contextMenuStrip";
-            this._contextMenuStrip.Size = new System.Drawing.Size(181, 120);
+            _contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { _executeToolStripMenuItem, _addToolStripMenuItem, _editToolStripMenuItem, toolStripSeparator1, _removeToolStripMenuItem });
+            _contextMenuStrip.Name = "_contextMenuStrip";
+            _contextMenuStrip.Size = new System.Drawing.Size(125, 98);
             // 
             // _executeToolStripMenuItem
             // 
-            this._executeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("_executeToolStripMenuItem.Image")));
-            this._executeToolStripMenuItem.Name = "_executeToolStripMenuItem";
-            this._executeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this._executeToolStripMenuItem.Text = "Execute...";
-            this._executeToolStripMenuItem.Click += new System.EventHandler(this.ExecuteRequest);
+            _executeToolStripMenuItem.Image = (System.Drawing.Image)resources.GetObject("_executeToolStripMenuItem.Image");
+            _executeToolStripMenuItem.Name = "_executeToolStripMenuItem";
+            _executeToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            _executeToolStripMenuItem.Text = "Execute...";
+            _executeToolStripMenuItem.Click += ExecuteRequest;
             // 
             // _addToolStripMenuItem
             // 
-            this._addToolStripMenuItem.Image = global::BUtil.Configurator.Icons.Add;
-            this._addToolStripMenuItem.Name = "_addToolStripMenuItem";
-            this._addToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this._addToolStripMenuItem.Text = "Add...";
-            this._addToolStripMenuItem.Click += new System.EventHandler(this.AddTaskRequest);
+            _addToolStripMenuItem.Image = Icons.Add;
+            _addToolStripMenuItem.Name = "_addToolStripMenuItem";
+            _addToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            _addToolStripMenuItem.Text = "Add...";
+            _addToolStripMenuItem.Click += AddTaskRequest;
             // 
             // _editToolStripMenuItem
             // 
-            this._editToolStripMenuItem.Image = global::BUtil.Configurator.Icons.OtherOptions48x48;
-            this._editToolStripMenuItem.Name = "_editToolStripMenuItem";
-            this._editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this._editToolStripMenuItem.Text = "Edit...";
-            this._editToolStripMenuItem.Click += new System.EventHandler(this.OnEditBackupTask);
+            _editToolStripMenuItem.Image = Icons.OtherOptions48x48;
+            _editToolStripMenuItem.Name = "_editToolStripMenuItem";
+            _editToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            _editToolStripMenuItem.Text = "Edit...";
+            _editToolStripMenuItem.Click += OnEditBackupTask;
             // 
             // toolStripSeparator1
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new System.Drawing.Size(121, 6);
             // 
             // _removeToolStripMenuItem
             // 
-            this._removeToolStripMenuItem.Image = global::BUtil.Configurator.Icons.removeFromListToolStripMenuItem_Image;
-            this._removeToolStripMenuItem.Name = "_removeToolStripMenuItem";
-            this._removeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this._removeToolStripMenuItem.Text = "Remove";
-            this._removeToolStripMenuItem.Click += new System.EventHandler(this.RemoveTaskRequest);
+            _removeToolStripMenuItem.Image = Icons.removeFromListToolStripMenuItem_Image;
+            _removeToolStripMenuItem.Name = "_removeToolStripMenuItem";
+            _removeToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            _removeToolStripMenuItem.Text = "Remove";
+            _removeToolStripMenuItem.Click += RemoveTaskRequest;
             // 
             // _imageList
             // 
-            this._imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this._imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("_imageList.ImageStream")));
-            this._imageList.TransparentColor = System.Drawing.Color.Transparent;
-            this._imageList.Images.SetKeyName(0, "BackupTask16x16.png");
+            _imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            _imageList.ImageStream = (System.Windows.Forms.ImageListStreamer)resources.GetObject("_imageList.ImageStream");
+            _imageList.TransparentColor = System.Drawing.Color.Transparent;
+            _imageList.Images.SetKeyName(0, "BackupTask16x16.png");
             // 
             // _executeButton
             // 
-            this._executeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._executeButton.Image = ((System.Drawing.Image)(resources.GetObject("_executeButton.Image")));
-            this._executeButton.Location = new System.Drawing.Point(546, 6);
-            this._executeButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this._executeButton.Name = "_executeButton";
-            this._executeButton.Size = new System.Drawing.Size(71, 67);
-            this._executeButton.TabIndex = 1;
-            this._executeButton.UseVisualStyleBackColor = true;
-            this._executeButton.Click += new System.EventHandler(this.ExecuteRequest);
+            _executeButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            _executeButton.Image = (System.Drawing.Image)resources.GetObject("_executeButton.Image");
+            _executeButton.Location = new System.Drawing.Point(546, 6);
+            _executeButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            _executeButton.Name = "_executeButton";
+            _executeButton.Size = new System.Drawing.Size(71, 67);
+            _executeButton.TabIndex = 1;
+            _executeButton.UseVisualStyleBackColor = true;
+            _executeButton.Click += ExecuteRequest;
             // 
             // _addButton
             // 
-            this._addButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._addButton.Image = global::BUtil.Configurator.Icons.add_48;
-            this._addButton.Location = new System.Drawing.Point(546, 80);
-            this._addButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this._addButton.Name = "_addButton";
-            this._addButton.Size = new System.Drawing.Size(71, 67);
-            this._addButton.TabIndex = 2;
-            this._addButton.UseVisualStyleBackColor = true;
-            this._addButton.Click += new System.EventHandler(this.AddTaskRequest);
+            _addButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            _addButton.Image = Icons.add_48;
+            _addButton.Location = new System.Drawing.Point(546, 80);
+            _addButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            _addButton.Name = "_addButton";
+            _addButton.Size = new System.Drawing.Size(71, 67);
+            _addButton.TabIndex = 2;
+            _addButton.UseVisualStyleBackColor = true;
+            _addButton.Click += AddTaskRequest;
             // 
             // _removeButton
             // 
-            this._removeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._removeButton.Image = global::BUtil.Configurator.Icons.cross_48;
-            this._removeButton.Location = new System.Drawing.Point(546, 227);
-            this._removeButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this._removeButton.Name = "_removeButton";
-            this._removeButton.Size = new System.Drawing.Size(71, 67);
-            this._removeButton.TabIndex = 4;
-            this._removeButton.UseVisualStyleBackColor = true;
-            this._removeButton.Click += new System.EventHandler(this.RemoveTaskRequest);
+            _removeButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            _removeButton.Image = Icons.cross_48;
+            _removeButton.Location = new System.Drawing.Point(546, 227);
+            _removeButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            _removeButton.Name = "_removeButton";
+            _removeButton.Size = new System.Drawing.Size(71, 67);
+            _removeButton.TabIndex = 4;
+            _removeButton.UseVisualStyleBackColor = true;
+            _removeButton.Click += RemoveTaskRequest;
             // 
             // _editButton
             // 
-            this._editButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._editButton.Image = global::BUtil.Configurator.Icons.OtherOptions48x48;
-            this._editButton.Location = new System.Drawing.Point(546, 153);
-            this._editButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this._editButton.Name = "_editButton";
-            this._editButton.Size = new System.Drawing.Size(71, 67);
-            this._editButton.TabIndex = 3;
-            this._editButton.UseVisualStyleBackColor = true;
-            this._editButton.Click += new System.EventHandler(this.OnEditBackupTask);
+            _editButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            _editButton.Image = Icons.OtherOptions48x48;
+            _editButton.Location = new System.Drawing.Point(546, 153);
+            _editButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            _editButton.Name = "_editButton";
+            _editButton.Size = new System.Drawing.Size(71, 67);
+            _editButton.TabIndex = 3;
+            _editButton.UseVisualStyleBackColor = true;
+            _editButton.Click += OnEditBackupTask;
             // 
             // BackupTasksUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this._removeButton);
-            this.Controls.Add(this._editButton);
-            this.Controls.Add(this._executeButton);
-            this.Controls.Add(this._addButton);
-            this.Controls.Add(this._tasksListView);
-            this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.Name = "BackupTasksUserControl";
-            this.Size = new System.Drawing.Size(623, 333);
-            this._contextMenuStrip.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            Controls.Add(_removeButton);
+            Controls.Add(_editButton);
+            Controls.Add(_executeButton);
+            Controls.Add(_addButton);
+            Controls.Add(_tasksListView);
+            Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            Name = "BackupTasksUserControl";
+            Size = new System.Drawing.Size(623, 333);
+            _contextMenuStrip.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion

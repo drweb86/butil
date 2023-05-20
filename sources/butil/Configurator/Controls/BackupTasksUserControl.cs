@@ -31,9 +31,9 @@ namespace BUtil.Configurator.Configurator.Controls
             SetHintForControl(_editButton, Resources.EditsTheSelectedBackupTask);
             SetHintForControl(_executeButton, Resources.RunsBackup);
 
-            _addToolStripMenuItem.Text =Resources.Add;
+            _addToolStripMenuItem.Text = Resources.Add;
             _removeToolStripMenuItem.Text = Resources.Remove;
-            _editToolStripMenuItem.Text=Resources.Modify;
+            _editToolStripMenuItem.Text = Resources.Modify;
             _executeToolStripMenuItem.Text = Resources.Run;
 
             _nameColumn.Text = Resources.Name;
@@ -147,10 +147,10 @@ namespace BUtil.Configurator.Configurator.Controls
 
         void RefreshTaskControls(object sender, EventArgs e)
         {
-            _removeButton.Enabled = 
-                _removeToolStripMenuItem.Enabled = 
-                _editButton.Enabled = 
-                _editToolStripMenuItem.Enabled = 
+            _removeButton.Enabled =
+                _removeToolStripMenuItem.Enabled =
+                _editButton.Enabled =
+                _editToolStripMenuItem.Enabled =
                 _executeButton.Enabled =
                 _executeToolStripMenuItem.Enabled =
                     _tasksListView.SelectedItems.Count > 0;
