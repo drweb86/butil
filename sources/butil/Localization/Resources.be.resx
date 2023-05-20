@@ -233,9 +233,6 @@
   <data name="Test" xml:space="preserve">
     <value>Test</value>
   </data>
-  <data name="BeepSeveralTimes" xml:space="preserve">
-    <value>Beep several times</value>
-  </data>
   <data name="AfterCompletionOfBackup" xml:space="preserve">
     <value>After completion of backup</value>
   </data>
@@ -493,16 +490,10 @@ Please refer to manual for the complete list of parameters!</value>
   <data name="AddFileExcludePattern" xml:space="preserve">
     <value>Add File Exclude Pattern...</value>
   </data>
-  <data name="BackupDirectoryDoesNotExist" xml:space="preserve">
-    <value>Backup directory does not exist.</value>
-  </data>
   <data name="BackupFailedPleaseReviewOpenedLog" xml:space="preserve">
     <value>Backup failed.
 
 Please review opened log.</value>
-  </data>
-  <data name="BackupFolder" xml:space="preserve">
-    <value>Backup folder:</value>
   </data>
   <data name="CannotLocateFile0InDirectoryPointToADirectoryContainingThisFile" xml:space="preserve">
     <value>Cannot locate file "{0}" in directory. 
@@ -586,9 +577,6 @@ See detailed description in the following link.</value>
   <data name="IncrementalBackupDescription" xml:space="preserve">
     <value>The most basic form of incremental backup consists of identifying, recording and thus, preserving only those files that have changed since the last backup. Since changes are typically low, incremental backups are much smaller and quicker than full backups. For instance, following a full backup on Friday, a Monday backup will contain only those files that changed since Friday. A Tuesday backup contains only those files that changed since Monday, and so on. A full restoration of data will naturally be slower, since all increments must be restored. Should any one of the copies created fail, including the first (full), restoration will be incomplete.</value>
   </data>
-  <data name="MountYourBackupLocationAsDiskOrCopyItToAnyFolderAndSpecifyItsLocation" xml:space="preserve">
-    <value>Mount your backup location as disk or copy it to any folder and specify its location.</value>
-  </data>
   <data name="NameIsEmpty" xml:space="preserve">
     <value>Name is empty.</value>
   </data>
@@ -611,9 +599,6 @@ Usage scenario: You mounted some cloud storage as disk and perform backup on it.
   </data>
   <data name="ThisNameIsAlreadyTakenTryAnotherOne" xml:space="preserve">
     <value>This name is already taken. Try another one.</value>
-  </data>
-  <data name="OpenFolder" xml:space="preserve">
-    <value>Open folder...</value>
   </data>
   <data name="OpenInExplorer" xml:space="preserve">
     <value>Open in Explorer...</value>

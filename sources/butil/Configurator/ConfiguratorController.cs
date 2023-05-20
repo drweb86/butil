@@ -18,7 +18,7 @@ namespace BUtil.Configurator.Configurator
 				return;
 			}
 
-            using var form = new OpenBackupForm(file != null ? Path.GetDirectoryName(file) : null);
+            using var form = new OpenBackupForm(file == null ? null : Path.GetDirectoryName(file));
             if (runFormAsApplication)
             {
                 Application.Run(form);

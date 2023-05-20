@@ -4,32 +4,27 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Windows.Forms;
-using BUtil.BackupUiMaster;
 using BUtil.Configurator;
 using BUtil.Configurator.Localization;
 using BUtil.Core.Logs;
-using BUtil.Core.Misc;
 using BUtil.Core.Options;
 using BUtil.Core.State;
 using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.IncrementalModel;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using NativeMethods = BUtil.BackupUiMaster.NativeMethods;
 
 namespace BUtil.RestorationMaster
 {
 	internal partial class VersionsViewerForm : Form
 	{
 		private readonly IncrementalBackupState _incrementalBackupState;
-        private readonly string _backupLocation;
+        private readonly IStorageSettings _storageSettings;
 
-        public VersionsViewerForm(string backupLocation = null, IncrementalBackupState incrementalBackupState = null)
+        public VersionsViewerForm(IStorageSettings storageSettings = null, IncrementalBackupState incrementalBackupState = null)
 		{
 			InitializeComponent();
 			_incrementalBackupState = incrementalBackupState;
-            _backupLocation = backupLocation;
+            _storageSettings = storageSettings;
 
             _versionsLabel.Text = BUtil.Configurator.Localization.Resources.SelectVersion;
             _dataLabel.Text = BUtil.Configurator.Localization.Resources.StateOfSourceItemsAtSelectedVersion;
@@ -292,14 +287,8 @@ namespace BUtil.RestorationMaster
             if (!storageFiles.Any())
                 return;
 
-            var log = new StubLog();
-            IStorageSettings storageSettings = new FolderStorageSettings
-            { 
-                DestinationFolder = _backupLocation,
-            };
-
             var commonServicesIoc = new CommonServicesIoc();
-            var services = new Core.TasksTree.IncrementalModel.StorageSpecificServicesIoc(log, storageSettings, commonServicesIoc.HashService);
+            var services = new Core.TasksTree.IncrementalModel.StorageSpecificServicesIoc(new StubLog(), _storageSettings, commonServicesIoc.HashService);
             using var form = new ProgressForm(reportProgress =>
             {
                 foreach (var storageFile in storageFiles)
@@ -312,6 +301,7 @@ namespace BUtil.RestorationMaster
             form.ShowDialog();
 
             Messages.ShowInformationBox(BUtil.Configurator.Localization.Resources.RestorationIsCompleted);
+            services.Dispose();
         }
 
         private void OnMouseDown(object sender, MouseEventArgs e)

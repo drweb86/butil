@@ -127,7 +127,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             _backupEvents.OnDuringExecutionTasksAdded += OnDuringExecutionTasksAdded;
             _rootTask = _strategy.GetTask(_backupEvents);
 
-            settingsUserControl.SetSettingsToUi(PowerTask.None, _backupTask, false);
+            settingsUserControl.SetSettingsToUi(PowerTask.None);
 
             var allTasks = _rootTask.GetChildren();
             foreach (var task in allTasks)
@@ -247,9 +247,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             _backupProgressUserControl.Stop();
 			_log.Close();
 
-            settingsUserControl.GetSettingsFromUi(out PowerTask powerTask, out bool beepWhenCompleted);
-            if (beepWhenCompleted)
-                Miscellaneous.DoBeeps();
+            settingsUserControl.GetSettingsFromUi(out PowerTask powerTask);
 
             var appStaysAlive = powerTask == PowerTask.None;
             NativeMethods.StopPreventSleep();

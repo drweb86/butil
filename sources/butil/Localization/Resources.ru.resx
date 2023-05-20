@@ -237,9 +237,6 @@
   <data name="HardDriveStorage" xml:space="preserve">
     <value>Хранилище на жестком диске...</value>
   </data>
-  <data name="BeepSeveralTimes" xml:space="preserve">
-    <value>Подать звуковой сигнал</value>
-  </data>
   <data name="AfterCompletionOfBackup" xml:space="preserve">
     <value>По окончании резервного копирования</value>
   </data>
@@ -549,18 +546,6 @@
     <value>Источник "{0}" не существует.
 
 Пожалуйста, исправьте список источников.</value>
-  </data>
-  <data name="MountYourBackupLocationAsDiskOrCopyItToAnyFolderAndSpecifyItsLocation" xml:space="preserve">
-    <value>Подмонтируйте вашу резервную копию как диск или скопируйте в любую папку и укажите ее расположение.</value>
-  </data>
-  <data name="BackupFolder" xml:space="preserve">
-    <value>Расположение резервной копии:</value>
-  </data>
-  <data name="OpenFolder" xml:space="preserve">
-    <value>Указать папку...</value>
-  </data>
-  <data name="BackupDirectoryDoesNotExist" xml:space="preserve">
-    <value>Каталог с резервной копией не существует.</value>
   </data>
   <data name="CannotLocateFile0InDirectoryPointToADirectoryContainingThisFile" xml:space="preserve">
     <value>В указанном каталоге нет файла "{0}". 

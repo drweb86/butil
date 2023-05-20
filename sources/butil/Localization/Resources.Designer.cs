@@ -214,15 +214,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Backup directory does not exist..
-        /// </summary>
-        internal static string BackupDirectoryDoesNotExist {
-            get {
-                return ResourceManager.GetString("BackupDirectoryDoesNotExist", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Backup failed.
         ///
         ///Please review opened log..
@@ -230,15 +221,6 @@ namespace BUtil.Configurator.Localization {
         internal static string BackupFailedPleaseReviewOpenedLog {
             get {
                 return ResourceManager.GetString("BackupFailedPleaseReviewOpenedLog", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Backup folder:.
-        /// </summary>
-        internal static string BackupFolder {
-            get {
-                return ResourceManager.GetString("BackupFolder", resourceCulture);
             }
         }
         
@@ -266,15 +248,6 @@ namespace BUtil.Configurator.Localization {
         internal static string BackupTask0 {
             get {
                 return ResourceManager.GetString("BackupTask0", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Beep several times.
-        /// </summary>
-        internal static string BeepSeveralTimes {
-            get {
-                return ResourceManager.GetString("BeepSeveralTimes", resourceCulture);
             }
         }
         
@@ -1030,15 +1003,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mount your backup location as disk or copy it to any folder and specify its location..
-        /// </summary>
-        internal static string MountYourBackupLocationAsDiskOrCopyItToAnyFolderAndSpecifyItsLocation {
-            get {
-                return ResourceManager.GetString("MountYourBackupLocationAsDiskOrCopyItToAnyFolderAndSpecifyItsLocation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Move Down.
         /// </summary>
         internal static string MoveDown {
@@ -1140,15 +1104,6 @@ namespace BUtil.Configurator.Localization {
         internal static string Ok {
             get {
                 return ResourceManager.GetString("Ok", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Open folder....
-        /// </summary>
-        internal static string OpenFolder {
-            get {
-                return ResourceManager.GetString("OpenFolder", resourceCulture);
             }
         }
         

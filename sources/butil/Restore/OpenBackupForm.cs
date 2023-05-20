@@ -8,23 +8,26 @@ using BUtil.Configurator;
 using System.Linq;
 using BUtil.Core.Logs;
 using BUtil.Core.Storages;
-using System.Threading;
 using BUtil.Core.TasksTree.IncrementalModel;
+using BUtil.Core.Options;
 
 namespace BUtil.RestorationMaster
 {
     public partial class OpenBackupForm : Form
     {
-        public OpenBackupForm(string backupFolder = null)
+        private BackupTask storageStub = new BackupTask();
+
+        public OpenBackupForm(string folderStorage = null)
         {
             InitializeComponent();
-
-            if (backupFolder != null)
+            
+            if (folderStorage != null)
             {
-                SetBackupLocation(backupFolder);
+                storageStub.Storages.Add(new FolderStorageSettings() { DestinationFolder = folderStorage });
             }
 
             ApplyLocals();
+
         }
 
         private void ApplyLocals()
@@ -32,23 +35,11 @@ namespace BUtil.RestorationMaster
             closeButton.Text = Resources.Close;
             passwordLabel.Text = Resources.IfYourBackupIsPasswordProtectedPleaseTypePasswordHere;
             continueButton.Text = Resources.Continue;
-            this.Text = Resources.RestorationMaster;
-            _helpLabel.Text = BUtil.Configurator.Localization.Resources.MountYourBackupLocationAsDiskOrCopyItToAnyFolderAndSpecifyItsLocation;
-            _backupFolderLabel.Text = BUtil.Configurator.Localization.Resources.BackupFolder;
-            _openBackupFolderButton.Text = BUtil.Configurator.Localization.Resources.OpenFolder;
-            continueButton.Left = closeButton.Left - continueButton.Width - 10;
-        }
-
-        private void SetBackupLocation(string backupLocation)
-        {
             continueButton.Enabled = true;
-            _backupLocationTextBox.Text = backupLocation;
-        }
-
-        private void OnSelectBackupLocationClick(object sender, EventArgs e)
-        {
-            if (_fbd.ShowDialog() == DialogResult.OK)
-                SetBackupLocation(_fbd.SelectedPath);
+            this.Text = Resources.RestorationMaster;
+            _whereUserControl.ApplyLocalization();
+            _whereUserControl.SetOptionsToUi(storageStub);
+            continueButton.Left = closeButton.Left - continueButton.Width - 10;
         }
 
         private void OnCloseButtonClick(object sender, EventArgs e)
@@ -59,35 +50,23 @@ namespace BUtil.RestorationMaster
 
         private void OnNextButtonClick(object sender, EventArgs e)
         {
-            var backupFolder = _backupLocationTextBox.Text;
-
-            if (!Directory.Exists(backupFolder))
+            if (!_whereUserControl.ValidateUi())
             {
-                Messages.ShowErrorBox(Resources.BackupDirectoryDoesNotExist);
                 return;
             }
-
-            if (!IncrementalBackupModelConstants.Files.Any(x => File.Exists(Path.Combine(backupFolder, x))))
-            {
-                var allowedFiles = string.Join(", ", IncrementalBackupModelConstants.Files);
-                Messages.ShowErrorBox(string.Format(Resources.CannotLocateFile0InDirectoryPointToADirectoryContainingThisFile, allowedFiles));
-                return;
-            }
+            _whereUserControl.GetOptionsFromUi();
+            var storageSettings = storageStub.Storages.First();
 
             string error = null;
             IncrementalBackupState state = null;
 
             using (var progressForm = new ProgressForm((Action<int> reportProgress) =>
             {
-                reportProgress(5);
-                if (!Directory.Exists(backupFolder))
-                {
-                    error = Resources.BackupDirectoryDoesNotExist;
-                    return;
-                }
-
                 reportProgress(10);
-                if (!IncrementalBackupModelConstants.Files.Any(x => File.Exists(Path.Combine(backupFolder, x))))
+                var log = new StubLog();
+                var storage = StorageFactory.Create(log, storageSettings);
+
+                if (!IncrementalBackupModelConstants.Files.Any(x => storage.Exists(x)))
                 {
                     var allowedFiles = string.Join(", ", IncrementalBackupModelConstants.Files);
                     error = string.Format(Resources.CannotLocateFile0InDirectoryPointToADirectoryContainingThisFile, allowedFiles);
@@ -95,11 +74,7 @@ namespace BUtil.RestorationMaster
                 }
 
                 reportProgress(20);
-                var log = new StubLog();
-                IStorageSettings storageSettings = new FolderStorageSettings
-                {
-                    DestinationFolder = backupFolder
-                };
+                
                 var commonServicesIoc = new CommonServicesIoc();
                 var services = new StorageSpecificServicesIoc(log, storageSettings, commonServicesIoc.HashService);
                 if (!services.IncrementalBackupStateService.TryRead(_passwordTextBox.Text, out state))
@@ -107,6 +82,8 @@ namespace BUtil.RestorationMaster
                     error = Resources.CannotOpenBackupFolder;
                     return;
                 }
+                storage.Dispose();
+                services.Dispose();
             }))
                 progressForm.ShowDialog();
 
@@ -117,8 +94,9 @@ namespace BUtil.RestorationMaster
             }
 
             Hide();
-            using var restoreForm = new VersionsViewerForm(backupFolder, state);
+            using var restoreForm = new VersionsViewerForm(storageSettings, state);
             restoreForm.ShowDialog();
+            
             Close();
         }
 

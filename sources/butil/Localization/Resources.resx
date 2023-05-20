@@ -297,9 +297,6 @@ Localization created by:
   <data name="HardDriveStorage" xml:space="preserve">
     <value>Folder storage...</value>
   </data>
-  <data name="BeepSeveralTimes" xml:space="preserve">
-    <value>Beep several times</value>
-  </data>
   <data name="AfterCompletionOfBackup" xml:space="preserve">
     <value>After completion of backup</value>
   </data>
@@ -609,18 +606,6 @@ Please review opened log.</value>
     <value>Source item "{0}" does not exist.
 
 Please correct list of source items.</value>
-  </data>
-  <data name="MountYourBackupLocationAsDiskOrCopyItToAnyFolderAndSpecifyItsLocation" xml:space="preserve">
-    <value>Mount your backup location as disk or copy it to any folder and specify its location.</value>
-  </data>
-  <data name="BackupFolder" xml:space="preserve">
-    <value>Backup folder:</value>
-  </data>
-  <data name="OpenFolder" xml:space="preserve">
-    <value>Open folder...</value>
-  </data>
-  <data name="BackupDirectoryDoesNotExist" xml:space="preserve">
-    <value>Backup directory does not exist.</value>
   </data>
   <data name="CannotLocateFile0InDirectoryPointToADirectoryContainingThisFile" xml:space="preserve">
     <value>Cannot locate file "{0}" in directory. 
