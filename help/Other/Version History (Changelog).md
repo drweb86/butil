@@ -6,6 +6,9 @@
 ## Changes
 - On double click on task in Configurator, its going to be executed.
 
+## Bug Fixes
+- After UI backup, when form stays alive, PC sleep is not possible.
+
 ## Removed Features
 - It's not possible anymore to specify and use multiple storages. In real life scenarios nowadays usually 1 storage only is used because of data volume and ISP provider limits. If you had multiple storage specified, only first one will be used.
 
