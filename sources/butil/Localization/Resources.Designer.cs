@@ -494,6 +494,15 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Destination folder is not specified..
+        /// </summary>
+        internal static string DestinationFolderIsNotSpecified {
+            get {
+                return ResourceManager.GetString("DestinationFolderIsNotSpecified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Disable compression and encryption.
         /// </summary>
         internal static string DisableCompressionAndEncryption {
@@ -704,29 +713,11 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Folder Storage Configuration.
-        /// </summary>
-        internal static string FolderStorageConfiguration {
-            get {
-                return ResourceManager.GetString("FolderStorageConfiguration", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Friday.
         /// </summary>
         internal static string Friday {
             get {
                 return ResourceManager.GetString("Friday", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to FTP.
-        /// </summary>
-        internal static string Ftp {
-            get {
-                return ResourceManager.GetString("Ftp", resourceCulture);
             }
         }
         
@@ -1216,15 +1207,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please add at least one destination place..
-        /// </summary>
-        internal static string PleaseAddAtLeastOneDestinationPlace {
-            get {
-                return ResourceManager.GetString("PleaseAddAtLeastOneDestinationPlace", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Please, check items to compress!.
         /// </summary>
         internal static string PleaseCheckItemsToCompress {
@@ -1334,15 +1316,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remove from list.
-        /// </summary>
-        internal static string RemoveFromList {
-            get {
-                return ResourceManager.GetString("RemoveFromList", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Removes the selected backup task....
         /// </summary>
         internal static string RemovesTheSelectedBackupTask {
@@ -1438,6 +1411,15 @@ namespace BUtil.Configurator.Localization {
         internal static string Settings {
             get {
                 return ResourceManager.GetString("Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Share name is not specified..
+        /// </summary>
+        internal static string ShareNameIsNotSpecified {
+            get {
+                return ResourceManager.GetString("ShareNameIsNotSpecified", resourceCulture);
             }
         }
         

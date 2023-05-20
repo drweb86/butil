@@ -9,9 +9,9 @@ namespace BUtil.Core.Storages
         public static IStorage Create(ILog log, IStorageSettings storageSettings)
         {
             if (storageSettings is FolderStorageSettings)
-                return new FailoverStorageWrapper(log, new FolderStorage(log, storageSettings as FolderStorageSettings), storageSettings);
+                return new FailoverStorageWrapper(log, new FolderStorage(log, storageSettings as FolderStorageSettings));
             else if (storageSettings is SambaStorageSettings)
-                return new FailoverStorageWrapper(log, new SambaStorage(log, storageSettings as SambaStorageSettings), storageSettings);
+                return new FailoverStorageWrapper(log, new SambaStorage(log, storageSettings as SambaStorageSettings));
             throw new ArgumentOutOfRangeException(nameof(storageSettings));
         }
 

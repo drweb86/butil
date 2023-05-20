@@ -212,9 +212,6 @@
   <data name="Options" xml:space="preserve">
     <value>Настройкi</value>
   </data>
-  <data name="RemoveFromList" xml:space="preserve">
-    <value>Удалiць з спiсу</value>
-  </data>
   <data name="Modify" xml:space="preserve">
     <value>Змянiць...</value>
   </data>
@@ -291,9 +288,6 @@
     <value>Important:
 
 Backup should be password protected. If NOT, program will SKIP its copying to this storage</value>
-  </data>
-  <data name="Ftp" xml:space="preserve">
-    <value>ФТП</value>
   </data>
   <data name="IfYouChooseSomethingOtherThanDoNothingNprogramWillConfigureOsToShowYouReportNonNextYourLogonToTheSystemIfAnyErrorsNorWarningsWillBeRegisteredDuringTheBackup" xml:space="preserve">
     <value>If you choose something other than 'do nothing' 
@@ -564,9 +558,6 @@ In this case you can restore data by copying required files by your favourite fi
   <data name="FolderStorage" xml:space="preserve">
     <value>Folder Storage...</value>
   </data>
-  <data name="FolderStorageConfiguration" xml:space="preserve">
-    <value>Folder Storage Configuration</value>
-  </data>
   <data name="GeneratePassword" xml:space="preserve">
     <value>Generate password...</value>
   </data>
@@ -632,9 +623,6 @@ Usage scenario: You mounted some cloud storage as disk and perform backup on it.
   </data>
   <data name="PatternIsEmpty" xml:space="preserve">
     <value>Pattern is empty.</value>
-  </data>
-  <data name="PleaseAddAtLeastOneDestinationPlace" xml:space="preserve">
-    <value>Please add at least one destination place.</value>
   </data>
   <data name="ProgramDoesNotExist" xml:space="preserve">
     <value>Program does not exist.</value>

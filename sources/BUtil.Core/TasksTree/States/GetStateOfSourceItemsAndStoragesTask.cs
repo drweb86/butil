@@ -12,15 +12,15 @@ namespace BUtil.Core.TasksTree.States
     internal class GetStateOfSourceItemsAndStoragesTask : ParallelBuTask
     {
         public IEnumerable<GetStateOfSourceItemTask> GetSourceItemStateTasks { get; }
-        public IEnumerable<GetStateOfStorageTask> StorageStateTasks { get; }
-        public IEnumerable<DeleteUnversionedFilesStorageTask> DeleteUnversionedFilesStorageTasks { get; }
+        public GetStateOfStorageTask StorageStateTask { get; }
+        public DeleteUnversionedFilesStorageTask DeleteUnversionedFilesStorageTask { get; }
 
         public GetStateOfSourceItemsAndStoragesTask(
             ILog log,
             BackupEvents events, 
             IEnumerable<SourceItem> sourceItems,
             CommonServicesIoc commonServicesIoc,
-            IEnumerable<StorageSpecificServicesIoc> services,
+            StorageSpecificServicesIoc servicesIoc,
             IEnumerable<string> fileExcludePatterns,
             string password)
             : base(log, events, Localization.Resources.GetStateOfSourceItemsAndStorages, TaskArea.File, null)
@@ -36,20 +36,13 @@ namespace BUtil.Core.TasksTree.States
             }
             GetSourceItemStateTasks = setSourceItemStateTasks;
 
-            var storageStateTasks = new List<GetStateOfStorageTask>();
-            var deleteUnversionedFilesStorageTasks = new List<DeleteUnversionedFilesStorageTask>();
-            foreach (var servicesIoc in services)
-            {
-                var getStorageStateTask = new GetStateOfStorageTask(servicesIoc, Events, password);
-                storageStateTasks.Add(getStorageStateTask);
-                childTasks.Add(getStorageStateTask);
+            var getStorageStateTask = new GetStateOfStorageTask(servicesIoc, Events, password);
+            StorageStateTask = getStorageStateTask;
+            childTasks.Add(getStorageStateTask);
 
-                var deleteUnversionedFilesStorageTask = new DeleteUnversionedFilesStorageTask(servicesIoc, Events, password, getStorageStateTask);
-                deleteUnversionedFilesStorageTasks.Add(deleteUnversionedFilesStorageTask);
-                childTasks.Add(deleteUnversionedFilesStorageTask);
-            }
-            StorageStateTasks = storageStateTasks;
-            DeleteUnversionedFilesStorageTasks = deleteUnversionedFilesStorageTasks;
+            var deleteUnversionedFilesStorageTask = new DeleteUnversionedFilesStorageTask(servicesIoc, Events, password, getStorageStateTask);
+            DeleteUnversionedFilesStorageTask = deleteUnversionedFilesStorageTask;
+            childTasks.Add(deleteUnversionedFilesStorageTask);
 
             Children = childTasks;
         }
@@ -58,7 +51,7 @@ namespace BUtil.Core.TasksTree.States
         {
             UpdateStatus(ProcessingStatus.InProgress);
 
-            var storageTasksExecuter = new ParallelExecuter(StorageStateTasks, 10);
+            var storageTasksExecuter = new ParallelExecuter(new[] { StorageStateTask }, 1);
             var sourceItemGroupTasks = GetSourceItemStateTasks
                 .GroupBy(x => Directory.GetDirectoryRoot(x.SourceItem.Target))
                 .Select(x => new SequentialBuTask(new StubLog(), new BackupEvents(), string.Empty, TaskArea.File, x.ToList()))
@@ -68,7 +61,7 @@ namespace BUtil.Core.TasksTree.States
             sourceItemGroupTasksExecuter.Wait();
             storageTasksExecuter.Wait();
 
-            var deleteUnversionedFilesStorageTasksExecuter = new ParallelExecuter(DeleteUnversionedFilesStorageTasks, 10);
+            var deleteUnversionedFilesStorageTasksExecuter = new ParallelExecuter(new[] { DeleteUnversionedFilesStorageTask }, 1);
             deleteUnversionedFilesStorageTasksExecuter.Wait();
 
             IsSuccess = Children.All(x => x.IsSuccess);

@@ -6,8 +6,6 @@ namespace BUtil.Core.Storages
     [JsonDerivedType(typeof(SambaStorageSettings), "Samba")]
     public interface IStorageSettings
     {
-        string Name { get; }
-        bool Enabled { get; }
         long SingleBackupQuotaGb { get; }
     }
 }

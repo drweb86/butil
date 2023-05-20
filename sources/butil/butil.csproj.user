@@ -50,9 +50,6 @@
     <Compile Update="Configurator\Forms\EditBackupTaskForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Configurator\Forms\FolderStorageForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Configurator\Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

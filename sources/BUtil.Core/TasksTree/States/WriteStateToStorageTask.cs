@@ -27,7 +27,7 @@ namespace BUtil.Core.TasksTree.States
             WriteSourceFilesToStorageTask writeSourceFilesToStorageTask,
             IncrementalBackupModelOptions incrementalBackupModelOptions,
             string password)
-            : base(services.Log, events, string.Format(Localization.Resources.WriteStateToStorage, services.StorageSettings.Name), TaskArea.Hdd)
+            : base(services.Log, events, Localization.Resources.WriteStateToStorage, TaskArea.Hdd)
         {
             _incrementalBackupModelOptions = incrementalBackupModelOptions;
             _password = password;

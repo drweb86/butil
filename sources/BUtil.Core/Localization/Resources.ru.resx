@@ -249,7 +249,7 @@
     <value>Получение состояний исходных файлов и источников</value>
   </data>
   <data name="GetStateOfStorage" xml:space="preserve">
-    <value>Получение состояния хранилища "{0}"</value>
+    <value>Получение состояния хранилища</value>
   </data>
   <data name="GetStateOfSourceItem" xml:space="preserve">
     <value>Получение состояния источника "{0}"</value>
@@ -258,25 +258,25 @@
     <value>Получение состояния файла "{0}"</value>
   </data>
   <data name="WriteStateToStorage" xml:space="preserve">
-    <value>Сохранение состояния хранилища "{0}"</value>
+    <value>Сохранение состояния</value>
   </data>
   <data name="IncrementalBackup" xml:space="preserve">
     <value>Инкрементное резервное копирование</value>
   </data>
   <data name="CalculateIncrementedVersionForStorage" xml:space="preserve">
-    <value>Вычисление инкрементной версии для хранилища "{0}"</value>
+    <value>Вычисление инкрементной версии</value>
   </data>
   <data name="WriteSourceFilesToStorage" xml:space="preserve">
-    <value>Сохранение исходных файлов в хранилище "{0}"</value>
+    <value>Сохранение файлов в хранилище</value>
   </data>
   <data name="WriteSourceFileToStorage" xml:space="preserve">
-    <value>Сохранение исходного файла "{0}" в хранилище "{1}"</value>
+    <value>Сохранение файла "{0}"</value>
   </data>
   <data name="WriteIncrementedVersionToStorage" xml:space="preserve">
-    <value>Сохранение инкрементной версии в хранилище "{0}"</value>
+    <value>Сохранение инкрементной версии в хранилище</value>
   </data>
   <data name="WriteIntegrityVerificationScriptsToStorage" xml:space="preserve">
-    <value>Сохранение скриптов проверки целостности в хранилище "{0}"</value>
+    <value>Сохранение скриптов проверки целостности</value>
   </data>
   <data name="IntegrityVerificationScriptPs1" xml:space="preserve">
     <value>Скрипт проверки целостности.ps1</value>
@@ -285,15 +285,12 @@
     <value>Скрипт проверки целостности.sh</value>
   </data>
   <data name="FolderStorageFailure" xml:space="preserve">
-    <value>В хранилище "{0}" каталог "{1}" не был найден.
+    <value>В хранилище каталог "{0}" не был найден.
 
-Пожалуйста, обновите настройки хранилища "{0}".</value>
-  </data>
-  <data name="WriteIncrementedVersionToStorages" xml:space="preserve">
-    <value>Сохранение инкрементных версии в хранилища</value>
+Пожалуйста, обновите настройки хранилища.</value>
   </data>
   <data name="DeleteUnversionedFilesStorage" xml:space="preserve">
-    <value>Удаление незавершенных резервных копий в хранилище "{0}"</value>
+    <value>Удаление незавершенных резервных копий в хранилище</value>
   </data>
   <data name="Successful" xml:space="preserve">
     <value>Успешно</value>

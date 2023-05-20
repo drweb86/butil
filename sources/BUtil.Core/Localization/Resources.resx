@@ -241,7 +241,7 @@ Application will now close</value>
     <value>Get state of source items and storages</value>
   </data>
   <data name="GetStateOfStorage" xml:space="preserve">
-    <value>Get state of storage "{0}"</value>
+    <value>Get state of storage</value>
   </data>
   <data name="GetStateOfSourceItem" xml:space="preserve">
     <value>Get state of source item "{0}"</value>
@@ -250,25 +250,25 @@ Application will now close</value>
     <value>Get state of file "{0}"</value>
   </data>
   <data name="WriteStateToStorage" xml:space="preserve">
-    <value>Write state to storage "{0}"</value>
+    <value>Write state</value>
   </data>
   <data name="IncrementalBackup" xml:space="preserve">
     <value>Incremental Backup</value>
   </data>
   <data name="CalculateIncrementedVersionForStorage" xml:space="preserve">
-    <value>Calculate incremented version for storage "{0}"</value>
+    <value>Calculate incremented version</value>
   </data>
   <data name="WriteSourceFilesToStorage" xml:space="preserve">
-    <value>Write source files to storage "{0}"</value>
+    <value>Write files to storage</value>
   </data>
   <data name="WriteSourceFileToStorage" xml:space="preserve">
-    <value>Write source file "{0} to storage "{1}"</value>
+    <value>Write file "{0}"</value>
   </data>
   <data name="WriteIncrementedVersionToStorage" xml:space="preserve">
-    <value>Write incremented version to storage "{0}"</value>
+    <value>Write incremented version to storage</value>
   </data>
   <data name="WriteIntegrityVerificationScriptsToStorage" xml:space="preserve">
-    <value>Write integrity verification scripts to storage "{0}"</value>
+    <value>Write integrity verification scripts</value>
   </data>
   <data name="IntegrityVerificationScriptPs1" xml:space="preserve">
     <value>Integrity verification script.ps1</value>
@@ -277,15 +277,12 @@ Application will now close</value>
     <value>Integrity verification script.sh</value>
   </data>
   <data name="FolderStorageFailure" xml:space="preserve">
-    <value>Storage "{0}" directory "{1}" was not found.
+    <value>Storage directory "{0}" was not found.
 
-Please update storage "{0}" settings.</value>
-  </data>
-  <data name="WriteIncrementedVersionToStorages" xml:space="preserve">
-    <value>Write incremented version to storages</value>
+Please update storage settings.</value>
   </data>
   <data name="DeleteUnversionedFilesStorage" xml:space="preserve">
-    <value>Delete uncompleted backups from storage "{0}"</value>
+    <value>Delete uncompleted backups from storage</value>
   </data>
   <data name="Successful" xml:space="preserve">
     <value>Successful</value>

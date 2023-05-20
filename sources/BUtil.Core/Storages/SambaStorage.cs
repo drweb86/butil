@@ -62,29 +62,29 @@ namespace BUtil.Core.Storages
 
         private void Mount()
         {
-            Log.WriteLine(LoggingEvent.Debug, $"Mount \"{Settings.Name}\"");
+            Log.WriteLine(LoggingEvent.Debug, $"Mount");
 
             var command = string.IsNullOrWhiteSpace(Settings.User)
                 ? @$"net use ""{Settings.Url}"""
                 : @$"net use ""{Settings.Url}"" ""/user:{Settings.User}"" ""{Settings.Password}""";
 
             if (!CmdProcessHelper.Execute(Log, command))
-                throw new InvalidOperationException($"Cannot mount \"{Settings.Name}\"");
+                throw new InvalidOperationException($"Cannot mount");
         }
 
         private void Unmount()
         {
-            Log.WriteLine(LoggingEvent.Debug, $"Unmount \"{Settings.Name}\"");
+            Log.WriteLine(LoggingEvent.Debug, $"Unmount");
 
             var command = @$"net use ""{Settings.Url}"" /delete /y";
             if (!CmdProcessHelper.Execute(Log, command))
-                throw new InvalidOperationException($"Cannot unmount \"{Settings.Name}\"");
+                throw new InvalidOperationException($"Cannot unmount");
         }
 
         public override string Test()
         {
             if (!Directory.Exists(Settings.Url))
-                return string.Format(BUtil.Core.Localization.Resources.FolderStorageFailure, Settings.Name, Settings.Url);
+                return string.Format(BUtil.Core.Localization.Resources.FolderStorageFailure, Settings.Url);
 
             return null;
         }

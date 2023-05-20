@@ -4,7 +4,6 @@ using BUtil.Core.Hashing;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
-using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.IncrementalModel;
 using System.IO;
 using System.Linq;
@@ -15,21 +14,19 @@ namespace BUtil.Core.State
     public class IncrementalBackupFileService
     {
         private readonly ILog _log;
-        private readonly IStorageSettings _storageSettings;
         private readonly IHashService _hashService;
         private readonly StorageSpecificServicesIoc _services;
 
         public IncrementalBackupFileService(IHashService hashService, StorageSpecificServicesIoc services)
         {
             _log = services.Log;
-            _storageSettings = services.StorageSettings;
             _hashService = hashService;
             _services = services;
         }
 
         public bool Download(SourceItem sourceItem, StorageFile storageFile, string destinationFolder)
         {
-            _log.WriteLine(LoggingEvent.Debug, $"Storage \"{_storageSettings.Name}\": downloading \"{storageFile.FileState.FileName}\"");
+            _log.WriteLine(LoggingEvent.Debug, $"Storage: downloading \"{storageFile.FileState.FileName}\"");
 
             var sourceItemDiectory = SourceItemHelper.GetSourceItemDirectory(sourceItem);
             var sourceItemRelativeFileName = SourceItemHelper.GetSourceItemRelativeFileName(sourceItemDiectory, storageFile.FileState);
@@ -52,7 +49,7 @@ namespace BUtil.Core.State
                 // file can be renamed in real life.
                 if (!archiver.Extract(tempArchive, storageFile.StoragePassword, extractedFolder))
                 {
-                    _log.WriteLine(LoggingEvent.Error, $"Storage \"{_storageSettings.Name}\": extracting \"{storageFile.FileState.FileName}\" failed");
+                    _log.WriteLine(LoggingEvent.Error, $"Extracting \"{storageFile.FileState.FileName}\" failed");
                     return false;
                 }
                 var sourceFile = Directory.GetFiles(extractedFolder).Single();
@@ -63,7 +60,7 @@ namespace BUtil.Core.State
 
         public bool Upload(StorageFile storageFile)
         {
-            _log.WriteLine(LoggingEvent.Debug, $"Upload \"{_storageSettings.Name}\": Upload \"{storageFile.FileState.FileName}\"");
+            _log.WriteLine(LoggingEvent.Debug, $"Upload \"{storageFile.FileState.FileName}\"");
 
             if (storageFile.StorageMethod == StorageMethodNames.Plain)
             {
@@ -91,7 +88,7 @@ namespace BUtil.Core.State
                     storageFile.StoragePassword,
                     archiveFile))
                 {
-                    _log.WriteLine(LoggingEvent.Error, $"Upload \"{_storageSettings.Name}\": Error compressing \"{storageFile.FileState.FileName}\"");
+                    _log.WriteLine(LoggingEvent.Error, $"Error compressing \"{storageFile.FileState.FileName}\"");
                     return false;
                 }
 

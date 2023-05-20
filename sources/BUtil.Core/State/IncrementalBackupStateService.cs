@@ -8,7 +8,6 @@ using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.IncrementalModel;
 using System.IO;
 using System.Text.Json;
-using System.Threading;
 
 namespace BUtil.Core.State
 {
@@ -29,12 +28,12 @@ namespace BUtil.Core.State
 
         public bool TryRead(string password, out IncrementalBackupState state)
         {
-            _log.WriteLine(LoggingEvent.Debug, $"Storage \"{_storageSettings.Name}\": Reading state");
+            _log.WriteLine(LoggingEvent.Debug, $"Reading state");
             using var tempFolder = new TempFolder();
 
             if (_services.Storage.Exists(IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile))
             {
-                _log.WriteLine(LoggingEvent.Debug, $"Storage \"{_storageSettings.Name}\": Reading non-encrypted non-compressed state");
+                _log.WriteLine(LoggingEvent.Debug, $"Reading non-encrypted non-compressed state");
                 var destFile = Path.Combine(tempFolder.Folder, IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile);
                 _services.Storage.Download(IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile, destFile);
                 using var destFileStream = File.OpenRead(destFile);
@@ -44,13 +43,13 @@ namespace BUtil.Core.State
 
             if (_services.Storage.Exists(IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile))
             {
-                _log.WriteLine(LoggingEvent.Debug, $"Storage \"{_storageSettings.Name}\": Reading non-encrypted compressed state");
+                _log.WriteLine(LoggingEvent.Debug, $"Reading non-encrypted compressed state");
                 var destFile = Path.Combine(tempFolder.Folder, IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile);
                 _services.Storage.Download(IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile, destFile);
                 var archiver = ArchiverFactory.Create(_log);
                 if (!archiver.Extract(destFile, null, tempFolder.Folder))
                 {
-                    _log.WriteLine(LoggingEvent.Error, $"Storage \"{_storageSettings.Name}\": Failed to read state");
+                    _log.WriteLine(LoggingEvent.Error, $"Failed to read state");
                     state = null;
                     return false;
                 }
@@ -63,13 +62,13 @@ namespace BUtil.Core.State
 
             if (_services.Storage.Exists(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile))
             {
-                _log.WriteLine(LoggingEvent.Debug, $"Storage \"{_storageSettings.Name}\": Reading encrypted compressed state");
+                _log.WriteLine(LoggingEvent.Debug, $"Reading encrypted compressed state");
                 var destFile = Path.Combine(tempFolder.Folder, IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile);
                 _services.Storage.Download(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile, destFile);
                 var archiver = ArchiverFactory.Create(_log);
                 if (!archiver.Extract(destFile, password, tempFolder.Folder))
                 {
-                    _log.WriteLine(LoggingEvent.Error, $"Storage \"{_storageSettings.Name}\": Failed to read state");
+                    _log.WriteLine(LoggingEvent.Error, $"Failed to read state");
                     state = null;
                     return false;
                 }
@@ -86,7 +85,7 @@ namespace BUtil.Core.State
 
         public StorageFile Write(IncrementalBackupModelOptions incrementalBackupModelOptions, string password, IncrementalBackupState state)
         {
-            _log.WriteLine(LoggingEvent.Debug, $"Storage \"{_storageSettings.Name}\": Writing state");
+            _log.WriteLine(LoggingEvent.Debug, $"Writing state");
             _services.Storage.Delete(IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile);
             _services.Storage.Delete(IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile);
             _services.Storage.Delete(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile);
@@ -116,7 +115,7 @@ namespace BUtil.Core.State
                 var archiver = ArchiverFactory.Create(_log);
                 if (!archiver.CompressFile(jsonFile, password, fileToUpload))
                 {
-                    _log.WriteLine(LoggingEvent.Error, $"Storage \"{_storageSettings.Name}\": Failed state");
+                    _log.WriteLine(LoggingEvent.Error, $"Failed state");
                     return null;
                 }
             }

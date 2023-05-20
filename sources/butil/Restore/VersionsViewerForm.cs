@@ -295,9 +295,7 @@ namespace BUtil.RestorationMaster
             var log = new StubLog();
             IStorageSettings storageSettings = new FolderStorageSettings
             { 
-                Name = string.Empty, 
                 DestinationFolder = _backupLocation,
-                Enabled= false,
             };
 
             var commonServicesIoc = new CommonServicesIoc();

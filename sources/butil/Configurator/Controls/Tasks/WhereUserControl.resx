@@ -65,7 +65,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs
         LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAmU3lzdGVtLldpbmRvd3MuRm9ybXMu
         SW1hZ2VMaXN0U3RyZWFtZXIBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAfHwAAAJNU0Z0AUkBTAIBAQMB
-        AAFkAQABZAEAATABAAEwAQAE/wEZAQAI/wFCAU0BNgcAATYDAAEoAwABwAMAATADAAEBAQABGAYAAWwk
+        AAHMAQABzAEAATABAAEwAQAE/wEZAQAI/wFCAU0BNgcAATYDAAEoAwABwAMAATADAAEBAQABGAYAAWwk
         AGn+Bv0D/hIAA/4G/Qn+KgAk/k4AA/4D/QP8A/sD+QH4AvcB9gL1AfQD8wPyAfEB8AHxAvAB8QLwAfEC
         8AHyAvEB8wLyAvQB8wH2AvUD+AP6A/sD/Qb+wAAD+wP2DPQG8wz0RfMG8gPwA+4D7QPzA/0MAAP+A/sD
         9wL0AfMB9QL0A/YD+QP7A/0G/g8AEv4M/QP8CfsJ+gP7A/wD/Qb+OQAJ/gH8AvsD+QP2AfIC8QHtAesB
@@ -598,11 +598,8 @@
         AAEBAf8GAAH4BAABHwP/AfwBDwH/Af4DAAEBAf8GAAz/Af4DAAEBAf8GAA3/AcACAAEPAf8GAAs=
 </value>
   </data>
-  <metadata name="storagesContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>365, 10</value>
-  </metadata>
-  <metadata name="addStorageContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>11, 6</value>
+  <metadata name="fbd.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>65</value>

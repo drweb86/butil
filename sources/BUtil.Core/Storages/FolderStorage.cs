@@ -14,7 +14,7 @@ namespace BUtil.Core.Storages
             Mount();
         }
 
-        private readonly object _uploadLock = new object();
+        private readonly object _uploadLock = new();
         public override IStorageUploadResult Upload(string sourceFile, string relativeFileName)
         {
             lock (_uploadLock) // because we're limited by upload speed and Samba has limit of 6 parallel uploads usually
@@ -39,28 +39,28 @@ namespace BUtil.Core.Storages
 
         private void Mount()
         {
-            Log.WriteLine(LoggingEvent.Debug, $"Mount \"{Settings.Name}\"");
+            Log.WriteLine(LoggingEvent.Debug, $"Mount");
             if (!string.IsNullOrWhiteSpace(this.Settings.MountPowershellScript))
             {
                 if (!PowershellProcessHelper.Execute(Log, this.Settings.MountPowershellScript))
-                    throw new InvalidOperationException($"Cannot mount \"{Settings.Name}\"");
+                    throw new InvalidOperationException($"Cannot mount");
             }
         }
 
         private void Unmount()
         {
-            Log.WriteLine(LoggingEvent.Debug, $"Unmount \"{Settings.Name}\"");
+            Log.WriteLine(LoggingEvent.Debug, $"Unmount");
             if (!string.IsNullOrWhiteSpace(this.Settings.UnmountPowershellScript))
             {
                 if (!PowershellProcessHelper.Execute(Log, this.Settings.UnmountPowershellScript))
-                    throw new InvalidOperationException($"Cannot unmount \"{Settings.Name}\"");
+                    throw new InvalidOperationException($"Cannot unmount");
             }
         }
 
         public override string Test()
         {
             if (!Directory.Exists(Settings.DestinationFolder))
-                return string.Format(BUtil.Core.Localization.Resources.FolderStorageFailure, Settings.Name, Settings.DestinationFolder);
+                return string.Format(BUtil.Core.Localization.Resources.FolderStorageFailure, Settings.DestinationFolder);
 
             return null;
         }

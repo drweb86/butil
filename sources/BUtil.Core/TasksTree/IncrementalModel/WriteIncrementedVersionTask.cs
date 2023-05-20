@@ -19,7 +19,7 @@ namespace BUtil.Core.TasksTree
             IEnumerable<GetStateOfSourceItemTask> getSourceItemStateTasks,
             IncrementalBackupModelOptions incrementalBackupModelOptions,
             string password) :
-            base(services.Log, events, string.Format(Localization.Resources.WriteIncrementedVersionToStorage, services.StorageSettings.Name),
+            base(services.Log, events, Localization.Resources.WriteIncrementedVersionToStorage,
                 TaskArea.Hdd, null)
         {
             var childTaks = new List<BuTask>();

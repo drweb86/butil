@@ -175,7 +175,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
         private void VerifyStorages()
         {
             var enabledStorages = _backupTask.Storages
-                            .Where(x => x.Enabled)
                             .ToList();
 
             if (enabledStorages.Count < 1)

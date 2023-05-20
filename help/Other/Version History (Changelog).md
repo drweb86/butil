@@ -1,3 +1,8 @@
+# 6.2 (20 May 2023)
+
+## Removed Features
+- It's not possible anymore to specify and use multiple storages. In real life scenarios nowadays usually 1 storage only is used because of data volume and ISP provider limits. If you had multiple storage specified, only first one will be used.
+
 # 6.1 (15 May 2023)
 
 ## New Features

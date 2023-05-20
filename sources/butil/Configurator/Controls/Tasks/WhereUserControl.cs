@@ -1,206 +1,198 @@
 using System;
-using System.ComponentModel;
 using System.Windows.Forms;
 using BUtil.Core.Storages;
 using BUtil.Core.Options;
 using BUtil.Configurator.Localization;
-using System.Collections.Generic;
 using System.Linq;
+using BUtil.RestorationMaster;
+using BUtil.Core.Logs;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
+using BUtil.Core.Misc;
 
 namespace BUtil.Configurator.Configurator.Controls
 {
     internal sealed partial class WhereUserControl : Core.PL.BackUserControl
-	{
-		BackupTask _task;
-		
-		public WhereUserControl()
-		{
-			InitializeComponent();
-		}
-		
-		#region Overrides
-		
-		public override void ApplyLocalization() 
-		{
-			hardDriveStorageToolStripMenuItem1.Text = Resources.HardDriveStorage;
-			storagesListView.Groups[0].Header = Resources.Folder;
-            storagesListView.Groups[2].Header = Resources.Ftp;
-            SetHintForControl(addStorageButton, Resources.Add);
-			removeToolStripMenuItem.Text = Resources.RemoveFromList;
-			modifyToolStripMenuItem.Text = Resources.Modify;
-			hardDriveStorageToolStripMenuItem.Text = Resources.HardDriveStorage;
-			addNewToolStripMenuItem.Text = Resources.Add;
-			SetHintForControl(modifyStorageButton, Resources.Modify);
-			SetHintForControl(removeStorageButton, Resources.RemoveFromList);
-		}
-	
-		public override void SetOptionsToUi(object settings)
-		{
-            _task = (BackupTask)settings;
+    {
+        BackupTask _task;
 
-			foreach (var storageSettings in _task.Storages)
-            {
-				StorageEnum kind;
-
-                if (storageSettings is FolderStorageSettings)
-                    kind = StorageEnum.Folder;
-				else if (storageSettings is SambaStorageSettings)
-                    kind = StorageEnum.Samba;
-                else
-                    throw new ArgumentOutOfRangeException(nameof(storageSettings));
-
-				AddStorageToListView(storageSettings, kind);
-            }
-		}
-		
-		public override void GetOptionsFromUi()
-		{
-			_task.Storages.Clear();
-
-			foreach (ListViewItem item in storagesListView.Items)
-			{
-				_task.Storages.Add((IStorageSettings)item.Tag);
-			}
-		}
-		#endregion
-		
-		void StoragesListViewItemActivate(object sender, EventArgs e)
-		{
-			ModifyStorage();
-		}
-		
-		void StoragesListViewSelectedIndexChanged(object sender, EventArgs e)
-		{
-			bool enabled = storagesListView.SelectedItems.Count != 0;
-			modifyStorageButton.Enabled = enabled;
-			removeStorageButton.Enabled = enabled;
-		}
-		
-		void AddStorageButtonClick(object sender, EventArgs e)
-		{
-			addStorageContextMenuStrip.Show(addStorageButton, addStorageButton.Width / 2, addStorageButton.Height / 2);
-		}
-		
-		void ModifyStorageButtonClick(object sender, EventArgs e)
-		{
-			ModifyStorage();
-		}
-		
-		void RemoveStorageButtonClick(object sender, EventArgs e)
-		{
-			RemoveStorage();
-		}
-		
-		void HardDriveStorageToolStripMenuItem1Click(object sender, EventArgs e)
-		{
-			AddStorage(StorageEnum.Folder);
-		}
-
-		public override bool ValidateUi()
-		{
-			if (storagesListView.Items.Count == 0)
-			{
-				Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.PleaseAddAtLeastOneDestinationPlace);
-				return false;
-			}
-
-			return true;
-		}
-
-		void StoragesContextMenuStripOpening(object sender, CancelEventArgs e)
-		{
-			modifyToolStripMenuItem.Enabled = (storagesListView.SelectedItems.Count > 0);
-            toolStripSeparator4.Enabled = (storagesListView.SelectedItems.Count > 0);
-            removeToolStripMenuItem.Enabled = (storagesListView.SelectedItems.Count > 0);
-		}
-
-		void RemoveStorage()
-		{
-			storagesListView.Items.Remove(storagesListView.SelectedItems[0]);
-		}	
-
-		void ModifyStorage()
-		{
-			ListViewItem storageToChangeListViewItem = storagesListView.SelectedItems[0];
-			var storageSettings = (IStorageSettings)storageToChangeListViewItem.Tag;
-            IStorageConfigurationForm configForm;
-
-			var forbiddenNames = GetNames()
-							.Except(new List<string> { storageSettings.Name })
-							.ToList();
-
-            if (storageSettings is FolderStorageSettings)
-                configForm = new FolderStorageForm(
-                        storageSettings as FolderStorageSettings,
-                        forbiddenNames);
-			else if (storageSettings is SambaStorageSettings)
-                configForm = new SambaStorageForm(
-                        storageSettings as SambaStorageSettings,
-                        forbiddenNames);
-            else
-                throw new ArgumentOutOfRangeException(nameof(storageSettings));
-
-            if (configForm.ShowDialog() == DialogResult.OK)
-            {
-                var updatedStorageSettings = configForm.GetStorageSettings();
-
-				storageToChangeListViewItem.Text = updatedStorageSettings.Name;
-				storageToChangeListViewItem.Tag = updatedStorageSettings;
-            }
-		}
-
-        private IEnumerable<string> GetNames()
+        public WhereUserControl()
         {
-            var names = new List<string>();
-            foreach (ListViewItem task in storagesListView.Items)
-            {
-                names.Add(task.Text);
-            }
-            return names;
+            InitializeComponent();
+
+            _limitUploadLabelV2.Text = _limitUploadLabel.Text = BUtil.Configurator.Localization.Resources.UploadLimitGB;
+            _userLabel.Text = BUtil.Configurator.Localization.Resources.User;
+            _passwordLabel.Text = BUtil.Configurator.Localization.Resources.Password;
+            _shareLabel.Text = BUtil.Configurator.Localization.Resources.Url;
+
+
+            whereToStoreBackupLabel.Text = Resources.SpecifyTheFolderWhereToStoreBackUp;
+            _scriptsLabel.Text = BUtil.Configurator.Localization.Resources.HelpMountUnmountScript;
+            _mountScriptLabel.Text = BUtil.Configurator.Localization.Resources.Mount;
+            _unmountScriptLabel.Text = BUtil.Configurator.Localization.Resources.Unmount;
+            _mountButton.Text = _unmountButton.Text = BUtil.Configurator.Localization.Resources.Run;
         }
 
-        void AddStorage(StorageEnum kind)
-		{
-			IStorageConfigurationForm configForm;
-				
-			switch (kind)
-			{
-				case StorageEnum.Folder: 
-					configForm = new FolderStorageForm(null, GetNames());
-					break;
-                case StorageEnum.Samba:
-                    configForm = new SambaStorageForm(null, GetNames());
-                    break;
-                default: 
-					throw new NotImplementedException(kind.ToString());
-			}
+        #region Overrides
 
-			if (configForm.ShowDialog() == DialogResult.OK)
-			{ 
-				var updatedStorageSettings = configForm.GetStorageSettings();
-				AddStorageToListView(updatedStorageSettings, kind);
-			}
+        public override void ApplyLocalization()
+        {
+            _hddStorageTabPage.Text = Resources.HardDriveStorage;
+        }
 
-			configForm.Dispose();
-		}
-		
-		void AddStorageToListView(IStorageSettings storageSettings, StorageEnum kind)
-		{
-			var listValue = new ListViewItem
-			                    {
-			                        Tag = storageSettings,
-			                        Group = storagesListView.Groups[(int) kind],
-			                        Text = storageSettings.Name,
-			                        ImageIndex = (int) kind,
-			                        
-			                    };
+        public override void SetOptionsToUi(object settings)
+        {
+            _task = (BackupTask)settings;
 
-		    storagesListView.Items.Add(listValue);
-		}
+            var storage = _task.Storages.FirstOrDefault();
+            if (storage == null)
+                return;
 
-		private void OnAddSamba(object sender, EventArgs e)
-		{
-            AddStorage(StorageEnum.Samba);
-		}
+            if (storage is FolderStorageSettings)
+            {
+                var folderSettings = storage as FolderStorageSettings;
+                _storageTypesTabControl.SelectedTab = _hddStorageTabPage;
+
+                destinationFolderTextBox.Text = folderSettings.DestinationFolder;
+                _uploadLimitGbNumericUpDownV2.Value = folderSettings.SingleBackupQuotaGb;
+                _mountTextBox.Text = folderSettings.MountPowershellScript;
+                _unmountTextBox.Text = folderSettings.UnmountPowershellScript;
+            }
+            else if (storage is SambaStorageSettings)
+            {
+                var sambaSettings = storage as SambaStorageSettings;
+                _storageTypesTabControl.SelectedTab = _sambaTabPage;
+
+                _shareTextBox.Text = sambaSettings.Url;
+                _uploadLimitGbNumericUpDown.Value = sambaSettings.SingleBackupQuotaGb;
+                _userTextBox.Text = sambaSettings.User;
+                _passwordTextBox.Text = sambaSettings.Password;
+            }
+        }
+
+        private IStorageSettings GetStorageSettings()
+        {
+            IStorageSettings storageSettings = null;
+            if (_storageTypesTabControl.SelectedTab == _sambaTabPage)
+            {
+                storageSettings = new SambaStorageSettings
+                {
+                    Url = _shareTextBox.Text,
+                    SingleBackupQuotaGb = (long)_uploadLimitGbNumericUpDown.Value,
+                    User = _userTextBox.Text,
+                    Password = _passwordTextBox.Text,
+                };
+            }
+            else if (_storageTypesTabControl.SelectedTab == _hddStorageTabPage)
+            {
+                storageSettings = new FolderStorageSettings
+                {
+                    DestinationFolder = destinationFolderTextBox.Text,
+                    SingleBackupQuotaGb = (long)_uploadLimitGbNumericUpDownV2.Value,
+                    MountPowershellScript = _mountTextBox.Text,
+                    UnmountPowershellScript = _unmountTextBox.Text,
+                };
+            }
+            if (storageSettings == null)
+                throw new NotImplementedException();
+
+            return storageSettings;
+        }
+
+        public override void GetOptionsFromUi()
+        {
+            _task.Storages.Clear();
+
+            var storageSettings = GetStorageSettings();
+
+            _task.Storages.Add(storageSettings);
+        }
+        #endregion
+
+        public override bool ValidateUi()
+        {
+            var storageSettings = GetStorageSettings();
+            if (storageSettings is SambaStorageSettings)
+            {
+                var sambaStorageSettings = storageSettings as SambaStorageSettings;
+
+                if (string.IsNullOrWhiteSpace(sambaStorageSettings.Url))
+                {
+                    Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.ShareNameIsNotSpecified);
+                    return false;
+                }
+            }
+            else if (storageSettings is FolderStorageSettings)
+            {
+                var folderStorageSettings = storageSettings as FolderStorageSettings;
+
+                if (string.IsNullOrWhiteSpace(folderStorageSettings.DestinationFolder))
+                {
+                    Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.DestinationFolderIsNotSpecified);
+                    return false;
+                }
+
+                if (folderStorageSettings.DestinationFolder.StartsWith(@"\\", StringComparison.InvariantCulture))
+                {
+                    //"Network storages are not allowed to be pointed here!"
+                    Messages.ShowErrorBox(Resources.NetworkStoragesAreNotAllowedToBePointedHere);
+                    return false;
+                }
+            }
+
+            string error = null;
+            using var progressForm = new ProgressForm(progress =>
+            {
+                progress(50);
+                error = StorageFactory.Test(new StubLog(), storageSettings);
+            });
+            progressForm.ShowDialog();
+
+            if (error != null)
+            {
+                Messages.ShowErrorBox(error);
+                return false;
+            }
+            return true;
+        }
+
+        private void OnUploadLimitClick(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Messages.ShowInformationBox(Resources.UploadLimitDescription);
+        }
+
+
+        void searchButtonClick(object sender, EventArgs e)
+        {
+            if (fbd.ShowDialog() == DialogResult.OK)
+            {
+                destinationFolderTextBox.Text = fbd.SelectedPath;
+            }
+        }
+
+        private void OnMountScript(object sender, EventArgs e)
+        {
+            if (PowershellProcessHelper.Execute(new StubLog(), _mountTextBox.Text))
+                Messages.ShowInformationBox(BUtil.Configurator.Localization.Resources.FinishedSuccesfully);
+            else
+                Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.FinishedWithErrors);
+        }
+
+        private void OnUnmount(object sender, EventArgs e)
+        {
+            if (PowershellProcessHelper.Execute(new StubLog(), _unmountTextBox.Text))
+                Messages.ShowInformationBox(BUtil.Configurator.Localization.Resources.FinishedSuccesfully);
+            else
+                Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.FinishedWithErrors);
+        }
+
+        private void OnSambaButtonClick(object sender, EventArgs e)
+        {
+            using var form = new SambaForm();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                _mountTextBox.Text = form.MountScript;
+                _unmountTextBox.Text = form.UnmountScript;
+            }
+        }
     }
 }

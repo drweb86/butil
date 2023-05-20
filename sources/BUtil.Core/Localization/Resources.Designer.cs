@@ -121,7 +121,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Calculate incremented version for storage &quot;{0}&quot;.
+        ///   Looks up a localized string similar to Calculate incremented version.
         /// </summary>
         public static string CalculateIncrementedVersionForStorage {
             get {
@@ -211,7 +211,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete uncompleted backups from storage &quot;{0}&quot;.
+        ///   Looks up a localized string similar to Delete uncompleted backups from storage.
         /// </summary>
         public static string DeleteUnversionedFilesStorage {
             get {
@@ -256,9 +256,9 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Storage &quot;{0}&quot; directory &quot;{1}&quot; was not found.
+        ///   Looks up a localized string similar to Storage directory &quot;{0}&quot; was not found.
         ///
-        ///Please update storage &quot;{0}&quot; settings..
+        ///Please update storage settings..
         /// </summary>
         public static string FolderStorageFailure {
             get {
@@ -312,7 +312,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Get state of storage &quot;{0}&quot;.
+        ///   Looks up a localized string similar to Get state of storage.
         /// </summary>
         public static string GetStateOfStorage {
             get {
@@ -523,7 +523,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Write incremented version to storage &quot;{0}&quot;.
+        ///   Looks up a localized string similar to Write incremented version to storage.
         /// </summary>
         public static string WriteIncrementedVersionToStorage {
             get {
@@ -532,16 +532,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Write incremented version to storages.
-        /// </summary>
-        public static string WriteIncrementedVersionToStorages {
-            get {
-                return ResourceManager.GetString("WriteIncrementedVersionToStorages", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Write integrity verification scripts to storage &quot;{0}&quot;.
+        ///   Looks up a localized string similar to Write integrity verification scripts.
         /// </summary>
         public static string WriteIntegrityVerificationScriptsToStorage {
             get {
@@ -550,7 +541,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Write source files to storage &quot;{0}&quot;.
+        ///   Looks up a localized string similar to Write files to storage.
         /// </summary>
         public static string WriteSourceFilesToStorage {
             get {
@@ -559,7 +550,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Write source file &quot;{0} to storage &quot;{1}&quot;.
+        ///   Looks up a localized string similar to Write file &quot;{0}&quot;.
         /// </summary>
         public static string WriteSourceFileToStorage {
             get {
@@ -568,7 +559,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Write state to storage &quot;{0}&quot;.
+        ///   Looks up a localized string similar to Write state.
         /// </summary>
         public static string WriteStateToStorage {
             get {

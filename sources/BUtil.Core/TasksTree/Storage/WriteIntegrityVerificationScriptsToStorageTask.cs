@@ -21,7 +21,7 @@ namespace BUtil.Core.TasksTree.Storage
             CalculateIncrementedVersionForStorageTask getIncrementedVersionTask,
             WriteSourceFilesToStorageTask writeSourceFilesToStorageTask,
             States.WriteStateToStorageTask writeStateToStorageTask)
-            : base(services.Log, events, string.Format(BUtil.Core.Localization.Resources.WriteIntegrityVerificationScriptsToStorage, services.StorageSettings.Name), TaskArea.Hdd)
+            : base(services.Log, events, BUtil.Core.Localization.Resources.WriteIntegrityVerificationScriptsToStorage, TaskArea.Hdd)
         {
             _services = services;
             _getIncrementedVersionTask = getIncrementedVersionTask;
