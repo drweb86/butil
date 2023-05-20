@@ -666,4 +666,7 @@ bin.
   <data name="DestinationFolderIsNotSpecified" xml:space="preserve">
     <value>Папка назначения не указана.</value>
   </data>
+  <data name="LastBackup" xml:space="preserve">
+    <value>Состояние</value>
+  </data>
 </root>

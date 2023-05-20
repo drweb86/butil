@@ -958,6 +958,15 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to State.
+        /// </summary>
+        internal static string LastBackup {
+            get {
+                return ResourceManager.GetString("LastBackup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Logging.
         /// </summary>
         internal static string Logging {

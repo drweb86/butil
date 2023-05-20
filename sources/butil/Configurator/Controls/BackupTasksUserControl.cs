@@ -7,6 +7,7 @@ using BUtil.Configurator.Configurator.Forms;
 using BUtil.Configurator.Localization;
 using BUtil.Configurator.AddBackupTaskWizard.View;
 using System.Linq;
+using BUtil.Core.Logs;
 
 namespace BUtil.Configurator.Configurator.Controls
 {
@@ -17,6 +18,8 @@ namespace BUtil.Configurator.Configurator.Controls
         public BackupTasksUserControl()
         {
             InitializeComponent();
+
+            _lastBackupAt.Text = BUtil.Configurator.Localization.Resources.LastBackup;
             OnTasksListViewResize(this, null);
         }
 
@@ -57,11 +60,24 @@ namespace BUtil.Configurator.Configurator.Controls
         {
             var backupTaskStoreService = new BackupTaskStoreService();
             var taskNames = backupTaskStoreService.GetNames();
+
+            var logsService = new LogService();
+            var lastLogs = logsService.GetRecentLogs();
+
             _tasksListView.BeginUpdate();
             _tasksListView.Items.Clear();
             foreach (var taskName in taskNames)
             {
-                _tasksListView.Items.Add(new ListViewItem(taskName, 0));
+                var lastLogFile = lastLogs.FirstOrDefault(x => x.TaskName == taskName);
+                string status = "-";
+                if (lastLogFile != null)
+                {
+                    var postfix = lastLogFile.IsSuccess.HasValue ? 
+                        (lastLogFile.IsSuccess.Value ? BUtil.Core.Localization.Resources.Successful : BUtil.Core.Localization.Resources.Errors) 
+                        : BUtil.Core.Localization.Resources.Unknown;
+                    status = $"{lastLogFile.CreatedAt} ({postfix})";
+                }
+                _tasksListView.Items.Add(new ListViewItem(new[] { taskName, status }, 0));
             }
             _tasksListView.EndUpdate();
         }
@@ -161,7 +177,9 @@ namespace BUtil.Configurator.Configurator.Controls
 
         private void OnTasksListViewResize(object sender, EventArgs e)
         {
-            _nameColumn.Width = _tasksListView.Width > _displacementToBorder ? _tasksListView.Width - _displacementToBorder : _displacementToBorder;
+            var total = Math.Max(_tasksListView.Width - _displacementToBorder, _displacementToBorder);
+            _nameColumn.Width = (int)(0.7 * total);
+            _lastBackupAt.Width = (int)(0.3 * total);
         }
 
         #endregion

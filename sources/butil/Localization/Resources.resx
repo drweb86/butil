@@ -726,4 +726,7 @@ Usage scenario: You mounted some cloud storage as disk and perform backup on it.
   <data name="DestinationFolderIsNotSpecified" xml:space="preserve">
     <value>Destination folder is not specified.</value>
   </data>
+  <data name="LastBackup" xml:space="preserve">
+    <value>State</value>
+  </data>
 </root>

@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BackupTasksUserControl));
             _tasksListView = new System.Windows.Forms.ListView();
             _nameColumn = new System.Windows.Forms.ColumnHeader();
+            _lastBackupAt = new System.Windows.Forms.ColumnHeader();
             _contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(components);
             _executeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             _addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +50,7 @@
             // _tasksListView
             // 
             _tasksListView.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            _tasksListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { _nameColumn });
+            _tasksListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { _nameColumn, _lastBackupAt });
             _tasksListView.ContextMenuStrip = _contextMenuStrip;
             _tasksListView.FullRowSelect = true;
             _tasksListView.LargeImageList = _imageList;
@@ -68,7 +69,12 @@
             // _nameColumn
             // 
             _nameColumn.Text = "Name";
-            _nameColumn.Width = 434;
+            _nameColumn.Width = 404;
+            // 
+            // _lastBackupAt
+            // 
+            _lastBackupAt.Text = "State";
+            _lastBackupAt.Width = 120;
             // 
             // _contextMenuStrip
             // 
@@ -199,5 +205,6 @@
         private System.Windows.Forms.ImageList _imageList;
         private System.Windows.Forms.ToolStripMenuItem _executeToolStripMenuItem;
         private System.Windows.Forms.Button _executeButton;
+        private System.Windows.Forms.ColumnHeader _lastBackupAt;
     }
 }

@@ -1,5 +1,8 @@
 # 6.2 (20 May 2023)
 
+## New Features
+- In tasks list view you can see last status of last backup
+
 ## Changes
 - On double click on task in Configurator, its going to be executed.
 

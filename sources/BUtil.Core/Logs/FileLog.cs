@@ -1,11 +1,11 @@
 using System;
 using System.IO;
 using System.Globalization;
-using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 
 namespace BUtil.Core.Logs
 {
+
     public class FileLog : LogBase
 	{
         private string _fileName;
@@ -42,9 +42,8 @@ namespace BUtil.Core.Logs
 
         private string GetFileName(bool? isSuccess)
         {
-            var postfix = isSuccess.HasValue ? (isSuccess.Value ? BUtil.Core.Localization.Resources.Successful : BUtil.Core.Localization.Resources.Errors) : BUtil.Core.Localization.Resources.Unknown;
-            return Path.Combine(Directories.LogsFolder,
-                $"{_dateTime.ToString("yyyy-MM-dd HH-mm-ss", CultureInfo.CurrentUICulture)} {_taskName} ({postfix}).html");
+            var logService = new LogService();
+            return logService.GetFileName(_taskName, _dateTime, isSuccess);
         }
 
 		public override void Open()
