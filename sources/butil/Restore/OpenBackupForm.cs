@@ -17,13 +17,14 @@ namespace BUtil.RestorationMaster
     {
         private BackupTask storageStub = new BackupTask();
 
-        public OpenBackupForm(string folderStorage = null)
+        public OpenBackupForm(BackupTask backupTask = null)
         {
             InitializeComponent();
-            
-            if (folderStorage != null)
+
+            if (backupTask != null)
             {
-                storageStub.Storages.Add(new FolderStorageSettings() { DestinationFolder = folderStorage });
+                storageStub = backupTask;
+                _passwordTextBox.Text = backupTask.Password;
             }
 
             ApplyLocals();

@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using BUtil.Core.Misc;
 using BUtil.Configurator.Localization;
 using BUtil.Core.FileSystem;
+using System.Diagnostics;
 
 namespace BUtil.Configurator.Configurator.Forms
 {
@@ -23,7 +24,7 @@ namespace BUtil.Configurator.Configurator.Forms
 
         private static void RunRestorationTool()
 		{
-            ConfiguratorController.OpenRestorationMaster(null, false);
+            Process.Start(Application.ExecutablePath, $"{Arguments.RunRestorationMaster}");
 		}
 
 		void MainFormFormClosing(object sender, FormClosingEventArgs e)

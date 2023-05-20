@@ -74,11 +74,11 @@ namespace BUtil.Configurator
 				}
 				else if (firstArgumentUpper == Arguments.RunRestorationMaster)
 				{
-					ConfiguratorController.OpenRestorationMaster(null, true);
+					ConfiguratorController.OpenRestorationMaster(null, true, null);
 				}
 				else if (IncrementalBackupModelConstants.Files.Any(x => args[0].EndsWith(x)))
 				{
-					ConfiguratorController.OpenRestorationMaster(args[0], true);
+					ConfiguratorController.OpenRestorationMaster(args[0], true, null);
 				}
 				else if (firstArgumentUpper == Arguments.RunBackupMaster)
 				{
@@ -101,7 +101,19 @@ namespace BUtil.Configurator
 				}
 				ConfiguratorController.OpenBackupUi(taskName);
 			}
-			else if (args.Length > 1)
+            else if (args.Length > 1 && args[0].ToUpperInvariant() == Arguments.RunRestorationMaster)
+            {
+                string taskName = null;
+                foreach (var argument in args)
+                {
+                    if (argument.StartsWith(Arguments.RunTask) && argument.Length > Arguments.RunTask.Length)
+                    {
+                        taskName = argument.Substring(Arguments.RunTask.Length + 1);
+                    }
+                }
+                ConfiguratorController.OpenRestorationMaster(null, true, taskName);
+            }
+            else if (args.Length > 1)
 			{
 				Messages.ShowErrorBox(Resources.InvalidArgumentSPassedToTheProgramNNpleaseReferToManualForTheCompleteListOfParameters);
 			}

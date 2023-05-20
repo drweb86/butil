@@ -8,6 +8,7 @@ using BUtil.Configurator.Localization;
 using BUtil.Configurator.AddBackupTaskWizard.View;
 using System.Linq;
 using BUtil.Core.Logs;
+using System.Diagnostics;
 
 namespace BUtil.Configurator.Configurator.Controls
 {
@@ -33,11 +34,13 @@ namespace BUtil.Configurator.Configurator.Controls
             SetHintForControl(_removeButton, Resources.RemovesTheSelectedBackupTask);
             SetHintForControl(_editButton, Resources.EditsTheSelectedBackupTask);
             SetHintForControl(_executeButton, Resources.RunsBackup);
+            SetHintForControl(_recoverButton, Resources.Recover);
 
             _addToolStripMenuItem.Text = Resources.Add;
             _removeToolStripMenuItem.Text = Resources.Remove;
             _editToolStripMenuItem.Text = Resources.Modify;
             _executeToolStripMenuItem.Text = Resources.Run;
+            _recoverToolStripMenuItem.Text = Resources.Recover;
 
             _nameColumn.Text = Resources.Name;
         }
@@ -72,8 +75,8 @@ namespace BUtil.Configurator.Configurator.Controls
                 string status = "-";
                 if (lastLogFile != null)
                 {
-                    var postfix = lastLogFile.IsSuccess.HasValue ? 
-                        (lastLogFile.IsSuccess.Value ? BUtil.Core.Localization.Resources.Successful : BUtil.Core.Localization.Resources.Errors) 
+                    var postfix = lastLogFile.IsSuccess.HasValue ?
+                        (lastLogFile.IsSuccess.Value ? BUtil.Core.Localization.Resources.Successful : BUtil.Core.Localization.Resources.Errors)
                         : BUtil.Core.Localization.Resources.Unknown;
                     status = $"{lastLogFile.CreatedAt} ({postfix})";
                 }
@@ -163,7 +166,9 @@ namespace BUtil.Configurator.Configurator.Controls
 
         void RefreshTaskControls(object sender, EventArgs e)
         {
-            _removeButton.Enabled =
+            _recoverButton.Enabled =
+                _recoverToolStripMenuItem.Enabled =
+                _removeButton.Enabled =
                 _removeToolStripMenuItem.Enabled =
                 _editButton.Enabled =
                 _editToolStripMenuItem.Enabled =
@@ -185,5 +190,16 @@ namespace BUtil.Configurator.Configurator.Controls
         #endregion
 
         private const int _displacementToBorder = 40;
+
+        private void OnRecover(object sender, EventArgs e)
+        {
+            var selectedTasks = new List<string>();
+            foreach (ListViewItem taskToExecute in _tasksListView.SelectedItems)
+            {
+                selectedTasks.Add(taskToExecute.Text);
+            }
+
+            Process.Start(Application.ExecutablePath, $"{Arguments.RunRestorationMaster} \"{Arguments.RunTask}={selectedTasks.First()}\"");
+        }
     }
 }

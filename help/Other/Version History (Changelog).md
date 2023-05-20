@@ -3,6 +3,7 @@
 ## New Features
 - In tasks list view you can see last status of last backup
 - Samba/HDD disk storage can be used in restoration view
+- Restoration/Version Management of particular task is added.
 
 ## Changes
 - On double click on task in Configurator, its going to be executed.

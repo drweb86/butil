@@ -6,19 +6,31 @@ using System.Diagnostics;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
 using BUtil.RestorationMaster;
+using BUtil.Core.Storages;
 
 namespace BUtil.Configurator.Configurator
 {
     public static class ConfiguratorController
     {
-        public static void OpenRestorationMaster(string file, bool runFormAsApplication)
+        public static void OpenRestorationMaster(string file, bool runFormAsApplication, string taskName)
 		{
 			if (Program.PackageIsBroken)
 			{
 				return;
 			}
 
-            using var form = new OpenBackupForm(file == null ? null : Path.GetDirectoryName(file));
+            BackupTask backupTask = null;
+            if (taskName != null)
+            {
+                var service = new BackupTaskStoreService();
+                backupTask = service.Load(taskName);
+            } else if (file != null)
+            {
+                backupTask = new BackupTask();
+                backupTask.Storages.Add(new FolderStorageSettings() { DestinationFolder = Path.GetDirectoryName(file) });
+            }
+
+            using var form = new OpenBackupForm(backupTask);
             if (runFormAsApplication)
             {
                 Application.Run(form);
