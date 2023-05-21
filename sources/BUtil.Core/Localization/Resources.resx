@@ -293,4 +293,7 @@ Please update storage settings.</value>
   <data name="Unknown" xml:space="preserve">
     <value>Unknown</value>
   </data>
+  <data name="BackupWasPartialDueToStorageQuota" xml:space="preserve">
+    <value>Backup was partial. Due to storage quota some files were not copied. Remaining {0} files with of {1} GB.</value>
+  </data>
 </root>

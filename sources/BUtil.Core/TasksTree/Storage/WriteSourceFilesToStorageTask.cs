@@ -43,8 +43,7 @@ namespace BUtil.Core.TasksTree.Storage
                 return;
             }
 
-            var childTasks = new List<BuTask>();
-
+            List<WriteSourceFileToStorageTask> WriteFileTasks = new List<WriteSourceFileToStorageTask>();
             var versionStates = _getIncrementedVersionTask.IncrementalBackupState.VersionStates;
             var versionState = versionStates.Last();
             var singleBackupQuotaGb = new Quota(_services.StorageSettings.SingleBackupQuotaGb * 1024 * 1024 * 1024);
@@ -73,16 +72,15 @@ namespace BUtil.Core.TasksTree.Storage
                         singleBackupQuotaGb,
                         versionStates))
                     .ToList();
-                childTasks.AddRange(copyTasks);
+                WriteFileTasks.AddRange(copyTasks);
             }
-            Events.DuringExecutionTasksAdded(Id, childTasks);
-            Children = childTasks;
+            Events.DuringExecutionTasksAdded(Id, WriteFileTasks);
+            Children = WriteFileTasks;
             base.Execute();
 
             // TODO: think of design.
 
-            var skippedFiles = childTasks
-                .Select(x => x as WriteSourceFileToStorageTask)
+            var skippedFiles = WriteFileTasks
                 .Where(x => x.IsSkipped || !x.IsSuccess)
                 .Select(x => x.StorageFile.FileState.FileName)
                 .ToList();
@@ -100,6 +98,15 @@ namespace BUtil.Core.TasksTree.Storage
             }
 
             UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
+
+            var skippedBecauseOfQuotaFiles = WriteFileTasks
+                .Where(x => x.IsSkippedBecauseOfQuota)
+                .ToList();
+            if (skippedBecauseOfQuotaFiles.Any())
+            {
+                var gigabyte = 1024 * 1024 *1024;
+                Events.Message(string.Format(BUtil.Core.Localization.Resources.BackupWasPartialDueToStorageQuota, skippedBecauseOfQuotaFiles.Count(), skippedBecauseOfQuotaFiles.Sum(x => x.StorageFile.FileState.Size) / gigabyte));
+            }
         }
 
         private string GetStorageMethod()

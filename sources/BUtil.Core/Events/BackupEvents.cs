@@ -8,6 +8,8 @@ namespace BUtil.Core.Events
     {
         public event EventHandler<TaskProgressEventArgs> OnTaskProgress;
         public event EventHandler<DuringExecutionTasksAddedEventArgs> OnDuringExecutionTasksAdded;
+        public event EventHandler<MessageEventArgs> OnMessage;
+
         public void TaskProgessUpdate(Guid taskId, ProcessingStatus status)
         {
             var handler = OnTaskProgress;
@@ -22,6 +24,14 @@ namespace BUtil.Core.Events
             if (handler == null)
                 return;
             handler(this, new DuringExecutionTasksAddedEventArgs(taskId, tasks));
+        }
+
+        public void Message(string message)
+        {
+            var handler = OnMessage;
+            if (handler == null)
+                return;
+            handler(this, new MessageEventArgs(message));
         }
     }
 }

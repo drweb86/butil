@@ -16,6 +16,7 @@ namespace BUtil.Core.TasksTree
 
         public StorageFile StorageFile { get; }
         public bool IsSkipped { get; private set; }
+        public bool IsSkippedBecauseOfQuota { get; private set; }
 
         public WriteSourceFileToStorageTask(
             StorageSpecificServicesIoc services,
@@ -60,6 +61,7 @@ namespace BUtil.Core.TasksTree
             {
                 LogDebug("Skipped because of quota.");
                 IsSkipped = true;
+                IsSkippedBecauseOfQuota = true;
                 IsSuccess = true;
             }
             UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);

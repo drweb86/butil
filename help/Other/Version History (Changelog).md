@@ -4,6 +4,7 @@
 - In tasks list view you can see last status of last backup
 - Samba/HDD disk storage can be used in restoration view
 - Restoration/Version Management of particular task is added.
+- Last minute message in log and to user will be information about if backup was partial due to storage quota.
 
 ## Changes
 - On double click on task in Configurator, its going to be executed.
@@ -14,6 +15,7 @@
 ## Removed Features
 - It's not possible anymore to specify and use multiple storages. In real life scenarios nowadays usually 1 storage only is used because of data volume and ISP provider limits. If you had multiple storage specified, only first one will be used.
 - Beep after completion of backup was removed, because most backups takes more than half an hour due to copying to network storages.
+- Removal of obsoleted tasks in Backup UI was removed, because it looks as bug.
 
 # 6.1 (15 May 2023)
 

@@ -16,7 +16,6 @@ using System.IO;
 using System.Linq;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Reflection;
 
 namespace BUtil.Configurator.BackupUiMaster.Forms
 {
@@ -25,9 +24,8 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
         private readonly BackupTask _backupTask;
 		BackupProgressUserControl _backupProgressUserControl;
         private readonly ConcurrentQueue<Action> _listViewUpdates = new();
-        private readonly Dictionary<Guid, int> _existingSuccessfullTasksLifespan = new();
-        private readonly int SuccessfullTasksLifeSpanUpdates = 10;
         private readonly List<ListViewItem> _items = new();
+        private readonly List<string> _lastMinuteMessagesToUser = new List<string>();
 
         public BackupMasterForm(BackupTask backupTask)
 		{
@@ -58,12 +56,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 
 		private void UpdateListViewItem(Guid taskId, ProcessingStatus status)
 		{
-            if (status == ProcessingStatus.FinishedSuccesfully)
-            {
-                if (!_existingSuccessfullTasksLifespan.ContainsKey(taskId))
-                    _existingSuccessfullTasksLifespan.Add(taskId, 0);
-            }
-
             foreach (ListViewItem item in _items)
             {
                 if ((Guid)item.Tag == taskId)
@@ -125,6 +117,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             _backupEvents = new BackupEvents();
             _backupEvents.OnTaskProgress += OnTaskProgress;
             _backupEvents.OnDuringExecutionTasksAdded += OnDuringExecutionTasksAdded;
+            _backupEvents.OnMessage += OnAddLastMinuteMessageToUser;
             _rootTask = _strategy.GetTask(_backupEvents);
 
             settingsUserControl.SetSettingsToUi(PowerTask.None);
@@ -141,6 +134,11 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 
             VerifyStorages();
             VerifySourceItems();
+        }
+
+        private void OnAddLastMinuteMessageToUser(object sender, MessageEventArgs e)
+        {
+            _lastMinuteMessagesToUser.Add(e.Message);
         }
 
         private void VerifySourceItems()
@@ -252,27 +250,37 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             var appStaysAlive = powerTask == PowerTask.None;
             NativeMethods.StopPreventSleep();
             if (appStaysAlive)
-			{
+            {
                 PowerPC.DoTask(powerTask);
+                string lastMinuteConsolidatedMessage = GetLastMinuteConsolidatedMessage();
+
                 if (_log.HasErrors)
-				{
-					ProcessHelper.ShellExecute(_log.LogFilename);
-                    Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.BackupFailedPleaseReviewOpenedLog);
+                {
+                    ProcessHelper.ShellExecute(_log.LogFilename);
+                    Messages.ShowErrorBox(lastMinuteConsolidatedMessage + BUtil.Configurator.Localization.Resources.BackupFailedPleaseReviewOpenedLog);
                 }
-				else
-				{
-                    MessageBox.Show(Resources.BackupProcessCompletedSuccesfully, ";-)", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 0);
+                else
+                {
+                    MessageBox.Show(lastMinuteConsolidatedMessage + Resources.BackupProcessCompletedSuccesfully, ";-)", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 0);
                 }
-				return;
+                return;
             }
-			if (_log.HasErrors &&
+            if (_log.HasErrors &&
                 RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
                 BUtil.BackupUiMaster.NativeMethods.ScheduleOpeningFileAfterLoginOfUserIntoTheSystem(_log.LogFilename);
 			PowerPC.DoTask(powerTask);
             Close();
         }
-		
-		void CancelButtonClick(object sender, EventArgs e)
+
+        private string GetLastMinuteConsolidatedMessage()
+        {
+            var messages = string.Join(Environment.NewLine, _lastMinuteMessagesToUser.ToArray());
+            if (!string.IsNullOrEmpty(messages))
+                messages = messages + Environment.NewLine;
+            return messages;
+        }
+
+        void CancelButtonClick(object sender, EventArgs e)
 		{
 			Environment.Exit(0);
 		}
@@ -292,44 +300,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             while (_listViewUpdates.TryDequeue(out var action))
                 action();
 
-            IncreaseSuccessfullTasksAge();
-            RemoveRetiredSuccessfullTasks();
-
             tasksListView.EndUpdate();
-        }
-
-        private void RemoveRetiredSuccessfullTasks()
-        {
-            if (_existingSuccessfullTasksLifespan.Any(x => x.Value > SuccessfullTasksLifeSpanUpdates))
-            {
-                var halfLifeSpan = SuccessfullTasksLifeSpanUpdates / 2;
-
-                var retentionedTasks = _existingSuccessfullTasksLifespan
-                    .Where(x => x.Value > halfLifeSpan)
-                    .Select(x => x.Key)
-                    .ToList();
-
-                if (retentionedTasks.Any())
-                {
-                    foreach (var retentionedTask in retentionedTasks)
-                    {
-                        _existingSuccessfullTasksLifespan.Remove(retentionedTask);
-
-                        var index = _items.FindIndex(x => (Guid)x.Tag == retentionedTask);
-                        if (index == -1)
-                            continue;
-
-                        _items.RemoveAt(index);
-                    }
-                    tasksListView.VirtualListSize = _items.Count;
-                }
-            }
-        }
-
-        private void IncreaseSuccessfullTasksAge()
-        {
-            foreach (var item in _existingSuccessfullTasksLifespan)
-                _existingSuccessfullTasksLifespan[item.Key] = item.Value + 1;
         }
 
         private void OnRetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)

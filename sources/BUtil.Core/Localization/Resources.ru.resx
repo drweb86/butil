@@ -301,4 +301,7 @@
   <data name="Unknown" xml:space="preserve">
     <value>Неизвестно</value>
   </data>
+  <data name="BackupWasPartialDueToStorageQuota" xml:space="preserve">
+    <value>Бэкап был частичный. Так как у хранилища была указана квота, часть файлов была пропущена. Осталось {0} файлов с размером {1} ГБ.</value>
+  </data>
 </root>

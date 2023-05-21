@@ -1,5 +1,4 @@
-﻿using BUtil.Core.Options;
-using System;
+﻿using System;
 
 namespace BUtil.Core.Events
 {

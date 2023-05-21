@@ -112,6 +112,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Backup was partial. Due to storage quota some files were not copied. Remaining {0} files with of {1} GB..
+        /// </summary>
+        public static string BackupWasPartialDueToStorageQuota {
+            get {
+                return ResourceManager.GetString("BackupWasPartialDueToStorageQuota", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Before backup task: .
         /// </summary>
         public static string BeforeBackupTask {

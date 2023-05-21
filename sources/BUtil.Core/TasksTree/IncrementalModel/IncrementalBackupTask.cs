@@ -7,6 +7,7 @@ using BUtil.Core.Options;
 using BUtil.Core.TasksTree.Apps;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.States;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -52,6 +53,7 @@ namespace BUtil.Core.TasksTree.IncrementalModel
 
         public override void Execute()
         {
+            Events.OnMessage += OnAddLastMinuteLogMessage;
             UpdateStatus(ProcessingStatus.InProgress);
             base.Execute();
 
@@ -59,6 +61,20 @@ namespace BUtil.Core.TasksTree.IncrementalModel
             _commonServicesIoc.Dispose();
 
             UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
+            Events.OnMessage -= OnAddLastMinuteLogMessage;
+            PutLastMinuteLogMessages();
+        }
+
+        private void PutLastMinuteLogMessages()
+        {
+            foreach (var lastMinuteLogMessage in _lastMinuteLogMessages)
+                Log.WriteLine(LoggingEvent.Debug, lastMinuteLogMessage);
+        }
+
+        private List<string> _lastMinuteLogMessages = new List<string>();
+        private void OnAddLastMinuteLogMessage(object sender, MessageEventArgs e)
+        {
+            _lastMinuteLogMessages.Add(e.Message);
         }
     }
 }

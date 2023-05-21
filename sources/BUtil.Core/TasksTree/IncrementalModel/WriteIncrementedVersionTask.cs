@@ -12,6 +12,8 @@ namespace BUtil.Core.TasksTree
 {
     internal class WriteIncrementedVersionTask: SequentialBuTask
     {
+        private readonly WriteSourceFilesToStorageTask _writeSourceFilesToStorageTask;
+
         public WriteIncrementedVersionTask(
             StorageSpecificServicesIoc services,
             BackupEvents events, 
@@ -27,21 +29,21 @@ namespace BUtil.Core.TasksTree
             var calculateIncrementedVersionForStorageTask = new CalculateIncrementedVersionForStorageTask(Log, Events, storageStateTask, getSourceItemStateTasks);
             childTaks.Add(calculateIncrementedVersionForStorageTask);
 
-            var writeSourceFilesToStorageTask = new WriteSourceFilesToStorageTask(services, events, calculateIncrementedVersionForStorageTask, incrementalBackupModelOptions, password);
-            childTaks.Add(writeSourceFilesToStorageTask);
+            _writeSourceFilesToStorageTask = new WriteSourceFilesToStorageTask(services, events, calculateIncrementedVersionForStorageTask, incrementalBackupModelOptions, password);
+            childTaks.Add(_writeSourceFilesToStorageTask);
 
             var writeStateToStorageTask = new WriteStateToStorageTask(
                 services,
                 events,
                 calculateIncrementedVersionForStorageTask,
-                writeSourceFilesToStorageTask,
+                _writeSourceFilesToStorageTask,
                 incrementalBackupModelOptions,
                 password);
 
             childTaks.Add(writeStateToStorageTask);
             childTaks.Add(new WriteIntegrityVerificationScriptsToStorageTask(services, events,
                 calculateIncrementedVersionForStorageTask,
-                writeSourceFilesToStorageTask,
+                _writeSourceFilesToStorageTask,
                 writeStateToStorageTask));
 
             Children = childTaks;
