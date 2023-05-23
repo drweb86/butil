@@ -36,7 +36,7 @@ namespace BUtil.BackupUiMaster.Controls
         void timerTick(object sender, EventArgs e)
         {
             TimeSpan span = DateTime.Now.Subtract(_start);
-            elapsedLabel.Text = timeSpanToStringHelper(span) + ( );
+            elapsedLabel.Text = timeSpanToStringHelper(span);
         }
 
         string timeSpanToStringHelper(TimeSpan timeSpan)
