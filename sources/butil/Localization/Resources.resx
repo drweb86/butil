@@ -242,9 +242,6 @@ Localization created by:
   <data name="Exiting" xml:space="preserve">
     <value>Exiting...</value>
   </data>
-  <data name="Settings" xml:space="preserve">
-    <value>Settings</value>
-  </data>
   <data name="Documentation" xml:space="preserve">
     <value>Documentation</value>
   </data>

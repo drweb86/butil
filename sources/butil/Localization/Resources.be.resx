@@ -181,9 +181,6 @@
   <data name="Exiting" xml:space="preserve">
     <value>Выхад з праграмы...</value>
   </data>
-  <data name="Settings" xml:space="preserve">
-    <value>Настройки</value>
-  </data>
   <data name="Documentation" xml:space="preserve">
     <value>Адкрыць дапамогу</value>
   </data>

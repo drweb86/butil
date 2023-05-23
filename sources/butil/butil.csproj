@@ -127,9 +127,6 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="BackupUi\Controls\TitledBackUserControl.cs" />
-    <Compile Update="BackupUi\Controls\SettingsUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="Icons.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

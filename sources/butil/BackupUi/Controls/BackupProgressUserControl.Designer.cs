@@ -66,15 +66,13 @@ namespace BUtil.BackupUiMaster.Controls
             progressBar.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             progressBar.Location = new System.Drawing.Point(69, 44);
             progressBar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            progressBar.Maximum = 10;
+            progressBar.Maximum = 1;
             progressBar.Name = "progressBar";
             progressBar.Size = new System.Drawing.Size(516, 27);
             progressBar.TabIndex = 23;
-            progressBar.Value = 10;
             // 
             // clockTimer
             // 
-            clockTimer.Enabled = true;
             clockTimer.Interval = 1000;
             clockTimer.Tick += timerTick;
             // 
@@ -101,7 +99,7 @@ namespace BUtil.BackupUiMaster.Controls
             MinimumSize = new System.Drawing.Size(586, 104);
             Name = "BackupProgressUserControl";
             Size = new System.Drawing.Size(588, 104);
-            Title = "Backup is in a progress...";
+            Title = "";
             Controls.SetChildIndex(progressBar, 0);
             Controls.SetChildIndex(passedLabel, 0);
             Controls.SetChildIndex(backupIconPictureBox, 0);

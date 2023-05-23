@@ -1,5 +1,4 @@
 using System;
-using System.Windows.Forms;
 using System.Globalization;
 using BUtil.Configurator.Localization;
 
@@ -12,6 +11,8 @@ namespace BUtil.BackupUiMaster.Controls
         public BackupProgressUserControl()
         {
             InitializeComponent();
+
+            passedLabel.Text = Resources.Elapsed;
         }
 
         public void SetProgress(int ended, int total)
@@ -20,17 +21,22 @@ namespace BUtil.BackupUiMaster.Controls
             progressBar.Value = ended;
         }
 
+        public void Start()
+        {
+            clockTimer.Enabled = true;
+            Title = Resources.BackupIsInAProgress;
+        }
+
         public void Stop()
         {
             _start = DateTime.Now;
             clockTimer.Enabled = false;
-            progressBar.Style = ProgressBarStyle.Blocks;
         }
 
         void timerTick(object sender, EventArgs e)
         {
             TimeSpan span = DateTime.Now.Subtract(_start);
-            elapsedLabel.Text = timeSpanToStringHelper(span);
+            elapsedLabel.Text = timeSpanToStringHelper(span) + ( );
         }
 
         string timeSpanToStringHelper(TimeSpan timeSpan)
@@ -59,8 +65,7 @@ namespace BUtil.BackupUiMaster.Controls
 
         public override void ApplyLocalization()
         {
-            passedLabel.Text = Resources.Elapsed;
-            Title = Resources.BackupIsInAProgress;
+            
         }
 
         #endregion

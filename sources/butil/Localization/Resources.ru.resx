@@ -183,9 +183,6 @@
   <data name="Exiting" xml:space="preserve">
     <value>Выход...</value>
   </data>
-  <data name="Settings" xml:space="preserve">
-    <value>Настройки</value>
-  </data>
   <data name="Documentation" xml:space="preserve">
     <value>Руководство пользователя</value>
   </data>

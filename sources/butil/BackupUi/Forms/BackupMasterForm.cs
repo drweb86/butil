@@ -16,47 +16,47 @@ using System.IO;
 using System.Linq;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace BUtil.Configurator.BackupUiMaster.Forms
 {
-	internal sealed partial class BackupMasterForm : Form
-	{
+    internal sealed partial class BackupMasterForm : Form
+    {
         private readonly BackupTask _backupTask;
-		BackupProgressUserControl _backupProgressUserControl;
         private readonly ConcurrentQueue<Action> _listViewUpdates = new();
         private readonly List<ListViewItem> _items = new();
         private readonly List<string> _lastMinuteMessagesToUser = new List<string>();
         private int _ended = 0;
 
         public BackupMasterForm(BackupTask backupTask)
-		{
-			InitializeComponent();
-			
-			if (Program.PackageIsBroken)
-			{
-				throw new InvalidOperationException("Tried to perform operation that requires package state is ok.");
-			}
+        {
+            InitializeComponent();
+
+            if (Program.PackageIsBroken)
+            {
+                throw new InvalidOperationException("Tried to perform operation that requires package state is ok.");
+            }
 
             _backupTask = backupTask;
             OnTasksListViewResize(this, new EventArgs());
             ApplyLocalization();
-			NativeMethods.PreventSleep();
-		}
-				
-		static Color GetResultColor(ProcessingStatus state)
-		{
-			return state switch
-			{
-				ProcessingStatus.FinishedSuccesfully => Color.LightGreen,
-				ProcessingStatus.FinishedWithErrors => Color.LightCoral,
-				ProcessingStatus.InProgress => Color.Yellow,
-				ProcessingStatus.NotStarted => throw new InvalidOperationException(state.ToString()),
-				_ => throw new NotImplementedException(state.ToString()),
-			};
-		}
+            NativeMethods.PreventSleep();
+        }
 
-		private void UpdateListViewItem(Guid taskId, ProcessingStatus status)
-		{
+        static Color GetResultColor(ProcessingStatus state)
+        {
+            return state switch
+            {
+                ProcessingStatus.FinishedSuccesfully => Color.LightGreen,
+                ProcessingStatus.FinishedWithErrors => Color.LightCoral,
+                ProcessingStatus.InProgress => Color.Yellow,
+                ProcessingStatus.NotStarted => throw new InvalidOperationException(state.ToString()),
+                _ => throw new NotImplementedException(state.ToString()),
+            };
+        }
+
+        private void UpdateListViewItem(Guid taskId, ProcessingStatus status)
+        {
             foreach (ListViewItem item in _items)
             {
                 if ((Guid)item.Tag == taskId)
@@ -66,40 +66,27 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
                     {
                         item.BackColor = GetResultColor(status);
                     }
-					break;
+                    break;
                 }
             }
         }
 
-		void CloseButtonClick(object sender, EventArgs e)
-		{
-		    Close();
-		}
-		
-		void StartButtonClick(object _, EventArgs e)
-		{
-			
-			// performing changes in UI
-			_backupProgressUserControl = new BackupProgressUserControl();
-			Controls.Add(_backupProgressUserControl);
+        void CloseButtonClick(object sender, EventArgs e)
+        {
+            Close();
+        }
 
-			_backupProgressUserControl.ApplyLocalization();
-			_backupProgressUserControl.Left = settingsUserControl.Left;
-			_backupProgressUserControl.Width = settingsUserControl.Width;
-			_backupProgressUserControl.Top = settingsUserControl.Bottom - _backupProgressUserControl.MinimumSize.Height;
-			_backupProgressUserControl.Height = _backupProgressUserControl.MinimumSize.Height;
-			_backupProgressUserControl.Anchor = settingsUserControl.Anchor;
-			tasksListView.Height += settingsUserControl.Height - _backupProgressUserControl.Height;
-			settingsUserControl.Hide();
-			startButton.Enabled = false;
-			cancelButton.Enabled = true;
-			
-			_backgroundWorker.RunWorkerAsync();
-		}
+        void StartButtonClick(object _, EventArgs e)
+        {
+            startButton.Enabled = false;
+            cancelButton.Enabled = true;
 
-		void ApplyLocalization()
-		{
-			settingsUserControl.ApplyLocalization();
+            backupProgressUserControl.Start();
+            _backgroundWorker.RunWorkerAsync();
+        }
+
+        void ApplyLocalization()
+        {
             toolTip.SetToolTip(startButton, Resources.Start);
             closeButton.Text = Resources.Close;
 
@@ -108,9 +95,15 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 
             Text = Resources.WellcomeToBackupWizard;
             toolTip.SetToolTip(cancelButton, Resources.Cancel);
-		}
 
-		void LoadForm(object sender, EventArgs e)
+            _powerTaskLinkLabel.Text = Resources.AfterCompletionOfBackup;
+            _powerTaskComboBox.Items.Clear();
+            _powerTaskComboBox.Items.AddRange(new[] { Resources.ShutdownPc, Resources.LogOff, Resources.Reboot, Resources.DoNothing });
+
+            backupProgressUserControl.ApplyLocalization();
+        }
+
+        void LoadForm(object sender, EventArgs e)
         {
             _log = new FileLog(_backupTask.Name);
             _log.Open();
@@ -120,8 +113,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             _backupEvents.OnDuringExecutionTasksAdded += OnDuringExecutionTasksAdded;
             _backupEvents.OnMessage += OnAddLastMinuteMessageToUser;
             _rootTask = _strategy.GetTask(_backupEvents);
-
-            settingsUserControl.SetSettingsToUi(PowerTask.None);
+            _powerTaskComboBox.SelectedIndex = (int)PowerTask.None;
 
             var allTasks = _rootTask.GetChildren();
             foreach (var task in allTasks)
@@ -199,14 +191,14 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
         }
 
         private void OnDuringExecutionTasksAddedInternal(object sender, DuringExecutionTasksAddedEventArgs e)
-		{
+        {
             int index = 0;
-			foreach (var item in _items)
-			{
-				index++;
-				if ((Guid)item.Tag == e.TaskId)
-					break;
-			}
+            foreach (var item in _items)
+            {
+                index++;
+                if ((Guid)item.Tag == e.TaskId)
+                    break;
+            }
 
             foreach (var task in e.Tasks)
             {
@@ -214,42 +206,41 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
                 listItem.SubItems.Add(LocalsHelper.ToString(ProcessingStatus.NotStarted));
                 listItem.Tag = task.Id;
                 _items.Insert(index, listItem);
-				index++;
+                index++;
             }
             tasksListView.VirtualListSize = _items.Count;
         }
 
-		private void OnTaskProgress(object sender, TaskProgressEventArgs e)
-		{
+        private void OnTaskProgress(object sender, TaskProgressEventArgs e)
+        {
             if (e.Status == ProcessingStatus.FinishedWithErrors ||
                 e.Status == ProcessingStatus.FinishedSuccesfully)
                 _ended++;
             _listViewUpdates.Enqueue(() => UpdateListViewItem(e.TaskId, e.Status));
-		}
+        }
 
-		private void OnTasksListViewResize(object sender, EventArgs e)
-		{
-			int newWidth = tasksListView.Width - processingStateInformationColumnHeader.Width - 35;
-			taskNameColumnHeader.Width = newWidth < 35 ? 35 : newWidth;
-		}
-		
-		private FileLog _log;
-		private IBackupModelStrategy _strategy;
-		private BackupEvents _backupEvents;
-		private BuTask _rootTask;
+        private void OnTasksListViewResize(object sender, EventArgs e)
+        {
+            int newWidth = tasksListView.Width - processingStateInformationColumnHeader.Width - 35;
+            taskNameColumnHeader.Width = newWidth < 35 ? 35 : newWidth;
+        }
+
+        private FileLog _log;
+        private IBackupModelStrategy _strategy;
+        private BackupEvents _backupEvents;
+        private BuTask _rootTask;
 
         private void OnDoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
-		{
-			_rootTask.Execute();
-		}
-		
-		private void OnRunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
-		{
-            cancelButton.Enabled = false;
-            _backupProgressUserControl.Stop();
-			_log.Close();
+        {
+            _rootTask.Execute();
+        }
 
-            settingsUserControl.GetSettingsFromUi(out PowerTask powerTask);
+        private void OnRunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        {
+            cancelButton.Enabled = false;
+            _log.Close();
+
+            var powerTask = (PowerTask)_powerTaskComboBox.SelectedIndex;
 
             var appStaysAlive = powerTask == PowerTask.None;
             NativeMethods.StopPreventSleep();
@@ -272,7 +263,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             if (_log.HasErrors &&
                 RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
                 BUtil.BackupUiMaster.NativeMethods.ScheduleOpeningFileAfterLoginOfUserIntoTheSystem(_log.LogFilename);
-			PowerPC.DoTask(powerTask);
+            PowerPC.DoTask(powerTask);
             Close();
         }
 
@@ -285,25 +276,25 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
         }
 
         void CancelButtonClick(object sender, EventArgs e)
-		{
-			Environment.Exit(0);
-		}
-		
-		void ClosingForm(object sender, FormClosingEventArgs e)
-		{
+        {
             Environment.Exit(0);
-		}
-		void HelpButtonClick(object sender, EventArgs e)
-		{
+        }
+
+        void ClosingForm(object sender, FormClosingEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+        void HelpButtonClick(object sender, EventArgs e)
+        {
             SupportManager.DoSupport(SupportRequest.BackupWizard);
-		}
+        }
 
         private void OnListViewFlushUpdates(object sender, EventArgs e)
         {
             tasksListView.BeginUpdate();
             while (_listViewUpdates.TryDequeue(out var action))
                 action();
-            _backupProgressUserControl?.SetProgress(_ended, _items.Count);
+            backupProgressUserControl.SetProgress(_ended, _items.Count);
             tasksListView.EndUpdate();
         }
 
@@ -313,6 +304,11 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             {
                 e.Item = _items[e.ItemIndex];
             }
+        }
+
+        private void OnShowHelp(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Messages.ShowInformationBox(Resources.IfYouChooseSomethingOtherThanDoNothingNprogramWillConfigureOsToShowYouReportNonNextYourLogonToTheSystemIfAnyErrorsNorWarningsWillBeRegisteredDuringTheBackup);
         }
     }
 }
