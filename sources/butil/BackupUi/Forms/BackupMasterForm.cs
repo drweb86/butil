@@ -26,6 +26,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
         private readonly ConcurrentQueue<Action> _listViewUpdates = new();
         private readonly List<ListViewItem> _items = new();
         private readonly List<string> _lastMinuteMessagesToUser = new List<string>();
+        private int _ended = 0;
 
         public BackupMasterForm(BackupTask backupTask)
 		{
@@ -220,6 +221,9 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 
 		private void OnTaskProgress(object sender, TaskProgressEventArgs e)
 		{
+            if (e.Status == ProcessingStatus.FinishedWithErrors ||
+                e.Status == ProcessingStatus.FinishedSuccesfully)
+                _ended++;
             _listViewUpdates.Enqueue(() => UpdateListViewItem(e.TaskId, e.Status));
 		}
 
@@ -299,7 +303,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             tasksListView.BeginUpdate();
             while (_listViewUpdates.TryDequeue(out var action))
                 action();
-
+            _backupProgressUserControl?.SetProgress(_ended, _items.Count);
             tasksListView.EndUpdate();
         }
 

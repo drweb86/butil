@@ -1,3 +1,8 @@
+# 6.3 (23 May 2023)
+
+## New Features
+- Backup UI: Progress is more real.
+
 # 6.2 (20 May 2023)
 
 ## New Features

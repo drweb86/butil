@@ -1,118 +1,120 @@
 ﻿
 namespace BUtil.BackupUiMaster.Controls
 {
-	partial class BackupProgressUserControl
-	{
-		/// <summary>
-		/// Designer variable used to keep track of non-visual components.
-		/// </summary>
-		private System.ComponentModel.IContainer components = null;
-		
-		/// <summary>
-		/// Disposes resources used by the control.
-		/// </summary>
-		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing) {
-				if (components != null) {
-					components.Dispose();
-				}
-			}
-			base.Dispose(disposing);
-		}
-		
-		/// <summary>
-		/// This method is required for Windows Forms designer support.
-		/// Do not change the method contents inside the source code editor. The Forms designer might
-		/// not be able to load this method if it was changed manually.
-		/// </summary>
-		private void InitializeComponent()
-		{
-            this.components = new System.ComponentModel.Container();
+    partial class BackupProgressUserControl
+    {
+        /// <summary>
+        /// Designer variable used to keep track of non-visual components.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Disposes resources used by the control.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (components != null)
+                {
+                    components.Dispose();
+                }
+            }
+            base.Dispose(disposing);
+        }
+
+        /// <summary>
+        /// This method is required for Windows Forms designer support.
+        /// Do not change the method contents inside the source code editor. The Forms designer might
+        /// not be able to load this method if it was changed manually.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BackupProgressUserControl));
-            this.elapsedLabel = new System.Windows.Forms.Label();
-            this.passedLabel = new System.Windows.Forms.Label();
-            this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.clockTimer = new System.Windows.Forms.Timer(this.components);
-            this.backupIconPictureBox = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.backupIconPictureBox)).BeginInit();
-            this.SuspendLayout();
+            elapsedLabel = new System.Windows.Forms.Label();
+            passedLabel = new System.Windows.Forms.Label();
+            progressBar = new System.Windows.Forms.ProgressBar();
+            clockTimer = new System.Windows.Forms.Timer(components);
+            backupIconPictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)backupIconPictureBox).BeginInit();
+            SuspendLayout();
             // 
             // elapsedLabel
             // 
-            this.elapsedLabel.AutoSize = true;
-            this.elapsedLabel.Location = new System.Drawing.Point(150, 78);
-            this.elapsedLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.elapsedLabel.Name = "elapsedLabel";
-            this.elapsedLabel.Size = new System.Drawing.Size(13, 15);
-            this.elapsedLabel.TabIndex = 25;
-            this.elapsedLabel.Text = "0";
+            elapsedLabel.AutoSize = true;
+            elapsedLabel.Location = new System.Drawing.Point(150, 78);
+            elapsedLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            elapsedLabel.Name = "elapsedLabel";
+            elapsedLabel.Size = new System.Drawing.Size(13, 15);
+            elapsedLabel.TabIndex = 25;
+            elapsedLabel.Text = "0";
             // 
             // passedLabel
             // 
-            this.passedLabel.AutoSize = true;
-            this.passedLabel.Location = new System.Drawing.Point(69, 78);
-            this.passedLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.passedLabel.Name = "passedLabel";
-            this.passedLabel.Size = new System.Drawing.Size(50, 15);
-            this.passedLabel.TabIndex = 24;
-            this.passedLabel.Text = "Elapsed:";
+            passedLabel.AutoSize = true;
+            passedLabel.Location = new System.Drawing.Point(69, 78);
+            passedLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            passedLabel.Name = "passedLabel";
+            passedLabel.Size = new System.Drawing.Size(50, 15);
+            passedLabel.TabIndex = 24;
+            passedLabel.Text = "Elapsed:";
             // 
             // progressBar
             // 
-            this.progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar.Location = new System.Drawing.Point(69, 44);
-            this.progressBar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(516, 27);
-            this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
-            this.progressBar.TabIndex = 23;
+            progressBar.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            progressBar.Location = new System.Drawing.Point(69, 44);
+            progressBar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            progressBar.Maximum = 10;
+            progressBar.Name = "progressBar";
+            progressBar.Size = new System.Drawing.Size(516, 27);
+            progressBar.TabIndex = 23;
+            progressBar.Value = 10;
             // 
             // clockTimer
             // 
-            this.clockTimer.Enabled = true;
-            this.clockTimer.Interval = 1000;
-            this.clockTimer.Tick += new System.EventHandler(this.timerTick);
+            clockTimer.Enabled = true;
+            clockTimer.Interval = 1000;
+            clockTimer.Tick += timerTick;
             // 
             // backupIconPictureBox
             // 
-            this.backupIconPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("backupIconPictureBox.Image")));
-            this.backupIconPictureBox.Location = new System.Drawing.Point(4, 42);
-            this.backupIconPictureBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.backupIconPictureBox.Name = "backupIconPictureBox";
-            this.backupIconPictureBox.Size = new System.Drawing.Size(57, 51);
-            this.backupIconPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.backupIconPictureBox.TabIndex = 27;
-            this.backupIconPictureBox.TabStop = false;
+            backupIconPictureBox.Image = (System.Drawing.Image)resources.GetObject("backupIconPictureBox.Image");
+            backupIconPictureBox.Location = new System.Drawing.Point(4, 42);
+            backupIconPictureBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            backupIconPictureBox.Name = "backupIconPictureBox";
+            backupIconPictureBox.Size = new System.Drawing.Size(57, 51);
+            backupIconPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            backupIconPictureBox.TabIndex = 27;
+            backupIconPictureBox.TabStop = false;
             // 
             // BackupProgressUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.elapsedLabel);
-            this.Controls.Add(this.backupIconPictureBox);
-            this.Controls.Add(this.passedLabel);
-            this.Controls.Add(this.progressBar);
-            this.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
-            this.MinimumSize = new System.Drawing.Size(586, 104);
-            this.Name = "BackupProgressUserControl";
-            this.Size = new System.Drawing.Size(588, 104);
-            this.Title = "Backup is in a progress...";
-            this.Controls.SetChildIndex(this.progressBar, 0);
-            this.Controls.SetChildIndex(this.passedLabel, 0);
-            this.Controls.SetChildIndex(this.backupIconPictureBox, 0);
-            this.Controls.SetChildIndex(this.elapsedLabel, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.backupIconPictureBox)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            Controls.Add(elapsedLabel);
+            Controls.Add(backupIconPictureBox);
+            Controls.Add(passedLabel);
+            Controls.Add(progressBar);
+            Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
+            MinimumSize = new System.Drawing.Size(586, 104);
+            Name = "BackupProgressUserControl";
+            Size = new System.Drawing.Size(588, 104);
+            Title = "Backup is in a progress...";
+            Controls.SetChildIndex(progressBar, 0);
+            Controls.SetChildIndex(passedLabel, 0);
+            Controls.SetChildIndex(backupIconPictureBox, 0);
+            Controls.SetChildIndex(elapsedLabel, 0);
+            ((System.ComponentModel.ISupportInitialize)backupIconPictureBox).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
+        }
 
-		}
-		private System.Windows.Forms.Timer clockTimer;
-		private System.Windows.Forms.ProgressBar progressBar;
-		private System.Windows.Forms.Label passedLabel;
-		private System.Windows.Forms.PictureBox backupIconPictureBox;
-		private System.Windows.Forms.Label elapsedLabel;
-	}
+        private System.Windows.Forms.Timer clockTimer;
+        private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.Label passedLabel;
+        private System.Windows.Forms.PictureBox backupIconPictureBox;
+        private System.Windows.Forms.Label elapsedLabel;
+    }
 }

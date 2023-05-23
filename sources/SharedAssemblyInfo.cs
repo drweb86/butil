@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyProduct("BUtil")]
 [assembly: AssemblyCopyright("(c) 2007-2023 BUtil project")]
-[assembly: AssemblyVersion("6.2.0.0")]
+[assembly: AssemblyVersion("6.3.0.0")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
