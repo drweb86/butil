@@ -27,11 +27,11 @@ Backup, Restoration, Desktop applications, Scheduling, AES-256, 7-zip, md5, .Net
 
 ## The documentation for BUtil includes:
 
-- [Congifurator](./help/configurator/CommandLineArguments.htm)
-- [Command line version of backup tool](./help/Backup%20Console%20Tool.md)
+- [Congifurator](./help/Configure/Configurator.md)
+- [Command line version of backup tool](./help/Backup/Backup%20via%20Console%20Tool.md)
 - [Restorate](./help/Restore/Restoration%20Wizard.md)
 
-and many more. See [all topics](../../wiki) .
+and many more. See [all topics](./help/TOC.md) .
 
 ## See Also
 
