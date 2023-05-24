@@ -6,8 +6,7 @@ Welcome!
 
 BUtil is a powerful set of tools for creating backups of documents and other data on your PC.
 
-![The main window of configurator](./help/Readme%20Assets/Screenshot%201.jpg)
-![The backup ui master](./help/Readme%20Assets/Screenshot%202.jpg)
+![The main window of configurator, backup ui master](./help/Readme%20Assets/Screenshot%201.png)
 
 ## Key Functions And Characteristics Of Software
 
