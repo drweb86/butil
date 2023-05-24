@@ -8,9 +8,14 @@ BUtil is a powerful set of tools for creating backups of documents and other dat
 
 ![The main window of configurator, backup ui master](./help/Readme%20Assets/Screenshot%201.png)
 
-## Key Functions And Characteristics Of Software
+## Sofware requirements
 
-- It can store backups on multiple mounted drives;
+- Microsoft Windows 10 or later;
+- Microsoft .Net Desktop Runtime 7 is required. Setup will install it.
+- Igor Pavlov's 7-zip. Setup will install it.
+
+## Key functions and characteristics of software
+
 - Incremental backup model;
 - Simple configuring takes less time and goes easily and with comfort;
 - Multiple backup tasks are supported;
@@ -21,34 +26,16 @@ BUtil is a powerful set of tools for creating backups of documents and other dat
 - Built in [7-zip](https://www.7-zip.org/) [compression](https://en.wikipedia.org/wiki/Data_compression) and [AES-256 encryption](https://www.7-zip.org/) [AES-256](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard);
 - Deduplication of files.
 
-## Keywords
+## The documentation includes:
 
-Backup, Restoration, Desktop applications, Scheduling, AES-256, 7-zip, md5, .Net
-
-## The documentation for BUtil includes:
-
+- [Version history](./help/Other/Version%20History%20(Changelog).md)
 - [Congifurator](./help/Configure/Configurator.md)
 - [Command line version of backup tool](./help/Backup/Backup%20via%20Console%20Tool.md)
 - [Restorate](./help/Restore/Restoration%20Wizard.md)
-
+- [Frequently Asked Questions (FAQ)](./help/Other/Frequently%20Asked%20Questions.md)
 and many more. See [all topics](./help/TOC.md) .
 
-## See Also
-
-- [Version history](./help/Other/Version%20History%20(Changelog).md)
-- [Frequently Asked Questions (FAQ)](./help/Other/Frequently%20Asked%20Questions.md)
-
-## Requirements
-
-### Software
-
-- Microsoft Windows 10 or later;
-- Microsoft .Net Desktop Runtime 7 is required. Setup will install it.
-- Igor Pavlov's 7-zip. Setup will install it.
-
 ## Compilation
-
-How to compile solution without problems?
 
 Must be installed:
 - Windows 11x64 Professional;
@@ -56,6 +43,10 @@ Must be installed:
 - InnoSetup 6.2.1 (must be installed in default directory);
 - 7-zip x64 (must be installed in default directory).
 
-Compile all
+Compile all with **publish.cmd** script (artefacts will be located in **Output** folder)
+
+## Keywords
+
+Backup, Restoration, Desktop applications, Scheduling, AES-256, 7-zip, .Net
 
 [Help:](https://github.com/drweb86/butil/blob/master/help/TOC.md)
