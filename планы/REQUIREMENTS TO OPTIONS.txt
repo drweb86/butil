@@ -1,7 +1,0 @@
-﻿New requirements to options
-- options should be stored at <user account>\Application Data\BUtil
-separately for each user
-(multiuser support, security, decreasing privileges level to store settings)
-- options should be encrypted on NTFS under local user account
-
-all requirements implemented in 3.0.8

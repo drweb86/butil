@@ -1,6 +1,0 @@
-﻿1. Logs
-Reduce spending time on logs
-- removed option with configuring of logs location
-- improved searching of errors in minimum log level
-- opening log folder with 2 mouse clicks
-[2.7]

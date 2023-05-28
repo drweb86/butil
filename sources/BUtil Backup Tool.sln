@@ -7,12 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		Development.key.snk = Development.key.snk
 		SharedAssemblyInfo.cs = SharedAssemblyInfo.cs
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Increments", "Increments", "{785B02C5-B9C0-4D2E-A4F3-D98997915D8A}"
-	ProjectSection(SolutionItems) = preProject
-		Iteration 10.txt = Iteration 10.txt
-		Development\Increments\WAIT.txt = Development\Increments\WAIT.txt
+		..\help\Other\Version History (Changelog).md = ..\help\Other\Version History (Changelog).md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BUtil.Core", "BUtil.Core\BUtil.Core.csproj", "{884325C6-9686-4D09-BCDE-38FF79279620}"

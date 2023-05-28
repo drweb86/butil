@@ -1,3 +1,8 @@
+# 6.4 (28 May 2023)
+
+## Bug Fixes
+- When backup is completed fast, wrong progress is shown.
+
 # 6.3 (23 May 2023)
 
 ## New Features
