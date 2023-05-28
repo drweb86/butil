@@ -36,9 +36,9 @@
             _statusStrip = new System.Windows.Forms.StatusStrip();
             _toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             _versionToContentSplitContainer = new System.Windows.Forms.SplitContainer();
-            _versionsTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            _versionsListBox = new System.Windows.Forms.ListBox();
-            _versionsLabel = new System.Windows.Forms.Label();
+            _versionsListView = new System.Windows.Forms.ListView();
+            _versionsToolStrip = new System.Windows.Forms.ToolStrip();
+            _selectVersionToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             _treeToChangesSplitContainer = new System.Windows.Forms.SplitContainer();
             _filesTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             _dataLabel = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@
             _versionToContentSplitContainer.Panel1.SuspendLayout();
             _versionToContentSplitContainer.Panel2.SuspendLayout();
             _versionToContentSplitContainer.SuspendLayout();
-            _versionsTableLayoutPanel.SuspendLayout();
+            _versionsToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)_treeToChangesSplitContainer).BeginInit();
             _treeToChangesSplitContainer.Panel1.SuspendLayout();
             _treeToChangesSplitContainer.Panel2.SuspendLayout();
@@ -75,6 +75,7 @@
             imagesList.Images.SetKeyName(3, "VC-Created.png");
             imagesList.Images.SetKeyName(4, "VC-Deleted.png");
             imagesList.Images.SetKeyName(5, "VC-Updated.png");
+            imagesList.Images.SetKeyName(6, "VC-Version.png");
             // 
             // _statusStrip
             // 
@@ -98,7 +99,8 @@
             // 
             // _versionToContentSplitContainer.Panel1
             // 
-            _versionToContentSplitContainer.Panel1.Controls.Add(_versionsTableLayoutPanel);
+            _versionToContentSplitContainer.Panel1.Controls.Add(_versionsListView);
+            _versionToContentSplitContainer.Panel1.Controls.Add(_versionsToolStrip);
             // 
             // _versionToContentSplitContainer.Panel2
             // 
@@ -107,40 +109,33 @@
             _versionToContentSplitContainer.SplitterDistance = 289;
             _versionToContentSplitContainer.TabIndex = 1;
             // 
-            // _versionsTableLayoutPanel
+            // _versionsListView
             // 
-            _versionsTableLayoutPanel.ColumnCount = 1;
-            _versionsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            _versionsTableLayoutPanel.Controls.Add(_versionsListBox, 0, 1);
-            _versionsTableLayoutPanel.Controls.Add(_versionsLabel, 0, 0);
-            _versionsTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            _versionsTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            _versionsTableLayoutPanel.Name = "_versionsTableLayoutPanel";
-            _versionsTableLayoutPanel.RowCount = 2;
-            _versionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            _versionsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            _versionsTableLayoutPanel.Size = new System.Drawing.Size(289, 507);
-            _versionsTableLayoutPanel.TabIndex = 0;
+            _versionsListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            _versionsListView.Location = new System.Drawing.Point(0, 25);
+            _versionsListView.MultiSelect = false;
+            _versionsListView.Name = "_versionsListView";
+            _versionsListView.Size = new System.Drawing.Size(289, 482);
+            _versionsListView.SmallImageList = imagesList;
+            _versionsListView.TabIndex = 1;
+            _versionsListView.UseCompatibleStateImageBehavior = false;
+            _versionsListView.View = System.Windows.Forms.View.List;
+            _versionsListView.SelectedIndexChanged += OnVersionChanged;
             // 
-            // _versionsListBox
+            // _versionsToolStrip
             // 
-            _versionsListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            _versionsListBox.FormattingEnabled = true;
-            _versionsListBox.ItemHeight = 15;
-            _versionsListBox.Location = new System.Drawing.Point(3, 18);
-            _versionsListBox.Name = "_versionsListBox";
-            _versionsListBox.Size = new System.Drawing.Size(283, 486);
-            _versionsListBox.TabIndex = 0;
-            _versionsListBox.SelectedIndexChanged += OnVersionListChange;
+            _versionsToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { _selectVersionToolStripLabel });
+            _versionsToolStrip.Location = new System.Drawing.Point(0, 0);
+            _versionsToolStrip.Name = "_versionsToolStrip";
+            _versionsToolStrip.Size = new System.Drawing.Size(289, 25);
+            _versionsToolStrip.TabIndex = 0;
+            _versionsToolStrip.Text = "toolStrip1";
             // 
-            // _versionsLabel
+            // _selectVersionToolStripLabel
             // 
-            _versionsLabel.AutoSize = true;
-            _versionsLabel.Location = new System.Drawing.Point(3, 0);
-            _versionsLabel.Name = "_versionsLabel";
-            _versionsLabel.Size = new System.Drawing.Size(82, 15);
-            _versionsLabel.TabIndex = 1;
-            _versionsLabel.Text = "Select version:";
+            _selectVersionToolStripLabel.Name = "_selectVersionToolStripLabel";
+            _selectVersionToolStripLabel.Size = new System.Drawing.Size(82, 22);
+            _selectVersionToolStripLabel.Text = "Select version:";
             // 
             // _treeToChangesSplitContainer
             // 
@@ -263,11 +258,12 @@
             _statusStrip.ResumeLayout(false);
             _statusStrip.PerformLayout();
             _versionToContentSplitContainer.Panel1.ResumeLayout(false);
+            _versionToContentSplitContainer.Panel1.PerformLayout();
             _versionToContentSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)_versionToContentSplitContainer).EndInit();
             _versionToContentSplitContainer.ResumeLayout(false);
-            _versionsTableLayoutPanel.ResumeLayout(false);
-            _versionsTableLayoutPanel.PerformLayout();
+            _versionsToolStrip.ResumeLayout(false);
+            _versionsToolStrip.PerformLayout();
             _treeToChangesSplitContainer.Panel1.ResumeLayout(false);
             _treeToChangesSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)_treeToChangesSplitContainer).EndInit();
@@ -285,9 +281,6 @@
         private System.Windows.Forms.StatusStrip _statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel _toolStripStatusLabel;
         private System.Windows.Forms.SplitContainer _versionToContentSplitContainer;
-        private System.Windows.Forms.TableLayoutPanel _versionsTableLayoutPanel;
-        private System.Windows.Forms.ListBox _versionsListBox;
-        private System.Windows.Forms.Label _versionsLabel;
         private System.Windows.Forms.SplitContainer _treeToChangesSplitContainer;
         private System.Windows.Forms.TableLayoutPanel _filesTableLayoutPanel;
         private System.Windows.Forms.TableLayoutPanel _changesTableLayoutPanel;
@@ -298,5 +291,8 @@
         private System.Windows.Forms.ToolStripMenuItem recoverToolStripMenuItem;
         private System.Windows.Forms.FolderBrowserDialog _fbdialog;
         private System.Windows.Forms.ListView _changesListView;
+        private System.Windows.Forms.ListView _versionsListView;
+        private System.Windows.Forms.ToolStrip _versionsToolStrip;
+        private System.Windows.Forms.ToolStripLabel _selectVersionToolStripLabel;
     }
 }

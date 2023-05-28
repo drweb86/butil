@@ -27,7 +27,7 @@ namespace BUtil.RestorationMaster
             _incrementalBackupState = incrementalBackupState;
             _storageSettings = storageSettings;
 
-            _versionsLabel.Text = BUtil.Configurator.Localization.Resources.SelectVersion;
+            _selectVersionToolStripLabel.Text = BUtil.Configurator.Localization.Resources.SelectVersion;
             _dataLabel.Text = BUtil.Configurator.Localization.Resources.StateOfSourceItemsAtSelectedVersion;
             _changesLabel.Text = BUtil.Configurator.Localization.Resources.Changes;
             _toolStripStatusLabel.Text = BUtil.Configurator.Localization.Resources.ClickOnItemYouWantToRestoreAndOpenContextMenuByRightClick;
@@ -37,38 +37,20 @@ namespace BUtil.RestorationMaster
 
         private void OnLoad(object sender, System.EventArgs e)
         {
-            _versionsListBox.BeginUpdate();
+            _versionsListView.BeginUpdate();
 
             var versionsDesc = _incrementalBackupState.VersionStates
                 .OrderByDescending(x => x.BackupDateUtc)
                 .ToList();
 
-            _versionsListBox.DisplayMember = nameof(VersionState.BackupDateUtc);
-            _versionsListBox.FormatString = "dd MMMM (dddd) HH:mm yyyy";
-            _versionsListBox.FormatInfo = CultureInfo.CurrentUICulture;
-            _versionsListBox.DataSource = versionsDesc;
-            _versionsListBox.EndUpdate();
-
-            _versionsListBox.SelectedItem = versionsDesc.First();
-        }
-
-        private void OnVersionListChange(object sender, System.EventArgs e)
-        {
-            var selectedVersion = _versionsListBox.SelectedItem as VersionState;
-            IEnumerable<Tuple<ChangeState, string>> changes = null;
-            List<Tuple<SourceItem, List<StorageFile>>> treeViewFiles = null;
-            using var progressForm = new ProgressForm(reportProgress =>
+            foreach (var version in versionsDesc)
             {
-                reportProgress(15);
-                changes = GetChangesViewItems(selectedVersion);
-                reportProgress(65);
-                treeViewFiles = GetTreeViewFiles(_incrementalBackupState, selectedVersion);
+                _versionsListView.Items.Add(new ListViewItem(version.BackupDateUtc.ToString()) { Tag = version, ImageIndex = 6 });
+            }
 
-            });
-            progressForm.ShowDialog();
+            _versionsListView.EndUpdate();
 
-            RefreshChanges(changes);
-            RefreshTreeView(treeViewFiles);
+            _versionsListView.Items[0].Selected = true;
         }
 
         private void RefreshChanges(IEnumerable<Tuple<ChangeState, string>> changes)
@@ -328,6 +310,29 @@ namespace BUtil.RestorationMaster
         private void OnMouseDown(object sender, MouseEventArgs e)
         {
             _filesTreeView.SelectedNode = _filesTreeView.GetNodeAt(e.X, e.Y);
+        }
+
+        private void OnVersionChanged(object sender, EventArgs e)
+        {
+            if (_versionsListView.SelectedItems.Count != 1)
+            {
+                return;
+            }
+            var selectedVersion = _versionsListView.SelectedItems[0].Tag as VersionState;
+            IEnumerable<Tuple<ChangeState, string>> changes = null;
+            List<Tuple<SourceItem, List<StorageFile>>> treeViewFiles = null;
+            using var progressForm = new ProgressForm(reportProgress =>
+            {
+                reportProgress(15);
+                changes = GetChangesViewItems(selectedVersion);
+                reportProgress(65);
+                treeViewFiles = GetTreeViewFiles(_incrementalBackupState, selectedVersion);
+
+            });
+            progressForm.ShowDialog();
+
+            RefreshChanges(changes);
+            RefreshTreeView(treeViewFiles);
         }
     }
 }

@@ -5,6 +5,7 @@
 
 ## Changes
 - UI for viewing changed files in restoration tool was improved
+- UI for versions selection was improved
 
 # 6.3 (23 May 2023)
 
