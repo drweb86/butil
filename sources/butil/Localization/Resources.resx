@@ -621,18 +621,6 @@ Point to a directory containing this file.</value>
   <data name="ClickOnItemYouWantToRestoreAndOpenContextMenuByRightClick" xml:space="preserve">
     <value>Click on item you want to restore and open context menu by right click</value>
   </data>
-  <data name="SourceItemChanges" xml:space="preserve">
-    <value>Source item "{0}" changes:</value>
-  </data>
-  <data name="DeletedFile" xml:space="preserve">
-    <value>- deleted file "{0}"</value>
-  </data>
-  <data name="UpdatedFile" xml:space="preserve">
-    <value>- changed file "{0}"</value>
-  </data>
-  <data name="AddedFile" xml:space="preserve">
-    <value>- added file "{0}"</value>
-  </data>
   <data name="PasswordsDoNotMatch" xml:space="preserve">
     <value>Passwords do not match.</value>
   </data>

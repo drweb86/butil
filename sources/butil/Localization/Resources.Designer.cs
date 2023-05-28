@@ -124,15 +124,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to - added file &quot;{0}&quot;.
-        /// </summary>
-        internal static string AddedFile {
-            get {
-                return ResourceManager.GetString("AddedFile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Add File Exclude Pattern....
         /// </summary>
         internal static string AddFileExcludePattern {
@@ -436,15 +427,6 @@ namespace BUtil.Configurator.Localization {
         internal static string Day {
             get {
                 return ResourceManager.GetString("Day", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to - deleted file &quot;{0}&quot;.
-        /// </summary>
-        internal static string DeletedFile {
-            get {
-                return ResourceManager.GetString("DeletedFile", resourceCulture);
             }
         }
         
@@ -1388,15 +1370,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Source item &quot;{0}&quot; changes:.
-        /// </summary>
-        internal static string SourceItemChanges {
-            get {
-                return ResourceManager.GetString("SourceItemChanges", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Source item &quot;{0}&quot; does not exist.
         ///
         ///Please correct list of source items..
@@ -1572,15 +1545,6 @@ namespace BUtil.Configurator.Localization {
         internal static string Unmount {
             get {
                 return ResourceManager.GetString("Unmount", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to - changed file &quot;{0}&quot;.
-        /// </summary>
-        internal static string UpdatedFile {
-            get {
-                return ResourceManager.GetString("UpdatedFile", resourceCulture);
             }
         }
         

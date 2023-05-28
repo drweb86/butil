@@ -561,18 +561,6 @@
   <data name="ClickOnItemYouWantToRestoreAndOpenContextMenuByRightClick" xml:space="preserve">
     <value>Кликните по элементам, которые хотите восстановить, и откройте контекстное меню правой кнопкой мыши.</value>
   </data>
-  <data name="SourceItemChanges" xml:space="preserve">
-    <value>Изменения в источнике "{0}":</value>
-  </data>
-  <data name="DeletedFile" xml:space="preserve">
-    <value>- удален файл "{0}"</value>
-  </data>
-  <data name="UpdatedFile" xml:space="preserve">
-    <value>- изменен файл "{0}"</value>
-  </data>
-  <data name="AddedFile" xml:space="preserve">
-    <value>- добавлен файл "{0}"</value>
-  </data>
   <data name="PasswordsDoNotMatch" xml:space="preserve">
     <value>Пароли не совпадают.</value>
   </data>

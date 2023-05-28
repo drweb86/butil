@@ -62,9 +62,6 @@
     <Compile Update="Restore\VersionsViewerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="StartShell\Ui\SingleShellForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Localization\Resources.be.resx">

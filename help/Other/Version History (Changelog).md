@@ -3,6 +3,9 @@
 ## Bug Fixes
 - When backup is completed fast, wrong progress is shown.
 
+## Changes
+- UI for viewing changed files in restoration tool was improved
+
 # 6.3 (23 May 2023)
 
 ## New Features
