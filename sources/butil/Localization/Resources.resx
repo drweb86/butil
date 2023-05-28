@@ -610,7 +610,7 @@ Please correct list of source items.</value>
 Point to a directory containing this file.</value>
   </data>
   <data name="SelectVersion" xml:space="preserve">
-    <value>Select version:</value>
+    <value>SELECT VERSION</value>
   </data>
   <data name="Changes" xml:space="preserve">
     <value>Changes:</value>
@@ -698,5 +698,8 @@ Usage scenario: You mounted some cloud storage as disk and perform backup on it.
   </data>
   <data name="LastBackup" xml:space="preserve">
     <value>State</value>
+  </data>
+  <data name="StorageSize" xml:space="preserve">
+    <value>Storage: {0}</value>
   </data>
 </root>

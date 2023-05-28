@@ -607,7 +607,7 @@ Usage scenario: You mounted some cloud storage as disk and perform backup on it.
     <value>Restoration is completed.</value>
   </data>
   <data name="SelectVersion" xml:space="preserve">
-    <value>Select version:</value>
+    <value>SELECT VERSION</value>
   </data>
   <data name="SourceItemFailure" xml:space="preserve">
     <value>Source item "{0}" does not exist.

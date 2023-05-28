@@ -7,6 +7,9 @@
 - UI for viewing changed files in restoration tool was improved
 - UI for versions selection was improved
 
+## New Features
+- Information about storage size, version sizes is shown
+
 # 6.3 (23 May 2023)
 
 ## New Features

@@ -550,7 +550,7 @@
 Укажите на каталог, содержащий этот файл.</value>
   </data>
   <data name="SelectVersion" xml:space="preserve">
-    <value>Выберите версию:</value>
+    <value>ВЫБЕРИТЕ ВЕРСИЮ</value>
   </data>
   <data name="Changes" xml:space="preserve">
     <value>Изменения:</value>
@@ -638,5 +638,8 @@ bin.
   </data>
   <data name="LastBackup" xml:space="preserve">
     <value>Состояние</value>
+  </data>
+  <data name="StorageSize" xml:space="preserve">
+    <value>Хранилище: {0}</value>
   </data>
 </root>

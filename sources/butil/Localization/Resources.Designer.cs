@@ -1334,7 +1334,7 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select version:.
+        ///   Looks up a localized string similar to SELECT VERSION.
         /// </summary>
         internal static string SelectVersion {
             get {
@@ -1413,6 +1413,15 @@ namespace BUtil.Configurator.Localization {
         internal static string StorageName {
             get {
                 return ResourceManager.GetString("StorageName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Storage: {0}.
+        /// </summary>
+        internal static string StorageSize {
+            get {
+                return ResourceManager.GetString("StorageSize", resourceCulture);
             }
         }
         

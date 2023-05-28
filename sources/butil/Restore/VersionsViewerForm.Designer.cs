@@ -39,6 +39,7 @@
             _versionsListView = new System.Windows.Forms.ListView();
             _versionsToolStrip = new System.Windows.Forms.ToolStrip();
             _selectVersionToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            _storageToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             _treeToChangesSplitContainer = new System.Windows.Forms.SplitContainer();
             _filesTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             _dataLabel = new System.Windows.Forms.Label();
@@ -124,7 +125,7 @@
             // 
             // _versionsToolStrip
             // 
-            _versionsToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { _selectVersionToolStripLabel });
+            _versionsToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { _selectVersionToolStripLabel, _storageToolStripLabel });
             _versionsToolStrip.Location = new System.Drawing.Point(0, 0);
             _versionsToolStrip.Name = "_versionsToolStrip";
             _versionsToolStrip.Size = new System.Drawing.Size(289, 25);
@@ -133,9 +134,16 @@
             // 
             // _selectVersionToolStripLabel
             // 
+            _selectVersionToolStripLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             _selectVersionToolStripLabel.Name = "_selectVersionToolStripLabel";
-            _selectVersionToolStripLabel.Size = new System.Drawing.Size(82, 22);
-            _selectVersionToolStripLabel.Text = "Select version:";
+            _selectVersionToolStripLabel.Size = new System.Drawing.Size(100, 22);
+            _selectVersionToolStripLabel.Text = "SELECT VERSION";
+            // 
+            // _storageToolStripLabel
+            // 
+            _storageToolStripLabel.Name = "_storageToolStripLabel";
+            _storageToolStripLabel.Size = new System.Drawing.Size(75, 22);
+            _storageToolStripLabel.Text = "Storage: 0 TB";
             // 
             // _treeToChangesSplitContainer
             // 
@@ -294,5 +302,6 @@
         private System.Windows.Forms.ListView _versionsListView;
         private System.Windows.Forms.ToolStrip _versionsToolStrip;
         private System.Windows.Forms.ToolStripLabel _selectVersionToolStripLabel;
+        private System.Windows.Forms.ToolStripLabel _storageToolStripLabel;
     }
 }

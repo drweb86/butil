@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using BUtil.Configurator;
 using BUtil.Configurator.Localization;
 using BUtil.Core.Logs;
+using BUtil.Core.Misc;
 using BUtil.Core.Options;
 using BUtil.Core.State;
 using BUtil.Core.Storages;
@@ -45,12 +46,56 @@ namespace BUtil.RestorationMaster
 
             foreach (var version in versionsDesc)
             {
-                _versionsListView.Items.Add(new ListViewItem(version.BackupDateUtc.ToString()) { Tag = version, ImageIndex = 6 });
+                var totalSize = GetSizeOfVersion(version);
+                var title = $"{version.BackupDateUtc} ({BytesToString(totalSize)})";
+                _versionsListView.Items.Add(new ListViewItem(title) { Tag = version, ImageIndex = 6 });
             }
 
             _versionsListView.EndUpdate();
 
             _versionsListView.Items[0].Selected = true;
+
+            var storageSize = _incrementalBackupState.VersionStates
+                .SelectMany(x => x.SourceItemChanges)
+                .SelectMany(x =>
+                {
+                    var storageFiles = new List<StorageFile>();
+                    storageFiles.AddRange(x.UpdatedFiles);
+                    storageFiles.AddRange(x.CreatedFiles);
+                    return storageFiles;
+                })
+                .GroupBy(x => x.StorageFileName)
+                .Select(x => x.First().StorageFileNameSize)
+                .Sum();
+            _storageToolStripLabel.Text = string.Format(BUtil.Configurator.Localization.Resources.StorageSize, BytesToString(storageSize));
+        }
+
+        private static long GetSizeOfVersion(VersionState version)
+        {
+            var versionFolder = SourceItemHelper.GetVersionFolder(version.BackupDateUtc);
+            return version.SourceItemChanges
+                .SelectMany(x =>
+                {
+                    var storageFiles = new List<StorageFile>();
+                    storageFiles.AddRange(x.UpdatedFiles);
+                    storageFiles.AddRange(x.CreatedFiles);
+                    return storageFiles;
+                })
+                .Where(x => x.StorageRelativeFileName.StartsWith(versionFolder))
+                .GroupBy(x => x.StorageFileName)
+                .Select(x => x.First().StorageFileNameSize)
+                .Sum();
+        }
+
+        private static String BytesToString(long byteCount)
+        {
+            string[] suf = { "B", "KB", "MB", "GB", "TB", "PB", "EB" }; //Longs run out around EB
+            if (byteCount == 0)
+                return "0" + suf[0];
+            long bytes = Math.Abs(byteCount);
+            int place = Convert.ToInt32(Math.Floor(Math.Log(bytes, 1024)));
+            double num = Math.Round(bytes / Math.Pow(1024, place), 1);
+            return (Math.Sign(byteCount) * num).ToString() + suf[place];
         }
 
         private void RefreshChanges(IEnumerable<Tuple<ChangeState, string>> changes)
