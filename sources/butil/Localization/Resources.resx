@@ -613,7 +613,7 @@ Point to a directory containing this file.</value>
     <value>SELECT VERSION</value>
   </data>
   <data name="Changes" xml:space="preserve">
-    <value>Changes:</value>
+    <value>CHANGES</value>
   </data>
   <data name="StateOfSourceItemsAtSelectedVersion" xml:space="preserve">
     <value>State of source items at selected version:</value>
@@ -701,5 +701,17 @@ Usage scenario: You mounted some cloud storage as disk and perform backup on it.
   </data>
   <data name="StorageSize" xml:space="preserve">
     <value>Storage: {0}</value>
+  </data>
+  <data name="Journal0" xml:space="preserve">
+    <value>Journal: {0}</value>
+  </data>
+  <data name="JournalSelected" xml:space="preserve">
+    <value>Journal for selected...</value>
+  </data>
+  <data name="VERSIONS" xml:space="preserve">
+    <value>VERSIONS</value>
+  </data>
+  <data name="OpenSelectedVersion" xml:space="preserve">
+    <value>Open selected version...</value>
   </data>
 </root>

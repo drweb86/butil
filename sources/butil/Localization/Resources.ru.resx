@@ -553,7 +553,7 @@
     <value>ВЫБЕРИТЕ ВЕРСИЮ</value>
   </data>
   <data name="Changes" xml:space="preserve">
-    <value>Изменения:</value>
+    <value>ИЗМЕНЕНИЯ</value>
   </data>
   <data name="StateOfSourceItemsAtSelectedVersion" xml:space="preserve">
     <value>Состояние источников данных выбранной версии:</value>
@@ -641,5 +641,17 @@ bin.
   </data>
   <data name="StorageSize" xml:space="preserve">
     <value>Хранилище: {0}</value>
+  </data>
+  <data name="Journal0" xml:space="preserve">
+    <value>Журнал: {0}</value>
+  </data>
+  <data name="JournalSelected" xml:space="preserve">
+    <value>Журнал для выбранного...</value>
+  </data>
+  <data name="VERSIONS" xml:space="preserve">
+    <value>ВЕРСИИ</value>
+  </data>
+  <data name="OpenSelectedVersion" xml:space="preserve">
+    <value>Открыть выбранную версию...</value>
   </data>
 </root>

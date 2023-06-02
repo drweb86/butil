@@ -497,9 +497,6 @@ Point to a directory containing this file.</value>
   <data name="CannotOpenBackupFolder" xml:space="preserve">
     <value>Cannot open backup folder.</value>
   </data>
-  <data name="Changes" xml:space="preserve">
-    <value>Changes:</value>
-  </data>
   <data name="ChooseBackupModel" xml:space="preserve">
     <value>Choose backup model</value>
   </data>

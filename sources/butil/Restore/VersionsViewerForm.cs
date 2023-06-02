@@ -8,6 +8,7 @@ using System.Threading.Channels;
 using System.Windows.Forms;
 using BUtil.Configurator;
 using BUtil.Configurator.Localization;
+using BUtil.Configurator.Restore;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
@@ -30,7 +31,10 @@ namespace BUtil.RestorationMaster
 
             _selectVersionToolStripLabel.Text = BUtil.Configurator.Localization.Resources.SelectVersion;
             _dataLabel.Text = BUtil.Configurator.Localization.Resources.StateOfSourceItemsAtSelectedVersion;
-            _changesLabel.Text = BUtil.Configurator.Localization.Resources.Changes;
+            _changesToolStripLabel.Text = BUtil.Configurator.Localization.Resources.Changes;
+            _journalSelectedToolStripMenuItem.Text =
+                _journalSelectedToolStripButton.Text =
+                    BUtil.Configurator.Localization.Resources.JournalSelected;
             _toolStripStatusLabel.Text = BUtil.Configurator.Localization.Resources.ClickOnItemYouWantToRestoreAndOpenContextMenuByRightClick;
             recoverToolStripMenuItem.Text = BUtil.Configurator.Localization.Resources.Recover;
             this.Text = Resources.RestorationMaster;
@@ -107,6 +111,7 @@ namespace BUtil.RestorationMaster
             {
                 var listViewItem = new ListViewItem(item.Item2);
                 listViewItem.ImageIndex = (int)item.Item1;
+                listViewItem.Tag = item.Item2;
                 _changesListView.Items.Add(listViewItem);
             }
 
@@ -378,6 +383,28 @@ namespace BUtil.RestorationMaster
 
             RefreshChanges(changes);
             RefreshTreeView(treeViewFiles);
+        }
+
+        private void OnJournalSelectedChangesView(object sender, EventArgs e)
+        {
+            if (_changesListView.SelectedItems.Count != 1)
+                return;
+
+            var blameForm = new BlameForm();
+            blameForm.Init(_incrementalBackupState, _changesListView.SelectedItems[0].Tag.ToString(),
+                versionDate =>
+                {
+                    _versionsListView.BeginUpdate();
+                    _versionsListView.SelectedItems.Clear();
+                    foreach (ListViewItem item in _versionsListView.Items)
+                    {
+                        if (((VersionState)item.Tag).BackupDateUtc == versionDate)
+                            item.Selected = true;
+                    }
+                    _versionsListView.EndUpdate();
+                }
+                );
+            blameForm.Show();
         }
     }
 }

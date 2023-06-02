@@ -332,7 +332,7 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Changes:.
+        ///   Looks up a localized string similar to CHANGES.
         /// </summary>
         internal static string Changes {
             get {
@@ -913,6 +913,24 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Journal: {0}.
+        /// </summary>
+        internal static string Journal0 {
+            get {
+                return ResourceManager.GetString("Journal0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Journal for selected....
+        /// </summary>
+        internal static string JournalSelected {
+            get {
+                return ResourceManager.GetString("JournalSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to State.
         /// </summary>
         internal static string LastBackup {
@@ -1104,6 +1122,15 @@ namespace BUtil.Configurator.Localization {
         internal static string OpenLogs {
             get {
                 return ResourceManager.GetString("OpenLogs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open selected version....
+        /// </summary>
+        internal static string OpenSelectedVersion {
+            get {
+                return ResourceManager.GetString("OpenSelectedVersion", resourceCulture);
             }
         }
         
@@ -1616,6 +1643,15 @@ namespace BUtil.Configurator.Localization {
             get {
                 return ResourceManager.GetString("UtilityForCreatingBackupsNNwebSitesHttpsGithubComDrweb86ButilNNlocalizationCreate" +
                         "dByN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VERSIONS.
+        /// </summary>
+        internal static string VERSIONS {
+            get {
+                return ResourceManager.GetString("VERSIONS", resourceCulture);
             }
         }
         

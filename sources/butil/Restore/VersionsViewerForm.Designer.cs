@@ -46,10 +46,13 @@
             _filesTreeView = new System.Windows.Forms.TreeView();
             _treeContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(components);
             recoverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            _changesTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            _changesLabel = new System.Windows.Forms.Label();
             _changesListView = new System.Windows.Forms.ListView();
+            _changesContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(components);
+            _journalSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             _fbdialog = new System.Windows.Forms.FolderBrowserDialog();
+            toolStrip1 = new System.Windows.Forms.ToolStrip();
+            _changesToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            _journalSelectedToolStripButton = new System.Windows.Forms.ToolStripButton();
             _statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)_versionToContentSplitContainer).BeginInit();
             _versionToContentSplitContainer.Panel1.SuspendLayout();
@@ -62,7 +65,8 @@
             _treeToChangesSplitContainer.SuspendLayout();
             _filesTableLayoutPanel.SuspendLayout();
             _treeContextMenuStrip.SuspendLayout();
-            _changesTableLayoutPanel.SuspendLayout();
+            _changesContextMenuStrip.SuspendLayout();
+            toolStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // imagesList
@@ -158,7 +162,8 @@
             // 
             // _treeToChangesSplitContainer.Panel2
             // 
-            _treeToChangesSplitContainer.Panel2.Controls.Add(_changesTableLayoutPanel);
+            _treeToChangesSplitContainer.Panel2.Controls.Add(toolStrip1);
+            _treeToChangesSplitContainer.Panel2.Controls.Add(_changesListView);
             _treeToChangesSplitContainer.Size = new System.Drawing.Size(786, 507);
             _treeToChangesSplitContainer.SplitterDistance = 251;
             _treeToChangesSplitContainer.TabIndex = 0;
@@ -214,40 +219,56 @@
             recoverToolStripMenuItem.Text = "Recover...";
             recoverToolStripMenuItem.Click += OnRecover;
             // 
-            // _changesTableLayoutPanel
-            // 
-            _changesTableLayoutPanel.ColumnCount = 1;
-            _changesTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            _changesTableLayoutPanel.Controls.Add(_changesLabel, 0, 0);
-            _changesTableLayoutPanel.Controls.Add(_changesListView, 0, 1);
-            _changesTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            _changesTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            _changesTableLayoutPanel.Name = "_changesTableLayoutPanel";
-            _changesTableLayoutPanel.RowCount = 2;
-            _changesTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            _changesTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            _changesTableLayoutPanel.Size = new System.Drawing.Size(786, 252);
-            _changesTableLayoutPanel.TabIndex = 1;
-            // 
-            // _changesLabel
-            // 
-            _changesLabel.AutoSize = true;
-            _changesLabel.Location = new System.Drawing.Point(3, 0);
-            _changesLabel.Name = "_changesLabel";
-            _changesLabel.Size = new System.Drawing.Size(56, 15);
-            _changesLabel.TabIndex = 0;
-            _changesLabel.Text = "Changes:";
-            // 
             // _changesListView
             // 
+            _changesListView.ContextMenuStrip = _changesContextMenuStrip;
             _changesListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            _changesListView.Location = new System.Drawing.Point(3, 18);
+            _changesListView.Location = new System.Drawing.Point(0, 0);
             _changesListView.Name = "_changesListView";
-            _changesListView.Size = new System.Drawing.Size(780, 231);
+            _changesListView.Size = new System.Drawing.Size(786, 252);
             _changesListView.SmallImageList = imagesList;
             _changesListView.TabIndex = 1;
             _changesListView.UseCompatibleStateImageBehavior = false;
             _changesListView.View = System.Windows.Forms.View.List;
+            // 
+            // _changesContextMenuStrip
+            // 
+            _changesContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { _journalSelectedToolStripMenuItem });
+            _changesContextMenuStrip.Name = "_changesContextMenuStrip";
+            _changesContextMenuStrip.Size = new System.Drawing.Size(168, 26);
+            // 
+            // _journalSelectedToolStripMenuItem
+            // 
+            _journalSelectedToolStripMenuItem.Name = "_journalSelectedToolStripMenuItem";
+            _journalSelectedToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            _journalSelectedToolStripMenuItem.Text = "Journal selected...";
+            _journalSelectedToolStripMenuItem.Click += OnJournalSelectedChangesView;
+            // 
+            // toolStrip1
+            // 
+            toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { _changesToolStripLabel, _journalSelectedToolStripButton });
+            toolStrip1.Location = new System.Drawing.Point(0, 0);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.Size = new System.Drawing.Size(786, 25);
+            toolStrip1.TabIndex = 2;
+            toolStrip1.Text = "toolStrip1";
+            // 
+            // _changesToolStripLabel
+            // 
+            _changesToolStripLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            _changesToolStripLabel.Name = "_changesToolStripLabel";
+            _changesToolStripLabel.Size = new System.Drawing.Size(62, 22);
+            _changesToolStripLabel.Text = "CHANGES";
+            // 
+            // _journalSelectedToolStripButton
+            // 
+            _journalSelectedToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            _journalSelectedToolStripButton.Image = (System.Drawing.Image)resources.GetObject("_journalSelectedToolStripButton.Image");
+            _journalSelectedToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            _journalSelectedToolStripButton.Name = "_journalSelectedToolStripButton";
+            _journalSelectedToolStripButton.Size = new System.Drawing.Size(104, 22);
+            _journalSelectedToolStripButton.Text = "Journal selected...";
+            _journalSelectedToolStripButton.Click += OnJournalSelectedChangesView;
             // 
             // VersionsViewerForm
             // 
@@ -274,13 +295,15 @@
             _versionsToolStrip.PerformLayout();
             _treeToChangesSplitContainer.Panel1.ResumeLayout(false);
             _treeToChangesSplitContainer.Panel2.ResumeLayout(false);
+            _treeToChangesSplitContainer.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)_treeToChangesSplitContainer).EndInit();
             _treeToChangesSplitContainer.ResumeLayout(false);
             _filesTableLayoutPanel.ResumeLayout(false);
             _filesTableLayoutPanel.PerformLayout();
             _treeContextMenuStrip.ResumeLayout(false);
-            _changesTableLayoutPanel.ResumeLayout(false);
-            _changesTableLayoutPanel.PerformLayout();
+            _changesContextMenuStrip.ResumeLayout(false);
+            toolStrip1.ResumeLayout(false);
+            toolStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -291,9 +314,7 @@
         private System.Windows.Forms.SplitContainer _versionToContentSplitContainer;
         private System.Windows.Forms.SplitContainer _treeToChangesSplitContainer;
         private System.Windows.Forms.TableLayoutPanel _filesTableLayoutPanel;
-        private System.Windows.Forms.TableLayoutPanel _changesTableLayoutPanel;
         private System.Windows.Forms.Label _dataLabel;
-        private System.Windows.Forms.Label _changesLabel;
         private System.Windows.Forms.TreeView _filesTreeView;
         private System.Windows.Forms.ContextMenuStrip _treeContextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem recoverToolStripMenuItem;
@@ -303,5 +324,10 @@
         private System.Windows.Forms.ToolStrip _versionsToolStrip;
         private System.Windows.Forms.ToolStripLabel _selectVersionToolStripLabel;
         private System.Windows.Forms.ToolStripLabel _storageToolStripLabel;
+        private System.Windows.Forms.ContextMenuStrip _changesContextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem _journalSelectedToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripLabel _changesToolStripLabel;
+        private System.Windows.Forms.ToolStripButton _journalSelectedToolStripButton;
     }
 }
