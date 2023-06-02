@@ -555,8 +555,8 @@
   <data name="Changes" xml:space="preserve">
     <value>ИЗМЕНЕНИЯ</value>
   </data>
-  <data name="StateOfSourceItemsAtSelectedVersion" xml:space="preserve">
-    <value>Состояние источников данных выбранной версии:</value>
+  <data name="Files" xml:space="preserve">
+    <value>ФАЙЛЫ</value>
   </data>
   <data name="ClickOnItemYouWantToRestoreAndOpenContextMenuByRightClick" xml:space="preserve">
     <value>Кликните по элементам, которые хотите восстановить, и откройте контекстное меню правой кнопкой мыши.</value>
@@ -653,5 +653,8 @@ bin.
   </data>
   <data name="OpenSelectedVersion" xml:space="preserve">
     <value>Открыть выбранную версию...</value>
+  </data>
+  <data name="RecoverSelected" xml:space="preserve">
+    <value>Восстановить выбранное...</value>
   </data>
 </root>

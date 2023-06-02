@@ -1,7 +1,7 @@
 # 2023.06.02
 
 ## New Features
-- Journal for selected... for list of changes in Restoration
+- Journal for selected... for list of changes and Tree in Restoration
 
 # 6.4 (28 May 2023)
 

@@ -30,13 +30,15 @@ namespace BUtil.RestorationMaster
             _storageSettings = storageSettings;
 
             _selectVersionToolStripLabel.Text = BUtil.Configurator.Localization.Resources.SelectVersion;
-            _dataLabel.Text = BUtil.Configurator.Localization.Resources.StateOfSourceItemsAtSelectedVersion;
+            _selectedVersionToolStripLabel.Text = BUtil.Configurator.Localization.Resources.Files;
             _changesToolStripLabel.Text = BUtil.Configurator.Localization.Resources.Changes;
             _journalSelectedToolStripMenuItem.Text =
                 _journalSelectedToolStripButton.Text =
-                    BUtil.Configurator.Localization.Resources.JournalSelected;
+                _treeViewJournalSelectedToolStripButton.Text =
+                    _treeJournalSelectedToolStripMenuItem.Text =
+                        BUtil.Configurator.Localization.Resources.JournalSelected;
             _toolStripStatusLabel.Text = BUtil.Configurator.Localization.Resources.ClickOnItemYouWantToRestoreAndOpenContextMenuByRightClick;
-            recoverToolStripMenuItem.Text = BUtil.Configurator.Localization.Resources.Recover;
+            recoverToolStripMenuItem.Text = _recoverToolStripButton.Text = BUtil.Configurator.Localization.Resources.RecoverSelected;
             this.Text = Resources.RestorationMaster;
         }
 
@@ -381,6 +383,8 @@ namespace BUtil.RestorationMaster
             });
             progressForm.ShowDialog();
 
+            _selectedVersionToolStripLabel.Text = string.Format("{0} {1}", BUtil.Configurator.Localization.Resources.Files, selectedVersion.BackupDateUtc);
+            _changesToolStripLabel.Text = string.Format("{0} {1}", BUtil.Configurator.Localization.Resources.Changes, selectedVersion.BackupDateUtc);
             RefreshChanges(changes);
             RefreshTreeView(treeViewFiles);
         }
@@ -392,6 +396,31 @@ namespace BUtil.RestorationMaster
 
             var blameForm = new BlameForm();
             blameForm.Init(_incrementalBackupState, _changesListView.SelectedItems[0].Tag.ToString(),
+                versionDate =>
+                {
+                    _versionsListView.BeginUpdate();
+                    _versionsListView.SelectedItems.Clear();
+                    foreach (ListViewItem item in _versionsListView.Items)
+                    {
+                        if (((VersionState)item.Tag).BackupDateUtc == versionDate)
+                            item.Selected = true;
+                    }
+                    _versionsListView.EndUpdate();
+                }
+                );
+            blameForm.Show();
+        }
+
+        private void OnTreeJournalSelected(object sender, EventArgs e)
+        {
+            if (_filesTreeView.SelectedNode == null ||
+                ! (_filesTreeView.SelectedNode.Tag is StorageFile))
+                return;
+
+            var storageFile = (StorageFile)_filesTreeView.SelectedNode.Tag;
+
+            var blameForm = new BlameForm();
+            blameForm.Init(_incrementalBackupState, storageFile.FileState.FileName,
                 versionDate =>
                 {
                     _versionsListView.BeginUpdate();

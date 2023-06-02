@@ -611,9 +611,6 @@ Usage scenario: You mounted some cloud storage as disk and perform backup on it.
 
 Please correct list of source items.</value>
   </data>
-  <data name="StateOfSourceItemsAtSelectedVersion" xml:space="preserve">
-    <value>State of source items at selected version:</value>
-  </data>
   <data name="Url" xml:space="preserve">
     <value>Url:</value>
   </data>

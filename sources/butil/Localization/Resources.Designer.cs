@@ -623,6 +623,15 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to FILES.
+        /// </summary>
+        internal static string Files {
+            get {
+                return ResourceManager.GetString("Files", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Finish.
         /// </summary>
         internal static string Finish {
@@ -1280,6 +1289,15 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Recover selected....
+        /// </summary>
+        internal static string RecoverSelected {
+            get {
+                return ResourceManager.GetString("RecoverSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remove.
         /// </summary>
         internal static string Remove {
@@ -1422,15 +1440,6 @@ namespace BUtil.Configurator.Localization {
         internal static string Start {
             get {
                 return ResourceManager.GetString("Start", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to State of source items at selected version:.
-        /// </summary>
-        internal static string StateOfSourceItemsAtSelectedVersion {
-            get {
-                return ResourceManager.GetString("StateOfSourceItemsAtSelectedVersion", resourceCulture);
             }
         }
         

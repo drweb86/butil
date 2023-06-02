@@ -615,8 +615,8 @@ Point to a directory containing this file.</value>
   <data name="Changes" xml:space="preserve">
     <value>CHANGES</value>
   </data>
-  <data name="StateOfSourceItemsAtSelectedVersion" xml:space="preserve">
-    <value>State of source items at selected version:</value>
+  <data name="Files" xml:space="preserve">
+    <value>FILES</value>
   </data>
   <data name="ClickOnItemYouWantToRestoreAndOpenContextMenuByRightClick" xml:space="preserve">
     <value>Click on item you want to restore and open context menu by right click</value>
@@ -713,5 +713,8 @@ Usage scenario: You mounted some cloud storage as disk and perform backup on it.
   </data>
   <data name="OpenSelectedVersion" xml:space="preserve">
     <value>Open selected version...</value>
+  </data>
+  <data name="RecoverSelected" xml:space="preserve">
+    <value>Recover selected...</value>
   </data>
 </root>
