@@ -16,17 +16,14 @@ BUtil is a powerful set of tools for creating backups of documents and other dat
 
 ## Key functions and characteristics of software
 
-- Incremental backup model;
+- Incremental backup model with deduplication of files;
 - Simple configuring takes less time and goes easily and with comfort;
 - Multiple backup tasks are supported;
 - Html format for log files takes less time on reviewing of it;
-- Two modes of creating a backup exists: manual from UI and console tool and with scheduling possibilities;
-- [Unstructured Data repository model](./help/Other/Glossary.md)
-- [Copying files selection and extraction of file data](./help/Other/Glossary.md)
-- Built in [7-zip](https://www.7-zip.org/) [compression](https://en.wikipedia.org/wiki/Data_compression) and [AES-256 encryption](https://www.7-zip.org/) [AES-256](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard);
-- Deduplication of files.
+- Two modes of creating a backup exists: manual from UI and console tool and with scheduling/automation possibilities;
+- Built in [7-zip](https://www.7-zip.org/) compression and AES-256 encryption.
 
-## The documentation includes:
+## Documentation
 
 - [Version history](./help/Other/Version%20History%20(Changelog).md)
 - [Congifurator](./help/Configure/Configurator.md)
@@ -35,7 +32,7 @@ BUtil is a powerful set of tools for creating backups of documents and other dat
 - [Frequently Asked Questions (FAQ)](./help/Other/Frequently%20Asked%20Questions.md)
 and many more. See [all topics](./help/TOC.md) .
 
-## Compilation
+## Build
 
 Must be installed:
 - Windows 11x64 Professional;
@@ -44,9 +41,5 @@ Must be installed:
 - 7-zip x64 (must be installed in default directory).
 
 Compile all with **publish.cmd** script (artefacts will be located in **Output** folder)
-
-## Keywords
-
-Backup, Restoration, Desktop applications, Scheduling, AES-256, 7-zip, .Net
 
 [Help:](https://github.com/drweb86/butil/blob/master/help/TOC.md)
