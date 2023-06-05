@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Drawing;
 using System.Globalization;
 using BUtil.Configurator.Localization;
@@ -47,10 +48,10 @@ namespace BUtil.BackupUiMaster.Controls
             elapsedLabel.Text = lastMinuteMessage;
         }
 
-        void timerTick(object sender, EventArgs e)
+        private void timerTick(object sender, EventArgs e)
         {
             TimeSpan span = DateTime.Now.Subtract(_start);
-            elapsedLabel.Text = timeSpanToStringHelper(span);
+            elapsedLabel.Text = $"{timeSpanToStringHelper(span)} ({progressBar.Value}/{progressBar.Maximum})";
         }
 
         string timeSpanToStringHelper(TimeSpan timeSpan)
