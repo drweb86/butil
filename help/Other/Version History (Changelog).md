@@ -3,6 +3,7 @@
 ## Changes
 - Backup UI: Improved delta show, shows number of tasks in progress/completed
 - Backup UI: Main form Title was improved
+- Backup: Archiving opened for writing files
 
 ## Bug Fixes
 - Backup UI: After backup completion results are no longer shown on separate message, because its impossible to focus on it. Main window will flash

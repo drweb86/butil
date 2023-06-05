@@ -80,12 +80,12 @@ namespace BUtil.Core.Compression
                 string arguments;
                 if (!passwordIsSet)
                 {
-                    arguments = $@"x -y ""{archive}"" -o""{outputDirectory}""";
+                    arguments = $@"x -y ""{archive}"" -o""{outputDirectory}"" -sccUTF-8";
                     log.WriteLine(LoggingEvent.Debug, $"Extracting \"{archive}\" to \"{outputDirectory}\"");
                 }
                 else
                 {
-                    arguments = $@"x -y ""{archive}"" -o""{outputDirectory}"" -p""{password}""";
+                    arguments = $@"x -y ""{archive}"" -o""{outputDirectory}"" -p""{password}"" -sccUTF-8";
                     log.WriteLine(LoggingEvent.Debug, $"Extracting \"{archive}\" to \"{outputDirectory}\" with password");
                 }
 
@@ -139,14 +139,15 @@ namespace BUtil.Core.Compression
         {
             var compressionLevel = CompressionUtil.GetCompressionLevel(Path.GetExtension(file).ToLowerInvariant());
             string arguments;
+            
             if (string.IsNullOrWhiteSpace(password))
             {
-                arguments = $@"a -y ""{archive}"" ""{file}"" -t7z -m0=lzma2 -ms=on -mx={compressionLevel}";
+                arguments = $@"a -y ""{archive}"" ""{file}"" -t7z -m0=lzma2 -ms=on -mx={compressionLevel} -sccUTF-8 -ssw";
                 log.WriteLine(LoggingEvent.Debug, $"Compressing \"{file}\" to \"{archive}\"");
             }
             else
             {
-                arguments = $@"a -y ""{archive}"" ""{file}"" -p""{password}"" -t7z -m0=lzma2 -ms=on -mx={compressionLevel} -mhe=on";
+                arguments = $@"a -y ""{archive}"" ""{file}"" -p""{password}"" -t7z -m0=lzma2 -ms=on -mx={compressionLevel} -mhe=on -sccUTF-8 -ssw";
                 log.WriteLine(LoggingEvent.Debug, $"Compressing \"{file}\" to \"{archive}\" with password");
             }
 
