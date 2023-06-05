@@ -295,18 +295,6 @@ or warnings will be registered during the backup</value>
   <data name="Backup" xml:space="preserve">
     <value>Рэзервовае капираванне</value>
   </data>
-  <data name="_0DayS1H2Min3Sec" xml:space="preserve">
-    <value>{0} дзен {1} г : {2} мин : {3} сек</value>
-  </data>
-  <data name="_0H1Min2Sec" xml:space="preserve">
-    <value>{0} г : {1} мин : {2} сек</value>
-  </data>
-  <data name="_0Min1Sec" xml:space="preserve">
-    <value>{0} мин : {1} сек</value>
-  </data>
-  <data name="_0Sec" xml:space="preserve">
-    <value>{0} сек</value>
-  </data>
   <data name="ThereAreNoItemsToBackupNNyouCanSpecifyTheDataToBackupInConfiguratorInWhatSettingsGroup" xml:space="preserve">
     <value>There are no items to backup!
 

@@ -56,21 +56,17 @@ namespace BUtil.BackupUiMaster.Controls
         string timeSpanToStringHelper(TimeSpan timeSpan)
         {
             if (timeSpan.Days > 0)
-                //{0} day(s) {1} h : {2} min : {3} sec
-                return string.Format(CultureInfo.InstalledUICulture, Resources._0DayS1H2Min3Sec, timeSpan.Days, timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds);
+                return $"{timeSpan.Days}:{timeSpan.Hours:00}:{timeSpan.Minutes:00}:{timeSpan.Seconds:00}";
             else
             {
                 if (timeSpan.Hours > 0)
-                    //{0} h : {1} min : {2} sec
-                    return string.Format(CultureInfo.InstalledUICulture, Resources._0H1Min2Sec, timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds);
+                    return $"{timeSpan.Hours}:{timeSpan.Minutes:00}:{timeSpan.Seconds:00}";
                 else
                 {
                     if (timeSpan.Minutes > 0)
-                        //{0} min : {1} sec
-                        return string.Format(CultureInfo.InstalledUICulture, Resources._0Min1Sec, timeSpan.Minutes, timeSpan.Seconds);
+                        return $"{timeSpan.Minutes}:{timeSpan.Seconds:00}";
                     else
-                        //{0} sec
-                        return string.Format(CultureInfo.InstalledUICulture, Resources._0Sec, timeSpan.Seconds);
+                        return $"{timeSpan.Seconds}";
                 }
             }
         }

@@ -1,6 +1,7 @@
 # 2023.06.05
 
 ## Changes
+- Backup UI: Improved delta show
 
 ## Bug Fixes
 - Backup UI: After backup completion results are no longer shown on separate message, because its impossible to focus on it. Main window will flash.

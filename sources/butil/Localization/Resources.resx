@@ -362,18 +362,6 @@ or warnings will be registered during the backup</value>
   <data name="Backup" xml:space="preserve">
     <value>Backup</value>
   </data>
-  <data name="_0DayS1H2Min3Sec" xml:space="preserve">
-    <value>{0} day(s) {1} h : {2} min : {3} sec</value>
-  </data>
-  <data name="_0H1Min2Sec" xml:space="preserve">
-    <value>{0} h : {1} min : {2} sec</value>
-  </data>
-  <data name="_0Min1Sec" xml:space="preserve">
-    <value>{0} min : {1} sec</value>
-  </data>
-  <data name="_0Sec" xml:space="preserve">
-    <value>{0} sec</value>
-  </data>
   <data name="ThereAreNoItemsToBackupNNyouCanSpecifyTheDataToBackupInConfiguratorInWhatSettingsGroup" xml:space="preserve">
     <value>There are no items to backup!
 

@@ -61,42 +61,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} day(s) {1} h : {2} min : {3} sec.
-        /// </summary>
-        internal static string _0DayS1H2Min3Sec {
-            get {
-                return ResourceManager.GetString("_0DayS1H2Min3Sec", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0} h : {1} min : {2} sec.
-        /// </summary>
-        internal static string _0H1Min2Sec {
-            get {
-                return ResourceManager.GetString("_0H1Min2Sec", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0} min : {1} sec.
-        /// </summary>
-        internal static string _0Min1Sec {
-            get {
-                return ResourceManager.GetString("_0Min1Sec", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0} sec.
-        /// </summary>
-        internal static string _0Sec {
-            get {
-                return ResourceManager.GetString("_0Sec", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to About.
         /// </summary>
         internal static string About {
