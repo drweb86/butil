@@ -5,7 +5,6 @@ using BUtil.Core;
 using BUtil.Core.Options;
 using BUtil.Core.Misc;
 using BUtil.Core.Logs;
-using BUtil.BackupUiMaster.Controls;
 using BUtil.Configurator.Localization;
 using BUtil.Core.Events;
 using BUtil.Core.BackupModels;
@@ -16,7 +15,6 @@ using System.IO;
 using System.Linq;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.ComponentModel;
 
 namespace BUtil.Configurator.BackupUiMaster.Forms
 {
@@ -78,7 +76,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 
         void StartButtonClick(object _, EventArgs e)
         {
-            startButton.Enabled = false;
+            startButton.Visible = false;
             cancelButton.Enabled = true;
 
             backupProgressUserControl.Start();
@@ -93,7 +91,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             taskNameColumnHeader.Text = Resources.Tasks;
             processingStateInformationColumnHeader.Text = Resources.ProcessingState;
 
-            Text = Resources.WellcomeToBackupWizard;
+            Text = string.Format(BUtil.Configurator.Localization.Resources._0Backup, _backupTask.Name);
             toolTip.SetToolTip(cancelButton, Resources.Cancel);
 
             _powerTaskLinkLabel.Text = Resources.AfterCompletionOfBackup;

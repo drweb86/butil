@@ -643,4 +643,7 @@ bin.
   <data name="RecoverSelected" xml:space="preserve">
     <value>Восстановить выбранное...</value>
   </data>
+  <data name="_0Backup" xml:space="preserve">
+    <value>{0} - Резервное копирование</value>
+  </data>
 </root>

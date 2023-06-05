@@ -603,4 +603,7 @@ Please correct list of source items.</value>
   <data name="Unmount" xml:space="preserve">
     <value>Unmount:</value>
   </data>
+  <data name="_0Backup" xml:space="preserve">
+    <value>{0} - Backup</value>
+  </data>
 </root>

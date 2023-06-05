@@ -703,4 +703,7 @@ Usage scenario: You mounted some cloud storage as disk and perform backup on it.
   <data name="RecoverSelected" xml:space="preserve">
     <value>Recover selected...</value>
   </data>
+  <data name="_0Backup" xml:space="preserve">
+    <value>{0} - Backup</value>
+  </data>
 </root>

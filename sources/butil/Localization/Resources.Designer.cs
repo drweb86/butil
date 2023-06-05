@@ -61,6 +61,15 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} - Backup.
+        /// </summary>
+        internal static string _0Backup {
+            get {
+                return ResourceManager.GetString("_0Backup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About.
         /// </summary>
         internal static string About {
