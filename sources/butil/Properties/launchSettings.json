@@ -2,7 +2,7 @@
   "profiles": {
     "Configurator": {
       "commandName": "Project",
-      "commandLineArgs": "JUSTRESTORATIONMASTER Task=\"Documents - Samba\""
+      "commandLineArgs": "JUSTBACKUPMASTER \"Task=My Documents\""
     }
   }
 }

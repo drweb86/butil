@@ -1,4 +1,5 @@
 using System;
+using System.Drawing;
 using System.Globalization;
 using BUtil.Configurator.Localization;
 
@@ -27,10 +28,23 @@ namespace BUtil.BackupUiMaster.Controls
             Title = Resources.BackupIsInAProgress;
         }
 
-        public void Stop()
+        public void Stop(string lastMinuteMessage, string generalStatus, bool isError)
         {
             _start = DateTime.Now;
             clockTimer.Enabled = false;
+            clockTimer.Stop();
+
+            Title = $"{generalStatus} ({timeSpanToStringHelper(DateTime.Now.Subtract(_start))})";
+            if (isError)
+            {
+                TitleBackground = Color.FromArgb(222, 98, 89);
+            }
+            else
+            {
+                TitleBackground = Color.FromArgb(5, 150, 14);
+            }
+            passedLabel.Visible = false;
+            elapsedLabel.Text = lastMinuteMessage;
         }
 
         void timerTick(object sender, EventArgs e)

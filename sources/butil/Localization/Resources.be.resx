@@ -164,7 +164,7 @@
     <value>Масцер рэзервовага капиравання витае вас!!!</value>
   </data>
   <data name="BackupProcessCompletedSuccesfully" xml:space="preserve">
-    <value>Працэс архiвiравання скончыуся паспяхова!!!</value>
+    <value>Succeeded</value>
   </data>
   <data name="AreYouSure" xml:space="preserve">
     <value>Are you sure?</value>
@@ -485,9 +485,7 @@ Please refer to manual for the complete list of parameters!</value>
     <value>Add File Exclude Pattern...</value>
   </data>
   <data name="BackupFailedPleaseReviewOpenedLog" xml:space="preserve">
-    <value>Backup failed.
-
-Please review opened log.</value>
+    <value>Failed (see opened log)</value>
   </data>
   <data name="CannotLocateFile0InDirectoryPointToADirectoryContainingThisFile" xml:space="preserve">
     <value>Cannot locate file "{0}" in directory. 

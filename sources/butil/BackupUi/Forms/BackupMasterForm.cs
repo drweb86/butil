@@ -242,7 +242,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
         {
             cancelButton.Enabled = false;
             _log.Close();
-            backupProgressUserControl.Stop();
 
             var powerTask = (PowerTask)_powerTaskComboBox.SelectedIndex;
 
@@ -256,12 +255,14 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
                 if (_log.HasErrors)
                 {
                     ProcessHelper.ShellExecute(_log.LogFilename);
-                    Messages.ShowErrorBox(lastMinuteConsolidatedMessage + BUtil.Configurator.Localization.Resources.BackupFailedPleaseReviewOpenedLog);
+                    backupProgressUserControl.Stop(lastMinuteConsolidatedMessage, Resources.BackupFailedPleaseReviewOpenedLog, true);
                 }
                 else
                 {
-                    MessageBox.Show(lastMinuteConsolidatedMessage + Resources.BackupProcessCompletedSuccesfully, ";-)", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 0);
+                    backupProgressUserControl.Stop(lastMinuteConsolidatedMessage, Resources.BackupProcessCompletedSuccesfully, false);
                 }
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                    BUtil.BackupUiMaster.NativeMethods.FlashWindow.Flash(this, 10);
                 return;
             }
             if (_log.HasErrors &&

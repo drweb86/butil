@@ -205,9 +205,7 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Backup failed.
-        ///
-        ///Please review opened log..
+        ///   Looks up a localized string similar to Failed (see opened log).
         /// </summary>
         internal static string BackupFailedPleaseReviewOpenedLog {
             get {
@@ -225,7 +223,7 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Backup process completed succesfully!!!.
+        ///   Looks up a localized string similar to Succeeded.
         /// </summary>
         internal static string BackupProcessCompletedSuccesfully {
             get {

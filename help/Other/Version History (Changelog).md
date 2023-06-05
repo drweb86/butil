@@ -1,3 +1,10 @@
+# 2023.06.05
+
+## Changes
+
+## Bug Fixes
+- Backup UI: After backup completion results are no longer shown on separate message, because its impossible to focus on it. Main window will flash.
+
 # 2023.06.02
 
 ## New Features

@@ -225,7 +225,7 @@ Localization created by:
     <value>Wellcome to Backup Wizard!</value>
   </data>
   <data name="BackupProcessCompletedSuccesfully" xml:space="preserve">
-    <value>Backup process completed succesfully!!!</value>
+    <value>Succeeded</value>
   </data>
   <data name="AreYouSure" xml:space="preserve">
     <value>Are you sure?</value>
@@ -574,9 +574,7 @@ In this case you can restore data by copying required files by your favourite fi
     <value>Working directory:</value>
   </data>
   <data name="BackupFailedPleaseReviewOpenedLog" xml:space="preserve">
-    <value>Backup failed.
-
-Please review opened log.</value>
+    <value>Failed (see opened log)</value>
   </data>
   <data name="ThisNameIsAlreadyTakenTryAnotherOne" xml:space="preserve">
     <value>This name is already taken. Try another one.</value>

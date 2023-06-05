@@ -1,4 +1,5 @@
 using System;
+using System.Drawing;
 
 namespace BUtil.BackupUiMaster.Controls;
 
@@ -8,6 +9,12 @@ internal partial class TitledBackUserControl : BUtil.Core.PL.BackUserControl
 	{
 		get { return titleLabel.Text; }
 		set { titleLabel.Text = value; }
+	}
+
+	public Color TitleBackground
+	{
+		get => titleLabel.BackColor;
+		set => titleLabel.BackColor = value;
 	}
 
 	public TitledBackUserControl()
