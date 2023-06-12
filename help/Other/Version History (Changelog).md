@@ -1,5 +1,8 @@
 # 2023.06.12
 
+## New Features
+- Deduplication of files packed during current iteration
+
 ## Changes
 - Reduce log size.
 

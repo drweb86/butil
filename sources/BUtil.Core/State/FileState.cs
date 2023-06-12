@@ -26,5 +26,10 @@ namespace BUtil.Core.State
                 x.Sha512 == Sha512 && 
                 ( (!excludeLastWriteTimeUtc && x.LastWriteTimeUtc == LastWriteTimeUtc) || excludeLastWriteTimeUtc);
         }
+
+        public string ToDeduplicationString()
+        {
+            return $"{LastWriteTimeUtc} {Size} {Sha512}";
+        }
     }
 }

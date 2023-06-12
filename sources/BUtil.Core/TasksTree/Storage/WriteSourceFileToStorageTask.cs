@@ -14,20 +14,26 @@ namespace BUtil.Core.TasksTree
         private readonly Quota _singleBackupQuotaGb;
         private readonly List<VersionState> _versionStates;
 
-        public StorageFile StorageFile { get; }
+        public List<StorageFile> StorageFiles { get; }
         public bool IsSkipped { get; private set; }
         public bool IsSkippedBecauseOfQuota { get; private set; }
 
         public WriteSourceFileToStorageTask(
             StorageSpecificServicesIoc services,
             BackupEvents events,
-            StorageFile storageFile,
+            List<StorageFile> storageFiles,
             Quota singleBackupQuotaGb,
             System.Collections.Generic.List<VersionState> versionStates) : 
-            base(services.Log, events, string.Format(BUtil.Core.Localization.Resources.WriteSourceFileToStorage, storageFile.FileState.FileName), TaskArea.File)
+            base(services.Log, events, string.Format(BUtil.Core.Localization.Resources.WriteSourceFileToStorage, string.Join(", ", storageFiles.Select(x => x.FileState.FileName))), TaskArea.File)
         {
             _services = services;
-            StorageFile = storageFile;
+            StorageFiles = storageFiles;
+            if (StorageFiles.Count == 0)
+                throw new InvalidOperationException("StorageFiles should not be 0 elements");
+            if (!StorageFiles.All(x => x.FileState.CompareTo(StorageFiles[0].FileState, true)))
+                throw new InvalidOperationException("StorageFiles deduplication");
+            if (StorageFiles.Count > 1 && StorageFiles.Any(x => x.StorageMethod == StorageMethodNames.Plain))
+                throw new InvalidOperationException("Invalid usage!");
             _singleBackupQuotaGb = singleBackupQuotaGb;
             _versionStates = versionStates;
         }
@@ -36,20 +42,24 @@ namespace BUtil.Core.TasksTree
         {
             UpdateStatus(ProcessingStatus.InProgress);
 
-            if (StorageFile.StorageMethod != StorageMethodNames.Plain // in plain storage - this optimization must be disabled.
+            if (StorageFiles[0].StorageMethod != StorageMethodNames.Plain // in plain storage - this optimization must be disabled.
                                                                     // because this mode is for trust and user must see changed files
                                                                     // even if it will cost him space of storage.
                 && FileAlreadyInStorage(out var matchingFile))
             {
                 LogDebug("Skipped because file is already is in storage.");
                 IsSuccess = true;
-                SetFileReferences(matchingFile);
+                StorageFiles
+                        .ForEach(x => x.SetStoragePropertiesFrom(matchingFile));
             }
-            else if (_singleBackupQuotaGb.TryQuota(StorageFile.FileState.Size))
+            else if (_singleBackupQuotaGb.TryQuota(StorageFiles[0].FileState.Size))
             {
                 try
                 {
-                    IsSuccess = _services.IncrementalBackupFileService.Upload(StorageFile);
+                    IsSuccess = _services.IncrementalBackupFileService.Upload(StorageFiles[0]);
+                    StorageFiles.Skip(1)
+                        .ToList()
+                        .ForEach(x => x.SetStoragePropertiesFrom(StorageFiles[0]));
                 }
                 catch
                 {
@@ -67,11 +77,6 @@ namespace BUtil.Core.TasksTree
             UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
         }
 
-        private void SetFileReferences(StorageFile matchingFile)
-        {
-            StorageFile.SetStoragePropertiesFrom(matchingFile);
-        }
-
         private bool FileAlreadyInStorage(out StorageFile matchingStorageFile)
         {
             matchingStorageFile = null;
@@ -87,7 +92,7 @@ namespace BUtil.Core.TasksTree
                 {
                     foreach (var createdFile in sourceItemChange.CreatedFiles)
                     {
-                        if (createdFile.FileState.CompareTo(StorageFile.FileState, true, true))
+                        if (createdFile.FileState.CompareTo(StorageFiles[0].FileState, true, true))
                         {
                             matchingStorageFile = createdFile;
                             return true;
@@ -96,7 +101,7 @@ namespace BUtil.Core.TasksTree
 
                     foreach (var updatedFile in sourceItemChange.UpdatedFiles)
                     {
-                        if (updatedFile.FileState.CompareTo(StorageFile.FileState, true, true))
+                        if (updatedFile.FileState.CompareTo(StorageFiles[0].FileState, true, true))
                         {
                             matchingStorageFile = updatedFile;
                             return true;

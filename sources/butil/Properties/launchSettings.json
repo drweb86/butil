@@ -1,8 +1,7 @@
 {
   "profiles": {
     "Configurator": {
-      "commandName": "Project",
-      "commandLineArgs": "JUSTBACKUPMASTER \"Task=My Documents\""
+      "commandName": "Project"
     }
   }
 }

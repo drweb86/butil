@@ -65,10 +65,11 @@ namespace BUtil.Core.TasksTree.Storage
                         x.StorageMethod = GetStorageMethod();
                         return x;
                     })
+                    .GroupBy(x => x.StorageMethod == StorageMethodNames.Plain ? x.FileState.FileName : x.FileState.ToDeduplicationString())
                     .Select(x => new WriteSourceFileToStorageTask(
                         _services,
                         Events,
-                        x,
+                        x.ToList(),
                         singleBackupQuotaGb,
                         versionStates))
                     .ToList();
@@ -82,7 +83,8 @@ namespace BUtil.Core.TasksTree.Storage
 
             var skippedFiles = WriteFileTasks
                 .Where(x => x.IsSkipped || !x.IsSuccess)
-                .Select(x => x.StorageFile.FileState.FileName)
+                .SelectMany(x => x.StorageFiles)
+                .Select(x => x.FileState.FileName)
                 .ToList();
 
             foreach (var sourceItemChange in versionState.SourceItemChanges)
@@ -101,11 +103,12 @@ namespace BUtil.Core.TasksTree.Storage
 
             var skippedBecauseOfQuotaFiles = WriteFileTasks
                 .Where(x => x.IsSkippedBecauseOfQuota)
+                .SelectMany (x => x.StorageFiles)
                 .ToList();
             if (skippedBecauseOfQuotaFiles.Any())
             {
                 var gigabyte = 1024 * 1024 *1024;
-                Events.Message(string.Format(BUtil.Core.Localization.Resources.BackupWasPartialDueToStorageQuota, skippedBecauseOfQuotaFiles.Count(), skippedBecauseOfQuotaFiles.Sum(x => x.StorageFile.FileState.Size) / gigabyte));
+                Events.Message(string.Format(BUtil.Core.Localization.Resources.BackupWasPartialDueToStorageQuota, skippedBecauseOfQuotaFiles.Count(), skippedBecauseOfQuotaFiles.Sum(x => x.FileState.Size) / gigabyte));
             }
         }
 

@@ -84,6 +84,8 @@ namespace BUtil.Core.TasksTree.Storage
             storageFiles.Add(_writeStateToStorageTask.StateStorageFile);
 
             var lines = storageFiles
+                .GroupBy(x => x.StorageRelativeFileName)
+                .Select(x => x.First())
                 .Select(x => $@"[void]$fileInfos.Add([FileInfo]::new(""{x.StorageRelativeFileName}"", {x.StorageFileNameSize}, ""{x.StorageIntegrityMethodInfo}""))")
                 .ToList();
             var lineContent = string.Join("\r\n", lines);
