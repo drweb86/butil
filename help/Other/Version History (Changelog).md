@@ -9,6 +9,7 @@
 ## Bug Fixes
 - Deduplication support for integrity scripts add.
 - Deduplication support for quota add.
+- Backup UI: show completion time.
 
 # 2023.06.05
 

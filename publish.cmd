@@ -15,6 +15,8 @@ if NOT %ERRORLEVEL% == 0 (
 	GOTO error;
 )
 
+
+echo NOW SEND FILE TO https://www.microsoft.com/en-us/wdsi/filesubmission to fix smart screen detection
 exit 0
 
 :error

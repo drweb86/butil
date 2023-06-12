@@ -25,13 +25,13 @@ namespace BUtil.BackupUiMaster.Controls
 
         public void Start()
         {
+            _start = DateTime.Now;
             clockTimer.Enabled = true;
             Title = Resources.BackupIsInAProgress;
         }
 
         public void Stop(string lastMinuteMessage, string generalStatus, bool isError)
         {
-            _start = DateTime.Now;
             clockTimer.Enabled = false;
             clockTimer.Stop();
 
