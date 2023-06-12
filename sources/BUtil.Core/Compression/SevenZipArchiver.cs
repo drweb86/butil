@@ -143,12 +143,10 @@ namespace BUtil.Core.Compression
             if (string.IsNullOrWhiteSpace(password))
             {
                 arguments = $@"a -y ""{archive}"" ""{file}"" -t7z -m0=lzma2 -ms=on -mx={compressionLevel} -sccUTF-8 -ssw";
-                log.WriteLine(LoggingEvent.Debug, $"Compressing \"{file}\" to \"{archive}\"");
             }
             else
             {
                 arguments = $@"a -y ""{archive}"" ""{file}"" -p""{password}"" -t7z -m0=lzma2 -ms=on -mx={compressionLevel} -mhe=on -sccUTF-8 -ssw";
-                log.WriteLine(LoggingEvent.Debug, $"Compressing \"{file}\" to \"{archive}\" with password");
             }
 
             ProcessHelper.Execute(_sevenZipPacker,
@@ -161,14 +159,19 @@ namespace BUtil.Core.Compression
                 out var returnCode);
 
             var isSuccess = returnCode == 0;
-            if (!string.IsNullOrWhiteSpace(stdOutput))
-                log.LogProcessOutput(stdOutput, isSuccess);
-            if (!string.IsNullOrWhiteSpace(stdError))
-                log.LogProcessOutput(stdError, isSuccess);
-            if (isSuccess)
-                log.WriteLine(LoggingEvent.Debug, "Pack successfull.");
+            var prefix = string.IsNullOrWhiteSpace(password) ? $"Compressing \"{file}\" to \"{archive}\"" : $"Compressing \"{file}\" to \"{archive}\" with password";
+            var eventType = isSuccess ? LoggingEvent.Debug : LoggingEvent.Error;
+            var ended = isSuccess ? " successfull" : " failed";
+            log.WriteLine(eventType, $"{prefix} {ended}");
+
             if (!isSuccess)
-                log.WriteLine(LoggingEvent.Error, "Pack failed.");
+            {
+                if (!string.IsNullOrWhiteSpace(stdOutput))
+                    log.LogProcessOutput(stdOutput, isSuccess);
+                if (!string.IsNullOrWhiteSpace(stdError))
+                    log.LogProcessOutput(stdError, isSuccess);
+            }
+
             return isSuccess;
         }
     }

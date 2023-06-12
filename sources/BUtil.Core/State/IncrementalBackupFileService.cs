@@ -60,7 +60,22 @@ namespace BUtil.Core.State
 
         public bool Upload(StorageFile storageFile)
         {
-            _log.WriteLine(LoggingEvent.Debug, $"Upload \"{storageFile.FileState.FileName}\"");
+            string postfix = null;
+            switch (storageFile.StorageMethod)
+            {
+                case StorageMethodNames.Plain:
+                    postfix = "(no compression)";
+                    break;
+
+                case StorageMethodNames.SevenZipEncrypted:
+                    postfix = "(7z, AES-256)";
+                    break;
+
+                case StorageMethodNames.SevenZip:
+                    postfix = "(7z)";
+                    break;
+            }
+            _log.WriteLine(LoggingEvent.Debug, $"Upload \"{storageFile.FileState.FileName}\" {postfix}");
 
             if (storageFile.StorageMethod == StorageMethodNames.Plain)
             {

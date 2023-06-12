@@ -1,3 +1,8 @@
+# 2023.06.12
+
+## Changes
+- Reduce log size.
+
 # 2023.06.05
 
 ## Changes
