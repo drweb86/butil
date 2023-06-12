@@ -6,6 +6,10 @@
 ## Changes
 - Reduce log size.
 
+## Bug Fixes
+- Deduplication support for integrity scripts add.
+- Deduplication support for quota add.
+
 # 2023.06.05
 
 ## Changes
