@@ -93,20 +93,8 @@ namespace BUtil.Core.PL
 
 			if (_task.Model is IncrementalBackupModelOptions)
 			{
-				var options = _task.Model as IncrementalBackupModelOptions;
-
-                _tableLayoutPanel.Enabled = !options.DisableCompressionAndEncryption;
-
-                if (options.DisableCompressionAndEncryption)
-				{
-					passwordTextBox.Text = string.Empty;
-					passwordConfirmationTextBox.Text = string.Empty;
-				}
-				else
-				{
-                    passwordTextBox.Text = _task.Password;
-                    passwordConfirmationTextBox.Text = _task.Password;
-                }
+                passwordTextBox.Text = _task.Password;
+                passwordConfirmationTextBox.Text = _task.Password;
             }
 		}
 

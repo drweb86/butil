@@ -9,7 +9,7 @@ namespace BUtil.Core.Options
             return new BackupTask
 			{
 				Name = name,
-				Model = new IncrementalBackupModelOptions { DisableCompressionAndEncryption = false },
+				Model = new IncrementalBackupModelOptions(),
 				Items =
 				{
                     new SourceItem

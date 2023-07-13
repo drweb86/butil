@@ -1,3 +1,9 @@
+# 2023.07.13
+
+## Removed Features
+- Possibility to disable compression
+- Restoration of this backup way
+
 # 2023.06.12
 
 ## New Features

@@ -2,11 +2,5 @@
 {
     public class IncrementalBackupModelOptions: IBackupModelOptions
     {
-        public bool DisableCompressionAndEncryption { get; set; }
-
-        public IncrementalBackupModelOptions()
-        {
-            DisableCompressionAndEncryption = false;
-        }
     }
 }

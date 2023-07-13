@@ -33,8 +33,6 @@ namespace BUtil.Configurator.Controls
             this._tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._chooseBackupModel = new System.Windows.Forms.Label();
             this._incrementalBackupRadioButton = new System.Windows.Forms.RadioButton();
-            this._disableCompressionEncryptionCheckBox = new System.Windows.Forms.CheckBox();
-            this._disableCompressionAndEncryptionUsagesLabel = new System.Windows.Forms.Label();
             this._backupModelLabel = new System.Windows.Forms.Label();
             this._tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
@@ -45,16 +43,12 @@ namespace BUtil.Configurator.Controls
             this._tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this._tableLayoutPanel.Controls.Add(this._chooseBackupModel, 0, 0);
             this._tableLayoutPanel.Controls.Add(this._incrementalBackupRadioButton, 0, 1);
-            this._tableLayoutPanel.Controls.Add(this._disableCompressionEncryptionCheckBox, 0, 3);
-            this._tableLayoutPanel.Controls.Add(this._disableCompressionAndEncryptionUsagesLabel, 0, 4);
             this._tableLayoutPanel.Controls.Add(this._backupModelLabel, 0, 2);
             this._tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this._tableLayoutPanel.Name = "_tableLayoutPanel";
             this._tableLayoutPanel.Padding = new System.Windows.Forms.Padding(8, 8, 8, 0);
             this._tableLayoutPanel.RowCount = 5;
-            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -84,27 +78,6 @@ namespace BUtil.Configurator.Controls
             this._incrementalBackupRadioButton.Text = "Incremental backup";
             this._incrementalBackupRadioButton.UseVisualStyleBackColor = true;
             // 
-            // _disableCompressionEncryptionCheckBox
-            // 
-            this._disableCompressionEncryptionCheckBox.AutoSize = true;
-            this._disableCompressionEncryptionCheckBox.Location = new System.Drawing.Point(11, 157);
-            this._disableCompressionEncryptionCheckBox.Name = "_disableCompressionEncryptionCheckBox";
-            this._disableCompressionEncryptionCheckBox.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this._disableCompressionEncryptionCheckBox.Size = new System.Drawing.Size(218, 27);
-            this._disableCompressionEncryptionCheckBox.TabIndex = 4;
-            this._disableCompressionEncryptionCheckBox.Text = "Disable compression and encryption";
-            this._disableCompressionEncryptionCheckBox.UseVisualStyleBackColor = true;
-            this._disableCompressionEncryptionCheckBox.CheckedChanged += new System.EventHandler(this.OnBackupModelUpdated);
-            // 
-            // _disableCompressionAndEncryptionUsagesLabel
-            // 
-            this._disableCompressionAndEncryptionUsagesLabel.AutoSize = true;
-            this._disableCompressionAndEncryptionUsagesLabel.Location = new System.Drawing.Point(11, 187);
-            this._disableCompressionAndEncryptionUsagesLabel.Name = "_disableCompressionAndEncryptionUsagesLabel";
-            this._disableCompressionAndEncryptionUsagesLabel.Size = new System.Drawing.Size(658, 120);
-            this._disableCompressionAndEncryptionUsagesLabel.TabIndex = 5;
-            this._disableCompressionAndEncryptionUsagesLabel.Text = resources.GetString("_disableCompressionAndEncryptionUsagesLabel.Text");
-            // 
             // _backupModelLabel
             // 
             this._backupModelLabel.AutoSize = true;
@@ -131,9 +104,7 @@ namespace BUtil.Configurator.Controls
 
         private System.Windows.Forms.TableLayoutPanel _tableLayoutPanel;
         private System.Windows.Forms.Label _chooseBackupModel;
-        private System.Windows.Forms.CheckBox _disableCompressionEncryptionCheckBox;
         private System.Windows.Forms.RadioButton _incrementalBackupRadioButton;
         private System.Windows.Forms.Label _backupModelLabel;
-        private System.Windows.Forms.Label _disableCompressionAndEncryptionUsagesLabel;
     }
 }

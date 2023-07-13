@@ -429,26 +429,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disable compression and encryption.
-        /// </summary>
-        internal static string DisableCompressionAndEncryption {
-            get {
-                return ResourceManager.GetString("DisableCompressionAndEncryption", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Disabling compression and encryption is designed for the following usages:
-        ///a) storing information on drives protected by BitLocker (BitLocker requires Professional Windows Edition) or protected by encrypted proxy file system software like encryptfs. On NTFS file system you can enable compression.
-        ///b) storing information on a cloud FTP, SFTP, WebDAV, Amazon S3, OpenStack Swift, Backblaze B2, Microsoft Azure &amp; OneDrive, Google Drive, and Dropbox by encrypted proxy file system Cryptomator/CyberDuck. Mounting  [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string DisableCompressionAndEncryptionDescription {
-            get {
-                return ResourceManager.GetString("DisableCompressionAndEncryptionDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Documentation.
         /// </summary>
         internal static string Documentation {

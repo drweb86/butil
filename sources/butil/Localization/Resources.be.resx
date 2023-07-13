@@ -492,16 +492,6 @@ Point to a directory containing this file.</value>
   <data name="DestinationFolderDoesNotExist" xml:space="preserve">
     <value>Destination folder does not exist.</value>
   </data>
-  <data name="DisableCompressionAndEncryption" xml:space="preserve">
-    <value>Disable compression and encryption</value>
-  </data>
-  <data name="DisableCompressionAndEncryptionDescription" xml:space="preserve">
-    <value>Disabling compression and encryption is designed for the following usages:
-a) storing information on drives protected by BitLocker (BitLocker requires Professional Windows Edition) or protected by encrypted proxy file system software like encryptfs. On NTFS file system you can enable compression.
-b) storing information on a cloud FTP, SFTP, WebDAV, Amazon S3, OpenStack Swift, Backblaze B2, Microsoft Azure &amp; OneDrive, Google Drive, and Dropbox by encrypted proxy file system Cryptomator/CyberDuck. Mounting and unmounting those storages can be done via CyberDuck CLI by adding tasks before and after backup.
-c) copying photos, large static files like films and non-sensitive information.
-In this case you can restore data by copying required files by your favourite file manager which is more convinient.</value>
-  </data>
   <data name="EditFileExcludePattern" xml:space="preserve">
     <value>Edit File Exclude Pattern...</value>
   </data>

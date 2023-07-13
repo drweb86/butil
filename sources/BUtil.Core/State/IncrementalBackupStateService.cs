@@ -86,7 +86,6 @@ namespace BUtil.Core.State
         public StorageFile Write(IncrementalBackupModelOptions incrementalBackupModelOptions, string password, IncrementalBackupState state)
         {
             _log.WriteLine(LoggingEvent.Debug, $"Writing state");
-            _services.Storage.Delete(IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile);
             _services.Storage.Delete(IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile);
             _services.Storage.Delete(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile);
 
@@ -101,23 +100,14 @@ namespace BUtil.Core.State
                 StorageIntegrityMethod = StorageIntegrityMethod.Sha512
             };
 
-            string fileToUpload;
-            if (incrementalBackupModelOptions.DisableCompressionAndEncryption)
+            var encryptionEnabled = !string.IsNullOrWhiteSpace(password);
+            storageFile.StorageRelativeFileName = encryptionEnabled ? IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile : IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile;
+            var fileToUpload = Path.Combine(tempFolder.Folder, storageFile.StorageRelativeFileName);
+            var archiver = ArchiverFactory.Create(_log);
+            if (!archiver.CompressFile(jsonFile, password, fileToUpload))
             {
-                storageFile.StorageRelativeFileName = IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile;
-                fileToUpload = jsonFile;
-            }
-            else
-            {
-                var encryptionEnabled = !string.IsNullOrWhiteSpace(password);
-                storageFile.StorageRelativeFileName = encryptionEnabled ? IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile : IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile;
-                fileToUpload = Path.Combine(tempFolder.Folder, storageFile.StorageRelativeFileName);
-                var archiver = ArchiverFactory.Create(_log);
-                if (!archiver.CompressFile(jsonFile, password, fileToUpload))
-                {
-                    _log.WriteLine(LoggingEvent.Error, $"Failed state");
-                    return null;
-                }
+                _log.WriteLine(LoggingEvent.Error, $"Failed state");
+                return null;
             }
 
             var uploadResult = _services.Storage.Upload(fileToUpload, storageFile.StorageRelativeFileName);
@@ -130,14 +120,10 @@ namespace BUtil.Core.State
 
         private static string GetStorageMethod(IncrementalBackupModelOptions incrementalBackupModelOptions, string password)
         {
-            if (incrementalBackupModelOptions.DisableCompressionAndEncryption)
-                return StorageMethodNames.Plain;
-
             if (string.IsNullOrEmpty(password))
                 return StorageMethodNames.SevenZip;
 
             return StorageMethodNames.SevenZipEncrypted;
-
         }
     }
 }

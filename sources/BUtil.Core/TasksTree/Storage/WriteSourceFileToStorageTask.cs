@@ -32,8 +32,6 @@ namespace BUtil.Core.TasksTree
                 throw new InvalidOperationException("StorageFiles should not be 0 elements");
             if (!StorageFiles.All(x => x.FileState.CompareTo(StorageFiles[0].FileState, true)))
                 throw new InvalidOperationException("StorageFiles deduplication");
-            if (StorageFiles.Count > 1 && StorageFiles.Any(x => x.StorageMethod == StorageMethodNames.Plain))
-                throw new InvalidOperationException("Invalid usage!");
             _singleBackupQuotaGb = singleBackupQuotaGb;
             _versionStates = versionStates;
         }
@@ -42,10 +40,7 @@ namespace BUtil.Core.TasksTree
         {
             UpdateStatus(ProcessingStatus.InProgress);
 
-            if (StorageFiles[0].StorageMethod != StorageMethodNames.Plain // in plain storage - this optimization must be disabled.
-                                                                    // because this mode is for trust and user must see changed files
-                                                                    // even if it will cost him space of storage.
-                && FileAlreadyInStorage(out var matchingFile))
+            if (FileAlreadyInStorage(out var matchingFile))
             {
                 LogDebug("Skipped because file is already is in storage.");
                 IsSuccess = true;

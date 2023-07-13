@@ -35,68 +35,49 @@ namespace BUtil.Core.State
             if (!Directory.Exists(destinationDir))
                 Directory.CreateDirectory(destinationDir);
 
-            if (storageFile.StorageMethod == StorageMethodNames.Plain)
+            using var tempFolder = new TempFolder();
+            var tempArchive = Path.Combine(tempFolder.Folder, "archive.7z");
+            var extractedFolder = Path.Combine(tempFolder.Folder, "Extracted");
+            _services.Storage.Download(storageFile.StorageRelativeFileName, tempArchive);
+            var archiver = ArchiverFactory.Create(_log);
+            // file can be renamed in real life.
+            if (!archiver.Extract(tempArchive, storageFile.StoragePassword, extractedFolder))
             {
-                _services.Storage.Download(storageFile.StorageRelativeFileName, destinationFileName);
+                _log.WriteLine(LoggingEvent.Error, $"Extracting \"{storageFile.FileState.FileName}\" failed");
+                return false;
             }
-            else
-            {
-                using var tempFolder = new TempFolder();
-                var tempArchive = Path.Combine(tempFolder.Folder, "archive.7z");
-                var extractedFolder = Path.Combine(tempFolder.Folder, "Extracted");
-                _services.Storage.Download(storageFile.StorageRelativeFileName, tempArchive);
-                var archiver = ArchiverFactory.Create(_log);
-                // file can be renamed in real life.
-                if (!archiver.Extract(tempArchive, storageFile.StoragePassword, extractedFolder))
-                {
-                    _log.WriteLine(LoggingEvent.Error, $"Extracting \"{storageFile.FileState.FileName}\" failed");
-                    return false;
-                }
-                var sourceFile = Directory.GetFiles(extractedFolder).Single();
-                File.Move(sourceFile, destinationFileName);
-            }
+            var sourceFile = Directory.GetFiles(extractedFolder).Single();
+            File.Move(sourceFile, destinationFileName);
             return true;
         }
 
         public bool Upload(StorageFile storageFile)
         {
-            if (storageFile.StorageMethod == StorageMethodNames.Plain)
+            using var tempFolder = new TempFolder();
+            var archiveFile = Path.Combine(tempFolder.Folder, "archive.7z");
+
+            var encryptionEnabled = storageFile.StorageMethod == StorageMethodNames.SevenZipEncrypted;
+            if (encryptionEnabled)
             {
-                var uploadResult = _services.Storage.Upload(storageFile.FileState.FileName, storageFile.StorageRelativeFileName);
-                storageFile.StorageFileNameSize = uploadResult.StorageFileNameSize;
-                storageFile.StorageFileName= uploadResult.StorageFileName;
-                storageFile.StorageIntegrityMethod = StorageIntegrityMethod.Sha512;
-                storageFile.StorageIntegrityMethodInfo = storageFile.FileState.Sha512;
-                return true;
+                storageFile.StoragePassword = RandomString();
             }
-            else
+
+            var archiver = ArchiverFactory.Create(_log);
+            if (!archiver.CompressFile(
+                storageFile.FileState.FileName,
+                storageFile.StoragePassword,
+                archiveFile))
             {
-                using var tempFolder = new TempFolder();
-                var archiveFile = Path.Combine(tempFolder.Folder, "archive.7z");
-
-                var encryptionEnabled = storageFile.StorageMethod == StorageMethodNames.SevenZipEncrypted;
-                if (encryptionEnabled)
-                {
-                    storageFile.StoragePassword = RandomString();
-                }
-
-                var archiver = ArchiverFactory.Create(_log);
-                if (!archiver.CompressFile(
-                    storageFile.FileState.FileName,
-                    storageFile.StoragePassword,
-                    archiveFile))
-                {
-                    _log.WriteLine(LoggingEvent.Error, $"Error compressing \"{storageFile.FileState.FileName}\"");
-                    return false;
-                }
-
-                var uploadResult = _services.Storage.Upload(archiveFile, storageFile.StorageRelativeFileName);
-                storageFile.StorageFileNameSize = uploadResult.StorageFileNameSize;
-                storageFile.StorageFileName = uploadResult.StorageFileName;
-                storageFile.StorageIntegrityMethod = StorageIntegrityMethod.Sha512;
-                storageFile.StorageIntegrityMethodInfo = _hashService.GetSha512(archiveFile, false);
-                return true;
+                _log.WriteLine(LoggingEvent.Error, $"Error compressing \"{storageFile.FileState.FileName}\"");
+                return false;
             }
+
+            var uploadResult = _services.Storage.Upload(archiveFile, storageFile.StorageRelativeFileName);
+            storageFile.StorageFileNameSize = uploadResult.StorageFileNameSize;
+            storageFile.StorageFileName = uploadResult.StorageFileName;
+            storageFile.StorageIntegrityMethod = StorageIntegrityMethod.Sha512;
+            storageFile.StorageIntegrityMethodInfo = _hashService.GetSha512(archiveFile, false);
+            return true;
         }
         private static string RandomString()
         {

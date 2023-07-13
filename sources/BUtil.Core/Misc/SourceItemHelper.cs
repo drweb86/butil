@@ -1,5 +1,4 @@
-﻿using BUtil.Core.BackupModels;
-using BUtil.Core.Options;
+﻿using BUtil.Core.Options;
 using BUtil.Core.State;
 using System;
 using System.IO;
@@ -33,19 +32,6 @@ namespace BUtil.Core.Misc
             return "????-??-??-T-??-??-??";
         }
 
-        public static string GetUnencryptedUncompressedStorageRelativeFileName(
-            VersionState versionState,
-            SourceItem sourceItem,
-            string sourceItemRelativeFileName)
-        {
-            var readableDate = GetVersionFolder(versionState.BackupDateUtc);
-
-            return Path.Combine(
-                readableDate,
-                GetUnencryptedUncompressedSourceItemTargetFriendlyName(sourceItem),
-                sourceItemRelativeFileName);
-        }
-
         public static string GetCompressedStorageRelativeFileName(VersionState versionState)
         {
             var readableDate = GetVersionFolder(versionState.BackupDateUtc);
@@ -53,13 +39,6 @@ namespace BUtil.Core.Misc
             return Path.Combine(
                 readableDate,
                 $"{Guid.NewGuid()}.7z");
-        }
-
-        public static string GetUnencryptedUncompressedSourceItemTargetFriendlyName(SourceItem sourceItem)
-        {
-            var lastPart = Path.GetFileName(sourceItem.Target);
-
-            return $"{lastPart}_{sourceItem.Id}";
         }
     }
 }

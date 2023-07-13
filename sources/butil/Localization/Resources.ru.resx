@@ -470,16 +470,6 @@
   <data name="ChooseBackupModel" xml:space="preserve">
     <value>Укажите модель резервного копирования</value>
   </data>
-  <data name="DisableCompressionAndEncryption" xml:space="preserve">
-    <value>Отключить сжатие и шифрование</value>
-  </data>
-  <data name="DisableCompressionAndEncryptionDescription" xml:space="preserve">
-    <value>Отключение сжатия и шифрования предусмотрено для следующих вариантов использования:
-а) хранение бэкапа на диске, защищенном BitLocker (BitLocker требует Professional Windows Edition) или защищенными прокси-файловыми системами, как encryptfs. В файловой системе NTFS можно включить сжатие.
-б) хранение бэкапа в облаке FTP, SFTP, WebDAV, Amazon S3, OpenStack Swift, Backblaze B2, Microsoft Azure &amp; OneDrive, Google Drive, и Dropbox посредством шифрованной файловой прокси-системы Cryptomator/CyberDuck. Подключение и отключение в виде дисков может быть сделано посредством CyberDuck CLI через добавление заданий до и после РК.
-в) копирование фотографий, больших статических файлов как фильмы и несекретной информации.
-В этом случае вы можете восстановить данные посредством копирования требуемых файлов в вашем любом вашем любимом файловом менеджере.</value>
-  </data>
   <data name="How" xml:space="preserve">
     <value>Как ?</value>
   </data>

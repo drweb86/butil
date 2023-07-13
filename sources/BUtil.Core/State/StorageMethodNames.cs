@@ -2,7 +2,6 @@
 {
     public static class StorageMethodNames
     {
-        public const string Plain = "Plain";
         public const string SevenZip = "7z";
         public const string SevenZipEncrypted = "Encrypted 7z";
     }

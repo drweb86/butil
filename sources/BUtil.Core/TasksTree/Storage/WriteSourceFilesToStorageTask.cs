@@ -59,13 +59,13 @@ namespace BUtil.Core.TasksTree.Storage
                     .Select(x =>
                     {
                         var sourceItemRelativeFileName = SourceItemHelper.GetSourceItemRelativeFileName(sourceItemDir, x.FileState);
-                        string storageRelativeFileName = GetStorageRelativeFileName(versionState, sourceItemChange, sourceItemRelativeFileName);
+                        string storageRelativeFileName = GetStorageRelativeFileName(versionState);
 
                         x.StorageRelativeFileName = storageRelativeFileName;
                         x.StorageMethod = GetStorageMethod();
                         return x;
                     })
-                    .GroupBy(x => x.StorageMethod == StorageMethodNames.Plain ? x.FileState.FileName : x.FileState.ToDeduplicationString())
+                    .GroupBy(x => x.FileState.ToDeduplicationString())
                     .Select(x => new WriteSourceFileToStorageTask(
                         _services,
                         Events,
@@ -114,9 +114,6 @@ namespace BUtil.Core.TasksTree.Storage
 
         private string GetStorageMethod()
         {
-            if (_incrementalBackupModelOptions.DisableCompressionAndEncryption)
-                return StorageMethodNames.Plain;
-
             if (string.IsNullOrEmpty(_password))
                 return StorageMethodNames.SevenZip;
 
@@ -124,14 +121,8 @@ namespace BUtil.Core.TasksTree.Storage
 
         }
 
-        private string GetStorageRelativeFileName(VersionState versionState, SourceItemChanges sourceItemChange, string sourceItemRelativeFileName)
+        private string GetStorageRelativeFileName(VersionState versionState)
         {
-            if (_incrementalBackupModelOptions.DisableCompressionAndEncryption)
-                return SourceItemHelper.GetUnencryptedUncompressedStorageRelativeFileName(
-                                            versionState,
-                                            sourceItemChange.SourceItem,
-                                            sourceItemRelativeFileName);
-
             return SourceItemHelper.GetCompressedStorageRelativeFileName(versionState);
         }
     }
