@@ -6,11 +6,11 @@ namespace BUtil.ConsoleBackup.UI{
     using System.Linq;
     using Terminal.Gui;
 
-    public partial class MyView {
+    public partial class MainView {
         private readonly Controller _controller;
         private List<string> _taskNames;
         
-        internal MyView(Controller controller) {
+        internal MainView(Controller controller) {
             InitializeComponent();
 
             _taskNames = controller.BackupTaskStoreService.GetNames().ToList();
@@ -83,6 +83,11 @@ namespace BUtil.ConsoleBackup.UI{
             {
                 e.Handled = true;
                 Application.MainLoop.Invoke(OnDeleteSelectedBackupTask);
+            }
+            if (e.KeyEvent.Key == Key.Enter)
+            {
+                e.Handled = true;
+                Application.MainLoop.Invoke(OnRunSelectedBackupTask);
             }
         }
     }

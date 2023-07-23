@@ -2,14 +2,10 @@
 namespace BUtil.ConsoleBackup.UI {
     using Terminal.Gui;
     
-    public partial class MyView : Terminal.Gui.Toplevel
+    public partial class MainView : Terminal.Gui.Toplevel
     {
         private Terminal.Gui.FrameView itemsFrame;
         private Terminal.Gui.ListView itemsListView;
-        
-        private Terminal.Gui.StatusBar statusBar;
-        
-        private Terminal.Gui.StatusItem f1EditMe;
         
         private Terminal.Gui.MenuBar menuBar;
 
@@ -21,24 +17,12 @@ namespace BUtil.ConsoleBackup.UI {
 
         private void InitializeComponent() {
             this.menuBar = new Terminal.Gui.MenuBar();
-            this.statusBar = new Terminal.Gui.StatusBar();
             this.Width = Dim.Fill(0);
             this.Height = Dim.Fill(0);
             this.X = 0;
             this.Y = 0;
             this.Modal = false;
             this.TextAlignment = Terminal.Gui.TextAlignment.Left;
-            this.statusBar.Width = Dim.Fill(0);
-            this.statusBar.Height = 1;
-            this.statusBar.X = 1;
-            this.statusBar.Y = Pos.AnchorEnd(1);
-            this.statusBar.Data = "statusBar";
-            this.statusBar.Text = "Run (F5)";
-            this.statusBar.TextAlignment = Terminal.Gui.TextAlignment.Left;
-            this.f1EditMe = new Terminal.Gui.StatusItem(((Terminal.Gui.Key)(1048588u)), "F1 - Edit Me", null);
-            this.statusBar.Items = new Terminal.Gui.StatusItem[] {
-                    this.f1EditMe};
-            this.Add(this.statusBar);
             this.menuBar.Width = Dim.Fill(0);
             this.menuBar.Height = 1;
             this.menuBar.X = 0;
@@ -51,11 +35,10 @@ namespace BUtil.ConsoleBackup.UI {
 
             this.runMenu = new Terminal.Gui.MenuBarItem
             {
-                Title = "_Run (F5)",
+                Title = "_Run (F5, Enter)",
                 Shortcut = Key.F5,
                 Action = () => this.OnRunSelectedBackupTask(),
             };
-            this.runMenu.Title = "_Run (F5)";
 
             this.createMenu = new Terminal.Gui.MenuBarItem
             {
@@ -104,7 +87,6 @@ namespace BUtil.ConsoleBackup.UI {
             };
             itemsListView.KeyDown += OnListShortcutKeyDown;
 
-            // itemsListView.OpenSelectedItem += ScenarioListView_OpenSelectedItem;
             itemsFrame.Add(itemsListView);
             this.Add(this.itemsFrame);
         }
