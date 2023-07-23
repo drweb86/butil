@@ -15,17 +15,21 @@ namespace BUtil.ConsoleBackup.UI {
     
     public partial class MyView : Terminal.Gui.Toplevel
     {
+        private Terminal.Gui.FrameView itemsFrame;
+        private Terminal.Gui.ListView itemsListView;
         
         private Terminal.Gui.StatusBar statusBar;
         
         private Terminal.Gui.StatusItem f1EditMe;
         
         private Terminal.Gui.MenuBar menuBar;
-        
-        private Terminal.Gui.MenuBarItem runF5Menu;
-        
-        private Terminal.Gui.MenuItem editMeMenuItem;
-        
+
+        private Terminal.Gui.MenuBarItem infoMenu;
+        private Terminal.Gui.MenuBarItem runMenu;
+        private Terminal.Gui.MenuBarItem createMenu;
+        private Terminal.Gui.MenuBarItem editMenu;
+        private Terminal.Gui.MenuBarItem deleteMenu;
+
         private void InitializeComponent() {
             this.menuBar = new Terminal.Gui.MenuBar();
             this.statusBar = new Terminal.Gui.StatusBar();
@@ -52,16 +56,64 @@ namespace BUtil.ConsoleBackup.UI {
             this.menuBar.Y = 0;
             this.menuBar.Data = "menuBar";
             this.menuBar.TextAlignment = Terminal.Gui.TextAlignment.Left;
-            this.runF5Menu = new Terminal.Gui.MenuBarItem();
-            this.runF5Menu.Title = "_Run (F5)";
-            this.editMeMenuItem = new Terminal.Gui.MenuItem();
-            this.editMeMenuItem.Title = "Edit Me";
-            this.editMeMenuItem.Data = "editMeMenuItem";
-            this.runF5Menu.Children = new Terminal.Gui.MenuItem[] {
-                    this.editMeMenuItem};
+
+            this.infoMenu = new Terminal.Gui.MenuBarItem();
+            this.infoMenu.Title = "BUtil CLI UI";
+
+            this.runMenu = new Terminal.Gui.MenuBarItem
+            {
+                Title = "_Run (F5)",
+                Shortcut = Key.F5,
+            };
+            this.runMenu.Title = "_Run (F5)";
+
+            this.createMenu = new Terminal.Gui.MenuBarItem
+            {
+                Title = "_Create (N)",
+                Shortcut = Key.CtrlMask | Key.N,
+            };
+
+            this.editMenu = new Terminal.Gui.MenuBarItem
+            {
+                Title = "_Edit (F4)",
+                Shortcut = Key.F4,
+            };
+
+            this.deleteMenu = new Terminal.Gui.MenuBarItem
+            {
+                Title = "_Delete (F8)",
+                Shortcut = Key.F8
+            };
+
             this.menuBar.Menus = new Terminal.Gui.MenuBarItem[] {
-                    this.runF5Menu};
+                this.infoMenu,
+                    this.runMenu, this.createMenu, this.editMenu, this.deleteMenu};
             this.Add(this.menuBar);
+            itemsFrame = new FrameView("Tasks")
+            {
+                X = 0,
+                Y = 1, // for menu
+                Width = Dim.Fill(),
+                Height = Dim.Fill(1),
+                CanFocus = true,
+                Shortcut = Key.CtrlMask | Key.T
+            };
+            itemsFrame.Title = $"{itemsFrame.Title} ({itemsFrame.ShortcutTag})";
+            itemsFrame.ShortcutAction = () => itemsFrame.SetFocus();
+
+            itemsListView = new ListView()
+            {
+                X = 0,
+                Y = 0,
+                Width = Dim.Fill(0),
+                Height = Dim.Fill(0),
+                AllowsMarking = false,
+                CanFocus = true,
+            };
+
+            // itemsListView.OpenSelectedItem += ScenarioListView_OpenSelectedItem;
+            itemsFrame.Add(itemsListView);
+            this.Add(this.itemsFrame);
         }
     }
 }
