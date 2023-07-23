@@ -86,6 +86,7 @@ namespace BUtil.ConsoleBackup.UI {
                 CanFocus = true,
             };
             itemsListView.KeyDown += OnListShortcutKeyDown;
+            itemsListView.OpenSelectedItem += e => OnRunSelectedBackupTask();
 
             itemsFrame.Add(itemsListView);
             this.Add(this.itemsFrame);

@@ -84,11 +84,6 @@ namespace BUtil.ConsoleBackup.UI{
                 e.Handled = true;
                 Application.MainLoop.Invoke(OnDeleteSelectedBackupTask);
             }
-            if (e.KeyEvent.Key == Key.Enter)
-            {
-                e.Handled = true;
-                Application.MainLoop.Invoke(OnRunSelectedBackupTask);
-            }
         }
     }
 }
