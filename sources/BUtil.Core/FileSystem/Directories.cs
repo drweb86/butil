@@ -53,9 +53,6 @@ namespace BUtil.Core.FileSystem
         {
         	CreateDirectory(_userDataFolder);
             CreateDirectory(_logsDir);
-            
-            if (!Directory.Exists(_binariesDir))
-                throw new DirectoryNotFoundException(_binariesDir);
             if (!Directory.Exists(_dataFolder))
 				throw new DirectoryNotFoundException(_dataFolder);
         }

@@ -19,6 +19,8 @@ namespace BUtil.ConsoleBackup
             PerformCriticalChecks();
         }
 
+        public BackupTaskStoreService BackupTaskStoreService => new BackupTaskStoreService();
+
         public bool ParseCommandLineArguments(string[] args)
         {
             args ??= Array.Empty<string>();

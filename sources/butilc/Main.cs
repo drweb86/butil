@@ -4,18 +4,19 @@ using BUtil.Core;
 using BUtil.Core.Misc;
 using System;
 using Terminal.Gui;
+using BUtil.Core.Options;
 
-NativeMethods.PreventSleep();
 Console.OutputEncoding = System.Text.Encoding.UTF8;
 Console.WriteLine(CopyrightInfo.Copyright);
 Console.WriteLine();
 
 try
 {
+    NativeMethods.PreventSleep();
+    using var controller = new Controller();
+
     if (args.Length != 0)
     {
-
-        using var controller = new Controller();
         if (!controller.ParseCommandLineArguments(args))
             return 1;
 
@@ -28,9 +29,10 @@ try
     {
         Application.Init();
 
+        var taskNames = controller.BackupTaskStoreService.GetNames();
         try
         {
-            Application.Run(new MyView());
+            Application.Run(new MyView(taskNames));
         }
         finally
         {
