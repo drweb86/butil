@@ -130,6 +130,12 @@
 		rem Copy MS System Globbing
 		xcopy "%userprofile%\.nuget\packages\microsoft.extensions.filesystemglobbing\7.0.0\lib\net7.0" "$(SolutionDir)..\Output\BUtil\bin" /Y
 
+		rem Copy Terminal.GUI
+		xcopy "%userprofile%\.nuget\packages\terminal.gui\1.13.4\lib\net7.0" "$(SolutionDir)..\Output\BUtil\bin" /Y
+
+		rem Copy NStack
+		xcopy "%userprofile%\.nuget\packages\nstack.core\1.0.7\lib\netstandard2.0" "$(SolutionDir)..\Output\BUtil\bin" /Y
+
 	</PreBuildEvent>
   </PropertyGroup>
 </Project>

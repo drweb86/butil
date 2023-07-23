@@ -5,7 +5,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>BUtil.ConsoleBackup</RootNamespace>
     <AssemblyName>butilc</AssemblyName>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>False</SignAssembly>
 <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
 <UseCommonOutputDirectory>true</UseCommonOutputDirectory>
@@ -13,7 +13,7 @@
     <DelaySign>False</DelaySign>
     <NoStdLib>False</NoStdLib>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <StartArguments>-DoOutputInLogs</StartArguments>
+    <StartArguments></StartArguments>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <RunCodeAnalysis>false</RunCodeAnalysis>
@@ -53,6 +53,12 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Deployment|AnyCPU'">
     <OutputPath>bin\Deployment\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>7</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <WarningLevel>7</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\SharedAssemblyInfo.cs">
@@ -104,5 +110,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Terminal.Gui" Version="1.13.4" />
   </ItemGroup>
 </Project>
