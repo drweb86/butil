@@ -72,7 +72,7 @@ namespace BUtil.ConsoleBackup.UI {
 
             this.deleteMenu = new Terminal.Gui.MenuBarItem
             {
-                Title = "_Delete (F8)",
+                Title = "_Delete (F8, Del)",
                 Shortcut = Key.F8,
                 Action = () => this.OnDeleteSelectedBackupTask(),
             };
@@ -102,6 +102,7 @@ namespace BUtil.ConsoleBackup.UI {
                 AllowsMarking = false,
                 CanFocus = true,
             };
+            itemsListView.KeyDown += OnListShortcutKeyDown;
 
             // itemsListView.OpenSelectedItem += ScenarioListView_OpenSelectedItem;
             itemsFrame.Add(itemsListView);

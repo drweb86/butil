@@ -4,7 +4,8 @@ namespace BUtil.ConsoleBackup.UI{
     using System;
     using System.Collections.Generic;
     using System.Linq;
-        
+    using Terminal.Gui;
+
     public partial class MyView {
         private readonly Controller _controller;
         private List<string> _taskNames;
@@ -74,6 +75,15 @@ namespace BUtil.ConsoleBackup.UI{
             _taskNames.RemoveAll(x => string.Compare(x, task.Name, System.StringComparison.OrdinalIgnoreCase) == 0);
             _taskNames.Add(task.Name);
             _taskNames.Sort(StringComparer.OrdinalIgnoreCase);
+        }
+
+        private void OnListShortcutKeyDown(KeyEventEventArgs e)
+        {
+            if (e.KeyEvent.Key == Key.DeleteChar)
+            {
+                e.Handled = true;
+                Application.MainLoop.Invoke(OnDeleteSelectedBackupTask);
+            }
         }
     }
 }
