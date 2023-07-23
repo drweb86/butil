@@ -53,25 +53,28 @@ namespace BUtil.ConsoleBackup.UI {
             {
                 Title = "_Run (F5)",
                 Shortcut = Key.F5,
+                Action = () => this.OnRunSelectedBackupTask(),
             };
             this.runMenu.Title = "_Run (F5)";
 
             this.createMenu = new Terminal.Gui.MenuBarItem
             {
-                Title = "_Create (N)",
-                Shortcut = Key.CtrlMask | Key.N,
+                Title = "_Create",
+                Action = () => this.OnCreateBackupTask(),
             };
 
             this.editMenu = new Terminal.Gui.MenuBarItem
             {
                 Title = "_Edit (F4)",
                 Shortcut = Key.F4,
+                Action = () => this.OnEditSelectedBackupTask(),
             };
 
             this.deleteMenu = new Terminal.Gui.MenuBarItem
             {
                 Title = "_Delete (F8)",
-                Shortcut = Key.F8
+                Shortcut = Key.F8,
+                Action = () => this.OnDeleteSelectedBackupTask(),
             };
 
             this.menuBar.Menus = new Terminal.Gui.MenuBarItem[] {

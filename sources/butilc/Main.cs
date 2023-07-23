@@ -4,7 +4,6 @@ using BUtil.Core;
 using BUtil.Core.Misc;
 using System;
 using Terminal.Gui;
-using BUtil.Core.Options;
 
 Console.OutputEncoding = System.Text.Encoding.UTF8;
 Console.WriteLine(CopyrightInfo.Copyright);
@@ -32,7 +31,7 @@ try
         var taskNames = controller.BackupTaskStoreService.GetNames();
         try
         {
-            Application.Run(new MyView(taskNames));
+            Application.Run(new MyView(controller));
         }
         finally
         {
