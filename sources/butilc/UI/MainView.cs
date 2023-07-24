@@ -65,6 +65,9 @@ namespace BUtil.ConsoleBackup.UI{
 
         public void OnCreateBackupTask()
         {
+            var dialog = new EditMediaSyncDialog(null);
+            Application.Run(dialog);
+
             var task = new BackupTask
             {
                 Name = "New Test!",
