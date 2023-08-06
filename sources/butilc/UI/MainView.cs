@@ -46,6 +46,21 @@ namespace BUtil.ConsoleBackup.UI{
                     "In Backup CLI UI you can only edit media sync tasks.");
                 return;
             }
+            
+            var dialog = new EditMediaSyncDialog(task);
+            Application.Run(dialog);
+
+            if (dialog.Canceled)
+                return;
+
+            _controller.BackupTaskStoreService.Delete(task.Name);
+            _taskNames.RemoveAll(x => string.Compare(x, task.Name, System.StringComparison.OrdinalIgnoreCase) == 0);
+
+            var updatedTask = dialog.BackupTask;
+            _controller.BackupTaskStoreService.Save(updatedTask);
+            _taskNames.Add(updatedTask.Name);
+            _taskNames.Sort(StringComparer.OrdinalIgnoreCase);
+            this.itemsListView.SetNeedsDisplay();
         }
 
         public void OnDeleteSelectedBackupTask()
@@ -68,16 +83,16 @@ namespace BUtil.ConsoleBackup.UI{
             var dialog = new EditMediaSyncDialog(null);
             Application.Run(dialog);
 
-            var task = new BackupTask
-            {
-                Name = "New Test!",
-                Model = new MediaSyncBackupModelOptions(),
-            };
+            if (dialog.Canceled)
+                return;
+
+            var task = dialog.BackupTask;
             _controller.BackupTaskStoreService.Save(task);
 
             _taskNames.RemoveAll(x => string.Compare(x, task.Name, System.StringComparison.OrdinalIgnoreCase) == 0);
             _taskNames.Add(task.Name);
             _taskNames.Sort(StringComparer.OrdinalIgnoreCase);
+            this.itemsListView.SetNeedsDisplay();
         }
 
         private void OnListShortcutKeyDown(KeyEventEventArgs e)
