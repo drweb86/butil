@@ -35,7 +35,6 @@ namespace BUtil.Configurator.Controls
             this.storagesButton = new System.Windows.Forms.Button();
             this.schedulerButton = new System.Windows.Forms.Button();
             this.encryptionButton = new System.Windows.Forms.Button();
-            this.otherOptionsButton = new System.Windows.Forms.Button();
             this.howButton = new System.Windows.Forms.Button();
             this._tableLayoutPanel = new BUtil.Configurator.Configurator.Controls.Common.TransparentTableLayoutPanel();
             this._nameButton = new System.Windows.Forms.Button();
@@ -114,24 +113,6 @@ namespace BUtil.Configurator.Controls
             this.encryptionButton.UseVisualStyleBackColor = false;
             this.encryptionButton.Click += new System.EventHandler(this.EncryptionButtonClick);
             // 
-            // otherOptionsButton
-            // 
-            this.otherOptionsButton.BackColor = System.Drawing.SystemColors.Control;
-            this.otherOptionsButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.otherOptionsButton.FlatAppearance.BorderSize = 0;
-            this.otherOptionsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.otherOptionsButton.Image = global::BUtil.Configurator.Icons.OtherSettings48x48;
-            this.otherOptionsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.otherOptionsButton.Location = new System.Drawing.Point(5, 490);
-            this.otherOptionsButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.otherOptionsButton.Name = "otherOptionsButton";
-            this.otherOptionsButton.Size = new System.Drawing.Size(190, 73);
-            this.otherOptionsButton.TabIndex = 4;
-            this.otherOptionsButton.Text = "Other options";
-            this.otherOptionsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.otherOptionsButton.UseVisualStyleBackColor = false;
-            this.otherOptionsButton.Click += new System.EventHandler(this.OtherOptionsButtonClick);
-            // 
             // howButton
             // 
             this.howButton.BackColor = System.Drawing.SystemColors.Control;
@@ -155,7 +136,6 @@ namespace BUtil.Configurator.Controls
             this._tableLayoutPanel.BackColor = System.Drawing.SystemColors.Control;
             this._tableLayoutPanel.ColumnCount = 1;
             this._tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this._tableLayoutPanel.Controls.Add(this.otherOptionsButton, 0, 6);
             this._tableLayoutPanel.Controls.Add(this.encryptionButton, 0, 5);
             this._tableLayoutPanel.Controls.Add(this.howButton, 0, 4);
             this._tableLayoutPanel.Controls.Add(this.storagesButton, 0, 3);
@@ -166,8 +146,7 @@ namespace BUtil.Configurator.Controls
             this._tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this._tableLayoutPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this._tableLayoutPanel.Name = "_tableLayoutPanel";
-            this._tableLayoutPanel.RowCount = 8;
-            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this._tableLayoutPanel.RowCount = 7;
             this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
@@ -213,7 +192,6 @@ namespace BUtil.Configurator.Controls
             this.ResumeLayout(false);
 
         }
-		private System.Windows.Forms.Button otherOptionsButton;
 		private System.Windows.Forms.Button encryptionButton;
 		private System.Windows.Forms.Button schedulerButton;
 		private System.Windows.Forms.Button storagesButton;

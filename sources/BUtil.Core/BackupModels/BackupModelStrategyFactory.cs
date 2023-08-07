@@ -1,5 +1,6 @@
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
+using BUtil.Core.TasksTree.IncrementalModel;
 using System;
 
 namespace BUtil.Core.BackupModels
@@ -10,6 +11,8 @@ namespace BUtil.Core.BackupModels
         {
             if (task.Model is IncrementalBackupModelOptions)
                 return new IncrementalBackupModelStrategy(log, task);
+            if (task.Model is MediaSyncBackupModelOptions)
+                return new MediaSyncBackupModelStrategy(log, task);
             throw new ArgumentOutOfRangeException(nameof(task));
         }
     }

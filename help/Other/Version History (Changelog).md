@@ -1,8 +1,9 @@
-# 2023.07.13
+# 2023.08.08
 
 ## Removed Features
 - Possibility to disable compression
 - Restoration of this backup way
+- Drop execute tasks before/after backup because of no usage.
 
 # 2023.06.12
 

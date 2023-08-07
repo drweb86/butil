@@ -38,14 +38,14 @@
     <Compile Update="Configurator\AboutProgramUI\AboutForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Configurator\Controls\Tasks\HowUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Configurator\Controls\Tasks\What\FileExcludePatternForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Configurator\Controls\Tasks\What\WhatUserControl.cs">
       <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Configurator\Forms\BackupEventTaskInfoEditingForm.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Update="Configurator\Forms\EditBackupTaskForm.cs">
       <SubType>Form</SubType>

@@ -101,12 +101,6 @@
     <Compile Update="Configurator\Controls\Tasks\TaskNavigationControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Configurator\Controls\Tasks\HowUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Configurator\Controls\Tasks\OtherTaskOptionsUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="Configurator\Forms\SambaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,9 +112,6 @@
     </Compile>
     <Compile Update="Configurator\Controls\Tasks\WhatUserControl.cs" />
     <Compile Update="Configurator\Controls\Tasks\WhereUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Configurator\Controls\Tasks\ExecuteProgramTaskInfoListControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="BackupUi\Controls\BackupProgressUserControl.cs">

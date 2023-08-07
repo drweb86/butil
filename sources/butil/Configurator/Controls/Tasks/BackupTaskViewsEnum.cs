@@ -8,6 +8,5 @@
         Storages,
         Scheduler,
         Encryption,
-        OtherOptions,
     }
 }

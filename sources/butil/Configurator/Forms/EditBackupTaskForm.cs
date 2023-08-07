@@ -40,7 +40,6 @@ namespace BUtil.Configurator.Configurator.Forms
             _views.Add(BackupTaskViewsEnum.Scheduler, new WhenUserControl());
             _views.Add(BackupTaskViewsEnum.How, new HowUserControl(_task));
             _views.Add(BackupTaskViewsEnum.Encryption, encryptionControl);
-            _views.Add(BackupTaskViewsEnum.OtherOptions, new OtherTaskOptionsUserControl());
             foreach (KeyValuePair<BackupTaskViewsEnum, BackUserControl> pair in _views)
             {
                 pair.Value.HelpLabel = _toolStripStatusLabel;
@@ -95,7 +94,6 @@ namespace BUtil.Configurator.Configurator.Forms
             _views[BackupTaskViewsEnum.Name].SetOptionsToUi(_task);
             _views[BackupTaskViewsEnum.Storages].SetOptionsToUi(_task);
             _views[BackupTaskViewsEnum.Scheduler].SetOptionsToUi(_scheduleInfo);
-            _views[BackupTaskViewsEnum.OtherOptions].SetOptionsToUi(new object[] { _task });
         }
 
         private void ViewChangeNotification(BackupTaskViewsEnum newView)

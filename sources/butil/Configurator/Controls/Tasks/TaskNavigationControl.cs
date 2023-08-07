@@ -65,21 +65,19 @@ namespace BUtil.Configurator.Controls
 		override public void ApplyLocalization()
 		{
 		    var buttons = new[] {_nameButton, itemsForBackupButton, howButton,
-				storagesButton, schedulerButton, encryptionButton, otherOptionsButton};
+				storagesButton, schedulerButton, encryptionButton};
 
 			_nameButton.Text = Resources.Name;
 			itemsForBackupButton.Text = Resources.What;
 			storagesButton.Text = Resources.Where;
 			schedulerButton.Text = Resources.When;
 			encryptionButton.Text = Resources.Encryption;
-			otherOptionsButton.Text = Resources.OtherOptions;
             howButton.Text = Resources.How;
             SetHintForControl(_nameButton, Resources.Name);
             SetHintForControl(itemsForBackupButton, Resources.HereYouMayAddFoldersAndFilesYouWantToBackup);
 			SetHintForControl(storagesButton, Resources.InThisPlaceYouCanAddLocationsWhereYouWouldLikeYourBackupToBeCopiedAfterCompletionOfBackup);
 			SetHintForControl(schedulerButton, Resources.HereYouCanSetUpASchedulerShcedulerCanHelpYouToAutomateCreationOfBackups);
 			SetHintForControl(encryptionButton, Resources.ProtectionOfBackupWithPasswordItIsRequiredWhenYouWantYourDataToBeCopiedSomewhereOverTheNetwork);
-			SetHintForControl(otherOptionsButton, Resources.MiscellaneousOptions);
             SetHintForControl(howButton, Resources.HowHint);
 
             foreach (var button in buttons)
@@ -172,11 +170,6 @@ namespace BUtil.Configurator.Controls
 		void EncryptionButtonClick(object sender, EventArgs e)
 		{
             changeView(sender, BackupTaskViewsEnum.Encryption);
-		}
-		
-		void OtherOptionsButtonClick(object sender, EventArgs e)
-		{
-            changeView(sender, BackupTaskViewsEnum.OtherOptions);
 		}
 		
 		void leftPanelUserControlLoad(object sender, EventArgs e)

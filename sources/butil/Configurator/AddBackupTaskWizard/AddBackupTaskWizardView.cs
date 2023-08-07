@@ -50,7 +50,6 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
             _steps.Add(new PageInfo(Resources.When, Resources.YouCanSetDaysAndTimesWhenYouWantToStartThisBackupJob, RegisterControl(BackupTaskViewsEnum.Scheduler, new WhenUserControl()), Icons.Schedule48x48));
             _steps.Add(new PageInfo(Resources.How, Resources.HowHint, RegisterControl(BackupTaskViewsEnum.How, new HowUserControl(Task)), Icons.ActionsOfficeChartPieIcon48x48));
             _steps.Add(new PageInfo(Resources.Encryption, Resources.HereYouCanProtectTheBackupWithPasswordThisIsAlsoRequiredForCopyingItOverNetwork, RegisterControl(BackupTaskViewsEnum.Encryption, encryptionUserControl), Icons.Password48x48));
-            _steps.Add(new PageInfo(Resources.OtherOptions, Resources.HereYouCanSpecifyOtherSettings, RegisterControl(BackupTaskViewsEnum.OtherOptions, new OtherTaskOptionsUserControl()), Icons.OtherSettings48x48));
 
             _step = 0;
 
@@ -74,7 +73,6 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
             _controls[BackupTaskViewsEnum.Name].SetOptionsToUi(Task);
             _controls[BackupTaskViewsEnum.Storages].SetOptionsToUi(Task);
             _controls[BackupTaskViewsEnum.Scheduler].SetOptionsToUi(ScheduleInfo);
-            _controls[BackupTaskViewsEnum.OtherOptions].SetOptionsToUi(new object[] { Task });
         }
 
         public void ApplyLocalization()
