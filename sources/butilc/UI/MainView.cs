@@ -1,8 +1,10 @@
 namespace BUtil.ConsoleBackup.UI{
     using BUtil.Core.BackupModels;
+    using BUtil.Core.FileSystem;
     using BUtil.Core.Options;
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Linq;
     using Terminal.Gui;
 
@@ -24,12 +26,16 @@ namespace BUtil.ConsoleBackup.UI{
                 return;
 
             var taskName = _taskNames[this.itemsListView.SelectedItem];
-            var task = _controller.BackupTaskStoreService.Load(taskName);
-            if (!(task.Model is MediaSyncBackupModelOptions))
+
+            var processStartInfo = new ProcessStartInfo
             {
-                Terminal.Gui.MessageBox.ErrorQuery("Not supported!", "In Backup CLI UI you can only launch media sync tasks.");
-                return;
-            }
+                UseShellExecute = true,
+                CreateNoWindow = false,
+                WindowStyle = ProcessWindowStyle.Normal,
+                FileName = Files.ConsoleBackupTool,
+                Arguments = $"\"Task={taskName}\"",
+            };
+            Process.Start(processStartInfo);
         }
 
         public void OnEditSelectedBackupTask()

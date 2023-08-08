@@ -9,6 +9,7 @@ using BUtil.Configurator.AddBackupTaskWizard.View;
 using System.Linq;
 using BUtil.Core.Logs;
 using System.Diagnostics;
+using BUtil.Core.BackupModels;
 
 namespace BUtil.Configurator.Configurator.Controls
 {
@@ -110,6 +111,11 @@ namespace BUtil.Configurator.Configurator.Controls
             var taskName = _tasksListView.SelectedItems[0].Text;
             var backupTaskStoreService = new BackupTaskStoreService();
             var task = backupTaskStoreService.Load(taskName);
+            if (!(task.Model is IncrementalBackupModelOptions))
+            {
+                Messages.ShowErrorBox("To change this task launch console CLI");
+                return;
+            }
 
             var backupTaskSchedulerService = new BackupTaskSchedulerService();
             var scheduleInfo = backupTaskSchedulerService.GetSchedule(taskName);

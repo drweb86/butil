@@ -8,7 +8,8 @@ namespace BUtil.ConsoleBackup.UI{
 
     public partial class EditMediaSyncDialog
     {
-        internal EditMediaSyncDialog(BackupTask task) {
+        internal EditMediaSyncDialog(BackupTask task) 
+        {
             InitializeComponent();
 
             if (task == null)
@@ -17,7 +18,7 @@ namespace BUtil.ConsoleBackup.UI{
                 destinationTextField.Text = Path.Combine(
                     Environment.GetFolderPath(Environment.SpecialFolder.MyPictures),
                     "Camera Roll");
-                transformFileNameTextField.Text = "{INPUT NAME ONCE}\\{DATE:dddd, dd MMMM yyyy}";
+                transformFileNameTextField.Text = "{DATE:yyyy}\\{DATE:yyyy'-'MM', 'MMMM}\\{DATE:yyyy'-'MM'-'dd', 'dddd}\\{DATE:yyyy'-'MM'-'dd' 'HH'-'mm'-'ss}";
                 Title = "Create";
             }
             else

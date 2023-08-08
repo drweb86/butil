@@ -1,7 +1,8 @@
 {
   "profiles": {
     "Configurator": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "commandLineArgs": "JustBackupMaster \"Task=Check DCIM\""
     }
   }
 }

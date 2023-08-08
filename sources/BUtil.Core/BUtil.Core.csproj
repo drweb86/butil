@@ -52,10 +52,13 @@
   <ItemGroup>
     <Compile Remove="Jobs\**" />
     <Compile Remove="Synchronization\**" />
+    <Compile Remove="TasksTree\Apps\**" />
     <EmbeddedResource Remove="Jobs\**" />
     <EmbeddedResource Remove="Synchronization\**" />
+    <EmbeddedResource Remove="TasksTree\Apps\**" />
     <None Remove="Jobs\**" />
     <None Remove="Synchronization\**" />
+    <None Remove="TasksTree\Apps\**" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\SharedAssemblyInfo.cs">
@@ -114,9 +117,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="TasksTree\Apps\" />
   </ItemGroup>
   <PropertyGroup>
     <PreBuildEvent>

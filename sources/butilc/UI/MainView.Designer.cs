@@ -31,7 +31,7 @@ namespace BUtil.ConsoleBackup.UI {
             this.menuBar.TextAlignment = Terminal.Gui.TextAlignment.Left;
 
             this.infoMenu = new Terminal.Gui.MenuBarItem();
-            this.infoMenu.Title = "BUtil CLI UI";
+            this.infoMenu.Title = "BUtil CLI";
 
             this.runMenu = new Terminal.Gui.MenuBarItem
             {

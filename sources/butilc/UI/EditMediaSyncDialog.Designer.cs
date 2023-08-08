@@ -20,13 +20,21 @@ namespace BUtil.ConsoleBackup.UI {
                 AutoSize = true,
                 X = 0,
                 Y = 0,
+                Text = "Moves files from Camera DCIM folder with template string replacement (alpha, preview)."
+            });
+
+            Add(new Label
+            {
+                AutoSize = true,
+                X = 0,
+                Y = 2,
                 Text = "Title"
             });
 
             titleTextField = new TextField
             {
                 X = 0,
-                Y = 1,
+                Y = 3,
                 Width = Dim.Fill(0),
             };
             Add(titleTextField);
@@ -35,7 +43,7 @@ namespace BUtil.ConsoleBackup.UI {
             {
                 AutoSize = true,
                 X = 0,
-                Y = 3,
+                Y = 5,
                 Text = "DCIM folder on media device"
             });
 
@@ -43,7 +51,7 @@ namespace BUtil.ConsoleBackup.UI {
             {
                 Text = "c:\\",
                 X = 0,
-                Y = 4,
+                Y = 6,
                 Width = Dim.Fill(0),
             };
             Add(mediaSourceTextField);
@@ -62,7 +70,7 @@ namespace BUtil.ConsoleBackup.UI {
             {
                 AutoSize = true,
                 X = 0,
-                Y = 6,
+                Y = 8,
                 Text = "Library folder at PC"
             });
 
@@ -70,7 +78,7 @@ namespace BUtil.ConsoleBackup.UI {
             {
                 Text = "c:\\",
                 X = 0,
-                Y = 7,
+                Y = 9,
                 Width = Dim.Fill(0),
             };
             Add(destinationTextField);
@@ -89,7 +97,7 @@ namespace BUtil.ConsoleBackup.UI {
             {
                 AutoSize = true,
                 X = 0,
-                Y = 9,
+                Y = 11,
                 Text = "Transform file name:"
             });
 
@@ -97,7 +105,7 @@ namespace BUtil.ConsoleBackup.UI {
             {
                 Text = "c:\\",
                 X = 0,
-                Y = 10,
+                Y = 12,
                 Width = Dim.Fill(0),
             };
             Add(transformFileNameTextField);
@@ -105,8 +113,8 @@ namespace BUtil.ConsoleBackup.UI {
             {
                 AutoSize = true,
                 X = 0,
-                Y = 11,
-                Text = "Tokens:\n{INPUT NAME ONCE} - Inputs name once for all pictures\n{DATE:Format} - Inserts file modification date in the specified format.\nExample: {DATE:MMMM dd}.\nTo see all options google \"C# DateTime Format\""
+                Y = 13,
+                Text = "Tokens:\n{DATE:Format} - Inserts file modification date in the specified format.\nExample: {DATE:MMMM dd}.\nTo see all options google \"C# DateTime Format\""
             });
 
 

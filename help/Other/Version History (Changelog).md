@@ -1,8 +1,12 @@
 # 2023.08.08
 
+## New Features
+- (preview, unstable) DCIM files moval with template string
+- CLI for creating DCIM files moval task, launch them
+
 ## Removed Features
 - Possibility to disable compression
-- Restoration of this backup way
+! Restoration of this backup way
 - Drop execute tasks before/after backup because of no usage.
 
 # 2023.06.12
