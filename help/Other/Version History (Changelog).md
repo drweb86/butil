@@ -1,4 +1,4 @@
-# 2023.08.08
+# 2023.08.10
 
 ## New Features
 - (preview, unstable) DCIM files moval with template string

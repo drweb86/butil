@@ -27,15 +27,9 @@ namespace BUtil.ConsoleBackup.UI{
 
             var taskName = _taskNames[this.itemsListView.SelectedItem];
 
-            var processStartInfo = new ProcessStartInfo
-            {
-                UseShellExecute = true,
-                CreateNoWindow = false,
-                WindowStyle = ProcessWindowStyle.Normal,
-                FileName = Files.ConsoleBackupTool,
-                Arguments = $"\"Task={taskName}\"",
-            };
-            Process.Start(processStartInfo);
+            var task = _controller.BackupTaskStoreService.Load(taskName);
+            var dialog = new BackupDialog(task);
+            Application.Run(dialog);
         }
 
         public void OnEditSelectedBackupTask()
