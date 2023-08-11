@@ -88,4 +88,13 @@ butilc.exe Help
   <data name="TherereNoBackupTaskWithTitle0" xml:space="preserve">
     <value>Задания на резервное копирование с заголовком "{0}" не существует.</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="BackupProcessCompletedSuccesfully" xml:space="preserve">
+    <value>Бэкап закончен успешно!</value>
+  </data>
+  <data name="BackupFailedPleaseReviewOpenedLog" xml:space="preserve">
+    <value>Бэкап провален (посмотрите открывшийся лог)</value>
+  </data>
 </root>

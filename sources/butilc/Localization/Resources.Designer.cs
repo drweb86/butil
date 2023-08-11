@@ -61,11 +61,38 @@ namespace BUtil.ConsoleBackup.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Backup has failed (see opened log).
+        /// </summary>
+        internal static string BackupFailedPleaseReviewOpenedLog {
+            get {
+                return ResourceManager.GetString("BackupFailedPleaseReviewOpenedLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backup is succeeded!.
+        /// </summary>
+        internal static string BackupProcessCompletedSuccesfully {
+            get {
+                return ResourceManager.GetString("BackupProcessCompletedSuccesfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cannot open file log due to crytical error {0}.
         /// </summary>
         internal static string CannotOpenFileLogDueToCryticalError0 {
             get {
                 return ResourceManager.GetString("CannotOpenFileLogDueToCryticalError0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        internal static string Close {
+            get {
+                return ResourceManager.GetString("Close", resourceCulture);
             }
         }
         

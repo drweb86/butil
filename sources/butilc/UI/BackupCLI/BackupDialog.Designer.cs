@@ -1,10 +1,16 @@
 
 namespace BUtil.ConsoleBackup.UI {
+    using BUtil.ConsoleBackup.Localization;
+    using BUtil.Core.Events;
+    using System.ComponentModel;
     using Terminal.Gui;
     
     public partial class BackupDialog : Terminal.Gui.Dialog
     {
+        private readonly BackupEvents _backupEvents = new();
         private Terminal.Gui.ListView _listView;
+        private readonly BackgroundWorker _backgroundWorker = new() { WorkerSupportsCancellation = true };
+        private readonly ListViewItemDataSource _dataSource = new();
 
         private void InitializeComponent() {
             this.Width = Dim.Fill(0);
@@ -18,16 +24,25 @@ namespace BUtil.ConsoleBackup.UI {
                 Height = Dim.Fill(),
                 Width = Dim.Fill(),
             };
-            _listView.RowRender += OnRowRender;
+
+            _listView.RowRender += OnRenderRow;
+            _listView.SetSource(_dataSource);
             Add(_listView);
 
             var closeButton = new Button
             {
-                Text = "Close",
+                Text = Resources.Close,
                 IsDefault = true,
             };
-            closeButton.Clicked += OnClose;
+            closeButton.Clicked += OnClickClose;
             AddButton(closeButton);
+
+            _backgroundWorker.DoWork += OnBackgroundWorkerDoWork;
+            _backgroundWorker.RunWorkerCompleted += OnBackgroundWorkerCompleted;
+
+            _backupEvents.OnTaskProgress += OnTaskProgress;
+            _backupEvents.OnDuringExecutionTasksAdded += OnDuringExecutionTasksAdded;
+            _backupEvents.OnMessage += OnAddLastMinuteMessageToUser;
         }
     }
 }
