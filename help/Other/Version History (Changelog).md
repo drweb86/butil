@@ -1,7 +1,7 @@
-# 2023.08.10
+# 2023.08.11
 
 ## New Features
-- (preview, unstable) DCIM files moval with template string
+- DCIM files moval with template string
 - CLI for creating DCIM files moval task, launch them
 
 ## Removed Features

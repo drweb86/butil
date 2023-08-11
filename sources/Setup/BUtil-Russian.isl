@@ -306,6 +306,7 @@ AssocingFileExtension=Связывание %1 с файлами %2...
 ; Messages For Installer
 Backup=Резервное копирование
 Configurator=Настройка резервного копирования
+ConfiguratorCli=Настройка резервного копирования (консоль)
 Console_Backup=Резервное копирование в коммандной строке
 Backup_Wizard=Резервное копирование
 Restoration=Восстановление

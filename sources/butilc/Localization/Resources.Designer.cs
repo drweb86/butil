@@ -61,6 +61,42 @@ namespace BUtil.ConsoleBackup.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to _Create.
+        /// </summary>
+        internal static string _Create {
+            get {
+                return ResourceManager.GetString("_Create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Delete (F8, Del).
+        /// </summary>
+        internal static string _DeleteF8Del {
+            get {
+                return ResourceManager.GetString("_DeleteF8Del", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Edit (F4).
+        /// </summary>
+        internal static string _EditF4 {
+            get {
+                return ResourceManager.GetString("_EditF4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Run (F5, Enter).
+        /// </summary>
+        internal static string _RunF5Enter {
+            get {
+                return ResourceManager.GetString("_RunF5Enter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Backup has failed (see opened log).
         /// </summary>
         internal static string BackupFailedPleaseReviewOpenedLog {
@@ -102,6 +138,15 @@ namespace BUtil.ConsoleBackup.Localization {
         internal static string CreatePhotosVideosMovalTask {
             get {
                 return ResourceManager.GetString("CreatePhotosVideosMovalTask", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        internal static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
             }
         }
         
@@ -180,6 +225,15 @@ namespace BUtil.ConsoleBackup.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please confirm deletion of &quot;{0}&quot;.
+        /// </summary>
+        internal static string PleaseConfirmDeletionOf0 {
+            get {
+                return ResourceManager.GetString("PleaseConfirmDeletionOf0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please, specify the backup task title using the command line argument &quot;{0}My backup task title&quot;
         ///Example: butilc.exe &quot;{0}My backup title&quot;.
         /// </summary>
@@ -205,6 +259,15 @@ namespace BUtil.ConsoleBackup.Localization {
         internal static string SourceFolderDoesNotExist {
             get {
                 return ResourceManager.GetString("SourceFolderDoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Задания.
+        /// </summary>
+        internal static string Tasks {
+            get {
+                return ResourceManager.GetString("Tasks", resourceCulture);
             }
         }
         
@@ -271,6 +334,15 @@ namespace BUtil.ConsoleBackup.Localization {
         internal static string UsageVariantsNNbackupExeTaskMyTaskTitleNRunningWithoutParametersOutputsInformationToConsoleNNbackupExeTaskMyTask1TitleTaskMyTask2TitleTaskMyTask3TitleNRunsSeveralTasksOneByOneNNbackupExeTaskMyTaskTitleUsefilelogNOutputsInformationInFileLogNNbackupExeTaskMyTaskTitleShutdownNbackupExeTaskMyTaskTitleLogoffNbackupExeTaskMyTaskTitleSuspendNbackupExeTaskMyTaskTitleRebootNbackupExeTaskMyTaskTitleHibernateNNbackupExeHelpNOutputsBriefHelpN {
             get {
                 return ResourceManager.GetString(@"UsageVariantsNNbackupExeTaskMyTaskTitleNRunningWithoutParametersOutputsInformationToConsoleNNbackupExeTaskMyTask1TitleTaskMyTask2TitleTaskMyTask3TitleNRunsSeveralTasksOneByOneNNbackupExeTaskMyTaskTitleUsefilelogNOutputsInformationInFileLogNNbackupExeTaskMyTaskTitleShutdownNbackupExeTaskMyTaskTitleLogoffNbackupExeTaskMyTaskTitleSuspendNbackupExeTaskMyTaskTitleRebootNbackupExeTaskMyTaskTitleHibernateNNbackupExeHelpNOutputsBriefHelpN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You cannot edit this type of task in CLI..
+        /// </summary>
+        internal static string YouCannotEditThisTypeOfTaskInCLI {
+            get {
+                return ResourceManager.GetString("YouCannotEditThisTypeOfTaskInCLI", resourceCulture);
             }
         }
     }

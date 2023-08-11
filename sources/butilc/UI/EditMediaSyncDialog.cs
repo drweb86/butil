@@ -21,14 +21,14 @@ namespace BUtil.ConsoleBackup.UI{
                     Environment.GetFolderPath(Environment.SpecialFolder.MyPictures),
                     "Camera Roll");
                 _transformFileNameTextField.Text = "{DATE:yyyy}\\{DATE:yyyy'-'MM', 'MMMM}\\{DATE:yyyy'-'MM'-'dd', 'dddd}\\{DATE:yyyy'-'MM'-'dd' 'HH'-'mm'-'ss}";
-                Title = BUtil.ConsoleBackup.Localization.Resources.CreatePhotosVideosMovalTask;
+                Title = Resources.CreatePhotosVideosMovalTask;
             }
             else
             {
                 _sourceFolderTextField.Text = task.Items[0].Target;
                 _destinationFolderTextField.Text = ((FolderStorageSettings)task.Storages[0]).DestinationFolder;
                 _transformFileNameTextField.Text = ((MediaSyncBackupModelOptions)task.Model).TransformFileName;
-                Title = string.Format(BUtil.ConsoleBackup.Localization.Resources.PhotosVideosMovalTask, task.Name);
+                Title = string.Format(Resources.PhotosVideosMovalTask, task.Name);
                 _titleTextField.Text = task.Name;
             }
         }

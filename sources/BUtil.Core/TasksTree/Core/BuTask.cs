@@ -2,14 +2,13 @@
 using BUtil.Core.Logs;
 using System;
 using System.Collections.Generic;
-using System.Threading;
 
 namespace BUtil.Core.TasksTree.Core
 {
     public abstract class BuTask
     {
         public Guid Id { get; } = Guid.NewGuid();
-        public string Title { get; }
+        public string Title { get; protected set; }
         public TaskArea TaskArea { get; }
         protected readonly BackupEvents Events;
         protected readonly ILog Log;

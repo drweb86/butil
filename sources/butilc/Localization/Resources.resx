@@ -197,4 +197,28 @@ To see all options google "C# DateTime format".</value>
   <data name="TitleIsEmptyOrContainsNotSupportedPathCharacters" xml:space="preserve">
     <value>Title is empty or contains not supported path characters.</value>
   </data>
+  <data name="_Create" xml:space="preserve">
+    <value>_Create</value>
+  </data>
+  <data name="Tasks" xml:space="preserve">
+    <value>Задания</value>
+  </data>
+  <data name="_RunF5Enter" xml:space="preserve">
+    <value>_Run (F5, Enter)</value>
+  </data>
+  <data name="_EditF4" xml:space="preserve">
+    <value>_Edit (F4)</value>
+  </data>
+  <data name="_DeleteF8Del" xml:space="preserve">
+    <value>_Delete (F8, Del)</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="PleaseConfirmDeletionOf0" xml:space="preserve">
+    <value>Please confirm deletion of "{0}"</value>
+  </data>
+  <data name="YouCannotEditThisTypeOfTaskInCLI" xml:space="preserve">
+    <value>You cannot edit this type of task in CLI.</value>
+  </data>
 </root>

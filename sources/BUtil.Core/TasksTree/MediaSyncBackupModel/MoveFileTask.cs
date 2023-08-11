@@ -1,40 +1,40 @@
 ﻿using BUtil.Core.Events;
+using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.TasksTree.Core;
 using System;
-using System.Globalization;
 using System.IO;
 using System.Text.RegularExpressions;
-using System.Windows.Forms;
 
-namespace BUtil.Core.TasksTree.IncrementalModel
+namespace BUtil.Core.TasksTree.MediaSyncBackupModel
 {
     class MoveFileTask : BuTask
     {
         private readonly string _from;
         private readonly string _toFolder;
         private readonly string _transformFileName;
+        private readonly string _destinationFileName;
 
         public MoveFileTask(ILog log, BackupEvents backupEvents, string from, string toFolder, string transformFileName)
-            : base(log, backupEvents, string.Format("Move {0} to {1}", from, toFolder), TaskArea.File)
+            : base(log, backupEvents, string.Empty, TaskArea.File)
         {
             _from = from;
             _toFolder = toFolder;
             _transformFileName = transformFileName;
+
+            var destFile = GetDestinationFileName();
+            _destinationFileName = GetActualDestinationFileName(destFile);
+
+            Title = string.Format(Resources.MoveFileToDestFolder, Path.GetFileNameWithoutExtension(from), _destinationFileName);
         }
 
         public override void Execute()
         {
             UpdateStatus(ProcessingStatus.InProgress);
 
-            var destFile = GetDestinationFileName();
-
-            var destFolder = Path.GetDirectoryName(destFile);
+            var destFolder = Path.GetDirectoryName(_destinationFileName);
             Directory.CreateDirectory(destFolder);
-
-            var actualDestFile = GetActualDestinationFileName(destFile);
-            this.LogDebug($"Move {_from} to {actualDestFile}.");
-            File.Move(_from, actualDestFile);
+            File.Move(_from, _destinationFileName);
             IsSuccess = true;
 
             UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
@@ -72,7 +72,7 @@ namespace BUtil.Core.TasksTree.IncrementalModel
 
             var actualFolder = Path.Combine(_toFolder, relativeDir);
             var destFile = Path.Combine(actualFolder, $"{relativeFileName}{Path.GetExtension(_from)}");
-            
+
             return destFile;
         }
 

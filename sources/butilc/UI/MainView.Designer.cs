@@ -1,5 +1,6 @@
 
 namespace BUtil.ConsoleBackup.UI {
+    using BUtil.ConsoleBackup.Localization;
     using Terminal.Gui;
     
     public partial class MainView : Terminal.Gui.Toplevel
@@ -9,7 +10,6 @@ namespace BUtil.ConsoleBackup.UI {
         
         private Terminal.Gui.MenuBar menuBar;
 
-        private Terminal.Gui.MenuBarItem infoMenu;
         private Terminal.Gui.MenuBarItem runMenu;
         private Terminal.Gui.MenuBarItem createMenu;
         private Terminal.Gui.MenuBarItem editMenu;
@@ -30,50 +30,54 @@ namespace BUtil.ConsoleBackup.UI {
             this.menuBar.Data = "menuBar";
             this.menuBar.TextAlignment = Terminal.Gui.TextAlignment.Left;
 
-            this.infoMenu = new Terminal.Gui.MenuBarItem();
-            this.infoMenu.Title = "BUtil CLI";
+            var infoMenu = new Terminal.Gui.MenuBarItem();
+            infoMenu.Title = "BUtil CLI";
 
             this.runMenu = new Terminal.Gui.MenuBarItem
             {
-                Title = "_Run (F5, Enter)",
+                Title = BUtil.ConsoleBackup.Localization.Resources._RunF5Enter,
                 Shortcut = Key.F5,
                 Action = () => this.OnRunSelectedBackupTask(),
             };
 
+            var createPhotoVideoMovalTask = new Terminal.Gui.MenuBarItem
+            {
+                Title = Resources.CreatePhotosVideosMovalTask,
+                Action = () => this.OnCreateBackupTask(),
+            };
+
             this.createMenu = new Terminal.Gui.MenuBarItem
             {
-                Title = "_Create",
-                Action = () => this.OnCreateBackupTask(),
+                Title = BUtil.ConsoleBackup.Localization.Resources._Create,
+                Children = new[] { createPhotoVideoMovalTask },
             };
 
             this.editMenu = new Terminal.Gui.MenuBarItem
             {
-                Title = "_Edit (F4)",
+                Title = BUtil.ConsoleBackup.Localization.Resources._EditF4,
                 Shortcut = Key.F4,
                 Action = () => this.OnEditSelectedBackupTask(),
             };
 
             this.deleteMenu = new Terminal.Gui.MenuBarItem
             {
-                Title = "_Delete (F8, Del)",
+                Title = BUtil.ConsoleBackup.Localization.Resources._DeleteF8Del,
                 Shortcut = Key.F8,
                 Action = () => this.OnDeleteSelectedBackupTask(),
             };
 
             this.menuBar.Menus = new Terminal.Gui.MenuBarItem[] {
-                this.infoMenu,
+                infoMenu,
                     this.runMenu, this.createMenu, this.editMenu, this.deleteMenu};
             this.Add(this.menuBar);
-            itemsFrame = new FrameView("Tasks")
+            itemsFrame = new FrameView(Resources.Tasks)
             {
                 X = 0,
                 Y = 1, // for menu
                 Width = Dim.Fill(),
                 Height = Dim.Fill(1),
                 CanFocus = true,
-                Shortcut = Key.CtrlMask | Key.T
             };
-            itemsFrame.Title = $"{itemsFrame.Title} ({itemsFrame.ShortcutTag})";
             itemsFrame.ShortcutAction = () => itemsFrame.SetFocus();
 
             itemsListView = new ListView()

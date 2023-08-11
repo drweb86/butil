@@ -8,14 +8,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace BUtil.Core.TasksTree.IncrementalModel
+namespace BUtil.Core.TasksTree.MediaSyncBackupModel
 {
     class MoveFilesTask : SequentialBuTask
     {
         private readonly BackupTask _task;
 
         public MoveFilesTask(ILog log, BackupEvents backupEvents, BackupTask backupTask)
-            : base(log, backupEvents, "Move files", TaskArea.ProgramInRunBeforeAfterBackupChain, null)
+            : base(log, backupEvents, BUtil.Core.Localization.Resources.MoveFilesTask_MoveFiles, TaskArea.ProgramInRunBeforeAfterBackupChain, null)
         {
             Children = new List<BuTask>();
             _task = backupTask;
@@ -31,7 +31,7 @@ namespace BUtil.Core.TasksTree.IncrementalModel
 
             var tasks = Directory
                 .GetFiles(fromFolder, "*.*", SearchOption.AllDirectories)
-                .Select(x => new MoveFileTask(Log, this.Events, x, destinationFolder, transformFileName))
+                .Select(x => new MoveFileTask(Log, Events, x, destinationFolder, transformFileName))
                 .ToList();
             Events.DuringExecutionTasksAdded(Id, tasks);
             Children = tasks;

@@ -138,4 +138,25 @@ butilc.exe Help
   <data name="TitleIsEmptyOrContainsNotSupportedPathCharacters" xml:space="preserve">
     <value>Заголовок пуст или содержит символы пути.</value>
   </data>
+  <data name="_Create" xml:space="preserve">
+    <value>_Создать</value>
+  </data>
+  <data name="_RunF5Enter" xml:space="preserve">
+    <value>_Запустить (F5, ввод)</value>
+  </data>
+  <data name="_EditF4" xml:space="preserve">
+    <value>_Изменить (F4)</value>
+  </data>
+  <data name="_DeleteF8Del" xml:space="preserve">
+    <value>_Удалить (F8, Del)</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="PleaseConfirmDeletionOf0" xml:space="preserve">
+    <value>Подтвердите удаление задачи "{0}"</value>
+  </data>
+  <data name="YouCannotEditThisTypeOfTaskInCLI" xml:space="preserve">
+    <value>Вы не можете редактировать этот тип задания здесь.</value>
+  </data>
 </root>

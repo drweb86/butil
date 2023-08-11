@@ -1,12 +1,12 @@
 ﻿using BUtil.Core.Events;
-using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
 using BUtil.Core.TasksTree.Core;
+using BUtil.Core.TasksTree.IncrementalModel;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BUtil.Core.TasksTree.IncrementalModel
+namespace BUtil.Core.TasksTree.MediaSyncBackupModel
 {
     class MediaSyncBackupTask : SequentialBuTask
     {
@@ -14,7 +14,7 @@ namespace BUtil.Core.TasksTree.IncrementalModel
         private readonly StorageSpecificServicesIoc _storageService;
 
         public MediaSyncBackupTask(ILog log, BackupEvents backupEvents, BackupTask backupTask)
-            : base(log, backupEvents, Resources.IncrementalBackup, TaskArea.ProgramInRunBeforeAfterBackupChain, new[] { new MoveFilesTask(log, backupEvents, backupTask) })
+            : base(log, backupEvents, string.Empty, TaskArea.ProgramInRunBeforeAfterBackupChain, new[] { new MoveFilesTask(log, backupEvents, backupTask) })
         {
             _commonServicesIoc = new CommonServicesIoc();
 

@@ -1,18 +1,18 @@
-namespace BUtil.ConsoleBackup.UI{
-    using BUtil.Core.BackupModels;
-    using BUtil.Core.FileSystem;
-    using BUtil.Core.Options;
-    using System;
-    using System.Collections.Generic;
-    using System.Diagnostics;
-    using System.Linq;
-    using Terminal.Gui;
+using BUtil.Core.BackupModels;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Terminal.Gui;
 
-    public partial class MainView {
+namespace BUtil.ConsoleBackup.UI{
+
+    partial class MainView 
+    {
         private readonly Controller _controller;
         private List<string> _taskNames;
         
-        internal MainView(Controller controller) {
+        internal MainView(Controller controller) 
+        {
             InitializeComponent();
 
             _taskNames = controller.BackupTaskStoreService.GetNames().ToList();
@@ -41,9 +41,7 @@ namespace BUtil.ConsoleBackup.UI{
             var task = _controller.BackupTaskStoreService.Load(taskName);
             if (!(task.Model is MediaSyncBackupModelOptions))
             {
-                Terminal.Gui.MessageBox.ErrorQuery(
-                    "Not supported!", 
-                    "In Backup CLI UI you can only edit media sync tasks.");
+                Terminal.Gui.MessageBox.ErrorQuery(string.Empty, BUtil.ConsoleBackup.Localization.Resources.YouCannotEditThisTypeOfTaskInCLI);
                 return;
             }
             
@@ -69,8 +67,8 @@ namespace BUtil.ConsoleBackup.UI{
                 return;
 
             var taskName = _taskNames[this.itemsListView.SelectedItem];
-            if (Terminal.Gui.MessageBox.Query("Confirm deletion", $"Please confirm deletion of {taskName}",
-                "Delete", "Cancel") != 0)
+            if (Terminal.Gui.MessageBox.Query(string.Empty, string.Format(Localization.Resources.PleaseConfirmDeletionOf0, taskName),
+                BUtil.ConsoleBackup.Localization.Resources.Delete, BUtil.Core.Localization.Resources.Cancel) != 0)
                 return;
 
             _controller.BackupTaskStoreService.Delete(taskName);

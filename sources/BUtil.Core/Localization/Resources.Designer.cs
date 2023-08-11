@@ -393,6 +393,24 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Move files.
+        /// </summary>
+        public static string MoveFilesTask_MoveFiles {
+            get {
+                return ResourceManager.GetString("MoveFilesTask_MoveFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Move &quot;{0}&quot; to &quot;{1}&quot;.
+        /// </summary>
+        public static string MoveFileToDestFolder {
+            get {
+                return ResourceManager.GetString("MoveFileToDestFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Normal.
         /// </summary>
         public static string Normal {
