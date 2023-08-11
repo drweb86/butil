@@ -1,14 +1,13 @@
 
 namespace BUtil.ConsoleBackup.UI {
-    using System;
     using Terminal.Gui;
     
     public partial class EditMediaSyncDialog : Terminal.Gui.Dialog
     {
-        private Terminal.Gui.TextField titleTextField;
-        private Terminal.Gui.TextField mediaSourceTextField;
-        private Terminal.Gui.TextField destinationTextField;
-        private Terminal.Gui.TextField transformFileNameTextField;
+        private Terminal.Gui.TextField _titleTextField;
+        private Terminal.Gui.TextField _sourceFolderTextField;
+        private Terminal.Gui.TextField _destinationFolderTextField;
+        private Terminal.Gui.TextField _transformFileNameTextField;
 
         private void InitializeComponent() {
             this.Width = Dim.Fill(0);
@@ -20,107 +19,79 @@ namespace BUtil.ConsoleBackup.UI {
                 AutoSize = true,
                 X = 0,
                 Y = 0,
-                Text = "Moves files from Camera DCIM folder with template string replacement (alpha, preview)."
+                Text = BUtil.ConsoleBackup.Localization.Resources.Title
             });
+
+            _titleTextField = new TextField
+            {
+                X = 0,
+                Y = 1,
+                Width = Dim.Fill(0),
+            };
+            Add(_titleTextField);
 
             Add(new Label
             {
                 AutoSize = true,
-                X = 0,
-                Y = 2,
-                Text = "Title"
-            });
-
-            titleTextField = new TextField
-            {
                 X = 0,
                 Y = 3,
+                Text = BUtil.ConsoleBackup.Localization.Resources.PhotosVideosFolderOnMediaDevice
+            });
+
+            _sourceFolderTextField = new TextField
+            {
+                Text = string.Empty,
+                X = 0,
+                Y = 4,
                 Width = Dim.Fill(0),
             };
-            Add(titleTextField);
+            Add(_sourceFolderTextField);
 
             Add(new Label
             {
                 AutoSize = true,
-                X = 0,
-                Y = 5,
-                Text = "DCIM folder on media device"
-            });
-
-            mediaSourceTextField = new TextField
-            {
-                Text = "c:\\",
                 X = 0,
                 Y = 6,
+                Text = BUtil.ConsoleBackup.Localization.Resources.DestinationFolder
+            });
+
+            _destinationFolderTextField = new TextField
+            {
+                Text = string.Empty,
+                X = 0,
+                Y = 7,
                 Width = Dim.Fill(0),
             };
-            Add(mediaSourceTextField);
-
-            //Add(new Button
-            //{
-            //    Text = "Browse",
-            //    X = 0,
-            //    Y = 5,
-            //    AutoSize = true,
-            //});
-
-
+            Add(_destinationFolderTextField);
 
             Add(new Label
             {
                 AutoSize = true,
                 X = 0,
-                Y = 8,
-                Text = "Library folder at PC"
+                Y = 9,
+                Text = BUtil.ConsoleBackup.Localization.Resources.FileNameTransformations
             });
 
-            destinationTextField = new TextField
+            _transformFileNameTextField = new TextField
             {
-                Text = "c:\\",
+                Text = string.Empty,
                 X = 0,
-                Y = 9,
+                Y = 10,
                 Width = Dim.Fill(0),
             };
-            Add(destinationTextField);
-
-            //Add(new Button
-            //{
-            //    Text = "Browse",
-            //    X = 0,
-            //    Y = 9,
-            //    AutoSize = true,
-            //});
-
-
-
+            Add(_transformFileNameTextField);
             Add(new Label
             {
                 AutoSize = true,
                 X = 0,
                 Y = 11,
-                Text = "Transform file name:"
-            });
-
-            transformFileNameTextField = new TextField
-            {
-                Text = "c:\\",
-                X = 0,
-                Y = 12,
-                Width = Dim.Fill(0),
-            };
-            Add(transformFileNameTextField);
-            Add(new Label
-            {
-                AutoSize = true,
-                X = 0,
-                Y = 13,
-                Text = "Tokens:\n{DATE:Format} - Inserts file modification date in the specified format.\nExample: {DATE:MMMM dd}.\nTo see all options google \"C# DateTime Format\""
+                Text = BUtil.ConsoleBackup.Localization.Resources.HelpForTokens
             });
 
 
             var saveButton = new Button
             {
-                Text = "Save",
+                Text = BUtil.ConsoleBackup.Localization.Resources.Save,
                 IsDefault = true,
             };
             saveButton.Clicked += OnSave;
@@ -128,7 +99,7 @@ namespace BUtil.ConsoleBackup.UI {
 
             var cancelButton = new Button
             {
-                Text = "Cancel",
+                Text = BUtil.Core.Localization.Resources.Cancel,
             };
             cancelButton.Clicked += OnCancel;
             AddButton(cancelButton);

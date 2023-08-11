@@ -1,11 +1,11 @@
-﻿namespace BUtil.ConsoleBackup.UI
-{
-    using BUtil.Core;
-    using BUtil.Core.Events;
-    using BUtil.Core.TasksTree.Core;
-    using System;
-    using Terminal.Gui;
+﻿using BUtil.Core;
+using BUtil.Core.Events;
+using BUtil.Core.TasksTree.Core;
+using System;
+using Terminal.Gui;
 
+namespace BUtil.ConsoleBackup.UI
+{
     class ListViewItem
     {
         public Guid Id { get; set; }

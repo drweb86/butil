@@ -1,9 +1,9 @@
-﻿namespace BUtil.ConsoleBackup.UI
-{
-    using System.Collections;
-    using System.Collections.Generic;
-    using Terminal.Gui;
+﻿using System.Collections;
+using System.Collections.Generic;
+using Terminal.Gui;
 
+namespace BUtil.ConsoleBackup.UI
+{
     class ListViewItemDataSource : List<ListViewItem>, IListDataSource
     {
         public int Length => Count;

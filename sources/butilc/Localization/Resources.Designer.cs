@@ -97,11 +97,85 @@ namespace BUtil.ConsoleBackup.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create Photos/Videos moval task.
+        /// </summary>
+        internal static string CreatePhotosVideosMovalTask {
+            get {
+                return ResourceManager.GetString("CreatePhotosVideosMovalTask", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Destination directory does not exist..
+        /// </summary>
+        internal static string DestinationDirectoryDoesNotExist {
+            get {
+                return ResourceManager.GetString("DestinationDirectoryDoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Destination folder:.
+        /// </summary>
+        internal static string DestinationFolder {
+            get {
+                return ResourceManager.GetString("DestinationFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        internal static string Error {
+            get {
+                return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error: Invalid command parameters specified!!!.
         /// </summary>
         internal static string ErrorInvalidCommandParametersSpecified {
             get {
                 return ResourceManager.GetString("ErrorInvalidCommandParametersSpecified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File name transformations:.
+        /// </summary>
+        internal static string FileNameTransformations {
+            get {
+                return ResourceManager.GetString("FileNameTransformations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Supported tokens:
+        ///{DATE:Format} - Inserts file modification date in the specified format.
+        ///To see all options google &quot;C# DateTime format&quot;..
+        /// </summary>
+        internal static string HelpForTokens {
+            get {
+                return ResourceManager.GetString("HelpForTokens", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Photos/Videos folder on media device:.
+        /// </summary>
+        internal static string PhotosVideosFolderOnMediaDevice {
+            get {
+                return ResourceManager.GetString("PhotosVideosFolderOnMediaDevice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit &quot;{0}&quot; Photos/Videos moval task.
+        /// </summary>
+        internal static string PhotosVideosMovalTask {
+            get {
+                return ResourceManager.GetString("PhotosVideosMovalTask", resourceCulture);
             }
         }
         
@@ -117,11 +191,47 @@ namespace BUtil.ConsoleBackup.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        internal static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Photo/Video folder does not exist..
+        /// </summary>
+        internal static string SourceFolderDoesNotExist {
+            get {
+                return ResourceManager.GetString("SourceFolderDoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to There&apos;re no backup task with title &apos;{0}&apos;..
         /// </summary>
         internal static string TherereNoBackupTaskWithTitle0 {
             get {
                 return ResourceManager.GetString("TherereNoBackupTaskWithTitle0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title:.
+        /// </summary>
+        internal static string Title {
+            get {
+                return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title is empty or contains not supported path characters..
+        /// </summary>
+        internal static string TitleIsEmptyOrContainsNotSupportedPathCharacters {
+            get {
+                return ResourceManager.GetString("TitleIsEmptyOrContainsNotSupportedPathCharacters", resourceCulture);
             }
         }
         
@@ -132,6 +242,15 @@ namespace BUtil.ConsoleBackup.Localization {
             get {
                 return ResourceManager.GetString("ToRunProgramWithThisSwitchYouShouldDisableSchedulingInOptionsFirstPleaseReferToMa" +
                         "nual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transform file name is empty..
+        /// </summary>
+        internal static string TransformFileNameIsEmpty {
+            get {
+                return ResourceManager.GetString("TransformFileNameIsEmpty", resourceCulture);
             }
         }
         

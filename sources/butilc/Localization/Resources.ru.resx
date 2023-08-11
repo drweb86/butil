@@ -97,4 +97,45 @@ butilc.exe Help
   <data name="BackupFailedPleaseReviewOpenedLog" xml:space="preserve">
     <value>Бэкап провален (посмотрите открывшийся лог)</value>
   </data>
+  <data name="Title" xml:space="preserve">
+    <value>Название:</value>
+  </data>
+  <data name="PhotosVideosFolderOnMediaDevice" xml:space="preserve">
+    <value>Папка с фото/видео на устройстве:</value>
+  </data>
+  <data name="DestinationFolder" xml:space="preserve">
+    <value>Папка назначения:</value>
+  </data>
+  <data name="FileNameTransformations" xml:space="preserve">
+    <value>Преобразования имени файла:</value>
+  </data>
+  <data name="HelpForTokens" xml:space="preserve">
+    <value>Поддерживаемые токены:
+{DATE:Format} - Вставляет дату модификации файла в заданном формате.
+Чтобы увидеть все варианты, загуглите "C# DateTime формат".</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="CreatePhotosVideosMovalTask" xml:space="preserve">
+    <value>Создать задачу по перемещению Фото/Видео</value>
+  </data>
+  <data name="PhotosVideosMovalTask" xml:space="preserve">
+    <value>Редактирование "{0}" задания по перемещению фото/видео</value>
+  </data>
+  <data name="SourceFolderDoesNotExist" xml:space="preserve">
+    <value>Фото/Видео папка не существует.</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="DestinationDirectoryDoesNotExist" xml:space="preserve">
+    <value>Папка назначения не существует.</value>
+  </data>
+  <data name="TransformFileNameIsEmpty" xml:space="preserve">
+    <value>Не указан шаблон имени файла.</value>
+  </data>
+  <data name="TitleIsEmptyOrContainsNotSupportedPathCharacters" xml:space="preserve">
+    <value>Заголовок пуст или содержит символы пути.</value>
+  </data>
 </root>

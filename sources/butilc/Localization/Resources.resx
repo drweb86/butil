@@ -156,4 +156,45 @@ Example: butilc.exe "{0}My backup title"</value>
   <data name="BackupProcessCompletedSuccesfully" xml:space="preserve">
     <value>Backup is succeeded!</value>
   </data>
+  <data name="Title" xml:space="preserve">
+    <value>Title:</value>
+  </data>
+  <data name="PhotosVideosFolderOnMediaDevice" xml:space="preserve">
+    <value>Photos/Videos folder on media device:</value>
+  </data>
+  <data name="DestinationFolder" xml:space="preserve">
+    <value>Destination folder:</value>
+  </data>
+  <data name="FileNameTransformations" xml:space="preserve">
+    <value>File name transformations:</value>
+  </data>
+  <data name="HelpForTokens" xml:space="preserve">
+    <value>Supported tokens:
+{DATE:Format} - Inserts file modification date in the specified format.
+To see all options google "C# DateTime format".</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="CreatePhotosVideosMovalTask" xml:space="preserve">
+    <value>Create Photos/Videos moval task</value>
+  </data>
+  <data name="PhotosVideosMovalTask" xml:space="preserve">
+    <value>Edit "{0}" Photos/Videos moval task</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="DestinationDirectoryDoesNotExist" xml:space="preserve">
+    <value>Destination directory does not exist.</value>
+  </data>
+  <data name="SourceFolderDoesNotExist" xml:space="preserve">
+    <value>Photo/Video folder does not exist.</value>
+  </data>
+  <data name="TransformFileNameIsEmpty" xml:space="preserve">
+    <value>Transform file name is empty.</value>
+  </data>
+  <data name="TitleIsEmptyOrContainsNotSupportedPathCharacters" xml:space="preserve">
+    <value>Title is empty or contains not supported path characters.</value>
+  </data>
 </root>
