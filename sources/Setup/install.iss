@@ -151,7 +151,7 @@ Source: "..\..\Output\BUtil\*.*"; DestDir: "{app}"; Flags: recursesubdirs
 [Icons]
 ; Main app data
 Name: "{group}\BUtil {cm:Configurator}"; Filename: "{app}\bin\butil.exe"
-Name: "{group}\BUtil {cm:ConfiguratorCli}"; Filename: "{app}\bin\butil.exe"
+Name: "{group}\BUtil {cm:ConfiguratorCli}"; Filename: "{app}\bin\butilc.exe"
 Name: "{group}\BUtil {cm:Backup_Wizard}"; Filename: "{app}\bin\butil.exe"; Parameters: "JustBackupMaster"; IconFilename: "{app}\data\BackupUi.ico"
 Name: "{group}\BUtil {cm:Restoration}"; Filename: "{app}\bin\butil.exe"; Parameters: "JustRestorationMaster"; IconFilename: "{app}\data\RestorationMaster.ico"
 
