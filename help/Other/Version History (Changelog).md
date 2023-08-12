@@ -1,3 +1,10 @@
+# 2023.08.12
+
+## Bug Fixes
+- CLI: date in autoreplacement parameter is not system
+- CLI: very long move file name
+- Fix for media move task
+
 # 2023.08.11
 
 ## New Features

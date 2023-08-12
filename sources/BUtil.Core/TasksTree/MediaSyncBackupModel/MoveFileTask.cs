@@ -3,6 +3,7 @@ using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.TasksTree.Core;
 using System;
+using System.Globalization;
 using System.IO;
 using System.Text.RegularExpressions;
 
@@ -22,22 +23,32 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
             _toFolder = toFolder;
             _transformFileName = transformFileName;
 
-            var destFile = GetDestinationFileName();
-            _destinationFileName = GetActualDestinationFileName(destFile);
+            _destinationFileName = GetDestinationFileName();
 
-            Title = string.Format(Resources.MoveFileToDestFolder, Path.GetFileNameWithoutExtension(from), _destinationFileName);
+            Title = string.Format(Resources.MoveFileToDestFolder, Path.GetFileNameWithoutExtension(from), _destinationFileName.Substring(toFolder.Length + 1));
         }
 
         public override void Execute()
         {
             UpdateStatus(ProcessingStatus.InProgress);
 
-            var destFolder = Path.GetDirectoryName(_destinationFileName);
-            Directory.CreateDirectory(destFolder);
-            File.Move(_from, _destinationFileName);
-            IsSuccess = true;
+            try
+            {
+                var actualFileName = GetActualDestinationFileName(_destinationFileName);
+                var destFolder = Path.GetDirectoryName(actualFileName);
+                Directory.CreateDirectory(destFolder);
+                File.Move(_from, actualFileName);
 
-            UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
+                IsSuccess = true;
+                UpdateStatus(ProcessingStatus.FinishedSuccesfully);
+            }
+            catch (Exception ex)
+            {
+                IsSuccess = false;
+
+                this.LogError(ex.Message);
+                UpdateStatus(ProcessingStatus.FinishedWithErrors);
+            }
         }
 
         private static string GetActualDestinationFileName(string destFile)
@@ -86,7 +97,7 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
                 if (cleanedString.StartsWith("DATE:"))
                 {
                     var format = cleanedString.Replace("DATE:", string.Empty);
-                    return date.ToString(format);
+                    return date.ToString(format, CultureInfo.CurrentUICulture);
                 }
                 return string.Empty;
             });

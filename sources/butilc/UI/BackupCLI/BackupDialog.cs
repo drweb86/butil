@@ -117,6 +117,7 @@ namespace BUtil.ConsoleBackup.UI
             {
                 MessageBox.Query(string.Empty, $"{Resources.BackupProcessCompletedSuccesfully}\n{lastMinuteConsolidatedMessage}", Resources.Close);
             }
+            Application.MainLoop.Invoke(_listView.SetNeedsDisplay);
         }
         
         private string GetLastMinuteConsolidatedMessage()
