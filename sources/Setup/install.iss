@@ -117,7 +117,7 @@ begin
     + #13#10#13#10
     + 'Application uses 7-zip for compression and decompression.'
     + #13#10#13#10
-    + 'Setup will continue, but application will not be able to comress or decompress files.'
+    + 'Setup will continue, but application will not be able to compress or decompress files.'
     + #13#10#13#10
     + 'Please install 7-zip to default location before running the application.', mbCriticalError, MB_OK, IDOK);
       Result := true;

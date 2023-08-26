@@ -316,7 +316,7 @@ AssocingFileExtension=Associating %1 with the %2 file extension...
 ; Messages For Installer
 Backup=Backup
 Configurator=Configurator
-ConfiguratorCli=Configurator
+ConfiguratorCli=CLI
 Console_Backup=Console Backup
 Backup_Wizard=Backup Wizard
 Restoration=Restoration
