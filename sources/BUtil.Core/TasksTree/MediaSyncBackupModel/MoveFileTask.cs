@@ -6,6 +6,7 @@ using System;
 using System.Globalization;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace BUtil.Core.TasksTree.MediaSyncBackupModel
 {
@@ -31,7 +32,6 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
         public override void Execute()
         {
             UpdateStatus(ProcessingStatus.InProgress);
-
             try
             {
                 var actualFileName = GetActualDestinationFileName(_destinationFileName);

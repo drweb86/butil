@@ -1,3 +1,8 @@
+# 2023.08.26
+
+## New Features
+- CLI: backup dialog title shows percentage
+
 # 2023.08.12
 
 ## Bug Fixes

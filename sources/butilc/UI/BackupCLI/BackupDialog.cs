@@ -1,5 +1,4 @@
 using BUtil.ConsoleBackup.Localization;
-using BUtil.Core;
 using BUtil.Core.BackupModels;
 using BUtil.Core.Events;
 using BUtil.Core.Logs;
@@ -17,11 +16,12 @@ namespace BUtil.ConsoleBackup.UI
     public partial class BackupDialog
     {
         private readonly BackupTask _task;
-        private readonly List<string> _lastMinuteMessagesToUser = new ();
+        private readonly List<string> _lastMinuteMessagesToUser = new();
         private readonly FileLog _log;
         private readonly BuTask _rootTask;
+        private HashSet<Guid> _ended = new HashSet<Guid>();
 
-        internal BackupDialog(BackupTask task) 
+        internal BackupDialog(BackupTask task)
         {
             InitializeComponent();
 
@@ -87,6 +87,13 @@ namespace BUtil.ConsoleBackup.UI
             if (e.TaskId == _rootTask.Id)
                 return;
 
+            if (e.Status == ProcessingStatus.FinishedWithErrors ||
+                e.Status == ProcessingStatus.FinishedSuccesfully)
+            {
+                _ended.Add(e.TaskId);
+                Application.MainLoop.Invoke(UpdateTitle);
+            }
+
             _dataSource
                 .Find(x => x.Id == e.TaskId)
                 ?.SetStatus(e.Status);
@@ -119,13 +126,18 @@ namespace BUtil.ConsoleBackup.UI
             }
             Application.MainLoop.Invoke(_listView.SetNeedsDisplay);
         }
-        
+
         private string GetLastMinuteConsolidatedMessage()
         {
             var messages = string.Join(Environment.NewLine, _lastMinuteMessagesToUser.ToArray());
             if (!string.IsNullOrEmpty(messages))
                 messages = messages + Environment.NewLine;
             return messages;
+        }
+
+        private void UpdateTitle()
+        {
+            Title = $"{_task.Name} {100 * _ended.Count / this._dataSource.Count}% ({_ended.Count} / {this._dataSource.Count})";
         }
     }
 }
