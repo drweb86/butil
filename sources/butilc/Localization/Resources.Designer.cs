@@ -263,6 +263,15 @@ namespace BUtil.ConsoleBackup.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Specify location.
+        /// </summary>
+        internal static string SpecifyLocation {
+            get {
+                return ResourceManager.GetString("SpecifyLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Задания.
         /// </summary>
         internal static string Tasks {

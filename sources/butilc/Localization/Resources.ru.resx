@@ -159,4 +159,7 @@ butilc.exe Help
   <data name="YouCannotEditThisTypeOfTaskInCLI" xml:space="preserve">
     <value>Вы не можете редактировать этот тип задания здесь.</value>
   </data>
+  <data name="SpecifyLocation" xml:space="preserve">
+    <value>Укажите расположение</value>
+  </data>
 </root>

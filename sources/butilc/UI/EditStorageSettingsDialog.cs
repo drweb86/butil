@@ -12,6 +12,7 @@ namespace BUtil.ConsoleBackup.UI
 
         internal EditStorageSettingsDialog(IStorageSettings source) 
         {
+            Title = BUtil.ConsoleBackup.Localization.Resources.SpecifyLocation;
             InitializeComponent();
 
             if (source == null)

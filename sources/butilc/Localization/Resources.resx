@@ -221,4 +221,7 @@ To see all options google "C# DateTime format".</value>
   <data name="YouCannotEditThisTypeOfTaskInCLI" xml:space="preserve">
     <value>You cannot edit this type of task in CLI.</value>
   </data>
+  <data name="SpecifyLocation" xml:space="preserve">
+    <value>Specify location</value>
+  </data>
 </root>
