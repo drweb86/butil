@@ -207,8 +207,7 @@ namespace BUtil.ConsoleBackup.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Photos/Videos folder on media device:
-        ///(or FTP URI: ftp://login:password@serverName:port).
+        ///   Looks up a localized string similar to Photos/Videos location on media device.
         /// </summary>
         internal static string PhotosVideosFolderOnMediaDevice {
             get {

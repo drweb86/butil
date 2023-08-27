@@ -160,8 +160,7 @@ Example: butilc.exe "{0}My backup title"</value>
     <value>Title:</value>
   </data>
   <data name="PhotosVideosFolderOnMediaDevice" xml:space="preserve">
-    <value>Photos/Videos folder on media device:
-(or FTP URI: ftp://login:password@serverName:port)</value>
+    <value>Photos/Videos location on media device</value>
   </data>
   <data name="DestinationFolder" xml:space="preserve">
     <value>Destination folder:</value>

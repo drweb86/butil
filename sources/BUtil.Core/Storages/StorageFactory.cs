@@ -17,6 +17,9 @@ namespace BUtil.Core.Storages
 
         public static string Test(ILog log, IStorageSettings storageSettings)
         {
+            if (storageSettings == null)
+                return BUtil.Core.Localization.Resources.StorageIsNotSpecified;
+
             try
             {
                 using (var storage = Create(new StubLog(), storageSettings))

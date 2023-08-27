@@ -101,8 +101,7 @@ butilc.exe Help
     <value>Название:</value>
   </data>
   <data name="PhotosVideosFolderOnMediaDevice" xml:space="preserve">
-    <value>Папка с фото/видео на устройстве:
-(или FTP URI: ftp://логин:пароль@сервер:порт)</value>
+    <value>Расположение фото/видео на устройстве</value>
   </data>
   <data name="DestinationFolder" xml:space="preserve">
     <value>Папка назначения:</value>

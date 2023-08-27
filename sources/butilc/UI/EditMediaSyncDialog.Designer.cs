@@ -30,29 +30,21 @@ namespace BUtil.ConsoleBackup.UI {
             };
             Add(_titleTextField);
 
-            Add(new Label
-            {
-                AutoSize = true,
-                X = 0,
-                Y = 3,
-                Text = BUtil.ConsoleBackup.Localization.Resources.PhotosVideosFolderOnMediaDevice
-            });
-
             var sourceSelectButton = new Button
             {
                 X = 0,
-                Y = 5,
-                Text = BUtil.ConsoleBackup.Localization.Resources.Save,
+                Y = 3,
+                Text = BUtil.ConsoleBackup.Localization.Resources.PhotosVideosFolderOnMediaDevice,
                 IsDefault = true,
             };
             sourceSelectButton.Clicked += OnSpecifySource;
-            AddButton(sourceSelectButton);
+            Add(sourceSelectButton);
 
             Add(new Label
             {
                 AutoSize = true,
                 X = 0,
-                Y = 7,
+                Y = 5,
                 Text = BUtil.ConsoleBackup.Localization.Resources.DestinationFolder
             });
 
@@ -60,7 +52,7 @@ namespace BUtil.ConsoleBackup.UI {
             {
                 Text = string.Empty,
                 X = 0,
-                Y = 8,
+                Y = 6,
                 Width = Dim.Fill(0),
             };
             Add(_destinationFolderTextField);
@@ -69,7 +61,7 @@ namespace BUtil.ConsoleBackup.UI {
             {
                 AutoSize = true,
                 X = 0,
-                Y = 10,
+                Y = 8,
                 Text = BUtil.ConsoleBackup.Localization.Resources.FileNameTransformations
             });
 
@@ -77,7 +69,7 @@ namespace BUtil.ConsoleBackup.UI {
             {
                 Text = string.Empty,
                 X = 0,
-                Y = 11,
+                Y = 9,
                 Width = Dim.Fill(0),
             };
             Add(_transformFileNameTextField);
@@ -85,7 +77,7 @@ namespace BUtil.ConsoleBackup.UI {
             {
                 AutoSize = true,
                 X = 0,
-                Y = 12,
+                Y = 10,
                 Text = BUtil.ConsoleBackup.Localization.Resources.HelpForTokens
             });
 

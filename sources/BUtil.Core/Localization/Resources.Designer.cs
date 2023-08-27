@@ -229,6 +229,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Destination folder is not specified..
+        /// </summary>
+        public static string DestinationFolderIsNotSpecified {
+            get {
+                return ResourceManager.GetString("DestinationFolderIsNotSpecified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter password:.
         /// </summary>
         public static string EnterPassword {
@@ -261,6 +270,15 @@ namespace BUtil.Core.Localization {
         public static string FinishedWithErrors {
             get {
                 return ResourceManager.GetString("FinishedWithErrors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Папка.
+        /// </summary>
+        public static string FolderStorage {
+            get {
+                return ResourceManager.GetString("FolderStorage", resourceCulture);
             }
         }
         
@@ -501,6 +519,15 @@ namespace BUtil.Core.Localization {
         public static string SourceItemDoesNotExist {
             get {
                 return ResourceManager.GetString("SourceItemDoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Storage is not specified.
+        /// </summary>
+        public static string StorageIsNotSpecified {
+            get {
+                return ResourceManager.GetString("StorageIsNotSpecified", resourceCulture);
             }
         }
         

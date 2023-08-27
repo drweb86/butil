@@ -319,4 +319,13 @@
   <data name="TransformFileNameIsEmpty" xml:space="preserve">
     <value>Не указан шаблон имени файла.</value>
   </data>
+  <data name="FolderStorage" xml:space="preserve">
+    <value>Папка</value>
+  </data>
+  <data name="DestinationFolderIsNotSpecified" xml:space="preserve">
+    <value>Папка назначения не указана.</value>
+  </data>
+  <data name="StorageIsNotSpecified" xml:space="preserve">
+    <value>Хранилище не указано</value>
+  </data>
 </root>

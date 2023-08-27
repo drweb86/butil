@@ -67,12 +67,12 @@ namespace BUtil.ConsoleBackup.UI
 
         private void OnSpecifySource()
         {
-            var dialog = new SpecifySourceDialog(_from);
+            var dialog = new EditStorageSettingsDialog(_from);
             Application.Run(dialog);
 
             if (dialog.Canceled)
                 return;
-            _from = dialog.Source;
+            _from = dialog.StorageSettings;
         }
 
         public BackupTask BackupTask 

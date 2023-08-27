@@ -311,4 +311,13 @@ Please update storage settings.</value>
   <data name="TransformFileNameIsEmpty" xml:space="preserve">
     <value>Transform file name is empty.</value>
   </data>
+  <data name="FolderStorage" xml:space="preserve">
+    <value>Папка</value>
+  </data>
+  <data name="DestinationFolderIsNotSpecified" xml:space="preserve">
+    <value>Destination folder is not specified.</value>
+  </data>
+  <data name="StorageIsNotSpecified" xml:space="preserve">
+    <value>Storage is not specified</value>
+  </data>
 </root>
