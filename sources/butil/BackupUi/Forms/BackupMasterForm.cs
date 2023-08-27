@@ -123,8 +123,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             }
             tasksListView.VirtualListSize = _items.Count;
 
-            VerifyStorages();
-            VerifySourceItems();
+            VerifyModel();
         }
 
         private void OnAddLastMinuteMessageToUser(object sender, MessageEventArgs e)
@@ -132,54 +131,12 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             _lastMinuteMessagesToUser.Add(e.Message);
         }
 
-        private void VerifySourceItems()
+        private void VerifyModel()
         {
-            if (_backupTask.Items.Count == 0)
+            if (!BackupModelStrategyFactory.TryVerify(this._log, _backupTask.Model, out var error))
             {
-                Messages.ShowInformationBox(Resources.ThereAreNoItemsToBackupNNyouCanSpecifyTheDataToBackupInConfiguratorInWhatSettingsGroup);
+                Messages.ShowErrorBox(error);
                 Close();
-            }
-
-            foreach (var item in _backupTask.Items)
-            {
-                if (item.IsFolder)
-                {
-                    if (!Directory.Exists(item.Target))
-                    {
-                        Messages.ShowErrorBox(string.Format(BUtil.Configurator.Localization.Resources.SourceItemFailure, item.Target));
-                        Close();
-                    }
-                }
-                else
-                {
-                    if (!File.Exists(item.Target))
-                    {
-                        Messages.ShowErrorBox(string.Format(BUtil.Configurator.Localization.Resources.SourceItemFailure, item.Target));
-                        Close();
-                    }
-                }
-            }
-        }
-
-        private void VerifyStorages()
-        {
-            var enabledStorages = _backupTask.Storages
-                            .ToList();
-
-            if (enabledStorages.Count < 1)
-            {
-                Messages.ShowInformationBox(Resources.ThereAreNoSpecifiedPlacesWhereToStoreBackupNNyouCanAddSomeStoragesInConfiguratorInWhereSettingsGroup);
-                Close();
-            }
-
-            foreach (var storageSettings in enabledStorages)
-            {
-                var error = StorageFactory.Test(_log, storageSettings);
-                if (error != null)
-                {
-                    Messages.ShowErrorBox(error);
-                    Close();
-                }
             }
         }
 

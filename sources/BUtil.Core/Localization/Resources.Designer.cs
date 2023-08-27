@@ -496,6 +496,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Source item &quot;{0}&quot; does not exist..
+        /// </summary>
+        public static string SourceItemDoesNotExist {
+            get {
+                return ResourceManager.GetString("SourceItemDoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Successful.
         /// </summary>
         public static string Successful {
@@ -510,6 +519,24 @@ namespace BUtil.Core.Localization {
         public static string Support {
             get {
                 return ResourceManager.GetString("Support", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There are no items to backup!.
+        /// </summary>
+        public static string ThereAreNoItemsToBackup {
+            get {
+                return ResourceManager.GetString("ThereAreNoItemsToBackup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transform file name is empty..
+        /// </summary>
+        public static string TransformFileNameIsEmpty {
+            get {
+                return ResourceManager.GetString("TransformFileNameIsEmpty", resourceCulture);
             }
         }
         

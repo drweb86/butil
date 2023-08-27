@@ -21,14 +21,12 @@ namespace BUtil.Core.TasksTree.IncrementalModel
             var tasks = new List<BuTask>();
 
             _commonServicesIoc = new CommonServicesIoc();
-
-            var storage = backupTask
-                .Storages
-                .First();
+            var modelOptions = (IncrementalBackupModelOptions)backupTask.Model;
+            var storage = modelOptions.To;
 
             _storageService = new StorageSpecificServicesIoc(Log, storage, _commonServicesIoc.HashService);
 
-            var readSatesTask = new GetStateOfSourceItemsAndStoragesTask(Log, Events, backupTask.Items, _commonServicesIoc, _storageService, backupTask.FileExcludePatterns, backupTask.Password);
+            var readSatesTask = new GetStateOfSourceItemsAndStoragesTask(Log, Events, modelOptions.Items, _commonServicesIoc, _storageService, modelOptions.FileExcludePatterns, backupTask.Password);
             tasks.Add(readSatesTask);
 
             tasks.Add(new WriteIncrementedVersionTask(_storageService, Events, readSatesTask.StorageStateTask, readSatesTask.GetSourceItemStateTasks, backupTask.Model as IncrementalBackupModelOptions, backupTask.Password));

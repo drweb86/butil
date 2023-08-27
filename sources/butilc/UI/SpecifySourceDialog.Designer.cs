@@ -1,11 +1,11 @@
 
 namespace BUtil.ConsoleBackup.UI {
-    using System;
     using Terminal.Gui;
     
-    public partial class EditMediaSyncDialog : Terminal.Gui.Dialog
+    public partial class SpecifySourceDialog : Terminal.Gui.Dialog
     {
         private Terminal.Gui.TextField _titleTextField;
+        private Terminal.Gui.TextField _sourceFolderTextField;
         private Terminal.Gui.TextField _destinationFolderTextField;
         private Terminal.Gui.TextField _transformFileNameTextField;
 
@@ -38,15 +38,14 @@ namespace BUtil.ConsoleBackup.UI {
                 Text = BUtil.ConsoleBackup.Localization.Resources.PhotosVideosFolderOnMediaDevice
             });
 
-            var sourceSelectButton = new Button
+            _sourceFolderTextField = new TextField
             {
+                Text = string.Empty,
                 X = 0,
                 Y = 5,
-                Text = BUtil.ConsoleBackup.Localization.Resources.Save,
-                IsDefault = true,
+                Width = Dim.Fill(0),
             };
-            sourceSelectButton.Clicked += OnSpecifySource;
-            AddButton(sourceSelectButton);
+            Add(_sourceFolderTextField);
 
             Add(new Label
             {

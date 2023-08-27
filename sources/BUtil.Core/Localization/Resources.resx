@@ -302,4 +302,13 @@ Please update storage settings.</value>
   <data name="MoveFilesTask_MoveFiles" xml:space="preserve">
     <value>Move files</value>
   </data>
+  <data name="SourceItemDoesNotExist" xml:space="preserve">
+    <value>Source item "{0}" does not exist.</value>
+  </data>
+  <data name="ThereAreNoItemsToBackup" xml:space="preserve">
+    <value>There are no items to backup!</value>
+  </data>
+  <data name="TransformFileNameIsEmpty" xml:space="preserve">
+    <value>Transform file name is empty.</value>
+  </data>
 </root>

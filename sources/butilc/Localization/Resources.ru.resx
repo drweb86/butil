@@ -101,7 +101,8 @@ butilc.exe Help
     <value>Название:</value>
   </data>
   <data name="PhotosVideosFolderOnMediaDevice" xml:space="preserve">
-    <value>Папка с фото/видео на устройстве:</value>
+    <value>Папка с фото/видео на устройстве:
+(или FTP URI: ftp://логин:пароль@сервер:порт)</value>
   </data>
   <data name="DestinationFolder" xml:space="preserve">
     <value>Папка назначения:</value>
@@ -124,7 +125,7 @@ butilc.exe Help
     <value>Редактирование "{0}" задания по перемещению фото/видео</value>
   </data>
   <data name="SourceFolderDoesNotExist" xml:space="preserve">
-    <value>Фото/Видео папка не существует.</value>
+    <value>Расположение Фото/Видео не указано.</value>
   </data>
   <data name="Error" xml:space="preserve">
     <value>Ошибка</value>

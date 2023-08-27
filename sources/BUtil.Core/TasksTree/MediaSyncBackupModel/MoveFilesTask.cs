@@ -25,8 +25,10 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
         {
             UpdateStatus(ProcessingStatus.InProgress);
 
-            var fromFolder = _task.Items[0].Target;
-            var destinationFolder = ((FolderStorageSettings)_task.Storages[0]).DestinationFolder;
+            var options = (MediaSyncBackupModelOptions)_task.Model;
+
+            var fromFolder = ((FolderStorageSettings)options.From).DestinationFolder;
+            var destinationFolder = ((FolderStorageSettings)options.To).DestinationFolder;
             var transformFileName = ((MediaSyncBackupModelOptions)_task.Model).TransformFileName;
 
             var tasks = Directory

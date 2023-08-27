@@ -8,6 +8,7 @@ using BUtil.RestorationMaster;
 using BUtil.Core.Logs;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using BUtil.Core.Misc;
+using BUtil.Core.BackupModels;
 
 namespace BUtil.Configurator.Configurator.Controls
 {
@@ -42,8 +43,9 @@ namespace BUtil.Configurator.Configurator.Controls
         public override void SetOptionsToUi(object settings)
         {
             _task = (BackupTask)settings;
+            var options = (IncrementalBackupModelOptions)_task.Model;
 
-            var storage = _task.Storages.FirstOrDefault();
+            var storage = options.To;
             if (storage == null)
                 return;
 
@@ -100,11 +102,8 @@ namespace BUtil.Configurator.Configurator.Controls
 
         public override void GetOptionsFromUi()
         {
-            _task.Storages.Clear();
-
-            var storageSettings = GetStorageSettings();
-
-            _task.Storages.Add(storageSettings);
+            var options = (IncrementalBackupModelOptions)_task.Model;
+            options.To = GetStorageSettings();
         }
         #endregion
 

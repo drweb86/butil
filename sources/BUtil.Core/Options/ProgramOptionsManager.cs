@@ -9,20 +9,22 @@ namespace BUtil.Core.Options
             return new BackupTask
 			{
 				Name = name,
-				Model = new IncrementalBackupModelOptions(),
-				Items =
+				Model = new IncrementalBackupModelOptions()
 				{
-                    new SourceItem
-					{
-						IsFolder = true,
-						Target = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal)
-					},
-                     new SourceItem
-					{
-						IsFolder = true,
-						Target = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop)
-					}
-                }
+                    Items =
+                    {
+                        new SourceItem
+                        {
+                            IsFolder = true,
+                            Target = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal)
+                        },
+                         new SourceItem
+                        {
+                            IsFolder = true,
+                            Target = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop)
+                        }
+                    }
+                },
 			};
         }
 	}

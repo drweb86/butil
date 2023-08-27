@@ -10,6 +10,7 @@ using BUtil.Core.Logs;
 using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.IncrementalModel;
 using BUtil.Core.Options;
+using BUtil.Core.BackupModels;
 
 namespace BUtil.RestorationMaster
 {
@@ -56,7 +57,9 @@ namespace BUtil.RestorationMaster
                 return;
             }
             _whereUserControl.GetOptionsFromUi();
-            var storageSettings = storageStub.Storages.First();
+
+            var options = (IncrementalBackupModelOptions)storageStub.Model;
+            var storageSettings = options.To;
 
             string error = null;
             IncrementalBackupState state = null;

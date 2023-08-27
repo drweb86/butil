@@ -3,6 +3,8 @@
 ## New Features
 - CLI: backup dialog title shows percentage
 
+## Warning! Format of backup tasks was updated. Please reconfigure your tasks!
+
 # 2023.08.12
 
 ## Bug Fixes

@@ -160,7 +160,8 @@ Example: butilc.exe "{0}My backup title"</value>
     <value>Title:</value>
   </data>
   <data name="PhotosVideosFolderOnMediaDevice" xml:space="preserve">
-    <value>Photos/Videos folder on media device:</value>
+    <value>Photos/Videos folder on media device:
+(or FTP URI: ftp://login:password@serverName:port)</value>
   </data>
   <data name="DestinationFolder" xml:space="preserve">
     <value>Destination folder:</value>
@@ -189,7 +190,7 @@ To see all options google "C# DateTime format".</value>
     <value>Destination directory does not exist.</value>
   </data>
   <data name="SourceFolderDoesNotExist" xml:space="preserve">
-    <value>Photo/Video folder does not exist.</value>
+    <value>Photo/Video location was not specified.</value>
   </data>
   <data name="TransformFileNameIsEmpty" xml:space="preserve">
     <value>Transform file name is empty.</value>

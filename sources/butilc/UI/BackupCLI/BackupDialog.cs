@@ -19,7 +19,7 @@ namespace BUtil.ConsoleBackup.UI
         private readonly List<string> _lastMinuteMessagesToUser = new();
         private readonly FileLog _log;
         private readonly BuTask _rootTask;
-        private HashSet<Guid> _ended = new HashSet<Guid>();
+        private readonly HashSet<Guid> _ended = new HashSet<Guid>();
 
         internal BackupDialog(BackupTask task)
         {

@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
 using BUtil.Configurator.Configurator.Controls.Tasks.What;
+using BUtil.Core.BackupModels;
 
 namespace BUtil.Configurator.Controls
 {
@@ -38,12 +39,13 @@ namespace BUtil.Configurator.Controls
             _editFileExcludePatternToolStripMenuItem.Text = BUtil.Configurator.Localization.Resources.EditFileExcludePattern;
             _openInExplorerToolStripMenuItem.Text = BUtil.Configurator.Localization.Resources.OpenInExplorer;
 
-            _task.Items
+            var options = (IncrementalBackupModelOptions)_task.Model;
+            options.Items
                 .Select(item => new WhatItemViewModel { Id = item.Id, Title = item.Target, Type = item.IsFolder ? WhatItemType.Folder : WhatItemType.File })
                 .OrderBy(item => item.Title)
                 .ToList()
                 .ForEach(AddItem);
-            (_task.FileExcludePatterns ?? new List<string>())
+            (options.FileExcludePatterns ?? new List<string>())
                 .Select(x => new WhatItemViewModel { Id = Guid.NewGuid(), Title = x, Type = WhatItemType.Exclude })
                 .OrderBy(item => item.Title)
                 .ToList()
@@ -229,21 +231,23 @@ namespace BUtil.Configurator.Controls
                     sourceItems.Add(new SourceItem { Id = model.Id, IsFolder = true, Target = model.Title });
             }
 
-            _task.Items = sourceItems;
-            _task.FileExcludePatterns = fileExcludePatterns;
+            var options = (IncrementalBackupModelOptions)_task.Model;
+            options.Items = sourceItems;
+            options.FileExcludePatterns = fileExcludePatterns;
         }
 
 		public override bool ValidateUi()
 		{
             GetOptionsFromUi();
 
-            if (_task.Items.Count == 0)
+            var options = (IncrementalBackupModelOptions)_task.Model;
+            if (options.Items.Count == 0)
 			{
 				Messages.ShowErrorBox(Resources.ThereAreNoItemsToBackupNNyouCanSpecifyTheDataToBackupInConfiguratorInWhatSettingsGroup);
                 return false;
 			}
 
-            foreach (var item in _task.Items)
+            foreach (var item in options.Items)
             {
                 if (item.IsFolder &&
                     !Directory.Exists(item.Target))

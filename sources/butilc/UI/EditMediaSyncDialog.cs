@@ -1,22 +1,25 @@
-namespace BUtil.ConsoleBackup.UI{
-    using BUtil.ConsoleBackup.Localization;
-    using BUtil.Core.BackupModels;
-    using BUtil.Core.Options;
-    using BUtil.Core.Storages;
-    using System;
-    using System.IO;
-    using System.Linq;
-    using Terminal.Gui;
+using BUtil.ConsoleBackup.Localization;
+using BUtil.Core.BackupModels;
+using BUtil.Core.Logs;
+using BUtil.Core.Options;
+using BUtil.Core.Storages;
+using System;
+using System.IO;
+using System.Linq;
+using Terminal.Gui;
 
+namespace BUtil.ConsoleBackup.UI
+{
     public partial class EditMediaSyncDialog
     {
+        private IStorageSettings _from;
+
         internal EditMediaSyncDialog(BackupTask task) 
         {
             InitializeComponent();
 
             if (task == null)
             {
-                _sourceFolderTextField.Text = string.Empty;
                 _destinationFolderTextField.Text = Path.Combine(
                     Environment.GetFolderPath(Environment.SpecialFolder.MyPictures),
                     "Camera Roll");
@@ -25,9 +28,10 @@ namespace BUtil.ConsoleBackup.UI{
             }
             else
             {
-                _sourceFolderTextField.Text = task.Items[0].Target;
-                _destinationFolderTextField.Text = ((FolderStorageSettings)task.Storages[0]).DestinationFolder;
-                _transformFileNameTextField.Text = ((MediaSyncBackupModelOptions)task.Model).TransformFileName;
+                var options = (MediaSyncBackupModelOptions)task.Model;
+                _from = options.From;
+                _destinationFolderTextField.Text = ((FolderStorageSettings)options.To).DestinationFolder;
+                _transformFileNameTextField.Text = options.TransformFileName;
                 Title = string.Format(Resources.PhotosVideosMovalTask, task.Name);
                 _titleTextField.Text = task.Name;
             }
@@ -51,21 +55,9 @@ namespace BUtil.ConsoleBackup.UI{
                 return;
             }
 
-            if (!Directory.Exists(this._sourceFolderTextField.Text.ToString()))
+            if (!BackupModelStrategyFactory.TryVerify(new StubLog(), BackupTask.Model, out var error))
             {
-                MessageBox.ErrorQuery(string.Empty, Resources.SourceFolderDoesNotExist, Resources.Close);
-                return;
-            }
-
-            if (!Directory.Exists(this._destinationFolderTextField.Text.ToString()))
-            {
-                MessageBox.ErrorQuery(string.Empty, Resources.DestinationDirectoryDoesNotExist, Resources.Close);
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(this._transformFileNameTextField.Text.ToString()))
-            {
-                MessageBox.ErrorQuery(string.Empty, Resources.TransformFileNameIsEmpty, Resources.Close);
+                MessageBox.ErrorQuery(string.Empty, error, Resources.Close);
                 return;
             }
 
@@ -73,11 +65,31 @@ namespace BUtil.ConsoleBackup.UI{
             Application.RequestStop();
         }
 
-        public BackupTask BackupTask { get { return new BackupTask() { 
-            Name = _titleTextField.Text.ToString(),
-            Items = new System.Collections.Generic.List<SourceItem> { new SourceItem(_sourceFolderTextField.Text.ToString(), true) },
-            Storages = new System.Collections.Generic.List<IStorageSettings> { new FolderStorageSettings { DestinationFolder = _destinationFolderTextField.Text.ToString() } },
-            Model = new MediaSyncBackupModelOptions { TransformFileName = _transformFileNameTextField.Text.ToString() }
-        }; } }
+        private void OnSpecifySource()
+        {
+            var dialog = new SpecifySourceDialog(_from);
+            Application.Run(dialog);
+
+            if (dialog.Canceled)
+                return;
+            _from = dialog.Source;
+        }
+
+        public BackupTask BackupTask 
+        {
+            get 
+            {
+                return new BackupTask
+                {
+                    Name = _titleTextField.Text.ToString(),
+                    Model = new MediaSyncBackupModelOptions
+                    {
+                        TransformFileName = _transformFileNameTextField.Text.ToString(),
+                        From = _from,
+                        To = new FolderStorageSettings { DestinationFolder = _destinationFolderTextField.Text.ToString() }
+                    }
+                }; 
+            } 
+        }
     }
 }

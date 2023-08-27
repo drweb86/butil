@@ -310,4 +310,13 @@
   <data name="MoveFilesTask_MoveFiles" xml:space="preserve">
     <value>Переместить файлы</value>
   </data>
+  <data name="SourceItemDoesNotExist" xml:space="preserve">
+    <value>Источник данных "{0}" не существует.</value>
+  </data>
+  <data name="ThereAreNoItemsToBackup" xml:space="preserve">
+    <value>Не указаны элементы для резервного копирования!</value>
+  </data>
+  <data name="TransformFileNameIsEmpty" xml:space="preserve">
+    <value>Не указан шаблон имени файла.</value>
+  </data>
 </root>

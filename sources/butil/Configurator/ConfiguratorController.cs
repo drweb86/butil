@@ -7,6 +7,7 @@ using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
 using BUtil.RestorationMaster;
 using BUtil.Core.Storages;
+using BUtil.Core.BackupModels;
 
 namespace BUtil.Configurator.Configurator
 {
@@ -27,7 +28,8 @@ namespace BUtil.Configurator.Configurator
             } else if (file != null)
             {
                 backupTask = new BackupTask();
-                backupTask.Storages.Add(new FolderStorageSettings() { DestinationFolder = Path.GetDirectoryName(file) });
+                var options = (IncrementalBackupModelOptions)backupTask.Model;
+                options.To = new FolderStorageSettings() { DestinationFolder = Path.GetDirectoryName(file) };
             }
 
             using var form = new OpenBackupForm(backupTask);

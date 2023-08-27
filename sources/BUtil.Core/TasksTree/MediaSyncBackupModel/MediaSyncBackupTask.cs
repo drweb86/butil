@@ -1,28 +1,25 @@
-﻿using BUtil.Core.Events;
+﻿using BUtil.Core.BackupModels;
+using BUtil.Core.Events;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace BUtil.Core.TasksTree.MediaSyncBackupModel
 {
     class MediaSyncBackupTask : SequentialBuTask
     {
         private readonly CommonServicesIoc _commonServicesIoc;
-        private readonly StorageSpecificServicesIoc _storageService;
 
         public MediaSyncBackupTask(ILog log, BackupEvents backupEvents, BackupTask backupTask)
             : base(log, backupEvents, string.Empty, TaskArea.ProgramInRunBeforeAfterBackupChain, new[] { new MoveFilesTask(log, backupEvents, backupTask) })
         {
             _commonServicesIoc = new CommonServicesIoc();
 
-            var storage = backupTask
-                .Storages
-                .First();
+            var options = (MediaSyncBackupModelOptions)backupTask.Model;
+            var storage = options.To;
 
-            _storageService = new StorageSpecificServicesIoc(Log, storage, _commonServicesIoc.HashService);
         }
 
         public override void Execute()
@@ -32,7 +29,6 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
 
             base.Execute();
 
-            _storageService.Dispose();
             _commonServicesIoc.Dispose();
 
             UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
