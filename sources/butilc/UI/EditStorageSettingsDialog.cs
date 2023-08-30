@@ -25,7 +25,17 @@ namespace BUtil.ConsoleBackup.UI
                 {
                     _tabView.SelectedTab = _folderStorageTab;
                     _folderStorageFolderTextField.Text = ((FolderStorageSettings)source).DestinationFolder;
-                } else
+                } if (source is FtpsStorageSettings)
+                {
+                    _tabView.SelectedTab = _ftpsStorageTab;
+                    var storageSettings = (FtpsStorageSettings)source;
+                    _hostFtpsStorageFolderTextField.Text = storageSettings.Host;
+                    _portFtpsStorageFolderTextField.Text = storageSettings.Port.ToString();
+                    _userFtpsStorageFolderTextField.Text = storageSettings.User;
+                    _pwdFtpsStorageFolderTextField.Text = storageSettings.Password;
+                    _folderFtpsStorageFolderTextField.Text = storageSettings.Folder;
+                }
+                else
                 {
                     throw new NotSupportedException();
                 }
@@ -48,6 +58,17 @@ namespace BUtil.ConsoleBackup.UI
                 storageSettings = new FolderStorageSettings
                 {
                     DestinationFolder = this._folderStorageFolderTextField.Text.ToString(),
+                };
+            }
+            else if (_tabView.SelectedTab == _ftpsStorageTab)
+            {
+                storageSettings = new FtpsStorageSettings
+                {
+                    Host = _hostFtpsStorageFolderTextField.Text.ToString(),
+                    Port = int.TryParse(_portFtpsStorageFolderTextField.Text.ToString(), out var port) ? port : -1,
+                    User = _userFtpsStorageFolderTextField.Text.ToString(),
+                    Folder = _folderFtpsStorageFolderTextField.Text.ToString(),
+                    Password = _pwdFtpsStorageFolderTextField.Text.ToString()
                 };
             }
             else

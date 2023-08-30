@@ -320,4 +320,16 @@ Please update storage settings.</value>
   <data name="StorageIsNotSpecified" xml:space="preserve">
     <value>Storage is not specified</value>
   </data>
+  <data name="HostIsNotBeSpecified" xml:space="preserve">
+    <value>Host is not be specified.</value>
+  </data>
+  <data name="PortIsInvalid" xml:space="preserve">
+    <value>Port is invalid.</value>
+  </data>
+  <data name="UserIsNotSpecified" xml:space="preserve">
+    <value>User is not specified.</value>
+  </data>
+  <data name="PasswordIsNotSpecified" xml:space="preserve">
+    <value>Password is not specified.</value>
+  </data>
 </root>

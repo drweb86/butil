@@ -4,9 +4,17 @@ namespace BUtil.ConsoleBackup.UI {
     
     public partial class EditStorageSettingsDialog : Terminal.Gui.Dialog
     {
-        private Terminal.Gui.TextField _folderStorageFolderTextField;
         private Terminal.Gui.TabView _tabView;
+
         private Terminal.Gui.TabView.Tab _folderStorageTab;
+        private Terminal.Gui.TextField _folderStorageFolderTextField;
+        
+        private Terminal.Gui.TabView.Tab _ftpsStorageTab;
+        private Terminal.Gui.TextField _hostFtpsStorageFolderTextField;
+        private Terminal.Gui.TextField _portFtpsStorageFolderTextField;
+        private Terminal.Gui.TextField _userFtpsStorageFolderTextField;
+        private Terminal.Gui.TextField _pwdFtpsStorageFolderTextField;
+        private Terminal.Gui.TextField _folderFtpsStorageFolderTextField;
 
         private void InitializeComponent() {
             this.Width = Dim.Fill(0);
@@ -20,6 +28,7 @@ namespace BUtil.ConsoleBackup.UI {
                 Width = Dim.Fill(0),
                 Height = Dim.Fill(1),
             };
+            Add(_tabView);
 
             var folderStorageView = new View()
             {
@@ -27,28 +36,25 @@ namespace BUtil.ConsoleBackup.UI {
                 Height = Dim.Fill()
             };
 
-            _folderStorageTab = new TabView.Tab(BUtil.Core.Localization.Resources.FolderStorage, folderStorageView);
-            _tabView.AddTab(_folderStorageTab, false);
-
-            Add(_tabView);
-
-
-            folderStorageView.Add(new Label
+            var ftpsStorageView = new View()
             {
-                AutoSize = true,
-                X = 0,
-                Y = 0,
-                Text = BUtil.ConsoleBackup.Localization.Resources.DestinationFolder
-            });
-
-            _folderStorageFolderTextField = new TextField
-            {
-                X = 0,
-                Y = 1,
-                Width = Dim.Fill(0),
+                Width = Dim.Fill(),
+                Height = Dim.Fill(),
+                ColorScheme = new ColorScheme()
             };
-            folderStorageView.Add(_folderStorageFolderTextField);
 
+            _folderStorageTab = new TabView.Tab(BUtil.Core.Localization.Resources.FolderStorage, folderStorageView);
+            _ftpsStorageTab = new TabView.Tab("FTPS", ftpsStorageView);
+            _tabView.AddTab(_folderStorageTab, true);
+            _tabView.AddTab(_ftpsStorageTab, false);
+
+            _folderStorageFolderTextField = AddTextField(folderStorageView, BUtil.ConsoleBackup.Localization.Resources.DestinationFolder, 0);
+
+            _hostFtpsStorageFolderTextField = AddTextField(ftpsStorageView, BUtil.ConsoleBackup.Localization.Resources.HostField, 0);
+            _portFtpsStorageFolderTextField = AddTextField(ftpsStorageView, BUtil.ConsoleBackup.Localization.Resources.PortField, 3);
+            _userFtpsStorageFolderTextField = AddTextField(ftpsStorageView, BUtil.ConsoleBackup.Localization.Resources.UserField, 6);
+            _pwdFtpsStorageFolderTextField = AddTextField(ftpsStorageView, BUtil.ConsoleBackup.Localization.Resources.PasswordField, 9);
+            _folderFtpsStorageFolderTextField = AddTextField(ftpsStorageView, BUtil.ConsoleBackup.Localization.Resources.FolderField, 12);
 
             var saveButton = new Button
             {
@@ -64,6 +70,28 @@ namespace BUtil.ConsoleBackup.UI {
             };
             cancelButton.Clicked += OnCancel;
             AddButton(cancelButton);
+        }
+
+
+        private TextField AddTextField(View view, string label, int y)
+        {
+            view.Add(new Label
+            {
+                AutoSize = true,
+                X = 0,
+                Y = y,
+                Text = label,
+                ColorScheme = view.ColorScheme, // bug in terminal.gui
+            });
+            var field = new TextField
+            {
+                X = 0,
+                Y = y + 1,
+                Width = Dim.Fill(0),
+                ColorScheme = view.ColorScheme, // bug in terminal.gui
+            };
+            view.Add(field);
+            return field;
         }
     }
 }

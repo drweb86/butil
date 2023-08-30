@@ -357,6 +357,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Host is not be specified..
+        /// </summary>
+        public static string HostIsNotBeSpecified {
+            get {
+                return ResourceManager.GetString("HostIsNotBeSpecified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Incremental Backup.
         /// </summary>
         public static string IncrementalBackup {
@@ -496,11 +505,29 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Password is not specified..
+        /// </summary>
+        public static string PasswordIsNotSpecified {
+            get {
+                return ResourceManager.GetString("PasswordIsNotSpecified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password length:.
         /// </summary>
         public static string PasswordLength {
             get {
                 return ResourceManager.GetString("PasswordLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Port is invalid..
+        /// </summary>
+        public static string PortIsInvalid {
+            get {
+                return ResourceManager.GetString("PortIsInvalid", resourceCulture);
             }
         }
         
@@ -582,6 +609,15 @@ namespace BUtil.Core.Localization {
         public static string Use {
             get {
                 return ResourceManager.GetString("Use", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User is not specified..
+        /// </summary>
+        public static string UserIsNotSpecified {
+            get {
+                return ResourceManager.GetString("UserIsNotSpecified", resourceCulture);
             }
         }
         

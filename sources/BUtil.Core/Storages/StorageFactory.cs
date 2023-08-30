@@ -12,6 +12,8 @@ namespace BUtil.Core.Storages
                 return new FailoverStorageWrapper(log, new FolderStorage(log, storageSettings as FolderStorageSettings));
             else if (storageSettings is SambaStorageSettings)
                 return new FailoverStorageWrapper(log, new SambaStorage(log, storageSettings as SambaStorageSettings));
+            else if (storageSettings is FtpsStorageSettings)
+                return new FailoverStorageWrapper(log, new FtpsStorage(log, storageSettings as FtpsStorageSettings));
             throw new ArgumentOutOfRangeException(nameof(storageSettings));
         }
 

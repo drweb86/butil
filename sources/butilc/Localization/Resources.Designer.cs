@@ -196,6 +196,15 @@ namespace BUtil.ConsoleBackup.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Folder:.
+        /// </summary>
+        internal static string FolderField {
+            get {
+                return ResourceManager.GetString("FolderField", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Supported tokens:
         ///{DATE:Format} - Inserts file modification date in the specified format.
         ///To see all options google &quot;C# DateTime format&quot;..
@@ -203,6 +212,24 @@ namespace BUtil.ConsoleBackup.Localization {
         internal static string HelpForTokens {
             get {
                 return ResourceManager.GetString("HelpForTokens", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Host:.
+        /// </summary>
+        internal static string HostField {
+            get {
+                return ResourceManager.GetString("HostField", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password:.
+        /// </summary>
+        internal static string PasswordField {
+            get {
+                return ResourceManager.GetString("PasswordField", resourceCulture);
             }
         }
         
@@ -241,6 +268,15 @@ namespace BUtil.ConsoleBackup.Localization {
             get {
                 return ResourceManager.GetString("PleaseSpecifyTheBackupTaskTitleUsingTheCommandLineArgument0MyBackupTaskTitleNexam" +
                         "pleBackupExe0MyBackupTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Port:.
+        /// </summary>
+        internal static string PortField {
+            get {
+                return ResourceManager.GetString("PortField", resourceCulture);
             }
         }
         
@@ -343,6 +379,15 @@ namespace BUtil.ConsoleBackup.Localization {
         internal static string UsageVariantsNNbackupExeTaskMyTaskTitleNRunningWithoutParametersOutputsInformationToConsoleNNbackupExeTaskMyTask1TitleTaskMyTask2TitleTaskMyTask3TitleNRunsSeveralTasksOneByOneNNbackupExeTaskMyTaskTitleUsefilelogNOutputsInformationInFileLogNNbackupExeTaskMyTaskTitleShutdownNbackupExeTaskMyTaskTitleLogoffNbackupExeTaskMyTaskTitleSuspendNbackupExeTaskMyTaskTitleRebootNbackupExeTaskMyTaskTitleHibernateNNbackupExeHelpNOutputsBriefHelpN {
             get {
                 return ResourceManager.GetString(@"UsageVariantsNNbackupExeTaskMyTaskTitleNRunningWithoutParametersOutputsInformationToConsoleNNbackupExeTaskMyTask1TitleTaskMyTask2TitleTaskMyTask3TitleNRunsSeveralTasksOneByOneNNbackupExeTaskMyTaskTitleUsefilelogNOutputsInformationInFileLogNNbackupExeTaskMyTaskTitleShutdownNbackupExeTaskMyTaskTitleLogoffNbackupExeTaskMyTaskTitleSuspendNbackupExeTaskMyTaskTitleRebootNbackupExeTaskMyTaskTitleHibernateNNbackupExeHelpNOutputsBriefHelpN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User:.
+        /// </summary>
+        internal static string UserField {
+            get {
+                return ResourceManager.GetString("UserField", resourceCulture);
             }
         }
         

@@ -328,4 +328,16 @@
   <data name="StorageIsNotSpecified" xml:space="preserve">
     <value>Хранилище не указано</value>
   </data>
+  <data name="HostIsNotBeSpecified" xml:space="preserve">
+    <value>Сервер не указан.</value>
+  </data>
+  <data name="PortIsInvalid" xml:space="preserve">
+    <value>Некорректный порт.</value>
+  </data>
+  <data name="UserIsNotSpecified" xml:space="preserve">
+    <value>Пользователь не указан.</value>
+  </data>
+  <data name="PasswordIsNotSpecified" xml:space="preserve">
+    <value>Пароль не указан.</value>
+  </data>
 </root>

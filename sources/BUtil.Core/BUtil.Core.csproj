@@ -103,6 +103,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="FluentFTP" Version="47.1.0" />
     <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="7.0.0" />
     <PackageReference Include="TaskScheduler" Version="2.10.1" />
   </ItemGroup>
@@ -138,6 +139,9 @@
 
 		rem Copy NStack
 		xcopy "%userprofile%\.nuget\packages\nstack.core\1.0.7\lib\netstandard2.0" "$(SolutionDir)..\Output\BUtil\bin" /Y
+
+		rem Copy NStack
+		xcopy "%userprofile%\.nuget\packages\fluentftp\47.1.0\lib\net6.0" "$(SolutionDir)..\Output\BUtil\bin" /Y
 
 	</PreBuildEvent>
   </PropertyGroup>

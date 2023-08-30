@@ -224,4 +224,19 @@ To see all options google "C# DateTime format".</value>
   <data name="SpecifyLocation" xml:space="preserve">
     <value>Specify location</value>
   </data>
+  <data name="HostField" xml:space="preserve">
+    <value>Host:</value>
+  </data>
+  <data name="PortField" xml:space="preserve">
+    <value>Port:</value>
+  </data>
+  <data name="UserField" xml:space="preserve">
+    <value>User:</value>
+  </data>
+  <data name="PasswordField" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="FolderField" xml:space="preserve">
+    <value>Folder:</value>
+  </data>
 </root>

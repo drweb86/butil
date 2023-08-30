@@ -162,4 +162,19 @@ butilc.exe Help
   <data name="SpecifyLocation" xml:space="preserve">
     <value>Укажите расположение</value>
   </data>
+  <data name="HostField" xml:space="preserve">
+    <value>Сервер:</value>
+  </data>
+  <data name="PortField" xml:space="preserve">
+    <value>Порт:</value>
+  </data>
+  <data name="UserField" xml:space="preserve">
+    <value>Пользователь:</value>
+  </data>
+  <data name="PasswordField" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="FolderField" xml:space="preserve">
+    <value>Папка:</value>
+  </data>
 </root>
