@@ -429,7 +429,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Move &quot;{0}&quot; to &quot;{1}&quot;.
+        ///   Looks up a localized string similar to Move &quot;{0}&quot;.
         /// </summary>
         public static string MoveFileToDestFolder {
             get {

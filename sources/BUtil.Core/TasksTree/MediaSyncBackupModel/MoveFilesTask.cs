@@ -27,13 +27,12 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
 
             var options = (MediaSyncBackupModelOptions)_task.Model;
 
-            var fromFolder = ((FolderStorageSettings)options.From).DestinationFolder;
-            var destinationFolder = ((FolderStorageSettings)options.To).DestinationFolder;
-            var transformFileName = ((MediaSyncBackupModelOptions)_task.Model).TransformFileName;
+            var fromStorage = StorageFactory.Create(this.Log, options.From);
+            var toStorage = StorageFactory.Create(this.Log, options.To);
+            var transformFileName = options.TransformFileName;
 
-            var tasks = Directory
-                .GetFiles(fromFolder, "*.*", SearchOption.AllDirectories)
-                .Select(x => new MoveFileTask(Log, Events, x, destinationFolder, transformFileName))
+            var tasks = fromStorage.GetFiles(null, SearchOption.AllDirectories)
+                .Select(x => new MoveFileTask(Log, Events, x, fromStorage, toStorage, transformFileName))
                 .ToList();
             Events.DuringExecutionTasksAdded(Id, tasks);
             Children = tasks;

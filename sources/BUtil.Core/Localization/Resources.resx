@@ -297,7 +297,7 @@ Please update storage settings.</value>
     <value>Backup was partial. Due to storage quota some files were not copied. Remaining {0} files with of {1} GB.</value>
   </data>
   <data name="MoveFileToDestFolder" xml:space="preserve">
-    <value>Move "{0}" to "{1}"</value>
+    <value>Move "{0}"</value>
   </data>
   <data name="MoveFilesTask_MoveFiles" xml:space="preserve">
     <value>Move files</value>

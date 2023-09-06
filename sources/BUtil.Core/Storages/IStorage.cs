@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace BUtil.Core.Storages
 {
@@ -10,6 +11,8 @@ namespace BUtil.Core.Storages
         bool Exists(string relativeFileName);
         void DeleteFolder(string relativeFolderName);
         string[] GetFolders(string relativeFolderName, string mask = null);
+        string[] GetFiles(string relativeFolderName = null, SearchOption option = SearchOption.TopDirectoryOnly);
+        DateTime GetModifiedTime(string relativeFileName);
         string Test();
     }
 }

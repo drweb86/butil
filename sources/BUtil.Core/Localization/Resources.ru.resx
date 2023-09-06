@@ -305,7 +305,7 @@
     <value>Бэкап был частичный. Так как у хранилища была указана квота, часть файлов была пропущена. Осталось {0} файлов с размером {1} ГБ.</value>
   </data>
   <data name="MoveFileToDestFolder" xml:space="preserve">
-    <value>Перемещение "{0}" в "{1}"</value>
+    <value>Перемещение "{0}"</value>
   </data>
   <data name="MoveFilesTask_MoveFiles" xml:space="preserve">
     <value>Переместить файлы</value>

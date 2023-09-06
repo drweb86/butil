@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Security;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 
@@ -126,6 +127,32 @@ namespace BUtil.Core.Storages
             {
                 outputFileStream.Write(bytes, 0, bytesRead);
             }
+        }
+
+        public override string[] GetFiles(string relativeFolderName = null, SearchOption option = SearchOption.TopDirectoryOnly)
+        {
+            if (relativeFolderName != null)
+            {
+                if (relativeFolderName.Contains(".."))
+                    throw new SecurityException(nameof(relativeFolderName));
+            }
+
+            var actualFolder = relativeFolderName == null ?
+                Settings.DestinationFolder :
+                Path.Combine(Settings.DestinationFolder, relativeFolderName);
+
+            return Directory
+                .GetFiles(actualFolder, "*.*", option)
+                .Select(x => x.Substring(actualFolder.Length))
+                .Select(x => x.Trim(new[] { '\\', '/' }))
+                .ToArray();
+        }
+
+        public override DateTime GetModifiedTime(string relativeFileName)
+        {
+            var actualFile = Path.Combine(Settings.DestinationFolder, relativeFileName);
+
+            return File.GetLastWriteTime(actualFile);
         }
 
         public override void Dispose()

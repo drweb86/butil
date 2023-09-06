@@ -1,32 +1,32 @@
 ﻿using BUtil.Core.Events;
+using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
+using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.Core;
 using System;
 using System.Globalization;
 using System.IO;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace BUtil.Core.TasksTree.MediaSyncBackupModel
 {
     class MoveFileTask : BuTask
     {
-        private readonly string _from;
-        private readonly string _toFolder;
+        private readonly string _fromFile;
         private readonly string _transformFileName;
-        private readonly string _destinationFileName;
+        private readonly IStorage _fromStorage;
+        private readonly IStorage _toStorage;
 
-        public MoveFileTask(ILog log, BackupEvents backupEvents, string from, string toFolder, string transformFileName)
-            : base(log, backupEvents, string.Empty, TaskArea.File)
+        public MoveFileTask(ILog log, BackupEvents backupEvents, string fromFile, IStorage fromStorage, IStorage toStorage, string transformFileName)
+            : base(log, backupEvents, null, TaskArea.File)
         {
-            _from = from;
-            _toFolder = toFolder;
+            _fromFile = fromFile;
+            _fromStorage = fromStorage;
+            _toStorage = toStorage;
             _transformFileName = transformFileName;
 
-            _destinationFileName = GetDestinationFileName();
-
-            Title = string.Format(Resources.MoveFileToDestFolder, Path.GetFileNameWithoutExtension(from), _destinationFileName.Substring(toFolder.Length + 1));
+            Title = string.Format(Resources.MoveFileToDestFolder, Path.GetFileNameWithoutExtension(fromFile));
         }
 
         public override void Execute()
@@ -34,10 +34,16 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
             UpdateStatus(ProcessingStatus.InProgress);
             try
             {
-                var actualFileName = GetActualDestinationFileName(_destinationFileName);
+                var destinationFileName = GetDestinationFileName();
+                var actualFileName = GetActualDestinationFileName(destinationFileName);
                 var destFolder = Path.GetDirectoryName(actualFileName);
-                Directory.CreateDirectory(destFolder);
-                File.Move(_from, actualFileName);
+
+                using (var temp = new TempFolder())
+                {
+                    var exchangeFile = Path.Combine(temp.Folder, Path.GetFileName(_fromFile));
+                    _fromStorage.Download(_fromFile, exchangeFile);
+                    _toStorage.Upload(exchangeFile, actualFileName);
+                }
 
                 IsSuccess = true;
                 UpdateStatus(ProcessingStatus.FinishedSuccesfully);
@@ -51,11 +57,11 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
             }
         }
 
-        private static string GetActualDestinationFileName(string destFile)
+        private string GetActualDestinationFileName(string destFile)
         {
             var actualDestFile = destFile;
             var id = 0;
-            while (File.Exists(actualDestFile))
+            while (_toStorage.Exists(actualDestFile))
             {
                 id++;
                 actualDestFile = Path.Combine(Path.GetDirectoryName(destFile), $"{Path.GetFileNameWithoutExtension(destFile)}_{id}{Path.GetExtension(destFile)}");
@@ -66,7 +72,7 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
 
         private string GetDestinationFileName()
         {
-            var lastWriteTime = new FileInfo(_from).LastWriteTime;
+            var lastWriteTime = _fromStorage.GetModifiedTime(_fromFile);
 
             var relativePath = ParseString(_transformFileName, lastWriteTime);
             var relativeDir = Path.GetDirectoryName(relativePath);
@@ -81,8 +87,7 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
                 relativeFileName = relativeFileName.Replace(ch, '_');
             }
 
-            var actualFolder = Path.Combine(_toFolder, relativeDir);
-            var destFile = Path.Combine(actualFolder, $"{relativeFileName}{Path.GetExtension(_from)}");
+            var destFile = Path.Combine(relativeDir, $"{relativeFileName}{Path.GetExtension(_fromFile)}");
 
             return destFile;
         }
