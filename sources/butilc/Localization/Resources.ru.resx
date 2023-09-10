@@ -177,4 +177,13 @@ butilc.exe Help
   <data name="FolderField" xml:space="preserve">
     <value>Папка:</value>
   </data>
+  <data name="TaskHasFailedSeeOpenedLog" xml:space="preserve">
+    <value>Провалено (смотрите открывшийся лог)</value>
+  </data>
+  <data name="Tasks" xml:space="preserve">
+    <value>Задания</value>
+  </data>
+  <data name="TaskIsSucceeded" xml:space="preserve">
+    <value>Завершено успешно!</value>
+  </data>
 </root>

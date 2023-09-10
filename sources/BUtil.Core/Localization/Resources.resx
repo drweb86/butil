@@ -222,18 +222,6 @@ Application will now close</value>
   <data name="AfterBackupTask" xml:space="preserve">
     <value>After backup task: </value>
   </data>
-  <data name="InProgress" xml:space="preserve">
-    <value>In Progress...</value>
-  </data>
-  <data name="Waiting" xml:space="preserve">
-    <value>Waiting...</value>
-  </data>
-  <data name="FinishedSuccesfully" xml:space="preserve">
-    <value>Finished Succesfully</value>
-  </data>
-  <data name="FinishedWithErrors" xml:space="preserve">
-    <value>Finished With Errors</value>
-  </data>
   <data name="PackingDataInAnImage" xml:space="preserve">
     <value>Packing data in an image</value>
   </data>
@@ -334,5 +322,8 @@ Please update storage settings.</value>
   </data>
   <data name="FolderDoesNotExist" xml:space="preserve">
     <value>Folder does not exist.</value>
+  </data>
+  <data name="InvalidTransformFileNameString" xml:space="preserve">
+    <value>Invalid transform file name string.</value>
   </data>
 </root>

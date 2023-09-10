@@ -3,6 +3,8 @@ using BUtil.Core.BackupModels;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
 using BUtil.Core.Storages;
+using BUtil.Core.TasksTree.MediaSyncBackupModel;
+using NStack;
 using System;
 using System.IO;
 using System.Linq;
@@ -35,6 +37,7 @@ namespace BUtil.ConsoleBackup.UI
                 Title = string.Format(Resources.PhotosVideosMovalTask, task.Name);
                 _titleTextField.Text = task.Name;
             }
+            OnTransformFileNameTextChanged(_transformFileNameTextField.Text);
         }
 
         public bool Canceled { get; private set; } = true;
@@ -90,6 +93,18 @@ namespace BUtil.ConsoleBackup.UI
                     }
                 }; 
             } 
+        }
+
+        private void OnTransformFileNameTextChanged(ustring ustring)
+        {
+            try
+            {
+                _transformFileNameLabel.Text = DateTokenReplacer.ParseString(ustring.ToString(), DateTime.Now); ;
+            }
+            catch 
+            {
+                _transformFileNameLabel.Text = BUtil.Core.Localization.Resources.InvalidTransformFileNameString;
+            }
         }
     }
 }

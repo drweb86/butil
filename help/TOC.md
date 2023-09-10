@@ -3,6 +3,7 @@
 # Configure
 
 [Configurator](./Configure/Configurator.md)
+[Console CLI UI](./Configure/Console%20CLI%20UI.md)
 
 # Backup
 

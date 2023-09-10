@@ -1,6 +1,5 @@
-using System;
+﻿using System;
 using BUtil.Core.Events;
-using BUtil.Core.Localization;
 
 namespace BUtil.Core
 {
@@ -10,10 +9,10 @@ namespace BUtil.Core
 		{
 			switch (state)
 			{
-				case ProcessingStatus.NotStarted: return Resources.Waiting;
-				case ProcessingStatus.InProgress: return Resources.InProgress;
-				case ProcessingStatus.FinishedSuccesfully: return Resources.FinishedSuccesfully;
-				case ProcessingStatus.FinishedWithErrors: return Resources.FinishedWithErrors;
+				case ProcessingStatus.NotStarted: return "⏳";
+				case ProcessingStatus.InProgress: return "👉";
+				case ProcessingStatus.FinishedSuccesfully: return "✅";
+				case ProcessingStatus.FinishedWithErrors: return "❌";
 				default: 
 					throw new NotImplementedException("State " + state + " is not implemented");
 			}

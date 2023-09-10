@@ -97,24 +97,6 @@ namespace BUtil.ConsoleBackup.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Backup has failed (see opened log).
-        /// </summary>
-        internal static string BackupFailedPleaseReviewOpenedLog {
-            get {
-                return ResourceManager.GetString("BackupFailedPleaseReviewOpenedLog", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Backup is succeeded!.
-        /// </summary>
-        internal static string BackupProcessCompletedSuccesfully {
-            get {
-                return ResourceManager.GetString("BackupProcessCompletedSuccesfully", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Cannot open file log due to crytical error {0}.
         /// </summary>
         internal static string CannotOpenFileLogDueToCryticalError0 {
@@ -304,6 +286,24 @@ namespace BUtil.ConsoleBackup.Localization {
         internal static string SpecifyLocation {
             get {
                 return ResourceManager.GetString("SpecifyLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Task has failed (see opened log).
+        /// </summary>
+        internal static string TaskHasFailedSeeOpenedLog {
+            get {
+                return ResourceManager.GetString("TaskHasFailedSeeOpenedLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Task is succeeded!.
+        /// </summary>
+        internal static string TaskIsSucceeded {
+            get {
+                return ResourceManager.GetString("TaskIsSucceeded", resourceCulture);
             }
         }
         

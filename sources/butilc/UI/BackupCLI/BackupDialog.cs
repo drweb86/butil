@@ -45,7 +45,7 @@ namespace BUtil.ConsoleBackup.UI
         private void OnRenderRow(ListViewRowEventArgs args)
         {
             var item = _dataSource[args.Row];
-            args.RowAttribute = new Terminal.Gui.Attribute(item.ForeColor, item.BackColor);
+            args.RowAttribute = new Terminal.Gui.Attribute(item.ForeColor, Color.Gray);
         }
 
         private void OnClickClose()
@@ -118,11 +118,11 @@ namespace BUtil.ConsoleBackup.UI
             if (_log.HasErrors)
             {
                 ProcessHelper.ShellExecute(_log.LogFilename);
-                MessageBox.ErrorQuery(string.Empty, $"{Resources.BackupFailedPleaseReviewOpenedLog}\n{lastMinuteConsolidatedMessage}", Resources.Close);
+                MessageBox.ErrorQuery(string.Empty, $"{Resources.TaskHasFailedSeeOpenedLog}\n{lastMinuteConsolidatedMessage}", Resources.Close);
             }
             else
             {
-                MessageBox.Query(string.Empty, $"{Resources.BackupProcessCompletedSuccesfully}\n{lastMinuteConsolidatedMessage}", Resources.Close);
+                MessageBox.Query(string.Empty, $"{Resources.TaskIsSucceeded}\n{lastMinuteConsolidatedMessage}", Resources.Close);
             }
             Application.MainLoop.Invoke(_listView.SetNeedsDisplay);
         }

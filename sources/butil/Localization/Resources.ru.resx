@@ -335,18 +335,6 @@
 
 Сейчас программа откроет броузер со страничкой загрузки программы</value>
   </data>
-  <data name="InProgress" xml:space="preserve">
-    <value>Обработка...</value>
-  </data>
-  <data name="Waiting" xml:space="preserve">
-    <value>Ожидание...</value>
-  </data>
-  <data name="FinishedSuccesfully" xml:space="preserve">
-    <value>Завершилась успешно</value>
-  </data>
-  <data name="FinishedWithErrors" xml:space="preserve">
-    <value>Завершилась с ошибками</value>
-  </data>
   <data name="ProcessingState" xml:space="preserve">
     <value>Состояние Обработки</value>
   </data>

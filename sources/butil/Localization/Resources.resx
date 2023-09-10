@@ -395,18 +395,6 @@ Changes are:
 
 Program will now open browser with the download page</value>
   </data>
-  <data name="InProgress" xml:space="preserve">
-    <value>In Progress...</value>
-  </data>
-  <data name="Waiting" xml:space="preserve">
-    <value>Waiting...</value>
-  </data>
-  <data name="FinishedSuccesfully" xml:space="preserve">
-    <value>Finished Succesfully</value>
-  </data>
-  <data name="FinishedWithErrors" xml:space="preserve">
-    <value>Finished With Errors</value>
-  </data>
   <data name="ProcessingState" xml:space="preserve">
     <value>Processing State</value>
   </data>

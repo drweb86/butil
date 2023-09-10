@@ -8,7 +8,7 @@ BUtil is a powerful set of tools for creating backups of documents and other dat
 
 ![The main window of configurator, backup ui master](./help/Readme%20Assets/Screenshot%201.png)
 
-## Sofware requirements
+## Software requirements
 
 - Microsoft Windows 10 or later;
 - Microsoft .Net Desktop Runtime 7 is required. Setup will install it.
@@ -28,6 +28,7 @@ BUtil is a powerful set of tools for creating backups of documents and other dat
 
 - [Version history](./help/Other/Version%20History%20(Changelog).md)
 - [Congifurator](./help/Configure/Configurator.md)
+- [Console CLI UI](./help/Configure/Console%20CLI%20UI.md)
 - [Command line version of backup tool](./help/Backup/Backup%20via%20Console%20Tool.md)
 - [Restorate](./help/Restore/Restoration%20Wizard.md)
 - [Frequently Asked Questions (FAQ)](./help/Other/Frequently%20Asked%20Questions.md)

@@ -150,11 +150,11 @@ Example: butilc.exe "{0}My backup title"</value>
   <data name="Close" xml:space="preserve">
     <value>Close</value>
   </data>
-  <data name="BackupFailedPleaseReviewOpenedLog" xml:space="preserve">
-    <value>Backup has failed (see opened log)</value>
+  <data name="TaskHasFailedSeeOpenedLog" xml:space="preserve">
+    <value>Task has failed (see opened log)</value>
   </data>
-  <data name="BackupProcessCompletedSuccesfully" xml:space="preserve">
-    <value>Backup is succeeded!</value>
+  <data name="TaskIsSucceeded" xml:space="preserve">
+    <value>Task is succeeded!</value>
   </data>
   <data name="Title" xml:space="preserve">
     <value>Title:</value>

@@ -1,5 +1,6 @@
 
 namespace BUtil.ConsoleBackup.UI {
+    using NStack;
     using System;
     using Terminal.Gui;
     
@@ -8,6 +9,7 @@ namespace BUtil.ConsoleBackup.UI {
         private Terminal.Gui.TextField _titleTextField;
         private Terminal.Gui.TextField _destinationFolderTextField;
         private Terminal.Gui.TextField _transformFileNameTextField;
+        private Terminal.Gui.Label _transformFileNameLabel;
 
         private void InitializeComponent() {
             this.Width = Dim.Fill(0);
@@ -72,12 +74,21 @@ namespace BUtil.ConsoleBackup.UI {
                 Y = 9,
                 Width = Dim.Fill(0),
             };
+            _transformFileNameTextField.TextChanged += OnTransformFileNameTextChanged;
             Add(_transformFileNameTextField);
-            Add(new Label
+            _transformFileNameLabel = new Label
             {
                 AutoSize = true,
                 X = 0,
                 Y = 10,
+                Text = string.Empty
+            };
+            Add(_transformFileNameLabel);
+            Add(new Label
+            {
+                AutoSize = true,
+                X = 0,
+                Y = 11,
                 Text = BUtil.ConsoleBackup.Localization.Resources.HelpForTokens
             });
 

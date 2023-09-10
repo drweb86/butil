@@ -256,24 +256,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Finished Succesfully.
-        /// </summary>
-        public static string FinishedSuccesfully {
-            get {
-                return ResourceManager.GetString("FinishedSuccesfully", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Finished With Errors.
-        /// </summary>
-        public static string FinishedWithErrors {
-            get {
-                return ResourceManager.GetString("FinishedWithErrors", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Folder does not exist..
         /// </summary>
         public static string FolderDoesNotExist {
@@ -384,15 +366,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to In Progress....
-        /// </summary>
-        public static string InProgress {
-            get {
-                return ResourceManager.GetString("InProgress", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Integrity verification script.ps1.
         /// </summary>
         public static string IntegrityVerificationScriptPs1 {
@@ -407,6 +380,15 @@ namespace BUtil.Core.Localization {
         public static string IntegrityVerificationScriptSh {
             get {
                 return ResourceManager.GetString("IntegrityVerificationScriptSh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid transform file name string..
+        /// </summary>
+        public static string InvalidTransformFileNameString {
+            get {
+                return ResourceManager.GetString("InvalidTransformFileNameString", resourceCulture);
             }
         }
         
@@ -636,15 +618,6 @@ namespace BUtil.Core.Localization {
         public static string VisitProjectHomepage {
             get {
                 return ResourceManager.GetString("VisitProjectHomepage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Waiting....
-        /// </summary>
-        public static string Waiting {
-            get {
-                return ResourceManager.GetString("Waiting", resourceCulture);
             }
         }
         

@@ -2,6 +2,7 @@ using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
 using BUtil.Core.Storages;
+using BUtil.Core.TasksTree.MediaSyncBackupModel;
 using System;
 using System.IO;
 
@@ -79,6 +80,16 @@ namespace BUtil.Core.BackupModels
                 if (string.IsNullOrWhiteSpace(typedOptions.TransformFileName))
                 {
                     error = BUtil.Core.Localization.Resources.TransformFileNameIsEmpty;
+                    return false;
+                }
+
+                try
+                {
+                    DateTokenReplacer.ParseString(typedOptions.TransformFileName, DateTime.Now);
+                }
+                catch
+                {
+                    error = BUtil.Core.Localization.Resources.InvalidTransformFileNameString;
                     return false;
                 }
 
