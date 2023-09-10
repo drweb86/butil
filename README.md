@@ -17,11 +17,12 @@ BUtil is a powerful set of tools for creating backups of documents and other dat
 ## Key functions and characteristics of software
 
 - Incremental backup model with deduplication of files;
+- Photo/Video sync from external card, phone (Move file sync with SAMBA, FTPS support (use CLI to configure it));
 - Simple configuring takes less time and goes easily and with comfort;
 - Multiple backup tasks are supported;
 - Html format for log files takes less time on reviewing of it;
 - Two modes of creating a backup exists: manual from UI and console tool and with scheduling/automation possibilities;
-- Built in [7-zip](https://www.7-zip.org/) compression and AES-256 encryption.
+- Uses [7-zip](https://www.7-zip.org/) compression and AES-256 encryption.
 
 ## Documentation
 

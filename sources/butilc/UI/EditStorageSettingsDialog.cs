@@ -25,7 +25,7 @@ namespace BUtil.ConsoleBackup.UI
                 {
                     _tabView.SelectedTab = _folderStorageTab;
                     _folderStorageFolderTextField.Text = ((FolderStorageSettings)source).DestinationFolder;
-                } if (source is FtpsStorageSettings)
+                } else if (source is FtpsStorageSettings)
                 {
                     _tabView.SelectedTab = _ftpsStorageTab;
                     var storageSettings = (FtpsStorageSettings)source;

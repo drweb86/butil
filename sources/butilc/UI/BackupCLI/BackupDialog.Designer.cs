@@ -21,7 +21,7 @@ namespace BUtil.ConsoleBackup.UI {
             {
                 X = 0,
                 Y = 0,
-                Height = Dim.Fill(),
+                Height = Dim.Fill(1),
                 Width = Dim.Fill(),
             };
 

@@ -43,6 +43,7 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
                     var exchangeFile = Path.Combine(temp.Folder, Path.GetFileName(_fromFile));
                     _fromStorage.Download(_fromFile, exchangeFile);
                     _toStorage.Upload(exchangeFile, actualFileName);
+                    _fromStorage.Delete(_fromFile);
                 }
 
                 IsSuccess = true;

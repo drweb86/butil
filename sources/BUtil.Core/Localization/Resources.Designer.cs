@@ -274,6 +274,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Folder does not exist..
+        /// </summary>
+        public static string FolderDoesNotExist {
+            get {
+                return ResourceManager.GetString("FolderDoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Папка.
         /// </summary>
         public static string FolderStorage {

@@ -1,15 +1,18 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Security;
 using System.Text.RegularExpressions;
 using BUtil.Core.Logs;
-using BUtil.Core.Misc;
 using FluentFTP;
 
 namespace BUtil.Core.Storages
 {
     class FtpsStorage : StorageBase<FtpsStorageSettings>
     {
+        private readonly string _normalizedFolder;
+        private FtpClient _client;
+
         internal FtpsStorage(ILog log, FtpsStorageSettings settings)
             : base(log, settings)
         {
@@ -22,6 +25,8 @@ namespace BUtil.Core.Storages
             if (string.IsNullOrWhiteSpace(Settings.Password))
                 throw new InvalidDataException(BUtil.Core.Localization.Resources.PasswordIsNotSpecified);
 
+            _normalizedFolder = NormalizePath(Settings.Folder);
+
             Mount();
         }
 
@@ -30,14 +35,14 @@ namespace BUtil.Core.Storages
         {
             lock (_uploadLock) // because we're limited by upload speed by Server and Internet
             {
-                var actualFileName = this.Settings.Folder == null ? relativeFileName : Path.Combine(this.Settings.Folder, relativeFileName);
-                var status = client.UploadFile(sourceFile, actualFileName);
+                var remotePath = GetRemotePath(relativeFileName, false);
+                var status = _client.UploadFile(sourceFile, remotePath);
                 if (status != FtpStatus.Success)
-                    throw new Exception();
+                    throw new Exception("Failed to upload.");
                 
                 return new IStorageUploadResult
                 {
-                    StorageFileName = actualFileName,
+                    StorageFileName = remotePath,
                     StorageFileNameSize = new FileInfo(sourceFile).Length,
                 };
             }
@@ -45,78 +50,103 @@ namespace BUtil.Core.Storages
 
         public override void DeleteFolder(string relativeFolderName)
         {
-            var actualFileName = this.Settings.Folder == null ? relativeFolderName : Path.Combine(this.Settings.Folder, relativeFolderName);
-            client.DeleteDirectory(actualFileName);
+            var remotePath = GetRemotePath(relativeFolderName, false);
+            _client.DeleteDirectory(remotePath);
         }
 
         public override string[] GetFolders(string relativeFolderName, string mask = null)
         {
             FtpListOption listOption = FtpListOption.Auto;
-            var actualFolder = relativeFolderName == null ? this.Settings.Folder : Path.Combine(this.Settings.Folder, relativeFolderName);
+            var remotePath = GetRemotePath(relativeFolderName, true);
 
-            return this.client
-                .GetListing(actualFolder, listOption)
+            return this._client
+                .GetListing(remotePath, listOption)
                 .Where(x => x.Type == FtpObjectType.Directory)
                 .Select(x => x.FullName)
-                .Select(x => actualFolder == null ? x : x.Substring(actualFolder.Length))
-                .Select(x => x.Trim(new[] { '\\', '/' }))
+                .Select(NormalizePath)
+                .Select(x => remotePath == null ? x : x.Substring(remotePath.Length))
+                .Select(NormalizePath)
                 .Where(x => mask == null || FitsMask(Path.GetFileName(x), mask))
                 .ToArray();
         }
 
-        private bool FitsMask(string fileName, string fileMask)
+        private static bool FitsMask(string fileName, string fileMask)
         {
             Regex mask = new Regex(fileMask.Replace(".", "[.]").Replace("*", ".*").Replace("?", "."));
             return mask.IsMatch(fileName);
         }
 
-        private FtpClient client;
         private void Mount()
         {
             Log.WriteLine(LoggingEvent.Debug, $"Mount");
-            client = new FtpClient(Settings.Host, Settings.User, Settings.Password, Settings.Port);
-            client.Config.EncryptionMode = FtpEncryptionMode.Auto;
-            client.Config.ValidateAnyCertificate = true;
-            client.Config.SslProtocols = System.Security.Authentication.SslProtocols.None;
-            client.AutoConnect();
+            _client = new FtpClient(Settings.Host, Settings.User, Settings.Password, Settings.Port);
+            _client.Config.EncryptionMode = FtpEncryptionMode.Auto;
+            _client.Config.ValidateAnyCertificate = true;
+            _client.Config.SslProtocols = System.Security.Authentication.SslProtocols.None;
+            _client.AutoConnect();
         }
 
         private void Unmount()
         {
             Log.WriteLine(LoggingEvent.Debug, $"Unmount");
-            if (client.IsConnected)
+            if (_client.IsConnected)
             {
-                client.Disconnect();
+                _client.Disconnect();
             }
-            client.Dispose();
+            _client.Dispose();
         }
 
         public override string Test()
         {
-            client.GetListing(Settings.Folder);
+            if (Settings.Folder != null && !_client.DirectoryExists(Settings.Folder))
+            {
+                return BUtil.Core.Localization.Resources.FolderDoesNotExist;
+            }
+            else
+            {
+                _client.GetListing(Settings.Folder);
+            }
             return null;
         }
 
         public override bool Exists(string relativeFileName)
         {
-            var actualFileName = this.Settings.Folder == null ? relativeFileName : Path.Combine(this.Settings.Folder, relativeFileName);
-            return client.FileExists(actualFileName);
+            var remotePath = this.GetRemotePath(relativeFileName, false);
+            return _client.FileExists(remotePath);
         }
 
         public override void Delete(string relativeFileName)
         {
-            var actualFileName = this.Settings.Folder == null ? relativeFileName : Path.Combine(this.Settings.Folder, relativeFileName);
-            client.DeleteFile(actualFileName);
+            var remotePath = this.GetRemotePath(relativeFileName, false);
+            _client.DeleteFile(remotePath);
         }
 
         public override void Download(string relativeFileName, string targetFileName)
         {
-            var actualFileName = this.Settings.Folder == null ? relativeFileName : Path.Combine(this.Settings.Folder, relativeFileName);
-            var status = client.DownloadFile(targetFileName, actualFileName);
+            var remotePath = this.GetRemotePath(relativeFileName, false);
+            var status = _client.DownloadFile(targetFileName, remotePath);
             if (status != FtpStatus.Success)
             {
                 throw new Exception();
             }
+        }
+
+        private static string NormalizePath(string path)
+        {
+            if (path != null && path.Contains(".."))
+                throw new SecurityException("[..] is not allowed in path.");
+
+            return path?.Trim(new[] { '\\', '/' });
+        }
+
+        private string GetRemotePath(string relativePath, bool allowNull)
+        {
+            var normalizedRelativePath = NormalizePath(relativePath);
+            if (!allowNull && string.IsNullOrWhiteSpace(normalizedRelativePath))
+            {
+                throw new ArgumentNullException(nameof(relativePath));
+            }
+            return normalizedRelativePath == null ? this._normalizedFolder : Path.Combine(this._normalizedFolder, normalizedRelativePath);
         }
 
         public override string[] GetFiles(string relativeFolderName = null, SearchOption option = SearchOption.TopDirectoryOnly)
@@ -125,21 +155,21 @@ namespace BUtil.Core.Storages
             if (option == SearchOption.AllDirectories)
                 listOption |= FtpListOption.Recursive;
 
-            var actualFolder = relativeFolderName == null ? this.Settings.Folder : Path.Combine(this.Settings.Folder, relativeFolderName);
-
-            return this.client
-                .GetListing(actualFolder, listOption)
+            var remoteFolder = GetRemotePath(relativeFolderName, true);
+            return this._client
+                .GetListing(remoteFolder, listOption)
                 .Where(x => x.Type == FtpObjectType.File)
                 .Select(x => x.FullName)
-                .Select(x => actualFolder == null ? x : x.Substring(actualFolder.Length))
-                .Select(x => x.Trim(new[] { '\\', '/' }))
+                .Select(NormalizePath)
+                .Select(x => remoteFolder == null ? x : x.Substring(remoteFolder.Length))
+                .Select(NormalizePath)
                 .ToArray();
         }
 
         public override DateTime GetModifiedTime(string relativeFileName)
         {
-            var actualFileName = this.Settings.Folder == null ? relativeFileName : Path.Combine (this.Settings.Folder, relativeFileName);
-            return client.GetModifiedTime(actualFileName);
+            var remotePath = GetRemotePath(relativeFileName, false);
+            return _client.GetModifiedTime(remotePath);
         }
 
         public override void Dispose()

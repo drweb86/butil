@@ -332,4 +332,7 @@ Please update storage settings.</value>
   <data name="PasswordIsNotSpecified" xml:space="preserve">
     <value>Password is not specified.</value>
   </data>
+  <data name="FolderDoesNotExist" xml:space="preserve">
+    <value>Folder does not exist.</value>
+  </data>
 </root>

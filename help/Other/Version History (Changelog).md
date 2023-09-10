@@ -2,6 +2,7 @@
 
 ## New Features
 - CLI: backup dialog title shows percentage
+- FTPS support for move tasks to handle photo files movement
 
 ## Warning! Format of backup tasks was updated. Please reconfigure your tasks!
 
