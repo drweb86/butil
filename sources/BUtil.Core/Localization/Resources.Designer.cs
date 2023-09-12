@@ -357,6 +357,24 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Import &quot;{0}&quot;.
+        /// </summary>
+        public static string Import0 {
+            get {
+                return ResourceManager.GetString("Import0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import all files.
+        /// </summary>
+        public static string ImportAllFiles {
+            get {
+                return ResourceManager.GetString("ImportAllFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Incremental Backup.
         /// </summary>
         public static string IncrementalBackup {
@@ -407,15 +425,6 @@ namespace BUtil.Core.Localization {
         public static string LocalizationOptionsAreNotSetted {
             get {
                 return ResourceManager.GetString("LocalizationOptionsAreNotSetted", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Move files.
-        /// </summary>
-        public static string MoveFilesTask_MoveFiles {
-            get {
-                return ResourceManager.GetString("MoveFilesTask_MoveFiles", resourceCulture);
             }
         }
         

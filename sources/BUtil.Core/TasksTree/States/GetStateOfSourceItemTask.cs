@@ -46,7 +46,7 @@ namespace BUtil.Core.TasksTree
             }
 
             _getFileStateTasks = files
-                .Select(file => new GetStateOfFileTask(Log, Events, _commonServicesIoc, file))
+                .Select(file => new GetStateOfFileTask(Log, Events, _commonServicesIoc, SourceItem, file))
                 .ToList();
             Children = _getFileStateTasks;
             Events.DuringExecutionTasksAdded(Id, Children);

@@ -295,8 +295,8 @@
   <data name="MoveFileToDestFolder" xml:space="preserve">
     <value>Перемещение "{0}"</value>
   </data>
-  <data name="MoveFilesTask_MoveFiles" xml:space="preserve">
-    <value>Переместить файлы</value>
+  <data name="ImportAllFiles" xml:space="preserve">
+    <value>Импорт всех файлов</value>
   </data>
   <data name="SourceItemDoesNotExist" xml:space="preserve">
     <value>Источник данных "{0}" не существует.</value>
@@ -333,5 +333,8 @@
   </data>
   <data name="FolderDoesNotExist" xml:space="preserve">
     <value>Папка не существует.</value>
+  </data>
+  <data name="Import0" xml:space="preserve">
+    <value>Импорт "{0}"</value>
   </data>
 </root>

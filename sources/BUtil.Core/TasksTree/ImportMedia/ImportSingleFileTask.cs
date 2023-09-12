@@ -1,30 +1,46 @@
 ﻿using BUtil.Core.Events;
 using BUtil.Core.FileSystem;
-using BUtil.Core.Localization;
 using BUtil.Core.Logs;
+using BUtil.Core.State;
 using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.Core;
+using BUtil.Core.TasksTree.IncrementalModel;
+using BUtil.Core.TasksTree.States;
 using System;
 using System.IO;
+using System.Linq;
 
 namespace BUtil.Core.TasksTree.MediaSyncBackupModel
 {
-    class MoveFileTask : BuTask
+    class ImportSingleFileTask : BuTask
     {
-        private readonly string _fromFile;
         private readonly string _transformFileName;
         private readonly IStorage _fromStorage;
         private readonly IStorage _toStorage;
+        private readonly SourceItemState _state;
+        private readonly CommonServicesIoc _commonServicesIoc;
 
-        public MoveFileTask(ILog log, BackupEvents backupEvents, string fromFile, IStorage fromStorage, IStorage toStorage, string transformFileName)
+        public string File { get; private set; }
+
+        public ImportSingleFileTask(
+            ILog log,
+            BackupEvents backupEvents,
+            string fromFile,
+            IStorage fromStorage,
+            IStorage toStorage,
+            string transformFileName,
+            SourceItemState state,
+            CommonServicesIoc commonServicesIoc)
             : base(log, backupEvents, null, TaskArea.File)
         {
-            _fromFile = fromFile;
+            File = fromFile;
+            _state = state;
+            _commonServicesIoc = commonServicesIoc;
             _fromStorage = fromStorage;
             _toStorage = toStorage;
             _transformFileName = transformFileName;
 
-            Title = string.Format(Resources.MoveFileToDestFolder, Path.GetFileNameWithoutExtension(fromFile));
+            Title = string.Format(BUtil.Core.Localization.Resources.Import0, Path.GetFileNameWithoutExtension(fromFile));
         }
 
         public override void Execute()
@@ -32,18 +48,37 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
             UpdateStatus(ProcessingStatus.InProgress);
             try
             {
-                var lastWriteTime = _fromStorage.GetModifiedTime(_fromFile);
+                var lastWriteTime = _fromStorage.GetModifiedTime(this.File);
                 var destinationFileName = GetDestinationFileName(lastWriteTime);
                 var actualFileName = GetActualDestinationFileName(destinationFileName);
                 var destFolder = Path.GetDirectoryName(actualFileName);
 
                 using (var temp = new TempFolder())
                 {
-                    var exchangeFile = Path.Combine(temp.Folder, Path.GetFileName(_fromFile));
-                    _fromStorage.Download(_fromFile, exchangeFile);
+                    var exchangeFile = Path.Combine(temp.Folder, Path.GetFileName(this.File));
+                    _fromStorage.Download(this.File, exchangeFile);
+                    System.IO.File.SetCreationTime(exchangeFile, lastWriteTime);
+                    System.IO.File.SetLastWriteTime(exchangeFile, lastWriteTime);
+
+                    var getState = new GetStateOfFileTask(Log, new BackupEvents(), _commonServicesIoc, _state.SourceItem,  exchangeFile);
+                    getState.Execute();
+                    if (!getState.IsSuccess)
+                    {
+                        IsSuccess = false;
+                        UpdateStatus(ProcessingStatus.FinishedWithErrors);
+                        return;
+                    }
+                    if (_state.FileStates.Any(x => x.CompareTo(getState.State, true)))
+                    {
+                        Log.WriteLine(LoggingEvent.Debug, $"File {File} is already exists in destination folder. Skipping.");
+                        IsSuccess = true;
+                        UpdateStatus(ProcessingStatus.FinishedSuccesfully);
+                        return;
+                    }
+
                     var uploadedFileName = _toStorage.Upload(exchangeFile, actualFileName);
-                    File.SetCreationTime(uploadedFileName.StorageFileName, lastWriteTime);
-                    File.SetLastWriteTime(uploadedFileName.StorageFileName, lastWriteTime);
+                    System.IO.File.SetCreationTime(uploadedFileName.StorageFileName, lastWriteTime);
+                    System.IO.File.SetLastWriteTime(uploadedFileName.StorageFileName, lastWriteTime);
                 }
 
                 IsSuccess = true;
@@ -86,7 +121,7 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
                 relativeFileName = relativeFileName.Replace(ch, '_');
             }
 
-            var destFile = Path.Combine(relativeDir, $"{relativeFileName}{Path.GetExtension(_fromFile)}");
+            var destFile = Path.Combine(relativeDir, $"{relativeFileName}{Path.GetExtension(this.File)}");
 
             return destFile;
         }

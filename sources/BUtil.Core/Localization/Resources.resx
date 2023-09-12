@@ -287,8 +287,8 @@ Please update storage settings.</value>
   <data name="MoveFileToDestFolder" xml:space="preserve">
     <value>Move "{0}"</value>
   </data>
-  <data name="MoveFilesTask_MoveFiles" xml:space="preserve">
-    <value>Move files</value>
+  <data name="ImportAllFiles" xml:space="preserve">
+    <value>Import all files</value>
   </data>
   <data name="SourceItemDoesNotExist" xml:space="preserve">
     <value>Source item "{0}" does not exist.</value>
@@ -325,5 +325,8 @@ Please update storage settings.</value>
   </data>
   <data name="InvalidTransformFileNameString" xml:space="preserve">
     <value>Invalid transform file name string.</value>
+  </data>
+  <data name="Import0" xml:space="preserve">
+    <value>Import "{0}"</value>
   </data>
 </root>

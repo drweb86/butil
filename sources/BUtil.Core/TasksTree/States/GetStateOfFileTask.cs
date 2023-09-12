@@ -1,5 +1,6 @@
 ﻿using BUtil.Core.Events;
 using BUtil.Core.Logs;
+using BUtil.Core.Options;
 using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
@@ -13,11 +14,12 @@ namespace BUtil.Core.TasksTree.States
         private readonly string _fileName;
         public FileState State { get; private set; }
 
-        public GetStateOfFileTask(ILog log, BackupEvents events, CommonServicesIoc servicesIoc, string fileName) :
-            base(log, events, string.Format(BUtil.Core.Localization.Resources.GetStateOfFileFileName, fileName), TaskArea.File)
+        public GetStateOfFileTask(ILog log, BackupEvents events, CommonServicesIoc servicesIoc, SourceItem item, string fileName) :
+            base(log, events, null, TaskArea.File)
         {
             _servicesIoc = servicesIoc;
             _fileName = fileName;
+            Title = string.Format(BUtil.Core.Localization.Resources.GetStateOfFileFileName, item.Target == fileName ? fileName: fileName.Substring(item.Target.Length + 1));
         }
 
         public override void Execute()

@@ -4,18 +4,25 @@ using BUtil.Core.Logs;
 using BUtil.Core.Options;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
+using System;
 using System.Collections.Generic;
 
 namespace BUtil.Core.TasksTree.MediaSyncBackupModel
 {
     class ImportMediaBackupTask : SequentialBuTask
     {
-        private readonly CommonServicesIoc _commonServicesIoc;
+        private readonly CommonServicesIoc _commonServicesIoc = new();
 
         public ImportMediaBackupTask(ILog log, BackupEvents backupEvents, BackupTask backupTask)
-            : base(log, backupEvents, string.Empty, TaskArea.ProgramInRunBeforeAfterBackupChain, new[] { new MoveFilesTask(log, backupEvents, backupTask) })
+            : base(log, backupEvents, string.Empty, TaskArea.ProgramInRunBeforeAfterBackupChain, null)
         {
-            _commonServicesIoc = new CommonServicesIoc();
+            var typedModel = backupTask.Model as ImportMediaBackupModelOptions;
+            var sourceItem = new SourceItem(typedModel.DestinationFolder, true);
+
+            var getStateOfSourceItemTask = new GetStateOfSourceItemTask(log, backupEvents, sourceItem, Array.Empty<string>(), _commonServicesIoc);
+            var importFiles = new ImportFilesTask(log, backupEvents, backupTask, getStateOfSourceItemTask, _commonServicesIoc);
+
+            Children = new BuTask[] { getStateOfSourceItemTask, importFiles };
         }
 
         public override void Execute()
@@ -25,11 +32,10 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
 
             base.Execute();
 
-            _commonServicesIoc.Dispose();
-
             UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
             Events.OnMessage -= OnAddLastMinuteLogMessage;
             PutLastMinuteLogMessages();
+            _commonServicesIoc.Dispose();
         }
 
         private void PutLastMinuteLogMessages()
