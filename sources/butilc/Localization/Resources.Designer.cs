@@ -115,11 +115,11 @@ namespace BUtil.ConsoleBackup.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create Photos/Videos moval task.
+        ///   Looks up a localized string similar to Create import media task.
         /// </summary>
-        internal static string CreatePhotosVideosMovalTask {
+        internal static string CreateImportMediaTask {
             get {
-                return ResourceManager.GetString("CreatePhotosVideosMovalTask", resourceCulture);
+                return ResourceManager.GetString("CreateImportMediaTask", resourceCulture);
             }
         }
         
@@ -147,6 +147,15 @@ namespace BUtil.ConsoleBackup.Localization {
         internal static string DestinationFolder {
             get {
                 return ResourceManager.GetString("DestinationFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit &quot;{0}&quot; media import task.
+        /// </summary>
+        internal static string EditImportMediaTask {
+            get {
+                return ResourceManager.GetString("EditImportMediaTask", resourceCulture);
             }
         }
         
@@ -207,29 +216,20 @@ namespace BUtil.ConsoleBackup.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Import files from.
+        /// </summary>
+        internal static string ImportFilesFrom {
+            get {
+                return ResourceManager.GetString("ImportFilesFrom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password:.
         /// </summary>
         internal static string PasswordField {
             get {
                 return ResourceManager.GetString("PasswordField", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Photos/Videos location on media device.
-        /// </summary>
-        internal static string PhotosVideosFolderOnMediaDevice {
-            get {
-                return ResourceManager.GetString("PhotosVideosFolderOnMediaDevice", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Edit &quot;{0}&quot; Photos/Videos moval task.
-        /// </summary>
-        internal static string PhotosVideosMovalTask {
-            get {
-                return ResourceManager.GetString("PhotosVideosMovalTask", resourceCulture);
             }
         }
         

@@ -2,7 +2,7 @@
 
 ## New Features
 - CLI: backup dialog title shows percentage
-- FTPS support for move tasks to handle photo files movement
+- [New task type: Move photo and videos task from SD card and phone via Wi-Fi](https://github.com/drweb86/butil/blob/master/help/Configure/Move%20photo%2C%20video%20task.md)
 
 ## Warning! Format of backup tasks was updated. Please reconfigure your tasks!
 

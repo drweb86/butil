@@ -25,10 +25,10 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
         {
             UpdateStatus(ProcessingStatus.InProgress);
 
-            var options = (MediaSyncBackupModelOptions)_task.Model;
+            var options = (ImportMediaBackupModelOptions)_task.Model;
 
             var fromStorage = StorageFactory.Create(this.Log, options.From);
-            var toStorage = StorageFactory.Create(this.Log, options.To);
+            var toStorage = StorageFactory.Create(this.Log, new FolderStorageSettings { DestinationFolder = options.DestinationFolder });
             var transformFileName = options.TransformFileName;
 
             var tasks = fromStorage.GetFiles(null, SearchOption.AllDirectories)

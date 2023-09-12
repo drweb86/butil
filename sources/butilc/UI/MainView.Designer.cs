@@ -40,16 +40,16 @@ namespace BUtil.ConsoleBackup.UI {
                 Action = () => this.OnRunSelectedBackupTask(),
             };
 
-            var createPhotoVideoMovalTask = new Terminal.Gui.MenuBarItem
+            var createImportMediaTask = new Terminal.Gui.MenuBarItem
             {
-                Title = Resources.CreatePhotosVideosMovalTask,
-                Action = () => this.OnCreateBackupTask(),
+                Title = Resources.CreateImportMediaTask,
+                Action = () => this.OnCreateImportMediaTask(),
             };
 
             this.createMenu = new Terminal.Gui.MenuBarItem
             {
                 Title = BUtil.ConsoleBackup.Localization.Resources._Create,
-                Children = new[] { createPhotoVideoMovalTask },
+                Children = new[] { createImportMediaTask },
             };
 
             this.editMenu = new Terminal.Gui.MenuBarItem

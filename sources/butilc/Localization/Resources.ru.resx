@@ -100,9 +100,6 @@ butilc.exe Help
   <data name="Title" xml:space="preserve">
     <value>Название:</value>
   </data>
-  <data name="PhotosVideosFolderOnMediaDevice" xml:space="preserve">
-    <value>Расположение фото/видео на устройстве</value>
-  </data>
   <data name="DestinationFolder" xml:space="preserve">
     <value>Папка назначения:</value>
   </data>
@@ -117,11 +114,11 @@ butilc.exe Help
   <data name="Save" xml:space="preserve">
     <value>Сохранить</value>
   </data>
-  <data name="CreatePhotosVideosMovalTask" xml:space="preserve">
-    <value>Создать задачу по перемещению Фото/Видео</value>
+  <data name="CreateImportMediaTask" xml:space="preserve">
+    <value>Создать задачу по импорту мультимедиа</value>
   </data>
-  <data name="PhotosVideosMovalTask" xml:space="preserve">
-    <value>Редактирование "{0}" задания по перемещению фото/видео</value>
+  <data name="EditImportMediaTask" xml:space="preserve">
+    <value>Редактирование "{0}" задания по импорту мультимедиа</value>
   </data>
   <data name="SourceFolderDoesNotExist" xml:space="preserve">
     <value>Расположение Фото/Видео не указано.</value>
@@ -185,5 +182,8 @@ butilc.exe Help
   </data>
   <data name="TaskIsSucceeded" xml:space="preserve">
     <value>Завершено успешно!</value>
+  </data>
+  <data name="ImportFilesFrom" xml:space="preserve">
+    <value>Импортировать из</value>
   </data>
 </root>

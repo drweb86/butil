@@ -3,7 +3,7 @@
 namespace BUtil.Core.BackupModels
 {
     [JsonDerivedType(typeof(IncrementalBackupModelOptions), "Incremental")]
-    [JsonDerivedType(typeof(MediaSyncBackupModelOptions), "MediaSync")]
+    [JsonDerivedType(typeof(ImportMediaBackupModelOptions), "ImportMedia")]
     public interface IBackupModelOptions
     {
 

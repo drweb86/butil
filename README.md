@@ -17,7 +17,7 @@ BUtil is a powerful set of tools for creating backups of documents and other dat
 ## Key functions and characteristics of software
 
 - Incremental backup model with deduplication of files;
-- Photo/Video sync from external card, phone (Move file sync with SAMBA, FTPS support (use CLI to configure it));
+- [Import audios, photos, videos from SD Card of camera, recorder; photos and videos from your phone via WI-FI through FTPS Server application using template file names](./help/Configure/Import%20media%20task.md);
 - Simple configuring takes less time and goes easily and with comfort;
 - Multiple backup tasks are supported;
 - Html format for log files takes less time on reviewing of it;
@@ -27,7 +27,7 @@ BUtil is a powerful set of tools for creating backups of documents and other dat
 ## Documentation
 
 - [Version history](./help/Other/Version%20History%20(Changelog).md)
-- [Congifurator](./help/Configure/Configurator.md)
+- [Configurator](./help/Configure/Configurator.md)
 - [Console CLI UI](./help/Configure/Console%20CLI%20UI.md)
 - [Command line version of backup tool](./help/Backup/Backup%20via%20Console%20Tool.md)
 - [Restorate](./help/Restore/Restoration%20Wizard.md)

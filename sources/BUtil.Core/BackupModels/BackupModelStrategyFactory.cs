@@ -14,8 +14,8 @@ namespace BUtil.Core.BackupModels
         {
             if (task.Model is IncrementalBackupModelOptions)
                 return new IncrementalBackupModelStrategy(log, task);
-            if (task.Model is MediaSyncBackupModelOptions)
-                return new MediaSyncBackupModelStrategy(log, task);
+            if (task.Model is ImportMediaBackupModelOptions)
+                return new ImportMediaBackupModelStrategy(log, task);
             throw new ArgumentOutOfRangeException(nameof(task));
         }
 
@@ -59,11 +59,11 @@ namespace BUtil.Core.BackupModels
                 }
 
                 return true;
-            } else if (options is MediaSyncBackupModelOptions)
+            } else if (options is ImportMediaBackupModelOptions)
             {
-                var typedOptions = (MediaSyncBackupModelOptions)options;
+                var typedOptions = (ImportMediaBackupModelOptions)options;
 
-                var storageError = StorageFactory.Test(log, typedOptions.To);
+                var storageError = StorageFactory.Test(log, new FolderStorageSettings { DestinationFolder = typedOptions.DestinationFolder });
                 if (storageError != null)
                 {
                     error = storageError;

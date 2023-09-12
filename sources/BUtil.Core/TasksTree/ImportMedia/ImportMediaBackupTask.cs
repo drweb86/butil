@@ -8,18 +8,14 @@ using System.Collections.Generic;
 
 namespace BUtil.Core.TasksTree.MediaSyncBackupModel
 {
-    class MediaSyncBackupTask : SequentialBuTask
+    class ImportMediaBackupTask : SequentialBuTask
     {
         private readonly CommonServicesIoc _commonServicesIoc;
 
-        public MediaSyncBackupTask(ILog log, BackupEvents backupEvents, BackupTask backupTask)
+        public ImportMediaBackupTask(ILog log, BackupEvents backupEvents, BackupTask backupTask)
             : base(log, backupEvents, string.Empty, TaskArea.ProgramInRunBeforeAfterBackupChain, new[] { new MoveFilesTask(log, backupEvents, backupTask) })
         {
             _commonServicesIoc = new CommonServicesIoc();
-
-            var options = (MediaSyncBackupModelOptions)backupTask.Model;
-            var storage = options.To;
-
         }
 
         public override void Execute()

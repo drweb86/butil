@@ -12,11 +12,11 @@ using Terminal.Gui;
 
 namespace BUtil.ConsoleBackup.UI
 {
-    public partial class EditMediaSyncDialog
+    public partial class EditImportMediaTaskDialog
     {
         private IStorageSettings _from;
 
-        internal EditMediaSyncDialog(BackupTask task) 
+        internal EditImportMediaTaskDialog(BackupTask task) 
         {
             InitializeComponent();
 
@@ -26,15 +26,15 @@ namespace BUtil.ConsoleBackup.UI
                     Environment.GetFolderPath(Environment.SpecialFolder.MyPictures),
                     "Camera Roll");
                 _transformFileNameTextField.Text = "{DATE:yyyy}\\{DATE:yyyy'-'MM', 'MMMM}\\{DATE:yyyy'-'MM'-'dd', 'dddd}\\{DATE:yyyy'-'MM'-'dd' 'HH'-'mm'-'ss}";
-                Title = Resources.CreatePhotosVideosMovalTask;
+                Title = Resources.CreateImportMediaTask;
             }
             else
             {
-                var options = (MediaSyncBackupModelOptions)task.Model;
+                var options = (ImportMediaBackupModelOptions)task.Model;
                 _from = options.From;
-                _destinationFolderTextField.Text = ((FolderStorageSettings)options.To).DestinationFolder;
+                _destinationFolderTextField.Text = options.DestinationFolder;
                 _transformFileNameTextField.Text = options.TransformFileName;
-                Title = string.Format(Resources.PhotosVideosMovalTask, task.Name);
+                Title = string.Format(Resources.EditImportMediaTask, task.Name);
                 _titleTextField.Text = task.Name;
             }
             OnTransformFileNameTextChanged(_transformFileNameTextField.Text);
@@ -85,11 +85,11 @@ namespace BUtil.ConsoleBackup.UI
                 return new BackupTask
                 {
                     Name = _titleTextField.Text.ToString(),
-                    Model = new MediaSyncBackupModelOptions
+                    Model = new ImportMediaBackupModelOptions
                     {
                         TransformFileName = _transformFileNameTextField.Text.ToString(),
                         From = _from,
-                        To = new FolderStorageSettings { DestinationFolder = _destinationFolderTextField.Text.ToString() }
+                        DestinationFolder = _destinationFolderTextField.Text.ToString()
                     }
                 }; 
             } 

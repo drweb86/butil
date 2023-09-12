@@ -2,11 +2,11 @@
 
 namespace BUtil.Core.BackupModels
 {
-    public class MediaSyncBackupModelOptions : IBackupModelOptions
+    public class ImportMediaBackupModelOptions : IBackupModelOptions
     {
         public string TransformFileName { get; set; }
 
         public IStorageSettings From { get; set; }
-        public IStorageSettings To { get; set; }
+        public string DestinationFolder { get; set; }
     }
 }

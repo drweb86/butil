@@ -4,6 +4,7 @@
 
 [Configurator](./Configure/Configurator.md)
 [Console CLI UI](./Configure/Console%20CLI%20UI.md)
+[Import media task](./Configure/Import%20media%20task.md);
 
 # Backup
 

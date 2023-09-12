@@ -4,7 +4,7 @@ namespace BUtil.ConsoleBackup.UI {
     using System;
     using Terminal.Gui;
     
-    public partial class EditMediaSyncDialog : Terminal.Gui.Dialog
+    public partial class EditImportMediaTaskDialog : Terminal.Gui.Dialog
     {
         private Terminal.Gui.TextField _titleTextField;
         private Terminal.Gui.TextField _destinationFolderTextField;
@@ -21,13 +21,21 @@ namespace BUtil.ConsoleBackup.UI {
                 AutoSize = true,
                 X = 0,
                 Y = 0,
+                Text = "Imports audios, photos, videos from SD Card of camera, recorder; photos and videos from your phone via WI-FI through FTPS Server application using template file names."
+            });
+
+            Add(new Label
+            {
+                AutoSize = true,
+                X = 0,
+                Y = 3,
                 Text = BUtil.ConsoleBackup.Localization.Resources.Title
             });
 
             _titleTextField = new TextField
             {
                 X = 0,
-                Y = 1,
+                Y = 4,
                 Width = Dim.Fill(0),
             };
             Add(_titleTextField);
@@ -35,8 +43,8 @@ namespace BUtil.ConsoleBackup.UI {
             var sourceSelectButton = new Button
             {
                 X = 0,
-                Y = 3,
-                Text = BUtil.ConsoleBackup.Localization.Resources.PhotosVideosFolderOnMediaDevice,
+                Y = 6,
+                Text = BUtil.ConsoleBackup.Localization.Resources.ImportFilesFrom,
                 IsDefault = true,
             };
             sourceSelectButton.Clicked += OnSpecifySource;
@@ -46,7 +54,7 @@ namespace BUtil.ConsoleBackup.UI {
             {
                 AutoSize = true,
                 X = 0,
-                Y = 5,
+                Y = 8,
                 Text = BUtil.ConsoleBackup.Localization.Resources.DestinationFolder
             });
 
@@ -54,7 +62,7 @@ namespace BUtil.ConsoleBackup.UI {
             {
                 Text = string.Empty,
                 X = 0,
-                Y = 6,
+                Y = 9,
                 Width = Dim.Fill(0),
             };
             Add(_destinationFolderTextField);
@@ -63,7 +71,7 @@ namespace BUtil.ConsoleBackup.UI {
             {
                 AutoSize = true,
                 X = 0,
-                Y = 8,
+                Y = 11,
                 Text = BUtil.ConsoleBackup.Localization.Resources.FileNameTransformations
             });
 
@@ -71,7 +79,7 @@ namespace BUtil.ConsoleBackup.UI {
             {
                 Text = string.Empty,
                 X = 0,
-                Y = 9,
+                Y = 12,
                 Width = Dim.Fill(0),
             };
             _transformFileNameTextField.TextChanged += OnTransformFileNameTextChanged;
@@ -80,7 +88,7 @@ namespace BUtil.ConsoleBackup.UI {
             {
                 AutoSize = true,
                 X = 0,
-                Y = 10,
+                Y = 13,
                 Text = string.Empty
             };
             Add(_transformFileNameLabel);
@@ -88,7 +96,7 @@ namespace BUtil.ConsoleBackup.UI {
             {
                 AutoSize = true,
                 X = 0,
-                Y = 11,
+                Y = 14,
                 Text = BUtil.ConsoleBackup.Localization.Resources.HelpForTokens
             });
 

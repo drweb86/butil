@@ -159,9 +159,6 @@ Example: butilc.exe "{0}My backup title"</value>
   <data name="Title" xml:space="preserve">
     <value>Title:</value>
   </data>
-  <data name="PhotosVideosFolderOnMediaDevice" xml:space="preserve">
-    <value>Photos/Videos location on media device</value>
-  </data>
   <data name="DestinationFolder" xml:space="preserve">
     <value>Destination folder:</value>
   </data>
@@ -176,11 +173,11 @@ To see all options google "C# DateTime format".</value>
   <data name="Save" xml:space="preserve">
     <value>Save</value>
   </data>
-  <data name="CreatePhotosVideosMovalTask" xml:space="preserve">
-    <value>Create Photos/Videos moval task</value>
+  <data name="CreateImportMediaTask" xml:space="preserve">
+    <value>Create import media task</value>
   </data>
-  <data name="PhotosVideosMovalTask" xml:space="preserve">
-    <value>Edit "{0}" Photos/Videos moval task</value>
+  <data name="EditImportMediaTask" xml:space="preserve">
+    <value>Edit "{0}" media import task</value>
   </data>
   <data name="Error" xml:space="preserve">
     <value>Error</value>
@@ -238,5 +235,8 @@ To see all options google "C# DateTime format".</value>
   </data>
   <data name="FolderField" xml:space="preserve">
     <value>Folder:</value>
+  </data>
+  <data name="ImportFilesFrom" xml:space="preserve">
+    <value>Import files from</value>
   </data>
 </root>

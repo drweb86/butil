@@ -6,12 +6,12 @@ using BUtil.Core.TasksTree.MediaSyncBackupModel;
 
 namespace BUtil.Core.BackupModels
 {
-    class MediaSyncBackupModelStrategy : IBackupModelStrategy
+    class ImportMediaBackupModelStrategy : IBackupModelStrategy
     {
         readonly ILog _log;
         readonly BackupTask _task;
 
-        public MediaSyncBackupModelStrategy(ILog openedLog, BackupTask task)
+        public ImportMediaBackupModelStrategy(ILog openedLog, BackupTask task)
         {
             _log = openedLog;
             _task = task;
@@ -19,7 +19,7 @@ namespace BUtil.Core.BackupModels
 
         public BuTask GetTask(BackupEvents events)
         {
-            return new MediaSyncBackupTask(_log, events, _task);
+            return new ImportMediaBackupTask(_log, events, _task);
         }
     }
 }

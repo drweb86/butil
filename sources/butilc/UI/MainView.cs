@@ -39,13 +39,13 @@ namespace BUtil.ConsoleBackup.UI{
 
             var taskName = _taskNames[this.itemsListView.SelectedItem];
             var task = _controller.BackupTaskStoreService.Load(taskName);
-            if (!(task.Model is MediaSyncBackupModelOptions))
+            if (!(task.Model is ImportMediaBackupModelOptions))
             {
                 Terminal.Gui.MessageBox.ErrorQuery(string.Empty, BUtil.ConsoleBackup.Localization.Resources.YouCannotEditThisTypeOfTaskInCLI);
                 return;
             }
             
-            var dialog = new EditMediaSyncDialog(task);
+            var dialog = new EditImportMediaTaskDialog(task);
             Application.Run(dialog);
 
             if (dialog.Canceled)
@@ -76,9 +76,9 @@ namespace BUtil.ConsoleBackup.UI{
             this.itemsListView.SetNeedsDisplay();
         }
 
-        public void OnCreateBackupTask()
+        public void OnCreateImportMediaTask()
         {
-            var dialog = new EditMediaSyncDialog(null);
+            var dialog = new EditImportMediaTaskDialog(null);
             Application.Run(dialog);
 
             if (dialog.Canceled)
