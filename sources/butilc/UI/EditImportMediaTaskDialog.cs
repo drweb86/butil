@@ -27,6 +27,7 @@ namespace BUtil.ConsoleBackup.UI
                     "Camera Roll");
                 _transformFileNameTextField.Text = "{DATE:yyyy}\\{DATE:yyyy'-'MM', 'MMMM}\\{DATE:yyyy'-'MM'-'dd', 'dddd}\\{DATE:yyyy'-'MM'-'dd' 'HH'-'mm'-'ss}";
                 Title = Resources.CreateImportMediaTask;
+                _skipAlreadyImportedFilesCheckBox.Checked = true;
             }
             else
             {
@@ -36,6 +37,7 @@ namespace BUtil.ConsoleBackup.UI
                 _transformFileNameTextField.Text = options.TransformFileName;
                 Title = string.Format(Resources.EditImportMediaTask, task.Name);
                 _titleTextField.Text = task.Name;
+                _skipAlreadyImportedFilesCheckBox.Checked = options.SkipAlreadyImportedFiles;
             }
             OnTransformFileNameTextChanged(_transformFileNameTextField.Text);
         }
@@ -89,7 +91,8 @@ namespace BUtil.ConsoleBackup.UI
                     {
                         TransformFileName = _transformFileNameTextField.Text.ToString(),
                         From = _from,
-                        DestinationFolder = _destinationFolderTextField.Text.ToString()
+                        DestinationFolder = _destinationFolderTextField.Text.ToString(),
+                        SkipAlreadyImportedFiles = _skipAlreadyImportedFilesCheckBox.Checked,
                     }
                 }; 
             } 

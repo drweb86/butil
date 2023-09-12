@@ -186,4 +186,12 @@ butilc.exe Help
   <data name="ImportFilesFrom" xml:space="preserve">
     <value>Импортировать из</value>
   </data>
+  <data name="ImportMediaHint" xml:space="preserve">
+    <value>Импортирует аудио, фото, видео из SD карточки фотоаппарата, рекордера; 
+фото и видео с вашего телефона через WI-FI через приложение FTP Server,
+используя шаблоны для имен файлов.</value>
+  </data>
+  <data name="SkipAlreadyImportedFiles" xml:space="preserve">
+    <value>Пропускать ранее импортированные файлы</value>
+  </data>
 </root>

@@ -10,6 +10,7 @@ namespace BUtil.ConsoleBackup.UI {
         private Terminal.Gui.TextField _destinationFolderTextField;
         private Terminal.Gui.TextField _transformFileNameTextField;
         private Terminal.Gui.Label _transformFileNameLabel;
+        private Terminal.Gui.CheckBox _skipAlreadyImportedFilesCheckBox;
 
         private void InitializeComponent() {
             this.Width = Dim.Fill(0);
@@ -21,21 +22,21 @@ namespace BUtil.ConsoleBackup.UI {
                 AutoSize = true,
                 X = 0,
                 Y = 0,
-                Text = "Imports audios, photos, videos from SD Card of camera, recorder; photos and videos from your phone via WI-FI through FTPS Server application using template file names."
+                Text = BUtil.ConsoleBackup.Localization.Resources.ImportMediaHint
             });
 
             Add(new Label
             {
                 AutoSize = true,
                 X = 0,
-                Y = 3,
+                Y = 4,
                 Text = BUtil.ConsoleBackup.Localization.Resources.Title
             });
 
             _titleTextField = new TextField
             {
                 X = 0,
-                Y = 4,
+                Y = 5,
                 Width = Dim.Fill(0),
             };
             Add(_titleTextField);
@@ -43,7 +44,7 @@ namespace BUtil.ConsoleBackup.UI {
             var sourceSelectButton = new Button
             {
                 X = 0,
-                Y = 6,
+                Y = 7,
                 Text = BUtil.ConsoleBackup.Localization.Resources.ImportFilesFrom,
                 IsDefault = true,
             };
@@ -54,7 +55,7 @@ namespace BUtil.ConsoleBackup.UI {
             {
                 AutoSize = true,
                 X = 0,
-                Y = 8,
+                Y = 9,
                 Text = BUtil.ConsoleBackup.Localization.Resources.DestinationFolder
             });
 
@@ -62,7 +63,7 @@ namespace BUtil.ConsoleBackup.UI {
             {
                 Text = string.Empty,
                 X = 0,
-                Y = 9,
+                Y = 10,
                 Width = Dim.Fill(0),
             };
             Add(_destinationFolderTextField);
@@ -71,7 +72,7 @@ namespace BUtil.ConsoleBackup.UI {
             {
                 AutoSize = true,
                 X = 0,
-                Y = 11,
+                Y = 12,
                 Text = BUtil.ConsoleBackup.Localization.Resources.FileNameTransformations
             });
 
@@ -79,7 +80,7 @@ namespace BUtil.ConsoleBackup.UI {
             {
                 Text = string.Empty,
                 X = 0,
-                Y = 12,
+                Y = 13,
                 Width = Dim.Fill(0),
             };
             _transformFileNameTextField.TextChanged += OnTransformFileNameTextChanged;
@@ -88,7 +89,7 @@ namespace BUtil.ConsoleBackup.UI {
             {
                 AutoSize = true,
                 X = 0,
-                Y = 13,
+                Y = 14,
                 Text = string.Empty
             };
             Add(_transformFileNameLabel);
@@ -96,10 +97,18 @@ namespace BUtil.ConsoleBackup.UI {
             {
                 AutoSize = true,
                 X = 0,
-                Y = 14,
+                Y = 15,
                 Text = BUtil.ConsoleBackup.Localization.Resources.HelpForTokens
             });
 
+            _skipAlreadyImportedFilesCheckBox = new CheckBox
+            {
+                Text = BUtil.ConsoleBackup.Localization.Resources.SkipAlreadyImportedFiles,
+                X = 0,
+                Y = 19,
+                Width = Dim.Fill(0),
+            };
+            Add(_skipAlreadyImportedFilesCheckBox);
 
             var saveButton = new Button
             {

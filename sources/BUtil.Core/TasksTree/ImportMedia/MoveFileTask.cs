@@ -32,7 +32,8 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
             UpdateStatus(ProcessingStatus.InProgress);
             try
             {
-                var destinationFileName = GetDestinationFileName();
+                var lastWriteTime = _fromStorage.GetModifiedTime(_fromFile);
+                var destinationFileName = GetDestinationFileName(lastWriteTime);
                 var actualFileName = GetActualDestinationFileName(destinationFileName);
                 var destFolder = Path.GetDirectoryName(actualFileName);
 
@@ -40,8 +41,9 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
                 {
                     var exchangeFile = Path.Combine(temp.Folder, Path.GetFileName(_fromFile));
                     _fromStorage.Download(_fromFile, exchangeFile);
-                    _toStorage.Upload(exchangeFile, actualFileName);
-                    _fromStorage.Delete(_fromFile);
+                    var uploadedFileName = _toStorage.Upload(exchangeFile, actualFileName);
+                    File.SetCreationTime(uploadedFileName.StorageFileName, lastWriteTime);
+                    File.SetLastWriteTime(uploadedFileName.StorageFileName, lastWriteTime);
                 }
 
                 IsSuccess = true;
@@ -69,10 +71,8 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
             return actualDestFile;
         }
 
-        private string GetDestinationFileName()
+        private string GetDestinationFileName(DateTime lastWriteTime)
         {
-            var lastWriteTime = _fromStorage.GetModifiedTime(_fromFile);
-
             var relativePath = DateTokenReplacer.ParseString(_transformFileName, lastWriteTime);
             var relativeDir = Path.GetDirectoryName(relativePath);
             foreach (var ch in Path.GetInvalidPathChars())

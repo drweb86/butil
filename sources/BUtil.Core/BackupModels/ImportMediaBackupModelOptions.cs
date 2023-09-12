@@ -8,5 +8,6 @@ namespace BUtil.Core.BackupModels
 
         public IStorageSettings From { get; set; }
         public string DestinationFolder { get; set; }
+        public bool SkipAlreadyImportedFiles { get; set; }
     }
 }

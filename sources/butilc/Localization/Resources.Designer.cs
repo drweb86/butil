@@ -225,6 +225,17 @@ namespace BUtil.ConsoleBackup.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Imports audios, photos, videos from SD Card of camera, recorder;
+        ///photos and videos from your phone via WI-FI through FTP Server 
+        ///application using template file names..
+        /// </summary>
+        internal static string ImportMediaHint {
+            get {
+                return ResourceManager.GetString("ImportMediaHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password:.
         /// </summary>
         internal static string PasswordField {
@@ -268,6 +279,15 @@ namespace BUtil.ConsoleBackup.Localization {
         internal static string Save {
             get {
                 return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Skip already imported files.
+        /// </summary>
+        internal static string SkipAlreadyImportedFiles {
+            get {
+                return ResourceManager.GetString("SkipAlreadyImportedFiles", resourceCulture);
             }
         }
         

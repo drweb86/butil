@@ -239,4 +239,12 @@ To see all options google "C# DateTime format".</value>
   <data name="ImportFilesFrom" xml:space="preserve">
     <value>Import files from</value>
   </data>
+  <data name="ImportMediaHint" xml:space="preserve">
+    <value>Imports audios, photos, videos from SD Card of camera, recorder;
+photos and videos from your phone via WI-FI through FTP Server 
+application using template file names.</value>
+  </data>
+  <data name="SkipAlreadyImportedFiles" xml:space="preserve">
+    <value>Skip already imported files</value>
+  </data>
 </root>
