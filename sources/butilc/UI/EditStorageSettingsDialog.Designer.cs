@@ -44,7 +44,7 @@ namespace BUtil.ConsoleBackup.UI {
             _transportSelectionComboBox.SelectedItemChanged += OnTransportTypeSelection;
             Add(_transportSelectionComboBox);
 
-            _folderStorageFolderTextField = AddTextField(_folderStorageControls, BUtil.ConsoleBackup.Localization.Resources.DestinationFolder, 3);
+            _folderStorageFolderTextField = AddTextField(_folderStorageControls, BUtil.ConsoleBackup.Localization.Resources.FolderField, 3);
 
             _hostFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.ConsoleBackup.Localization.Resources.HostField, 3);
             _portFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.ConsoleBackup.Localization.Resources.PortField, 6);

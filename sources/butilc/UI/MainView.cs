@@ -18,6 +18,7 @@ namespace BUtil.ConsoleBackup.UI{
             _taskNames = controller.BackupTaskStoreService.GetNames().ToList();
             this.itemsListView.SetSource(_taskNames);
             _controller = controller;
+            UpdateSelectedItem();
         }
 
         public void OnRunSelectedBackupTask()
@@ -59,6 +60,7 @@ namespace BUtil.ConsoleBackup.UI{
             _taskNames.Add(updatedTask.Name);
             _taskNames.Sort(StringComparer.OrdinalIgnoreCase);
             this.itemsListView.SetNeedsDisplay();
+            UpdateSelectedItem();
         }
 
         public void OnDeleteSelectedBackupTask()
@@ -74,6 +76,7 @@ namespace BUtil.ConsoleBackup.UI{
             _controller.BackupTaskStoreService.Delete(taskName);
             _taskNames.RemoveAll(x => string.Compare(x, taskName, System.StringComparison.OrdinalIgnoreCase) == 0);
             this.itemsListView.SetNeedsDisplay();
+            UpdateSelectedItem();
         }
 
         public void OnCreateImportMediaTask()
@@ -91,6 +94,7 @@ namespace BUtil.ConsoleBackup.UI{
             _taskNames.Add(task.Name);
             _taskNames.Sort(StringComparer.OrdinalIgnoreCase);
             this.itemsListView.SetNeedsDisplay();
+            UpdateSelectedItem();
         }
 
         private void OnListShortcutKeyDown(KeyEventEventArgs e)
@@ -100,6 +104,19 @@ namespace BUtil.ConsoleBackup.UI{
                 e.Handled = true;
                 Application.MainLoop.Invoke(OnDeleteSelectedBackupTask);
             }
+        }
+        private void OnSelectedItemChanged(ListViewItemEventArgs args)
+        {
+            UpdateSelectedItem();
+        }
+
+        private void UpdateSelectedItem()
+        {
+            if (this.itemsListView.SelectedItem < 0 || this.itemsListView.SelectedItem >= _taskNames.Count)
+                return;
+
+            var taskName = _taskNames[this.itemsListView.SelectedItem];
+            selectedItemInfoFrameView.Title = taskName;
         }
     }
 }

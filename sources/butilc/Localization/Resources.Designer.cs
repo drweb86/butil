@@ -61,7 +61,7 @@ namespace BUtil.ConsoleBackup.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Create.
+        ///   Looks up a localized string similar to _Create task.
         /// </summary>
         internal static string _Create {
             get {
@@ -216,7 +216,7 @@ namespace BUtil.ConsoleBackup.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Import files from.
+        ///   Looks up a localized string similar to Specify data source.
         /// </summary>
         internal static string ImportFilesFrom {
             get {

@@ -136,7 +136,7 @@ butilc.exe Help
     <value>Заголовок пуст или содержит символы пути.</value>
   </data>
   <data name="_Create" xml:space="preserve">
-    <value>_Создать</value>
+    <value>_Создать задачу</value>
   </data>
   <data name="_RunF5Enter" xml:space="preserve">
     <value>_Запустить (F5, ввод)</value>
@@ -184,7 +184,7 @@ butilc.exe Help
     <value>Завершено успешно!</value>
   </data>
   <data name="ImportFilesFrom" xml:space="preserve">
-    <value>Импортировать из</value>
+    <value>Указать источник данных</value>
   </data>
   <data name="ImportMediaHint" xml:space="preserve">
     <value>Импортирует аудио, фото, видео из SD карточки фотоаппарата, рекордера; 

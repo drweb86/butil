@@ -72,7 +72,7 @@ namespace BUtil.ConsoleBackup.UI
 
         private void OnSpecifySource()
         {
-            var dialog = new EditStorageSettingsDialog(_from);
+            var dialog = new EditStorageSettingsDialog(_from, BUtil.ConsoleBackup.Localization.Resources.ImportFilesFrom);
             Application.Run(dialog);
 
             if (dialog.Canceled)

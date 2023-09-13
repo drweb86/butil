@@ -16,9 +16,9 @@ namespace BUtil.ConsoleBackup.UI
             _ftpsStorageControls.ForEach(x => x.Visible = transportId == 1);
         }
 
-        internal EditStorageSettingsDialog(IStorageSettings source) 
+        internal EditStorageSettingsDialog(IStorageSettings source = null, string title = null) 
         {
-            Title = BUtil.ConsoleBackup.Localization.Resources.SpecifyLocation;
+            Title = title ?? BUtil.ConsoleBackup.Localization.Resources.SpecifyLocation;
             InitializeComponent();
 
             if (source == null)
