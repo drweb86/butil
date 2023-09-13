@@ -1,5 +1,9 @@
 Imports audios, photos, videos from SD Card of camera, recorder; photos and videos from your phone via WI-FI through FTPS Server application using template file names.
 
+Features includes:
+- Deduplication of files;
+- Templated file names.
+
 # Scenarios
 
 ## Import photos and videos to PC from Camera, Import Audio from Recorder SD Card

@@ -19,8 +19,7 @@ namespace BUtil.Core.TasksTree
             BackupEvents events, 
             GetStateOfStorageTask storageStateTask,
             IEnumerable<GetStateOfSourceItemTask> getSourceItemStateTasks,
-            IncrementalBackupModelOptions incrementalBackupModelOptions,
-            string password) :
+            IncrementalBackupModelOptions incrementalBackupModelOptions) :
             base(services.Log, events, Localization.Resources.WriteIncrementedVersionToStorage,
                 TaskArea.Hdd, null)
         {
@@ -29,7 +28,7 @@ namespace BUtil.Core.TasksTree
             var calculateIncrementedVersionForStorageTask = new CalculateIncrementedVersionForStorageTask(Log, Events, storageStateTask, getSourceItemStateTasks);
             childTaks.Add(calculateIncrementedVersionForStorageTask);
 
-            _writeSourceFilesToStorageTask = new WriteSourceFilesToStorageTask(services, events, calculateIncrementedVersionForStorageTask, incrementalBackupModelOptions, password);
+            _writeSourceFilesToStorageTask = new WriteSourceFilesToStorageTask(services, events, calculateIncrementedVersionForStorageTask, incrementalBackupModelOptions);
             childTaks.Add(_writeSourceFilesToStorageTask);
 
             var writeStateToStorageTask = new WriteStateToStorageTask(
@@ -37,8 +36,7 @@ namespace BUtil.Core.TasksTree
                 events,
                 calculateIncrementedVersionForStorageTask,
                 _writeSourceFilesToStorageTask,
-                incrementalBackupModelOptions,
-                password);
+                incrementalBackupModelOptions);
 
             childTaks.Add(writeStateToStorageTask);
             childTaks.Add(new WriteIntegrityVerificationScriptsToStorageTask(services, events,

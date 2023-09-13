@@ -247,4 +247,7 @@ application using template file names.</value>
   <data name="SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Skip already imported files</value>
   </data>
+  <data name="SelectTransport" xml:space="preserve">
+    <value>Select transport</value>
+  </data>
 </root>

@@ -22,7 +22,7 @@ namespace BUtil.ConsoleBackup.UI{
 
         public void OnRunSelectedBackupTask()
         {
-            if (this.itemsListView.SelectedItem == -1)
+            if (this.itemsListView.SelectedItem < 0 || this.itemsListView.SelectedItem >= _taskNames.Count)
                 return;
 
             var taskName = _taskNames[this.itemsListView.SelectedItem];
@@ -34,7 +34,7 @@ namespace BUtil.ConsoleBackup.UI{
 
         public void OnEditSelectedBackupTask()
         {
-            if (this.itemsListView.SelectedItem == -1)
+            if (this.itemsListView.SelectedItem < 0 || this.itemsListView.SelectedItem >= _taskNames.Count)
                 return;
 
             var taskName = _taskNames[this.itemsListView.SelectedItem];
@@ -63,7 +63,7 @@ namespace BUtil.ConsoleBackup.UI{
 
         public void OnDeleteSelectedBackupTask()
         {
-            if (this.itemsListView.SelectedItem == -1)
+            if (this.itemsListView.SelectedItem < 0 || this.itemsListView.SelectedItem >= _taskNames.Count)
                 return;
 
             var taskName = _taskNames[this.itemsListView.SelectedItem];

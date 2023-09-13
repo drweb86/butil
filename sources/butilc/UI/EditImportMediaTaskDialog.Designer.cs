@@ -1,7 +1,5 @@
 ﻿
 namespace BUtil.ConsoleBackup.UI {
-    using NStack;
-    using System;
     using Terminal.Gui;
     
     public partial class EditImportMediaTaskDialog : Terminal.Gui.Dialog

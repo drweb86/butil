@@ -283,6 +283,15 @@ namespace BUtil.ConsoleBackup.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select transport.
+        /// </summary>
+        internal static string SelectTransport {
+            get {
+                return ResourceManager.GetString("SelectTransport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Skip already imported files.
         /// </summary>
         internal static string SkipAlreadyImportedFiles {

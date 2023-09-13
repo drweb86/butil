@@ -14,9 +14,9 @@ namespace BUtil.Core.Options
         public BackupTaskStoreService()
         {
 #if DEBUG
-            _folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BUtil Backup Tasks - DEBUG");
+            _folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BUtil Backup Tasks V2 - DEBUG");
 #else
-            _folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BUtil Backup Tasks");
+            _folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BUtil Backup Tasks V2");
 #endif
             if (!Directory.Exists(_folder))
                 Directory.CreateDirectory(_folder);

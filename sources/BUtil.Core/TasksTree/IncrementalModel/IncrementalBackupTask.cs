@@ -26,10 +26,10 @@ namespace BUtil.Core.TasksTree.IncrementalModel
 
             _storageService = new StorageSpecificServicesIoc(Log, storage, _commonServicesIoc.HashService);
 
-            var readSatesTask = new GetStateOfSourceItemsAndStoragesTask(Log, Events, modelOptions.Items, _commonServicesIoc, _storageService, modelOptions.FileExcludePatterns, backupTask.Password);
+            var readSatesTask = new GetStateOfSourceItemsAndStoragesTask(Log, Events, modelOptions.Items, _commonServicesIoc, _storageService, modelOptions.FileExcludePatterns, (backupTask.Model as IncrementalBackupModelOptions).Password);
             tasks.Add(readSatesTask);
 
-            tasks.Add(new WriteIncrementedVersionTask(_storageService, Events, readSatesTask.StorageStateTask, readSatesTask.GetSourceItemStateTasks, backupTask.Model as IncrementalBackupModelOptions, backupTask.Password));
+            tasks.Add(new WriteIncrementedVersionTask(_storageService, Events, readSatesTask.StorageStateTask, readSatesTask.GetSourceItemStateTasks, backupTask.Model as IncrementalBackupModelOptions));
 
             Children = tasks;
         }

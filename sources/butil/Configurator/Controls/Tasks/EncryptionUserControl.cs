@@ -93,8 +93,9 @@ namespace BUtil.Core.PL
 
 			if (_task.Model is IncrementalBackupModelOptions)
 			{
-                passwordTextBox.Text = _task.Password;
-                passwordConfirmationTextBox.Text = _task.Password;
+				var typedOptions = (IncrementalBackupModelOptions)_task.Model;
+                passwordTextBox.Text = typedOptions.Password;
+                passwordConfirmationTextBox.Text = typedOptions.Password;
             }
 		}
 
@@ -116,8 +117,12 @@ namespace BUtil.Core.PL
             	Messages.ShowErrorBox(Resources.PasswordIsInvalidNNitWasResetedN);
 				passwordTextBox.Text = string.Empty;
 			}
-            
-            _task.Password = passwordTextBox.Text;
+
+            if (_task.Model is IncrementalBackupModelOptions)
+            {
+                var typedOptions = (IncrementalBackupModelOptions)_task.Model;
+                typedOptions.Password = passwordTextBox.Text;
+            }
 		}
 		
 		void applyToUi(Result result)

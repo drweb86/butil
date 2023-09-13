@@ -25,7 +25,10 @@ namespace BUtil.RestorationMaster
             if (backupTask != null)
             {
                 storageStub = backupTask;
-                _passwordTextBox.Text = backupTask.Password;
+                if (backupTask.Model is IncrementalBackupModelOptions)
+                {
+                    _passwordTextBox.Text = ((IncrementalBackupModelOptions)backupTask.Model).Password;
+                }
             }
 
             ApplyLocals();

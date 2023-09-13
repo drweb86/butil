@@ -14,20 +14,17 @@ namespace BUtil.Core.TasksTree.Storage
         private readonly StorageSpecificServicesIoc _services;
         private readonly CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask;
         private readonly IncrementalBackupModelOptions _incrementalBackupModelOptions;
-        private readonly string _password;
 
         public WriteSourceFilesToStorageTask(
             StorageSpecificServicesIoc services,
             BackupEvents events,
             CalculateIncrementedVersionForStorageTask getIncrementedVersionTask,
-            IncrementalBackupModelOptions incrementalBackupModelOptions,
-            string password)
+            IncrementalBackupModelOptions incrementalBackupModelOptions)
             : base(services.Log, events, Localization.Resources.WriteSourceFilesToStorage, TaskArea.Hdd, null)
         {
             _services = services;
             _getIncrementedVersionTask = getIncrementedVersionTask;
             _incrementalBackupModelOptions = incrementalBackupModelOptions;
-            _password = password;
         }
 
         public override void Execute()
@@ -114,7 +111,7 @@ namespace BUtil.Core.TasksTree.Storage
 
         private string GetStorageMethod()
         {
-            if (string.IsNullOrEmpty(_password))
+            if (string.IsNullOrEmpty(_incrementalBackupModelOptions.Password))
                 return StorageMethodNames.SevenZip;
 
             return StorageMethodNames.SevenZipEncrypted;

@@ -10,6 +10,12 @@ namespace BUtil.ConsoleBackup.UI
     {
         public IStorageSettings StorageSettings { get; private set; }
 
+        private void SelectTransport(int transportId)
+        {
+            _folderStorageControls.ForEach(x => x.Visible = transportId == 0);
+            _ftpsStorageControls.ForEach(x => x.Visible = transportId == 1);
+        }
+
         internal EditStorageSettingsDialog(IStorageSettings source) 
         {
             Title = BUtil.ConsoleBackup.Localization.Resources.SpecifyLocation;
@@ -17,17 +23,20 @@ namespace BUtil.ConsoleBackup.UI
 
             if (source == null)
             {
-                _tabView.SelectedTab = _folderStorageTab;
+                _transportSelectionComboBox.SelectedItem = 0;
+                SelectTransport(0);
             }
             else
             {
                 if (source is FolderStorageSettings)
                 {
-                    _tabView.SelectedTab = _folderStorageTab;
+                    _transportSelectionComboBox.SelectedItem = 0;
+                    SelectTransport(0);
                     _folderStorageFolderTextField.Text = ((FolderStorageSettings)source).DestinationFolder;
                 } else if (source is FtpsStorageSettings)
                 {
-                    _tabView.SelectedTab = _ftpsStorageTab;
+                    _transportSelectionComboBox.SelectedItem = 1;
+                    SelectTransport(1);
                     var storageSettings = (FtpsStorageSettings)source;
                     _hostFtpsStorageFolderTextField.Text = storageSettings.Host;
                     _portFtpsStorageFolderTextField.Text = storageSettings.Port.ToString();
@@ -50,17 +59,22 @@ namespace BUtil.ConsoleBackup.UI
             Application.RequestStop();
         }
 
+        private void OnTransportTypeSelection(ListViewItemEventArgs args)
+        {
+            SelectTransport(args.Item);
+        }
+
         private void OnSave()
         {
             IStorageSettings storageSettings = null;
-            if (_tabView.SelectedTab == _folderStorageTab)
+            if (_transportSelectionComboBox.SelectedItem == 0)
             {
                 storageSettings = new FolderStorageSettings
                 {
                     DestinationFolder = this._folderStorageFolderTextField.Text.ToString(),
                 };
             }
-            else if (_tabView.SelectedTab == _ftpsStorageTab)
+            else if (_transportSelectionComboBox.SelectedItem == 1)
             {
                 storageSettings = new FtpsStorageSettings
                 {

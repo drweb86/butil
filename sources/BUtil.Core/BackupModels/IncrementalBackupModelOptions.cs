@@ -14,5 +14,6 @@ namespace BUtil.Core.BackupModels
         public IStorageSettings To { get; set; }
         public List<SourceItem> Items { get; set; }
         public List<string> FileExcludePatterns { get; set; }
+        public string Password { get; set; }
     }
 }

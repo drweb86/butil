@@ -4,7 +4,6 @@ using BUtil.Core.FileSystem;
 using BUtil.Core.Hashing;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
-using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.IncrementalModel;
 using System.IO;
 using System.Text.Json;
@@ -14,14 +13,12 @@ namespace BUtil.Core.State
     public class IncrementalBackupStateService
     {
         private readonly ILog _log;
-        private readonly IStorageSettings _storageSettings;
         private readonly StorageSpecificServicesIoc _services;
         private readonly IHashService _hashService;
 
         public IncrementalBackupStateService(StorageSpecificServicesIoc services, IHashService hashService)
         {
-            this._log = services.Log;
-            this._storageSettings = services.StorageSettings;
+            _log = services.Log;
             _services = services;
             _hashService = hashService;
         }
@@ -83,7 +80,7 @@ namespace BUtil.Core.State
             return true;
         }
 
-        public StorageFile Write(IncrementalBackupModelOptions incrementalBackupModelOptions, string password, IncrementalBackupState state)
+        public StorageFile Write(IncrementalBackupModelOptions incrementalBackupModelOptions, IncrementalBackupState state)
         {
             _log.WriteLine(LoggingEvent.Debug, $"Writing state");
             _services.Storage.Delete(IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile);
@@ -96,15 +93,15 @@ namespace BUtil.Core.State
 
             var storageFile = new StorageFile
             {
-                StorageMethod = GetStorageMethod(incrementalBackupModelOptions, password),
+                StorageMethod = GetStorageMethod(incrementalBackupModelOptions, incrementalBackupModelOptions.Password),
                 StorageIntegrityMethod = StorageIntegrityMethod.Sha512
             };
 
-            var encryptionEnabled = !string.IsNullOrWhiteSpace(password);
+            var encryptionEnabled = !string.IsNullOrWhiteSpace(incrementalBackupModelOptions.Password);
             storageFile.StorageRelativeFileName = encryptionEnabled ? IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile : IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile;
             var fileToUpload = Path.Combine(tempFolder.Folder, storageFile.StorageRelativeFileName);
             var archiver = ArchiverFactory.Create(_log);
-            if (!archiver.CompressFile(jsonFile, password, fileToUpload))
+            if (!archiver.CompressFile(jsonFile, incrementalBackupModelOptions.Password, fileToUpload))
             {
                 _log.WriteLine(LoggingEvent.Error, $"Failed state");
                 return null;

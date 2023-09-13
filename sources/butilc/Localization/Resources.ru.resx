@@ -194,4 +194,7 @@ butilc.exe Help
   <data name="SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Пропускать ранее импортированные файлы</value>
   </data>
+  <data name="SelectTransport" xml:space="preserve">
+    <value>Выберите транспорт</value>
+  </data>
 </root>

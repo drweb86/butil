@@ -12,7 +12,5 @@ namespace BUtil.Core.Options
 		public IBackupModelOptions Model { get; set; }
 
         public string Name { get; set; }
-        
-        public string Password { get; set; }
     }
 }

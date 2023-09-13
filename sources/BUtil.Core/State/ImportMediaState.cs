@@ -6,7 +6,6 @@ namespace BUtil.Core.State
     {
         public ImportMediaState()
         {
-            Version = 1;
             Files = new List<string>();
         }
 
@@ -15,7 +14,6 @@ namespace BUtil.Core.State
             Files.AddRange(files);
         }
 
-        public int Version { get; set; }
         public List<string> Files { get; set; }
     }
 }
