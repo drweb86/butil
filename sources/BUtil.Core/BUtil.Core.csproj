@@ -129,7 +129,8 @@
 
 		rem Copying of data folder
 		md "$(SolutionDir)..\Output\BUtil\data"
-		xcopy "$(SolutionDir)..\data" "$(SolutionDir)..\Output\BUtil\data" /Y
+		copy "$(SolutionDir)Media\Images and Icons\My\BackupUi.ico" "$(SolutionDir)..\Output\BUtil\data" /Y
+		copy "$(SolutionDir)Media\Images and Icons\My\RestorationMaster.ico" "$(SolutionDir)..\Output\BUtil\data" /Y
 
 		rem Copy MS System Globbing
 		xcopy "%userprofile%\.nuget\packages\microsoft.extensions.filesystemglobbing\7.0.0\lib\net7.0" "$(SolutionDir)..\Output\BUtil\bin" /Y
