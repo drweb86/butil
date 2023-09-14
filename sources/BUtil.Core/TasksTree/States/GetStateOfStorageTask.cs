@@ -1,6 +1,6 @@
-﻿using BUtil.Core.Events;
+﻿using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.Events;
 using BUtil.Core.State;
-using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
 
@@ -11,7 +11,7 @@ namespace BUtil.Core.TasksTree
         public StorageSpecificServicesIoc _services;
         private readonly string _password;
 
-        public IStorageSettings StorageSettings { get; }
+        public IStorageSettingsV2 StorageSettings { get; }
         public IncrementalBackupState StorageState { get; private set; }
 
         public GetStateOfStorageTask(StorageSpecificServicesIoc services, BackupEvents events, string password) : 

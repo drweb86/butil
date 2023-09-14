@@ -2,14 +2,15 @@
 using System.IO;
 using System.Linq;
 using System.Security;
+using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 
 namespace BUtil.Core.Storages
 {
-    class SambaStorage : StorageBase<SambaStorageSettings>
+    class SambaStorage : StorageBase<SambaStorageSettingsV2>
     {
-        internal SambaStorage(ILog log, SambaStorageSettings settings)
+        internal SambaStorage(ILog log, SambaStorageSettingsV2 settings)
             : base(log, settings)
         {
             Mount();

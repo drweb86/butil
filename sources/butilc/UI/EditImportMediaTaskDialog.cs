@@ -1,8 +1,7 @@
 using BUtil.ConsoleBackup.Localization;
 using BUtil.Core.BackupModels;
+using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Logs;
-using BUtil.Core.Options;
-using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.MediaSyncBackupModel;
 using NStack;
 using System;
@@ -14,9 +13,9 @@ namespace BUtil.ConsoleBackup.UI
 {
     public partial class EditImportMediaTaskDialog
     {
-        private IStorageSettings _from;
+        private IStorageSettingsV2 _from;
 
-        internal EditImportMediaTaskDialog(BackupTask task) 
+        internal EditImportMediaTaskDialog(BackupTaskV2 task) 
         {
             InitializeComponent();
 
@@ -31,7 +30,7 @@ namespace BUtil.ConsoleBackup.UI
             }
             else
             {
-                var options = (ImportMediaBackupModelOptions)task.Model;
+                var options = (ImportMediaBackupModelOptionsV2)task.Model;
                 _from = options.From;
                 _destinationFolderTextField.Text = options.DestinationFolder;
                 _transformFileNameTextField.Text = options.TransformFileName;
@@ -80,14 +79,14 @@ namespace BUtil.ConsoleBackup.UI
             _from = dialog.StorageSettings;
         }
 
-        public BackupTask BackupTask 
+        public BackupTaskV2 BackupTask 
         {
             get 
             {
-                return new BackupTask
+                return new BackupTaskV2
                 {
                     Name = _titleTextField.Text.ToString(),
-                    Model = new ImportMediaBackupModelOptions
+                    Model = new ImportMediaBackupModelOptionsV2
                     {
                         TransformFileName = _transformFileNameTextField.Text.ToString(),
                         From = _from,

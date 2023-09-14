@@ -9,11 +9,10 @@ using System.Windows.Forms;
 using BUtil.Configurator;
 using BUtil.Configurator.Localization;
 using BUtil.Configurator.Restore;
+using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
-using BUtil.Core.Options;
 using BUtil.Core.State;
-using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.IncrementalModel;
 
 namespace BUtil.RestorationMaster
@@ -21,9 +20,9 @@ namespace BUtil.RestorationMaster
     internal partial class VersionsViewerForm : Form
     {
         private readonly IncrementalBackupState _incrementalBackupState;
-        private readonly IStorageSettings _storageSettings;
+        private readonly IStorageSettingsV2 _storageSettings;
 
-        public VersionsViewerForm(IStorageSettings storageSettings = null, IncrementalBackupState incrementalBackupState = null)
+        public VersionsViewerForm(IStorageSettingsV2 storageSettings = null, IncrementalBackupState incrementalBackupState = null)
         {
             InitializeComponent();
             _incrementalBackupState = incrementalBackupState;
@@ -124,11 +123,11 @@ namespace BUtil.RestorationMaster
         private const int _folderImageIndex = 1;
         private const int _storageImageIndex = 2;
 
-        private static List<Tuple<SourceItem, List<StorageFile>>> GetTreeViewFiles(
+        private static List<Tuple<SourceItemV2, List<StorageFile>>> GetTreeViewFiles(
             IncrementalBackupState state,
             VersionState selectedVersion)
         {
-            var result = new List<Tuple<SourceItem, List<StorageFile>>>();
+            var result = new List<Tuple<SourceItemV2, List<StorageFile>>>();
 
             var sourceItems = selectedVersion.SourceItemChanges
                 .Select(a => a.SourceItem)
@@ -137,7 +136,7 @@ namespace BUtil.RestorationMaster
 
             foreach (var sourceItem in sourceItems)
             {
-                result.Add(new Tuple<SourceItem, List<StorageFile>>(
+                result.Add(new Tuple<SourceItemV2, List<StorageFile>>(
                     sourceItem,
                     BuildVersionFiles(state, sourceItem, selectedVersion)
                     ));
@@ -146,7 +145,7 @@ namespace BUtil.RestorationMaster
             return result;
         }
 
-        private void RefreshTreeView(List<Tuple<SourceItem, List<StorageFile>>> treeViewFiles)
+        private void RefreshTreeView(List<Tuple<SourceItemV2, List<StorageFile>>> treeViewFiles)
         {
             _filesTreeView.BeginUpdate();
             _filesTreeView.Nodes.Clear();
@@ -176,7 +175,7 @@ namespace BUtil.RestorationMaster
             _filesTreeView.EndUpdate();
         }
 
-        private static List<StorageFile> BuildVersionFiles(IncrementalBackupState state, SourceItem sourceItem, VersionState selectedVersion)
+        private static List<StorageFile> BuildVersionFiles(IncrementalBackupState state, SourceItemV2 sourceItem, VersionState selectedVersion)
         {
             List<StorageFile> result = null;
 
@@ -220,7 +219,7 @@ namespace BUtil.RestorationMaster
                 .ToList();
         }
 
-        private void AddAsLeaves(TreeNode sourceItemNode, SourceItem sourceItem, StorageFile storageFile)
+        private void AddAsLeaves(TreeNode sourceItemNode, SourceItemV2 sourceItem, StorageFile storageFile)
         {
             var sourceItemDir = sourceItem.IsFolder ?
                             sourceItem.Target :
@@ -333,11 +332,11 @@ namespace BUtil.RestorationMaster
                     rootNode = rootNode.Parent;
                 }
 
-                Recover(tags, destinationFolder, rootNode.Tag as SourceItem);
+                Recover(tags, destinationFolder, rootNode.Tag as SourceItemV2);
             }
         }
 
-        private void Recover(List<StorageFile> storageFiles, string destinationFolder, SourceItem sourceItem)
+        private void Recover(List<StorageFile> storageFiles, string destinationFolder, SourceItemV2 sourceItem)
         {
             if (!storageFiles.Any())
                 return;
@@ -372,7 +371,7 @@ namespace BUtil.RestorationMaster
             }
             var selectedVersion = _versionsListView.SelectedItems[0].Tag as VersionState;
             IEnumerable<Tuple<ChangeState, string>> changes = null;
-            List<Tuple<SourceItem, List<StorageFile>>> treeViewFiles = null;
+            List<Tuple<SourceItemV2, List<StorageFile>>> treeViewFiles = null;
             using var progressForm = new ProgressForm(reportProgress =>
             {
                 reportProgress(15);

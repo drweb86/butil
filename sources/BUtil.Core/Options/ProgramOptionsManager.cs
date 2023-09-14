@@ -1,24 +1,25 @@
 ﻿using BUtil.Core.BackupModels;
+using BUtil.Core.ConfigurationFileModels.V2;
 
 namespace BUtil.Core.Options
 {
     public static class ProgramOptionsManager
 	{
-        public static BackupTask GetDefaultBackupTask(string name)
+        public static BackupTaskV2 GetDefaultBackupTask(string name)
         {
-            return new BackupTask
+            return new BackupTaskV2
 			{
 				Name = name,
-				Model = new IncrementalBackupModelOptions()
+				Model = new IncrementalBackupModelOptionsV2()
 				{
                     Items =
                     {
-                        new SourceItem
+                        new SourceItemV2
                         {
                             IsFolder = true,
                             Target = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal)
                         },
-                         new SourceItem
+                         new SourceItemV2
                         {
                             IsFolder = true,
                             Target = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop)

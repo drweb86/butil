@@ -1,4 +1,5 @@
-﻿using BUtil.Core.Hashing;
+﻿using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.Hashing;
 using BUtil.Core.Logs;
 using BUtil.Core.State;
 using BUtil.Core.Storages;
@@ -9,7 +10,7 @@ namespace BUtil.Core.TasksTree.IncrementalModel
     public class StorageSpecificServicesIoc: IDisposable
     {
         public ILog Log { get; }
-        public IStorageSettings StorageSettings { get; }
+        public IStorageSettingsV2 StorageSettings { get; }
 
         private readonly Lazy<IStorage> _storage;
         public IStorage Storage { get { return _storage.Value; } }
@@ -20,7 +21,7 @@ namespace BUtil.Core.TasksTree.IncrementalModel
         private readonly Lazy<IncrementalBackupFileService> _incrementalBackupFileService;
         public IncrementalBackupFileService IncrementalBackupFileService { get { return _incrementalBackupFileService.Value; } }
 
-        public StorageSpecificServicesIoc(ILog log, IStorageSettings storageSettings, IHashService hashService)
+        public StorageSpecificServicesIoc(ILog log, IStorageSettingsV2 storageSettings, IHashService hashService)
         {
             Log = log;
             StorageSettings = storageSettings;

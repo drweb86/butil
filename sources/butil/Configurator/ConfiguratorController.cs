@@ -6,8 +6,7 @@ using System.Diagnostics;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
 using BUtil.RestorationMaster;
-using BUtil.Core.Storages;
-using BUtil.Core.BackupModels;
+using BUtil.Core.ConfigurationFileModels.V2;
 
 namespace BUtil.Configurator.Configurator
 {
@@ -20,16 +19,16 @@ namespace BUtil.Configurator.Configurator
 				return;
 			}
 
-            BackupTask backupTask = null;
+            BackupTaskV2 backupTask = null;
             if (taskName != null)
             {
                 var service = new BackupTaskStoreService();
                 backupTask = service.Load(taskName);
             } else if (file != null)
             {
-                backupTask = new BackupTask();
-                var options = (IncrementalBackupModelOptions)backupTask.Model;
-                options.To = new FolderStorageSettings() { DestinationFolder = Path.GetDirectoryName(file) };
+                backupTask = new BackupTaskV2();
+                var options = (IncrementalBackupModelOptionsV2)backupTask.Model;
+                options.To = new FolderStorageSettingsV2() { DestinationFolder = Path.GetDirectoryName(file) };
             }
 
             using var form = new OpenBackupForm(backupTask);
@@ -68,9 +67,9 @@ namespace BUtil.Configurator.Configurator
             Process.Start(Application.ExecutablePath, $"{Arguments.RunBackupMaster} \"{Arguments.RunTask}={taskName}\"");
         }
 
-        private static BackupTask GetBackupTaskToExecute(string taskName)
+        private static BackupTaskV2 GetBackupTaskToExecute(string taskName)
         {
-            BackupTask task = null;
+            BackupTaskV2 task = null;
 
             var backupTaskStoreService = new BackupTaskStoreService();
             if (taskName == null)

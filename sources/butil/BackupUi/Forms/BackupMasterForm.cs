@@ -2,7 +2,6 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using BUtil.Core;
-using BUtil.Core.Options;
 using BUtil.Core.Misc;
 using BUtil.Core.Logs;
 using BUtil.Configurator.Localization;
@@ -10,23 +9,21 @@ using BUtil.Core.Events;
 using BUtil.Core.BackupModels;
 using BUtil.Core.TasksTree.Core;
 using System.Runtime.InteropServices;
-using BUtil.Core.Storages;
-using System.IO;
-using System.Linq;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using BUtil.Core.ConfigurationFileModels.V2;
 
 namespace BUtil.Configurator.BackupUiMaster.Forms
 {
     internal sealed partial class BackupMasterForm : Form
     {
-        private readonly BackupTask _backupTask;
+        private readonly BackupTaskV2 _backupTask;
         private readonly ConcurrentQueue<Action> _listViewUpdates = new();
         private readonly List<ListViewItem> _items = new();
         private readonly List<string> _lastMinuteMessagesToUser = new List<string>();
         private HashSet<Guid> _ended = new HashSet<Guid>();
 
-        public BackupMasterForm(BackupTask backupTask)
+        public BackupMasterForm(BackupTaskV2 backupTask)
         {
             InitializeComponent();
 

@@ -1,4 +1,4 @@
-﻿using BUtil.Core.Options;
+﻿using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.State;
 using System;
 using System.IO;
@@ -7,7 +7,7 @@ namespace BUtil.Core.Misc
 {
     public static class SourceItemHelper
     {
-        public static string GetSourceItemDirectory(SourceItem sourceItem)
+        public static string GetSourceItemDirectory(SourceItemV2 sourceItem)
         {
             var dir = sourceItem.IsFolder ?
                 sourceItem.Target :

@@ -1,8 +1,7 @@
-﻿using BUtil.Core.BackupModels;
+﻿using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
-using BUtil.Core.Options;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.States;
 using System.Collections.Generic;
@@ -15,21 +14,21 @@ namespace BUtil.Core.TasksTree.IncrementalModel
         private readonly CommonServicesIoc _commonServicesIoc;
         private readonly StorageSpecificServicesIoc _storageService;
 
-        public IncrementalBackupTask(ILog log, BackupEvents backupEvents, BackupTask backupTask)
+        public IncrementalBackupTask(ILog log, BackupEvents backupEvents, BackupTaskV2 backupTask)
             : base(log, backupEvents, Resources.IncrementalBackup, TaskArea.ProgramInRunBeforeAfterBackupChain, null)
         {
             var tasks = new List<BuTask>();
 
             _commonServicesIoc = new CommonServicesIoc();
-            var modelOptions = (IncrementalBackupModelOptions)backupTask.Model;
+            var modelOptions = (IncrementalBackupModelOptionsV2)backupTask.Model;
             var storage = modelOptions.To;
 
             _storageService = new StorageSpecificServicesIoc(Log, storage, _commonServicesIoc.HashService);
 
-            var readSatesTask = new GetStateOfSourceItemsAndStoragesTask(Log, Events, modelOptions.Items, _commonServicesIoc, _storageService, modelOptions.FileExcludePatterns, (backupTask.Model as IncrementalBackupModelOptions).Password);
+            var readSatesTask = new GetStateOfSourceItemsAndStoragesTask(Log, Events, modelOptions.Items, _commonServicesIoc, _storageService, modelOptions.FileExcludePatterns, (backupTask.Model as IncrementalBackupModelOptionsV2).Password);
             tasks.Add(readSatesTask);
 
-            tasks.Add(new WriteIncrementedVersionTask(_storageService, Events, readSatesTask.StorageStateTask, readSatesTask.GetSourceItemStateTasks, backupTask.Model as IncrementalBackupModelOptions));
+            tasks.Add(new WriteIncrementedVersionTask(_storageService, Events, readSatesTask.StorageStateTask, readSatesTask.GetSourceItemStateTasks, backupTask.Model as IncrementalBackupModelOptionsV2));
 
             Children = tasks;
         }

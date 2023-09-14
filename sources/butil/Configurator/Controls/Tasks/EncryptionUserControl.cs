@@ -1,10 +1,9 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using BUtil.Core.Options;
 using BUtil.Core.Localization;
 using BUtil.Configurator;
-using BUtil.Core.BackupModels;
+using BUtil.Core.ConfigurationFileModels.V2;
 
 namespace BUtil.Core.PL
 {
@@ -12,7 +11,7 @@ namespace BUtil.Core.PL
 	{
 		bool _passwordIsValid;
 		bool _confirmationOfPasswordIsValid;
-		private BackupTask _task;
+		private BackupTaskV2 _task;
 		readonly Color _greenColor = Color.LightGreen;
 		readonly Color _defaultTextboxColor;
 		
@@ -62,7 +61,7 @@ namespace BUtil.Core.PL
 
 		}
 
-        public EncryptionUserControl(BackupTask task)
+        public EncryptionUserControl(BackupTaskV2 task)
 		{
 			_task = task;
 
@@ -85,15 +84,15 @@ namespace BUtil.Core.PL
 				UpdateModel(task);
         }
 
-		public void UpdateModel(BackupTask task)
+		public void UpdateModel(BackupTaskV2 task)
 		{
 			if (task != null)
 				_task = task;
 
 
-			if (_task.Model is IncrementalBackupModelOptions)
+			if (_task.Model is IncrementalBackupModelOptionsV2)
 			{
-				var typedOptions = (IncrementalBackupModelOptions)_task.Model;
+				var typedOptions = (IncrementalBackupModelOptionsV2)_task.Model;
                 passwordTextBox.Text = typedOptions.Password;
                 passwordConfirmationTextBox.Text = typedOptions.Password;
             }
@@ -118,9 +117,9 @@ namespace BUtil.Core.PL
 				passwordTextBox.Text = string.Empty;
 			}
 
-            if (_task.Model is IncrementalBackupModelOptions)
+            if (_task.Model is IncrementalBackupModelOptionsV2)
             {
-                var typedOptions = (IncrementalBackupModelOptions)_task.Model;
+                var typedOptions = (IncrementalBackupModelOptionsV2)_task.Model;
                 typedOptions.Password = passwordTextBox.Text;
             }
 		}

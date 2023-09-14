@@ -2,21 +2,20 @@ using System;
 using System.ComponentModel;
 using System.Windows.Forms;
 using System.IO;
-using BUtil.Core.Options;
 using BUtil.Configurator.Localization;
 using System.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
 using BUtil.Configurator.Configurator.Controls.Tasks.What;
-using BUtil.Core.BackupModels;
+using BUtil.Core.ConfigurationFileModels.V2;
 
 namespace BUtil.Configurator.Controls
 {
     internal sealed partial class WhatUserControl : BUtil.Core.PL.BackUserControl
 	{
-		private readonly BackupTask _task;
+		private readonly BackupTaskV2 _task;
 		
-		public WhatUserControl(BackupTask task)
+		public WhatUserControl(BackupTaskV2 task)
 		{
             _task = task;
 
@@ -39,7 +38,7 @@ namespace BUtil.Configurator.Controls
             _editFileExcludePatternToolStripMenuItem.Text = BUtil.Configurator.Localization.Resources.EditFileExcludePattern;
             _openInExplorerToolStripMenuItem.Text = BUtil.Configurator.Localization.Resources.OpenInExplorer;
 
-            var options = (IncrementalBackupModelOptions)_task.Model;
+            var options = (IncrementalBackupModelOptionsV2)_task.Model;
             options.Items
                 .Select(item => new WhatItemViewModel { Id = item.Id, Title = item.Target, Type = item.IsFolder ? WhatItemType.Folder : WhatItemType.File })
                 .OrderBy(item => item.Title)
@@ -218,7 +217,7 @@ namespace BUtil.Configurator.Controls
 		public override void GetOptionsFromUi()
 		{
             var fileExcludePatterns = new List<string>();
-            var sourceItems = new List<SourceItem>();
+            var sourceItems = new List<SourceItemV2>();
             foreach (ListViewItem item in _itemsListView.Items)
             {
                 var model = item.Tag as WhatItemViewModel;
@@ -226,12 +225,12 @@ namespace BUtil.Configurator.Controls
                 if (model.Type == WhatItemType.Exclude)
                     fileExcludePatterns.Add(model.Title);
                 if (model.Type == WhatItemType.File)
-                    sourceItems.Add(new SourceItem { Id = model.Id, IsFolder = false, Target = model.Title });
+                    sourceItems.Add(new SourceItemV2 { Id = model.Id, IsFolder = false, Target = model.Title });
                 if (model.Type == WhatItemType.Folder)
-                    sourceItems.Add(new SourceItem { Id = model.Id, IsFolder = true, Target = model.Title });
+                    sourceItems.Add(new SourceItemV2 { Id = model.Id, IsFolder = true, Target = model.Title });
             }
 
-            var options = (IncrementalBackupModelOptions)_task.Model;
+            var options = (IncrementalBackupModelOptionsV2)_task.Model;
             options.Items = sourceItems;
             options.FileExcludePatterns = fileExcludePatterns;
         }
@@ -240,7 +239,7 @@ namespace BUtil.Configurator.Controls
 		{
             GetOptionsFromUi();
 
-            var options = (IncrementalBackupModelOptions)_task.Model;
+            var options = (IncrementalBackupModelOptionsV2)_task.Model;
             if (options.Items.Count == 0)
 			{
 				Messages.ShowErrorBox(Resources.ThereAreNoItemsToBackupNNyouCanSpecifyTheDataToBackupInConfiguratorInWhatSettingsGroup);

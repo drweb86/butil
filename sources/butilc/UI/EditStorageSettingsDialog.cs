@@ -1,4 +1,5 @@
 using BUtil.ConsoleBackup.Localization;
+using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Logs;
 using BUtil.Core.Storages;
 using System;
@@ -8,7 +9,7 @@ namespace BUtil.ConsoleBackup.UI
 {
     public partial class EditStorageSettingsDialog
     {
-        public IStorageSettings StorageSettings { get; private set; }
+        public IStorageSettingsV2 StorageSettings { get; private set; }
 
         private void SelectTransport(int transportId)
         {
@@ -16,7 +17,7 @@ namespace BUtil.ConsoleBackup.UI
             _ftpsStorageControls.ForEach(x => x.Visible = transportId == 1);
         }
 
-        internal EditStorageSettingsDialog(IStorageSettings source = null, string title = null) 
+        internal EditStorageSettingsDialog(IStorageSettingsV2 source = null, string title = null) 
         {
             Title = title ?? BUtil.ConsoleBackup.Localization.Resources.SpecifyLocation;
             InitializeComponent();
@@ -28,16 +29,16 @@ namespace BUtil.ConsoleBackup.UI
             }
             else
             {
-                if (source is FolderStorageSettings)
+                if (source is FolderStorageSettingsV2)
                 {
                     _transportSelectionComboBox.SelectedItem = 0;
                     SelectTransport(0);
-                    _folderStorageFolderTextField.Text = ((FolderStorageSettings)source).DestinationFolder;
-                } else if (source is FtpsStorageSettings)
+                    _folderStorageFolderTextField.Text = ((FolderStorageSettingsV2)source).DestinationFolder;
+                } else if (source is FtpsStorageSettingsV2)
                 {
                     _transportSelectionComboBox.SelectedItem = 1;
                     SelectTransport(1);
-                    var storageSettings = (FtpsStorageSettings)source;
+                    var storageSettings = (FtpsStorageSettingsV2)source;
                     _hostFtpsStorageFolderTextField.Text = storageSettings.Host;
                     _portFtpsStorageFolderTextField.Text = storageSettings.Port.ToString();
                     _userFtpsStorageFolderTextField.Text = storageSettings.User;
@@ -66,17 +67,17 @@ namespace BUtil.ConsoleBackup.UI
 
         private void OnSave()
         {
-            IStorageSettings storageSettings = null;
+            IStorageSettingsV2 storageSettings = null;
             if (_transportSelectionComboBox.SelectedItem == 0)
             {
-                storageSettings = new FolderStorageSettings
+                storageSettings = new FolderStorageSettingsV2
                 {
                     DestinationFolder = this._folderStorageFolderTextField.Text.ToString(),
                 };
             }
             else if (_transportSelectionComboBox.SelectedItem == 1)
             {
-                storageSettings = new FtpsStorageSettings
+                storageSettings = new FtpsStorageSettingsV2
                 {
                     Host = _hostFtpsStorageFolderTextField.Text.ToString(),
                     Port = int.TryParse(_portFtpsStorageFolderTextField.Text.ToString(), out var port) ? port : -1,

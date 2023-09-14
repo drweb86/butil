@@ -1,6 +1,6 @@
+using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
-using BUtil.Core.Options;
 using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.MediaSyncBackupModel;
 using System;
@@ -10,21 +10,21 @@ namespace BUtil.Core.BackupModels
 {
     public static class BackupModelStrategyFactory
     {
-        public static IBackupModelStrategy Create(ILog log, BackupTask task)
+        public static IBackupModelStrategy Create(ILog log, BackupTaskV2 task)
         {
-            if (task.Model is IncrementalBackupModelOptions)
+            if (task.Model is IncrementalBackupModelOptionsV2)
                 return new IncrementalBackupModelStrategy(log, task);
-            if (task.Model is ImportMediaBackupModelOptions)
+            if (task.Model is ImportMediaBackupModelOptionsV2)
                 return new ImportMediaBackupModelStrategy(log, task);
             throw new ArgumentOutOfRangeException(nameof(task));
         }
 
-        public static bool TryVerify(ILog log, IBackupModelOptions options, out string error)
+        public static bool TryVerify(ILog log, IBackupModelOptionsV2 options, out string error)
         {
             error = null;
-            if (options is IncrementalBackupModelOptions)
+            if (options is IncrementalBackupModelOptionsV2)
             {
-                var typedOptions = (IncrementalBackupModelOptions)options;
+                var typedOptions = (IncrementalBackupModelOptionsV2)options;
                 if (typedOptions.Items.Count == 0)
                 {
                     error = Resources.ThereAreNoItemsToBackup;
@@ -59,11 +59,11 @@ namespace BUtil.Core.BackupModels
                 }
 
                 return true;
-            } else if (options is ImportMediaBackupModelOptions)
+            } else if (options is ImportMediaBackupModelOptionsV2)
             {
-                var typedOptions = (ImportMediaBackupModelOptions)options;
+                var typedOptions = (ImportMediaBackupModelOptionsV2)options;
 
-                var storageError = StorageFactory.Test(log, new FolderStorageSettings { DestinationFolder = typedOptions.DestinationFolder });
+                var storageError = StorageFactory.Test(log, new FolderStorageSettingsV2 { DestinationFolder = typedOptions.DestinationFolder });
                 if (storageError != null)
                 {
                     error = storageError;

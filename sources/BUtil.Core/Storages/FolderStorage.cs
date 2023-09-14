@@ -2,14 +2,15 @@
 using System.IO;
 using System.Linq;
 using System.Security;
+using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 
 namespace BUtil.Core.Storages
 {
-    class FolderStorage : StorageBase<FolderStorageSettings>
+    class FolderStorage : StorageBase<FolderStorageSettingsV2>
     {
-        internal FolderStorage(ILog log, FolderStorageSettings settings)
+        internal FolderStorage(ILog log, FolderStorageSettingsV2 settings)
             : base(log, settings)
         {
             Mount();

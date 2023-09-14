@@ -9,25 +9,24 @@ using System.Linq;
 using BUtil.Core.Logs;
 using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.IncrementalModel;
-using BUtil.Core.Options;
-using BUtil.Core.BackupModels;
+using BUtil.Core.ConfigurationFileModels.V2;
 
 namespace BUtil.RestorationMaster
 {
     public partial class OpenBackupForm : Form
     {
-        private BackupTask storageStub = new BackupTask();
+        private BackupTaskV2 storageStub = new BackupTaskV2();
 
-        public OpenBackupForm(BackupTask backupTask = null)
+        public OpenBackupForm(BackupTaskV2 backupTask = null)
         {
             InitializeComponent();
 
             if (backupTask != null)
             {
                 storageStub = backupTask;
-                if (backupTask.Model is IncrementalBackupModelOptions)
+                if (backupTask.Model is IncrementalBackupModelOptionsV2)
                 {
-                    _passwordTextBox.Text = ((IncrementalBackupModelOptions)backupTask.Model).Password;
+                    _passwordTextBox.Text = ((IncrementalBackupModelOptionsV2)backupTask.Model).Password;
                 }
             }
 
@@ -61,7 +60,7 @@ namespace BUtil.RestorationMaster
             }
             _whereUserControl.GetOptionsFromUi();
 
-            var options = (IncrementalBackupModelOptions)storageStub.Model;
+            var options = (IncrementalBackupModelOptionsV2)storageStub.Model;
             var storageSettings = options.To;
 
             string error = null;

@@ -1,10 +1,11 @@
-using BUtil.Core.BackupModels;
+using BUtil.Core.ConfigurationFileModels.V2;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Terminal.Gui;
 
-namespace BUtil.ConsoleBackup.UI{
+namespace BUtil.ConsoleBackup.UI
+{
 
     partial class MainView 
     {
@@ -40,7 +41,7 @@ namespace BUtil.ConsoleBackup.UI{
 
             var taskName = _taskNames[this.itemsListView.SelectedItem];
             var task = _controller.BackupTaskStoreService.Load(taskName);
-            if (!(task.Model is ImportMediaBackupModelOptions))
+            if (!(task.Model is ImportMediaBackupModelOptionsV2))
             {
                 Terminal.Gui.MessageBox.ErrorQuery(string.Empty, BUtil.ConsoleBackup.Localization.Resources.YouCannotEditThisTypeOfTaskInCLI);
                 return;

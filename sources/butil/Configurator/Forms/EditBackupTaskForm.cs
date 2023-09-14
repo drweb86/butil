@@ -9,16 +9,17 @@ using BUtil.Core.Options;
 using BUtil.Configurator.Localization;
 using BUtil.Configurator.AddBackupTaskWizard.View;
 using BUtil.Configurator.Configurator.Controls.Tasks;
+using BUtil.Core.ConfigurationFileModels.V2;
 
 namespace BUtil.Configurator.Configurator.Forms
 {
     public partial class EditBackupTaskForm : Form
     {
         readonly Dictionary<BackupTaskViewsEnum, BackUserControl> _views;
-        readonly BackupTask _task;
+        readonly BackupTaskV2 _task;
         readonly ScheduleInfo _scheduleInfo;
 
-        public EditBackupTaskForm(BackupTask task, ScheduleInfo scheduleInfo)
+        public EditBackupTaskForm(BackupTaskV2 task, ScheduleInfo scheduleInfo)
         {
             InitializeComponent();
             

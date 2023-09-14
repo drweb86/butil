@@ -1,9 +1,9 @@
 ﻿using BUtil.ConsoleBackup.Localization;
 using BUtil.Core.BackupModels;
+using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
-using BUtil.Core.Options;
 using BUtil.Core.TasksTree.Core;
 using System;
 using System.Collections.Generic;
@@ -15,13 +15,13 @@ namespace BUtil.ConsoleBackup.UI
 {
     public partial class BackupDialog
     {
-        private readonly BackupTask _task;
+        private readonly BackupTaskV2 _task;
         private readonly List<string> _lastMinuteMessagesToUser = new();
         private readonly FileLog _log;
         private readonly BuTask _rootTask;
         private readonly HashSet<Guid> _ended = new HashSet<Guid>();
 
-        internal BackupDialog(BackupTask task)
+        internal BackupDialog(BackupTaskV2 task)
         {
             InitializeComponent();
 

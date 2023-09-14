@@ -1,6 +1,6 @@
-﻿namespace BUtil.Core.Storages
+﻿namespace BUtil.Core.ConfigurationFileModels.V2
 {
-    public class FtpsStorageSettings : IStorageSettings
+    public class FtpsStorageSettingsV2 : IStorageSettingsV2
     {
         public long SingleBackupQuotaGb { get; set; }
 

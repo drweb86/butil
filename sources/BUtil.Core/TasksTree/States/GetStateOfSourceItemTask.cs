@@ -1,6 +1,6 @@
-﻿using BUtil.Core.Events;
+﻿using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.Events;
 using BUtil.Core.Logs;
-using BUtil.Core.Options;
 using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
@@ -20,9 +20,9 @@ namespace BUtil.Core.TasksTree
 
         public SourceItemState SourceItemState { get; private set; } 
 
-        public SourceItem SourceItem { get; }
+        public SourceItemV2 SourceItem { get; }
 
-        public GetStateOfSourceItemTask(ILog log, BackupEvents events, SourceItem sourceItem, IEnumerable<string> fileExcludePatterns, CommonServicesIoc commonServicesIoc) : 
+        public GetStateOfSourceItemTask(ILog log, BackupEvents events, SourceItemV2 sourceItem, IEnumerable<string> fileExcludePatterns, CommonServicesIoc commonServicesIoc) : 
             base(log, events, string.Format(BUtil.Core.Localization.Resources.GetStateOfSourceItem, sourceItem.Target), sourceItem.IsFolder ? TaskArea.Folder : TaskArea.File, null)
         {
             SourceItem = sourceItem;

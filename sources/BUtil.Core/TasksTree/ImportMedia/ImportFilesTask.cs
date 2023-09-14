@@ -1,7 +1,6 @@
-﻿using BUtil.Core.BackupModels;
+﻿using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
 using BUtil.Core.Logs;
-using BUtil.Core.Options;
 using BUtil.Core.State;
 using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.Core;
@@ -14,11 +13,11 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
 {
     class ImportFilesTask : SequentialBuTask
     {
-        private readonly BackupTask _task;
+        private readonly BackupTaskV2 _task;
         private readonly GetStateOfSourceItemTask _getStateOfSourceItemTask;
         private readonly CommonServicesIoc _commonServicesIoc;
 
-        public ImportFilesTask(ILog log, BackupEvents backupEvents, BackupTask backupTask, GetStateOfSourceItemTask getStateOfSourceItemTask, CommonServicesIoc commonServicesIoc)
+        public ImportFilesTask(ILog log, BackupEvents backupEvents, BackupTaskV2 backupTask, GetStateOfSourceItemTask getStateOfSourceItemTask, CommonServicesIoc commonServicesIoc)
             : base(log, backupEvents, BUtil.Core.Localization.Resources.ImportAllFiles, TaskArea.ProgramInRunBeforeAfterBackupChain, null)
         {
             Children = new List<BuTask>();
@@ -31,12 +30,12 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
         {
             UpdateStatus(ProcessingStatus.InProgress);
 
-            var options = (ImportMediaBackupModelOptions)_task.Model;
+            var options = (ImportMediaBackupModelOptionsV2)_task.Model;
 
             var importMediaFileService = new ImportMediaFileService();
             var importMediaState = options.SkipAlreadyImportedFiles ? importMediaFileService.Load(_task.Name) ?? new ImportMediaState() : new ImportMediaState();
             var fromStorage = StorageFactory.Create(this.Log, options.From);
-            var toStorage = StorageFactory.Create(this.Log, new FolderStorageSettings { DestinationFolder = options.DestinationFolder });
+            var toStorage = StorageFactory.Create(this.Log, new FolderStorageSettingsV2 { DestinationFolder = options.DestinationFolder });
             var transformFileName = options.TransformFileName;
 
             var fromStorageFiles = fromStorage.GetFiles(null, SearchOption.AllDirectories);

@@ -1,6 +1,6 @@
-﻿using BUtil.Core.Events;
+﻿using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.Events;
 using BUtil.Core.Logs;
-using BUtil.Core.Options;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
 using System.Collections.Generic;
@@ -18,7 +18,7 @@ namespace BUtil.Core.TasksTree.States
         public GetStateOfSourceItemsAndStoragesTask(
             ILog log,
             BackupEvents events, 
-            IEnumerable<SourceItem> sourceItems,
+            IEnumerable<SourceItemV2> sourceItems,
             CommonServicesIoc commonServicesIoc,
             StorageSpecificServicesIoc servicesIoc,
             IEnumerable<string> fileExcludePatterns,

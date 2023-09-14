@@ -1,6 +1,6 @@
-﻿namespace BUtil.Core.Storages
+﻿namespace BUtil.Core.ConfigurationFileModels.V2
 {
-    public class SambaStorageSettings : IStorageSettings
+    public class SambaStorageSettingsV2 : IStorageSettingsV2
     {
         public long SingleBackupQuotaGb { get; set; }
         public string Url { get; set; }

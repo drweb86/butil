@@ -1,4 +1,4 @@
-﻿using BUtil.Core.Options;
+﻿using BUtil.Core.ConfigurationFileModels.V2;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,10 +6,10 @@ namespace BUtil.Core.State
 {
     public class SourceItemState
     {
-        public SourceItem SourceItem { get; set; }
+        public SourceItemV2 SourceItem { get; set; }
         public List<FileState> FileStates { get; set; }
         public SourceItemState() { } // deserialization
-        public SourceItemState(SourceItem sourceItem, List<FileState> fileStates)
+        public SourceItemState(SourceItemV2 sourceItem, List<FileState> fileStates)
         {
             SourceItem = sourceItem;
             FileStates = fileStates;

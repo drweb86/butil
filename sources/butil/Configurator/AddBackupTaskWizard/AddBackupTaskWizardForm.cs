@@ -1,6 +1,7 @@
 using System;
 using System.Windows.Forms;
 using BUtil.Configurator.Localization;
+using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Options;
 
 namespace BUtil.Configurator.AddBackupTaskWizard.View
@@ -22,7 +23,7 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
             RefreshActivePage();
         }
 
-        public BackupTask BackupTask { get; private set; }
+        public BackupTaskV2 BackupTask { get; private set; }
         public ScheduleInfo ScheduleInfo { get; private set; }
 
         private void ApplyLocals()

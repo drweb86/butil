@@ -1,4 +1,4 @@
-﻿using BUtil.Core.BackupModels;
+﻿using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
@@ -13,11 +13,11 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
     {
         private readonly CommonServicesIoc _commonServicesIoc = new();
 
-        public ImportMediaBackupTask(ILog log, BackupEvents backupEvents, BackupTask backupTask)
+        public ImportMediaBackupTask(ILog log, BackupEvents backupEvents, BackupTaskV2 backupTask)
             : base(log, backupEvents, string.Empty, TaskArea.ProgramInRunBeforeAfterBackupChain, null)
         {
-            var typedModel = backupTask.Model as ImportMediaBackupModelOptions;
-            var sourceItem = new SourceItem(typedModel.DestinationFolder, true);
+            var typedModel = backupTask.Model as ImportMediaBackupModelOptionsV2;
+            var sourceItem = new SourceItemV2(typedModel.DestinationFolder, true);
 
             var getStateOfSourceItemTask = new GetStateOfSourceItemTask(log, backupEvents, sourceItem, Array.Empty<string>(), _commonServicesIoc);
             var importFiles = new ImportFilesTask(log, backupEvents, backupTask, getStateOfSourceItemTask, _commonServicesIoc);

@@ -1,4 +1,4 @@
-﻿using BUtil.Core.BackupModels;
+﻿using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
 using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;
@@ -9,7 +9,7 @@ namespace BUtil.Core.TasksTree.States
 {
     internal class WriteStateToStorageTask : BuTask
     {
-        private readonly IncrementalBackupModelOptions _incrementalBackupModelOptions;
+        private readonly IncrementalBackupModelOptionsV2 _incrementalBackupModelOptions;
         private readonly StorageSpecificServicesIoc _services;
         private readonly CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask;
         private readonly WriteSourceFilesToStorageTask _writeSourceFilesToStorageTask;
@@ -21,7 +21,7 @@ namespace BUtil.Core.TasksTree.States
             BackupEvents events,
             CalculateIncrementedVersionForStorageTask getIncrementedVersionTask,
             WriteSourceFilesToStorageTask writeSourceFilesToStorageTask,
-            IncrementalBackupModelOptions incrementalBackupModelOptions)
+            IncrementalBackupModelOptionsV2 incrementalBackupModelOptions)
             : base(services.Log, events, Localization.Resources.WriteStateToStorage, TaskArea.Hdd)
         {
             _incrementalBackupModelOptions = incrementalBackupModelOptions;

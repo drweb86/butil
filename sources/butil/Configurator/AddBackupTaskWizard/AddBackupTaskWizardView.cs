@@ -4,6 +4,7 @@ using BUtil.Configurator.Configurator.Controls;
 using BUtil.Configurator.Configurator.Controls.Tasks;
 using BUtil.Configurator.Controls;
 using BUtil.Configurator.Localization;
+using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Options;
 using BUtil.Core.PL;
 
@@ -29,7 +30,7 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
             get { return _step > 0; }
         }
 
-        public BackupTask Task { get; private set; }
+        public BackupTaskV2 Task { get; private set; }
 
         public ScheduleInfo ScheduleInfo { get; private set; }
 

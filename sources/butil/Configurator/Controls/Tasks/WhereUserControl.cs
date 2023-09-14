@@ -1,20 +1,19 @@
 using System;
 using System.Windows.Forms;
 using BUtil.Core.Storages;
-using BUtil.Core.Options;
 using BUtil.Configurator.Localization;
 using System.Linq;
 using BUtil.RestorationMaster;
 using BUtil.Core.Logs;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using BUtil.Core.Misc;
-using BUtil.Core.BackupModels;
+using BUtil.Core.ConfigurationFileModels.V2;
 
 namespace BUtil.Configurator.Configurator.Controls
 {
     internal sealed partial class WhereUserControl : Core.PL.BackUserControl
     {
-        BackupTask _task;
+        BackupTaskV2 _task;
 
         public WhereUserControl()
         {
@@ -42,16 +41,16 @@ namespace BUtil.Configurator.Configurator.Controls
 
         public override void SetOptionsToUi(object settings)
         {
-            _task = (BackupTask)settings;
-            var options = (IncrementalBackupModelOptions)_task.Model;
+            _task = (BackupTaskV2)settings;
+            var options = (IncrementalBackupModelOptionsV2)_task.Model;
 
             var storage = options.To;
             if (storage == null)
                 return;
 
-            if (storage is FolderStorageSettings)
+            if (storage is FolderStorageSettingsV2)
             {
-                var folderSettings = storage as FolderStorageSettings;
+                var folderSettings = storage as FolderStorageSettingsV2;
                 _storageTypesTabControl.SelectedTab = _hddStorageTabPage;
 
                 destinationFolderTextBox.Text = folderSettings.DestinationFolder;
@@ -59,9 +58,9 @@ namespace BUtil.Configurator.Configurator.Controls
                 _mountTextBox.Text = folderSettings.MountPowershellScript;
                 _unmountTextBox.Text = folderSettings.UnmountPowershellScript;
             }
-            else if (storage is SambaStorageSettings)
+            else if (storage is SambaStorageSettingsV2)
             {
-                var sambaSettings = storage as SambaStorageSettings;
+                var sambaSettings = storage as SambaStorageSettingsV2;
                 _storageTypesTabControl.SelectedTab = _sambaTabPage;
 
                 _shareTextBox.Text = sambaSettings.Url;
@@ -71,12 +70,12 @@ namespace BUtil.Configurator.Configurator.Controls
             }
         }
 
-        private IStorageSettings GetStorageSettings()
+        private IStorageSettingsV2 GetStorageSettings()
         {
-            IStorageSettings storageSettings = null;
+            IStorageSettingsV2 storageSettings = null;
             if (_storageTypesTabControl.SelectedTab == _sambaTabPage)
             {
-                storageSettings = new SambaStorageSettings
+                storageSettings = new SambaStorageSettingsV2
                 {
                     Url = _shareTextBox.Text,
                     SingleBackupQuotaGb = (long)_uploadLimitGbNumericUpDown.Value,
@@ -86,7 +85,7 @@ namespace BUtil.Configurator.Configurator.Controls
             }
             else if (_storageTypesTabControl.SelectedTab == _hddStorageTabPage)
             {
-                storageSettings = new FolderStorageSettings
+                storageSettings = new FolderStorageSettingsV2
                 {
                     DestinationFolder = destinationFolderTextBox.Text,
                     SingleBackupQuotaGb = (long)_uploadLimitGbNumericUpDownV2.Value,
@@ -102,7 +101,7 @@ namespace BUtil.Configurator.Configurator.Controls
 
         public override void GetOptionsFromUi()
         {
-            var options = (IncrementalBackupModelOptions)_task.Model;
+            var options = (IncrementalBackupModelOptionsV2)_task.Model;
             options.To = GetStorageSettings();
         }
         #endregion
@@ -110,9 +109,9 @@ namespace BUtil.Configurator.Configurator.Controls
         public override bool ValidateUi()
         {
             var storageSettings = GetStorageSettings();
-            if (storageSettings is SambaStorageSettings)
+            if (storageSettings is SambaStorageSettingsV2)
             {
-                var sambaStorageSettings = storageSettings as SambaStorageSettings;
+                var sambaStorageSettings = storageSettings as SambaStorageSettingsV2;
 
                 if (string.IsNullOrWhiteSpace(sambaStorageSettings.Url))
                 {
@@ -120,9 +119,9 @@ namespace BUtil.Configurator.Configurator.Controls
                     return false;
                 }
             }
-            else if (storageSettings is FolderStorageSettings)
+            else if (storageSettings is FolderStorageSettingsV2)
             {
-                var folderStorageSettings = storageSettings as FolderStorageSettings;
+                var folderStorageSettings = storageSettings as FolderStorageSettingsV2;
 
                 if (string.IsNullOrWhiteSpace(folderStorageSettings.DestinationFolder))
                 {

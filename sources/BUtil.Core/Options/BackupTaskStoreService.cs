@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Text.Json;
+using BUtil.Core.ConfigurationFileModels.V2;
 
 namespace BUtil.Core.Options
 {
@@ -22,17 +23,17 @@ namespace BUtil.Core.Options
                 Directory.CreateDirectory(_folder);
         }
 
-        public BackupTask Load(string name)
+        public BackupTaskV2 Load(string name)
         {
             var fileName = GetFileName(name);
             if (!File.Exists(fileName))
                 return null;
             var json = File.ReadAllText(fileName);
-            return JsonSerializer.Deserialize<BackupTask>(json);
+            return JsonSerializer.Deserialize<BackupTaskV2>(json);
         }
 
 
-        public void Save(BackupTask task)
+        public void Save(BackupTaskV2 task)
         {
             var fileName = GetFileName(task.Name);
             var json = JsonSerializer.Serialize(task, new JsonSerializerOptions { WriteIndented = true });

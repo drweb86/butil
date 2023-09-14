@@ -3,17 +3,18 @@ using System.IO;
 using System.Linq;
 using System.Security;
 using System.Text.RegularExpressions;
+using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Logs;
 using FluentFTP;
 
 namespace BUtil.Core.Storages
 {
-    class FtpsStorage : StorageBase<FtpsStorageSettings>
+    class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
     {
         private readonly string _normalizedFolder;
         private FtpClient _client;
 
-        internal FtpsStorage(ILog log, FtpsStorageSettings settings)
+        internal FtpsStorage(ILog log, FtpsStorageSettingsV2 settings)
             : base(log, settings)
         {
             if (string.IsNullOrWhiteSpace(Settings.Host))

@@ -1,12 +1,12 @@
 using BUtil.Configurator.Configurator;
 using BUtil.Configurator.Localization;
-using BUtil.Core.Options;
+using BUtil.Core.ConfigurationFileModels.V2;
 
 namespace BUtil.Configurator.AddBackupTaskWizard.View
 {
     public partial class TaskNameUserControl : Core.PL.BackUserControl
     {
-        private BackupTask _task;
+        private BackupTaskV2 _task;
 
         public TaskNameUserControl()
         {
@@ -20,7 +20,7 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
 
         public override void SetOptionsToUi(object settings)
         {
-            _task = (BackupTask) settings;
+            _task = (BackupTaskV2) settings;
 
             _titleTextBox.Text = _task.Name;
         }

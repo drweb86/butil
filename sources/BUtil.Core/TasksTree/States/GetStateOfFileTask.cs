@@ -1,6 +1,6 @@
-﻿using BUtil.Core.Events;
+﻿using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.Events;
 using BUtil.Core.Logs;
-using BUtil.Core.Options;
 using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
@@ -14,7 +14,7 @@ namespace BUtil.Core.TasksTree.States
         private readonly string _fileName;
         public FileState State { get; private set; }
 
-        public GetStateOfFileTask(ILog log, BackupEvents events, CommonServicesIoc servicesIoc, SourceItem item, string fileName) :
+        public GetStateOfFileTask(ILog log, BackupEvents events, CommonServicesIoc servicesIoc, SourceItemV2 item, string fileName) :
             base(log, events, null, TaskArea.File)
         {
             _servicesIoc = servicesIoc;

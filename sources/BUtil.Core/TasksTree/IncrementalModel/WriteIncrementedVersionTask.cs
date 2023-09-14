@@ -1,4 +1,4 @@
-﻿using BUtil.Core.BackupModels;
+﻿using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
 using BUtil.Core.Logs;
 using BUtil.Core.TasksTree.Core;
@@ -19,7 +19,7 @@ namespace BUtil.Core.TasksTree
             BackupEvents events, 
             GetStateOfStorageTask storageStateTask,
             IEnumerable<GetStateOfSourceItemTask> getSourceItemStateTasks,
-            IncrementalBackupModelOptions incrementalBackupModelOptions) :
+            IncrementalBackupModelOptionsV2 incrementalBackupModelOptions) :
             base(services.Log, events, Localization.Resources.WriteIncrementedVersionToStorage,
                 TaskArea.Hdd, null)
         {

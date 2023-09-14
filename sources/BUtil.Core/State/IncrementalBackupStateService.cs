@@ -1,5 +1,5 @@
-﻿using BUtil.Core.BackupModels;
-using BUtil.Core.Compression;
+﻿using BUtil.Core.Compression;
+using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Hashing;
 using BUtil.Core.Logs;
@@ -80,7 +80,7 @@ namespace BUtil.Core.State
             return true;
         }
 
-        public StorageFile Write(IncrementalBackupModelOptions incrementalBackupModelOptions, IncrementalBackupState state)
+        public StorageFile Write(IncrementalBackupModelOptionsV2 incrementalBackupModelOptions, IncrementalBackupState state)
         {
             _log.WriteLine(LoggingEvent.Debug, $"Writing state");
             _services.Storage.Delete(IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile);
@@ -115,7 +115,7 @@ namespace BUtil.Core.State
             return storageFile;
         }
 
-        private static string GetStorageMethod(IncrementalBackupModelOptions incrementalBackupModelOptions, string password)
+        private static string GetStorageMethod(IncrementalBackupModelOptionsV2 incrementalBackupModelOptions, string password)
         {
             if (string.IsNullOrEmpty(password))
                 return StorageMethodNames.SevenZip;

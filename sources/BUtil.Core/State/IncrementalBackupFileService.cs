@@ -1,9 +1,9 @@
 ﻿using BUtil.Core.Compression;
+using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Hashing;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
-using BUtil.Core.Options;
 using BUtil.Core.TasksTree.IncrementalModel;
 using System.IO;
 using System.Linq;
@@ -24,7 +24,7 @@ namespace BUtil.Core.State
             _services = services;
         }
 
-        public bool Download(SourceItem sourceItem, StorageFile storageFile, string destinationFolder)
+        public bool Download(SourceItemV2 sourceItem, StorageFile storageFile, string destinationFolder)
         {
             _log.WriteLine(LoggingEvent.Debug, $"Storage: downloading \"{storageFile.FileState.FileName}\"");
 
