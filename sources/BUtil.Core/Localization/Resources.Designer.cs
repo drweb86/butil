@@ -586,6 +586,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This task is obsolete and not supported anymore.
+        /// </summary>
+        public static string ThisTaskIsObsoleteAndNotSupportedAnymore {
+            get {
+                return ResourceManager.GetString("ThisTaskIsObsoleteAndNotSupportedAnymore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Transform file name is empty..
         /// </summary>
         public static string TransformFileNameIsEmpty {

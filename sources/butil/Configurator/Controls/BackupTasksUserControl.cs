@@ -111,6 +111,11 @@ namespace BUtil.Configurator.Configurator.Controls
             var taskName = _tasksListView.SelectedItems[0].Text;
             var backupTaskStoreService = new BackupTaskStoreService();
             var task = backupTaskStoreService.Load(taskName);
+            if (task == null)
+            {
+                Messages.ShowErrorBox(BUtil.Core.Localization.Resources.ThisTaskIsObsoleteAndNotSupportedAnymore);
+                return;
+            }
             if (!(task.Model is IncrementalBackupModelOptionsV2))
             {
                 Messages.ShowErrorBox("To change this task launch console CLI");

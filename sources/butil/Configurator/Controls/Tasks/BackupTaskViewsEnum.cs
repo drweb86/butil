@@ -4,7 +4,6 @@
     {
         Name,
         SourceItems,
-        How,
         Storages,
         Scheduler,
         Encryption,

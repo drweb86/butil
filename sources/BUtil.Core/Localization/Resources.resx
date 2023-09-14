@@ -329,4 +329,7 @@ Please update storage settings.</value>
   <data name="Import0" xml:space="preserve">
     <value>Import "{0}"</value>
   </data>
+  <data name="ThisTaskIsObsoleteAndNotSupportedAnymore" xml:space="preserve">
+    <value>This task is obsolete and not supported anymore</value>
+  </data>
 </root>

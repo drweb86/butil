@@ -337,4 +337,7 @@
   <data name="Import0" xml:space="preserve">
     <value>Импорт "{0}"</value>
   </data>
+  <data name="ThisTaskIsObsoleteAndNotSupportedAnymore" xml:space="preserve">
+    <value>Эта задача устарела и больше не поддерживается</value>
+  </data>
 </root>

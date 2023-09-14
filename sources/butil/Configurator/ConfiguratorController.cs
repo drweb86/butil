@@ -78,13 +78,25 @@ namespace BUtil.Configurator.Configurator
 
                 using var selectTaskForm = new SelectTaskToRunForm(backupTaskNames);
                 if (selectTaskForm.ShowDialog() == DialogResult.OK)
+                {
                     task = backupTaskStoreService.Load(selectTaskForm.TaskToRun);
+                    if (task == null)
+                    {
+                        Messages.ShowErrorBox(BUtil.Core.Localization.Resources.ThisTaskIsObsoleteAndNotSupportedAnymore);
+                        Environment.Exit(-1);
+                    }
+                }
                 else
                     Environment.Exit(-1);
             }
             else
             {
                 task = backupTaskStoreService.Load(taskName);
+                if (task == null)
+                {
+                    Messages.ShowErrorBox(BUtil.Core.Localization.Resources.ThisTaskIsObsoleteAndNotSupportedAnymore);
+                    Environment.Exit(-1);
+                }
             }
 
             if (task == null)

@@ -49,7 +49,6 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
             _steps.Add(new PageInfo(Resources.What, Resources.HereYouMayAddFilesAndFoldersYouWannaToBackup, RegisterControl(BackupTaskViewsEnum.SourceItems, new WhatUserControl(Task)), Icons.SourceItems48x48));
             _steps.Add(new PageInfo(Resources.Where, Resources.HereYouCanSpecifyWhereToSendBackups, RegisterControl(BackupTaskViewsEnum.Storages, new WhereUserControl()), Icons.Storages48x48));
             _steps.Add(new PageInfo(Resources.When, Resources.YouCanSetDaysAndTimesWhenYouWantToStartThisBackupJob, RegisterControl(BackupTaskViewsEnum.Scheduler, new WhenUserControl()), Icons.Schedule48x48));
-            _steps.Add(new PageInfo(Resources.How, Resources.HowHint, RegisterControl(BackupTaskViewsEnum.How, new HowUserControl(Task)), Icons.ActionsOfficeChartPieIcon48x48));
             _steps.Add(new PageInfo(Resources.Encryption, Resources.HereYouCanProtectTheBackupWithPasswordThisIsAlsoRequiredForCopyingItOverNetwork, RegisterControl(BackupTaskViewsEnum.Encryption, encryptionUserControl), Icons.Password48x48));
 
             _step = 0;

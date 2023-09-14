@@ -4,20 +4,23 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Text.Json;
 using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.ConfigurationFileModels.V1;
 
 namespace BUtil.Core.Options
 {
     public class BackupTaskStoreService
     {
         private readonly string _folder;
-        private const string _extension = ".json";
+        private const string _genericFilter = "*.json";
+        private const string _extensionV1 = ".json";
+        private const string _extensionV2 = ".v2.json";
 
         public BackupTaskStoreService()
         {
 #if DEBUG
-            _folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BUtil Backup Tasks V2 - DEBUG");
+            _folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BUtil Backup Tasks - DEBUG");
 #else
-            _folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BUtil Backup Tasks V2");
+            _folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BUtil Backup Tasks");
 #endif
             if (!Directory.Exists(_folder))
                 Directory.CreateDirectory(_folder);
@@ -25,45 +28,134 @@ namespace BUtil.Core.Options
 
         public BackupTaskV2 Load(string name)
         {
-            var fileName = GetFileName(name);
-            if (!File.Exists(fileName))
-                return null;
-            var json = File.ReadAllText(fileName);
-            return JsonSerializer.Deserialize<BackupTaskV2>(json);
+            foreach (var pair in GetFileNames(name))
+            {
+                if (!File.Exists(pair.Value))
+                    continue;
+                var json = File.ReadAllText(pair.Value);
+                
+                if (pair.Key == 1)
+                {
+                    try
+                    {
+                        var task = JsonSerializer.Deserialize<BackupTaskV1>(json);
+                        return UpgradeV1ToLatest(task);
+                    }
+                    catch (System.Text.Json.JsonException)
+                    {
+                        return null;
+                    }
+                }
+                else if (pair.Key == 2)
+                {
+                    return JsonSerializer.Deserialize<BackupTaskV2>(json);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+
+            return null;
         }
 
+        private BackupTaskV2 UpgradeV1ToLatest(BackupTaskV1 task)
+        {
+            var incrementalModelV1 = task.Model as IncrementalBackupModelOptionsV1;
+            if (incrementalModelV1 == null)
+            {
+                return null;
+            }
+
+            return new BackupTaskV2
+            {
+                Name = task.Name,
+                Model = new IncrementalBackupModelOptionsV2
+                {
+                    Password = task.Password,
+                    FileExcludePatterns = task.FileExcludePatterns,
+                    Items = task.Items.Select(UpgradeSourceItemV1ToLatest).ToList(),
+                    To = UpgradeStorageSettingsV1ToLatest(task.Storages.Single()),
+                }
+            };
+        }
+
+        private IStorageSettingsV2 UpgradeStorageSettingsV1ToLatest(IStorageSettingsV1 storageSettingsV1)
+        {
+            if (storageSettingsV1 is SambaStorageSettingsV1)
+            {
+                var typedStorage = storageSettingsV1 as SambaStorageSettingsV1;
+                return new SambaStorageSettingsV2
+                {
+                    Password = typedStorage.Password,
+                    PasswordStorageMethod = typedStorage.PasswordStorageMethod,
+                    SingleBackupQuotaGb = typedStorage.SingleBackupQuotaGb,
+                    Url = typedStorage.Url,
+                    User = typedStorage.User,
+                };
+            }
+            else if (storageSettingsV1 is FolderStorageSettingsV1)
+            {
+                var typedStorage = storageSettingsV1 as FolderStorageSettingsV1;
+                return new FolderStorageSettingsV2
+                {
+                    DestinationFolder = typedStorage.DestinationFolder,
+                    MountPowershellScript = typedStorage.MountPowershellScript,
+                    SingleBackupQuotaGb = typedStorage.SingleBackupQuotaGb,
+                    UnmountPowershellScript = typedStorage.UnmountPowershellScript,
+                };
+            }
+            else
+            {
+                throw new InvalidDataException();
+            }
+        }
+
+        private SourceItemV2 UpgradeSourceItemV1ToLatest(SourceItemV1 sourceItemV1)
+        {
+            return new SourceItemV2
+            {
+                Id = sourceItemV1.Id,
+                IsFolder = sourceItemV1.IsFolder,
+                Target = sourceItemV1.Target,
+            };
+        }
 
         public void Save(BackupTaskV2 task)
         {
-            var fileName = GetFileName(task.Name);
+            Delete(task.Name);
+
+            var fileName = GetFileNames(task.Name).Last().Value;
             var json = JsonSerializer.Serialize(task, new JsonSerializerOptions { WriteIndented = true });
-            if (File.Exists(fileName))
-                File.Delete(fileName);
             File.WriteAllText(fileName, json);
         }
 
         public void Delete(string name)
         {
-            var fileName = GetFileName(name);
-            if (File.Exists(fileName))
-                File.Delete(fileName);
+            foreach (var pair in GetFileNames(name))
+                if (File.Exists(pair.Value))
+                    File.Delete(pair.Value);
         }
 
         public IEnumerable<string> GetNames()
         {
             return Directory
-                .GetFiles(_folder, $"*{_extension}")
+                .GetFiles(_folder, _genericFilter)
                 .Select(Path.GetFileNameWithoutExtension)
                 .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)
                 .ToList();
         }
 
-        private string GetFileName(string name)
+        private Dictionary<int, string> GetFileNames(string name)
         {
             if (name.Contains("..") || name.Contains('/') || name.Contains('\\'))
                 throw new ArgumentException(nameof(name));
 
-            return Path.Combine(_folder, $"{name}{_extension}");
+            return new Dictionary<int, string> 
+            {
+                { 1, Path.Combine(_folder, $"{name}{_extensionV1}") },
+                { 2, Path.Combine(_folder, $"{name}{_extensionV2}") },
+            };
         }
     }
 }

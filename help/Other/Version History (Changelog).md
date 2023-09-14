@@ -1,4 +1,9 @@
-# 2023.09.13
+# 2023.09.15
+
+## New Features
+- Add support of format storage format V1 for backward compatibility.
+
+# 2023.09.13 (Preview)
 
 ## New Features
 - CLI: backup dialog title shows percentage

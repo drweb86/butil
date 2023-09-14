@@ -35,7 +35,6 @@ namespace BUtil.Configurator.Controls
             this.storagesButton = new System.Windows.Forms.Button();
             this.schedulerButton = new System.Windows.Forms.Button();
             this.encryptionButton = new System.Windows.Forms.Button();
-            this.howButton = new System.Windows.Forms.Button();
             this._tableLayoutPanel = new BUtil.Configurator.Configurator.Controls.Common.TransparentTableLayoutPanel();
             this._nameButton = new System.Windows.Forms.Button();
             this._tableLayoutPanel.SuspendLayout();
@@ -113,31 +112,12 @@ namespace BUtil.Configurator.Controls
             this.encryptionButton.UseVisualStyleBackColor = false;
             this.encryptionButton.Click += new System.EventHandler(this.EncryptionButtonClick);
             // 
-            // howButton
-            // 
-            this.howButton.BackColor = System.Drawing.SystemColors.Control;
-            this.howButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.howButton.FlatAppearance.BorderSize = 0;
-            this.howButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.howButton.Image = ((System.Drawing.Image)(resources.GetObject("howButton.Image")));
-            this.howButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.howButton.Location = new System.Drawing.Point(5, 328);
-            this.howButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.howButton.Name = "howButton";
-            this.howButton.Size = new System.Drawing.Size(190, 73);
-            this.howButton.TabIndex = 5;
-            this.howButton.Text = "How ?";
-            this.howButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.howButton.UseVisualStyleBackColor = false;
-            this.howButton.Click += new System.EventHandler(this.HowButtonClick);
-            // 
             // _tableLayoutPanel
             // 
             this._tableLayoutPanel.BackColor = System.Drawing.SystemColors.Control;
             this._tableLayoutPanel.ColumnCount = 1;
             this._tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this._tableLayoutPanel.Controls.Add(this.encryptionButton, 0, 5);
-            this._tableLayoutPanel.Controls.Add(this.howButton, 0, 4);
+            this._tableLayoutPanel.Controls.Add(this.encryptionButton, 0, 4);
             this._tableLayoutPanel.Controls.Add(this.storagesButton, 0, 3);
             this._tableLayoutPanel.Controls.Add(this.schedulerButton, 0, 2);
             this._tableLayoutPanel.Controls.Add(this.itemsForBackupButton, 0, 1);
@@ -146,8 +126,7 @@ namespace BUtil.Configurator.Controls
             this._tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this._tableLayoutPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this._tableLayoutPanel.Name = "_tableLayoutPanel";
-            this._tableLayoutPanel.RowCount = 7;
-            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this._tableLayoutPanel.RowCount = 6;
             this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
@@ -196,7 +175,6 @@ namespace BUtil.Configurator.Controls
 		private System.Windows.Forms.Button schedulerButton;
 		private System.Windows.Forms.Button storagesButton;
         private System.Windows.Forms.Button itemsForBackupButton;
-        private System.Windows.Forms.Button howButton;
         private TransparentTableLayoutPanel _tableLayoutPanel;
         private System.Windows.Forms.Button _nameButton;
     }

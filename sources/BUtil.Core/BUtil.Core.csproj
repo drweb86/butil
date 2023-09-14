@@ -119,9 +119,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ConfigurationFileModels\V1\" />
-  </ItemGroup>
   <PropertyGroup>
     <PreBuildEvent>
 		cd "$(SolutionDir)..\Output"

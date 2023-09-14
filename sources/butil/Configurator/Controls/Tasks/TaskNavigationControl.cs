@@ -64,7 +64,7 @@ namespace BUtil.Configurator.Controls
 		
 		override public void ApplyLocalization()
 		{
-		    var buttons = new[] {_nameButton, itemsForBackupButton, howButton,
+		    var buttons = new[] {_nameButton, itemsForBackupButton,
 				storagesButton, schedulerButton, encryptionButton};
 
 			_nameButton.Text = Resources.Name;
@@ -72,13 +72,11 @@ namespace BUtil.Configurator.Controls
 			storagesButton.Text = Resources.Where;
 			schedulerButton.Text = Resources.When;
 			encryptionButton.Text = Resources.Encryption;
-            howButton.Text = Resources.How;
             SetHintForControl(_nameButton, Resources.Name);
             SetHintForControl(itemsForBackupButton, Resources.HereYouMayAddFoldersAndFilesYouWantToBackup);
 			SetHintForControl(storagesButton, Resources.InThisPlaceYouCanAddLocationsWhereYouWouldLikeYourBackupToBeCopiedAfterCompletionOfBackup);
 			SetHintForControl(schedulerButton, Resources.HereYouCanSetUpASchedulerShcedulerCanHelpYouToAutomateCreationOfBackups);
 			SetHintForControl(encryptionButton, Resources.ProtectionOfBackupWithPasswordItIsRequiredWhenYouWantYourDataToBeCopiedSomewhereOverTheNetwork);
-            SetHintForControl(howButton, Resources.HowHint);
 
             foreach (var button in buttons)
 		    {
@@ -184,11 +182,6 @@ namespace BUtil.Configurator.Controls
 				}
 			}
 		}
-
-		private void HowButtonClick(object sender, EventArgs e)
-		{
-            changeView(sender, BackupTaskViewsEnum.How);
-        }
 
 		private void OnNameButtonClick(object sender, EventArgs e)
 		{

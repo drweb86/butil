@@ -39,7 +39,6 @@ namespace BUtil.Configurator.Configurator.Forms
             _views.Add(BackupTaskViewsEnum.SourceItems, new WhatUserControl(_task));
             _views.Add(BackupTaskViewsEnum.Storages, new WhereUserControl());
             _views.Add(BackupTaskViewsEnum.Scheduler, new WhenUserControl());
-            _views.Add(BackupTaskViewsEnum.How, new HowUserControl(_task));
             _views.Add(BackupTaskViewsEnum.Encryption, encryptionControl);
             foreach (KeyValuePair<BackupTaskViewsEnum, BackUserControl> pair in _views)
             {

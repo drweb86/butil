@@ -11,6 +11,7 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
         public TaskNameUserControl()
         {
             InitializeComponent();
+            _backupModelLabel.Text = Resources.IncrementalBackupDescription;
         }
 
         public override void ApplyLocalization()
@@ -20,7 +21,7 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
 
         public override void SetOptionsToUi(object settings)
         {
-            _task = (BackupTaskV2) settings;
+            _task = (BackupTaskV2)settings;
 
             _titleTextBox.Text = _task.Name;
         }
@@ -39,7 +40,7 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
 
         public override void GetOptionsFromUi()
         {
-            _task.Name = _titleTextBox.Text; 
+            _task.Name = _titleTextBox.Text;
         }
 
         private void OnNameChange(object sender, System.EventArgs e)

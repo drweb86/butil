@@ -1,3 +1,4 @@
+using BUtil.ConsoleBackup.Localization;
 using BUtil.Core.ConfigurationFileModels.V2;
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,11 @@ namespace BUtil.ConsoleBackup.UI
             var taskName = _taskNames[this.itemsListView.SelectedItem];
 
             var task = _controller.BackupTaskStoreService.Load(taskName);
+            if (task == null)
+            {
+                Terminal.Gui.MessageBox.ErrorQuery(string.Empty, BUtil.Core.Localization.Resources.ThisTaskIsObsoleteAndNotSupportedAnymore, Resources.Close);
+                return;
+            }
             var dialog = new BackupDialog(task);
             Application.Run(dialog);
         }
@@ -41,9 +47,14 @@ namespace BUtil.ConsoleBackup.UI
 
             var taskName = _taskNames[this.itemsListView.SelectedItem];
             var task = _controller.BackupTaskStoreService.Load(taskName);
+            if (task == null)
+            {
+                Terminal.Gui.MessageBox.ErrorQuery(string.Empty, BUtil.Core.Localization.Resources.ThisTaskIsObsoleteAndNotSupportedAnymore, Resources.Close);
+                return;
+            }
             if (!(task.Model is ImportMediaBackupModelOptionsV2))
             {
-                Terminal.Gui.MessageBox.ErrorQuery(string.Empty, BUtil.ConsoleBackup.Localization.Resources.YouCannotEditThisTypeOfTaskInCLI);
+                Terminal.Gui.MessageBox.ErrorQuery(string.Empty, BUtil.ConsoleBackup.Localization.Resources.YouCannotEditThisTypeOfTaskInCLI, Resources.Close);
                 return;
             }
             
