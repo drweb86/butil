@@ -337,7 +337,7 @@ namespace BUtil.ConsoleBackup.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Задания.
+        ///   Looks up a localized string similar to Tasks.
         /// </summary>
         internal static string Tasks {
             get {

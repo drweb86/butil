@@ -7,10 +7,6 @@ namespace BUtil.Core.Misc
 		static readonly string[] _LINKS_UPDATED = new string[]
 		{
 			"https://github.com/drweb86/butil",
-			"https://github.com/drweb86/butil/issues",
-			"https://github.com/drweb86/butil/blob/master/help/TOC.md",
-			"http://www.7-zip.org",
-			"http://virtuawin.sourceforge.net/",
 			"https://github.com/drweb86/butil/blob/master/help/Backup/Backup%20via%20Wizard/Backup%20Wizard.md",
             "https://github.com/drweb86/butil/blob/master/help/Restore/Restoration%20Wizard.md",
             "https://github.com/drweb86/butil/releases/latest",

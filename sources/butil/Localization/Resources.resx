@@ -192,9 +192,6 @@
   <data name="BackupDataEvery" xml:space="preserve">
     <value>Backup data every...</value>
   </data>
-  <data name="About" xml:space="preserve">
-    <value>About</value>
-  </data>
   <data name="UtilityForCreatingBackupsNNwebSitesHttpsGithubComDrweb86ButilNNlocalizationCreatedByN" xml:space="preserve">
     <value>utility for creating backups.
 
@@ -241,9 +238,6 @@ Localization created by:
   </data>
   <data name="Exiting" xml:space="preserve">
     <value>Exiting...</value>
-  </data>
-  <data name="Documentation" xml:space="preserve">
-    <value>Documentation</value>
   </data>
   <data name="BugReport" xml:space="preserve">
     <value>BUG REPORT</value>

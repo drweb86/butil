@@ -133,9 +133,6 @@
   <data name="BackupDataEvery" xml:space="preserve">
     <value>Делать резерные копии каждый...</value>
   </data>
-  <data name="About" xml:space="preserve">
-    <value>О программе</value>
-  </data>
   <data name="UtilityForCreatingBackupsNNwebSitesHttpsGithubComDrweb86ButilNNlocalizationCreatedByN" xml:space="preserve">
     <value>утилита резервного копирования
 
@@ -182,9 +179,6 @@
   </data>
   <data name="Exiting" xml:space="preserve">
     <value>Выход...</value>
-  </data>
-  <data name="Documentation" xml:space="preserve">
-    <value>Руководство пользователя</value>
   </data>
   <data name="BugReport" xml:space="preserve">
     <value>ОШИБКА</value>

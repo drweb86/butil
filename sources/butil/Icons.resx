@@ -2463,31 +2463,6 @@
   <data name="ArrayUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\ArrayUp.PNG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="virtuawinPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsRAAALEQF/ZF+RAAAETElE
-        QVRYR8VXTWxUVRh9/hBRUFZQoTFiMCHKVIIJpFUrG4ydamkrLdDSjTYhgRA2mo4d6c+EttNWpQnttFUC
-        zYQS2wgFIYEFlhrQUFYQ6cZ0QcJCo3Gvro7nfDMdXl9ux7fpeJOTvn7373vfPee8Ox6A/xXOYCHhDBYS
-        zqAL7Se+Qd/IFJKp848wfAG9RP/oRag/OCcMnEEXvOd24cXyo9hW3YmtVW3Y+n4bIpVxlBDFZYfhrdnF
-        YXjaPycMnEEXvLUV+LDjPNLTvyN1aR4DE3PoGbuD5Nht1B/9Gl5RJYctZwLrKtAUG8fgxXn0j99D95k7
-        aB+ZQVtqBtWHUwsJOOfmgzPogrcuiv2fpPnm99HFN+/86iZaB6cRP3m9QAkURbHv4zF8fu4uuk7fZgK3
-        EB+aRgerUHtkdCGBNf45YeAMOnDQK96NkmgLyhuTKKtPoGzvcZTuSeCt/T2IVLRA/Wxjvjmh4AwGcJCA
-        t6Kcm1Rh5eZ9tmlJNGZ/H3vpA4urP9uUxLOEa63Hg7GFhxXtJyZMSirlIvDNfItj4sqPWPVKA9Zvb8YT
-        m+rw19//ZHu4kCXJ8TwucUbElXokYa3PtknD/Mg99I9eop4PoY6S2n1oyIils91i5a3iEODhr39yRim8
-        F2oyKHoPO2pimH/wm/VrnI5DXBFhD8TOUbrfYiP9Q2bFtnQCvcNTNJZWansWx1Jk9+B1dAzPoLwhybLv
-        xeSVn2zzYBtKX8vFvQ1VeLux14g6MPkzhijZ9PQfeL0mYY7Jli+BC+ZsPWdmqe8fKLHvyfIbKK1L4E2e
-        9TMsu9462L48dRmrXm1kX7WNK6s/ji6u0U30nb1npiXXzCbwPLF0Aho4MDlnJiOdS2pvkO0llTGs39Gc
-        NwH1a5zGZ+betHW0ni+BYiJ/Asq47+xddPMopHe9kd5MhNOZB5uO4MmX63MVUMVUuTgrKKdURVXZbAIb
-        iKUT2FbTaWemsxuYvG9nuZNn6m2sNbaLcIPpq/ji1HcGPb/TlLC4mjggzog74lBb6oZxStwSx9giGuZH
-        7kEs1dfuI7L2QMu4sVhszphMRgViuwinkgt6c20+98tD69e4Le+2mHqkIqlJqpK6pDK2lRrmR+7BfIB6
-        Nd1Kv9Kx9BzwATWVWz6gv/72yAcCXkJ/yfrAos0F/z9P+Z79WE1kF6fjcQNzQhJOfzOxRU64k/DP30ws
-        5YyLEsiH1do4wvJqU30D9C3QN0Fnrm+E+tmCm/8nnEEXVMraIyPG7Dg/w5JZ1+lZI6q4ouMKzgkDZ9AF
-        JSBi6fv/2UklcMvuBbofNJCw4kxwThg4gy4sJHCM0lIV5HS6GemG1PTpuBE3OCcMnEEXlMAeSipJXUvb
-        uhPKtOQbzbwrSj3BOWHgDLogKUnPkWirGYtc8zVCt2T5hyQcnBMGzqALuvfLrOSY+j2QHNbvggz6RqeW
-        /3fBcsEZLCScwULCGSwc4P0LIEMX4uuvD8AAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="Journals" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\journals.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -2588,9 +2563,6 @@
   <data name="OtherSettings48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>resources\othersettings48x48.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ProgramInfo48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>resources\programinfo48x48.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="BackupTask16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>resources\backuptask16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -2623,8 +2595,5 @@
   </data>
   <data name="Lamp48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>resources\lamp48x48.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ActionsOfficeChartPieIcon48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\ActionsOfficeChartPieIcon48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

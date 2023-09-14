@@ -85,7 +85,6 @@
     <Compile Update="Configurator\Controls\Tasks\TaskNameUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Configurator\AboutProgramUI\AboutProgramUserControl.cs" />
     <Compile Update="Configurator\Controls\BackupTasksUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

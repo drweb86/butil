@@ -145,9 +145,6 @@
   <data name="Options" xml:space="preserve">
     <value>Настройкi</value>
   </data>
-  <data name="About" xml:space="preserve">
-    <value>А праграмме</value>
-  </data>
   <data name="PasswordIsInvalidNNitWasResetedN" xml:space="preserve">
     <value>Няправiльны пароль.
 

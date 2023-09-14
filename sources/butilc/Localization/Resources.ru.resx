@@ -178,7 +178,7 @@ butilc.exe Help
     <value>Провалено (смотрите открывшийся лог)</value>
   </data>
   <data name="Tasks" xml:space="preserve">
-    <value>Задания</value>
+    <value>Задачи</value>
   </data>
   <data name="TaskIsSucceeded" xml:space="preserve">
     <value>Завершено успешно!</value>

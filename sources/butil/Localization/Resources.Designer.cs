@@ -70,15 +70,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About.
-        /// </summary>
-        internal static string About {
-            get {
-                return ResourceManager.GetString("About", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Actions.
         /// </summary>
         internal static string Actions {
@@ -429,15 +420,6 @@ namespace BUtil.Configurator.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Documentation.
-        /// </summary>
-        internal static string Documentation {
-            get {
-                return ResourceManager.GetString("Documentation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Do nothing.
         /// </summary>
         internal static string DoNothing {
@@ -588,24 +570,6 @@ namespace BUtil.Configurator.Localization {
         internal static string Finish {
             get {
                 return ResourceManager.GetString("Finish", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Finished Succesfully.
-        /// </summary>
-        internal static string FinishedSuccesfully {
-            get {
-                return ResourceManager.GetString("FinishedSuccesfully", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Finished With Errors.
-        /// </summary>
-        internal static string FinishedWithErrors {
-            get {
-                return ResourceManager.GetString("FinishedWithErrors", resourceCulture);
             }
         }
         
@@ -829,15 +793,6 @@ namespace BUtil.Configurator.Localization {
         internal static string InformationButil {
             get {
                 return ResourceManager.GetString("InformationButil", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to In Progress....
-        /// </summary>
-        internal static string InProgress {
-            get {
-                return ResourceManager.GetString("InProgress", resourceCulture);
             }
         }
         
@@ -1612,15 +1567,6 @@ namespace BUtil.Configurator.Localization {
         internal static string VERSIONS {
             get {
                 return ResourceManager.GetString("VERSIONS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Waiting....
-        /// </summary>
-        internal static string Waiting {
-            get {
-                return ResourceManager.GetString("Waiting", resourceCulture);
             }
         }
         

@@ -145,9 +145,6 @@
   <data name="Options" xml:space="preserve">
     <value>Настройки</value>
   </data>
-  <data name="About" xml:space="preserve">
-    <value>О программе</value>
-  </data>
   <data name="PasswordIsInvalidNNitWasResetedN" xml:space="preserve">
     <value>Некорректный пароль.
 
@@ -339,5 +336,14 @@
   </data>
   <data name="ThisTaskIsObsoleteAndNotSupportedAnymore" xml:space="preserve">
     <value>Эта задача устарела и больше не поддерживается</value>
+  </data>
+  <data name="TaskFinishedSuccesfully" xml:space="preserve">
+    <value>Задача успешно завершена!</value>
+  </data>
+  <data name="FinishedSuccesfully" xml:space="preserve">
+    <value>Успешно завершено!</value>
+  </data>
+  <data name="FinishedWithErrors" xml:space="preserve">
+    <value>Завершено с ошибками</value>
   </data>
 </root>

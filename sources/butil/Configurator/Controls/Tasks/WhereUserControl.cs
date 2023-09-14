@@ -2,10 +2,8 @@ using System;
 using System.Windows.Forms;
 using BUtil.Core.Storages;
 using BUtil.Configurator.Localization;
-using System.Linq;
 using BUtil.RestorationMaster;
 using BUtil.Core.Logs;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using BUtil.Core.Misc;
 using BUtil.Core.ConfigurationFileModels.V2;
 
@@ -170,17 +168,17 @@ namespace BUtil.Configurator.Configurator.Controls
         private void OnMountScript(object sender, EventArgs e)
         {
             if (PowershellProcessHelper.Execute(new StubLog(), _mountTextBox.Text))
-                Messages.ShowInformationBox(BUtil.Configurator.Localization.Resources.FinishedSuccesfully);
+                Messages.ShowInformationBox(BUtil.Core.Localization.Resources.FinishedSuccesfully);
             else
-                Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.FinishedWithErrors);
+                Messages.ShowErrorBox(BUtil.Core.Localization.Resources.FinishedWithErrors);
         }
 
         private void OnUnmount(object sender, EventArgs e)
         {
             if (PowershellProcessHelper.Execute(new StubLog(), _unmountTextBox.Text))
-                Messages.ShowInformationBox(BUtil.Configurator.Localization.Resources.FinishedSuccesfully);
+                Messages.ShowInformationBox(BUtil.Core.Localization.Resources.FinishedSuccesfully);
             else
-                Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.FinishedWithErrors);
+                Messages.ShowErrorBox(BUtil.Core.Localization.Resources.FinishedWithErrors);
         }
 
         private void OnSambaButtonClick(object sender, EventArgs e)

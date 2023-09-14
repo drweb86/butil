@@ -133,9 +133,6 @@
   <data name="BackupDataEvery" xml:space="preserve">
     <value>Рабiць капiраванне кожны ...</value>
   </data>
-  <data name="About" xml:space="preserve">
-    <value>А праграме</value>
-  </data>
   <data name="UtilityForCreatingBackupsNNwebSitesHttpsGithubComDrweb86ButilNNlocalizationCreatedByN" xml:space="preserve">
     <value>утылiта для стварэння рэзервовых копiй
 
@@ -180,9 +177,6 @@
   </data>
   <data name="Exiting" xml:space="preserve">
     <value>Выхад з праграмы...</value>
-  </data>
-  <data name="Documentation" xml:space="preserve">
-    <value>Адкрыць дапамогу</value>
   </data>
   <data name="BugReport" xml:space="preserve">
     <value>Памылка</value>

@@ -63,16 +63,6 @@ namespace BUtil.Configurator {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap ActionsOfficeChartPieIcon48x48 {
-            get {
-                object obj = ResourceManager.GetObject("ActionsOfficeChartPieIcon48x48", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap Add {
             get {
                 object obj = ResourceManager.GetObject("Add", resourceCulture);
@@ -433,16 +423,6 @@ namespace BUtil.Configurator {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap ProgramInfo48x48 {
-            get {
-                object obj = ResourceManager.GetObject("ProgramInfo48x48", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap RedFolder48x48 {
             get {
                 object obj = ResourceManager.GetObject("RedFolder48x48", resourceCulture);
@@ -566,16 +546,6 @@ namespace BUtil.Configurator {
         public static System.Drawing.Bitmap Storages48x48 {
             get {
                 object obj = ResourceManager.GetObject("Storages48x48", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap virtuawinPictureBox_Image {
-            get {
-                object obj = ResourceManager.GetObject("virtuawinPictureBox.Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

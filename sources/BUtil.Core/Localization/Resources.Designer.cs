@@ -61,15 +61,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About.
-        /// </summary>
-        public static string About {
-            get {
-                return ResourceManager.GetString("About", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to After backup task: .
         /// </summary>
         public static string AfterBackupTask {
@@ -90,15 +81,6 @@ namespace BUtil.Core.Localization {
             get {
                 return ResourceManager.GetString("AnUnexpectedErrorOccuredNNpleaseContactTheDevelopersWithInformationSavedOnYourDes" +
                         "ktopInN0NNapplicationWillNowClose", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Backup finished succesfully!.
-        /// </summary>
-        public static string BackupFinishedSuccesfully {
-            get {
-                return ResourceManager.GetString("BackupFinishedSuccesfully", resourceCulture);
             }
         }
         
@@ -252,6 +234,24 @@ namespace BUtil.Core.Localization {
         public static string Errors {
             get {
                 return ResourceManager.GetString("Errors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Finished succesfully.
+        /// </summary>
+        public static string FinishedSuccesfully {
+            get {
+                return ResourceManager.GetString("FinishedSuccesfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Finished with errors.
+        /// </summary>
+        public static string FinishedWithErrors {
+            get {
+                return ResourceManager.GetString("FinishedWithErrors", resourceCulture);
             }
         }
         
@@ -573,6 +573,15 @@ namespace BUtil.Core.Localization {
         public static string Support {
             get {
                 return ResourceManager.GetString("Support", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Task finished succesfully!.
+        /// </summary>
+        public static string TaskFinishedSuccesfully {
+            get {
+                return ResourceManager.GetString("TaskFinishedSuccesfully", resourceCulture);
             }
         }
         

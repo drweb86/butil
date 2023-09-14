@@ -31,9 +31,6 @@ namespace BUtil.Configurator.Configurator.Forms
             this._logsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restorationToolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this._beforeAboutToolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this._aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.helpToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.helpStatusStrip = new System.Windows.Forms.StatusStrip();
@@ -74,35 +71,10 @@ namespace BUtil.Configurator.Configurator.Forms
             // 
             // _helpToolStripMenuItem
             // 
-            this._helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.helpToolStripMenuItem,
-            this._beforeAboutToolStripSeparator,
-            this._aboutToolStripMenuItem});
             this._helpToolStripMenuItem.Name = "_helpToolStripMenuItem";
             this._helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this._helpToolStripMenuItem.Text = "Help";
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.Image = global::BUtil.Configurator.Icons.Lamp48x48;
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-            this.helpToolStripMenuItem.Text = "Manual";
-            this.helpToolStripMenuItem.Click += new System.EventHandler(this.OnHelpToolStripMenuItemClick);
-            // 
-            // _beforeAboutToolStripSeparator
-            // 
-            this._beforeAboutToolStripSeparator.Name = "_beforeAboutToolStripSeparator";
-            this._beforeAboutToolStripSeparator.Size = new System.Drawing.Size(130, 6);
-            // 
-            // _aboutToolStripMenuItem
-            // 
-            this._aboutToolStripMenuItem.Image = global::BUtil.Configurator.Icons.ProgramInfo48x48;
-            this._aboutToolStripMenuItem.Name = "_aboutToolStripMenuItem";
-            this._aboutToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-            this._aboutToolStripMenuItem.Text = "About...";
-            this._aboutToolStripMenuItem.Click += new System.EventHandler(this.OnAboutToolStripMenuItemClick);
+            this._helpToolStripMenuItem.Click += new System.EventHandler(this.OnAboutToolStripMenuItemClick);
             // 
             // toolTip
             // 
@@ -166,9 +138,6 @@ namespace BUtil.Configurator.Configurator.Forms
 		private System.Windows.Forms.MenuStrip MainmenuStrip;
         private System.Windows.Forms.ToolTip toolTip;
 		private System.Windows.Forms.ToolStripMenuItem restorationToolToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator _beforeAboutToolStripSeparator;
-        private System.Windows.Forms.ToolStripMenuItem _aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem _logsToolStripMenuItem;
         private BackupTasksUserControl _backupTasksUserControl;
     }

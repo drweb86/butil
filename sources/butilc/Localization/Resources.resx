@@ -198,7 +198,7 @@ To see all options google "C# DateTime format".</value>
     <value>_Create task</value>
   </data>
   <data name="Tasks" xml:space="preserve">
-    <value>Задания</value>
+    <value>Tasks</value>
   </data>
   <data name="_RunF5Enter" xml:space="preserve">
     <value>_Run (F5, Enter)</value>

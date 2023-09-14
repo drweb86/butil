@@ -145,9 +145,6 @@
   <data name="Options" xml:space="preserve">
     <value>Options</value>
   </data>
-  <data name="About" xml:space="preserve">
-    <value>About</value>
-  </data>
   <data name="PasswordIsInvalidNNitWasResetedN" xml:space="preserve">
     <value>Password is invalid.
 
@@ -193,8 +190,8 @@ It was reseted
   <data name="CopyingOfBackupTo0NetworkStorageSkippedBecauseItsSize1ExceededSpecifiedLimit2" xml:space="preserve">
     <value>Copying of backup to '{0}' network storage skipped because its size {1} exceeded specified limit {2}</value>
   </data>
-  <data name="BackupFinishedSuccesfully" xml:space="preserve">
-    <value>Backup finished succesfully!</value>
+  <data name="TaskFinishedSuccesfully" xml:space="preserve">
+    <value>Task finished succesfully!</value>
   </data>
   <data name="BackupReport" xml:space="preserve">
     <value>Backup Report</value>
@@ -331,5 +328,11 @@ Please update storage settings.</value>
   </data>
   <data name="ThisTaskIsObsoleteAndNotSupportedAnymore" xml:space="preserve">
     <value>This task is obsolete and not supported anymore</value>
+  </data>
+  <data name="FinishedSuccesfully" xml:space="preserve">
+    <value>Finished succesfully</value>
+  </data>
+  <data name="FinishedWithErrors" xml:space="preserve">
+    <value>Finished with errors</value>
   </data>
 </root>

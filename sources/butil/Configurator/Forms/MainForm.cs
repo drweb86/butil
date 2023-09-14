@@ -4,6 +4,7 @@ using BUtil.Core.Misc;
 using BUtil.Configurator.Localization;
 using BUtil.Core.FileSystem;
 using System.Diagnostics;
+using BUtil.Core;
 
 namespace BUtil.Configurator.Configurator.Forms
 {
@@ -36,11 +37,9 @@ namespace BUtil.Configurator.Configurator.Forms
         void ApplyLocalization()
         {
             _backupTasksUserControl.ApplyLocalization();
-            Text = Resources.Configurator;
+            Text = Resources.Configurator + " " + CopyrightInfo.Version.ToString();
             restorationToolToolStripMenuItem.Text = Resources.RestoreData;
-            _helpToolStripMenuItem.Text= Resources.Help;
-            helpToolStripMenuItem.Text = Resources.Documentation;
-            _aboutToolStripMenuItem.Text = Resources.About;
+            _helpToolStripMenuItem.Text = Resources.Help;
             _logsToolStripMenuItem.Text = Resources.Logging;
         }
 
@@ -65,20 +64,9 @@ namespace BUtil.Configurator.Configurator.Forms
 			RunRestorationTool();
 		}
 		
-		void CancelButtonClick(object sender, EventArgs e)
-		{
-			Close();
-		}
-
-        private void OnHelpToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            SupportManager.DoSupport(SupportRequest.Documentation);
-        }
-
         private void OnAboutToolStripMenuItemClick(object sender, EventArgs e)
         {
-			using var aboutForm = new AboutForm();
-            aboutForm.ShowDialog();
+            SupportManager.DoSupport(SupportRequest.Homepage);
         }
 
         private void OnOpenLogsFolder(object sender, EventArgs e)
