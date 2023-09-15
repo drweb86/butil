@@ -1,6 +1,0 @@
-﻿Component Name:	Installer, Compiler
-
-Summary:
-	Cannot compile and removal issue:
-	during installation of 7-zip the integration with OS(under admin privileges) causes fail of uninstalling
-

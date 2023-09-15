@@ -1,5 +1,0 @@
-- full support of UTF-8(including russian file names)
-- UI configuration not overloaded with unnecessary options
-- automatization of backup
-- intence to be a corporative personal information of employees backup program
-- .net 2.0
