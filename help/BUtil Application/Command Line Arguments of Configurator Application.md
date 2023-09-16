@@ -1,7 +1,0 @@
-| Example                                               | Description                                                                                                       |
-| ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `butil.exe RemoveLocalSettings`                       | Removes configuration data of current user. It can be used for resetting settings. Also this removes logs folder. |
-| `butil.exe JustRestorationMaster`                     | Runs restoration.                                                                                                 |
-| `butil.exe JustRestorationMaster "Task=My task name"` | Runs restoration and prefills Storage/Passwords from specified task.                                              |
-| `butil.exe JustBackupMaster`                          | Runs only Backup Master.                                                                                          |
-| `butil.exe JustBackupMaster "Task=My task name"`                       | Informs the program to use the specified task during backup process.                                              |

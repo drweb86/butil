@@ -1,7 +1,7 @@
 ﻿
 namespace BUtil.BackupUiMaster.Controls
 {
-    partial class BackupProgressUserControl
+    partial class TaskProgressUserControl
     {
         /// <summary>
         /// Designer variable used to keep track of non-visual components.
@@ -32,7 +32,7 @@ namespace BUtil.BackupUiMaster.Controls
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BackupProgressUserControl));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaskProgressUserControl));
             elapsedLabel = new System.Windows.Forms.Label();
             passedLabel = new System.Windows.Forms.Label();
             progressBar = new System.Windows.Forms.ProgressBar();

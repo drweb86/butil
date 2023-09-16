@@ -8,9 +8,9 @@ using BUtil.Core;
 
 namespace BUtil.Configurator.Configurator.Forms
 {
-	internal partial class MainForm
+	internal partial class TasksForm
 	{
-        public MainForm()
+        public TasksForm()
 		{
 			InitializeComponent();
 
@@ -25,7 +25,7 @@ namespace BUtil.Configurator.Configurator.Forms
 
         private static void RunRestorationTool()
 		{
-            Process.Start(Application.ExecutablePath, $"{Arguments.RunRestorationMaster}");
+            Process.Start(Application.ExecutablePath, Arguments.Restore);
 		}
 
 		void MainFormFormClosing(object sender, FormClosingEventArgs e)

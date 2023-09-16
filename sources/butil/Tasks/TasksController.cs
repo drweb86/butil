@@ -10,7 +10,7 @@ using BUtil.Core.ConfigurationFileModels.V2;
 
 namespace BUtil.Configurator.Configurator
 {
-    public static class ConfiguratorController
+    public static class TasksController
     {
         public static void OpenRestorationMaster(string file, bool runFormAsApplication, string taskName)
 		{
@@ -57,14 +57,14 @@ namespace BUtil.Configurator.Configurator
             }
 
             var task = GetBackupTaskToExecute(taskName);
-            using var form = new BackupMasterForm(task);
+            using var form = new TaskProgressForm(task);
             Application.Run(form);
             Environment.Exit(0);
         }
 
         public static void LaunchBackupUIToolInSeparateProcess(string taskName)
         {
-            Process.Start(Application.ExecutablePath, $"{Arguments.RunBackupMaster} \"{Arguments.RunTask}={taskName}\"");
+            Process.Start(Application.ExecutablePath, $"{Arguments.LaunchTask} \"{Arguments.RunTask}={taskName}\"");
         }
 
         private static BackupTaskV2 GetBackupTaskToExecute(string taskName)
@@ -76,7 +76,7 @@ namespace BUtil.Configurator.Configurator
             {
                 var backupTaskNames = backupTaskStoreService.GetNames();
 
-                using var selectTaskForm = new SelectTaskToRunForm(backupTaskNames);
+                using var selectTaskForm = new SelectTaskForm(backupTaskNames);
                 if (selectTaskForm.ShowDialog() == DialogResult.OK)
                 {
                     task = backupTaskStoreService.Load(selectTaskForm.TaskToRun);

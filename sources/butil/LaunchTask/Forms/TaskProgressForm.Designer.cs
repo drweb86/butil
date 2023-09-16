@@ -1,8 +1,8 @@
-﻿using BUtil.Configurator.Configurator.Controls.Common;
+﻿using BUtil.Configurator.Common;
 
 namespace BUtil.Configurator.BackupUiMaster.Forms
 {
-    partial class BackupMasterForm
+    partial class TaskProgressForm
     {
         /// <summary>
         /// Designer variable used to keep track of non-visual components.
@@ -33,7 +33,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BackupMasterForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaskProgressForm));
             startButton = new System.Windows.Forms.Button();
             closeButton = new System.Windows.Forms.Button();
             toolTip = new System.Windows.Forms.ToolTip(components);
@@ -46,7 +46,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             _listViewUpdateTimer = new System.Windows.Forms.Timer(components);
             _powerTaskComboBox = new System.Windows.Forms.ComboBox();
             _powerTaskLinkLabel = new System.Windows.Forms.LinkLabel();
-            backupProgressUserControl = new BUtil.BackupUiMaster.Controls.BackupProgressUserControl();
+            backupProgressUserControl = new BUtil.BackupUiMaster.Controls.TaskProgressUserControl();
             SuspendLayout();
             // 
             // startButton
@@ -218,6 +218,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
         private System.Windows.Forms.Timer _listViewUpdateTimer;
         private System.Windows.Forms.ComboBox _powerTaskComboBox;
         private System.Windows.Forms.LinkLabel _powerTaskLinkLabel;
-        private BUtil.BackupUiMaster.Controls.BackupProgressUserControl backupProgressUserControl;
+        private BUtil.BackupUiMaster.Controls.TaskProgressUserControl backupProgressUserControl;
     }
 }

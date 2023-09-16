@@ -24,7 +24,7 @@
 
 [Manage Logs](./Manage%20Logs/Manage%20Logs.md)
 
-[BUtil Application Command Line Arguments](./BUtil%20Application/Command%20Line%20Arguments%20of%20Configurator%20Application.md)
+[Command line](./Command%20line.md)
 
 [Frequently Asked Questions](./Other/Frequently%20Asked%20Questions.md)
 

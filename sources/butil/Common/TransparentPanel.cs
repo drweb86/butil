@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace BUtil.Configurator.Configurator.Controls.Common
+namespace BUtil.Configurator.Common
 {
     public class TransparentTableLayoutPanel : TableLayoutPanel
     {

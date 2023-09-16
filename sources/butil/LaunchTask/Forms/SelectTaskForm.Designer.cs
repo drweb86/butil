@@ -1,6 +1,6 @@
 ﻿namespace BUtil.Configurator.BackupUiMaster.Forms
 {
-    partial class SelectTaskToRunForm
+    partial class SelectTaskForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectTaskToRunForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectTaskForm));
             this._chooseTaskLabel = new System.Windows.Forms.Label();
             this._tasksComboBox = new System.Windows.Forms.ComboBox();
             this._cancelButton = new System.Windows.Forms.Button();

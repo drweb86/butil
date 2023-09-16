@@ -5,9 +5,9 @@ using BUtil.Core.Options;
 
 namespace BUtil.Configurator.BackupUiMaster.Forms
 {
-    public partial class SelectTaskToRunForm : Form
+    public partial class SelectTaskForm : Form
     {
-        public SelectTaskToRunForm(IEnumerable<string> taskNames)
+        public SelectTaskForm(IEnumerable<string> taskNames)
         {
             InitializeComponent();
 

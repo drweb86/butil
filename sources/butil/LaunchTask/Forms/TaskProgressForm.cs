@@ -15,7 +15,7 @@ using BUtil.Core.ConfigurationFileModels.V2;
 
 namespace BUtil.Configurator.BackupUiMaster.Forms
 {
-    internal sealed partial class BackupMasterForm : Form
+    internal sealed partial class TaskProgressForm : Form
     {
         private readonly BackupTaskV2 _backupTask;
         private readonly ConcurrentQueue<Action> _listViewUpdates = new();
@@ -23,7 +23,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
         private readonly List<string> _lastMinuteMessagesToUser = new List<string>();
         private HashSet<Guid> _ended = new HashSet<Guid>();
 
-        public BackupMasterForm(BackupTaskV2 backupTask)
+        public TaskProgressForm(BackupTaskV2 backupTask)
         {
             InitializeComponent();
 

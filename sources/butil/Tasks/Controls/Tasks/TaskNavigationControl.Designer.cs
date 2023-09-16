@@ -1,4 +1,4 @@
-﻿using BUtil.Configurator.Configurator.Controls.Common;
+﻿using BUtil.Configurator.Common;
 
 namespace BUtil.Configurator.Controls
 {
@@ -35,7 +35,7 @@ namespace BUtil.Configurator.Controls
             this.storagesButton = new System.Windows.Forms.Button();
             this.schedulerButton = new System.Windows.Forms.Button();
             this.encryptionButton = new System.Windows.Forms.Button();
-            this._tableLayoutPanel = new BUtil.Configurator.Configurator.Controls.Common.TransparentTableLayoutPanel();
+            this._tableLayoutPanel = new BUtil.Configurator.Common.TransparentTableLayoutPanel();
             this._nameButton = new System.Windows.Forms.Button();
             this._tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();

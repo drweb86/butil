@@ -163,11 +163,11 @@ end;
 Source: "..\..\Output\BUtil\*.*"; DestDir: "{app}"; Flags: recursesubdirs
 
 [Icons]
-Name: "{group}\BUtil {cm:Tasks}"; Filename: "{app}\bin\butil.exe"
-Name: "{group}\BUtil CLI"; Filename: "{app}\bin\butilc.exe"
-Name: "{group}\BUtil {cm:LaunchTasks}"; Filename: "{app}\bin\butil.exe"; Parameters: "JustBackupMaster"; IconFilename: "{app}\data\BackupUi.ico"
-Name: "{group}\BUtil {cm:Restoration}"; Filename: "{app}\bin\butil.exe"; Parameters: "JustRestorationMaster"; IconFilename: "{app}\data\RestorationMaster.ico"
-Name: "{autodesktop}\BUtil {cm:Configurator}"; Filename: "{app}\bin\butil.exe"
+Name: "{group}\BUtil {cm:Tasks}";		Filename: "{app}\bin\butil.exe"
+Name: "{group}\BUtil CLI";			Filename: "{app}\bin\butilc.exe"
+Name: "{group}\BUtil {cm:LaunchTask}";		Filename: "{app}\bin\butil.exe";	Parameters: "LaunchTask";	IconFilename: "{app}\data\BackupUi.ico"
+Name: "{group}\BUtil {cm:Restoration}";		Filename: "{app}\bin\butil.exe";	Parameters: "Restore";		IconFilename: "{app}\data\RestorationMaster.ico"
+Name: "{autodesktop}\BUtil {cm:Configurator}";	Filename: "{app}\bin\butil.exe"
 
 [Run]
 Filename: "{app}\bin\butil.exe"; Description: "Launch App"; Flags: nowait postinstall skipifsilent

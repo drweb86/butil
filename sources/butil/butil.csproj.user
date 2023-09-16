@@ -14,31 +14,31 @@
     </StartArguments>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Update="Tasks\Forms\BackupMasterForm.cs">
+    <Compile Update="LaunchTask\Forms\TaskProgressForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Tasks\Controls\TitledBackUserControl.cs">
+    <Compile Update="LaunchTask\Controls\TitledBackUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Tasks\Forms\SelectTaskToRunForm.cs">
+    <Compile Update="LaunchTask\Forms\SelectTaskForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="LaunchTask\Controls\Common\ListViewDoubleBuffered.cs">
+    <Compile Update="Common\ListViewDoubleBuffered.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="LaunchTask\Controls\Common\TransparentPanel.cs">
+    <Compile Update="Common\TransparentPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="LaunchTask\Controls\Tasks\What\FileExcludePatternForm.cs">
+    <Compile Update="Tasks\Controls\Tasks\What\FileExcludePatternForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="LaunchTask\Controls\Tasks\What\WhatUserControl.cs">
+    <Compile Update="Tasks\Controls\Tasks\What\WhatUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="LaunchTask\Forms\EditBackupTaskForm.cs">
+    <Compile Update="Tasks\Forms\EditBackupTaskForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="LaunchTask\Forms\MainForm.cs">
+    <Compile Update="Tasks\Forms\TasksForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Restore\BlameForm.cs">

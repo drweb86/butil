@@ -2,7 +2,7 @@ using BUtil.Configurator.Configurator.Controls;
 
 namespace BUtil.Configurator.Configurator.Forms
 {
-	partial class MainForm : System.Windows.Forms.Form
+	partial class TasksForm : System.Windows.Forms.Form
 	{
 		/// <summary>
 		/// Designer variable used to keep track of non-visual components.
@@ -26,7 +26,7 @@ namespace BUtil.Configurator.Configurator.Forms
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TasksForm));
             this.MainmenuStrip = new System.Windows.Forms.MenuStrip();
             this._logsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restorationToolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();

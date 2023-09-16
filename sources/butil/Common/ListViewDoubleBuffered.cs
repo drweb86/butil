@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BUtil.Configurator.Configurator.Controls.Common
+namespace BUtil.Configurator.Common
 {
     [ToolboxItem(true)]
     [ToolboxBitmap(typeof(ListViewDoubleBuffered))]
@@ -15,7 +15,7 @@ namespace BUtil.Configurator.Configurator.Controls.Common
     {
         public ListViewDoubleBuffered()
         {
-            this.DoubleBuffered = true;
+            DoubleBuffered = true;
         }
     }
 }

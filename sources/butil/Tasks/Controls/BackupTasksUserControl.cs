@@ -175,7 +175,7 @@ namespace BUtil.Configurator.Configurator.Controls
             }
 
             if (selectedTasks.Any())
-                ConfiguratorController.LaunchBackupUIToolInSeparateProcess(selectedTasks[0]);
+                TasksController.LaunchBackupUIToolInSeparateProcess(selectedTasks[0]);
         }
 
         void RefreshTaskControls(object sender, EventArgs e)
@@ -213,7 +213,7 @@ namespace BUtil.Configurator.Configurator.Controls
                 selectedTasks.Add(taskToExecute.Text);
             }
 
-            Process.Start(Application.ExecutablePath, $"{Arguments.RunRestorationMaster} \"{Arguments.RunTask}={selectedTasks.First()}\"");
+            Process.Start(Application.ExecutablePath, $"{Arguments.Restore} \"{Arguments.RunTask}={selectedTasks.First()}\"");
         }
     }
 }

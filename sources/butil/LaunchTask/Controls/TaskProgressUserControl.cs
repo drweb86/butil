@@ -6,11 +6,11 @@ using BUtil.Core.Localization;
 
 namespace BUtil.BackupUiMaster.Controls
 {
-    internal sealed partial class BackupProgressUserControl : TitledBackUserControl
+    internal sealed partial class TaskProgressUserControl : TitledBackUserControl
     {
         DateTime _start = DateTime.Now;
 
-        public BackupProgressUserControl()
+        public TaskProgressUserControl()
         {
             InitializeComponent();
 

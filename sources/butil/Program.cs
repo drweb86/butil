@@ -60,7 +60,7 @@ namespace BUtil.Configurator
 			if (args.Length == 0)
 			{
                 CheckForUpdates();
-                Application.Run(new MainForm());
+                Application.Run(new TasksForm());
 				return;
 			}
 
@@ -70,26 +70,26 @@ namespace BUtil.Configurator
 
 				if (firstArgumentUpper == Arguments.RemoveLocalSettings)
 				{
-					ConfiguratorController.RemoveLocalUserSettings();
+					TasksController.RemoveLocalUserSettings();
 				}
-				else if (firstArgumentUpper == Arguments.RunRestorationMaster)
+				else if (string.Compare(args[0], Arguments.Restore, StringComparison.OrdinalIgnoreCase) == 0)
 				{
-					ConfiguratorController.OpenRestorationMaster(null, true, null);
+					TasksController.OpenRestorationMaster(null, true, null);
 				}
 				else if (IncrementalBackupModelConstants.Files.Any(x => args[0].EndsWith(x)))
 				{
-					ConfiguratorController.OpenRestorationMaster(args[0], true, null);
+					TasksController.OpenRestorationMaster(args[0], true, null);
 				}
-				else if (firstArgumentUpper == Arguments.RunBackupMaster)
-				{
-					ConfiguratorController.OpenBackupUi(null);
+				else if (string.Compare(args[0], Arguments.LaunchTask) == 0)
+                {
+					TasksController.OpenBackupUi(null);
 				}
 				else
 				{
 					Messages.ShowErrorBox(Resources.InvalidArgumentSPassedToTheProgramNNpleaseReferToManualForTheCompleteListOfParameters);
 				}
 			}
-			else if (args.Length > 1 && args[0].ToUpperInvariant() == Arguments.RunBackupMaster)
+			else if (args.Length > 1 && args[0].ToUpperInvariant() == Arguments.LaunchTask.ToUpperInvariant())
 			{
 				string taskName = null;
 				foreach (var argument in args)
@@ -99,9 +99,9 @@ namespace BUtil.Configurator
 						taskName = argument.Substring(Arguments.RunTask.Length + 1);
 					}
 				}
-				ConfiguratorController.OpenBackupUi(taskName);
+				TasksController.OpenBackupUi(taskName);
 			}
-            else if (args.Length > 1 && args[0].ToUpperInvariant() == Arguments.RunRestorationMaster)
+            else if (args.Length > 1 && string.Compare(args[0], Arguments.Restore, StringComparison.OrdinalIgnoreCase) == 0)
             {
                 string taskName = null;
                 foreach (var argument in args)
@@ -111,7 +111,7 @@ namespace BUtil.Configurator
                         taskName = argument.Substring(Arguments.RunTask.Length + 1);
                     }
                 }
-                ConfiguratorController.OpenRestorationMaster(null, true, taskName);
+                TasksController.OpenRestorationMaster(null, true, taskName);
             }
             else if (args.Length > 1)
 			{
@@ -120,7 +120,7 @@ namespace BUtil.Configurator
 			else
 			{
 				CheckForUpdates();
-				Application.Run(new MainForm());
+				Application.Run(new TasksForm());
 			}
 		}
 
