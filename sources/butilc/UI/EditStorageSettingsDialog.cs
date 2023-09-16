@@ -1,4 +1,4 @@
-using BUtil.ConsoleBackup.Localization;
+using BUtil.Core.Localization;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Logs;
 using BUtil.Core.Storages;
@@ -19,7 +19,7 @@ namespace BUtil.ConsoleBackup.UI
 
         internal EditStorageSettingsDialog(IStorageSettingsV2 source = null, string title = null) 
         {
-            Title = title ?? BUtil.ConsoleBackup.Localization.Resources.SpecifyLocation;
+            Title = title ?? BUtil.Core.Localization.Resources.SpecifyLocation;
             InitializeComponent();
 
             if (source == null)

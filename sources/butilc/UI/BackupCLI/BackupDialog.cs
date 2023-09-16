@@ -1,4 +1,4 @@
-﻿using BUtil.ConsoleBackup.Localization;
+﻿using BUtil.Core.Localization;
 using BUtil.Core.BackupModels;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;

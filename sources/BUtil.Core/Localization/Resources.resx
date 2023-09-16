@@ -474,7 +474,7 @@ Localization created by:
     <value>OK</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>Name</value>
+    <value>Title:</value>
   </data>
   <data name="Modify" xml:space="preserve">
     <value>Modify...</value>
@@ -486,7 +486,7 @@ Localization created by:
     <value>Storage name:</value>
   </data>
   <data name="DestinationFolder" xml:space="preserve">
-    <value>Destination folder</value>
+    <value>Destination folder:</value>
   </data>
   <data name="User" xml:space="preserve">
     <value>User:</value>
@@ -880,5 +880,120 @@ Usage scenario: You mounted some cloud storage as disk and perform backup on it.
   </data>
   <data name="_0Backup" xml:space="preserve">
     <value>{0} - Backup</value>
+  </data>
+  <data name="UsageVariantsNNbackupExeTaskMyTaskTitleNRunningWithoutParametersOutputsInformationToConsoleNNbackupExeTaskMyTask1TitleTaskMyTask2TitleTaskMyTask3TitleNRunsSeveralTasksOneByOneNNbackupExeTaskMyTaskTitleUsefilelogNOutputsInformationInFileLogNNbackupExeTaskMyTaskTitleShutdownNbackupExeTaskMyTaskTitleLogoffNbackupExeTaskMyTaskTitleSuspendNbackupExeTaskMyTaskTitleRebootNbackupExeTaskMyTaskTitleHibernateNNbackupExeHelpNOutputsBriefHelpN" xml:space="preserve">
+    <value>Usage variants:
+
+butilc.exe "Task=My task title"
+   Runs specified task.
+
+butilc.exe "Task=My task title" Shutdown
+butilc.exe "Task=My task title" LogOff 
+butilc.exe "Task=My task title" Reboot
+
+butilc.exe Help
+   Outputs brief help
+</value>
+  </data>
+  <data name="ErrorInvalidCommandParametersSpecified" xml:space="preserve">
+    <value>Error: Invalid command parameters specified!!!</value>
+  </data>
+  <data name="ToRunProgramWithThisSwitchYouShouldDisableSchedulingInOptionsFirstPleaseReferToManual" xml:space="preserve">
+    <value>To run program with this switch you should disable scheduling in options first. Please refer to manual!</value>
+  </data>
+  <data name="CannotOpenFileLogDueToCryticalError0" xml:space="preserve">
+    <value>Cannot open file log due to crytical error {0}</value>
+  </data>
+  <data name="PleaseSpecifyTheBackupTaskTitleUsingTheCommandLineArgument0MyBackupTaskTitleNexampleBackupExe0MyBackupTitle" xml:space="preserve">
+    <value>Please, specify the backup task title using the command line argument "{0}My backup task title"
+Example: butilc.exe "{0}My backup title"</value>
+  </data>
+  <data name="TherereNoBackupTaskWithTitle0" xml:space="preserve">
+    <value>There're no backup task with title '{0}'.</value>
+  </data>
+  <data name="TaskHasFailedSeeOpenedLog" xml:space="preserve">
+    <value>Task has failed (see opened log)</value>
+  </data>
+  <data name="TaskIsSucceeded" xml:space="preserve">
+    <value>Task is succeeded!</value>
+  </data>
+  <data name="FileNameTransformations" xml:space="preserve">
+    <value>File name transformations:</value>
+  </data>
+  <data name="HelpForTokens" xml:space="preserve">
+    <value>Supported tokens:
+{DATE:Format} - Inserts file modification date in the specified format.
+To see all options google "C# DateTime format".</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="CreateImportMediaTask" xml:space="preserve">
+    <value>Create import media task</value>
+  </data>
+  <data name="EditImportMediaTask" xml:space="preserve">
+    <value>Edit "{0}" media import task</value>
+  </data>
+  <data name="DestinationDirectoryDoesNotExist" xml:space="preserve">
+    <value>Destination directory does not exist.</value>
+  </data>
+  <data name="SourceFolderDoesNotExist" xml:space="preserve">
+    <value>Photo/Video location was not specified.</value>
+  </data>
+  <data name="TitleIsEmptyOrContainsNotSupportedPathCharacters" xml:space="preserve">
+    <value>Title is empty or contains not supported path characters.</value>
+  </data>
+  <data name="_Create" xml:space="preserve">
+    <value>_Create task</value>
+  </data>
+  <data name="_RunF5Enter" xml:space="preserve">
+    <value>_Run (F5, Enter)</value>
+  </data>
+  <data name="_EditF4" xml:space="preserve">
+    <value>_Edit (F4)</value>
+  </data>
+  <data name="_DeleteF8Del" xml:space="preserve">
+    <value>_Delete (F8, Del)</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="PleaseConfirmDeletionOf0" xml:space="preserve">
+    <value>Please confirm deletion of "{0}"</value>
+  </data>
+  <data name="YouCannotEditThisTypeOfTaskInCLI" xml:space="preserve">
+    <value>You cannot edit this type of task in CLI.</value>
+  </data>
+  <data name="SpecifyLocation" xml:space="preserve">
+    <value>Specify location</value>
+  </data>
+  <data name="HostField" xml:space="preserve">
+    <value>Host:</value>
+  </data>
+  <data name="PortField" xml:space="preserve">
+    <value>Port:</value>
+  </data>
+  <data name="UserField" xml:space="preserve">
+    <value>User:</value>
+  </data>
+  <data name="PasswordField" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="FolderField" xml:space="preserve">
+    <value>Folder:</value>
+  </data>
+  <data name="ImportFilesFrom" xml:space="preserve">
+    <value>Specify data source</value>
+  </data>
+  <data name="ImportMediaHint" xml:space="preserve">
+    <value>Imports audios, photos, videos from SD Card of camera, recorder;
+photos and videos from your phone via WI-FI through FTP Server 
+application using template file names.</value>
+  </data>
+  <data name="SkipAlreadyImportedFiles" xml:space="preserve">
+    <value>Skip already imported files</value>
+  </data>
+  <data name="SelectTransport" xml:space="preserve">
+    <value>Select transport</value>
   </data>
 </root>

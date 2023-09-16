@@ -5,7 +5,7 @@ using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
-using BUtil.ConsoleBackup.Localization;
+using BUtil.Core.Localization;
 using BUtil.Core.BackupModels;
 
 namespace BUtil.ConsoleBackup

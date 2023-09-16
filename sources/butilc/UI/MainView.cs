@@ -1,4 +1,4 @@
-using BUtil.ConsoleBackup.Localization;
+using BUtil.Core.Localization;
 using BUtil.Core.ConfigurationFileModels.V2;
 using System;
 using System.Collections.Generic;
@@ -54,7 +54,7 @@ namespace BUtil.ConsoleBackup.UI
             }
             if (!(task.Model is ImportMediaBackupModelOptionsV2))
             {
-                Terminal.Gui.MessageBox.ErrorQuery(string.Empty, BUtil.ConsoleBackup.Localization.Resources.YouCannotEditThisTypeOfTaskInCLI, Resources.Close);
+                Terminal.Gui.MessageBox.ErrorQuery(string.Empty, BUtil.Core.Localization.Resources.YouCannotEditThisTypeOfTaskInCLI, Resources.Close);
                 return;
             }
             
@@ -81,8 +81,8 @@ namespace BUtil.ConsoleBackup.UI
                 return;
 
             var taskName = _taskNames[this.itemsListView.SelectedItem];
-            if (Terminal.Gui.MessageBox.Query(string.Empty, string.Format(Localization.Resources.PleaseConfirmDeletionOf0, taskName),
-                BUtil.ConsoleBackup.Localization.Resources.Delete, BUtil.Core.Localization.Resources.Cancel) != 0)
+            if (Terminal.Gui.MessageBox.Query(string.Empty, string.Format(BUtil.Core.Localization.Resources.PleaseConfirmDeletionOf0, taskName),
+                BUtil.Core.Localization.Resources.Delete, BUtil.Core.Localization.Resources.Cancel) != 0)
                 return;
 
             _controller.BackupTaskStoreService.Delete(taskName);

@@ -1,6 +1,6 @@
 
 namespace BUtil.ConsoleBackup.UI {
-    using BUtil.ConsoleBackup.Localization;
+    using BUtil.Core.Localization;
     using BUtil.Core.Events;
     using System.ComponentModel;
     using Terminal.Gui;

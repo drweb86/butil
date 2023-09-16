@@ -1,6 +1,6 @@
 ﻿
 namespace BUtil.ConsoleBackup.UI {
-    using BUtil.ConsoleBackup.Localization;
+    using BUtil.Core.Localization;
     using System;
     using Terminal.Gui;
     
@@ -37,7 +37,7 @@ namespace BUtil.ConsoleBackup.UI {
 
             this.createMenu = new Terminal.Gui.MenuBarItem
             {
-                Title = BUtil.ConsoleBackup.Localization.Resources._Create,
+                Title = BUtil.Core.Localization.Resources._Create,
                 Children = new[] { createImportMediaTask },
             };
 
@@ -82,7 +82,7 @@ namespace BUtil.ConsoleBackup.UI {
 
             var runButton = new Terminal.Gui.Button
             {
-                Text = "► " + BUtil.ConsoleBackup.Localization.Resources._RunF5Enter,
+                Text = "► " + BUtil.Core.Localization.Resources._RunF5Enter,
                 Shortcut = Key.F5,
                 Y = 1,
                 Width = Dim.Fill(),
@@ -92,7 +92,7 @@ namespace BUtil.ConsoleBackup.UI {
 
             var editButton = new Terminal.Gui.Button
             {
-                Text = "⚒ " + BUtil.ConsoleBackup.Localization.Resources._EditF4,
+                Text = "⚒ " + BUtil.Core.Localization.Resources._EditF4,
                 Shortcut = Key.F4,
                 Y = 3,
                 Width = Dim.Fill(),
@@ -102,7 +102,7 @@ namespace BUtil.ConsoleBackup.UI {
 
             var deleteButton = new Terminal.Gui.Button
             {
-                Text = "❌ " + BUtil.ConsoleBackup.Localization.Resources._DeleteF8Del,
+                Text = "❌ " + BUtil.Core.Localization.Resources._DeleteF8Del,
                 Shortcut = Key.F8,
                 Y = 5,
                 Width = Dim.Fill(),

@@ -28,7 +28,7 @@ namespace BUtil.ConsoleBackup.UI {
                 AutoSize = true,
                 X = 0,
                 Y = 0,
-                Text = BUtil.ConsoleBackup.Localization.Resources.SelectTransport,
+                Text = BUtil.Core.Localization.Resources.SelectTransport,
             });
             var transports = new List<string> { BUtil.Core.Localization.Resources.FolderStorage, "FTPS" };
             _transportSelectionComboBox = new ComboBox
@@ -44,17 +44,17 @@ namespace BUtil.ConsoleBackup.UI {
             _transportSelectionComboBox.SelectedItemChanged += OnTransportTypeSelection;
             Add(_transportSelectionComboBox);
 
-            _folderStorageFolderTextField = AddTextField(_folderStorageControls, BUtil.ConsoleBackup.Localization.Resources.FolderField, 3);
+            _folderStorageFolderTextField = AddTextField(_folderStorageControls, BUtil.Core.Localization.Resources.FolderField, 3);
 
-            _hostFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.ConsoleBackup.Localization.Resources.HostField, 3);
-            _portFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.ConsoleBackup.Localization.Resources.PortField, 6);
-            _userFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.ConsoleBackup.Localization.Resources.UserField, 9);
-            _pwdFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.ConsoleBackup.Localization.Resources.PasswordField, 12);
-            _folderFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.ConsoleBackup.Localization.Resources.FolderField, 15);
+            _hostFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.HostField, 3);
+            _portFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.PortField, 6);
+            _userFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.UserField, 9);
+            _pwdFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.PasswordField, 12);
+            _folderFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.FolderField, 15);
 
             var saveButton = new Button
             {
-                Text = BUtil.ConsoleBackup.Localization.Resources.Save,
+                Text = BUtil.Core.Localization.Resources.Save,
                 IsDefault = true,
             };
             saveButton.Clicked += OnSave;

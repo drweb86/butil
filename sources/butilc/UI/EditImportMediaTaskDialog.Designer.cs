@@ -20,7 +20,7 @@ namespace BUtil.ConsoleBackup.UI {
                 AutoSize = true,
                 X = 0,
                 Y = 0,
-                Text = BUtil.ConsoleBackup.Localization.Resources.ImportMediaHint
+                Text = BUtil.Core.Localization.Resources.ImportMediaHint
             });
 
             Add(new Label
@@ -28,7 +28,7 @@ namespace BUtil.ConsoleBackup.UI {
                 AutoSize = true,
                 X = 0,
                 Y = 4,
-                Text = BUtil.ConsoleBackup.Localization.Resources.Title
+                Text = BUtil.Core.Localization.Resources.Title
             });
 
             _titleTextField = new TextField
@@ -43,7 +43,7 @@ namespace BUtil.ConsoleBackup.UI {
             {
                 X = 0,
                 Y = 7,
-                Text = BUtil.ConsoleBackup.Localization.Resources.ImportFilesFrom,
+                Text = BUtil.Core.Localization.Resources.ImportFilesFrom,
                 IsDefault = true,
             };
             sourceSelectButton.Clicked += OnSpecifySource;
@@ -54,7 +54,7 @@ namespace BUtil.ConsoleBackup.UI {
                 AutoSize = true,
                 X = 0,
                 Y = 9,
-                Text = BUtil.ConsoleBackup.Localization.Resources.DestinationFolder
+                Text = BUtil.Core.Localization.Resources.DestinationFolder
             });
 
             _destinationFolderTextField = new TextField
@@ -71,7 +71,7 @@ namespace BUtil.ConsoleBackup.UI {
                 AutoSize = true,
                 X = 0,
                 Y = 12,
-                Text = BUtil.ConsoleBackup.Localization.Resources.FileNameTransformations
+                Text = BUtil.Core.Localization.Resources.FileNameTransformations
             });
 
             _transformFileNameTextField = new TextField
@@ -96,12 +96,12 @@ namespace BUtil.ConsoleBackup.UI {
                 AutoSize = true,
                 X = 0,
                 Y = 15,
-                Text = BUtil.ConsoleBackup.Localization.Resources.HelpForTokens
+                Text = BUtil.Core.Localization.Resources.HelpForTokens
             });
 
             _skipAlreadyImportedFilesCheckBox = new CheckBox
             {
-                Text = BUtil.ConsoleBackup.Localization.Resources.SkipAlreadyImportedFiles,
+                Text = BUtil.Core.Localization.Resources.SkipAlreadyImportedFiles,
                 X = 0,
                 Y = 19,
                 Width = Dim.Fill(0),
@@ -110,7 +110,7 @@ namespace BUtil.ConsoleBackup.UI {
 
             var saveButton = new Button
             {
-                Text = BUtil.ConsoleBackup.Localization.Resources.Save,
+                Text = BUtil.Core.Localization.Resources.Save,
                 IsDefault = true,
             };
             saveButton.Clicked += OnSave;

@@ -189,19 +189,8 @@
   <data name="CopyingOfBackupTo0NetworkStorageSkippedBecauseItsSize1ExceededSpecifiedLimit2" xml:space="preserve">
     <value>Копирование резервной копии в сетевое хранилище '{0}' пропущено, поскольку ее размер {1} превысил установленный лимит в {2} байт</value>
   </data>
-  <data name="BackupFinishedSuccesfully" xml:space="preserve">
-    <value>Резервное копирование завершилось успешно!</value>
-  </data>
   <data name="BackupReport" xml:space="preserve">
     <value>Отчет о резервном копировании</value>
-  </data>
-  <data name="ButilSoftwarePackage7ZipComponent0HasInvalidCheckSummNprobablyItWasDamagedByVirusesNNyouShouldReinstallApplicationNNrestorationAndBackupFunctionsWillBeUnavailable" xml:space="preserve">
-    <value>Контрольная сумма Файла "{0}" компонента приложения BUtil 7-zip изменилась. 
-Вероятно, файл поврежден вирусами. 
-
-Вам нужно переустановить приложение.
-
-Функции восстановления и резервного копирования будут недоступны.</value>
   </data>
   <data name="ConfirmationIsNotEqualToPassword" xml:space="preserve">
     <value>Подтверждение не идентично введенному паролю</value>
@@ -341,7 +330,7 @@
     <value>Задача успешно завершена!</value>
   </data>
   <data name="FinishedSuccesfully" xml:space="preserve">
-    <value>Успешно завершено!</value>
+    <value>Успешно завершено</value>
   </data>
   <data name="FinishedWithErrors" xml:space="preserve">
     <value>Завершено с ошибками</value>
@@ -456,9 +445,6 @@
   <data name="AreYouSure" xml:space="preserve">
     <value>Вы уверены?</value>
   </data>
-  <data name="Cancel" xml:space="preserve">
-    <value>Отмена</value>
-  </data>
   <data name="Elapsed" xml:space="preserve">
     <value>Прошло:</value>
   </data>
@@ -487,10 +473,7 @@
     <value>OK</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>Имя</value>
-  </data>
-  <data name="Options" xml:space="preserve">
-    <value>Настройки</value>
+    <value>Название:</value>
   </data>
   <data name="Modify" xml:space="preserve">
     <value>Изменить...</value>
@@ -502,7 +485,7 @@
     <value>Заголовок:</value>
   </data>
   <data name="DestinationFolder" xml:space="preserve">
-    <value>Папка назначения</value>
+    <value>Папка назначения:</value>
   </data>
   <data name="User" xml:space="preserve">
     <value>Пользователь:</value>
@@ -746,9 +729,6 @@
   <data name="HowHint" xml:space="preserve">
     <value>Здесь вы можете указать модель РК и сжатие.</value>
   </data>
-  <data name="IncrementalBackup" xml:space="preserve">
-    <value>Инкрементное РК</value>
-  </data>
   <data name="NameIsEmpty" xml:space="preserve">
     <value>Имя не задано.</value>
   </data>
@@ -861,9 +841,6 @@ bin.
 Когда РК превышает эту квоту, некоторые файлы будут пропущены и будут скопированы в следующий раз.
 Сценарий использования: Вы подмонтировали какое-то облачное хранилище как диск и совершаете на него РК. Есть проблема - провайдер режет скорость при выгрузке данных, размер которых превышает несколько ГБ. Эта настройка позволяет разрешить эту ситуацию.</value>
   </data>
-  <data name="FolderStorage" xml:space="preserve">
-    <value>Хранилище в папке...</value>
-  </data>
   <data name="Mount" xml:space="preserve">
     <value>Монтировать:</value>
   </data>
@@ -878,9 +855,6 @@ bin.
   </data>
   <data name="ShareNameIsNotSpecified" xml:space="preserve">
     <value>Сетевое расположение не указано</value>
-  </data>
-  <data name="DestinationFolderIsNotSpecified" xml:space="preserve">
-    <value>Папка назначения не указана.</value>
   </data>
   <data name="LastBackup" xml:space="preserve">
     <value>Состояние</value>
@@ -905,5 +879,120 @@ bin.
   </data>
   <data name="_0Backup" xml:space="preserve">
     <value>{0} - Резервное копирование</value>
+  </data>
+  <data name="UsageVariantsNNbackupExeTaskMyTaskTitleNRunningWithoutParametersOutputsInformationToConsoleNNbackupExeTaskMyTask1TitleTaskMyTask2TitleTaskMyTask3TitleNRunsSeveralTasksOneByOneNNbackupExeTaskMyTaskTitleUsefilelogNOutputsInformationInFileLogNNbackupExeTaskMyTaskTitleShutdownNbackupExeTaskMyTaskTitleLogoffNbackupExeTaskMyTaskTitleSuspendNbackupExeTaskMyTaskTitleRebootNbackupExeTaskMyTaskTitleHibernateNNbackupExeHelpNOutputsBriefHelpN" xml:space="preserve">
+    <value>Использование:
+
+butilc.exe "Task=Заголовок задания РК"
+   Запуск указанного задания.
+
+butilc.exe "Task=Заголовок задания РК" Shutdown
+butilc.exe "Task=Заголовок задания РК" LogOff 
+butilc.exe "Task=Заголовок задания РК" Reboot
+   Также можно запланировать выключение ПК, выход из сеанса, перезагрузку по окончании РК
+
+butilc.exe Help
+   Выводит краткую подсказку</value>
+  </data>
+  <data name="ErrorInvalidCommandParametersSpecified" xml:space="preserve">
+    <value>Ошибка: Указаны неверные аргументы!!!</value>
+  </data>
+  <data name="ToRunProgramWithThisSwitchYouShouldDisableSchedulingInOptionsFirstPleaseReferToManual" xml:space="preserve">
+    <value>Чтобы запустить программу с этой опцией, вы должны отключить планирование в конфигураторе. Для деталей смотрите документацию!</value>
+  </data>
+  <data name="CannotOpenFileLogDueToCryticalError0" xml:space="preserve">
+    <value>Не могу открыть файл лога из-за критической ошибки {0}</value>
+  </data>
+  <data name="PleaseSpecifyTheBackupTaskTitleUsingTheCommandLineArgument0MyBackupTaskTitleNexampleBackupExe0MyBackupTitle" xml:space="preserve">
+    <value>Пожалуйста, укажите заголовок задания на резервное копирование через аргумент коммандной строки "{0}Мой заголовок задания на РК"
+Пример: butilc.exe "{0}Мой заголовок задания на РК"</value>
+  </data>
+  <data name="TherereNoBackupTaskWithTitle0" xml:space="preserve">
+    <value>Задания на резервное копирование с заголовком "{0}" не существует.</value>
+  </data>
+  <data name="FileNameTransformations" xml:space="preserve">
+    <value>Преобразования имени файла:</value>
+  </data>
+  <data name="HelpForTokens" xml:space="preserve">
+    <value>Поддерживаемые токены:
+{DATE:Format} - Вставляет дату модификации файла в заданном формате.
+Чтобы увидеть все варианты, загуглите "C# DateTime формат".</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="CreateImportMediaTask" xml:space="preserve">
+    <value>Создать задачу по импорту мультимедиа</value>
+  </data>
+  <data name="EditImportMediaTask" xml:space="preserve">
+    <value>Редактирование "{0}" задания по импорту мультимедиа</value>
+  </data>
+  <data name="SourceFolderDoesNotExist" xml:space="preserve">
+    <value>Расположение Фото/Видео не указано.</value>
+  </data>
+  <data name="DestinationDirectoryDoesNotExist" xml:space="preserve">
+    <value>Папка назначения не существует.</value>
+  </data>
+  <data name="TitleIsEmptyOrContainsNotSupportedPathCharacters" xml:space="preserve">
+    <value>Заголовок пуст или содержит символы пути.</value>
+  </data>
+  <data name="_Create" xml:space="preserve">
+    <value>_Создать задачу</value>
+  </data>
+  <data name="_RunF5Enter" xml:space="preserve">
+    <value>_Запустить (F5, ввод)</value>
+  </data>
+  <data name="_EditF4" xml:space="preserve">
+    <value>_Изменить (F4)</value>
+  </data>
+  <data name="_DeleteF8Del" xml:space="preserve">
+    <value>_Удалить (F8, Del)</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="PleaseConfirmDeletionOf0" xml:space="preserve">
+    <value>Подтвердите удаление задачи "{0}"</value>
+  </data>
+  <data name="YouCannotEditThisTypeOfTaskInCLI" xml:space="preserve">
+    <value>Вы не можете редактировать этот тип задания здесь.</value>
+  </data>
+  <data name="SpecifyLocation" xml:space="preserve">
+    <value>Укажите расположение</value>
+  </data>
+  <data name="HostField" xml:space="preserve">
+    <value>Сервер:</value>
+  </data>
+  <data name="PortField" xml:space="preserve">
+    <value>Порт:</value>
+  </data>
+  <data name="UserField" xml:space="preserve">
+    <value>Пользователь:</value>
+  </data>
+  <data name="PasswordField" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="FolderField" xml:space="preserve">
+    <value>Папка:</value>
+  </data>
+  <data name="TaskHasFailedSeeOpenedLog" xml:space="preserve">
+    <value>Провалено (смотрите открывшийся лог)</value>
+  </data>
+  <data name="TaskIsSucceeded" xml:space="preserve">
+    <value>Завершено успешно!</value>
+  </data>
+  <data name="ImportFilesFrom" xml:space="preserve">
+    <value>Указать источник данных</value>
+  </data>
+  <data name="ImportMediaHint" xml:space="preserve">
+    <value>Импортирует аудио, фото, видео из SD карточки фотоаппарата, рекордера; 
+фото и видео с вашего телефона через WI-FI через приложение FTP Server,
+используя шаблоны для имен файлов.</value>
+  </data>
+  <data name="SkipAlreadyImportedFiles" xml:space="preserve">
+    <value>Пропускать ранее импортированные файлы</value>
+  </data>
+  <data name="SelectTransport" xml:space="preserve">
+    <value>Выберите транспорт</value>
   </data>
 </root>

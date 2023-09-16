@@ -1,4 +1,4 @@
-using BUtil.ConsoleBackup.Localization;
+using BUtil.Core.Localization;
 using BUtil.Core.BackupModels;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Logs;
@@ -55,7 +55,7 @@ namespace BUtil.ConsoleBackup.UI
                 Path.GetInvalidFileNameChars().Any(x => this._titleTextField.Text.Contains(x)) ||
                 Path.GetInvalidPathChars().Any(x => this._titleTextField.Text.Contains(x)))
             {
-                MessageBox.ErrorQuery(string.Empty, BUtil.ConsoleBackup.Localization.Resources.TitleIsEmptyOrContainsNotSupportedPathCharacters, Resources.Close);
+                MessageBox.ErrorQuery(string.Empty, BUtil.Core.Localization.Resources.TitleIsEmptyOrContainsNotSupportedPathCharacters, Resources.Close);
                 return;
             }
 
@@ -71,7 +71,7 @@ namespace BUtil.ConsoleBackup.UI
 
         private void OnSpecifySource()
         {
-            var dialog = new EditStorageSettingsDialog(_from, BUtil.ConsoleBackup.Localization.Resources.ImportFilesFrom);
+            var dialog = new EditStorageSettingsDialog(_from, BUtil.Core.Localization.Resources.ImportFilesFrom);
             Application.Run(dialog);
 
             if (dialog.Canceled)
