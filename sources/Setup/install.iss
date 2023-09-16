@@ -28,8 +28,25 @@ DisableReadyPage=yes
 UsePreviousAppDir=no
 
 [Languages]
-Name: "en"; MessagesFile: ".\BUtil-Default.isl"
-Name: "ru"; MessagesFile: ".\BUtil-Russian.isl"
+Name: en; MessagesFile: "compiler:Default.isl"
+Name: ru; MessagesFile: "compiler:Languages\Russian.isl"
+
+[Messages]
+en.BeveledLabel=English
+ru.BeveledLabel=Русский
+
+[CustomMessages]
+en.Backup=Backup
+ru.Backup=Резервное копирование
+
+en.Configurator=Configurator
+ru.Configurator=Настройка резервного копирования
+
+en.Backup_Wizard=Backup Wizard
+ru.Backup_Wizard=Резервное копирование
+
+en.Restoration=Restoration
+ru.Restoration=Восстановление
 
 [Code]
 function IsDotNetCoreInstalled(DotNetName: string): Boolean;
@@ -151,7 +168,7 @@ Source: "..\..\Output\BUtil\*.*"; DestDir: "{app}"; Flags: recursesubdirs
 [Icons]
 ; Main app data
 Name: "{group}\BUtil {cm:Configurator}"; Filename: "{app}\bin\butil.exe"
-Name: "{group}\BUtil {cm:ConfiguratorCli}"; Filename: "{app}\bin\butilc.exe"
+Name: "{group}\BUtil CLI"; Filename: "{app}\bin\butilc.exe"
 Name: "{group}\BUtil {cm:Backup_Wizard}"; Filename: "{app}\bin\butil.exe"; Parameters: "JustBackupMaster"; IconFilename: "{app}\data\BackupUi.ico"
 Name: "{group}\BUtil {cm:Restoration}"; Filename: "{app}\bin\butil.exe"; Parameters: "JustRestorationMaster"; IconFilename: "{app}\data\RestorationMaster.ico"
 
@@ -159,5 +176,5 @@ Name: "{group}\BUtil {cm:Restoration}"; Filename: "{app}\bin\butil.exe"; Paramet
 Name: "{autodesktop}\BUtil {cm:Configurator}"; Filename: "{app}\bin\butil.exe"
 
 [Run]
-Filename: "{app}\bin\butil.exe"; Description: "{cm:LaunchProgram,BUtil {cm:Configurator}}"; Flags: nowait postinstall skipifsilent
+Filename: "{app}\bin\butil.exe"; Description: "Launch App"; Flags: nowait postinstall skipifsilent
 
