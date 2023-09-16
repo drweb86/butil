@@ -9,9 +9,9 @@ AppSupportURL=https://github.com/drweb86/butil
 AppUpdatesURL=https://github.com/drweb86/butil
 DisableWelcomePage=yes
 DefaultDirName={autopf}\BUtil
-DefaultGroupName=BUtil {cm:Backup}
+DefaultGroupName=BUtil
 AllowNoIcons=yes
-OutputDir=..\..\Output\Deployment
+OutputDir=..\..\Output
 OutputBaseFilename=BUtil_v{#ApplicationVersion}_(.NET_Desktop_Runtime_v7)_Setup
 Compression=lzma2/ultra64
 SolidCompression=yes
@@ -36,14 +36,11 @@ en.BeveledLabel=English
 ru.BeveledLabel=Русский
 
 [CustomMessages]
-en.Backup=Backup
-ru.Backup=Резервное копирование
-
 en.Configurator=Configurator
-ru.Configurator=Настройка резервного копирования
+ru.Configurator=Настройка
 
-en.Backup_Wizard=Backup Wizard
-ru.Backup_Wizard=Резервное копирование
+en.LaunchTasks=Launch Tasks
+ru.LaunchTasks=Запуск задач
 
 en.Restoration=Restoration
 ru.Restoration=Восстановление
@@ -166,13 +163,10 @@ end;
 Source: "..\..\Output\BUtil\*.*"; DestDir: "{app}"; Flags: recursesubdirs
 
 [Icons]
-; Main app data
 Name: "{group}\BUtil {cm:Configurator}"; Filename: "{app}\bin\butil.exe"
 Name: "{group}\BUtil CLI"; Filename: "{app}\bin\butilc.exe"
-Name: "{group}\BUtil {cm:Backup_Wizard}"; Filename: "{app}\bin\butil.exe"; Parameters: "JustBackupMaster"; IconFilename: "{app}\data\BackupUi.ico"
+Name: "{group}\BUtil {cm:LaunchTasks}"; Filename: "{app}\bin\butil.exe"; Parameters: "JustBackupMaster"; IconFilename: "{app}\data\BackupUi.ico"
 Name: "{group}\BUtil {cm:Restoration}"; Filename: "{app}\bin\butil.exe"; Parameters: "JustRestorationMaster"; IconFilename: "{app}\data\RestorationMaster.ico"
-
-; Desktop
 Name: "{autodesktop}\BUtil {cm:Configurator}"; Filename: "{app}\bin\butil.exe"
 
 [Run]
