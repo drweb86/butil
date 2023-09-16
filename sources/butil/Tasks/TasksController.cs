@@ -22,7 +22,7 @@ namespace BUtil.Configurator.Configurator
             TaskV2 backupTask = null;
             if (taskName != null)
             {
-                var service = new BackupTaskStoreService();
+                var service = new TaskV2StoreService();
                 backupTask = service.Load(taskName);
             } else if (file != null)
             {
@@ -71,7 +71,7 @@ namespace BUtil.Configurator.Configurator
         {
             TaskV2 task = null;
 
-            var backupTaskStoreService = new BackupTaskStoreService();
+            var backupTaskStoreService = new TaskV2StoreService();
             if (taskName == null)
             {
                 var backupTaskNames = backupTaskStoreService.GetNames();

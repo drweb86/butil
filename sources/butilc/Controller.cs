@@ -19,7 +19,7 @@ namespace BUtil.ConsoleBackup
             PerformCriticalChecks();
         }
 
-        public BackupTaskStoreService BackupTaskStoreService => new BackupTaskStoreService();
+        public TaskV2StoreService BackupTaskStoreService => new TaskV2StoreService();
 
         public bool ParseCommandLineArguments(string[] args)
         {
@@ -71,7 +71,7 @@ namespace BUtil.ConsoleBackup
                 return false;
             }
 
-            var backupTaskStoreService = new BackupTaskStoreService();
+            var backupTaskStoreService = new TaskV2StoreService();
             var task = backupTaskStoreService.Load(_taskName);
             if (task == null)
             {

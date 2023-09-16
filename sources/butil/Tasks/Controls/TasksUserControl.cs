@@ -60,7 +60,7 @@ namespace BUtil.Configurator.Configurator.Controls
 
         private void ReloadTasks()
         {
-            var backupTaskStoreService = new BackupTaskStoreService();
+            var backupTaskStoreService = new TaskV2StoreService();
             var taskNames = backupTaskStoreService.GetNames();
 
             var logsService = new LogService();
@@ -95,7 +95,7 @@ namespace BUtil.Configurator.Configurator.Controls
             using var form = new EditBackupTaskForm(task, scheduleInfo, Tasks.BackupTaskViewsEnum.Name);
             if (form.ShowDialog() == DialogResult.OK)
             {
-                var backupTaskStoreService = new BackupTaskStoreService();
+                var backupTaskStoreService = new TaskV2StoreService();
                 backupTaskStoreService.Save(task);
 
                 var backupTaskSchedulerService = new TaskSchedulerService();
@@ -112,7 +112,7 @@ namespace BUtil.Configurator.Configurator.Controls
             }
 
             var taskName = _tasksListView.SelectedItems[0].Text;
-            var backupTaskStoreService = new BackupTaskStoreService();
+            var backupTaskStoreService = new TaskV2StoreService();
             var task = backupTaskStoreService.Load(taskName);
             if (task == null)
             {
@@ -151,7 +151,7 @@ namespace BUtil.Configurator.Configurator.Controls
             {
                 if (Messages.ShowYesNoDialog(string.Format(Resources.WouldYouLileToRemoveTheBackupTask0, selectedTask.Text)))
                 {
-                    var backupTasksService = new BackupTaskStoreService();
+                    var backupTasksService = new TaskV2StoreService();
                     backupTasksService.Delete(selectedTask.Text);
                     var backupTaskSchedulerService = new TaskSchedulerService();
                     backupTaskSchedulerService.Unschedule(selectedTask.Text);

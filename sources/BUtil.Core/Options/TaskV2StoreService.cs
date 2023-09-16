@@ -8,14 +8,14 @@ using BUtil.Core.ConfigurationFileModels.V1;
 
 namespace BUtil.Core.Options
 {
-    public class BackupTaskStoreService
+    public class TaskV2StoreService
     {
         private readonly string _folder;
         private const string _genericFilter = "*.json";
         private const string _extensionV1 = ".json";
         private const string _extensionV2 = ".v2.json";
 
-        public BackupTaskStoreService()
+        public TaskV2StoreService()
         {
 #if DEBUG
             _folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BUtil Backup Tasks - DEBUG");
