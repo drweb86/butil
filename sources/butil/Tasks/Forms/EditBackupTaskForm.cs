@@ -15,11 +15,11 @@ namespace BUtil.Configurator.Configurator.Forms
     partial class EditBackupTaskForm : Form
     {
         readonly Dictionary<BackupTaskViewsEnum, BackUserControl> _views;
-        readonly BackupTaskV2 _task;
+        readonly TaskV2 _task;
         readonly ScheduleInfo _scheduleInfo;
         private readonly BackupTaskViewsEnum _initialView;
 
-        public EditBackupTaskForm(BackupTaskV2 task, ScheduleInfo scheduleInfo, BackupTaskViewsEnum initialView)
+        public EditBackupTaskForm(TaskV2 task, ScheduleInfo scheduleInfo, BackupTaskViewsEnum initialView)
         {
             InitializeComponent();
             

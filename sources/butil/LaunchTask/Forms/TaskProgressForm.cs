@@ -17,13 +17,13 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 {
     internal sealed partial class TaskProgressForm : Form
     {
-        private readonly BackupTaskV2 _backupTask;
+        private readonly TaskV2 _backupTask;
         private readonly ConcurrentQueue<Action> _listViewUpdates = new();
         private readonly List<ListViewItem> _items = new();
         private readonly List<string> _lastMinuteMessagesToUser = new List<string>();
         private HashSet<Guid> _ended = new HashSet<Guid>();
 
-        public TaskProgressForm(BackupTaskV2 backupTask)
+        public TaskProgressForm(TaskV2 backupTask)
         {
             InitializeComponent();
 
@@ -102,8 +102,8 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
         {
             _log = new FileLog(_backupTask.Name);
             _log.Open();
-            _strategy = BackupModelStrategyFactory.Create(_log, _backupTask);
-            _backupEvents = new BackupEvents();
+            _strategy = TaskModelStrategyFactory.Create(_log, _backupTask);
+            _backupEvents = new TaskEvents();
             _backupEvents.OnTaskProgress += OnTaskProgress;
             _backupEvents.OnDuringExecutionTasksAdded += OnDuringExecutionTasksAdded;
             _backupEvents.OnMessage += OnAddLastMinuteMessageToUser;
@@ -130,7 +130,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 
         private void VerifyModel()
         {
-            if (!BackupModelStrategyFactory.TryVerify(this._log, _backupTask.Model, out var error))
+            if (!TaskModelStrategyFactory.TryVerify(this._log, _backupTask.Model, out var error))
             {
                 Messages.ShowErrorBox(error);
                 Close();
@@ -181,8 +181,8 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
         }
 
         private FileLog _log;
-        private IBackupModelStrategy _strategy;
-        private BackupEvents _backupEvents;
+        private ITaskModelStrategy _strategy;
+        private TaskEvents _backupEvents;
         private BuTask _rootTask;
 
         private void OnDoWork(object sender, System.ComponentModel.DoWorkEventArgs e)

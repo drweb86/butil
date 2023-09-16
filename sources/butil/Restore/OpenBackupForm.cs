@@ -15,9 +15,9 @@ namespace BUtil.RestorationMaster
 {
     public partial class OpenBackupForm : Form
     {
-        private BackupTaskV2 storageStub = new BackupTaskV2();
+        private TaskV2 storageStub = new TaskV2();
 
-        public OpenBackupForm(BackupTaskV2 backupTask = null)
+        public OpenBackupForm(TaskV2 backupTask = null)
         {
             InitializeComponent();
 

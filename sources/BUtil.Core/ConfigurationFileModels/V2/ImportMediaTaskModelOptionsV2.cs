@@ -1,6 +1,6 @@
 ﻿namespace BUtil.Core.ConfigurationFileModels.V2
 {
-    public class ImportMediaBackupModelOptionsV2 : IBackupModelOptionsV2
+    public class ImportMediaTaskModelOptionsV2 : ITaskModelOptionsV2
     {
         public string TransformFileName { get; set; }
 

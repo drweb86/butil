@@ -8,18 +8,18 @@ using System.IO;
 
 namespace BUtil.Core.BackupModels
 {
-    public static class BackupModelStrategyFactory
+    public static class TaskModelStrategyFactory
     {
-        public static IBackupModelStrategy Create(ILog log, BackupTaskV2 task)
+        public static ITaskModelStrategy Create(ILog log, TaskV2 task)
         {
             if (task.Model is IncrementalBackupModelOptionsV2)
                 return new IncrementalBackupModelStrategy(log, task);
-            if (task.Model is ImportMediaBackupModelOptionsV2)
-                return new ImportMediaBackupModelStrategy(log, task);
+            if (task.Model is ImportMediaTaskModelOptionsV2)
+                return new ImportMediaTaskModelStrategy(log, task);
             throw new ArgumentOutOfRangeException(nameof(task));
         }
 
-        public static bool TryVerify(ILog log, IBackupModelOptionsV2 options, out string error)
+        public static bool TryVerify(ILog log, ITaskModelOptionsV2 options, out string error)
         {
             error = null;
             if (options is IncrementalBackupModelOptionsV2)
@@ -59,9 +59,9 @@ namespace BUtil.Core.BackupModels
                 }
 
                 return true;
-            } else if (options is ImportMediaBackupModelOptionsV2)
+            } else if (options is ImportMediaTaskModelOptionsV2)
             {
-                var typedOptions = (ImportMediaBackupModelOptionsV2)options;
+                var typedOptions = (ImportMediaTaskModelOptionsV2)options;
 
                 var storageError = StorageFactory.Test(log, new FolderStorageSettingsV2 { DestinationFolder = typedOptions.DestinationFolder });
                 if (storageError != null)

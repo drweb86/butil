@@ -1,4 +1,4 @@
-#define ApplicationVersion GetVersionNumbersString('..\..\Output\BUtil\bin\butil.exe')
+#define ApplicationVersion GetVersionNumbersString('..\Output\BUtil\bin\butil.exe')
 
 [Setup]
 AppName=BUtil
@@ -11,7 +11,7 @@ DisableWelcomePage=yes
 DefaultDirName={autopf}\BUtil
 DefaultGroupName=BUtil
 AllowNoIcons=yes
-OutputDir=..\..\Output
+OutputDir=..\Output
 OutputBaseFilename=BUtil_v{#ApplicationVersion}
 Compression=lzma2/ultra64
 SolidCompression=yes
@@ -19,7 +19,7 @@ PrivilegesRequired=none
 PrivilegesRequiredOverridesAllowed=commandline dialog
 UsePreviousGroup=no
 RestartIfNeededByRun=no
-SetupIconFile=..\Media\Images and Icons\Other's guys\Crystal Clear (Everaldo Coelho)\SetupIcon.ico
+SetupIconFile=.\Media\Images and Icons\Other's guys\Crystal Clear (Everaldo Coelho)\SetupIcon.ico
 ArchitecturesInstallIn64BitMode=x64
 DisableFinishedPage=yes
 DisableProgramGroupPage=yes
@@ -160,14 +160,14 @@ begin
 end;
 
 [Files]
-Source: "..\..\Output\BUtil\*.*"; DestDir: "{app}"; Flags: recursesubdirs
+Source: "..\Output\BUtil\*.*"; DestDir: "{app}"; Flags: recursesubdirs
 
 [Icons]
 Name: "{group}\BUtil {cm:Tasks}";		Filename: "{app}\bin\butil.exe"
 Name: "{group}\BUtil CLI";			Filename: "{app}\bin\butilc.exe"
 Name: "{group}\BUtil {cm:LaunchTask}";		Filename: "{app}\bin\butil.exe";	Parameters: "LaunchTask";	IconFilename: "{app}\data\BackupUi.ico"
 Name: "{group}\BUtil {cm:Restoration}";		Filename: "{app}\bin\butil.exe";	Parameters: "Restore";		IconFilename: "{app}\data\RestorationMaster.ico"
-Name: "{autodesktop}\BUtil {cm:Configurator}";	Filename: "{app}\bin\butil.exe"
+Name: "{autodesktop}\BUtil {cm:Tasks}";		Filename: "{app}\bin\butil.exe"
 
 [Run]
 Filename: "{app}\bin\butil.exe"; Description: "Launch App"; Flags: nowait postinstall skipifsilent

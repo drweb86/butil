@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using BUtil.Core.Localization;
 using BUtil.Configurator;
 using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Configurator.Tasks.Controls.Tasks.Encryption;
 
 namespace BUtil.Core.PL
 {
@@ -11,7 +12,7 @@ namespace BUtil.Core.PL
 	{
 		bool _passwordIsValid;
 		bool _confirmationOfPasswordIsValid;
-		private BackupTaskV2 _task;
+		private TaskV2 _task;
 		readonly Color _greenColor = Color.LightGreen;
 		readonly Color _defaultTextboxColor;
 		
@@ -61,7 +62,7 @@ namespace BUtil.Core.PL
 
 		}
 
-        public EncryptionUserControl(BackupTaskV2 task)
+        public EncryptionUserControl(TaskV2 task)
 		{
 			_task = task;
 
@@ -84,7 +85,7 @@ namespace BUtil.Core.PL
 				UpdateModel(task);
         }
 
-		public void UpdateModel(BackupTaskV2 task)
+		public void UpdateModel(TaskV2 task)
 		{
 			if (task != null)
 				_task = task;

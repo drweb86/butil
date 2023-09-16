@@ -7,7 +7,7 @@ namespace BUtil.ConsoleBackup.UI {
     
     public partial class BackupDialog : Terminal.Gui.Dialog
     {
-        private readonly BackupEvents _backupEvents = new();
+        private readonly TaskEvents _backupEvents = new();
         private Terminal.Gui.ListView _listView;
         private readonly BackgroundWorker _backgroundWorker = new() { WorkerSupportsCancellation = true };
         private readonly ListViewItemDataSource _dataSource = new();

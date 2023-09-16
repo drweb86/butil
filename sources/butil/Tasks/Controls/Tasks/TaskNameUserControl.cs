@@ -6,7 +6,7 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
 {
     public partial class TaskNameUserControl : Core.PL.BackUserControl
     {
-        private BackupTaskV2 _task;
+        private TaskV2 _task;
 
         public TaskNameUserControl()
         {
@@ -21,7 +21,7 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
 
         public override void SetOptionsToUi(object settings)
         {
-            _task = (BackupTaskV2)settings;
+            _task = (TaskV2)settings;
 
             _titleTextBox.Text = _task.Name;
         }

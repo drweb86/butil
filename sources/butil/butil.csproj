@@ -82,22 +82,22 @@
     <Compile Update="Tasks\Controls\Tasks\TaskNameUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Tasks\Controls\BackupTasksUserControl.cs">
+    <Compile Update="Tasks\Controls\TasksUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Common\BackUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Tasks\Controls\Tasks\EncryptionUserControl.cs">
+    <Compile Update="Tasks\Controls\Tasks\Encryption\EncryptionUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Tasks\Controls\Tasks\PasswordGeneratorForm.cs">
+    <Compile Update="Tasks\Controls\Tasks\Encryption\PasswordGeneratorForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Tasks\Controls\Tasks\TaskNavigationControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Tasks\Forms\SambaForm.cs">
+    <Compile Update="Tasks\Controls\Tasks\Where\SambaForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Common\OptionsHeader.cs">
@@ -107,7 +107,7 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Configurator\Controls\Tasks\WhatUserControl.cs" />
-    <Compile Update="Tasks\Controls\Tasks\WhereUserControl.cs">
+    <Compile Update="Tasks\Controls\Tasks\Where\WhereUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="LaunchTask\Controls\TaskProgressUserControl.cs">
@@ -124,7 +124,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Update="Restore\ProgressForm.cs">
+    <Compile Update="Common\ProgressForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

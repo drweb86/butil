@@ -14,7 +14,7 @@ namespace BUtil.Core.TasksTree
         public IStorageSettingsV2 StorageSettings { get; }
         public IncrementalBackupState StorageState { get; private set; }
 
-        public GetStateOfStorageTask(StorageSpecificServicesIoc services, BackupEvents events, string password) : 
+        public GetStateOfStorageTask(StorageSpecificServicesIoc services, TaskEvents events, string password) : 
             base(services.Log, events, Localization.Resources.GetStateOfStorage, TaskArea.Folder)
         {
             StorageSettings = services.StorageSettings;

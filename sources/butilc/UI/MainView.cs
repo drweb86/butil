@@ -52,7 +52,7 @@ namespace BUtil.ConsoleBackup.UI
                 Terminal.Gui.MessageBox.ErrorQuery(string.Empty, BUtil.Core.Localization.Resources.ThisTaskIsObsoleteAndNotSupportedAnymore, Resources.Close);
                 return;
             }
-            if (!(task.Model is ImportMediaBackupModelOptionsV2))
+            if (!(task.Model is ImportMediaTaskModelOptionsV2))
             {
                 Terminal.Gui.MessageBox.ErrorQuery(string.Empty, BUtil.Core.Localization.Resources.YouCannotEditThisTypeOfTaskInCLI, Resources.Close);
                 return;

@@ -15,13 +15,13 @@ namespace BUtil.ConsoleBackup.UI
 {
     public partial class BackupDialog
     {
-        private readonly BackupTaskV2 _task;
+        private readonly TaskV2 _task;
         private readonly List<string> _lastMinuteMessagesToUser = new();
         private readonly FileLog _log;
         private readonly BuTask _rootTask;
         private readonly HashSet<Guid> _ended = new HashSet<Guid>();
 
-        internal BackupDialog(BackupTaskV2 task)
+        internal BackupDialog(TaskV2 task)
         {
             InitializeComponent();
 
@@ -31,7 +31,7 @@ namespace BUtil.ConsoleBackup.UI
             _log = new FileLog(_task.Name);
             _log.Open();
 
-            _rootTask = BackupModelStrategyFactory
+            _rootTask = TaskModelStrategyFactory
                 .Create(_log, _task)
                 .GetTask(_backupEvents);
 

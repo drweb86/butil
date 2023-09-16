@@ -15,7 +15,7 @@ namespace BUtil.Core.TasksTree
 
         private readonly GetStateOfStorageTask _storageStateTask;
         private readonly IEnumerable<GetStateOfSourceItemTask> _getSourceItemStateTasks;
-        public CalculateIncrementedVersionForStorageTask(ILog log, BackupEvents events, GetStateOfStorageTask storageStateTask,
+        public CalculateIncrementedVersionForStorageTask(ILog log, TaskEvents events, GetStateOfStorageTask storageStateTask,
             IEnumerable<GetStateOfSourceItemTask> getSourceItemStateTasks) :
             base(log, events, BUtil.Core.Localization.Resources.CalculateIncrementedVersionForStorage,
                 TaskArea.Hdd)

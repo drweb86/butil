@@ -15,7 +15,7 @@ namespace BUtil.ConsoleBackup.UI
     {
         private IStorageSettingsV2 _from;
 
-        internal EditImportMediaTaskDialog(BackupTaskV2 task) 
+        internal EditImportMediaTaskDialog(TaskV2 task) 
         {
             InitializeComponent();
 
@@ -30,7 +30,7 @@ namespace BUtil.ConsoleBackup.UI
             }
             else
             {
-                var options = (ImportMediaBackupModelOptionsV2)task.Model;
+                var options = (ImportMediaTaskModelOptionsV2)task.Model;
                 _from = options.From;
                 _destinationFolderTextField.Text = options.DestinationFolder;
                 _transformFileNameTextField.Text = options.TransformFileName;
@@ -59,7 +59,7 @@ namespace BUtil.ConsoleBackup.UI
                 return;
             }
 
-            if (!BackupModelStrategyFactory.TryVerify(new StubLog(), BackupTask.Model, out var error))
+            if (!TaskModelStrategyFactory.TryVerify(new StubLog(), BackupTask.Model, out var error))
             {
                 MessageBox.ErrorQuery(string.Empty, error, Resources.Close);
                 return;
@@ -79,14 +79,14 @@ namespace BUtil.ConsoleBackup.UI
             _from = dialog.StorageSettings;
         }
 
-        public BackupTaskV2 BackupTask 
+        public TaskV2 BackupTask 
         {
             get 
             {
-                return new BackupTaskV2
+                return new TaskV2
                 {
                     Name = _titleTextField.Text.ToString(),
-                    Model = new ImportMediaBackupModelOptionsV2
+                    Model = new ImportMediaTaskModelOptionsV2
                     {
                         TransformFileName = _transformFileNameTextField.Text.ToString(),
                         From = _from,

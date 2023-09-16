@@ -2,7 +2,7 @@
 
 namespace BUtil.Core.ConfigurationFileModels.V2
 {
-    public class IncrementalBackupModelOptionsV2 : IBackupModelOptionsV2
+    public class IncrementalBackupModelOptionsV2 : ITaskModelOptionsV2
     {
         public IncrementalBackupModelOptionsV2()
         {

@@ -13,11 +13,11 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
 {
     class ImportFilesTask : SequentialBuTask
     {
-        private readonly BackupTaskV2 _task;
+        private readonly TaskV2 _task;
         private readonly GetStateOfSourceItemTask _getStateOfSourceItemTask;
         private readonly CommonServicesIoc _commonServicesIoc;
 
-        public ImportFilesTask(ILog log, BackupEvents backupEvents, BackupTaskV2 backupTask, GetStateOfSourceItemTask getStateOfSourceItemTask, CommonServicesIoc commonServicesIoc)
+        public ImportFilesTask(ILog log, TaskEvents backupEvents, TaskV2 backupTask, GetStateOfSourceItemTask getStateOfSourceItemTask, CommonServicesIoc commonServicesIoc)
             : base(log, backupEvents, BUtil.Core.Localization.Resources.ImportAllFiles, TaskArea.ProgramInRunBeforeAfterBackupChain, null)
         {
             Children = new List<BuTask>();
@@ -30,7 +30,7 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
         {
             UpdateStatus(ProcessingStatus.InProgress);
 
-            var options = (ImportMediaBackupModelOptionsV2)_task.Model;
+            var options = (ImportMediaTaskModelOptionsV2)_task.Model;
 
             var importMediaFileService = new ImportMediaFileService();
             var importMediaState = options.SkipAlreadyImportedFiles ? importMediaFileService.Load(_task.Name) ?? new ImportMediaState() : new ImportMediaState();

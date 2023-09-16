@@ -15,7 +15,7 @@ namespace BUtil.Core.TasksTree
         private readonly GetStateOfStorageTask _getStateOfStorageTask;
         public IStorageSettingsV2 StorageSettings { get; }
 
-        public DeleteUnversionedFilesStorageTask(StorageSpecificServicesIoc services, BackupEvents events, string password, GetStateOfStorageTask getStateOfStorageTask) :
+        public DeleteUnversionedFilesStorageTask(StorageSpecificServicesIoc services, TaskEvents events, string password, GetStateOfStorageTask getStateOfStorageTask) :
             base(services.Log, events, Localization.Resources.DeleteUnversionedFilesStorage, TaskArea.Hdd)
         {
             StorageSettings = services.StorageSettings;

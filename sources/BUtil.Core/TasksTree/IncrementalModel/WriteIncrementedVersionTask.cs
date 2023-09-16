@@ -16,7 +16,7 @@ namespace BUtil.Core.TasksTree
 
         public WriteIncrementedVersionTask(
             StorageSpecificServicesIoc services,
-            BackupEvents events, 
+            TaskEvents events, 
             GetStateOfStorageTask storageStateTask,
             IEnumerable<GetStateOfSourceItemTask> getSourceItemStateTasks,
             IncrementalBackupModelOptionsV2 incrementalBackupModelOptions) :

@@ -24,7 +24,7 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
 
         public ImportSingleFileTask(
             ILog log,
-            BackupEvents backupEvents,
+            TaskEvents backupEvents,
             string fromFile,
             IStorage fromStorage,
             IStorage toStorage,
@@ -60,7 +60,7 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
                     System.IO.File.SetCreationTime(exchangeFile, lastWriteTime);
                     System.IO.File.SetLastWriteTime(exchangeFile, lastWriteTime);
 
-                    var getState = new GetStateOfFileTask(Log, new BackupEvents(), _commonServicesIoc, _state.SourceItem,  exchangeFile);
+                    var getState = new GetStateOfFileTask(Log, new TaskEvents(), _commonServicesIoc, _state.SourceItem,  exchangeFile);
                     getState.Execute();
                     if (!getState.IsSuccess)
                     {

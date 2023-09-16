@@ -17,7 +17,7 @@ namespace BUtil.Core.TasksTree.States
 
         public GetStateOfSourceItemsAndStoragesTask(
             ILog log,
-            BackupEvents events, 
+            TaskEvents events, 
             IEnumerable<SourceItemV2> sourceItems,
             CommonServicesIoc commonServicesIoc,
             StorageSpecificServicesIoc servicesIoc,
@@ -54,7 +54,7 @@ namespace BUtil.Core.TasksTree.States
             var storageTasksExecuter = new ParallelExecuter(new[] { StorageStateTask }, 1);
             var sourceItemGroupTasks = GetSourceItemStateTasks
                 .GroupBy(x => Directory.GetDirectoryRoot(x.SourceItem.Target))
-                .Select(x => new SequentialBuTask(new StubLog(), new BackupEvents(), string.Empty, TaskArea.File, x.ToList()))
+                .Select(x => new SequentialBuTask(new StubLog(), new TaskEvents(), string.Empty, TaskArea.File, x.ToList()))
                 .ToList();
             var sourceItemGroupTasksExecuter = new ParallelExecuter(sourceItemGroupTasks, 10);
             

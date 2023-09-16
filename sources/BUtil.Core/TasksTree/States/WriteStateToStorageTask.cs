@@ -18,7 +18,7 @@ namespace BUtil.Core.TasksTree.States
 
         public WriteStateToStorageTask(
             StorageSpecificServicesIoc services,
-            BackupEvents events,
+            TaskEvents events,
             CalculateIncrementedVersionForStorageTask getIncrementedVersionTask,
             WriteSourceFilesToStorageTask writeSourceFilesToStorageTask,
             IncrementalBackupModelOptionsV2 incrementalBackupModelOptions)

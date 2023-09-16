@@ -9,14 +9,14 @@ using System.Collections.Generic;
 
 namespace BUtil.Core.TasksTree.MediaSyncBackupModel
 {
-    class ImportMediaBackupTask : SequentialBuTask
+    class ImportMediaTask : SequentialBuTask
     {
         private readonly CommonServicesIoc _commonServicesIoc = new();
 
-        public ImportMediaBackupTask(ILog log, BackupEvents backupEvents, BackupTaskV2 backupTask)
+        public ImportMediaTask(ILog log, TaskEvents backupEvents, TaskV2 backupTask)
             : base(log, backupEvents, string.Empty, TaskArea.ProgramInRunBeforeAfterBackupChain, null)
         {
-            var typedModel = backupTask.Model as ImportMediaBackupModelOptionsV2;
+            var typedModel = backupTask.Model as ImportMediaTaskModelOptionsV2;
             var sourceItem = new SourceItemV2(typedModel.DestinationFolder, true);
 
             var getStateOfSourceItemTask = new GetStateOfSourceItemTask(log, backupEvents, sourceItem, Array.Empty<string>(), _commonServicesIoc);

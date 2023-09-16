@@ -13,9 +13,9 @@ namespace BUtil.Configurator.Controls
 {
     internal sealed partial class WhatUserControl : BUtil.Core.PL.BackUserControl
 	{
-		private readonly BackupTaskV2 _task;
+		private readonly TaskV2 _task;
 		
-		public WhatUserControl(BackupTaskV2 task)
+		public WhatUserControl(TaskV2 task)
 		{
             _task = task;
 

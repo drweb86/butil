@@ -119,7 +119,7 @@ namespace BUtil.Core.Compression
             string password,
             string archive)
         {
-            var compressionLevel = CompressionUtil.GetCompressionLevel(Path.GetExtension(file).ToLowerInvariant());
+            var compressionLevel = ArchiverUtil.GetCompressionLevel(Path.GetExtension(file).ToLowerInvariant());
 
             if (compressionLevel == 0)
                 return CompressFileInternal(log, file, password, archive);
@@ -137,7 +137,7 @@ namespace BUtil.Core.Compression
             string password,
             string archive)
         {
-            var compressionLevel = CompressionUtil.GetCompressionLevel(Path.GetExtension(file).ToLowerInvariant());
+            var compressionLevel = ArchiverUtil.GetCompressionLevel(Path.GetExtension(file).ToLowerInvariant());
             string arguments;
             
             if (string.IsNullOrWhiteSpace(password))

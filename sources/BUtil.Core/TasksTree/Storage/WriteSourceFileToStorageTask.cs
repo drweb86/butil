@@ -20,7 +20,7 @@ namespace BUtil.Core.TasksTree
 
         public WriteSourceFileToStorageTask(
             StorageSpecificServicesIoc services,
-            BackupEvents events,
+            TaskEvents events,
             List<StorageFile> storageFiles,
             Quota singleBackupQuotaGb,
             System.Collections.Generic.List<VersionState> versionStates) : 

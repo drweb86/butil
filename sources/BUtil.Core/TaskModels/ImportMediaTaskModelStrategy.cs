@@ -6,20 +6,20 @@ using BUtil.Core.ConfigurationFileModels.V2;
 
 namespace BUtil.Core.BackupModels
 {
-    class ImportMediaBackupModelStrategy : IBackupModelStrategy
+    class ImportMediaTaskModelStrategy : ITaskModelStrategy
     {
         readonly ILog _log;
-        readonly BackupTaskV2 _task;
+        readonly TaskV2 _task;
 
-        public ImportMediaBackupModelStrategy(ILog openedLog, BackupTaskV2 task)
+        public ImportMediaTaskModelStrategy(ILog openedLog, TaskV2 task)
         {
             _log = openedLog;
             _task = task;
         }
 
-        public BuTask GetTask(BackupEvents events)
+        public BuTask GetTask(TaskEvents events)
         {
-            return new ImportMediaBackupTask(_log, events, _task);
+            return new ImportMediaTask(_log, events, _task);
         }
     }
 }

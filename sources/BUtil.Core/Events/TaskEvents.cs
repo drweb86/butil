@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace BUtil.Core.Events
 {
-    public class BackupEvents
+    public class TaskEvents
     {
         public event EventHandler<TaskProgressEventArgs> OnTaskProgress;
         public event EventHandler<DuringExecutionTasksAddedEventArgs> OnDuringExecutionTasksAdded;

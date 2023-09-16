@@ -79,14 +79,14 @@ namespace BUtil.ConsoleBackup
                 return false;
             }
 
-            _backup = BackupModelStrategyFactory.Create(_log, task);
+            _backup = TaskModelStrategyFactory.Create(_log, task);
 
             return true;
         }
 
 		public void Backup()
         {
-            var task = _backup.GetTask(new Core.Events.BackupEvents());
+            var task = _backup.GetTask(new Core.Events.TaskEvents());
             task.Execute();
             PowerPC.DoTask(_powerTask);
         }
@@ -161,7 +161,7 @@ namespace BUtil.ConsoleBackup
 
         #region Fields
 
-        private IBackupModelStrategy _backup;
+        private ITaskModelStrategy _backup;
         private string _taskName;
         private PowerTask _powerTask = PowerTask.None;
 

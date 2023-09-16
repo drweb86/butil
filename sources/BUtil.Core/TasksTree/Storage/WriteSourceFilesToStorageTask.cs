@@ -17,7 +17,7 @@ namespace BUtil.Core.TasksTree.Storage
 
         public WriteSourceFilesToStorageTask(
             StorageSpecificServicesIoc services,
-            BackupEvents events,
+            TaskEvents events,
             CalculateIncrementedVersionForStorageTask getIncrementedVersionTask,
             IncrementalBackupModelOptionsV2 incrementalBackupModelOptions)
             : base(services.Log, events, Localization.Resources.WriteSourceFilesToStorage, TaskArea.Hdd, null)

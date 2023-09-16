@@ -6,10 +6,7 @@ if %ERRORLEVEL% NEQ 0 (
 	GOTO error;
 )
 
-cd ..
-
-cd "sources\setup"
-"c:\Program Files (x86)\Inno Setup 6\ISCC.exe" install.iss
+"c:\Program Files (x86)\Inno Setup 6\ISCC.exe" setup.iss
 if NOT %ERRORLEVEL% == 0 (
 	GOTO error;
 )

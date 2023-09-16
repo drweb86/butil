@@ -26,7 +26,7 @@ namespace BUtil.Core.Options
                 Directory.CreateDirectory(_folder);
         }
 
-        public BackupTaskV2 Load(string name)
+        public TaskV2 Load(string name)
         {
             foreach (var pair in GetFileNames(name))
             {
@@ -48,7 +48,7 @@ namespace BUtil.Core.Options
                 }
                 else if (pair.Key == 2)
                 {
-                    return JsonSerializer.Deserialize<BackupTaskV2>(json);
+                    return JsonSerializer.Deserialize<TaskV2>(json);
                 }
                 else
                 {
@@ -59,7 +59,7 @@ namespace BUtil.Core.Options
             return null;
         }
 
-        private BackupTaskV2 UpgradeV1ToLatest(BackupTaskV1 task)
+        private TaskV2 UpgradeV1ToLatest(BackupTaskV1 task)
         {
             var incrementalModelV1 = task.Model as IncrementalBackupModelOptionsV1;
             if (incrementalModelV1 == null)
@@ -67,7 +67,7 @@ namespace BUtil.Core.Options
                 return null;
             }
 
-            return new BackupTaskV2
+            return new TaskV2
             {
                 Name = task.Name,
                 Model = new IncrementalBackupModelOptionsV2
@@ -121,7 +121,7 @@ namespace BUtil.Core.Options
             };
         }
 
-        public void Save(BackupTaskV2 task)
+        public void Save(TaskV2 task)
         {
             Delete(task.Name);
 

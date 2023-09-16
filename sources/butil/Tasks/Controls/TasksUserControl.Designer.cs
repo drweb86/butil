@@ -1,6 +1,6 @@
 ﻿namespace BUtil.Configurator.Configurator.Controls
 {
-    partial class BackupTasksUserControl
+    partial class TasksUserControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BackupTasksUserControl));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TasksUserControl));
             _tasksListView = new System.Windows.Forms.ListView();
             _nameColumn = new System.Windows.Forms.ColumnHeader();
             _lastBackupAt = new System.Windows.Forms.ColumnHeader();

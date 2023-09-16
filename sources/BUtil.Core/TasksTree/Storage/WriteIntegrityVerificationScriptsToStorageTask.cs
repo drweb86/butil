@@ -17,7 +17,7 @@ namespace BUtil.Core.TasksTree.Storage
         private readonly WriteSourceFilesToStorageTask _writeSourceFilesToStorageTask;
         private readonly WriteStateToStorageTask _writeStateToStorageTask;
 
-        public WriteIntegrityVerificationScriptsToStorageTask(StorageSpecificServicesIoc services, BackupEvents events,
+        public WriteIntegrityVerificationScriptsToStorageTask(StorageSpecificServicesIoc services, TaskEvents events,
             CalculateIncrementedVersionForStorageTask getIncrementedVersionTask,
             WriteSourceFilesToStorageTask writeSourceFilesToStorageTask,
             States.WriteStateToStorageTask writeStateToStorageTask)

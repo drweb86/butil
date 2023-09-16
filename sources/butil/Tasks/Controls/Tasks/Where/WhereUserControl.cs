@@ -11,7 +11,7 @@ namespace BUtil.Configurator.Configurator.Controls
 {
     internal sealed partial class WhereUserControl : Core.PL.BackUserControl
     {
-        BackupTaskV2 _task;
+        TaskV2 _task;
 
         public WhereUserControl()
         {
@@ -39,7 +39,7 @@ namespace BUtil.Configurator.Configurator.Controls
 
         public override void SetOptionsToUi(object settings)
         {
-            _task = (BackupTaskV2)settings;
+            _task = (TaskV2)settings;
             var options = (IncrementalBackupModelOptionsV2)_task.Model;
 
             var storage = options.To;

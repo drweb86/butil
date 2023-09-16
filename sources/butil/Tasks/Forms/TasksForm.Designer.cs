@@ -34,7 +34,7 @@ namespace BUtil.Configurator.Configurator.Forms
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.helpToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.helpStatusStrip = new System.Windows.Forms.StatusStrip();
-            this._backupTasksUserControl = new BUtil.Configurator.Configurator.Controls.BackupTasksUserControl();
+            this._backupTasksUserControl = new BUtil.Configurator.Configurator.Controls.TasksUserControl();
             this.MainmenuStrip.SuspendLayout();
             this.helpStatusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -139,6 +139,6 @@ namespace BUtil.Configurator.Configurator.Forms
         private System.Windows.Forms.ToolTip toolTip;
 		private System.Windows.Forms.ToolStripMenuItem restorationToolToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem _logsToolStripMenuItem;
-        private BackupTasksUserControl _backupTasksUserControl;
+        private TasksUserControl _backupTasksUserControl;
     }
 }

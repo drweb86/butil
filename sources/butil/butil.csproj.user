@@ -44,7 +44,7 @@
     <Compile Update="Restore\BlameForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Restore\ProgressForm.Designer.cs">
+    <Compile Update="Common\ProgressForm.Designer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Restore\OpenBackupForm.cs">

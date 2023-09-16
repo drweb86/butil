@@ -7,7 +7,7 @@ using System.IO;
 
 namespace BUtil.Core.Options
 {
-    public class BackupTaskSchedulerService
+    public class TaskSchedulerService
     {
         public ScheduleInfo GetSchedule(string taskName)
         {

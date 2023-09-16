@@ -19,14 +19,14 @@ namespace BUtil.Configurator.Configurator
 				return;
 			}
 
-            BackupTaskV2 backupTask = null;
+            TaskV2 backupTask = null;
             if (taskName != null)
             {
                 var service = new BackupTaskStoreService();
                 backupTask = service.Load(taskName);
             } else if (file != null)
             {
-                backupTask = new BackupTaskV2();
+                backupTask = new TaskV2();
                 var options = (IncrementalBackupModelOptionsV2)backupTask.Model;
                 options.To = new FolderStorageSettingsV2() { DestinationFolder = Path.GetDirectoryName(file) };
             }
@@ -67,9 +67,9 @@ namespace BUtil.Configurator.Configurator
             Process.Start(Application.ExecutablePath, $"{Arguments.LaunchTask} \"{Arguments.RunTask}={taskName}\"");
         }
 
-        private static BackupTaskV2 GetBackupTaskToExecute(string taskName)
+        private static TaskV2 GetBackupTaskToExecute(string taskName)
         {
-            BackupTaskV2 task = null;
+            TaskV2 task = null;
 
             var backupTaskStoreService = new BackupTaskStoreService();
             if (taskName == null)

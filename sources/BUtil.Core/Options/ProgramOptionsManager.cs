@@ -5,9 +5,9 @@ namespace BUtil.Core.Options
 {
     public static class ProgramOptionsManager
 	{
-        public static BackupTaskV2 GetDefaultBackupTask(string name)
+        public static TaskV2 GetDefaultBackupTask(string name)
         {
-            return new BackupTaskV2
+            return new TaskV2
 			{
 				Name = name,
 				Model = new IncrementalBackupModelOptionsV2()

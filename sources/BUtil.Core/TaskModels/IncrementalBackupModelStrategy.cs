@@ -6,18 +6,18 @@ using BUtil.Core.ConfigurationFileModels.V2;
 
 namespace BUtil.Core.BackupModels
 {
-    class IncrementalBackupModelStrategy : IBackupModelStrategy
+    class IncrementalBackupModelStrategy : ITaskModelStrategy
     {
         readonly ILog _log;
-        readonly BackupTaskV2 _task;
+        readonly TaskV2 _task;
 
-        public IncrementalBackupModelStrategy(ILog openedLog, BackupTaskV2 task)
+        public IncrementalBackupModelStrategy(ILog openedLog, TaskV2 task)
         {
             _log = openedLog;
             _task = task;
         }
 
-        public BuTask GetTask(BackupEvents events)
+        public BuTask GetTask(TaskEvents events)
         {
             return new IncrementalBackupTask(_log, events, _task);
         }

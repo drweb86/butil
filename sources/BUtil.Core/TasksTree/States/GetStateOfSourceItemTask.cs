@@ -22,7 +22,7 @@ namespace BUtil.Core.TasksTree
 
         public SourceItemV2 SourceItem { get; }
 
-        public GetStateOfSourceItemTask(ILog log, BackupEvents events, SourceItemV2 sourceItem, IEnumerable<string> fileExcludePatterns, CommonServicesIoc commonServicesIoc) : 
+        public GetStateOfSourceItemTask(ILog log, TaskEvents events, SourceItemV2 sourceItem, IEnumerable<string> fileExcludePatterns, CommonServicesIoc commonServicesIoc) : 
             base(log, events, string.Format(BUtil.Core.Localization.Resources.GetStateOfSourceItem, sourceItem.Target), sourceItem.IsFolder ? TaskArea.Folder : TaskArea.File, null)
         {
             SourceItem = sourceItem;

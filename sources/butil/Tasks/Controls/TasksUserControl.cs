@@ -13,9 +13,9 @@ namespace BUtil.Configurator.Configurator.Controls
 {
     internal delegate bool RequestToSaveOptions();
 
-    public partial class BackupTasksUserControl : Core.PL.BackUserControl
+    public partial class TasksUserControl : Core.PL.BackUserControl
     {
-        public BackupTasksUserControl()
+        public TasksUserControl()
         {
             InitializeComponent();
 
@@ -86,7 +86,7 @@ namespace BUtil.Configurator.Configurator.Controls
 
         void AddTaskRequest(object sender, EventArgs e)
         {
-            var task = new BackupTaskV2 { Name = Resources.NewBackupTaskTitle, Model = new IncrementalBackupModelOptionsV2 {
+            var task = new TaskV2 { Name = Resources.NewBackupTaskTitle, Model = new IncrementalBackupModelOptionsV2 {
                 Items = new List<SourceItemV2> { 
                     new SourceItemV2(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) , true),
                     new SourceItemV2(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) , true)}
@@ -98,7 +98,7 @@ namespace BUtil.Configurator.Configurator.Controls
                 var backupTaskStoreService = new BackupTaskStoreService();
                 backupTaskStoreService.Save(task);
 
-                var backupTaskSchedulerService = new BackupTaskSchedulerService();
+                var backupTaskSchedulerService = new TaskSchedulerService();
                 backupTaskSchedulerService.Schedule(task.Name, scheduleInfo);
 
                 ReloadTasks();
@@ -125,7 +125,7 @@ namespace BUtil.Configurator.Configurator.Controls
                 return;
             }
 
-            var backupTaskSchedulerService = new BackupTaskSchedulerService();
+            var backupTaskSchedulerService = new TaskSchedulerService();
             var scheduleInfo = backupTaskSchedulerService.GetSchedule(taskName);
             using var form = new EditBackupTaskForm(task, scheduleInfo, Tasks.BackupTaskViewsEnum.SourceItems);
             if (form.ShowDialog() == DialogResult.OK)
@@ -153,7 +153,7 @@ namespace BUtil.Configurator.Configurator.Controls
                 {
                     var backupTasksService = new BackupTaskStoreService();
                     backupTasksService.Delete(selectedTask.Text);
-                    var backupTaskSchedulerService = new BackupTaskSchedulerService();
+                    var backupTaskSchedulerService = new TaskSchedulerService();
                     backupTaskSchedulerService.Unschedule(selectedTask.Text);
                 }
             }
