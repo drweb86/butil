@@ -31,7 +31,7 @@ try
         var taskNames = controller.BackupTaskStoreService.GetNames();
         try
         {
-            Application.Run(new MainView(controller));
+            Application.Run(new TasksView(controller));
         }
         finally
         {

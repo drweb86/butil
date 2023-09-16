@@ -1,3 +1,3 @@
 ﻿using System.Reflection;
 
-[assembly: AssemblyTitle("BUtil.ConsoleBackup")]
+[assembly: AssemblyTitle("BUtil.CLI")]

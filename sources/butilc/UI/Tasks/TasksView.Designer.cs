@@ -4,7 +4,7 @@ namespace BUtil.ConsoleBackup.UI {
     using System;
     using Terminal.Gui;
     
-    public partial class MainView : Terminal.Gui.Toplevel
+    public partial class TasksView : Terminal.Gui.Toplevel
     {
         private Terminal.Gui.ListView itemsListView;
         private Terminal.Gui.FrameView selectedItemInfoFrameView;

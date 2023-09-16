@@ -5,7 +5,7 @@ namespace BUtil.ConsoleBackup.UI {
     using System.ComponentModel;
     using Terminal.Gui;
     
-    public partial class BackupDialog : Terminal.Gui.Dialog
+    public partial class TaskProgressDialog : Terminal.Gui.Dialog
     {
         private readonly TaskEvents _backupEvents = new();
         private Terminal.Gui.ListView _listView;

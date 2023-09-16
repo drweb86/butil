@@ -13,7 +13,7 @@ using Terminal.Gui;
 
 namespace BUtil.ConsoleBackup.UI
 {
-    public partial class BackupDialog
+    public partial class TaskProgressDialog
     {
         private readonly TaskV2 _task;
         private readonly List<string> _lastMinuteMessagesToUser = new();
@@ -21,7 +21,7 @@ namespace BUtil.ConsoleBackup.UI
         private readonly BuTask _rootTask;
         private readonly HashSet<Guid> _ended = new HashSet<Guid>();
 
-        internal BackupDialog(TaskV2 task)
+        internal TaskProgressDialog(TaskV2 task)
         {
             InitializeComponent();
 

@@ -8,12 +8,12 @@ using Terminal.Gui;
 namespace BUtil.ConsoleBackup.UI
 {
 
-    partial class MainView 
+    partial class TasksView 
     {
         private readonly Controller _controller;
         private List<string> _taskNames;
         
-        internal MainView(Controller controller) 
+        internal TasksView(Controller controller) 
         {
             InitializeComponent();
 
@@ -36,7 +36,7 @@ namespace BUtil.ConsoleBackup.UI
                 Terminal.Gui.MessageBox.ErrorQuery(string.Empty, BUtil.Core.Localization.Resources.ThisTaskIsObsoleteAndNotSupportedAnymore, Resources.Close);
                 return;
             }
-            var dialog = new BackupDialog(task);
+            var dialog = new TaskProgressDialog(task);
             Application.Run(dialog);
         }
 
