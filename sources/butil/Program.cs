@@ -8,7 +8,7 @@ using BUtil.Core.Misc;
 using BUtil.Core.FileSystem;
 using System.IO;
 using System.Collections.ObjectModel;
-using BUtil.Configurator.Localization;
+using BUtil.Core.Localization;
 using System.Linq;
 using System.Threading.Tasks;
 

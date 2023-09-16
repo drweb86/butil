@@ -76,8 +76,8 @@ namespace BUtil.Core.PL
             passwordControlToolTip.SetToolTip(generatePasswordButton, Resources.GenerateNewRandomPassword);
             confirmPasswordLabel.Text = Resources.ConfirmPassword;
             passwordLabel.Text = Resources.EnterPassword;
-            generatePasswordButton.Text = BUtil.Configurator.Localization.Resources.GeneratePassword;
-			_recommendationsLabel.Text = BUtil.Configurator.Localization.Resources.RecommendedMinimumPasswordLengthIs50CharactersAndMore;
+            generatePasswordButton.Text = BUtil.Core.Localization.Resources.GeneratePassword;
+			_recommendationsLabel.Text = BUtil.Core.Localization.Resources.RecommendedMinimumPasswordLengthIs50CharactersAndMore;
 
 
             if (task != null)
@@ -102,7 +102,7 @@ namespace BUtil.Core.PL
         {
             if (passwordTextBox.Text != passwordConfirmationTextBox.Text)
 			{
-                Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.PasswordsDoNotMatch);
+                Messages.ShowErrorBox(BUtil.Core.Localization.Resources.PasswordsDoNotMatch);
                 return false;
 			}
 

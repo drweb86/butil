@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Channels;
 using System.Windows.Forms;
 using BUtil.Configurator;
-using BUtil.Configurator.Localization;
+using BUtil.Core.Localization;
 using BUtil.Configurator.Restore;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Logs;
@@ -28,16 +28,16 @@ namespace BUtil.RestorationMaster
             _incrementalBackupState = incrementalBackupState;
             _storageSettings = storageSettings;
 
-            _selectVersionToolStripLabel.Text = BUtil.Configurator.Localization.Resources.SelectVersion;
-            _selectedVersionToolStripLabel.Text = BUtil.Configurator.Localization.Resources.Files;
-            _changesToolStripLabel.Text = BUtil.Configurator.Localization.Resources.Changes;
+            _selectVersionToolStripLabel.Text = BUtil.Core.Localization.Resources.SelectVersion;
+            _selectedVersionToolStripLabel.Text = BUtil.Core.Localization.Resources.Files;
+            _changesToolStripLabel.Text = BUtil.Core.Localization.Resources.Changes;
             _journalSelectedToolStripMenuItem.Text =
                 _journalSelectedToolStripButton.Text =
                 _treeViewJournalSelectedToolStripButton.Text =
                     _treeJournalSelectedToolStripMenuItem.Text =
-                        BUtil.Configurator.Localization.Resources.JournalSelected;
-            _toolStripStatusLabel.Text = BUtil.Configurator.Localization.Resources.ClickOnItemYouWantToRestoreAndOpenContextMenuByRightClick;
-            recoverToolStripMenuItem.Text = _recoverToolStripButton.Text = BUtil.Configurator.Localization.Resources.RecoverSelected;
+                        BUtil.Core.Localization.Resources.JournalSelected;
+            _toolStripStatusLabel.Text = BUtil.Core.Localization.Resources.ClickOnItemYouWantToRestoreAndOpenContextMenuByRightClick;
+            recoverToolStripMenuItem.Text = _recoverToolStripButton.Text = BUtil.Core.Localization.Resources.RecoverSelected;
             this.Text = Resources.RestorationMaster;
         }
 
@@ -72,7 +72,7 @@ namespace BUtil.RestorationMaster
                 .GroupBy(x => x.StorageFileName)
                 .Select(x => x.First().StorageFileNameSize)
                 .Sum();
-            _storageToolStripLabel.Text = string.Format(BUtil.Configurator.Localization.Resources.StorageSize, BytesToString(storageSize));
+            _storageToolStripLabel.Text = string.Format(BUtil.Core.Localization.Resources.StorageSize, BytesToString(storageSize));
         }
 
         private static long GetSizeOfVersion(VersionState version)
@@ -354,7 +354,7 @@ namespace BUtil.RestorationMaster
             });
             form.ShowDialog();
 
-            Messages.ShowInformationBox(BUtil.Configurator.Localization.Resources.RestorationIsCompleted);
+            Messages.ShowInformationBox(BUtil.Core.Localization.Resources.RestorationIsCompleted);
             services.Dispose();
         }
 
@@ -382,8 +382,8 @@ namespace BUtil.RestorationMaster
             });
             progressForm.ShowDialog();
 
-            _selectedVersionToolStripLabel.Text = string.Format("{0} {1}", BUtil.Configurator.Localization.Resources.Files, selectedVersion.BackupDateUtc);
-            _changesToolStripLabel.Text = string.Format("{0} {1}", BUtil.Configurator.Localization.Resources.Changes, selectedVersion.BackupDateUtc);
+            _selectedVersionToolStripLabel.Text = string.Format("{0} {1}", BUtil.Core.Localization.Resources.Files, selectedVersion.BackupDateUtc);
+            _changesToolStripLabel.Text = string.Format("{0} {1}", BUtil.Core.Localization.Resources.Changes, selectedVersion.BackupDateUtc);
             RefreshChanges(changes);
             RefreshTreeView(treeViewFiles);
         }

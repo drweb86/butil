@@ -1,4 +1,4 @@
-﻿using BUtil.Configurator.Localization;
+﻿using BUtil.Core.Localization;
 using BUtil.Core.State;
 using System;
 using System.Data;
@@ -16,9 +16,9 @@ namespace BUtil.Configurator.Restore
             InitializeComponent();
 
             this._closeButton.Text = Resources.Close;
-            _versionsListToolStripLabel.Text = BUtil.Configurator.Localization.Resources.VERSIONS;
+            _versionsListToolStripLabel.Text = BUtil.Core.Localization.Resources.VERSIONS;
             _openSelectedVersionToolStripButton.Text =
-                _openSelectedVersionToolStripMenuItem.Text = BUtil.Configurator.Localization.Resources.OpenSelectedVersion;
+                _openSelectedVersionToolStripMenuItem.Text = BUtil.Core.Localization.Resources.OpenSelectedVersion;
         }
 
         public void Init(
@@ -27,7 +27,7 @@ namespace BUtil.Configurator.Restore
             Action<DateTime> selectVersion)
         {
             _selectVersion = selectVersion;
-            this.Text = string.Format(BUtil.Configurator.Localization.Resources.Journal0, fileFullPath);
+            this.Text = string.Format(BUtil.Core.Localization.Resources.Journal0, fileFullPath);
 
             this._versionsListView.SuspendLayout();
             this._versionsListView.Items.Clear();

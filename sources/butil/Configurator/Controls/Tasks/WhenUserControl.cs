@@ -1,6 +1,6 @@
 using System;
 using System.Linq;
-using BUtil.Configurator.Localization;
+using BUtil.Core.Localization;
 using BUtil.Core.Options;
 
 namespace BUtil.Configurator.Controls

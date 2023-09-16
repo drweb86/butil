@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel;
 using System.Windows.Forms;
 using System.IO;
-using BUtil.Configurator.Localization;
+using BUtil.Core.Localization;
 using System.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,10 +33,10 @@ namespace BUtil.Configurator.Controls
             addFilesToolStripMenuItem.Text = Resources.AddFiles;
 
             _addFileExcludePatternToolStripMenuItem.Text = Resources.AddFileExcludePattern;
-            _addFileExcludePatternToolStripMenuItem.ToolTipText = BUtil.Configurator.Localization.Resources.ExcludesFilesFromBackupByPattern;
-            SetHintForControl(_addFIleExcludePatternButton, BUtil.Configurator.Localization.Resources.ExcludesFilesFromBackupByPattern);
-            _editFileExcludePatternToolStripMenuItem.Text = BUtil.Configurator.Localization.Resources.EditFileExcludePattern;
-            _openInExplorerToolStripMenuItem.Text = BUtil.Configurator.Localization.Resources.OpenInExplorer;
+            _addFileExcludePatternToolStripMenuItem.ToolTipText = BUtil.Core.Localization.Resources.ExcludesFilesFromBackupByPattern;
+            SetHintForControl(_addFIleExcludePatternButton, BUtil.Core.Localization.Resources.ExcludesFilesFromBackupByPattern);
+            _editFileExcludePatternToolStripMenuItem.Text = BUtil.Core.Localization.Resources.EditFileExcludePattern;
+            _openInExplorerToolStripMenuItem.Text = BUtil.Core.Localization.Resources.OpenInExplorer;
 
             var options = (IncrementalBackupModelOptionsV2)_task.Model;
             options.Items
@@ -251,14 +251,14 @@ namespace BUtil.Configurator.Controls
                 if (item.IsFolder &&
                     !Directory.Exists(item.Target))
                 {
-                    Messages.ShowErrorBox(string.Format(BUtil.Configurator.Localization.Resources.SourceItemFailure, item.Target));
+                    Messages.ShowErrorBox(string.Format(BUtil.Core.Localization.Resources.SourceItemFailure, item.Target));
                     return false;
                 }
 
                 if (!item.IsFolder &&
                     !File.Exists(item.Target))
                 {
-                    Messages.ShowErrorBox(string.Format(BUtil.Configurator.Localization.Resources.SourceItemFailure, item.Target));
+                    Messages.ShowErrorBox(string.Format(BUtil.Core.Localization.Resources.SourceItemFailure, item.Target));
                     return false;
                 }
             }

@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 using BUtil.Core.Misc;
-using BUtil.Configurator.Localization;
+using BUtil.Core.Localization;
 using BUtil.Core.FileSystem;
 using System.Diagnostics;
 using BUtil.Core;

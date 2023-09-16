@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using BUtil.Core;
 using BUtil.Core.Misc;
 using BUtil.Core.Logs;
-using BUtil.Configurator.Localization;
+using BUtil.Core.Localization;
 using BUtil.Core.Events;
 using BUtil.Core.BackupModels;
 using BUtil.Core.TasksTree.Core;
@@ -88,7 +88,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             taskNameColumnHeader.Text = Resources.Tasks;
             processingStateInformationColumnHeader.Text = Resources.ProcessingState;
 
-            Text = string.Format(BUtil.Configurator.Localization.Resources._0Backup, _backupTask.Name);
+            Text = string.Format(BUtil.Core.Localization.Resources._0Backup, _backupTask.Name);
             toolTip.SetToolTip(cancelButton, Resources.Cancel);
 
             _powerTaskLinkLabel.Text = Resources.AfterCompletionOfBackup;

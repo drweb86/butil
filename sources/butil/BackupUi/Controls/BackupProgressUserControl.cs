@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Drawing;
 using System.Globalization;
-using BUtil.Configurator.Localization;
+using BUtil.Core.Localization;
 
 namespace BUtil.BackupUiMaster.Controls
 {

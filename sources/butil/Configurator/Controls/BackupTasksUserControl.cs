@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 using BUtil.Core.Options;
 using BUtil.Configurator.Configurator.Forms;
-using BUtil.Configurator.Localization;
+using BUtil.Core.Localization;
 using BUtil.Configurator.AddBackupTaskWizard.View;
 using System.Linq;
 using BUtil.Core.Logs;
@@ -21,7 +21,7 @@ namespace BUtil.Configurator.Configurator.Controls
         {
             InitializeComponent();
 
-            _lastBackupAt.Text = BUtil.Configurator.Localization.Resources.LastBackup;
+            _lastBackupAt.Text = BUtil.Core.Localization.Resources.LastBackup;
             OnTasksListViewResize(this, null);
         }
 

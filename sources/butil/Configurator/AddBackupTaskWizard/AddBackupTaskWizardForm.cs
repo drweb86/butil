@@ -1,6 +1,6 @@
 using System;
 using System.Windows.Forms;
-using BUtil.Configurator.Localization;
+using BUtil.Core.Localization;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Options;
 

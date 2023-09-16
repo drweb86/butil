@@ -1,5 +1,5 @@
 using BUtil.Configurator.Configurator;
-using BUtil.Configurator.Localization;
+using BUtil.Core.Localization;
 using BUtil.Core.ConfigurationFileModels.V2;
 
 namespace BUtil.Configurator.AddBackupTaskWizard.View
@@ -31,7 +31,7 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
             var name = _titleTextBox.Text;
             if (string.IsNullOrWhiteSpace(name))
             {
-                Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.NameIsEmpty);
+                Messages.ShowErrorBox(BUtil.Core.Localization.Resources.NameIsEmpty);
                 return false;
             }
 

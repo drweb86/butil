@@ -1,4 +1,4 @@
-using BUtil.Configurator.Localization;
+using BUtil.Core.Localization;
 using System.Windows.Forms;
 
 namespace BUtil.Configurator

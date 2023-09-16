@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
-using BUtil.Configurator.Localization;
+using BUtil.Core.Localization;
 using BUtil.Core.Options;
 
 namespace BUtil.Configurator.BackupUiMaster.Forms

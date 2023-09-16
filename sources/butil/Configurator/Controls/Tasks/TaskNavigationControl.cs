@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using System.Windows.Forms;
 using BUtil.Configurator.Configurator.Controls.Tasks;
-using BUtil.Configurator.Localization;
+using BUtil.Core.Localization;
 
 namespace BUtil.Configurator.Controls
 {

@@ -1,6 +1,6 @@
 using System;
 using System.Windows.Forms;
-using BUtil.Configurator.Localization;
+using BUtil.Core.Localization;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BUtil.RestorationMaster

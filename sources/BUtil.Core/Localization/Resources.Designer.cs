@@ -61,11 +61,83 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} - Backup.
+        /// </summary>
+        public static string _0Backup {
+            get {
+                return ResourceManager.GetString("_0Backup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Actions.
+        /// </summary>
+        public static string Actions {
+            get {
+                return ResourceManager.GetString("Actions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        public static string Add {
+            get {
+                return ResourceManager.GetString("Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add File Exclude Pattern....
+        /// </summary>
+        public static string AddFileExcludePattern {
+            get {
+                return ResourceManager.GetString("AddFileExcludePattern", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add files....
+        /// </summary>
+        public static string AddFiles {
+            get {
+                return ResourceManager.GetString("AddFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add folders....
+        /// </summary>
+        public static string AddFolders {
+            get {
+                return ResourceManager.GetString("AddFolders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adds the new backup task....
+        /// </summary>
+        public static string AddsTheNewBackupTask {
+            get {
+                return ResourceManager.GetString("AddsTheNewBackupTask", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to After backup task: .
         /// </summary>
         public static string AfterBackupTask {
             get {
                 return ResourceManager.GetString("AfterBackupTask", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to After completion of backup.
+        /// </summary>
+        public static string AfterCompletionOfBackup {
+            get {
+                return ResourceManager.GetString("AfterCompletionOfBackup", resourceCulture);
             }
         }
         
@@ -85,11 +157,83 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure?.
+        /// </summary>
+        public static string AreYouSure {
+            get {
+                return ResourceManager.GetString("AreYouSure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt; Back.
+        /// </summary>
+        public static string Back {
+            get {
+                return ResourceManager.GetString("Back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backup.
+        /// </summary>
+        public static string Backup {
+            get {
+                return ResourceManager.GetString("Backup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backup data every....
+        /// </summary>
+        public static string BackupDataEvery {
+            get {
+                return ResourceManager.GetString("BackupDataEvery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed (see opened log).
+        /// </summary>
+        public static string BackupFailedPleaseReviewOpenedLog {
+            get {
+                return ResourceManager.GetString("BackupFailedPleaseReviewOpenedLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backup is in a progress... .
+        /// </summary>
+        public static string BackupIsInAProgress {
+            get {
+                return ResourceManager.GetString("BackupIsInAProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Succeeded.
+        /// </summary>
+        public static string BackupProcessCompletedSuccesfully {
+            get {
+                return ResourceManager.GetString("BackupProcessCompletedSuccesfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Backup Report.
         /// </summary>
         public static string BackupReport {
             get {
                 return ResourceManager.GetString("BackupReport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backup Task &apos;{0}&apos;.
+        /// </summary>
+        public static string BackupTask0 {
+            get {
+                return ResourceManager.GetString("BackupTask0", resourceCulture);
             }
         }
         
@@ -112,6 +256,38 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Browse....
+        /// </summary>
+        public static string Browse {
+            get {
+                return ResourceManager.GetString("Browse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BUG REPORT.
+        /// </summary>
+        public static string BugReport {
+            get {
+                return ResourceManager.GetString("BugReport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BUtil software package component &apos;{0}&apos; is missing.
+        ///
+        ///Please reinstall application.
+        ///
+        ///Restoration, Backup and Help functions will be unavailable..
+        /// </summary>
+        public static string ButilSoftwarePackageComponent0IsMissingNNpleaseReinstallApplicationNNrestorationBackupAndHelpFunctionsWillBeUnavailable {
+            get {
+                return ResourceManager.GetString("ButilSoftwarePackageComponent0IsMissingNNpleaseReinstallApplicationNNrestorationB" +
+                        "ackupAndHelpFunctionsWillBeUnavailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Calculate incremented version.
         /// </summary>
         public static string CalculateIncrementedVersionForStorage {
@@ -130,6 +306,126 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cannot execute required manipulations with server
+        ///.
+        /// </summary>
+        public static string CannotExecuteRequiredManipulationsWithServerN {
+            get {
+                return ResourceManager.GetString("CannotExecuteRequiredManipulationsWithServerN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot locate file &quot;{0}&quot; in directory. 
+        ///
+        ///Point to a directory containing this file..
+        /// </summary>
+        public static string CannotLocateFile0InDirectoryPointToADirectoryContainingThisFile {
+            get {
+                return ResourceManager.GetString("CannotLocateFile0InDirectoryPointToADirectoryContainingThisFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot open backup folder..
+        /// </summary>
+        public static string CannotOpenBackupFolder {
+            get {
+                return ResourceManager.GetString("CannotOpenBackupFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Execute AFTER backup.
+        /// </summary>
+        public static string ChainOfProgramsToExecuteAfterBackup {
+            get {
+                return ResourceManager.GetString("ChainOfProgramsToExecuteAfterBackup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Execute BEFORE backup.
+        /// </summary>
+        public static string ChainOfProgramsToExecuteBeforeBackup {
+            get {
+                return ResourceManager.GetString("ChainOfProgramsToExecuteBeforeBackup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CHANGES.
+        /// </summary>
+        public static string Changes {
+            get {
+                return ResourceManager.GetString("Changes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose backup model.
+        /// </summary>
+        public static string ChooseBackupModel {
+            get {
+                return ResourceManager.GetString("ChooseBackupModel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose days of week:.
+        /// </summary>
+        public static string ChooseDaysOfWeek {
+            get {
+                return ResourceManager.GetString("ChooseDaysOfWeek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose the task you want to run:.
+        /// </summary>
+        public static string ChooseTheTaskYouWantToRun {
+            get {
+                return ResourceManager.GetString("ChooseTheTaskYouWantToRun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click on item you want to restore and open context menu by right click.
+        /// </summary>
+        public static string ClickOnItemYouWantToRestoreAndOpenContextMenuByRightClick {
+            get {
+                return ResourceManager.GetString("ClickOnItemYouWantToRestoreAndOpenContextMenuByRightClick", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        public static string Close {
+            get {
+                return ResourceManager.GetString("Close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Command line arguments:.
+        /// </summary>
+        public static string CommandLineArguments {
+            get {
+                return ResourceManager.GetString("CommandLineArguments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Configurator.
+        /// </summary>
+        public static string Configurator {
+            get {
+                return ResourceManager.GetString("Configurator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confirmation is not equal to password.
         /// </summary>
         public static string ConfirmationIsNotEqualToPassword {
@@ -144,6 +440,15 @@ namespace BUtil.Core.Localization {
         public static string ConfirmPassword {
             get {
                 return ResourceManager.GetString("ConfirmPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Continue &gt;.
+        /// </summary>
+        public static string Continue {
+            get {
+                return ResourceManager.GetString("Continue", resourceCulture);
             }
         }
         
@@ -175,6 +480,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Could not continue work after getting options because {0}.
+        /// </summary>
+        public static string CouldNotContinueWorkAfterGettingOptionsBecause0 {
+            get {
+                return ResourceManager.GetString("CouldNotContinueWorkAfterGettingOptionsBecause0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Could not kill process &apos;{0}&apos;: {1}.
         /// </summary>
         public static string CouldNotKillProcess01 {
@@ -202,11 +516,38 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to day.
+        /// </summary>
+        public static string Day {
+            get {
+                return ResourceManager.GetString("Day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete uncompleted backups from storage.
         /// </summary>
         public static string DeleteUnversionedFilesStorage {
             get {
                 return ResourceManager.GetString("DeleteUnversionedFilesStorage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Destination folder.
+        /// </summary>
+        public static string DestinationFolder {
+            get {
+                return ResourceManager.GetString("DestinationFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Destination folder does not exist..
+        /// </summary>
+        public static string DestinationFolderDoesNotExist {
+            get {
+                return ResourceManager.GetString("DestinationFolderDoesNotExist", resourceCulture);
             }
         }
         
@@ -220,6 +561,88 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do nothing.
+        /// </summary>
+        public static string DoNothing {
+            get {
+                return ResourceManager.GetString("DoNothing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Drag and drop here files and folders which you&apos;re going to backup!.
+        /// </summary>
+        public static string DragAndDropHereFilesAndFoldersWhichYoureGoingToBackupForSettingCompressionPriorityUseMenu {
+            get {
+                return ResourceManager.GetString("DragAndDropHereFilesAndFoldersWhichYoureGoingToBackupForSettingCompressionPriorit" +
+                        "yUseMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit....
+        /// </summary>
+        public static string Edit {
+            get {
+                return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit File Exclude Pattern....
+        /// </summary>
+        public static string EditFileExcludePattern {
+            get {
+                return ResourceManager.GetString("EditFileExcludePattern", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Editing Event Task - Configurator.
+        /// </summary>
+        public static string EditingEventTaskConfigurator {
+            get {
+                return ResourceManager.GetString("EditingEventTaskConfigurator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edits the selected backup task....
+        /// </summary>
+        public static string EditsTheSelectedBackupTask {
+            get {
+                return ResourceManager.GetString("EditsTheSelectedBackupTask", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Elapsed:.
+        /// </summary>
+        public static string Elapsed {
+            get {
+                return ResourceManager.GetString("Elapsed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enabled.
+        /// </summary>
+        public static string Enabled {
+            get {
+                return ResourceManager.GetString("Enabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Encryption.
+        /// </summary>
+        public static string Encryption {
+            get {
+                return ResourceManager.GetString("Encryption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter password:.
         /// </summary>
         public static string EnterPassword {
@@ -229,11 +652,83 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        public static string Error {
+            get {
+                return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error - BUtil.
+        /// </summary>
+        public static string ErrorButil {
+            get {
+                return ResourceManager.GetString("ErrorButil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Errors.
         /// </summary>
         public static string Errors {
             get {
                 return ResourceManager.GetString("Errors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Excludes files from backup by pattern....
+        /// </summary>
+        public static string ExcludesFilesFromBackupByPattern {
+            get {
+                return ResourceManager.GetString("ExcludesFilesFromBackupByPattern", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exiting....
+        /// </summary>
+        public static string Exiting {
+            get {
+                return ResourceManager.GetString("Exiting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File Exclusion Pattern:.
+        /// </summary>
+        public static string FileExclusionPattern {
+            get {
+                return ResourceManager.GetString("FileExclusionPattern", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File globbing in .NET: Patterns.
+        /// </summary>
+        public static string FileGlobbingInNETPatterns {
+            get {
+                return ResourceManager.GetString("FileGlobbingInNETPatterns", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FILES.
+        /// </summary>
+        public static string Files {
+            get {
+                return ResourceManager.GetString("Files", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Finish.
+        /// </summary>
+        public static string Finish {
+            get {
+                return ResourceManager.GetString("Finish", resourceCulture);
             }
         }
         
@@ -256,6 +751,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Folder.
+        /// </summary>
+        public static string Folder {
+            get {
+                return ResourceManager.GetString("Folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Folder does not exist..
         /// </summary>
         public static string FolderDoesNotExist {
@@ -265,7 +769,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Папка.
+        ///   Looks up a localized string similar to Folder Storage....
         /// </summary>
         public static string FolderStorage {
             get {
@@ -285,6 +789,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Friday.
+        /// </summary>
+        public static string Friday {
+            get {
+                return ResourceManager.GetString("Friday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Generate.
         /// </summary>
         public static string Generate {
@@ -299,6 +812,15 @@ namespace BUtil.Core.Localization {
         public static string GenerateNewRandomPassword {
             get {
                 return ResourceManager.GetString("GenerateNewRandomPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generate password....
+        /// </summary>
+        public static string GeneratePassword {
+            get {
+                return ResourceManager.GetString("GeneratePassword", resourceCulture);
             }
         }
         
@@ -339,6 +861,33 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Folder storage....
+        /// </summary>
+        public static string HardDriveStorage {
+            get {
+                return ResourceManager.GetString("HardDriveStorage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Help.
+        /// </summary>
+        public static string Help {
+            get {
+                return ResourceManager.GetString("Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If folder becomes accessible after mounting, specify PowerShell scripts for  mounting and unmounting.
+        /// </summary>
+        public static string HelpMountUnmountScript {
+            get {
+                return ResourceManager.GetString("HelpMountUnmountScript", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;Here is your password&gt;.
         /// </summary>
         public static string HereIsYourPassword {
@@ -348,11 +897,132 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Here you can protect the backup with password (this is also required for copying it over network).
+        /// </summary>
+        public static string HereYouCanProtectTheBackupWithPasswordThisIsAlsoRequiredForCopyingItOverNetwork {
+            get {
+                return ResourceManager.GetString("HereYouCanProtectTheBackupWithPasswordThisIsAlsoRequiredForCopyingItOverNetwork", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Here you can set up a scheduler. Shceduler can help you to automate creation of backups.
+        /// </summary>
+        public static string HereYouCanSetUpASchedulerShcedulerCanHelpYouToAutomateCreationOfBackups {
+            get {
+                return ResourceManager.GetString("HereYouCanSetUpASchedulerShcedulerCanHelpYouToAutomateCreationOfBackups", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Here you can specify file globbing exclusion patterns. 
+        ///It can be a file name or folder name or wildcard. 
+        ///Examples: 
+        ///d:\temp, 
+        ///d:\temp\file.txt, 
+        ///d:\temp\**\*.txt or 
+        ///bin. 
+        ///See detailed description in the following link..
+        /// </summary>
+        public static string HereYouCanSpecifyFileGlobbingExclusionPatternsItCanBeAFileNameOrFolderNameOrWildcardExamplesDTempDTempFileTxtDTempTxtOrBinSeeDetailedDescriptionInTheFollowingLink {
+            get {
+                return ResourceManager.GetString("HereYouCanSpecifyFileGlobbingExclusionPatternsItCanBeAFileNameOrFolderNameOrWildc" +
+                        "ardExamplesDTempDTempFileTxtDTempTxtOrBinSeeDetailedDescriptionInTheFollowingLin" +
+                        "k", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Here you can specify other settings.
+        /// </summary>
+        public static string HereYouCanSpecifyOtherSettings {
+            get {
+                return ResourceManager.GetString("HereYouCanSpecifyOtherSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Here you can specify where to send backups.
+        /// </summary>
+        public static string HereYouCanSpecifyWhereToSendBackups {
+            get {
+                return ResourceManager.GetString("HereYouCanSpecifyWhereToSendBackups", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Here you may add files and folders you wanna to backup.
+        /// </summary>
+        public static string HereYouMayAddFilesAndFoldersYouWannaToBackup {
+            get {
+                return ResourceManager.GetString("HereYouMayAddFilesAndFoldersYouWannaToBackup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Here you may add folders and files you want to backup.
+        /// </summary>
+        public static string HereYouMayAddFoldersAndFilesYouWantToBackup {
+            get {
+                return ResourceManager.GetString("HereYouMayAddFoldersAndFilesYouWantToBackup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Host is not be specified..
         /// </summary>
         public static string HostIsNotBeSpecified {
             get {
                 return ResourceManager.GetString("HostIsNotBeSpecified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hour:.
+        /// </summary>
+        public static string Hour {
+            get {
+                return ResourceManager.GetString("Hour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How ?.
+        /// </summary>
+        public static string How {
+            get {
+                return ResourceManager.GetString("How", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Here you can specify the backup model that will be used for compression..
+        /// </summary>
+        public static string HowHint {
+            get {
+                return ResourceManager.GetString("HowHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If you choose something other than &apos;do nothing&apos; 
+        ///program will configure OS to show you report
+        ///on next your logon to the system if any errors 
+        ///or warnings will be registered during the backup.
+        /// </summary>
+        public static string IfYouChooseSomethingOtherThanDoNothingNprogramWillConfigureOsToShowYouReportNonNextYourLogonToTheSystemIfAnyErrorsNorWarningsWillBeRegisteredDuringTheBackup {
+            get {
+                return ResourceManager.GetString("IfYouChooseSomethingOtherThanDoNothingNprogramWillConfigureOsToShowYouReportNonNe" +
+                        "xtYourLogonToTheSystemIfAnyErrorsNorWarningsWillBeRegisteredDuringTheBackup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If your backup is password protected, please type password here:.
+        /// </summary>
+        public static string IfYourBackupIsPasswordProtectedPleaseTypePasswordHere {
+            get {
+                return ResourceManager.GetString("IfYourBackupIsPasswordProtectedPleaseTypePasswordHere", resourceCulture);
             }
         }
         
@@ -375,11 +1045,41 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Incremental Backup.
+        ///   Looks up a localized string similar to Important:
+        ///
+        ///Backup should be password protected. If NOT, program will SKIP its copying to this storage.
+        /// </summary>
+        public static string ImportantNNbackupShouldBePasswordProtectedIfNotProgramWillSkipItsCopyingToThisStorage {
+            get {
+                return ResourceManager.GetString("ImportantNNbackupShouldBePasswordProtectedIfNotProgramWillSkipItsCopyingToThisSto" +
+                        "rage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Incremental backup.
         /// </summary>
         public static string IncrementalBackup {
             get {
                 return ResourceManager.GetString("IncrementalBackup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The most basic form of incremental backup consists of identifying, recording and thus, preserving only those files that have changed since the last backup. Since changes are typically low, incremental backups are much smaller and quicker than full backups. For instance, following a full backup on Friday, a Monday backup will contain only those files that changed since Friday. A Tuesday backup contains only those files that changed since Monday, and so on. A full restoration of data will naturally be slower, [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string IncrementalBackupDescription {
+            get {
+                return ResourceManager.GetString("IncrementalBackupDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Information - BUtil.
+        /// </summary>
+        public static string InformationButil {
+            get {
+                return ResourceManager.GetString("InformationButil", resourceCulture);
             }
         }
         
@@ -402,6 +1102,28 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to In this place you can add locations where you would like your backup to be copied after completion of backup.
+        /// </summary>
+        public static string InThisPlaceYouCanAddLocationsWhereYouWouldLikeYourBackupToBeCopiedAfterCompletionOfBackup {
+            get {
+                return ResourceManager.GetString("InThisPlaceYouCanAddLocationsWhereYouWouldLikeYourBackupToBeCopiedAfterCompletion" +
+                        "OfBackup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid argument(s) passed to the program.
+        ///
+        ///Please refer to manual for the complete list of parameters!.
+        /// </summary>
+        public static string InvalidArgumentSPassedToTheProgramNNpleaseReferToManualForTheCompleteListOfParameters {
+            get {
+                return ResourceManager.GetString("InvalidArgumentSPassedToTheProgramNNpleaseReferToManualForTheCompleteListOfParame" +
+                        "ters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid transform file name string..
         /// </summary>
         public static string InvalidTransformFileNameString {
@@ -420,6 +1142,42 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Items to backup.
+        /// </summary>
+        public static string ItemsToBackup {
+            get {
+                return ResourceManager.GetString("ItemsToBackup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Journal: {0}.
+        /// </summary>
+        public static string Journal0 {
+            get {
+                return ResourceManager.GetString("Journal0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Journal for selected....
+        /// </summary>
+        public static string JournalSelected {
+            get {
+                return ResourceManager.GetString("JournalSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to State.
+        /// </summary>
+        public static string LastBackup {
+            get {
+                return ResourceManager.GetString("LastBackup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to localization options are not setted.
         /// </summary>
         public static string LocalizationOptionsAreNotSetted {
@@ -429,11 +1187,170 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Logging.
+        /// </summary>
+        public static string Logging {
+            get {
+                return ResourceManager.GetString("Logging", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log Off.
+        /// </summary>
+        public static string LogOff {
+            get {
+                return ResourceManager.GetString("LogOff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minute:.
+        /// </summary>
+        public static string Minute {
+            get {
+                return ResourceManager.GetString("Minute", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Miscellaneous options.
+        /// </summary>
+        public static string MiscellaneousOptions {
+            get {
+                return ResourceManager.GetString("MiscellaneousOptions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Modify....
+        /// </summary>
+        public static string Modify {
+            get {
+                return ResourceManager.GetString("Modify", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monday.
+        /// </summary>
+        public static string Monday {
+            get {
+                return ResourceManager.GetString("Monday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mount:.
+        /// </summary>
+        public static string Mount {
+            get {
+                return ResourceManager.GetString("Mount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Move Down.
+        /// </summary>
+        public static string MoveDown {
+            get {
+                return ResourceManager.GetString("MoveDown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Move &quot;{0}&quot;.
         /// </summary>
         public static string MoveFileToDestFolder {
             get {
                 return ResourceManager.GetString("MoveFileToDestFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Move Up.
+        /// </summary>
+        public static string MoveUp {
+            get {
+                return ResourceManager.GetString("MoveUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name is empty..
+        /// </summary>
+        public static string NameIsEmpty {
+            get {
+                return ResourceManager.GetString("NameIsEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Network storages are not allowed to be pointed here!.
+        /// </summary>
+        public static string NetworkStoragesAreNotAllowedToBePointedHere {
+            get {
+                return ResourceManager.GetString("NetworkStoragesAreNotAllowedToBePointedHere", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New {0} version is available.
+        ///
+        ///Changes are:
+        ///{1}
+        ///
+        ///Program will now open browser with the download page.
+        /// </summary>
+        public static string New0VersionIsAvailableNNchangesAreN1NNprogramWillNowOpenBrowserWithTheDownloadPage {
+            get {
+                return ResourceManager.GetString("New0VersionIsAvailableNNchangesAreN1NNprogramWillNowOpenBrowserWithTheDownloadPag" +
+                        "e", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Backup Task Title.
+        /// </summary>
+        public static string NewBackupTaskTitle {
+            get {
+                return ResourceManager.GetString("NewBackupTaskTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Backup Task Wizard.
+        /// </summary>
+        public static string NewBackupTaskWizard {
+            get {
+                return ResourceManager.GetString("NewBackupTaskWizard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Event Task - Configurator.
+        /// </summary>
+        public static string NewEventTaskConfigurator {
+            get {
+                return ResourceManager.GetString("NewEventTaskConfigurator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Next &gt;.
+        /// </summary>
+        public static string Next {
+            get {
+                return ResourceManager.GetString("Next", resourceCulture);
             }
         }
         
@@ -457,6 +1374,42 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        public static string Ok {
+            get {
+                return ResourceManager.GetString("Ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open in Explorer....
+        /// </summary>
+        public static string OpenInExplorer {
+            get {
+                return ResourceManager.GetString("OpenInExplorer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ● Open Logs.
+        /// </summary>
+        public static string OpenLogs {
+            get {
+                return ResourceManager.GetString("OpenLogs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open selected version....
+        /// </summary>
+        public static string OpenSelectedVersion {
+            get {
+                return ResourceManager.GetString("OpenSelectedVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Options.
         /// </summary>
         public static string Options {
@@ -466,11 +1419,29 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Other options.
+        /// </summary>
+        public static string OtherOptions {
+            get {
+                return ResourceManager.GetString("OtherOptions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Packing data in an image.
         /// </summary>
         public static string PackingDataInAnImage {
             get {
                 return ResourceManager.GetString("PackingDataInAnImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password:.
+        /// </summary>
+        public static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
             }
         }
         
@@ -523,11 +1494,237 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Passwords do not match..
+        /// </summary>
+        public static string PasswordsDoNotMatch {
+            get {
+                return ResourceManager.GetString("PasswordsDoNotMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pattern is empty..
+        /// </summary>
+        public static string PatternIsEmpty {
+            get {
+                return ResourceManager.GetString("PatternIsEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please, check items to compress!.
+        /// </summary>
+        public static string PleaseCheckItemsToCompress {
+            get {
+                return ResourceManager.GetString("PleaseCheckItemsToCompress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please, check storages where to copy backup image!.
+        /// </summary>
+        public static string PleaseCheckStoragesWhereToCopyBackupImage {
+            get {
+                return ResourceManager.GetString("PleaseCheckStoragesWhereToCopyBackupImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please wait....
+        /// </summary>
+        public static string PleaseWait {
+            get {
+                return ResourceManager.GetString("PleaseWait", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Port is invalid..
         /// </summary>
         public static string PortIsInvalid {
             get {
                 return ResourceManager.GetString("PortIsInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Processing State.
+        /// </summary>
+        public static string ProcessingState {
+            get {
+                return ResourceManager.GetString("ProcessingState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Program:.
+        /// </summary>
+        public static string Program {
+            get {
+                return ResourceManager.GetString("Program", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Program does not exist..
+        /// </summary>
+        public static string ProgramDoesNotExist {
+            get {
+                return ResourceManager.GetString("ProgramDoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Protection of backup with password. It is required when you want your data to be copied somewhere over the network.
+        /// </summary>
+        public static string ProtectionOfBackupWithPasswordItIsRequiredWhenYouWantYourDataToBeCopiedSomewhereOverTheNetwork {
+            get {
+                return ResourceManager.GetString("ProtectionOfBackupWithPasswordItIsRequiredWhenYouWantYourDataToBeCopiedSomewhereO" +
+                        "verTheNetwork", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Question - BUtil.
+        /// </summary>
+        public static string QuestionButil {
+            get {
+                return ResourceManager.GetString("QuestionButil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reboot.
+        /// </summary>
+        public static string Reboot {
+            get {
+                return ResourceManager.GetString("Reboot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recommended minimum password length is 50 characters and more. 7-zip AES-256 encryption is used with specified password..
+        /// </summary>
+        public static string RecommendedMinimumPasswordLengthIs50CharactersAndMore {
+            get {
+                return ResourceManager.GetString("RecommendedMinimumPasswordLengthIs50CharactersAndMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recover!.
+        /// </summary>
+        public static string Recover {
+            get {
+                return ResourceManager.GetString("Recover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recover selected....
+        /// </summary>
+        public static string RecoverSelected {
+            get {
+                return ResourceManager.GetString("RecoverSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove.
+        /// </summary>
+        public static string Remove {
+            get {
+                return ResourceManager.GetString("Remove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Removes the selected backup task....
+        /// </summary>
+        public static string RemovesTheSelectedBackupTask {
+            get {
+                return ResourceManager.GetString("RemovesTheSelectedBackupTask", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restoration is completed..
+        /// </summary>
+        public static string RestorationIsCompleted {
+            get {
+                return ResourceManager.GetString("RestorationIsCompleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restoration master.
+        /// </summary>
+        public static string RestorationMaster {
+            get {
+                return ResourceManager.GetString("RestorationMaster", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restore Data....
+        /// </summary>
+        public static string RestoreData {
+            get {
+                return ResourceManager.GetString("RestoreData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Run.
+        /// </summary>
+        public static string Run {
+            get {
+                return ResourceManager.GetString("Run", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Runs backup....
+        /// </summary>
+        public static string RunsBackup {
+            get {
+                return ResourceManager.GetString("RunsBackup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Saturday.
+        /// </summary>
+        public static string Saturday {
+            get {
+                return ResourceManager.GetString("Saturday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scheduling.
+        /// </summary>
+        public static string Scheduling {
+            get {
+                return ResourceManager.GetString("Scheduling", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT VERSION.
+        /// </summary>
+        public static string SelectVersion {
+            get {
+                return ResourceManager.GetString("SelectVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set compression degree.
+        /// </summary>
+        public static string SetCompressionDegree {
+            get {
+                return ResourceManager.GetString("SetCompressionDegree", resourceCulture);
             }
         }
         
@@ -541,11 +1738,58 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Share name is not specified..
+        /// </summary>
+        public static string ShareNameIsNotSpecified {
+            get {
+                return ResourceManager.GetString("ShareNameIsNotSpecified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shutdown PC.
+        /// </summary>
+        public static string ShutdownPc {
+            get {
+                return ResourceManager.GetString("ShutdownPc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Source item &quot;{0}&quot; does not exist..
         /// </summary>
         public static string SourceItemDoesNotExist {
             get {
                 return ResourceManager.GetString("SourceItemDoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Source item &quot;{0}&quot; does not exist.
+        ///
+        ///Please correct list of source items..
+        /// </summary>
+        public static string SourceItemFailure {
+            get {
+                return ResourceManager.GetString("SourceItemFailure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specify the folder where to store back-up:.
+        /// </summary>
+        public static string SpecifyTheFolderWhereToStoreBackUp {
+            get {
+                return ResourceManager.GetString("SpecifyTheFolderWhereToStoreBackUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        public static string Start {
+            get {
+                return ResourceManager.GetString("Start", resourceCulture);
             }
         }
         
@@ -559,11 +1803,38 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Storage name:.
+        /// </summary>
+        public static string StorageName {
+            get {
+                return ResourceManager.GetString("StorageName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Storage: {0}.
+        /// </summary>
+        public static string StorageSize {
+            get {
+                return ResourceManager.GetString("StorageSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Successful.
         /// </summary>
         public static string Successful {
             get {
                 return ResourceManager.GetString("Successful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sunday.
+        /// </summary>
+        public static string Sunday {
+            get {
+                return ResourceManager.GetString("Sunday", resourceCulture);
             }
         }
         
@@ -577,11 +1848,47 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Target folder should have UNC name(for example:\\server1\sharedResource1)!.
+        /// </summary>
+        public static string TargetFolderShouldHaveUncNameForExampleServer1Sharedresource1 {
+            get {
+                return ResourceManager.GetString("TargetFolderShouldHaveUncNameForExampleServer1Sharedresource1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Task finished succesfully!.
         /// </summary>
         public static string TaskFinishedSuccesfully {
             get {
                 return ResourceManager.GetString("TaskFinishedSuccesfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tasks.
+        /// </summary>
+        public static string Tasks {
+            get {
+                return ResourceManager.GetString("Tasks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Task to run.
+        /// </summary>
+        public static string TaskToRun {
+            get {
+                return ResourceManager.GetString("TaskToRun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Test.
+        /// </summary>
+        public static string Test {
+            get {
+                return ResourceManager.GetString("Test", resourceCulture);
             }
         }
         
@@ -595,11 +1902,71 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to There are no items to backup!
+        ///
+        ///You can specify the data to backup in Configurator in &apos;What&apos; settings group..
+        /// </summary>
+        public static string ThereAreNoItemsToBackupNNyouCanSpecifyTheDataToBackupInConfiguratorInWhatSettingsGroup {
+            get {
+                return ResourceManager.GetString("ThereAreNoItemsToBackupNNyouCanSpecifyTheDataToBackupInConfiguratorInWhatSettings" +
+                        "Group", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There are no specified places where to store backup!
+        ///
+        ///You can add some storages in Configurator in &apos;Where&apos; settings group..
+        /// </summary>
+        public static string ThereAreNoSpecifiedPlacesWhereToStoreBackupNNyouCanAddSomeStoragesInConfiguratorInWhereSettingsGroup {
+            get {
+                return ResourceManager.GetString("ThereAreNoSpecifiedPlacesWhereToStoreBackupNNyouCanAddSomeStoragesInConfiguratorI" +
+                        "nWhereSettingsGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This master will help you to create a new task.
+        /// </summary>
+        public static string ThisMasterWillHelpYouToCreateANewTask {
+            get {
+                return ResourceManager.GetString("ThisMasterWillHelpYouToCreateANewTask", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This name is already taken. Try another one..
+        /// </summary>
+        public static string ThisNameIsAlreadyTakenTryAnotherOne {
+            get {
+                return ResourceManager.GetString("ThisNameIsAlreadyTakenTryAnotherOne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This task is obsolete and not supported anymore.
         /// </summary>
         public static string ThisTaskIsObsoleteAndNotSupportedAnymore {
             get {
                 return ResourceManager.GetString("ThisTaskIsObsoleteAndNotSupportedAnymore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thursday.
+        /// </summary>
+        public static string Thursday {
+            get {
+                return ResourceManager.GetString("Thursday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string Title {
+            get {
+                return ResourceManager.GetString("Title", resourceCulture);
             }
         }
         
@@ -613,11 +1980,67 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copyright (c) 2007-2008 Kuchuk Siarhei Alexandrovich, Cuchuk.Sergey@gmail.com.
+        /// </summary>
+        public static string TranslationAuthor {
+            get {
+                return ResourceManager.GetString("TranslationAuthor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tuesday.
+        /// </summary>
+        public static string Tuesday {
+            get {
+                return ResourceManager.GetString("Tuesday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unknown.
         /// </summary>
         public static string Unknown {
             get {
                 return ResourceManager.GetString("Unknown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unmount:.
+        /// </summary>
+        public static string Unmount {
+            get {
+                return ResourceManager.GetString("Unmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Limits amount of data being sent during one backup session to storage. 0 - no limit.
+        ///When backup exceeds this quota, some files will be skipped and will be backuped next time.
+        ///Usage scenario: You mounted some cloud storage as disk and perform backup on it. There&apos;s a problem: ISP drops upload speed after several gigabytes. This setting allows you to handle it..
+        /// </summary>
+        public static string UploadLimitDescription {
+            get {
+                return ResourceManager.GetString("UploadLimitDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload limit, GB:.
+        /// </summary>
+        public static string UploadLimitGB {
+            get {
+                return ResourceManager.GetString("UploadLimitGB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Url:.
+        /// </summary>
+        public static string Url {
+            get {
+                return ResourceManager.GetString("Url", resourceCulture);
             }
         }
         
@@ -631,6 +2054,24 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to User:.
+        /// </summary>
+        public static string User {
+            get {
+                return ResourceManager.GetString("User", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use right-click mouse on selected item to restore it.
+        /// </summary>
+        public static string UseRightClickMouseOnSelectedItemToRestoreIt {
+            get {
+                return ResourceManager.GetString("UseRightClickMouseOnSelectedItemToRestoreIt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User is not specified..
         /// </summary>
         public static string UserIsNotSpecified {
@@ -640,11 +2081,134 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to utility for creating backups.
+        ///
+        ///Web-sites: https://github.com/drweb86/butil
+        ///
+        ///Localization created by:
+        ///.
+        /// </summary>
+        public static string UtilityForCreatingBackupsNNwebSitesHttpsGithubComDrweb86ButilNNlocalizationCreatedByN {
+            get {
+                return ResourceManager.GetString("UtilityForCreatingBackupsNNwebSitesHttpsGithubComDrweb86ButilNNlocalizationCreate" +
+                        "dByN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VERSIONS.
+        /// </summary>
+        public static string VERSIONS {
+            get {
+                return ResourceManager.GetString("VERSIONS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Visit project homepage.
         /// </summary>
         public static string VisitProjectHomepage {
             get {
                 return ResourceManager.GetString("VisitProjectHomepage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Was asked to update options.
+        /// </summary>
+        public static string WasAskedToUpdateOptions {
+            get {
+                return ResourceManager.GetString("WasAskedToUpdateOptions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wednesday.
+        /// </summary>
+        public static string Wednesday {
+            get {
+                return ResourceManager.GetString("Wednesday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to week.
+        /// </summary>
+        public static string Week {
+            get {
+                return ResourceManager.GetString("Week", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wellcome to Backup Task Creation Wizard!.
+        /// </summary>
+        public static string WellcomeToBackupTaskCreationWizard {
+            get {
+                return ResourceManager.GetString("WellcomeToBackupTaskCreationWizard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wellcome to Backup Wizard!.
+        /// </summary>
+        public static string WellcomeToBackupWizard {
+            get {
+                return ResourceManager.GetString("WellcomeToBackupWizard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What?.
+        /// </summary>
+        public static string What {
+            get {
+                return ResourceManager.GetString("What", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When?.
+        /// </summary>
+        public static string When {
+            get {
+                return ResourceManager.GetString("When", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Where?.
+        /// </summary>
+        public static string Where {
+            get {
+                return ResourceManager.GetString("Where", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Working directory:.
+        /// </summary>
+        public static string WorkingDirectory {
+            get {
+                return ResourceManager.GetString("WorkingDirectory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Working directory does not exist..
+        /// </summary>
+        public static string WorkingDirectoryDoesNotExist {
+            get {
+                return ResourceManager.GetString("WorkingDirectoryDoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Would you lile to remove the backup task &apos;{0}&apos; ?.
+        /// </summary>
+        public static string WouldYouLileToRemoveTheBackupTask0 {
+            get {
+                return ResourceManager.GetString("WouldYouLileToRemoveTheBackupTask0", resourceCulture);
             }
         }
         
@@ -690,6 +2254,15 @@ namespace BUtil.Core.Localization {
         public static string WriteStateToStorage {
             get {
                 return ResourceManager.GetString("WriteStateToStorage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can set days and times when you want to start this backup job.
+        /// </summary>
+        public static string YouCanSetDaysAndTimesWhenYouWantToStartThisBackupJob {
+            get {
+                return ResourceManager.GetString("YouCanSetDaysAndTimesWhenYouWantToStartThisBackupJob", resourceCulture);
             }
         }
     }

@@ -1,6 +1,6 @@
 using System;
 using System.Windows.Forms;
-using BUtil.Configurator.Localization;
+using BUtil.Core.Localization;
 
 namespace BUtil.Configurator
 {
@@ -16,9 +16,9 @@ namespace BUtil.Configurator
 			acceptButton.Text = Resources.Ok;
 			cancelButton.Text = Resources.Cancel;
 
-			_uriLabel.Text = BUtil.Configurator.Localization.Resources.Url;
-			_userLabel.Text = BUtil.Configurator.Localization.Resources.User;
-            _passwordLabel.Text = BUtil.Configurator.Localization.Resources.Password;
+			_uriLabel.Text = BUtil.Core.Localization.Resources.Url;
+			_userLabel.Text = BUtil.Core.Localization.Resources.User;
+            _passwordLabel.Text = BUtil.Core.Localization.Resources.Password;
 		}
 
         private void OnAccept(object sender, EventArgs e)

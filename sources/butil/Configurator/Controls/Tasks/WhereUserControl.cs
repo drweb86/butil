@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 using BUtil.Core.Storages;
-using BUtil.Configurator.Localization;
+using BUtil.Core.Localization;
 using BUtil.RestorationMaster;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
@@ -17,17 +17,17 @@ namespace BUtil.Configurator.Configurator.Controls
         {
             InitializeComponent();
 
-            _limitUploadLabelV2.Text = _limitUploadLabel.Text = BUtil.Configurator.Localization.Resources.UploadLimitGB;
-            _userLabel.Text = BUtil.Configurator.Localization.Resources.User;
-            _passwordLabel.Text = BUtil.Configurator.Localization.Resources.Password;
-            _shareLabel.Text = BUtil.Configurator.Localization.Resources.Url;
+            _limitUploadLabelV2.Text = _limitUploadLabel.Text = BUtil.Core.Localization.Resources.UploadLimitGB;
+            _userLabel.Text = BUtil.Core.Localization.Resources.User;
+            _passwordLabel.Text = BUtil.Core.Localization.Resources.Password;
+            _shareLabel.Text = BUtil.Core.Localization.Resources.Url;
 
 
             whereToStoreBackupLabel.Text = Resources.SpecifyTheFolderWhereToStoreBackUp;
-            _scriptsLabel.Text = BUtil.Configurator.Localization.Resources.HelpMountUnmountScript;
-            _mountScriptLabel.Text = BUtil.Configurator.Localization.Resources.Mount;
-            _unmountScriptLabel.Text = BUtil.Configurator.Localization.Resources.Unmount;
-            _mountButton.Text = _unmountButton.Text = BUtil.Configurator.Localization.Resources.Run;
+            _scriptsLabel.Text = BUtil.Core.Localization.Resources.HelpMountUnmountScript;
+            _mountScriptLabel.Text = BUtil.Core.Localization.Resources.Mount;
+            _unmountScriptLabel.Text = BUtil.Core.Localization.Resources.Unmount;
+            _mountButton.Text = _unmountButton.Text = BUtil.Core.Localization.Resources.Run;
         }
 
         #region Overrides
@@ -113,7 +113,7 @@ namespace BUtil.Configurator.Configurator.Controls
 
                 if (string.IsNullOrWhiteSpace(sambaStorageSettings.Url))
                 {
-                    Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.ShareNameIsNotSpecified);
+                    Messages.ShowErrorBox(BUtil.Core.Localization.Resources.ShareNameIsNotSpecified);
                     return false;
                 }
             }
@@ -123,7 +123,7 @@ namespace BUtil.Configurator.Configurator.Controls
 
                 if (string.IsNullOrWhiteSpace(folderStorageSettings.DestinationFolder))
                 {
-                    Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.DestinationFolderIsNotSpecified);
+                    Messages.ShowErrorBox(BUtil.Core.Localization.Resources.DestinationFolderIsNotSpecified);
                     return false;
                 }
 

@@ -1,3 +1,8 @@
+# 2023.09.16
+
+## Removed Features
+- Dropped about dialog, since nobody uses it nowadays
+
 # 2023.09.15
 
 ## New Features

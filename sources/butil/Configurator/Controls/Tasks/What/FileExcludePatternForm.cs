@@ -1,6 +1,7 @@
 ﻿using BUtil.Core.Misc;
 using System;
 using System.Windows.Forms;
+using BUtil.Core.Localization;
 
 namespace BUtil.Configurator.Configurator.Controls.Tasks.What
 {
@@ -17,12 +18,12 @@ namespace BUtil.Configurator.Configurator.Controls.Tasks.What
             InitializeComponent();
 
             Pattern = pattern;
-            this.Text = pattern == null ? BUtil.Configurator.Localization.Resources.AddFileExcludePattern : Localization.Resources.EditFileExcludePattern;
-            _patternLabel.Text = BUtil.Configurator.Localization.Resources.FileExclusionPattern;
-            _descriptionLabel.Text = BUtil.Configurator.Localization.Resources.HereYouCanSpecifyFileGlobbingExclusionPatternsItCanBeAFileNameOrFolderNameOrWildcardExamplesDTempDTempFileTxtDTempTxtOrBinSeeDetailedDescriptionInTheFollowingLink;
-            _formatLinkLabel.Text = BUtil.Configurator.Localization.Resources.FileGlobbingInNETPatterns;
-            _okButton.Text = Localization.Resources.Ok;
-            _cancelButton.Text = Localization.Resources.Cancel;
+            this.Text = pattern == null ? BUtil.Core.Localization.Resources.AddFileExcludePattern : Resources.EditFileExcludePattern;
+            _patternLabel.Text = BUtil.Core.Localization.Resources.FileExclusionPattern;
+            _descriptionLabel.Text = BUtil.Core.Localization.Resources.HereYouCanSpecifyFileGlobbingExclusionPatternsItCanBeAFileNameOrFolderNameOrWildcardExamplesDTempDTempFileTxtDTempTxtOrBinSeeDetailedDescriptionInTheFollowingLink;
+            _formatLinkLabel.Text = BUtil.Core.Localization.Resources.FileGlobbingInNETPatterns;
+            _okButton.Text = Resources.Ok;
+            _cancelButton.Text = Resources.Cancel;
         
         }
 
@@ -41,7 +42,7 @@ namespace BUtil.Configurator.Configurator.Controls.Tasks.What
         {
             if (string.IsNullOrWhiteSpace(_patternTextBox.Text))
             {
-                Messages.ShowErrorBox(BUtil.Configurator.Localization.Resources.PatternIsEmpty);
+                Messages.ShowErrorBox(BUtil.Core.Localization.Resources.PatternIsEmpty);
                 return;
             }
 

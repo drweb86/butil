@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using BUtil.Configurator.Configurator.Controls;
 using BUtil.Configurator.Configurator.Controls.Tasks;
 using BUtil.Configurator.Controls;
-using BUtil.Configurator.Localization;
+using BUtil.Core.Localization;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Options;
 using BUtil.Core.PL;
