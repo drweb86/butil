@@ -1,11 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-
 using BUtil.Core.Options;
 using BUtil.Configurator.Configurator.Forms;
 using BUtil.Core.Localization;
-using BUtil.Configurator.AddBackupTaskWizard.View;
 using System.Linq;
 using BUtil.Core.Logs;
 using System.Diagnostics;

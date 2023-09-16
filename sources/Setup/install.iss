@@ -12,7 +12,7 @@ DefaultDirName={autopf}\BUtil
 DefaultGroupName=BUtil
 AllowNoIcons=yes
 OutputDir=..\..\Output
-OutputBaseFilename=BUtil_v{#ApplicationVersion}_(.NET_Desktop_Runtime_v7)_Setup
+OutputBaseFilename=BUtil_v{#ApplicationVersion}
 Compression=lzma2/ultra64
 SolidCompression=yes
 PrivilegesRequired=none
@@ -36,11 +36,11 @@ en.BeveledLabel=English
 ru.BeveledLabel=Русский
 
 [CustomMessages]
-en.Configurator=Configurator
-ru.Configurator=Настройка
+en.Tasks=Tasks
+ru.Tasks=Задания
 
-en.LaunchTasks=Launch Tasks
-ru.LaunchTasks=Запуск задач
+en.LaunchTask=Launch task
+ru.LaunchTask=Запуск задачи
 
 en.Restoration=Restoration
 ru.Restoration=Восстановление
@@ -163,7 +163,7 @@ end;
 Source: "..\..\Output\BUtil\*.*"; DestDir: "{app}"; Flags: recursesubdirs
 
 [Icons]
-Name: "{group}\BUtil {cm:Configurator}"; Filename: "{app}\bin\butil.exe"
+Name: "{group}\BUtil {cm:Tasks}"; Filename: "{app}\bin\butil.exe"
 Name: "{group}\BUtil CLI"; Filename: "{app}\bin\butilc.exe"
 Name: "{group}\BUtil {cm:LaunchTasks}"; Filename: "{app}\bin\butil.exe"; Parameters: "JustBackupMaster"; IconFilename: "{app}\data\BackupUi.ico"
 Name: "{group}\BUtil {cm:Restoration}"; Filename: "{app}\bin\butil.exe"; Parameters: "JustRestorationMaster"; IconFilename: "{app}\data\RestorationMaster.ico"

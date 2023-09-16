@@ -1,3 +1,8 @@
+# 2023.09.17
+
+## Changes
+~ Renames
+
 # 2023.09.16
 
 ## Bug fixes
@@ -7,7 +12,7 @@
 - Dropped about dialog, since nobody uses it nowadays
 - Dropped wizard dialog, since amount of options reduced to 4.
 
-# 2023.09.15
+# 2023.09.15 (Preview)
 
 ## New Features
 - Add support of format storage format V1 for backward compatibility.
