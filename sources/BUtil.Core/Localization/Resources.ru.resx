@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="IsABackupToolForRunningOnComputerForMoreInformationSeeManual" xml:space="preserve">
-    <value> - утилита резервного копирования. Для получения дополнительной информации посмотрите руководство пользователя</value>
-  </data>
   <data name="PasswordGenerator" xml:space="preserve">
     <value>Генератор паролей</value>
   </data>
@@ -137,10 +134,6 @@
   </data>
   <data name="PasswordLength" xml:space="preserve">
     <value>Длина пароля:</value>
-  </data>
-  <data name="NotePasswordLengthShouldBeMoreThan20CharactersAndLessThan257CharactersRN" xml:space="preserve">
-    <value>Обратите внимание: длина пароля должна быть от 20 до 255 символов
-</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Настройки</value>
@@ -162,32 +155,8 @@
   <data name="EnterPassword" xml:space="preserve">
     <value>Введите пароль:</value>
   </data>
-  <data name="LocalizationOptionsAreNotSetted" xml:space="preserve">
-    <value>языковые опции не установлены</value>
-  </data>
-  <data name="SevenZMessage" xml:space="preserve">
-    <value>Сообщение архиватора 7-zip:</value>
-  </data>
-  <data name="Normal" xml:space="preserve">
-    <value>Нормальный</value>
-  </data>
-  <data name="Support" xml:space="preserve">
-    <value>Поддержка</value>
-  </data>
-  <data name="VisitProjectHomepage" xml:space="preserve">
-    <value>Посетить домашнюю страничку проекта</value>
-  </data>
   <data name="Use" xml:space="preserve">
     <value>Использовать</value>
-  </data>
-  <data name="CopyingFile0FromTempFolder1ToDestination2At3" xml:space="preserve">
-    <value>Копирование файла '{0}' из временного каталога '{1}' в папку назначения '{2}' в хранилище '{3}'</value>
-  </data>
-  <data name="CouldNotStartPackerDueTo0AbortingBackup" xml:space="preserve">
-    <value>Не получается запустить процесс архивирования из-за {0}. Отмена резервного копирования...</value>
-  </data>
-  <data name="CopyingOfBackupTo0NetworkStorageSkippedBecauseItsSize1ExceededSpecifiedLimit2" xml:space="preserve">
-    <value>Копирование резервной копии в сетевое хранилище '{0}' пропущено, поскольку ее размер {1} превысил установленный лимит в {2} байт</value>
   </data>
   <data name="BackupReport" xml:space="preserve">
     <value>Отчет о резервном копировании</value>
@@ -203,18 +172,6 @@
 разработчикам
 
 Приложение сейчас завершит свою работу</value>
-  </data>
-  <data name="BeforeBackupTask" xml:space="preserve">
-    <value>Задание ДО резервного копирования:</value>
-  </data>
-  <data name="CouldNotKillProcess01" xml:space="preserve">
-    <value>Не получается уничтожить процесс '{0}': {1}</value>
-  </data>
-  <data name="CouldNotStartProcess01" xml:space="preserve">
-    <value>Не получается запустить процесс '{0}': {1}</value>
-  </data>
-  <data name="AfterBackupTask" xml:space="preserve">
-    <value>Задание после резервного копирования: </value>
   </data>
   <data name="PackingDataInAnImage" xml:space="preserve">
     <value>Упаковка данных в образ</value>
@@ -255,9 +212,6 @@
   <data name="IntegrityVerificationScriptPs1" xml:space="preserve">
     <value>Скрипт проверки целостности.ps1</value>
   </data>
-  <data name="IntegrityVerificationScriptSh" xml:space="preserve">
-    <value>Скрипт проверки целостности.sh</value>
-  </data>
   <data name="FolderStorageFailure" xml:space="preserve">
     <value>В хранилище каталог "{0}" не был найден.
 
@@ -277,9 +231,6 @@
   </data>
   <data name="BackupWasPartialDueToStorageQuota" xml:space="preserve">
     <value>Бэкап был частичный. Так как у хранилища была указана квота, часть файлов была пропущена. Осталось {0} файлов с размером {1} ГБ.</value>
-  </data>
-  <data name="MoveFileToDestFolder" xml:space="preserve">
-    <value>Перемещение "{0}"</value>
   </data>
   <data name="ImportAllFiles" xml:space="preserve">
     <value>Импорт всех файлов</value>
@@ -359,12 +310,6 @@
   <data name="Encryption" xml:space="preserve">
     <value>Шифрование</value>
   </data>
-  <data name="Browse" xml:space="preserve">
-    <value>Искать...</value>
-  </data>
-  <data name="OtherOptions" xml:space="preserve">
-    <value>Прочие настройки</value>
-  </data>
   <data name="Logging" xml:space="preserve">
     <value>Логи</value>
   </data>
@@ -401,23 +346,6 @@
   <data name="Hour" xml:space="preserve">
     <value>Часы:</value>
   </data>
-  <data name="Week" xml:space="preserve">
-    <value>неделю</value>
-  </data>
-  <data name="Day" xml:space="preserve">
-    <value>день</value>
-  </data>
-  <data name="BackupDataEvery" xml:space="preserve">
-    <value>Делать резерные копии каждый...</value>
-  </data>
-  <data name="UtilityForCreatingBackupsNNwebSitesHttpsGithubComDrweb86ButilNNlocalizationCreatedByN" xml:space="preserve">
-    <value>утилита резервного копирования
-
-Веб-сайты: https://github.com/drweb86/butil
-
-Перевод на текущий язык сделан:
-</value>
-  </data>
   <data name="AddsTheNewBackupTask" xml:space="preserve">
     <value>Добавляет новое задание РК...</value>
   </data>
@@ -442,32 +370,11 @@
   <data name="BackupProcessCompletedSuccesfully" xml:space="preserve">
     <value>Успешно завершено</value>
   </data>
-  <data name="AreYouSure" xml:space="preserve">
-    <value>Вы уверены?</value>
-  </data>
   <data name="Elapsed" xml:space="preserve">
     <value>Прошло:</value>
   </data>
   <data name="BackupIsInAProgress" xml:space="preserve">
     <value>Идёт резервное копирование...</value>
-  </data>
-  <data name="Exiting" xml:space="preserve">
-    <value>Выход...</value>
-  </data>
-  <data name="BugReport" xml:space="preserve">
-    <value>ОШИБКА</value>
-  </data>
-  <data name="Error" xml:space="preserve">
-    <value>Ошибка</value>
-  </data>
-  <data name="WasAskedToUpdateOptions" xml:space="preserve">
-    <value>Пришла команда обновить настройки</value>
-  </data>
-  <data name="CouldNotContinueWorkAfterGettingOptionsBecause0" xml:space="preserve">
-    <value>Не могу продолжать работать с новыми настройками, так как:</value>
-  </data>
-  <data name="CannotExecuteRequiredManipulationsWithServerN" xml:space="preserve">
-    <value>Не могу выполнить требуемые манипуляции с службой</value>
   </data>
   <data name="Ok" xml:space="preserve">
     <value>OK</value>
@@ -481,9 +388,6 @@
   <data name="Add" xml:space="preserve">
     <value>Добавить</value>
   </data>
-  <data name="StorageName" xml:space="preserve">
-    <value>Заголовок:</value>
-  </data>
   <data name="DestinationFolder" xml:space="preserve">
     <value>Папка назначения:</value>
   </data>
@@ -492,9 +396,6 @@
   </data>
   <data name="Password" xml:space="preserve">
     <value>Пароль:</value>
-  </data>
-  <data name="Test" xml:space="preserve">
-    <value>Тест</value>
   </data>
   <data name="HardDriveStorage" xml:space="preserve">
     <value>Хранилище на жестком диске...</value>
@@ -511,17 +412,11 @@
   <data name="DoNothing" xml:space="preserve">
     <value>Ничего не делать</value>
   </data>
-  <data name="SetCompressionDegree" xml:space="preserve">
-    <value>Установить степень сжатия</value>
-  </data>
   <data name="ItemsToBackup" xml:space="preserve">
     <value>Источники данных для резервного копирования</value>
   </data>
   <data name="Recover" xml:space="preserve">
     <value>Восстановить!</value>
-  </data>
-  <data name="UseRightClickMouseOnSelectedItemToRestoreIt" xml:space="preserve">
-    <value>Используйте правый щелчок мышкой по выбранному объекту, чтобы восстановить его</value>
   </data>
   <data name="IfYourBackupIsPasswordProtectedPleaseTypePasswordHere" xml:space="preserve">
     <value>Если ваша резервная копия защищена паролем, укажите его здесь:</value>
@@ -535,22 +430,8 @@
   <data name="NetworkStoragesAreNotAllowedToBePointedHere" xml:space="preserve">
     <value>Сетевые ресурсы НЕ МОГУТ указываться здесь!</value>
   </data>
-  <data name="TargetFolderShouldHaveUncNameForExampleServer1Sharedresource1" xml:space="preserve">
-    <value>Папка назначения должна иметь UNC имя(к примеру \\сервер1\расшаренныйРесурс1)!</value>
-  </data>
   <data name="RestoreData" xml:space="preserve">
     <value>Восстановить данные...</value>
-  </data>
-  <data name="Scheduling" xml:space="preserve">
-    <value>Планировщик</value>
-  </data>
-  <data name="ImportantNNbackupShouldBePasswordProtectedIfNotProgramWillSkipItsCopyingToThisStorage" xml:space="preserve">
-    <value>Внимание:
-
-Резервная копия должна быть защищена паролем. Если НЕ БУДЕТ - то программа ПРОПУСТИТ копирование данных в такое хранилище</value>
-  </data>
-  <data name="Folder" xml:space="preserve">
-    <value>Папка</value>
   </data>
   <data name="IfYouChooseSomethingOtherThanDoNothingNprogramWillConfigureOsToShowYouReportNonNextYourLogonToTheSystemIfAnyErrorsNorWarningsWillBeRegisteredDuringTheBackup" xml:space="preserve">
     <value>Если вы выберите что-либо кроме "ничего не делала", программа 
@@ -558,21 +439,10 @@
 при следующим вашем входе в систему если 
 будут зарегистрированы ошибки или предупреждения</value>
   </data>
-  <data name="PleaseWait" xml:space="preserve">
-    <value>Подождите, пожалуйста...</value>
-  </data>
-  <data name="Backup" xml:space="preserve">
-    <value>Резервное копирование</value>
-  </data>
   <data name="ThereAreNoItemsToBackupNNyouCanSpecifyTheDataToBackupInConfiguratorInWhatSettingsGroup" xml:space="preserve">
     <value>Не указаны объекты для резервного копирования!
 
 Чтобы указать их, запустите Конфигуратор и добавьте файлы и папки в вкладке "Что?"</value>
-  </data>
-  <data name="ThereAreNoSpecifiedPlacesWhereToStoreBackupNNyouCanAddSomeStoragesInConfiguratorInWhereSettingsGroup" xml:space="preserve">
-    <value>Не указано ни одно хранилище данных для резервных копий!
-
-Чтобы указать хранилище, запустите Конфигуратор и во вкладке "Куда?" добавьте минимум одно хранилище.</value>
   </data>
   <data name="HereYouMayAddFoldersAndFilesYouWantToBackup" xml:space="preserve">
     <value>Сюда можете добавлять файлы и папки, предназначенные для резервного копирования</value>
@@ -586,9 +456,6 @@
   <data name="ProtectionOfBackupWithPasswordItIsRequiredWhenYouWantYourDataToBeCopiedSomewhereOverTheNetwork" xml:space="preserve">
     <value>Защита резервной копии паролем. Данные должны быть защищены паролем, если вы хотите, чтобы программа их копировала по сети</value>
   </data>
-  <data name="MiscellaneousOptions" xml:space="preserve">
-    <value>Разные настройки</value>
-  </data>
   <data name="New0VersionIsAvailableNNchangesAreN1NNprogramWillNowOpenBrowserWithTheDownloadPage" xml:space="preserve">
     <value>Доступна новая {0} версия.
 
@@ -599,12 +466,6 @@
   </data>
   <data name="ProcessingState" xml:space="preserve">
     <value>Состояние Обработки</value>
-  </data>
-  <data name="PleaseCheckItemsToCompress" xml:space="preserve">
-    <value>Выберите по меньшей мере один файл или папку для сжатия!</value>
-  </data>
-  <data name="PleaseCheckStoragesWhereToCopyBackupImage" xml:space="preserve">
-    <value>Выберите по меньшей мере одно хранилище, куда будет помещен образ РК!</value>
   </data>
   <data name="Reboot" xml:space="preserve">
     <value>Перезагрузка</value>
@@ -621,39 +482,6 @@
 
 Обратитесь к руководству пользователя, если хотите посмотреть весь список корректных аргументов!</value>
   </data>
-  <data name="NewEventTaskConfigurator" xml:space="preserve">
-    <value>Новое задание - Конфигуратор</value>
-  </data>
-  <data name="EditingEventTaskConfigurator" xml:space="preserve">
-    <value>Изменение задания - Конфигуратор</value>
-  </data>
-  <data name="TaskToRun" xml:space="preserve">
-    <value>Задание для выполнения</value>
-  </data>
-  <data name="Program" xml:space="preserve">
-    <value>Программа:</value>
-  </data>
-  <data name="CommandLineArguments" xml:space="preserve">
-    <value>Аргументы коммандной строки:</value>
-  </data>
-  <data name="ChainOfProgramsToExecuteBeforeBackup" xml:space="preserve">
-    <value>Выполнить ДО резервного копирования</value>
-  </data>
-  <data name="ChainOfProgramsToExecuteAfterBackup" xml:space="preserve">
-    <value>Выполнить ПОСЛЕ резервного копирования</value>
-  </data>
-  <data name="Edit" xml:space="preserve">
-    <value>Изменить...</value>
-  </data>
-  <data name="MoveUp" xml:space="preserve">
-    <value>Переместить выше</value>
-  </data>
-  <data name="MoveDown" xml:space="preserve">
-    <value>Переместить ниже</value>
-  </data>
-  <data name="Actions" xml:space="preserve">
-    <value>Действия</value>
-  </data>
   <data name="Help" xml:space="preserve">
     <value>Помощь</value>
   </data>
@@ -662,9 +490,6 @@
   </data>
   <data name="WellcomeToBackupTaskCreationWizard" xml:space="preserve">
     <value>Добро пожаловать в Мастер добавления задания на РК!</value>
-  </data>
-  <data name="HereYouCanSpecifyOtherSettings" xml:space="preserve">
-    <value>Здесь можно указать другие настройки</value>
   </data>
   <data name="RemovesTheSelectedBackupTask" xml:space="preserve">
     <value>Удаляет выбранное задание РК...</value>
@@ -684,23 +509,8 @@
   <data name="ChooseTheTaskYouWantToRun" xml:space="preserve">
     <value>Выберите задание РК для запуска:</value>
   </data>
-  <data name="OpenLogs" xml:space="preserve">
-    <value>● Посмотреть логи</value>
-  </data>
-  <data name="TranslationAuthor" xml:space="preserve">
-    <value>Copyright (c) 2010 Siarhei, Cuchuk.Sergey@gmail.com</value>
-  </data>
   <data name="Name" xml:space="preserve">
     <value>Название</value>
-  </data>
-  <data name="ChooseBackupModel" xml:space="preserve">
-    <value>Укажите модель резервного копирования</value>
-  </data>
-  <data name="How" xml:space="preserve">
-    <value>Как ?</value>
-  </data>
-  <data name="HowHint" xml:space="preserve">
-    <value>Здесь вы можете указать модель РК и сжатие.</value>
   </data>
   <data name="NameIsEmpty" xml:space="preserve">
     <value>Имя не задано.</value>
@@ -708,26 +518,11 @@
   <data name="GeneratePassword" xml:space="preserve">
     <value>Сгенерировать пароль...</value>
   </data>
-  <data name="WorkingDirectory" xml:space="preserve">
-    <value>Рабочий каталог:</value>
-  </data>
   <data name="IncrementalBackupDescription" xml:space="preserve">
     <value>Наиболее простая форма инкрементного бэкапа состоит из идентификации, записи и хранения только тех файлов, что изменились с момента последнего РК. Поскольку такие изменения как правило небольшие, инкрементные бэкапы сильно меньше и быстрее, чем полный бэкап. Например, сделав полный бэкап в пятницу, в понедельник РК будет содержать только те файлы, что изменились с пятницы. А бэкап во вторник- только те файлы, что изменились с понедельника, и т.д. Если хотя бы одна из копий упадет, включая первую (полную), восстановление будет неполным.</value>
   </data>
   <data name="BackupFailedPleaseReviewOpenedLog" xml:space="preserve">
     <value>Ошибка (Посмотрите лог)</value>
-  </data>
-  <data name="ThisNameIsAlreadyTakenTryAnotherOne" xml:space="preserve">
-    <value>Это имя уже задано. Введите другое.</value>
-  </data>
-  <data name="ProgramDoesNotExist" xml:space="preserve">
-    <value>Программа не найдена.</value>
-  </data>
-  <data name="WorkingDirectoryDoesNotExist" xml:space="preserve">
-    <value>Рабочий каталог не найден.</value>
-  </data>
-  <data name="DestinationFolderDoesNotExist" xml:space="preserve">
-    <value>Папка назначения не существует.</value>
   </data>
   <data name="InformationButil" xml:space="preserve">
     <value>Информация - BUtil</value>
@@ -806,9 +601,6 @@ bin.
   <data name="UploadLimitGB" xml:space="preserve">
     <value>Лимит выгрузки, ГБ:</value>
   </data>
-  <data name="Enabled" xml:space="preserve">
-    <value>Включено</value>
-  </data>
   <data name="UploadLimitDescription" xml:space="preserve">
     <value>Ограничивает количество отправляемых в хранилище данных во время одной РК. 0 - без ограничений.
 Когда РК превышает эту квоту, некоторые файлы будут пропущены и будут скопированы в следующий раз.
@@ -870,9 +662,6 @@ butilc.exe Help
   <data name="ErrorInvalidCommandParametersSpecified" xml:space="preserve">
     <value>Ошибка: Указаны неверные аргументы!!!</value>
   </data>
-  <data name="ToRunProgramWithThisSwitchYouShouldDisableSchedulingInOptionsFirstPleaseReferToManual" xml:space="preserve">
-    <value>Чтобы запустить программу с этой опцией, вы должны отключить планирование в конфигураторе. Для деталей смотрите документацию!</value>
-  </data>
   <data name="CannotOpenFileLogDueToCryticalError0" xml:space="preserve">
     <value>Не могу открыть файл лога из-за критической ошибки {0}</value>
   </data>
@@ -899,12 +688,6 @@ butilc.exe Help
   </data>
   <data name="EditImportMediaTask" xml:space="preserve">
     <value>Редактирование "{0}" задания по импорту мультимедиа</value>
-  </data>
-  <data name="SourceFolderDoesNotExist" xml:space="preserve">
-    <value>Расположение Фото/Видео не указано.</value>
-  </data>
-  <data name="DestinationDirectoryDoesNotExist" xml:space="preserve">
-    <value>Папка назначения не существует.</value>
   </data>
   <data name="TitleIsEmptyOrContainsNotSupportedPathCharacters" xml:space="preserve">
     <value>Заголовок пуст или содержит символы пути.</value>

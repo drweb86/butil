@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="IsABackupToolForRunningOnComputerForMoreInformationSeeManual" xml:space="preserve">
-    <value> is a backup tool for running on computer. For more information see Manual</value>
-  </data>
   <data name="PasswordGenerator" xml:space="preserve">
     <value>Password generator</value>
   </data>
@@ -137,10 +134,6 @@
   </data>
   <data name="PasswordLength" xml:space="preserve">
     <value>Password length:</value>
-  </data>
-  <data name="NotePasswordLengthShouldBeMoreThan20CharactersAndLessThan257CharactersRN" xml:space="preserve">
-    <value>Note: Password length should be more than 20 characters and less than 257 characters
-</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Options</value>
@@ -163,32 +156,8 @@ It was reseted
   <data name="EnterPassword" xml:space="preserve">
     <value>Enter password:</value>
   </data>
-  <data name="LocalizationOptionsAreNotSetted" xml:space="preserve">
-    <value>localization options are not setted</value>
-  </data>
-  <data name="SevenZMessage" xml:space="preserve">
-    <value>7z message:</value>
-  </data>
-  <data name="Normal" xml:space="preserve">
-    <value>Normal</value>
-  </data>
-  <data name="Support" xml:space="preserve">
-    <value>Support</value>
-  </data>
-  <data name="VisitProjectHomepage" xml:space="preserve">
-    <value>Visit project homepage</value>
-  </data>
   <data name="Use" xml:space="preserve">
     <value>Use</value>
-  </data>
-  <data name="CopyingFile0FromTempFolder1ToDestination2At3" xml:space="preserve">
-    <value>Copying file '{0}' from temp folder '{1}' to destination '{2}' at {3}</value>
-  </data>
-  <data name="CouldNotStartPackerDueTo0AbortingBackup" xml:space="preserve">
-    <value>Could not start packer due to {0}. Aborting backup...</value>
-  </data>
-  <data name="CopyingOfBackupTo0NetworkStorageSkippedBecauseItsSize1ExceededSpecifiedLimit2" xml:space="preserve">
-    <value>Copying of backup to '{0}' network storage skipped because its size {1} exceeded specified limit {2}</value>
   </data>
   <data name="TaskFinishedSuccesfully" xml:space="preserve">
     <value>Task finished succesfully!</value>
@@ -206,18 +175,6 @@ Please contact the developers with information saved on your desktop in
 "{0}"
 
 Application will now close</value>
-  </data>
-  <data name="BeforeBackupTask" xml:space="preserve">
-    <value>Before backup task: </value>
-  </data>
-  <data name="CouldNotKillProcess01" xml:space="preserve">
-    <value>Could not kill process '{0}': {1}</value>
-  </data>
-  <data name="CouldNotStartProcess01" xml:space="preserve">
-    <value>Could not start process '{0}': {1}</value>
-  </data>
-  <data name="AfterBackupTask" xml:space="preserve">
-    <value>After backup task: </value>
   </data>
   <data name="PackingDataInAnImage" xml:space="preserve">
     <value>Packing data in an image</value>
@@ -258,9 +215,6 @@ Application will now close</value>
   <data name="IntegrityVerificationScriptPs1" xml:space="preserve">
     <value>Integrity verification script.ps1</value>
   </data>
-  <data name="IntegrityVerificationScriptSh" xml:space="preserve">
-    <value>Integrity verification script.sh</value>
-  </data>
   <data name="FolderStorageFailure" xml:space="preserve">
     <value>Storage directory "{0}" was not found.
 
@@ -280,9 +234,6 @@ Please update storage settings.</value>
   </data>
   <data name="BackupWasPartialDueToStorageQuota" xml:space="preserve">
     <value>Backup was partial. Due to storage quota some files were not copied. Remaining {0} files with of {1} GB.</value>
-  </data>
-  <data name="MoveFileToDestFolder" xml:space="preserve">
-    <value>Move "{0}"</value>
   </data>
   <data name="ImportAllFiles" xml:space="preserve">
     <value>Import all files</value>
@@ -359,12 +310,6 @@ Please update storage settings.</value>
   <data name="Encryption" xml:space="preserve">
     <value>Encryption</value>
   </data>
-  <data name="Browse" xml:space="preserve">
-    <value>Browse...</value>
-  </data>
-  <data name="OtherOptions" xml:space="preserve">
-    <value>Other options</value>
-  </data>
   <data name="Logging" xml:space="preserve">
     <value>Logging</value>
   </data>
@@ -401,23 +346,6 @@ Please update storage settings.</value>
   <data name="Hour" xml:space="preserve">
     <value>Hour:</value>
   </data>
-  <data name="Week" xml:space="preserve">
-    <value>week</value>
-  </data>
-  <data name="Day" xml:space="preserve">
-    <value>day</value>
-  </data>
-  <data name="BackupDataEvery" xml:space="preserve">
-    <value>Backup data every...</value>
-  </data>
-  <data name="UtilityForCreatingBackupsNNwebSitesHttpsGithubComDrweb86ButilNNlocalizationCreatedByN" xml:space="preserve">
-    <value>utility for creating backups.
-
-Web-sites: https://github.com/drweb86/butil
-
-Localization created by:
-</value>
-  </data>
   <data name="AddsTheNewBackupTask" xml:space="preserve">
     <value>Adds the new backup task...</value>
   </data>
@@ -442,33 +370,11 @@ Localization created by:
   <data name="BackupProcessCompletedSuccesfully" xml:space="preserve">
     <value>Succeeded</value>
   </data>
-  <data name="AreYouSure" xml:space="preserve">
-    <value>Are you sure?</value>
-  </data>
   <data name="Elapsed" xml:space="preserve">
     <value>Elapsed:</value>
   </data>
   <data name="BackupIsInAProgress" xml:space="preserve">
     <value>Backup is in a progress... </value>
-  </data>
-  <data name="Exiting" xml:space="preserve">
-    <value>Exiting...</value>
-  </data>
-  <data name="BugReport" xml:space="preserve">
-    <value>BUG REPORT</value>
-  </data>
-  <data name="Error" xml:space="preserve">
-    <value>Error</value>
-  </data>
-  <data name="WasAskedToUpdateOptions" xml:space="preserve">
-    <value>Was asked to update options</value>
-  </data>
-  <data name="CouldNotContinueWorkAfterGettingOptionsBecause0" xml:space="preserve">
-    <value>Could not continue work after getting options because {0}</value>
-  </data>
-  <data name="CannotExecuteRequiredManipulationsWithServerN" xml:space="preserve">
-    <value>Cannot execute required manipulations with server
-</value>
   </data>
   <data name="Ok" xml:space="preserve">
     <value>OK</value>
@@ -482,9 +388,6 @@ Localization created by:
   <data name="Add" xml:space="preserve">
     <value>Add</value>
   </data>
-  <data name="StorageName" xml:space="preserve">
-    <value>Storage name:</value>
-  </data>
   <data name="DestinationFolder" xml:space="preserve">
     <value>Destination folder:</value>
   </data>
@@ -493,9 +396,6 @@ Localization created by:
   </data>
   <data name="Password" xml:space="preserve">
     <value>Password:</value>
-  </data>
-  <data name="Test" xml:space="preserve">
-    <value>Test</value>
   </data>
   <data name="HardDriveStorage" xml:space="preserve">
     <value>Folder storage...</value>
@@ -512,17 +412,11 @@ Localization created by:
   <data name="DoNothing" xml:space="preserve">
     <value>Do nothing</value>
   </data>
-  <data name="SetCompressionDegree" xml:space="preserve">
-    <value>Set compression degree</value>
-  </data>
   <data name="ItemsToBackup" xml:space="preserve">
     <value>Items to backup</value>
   </data>
   <data name="Recover" xml:space="preserve">
     <value>Recover!</value>
-  </data>
-  <data name="UseRightClickMouseOnSelectedItemToRestoreIt" xml:space="preserve">
-    <value>Use right-click mouse on selected item to restore it</value>
   </data>
   <data name="IfYourBackupIsPasswordProtectedPleaseTypePasswordHere" xml:space="preserve">
     <value>If your backup is password protected, please type password here:</value>
@@ -536,22 +430,8 @@ Localization created by:
   <data name="NetworkStoragesAreNotAllowedToBePointedHere" xml:space="preserve">
     <value>Network storages are not allowed to be pointed here!</value>
   </data>
-  <data name="TargetFolderShouldHaveUncNameForExampleServer1Sharedresource1" xml:space="preserve">
-    <value>Target folder should have UNC name(for example:\\server1\sharedResource1)!</value>
-  </data>
   <data name="RestoreData" xml:space="preserve">
     <value>Restore Data...</value>
-  </data>
-  <data name="Scheduling" xml:space="preserve">
-    <value>Scheduling</value>
-  </data>
-  <data name="ImportantNNbackupShouldBePasswordProtectedIfNotProgramWillSkipItsCopyingToThisStorage" xml:space="preserve">
-    <value>Important:
-
-Backup should be password protected. If NOT, program will SKIP its copying to this storage</value>
-  </data>
-  <data name="Folder" xml:space="preserve">
-    <value>Folder</value>
   </data>
   <data name="IfYouChooseSomethingOtherThanDoNothingNprogramWillConfigureOsToShowYouReportNonNextYourLogonToTheSystemIfAnyErrorsNorWarningsWillBeRegisteredDuringTheBackup" xml:space="preserve">
     <value>If you choose something other than 'do nothing' 
@@ -559,21 +439,10 @@ program will configure OS to show you report
 on next your logon to the system if any errors 
 or warnings will be registered during the backup</value>
   </data>
-  <data name="PleaseWait" xml:space="preserve">
-    <value>Please wait...</value>
-  </data>
-  <data name="Backup" xml:space="preserve">
-    <value>Backup</value>
-  </data>
   <data name="ThereAreNoItemsToBackupNNyouCanSpecifyTheDataToBackupInConfiguratorInWhatSettingsGroup" xml:space="preserve">
     <value>There are no items to backup!
 
 You can specify the data to backup in Configurator in 'What' settings group.</value>
-  </data>
-  <data name="ThereAreNoSpecifiedPlacesWhereToStoreBackupNNyouCanAddSomeStoragesInConfiguratorInWhereSettingsGroup" xml:space="preserve">
-    <value>There are no specified places where to store backup!
-
-You can add some storages in Configurator in 'Where' settings group.</value>
   </data>
   <data name="HereYouMayAddFoldersAndFilesYouWantToBackup" xml:space="preserve">
     <value>Here you may add folders and files you want to backup</value>
@@ -587,9 +456,6 @@ You can add some storages in Configurator in 'Where' settings group.</value>
   <data name="ProtectionOfBackupWithPasswordItIsRequiredWhenYouWantYourDataToBeCopiedSomewhereOverTheNetwork" xml:space="preserve">
     <value>Protection of backup with password. It is required when you want your data to be copied somewhere over the network</value>
   </data>
-  <data name="MiscellaneousOptions" xml:space="preserve">
-    <value>Miscellaneous options</value>
-  </data>
   <data name="New0VersionIsAvailableNNchangesAreN1NNprogramWillNowOpenBrowserWithTheDownloadPage" xml:space="preserve">
     <value>New {0} version is available.
 
@@ -600,12 +466,6 @@ Program will now open browser with the download page</value>
   </data>
   <data name="ProcessingState" xml:space="preserve">
     <value>Processing State</value>
-  </data>
-  <data name="PleaseCheckItemsToCompress" xml:space="preserve">
-    <value>Please, check items to compress!</value>
-  </data>
-  <data name="PleaseCheckStoragesWhereToCopyBackupImage" xml:space="preserve">
-    <value>Please, check storages where to copy backup image!</value>
   </data>
   <data name="Reboot" xml:space="preserve">
     <value>Reboot</value>
@@ -622,39 +482,6 @@ Restoration, Backup and Help functions will be unavailable.</value>
 
 Please refer to manual for the complete list of parameters!</value>
   </data>
-  <data name="NewEventTaskConfigurator" xml:space="preserve">
-    <value>New Event Task - Configurator</value>
-  </data>
-  <data name="EditingEventTaskConfigurator" xml:space="preserve">
-    <value>Editing Event Task - Configurator</value>
-  </data>
-  <data name="TaskToRun" xml:space="preserve">
-    <value>Task to run</value>
-  </data>
-  <data name="Program" xml:space="preserve">
-    <value>Program:</value>
-  </data>
-  <data name="CommandLineArguments" xml:space="preserve">
-    <value>Command line arguments:</value>
-  </data>
-  <data name="ChainOfProgramsToExecuteBeforeBackup" xml:space="preserve">
-    <value>Execute BEFORE backup</value>
-  </data>
-  <data name="ChainOfProgramsToExecuteAfterBackup" xml:space="preserve">
-    <value>Execute AFTER backup</value>
-  </data>
-  <data name="Edit" xml:space="preserve">
-    <value>Edit...</value>
-  </data>
-  <data name="MoveUp" xml:space="preserve">
-    <value>Move Up</value>
-  </data>
-  <data name="MoveDown" xml:space="preserve">
-    <value>Move Down</value>
-  </data>
-  <data name="Actions" xml:space="preserve">
-    <value>Actions</value>
-  </data>
   <data name="Help" xml:space="preserve">
     <value>Help</value>
   </data>
@@ -663,9 +490,6 @@ Please refer to manual for the complete list of parameters!</value>
   </data>
   <data name="WellcomeToBackupTaskCreationWizard" xml:space="preserve">
     <value>Wellcome to Backup Task Creation Wizard!</value>
-  </data>
-  <data name="HereYouCanSpecifyOtherSettings" xml:space="preserve">
-    <value>Here you can specify other settings</value>
   </data>
   <data name="RemovesTheSelectedBackupTask" xml:space="preserve">
     <value>Removes the selected backup task...</value>
@@ -685,21 +509,6 @@ Please refer to manual for the complete list of parameters!</value>
   <data name="ChooseTheTaskYouWantToRun" xml:space="preserve">
     <value>Choose the task you want to run:</value>
   </data>
-  <data name="OpenLogs" xml:space="preserve">
-    <value>● Open Logs</value>
-  </data>
-  <data name="TranslationAuthor" xml:space="preserve">
-    <value>Copyright (c) 2007-2008 Kuchuk Siarhei Alexandrovich, Cuchuk.Sergey@gmail.com</value>
-  </data>
-  <data name="ChooseBackupModel" xml:space="preserve">
-    <value>Choose backup model</value>
-  </data>
-  <data name="How" xml:space="preserve">
-    <value>How ?</value>
-  </data>
-  <data name="HowHint" xml:space="preserve">
-    <value>Here you can specify the backup model that will be used for compression.</value>
-  </data>
   <data name="IncrementalBackupDescription" xml:space="preserve">
     <value>The most basic form of incremental backup consists of identifying, recording and thus, preserving only those files that have changed since the last backup. Since changes are typically low, incremental backups are much smaller and quicker than full backups. For instance, following a full backup on Friday, a Monday backup will contain only those files that changed since Friday. A Tuesday backup contains only those files that changed since Monday, and so on. A full restoration of data will naturally be slower, since all increments must be restored. Should any one of the copies created fail, including the first (full), restoration will be incomplete.</value>
   </data>
@@ -712,23 +521,8 @@ Please refer to manual for the complete list of parameters!</value>
   <data name="GeneratePassword" xml:space="preserve">
     <value>Generate password...</value>
   </data>
-  <data name="WorkingDirectory" xml:space="preserve">
-    <value>Working directory:</value>
-  </data>
   <data name="BackupFailedPleaseReviewOpenedLog" xml:space="preserve">
     <value>Failed (see opened log)</value>
-  </data>
-  <data name="ThisNameIsAlreadyTakenTryAnotherOne" xml:space="preserve">
-    <value>This name is already taken. Try another one.</value>
-  </data>
-  <data name="ProgramDoesNotExist" xml:space="preserve">
-    <value>Program does not exist.</value>
-  </data>
-  <data name="WorkingDirectoryDoesNotExist" xml:space="preserve">
-    <value>Working directory does not exist.</value>
-  </data>
-  <data name="DestinationFolderDoesNotExist" xml:space="preserve">
-    <value>Destination folder does not exist.</value>
   </data>
   <data name="InformationButil" xml:space="preserve">
     <value>Information - BUtil</value>
@@ -807,9 +601,6 @@ See detailed description in the following link.</value>
   <data name="UploadLimitGB" xml:space="preserve">
     <value>Upload limit, GB:</value>
   </data>
-  <data name="Enabled" xml:space="preserve">
-    <value>Enabled</value>
-  </data>
   <data name="UploadLimitDescription" xml:space="preserve">
     <value>Limits amount of data being sent during one backup session to storage. 0 - no limit.
 When backup exceeds this quota, some files will be skipped and will be backuped next time.
@@ -871,9 +662,6 @@ butilc.exe Help
   <data name="ErrorInvalidCommandParametersSpecified" xml:space="preserve">
     <value>Error: Invalid command parameters specified!!!</value>
   </data>
-  <data name="ToRunProgramWithThisSwitchYouShouldDisableSchedulingInOptionsFirstPleaseReferToManual" xml:space="preserve">
-    <value>To run program with this switch you should disable scheduling in options first. Please refer to manual!</value>
-  </data>
   <data name="CannotOpenFileLogDueToCryticalError0" xml:space="preserve">
     <value>Cannot open file log due to crytical error {0}</value>
   </data>
@@ -906,12 +694,6 @@ To see all options google "C# DateTime format".</value>
   </data>
   <data name="EditImportMediaTask" xml:space="preserve">
     <value>Edit "{0}" media import task</value>
-  </data>
-  <data name="DestinationDirectoryDoesNotExist" xml:space="preserve">
-    <value>Destination directory does not exist.</value>
-  </data>
-  <data name="SourceFolderDoesNotExist" xml:space="preserve">
-    <value>Photo/Video location was not specified.</value>
   </data>
   <data name="TitleIsEmptyOrContainsNotSupportedPathCharacters" xml:space="preserve">
     <value>Title is empty or contains not supported path characters.</value>

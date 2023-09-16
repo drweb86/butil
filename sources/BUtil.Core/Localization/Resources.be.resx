@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="IsABackupToolForRunningOnComputerForMoreInformationSeeManual" xml:space="preserve">
-    <value> утылита для стварэння резервовых копий. Каб атрымаць больш дакладную iнфармацыю, звярнiцеся да инструкцыи</value>
-  </data>
   <data name="PasswordGenerator" xml:space="preserve">
     <value>Генератар пароляу</value>
   </data>
@@ -137,10 +134,6 @@
   </data>
   <data name="PasswordLength" xml:space="preserve">
     <value>Длiна пороля:</value>
-  </data>
-  <data name="NotePasswordLengthShouldBeMoreThan20CharactersAndLessThan257CharactersRN" xml:space="preserve">
-    <value>Заувага: Длiна пароля павiнна перавышваць 20 знакау i быць меншай за 257 знакi
-</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Настройкi</value>
@@ -162,32 +155,8 @@
   <data name="EnterPassword" xml:space="preserve">
     <value>Увядзице пароль:</value>
   </data>
-  <data name="LocalizationOptionsAreNotSetted" xml:space="preserve">
-    <value>опцыi лакалiзацыi не пазначаны</value>
-  </data>
-  <data name="SevenZMessage" xml:space="preserve">
-    <value>7z вывад:</value>
-  </data>
-  <data name="Normal" xml:space="preserve">
-    <value>Нармальны</value>
-  </data>
-  <data name="Support" xml:space="preserve">
-    <value>Падтрымка</value>
-  </data>
-  <data name="VisitProjectHomepage" xml:space="preserve">
-    <value>Хатняя старонка</value>
-  </data>
   <data name="Use" xml:space="preserve">
     <value>Карыстацца</value>
-  </data>
-  <data name="CopyingFile0FromTempFolder1ToDestination2At3" xml:space="preserve">
-    <value>Капираванне файла "{0}" з часовай папцы "{1}" у месца пазначэння "{2}" на {3}</value>
-  </data>
-  <data name="CouldNotStartPackerDueTo0AbortingBackup" xml:space="preserve">
-    <value>Could not start packer due to {0}. Aborting backup...</value>
-  </data>
-  <data name="CopyingOfBackupTo0NetworkStorageSkippedBecauseItsSize1ExceededSpecifiedLimit2" xml:space="preserve">
-    <value>Copying of backup to '{0}' network storage skipped because its size {1} exceeded specified limit {2}</value>
   </data>
   <data name="BackupReport" xml:space="preserve">
     <value>Backup Report</value>
@@ -202,18 +171,6 @@ Please contact the developers with information saved on your desktop in
 "{0}"
 
 Application will now close</value>
-  </data>
-  <data name="BeforeBackupTask" xml:space="preserve">
-    <value>Before backup task: </value>
-  </data>
-  <data name="CouldNotKillProcess01" xml:space="preserve">
-    <value>Could not kill process '{0}': {1}</value>
-  </data>
-  <data name="CouldNotStartProcess01" xml:space="preserve">
-    <value>Could not start process '{0}': {1}</value>
-  </data>
-  <data name="AfterBackupTask" xml:space="preserve">
-    <value>After backup task: </value>
   </data>
   <data name="PackingDataInAnImage" xml:space="preserve">
     <value>Packing data in an image</value>
@@ -251,12 +208,6 @@ Application will now close</value>
   <data name="Encryption" xml:space="preserve">
     <value>Шыфраванне</value>
   </data>
-  <data name="Browse" xml:space="preserve">
-    <value>Шукаць...</value>
-  </data>
-  <data name="OtherOptions" xml:space="preserve">
-    <value>Iншыя опцыi</value>
-  </data>
   <data name="Logging" xml:space="preserve">
     <value>Логi</value>
   </data>
@@ -293,21 +244,6 @@ Application will now close</value>
   <data name="Hour" xml:space="preserve">
     <value>Гадзiны:</value>
   </data>
-  <data name="Week" xml:space="preserve">
-    <value>тыдзень</value>
-  </data>
-  <data name="Day" xml:space="preserve">
-    <value>дзень</value>
-  </data>
-  <data name="BackupDataEvery" xml:space="preserve">
-    <value>Рабiць капiраванне кожны ...</value>
-  </data>
-  <data name="UtilityForCreatingBackupsNNwebSitesHttpsGithubComDrweb86ButilNNlocalizationCreatedByN" xml:space="preserve">
-    <value>утылiта для стварэння рэзервовых копiй
-
-Лакалiзацыя створана:
-</value>
-  </data>
   <data name="AddsTheNewBackupTask" xml:space="preserve">
     <value>Adds the new backup task...</value>
   </data>
@@ -332,33 +268,11 @@ Application will now close</value>
   <data name="BackupProcessCompletedSuccesfully" xml:space="preserve">
     <value>Succeeded</value>
   </data>
-  <data name="AreYouSure" xml:space="preserve">
-    <value>Are you sure?</value>
-  </data>
   <data name="Elapsed" xml:space="preserve">
     <value>Прайшло часу:</value>
   </data>
   <data name="BackupIsInAProgress" xml:space="preserve">
     <value>Backup is in a progress... </value>
-  </data>
-  <data name="Exiting" xml:space="preserve">
-    <value>Выхад з праграмы...</value>
-  </data>
-  <data name="BugReport" xml:space="preserve">
-    <value>Памылка</value>
-  </data>
-  <data name="Error" xml:space="preserve">
-    <value>Памылка</value>
-  </data>
-  <data name="WasAskedToUpdateOptions" xml:space="preserve">
-    <value>Was asked to update options</value>
-  </data>
-  <data name="CouldNotContinueWorkAfterGettingOptionsBecause0" xml:space="preserve">
-    <value>Could not continue work after getting options because {0}</value>
-  </data>
-  <data name="CannotExecuteRequiredManipulationsWithServerN" xml:space="preserve">
-    <value>Cannot execute required manipulations with server
-</value>
   </data>
   <data name="Ok" xml:space="preserve">
     <value>ОК</value>
@@ -372,9 +286,6 @@ Application will now close</value>
   <data name="Add" xml:space="preserve">
     <value>Дабавiць</value>
   </data>
-  <data name="StorageName" xml:space="preserve">
-    <value>Назва хранiлiшча:</value>
-  </data>
   <data name="DestinationFolder" xml:space="preserve">
     <value>Destination folder</value>
   </data>
@@ -383,9 +294,6 @@ Application will now close</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>Password:</value>
-  </data>
-  <data name="Test" xml:space="preserve">
-    <value>Test</value>
   </data>
   <data name="AfterCompletionOfBackup" xml:space="preserve">
     <value>After completion of backup</value>
@@ -399,17 +307,11 @@ Application will now close</value>
   <data name="DoNothing" xml:space="preserve">
     <value>Нiчога не рабiць</value>
   </data>
-  <data name="SetCompressionDegree" xml:space="preserve">
-    <value>Set compression degree</value>
-  </data>
   <data name="ItemsToBackup" xml:space="preserve">
     <value>Source items to backup</value>
   </data>
   <data name="Recover" xml:space="preserve">
     <value>Recover!</value>
-  </data>
-  <data name="UseRightClickMouseOnSelectedItemToRestoreIt" xml:space="preserve">
-    <value>Use right-click mouse on selected item to restore it</value>
   </data>
   <data name="IfYourBackupIsPasswordProtectedPleaseTypePasswordHere" xml:space="preserve">
     <value>If your backup is password protected, please type password here:</value>
@@ -423,19 +325,8 @@ Application will now close</value>
   <data name="NetworkStoragesAreNotAllowedToBePointedHere" xml:space="preserve">
     <value>Network storages are not allowed to be pointed here!</value>
   </data>
-  <data name="TargetFolderShouldHaveUncNameForExampleServer1Sharedresource1" xml:space="preserve">
-    <value>Target folder should have UNC name(for example:\\server1\sharedResource1)!</value>
-  </data>
   <data name="RestoreData" xml:space="preserve">
     <value>Restore Data...</value>
-  </data>
-  <data name="Scheduling" xml:space="preserve">
-    <value>Scheduling</value>
-  </data>
-  <data name="ImportantNNbackupShouldBePasswordProtectedIfNotProgramWillSkipItsCopyingToThisStorage" xml:space="preserve">
-    <value>Important:
-
-Backup should be password protected. If NOT, program will SKIP its copying to this storage</value>
   </data>
   <data name="IfYouChooseSomethingOtherThanDoNothingNprogramWillConfigureOsToShowYouReportNonNextYourLogonToTheSystemIfAnyErrorsNorWarningsWillBeRegisteredDuringTheBackup" xml:space="preserve">
     <value>If you choose something other than 'do nothing' 
@@ -443,21 +334,10 @@ program will configure OS to show you report
 on next your logon to the system if any errors 
 or warnings will be registered during the backup</value>
   </data>
-  <data name="PleaseWait" xml:space="preserve">
-    <value>Please wait...</value>
-  </data>
-  <data name="Backup" xml:space="preserve">
-    <value>Рэзервовае капираванне</value>
-  </data>
   <data name="ThereAreNoItemsToBackupNNyouCanSpecifyTheDataToBackupInConfiguratorInWhatSettingsGroup" xml:space="preserve">
     <value>There are no items to backup!
 
 You can specify the data to backup in Configurator in 'What' settings group.</value>
-  </data>
-  <data name="ThereAreNoSpecifiedPlacesWhereToStoreBackupNNyouCanAddSomeStoragesInConfiguratorInWhereSettingsGroup" xml:space="preserve">
-    <value>There are no specified places where to store backup!
-
-You can add some storages in Configurator in 'Where' settings group.</value>
   </data>
   <data name="HereYouMayAddFoldersAndFilesYouWantToBackup" xml:space="preserve">
     <value>Here you may add folders and files you want to backup</value>
@@ -471,9 +351,6 @@ You can add some storages in Configurator in 'Where' settings group.</value>
   <data name="ProtectionOfBackupWithPasswordItIsRequiredWhenYouWantYourDataToBeCopiedSomewhereOverTheNetwork" xml:space="preserve">
     <value>Protection of backup with password. It is required when you want your data to be copied somewhere over the network</value>
   </data>
-  <data name="MiscellaneousOptions" xml:space="preserve">
-    <value>Розныя опцыи</value>
-  </data>
   <data name="New0VersionIsAvailableNNchangesAreN1NNprogramWillNowOpenBrowserWithTheDownloadPage" xml:space="preserve">
     <value>Новая {0} версия ужо есць.
 
@@ -484,12 +361,6 @@ You can add some storages in Configurator in 'Where' settings group.</value>
   </data>
   <data name="ProcessingState" xml:space="preserve">
     <value>Processing State</value>
-  </data>
-  <data name="PleaseCheckItemsToCompress" xml:space="preserve">
-    <value>Please, check items to compress!</value>
-  </data>
-  <data name="PleaseCheckStoragesWhereToCopyBackupImage" xml:space="preserve">
-    <value>Please, check storages where to copy backup image!</value>
   </data>
   <data name="Reboot" xml:space="preserve">
     <value>Reboot</value>
@@ -506,39 +377,6 @@ Restoration, Backup and Help functions will be unavailable.</value>
 
 Please refer to manual for the complete list of parameters!</value>
   </data>
-  <data name="NewEventTaskConfigurator" xml:space="preserve">
-    <value>New Event Task - Configurator</value>
-  </data>
-  <data name="EditingEventTaskConfigurator" xml:space="preserve">
-    <value>Editing Event Task - Configurator</value>
-  </data>
-  <data name="TaskToRun" xml:space="preserve">
-    <value>Task to run</value>
-  </data>
-  <data name="Program" xml:space="preserve">
-    <value>Program:</value>
-  </data>
-  <data name="CommandLineArguments" xml:space="preserve">
-    <value>Command line arguments:</value>
-  </data>
-  <data name="ChainOfProgramsToExecuteBeforeBackup" xml:space="preserve">
-    <value>Chain of programs to execute BEFORE backup</value>
-  </data>
-  <data name="ChainOfProgramsToExecuteAfterBackup" xml:space="preserve">
-    <value>Chain of programs to execute AFTER backup</value>
-  </data>
-  <data name="Edit" xml:space="preserve">
-    <value>Edit...</value>
-  </data>
-  <data name="MoveUp" xml:space="preserve">
-    <value>Уверх</value>
-  </data>
-  <data name="MoveDown" xml:space="preserve">
-    <value>Унiз</value>
-  </data>
-  <data name="Actions" xml:space="preserve">
-    <value>Actions</value>
-  </data>
   <data name="Help" xml:space="preserve">
     <value>Дапамога</value>
   </data>
@@ -547,9 +385,6 @@ Please refer to manual for the complete list of parameters!</value>
   </data>
   <data name="WellcomeToBackupTaskCreationWizard" xml:space="preserve">
     <value>Wellcome to Backup Task Creation Wizard!</value>
-  </data>
-  <data name="HereYouCanSpecifyOtherSettings" xml:space="preserve">
-    <value>Here you can specify other settings</value>
   </data>
   <data name="RemovesTheSelectedBackupTask" xml:space="preserve">
     <value>Removes the selected backup task...</value>
@@ -568,12 +403,6 @@ Please refer to manual for the complete list of parameters!</value>
   </data>
   <data name="ChooseTheTaskYouWantToRun" xml:space="preserve">
     <value>Choose the task you want to run:</value>
-  </data>
-  <data name="OpenLogs" xml:space="preserve">
-    <value>● Open Logs</value>
-  </data>
-  <data name="TranslationAuthor" xml:space="preserve">
-    <value>Copyright (c) 2009 Siarhei Kuchuk, Cuchuk.Sergey@gmail.com</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Iмя</value>
@@ -601,20 +430,11 @@ Point to a directory containing this file.</value>
   <data name="CannotOpenBackupFolder" xml:space="preserve">
     <value>Cannot open backup folder.</value>
   </data>
-  <data name="ChooseBackupModel" xml:space="preserve">
-    <value>Choose backup model</value>
-  </data>
   <data name="ClickOnItemYouWantToRestoreAndOpenContextMenuByRightClick" xml:space="preserve">
     <value>Click on item you want to restore and open context menu by right click</value>
   </data>
-  <data name="DestinationFolderDoesNotExist" xml:space="preserve">
-    <value>Destination folder does not exist.</value>
-  </data>
   <data name="EditFileExcludePattern" xml:space="preserve">
     <value>Edit File Exclude Pattern...</value>
-  </data>
-  <data name="Enabled" xml:space="preserve">
-    <value>Enabled</value>
   </data>
   <data name="ExcludesFilesFromBackupByPattern" xml:space="preserve">
     <value>Excludes files from backup by pattern...</value>
@@ -624,9 +444,6 @@ Point to a directory containing this file.</value>
   </data>
   <data name="FileGlobbingInNETPatterns" xml:space="preserve">
     <value>File globbing in .NET: Patterns</value>
-  </data>
-  <data name="Folder" xml:space="preserve">
-    <value>Folder</value>
   </data>
   <data name="FolderStorage" xml:space="preserve">
     <value>Folder Storage...</value>
@@ -647,12 +464,6 @@ d:\temp\**\*.txt or
 bin. 
 See detailed description in the following link.</value>
   </data>
-  <data name="How" xml:space="preserve">
-    <value>How ?</value>
-  </data>
-  <data name="HowHint" xml:space="preserve">
-    <value>Here you can specify the backup model that will be used for compression.</value>
-  </data>
   <data name="IncrementalBackup" xml:space="preserve">
     <value>Incremental backup</value>
   </data>
@@ -662,12 +473,6 @@ See detailed description in the following link.</value>
   <data name="NameIsEmpty" xml:space="preserve">
     <value>Name is empty.</value>
   </data>
-  <data name="WorkingDirectoryDoesNotExist" xml:space="preserve">
-    <value>Working directory does not exist.</value>
-  </data>
-  <data name="WorkingDirectory" xml:space="preserve">
-    <value>Working directory:</value>
-  </data>
   <data name="UploadLimitGB" xml:space="preserve">
     <value>Upload limit, GB:</value>
   </data>
@@ -675,9 +480,6 @@ See detailed description in the following link.</value>
     <value>Limits amount of data being sent during one backup session to storage. 0 - no limit.
 When backup exceeds this quota, some files will be skipped and will be backuped next time.
 Usage scenario: You mounted some cloud storage as disk and perform backup on it. There's a problem: ISP drops upload speed after several gigabytes. This setting allows you to handle it.</value>
-  </data>
-  <data name="ThisNameIsAlreadyTakenTryAnotherOne" xml:space="preserve">
-    <value>This name is already taken. Try another one.</value>
   </data>
   <data name="OpenInExplorer" xml:space="preserve">
     <value>Open in Explorer...</value>
@@ -687,9 +489,6 @@ Usage scenario: You mounted some cloud storage as disk and perform backup on it.
   </data>
   <data name="PatternIsEmpty" xml:space="preserve">
     <value>Pattern is empty.</value>
-  </data>
-  <data name="ProgramDoesNotExist" xml:space="preserve">
-    <value>Program does not exist.</value>
   </data>
   <data name="RecommendedMinimumPasswordLengthIs50CharactersAndMore" xml:space="preserve">
     <value>Recommended minimum password length is 50 characters and more. 7-zip AES-256 encryption is used with specified password.</value>
@@ -734,9 +533,6 @@ backupconsole.exe -Help
   </data>
   <data name="ErrorInvalidCommandParametersSpecified" xml:space="preserve">
     <value>Памылка: некаррэктны параметр пазначаны!!!</value>
-  </data>
-  <data name="ToRunProgramWithThisSwitchYouShouldDisableSchedulingInOptionsFirstPleaseReferToManual" xml:space="preserve">
-    <value>Каб запусциць праграмму з гэтым ключом вы павинны спачатку адключыць пратакалираванне. Чытайце инструкцыю!</value>
   </data>
   <data name="CannotOpenFileLogDueToCryticalError0" xml:space="preserve">
     <value>Не магу адчыниць файл з логам з-за крытычнай памылки {0}</value>
