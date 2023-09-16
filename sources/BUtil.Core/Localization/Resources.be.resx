@@ -405,9 +405,6 @@ Application will now close</value>
   <data name="ItemsToBackup" xml:space="preserve">
     <value>Source items to backup</value>
   </data>
-  <data name="Finish" xml:space="preserve">
-    <value>Finish</value>
-  </data>
   <data name="Recover" xml:space="preserve">
     <value>Recover!</value>
   </data>
@@ -551,32 +548,8 @@ Please refer to manual for the complete list of parameters!</value>
   <data name="WellcomeToBackupTaskCreationWizard" xml:space="preserve">
     <value>Wellcome to Backup Task Creation Wizard!</value>
   </data>
-  <data name="ThisMasterWillHelpYouToCreateANewTask" xml:space="preserve">
-    <value>This master will help you to create a new task</value>
-  </data>
-  <data name="HereYouMayAddFilesAndFoldersYouWannaToBackup" xml:space="preserve">
-    <value>Here you may add files and folders you wanna to backup</value>
-  </data>
-  <data name="HereYouCanSpecifyWhereToSendBackups" xml:space="preserve">
-    <value>Here you can specify where to send backups</value>
-  </data>
-  <data name="YouCanSetDaysAndTimesWhenYouWantToStartThisBackupJob" xml:space="preserve">
-    <value>You can set days and times when you want to start this backup job</value>
-  </data>
-  <data name="HereYouCanProtectTheBackupWithPasswordThisIsAlsoRequiredForCopyingItOverNetwork" xml:space="preserve">
-    <value>Here you can protect the backup with password (this is also required for copying it over network)</value>
-  </data>
   <data name="HereYouCanSpecifyOtherSettings" xml:space="preserve">
     <value>Here you can specify other settings</value>
-  </data>
-  <data name="NewBackupTaskWizard" xml:space="preserve">
-    <value>New Backup Task Wizard</value>
-  </data>
-  <data name="Next" xml:space="preserve">
-    <value>Next &gt;</value>
-  </data>
-  <data name="Back" xml:space="preserve">
-    <value>&lt; Back</value>
   </data>
   <data name="RemovesTheSelectedBackupTask" xml:space="preserve">
     <value>Removes the selected backup task...</value>

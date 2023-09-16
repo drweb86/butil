@@ -141,7 +141,9 @@ namespace BUtil.Core.Options
         {
             return Directory
                 .GetFiles(_folder, _genericFilter)
-                .Select(Path.GetFileNameWithoutExtension)
+                .Select(Path.GetFileName)
+                .Select(x => x.Replace(_extensionV2, string.Empty))
+                .Select(x => x.Replace(_extensionV1, string.Empty))
                 .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)
                 .ToList();
         }

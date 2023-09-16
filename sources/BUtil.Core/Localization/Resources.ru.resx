@@ -517,9 +517,6 @@
   <data name="ItemsToBackup" xml:space="preserve">
     <value>Источники данных для резервного копирования</value>
   </data>
-  <data name="Finish" xml:space="preserve">
-    <value>Закончить</value>
-  </data>
   <data name="Recover" xml:space="preserve">
     <value>Восстановить!</value>
   </data>
@@ -666,32 +663,8 @@
   <data name="WellcomeToBackupTaskCreationWizard" xml:space="preserve">
     <value>Добро пожаловать в Мастер добавления задания на РК!</value>
   </data>
-  <data name="ThisMasterWillHelpYouToCreateANewTask" xml:space="preserve">
-    <value>Этот мастер поможет Вам создать новое задание на РК</value>
-  </data>
-  <data name="HereYouMayAddFilesAndFoldersYouWannaToBackup" xml:space="preserve">
-    <value>Добавьте файлы и папки, РК которых хотите сделать</value>
-  </data>
-  <data name="HereYouCanSpecifyWhereToSendBackups" xml:space="preserve">
-    <value>Хранилища резервных копий</value>
-  </data>
-  <data name="YouCanSetDaysAndTimesWhenYouWantToStartThisBackupJob" xml:space="preserve">
-    <value>Здесь вы можете установить дни недели, когда вы хотите чтобы это задание на РК было запущено</value>
-  </data>
-  <data name="HereYouCanProtectTheBackupWithPasswordThisIsAlsoRequiredForCopyingItOverNetwork" xml:space="preserve">
-    <value>Здесь вы можете защитить РК паролем (защита обязательна если вы хотите исопльзовать сетевые хранилища)</value>
-  </data>
   <data name="HereYouCanSpecifyOtherSettings" xml:space="preserve">
     <value>Здесь можно указать другие настройки</value>
-  </data>
-  <data name="NewBackupTaskWizard" xml:space="preserve">
-    <value>Мастер добавления нового задания на РК</value>
-  </data>
-  <data name="Next" xml:space="preserve">
-    <value>Далее &gt;</value>
-  </data>
-  <data name="Back" xml:space="preserve">
-    <value>&lt; Назад</value>
   </data>
   <data name="RemovesTheSelectedBackupTask" xml:space="preserve">
     <value>Удаляет выбранное задание РК...</value>

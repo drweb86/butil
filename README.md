@@ -16,7 +16,7 @@ BUtil is a powerful set of tools for creating backups of documents and other dat
 
 ## Key functions and characteristics of software
 
-- Incremental backup model with deduplication of files;
+- Incremental backup with deduplication of files;
 - [Import audios, photos, videos from SD Card of camera, recorder; photos and videos from your phone via WI-FI through FTPS Server application using template file names](./help/Configure/Import%20media%20task.md);
 - Simple configuring takes less time and goes easily and with comfort;
 - Multiple backup tasks are supported;
@@ -24,7 +24,7 @@ BUtil is a powerful set of tools for creating backups of documents and other dat
 - Two modes of creating a backup exists: manual from UI and console tool and with scheduling/automation possibilities;
 - Uses [7-zip](https://www.7-zip.org/) compression and AES-256 encryption.
 
-## Documentation
+## [Documentation](https://github.com/drweb86/butil/blob/master/help/TOC.md)
 
 - [Version history](./help/Other/Version%20History%20(Changelog).md)
 - [Configurator](./help/Configure/Configurator.md)
@@ -33,15 +33,3 @@ BUtil is a powerful set of tools for creating backups of documents and other dat
 - [Restore](./help/Restore/Restoration%20Wizard.md)
 - [Frequently Asked Questions (FAQ)](./help/Other/Frequently%20Asked%20Questions.md)
 and many more. See [all topics](./help/TOC.md) .
-
-## Build
-
-Must be installed:
-- Windows 11x64 Professional;
-- Microsoft Visual Studio 2022;
-- InnoSetup 6.2.1 (must be installed in default directory);
-- 7-zip x64 (must be installed in default directory).
-
-Compile all with **publish.cmd** script (artefacts will be located in **Output** folder)
-
-[Help:](https://github.com/drweb86/butil/blob/master/help/TOC.md)

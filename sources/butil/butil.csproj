@@ -62,17 +62,14 @@
     <OutputPath>..\..\Output\BUtil\bin\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="Configurator\AddBackupTaskWizard\Controller\**" />
     <Compile Remove="Configurator\Logs\**" />
     <Compile Remove="Controls\**" />
     <Compile Remove="LogsManagement\**" />
     <Compile Remove="Properties\**" />
-    <EmbeddedResource Remove="Configurator\AddBackupTaskWizard\Controller\**" />
     <EmbeddedResource Remove="Configurator\Logs\**" />
     <EmbeddedResource Remove="Controls\**" />
     <EmbeddedResource Remove="LogsManagement\**" />
     <EmbeddedResource Remove="Properties\**" />
-    <None Remove="Configurator\AddBackupTaskWizard\Controller\**" />
     <None Remove="Configurator\Logs\**" />
     <None Remove="Controls\**" />
     <None Remove="LogsManagement\**" />

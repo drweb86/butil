@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-
 using BUtil.Configurator.Configurator.Controls;
 using BUtil.Configurator.Controls;
 using BUtil.Core.PL;
@@ -13,18 +12,20 @@ using BUtil.Core.ConfigurationFileModels.V2;
 
 namespace BUtil.Configurator.Configurator.Forms
 {
-    public partial class EditBackupTaskForm : Form
+    partial class EditBackupTaskForm : Form
     {
         readonly Dictionary<BackupTaskViewsEnum, BackUserControl> _views;
         readonly BackupTaskV2 _task;
         readonly ScheduleInfo _scheduleInfo;
+        private readonly BackupTaskViewsEnum _initialView;
 
-        public EditBackupTaskForm(BackupTaskV2 task, ScheduleInfo scheduleInfo)
+        public EditBackupTaskForm(BackupTaskV2 task, ScheduleInfo scheduleInfo, BackupTaskViewsEnum initialView)
         {
             InitializeComponent();
             
             _task = task;
             _scheduleInfo = scheduleInfo;
+            _initialView = initialView;
             _views = new Dictionary<BackupTaskViewsEnum, BackUserControl>();
 
             SetupUiComponents();
@@ -61,7 +62,7 @@ namespace BUtil.Configurator.Configurator.Forms
             choosePanelUserControl.ApplyLocalization();
             cancelButton.Text = Resources.Cancel;
             
-            ViewChangeNotification(BackupTaskViewsEnum.SourceItems);
+            ViewChangeNotification(_initialView);
         }
 
         private void UpdateAccessibilitiesView()

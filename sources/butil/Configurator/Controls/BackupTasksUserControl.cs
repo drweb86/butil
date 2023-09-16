@@ -88,17 +88,22 @@ namespace BUtil.Configurator.Configurator.Controls
 
         void AddTaskRequest(object sender, EventArgs e)
         {
-            using var form = new CreateBackupTaskWizardForm();
+            var task = new BackupTaskV2 { Name = Resources.NewBackupTaskTitle, Model = new IncrementalBackupModelOptionsV2 {
+                Items = new List<SourceItemV2> { 
+                    new SourceItemV2(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) , true),
+                    new SourceItemV2(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) , true)}
+            } };
+            var scheduleInfo = new ScheduleInfo();
+            using var form = new EditBackupTaskForm(task, scheduleInfo, Tasks.BackupTaskViewsEnum.Name);
             if (form.ShowDialog() == DialogResult.OK)
             {
                 var backupTaskStoreService = new BackupTaskStoreService();
-                backupTaskStoreService.Save(form.BackupTask);
+                backupTaskStoreService.Save(task);
 
                 var backupTaskSchedulerService = new BackupTaskSchedulerService();
-                backupTaskSchedulerService.Schedule(form.BackupTask.Name, form.ScheduleInfo);
+                backupTaskSchedulerService.Schedule(task.Name, scheduleInfo);
 
                 ReloadTasks();
-                RefreshTaskControls(this, e);
             }
         }
         private void OnEditBackupTask(object sender, EventArgs e)
@@ -124,7 +129,7 @@ namespace BUtil.Configurator.Configurator.Controls
 
             var backupTaskSchedulerService = new BackupTaskSchedulerService();
             var scheduleInfo = backupTaskSchedulerService.GetSchedule(taskName);
-            using var form = new EditBackupTaskForm(task, scheduleInfo);
+            using var form = new EditBackupTaskForm(task, scheduleInfo, Tasks.BackupTaskViewsEnum.SourceItems);
             if (form.ShowDialog() == DialogResult.OK)
             {
                 backupTaskStoreService.Delete(taskName);

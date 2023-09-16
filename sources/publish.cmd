@@ -1,6 +1,5 @@
 @echo off
 
-cd sources
 dotnet publish /p:Configuration=Release /p:PublishDir=../Output/butil/bin /p:PublishReadyToRun=false /p:RunAnalyzersDuringBuild=False
 echo %ERRORLEVEL%
 if %ERRORLEVEL% NEQ 0 (

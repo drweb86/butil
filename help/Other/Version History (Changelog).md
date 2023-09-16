@@ -1,7 +1,11 @@
 # 2023.09.16
 
+## Bug fixes
+- Edit of V2 tasks fails.
+
 ## Removed Features
 - Dropped about dialog, since nobody uses it nowadays
+- Dropped wizard dialog, since amount of options reduced to 4.
 
 # 2023.09.15
 

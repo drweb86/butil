@@ -202,15 +202,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt; Back.
-        /// </summary>
-        public static string Back {
-            get {
-                return ResourceManager.GetString("Back", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Backup.
         /// </summary>
         public static string Backup {
@@ -823,15 +814,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Finish.
-        /// </summary>
-        public static string Finish {
-            get {
-                return ResourceManager.GetString("Finish", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Finished succesfully.
         /// </summary>
         public static string FinishedSuccesfully {
@@ -1016,15 +998,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Here you can protect the backup with password (this is also required for copying it over network).
-        /// </summary>
-        public static string HereYouCanProtectTheBackupWithPasswordThisIsAlsoRequiredForCopyingItOverNetwork {
-            get {
-                return ResourceManager.GetString("HereYouCanProtectTheBackupWithPasswordThisIsAlsoRequiredForCopyingItOverNetwork", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Here you can set up a scheduler. Shceduler can help you to automate creation of backups.
         /// </summary>
         public static string HereYouCanSetUpASchedulerShcedulerCanHelpYouToAutomateCreationOfBackups {
@@ -1057,24 +1030,6 @@ namespace BUtil.Core.Localization {
         public static string HereYouCanSpecifyOtherSettings {
             get {
                 return ResourceManager.GetString("HereYouCanSpecifyOtherSettings", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Here you can specify where to send backups.
-        /// </summary>
-        public static string HereYouCanSpecifyWhereToSendBackups {
-            get {
-                return ResourceManager.GetString("HereYouCanSpecifyWhereToSendBackups", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Here you may add files and folders you wanna to backup.
-        /// </summary>
-        public static string HereYouMayAddFilesAndFoldersYouWannaToBackup {
-            get {
-                return ResourceManager.GetString("HereYouMayAddFilesAndFoldersYouWannaToBackup", resourceCulture);
             }
         }
         
@@ -1476,29 +1431,11 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New Backup Task Wizard.
-        /// </summary>
-        public static string NewBackupTaskWizard {
-            get {
-                return ResourceManager.GetString("NewBackupTaskWizard", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to New Event Task - Configurator.
         /// </summary>
         public static string NewEventTaskConfigurator {
             get {
                 return ResourceManager.GetString("NewEventTaskConfigurator", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Next &gt;.
-        /// </summary>
-        public static string Next {
-            get {
-                return ResourceManager.GetString("Next", resourceCulture);
             }
         }
         
@@ -2184,15 +2121,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This master will help you to create a new task.
-        /// </summary>
-        public static string ThisMasterWillHelpYouToCreateANewTask {
-            get {
-                return ResourceManager.GetString("ThisMasterWillHelpYouToCreateANewTask", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to This name is already taken. Try another one..
         /// </summary>
         public static string ThisNameIsAlreadyTakenTryAnotherOne {
@@ -2569,15 +2497,6 @@ namespace BUtil.Core.Localization {
         public static string YouCannotEditThisTypeOfTaskInCLI {
             get {
                 return ResourceManager.GetString("YouCannotEditThisTypeOfTaskInCLI", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to You can set days and times when you want to start this backup job.
-        /// </summary>
-        public static string YouCanSetDaysAndTimesWhenYouWantToStartThisBackupJob {
-            get {
-                return ResourceManager.GetString("YouCanSetDaysAndTimesWhenYouWantToStartThisBackupJob", resourceCulture);
             }
         }
     }
