@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="UsageVariantsNNbackupExeTaskMyTaskTitleNRunningWithoutParametersOutputsInformationToConsoleNNbackupExeTaskMyTask1TitleTaskMyTask2TitleTaskMyTask3TitleNRunsSeveralTasksOneByOneNNbackupExeTaskMyTaskTitleUsefilelogNOutputsInformationInFileLogNNbackupExeTaskMyTaskTitleShutdownNbackupExeTaskMyTaskTitleLogoffNbackupExeTaskMyTaskTitleSuspendNbackupExeTaskMyTaskTitleRebootNbackupExeTaskMyTaskTitleHibernateNNbackupExeHelpNOutputsBriefHelpN" xml:space="preserve">
+    <value>Modalità d'uso:
+
+butilc.exe "Task=Titolo mia attività"
+   Esegue l'attività specificata.
+
+butilc.exe "Task=Titolo mia attività" Arresto
+butilc.exe "Task=Titolo mia attività" LogOff
+butilc.exe "Task=Titolo mia attività" Riavviare
+
+butilc.exe Help
+   Visualizza un breve aiuto</value>
+  </data>
+  <data name="ErrorInvalidCommandParametersSpecified" xml:space="preserve">
+    <value>Errore: parametri comando specificati non validi!!!</value>
+  </data>
+  <data name="ToRunProgramWithThisSwitchYouShouldDisableSchedulingInOptionsFirstPleaseReferToManual" xml:space="preserve">
+    <value>Per eseguire il programma con questa opzione è necessario prima disattivare la pianificazione nelle opzioni. 
+Per maggiori info fai riferimento al manuale!</value>
+  </data>
+  <data name="CannotOpenFileLogDueToCryticalError0" xml:space="preserve">
+    <value>Impossibile aprire il registro del file a causa di un errore critico {0}</value>
+  </data>
+  <data name="PleaseSpecifyTheBackupTaskTitleUsingTheCommandLineArgument0MyBackupTaskTitleNexampleBackupExe0MyBackupTitle" xml:space="preserve">
+    <value>Specifica il none dell'attività di backup usando l'argomento della riga di comando "{0}Titolo attività backup". Esempio: 
+butilc.exe "{0}Titolo backup"</value>
+  </data>
+  <data name="TherereNoBackupTaskWithTitle0" xml:space="preserve">
+    <value>Non ci sono attività backup con titolo '{0}'.</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Chiudi</value>
+  </data>
+  <data name="TaskHasFailedSeeOpenedLog" xml:space="preserve">
+    <value>L'attività non è riuscita (vedi registro eventi aperto)</value>
+  </data>
+  <data name="TaskIsSucceeded" xml:space="preserve">
+    <value>L'attività è stata completata correttamnte!</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Titolo:</value>
+  </data>
+  <data name="DestinationFolder" xml:space="preserve">
+    <value>Cartella destinazione:</value>
+  </data>
+  <data name="FileNameTransformations" xml:space="preserve">
+    <value>Trasformazioni nomi file:</value>
+  </data>
+  <data name="HelpForTokens" xml:space="preserve">
+    <value>Token supportati:
+{DATE:Formato: inserisce la data modifica del file nel formato specificato.
+Per vedere tutte le opzioni, cerca su Google "formato DateTime C#".</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Salva</value>
+  </data>
+  <data name="CreateImportMediaTask" xml:space="preserve">
+    <value>Crea attività importazione multimediale</value>
+  </data>
+  <data name="EditImportMediaTask" xml:space="preserve">
+    <value>Modifica lttività importazione multimediale "{0}".</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Errore</value>
+  </data>
+  <data name="DestinationDirectoryDoesNotExist" xml:space="preserve">
+    <value>La cartella destinazione non esiste.</value>
+  </data>
+  <data name="SourceFolderDoesNotExist" xml:space="preserve">
+    <value>Non è stato specificato il percorso dei file foto/video.</value>
+  </data>
+  <data name="TransformFileNameIsEmpty" xml:space="preserve">
+    <value>Il nome file trasformazione è vuoto.</value>
+  </data>
+  <data name="TitleIsEmptyOrContainsNotSupportedPathCharacters" xml:space="preserve">
+    <value>Il titolo è vuoto o contiene caratteri nel percorso non supportati.</value>
+  </data>
+  <data name="_Create" xml:space="preserve">
+    <value>_Crea attività</value>
+  </data>
+  <data name="Tasks" xml:space="preserve">
+    <value>Attività</value>
+  </data>
+  <data name="_RunF5Enter" xml:space="preserve">
+    <value>_Esegui (F5, Invio)</value>
+  </data>
+  <data name="_EditF4" xml:space="preserve">
+    <value>_Modifica (F4)</value>
+  </data>
+  <data name="_DeleteF8Del" xml:space="preserve">
+    <value>_Elimina (F8, Canc)</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Elimina</value>
+  </data>
+  <data name="PleaseConfirmDeletionOf0" xml:space="preserve">
+    <value>Conferma l'eliminazione di "{0}"</value>
+  </data>
+  <data name="YouCannotEditThisTypeOfTaskInCLI" xml:space="preserve">
+    <value>Non è possibile modificare questo tipo di attività nella CLI.</value>
+  </data>
+  <data name="SpecifyLocation" xml:space="preserve">
+    <value>Specificare percorso</value>
+  </data>
+  <data name="HostField" xml:space="preserve">
+    <value>Host:</value>
+  </data>
+  <data name="PortField" xml:space="preserve">
+    <value>Porta:</value>
+  </data>
+  <data name="UserField" xml:space="preserve">
+    <value>Utente:</value>
+  </data>
+  <data name="PasswordField" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="FolderField" xml:space="preserve">
+    <value>Cartella:</value>
+  </data>
+  <data name="ImportFilesFrom" xml:space="preserve">
+    <value>Specifica sorgente dati</value>
+  </data>
+  <data name="ImportMediaHint" xml:space="preserve">
+    <value>Importa audio, foto, video dalla scheda SD della fotocamera, registratore; foto e video dal telefono tramite WI-FI tramite applicazione server FTP usando un modello nomi file.</value>
+  </data>
+  <data name="SkipAlreadyImportedFiles" xml:space="preserve">
+    <value>Salta i file già importati</value>
+  </data>
+  <data name="SelectTransport" xml:space="preserve">
+    <value>Seleziona trasporto</value>
+  </data>
+</root>
