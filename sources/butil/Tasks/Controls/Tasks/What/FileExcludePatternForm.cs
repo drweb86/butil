@@ -22,8 +22,8 @@ namespace BUtil.Configurator.Configurator.Controls.Tasks.What
             _patternLabel.Text = BUtil.Core.Localization.Resources.FileExclusionPattern;
             _descriptionLabel.Text = BUtil.Core.Localization.Resources.HereYouCanSpecifyFileGlobbingExclusionPatternsItCanBeAFileNameOrFolderNameOrWildcardExamplesDTempDTempFileTxtDTempTxtOrBinSeeDetailedDescriptionInTheFollowingLink;
             _formatLinkLabel.Text = BUtil.Core.Localization.Resources.FileGlobbingInNETPatterns;
-            _okButton.Text = Resources.Ok;
-            _cancelButton.Text = Resources.Cancel;
+            _okButton.Text = Resources.Button_OK;
+            _cancelButton.Text = Resources.Button_Cancel;
         
         }
 

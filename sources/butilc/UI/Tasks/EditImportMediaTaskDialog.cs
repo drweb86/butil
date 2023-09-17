@@ -25,7 +25,7 @@ namespace BUtil.ConsoleBackup.UI
                     Environment.GetFolderPath(Environment.SpecialFolder.MyPictures),
                     "Camera Roll");
                 _transformFileNameTextField.Text = "{DATE:yyyy}\\{DATE:yyyy'-'MM', 'MMMM}\\{DATE:yyyy'-'MM'-'dd', 'dddd}\\{DATE:yyyy'-'MM'-'dd' 'HH'-'mm'-'ss}";
-                Title = Resources.CreateImportMediaTask;
+                Title = Resources.ImportMediaTask_Create;
                 _skipAlreadyImportedFilesCheckBox.Checked = true;
             }
             else
@@ -34,7 +34,7 @@ namespace BUtil.ConsoleBackup.UI
                 _from = options.From;
                 _destinationFolderTextField.Text = options.DestinationFolder;
                 _transformFileNameTextField.Text = options.TransformFileName;
-                Title = string.Format(Resources.EditImportMediaTask, task.Name);
+                Title = string.Format(Resources.ImportMediaTask_Edit_Title, task.Name);
                 _titleTextField.Text = task.Name;
                 _skipAlreadyImportedFilesCheckBox.Checked = options.SkipAlreadyImportedFiles;
             }
@@ -55,7 +55,7 @@ namespace BUtil.ConsoleBackup.UI
                 Path.GetInvalidFileNameChars().Any(x => this._titleTextField.Text.Contains(x)) ||
                 Path.GetInvalidPathChars().Any(x => this._titleTextField.Text.Contains(x)))
             {
-                MessageBox.ErrorQuery(string.Empty, BUtil.Core.Localization.Resources.TitleIsEmptyOrContainsNotSupportedPathCharacters, Resources.Close);
+                MessageBox.ErrorQuery(string.Empty, BUtil.Core.Localization.Resources.Field_Name_Validation, Resources.Close);
                 return;
             }
 

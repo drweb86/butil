@@ -31,20 +31,20 @@ namespace BUtil.ConsoleBackup.UI {
 
             var createImportMediaTask = new Terminal.Gui.MenuBarItem
             {
-                Title = Resources.CreateImportMediaTask,
+                Title = Resources.ImportMediaTask_Create,
                 Action = () => this.OnCreateImportMediaTask(),
             };
 
             this.createMenu = new Terminal.Gui.MenuBarItem
             {
-                Title = BUtil.Core.Localization.Resources._Create,
+                Title = BUtil.Core.Localization.Resources.Task_Create,
                 Children = new[] { createImportMediaTask },
             };
 
             
             menuBar.Menus = new Terminal.Gui.MenuBarItem[] {this.createMenu};
             this.Add(menuBar);
-            var tasksFrame = new FrameView(Resources.Tasks)
+            var tasksFrame = new FrameView(Resources.Task_List)
             {
                 X = 0,
                 Y = 1, // for menu
@@ -82,7 +82,7 @@ namespace BUtil.ConsoleBackup.UI {
 
             var runButton = new Terminal.Gui.Button
             {
-                Text = "► " + BUtil.Core.Localization.Resources._RunF5Enter,
+                Text = "► " + BUtil.Core.Localization.Resources.Task_Launch + " (F5, Enter)",
                 Shortcut = Key.F5,
                 Y = 1,
                 Width = Dim.Fill(),
@@ -92,7 +92,7 @@ namespace BUtil.ConsoleBackup.UI {
 
             var editButton = new Terminal.Gui.Button
             {
-                Text = "⚒ " + BUtil.Core.Localization.Resources._EditF4,
+                Text = "⚒ " + BUtil.Core.Localization.Resources.Task_Edit + " (F4)",
                 Shortcut = Key.F4,
                 Y = 3,
                 Width = Dim.Fill(),
@@ -102,7 +102,7 @@ namespace BUtil.ConsoleBackup.UI {
 
             var deleteButton = new Terminal.Gui.Button
             {
-                Text = "❌ " + BUtil.Core.Localization.Resources._DeleteF8Del,
+                Text = "❌ " + BUtil.Core.Localization.Resources.Task_Delete + " (F8, Del)",
                 Shortcut = Key.F8,
                 Y = 5,
                 Width = Dim.Fill(),

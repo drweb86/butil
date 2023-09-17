@@ -60,7 +60,7 @@ namespace BUtil.Configurator.Configurator.Forms
                 pair.Value.ApplyLocalization();
             }
             choosePanelUserControl.ApplyLocalization();
-            cancelButton.Text = Resources.Cancel;
+            cancelButton.Text = Resources.Button_Cancel;
             
             ViewChangeNotification(_initialView);
         }

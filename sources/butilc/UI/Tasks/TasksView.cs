@@ -33,7 +33,7 @@ namespace BUtil.ConsoleBackup.UI
             var task = _controller.BackupTaskStoreService.Load(taskName);
             if (task == null)
             {
-                Terminal.Gui.MessageBox.ErrorQuery(string.Empty, BUtil.Core.Localization.Resources.ThisTaskIsObsoleteAndNotSupportedAnymore, Resources.Close);
+                Terminal.Gui.MessageBox.ErrorQuery(string.Empty, BUtil.Core.Localization.Resources.Task_Validation_NotSupported, Resources.Close);
                 return;
             }
             var dialog = new TaskProgressDialog(task);
@@ -49,12 +49,12 @@ namespace BUtil.ConsoleBackup.UI
             var task = _controller.BackupTaskStoreService.Load(taskName);
             if (task == null)
             {
-                Terminal.Gui.MessageBox.ErrorQuery(string.Empty, BUtil.Core.Localization.Resources.ThisTaskIsObsoleteAndNotSupportedAnymore, Resources.Close);
+                Terminal.Gui.MessageBox.ErrorQuery(string.Empty, BUtil.Core.Localization.Resources.Task_Validation_NotSupported, Resources.Close);
                 return;
             }
             if (!(task.Model is ImportMediaTaskModelOptionsV2))
             {
-                Terminal.Gui.MessageBox.ErrorQuery(string.Empty, BUtil.Core.Localization.Resources.YouCannotEditThisTypeOfTaskInCLI, Resources.Close);
+                Terminal.Gui.MessageBox.ErrorQuery(string.Empty, BUtil.Core.Localization.Resources.Task_Edit_Validation_NoCLI, Resources.Close);
                 return;
             }
             
@@ -82,7 +82,7 @@ namespace BUtil.ConsoleBackup.UI
 
             var taskName = _taskNames[this.itemsListView.SelectedItem];
             if (Terminal.Gui.MessageBox.Query(string.Empty, string.Format(BUtil.Core.Localization.Resources.PleaseConfirmDeletionOf0, taskName),
-                BUtil.Core.Localization.Resources.Delete, BUtil.Core.Localization.Resources.Cancel) != 0)
+                BUtil.Core.Localization.Resources.Task_Delete, BUtil.Core.Localization.Resources.Button_Cancel) != 0)
                 return;
 
             _controller.BackupTaskStoreService.Delete(taskName);

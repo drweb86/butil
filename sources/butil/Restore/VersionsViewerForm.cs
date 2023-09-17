@@ -28,7 +28,7 @@ namespace BUtil.RestorationMaster
             _incrementalBackupState = incrementalBackupState;
             _storageSettings = storageSettings;
 
-            _selectVersionToolStripLabel.Text = BUtil.Core.Localization.Resources.SelectVersion;
+            _selectVersionToolStripLabel.Text = BUtil.Core.Localization.Resources.BackupVersion_Selector_Title;
             _selectedVersionToolStripLabel.Text = BUtil.Core.Localization.Resources.Files;
             _changesToolStripLabel.Text = BUtil.Core.Localization.Resources.Changes;
             _journalSelectedToolStripMenuItem.Text =

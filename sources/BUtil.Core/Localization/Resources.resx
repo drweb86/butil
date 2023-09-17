@@ -117,46 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="PasswordGenerator" xml:space="preserve">
+  <data name="Password_Generator_Header" xml:space="preserve">
     <value>Password generator</value>
   </data>
-  <data name="Cancel" xml:space="preserve">
+  <data name="Button_Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="CopyToClipboard" xml:space="preserve">
-    <value>copy to clipboard</value>
+  <data name="Button_CopyToClipboard" xml:space="preserve">
+    <value>Copy</value>
   </data>
   <data name="Generate" xml:space="preserve">
     <value>Generate</value>
   </data>
-  <data name="HereIsYourPassword" xml:space="preserve">
-    <value>&lt;Here is your password&gt;</value>
-  </data>
-  <data name="PasswordLength" xml:space="preserve">
-    <value>Password length:</value>
+  <data name="Password_Field_Length" xml:space="preserve">
+    <value>Length:</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Options</value>
   </data>
-  <data name="PasswordIsInvalidNNitWasResetedN" xml:space="preserve">
-    <value>Password is invalid.
-
-It was reseted
-</value>
+  <data name="Password_Group_Header" xml:space="preserve">
+    <value>Password (optional)</value>
   </data>
-  <data name="PasswordIfNeeded" xml:space="preserve">
-    <value>Password (if needed)</value>
-  </data>
-  <data name="GenerateNewRandomPassword" xml:space="preserve">
-    <value>Generate new random password</value>
-  </data>
-  <data name="ConfirmPassword" xml:space="preserve">
+  <data name="Password_Field_Confirm" xml:space="preserve">
     <value>Confirm password:</value>
   </data>
-  <data name="EnterPassword" xml:space="preserve">
-    <value>Enter password:</value>
-  </data>
-  <data name="Use" xml:space="preserve">
+  <data name="Password_Use" xml:space="preserve">
     <value>Use</value>
   </data>
   <data name="TaskFinishedSuccesfully" xml:space="preserve">
@@ -164,9 +149,6 @@ It was reseted
   </data>
   <data name="BackupReport" xml:space="preserve">
     <value>Backup Report</value>
-  </data>
-  <data name="ConfirmationIsNotEqualToPassword" xml:space="preserve">
-    <value>Confirmation is not equal to password</value>
   </data>
   <data name="AnUnexpectedErrorOccuredNNpleaseContactTheDevelopersWithInformationSavedOnYourDesktopInN0NNapplicationWillNowClose" xml:space="preserve">
     <value>An unexpected error occured
@@ -262,10 +244,10 @@ Please update storage settings.</value>
   <data name="PortIsInvalid" xml:space="preserve">
     <value>Port is invalid.</value>
   </data>
-  <data name="UserIsNotSpecified" xml:space="preserve">
+  <data name="User_Field_Validation" xml:space="preserve">
     <value>User is not specified.</value>
   </data>
-  <data name="PasswordIsNotSpecified" xml:space="preserve">
+  <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
     <value>Password is not specified.</value>
   </data>
   <data name="FolderDoesNotExist" xml:space="preserve">
@@ -277,8 +259,8 @@ Please update storage settings.</value>
   <data name="Import0" xml:space="preserve">
     <value>Import "{0}"</value>
   </data>
-  <data name="ThisTaskIsObsoleteAndNotSupportedAnymore" xml:space="preserve">
-    <value>This task is obsolete and not supported anymore</value>
+  <data name="Task_Validation_NotSupported" xml:space="preserve">
+    <value>This task type is not supported.</value>
   </data>
   <data name="FinishedSuccesfully" xml:space="preserve">
     <value>Finished succesfully</value>
@@ -319,25 +301,25 @@ Please update storage settings.</value>
   <data name="ChooseDaysOfWeek" xml:space="preserve">
     <value>Choose days of week:</value>
   </data>
-  <data name="Wednesday" xml:space="preserve">
+  <data name="Days_Wednesday" xml:space="preserve">
     <value>Wednesday</value>
   </data>
-  <data name="Thursday" xml:space="preserve">
+  <data name="Days_Thursday" xml:space="preserve">
     <value>Thursday</value>
   </data>
-  <data name="Friday" xml:space="preserve">
+  <data name="Days_Friday" xml:space="preserve">
     <value>Friday</value>
   </data>
-  <data name="Saturday" xml:space="preserve">
+  <data name="Days_Saturday" xml:space="preserve">
     <value>Saturday</value>
   </data>
-  <data name="Tuesday" xml:space="preserve">
+  <data name="Days_Tuesday" xml:space="preserve">
     <value>Tuesday</value>
   </data>
-  <data name="Monday" xml:space="preserve">
+  <data name="Days_Monday" xml:space="preserve">
     <value>Monday</value>
   </data>
-  <data name="Sunday" xml:space="preserve">
+  <data name="Days_Sunday" xml:space="preserve">
     <value>Sunday</value>
   </data>
   <data name="Minute" xml:space="preserve">
@@ -346,10 +328,10 @@ Please update storage settings.</value>
   <data name="Hour" xml:space="preserve">
     <value>Hour:</value>
   </data>
-  <data name="AddsTheNewBackupTask" xml:space="preserve">
-    <value>Adds the new backup task...</value>
+  <data name="Task_Create_Hint" xml:space="preserve">
+    <value>Creates new task.</value>
   </data>
-  <data name="Tasks" xml:space="preserve">
+  <data name="Task_List" xml:space="preserve">
     <value>Tasks</value>
   </data>
   <data name="RunsBackup" xml:space="preserve">
@@ -376,11 +358,11 @@ Please update storage settings.</value>
   <data name="BackupIsInAProgress" xml:space="preserve">
     <value>Backup is in a progress... </value>
   </data>
-  <data name="Ok" xml:space="preserve">
+  <data name="Button_OK" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="Title" xml:space="preserve">
-    <value>Title:</value>
+  <data name="Field_Name" xml:space="preserve">
+    <value>Name:</value>
   </data>
   <data name="Modify" xml:space="preserve">
     <value>Modify...</value>
@@ -390,12 +372,6 @@ Please update storage settings.</value>
   </data>
   <data name="DestinationFolder" xml:space="preserve">
     <value>Destination folder:</value>
-  </data>
-  <data name="User" xml:space="preserve">
-    <value>User:</value>
-  </data>
-  <data name="Password" xml:space="preserve">
-    <value>Password:</value>
   </data>
   <data name="HardDriveStorage" xml:space="preserve">
     <value>Folder storage...</value>
@@ -418,7 +394,7 @@ Please update storage settings.</value>
   <data name="Recover" xml:space="preserve">
     <value>Recover!</value>
   </data>
-  <data name="IfYourBackupIsPasswordProtectedPleaseTypePasswordHere" xml:space="preserve">
+  <data name="Password_Recovery_Prompt" xml:space="preserve">
     <value>If your backup is password protected, please type password here:</value>
   </data>
   <data name="Continue" xml:space="preserve">
@@ -453,9 +429,6 @@ You can specify the data to backup in Configurator in 'What' settings group.</va
   <data name="HereYouCanSetUpASchedulerShcedulerCanHelpYouToAutomateCreationOfBackups" xml:space="preserve">
     <value>Here you can set up a scheduler. Shceduler can help you to automate creation of backups</value>
   </data>
-  <data name="ProtectionOfBackupWithPasswordItIsRequiredWhenYouWantYourDataToBeCopiedSomewhereOverTheNetwork" xml:space="preserve">
-    <value>Protection of backup with password. It is required when you want your data to be copied somewhere over the network</value>
-  </data>
   <data name="New0VersionIsAvailableNNchangesAreN1NNprogramWillNowOpenBrowserWithTheDownloadPage" xml:space="preserve">
     <value>New {0} version is available.
 
@@ -485,14 +458,14 @@ Please refer to manual for the complete list of parameters!</value>
   <data name="Help" xml:space="preserve">
     <value>Help</value>
   </data>
-  <data name="NewBackupTaskTitle" xml:space="preserve">
-    <value>New Backup Task Title</value>
+  <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
+    <value>New task</value>
   </data>
   <data name="WellcomeToBackupTaskCreationWizard" xml:space="preserve">
     <value>Wellcome to Backup Task Creation Wizard!</value>
   </data>
-  <data name="RemovesTheSelectedBackupTask" xml:space="preserve">
-    <value>Removes the selected backup task...</value>
+  <data name="Task_Delete_Hint" xml:space="preserve">
+    <value>Deletes the selected task.</value>
   </data>
   <data name="EditsTheSelectedBackupTask" xml:space="preserve">
     <value>Edits the selected backup task...</value>
@@ -518,7 +491,7 @@ Please refer to manual for the complete list of parameters!</value>
   <data name="NameIsEmpty" xml:space="preserve">
     <value>Name is empty.</value>
   </data>
-  <data name="GeneratePassword" xml:space="preserve">
+  <data name="Password_Generate" xml:space="preserve">
     <value>Generate password...</value>
   </data>
   <data name="BackupFailedPleaseReviewOpenedLog" xml:space="preserve">
@@ -543,7 +516,7 @@ Please correct list of source items.</value>
 
 Point to a directory containing this file.</value>
   </data>
-  <data name="SelectVersion" xml:space="preserve">
+  <data name="BackupVersion_Selector_Title" xml:space="preserve">
     <value>SELECT VERSION</value>
   </data>
   <data name="Changes" xml:space="preserve">
@@ -555,11 +528,11 @@ Point to a directory containing this file.</value>
   <data name="ClickOnItemYouWantToRestoreAndOpenContextMenuByRightClick" xml:space="preserve">
     <value>Click on item you want to restore and open context menu by right click</value>
   </data>
-  <data name="PasswordsDoNotMatch" xml:space="preserve">
+  <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
     <value>Passwords do not match.</value>
   </data>
-  <data name="RecommendedMinimumPasswordLengthIs50CharactersAndMore" xml:space="preserve">
-    <value>Recommended minimum password length is 50 characters and more. 7-zip AES-256 encryption is used with specified password.</value>
+  <data name="Password_Help" xml:space="preserve">
+    <value>Recommended minimum password length is 50 characters and more.</value>
   </data>
   <data name="AddFileExcludePattern" xml:space="preserve">
     <value>Add File Exclude Pattern...</value>
@@ -609,8 +582,8 @@ Usage scenario: You mounted some cloud storage as disk and perform backup on it.
   <data name="Mount" xml:space="preserve">
     <value>Mount:</value>
   </data>
-  <data name="Unmount" xml:space="preserve">
-    <value>Unmount:</value>
+  <data name="DataStorageStorage_Label_DisconnectionScript" xml:space="preserve">
+    <value>Disconnection script:</value>
   </data>
   <data name="HelpMountUnmountScript" xml:space="preserve">
     <value>If folder becomes accessible after mounting, specify PowerShell scripts for  mounting and unmounting</value>
@@ -669,8 +642,8 @@ butilc.exe Help
     <value>Please, specify the backup task title using the command line argument "{0}My backup task title"
 Example: butilc.exe "{0}My backup title"</value>
   </data>
-  <data name="TherereNoBackupTaskWithTitle0" xml:space="preserve">
-    <value>There're no backup task with title '{0}'.</value>
+  <data name="Task_Validation_NotFound" xml:space="preserve">
+    <value>Task '{0}' wasn't found.</value>
   </data>
   <data name="TaskHasFailedSeeOpenedLog" xml:space="preserve">
     <value>Task has failed (see opened log)</value>
@@ -686,37 +659,34 @@ Example: butilc.exe "{0}My backup title"</value>
 {DATE:Format} - Inserts file modification date in the specified format.
 To see all options google "C# DateTime format".</value>
   </data>
-  <data name="Save" xml:space="preserve">
+  <data name="Button_Save" xml:space="preserve">
     <value>Save</value>
   </data>
-  <data name="CreateImportMediaTask" xml:space="preserve">
+  <data name="ImportMediaTask_Create" xml:space="preserve">
     <value>Create import media task</value>
   </data>
-  <data name="EditImportMediaTask" xml:space="preserve">
+  <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
     <value>Edit "{0}" media import task</value>
   </data>
-  <data name="TitleIsEmptyOrContainsNotSupportedPathCharacters" xml:space="preserve">
-    <value>Title is empty or contains not supported path characters.</value>
+  <data name="Field_Name_Validation" xml:space="preserve">
+    <value>Name is empty or contains not supported path characters.</value>
   </data>
-  <data name="_Create" xml:space="preserve">
-    <value>_Create task</value>
+  <data name="Task_Create" xml:space="preserve">
+    <value>Create</value>
   </data>
-  <data name="_RunF5Enter" xml:space="preserve">
-    <value>_Run (F5, Enter)</value>
+  <data name="Task_Launch" xml:space="preserve">
+    <value>Launch</value>
   </data>
-  <data name="_EditF4" xml:space="preserve">
-    <value>_Edit (F4)</value>
+  <data name="Task_Edit" xml:space="preserve">
+    <value>Edit</value>
   </data>
-  <data name="_DeleteF8Del" xml:space="preserve">
-    <value>_Delete (F8, Del)</value>
-  </data>
-  <data name="Delete" xml:space="preserve">
+  <data name="Task_Delete" xml:space="preserve">
     <value>Delete</value>
   </data>
   <data name="PleaseConfirmDeletionOf0" xml:space="preserve">
     <value>Please confirm deletion of "{0}"</value>
   </data>
-  <data name="YouCannotEditThisTypeOfTaskInCLI" xml:space="preserve">
+  <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
     <value>You cannot edit this type of task in CLI.</value>
   </data>
   <data name="SpecifyLocation" xml:space="preserve">
@@ -728,19 +698,19 @@ To see all options google "C# DateTime format".</value>
   <data name="PortField" xml:space="preserve">
     <value>Port:</value>
   </data>
-  <data name="UserField" xml:space="preserve">
+  <data name="User_Field" xml:space="preserve">
     <value>User:</value>
   </data>
-  <data name="PasswordField" xml:space="preserve">
+  <data name="Password_Field" xml:space="preserve">
     <value>Password:</value>
   </data>
-  <data name="FolderField" xml:space="preserve">
+  <data name="Field_Folder" xml:space="preserve">
     <value>Folder:</value>
   </data>
   <data name="ImportFilesFrom" xml:space="preserve">
     <value>Specify data source</value>
   </data>
-  <data name="ImportMediaHint" xml:space="preserve">
+  <data name="ImportMediaTask_Help" xml:space="preserve">
     <value>Imports audios, photos, videos from SD Card of camera, recorder;
 photos and videos from your phone via WI-FI through FTP Server 
 application using template file names.</value>

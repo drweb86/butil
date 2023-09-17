@@ -13,12 +13,12 @@ namespace BUtil.Configurator
 		{
 			InitializeComponent();
 
-			acceptButton.Text = Resources.Ok;
-			cancelButton.Text = Resources.Cancel;
+			acceptButton.Text = Resources.Button_OK;
+			cancelButton.Text = Resources.Button_Cancel;
 
 			_uriLabel.Text = BUtil.Core.Localization.Resources.Url;
-			_userLabel.Text = BUtil.Core.Localization.Resources.User;
-            _passwordLabel.Text = BUtil.Core.Localization.Resources.Password;
+			_userLabel.Text = BUtil.Core.Localization.Resources.User_Field;
+            _passwordLabel.Text = BUtil.Core.Localization.Resources.Password_Field;
 		}
 
         private void OnAccept(object sender, EventArgs e)

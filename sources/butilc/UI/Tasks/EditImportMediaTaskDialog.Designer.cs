@@ -20,7 +20,7 @@ namespace BUtil.ConsoleBackup.UI {
                 AutoSize = true,
                 X = 0,
                 Y = 0,
-                Text = BUtil.Core.Localization.Resources.ImportMediaHint
+                Text = BUtil.Core.Localization.Resources.ImportMediaTask_Help
             });
 
             Add(new Label
@@ -28,7 +28,7 @@ namespace BUtil.ConsoleBackup.UI {
                 AutoSize = true,
                 X = 0,
                 Y = 4,
-                Text = BUtil.Core.Localization.Resources.Title
+                Text = BUtil.Core.Localization.Resources.Field_Name
             });
 
             _titleTextField = new TextField
@@ -110,7 +110,7 @@ namespace BUtil.ConsoleBackup.UI {
 
             var saveButton = new Button
             {
-                Text = BUtil.Core.Localization.Resources.Save,
+                Text = BUtil.Core.Localization.Resources.Button_Save,
                 IsDefault = true,
             };
             saveButton.Clicked += OnSave;
@@ -118,7 +118,7 @@ namespace BUtil.ConsoleBackup.UI {
 
             var cancelButton = new Button
             {
-                Text = BUtil.Core.Localization.Resources.Cancel,
+                Text = BUtil.Core.Localization.Resources.Button_Cancel,
             };
             cancelButton.Clicked += OnCancel;
             AddButton(cancelButton);

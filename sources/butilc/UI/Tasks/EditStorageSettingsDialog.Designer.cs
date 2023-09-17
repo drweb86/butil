@@ -44,17 +44,17 @@ namespace BUtil.ConsoleBackup.UI {
             _transportSelectionComboBox.SelectedItemChanged += OnTransportTypeSelection;
             Add(_transportSelectionComboBox);
 
-            _folderStorageFolderTextField = AddTextField(_folderStorageControls, BUtil.Core.Localization.Resources.FolderField, 3);
+            _folderStorageFolderTextField = AddTextField(_folderStorageControls, BUtil.Core.Localization.Resources.Field_Folder, 3);
 
             _hostFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.HostField, 3);
             _portFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.PortField, 6);
-            _userFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.UserField, 9);
-            _pwdFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.PasswordField, 12);
-            _folderFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.FolderField, 15);
+            _userFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.User_Field, 9);
+            _pwdFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.Password_Field, 12);
+            _folderFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.Field_Folder, 15);
 
             var saveButton = new Button
             {
-                Text = BUtil.Core.Localization.Resources.Save,
+                Text = BUtil.Core.Localization.Resources.Button_OK,
                 IsDefault = true,
             };
             saveButton.Clicked += OnSave;
@@ -62,7 +62,7 @@ namespace BUtil.ConsoleBackup.UI {
 
             var cancelButton = new Button
             {
-                Text = BUtil.Core.Localization.Resources.Cancel,
+                Text = BUtil.Core.Localization.Resources.Button_Cancel,
             };
             cancelButton.Clicked += OnCancel;
             AddButton(cancelButton);

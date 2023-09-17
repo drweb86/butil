@@ -22,13 +22,13 @@ namespace BUtil.Configurator.Controls
 		public override void ApplyLocalization() 
 		{
 			chooseDaysOfWeekLabel.Text = Resources.ChooseDaysOfWeek;
-            scheduledDaysCheckedListBox.Items[2] = Resources.Wednesday;
-            scheduledDaysCheckedListBox.Items[3] = Resources.Thursday;
-            scheduledDaysCheckedListBox.Items[4] = Resources.Friday;
-            scheduledDaysCheckedListBox.Items[5] = Resources.Saturday;
-            scheduledDaysCheckedListBox.Items[1] = Resources.Tuesday;
-            scheduledDaysCheckedListBox.Items[0] = Resources.Monday;
-            scheduledDaysCheckedListBox.Items[6] = Resources.Sunday;
+            scheduledDaysCheckedListBox.Items[2] = Resources.Days_Wednesday;
+            scheduledDaysCheckedListBox.Items[3] = Resources.Days_Thursday;
+            scheduledDaysCheckedListBox.Items[4] = Resources.Days_Friday;
+            scheduledDaysCheckedListBox.Items[5] = Resources.Days_Saturday;
+            scheduledDaysCheckedListBox.Items[1] = Resources.Days_Tuesday;
+            scheduledDaysCheckedListBox.Items[0] = Resources.Days_Monday;
+            scheduledDaysCheckedListBox.Items[6] = Resources.Days_Sunday;
             minuteLabel.Text = Resources.Minute;
             hourLabel.Text = Resources.Hour;
 		}

@@ -73,12 +73,11 @@ namespace BUtil.Core.PL
             applyToUi(Result.PasswordIsValid);
 			applyToUi(Result.ConfirmationOfPasswordIsValid);
 
-            _passwordIfNeededLabel.Text = Resources.PasswordIfNeeded;
-            passwordControlToolTip.SetToolTip(generatePasswordButton, Resources.GenerateNewRandomPassword);
-            confirmPasswordLabel.Text = Resources.ConfirmPassword;
-            passwordLabel.Text = Resources.EnterPassword;
-            generatePasswordButton.Text = BUtil.Core.Localization.Resources.GeneratePassword;
-			_recommendationsLabel.Text = BUtil.Core.Localization.Resources.RecommendedMinimumPasswordLengthIs50CharactersAndMore;
+            _passwordIfNeededLabel.Text = Resources.Password_Group_Header;
+            confirmPasswordLabel.Text = Resources.Password_Field_Confirm;
+            passwordLabel.Text = Resources.Password_Field;
+            generatePasswordButton.Text = Resources.Password_Generate;
+			_recommendationsLabel.Text = Resources.Password_Help;
 
 
             if (task != null)
@@ -103,7 +102,7 @@ namespace BUtil.Core.PL
         {
             if (passwordTextBox.Text != passwordConfirmationTextBox.Text)
 			{
-                Messages.ShowErrorBox(BUtil.Core.Localization.Resources.PasswordsDoNotMatch);
+                Messages.ShowErrorBox(BUtil.Core.Localization.Resources.Password_Field_Validation_NotMatch);
                 return false;
 			}
 
@@ -114,7 +113,7 @@ namespace BUtil.Core.PL
 		{
 			if (! (_passwordIsValid && _confirmationOfPasswordIsValid))
             {
-            	Messages.ShowErrorBox(Resources.PasswordIsInvalidNNitWasResetedN);
+            	Messages.ShowErrorBox(Resources.Password_Field_Validation_NotMatch);
 				passwordTextBox.Text = string.Empty;
 			}
 
@@ -143,7 +142,7 @@ namespace BUtil.Core.PL
 					
 				case Result.ConfirmationIsNotEqualToPassword:
 					passwordConfirmationTextBox.BackColor = _defaultTextboxColor;
-					confirmationErrorMessageLabel.Text = Resources.ConfirmationIsNotEqualToPassword;
+					confirmationErrorMessageLabel.Text = Resources.Password_Field_Validation_NotMatch;
 					_confirmationOfPasswordIsValid = false;
 					break;
 					

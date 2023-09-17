@@ -75,7 +75,7 @@ namespace BUtil.ConsoleBackup
             var task = backupTaskStoreService.Load(_taskName);
             if (task == null)
             {
-                _log.WriteLine(LoggingEvent.Error, string.Format(Resources.TherereNoBackupTaskWithTitle0, _taskName));
+                _log.WriteLine(LoggingEvent.Error, string.Format(Resources.Task_Validation_NotFound, _taskName));
                 return false;
             }
 

@@ -29,8 +29,8 @@ namespace BUtil.Configurator.Configurator.Controls
 
         public override void ApplyLocalization()
         {
-            SetHintForControl(_addButton, Resources.AddsTheNewBackupTask);
-            SetHintForControl(_removeButton, Resources.RemovesTheSelectedBackupTask);
+            SetHintForControl(_addButton, Resources.Task_Create_Hint);
+            SetHintForControl(_removeButton, Resources.Task_Delete_Hint);
             SetHintForControl(_editButton, Resources.EditsTheSelectedBackupTask);
             SetHintForControl(_executeButton, Resources.RunsBackup);
             SetHintForControl(_recoverButton, Resources.Recover);
@@ -86,7 +86,7 @@ namespace BUtil.Configurator.Configurator.Controls
 
         void AddTaskRequest(object sender, EventArgs e)
         {
-            var task = new TaskV2 { Name = Resources.NewBackupTaskTitle, Model = new IncrementalBackupModelOptionsV2 {
+            var task = new TaskV2 { Name = Resources.Task_Field_Name_NewDefaultValue, Model = new IncrementalBackupModelOptionsV2 {
                 Items = new List<SourceItemV2> { 
                     new SourceItemV2(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) , true),
                     new SourceItemV2(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) , true)}
@@ -116,7 +116,7 @@ namespace BUtil.Configurator.Configurator.Controls
             var task = backupTaskStoreService.Load(taskName);
             if (task == null)
             {
-                Messages.ShowErrorBox(BUtil.Core.Localization.Resources.ThisTaskIsObsoleteAndNotSupportedAnymore);
+                Messages.ShowErrorBox(BUtil.Core.Localization.Resources.Task_Validation_NotSupported);
                 return;
             }
             if (!(task.Model is IncrementalBackupModelOptionsV2))

@@ -22,9 +22,9 @@ namespace BUtil.Core.Storages
             if (Settings.Port < 0) // 0 - default.
                 throw new InvalidDataException(BUtil.Core.Localization.Resources.PortIsInvalid);
             if (string.IsNullOrWhiteSpace(Settings.User))
-                throw new InvalidDataException(BUtil.Core.Localization.Resources.UserIsNotSpecified);
+                throw new InvalidDataException(BUtil.Core.Localization.Resources.User_Field_Validation);
             if (string.IsNullOrWhiteSpace(Settings.Password))
-                throw new InvalidDataException(BUtil.Core.Localization.Resources.PasswordIsNotSpecified);
+                throw new InvalidDataException(BUtil.Core.Localization.Resources.Password_Field_Validation_NotSpecified);
 
             _normalizedFolder = NormalizePath(Settings.Folder);
 

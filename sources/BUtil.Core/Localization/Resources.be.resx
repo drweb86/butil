@@ -117,52 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="PasswordGenerator" xml:space="preserve">
+  <data name="Password_Generator_Header" xml:space="preserve">
     <value>Генератар пароляу</value>
   </data>
-  <data name="Cancel" xml:space="preserve">
+  <data name="Button_Cancel" xml:space="preserve">
     <value>Закрыць</value>
-  </data>
-  <data name="CopyToClipboard" xml:space="preserve">
-    <value>Капiраваць</value>
   </data>
   <data name="Generate" xml:space="preserve">
     <value>Згенерыраваць</value>
   </data>
-  <data name="HereIsYourPassword" xml:space="preserve">
-    <value>&lt;Тут знаходзiцца Ваш пароль&gt;</value>
-  </data>
-  <data name="PasswordLength" xml:space="preserve">
-    <value>Длiна пороля:</value>
+  <data name="Password_Field_Length" xml:space="preserve">
+    <value>Длiна:</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Настройкi</value>
   </data>
-  <data name="PasswordIsInvalidNNitWasResetedN" xml:space="preserve">
-    <value>Няправiльны пароль.
-
-Пароль будзе прынятым як пусты</value>
-  </data>
-  <data name="PasswordIfNeeded" xml:space="preserve">
+  <data name="Password_Group_Header" xml:space="preserve">
     <value>Пароль (калi патрэбен)</value>
   </data>
-  <data name="GenerateNewRandomPassword" xml:space="preserve">
-    <value>Згенерыраваць новы пароль</value>
-  </data>
-  <data name="ConfirmPassword" xml:space="preserve">
+  <data name="Password_Field_Confirm" xml:space="preserve">
     <value>Падцвярдзице пароль:</value>
   </data>
-  <data name="EnterPassword" xml:space="preserve">
-    <value>Увядзице пароль:</value>
-  </data>
-  <data name="Use" xml:space="preserve">
+  <data name="Password_Use" xml:space="preserve">
     <value>Карыстацца</value>
   </data>
   <data name="BackupReport" xml:space="preserve">
     <value>Backup Report</value>
-  </data>
-  <data name="ConfirmationIsNotEqualToPassword" xml:space="preserve">
-    <value>Падцверджанне не супадае з паролем</value>
   </data>
   <data name="AnUnexpectedErrorOccuredNNpleaseContactTheDevelopersWithInformationSavedOnYourDesktopInN0NNapplicationWillNowClose" xml:space="preserve">
     <value>An unexpected error occured
@@ -217,25 +197,25 @@ Application will now close</value>
   <data name="ChooseDaysOfWeek" xml:space="preserve">
     <value>Выберыце днi тыдзеня:</value>
   </data>
-  <data name="Wednesday" xml:space="preserve">
+  <data name="Days_Wednesday" xml:space="preserve">
     <value>Серада</value>
   </data>
-  <data name="Thursday" xml:space="preserve">
+  <data name="Days_Thursday" xml:space="preserve">
     <value>Чацвер</value>
   </data>
-  <data name="Friday" xml:space="preserve">
+  <data name="Days_Friday" xml:space="preserve">
     <value>Пятнiца</value>
   </data>
-  <data name="Saturday" xml:space="preserve">
+  <data name="Days_Saturday" xml:space="preserve">
     <value>Субота</value>
   </data>
-  <data name="Tuesday" xml:space="preserve">
+  <data name="Days_Tuesday" xml:space="preserve">
     <value>Ауторак</value>
   </data>
-  <data name="Monday" xml:space="preserve">
+  <data name="Days_Monday" xml:space="preserve">
     <value>Панядзелак</value>
   </data>
-  <data name="Sunday" xml:space="preserve">
+  <data name="Days_Sunday" xml:space="preserve">
     <value>Нядзеля</value>
   </data>
   <data name="Minute" xml:space="preserve">
@@ -244,10 +224,7 @@ Application will now close</value>
   <data name="Hour" xml:space="preserve">
     <value>Гадзiны:</value>
   </data>
-  <data name="AddsTheNewBackupTask" xml:space="preserve">
-    <value>Adds the new backup task...</value>
-  </data>
-  <data name="Tasks" xml:space="preserve">
+  <data name="Task_List" xml:space="preserve">
     <value>Задачы</value>
   </data>
   <data name="RunsBackup" xml:space="preserve">
@@ -274,11 +251,11 @@ Application will now close</value>
   <data name="BackupIsInAProgress" xml:space="preserve">
     <value>Backup is in a progress... </value>
   </data>
-  <data name="Ok" xml:space="preserve">
+  <data name="Button_OK" xml:space="preserve">
     <value>ОК</value>
   </data>
-  <data name="Title" xml:space="preserve">
-    <value>Назва</value>
+  <data name="Field_Name" xml:space="preserve">
+    <value>Назва:</value>
   </data>
   <data name="Modify" xml:space="preserve">
     <value>Змянiць...</value>
@@ -288,12 +265,6 @@ Application will now close</value>
   </data>
   <data name="DestinationFolder" xml:space="preserve">
     <value>Destination folder</value>
-  </data>
-  <data name="User" xml:space="preserve">
-    <value>User:</value>
-  </data>
-  <data name="Password" xml:space="preserve">
-    <value>Password:</value>
   </data>
   <data name="AfterCompletionOfBackup" xml:space="preserve">
     <value>After completion of backup</value>
@@ -313,7 +284,7 @@ Application will now close</value>
   <data name="Recover" xml:space="preserve">
     <value>Recover!</value>
   </data>
-  <data name="IfYourBackupIsPasswordProtectedPleaseTypePasswordHere" xml:space="preserve">
+  <data name="Password_Recovery_Prompt" xml:space="preserve">
     <value>If your backup is password protected, please type password here:</value>
   </data>
   <data name="Continue" xml:space="preserve">
@@ -348,9 +319,6 @@ You can specify the data to backup in Configurator in 'What' settings group.</va
   <data name="HereYouCanSetUpASchedulerShcedulerCanHelpYouToAutomateCreationOfBackups" xml:space="preserve">
     <value>Here you can set up a scheduler. Shceduler can help you to automate creation of backups</value>
   </data>
-  <data name="ProtectionOfBackupWithPasswordItIsRequiredWhenYouWantYourDataToBeCopiedSomewhereOverTheNetwork" xml:space="preserve">
-    <value>Protection of backup with password. It is required when you want your data to be copied somewhere over the network</value>
-  </data>
   <data name="New0VersionIsAvailableNNchangesAreN1NNprogramWillNowOpenBrowserWithTheDownloadPage" xml:space="preserve">
     <value>Новая {0} версия ужо есць.
 
@@ -380,14 +348,8 @@ Please refer to manual for the complete list of parameters!</value>
   <data name="Help" xml:space="preserve">
     <value>Дапамога</value>
   </data>
-  <data name="NewBackupTaskTitle" xml:space="preserve">
-    <value>New Backup Task Title</value>
-  </data>
   <data name="WellcomeToBackupTaskCreationWizard" xml:space="preserve">
     <value>Wellcome to Backup Task Creation Wizard!</value>
-  </data>
-  <data name="RemovesTheSelectedBackupTask" xml:space="preserve">
-    <value>Removes the selected backup task...</value>
   </data>
   <data name="EditsTheSelectedBackupTask" xml:space="preserve">
     <value>Edits the selected backup task...</value>
@@ -448,7 +410,7 @@ Point to a directory containing this file.</value>
   <data name="FolderStorage" xml:space="preserve">
     <value>Folder Storage...</value>
   </data>
-  <data name="GeneratePassword" xml:space="preserve">
+  <data name="Password_Generate" xml:space="preserve">
     <value>Generate password...</value>
   </data>
   <data name="HardDriveStorage" xml:space="preserve">
@@ -484,19 +446,19 @@ Usage scenario: You mounted some cloud storage as disk and perform backup on it.
   <data name="OpenInExplorer" xml:space="preserve">
     <value>Open in Explorer...</value>
   </data>
-  <data name="PasswordsDoNotMatch" xml:space="preserve">
+  <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
     <value>Passwords do not match.</value>
   </data>
   <data name="PatternIsEmpty" xml:space="preserve">
     <value>Pattern is empty.</value>
   </data>
-  <data name="RecommendedMinimumPasswordLengthIs50CharactersAndMore" xml:space="preserve">
+  <data name="Password_Help" xml:space="preserve">
     <value>Recommended minimum password length is 50 characters and more. 7-zip AES-256 encryption is used with specified password.</value>
   </data>
   <data name="RestorationIsCompleted" xml:space="preserve">
     <value>Restoration is completed.</value>
   </data>
-  <data name="SelectVersion" xml:space="preserve">
+  <data name="BackupVersion_Selector_Title" xml:space="preserve">
     <value>SELECT VERSION</value>
   </data>
   <data name="SourceItemFailure" xml:space="preserve">
@@ -507,7 +469,7 @@ Please correct list of source items.</value>
   <data name="Url" xml:space="preserve">
     <value>Url:</value>
   </data>
-  <data name="Unmount" xml:space="preserve">
+  <data name="DataStorageStorage_Label_DisconnectionScript" xml:space="preserve">
     <value>Unmount:</value>
   </data>
   <data name="_0Backup" xml:space="preserve">
@@ -541,7 +503,7 @@ backupconsole.exe -Help
     <value>Please, specify the backup task title using the command line argument "{0}My backup task title"
 Example: butilc.exe "{0}My backup title"</value>
   </data>
-  <data name="TherereNoBackupTaskWithTitle0" xml:space="preserve">
-    <value>There're no backup task with title '{0}'.</value>
+  <data name="Button_Save" xml:space="preserve">
+    <value>Захаваць</value>
   </data>
 </root>

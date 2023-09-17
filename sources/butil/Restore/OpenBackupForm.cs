@@ -37,7 +37,7 @@ namespace BUtil.RestorationMaster
         private void ApplyLocals()
         {
             closeButton.Text = Resources.Close;
-            passwordLabel.Text = Resources.IfYourBackupIsPasswordProtectedPleaseTypePasswordHere;
+            passwordLabel.Text = Resources.Password_Recovery_Prompt;
             continueButton.Text = Resources.Continue;
             continueButton.Enabled = true;
             this.Text = Resources.RestorationMaster;

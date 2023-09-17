@@ -25,14 +25,14 @@ namespace BUtil.Configurator.Tasks.Controls.Tasks.Encryption
             passwordLengthNumericUpDown.Maximum = 8000;
 
             // localization initialization ("Password generator Program Interface" namespace);
-            Text = Resources.PasswordGenerator;
-            cancelButton.Text = Resources.Cancel;
-            copyToClipboardButton.Text = Resources.CopyToClipboard;
+            Text = Resources.Password_Generator_Header;
+            cancelButton.Text = Resources.Button_Cancel;
+            copyToClipboardButton.Text = Resources.Button_CopyToClipboard;
             generateButton.Text = Resources.Generate;
-            passwordTextBox.Text = Resources.HereIsYourPassword;
-            passwordLengthLabel.Text = Resources.PasswordLength;
+            passwordLengthLabel.Text = Resources.Password_Field_Length;
             optionsGroupBox.Text = Resources.Options;
-            useButton.Text = Resources.Use;
+            useButton.Text = Resources.Password_Use;
+            generatePasswordButtonClick(this, null);
         }
 
         void generatePasswordButtonClick(object sender, EventArgs e)

@@ -85,11 +85,11 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             toolTip.SetToolTip(startButton, Resources.Start);
             closeButton.Text = Resources.Close;
 
-            taskNameColumnHeader.Text = Resources.Tasks;
+            taskNameColumnHeader.Text = Resources.Task_List;
             processingStateInformationColumnHeader.Text = Resources.ProcessingState;
 
             Text = string.Format(BUtil.Core.Localization.Resources._0Backup, _backupTask.Name);
-            toolTip.SetToolTip(cancelButton, Resources.Cancel);
+            toolTip.SetToolTip(cancelButton, Resources.Button_Cancel);
 
             _powerTaskLinkLabel.Text = Resources.AfterCompletionOfBackup;
             _powerTaskComboBox.Items.Clear();

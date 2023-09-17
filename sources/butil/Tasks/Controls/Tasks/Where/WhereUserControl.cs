@@ -18,15 +18,15 @@ namespace BUtil.Configurator.Configurator.Controls
             InitializeComponent();
 
             _limitUploadLabelV2.Text = _limitUploadLabel.Text = BUtil.Core.Localization.Resources.UploadLimitGB;
-            _userLabel.Text = BUtil.Core.Localization.Resources.User;
-            _passwordLabel.Text = BUtil.Core.Localization.Resources.Password;
+            _userLabel.Text = BUtil.Core.Localization.Resources.User_Field;
+            _passwordLabel.Text = BUtil.Core.Localization.Resources.Password_Field;
             _shareLabel.Text = BUtil.Core.Localization.Resources.Url;
 
 
             whereToStoreBackupLabel.Text = Resources.SpecifyTheFolderWhereToStoreBackUp;
             _scriptsLabel.Text = BUtil.Core.Localization.Resources.HelpMountUnmountScript;
             _mountScriptLabel.Text = BUtil.Core.Localization.Resources.Mount;
-            _unmountScriptLabel.Text = BUtil.Core.Localization.Resources.Unmount;
+            _unmountScriptLabel.Text = BUtil.Core.Localization.Resources.DataStorageStorage_Label_DisconnectionScript;
             _mountButton.Text = _unmountButton.Text = BUtil.Core.Localization.Resources.Run;
         }
 

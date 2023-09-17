@@ -82,7 +82,7 @@ namespace BUtil.Configurator.Configurator
                     task = backupTaskStoreService.Load(selectTaskForm.TaskToRun);
                     if (task == null)
                     {
-                        Messages.ShowErrorBox(BUtil.Core.Localization.Resources.ThisTaskIsObsoleteAndNotSupportedAnymore);
+                        Messages.ShowErrorBox(BUtil.Core.Localization.Resources.Task_Validation_NotSupported);
                         Environment.Exit(-1);
                     }
                 }
@@ -94,7 +94,7 @@ namespace BUtil.Configurator.Configurator
                 task = backupTaskStoreService.Load(taskName);
                 if (task == null)
                 {
-                    Messages.ShowErrorBox(BUtil.Core.Localization.Resources.ThisTaskIsObsoleteAndNotSupportedAnymore);
+                    Messages.ShowErrorBox(BUtil.Core.Localization.Resources.Task_Validation_NotSupported);
                     Environment.Exit(-1);
                 }
             }
