@@ -31,7 +31,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 
         void ApplyLocalization()
         {
-            Text = Resources.WellcomeToBackupWizard;
+            Text = Resources.ApplicationName_LaunchTask;
             _cancelButton.Text = Resources.Button_Cancel;
             _chooseTaskLabel.Text = Resources.ChooseTheTaskYouWantToRun;
         }

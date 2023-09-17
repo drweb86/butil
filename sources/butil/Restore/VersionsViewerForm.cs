@@ -29,8 +29,8 @@ namespace BUtil.RestorationMaster
             _storageSettings = storageSettings;
 
             _selectVersionToolStripLabel.Text = BUtil.Core.Localization.Resources.BackupVersion_Selector_Title;
-            _selectedVersionToolStripLabel.Text = BUtil.Core.Localization.Resources.Files;
-            _changesToolStripLabel.Text = BUtil.Core.Localization.Resources.Changes;
+            _selectedVersionToolStripLabel.Text = BUtil.Core.Localization.Resources.BackupVersion_Files_Title;
+            _changesToolStripLabel.Text = BUtil.Core.Localization.Resources.BackupVersion_Changes_Title;
             _journalSelectedToolStripMenuItem.Text =
                 _journalSelectedToolStripButton.Text =
                 _treeViewJournalSelectedToolStripButton.Text =
@@ -72,7 +72,7 @@ namespace BUtil.RestorationMaster
                 .GroupBy(x => x.StorageFileName)
                 .Select(x => x.First().StorageFileNameSize)
                 .Sum();
-            _storageToolStripLabel.Text = string.Format(BUtil.Core.Localization.Resources.StorageSize, BytesToString(storageSize));
+            _storageToolStripLabel.Text = string.Format(BUtil.Core.Localization.Resources.BackupVersion_Storage_TitleWithSize, BytesToString(storageSize));
         }
 
         private static long GetSizeOfVersion(VersionState version)
@@ -382,8 +382,8 @@ namespace BUtil.RestorationMaster
             });
             progressForm.ShowDialog();
 
-            _selectedVersionToolStripLabel.Text = string.Format("{0} {1}", BUtil.Core.Localization.Resources.Files, selectedVersion.BackupDateUtc);
-            _changesToolStripLabel.Text = string.Format("{0} {1}", BUtil.Core.Localization.Resources.Changes, selectedVersion.BackupDateUtc);
+            _selectedVersionToolStripLabel.Text = string.Format("{0} {1}", Resources.BackupVersion_Files_Title, selectedVersion.BackupDateUtc);
+            _changesToolStripLabel.Text = string.Format("{0} {1}", Resources.BackupVersion_Changes_Title, selectedVersion.BackupDateUtc);
             RefreshChanges(changes);
             RefreshTreeView(treeViewFiles);
         }

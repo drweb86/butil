@@ -19,7 +19,7 @@ namespace BUtil.Configurator.Configurator.Controls
         {
             InitializeComponent();
 
-            _lastBackupAt.Text = BUtil.Core.Localization.Resources.LastBackup;
+            _lastBackupAt.Text = BUtil.Core.Localization.Resources.Task_LastBackup;
             OnTasksListViewResize(this, null);
         }
 
@@ -31,17 +31,17 @@ namespace BUtil.Configurator.Configurator.Controls
         {
             SetHintForControl(_addButton, Resources.Task_Create_Hint);
             SetHintForControl(_removeButton, Resources.Task_Delete_Hint);
-            SetHintForControl(_editButton, Resources.EditsTheSelectedBackupTask);
-            SetHintForControl(_executeButton, Resources.RunsBackup);
+            SetHintForControl(_editButton, Resources.Task_Edit_Hint);
+            SetHintForControl(_executeButton, Resources.Task_Launch_Hint);
             SetHintForControl(_recoverButton, Resources.Recover);
 
-            _addToolStripMenuItem.Text = Resources.Add;
-            _removeToolStripMenuItem.Text = Resources.Remove;
-            _editToolStripMenuItem.Text = Resources.Modify;
-            _executeToolStripMenuItem.Text = Resources.Run;
+            _addToolStripMenuItem.Text = Resources.Task_Create;
+            _removeToolStripMenuItem.Text = Resources.Task_Delete;
+            _editToolStripMenuItem.Text = Resources.Task_Edit;
+            _executeToolStripMenuItem.Text = Resources.Task_Launch;
             _recoverToolStripMenuItem.Text = Resources.Recover;
 
-            _nameColumn.Text = Resources.Name;
+            _nameColumn.Text = Resources.Name_Title;
         }
 
         public override void SetOptionsToUi(object settings)

@@ -82,18 +82,21 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 
         void ApplyLocalization()
         {
-            toolTip.SetToolTip(startButton, Resources.Start);
-            closeButton.Text = Resources.Close;
+            toolTip.SetToolTip(startButton, Resources.Task_Launch_Hint);
+            closeButton.Text = Resources.Button_Close;
 
             taskNameColumnHeader.Text = Resources.Task_List;
-            processingStateInformationColumnHeader.Text = Resources.ProcessingState;
 
-            Text = string.Format(BUtil.Core.Localization.Resources._0Backup, _backupTask.Name);
+            Text = $"{_backupTask.Name} - {Resources.ApplicationName_LaunchTask}";
             toolTip.SetToolTip(cancelButton, Resources.Button_Cancel);
 
-            _powerTaskLinkLabel.Text = Resources.AfterCompletionOfBackup;
+            _powerTaskLinkLabel.Text = Resources.AfterTaskSelection_Field;
             _powerTaskComboBox.Items.Clear();
-            _powerTaskComboBox.Items.AddRange(new[] { Resources.ShutdownPc, Resources.LogOff, Resources.Reboot, Resources.DoNothing });
+            _powerTaskComboBox.Items.AddRange(new[] { 
+                Resources.AfterTaskSelection_ShutdownPc, 
+                Resources.AfterTaskSelection_LogOff, 
+                Resources.AfterTaskSelection_Reboot, 
+                Resources.AfterTaskSelection_DoNothing });
 
             backupProgressUserControl.ApplyLocalization();
         }
@@ -207,11 +210,11 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
                 if (_log.HasErrors)
                 {
                     ProcessHelper.ShellExecute(_log.LogFilename);
-                    backupProgressUserControl.Stop(lastMinuteConsolidatedMessage, Resources.BackupFailedPleaseReviewOpenedLog, true);
+                    backupProgressUserControl.Stop(lastMinuteConsolidatedMessage, Resources.Task_Status_FailedSeeLog, true);
                 }
                 else
                 {
-                    backupProgressUserControl.Stop(lastMinuteConsolidatedMessage, Resources.BackupProcessCompletedSuccesfully, false);
+                    backupProgressUserControl.Stop(lastMinuteConsolidatedMessage, Resources.Task_Status_Succesfull, false);
                 }
                 if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
                     BUtil.BackupUiMaster.NativeMethods.FlashWindow.Flash(this, 10);

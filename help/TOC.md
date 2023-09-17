@@ -10,7 +10,7 @@
 
 [Backup via Wizard](./Backup/Backup%20via%20Wizard/Backup%20Wizard.md)
 
-[Backup Console Tool](./Backup/Backup%20via%20Console%20Tool.md)
+[Command line](./Command%20line.md)
 
 # Restore
 
@@ -23,8 +23,6 @@
 # Other
 
 [Manage Logs](./Manage%20Logs/Manage%20Logs.md)
-
-[Command line](./Command%20line.md)
 
 [Frequently Asked Questions](./Other/Frequently%20Asked%20Questions.md)
 

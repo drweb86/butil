@@ -1,7 +1,6 @@
 ﻿using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Logs;
 using System;
-using System.Windows.Forms;
 
 namespace BUtil.Core.Storages
 {
@@ -21,7 +20,7 @@ namespace BUtil.Core.Storages
         public static string Test(ILog log, IStorageSettingsV2 storageSettings)
         {
             if (storageSettings == null)
-                return BUtil.Core.Localization.Resources.StorageIsNotSpecified;
+                return BUtil.Core.Localization.Resources.DataStorage_Validation_NotSpecified;
 
             try
             {

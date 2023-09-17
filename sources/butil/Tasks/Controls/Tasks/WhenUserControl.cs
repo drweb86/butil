@@ -29,8 +29,8 @@ namespace BUtil.Configurator.Controls
             scheduledDaysCheckedListBox.Items[1] = Resources.Days_Tuesday;
             scheduledDaysCheckedListBox.Items[0] = Resources.Days_Monday;
             scheduledDaysCheckedListBox.Items[6] = Resources.Days_Sunday;
-            minuteLabel.Text = Resources.Minute;
-            hourLabel.Text = Resources.Hour;
+            hourLabel.Text = Resources.Time_Field_Hour;
+            minuteLabel.Text = Resources.Time_Field_Minute;
 		}
 	
 		public override void SetOptionsToUi(object settings)

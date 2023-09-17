@@ -28,8 +28,8 @@ BUtil is a powerful set of tools for creating backups of documents and other dat
 
 - [Version history](./help/Other/Version%20History%20(Changelog).md)
 - [Configurator](./help/Configure/Configurator.md)
+- [Command line](./help/Console%20line.md)
 - [Console CLI UI](./help/Configure/Console%20CLI%20UI.md)
-- [Command line version of backup tool](./help/Backup/Backup%20via%20Console%20Tool.md)
 - [Restore](./help/Restore/Restoration%20Wizard.md)
 - [Frequently Asked Questions (FAQ)](./help/Other/Frequently%20Asked%20Questions.md)
 and many more. See [all topics](./help/TOC.md) .

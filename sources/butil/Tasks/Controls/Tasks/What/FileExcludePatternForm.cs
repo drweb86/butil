@@ -18,7 +18,7 @@ namespace BUtil.Configurator.Configurator.Controls.Tasks.What
             InitializeComponent();
 
             Pattern = pattern;
-            this.Text = pattern == null ? BUtil.Core.Localization.Resources.AddFileExcludePattern : Resources.EditFileExcludePattern;
+            this.Text = pattern == null ? BUtil.Core.Localization.Resources.StorageItem_ExcludePattern_Add : Resources.EditFileExcludePattern;
             _patternLabel.Text = BUtil.Core.Localization.Resources.FileExclusionPattern;
             _descriptionLabel.Text = BUtil.Core.Localization.Resources.HereYouCanSpecifyFileGlobbingExclusionPatternsItCanBeAFileNameOrFolderNameOrWildcardExamplesDTempDTempFileTxtDTempTxtOrBinSeeDetailedDescriptionInTheFollowingLink;
             _formatLinkLabel.Text = BUtil.Core.Localization.Resources.FileGlobbingInNETPatterns;

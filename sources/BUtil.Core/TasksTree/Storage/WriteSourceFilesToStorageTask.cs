@@ -20,7 +20,7 @@ namespace BUtil.Core.TasksTree.Storage
             TaskEvents events,
             CalculateIncrementedVersionForStorageTask getIncrementedVersionTask,
             IncrementalBackupModelOptionsV2 incrementalBackupModelOptions)
-            : base(services.Log, events, Localization.Resources.WriteSourceFilesToStorage, TaskArea.Hdd, null)
+            : base(services.Log, events, Localization.Resources.File_List_Saving, TaskArea.Hdd, null)
         {
             _services = services;
             _getIncrementedVersionTask = getIncrementedVersionTask;

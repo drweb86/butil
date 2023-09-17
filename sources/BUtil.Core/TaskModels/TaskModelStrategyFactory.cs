@@ -27,7 +27,7 @@ namespace BUtil.Core.BackupModels
                 var typedOptions = (IncrementalBackupModelOptionsV2)options;
                 if (typedOptions.Items.Count == 0)
                 {
-                    error = Resources.ThereAreNoItemsToBackup;
+                    error = Resources.SourceItem_Validation_Empty;
                     return false;
                 }
 
@@ -37,7 +37,7 @@ namespace BUtil.Core.BackupModels
                     {
                         if (!Directory.Exists(item.Target))
                         {
-                            error = string.Format(Resources.SourceItemDoesNotExist, item.Target);
+                            error = string.Format(Resources.SourceItem_Validation_NotExists, item.Target);
                             return false;
                         }
                     }
@@ -45,7 +45,7 @@ namespace BUtil.Core.BackupModels
                     {
                         if (!File.Exists(item.Target))
                         {
-                            error = string.Format(Resources.SourceItemDoesNotExist, item.Target);
+                            error = string.Format(Resources.SourceItem_Validation_NotExists, item.Target);
                             return false;
                         }
                     }

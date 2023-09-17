@@ -15,8 +15,8 @@ namespace BUtil.Configurator.Restore
         {
             InitializeComponent();
 
-            this._closeButton.Text = Resources.Close;
-            _versionsListToolStripLabel.Text = BUtil.Core.Localization.Resources.VERSIONS;
+            this._closeButton.Text = Resources.Button_Close;
+            _versionsListToolStripLabel.Text = BUtil.Core.Localization.Resources.BackupVersion_Versions_Title;
             _openSelectedVersionToolStripButton.Text =
                 _openSelectedVersionToolStripMenuItem.Text = BUtil.Core.Localization.Resources.OpenSelectedVersion;
         }

@@ -18,9 +18,9 @@ namespace BUtil.Core.Storages
             : base(log, settings)
         {
             if (string.IsNullOrWhiteSpace(Settings.Host))
-                throw new InvalidDataException(BUtil.Core.Localization.Resources.HostIsNotBeSpecified);
+                throw new InvalidDataException(BUtil.Core.Localization.Resources.Server_Field_Address_Validation);
             if (Settings.Port < 0) // 0 - default.
-                throw new InvalidDataException(BUtil.Core.Localization.Resources.PortIsInvalid);
+                throw new InvalidDataException(BUtil.Core.Localization.Resources.Server_Field_Port_Validation);
             if (string.IsNullOrWhiteSpace(Settings.User))
                 throw new InvalidDataException(BUtil.Core.Localization.Resources.User_Field_Validation);
             if (string.IsNullOrWhiteSpace(Settings.Password))

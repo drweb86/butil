@@ -23,18 +23,18 @@ namespace BUtil.Configurator.Controls
 
             itemsToCompressColumnHeader.Text = Resources.ItemsToBackup;
             SetHintForControl(_itemsListView, Resources.DragAndDropHereFilesAndFoldersWhichYoureGoingToBackupForSettingCompressionPriorityUseMenu);
-            SetHintForControl(addFoldersButton, Resources.AddFolders);
-            addFoldersToolStripMenuItem.Text = Resources.AddFolders;
+            SetHintForControl(addFoldersButton, Resources.SourceItem_AddFolders);
+            addFoldersToolStripMenuItem.Text = Resources.SourceItem_AddFolders;
 
             SetHintForControl(removeButton, Resources.Remove);
             removeToolStripMenuItem.Text = Resources.Remove;
 
-            SetHintForControl(addFilesButton, Resources.AddFiles);
-            addFilesToolStripMenuItem.Text = Resources.AddFiles;
+            SetHintForControl(addFilesButton, Resources.SourceItem_AddFiles);
+            addFilesToolStripMenuItem.Text = Resources.SourceItem_AddFiles;
 
-            _addFileExcludePatternToolStripMenuItem.Text = Resources.AddFileExcludePattern;
-            _addFileExcludePatternToolStripMenuItem.ToolTipText = BUtil.Core.Localization.Resources.ExcludesFilesFromBackupByPattern;
-            SetHintForControl(_addFIleExcludePatternButton, BUtil.Core.Localization.Resources.ExcludesFilesFromBackupByPattern);
+            _addFileExcludePatternToolStripMenuItem.Text = Resources.StorageItem_ExcludePattern_Add;
+            _addFileExcludePatternToolStripMenuItem.ToolTipText = BUtil.Core.Localization.Resources.StorageItem_ExcludePattern_Hint;
+            SetHintForControl(_addFIleExcludePatternButton, BUtil.Core.Localization.Resources.StorageItem_ExcludePattern_Hint);
             _editFileExcludePatternToolStripMenuItem.Text = BUtil.Core.Localization.Resources.EditFileExcludePattern;
             _openInExplorerToolStripMenuItem.Text = BUtil.Core.Localization.Resources.OpenInExplorer;
 

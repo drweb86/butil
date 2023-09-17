@@ -17,9 +17,9 @@ namespace BUtil.ConsoleBackup.UI
             _ftpsStorageControls.ForEach(x => x.Visible = transportId == 1);
         }
 
-        internal EditStorageSettingsDialog(IStorageSettingsV2 source = null, string title = null) 
+        internal EditStorageSettingsDialog(IStorageSettingsV2 source, string title) 
         {
-            Title = title ?? BUtil.Core.Localization.Resources.SpecifyLocation;
+            Title = title;
             InitializeComponent();
 
             if (source == null)
@@ -94,7 +94,7 @@ namespace BUtil.ConsoleBackup.UI
             var error = StorageFactory.Test(new StubLog(), storageSettings);
             if (error != null)
             {
-                MessageBox.ErrorQuery(string.Empty, error, Resources.Close);
+                MessageBox.ErrorQuery(string.Empty, error, Resources.Button_Close);
                 return;
             }
 

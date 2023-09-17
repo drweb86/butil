@@ -28,7 +28,7 @@ namespace BUtil.ConsoleBackup.UI {
                 AutoSize = true,
                 X = 0,
                 Y = 4,
-                Text = BUtil.Core.Localization.Resources.Field_Name
+                Text = BUtil.Core.Localization.Resources.Name_Field
             });
 
             _titleTextField = new TextField

@@ -31,7 +31,7 @@ namespace BUtil.ConsoleBackup.UI {
 
             var closeButton = new Button
             {
-                Text = Resources.Close,
+                Text = Resources.Button_Close,
                 IsDefault = true,
             };
             closeButton.Clicked += OnClickClose;

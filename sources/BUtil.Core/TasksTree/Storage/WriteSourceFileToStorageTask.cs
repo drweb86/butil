@@ -24,7 +24,7 @@ namespace BUtil.Core.TasksTree
             List<StorageFile> storageFiles,
             Quota singleBackupQuotaGb,
             System.Collections.Generic.List<VersionState> versionStates) : 
-            base(services.Log, events, string.Format(BUtil.Core.Localization.Resources.WriteSourceFileToStorage, string.Join(", ", storageFiles.Select(x => x.FileState.FileName))), TaskArea.File)
+            base(services.Log, events, string.Format(BUtil.Core.Localization.Resources.File_Saving, string.Join(", ", storageFiles.Select(x => x.FileState.FileName))), TaskArea.File)
         {
             _services = services;
             StorageFiles = storageFiles;

@@ -132,9 +132,6 @@
   <data name="Password_Field_Length" xml:space="preserve">
     <value>Length:</value>
   </data>
-  <data name="Options" xml:space="preserve">
-    <value>Options</value>
-  </data>
   <data name="Password_Group_Header" xml:space="preserve">
     <value>Password (optional)</value>
   </data>
@@ -147,9 +144,6 @@
   <data name="TaskFinishedSuccesfully" xml:space="preserve">
     <value>Task finished succesfully!</value>
   </data>
-  <data name="BackupReport" xml:space="preserve">
-    <value>Backup Report</value>
-  </data>
   <data name="AnUnexpectedErrorOccuredNNpleaseContactTheDevelopersWithInformationSavedOnYourDesktopInN0NNapplicationWillNowClose" xml:space="preserve">
     <value>An unexpected error occured
 
@@ -157,9 +151,6 @@ Please contact the developers with information saved on your desktop in
 "{0}"
 
 Application will now close</value>
-  </data>
-  <data name="PackingDataInAnImage" xml:space="preserve">
-    <value>Packing data in an image</value>
   </data>
   <data name="GetStateOfSourceItemsAndStorages" xml:space="preserve">
     <value>Get state of source items and storages</value>
@@ -173,8 +164,8 @@ Application will now close</value>
   <data name="GetStateOfFileFileName" xml:space="preserve">
     <value>Get state of file "{0}"</value>
   </data>
-  <data name="WriteStateToStorage" xml:space="preserve">
-    <value>Write state</value>
+  <data name="State_Saving" xml:space="preserve">
+    <value>Writing state</value>
   </data>
   <data name="IncrementalBackup" xml:space="preserve">
     <value>Incremental backup</value>
@@ -182,11 +173,11 @@ Application will now close</value>
   <data name="CalculateIncrementedVersionForStorage" xml:space="preserve">
     <value>Calculate incremented version</value>
   </data>
-  <data name="WriteSourceFilesToStorage" xml:space="preserve">
-    <value>Write files to storage</value>
+  <data name="File_List_Saving" xml:space="preserve">
+    <value>Saving files</value>
   </data>
-  <data name="WriteSourceFileToStorage" xml:space="preserve">
-    <value>Write file "{0}"</value>
+  <data name="File_Saving" xml:space="preserve">
+    <value>Saving "{0}"</value>
   </data>
   <data name="WriteIncrementedVersionToStorage" xml:space="preserve">
     <value>Write incremented version to storage</value>
@@ -220,10 +211,10 @@ Please update storage settings.</value>
   <data name="ImportAllFiles" xml:space="preserve">
     <value>Import all files</value>
   </data>
-  <data name="SourceItemDoesNotExist" xml:space="preserve">
-    <value>Source item "{0}" does not exist.</value>
+  <data name="SourceItem_Validation_NotExists" xml:space="preserve">
+    <value>"{0}" does not exist, correct list of source items.</value>
   </data>
-  <data name="ThereAreNoItemsToBackup" xml:space="preserve">
+  <data name="SourceItem_Validation_Empty" xml:space="preserve">
     <value>There are no items to backup!</value>
   </data>
   <data name="TransformFileNameIsEmpty" xml:space="preserve">
@@ -235,13 +226,13 @@ Please update storage settings.</value>
   <data name="DestinationFolderIsNotSpecified" xml:space="preserve">
     <value>Destination folder is not specified.</value>
   </data>
-  <data name="StorageIsNotSpecified" xml:space="preserve">
-    <value>Storage is not specified</value>
+  <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
+    <value>Storage is not specified.</value>
   </data>
-  <data name="HostIsNotBeSpecified" xml:space="preserve">
-    <value>Host is not be specified.</value>
+  <data name="Server_Field_Address_Validation" xml:space="preserve">
+    <value>Server name is not be specified.</value>
   </data>
-  <data name="PortIsInvalid" xml:space="preserve">
+  <data name="Server_Field_Port_Validation" xml:space="preserve">
     <value>Port is invalid.</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
@@ -274,13 +265,13 @@ Please update storage settings.</value>
   <data name="DragAndDropHereFilesAndFoldersWhichYoureGoingToBackupForSettingCompressionPriorityUseMenu" xml:space="preserve">
     <value>Drag and drop here files and folders which you're going to backup!</value>
   </data>
-  <data name="AddFolders" xml:space="preserve">
+  <data name="SourceItem_AddFolders" xml:space="preserve">
     <value>Add folders...</value>
   </data>
   <data name="Remove" xml:space="preserve">
     <value>Remove</value>
   </data>
-  <data name="AddFiles" xml:space="preserve">
+  <data name="SourceItem_AddFiles" xml:space="preserve">
     <value>Add files...</value>
   </data>
   <data name="Where" xml:space="preserve">
@@ -322,10 +313,10 @@ Please update storage settings.</value>
   <data name="Days_Sunday" xml:space="preserve">
     <value>Sunday</value>
   </data>
-  <data name="Minute" xml:space="preserve">
+  <data name="Time_Field_Minute" xml:space="preserve">
     <value>Minute:</value>
   </data>
-  <data name="Hour" xml:space="preserve">
+  <data name="Time_Field_Hour" xml:space="preserve">
     <value>Hour:</value>
   </data>
   <data name="Task_Create_Hint" xml:space="preserve">
@@ -334,41 +325,29 @@ Please update storage settings.</value>
   <data name="Task_List" xml:space="preserve">
     <value>Tasks</value>
   </data>
-  <data name="RunsBackup" xml:space="preserve">
-    <value>Runs backup...</value>
+  <data name="Task_Launch_Hint" xml:space="preserve">
+    <value>Launches selected task.</value>
   </data>
-  <data name="Configurator" xml:space="preserve">
-    <value>Configurator</value>
+  <data name="ApplicationName_Tasks" xml:space="preserve">
+    <value>Tasks</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>Start</value>
-  </data>
-  <data name="Close" xml:space="preserve">
+  <data name="Button_Close" xml:space="preserve">
     <value>Close</value>
   </data>
-  <data name="WellcomeToBackupWizard" xml:space="preserve">
-    <value>Wellcome to Backup Wizard!</value>
-  </data>
-  <data name="BackupProcessCompletedSuccesfully" xml:space="preserve">
-    <value>Succeeded</value>
+  <data name="Task_Status_Succesfull" xml:space="preserve">
+    <value>Succesfull</value>
   </data>
   <data name="Elapsed" xml:space="preserve">
     <value>Elapsed:</value>
   </data>
-  <data name="BackupIsInAProgress" xml:space="preserve">
-    <value>Backup is in a progress... </value>
+  <data name="Task_Status_InProgress" xml:space="preserve">
+    <value>Task is in a progress... </value>
   </data>
   <data name="Button_OK" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="Field_Name" xml:space="preserve">
+  <data name="Name_Field" xml:space="preserve">
     <value>Name:</value>
-  </data>
-  <data name="Modify" xml:space="preserve">
-    <value>Modify...</value>
-  </data>
-  <data name="Add" xml:space="preserve">
-    <value>Add</value>
   </data>
   <data name="DestinationFolder" xml:space="preserve">
     <value>Destination folder:</value>
@@ -376,16 +355,16 @@ Please update storage settings.</value>
   <data name="HardDriveStorage" xml:space="preserve">
     <value>Folder storage...</value>
   </data>
-  <data name="AfterCompletionOfBackup" xml:space="preserve">
-    <value>After completion of backup</value>
+  <data name="AfterTaskSelection_Field" xml:space="preserve">
+    <value>After task completion:</value>
   </data>
-  <data name="ShutdownPc" xml:space="preserve">
-    <value>Shutdown PC</value>
+  <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
+    <value>Shutdown</value>
   </data>
-  <data name="LogOff" xml:space="preserve">
-    <value>Log Off</value>
+  <data name="AfterTaskSelection_LogOff" xml:space="preserve">
+    <value>Log off</value>
   </data>
-  <data name="DoNothing" xml:space="preserve">
+  <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
     <value>Do nothing</value>
   </data>
   <data name="ItemsToBackup" xml:space="preserve">
@@ -437,10 +416,7 @@ Changes are:
 
 Program will now open browser with the download page</value>
   </data>
-  <data name="ProcessingState" xml:space="preserve">
-    <value>Processing State</value>
-  </data>
-  <data name="Reboot" xml:space="preserve">
+  <data name="AfterTaskSelection_Reboot" xml:space="preserve">
     <value>Reboot</value>
   </data>
   <data name="ButilSoftwarePackageComponent0IsMissingNNpleaseReinstallApplicationNNrestorationBackupAndHelpFunctionsWillBeUnavailable" xml:space="preserve">
@@ -455,29 +431,17 @@ Restoration, Backup and Help functions will be unavailable.</value>
 
 Please refer to manual for the complete list of parameters!</value>
   </data>
-  <data name="Help" xml:space="preserve">
-    <value>Help</value>
-  </data>
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
     <value>New task</value>
-  </data>
-  <data name="WellcomeToBackupTaskCreationWizard" xml:space="preserve">
-    <value>Wellcome to Backup Task Creation Wizard!</value>
   </data>
   <data name="Task_Delete_Hint" xml:space="preserve">
     <value>Deletes the selected task.</value>
   </data>
-  <data name="EditsTheSelectedBackupTask" xml:space="preserve">
-    <value>Edits the selected backup task...</value>
+  <data name="Task_Edit_Hint" xml:space="preserve">
+    <value>Edits the selected task.</value>
   </data>
   <data name="WouldYouLileToRemoveTheBackupTask0" xml:space="preserve">
     <value>Would you lile to remove the backup task '{0}' ?</value>
-  </data>
-  <data name="Run" xml:space="preserve">
-    <value>Run</value>
-  </data>
-  <data name="BackupTask0" xml:space="preserve">
-    <value>Backup Task '{0}'</value>
   </data>
   <data name="ChooseTheTaskYouWantToRun" xml:space="preserve">
     <value>Choose the task you want to run:</value>
@@ -485,16 +449,10 @@ Please refer to manual for the complete list of parameters!</value>
   <data name="IncrementalBackupDescription" xml:space="preserve">
     <value>The most basic form of incremental backup consists of identifying, recording and thus, preserving only those files that have changed since the last backup. Since changes are typically low, incremental backups are much smaller and quicker than full backups. For instance, following a full backup on Friday, a Monday backup will contain only those files that changed since Friday. A Tuesday backup contains only those files that changed since Monday, and so on. A full restoration of data will naturally be slower, since all increments must be restored. Should any one of the copies created fail, including the first (full), restoration will be incomplete.</value>
   </data>
-  <data name="Name" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="NameIsEmpty" xml:space="preserve">
-    <value>Name is empty.</value>
-  </data>
   <data name="Password_Generate" xml:space="preserve">
     <value>Generate password...</value>
   </data>
-  <data name="BackupFailedPleaseReviewOpenedLog" xml:space="preserve">
+  <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Failed (see opened log)</value>
   </data>
   <data name="InformationButil" xml:space="preserve">
@@ -519,10 +477,10 @@ Point to a directory containing this file.</value>
   <data name="BackupVersion_Selector_Title" xml:space="preserve">
     <value>SELECT VERSION</value>
   </data>
-  <data name="Changes" xml:space="preserve">
+  <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>CHANGES</value>
   </data>
-  <data name="Files" xml:space="preserve">
+  <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>FILES</value>
   </data>
   <data name="ClickOnItemYouWantToRestoreAndOpenContextMenuByRightClick" xml:space="preserve">
@@ -534,11 +492,11 @@ Point to a directory containing this file.</value>
   <data name="Password_Help" xml:space="preserve">
     <value>Recommended minimum password length is 50 characters and more.</value>
   </data>
-  <data name="AddFileExcludePattern" xml:space="preserve">
-    <value>Add File Exclude Pattern...</value>
+  <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
+    <value>Add exclude file pattern</value>
   </data>
-  <data name="ExcludesFilesFromBackupByPattern" xml:space="preserve">
-    <value>Excludes files from backup by pattern...</value>
+  <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
+    <value>Skip processing files by pattern.</value>
   </data>
   <data name="FileExclusionPattern" xml:space="preserve">
     <value>File Exclusion Pattern:</value>
@@ -571,22 +529,22 @@ See detailed description in the following link.</value>
   <data name="RestorationIsCompleted" xml:space="preserve">
     <value>Restoration is completed.</value>
   </data>
-  <data name="UploadLimitGB" xml:space="preserve">
+  <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
     <value>Upload limit, GB:</value>
   </data>
-  <data name="UploadLimitDescription" xml:space="preserve">
-    <value>Limits amount of data being sent during one backup session to storage. 0 - no limit.
-When backup exceeds this quota, some files will be skipped and will be backuped next time.
-Usage scenario: You mounted some cloud storage as disk and perform backup on it. There's a problem: ISP drops upload speed after several gigabytes. This setting allows you to handle it.</value>
+  <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
+    <value>Limits amount of data being sent during one task execution to storage. 0 - no limit.
+When quota is exceeded, other files will be skipped and will be processed next time.
+Usage scenario: You copy data to remote server. There's a problem: ISP drops upload speed after several gigabytes. This setting allows you to handle it.</value>
   </data>
-  <data name="Mount" xml:space="preserve">
-    <value>Mount:</value>
+  <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
+    <value>Connection script:</value>
   </data>
-  <data name="DataStorageStorage_Label_DisconnectionScript" xml:space="preserve">
+  <data name="DataStorageStorage_Field_DisconnectionScript" xml:space="preserve">
     <value>Disconnection script:</value>
   </data>
-  <data name="HelpMountUnmountScript" xml:space="preserve">
-    <value>If folder becomes accessible after mounting, specify PowerShell scripts for  mounting and unmounting</value>
+  <data name="DataStorage_Script_Help" xml:space="preserve">
+    <value>If folder becomes available after executing some commands, specify PowerShell scripts for connection and disconnection.</value>
   </data>
   <data name="Url" xml:space="preserve">
     <value>Url:</value>
@@ -594,10 +552,10 @@ Usage scenario: You mounted some cloud storage as disk and perform backup on it.
   <data name="ShareNameIsNotSpecified" xml:space="preserve">
     <value>Share name is not specified.</value>
   </data>
-  <data name="LastBackup" xml:space="preserve">
+  <data name="Task_LastBackup" xml:space="preserve">
     <value>State</value>
   </data>
-  <data name="StorageSize" xml:space="preserve">
+  <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
     <value>Storage: {0}</value>
   </data>
   <data name="Journal0" xml:space="preserve">
@@ -606,7 +564,7 @@ Usage scenario: You mounted some cloud storage as disk and perform backup on it.
   <data name="JournalSelected" xml:space="preserve">
     <value>Journal for selected...</value>
   </data>
-  <data name="VERSIONS" xml:space="preserve">
+  <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERSIONS</value>
   </data>
   <data name="OpenSelectedVersion" xml:space="preserve">
@@ -615,22 +573,11 @@ Usage scenario: You mounted some cloud storage as disk and perform backup on it.
   <data name="RecoverSelected" xml:space="preserve">
     <value>Recover selected...</value>
   </data>
-  <data name="_0Backup" xml:space="preserve">
-    <value>{0} - Backup</value>
+  <data name="ApplicationName_LaunchTask" xml:space="preserve">
+    <value>Launch task</value>
   </data>
-  <data name="UsageVariantsNNbackupExeTaskMyTaskTitleNRunningWithoutParametersOutputsInformationToConsoleNNbackupExeTaskMyTask1TitleTaskMyTask2TitleTaskMyTask3TitleNRunsSeveralTasksOneByOneNNbackupExeTaskMyTaskTitleUsefilelogNOutputsInformationInFileLogNNbackupExeTaskMyTaskTitleShutdownNbackupExeTaskMyTaskTitleLogoffNbackupExeTaskMyTaskTitleSuspendNbackupExeTaskMyTaskTitleRebootNbackupExeTaskMyTaskTitleHibernateNNbackupExeHelpNOutputsBriefHelpN" xml:space="preserve">
-    <value>Usage variants:
-
-butilc.exe "Task=My task title"
-   Runs specified task.
-
-butilc.exe "Task=My task title" Shutdown
-butilc.exe "Task=My task title" LogOff 
-butilc.exe "Task=My task title" Reboot
-
-butilc.exe Help
-   Outputs brief help
-</value>
+  <data name="CommandLineArguments_Help" xml:space="preserve">
+    <value>Visit {0} to see command line arguments.</value>
   </data>
   <data name="ErrorInvalidCommandParametersSpecified" xml:space="preserve">
     <value>Error: Invalid command parameters specified!!!</value>
@@ -638,9 +585,8 @@ butilc.exe Help
   <data name="CannotOpenFileLogDueToCryticalError0" xml:space="preserve">
     <value>Cannot open file log due to crytical error {0}</value>
   </data>
-  <data name="PleaseSpecifyTheBackupTaskTitleUsingTheCommandLineArgument0MyBackupTaskTitleNexampleBackupExe0MyBackupTitle" xml:space="preserve">
-    <value>Please, specify the backup task title using the command line argument "{0}My backup task title"
-Example: butilc.exe "{0}My backup title"</value>
+  <data name="CommandLineArguments_Invalid" xml:space="preserve">
+    <value>Invalid command line arguments.</value>
   </data>
   <data name="Task_Validation_NotFound" xml:space="preserve">
     <value>Task '{0}' wasn't found.</value>
@@ -668,7 +614,7 @@ To see all options google "C# DateTime format".</value>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
     <value>Edit "{0}" media import task</value>
   </data>
-  <data name="Field_Name_Validation" xml:space="preserve">
+  <data name="Name_Field_Validation" xml:space="preserve">
     <value>Name is empty or contains not supported path characters.</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
@@ -683,19 +629,16 @@ To see all options google "C# DateTime format".</value>
   <data name="Task_Delete" xml:space="preserve">
     <value>Delete</value>
   </data>
-  <data name="PleaseConfirmDeletionOf0" xml:space="preserve">
-    <value>Please confirm deletion of "{0}"</value>
+  <data name="Task_Delete_Confirm" xml:space="preserve">
+    <value>Do you really want to delete "{0}"?</value>
   </data>
   <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
     <value>You cannot edit this type of task in CLI.</value>
   </data>
-  <data name="SpecifyLocation" xml:space="preserve">
-    <value>Specify location</value>
+  <data name="Server_Field_Address" xml:space="preserve">
+    <value>Server name:</value>
   </data>
-  <data name="HostField" xml:space="preserve">
-    <value>Host:</value>
-  </data>
-  <data name="PortField" xml:space="preserve">
+  <data name="Server_Field_Port" xml:space="preserve">
     <value>Port:</value>
   </data>
   <data name="User_Field" xml:space="preserve">
@@ -718,7 +661,7 @@ application using template file names.</value>
   <data name="SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Skip already imported files</value>
   </data>
-  <data name="SelectTransport" xml:space="preserve">
-    <value>Select transport</value>
+  <data name="Name_Title" xml:space="preserve">
+    <value>Name</value>
   </data>
 </root>

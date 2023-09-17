@@ -30,7 +30,7 @@ namespace BUtil.Configurator.Tasks.Controls.Tasks.Encryption
             copyToClipboardButton.Text = Resources.Button_CopyToClipboard;
             generateButton.Text = Resources.Generate;
             passwordLengthLabel.Text = Resources.Password_Field_Length;
-            optionsGroupBox.Text = Resources.Options;
+            optionsGroupBox.Text = string.Empty;
             useButton.Text = Resources.Password_Use;
             generatePasswordButtonClick(this, null);
         }

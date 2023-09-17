@@ -27,7 +27,7 @@ namespace BUtil.BackupUiMaster.Controls
         {
             _start = DateTime.Now;
             clockTimer.Enabled = true;
-            Title = Resources.BackupIsInAProgress;
+            Title = Resources.Task_Status_InProgress;
         }
 
         public void Stop(string lastMinuteMessage, string generalStatus, bool isError)

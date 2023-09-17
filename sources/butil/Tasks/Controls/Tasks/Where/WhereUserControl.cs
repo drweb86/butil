@@ -17,17 +17,17 @@ namespace BUtil.Configurator.Configurator.Controls
         {
             InitializeComponent();
 
-            _limitUploadLabelV2.Text = _limitUploadLabel.Text = BUtil.Core.Localization.Resources.UploadLimitGB;
+            _limitUploadLabelV2.Text = _limitUploadLabel.Text = BUtil.Core.Localization.Resources.DataStorage_Field_UploadQuota;
             _userLabel.Text = BUtil.Core.Localization.Resources.User_Field;
             _passwordLabel.Text = BUtil.Core.Localization.Resources.Password_Field;
             _shareLabel.Text = BUtil.Core.Localization.Resources.Url;
 
 
             whereToStoreBackupLabel.Text = Resources.SpecifyTheFolderWhereToStoreBackUp;
-            _scriptsLabel.Text = BUtil.Core.Localization.Resources.HelpMountUnmountScript;
-            _mountScriptLabel.Text = BUtil.Core.Localization.Resources.Mount;
-            _unmountScriptLabel.Text = BUtil.Core.Localization.Resources.DataStorageStorage_Label_DisconnectionScript;
-            _mountButton.Text = _unmountButton.Text = BUtil.Core.Localization.Resources.Run;
+            _scriptsLabel.Text = BUtil.Core.Localization.Resources.DataStorage_Script_Help;
+            _mountScriptLabel.Text = BUtil.Core.Localization.Resources.DataStorage_Field_ConnectScript;
+            _unmountScriptLabel.Text = BUtil.Core.Localization.Resources.DataStorageStorage_Field_DisconnectionScript;
+            _mountButton.Text = _unmountButton.Text = BUtil.Core.Localization.Resources.Task_Launch;
         }
 
         #region Overrides
@@ -153,7 +153,7 @@ namespace BUtil.Configurator.Configurator.Controls
 
         private void OnUploadLimitClick(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Messages.ShowInformationBox(Resources.UploadLimitDescription);
+            Messages.ShowInformationBox(Resources.DataStorage_Field_UploadQuota_Help);
         }
 
 

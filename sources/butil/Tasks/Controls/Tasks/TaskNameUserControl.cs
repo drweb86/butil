@@ -16,7 +16,7 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
 
         public override void ApplyLocalization()
         {
-            _nameLabel.Text = Resources.Name;
+            _nameLabel.Text = Resources.Name_Title;
         }
 
         public override void SetOptionsToUi(object settings)
@@ -31,7 +31,7 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
             var name = _titleTextBox.Text;
             if (string.IsNullOrWhiteSpace(name))
             {
-                Messages.ShowErrorBox(BUtil.Core.Localization.Resources.NameIsEmpty);
+                Messages.ShowErrorBox(BUtil.Core.Localization.Resources.Name_Field_Validation);
                 return false;
             }
 

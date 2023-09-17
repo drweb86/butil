@@ -28,7 +28,7 @@ namespace BUtil.ConsoleBackup.UI {
                 AutoSize = true,
                 X = 0,
                 Y = 0,
-                Text = BUtil.Core.Localization.Resources.SelectTransport,
+                Text = BUtil.Core.Localization.Resources.Where,
             });
             var transports = new List<string> { BUtil.Core.Localization.Resources.FolderStorage, "FTPS" };
             _transportSelectionComboBox = new ComboBox
@@ -46,8 +46,8 @@ namespace BUtil.ConsoleBackup.UI {
 
             _folderStorageFolderTextField = AddTextField(_folderStorageControls, BUtil.Core.Localization.Resources.Field_Folder, 3);
 
-            _hostFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.HostField, 3);
-            _portFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.PortField, 6);
+            _hostFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.Server_Field_Address, 3);
+            _portFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.Server_Field_Port, 6);
             _userFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.User_Field, 9);
             _pwdFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.Password_Field, 12);
             _folderFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.Field_Folder, 15);

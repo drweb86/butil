@@ -55,13 +55,13 @@ namespace BUtil.ConsoleBackup.UI
                 Path.GetInvalidFileNameChars().Any(x => this._titleTextField.Text.Contains(x)) ||
                 Path.GetInvalidPathChars().Any(x => this._titleTextField.Text.Contains(x)))
             {
-                MessageBox.ErrorQuery(string.Empty, BUtil.Core.Localization.Resources.Field_Name_Validation, Resources.Close);
+                MessageBox.ErrorQuery(string.Empty, BUtil.Core.Localization.Resources.Name_Field_Validation, Resources.Button_Close);
                 return;
             }
 
             if (!TaskModelStrategyFactory.TryVerify(new StubLog(), BackupTask.Model, out var error))
             {
-                MessageBox.ErrorQuery(string.Empty, error, Resources.Close);
+                MessageBox.ErrorQuery(string.Empty, error, Resources.Button_Close);
                 return;
             }
 

@@ -36,7 +36,7 @@ namespace BUtil.RestorationMaster
 
         private void ApplyLocals()
         {
-            closeButton.Text = Resources.Close;
+            closeButton.Text = Resources.Button_Close;
             passwordLabel.Text = Resources.Password_Recovery_Prompt;
             continueButton.Text = Resources.Continue;
             continueButton.Enabled = true;

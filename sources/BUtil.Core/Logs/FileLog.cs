@@ -55,7 +55,7 @@ namespace BUtil.Core.Logs
 <html>
     <head>
 	    <META HTTP-EQUIV=""CONTENT-TYPE"" CONTENT=""text/html; charset=utf-8"">
-	    <TITLE>{_dateTime.ToString("f", CultureInfo.CurrentUICulture)} - {Resources.BackupReport}</TITLE>
+	    <TITLE>{_dateTime.ToString("f", CultureInfo.CurrentUICulture)}</TITLE>
 		<style>
 			body {{
                 margin-bottom: 0cm;

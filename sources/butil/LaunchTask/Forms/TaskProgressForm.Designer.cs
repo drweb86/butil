@@ -103,8 +103,8 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             // 
             // processingStateInformationColumnHeader
             // 
-            processingStateInformationColumnHeader.Text = "Processing";
-            processingStateInformationColumnHeader.Width = 200;
+            processingStateInformationColumnHeader.Text = " ";
+            processingStateInformationColumnHeader.Width = 50;
             // 
             // compressionItemsListViewImageList
             // 

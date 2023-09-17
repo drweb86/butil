@@ -73,7 +73,7 @@ namespace BUtil.Configurator.Configurator.Forms
             // 
             this._helpToolStripMenuItem.Name = "_helpToolStripMenuItem";
             this._helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this._helpToolStripMenuItem.Text = "Help";
+            this._helpToolStripMenuItem.Text = "?";
             this._helpToolStripMenuItem.Click += new System.EventHandler(this.OnAboutToolStripMenuItemClick);
             // 
             // toolTip
