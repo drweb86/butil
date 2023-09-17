@@ -1,6 +1,3 @@
-# Links in about tab are not opened
-This is your OS issue. To fix it, please do the next with administrative privileges Start\Control Panel\Programs\Default programs tab and configure it.
-
 # Where can I configure the temporary folder?
 In some cases free size of temp folder is too low. To change TEMP folder location please do:
 
