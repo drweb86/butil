@@ -2,19 +2,12 @@
 
 # Configure
 
-[Configurator](./Configure/Configurator.md)
 [Console CLI UI](./Configure/Console%20CLI%20UI.md)
 [Import media task](./Configure/Import%20media%20task.md);
 
 # Backup
 
-[Backup via Wizard](./Backup/Backup%20via%20Wizard/Backup%20Wizard.md)
-
 [Command line](./Command%20line.md)
-
-# Restore
-
-[Restoration Wizard](./Restore/Restoration%20Wizard.md)
 
 # Schedule
 
