@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,250 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Password_Generator_Header" xml:space="preserve">
-    <value>Password generator</value>
-  </data>
-  <data name="Button_Cancel" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="Button_CopyToClipboard" xml:space="preserve">
-    <value>Copy</value>
-  </data>
-  <data name="Password_Field_Length" xml:space="preserve">
-    <value>Length:</value>
-  </data>
-  <data name="Password_Group_Header" xml:space="preserve">
-    <value>Password (optional)</value>
-  </data>
-  <data name="Password_Field_Confirm" xml:space="preserve">
-    <value>Confirm password:</value>
-  </data>
-  <data name="Password_Use" xml:space="preserve">
-    <value>Use</value>
-  </data>
-  <data name="ImproveIt_Message" xml:space="preserve">
-    <value>An unexpected error occured
-
-Please contact the developers with information saved on your desktop in
-"{0}"
-
-Application will now close</value>
-  </data>
-  <data name="State_LoadFromEverywhere" xml:space="preserve">
-    <value>Get state of source items and storages</value>
-  </data>
-  <data name="DataStorage_State_Get" xml:space="preserve">
-    <value>Get state of storage</value>
-  </data>
-  <data name="SourceItem_State_Get" xml:space="preserve">
-    <value>Get state of source item "{0}"</value>
-  </data>
-  <data name="State_File_Get" xml:space="preserve">
-    <value>Get state of file "{0}"</value>
-  </data>
-  <data name="State_Saving" xml:space="preserve">
-    <value>Writing state</value>
-  </data>
-  <data name="IncrementalBackup_Title" xml:space="preserve">
-    <value>Incremental backup</value>
-  </data>
-  <data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
-    <value>Calculate incremented version</value>
-  </data>
-  <data name="File_List_Saving" xml:space="preserve">
-    <value>Saving files</value>
-  </data>
-  <data name="File_Saving" xml:space="preserve">
-    <value>Saving "{0}"</value>
-  </data>
-  <data name="IncrementalBackup_Version_Save" xml:space="preserve">
-    <value>Saving incremented version</value>
-  </data>
-  <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
-    <value>Saving integrity verification scripts</value>
-  </data>
-  <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
-    <value>Integrity verification script.ps1</value>
-  </data>
-  <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
-    <value>Directory "{0}" does not exist.</value>
-  </data>
-  <data name="BackupVersion_CleanupUncompleted" xml:space="preserve">
-    <value>Delete uncompleted backups</value>
-  </data>
-  <data name="LogFile_Marker_Successful" xml:space="preserve">
-    <value>Successful</value>
-  </data>
-  <data name="LogFile_Marker_Errors" xml:space="preserve">
-    <value>Errors</value>
-  </data>
-  <data name="Task_Status_Unknown" xml:space="preserve">
-    <value>Unknown</value>
-  </data>
-  <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
-    <value>Completed partially. Due to storage quota some files were skipped this time. Remaining {0} files with of {1} GB.</value>
-  </data>
-  <data name="ImportMediaTask_AllFiles" xml:space="preserve">
-    <value>Import all files</value>
-  </data>
-  <data name="SourceItem_Validation_NotExists" xml:space="preserve">
-    <value>"{0}" does not exist, correct list of source items.</value>
-  </data>
-  <data name="SourceItem_Validation_Empty" xml:space="preserve">
-    <value>No items to process.</value>
-  </data>
-  <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
-    <value>Transform file name is empty.</value>
-  </data>
-  <data name="DirectoryStorage" xml:space="preserve">
-    <value>Directory</value>
-  </data>
-  <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
-    <value>Directory is not specified.</value>
-  </data>
-  <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
-    <value>Storage is not specified.</value>
-  </data>
-  <data name="Server_Field_Address_Validation" xml:space="preserve">
-    <value>Server name is not be specified.</value>
-  </data>
-  <data name="Server_Field_Port_Validation" xml:space="preserve">
-    <value>Port is invalid.</value>
-  </data>
-  <data name="User_Field_Validation" xml:space="preserve">
-    <value>User is not specified.</value>
-  </data>
-  <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
-    <value>Password is not specified.</value>
-  </data>
-  <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
-    <value>Folder does not exist.</value>
-  </data>
-  <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
-    <value>Invalid transform file name string.</value>
-  </data>
-  <data name="ImportMediaTask_File" xml:space="preserve">
-    <value>Import "{0}"</value>
-  </data>
-  <data name="Task_Validation_NotSupported" xml:space="preserve">
-    <value>This task type is not supported.</value>
-  </data>
-  <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
-    <value>Finished succesfully</value>
-  </data>
-  <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
-    <value>Finished with errors</value>
-  </data>
-  <data name="LeftMenu_What" xml:space="preserve">
-    <value>What?</value>
-  </data>
-  <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
-    <value>Drag and drop here files and folders from Explorer.</value>
-  </data>
-  <data name="SourceItem_AddFolders" xml:space="preserve">
-    <value>Add folders...</value>
-  </data>
-  <data name="Button_Remove" xml:space="preserve">
-    <value>Remove</value>
-  </data>
-  <data name="SourceItem_AddFiles" xml:space="preserve">
-    <value>Add files...</value>
-  </data>
-  <data name="LeftMenu_Where" xml:space="preserve">
-    <value>Where?</value>
-  </data>
-  <data name="LeftMenu_Encryption" xml:space="preserve">
-    <value>Encryption</value>
-  </data>
-  <data name="LogFile_OpenLogs" xml:space="preserve">
-    <value>Logs</value>
-  </data>
-  <data name="LeftMenu_When" xml:space="preserve">
-    <value>When?</value>
-  </data>
-  <data name="Days_Field_Choose" xml:space="preserve">
-    <value>Choose days of week:</value>
-  </data>
-  <data name="Days_Wednesday" xml:space="preserve">
-    <value>Wednesday</value>
-  </data>
-  <data name="Days_Thursday" xml:space="preserve">
-    <value>Thursday</value>
-  </data>
-  <data name="Days_Friday" xml:space="preserve">
-    <value>Friday</value>
-  </data>
-  <data name="Days_Saturday" xml:space="preserve">
-    <value>Saturday</value>
-  </data>
-  <data name="Days_Tuesday" xml:space="preserve">
-    <value>Tuesday</value>
-  </data>
-  <data name="Days_Monday" xml:space="preserve">
-    <value>Monday</value>
-  </data>
-  <data name="Days_Sunday" xml:space="preserve">
-    <value>Sunday</value>
-  </data>
-  <data name="Time_Field_Minute" xml:space="preserve">
-    <value>Minute:</value>
-  </data>
-  <data name="Time_Field_Hour" xml:space="preserve">
-    <value>Hour:</value>
-  </data>
-  <data name="Task_Create_Hint" xml:space="preserve">
-    <value>Creates new task.</value>
-  </data>
-  <data name="Task_List" xml:space="preserve">
-    <value>Tasks</value>
-  </data>
-  <data name="Task_Launch_Hint" xml:space="preserve">
-    <value>Launches selected task.</value>
-  </data>
-  <data name="ApplicationName_Tasks" xml:space="preserve">
-    <value>Tasks</value>
-  </data>
-  <data name="Button_Close" xml:space="preserve">
-    <value>Close</value>
-  </data>
-  <data name="Task_Status_Succesfull" xml:space="preserve">
-    <value>Succesfull</value>
-  </data>
-  <data name="Time_Field_Elapsed" xml:space="preserve">
-    <value>Elapsed:</value>
-  </data>
-  <data name="Task_Status_InProgress" xml:space="preserve">
-    <value>Task is in a progress... </value>
-  </data>
-  <data name="Button_OK" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="Name_Field" xml:space="preserve">
-    <value>Name:</value>
-  </data>
-  <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
-    <value>Folder:</value>
-  </data>
-  <data name="AfterTaskSelection_Field" xml:space="preserve">
-    <value>After task completion:</value>
-  </data>
-  <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
-    <value>Shutdown</value>
-  </data>
-  <data name="AfterTaskSelection_LogOff" xml:space="preserve">
-    <value>Log off</value>
-  </data>
   <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
     <value>Do nothing</value>
   </data>
-  <data name="Password_Recovery_Prompt" xml:space="preserve">
-    <value>If your backup is password protected, please type password here:</value>
-  </data>
-  <data name="Button_Continue" xml:space="preserve">
-    <value>Continue &gt;</value>
-  </data>
-  <data name="ApplicationName_Restoration" xml:space="preserve">
-    <value>Restoration</value>
+  <data name="AfterTaskSelection_Field" xml:space="preserve">
+    <value>After task completion:</value>
   </data>
   <data name="AfterTaskSelection_Help" xml:space="preserve">
     <value>If you choose something other than 'do nothing' 
@@ -368,17 +129,14 @@ program will configure OS to show you report
 on next your logon to the system if any errors 
 or warnings will be registered.</value>
   </data>
-  <data name="LeftMenu_What_Validation" xml:space="preserve">
-    <value>No items to process.</value>
+  <data name="AfterTaskSelection_LogOff" xml:space="preserve">
+    <value>Log off</value>
   </data>
-  <data name="LeftMenu_What_Hint" xml:space="preserve">
-    <value>Here you may add folders and files you need to process.</value>
+  <data name="AfterTaskSelection_Reboot" xml:space="preserve">
+    <value>Reboot</value>
   </data>
-  <data name="LeftMenu_Where_Hint" xml:space="preserve">
-    <value>In this place you can add locations where you would like your files to be copied.</value>
-  </data>
-  <data name="LeftMenu_When_Help" xml:space="preserve">
-    <value>Here you can set up a scheduler. Shceduler can help you to automate task launch.</value>
+  <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
+    <value>Shutdown</value>
   </data>
   <data name="Application_NewVersion_Notification" xml:space="preserve">
     <value>New {0} version is available.
@@ -388,70 +146,357 @@ Changes are:
 
 Program will now open browser with the download page</value>
   </data>
-  <data name="AfterTaskSelection_Reboot" xml:space="preserve">
-    <value>Reboot</value>
+  <data name="ApplicationName_LaunchTask" xml:space="preserve">
+    <value>Launch task</value>
   </data>
-  <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
-    <value>New task</value>
+  <data name="ApplicationName_Restoration" xml:space="preserve">
+    <value>Restoration</value>
   </data>
-  <data name="Task_Delete_Hint" xml:space="preserve">
-    <value>Deletes the selected task.</value>
+  <data name="ApplicationName_Tasks" xml:space="preserve">
+    <value>Tasks</value>
   </data>
-  <data name="Task_Edit_Hint" xml:space="preserve">
-    <value>Edits the selected task.</value>
+  <data name="BackupVersion_Changes_Title" xml:space="preserve">
+    <value>CHANGES</value>
   </data>
-  <data name="Task_Field_Choose" xml:space="preserve">
-    <value>Choose the task:</value>
+  <data name="BackupVersion_CleanupUncompleted" xml:space="preserve">
+    <value>Delete uncompleted backups</value>
+  </data>
+  <data name="BackupVersion_Files_Title" xml:space="preserve">
+    <value>FILES</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
+    <value>Journal: {0}</value>
+  </data>
+  <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
+    <value>Journal for selected...</value>
+  </data>
+  <data name="BackupVersion_Select" xml:space="preserve">
+    <value>Open selected version...</value>
+  </data>
+  <data name="BackupVersion_Selector_Title" xml:space="preserve">
+    <value>SELECT VERSION</value>
+  </data>
+  <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
+    <value>Storage: {0}</value>
+  </data>
+  <data name="BackupVersion_Versions_Title" xml:space="preserve">
+    <value>VERSIONS</value>
+  </data>
+  <data name="BackupVersion_Viewer_Help" xml:space="preserve">
+    <value>Click on item you want to restore and open context menu by right click.</value>
+  </data>
+  <data name="Button_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Button_Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Button_Continue" xml:space="preserve">
+    <value>Continue &gt;</value>
+  </data>
+  <data name="Button_CopyToClipboard" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="Button_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Button_Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="Button_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="CommandLineArguments_Help" xml:space="preserve">
+    <value>Visit {0} to see command line arguments.</value>
+  </data>
+  <data name="CommandLineArguments_Invalid" xml:space="preserve">
+    <value>Invalid command line arguments.</value>
+  </data>
+  <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
+    <value>Connection script:</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
+    <value>Disconnection script:</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
+    <value>Finished with errors</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
+    <value>Finished succesfully</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
+    <value>Upload limit, GB:</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
+    <value>Limits amount of data being sent during one task execution to storage. 0 - no limit.
+When quota is exceeded, other files will be skipped and will be processed next time.
+Usage scenario: You copy data to remote server. There's a problem: ISP drops upload speed after several gigabytes. This setting allows you to handle it.</value>
+  </data>
+  <data name="DataStorage_Script_Help" xml:space="preserve">
+    <value>If folder becomes available after executing some commands, specify PowerShell scripts for connection and disconnection.</value>
+  </data>
+  <data name="DataStorage_State_Get" xml:space="preserve">
+    <value>Get state of storage</value>
+  </data>
+  <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
+    <value>Storage is not specified.</value>
+  </data>
+  <data name="Days_Field_Choose" xml:space="preserve">
+    <value>Choose days of week:</value>
+  </data>
+  <data name="Days_Friday" xml:space="preserve">
+    <value>Friday</value>
+  </data>
+  <data name="Days_Monday" xml:space="preserve">
+    <value>Monday</value>
+  </data>
+  <data name="Days_Saturday" xml:space="preserve">
+    <value>Saturday</value>
+  </data>
+  <data name="Days_Sunday" xml:space="preserve">
+    <value>Sunday</value>
+  </data>
+  <data name="Days_Thursday" xml:space="preserve">
+    <value>Thursday</value>
+  </data>
+  <data name="Days_Tuesday" xml:space="preserve">
+    <value>Tuesday</value>
+  </data>
+  <data name="Days_Wednesday" xml:space="preserve">
+    <value>Wednesday</value>
+  </data>
+  <data name="DirectoryStorage" xml:space="preserve">
+    <value>Directory</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
+    <value>Folder:</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
+    <value>Directory is not specified.</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
+    <value>Directory "{0}" does not exist.</value>
+  </data>
+  <data name="Field_Folder" xml:space="preserve">
+    <value>Folder:</value>
+  </data>
+  <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
+    <value>Folder does not exist.</value>
+  </data>
+  <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
+    <value>Integrity verification script.ps1</value>
+  </data>
+  <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
+    <value>Saving integrity verification scripts</value>
+  </data>
+  <data name="File_List_Saving" xml:space="preserve">
+    <value>Saving files</value>
+  </data>
+  <data name="File_Saving" xml:space="preserve">
+    <value>Saving "{0}"</value>
+  </data>
+  <data name="ImportMediaTask_AllFiles" xml:space="preserve">
+    <value>Import all files</value>
+  </data>
+  <data name="ImportMediaTask_Create" xml:space="preserve">
+    <value>Create import media task</value>
+  </data>
+  <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
+    <value>Edit "{0}" media import task</value>
+  </data>
+  <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
+    <value>Output folder:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
+    <value>File name transformations:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
+    <value>Supported tokens:
+{DATE:Format} - Inserts file modification date in the specified format.
+To see all options google "C# DateTime format".</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
+    <value>Transform file name is empty.</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
+    <value>Invalid transform file name string.</value>
+  </data>
+  <data name="ImportMediaTask_File" xml:space="preserve">
+    <value>Import "{0}"</value>
+  </data>
+  <data name="ImportMediaTask_Help" xml:space="preserve">
+    <value>Imports audios, photos, videos from SD Card of camera, recorder;
+photos and videos from your phone via WI-FI through FTP Server 
+application using template file names.</value>
+  </data>
+  <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
+    <value>Import data source</value>
+  </data>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
+    <value>Skip already imported files</value>
+  </data>
+  <data name="ImproveIt_Message" xml:space="preserve">
+    <value>An unexpected error occured
+
+Please contact the developers with information saved on your desktop in
+"{0}"
+
+Application will now close</value>
   </data>
   <data name="IncrementalBackup_Help" xml:space="preserve">
     <value>The most basic form of incremental backup consists of identifying, recording and thus, preserving only those files that have changed since the last backup. Since changes are typically low, incremental backups are much smaller and quicker than full backups. For instance, following a full backup on Friday, a Monday backup will contain only those files that changed since Friday. A Tuesday backup contains only those files that changed since Monday, and so on. A full restoration of data will naturally be slower, since all increments must be restored. Should any one of the copies created fail, including the first (full), restoration will be incomplete.</value>
   </data>
-  <data name="Password_Generate" xml:space="preserve">
-    <value>Generate password...</value>
+  <data name="IncrementalBackup_Title" xml:space="preserve">
+    <value>Incremental backup</value>
   </data>
-  <data name="Task_Status_FailedSeeLog" xml:space="preserve">
-    <value>Failed (see opened log)</value>
+  <data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
+    <value>Calculate incremented version</value>
   </data>
-  <data name="Messages_Header_Information" xml:space="preserve">
-    <value>Information - BUtil</value>
+  <data name="IncrementalBackup_Version_Save" xml:space="preserve">
+    <value>Saving incremented version</value>
+  </data>
+  <data name="LeftMenu_Encryption" xml:space="preserve">
+    <value>Encryption</value>
+  </data>
+  <data name="LeftMenu_What" xml:space="preserve">
+    <value>What?</value>
+  </data>
+  <data name="LeftMenu_What_Hint" xml:space="preserve">
+    <value>Here you may add folders and files you need to process.</value>
+  </data>
+  <data name="LeftMenu_What_Validation" xml:space="preserve">
+    <value>No items to process.</value>
+  </data>
+  <data name="LeftMenu_When" xml:space="preserve">
+    <value>When?</value>
+  </data>
+  <data name="LeftMenu_When_Help" xml:space="preserve">
+    <value>Here you can set up a scheduler. Shceduler can help you to automate task launch.</value>
+  </data>
+  <data name="LeftMenu_Where" xml:space="preserve">
+    <value>Where?</value>
+  </data>
+  <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
+    <value>Drag and drop here files and folders from Explorer.</value>
+  </data>
+  <data name="LeftMenu_Where_Hint" xml:space="preserve">
+    <value>In this place you can add locations where you would like your files to be copied.</value>
+  </data>
+  <data name="LogFile_Marker_Errors" xml:space="preserve">
+    <value>Errors</value>
+  </data>
+  <data name="LogFile_Marker_Successful" xml:space="preserve">
+    <value>Successful</value>
+  </data>
+  <data name="LogFile_OpenLogs" xml:space="preserve">
+    <value>Logs</value>
   </data>
   <data name="Messages_Header_Error" xml:space="preserve">
     <value>Error - BUtil</value>
   </data>
+  <data name="Messages_Header_Information" xml:space="preserve">
+    <value>Information - BUtil</value>
+  </data>
   <data name="Messages_Header_Question" xml:space="preserve">
     <value>Question - BUtil</value>
+  </data>
+  <data name="Name_Field" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="Name_Field_Validation" xml:space="preserve">
+    <value>Name is empty or contains not supported path characters.</value>
+  </data>
+  <data name="Name_Title" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Password_Field" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="Password_Field_Confirm" xml:space="preserve">
+    <value>Confirm password:</value>
+  </data>
+  <data name="Password_Field_Length" xml:space="preserve">
+    <value>Length:</value>
+  </data>
+  <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
+    <value>Passwords do not match.</value>
+  </data>
+  <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
+    <value>Password is not specified.</value>
+  </data>
+  <data name="Password_Generate" xml:space="preserve">
+    <value>Generate password...</value>
+  </data>
+  <data name="Password_Generator_Header" xml:space="preserve">
+    <value>Password generator</value>
+  </data>
+  <data name="Password_Group_Header" xml:space="preserve">
+    <value>Password (optional)</value>
+  </data>
+  <data name="Password_Help" xml:space="preserve">
+    <value>Recommended minimum password length is 50 characters and more.</value>
+  </data>
+  <data name="Password_Recovery_Prompt" xml:space="preserve">
+    <value>If your backup is password protected, please type password here:</value>
+  </data>
+  <data name="Password_Use" xml:space="preserve">
+    <value>Use</value>
   </data>
   <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
     <value>Cannot locate files "{0}" in directory. 
 
 Point to a directory containing this file.</value>
   </data>
-  <data name="BackupVersion_Selector_Title" xml:space="preserve">
-    <value>SELECT VERSION</value>
+  <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
+    <value>Cannot read state.</value>
   </data>
-  <data name="BackupVersion_Changes_Title" xml:space="preserve">
-    <value>CHANGES</value>
+  <data name="Server_Field_Address" xml:space="preserve">
+    <value>Server name:</value>
   </data>
-  <data name="BackupVersion_Files_Title" xml:space="preserve">
-    <value>FILES</value>
+  <data name="Server_Field_Address_Validation" xml:space="preserve">
+    <value>Server name is not be specified.</value>
   </data>
-  <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Click on item you want to restore and open context menu by right click.</value>
+  <data name="Server_Field_Port" xml:space="preserve">
+    <value>Port:</value>
   </data>
-  <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
-    <value>Passwords do not match.</value>
+  <data name="Server_Field_Port_Validation" xml:space="preserve">
+    <value>Port is invalid.</value>
   </data>
-  <data name="Password_Help" xml:space="preserve">
-    <value>Recommended minimum password length is 50 characters and more.</value>
+  <data name="SourceItem_AddFiles" xml:space="preserve">
+    <value>Add files...</value>
+  </data>
+  <data name="SourceItem_AddFolders" xml:space="preserve">
+    <value>Add folders...</value>
+  </data>
+  <data name="SourceItem_OpenInExplorer" xml:space="preserve">
+    <value>Open in Explorer...</value>
+  </data>
+  <data name="SourceItem_State_Get" xml:space="preserve">
+    <value>Get state of source item "{0}"</value>
+  </data>
+  <data name="SourceItem_Validation_Empty" xml:space="preserve">
+    <value>No items to process.</value>
+  </data>
+  <data name="SourceItem_Validation_NotExists" xml:space="preserve">
+    <value>"{0}" does not exist, correct list of source items.</value>
+  </data>
+  <data name="State_File_Get" xml:space="preserve">
+    <value>Get state of file "{0}"</value>
+  </data>
+  <data name="State_LoadFromEverywhere" xml:space="preserve">
+    <value>Get state of source items and storages</value>
+  </data>
+  <data name="State_Saving" xml:space="preserve">
+    <value>Writing state</value>
   </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
     <value>Add file exclude pattern</value>
   </data>
-  <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
-    <value>Skips processing of files by exclude pattern.</value>
+  <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
+    <value>Edit file exclude pattern</value>
   </data>
-  <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
-    <value>File exclude pattern:</value>
+  <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
+    <value>File globbing in .NET: Patterns</value>
   </data>
   <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
     <value>Here you can specify file globbing exclude patterns. 
@@ -463,105 +508,20 @@ d:\temp\**\*.txt or
 bin. 
 See detailed description in the following link.</value>
   </data>
-  <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
-    <value>File globbing in .NET: Patterns</value>
+  <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
+    <value>Skips processing of files by exclude pattern.</value>
+  </data>
+  <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
+    <value>File exclude pattern:</value>
   </data>
   <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
     <value>File exclude pattern is empty.</value>
   </data>
-  <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
-    <value>Edit file exclude pattern</value>
-  </data>
-  <data name="SourceItem_OpenInExplorer" xml:space="preserve">
-    <value>Open in Explorer...</value>
-  </data>
-  <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
-    <value>Cannot read state.</value>
-  </data>
-  <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
-    <value>Upload limit, GB:</value>
-  </data>
-  <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
-    <value>Limits amount of data being sent during one task execution to storage. 0 - no limit.
-When quota is exceeded, other files will be skipped and will be processed next time.
-Usage scenario: You copy data to remote server. There's a problem: ISP drops upload speed after several gigabytes. This setting allows you to handle it.</value>
-  </data>
-  <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
-    <value>Connection script:</value>
-  </data>
-  <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
-    <value>Disconnection script:</value>
-  </data>
-  <data name="DataStorage_Script_Help" xml:space="preserve">
-    <value>If folder becomes available after executing some commands, specify PowerShell scripts for connection and disconnection.</value>
-  </data>
-  <data name="Url_Field" xml:space="preserve">
-    <value>Url:</value>
-  </data>
-  <data name="Url_Field_Validation" xml:space="preserve">
-    <value>Url is not specified.</value>
-  </data>
-  <data name="Task_LastBackup" xml:space="preserve">
-    <value>State</value>
-  </data>
-  <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>Storage: {0}</value>
-  </data>
-  <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
-    <value>Journal: {0}</value>
-  </data>
-  <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
-    <value>Journal for selected...</value>
-  </data>
-  <data name="BackupVersion_Versions_Title" xml:space="preserve">
-    <value>VERSIONS</value>
-  </data>
-  <data name="BackupVersion_Select" xml:space="preserve">
-    <value>Open selected version...</value>
-  </data>
-  <data name="Task_Restore" xml:space="preserve">
-    <value>Восстановить</value>
-  </data>
-  <data name="ApplicationName_LaunchTask" xml:space="preserve">
-    <value>Launch task</value>
-  </data>
-  <data name="CommandLineArguments_Help" xml:space="preserve">
-    <value>Visit {0} to see command line arguments.</value>
-  </data>
-  <data name="CommandLineArguments_Invalid" xml:space="preserve">
-    <value>Invalid command line arguments.</value>
-  </data>
-  <data name="Task_Validation_NotFound" xml:space="preserve">
-    <value>Task '{0}' wasn't found.</value>
-  </data>
-  <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
-    <value>File name transformations:</value>
-  </data>
-  <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
-    <value>Supported tokens:
-{DATE:Format} - Inserts file modification date in the specified format.
-To see all options google "C# DateTime format".</value>
-  </data>
-  <data name="Button_Save" xml:space="preserve">
-    <value>Save</value>
-  </data>
-  <data name="ImportMediaTask_Create" xml:space="preserve">
-    <value>Create import media task</value>
-  </data>
-  <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
-    <value>Edit "{0}" media import task</value>
-  </data>
-  <data name="Name_Field_Validation" xml:space="preserve">
-    <value>Name is empty or contains not supported path characters.</value>
-  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Create</value>
   </data>
-  <data name="Task_Launch" xml:space="preserve">
-    <value>Launch</value>
-  </data>
-  <data name="Task_Edit" xml:space="preserve">
-    <value>Edit</value>
+  <data name="Task_Create_Hint" xml:space="preserve">
+    <value>Creates new task.</value>
   </data>
   <data name="Task_Delete" xml:space="preserve">
     <value>Delete</value>
@@ -569,39 +529,79 @@ To see all options google "C# DateTime format".</value>
   <data name="Task_Delete_Confirm" xml:space="preserve">
     <value>Do you really want to delete "{0}"?</value>
   </data>
+  <data name="Task_Delete_Hint" xml:space="preserve">
+    <value>Deletes the selected task.</value>
+  </data>
+  <data name="Task_Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Task_Edit_Hint" xml:space="preserve">
+    <value>Edits the selected task.</value>
+  </data>
   <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
     <value>You cannot edit this type of task in CLI.</value>
   </data>
-  <data name="Server_Field_Address" xml:space="preserve">
-    <value>Server name:</value>
+  <data name="Task_Field_Choose" xml:space="preserve">
+    <value>Choose the task:</value>
   </data>
-  <data name="Server_Field_Port" xml:space="preserve">
-    <value>Port:</value>
+  <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
+    <value>New task</value>
+  </data>
+  <data name="Task_LastBackup" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="Task_Launch" xml:space="preserve">
+    <value>Launch</value>
+  </data>
+  <data name="Task_Launch_Hint" xml:space="preserve">
+    <value>Launches selected task.</value>
+  </data>
+  <data name="Task_List" xml:space="preserve">
+    <value>Tasks</value>
+  </data>
+  <data name="Task_Restore" xml:space="preserve">
+    <value>Восстановить</value>
+  </data>
+  <data name="Task_Status_FailedSeeLog" xml:space="preserve">
+    <value>Failed (see opened log)</value>
+  </data>
+  <data name="Task_Status_InProgress" xml:space="preserve">
+    <value>Task is in a progress... </value>
+  </data>
+  <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
+    <value>Completed partially. Due to storage quota some files were skipped this time. Remaining {0} files with of {1} GB.</value>
+  </data>
+  <data name="Task_Status_Succesfull" xml:space="preserve">
+    <value>Succesfull</value>
+  </data>
+  <data name="Task_Status_Unknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="Task_Validation_NotFound" xml:space="preserve">
+    <value>Task '{0}' wasn't found.</value>
+  </data>
+  <data name="Task_Validation_NotSupported" xml:space="preserve">
+    <value>This task type is not supported.</value>
+  </data>
+  <data name="Time_Field_Elapsed" xml:space="preserve">
+    <value>Elapsed:</value>
+  </data>
+  <data name="Time_Field_Hour" xml:space="preserve">
+    <value>Hour:</value>
+  </data>
+  <data name="Time_Field_Minute" xml:space="preserve">
+    <value>Minute:</value>
+  </data>
+  <data name="Url_Field" xml:space="preserve">
+    <value>Url:</value>
+  </data>
+  <data name="Url_Field_Validation" xml:space="preserve">
+    <value>Url is not specified.</value>
   </data>
   <data name="User_Field" xml:space="preserve">
     <value>User:</value>
   </data>
-  <data name="Password_Field" xml:space="preserve">
-    <value>Password:</value>
-  </data>
-  <data name="Field_Folder" xml:space="preserve">
-    <value>Folder:</value>
-  </data>
-  <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Import data source</value>
-  </data>
-  <data name="ImportMediaTask_Help" xml:space="preserve">
-    <value>Imports audios, photos, videos from SD Card of camera, recorder;
-photos and videos from your phone via WI-FI through FTP Server 
-application using template file names.</value>
-  </data>
-  <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
-    <value>Skip already imported files</value>
-  </data>
-  <data name="Name_Title" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
-    <value>Output folder:</value>
+  <data name="User_Field_Validation" xml:space="preserve">
+    <value>User is not specified.</value>
   </data>
 </root>
