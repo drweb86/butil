@@ -1,0 +1,729 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Password_Generator_Header" xml:space="preserve">
+    <value>Generatore password</value>
+  </data>
+  <data name="Button_Cancel" xml:space="preserve">
+    <value>Annulla</value>
+  </data>
+  <data name="Button_CopyToClipboard" xml:space="preserve">
+    <value>Copia</value>
+  </data>
+  <data name="Generate" xml:space="preserve">
+    <value>Genera</value>
+  </data>
+  <data name="Password_Field_Length" xml:space="preserve">
+    <value>Lunghezza:</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Opzioni</value>
+  </data>
+  <data name="Password_Group_Header" xml:space="preserve">
+    <value>Password (opzionale)</value>
+  </data>
+  <data name="Password_Field_Confirm" xml:space="preserve">
+    <value>Conferma password:</value>
+  </data>
+  <data name="Password_Use" xml:space="preserve">
+    <value>Usa</value>
+  </data>
+  <data name="TaskFinishedSuccesfully" xml:space="preserve">
+    <value>Attività completata correttamente!</value>
+  </data>
+  <data name="BackupReport" xml:space="preserve">
+    <value>Rapporto backup</value>
+  </data>
+  <data name="AnUnexpectedErrorOccuredNNpleaseContactTheDevelopersWithInformationSavedOnYourDesktopInN0NNapplicationWillNowClose" xml:space="preserve">
+    <value>Si è verificato un errore imprevisto
+
+Contatta gli sviluppatori con le informazioni salvate sul desktop in
+"{0}"
+
+L'applicazione verrà ora chiusa.</value>
+  </data>
+  <data name="PackingDataInAnImage" xml:space="preserve">
+    <value>Comprimi i dati in un'immagine</value>
+  </data>
+  <data name="GetStateOfSourceItemsAndStorages" xml:space="preserve">
+    <value>Ottieni stato elementi sorgenti e archivi</value>
+  </data>
+  <data name="GetStateOfStorage" xml:space="preserve">
+    <value>Ottieni stato archiviazione</value>
+  </data>
+  <data name="GetStateOfSourceItem" xml:space="preserve">
+    <value>Ottieni stato elemento sorgente "{0}"</value>
+  </data>
+  <data name="GetStateOfFileFileName" xml:space="preserve">
+    <value>Ottieni stato file "{0}"</value>
+  </data>
+  <data name="WriteStateToStorage" xml:space="preserve">
+    <value>Stato scrittura</value>
+  </data>
+  <data name="IncrementalBackup" xml:space="preserve">
+    <value>Backup incrementale</value>
+  </data>
+  <data name="CalculateIncrementedVersionForStorage" xml:space="preserve">
+    <value>Calcola versione incrementata</value>
+  </data>
+  <data name="WriteSourceFilesToStorage" xml:space="preserve">
+    <value>Scrivi file nell'archivio</value>
+  </data>
+  <data name="WriteSourceFileToStorage" xml:space="preserve">
+    <value>Scrivi file "{0}"</value>
+  </data>
+  <data name="WriteIncrementedVersionToStorage" xml:space="preserve">
+    <value>Scrivi versione incrementata nell'archivio</value>
+  </data>
+  <data name="WriteIntegrityVerificationScriptsToStorage" xml:space="preserve">
+    <value>Scrivi script  verifica integrità</value>
+  </data>
+  <data name="IntegrityVerificationScriptPs1" xml:space="preserve">
+    <value>Integrity verification script.ps1</value>
+  </data>
+  <data name="FolderStorageFailure" xml:space="preserve">
+    <value>Cartella archivio "{0}" non trovata.
+
+Aggiorna le impostazioni di archiviazione.</value>
+  </data>
+  <data name="DeleteUnversionedFilesStorage" xml:space="preserve">
+    <value>Elimina i backup non completati dallo spazio archiviazione</value>
+  </data>
+  <data name="Successful" xml:space="preserve">
+    <value>Completata</value>
+  </data>
+  <data name="Errors" xml:space="preserve">
+    <value>Errori</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Sconosciuto</value>
+  </data>
+  <data name="BackupWasPartialDueToStorageQuota" xml:space="preserve">
+    <value>Il backup era parziale. 
+	A causa della quota di archiviazione, alcuni file non sono stati copiati. 
+	{0} file rimanenti con {1} GB.</value>
+  </data>
+  <data name="ImportAllFiles" xml:space="preserve">
+    <value>Importa tutti i file</value>
+  </data>
+  <data name="SourceItemDoesNotExist" xml:space="preserve">
+    <value>L'elemento sorgente "{0}" none siste.</value>
+  </data>
+  <data name="ThereAreNoItemsToBackup" xml:space="preserve">
+    <value>Non ci sono file di cui eseguire il backup!</value>
+  </data>
+  <data name="TransformFileNameIsEmpty" xml:space="preserve">
+    <value>Il nome file trasformazione è vuoto.</value>
+  </data>
+  <data name="FolderStorage" xml:space="preserve">
+    <value>Cartella archivio...</value>
+  </data>
+  <data name="DestinationFolderIsNotSpecified" xml:space="preserve">
+    <value>Non è stata definita la cartella destinazione.</value>
+  </data>
+  <data name="StorageIsNotSpecified" xml:space="preserve">
+    <value>Non è stato definito l'archivio</value>
+  </data>
+  <data name="HostIsNotBeSpecified" xml:space="preserve">
+    <value>Non è stato definito l'host.</value>
+  </data>
+  <data name="PortIsInvalid" xml:space="preserve">
+    <value>La porta non è valida.</value>
+  </data>
+  <data name="User_Field_Validation" xml:space="preserve">
+    <value>Non è stato definito l'utente.</value>
+  </data>
+  <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
+    <value>Non è stata definita la password.</value>
+  </data>
+  <data name="FolderDoesNotExist" xml:space="preserve">
+    <value>La cartella non esiste.</value>
+  </data>
+  <data name="InvalidTransformFileNameString" xml:space="preserve">
+    <value>Stringa trasformazione nome file non valida.</value>
+  </data>
+  <data name="Import0" xml:space="preserve">
+    <value>Importa "{0}"</value>
+  </data>
+  <data name="Task_Validation_NotSupported" xml:space="preserve">
+    <value>Questo tipo di attività non è supportato.</value>
+  </data>
+  <data name="FinishedSuccesfully" xml:space="preserve">
+    <value>Operazione completata correttamente</value>
+  </data>
+  <data name="FinishedWithErrors" xml:space="preserve">
+    <value>Operazione completata con errori</value>
+  </data>
+  <data name="What" xml:space="preserve">
+    <value>Che cosa?</value>
+  </data>
+  <data name="DragAndDropHereFilesAndFoldersWhichYoureGoingToBackupForSettingCompressionPriorityUseMenu" xml:space="preserve">
+    <value>Trascina e rilascia qui i file e le cartelle di cui eseguire il backup!</value>
+  </data>
+  <data name="AddFolders" xml:space="preserve">
+    <value>Aggiungi cartelle...</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Rimuovi</value>
+  </data>
+  <data name="AddFiles" xml:space="preserve">
+    <value>Aggiungi file...</value>
+  </data>
+  <data name="Where" xml:space="preserve">
+    <value>Dove?</value>
+  </data>
+  <data name="SpecifyTheFolderWhereToStoreBackUp" xml:space="preserve">
+    <value>Specifica la cartella in cui archiviare il backup:</value>
+  </data>
+  <data name="Encryption" xml:space="preserve">
+    <value>Criptazione</value>
+  </data>
+  <data name="Logging" xml:space="preserve">
+    <value>Registrazione eventi</value>
+  </data>
+  <data name="When" xml:space="preserve">
+    <value>Quando?</value>
+  </data>
+  <data name="ChooseDaysOfWeek" xml:space="preserve">
+    <value>Scegli i giorni della settimana:</value>
+  </data>
+  <data name="Days_Wednesday" xml:space="preserve">
+    <value>Mercoledì</value>
+  </data>
+  <data name="Days_Thursday" xml:space="preserve">
+    <value>Giovedì</value>
+  </data>
+  <data name="Days_Friday" xml:space="preserve">
+    <value>Venerdì</value>
+  </data>
+  <data name="Days_Saturday" xml:space="preserve">
+    <value>Sabato</value>
+  </data>
+  <data name="Days_Tuesday" xml:space="preserve">
+    <value>Martedì</value>
+  </data>
+  <data name="Days_Monday" xml:space="preserve">
+    <value>Lunedì</value>
+  </data>
+  <data name="Days_Sunday" xml:space="preserve">
+    <value>Domenica</value>
+  </data>
+  <data name="Minute" xml:space="preserve">
+    <value>Minuto:</value>
+  </data>
+  <data name="Hour" xml:space="preserve">
+    <value>Ora:</value>
+  </data>
+  <data name="Task_Create_Hint" xml:space="preserve">
+    <value>Crea nuova attività.</value>
+  </data>
+  <data name="Task_List" xml:space="preserve">
+    <value>Attività</value>
+  </data>
+  <data name="RunsBackup" xml:space="preserve">
+    <value>Esegui backup...</value>
+  </data>
+  <data name="Configurator" xml:space="preserve">
+    <value>Configurazione</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Avvia</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Chiudi</value>
+  </data>
+  <data name="WellcomeToBackupWizard" xml:space="preserve">
+    <value>Benvenuto nella procedura guidata backup!</value>
+  </data>
+  <data name="BackupProcessCompletedSuccesfully" xml:space="preserve">
+    <value>Completato</value>
+  </data>
+  <data name="Elapsed" xml:space="preserve">
+    <value>Trascorso:</value>
+  </data>
+  <data name="BackupIsInAProgress" xml:space="preserve">
+    <value>Il backup è in corso... </value>
+  </data>
+  <data name="Button_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Field_Name" xml:space="preserve">
+    <value>Nome:</value>
+  </data>
+  <data name="Modify" xml:space="preserve">
+    <value>Modifica</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Aggiungi</value>
+  </data>
+  <data name="DestinationFolder" xml:space="preserve">
+    <value>Cartella destinazione:</value>
+  </data>
+  <data name="HardDriveStorage" xml:space="preserve">
+    <value>Cartella archivio...</value>
+  </data>
+  <data name="AfterCompletionOfBackup" xml:space="preserve">
+    <value>Dopo il completamento del backup</value>
+  </data>
+  <data name="ShutdownPc" xml:space="preserve">
+    <value>Spegni il PC</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Effettua logoff</value>
+  </data>
+  <data name="DoNothing" xml:space="preserve">
+    <value>Non fare nulla</value>
+  </data>
+  <data name="ItemsToBackup" xml:space="preserve">
+    <value>Elementi del backup</value>
+  </data>
+  <data name="Recover" xml:space="preserve">
+    <value>Ripristina!</value>
+  </data>
+  <data name="Password_Recovery_Prompt" xml:space="preserve">
+    <value>Se il backup è protetto da password, digita qui la password:</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Continua &gt;</value>
+  </data>
+  <data name="RestorationMaster" xml:space="preserve">
+    <value>Master ripristino</value>
+  </data>
+  <data name="NetworkStoragesAreNotAllowedToBePointedHere" xml:space="preserve">
+    <value>Non è consentito puntare qui gli archivi di rete!</value>
+  </data>
+  <data name="RestoreData" xml:space="preserve">
+    <value>Ripristino dati...</value>
+  </data>
+  <data name="IfYouChooseSomethingOtherThanDoNothingNprogramWillConfigureOsToShowYouReportNonNextYourLogonToTheSystemIfAnyErrorsNorWarningsWillBeRegisteredDuringTheBackup" xml:space="preserve">
+    <value>Se scegli qualcosa di diverso da "non fare nulla", il programma configurerà il sistema operativo per visualizzare, se verranno registrati eventuali errori o avvisi durante il backup, un rapporto al successivo accesso al sistema </value>
+  </data>
+  <data name="ThereAreNoItemsToBackupNNyouCanSpecifyTheDataToBackupInConfiguratorInWhatSettingsGroup" xml:space="preserve">
+    <value>Non ci sono elementi di cui eseguire il backup!
+
+È possibile specificare i dati di cui eseguire il backup nel Configuratore nel gruppo di impostazioni "Cosa"..</value>
+  </data>
+  <data name="HereYouMayAddFoldersAndFilesYouWantToBackup" xml:space="preserve">
+    <value>Qui puoi aggiungere cartelle e file di cui desideri eseguire il backup</value>
+  </data>
+  <data name="InThisPlaceYouCanAddLocationsWhereYouWouldLikeYourBackupToBeCopiedAfterCompletionOfBackup" xml:space="preserve">
+    <value>Qui puoi aggiungere i percorsi in cui desideri che il backup venga copiato dopo il completamento del backup</value>
+  </data>
+  <data name="HereYouCanSetUpASchedulerShcedulerCanHelpYouToAutomateCreationOfBackups" xml:space="preserve">
+    <value>Qui puoi impostare una pianificazione. 
+	La pianificazione può aiutarti ad automatizzare la creazione dei backup</value>
+  </data>
+  <data name="New0VersionIsAvailableNNchangesAreN1NNprogramWillNowOpenBrowserWithTheDownloadPage" xml:space="preserve">
+    <value>È disponibile la nuova versione {0}.
+
+I cambiamenti sono:
+{1}
+
+Il programma ora aprirà il browser puntando alla pagina web per il download</value>
+  </data>
+  <data name="ProcessingState" xml:space="preserve">
+    <value>Stato elaborazione</value>
+  </data>
+  <data name="Reboot" xml:space="preserve">
+    <value>Riavvia</value>
+  </data>
+  <data name="ButilSoftwarePackageComponent0IsMissingNNpleaseReinstallApplicationNNrestorationBackupAndHelpFunctionsWillBeUnavailable" xml:space="preserve">
+    <value>Componente pacchetto software BUtil '{0}' mancante.
+
+Reinstalla l'applicazione.
+
+Le funzioni di ripristino, backup e guida non saranno disponibili.</value>
+  </data>
+  <data name="InvalidArgumentSPassedToTheProgramNNpleaseReferToManualForTheCompleteListOfParameters" xml:space="preserve">
+    <value>Argomenti non validi passati al programma.
+
+Per l'elenco completo dei parametri fai riferimento al manuale!</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Aiuto</value>
+  </data>
+  <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
+    <value>Nuova attività</value>
+  </data>
+  <data name="WellcomeToBackupTaskCreationWizard" xml:space="preserve">
+    <value>Benvenuto nella procedura guidata di creazione attività backup!</value>
+  </data>
+  <data name="Task_Delete_Hint" xml:space="preserve">
+    <value>Elimina l'attività selezionata.</value>
+  </data>
+  <data name="EditsTheSelectedBackupTask" xml:space="preserve">
+    <value>Modifica attività backup selezionata...</value>
+  </data>
+  <data name="WouldYouLileToRemoveTheBackupTask0" xml:space="preserve">
+    <value>Vuoi rimuovere l'attività backup '{0}' ?</value>
+  </data>
+  <data name="Run" xml:space="preserve">
+    <value>Esegui</value>
+  </data>
+  <data name="BackupTask0" xml:space="preserve">
+    <value>Attività backup '{0}'</value>
+  </data>
+  <data name="ChooseTheTaskYouWantToRun" xml:space="preserve">
+    <value>Scegli l'attività che vuoi eseguire:</value>
+  </data>
+  <data name="IncrementalBackupDescription" xml:space="preserve">
+    <value>La forma più elementare di backup incrementale consiste nell'identificare, registrare e quindi preservare solo i file che sono cambiati dall'ultimo backup. 
+	Poiché le modifiche sono generalmente limitate, i backup incrementali sono molto più piccoli e più rapidi dei backup completi. 
+	Ad esempio, dopo un backup completo di venerdì, un backup di lunedì conterrà solo i file modificati da venerdì. 
+	Un backup di martedì contiene solo i file modificati da lunedì e così via. 
+	Un ripristino completo dei dati sarà naturalmente più lento, poiché tutti gli incrementi dovranno essere ripristinati. 
+	Se una qualsiasi delle copie create dovesse fallire, inclusa la prima (completa), il ripristino risulterà incompleto.</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="NameIsEmpty" xml:space="preserve">
+    <value>Il nome è vuoto.</value>
+  </data>
+  <data name="Password_Generate" xml:space="preserve">
+    <value>Genera password...</value>
+  </data>
+  <data name="BackupFailedPleaseReviewOpenedLog" xml:space="preserve">
+    <value>Non riuscito (vedi registro eventi aperto)</value>
+  </data>
+  <data name="InformationButil" xml:space="preserve">
+    <value>BUtil - Informazioni</value>
+  </data>
+  <data name="ErrorButil" xml:space="preserve">
+    <value>BUtil - Errore</value>
+  </data>
+  <data name="QuestionButil" xml:space="preserve">
+    <value>BUtil - Domanda</value>
+  </data>
+  <data name="SourceItemFailure" xml:space="preserve">
+    <value>L'elemento di origine "{0}" non esiste.
+
+Correggi l'elenco degli elementi sorgenti.</value>
+  </data>
+  <data name="CannotLocateFile0InDirectoryPointToADirectoryContainingThisFile" xml:space="preserve">
+    <value>Impossibile individuare il file "{0}" nella cartella. 
+
+Punta ad una cartella contenente questo file.</value>
+  </data>
+  <data name="BackupVersion_Selector_Title" xml:space="preserve">
+    <value>SELEZIONA VERSIONE</value>
+  </data>
+  <data name="Changes" xml:space="preserve">
+    <value>MODIFICHE</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>FILE</value>
+  </data>
+  <data name="ClickOnItemYouWantToRestoreAndOpenContextMenuByRightClick" xml:space="preserve">
+    <value>Fai clic sull'elemento che si vuoi ripristinare e aprire il menu contestuale facendo clic con il tasto destro</value>
+  </data>
+  <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
+    <value>Le password non corrispondono.</value>
+  </data>
+  <data name="Password_Help" xml:space="preserve">
+    <value>La lunghezza minima consigliata della password è di 50 caratteri e oltre.</value>
+  </data>
+  <data name="AddFileExcludePattern" xml:space="preserve">
+    <value>Aggiungi esclusione file con maschera...</value>
+  </data>
+  <data name="ExcludesFilesFromBackupByPattern" xml:space="preserve">
+    <value>Escludi file dal backup in base alla maschera...</value>
+  </data>
+  <data name="FileExclusionPattern" xml:space="preserve">
+    <value>Maschera esclusione file:</value>
+  </data>
+  <data name="HereYouCanSpecifyFileGlobbingExclusionPatternsItCanBeAFileNameOrFolderNameOrWildcardExamplesDTempDTempFileTxtDTempTxtOrBinSeeDetailedDescriptionInTheFollowingLink" xml:space="preserve">
+    <value>Qui è possibile specificare le maschere di esclusione file. 
+Può essere un nome file, un nome cartella o un carattere jolly. 
+Esempi: 
+d:\temp, 
+d:\temp\file.txt, 
+d:\temp\**\*.txt or 
+bin. 
+Vedi la descrizione dettagliata nel seguente collegamento.</value>
+  </data>
+  <data name="FileGlobbingInNETPatterns" xml:space="preserve">
+    <value>File inglobato .NET: maschere</value>
+  </data>
+  <data name="PatternIsEmpty" xml:space="preserve">
+    <value>La maschera è vuota.</value>
+  </data>
+  <data name="EditFileExcludePattern" xml:space="preserve">
+    <value>Modifica maschera esclusione file...</value>
+  </data>
+  <data name="OpenInExplorer" xml:space="preserve">
+    <value>Apri n Explorer...</value>
+  </data>
+  <data name="CannotOpenBackupFolder" xml:space="preserve">
+    <value>Impossibile aprire la cartella backup.</value>
+  </data>
+  <data name="RestorationIsCompleted" xml:space="preserve">
+    <value>Il ripristino è stato completato.</value>
+  </data>
+  <data name="UploadLimitGB" xml:space="preserve">
+    <value>Limite upload, GB:</value>
+  </data>
+  <data name="UploadLimitDescription" xml:space="preserve">
+    <value>Limita la quantità di dati inviati allo spazio di archiviazione durante una sessione di backup. 0 - nessun limite. 
+Quando il backup supera questa quota, alcuni file verranno ignorati e verranno sottoposti a backup la prossima volta. 
+Scenario di utilizzo: hai montato parte dell'archivio cloud come disco ed hai eseguito il backup su di esso. 
+C'è un problema: l'ISP riduce la velocità di caricamento dopo diversi Gigabyte. 
+Questa impostazione ti consente di gestirlo.</value>
+  </data>
+  <data name="Mount" xml:space="preserve">
+    <value>Monta:</value>
+  </data>
+  <data name="DataStorageStorage_Label_DisconnectionScript" xml:space="preserve">
+    <value>Script disconnessione:</value>
+  </data>
+  <data name="HelpMountUnmountScript" xml:space="preserve">
+    <value>Se la cartella diventa accessibile dopo il montaggio, specifica gli script PowerShell per il montaggio e lo smontaggio</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="ShareNameIsNotSpecified" xml:space="preserve">
+    <value>Non è stato specificato il nome condivisione.</value>
+  </data>
+  <data name="LastBackup" xml:space="preserve">
+    <value>Stato</value>
+  </data>
+  <data name="StorageSize" xml:space="preserve">
+    <value>Archivio: {0}</value>
+  </data>
+  <data name="Journal0" xml:space="preserve">
+    <value>Diario: {0}</value>
+  </data>
+  <data name="JournalSelected" xml:space="preserve">
+    <value>Diario per selezionati...</value>
+  </data>
+  <data name="VERSIONS" xml:space="preserve">
+    <value>VERSIONI</value>
+  </data>
+  <data name="OpenSelectedVersion" xml:space="preserve">
+    <value>Apri versione selezionata...</value>
+  </data>
+  <data name="RecoverSelected" xml:space="preserve">
+    <value>Ripristina selezionati...</value>
+  </data>
+  <data name="_0Backup" xml:space="preserve">
+    <value>{0} - Backup</value>
+  </data>
+  <data name="UsageVariantsNNbackupExeTaskMyTaskTitleNRunningWithoutParametersOutputsInformationToConsoleNNbackupExeTaskMyTask1TitleTaskMyTask2TitleTaskMyTask3TitleNRunsSeveralTasksOneByOneNNbackupExeTaskMyTaskTitleUsefilelogNOutputsInformationInFileLogNNbackupExeTaskMyTaskTitleShutdownNbackupExeTaskMyTaskTitleLogoffNbackupExeTaskMyTaskTitleSuspendNbackupExeTaskMyTaskTitleRebootNbackupExeTaskMyTaskTitleHibernateNNbackupExeHelpNOutputsBriefHelpN" xml:space="preserve">
+    <value>Varianti d'uso:
+
+butilc.exe "Task=Titolo attività"
+   Esegue l'attività specificata.
+
+butilc.exe "Task=Titolo attività" Shutdown
+butilc.exe "Task=Titolo attività" LogOff 
+butilc.exe "Task=Titolo attività" Reboot
+
+butilc.exe Help
+   Visualizza una breve guida
+</value>
+  </data>
+  <data name="ErrorInvalidCommandParametersSpecified" xml:space="preserve">
+    <value>Errore: parametri comando specificati non validi!!!</value>
+  </data>
+  <data name="CannotOpenFileLogDueToCryticalError0" xml:space="preserve">
+    <value>Impossibile aprire il registro del file a causa di un errore critico {0}</value>
+  </data>
+  <data name="PleaseSpecifyTheBackupTaskTitleUsingTheCommandLineArgument0MyBackupTaskTitleNexampleBackupExe0MyBackupTitle" xml:space="preserve">
+    <value>Specifica il titolo dell'attività di backup usando l'argomento della riga di comando "{0}Titolo dell'attività di backup"
+Esempio: butilc.exe "{0}Titolo attività"</value>
+  </data>
+  <data name="Task_Validation_NotFound" xml:space="preserve">
+    <value>Attività '{0}' non trovata.</value>
+  </data>
+  <data name="TaskHasFailedSeeOpenedLog" xml:space="preserve">
+    <value>L'attività non è riuscita (vedi registro eventi aperto)</value>
+  </data>
+  <data name="TaskIsSucceeded" xml:space="preserve">
+    <value>Attività completata!</value>
+  </data>
+  <data name="FileNameTransformations" xml:space="preserve">
+    <value>Trasformazione nome file:</value>
+  </data>
+  <data name="HelpForTokens" xml:space="preserve">
+    <value>Token supportati:
+{DATE:Format} - Inserisce la data modifica file nel formato specificato.
+Per vedere tutte le opzioni usa la ricerca con Google e "C# DateTime format".</value>
+  </data>
+  <data name="Button_Save" xml:space="preserve">
+    <value>Salva</value>
+  </data>
+  <data name="ImportMediaTask_Create" xml:space="preserve">
+    <value>Crea attività importazione multimediale</value>
+  </data>
+  <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
+    <value>Modifica attività importazione multimediale "{0}".</value>
+  </data>
+  <data name="Field_Name_Validation" xml:space="preserve">
+    <value>Il nome è vuoto o contiene nel percorso caratteri non supportati.</value>
+  </data>
+  <data name="Task_Create" xml:space="preserve">
+    <value>Crea</value>
+  </data>
+  <data name="Task_Launch" xml:space="preserve">
+    <value>Esegui</value>
+  </data>
+  <data name="Task_Edit" xml:space="preserve">
+    <value>Modifica</value>
+  </data>
+  <data name="Task_Delete" xml:space="preserve">
+    <value>Elimina</value>
+  </data>
+  <data name="PleaseConfirmDeletionOf0" xml:space="preserve">
+    <value>Confermare l'eliminazione di "{0}"</value>
+  </data>
+  <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
+    <value>Non è possibile modificare questo tipo di attività nella CLI.</value>
+  </data>
+  <data name="SpecifyLocation" xml:space="preserve">
+    <value>Specifica percorso</value>
+  </data>
+  <data name="HostField" xml:space="preserve">
+    <value>Host:</value>
+  </data>
+  <data name="PortField" xml:space="preserve">
+    <value>Porta:</value>
+  </data>
+  <data name="User_Field" xml:space="preserve">
+    <value>Utente:</value>
+  </data>
+  <data name="Password_Field" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="Field_Folder" xml:space="preserve">
+    <value>Cartella:</value>
+  </data>
+  <data name="ImportFilesFrom" xml:space="preserve">
+    <value>Specifica sorgente dati</value>
+  </data>
+  <data name="ImportMediaTask_Help" xml:space="preserve">
+    <value>Importa audio, foto, video dalla scheda SD della fotocamera, del registratore; foto e video dal telefono tramite WI-FI tramite l'applicazione server FTP usando i nomi file modello.</value>
+  </data>
+  <data name="SkipAlreadyImportedFiles" xml:space="preserve">
+    <value>Salta i file già importati</value>
+  </data>
+  <data name="SelectTransport" xml:space="preserve">
+    <value>Seleziona trasporto</value>
+  </data>
+</root>
