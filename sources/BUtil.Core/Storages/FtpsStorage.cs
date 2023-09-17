@@ -37,7 +37,7 @@ namespace BUtil.Core.Storages
             lock (_uploadLock) // because we're limited by upload speed by Server and Internet
             {
                 var remotePath = GetRemotePath(relativeFileName, false);
-                var status = _client.UploadFile(sourceFile, remotePath);
+                var status = _client.UploadFile(sourceFile, remotePath, FtpRemoteExists.Overwrite, true);
                 if (status != FtpStatus.Success)
                     throw new Exception("Failed to upload.");
                 

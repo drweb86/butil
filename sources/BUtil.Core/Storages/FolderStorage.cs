@@ -13,6 +13,9 @@ namespace BUtil.Core.Storages
         internal FolderStorage(ILog log, FolderStorageSettingsV2 settings)
             : base(log, settings)
         {
+            if (string.IsNullOrWhiteSpace(Settings.DestinationFolder))
+                throw new InvalidDataException(BUtil.Core.Localization.Resources.DirectoryStorage_Field_Directory_Validation_Empty);
+
             Mount();
         }
 
@@ -61,8 +64,7 @@ namespace BUtil.Core.Storages
 
         public override string Test()
         {
-            if (string.IsNullOrWhiteSpace(Settings.DestinationFolder))
-                return BUtil.Core.Localization.Resources.DirectoryStorage_Field_Directory_Validation_Empty;
+            
 
             if (!Directory.Exists(Settings.DestinationFolder))
                 return string.Format(BUtil.Core.Localization.Resources.DirectoryStorage_Field_Directory_Validation_NotFound, Settings.DestinationFolder);

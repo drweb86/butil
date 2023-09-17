@@ -1,5 +1,8 @@
 # 2023.09.17
 
+## New Features
+- FTPS support for backups in UI.
+
 ## Changes
 ~ Renames
 

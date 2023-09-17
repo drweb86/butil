@@ -13,6 +13,11 @@ namespace BUtil.Core.Storages
         internal SambaStorage(ILog log, SambaStorageSettingsV2 settings)
             : base(log, settings)
         {
+            if (string.IsNullOrWhiteSpace(Settings.Url))
+            {
+                throw new InvalidDataException(BUtil.Core.Localization.Resources.Url_Field_Validation);
+            }
+
             Mount();
         }
 

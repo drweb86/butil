@@ -28,6 +28,13 @@ namespace BUtil.Configurator.Configurator.Controls
             _mountScriptLabel.Text = BUtil.Core.Localization.Resources.DataStorage_Field_ConnectScript;
             _unmountScriptLabel.Text = BUtil.Core.Localization.Resources.DataStorage_Field_DisconnectionScript;
             _mountButton.Text = _unmountButton.Text = BUtil.Core.Localization.Resources.Task_Launch;
+
+            _ftpsQuotaLabel.Text = Resources.DataStorage_Field_UploadQuota;
+            _ftpsServerLabel.Text = Resources.Server_Field_Address;
+            _ftpsPortLabel.Text = Resources.Server_Field_Port;
+            _ftpsUserLabel.Text = Resources.User_Field;
+            _ftpsPasswordLabel.Text = Resources.Password_Field;
+            _ftpsFolderLabel.Text = Resources.Field_Folder;
         }
 
         #region Overrides
@@ -66,6 +73,18 @@ namespace BUtil.Configurator.Configurator.Controls
                 _userTextBox.Text = sambaSettings.User;
                 _passwordTextBox.Text = sambaSettings.Password;
             }
+            else if (storage is FtpsStorageSettingsV2)
+            {
+                var ftpsSettings = storage as FtpsStorageSettingsV2;
+                _storageTypesTabControl.SelectedTab = _ftpsTabPage;
+
+                _ftpsServerTextBox.Text = ftpsSettings.Host;
+                _ftpsPortNumericUpDown.Value = ftpsSettings.Port;
+                _ftpsUserTextBox.Text = ftpsSettings.User;
+                _ftpsPasswordTextBox.Text = ftpsSettings.Password;
+                _ftpsFolderTextBox.Text = ftpsSettings.Folder;
+                _ftpsQuotaNumericUpDown.Value = ftpsSettings.SingleBackupQuotaGb;
+            }
         }
 
         private IStorageSettingsV2 GetStorageSettings()
@@ -91,6 +110,18 @@ namespace BUtil.Configurator.Configurator.Controls
                     UnmountPowershellScript = _unmountTextBox.Text,
                 };
             }
+            else if (_storageTypesTabControl.SelectedTab == _ftpsTabPage)
+            {
+                storageSettings = new FtpsStorageSettingsV2
+                {
+                    Host = _ftpsServerTextBox.Text,
+                    Port = (int)_ftpsPortNumericUpDown.Value,
+                    User = _ftpsUserTextBox.Text,
+                    Password = _ftpsPasswordTextBox.Text,
+                    Folder = _ftpsFolderTextBox.Text,
+                    SingleBackupQuotaGb = (long)_ftpsQuotaNumericUpDown.Value,
+                };
+            }
             if (storageSettings == null)
                 throw new NotImplementedException();
 
@@ -107,26 +138,6 @@ namespace BUtil.Configurator.Configurator.Controls
         public override bool ValidateUi()
         {
             var storageSettings = GetStorageSettings();
-            if (storageSettings is SambaStorageSettingsV2)
-            {
-                var sambaStorageSettings = storageSettings as SambaStorageSettingsV2;
-
-                if (string.IsNullOrWhiteSpace(sambaStorageSettings.Url))
-                {
-                    Messages.ShowErrorBox(BUtil.Core.Localization.Resources.Url_Field_Validation);
-                    return false;
-                }
-            }
-            else if (storageSettings is FolderStorageSettingsV2)
-            {
-                var folderStorageSettings = storageSettings as FolderStorageSettingsV2;
-
-                if (string.IsNullOrWhiteSpace(folderStorageSettings.DestinationFolder))
-                {
-                    Messages.ShowErrorBox(BUtil.Core.Localization.Resources.DirectoryStorage_Field_Directory_Validation_Empty);
-                    return false;
-                }
-            }
 
             string error = null;
             using var progressForm = new ProgressForm(progress =>
@@ -161,17 +172,17 @@ namespace BUtil.Configurator.Configurator.Controls
         private void OnMountScript(object sender, EventArgs e)
         {
             if (PowershellProcessHelper.Execute(new StubLog(), _mountTextBox.Text))
-                Messages.ShowInformationBox(BUtil.Core.Localization.Resources.DataStorage_Field_DisconnectionScript_Ok);
+                Messages.ShowInformationBox(Resources.DataStorage_Field_DisconnectionScript_Ok);
             else
-                Messages.ShowErrorBox(BUtil.Core.Localization.Resources.DataStorage_Field_DisconnectionScript_Bad);
+                Messages.ShowErrorBox(Resources.DataStorage_Field_DisconnectionScript_Bad);
         }
 
         private void OnUnmount(object sender, EventArgs e)
         {
             if (PowershellProcessHelper.Execute(new StubLog(), _unmountTextBox.Text))
-                Messages.ShowInformationBox(BUtil.Core.Localization.Resources.DataStorage_Field_DisconnectionScript_Ok);
+                Messages.ShowInformationBox(Resources.DataStorage_Field_DisconnectionScript_Ok);
             else
-                Messages.ShowErrorBox(BUtil.Core.Localization.Resources.DataStorage_Field_DisconnectionScript_Bad);
+                Messages.ShowErrorBox(Resources.DataStorage_Field_DisconnectionScript_Bad);
         }
 
         private void OnSambaButtonClick(object sender, EventArgs e)
