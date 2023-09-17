@@ -26,6 +26,7 @@ DisableProgramGroupPage=yes
 DisableDirPage=yes
 DisableReadyPage=yes
 UsePreviousAppDir=no
+UninstallDisplayIcon={app}\bin\butil.exe
 
 [Languages]
 Name: en; MessagesFile: "compiler:Default.isl"
