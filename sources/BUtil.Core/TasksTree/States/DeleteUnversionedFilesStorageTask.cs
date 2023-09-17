@@ -11,16 +11,14 @@ namespace BUtil.Core.TasksTree
     internal class DeleteUnversionedFilesStorageTask : BuTask
     {
         public StorageSpecificServicesIoc _services;
-        private readonly string _password;
         private readonly GetStateOfStorageTask _getStateOfStorageTask;
         public IStorageSettingsV2 StorageSettings { get; }
 
-        public DeleteUnversionedFilesStorageTask(StorageSpecificServicesIoc services, TaskEvents events, string password, GetStateOfStorageTask getStateOfStorageTask) :
-            base(services.Log, events, Localization.Resources.DeleteUnversionedFilesStorage, TaskArea.Hdd)
+        public DeleteUnversionedFilesStorageTask(StorageSpecificServicesIoc services, TaskEvents events, GetStateOfStorageTask getStateOfStorageTask) :
+            base(services.Log, events, Localization.Resources.BackupVersion_CleanupUncompleted, TaskArea.Hdd)
         {
             StorageSettings = services.StorageSettings;
             _services = services;
-            this._password = password;
             _getStateOfStorageTask = getStateOfStorageTask;
         }
 

@@ -40,7 +40,7 @@ namespace BUtil.Core.TasksTree.States
             StorageStateTask = getStorageStateTask;
             childTasks.Add(getStorageStateTask);
 
-            var deleteUnversionedFilesStorageTask = new DeleteUnversionedFilesStorageTask(servicesIoc, Events, password, getStorageStateTask);
+            var deleteUnversionedFilesStorageTask = new DeleteUnversionedFilesStorageTask(servicesIoc, Events, getStorageStateTask);
             DeleteUnversionedFilesStorageTask = deleteUnversionedFilesStorageTask;
             childTasks.Add(deleteUnversionedFilesStorageTask);
 

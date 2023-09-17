@@ -40,7 +40,7 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
             _toStorage = toStorage;
             _transformFileName = transformFileName;
 
-            Title = string.Format(BUtil.Core.Localization.Resources.Import0, Path.GetFileNameWithoutExtension(fromFile));
+            Title = string.Format(BUtil.Core.Localization.Resources.ImportMediaTask_File, Path.GetFileNameWithoutExtension(fromFile));
         }
 
         public override void Execute()

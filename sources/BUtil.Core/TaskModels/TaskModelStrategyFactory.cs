@@ -79,7 +79,7 @@ namespace BUtil.Core.BackupModels
 
                 if (string.IsNullOrWhiteSpace(typedOptions.TransformFileName))
                 {
-                    error = BUtil.Core.Localization.Resources.TransformFileNameIsEmpty;
+                    error = BUtil.Core.Localization.Resources.ImportMediaTask_Field_TransformFileName_Validation_Empty;
                     return false;
                 }
 
@@ -89,7 +89,7 @@ namespace BUtil.Core.BackupModels
                 }
                 catch
                 {
-                    error = BUtil.Core.Localization.Resources.InvalidTransformFileNameString;
+                    error = BUtil.Core.Localization.Resources.ImportMediaTask_Field_TransformFileName_Validation_Invalid;
                     return false;
                 }
 

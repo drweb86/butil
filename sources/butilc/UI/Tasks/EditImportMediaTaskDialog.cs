@@ -71,7 +71,7 @@ namespace BUtil.ConsoleBackup.UI
 
         private void OnSpecifySource()
         {
-            var dialog = new EditStorageSettingsDialog(_from, BUtil.Core.Localization.Resources.ImportFilesFrom);
+            var dialog = new EditStorageSettingsDialog(_from, BUtil.Core.Localization.Resources.ImportMediaTask_ImportDataSource);
             Application.Run(dialog);
 
             if (dialog.Canceled)
@@ -105,7 +105,7 @@ namespace BUtil.ConsoleBackup.UI
             }
             catch 
             {
-                _transformFileNameLabel.Text = BUtil.Core.Localization.Resources.InvalidTransformFileNameString;
+                _transformFileNameLabel.Text = BUtil.Core.Localization.Resources.ImportMediaTask_Field_TransformFileName_Validation_Invalid;
             }
         }
     }

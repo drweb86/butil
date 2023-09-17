@@ -11,7 +11,7 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
         public TaskNameUserControl()
         {
             InitializeComponent();
-            _backupModelLabel.Text = Resources.IncrementalBackupDescription;
+            _backupModelLabel.Text = Resources.IncrementalBackup_Help;
         }
 
         public override void ApplyLocalization()

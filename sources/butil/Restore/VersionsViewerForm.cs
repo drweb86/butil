@@ -354,7 +354,7 @@ namespace BUtil.RestorationMaster
             });
             form.ShowDialog();
 
-            Messages.ShowInformationBox(BUtil.Core.Localization.Resources.RestorationIsCompleted);
+            Messages.ShowInformationBox(Resources.Task_Status_Succesfull);
             services.Dispose();
         }
 

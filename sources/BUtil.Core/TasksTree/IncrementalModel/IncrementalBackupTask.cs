@@ -15,7 +15,7 @@ namespace BUtil.Core.TasksTree.IncrementalModel
         private readonly StorageSpecificServicesIoc _storageService;
 
         public IncrementalBackupTask(ILog log, TaskEvents backupEvents, TaskV2 backupTask)
-            : base(log, backupEvents, Resources.IncrementalBackup, TaskArea.ProgramInRunBeforeAfterBackupChain, null)
+            : base(log, backupEvents, Resources.IncrementalBackup_Title, TaskArea.ProgramInRunBeforeAfterBackupChain, null)
         {
             var tasks = new List<BuTask>();
 

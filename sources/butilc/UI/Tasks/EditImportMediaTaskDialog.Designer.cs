@@ -43,7 +43,7 @@ namespace BUtil.ConsoleBackup.UI {
             {
                 X = 0,
                 Y = 7,
-                Text = BUtil.Core.Localization.Resources.ImportFilesFrom,
+                Text = BUtil.Core.Localization.Resources.ImportMediaTask_ImportDataSource,
                 IsDefault = true,
             };
             sourceSelectButton.Clicked += OnSpecifySource;
@@ -71,7 +71,7 @@ namespace BUtil.ConsoleBackup.UI {
                 AutoSize = true,
                 X = 0,
                 Y = 12,
-                Text = BUtil.Core.Localization.Resources.FileNameTransformations
+                Text = BUtil.Core.Localization.Resources.ImportMediaTask_Field_TransformFileName
             });
 
             _transformFileNameTextField = new TextField
@@ -101,7 +101,7 @@ namespace BUtil.ConsoleBackup.UI {
 
             _skipAlreadyImportedFilesCheckBox = new CheckBox
             {
-                Text = BUtil.Core.Localization.Resources.SkipAlreadyImportedFiles,
+                Text = BUtil.Core.Localization.Resources.ImportMediaTask_SkipAlreadyImportedFiles,
                 X = 0,
                 Y = 19,
                 Width = Dim.Fill(0),

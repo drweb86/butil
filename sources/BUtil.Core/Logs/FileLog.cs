@@ -100,7 +100,7 @@ namespace BUtil.Core.Logs
                 if (!HasErrors)
                 {
                     //No any error or warning registered during backup!
-                    WriteInFile(Resources.TaskFinishedSuccesfully);
+                    WriteInFile(Resources.Task_Status_Succesfull);
                 }
                 
                 WriteInFile("</body>");

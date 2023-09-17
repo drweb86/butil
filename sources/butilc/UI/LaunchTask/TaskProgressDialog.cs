@@ -118,11 +118,11 @@ namespace BUtil.ConsoleBackup.UI
             if (_log.HasErrors)
             {
                 ProcessHelper.ShellExecute(_log.LogFilename);
-                MessageBox.ErrorQuery(string.Empty, $"⛔{Resources.TaskHasFailedSeeOpenedLog}\n{lastMinuteConsolidatedMessage}", Resources.Button_Close);
+                MessageBox.ErrorQuery(string.Empty, $"⛔{Resources.Task_Status_FailedSeeLog}\n{lastMinuteConsolidatedMessage}", Resources.Button_Close);
             }
             else
             {
-                MessageBox.Query(string.Empty, $"✅{Resources.TaskIsSucceeded}\n{lastMinuteConsolidatedMessage}", Resources.Button_Close);
+                MessageBox.Query(string.Empty, $"✅{Resources.Task_Status_Succesfull}\n{lastMinuteConsolidatedMessage}", Resources.Button_Close);
             }
             Application.MainLoop.Invoke(_listView.SetNeedsDisplay);
         }

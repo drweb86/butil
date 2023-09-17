@@ -39,7 +39,7 @@ namespace BUtil.Configurator.Configurator.Forms
             _backupTasksUserControl.ApplyLocalization();
             Text = Resources.ApplicationName_Tasks + " " + CopyrightInfo.Version.ToString();
             restorationToolToolStripMenuItem.Text = Resources.RestoreData;
-            _logsToolStripMenuItem.Text = Resources.Logging;
+            _logsToolStripMenuItem.Text = Resources.LogFile_OpenLogs;
         }
 
 		private void GetOptionsFromUi()

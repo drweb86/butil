@@ -28,7 +28,7 @@ namespace BUtil.Configurator.Tasks.Controls.Tasks.Encryption
             Text = Resources.Password_Generator_Header;
             cancelButton.Text = Resources.Button_Cancel;
             copyToClipboardButton.Text = Resources.Button_CopyToClipboard;
-            generateButton.Text = Resources.Generate;
+            generateButton.Text = Resources.Password_Generate;
             passwordLengthLabel.Text = Resources.Password_Field_Length;
             optionsGroupBox.Text = string.Empty;
             useButton.Text = Resources.Password_Use;

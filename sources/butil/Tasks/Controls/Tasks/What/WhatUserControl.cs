@@ -21,13 +21,13 @@ namespace BUtil.Configurator.Controls
 
 			InitializeComponent();
 
-            itemsToCompressColumnHeader.Text = Resources.ItemsToBackup;
+            itemsToCompressColumnHeader.Text = Resources.What;
             SetHintForControl(_itemsListView, Resources.DragAndDropHereFilesAndFoldersWhichYoureGoingToBackupForSettingCompressionPriorityUseMenu);
             SetHintForControl(addFoldersButton, Resources.SourceItem_AddFolders);
             addFoldersToolStripMenuItem.Text = Resources.SourceItem_AddFolders;
 
-            SetHintForControl(removeButton, Resources.Remove);
-            removeToolStripMenuItem.Text = Resources.Remove;
+            SetHintForControl(removeButton, Resources.Button_Remove);
+            removeToolStripMenuItem.Text = Resources.Button_Remove;
 
             SetHintForControl(addFilesButton, Resources.SourceItem_AddFiles);
             addFilesToolStripMenuItem.Text = Resources.SourceItem_AddFiles;
@@ -36,7 +36,7 @@ namespace BUtil.Configurator.Controls
             _addFileExcludePatternToolStripMenuItem.ToolTipText = BUtil.Core.Localization.Resources.StorageItem_ExcludePattern_Hint;
             SetHintForControl(_addFIleExcludePatternButton, BUtil.Core.Localization.Resources.StorageItem_ExcludePattern_Hint);
             _editFileExcludePatternToolStripMenuItem.Text = BUtil.Core.Localization.Resources.EditFileExcludePattern;
-            _openInExplorerToolStripMenuItem.Text = BUtil.Core.Localization.Resources.OpenInExplorer;
+            _openInExplorerToolStripMenuItem.Text = BUtil.Core.Localization.Resources.SourceItem_OpenInExplorer;
 
             var options = (IncrementalBackupModelOptionsV2)_task.Model;
             options.Items
@@ -242,7 +242,7 @@ namespace BUtil.Configurator.Controls
             var options = (IncrementalBackupModelOptionsV2)_task.Model;
             if (options.Items.Count == 0)
 			{
-				Messages.ShowErrorBox(Resources.ThereAreNoItemsToBackupNNyouCanSpecifyTheDataToBackupInConfiguratorInWhatSettingsGroup);
+				Messages.ShowErrorBox(Resources.What_Validation);
                 return false;
 			}
 
@@ -251,14 +251,14 @@ namespace BUtil.Configurator.Controls
                 if (item.IsFolder &&
                     !Directory.Exists(item.Target))
                 {
-                    Messages.ShowErrorBox(string.Format(BUtil.Core.Localization.Resources.SourceItemFailure, item.Target));
+                    Messages.ShowErrorBox(string.Format(BUtil.Core.Localization.Resources.SourceItem_Validation_NotExists, item.Target));
                     return false;
                 }
 
                 if (!item.IsFolder &&
                     !File.Exists(item.Target))
                 {
-                    Messages.ShowErrorBox(string.Format(BUtil.Core.Localization.Resources.SourceItemFailure, item.Target));
+                    Messages.ShowErrorBox(string.Format(BUtil.Core.Localization.Resources.SourceItem_Validation_NotExists, item.Target));
                     return false;
                 }
             }

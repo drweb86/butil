@@ -268,7 +268,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 
         private void OnShowHelp(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Messages.ShowInformationBox(Resources.IfYouChooseSomethingOtherThanDoNothingNprogramWillConfigureOsToShowYouReportNonNextYourLogonToTheSystemIfAnyErrorsNorWarningsWillBeRegisteredDuringTheBackup);
+            Messages.ShowInformationBox(Resources.AfterTaskSelection_Help);
         }
     }
 }

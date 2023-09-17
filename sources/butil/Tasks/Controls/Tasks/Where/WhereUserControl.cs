@@ -126,13 +126,6 @@ namespace BUtil.Configurator.Configurator.Controls
                     Messages.ShowErrorBox(BUtil.Core.Localization.Resources.DestinationFolderIsNotSpecified);
                     return false;
                 }
-
-                if (folderStorageSettings.DestinationFolder.StartsWith(@"\\", StringComparison.InvariantCulture))
-                {
-                    //"Network storages are not allowed to be pointed here!"
-                    Messages.ShowErrorBox(Resources.NetworkStoragesAreNotAllowedToBePointedHere);
-                    return false;
-                }
             }
 
             string error = null;

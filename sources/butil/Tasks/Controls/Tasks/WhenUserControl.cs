@@ -21,7 +21,7 @@ namespace BUtil.Configurator.Controls
 
 		public override void ApplyLocalization() 
 		{
-			chooseDaysOfWeekLabel.Text = Resources.ChooseDaysOfWeek;
+			chooseDaysOfWeekLabel.Text = Resources.Days_Field_Choose;
             scheduledDaysCheckedListBox.Items[2] = Resources.Days_Wednesday;
             scheduledDaysCheckedListBox.Items[3] = Resources.Days_Thursday;
             scheduledDaysCheckedListBox.Items[4] = Resources.Days_Friday;

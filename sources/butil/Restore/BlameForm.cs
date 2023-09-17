@@ -18,7 +18,7 @@ namespace BUtil.Configurator.Restore
             this._closeButton.Text = Resources.Button_Close;
             _versionsListToolStripLabel.Text = BUtil.Core.Localization.Resources.BackupVersion_Versions_Title;
             _openSelectedVersionToolStripButton.Text =
-                _openSelectedVersionToolStripMenuItem.Text = BUtil.Core.Localization.Resources.OpenSelectedVersion;
+                _openSelectedVersionToolStripMenuItem.Text = BUtil.Core.Localization.Resources.BackupVersion_Select;
         }
 
         public void Init(

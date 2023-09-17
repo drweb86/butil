@@ -75,7 +75,7 @@ namespace BUtil.Configurator.Configurator.Controls
                 if (lastLogFile != null)
                 {
                     var postfix = lastLogFile.IsSuccess.HasValue ?
-                        (lastLogFile.IsSuccess.Value ? BUtil.Core.Localization.Resources.Successful : BUtil.Core.Localization.Resources.Errors)
+                        (lastLogFile.IsSuccess.Value ? BUtil.Core.Localization.Resources.LogFile_Marker_Successful : BUtil.Core.Localization.Resources.LogFile_Marker_Errors)
                         : BUtil.Core.Localization.Resources.Unknown;
                     status = $"{lastLogFile.CreatedAt} ({postfix})";
                 }
@@ -149,7 +149,7 @@ namespace BUtil.Configurator.Configurator.Controls
 
             foreach (var selectedTask in selectedTasks)
             {
-                if (Messages.ShowYesNoDialog(string.Format(Resources.WouldYouLileToRemoveTheBackupTask0, selectedTask.Text)))
+                if (Messages.ShowYesNoDialog(string.Format(Resources.Task_Delete_Confirm, selectedTask.Text)))
                 {
                     var backupTasksService = new TaskV2StoreService();
                     backupTasksService.Delete(selectedTask.Text);

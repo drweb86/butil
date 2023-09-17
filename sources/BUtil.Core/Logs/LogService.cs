@@ -13,7 +13,7 @@ namespace BUtil.Core.Logs
 
         public string GetFileName(string taskName, DateTime _dateTime, bool? isSuccess)
         {
-            var postfix = isSuccess.HasValue ? (isSuccess.Value ? BUtil.Core.Localization.Resources.Successful : BUtil.Core.Localization.Resources.Errors) : BUtil.Core.Localization.Resources.Unknown;
+            var postfix = isSuccess.HasValue ? (isSuccess.Value ? BUtil.Core.Localization.Resources.LogFile_Marker_Successful : BUtil.Core.Localization.Resources.LogFile_Marker_Errors) : BUtil.Core.Localization.Resources.Unknown;
             return Path.Combine(Directories.LogsFolder,
                 $"{_dateTime.ToString(dateMask, CultureInfo.CurrentUICulture)} {taskName} ({postfix}).html");
         }
@@ -39,8 +39,8 @@ namespace BUtil.Core.Logs
             var taskName = fileName.Substring(dateMask.Length + 1);
             taskName = taskName.Substring(0, taskName.LastIndexOf(" ("));
 
-            var isError = fileName.EndsWith($"({Localization.Resources.Errors}).html");
-            var isSuccess = fileName.EndsWith($"({Localization.Resources.Successful}).html");
+            var isError = fileName.EndsWith($"({Localization.Resources.LogFile_Marker_Errors}).html");
+            var isSuccess = fileName.EndsWith($"({Localization.Resources.LogFile_Marker_Successful}).html");
             return new LogFileInfo { TaskName = taskName, CreatedAt = createdAt, IsSuccess = isSuccess? true : (isError ? false : null )};
         }
     }

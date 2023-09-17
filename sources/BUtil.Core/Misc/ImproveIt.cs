@@ -44,7 +44,7 @@ namespace BUtil.Core.Misc
                 File.AppendAllText(Files.BugReportFile, builder.ToString());
                 
                 if (HandleUiError != null)
-                    HandleUiError(string.Format(Resources.AnUnexpectedErrorOccuredNNpleaseContactTheDevelopersWithInformationSavedOnYourDesktopInN0NNapplicationWillNowClose, Files.BugReportFile));
+                    HandleUiError(string.Format(Resources.ImproveIt_Message, Files.BugReportFile));
             }
             finally
             {
