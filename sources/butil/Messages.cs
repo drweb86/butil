@@ -7,17 +7,17 @@ namespace BUtil.Configurator
     {
         public static void ShowInformationBox(string message)
         {
-            MessageBox.Show(message,  Resources.InformationButil, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 0);
+            MessageBox.Show(message,  Resources.Messages_Header_Information, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, 0);
         }
 
         public static void ShowErrorBox(string message)
         {
-            MessageBox.Show(message, Resources.ErrorButil, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, 0);
+            MessageBox.Show(message, Resources.Messages_Header_Error, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, 0);
         }
 
         public static bool ShowYesNoDialog(string question)
         {
-            return MessageBox.Show(question, Resources.QuestionButil, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1, 0) == DialogResult.Yes;
+            return MessageBox.Show(question, Resources.Messages_Header_Question, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1, 0) == DialogResult.Yes;
         }
     }
 }

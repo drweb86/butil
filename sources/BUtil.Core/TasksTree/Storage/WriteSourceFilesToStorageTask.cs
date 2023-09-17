@@ -105,7 +105,7 @@ namespace BUtil.Core.TasksTree.Storage
             if (skippedBecauseOfQuotaFiles.Any())
             {
                 var gigabyte = 1024 * 1024 *1024;
-                Events.Message(string.Format(BUtil.Core.Localization.Resources.BackupWasPartialDueToStorageQuota, skippedBecauseOfQuotaFiles.Count(), skippedBecauseOfQuotaFiles.Sum(x => x.FileState.Size) / gigabyte));
+                Events.Message(string.Format(BUtil.Core.Localization.Resources.Task_Status_PartialDueToQuota, skippedBecauseOfQuotaFiles.Count(), skippedBecauseOfQuotaFiles.Sum(x => x.FileState.Size) / gigabyte));
             }
         }
 

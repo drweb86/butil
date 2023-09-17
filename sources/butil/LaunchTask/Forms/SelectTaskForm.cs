@@ -33,7 +33,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
         {
             Text = Resources.ApplicationName_LaunchTask;
             _cancelButton.Text = Resources.Button_Cancel;
-            _chooseTaskLabel.Text = Resources.ChooseTheTaskYouWantToRun;
+            _chooseTaskLabel.Text = Resources.Task_Field_Choose;
         }
     }
 }

@@ -27,11 +27,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
         {
             InitializeComponent();
 
-            if (Program.PackageIsBroken)
-            {
-                throw new InvalidOperationException("Tried to perform operation that requires package state is ok.");
-            }
-
             _backupTask = backupTask;
             OnTasksListViewResize(this, new EventArgs());
             ApplyLocalization();

@@ -146,16 +146,16 @@ Please contact the developers with information saved on your desktop in
 
 Application will now close</value>
   </data>
-  <data name="GetStateOfSourceItemsAndStorages" xml:space="preserve">
+  <data name="State_LoadFromEverywhere" xml:space="preserve">
     <value>Get state of source items and storages</value>
   </data>
-  <data name="GetStateOfStorage" xml:space="preserve">
+  <data name="DataStorage_State_Get" xml:space="preserve">
     <value>Get state of storage</value>
   </data>
-  <data name="GetStateOfSourceItem" xml:space="preserve">
+  <data name="SourceItem_State_Get" xml:space="preserve">
     <value>Get state of source item "{0}"</value>
   </data>
-  <data name="GetStateOfFileFileName" xml:space="preserve">
+  <data name="State_File_Get" xml:space="preserve">
     <value>Get state of file "{0}"</value>
   </data>
   <data name="State_Saving" xml:space="preserve">
@@ -176,16 +176,14 @@ Application will now close</value>
   <data name="IncrementalBackup_Version_Save" xml:space="preserve">
     <value>Saving incremented version</value>
   </data>
-  <data name="WriteIntegrityVerificationScriptsToStorage" xml:space="preserve">
-    <value>Write integrity verification scripts</value>
+  <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
+    <value>Saving integrity verification scripts</value>
   </data>
-  <data name="IntegrityVerificationScriptPs1" xml:space="preserve">
+  <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
     <value>Integrity verification script.ps1</value>
   </data>
-  <data name="FolderStorageFailure" xml:space="preserve">
-    <value>Storage directory "{0}" was not found.
-
-Please update storage settings.</value>
+  <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
+    <value>Directory "{0}" does not exist.</value>
   </data>
   <data name="BackupVersion_CleanupUncompleted" xml:space="preserve">
     <value>Delete uncompleted backups</value>
@@ -196,11 +194,11 @@ Please update storage settings.</value>
   <data name="LogFile_Marker_Errors" xml:space="preserve">
     <value>Errors</value>
   </data>
-  <data name="Unknown" xml:space="preserve">
+  <data name="Task_Status_Unknown" xml:space="preserve">
     <value>Unknown</value>
   </data>
-  <data name="BackupWasPartialDueToStorageQuota" xml:space="preserve">
-    <value>Backup was partial. Due to storage quota some files were not copied. Remaining {0} files with of {1} GB.</value>
+  <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
+    <value>Completed partially. Due to storage quota some files were skipped this time. Remaining {0} files with of {1} GB.</value>
   </data>
   <data name="ImportMediaTask_AllFiles" xml:space="preserve">
     <value>Import all files</value>
@@ -214,11 +212,11 @@ Please update storage settings.</value>
   <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
     <value>Transform file name is empty.</value>
   </data>
-  <data name="FolderStorage" xml:space="preserve">
-    <value>Folder Storage...</value>
+  <data name="DirectoryStorage" xml:space="preserve">
+    <value>Directory</value>
   </data>
-  <data name="DestinationFolderIsNotSpecified" xml:space="preserve">
-    <value>Destination folder is not specified.</value>
+  <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
+    <value>Directory is not specified.</value>
   </data>
   <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
     <value>Storage is not specified.</value>
@@ -235,7 +233,7 @@ Please update storage settings.</value>
   <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
     <value>Password is not specified.</value>
   </data>
-  <data name="FolderDoesNotExist" xml:space="preserve">
+  <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Folder does not exist.</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
@@ -247,17 +245,17 @@ Please update storage settings.</value>
   <data name="Task_Validation_NotSupported" xml:space="preserve">
     <value>This task type is not supported.</value>
   </data>
-  <data name="FinishedSuccesfully" xml:space="preserve">
+  <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
     <value>Finished succesfully</value>
   </data>
-  <data name="FinishedWithErrors" xml:space="preserve">
+  <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
     <value>Finished with errors</value>
   </data>
-  <data name="What" xml:space="preserve">
+  <data name="LeftMenu_What" xml:space="preserve">
     <value>What?</value>
   </data>
-  <data name="DragAndDropHereFilesAndFoldersWhichYoureGoingToBackupForSettingCompressionPriorityUseMenu" xml:space="preserve">
-    <value>Drag and drop here files and folders which you're going to backup!</value>
+  <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
+    <value>Drag and drop here files and folders from Explorer.</value>
   </data>
   <data name="SourceItem_AddFolders" xml:space="preserve">
     <value>Add folders...</value>
@@ -268,19 +266,16 @@ Please update storage settings.</value>
   <data name="SourceItem_AddFiles" xml:space="preserve">
     <value>Add files...</value>
   </data>
-  <data name="Where" xml:space="preserve">
+  <data name="LeftMenu_Where" xml:space="preserve">
     <value>Where?</value>
   </data>
-  <data name="SpecifyTheFolderWhereToStoreBackUp" xml:space="preserve">
-    <value>Specify the folder where to store back-up:</value>
-  </data>
-  <data name="Encryption" xml:space="preserve">
+  <data name="LeftMenu_Encryption" xml:space="preserve">
     <value>Encryption</value>
   </data>
   <data name="LogFile_OpenLogs" xml:space="preserve">
     <value>Logs</value>
   </data>
-  <data name="When" xml:space="preserve">
+  <data name="LeftMenu_When" xml:space="preserve">
     <value>When?</value>
   </data>
   <data name="Days_Field_Choose" xml:space="preserve">
@@ -331,7 +326,7 @@ Please update storage settings.</value>
   <data name="Task_Status_Succesfull" xml:space="preserve">
     <value>Succesfull</value>
   </data>
-  <data name="Elapsed" xml:space="preserve">
+  <data name="Time_Field_Elapsed" xml:space="preserve">
     <value>Elapsed:</value>
   </data>
   <data name="Task_Status_InProgress" xml:space="preserve">
@@ -343,11 +338,8 @@ Please update storage settings.</value>
   <data name="Name_Field" xml:space="preserve">
     <value>Name:</value>
   </data>
-  <data name="DestinationFolder" xml:space="preserve">
-    <value>Destination folder:</value>
-  </data>
-  <data name="HardDriveStorage" xml:space="preserve">
-    <value>Folder storage...</value>
+  <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
+    <value>Folder:</value>
   </data>
   <data name="AfterTaskSelection_Field" xml:space="preserve">
     <value>After task completion:</value>
@@ -361,20 +353,14 @@ Please update storage settings.</value>
   <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
     <value>Do nothing</value>
   </data>
-  <data name="Recover" xml:space="preserve">
-    <value>Recover!</value>
-  </data>
   <data name="Password_Recovery_Prompt" xml:space="preserve">
     <value>If your backup is password protected, please type password here:</value>
   </data>
-  <data name="Continue" xml:space="preserve">
+  <data name="Button_Continue" xml:space="preserve">
     <value>Continue &gt;</value>
   </data>
-  <data name="RestorationMaster" xml:space="preserve">
-    <value>Restoration master</value>
-  </data>
-  <data name="RestoreData" xml:space="preserve">
-    <value>Restore Data...</value>
+  <data name="ApplicationName_Restoration" xml:space="preserve">
+    <value>Restoration</value>
   </data>
   <data name="AfterTaskSelection_Help" xml:space="preserve">
     <value>If you choose something other than 'do nothing' 
@@ -382,19 +368,19 @@ program will configure OS to show you report
 on next your logon to the system if any errors 
 or warnings will be registered.</value>
   </data>
-  <data name="What_Validation" xml:space="preserve">
+  <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>No items to process.</value>
   </data>
-  <data name="HereYouMayAddFoldersAndFilesYouWantToBackup" xml:space="preserve">
-    <value>Here you may add folders and files you want to backup</value>
+  <data name="LeftMenu_What_Hint" xml:space="preserve">
+    <value>Here you may add folders and files you need to process.</value>
   </data>
-  <data name="InThisPlaceYouCanAddLocationsWhereYouWouldLikeYourBackupToBeCopiedAfterCompletionOfBackup" xml:space="preserve">
-    <value>In this place you can add locations where you would like your backup to be copied after completion of backup</value>
+  <data name="LeftMenu_Where_Hint" xml:space="preserve">
+    <value>In this place you can add locations where you would like your files to be copied.</value>
   </data>
-  <data name="HereYouCanSetUpASchedulerShcedulerCanHelpYouToAutomateCreationOfBackups" xml:space="preserve">
-    <value>Here you can set up a scheduler. Shceduler can help you to automate creation of backups</value>
+  <data name="LeftMenu_When_Help" xml:space="preserve">
+    <value>Here you can set up a scheduler. Shceduler can help you to automate task launch.</value>
   </data>
-  <data name="New0VersionIsAvailableNNchangesAreN1NNprogramWillNowOpenBrowserWithTheDownloadPage" xml:space="preserve">
+  <data name="Application_NewVersion_Notification" xml:space="preserve">
     <value>New {0} version is available.
 
 Changes are:
@@ -405,18 +391,6 @@ Program will now open browser with the download page</value>
   <data name="AfterTaskSelection_Reboot" xml:space="preserve">
     <value>Reboot</value>
   </data>
-  <data name="ButilSoftwarePackageComponent0IsMissingNNpleaseReinstallApplicationNNrestorationBackupAndHelpFunctionsWillBeUnavailable" xml:space="preserve">
-    <value>BUtil software package component '{0}' is missing.
-
-Please reinstall application.
-
-Restoration, Backup and Help functions will be unavailable.</value>
-  </data>
-  <data name="InvalidArgumentSPassedToTheProgramNNpleaseReferToManualForTheCompleteListOfParameters" xml:space="preserve">
-    <value>Invalid argument(s) passed to the program.
-
-Please refer to manual for the complete list of parameters!</value>
-  </data>
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
     <value>New task</value>
   </data>
@@ -426,8 +400,8 @@ Please refer to manual for the complete list of parameters!</value>
   <data name="Task_Edit_Hint" xml:space="preserve">
     <value>Edits the selected task.</value>
   </data>
-  <data name="ChooseTheTaskYouWantToRun" xml:space="preserve">
-    <value>Choose the task you want to run:</value>
+  <data name="Task_Field_Choose" xml:space="preserve">
+    <value>Choose the task:</value>
   </data>
   <data name="IncrementalBackup_Help" xml:space="preserve">
     <value>The most basic form of incremental backup consists of identifying, recording and thus, preserving only those files that have changed since the last backup. Since changes are typically low, incremental backups are much smaller and quicker than full backups. For instance, following a full backup on Friday, a Monday backup will contain only those files that changed since Friday. A Tuesday backup contains only those files that changed since Monday, and so on. A full restoration of data will naturally be slower, since all increments must be restored. Should any one of the copies created fail, including the first (full), restoration will be incomplete.</value>
@@ -438,17 +412,17 @@ Please refer to manual for the complete list of parameters!</value>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Failed (see opened log)</value>
   </data>
-  <data name="InformationButil" xml:space="preserve">
+  <data name="Messages_Header_Information" xml:space="preserve">
     <value>Information - BUtil</value>
   </data>
-  <data name="ErrorButil" xml:space="preserve">
+  <data name="Messages_Header_Error" xml:space="preserve">
     <value>Error - BUtil</value>
   </data>
-  <data name="QuestionButil" xml:space="preserve">
+  <data name="Messages_Header_Question" xml:space="preserve">
     <value>Question - BUtil</value>
   </data>
-  <data name="CannotLocateFile0InDirectoryPointToADirectoryContainingThisFile" xml:space="preserve">
-    <value>Cannot locate file "{0}" in directory. 
+  <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
+    <value>Cannot locate files "{0}" in directory. 
 
 Point to a directory containing this file.</value>
   </data>
@@ -461,8 +435,8 @@ Point to a directory containing this file.</value>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>FILES</value>
   </data>
-  <data name="ClickOnItemYouWantToRestoreAndOpenContextMenuByRightClick" xml:space="preserve">
-    <value>Click on item you want to restore and open context menu by right click</value>
+  <data name="BackupVersion_Viewer_Help" xml:space="preserve">
+    <value>Click on item you want to restore and open context menu by right click.</value>
   </data>
   <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
     <value>Passwords do not match.</value>
@@ -471,16 +445,16 @@ Point to a directory containing this file.</value>
     <value>Recommended minimum password length is 50 characters and more.</value>
   </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
-    <value>Add exclude file pattern</value>
+    <value>Add file exclude pattern</value>
   </data>
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
-    <value>Skip processing files by pattern.</value>
+    <value>Skips processing of files by exclude pattern.</value>
   </data>
-  <data name="FileExclusionPattern" xml:space="preserve">
-    <value>File Exclusion Pattern:</value>
+  <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
+    <value>File exclude pattern:</value>
   </data>
-  <data name="HereYouCanSpecifyFileGlobbingExclusionPatternsItCanBeAFileNameOrFolderNameOrWildcardExamplesDTempDTempFileTxtDTempTxtOrBinSeeDetailedDescriptionInTheFollowingLink" xml:space="preserve">
-    <value>Here you can specify file globbing exclusion patterns. 
+  <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
+    <value>Here you can specify file globbing exclude patterns. 
 It can be a file name or folder name or wildcard. 
 Examples: 
 d:\temp, 
@@ -489,20 +463,20 @@ d:\temp\**\*.txt or
 bin. 
 See detailed description in the following link.</value>
   </data>
-  <data name="FileGlobbingInNETPatterns" xml:space="preserve">
+  <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
     <value>File globbing in .NET: Patterns</value>
   </data>
-  <data name="PatternIsEmpty" xml:space="preserve">
-    <value>Pattern is empty.</value>
+  <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
+    <value>File exclude pattern is empty.</value>
   </data>
-  <data name="EditFileExcludePattern" xml:space="preserve">
-    <value>Edit File Exclude Pattern...</value>
+  <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
+    <value>Edit file exclude pattern</value>
   </data>
   <data name="SourceItem_OpenInExplorer" xml:space="preserve">
     <value>Open in Explorer...</value>
   </data>
-  <data name="CannotOpenBackupFolder" xml:space="preserve">
-    <value>Cannot open backup folder.</value>
+  <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
+    <value>Cannot read state.</value>
   </data>
   <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
     <value>Upload limit, GB:</value>
@@ -515,17 +489,17 @@ Usage scenario: You copy data to remote server. There's a problem: ISP drops upl
   <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
     <value>Connection script:</value>
   </data>
-  <data name="DataStorageStorage_Field_DisconnectionScript" xml:space="preserve">
+  <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
     <value>Disconnection script:</value>
   </data>
   <data name="DataStorage_Script_Help" xml:space="preserve">
     <value>If folder becomes available after executing some commands, specify PowerShell scripts for connection and disconnection.</value>
   </data>
-  <data name="Url" xml:space="preserve">
+  <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>
   </data>
-  <data name="ShareNameIsNotSpecified" xml:space="preserve">
-    <value>Share name is not specified.</value>
+  <data name="Url_Field_Validation" xml:space="preserve">
+    <value>Url is not specified.</value>
   </data>
   <data name="Task_LastBackup" xml:space="preserve">
     <value>State</value>
@@ -533,10 +507,10 @@ Usage scenario: You copy data to remote server. There's a problem: ISP drops upl
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
     <value>Storage: {0}</value>
   </data>
-  <data name="Journal0" xml:space="preserve">
+  <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Journal: {0}</value>
   </data>
-  <data name="JournalSelected" xml:space="preserve">
+  <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
     <value>Journal for selected...</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
@@ -545,20 +519,14 @@ Usage scenario: You copy data to remote server. There's a problem: ISP drops upl
   <data name="BackupVersion_Select" xml:space="preserve">
     <value>Open selected version...</value>
   </data>
-  <data name="RecoverSelected" xml:space="preserve">
-    <value>Recover selected...</value>
+  <data name="Task_Restore" xml:space="preserve">
+    <value>Восстановить</value>
   </data>
   <data name="ApplicationName_LaunchTask" xml:space="preserve">
     <value>Launch task</value>
   </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Visit {0} to see command line arguments.</value>
-  </data>
-  <data name="ErrorInvalidCommandParametersSpecified" xml:space="preserve">
-    <value>Error: Invalid command parameters specified!!!</value>
-  </data>
-  <data name="CannotOpenFileLogDueToCryticalError0" xml:space="preserve">
-    <value>Cannot open file log due to crytical error {0}</value>
   </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Invalid command line arguments.</value>
@@ -569,7 +537,7 @@ Usage scenario: You copy data to remote server. There's a problem: ISP drops upl
   <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
     <value>File name transformations:</value>
   </data>
-  <data name="HelpForTokens" xml:space="preserve">
+  <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
     <value>Supported tokens:
 {DATE:Format} - Inserts file modification date in the specified format.
 To see all options google "C# DateTime format".</value>
@@ -632,5 +600,8 @@ application using template file names.</value>
   </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Name</value>
+  </data>
+  <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
+    <value>Output folder:</value>
   </data>
 </root>

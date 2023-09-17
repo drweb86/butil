@@ -21,8 +21,8 @@ namespace BUtil.Configurator.Controls
 
 			InitializeComponent();
 
-            itemsToCompressColumnHeader.Text = Resources.What;
-            SetHintForControl(_itemsListView, Resources.DragAndDropHereFilesAndFoldersWhichYoureGoingToBackupForSettingCompressionPriorityUseMenu);
+            itemsToCompressColumnHeader.Text = Resources.LeftMenu_What;
+            SetHintForControl(_itemsListView, Resources.LeftMenu_Where_Help_DragDrop);
             SetHintForControl(addFoldersButton, Resources.SourceItem_AddFolders);
             addFoldersToolStripMenuItem.Text = Resources.SourceItem_AddFolders;
 
@@ -35,7 +35,7 @@ namespace BUtil.Configurator.Controls
             _addFileExcludePatternToolStripMenuItem.Text = Resources.StorageItem_ExcludePattern_Add;
             _addFileExcludePatternToolStripMenuItem.ToolTipText = BUtil.Core.Localization.Resources.StorageItem_ExcludePattern_Hint;
             SetHintForControl(_addFIleExcludePatternButton, BUtil.Core.Localization.Resources.StorageItem_ExcludePattern_Hint);
-            _editFileExcludePatternToolStripMenuItem.Text = BUtil.Core.Localization.Resources.EditFileExcludePattern;
+            _editFileExcludePatternToolStripMenuItem.Text = BUtil.Core.Localization.Resources.StorageItem_ExcludePattern_Edit;
             _openInExplorerToolStripMenuItem.Text = BUtil.Core.Localization.Resources.SourceItem_OpenInExplorer;
 
             var options = (IncrementalBackupModelOptionsV2)_task.Model;
@@ -242,7 +242,7 @@ namespace BUtil.Configurator.Controls
             var options = (IncrementalBackupModelOptionsV2)_task.Model;
             if (options.Items.Count == 0)
 			{
-				Messages.ShowErrorBox(Resources.What_Validation);
+				Messages.ShowErrorBox(Resources.LeftMenu_What_Validation);
                 return false;
 			}
 

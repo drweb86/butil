@@ -10,7 +10,6 @@ namespace BUtil.Core.FileSystem
 		private static readonly string _assembly = Assembly.GetExecutingAssembly().Location;
 		private static readonly string _binariesDir = Path.GetDirectoryName(_assembly);
 		private static readonly string _installdir = Path.GetDirectoryName(_binariesDir);
-		private static readonly string _dataFolder = Path.Combine(_installdir, "data");
 		private static readonly string _applicationDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
 #if DEBUG
@@ -26,35 +25,18 @@ namespace BUtil.Core.FileSystem
 
         public static string BinariesDir => _binariesDir;
 
-        public static string DataDir => _dataFolder;
-
         public static string LogsFolder => _logsDir;
 
         private static void CreateDirectory(string path)
         {
             if (!Directory.Exists(path))
-            {
-                try
-                {
-                    Directory.CreateDirectory(path);
-                }
-                catch (IOException)
-                {
-                    throw new DirectoryNotFoundException(path);
-                }
-            }
+                Directory.CreateDirectory(path);
         }
 
-        /// <summary>
-        /// Checks for existence of main program folders
-        /// </summary>
-        /// <exception cref="DirectoryNotFoundException"></exception>
-        public static void CriticalFoldersCheck()
+        public static void EnsureFoldersCreated()
         {
         	CreateDirectory(_userDataFolder);
             CreateDirectory(_logsDir);
-            if (!Directory.Exists(_dataFolder))
-				throw new DirectoryNotFoundException(_dataFolder);
         }
 	}
 }

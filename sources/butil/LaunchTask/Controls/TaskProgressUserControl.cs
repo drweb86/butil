@@ -14,7 +14,7 @@ namespace BUtil.BackupUiMaster.Controls
         {
             InitializeComponent();
 
-            passedLabel.Text = Resources.Elapsed;
+            passedLabel.Text = Resources.Time_Field_Elapsed;
         }
 
         public void SetProgress(int ended, int total)

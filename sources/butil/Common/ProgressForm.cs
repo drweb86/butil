@@ -12,7 +12,7 @@ namespace BUtil.RestorationMaster
         public ProgressForm(Action<Action<int>> action)
 		{
 			InitializeComponent();
-            this.Text = Resources.RestorationMaster;
+            this.Text = Resources.Task_Status_InProgress;
             Height = _progressBar.Height + _progressBar.Location.Y + 50;
             Width = _progressBar.Width + _progressBar.Location.X * 2 + 20;
             _backgroundWorker.RunWorkerAsync();

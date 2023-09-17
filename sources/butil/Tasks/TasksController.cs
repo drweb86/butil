@@ -14,11 +14,6 @@ namespace BUtil.Configurator.Configurator
     {
         public static void OpenRestorationMaster(string file, bool runFormAsApplication, string taskName)
 		{
-			if (Program.PackageIsBroken)
-			{
-				return;
-			}
-
             TaskV2 backupTask = null;
             if (taskName != null)
             {
@@ -51,11 +46,6 @@ namespace BUtil.Configurator.Configurator
 		
 		public static void OpenBackupUi(string taskName)
         {
-            if (Program.PackageIsBroken)
-            {
-                return;
-            }
-
             var task = GetBackupTaskToExecute(taskName);
             using var form = new TaskProgressForm(task);
             Application.Run(form);

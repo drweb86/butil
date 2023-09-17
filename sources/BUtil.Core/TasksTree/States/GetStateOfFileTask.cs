@@ -19,7 +19,7 @@ namespace BUtil.Core.TasksTree.States
         {
             _servicesIoc = servicesIoc;
             _fileName = fileName;
-            Title = string.Format(BUtil.Core.Localization.Resources.GetStateOfFileFileName, item.Target == fileName ? fileName: fileName.Substring(item.Target.Length + 1));
+            Title = string.Format(BUtil.Core.Localization.Resources.State_File_Get, item.Target == fileName ? fileName: fileName.Substring(item.Target.Length + 1));
         }
 
         public override void Execute()

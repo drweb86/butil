@@ -86,7 +86,7 @@ namespace BUtil.Core.Storages
         public override string Test()
         {
             if (!Directory.Exists(Settings.Url))
-                return string.Format(BUtil.Core.Localization.Resources.FolderStorageFailure, Settings.Url);
+                return string.Format(BUtil.Core.Localization.Resources.DirectoryStorage_Field_Directory_Validation_NotFound, Settings.Url); ;
 
             return null;
         }

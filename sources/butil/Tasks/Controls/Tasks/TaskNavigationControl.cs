@@ -68,14 +68,14 @@ namespace BUtil.Configurator.Controls
 				storagesButton, schedulerButton, encryptionButton};
 
 			_nameButton.Text = Resources.Name_Title;
-			itemsForBackupButton.Text = Resources.What;
-			storagesButton.Text = Resources.Where;
-			schedulerButton.Text = Resources.When;
-			encryptionButton.Text = Resources.Encryption;
+			itemsForBackupButton.Text = Resources.LeftMenu_What;
+			storagesButton.Text = Resources.LeftMenu_Where;
+			schedulerButton.Text = Resources.LeftMenu_When;
+			encryptionButton.Text = Resources.LeftMenu_Encryption;
             SetHintForControl(_nameButton, BUtil.Core.Localization.Resources.Name_Title);
-            SetHintForControl(itemsForBackupButton, Resources.HereYouMayAddFoldersAndFilesYouWantToBackup);
-			SetHintForControl(storagesButton, Resources.InThisPlaceYouCanAddLocationsWhereYouWouldLikeYourBackupToBeCopiedAfterCompletionOfBackup);
-			SetHintForControl(schedulerButton, Resources.HereYouCanSetUpASchedulerShcedulerCanHelpYouToAutomateCreationOfBackups);
+            SetHintForControl(itemsForBackupButton, Resources.LeftMenu_What_Hint);
+			SetHintForControl(storagesButton, Resources.LeftMenu_Where_Hint);
+			SetHintForControl(schedulerButton, Resources.LeftMenu_When_Help);
 			SetHintForControl(encryptionButton, string.Empty);
 
             foreach (var button in buttons)

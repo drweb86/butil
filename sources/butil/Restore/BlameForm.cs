@@ -27,7 +27,7 @@ namespace BUtil.Configurator.Restore
             Action<DateTime> selectVersion)
         {
             _selectVersion = selectVersion;
-            this.Text = string.Format(BUtil.Core.Localization.Resources.Journal0, fileFullPath);
+            this.Text = string.Format(BUtil.Core.Localization.Resources.BackupVersion_FileVersion_Title, fileFullPath);
 
             this._versionsListView.SuspendLayout();
             this._versionsListView.Items.Clear();

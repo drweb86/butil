@@ -18,10 +18,10 @@ namespace BUtil.Configurator.Configurator.Controls.Tasks.What
             InitializeComponent();
 
             Pattern = pattern;
-            this.Text = pattern == null ? BUtil.Core.Localization.Resources.StorageItem_ExcludePattern_Add : Resources.EditFileExcludePattern;
-            _patternLabel.Text = BUtil.Core.Localization.Resources.FileExclusionPattern;
-            _descriptionLabel.Text = BUtil.Core.Localization.Resources.HereYouCanSpecifyFileGlobbingExclusionPatternsItCanBeAFileNameOrFolderNameOrWildcardExamplesDTempDTempFileTxtDTempTxtOrBinSeeDetailedDescriptionInTheFollowingLink;
-            _formatLinkLabel.Text = BUtil.Core.Localization.Resources.FileGlobbingInNETPatterns;
+            this.Text = pattern == null ? BUtil.Core.Localization.Resources.StorageItem_ExcludePattern_Add : Resources.StorageItem_ExcludePattern_Edit;
+            _patternLabel.Text = BUtil.Core.Localization.Resources.StorageItem_Field_ExcludePattern;
+            _descriptionLabel.Text = BUtil.Core.Localization.Resources.StorageItem_ExcludePattern_Help;
+            _formatLinkLabel.Text = BUtil.Core.Localization.Resources.StorageItem_ExcludePattern_GlobbingNetPatterns;
             _okButton.Text = Resources.Button_OK;
             _cancelButton.Text = Resources.Button_Cancel;
         
@@ -42,7 +42,7 @@ namespace BUtil.Configurator.Configurator.Controls.Tasks.What
         {
             if (string.IsNullOrWhiteSpace(_patternTextBox.Text))
             {
-                Messages.ShowErrorBox(BUtil.Core.Localization.Resources.PatternIsEmpty);
+                Messages.ShowErrorBox(BUtil.Core.Localization.Resources.StorageItem_Field_ExcludePattern_Validation);
                 return;
             }
 

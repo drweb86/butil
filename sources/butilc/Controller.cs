@@ -1,6 +1,5 @@
 using System;
 using System.Globalization;
-using System.IO;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
 using BUtil.Core.Logs;
@@ -16,7 +15,7 @@ namespace BUtil.ConsoleBackup
 
         public Controller()
         {
-            PerformCriticalChecks();
+            Directories.EnsureFoldersCreated();
         }
 
         public TaskV2StoreService BackupTaskStoreService => new TaskV2StoreService();
@@ -44,15 +43,11 @@ namespace BUtil.ConsoleBackup
                 {
                     _powerTask = PowerTask.Reboot;
                 }
-                else if (ArgumentIs(argument, _helpCommand))
-                {
-                    Console.WriteLine(string.Format(Resources.CommandLineArguments_Help, SupportManager.GetLink(SupportRequest.Homepage)));
-                    return false;
-                }
                 else
                 {
                     Console.WriteLine(argument);
-                    ShowInvalidUsageAndQuit(Resources.ErrorInvalidCommandParametersSpecified);
+                    _log.WriteLine(LoggingEvent.Error, Resources.CommandLineArguments_Invalid);
+                    Console.WriteLine(string.Format(Resources.CommandLineArguments_Help, SupportManager.GetLink(SupportRequest.Homepage)));
                     return false;
                 }
             }
@@ -92,11 +87,6 @@ namespace BUtil.ConsoleBackup
             PowerPC.DoTask(_powerTask);
         }
 
-        private static void ShowErrorAndQuit(Exception exception)
-        {
-            ShowErrorAndQuit(exception.ToString());
-        }
-
         private static void ShowErrorAndQuit(string message)
         {
             Console.Error.WriteLine("\n{0}", message);
@@ -109,22 +99,6 @@ namespace BUtil.ConsoleBackup
             ShowErrorAndQuit(error);
         }
 
-        private static void PerformCriticalChecks()
-        {
-            try
-            {
-                Directories.CriticalFoldersCheck();
-            }
-            catch (DirectoryNotFoundException e)
-            {
-                ShowErrorAndQuit(e);
-            }
-            catch (FileNotFoundException e)
-            {
-                ShowErrorAndQuit(e);
-            }
-        }
-
         private static bool ArgumentIs(string enteredArg, string expectedArg)
         {
             return string.Compare(enteredArg, expectedArg, true, CultureInfo.InvariantCulture) == 0;
@@ -133,15 +107,7 @@ namespace BUtil.ConsoleBackup
         private ILog OpenLog()
         {
             var log = new ChainLog(_taskName);
-            try
-            {
-                log.Open();
-            }
-            catch (LogException e)
-            {
-                // "Cannot open file log due to crytical error {0}"
-                ShowErrorAndQuit(string.Format(CultureInfo.InstalledUICulture, Resources.CannotOpenFileLogDueToCryticalError0, e.Message));
-            }
+            log.Open();
             return log;
         }
 
@@ -152,7 +118,6 @@ namespace BUtil.ConsoleBackup
 
         #region Constants
 
-        private const string _helpCommand = "Help";
         private const string _shutdown = "ShutDown";
         private const string _logOff = "LogOff";
         private const string _reboot = "Reboot";

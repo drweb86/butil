@@ -19,8 +19,6 @@ namespace BUtil.Configurator.Configurator.Forms
 
 			ApplyLocalization();
 			ApplyOptionsToUi();
-
-			restorationToolToolStripMenuItem.Enabled = !Program.PackageIsBroken;
 		}
 
         private static void RunRestorationTool()
@@ -38,7 +36,7 @@ namespace BUtil.Configurator.Configurator.Forms
         {
             _backupTasksUserControl.ApplyLocalization();
             Text = Resources.ApplicationName_Tasks + " " + CopyrightInfo.Version.ToString();
-            restorationToolToolStripMenuItem.Text = Resources.RestoreData;
+            restorationToolToolStripMenuItem.Text = Resources.Task_Restore;
             _logsToolStripMenuItem.Text = Resources.LogFile_OpenLogs;
         }
 

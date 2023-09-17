@@ -16,7 +16,7 @@ namespace BUtil.Configurator
 			acceptButton.Text = Resources.Button_OK;
 			cancelButton.Text = Resources.Button_Cancel;
 
-			_uriLabel.Text = BUtil.Core.Localization.Resources.Url;
+			_uriLabel.Text = BUtil.Core.Localization.Resources.Url_Field;
 			_userLabel.Text = BUtil.Core.Localization.Resources.User_Field;
             _passwordLabel.Text = BUtil.Core.Localization.Resources.Password_Field;
 		}

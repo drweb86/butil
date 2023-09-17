@@ -1,58 +1,17 @@
 using System;
-using System.Collections.Generic;
-
 using System.Windows.Forms;
 using BUtil.Configurator.Configurator;
 using BUtil.Configurator.Configurator.Forms;
 using BUtil.Core.Misc;
 using BUtil.Core.FileSystem;
-using System.IO;
-using System.Collections.ObjectModel;
 using BUtil.Core.Localization;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace BUtil.Configurator
 {
     public static class Program
 	{
-		#region Fields
-		
-		static bool _packageIsBroken;
-		
-		#endregion
-		
-		#region Properties
-		
-		public static bool PackageIsBroken
-		{
-			get { return _packageIsBroken; }
-		}
-		
-		#endregion
-		
 		#region Private methods
-		
-		/// <summary>
-		/// Checking the integrity: Checking if the all components present and Checking 7-zip intergrity
-		/// </summary>
-		static void CheckIntergrity()
-		{
-			try
-            {
-                Directories.CriticalFoldersCheck();
-            }
-            catch (DirectoryNotFoundException e)
-            {
-                _packageIsBroken = true;
-                Messages.ShowErrorBox(string.Format(Resources.ButilSoftwarePackageComponent0IsMissingNNpleaseReinstallApplicationNNrestorationBackupAndHelpFunctionsWillBeUnavailable, e.Message));
-            }
-            catch (FileNotFoundException e)
-            {
-                _packageIsBroken = true;
-                Messages.ShowErrorBox(string.Format(Resources.ButilSoftwarePackageComponent0IsMissingNNpleaseReinstallApplicationNNrestorationBackupAndHelpFunctionsWillBeUnavailable, e.Message));
-            }
-		}
 
 		private static void ProcessArguments(string[] args)
 		{
@@ -86,7 +45,7 @@ namespace BUtil.Configurator
 				}
 				else
 				{
-					Messages.ShowErrorBox(Resources.InvalidArgumentSPassedToTheProgramNNpleaseReferToManualForTheCompleteListOfParameters);
+					Messages.ShowErrorBox(Resources.CommandLineArguments_Invalid + string.Format(Resources.CommandLineArguments_Help, SupportManager.GetLink(SupportRequest.Homepage)));
 				}
 			}
 			else if (args.Length > 1 && args[0].ToUpperInvariant() == Arguments.LaunchTask.ToUpperInvariant())
@@ -115,7 +74,7 @@ namespace BUtil.Configurator
             }
             else if (args.Length > 1)
 			{
-				Messages.ShowErrorBox(Resources.InvalidArgumentSPassedToTheProgramNNpleaseReferToManualForTheCompleteListOfParameters);
+				Messages.ShowErrorBox(Resources.CommandLineArguments_Invalid + string.Format(Resources.CommandLineArguments_Help, SupportManager.GetLink(SupportRequest.Homepage)));
 			}
 			else
 			{
@@ -132,7 +91,7 @@ namespace BUtil.Configurator
 
                 if (update.HasUpdate)
                 {
-                    Messages.ShowInformationBox(string.Format(Resources.New0VersionIsAvailableNNchangesAreN1NNprogramWillNowOpenBrowserWithTheDownloadPage, update.Version, update.Changes));
+                    Messages.ShowInformationBox(string.Format(Resources.Application_NewVersion_Notification, update.Version, update.Changes));
                     SupportManager.DoSupport(SupportRequest.Releases);
                 }
             }
@@ -152,9 +111,9 @@ namespace BUtil.Configurator
 			Application.SetCompatibleTextRenderingDefault(false);
 
 			ImproveIt.HandleUiError = message => Messages.ShowErrorBox(message);
-	
-			CheckIntergrity();
-			ProcessArguments(args);
+
+            Directories.EnsureFoldersCreated();
+            ProcessArguments(args);
 		}
 	}
 }

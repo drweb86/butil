@@ -23,7 +23,7 @@ namespace BUtil.Core.TasksTree.States
             StorageSpecificServicesIoc servicesIoc,
             IEnumerable<string> fileExcludePatterns,
             string password)
-            : base(log, events, Localization.Resources.GetStateOfSourceItemsAndStorages, TaskArea.File, null)
+            : base(log, events, Localization.Resources.State_LoadFromEverywhere, TaskArea.File, null)
         {
             var childTasks = new List<BuTask>();
             var setSourceItemStateTasks = new List<GetStateOfSourceItemTask>();

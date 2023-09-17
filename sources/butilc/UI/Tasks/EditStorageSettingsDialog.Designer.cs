@@ -28,9 +28,9 @@ namespace BUtil.ConsoleBackup.UI {
                 AutoSize = true,
                 X = 0,
                 Y = 0,
-                Text = BUtil.Core.Localization.Resources.Where,
+                Text = BUtil.Core.Localization.Resources.LeftMenu_Where,
             });
-            var transports = new List<string> { BUtil.Core.Localization.Resources.FolderStorage, "FTPS" };
+            var transports = new List<string> { BUtil.Core.Localization.Resources.DirectoryStorage, "FTPS" };
             _transportSelectionComboBox = new ComboBox
             {
                 X = 0,

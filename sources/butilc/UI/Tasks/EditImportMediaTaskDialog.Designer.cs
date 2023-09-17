@@ -54,7 +54,7 @@ namespace BUtil.ConsoleBackup.UI {
                 AutoSize = true,
                 X = 0,
                 Y = 9,
-                Text = BUtil.Core.Localization.Resources.DestinationFolder
+                Text = BUtil.Core.Localization.Resources.ImportMediaTask_Field_OutputFolder
             });
 
             _destinationFolderTextField = new TextField
@@ -96,7 +96,7 @@ namespace BUtil.ConsoleBackup.UI {
                 AutoSize = true,
                 X = 0,
                 Y = 15,
-                Text = BUtil.Core.Localization.Resources.HelpForTokens
+                Text = BUtil.Core.Localization.Resources.ImportMediaTask_Field_TransformFileName_Help
             });
 
             _skipAlreadyImportedFilesCheckBox = new CheckBox

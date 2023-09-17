@@ -38,9 +38,9 @@ namespace BUtil.RestorationMaster
         {
             closeButton.Text = Resources.Button_Close;
             passwordLabel.Text = Resources.Password_Recovery_Prompt;
-            continueButton.Text = Resources.Continue;
+            continueButton.Text = Resources.Button_Continue;
             continueButton.Enabled = true;
-            this.Text = Resources.RestorationMaster;
+            this.Text = Resources.ApplicationName_Restoration;
             _whereUserControl.ApplyLocalization();
             _whereUserControl.SetOptionsToUi(storageStub);
             continueButton.Left = closeButton.Left - continueButton.Width - 10;
@@ -75,7 +75,7 @@ namespace BUtil.RestorationMaster
                 if (!IncrementalBackupModelConstants.Files.Any(x => storage.Exists(x)))
                 {
                     var allowedFiles = string.Join(", ", IncrementalBackupModelConstants.Files);
-                    error = string.Format(Resources.CannotLocateFile0InDirectoryPointToADirectoryContainingThisFile, allowedFiles);
+                    error = string.Format(Resources.RestoreFrom_Field_Validation_NoStateFiles, allowedFiles);
                     return;
                 }
 
@@ -85,7 +85,7 @@ namespace BUtil.RestorationMaster
                 var services = new StorageSpecificServicesIoc(log, storageSettings, commonServicesIoc.HashService);
                 if (!services.IncrementalBackupStateService.TryRead(_passwordTextBox.Text, out state))
                 {
-                    error = Resources.CannotOpenBackupFolder;
+                    error = Resources.RestoreFrom_Field_Validation_StateInvalid;
                     return;
                 }
                 storage.Dispose();

@@ -101,7 +101,7 @@ namespace BUtil.Core.Storages
         {
             if (Settings.Folder != null && !_client.DirectoryExists(Settings.Folder))
             {
-                return BUtil.Core.Localization.Resources.FolderDoesNotExist;
+                return BUtil.Core.Localization.Resources.Field_Folder_Validation_NotExist;
             }
             else
             {

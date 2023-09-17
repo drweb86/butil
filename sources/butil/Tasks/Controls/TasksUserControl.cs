@@ -33,13 +33,13 @@ namespace BUtil.Configurator.Configurator.Controls
             SetHintForControl(_removeButton, Resources.Task_Delete_Hint);
             SetHintForControl(_editButton, Resources.Task_Edit_Hint);
             SetHintForControl(_executeButton, Resources.Task_Launch_Hint);
-            SetHintForControl(_recoverButton, Resources.Recover);
+            SetHintForControl(_recoverButton, Resources.Task_Restore);
 
             _addToolStripMenuItem.Text = Resources.Task_Create;
             _removeToolStripMenuItem.Text = Resources.Task_Delete;
             _editToolStripMenuItem.Text = Resources.Task_Edit;
             _executeToolStripMenuItem.Text = Resources.Task_Launch;
-            _recoverToolStripMenuItem.Text = Resources.Recover;
+            _recoverToolStripMenuItem.Text = Resources.Task_Restore;
 
             _nameColumn.Text = Resources.Name_Title;
         }
@@ -76,7 +76,7 @@ namespace BUtil.Configurator.Configurator.Controls
                 {
                     var postfix = lastLogFile.IsSuccess.HasValue ?
                         (lastLogFile.IsSuccess.Value ? BUtil.Core.Localization.Resources.LogFile_Marker_Successful : BUtil.Core.Localization.Resources.LogFile_Marker_Errors)
-                        : BUtil.Core.Localization.Resources.Unknown;
+                        : BUtil.Core.Localization.Resources.Task_Status_Unknown;
                     status = $"{lastLogFile.CreatedAt} ({postfix})";
                 }
                 _tasksListView.Items.Add(new ListViewItem(new[] { taskName, status }, 0));
@@ -191,7 +191,7 @@ namespace BUtil.Configurator.Configurator.Controls
                     _tasksListView.SelectedItems.Count > 0;
 
             _executeToolStripMenuItem.Enabled =
-                _executeButton.Enabled = _executeButton.Enabled && !Program.PackageIsBroken;
+                _executeButton.Enabled = _executeButton.Enabled;
         }
 
         private void OnTasksListViewResize(object sender, EventArgs e)

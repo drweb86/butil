@@ -13,7 +13,7 @@ namespace BUtil.Core.Logs
 
         public string GetFileName(string taskName, DateTime _dateTime, bool? isSuccess)
         {
-            var postfix = isSuccess.HasValue ? (isSuccess.Value ? BUtil.Core.Localization.Resources.LogFile_Marker_Successful : BUtil.Core.Localization.Resources.LogFile_Marker_Errors) : BUtil.Core.Localization.Resources.Unknown;
+            var postfix = isSuccess.HasValue ? (isSuccess.Value ? BUtil.Core.Localization.Resources.LogFile_Marker_Successful : BUtil.Core.Localization.Resources.LogFile_Marker_Errors) : BUtil.Core.Localization.Resources.Task_Status_Unknown;
             return Path.Combine(Directories.LogsFolder,
                 $"{_dateTime.ToString(dateMask, CultureInfo.CurrentUICulture)} {taskName} ({postfix}).html");
         }

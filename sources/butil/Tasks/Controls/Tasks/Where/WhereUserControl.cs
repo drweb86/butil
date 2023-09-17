@@ -20,13 +20,13 @@ namespace BUtil.Configurator.Configurator.Controls
             _limitUploadLabelV2.Text = _limitUploadLabel.Text = BUtil.Core.Localization.Resources.DataStorage_Field_UploadQuota;
             _userLabel.Text = BUtil.Core.Localization.Resources.User_Field;
             _passwordLabel.Text = BUtil.Core.Localization.Resources.Password_Field;
-            _shareLabel.Text = BUtil.Core.Localization.Resources.Url;
+            _shareLabel.Text = BUtil.Core.Localization.Resources.Url_Field;
 
 
-            whereToStoreBackupLabel.Text = Resources.SpecifyTheFolderWhereToStoreBackUp;
+            whereToStoreBackupLabel.Text = Resources.DirectoryStorage_Field_Directory;
             _scriptsLabel.Text = BUtil.Core.Localization.Resources.DataStorage_Script_Help;
             _mountScriptLabel.Text = BUtil.Core.Localization.Resources.DataStorage_Field_ConnectScript;
-            _unmountScriptLabel.Text = BUtil.Core.Localization.Resources.DataStorageStorage_Field_DisconnectionScript;
+            _unmountScriptLabel.Text = BUtil.Core.Localization.Resources.DataStorage_Field_DisconnectionScript;
             _mountButton.Text = _unmountButton.Text = BUtil.Core.Localization.Resources.Task_Launch;
         }
 
@@ -34,7 +34,7 @@ namespace BUtil.Configurator.Configurator.Controls
 
         public override void ApplyLocalization()
         {
-            _hddStorageTabPage.Text = Resources.HardDriveStorage;
+            _hddStorageTabPage.Text = Resources.DirectoryStorage;
         }
 
         public override void SetOptionsToUi(object settings)
@@ -113,7 +113,7 @@ namespace BUtil.Configurator.Configurator.Controls
 
                 if (string.IsNullOrWhiteSpace(sambaStorageSettings.Url))
                 {
-                    Messages.ShowErrorBox(BUtil.Core.Localization.Resources.ShareNameIsNotSpecified);
+                    Messages.ShowErrorBox(BUtil.Core.Localization.Resources.Url_Field_Validation);
                     return false;
                 }
             }
@@ -123,7 +123,7 @@ namespace BUtil.Configurator.Configurator.Controls
 
                 if (string.IsNullOrWhiteSpace(folderStorageSettings.DestinationFolder))
                 {
-                    Messages.ShowErrorBox(BUtil.Core.Localization.Resources.DestinationFolderIsNotSpecified);
+                    Messages.ShowErrorBox(BUtil.Core.Localization.Resources.DirectoryStorage_Field_Directory_Validation_Empty);
                     return false;
                 }
             }
@@ -161,17 +161,17 @@ namespace BUtil.Configurator.Configurator.Controls
         private void OnMountScript(object sender, EventArgs e)
         {
             if (PowershellProcessHelper.Execute(new StubLog(), _mountTextBox.Text))
-                Messages.ShowInformationBox(BUtil.Core.Localization.Resources.FinishedSuccesfully);
+                Messages.ShowInformationBox(BUtil.Core.Localization.Resources.DataStorage_Field_DisconnectionScript_Ok);
             else
-                Messages.ShowErrorBox(BUtil.Core.Localization.Resources.FinishedWithErrors);
+                Messages.ShowErrorBox(BUtil.Core.Localization.Resources.DataStorage_Field_DisconnectionScript_Bad);
         }
 
         private void OnUnmount(object sender, EventArgs e)
         {
             if (PowershellProcessHelper.Execute(new StubLog(), _unmountTextBox.Text))
-                Messages.ShowInformationBox(BUtil.Core.Localization.Resources.FinishedSuccesfully);
+                Messages.ShowInformationBox(BUtil.Core.Localization.Resources.DataStorage_Field_DisconnectionScript_Ok);
             else
-                Messages.ShowErrorBox(BUtil.Core.Localization.Resources.FinishedWithErrors);
+                Messages.ShowErrorBox(BUtil.Core.Localization.Resources.DataStorage_Field_DisconnectionScript_Bad);
         }
 
         private void OnSambaButtonClick(object sender, EventArgs e)

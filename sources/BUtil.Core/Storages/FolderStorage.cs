@@ -62,10 +62,10 @@ namespace BUtil.Core.Storages
         public override string Test()
         {
             if (string.IsNullOrWhiteSpace(Settings.DestinationFolder))
-                return BUtil.Core.Localization.Resources.DestinationFolderIsNotSpecified;
+                return BUtil.Core.Localization.Resources.DirectoryStorage_Field_Directory_Validation_Empty;
 
             if (!Directory.Exists(Settings.DestinationFolder))
-                return string.Format(BUtil.Core.Localization.Resources.FolderStorageFailure, Settings.DestinationFolder);
+                return string.Format(BUtil.Core.Localization.Resources.DirectoryStorage_Field_Directory_Validation_NotFound, Settings.DestinationFolder);
 
             return null;
         }
