@@ -89,17 +89,12 @@ namespace BUtil.Configurator.Configurator.Controls
             _tasksListView.EndUpdate();
         }
 
-        void AddTaskRequest(object sender, EventArgs e)
+        void OnCreateIncrementalBackupTask(object sender, EventArgs e)
         {
             var task = new TaskV2
             {
                 Name = Resources.Task_Field_Name_NewDefaultValue,
-                Model = new IncrementalBackupModelOptionsV2
-                {
-                    Items = new List<SourceItemV2> {
-                    new SourceItemV2(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) , true),
-                    new SourceItemV2(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) , true)}
-                }
+                Model = IncrementalBackupModelOptionsV2.CreateDefault()
             };
             var scheduleInfo = new ScheduleInfo();
             using var form = new EditIncrementalBackupTaskForm(task, scheduleInfo, Tasks.BackupTaskViewsEnum.Name);
@@ -114,7 +109,7 @@ namespace BUtil.Configurator.Configurator.Controls
                 ReloadTasks();
             }
         }
-        private void OnEditBackupTask(object sender, EventArgs e)
+        private void OnEditTask(object sender, EventArgs e)
         {
             if (_tasksListView.SelectedItems.Count == 0)
             {
@@ -122,31 +117,37 @@ namespace BUtil.Configurator.Configurator.Controls
             }
 
             var taskName = _tasksListView.SelectedItems[0].Text;
-            var backupTaskStoreService = new TaskV2StoreService();
-            var task = backupTaskStoreService.Load(taskName);
+            var storeService = new TaskV2StoreService();
+
+            var task = storeService.Load(taskName);
             if (task == null)
             {
-                Messages.ShowErrorBox(BUtil.Core.Localization.Resources.Task_Validation_NotSupported);
-                return;
-            }
-            if (!(task.Model is IncrementalBackupModelOptionsV2))
-            {
-                Messages.ShowErrorBox("To change this task launch console CLI");
+                Messages.ShowErrorBox(Resources.Task_Validation_NotSupported);
                 return;
             }
 
-            var backupTaskSchedulerService = new TaskSchedulerService();
-            var scheduleInfo = backupTaskSchedulerService.GetSchedule(taskName);
-            using var form = new EditIncrementalBackupTaskForm(task, scheduleInfo, Tasks.BackupTaskViewsEnum.SourceItems);
-            if (form.ShowDialog() == DialogResult.OK)
+            if (task.Model is ImportMediaTaskModelOptionsV2)
             {
-                backupTaskStoreService.Delete(taskName);
-                backupTaskStoreService.Save(task);
+                using var form = new EditImportMediaTaskForm(task, Tasks.BackupTaskViewsEnum.SourceItems);
+                if (form.ShowDialog() != DialogResult.OK)
+                    return;
 
-                backupTaskSchedulerService.Schedule(task.Name, scheduleInfo);
+            } else if (task.Model is IncrementalBackupModelOptionsV2)
+            {
+                var schedulerService = new TaskSchedulerService();
+                var schedule = schedulerService.GetSchedule(taskName);
 
-                ReloadTasks();
+                using var form = new EditIncrementalBackupTaskForm(task, schedule, Tasks.BackupTaskViewsEnum.SourceItems);
+                if (form.ShowDialog() != DialogResult.OK)
+                    return;
+
+                schedulerService.Schedule(task.Name, schedule);
             }
+
+            storeService.Delete(taskName);
+            storeService.Save(task);
+
+            ReloadTasks();
         }
 
         void RemoveTaskRequest(object sender, EventArgs e)
@@ -228,7 +229,20 @@ namespace BUtil.Configurator.Configurator.Controls
 
         private void OnCreateImportMultimediaTask(object sender, EventArgs e)
         {
-            var a = 1;
+            var task = new TaskV2
+            {
+                Name = Resources.Task_Field_Name_NewDefaultValue,
+                Model = ImportMediaTaskModelOptionsV2.CreateDefault(),
+            };
+
+            using var form = new EditImportMediaTaskForm(task, Tasks.BackupTaskViewsEnum.Name);
+            if (form.ShowDialog() != DialogResult.OK)
+                return;
+
+            new TaskV2StoreService()
+                .Save(task);
+
+            ReloadTasks();
         }
     }
 }

@@ -19,25 +19,22 @@ namespace BUtil.ConsoleBackup.UI
         {
             InitializeComponent();
 
+            var options = (ImportMediaTaskModelOptionsV2)task?.Model ?? ImportMediaTaskModelOptionsV2.CreateDefault();
+            _from = options.From;
+            _destinationFolderTextField.Text = options.DestinationFolder;
+            _transformFileNameTextField.Text = options.TransformFileName;
+            _skipAlreadyImportedFilesCheckBox.Checked = options.SkipAlreadyImportedFiles;
+
             if (task == null)
             {
-                _destinationFolderTextField.Text = Path.Combine(
-                    Environment.GetFolderPath(Environment.SpecialFolder.MyPictures),
-                    "Camera Roll");
-                _transformFileNameTextField.Text = "{DATE:yyyy}\\{DATE:yyyy'-'MM', 'MMMM}\\{DATE:yyyy'-'MM'-'dd', 'dddd}\\{DATE:yyyy'-'MM'-'dd' 'HH'-'mm'-'ss}";
                 Title = Resources.ImportMediaTask_Create;
-                _skipAlreadyImportedFilesCheckBox.Checked = true;
             }
             else
             {
-                var options = (ImportMediaTaskModelOptionsV2)task.Model;
-                _from = options.From;
-                _destinationFolderTextField.Text = options.DestinationFolder;
-                _transformFileNameTextField.Text = options.TransformFileName;
                 Title = string.Format(Resources.ImportMediaTask_Edit_Title, task.Name);
                 _titleTextField.Text = task.Name;
-                _skipAlreadyImportedFilesCheckBox.Checked = options.SkipAlreadyImportedFiles;
             }
+
             OnTransformFileNameTextChanged(_transformFileNameTextField.Text);
         }
 

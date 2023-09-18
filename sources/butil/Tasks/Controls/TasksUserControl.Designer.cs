@@ -111,7 +111,7 @@
             _createIncrementalBackupTaskToolStripMenuItem.Name = "_createIncrementalBackupTaskToolStripMenuItem";
             _createIncrementalBackupTaskToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             _createIncrementalBackupTaskToolStripMenuItem.Text = "Create incremental backup task";
-            _createIncrementalBackupTaskToolStripMenuItem.Click += AddTaskRequest;
+            _createIncrementalBackupTaskToolStripMenuItem.Click += OnCreateIncrementalBackupTask;
             // 
             // _createImportMultimediaTaskToolStripMenuItem
             // 
@@ -126,7 +126,7 @@
             _editToolStripMenuItem.Name = "_editToolStripMenuItem";
             _editToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             _editToolStripMenuItem.Text = "Edit...";
-            _editToolStripMenuItem.Click += OnEditBackupTask;
+            _editToolStripMenuItem.Click += OnEditTask;
             // 
             // toolStripSeparator1
             // 
@@ -191,7 +191,7 @@
             _createIncrementalBackupTaskToolStripMenuItem2.Name = "_createIncrementalBackupTaskToolStripMenuItem2";
             _createIncrementalBackupTaskToolStripMenuItem2.Size = new System.Drawing.Size(240, 22);
             _createIncrementalBackupTaskToolStripMenuItem2.Text = "Create incremental backup task";
-            _createIncrementalBackupTaskToolStripMenuItem2.Click += AddTaskRequest;
+            _createIncrementalBackupTaskToolStripMenuItem2.Click += OnCreateIncrementalBackupTask;
             // 
             // _createImportMultimediaTaskToolStripMenuItem2
             // 
@@ -222,7 +222,7 @@
             _editButton.Size = new System.Drawing.Size(71, 67);
             _editButton.TabIndex = 3;
             _editButton.UseVisualStyleBackColor = true;
-            _editButton.Click += OnEditBackupTask;
+            _editButton.Click += OnEditTask;
             // 
             // _recoverButton
             // 
