@@ -36,6 +36,8 @@
             _contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(components);
             _executeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             _addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            _createIncrementalBackupTaskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            _createImportMultimediaTaskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             _editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             _removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,10 +45,14 @@
             _imageList = new System.Windows.Forms.ImageList(components);
             _executeButton = new System.Windows.Forms.Button();
             _addButton = new System.Windows.Forms.Button();
+            _createTaskContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(components);
+            _createIncrementalBackupTaskToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            _createImportMultimediaTaskToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             _removeButton = new System.Windows.Forms.Button();
             _editButton = new System.Windows.Forms.Button();
             _recoverButton = new System.Windows.Forms.Button();
             _contextMenuStrip.SuspendLayout();
+            _createTaskContextMenuStrip.SuspendLayout();
             SuspendLayout();
             // 
             // _tasksListView
@@ -94,11 +100,25 @@
             // 
             // _addToolStripMenuItem
             // 
+            _addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { _createIncrementalBackupTaskToolStripMenuItem, _createImportMultimediaTaskToolStripMenuItem });
             _addToolStripMenuItem.Image = Icons.Add;
             _addToolStripMenuItem.Name = "_addToolStripMenuItem";
             _addToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             _addToolStripMenuItem.Text = "Add...";
-            _addToolStripMenuItem.Click += AddTaskRequest;
+            // 
+            // _createIncrementalBackupTaskToolStripMenuItem
+            // 
+            _createIncrementalBackupTaskToolStripMenuItem.Name = "_createIncrementalBackupTaskToolStripMenuItem";
+            _createIncrementalBackupTaskToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            _createIncrementalBackupTaskToolStripMenuItem.Text = "Create incremental backup task";
+            _createIncrementalBackupTaskToolStripMenuItem.Click += AddTaskRequest;
+            // 
+            // _createImportMultimediaTaskToolStripMenuItem
+            // 
+            _createImportMultimediaTaskToolStripMenuItem.Name = "_createImportMultimediaTaskToolStripMenuItem";
+            _createImportMultimediaTaskToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            _createImportMultimediaTaskToolStripMenuItem.Text = "Create import multimedia task";
+            _createImportMultimediaTaskToolStripMenuItem.Click += OnCreateImportMultimediaTask;
             // 
             // _editToolStripMenuItem
             // 
@@ -151,6 +171,7 @@
             // _addButton
             // 
             _addButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            _addButton.ContextMenuStrip = _createTaskContextMenuStrip;
             _addButton.Image = Icons.add_48;
             _addButton.Location = new System.Drawing.Point(546, 80);
             _addButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -158,7 +179,26 @@
             _addButton.Size = new System.Drawing.Size(71, 67);
             _addButton.TabIndex = 2;
             _addButton.UseVisualStyleBackColor = true;
-            _addButton.Click += AddTaskRequest;
+            // 
+            // _createTaskContextMenuStrip
+            // 
+            _createTaskContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { _createIncrementalBackupTaskToolStripMenuItem2, _createImportMultimediaTaskToolStripMenuItem2 });
+            _createTaskContextMenuStrip.Name = "_createTaskContextMenuStrip";
+            _createTaskContextMenuStrip.Size = new System.Drawing.Size(241, 70);
+            // 
+            // _createIncrementalBackupTaskToolStripMenuItem2
+            // 
+            _createIncrementalBackupTaskToolStripMenuItem2.Name = "_createIncrementalBackupTaskToolStripMenuItem2";
+            _createIncrementalBackupTaskToolStripMenuItem2.Size = new System.Drawing.Size(240, 22);
+            _createIncrementalBackupTaskToolStripMenuItem2.Text = "Create incremental backup task";
+            _createIncrementalBackupTaskToolStripMenuItem2.Click += AddTaskRequest;
+            // 
+            // _createImportMultimediaTaskToolStripMenuItem2
+            // 
+            _createImportMultimediaTaskToolStripMenuItem2.Name = "_createImportMultimediaTaskToolStripMenuItem2";
+            _createImportMultimediaTaskToolStripMenuItem2.Size = new System.Drawing.Size(240, 22);
+            _createImportMultimediaTaskToolStripMenuItem2.Text = "Create import multimedia task";
+            _createImportMultimediaTaskToolStripMenuItem2.Click += OnCreateImportMultimediaTask;
             // 
             // _removeButton
             // 
@@ -196,7 +236,7 @@
             _recoverButton.UseVisualStyleBackColor = true;
             _recoverButton.Click += OnRecover;
             // 
-            // BackupTasksUserControl
+            // TasksUserControl
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -207,9 +247,10 @@
             Controls.Add(_addButton);
             Controls.Add(_tasksListView);
             Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            Name = "BackupTasksUserControl";
+            Name = "TasksUserControl";
             Size = new System.Drawing.Size(623, 402);
             _contextMenuStrip.ResumeLayout(false);
+            _createTaskContextMenuStrip.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -231,5 +272,10 @@
         private System.Windows.Forms.ColumnHeader _lastBackupAt;
         private System.Windows.Forms.Button _recoverButton;
         private System.Windows.Forms.ToolStripMenuItem _recoverToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem _createIncrementalBackupTaskToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem _createImportMultimediaTaskToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip _createTaskContextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem _createIncrementalBackupTaskToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem _createImportMultimediaTaskToolStripMenuItem2;
     }
 }

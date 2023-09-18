@@ -737,6 +737,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create incremental backup task.
+        /// </summary>
+        public static string IncrementalBackupTask_Create {
+            get {
+                return ResourceManager.GetString("IncrementalBackupTask_Create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Encryption.
         /// </summary>
         public static string LeftMenu_Encryption {
@@ -1349,7 +1358,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Task is in a progress... .
+        ///   Looks up a localized string similar to Task is in a progress....
         /// </summary>
         public static string Task_Status_InProgress {
             get {

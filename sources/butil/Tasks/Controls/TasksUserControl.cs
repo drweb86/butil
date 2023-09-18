@@ -41,6 +41,11 @@ namespace BUtil.Configurator.Configurator.Controls
             _executeToolStripMenuItem.Text = Resources.Task_Launch;
             _recoverToolStripMenuItem.Text = Resources.Task_Restore;
 
+            _createImportMultimediaTaskToolStripMenuItem.Text =
+                _createImportMultimediaTaskToolStripMenuItem2.Text = Resources.ImportMediaTask_Create;
+            _createIncrementalBackupTaskToolStripMenuItem.Text =
+                _createIncrementalBackupTaskToolStripMenuItem2.Text = BUtil.Core.Localization.Resources.IncrementalBackupTask_Create;
+
             _nameColumn.Text = Resources.Name_Title;
         }
 
@@ -86,13 +91,18 @@ namespace BUtil.Configurator.Configurator.Controls
 
         void AddTaskRequest(object sender, EventArgs e)
         {
-            var task = new TaskV2 { Name = Resources.Task_Field_Name_NewDefaultValue, Model = new IncrementalBackupModelOptionsV2 {
-                Items = new List<SourceItemV2> { 
+            var task = new TaskV2
+            {
+                Name = Resources.Task_Field_Name_NewDefaultValue,
+                Model = new IncrementalBackupModelOptionsV2
+                {
+                    Items = new List<SourceItemV2> {
                     new SourceItemV2(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) , true),
                     new SourceItemV2(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) , true)}
-            } };
+                }
+            };
             var scheduleInfo = new ScheduleInfo();
-            using var form = new EditBackupTaskForm(task, scheduleInfo, Tasks.BackupTaskViewsEnum.Name);
+            using var form = new EditIncrementalBackupTaskForm(task, scheduleInfo, Tasks.BackupTaskViewsEnum.Name);
             if (form.ShowDialog() == DialogResult.OK)
             {
                 var backupTaskStoreService = new TaskV2StoreService();
@@ -127,7 +137,7 @@ namespace BUtil.Configurator.Configurator.Controls
 
             var backupTaskSchedulerService = new TaskSchedulerService();
             var scheduleInfo = backupTaskSchedulerService.GetSchedule(taskName);
-            using var form = new EditBackupTaskForm(task, scheduleInfo, Tasks.BackupTaskViewsEnum.SourceItems);
+            using var form = new EditIncrementalBackupTaskForm(task, scheduleInfo, Tasks.BackupTaskViewsEnum.SourceItems);
             if (form.ShowDialog() == DialogResult.OK)
             {
                 backupTaskStoreService.Delete(taskName);
@@ -214,6 +224,11 @@ namespace BUtil.Configurator.Configurator.Controls
             }
 
             Process.Start(Application.ExecutablePath, $"{Arguments.Restore} \"{Arguments.RunTask}={selectedTasks.First()}\"");
+        }
+
+        private void OnCreateImportMultimediaTask(object sender, EventArgs e)
+        {
+            var a = 1;
         }
     }
 }

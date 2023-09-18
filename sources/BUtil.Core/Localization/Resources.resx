@@ -566,7 +566,7 @@ See detailed description in the following link.</value>
     <value>Failed (see opened log)</value>
   </data>
   <data name="Task_Status_InProgress" xml:space="preserve">
-    <value>Task is in a progress... </value>
+    <value>Task is in a progress...</value>
   </data>
   <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
     <value>Completed partially. Due to storage quota some files were skipped this time. Remaining {0} files with of {1} GB.</value>
@@ -603,5 +603,8 @@ See detailed description in the following link.</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>User is not specified.</value>
+  </data>
+  <data name="IncrementalBackupTask_Create" xml:space="preserve">
+    <value>Create incremental backup task</value>
   </data>
 </root>

@@ -12,14 +12,14 @@ using BUtil.Core.ConfigurationFileModels.V2;
 
 namespace BUtil.Configurator.Configurator.Forms
 {
-    partial class EditBackupTaskForm : Form
+    partial class EditIncrementalBackupTaskForm : Form
     {
         readonly Dictionary<BackupTaskViewsEnum, BackUserControl> _views;
         readonly TaskV2 _task;
         readonly ScheduleInfo _scheduleInfo;
         private readonly BackupTaskViewsEnum _initialView;
 
-        public EditBackupTaskForm(TaskV2 task, ScheduleInfo scheduleInfo, BackupTaskViewsEnum initialView)
+        public EditIncrementalBackupTaskForm(TaskV2 task, ScheduleInfo scheduleInfo, BackupTaskViewsEnum initialView)
         {
             InitializeComponent();
             

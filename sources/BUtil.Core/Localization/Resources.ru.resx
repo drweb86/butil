@@ -605,4 +605,7 @@ bin.
   <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
     <value>Куда импортировать файлы:</value>
   </data>
+  <data name="IncrementalBackupTask_Create" xml:space="preserve">
+    <value>Создать задачу по инкрементному резервному копированию</value>
+  </data>
 </root>

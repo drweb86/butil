@@ -35,7 +35,7 @@
     <Compile Update="Tasks\Controls\Tasks\What\WhatUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Tasks\Forms\EditBackupTaskForm.cs">
+    <Compile Update="Tasks\Forms\EditIncrementalBackupTaskForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Tasks\Forms\TasksForm.cs">
