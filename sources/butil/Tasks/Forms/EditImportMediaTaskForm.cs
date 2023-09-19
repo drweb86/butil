@@ -26,7 +26,7 @@ namespace BUtil.Configurator.Configurator.Forms
 
             _task = task;
             _pages = new Dictionary<TaskEditorPageEnum, BackUserControl>();
-            
+
             if (task.Name == Resources.Task_Field_Name_NewDefaultValue)
             {
                 Text = Resources.ImportMediaTask_Create;
@@ -82,7 +82,7 @@ namespace BUtil.Configurator.Configurator.Forms
         {
             if (!SaveTask())
                 return;
-            
+
             DialogResult = DialogResult.OK;
             Close();
         }
