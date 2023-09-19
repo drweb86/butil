@@ -4,9 +4,9 @@ Welcome!
 
 ![BUtil Logotype](./help/Readme%20Assets/Logotype.bmp)
 
-BUtil is a powerful set of tools for creating backups of documents and other data on your PC.
+BUtil is a powerful set of tools for creating incremental backups and import multimedia on your PC with deduplication and FTPS, Samba transports support.
 
-![The main window of configurator, backup ui master](./help/Readme%20Assets/Screenshot%201.png)
+![Tasks, Launch Task application](./help/Readme%20Assets/Screenshot%201.png)
 
 ## Software requirements
 

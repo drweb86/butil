@@ -14,19 +14,19 @@ namespace BUtil.Configurator.Configurator.Forms
 {
     partial class EditIncrementalBackupTaskForm : Form
     {
-        readonly Dictionary<BackupTaskViewsEnum, BackUserControl> _views;
+        readonly Dictionary<TaskEditorPageEnum, BackUserControl> _views;
         readonly TaskV2 _task;
         readonly ScheduleInfo _scheduleInfo;
-        private readonly BackupTaskViewsEnum _initialView;
+        private readonly TaskEditorPageEnum _initialView;
 
-        public EditIncrementalBackupTaskForm(TaskV2 task, ScheduleInfo scheduleInfo, BackupTaskViewsEnum initialView)
+        public EditIncrementalBackupTaskForm(TaskV2 task, ScheduleInfo scheduleInfo, TaskEditorPageEnum initialView)
         {
             InitializeComponent();
             
             _task = task;
             _scheduleInfo = scheduleInfo;
             _initialView = initialView;
-            _views = new Dictionary<BackupTaskViewsEnum, BackUserControl>();
+            _views = new Dictionary<TaskEditorPageEnum, BackUserControl>();
 
             SetupUiComponents();
             ApplyLocalization();
@@ -36,18 +36,18 @@ namespace BUtil.Configurator.Configurator.Forms
         {
             var encryptionControl = new EncryptionUserControl(_task);
 
-            _views.Add(BackupTaskViewsEnum.Name, new TaskNameUserControl(Resources.IncrementalBackup_Help));
-            _views.Add(BackupTaskViewsEnum.SourceItems, new WhatUserControl(_task));
-            _views.Add(BackupTaskViewsEnum.Storages, new WhereUserControl());
-            _views.Add(BackupTaskViewsEnum.Scheduler, new WhenUserControl());
-            _views.Add(BackupTaskViewsEnum.Encryption, encryptionControl);
-            foreach (KeyValuePair<BackupTaskViewsEnum, BackUserControl> pair in _views)
+            _views.Add(TaskEditorPageEnum.Name, new TaskNameUserControl(Resources.IncrementalBackup_Help));
+            _views.Add(TaskEditorPageEnum.SourceItems, new WhatUserControl(_task));
+            _views.Add(TaskEditorPageEnum.Storages, new WhereUserControl());
+            _views.Add(TaskEditorPageEnum.Scheduler, new WhenUserControl());
+            _views.Add(TaskEditorPageEnum.Encryption, encryptionControl);
+            foreach (KeyValuePair<TaskEditorPageEnum, BackUserControl> pair in _views)
             {
                 pair.Value.HelpLabel = _toolStripStatusLabel;
             }
 
             ApplyOptionsToUi();
-            ViewChangeNotification(BackupTaskViewsEnum.Name);
+            ViewChangeNotification(TaskEditorPageEnum.Name);
             UpdateAccessibilitiesView();
         }
 
@@ -55,7 +55,7 @@ namespace BUtil.Configurator.Configurator.Forms
         {
             Text = $"{_task.Name} - {Resources.ApplicationName_Tasks}";
 
-            foreach (KeyValuePair<BackupTaskViewsEnum, BackUserControl> pair in _views)
+            foreach (KeyValuePair<TaskEditorPageEnum, BackUserControl> pair in _views)
             {
                 pair.Value.ApplyLocalization();
             }
@@ -73,14 +73,14 @@ namespace BUtil.Configurator.Configurator.Forms
         private bool SaveTask()
         {
             bool isValid = true;
-            foreach (KeyValuePair<BackupTaskViewsEnum, BackUserControl> pair in _views)
+            foreach (KeyValuePair<TaskEditorPageEnum, BackUserControl> pair in _views)
             {
                 isValid = isValid && pair.Value.ValidateUi();
                 pair.Value.GetOptionsFromUi();
             }
 
-            _task.Name = ((TaskNameUserControl)_views[BackupTaskViewsEnum.Name]).TaskName;
-            ((IncrementalBackupModelOptionsV2)_task.Model).To = ((WhereUserControl)_views[BackupTaskViewsEnum.Storages]).StorageSettings;
+            _task.Name = ((TaskNameUserControl)_views[TaskEditorPageEnum.Name]).TaskName;
+            ((IncrementalBackupModelOptionsV2)_task.Model).To = ((WhereUserControl)_views[TaskEditorPageEnum.Storages]).StorageSettings;
 
             return isValid;
         }
@@ -96,12 +96,12 @@ namespace BUtil.Configurator.Configurator.Forms
 
         private void ApplyOptionsToUi()
         {
-            ((TaskNameUserControl)_views[BackupTaskViewsEnum.Name]).TaskName = _task.Name;
-            ((WhereUserControl)_views[BackupTaskViewsEnum.Storages]).StorageSettings = ((IncrementalBackupModelOptionsV2)_task.Model).To;
-            _views[BackupTaskViewsEnum.Scheduler].SetOptionsToUi(_scheduleInfo);
+            ((TaskNameUserControl)_views[TaskEditorPageEnum.Name]).TaskName = _task.Name;
+            ((WhereUserControl)_views[TaskEditorPageEnum.Storages]).StorageSettings = ((IncrementalBackupModelOptionsV2)_task.Model).To;
+            _views[TaskEditorPageEnum.Scheduler].SetOptionsToUi(_scheduleInfo);
         }
 
-        private void ViewChangeNotification(BackupTaskViewsEnum newView)
+        private void ViewChangeNotification(TaskEditorPageEnum newView)
         {
             nestingControlsPanel.Controls.Clear();
             nestingControlsPanel.Controls.Add(_views[newView]);
@@ -110,7 +110,7 @@ namespace BUtil.Configurator.Configurator.Forms
             optionsHeader.Title = choosePanelUserControl.SelectedCategory;
         }
 
-        private bool OnCanChangeView(BackupTaskViewsEnum oldView)
+        private bool OnCanChangeView(TaskEditorPageEnum oldView)
         {
             return _views[oldView].ValidateUi();
         }

@@ -90,7 +90,7 @@ namespace BUtil.Configurator.Configurator.Controls
                 Model = IncrementalBackupModelOptionsV2.CreateDefault()
             };
             var scheduleInfo = new ScheduleInfo();
-            using var form = new EditIncrementalBackupTaskForm(task, scheduleInfo, Tasks.BackupTaskViewsEnum.Name);
+            using var form = new EditIncrementalBackupTaskForm(task, scheduleInfo, Tasks.TaskEditorPageEnum.Name);
             if (form.ShowDialog() == DialogResult.OK)
             {
                 var backupTaskStoreService = new TaskV2StoreService();
@@ -121,7 +121,7 @@ namespace BUtil.Configurator.Configurator.Controls
 
             if (task.Model is ImportMediaTaskModelOptionsV2)
             {
-                using var form = new EditImportMediaTaskForm(task, Tasks.BackupTaskViewsEnum.SourceItems);
+                using var form = new EditImportMediaTaskForm(task, Tasks.TaskEditorPageEnum.SourceItems);
                 if (form.ShowDialog() != DialogResult.OK)
                     return;
 
@@ -131,7 +131,7 @@ namespace BUtil.Configurator.Configurator.Controls
                 var schedulerService = new TaskSchedulerService();
                 var schedule = schedulerService.GetSchedule(taskName);
 
-                using var form = new EditIncrementalBackupTaskForm(task, schedule, Tasks.BackupTaskViewsEnum.SourceItems);
+                using var form = new EditIncrementalBackupTaskForm(task, schedule, Tasks.TaskEditorPageEnum.SourceItems);
                 if (form.ShowDialog() != DialogResult.OK)
                     return;
 
@@ -224,7 +224,7 @@ namespace BUtil.Configurator.Configurator.Controls
                 Model = ImportMediaTaskModelOptionsV2.CreateDefault(),
             };
 
-            using var form = new EditImportMediaTaskForm(task, Tasks.BackupTaskViewsEnum.Name);
+            using var form = new EditImportMediaTaskForm(task, Tasks.TaskEditorPageEnum.Name);
             if (form.ShowDialog() != DialogResult.OK)
                 return;
 

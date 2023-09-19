@@ -115,7 +115,8 @@ namespace BUtil.Configurator.Configurator.Controls
                     _ftpsPasswordTextBox.Text = ftpsSettings.Password;
                     _ftpsFolderTextBox.Text = ftpsSettings.Folder;
                     _ftpsQuotaNumericUpDown.Value = ftpsSettings.SingleBackupQuotaGb;
-                } else
+                }
+                else
                 {
                     throw new NotSupportedException();
                 }

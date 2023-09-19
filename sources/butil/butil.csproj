@@ -79,6 +79,9 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Update="Tasks\Controls\Tasks\ImportMediaTaskWhereUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Tasks\Controls\Tasks\TaskNameUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

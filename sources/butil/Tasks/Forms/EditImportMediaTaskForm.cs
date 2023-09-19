@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using BUtil.Configurator.Configurator.Controls;
-using BUtil.Configurator.Controls;
 using BUtil.Core.PL;
 using BUtil.Core.Localization;
 using BUtil.Configurator.AddBackupTaskWizard.View;
@@ -13,69 +12,68 @@ namespace BUtil.Configurator.Configurator.Forms
 {
     partial class EditImportMediaTaskForm : Form
     {
-        readonly Dictionary<BackupTaskViewsEnum, BackUserControl> _views;
-        readonly TaskV2 _task;
-        private readonly BackupTaskViewsEnum _initialView;
+        private readonly Dictionary<TaskEditorPageEnum, BackUserControl> _pages = new Dictionary<TaskEditorPageEnum, BackUserControl>();
+        private readonly TaskV2 _task;
+        private TaskNameUserControl _taskNameUserControl = new TaskNameUserControl(Resources.ImportMediaTask_Help);
+        private WhereUserControl _whereUserControl = new WhereUserControl();
+        private ImportMediaTaskWhereUserControl _importMediaTaskWhereUserControl = new ImportMediaTaskWhereUserControl();
 
-        public EditImportMediaTaskForm(TaskV2 task, BackupTaskViewsEnum initialView)
+        public EditImportMediaTaskForm(TaskV2 task, TaskEditorPageEnum startPage)
         {
             InitializeComponent();
-            
+            choosePanelUserControl.WhenVisible = false;
+            choosePanelUserControl.EncryptionVisi1ble = false;
+
             _task = task;
-            _initialView = initialView;
-            _views = new Dictionary<BackupTaskViewsEnum, BackUserControl>();
+            _pages = new Dictionary<TaskEditorPageEnum, BackUserControl>();
+            
+            if (task.Name == Resources.Task_Field_Name_NewDefaultValue)
+            {
+                Text = Resources.ImportMediaTask_Create;
+            }
+            else
+            {
+                Text = string.Format(Resources.ImportMediaTask_Edit_Title, task.Name);
+            }
+            cancelButton.Text = Resources.Button_Cancel;
 
             SetupUiComponents();
-            ApplyLocalization();
+            ViewChangeNotification(startPage);
         }
 
         private void SetupUiComponents()
         {
-            var encryptionControl = new EncryptionUserControl(_task);
+            _pages.Add(TaskEditorPageEnum.Name, _taskNameUserControl);
+            _pages.Add(TaskEditorPageEnum.SourceItems, _whereUserControl);
+            _pages.Add(TaskEditorPageEnum.Storages, _importMediaTaskWhereUserControl);
 
-            _views.Add(BackupTaskViewsEnum.Name, new TaskNameUserControl(Resources.ImportMediaTask_Help));
-            _views.Add(BackupTaskViewsEnum.Storages, new WhereUserControl());
-            _views.Add(BackupTaskViewsEnum.SourceItems, new WhatUserControl(_task));
-            
-            foreach (KeyValuePair<BackupTaskViewsEnum, BackUserControl> pair in _views)
+            foreach (var pagePair in _pages)
             {
-                pair.Value.HelpLabel = _toolStripStatusLabel;
+                pagePair.Value.HelpLabel = _toolStripStatusLabel;
             }
 
-            ApplyOptionsToUi();
-            ViewChangeNotification(BackupTaskViewsEnum.Name);
-            UpdateAccessibilitiesView();
-        }
-
-        void ApplyLocalization()
-        {
-            Text = $"{_task.Name} - {Resources.ApplicationName_Tasks}";
-
-            foreach (KeyValuePair<BackupTaskViewsEnum, BackUserControl> pair in _views)
-            {
-                pair.Value.ApplyLocalization();
-            }
-            choosePanelUserControl.ApplyLocalization();
-            cancelButton.Text = Resources.Button_Cancel;
-            
-            ViewChangeNotification(_initialView);
-        }
-
-        private void UpdateAccessibilitiesView()
-        {
-            choosePanelUserControl.UpdateView();
+            _taskNameUserControl.TaskName = _task.Name;
+            var settings = (ImportMediaTaskModelOptionsV2)_task.Model;
+            _whereUserControl.StorageSettings = settings.From;
+            _importMediaTaskWhereUserControl.TransformFileName = settings.TransformFileName;
+            _importMediaTaskWhereUserControl.DestinationFolder = settings.DestinationFolder;
+            _importMediaTaskWhereUserControl.SkipAlreadyImportedFiles = settings.SkipAlreadyImportedFiles;
         }
 
         private bool SaveTask()
         {
             bool isValid = true;
-            foreach (KeyValuePair<BackupTaskViewsEnum, BackUserControl> pair in _views)
+            foreach (var pagePair in _pages)
             {
-                isValid = isValid && pair.Value.ValidateUi();
+                isValid = isValid && pagePair.Value.ValidateUi();
             }
 
-            _task.Name = ((TaskNameUserControl)_views[BackupTaskViewsEnum.Name]).TaskName;
-            ((ImportMediaTaskModelOptionsV2)_task.Model).From = ((WhereUserControl)_views[BackupTaskViewsEnum.Storages]).StorageSettings;
+            _task.Name = _taskNameUserControl.TaskName;
+            var settings = (ImportMediaTaskModelOptionsV2)_task.Model;
+            settings.From = _whereUserControl.StorageSettings;
+            settings.TransformFileName = _importMediaTaskWhereUserControl.TransformFileName;
+            settings.DestinationFolder = _importMediaTaskWhereUserControl.DestinationFolder;
+            settings.SkipAlreadyImportedFiles = _importMediaTaskWhereUserControl.SkipAlreadyImportedFiles;
 
             return isValid;
         }
@@ -89,24 +87,18 @@ namespace BUtil.Configurator.Configurator.Forms
             Close();
         }
 
-        private void ApplyOptionsToUi()
-        {
-            ((TaskNameUserControl)_views[BackupTaskViewsEnum.Name]).TaskName = _task.Name;
-            ((WhereUserControl)_views[BackupTaskViewsEnum.Storages]).StorageSettings = ((ImportMediaTaskModelOptionsV2)_task.Model).From;
-        }
-
-        private void ViewChangeNotification(BackupTaskViewsEnum newView)
+        private void ViewChangeNotification(TaskEditorPageEnum newView)
         {
             nestingControlsPanel.Controls.Clear();
-            nestingControlsPanel.Controls.Add(_views[newView]);
+            nestingControlsPanel.Controls.Add(_pages[newView]);
             nestingControlsPanel.Controls[0].Dock = DockStyle.Fill;
-            nestingControlsPanel.AutoScrollMinSize = new System.Drawing.Size(_views[newView].MinimumSize.Width, _views[newView].MinimumSize.Height);
+            nestingControlsPanel.AutoScrollMinSize = new System.Drawing.Size(_pages[newView].MinimumSize.Width, _pages[newView].MinimumSize.Height);
             optionsHeader.Title = choosePanelUserControl.SelectedCategory;
         }
 
-        private bool OnCanChangeView(BackupTaskViewsEnum oldView)
+        private bool OnCanChangeView(TaskEditorPageEnum oldView)
         {
-            return _views[oldView].ValidateUi();
+            return _pages[oldView].ValidateUi();
         }
     }
 }

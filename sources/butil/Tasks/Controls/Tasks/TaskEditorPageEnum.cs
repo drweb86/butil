@@ -1,6 +1,6 @@
 ﻿namespace BUtil.Configurator.Configurator.Controls.Tasks
 {
-    internal enum BackupTaskViewsEnum
+    internal enum TaskEditorPageEnum
     {
         Name,
         SourceItems,

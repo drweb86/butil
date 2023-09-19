@@ -1,7 +1,8 @@
-# 2023.09.17
+# 2023.09.20
 
 ## New Features
 - FTPS support for backups in UI.
+- UI: configure import multimedia is possible in UI.
 
 ## Changes
 ~ Renames
