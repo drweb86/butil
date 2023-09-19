@@ -51,7 +51,6 @@ namespace BUtil.Core.PL
 
 		public virtual void GetOptionsFromUi()
 		{
-			throw new NotImplementedException("GetOptionsFromUi");
 		}
 
 		public virtual bool ValidateUi()

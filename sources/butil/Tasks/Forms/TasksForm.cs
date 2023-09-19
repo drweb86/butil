@@ -14,42 +14,19 @@ namespace BUtil.Configurator.Configurator.Forms
 		{
 			InitializeComponent();
 
-            this._backupTasksUserControl.OnRequestToSaveOptions += OnRequestToSaveOptions;
             this._backupTasksUserControl.HelpLabel = helpToolStripStatusLabel;
+            _backupTasksUserControl.ApplyLocalization();
+            Text = Resources.ApplicationName_Tasks + " " + CopyrightInfo.Version.ToString();
+            restorationToolToolStripMenuItem.Text = Resources.Task_Restore;
+            _logsToolStripMenuItem.Text = Resources.LogFile_OpenLogs;
 
-			ApplyLocalization();
-			ApplyOptionsToUi();
+            ApplyOptionsToUi();
 		}
 
         private static void RunRestorationTool()
 		{
             Process.Start(Application.ExecutablePath, Arguments.Restore);
 		}
-
-		void MainFormFormClosing(object sender, FormClosingEventArgs e)
-		{
-			GetOptionsFromUi();
-            e.Cancel = false;
-		}
-		
-        void ApplyLocalization()
-        {
-            _backupTasksUserControl.ApplyLocalization();
-            Text = Resources.ApplicationName_Tasks + " " + CopyrightInfo.Version.ToString();
-            restorationToolToolStripMenuItem.Text = Resources.Task_Restore;
-            _logsToolStripMenuItem.Text = Resources.LogFile_OpenLogs;
-        }
-
-		private void GetOptionsFromUi()
-		{
-            _backupTasksUserControl.GetOptionsFromUi();
-        }
-
-		private bool OnRequestToSaveOptions()
-		{
-            GetOptionsFromUi();
-			return true;
-        }
 
         private void ApplyOptionsToUi()
         {

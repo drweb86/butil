@@ -36,7 +36,7 @@ namespace BUtil.Configurator.Configurator.Forms
         {
             var encryptionControl = new EncryptionUserControl(_task);
 
-            _views.Add(BackupTaskViewsEnum.Name, new TaskNameUserControl());
+            _views.Add(BackupTaskViewsEnum.Name, new TaskNameUserControl(Resources.IncrementalBackup_Help));
             _views.Add(BackupTaskViewsEnum.SourceItems, new WhatUserControl(_task));
             _views.Add(BackupTaskViewsEnum.Storages, new WhereUserControl());
             _views.Add(BackupTaskViewsEnum.Scheduler, new WhenUserControl());
@@ -78,6 +78,10 @@ namespace BUtil.Configurator.Configurator.Forms
                 isValid = isValid && pair.Value.ValidateUi();
                 pair.Value.GetOptionsFromUi();
             }
+
+            _task.Name = ((TaskNameUserControl)_views[BackupTaskViewsEnum.Name]).TaskName;
+            ((IncrementalBackupModelOptionsV2)_task.Model).To = ((WhereUserControl)_views[BackupTaskViewsEnum.Storages]).StorageSettings;
+
             return isValid;
         }
 
@@ -92,8 +96,8 @@ namespace BUtil.Configurator.Configurator.Forms
 
         private void ApplyOptionsToUi()
         {
-            _views[BackupTaskViewsEnum.Name].SetOptionsToUi(_task);
-            _views[BackupTaskViewsEnum.Storages].SetOptionsToUi(_task);
+            ((TaskNameUserControl)_views[BackupTaskViewsEnum.Name]).TaskName = _task.Name;
+            ((WhereUserControl)_views[BackupTaskViewsEnum.Storages]).StorageSettings = ((IncrementalBackupModelOptionsV2)_task.Model).To;
             _views[BackupTaskViewsEnum.Scheduler].SetOptionsToUi(_scheduleInfo);
         }
 

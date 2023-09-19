@@ -8,11 +8,10 @@ using System.Linq;
 using BUtil.Core.Logs;
 using System.Diagnostics;
 using BUtil.Core.ConfigurationFileModels.V2;
+using System.Drawing;
 
 namespace BUtil.Configurator.Configurator.Controls
 {
-    internal delegate bool RequestToSaveOptions();
-
     public partial class TasksUserControl : Core.PL.BackUserControl
     {
         public TasksUserControl()
@@ -22,8 +21,6 @@ namespace BUtil.Configurator.Configurator.Controls
             _lastBackupAt.Text = BUtil.Core.Localization.Resources.Task_LastBackup;
             OnTasksListViewResize(this, null);
         }
-
-        internal RequestToSaveOptions OnRequestToSaveOptions;
 
         #region Public Methods
 
@@ -53,10 +50,6 @@ namespace BUtil.Configurator.Configurator.Controls
         {
             ReloadTasks();
             RefreshTaskControls(this, null);
-        }
-
-        public override void GetOptionsFromUi()
-        {
         }
 
         #endregion
@@ -132,7 +125,8 @@ namespace BUtil.Configurator.Configurator.Controls
                 if (form.ShowDialog() != DialogResult.OK)
                     return;
 
-            } else if (task.Model is IncrementalBackupModelOptionsV2)
+            }
+            else if (task.Model is IncrementalBackupModelOptionsV2)
             {
                 var schedulerService = new TaskSchedulerService();
                 var schedule = schedulerService.GetSchedule(taskName);
@@ -174,11 +168,6 @@ namespace BUtil.Configurator.Configurator.Controls
 
         void ExecuteRequest(object sender, EventArgs e)
         {
-            if (!OnRequestToSaveOptions())
-            {
-                return;
-            }
-
             var selectedTasks = new List<string>();
             foreach (ListViewItem taskToExecute in _tasksListView.SelectedItems)
             {
@@ -243,6 +232,14 @@ namespace BUtil.Configurator.Configurator.Controls
                 .Save(task);
 
             ReloadTasks();
+        }
+
+        private void OnAddButtonOpenMenu(object sender, EventArgs e)
+        {
+            var btnSender = (Control)sender;
+            Point ptLowerLeft = new Point(0, btnSender.Height);
+            ptLowerLeft = btnSender.PointToScreen(ptLowerLeft);
+            _createTaskContextMenuStrip.Show(ptLowerLeft);
         }
     }
 }

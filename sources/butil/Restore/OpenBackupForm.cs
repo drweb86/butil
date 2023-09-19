@@ -10,6 +10,7 @@ using BUtil.Core.Logs;
 using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.IncrementalModel;
 using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.ConfigurationFileModels.V1;
 
 namespace BUtil.RestorationMaster
 {
@@ -42,7 +43,7 @@ namespace BUtil.RestorationMaster
             continueButton.Enabled = true;
             this.Text = Resources.ApplicationName_Restoration;
             _whereUserControl.ApplyLocalization();
-            _whereUserControl.SetOptionsToUi(storageStub);
+            _whereUserControl.StorageSettings = ((IncrementalBackupModelOptionsV2)storageStub.Model).To;
             continueButton.Left = closeButton.Left - continueButton.Width - 10;
         }
 
@@ -58,9 +59,10 @@ namespace BUtil.RestorationMaster
             {
                 return;
             }
-            _whereUserControl.GetOptionsFromUi();
 
             var options = (IncrementalBackupModelOptionsV2)storageStub.Model;
+            options.To = _whereUserControl.StorageSettings;
+
             var storageSettings = options.To;
 
             string error = null;

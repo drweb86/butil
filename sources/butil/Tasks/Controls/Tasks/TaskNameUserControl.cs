@@ -1,29 +1,22 @@
 using BUtil.Configurator.Configurator;
 using BUtil.Core.Localization;
-using BUtil.Core.ConfigurationFileModels.V2;
 
 namespace BUtil.Configurator.AddBackupTaskWizard.View
 {
     public partial class TaskNameUserControl : Core.PL.BackUserControl
     {
-        private TaskV2 _task;
-
-        public TaskNameUserControl()
+        public TaskNameUserControl(string taskInfoHelp = null)
         {
             InitializeComponent();
-            _backupModelLabel.Text = Resources.IncrementalBackup_Help;
-        }
 
-        public override void ApplyLocalization()
-        {
             _nameLabel.Text = Resources.Name_Title;
+            _backupModelLabel.Text = taskInfoHelp ?? string.Empty;
         }
 
-        public override void SetOptionsToUi(object settings)
+        public string TaskName
         {
-            _task = (TaskV2)settings;
-
-            _titleTextBox.Text = _task.Name;
+            get => _titleTextBox.Text;
+            set => _titleTextBox.Text = value; 
         }
 
         public override bool ValidateUi()
@@ -31,16 +24,11 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
             var name = _titleTextBox.Text;
             if (string.IsNullOrWhiteSpace(name))
             {
-                Messages.ShowErrorBox(BUtil.Core.Localization.Resources.Name_Field_Validation);
+                Messages.ShowErrorBox(Resources.Name_Field_Validation);
                 return false;
             }
 
             return true;
-        }
-
-        public override void GetOptionsFromUi()
-        {
-            _task.Name = _titleTextBox.Text;
         }
 
         private void OnNameChange(object sender, System.EventArgs e)

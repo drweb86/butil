@@ -11,8 +11,6 @@ namespace BUtil.Configurator.Configurator.Controls
 {
     internal sealed partial class WhereUserControl : Core.PL.BackUserControl
     {
-        TaskV2 _task;
-
         public WhereUserControl()
         {
             InitializeComponent();
@@ -35,109 +33,98 @@ namespace BUtil.Configurator.Configurator.Controls
             _ftpsUserLabel.Text = Resources.User_Field;
             _ftpsPasswordLabel.Text = Resources.Password_Field;
             _ftpsFolderLabel.Text = Resources.Field_Folder;
-        }
 
-        #region Overrides
-
-        public override void ApplyLocalization()
-        {
             _hddStorageTabPage.Text = Resources.DirectoryStorage;
         }
 
-        public override void SetOptionsToUi(object settings)
+        public IStorageSettingsV2 StorageSettings
         {
-            _task = (TaskV2)settings;
-            var options = (IncrementalBackupModelOptionsV2)_task.Model;
-
-            var storage = options.To;
-            if (storage == null)
-                return;
-
-            if (storage is FolderStorageSettingsV2)
+            get
             {
-                var folderSettings = storage as FolderStorageSettingsV2;
-                _storageTypesTabControl.SelectedTab = _hddStorageTabPage;
+                IStorageSettingsV2 storageSettings = null;
+                if (_storageTypesTabControl.SelectedTab == _sambaTabPage)
+                {
+                    storageSettings = new SambaStorageSettingsV2
+                    {
+                        Url = _shareTextBox.Text,
+                        SingleBackupQuotaGb = (long)_uploadLimitGbNumericUpDown.Value,
+                        User = _userTextBox.Text,
+                        Password = _passwordTextBox.Text,
+                    };
+                }
+                else if (_storageTypesTabControl.SelectedTab == _hddStorageTabPage)
+                {
+                    storageSettings = new FolderStorageSettingsV2
+                    {
+                        DestinationFolder = destinationFolderTextBox.Text,
+                        SingleBackupQuotaGb = (long)_uploadLimitGbNumericUpDownV2.Value,
+                        MountPowershellScript = _mountTextBox.Text,
+                        UnmountPowershellScript = _unmountTextBox.Text,
+                    };
+                }
+                else if (_storageTypesTabControl.SelectedTab == _ftpsTabPage)
+                {
+                    storageSettings = new FtpsStorageSettingsV2
+                    {
+                        Host = _ftpsServerTextBox.Text,
+                        Port = (int)_ftpsPortNumericUpDown.Value,
+                        User = _ftpsUserTextBox.Text,
+                        Password = _ftpsPasswordTextBox.Text,
+                        Folder = _ftpsFolderTextBox.Text,
+                        SingleBackupQuotaGb = (long)_ftpsQuotaNumericUpDown.Value,
+                    };
+                }
+                if (storageSettings == null)
+                    throw new NotImplementedException();
 
-                destinationFolderTextBox.Text = folderSettings.DestinationFolder;
-                _uploadLimitGbNumericUpDownV2.Value = folderSettings.SingleBackupQuotaGb;
-                _mountTextBox.Text = folderSettings.MountPowershellScript;
-                _unmountTextBox.Text = folderSettings.UnmountPowershellScript;
+                return storageSettings;
             }
-            else if (storage is SambaStorageSettingsV2)
+            set
             {
-                var sambaSettings = storage as SambaStorageSettingsV2;
-                _storageTypesTabControl.SelectedTab = _sambaTabPage;
+                if (value == null)
+                    return;
 
-                _shareTextBox.Text = sambaSettings.Url;
-                _uploadLimitGbNumericUpDown.Value = sambaSettings.SingleBackupQuotaGb;
-                _userTextBox.Text = sambaSettings.User;
-                _passwordTextBox.Text = sambaSettings.Password;
-            }
-            else if (storage is FtpsStorageSettingsV2)
-            {
-                var ftpsSettings = storage as FtpsStorageSettingsV2;
-                _storageTypesTabControl.SelectedTab = _ftpsTabPage;
+                if (value is FolderStorageSettingsV2)
+                {
+                    var folderSettings = value as FolderStorageSettingsV2;
+                    _storageTypesTabControl.SelectedTab = _hddStorageTabPage;
 
-                _ftpsServerTextBox.Text = ftpsSettings.Host;
-                _ftpsPortNumericUpDown.Value = ftpsSettings.Port;
-                _ftpsUserTextBox.Text = ftpsSettings.User;
-                _ftpsPasswordTextBox.Text = ftpsSettings.Password;
-                _ftpsFolderTextBox.Text = ftpsSettings.Folder;
-                _ftpsQuotaNumericUpDown.Value = ftpsSettings.SingleBackupQuotaGb;
+                    destinationFolderTextBox.Text = folderSettings.DestinationFolder;
+                    _uploadLimitGbNumericUpDownV2.Value = folderSettings.SingleBackupQuotaGb;
+                    _mountTextBox.Text = folderSettings.MountPowershellScript;
+                    _unmountTextBox.Text = folderSettings.UnmountPowershellScript;
+                }
+                else if (value is SambaStorageSettingsV2)
+                {
+                    var sambaSettings = value as SambaStorageSettingsV2;
+                    _storageTypesTabControl.SelectedTab = _sambaTabPage;
+
+                    _shareTextBox.Text = sambaSettings.Url;
+                    _uploadLimitGbNumericUpDown.Value = sambaSettings.SingleBackupQuotaGb;
+                    _userTextBox.Text = sambaSettings.User;
+                    _passwordTextBox.Text = sambaSettings.Password;
+                }
+                else if (value is FtpsStorageSettingsV2)
+                {
+                    var ftpsSettings = value as FtpsStorageSettingsV2;
+                    _storageTypesTabControl.SelectedTab = _ftpsTabPage;
+
+                    _ftpsServerTextBox.Text = ftpsSettings.Host;
+                    _ftpsPortNumericUpDown.Value = ftpsSettings.Port;
+                    _ftpsUserTextBox.Text = ftpsSettings.User;
+                    _ftpsPasswordTextBox.Text = ftpsSettings.Password;
+                    _ftpsFolderTextBox.Text = ftpsSettings.Folder;
+                    _ftpsQuotaNumericUpDown.Value = ftpsSettings.SingleBackupQuotaGb;
+                } else
+                {
+                    throw new NotSupportedException();
+                }
             }
         }
-
-        private IStorageSettingsV2 GetStorageSettings()
-        {
-            IStorageSettingsV2 storageSettings = null;
-            if (_storageTypesTabControl.SelectedTab == _sambaTabPage)
-            {
-                storageSettings = new SambaStorageSettingsV2
-                {
-                    Url = _shareTextBox.Text,
-                    SingleBackupQuotaGb = (long)_uploadLimitGbNumericUpDown.Value,
-                    User = _userTextBox.Text,
-                    Password = _passwordTextBox.Text,
-                };
-            }
-            else if (_storageTypesTabControl.SelectedTab == _hddStorageTabPage)
-            {
-                storageSettings = new FolderStorageSettingsV2
-                {
-                    DestinationFolder = destinationFolderTextBox.Text,
-                    SingleBackupQuotaGb = (long)_uploadLimitGbNumericUpDownV2.Value,
-                    MountPowershellScript = _mountTextBox.Text,
-                    UnmountPowershellScript = _unmountTextBox.Text,
-                };
-            }
-            else if (_storageTypesTabControl.SelectedTab == _ftpsTabPage)
-            {
-                storageSettings = new FtpsStorageSettingsV2
-                {
-                    Host = _ftpsServerTextBox.Text,
-                    Port = (int)_ftpsPortNumericUpDown.Value,
-                    User = _ftpsUserTextBox.Text,
-                    Password = _ftpsPasswordTextBox.Text,
-                    Folder = _ftpsFolderTextBox.Text,
-                    SingleBackupQuotaGb = (long)_ftpsQuotaNumericUpDown.Value,
-                };
-            }
-            if (storageSettings == null)
-                throw new NotImplementedException();
-
-            return storageSettings;
-        }
-
-        public override void GetOptionsFromUi()
-        {
-            var options = (IncrementalBackupModelOptionsV2)_task.Model;
-            options.To = GetStorageSettings();
-        }
-        #endregion
 
         public override bool ValidateUi()
         {
-            var storageSettings = GetStorageSettings();
+            var storageSettings = StorageSettings;
 
             string error = null;
             using var progressForm = new ProgressForm(progress =>

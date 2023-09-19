@@ -123,7 +123,6 @@ namespace BUtil.Configurator.Configurator.Forms
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Configurator";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFormFormClosing);
             this.MainmenuStrip.ResumeLayout(false);
             this.MainmenuStrip.PerformLayout();
             this.helpStatusStrip.ResumeLayout(false);

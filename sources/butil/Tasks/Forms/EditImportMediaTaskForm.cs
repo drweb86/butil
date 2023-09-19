@@ -33,9 +33,10 @@ namespace BUtil.Configurator.Configurator.Forms
         {
             var encryptionControl = new EncryptionUserControl(_task);
 
-            _views.Add(BackupTaskViewsEnum.Name, new TaskNameUserControl());
-            _views.Add(BackupTaskViewsEnum.SourceItems, new WhatUserControl(_task));
+            _views.Add(BackupTaskViewsEnum.Name, new TaskNameUserControl(Resources.ImportMediaTask_Help));
             _views.Add(BackupTaskViewsEnum.Storages, new WhereUserControl());
+            _views.Add(BackupTaskViewsEnum.SourceItems, new WhatUserControl(_task));
+            
             foreach (KeyValuePair<BackupTaskViewsEnum, BackUserControl> pair in _views)
             {
                 pair.Value.HelpLabel = _toolStripStatusLabel;
@@ -71,8 +72,11 @@ namespace BUtil.Configurator.Configurator.Forms
             foreach (KeyValuePair<BackupTaskViewsEnum, BackUserControl> pair in _views)
             {
                 isValid = isValid && pair.Value.ValidateUi();
-                pair.Value.GetOptionsFromUi();
             }
+
+            _task.Name = ((TaskNameUserControl)_views[BackupTaskViewsEnum.Name]).TaskName;
+            ((ImportMediaTaskModelOptionsV2)_task.Model).From = ((WhereUserControl)_views[BackupTaskViewsEnum.Storages]).StorageSettings;
+
             return isValid;
         }
 
@@ -87,8 +91,8 @@ namespace BUtil.Configurator.Configurator.Forms
 
         private void ApplyOptionsToUi()
         {
-            _views[BackupTaskViewsEnum.Name].SetOptionsToUi(_task);
-            _views[BackupTaskViewsEnum.Storages].SetOptionsToUi(_task);
+            ((TaskNameUserControl)_views[BackupTaskViewsEnum.Name]).TaskName = _task.Name;
+            ((WhereUserControl)_views[BackupTaskViewsEnum.Storages]).StorageSettings = ((ImportMediaTaskModelOptionsV2)_task.Model).From;
         }
 
         private void ViewChangeNotification(BackupTaskViewsEnum newView)

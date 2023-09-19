@@ -179,12 +179,13 @@
             _addButton.Size = new System.Drawing.Size(71, 67);
             _addButton.TabIndex = 2;
             _addButton.UseVisualStyleBackColor = true;
+            _addButton.Click += OnAddButtonOpenMenu;
             // 
             // _createTaskContextMenuStrip
             // 
             _createTaskContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { _createIncrementalBackupTaskToolStripMenuItem2, _createImportMultimediaTaskToolStripMenuItem2 });
             _createTaskContextMenuStrip.Name = "_createTaskContextMenuStrip";
-            _createTaskContextMenuStrip.Size = new System.Drawing.Size(241, 70);
+            _createTaskContextMenuStrip.Size = new System.Drawing.Size(241, 48);
             // 
             // _createIncrementalBackupTaskToolStripMenuItem2
             // 
