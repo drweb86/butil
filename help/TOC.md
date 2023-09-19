@@ -15,15 +15,11 @@
 
 # Other
 
-[Manage Logs](./Manage%20Logs/Manage%20Logs.md)
-
 [Frequently Asked Questions](./Other/Frequently%20Asked%20Questions.md)
 
 [Performance](./Other/Performance.md)
 
-[Glossary](./Other/Glossary.md)
-
-[Logging](./Other/Logging.md)
+[Logs](./Other/Logs.md)
 
 [Security and Protection](./Other/Security%20and%20Protection.md)
 

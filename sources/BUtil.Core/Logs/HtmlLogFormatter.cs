@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Globalization;
 
 namespace BUtil.Core.Logs
@@ -13,9 +13,9 @@ namespace BUtil.Core.Logs
                             message);
 
             if (loggingEvent == LoggingEvent.Error)
-                return $"<p>[error] {information}</p>";
+                return $"<p>⛔ {information}</p>";
             else
-                return $"[info] {information}<br />";
+                return $"✅ {information}<br />";
         }
     }
 }
