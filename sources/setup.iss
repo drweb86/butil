@@ -36,7 +36,7 @@ Name: it; MessagesFile: "compiler:Languages\Italian.isl"
 [Messages]
 en.BeveledLabel=English
 ru.BeveledLabel=Русский
-ru.BeveledLabel=Italiana
+it.BeveledLabel=Italiana
 
 [CustomMessages]
 en.Tasks=Tasks
