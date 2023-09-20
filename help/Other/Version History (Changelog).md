@@ -4,6 +4,7 @@
 - FTPS support for backups in UI.
 - UI: configure import multimedia is possible in UI.
 - CLI: same menu items as UI, show log statuses.
+- To avoid issues with smart screen application is published as 7z archive (however note that 7z and .Net 7 Desktop are required to be installed).
 
 ## Changes
 ~ Upgrade UI keys approach, changing names across application
