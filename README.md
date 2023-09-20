@@ -8,6 +8,8 @@ BUtil is a powerful set of tools for creating incremental backups and import mul
 
 ![Tasks, Launch Task application](./help/Readme%20Assets/Screenshot%201.png)
 
+![Supported Languages](./help/Readme%20Assets/Image%20-%20Languages.png)
+
 ## Software requirements
 
 - Microsoft Windows 10 or later;
