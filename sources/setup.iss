@@ -31,20 +31,25 @@ UninstallDisplayIcon={app}\bin\butil.exe
 [Languages]
 Name: en; MessagesFile: "compiler:Default.isl"
 Name: ru; MessagesFile: "compiler:Languages\Russian.isl"
+Name: it; MessagesFile: "compiler:Languages\Italian.isl"
 
 [Messages]
 en.BeveledLabel=English
-ru.BeveledLabel=Русский
+ru.BeveledLabel=Р СѓСЃСЃРєРёР№
+ru.BeveledLabel=Italiana
 
 [CustomMessages]
 en.Tasks=Tasks
-ru.Tasks=Задания
+ru.Tasks=Р—Р°РґР°РЅРёСЏ
+it.Tasks=AttivitГ 
 
 en.LaunchTask=Launch task
-ru.LaunchTask=Запуск задачи
+ru.LaunchTask=Р—Р°РїСѓСЃРє Р·Р°РґР°С‡Рё
+it.LaunchTask=Esegui attivitГ 
 
 en.Restoration=Restoration
-ru.Restoration=Восстановление
+ru.Restoration=Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ
+it.Restoration=Ripristino
 
 [Code]
 function IsDotNetCoreInstalled(DotNetName: string): Boolean;

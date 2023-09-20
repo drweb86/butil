@@ -1,3 +1,8 @@
+# 2023.09.21
+
+## New Features
+- Italian language was added by https://github.com/bovirus
+
 # 2023.09.20
 
 ## New Features

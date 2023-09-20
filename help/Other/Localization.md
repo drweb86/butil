@@ -1,9 +1,9 @@
 Currently program was translated into the following languages
 
-| Language | Author |
+| Language  | Author |
 | --- | --- | 
-| Belorussian | me |
 | Russian | me |
+| Italian | https://github.com/bovirus |
   
 # How to Create A New Translation
 
