@@ -5,18 +5,13 @@ namespace BUtil.Core.FileSystem
 {
     public static class Files
     {
-		#region Private fields
-		
-		static readonly string _ConsoleBackupTool = 
+		public static readonly string ConsoleBackupTool = 
 			Path.Combine(Directories.BinariesDir, "butilc.exe");
-		
-        static readonly string _BugReportFile = 
+
+        public static readonly string TasksApp =
+            Path.Combine(Directories.BinariesDir, "butil.exe");
+
+        public static readonly string BugReportFile = 
         	Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), "BUtil BUG report.txt");
-
-        #endregion
-
-        public static string BugReportFile => _BugReportFile;
-
-        public static string ConsoleBackupTool => _ConsoleBackupTool;
     }
 }

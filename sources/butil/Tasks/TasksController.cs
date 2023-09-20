@@ -54,7 +54,7 @@ namespace BUtil.Configurator.Configurator
 
         public static void LaunchBackupUIToolInSeparateProcess(string taskName)
         {
-            Process.Start(Application.ExecutablePath, $"{Arguments.LaunchTask} \"{Arguments.RunTask}={taskName}\"");
+            Process.Start(Application.ExecutablePath, $"{TasksAppArguments.LaunchTask} \"{TasksAppArguments.RunTask}={taskName}\"");
         }
 
         private static TaskV2 GetBackupTaskToExecute(string taskName)

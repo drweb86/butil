@@ -9,8 +9,6 @@ namespace BUtil.ConsoleBackup.UI {
         private Terminal.Gui.ListView itemsListView;
         private Terminal.Gui.FrameView selectedItemInfoFrameView;
 
-        private Terminal.Gui.MenuBarItem createMenu;
-
         private void InitializeComponent() {
             this.Width = Dim.Fill(0);
             this.Height = Dim.Fill(0);
@@ -27,7 +25,11 @@ namespace BUtil.ConsoleBackup.UI {
             menuBar.Data = "menuBar";
             menuBar.TextAlignment = Terminal.Gui.TextAlignment.Left;
 
-            
+            var seeLogsMenuBarItem = new Terminal.Gui.MenuBarItem
+            {
+                Title = Resources.LogFile_OpenLogs,
+                Action = () => this.OnOpenLogs(),
+            };
 
             var createImportMediaTask = new Terminal.Gui.MenuBarItem
             {
@@ -35,14 +37,25 @@ namespace BUtil.ConsoleBackup.UI {
                 Action = () => this.OnCreateImportMediaTask(),
             };
 
-            this.createMenu = new Terminal.Gui.MenuBarItem
+            var openRestorationAppMenuBarItem = new Terminal.Gui.MenuBarItem
+            {
+                Title = "⤾" + Resources.ApplicationName_Restoration,
+                Action = () => this.OnOpenRestorationApp(),
+            };
+
+            var goToHomePageTask = new Terminal.Gui.MenuBarItem
+            {
+                Title = "?",
+                Action = () => this.OnOpenHomePage(),
+            };
+
+            var createMenu = new Terminal.Gui.MenuBarItem
             {
                 Title = BUtil.Core.Localization.Resources.Task_Create,
                 Children = new[] { createImportMediaTask },
             };
-
             
-            menuBar.Menus = new Terminal.Gui.MenuBarItem[] {this.createMenu};
+            menuBar.Menus = new Terminal.Gui.MenuBarItem[] { seeLogsMenuBarItem, createMenu, openRestorationAppMenuBarItem, goToHomePageTask };
             this.Add(menuBar);
             var tasksFrame = new FrameView(Resources.Task_List)
             {
@@ -110,9 +123,18 @@ namespace BUtil.ConsoleBackup.UI {
             deleteButton.Clicked += OnDeleteSelectedBackupTask;
             deleteButton.ShortcutAction += OnDeleteSelectedBackupTask;
 
+            var restoreButton = new Terminal.Gui.Button
+            {
+                Text = "⤾ " + BUtil.Core.Localization.Resources.Task_Restore,
+                Y = 7,
+                Width = Dim.Fill(),
+            };
+            restoreButton.Clicked += OnRestoreSelectedTask;
+
             selectedItemInfoFrameView.Add(runButton);
             selectedItemInfoFrameView.Add(editButton);
             selectedItemInfoFrameView.Add(deleteButton);
+            selectedItemInfoFrameView.Add(restoreButton);
             this.Add(selectedItemInfoFrameView);
         }
     }

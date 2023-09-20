@@ -147,7 +147,7 @@
             _recoverToolStripMenuItem.Name = "_recoverToolStripMenuItem";
             _recoverToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             _recoverToolStripMenuItem.Text = "Recover...";
-            _recoverToolStripMenuItem.Click += OnRecover;
+            _recoverToolStripMenuItem.Click += OnOpenRestorationApp;
             // 
             // _imageList
             // 
@@ -235,7 +235,7 @@
             _recoverButton.Size = new System.Drawing.Size(71, 67);
             _recoverButton.TabIndex = 5;
             _recoverButton.UseVisualStyleBackColor = true;
-            _recoverButton.Click += OnRecover;
+            _recoverButton.Click += OnOpenRestorationApp;
             // 
             // TasksUserControl
             // 

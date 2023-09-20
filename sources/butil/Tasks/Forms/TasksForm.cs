@@ -1,9 +1,6 @@
 using System;
-using System.Windows.Forms;
 using BUtil.Core.Misc;
 using BUtil.Core.Localization;
-using BUtil.Core.FileSystem;
-using System.Diagnostics;
 using BUtil.Core;
 
 namespace BUtil.Configurator.Configurator.Forms
@@ -23,29 +20,24 @@ namespace BUtil.Configurator.Configurator.Forms
             ApplyOptionsToUi();
 		}
 
-        private static void RunRestorationTool()
-		{
-            Process.Start(Application.ExecutablePath, Arguments.Restore);
-		}
-
         private void ApplyOptionsToUi()
         {
             _backupTasksUserControl.SetOptionsToUi(null);
         }
 
-		void RestorationToolToolStripMenuItemClick(object sender, EventArgs e)
+		private void OnOpenRestorationApp(object sender, EventArgs e)
 		{
-			RunRestorationTool();
-		}
+            SupportManager.OpenRestorationApp();
+        }
 		
-        private void OnAboutToolStripMenuItemClick(object sender, EventArgs e)
+        private void OnOpenHomePage(object sender, EventArgs e)
         {
-            SupportManager.DoSupport(SupportRequest.Homepage);
+            SupportManager.OpenHomePage();
         }
 
         private void OnOpenLogsFolder(object sender, EventArgs e)
         {
-            ProcessHelper.ShellExecute(Directories.LogsFolder);
+            SupportManager.OpenLogs();
         }
     }
 }

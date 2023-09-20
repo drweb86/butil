@@ -27,11 +27,11 @@ namespace BUtil.Configurator
 			{
 				string firstArgumentUpper = args[0].ToUpperInvariant();
 
-				if (firstArgumentUpper == Arguments.RemoveLocalSettings)
+				if (firstArgumentUpper == TasksAppArguments.RemoveLocalSettings)
 				{
 					TasksController.RemoveLocalUserSettings();
 				}
-				else if (string.Compare(args[0], Arguments.Restore, StringComparison.OrdinalIgnoreCase) == 0)
+				else if (string.Compare(args[0], TasksAppArguments.Restore, StringComparison.OrdinalIgnoreCase) == 0)
 				{
 					TasksController.OpenRestorationMaster(null, true, null);
 				}
@@ -39,7 +39,7 @@ namespace BUtil.Configurator
 				{
 					TasksController.OpenRestorationMaster(args[0], true, null);
 				}
-				else if (string.Compare(args[0], Arguments.LaunchTask) == 0)
+				else if (string.Compare(args[0], TasksAppArguments.LaunchTask) == 0)
                 {
 					TasksController.OpenBackupUi(null);
 				}
@@ -48,26 +48,26 @@ namespace BUtil.Configurator
 					Messages.ShowErrorBox(Resources.CommandLineArguments_Invalid + string.Format(Resources.CommandLineArguments_Help, SupportManager.GetLink(SupportRequest.Homepage)));
 				}
 			}
-			else if (args.Length > 1 && args[0].ToUpperInvariant() == Arguments.LaunchTask.ToUpperInvariant())
+			else if (args.Length > 1 && args[0].ToUpperInvariant() == TasksAppArguments.LaunchTask.ToUpperInvariant())
 			{
 				string taskName = null;
 				foreach (var argument in args)
 				{
-					if (argument.StartsWith(Arguments.RunTask) && argument.Length > Arguments.RunTask.Length)
+					if (argument.StartsWith(TasksAppArguments.RunTask) && argument.Length > TasksAppArguments.RunTask.Length)
 					{
-						taskName = argument.Substring(Arguments.RunTask.Length + 1);
+						taskName = argument.Substring(TasksAppArguments.RunTask.Length + 1);
 					}
 				}
 				TasksController.OpenBackupUi(taskName);
 			}
-            else if (args.Length > 1 && string.Compare(args[0], Arguments.Restore, StringComparison.OrdinalIgnoreCase) == 0)
+            else if (args.Length > 1 && string.Compare(args[0], TasksAppArguments.Restore, StringComparison.OrdinalIgnoreCase) == 0)
             {
                 string taskName = null;
                 foreach (var argument in args)
                 {
-                    if (argument.StartsWith(Arguments.RunTask) && argument.Length > Arguments.RunTask.Length)
+                    if (argument.StartsWith(TasksAppArguments.RunTask) && argument.Length > TasksAppArguments.RunTask.Length)
                     {
-                        taskName = argument.Substring(Arguments.RunTask.Length + 1);
+                        taskName = argument.Substring(TasksAppArguments.RunTask.Length + 1);
                     }
                 }
                 TasksController.OpenRestorationMaster(null, true, taskName);

@@ -3,9 +3,13 @@
 ## New Features
 - FTPS support for backups in UI.
 - UI: configure import multimedia is possible in UI.
+- CLI: same menu items as UI, show log statuses.
 
 ## Changes
-~ Renames
+~ Upgrade UI keys approach, changing names across application
+
+## Bug Fixes
+- On restore of multimedia task application fails.
 
 # 2023.09.16
 

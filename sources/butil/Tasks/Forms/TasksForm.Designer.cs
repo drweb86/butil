@@ -67,14 +67,14 @@ namespace BUtil.Configurator.Configurator.Forms
             this.restorationToolToolStripMenuItem.Name = "restorationToolToolStripMenuItem";
             this.restorationToolToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
             this.restorationToolToolStripMenuItem.Text = "Restore Data...";
-            this.restorationToolToolStripMenuItem.Click += new System.EventHandler(this.RestorationToolToolStripMenuItemClick);
+            this.restorationToolToolStripMenuItem.Click += new System.EventHandler(this.OnOpenRestorationApp);
             // 
             // _helpToolStripMenuItem
             // 
             this._helpToolStripMenuItem.Name = "_helpToolStripMenuItem";
             this._helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this._helpToolStripMenuItem.Text = "?";
-            this._helpToolStripMenuItem.Click += new System.EventHandler(this.OnAboutToolStripMenuItemClick);
+            this._helpToolStripMenuItem.Click += new System.EventHandler(this.OnOpenHomePage);
             // 
             // toolTip
             // 

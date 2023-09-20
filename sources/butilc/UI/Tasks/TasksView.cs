@@ -4,33 +4,49 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Terminal.Gui;
+using BUtil.Core.Misc;
+using BUtil.Core.Logs;
+using BUtil.ConsoleBackup.UI.Tasks;
+using System.Data.Common;
 
 namespace BUtil.ConsoleBackup.UI
 {
-
     partial class TasksView 
     {
         private readonly Controller _controller;
-        private List<string> _taskNames;
+        private List<LogFileInfo> _logs;
+        private readonly TasksViewDataSource _dataSource = new TasksViewDataSource();
         
         internal TasksView(Controller controller) 
         {
             InitializeComponent();
 
-            _taskNames = controller.BackupTaskStoreService.GetNames().ToList();
-            this.itemsListView.SetSource(_taskNames);
+            _logs = new LogService().GetRecentLogs().ToList();
+            var taskNames = controller.BackupTaskStoreService.GetNames();
+            _dataSource.AddRange(taskNames.Select(x => new TasksViewItem(x, _logs.FirstOrDefault(y => y.TaskName == x))));
+            this.itemsListView.SetSource(_dataSource);
+
             _controller = controller;
             UpdateSelectedItem();
         }
 
+        private TasksViewItem SelectedItem 
+        {
+            get
+            {
+                if (this.itemsListView.SelectedItem < 0 || this.itemsListView.SelectedItem >= _dataSource.Count)
+                    return null;
+
+                return _dataSource[this.itemsListView.SelectedItem];
+            } 
+        }
+
         public void OnRunSelectedBackupTask()
         {
-            if (this.itemsListView.SelectedItem < 0 || this.itemsListView.SelectedItem >= _taskNames.Count)
+            if (SelectedItem == null)
                 return;
 
-            var taskName = _taskNames[this.itemsListView.SelectedItem];
-
-            var task = _controller.BackupTaskStoreService.Load(taskName);
+            var task = _controller.BackupTaskStoreService.Load(SelectedItem.TaskName);
             if (task == null)
             {
                 Terminal.Gui.MessageBox.ErrorQuery(string.Empty, BUtil.Core.Localization.Resources.Task_Validation_NotSupported, Resources.Button_Close);
@@ -42,11 +58,10 @@ namespace BUtil.ConsoleBackup.UI
 
         public void OnEditSelectedBackupTask()
         {
-            if (this.itemsListView.SelectedItem < 0 || this.itemsListView.SelectedItem >= _taskNames.Count)
+            if (SelectedItem == null)
                 return;
 
-            var taskName = _taskNames[this.itemsListView.SelectedItem];
-            var task = _controller.BackupTaskStoreService.Load(taskName);
+            var task = _controller.BackupTaskStoreService.Load(SelectedItem.TaskName);
             if (task == null)
             {
                 Terminal.Gui.MessageBox.ErrorQuery(string.Empty, BUtil.Core.Localization.Resources.Task_Validation_NotSupported, Resources.Button_Close);
@@ -64,31 +79,59 @@ namespace BUtil.ConsoleBackup.UI
             if (dialog.Canceled)
                 return;
 
-            _controller.BackupTaskStoreService.Delete(task.Name);
-            _taskNames.RemoveAll(x => string.Compare(x, task.Name, System.StringComparison.OrdinalIgnoreCase) == 0);
-
+            _controller.BackupTaskStoreService.Delete(SelectedItem.TaskName);
             var updatedTask = dialog.BackupTask;
+            
+            SelectedItem.TaskName = updatedTask.Name;
             _controller.BackupTaskStoreService.Save(updatedTask);
-            _taskNames.Add(updatedTask.Name);
-            _taskNames.Sort(StringComparer.OrdinalIgnoreCase);
+            SortDataSource();
+
             this.itemsListView.SetNeedsDisplay();
             UpdateSelectedItem();
         }
 
+        private void SortDataSource()
+        {
+            _dataSource.Sort((x, y) => x.TaskName.CompareTo(y.TaskName));
+        }
+
         public void OnDeleteSelectedBackupTask()
         {
-            if (this.itemsListView.SelectedItem < 0 || this.itemsListView.SelectedItem >= _taskNames.Count)
+            if (SelectedItem == null)
                 return;
 
-            var taskName = _taskNames[this.itemsListView.SelectedItem];
+            var taskName = SelectedItem.TaskName;
             if (Terminal.Gui.MessageBox.Query(string.Empty, string.Format(BUtil.Core.Localization.Resources.Task_Delete_Confirm, taskName),
                 BUtil.Core.Localization.Resources.Task_Delete, BUtil.Core.Localization.Resources.Button_Cancel) != 0)
                 return;
 
             _controller.BackupTaskStoreService.Delete(taskName);
-            _taskNames.RemoveAll(x => string.Compare(x, taskName, System.StringComparison.OrdinalIgnoreCase) == 0);
+            _dataSource.Remove(SelectedItem);
             this.itemsListView.SetNeedsDisplay();
             UpdateSelectedItem();
+        }
+
+        private void OnRestoreSelectedTask()
+        {
+            if (SelectedItem == null)
+                return;
+
+            SupportManager.OpenRestorationApp(SelectedItem.TaskName);
+        }
+
+        public void OnOpenLogs()
+        {
+            SupportManager.OpenLogs();
+        }
+
+        private void OnOpenHomePage()
+        {
+            SupportManager.OpenHomePage();
+        }
+
+        private void OnOpenRestorationApp()
+        {
+            SupportManager.OpenRestorationApp();
         }
 
         public void OnCreateImportMediaTask()
@@ -102,9 +145,9 @@ namespace BUtil.ConsoleBackup.UI
             var task = dialog.BackupTask;
             _controller.BackupTaskStoreService.Save(task);
 
-            _taskNames.RemoveAll(x => string.Compare(x, task.Name, System.StringComparison.OrdinalIgnoreCase) == 0);
-            _taskNames.Add(task.Name);
-            _taskNames.Sort(StringComparer.OrdinalIgnoreCase);
+            _dataSource.RemoveAll(x => string.Compare(x.TaskName, task.Name, System.StringComparison.OrdinalIgnoreCase) == 0);
+            _dataSource.Add(new TasksViewItem(task.Name, null));
+            SortDataSource();
             this.itemsListView.SetNeedsDisplay();
             UpdateSelectedItem();
         }
@@ -124,11 +167,11 @@ namespace BUtil.ConsoleBackup.UI
 
         private void UpdateSelectedItem()
         {
-            if (this.itemsListView.SelectedItem < 0 || this.itemsListView.SelectedItem >= _taskNames.Count)
+            if (SelectedItem == null)
                 return;
 
-            var taskName = _taskNames[this.itemsListView.SelectedItem];
-            selectedItemInfoFrameView.Title = taskName;
+            var taskInfo = _dataSource[this.itemsListView.SelectedItem];
+            selectedItemInfoFrameView.Title = taskInfo.TaskName;
         }
     }
 }

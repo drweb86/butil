@@ -1,14 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Linq;
+using System.Drawing;
 using BUtil.Core.Options;
 using BUtil.Configurator.Configurator.Forms;
 using BUtil.Core.Localization;
-using System.Linq;
 using BUtil.Core.Logs;
-using System.Diagnostics;
 using BUtil.Core.ConfigurationFileModels.V2;
-using System.Drawing;
+using BUtil.Core.Misc;
 
 namespace BUtil.Configurator.Configurator.Controls
 {
@@ -205,7 +205,7 @@ namespace BUtil.Configurator.Configurator.Controls
 
         private const int _displacementToBorder = 40;
 
-        private void OnRecover(object sender, EventArgs e)
+        private void OnOpenRestorationApp(object sender, EventArgs e)
         {
             var selectedTasks = new List<string>();
             foreach (ListViewItem taskToExecute in _tasksListView.SelectedItems)
@@ -213,7 +213,7 @@ namespace BUtil.Configurator.Configurator.Controls
                 selectedTasks.Add(taskToExecute.Text);
             }
 
-            Process.Start(Application.ExecutablePath, $"{Arguments.Restore} \"{Arguments.RunTask}={selectedTasks.First()}\"");
+            SupportManager.OpenRestorationApp(selectedTasks.First());
         }
 
         private void OnCreateImportMultimediaTask(object sender, EventArgs e)
