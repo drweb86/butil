@@ -38,12 +38,6 @@ namespace BUtil.Configurator.Configurator
             }
 		}
 		
-        public static void RemoveLocalUserSettings()
-		{
-			if (Directory.Exists(Directories.LogsFolder))
-				Directory.Delete(Directories.LogsFolder, true);
-		}
-		
 		public static void OpenBackupUi(string taskName)
         {
             var task = GetBackupTaskToExecute(taskName);

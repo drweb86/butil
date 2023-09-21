@@ -3,6 +3,9 @@
 ## New Features
 - Italian language was added by https://github.com/bovirus
 
+## Removed Features
+- RemoveLocalSettings argument is dropped because of no usage.
+
 # 2023.09.20
 
 ## New Features

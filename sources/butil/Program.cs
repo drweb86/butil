@@ -27,11 +27,7 @@ namespace BUtil.Configurator
 			{
 				string firstArgumentUpper = args[0].ToUpperInvariant();
 
-				if (firstArgumentUpper == TasksAppArguments.RemoveLocalSettings)
-				{
-					TasksController.RemoveLocalUserSettings();
-				}
-				else if (string.Compare(args[0], TasksAppArguments.Restore, StringComparison.OrdinalIgnoreCase) == 0)
+				if (string.Compare(args[0], TasksAppArguments.Restore, StringComparison.OrdinalIgnoreCase) == 0)
 				{
 					TasksController.OpenRestorationMaster(null, true, null);
 				}
