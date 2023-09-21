@@ -1,3 +1,8 @@
+# 2023.09.22
+
+## Bug Fixes
+- 150% DPI breaks progress window;
+
 # 2023.09.21
 
 ## New Features

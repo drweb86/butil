@@ -5,13 +5,13 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BUtil.RestorationMaster
 {
-	internal partial class ProgressForm : Form
-	{
+    internal partial class ProgressForm : Form
+    {
         private readonly Action<Action<int>> _action;
 
         public ProgressForm(Action<Action<int>> action)
-		{
-			InitializeComponent();
+        {
+            InitializeComponent();
             this.Text = Resources.Task_Status_InProgress;
             Height = _progressBar.Height + _progressBar.Location.Y + 50;
             Width = _progressBar.Width + _progressBar.Location.X * 2 + 20;

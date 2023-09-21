@@ -99,13 +99,20 @@ namespace BUtil.Core.Storages
 
         public override string Test()
         {
-            if (Settings.Folder != null && !_client.DirectoryExists(Settings.Folder))
+            if (string.IsNullOrWhiteSpace(Settings.Folder) && !_client.DirectoryExists(Settings.Folder))
             {
                 return BUtil.Core.Localization.Resources.Field_Folder_Validation_NotExist;
             }
             else
             {
-                _client.GetListing(Settings.Folder);
+                try
+                {
+                    _client.GetListing();
+                }
+                catch (Exception e)
+                {
+                    return e.Message;
+                }
             }
             return null;
         }
