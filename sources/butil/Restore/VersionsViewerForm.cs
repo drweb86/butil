@@ -413,7 +413,7 @@ namespace BUtil.RestorationMaster
         private void OnTreeJournalSelected(object sender, EventArgs e)
         {
             if (_filesTreeView.SelectedNode == null ||
-                ! (_filesTreeView.SelectedNode.Tag is StorageFile))
+                !(_filesTreeView.SelectedNode.Tag is StorageFile))
                 return;
 
             var storageFile = (StorageFile)_filesTreeView.SelectedNode.Tag;

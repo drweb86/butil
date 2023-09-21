@@ -46,9 +46,10 @@
             // 
             _versionsListView.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             _versionsListView.ContextMenuStrip = _contextMenuStrip;
-            _versionsListView.Location = new System.Drawing.Point(12, 28);
+            _versionsListView.Location = new System.Drawing.Point(17, 47);
+            _versionsListView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             _versionsListView.Name = "_versionsListView";
-            _versionsListView.Size = new System.Drawing.Size(414, 410);
+            _versionsListView.Size = new System.Drawing.Size(590, 681);
             _versionsListView.SmallImageList = _imageList;
             _versionsListView.TabIndex = 0;
             _versionsListView.UseCompatibleStateImageBehavior = false;
@@ -57,14 +58,15 @@
             // 
             // _contextMenuStrip
             // 
+            _contextMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             _contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { _openSelectedVersionToolStripMenuItem });
             _contextMenuStrip.Name = "_contextMenuStrip";
-            _contextMenuStrip.Size = new System.Drawing.Size(200, 26);
+            _contextMenuStrip.Size = new System.Drawing.Size(272, 36);
             // 
             // _openSelectedVersionToolStripMenuItem
             // 
             _openSelectedVersionToolStripMenuItem.Name = "_openSelectedVersionToolStripMenuItem";
-            _openSelectedVersionToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            _openSelectedVersionToolStripMenuItem.Size = new System.Drawing.Size(271, 32);
             _openSelectedVersionToolStripMenuItem.Text = "Open selected version...";
             _openSelectedVersionToolStripMenuItem.Click += OnOpenSelectedVersion;
             // 
@@ -80,9 +82,10 @@
             // _closeButton
             // 
             _closeButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            _closeButton.Location = new System.Drawing.Point(351, 444);
+            _closeButton.Location = new System.Drawing.Point(501, 740);
+            _closeButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             _closeButton.Name = "_closeButton";
-            _closeButton.Size = new System.Drawing.Size(75, 23);
+            _closeButton.Size = new System.Drawing.Size(107, 38);
             _closeButton.TabIndex = 1;
             _closeButton.Text = "Close";
             _closeButton.UseVisualStyleBackColor = true;
@@ -90,10 +93,13 @@
             // 
             // _mainToolStrip
             // 
+            _mainToolStrip.CanOverflow = false;
+            _mainToolStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             _mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { _versionsListToolStripLabel, _openSelectedVersionToolStripButton });
             _mainToolStrip.Location = new System.Drawing.Point(0, 0);
             _mainToolStrip.Name = "_mainToolStrip";
-            _mainToolStrip.Size = new System.Drawing.Size(438, 25);
+            _mainToolStrip.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            _mainToolStrip.Size = new System.Drawing.Size(626, 34);
             _mainToolStrip.TabIndex = 2;
             _mainToolStrip.Text = "toolStrip1";
             // 
@@ -101,7 +107,7 @@
             // 
             _versionsListToolStripLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             _versionsListToolStripLabel.Name = "_versionsListToolStripLabel";
-            _versionsListToolStripLabel.Size = new System.Drawing.Size(65, 22);
+            _versionsListToolStripLabel.Size = new System.Drawing.Size(100, 29);
             _versionsListToolStripLabel.Text = "VERSIONS";
             // 
             // _openSelectedVersionToolStripButton
@@ -110,18 +116,19 @@
             _openSelectedVersionToolStripButton.Image = (System.Drawing.Image)resources.GetObject("_openSelectedVersionToolStripButton.Image");
             _openSelectedVersionToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             _openSelectedVersionToolStripButton.Name = "_openSelectedVersionToolStripButton";
-            _openSelectedVersionToolStripButton.Size = new System.Drawing.Size(136, 22);
+            _openSelectedVersionToolStripButton.Size = new System.Drawing.Size(203, 29);
             _openSelectedVersionToolStripButton.Text = "Open selected version...";
             _openSelectedVersionToolStripButton.Click += OnOpenSelectedVersion;
             // 
             // BlameForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(438, 479);
+            ClientSize = new System.Drawing.Size(626, 798);
             Controls.Add(_mainToolStrip);
             Controls.Add(_closeButton);
             Controls.Add(_versionsListView);
+            Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             Name = "BlameForm";
             ShowIcon = false;
             Text = "BlameForm";
