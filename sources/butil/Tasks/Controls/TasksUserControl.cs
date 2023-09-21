@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Linq;
@@ -14,15 +14,25 @@ namespace BUtil.Configurator.Configurator.Controls
 {
     public partial class TasksUserControl : Core.PL.BackUserControl
     {
+        private const int _displacementToBorder = 40;
+
         public TasksUserControl()
         {
             InitializeComponent();
 
-            _lastBackupAt.Text = BUtil.Core.Localization.Resources.Task_LastBackup;
+            _lastExecutionStateColumn.Text = Resources.Task_LastExecution_State;
             OnTasksListViewResize(this, null);
+            SetLastExecutionColumnWidth();
         }
 
-        #region Public Methods
+        private void SetLastExecutionColumnWidth()
+        {
+            using (var graphics = Graphics.FromHwnd(IntPtr.Zero))
+            {
+                graphics.PageUnit = GraphicsUnit.Pixel;
+                _lastExecutionStateColumn.Width = (int)graphics.MeasureString($"❌❌❌❌❌❌{DateTime.Now}", Font).Width;
+            }
+        }
 
         public override void ApplyLocalization()
         {
@@ -52,10 +62,6 @@ namespace BUtil.Configurator.Configurator.Controls
             RefreshTaskControls(this, null);
         }
 
-        #endregion
-
-        #region Private Methods
-
         private void ReloadTasks()
         {
             var backupTaskStoreService = new TaskV2StoreService();
@@ -73,9 +79,9 @@ namespace BUtil.Configurator.Configurator.Controls
                 if (lastLogFile != null)
                 {
                     var postfix = lastLogFile.IsSuccess.HasValue ?
-                        (lastLogFile.IsSuccess.Value ? BUtil.Core.Localization.Resources.LogFile_Marker_Successful : BUtil.Core.Localization.Resources.LogFile_Marker_Errors)
-                        : BUtil.Core.Localization.Resources.Task_Status_Unknown;
-                    status = $"{lastLogFile.CreatedAt} ({postfix})";
+                        (lastLogFile.IsSuccess.Value ? "✅" : "❌")
+                        : "❓";
+                    status = $"{postfix}{lastLogFile.CreatedAt}";
                 }
                 _tasksListView.Items.Add(new ListViewItem(new[] { taskName, status }, 0));
             }
@@ -197,13 +203,9 @@ namespace BUtil.Configurator.Configurator.Controls
         private void OnTasksListViewResize(object sender, EventArgs e)
         {
             var total = Math.Max(_tasksListView.Width - _displacementToBorder, _displacementToBorder);
-            _nameColumn.Width = (int)(0.7 * total);
-            _lastBackupAt.Width = (int)(0.3 * total);
+            _nameColumn.Width = total - _lastExecutionStateColumn.Width;
+            ;
         }
-
-        #endregion
-
-        private const int _displacementToBorder = 40;
 
         private void OnOpenRestorationApp(object sender, EventArgs e)
         {

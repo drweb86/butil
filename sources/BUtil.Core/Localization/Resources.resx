@@ -547,7 +547,7 @@ See detailed description in the following link.</value>
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
     <value>New task</value>
   </data>
-  <data name="Task_LastBackup" xml:space="preserve">
+  <data name="Task_LastExecution_State" xml:space="preserve">
     <value>State</value>
   </data>
   <data name="Task_Launch" xml:space="preserve">
@@ -560,7 +560,7 @@ See detailed description in the following link.</value>
     <value>Tasks</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
-    <value>Восстановить</value>
+    <value>Restore</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Failed (see opened log)</value>

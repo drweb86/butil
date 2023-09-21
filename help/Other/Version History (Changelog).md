@@ -5,6 +5,10 @@
 
 ## Removed Features
 - RemoveLocalSettings argument is dropped because of no usage.
+ 
+## Bug Fixes
+- 150% DPI breaks tasks form layout.
+- Restore menu.
 
 # 2023.09.20
 

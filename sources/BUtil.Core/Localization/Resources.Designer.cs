@@ -1306,9 +1306,9 @@ namespace BUtil.Core.Localization {
         /// <summary>
         ///   Looks up a localized string similar to State.
         /// </summary>
-        public static string Task_LastBackup {
+        public static string Task_LastExecution_State {
             get {
-                return ResourceManager.GetString("Task_LastBackup", resourceCulture);
+                return ResourceManager.GetString("Task_LastExecution_State", resourceCulture);
             }
         }
         
@@ -1340,7 +1340,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Восстановить.
+        ///   Looks up a localized string similar to Restore.
         /// </summary>
         public static string Task_Restore {
             get {

@@ -547,7 +547,7 @@ Vedi la descrizione dettagliata al seguente collegamento.</value>
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
     <value>Nuova attività</value>
   </data>
-  <data name="Task_LastBackup" xml:space="preserve">
+  <data name="Task_LastExecution_State" xml:space="preserve">
     <value>Stata</value>
   </data>
   <data name="Task_Launch" xml:space="preserve">

@@ -502,7 +502,7 @@ bin.
   <data name="Url_Field_Validation" xml:space="preserve">
     <value>Урл не указан.</value>
   </data>
-  <data name="Task_LastBackup" xml:space="preserve">
+  <data name="Task_LastExecution_State" xml:space="preserve">
     <value>Состояние</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">

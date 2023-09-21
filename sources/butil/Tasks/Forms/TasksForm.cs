@@ -5,11 +5,11 @@ using BUtil.Core;
 
 namespace BUtil.Configurator.Configurator.Forms
 {
-	internal partial class TasksForm
-	{
+    internal partial class TasksForm
+    {
         public TasksForm()
-		{
-			InitializeComponent();
+        {
+            InitializeComponent();
 
             this._backupTasksUserControl.HelpLabel = helpToolStripStatusLabel;
             _backupTasksUserControl.ApplyLocalization();
@@ -18,18 +18,18 @@ namespace BUtil.Configurator.Configurator.Forms
             _logsToolStripMenuItem.Text = Resources.LogFile_OpenLogs;
 
             ApplyOptionsToUi();
-		}
+        }
 
         private void ApplyOptionsToUi()
         {
             _backupTasksUserControl.SetOptionsToUi(null);
         }
 
-		private void OnOpenRestorationApp(object sender, EventArgs e)
-		{
+        private void OnOpenRestorationApp(object sender, EventArgs e)
+        {
             SupportManager.OpenRestorationApp();
         }
-		
+
         private void OnOpenHomePage(object sender, EventArgs e)
         {
             SupportManager.OpenHomePage();
