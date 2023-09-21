@@ -1,5 +1,5 @@
-#define  MyAppName           "BUtil"
-#define  ApplicationVersion  GetVersionNumbersString('..\..\Output\BUtil\bin\butil.exe')
+﻿#define  MyAppName           "BUtil"
+#define  ApplicationVersion  GetVersionNumbersString('..\Output\BUtil\bin\butil.exe')
 #define  CurrentYear         GetDateTimeString('yyyy','','')
 #define  StartYearCopyright  "2011"
 #define  MyAppSupportURL     "https://github.com/drweb86/butil"
@@ -22,18 +22,18 @@ VersionInfoProductName={#MyAppName}
 VersionInfoVersion={#ApplicationVersion}
 
 UninstallDisplayName={#MyAppName}
-UninstallDisplayIcon=..\..\Output\BUtil\bin\butil.exe
+UninstallDisplayIcon={app}\bin\butil.exe
 
-SetupIconFile=..\Media\Images and Icons\Other's guys\Crystal Clear (Everaldo Coelho)\SetupIcon.ico
+SetupIconFile=.\Media\Images and Icons\Other's guys\Crystal Clear (Everaldo Coelho)\SetupIcon.ico
 
 WizardStyle=modern
 
 DisableWelcomePage=yes
 DefaultDirName={autopf}\{#MyAppName}
-DefaultGroupName={cm:GroupName}
+DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
-OutputDir=..\..\Output\Deployment
-OutputBaseFilename=BUtil_v{#ApplicationVersion}_(.NET_Desktop_Runtime_v7)_Setup
+OutputDir=..\Output
+OutputBaseFilename=BUtil_v{#ApplicationVersion}
 Compression=lzma2/ultra64
 SolidCompression=yes
 PrivilegesRequired=none
@@ -166,8 +166,8 @@ end;
 Source: "..\Output\BUtil\*.*"; DestDir: "{app}"; Flags: recursesubdirs
 
 [Icons]
-Name: "{group}\{cm:IconTasks}";		Filename: "{app}\bin\butil.exe"
-Name: "{group}\{cm:IconCLI}";			Filename: "{app}\bin\butilc.exe"
+Name: "{group}\{cm:IconTasks}";		      Filename: "{app}\bin\butil.exe"
+Name: "{group}\BUtil CLI";		          Filename: "{app}\bin\butilc.exe"
 Name: "{group}\{cm:IconLaunchTask}";		Filename: "{app}\bin\butil.exe";	Parameters: "LaunchTask";	IconFilename: "{app}\data\BackupUi.ico"
 Name: "{group}\{cm:IconRestoration}";		Filename: "{app}\bin\butil.exe";	Parameters: "Restore";		IconFilename: "{app}\data\RestorationMaster.ico"
 Name: "{autodesktop}\{cm:IconTasks}";		Filename: "{app}\bin\butil.exe"

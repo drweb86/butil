@@ -1,7 +1,8 @@
-# 2023.09.21
+# 2023.09.22
 
 ## New Features
 - Italian language was added by https://github.com/bovirus
+- Setup now shows proper copyright and version (thanks to https://github.com/bovirus)
 
 ## Removed Features
 - RemoveLocalSettings argument is dropped because of no usage.

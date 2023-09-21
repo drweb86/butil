@@ -89,7 +89,7 @@ namespace BUtil.Configurator.Configurator.Forms
             // 
             helpStatusStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             helpStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { helpToolStripStatusLabel });
-            helpStatusStrip.Location = new System.Drawing.Point(0, 572);
+            helpStatusStrip.Location = new System.Drawing.Point(0, 582);
             helpStatusStrip.Name = "helpStatusStrip";
             helpStatusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 23, 0);
             helpStatusStrip.Size = new System.Drawing.Size(1172, 22);
@@ -104,7 +104,7 @@ namespace BUtil.Configurator.Configurator.Forms
             _backupTasksUserControl.Location = new System.Drawing.Point(0, 35);
             _backupTasksUserControl.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
             _backupTasksUserControl.Name = "_backupTasksUserControl";
-            _backupTasksUserControl.Size = new System.Drawing.Size(1172, 537);
+            _backupTasksUserControl.Size = new System.Drawing.Size(1172, 547);
             _backupTasksUserControl.TabIndex = 7;
             // 
             // TasksForm
@@ -112,14 +112,14 @@ namespace BUtil.Configurator.Configurator.Forms
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             AutoScroll = true;
-            ClientSize = new System.Drawing.Size(1172, 594);
+            ClientSize = new System.Drawing.Size(1172, 604);
             Controls.Add(_backupTasksUserControl);
             Controls.Add(helpStatusStrip);
             Controls.Add(MainmenuStrip);
             Icon = Icons.BUtilIcon;
             MainMenuStrip = MainmenuStrip;
             Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            MinimumSize = new System.Drawing.Size(600, 650);
+            MinimumSize = new System.Drawing.Size(600, 660);
             Name = "TasksForm";
             Text = "Configurator";
             MainmenuStrip.ResumeLayout(false);
