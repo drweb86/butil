@@ -1,55 +1,52 @@
-#define ApplicationVersion GetVersionNumbersString('..\Output\BUtil\bin\butil.exe')
+#define  MyAppName           "BUtil"
+#define  ApplicationVersion  GetVersionNumbersString('..\..\Output\BUtil\bin\butil.exe')
+#define  CurrentYear         GetDateTimeString('yyyy','','')
+#define  StartYearCopyright  "2011"
+#define  MyAppSupportURL     "https://github.com/drweb86/butil"
+#define  MyAppAuthor         "Siarhei Kuchuk"
+#include ".\setup-strings.iss"
 
 [Setup]
-AppName=BUtil
-AppVerName=BUtil {#ApplicationVersion}
-AppPublisher=Siarhei Kuchuk
-AppPublisherURL=https://github.com/drweb86/butil
-AppSupportURL=https://github.com/drweb86/butil
-AppUpdatesURL=https://github.com/drweb86/butil
+AppName={#MyAppName}
+AppVersion={#ApplicationVersion}
+AppVerName={#MyAppName} {#ApplicationVersion}
+
+AppCopyright={#StartYearCopyright}-{#CurrentYear}  {#MyAppAuthor}
+AppPublisher={#MyAppAuthor}
+AppPublisherURL={#MyAppSupportURL}
+AppSupportURL={#MyAppSupportURL}
+AppUpdatesURL={#MyAppSupportURL}
+
+VersionInfoDescription={#MyAppName} installer
+VersionInfoProductName={#MyAppName}
+VersionInfoVersion={#ApplicationVersion}
+
+UninstallDisplayName={#MyAppName}
+UninstallDisplayIcon=..\..\Output\BUtil\bin\butil.exe
+
+SetupIconFile=..\Media\Images and Icons\Other's guys\Crystal Clear (Everaldo Coelho)\SetupIcon.ico
+
+WizardStyle=modern
+
 DisableWelcomePage=yes
-DefaultDirName={autopf}\BUtil
-DefaultGroupName=BUtil
+DefaultDirName={autopf}\{#MyAppName}
+DefaultGroupName={cm:GroupName}
 AllowNoIcons=yes
-OutputDir=..\Output
-OutputBaseFilename=BUtil_v{#ApplicationVersion}
+OutputDir=..\..\Output\Deployment
+OutputBaseFilename=BUtil_v{#ApplicationVersion}_(.NET_Desktop_Runtime_v7)_Setup
 Compression=lzma2/ultra64
 SolidCompression=yes
 PrivilegesRequired=none
 PrivilegesRequiredOverridesAllowed=commandline dialog
 UsePreviousGroup=no
 RestartIfNeededByRun=no
-SetupIconFile=.\Media\Images and Icons\Other's guys\Crystal Clear (Everaldo Coelho)\SetupIcon.ico
 ArchitecturesInstallIn64BitMode=x64
 DisableFinishedPage=yes
 DisableProgramGroupPage=yes
 DisableDirPage=yes
 DisableReadyPage=yes
 UsePreviousAppDir=no
-UninstallDisplayIcon={app}\bin\butil.exe
 
-[Languages]
-Name: en; MessagesFile: "compiler:Default.isl"
-Name: ru; MessagesFile: "compiler:Languages\Russian.isl"
-Name: it; MessagesFile: "compiler:Languages\Italian.isl"
-
-[Messages]
-en.BeveledLabel=English
-ru.BeveledLabel=Русский
-it.BeveledLabel=Italiana
-
-[CustomMessages]
-en.Tasks=Tasks
-ru.Tasks=Задания
-it.Tasks=Attività
-
-en.LaunchTask=Launch task
-ru.LaunchTask=Запуск задачи
-it.LaunchTask=Esegui attività
-
-en.Restoration=Restoration
-ru.Restoration=Восстановление
-it.Restoration=Ripristino
 
 [Code]
 function IsDotNetCoreInstalled(DotNetName: string): Boolean;
@@ -169,11 +166,11 @@ end;
 Source: "..\Output\BUtil\*.*"; DestDir: "{app}"; Flags: recursesubdirs
 
 [Icons]
-Name: "{group}\BUtil {cm:Tasks}";		Filename: "{app}\bin\butil.exe"
-Name: "{group}\BUtil CLI";			Filename: "{app}\bin\butilc.exe"
-Name: "{group}\BUtil {cm:LaunchTask}";		Filename: "{app}\bin\butil.exe";	Parameters: "LaunchTask";	IconFilename: "{app}\data\BackupUi.ico"
-Name: "{group}\BUtil {cm:Restoration}";		Filename: "{app}\bin\butil.exe";	Parameters: "Restore";		IconFilename: "{app}\data\RestorationMaster.ico"
-Name: "{autodesktop}\BUtil {cm:Tasks}";		Filename: "{app}\bin\butil.exe"
+Name: "{group}\{cm:IconTasks}";		Filename: "{app}\bin\butil.exe"
+Name: "{group}\{cm:IconCLI}";			Filename: "{app}\bin\butilc.exe"
+Name: "{group}\{cm:IconLaunchTask}";		Filename: "{app}\bin\butil.exe";	Parameters: "LaunchTask";	IconFilename: "{app}\data\BackupUi.ico"
+Name: "{group}\{cm:IconRestoration}";		Filename: "{app}\bin\butil.exe";	Parameters: "Restore";		IconFilename: "{app}\data\RestorationMaster.ico"
+Name: "{autodesktop}\{cm:IconTasks}";		Filename: "{app}\bin\butil.exe"
 
 [Run]
 Filename: "{app}\bin\butil.exe"; Description: "Launch App"; Flags: nowait postinstall skipifsilent
