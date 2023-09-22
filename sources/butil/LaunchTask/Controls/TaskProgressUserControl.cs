@@ -6,8 +6,21 @@ using BUtil.Core.Localization;
 
 namespace BUtil.BackupUiMaster.Controls
 {
-    internal sealed partial class TaskProgressUserControl : TitledBackUserControl
+    internal sealed partial class TaskProgressUserControl : BUtil.Core.PL.BackUserControl
     {
+        public string Title
+        {
+            get { return _headerTitleLabel.Text; }
+            set { _headerTitleLabel.Text = value; }
+        }
+
+        public Color TitleBackground
+        {
+            get => _headerTitleLabel.BackColor;
+            set => _headerTitleLabel.BackColor = value;
+        }
+
+
         DateTime _start = DateTime.Now;
 
         public TaskProgressUserControl()
@@ -76,7 +89,7 @@ namespace BUtil.BackupUiMaster.Controls
 
         public override void ApplyLocalization()
         {
-            
+
         }
 
         #endregion

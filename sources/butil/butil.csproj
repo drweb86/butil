@@ -116,7 +116,6 @@
     <Compile Update="LaunchTask\Controls\TaskProgressUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="LaunchTask\Controls\TitledBackUserControl.cs" />
     <Compile Update="Icons.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
