@@ -228,9 +228,12 @@ Il programma ora aprirà il browser internet alla pagina di download</value>
     <value>Limite upload, GB:</value>
   </data>
   <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
-    <value>Limita la quantità di dati inviati allo spazio di archiviazione durante l'esecuzione di un'attività. 0 - nessun limite.
-Quando la quota viene superata, gli altri file verranno ignorati e verranno elaborati la volta successiva.
-Scenario di utilizzo: copi i dati sul server remoto. C'è un problema: l'ISP riduce la velocità di caricamento dopo diversi GB. Questa impostazione ti consente di gestirlo.</value>
+    <value>Limita la quantità di dati inviati allo spazio di archiviazione durante l'esecuzione di un'attività. 
+	0 - nessun limite.
+	Quando la quota viene superata, gli altri file verranno ignorati e verranno elaborati la volta successiva.
+	Scenario di utilizzo: copi i dati sul server remoto. 
+	C'è un problema: l'ISP riduce la velocità di caricamento dopo diversi GB. 
+	Questa impostazione ti consente di gestirlo.</value>
   </data>
   <data name="DataStorage_Script_Help" xml:space="preserve">
     <value>Se la cartella diventa disponibile dopo l'esecuzione di alcuni comandi, specifica gli script PowerShell per la connessione e la disconnessione.</value>
@@ -242,7 +245,7 @@ Scenario di utilizzo: copi i dati sul server remoto. C'è un problema: l'ISP rid
     <value>Non è stato impostato lo spazio di archiviazione.</value>
   </data>
   <data name="Days_Field_Choose" xml:space="preserve">
-    <value>Scegli giorni della settimana:</value>
+    <value>Giorni settimana:</value>
   </data>
   <data name="Days_Friday" xml:space="preserve">
     <value>Venerdì</value>
@@ -344,7 +347,12 @@ Contatta gli sviluppatori con le informazioni salvate sul desktop in
 L'applicazione verrà ora chiusa.</value>
   </data>
   <data name="IncrementalBackup_Help" xml:space="preserve">
-    <value>La forma più elementare di backup incrementale consiste nell'identificare, registrare e quindi preservare solo i file che sono cambiati dall'ultimo backup. Poiché le modifiche sono generalmente limitate, i backup incrementali sono molto più piccoli e più rapidi dei backup completi. Ad esempio, dopo un backup completo il venerdì, il backup del lunedì conterrà solo i file modificati da venerdì. Il backup del martedì contiene solo i file modificati da lunedì e così via. Un ripristino completo dei dati sarà naturalmente più lento, poiché dovranno essere ripristinati tutti gli incrementi. Se una qualsiasi delle copie create dovesse fallire, inclusa la prima (completa), il ripristino risulterà incompleto.</value>
+    <value>La forma più elementare di backup incrementale consiste nell'identificare, registrare e quindi preservare solo i file che sono cambiati dall'ultimo backup. 
+	Poiché le modifiche sono generalmente limitate, i backup incrementali sono molto più piccoli e più rapidi dei backup completi. 
+	Ad esempio, dopo un backup completo il venerdì, il backup del lunedì conterrà solo i file modificati da venerdì. 
+	Il backup del martedì contiene solo i file modificati da lunedì e così via. 
+	Un ripristino completo dei dati sarà naturalmente più lento, poiché dovranno essere ripristinati tutti gli incrementi. 
+	Se una qualsiasi delle copie create dovesse fallire, inclusa la prima (completa), il ripristino risulterà incompleto.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Backup incrementale</value>
@@ -359,7 +367,7 @@ L'applicazione verrà ora chiusa.</value>
     <value>Criptazione</value>
   </data>
   <data name="LeftMenu_What" xml:space="preserve">
-    <value>Che cosa?</value>
+    <value>Cosa?</value>
   </data>
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Qui puoi aggiungere cartelle e file che vuoi elaborare.</value>
@@ -371,7 +379,8 @@ L'applicazione verrà ora chiusa.</value>
     <value>Quando?</value>
   </data>
   <data name="LeftMenu_When_Help" xml:space="preserve">
-    <value>Qui puoi impostare una pianificazione. La pianificazione può aiutarti ad automatizzare l'avvio delle attività.</value>
+    <value>Qui puoi impostare una pianificazione. 
+	La pianificazione può aiutarti ad automatizzare l'avvio delle attività.</value>
   </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Dove?</value>
@@ -569,7 +578,9 @@ Vedi la descrizione dettagliata al seguente collegamento.</value>
     <value>L'attività è in corso...</value>
   </data>
   <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
-    <value>Completato parzialmente. A causa della quota di spazio archiviazione, alcuni file sono stati saltati. {0} file rimanenti con {1} GB.</value>
+    <value>Completato parzialmente. 
+	A causa della quota di spazio archiviazione, alcuni file sono stati saltati. 
+	{0} file rimanenti con {1} GB.</value>
   </data>
   <data name="Task_Status_Succesfull" xml:space="preserve">
     <value>Completata</value>
