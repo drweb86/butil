@@ -7,7 +7,7 @@
 
 ## Bug Fixes
 - 150% DPI breaks progress window;
-- 150% DPI breaks launch task control;
+- 150% DPI breaks launch task control, bottom buttons;
 - UI: not possible to specify FTPS port more than 100;
 - FTPS storage: autoconnect of fluent ui library did not work in some cases. It was dropped.
 - FTPS storage: sometimes testing storage was hanging the UI, CLI apps.

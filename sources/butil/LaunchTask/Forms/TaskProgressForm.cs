@@ -87,10 +87,10 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 
             _powerTaskLinkLabel.Text = Resources.AfterTaskSelection_Field;
             _powerTaskComboBox.Items.Clear();
-            _powerTaskComboBox.Items.AddRange(new[] { 
-                Resources.AfterTaskSelection_ShutdownPc, 
-                Resources.AfterTaskSelection_LogOff, 
-                Resources.AfterTaskSelection_Reboot, 
+            _powerTaskComboBox.Items.AddRange(new[] {
+                Resources.AfterTaskSelection_ShutdownPc,
+                Resources.AfterTaskSelection_LogOff,
+                Resources.AfterTaskSelection_Reboot,
                 Resources.AfterTaskSelection_DoNothing });
 
             backupProgressUserControl.ApplyLocalization();
