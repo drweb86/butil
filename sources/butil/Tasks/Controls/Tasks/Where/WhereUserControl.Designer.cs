@@ -62,18 +62,20 @@ namespace BUtil.Configurator.Configurator.Controls
             _limitUploadLabel = new System.Windows.Forms.LinkLabel();
             _ftpsTabPage = new System.Windows.Forms.TabPage();
             _ftpsTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            _ftpsQuotaNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            _ftpsServerLabel = new System.Windows.Forms.Label();
+            _ftpsServerTextBox = new System.Windows.Forms.TextBox();
             _ftpsQuotaLabel = new System.Windows.Forms.LinkLabel();
+            _ftpsFolderLabel = new System.Windows.Forms.Label();
+            _ftpsPasswordLabel = new System.Windows.Forms.Label();
             _ftpsUserLabel = new System.Windows.Forms.Label();
             _ftpsPortLabel = new System.Windows.Forms.Label();
-            _ftpsServerLabel = new System.Windows.Forms.Label();
-            _ftpsPasswordLabel = new System.Windows.Forms.Label();
-            _ftpsFolderLabel = new System.Windows.Forms.Label();
-            _ftpsServerTextBox = new System.Windows.Forms.TextBox();
-            _ftpsPortNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            _ftpsUserTextBox = new System.Windows.Forms.TextBox();
-            _ftpsPasswordTextBox = new System.Windows.Forms.TextBox();
+            _ftpsEncryptionLabel = new System.Windows.Forms.Label();
+            _ftpsQuotaNumericUpDown = new System.Windows.Forms.NumericUpDown();
             _ftpsFolderTextBox = new System.Windows.Forms.TextBox();
+            _ftpsPasswordTextBox = new System.Windows.Forms.TextBox();
+            _ftpsUserTextBox = new System.Windows.Forms.TextBox();
+            _ftpsPortNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            _ftpsEncryptionComboBox = new System.Windows.Forms.ComboBox();
             fbd = new System.Windows.Forms.FolderBrowserDialog();
             _storageTypesTabControl.SuspendLayout();
             _hddStorageTabPage.SuspendLayout();
@@ -467,24 +469,27 @@ namespace BUtil.Configurator.Configurator.Controls
             _ftpsTableLayoutPanel.ColumnCount = 2;
             _ftpsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             _ftpsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            _ftpsTableLayoutPanel.Controls.Add(_ftpsQuotaNumericUpDown, 1, 5);
-            _ftpsTableLayoutPanel.Controls.Add(_ftpsQuotaLabel, 0, 5);
-            _ftpsTableLayoutPanel.Controls.Add(_ftpsUserLabel, 0, 2);
-            _ftpsTableLayoutPanel.Controls.Add(_ftpsPortLabel, 0, 1);
             _ftpsTableLayoutPanel.Controls.Add(_ftpsServerLabel, 0, 0);
-            _ftpsTableLayoutPanel.Controls.Add(_ftpsPasswordLabel, 0, 3);
-            _ftpsTableLayoutPanel.Controls.Add(_ftpsFolderLabel, 0, 4);
             _ftpsTableLayoutPanel.Controls.Add(_ftpsServerTextBox, 1, 0);
-            _ftpsTableLayoutPanel.Controls.Add(_ftpsPortNumericUpDown, 1, 1);
-            _ftpsTableLayoutPanel.Controls.Add(_ftpsUserTextBox, 1, 2);
-            _ftpsTableLayoutPanel.Controls.Add(_ftpsPasswordTextBox, 1, 3);
-            _ftpsTableLayoutPanel.Controls.Add(_ftpsFolderTextBox, 1, 4);
+            _ftpsTableLayoutPanel.Controls.Add(_ftpsQuotaLabel, 0, 6);
+            _ftpsTableLayoutPanel.Controls.Add(_ftpsFolderLabel, 0, 5);
+            _ftpsTableLayoutPanel.Controls.Add(_ftpsPasswordLabel, 0, 4);
+            _ftpsTableLayoutPanel.Controls.Add(_ftpsUserLabel, 0, 3);
+            _ftpsTableLayoutPanel.Controls.Add(_ftpsPortLabel, 0, 2);
+            _ftpsTableLayoutPanel.Controls.Add(_ftpsEncryptionLabel, 0, 1);
+            _ftpsTableLayoutPanel.Controls.Add(_ftpsQuotaNumericUpDown, 1, 6);
+            _ftpsTableLayoutPanel.Controls.Add(_ftpsFolderTextBox, 1, 5);
+            _ftpsTableLayoutPanel.Controls.Add(_ftpsPasswordTextBox, 1, 4);
+            _ftpsTableLayoutPanel.Controls.Add(_ftpsUserTextBox, 1, 3);
+            _ftpsTableLayoutPanel.Controls.Add(_ftpsPortNumericUpDown, 1, 2);
+            _ftpsTableLayoutPanel.Controls.Add(_ftpsEncryptionComboBox, 1, 1);
             _ftpsTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             _ftpsTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             _ftpsTableLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             _ftpsTableLayoutPanel.Name = "_ftpsTableLayoutPanel";
             _ftpsTableLayoutPanel.Padding = new System.Windows.Forms.Padding(16);
-            _ftpsTableLayoutPanel.RowCount = 7;
+            _ftpsTableLayoutPanel.RowCount = 8;
+            _ftpsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             _ftpsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             _ftpsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             _ftpsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -494,53 +499,6 @@ namespace BUtil.Configurator.Configurator.Controls
             _ftpsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             _ftpsTableLayoutPanel.Size = new System.Drawing.Size(662, 351);
             _ftpsTableLayoutPanel.TabIndex = 0;
-            // 
-            // _ftpsQuotaNumericUpDown
-            // 
-            _ftpsQuotaNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
-            _ftpsQuotaNumericUpDown.Location = new System.Drawing.Point(172, 226);
-            _ftpsQuotaNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            _ftpsQuotaNumericUpDown.Name = "_ftpsQuotaNumericUpDown";
-            _ftpsQuotaNumericUpDown.Size = new System.Drawing.Size(470, 31);
-            _ftpsQuotaNumericUpDown.TabIndex = 19;
-            // 
-            // _ftpsQuotaLabel
-            // 
-            _ftpsQuotaLabel.AutoSize = true;
-            _ftpsQuotaLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            _ftpsQuotaLabel.Location = new System.Drawing.Point(20, 221);
-            _ftpsQuotaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            _ftpsQuotaLabel.Name = "_ftpsQuotaLabel";
-            _ftpsQuotaLabel.Size = new System.Drawing.Size(144, 41);
-            _ftpsQuotaLabel.TabIndex = 18;
-            _ftpsQuotaLabel.TabStop = true;
-            _ftpsQuotaLabel.Text = "Upload limit, GB:";
-            _ftpsQuotaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            _ftpsQuotaLabel.LinkClicked += OnUploadLimitClick;
-            // 
-            // _ftpsUserLabel
-            // 
-            _ftpsUserLabel.AutoSize = true;
-            _ftpsUserLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            _ftpsUserLabel.Location = new System.Drawing.Point(20, 98);
-            _ftpsUserLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            _ftpsUserLabel.Name = "_ftpsUserLabel";
-            _ftpsUserLabel.Size = new System.Drawing.Size(144, 41);
-            _ftpsUserLabel.TabIndex = 4;
-            _ftpsUserLabel.Text = "User:";
-            _ftpsUserLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // _ftpsPortLabel
-            // 
-            _ftpsPortLabel.AutoSize = true;
-            _ftpsPortLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            _ftpsPortLabel.Location = new System.Drawing.Point(20, 57);
-            _ftpsPortLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            _ftpsPortLabel.Name = "_ftpsPortLabel";
-            _ftpsPortLabel.Size = new System.Drawing.Size(144, 41);
-            _ftpsPortLabel.TabIndex = 2;
-            _ftpsPortLabel.Text = "Port:";
-            _ftpsPortLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // _ftpsServerLabel
             // 
@@ -554,30 +512,6 @@ namespace BUtil.Configurator.Configurator.Controls
             _ftpsServerLabel.Text = "Server:";
             _ftpsServerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // _ftpsPasswordLabel
-            // 
-            _ftpsPasswordLabel.AutoSize = true;
-            _ftpsPasswordLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            _ftpsPasswordLabel.Location = new System.Drawing.Point(20, 139);
-            _ftpsPasswordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            _ftpsPasswordLabel.Name = "_ftpsPasswordLabel";
-            _ftpsPasswordLabel.Size = new System.Drawing.Size(144, 41);
-            _ftpsPasswordLabel.TabIndex = 3;
-            _ftpsPasswordLabel.Text = "Password:";
-            _ftpsPasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // _ftpsFolderLabel
-            // 
-            _ftpsFolderLabel.AutoSize = true;
-            _ftpsFolderLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            _ftpsFolderLabel.Location = new System.Drawing.Point(20, 180);
-            _ftpsFolderLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            _ftpsFolderLabel.Name = "_ftpsFolderLabel";
-            _ftpsFolderLabel.Size = new System.Drawing.Size(144, 41);
-            _ftpsFolderLabel.TabIndex = 1;
-            _ftpsFolderLabel.Text = "Folder:";
-            _ftpsFolderLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // _ftpsServerTextBox
             // 
             _ftpsServerTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -587,42 +521,135 @@ namespace BUtil.Configurator.Configurator.Controls
             _ftpsServerTextBox.Size = new System.Drawing.Size(470, 31);
             _ftpsServerTextBox.TabIndex = 5;
             // 
+            // _ftpsQuotaLabel
+            // 
+            _ftpsQuotaLabel.AutoSize = true;
+            _ftpsQuotaLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            _ftpsQuotaLabel.Location = new System.Drawing.Point(20, 260);
+            _ftpsQuotaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            _ftpsQuotaLabel.Name = "_ftpsQuotaLabel";
+            _ftpsQuotaLabel.Size = new System.Drawing.Size(144, 41);
+            _ftpsQuotaLabel.TabIndex = 18;
+            _ftpsQuotaLabel.TabStop = true;
+            _ftpsQuotaLabel.Text = "Upload limit, GB:";
+            _ftpsQuotaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            _ftpsQuotaLabel.LinkClicked += OnUploadLimitClick;
+            // 
+            // _ftpsFolderLabel
+            // 
+            _ftpsFolderLabel.AutoSize = true;
+            _ftpsFolderLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            _ftpsFolderLabel.Location = new System.Drawing.Point(20, 219);
+            _ftpsFolderLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            _ftpsFolderLabel.Name = "_ftpsFolderLabel";
+            _ftpsFolderLabel.Size = new System.Drawing.Size(144, 41);
+            _ftpsFolderLabel.TabIndex = 1;
+            _ftpsFolderLabel.Text = "Folder:";
+            _ftpsFolderLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // _ftpsPasswordLabel
+            // 
+            _ftpsPasswordLabel.AutoSize = true;
+            _ftpsPasswordLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            _ftpsPasswordLabel.Location = new System.Drawing.Point(20, 178);
+            _ftpsPasswordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            _ftpsPasswordLabel.Name = "_ftpsPasswordLabel";
+            _ftpsPasswordLabel.Size = new System.Drawing.Size(144, 41);
+            _ftpsPasswordLabel.TabIndex = 3;
+            _ftpsPasswordLabel.Text = "Password:";
+            _ftpsPasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // _ftpsUserLabel
+            // 
+            _ftpsUserLabel.AutoSize = true;
+            _ftpsUserLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            _ftpsUserLabel.Location = new System.Drawing.Point(20, 137);
+            _ftpsUserLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            _ftpsUserLabel.Name = "_ftpsUserLabel";
+            _ftpsUserLabel.Size = new System.Drawing.Size(144, 41);
+            _ftpsUserLabel.TabIndex = 4;
+            _ftpsUserLabel.Text = "User:";
+            _ftpsUserLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // _ftpsPortLabel
+            // 
+            _ftpsPortLabel.AutoSize = true;
+            _ftpsPortLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            _ftpsPortLabel.Location = new System.Drawing.Point(20, 96);
+            _ftpsPortLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            _ftpsPortLabel.Name = "_ftpsPortLabel";
+            _ftpsPortLabel.Size = new System.Drawing.Size(144, 41);
+            _ftpsPortLabel.TabIndex = 2;
+            _ftpsPortLabel.Text = "Port:";
+            _ftpsPortLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // _ftpsEncryptionLabel
+            // 
+            _ftpsEncryptionLabel.AutoSize = true;
+            _ftpsEncryptionLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            _ftpsEncryptionLabel.Location = new System.Drawing.Point(20, 57);
+            _ftpsEncryptionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            _ftpsEncryptionLabel.Name = "_ftpsEncryptionLabel";
+            _ftpsEncryptionLabel.Size = new System.Drawing.Size(144, 39);
+            _ftpsEncryptionLabel.TabIndex = 20;
+            _ftpsEncryptionLabel.Text = "Encryption:";
+            _ftpsEncryptionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // _ftpsQuotaNumericUpDown
+            // 
+            _ftpsQuotaNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
+            _ftpsQuotaNumericUpDown.Location = new System.Drawing.Point(172, 265);
+            _ftpsQuotaNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            _ftpsQuotaNumericUpDown.Name = "_ftpsQuotaNumericUpDown";
+            _ftpsQuotaNumericUpDown.Size = new System.Drawing.Size(470, 31);
+            _ftpsQuotaNumericUpDown.TabIndex = 19;
+            // 
+            // _ftpsFolderTextBox
+            // 
+            _ftpsFolderTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            _ftpsFolderTextBox.Location = new System.Drawing.Point(172, 224);
+            _ftpsFolderTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            _ftpsFolderTextBox.Name = "_ftpsFolderTextBox";
+            _ftpsFolderTextBox.Size = new System.Drawing.Size(470, 31);
+            _ftpsFolderTextBox.TabIndex = 9;
+            // 
+            // _ftpsPasswordTextBox
+            // 
+            _ftpsPasswordTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            _ftpsPasswordTextBox.Location = new System.Drawing.Point(172, 183);
+            _ftpsPasswordTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            _ftpsPasswordTextBox.Name = "_ftpsPasswordTextBox";
+            _ftpsPasswordTextBox.Size = new System.Drawing.Size(470, 31);
+            _ftpsPasswordTextBox.TabIndex = 8;
+            // 
+            // _ftpsUserTextBox
+            // 
+            _ftpsUserTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            _ftpsUserTextBox.Location = new System.Drawing.Point(172, 142);
+            _ftpsUserTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            _ftpsUserTextBox.Name = "_ftpsUserTextBox";
+            _ftpsUserTextBox.Size = new System.Drawing.Size(470, 31);
+            _ftpsUserTextBox.TabIndex = 7;
+            // 
             // _ftpsPortNumericUpDown
             // 
             _ftpsPortNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
-            _ftpsPortNumericUpDown.Location = new System.Drawing.Point(172, 62);
+            _ftpsPortNumericUpDown.Location = new System.Drawing.Point(172, 101);
             _ftpsPortNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             _ftpsPortNumericUpDown.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
             _ftpsPortNumericUpDown.Name = "_ftpsPortNumericUpDown";
             _ftpsPortNumericUpDown.Size = new System.Drawing.Size(470, 31);
             _ftpsPortNumericUpDown.TabIndex = 6;
             // 
-            // _ftpsUserTextBox
+            // _ftpsEncryptionComboBox
             // 
-            _ftpsUserTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            _ftpsUserTextBox.Location = new System.Drawing.Point(172, 103);
-            _ftpsUserTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            _ftpsUserTextBox.Name = "_ftpsUserTextBox";
-            _ftpsUserTextBox.Size = new System.Drawing.Size(470, 31);
-            _ftpsUserTextBox.TabIndex = 7;
-            // 
-            // _ftpsPasswordTextBox
-            // 
-            _ftpsPasswordTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            _ftpsPasswordTextBox.Location = new System.Drawing.Point(172, 144);
-            _ftpsPasswordTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            _ftpsPasswordTextBox.Name = "_ftpsPasswordTextBox";
-            _ftpsPasswordTextBox.Size = new System.Drawing.Size(470, 31);
-            _ftpsPasswordTextBox.TabIndex = 8;
-            // 
-            // _ftpsFolderTextBox
-            // 
-            _ftpsFolderTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            _ftpsFolderTextBox.Location = new System.Drawing.Point(172, 185);
-            _ftpsFolderTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            _ftpsFolderTextBox.Name = "_ftpsFolderTextBox";
-            _ftpsFolderTextBox.Size = new System.Drawing.Size(470, 31);
-            _ftpsFolderTextBox.TabIndex = 9;
+            _ftpsEncryptionComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            _ftpsEncryptionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            _ftpsEncryptionComboBox.FormattingEnabled = true;
+            _ftpsEncryptionComboBox.Location = new System.Drawing.Point(171, 60);
+            _ftpsEncryptionComboBox.Name = "_ftpsEncryptionComboBox";
+            _ftpsEncryptionComboBox.Size = new System.Drawing.Size(472, 33);
+            _ftpsEncryptionComboBox.TabIndex = 21;
             // 
             // WhereUserControl
             // 
@@ -694,5 +721,7 @@ namespace BUtil.Configurator.Configurator.Controls
         private System.Windows.Forms.TextBox _ftpsFolderTextBox;
         private System.Windows.Forms.NumericUpDown _ftpsQuotaNumericUpDown;
         private System.Windows.Forms.LinkLabel _ftpsQuotaLabel;
+        private System.Windows.Forms.Label _ftpsEncryptionLabel;
+        private System.Windows.Forms.ComboBox _ftpsEncryptionComboBox;
     }
 }

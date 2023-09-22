@@ -1,5 +1,6 @@
 ﻿
 namespace BUtil.ConsoleBackup.UI {
+    using BUtil.Core.Localization;
     using System;
     using System.Collections.Generic;
     using Terminal.Gui;
@@ -13,10 +14,12 @@ namespace BUtil.ConsoleBackup.UI {
         
         private List<Terminal.Gui.View> _ftpsStorageControls = new List<View>();
         private Terminal.Gui.TextField _hostFtpsStorageFolderTextField;
+        private Terminal.Gui.ComboBox _ftpsEncryptionComboBox;
         private Terminal.Gui.TextField _portFtpsStorageFolderTextField;
         private Terminal.Gui.TextField _userFtpsStorageFolderTextField;
         private Terminal.Gui.TextField _pwdFtpsStorageFolderTextField;
         private Terminal.Gui.TextField _folderFtpsStorageFolderTextField;
+        private Terminal.Gui.TextField _ftpsQuotaTextField;
 
         private void InitializeComponent() {
             this.Width = Dim.Fill(0);
@@ -51,6 +54,31 @@ namespace BUtil.ConsoleBackup.UI {
             _userFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.User_Field, 9);
             _pwdFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.Password_Field, 12);
             _folderFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.Field_Folder, 15);
+            var ftpsEncryptionLabel = new Label
+            {
+                AutoSize = true,
+                X = 0,
+                Y = 18,
+                Text = Resources.Ftps_Field_Encryption,
+            };
+            _ftpsStorageControls.Add(ftpsEncryptionLabel);
+            Add(ftpsEncryptionLabel);
+
+            var ftpsEncryptionProps = new List<string> { BUtil.Core.Localization.Resources.Ftps_Encryption_Option_Explicit, Resources.Ftps_Encryption_Option_Implicit };
+            _ftpsEncryptionComboBox = new ComboBox
+            {
+                X = 0,
+                Y = 19,
+                Width = Dim.Fill(),
+                Height = ftpsEncryptionProps.Count + 1,
+                HideDropdownListOnClick = true,
+                ReadOnly = true,
+            };
+            _ftpsEncryptionComboBox.SetSource(ftpsEncryptionProps);
+            Add(_ftpsEncryptionComboBox);
+            _ftpsStorageControls.Add(_ftpsEncryptionComboBox);
+
+            _ftpsQuotaTextField = AddTextField(_ftpsStorageControls, Resources.DataStorage_Field_UploadQuota, 21);
 
             var saveButton = new Button
             {

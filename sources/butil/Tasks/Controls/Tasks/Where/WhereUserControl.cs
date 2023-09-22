@@ -30,11 +30,18 @@ namespace BUtil.Configurator.Configurator.Controls
             _ftpsQuotaLabel.Text = Resources.DataStorage_Field_UploadQuota;
             _ftpsServerLabel.Text = Resources.Server_Field_Address;
             _ftpsPortLabel.Text = Resources.Server_Field_Port;
+            _ftpsPortNumericUpDown.Value = 21;
             _ftpsUserLabel.Text = Resources.User_Field;
             _ftpsPasswordLabel.Text = Resources.Password_Field;
             _ftpsFolderLabel.Text = Resources.Field_Folder;
 
             _hddStorageTabPage.Text = Resources.DirectoryStorage;
+
+            _ftpsEncryptionLabel.Text = BUtil.Core.Localization.Resources.Ftps_Field_Encryption;
+            _ftpsEncryptionComboBox.Items.Clear();
+            _ftpsEncryptionComboBox.Items.Add(BUtil.Core.Localization.Resources.Ftps_Encryption_Option_Explicit);
+            _ftpsEncryptionComboBox.Items.Add(BUtil.Core.Localization.Resources.Ftps_Encryption_Option_Implicit);
+            _ftpsEncryptionComboBox.SelectedIndex = 0;
         }
 
         public IStorageSettingsV2 StorageSettings
@@ -67,6 +74,7 @@ namespace BUtil.Configurator.Configurator.Controls
                     storageSettings = new FtpsStorageSettingsV2
                     {
                         Host = _ftpsServerTextBox.Text,
+                        Encryption = (FtpsStorageEncryptionV2)_ftpsEncryptionComboBox.SelectedIndex,
                         Port = (int)_ftpsPortNumericUpDown.Value,
                         User = _ftpsUserTextBox.Text,
                         Password = _ftpsPasswordTextBox.Text,
@@ -110,6 +118,7 @@ namespace BUtil.Configurator.Configurator.Controls
                     _storageTypesTabControl.SelectedTab = _ftpsTabPage;
 
                     _ftpsServerTextBox.Text = ftpsSettings.Host;
+                    _ftpsEncryptionComboBox.SelectedIndex = (int)ftpsSettings.Encryption;
                     _ftpsPortNumericUpDown.Value = ftpsSettings.Port;
                     _ftpsUserTextBox.Text = ftpsSettings.User;
                     _ftpsPasswordTextBox.Text = ftpsSettings.Password;

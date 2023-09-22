@@ -607,4 +607,16 @@ See detailed description in the following link.</value>
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
     <value>Create incremental backup task</value>
   </data>
+  <data name="Ftps_Field_Encryption" xml:space="preserve">
+    <value>SSL/TTS encryption:</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
+    <value>Explicit</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
+    <value>Implicit</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
+    <value>Quota should be 0 (do not apply) or value above 0.</value>
+  </data>
 </root>

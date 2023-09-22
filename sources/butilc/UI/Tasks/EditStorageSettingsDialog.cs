@@ -25,6 +25,8 @@ namespace BUtil.ConsoleBackup.UI
             if (source == null)
             {
                 _transportSelectionComboBox.SelectedItem = 0;
+                _ftpsEncryptionComboBox.SelectedItem = 0;
+                _portFtpsStorageFolderTextField.Text = "21";
                 SelectTransport(0);
             }
             else
@@ -40,10 +42,12 @@ namespace BUtil.ConsoleBackup.UI
                     SelectTransport(1);
                     var storageSettings = (FtpsStorageSettingsV2)source;
                     _hostFtpsStorageFolderTextField.Text = storageSettings.Host;
+                    _ftpsEncryptionComboBox.SelectedItem = (int)storageSettings.Encryption;
                     _portFtpsStorageFolderTextField.Text = storageSettings.Port.ToString();
                     _userFtpsStorageFolderTextField.Text = storageSettings.User;
                     _pwdFtpsStorageFolderTextField.Text = storageSettings.Password;
                     _folderFtpsStorageFolderTextField.Text = storageSettings.Folder;
+                    _ftpsQuotaTextField.Text = storageSettings.SingleBackupQuotaGb.ToString();
                 }
                 else
                 {
@@ -80,10 +84,12 @@ namespace BUtil.ConsoleBackup.UI
                 storageSettings = new FtpsStorageSettingsV2
                 {
                     Host = _hostFtpsStorageFolderTextField.Text.ToString(),
-                    Port = int.TryParse(_portFtpsStorageFolderTextField.Text.ToString(), out var port) ? port : -1,
+                    Encryption = (FtpsStorageEncryptionV2)_ftpsEncryptionComboBox.SelectedItem,
+                    Port = int.TryParse(_portFtpsStorageFolderTextField.Text.ToString(), out var port) ? Math.Abs(port) : -1,
                     User = _userFtpsStorageFolderTextField.Text.ToString(),
                     Folder = _folderFtpsStorageFolderTextField.Text.ToString(),
-                    Password = _pwdFtpsStorageFolderTextField.Text.ToString()
+                    Password = _pwdFtpsStorageFolderTextField.Text.ToString(),
+                    SingleBackupQuotaGb = int.TryParse(_ftpsQuotaTextField.Text.ToString(), out var quota) ? Math.Abs(quota): 0,
                 };
             }
             else

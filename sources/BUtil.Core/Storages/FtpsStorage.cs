@@ -81,10 +81,19 @@ namespace BUtil.Core.Storages
         {
             Log.WriteLine(LoggingEvent.Debug, $"Mount");
             _client = new FtpClient(Settings.Host, Settings.User, Settings.Password, Settings.Port);
-            _client.Config.EncryptionMode = FtpEncryptionMode.Auto;
+            _client.Config.EncryptionMode = GetFtpEncryptionMode();
             _client.Config.ValidateAnyCertificate = true;
-            _client.Config.SslProtocols = System.Security.Authentication.SslProtocols.None;
-            _client.AutoConnect();
+            _client.Connect();
+        }
+
+        private FtpEncryptionMode GetFtpEncryptionMode()
+        {
+            switch (Settings.Encryption)
+            {
+                case FtpsStorageEncryptionV2.Explicit: return FtpEncryptionMode.Explicit;
+                case FtpsStorageEncryptionV2.Implicit: return FtpEncryptionMode.Implicit;
+                default: throw new ArgumentOutOfRangeException(nameof(Settings.Encryption));
+            }
         }
 
         private void Unmount()

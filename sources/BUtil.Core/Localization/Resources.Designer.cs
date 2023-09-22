@@ -386,6 +386,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Quota should be 0 (do not apply) or value above 0..
+        /// </summary>
+        public static string DataStorage_Field_UploadQuota_Validation {
+            get {
+                return ResourceManager.GetString("DataStorage_Field_UploadQuota_Validation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to If folder becomes available after executing some commands, specify PowerShell scripts for connection and disconnection..
         /// </summary>
         public static string DataStorage_Script_Help {
@@ -571,6 +580,33 @@ namespace BUtil.Core.Localization {
         public static string File_Saving {
             get {
                 return ResourceManager.GetString("File_Saving", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Explicit.
+        /// </summary>
+        public static string Ftps_Encryption_Option_Explicit {
+            get {
+                return ResourceManager.GetString("Ftps_Encryption_Option_Explicit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Implicit.
+        /// </summary>
+        public static string Ftps_Encryption_Option_Implicit {
+            get {
+                return ResourceManager.GetString("Ftps_Encryption_Option_Implicit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SSL/TTS encryption:.
+        /// </summary>
+        public static string Ftps_Field_Encryption {
+            get {
+                return ResourceManager.GetString("Ftps_Field_Encryption", resourceCulture);
             }
         }
         

@@ -22,6 +22,9 @@ namespace BUtil.Core.Storages
             if (storageSettings == null)
                 return BUtil.Core.Localization.Resources.DataStorage_Validation_NotSpecified;
 
+            if (storageSettings.SingleBackupQuotaGb < 0)
+                return BUtil.Core.Localization.Resources.DataStorage_Field_UploadQuota_Validation;
+
             try
             {
                 using (var storage = Create(new StubLog(), storageSettings))

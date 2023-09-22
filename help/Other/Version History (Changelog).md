@@ -1,7 +1,15 @@
 # 2023.09.22
 
+## Warning: FTPS storage encryption setting default was changed from Auto detect to Explicit. Update FTPS storage setting if it should be different.
+
+## New Features
+- FTPS encryption is now configurable and FTPS connection works stable.
+
 ## Bug Fixes
 - 150% DPI breaks progress window;
+- UI: not possible to specify FTPS port more than 100;
+- FTPS storage: autoconnect of fluent ui library did not work in some cases. It was dropped.
+- FTPS storage: sometimes testing storage was hanging the UI, CLI apps.
 
 # 2023.09.21
 
