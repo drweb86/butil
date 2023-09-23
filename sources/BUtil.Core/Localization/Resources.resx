@@ -613,4 +613,7 @@ See detailed description in the following link.</value>
   <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
     <value>Quota should be 0 (do not apply) or value above 0.</value>
   </data>
+  <data name="Field_Folder_Browse" xml:space="preserve">
+    <value>Browse</value>
+  </data>
 </root>

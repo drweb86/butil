@@ -614,4 +614,7 @@ bin.
   <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
     <value>Квота должна быть 0 (чтобы не применялась) или число больше нуля.</value>
   </data>
+  <data name="Field_Folder_Browse" xml:space="preserve">
+    <value>Указать папку</value>
+  </data>
 </root>

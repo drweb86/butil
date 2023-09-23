@@ -172,16 +172,13 @@
     <Content Include="Resources\OtherOptions48x48.png" />
     <Content Include="Resources\OtherSettings48x48.png" />
     <Content Include="Resources\Password48x48.png" />
-    <Content Include="Resources\ProgramInfo48x48.png" />
     <Content Include="Resources\RedFolder48x48.png" />
     <Content Include="Resources\Refresh48x48.png" />
     <Content Include="Resources\Schedule48x48.png" />
     <Content Include="Resources\SourceItems48x48.png" />
     <Content Include="Resources\Storages48x48.png" />
     <Content Include="Resources\BackupTask48x48.png" />
-    <Content Include="Resources\box_download_48.png" />
     <Content Include="Resources\PanelUser.png" />
-    <Content Include="Resources\Journals.png" />
   </ItemGroup>
   <PropertyGroup />
   <ItemGroup>

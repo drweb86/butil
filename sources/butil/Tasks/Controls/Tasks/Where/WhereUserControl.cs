@@ -15,16 +15,16 @@ namespace BUtil.Configurator.Configurator.Controls
         {
             InitializeComponent();
 
-            _limitUploadLabelV2.Text = _limitUploadLabel.Text = BUtil.Core.Localization.Resources.DataStorage_Field_UploadQuota;
-            _userLabel.Text = BUtil.Core.Localization.Resources.User_Field;
-            _passwordLabel.Text = BUtil.Core.Localization.Resources.Password_Field;
-            _shareLabel.Text = BUtil.Core.Localization.Resources.Url_Field;
+            _limitUploadLabelV2.Text = _limitUploadLabel.Text = Resources.DataStorage_Field_UploadQuota;
+            _userLabel.Text = Resources.User_Field;
+            _passwordLabel.Text = Resources.Password_Field;
+            _shareLabel.Text = Resources.Url_Field;
 
 
             whereToStoreBackupLabel.Text = Resources.DirectoryStorage_Field_Directory;
-            _scriptsLabel.Text = BUtil.Core.Localization.Resources.DataStorage_Script_Help;
-            _mountScriptLabel.Text = BUtil.Core.Localization.Resources.DataStorage_Field_ConnectScript;
-            _unmountScriptLabel.Text = BUtil.Core.Localization.Resources.DataStorage_Field_DisconnectionScript;
+            _scriptsLabel.Text = Resources.DataStorage_Script_Help;
+            _mountScriptLabel.Text = Resources.DataStorage_Field_ConnectScript;
+            _unmountScriptLabel.Text = Resources.DataStorage_Field_DisconnectionScript;
 
             _ftpsQuotaLabel.Text = Resources.DataStorage_Field_UploadQuota;
             _ftpsServerLabel.Text = Resources.Server_Field_Address;
@@ -36,11 +36,15 @@ namespace BUtil.Configurator.Configurator.Controls
 
             _hddStorageTabPage.Text = Resources.DirectoryStorage;
 
-            _ftpsEncryptionLabel.Text = BUtil.Core.Localization.Resources.Ftps_Field_Encryption;
+            _ftpsEncryptionLabel.Text = Resources.Ftps_Field_Encryption;
             _ftpsEncryptionComboBox.Items.Clear();
-            _ftpsEncryptionComboBox.Items.Add(BUtil.Core.Localization.Resources.Ftps_Encryption_Option_Explicit);
-            _ftpsEncryptionComboBox.Items.Add(BUtil.Core.Localization.Resources.Ftps_Encryption_Option_Implicit);
+            _ftpsEncryptionComboBox.Items.Add(Resources.Ftps_Encryption_Option_Explicit);
+            _ftpsEncryptionComboBox.Items.Add(Resources.Ftps_Encryption_Option_Implicit);
             _ftpsEncryptionComboBox.SelectedIndex = 0;
+
+            _specifyFolderDirectoryStorageButton.Text = Resources.Field_Folder_Browse;
+            _mountButton.Text = Resources.Task_Launch;
+            _unmountButton.Text = Resources.Task_Launch;
         }
 
         public IStorageSettingsV2 StorageSettings
@@ -156,8 +160,7 @@ namespace BUtil.Configurator.Configurator.Controls
             Messages.ShowInformationBox(Resources.DataStorage_Field_UploadQuota_Help);
         }
 
-
-        void searchButtonClick(object sender, EventArgs e)
+        private void searchButtonClick(object sender, EventArgs e)
         {
             if (fbd.ShowDialog() == DialogResult.OK)
             {

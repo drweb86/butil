@@ -22,7 +22,7 @@ namespace BUtil.Configurator.Configurator.Forms
         public EditIncrementalBackupTaskForm(TaskV2 task, ScheduleInfo scheduleInfo, TaskEditorPageEnum initialView)
         {
             InitializeComponent();
-            
+
             _task = task;
             _scheduleInfo = scheduleInfo;
             _initialView = initialView;

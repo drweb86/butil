@@ -243,16 +243,6 @@ namespace BUtil.Configurator {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap FolderOrangeOpen_32x32 {
-            get {
-                object obj = ResourceManager.GetObject("FolderOrangeOpen_32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap FTPS {
             get {
                 object obj = ResourceManager.GetObject("FTPS", resourceCulture);

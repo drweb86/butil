@@ -17,7 +17,7 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
             _transformFileNameLabel.Text = Resources.ImportMediaTask_Field_TransformFileName;
             _helpTokensLabel.Text = Resources.ImportMediaTask_Field_TransformFileName_Help;
             _skipPreviouslyImportedFilesCheckbox.Text = Resources.ImportMediaTask_SkipAlreadyImportedFiles;
-
+            _folderBrowseButton.Text = Resources.Field_Folder_Browse;
             OnChangeTransormFileName(this, new EventArgs());
         }
 

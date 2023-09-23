@@ -512,6 +512,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Browse.
+        /// </summary>
+        public static string Field_Folder_Browse {
+            get {
+                return ResourceManager.GetString("Field_Folder_Browse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Folder does not exist..
         /// </summary>
         public static string Field_Folder_Validation_NotExist {
