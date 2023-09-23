@@ -37,7 +37,7 @@ namespace BUtil.Configurator.Configurator.Controls
             _storageTypesTabControl = new System.Windows.Forms.TabControl();
             _hddStorageTabPage = new System.Windows.Forms.TabPage();
             tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            searchButton = new System.Windows.Forms.Button();
+            _specifyFolderDirectoryStorageButton = new System.Windows.Forms.Button();
             destinationFolderTextBox = new System.Windows.Forms.TextBox();
             whereToStoreBackupLabel = new System.Windows.Forms.Label();
             _uploadLimitGbNumericUpDownV2 = new System.Windows.Forms.NumericUpDown();
@@ -135,7 +135,7 @@ namespace BUtil.Configurator.Configurator.Controls
             tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            tableLayoutPanel2.Controls.Add(searchButton, 2, 0);
+            tableLayoutPanel2.Controls.Add(_specifyFolderDirectoryStorageButton, 2, 0);
             tableLayoutPanel2.Controls.Add(destinationFolderTextBox, 1, 0);
             tableLayoutPanel2.Controls.Add(whereToStoreBackupLabel, 0, 0);
             tableLayoutPanel2.Controls.Add(_uploadLimitGbNumericUpDownV2, 1, 1);
@@ -162,19 +162,20 @@ namespace BUtil.Configurator.Configurator.Controls
             tableLayoutPanel2.Size = new System.Drawing.Size(654, 341);
             tableLayoutPanel2.TabIndex = 8;
             // 
-            // searchButton
+            // _specifyFolderDirectoryStorageButton
             // 
-            searchButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            searchButton.Location = new System.Drawing.Point(506, 21);
-            searchButton.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            searchButton.Name = "searchButton";
-            searchButton.Size = new System.Drawing.Size(126, 52);
-            searchButton.TabIndex = 3;
-            searchButton.Text = "...";
-            searchButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            searchButton.UseVisualStyleBackColor = true;
-            searchButton.Click += searchButtonClick;
+            _specifyFolderDirectoryStorageButton.AutoSize = true;
+            _specifyFolderDirectoryStorageButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            _specifyFolderDirectoryStorageButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            _specifyFolderDirectoryStorageButton.Location = new System.Drawing.Point(506, 21);
+            _specifyFolderDirectoryStorageButton.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            _specifyFolderDirectoryStorageButton.Name = "_specifyFolderDirectoryStorageButton";
+            _specifyFolderDirectoryStorageButton.Size = new System.Drawing.Size(126, 35);
+            _specifyFolderDirectoryStorageButton.TabIndex = 3;
+            _specifyFolderDirectoryStorageButton.Text = "...";
+            _specifyFolderDirectoryStorageButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            _specifyFolderDirectoryStorageButton.UseVisualStyleBackColor = true;
+            _specifyFolderDirectoryStorageButton.Click += searchButtonClick;
             // 
             // destinationFolderTextBox
             // 
@@ -193,7 +194,7 @@ namespace BUtil.Configurator.Configurator.Controls
             whereToStoreBackupLabel.Location = new System.Drawing.Point(22, 16);
             whereToStoreBackupLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             whereToStoreBackupLabel.Name = "whereToStoreBackupLabel";
-            whereToStoreBackupLabel.Size = new System.Drawing.Size(289, 62);
+            whereToStoreBackupLabel.Size = new System.Drawing.Size(289, 45);
             whereToStoreBackupLabel.TabIndex = 4;
             whereToStoreBackupLabel.Text = "Folder where to store your backup:";
             whereToStoreBackupLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -201,7 +202,7 @@ namespace BUtil.Configurator.Configurator.Controls
             // _uploadLimitGbNumericUpDownV2
             // 
             _uploadLimitGbNumericUpDownV2.Dock = System.Windows.Forms.DockStyle.Fill;
-            _uploadLimitGbNumericUpDownV2.Location = new System.Drawing.Point(321, 83);
+            _uploadLimitGbNumericUpDownV2.Location = new System.Drawing.Point(321, 66);
             _uploadLimitGbNumericUpDownV2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             _uploadLimitGbNumericUpDownV2.Name = "_uploadLimitGbNumericUpDownV2";
             _uploadLimitGbNumericUpDownV2.Size = new System.Drawing.Size(175, 31);
@@ -211,7 +212,7 @@ namespace BUtil.Configurator.Configurator.Controls
             // 
             _unmountScriptLabel.AutoSize = true;
             _unmountScriptLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            _unmountScriptLabel.Location = new System.Drawing.Point(22, 252);
+            _unmountScriptLabel.Location = new System.Drawing.Point(22, 235);
             _unmountScriptLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             _unmountScriptLabel.Name = "_unmountScriptLabel";
             _unmountScriptLabel.Size = new System.Drawing.Size(289, 83);
@@ -223,7 +224,7 @@ namespace BUtil.Configurator.Configurator.Controls
             // 
             _mountScriptLabel.AutoSize = true;
             _mountScriptLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            _mountScriptLabel.Location = new System.Drawing.Point(22, 169);
+            _mountScriptLabel.Location = new System.Drawing.Point(22, 152);
             _mountScriptLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             _mountScriptLabel.Name = "_mountScriptLabel";
             _mountScriptLabel.Size = new System.Drawing.Size(289, 83);
@@ -234,7 +235,7 @@ namespace BUtil.Configurator.Configurator.Controls
             // _unmountTextBox
             // 
             _unmountTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            _unmountTextBox.Location = new System.Drawing.Point(321, 257);
+            _unmountTextBox.Location = new System.Drawing.Point(321, 240);
             _unmountTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             _unmountTextBox.Multiline = true;
             _unmountTextBox.Name = "_unmountTextBox";
@@ -244,7 +245,7 @@ namespace BUtil.Configurator.Configurator.Controls
             // _mountTextBox
             // 
             _mountTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            _mountTextBox.Location = new System.Drawing.Point(321, 174);
+            _mountTextBox.Location = new System.Drawing.Point(321, 157);
             _mountTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             _mountTextBox.Multiline = true;
             _mountTextBox.Name = "_mountTextBox";
@@ -254,7 +255,7 @@ namespace BUtil.Configurator.Configurator.Controls
             // _mountButton
             // 
             _mountButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            _mountButton.Location = new System.Drawing.Point(506, 174);
+            _mountButton.Location = new System.Drawing.Point(506, 157);
             _mountButton.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             _mountButton.MaximumSize = new System.Drawing.Size(126, 45);
             _mountButton.MinimumSize = new System.Drawing.Size(126, 45);
@@ -268,7 +269,7 @@ namespace BUtil.Configurator.Configurator.Controls
             // _unmountButton
             // 
             _unmountButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            _unmountButton.Location = new System.Drawing.Point(506, 257);
+            _unmountButton.Location = new System.Drawing.Point(506, 240);
             _unmountButton.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             _unmountButton.MaximumSize = new System.Drawing.Size(126, 45);
             _unmountButton.MinimumSize = new System.Drawing.Size(126, 45);
@@ -284,7 +285,7 @@ namespace BUtil.Configurator.Configurator.Controls
             _scriptsLabel.AutoSize = true;
             tableLayoutPanel2.SetColumnSpan(_scriptsLabel, 3);
             _scriptsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            _scriptsLabel.Location = new System.Drawing.Point(22, 119);
+            _scriptsLabel.Location = new System.Drawing.Point(22, 102);
             _scriptsLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             _scriptsLabel.MaximumSize = new System.Drawing.Size(857, 0);
             _scriptsLabel.Name = "_scriptsLabel";
@@ -297,7 +298,7 @@ namespace BUtil.Configurator.Configurator.Controls
             // 
             _limitUploadLabelV2.AutoSize = true;
             _limitUploadLabelV2.Dock = System.Windows.Forms.DockStyle.Fill;
-            _limitUploadLabelV2.Location = new System.Drawing.Point(20, 78);
+            _limitUploadLabelV2.Location = new System.Drawing.Point(20, 61);
             _limitUploadLabelV2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             _limitUploadLabelV2.Name = "_limitUploadLabelV2";
             _limitUploadLabelV2.Size = new System.Drawing.Size(293, 41);
@@ -678,7 +679,7 @@ namespace BUtil.Configurator.Configurator.Controls
         private System.Windows.Forms.TextBox _userTextBox;
         private System.Windows.Forms.LinkLabel _limitUploadLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.Button _specifyFolderDirectoryStorageButton;
         private System.Windows.Forms.TextBox destinationFolderTextBox;
         private System.Windows.Forms.Label whereToStoreBackupLabel;
         private System.Windows.Forms.NumericUpDown _uploadLimitGbNumericUpDownV2;

@@ -10,15 +10,18 @@ namespace BUtil.ConsoleBackup.UI {
         private Terminal.Gui.ComboBox _transportSelectionComboBox;
 
         private List<Terminal.Gui.View> _folderStorageControls = new List<View>();
-        private Terminal.Gui.TextField _folderStorageFolderTextField;
-        
+        private Terminal.Gui.TextField _folderDirectoryTextField;
+        private Terminal.Gui.TextField _folderQuotaTextField;
+        private Terminal.Gui.TextView _folderConnectionScriptTextField;
+        private Terminal.Gui.TextView _folderDisconnectionScriptTextField;
+
         private List<Terminal.Gui.View> _ftpsStorageControls = new List<View>();
-        private Terminal.Gui.TextField _hostFtpsStorageFolderTextField;
+        private Terminal.Gui.TextField _ftpsHostTextField;
         private Terminal.Gui.ComboBox _ftpsEncryptionComboBox;
-        private Terminal.Gui.TextField _portFtpsStorageFolderTextField;
-        private Terminal.Gui.TextField _userFtpsStorageFolderTextField;
-        private Terminal.Gui.TextField _pwdFtpsStorageFolderTextField;
-        private Terminal.Gui.TextField _folderFtpsStorageFolderTextField;
+        private Terminal.Gui.TextField _ftpsPortTextField;
+        private Terminal.Gui.TextField _ftpsUserTextField;
+        private Terminal.Gui.TextField _ftpPasswordTextField;
+        private Terminal.Gui.TextField _ftpsFolderTextField;
         private Terminal.Gui.TextField _ftpsQuotaTextField;
 
         private void InitializeComponent() {
@@ -47,13 +50,16 @@ namespace BUtil.ConsoleBackup.UI {
             _transportSelectionComboBox.SelectedItemChanged += OnTransportTypeSelection;
             Add(_transportSelectionComboBox);
 
-            _folderStorageFolderTextField = AddTextField(_folderStorageControls, BUtil.Core.Localization.Resources.Field_Folder, 3);
+            _folderDirectoryTextField = AddTextField(_folderStorageControls, BUtil.Core.Localization.Resources.Field_Folder, 3);
+            _folderQuotaTextField = AddTextField(_folderStorageControls, Resources.DataStorage_Field_UploadQuota, 6);
+            _folderConnectionScriptTextField = AddTextView(_folderStorageControls, Resources.DataStorage_Field_ConnectScript, 9, 6);
+            _folderDisconnectionScriptTextField = AddTextView(_folderStorageControls, Resources.DataStorage_Field_DisconnectionScript, 17, 6);
 
-            _hostFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.Server_Field_Address, 3);
-            _portFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.Server_Field_Port, 6);
-            _userFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.User_Field, 9);
-            _pwdFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.Password_Field, 12);
-            _folderFtpsStorageFolderTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.Field_Folder, 15);
+            _ftpsHostTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.Server_Field_Address, 3);
+            _ftpsPortTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.Server_Field_Port, 6);
+            _ftpsUserTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.User_Field, 9);
+            _ftpPasswordTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.Password_Field, 12);
+            _ftpsFolderTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.Field_Folder, 15);
             var ftpsEncryptionLabel = new Label
             {
                 AutoSize = true,
@@ -114,6 +120,31 @@ namespace BUtil.ConsoleBackup.UI {
                 X = 0,
                 Y = y + 1,
                 Width = Dim.Fill(0),
+            };
+            items.Add(field);
+            this.Add(field);
+            return field;
+        }
+
+        private TextView AddTextView(List<Terminal.Gui.View> items, string label, int y, int height)
+        {
+            var labelView = new Label
+            {
+                AutoSize = true,
+                X = 0,
+                Y = y,
+                Text = label,
+            };
+
+            items.Add(labelView);
+            this.Add(labelView);
+
+            var field = new TextView
+            {
+                X = 0,
+                Y = y + 1,
+                Width = Dim.Fill(0),
+                Height = height
             };
             items.Add(field);
             this.Add(field);
