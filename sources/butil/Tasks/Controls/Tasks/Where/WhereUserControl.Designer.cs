@@ -167,23 +167,23 @@ namespace BUtil.Configurator.Configurator.Controls
             _specifyFolderDirectoryStorageButton.AutoSize = true;
             _specifyFolderDirectoryStorageButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             _specifyFolderDirectoryStorageButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            _specifyFolderDirectoryStorageButton.Location = new System.Drawing.Point(506, 21);
+            _specifyFolderDirectoryStorageButton.Image = Icons.FolderOrangeOpen_32x32;
+            _specifyFolderDirectoryStorageButton.Location = new System.Drawing.Point(592, 21);
             _specifyFolderDirectoryStorageButton.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            _specifyFolderDirectoryStorageButton.MinimumSize = new System.Drawing.Size(40, 40);
             _specifyFolderDirectoryStorageButton.Name = "_specifyFolderDirectoryStorageButton";
-            _specifyFolderDirectoryStorageButton.Size = new System.Drawing.Size(126, 35);
+            _specifyFolderDirectoryStorageButton.Size = new System.Drawing.Size(40, 40);
             _specifyFolderDirectoryStorageButton.TabIndex = 3;
-            _specifyFolderDirectoryStorageButton.Text = "...";
-            _specifyFolderDirectoryStorageButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             _specifyFolderDirectoryStorageButton.UseVisualStyleBackColor = true;
             _specifyFolderDirectoryStorageButton.Click += searchButtonClick;
             // 
             // destinationFolderTextBox
             // 
             destinationFolderTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            destinationFolderTextBox.Location = new System.Drawing.Point(323, 21);
-            destinationFolderTextBox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            destinationFolderTextBox.Location = new System.Drawing.Point(321, 28);
+            destinationFolderTextBox.Margin = new System.Windows.Forms.Padding(4, 12, 4, 0);
             destinationFolderTextBox.Name = "destinationFolderTextBox";
-            destinationFolderTextBox.Size = new System.Drawing.Size(171, 31);
+            destinationFolderTextBox.Size = new System.Drawing.Size(261, 31);
             destinationFolderTextBox.TabIndex = 2;
             destinationFolderTextBox.TabStop = false;
             // 
@@ -194,7 +194,7 @@ namespace BUtil.Configurator.Configurator.Controls
             whereToStoreBackupLabel.Location = new System.Drawing.Point(22, 16);
             whereToStoreBackupLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             whereToStoreBackupLabel.Name = "whereToStoreBackupLabel";
-            whereToStoreBackupLabel.Size = new System.Drawing.Size(289, 45);
+            whereToStoreBackupLabel.Size = new System.Drawing.Size(289, 50);
             whereToStoreBackupLabel.TabIndex = 4;
             whereToStoreBackupLabel.Text = "Folder where to store your backup:";
             whereToStoreBackupLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -202,17 +202,18 @@ namespace BUtil.Configurator.Configurator.Controls
             // _uploadLimitGbNumericUpDownV2
             // 
             _uploadLimitGbNumericUpDownV2.Dock = System.Windows.Forms.DockStyle.Fill;
-            _uploadLimitGbNumericUpDownV2.Location = new System.Drawing.Point(321, 66);
+            _uploadLimitGbNumericUpDownV2.Location = new System.Drawing.Point(321, 71);
             _uploadLimitGbNumericUpDownV2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            _uploadLimitGbNumericUpDownV2.Maximum = new decimal(new int[] { 10000000, 0, 0, 0 });
             _uploadLimitGbNumericUpDownV2.Name = "_uploadLimitGbNumericUpDownV2";
-            _uploadLimitGbNumericUpDownV2.Size = new System.Drawing.Size(175, 31);
+            _uploadLimitGbNumericUpDownV2.Size = new System.Drawing.Size(261, 31);
             _uploadLimitGbNumericUpDownV2.TabIndex = 7;
             // 
             // _unmountScriptLabel
             // 
             _unmountScriptLabel.AutoSize = true;
             _unmountScriptLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            _unmountScriptLabel.Location = new System.Drawing.Point(22, 235);
+            _unmountScriptLabel.Location = new System.Drawing.Point(22, 240);
             _unmountScriptLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             _unmountScriptLabel.Name = "_unmountScriptLabel";
             _unmountScriptLabel.Size = new System.Drawing.Size(289, 83);
@@ -224,7 +225,7 @@ namespace BUtil.Configurator.Configurator.Controls
             // 
             _mountScriptLabel.AutoSize = true;
             _mountScriptLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            _mountScriptLabel.Location = new System.Drawing.Point(22, 152);
+            _mountScriptLabel.Location = new System.Drawing.Point(22, 157);
             _mountScriptLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             _mountScriptLabel.Name = "_mountScriptLabel";
             _mountScriptLabel.Size = new System.Drawing.Size(289, 83);
@@ -235,48 +236,54 @@ namespace BUtil.Configurator.Configurator.Controls
             // _unmountTextBox
             // 
             _unmountTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            _unmountTextBox.Location = new System.Drawing.Point(321, 240);
+            _unmountTextBox.Location = new System.Drawing.Point(321, 245);
             _unmountTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             _unmountTextBox.Multiline = true;
             _unmountTextBox.Name = "_unmountTextBox";
-            _unmountTextBox.Size = new System.Drawing.Size(175, 73);
+            _unmountTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            _unmountTextBox.Size = new System.Drawing.Size(261, 73);
             _unmountTextBox.TabIndex = 12;
             // 
             // _mountTextBox
             // 
             _mountTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            _mountTextBox.Location = new System.Drawing.Point(321, 157);
+            _mountTextBox.Location = new System.Drawing.Point(321, 162);
             _mountTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             _mountTextBox.Multiline = true;
             _mountTextBox.Name = "_mountTextBox";
-            _mountTextBox.Size = new System.Drawing.Size(175, 73);
+            _mountTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            _mountTextBox.Size = new System.Drawing.Size(261, 73);
             _mountTextBox.TabIndex = 11;
             // 
             // _mountButton
             // 
+            _mountButton.AutoSize = true;
+            _mountButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             _mountButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            _mountButton.Location = new System.Drawing.Point(506, 157);
+            _mountButton.Image = Icons.CrystalClear_EveraldoCoelho_Forward_32x32;
+            _mountButton.Location = new System.Drawing.Point(592, 162);
             _mountButton.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             _mountButton.MaximumSize = new System.Drawing.Size(126, 45);
-            _mountButton.MinimumSize = new System.Drawing.Size(126, 45);
+            _mountButton.MinimumSize = new System.Drawing.Size(40, 40);
             _mountButton.Name = "_mountButton";
-            _mountButton.Size = new System.Drawing.Size(126, 45);
+            _mountButton.Size = new System.Drawing.Size(40, 45);
             _mountButton.TabIndex = 13;
-            _mountButton.Text = "Run";
             _mountButton.UseVisualStyleBackColor = true;
             _mountButton.Click += OnMountScript;
             // 
             // _unmountButton
             // 
+            _unmountButton.AutoSize = true;
+            _unmountButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             _unmountButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            _unmountButton.Location = new System.Drawing.Point(506, 240);
+            _unmountButton.Image = Icons.CrystalClear_EveraldoCoelho_Forward_32x32;
+            _unmountButton.Location = new System.Drawing.Point(592, 245);
             _unmountButton.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             _unmountButton.MaximumSize = new System.Drawing.Size(126, 45);
-            _unmountButton.MinimumSize = new System.Drawing.Size(126, 45);
+            _unmountButton.MinimumSize = new System.Drawing.Size(40, 40);
             _unmountButton.Name = "_unmountButton";
-            _unmountButton.Size = new System.Drawing.Size(126, 45);
+            _unmountButton.Size = new System.Drawing.Size(40, 45);
             _unmountButton.TabIndex = 14;
-            _unmountButton.Text = "Run";
             _unmountButton.UseVisualStyleBackColor = true;
             _unmountButton.Click += OnUnmount;
             // 
@@ -285,7 +292,7 @@ namespace BUtil.Configurator.Configurator.Controls
             _scriptsLabel.AutoSize = true;
             tableLayoutPanel2.SetColumnSpan(_scriptsLabel, 3);
             _scriptsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            _scriptsLabel.Location = new System.Drawing.Point(22, 102);
+            _scriptsLabel.Location = new System.Drawing.Point(22, 107);
             _scriptsLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             _scriptsLabel.MaximumSize = new System.Drawing.Size(857, 0);
             _scriptsLabel.Name = "_scriptsLabel";
@@ -298,7 +305,7 @@ namespace BUtil.Configurator.Configurator.Controls
             // 
             _limitUploadLabelV2.AutoSize = true;
             _limitUploadLabelV2.Dock = System.Windows.Forms.DockStyle.Fill;
-            _limitUploadLabelV2.Location = new System.Drawing.Point(20, 61);
+            _limitUploadLabelV2.Location = new System.Drawing.Point(20, 66);
             _limitUploadLabelV2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             _limitUploadLabelV2.Name = "_limitUploadLabelV2";
             _limitUploadLabelV2.Size = new System.Drawing.Size(293, 41);
@@ -353,11 +360,11 @@ namespace BUtil.Configurator.Configurator.Controls
             // _shareTextBox
             // 
             _shareTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            _shareTextBox.Location = new System.Drawing.Point(174, 21);
-            _shareTextBox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            _shareTextBox.Location = new System.Drawing.Point(172, 21);
+            _shareTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             _shareTextBox.Name = "_shareTextBox";
             _shareTextBox.PlaceholderText = "\\\\192.168.11.1\\share\\folder";
-            _shareTextBox.Size = new System.Drawing.Size(458, 31);
+            _shareTextBox.Size = new System.Drawing.Size(462, 31);
             _shareTextBox.TabIndex = 2;
             _shareTextBox.TabStop = false;
             // 
@@ -378,6 +385,7 @@ namespace BUtil.Configurator.Configurator.Controls
             _uploadLimitGbNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
             _uploadLimitGbNumericUpDown.Location = new System.Drawing.Point(172, 62);
             _uploadLimitGbNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            _uploadLimitGbNumericUpDown.Maximum = new decimal(new int[] { 10000000, 0, 0, 0 });
             _uploadLimitGbNumericUpDown.Name = "_uploadLimitGbNumericUpDown";
             _uploadLimitGbNumericUpDown.Size = new System.Drawing.Size(462, 31);
             _uploadLimitGbNumericUpDown.TabIndex = 7;
@@ -586,6 +594,7 @@ namespace BUtil.Configurator.Configurator.Controls
             _ftpsQuotaNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
             _ftpsQuotaNumericUpDown.Location = new System.Drawing.Point(172, 265);
             _ftpsQuotaNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            _ftpsQuotaNumericUpDown.Maximum = new decimal(new int[] { 10000000, 0, 0, 0 });
             _ftpsQuotaNumericUpDown.Name = "_ftpsQuotaNumericUpDown";
             _ftpsQuotaNumericUpDown.Size = new System.Drawing.Size(470, 31);
             _ftpsQuotaNumericUpDown.TabIndex = 19;
@@ -632,9 +641,10 @@ namespace BUtil.Configurator.Configurator.Controls
             _ftpsEncryptionComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
             _ftpsEncryptionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             _ftpsEncryptionComboBox.FormattingEnabled = true;
-            _ftpsEncryptionComboBox.Location = new System.Drawing.Point(171, 60);
+            _ftpsEncryptionComboBox.Location = new System.Drawing.Point(172, 60);
+            _ftpsEncryptionComboBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             _ftpsEncryptionComboBox.Name = "_ftpsEncryptionComboBox";
-            _ftpsEncryptionComboBox.Size = new System.Drawing.Size(472, 33);
+            _ftpsEncryptionComboBox.Size = new System.Drawing.Size(470, 33);
             _ftpsEncryptionComboBox.TabIndex = 21;
             // 
             // WhereUserControl

@@ -128,51 +128,6 @@
     <value>Resources\folder_48.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="sevenZipPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        Qk2WCQAAAAAAADYAAAAoAAAAIAAAABkAAAABABgAAAAAAAAAAADEDgAAxA4AAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAA////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////AAAAAAAAAAAAAAAA////////////////
-        ////////////////////////////////////////////////////////////////////////////////
-        ////////////////AAAAAAAAAAAAAAAA////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////AAAAAAAAAAAAAAAA
-        ////////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////AAAAAAAA
-        AAAAAAAAAAAAAAAAAAAA////////////AAAAAAAAAAAAAAAA////////////AAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////AAAAAAAAAAAAAAAAAAAAAAAAAAAA////////////
-        AAAAAAAAAAAAAAAA////////////AAAAAAAAAAAAAAAAAAAA////////////AAAAAAAAAAAAAAAAAAAA
-        ////////AAAAAAAAAAAA////////////////////////////AAAAAAAAAAAAAAAA////////////AAAA
-        AAAAAAAAAAAAAAAA////////////AAAAAAAAAAAAAAAAAAAA////////AAAAAAAAAAAA////////////
-        ////////////////AAAAAAAAAAAAAAAA////////////AAAAAAAAAAAAAAAAAAAA////////////AAAA
-        AAAAAAAAAAAAAAAA////////////AAAAAAAAAAAA////////////////////////AAAAAAAAAAAAAAAA
-        ////////////AAAAAAAAAAAAAAAAAAAA////////////AAAAAAAAAAAAAAAAAAAA////////////////
-        AAAAAAAAAAAA////////////////////AAAAAAAAAAAAAAAA////////////AAAAAAAAAAAAAAAAAAAA
-        ////////////AAAAAAAAAAAAAAAAAAAA////////////////////AAAAAAAAAAAA////////////////
-        AAAAAAAAAAAAAAAA////////////AAAAAAAAAAAAAAAAAAAAAAAA////////////AAAAAAAAAAAAAAAA
-        ////////////////////////AAAAAAAAAAAA////////////AAAAAAAAAAAAAAAA////////////AAAA
-        AAAAAAAAAAAAAAAAAAAAAAAA////////////AAAAAAAAAAAA////////AAAAAAAAAAAAAAAAAAAAAAAA
-        AAAA////////////AAAAAAAAAAAAAAAA////////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////
-        ////////AAAAAAAA////////AAAAAAAAAAAAAAAAAAAAAAAAAAAA////////////AAAAAAAAAAAAAAAA
-        ////////////AAAAAAAA////////////////////////////////////AAAAAAAA////////////////
-        ////////////////////////////////AAAAAAAAAAAAAAAA////////////AAAAAAAA////////////
-        ////////////////////////AAAAAAAA////////////////////////////////////////////////
-        AAAAAAAAAAAAAAAA////////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        ////////////////////////////////////////////////AAAAAAAAAAAAAAAA////////////AAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////////////////////////////
-        ////////////////AAAAAAAAAAAAAAAA////////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAA////////////////////////////////////////////////AAAAAAAAAAAAAAAA
-        ////////////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////AAAAAAAAAAAAAAAA////////////////////////////////
-        ////////////////////////////////////////////////////////////////////////////////
-        AAAAAAAAAAAAAAAA////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-</value>
-  </data>
   <data name="BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAAoAAAAUCAIAAAA7jDsBAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
@@ -185,9 +140,6 @@
         HAZQP/fqF55wycSuJ3aZeMWkni/1GHcB1Nx9zfVKVL/0hC6GlBzuQdXaV+19zfEQUaW7YAJRBhXzp2L9
         VDEb21cdThFh5+wPCspx/Q7CETgAAAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="Start" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Start.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Add_Files1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Add_Files2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -2457,15 +2409,6 @@
   <data name="AddFolder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\AddFolder.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RemoveSuccesfullLogs" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\RemoveSuccesfullLogs.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ArrayUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\ArrayUp.PNG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Journals" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\journals.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="box_download_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\box_download_48.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -2487,12 +2430,6 @@
   <data name="Add Folders" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Add Folders.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Start48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Start48x48.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ArrayDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\ArrayDown.PNG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="removeFromListToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
@@ -2503,17 +2440,6 @@
         rkJggg==
 </value>
   </data>
-  <data name="logoPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA+0lEQVRIS+2NURICIQxD92gezZtrIBBq
-        6RaWb9+8qbOtCdc+H0NbbYPAUv8AxlKhlkQEBvVzrVBLIgKD+rlWqCURgUH9XCvUkojAoH6uFWqhMa27
-        0lYTtt3+S9UUtxNq8EehaopbmY84eeD92lURVVPBXolbma4lURFVU8FeiVuZriVREVVTwV6JW5muJVER
-        VdNbjh8IwCEEJ9eSmPW034n/A51ym+HBtSQqcgNOVozTB9RBO9P6/0C3M63570c8fuCAqIncrB2tptJW
-        E7bG/MmtQzEM2yHi1qEYhu0QcetQDMN2iLh1KIZhO0TcOhTDsB16QuuutNWS6/oCmdCGRg07NcIAAAAA
-        SUVORK5CYII=
-</value>
-  </data>
   <data name="Add_Files" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Add_Files.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -2522,9 +2448,6 @@
   </data>
   <data name="deleteSelected" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\deleteSelected.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="OpenSelectedLogs" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\OpenSelectedLogs.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="addNewToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2538,12 +2461,6 @@
   </data>
   <data name="Open" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Open.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="OpenRecentLog" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\OpenRecentLog.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Logs" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Logs.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Hdd48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Hdd48x48.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -2581,12 +2498,6 @@
   <data name="Help48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>resources\help48x48.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Ftp16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>resources\ftp16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Ftp48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>resources\ftp48x48.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Refresh48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>resources\refresh48x48.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -2598,5 +2509,11 @@
   </data>
   <data name="FTPS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\FTPS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CrystalClear_EveraldoCoelho_Forward_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\CrystalClear_EveraldoCoelho_Forward_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FolderOrangeOpen_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\FolderOrangeOpen_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

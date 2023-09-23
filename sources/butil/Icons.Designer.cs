@@ -153,26 +153,6 @@ namespace BUtil.Configurator {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap ArrayDown {
-            get {
-                object obj = ResourceManager.GetObject("ArrayDown", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap ArrayUp {
-            get {
-                object obj = ResourceManager.GetObject("ArrayUp", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap BackgroundImage {
             get {
                 object obj = ResourceManager.GetObject("BackgroundImage", resourceCulture);
@@ -233,6 +213,16 @@ namespace BUtil.Configurator {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap CrystalClear_EveraldoCoelho_Forward_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("CrystalClear_EveraldoCoelho_Forward_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap deleteSelected {
             get {
                 object obj = ResourceManager.GetObject("deleteSelected", resourceCulture);
@@ -253,19 +243,9 @@ namespace BUtil.Configurator {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Ftp16x16 {
+        public static System.Drawing.Bitmap FolderOrangeOpen_32x32 {
             get {
-                object obj = ResourceManager.GetObject("Ftp16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Ftp48x48 {
-            get {
-                object obj = ResourceManager.GetObject("Ftp48x48", resourceCulture);
+                object obj = ResourceManager.GetObject("FolderOrangeOpen_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -313,16 +293,6 @@ namespace BUtil.Configurator {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Journals {
-            get {
-                object obj = ResourceManager.GetObject("Journals", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap Lamp48x48 {
             get {
                 object obj = ResourceManager.GetObject("Lamp48x48", resourceCulture);
@@ -343,49 +313,9 @@ namespace BUtil.Configurator {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap logoPictureBox_Image {
-            get {
-                object obj = ResourceManager.GetObject("logoPictureBox.Image", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Logs {
-            get {
-                object obj = ResourceManager.GetObject("Logs", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap Open {
             get {
                 object obj = ResourceManager.GetObject("Open", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap OpenRecentLog {
-            get {
-                object obj = ResourceManager.GetObject("OpenRecentLog", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap OpenSelectedLogs {
-            get {
-                object obj = ResourceManager.GetObject("OpenSelectedLogs", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -463,29 +393,9 @@ namespace BUtil.Configurator {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap RemoveSuccesfullLogs {
-            get {
-                object obj = ResourceManager.GetObject("RemoveSuccesfullLogs", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap Schedule48x48 {
             get {
                 object obj = ResourceManager.GetObject("Schedule48x48", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap sevenZipPictureBox_Image {
-            get {
-                object obj = ResourceManager.GetObject("sevenZipPictureBox.Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -516,26 +426,6 @@ namespace BUtil.Configurator {
         public static System.Drawing.Bitmap SourceItems48x48 {
             get {
                 object obj = ResourceManager.GetObject("SourceItems48x48", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Start {
-            get {
-                object obj = ResourceManager.GetObject("Start", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Start48x48 {
-            get {
-                object obj = ResourceManager.GetObject("Start48x48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

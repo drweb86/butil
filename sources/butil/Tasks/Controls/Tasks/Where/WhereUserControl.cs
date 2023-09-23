@@ -25,7 +25,6 @@ namespace BUtil.Configurator.Configurator.Controls
             _scriptsLabel.Text = BUtil.Core.Localization.Resources.DataStorage_Script_Help;
             _mountScriptLabel.Text = BUtil.Core.Localization.Resources.DataStorage_Field_ConnectScript;
             _unmountScriptLabel.Text = BUtil.Core.Localization.Resources.DataStorage_Field_DisconnectionScript;
-            _mountButton.Text = _unmountButton.Text = BUtil.Core.Localization.Resources.Task_Launch;
 
             _ftpsQuotaLabel.Text = Resources.DataStorage_Field_UploadQuota;
             _ftpsServerLabel.Text = Resources.Server_Field_Address;

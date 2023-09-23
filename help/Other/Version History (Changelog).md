@@ -5,6 +5,9 @@
 ## New Features
 - FTPS encryption is now configurable and FTPS connection works stable.
 
+## Changes
+- Setup and Italian language were improved by https://github.com/bovirus
+
 ## Bug Fixes
 - 150% DPI breaks progress window;
 - 150% DPI breaks launch task control, bottom buttons;
