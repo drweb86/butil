@@ -24,6 +24,12 @@ namespace BUtil.ConsoleBackup.UI {
         private Terminal.Gui.TextField _ftpsFolderTextField;
         private Terminal.Gui.TextField _ftpsQuotaTextField;
 
+        private List<Terminal.Gui.View> _sambaStorageControls = new List<View>();
+        private Terminal.Gui.TextField _sambaUrlTextField;
+        private Terminal.Gui.TextField _sambaUserTextField;
+        private Terminal.Gui.TextField _sambaPasswordTextField;
+        private Terminal.Gui.TextField _sambaQuotaTextField;
+
         private void InitializeComponent() {
             this.Width = Dim.Fill(0);
             this.Height = Dim.Fill(0);
@@ -36,7 +42,7 @@ namespace BUtil.ConsoleBackup.UI {
                 Y = 0,
                 Text = BUtil.Core.Localization.Resources.LeftMenu_Where,
             });
-            var transports = new List<string> { BUtil.Core.Localization.Resources.DirectoryStorage, "FTPS" };
+            var transports = new List<string> { BUtil.Core.Localization.Resources.DirectoryStorage, "FTPS", "SMB/CIFS" };
             _transportSelectionComboBox = new ComboBox
             {
                 X = 0,
@@ -54,6 +60,11 @@ namespace BUtil.ConsoleBackup.UI {
             _folderQuotaTextField = AddTextField(_folderStorageControls, Resources.DataStorage_Field_UploadQuota, 6);
             _folderConnectionScriptTextField = AddTextView(_folderStorageControls, Resources.DataStorage_Field_ConnectScript, 9, 6);
             _folderDisconnectionScriptTextField = AddTextView(_folderStorageControls, Resources.DataStorage_Field_DisconnectionScript, 17, 6);
+
+            _sambaUrlTextField = AddTextField(_sambaStorageControls, BUtil.Core.Localization.Resources.Url_Field, 3);
+            _sambaUserTextField = AddTextField(_sambaStorageControls, Resources.User_Field, 6);
+            _sambaPasswordTextField = AddTextField(_sambaStorageControls, Resources.Password_Field, 9);
+            _sambaQuotaTextField = AddTextField(_sambaStorageControls, Resources.DataStorage_Field_UploadQuota, 12);
 
             _ftpsHostTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.Server_Field_Address, 3);
             _ftpsPortTextField = AddTextField(_ftpsStorageControls, BUtil.Core.Localization.Resources.Server_Field_Port, 6);

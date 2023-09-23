@@ -15,6 +15,7 @@ namespace BUtil.ConsoleBackup.UI
         {
             _folderStorageControls.ForEach(x => x.Visible = transportId == 0);
             _ftpsStorageControls.ForEach(x => x.Visible = transportId == 1);
+            _sambaStorageControls.ForEach(x => x.Visible = transportId == 2);
         }
 
         internal EditStorageSettingsDialog(IStorageSettingsV2 source, string title) 
@@ -52,6 +53,16 @@ namespace BUtil.ConsoleBackup.UI
                     _ftpPasswordTextField.Text = storageSettings.Password;
                     _ftpsFolderTextField.Text = storageSettings.Folder;
                     _ftpsQuotaTextField.Text = storageSettings.SingleBackupQuotaGb.ToString();
+                }
+                else if (source is SambaStorageSettingsV2)
+                {
+                    _transportSelectionComboBox.SelectedItem = 2;
+                    SelectTransport(2);
+                    var settings = (SambaStorageSettingsV2)source;
+                    _sambaUrlTextField.Text = settings.Url;
+                    _sambaUserTextField.Text = settings.User;
+                    _sambaPasswordTextField.Text = settings.Password;
+                    _sambaQuotaTextField.Text = settings.SingleBackupQuotaGb.ToString();
                 }
                 else
                 {
@@ -97,6 +108,16 @@ namespace BUtil.ConsoleBackup.UI
                     Folder = _ftpsFolderTextField.Text.ToString(),
                     Password = _ftpPasswordTextField.Text.ToString(),
                     SingleBackupQuotaGb = int.TryParse(_ftpsQuotaTextField.Text.ToString(), out var quota) ? Math.Abs(quota): 0,
+                };
+            }
+            else if (_transportSelectionComboBox.SelectedItem == 2)
+            {
+                storageSettings = new SambaStorageSettingsV2
+                {
+                    Url = _sambaUrlTextField.Text.ToString(),
+                    User = _sambaUserTextField.Text.ToString(),
+                    Password = _sambaPasswordTextField.Text.ToString(),
+                    SingleBackupQuotaGb = int.TryParse(_sambaQuotaTextField.Text.ToString(), out var quota) ? Math.Abs(quota) : 0,
                 };
             }
             else

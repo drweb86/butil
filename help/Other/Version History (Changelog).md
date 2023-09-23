@@ -1,9 +1,11 @@
-# 2023.09.22
+# 2023.09.23
 
 ## Warning: FTPS storage encryption setting default was changed from Auto detect to Explicit. Update FTPS storage setting if it should be different.
 
 ## New Features
 - FTPS encryption is now configurable and FTPS connection works stable.
+- CLI: samba configuration is possible
+- Import pictures from phone via FTPS through Wi-Fi guide with pictures (https://github.com/drweb86/butil/blob/master/help/Configure/Import%20media%20task.md).
 
 ## Changes
 - Setup and Italian language were improved by https://github.com/bovirus

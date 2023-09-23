@@ -325,7 +325,7 @@ namespace BUtil.Configurator.Configurator.Controls
             _sambaTabPage.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             _sambaTabPage.Size = new System.Drawing.Size(662, 351);
             _sambaTabPage.TabIndex = 1;
-            _sambaTabPage.Text = "Samba";
+            _sambaTabPage.Text = "SMB/CIFS";
             _sambaTabPage.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel1
