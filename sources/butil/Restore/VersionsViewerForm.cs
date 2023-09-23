@@ -38,7 +38,7 @@ namespace BUtil.RestorationMaster
                         BUtil.Core.Localization.Resources.BackupVersion_FileVersions_Open;
             _toolStripStatusLabel.Text = BUtil.Core.Localization.Resources.BackupVersion_Viewer_Help;
             recoverToolStripMenuItem.Text = _recoverToolStripButton.Text = BUtil.Core.Localization.Resources.Task_Restore;
-            this.Text = Resources.ApplicationName_Restoration;
+            this.Text = Resources.Task_Restore;
         }
 
         private void OnLoad(object sender, System.EventArgs e)

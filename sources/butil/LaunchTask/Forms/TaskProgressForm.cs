@@ -82,7 +82,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 
             taskNameColumnHeader.Text = Resources.Task_List;
 
-            Text = $"{_backupTask.Name} - {Resources.ApplicationName_LaunchTask}";
+            Text = $"{_backupTask.Name}";
             toolTip.SetToolTip(cancelButton, Resources.Button_Cancel);
 
             _powerTaskLinkLabel.Text = Resources.AfterTaskSelection_Field;

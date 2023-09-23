@@ -146,15 +146,6 @@ Changes are:
 
 Program will now open browser with the download page</value>
   </data>
-  <data name="ApplicationName_LaunchTask" xml:space="preserve">
-    <value>Launch task</value>
-  </data>
-  <data name="ApplicationName_Restoration" xml:space="preserve">
-    <value>Restoration</value>
-  </data>
-  <data name="ApplicationName_Tasks" xml:space="preserve">
-    <value>Tasks</value>
-  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>CHANGES</value>
   </data>

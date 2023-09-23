@@ -318,9 +318,6 @@
   <data name="Task_Launch_Hint" xml:space="preserve">
     <value>Запускает выбранную задачу.</value>
   </data>
-  <data name="ApplicationName_Tasks" xml:space="preserve">
-    <value>Задачи</value>
-  </data>
   <data name="Button_Close" xml:space="preserve">
     <value>Закрыть</value>
   </data>
@@ -359,9 +356,6 @@
   </data>
   <data name="Button_Continue" xml:space="preserve">
     <value>Продолжить &gt;</value>
-  </data>
-  <data name="ApplicationName_Restoration" xml:space="preserve">
-    <value>Восстановление</value>
   </data>
   <data name="AfterTaskSelection_Help" xml:space="preserve">
     <value>Если вы выберите что-либо кроме "ничего не делала", программа 
@@ -525,9 +519,6 @@ bin.
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Восстановить</value>
-  </data>
-  <data name="ApplicationName_LaunchTask" xml:space="preserve">
-    <value>Запуск задачи</value>
   </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Посетите {0}, чтобы увидеть аргументы командной строки.</value>

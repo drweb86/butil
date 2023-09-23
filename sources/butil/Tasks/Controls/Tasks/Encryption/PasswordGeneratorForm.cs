@@ -115,6 +115,7 @@ namespace BUtil.Configurator.Tasks.Controls.Tasks.Encryption
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PasswordGeneratorForm));
             optionsGroupBox = new GroupBox();
             _tableLayoutPanel = new TableLayoutPanel();
             passwordLengthLabel = new Label();
@@ -131,14 +132,13 @@ namespace BUtil.Configurator.Tasks.Controls.Tasks.Encryption
             // 
             // optionsGroupBox
             // 
-            optionsGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Left
-            | AnchorStyles.Right;
+            optionsGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             optionsGroupBox.Controls.Add(_tableLayoutPanel);
-            optionsGroupBox.Location = new System.Drawing.Point(8, 6);
-            optionsGroupBox.Margin = new Padding(4, 3, 4, 3);
+            optionsGroupBox.Location = new System.Drawing.Point(11, 10);
+            optionsGroupBox.Margin = new Padding(6, 5, 6, 5);
             optionsGroupBox.Name = "optionsGroupBox";
-            optionsGroupBox.Padding = new Padding(4, 3, 4, 3);
-            optionsGroupBox.Size = new System.Drawing.Size(569, 53);
+            optionsGroupBox.Padding = new Padding(6, 5, 6, 5);
+            optionsGroupBox.Size = new System.Drawing.Size(805, 88);
             optionsGroupBox.TabIndex = 1;
             optionsGroupBox.TabStop = false;
             optionsGroupBox.Text = "Options";
@@ -151,21 +151,22 @@ namespace BUtil.Configurator.Tasks.Controls.Tasks.Encryption
             _tableLayoutPanel.Controls.Add(passwordLengthLabel, 0, 0);
             _tableLayoutPanel.Controls.Add(passwordLengthNumericUpDown, 1, 0);
             _tableLayoutPanel.Dock = DockStyle.Fill;
-            _tableLayoutPanel.Location = new System.Drawing.Point(4, 19);
+            _tableLayoutPanel.Location = new System.Drawing.Point(6, 29);
+            _tableLayoutPanel.Margin = new Padding(4, 5, 4, 5);
             _tableLayoutPanel.Name = "_tableLayoutPanel";
             _tableLayoutPanel.RowCount = 1;
             _tableLayoutPanel.RowStyles.Add(new RowStyle());
-            _tableLayoutPanel.Size = new System.Drawing.Size(561, 31);
+            _tableLayoutPanel.Size = new System.Drawing.Size(793, 54);
             _tableLayoutPanel.TabIndex = 4;
             // 
             // passwordLengthLabel
             // 
             passwordLengthLabel.AutoSize = true;
             passwordLengthLabel.Dock = DockStyle.Fill;
-            passwordLengthLabel.Location = new System.Drawing.Point(4, 0);
-            passwordLengthLabel.Margin = new Padding(4, 0, 4, 0);
+            passwordLengthLabel.Location = new System.Drawing.Point(6, 0);
+            passwordLengthLabel.Margin = new Padding(6, 0, 6, 0);
             passwordLengthLabel.Name = "passwordLengthLabel";
-            passwordLengthLabel.Size = new System.Drawing.Size(97, 31);
+            passwordLengthLabel.Size = new System.Drawing.Size(146, 54);
             passwordLengthLabel.TabIndex = 0;
             passwordLengthLabel.Text = "Password length:";
             passwordLengthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -173,39 +174,25 @@ namespace BUtil.Configurator.Tasks.Controls.Tasks.Encryption
             // passwordLengthNumericUpDown
             // 
             passwordLengthNumericUpDown.Dock = DockStyle.Fill;
-            passwordLengthNumericUpDown.Location = new System.Drawing.Point(109, 3);
-            passwordLengthNumericUpDown.Margin = new Padding(4, 3, 4, 3);
-            passwordLengthNumericUpDown.Maximum = new decimal(new int[] {
-            256,
-            0,
-            0,
-            0});
-            passwordLengthNumericUpDown.Minimum = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
+            passwordLengthNumericUpDown.Location = new System.Drawing.Point(164, 5);
+            passwordLengthNumericUpDown.Margin = new Padding(6, 5, 6, 5);
+            passwordLengthNumericUpDown.Maximum = new decimal(new int[] { 256, 0, 0, 0 });
+            passwordLengthNumericUpDown.Minimum = new decimal(new int[] { 12, 0, 0, 0 });
             passwordLengthNumericUpDown.Name = "passwordLengthNumericUpDown";
-            passwordLengthNumericUpDown.Size = new System.Drawing.Size(448, 23);
+            passwordLengthNumericUpDown.Size = new System.Drawing.Size(640, 31);
             passwordLengthNumericUpDown.TabIndex = 3;
-            passwordLengthNumericUpDown.Value = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
+            passwordLengthNumericUpDown.Value = new decimal(new int[] { 12, 0, 0, 0 });
             // 
             // passwordTextBox
             // 
-            passwordTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom
-            | AnchorStyles.Left
-            | AnchorStyles.Right;
-            passwordTextBox.Location = new System.Drawing.Point(9, 69);
-            passwordTextBox.Margin = new Padding(4, 3, 4, 3);
+            passwordTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            passwordTextBox.Location = new System.Drawing.Point(13, 115);
+            passwordTextBox.Margin = new Padding(6, 5, 6, 5);
             passwordTextBox.Multiline = true;
             passwordTextBox.Name = "passwordTextBox";
             passwordTextBox.ReadOnly = true;
             passwordTextBox.ScrollBars = ScrollBars.Vertical;
-            passwordTextBox.Size = new System.Drawing.Size(443, 123);
+            passwordTextBox.Size = new System.Drawing.Size(631, 202);
             passwordTextBox.TabIndex = 2;
             passwordTextBox.Text = "<Here is your password>";
             // 
@@ -214,15 +201,15 @@ namespace BUtil.Configurator.Tasks.Controls.Tasks.Encryption
             generateButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             generateButton.AutoSize = true;
             generateButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            generateButton.Location = new System.Drawing.Point(460, 69);
-            generateButton.Margin = new Padding(4, 3, 4, 3);
-            generateButton.MinimumSize = new System.Drawing.Size(118, 29);
+            generateButton.Location = new System.Drawing.Point(304, 115);
+            generateButton.Margin = new Padding(6, 5, 6, 5);
+            generateButton.MinimumSize = new System.Drawing.Size(169, 48);
             generateButton.Name = "generateButton";
-            generateButton.Size = new System.Drawing.Size(118, 29);
+            generateButton.Size = new System.Drawing.Size(169, 48);
             generateButton.TabIndex = 3;
             generateButton.Text = "Generate";
             generateButton.UseVisualStyleBackColor = true;
-            generateButton.Click += new EventHandler(generatePasswordButtonClick);
+            generateButton.Click += generatePasswordButtonClick;
             // 
             // copyToClipboardButton
             // 
@@ -230,15 +217,15 @@ namespace BUtil.Configurator.Tasks.Controls.Tasks.Encryption
             copyToClipboardButton.AutoSize = true;
             copyToClipboardButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             copyToClipboardButton.Enabled = false;
-            copyToClipboardButton.Location = new System.Drawing.Point(460, 105);
-            copyToClipboardButton.Margin = new Padding(4, 3, 4, 3);
-            copyToClipboardButton.MinimumSize = new System.Drawing.Size(118, 29);
+            copyToClipboardButton.Location = new System.Drawing.Point(304, 175);
+            copyToClipboardButton.Margin = new Padding(6, 5, 6, 5);
+            copyToClipboardButton.MinimumSize = new System.Drawing.Size(169, 48);
             copyToClipboardButton.Name = "copyToClipboardButton";
-            copyToClipboardButton.Size = new System.Drawing.Size(118, 29);
+            copyToClipboardButton.Size = new System.Drawing.Size(169, 48);
             copyToClipboardButton.TabIndex = 4;
             copyToClipboardButton.Text = "copy to clipboard";
             copyToClipboardButton.UseVisualStyleBackColor = true;
-            copyToClipboardButton.Click += new EventHandler(copyToClipboardButtonClick);
+            copyToClipboardButton.Click += copyToClipboardButtonClick;
             // 
             // cancelButton
             // 
@@ -246,15 +233,15 @@ namespace BUtil.Configurator.Tasks.Controls.Tasks.Encryption
             cancelButton.AutoSize = true;
             cancelButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             cancelButton.DialogResult = DialogResult.Cancel;
-            cancelButton.Location = new System.Drawing.Point(490, 200);
-            cancelButton.Margin = new Padding(4, 3, 4, 3);
-            cancelButton.MinimumSize = new System.Drawing.Size(88, 27);
+            cancelButton.Location = new System.Drawing.Point(347, 92);
+            cancelButton.Margin = new Padding(6, 5, 6, 5);
+            cancelButton.MinimumSize = new System.Drawing.Size(126, 45);
             cancelButton.Name = "cancelButton";
-            cancelButton.Size = new System.Drawing.Size(88, 27);
+            cancelButton.Size = new System.Drawing.Size(126, 45);
             cancelButton.TabIndex = 6;
             cancelButton.Text = "Cancel";
             cancelButton.UseVisualStyleBackColor = true;
-            cancelButton.Click += new EventHandler(cancelButtonClick);
+            cancelButton.Click += cancelButtonClick;
             // 
             // useButton
             // 
@@ -262,34 +249,35 @@ namespace BUtil.Configurator.Tasks.Controls.Tasks.Encryption
             useButton.AutoSize = true;
             useButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             useButton.Enabled = false;
-            useButton.Location = new System.Drawing.Point(396, 200);
-            useButton.Margin = new Padding(4, 3, 4, 3);
-            useButton.MinimumSize = new System.Drawing.Size(88, 27);
+            useButton.Location = new System.Drawing.Point(566, 92);
+            useButton.Margin = new Padding(6, 5, 6, 5);
+            useButton.MinimumSize = new System.Drawing.Size(126, 45);
             useButton.Name = "useButton";
-            useButton.Size = new System.Drawing.Size(88, 27);
+            useButton.Size = new System.Drawing.Size(126, 45);
             useButton.TabIndex = 5;
             useButton.Text = "Use";
             useButton.UseVisualStyleBackColor = true;
-            useButton.Click += new EventHandler(useButtonClick);
+            useButton.Click += useButtonClick;
             // 
             // PasswordGeneratorForm
             // 
             AcceptButton = generateButton;
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = cancelButton;
-            ClientSize = new System.Drawing.Size(582, 234);
+            ClientSize = new System.Drawing.Size(823, 362);
             Controls.Add(useButton);
             Controls.Add(cancelButton);
             Controls.Add(copyToClipboardButton);
             Controls.Add(generateButton);
             Controls.Add(passwordTextBox);
             Controls.Add(optionsGroupBox);
-            Margin = new Padding(4, 3, 4, 3);
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(6, 5, 6, 5);
             MaximizeBox = false;
-            MaximumSize = new System.Drawing.Size(598, 273);
+            MaximumSize = new System.Drawing.Size(845, 418);
             MinimizeBox = false;
-            MinimumSize = new System.Drawing.Size(412, 273);
+            MinimumSize = new System.Drawing.Size(579, 418);
             Name = "PasswordGeneratorForm";
             ShowIcon = false;
             ShowInTaskbar = false;
@@ -301,8 +289,8 @@ namespace BUtil.Configurator.Tasks.Controls.Tasks.Encryption
             ((System.ComponentModel.ISupportInitialize)passwordLengthNumericUpDown).EndInit();
             ResumeLayout(false);
             PerformLayout();
-
         }
+
         private Button copyToClipboardButton;
         private Button cancelButton;
         private Label passwordLengthLabel;

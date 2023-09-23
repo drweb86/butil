@@ -53,7 +53,7 @@ namespace BUtil.Configurator.Configurator.Forms
 
         void ApplyLocalization()
         {
-            Text = $"{_task.Name} - {Resources.ApplicationName_Tasks}";
+            Text = _task.Name;
 
             foreach (KeyValuePair<TaskEditorPageEnum, BackUserControl> pair in _views)
             {

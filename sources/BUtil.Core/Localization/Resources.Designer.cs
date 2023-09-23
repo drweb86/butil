@@ -132,33 +132,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Launch task.
-        /// </summary>
-        public static string ApplicationName_LaunchTask {
-            get {
-                return ResourceManager.GetString("ApplicationName_LaunchTask", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Restoration.
-        /// </summary>
-        public static string ApplicationName_Restoration {
-            get {
-                return ResourceManager.GetString("ApplicationName_Restoration", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Tasks.
-        /// </summary>
-        public static string ApplicationName_Tasks {
-            get {
-                return ResourceManager.GetString("ApplicationName_Tasks", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to CHANGES.
         /// </summary>
         public static string BackupVersion_Changes_Title {
@@ -737,7 +710,10 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The most basic form of incremental backup consists of identifying, recording and thus, preserving only those files that have changed since the last backup. Since changes are typically low, incremental backups are much smaller and quicker than full backups. For instance, following a full backup on Friday, a Monday backup will contain only those files that changed since Friday. A Tuesday backup contains only those files that changed since Monday, and so on. A full restoration of data will naturally be slower, [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to The most basic form of incremental backup consists of identifying, recording and thus, preserving only those files that have changed since the last backup.
+        ///Since changes are typically low, incremental backups are much smaller and quicker than full backups.
+        ///For instance, following a full backup on Friday, a Monday backup will contain only those files that changed since Friday. A Tuesday backup contains only those files that changed since Monday, and so on. 
+        ///Should any one of the copies created fail, inclu [rest of string was truncated]&quot;;.
         /// </summary>
         public static string IncrementalBackup_Help {
             get {

@@ -39,7 +39,7 @@ namespace BUtil.ConsoleBackup.UI {
 
             var openRestorationAppMenuBarItem = new Terminal.Gui.MenuBarItem
             {
-                Title = "⤾" + Resources.ApplicationName_Restoration,
+                Title = "⤾" + Resources.Task_Restore,
                 Action = () => this.OnOpenRestorationApp(),
             };
 

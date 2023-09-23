@@ -146,15 +146,6 @@ Novità programma:
 
 Il programma ora aprirà il browser internet alla pagina di download</value>
   </data>
-  <data name="ApplicationName_LaunchTask" xml:space="preserve">
-    <value>Esegui attività</value>
-  </data>
-  <data name="ApplicationName_Restoration" xml:space="preserve">
-    <value>Ripristino</value>
-  </data>
-  <data name="ApplicationName_Tasks" xml:space="preserve">
-    <value>Attività</value>
-  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>MODIFICHE</value>
   </data>

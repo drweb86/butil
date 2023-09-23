@@ -41,7 +41,7 @@ namespace BUtil.RestorationMaster
             passwordLabel.Text = Resources.Password_Recovery_Prompt;
             continueButton.Text = Resources.Button_Continue;
             continueButton.Enabled = true;
-            this.Text = Resources.ApplicationName_Restoration;
+            this.Text = Resources.Task_Restore;
             _whereUserControl.ApplyLocalization();
             _whereUserControl.StorageSettings = ((IncrementalBackupModelOptionsV2)storageStub.Model).To;
             continueButton.Left = closeButton.Left - continueButton.Width - 10;
