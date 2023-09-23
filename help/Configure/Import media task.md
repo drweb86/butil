@@ -23,6 +23,7 @@ Features includes:
 Setup will be demonstrated on application **FTPS Server**. It can be done in similar way for other apps.
 
 1. Install **FTPS Server** application on your phone.
+
 https://play.google.com/store/apps/details?id=net.xnano.android.ftpserver&hl=en_US
 
 2. Open application. its window will look like this
@@ -30,6 +31,7 @@ https://play.google.com/store/apps/details?id=net.xnano.android.ftpserver&hl=en_
 ![FTP Server application](./Image%20-%20FTP%20Server%20-%20After%20Install.png)
 
 3. Change encryption mode to **FTPS Implicit** or **FTPS Explicit** as it is shown on a picture below.
+
 In example we will go next with FTPS Implicit.
 
 ![FTP Server - Change encryption mode](./Image%20-%20FTP%20Server%20-%20Change%20encryption%20mode.png)
@@ -41,9 +43,10 @@ a. Tap Users, click Add
 ![FTP Server - Add User 1](./Image%20-%20FTP%20Server%20-%20Add%20User%201.png)
 
 b. Create user.
+
 In example we will go next with user sync with password 123 .
 
-![FTP Server - Add User 2.png](./Image%20-%20FTP Server%20-%20Add%20User%202.png)
+![FTP Server - Add User 2.png](./Image%20-%20FTP%20Server%20-%20Add%20User%202.png)
 
 a. Specify anything for as **Full Name**.
 b. Specify **sync** as **Username** (1).
@@ -63,9 +66,11 @@ b. Click Start.
 You will see IP and Port addresses.
 
 ![FTP Server - IP and Port.png](./Image%20-%20FTP%20Server%20-%20IP%20and%20Port.png)
+
 In example above we will go next with server 172.16.92.15 and 2121 port.
 
 7. Now in import multimedia configuration task in BUtil in What? section.
+
 a. Choose **FTPS**
 b. Specify **Server**: 172.16.92.15
 c. Specify **Encryption SSL/TLS**: Implicit
@@ -78,11 +83,13 @@ f. Specify **Password**: 123
 9. On mobile phone tap **Stop** server.
 
 10. Each time you will need sync over wi-fi
+
 a. Open **FTP Server** at phone and tap **Start**;
 b. Launch import task;
 c. Open **FTP Server** at phone and tap **Stop**.
 
 ### Use case import photos and videos from phone via Wi-Fi via FTPS
+
 1. Open phone and start FTP Server application.
 
 2. Launch import media task.
@@ -92,6 +99,7 @@ c. Open **FTP Server** at phone and tap **Stop**.
 # Settings
 
 ## Skip already imported files
+
 When this setting is on, application will track imported file names. During next import, already imported files (by name) will be skipped.
 When this setting is off, application will always try to copy all files from external media.
 
