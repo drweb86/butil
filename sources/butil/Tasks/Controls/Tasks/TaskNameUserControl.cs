@@ -16,7 +16,7 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
         public string TaskName
         {
             get => _titleTextBox.Text;
-            set => _titleTextBox.Text = value; 
+            set => _titleTextBox.Text = value;
         }
 
         public override bool ValidateUi()

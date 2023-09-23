@@ -30,7 +30,6 @@ namespace BUtil.Configurator.Tasks.Controls.Tasks.Encryption
             copyToClipboardButton.Text = Resources.Button_CopyToClipboard;
             generateButton.Text = Resources.Password_Generate;
             passwordLengthLabel.Text = Resources.Password_Field_Length;
-            optionsGroupBox.Text = string.Empty;
             useButton.Text = Resources.Password_Use;
             generatePasswordButtonClick(this, null);
         }
@@ -86,6 +85,12 @@ namespace BUtil.Configurator.Tasks.Controls.Tasks.Encryption
         }
 
         private TableLayoutPanel _tableLayoutPanel;
+        private TableLayoutPanel _mainTableLayoutPanel;
+        private TableLayoutPanel _bottomTableLayoutPanel;
+        private Button useButton;
+        private TableLayoutPanel _contentTableLayoutPanel;
+        private Button copyToClipboardButton;
+        private Button cancelButton;
         #region designer
         /// <summary>
         /// Designer variable used to keep track of non-visual components.
@@ -116,188 +121,222 @@ namespace BUtil.Configurator.Tasks.Controls.Tasks.Encryption
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PasswordGeneratorForm));
-            optionsGroupBox = new GroupBox();
             _tableLayoutPanel = new TableLayoutPanel();
             passwordLengthLabel = new Label();
             passwordLengthNumericUpDown = new NumericUpDown();
             passwordTextBox = new TextBox();
             generateButton = new Button();
-            copyToClipboardButton = new Button();
+            _mainTableLayoutPanel = new TableLayoutPanel();
             cancelButton = new Button();
+            copyToClipboardButton = new Button();
+            _contentTableLayoutPanel = new TableLayoutPanel();
             useButton = new Button();
-            optionsGroupBox.SuspendLayout();
+            _bottomTableLayoutPanel = new TableLayoutPanel();
             _tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)passwordLengthNumericUpDown).BeginInit();
+            _mainTableLayoutPanel.SuspendLayout();
+            _bottomTableLayoutPanel.SuspendLayout();
             SuspendLayout();
-            // 
-            // optionsGroupBox
-            // 
-            optionsGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            optionsGroupBox.Controls.Add(_tableLayoutPanel);
-            optionsGroupBox.Location = new System.Drawing.Point(11, 10);
-            optionsGroupBox.Margin = new Padding(6, 5, 6, 5);
-            optionsGroupBox.Name = "optionsGroupBox";
-            optionsGroupBox.Padding = new Padding(6, 5, 6, 5);
-            optionsGroupBox.Size = new System.Drawing.Size(805, 88);
-            optionsGroupBox.TabIndex = 1;
-            optionsGroupBox.TabStop = false;
-            optionsGroupBox.Text = "Options";
             // 
             // _tableLayoutPanel
             // 
-            _tableLayoutPanel.ColumnCount = 2;
+            _tableLayoutPanel.ColumnCount = 3;
             _tableLayoutPanel.ColumnStyles.Add(new ColumnStyle());
+            _tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             _tableLayoutPanel.ColumnStyles.Add(new ColumnStyle());
             _tableLayoutPanel.Controls.Add(passwordLengthLabel, 0, 0);
+            _tableLayoutPanel.Controls.Add(generateButton, 2, 0);
             _tableLayoutPanel.Controls.Add(passwordLengthNumericUpDown, 1, 0);
-            _tableLayoutPanel.Dock = DockStyle.Fill;
-            _tableLayoutPanel.Location = new System.Drawing.Point(6, 29);
-            _tableLayoutPanel.Margin = new Padding(4, 5, 4, 5);
+            _tableLayoutPanel.Location = new System.Drawing.Point(13, 14);
+            _tableLayoutPanel.Margin = new Padding(5, 6, 5, 6);
             _tableLayoutPanel.Name = "_tableLayoutPanel";
             _tableLayoutPanel.RowCount = 1;
             _tableLayoutPanel.RowStyles.Add(new RowStyle());
-            _tableLayoutPanel.Size = new System.Drawing.Size(793, 54);
+            _tableLayoutPanel.Size = new System.Drawing.Size(959, 60);
             _tableLayoutPanel.TabIndex = 4;
             // 
             // passwordLengthLabel
             // 
             passwordLengthLabel.AutoSize = true;
             passwordLengthLabel.Dock = DockStyle.Fill;
-            passwordLengthLabel.Location = new System.Drawing.Point(6, 0);
-            passwordLengthLabel.Margin = new Padding(6, 0, 6, 0);
+            passwordLengthLabel.Location = new System.Drawing.Point(7, 0);
+            passwordLengthLabel.Margin = new Padding(7, 0, 7, 0);
             passwordLengthLabel.Name = "passwordLengthLabel";
-            passwordLengthLabel.Size = new System.Drawing.Size(146, 54);
+            passwordLengthLabel.Size = new System.Drawing.Size(169, 60);
             passwordLengthLabel.TabIndex = 0;
             passwordLengthLabel.Text = "Password length:";
-            passwordLengthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            passwordLengthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // passwordLengthNumericUpDown
             // 
-            passwordLengthNumericUpDown.Dock = DockStyle.Fill;
-            passwordLengthNumericUpDown.Location = new System.Drawing.Point(164, 5);
-            passwordLengthNumericUpDown.Margin = new Padding(6, 5, 6, 5);
+            passwordLengthNumericUpDown.Anchor = AnchorStyles.Left;
+            passwordLengthNumericUpDown.Location = new System.Drawing.Point(191, 12);
+            passwordLengthNumericUpDown.Margin = new Padding(8, 0, 0, 0);
             passwordLengthNumericUpDown.Maximum = new decimal(new int[] { 256, 0, 0, 0 });
             passwordLengthNumericUpDown.Minimum = new decimal(new int[] { 12, 0, 0, 0 });
             passwordLengthNumericUpDown.Name = "passwordLengthNumericUpDown";
-            passwordLengthNumericUpDown.Size = new System.Drawing.Size(640, 31);
+            passwordLengthNumericUpDown.Size = new System.Drawing.Size(646, 35);
             passwordLengthNumericUpDown.TabIndex = 3;
             passwordLengthNumericUpDown.Value = new decimal(new int[] { 12, 0, 0, 0 });
             // 
             // passwordTextBox
             // 
-            passwordTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            passwordTextBox.Location = new System.Drawing.Point(13, 115);
-            passwordTextBox.Margin = new Padding(6, 5, 6, 5);
+            passwordTextBox.Dock = DockStyle.Fill;
+            passwordTextBox.Location = new System.Drawing.Point(15, 86);
+            passwordTextBox.Margin = new Padding(7, 6, 7, 6);
             passwordTextBox.Multiline = true;
             passwordTextBox.Name = "passwordTextBox";
             passwordTextBox.ReadOnly = true;
             passwordTextBox.ScrollBars = ScrollBars.Vertical;
-            passwordTextBox.Size = new System.Drawing.Size(631, 202);
+            passwordTextBox.Size = new System.Drawing.Size(955, 267);
             passwordTextBox.TabIndex = 2;
             passwordTextBox.Text = "<Here is your password>";
             // 
             // generateButton
             // 
-            generateButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            generateButton.Anchor = AnchorStyles.Left;
             generateButton.AutoSize = true;
             generateButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            generateButton.Location = new System.Drawing.Point(304, 115);
-            generateButton.Margin = new Padding(6, 5, 6, 5);
-            generateButton.MinimumSize = new System.Drawing.Size(169, 48);
+            generateButton.Location = new System.Drawing.Point(845, 10);
+            generateButton.Margin = new Padding(8, 6, 7, 6);
             generateButton.Name = "generateButton";
-            generateButton.Size = new System.Drawing.Size(169, 48);
+            generateButton.Size = new System.Drawing.Size(107, 40);
             generateButton.TabIndex = 3;
             generateButton.Text = "Generate";
             generateButton.UseVisualStyleBackColor = true;
             generateButton.Click += generatePasswordButtonClick;
             // 
-            // copyToClipboardButton
+            // _mainTableLayoutPanel
             // 
-            copyToClipboardButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            copyToClipboardButton.AutoSize = true;
-            copyToClipboardButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            copyToClipboardButton.Enabled = false;
-            copyToClipboardButton.Location = new System.Drawing.Point(304, 175);
-            copyToClipboardButton.Margin = new Padding(6, 5, 6, 5);
-            copyToClipboardButton.MinimumSize = new System.Drawing.Size(169, 48);
-            copyToClipboardButton.Name = "copyToClipboardButton";
-            copyToClipboardButton.Size = new System.Drawing.Size(169, 48);
-            copyToClipboardButton.TabIndex = 4;
-            copyToClipboardButton.Text = "copy to clipboard";
-            copyToClipboardButton.UseVisualStyleBackColor = true;
-            copyToClipboardButton.Click += copyToClipboardButtonClick;
+            _mainTableLayoutPanel.ColumnCount = 1;
+            _mainTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            _mainTableLayoutPanel.Controls.Add(_tableLayoutPanel, 0, 0);
+            _mainTableLayoutPanel.Controls.Add(_bottomTableLayoutPanel, 0, 2);
+            _mainTableLayoutPanel.Controls.Add(passwordTextBox, 0, 1);
+            _mainTableLayoutPanel.Dock = DockStyle.Fill;
+            _mainTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            _mainTableLayoutPanel.Margin = new Padding(8);
+            _mainTableLayoutPanel.Name = "_mainTableLayoutPanel";
+            _mainTableLayoutPanel.Padding = new Padding(8);
+            _mainTableLayoutPanel.RowCount = 3;
+            _mainTableLayoutPanel.RowStyles.Add(new RowStyle());
+            _mainTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            _mainTableLayoutPanel.RowStyles.Add(new RowStyle());
+            _mainTableLayoutPanel.Size = new System.Drawing.Size(985, 425);
+            _mainTableLayoutPanel.TabIndex = 9;
             // 
             // cancelButton
             // 
-            cancelButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             cancelButton.AutoSize = true;
             cancelButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             cancelButton.DialogResult = DialogResult.Cancel;
-            cancelButton.Location = new System.Drawing.Point(347, 92);
-            cancelButton.Margin = new Padding(6, 5, 6, 5);
-            cancelButton.MinimumSize = new System.Drawing.Size(126, 45);
+            cancelButton.Dock = DockStyle.Fill;
+            cancelButton.Location = new System.Drawing.Point(800, 6);
+            cancelButton.Margin = new Padding(7, 6, 7, 6);
             cancelButton.Name = "cancelButton";
-            cancelButton.Size = new System.Drawing.Size(126, 45);
+            cancelButton.Size = new System.Drawing.Size(85, 40);
             cancelButton.TabIndex = 6;
             cancelButton.Text = "Cancel";
             cancelButton.UseVisualStyleBackColor = true;
             cancelButton.Click += cancelButtonClick;
             // 
+            // copyToClipboardButton
+            // 
+            copyToClipboardButton.AutoSize = true;
+            copyToClipboardButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            copyToClipboardButton.Dock = DockStyle.Fill;
+            copyToClipboardButton.Enabled = false;
+            copyToClipboardButton.Location = new System.Drawing.Point(602, 6);
+            copyToClipboardButton.Margin = new Padding(8, 6, 7, 6);
+            copyToClipboardButton.Name = "copyToClipboardButton";
+            copyToClipboardButton.Size = new System.Drawing.Size(184, 40);
+            copyToClipboardButton.TabIndex = 4;
+            copyToClipboardButton.Text = "copy to clipboard";
+            copyToClipboardButton.UseVisualStyleBackColor = true;
+            copyToClipboardButton.Click += copyToClipboardButtonClick;
+            // 
+            // _contentTableLayoutPanel
+            // 
+            _contentTableLayoutPanel.AutoSize = true;
+            _contentTableLayoutPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            _contentTableLayoutPanel.ColumnCount = 2;
+            _contentTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            _contentTableLayoutPanel.ColumnStyles.Add(new ColumnStyle());
+            _contentTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
+            _contentTableLayoutPanel.Name = "_contentTableLayoutPanel";
+            _contentTableLayoutPanel.RowCount = 2;
+            _contentTableLayoutPanel.RowStyles.Add(new RowStyle());
+            _contentTableLayoutPanel.RowStyles.Add(new RowStyle());
+            _contentTableLayoutPanel.Size = new System.Drawing.Size(0, 0);
+            _contentTableLayoutPanel.TabIndex = 7;
+            // 
             // useButton
             // 
-            useButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             useButton.AutoSize = true;
             useButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            useButton.Dock = DockStyle.Fill;
             useButton.Enabled = false;
-            useButton.Location = new System.Drawing.Point(566, 92);
-            useButton.Margin = new Padding(6, 5, 6, 5);
-            useButton.MinimumSize = new System.Drawing.Size(126, 45);
+            useButton.Location = new System.Drawing.Point(899, 6);
+            useButton.Margin = new Padding(7, 6, 7, 6);
             useButton.Name = "useButton";
-            useButton.Size = new System.Drawing.Size(126, 45);
+            useButton.Size = new System.Drawing.Size(57, 40);
             useButton.TabIndex = 5;
             useButton.Text = "Use";
             useButton.UseVisualStyleBackColor = true;
             useButton.Click += useButtonClick;
             // 
+            // _bottomTableLayoutPanel
+            // 
+            _bottomTableLayoutPanel.AutoSize = true;
+            _bottomTableLayoutPanel.ColumnCount = 4;
+            _bottomTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            _bottomTableLayoutPanel.ColumnStyles.Add(new ColumnStyle());
+            _bottomTableLayoutPanel.ColumnStyles.Add(new ColumnStyle());
+            _bottomTableLayoutPanel.ColumnStyles.Add(new ColumnStyle());
+            _bottomTableLayoutPanel.Controls.Add(useButton, 3, 0);
+            _bottomTableLayoutPanel.Controls.Add(_contentTableLayoutPanel, 0, 0);
+            _bottomTableLayoutPanel.Controls.Add(copyToClipboardButton, 1, 0);
+            _bottomTableLayoutPanel.Controls.Add(cancelButton, 2, 0);
+            _bottomTableLayoutPanel.Dock = DockStyle.Fill;
+            _bottomTableLayoutPanel.Location = new System.Drawing.Point(11, 362);
+            _bottomTableLayoutPanel.Name = "_bottomTableLayoutPanel";
+            _bottomTableLayoutPanel.RowCount = 1;
+            _bottomTableLayoutPanel.RowStyles.Add(new RowStyle());
+            _bottomTableLayoutPanel.Size = new System.Drawing.Size(963, 52);
+            _bottomTableLayoutPanel.TabIndex = 8;
+            // 
             // PasswordGeneratorForm
             // 
             AcceptButton = generateButton;
-            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = cancelButton;
-            ClientSize = new System.Drawing.Size(823, 362);
-            Controls.Add(useButton);
-            Controls.Add(cancelButton);
-            Controls.Add(copyToClipboardButton);
-            Controls.Add(generateButton);
-            Controls.Add(passwordTextBox);
-            Controls.Add(optionsGroupBox);
+            ClientSize = new System.Drawing.Size(985, 425);
+            Controls.Add(_mainTableLayoutPanel);
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(6, 5, 6, 5);
+            Margin = new Padding(7, 6, 7, 6);
             MaximizeBox = false;
-            MaximumSize = new System.Drawing.Size(845, 418);
+            MaximumSize = new System.Drawing.Size(1009, 489);
             MinimizeBox = false;
-            MinimumSize = new System.Drawing.Size(579, 418);
+            MinimumSize = new System.Drawing.Size(690, 489);
             Name = "PasswordGeneratorForm";
             ShowIcon = false;
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Password generator";
-            optionsGroupBox.ResumeLayout(false);
             _tableLayoutPanel.ResumeLayout(false);
             _tableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)passwordLengthNumericUpDown).EndInit();
+            _mainTableLayoutPanel.ResumeLayout(false);
+            _mainTableLayoutPanel.PerformLayout();
+            _bottomTableLayoutPanel.ResumeLayout(false);
+            _bottomTableLayoutPanel.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
-        private Button copyToClipboardButton;
-        private Button cancelButton;
         private Label passwordLengthLabel;
         private Button generateButton;
         private TextBox passwordTextBox;
-        private Button useButton;
-        private GroupBox optionsGroupBox;
 
 
         #endregion
