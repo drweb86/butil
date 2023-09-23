@@ -1,3 +1,8 @@
+# 2023.09.24
+
+## Removed Features
+- Reduce amount of apps in Setup, since most people anyway search app by name.
+
 # 2023.09.23
 
 ## Warning: FTPS storage encryption setting default was changed from Auto detect to Explicit. Update FTPS storage setting if it should be different.

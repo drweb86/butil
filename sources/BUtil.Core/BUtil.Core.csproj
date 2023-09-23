@@ -124,13 +124,7 @@
 		cd "$(SolutionDir)..\Output"
 
 		rem Copying of Tasks Scheduler
-		md "$(SolutionDir)..\Output\BUtil\data"
 		xcopy "%userprofile%\.nuget\packages\taskscheduler\2.10.1\lib\net6.0-windows7.0" "$(SolutionDir)..\Output\BUtil\bin" /Y/E
-
-		rem Copying of data folder
-		md "$(SolutionDir)..\Output\BUtil\data"
-		copy "$(SolutionDir)Media\Images and Icons\Other's guys\Crystal Clear (Everaldo Coelho)\CrystalClear_EveraldoCoelho_Recover_48x48.ico" "$(SolutionDir)..\Output\BUtil\data" /Y
-		copy "$(SolutionDir)Media\Images and Icons\Other's guys\Crystal Clear (Everaldo Coelho)\CrystalClear_EveraldoCoelho_Forward_ICO.ico" "$(SolutionDir)..\Output\BUtil\data" /Y
 
 		rem Copy MS System Globbing
 		xcopy "%userprofile%\.nuget\packages\microsoft.extensions.filesystemglobbing\7.0.0\lib\net7.0" "$(SolutionDir)..\Output\BUtil\bin" /Y
