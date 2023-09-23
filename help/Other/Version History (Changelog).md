@@ -12,6 +12,9 @@
 - FTPS storage: autoconnect of fluent ui library did not work in some cases. It was dropped.
 - FTPS storage: sometimes testing storage was hanging the UI, CLI apps.
 
+## Removed Features
+- SAMBA form for folder storage, since of no usage.
+
 # 2023.09.21
 
 ## New Features

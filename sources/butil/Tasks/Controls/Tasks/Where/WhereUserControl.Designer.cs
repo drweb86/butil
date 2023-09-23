@@ -47,7 +47,6 @@ namespace BUtil.Configurator.Configurator.Controls
             _mountTextBox = new System.Windows.Forms.TextBox();
             _mountButton = new System.Windows.Forms.Button();
             _unmountButton = new System.Windows.Forms.Button();
-            _sambaButton = new System.Windows.Forms.Button();
             _scriptsLabel = new System.Windows.Forms.Label();
             _limitUploadLabelV2 = new System.Windows.Forms.LinkLabel();
             _sambaTabPage = new System.Windows.Forms.TabPage();
@@ -146,7 +145,6 @@ namespace BUtil.Configurator.Configurator.Controls
             tableLayoutPanel2.Controls.Add(_mountTextBox, 1, 3);
             tableLayoutPanel2.Controls.Add(_mountButton, 2, 3);
             tableLayoutPanel2.Controls.Add(_unmountButton, 2, 4);
-            tableLayoutPanel2.Controls.Add(_sambaButton, 2, 2);
             tableLayoutPanel2.Controls.Add(_scriptsLabel, 0, 2);
             tableLayoutPanel2.Controls.Add(_limitUploadLabelV2, 0, 1);
             tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -213,7 +211,7 @@ namespace BUtil.Configurator.Configurator.Controls
             // 
             _unmountScriptLabel.AutoSize = true;
             _unmountScriptLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            _unmountScriptLabel.Location = new System.Drawing.Point(22, 257);
+            _unmountScriptLabel.Location = new System.Drawing.Point(22, 252);
             _unmountScriptLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             _unmountScriptLabel.Name = "_unmountScriptLabel";
             _unmountScriptLabel.Size = new System.Drawing.Size(289, 83);
@@ -225,7 +223,7 @@ namespace BUtil.Configurator.Configurator.Controls
             // 
             _mountScriptLabel.AutoSize = true;
             _mountScriptLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            _mountScriptLabel.Location = new System.Drawing.Point(22, 174);
+            _mountScriptLabel.Location = new System.Drawing.Point(22, 169);
             _mountScriptLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             _mountScriptLabel.Name = "_mountScriptLabel";
             _mountScriptLabel.Size = new System.Drawing.Size(289, 83);
@@ -236,7 +234,7 @@ namespace BUtil.Configurator.Configurator.Controls
             // _unmountTextBox
             // 
             _unmountTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            _unmountTextBox.Location = new System.Drawing.Point(321, 262);
+            _unmountTextBox.Location = new System.Drawing.Point(321, 257);
             _unmountTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             _unmountTextBox.Multiline = true;
             _unmountTextBox.Name = "_unmountTextBox";
@@ -246,7 +244,7 @@ namespace BUtil.Configurator.Configurator.Controls
             // _mountTextBox
             // 
             _mountTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            _mountTextBox.Location = new System.Drawing.Point(321, 179);
+            _mountTextBox.Location = new System.Drawing.Point(321, 174);
             _mountTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             _mountTextBox.Multiline = true;
             _mountTextBox.Name = "_mountTextBox";
@@ -256,7 +254,7 @@ namespace BUtil.Configurator.Configurator.Controls
             // _mountButton
             // 
             _mountButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            _mountButton.Location = new System.Drawing.Point(506, 179);
+            _mountButton.Location = new System.Drawing.Point(506, 174);
             _mountButton.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             _mountButton.MaximumSize = new System.Drawing.Size(126, 45);
             _mountButton.MinimumSize = new System.Drawing.Size(126, 45);
@@ -270,7 +268,7 @@ namespace BUtil.Configurator.Configurator.Controls
             // _unmountButton
             // 
             _unmountButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            _unmountButton.Location = new System.Drawing.Point(506, 262);
+            _unmountButton.Location = new System.Drawing.Point(506, 257);
             _unmountButton.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             _unmountButton.MaximumSize = new System.Drawing.Size(126, 45);
             _unmountButton.MinimumSize = new System.Drawing.Size(126, 45);
@@ -281,29 +279,16 @@ namespace BUtil.Configurator.Configurator.Controls
             _unmountButton.UseVisualStyleBackColor = true;
             _unmountButton.Click += OnUnmount;
             // 
-            // _sambaButton
-            // 
-            _sambaButton.Location = new System.Drawing.Point(506, 124);
-            _sambaButton.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            _sambaButton.MaximumSize = new System.Drawing.Size(126, 45);
-            _sambaButton.MinimumSize = new System.Drawing.Size(126, 45);
-            _sambaButton.Name = "_sambaButton";
-            _sambaButton.Size = new System.Drawing.Size(126, 45);
-            _sambaButton.TabIndex = 15;
-            _sambaButton.Text = "Samba...";
-            _sambaButton.UseVisualStyleBackColor = true;
-            _sambaButton.Click += OnSambaButtonClick;
-            // 
             // _scriptsLabel
             // 
             _scriptsLabel.AutoSize = true;
-            tableLayoutPanel2.SetColumnSpan(_scriptsLabel, 2);
-            _scriptsLabel.Dock = System.Windows.Forms.DockStyle.Right;
-            _scriptsLabel.Location = new System.Drawing.Point(66, 119);
+            tableLayoutPanel2.SetColumnSpan(_scriptsLabel, 3);
+            _scriptsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            _scriptsLabel.Location = new System.Drawing.Point(22, 119);
             _scriptsLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             _scriptsLabel.MaximumSize = new System.Drawing.Size(857, 0);
             _scriptsLabel.Name = "_scriptsLabel";
-            _scriptsLabel.Size = new System.Drawing.Size(428, 55);
+            _scriptsLabel.Size = new System.Drawing.Size(610, 50);
             _scriptsLabel.TabIndex = 16;
             _scriptsLabel.Text = "If folder becomes accessible after mounting, specify PowerShell scripts for  mounting and unmounting";
             _scriptsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -703,7 +688,6 @@ namespace BUtil.Configurator.Configurator.Controls
         private System.Windows.Forms.TextBox _mountTextBox;
         private System.Windows.Forms.Button _mountButton;
         private System.Windows.Forms.Button _unmountButton;
-        private System.Windows.Forms.Button _sambaButton;
         private System.Windows.Forms.Label _scriptsLabel;
         private System.Windows.Forms.LinkLabel _limitUploadLabelV2;
         private System.Windows.Forms.FolderBrowserDialog fbd;

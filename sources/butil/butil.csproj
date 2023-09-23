@@ -100,9 +100,6 @@
     <Compile Update="Tasks\Controls\Tasks\TaskNavigationControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Tasks\Controls\Tasks\Where\SambaForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Common\OptionsHeader.cs">
       <SubType>UserControl</SubType>
     </Compile>

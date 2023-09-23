@@ -181,15 +181,5 @@ namespace BUtil.Configurator.Configurator.Controls
             else
                 Messages.ShowErrorBox(Resources.DataStorage_Field_DisconnectionScript_Bad);
         }
-
-        private void OnSambaButtonClick(object sender, EventArgs e)
-        {
-            using var form = new SambaForm();
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-                _mountTextBox.Text = form.MountScript;
-                _unmountTextBox.Text = form.UnmountScript;
-            }
-        }
     }
 }
