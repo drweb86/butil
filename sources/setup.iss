@@ -166,10 +166,10 @@ end;
 Source: "..\Output\BUtil\*.*"; DestDir: "{app}"; Flags: recursesubdirs
 
 [Icons]
-Name: "{group}\{cm:IconTasks}";		      Filename: "{app}\bin\butil.exe"
-Name: "{group}\{cm:IconCLI}";	          Filename: "{app}\bin\butilc.exe"
-Name: "{group}\{cm:IconLaunchTask}";		Filename: "{app}\bin\butil.exe";	Parameters: "LaunchTask";	IconFilename: "{app}\data\BackupUi.ico"
-Name: "{group}\{cm:IconRestoration}";		Filename: "{app}\bin\butil.exe";	Parameters: "Restore";		IconFilename: "{app}\data\RestorationMaster.ico"
+Name: "{group}\{cm:IconTasks}";			Filename: "{app}\bin\butil.exe"
+Name: "{group}\{cm:IconCLI}";			Filename: "{app}\bin\butilc.exe"
+Name: "{group}\{cm:IconLaunchTask}";		Filename: "{app}\bin\butil.exe";	Parameters: "LaunchTask";	IconFilename: "{app}\data\CrystalClear_EveraldoCoelho_Forward_ICO.ico"
+Name: "{group}\{cm:IconRestoration}";		Filename: "{app}\bin\butil.exe";	Parameters: "Restore";		IconFilename: "{app}\data\CrystalClear_EveraldoCoelho_Recover_48x48.ico"
 Name: "{autodesktop}\{cm:IconTasks}";		Filename: "{app}\bin\butil.exe"
 
 [Run]

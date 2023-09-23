@@ -181,16 +181,6 @@ namespace BUtil.Configurator {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap box_download_48 {
-            get {
-                object obj = ResourceManager.GetObject("box_download_48", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         public static System.Drawing.Icon BUtilIcon {
@@ -207,6 +197,16 @@ namespace BUtil.Configurator {
             get {
                 object obj = ResourceManager.GetObject("cross_48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        public static System.Drawing.Icon CrystalClear_EveraldoCoelho_48x48_ICO {
+            get {
+                object obj = ResourceManager.GetObject("CrystalClear_EveraldoCoelho_48x48_ICO", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
@@ -256,26 +256,6 @@ namespace BUtil.Configurator {
         public static System.Drawing.Bitmap FTPS {
             get {
                 object obj = ResourceManager.GetObject("FTPS", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Hdd16x16 {
-            get {
-                object obj = ResourceManager.GetObject("Hdd16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Hdd48x48 {
-            get {
-                object obj = ResourceManager.GetObject("Hdd48x48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -426,16 +406,6 @@ namespace BUtil.Configurator {
         public static System.Drawing.Bitmap SourceItems48x48 {
             get {
                 object obj = ResourceManager.GetObject("SourceItems48x48", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Stop {
-            get {
-                object obj = ResourceManager.GetObject("Stop", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

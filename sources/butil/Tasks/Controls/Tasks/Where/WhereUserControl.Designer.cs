@@ -94,7 +94,7 @@ namespace BUtil.Configurator.Configurator.Controls
             storageTypesImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth24Bit;
             storageTypesImageList.ImageStream = (System.Windows.Forms.ImageListStreamer)resources.GetObject("storageTypesImageList.ImageStream");
             storageTypesImageList.TransparentColor = System.Drawing.Color.White;
-            storageTypesImageList.Images.SetKeyName(0, "Hdd48x48.png");
+            storageTypesImageList.Images.SetKeyName(0, "RedFolder48x48.png");
             storageTypesImageList.Images.SetKeyName(1, "Share48x48.png");
             storageTypesImageList.Images.SetKeyName(2, "FTPS.png");
             // 

@@ -82,7 +82,7 @@ namespace BUtil.RestorationMaster
                 }
 
                 reportProgress(20);
-                
+
                 var commonServicesIoc = new CommonServicesIoc();
                 var services = new StorageSpecificServicesIoc(log, storageSettings, commonServicesIoc.HashService);
                 if (!services.IncrementalBackupStateService.TryRead(_passwordTextBox.Text, out state))
@@ -104,7 +104,7 @@ namespace BUtil.RestorationMaster
             Hide();
             using var restoreForm = new VersionsViewerForm(storageSettings, state);
             restoreForm.ShowDialog();
-            
+
             Close();
         }
 

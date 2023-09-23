@@ -7,6 +7,7 @@
 
 ## Changes
 - Setup and Italian language were improved by https://github.com/bovirus
+- Icons a little bit updated
 
 ## Bug Fixes
 - 150% DPI breaks progress window;

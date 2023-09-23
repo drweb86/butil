@@ -128,6 +128,7 @@
             Controls.Add(_mainToolStrip);
             Controls.Add(_closeButton);
             Controls.Add(_versionsListView);
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
             Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             Name = "BlameForm";
             ShowIcon = false;

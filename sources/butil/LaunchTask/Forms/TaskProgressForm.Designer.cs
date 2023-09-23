@@ -48,11 +48,11 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             _powerTaskLinkLabel = new System.Windows.Forms.LinkLabel();
             backupProgressUserControl = new BUtil.BackupUiMaster.Controls.TaskProgressUserControl();
             _mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            _afterCompletionTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             _bottomTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            _afterCompletionTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             _mainTableLayoutPanel.SuspendLayout();
-            _afterCompletionTableLayoutPanel.SuspendLayout();
             _bottomTableLayoutPanel.SuspendLayout();
+            _afterCompletionTableLayoutPanel.SuspendLayout();
             SuspendLayout();
             // 
             // startButton
@@ -209,22 +209,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             _mainTableLayoutPanel.Size = new System.Drawing.Size(1121, 870);
             _mainTableLayoutPanel.TabIndex = 24;
             // 
-            // _afterCompletionTableLayoutPanel
-            // 
-            _afterCompletionTableLayoutPanel.AutoSize = true;
-            _afterCompletionTableLayoutPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            _afterCompletionTableLayoutPanel.ColumnCount = 1;
-            _afterCompletionTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            _afterCompletionTableLayoutPanel.Controls.Add(_powerTaskLinkLabel, 0, 0);
-            _afterCompletionTableLayoutPanel.Controls.Add(_powerTaskComboBox, 0, 1);
-            _afterCompletionTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
-            _afterCompletionTableLayoutPanel.Name = "_afterCompletionTableLayoutPanel";
-            _afterCompletionTableLayoutPanel.RowCount = 2;
-            _afterCompletionTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            _afterCompletionTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            _afterCompletionTableLayoutPanel.Size = new System.Drawing.Size(296, 72);
-            _afterCompletionTableLayoutPanel.TabIndex = 25;
-            // 
             // _bottomTableLayoutPanel
             // 
             _bottomTableLayoutPanel.AutoSize = true;
@@ -247,6 +231,22 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             _bottomTableLayoutPanel.Size = new System.Drawing.Size(1115, 82);
             _bottomTableLayoutPanel.TabIndex = 26;
             // 
+            // _afterCompletionTableLayoutPanel
+            // 
+            _afterCompletionTableLayoutPanel.AutoSize = true;
+            _afterCompletionTableLayoutPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            _afterCompletionTableLayoutPanel.ColumnCount = 1;
+            _afterCompletionTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            _afterCompletionTableLayoutPanel.Controls.Add(_powerTaskLinkLabel, 0, 0);
+            _afterCompletionTableLayoutPanel.Controls.Add(_powerTaskComboBox, 0, 1);
+            _afterCompletionTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
+            _afterCompletionTableLayoutPanel.Name = "_afterCompletionTableLayoutPanel";
+            _afterCompletionTableLayoutPanel.RowCount = 2;
+            _afterCompletionTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            _afterCompletionTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            _afterCompletionTableLayoutPanel.Size = new System.Drawing.Size(296, 72);
+            _afterCompletionTableLayoutPanel.TabIndex = 25;
+            // 
             // TaskProgressForm
             // 
             AcceptButton = startButton;
@@ -264,10 +264,10 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             Load += LoadForm;
             _mainTableLayoutPanel.ResumeLayout(false);
             _mainTableLayoutPanel.PerformLayout();
-            _afterCompletionTableLayoutPanel.ResumeLayout(false);
-            _afterCompletionTableLayoutPanel.PerformLayout();
             _bottomTableLayoutPanel.ResumeLayout(false);
             _bottomTableLayoutPanel.PerformLayout();
+            _afterCompletionTableLayoutPanel.ResumeLayout(false);
+            _afterCompletionTableLayoutPanel.PerformLayout();
             ResumeLayout(false);
         }
 

@@ -121,9 +121,6 @@
   <data name="Logo48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Logo48x48.PNG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Stop.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="folder_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\folder_48.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -2409,9 +2406,6 @@
   <data name="AddFolder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\AddFolder.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="box_download_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\box_download_48.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Share48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Share48x48.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -2462,12 +2456,6 @@
   <data name="Open" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Open.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Hdd48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Hdd48x48.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Hdd16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Hdd16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Share16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Share16x16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -2515,5 +2503,8 @@
   </data>
   <data name="FolderOrangeOpen_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\FolderOrangeOpen_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CrystalClear_EveraldoCoelho_48x48_ICO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\CrystalClear_EveraldoCoelho_48x48_ICO.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

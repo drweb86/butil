@@ -23,7 +23,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 
         void OnOkButtonClick(object sender, System.EventArgs e)
         {
-            if (_tasksComboBox.SelectedIndex!=-1)
+            if (_tasksComboBox.SelectedIndex != -1)
             {
                 DialogResult = DialogResult.OK;
             }
