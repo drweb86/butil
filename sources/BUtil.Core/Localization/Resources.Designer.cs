@@ -866,7 +866,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error - BUtil.
+        ///   Looks up a localized string similar to Error.
         /// </summary>
         public static string Messages_Header_Error {
             get {
@@ -875,7 +875,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Information - BUtil.
+        ///   Looks up a localized string similar to Information.
         /// </summary>
         public static string Messages_Header_Information {
             get {
@@ -884,7 +884,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Question - BUtil.
+        ///   Looks up a localized string similar to Question.
         /// </summary>
         public static string Messages_Header_Question {
             get {

@@ -411,13 +411,13 @@
     <value>Ошибка (Посмотрите лог)</value>
   </data>
   <data name="Messages_Header_Information" xml:space="preserve">
-    <value>Информация - BUtil</value>
+    <value>Информация</value>
   </data>
   <data name="Messages_Header_Error" xml:space="preserve">
-    <value>Ошибка - BUtil</value>
+    <value>Ошибка</value>
   </data>
   <data name="Messages_Header_Question" xml:space="preserve">
-    <value>Вопрос - BUtil</value>
+    <value>Вопрос</value>
   </data>
   <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
     <value>В указанном каталоге нет файлов "{0}". 

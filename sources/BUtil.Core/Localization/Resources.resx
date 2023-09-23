@@ -386,13 +386,13 @@ Should any one of the copies created fail, including the first (full), restorati
     <value>Logs</value>
   </data>
   <data name="Messages_Header_Error" xml:space="preserve">
-    <value>Error - BUtil</value>
+    <value>Error</value>
   </data>
   <data name="Messages_Header_Information" xml:space="preserve">
-    <value>Information - BUtil</value>
+    <value>Information</value>
   </data>
   <data name="Messages_Header_Question" xml:space="preserve">
-    <value>Question - BUtil</value>
+    <value>Question</value>
   </data>
   <data name="Name_Field" xml:space="preserve">
     <value>Name:</value>

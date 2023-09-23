@@ -18,7 +18,7 @@ namespace BUtil.Configurator.Configurator.Forms
         private WhereUserControl _whereUserControl = new WhereUserControl();
         private ImportMediaTaskWhereUserControl _importMediaTaskWhereUserControl = new ImportMediaTaskWhereUserControl();
 
-        public EditImportMediaTaskForm(TaskV2 task, TaskEditorPageEnum startPage)
+        public EditImportMediaTaskForm(TaskV2 task, TaskEditorPageEnum startPage, bool isNewTask)
         {
             InitializeComponent();
             choosePanelUserControl.WhenVisible = false;
@@ -27,14 +27,8 @@ namespace BUtil.Configurator.Configurator.Forms
             _task = task;
             _pages = new Dictionary<TaskEditorPageEnum, BackUserControl>();
 
-            if (task.Name == Resources.Task_Field_Name_NewDefaultValue)
-            {
-                Text = Resources.ImportMediaTask_Create;
-            }
-            else
-            {
-                Text = string.Format(Resources.ImportMediaTask_Edit_Title, task.Name);
-            }
+            Text = task.Name;
+
             cancelButton.Text = Resources.Button_Cancel;
 
             SetupUiComponents();

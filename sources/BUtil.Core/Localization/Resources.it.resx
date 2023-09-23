@@ -392,13 +392,13 @@ L'applicazione verrà ora chiusa.</value>
     <value>Registri</value>
   </data>
   <data name="Messages_Header_Error" xml:space="preserve">
-    <value>Errore - BUtil</value>
+    <value>Errore</value>
   </data>
   <data name="Messages_Header_Information" xml:space="preserve">
-    <value>Informazione - BUtil</value>
+    <value>Informazione</value>
   </data>
   <data name="Messages_Header_Question" xml:space="preserve">
-    <value>Domanda - BUtil</value>
+    <value>Domanda</value>
   </data>
   <data name="Name_Field" xml:space="preserve">
     <value>Nome:</value>

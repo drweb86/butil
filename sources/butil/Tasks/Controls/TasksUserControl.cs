@@ -127,7 +127,7 @@ namespace BUtil.Configurator.Configurator.Controls
 
             if (task.Model is ImportMediaTaskModelOptionsV2)
             {
-                using var form = new EditImportMediaTaskForm(task, Tasks.TaskEditorPageEnum.SourceItems);
+                using var form = new EditImportMediaTaskForm(task, Tasks.TaskEditorPageEnum.SourceItems, false);
                 if (form.ShowDialog() != DialogResult.OK)
                     return;
 
@@ -226,7 +226,7 @@ namespace BUtil.Configurator.Configurator.Controls
                 Model = ImportMediaTaskModelOptionsV2.CreateDefault(),
             };
 
-            using var form = new EditImportMediaTaskForm(task, Tasks.TaskEditorPageEnum.Name);
+            using var form = new EditImportMediaTaskForm(task, Tasks.TaskEditorPageEnum.Name, true);
             if (form.ShowDialog() != DialogResult.OK)
                 return;
 
