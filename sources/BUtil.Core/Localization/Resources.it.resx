@@ -618,4 +618,16 @@ Vedi la descrizione dettagliata al seguente collegamento.</value>
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
     <value>Crea attività backup incrementale</value>
   </data>
+  <data name="Ftps_Field_Encryption" xml:space="preserve">
+    <value>Criptazione SSL/TTS:</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
+    <value>Esplicita</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
+    <value>Implicita</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
+    <value>La quota deve essere 0 (non applicabile) o un valore superiore a 0.</value>
+  </data>
 </root>
