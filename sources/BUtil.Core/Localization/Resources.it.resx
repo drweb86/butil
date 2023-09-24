@@ -625,4 +625,13 @@ Vedi la descrizione dettagliata al seguente collegamento.</value>
   <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
     <value>La quota deve essere 0 (non applicabile) o un valore superiore a 0.</value>
   </data>
+  <data name="Field_Folder_Browse" xml:space="preserve">
+    <value>Sfoglia</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
+    <value>Esempio:
+L'immagina deve contenere  il file {0} (modificato in {1}).
+Con questa cartella e il file stringa della maschera verrà archiviato come:
+{2}</value>
+  </data>
 </root>
