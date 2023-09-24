@@ -226,6 +226,9 @@ Il programma ora aprirà il browser internet alla pagina di download</value>
 	C'è un problema: l'ISP riduce la velocità di caricamento dopo diversi GB. 
 	Questa impostazione ti consente di gestirlo.</value>
   </data>
+  <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
+    <value>La quota deve essere 0 (non applicabile) o un valore superiore a 0.</value>
+  </data>
   <data name="DataStorage_Script_Help" xml:space="preserve">
     <value>Se la cartella diventa disponibile dopo l'esecuzione di alcuni comandi, specifica gli script PowerShell per la connessione e la disconnessione.</value>
   </data>
@@ -274,6 +277,9 @@ Il programma ora aprirà il browser internet alla pagina di download</value>
   <data name="Field_Folder" xml:space="preserve">
     <value>Cartella:</value>
   </data>
+  <data name="Field_Folder_Browse" xml:space="preserve">
+    <value>Sfoglia</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>La cartella non esiste.</value>
   </data>
@@ -289,6 +295,15 @@ Il programma ora aprirà il browser internet alla pagina di download</value>
   <data name="File_Saving" xml:space="preserve">
     <value>Salvataggio "{0}"</value>
   </data>
+  <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
+    <value>Esplicita</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
+    <value>Implicita</value>
+  </data>
+  <data name="Ftps_Field_Encryption" xml:space="preserve">
+    <value>Criptazione SSL/TTS:</value>
+  </data>
   <data name="ImportMediaTask_AllFiles" xml:space="preserve">
     <value>Importa tutti i file</value>
   </data>
@@ -303,6 +318,12 @@ Il programma ora aprirà il browser internet alla pagina di download</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
     <value>Trasformazione nome file:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
+    <value>Esempio:
+L'immagina deve contenere  il file {0} (modificato in {1}).
+Con questa cartella e il file stringa della maschera verrà archiviato come:
+{2}</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
     <value>Token supportati:
@@ -357,6 +378,9 @@ L'applicazione verrà ora chiusa.</value>
   </data>
   <data name="IncrementalBackup_Version_Save" xml:space="preserve">
     <value>Salvataggio versione incrementale</value>
+  </data>
+  <data name="IncrementalBackupTask_Create" xml:space="preserve">
+    <value>Crea attività backup incrementale</value>
   </data>
   <data name="LeftMenu_Encryption" xml:space="preserve">
     <value>Criptazione</value>
@@ -609,29 +633,5 @@ Vedi la descrizione dettagliata al seguente collegamento.</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Non è stata specificato l'utente.</value>
-  </data>
-  <data name="IncrementalBackupTask_Create" xml:space="preserve">
-    <value>Crea attività backup incrementale</value>
-  </data>
-  <data name="Ftps_Field_Encryption" xml:space="preserve">
-    <value>Criptazione SSL/TTS:</value>
-  </data>
-  <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
-    <value>Esplicita</value>
-  </data>
-  <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
-    <value>Implicita</value>
-  </data>
-  <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
-    <value>La quota deve essere 0 (non applicabile) o un valore superiore a 0.</value>
-  </data>
-  <data name="Field_Folder_Browse" xml:space="preserve">
-    <value>Sfoglia</value>
-  </data>
-  <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
-    <value>Esempio:
-L'immagina deve contenere  il file {0} (modificato in {1}).
-Con questa cartella e il file stringa della maschera verrà archiviato come:
-{2}</value>
   </data>
 </root>

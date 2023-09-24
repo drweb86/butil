@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,26 +117,238 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Password_Generator_Header" xml:space="preserve">
-    <value>Генератор паролей</value>
+  <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
+    <value>Ничего не делать</value>
+  </data>
+  <data name="AfterTaskSelection_Field" xml:space="preserve">
+    <value>По окончании задачи:</value>
+  </data>
+  <data name="AfterTaskSelection_Help" xml:space="preserve">
+    <value>Если вы выберите что-либо кроме "ничего не делала", программа 
+настроит ОС таким образом, чтобы был показан отчет
+при следующим вашем входе в систему если 
+будут зарегистрированы ошибки или предупреждения.</value>
+  </data>
+  <data name="AfterTaskSelection_LogOff" xml:space="preserve">
+    <value>Завершить мой сеанс</value>
+  </data>
+  <data name="AfterTaskSelection_Reboot" xml:space="preserve">
+    <value>Перезагрузка</value>
+  </data>
+  <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
+    <value>Выключить компьютер</value>
+  </data>
+  <data name="Application_NewVersion_Notification" xml:space="preserve">
+    <value>Доступна новая {0} версия.
+
+В этой версии:
+{1}
+
+Сейчас программа откроет броузер со страничкой загрузки программы</value>
+  </data>
+  <data name="BackupVersion_Changes_Title" xml:space="preserve">
+    <value>ИЗМЕНЕНИЯ</value>
+  </data>
+  <data name="BackupVersion_CleanupUncompleted" xml:space="preserve">
+    <value>Удаление незавершенных резервных копий</value>
+  </data>
+  <data name="BackupVersion_Files_Title" xml:space="preserve">
+    <value>ФАЙЛЫ</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
+    <value>Журнал: {0}</value>
+  </data>
+  <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
+    <value>Журнал для выбранного...</value>
+  </data>
+  <data name="BackupVersion_Select" xml:space="preserve">
+    <value>Открыть выбранную версию...</value>
+  </data>
+  <data name="BackupVersion_Selector_Title" xml:space="preserve">
+    <value>ВЫБЕРИТЕ ВЕРСИЮ</value>
+  </data>
+  <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
+    <value>Хранилище: {0}</value>
+  </data>
+  <data name="BackupVersion_Versions_Title" xml:space="preserve">
+    <value>ВЕРСИИ</value>
+  </data>
+  <data name="BackupVersion_Viewer_Help" xml:space="preserve">
+    <value>Кликните по элементам, которые хотите восстановить, и откройте контекстное меню правой кнопкой мыши.</value>
   </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>Отмена</value>
   </data>
+  <data name="Button_Close" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="Button_Continue" xml:space="preserve">
+    <value>Продолжить &gt;</value>
+  </data>
   <data name="Button_CopyToClipboard" xml:space="preserve">
     <value>Копировать</value>
   </data>
-  <data name="Password_Field_Length" xml:space="preserve">
-    <value>Длина:</value>
+  <data name="Button_OK" xml:space="preserve">
+    <value>OK</value>
   </data>
-  <data name="Password_Group_Header" xml:space="preserve">
-    <value>Пароль (по желанию)</value>
+  <data name="Button_Remove" xml:space="preserve">
+    <value>Удалить из списка</value>
   </data>
-  <data name="Password_Field_Confirm" xml:space="preserve">
-    <value>Повторите пароль:</value>
+  <data name="Button_Save" xml:space="preserve">
+    <value>Сохранить</value>
   </data>
-  <data name="Password_Use" xml:space="preserve">
-    <value>Использовать</value>
+  <data name="CommandLineArguments_Help" xml:space="preserve">
+    <value>Посетите {0}, чтобы увидеть аргументы командной строки.</value>
+  </data>
+  <data name="CommandLineArguments_Invalid" xml:space="preserve">
+    <value>Некорректные аргументы командной строки.</value>
+  </data>
+  <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
+    <value>Скрипт подключения:</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
+    <value>Скрипт отключения:</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
+    <value>Завершено с ошибками</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
+    <value>Успешно завершено</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
+    <value>Лимит выгрузки, ГБ:</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
+    <value>Ограничивает количество отправляемых в хранилище данных во время выполнения задачи. 0 - без ограничений.
+Когда квота превышена, файлы будут пропущены и будут обработаны в следующий раз.
+Сценарий использования: Вы копируете данные на удаленный сервер. Проблема - провайдер режет скорость при выгрузке данных, размер которых превышает несколько ГБ. Эта настройка позволяет разрешить эту ситуацию.</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
+    <value>Квота должна быть 0 (чтобы не применялась) или число больше нуля.</value>
+  </data>
+  <data name="DataStorage_Script_Help" xml:space="preserve">
+    <value>Если папка становится доступной после выполнения комманд, укажите PowerShell скрипты для подключения и отключения хранилища.</value>
+  </data>
+  <data name="DataStorage_State_Get" xml:space="preserve">
+    <value>Получение состояния хранилища</value>
+  </data>
+  <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
+    <value>Хранилище не указано.</value>
+  </data>
+  <data name="Days_Field_Choose" xml:space="preserve">
+    <value>Выберите дни недели:</value>
+  </data>
+  <data name="Days_Friday" xml:space="preserve">
+    <value>Пятница</value>
+  </data>
+  <data name="Days_Monday" xml:space="preserve">
+    <value>Понедельник</value>
+  </data>
+  <data name="Days_Saturday" xml:space="preserve">
+    <value>Суббота</value>
+  </data>
+  <data name="Days_Sunday" xml:space="preserve">
+    <value>Воскресенье</value>
+  </data>
+  <data name="Days_Thursday" xml:space="preserve">
+    <value>Четверг</value>
+  </data>
+  <data name="Days_Tuesday" xml:space="preserve">
+    <value>Вторник</value>
+  </data>
+  <data name="Days_Wednesday" xml:space="preserve">
+    <value>Среда</value>
+  </data>
+  <data name="DirectoryStorage" xml:space="preserve">
+    <value>Папка</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
+    <value>Папка:</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
+    <value>Папка не указана.</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
+    <value>Папка "{0}" не найдена.</value>
+  </data>
+  <data name="Field_Folder" xml:space="preserve">
+    <value>Папка:</value>
+  </data>
+  <data name="Field_Folder_Browse" xml:space="preserve">
+    <value>Указать папку</value>
+  </data>
+  <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
+    <value>Папка не существует.</value>
+  </data>
+  <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
+    <value>Скрипт проверки целостности.ps1</value>
+  </data>
+  <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
+    <value>Сохранение скриптов проверки целостности</value>
+  </data>
+  <data name="File_List_Saving" xml:space="preserve">
+    <value>Сохранение файлов</value>
+  </data>
+  <data name="File_Saving" xml:space="preserve">
+    <value>Сохранение "{0}"</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
+    <value>Явное</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
+    <value>Неявное</value>
+  </data>
+  <data name="Ftps_Field_Encryption" xml:space="preserve">
+    <value>Шифрование SSL/TTS:</value>
+  </data>
+  <data name="ImportMediaTask_AllFiles" xml:space="preserve">
+    <value>Импорт всех файлов</value>
+  </data>
+  <data name="ImportMediaTask_Create" xml:space="preserve">
+    <value>Создать задачу по импорту мультимедиа</value>
+  </data>
+  <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
+    <value>Редактирование "{0}" задания по импорту мультимедиа</value>
+  </data>
+  <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
+    <value>Куда импортировать файлы:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
+    <value>Преобразования имени файла:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
+    <value>Пример:
+Представьте, у вас есть файл {0} (модифицированный в {1}).
+Учитывая каталог и шаблон, файл будет сохранен в:
+{2}</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
+    <value>Поддерживаемые токены:
+{DATE:Format} - Вставляет дату модификации файла в заданном формате.
+Чтобы увидеть все варианты, загуглите "C# DateTime формат".</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
+    <value>Не указан шаблон имени файла.</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
+    <value>Некорректная строка преобразования имени файла.</value>
+  </data>
+  <data name="ImportMediaTask_File" xml:space="preserve">
+    <value>Импорт "{0}"</value>
+  </data>
+  <data name="ImportMediaTask_Help" xml:space="preserve">
+    <value>Импортирует аудио, фото, видео из SD карточки фотоаппарата, рекордера; 
+фото и видео с вашего телефона через WI-FI через приложение FTP Server,
+используя шаблоны для имен файлов.
+
+На сайте приложения размещена инструкция по настройке передачи файлов
+через WI-FI через приложение FTP Server на телефоне.</value>
+  </data>
+  <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
+    <value>Указать источник данных</value>
+  </data>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
+    <value>Пропускать ранее импортированные файлы</value>
   </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>В приложении произошла непредвиденная ошибка
@@ -147,260 +359,6 @@
 
 Приложение сейчас завершит свою работу</value>
   </data>
-  <data name="State_LoadFromEverywhere" xml:space="preserve">
-    <value>Получение состояний файлов и хранилищ</value>
-  </data>
-  <data name="DataStorage_State_Get" xml:space="preserve">
-    <value>Получение состояния хранилища</value>
-  </data>
-  <data name="SourceItem_State_Get" xml:space="preserve">
-    <value>Получение состояния источника "{0}"</value>
-  </data>
-  <data name="State_File_Get" xml:space="preserve">
-    <value>Получение состояния файла "{0}"</value>
-  </data>
-  <data name="State_Saving" xml:space="preserve">
-    <value>Сохранение состояния</value>
-  </data>
-  <data name="IncrementalBackup_Title" xml:space="preserve">
-    <value>Инкрементное резервное копирование</value>
-  </data>
-  <data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
-    <value>Вычисление инкрементной версии</value>
-  </data>
-  <data name="File_List_Saving" xml:space="preserve">
-    <value>Сохранение файлов</value>
-  </data>
-  <data name="File_Saving" xml:space="preserve">
-    <value>Сохранение "{0}"</value>
-  </data>
-  <data name="IncrementalBackup_Version_Save" xml:space="preserve">
-    <value>Сохранение инкрементной версии</value>
-  </data>
-  <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
-    <value>Сохранение скриптов проверки целостности</value>
-  </data>
-  <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
-    <value>Скрипт проверки целостности.ps1</value>
-  </data>
-  <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
-    <value>Папка "{0}" не найдена.</value>
-  </data>
-  <data name="BackupVersion_CleanupUncompleted" xml:space="preserve">
-    <value>Удаление незавершенных резервных копий</value>
-  </data>
-  <data name="LogFile_Marker_Successful" xml:space="preserve">
-    <value>Успешно</value>
-  </data>
-  <data name="LogFile_Marker_Errors" xml:space="preserve">
-    <value>Ошибки</value>
-  </data>
-  <data name="Task_Status_Unknown" xml:space="preserve">
-    <value>Неизвестно</value>
-  </data>
-  <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
-    <value>Завершено частично. Так как у хранилища была указана квота, часть файлов была пропущена в этот раз. Осталось {0} файлов с размером {1} ГБ.</value>
-  </data>
-  <data name="ImportMediaTask_AllFiles" xml:space="preserve">
-    <value>Импорт всех файлов</value>
-  </data>
-  <data name="SourceItem_Validation_NotExists" xml:space="preserve">
-    <value>"{0}" не существует, поправьте список.</value>
-  </data>
-  <data name="SourceItem_Validation_Empty" xml:space="preserve">
-    <value>Не указано, что обрабатывать.</value>
-  </data>
-  <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
-    <value>Не указан шаблон имени файла.</value>
-  </data>
-  <data name="DirectoryStorage" xml:space="preserve">
-    <value>Папка</value>
-  </data>
-  <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
-    <value>Папка не указана.</value>
-  </data>
-  <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
-    <value>Хранилище не указано.</value>
-  </data>
-  <data name="Server_Field_Address_Validation" xml:space="preserve">
-    <value>Сервер не указан.</value>
-  </data>
-  <data name="Server_Field_Port_Validation" xml:space="preserve">
-    <value>Некорректный порт.</value>
-  </data>
-  <data name="User_Field_Validation" xml:space="preserve">
-    <value>Пользователь не указан.</value>
-  </data>
-  <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
-    <value>Пароль не указан.</value>
-  </data>
-  <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
-    <value>Некорректная строка преобразования имени файла.</value>
-  </data>
-  <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
-    <value>Папка не существует.</value>
-  </data>
-  <data name="ImportMediaTask_File" xml:space="preserve">
-    <value>Импорт "{0}"</value>
-  </data>
-  <data name="Task_Validation_NotSupported" xml:space="preserve">
-    <value>Эта задача не поддерживается.</value>
-  </data>
-  <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
-    <value>Успешно завершено</value>
-  </data>
-  <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
-    <value>Завершено с ошибками</value>
-  </data>
-  <data name="LeftMenu_What" xml:space="preserve">
-    <value>Что?</value>
-  </data>
-  <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
-    <value>Перетащите сюда файлы и папки в список из Проводника.</value>
-  </data>
-  <data name="SourceItem_AddFolders" xml:space="preserve">
-    <value>Добавить папки...</value>
-  </data>
-  <data name="Button_Remove" xml:space="preserve">
-    <value>Удалить из списка</value>
-  </data>
-  <data name="SourceItem_AddFiles" xml:space="preserve">
-    <value>Добавить файлы...</value>
-  </data>
-  <data name="LeftMenu_Where" xml:space="preserve">
-    <value>Куда?</value>
-  </data>
-  <data name="LeftMenu_Encryption" xml:space="preserve">
-    <value>Шифрование</value>
-  </data>
-  <data name="LogFile_OpenLogs" xml:space="preserve">
-    <value>Логи</value>
-  </data>
-  <data name="LeftMenu_When" xml:space="preserve">
-    <value>Как часто?</value>
-  </data>
-  <data name="Days_Field_Choose" xml:space="preserve">
-    <value>Выберите дни недели:</value>
-  </data>
-  <data name="Days_Wednesday" xml:space="preserve">
-    <value>Среда</value>
-  </data>
-  <data name="Days_Thursday" xml:space="preserve">
-    <value>Четверг</value>
-  </data>
-  <data name="Days_Friday" xml:space="preserve">
-    <value>Пятница</value>
-  </data>
-  <data name="Days_Saturday" xml:space="preserve">
-    <value>Суббота</value>
-  </data>
-  <data name="Days_Tuesday" xml:space="preserve">
-    <value>Вторник</value>
-  </data>
-  <data name="Days_Monday" xml:space="preserve">
-    <value>Понедельник</value>
-  </data>
-  <data name="Days_Sunday" xml:space="preserve">
-    <value>Воскресенье</value>
-  </data>
-  <data name="Time_Field_Minute" xml:space="preserve">
-    <value>Минуты:</value>
-  </data>
-  <data name="Time_Field_Hour" xml:space="preserve">
-    <value>Часы:</value>
-  </data>
-  <data name="Task_Create_Hint" xml:space="preserve">
-    <value>Создает новую задачу.</value>
-  </data>
-  <data name="Task_List" xml:space="preserve">
-    <value>Задачи</value>
-  </data>
-  <data name="Task_Launch_Hint" xml:space="preserve">
-    <value>Запускает выбранную задачу.</value>
-  </data>
-  <data name="Button_Close" xml:space="preserve">
-    <value>Закрыть</value>
-  </data>
-  <data name="Task_Status_Succesfull" xml:space="preserve">
-    <value>Успешно завершено</value>
-  </data>
-  <data name="Time_Field_Elapsed" xml:space="preserve">
-    <value>Прошло:</value>
-  </data>
-  <data name="Task_Status_InProgress" xml:space="preserve">
-    <value>Выполняется...</value>
-  </data>
-  <data name="Button_OK" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="Name_Field" xml:space="preserve">
-    <value>Название:</value>
-  </data>
-  <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
-    <value>Папка:</value>
-  </data>
-  <data name="AfterTaskSelection_Field" xml:space="preserve">
-    <value>По окончании задачи:</value>
-  </data>
-  <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
-    <value>Выключить компьютер</value>
-  </data>
-  <data name="AfterTaskSelection_LogOff" xml:space="preserve">
-    <value>Завершить мой сеанс</value>
-  </data>
-  <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
-    <value>Ничего не делать</value>
-  </data>
-  <data name="Password_Recovery_Prompt" xml:space="preserve">
-    <value>Если ваша резервная копия защищена паролем, укажите его здесь:</value>
-  </data>
-  <data name="Button_Continue" xml:space="preserve">
-    <value>Продолжить &gt;</value>
-  </data>
-  <data name="AfterTaskSelection_Help" xml:space="preserve">
-    <value>Если вы выберите что-либо кроме "ничего не делала", программа 
-настроит ОС таким образом, чтобы был показан отчет
-при следующим вашем входе в систему если 
-будут зарегистрированы ошибки или предупреждения.</value>
-  </data>
-  <data name="LeftMenu_What_Validation" xml:space="preserve">
-    <value>Не указано, что обрабатывать.</value>
-  </data>
-  <data name="LeftMenu_What_Hint" xml:space="preserve">
-    <value>Сюда можете добавлять файлы и папки, предназначенные для обработки.</value>
-  </data>
-  <data name="LeftMenu_Where_Hint" xml:space="preserve">
-    <value>Здесь можно указать места, в которые поместить данные.</value>
-  </data>
-  <data name="LeftMenu_When_Help" xml:space="preserve">
-    <value>Здесь можно настроить планировщик. Планировщик позволяет автоматизировать выполнение задачи.</value>
-  </data>
-  <data name="Application_NewVersion_Notification" xml:space="preserve">
-    <value>Доступна новая {0} версия.
-
-В этой версии:
-{1}
-
-Сейчас программа откроет броузер со страничкой загрузки программы</value>
-  </data>
-  <data name="AfterTaskSelection_Reboot" xml:space="preserve">
-    <value>Перезагрузка</value>
-  </data>
-  <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
-    <value>Новая задача</value>
-  </data>
-  <data name="Task_Delete_Hint" xml:space="preserve">
-    <value>Удаляет выбранную задачу.</value>
-  </data>
-  <data name="Task_Edit_Hint" xml:space="preserve">
-    <value>Изменяет выбранную задачу.</value>
-  </data>
-  <data name="Task_Field_Choose" xml:space="preserve">
-    <value>Выберите задачу:</value>
-  </data>
-  <data name="Password_Generate" xml:space="preserve">
-    <value>Сгенерировать пароль...</value>
-  </data>
   <data name="IncrementalBackup_Help" xml:space="preserve">
     <value>Наиболее простая форма инкрементного бэкапа состоит из идентификации, записи и хранения только тех файлов, что изменились с момента последнего РК. 
 
@@ -410,49 +368,160 @@
 
 Если хотя бы одна из копий упадет, включая первую (полную), восстановление будет неполным.</value>
   </data>
-  <data name="Task_Status_FailedSeeLog" xml:space="preserve">
-    <value>Ошибка (Посмотрите лог)</value>
+  <data name="IncrementalBackup_Title" xml:space="preserve">
+    <value>Инкрементное резервное копирование</value>
   </data>
-  <data name="Messages_Header_Information" xml:space="preserve">
-    <value>Информация</value>
+  <data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
+    <value>Вычисление инкрементной версии</value>
+  </data>
+  <data name="IncrementalBackup_Version_Save" xml:space="preserve">
+    <value>Сохранение инкрементной версии</value>
+  </data>
+  <data name="IncrementalBackupTask_Create" xml:space="preserve">
+    <value>Создать задачу по инкрементному резервному копированию</value>
+  </data>
+  <data name="LeftMenu_Encryption" xml:space="preserve">
+    <value>Шифрование</value>
+  </data>
+  <data name="LeftMenu_What" xml:space="preserve">
+    <value>Что?</value>
+  </data>
+  <data name="LeftMenu_What_Hint" xml:space="preserve">
+    <value>Сюда можете добавлять файлы и папки, предназначенные для обработки.</value>
+  </data>
+  <data name="LeftMenu_What_Validation" xml:space="preserve">
+    <value>Не указано, что обрабатывать.</value>
+  </data>
+  <data name="LeftMenu_When" xml:space="preserve">
+    <value>Как часто?</value>
+  </data>
+  <data name="LeftMenu_When_Help" xml:space="preserve">
+    <value>Здесь можно настроить планировщик. Планировщик позволяет автоматизировать выполнение задачи.</value>
+  </data>
+  <data name="LeftMenu_Where" xml:space="preserve">
+    <value>Куда?</value>
+  </data>
+  <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
+    <value>Перетащите сюда файлы и папки в список из Проводника.</value>
+  </data>
+  <data name="LeftMenu_Where_Hint" xml:space="preserve">
+    <value>Здесь можно указать места, в которые поместить данные.</value>
+  </data>
+  <data name="LogFile_Marker_Errors" xml:space="preserve">
+    <value>Ошибки</value>
+  </data>
+  <data name="LogFile_Marker_Successful" xml:space="preserve">
+    <value>Успешно</value>
+  </data>
+  <data name="LogFile_OpenLogs" xml:space="preserve">
+    <value>Логи</value>
   </data>
   <data name="Messages_Header_Error" xml:space="preserve">
     <value>Ошибка</value>
   </data>
+  <data name="Messages_Header_Information" xml:space="preserve">
+    <value>Информация</value>
+  </data>
   <data name="Messages_Header_Question" xml:space="preserve">
     <value>Вопрос</value>
+  </data>
+  <data name="Name_Field" xml:space="preserve">
+    <value>Название:</value>
+  </data>
+  <data name="Name_Field_Validation" xml:space="preserve">
+    <value>Название не указано или содержит символы пути.</value>
+  </data>
+  <data name="Name_Title" xml:space="preserve">
+    <value>Название</value>
+  </data>
+  <data name="Password_Field" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="Password_Field_Confirm" xml:space="preserve">
+    <value>Повторите пароль:</value>
+  </data>
+  <data name="Password_Field_Length" xml:space="preserve">
+    <value>Длина:</value>
+  </data>
+  <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
+    <value>Пароли не совпадают.</value>
+  </data>
+  <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
+    <value>Пароль не указан.</value>
+  </data>
+  <data name="Password_Generate" xml:space="preserve">
+    <value>Сгенерировать пароль...</value>
+  </data>
+  <data name="Password_Generator_Header" xml:space="preserve">
+    <value>Генератор паролей</value>
+  </data>
+  <data name="Password_Group_Header" xml:space="preserve">
+    <value>Пароль (по желанию)</value>
+  </data>
+  <data name="Password_Help" xml:space="preserve">
+    <value>Рекомендуемая минимальная длина пароля - 50 символов.</value>
+  </data>
+  <data name="Password_Recovery_Prompt" xml:space="preserve">
+    <value>Если ваша резервная копия защищена паролем, укажите его здесь:</value>
+  </data>
+  <data name="Password_Use" xml:space="preserve">
+    <value>Использовать</value>
   </data>
   <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
     <value>В указанном каталоге нет файлов "{0}". 
 
 Укажите на каталог, содержащий этот файл.</value>
   </data>
-  <data name="BackupVersion_Selector_Title" xml:space="preserve">
-    <value>ВЫБЕРИТЕ ВЕРСИЮ</value>
+  <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
+    <value>Не удается прочитать состояние.</value>
   </data>
-  <data name="BackupVersion_Changes_Title" xml:space="preserve">
-    <value>ИЗМЕНЕНИЯ</value>
+  <data name="Server_Field_Address" xml:space="preserve">
+    <value>Сервер:</value>
   </data>
-  <data name="BackupVersion_Files_Title" xml:space="preserve">
-    <value>ФАЙЛЫ</value>
+  <data name="Server_Field_Address_Validation" xml:space="preserve">
+    <value>Сервер не указан.</value>
   </data>
-  <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Кликните по элементам, которые хотите восстановить, и откройте контекстное меню правой кнопкой мыши.</value>
+  <data name="Server_Field_Port" xml:space="preserve">
+    <value>Порт:</value>
   </data>
-  <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
-    <value>Пароли не совпадают.</value>
+  <data name="Server_Field_Port_Validation" xml:space="preserve">
+    <value>Некорректный порт.</value>
   </data>
-  <data name="Password_Help" xml:space="preserve">
-    <value>Рекомендуемая минимальная длина пароля - 50 символов.</value>
+  <data name="SourceItem_AddFiles" xml:space="preserve">
+    <value>Добавить файлы...</value>
+  </data>
+  <data name="SourceItem_AddFolders" xml:space="preserve">
+    <value>Добавить папки...</value>
+  </data>
+  <data name="SourceItem_OpenInExplorer" xml:space="preserve">
+    <value>Открыть в Проводнике...</value>
+  </data>
+  <data name="SourceItem_State_Get" xml:space="preserve">
+    <value>Получение состояния источника "{0}"</value>
+  </data>
+  <data name="SourceItem_Validation_Empty" xml:space="preserve">
+    <value>Не указано, что обрабатывать.</value>
+  </data>
+  <data name="SourceItem_Validation_NotExists" xml:space="preserve">
+    <value>"{0}" не существует, поправьте список.</value>
+  </data>
+  <data name="State_File_Get" xml:space="preserve">
+    <value>Получение состояния файла "{0}"</value>
+  </data>
+  <data name="State_LoadFromEverywhere" xml:space="preserve">
+    <value>Получение состояний файлов и хранилищ</value>
+  </data>
+  <data name="State_Saving" xml:space="preserve">
+    <value>Сохранение состояния</value>
   </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
     <value>Добавить маску исключения файлов</value>
   </data>
-  <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
-    <value>Исключает файлы из обработки по маске.</value>
+  <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
+    <value>Изменить маску исключения файлов</value>
   </data>
-  <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
-    <value>Маска исключения файлов:</value>
+  <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
+    <value>Форматы шаблонов подстановки имен файлов</value>
   </data>
   <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
     <value>Здесь можно задать исключения файлов по маске.
@@ -464,102 +533,20 @@ d:\temp\**\*.txt или
 bin. 
 Смотрите детальное описание масок по следующей ссылке.</value>
   </data>
-  <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
-    <value>Форматы шаблонов подстановки имен файлов</value>
+  <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
+    <value>Исключает файлы из обработки по маске.</value>
+  </data>
+  <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
+    <value>Маска исключения файлов:</value>
   </data>
   <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
     <value>Маска исключения файлов не указана.</value>
   </data>
-  <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
-    <value>Изменить маску исключения файлов</value>
-  </data>
-  <data name="SourceItem_OpenInExplorer" xml:space="preserve">
-    <value>Открыть в Проводнике...</value>
-  </data>
-  <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
-    <value>Не удается прочитать состояние.</value>
-  </data>
-  <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
-    <value>Лимит выгрузки, ГБ:</value>
-  </data>
-  <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
-    <value>Ограничивает количество отправляемых в хранилище данных во время выполнения задачи. 0 - без ограничений.
-Когда квота превышена, файлы будут пропущены и будут обработаны в следующий раз.
-Сценарий использования: Вы копируете данные на удаленный сервер. Проблема - провайдер режет скорость при выгрузке данных, размер которых превышает несколько ГБ. Эта настройка позволяет разрешить эту ситуацию.</value>
-  </data>
-  <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
-    <value>Скрипт подключения:</value>
-  </data>
-  <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
-    <value>Скрипт отключения:</value>
-  </data>
-  <data name="DataStorage_Script_Help" xml:space="preserve">
-    <value>Если папка становится доступной после выполнения комманд, укажите PowerShell скрипты для подключения и отключения хранилища.</value>
-  </data>
-  <data name="Url_Field" xml:space="preserve">
-    <value>Урл:</value>
-  </data>
-  <data name="Url_Field_Validation" xml:space="preserve">
-    <value>Урл не указан.</value>
-  </data>
-  <data name="Task_LastExecution_State" xml:space="preserve">
-    <value>Состояние</value>
-  </data>
-  <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>Хранилище: {0}</value>
-  </data>
-  <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
-    <value>Журнал: {0}</value>
-  </data>
-  <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
-    <value>Журнал для выбранного...</value>
-  </data>
-  <data name="BackupVersion_Versions_Title" xml:space="preserve">
-    <value>ВЕРСИИ</value>
-  </data>
-  <data name="BackupVersion_Select" xml:space="preserve">
-    <value>Открыть выбранную версию...</value>
-  </data>
-  <data name="Task_Restore" xml:space="preserve">
-    <value>Восстановить</value>
-  </data>
-  <data name="CommandLineArguments_Help" xml:space="preserve">
-    <value>Посетите {0}, чтобы увидеть аргументы командной строки.</value>
-  </data>
-  <data name="CommandLineArguments_Invalid" xml:space="preserve">
-    <value>Некорректные аргументы командной строки.</value>
-  </data>
-  <data name="Task_Validation_NotFound" xml:space="preserve">
-    <value>Задача "{0}" не найдена.</value>
-  </data>
-  <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
-    <value>Преобразования имени файла:</value>
-  </data>
-  <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
-    <value>Поддерживаемые токены:
-{DATE:Format} - Вставляет дату модификации файла в заданном формате.
-Чтобы увидеть все варианты, загуглите "C# DateTime формат".</value>
-  </data>
-  <data name="Button_Save" xml:space="preserve">
-    <value>Сохранить</value>
-  </data>
-  <data name="ImportMediaTask_Create" xml:space="preserve">
-    <value>Создать задачу по импорту мультимедиа</value>
-  </data>
-  <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
-    <value>Редактирование "{0}" задания по импорту мультимедиа</value>
-  </data>
-  <data name="Name_Field_Validation" xml:space="preserve">
-    <value>Название не указано или содержит символы пути.</value>
-  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Создать</value>
   </data>
-  <data name="Task_Launch" xml:space="preserve">
-    <value>Запустить</value>
-  </data>
-  <data name="Task_Edit" xml:space="preserve">
-    <value>Изменить</value>
+  <data name="Task_Create_Hint" xml:space="preserve">
+    <value>Создает новую задачу.</value>
   </data>
   <data name="Task_Delete" xml:space="preserve">
     <value>Удалить</value>
@@ -567,66 +554,79 @@ bin.
   <data name="Task_Delete_Confirm" xml:space="preserve">
     <value>Удаление задачу "{0}"?</value>
   </data>
+  <data name="Task_Delete_Hint" xml:space="preserve">
+    <value>Удаляет выбранную задачу.</value>
+  </data>
+  <data name="Task_Edit" xml:space="preserve">
+    <value>Изменить</value>
+  </data>
+  <data name="Task_Edit_Hint" xml:space="preserve">
+    <value>Изменяет выбранную задачу.</value>
+  </data>
   <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
     <value>Вы не можете редактировать этот тип задания здесь.</value>
   </data>
-  <data name="Server_Field_Address" xml:space="preserve">
-    <value>Сервер:</value>
+  <data name="Task_Field_Choose" xml:space="preserve">
+    <value>Выберите задачу:</value>
   </data>
-  <data name="Server_Field_Port" xml:space="preserve">
-    <value>Порт:</value>
+  <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
+    <value>Новая задача</value>
+  </data>
+  <data name="Task_LastExecution_State" xml:space="preserve">
+    <value>Состояние</value>
+  </data>
+  <data name="Task_Launch" xml:space="preserve">
+    <value>Запустить</value>
+  </data>
+  <data name="Task_Launch_Hint" xml:space="preserve">
+    <value>Запускает выбранную задачу.</value>
+  </data>
+  <data name="Task_List" xml:space="preserve">
+    <value>Задачи</value>
+  </data>
+  <data name="Task_Restore" xml:space="preserve">
+    <value>Восстановить</value>
+  </data>
+  <data name="Task_Status_FailedSeeLog" xml:space="preserve">
+    <value>Ошибка (Посмотрите лог)</value>
+  </data>
+  <data name="Task_Status_InProgress" xml:space="preserve">
+    <value>Выполняется...</value>
+  </data>
+  <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
+    <value>Завершено частично. Так как у хранилища была указана квота, часть файлов была пропущена в этот раз. Осталось {0} файлов с размером {1} ГБ.</value>
+  </data>
+  <data name="Task_Status_Succesfull" xml:space="preserve">
+    <value>Успешно завершено</value>
+  </data>
+  <data name="Task_Status_Unknown" xml:space="preserve">
+    <value>Неизвестно</value>
+  </data>
+  <data name="Task_Validation_NotFound" xml:space="preserve">
+    <value>Задача "{0}" не найдена.</value>
+  </data>
+  <data name="Task_Validation_NotSupported" xml:space="preserve">
+    <value>Эта задача не поддерживается.</value>
+  </data>
+  <data name="Time_Field_Elapsed" xml:space="preserve">
+    <value>Прошло:</value>
+  </data>
+  <data name="Time_Field_Hour" xml:space="preserve">
+    <value>Часы:</value>
+  </data>
+  <data name="Time_Field_Minute" xml:space="preserve">
+    <value>Минуты:</value>
+  </data>
+  <data name="Url_Field" xml:space="preserve">
+    <value>Урл:</value>
+  </data>
+  <data name="Url_Field_Validation" xml:space="preserve">
+    <value>Урл не указан.</value>
   </data>
   <data name="User_Field" xml:space="preserve">
     <value>Пользователь:</value>
   </data>
-  <data name="Password_Field" xml:space="preserve">
-    <value>Пароль:</value>
-  </data>
-  <data name="Field_Folder" xml:space="preserve">
-    <value>Папка:</value>
-  </data>
-  <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Указать источник данных</value>
-  </data>
-  <data name="ImportMediaTask_Help" xml:space="preserve">
-    <value>Импортирует аудио, фото, видео из SD карточки фотоаппарата, рекордера; 
-фото и видео с вашего телефона через WI-FI через приложение FTP Server,
-используя шаблоны для имен файлов.
-
-На сайте приложения размещена инструкция по настройке передачи файлов
-через WI-FI через приложение FTP Server на телефоне.</value>
-  </data>
-  <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
-    <value>Пропускать ранее импортированные файлы</value>
-  </data>
-  <data name="Name_Title" xml:space="preserve">
-    <value>Название</value>
-  </data>
-  <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
-    <value>Куда импортировать файлы:</value>
-  </data>
-  <data name="IncrementalBackupTask_Create" xml:space="preserve">
-    <value>Создать задачу по инкрементному резервному копированию</value>
-  </data>
-  <data name="Ftps_Field_Encryption" xml:space="preserve">
-    <value>Шифрование SSL/TTS:</value>
-  </data>
-  <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
-    <value>Явное</value>
-  </data>
-  <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
-    <value>Неявное</value>
-  </data>
-  <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
-    <value>Квота должна быть 0 (чтобы не применялась) или число больше нуля.</value>
-  </data>
-  <data name="Field_Folder_Browse" xml:space="preserve">
-    <value>Указать папку</value>
-  </data>
-  <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
-    <value>Пример:
-Представьте, у вас есть файл {0} (модифицированный в {1}).
-Учитывая каталог и шаблон, файл будет сохранен в:
-{2}</value>
+  <data name="User_Field_Validation" xml:space="preserve">
+    <value>Пользователь не указан.</value>
   </data>
 </root>

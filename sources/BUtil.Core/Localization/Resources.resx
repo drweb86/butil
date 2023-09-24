@@ -223,6 +223,9 @@ Program will now open browser with the download page</value>
 When quota is exceeded, other files will be skipped and will be processed next time.
 Usage scenario: You copy data to remote server. There's a problem: ISP drops upload speed after several gigabytes. This setting allows you to handle it.</value>
   </data>
+  <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
+    <value>Quota should be 0 (do not apply) or value above 0.</value>
+  </data>
   <data name="DataStorage_Script_Help" xml:space="preserve">
     <value>If folder becomes available after executing some commands, specify PowerShell scripts for connection and disconnection.</value>
   </data>
@@ -271,6 +274,9 @@ Usage scenario: You copy data to remote server. There's a problem: ISP drops upl
   <data name="Field_Folder" xml:space="preserve">
     <value>Folder:</value>
   </data>
+  <data name="Field_Folder_Browse" xml:space="preserve">
+    <value>Browse</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Folder does not exist.</value>
   </data>
@@ -286,6 +292,15 @@ Usage scenario: You copy data to remote server. There's a problem: ISP drops upl
   <data name="File_Saving" xml:space="preserve">
     <value>Saving "{0}"</value>
   </data>
+  <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
+    <value>Explicit</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
+    <value>Implicit</value>
+  </data>
+  <data name="Ftps_Field_Encryption" xml:space="preserve">
+    <value>SSL/TTS encryption:</value>
+  </data>
   <data name="ImportMediaTask_AllFiles" xml:space="preserve">
     <value>Import all files</value>
   </data>
@@ -300,6 +315,12 @@ Usage scenario: You copy data to remote server. There's a problem: ISP drops upl
   </data>
   <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
     <value>File name transformations:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
+    <value>Example:
+Imagine you have file {0} (modified at {1}).
+With this directory and template string file will be stored as:
+{2}</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
     <value>Supported tokens:
@@ -354,6 +375,9 @@ Should any one of the copies created fail, including the first (full), restorati
   </data>
   <data name="IncrementalBackup_Version_Save" xml:space="preserve">
     <value>Saving incremented version</value>
+  </data>
+  <data name="IncrementalBackupTask_Create" xml:space="preserve">
+    <value>Create incremental backup task</value>
   </data>
   <data name="LeftMenu_Encryption" xml:space="preserve">
     <value>Encryption</value>
@@ -603,29 +627,5 @@ See detailed description in the following link.</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>User is not specified.</value>
-  </data>
-  <data name="IncrementalBackupTask_Create" xml:space="preserve">
-    <value>Create incremental backup task</value>
-  </data>
-  <data name="Ftps_Field_Encryption" xml:space="preserve">
-    <value>SSL/TTS encryption:</value>
-  </data>
-  <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
-    <value>Explicit</value>
-  </data>
-  <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
-    <value>Implicit</value>
-  </data>
-  <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
-    <value>Quota should be 0 (do not apply) or value above 0.</value>
-  </data>
-  <data name="Field_Folder_Browse" xml:space="preserve">
-    <value>Browse</value>
-  </data>
-  <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
-    <value>Example:
-Imagine you have file {0} (modified at {1}).
-With this directory and template string file will be stored as:
-{2}</value>
   </data>
 </root>

@@ -1,5 +1,13 @@
 @echo off
 
+cd tools\ResxSorter
+dotnet run
+if NOT %ERRORLEVEL% == 0 (
+	GOTO error;
+)
+cd ..
+cd ..
+
 dotnet publish /p:Configuration=Release /p:PublishDir=../Output/butil/bin /p:PublishReadyToRun=false /p:RunAnalyzersDuringBuild=False
 
 echo %ERRORLEVEL%
