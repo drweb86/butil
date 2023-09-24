@@ -13,7 +13,7 @@ namespace BUtil.Configurator.Configurator.Forms
 
             this._backupTasksUserControl.HelpLabel = helpToolStripStatusLabel;
             _backupTasksUserControl.ApplyLocalization();
-            Text = "BUtil - V" + CopyrightInfo.Version.ToString();
+            Text = "BUtil - V" + CopyrightInfo.Version.ToString(3);
             restorationToolToolStripMenuItem.Text = Resources.Task_Restore;
             _logsToolStripMenuItem.Text = Resources.LogFile_OpenLogs;
 

@@ -75,15 +75,24 @@ namespace BUtil.Configurator.Configurator.Controls
             foreach (var taskName in taskNames)
             {
                 var lastLogFile = lastLogs.FirstOrDefault(x => x.TaskName == taskName);
-                string status = "-";
+                string status = lastLogFile != null ? lastLogFile.CreatedAt.ToString() : "-";
+                var listViewItem = new ListViewItem(new[] { taskName, status }, 0);
+
                 if (lastLogFile != null)
                 {
-                    var postfix = lastLogFile.IsSuccess.HasValue ?
-                        (lastLogFile.IsSuccess.Value ? "✅" : "❌")
-                        : "❓";
-                    status = $"{postfix}{lastLogFile.CreatedAt}";
+                    if (lastLogFile.IsSuccess.HasValue)
+                    {
+                        listViewItem.BackColor = lastLogFile.IsSuccess.Value ? Color.LightGreen : Color.PaleVioletRed;
+                        if (lastLogFile.IsSuccess.Value == false)
+                            listViewItem.ForeColor = Color.White;
+                    }
+                    else
+                    {
+                        listViewItem.BackColor = Color.Yellow;
+                    }
                 }
-                _tasksListView.Items.Add(new ListViewItem(new[] { taskName, status }, 0));
+                
+                _tasksListView.Items.Add(listViewItem);
             }
             _tasksListView.EndUpdate();
         }

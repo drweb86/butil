@@ -17,7 +17,7 @@ namespace BUtil.Core
                 .GetName()
 				.Version;
 
-            Copyright = string.Format(CultureInfo.CurrentUICulture, "BUtil {0} : Copyright (c) 2010-2023 Siarhei Kuchuk", Version);
+            Copyright = string.Format(CultureInfo.CurrentUICulture, "BUtil {0} : Copyright (c) 2010-{1} Siarhei Kuchuk", Version, DateTime.Now.Year);
         }
     }
 }

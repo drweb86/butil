@@ -1,7 +1,14 @@
-# 2023.09.24
+# 2023.09.25
 
 ## Removed Features
 - Reduce amount of apps in Setup, since most people anyway search app by name.
+
+## Bug Fixes
+- 175% DPI breaks password generator, Where? section.
+
+## Changes
+- Italian language was updated by https://github.com/bovirus .
+- Less icons on main view.
 
 # 2023.09.23
 
