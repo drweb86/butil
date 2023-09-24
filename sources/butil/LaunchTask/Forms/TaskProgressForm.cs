@@ -51,7 +51,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             {
                 if ((Guid)item.Tag == taskId)
                 {
-                    item.SubItems[1].Text = LocalsHelper.ToString(status);
                     if (status != ProcessingStatus.NotStarted)
                     {
                         item.BackColor = GetResultColor(status);
@@ -112,7 +111,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             foreach (var task in allTasks)
             {
                 var listItem = new ListViewItem(task.Title, (int)task.TaskArea);
-                listItem.SubItems.Add(LocalsHelper.ToString(ProcessingStatus.NotStarted));
                 listItem.Tag = task.Id;
                 _items.Add(listItem);
             }
@@ -153,7 +151,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             foreach (var task in e.Tasks)
             {
                 var listItem = new ListViewItem(task.Title, (int)task.TaskArea);
-                listItem.SubItems.Add(LocalsHelper.ToString(ProcessingStatus.NotStarted));
                 listItem.Tag = task.Id;
                 _items.Insert(index, listItem);
                 index++;
@@ -174,7 +171,7 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 
         private void OnTasksListViewResize(object sender, EventArgs e)
         {
-            int newWidth = tasksListView.Width - processingStateInformationColumnHeader.Width - 35;
+            int newWidth = tasksListView.Width - 35;
             taskNameColumnHeader.Width = newWidth < 35 ? 35 : newWidth;
         }
 

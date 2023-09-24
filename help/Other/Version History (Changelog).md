@@ -8,7 +8,7 @@
 
 ## Changes
 - Italian language was updated by https://github.com/bovirus .
-- Less icons on main view.
+- Less icons on main view, tasks view.
 
 # 2023.09.23
 

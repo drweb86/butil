@@ -7,7 +7,7 @@ namespace BUtil.Configurator.Configurator.Forms
 {
     internal partial class TasksForm
     {
-        public TasksForm()
+        public TasksForm()  
         {
             InitializeComponent();
 

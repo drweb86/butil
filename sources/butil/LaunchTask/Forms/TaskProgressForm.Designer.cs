@@ -39,7 +39,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             toolTip = new System.Windows.Forms.ToolTip(components);
             tasksListView = new ListViewDoubleBuffered();
             taskNameColumnHeader = new System.Windows.Forms.ColumnHeader();
-            processingStateInformationColumnHeader = new System.Windows.Forms.ColumnHeader();
             compressionItemsListViewImageList = new System.Windows.Forms.ImageList(components);
             cancelButton = new System.Windows.Forms.Button();
             _backgroundWorker = new System.ComponentModel.BackgroundWorker();
@@ -60,11 +59,11 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             startButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             startButton.Dock = System.Windows.Forms.DockStyle.Fill;
             startButton.Image = (System.Drawing.Image)resources.GetObject("startButton.Image");
-            startButton.Location = new System.Drawing.Point(701, 5);
-            startButton.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            startButton.MinimumSize = new System.Drawing.Size(128, 64);
+            startButton.Location = new System.Drawing.Point(491, 3);
+            startButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            startButton.MinimumSize = new System.Drawing.Size(90, 38);
             startButton.Name = "startButton";
-            startButton.Size = new System.Drawing.Size(128, 72);
+            startButton.Size = new System.Drawing.Size(90, 44);
             startButton.TabIndex = 11;
             toolTip.SetToolTip(startButton, "Start");
             startButton.UseVisualStyleBackColor = true;
@@ -73,11 +72,11 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             // closeButton
             // 
             closeButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            closeButton.Location = new System.Drawing.Point(981, 5);
-            closeButton.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            closeButton.MinimumSize = new System.Drawing.Size(128, 64);
+            closeButton.Location = new System.Drawing.Point(687, 3);
+            closeButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            closeButton.MinimumSize = new System.Drawing.Size(90, 38);
             closeButton.Name = "closeButton";
-            closeButton.Size = new System.Drawing.Size(128, 72);
+            closeButton.Size = new System.Drawing.Size(90, 44);
             closeButton.TabIndex = 12;
             closeButton.Text = "Close";
             closeButton.UseVisualStyleBackColor = true;
@@ -87,14 +86,14 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             // 
             tasksListView.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             tasksListView.BackColor = System.Drawing.SystemColors.Window;
-            tasksListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { taskNameColumnHeader, processingStateInformationColumnHeader });
+            tasksListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { taskNameColumnHeader });
             tasksListView.FullRowSelect = true;
             tasksListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             tasksListView.LargeImageList = compressionItemsListViewImageList;
-            tasksListView.Location = new System.Drawing.Point(6, 5);
-            tasksListView.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            tasksListView.Location = new System.Drawing.Point(4, 3);
+            tasksListView.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             tasksListView.Name = "tasksListView";
-            tasksListView.Size = new System.Drawing.Size(1109, 589);
+            tasksListView.Size = new System.Drawing.Size(777, 352);
             tasksListView.SmallImageList = compressionItemsListViewImageList;
             tasksListView.TabIndex = 0;
             tasksListView.UseCompatibleStateImageBehavior = false;
@@ -108,11 +107,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             // 
             taskNameColumnHeader.Text = "Location";
             taskNameColumnHeader.Width = 288;
-            // 
-            // processingStateInformationColumnHeader
-            // 
-            processingStateInformationColumnHeader.Text = " ";
-            processingStateInformationColumnHeader.Width = 50;
             // 
             // compressionItemsListViewImageList
             // 
@@ -134,11 +128,11 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             cancelButton.Dock = System.Windows.Forms.DockStyle.Fill;
             cancelButton.Enabled = false;
             cancelButton.Image = (System.Drawing.Image)resources.GetObject("cancelButton.Image");
-            cancelButton.Location = new System.Drawing.Point(841, 5);
-            cancelButton.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            cancelButton.MinimumSize = new System.Drawing.Size(128, 64);
+            cancelButton.Location = new System.Drawing.Point(589, 3);
+            cancelButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cancelButton.MinimumSize = new System.Drawing.Size(90, 38);
             cancelButton.Name = "cancelButton";
-            cancelButton.Size = new System.Drawing.Size(128, 72);
+            cancelButton.Size = new System.Drawing.Size(90, 44);
             cancelButton.TabIndex = 19;
             cancelButton.UseVisualStyleBackColor = true;
             cancelButton.Click += CancelButtonClick;
@@ -159,20 +153,19 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             _powerTaskComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
             _powerTaskComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             _powerTaskComboBox.FormattingEnabled = true;
-            _powerTaskComboBox.Location = new System.Drawing.Point(6, 32);
-            _powerTaskComboBox.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            _powerTaskComboBox.Location = new System.Drawing.Point(4, 19);
+            _powerTaskComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             _powerTaskComboBox.Name = "_powerTaskComboBox";
-            _powerTaskComboBox.Size = new System.Drawing.Size(284, 33);
+            _powerTaskComboBox.Size = new System.Drawing.Size(200, 23);
             _powerTaskComboBox.TabIndex = 3;
             // 
             // _powerTaskLinkLabel
             // 
             _powerTaskLinkLabel.AutoSize = true;
             _powerTaskLinkLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            _powerTaskLinkLabel.Location = new System.Drawing.Point(4, 0);
-            _powerTaskLinkLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            _powerTaskLinkLabel.Location = new System.Drawing.Point(3, 0);
             _powerTaskLinkLabel.Name = "_powerTaskLinkLabel";
-            _powerTaskLinkLabel.Size = new System.Drawing.Size(288, 25);
+            _powerTaskLinkLabel.Size = new System.Drawing.Size(202, 15);
             _powerTaskLinkLabel.TabIndex = 22;
             _powerTaskLinkLabel.TabStop = true;
             _powerTaskLinkLabel.Text = "After completion of backup";
@@ -183,11 +176,11 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             backupProgressUserControl.BackColor = System.Drawing.SystemColors.Window;
             backupProgressUserControl.Dock = System.Windows.Forms.DockStyle.Fill;
             backupProgressUserControl.HelpLabel = null;
-            backupProgressUserControl.Location = new System.Drawing.Point(9, 604);
-            backupProgressUserControl.Margin = new System.Windows.Forms.Padding(9, 5, 9, 5);
-            backupProgressUserControl.MinimumSize = new System.Drawing.Size(837, 173);
+            backupProgressUserControl.Location = new System.Drawing.Point(6, 361);
+            backupProgressUserControl.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
+            backupProgressUserControl.MinimumSize = new System.Drawing.Size(586, 104);
             backupProgressUserControl.Name = "backupProgressUserControl";
-            backupProgressUserControl.Size = new System.Drawing.Size(1103, 173);
+            backupProgressUserControl.Size = new System.Drawing.Size(773, 104);
             backupProgressUserControl.TabIndex = 23;
             backupProgressUserControl.Title = "";
             backupProgressUserControl.TitleBackground = System.Drawing.Color.DodgerBlue;
@@ -201,12 +194,13 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             _mainTableLayoutPanel.Controls.Add(backupProgressUserControl, 0, 1);
             _mainTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             _mainTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            _mainTableLayoutPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             _mainTableLayoutPanel.Name = "_mainTableLayoutPanel";
             _mainTableLayoutPanel.RowCount = 3;
             _mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             _mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             _mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            _mainTableLayoutPanel.Size = new System.Drawing.Size(1121, 870);
+            _mainTableLayoutPanel.Size = new System.Drawing.Size(785, 522);
             _mainTableLayoutPanel.TabIndex = 24;
             // 
             // _bottomTableLayoutPanel
@@ -224,11 +218,12 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             _bottomTableLayoutPanel.Controls.Add(startButton, 2, 0);
             _bottomTableLayoutPanel.Controls.Add(cancelButton, 3, 0);
             _bottomTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            _bottomTableLayoutPanel.Location = new System.Drawing.Point(3, 785);
+            _bottomTableLayoutPanel.Location = new System.Drawing.Point(2, 470);
+            _bottomTableLayoutPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             _bottomTableLayoutPanel.Name = "_bottomTableLayoutPanel";
             _bottomTableLayoutPanel.RowCount = 1;
             _bottomTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            _bottomTableLayoutPanel.Size = new System.Drawing.Size(1115, 82);
+            _bottomTableLayoutPanel.Size = new System.Drawing.Size(781, 50);
             _bottomTableLayoutPanel.TabIndex = 26;
             // 
             // _afterCompletionTableLayoutPanel
@@ -239,25 +234,26 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
             _afterCompletionTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             _afterCompletionTableLayoutPanel.Controls.Add(_powerTaskLinkLabel, 0, 0);
             _afterCompletionTableLayoutPanel.Controls.Add(_powerTaskComboBox, 0, 1);
-            _afterCompletionTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
+            _afterCompletionTableLayoutPanel.Location = new System.Drawing.Point(2, 2);
+            _afterCompletionTableLayoutPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             _afterCompletionTableLayoutPanel.Name = "_afterCompletionTableLayoutPanel";
             _afterCompletionTableLayoutPanel.RowCount = 2;
             _afterCompletionTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             _afterCompletionTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            _afterCompletionTableLayoutPanel.Size = new System.Drawing.Size(296, 72);
+            _afterCompletionTableLayoutPanel.Size = new System.Drawing.Size(208, 46);
             _afterCompletionTableLayoutPanel.TabIndex = 25;
             // 
             // TaskProgressForm
             // 
             AcceptButton = startButton;
-            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            ClientSize = new System.Drawing.Size(1121, 870);
+            ClientSize = new System.Drawing.Size(785, 522);
             Controls.Add(_mainTableLayoutPanel);
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
-            Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            MinimumSize = new System.Drawing.Size(1122, 643);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MinimumSize = new System.Drawing.Size(790, 401);
             Name = "TaskProgressForm";
             Text = "Wellcome to Backup Wizard!";
             FormClosing += ClosingForm;
@@ -273,7 +269,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
 
         private System.ComponentModel.BackgroundWorker _backgroundWorker;
         private System.Windows.Forms.ColumnHeader taskNameColumnHeader;
-        private System.Windows.Forms.ColumnHeader processingStateInformationColumnHeader;
         private ListViewDoubleBuffered tasksListView;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button startButton;
