@@ -32,12 +32,12 @@
             _outputFolderTextBox = new System.Windows.Forms.TextBox();
             _tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             _folderBrowseButton = new System.Windows.Forms.Button();
-            _transformFileNameLabel = new System.Windows.Forms.Label();
             _backupModelLabel = new System.Windows.Forms.Label();
             _transformFileTemplateTextBox = new System.Windows.Forms.TextBox();
+            _skipPreviouslyImportedFilesCheckbox = new System.Windows.Forms.CheckBox();
+            _transformFileNameLabel = new System.Windows.Forms.Label();
             _transformFIleNameExampleLabel = new System.Windows.Forms.Label();
             _helpTokensLabel = new System.Windows.Forms.Label();
-            _skipPreviouslyImportedFilesCheckbox = new System.Windows.Forms.CheckBox();
             _folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             _tableLayoutPanel.SuspendLayout();
             SuspendLayout();
@@ -72,12 +72,12 @@
             _tableLayoutPanel.Controls.Add(_outputFolderLabel, 0, 0);
             _tableLayoutPanel.Controls.Add(_outputFolderTextBox, 1, 0);
             _tableLayoutPanel.Controls.Add(_folderBrowseButton, 2, 0);
-            _tableLayoutPanel.Controls.Add(_transformFileNameLabel, 0, 1);
             _tableLayoutPanel.Controls.Add(_backupModelLabel, 1, 5);
-            _tableLayoutPanel.Controls.Add(_transformFileTemplateTextBox, 1, 1);
-            _tableLayoutPanel.Controls.Add(_transformFIleNameExampleLabel, 1, 2);
-            _tableLayoutPanel.Controls.Add(_helpTokensLabel, 1, 3);
-            _tableLayoutPanel.Controls.Add(_skipPreviouslyImportedFilesCheckbox, 1, 4);
+            _tableLayoutPanel.Controls.Add(_transformFileTemplateTextBox, 1, 2);
+            _tableLayoutPanel.Controls.Add(_skipPreviouslyImportedFilesCheckbox, 1, 1);
+            _tableLayoutPanel.Controls.Add(_transformFileNameLabel, 0, 2);
+            _tableLayoutPanel.Controls.Add(_transformFIleNameExampleLabel, 0, 3);
+            _tableLayoutPanel.Controls.Add(_helpTokensLabel, 0, 4);
             _tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             _tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             _tableLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -107,21 +107,10 @@
             _folderBrowseButton.UseVisualStyleBackColor = true;
             _folderBrowseButton.Click += OnFolderBrowseButtonClick;
             // 
-            // _transformFileNameLabel
-            // 
-            _transformFileNameLabel.AutoSize = true;
-            _transformFileNameLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            _transformFileNameLabel.Location = new System.Drawing.Point(19, 45);
-            _transformFileNameLabel.Name = "_transformFileNameLabel";
-            _transformFileNameLabel.Size = new System.Drawing.Size(115, 29);
-            _transformFileNameLabel.TabIndex = 6;
-            _transformFileNameLabel.Text = "Transform file name:";
-            _transformFileNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // _backupModelLabel
             // 
             _backupModelLabel.AutoSize = true;
-            _backupModelLabel.Location = new System.Drawing.Point(140, 159);
+            _backupModelLabel.Location = new System.Drawing.Point(140, 199);
             _backupModelLabel.MaximumSize = new System.Drawing.Size(530, 0);
             _backupModelLabel.Name = "_backupModelLabel";
             _backupModelLabel.Size = new System.Drawing.Size(0, 15);
@@ -130,42 +119,57 @@
             // _transformFileTemplateTextBox
             // 
             _transformFileTemplateTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            _transformFileTemplateTextBox.Location = new System.Drawing.Point(140, 48);
+            _transformFileTemplateTextBox.Location = new System.Drawing.Point(140, 73);
             _transformFileTemplateTextBox.Name = "_transformFileTemplateTextBox";
             _transformFileTemplateTextBox.Size = new System.Drawing.Size(376, 23);
             _transformFileTemplateTextBox.TabIndex = 7;
             _transformFileTemplateTextBox.TextChanged += OnChangeTransormFileName;
             // 
+            // _skipPreviouslyImportedFilesCheckbox
+            // 
+            _skipPreviouslyImportedFilesCheckbox.AutoSize = true;
+            _skipPreviouslyImportedFilesCheckbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            _skipPreviouslyImportedFilesCheckbox.Location = new System.Drawing.Point(140, 48);
+            _skipPreviouslyImportedFilesCheckbox.Name = "_skipPreviouslyImportedFilesCheckbox";
+            _skipPreviouslyImportedFilesCheckbox.Size = new System.Drawing.Size(376, 19);
+            _skipPreviouslyImportedFilesCheckbox.TabIndex = 10;
+            _skipPreviouslyImportedFilesCheckbox.Text = "Skip previously imported files";
+            _skipPreviouslyImportedFilesCheckbox.UseVisualStyleBackColor = true;
+            // 
+            // _transformFileNameLabel
+            // 
+            _transformFileNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            _transformFileNameLabel.AutoSize = true;
+            _transformFileNameLabel.Location = new System.Drawing.Point(19, 77);
+            _transformFileNameLabel.Name = "_transformFileNameLabel";
+            _transformFileNameLabel.Size = new System.Drawing.Size(115, 15);
+            _transformFileNameLabel.TabIndex = 6;
+            _transformFileNameLabel.Text = "Transform file name:";
+            _transformFileNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // _transformFIleNameExampleLabel
             // 
             _transformFIleNameExampleLabel.AutoSize = true;
+            _tableLayoutPanel.SetColumnSpan(_transformFIleNameExampleLabel, 3);
             _transformFIleNameExampleLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            _transformFIleNameExampleLabel.Location = new System.Drawing.Point(140, 74);
+            _transformFIleNameExampleLabel.Location = new System.Drawing.Point(19, 107);
+            _transformFIleNameExampleLabel.Margin = new System.Windows.Forms.Padding(3, 8, 3, 0);
             _transformFIleNameExampleLabel.Name = "_transformFIleNameExampleLabel";
-            _transformFIleNameExampleLabel.Size = new System.Drawing.Size(376, 15);
+            _transformFIleNameExampleLabel.Size = new System.Drawing.Size(560, 15);
             _transformFIleNameExampleLabel.TabIndex = 8;
             _transformFIleNameExampleLabel.Text = "<Example>";
             // 
             // _helpTokensLabel
             // 
             _helpTokensLabel.AutoSize = true;
+            _tableLayoutPanel.SetColumnSpan(_helpTokensLabel, 3);
             _helpTokensLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            _helpTokensLabel.Location = new System.Drawing.Point(140, 89);
+            _helpTokensLabel.Location = new System.Drawing.Point(19, 154);
+            _helpTokensLabel.Margin = new System.Windows.Forms.Padding(3, 32, 3, 0);
             _helpTokensLabel.Name = "_helpTokensLabel";
-            _helpTokensLabel.Size = new System.Drawing.Size(376, 45);
+            _helpTokensLabel.Size = new System.Drawing.Size(560, 45);
             _helpTokensLabel.TabIndex = 9;
             _helpTokensLabel.Text = "Help1\r\nHelp2\r\nHelp3";
-            // 
-            // _skipPreviouslyImportedFilesCheckbox
-            // 
-            _skipPreviouslyImportedFilesCheckbox.AutoSize = true;
-            _skipPreviouslyImportedFilesCheckbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            _skipPreviouslyImportedFilesCheckbox.Location = new System.Drawing.Point(140, 137);
-            _skipPreviouslyImportedFilesCheckbox.Name = "_skipPreviouslyImportedFilesCheckbox";
-            _skipPreviouslyImportedFilesCheckbox.Size = new System.Drawing.Size(376, 19);
-            _skipPreviouslyImportedFilesCheckbox.TabIndex = 10;
-            _skipPreviouslyImportedFilesCheckbox.Text = "Skip previously imported files";
-            _skipPreviouslyImportedFilesCheckbox.UseVisualStyleBackColor = true;
             // 
             // ImportMediaTaskWhereUserControl
             // 

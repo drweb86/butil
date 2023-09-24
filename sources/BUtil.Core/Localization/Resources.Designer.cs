@@ -638,6 +638,18 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Example:
+        ///Imagine you have file {0} (modified at {1}).
+        ///With this directory and template string file will be stored as:
+        ///{2}.
+        /// </summary>
+        public static string ImportMediaTask_Field_TransformFileName_Example {
+            get {
+                return ResourceManager.GetString("ImportMediaTask_Field_TransformFileName_Example", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Supported tokens:
         ///{DATE:Format} - Inserts file modification date in the specified format.
         ///To see all options google &quot;C# DateTime format&quot;..
@@ -678,7 +690,10 @@ namespace BUtil.Core.Localization {
         /// <summary>
         ///   Looks up a localized string similar to Imports audios, photos, videos from SD Card of camera, recorder;
         ///photos and videos from your phone via WI-FI through FTP Server 
-        ///application using template file names..
+        ///application using template file names.
+        ///
+        ///See application web-site for documentation how to setup file
+        ///transmission via WI-FI through FTP Server application on the phone..
         /// </summary>
         public static string ImportMediaTask_Help {
             get {
@@ -720,9 +735,12 @@ namespace BUtil.Core.Localization {
         
         /// <summary>
         ///   Looks up a localized string similar to The most basic form of incremental backup consists of identifying, recording and thus, preserving only those files that have changed since the last backup.
+        ///
         ///Since changes are typically low, incremental backups are much smaller and quicker than full backups.
+        ///
         ///For instance, following a full backup on Friday, a Monday backup will contain only those files that changed since Friday. A Tuesday backup contains only those files that changed since Monday, and so on. 
-        ///Should any one of the copies created fail, inclu [rest of string was truncated]&quot;;.
+        ///
+        ///Should any one of the copies created fail, [rest of string was truncated]&quot;;.
         /// </summary>
         public static string IncrementalBackup_Help {
             get {

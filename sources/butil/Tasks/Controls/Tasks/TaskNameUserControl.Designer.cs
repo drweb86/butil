@@ -84,7 +84,7 @@
             _tableLayoutPanel.SetColumnSpan(_backupModelLabel, 2);
             _backupModelLabel.Location = new System.Drawing.Point(32, 79);
             _backupModelLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            _backupModelLabel.MaximumSize = new System.Drawing.Size(530, 0);
+            _backupModelLabel.MaximumSize = new System.Drawing.Size(900, 0);
             _backupModelLabel.Name = "_backupModelLabel";
             _backupModelLabel.Size = new System.Drawing.Size(530, 687);
             _backupModelLabel.TabIndex = 4;

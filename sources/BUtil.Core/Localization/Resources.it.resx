@@ -339,11 +339,15 @@ L'applicazione verrà ora chiusa.</value>
   </data>
   <data name="IncrementalBackup_Help" xml:space="preserve">
     <value>La forma più elementare di backup incrementale consiste nell'identificare, registrare e quindi preservare solo i file che sono cambiati dall'ultimo backup. 
-	Poiché le modifiche sono generalmente limitate, i backup incrementali sono molto più piccoli e più rapidi dei backup completi. 
-	Ad esempio, dopo un backup completo il venerdì, il backup del lunedì conterrà solo i file modificati da venerdì. 
-	Il backup del martedì contiene solo i file modificati da lunedì e così via. 
-	Un ripristino completo dei dati sarà naturalmente più lento, poiché dovranno essere ripristinati tutti gli incrementi. 
-	Se una qualsiasi delle copie create dovesse fallire, inclusa la prima (completa), il ripristino risulterà incompleto.</value>
+
+ Poiché le modifiche sono generalmente limitate, i backup incrementali sono molto più piccoli e più rapidi dei backup completi. 
+
+ Ad esempio, dopo un backup completo il venerdì, il backup del lunedì conterrà solo i file modificati da venerdì. 
+
+ Il backup del martedì contiene solo i file modificati da lunedì e così via. 
+
+ Un ripristino completo dei dati sarà naturalmente più lento, poiché dovranno essere ripristinati tutti gli incrementi. 
+ Se una qualsiasi delle copie create dovesse fallire, inclusa la prima (completa), il ripristino risulterà incompleto.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Backup incrementale</value>

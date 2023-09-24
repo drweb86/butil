@@ -4,6 +4,7 @@ using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.TasksTree.MediaSyncBackupModel;
 using System;
+using System.IO;
 
 namespace BUtil.Configurator.AddBackupTaskWizard.View
 {
@@ -24,7 +25,11 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
         public string TransformFileName
         {
             get => _transformFileTemplateTextBox.Text;
-            set => _transformFileTemplateTextBox.Text = value;
+            set
+            {
+                _transformFileTemplateTextBox.Text = value;
+                OnChangeTransormFileName(this, new EventArgs());
+            }
         }
         public bool SkipAlreadyImportedFiles
         {
@@ -35,7 +40,11 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
         public string DestinationFolder
         {
             get => _outputFolderTextBox.Text;
-            set => _outputFolderTextBox.Text = value;
+            set
+            {
+                _outputFolderTextBox.Text = value;
+                OnChangeTransormFileName(this, new EventArgs());
+            }
         }
 
         public override bool ValidateUi()
@@ -58,18 +67,22 @@ namespace BUtil.Configurator.AddBackupTaskWizard.View
         private void OnFolderBrowseButtonClick(object sender, System.EventArgs e)
         {
             if (_folderBrowserDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                _outputFolderTextBox.Text = _folderBrowserDialog.SelectedPath;
+                DestinationFolder = _folderBrowserDialog.SelectedPath;
         }
 
         private void OnChangeTransormFileName(object sender, System.EventArgs e)
         {
             try
             {
-                _transformFIleNameExampleLabel.Text = DateTokenReplacer.ParseString(TransformFileName, DateTime.Now);
+                var fileName = "DCIM001.jpg";
+                var modifiedAt = new DateTime(2024, 5, 7);
+
+                _transformFIleNameExampleLabel.Text = string.Format(Resources.ImportMediaTask_Field_TransformFileName_Example,
+                    fileName, modifiedAt, DestinationFolder.TrimEnd('\\').TrimEnd('/') + '\\' + DateTokenReplacer.ParseString(TransformFileName, modifiedAt) + Path.GetExtension(fileName));
             }
             catch
             {
-                _transformFIleNameExampleLabel.Text = BUtil.Core.Localization.Resources.ImportMediaTask_Field_TransformFileName_Validation_Invalid;
+                _transformFIleNameExampleLabel.Text = Resources.ImportMediaTask_Field_TransformFileName_Validation_Invalid;
             }
         }
     }
