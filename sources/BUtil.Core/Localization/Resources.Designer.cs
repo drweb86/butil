@@ -503,6 +503,33 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Device:.
+        /// </summary>
+        public static string Field_Device {
+            get {
+                return ResourceManager.GetString("Field_Device", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Device is not specified..
+        /// </summary>
+        public static string Field_Device_Validation_Empty {
+            get {
+                return ResourceManager.GetString("Field_Device_Validation_Empty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Device is not found..
+        /// </summary>
+        public static string Field_Device_Validation_NotFound {
+            get {
+                return ResourceManager.GetString("Field_Device_Validation_NotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Folder:.
         /// </summary>
         public static string Field_Folder {
@@ -517,6 +544,15 @@ namespace BUtil.Core.Localization {
         public static string Field_Folder_Browse {
             get {
                 return ResourceManager.GetString("Field_Folder_Browse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Folder is not specified..
+        /// </summary>
+        public static string Field_Folder_Validation_Empty {
+            get {
+                return ResourceManager.GetString("Field_Folder_Validation_Empty", resourceCulture);
             }
         }
         

@@ -4,7 +4,7 @@ Welcome!
 
 ![BUtil Logotype](./help/Readme%20Assets/Logotype.bmp)
 
-BUtil is a powerful set of tools for creating incremental backups and import multimedia on your PC with deduplication and FTPS, Samba transports support.
+BUtil is a powerful set of tools for creating incremental backups and import multimedia on your PC with deduplication and FTPS, SMB/CIFS, MTP transports support.
 
 ![Tasks, Launch Task application](./help/Readme%20Assets/Screenshot%201.png)
 
@@ -19,7 +19,7 @@ BUtil is a powerful set of tools for creating incremental backups and import mul
 ## Key functions and characteristics of software
 
 - Incremental backup with deduplication of files;
-- [Import audios, photos, videos from SD Card of camera, recorder; photos and videos from your phone via WI-FI through FTPS Server application using template file names](./help/Configure/Import%20media%20task.md);
+- [Import audios, photos, videos from SD Card of camera, recorder; photos and videos from your phone via WI-FI through FTPS Server application using template file names or via MTP](./help/Configure/Import%20media%20task.md);
 - Simple configuring takes less time and goes easily and with comfort;
 - Multiple backup tasks are supported;
 - Html format for log files takes less time on reviewing of it;

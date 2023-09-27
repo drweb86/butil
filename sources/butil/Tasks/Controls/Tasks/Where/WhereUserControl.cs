@@ -6,6 +6,7 @@ using BUtil.RestorationMaster;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core;
 
 namespace BUtil.Configurator.Configurator.Controls
 {
@@ -41,6 +42,9 @@ namespace BUtil.Configurator.Configurator.Controls
             _ftpsEncryptionComboBox.Items.Add(Resources.Ftps_Encryption_Option_Explicit);
             _ftpsEncryptionComboBox.Items.Add(Resources.Ftps_Encryption_Option_Implicit);
             _ftpsEncryptionComboBox.SelectedIndex = 0;
+
+            _mtpDeviceLabel.Text = BUtil.Core.Localization.Resources.Field_Device;
+            _mtpFolderLabel.Text = Resources.Field_Folder;
 
             _specifyFolderDirectoryStorageButton.Text = Resources.Field_Folder_Browse;
             _mountButton.Text = Resources.Task_Launch;
@@ -85,6 +89,14 @@ namespace BUtil.Configurator.Configurator.Controls
                         SingleBackupQuotaGb = (long)_ftpsQuotaNumericUpDown.Value,
                     };
                 }
+                else if (_storageTypesTabControl.SelectedTab == _mtpTabPage)
+                {
+                    storageSettings = new MtpStorageSettings
+                    {
+                        Device = _mtpDeviceComboBox.Text,
+                        Folder = _mtpFolderTextBox.Text,
+                    };
+                }
                 if (storageSettings == null)
                     throw new NotImplementedException();
 
@@ -127,6 +139,14 @@ namespace BUtil.Configurator.Configurator.Controls
                     _ftpsPasswordTextBox.Text = ftpsSettings.Password;
                     _ftpsFolderTextBox.Text = ftpsSettings.Folder;
                     _ftpsQuotaNumericUpDown.Value = ftpsSettings.SingleBackupQuotaGb;
+                }
+                else if (value is MtpStorageSettings)
+                {
+                    var mtpSettings = value as MtpStorageSettings;
+                    _storageTypesTabControl.SelectedTab = _mtpTabPage;
+
+                    _mtpDeviceComboBox.Text = mtpSettings.Device;
+                    _mtpFolderTextBox.Text = mtpSettings.Folder;
                 }
                 else
                 {
@@ -182,6 +202,14 @@ namespace BUtil.Configurator.Configurator.Controls
                 Messages.ShowInformationBox(Resources.DataStorage_Field_DisconnectionScript_Ok);
             else
                 Messages.ShowErrorBox(Resources.DataStorage_Field_DisconnectionScript_Bad);
+        }
+
+        private void OnTabIndexChanged(object sender, EventArgs e)
+        {
+            if (_storageTypesTabControl.SelectedTab == _mtpTabPage)
+            {
+                _mtpDeviceComboBox.DataSource = new MtpService().GetItems();
+            }
         }
     }
 }

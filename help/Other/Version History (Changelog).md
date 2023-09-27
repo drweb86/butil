@@ -1,3 +1,8 @@
+# 2023.09.28
+
+## New Features
+- Media transfer protocol support was added for import photo support via connection of phone via usb via MTP protocol for similar to FTP experience.
+
 # 2023.09.27
 
 ## Removed Features

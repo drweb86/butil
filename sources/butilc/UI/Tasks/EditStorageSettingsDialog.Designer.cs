@@ -30,6 +30,10 @@ namespace BUtil.ConsoleBackup.UI {
         private Terminal.Gui.TextField _sambaPasswordTextField;
         private Terminal.Gui.TextField _sambaQuotaTextField;
 
+        private List<Terminal.Gui.View> _mtpStorageControls = new List<View>();
+        private Terminal.Gui.ComboBox _mtpDeviceComboBox;
+        private Terminal.Gui.TextField _mtpFolderTextField;
+
         private void InitializeComponent() {
             this.Width = Dim.Fill(0);
             this.Height = Dim.Fill(0);
@@ -42,7 +46,7 @@ namespace BUtil.ConsoleBackup.UI {
                 Y = 0,
                 Text = BUtil.Core.Localization.Resources.LeftMenu_Where,
             });
-            var transports = new List<string> { BUtil.Core.Localization.Resources.DirectoryStorage, "FTPS", "SMB/CIFS" };
+            var transports = new List<string> { BUtil.Core.Localization.Resources.DirectoryStorage, "FTPS", "SMB/CIFS", "MTP" };
             _transportSelectionComboBox = new ComboBox
             {
                 X = 0,
@@ -96,6 +100,28 @@ namespace BUtil.ConsoleBackup.UI {
             _ftpsStorageControls.Add(_ftpsEncryptionComboBox);
 
             _ftpsQuotaTextField = AddTextField(_ftpsStorageControls, Resources.DataStorage_Field_UploadQuota, 21);
+
+            var mtpDevicesLabel = new Label
+            {
+                AutoSize = true,
+                X = 0,
+                Y = 3,
+                Text = Resources.Field_Device,
+            };
+            _mtpStorageControls.Add(mtpDevicesLabel);
+            Add(mtpDevicesLabel);
+            _mtpDeviceComboBox = new ComboBox
+            {
+                X = 0,
+                Y = 4,
+                Width = Dim.Fill(),
+                Height = 1,
+                HideDropdownListOnClick = true,
+                ReadOnly = true,
+            };
+            Add(_mtpDeviceComboBox);
+            _mtpStorageControls.Add(_mtpDeviceComboBox);
+            _mtpFolderTextField = AddTextField(_mtpStorageControls, Resources.Field_Folder, 6);
 
             var saveButton = new Button
             {

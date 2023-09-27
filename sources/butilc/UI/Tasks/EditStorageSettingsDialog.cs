@@ -4,11 +4,16 @@ using BUtil.Core.Logs;
 using BUtil.Core.Storages;
 using System;
 using Terminal.Gui;
+using BUtil.Core;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace BUtil.ConsoleBackup.UI
 {
     public partial class EditStorageSettingsDialog
     {
+        private List<string> _mtpDevices;
+
         public IStorageSettingsV2 StorageSettings { get; private set; }
 
         private void SelectTransport(int transportId)
@@ -16,6 +21,7 @@ namespace BUtil.ConsoleBackup.UI
             _folderStorageControls.ForEach(x => x.Visible = transportId == 0);
             _ftpsStorageControls.ForEach(x => x.Visible = transportId == 1);
             _sambaStorageControls.ForEach(x => x.Visible = transportId == 2);
+            _mtpStorageControls.ForEach(x => x.Visible = transportId == 3);
         }
 
         internal EditStorageSettingsDialog(IStorageSettingsV2 source, string title) 
@@ -64,11 +70,27 @@ namespace BUtil.ConsoleBackup.UI
                     _sambaPasswordTextField.Text = settings.Password;
                     _sambaQuotaTextField.Text = settings.SingleBackupQuotaGb.ToString();
                 }
+                else if (source is MtpStorageSettings)
+                {
+                    _transportSelectionComboBox.SelectedItem = 3;
+                    SelectTransport(3);
+                    LoadMtpTransports();
+                    var settings = (MtpStorageSettings)source;
+                    SetMtpDevice(settings.Device);
+                    _mtpFolderTextField.Text = settings.Folder;
+
+                }
                 else
                 {
                     throw new NotSupportedException();
                 }
             }
+        }
+
+        private void SetMtpDevice(string device)
+        {
+            var index = _mtpDevices.IndexOf(device);
+            _mtpDeviceComboBox.SelectedItem = index;
         }
 
         public bool Canceled { get; private set; } = true;
@@ -82,6 +104,20 @@ namespace BUtil.ConsoleBackup.UI
         private void OnTransportTypeSelection(ListViewItemEventArgs args)
         {
             SelectTransport(args.Item);
+
+            if (args.Item == 3)
+            {
+                LoadMtpTransports();
+            }
+        }
+
+        private void LoadMtpTransports()
+        {
+            _mtpDevices = new MtpService()
+                    .GetItems()
+                    .ToList();
+            _mtpDeviceComboBox.Height = _mtpDevices.Count + 1;
+            _mtpDeviceComboBox.SetSource(_mtpDevices);
         }
 
         private void OnSave()
@@ -118,6 +154,14 @@ namespace BUtil.ConsoleBackup.UI
                     User = _sambaUserTextField.Text.ToString(),
                     Password = _sambaPasswordTextField.Text.ToString(),
                     SingleBackupQuotaGb = int.TryParse(_sambaQuotaTextField.Text.ToString(), out var quota) ? Math.Abs(quota) : 0,
+                };
+            }
+            else if (_transportSelectionComboBox.SelectedItem == 3)
+            {
+                storageSettings = new MtpStorageSettings
+                {
+                    Device = _mtpDeviceComboBox.SelectedItem < 0 ? null : _mtpDevices[_mtpDeviceComboBox.SelectedItem],
+                    Folder = _mtpFolderTextField.Text.ToString(),
                 };
             }
             else

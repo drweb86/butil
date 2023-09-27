@@ -103,7 +103,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="FluentFTP" Version="47.1.0" />
+    <PackageReference Include="FluentFTP" Version="48.0.0" />
+    <PackageReference Include="MediaDevices" Version="1.10.0" />
     <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="7.0.0" />
     <PackageReference Include="TaskScheduler" Version="2.10.1" />
   </ItemGroup>
@@ -123,21 +124,13 @@
     <PreBuildEvent>
 		cd "$(SolutionDir)..\Output"
 
-		rem Copying of Tasks Scheduler
+		rem Libraries
 		xcopy "%userprofile%\.nuget\packages\taskscheduler\2.10.1\lib\net6.0-windows7.0" "$(SolutionDir)..\Output\BUtil\bin" /Y/E
-
-		rem Copy MS System Globbing
 		xcopy "%userprofile%\.nuget\packages\microsoft.extensions.filesystemglobbing\7.0.0\lib\net7.0" "$(SolutionDir)..\Output\BUtil\bin" /Y
-
-		rem Copy Terminal.GUI
 		xcopy "%userprofile%\.nuget\packages\terminal.gui\1.14.0\lib\net7.0" "$(SolutionDir)..\Output\BUtil\bin" /Y
-
-		rem Copy NStack
 		xcopy "%userprofile%\.nuget\packages\nstack.core\1.0.7\lib\netstandard2.0" "$(SolutionDir)..\Output\BUtil\bin" /Y
-
-		rem Copy NStack
-		xcopy "%userprofile%\.nuget\packages\fluentftp\47.1.0\lib\net6.0" "$(SolutionDir)..\Output\BUtil\bin" /Y
-
+		xcopy "%userprofile%\.nuget\packages\fluentftp\48.0.0\lib\net6.0" "$(SolutionDir)..\Output\BUtil\bin" /Y
+		xcopy "%userprofile%\.nuget\packages\mediadevices\1.10.0\lib\net7.0" "$(SolutionDir)..\Output\BUtil\bin" /Y
 	</PreBuildEvent>
   </PropertyGroup>
 </Project>

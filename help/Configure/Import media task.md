@@ -16,6 +16,16 @@ Features includes:
 
 3. Job will copy all files from SD card (specified folder) to destination folder. During copying of files, it will take last write time and converts it to path of saved file at destination directory.
 
+## Import photos and videos to PC from Camera, Import Audio from Recorder via Media Transfer Protocol
+
+1. Plug in device.
+
+2. Launch job.
+
+3. Job will copy all files from device to destination folder. During copying of files, it will take last write time and converts it to path of saved file at destination directory.
+
+Be aware that Folder name should be similar to what you see in Explorer, e.g. "External Storage\DCIM" or something similar.
+
 ## Import photos and videos from phone via Wi-Fi via FTPS
 
 ![Import photos and videos from phone via Wi-Fi via FTPS](./Image%20-%20Import%20media%20task%20-%20Case%202.png)

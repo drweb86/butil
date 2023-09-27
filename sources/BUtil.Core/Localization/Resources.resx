@@ -271,11 +271,23 @@ Usage scenario: You copy data to remote server. There's a problem: ISP drops upl
   <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
     <value>Directory "{0}" does not exist.</value>
   </data>
+  <data name="Field_Device" xml:space="preserve">
+    <value>Device:</value>
+  </data>
+  <data name="Field_Device_Validation_Empty" xml:space="preserve">
+    <value>Device is not specified.</value>
+  </data>
+  <data name="Field_Device_Validation_NotFound" xml:space="preserve">
+    <value>Device is not found.</value>
+  </data>
   <data name="Field_Folder" xml:space="preserve">
     <value>Folder:</value>
   </data>
   <data name="Field_Folder_Browse" xml:space="preserve">
     <value>Browse</value>
+  </data>
+  <data name="Field_Folder_Validation_Empty" xml:space="preserve">
+    <value>Folder is not specified.</value>
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Folder does not exist.</value>

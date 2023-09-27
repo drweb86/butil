@@ -271,11 +271,23 @@
   <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
     <value>Папка "{0}" не найдена.</value>
   </data>
+  <data name="Field_Device" xml:space="preserve">
+    <value>Устройство:</value>
+  </data>
+  <data name="Field_Device_Validation_Empty" xml:space="preserve">
+    <value>Устройство не указано.</value>
+  </data>
+  <data name="Field_Device_Validation_NotFound" xml:space="preserve">
+    <value>Устройство не найдено.</value>
+  </data>
   <data name="Field_Folder" xml:space="preserve">
     <value>Папка:</value>
   </data>
   <data name="Field_Folder_Browse" xml:space="preserve">
     <value>Указать папку</value>
+  </data>
+  <data name="Field_Folder_Validation_Empty" xml:space="preserve">
+    <value>Папка не указана.</value>
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Папка не существует.</value>
