@@ -467,14 +467,8 @@
   <data name="Password_Generator_Header" xml:space="preserve">
     <value>Генератор паролей</value>
   </data>
-  <data name="Password_Group_Header" xml:space="preserve">
-    <value>Пароль (по желанию)</value>
-  </data>
   <data name="Password_Help" xml:space="preserve">
     <value>Рекомендуемая минимальная длина пароля - 50 символов.</value>
-  </data>
-  <data name="Password_Recovery_Prompt" xml:space="preserve">
-    <value>Если ваша резервная копия защищена паролем, укажите его здесь:</value>
   </data>
   <data name="Password_Use" xml:space="preserve">
     <value>Использовать</value>

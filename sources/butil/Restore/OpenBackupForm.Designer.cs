@@ -36,7 +36,6 @@
             _passwordTextBox = new System.Windows.Forms.MaskedTextBox();
             passwordLabel = new System.Windows.Forms.Label();
             continueButton = new System.Windows.Forms.Button();
-            helpButton = new System.Windows.Forms.Button();
             _whereUserControl = new Configurator.Configurator.Controls.WhereUserControl();
             SuspendLayout();
             // 
@@ -44,10 +43,10 @@
             // 
             closeButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
             closeButton.AutoSize = true;
-            closeButton.Location = new System.Drawing.Point(1014, 630);
-            closeButton.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            closeButton.Location = new System.Drawing.Point(710, 378);
+            closeButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             closeButton.Name = "closeButton";
-            closeButton.Size = new System.Drawing.Size(123, 45);
+            closeButton.Size = new System.Drawing.Size(86, 27);
             closeButton.TabIndex = 6;
             closeButton.Text = "Close";
             closeButton.UseVisualStyleBackColor = true;
@@ -56,58 +55,46 @@
             // _passwordTextBox
             // 
             _passwordTextBox.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            _passwordTextBox.Location = new System.Drawing.Point(19, 572);
-            _passwordTextBox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            _passwordTextBox.Location = new System.Drawing.Point(13, 343);
+            _passwordTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             _passwordTextBox.Name = "_passwordTextBox";
             _passwordTextBox.PasswordChar = '*';
-            _passwordTextBox.Size = new System.Drawing.Size(1120, 31);
+            _passwordTextBox.Size = new System.Drawing.Size(785, 23);
             _passwordTextBox.TabIndex = 3;
             // 
             // passwordLabel
             // 
             passwordLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             passwordLabel.AutoSize = true;
-            passwordLabel.Location = new System.Drawing.Point(19, 532);
-            passwordLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            passwordLabel.Location = new System.Drawing.Point(13, 319);
+            passwordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             passwordLabel.Name = "passwordLabel";
-            passwordLabel.Size = new System.Drawing.Size(532, 25);
+            passwordLabel.Size = new System.Drawing.Size(348, 15);
             passwordLabel.TabIndex = 0;
             passwordLabel.Text = "If your backup is password protected, please type password here:";
             // 
             // continueButton
             // 
             continueButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            continueButton.Location = new System.Drawing.Point(790, 630);
-            continueButton.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            continueButton.Location = new System.Drawing.Point(553, 378);
+            continueButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             continueButton.Name = "continueButton";
-            continueButton.Size = new System.Drawing.Size(213, 45);
+            continueButton.Size = new System.Drawing.Size(149, 27);
             continueButton.TabIndex = 5;
             continueButton.Text = "Continue >";
             continueButton.UseVisualStyleBackColor = true;
             continueButton.Click += OnNextButtonClick;
-            // 
-            // helpButton
-            // 
-            helpButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
-            helpButton.Location = new System.Drawing.Point(16, 620);
-            helpButton.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            helpButton.Name = "helpButton";
-            helpButton.Size = new System.Drawing.Size(54, 63);
-            helpButton.TabIndex = 4;
-            helpButton.Text = "?";
-            helpButton.UseVisualStyleBackColor = true;
-            helpButton.Click += OnHelpClick;
             // 
             // _whereUserControl
             // 
             _whereUserControl.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             _whereUserControl.BackColor = System.Drawing.SystemColors.Window;
             _whereUserControl.HelpLabel = null;
-            _whereUserControl.Location = new System.Drawing.Point(13, 20);
-            _whereUserControl.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
-            _whereUserControl.MinimumSize = new System.Drawing.Size(474, 385);
+            _whereUserControl.Location = new System.Drawing.Point(9, 12);
+            _whereUserControl.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            _whereUserControl.MinimumSize = new System.Drawing.Size(332, 231);
             _whereUserControl.Name = "_whereUserControl";
-            _whereUserControl.Size = new System.Drawing.Size(1124, 477);
+            _whereUserControl.Size = new System.Drawing.Size(787, 286);
             folderStorageSettingsV21.DestinationFolder = "";
             folderStorageSettingsV21.MountPowershellScript = "";
             folderStorageSettingsV21.SingleBackupQuotaGb = 0L;
@@ -118,19 +105,18 @@
             // OpenBackupForm
             // 
             AcceptButton = continueButton;
-            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             CancelButton = closeButton;
-            ClientSize = new System.Drawing.Size(1160, 700);
+            ClientSize = new System.Drawing.Size(812, 420);
             Controls.Add(_whereUserControl);
             Controls.Add(_passwordTextBox);
             Controls.Add(passwordLabel);
-            Controls.Add(helpButton);
             Controls.Add(continueButton);
             Controls.Add(closeButton);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
-            Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "OpenBackupForm";
@@ -140,7 +126,6 @@
             PerformLayout();
         }
 
-        private System.Windows.Forms.Button helpButton;
         private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.MaskedTextBox _passwordTextBox;
         private System.Windows.Forms.Label passwordLabel;

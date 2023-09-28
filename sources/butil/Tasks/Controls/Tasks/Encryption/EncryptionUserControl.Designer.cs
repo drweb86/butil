@@ -41,7 +41,6 @@ namespace BUtil.Core.PL
             generatePasswordButton = new System.Windows.Forms.Button();
             _recommendationsLabel = new System.Windows.Forms.Label();
             passwordControlToolTip = new System.Windows.Forms.ToolTip(components);
-            _passwordIfNeededLabel = new System.Windows.Forms.Label();
             _tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             _tableLayoutPanel.SuspendLayout();
             SuspendLayout();
@@ -50,10 +49,10 @@ namespace BUtil.Core.PL
             // 
             passwordLabel.AutoSize = true;
             passwordLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            passwordLabel.Location = new System.Drawing.Point(8, 38);
+            passwordLabel.Location = new System.Drawing.Point(5, 4);
             passwordLabel.Margin = new System.Windows.Forms.Padding(0);
             passwordLabel.Name = "passwordLabel";
-            passwordLabel.Size = new System.Drawing.Size(214, 43);
+            passwordLabel.Size = new System.Drawing.Size(115, 27);
             passwordLabel.TabIndex = 3;
             passwordLabel.Text = "Enter password:";
             passwordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -62,11 +61,11 @@ namespace BUtil.Core.PL
             // 
             passwordTextBox.BackColor = System.Drawing.SystemColors.Window;
             passwordTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            passwordTextBox.Location = new System.Drawing.Point(225, 42);
-            passwordTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            passwordTextBox.Location = new System.Drawing.Point(122, 6);
+            passwordTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             passwordTextBox.Name = "passwordTextBox";
             passwordTextBox.PasswordChar = '●';
-            passwordTextBox.Size = new System.Drawing.Size(463, 35);
+            passwordTextBox.Size = new System.Drawing.Size(278, 23);
             passwordTextBox.TabIndex = 1;
             passwordTextBox.TextChanged += passwordTextBoxTextChanged;
             // 
@@ -75,11 +74,11 @@ namespace BUtil.Core.PL
             passwordConfirmationTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             passwordConfirmationTextBox.BackColor = System.Drawing.SystemColors.Window;
             passwordConfirmationTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            passwordConfirmationTextBox.Location = new System.Drawing.Point(222, 111);
+            passwordConfirmationTextBox.Location = new System.Drawing.Point(120, 46);
             passwordConfirmationTextBox.Margin = new System.Windows.Forms.Padding(0);
             passwordConfirmationTextBox.Name = "passwordConfirmationTextBox";
             passwordConfirmationTextBox.PasswordChar = '●';
-            passwordConfirmationTextBox.Size = new System.Drawing.Size(469, 35);
+            passwordConfirmationTextBox.Size = new System.Drawing.Size(282, 23);
             passwordConfirmationTextBox.TabIndex = 3;
             passwordConfirmationTextBox.TextChanged += passwordConfirmationTextBoxTextChanged;
             // 
@@ -88,10 +87,10 @@ namespace BUtil.Core.PL
             passwordErrorMessageLabel.AutoSize = true;
             passwordErrorMessageLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             passwordErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
-            passwordErrorMessageLabel.Location = new System.Drawing.Point(229, 81);
-            passwordErrorMessageLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            passwordErrorMessageLabel.Location = new System.Drawing.Point(124, 31);
+            passwordErrorMessageLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             passwordErrorMessageLabel.Name = "passwordErrorMessageLabel";
-            passwordErrorMessageLabel.Size = new System.Drawing.Size(455, 30);
+            passwordErrorMessageLabel.Size = new System.Drawing.Size(274, 15);
             passwordErrorMessageLabel.TabIndex = 5;
             passwordErrorMessageLabel.Text = "<Message>";
             // 
@@ -100,10 +99,10 @@ namespace BUtil.Core.PL
             confirmationErrorMessageLabel.AutoSize = true;
             confirmationErrorMessageLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             confirmationErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
-            confirmationErrorMessageLabel.Location = new System.Drawing.Point(229, 146);
-            confirmationErrorMessageLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            confirmationErrorMessageLabel.Location = new System.Drawing.Point(124, 69);
+            confirmationErrorMessageLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             confirmationErrorMessageLabel.Name = "confirmationErrorMessageLabel";
-            confirmationErrorMessageLabel.Size = new System.Drawing.Size(455, 30);
+            confirmationErrorMessageLabel.Size = new System.Drawing.Size(274, 15);
             confirmationErrorMessageLabel.TabIndex = 6;
             confirmationErrorMessageLabel.Text = "<Confirmation message>";
             // 
@@ -111,10 +110,10 @@ namespace BUtil.Core.PL
             // 
             confirmPasswordLabel.AutoSize = true;
             confirmPasswordLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            confirmPasswordLabel.Location = new System.Drawing.Point(15, 111);
-            confirmPasswordLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            confirmPasswordLabel.Location = new System.Drawing.Point(9, 46);
+            confirmPasswordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             confirmPasswordLabel.Name = "confirmPasswordLabel";
-            confirmPasswordLabel.Size = new System.Drawing.Size(200, 35);
+            confirmPasswordLabel.Size = new System.Drawing.Size(107, 23);
             confirmPasswordLabel.TabIndex = 4;
             confirmPasswordLabel.Text = "Confirm password:";
             confirmPasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -125,10 +124,10 @@ namespace BUtil.Core.PL
             generatePasswordButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             generatePasswordButton.BackColor = System.Drawing.SystemColors.Control;
             generatePasswordButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            generatePasswordButton.Location = new System.Drawing.Point(699, 38);
-            generatePasswordButton.Margin = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            generatePasswordButton.Location = new System.Drawing.Point(407, 4);
+            generatePasswordButton.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             generatePasswordButton.Name = "generatePasswordButton";
-            generatePasswordButton.Size = new System.Drawing.Size(215, 43);
+            generatePasswordButton.Size = new System.Drawing.Size(126, 27);
             generatePasswordButton.TabIndex = 2;
             generatePasswordButton.Text = "Generate password...";
             passwordControlToolTip.SetToolTip(generatePasswordButton, "Generate new random password");
@@ -140,25 +139,12 @@ namespace BUtil.Core.PL
             _recommendationsLabel.AutoSize = true;
             _tableLayoutPanel.SetColumnSpan(_recommendationsLabel, 3);
             _recommendationsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            _recommendationsLabel.Location = new System.Drawing.Point(13, 176);
-            _recommendationsLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            _recommendationsLabel.MaximumSize = new System.Drawing.Size(912, 0);
+            _recommendationsLabel.Location = new System.Drawing.Point(8, 84);
+            _recommendationsLabel.MaximumSize = new System.Drawing.Size(532, 0);
             _recommendationsLabel.Name = "_recommendationsLabel";
-            _recommendationsLabel.Size = new System.Drawing.Size(896, 30);
+            _recommendationsLabel.Size = new System.Drawing.Size(522, 15);
             _recommendationsLabel.TabIndex = 1;
             _recommendationsLabel.Text = "Recommendations";
-            // 
-            // _passwordIfNeededLabel
-            // 
-            _passwordIfNeededLabel.AutoSize = true;
-            _passwordIfNeededLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            _passwordIfNeededLabel.Location = new System.Drawing.Point(13, 8);
-            _passwordIfNeededLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            _passwordIfNeededLabel.Name = "_passwordIfNeededLabel";
-            _passwordIfNeededLabel.Size = new System.Drawing.Size(204, 30);
-            _passwordIfNeededLabel.TabIndex = 0;
-            _passwordIfNeededLabel.Text = "Password (if needed)";
-            _passwordIfNeededLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // _tableLayoutPanel
             // 
@@ -168,39 +154,37 @@ namespace BUtil.Core.PL
             _tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             _tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             _tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            _tableLayoutPanel.Controls.Add(confirmationErrorMessageLabel, 1, 4);
-            _tableLayoutPanel.Controls.Add(passwordConfirmationTextBox, 1, 3);
-            _tableLayoutPanel.Controls.Add(passwordTextBox, 1, 1);
-            _tableLayoutPanel.Controls.Add(passwordErrorMessageLabel, 1, 2);
-            _tableLayoutPanel.Controls.Add(confirmPasswordLabel, 0, 3);
-            _tableLayoutPanel.Controls.Add(generatePasswordButton, 2, 1);
-            _tableLayoutPanel.Controls.Add(passwordLabel, 0, 1);
-            _tableLayoutPanel.Controls.Add(_passwordIfNeededLabel, 0, 0);
-            _tableLayoutPanel.Controls.Add(_recommendationsLabel, 0, 5);
+            _tableLayoutPanel.Controls.Add(confirmationErrorMessageLabel, 1, 3);
+            _tableLayoutPanel.Controls.Add(passwordConfirmationTextBox, 1, 2);
+            _tableLayoutPanel.Controls.Add(passwordTextBox, 1, 0);
+            _tableLayoutPanel.Controls.Add(passwordErrorMessageLabel, 1, 1);
+            _tableLayoutPanel.Controls.Add(confirmPasswordLabel, 0, 2);
+            _tableLayoutPanel.Controls.Add(generatePasswordButton, 2, 0);
+            _tableLayoutPanel.Controls.Add(passwordLabel, 0, 0);
+            _tableLayoutPanel.Controls.Add(_recommendationsLabel, 0, 4);
             _tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             _tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            _tableLayoutPanel.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             _tableLayoutPanel.Name = "_tableLayoutPanel";
-            _tableLayoutPanel.Padding = new System.Windows.Forms.Padding(8);
-            _tableLayoutPanel.RowCount = 7;
+            _tableLayoutPanel.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            _tableLayoutPanel.RowCount = 6;
             _tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             _tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             _tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             _tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             _tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             _tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            _tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            _tableLayoutPanel.Size = new System.Drawing.Size(922, 306);
+            _tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            _tableLayoutPanel.Size = new System.Drawing.Size(538, 153);
             _tableLayoutPanel.TabIndex = 2;
             // 
             // EncryptionUserControl
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             Controls.Add(_tableLayoutPanel);
-            Margin = new System.Windows.Forms.Padding(9, 6, 9, 6);
+            Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             Name = "EncryptionUserControl";
-            Size = new System.Drawing.Size(922, 306);
+            Size = new System.Drawing.Size(538, 153);
             _tableLayoutPanel.ResumeLayout(false);
             _tableLayoutPanel.PerformLayout();
             ResumeLayout(false);
@@ -216,7 +200,6 @@ namespace BUtil.Core.PL
         private System.Windows.Forms.TextBox passwordConfirmationTextBox;
         private System.Windows.Forms.Button generatePasswordButton;
         private System.Windows.Forms.Label _recommendationsLabel;
-        private System.Windows.Forms.Label _passwordIfNeededLabel;
         private System.Windows.Forms.TableLayoutPanel _tableLayoutPanel;
     }
 }

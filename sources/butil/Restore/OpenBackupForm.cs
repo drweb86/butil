@@ -38,7 +38,7 @@ namespace BUtil.RestorationMaster
         private void ApplyLocals()
         {
             closeButton.Text = Resources.Button_Close;
-            passwordLabel.Text = Resources.Password_Recovery_Prompt;
+            passwordLabel.Text = Resources.Password_Field;
             continueButton.Text = Resources.Button_Continue;
             continueButton.Enabled = true;
             this.Text = Resources.Task_Restore;
@@ -74,10 +74,9 @@ namespace BUtil.RestorationMaster
                 var log = new StubLog();
                 var storage = StorageFactory.Create(log, storageSettings);
 
-                if (!IncrementalBackupModelConstants.Files.Any(x => storage.Exists(x)))
+                if (!storage.Exists(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile))
                 {
-                    var allowedFiles = string.Join(", ", IncrementalBackupModelConstants.Files);
-                    error = string.Format(Resources.RestoreFrom_Field_Validation_NoStateFiles, allowedFiles);
+                    error = string.Format(Resources.RestoreFrom_Field_Validation_NoStateFiles, IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile);
                     return;
                 }
 
@@ -106,11 +105,6 @@ namespace BUtil.RestorationMaster
             restoreForm.ShowDialog();
 
             Close();
-        }
-
-        private void OnHelpClick(object sender, EventArgs e)
-        {
-            SupportManager.DoSupport(SupportRequest.RestorationWizard);
         }
     }
 }

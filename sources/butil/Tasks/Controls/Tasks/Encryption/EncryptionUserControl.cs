@@ -73,7 +73,6 @@ namespace BUtil.Core.PL
             applyToUi(Result.PasswordIsValid);
             applyToUi(Result.ConfirmationOfPasswordIsValid);
 
-            _passwordIfNeededLabel.Text = Resources.Password_Group_Header;
             confirmPasswordLabel.Text = Resources.Password_Field_Confirm;
             passwordLabel.Text = Resources.Password_Field;
             generatePasswordButton.Text = Resources.Password_Generate;
@@ -84,11 +83,9 @@ namespace BUtil.Core.PL
                 UpdateModel(task);
         }
 
-        public void UpdateModel(TaskV2 task)
+        private void UpdateModel(TaskV2 task)
         {
-            if (task != null)
-                _task = task;
-
+            _task = task;
 
             if (_task.Model is IncrementalBackupModelOptionsV2)
             {
@@ -100,7 +97,11 @@ namespace BUtil.Core.PL
 
         public override bool ValidateUi()
         {
-            if (passwordTextBox.Text != passwordConfirmationTextBox.Text)
+            if (string.IsNullOrWhiteSpace(passwordTextBox.Text))
+            {
+                Messages.ShowErrorBox(BUtil.Core.Localization.Resources.Password_Field_Validation_NotSpecified);
+                return false;
+            } else if (passwordTextBox.Text != passwordConfirmationTextBox.Text)
             {
                 Messages.ShowErrorBox(BUtil.Core.Localization.Resources.Password_Field_Validation_NotMatch);
                 return false;

@@ -31,7 +31,7 @@ namespace BUtil.Configurator
 				{
 					TasksController.OpenRestorationMaster(null, true, null);
 				}
-				else if (IncrementalBackupModelConstants.Files.Any(x => args[0].EndsWith(x)))
+				else if (args[0].EndsWith(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile))
 				{
 					TasksController.OpenRestorationMaster(args[0], true, null);
 				}

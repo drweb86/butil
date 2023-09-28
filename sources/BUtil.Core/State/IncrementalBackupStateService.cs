@@ -28,35 +28,6 @@ namespace BUtil.Core.State
             _log.WriteLine(LoggingEvent.Debug, $"Reading state");
             using var tempFolder = new TempFolder();
 
-            if (_services.Storage.Exists(IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile))
-            {
-                _log.WriteLine(LoggingEvent.Debug, $"Reading non-encrypted non-compressed state");
-                var destFile = Path.Combine(tempFolder.Folder, IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile);
-                _services.Storage.Download(IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile, destFile);
-                using var destFileStream = File.OpenRead(destFile);
-                state = JsonSerializer.Deserialize<IncrementalBackupState>(destFileStream);
-                return true;
-            }
-
-            if (_services.Storage.Exists(IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile))
-            {
-                _log.WriteLine(LoggingEvent.Debug, $"Reading non-encrypted compressed state");
-                var destFile = Path.Combine(tempFolder.Folder, IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile);
-                _services.Storage.Download(IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile, destFile);
-                var archiver = ArchiverFactory.Create(_log);
-                if (!archiver.Extract(destFile, null, tempFolder.Folder))
-                {
-                    _log.WriteLine(LoggingEvent.Error, $"Failed to read state");
-                    state = null;
-                    return false;
-                }
-
-                var uncompressedFile = Path.Combine(tempFolder.Folder, IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile);
-                using var uncompressedFileStream = File.OpenRead(uncompressedFile);
-                state = JsonSerializer.Deserialize<IncrementalBackupState>(uncompressedFileStream);
-                return true;
-            }
-
             if (_services.Storage.Exists(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile))
             {
                 _log.WriteLine(LoggingEvent.Debug, $"Reading encrypted compressed state");
@@ -93,12 +64,11 @@ namespace BUtil.Core.State
 
             var storageFile = new StorageFile
             {
-                StorageMethod = GetStorageMethod(incrementalBackupModelOptions, incrementalBackupModelOptions.Password),
+                StorageMethod = StorageMethodNames.SevenZipEncrypted,
                 StorageIntegrityMethod = StorageIntegrityMethod.Sha512
             };
 
-            var encryptionEnabled = !string.IsNullOrWhiteSpace(incrementalBackupModelOptions.Password);
-            storageFile.StorageRelativeFileName = encryptionEnabled ? IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile : IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile;
+            storageFile.StorageRelativeFileName = IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile;
             var fileToUpload = Path.Combine(tempFolder.Folder, storageFile.StorageRelativeFileName);
             var archiver = ArchiverFactory.Create(_log);
             if (!archiver.CompressFile(jsonFile, incrementalBackupModelOptions.Password, fileToUpload))
@@ -113,14 +83,6 @@ namespace BUtil.Core.State
             storageFile.StorageIntegrityMethodInfo = _hashService.GetSha512(fileToUpload, false);
 
             return storageFile;
-        }
-
-        private static string GetStorageMethod(IncrementalBackupModelOptionsV2 incrementalBackupModelOptions, string password)
-        {
-            if (string.IsNullOrEmpty(password))
-                return StorageMethodNames.SevenZip;
-
-            return StorageMethodNames.SevenZipEncrypted;
         }
     }
 }

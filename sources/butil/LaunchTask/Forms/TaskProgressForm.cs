@@ -236,10 +236,6 @@ namespace BUtil.Configurator.BackupUiMaster.Forms
         {
             Environment.Exit(0);
         }
-        void HelpButtonClick(object sender, EventArgs e)
-        {
-            SupportManager.DoSupport(SupportRequest.BackupWizard);
-        }
 
         private void OnListViewFlushUpdates(object sender, EventArgs e)
         {

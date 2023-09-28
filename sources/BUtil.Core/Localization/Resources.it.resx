@@ -292,7 +292,7 @@ Il programma ora aprirà il browser internet alla pagina di download</value>
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Non è stata specificata la cartella.</value>
   </data>
-    <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
+  <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>La cartella non esiste.</value>
   </data>
   <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
@@ -472,14 +472,8 @@ Il programma ora aprirà il browser internet alla pagina di download</value>
   <data name="Password_Generator_Header" xml:space="preserve">
     <value>Generatore password</value>
   </data>
-  <data name="Password_Group_Header" xml:space="preserve">
-    <value>Password (opzionale)</value>
-  </data>
   <data name="Password_Help" xml:space="preserve">
     <value>La lunghezza minima consigliata della password è di 50 caratteri e oltre.</value>
-  </data>
-  <data name="Password_Recovery_Prompt" xml:space="preserve">
-    <value>Se il backup è protetto da password, digita qui la password:</value>
   </data>
   <data name="Password_Use" xml:space="preserve">
     <value>Use</value>

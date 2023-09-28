@@ -1,3 +1,12 @@
+# 2023.09.29
+
+## Removed Features
+- Dropped support of non-encrypted incremental backups for recovery due to no usage.
+If you used this feature, install previous version of application, update task (set any password), perform backup.
+
+## Changes
+- Italian language was updated by https://github.com/bovirus .
+
 # 2023.09.28
 
 ## New Features

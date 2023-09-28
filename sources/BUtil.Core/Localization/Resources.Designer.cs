@@ -1046,29 +1046,11 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Password (optional).
-        /// </summary>
-        public static string Password_Group_Header {
-            get {
-                return ResourceManager.GetString("Password_Group_Header", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Recommended minimum password length is 50 characters and more..
         /// </summary>
         public static string Password_Help {
             get {
                 return ResourceManager.GetString("Password_Help", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to If your backup is password protected, please type password here:.
-        /// </summary>
-        public static string Password_Recovery_Prompt {
-            get {
-                return ResourceManager.GetString("Password_Recovery_Prompt", resourceCulture);
             }
         }
         

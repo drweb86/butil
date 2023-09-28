@@ -466,14 +466,8 @@ Should any one of the copies created fail, including the first (full), restorati
   <data name="Password_Generator_Header" xml:space="preserve">
     <value>Password generator</value>
   </data>
-  <data name="Password_Group_Header" xml:space="preserve">
-    <value>Password (optional)</value>
-  </data>
   <data name="Password_Help" xml:space="preserve">
     <value>Recommended minimum password length is 50 characters and more.</value>
-  </data>
-  <data name="Password_Recovery_Prompt" xml:space="preserve">
-    <value>If your backup is password protected, please type password here:</value>
   </data>
   <data name="Password_Use" xml:space="preserve">
     <value>Use</value>

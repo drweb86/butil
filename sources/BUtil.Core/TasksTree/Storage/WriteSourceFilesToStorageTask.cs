@@ -59,7 +59,7 @@ namespace BUtil.Core.TasksTree.Storage
                         string storageRelativeFileName = GetStorageRelativeFileName(versionState);
 
                         x.StorageRelativeFileName = storageRelativeFileName;
-                        x.StorageMethod = GetStorageMethod();
+                        x.StorageMethod = StorageMethodNames.SevenZipEncrypted;
                         return x;
                     })
                     .GroupBy(x => x.FileState.ToDeduplicationString())
@@ -107,15 +107,6 @@ namespace BUtil.Core.TasksTree.Storage
                 var gigabyte = 1024 * 1024 *1024;
                 Events.Message(string.Format(BUtil.Core.Localization.Resources.Task_Status_PartialDueToQuota, skippedBecauseOfQuotaFiles.Count(), skippedBecauseOfQuotaFiles.Sum(x => x.FileState.Size) / gigabyte));
             }
-        }
-
-        private string GetStorageMethod()
-        {
-            if (string.IsNullOrEmpty(_incrementalBackupModelOptions.Password))
-                return StorageMethodNames.SevenZip;
-
-            return StorageMethodNames.SevenZipEncrypted;
-
         }
 
         private string GetStorageRelativeFileName(VersionState versionState)
