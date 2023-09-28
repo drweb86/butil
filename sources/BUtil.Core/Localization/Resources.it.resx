@@ -274,13 +274,25 @@ Il programma ora aprirà il browser internet alla pagina di download</value>
   <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
     <value>La cartella "{0}" non esiste.</value>
   </data>
+  <data name="Field_Device" xml:space="preserve">
+    <value>Dispositivo:</value>
+  </data>
+  <data name="Field_Device_Validation_Empty" xml:space="preserve">
+    <value>Non è stato specificato il dispositivo.</value>
+  </data>
+  <data name="Field_Device_Validation_NotFound" xml:space="preserve">
+    <value>Dispositivo non trovato.</value>
+  </data>
   <data name="Field_Folder" xml:space="preserve">
     <value>Cartella:</value>
   </data>
   <data name="Field_Folder_Browse" xml:space="preserve">
     <value>Sfoglia</value>
   </data>
-  <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
+  <data name="Field_Folder_Validation_Empty" xml:space="preserve">
+    <value>Non è stata specificata la cartella.</value>
+  </data>
+    <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>La cartella non esiste.</value>
   </data>
   <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
@@ -321,14 +333,14 @@ Il programma ora aprirà il browser internet alla pagina di download</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
     <value>Esempio:
-L'immagina deve contenere  il file {0} (modificato in {1}).
-Con questa cartella e il file stringa della maschera verrà archiviato come:
-{2}</value>
+	L'immagina deve contenere  il file {0} (modificato in {1}).
+	Con questa cartella e il file stringa della maschera verrà archiviato come:
+	{2}</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
     <value>Token supportati:
-{DATE:Format} - Inserisce la data modifica del file nel formato specificato.
-Per tutte le opzioni cerca con Google "C# DateTime format".</value>
+	{DATE:Format} - Inserisce la data modifica del file nel formato specificato.
+	Per tutte le opzioni cerca con Google "C# DateTime format".</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
     <value>Il nome file trasformazione è vuoto.</value>
@@ -343,6 +355,8 @@ Per tutte le opzioni cerca con Google "C# DateTime format".</value>
     <value>Importa audio, foto, video dalla scheda SD della fotocamera, 
 	del registratore; foto e video dal telefono tramite WI-FI tramite 
 	l'applicazione server FTP usando la maschera nomi file.</value>
+	Consulta il sito web dell'applicazione per la documentazione su come impostare 
+	il file trasmissione via WI-FI tramite l'applicazione FTP Server sul telefono.
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Sorgente dati importazione</value>
@@ -353,22 +367,22 @@ Per tutte le opzioni cerca con Google "C# DateTime format".</value>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Si è verificato un errore imprevisto
 
-Contatta gli sviluppatori con le informazioni salvate sul desktop in
-"{0}"
+	Contatta gli sviluppatori con le informazioni salvate sul desktop in
+	"{0}"
 
-L'applicazione verrà ora chiusa.</value>
+	L'applicazione verrà ora chiusa.</value>
   </data>
   <data name="IncrementalBackup_Help" xml:space="preserve">
     <value>La forma più elementare di backup incrementale consiste nell'identificare, registrare e quindi preservare solo i file che sono cambiati dall'ultimo backup. 
 
- Poiché le modifiche sono generalmente limitate, i backup incrementali sono molto più piccoli e più rapidi dei backup completi. 
+	Poiché le modifiche sono generalmente limitate, i backup incrementali sono molto più piccoli e più rapidi dei backup completi. 
 
- Ad esempio, dopo un backup completo il venerdì, il backup del lunedì conterrà solo i file modificati da venerdì. 
+	Ad esempio, dopo un backup completo il venerdì, il backup del lunedì conterrà solo i file modificati da venerdì. 
 
- Il backup del martedì contiene solo i file modificati da lunedì e così via. 
+	Il backup del martedì contiene solo i file modificati da lunedì e così via. 
 
- Un ripristino completo dei dati sarà naturalmente più lento, poiché dovranno essere ripristinati tutti gli incrementi. 
- Se una qualsiasi delle copie create dovesse fallire, inclusa la prima (completa), il ripristino risulterà incompleto.</value>
+	Un ripristino completo dei dati sarà naturalmente più lento, poiché dovranno essere ripristinati tutti gli incrementi. 
+	Se una qualsiasi delle copie create dovesse fallire, inclusa la prima (completa), il ripristino risulterà incompleto.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Backup incrementale</value>
@@ -473,7 +487,7 @@ L'applicazione verrà ora chiusa.</value>
   <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
     <value>Impossibile individuare i file "{0}" nella cartella. 
 
-Punta ad una cartella contenente questo file.</value>
+	Punta ad una cartella contenente questo file.</value>
   </data>
   <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
     <value>Impossibile leggere lo stato.</value>
@@ -528,13 +542,13 @@ Punta ad una cartella contenente questo file.</value>
   </data>
   <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
     <value>Qui puoi specificare le maschere esclusione globali  file. 
-Può essere un nome file, un nome cartella o usare i caratteri jolly.
-Esempi: 
-d:\temp, 
-d:\temp\file.txt, 
-d:\temp\**\*.txt or 
-bin. 
-Vedi la descrizione dettagliata al seguente collegamento.</value>
+	Può essere un nome file, un nome cartella o usare i caratteri jolly.
+	Esempi: 
+	d:\temp, 
+	d:\temp\file.txt, 
+	d:\temp\**\*.txt o 
+	bin. 
+	Vedi la descrizione dettagliata al seguente collegamento.</value>
   </data>
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
     <value>Salta elaborazione file in base alla maschera di esclusione.</value>
