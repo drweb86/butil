@@ -8,6 +8,11 @@ namespace BUtil.Core.Misc
 {
 	public static class SupportManager
 	{
+		public static void LaunchTask(string taskName)
+		{
+            Process.Start(Files.TasksAppV2, $"{TasksAppArguments.LaunchTask} \"{TasksAppArguments.RunTask}={taskName}\"");
+        }
+
 		public static void OpenRestorationApp(string taskName = null)
 		{
 			if (string.IsNullOrWhiteSpace(taskName))

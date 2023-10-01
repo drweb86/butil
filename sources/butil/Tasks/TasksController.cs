@@ -7,6 +7,7 @@ using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
 using BUtil.RestorationMaster;
 using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.Misc;
 
 namespace BUtil.Configurator.Configurator
 {
@@ -44,11 +45,6 @@ namespace BUtil.Configurator.Configurator
             using var form = new TaskProgressForm(task);
             Application.Run(form);
             Environment.Exit(0);
-        }
-
-        public static void LaunchBackupUIToolInSeparateProcess(string taskName)
-        {
-            Process.Start(Application.ExecutablePath, $"{TasksAppArguments.LaunchTask} \"{TasksAppArguments.RunTask}={taskName}\"");
         }
 
         private static TaskV2 GetBackupTaskToExecute(string taskName)

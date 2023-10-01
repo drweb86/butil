@@ -24,4 +24,10 @@
   <ItemGroup>
     <ProjectReference Include="..\BUtil.Core\BUtil.Core.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\LaunchTaskView.axaml.cs">
+      <DependentUpon>LaunchTaskView.axaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>
