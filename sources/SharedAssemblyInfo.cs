@@ -10,4 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
+
+
+// this should be removed.
 [assembly: System.Runtime.Versioning.SupportedOSPlatform("windows10.0")]

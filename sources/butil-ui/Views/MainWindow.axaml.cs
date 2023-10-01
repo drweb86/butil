@@ -1,5 +1,7 @@
 ﻿using Avalonia.Controls;
+using Avalonia.Controls.Templates;
 using BUtil.Core.FileSystem;
+using butil_ui.ViewModels;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -8,12 +10,12 @@ namespace butil_ui.Views;
 
 public partial class MainWindow : Window
 {
-    public Avalonia.Controls.UserControl CurrentView { get; set; }
-
     public MainWindow()
     {
         InitializeComponent();
 
+        var viewModel = new MainWindowViewModel();
+        
         var args = Environment.GetCommandLineArgs().Skip(1).ToArray();
         if (args.Length == 2 && args[0].ToUpperInvariant() == TasksAppArguments.LaunchTask.ToUpperInvariant())
         {
@@ -25,7 +27,10 @@ public partial class MainWindow : Window
                     taskName = argument.Substring(TasksAppArguments.RunTask.Length + 1);
                 }
             }
-            CurrentView = new LaunchTaskView();
+            viewModel.SelectedView = TasksAppArguments.RunTask;
+            viewModel.SelectedTask = taskName;
         }
+
+        this.DataContext = viewModel;
     }
 }

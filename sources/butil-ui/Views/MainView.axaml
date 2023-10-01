@@ -5,11 +5,11 @@
              xmlns:vm="clr-namespace:butil_ui.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="butil_ui.Views.MainView"
-             x:DataType="vm:MainViewModel">
+             x:DataType="vm:MainWindowViewModel">
   <Design.DataContext>
     <!-- This only sets the DataContext for the previewer in an IDE,
          to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-    <vm:MainViewModel />
+	  <vm:MainWindowViewModel />
   </Design.DataContext>
 
 	<Button >My Button</Button>

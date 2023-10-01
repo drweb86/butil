@@ -1,6 +1,0 @@
-﻿namespace butil_ui.ViewModels;
-
-public partial class MainViewModel : ViewModelBase
-{
-    public string Greeting => "Welcome to Avalonia!";
-}
