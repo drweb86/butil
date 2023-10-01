@@ -6,6 +6,7 @@
     <RootNamespace>BUtil.ConsoleBackup</RootNamespace>
     <AssemblyName>butilc</AssemblyName>
     <SignAssembly>False</SignAssembly>
+	  <Nullable>disable</Nullable>
 <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
 <UseCommonOutputDirectory>true</UseCommonOutputDirectory>

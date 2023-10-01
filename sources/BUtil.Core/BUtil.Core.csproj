@@ -7,6 +7,7 @@
     <AssemblyOriginatorKeyFile>..\Development.key.snk</AssemblyOriginatorKeyFile>
     <DelaySign>False</DelaySign>
     <IsWebBootstrapper>true</IsWebBootstrapper>
+	  <Nullable>annotations</Nullable>
 <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
 <UseCommonOutputDirectory>true</UseCommonOutputDirectory>
