@@ -11,6 +11,25 @@
          to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
     <vm:LaunchTaskViewModel />
   </Design.DataContext>
+	<StackPanel Margin="24">
+		<TextBlock>Here list of items</TextBlock>
+		
+		<TextBlock>Generic title</TextBlock>
+		<TextBlock>Progress</TextBlock>
 
-	<Button >My Button</Button>
+		<WrapPanel>
+			<TextBlock>Passed</TextBlock>
+			<TextBlock>Passed time</TextBlock>
+		</WrapPanel>
+
+		<WrapPanel HorizontalAlignment="Right">
+			<TextBlock VerticalAlignment="Center">Do after backup</TextBlock>
+			<ComboBox VerticalAlignment="Center">Do after backup combo</ComboBox>
+			<Button VerticalAlignment="Center" Margin="4">Start</Button>
+			<Button VerticalAlignment="Center" Margin="4">Stop</Button>
+			<Button VerticalAlignment="Center" Margin="4">Close</Button>
+		</WrapPanel>
+	</StackPanel>
+
+
 </UserControl>
