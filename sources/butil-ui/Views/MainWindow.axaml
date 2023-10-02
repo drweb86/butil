@@ -9,8 +9,11 @@
         Icon="/Assets/avalonia-logo.ico"
 		x:CompileBindings="True"
 		x:DataType="vm:MainWindowViewModel"
-        Title="butil_ui">
-	<Grid RowDefinitions="*,Auto" Margin="10">
-    	<TransitioningContentControl Content="{Binding CurrentPage}" />
-	</Grid>
+        >
+	<StackPanel>
+		<Label Content="{Binding Title}" />
+	    <Grid RowDefinitions="*,Auto" Margin="10">
+    	    <TransitioningContentControl Content="{Binding CurrentPage}" />
+	    </Grid>
+	</StackPanel>
 </Window>

@@ -6,7 +6,22 @@ namespace butil_ui.ViewModels;
 
 public partial class MainWindowViewModel : ViewModelBase
 {
-    public string Greeting => "Welcome to Avalonia!";
+    private string _title = string.Empty;
+    public string Title
+    {
+        get
+        {
+            return _title;
+        }
+        set
+        {
+            if (value == _title)
+                return;
+            _title = value;
+            this.OnPropertyChanged(nameof(Title));
+        }
+    }
+
 
     /// <summary>
     /// Gets the current page. The property is read-only
@@ -30,6 +45,7 @@ public partial class MainWindowViewModel : ViewModelBase
                 }
             }
             CurrentPage = new LaunchTaskViewModel() { TaskName = taskName };
+            Title = taskName;
         }
     }
 }
