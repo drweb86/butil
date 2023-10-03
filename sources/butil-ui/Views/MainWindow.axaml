@@ -9,11 +9,15 @@
         Icon="/Assets/avalonia-logo.ico"
 		x:CompileBindings="True"
 		x:DataType="vm:MainWindowViewModel"
-        >
-	<StackPanel>
-		<Label Content="{Binding Title}" />
-	    <Grid RowDefinitions="*,Auto" Margin="10">
-    	    <TransitioningContentControl Content="{Binding CurrentPage}" />
-	    </Grid>
-	</StackPanel>
+		Height="400"
+		Title="{Binding CurrentPage.WindowTitle}">
+
+	<TransitioningContentControl
+		MinHeight="{Binding $parent.Height}"
+		Height="{Binding $parent.Height}"
+		MaxHeight="{Binding $parent.Height}"
+		Content="{Binding CurrentPage}"
+		Margin="24 8 24 8"
+	/>
+
 </Window>

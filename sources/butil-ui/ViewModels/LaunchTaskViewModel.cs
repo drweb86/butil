@@ -1,5 +1,6 @@
 ﻿using Avalonia;
 using Avalonia.Media;
+using Avalonia.Threading;
 using BUtil.Core.BackupModels;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
@@ -8,10 +9,12 @@ using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
 using BUtil.Core.TasksTree.Core;
+using CommunityToolkit.Mvvm.ComponentModel;
 using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Runtime.InteropServices;
+using System.Threading;
 
 namespace butil_ui.ViewModels;
 
@@ -83,10 +86,18 @@ public class LaunchTaskViewModel : PageViewModelBase
     public void StartButtonClick()
     {
         IsStartButtonVisible = false;
+        
         IsStopButtonEnabled  = true;
 
+        _executorThread = new Thread(() =>
+        {
+            Thread.CurrentThread.IsBackground = true;
+            _rootTask.Execute();
+            OnRunWorkerCompleted();
+        });
+
+        _executorThread.Start();
         // TODO: backupProgressUserControl.Start();
-        // TODO: _backgroundWorker.RunWorkerAsync();
     }
 
     public void CloseButtonClick()
@@ -143,7 +154,6 @@ public class LaunchTaskViewModel : PageViewModelBase
     #endregion
 
     private TaskV2 _backupTask;
-    private ConcurrentQueue<Action> _listViewUpdates = new();
     
     private List<string> _lastMinuteMessagesToUser = new List<string>();
     private HashSet<Guid> _ended = new HashSet<Guid>();
@@ -192,7 +202,7 @@ public class LaunchTaskViewModel : PageViewModelBase
         if (e.Status == ProcessingStatus.FinishedWithErrors ||
             e.Status == ProcessingStatus.FinishedSuccesfully)
             _ended.Add(e.TaskId);
-        _listViewUpdates.Enqueue(() => UpdateListViewItem(e.TaskId, e.Status));
+        ScheduleUpdate(() => UpdateListViewItem(e.TaskId, e.Status));
     }
 
     private void UpdateListViewItem(Guid taskId, ProcessingStatus status)
@@ -224,7 +234,7 @@ public class LaunchTaskViewModel : PageViewModelBase
 
     private void OnDuringExecutionTasksAdded(object sender, DuringExecutionTasksAddedEventArgs e)
     {
-        _listViewUpdates.Enqueue(() => OnDuringExecutionTasksAddedInternal(sender, e));
+        ScheduleUpdate(() => OnDuringExecutionTasksAddedInternal(sender, e));
     }
 
     private void OnDuringExecutionTasksAddedInternal(object sender, DuringExecutionTasksAddedEventArgs e)
@@ -247,18 +257,76 @@ public class LaunchTaskViewModel : PageViewModelBase
         // TODO: tasksListView.VirtualListSize = _items.Count;
     }
 
+    private void OnRunWorkerCompleted()
+    {
+        IsStopButtonEnabled = false;
+        _log.Close();
+
+        var powerTask = SelectedPowerTask;
+
+        var appStaysAlive = powerTask == PowerTask.None;
+        NativeMethods.StopPreventSleep();
+        if (appStaysAlive)
+        {
+            PowerPC.DoTask(powerTask);
+            string lastMinuteConsolidatedMessage = GetLastMinuteConsolidatedMessage();
+
+            if (_log.HasErrors)
+            {
+                ProcessHelper.ShellExecute(_log.LogFilename);
+                // backupProgressUserControl.Stop(lastMinuteConsolidatedMessage, Resources.Task_Status_FailedSeeLog, true);
+            }
+            else
+            {
+                // backupProgressUserControl.Stop(lastMinuteConsolidatedMessage, Resources.Task_Status_Succesfull, false);
+            }
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                // BUtil.BackupUiMaster.NativeMethods.FlashWindow.Flash(this, 10);
+            }
+            return;
+        }
+       // if (_log.HasErrors &&
+       //     RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+       //     BUtil.BackupUiMaster.NativeMethods.ScheduleOpeningFileAfterLoginOfUserIntoTheSystem(_log.LogFilename);
+        PowerPC.DoTask(powerTask);
+        CloseButtonClick();
+    }
+
 
     private void OnAddLastMinuteMessageToUser(object sender, MessageEventArgs e)
     {
         _lastMinuteMessagesToUser.Add(e.Message);
     }
+
+    private void ScheduleUpdate(Action update)
+    {
+        Dispatcher.UIThread.Invoke(update);
+        // backupProgressUserControl.SetProgress(_ended.Count, _items.Count);
+    }
+
+    private string GetLastMinuteConsolidatedMessage()
+    {
+        var messages = string.Join(Environment.NewLine, _lastMinuteMessagesToUser.ToArray());
+        if (!string.IsNullOrEmpty(messages))
+            messages = messages + Environment.NewLine;
+        return messages;
+    }
+
+    private Thread _executorThread;
 }
 
-public class ListViewItem: AvaloniaObject
+public class ListViewItem: ObservableObject
 {
     public Guid Tag { get; set; }
     public string Text { get; set; }
-    public Color BackColor { get; set; }
+    public Color _backColor;
+
+    public Color BackColor
+    {
+        get => _backColor;
+        set => this.SetProperty(ref _backColor, value);
+    }
 
 }
 
@@ -271,75 +339,9 @@ class Messages
     }
 }
 /*
-        private void OnTasksListViewResize(object sender, EventArgs e)
-        {
-            int newWidth = tasksListView.Width - 35;
-            taskNameColumnHeader.Width = newWidth < 35 ? 35 : newWidth;
-        }
 
-        private void OnDoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
-        {
-            _rootTask.Execute();
-        }
 
-        private void OnRunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
-        {
-            cancelButton.Enabled = false;
-            _log.Close();
 
-            var powerTask = (PowerTask)_powerTaskComboBox.SelectedIndex;
-
-            var appStaysAlive = powerTask == PowerTask.None;
-            NativeMethods.StopPreventSleep();
-            if (appStaysAlive)
-            {
-                PowerPC.DoTask(powerTask);
-                string lastMinuteConsolidatedMessage = GetLastMinuteConsolidatedMessage();
-
-                if (_log.HasErrors)
-                {
-                    ProcessHelper.ShellExecute(_log.LogFilename);
-                    backupProgressUserControl.Stop(lastMinuteConsolidatedMessage, Resources.Task_Status_FailedSeeLog, true);
-                }
-                else
-                {
-                    backupProgressUserControl.Stop(lastMinuteConsolidatedMessage, Resources.Task_Status_Succesfull, false);
-                }
-                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-                    BUtil.BackupUiMaster.NativeMethods.FlashWindow.Flash(this, 10);
-                return;
-            }
-            if (_log.HasErrors &&
-                RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-                BUtil.BackupUiMaster.NativeMethods.ScheduleOpeningFileAfterLoginOfUserIntoTheSystem(_log.LogFilename);
-            PowerPC.DoTask(powerTask);
-            Close();
-        }
-
-        private string GetLastMinuteConsolidatedMessage()
-        {
-            var messages = string.Join(Environment.NewLine, _lastMinuteMessagesToUser.ToArray());
-            if (!string.IsNullOrEmpty(messages))
-                messages = messages + Environment.NewLine;
-            return messages;
-        }
-
-        private void OnListViewFlushUpdates(object sender, EventArgs e)
-        {
-            tasksListView.BeginUpdate();
-            while (_listViewUpdates.TryDequeue(out var action))
-                action();
-            backupProgressUserControl.SetProgress(_ended.Count, _items.Count);
-            tasksListView.EndUpdate();
-        }
-
-        private void OnRetrieveVirtualItem(object sender, RetrieveVirtualItemEventArgs e)
-        {
-            if (e.ItemIndex >= 0 && e.ItemIndex < _items.Count)
-            {
-                e.Item = _items[e.ItemIndex];
-            }
-        }
 
     }
 }
