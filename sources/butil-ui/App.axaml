@@ -3,7 +3,7 @@
              x:Class="butil_ui.App"
              xmlns:local="using:BasicViewLocatorSample"
 			 
-             RequestedThemeVariant="Default">
+             RequestedThemeVariant="Dark">
              <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
     <Application.DataTemplates>
         <local:ViewLocator/>

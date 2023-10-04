@@ -255,7 +255,7 @@ public class LaunchTaskViewModel : PageViewModelBase
     {
         return state switch
         {
-            ProcessingStatus.FinishedSuccesfully => new SolidColorBrush(Colors.LightGreen),
+            ProcessingStatus.FinishedSuccesfully => new SolidColorBrush(Colors.DarkGreen),
             ProcessingStatus.FinishedWithErrors => new SolidColorBrush(Colors.LightCoral),
             ProcessingStatus.InProgress => new SolidColorBrush(Colors.Yellow),
             ProcessingStatus.NotStarted => throw new InvalidOperationException(state.ToString()),

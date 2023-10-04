@@ -49,12 +49,14 @@
 
 		<WrapPanel HorizontalAlignment="Right" Grid.Row="4" Margin="0 0 0 16">
 			<StackPanel VerticalAlignment="Center" Margin="4">
-			<Label HorizontalAlignment="Stretch" VerticalAlignment="Center" ToolTip.Tip="{Binding AfterTaskSelection_Help}" Content="{Binding AfterTaskSelection_Field}" />
-			<ComboBox HorizontalAlignment="Stretch" VerticalAlignment="Center" ItemsSource="{Binding PowerTasks}" SelectedIndex="{Binding SelectedPowerTask}" />
+				<Label HorizontalAlignment="Stretch" VerticalAlignment="Center" ToolTip.Tip="{Binding AfterTaskSelection_Help}" Content="{Binding AfterTaskSelection_Field}" />
+				<ComboBox HorizontalAlignment="Stretch" VerticalAlignment="Center" ItemsSource="{Binding PowerTasks}" SelectedIndex="{Binding SelectedPowerTask}" />
 			</StackPanel>
-			<Button IsVisible="{Binding IsStartButtonVisible}" VerticalAlignment="Center" Margin="4" Padding="16" MinWidth="40" ToolTip.Tip="{Binding Task_Launch_Hint}" Command="{Binding StartTaskCommand}">Start</Button>
-			<Button IsEnabled="{Binding IsStopButtonEnabled}" VerticalAlignment="Center" Margin="4" Padding="16" MinWidth="40" ToolTip.Tip="{Binding Button_Cancel}" Command="{Binding StopTaskCommand}">Stop</Button>
-			<Button                                            VerticalAlignment="Center" Margin="4" Padding="16" MinWidth="40" Content="{Binding Button_Close}" Command="{Binding CloseCommand}" />
+			<StackPanel Orientation="Horizontal">
+				<Button IsVisible="{Binding IsStartButtonVisible}" VerticalAlignment="Center" Margin="4" Padding="16" MinWidth="40" ToolTip.Tip="{Binding Task_Launch_Hint}" Command="{Binding StartTaskCommand}">Start</Button>
+				<Button IsEnabled="{Binding IsStopButtonEnabled}" VerticalAlignment="Center" Margin="4" Padding="16" MinWidth="40" ToolTip.Tip="{Binding Button_Cancel}" Command="{Binding StopTaskCommand}">Stop</Button>
+				<Button                                            VerticalAlignment="Center" Margin="4" Padding="16" MinWidth="40" Content="{Binding Button_Close}" Command="{Binding CloseCommand}" />
+			</StackPanel>
 		</WrapPanel>
 	</Grid>
 

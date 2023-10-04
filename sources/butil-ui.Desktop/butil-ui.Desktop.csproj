@@ -9,7 +9,11 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
 	<AppendTargetFrameworkToOutputPath>False</AppendTargetFrameworkToOutputPath>
     <OutputPath>..\..\Output\BUtil\bin</OutputPath>
+    <ApplicationIcon>butil.ico</ApplicationIcon>
   </PropertyGroup>
+  <ItemGroup>
+    <Content Include="butil.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)" />
