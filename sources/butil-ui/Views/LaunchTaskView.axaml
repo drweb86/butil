@@ -8,13 +8,10 @@
              x:DataType="vm:LaunchTaskViewModel"
 	Loaded="OnLoaded">
   <Design.DataContext>
-    <!-- This only sets the DataContext for the previewer in an IDE,
-         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
     <vm:LaunchTaskViewModel />
   </Design.DataContext>
 	<Grid>
 		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="*" />
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="Auto"/>
@@ -22,34 +19,42 @@
 			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
 
-		<Label Content="{Binding Task_List}" Grid.Row="0" Grid.Column="0" />
 
-			<ListBox ItemsSource="{Binding Items}" ScrollViewer.VerticalScrollBarVisibility="Visible"
-					 Grid.Row="1" Grid.Column="0">
+		<Expander VerticalAlignment="Top" Grid.Row="0" HorizontalAlignment="Stretch" Margin="0 24 0 8" IsExpanded="True">
+			<Expander.Header>
+				<Label Content="{Binding Task_List}" />
+			</Expander.Header>
+			<ListBox ItemsSource="{Binding Items}" ScrollViewer.VerticalScrollBarVisibility="Visible">
+				<ListBox.Styles>
+					<Style Selector="ListBoxItem">
+						<Setter Property="Padding" Value="0" />
+					</Style>
+				</ListBox.Styles>
 				<ListBox.ItemTemplate>
 					<DataTemplate>
-						<Border Background="{Binding Path=BackColor}" CornerRadius="4" Padding="4">
-							<TextBlock Text="{Binding Path=Text}"/>
-						</Border>
+						<Label Content="{Binding Path=Text}" Background="{Binding Path=BackColor}"/>
 					</DataTemplate>
 				</ListBox.ItemTemplate>
 			</ListBox>
-		<TextBlock Grid.Row="2" Grid.Column="0">Generic title</TextBlock>
-		<TextBlock Grid.Row="3" Grid.Column="0">Progress</TextBlock>
+		</Expander>
 
-		<WrapPanel Grid.Row="4" Grid.Column="0">
+
+		<TextBlock Grid.Row="1">Generic title</TextBlock>
+		<TextBlock Grid.Row="2">Progress</TextBlock>
+
+		<WrapPanel Grid.Row="3">
 			<TextBlock>Passed</TextBlock>
 			<TextBlock>Passed time</TextBlock>
 		</WrapPanel>
 
-		<WrapPanel HorizontalAlignment="Right" Grid.Row="5" Grid.Column="0" Margin="0 0 0 16">
+		<WrapPanel HorizontalAlignment="Right" Grid.Row="4" Margin="0 0 0 16">
 			<StackPanel VerticalAlignment="Center" Margin="4">
 			<Label HorizontalAlignment="Stretch" VerticalAlignment="Center" ToolTip.Tip="{Binding AfterTaskSelection_Help}" Content="{Binding AfterTaskSelection_Field}" />
 			<ComboBox HorizontalAlignment="Stretch" VerticalAlignment="Center" ItemsSource="{Binding PowerTasks}" SelectedIndex="{Binding SelectedPowerTask}" />
 			</StackPanel>
-			<Button IsVisible="{Binding IsStartButtonVisible}" VerticalAlignment="Center" Margin="4" Padding="16" MinWidth="40" ToolTip.Tip="{Binding Task_Launch_Hint}" Command="{Binding StartButtonClick}">Start</Button>
-			<Button IsEnabled="{Binding IsStopButtonEnabled}" VerticalAlignment="Center" Margin="4" Padding="16" MinWidth="40" ToolTip.Tip="{Binding Button_Cancel}" Command="{Binding StopButtonClick}">Stop</Button>
-			<Button                                            VerticalAlignment="Center" Margin="4" Padding="16" MinWidth="40" Content="{Binding Button_Close}" Command="{Binding CloseButtonClick}" />
+			<Button IsVisible="{Binding IsStartButtonVisible}" VerticalAlignment="Center" Margin="4" Padding="16" MinWidth="40" ToolTip.Tip="{Binding Task_Launch_Hint}" Command="{Binding StartTaskCommand}">Start</Button>
+			<Button IsEnabled="{Binding IsStopButtonEnabled}" VerticalAlignment="Center" Margin="4" Padding="16" MinWidth="40" ToolTip.Tip="{Binding Button_Cancel}" Command="{Binding StopTaskCommand}">Stop</Button>
+			<Button                                            VerticalAlignment="Center" Margin="4" Padding="16" MinWidth="40" Content="{Binding Button_Close}" Command="{Binding CloseCommand}" />
 		</WrapPanel>
 	</Grid>
 

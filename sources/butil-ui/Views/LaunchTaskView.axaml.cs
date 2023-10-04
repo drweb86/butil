@@ -12,6 +12,6 @@ public partial class LaunchTaskView : UserControl
 
     private void OnLoaded(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        ((LaunchTaskViewModel)this.DataContext).Load();
+        ((LaunchTaskViewModel)this.DataContext).Initialize();
     }
 }

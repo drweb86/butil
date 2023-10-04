@@ -44,7 +44,7 @@ public partial class MainWindowViewModel : ViewModelBase
                     taskName = argument.Substring(TasksAppArguments.RunTask.Length + 1);
                 }
             }
-            CurrentPage = new LaunchTaskViewModel() { TaskName = taskName, WindowTitle = taskName };
+            CurrentPage = new LaunchTaskViewModel(taskName);
             Title = taskName;
         }
     }
