@@ -1,4 +1,5 @@
-﻿using Avalonia.Media;
+﻿using Avalonia.Controls;
+using Avalonia.Media;
 using Avalonia.Threading;
 using BUtil.Core.BackupModels;
 using BUtil.Core.ConfigurationFileModels.V2;
@@ -7,6 +8,7 @@ using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
+using BUtil.Core.OSSpecific;
 using BUtil.Core.TasksTree.Core;
 using System;
 using System.Collections.Generic;
@@ -14,6 +16,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
+using System.Timers;
 
 namespace butil_ui.ViewModels;
 
@@ -27,6 +30,9 @@ public class LaunchTaskViewModel : PageViewModelBase
         _taskEvents.OnTaskProgress += OnTaskProgress;
         _taskEvents.OnDuringExecutionTasksAdded += OnDuringExecutionTasksAdded;
         _taskEvents.OnMessage += OnAddLastMinuteMessageToUser;
+
+        _timer.Enabled = false;
+        _timer.Elapsed += OnElapsedTimerTick;
     }
 
     #region SelectedPowerTask
@@ -65,6 +71,66 @@ public class LaunchTaskViewModel : PageViewModelBase
                 return;
             _isStartButtonVisible = value;
             OnPropertyChanged(nameof(IsStartButtonVisible));
+        }
+    }
+
+    #endregion
+
+    #region TaskNotCompleted
+
+    private bool _taskNotCompleted = true;
+    public bool TaskNotCompleted
+    {
+        get
+        {
+            return _taskNotCompleted;
+        }
+        set
+        {
+            if (value == _taskNotCompleted)
+                return;
+            _taskNotCompleted = value;
+            OnPropertyChanged(nameof(TaskNotCompleted));
+        }
+    }
+
+    #endregion
+
+    #region ElapsedLabel
+
+    private string _elapsedLabel = string.Empty;
+    public string ElapsedLabel
+    {
+        get
+        {
+            return _elapsedLabel;
+        }
+        set
+        {
+            if (value == _elapsedLabel)
+                return;
+            _elapsedLabel = value;
+            OnPropertyChanged(nameof(ElapsedLabel));
+        }
+    }
+
+    #endregion
+
+    #region ProgressGenericBackground
+
+    private SolidColorBrush _progressGenericBackground = new SolidColorBrush(Colors.White);
+    public SolidColorBrush ProgressGenericBackground
+    {
+        get
+        {
+            return _progressGenericBackground;
+        }
+        set
+        {
+            if (value == _progressGenericBackground)
+                return;
+            _progressGenericBackground = value;
+            OnPropertyChanged(nameof(ProgressGenericBackground));
         }
     }
 
@@ -110,44 +176,123 @@ public class LaunchTaskViewModel : PageViewModelBase
 
     #endregion
 
+    #region ProgressGenericTitle
+
+    private string _progressGenericTitle = Resources.Task_List;
+    public string ProgressGenericTitle
+    {
+        get
+        {
+            return _progressGenericTitle;
+        }
+        set
+        {
+            if (value == _progressGenericTitle)
+                return;
+            _progressGenericTitle = value;
+            OnPropertyChanged(nameof(ProgressGenericTitle));
+        }
+    }
+
+    #endregion
+
+    #region CanClose
+
+    private bool _canClose = false;
+    public bool CanClose
+    {
+        get
+        {
+            return _canClose;
+        }
+        set
+        {
+            if (value == _canClose)
+                return;
+            _canClose = value;
+            OnPropertyChanged(nameof(CanClose));
+        }
+    }
+
+    #endregion
+
+    #region TotalTasksCount
+
+    private int _totalTasksCount = 0;
+    public int TotalTasksCount
+    {
+        get
+        {
+            return _totalTasksCount;
+        }
+        set
+        {
+            if (value == _totalTasksCount)
+                return;
+            _totalTasksCount = value;
+            OnPropertyChanged(nameof(TotalTasksCount));
+        }
+    }
+
+    #endregion
+
+    #region CompletedTasksCount
+
+    private int _completedTasksCount = 0;
+    public int CompletedTasksCount
+    {
+        get
+        {
+            return _completedTasksCount;
+        }
+        set
+        {
+            if (value == _completedTasksCount)
+                return;
+            _completedTasksCount = value;
+            OnPropertyChanged(nameof(CompletedTasksCount));
+        }
+    }
+
+    #endregion
+
     #region Commands
 
     public void StartTaskCommand()
     {
         IsStartButtonVisible = false;
-        
         IsStopButtonEnabled  = true;
+        ProgressGenericTitle = Resources.Task_Status_InProgress;
+
+        _startTime = DateTime.Now;
+        _timer.Enabled = true;
 
         _thread = new Thread(() =>
         {
             Thread.CurrentThread.IsBackground = true;
             NativeMethods.PreventSleep();
             _threadTask?.Execute();
-            OnTaskCompleted();
+            Dispatcher.UIThread.Invoke(OnTaskCompleted);
         });
-
         _thread.Start();
-        // TODO: backupProgressUserControl.Start();
     }
 
     public void CloseCommand()
     {
-        Environment.Exit(-1);
+        Environment.Exit(0);
     }
 
     public void StopTaskCommand()
     {
-        Environment.Exit(0);
+        Environment.Exit(-1);
     }
 
     #endregion
 
     #region Labels
-
     public string Task_Launch_Hint => Resources.Task_Launch_Hint;
     public string Button_Cancel => Resources.Button_Cancel;
     public string AfterTaskSelection_Field => Resources.AfterTaskSelection_Field;
-    public string Task_List => Resources.Task_List;
     public string Button_Close => Resources.Button_Close;
     public string AfterTaskSelection_Help => Resources.AfterTaskSelection_Help;
     public string[] PowerTasks
@@ -170,15 +315,31 @@ public class LaunchTaskViewModel : PageViewModelBase
     private FileLog? _log;
     private BuTask? _threadTask;
     private Thread? _thread;
+    private DateTime _startTime = DateTime.Now;
+    private readonly System.Timers.Timer _timer = new (1000);
+    private readonly Color _redColor = Color.FromRgb(222, 98, 89);
+    private readonly Color _greenColor = Color.FromRgb(147, 199,93);
 
     public void Initialize()
     {
         _task = new TaskV2StoreService().Load(_taskName);
+        if (_task == null)
+        {
+            ProgressGenericTitle = BUtil.Core.Localization.Resources.Task_Validation_NotSupported;
+            ProgressGenericBackground = new SolidColorBrush(_redColor);
+            CanClose = true;
+            IsStartButtonVisible = false;
+            TaskNotCompleted = false;
+            return;
+        }
 
         if (!TaskModelStrategyFactory.TryVerify(new StubLog(), _task.Model, out var error))
         {
-            Messages.ShowErrorBox(error);
-            this.CloseCommand();
+            ProgressGenericTitle = error;
+            ProgressGenericBackground = new SolidColorBrush(_redColor);
+            CanClose = true;
+            IsStartButtonVisible = false;
+            TaskNotCompleted = false;
             return;
         }
 
@@ -248,15 +409,15 @@ public class LaunchTaskViewModel : PageViewModelBase
     private void ScheduleUpdate(Action update)
     {
         Dispatcher.UIThread.Invoke(update);
-        // backupProgressUserControl.SetProgress(_ended.Count, _items.Count);
+        SetProgress(_endedTasks.Count, _items.Count);
     }
 
-    private static SolidColorBrush GetResultColor(ProcessingStatus state)
+    private SolidColorBrush GetResultColor(ProcessingStatus state)
     {
         return state switch
         {
-            ProcessingStatus.FinishedSuccesfully => new SolidColorBrush(Colors.DarkGreen),
-            ProcessingStatus.FinishedWithErrors => new SolidColorBrush(Colors.LightCoral),
+            ProcessingStatus.FinishedSuccesfully => new SolidColorBrush(_greenColor),
+            ProcessingStatus.FinishedWithErrors => new SolidColorBrush(_redColor),
             ProcessingStatus.InProgress => new SolidColorBrush(Colors.Yellow),
             ProcessingStatus.NotStarted => throw new InvalidOperationException(state.ToString()),
             _ => throw new NotImplementedException(state.ToString()),
@@ -268,38 +429,56 @@ public class LaunchTaskViewModel : PageViewModelBase
         if (_log == null)
             return;
 
-        IsStopButtonEnabled = false;
         _log.Close();
 
-        var powerTask = SelectedPowerTask;
+        _timer.Enabled = false;
+        _timer.Stop();
 
-        var appStaysAlive = powerTask == PowerTask.None;
-        NativeMethods.StopPreventSleep();
+        IsStopButtonEnabled = false;
+        TaskNotCompleted = false;
+        CanClose = true;
+
+        var lastMinuteMessage = GetLastMinuteConsolidatedMessage();
+        if (_log.HasErrors)
+        {
+            WindowTitle = $"{_taskName} - {Resources.Task_Status_FailedSeeLog}";
+            ProgressGenericTitle = $"{Resources.Task_Status_FailedSeeLog} ({TimeSpanToStringHelper(DateTime.Now.Subtract(_startTime))})";
+            if (!string.IsNullOrEmpty(lastMinuteMessage))
+            {
+                ProgressGenericTitle += Environment.NewLine + lastMinuteMessage;
+            }
+
+            ProgressGenericBackground = new SolidColorBrush(_redColor);
+        }
+        else
+        {
+            WindowTitle = $"{_taskName} - {Resources.Task_Status_Succesfull}";
+            ProgressGenericTitle = $"{Resources.Task_Status_Succesfull} ({TimeSpanToStringHelper(DateTime.Now.Subtract(_startTime))})";
+            if (!string.IsNullOrEmpty(lastMinuteMessage))
+            {
+                ProgressGenericTitle += Environment.NewLine + lastMinuteMessage;
+            }
+            ProgressGenericBackground = new SolidColorBrush(_greenColor);
+        }
+
+        var appStaysAlive = _selectedPowerTask == PowerTask.None;
         if (appStaysAlive)
         {
-            PowerPC.DoTask(powerTask);
-            string lastMinuteConsolidatedMessage = GetLastMinuteConsolidatedMessage();
-
             if (_log.HasErrors)
             {
                 ProcessHelper.ShellExecute(_log.LogFilename);
-                // backupProgressUserControl.Stop(lastMinuteConsolidatedMessage, Resources.Task_Status_FailedSeeLog, true);
             }
-            else
-            {
-                // backupProgressUserControl.Stop(lastMinuteConsolidatedMessage, Resources.Task_Status_Succesfull, false);
-            }
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-            {
-                // BUtil.BackupUiMaster.NativeMethods.FlashWindow.Flash(this, 10);
-            }
+            OSSpecific.FlashWindow.Flash(10);
+            NativeMethods.StopPreventSleep();
             return;
         }
-       // if (_log.HasErrors &&
-       //     RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-       //     BUtil.BackupUiMaster.NativeMethods.ScheduleOpeningFileAfterLoginOfUserIntoTheSystem(_log.LogFilename);
-        PowerPC.DoTask(powerTask);
-        CloseCommand();
+        
+        if (_log.HasErrors)
+            OSSpecific.ScheduleOpeningFileAfterLoginOfUserIntoTheSystem(_log.LogFilename);
+
+        NativeMethods.StopPreventSleep();
+        PowerPC.DoTask(_selectedPowerTask);
+        Environment.Exit(_log.HasErrors ? -1 : 0);
     }
 
     private void OnAddLastMinuteMessageToUser(object? sender, MessageEventArgs e)
@@ -309,9 +488,36 @@ public class LaunchTaskViewModel : PageViewModelBase
 
     private string GetLastMinuteConsolidatedMessage()
     {
-        var messages = string.Join(Environment.NewLine, _lastMinuteMessagesToUser.ToArray());
-        if (!string.IsNullOrEmpty(messages))
-            messages = messages + Environment.NewLine;
-        return messages;
+        return string.Join(Environment.NewLine, _lastMinuteMessagesToUser.ToArray());
+    }
+
+    public void SetProgress(int ended, int total)
+    {
+        CompletedTasksCount = ended;
+        TotalTasksCount = total;
+    }
+
+    private void OnElapsedTimerTick(object sender, EventArgs e)
+    {
+        TimeSpan span = DateTime.Now.Subtract(_startTime);
+        ElapsedLabel = $"{Resources.Time_Field_Elapsed} {TimeSpanToStringHelper(span)} ({CompletedTasksCount}/{TotalTasksCount})";
+    }
+
+    private string TimeSpanToStringHelper(TimeSpan timeSpan)
+    {
+        if (timeSpan.Days > 0)
+            return $"{timeSpan.Days}:{timeSpan.Hours:00}:{timeSpan.Minutes:00}:{timeSpan.Seconds:00}";
+        else
+        {
+            if (timeSpan.Hours > 0)
+                return $"{timeSpan.Hours}:{timeSpan.Minutes:00}:{timeSpan.Seconds:00}";
+            else
+            {
+                if (timeSpan.Minutes > 0)
+                    return $"{timeSpan.Minutes}:{timeSpan.Seconds:00}";
+                else
+                    return $"{timeSpan.Seconds}";
+            }
+        }
     }
 }

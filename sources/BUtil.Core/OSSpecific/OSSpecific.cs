@@ -1,11 +1,12 @@
 ﻿using Microsoft.Win32;
-using System.Runtime.InteropServices;
 using System;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace BUtil.BackupUiMaster
+namespace BUtil.Core.OSSpecific
 {
-    internal static class NativeMethods
+    public static class OSSpecific
     {
         [SupportedOSPlatform("windows")]
         public static void ScheduleOpeningFileAfterLoginOfUserIntoTheSystem(string filename)
@@ -14,8 +15,8 @@ namespace BUtil.BackupUiMaster
             RegistryKey writeKey = key.OpenSubKey("RunOnce", true);
             if (writeKey == null)
             {
-            	key.CreateSubKey("RunOnce");
-            	writeKey = key.OpenSubKey("RunOnce", true);
+                key.CreateSubKey("RunOnce");
+                writeKey = key.OpenSubKey("RunOnce", true);
             }
 
             writeKey.SetValue("BUtil Backup Report", "\"" + filename + "\"");
@@ -90,15 +91,12 @@ namespace BUtil.BackupUiMaster
             /// </summary>
             /// <param name="form">The Form (Window) to Flash.</param>
             /// <returns></returns>
-            public static bool Flash(System.Windows.Forms.Form form)
+            public static bool Flash()
             {
+                var handle = Process.GetCurrentProcess().MainWindowHandle;
                 // Make sure we're running under Windows 2000 or later
-                if (Win2000OrLater)
-                {
-                    FLASHWINFO fi = Create_FLASHWINFO(form.Handle, FLASHW_ALL | FLASHW_TIMERNOFG, uint.MaxValue, 0);
+                    FLASHWINFO fi = Create_FLASHWINFO(handle, FLASHW_ALL | FLASHW_TIMERNOFG, uint.MaxValue, 0);
                     return FlashWindowEx(ref fi);
-                }
-                return false;
             }
 
             private static FLASHWINFO Create_FLASHWINFO(IntPtr handle, uint flags, uint count, uint timeout)
@@ -118,14 +116,11 @@ namespace BUtil.BackupUiMaster
             /// <param name="form">The Form (Window) to Flash.</param>
             /// <param name="count">The number of times to Flash.</param>
             /// <returns></returns>
-            public static bool Flash(System.Windows.Forms.Form form, uint count)
+            public static bool Flash(uint count)
             {
-                if (Win2000OrLater)
-                {
-                    FLASHWINFO fi = Create_FLASHWINFO(form.Handle, FLASHW_ALL, count, 0);
+                var handle = Process.GetCurrentProcess().MainWindowHandle;
+                    FLASHWINFO fi = Create_FLASHWINFO(handle, FLASHW_ALL, count, 0);
                     return FlashWindowEx(ref fi);
-                }
-                return false;
             }
 
             /// <summary>
@@ -133,14 +128,11 @@ namespace BUtil.BackupUiMaster
             /// </summary>
             /// <param name="form">The Form (Window) to Flash.</param>
             /// <returns></returns>
-            public static bool Start(System.Windows.Forms.Form form)
+            public static bool Start()
             {
-                if (Win2000OrLater)
-                {
-                    FLASHWINFO fi = Create_FLASHWINFO(form.Handle, FLASHW_ALL, uint.MaxValue, 0);
+                var handle = Process.GetCurrentProcess().MainWindowHandle;
+                    FLASHWINFO fi = Create_FLASHWINFO(handle, FLASHW_ALL, uint.MaxValue, 0);
                     return FlashWindowEx(ref fi);
-                }
-                return false;
             }
 
             /// <summary>
@@ -148,22 +140,11 @@ namespace BUtil.BackupUiMaster
             /// </summary>
             /// <param name="form"></param>
             /// <returns></returns>
-            public static bool Stop(System.Windows.Forms.Form form)
+            public static bool Stop()
             {
-                if (Win2000OrLater)
-                {
-                    FLASHWINFO fi = Create_FLASHWINFO(form.Handle, FLASHW_STOP, uint.MaxValue, 0);
+                var handle = Process.GetCurrentProcess().MainWindowHandle;
+                    FLASHWINFO fi = Create_FLASHWINFO(handle, FLASHW_STOP, uint.MaxValue, 0);
                     return FlashWindowEx(ref fi);
-                }
-                return false;
-            }
-
-            /// <summary>
-            /// A boolean value indicating whether the application is running on Windows 2000 or later.
-            /// </summary>
-            private static bool Win2000OrLater
-            {
-                get { return System.Environment.OSVersion.Version.Major >= 5; }
             }
         }
     }

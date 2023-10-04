@@ -11,6 +11,7 @@ public class LaunchTaskViewItem: ObservableObject
     {
         Tag = task.Id;
         Text = task.Title;
+        _backColor = new SolidColorBrush(Colors.White);
     }
 
     public Guid Tag { get; }
