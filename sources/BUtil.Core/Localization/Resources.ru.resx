@@ -614,6 +614,15 @@ bin.
   <data name="Task_Validation_NotSupported" xml:space="preserve">
     <value>Эта задача не поддерживается.</value>
   </data>
+  <data name="Theme_Title" xml:space="preserve">
+    <value>Тема (при изменении перезапустите приложение)</value>
+  </data>
+  <data name="Theme_Value_Dark" xml:space="preserve">
+    <value>Темная</value>
+  </data>
+  <data name="Theme_Value_Light" xml:space="preserve">
+    <value>Светлая</value>
+  </data>
   <data name="Time_Field_Elapsed" xml:space="preserve">
     <value>Прошло:</value>
   </data>
@@ -634,14 +643,5 @@ bin.
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Пользователь не указан.</value>
-  </data>
-  <data name="Theme_Value_Light" xml:space="preserve">
-    <value>Светлая</value>
-  </data>
-  <data name="Theme_Value_Dark" xml:space="preserve">
-    <value>Темная</value>
-  </data>
-  <data name="Theme_Title" xml:space="preserve">
-    <value>Тема (при изменении перезапустите приложение)</value>
   </data>
 </root>
