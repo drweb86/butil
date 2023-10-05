@@ -1,4 +1,5 @@
-﻿using BUtil.Core.Logs;
+﻿#nullable disable
+using BUtil.Core.Logs;
 using System;
 using System.IO;
 

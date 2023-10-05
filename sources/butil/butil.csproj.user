@@ -14,12 +14,6 @@
     </StartArguments>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Update="LaunchTask\Forms\TaskProgressForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="LaunchTask\Forms\SelectTaskForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Common\ListViewDoubleBuffered.cs">
       <SubType>Component</SubType>
     </Compile>

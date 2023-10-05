@@ -1,8 +1,8 @@
+#nullable disable
 using System;
 using System.IO;
 using System.Globalization;
 using System.Text;
-using System.Windows.Forms;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 
@@ -48,7 +48,7 @@ namespace BUtil.Core.Misc
             }
             finally
             {
-                Application.Exit();
+                Environment.Exit(-1);
             }
         }
 

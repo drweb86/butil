@@ -13,18 +13,15 @@ namespace BUtil.Core.TasksTree.Storage
     {
         private readonly StorageSpecificServicesIoc _services;
         private readonly CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask;
-        private readonly IncrementalBackupModelOptionsV2 _incrementalBackupModelOptions;
 
         public WriteSourceFilesToStorageTask(
             StorageSpecificServicesIoc services,
             TaskEvents events,
-            CalculateIncrementedVersionForStorageTask getIncrementedVersionTask,
-            IncrementalBackupModelOptionsV2 incrementalBackupModelOptions)
-            : base(services.Log, events, Localization.Resources.File_List_Saving, TaskArea.Hdd, null)
+            CalculateIncrementedVersionForStorageTask getIncrementedVersionTask)
+            : base(services.Log, events, Localization.Resources.File_List_Saving, null)
         {
             _services = services;
             _getIncrementedVersionTask = getIncrementedVersionTask;
-            _incrementalBackupModelOptions = incrementalBackupModelOptions;
         }
 
         public override void Execute()
@@ -68,6 +65,7 @@ namespace BUtil.Core.TasksTree.Storage
                         Events,
                         x.ToList(),
                         singleBackupQuotaGb,
+                        sourceItemChange.SourceItem,
                         versionStates))
                     .ToList();
                 WriteFileTasks.AddRange(copyTasks);

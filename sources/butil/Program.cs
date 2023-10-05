@@ -35,26 +35,10 @@ namespace BUtil.Configurator
 				{
 					TasksController.OpenRestorationMaster(args[0], true, null);
 				}
-				else if (string.Compare(args[0], TasksAppArguments.LaunchTask) == 0)
-                {
-					TasksController.OpenBackupUi(null);
-				}
 				else
 				{
 					Messages.ShowErrorBox(Resources.CommandLineArguments_Invalid + string.Format(Resources.CommandLineArguments_Help, SupportManager.GetLink(SupportRequest.Homepage)));
 				}
-			}
-			else if (args.Length > 1 && args[0].ToUpperInvariant() == TasksAppArguments.LaunchTask.ToUpperInvariant())
-			{
-				string taskName = null;
-				foreach (var argument in args)
-				{
-					if (argument.StartsWith(TasksAppArguments.RunTask) && argument.Length > TasksAppArguments.RunTask.Length)
-					{
-						taskName = argument.Substring(TasksAppArguments.RunTask.Length + 1);
-					}
-				}
-				TasksController.OpenBackupUi(taskName);
 			}
             else if (args.Length > 1 && string.Compare(args[0], TasksAppArguments.Restore, StringComparison.OrdinalIgnoreCase) == 0)
             {

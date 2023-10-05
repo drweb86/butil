@@ -41,21 +41,6 @@ namespace BUtil.ConsoleBackup.UI
             } 
         }
 
-        public void OnRunSelectedBackupTask()
-        {
-            if (SelectedItem == null)
-                return;
-
-            var task = _controller.BackupTaskStoreService.Load(SelectedItem.TaskName);
-            if (task == null)
-            {
-                Terminal.Gui.MessageBox.ErrorQuery(string.Empty, BUtil.Core.Localization.Resources.Task_Validation_NotSupported, Resources.Button_Close);
-                return;
-            }
-            var dialog = new TaskProgressDialog(task);
-            Application.Run(dialog);
-        }
-
         public void OnEditSelectedBackupTask()
         {
             if (SelectedItem == null)

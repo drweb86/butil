@@ -10,13 +10,13 @@ BUtil is a powerful set of tools for creating incremental backups and import mul
 
 ![Supported Languages](./help/Readme%20Assets/Image%20-%20Languages.png)
 
-## Software requirements
+## Requirements
 
 - Microsoft Windows 10 or later;
 - Microsoft .Net Desktop Runtime 7 is required. Setup will install it.
 - Igor Pavlov's 7-zip. Setup will install it.
 
-## Key functions and characteristics of software
+## Key functions
 
 - Incremental backup with deduplication of files;
 - [Import audios, photos, videos from SD Card of camera, recorder; photos and videos from your phone via WI-FI through FTPS Server application using template file names or via MTP](./help/Configure/Import%20media%20task.md);

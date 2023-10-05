@@ -78,7 +78,6 @@ namespace BUtil.ConsoleBackup.UI {
             };
             itemsListView.SelectedItemChanged += OnSelectedItemChanged;
             itemsListView.KeyDown += OnListShortcutKeyDown;
-            itemsListView.OpenSelectedItem += e => OnRunSelectedBackupTask();
 
             tasksFrame.Add(itemsListView);
             this.Add(tasksFrame);
@@ -93,15 +92,6 @@ namespace BUtil.ConsoleBackup.UI {
                 CanFocus = true,
             };
 
-            var runButton = new Terminal.Gui.Button
-            {
-                Text = "► " + BUtil.Core.Localization.Resources.Task_Launch + " (F5, Enter)",
-                Shortcut = Key.F5,
-                Y = 1,
-                Width = Dim.Fill(),
-            };
-            runButton.Clicked += OnRunSelectedBackupTask;
-            runButton.ShortcutAction += OnRunSelectedBackupTask;
 
             var editButton = new Terminal.Gui.Button
             {
@@ -131,7 +121,6 @@ namespace BUtil.ConsoleBackup.UI {
             };
             restoreButton.Clicked += OnRestoreSelectedTask;
 
-            selectedItemInfoFrameView.Add(runButton);
             selectedItemInfoFrameView.Add(editButton);
             selectedItemInfoFrameView.Add(deleteButton);
             selectedItemInfoFrameView.Add(restoreButton);

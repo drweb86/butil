@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "butil-ui.Desktop": {
+      "commandName": "Project",
+      "commandLineArgs": "LaunchTask \"Task=РК\""
+    }
+  }
+}

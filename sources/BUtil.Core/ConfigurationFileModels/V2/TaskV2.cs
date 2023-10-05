@@ -1,3 +1,4 @@
+#nullable disable
 using BUtil.Core.BackupModels;
 
 namespace BUtil.Core.ConfigurationFileModels.V2

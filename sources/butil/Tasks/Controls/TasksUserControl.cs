@@ -1,4 +1,5 @@
-﻿using System;
+﻿#nullable disable
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Linq;
@@ -190,7 +191,7 @@ namespace BUtil.Configurator.Configurator.Controls
             }
 
             if (selectedTasks.Any())
-                TasksController.LaunchBackupUIToolInSeparateProcess(selectedTasks[0]);
+                SupportManager.LaunchTask(selectedTasks.First());
         }
 
         void RefreshTaskControls(object sender, EventArgs e)

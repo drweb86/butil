@@ -1,4 +1,5 @@
-﻿using BUtil.Core.Events;
+﻿#nullable disable
+using BUtil.Core.Events;
 using BUtil.Core.Logs;
 using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;
@@ -17,8 +18,7 @@ namespace BUtil.Core.TasksTree
         private readonly IEnumerable<GetStateOfSourceItemTask> _getSourceItemStateTasks;
         public CalculateIncrementedVersionForStorageTask(ILog log, TaskEvents events, GetStateOfStorageTask storageStateTask,
             IEnumerable<GetStateOfSourceItemTask> getSourceItemStateTasks) :
-            base(log, events, BUtil.Core.Localization.Resources.IncrementalBackup_Version_Calculate,
-                TaskArea.Hdd)
+            base(log, events, BUtil.Core.Localization.Resources.IncrementalBackup_Version_Calculate)
         {
             _storageStateTask = storageStateTask;
             _getSourceItemStateTasks = getSourceItemStateTasks;

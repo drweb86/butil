@@ -613,6 +613,15 @@ See detailed description in the following link.</value>
   <data name="Task_Validation_NotSupported" xml:space="preserve">
     <value>This task type is not supported.</value>
   </data>
+  <data name="Theme_Title" xml:space="preserve">
+    <value>Theme  (on change restart app)</value>
+  </data>
+  <data name="Theme_Value_Dark" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="Theme_Value_Light" xml:space="preserve">
+    <value>Light</value>
+  </data>
   <data name="Time_Field_Elapsed" xml:space="preserve">
     <value>Elapsed:</value>
   </data>

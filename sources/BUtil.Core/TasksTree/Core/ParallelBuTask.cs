@@ -1,4 +1,5 @@
-﻿using BUtil.Core.Events;
+﻿#nullable disable
+using BUtil.Core.Events;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
 using System;
@@ -13,8 +14,8 @@ namespace BUtil.Core.TasksTree.Core
     {
         public IEnumerable<BuTask> Children { get; set; }
 
-        protected ParallelBuTask(ILog log, TaskEvents events, string title, TaskArea taskArea, IEnumerable<BuTask> children)
-            : base(log, events, title, taskArea)
+        protected ParallelBuTask(ILog log, TaskEvents events, string title, IEnumerable<BuTask> children)
+            : base(log, events, title)
         {
             Children = children;
         }

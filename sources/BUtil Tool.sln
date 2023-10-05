@@ -5,6 +5,7 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E83F0C08-6D2B-467D-9572-1E8309426237}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		Development.key.snk = Development.key.snk
 		SharedAssemblyInfo.cs = SharedAssemblyInfo.cs
 		..\help\Other\Version History (Changelog).md = ..\help\Other\Version History (Changelog).md
@@ -15,6 +16,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "butil", "butil\butil.csproj", "{6008A6E3-72F0-4C27-80D4-442F1764EAC2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "butilc", "butilc\butilc.csproj", "{91E9A433-7160-4773-9B11-B8B30DF4893D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "butil-ui", "butil-ui\butil-ui.csproj", "{BFC65E42-06CC-4FC9-B05E-7A3049F6453A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "butil-ui.Desktop", "butil-ui.Desktop\butil-ui.Desktop.csproj", "{9A68D5CC-9502-431B-AFCE-4F3349A7A1FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +61,30 @@ Global
 		{91E9A433-7160-4773-9B11-B8B30DF4893D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{91E9A433-7160-4773-9B11-B8B30DF4893D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{91E9A433-7160-4773-9B11-B8B30DF4893D}.Release|x86.ActiveCfg = Release|Any CPU
+		{BFC65E42-06CC-4FC9-B05E-7A3049F6453A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFC65E42-06CC-4FC9-B05E-7A3049F6453A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFC65E42-06CC-4FC9-B05E-7A3049F6453A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{BFC65E42-06CC-4FC9-B05E-7A3049F6453A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{BFC65E42-06CC-4FC9-B05E-7A3049F6453A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BFC65E42-06CC-4FC9-B05E-7A3049F6453A}.Debug|x86.Build.0 = Debug|Any CPU
+		{BFC65E42-06CC-4FC9-B05E-7A3049F6453A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFC65E42-06CC-4FC9-B05E-7A3049F6453A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFC65E42-06CC-4FC9-B05E-7A3049F6453A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{BFC65E42-06CC-4FC9-B05E-7A3049F6453A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{BFC65E42-06CC-4FC9-B05E-7A3049F6453A}.Release|x86.ActiveCfg = Release|Any CPU
+		{BFC65E42-06CC-4FC9-B05E-7A3049F6453A}.Release|x86.Build.0 = Release|Any CPU
+		{9A68D5CC-9502-431B-AFCE-4F3349A7A1FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A68D5CC-9502-431B-AFCE-4F3349A7A1FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A68D5CC-9502-431B-AFCE-4F3349A7A1FE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{9A68D5CC-9502-431B-AFCE-4F3349A7A1FE}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{9A68D5CC-9502-431B-AFCE-4F3349A7A1FE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9A68D5CC-9502-431B-AFCE-4F3349A7A1FE}.Debug|x86.Build.0 = Debug|Any CPU
+		{9A68D5CC-9502-431B-AFCE-4F3349A7A1FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A68D5CC-9502-431B-AFCE-4F3349A7A1FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A68D5CC-9502-431B-AFCE-4F3349A7A1FE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{9A68D5CC-9502-431B-AFCE-4F3349A7A1FE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{9A68D5CC-9502-431B-AFCE-4F3349A7A1FE}.Release|x86.ActiveCfg = Release|Any CPU
+		{9A68D5CC-9502-431B-AFCE-4F3349A7A1FE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

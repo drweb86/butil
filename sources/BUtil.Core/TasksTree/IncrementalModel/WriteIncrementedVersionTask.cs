@@ -6,7 +6,6 @@ using BUtil.Core.TasksTree.IncrementalModel;
 using BUtil.Core.TasksTree.States;
 using BUtil.Core.TasksTree.Storage;
 using System.Collections.Generic;
-using System.Threading;
 
 namespace BUtil.Core.TasksTree
 {
@@ -21,14 +20,14 @@ namespace BUtil.Core.TasksTree
             IEnumerable<GetStateOfSourceItemTask> getSourceItemStateTasks,
             IncrementalBackupModelOptionsV2 incrementalBackupModelOptions) :
             base(services.Log, events, Localization.Resources.IncrementalBackup_Version_Save,
-                TaskArea.Hdd, null)
+                null)
         {
             var childTaks = new List<BuTask>();
 
             var calculateIncrementedVersionForStorageTask = new CalculateIncrementedVersionForStorageTask(Log, Events, storageStateTask, getSourceItemStateTasks);
             childTaks.Add(calculateIncrementedVersionForStorageTask);
 
-            _writeSourceFilesToStorageTask = new WriteSourceFilesToStorageTask(services, events, calculateIncrementedVersionForStorageTask, incrementalBackupModelOptions);
+            _writeSourceFilesToStorageTask = new WriteSourceFilesToStorageTask(services, events, calculateIncrementedVersionForStorageTask);
             childTaks.Add(_writeSourceFilesToStorageTask);
 
             var writeStateToStorageTask = new WriteStateToStorageTask(

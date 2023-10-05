@@ -1,3 +1,4 @@
+#nullable disable
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;

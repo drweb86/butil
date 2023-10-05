@@ -7,6 +7,7 @@
     <RootNamespace>BUtil.Configurator</RootNamespace>
     <ApplicationIcon>..\Media\Images and Icons\My\Configurator.ico</ApplicationIcon>
     <SignAssembly>true</SignAssembly>
+	  <Nullable>annotations</Nullable>
 <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
 <UseCommonOutputDirectory>true</UseCommonOutputDirectory>
@@ -110,9 +111,6 @@
     <Compile Update="Tasks\Controls\Tasks\Where\WhereUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="LaunchTask\Controls\TaskProgressUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="Icons.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -181,6 +179,9 @@
     <Content Include="Resources\PanelUser.png" />
   </ItemGroup>
   <PropertyGroup />
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Icons.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

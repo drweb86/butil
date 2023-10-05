@@ -1,10 +1,13 @@
-﻿using BUtil.Core.Events;
+﻿using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.Events;
+using BUtil.Core.Misc;
 using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 
 namespace BUtil.Core.TasksTree
 {
@@ -23,8 +26,11 @@ namespace BUtil.Core.TasksTree
             TaskEvents events,
             List<StorageFile> storageFiles,
             Quota singleBackupQuotaGb,
-            System.Collections.Generic.List<VersionState> versionStates) : 
-            base(services.Log, events, string.Format(BUtil.Core.Localization.Resources.File_Saving, string.Join(", ", storageFiles.Select(x => x.FileState.FileName))), TaskArea.File)
+            SourceItemV2 sourceItem,
+            List<VersionState> versionStates) : 
+            base(services.Log, events, string.Format(Localization.Resources.File_Saving, 
+                string.Join(", ", storageFiles
+                    .Select(x => SourceItemHelper.GetFriendlyFileName(sourceItem, x.FileState.FileName)     ))))
         {
             _services = services;
             StorageFiles = storageFiles;
@@ -39,7 +45,6 @@ namespace BUtil.Core.TasksTree
         public override void Execute()
         {
             UpdateStatus(ProcessingStatus.InProgress);
-
             if (FileAlreadyInStorage(out var matchingFile))
             {
                 LogDebug("Skipped because file is already is in storage.");

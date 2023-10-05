@@ -1,4 +1,7 @@
-# 2023.09.29
+# 2023.10.06
+
+## New Features
+- Launch Task app was moved to AvaloniaUI and dark theme is used. For icons Fluent icons were used.
 
 ## Removed Features
 - Dropped support of non-encrypted incremental backups for recovery due to no usage.

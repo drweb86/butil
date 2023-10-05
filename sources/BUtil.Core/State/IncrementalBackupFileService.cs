@@ -1,4 +1,5 @@
-﻿using BUtil.Core.Compression;
+﻿#nullable disable
+using BUtil.Core.Compression;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Hashing;

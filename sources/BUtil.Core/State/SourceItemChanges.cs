@@ -1,4 +1,5 @@
-﻿using BUtil.Core.ConfigurationFileModels.V2;
+﻿#nullable disable
+using BUtil.Core.ConfigurationFileModels.V2;
 using System.Collections.Generic;
 
 namespace BUtil.Core.State

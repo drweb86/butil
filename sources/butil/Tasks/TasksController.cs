@@ -1,9 +1,6 @@
 using System;
 using System.Windows.Forms;
 using System.IO;
-using BUtil.Configurator.BackupUiMaster.Forms;
-using System.Diagnostics;
-using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
 using BUtil.RestorationMaster;
 using BUtil.Core.ConfigurationFileModels.V2;
@@ -37,59 +34,5 @@ namespace BUtil.Configurator.Configurator
                 form.ShowDialog();
             }
 		}
-		
-		public static void OpenBackupUi(string taskName)
-        {
-            var task = GetBackupTaskToExecute(taskName);
-            using var form = new TaskProgressForm(task);
-            Application.Run(form);
-            Environment.Exit(0);
-        }
-
-        public static void LaunchBackupUIToolInSeparateProcess(string taskName)
-        {
-            Process.Start(Application.ExecutablePath, $"{TasksAppArguments.LaunchTask} \"{TasksAppArguments.RunTask}={taskName}\"");
-        }
-
-        private static TaskV2 GetBackupTaskToExecute(string taskName)
-        {
-            TaskV2 task = null;
-
-            var backupTaskStoreService = new TaskV2StoreService();
-            if (taskName == null)
-            {
-                var backupTaskNames = backupTaskStoreService.GetNames();
-
-                using var selectTaskForm = new SelectTaskForm(backupTaskNames);
-                if (selectTaskForm.ShowDialog() == DialogResult.OK)
-                {
-                    task = backupTaskStoreService.Load(selectTaskForm.TaskToRun);
-                    if (task == null)
-                    {
-                        Messages.ShowErrorBox(BUtil.Core.Localization.Resources.Task_Validation_NotSupported);
-                        Environment.Exit(-1);
-                    }
-                }
-                else
-                    Environment.Exit(-1);
-            }
-            else
-            {
-                task = backupTaskStoreService.Load(taskName);
-                if (task == null)
-                {
-                    Messages.ShowErrorBox(BUtil.Core.Localization.Resources.Task_Validation_NotSupported);
-                    Environment.Exit(-1);
-                }
-            }
-
-            if (task == null)
-            {
-                Messages.ShowErrorBox($"Task '{taskName}' is missing.");
-                Environment.Exit(-1);
-            }
-
-            return task;
-        }      
     }
 }

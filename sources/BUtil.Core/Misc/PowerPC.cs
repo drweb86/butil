@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.Diagnostics;
 
 namespace BUtil.Core.Misc
@@ -41,16 +40,6 @@ namespace BUtil.Core.Misc
 		private static void LogOff()
 		{
             Process.Start("shutdown", "-I -t 0");
-		}
-
-		private static bool suspend()
-		{
-			return Application.SetSuspendState(PowerState.Suspend, true, true);
-		}
-
-		private static bool hibernate()
-		{
-			return Application.SetSuspendState(PowerState.Hibernate, true, true);
 		}
 
 		#endregion

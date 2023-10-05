@@ -1,12 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
 	  <VisualStudioVersion>17</VisualStudioVersion>
-    <TargetFramework>net7.0-windows</TargetFramework>
+	  <TargetFramework>net7.0</TargetFramework>
     <OutputType>Library</OutputType>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\Development.key.snk</AssemblyOriginatorKeyFile>
     <DelaySign>False</DelaySign>
     <IsWebBootstrapper>true</IsWebBootstrapper>
+	  <Nullable>annotations</Nullable>
 <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
 <UseCommonOutputDirectory>true</UseCommonOutputDirectory>
@@ -30,8 +31,8 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <OutputPath>$(SolutionDir)..\Output\BUtil\bin\</OutputPath>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <UseWindowsForms>true</UseWindowsForms>
-    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <UseWindowsForms>false</UseWindowsForms>
+    <ImportWindowsDesktopTargets>false</ImportWindowsDesktopTargets>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
