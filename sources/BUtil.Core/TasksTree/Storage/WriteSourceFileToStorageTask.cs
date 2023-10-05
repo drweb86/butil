@@ -27,8 +27,8 @@ namespace BUtil.Core.TasksTree
             List<StorageFile> storageFiles,
             Quota singleBackupQuotaGb,
             SourceItemV2 sourceItem,
-            System.Collections.Generic.List<VersionState> versionStates) : 
-            base(services.Log, events, string.Format(BUtil.Core.Localization.Resources.File_Saving, 
+            List<VersionState> versionStates) : 
+            base(services.Log, events, string.Format(Localization.Resources.File_Saving, 
                 string.Join(", ", storageFiles
                     .Select(x => SourceItemHelper.GetFriendlyFileName(sourceItem, x.FileState.FileName)     ))))
         {
@@ -45,7 +45,6 @@ namespace BUtil.Core.TasksTree
         public override void Execute()
         {
             UpdateStatus(ProcessingStatus.InProgress);
-
             if (FileAlreadyInStorage(out var matchingFile))
             {
                 LogDebug("Skipped because file is already is in storage.");

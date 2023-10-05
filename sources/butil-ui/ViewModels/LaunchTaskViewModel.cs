@@ -1,6 +1,7 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Media;
+using Avalonia.Themes.Fluent;
 using Avalonia.Threading;
 using BUtil.Core.BackupModels;
 using BUtil.Core.ConfigurationFileModels.V2;
@@ -22,9 +23,18 @@ namespace butil_ui.ViewModels;
 
 public class LaunchTaskViewModel : PageViewModelBase
 {
-    public LaunchTaskViewModel(string taskName)
+    private Color _errorForegroundColor;
+    private Color _successForegroundColor;
+
+    public LaunchTaskViewModel(string taskName, string theme)
     {
         _taskName = taskName;
+        _theme = theme;
+        UpdateTheme(theme);
+        _progressGenericForeground = new SolidColorBrush(ColorPalette.GetForeground(theme, SemanticColor.Normal));
+        _errorForegroundColor = ColorPalette.GetForeground(theme, SemanticColor.Error);
+        _successForegroundColor = ColorPalette.GetForeground(theme, SemanticColor.Success);
+
         WindowTitle = taskName;
 
         _taskEvents.OnTaskProgress += OnTaskProgress;
@@ -116,21 +126,21 @@ public class LaunchTaskViewModel : PageViewModelBase
 
     #endregion
 
-    #region ProgressGenericBackground
+    #region ProgressGenericForeground
 
-    private SolidColorBrush _progressGenericBackground = new SolidColorBrush(Colors.White);
-    public SolidColorBrush ProgressGenericBackground
+    private SolidColorBrush _progressGenericForeground;
+    public SolidColorBrush ProgressGenericForeground
     {
         get
         {
-            return _progressGenericBackground;
+            return _progressGenericForeground;
         }
         set
         {
-            if (value == _progressGenericBackground)
+            if (value == _progressGenericForeground)
                 return;
-            _progressGenericBackground = value;
-            OnPropertyChanged(nameof(ProgressGenericBackground));
+            _progressGenericForeground = value;
+            OnPropertyChanged(nameof(ProgressGenericForeground));
         }
     }
 
@@ -372,27 +382,23 @@ public class LaunchTaskViewModel : PageViewModelBase
     private readonly HashSet<Guid> _endedTasks = new();
     private readonly TaskEvents _taskEvents = new();
     private readonly string _taskName;
+    private readonly string _theme;
     private TaskV2? _task;
     private FileLog? _log;
     private BuTask? _threadTask;
     private Thread? _thread;
     private DateTime _startTime = DateTime.Now;
     private readonly System.Timers.Timer _timer = new (1000);
-    private readonly Color _redColor = Color.FromRgb(222, 98, 89);
-    private readonly Color _greenColor = Color.FromRgb(147, 199,93);
 
     public void Initialize()
     {
-        var settingsService = new SettingsStoreService();
-        var theme = settingsService.Load(ThemeSetting.Name, ThemeSetting.DefaultValue);
-        UpdateTheme(theme);
-
+        
 
         _task = new TaskV2StoreService().Load(_taskName);
         if (_task == null)
         {
             ProgressGenericTitle = BUtil.Core.Localization.Resources.Task_Validation_NotSupported;
-            ProgressGenericBackground = new SolidColorBrush(_redColor);
+            ProgressGenericForeground = new SolidColorBrush(_errorForegroundColor);
             CanClose = true;
             IsStartButtonVisible = false;
             TaskNotCompleted = false;
@@ -402,7 +408,7 @@ public class LaunchTaskViewModel : PageViewModelBase
         if (!TaskModelStrategyFactory.TryVerify(new StubLog(), _task.Model, out var error))
         {
             ProgressGenericTitle = error;
-            ProgressGenericBackground = new SolidColorBrush(_redColor);
+            ProgressGenericForeground = new SolidColorBrush(_errorForegroundColor);
             CanClose = true;
             IsStartButtonVisible = false;
             TaskNotCompleted = false;
@@ -418,7 +424,7 @@ public class LaunchTaskViewModel : PageViewModelBase
 
         _threadTask
             .GetChildren()
-            .Select(x => new LaunchTaskViewItem(x))
+            .Select(x => new LaunchTaskViewItem(x, ColorPalette.GetForeground(_theme, SemanticColor.Normal)))
             .ToList()
             .ForEach(_items.Add);
     }
@@ -461,7 +467,7 @@ public class LaunchTaskViewModel : PageViewModelBase
 
         foreach (var task in e.Tasks)
         {
-            var listItem = new LaunchTaskViewItem(task);
+            var listItem = new LaunchTaskViewItem(task, ColorPalette.GetForeground(_theme, SemanticColor.Normal));
             _items.Insert(index, listItem);
             index++;
         }
@@ -482,9 +488,9 @@ public class LaunchTaskViewModel : PageViewModelBase
     {
         return state switch
         {
-            ProcessingStatus.FinishedSuccesfully => new SolidColorBrush(_greenColor),
-            ProcessingStatus.FinishedWithErrors => new SolidColorBrush(_redColor),
-            ProcessingStatus.InProgress => new SolidColorBrush(Colors.Yellow),
+            ProcessingStatus.FinishedSuccesfully => new SolidColorBrush(_successForegroundColor),
+            ProcessingStatus.FinishedWithErrors => new SolidColorBrush(_errorForegroundColor),
+            ProcessingStatus.InProgress => new SolidColorBrush(ColorPalette.GetForeground(_theme, SemanticColor.InProgress)),
             ProcessingStatus.NotStarted => throw new InvalidOperationException(state.ToString()),
             _ => throw new NotImplementedException(state.ToString()),
         };
@@ -514,7 +520,7 @@ public class LaunchTaskViewModel : PageViewModelBase
                 ProgressGenericTitle += Environment.NewLine + lastMinuteMessage;
             }
 
-            ProgressGenericBackground = new SolidColorBrush(_redColor);
+            ProgressGenericForeground = new SolidColorBrush(_errorForegroundColor);
         }
         else
         {
@@ -524,7 +530,7 @@ public class LaunchTaskViewModel : PageViewModelBase
             {
                 ProgressGenericTitle += Environment.NewLine + lastMinuteMessage;
             }
-            ProgressGenericBackground = new SolidColorBrush(_greenColor);
+            ProgressGenericForeground = new SolidColorBrush(_successForegroundColor);
         }
 
         var appStaysAlive = _selectedPowerTask == PowerTask.None;

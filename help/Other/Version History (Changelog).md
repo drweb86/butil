@@ -1,4 +1,4 @@
-# 2023.10.05
+# 2023.10.06
 
 ## New Features
 - Launch Task app was moved to AvaloniaUI and dark theme is used. For icons Fluent icons were used.

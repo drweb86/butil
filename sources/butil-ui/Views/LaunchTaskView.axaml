@@ -40,7 +40,7 @@
 				</MenuItem>
 			</MenuItem>
 		</Menu>
-		<Expander Grid.Row="1" HorizontalAlignment="Stretch" Margin="24 8 24 8" IsExpanded="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+		<Expander Grid.Row="1" HorizontalAlignment="Stretch" Margin="24 8 24 8" IsExpanded="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
 			<Expander.Header>
 				<Grid>
 					<Grid.ColumnDefinitions>
@@ -48,8 +48,9 @@
 						<ColumnDefinition Width="*" />
 					</Grid.ColumnDefinitions>
 						<TextBlock TextWrapping="Wrap"
-								   Foreground="{Binding ProgressGenericBackground}"
+								   Foreground="{Binding ProgressGenericForeground}"
 								   Grid.Column="0" 
+								   FontWeight="DemiBold"
 								   Margin="0 8 16 8" 
 								   Text="{Binding ProgressGenericTitle}" 
 								   VerticalAlignment="Center"
@@ -74,6 +75,7 @@
 								Text="{Binding Path=Text}"
 								Foreground="{Binding Path=BackColor}"
 								TextWrapping="Wrap"
+								FontWeight="DemiBold"
 							/>
 						</DataTemplate>
 					</ItemsRepeater.ItemTemplate>

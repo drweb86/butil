@@ -7,11 +7,11 @@ namespace butil_ui.ViewModels;
 
 public class LaunchTaskViewItem: ObservableObject
 {
-    public LaunchTaskViewItem(BuTask task)
+    public LaunchTaskViewItem(BuTask task, Color foreground)
     {
         Tag = task.Id;
         Text = task.Title;
-        _backColor = new SolidColorBrush(Colors.White);
+        _backColor = new SolidColorBrush(foreground);
     }
 
     public Guid Tag { get; }

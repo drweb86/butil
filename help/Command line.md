@@ -7,9 +7,9 @@
 
 # UI V2 (butil-ui.Desktop.exe)
 
-| Example                                               | Description                                                                                                       |
-| ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `butil.exe LaunchTask "Task=My task name"`            | Launches specified task.                                                                                          |
+| Example                                                   | Description                                                                                                       |
+| --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `butil-ui.Desktop.exe LaunchTask "Task=My task name"`     | Launches specified task.                                                                                          |
 
 # Console (butilc.exe)
 
