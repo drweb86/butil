@@ -52,26 +52,23 @@
 						Maximum="{Binding TotalTasksCount}" Value="{Binding CompletedTasksCount}" ShowProgressText="True" ProgressTextFormat="{Binding ElapsedLabel}" VerticalAlignment="Center" />
 				</Grid>
 			</Expander.Header>
-			<ListBox
-				ItemsSource="{Binding Items}"
+			<ScrollViewer
 				ScrollViewer.VerticalScrollBarVisibility="Visible"
-				ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-				SelectionMode="AlwaysSelected">
-				<ListBox.Styles>
-					<Style Selector="ListBoxItem">
-						<Setter Property="Padding" Value="0" />
-					</Style>
-				</ListBox.Styles>
-				<ListBox.ItemTemplate>
-					<DataTemplate>
-						<TextBlock
-							Text="{Binding Path=Text}"
-							Foreground="{Binding Path=BackColor}"
-							TextWrapping="Wrap"
-						/>
-					</DataTemplate>
-				</ListBox.ItemTemplate>
-			</ListBox>
+				ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+				<ItemsRepeater
+					ItemsSource="{Binding Items}"
+					>
+					<ItemsRepeater.ItemTemplate>
+						<DataTemplate>
+							<TextBlock
+								Text="{Binding Path=Text}"
+								Foreground="{Binding Path=BackColor}"
+								TextWrapping="Wrap"
+							/>
+						</DataTemplate>
+					</ItemsRepeater.ItemTemplate>
+				</ItemsRepeater>
+			</ScrollViewer>
 		</Expander>
 
 		<WrapPanel HorizontalAlignment="Right" Grid.Row="1" Margin="0 0 0 16">

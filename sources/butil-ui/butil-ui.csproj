@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="11.0.4" />
+    <PackageReference Include="Avalonia.Controls.ItemsRepeater" Version="11.0.4" />
     <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.4" />
     <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.4" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
