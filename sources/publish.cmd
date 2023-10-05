@@ -9,8 +9,31 @@ cd ..
 cd ..
 
 dotnet publish /p:Configuration=Release /p:PublishDir=../Output/butil/bin /p:PublishReadyToRun=false /p:RunAnalyzersDuringBuild=False
+if %ERRORLEVEL% NEQ 0 (
+	GOTO error;
+)
 
-echo %ERRORLEVEL%
+rmdir "../Output/butil/bin/runtimes/linux-arm" /S /Q
+if %ERRORLEVEL% NEQ 0 (
+	GOTO error;
+)
+rmdir "../Output/butil/bin/runtimes/linux-arm64" /S /Q
+if %ERRORLEVEL% NEQ 0 (
+	GOTO error;
+)
+rmdir "../Output/butil/bin/runtimes/linux-musl-x64" /S /Q
+if %ERRORLEVEL% NEQ 0 (
+	GOTO error;
+)
+rmdir "../Output/butil/bin/runtimes/linux-x64" /S /Q
+if %ERRORLEVEL% NEQ 0 (
+	GOTO error;
+)
+rmdir "../Output/butil/bin/runtimes/osx" /S /Q
+if %ERRORLEVEL% NEQ 0 (
+	GOTO error;
+)
+rmdir "../Output/butil/bin/runtimes/unix" /S /Q
 if %ERRORLEVEL% NEQ 0 (
 	GOTO error;
 )
