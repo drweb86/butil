@@ -634,4 +634,13 @@ See detailed description in the following link.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>User is not specified.</value>
   </data>
+  <data name="Theme_Value_Light" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="Theme_Value_Dark" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="Theme_Title" xml:space="preserve">
+    <value>Theme  (on change restart app)</value>
+  </data>
 </root>

@@ -26,11 +26,21 @@
 	</Design.DataContext>
 	<Grid>
 		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
 			<RowDefinition Height="*" />
 			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
 
-		<Expander Grid.Row="0" HorizontalAlignment="Stretch" Margin="0 24 0 8" IsExpanded="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+		<!-- Menu is temporary and should be part of Configurator. -->
+		<Menu Grid.Row="0">
+			<MenuItem Header="⚙">
+				<MenuItem Header="{Binding Theme_Title}">
+					<MenuItem Header="{Binding DarkThemeLabel}" Command="{Binding GoDarkSide}" />
+					<MenuItem Header="{Binding LightThemeLabel}" Command="{Binding GoLightSide}" />
+				</MenuItem>
+			</MenuItem>
+		</Menu>
+		<Expander Grid.Row="1" HorizontalAlignment="Stretch" Margin="24 8 24 8" IsExpanded="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 			<Expander.Header>
 				<Grid>
 					<Grid.ColumnDefinitions>
@@ -71,7 +81,7 @@
 			</ScrollViewer>
 		</Expander>
 
-		<WrapPanel HorizontalAlignment="Right" Grid.Row="1" Margin="0 0 0 16">
+		<WrapPanel HorizontalAlignment="Right" Grid.Row="2" Margin="24 8 24 8">
 			<StackPanel VerticalAlignment="Center" Margin="4" IsVisible="{Binding TaskNotCompleted}">
 				<Label HorizontalAlignment="Stretch" VerticalAlignment="Center" ToolTip.Tip="{Binding AfterTaskSelection_Help}" Content="{Binding AfterTaskSelection_Field}" />
 				<ComboBox HorizontalAlignment="Stretch" VerticalAlignment="Center" ItemsSource="{Binding PowerTasks}" SelectedIndex="{Binding SelectedPowerTask}" />

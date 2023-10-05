@@ -4,7 +4,11 @@
 | ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
 | `butil.exe Restore`                                   | Restores from backup with selection of task or backup source on startup.                                          |
 | `butil.exe Restore "Task=My task name"`               | Runs restoration and prefills Storage/Passwords from specified task.                                              |
-| `butil.exe LaunchTask`                        	    | Launches task with selection of task on startup.                                                                  |
+
+# UI V2 (butil-ui.Desktop.exe)
+
+| Example                                               | Description                                                                                                       |
+| ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
 | `butil.exe LaunchTask "Task=My task name"`            | Launches specified task.                                                                                          |
 
 # Console (butilc.exe)

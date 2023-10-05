@@ -2,7 +2,9 @@
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
-
+using Avalonia.Styling;
+using BUtil.Core.Options;
+using BUtil.Core.Settings;
 using butil_ui.ViewModels;
 using butil_ui.Views;
 
@@ -12,6 +14,15 @@ public partial class App : Application
 {
     public override void Initialize()
     {
+        var settingsService = new SettingsStoreService();
+        var theme = settingsService.Load(ThemeSetting.Name, ThemeSetting.DefaultValue);
+        if (theme == ThemeSetting.DarkValue)
+        {
+            this.RequestedThemeVariant = ThemeVariant.Dark;
+        } else if (theme == ThemeSetting.LightValue)
+        {
+            this.RequestedThemeVariant = ThemeVariant.Light;
+        }
         AvaloniaXamlLoader.Load(this);
     }
 

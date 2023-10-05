@@ -1,4 +1,5 @@
 ﻿using Avalonia.Controls;
+using Avalonia.Controls.Primitives;
 using Avalonia.Media;
 using Avalonia.Threading;
 using BUtil.Core.BackupModels;
@@ -9,14 +10,13 @@ using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
 using BUtil.Core.OSSpecific;
+using BUtil.Core.Settings;
 using BUtil.Core.TasksTree.Core;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Threading;
-using System.Timers;
 
 namespace butil_ui.ViewModels;
 
@@ -216,6 +216,46 @@ public class LaunchTaskViewModel : PageViewModelBase
 
     #endregion
 
+    #region DarkThemeLabel
+
+    private string _darkThemeLabel = string.Empty;
+    public string DarkThemeLabel
+    {
+        get
+        {
+            return _darkThemeLabel;
+        }
+        set
+        {
+            if (value == _darkThemeLabel)
+                return;
+            _darkThemeLabel = value;
+            OnPropertyChanged(nameof(DarkThemeLabel));
+        }
+    }
+
+    #endregion
+
+    #region LightThemeLabel
+
+    private string _lightThemeLabel = string.Empty;
+    public string LightThemeLabel
+    {
+        get
+        {
+            return _lightThemeLabel;
+        }
+        set
+        {
+            if (value == _lightThemeLabel)
+                return;
+            _lightThemeLabel = value;
+            OnPropertyChanged(nameof(LightThemeLabel));
+        }
+    }
+
+    #endregion
+
     #region TotalTasksCount
 
     private int _totalTasksCount = 0;
@@ -258,6 +298,26 @@ public class LaunchTaskViewModel : PageViewModelBase
 
     #region Commands
 
+    private void UpdateTheme(string theme)
+    {
+        DarkThemeLabel = theme == ThemeSetting.DarkValue ? "⚫" + Resources.Theme_Value_Dark : "⚪" + Resources.Theme_Value_Dark;
+        LightThemeLabel = theme == ThemeSetting.LightValue ? "⚫" + Resources.Theme_Value_Light : "⚪" + Resources.Theme_Value_Light;
+    }
+
+    public void GoDarkSide()
+    {
+        var settingsService = new SettingsStoreService();
+        settingsService.Save(ThemeSetting.Name, ThemeSetting.DarkValue);
+        UpdateTheme(ThemeSetting.DarkValue);
+    }
+
+    public void GoLightSide()
+    {
+        var settingsService = new SettingsStoreService();
+        settingsService.Save(ThemeSetting.Name, ThemeSetting.LightValue);
+        UpdateTheme(ThemeSetting.LightValue);
+    }
+
     public void StartTaskCommand()
     {
         IsStartButtonVisible = false;
@@ -290,6 +350,7 @@ public class LaunchTaskViewModel : PageViewModelBase
     #endregion
 
     #region Labels
+    public string Theme_Title => "🎨 " + BUtil.Core.Localization.Resources.Theme_Title;
     public string Task_Launch_Hint => Resources.Task_Launch_Hint;
     public string Button_Cancel => Resources.Button_Cancel;
     public string AfterTaskSelection_Field => Resources.AfterTaskSelection_Field;
@@ -322,6 +383,11 @@ public class LaunchTaskViewModel : PageViewModelBase
 
     public void Initialize()
     {
+        var settingsService = new SettingsStoreService();
+        var theme = settingsService.Load(ThemeSetting.Name, ThemeSetting.DefaultValue);
+        UpdateTheme(theme);
+
+
         _task = new TaskV2StoreService().Load(_taskName);
         if (_task == null)
         {
@@ -497,7 +563,7 @@ public class LaunchTaskViewModel : PageViewModelBase
         TotalTasksCount = total;
     }
 
-    private void OnElapsedTimerTick(object sender, EventArgs e)
+    private void OnElapsedTimerTick(object? sender, EventArgs e)
     {
         TimeSpan span = DateTime.Now.Subtract(_startTime);
         ElapsedLabel = $"{Resources.Time_Field_Elapsed} {TimeSpanToStringHelper(span)} ({CompletedTasksCount}/{TotalTasksCount})";

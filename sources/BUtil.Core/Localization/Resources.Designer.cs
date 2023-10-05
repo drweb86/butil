@@ -1469,6 +1469,33 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Theme  (on change restart app).
+        /// </summary>
+        public static string Theme_Title {
+            get {
+                return ResourceManager.GetString("Theme_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dark.
+        /// </summary>
+        public static string Theme_Value_Dark {
+            get {
+                return ResourceManager.GetString("Theme_Value_Dark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Light.
+        /// </summary>
+        public static string Theme_Value_Light {
+            get {
+                return ResourceManager.GetString("Theme_Value_Light", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Elapsed:.
         /// </summary>
         public static string Time_Field_Elapsed {

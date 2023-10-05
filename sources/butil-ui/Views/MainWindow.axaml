@@ -20,7 +20,6 @@
 		Height="{Binding $parent.Height}"
 		MaxHeight="{Binding $parent.Height}"
 		Content="{Binding CurrentPage}"
-		Margin="24 8 24 8"
 	/>
 
 </Window>
