@@ -9,7 +9,8 @@
         Icon="/Assets/butil.ico"
 		x:CompileBindings="True"
 		x:DataType="vm:MainWindowViewModel"
-		Height="400"
+		Height="600"
+		Width="1000"
 		MinWidth="320"
 		MinHeight="320"
 		Title="{Binding CurrentPage.WindowTitle}">

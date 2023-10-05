@@ -31,7 +31,7 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
             string transformFileName,
             SourceItemState state,
             CommonServicesIoc commonServicesIoc)
-            : base(log, backupEvents, null, TaskArea.File)
+            : base(log, backupEvents, null)
         {
             File = fromFile;
             _state = state;

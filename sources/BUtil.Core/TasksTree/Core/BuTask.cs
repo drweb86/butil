@@ -9,19 +9,17 @@ namespace BUtil.Core.TasksTree.Core
     {
         public Guid Id { get; } = Guid.NewGuid();
         public string Title { get; protected set; }
-        public TaskArea TaskArea { get; }
         protected readonly TaskEvents Events;
         protected readonly ILog Log;
         public virtual IEnumerable<BuTask> GetChildren()
         {
             return Array.Empty<BuTask>();
         }
-        protected BuTask(ILog log, TaskEvents events, string title, TaskArea taskArea)
+        protected BuTask(ILog log, TaskEvents events, string title)
         {
             Log = log;
             Events = events;
             Title = title;
-            TaskArea = taskArea;
         }
 
         public abstract void Execute();

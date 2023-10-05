@@ -3,7 +3,6 @@ using BUtil.Core.Logs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 
 namespace BUtil.Core.TasksTree.Core
 {
@@ -12,8 +11,8 @@ namespace BUtil.Core.TasksTree.Core
     {
         public IEnumerable<BuTask> Children { get; set; }
 
-        public SequentialBuTask(ILog log, TaskEvents events, string title, TaskArea taskArea, IEnumerable<BuTask> children)
-            : base(log, events, title, taskArea)
+        public SequentialBuTask(ILog log, TaskEvents events, string title, IEnumerable<BuTask> children)
+            : base(log, events, title)
         {
             Children = children;
         }

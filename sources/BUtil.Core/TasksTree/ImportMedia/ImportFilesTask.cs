@@ -19,7 +19,7 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
         private readonly CommonServicesIoc _commonServicesIoc;
 
         public ImportFilesTask(ILog log, TaskEvents backupEvents, TaskV2 backupTask, GetStateOfSourceItemTask getStateOfSourceItemTask, CommonServicesIoc commonServicesIoc)
-            : base(log, backupEvents, BUtil.Core.Localization.Resources.ImportMediaTask_AllFiles, TaskArea.ProgramInRunBeforeAfterBackupChain, null)
+            : base(log, backupEvents, BUtil.Core.Localization.Resources.ImportMediaTask_AllFiles, null)
         {
             Children = new List<BuTask>();
             _task = backupTask;

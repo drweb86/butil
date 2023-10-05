@@ -24,7 +24,7 @@ namespace BUtil.Core.TasksTree.States
             StorageSpecificServicesIoc servicesIoc,
             IEnumerable<string> fileExcludePatterns,
             string password)
-            : base(log, events, Localization.Resources.State_LoadFromEverywhere, TaskArea.File, null)
+            : base(log, events, Localization.Resources.State_LoadFromEverywhere, null)
         {
             var childTasks = new List<BuTask>();
             var setSourceItemStateTasks = new List<GetStateOfSourceItemTask>();
@@ -55,7 +55,7 @@ namespace BUtil.Core.TasksTree.States
             var storageTasksExecuter = new ParallelExecuter(new[] { StorageStateTask }, 1);
             var sourceItemGroupTasks = GetSourceItemStateTasks
                 .GroupBy(x => Directory.GetDirectoryRoot(x.SourceItem.Target))
-                .Select(x => new SequentialBuTask(new StubLog(), new TaskEvents(), string.Empty, TaskArea.File, x.ToList()))
+                .Select(x => new SequentialBuTask(new StubLog(), new TaskEvents(), string.Empty, x.ToList()))
                 .ToList();
             var sourceItemGroupTasksExecuter = new ParallelExecuter(sourceItemGroupTasks, 10);
             

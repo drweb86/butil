@@ -177,7 +177,7 @@ public class LaunchTaskViewModel : PageViewModelBase
     #endregion
 
     #region ProgressGenericTitle
-
+    
     private string _progressGenericTitle = Resources.Task_List;
     public string ProgressGenericTitle
     {

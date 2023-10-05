@@ -15,7 +15,7 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
         private readonly CommonServicesIoc _commonServicesIoc = new();
 
         public ImportMediaTask(ILog log, TaskEvents backupEvents, TaskV2 backupTask)
-            : base(log, backupEvents, string.Empty, TaskArea.ProgramInRunBeforeAfterBackupChain, null)
+            : base(log, backupEvents, string.Empty, null)
         {
             var typedModel = backupTask.Model as ImportMediaTaskModelOptionsV2;
             var sourceItem = new SourceItemV2(typedModel.DestinationFolder, true);

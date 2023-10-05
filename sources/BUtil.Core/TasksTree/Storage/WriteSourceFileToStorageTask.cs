@@ -1,4 +1,6 @@
-﻿using BUtil.Core.Events;
+﻿using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.Events;
+using BUtil.Core.Misc;
 using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
@@ -23,8 +25,11 @@ namespace BUtil.Core.TasksTree
             TaskEvents events,
             List<StorageFile> storageFiles,
             Quota singleBackupQuotaGb,
+            SourceItemV2 sourceItem,
             System.Collections.Generic.List<VersionState> versionStates) : 
-            base(services.Log, events, string.Format(BUtil.Core.Localization.Resources.File_Saving, string.Join(", ", storageFiles.Select(x => x.FileState.FileName))), TaskArea.File)
+            base(services.Log, events, string.Format(BUtil.Core.Localization.Resources.File_Saving, 
+                string.Join(", ", storageFiles
+                    .Select(x => SourceItemHelper.GetFriendlyFileName(sourceItem, x.FileState.FileName)     ))))
         {
             _services = services;
             StorageFiles = storageFiles;

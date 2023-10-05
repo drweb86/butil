@@ -8,6 +8,15 @@ namespace BUtil.Core.Misc
 {
     public static class SourceItemHelper
     {
+        public static string GetFriendlyFileName(SourceItemV2 item, string fileName)
+        {
+            if (!item.IsFolder)
+                return fileName;
+            
+            var target = item.Target.TrimEnd(new char[] { '\\', '/' });
+            return fileName.Substring(target.Length + 1);
+        }
+
         public static string GetSourceItemDirectory(SourceItemV2 sourceItem)
         {
             var dir = sourceItem.IsFolder ?
