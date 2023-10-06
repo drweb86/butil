@@ -2,6 +2,7 @@
 
 ## Changes
 - Italian language was updated by https://github.com/bovirus .
+- Help became simpler.
 
 # 2023.10.06
 

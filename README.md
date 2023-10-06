@@ -7,10 +7,11 @@ Import photos from phone via WI-FI and more.
 ![BUtil Logotype](./help/Assets/Logotype.bmp)
 
 ![Tasks application](./help/Assets/Screenshot%201.png)
-![Launch task application](./help/Assets/Image%20-Launch%20App.png)
+![Launch task application](./help/Assets/Image%20-%20Launch%20App.png)
 
 ![Supported Languages](./help/Assets/Image%20-%20Languages.png)
-[English] [Russian] [Italian]
+
+[English] [Russian] [Italian](https://github.com/bovirus)
 
 ## Features
 
