@@ -1,3 +1,8 @@
+# 2023.10.07
+
+## Changes
+- Italian language was updated by https://github.com/bovirus .
+
 # 2023.10.06
 
 ## New Features

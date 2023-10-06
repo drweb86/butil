@@ -1,11 +1,14 @@
 # Logs
 
+When task launch fails, you can see reasons why it failed in logs.
 Logs are collected for task execution.
 All apps that execute tasks write logs.
 Logs are in HTML format.
 
 Logs are located in ```%appdata%\Butil\Logs\v2```.
 You can change logs location by creating a create symbolic links.
+
+
 
 # Information in logs
 

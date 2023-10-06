@@ -8,7 +8,7 @@ Features includes:
 
 ## Import photos and videos to PC from Camera, Import Audio from Recorder SD Card
 
-![Import photos and videos to PC from Camera, Import Audio from Recorder SD Card](./Image%20-%20Import%20media%20task%20-%20Case%201.png)
+![Import photos and videos to PC from Camera, Import Audio from Recorder SD Card](./Assets/Image%20-%20Import%20media%20task%20-%20Case%201.png)
 
 1. Plug SD card into card reader.
 
@@ -28,7 +28,7 @@ Be aware that Folder name should be similar to what you see in Explorer, e.g. "E
 
 ## Import photos and videos from phone via Wi-Fi via FTPS
 
-![Import photos and videos from phone via Wi-Fi via FTPS](./Image%20-%20Import%20media%20task%20-%20Case%202.png)
+![Import photos and videos from phone via Wi-Fi via FTPS](./Assets/Image%20-%20Import%20media%20task%20-%20Case%202.png)
 
 ### Setup import photos and videos from phone via Wi-Fi via FTPS
 
@@ -42,25 +42,25 @@ https://play.google.com/store/apps/details?id=net.xnano.android.ftpserver&hl=en_
 
 Its window will look like this
 
-![FTP Server application](./Image%20-%20FTP%20Server%20-%20After%20Install.png)
+![FTP Server application](./Assets/Image%20-%20FTP%20Server%20-%20After%20Install.png)
 
 #### Change encryption mode to **FTPS Implicit** or **FTPS Explicit** as it is shown on a picture below.
 
 In example we will go next with FTPS Implicit.
 
-![FTP Server - Change encryption mode](./Image%20-%20FTP%20Server%20-%20Change%20encryption%20mode.png)
+![FTP Server - Change encryption mode](./Assets/Image%20-%20FTP%20Server%20-%20Change%20encryption%20mode.png)
 
 #### Add FTPS user with readonly access to DCIM
 
 a. Tap Users, click Add
 
-![FTP Server - Add User 1](./Image%20-%20FTP%20Server%20-%20Add%20User%201.png)
+![FTP Server - Add User 1](./Assets/Image%20-%20FTP%20Server%20-%20Add%20User%201.png)
 
 b. Create user.
 
 In example we will go next with user sync with password 123 .
 
-![FTP Server - Add User 2.png](./Image%20-%20FTP%20Server%20-%20Add%20User%202.png)
+![FTP Server - Add User 2.png](./Assets/Image%20-%20FTP%20Server%20-%20Add%20User%202.png)
 
 a. Specify anything for as **Full Name**.
 
@@ -88,7 +88,7 @@ b. Click Start.
 
 You will see IP and Port addresses.
 
-![FTP Server - IP and Port.png](./Image%20-%20FTP%20Server%20-%20IP%20and%20Port.png)
+![FTP Server - IP and Port.png](./Assets/Image%20-%20FTP%20Server%20-%20IP%20and%20Port.png)
 
 In example above we will go next with server 172.16.92.15 and 2121 port.
 
