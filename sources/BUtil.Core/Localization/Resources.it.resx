@@ -352,11 +352,8 @@ Il programma ora aprirà il browser internet alla pagina di download</value>
     <value>Importa "{0}"</value>
   </data>
   <data name="ImportMediaTask_Help" xml:space="preserve">
-    <value>Importa audio, foto, video dalla scheda SD della fotocamera, 
-	del registratore; foto e video dal telefono tramite WI-FI tramite 
-	l'applicazione server FTP usando la maschera nomi file.</value>
-	Consulta il sito web dell'applicazione per la documentazione su come impostare 
-	il file trasmissione via WI-FI tramite l'applicazione FTP Server sul telefono.
+    <value>Consulta il sito web dell'applicazione per la documentazione su come impostare 
+	il file trasmissione via WI-FI tramite l'applicazione FTP Server sul telefono.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Sorgente dati importazione</value>
@@ -641,5 +638,14 @@ Il programma ora aprirà il browser internet alla pagina di download</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Non è stata specificato l'utente.</value>
+  </data>
+  <data name="Theme_Title" xml:space="preserve">
+    <value>Tema (modifica a riavvio app)</value>
+  </data>
+  <data name="Theme_Value_Dark" xml:space="preserve">
+    <value>Tema scuro</value>
+  </data>
+  <data name="Theme_Value_Light" xml:space="preserve">
+    <value>Tema chiaro</value>
   </data>
 </root>
