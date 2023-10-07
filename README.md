@@ -1,10 +1,7 @@
-# Introducing BUtil
+# ![BUtil Logotype](./help/Assets/Logotype.bmp) Introducing BUtil
 
-Backup your data.
-
-Import photos from phone via WI-FI and more.
-
-![BUtil Logotype](./help/Assets/Logotype.bmp)
+> Backup your data.
+> Import photos from phone via WI-FI and more.
 
 ![Tasks application](./help/Assets/Screenshot%201.png)
 ![Launch task application](./help/Assets/Image%20-%20Launch%20App.png)
@@ -17,7 +14,7 @@ Import photos from phone via WI-FI and more.
 
 - **Incremental backup** with deduplication of files and **FTPS**, **SMB/CIFS**, **MTP** transports support;
 - **Import media** - [Import audios, photos, videos from SD Card of camera, recorder; photos and videos from your phone via WI-FI through FTPS Server application using template file names or via MTP](./help/Import%20media%20task.md);
-- **Console** for automation [scheduling](./help/Console%20line.md);
+- **Console** for automation [scheduling](./help/Command%20line.md);
 - **Strong** [7-zip](https://www.7-zip.org/) compression and AES-256 encryption.
 
 ## Requirements
