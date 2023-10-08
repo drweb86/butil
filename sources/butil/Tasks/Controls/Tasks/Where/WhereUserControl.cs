@@ -209,7 +209,7 @@ namespace BUtil.Configurator.Configurator.Controls
         {
             if (_storageTypesTabControl.SelectedTab == _mtpTabPage)
             {
-                _mtpDeviceComboBox.DataSource = new MtpService().GetItems();
+                _mtpDeviceComboBox.DataSource = PlatformSpecificExperience.Instance.GetMtpService().GetItems();
             }
         }
     }

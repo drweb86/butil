@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <PackageReference Include="MediaDevices" Version="1.10.0" />
+    <PackageReference Include="TaskScheduler" Version="2.10.1" />
   </ItemGroup>
 
   <ItemGroup>

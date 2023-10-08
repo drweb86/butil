@@ -113,7 +113,7 @@ namespace BUtil.ConsoleBackup.UI
 
         private void LoadMtpTransports()
         {
-            _mtpDevices = new MtpService()
+            _mtpDevices = PlatformSpecificExperience.Instance.GetMtpService()
                     .GetItems()
                     .ToList();
             _mtpDeviceComboBox.Height = _mtpDevices.Count + 1;

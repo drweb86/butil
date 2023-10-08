@@ -34,10 +34,8 @@ namespace BUtil.Core.Storages
 
             try
             {
-                using (var storage = Create(new StubLog(), storageSettings))
-                {
-                    return storage.Test();
-                }
+                using var storage = Create(new StubLog(), storageSettings);
+                return storage.Test();
             }
             catch (Exception ex)
             {

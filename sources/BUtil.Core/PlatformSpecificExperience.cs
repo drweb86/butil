@@ -1,6 +1,7 @@
 ﻿using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Logs;
+using BUtil.Core.Options;
 using BUtil.Core.Storages;
 using System;
 using System.Linq;
@@ -35,6 +36,11 @@ namespace BUtil.Core
         }
 
         public virtual IStorage? GetMtpStorage(ILog log, MtpStorageSettings storageSettings)
+        {
+            return null;
+        }
+
+        public virtual ITaskSchedulerService? GetTaskSchedulerService()
         {
             return null;
         }

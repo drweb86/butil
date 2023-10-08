@@ -10,6 +10,7 @@ using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Misc;
+using BUtil.Core;
 
 namespace BUtil.Configurator.Configurator.Controls
 {
@@ -28,11 +29,9 @@ namespace BUtil.Configurator.Configurator.Controls
 
         private void SetLastExecutionColumnWidth()
         {
-            using (var graphics = Graphics.FromHwnd(IntPtr.Zero))
-            {
-                graphics.PageUnit = GraphicsUnit.Pixel;
-                _lastExecutionStateColumn.Width = (int)graphics.MeasureString($"❌❌❌❌❌❌{DateTime.Now}", Font).Width;
-            }
+            using var graphics = Graphics.FromHwnd(IntPtr.Zero);
+            graphics.PageUnit = GraphicsUnit.Pixel;
+            _lastExecutionStateColumn.Width = (int)graphics.MeasureString($"❌❌❌❌❌❌{DateTime.Now}", Font).Width;
         }
 
         public override void ApplyLocalization()
@@ -112,8 +111,8 @@ namespace BUtil.Configurator.Configurator.Controls
                 var backupTaskStoreService = new TaskV2StoreService();
                 backupTaskStoreService.Save(task);
 
-                var backupTaskSchedulerService = new TaskSchedulerService();
-                backupTaskSchedulerService.Schedule(task.Name, scheduleInfo);
+                var schedulerService = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
+                schedulerService?.Schedule(task.Name, scheduleInfo);
 
                 ReloadTasks();
             }
@@ -144,8 +143,8 @@ namespace BUtil.Configurator.Configurator.Controls
             }
             else if (task.Model is IncrementalBackupModelOptionsV2)
             {
-                var schedulerService = new TaskSchedulerService();
-                var schedule = schedulerService.GetSchedule(taskName);
+                var schedulerService = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
+                var schedule = schedulerService?.GetSchedule(taskName) ?? new ScheduleInfo();
 
                 using var form = new EditIncrementalBackupTaskForm(task, schedule, Tasks.TaskEditorPageEnum.SourceItems);
                 if (form.ShowDialog() != DialogResult.OK)
@@ -174,8 +173,8 @@ namespace BUtil.Configurator.Configurator.Controls
                 {
                     var backupTasksService = new TaskV2StoreService();
                     backupTasksService.Delete(selectedTask.Text);
-                    var backupTaskSchedulerService = new TaskSchedulerService();
-                    backupTaskSchedulerService.Unschedule(selectedTask.Text);
+                    var schedulerService = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
+                    schedulerService?.Unschedule(selectedTask.Text);
                 }
             }
             ReloadTasks();
@@ -249,7 +248,7 @@ namespace BUtil.Configurator.Configurator.Controls
         private void OnAddButtonOpenMenu(object sender, EventArgs e)
         {
             var btnSender = (Control)sender;
-            Point ptLowerLeft = new Point(0, btnSender.Height);
+            Point ptLowerLeft = new(0, btnSender.Height);
             ptLowerLeft = btnSender.PointToScreen(ptLowerLeft);
             _createTaskContextMenuStrip.Show(ptLowerLeft);
         }
