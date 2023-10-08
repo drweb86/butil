@@ -363,12 +363,12 @@ transmission via WI-FI through FTP Server application on the phone.</value>
     <value>Skip already imported files</value>
   </data>
   <data name="ImproveIt_Message" xml:space="preserve">
-    <value>An unexpected error occured
+    <value>An unexpected error occurred.
 
 Please contact the developers with information saved on your desktop in
 "{0}"
 
-Application will now close</value>
+Application will now close.</value>
   </data>
   <data name="IncrementalBackup_Help" xml:space="preserve">
     <value>The most basic form of incremental backup consists of identifying, recording and thus, preserving only those files that have changed since the last backup.

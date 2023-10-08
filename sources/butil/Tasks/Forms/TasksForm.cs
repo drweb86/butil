@@ -1,4 +1,4 @@
-#nullable disable
+
 using System;
 using BUtil.Core.Misc;
 using BUtil.Core.Localization;

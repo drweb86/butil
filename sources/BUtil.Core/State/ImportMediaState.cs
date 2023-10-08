@@ -1,4 +1,4 @@
-﻿#nullable disable
+﻿
 using System.Collections.Generic;
 
 namespace BUtil.Core.State

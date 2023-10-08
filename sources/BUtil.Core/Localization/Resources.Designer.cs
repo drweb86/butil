@@ -756,12 +756,12 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to An unexpected error occured
+        ///   Looks up a localized string similar to An unexpected error occurred.
         ///
         ///Please contact the developers with information saved on your desktop in
         ///&quot;{0}&quot;
         ///
-        ///Application will now close.
+        ///Application will now close..
         /// </summary>
         public static string ImproveIt_Message {
             get {

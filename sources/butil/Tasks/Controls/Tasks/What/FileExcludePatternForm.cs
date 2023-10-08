@@ -1,5 +1,4 @@
-﻿#nullable disable
-using BUtil.Core.Misc;
+﻿using BUtil.Core.Misc;
 using System;
 using System.Windows.Forms;
 using BUtil.Core.Localization;

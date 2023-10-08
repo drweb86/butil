@@ -5,7 +5,10 @@ namespace BUtil.Core.FileSystem
 {
     public static class Files
     {
-		public static readonly string ConsoleBackupTool = 
+        public static readonly string WindowsExperience =
+            Path.Combine(Directories.BinariesDir, "BUtil.Windows.dll");
+
+        public static readonly string ConsoleBackupTool = 
 			Path.Combine(Directories.BinariesDir, "butilc.exe");
 
         public static readonly string TasksApp =

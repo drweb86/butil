@@ -15,7 +15,12 @@ namespace BUtil.Core.Storages
             else if (storageSettings is FtpsStorageSettingsV2)
                 return new FailoverStorageWrapper(log, new FtpsStorage(log, storageSettings as FtpsStorageSettingsV2));
             else if (storageSettings is MtpStorageSettings)
-                return new FailoverStorageWrapper(log, new MtpStorage(log, storageSettings as MtpStorageSettings));
+            {
+                var mtpStorage = PlatformSpecificExperience.Instance.GetMtpStorage(log, storageSettings as MtpStorageSettings);
+                if (mtpStorage == null)
+                    throw new NotSupportedException("Your OS does not support MTP storage");
+                return new FailoverStorageWrapper(log, mtpStorage);
+            }
             throw new ArgumentOutOfRangeException(nameof(storageSettings));
         }
 

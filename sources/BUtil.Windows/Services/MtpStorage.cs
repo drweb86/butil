@@ -1,28 +1,28 @@
-﻿#nullable disable
-using System;
+﻿using System;
 using System.IO;
 using System.Linq;
 using System.Security;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
+using BUtil.Core.Storages;
 using MediaDevices;
 
-namespace BUtil.Core.Storages
+namespace BUtil.Windows.Services
 {
     class MtpStorage : StorageBase<MtpStorageSettings>
     {
-        private MediaDevice _mediaDevice;
+        private readonly MediaDevice _mediaDevice;
 
         internal MtpStorage(ILog log, MtpStorageSettings settings)
             : base(log, settings)
         {
             if (string.IsNullOrWhiteSpace(Settings.Device))
-                throw new InvalidDataException(BUtil.Core.Localization.Resources.Field_Device_Validation_Empty);
+                throw new InvalidDataException(Resources.Field_Device_Validation_Empty);
             if (string.IsNullOrWhiteSpace(Settings.Folder))
-                throw new InvalidDataException(BUtil.Core.Localization.Resources.Field_Folder_Validation_Empty);
+                throw new InvalidDataException(Resources.Field_Folder_Validation_Empty);
 
-            Mount();
+            _mediaDevice = Mount();
         }
 
         private readonly object _uploadLock = new();
@@ -47,29 +47,29 @@ namespace BUtil.Core.Storages
             _mediaDevice.DeleteDirectory(remotePath, true);
         }
 
-        public override string[] GetFolders(string relativeFolderName, string mask = null)
+        public override string[] GetFolders(string relativeFolderName, string? mask = null)
         {
             var remotePath = GetRemotePath(relativeFolderName, true);
 
             return this._mediaDevice
                 .GetDirectories(remotePath, mask)
-                .Select(NormalizePath)
+                .Select(NormalizePathNotNull)
                 .Select(x => remotePath == null ? x : x.Substring(remotePath.Length))
-                .Select(NormalizePath)
+                .Select(NormalizePathNotNull)
                 .ToArray();
         }
 
-        private void Mount()
+        private MediaDevice Mount()
         {
             Log.WriteLine(LoggingEvent.Debug, $"Mount");
-            _mediaDevice = MediaDevice
+            var mediaDevice = MediaDevice
                 .GetDevices()
-                .FirstOrDefault(x => x.FriendlyName == Settings.Device);
+                .FirstOrDefault(x => x.FriendlyName == Settings.Device)
+                    ?? throw new ArgumentException(Resources.Field_Device_Validation_NotFound);
 
-            if (_mediaDevice == null)
-                throw new ArgumentException(Resources.Field_Device_Validation_NotFound);
+            mediaDevice.Connect();
 
-            _mediaDevice.Connect();
+            return _mediaDevice;
         }
 
         private void Unmount()
@@ -79,7 +79,7 @@ namespace BUtil.Core.Storages
             _mediaDevice?.Dispose();
         }
 
-        public override string Test()
+        public override string? Test()
         {
             if (!_mediaDevice.DirectoryExists(Settings.Folder))
             {
@@ -107,17 +107,25 @@ namespace BUtil.Core.Storages
             _mediaDevice.DownloadFile(remotePath, targetFileName);
         }
 
-        private static string NormalizePath(string path)
+        private static string? NormalizeNullablePath(string? path)
         {
-            if (path != null && path.Contains(".."))
-                throw new SecurityException("[..] is not allowed in path.");
+            if (path == null)
+                return null;
 
-            return path?.Trim(new[] { '\\', '/' });
+            return NormalizePathNotNull(path);
         }
 
-        private string GetRemotePath(string relativePath, bool allowNull)
+        private static string NormalizePathNotNull(string path)
         {
-            var normalizedRelativePath = NormalizePath(relativePath);
+            if (path.Contains(".."))
+                throw new SecurityException("[..] is not allowed in path.");
+
+            return path.Trim(new[] { '\\', '/' });
+        }
+
+        private string GetRemotePath(string? relativePath, bool allowNull)
+        {
+            var normalizedRelativePath = NormalizeNullablePath(relativePath);
             if (!allowNull && string.IsNullOrWhiteSpace(normalizedRelativePath))
             {
                 throw new ArgumentNullException(nameof(relativePath));
@@ -125,14 +133,14 @@ namespace BUtil.Core.Storages
             return normalizedRelativePath == null ? this.Settings.Folder : Path.Combine(this.Settings.Folder, normalizedRelativePath);
         }
 
-        public override string[] GetFiles(string relativeFolderName = null, SearchOption option = SearchOption.TopDirectoryOnly)
+        public override string[] GetFiles(string? relativeFolderName = null, SearchOption option = SearchOption.TopDirectoryOnly)
         {
             var remoteFolder = GetRemotePath(relativeFolderName, true);
             return this._mediaDevice
                 .GetFiles(remoteFolder, "*.*", option)
-                .Select(NormalizePath)
+                .Select(NormalizePathNotNull)
                 .Select(x => remoteFolder == null ? x : x.Substring(remoteFolder.Length))
-                .Select(NormalizePath)
+                .Select(NormalizePathNotNull)
                 .ToArray();
         }
 

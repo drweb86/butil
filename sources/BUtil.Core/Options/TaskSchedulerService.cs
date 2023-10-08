@@ -1,4 +1,4 @@
-﻿#nullable disable
+﻿
 using BUtil.Core.FileSystem;
 using System;
 using System.Linq;

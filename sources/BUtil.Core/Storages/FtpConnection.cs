@@ -1,4 +1,4 @@
-#nullable disable
+
 /* Adopted to the needs of project
  * with some portions of my code
  * (see license)

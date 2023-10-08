@@ -3,6 +3,7 @@ using Avalonia.Controls.Primitives;
 using Avalonia.Media;
 using Avalonia.Themes.Fluent;
 using Avalonia.Threading;
+using BUtil.Core;
 using BUtil.Core.BackupModels;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
@@ -392,8 +393,6 @@ public class LaunchTaskViewModel : PageViewModelBase
 
     public void Initialize()
     {
-        
-
         _task = new TaskV2StoreService().Load(_taskName);
         if (_task == null)
         {

@@ -1,10 +1,9 @@
-﻿using MediaDevices;
-using System.Collections.Generic;
-using System.Linq;
+﻿using BUtil.Core;
+using MediaDevices;
 
-namespace BUtil.Core
+namespace BUtil.Windows.Services
 {
-    public class MtpService
+    class MtpService : IMtpService
     {
         public IEnumerable<string> GetItems()
         {

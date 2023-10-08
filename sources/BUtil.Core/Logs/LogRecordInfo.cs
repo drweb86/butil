@@ -1,4 +1,4 @@
-﻿#nullable disable
+﻿
 using System;
 
 namespace BUtil.Core.Logs
