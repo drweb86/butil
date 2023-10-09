@@ -10,7 +10,7 @@ namespace BUtil.Core.Misc
 {
     public static class ImproveIt
     {
-        public static Action<string> HandleUiError;
+        public static Action<string>? HandleUiError;
 
         static ImproveIt()
         {
@@ -33,7 +33,7 @@ namespace BUtil.Core.Misc
                 builder.AppendLine(exception.StackTrace);
                 builder.AppendLine(exception.Source);
                 
-                Exception inner = exception.InnerException;
+                Exception? inner = exception.InnerException;
                 if (inner != null)
                 {
                     builder.AppendLine(inner.Message);
@@ -54,7 +54,7 @@ namespace BUtil.Core.Misc
 
         private static void unhandledException(object sender, UnhandledExceptionEventArgs exception)
         {
-            ProcessUnhandledException(exception.ExceptionObject as Exception);
+            ProcessUnhandledException((Exception)exception.ExceptionObject);
         }
     }
 }

@@ -21,7 +21,7 @@ namespace BUtil.Core.Misc
         {
             var dir = sourceItem.IsFolder ?
                 sourceItem.Target :
-                Path.GetDirectoryName(sourceItem.Target);
+                Path.GetDirectoryName(sourceItem.Target) ?? throw new InvalidDataException(sourceItem.Target);
 
             return dir.TrimEnd(Path.DirectorySeparatorChar);
         }

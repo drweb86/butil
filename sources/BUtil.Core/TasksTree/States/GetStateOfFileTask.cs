@@ -13,10 +13,10 @@ namespace BUtil.Core.TasksTree.States
     {
         private readonly CommonServicesIoc _servicesIoc;
         private readonly string _fileName;
-        public FileState State { get; private set; }
+        public FileState? State { get; private set; }
 
         public GetStateOfFileTask(ILog log, TaskEvents events, CommonServicesIoc servicesIoc, SourceItemV2 item, string fileName) :
-            base(log, events, null)
+            base(log, events, string.Empty)
         {
             _servicesIoc = servicesIoc;
             _fileName = fileName;

@@ -26,10 +26,10 @@ namespace BUtil.Core.Storages
             lock (_uploadLock) // because we're limited by upload speed and Samba has limit of 6 parallel uploads usually
             {
                 var destinationFile = Path.Combine(Settings.DestinationFolder, relativeFileName);
-                var destinationDirectory = Path.GetDirectoryName(destinationFile);
 
                 Log.WriteLine(LoggingEvent.Debug, $"Copying \"{sourceFile}\" to \"{destinationFile}\"");
 
+                var destinationDirectory = Path.GetDirectoryName(destinationFile) ?? string.Empty;
                 if (!Directory.Exists(destinationDirectory))
                     Directory.CreateDirectory(destinationDirectory);
 
@@ -63,12 +63,10 @@ namespace BUtil.Core.Storages
             }
         }
 
-        public override string Test()
+        public override string? Test()
         {
-            
-
             if (!Directory.Exists(Settings.DestinationFolder))
-                return string.Format(BUtil.Core.Localization.Resources.DirectoryStorage_Field_Directory_Validation_NotFound, Settings.DestinationFolder);
+                return string.Format(Localization.Resources.DirectoryStorage_Field_Directory_Validation_NotFound, Settings.DestinationFolder);
 
             return null;
         }
@@ -98,14 +96,14 @@ namespace BUtil.Core.Storages
                 Directory.Delete(fullPathName, true);
         }
 
-        public override string[] GetFolders(string relativeFolderName, string mask = null)
+        public override string[] GetFolders(string relativeFolderName, string? mask = null)
         {
             var fullPathName = string.IsNullOrWhiteSpace(relativeFolderName)
                 ? Settings.DestinationFolder
                 : Path.Combine(Settings.DestinationFolder, relativeFolderName);
 
             return Directory
-                .GetDirectories(fullPathName, mask)
+                .GetDirectories(fullPathName, mask ?? "*.*")
                 .Select(x => x.Substring(fullPathName.Length))
                 .Select(x => x.Trim(new[] { '\\', '/' }))
                 .ToArray();
@@ -133,7 +131,7 @@ namespace BUtil.Core.Storages
             }
         }
 
-        public override string[] GetFiles(string relativeFolderName = null, SearchOption option = SearchOption.TopDirectoryOnly)
+        public override string[] GetFiles(string? relativeFolderName = null, SearchOption option = SearchOption.TopDirectoryOnly)
         {
             if (relativeFolderName != null)
             {

@@ -13,7 +13,7 @@ namespace BUtil.Core.TasksTree
         private readonly string _password;
 
         public IStorageSettingsV2 StorageSettings { get; }
-        public IncrementalBackupState StorageState { get; private set; }
+        public IncrementalBackupState? StorageState { get; private set; }
 
         public GetStateOfStorageTask(StorageSpecificServicesIoc services, TaskEvents events, string password) : 
             base(services.Log, events, Localization.Resources.DataStorage_State_Get)

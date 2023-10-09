@@ -13,7 +13,7 @@ namespace BUtil.Core.Misc
             Process.Start(Files.TasksAppV2, $"{TasksAppArguments.LaunchTask} \"{TasksAppArguments.RunTask}={taskName}\"");
         }
 
-		public static void OpenRestorationApp(string taskName = null)
+		public static void OpenRestorationApp(string? taskName = null)
 		{
 			if (string.IsNullOrWhiteSpace(taskName))
 			{
@@ -24,7 +24,7 @@ namespace BUtil.Core.Misc
             var task = new TaskV2StoreService()
 				.Load(taskName);
 
-            if (task.Model is IncrementalBackupModelOptionsV2)
+            if (task?.Model is IncrementalBackupModelOptionsV2)
             {
                 Process.Start(Files.TasksApp, $"{TasksAppArguments.Restore} \"{TasksAppArguments.RunTask}={taskName}\"");
             }

@@ -4,6 +4,7 @@ using BUtil.Core.Misc;
 using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
+using System;
 using System.Linq;
 
 namespace BUtil.Core.TasksTree
@@ -26,7 +27,7 @@ namespace BUtil.Core.TasksTree
         {
             UpdateStatus(ProcessingStatus.InProgress);
 
-            var allowedFolders = _getStateOfStorageTask.StorageState
+            var allowedFolders = (_getStateOfStorageTask.StorageState ?? throw new Exception())
                 .VersionStates
                 .Select(x => SourceItemHelper.GetVersionFolder(x.BackupDateUtc));
 

@@ -9,9 +9,8 @@ namespace BUtil.Core.FileSystem
 	public static class Directories
 	{
 		private static readonly string _assembly = Assembly.GetExecutingAssembly().Location;
-		private static readonly string _binariesDir = Path.GetDirectoryName(_assembly);
-		private static readonly string _installdir = Path.GetDirectoryName(_binariesDir);
-		private static readonly string _applicationDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+		private static readonly string _binariesDir = Path.GetDirectoryName(_assembly) ?? throw new DirectoryNotFoundException("binaries");
+        private static readonly string _applicationDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
 #if DEBUG
 		private static readonly string _userDataFolder = Path.Combine(_applicationDataFolder, "BUtil-Development");
@@ -21,7 +20,7 @@ namespace BUtil.Core.FileSystem
 		private static readonly string _logsDir = Path.Combine(_userDataFolder, "Logs", "v2");
         private static readonly string _settingsDir = Path.Combine(_userDataFolder, "Settings", "v1");
 
-        public static readonly string TempFolder = System.Environment.GetEnvironmentVariable("TEMP");
+        public static readonly string TempFolder = System.Environment.GetEnvironmentVariable("TEMP") ?? throw new DirectoryNotFoundException("TEMP");
 
         public static string UserDataFolder => _userDataFolder;
 

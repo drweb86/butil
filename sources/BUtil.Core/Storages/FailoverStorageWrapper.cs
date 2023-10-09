@@ -50,14 +50,14 @@ namespace BUtil.Core.Storages
                 () => _storage.DeleteFolder(relativeFolderName));
         }
 
-        public string[] GetFolders(string relativeFolderName, string mask = null)
+        public string[] GetFolders(string relativeFolderName, string? mask = null)
         {
             return ExecuteFailover.TryNTimes(
                 error => _log.WriteLine(LoggingEvent.Error, $"Get folders \"{relativeFolderName}\" by mask \"{mask}\""),
                 () => _storage.GetFolders(relativeFolderName, mask));
         }
 
-        public string Test()
+        public string? Test()
         {
             return _storage.Test();
         }
@@ -69,7 +69,7 @@ namespace BUtil.Core.Storages
                 () => _storage.Upload(sourceFile, relativeFileName));
         }
 
-        public string[] GetFiles(string relativeFolderName = null, SearchOption option = SearchOption.TopDirectoryOnly)
+        public string[] GetFiles(string? relativeFolderName = null, SearchOption option = SearchOption.TopDirectoryOnly)
         {
             return ExecuteFailover.TryNTimes(
                 error => _log.WriteLine(LoggingEvent.Error, $"Get files \"{relativeFolderName}\" with option \"{option}\""),

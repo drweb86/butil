@@ -20,4 +20,13 @@
     <ProjectReference Include="..\BUtil.Core\BUtil.Core.csproj" />
   </ItemGroup>
 
+  <PropertyGroup>
+	<PreBuildEvent>
+			cd "$(SolutionDir)..\Output"
+
+			rem Libraries
+			xcopy "%userprofile%\.nuget\packages\taskscheduler\2.10.1\lib\net6.0-windows7.0" "$(SolutionDir)..\Output\BUtil\bin" /Y/E
+			xcopy "%userprofile%\.nuget\packages\mediadevices\1.10.0\lib\net7.0" "$(SolutionDir)..\Output\BUtil\bin" /Y
+    </PreBuildEvent>
+  </PropertyGroup>
 </Project>

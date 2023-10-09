@@ -1,8 +1,4 @@
-﻿using BUtil.Core.ConfigurationFileModels.V2;
-using BUtil.Core.FileSystem;
-using BUtil.Core.Logs;
-using BUtil.Core.Options;
-using BUtil.Core.Storages;
+﻿using BUtil.Core.FileSystem;
 using System;
 using System.Linq;
 using System.Reflection;
@@ -23,26 +19,10 @@ namespace BUtil.Core
                     .Where(x => x.BaseType == typeof(CrossPlatformExperience))
                     .First();
 
-                Instance = (CrossPlatformExperience)Activator.CreateInstance(experienceType);
+                var instance = Activator.CreateInstance(experienceType);
+                if (instance != null)
+                    Instance = (CrossPlatformExperience)instance;
             }
-        }
-    }
-
-    public class CrossPlatformExperience
-    {
-        public virtual IMtpService? GetMtpService()
-        {
-            return null;
-        }
-
-        public virtual IStorage? GetMtpStorage(ILog log, MtpStorageSettings storageSettings)
-        {
-            return null;
-        }
-
-        public virtual ITaskSchedulerService? GetTaskSchedulerService()
-        {
-            return null;
         }
     }
 }

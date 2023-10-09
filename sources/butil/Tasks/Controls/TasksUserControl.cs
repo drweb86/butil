@@ -102,7 +102,7 @@ namespace BUtil.Configurator.Configurator.Controls
             var task = new TaskV2
             {
                 Name = Resources.Task_Field_Name_NewDefaultValue,
-                Model = IncrementalBackupModelOptionsV2.CreateDefault()
+                Model = new IncrementalBackupModelOptionsV2()
             };
             var scheduleInfo = new ScheduleInfo();
             using var form = new EditIncrementalBackupTaskForm(task, scheduleInfo, Tasks.TaskEditorPageEnum.Name);
@@ -232,7 +232,7 @@ namespace BUtil.Configurator.Configurator.Controls
             var task = new TaskV2
             {
                 Name = Resources.Task_Field_Name_NewDefaultValue,
-                Model = ImportMediaTaskModelOptionsV2.CreateDefault(),
+                Model = new ImportMediaTaskModelOptionsV2(),
             };
 
             using var form = new EditImportMediaTaskForm(task, Tasks.TaskEditorPageEnum.Name, true);

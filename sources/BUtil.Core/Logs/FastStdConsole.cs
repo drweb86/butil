@@ -9,7 +9,7 @@ namespace BUtil.Core.Logs
     public static class FastStdConsole
     {
         private static readonly StringBuilder _sb = new StringBuilder();
-        private static volatile CancellationTokenSource _cts;
+        private static volatile CancellationTokenSource? _cts;
         private static int _count;
 
         public static void Write(string value)

@@ -5,14 +5,14 @@ namespace BUtil.Core.State
 {
     public class StorageFile
     {
-        public FileState FileState { get; set; }
-        public string StorageRelativeFileName { get; set; }
-        public string StorageFileName { get; set; }
-        public long StorageFileNameSize { get; set; }
-        public string StorageMethod { get; set; } // TBD: Plain, XDelta, 7z
-        public string StorageIntegrityMethod { get; set; }
-        public string StorageIntegrityMethodInfo { get; set; }
-        public string StoragePassword { get; set; }
+        public FileState FileState { get; set; } = new();
+        public string StorageRelativeFileName { get; set; } = string.Empty;
+        public string StorageFileName { get; set; } = string.Empty;
+        public long StorageFileNameSize { get; set; } = 0;
+        public string StorageMethod { get; set; } = string.Empty;
+        public string StorageIntegrityMethod { get; set; } = string.Empty;
+        public string StorageIntegrityMethodInfo { get; set; } = string.Empty;
+        public string StoragePassword { get; set; } = string.Empty;
 
         public StorageFile() { }
 

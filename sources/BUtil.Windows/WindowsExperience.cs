@@ -2,12 +2,13 @@
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
+using BUtil.Core.Services;
 using BUtil.Core.Storages;
 using BUtil.Windows.Services;
 
 namespace BUtil.Windows
 {
-    public class Experience : CrossPlatformExperience
+    public class WindowsExperience : CrossPlatformExperience
     {
         public override IMtpService GetMtpService()
         {
@@ -22,6 +23,21 @@ namespace BUtil.Windows
         public override ITaskSchedulerService? GetTaskSchedulerService()
         {
             return new TaskSchedulerService();
+        }
+
+        public override IShowLogOnSystemLoginService? GetShowLogOnSystemLoginService()
+        {
+            return new ShowLogOnSystemLoginService();
+        }
+
+        public override IWindowBlinkerService? GetWindowBlinkerService()
+        {
+            return new WindowBlinkerService();
+        }
+
+        public override IOsSleepPreventionService? GetIOsSleepPreventionService()
+        {
+            return new OsSleepPreventionService();
         }
     }
 }

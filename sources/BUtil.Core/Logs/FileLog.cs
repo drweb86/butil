@@ -11,7 +11,7 @@ namespace BUtil.Core.Logs
 	{
         private string _fileName;
         private readonly string _taskName;
-        private StreamWriter _logFile;
+        private StreamWriter? _logFile;
         private DateTime _dateTime;
 
         public string LogFilename => _fileName;
@@ -79,12 +79,18 @@ namespace BUtil.Core.Logs
 	
         private void WriteInFile(string message)
         {
+            if (_logFile == null)
+                return;
+
             lock (_logFile)
                 _logFile.WriteLine(message);
         }
 
         public override void WriteLine(LoggingEvent loggingEvent, string message)
         {
+            if (_logFile == null)
+                return;
+
             PreprocessLoggingInformation(loggingEvent);
 
             string output = HtmlLogFormatter.GetHtmlFormattedLogMessage(loggingEvent, message);

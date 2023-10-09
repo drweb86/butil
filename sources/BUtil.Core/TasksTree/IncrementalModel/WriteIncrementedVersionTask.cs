@@ -19,8 +19,7 @@ namespace BUtil.Core.TasksTree
             GetStateOfStorageTask storageStateTask,
             IEnumerable<GetStateOfSourceItemTask> getSourceItemStateTasks,
             IncrementalBackupModelOptionsV2 incrementalBackupModelOptions) :
-            base(services.Log, events, Localization.Resources.IncrementalBackup_Version_Save,
-                null)
+            base(services.Log, events, Localization.Resources.IncrementalBackup_Version_Save)
         {
             var childTaks = new List<BuTask>();
 

@@ -26,7 +26,7 @@ namespace BUtil.Core.Options
                 Directory.CreateDirectory(_folder);
         }
 
-        public TaskV2 Load(string name)
+        public TaskV2? Load(string name)
         {
             foreach (var pair in GetFileNames(name))
             {
@@ -39,6 +39,8 @@ namespace BUtil.Core.Options
                     try
                     {
                         var task = JsonSerializer.Deserialize<BackupTaskV1>(json);
+                        if (task == null)
+                            continue;
                         return UpgradeV1ToLatest(task);
                     }
                     catch (System.Text.Json.JsonException)
@@ -59,7 +61,7 @@ namespace BUtil.Core.Options
             return null;
         }
 
-        private TaskV2 UpgradeV1ToLatest(BackupTaskV1 task)
+        private TaskV2? UpgradeV1ToLatest(BackupTaskV1 task)
         {
             var incrementalModelV1 = task.Model as IncrementalBackupModelOptionsV1;
             if (incrementalModelV1 == null)
@@ -84,11 +86,10 @@ namespace BUtil.Core.Options
         {
             if (storageSettingsV1 is SambaStorageSettingsV1)
             {
-                var typedStorage = storageSettingsV1 as SambaStorageSettingsV1;
+                var typedStorage = (SambaStorageSettingsV1)storageSettingsV1;
                 return new SambaStorageSettingsV2
                 {
                     Password = typedStorage.Password,
-                    PasswordStorageMethod = typedStorage.PasswordStorageMethod,
                     SingleBackupQuotaGb = typedStorage.SingleBackupQuotaGb,
                     Url = typedStorage.Url,
                     User = typedStorage.User,
@@ -96,7 +97,7 @@ namespace BUtil.Core.Options
             }
             else if (storageSettingsV1 is FolderStorageSettingsV1)
             {
-                var typedStorage = storageSettingsV1 as FolderStorageSettingsV1;
+                var typedStorage = (FolderStorageSettingsV1)storageSettingsV1;
                 return new FolderStorageSettingsV2
                 {
                     DestinationFolder = typedStorage.DestinationFolder,
@@ -141,7 +142,7 @@ namespace BUtil.Core.Options
         {
             return Directory
                 .GetFiles(_folder, _genericFilter)
-                .Select(Path.GetFileName)
+                .Select(x => Path.GetFileName(x) ?? throw new InvalidDataException(x))
                 .Select(x => x.Replace(_extensionV2, string.Empty))
                 .Select(x => x.Replace(_extensionV1, string.Empty))
                 .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)

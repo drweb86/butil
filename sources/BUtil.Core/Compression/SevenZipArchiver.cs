@@ -10,8 +10,8 @@ namespace BUtil.Core.Compression
     class SevenZipArchiver : IArchiver
     {
         private readonly ILog _log;
-        private static readonly string _sevenZipFolder;
-        private static readonly string _sevenZipPacker;
+        private static readonly string? _sevenZipFolder;
+        private static readonly string? _sevenZipPacker;
 
         static SevenZipArchiver()
         {
@@ -25,7 +25,7 @@ namespace BUtil.Core.Compression
             _log = log;
         }
 
-        private static string Resolve7ZipDirectory()
+        private static string? Resolve7ZipDirectory()
         {
             var appDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), "7-zip");
             if (Directory.Exists(appDir))
@@ -39,12 +39,12 @@ namespace BUtil.Core.Compression
             }
 
             string exe = "7z.exe";
-            string result = Environment.GetEnvironmentVariable("PATH")
+            var result = (Environment.GetEnvironmentVariable("PATH") ?? string.Empty)
                 .Split(';')
                 .Where(s => File.Exists(Path.Combine(s, exe)))
                 .FirstOrDefault();
 
-            return result ?? appDir;
+            return result;
         }
 
         public bool Extract(
@@ -72,6 +72,9 @@ namespace BUtil.Core.Compression
             string password,
             string outputDirectory)
         {
+            if (_sevenZipPacker == null || _sevenZipFolder == null)
+                throw new InvalidDataException("7-zip was not found.");
+
             lock (_lock) // 7-zip utilizes all CPU cores, parallel compression will freeze PC.
                          // we explicitely avoid it via locking.
             {
@@ -137,6 +140,10 @@ namespace BUtil.Core.Compression
             string password,
             string archive)
         {
+            if (_sevenZipPacker == null || _sevenZipFolder == null)
+                throw new InvalidDataException("7-zip was not found.");
+
+
             var compressionLevel = ArchiverUtil.GetCompressionLevel(Path.GetExtension(file).ToLowerInvariant());
             string arguments;
             

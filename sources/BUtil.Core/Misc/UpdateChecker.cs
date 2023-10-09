@@ -24,17 +24,22 @@ namespace BUtil.Core.Misc
                 
                 await using var releasesStream = await client.GetStreamAsync("https://api.github.com/repos/drweb86/butil/releases");
                 var releases = await JsonSerializer.DeserializeAsync<List<GithubRelease>>(releasesStream);
+                var noUpdate = new GithubUpdateInfo(false, null, null);
+
+                if (releases == null)
+                    return noUpdate;
+
                 var updatedRelease = releases
                     .Where(x => !x.Prerelease && !x.Draft)
                     .FirstOrDefault(x => Version.TryParse(x.Tag, out var version) && CopyrightInfo.Version < version);
 
                 if (updatedRelease == null)
-                {
-                    return new GithubUpdateInfo(false, null, null);
-                }
+                    return noUpdate;
 
                 await using var versionRelease = await client.GetStreamAsync(updatedRelease.ApiUrl);
                 var release = await JsonSerializer.DeserializeAsync<GithubReleaseV2>(versionRelease);
+                if (release == null)
+                    return noUpdate;
 
                 return new GithubUpdateInfo(true, updatedRelease.Tag, release.Markdown
                     .Replace("\\r", "\r")
@@ -64,7 +69,7 @@ namespace BUtil.Core.Misc
 
     public record class GithubUpdateInfo(
         bool HasUpdate,
-        string Version,
-        string Changes
+        string? Version,
+        string? Changes
     );
 }

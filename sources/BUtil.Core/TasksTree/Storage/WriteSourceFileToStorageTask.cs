@@ -6,6 +6,7 @@ using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading;
 
@@ -77,7 +78,7 @@ namespace BUtil.Core.TasksTree
             UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
         }
 
-        private bool FileAlreadyInStorage(out StorageFile matchingStorageFile)
+        private bool FileAlreadyInStorage([NotNullWhen(true)]out StorageFile? matchingStorageFile)
         {
             matchingStorageFile = null;
             if (this._versionStates.Count < 2)

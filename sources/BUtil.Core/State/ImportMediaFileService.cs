@@ -21,7 +21,7 @@ namespace BUtil.Core.State
                 Directory.CreateDirectory(_folder);
         }
 
-        public ImportMediaState Load(string name)
+        public ImportMediaState? Load(string name)
         {
             var fileName = GetFileName(name);
             if (!File.Exists(fileName))

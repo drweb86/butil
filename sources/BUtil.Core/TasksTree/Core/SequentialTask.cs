@@ -9,12 +9,13 @@ namespace BUtil.Core.TasksTree.Core
 
     public class SequentialBuTask : BuTask
     {
-        public IEnumerable<BuTask> Children { get; set; }
+        public IEnumerable<BuTask> Children { get; set; } = Enumerable.Empty<BuTask>();
 
-        public SequentialBuTask(ILog log, TaskEvents events, string title, IEnumerable<BuTask> children)
+        public SequentialBuTask(ILog log, TaskEvents events, string title, IEnumerable<BuTask>? children = null)
             : base(log, events, title)
         {
-            Children = children;
+            if (children != null)
+                Children = children;
         }
 
         public override void Execute()

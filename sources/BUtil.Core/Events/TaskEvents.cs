@@ -7,9 +7,9 @@ namespace BUtil.Core.Events
 {
     public class TaskEvents
     {
-        public event EventHandler<TaskProgressEventArgs> OnTaskProgress;
-        public event EventHandler<DuringExecutionTasksAddedEventArgs> OnDuringExecutionTasksAdded;
-        public event EventHandler<MessageEventArgs> OnMessage;
+        public event EventHandler<TaskProgressEventArgs>? OnTaskProgress;
+        public event EventHandler<DuringExecutionTasksAddedEventArgs>? OnDuringExecutionTasksAdded;
+        public event EventHandler<MessageEventArgs>? OnMessage;
 
         public void TaskProgessUpdate(Guid taskId, ProcessingStatus status)
         {

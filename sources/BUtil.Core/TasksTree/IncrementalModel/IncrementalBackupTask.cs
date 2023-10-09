@@ -25,10 +25,10 @@ namespace BUtil.Core.TasksTree.IncrementalModel
 
             _storageService = new StorageSpecificServicesIoc(Log, storage, _commonServicesIoc.HashService);
 
-            var readSatesTask = new GetStateOfSourceItemsAndStoragesTask(Log, Events, modelOptions.Items, _commonServicesIoc, _storageService, modelOptions.FileExcludePatterns, (backupTask.Model as IncrementalBackupModelOptionsV2).Password);
+            var readSatesTask = new GetStateOfSourceItemsAndStoragesTask(Log, Events, modelOptions.Items, _commonServicesIoc, _storageService, modelOptions.FileExcludePatterns, ((IncrementalBackupModelOptionsV2)backupTask.Model).Password);
             tasks.Add(readSatesTask);
 
-            tasks.Add(new WriteIncrementedVersionTask(_storageService, Events, readSatesTask.StorageStateTask, readSatesTask.GetSourceItemStateTasks, backupTask.Model as IncrementalBackupModelOptionsV2));
+            tasks.Add(new WriteIncrementedVersionTask(_storageService, Events, readSatesTask.StorageStateTask, readSatesTask.GetSourceItemStateTasks, (IncrementalBackupModelOptionsV2)backupTask.Model));
 
             Children = tasks;
         }
@@ -54,7 +54,7 @@ namespace BUtil.Core.TasksTree.IncrementalModel
         }
 
         private List<string> _lastMinuteLogMessages = new List<string>();
-        private void OnAddLastMinuteLogMessage(object sender, MessageEventArgs e)
+        private void OnAddLastMinuteLogMessage(object? sender, MessageEventArgs e)
         {
             _lastMinuteLogMessages.Add(e.Message);
         }

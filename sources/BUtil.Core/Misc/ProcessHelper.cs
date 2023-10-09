@@ -9,7 +9,7 @@ namespace BUtil.Core.Misc
         public static void Execute(
             string executable,
             string args,
-            string workingDirectory,
+            string? workingDirectory,
 
             bool sendNewLine,
             ProcessPriorityClass processPriority,
@@ -24,7 +24,8 @@ namespace BUtil.Core.Misc
             var process = new Process();
             
             process.StartInfo.FileName = executable;
-            process.StartInfo.WorkingDirectory = workingDirectory;
+            if (workingDirectory != null)
+                process.StartInfo.WorkingDirectory = workingDirectory;
             process.StartInfo.Arguments = args;
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.CreateNoWindow = true;
@@ -62,7 +63,7 @@ namespace BUtil.Core.Misc
             else
             {
                 process.Kill();
-                stdOutput = null;
+                stdOutput = string.Empty;
                 stdError = "Processed was killed due to cancellation.";
                 returnCode = -1;
             }

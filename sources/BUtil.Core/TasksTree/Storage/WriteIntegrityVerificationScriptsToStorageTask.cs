@@ -4,6 +4,7 @@ using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
 using BUtil.Core.TasksTree.States;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -71,7 +72,7 @@ namespace BUtil.Core.TasksTree.Storage
 
         private string GetPowershellScriptContent()
         {
-            var storageFiles = _getIncrementedVersionTask.IncrementalBackupState.VersionStates
+            var storageFiles = (_getIncrementedVersionTask.IncrementalBackupState ?? throw new Exception()).VersionStates
                 .SelectMany(x => x.SourceItemChanges)
                 .SelectMany(x =>
                 {
@@ -81,7 +82,7 @@ namespace BUtil.Core.TasksTree.Storage
                     return items;
                 })
                 .ToList();
-            storageFiles.Add(_writeStateToStorageTask.StateStorageFile);
+            storageFiles.Add((_writeStateToStorageTask.StateStorageFile ?? throw new Exception()));
 
             var lines = storageFiles
                 .GroupBy(x => x.StorageRelativeFileName)

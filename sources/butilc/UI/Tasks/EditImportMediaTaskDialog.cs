@@ -19,7 +19,7 @@ namespace BUtil.ConsoleBackup.UI
         {
             InitializeComponent();
 
-            var options = (ImportMediaTaskModelOptionsV2)task?.Model ?? ImportMediaTaskModelOptionsV2.CreateDefault();
+            var options = task?.Model as ImportMediaTaskModelOptionsV2 ?? new ImportMediaTaskModelOptionsV2();
             _from = options.From;
             _destinationFolderTextField.Text = options.DestinationFolder;
             _transformFileNameTextField.Text = options.TransformFileName;

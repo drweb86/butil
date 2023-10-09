@@ -1,13 +1,19 @@
 ﻿
 namespace BUtil.ConsoleBackup.UI {
+    using System.Diagnostics.CodeAnalysis;
     using Terminal.Gui;
     
     public partial class EditImportMediaTaskDialog : Terminal.Gui.Dialog
     {
+        [NotNull]
         private Terminal.Gui.TextField _titleTextField;
+        [NotNull]
         private Terminal.Gui.TextField _destinationFolderTextField;
+        [NotNull]
         private Terminal.Gui.TextField _transformFileNameTextField;
+        [NotNull]
         private Terminal.Gui.Label _transformFileNameLabel;
+        [NotNull]
         private Terminal.Gui.CheckBox _skipAlreadyImportedFilesCheckBox;
 
         private void InitializeComponent() {

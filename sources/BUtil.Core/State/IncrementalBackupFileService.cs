@@ -33,7 +33,7 @@ namespace BUtil.Core.State
             var sourceItemRelativeFileName = SourceItemHelper.GetSourceItemRelativeFileName(sourceItemDiectory, storageFile.FileState);
             var destinationFileName = Path.Combine(destinationFolder, sourceItemRelativeFileName);
             var destinationDir = Path.GetDirectoryName(destinationFileName);
-            if (!Directory.Exists(destinationDir))
+            if (destinationDir != null && !Directory.Exists(destinationDir))
                 Directory.CreateDirectory(destinationDir);
 
             using var tempFolder = new TempFolder();

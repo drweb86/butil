@@ -1,9 +1,9 @@
-﻿using BUtil.Core.ConfigurationFileModels.V2;
-using BUtil.Core.Events;
+﻿using BUtil.Core.Events;
 using BUtil.Core.Misc;
 using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -18,7 +18,7 @@ namespace BUtil.Core.TasksTree.Storage
             StorageSpecificServicesIoc services,
             TaskEvents events,
             CalculateIncrementedVersionForStorageTask getIncrementedVersionTask)
-            : base(services.Log, events, Localization.Resources.File_List_Saving, null)
+            : base(services.Log, events, Localization.Resources.File_List_Saving)
         {
             _services = services;
             _getIncrementedVersionTask = getIncrementedVersionTask;
@@ -38,7 +38,7 @@ namespace BUtil.Core.TasksTree.Storage
             }
 
             List<WriteSourceFileToStorageTask> WriteFileTasks = new List<WriteSourceFileToStorageTask>();
-            var versionStates = _getIncrementedVersionTask.IncrementalBackupState.VersionStates;
+            var versionStates = (_getIncrementedVersionTask.IncrementalBackupState ?? throw new Exception()).VersionStates;
             var versionState = versionStates.Last();
             var singleBackupQuotaGb = new Quota(_services.StorageSettings.SingleBackupQuotaGb * 1024 * 1024 * 1024);
             foreach (var sourceItemChange in versionState.SourceItemChanges)

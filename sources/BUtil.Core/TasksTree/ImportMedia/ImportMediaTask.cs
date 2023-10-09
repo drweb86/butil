@@ -15,9 +15,9 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
         private readonly CommonServicesIoc _commonServicesIoc = new();
 
         public ImportMediaTask(ILog log, TaskEvents backupEvents, TaskV2 backupTask)
-            : base(log, backupEvents, string.Empty, null)
+            : base(log, backupEvents, string.Empty)
         {
-            var typedModel = backupTask.Model as ImportMediaTaskModelOptionsV2;
+            var typedModel = (ImportMediaTaskModelOptionsV2)backupTask.Model;
             var sourceItem = new SourceItemV2(typedModel.DestinationFolder, true);
 
             var getStateOfSourceItemTask = new GetStateOfSourceItemTask(log, backupEvents, sourceItem, Array.Empty<string>(), _commonServicesIoc);
@@ -46,7 +46,7 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
         }
 
         private List<string> _lastMinuteLogMessages = new List<string>();
-        private void OnAddLastMinuteLogMessage(object sender, MessageEventArgs e)
+        private void OnAddLastMinuteLogMessage(object? sender, MessageEventArgs e)
         {
             _lastMinuteLogMessages.Add(e.Message);
         }

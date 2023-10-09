@@ -6,6 +6,7 @@ using BUtil.Core.State;
 using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
         private readonly CommonServicesIoc _commonServicesIoc;
 
         public ImportFilesTask(ILog log, TaskEvents backupEvents, TaskV2 backupTask, GetStateOfSourceItemTask getStateOfSourceItemTask, CommonServicesIoc commonServicesIoc)
-            : base(log, backupEvents, BUtil.Core.Localization.Resources.ImportMediaTask_AllFiles, null)
+            : base(log, backupEvents, BUtil.Core.Localization.Resources.ImportMediaTask_AllFiles)
         {
             Children = new List<BuTask>();
             _task = backupTask;
@@ -43,7 +44,7 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
             var fromStorageFilesToProcess = fromStorageFiles.Where(x => !importMediaState.Files.Contains(x)).ToList();
             
             var tasks = fromStorageFilesToProcess
-                .Select(x => new ImportSingleFileTask(Log, Events, x, fromStorage, toStorage, transformFileName, _getStateOfSourceItemTask.SourceItemState, _commonServicesIoc))
+                .Select(x => new ImportSingleFileTask(Log, Events, x, fromStorage, toStorage, transformFileName, _getStateOfSourceItemTask.SourceItemState ?? throw new InvalidOperationException(), _commonServicesIoc))
                 .ToList();
             Events.DuringExecutionTasksAdded(Id, tasks);
             

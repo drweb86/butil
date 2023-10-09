@@ -31,7 +31,7 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
             string transformFileName,
             SourceItemState state,
             CommonServicesIoc commonServicesIoc)
-            : base(log, backupEvents, null)
+            : base(log, backupEvents, string.Empty)
         {
             File = fromFile;
             _state = state;
@@ -68,7 +68,7 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
                         UpdateStatus(ProcessingStatus.FinishedWithErrors);
                         return;
                     }
-                    if (_state.FileStates.Any(x => x.CompareTo(getState.State, true)))
+                    if (_state.FileStates.Any(x => x.CompareTo(getState.State ?? throw new InvalidOperationException(), true)))
                     {
                         Log.WriteLine(LoggingEvent.Debug, $"File {File} is already exists in destination folder. Skipping.");
                         IsSuccess = true;
@@ -100,7 +100,9 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
             while (_toStorage.Exists(actualDestFile))
             {
                 id++;
-                actualDestFile = Path.Combine(Path.GetDirectoryName(destFile), $"{Path.GetFileNameWithoutExtension(destFile)}_{id}{Path.GetExtension(destFile)}");
+                var fileName = $"{Path.GetFileNameWithoutExtension(destFile)}_{id}{Path.GetExtension(destFile)}";
+                var dirName = Path.GetDirectoryName(destFile);
+                actualDestFile = !string.IsNullOrWhiteSpace(dirName) ? Path.Combine(dirName, fileName) : fileName;
             }
 
             return actualDestFile;
@@ -109,7 +111,7 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
         private string GetDestinationFileName(DateTime lastWriteTime)
         {
             var relativePath = DateTokenReplacer.ParseString(_transformFileName, lastWriteTime);
-            var relativeDir = Path.GetDirectoryName(relativePath);
+            var relativeDir = Path.GetDirectoryName(relativePath) ?? string.Empty;
             foreach (var ch in Path.GetInvalidPathChars())
             {
                 relativeDir = relativeDir.Replace(ch, '_');
@@ -121,7 +123,8 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
                 relativeFileName = relativeFileName.Replace(ch, '_');
             }
 
-            var destFile = Path.Combine(relativeDir, $"{relativeFileName}{Path.GetExtension(this.File)}");
+            var fileName = $"{relativeFileName}{Path.GetExtension(this.File)}";
+            var destFile = string.IsNullOrWhiteSpace(relativeDir) ? fileName : Path.Combine(relativeDir, fileName);
 
             return destFile;
         }

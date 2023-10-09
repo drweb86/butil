@@ -3,8 +3,8 @@
     public class MtpStorageSettings : IStorageSettingsV2
     {
         public long SingleBackupQuotaGb { get; set; }
-        public string Device { get; set; }
-        public string Folder { get; set; }
+        public string Device { get; set; } = string.Empty;
+        public string Folder { get; set; } = string.Empty;
 
     }
 }

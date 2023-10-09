@@ -11,7 +11,7 @@ namespace BUtil.ConsoleBackup
 {
     internal class Controller : IDisposable
     {
-        ILog _log;
+        private ILog _log;
 
         public Controller()
         {

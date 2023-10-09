@@ -12,7 +12,7 @@ namespace BUtil.Core.TasksTree
     internal class CalculateIncrementedVersionForStorageTask: BuTask
     {
         public bool VersionIsNeeded { get; private set; }
-        public IncrementalBackupState IncrementalBackupState { get; private set; }
+        public IncrementalBackupState? IncrementalBackupState { get; private set; }
 
         private readonly GetStateOfStorageTask _storageStateTask;
         private readonly IEnumerable<GetStateOfSourceItemTask> _getSourceItemStateTasks;
@@ -29,9 +29,17 @@ namespace BUtil.Core.TasksTree
             UpdateStatus(ProcessingStatus.InProgress);
 
             var storageState = _storageStateTask.StorageState;
+            if (storageState == null)
+            {
+                UpdateStatus(ProcessingStatus.FinishedWithErrors);
+                IsSuccess = false;
+                return;
+            }
+
             var sourceItemStates = _getSourceItemStateTasks
-                .Select(item => item.SourceItemState)
+                .Select(item => item.SourceItemState ?? throw new InvalidOperationException())
                 .ToList();
+
 
             var versionState = Compare(storageState.LastSourceItemStates, sourceItemStates);
             storageState.VersionStates.Add(versionState);
@@ -48,7 +56,7 @@ namespace BUtil.Core.TasksTree
         private static VersionState Compare(IEnumerable<SourceItemState> a, IEnumerable<SourceItemState> b)
         {
             var matchingBtoA = b
-                .ToDictionary(x => x, x => (SourceItemState)null);
+                .ToDictionary(x => x, x => (SourceItemState?)null);
 
             foreach (var item in a)
             {

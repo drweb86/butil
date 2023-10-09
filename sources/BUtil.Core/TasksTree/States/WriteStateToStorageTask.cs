@@ -4,6 +4,7 @@ using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
 using BUtil.Core.TasksTree.Storage;
+using System;
 
 namespace BUtil.Core.TasksTree.States
 {
@@ -14,7 +15,7 @@ namespace BUtil.Core.TasksTree.States
         private readonly CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask;
         private readonly WriteSourceFilesToStorageTask _writeSourceFilesToStorageTask;
 
-        public StorageFile StateStorageFile { get; private set; }
+        public StorageFile? StateStorageFile { get; private set; }
 
         public WriteStateToStorageTask(
             StorageSpecificServicesIoc services,
@@ -50,7 +51,7 @@ namespace BUtil.Core.TasksTree.States
                 return;
             }
             
-            StateStorageFile = _services.IncrementalBackupStateService.Write(_incrementalBackupModelOptions, _getIncrementedVersionTask.IncrementalBackupState);
+            StateStorageFile = _services.IncrementalBackupStateService.Write(_incrementalBackupModelOptions, _getIncrementedVersionTask.IncrementalBackupState ?? throw new InvalidOperationException());
             IsSuccess = StateStorageFile != null;
             UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
         }

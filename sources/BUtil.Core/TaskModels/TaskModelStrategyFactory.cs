@@ -5,6 +5,7 @@ using BUtil.Core.Logs;
 using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.MediaSyncBackupModel;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 
 namespace BUtil.Core.BackupModels
@@ -20,7 +21,7 @@ namespace BUtil.Core.BackupModels
             throw new ArgumentOutOfRangeException(nameof(task));
         }
 
-        public static bool TryVerify(ILog log, ITaskModelOptionsV2 options, out string error)
+        public static bool TryVerify(ILog log, ITaskModelOptionsV2 options, [NotNullWhen(false)] out string? error)
         {
             error = null;
             if (options is IncrementalBackupModelOptionsV2)

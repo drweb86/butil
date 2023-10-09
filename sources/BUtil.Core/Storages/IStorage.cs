@@ -11,8 +11,8 @@ namespace BUtil.Core.Storages
         void Download(string relativeFileName, string targetFileName);
         bool Exists(string relativeFileName);
         void DeleteFolder(string relativeFolderName);
-        string[] GetFolders(string relativeFolderName, string mask = null);
-        string[] GetFiles(string relativeFolderName = null, SearchOption option = SearchOption.TopDirectoryOnly);
+        string[] GetFolders(string relativeFolderName, string? mask = null);
+        string[] GetFiles(string? relativeFolderName = null, SearchOption option = SearchOption.TopDirectoryOnly);
         DateTime GetModifiedTime(string relativeFileName);
         string? Test();
     }

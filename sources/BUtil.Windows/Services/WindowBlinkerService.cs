@@ -1,29 +1,17 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using BUtil.Core.Services;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using System.Runtime.Versioning;
 
-namespace BUtil.Core.OSSpecific
+namespace BUtil.Windows.Services
 {
-    public static class OSSpecific
+    class WindowBlinkerService : IWindowBlinkerService
     {
-        [SupportedOSPlatform("windows")]
-        public static void ScheduleOpeningFileAfterLoginOfUserIntoTheSystem(string filename)
+        public void Blink()
         {
-            RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion", true);
-            RegistryKey writeKey = key.OpenSubKey("RunOnce", true);
-            if (writeKey == null)
-            {
-                key.CreateSubKey("RunOnce");
-                writeKey = key.OpenSubKey("RunOnce", true);
-            }
-
-            writeKey.SetValue("BUtil Backup Report", "\"" + filename + "\"");
+            FlashWindow.Flash(10);
         }
 
-        [SupportedOSPlatform("windows")]
-        public static class FlashWindow
+        static class FlashWindow
         {
             [DllImport("user32.dll")]
             [return: MarshalAs(UnmanagedType.Bool)]
@@ -95,8 +83,8 @@ namespace BUtil.Core.OSSpecific
             {
                 var handle = Process.GetCurrentProcess().MainWindowHandle;
                 // Make sure we're running under Windows 2000 or later
-                    FLASHWINFO fi = Create_FLASHWINFO(handle, FLASHW_ALL | FLASHW_TIMERNOFG, uint.MaxValue, 0);
-                    return FlashWindowEx(ref fi);
+                FLASHWINFO fi = Create_FLASHWINFO(handle, FLASHW_ALL | FLASHW_TIMERNOFG, uint.MaxValue, 0);
+                return FlashWindowEx(ref fi);
             }
 
             private static FLASHWINFO Create_FLASHWINFO(IntPtr handle, uint flags, uint count, uint timeout)
@@ -119,8 +107,8 @@ namespace BUtil.Core.OSSpecific
             public static bool Flash(uint count)
             {
                 var handle = Process.GetCurrentProcess().MainWindowHandle;
-                    FLASHWINFO fi = Create_FLASHWINFO(handle, FLASHW_ALL, count, 0);
-                    return FlashWindowEx(ref fi);
+                FLASHWINFO fi = Create_FLASHWINFO(handle, FLASHW_ALL, count, 0);
+                return FlashWindowEx(ref fi);
             }
 
             /// <summary>
@@ -131,8 +119,8 @@ namespace BUtil.Core.OSSpecific
             public static bool Start()
             {
                 var handle = Process.GetCurrentProcess().MainWindowHandle;
-                    FLASHWINFO fi = Create_FLASHWINFO(handle, FLASHW_ALL, uint.MaxValue, 0);
-                    return FlashWindowEx(ref fi);
+                FLASHWINFO fi = Create_FLASHWINFO(handle, FLASHW_ALL, uint.MaxValue, 0);
+                return FlashWindowEx(ref fi);
             }
 
             /// <summary>
@@ -143,8 +131,8 @@ namespace BUtil.Core.OSSpecific
             public static bool Stop()
             {
                 var handle = Process.GetCurrentProcess().MainWindowHandle;
-                    FLASHWINFO fi = Create_FLASHWINFO(handle, FLASHW_STOP, uint.MaxValue, 0);
-                    return FlashWindowEx(ref fi);
+                FLASHWINFO fi = Create_FLASHWINFO(handle, FLASHW_STOP, uint.MaxValue, 0);
+                return FlashWindowEx(ref fi);
             }
         }
     }

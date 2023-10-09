@@ -5,10 +5,10 @@ namespace BUtil.Core.State
 {
     public class FileState
     {
-        public string FileName { get; set; }
+        public string FileName { get; set; } = string.Empty;
         public DateTime LastWriteTimeUtc { get; set; }
         public long Size { get; set; }
-        public string Sha512 { get; set; }
+        public string Sha512 { get; set; } = string.Empty;
 
         public FileState() { } // Deserialization
 

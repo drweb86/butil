@@ -12,8 +12,8 @@ namespace BUtil.Core.Storages
 {
     class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
     {
-        private readonly string _normalizedFolder;
-        private FtpClient _client;
+        private readonly string? _normalizedFolder;
+        private readonly FtpClient _client;
 
         internal FtpsStorage(ILog log, FtpsStorageSettingsV2 settings)
             : base(log, settings)
@@ -27,9 +27,9 @@ namespace BUtil.Core.Storages
             if (string.IsNullOrWhiteSpace(Settings.Password))
                 throw new InvalidDataException(BUtil.Core.Localization.Resources.Password_Field_Validation_NotSpecified);
 
-            _normalizedFolder = NormalizePath(Settings.Folder);
+            _normalizedFolder = NormalizeNullablePath(Settings.Folder);
 
-            Mount();
+            _client = Mount();
         }
 
         private readonly object _uploadLock = new();
@@ -37,7 +37,7 @@ namespace BUtil.Core.Storages
         {
             lock (_uploadLock) // because we're limited by upload speed by Server and Internet
             {
-                var remotePath = GetRemotePath(relativeFileName, false);
+                var remotePath = GetRemoteNotNullablePath(relativeFileName);
                 var status = _client.UploadFile(sourceFile, remotePath, FtpRemoteExists.Overwrite, true);
                 if (status != FtpStatus.Success)
                     throw new Exception("Failed to upload.");
@@ -52,11 +52,11 @@ namespace BUtil.Core.Storages
 
         public override void DeleteFolder(string relativeFolderName)
         {
-            var remotePath = GetRemotePath(relativeFolderName, false);
+            var remotePath = GetRemoteNotNullablePath(relativeFolderName);
             _client.DeleteDirectory(remotePath);
         }
 
-        public override string[] GetFolders(string relativeFolderName, string mask = null)
+        public override string[] GetFolders(string? relativeFolderName, string? mask = null)
         {
             FtpListOption listOption = FtpListOption.Auto;
             var remotePath = GetRemotePath(relativeFolderName, true);
@@ -65,9 +65,9 @@ namespace BUtil.Core.Storages
                 .GetListing(remotePath, listOption)
                 .Where(x => x.Type == FtpObjectType.Directory)
                 .Select(x => x.FullName)
-                .Select(NormalizePath)
+                .Select(NormalizeNotNullablePath)
                 .Select(x => remotePath == null ? x : x.Substring(remotePath.Length))
-                .Select(NormalizePath)
+                .Select(NormalizeNotNullablePath)
                 .Where(x => mask == null || FitsMask(Path.GetFileName(x), mask))
                 .ToArray();
         }
@@ -78,13 +78,14 @@ namespace BUtil.Core.Storages
             return mask.IsMatch(fileName);
         }
 
-        private void Mount()
+        private FtpClient Mount()
         {
             Log.WriteLine(LoggingEvent.Debug, $"Mount");
-            _client = new FtpClient(Settings.Host, Settings.User, Settings.Password, Settings.Port);
-            _client.Config.EncryptionMode = GetFtpEncryptionMode();
-            _client.Config.ValidateAnyCertificate = true;
-            _client.Connect();
+            var client = new FtpClient(Settings.Host, Settings.User, Settings.Password, Settings.Port);
+            client.Config.EncryptionMode = GetFtpEncryptionMode();
+            client.Config.ValidateAnyCertificate = true;
+            client.Connect();
+            return _client;
         }
 
         private FtpEncryptionMode GetFtpEncryptionMode()
@@ -107,11 +108,11 @@ namespace BUtil.Core.Storages
             _client.Dispose();
         }
 
-        public override string Test()
+        public override string? Test()
         {
             if (string.IsNullOrWhiteSpace(Settings.Folder) && !_client.DirectoryExists(Settings.Folder))
             {
-                return BUtil.Core.Localization.Resources.Field_Folder_Validation_NotExist;
+                return Localization.Resources.Field_Folder_Validation_NotExist;
             }
             else
             {
@@ -129,19 +130,19 @@ namespace BUtil.Core.Storages
 
         public override bool Exists(string relativeFileName)
         {
-            var remotePath = this.GetRemotePath(relativeFileName, false);
+            var remotePath = GetRemoteNotNullablePath(relativeFileName);
             return _client.FileExists(remotePath);
         }
 
         public override void Delete(string relativeFileName)
         {
-            var remotePath = this.GetRemotePath(relativeFileName, false);
+            var remotePath = GetRemoteNotNullablePath(relativeFileName);
             _client.DeleteFile(remotePath);
         }
 
         public override void Download(string relativeFileName, string targetFileName)
         {
-            var remotePath = this.GetRemotePath(relativeFileName, false);
+            var remotePath = GetRemoteNotNullablePath(relativeFileName);
             var status = _client.DownloadFile(targetFileName, remotePath);
             if (status != FtpStatus.Success)
             {
@@ -149,25 +150,42 @@ namespace BUtil.Core.Storages
             }
         }
 
-        private static string NormalizePath(string path)
+        private static string? NormalizeNullablePath(string? path)
         {
-            if (path != null && path.Contains(".."))
-                throw new SecurityException("[..] is not allowed in path.");
-
-            return path?.Trim(new[] { '\\', '/' });
+            if (path == null)
+                return null;
+            return NormalizeNotNullablePath(path);
         }
 
-        private string GetRemotePath(string relativePath, bool allowNull)
+        private static string NormalizeNotNullablePath(string path)
         {
-            var normalizedRelativePath = NormalizePath(relativePath);
+            if (path.Contains(".."))
+                throw new SecurityException("[..] is not allowed in path.");
+
+            return path.Trim(new[] { '\\', '/' });
+        }
+
+        private string? GetRemotePath(string? relativePath, bool allowNull)
+        {
+            var normalizedRelativePath = NormalizeNullablePath(relativePath);
             if (!allowNull && string.IsNullOrWhiteSpace(normalizedRelativePath))
             {
                 throw new ArgumentNullException(nameof(relativePath));
             }
-            return normalizedRelativePath == null ? this._normalizedFolder : Path.Combine(this._normalizedFolder, normalizedRelativePath);
+            return normalizedRelativePath == null ? _normalizedFolder : string.IsNullOrWhiteSpace(_normalizedFolder) ? normalizedRelativePath : Path.Combine(_normalizedFolder, normalizedRelativePath);
         }
 
-        public override string[] GetFiles(string relativeFolderName = null, SearchOption option = SearchOption.TopDirectoryOnly)
+        private string GetRemoteNotNullablePath(string relativePath)
+        {
+            var normalizedRelativePath = NormalizeNullablePath(relativePath);
+            if (string.IsNullOrWhiteSpace(normalizedRelativePath))
+                throw new ArgumentNullException(nameof(relativePath));
+            return string.IsNullOrWhiteSpace(this._normalizedFolder)
+                ? normalizedRelativePath
+                : Path.Combine(this._normalizedFolder, normalizedRelativePath);
+        }
+
+        public override string[] GetFiles(string? relativeFolderName = null, SearchOption option = SearchOption.TopDirectoryOnly)
         {
             FtpListOption listOption = FtpListOption.Auto;
             if (option == SearchOption.AllDirectories)
@@ -178,15 +196,15 @@ namespace BUtil.Core.Storages
                 .GetListing(remoteFolder, listOption)
                 .Where(x => x.Type == FtpObjectType.File)
                 .Select(x => x.FullName)
-                .Select(NormalizePath)
+                .Select(NormalizeNotNullablePath)
                 .Select(x => remoteFolder == null ? x : x.Substring(remoteFolder.Length))
-                .Select(NormalizePath)
+                .Select(NormalizeNotNullablePath)
                 .ToArray();
         }
 
         public override DateTime GetModifiedTime(string relativeFileName)
         {
-            var remotePath = GetRemotePath(relativeFileName, false);
+            var remotePath = GetRemoteNotNullablePath(relativeFileName);
             return _client.GetModifiedTime(remotePath);
         }
 

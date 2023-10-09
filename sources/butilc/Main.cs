@@ -11,7 +11,7 @@ Console.WriteLine();
 
 try
 {
-    NativeMethods.PreventSleep();
+    PlatformSpecificExperience.Instance.GetIOsSleepPreventionService()?.PreventSleep();
     using var controller = new Controller();
 
     if (args.Length != 0)

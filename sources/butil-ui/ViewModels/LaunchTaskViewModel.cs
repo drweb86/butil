@@ -1,7 +1,4 @@
-﻿using Avalonia.Controls;
-using Avalonia.Controls.Primitives;
-using Avalonia.Media;
-using Avalonia.Themes.Fluent;
+﻿using Avalonia.Media;
 using Avalonia.Threading;
 using BUtil.Core;
 using BUtil.Core.BackupModels;
@@ -11,7 +8,6 @@ using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
-using BUtil.Core.OSSpecific;
 using BUtil.Core.Settings;
 using BUtil.Core.TasksTree.Core;
 using System;
@@ -341,7 +337,7 @@ public class LaunchTaskViewModel : PageViewModelBase
         _thread = new Thread(() =>
         {
             Thread.CurrentThread.IsBackground = true;
-            NativeMethods.PreventSleep();
+            PlatformSpecificExperience.Instance.GetIOsSleepPreventionService()?.PreventSleep();
             _threadTask?.Execute();
             Dispatcher.UIThread.Invoke(OnTaskCompleted);
         });
@@ -539,15 +535,20 @@ public class LaunchTaskViewModel : PageViewModelBase
             {
                 ProcessHelper.ShellExecute(_log.LogFilename);
             }
-            OSSpecific.FlashWindow.Flash(10);
-            NativeMethods.StopPreventSleep();
+
+            PlatformSpecificExperience.Instance.GetWindowBlinkerService()?.Blink();
+            PlatformSpecificExperience.Instance.GetIOsSleepPreventionService()?.StopPreventSleep();
             return;
         }
-        
-        if (_log.HasErrors)
-            OSSpecific.ScheduleOpeningFileAfterLoginOfUserIntoTheSystem(_log.LogFilename);
 
-        NativeMethods.StopPreventSleep();
+        if (_log.HasErrors)
+        {
+            PlatformSpecificExperience.Instance
+                .GetShowLogOnSystemLoginService()
+                ?.ShowLogOnSystemLoginService(_log.LogFilename);
+        }
+
+        PlatformSpecificExperience.Instance.GetIOsSleepPreventionService()?.StopPreventSleep();
         PowerPC.DoTask(_selectedPowerTask);
         Environment.Exit(_log.HasErrors ? -1 : 0);
     }

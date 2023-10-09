@@ -14,7 +14,8 @@ namespace BUtil.Core.Hashing
     {
         private readonly ICashedHashStoreService _cashedHashStoreService;
         private readonly object _sync = new ();
-        private ConcurrentBag<CachedHash> _cachedHashes;
+        private ConcurrentBag<CachedHash> _cachedHashes = new ();
+        private bool _isCachedHashesLoaded = false;
         private const int _daysExpiration = 365;
 
         public CachedHashService(ICashedHashStoreService cashedHashStoreService)
@@ -52,13 +53,13 @@ namespace BUtil.Core.Hashing
                 if (cachedEntity.Size != fileInfo.Length ||
                     cachedEntity.LastWriteTimeUtc != fileInfo.LastWriteTimeUtc)
                 {
-                    cachedEntity.Sha512 = null;
+                    cachedEntity.Sha512 = string.Empty;
                 }
             }
             cachedEntity.Expiration = DateTime.UtcNow.AddDays(_daysExpiration);
             cachedEntity.Size = fileInfo.Length;
             cachedEntity.LastWriteTimeUtc = fileInfo.LastWriteTimeUtc;
-            if (cachedEntity.Sha512 == null)
+            if (string.IsNullOrWhiteSpace(cachedEntity.Sha512))
             {
                 cachedEntity.Sha512 = GetSha512Internal(file);
             }
@@ -70,12 +71,12 @@ namespace BUtil.Core.Hashing
         {
             lock (_sync)
             {
-                if (_cachedHashes == null)
+                if (!_isCachedHashesLoaded)
                 {
-                    _cachedHashes = new ConcurrentBag<CachedHash>();
                     var cachedHashes = _cashedHashStoreService.Load() ?? new List<CachedHash>();
                     foreach (var cachedHash in cachedHashes)
                         _cachedHashes.Add(cachedHash);
+                    _isCachedHashesLoaded = true;
                 }
             }
         }

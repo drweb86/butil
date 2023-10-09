@@ -6,6 +6,7 @@ using BUtil.Core.Hashing;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.TasksTree.IncrementalModel;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Text.Json;
 
@@ -24,7 +25,7 @@ namespace BUtil.Core.State
             _hashService = hashService;
         }
 
-        public bool TryRead(string password, out IncrementalBackupState state)
+        public bool TryRead(string password, [NotNullWhen(true)] out IncrementalBackupState? state)
         {
             _log.WriteLine(LoggingEvent.Debug, $"Reading state");
             using var tempFolder = new TempFolder();
@@ -38,21 +39,21 @@ namespace BUtil.Core.State
                 if (!archiver.Extract(destFile, password, tempFolder.Folder))
                 {
                     _log.WriteLine(LoggingEvent.Error, $"Failed to read state");
-                    state = null;
+                    state = default;
                     return false;
                 }
 
                 var uncompressedFile = Path.Combine(tempFolder.Folder, IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile);
                 using var uncompressedFileStream = File.OpenRead(uncompressedFile);
                 state = JsonSerializer.Deserialize<IncrementalBackupState>(uncompressedFileStream);
-                return true;
+                return state != null;
             }
 
             state = new IncrementalBackupState();
             return true;
         }
 
-        public StorageFile Write(IncrementalBackupModelOptionsV2 incrementalBackupModelOptions, IncrementalBackupState state)
+        public StorageFile? Write(IncrementalBackupModelOptionsV2 incrementalBackupModelOptions, IncrementalBackupState state)
         {
             _log.WriteLine(LoggingEvent.Debug, $"Writing state");
             _services.Storage.Delete(IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile);

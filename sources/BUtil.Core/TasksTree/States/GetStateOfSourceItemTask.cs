@@ -7,6 +7,7 @@ using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
 using BUtil.Core.TasksTree.States;
 using Microsoft.Extensions.FileSystemGlobbing;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -15,16 +16,15 @@ namespace BUtil.Core.TasksTree
 {
     internal class GetStateOfSourceItemTask : SequentialBuTask
     {
-        private List<GetStateOfFileTask> _getFileStateTasks;
         private readonly IEnumerable<string> _fileExcludePatterns;
         private readonly CommonServicesIoc _commonServicesIoc;
 
-        public SourceItemState SourceItemState { get; private set; } 
+        public SourceItemState? SourceItemState { get; private set; } 
 
         public SourceItemV2 SourceItem { get; }
 
         public GetStateOfSourceItemTask(ILog log, TaskEvents events, SourceItemV2 sourceItem, IEnumerable<string> fileExcludePatterns, CommonServicesIoc commonServicesIoc) : 
-            base(log, events, string.Format(BUtil.Core.Localization.Resources.SourceItem_State_Get, sourceItem.Target), null)
+            base(log, events, string.Format(BUtil.Core.Localization.Resources.SourceItem_State_Get, sourceItem.Target))
         {
             SourceItem = sourceItem;
             this._fileExcludePatterns = fileExcludePatterns;
@@ -46,17 +46,17 @@ namespace BUtil.Core.TasksTree
                 files.Add(SourceItem.Target);
             }
 
-            _getFileStateTasks = files
+            var getFileStateTasks = files
                 .Select(file => new GetStateOfFileTask(Log, Events, _commonServicesIoc, SourceItem, file))
                 .ToList();
-            Children = _getFileStateTasks;
+            Children = getFileStateTasks;
             Events.DuringExecutionTasksAdded(Id, Children);
 
             base.Execute();
 
             SourceItemState = new SourceItemState(SourceItem,
-                _getFileStateTasks
-                .Select(x => x.State)
+                getFileStateTasks
+                .Select(x => x.State ?? throw new InvalidOperationException())
                 .ToList());
 
             UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
