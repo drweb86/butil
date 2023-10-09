@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace BUtil.Core.Logs
+﻿namespace BUtil.Core.Logs
 {
     public enum LoggingEvent
     {
