@@ -8,7 +8,7 @@ namespace BUtil.Core.Logs
 {
     public static class FastStdConsole
     {
-        private static readonly StringBuilder _sb = new StringBuilder();
+        private static readonly StringBuilder _sb = new();
         private static volatile CancellationTokenSource? _cts;
         private static int _count;
 

@@ -45,7 +45,7 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel
                 Log.WriteLine(LoggingEvent.Debug, lastMinuteLogMessage);
         }
 
-        private List<string> _lastMinuteLogMessages = new List<string>();
+        private readonly List<string> _lastMinuteLogMessages = new();
         private void OnAddLastMinuteLogMessage(object? sender, MessageEventArgs e)
         {
             _lastMinuteLogMessages.Add(e.Message);

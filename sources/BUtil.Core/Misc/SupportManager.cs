@@ -44,7 +44,7 @@ namespace BUtil.Core.Misc
             SupportManager.DoSupport(SupportRequest.Homepage);
         }
 
-		static readonly string[] _LINKS_UPDATED = new string[]
+		static readonly string[] _lINKS_UPDATED = new string[]
 		{
 			"https://github.com/drweb86/butil",
             "https://github.com/drweb86/butil/releases/latest",
@@ -54,9 +54,9 @@ namespace BUtil.Core.Misc
 		{
 			int index = (int)kind;
 
-			if (index < _LINKS_UPDATED.Length)
+			if (index < _lINKS_UPDATED.Length)
 			{
-				string webLink = _LINKS_UPDATED[index];
+				string webLink = _lINKS_UPDATED[index];
 				ProcessHelper.ShellExecute(webLink);
 			}
 			else
@@ -67,8 +67,8 @@ namespace BUtil.Core.Misc
 		{
 			int index = (int)kind;
 
-			if (index < _LINKS_UPDATED.Length)
-				return _LINKS_UPDATED[index];
+			if (index < _lINKS_UPDATED.Length)
+				return _lINKS_UPDATED[index];
 			else
 				throw new NotImplementedException(kind.ToString());
 		}

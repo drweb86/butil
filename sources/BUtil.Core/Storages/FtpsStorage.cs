@@ -74,7 +74,7 @@ namespace BUtil.Core.Storages
 
         private static bool FitsMask(string fileName, string fileMask)
         {
-            Regex mask = new Regex(fileMask.Replace(".", "[.]").Replace("*", ".*").Replace("?", "."));
+            Regex mask = new(fileMask.Replace(".", "[.]").Replace("*", ".*").Replace("?", "."));
             return mask.IsMatch(fileName);
         }
 
@@ -90,12 +90,12 @@ namespace BUtil.Core.Storages
 
         private FtpEncryptionMode GetFtpEncryptionMode()
         {
-            switch (Settings.Encryption)
+            return Settings.Encryption switch
             {
-                case FtpsStorageEncryptionV2.Explicit: return FtpEncryptionMode.Explicit;
-                case FtpsStorageEncryptionV2.Implicit: return FtpEncryptionMode.Implicit;
-                default: throw new ArgumentOutOfRangeException(nameof(Settings.Encryption));
-            }
+                FtpsStorageEncryptionV2.Explicit => FtpEncryptionMode.Explicit,
+                FtpsStorageEncryptionV2.Implicit => FtpEncryptionMode.Implicit,
+                _ => throw new ArgumentOutOfRangeException(nameof(Settings.Encryption)),
+            };
         }
 
         private void Unmount()

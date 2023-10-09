@@ -19,17 +19,17 @@ namespace BUtil.Windows.Services
         {
             [DllImport("kernel32.dll")]
             private static extern uint SetThreadExecutionState(uint esFlags);
-            private const uint ES_CONTINUOUS = 0x80000000;
-            private const uint ES_SYSTEM_REQUIRED = 0x00000001;
+            private const uint _eS_CONTINUOUS = 0x80000000;
+            private const uint _eS_SYSTEM_REQUIRED = 0x00000001;
 
             public static void PreventSleep()
             {
-                SetThreadExecutionState(ES_CONTINUOUS | ES_SYSTEM_REQUIRED);
+                SetThreadExecutionState(_eS_CONTINUOUS | _eS_SYSTEM_REQUIRED);
             }
 
             public static void StopPreventSleep()
             {
-                SetThreadExecutionState(ES_CONTINUOUS);
+                SetThreadExecutionState(_eS_CONTINUOUS);
             }
         }
     }

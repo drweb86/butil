@@ -37,7 +37,7 @@ namespace BUtil.Core.TasksTree.Storage
                 return;
             }
 
-            List<WriteSourceFileToStorageTask> WriteFileTasks = new List<WriteSourceFileToStorageTask>();
+            List<WriteSourceFileToStorageTask> WriteFileTasks = new();
             var versionStates = (_getIncrementedVersionTask.IncrementalBackupState ?? throw new Exception()).VersionStates;
             var versionState = versionStates.Last();
             var singleBackupQuotaGb = new Quota(_services.StorageSettings.SingleBackupQuotaGb * 1024 * 1024 * 1024);
@@ -103,7 +103,7 @@ namespace BUtil.Core.TasksTree.Storage
             if (skippedBecauseOfQuotaFiles.Any())
             {
                 var gigabyte = 1024 * 1024 *1024;
-                Events.Message(string.Format(BUtil.Core.Localization.Resources.Task_Status_PartialDueToQuota, skippedBecauseOfQuotaFiles.Count(), skippedBecauseOfQuotaFiles.Sum(x => x.FileState.Size) / gigabyte));
+                Events.Message(string.Format(BUtil.Core.Localization.Resources.Task_Status_PartialDueToQuota, skippedBecauseOfQuotaFiles.Count, skippedBecauseOfQuotaFiles.Sum(x => x.FileState.Size) / gigabyte));
             }
         }
 

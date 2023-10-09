@@ -25,8 +25,6 @@ namespace BUtil.Configurator
 
 			if (args.Length == 1)
 			{
-				string firstArgumentUpper = args[0].ToUpperInvariant();
-
 				if (string.Compare(args[0], TasksAppArguments.Restore, StringComparison.OrdinalIgnoreCase) == 0)
 				{
 					TasksController.OpenRestorationMaster(null, true, null);

@@ -12,7 +12,7 @@ namespace BUtil.Core.Logs
         private string _fileName;
         private readonly string _taskName;
         private StreamWriter? _logFile;
-        private DateTime _dateTime;
+        private readonly DateTime _dateTime;
 
         public string LogFilename => _fileName;
         

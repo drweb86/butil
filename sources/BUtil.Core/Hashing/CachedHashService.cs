@@ -14,7 +14,7 @@ namespace BUtil.Core.Hashing
     {
         private readonly ICashedHashStoreService _cashedHashStoreService;
         private readonly object _sync = new ();
-        private ConcurrentBag<CachedHash> _cachedHashes = new ();
+        private readonly ConcurrentBag<CachedHash> _cachedHashes = new ();
         private bool _isCachedHashesLoaded = false;
         private const int _daysExpiration = 365;
 

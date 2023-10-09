@@ -20,8 +20,8 @@ namespace butil_ui.ViewModels;
 
 public class LaunchTaskViewModel : PageViewModelBase
 {
-    private Color _errorForegroundColor;
-    private Color _successForegroundColor;
+    private readonly Color _errorForegroundColor;
+    private readonly Color _successForegroundColor;
 
     public LaunchTaskViewModel(string taskName, string theme)
     {

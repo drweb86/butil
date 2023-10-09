@@ -89,7 +89,7 @@ namespace BUtil.Windows.Services
 
             private static FLASHWINFO Create_FLASHWINFO(IntPtr handle, uint flags, uint count, uint timeout)
             {
-                FLASHWINFO fi = new FLASHWINFO();
+                FLASHWINFO fi = new();
                 fi.cbSize = Convert.ToUInt32(Marshal.SizeOf(fi));
                 fi.hwnd = handle;
                 fi.dwFlags = flags;

@@ -23,7 +23,7 @@ namespace BUtil.Core.Misc
         { 
             try
             {
-                StringBuilder builder = new StringBuilder();
+                StringBuilder builder = new();
                 builder.AppendLine();
                 builder.AppendLine();
                 builder.AppendLine("BUtil " + CopyrightInfo.Version + " - Bug report (" + DateTime.Now.ToString("g", CultureInfo.InvariantCulture) + ")");
@@ -42,9 +42,8 @@ namespace BUtil.Core.Misc
                 }
                 
                 File.AppendAllText(Files.BugReportFile, builder.ToString());
-                
-                if (HandleUiError != null)
-                    HandleUiError(string.Format(Resources.ImproveIt_Message, Files.BugReportFile));
+
+                HandleUiError?.Invoke(string.Format(Resources.ImproveIt_Message, Files.BugReportFile));
             }
             finally
             {
