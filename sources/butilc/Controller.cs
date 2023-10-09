@@ -6,19 +6,16 @@ using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Localization;
 using BUtil.Core.BackupModels;
+using BUtil.Core.TasksTree.Core;
 
 namespace BUtil.ConsoleBackup
 {
     internal class Controller : IDisposable
     {
-        private ILog _log;
-
-        public Controller()
-        {
-            Directories.EnsureFoldersCreated();
-        }
-
-        public TaskV2StoreService BackupTaskStoreService => new TaskV2StoreService();
+        private ILog? _log;
+        private BuTask? _backupTask;
+        private string _taskName = string.Empty;
+        private PowerTask _powerTask = PowerTask.None;
 
         public bool ParseCommandLineArguments(string[] args)
         {
@@ -46,7 +43,7 @@ namespace BUtil.ConsoleBackup
                 else
                 {
                     Console.WriteLine(argument);
-                    _log.WriteLine(LoggingEvent.Error, Resources.CommandLineArguments_Invalid);
+                    _log?.WriteLine(LoggingEvent.Error, Resources.CommandLineArguments_Invalid);
                     Console.WriteLine(string.Format(Resources.CommandLineArguments_Help, SupportManager.GetLink(SupportRequest.Homepage)));
                     return false;
                 }
@@ -54,7 +51,6 @@ namespace BUtil.ConsoleBackup
 
             return true;
         }
-
         
 		public bool Prepare()
         {
@@ -75,15 +71,16 @@ namespace BUtil.ConsoleBackup
                 return false;
             }
 
-            _backup = TaskModelStrategyFactory.Create(_log, task);
+            _backupTask = TaskModelStrategyFactory
+                .Create(_log, task)
+                .GetTask(new Core.Events.TaskEvents());
 
             return true;
         }
 
 		public void Backup()
         {
-            var task = _backup.GetTask(new Core.Events.TaskEvents());
-            task.Execute();
+            _backupTask?.Execute();
             PowerPC.DoTask(_powerTask);
         }
 
@@ -122,14 +119,6 @@ namespace BUtil.ConsoleBackup
         private const string _logOff = "LogOff";
         private const string _reboot = "Reboot";
         private const string _taskCommandLineArgument = "Task=";
-
-        #endregion
-
-        #region Fields
-
-        private ITaskModelStrategy _backup;
-        private string _taskName;
-        private PowerTask _powerTask = PowerTask.None;
 
         #endregion
     }

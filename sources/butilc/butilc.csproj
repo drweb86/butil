@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
 	<VisualStudioVersion>17</VisualStudioVersion>
-    <TargetFramework>net7.0-windows</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
     <OutputType>Exe</OutputType>
-    <RootNamespace>BUtil.ConsoleBackup</RootNamespace>
+    <RootNamespace>BUtil.CL</RootNamespace>
     <AssemblyName>butilc</AssemblyName>
     <SignAssembly>False</SignAssembly>
-    <Nullable>disable</Nullable>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
     <UseCommonOutputDirectory>true</UseCommonOutputDirectory>
@@ -110,8 +110,5 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Terminal.Gui" Version="1.14.0" />
   </ItemGroup>
 </Project>

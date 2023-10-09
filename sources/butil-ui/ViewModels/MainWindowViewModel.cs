@@ -28,7 +28,7 @@ public partial class MainWindowViewModel : ViewModelBase
     /// <summary>
     /// Gets the current page. The property is read-only
     /// </summary>
-    public PageViewModelBase CurrentPage
+    public PageViewModelBase? CurrentPage
     {
         get; set;
     }

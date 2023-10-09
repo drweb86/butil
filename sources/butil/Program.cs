@@ -91,8 +91,6 @@ namespace BUtil.Configurator
 			Application.SetCompatibleTextRenderingDefault(false);
 
 			ImproveIt.HandleUiError = message => Messages.ShowErrorBox(message);
-
-            Directories.EnsureFoldersCreated();
             ProcessArguments(args);
 		}
 	}

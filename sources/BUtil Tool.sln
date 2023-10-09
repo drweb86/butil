@@ -8,7 +8,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 		Development.key.snk = Development.key.snk
 		SharedAssemblyInfo.cs = SharedAssemblyInfo.cs
-		..\help\Other\Version History (Changelog).md = ..\help\Other\Version History (Changelog).md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BUtil.Core", "BUtil.Core\BUtil.Core.csproj", "{884325C6-9686-4D09-BCDE-38FF79279620}"
@@ -30,7 +29,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "butil-ui", "butil-ui\butil-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "butil-ui.Desktop", "butil-ui.Desktop\butil-ui.Desktop.csproj", "{9A68D5CC-9502-431B-AFCE-4F3349A7A1FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BUtil.Windows", "BUtil.Windows\BUtil.Windows.csproj", "{19FCE4E6-E0CD-41EB-9ACC-3619DFC97A46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BUtil.Windows", "BUtil.Windows\BUtil.Windows.csproj", "{19FCE4E6-E0CD-41EB-9ACC-3619DFC97A46}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

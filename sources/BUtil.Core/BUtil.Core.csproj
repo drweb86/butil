@@ -119,11 +119,7 @@
   </ItemGroup>
   <PropertyGroup>
     <PreBuildEvent>
-		cd "$(SolutionDir)..\Output"
-
-		rem Libraries
 		xcopy "%userprofile%\.nuget\packages\microsoft.extensions.filesystemglobbing\7.0.0\lib\net7.0" "$(SolutionDir)..\Output\BUtil\bin" /Y
-		xcopy "%userprofile%\.nuget\packages\terminal.gui\1.14.0\lib\net7.0" "$(SolutionDir)..\Output\BUtil\bin" /Y
 		xcopy "%userprofile%\.nuget\packages\nstack.core\1.0.7\lib\netstandard2.0" "$(SolutionDir)..\Output\BUtil\bin" /Y
 		xcopy "%userprofile%\.nuget\packages\fluentftp\48.0.0\lib\net6.0" "$(SolutionDir)..\Output\BUtil\bin" /Y
 	</PreBuildEvent>

@@ -1,7 +1,6 @@
 ﻿
 using System;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 
 namespace BUtil.Core.FileSystem
@@ -35,9 +34,9 @@ namespace BUtil.Core.FileSystem
                 Directory.CreateDirectory(path);
         }
 
-        public static void EnsureFoldersCreated()
+        static Directories()
         {
-        	CreateDirectory(_userDataFolder);
+            CreateDirectory(_userDataFolder);
             CreateDirectory(_logsDir);
         }
 	}
