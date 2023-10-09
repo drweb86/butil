@@ -1,27 +1,21 @@
-﻿using BUtil.ConsoleBackup;
-using BUtil.Core;
+﻿using BUtil.Core;
 using BUtil.Core.Misc;
 using System;
 
 Console.OutputEncoding = System.Text.Encoding.UTF8;
+PlatformSpecificExperience.Instance.GetIOsSleepPreventionService()?.PreventSleep();
+
 Console.WriteLine(CopyrightInfo.Copyright);
 Console.WriteLine();
 
 try
 {
-    PlatformSpecificExperience.Instance.GetIOsSleepPreventionService()?.PreventSleep();
-    using var controller = new Controller();
-
-    if (!controller.ParseCommandLineArguments(args))
-        return 1;
-
-    if (controller.Prepare())
-        controller.Backup();
-
-    return 0;
+    new Controller()
+        .ParseCommandLineArguments(args)
+        .Launch();
 }
 catch (Exception e)
 {
     ImproveIt.ProcessUnhandledException(e);
-    return 1;
+    Environment.Exit(-1);
 }

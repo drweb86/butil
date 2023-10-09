@@ -1,125 +1,94 @@
 using System;
 using System.Globalization;
-using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Localization;
 using BUtil.Core.BackupModels;
-using BUtil.Core.TasksTree.Core;
 
-namespace BUtil.ConsoleBackup
+class Controller
 {
-    internal class Controller : IDisposable
+    private string _taskName = string.Empty;
+    private PowerTask _powerTask = PowerTask.None;
+
+    public Controller ParseCommandLineArguments(string[] args)
     {
-        private ILog? _log;
-        private BuTask? _backupTask;
-        private string _taskName = string.Empty;
-        private PowerTask _powerTask = PowerTask.None;
+        const string _shutdown = "ShutDown";
+        const string _logOff = "LogOff";
+        const string _reboot = "Reboot";
+        const string _taskCommandLineArgument = "Task=";
 
-        public bool ParseCommandLineArguments(string[] args)
+        args ??= Array.Empty<string>();
+
+        foreach (string argument in args)
         {
-            args ??= Array.Empty<string>();
-
-            foreach (string argument in args)
+            if (argument.StartsWith(_taskCommandLineArgument, StringComparison.InvariantCultureIgnoreCase))
             {
-                if (argument.StartsWith(_taskCommandLineArgument, StringComparison.InvariantCultureIgnoreCase))
-                {
-                    _taskName = argument[_taskCommandLineArgument.Length..];
-                    continue;
-                }
-                else if (ArgumentIs(argument, _shutdown))
-                {
-                    _powerTask = PowerTask.Shutdown;
-                }
-                else if (ArgumentIs(argument, _logOff))
-                {
-                    _powerTask = PowerTask.LogOff;
-                }
-                else if (ArgumentIs(argument, _reboot))
-                {
-                    _powerTask = PowerTask.Reboot;
-                }
-                else
-                {
-                    Console.WriteLine(argument);
-                    _log?.WriteLine(LoggingEvent.Error, Resources.CommandLineArguments_Invalid);
-                    Console.WriteLine(string.Format(Resources.CommandLineArguments_Help, SupportManager.GetLink(SupportRequest.Homepage)));
-                    return false;
-                }
+                _taskName = argument[_taskCommandLineArgument.Length..];
+                continue;
             }
-
-            return true;
+            else if (ArgumentIs(argument, _shutdown))
+            {
+                _powerTask = PowerTask.Shutdown;
+            }
+            else if (ArgumentIs(argument, _logOff))
+            {
+                _powerTask = PowerTask.LogOff;
+            }
+            else if (ArgumentIs(argument, _reboot))
+            {
+                _powerTask = PowerTask.Reboot;
+            }
+            else
+            {
+                var log = new ConsoleLog();
+                log.WriteLine(LoggingEvent.Debug, argument);
+                log.WriteLine(LoggingEvent.Error, Resources.CommandLineArguments_Invalid);
+                log.WriteLine(LoggingEvent.Debug, string.Format(Resources.CommandLineArguments_Help, SupportManager.GetLink(SupportRequest.Homepage)));
+                log.Close();
+                Environment.Exit(-1);
+            }
         }
-        
-		public bool Prepare()
+
+        if (string.IsNullOrWhiteSpace(_taskName))
         {
-            _log = OpenLog();
+            var log = new ConsoleLog();
+            log.WriteLine(LoggingEvent.Error, Resources.CommandLineArguments_Invalid);
+            log.WriteLine(LoggingEvent.Debug, string.Format(Resources.CommandLineArguments_Help, SupportManager.GetLink(SupportRequest.Homepage)));
+            log.Close();
+            Environment.Exit(-1);
+        }
 
-            if (string.IsNullOrWhiteSpace(_taskName))
-            {
-                _log.WriteLine(LoggingEvent.Error, Resources.CommandLineArguments_Invalid);
-                Console.WriteLine(string.Format(Resources.CommandLineArguments_Help, SupportManager.GetLink(SupportRequest.Homepage)));
-                return false;
-            }
+        return this;
+    }
+    private static bool ArgumentIs(string enteredArg, string expectedArg)
+    {
+        return string.Compare(enteredArg, expectedArg, true, CultureInfo.InvariantCulture) == 0;
+    }
 
+    public void Launch()
+    {
+        var log = new ChainLog(_taskName);
+        log.Open();
+        try
+        {
             var backupTaskStoreService = new TaskV2StoreService();
             var task = backupTaskStoreService.Load(_taskName);
             if (task == null)
             {
-                _log.WriteLine(LoggingEvent.Error, string.Format(Resources.Task_Validation_NotFound, _taskName));
-                return false;
+                log.WriteLine(LoggingEvent.Error, string.Format(Resources.Task_Validation_NotFound, _taskName));
+                Environment.Exit(-1);
             }
 
-            _backupTask = TaskModelStrategyFactory
-                .Create(_log, task)
-                .GetTask(new Core.Events.TaskEvents());
-
-            return true;
+            TaskModelStrategyFactory
+                .Create(log, task)
+                .GetTask(new BUtil.Core.Events.TaskEvents())
+                .Execute();
         }
-
-		public void Backup()
+        finally
         {
-            _backupTask?.Execute();
-            PowerPC.DoTask(_powerTask);
+            log.Close();
         }
-
-        private static void ShowErrorAndQuit(string message)
-        {
-            Console.Error.WriteLine("\n{0}", message);
-            Environment.Exit(-1);
-        }
-
-        private static void ShowInvalidUsageAndQuit(string error)
-        {
-            Console.WriteLine(string.Format(Resources.CommandLineArguments_Help, SupportManager.GetLink(SupportRequest.Homepage)));
-            ShowErrorAndQuit(error);
-        }
-
-        private static bool ArgumentIs(string enteredArg, string expectedArg)
-        {
-            return string.Compare(enteredArg, expectedArg, true, CultureInfo.InvariantCulture) == 0;
-        }
-
-        private ILog OpenLog()
-        {
-            var log = new ChainLog(_taskName);
-            log.Open();
-            return log;
-        }
-
-        public void Dispose()
-        {
-            _log?.Close();
-        }
-
-        #region Constants
-
-        private const string _shutdown = "ShutDown";
-        private const string _logOff = "LogOff";
-        private const string _reboot = "Reboot";
-        private const string _taskCommandLineArgument = "Task=";
-
-        #endregion
+        PowerPC.DoTask(_powerTask);
     }
 }
