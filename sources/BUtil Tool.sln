@@ -3,12 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E83F0C08-6D2B-467D-9572-1E8309426237}"
-	ProjectSection(SolutionItems) = preProject
-		Development.key.snk = Development.key.snk
-		SharedAssemblyInfo.cs = SharedAssemblyInfo.cs
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BUtil.Core", "BUtil.Core\BUtil.Core.csproj", "{884325C6-9686-4D09-BCDE-38FF79279620}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "butil", "butil\butil.csproj", "{6008A6E3-72F0-4C27-80D4-442F1764EAC2}"

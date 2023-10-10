@@ -618,6 +618,15 @@ Il programma ora aprirà il browser internet alla pagina di download</value>
   <data name="Task_Validation_NotSupported" xml:space="preserve">
     <value>Questo tipo di attività non è supportato.</value>
   </data>
+  <data name="Theme_Title" xml:space="preserve">
+    <value>Tema (modifica a riavvio app)</value>
+  </data>
+  <data name="Theme_Value_Dark" xml:space="preserve">
+    <value>Tema scuro</value>
+  </data>
+  <data name="Theme_Value_Light" xml:space="preserve">
+    <value>Tema chiaro</value>
+  </data>
   <data name="Time_Field_Elapsed" xml:space="preserve">
     <value>Trascorsi:</value>
   </data>
@@ -638,14 +647,5 @@ Il programma ora aprirà il browser internet alla pagina di download</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Non è stata specificato l'utente.</value>
-  </data>
-  <data name="Theme_Title" xml:space="preserve">
-    <value>Tema (modifica a riavvio app)</value>
-  </data>
-  <data name="Theme_Value_Dark" xml:space="preserve">
-    <value>Tema scuro</value>
-  </data>
-  <data name="Theme_Value_Light" xml:space="preserve">
-    <value>Tema chiaro</value>
   </data>
 </root>

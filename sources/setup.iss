@@ -1,5 +1,5 @@
 ﻿#define  MyAppName           "BUtil"
-#define  ApplicationVersion  GetVersionNumbersString('..\Output\BUtil\bin\butil.exe')
+#define  ApplicationVersion  GetVersionNumbersString('..\Output\BUtil\bin\butil-ui.Desktop.exe')
 #define  CurrentYear         GetDateTimeString('yyyy','','')
 #define  StartYearCopyright  "2011"
 #define  MyAppSupportURL     "https://github.com/drweb86/butil"
@@ -22,7 +22,7 @@ VersionInfoProductName={#MyAppName}
 VersionInfoVersion={#ApplicationVersion}
 
 UninstallDisplayName={#MyAppName}
-UninstallDisplayIcon={app}\bin\butil.exe
+UninstallDisplayIcon={app}\bin\butil-ui.Desktop.exe
 
 SetupIconFile=.\Media\Images and Icons\Other's guys\Crystal Clear (Everaldo Coelho)\SetupIcon.ico
 
@@ -166,9 +166,9 @@ end;
 Source: "..\Output\BUtil\*.*"; DestDir: "{app}"; Flags: recursesubdirs
 
 [Icons]
-Name: "{group}\{#MyAppName}";       Filename: "{app}\bin\butil.exe"
-Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\bin\butil.exe"
+Name: "{group}\{#MyAppName}";       Filename: "{app}\bin\butil-ui.Desktop.exe"
+Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\bin\butil-ui.Desktop.exe"
 
 [Run]
-Filename: "{app}\bin\butil.exe"; Description: "Launch App"; Flags: nowait postinstall skipifsilent
+Filename: "{app}\bin\butil-ui.Desktop.exe"; Description: "Launch App"; Flags: nowait postinstall skipifsilent
 

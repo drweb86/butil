@@ -8,7 +8,7 @@ if NOT %ERRORLEVEL% == 0 (
 cd ..
 cd ..
 
-dotnet publish /p:Configuration=Release /p:PublishDir=../Output/butil/bin /p:PublishReadyToRun=false /p:RunAnalyzersDuringBuild=False
+dotnet publish /p:Version=1.2.3.4 /p:AssemblyVersion=1.2.3.4 /p:Configuration=Release /p:PublishDir=../Output/butil/bin /p:PublishReadyToRun=false /p:RunAnalyzersDuringBuild=False
 if %ERRORLEVEL% NEQ 0 (
 	GOTO error;
 )

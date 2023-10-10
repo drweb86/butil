@@ -6,27 +6,14 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>BUtil.Configurator</RootNamespace>
     <ApplicationIcon>..\Media\Images and Icons\My\Configurator.ico</ApplicationIcon>
-    <SignAssembly>true</SignAssembly>
 	  <Nullable>annotations</Nullable>
 <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
 <UseCommonOutputDirectory>true</UseCommonOutputDirectory>
-    <AssemblyOriginatorKeyFile>..\Development.key.snk</AssemblyOriginatorKeyFile>
-    <DelaySign>False</DelaySign>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
-    <IsWebBootstrapper>true</IsWebBootstrapper>
     <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
     <StartupObject>BUtil.Configurator.Program</StartupObject>
     <NoStdLib>False</NoStdLib>
-    <PublishUrl>http://localhost/BUtilConfigurator/</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Web</InstallFrom>
-    <UpdateEnabled>true</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
