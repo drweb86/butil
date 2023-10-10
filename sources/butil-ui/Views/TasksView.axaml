@@ -28,10 +28,8 @@
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="*" />
-			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
 
-		<!-- Menu is temporary and should be part of Configurator. -->
 		<Menu Grid.Row="0">
 			<MenuItem Header="⚙">
 				<MenuItem Header="{Binding Theme_Title}">
@@ -39,29 +37,34 @@
 					<MenuItem Header="{Binding LightThemeLabel}" Command="{Binding GoLightSide}" />
 				</MenuItem>
 			</MenuItem>
+			<MenuItem Command="{Binding OpenLogsCommand}">
+				<MenuItem.Header>
+					<StackPanel Orientation="Horizontal">
+						<Image Width="16" Height="16" Source="/Assets/www.wefunction.com_FunctionFreeIconSet_App.png" VerticalAlignment="Center" />
+						<TextBlock Text="{Binding LogFile_OpenLogs}" Margin="8 0 0 0" VerticalAlignment="Center" />
+					</StackPanel>
+				</MenuItem.Header>
+			</MenuItem>
+			<MenuItem Command="{Binding RestoreCommand}">
+				<MenuItem.Header>
+					<StackPanel Orientation="Horizontal">
+						<Image Width="16" Height="16" Source="/Assets/CrystalClear_EveraldoCoelho_Refresh48x48.png" VerticalAlignment="Center" />
+						<TextBlock Text="{Binding Task_Restore}" Margin="8 0 0 0" VerticalAlignment="Center" />
+					</StackPanel>
+				</MenuItem.Header>
+			</MenuItem>
+			<MenuItem Header="?" Command="{Binding GoToWebsiteCommand}" />
 		</Menu>
 		<Expander Grid.Row="1" HorizontalAlignment="Stretch" Margin="24 8 24 8" IsExpanded="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
 			<Expander.Header>
-				<Grid>
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="Auto" />
-						<ColumnDefinition Width="*" />
-					</Grid.ColumnDefinitions>
-						<TextBlock TextWrapping="Wrap"
-								   Foreground="{Binding ProgressGenericForeground}"
-								   Grid.Column="0" 
-								   FontWeight="DemiBold"
-								   Margin="0 8 16 8" 
-								   Text="{Binding ProgressGenericTitle}" 
-								   VerticalAlignment="Center"
-								   MaxWidth="{Binding $parent.Bounds.Width}"
+				<TextBlock TextWrapping="Wrap"
+						   Foreground="{Binding ProgressGenericForeground}"
+						   Grid.Column="0"
+						   FontWeight="DemiBold"
+						   Margin="0 8 16 8"
+						   VerticalAlignment="Center"
+						   MaxWidth="{Binding $parent.Bounds.Width}"
 						/>
-					<ProgressBar
-						IsVisible="{Binding IsStopButtonEnabled}"
-						Grid.Column="1"
-						MinHeight="32"
-						Maximum="{Binding TotalTasksCount}" Value="{Binding CompletedTasksCount}" ShowProgressText="True" ProgressTextFormat="{Binding ElapsedLabel}" VerticalAlignment="Center" />
-				</Grid>
 			</Expander.Header>
 			<ScrollViewer
 				ScrollViewer.VerticalScrollBarVisibility="Visible"
@@ -82,62 +85,5 @@
 				</ItemsRepeater>
 			</ScrollViewer>
 		</Expander>
-
-		<WrapPanel HorizontalAlignment="Right" Grid.Row="2" Margin="24 8 24 8">
-			<StackPanel VerticalAlignment="Center" Margin="4" IsVisible="{Binding TaskNotCompleted}">
-				<Label HorizontalAlignment="Stretch" VerticalAlignment="Center" ToolTip.Tip="{Binding AfterTaskSelection_Help}" Content="{Binding AfterTaskSelection_Field}" />
-				<ComboBox HorizontalAlignment="Stretch" VerticalAlignment="Center" ItemsSource="{Binding PowerTasks}" SelectedIndex="{Binding SelectedPowerTask}" />
-			</StackPanel>
-			<StackPanel Orientation="Horizontal">
-				<Button
-					IsVisible="{Binding IsStartButtonVisible}"
-					VerticalAlignment="Center"
-					Margin="4"
-					Padding="16"
-					ToolTip.Tip="{Binding Task_Launch_Hint}"
-					Foreground="Green"
-					Command="{Binding StartTaskCommand}">
-					<Path
-						Data="{StaticResource play_regular}"
-						Stroke="{Binding $parent.Foreground}"
-						Fill="{Binding $parent.Foreground}"
-						StrokeThickness="1"
-						Width="32"
-						Height="32"
-						Stretch="Uniform"
-					/>
-				</Button>
-				<Button
-					IsVisible="{Binding IsStopButtonEnabled}"
-					VerticalAlignment="Center"
-					Margin="4"
-					Padding="16"
-					MinWidth="40"
-					Foreground="Red"
-					ToolTip.Tip="{Binding Button_Cancel}"
-					Command="{Binding StopTaskCommand}">
-					<Path
-						Data="{StaticResource stop_regular}"
-						Stroke="{Binding $parent.Foreground}"
-						Fill="{Binding $parent.Foreground}"
-						StrokeThickness="1"
-						Width="32"
-						Height="32"
-						Stretch="Uniform"
-					/>
-				</Button>
-				<Button
-					IsVisible="{Binding CanClose}"
-					VerticalAlignment="Center"
-					Margin="4"
-					Padding="16"
-					MinWidth="40"
-					Content="{Binding Button_Close}"
-					Command="{Binding CloseCommand}"
-				/>
-			</StackPanel>
-		</WrapPanel>
 	</Grid>
-
-
 </UserControl>

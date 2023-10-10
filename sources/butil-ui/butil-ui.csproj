@@ -13,6 +13,8 @@
   
   <ItemGroup>
     <None Remove="Assets\butil.ico" />
+    <None Remove="Assets\CrystalClear_EveraldoCoelho_Refresh48x48.png" />
+    <None Remove="Assets\www.wefunction.com_FunctionFreeIconSet_App.png" />
   </ItemGroup>
 
   <ItemGroup>
