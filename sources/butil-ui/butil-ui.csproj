@@ -31,6 +31,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\TasksView.axaml.cs">
+      <DependentUpon>TasksView.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\LaunchTaskView.axaml.cs">
       <DependentUpon>LaunchTaskView.axaml</DependentUpon>
     </Compile>

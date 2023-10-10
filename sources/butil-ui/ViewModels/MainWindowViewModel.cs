@@ -1,4 +1,5 @@
-﻿using BUtil.Core.FileSystem;
+﻿using BUtil.Core;
+using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
 using BUtil.Core.Settings;
 using System;
@@ -36,6 +37,9 @@ public partial class MainWindowViewModel : ViewModelBase
     public MainWindowViewModel()
     {
         var args = Environment.GetCommandLineArgs().Skip(1).ToArray();
+        var settingsService = new SettingsStoreService();
+        var theme = settingsService.Load(ThemeSetting.Name, ThemeSetting.DefaultValue);
+
         if (args.Length == 2 && args[0].ToUpperInvariant() == TasksAppArguments.LaunchTask.ToUpperInvariant())
         {
             var taskName = string.Empty;
@@ -46,11 +50,11 @@ public partial class MainWindowViewModel : ViewModelBase
                     taskName = argument.Substring(TasksAppArguments.RunTask.Length + 1);
                 }
             }
-            var settingsService = new SettingsStoreService();
-            var theme = settingsService.Load(ThemeSetting.Name, ThemeSetting.DefaultValue);
 
             CurrentPage = new LaunchTaskViewModel(taskName, theme);
-            Title = taskName;
+        } else
+        {
+            CurrentPage = new TasksViewModel(theme);
         }
     }
 }

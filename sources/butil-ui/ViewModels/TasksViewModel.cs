@@ -18,20 +18,20 @@ using System.Threading;
 
 namespace butil_ui.ViewModels;
 
-public class LaunchTaskViewModel : PageViewModelBase
+public class TasksViewModel : PageViewModelBase
 {
     private readonly Color _errorForegroundColor;
     private readonly Color _successForegroundColor;
 
-    public LaunchTaskViewModel(string taskName, string theme)
+    public TasksViewModel(string theme)
     {
-        _taskName = taskName;
         _theme = theme;
+        UpdateTheme(theme);
         _progressGenericForeground = new SolidColorBrush(ColorPalette.GetForeground(theme, SemanticColor.Normal));
         _errorForegroundColor = ColorPalette.GetForeground(theme, SemanticColor.Error);
         _successForegroundColor = ColorPalette.GetForeground(theme, SemanticColor.Success);
 
-        WindowTitle = taskName;
+        WindowTitle = "BUtil - V" + CopyrightInfo.Version.ToString(3); ;
 
         _taskEvents.OnTaskProgress += OnTaskProgress;
         _taskEvents.OnDuringExecutionTasksAdded += OnDuringExecutionTasksAdded;
@@ -304,6 +304,26 @@ public class LaunchTaskViewModel : PageViewModelBase
 
     #region Commands
 
+    private void UpdateTheme(string theme)
+    {
+        DarkThemeLabel = theme == ThemeSetting.DarkValue ? "⚫" + Resources.Theme_Value_Dark : "⚪" + Resources.Theme_Value_Dark;
+        LightThemeLabel = theme == ThemeSetting.LightValue ? "⚫" + Resources.Theme_Value_Light : "⚪" + Resources.Theme_Value_Light;
+    }
+
+    public void GoDarkSide()
+    {
+        var settingsService = new SettingsStoreService();
+        settingsService.Save(ThemeSetting.Name, ThemeSetting.DarkValue);
+        UpdateTheme(ThemeSetting.DarkValue);
+    }
+
+    public void GoLightSide()
+    {
+        var settingsService = new SettingsStoreService();
+        settingsService.Save(ThemeSetting.Name, ThemeSetting.LightValue);
+        UpdateTheme(ThemeSetting.LightValue);
+    }
+
     public void StartTaskCommand()
     {
         IsStartButtonVisible = false;
@@ -368,39 +388,39 @@ public class LaunchTaskViewModel : PageViewModelBase
 
     public void Initialize()
     {
-        _task = new TaskV2StoreService().Load(_taskName);
-        if (_task == null)
-        {
-            ProgressGenericTitle = BUtil.Core.Localization.Resources.Task_Validation_NotSupported;
-            ProgressGenericForeground = new SolidColorBrush(_errorForegroundColor);
-            CanClose = true;
-            IsStartButtonVisible = false;
-            TaskNotCompleted = false;
-            return;
-        }
+        //_task = new TaskV2StoreService().Load(_taskName);
+        //if (_task == null)
+        //{
+        //    ProgressGenericTitle = BUtil.Core.Localization.Resources.Task_Validation_NotSupported;
+        //    ProgressGenericForeground = new SolidColorBrush(_errorForegroundColor);
+        //    CanClose = true;
+        //    IsStartButtonVisible = false;
+        //    TaskNotCompleted = false;
+        //    return;
+        //}
 
-        if (!TaskModelStrategyFactory.TryVerify(new StubLog(), _task.Model, out var error))
-        {
-            ProgressGenericTitle = error;
-            ProgressGenericForeground = new SolidColorBrush(_errorForegroundColor);
-            CanClose = true;
-            IsStartButtonVisible = false;
-            TaskNotCompleted = false;
-            return;
-        }
+        //if (!TaskModelStrategyFactory.TryVerify(new StubLog(), _task.Model, out var error))
+        //{
+        //    ProgressGenericTitle = error;
+        //    ProgressGenericForeground = new SolidColorBrush(_errorForegroundColor);
+        //    CanClose = true;
+        //    IsStartButtonVisible = false;
+        //    TaskNotCompleted = false;
+        //    return;
+        //}
 
-        _log = new FileLog(_task.Name);
-        _log.Open();
+        //_log = new FileLog(_task.Name);
+        //_log.Open();
 
-        _threadTask = TaskModelStrategyFactory
-            .Create(_log, _task)
-            .GetTask(_taskEvents);
+        //_threadTask = TaskModelStrategyFactory
+        //    .Create(_log, _task)
+        //    .GetTask(_taskEvents);
 
-        _threadTask
-            .GetChildren()
-            .Select(x => new LaunchTaskViewItem(x, ColorPalette.GetForeground(_theme, SemanticColor.Normal)))
-            .ToList()
-            .ForEach(_items.Add);
+        //_threadTask
+        //    .GetChildren()
+        //    .Select(x => new LaunchTaskViewItem(x, ColorPalette.GetForeground(_theme, SemanticColor.Normal)))
+        //    .ToList()
+        //    .ForEach(_items.Add);
     }
 
     private void OnTaskProgress(object? sender, TaskProgressEventArgs e)
