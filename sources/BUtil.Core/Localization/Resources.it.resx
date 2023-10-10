@@ -614,7 +614,7 @@
     <value>Questo tipo di attività non è supportato.</value>
   </data>
   <data name="Theme_Title" xml:space="preserve">
-    <value>Tema (modifica a riavvio app)</value>
+    <value>Tema</value>
   </data>
   <data name="Theme_Value_Dark" xml:space="preserve">
     <value>Tema scuro</value>

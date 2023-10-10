@@ -33,6 +33,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Controls\TasksMainMenu\TasksMainMenuView.axaml.cs">
+      <DependentUpon>TasksMainMenuView.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Controls\UpdateCheckExpander\UpdateCheckExpanderView.axaml.cs">
       <DependentUpon>UpdateCheckExpanderView.axaml</DependentUpon>
     </Compile>

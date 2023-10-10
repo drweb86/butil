@@ -31,32 +31,7 @@
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
-
-		<Menu Grid.Row="0">
-			<MenuItem Header="⚙">
-				<MenuItem Header="{Binding Theme_Title}">
-					<MenuItem Header="{Binding DarkThemeLabel}" Command="{Binding GoDarkSide}" />
-					<MenuItem Header="{Binding LightThemeLabel}" Command="{Binding GoLightSide}" />
-				</MenuItem>
-			</MenuItem>
-			<MenuItem Command="{Binding OpenLogsCommand}">
-				<MenuItem.Header>
-					<StackPanel Orientation="Horizontal">
-						<Image Width="16" Height="16" Source="/Assets/www.wefunction.com_FunctionFreeIconSet_App.png" VerticalAlignment="Center" />
-						<TextBlock Text="{Binding LogFile_OpenLogs}" Margin="8 0 0 0" VerticalAlignment="Center" />
-					</StackPanel>
-				</MenuItem.Header>
-			</MenuItem>
-			<MenuItem Command="{Binding RestoreCommand}">
-				<MenuItem.Header>
-					<StackPanel Orientation="Horizontal">
-						<Image Width="16" Height="16" Source="/Assets/CrystalClear_EveraldoCoelho_Refresh48x48.png" VerticalAlignment="Center" />
-						<TextBlock Text="{Binding Task_Restore}" Margin="8 0 0 0" VerticalAlignment="Center" />
-					</StackPanel>
-				</MenuItem.Header>
-			</MenuItem>
-			<MenuItem Header="?" Command="{Binding GoToWebsiteCommand}" />
-		</Menu>
+		<controls:TasksMainMenuView Grid.Row="1" />
 		<controls:UpdateCheckExpanderView
 			Grid.Row="1"
 			HorizontalAlignment="Stretch"

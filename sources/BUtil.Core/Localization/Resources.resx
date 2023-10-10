@@ -609,7 +609,7 @@ See detailed description in the following link.</value>
     <value>This task type is not supported.</value>
   </data>
   <data name="Theme_Title" xml:space="preserve">
-    <value>Theme  (on change restart app)</value>
+    <value>Theme </value>
   </data>
   <data name="Theme_Value_Dark" xml:space="preserve">
     <value>Dark</value>

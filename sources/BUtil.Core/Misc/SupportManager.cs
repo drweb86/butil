@@ -8,7 +8,13 @@ namespace BUtil.Core.Misc
 {
 	public static class SupportManager
 	{
-		public static void LaunchTask(string taskName)
+        public static void LaunchTasksApp()
+		{
+			Process.Start(Files.TasksAppV2);
+        }
+
+
+        public static void LaunchTask(string taskName)
 		{
             Process.Start(Files.TasksAppV2, $"{TasksAppArguments.LaunchTask} \"{TasksAppArguments.RunTask}={taskName}\"");
         }

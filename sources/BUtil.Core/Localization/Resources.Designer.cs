@@ -1473,7 +1473,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Theme  (on change restart app).
+        ///   Looks up a localized string similar to Theme .
         /// </summary>
         public static string Theme_Title {
             get {

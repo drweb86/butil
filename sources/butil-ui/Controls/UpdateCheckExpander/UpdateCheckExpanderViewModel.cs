@@ -10,7 +10,10 @@ namespace butil_ui.Controls.UpdateCheckExpander
     {
         public void Initialize()
         {
+#if DEBUG
+#else
             _ = CheckForUpdates(); // we don't wait it to not stop initialization
+#endif
         }
 
 

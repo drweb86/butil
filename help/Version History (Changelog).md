@@ -4,7 +4,8 @@
 - Italian language was updated by https://github.com/bovirus .
 - Help became simpler.
 - Cross-platform compatibility 2nd phase: all windows-related functional was moved to separate assembly. From now its possible to create platform-specific experiences in theory.
-- update check became less intrusive.
+- Update check became less intrusive.
+- Restart app on theme change. Theme selector was moved to Tasks app.
 
 ## Bug Fixes
 - Workaround of github bug with public release API was added. As a result of this wrong latest release info was shown.

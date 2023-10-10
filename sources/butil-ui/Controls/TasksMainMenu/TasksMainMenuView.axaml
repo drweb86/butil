@@ -1,0 +1,34 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:cvm="clr-namespace:butil_ui.Controls.TasksMainMenu"
+             mc:Ignorable="d"
+             x:Class="butil_ui.Controls.TasksMainMenuView"
+			 x:DataType="cvm:TasksMainMenuViewModel">
+	<Menu>
+		<MenuItem Header="⚙">
+			<MenuItem Header="{Binding Theme_Title}">
+				<MenuItem Header="{Binding DarkThemeLabel}" Command="{Binding GoDarkSide}" />
+				<MenuItem Header="{Binding LightThemeLabel}" Command="{Binding GoLightSide}" />
+			</MenuItem>
+		</MenuItem>
+		<MenuItem Command="{Binding OpenLogsCommand}">
+			<MenuItem.Header>
+				<StackPanel Orientation="Horizontal">
+					<Image Width="16" Height="16" Source="/Assets/www.wefunction.com_FunctionFreeIconSet_App.png" VerticalAlignment="Center" />
+					<TextBlock Text="{Binding LogFile_OpenLogs}" Margin="8 0 0 0" VerticalAlignment="Center" />
+				</StackPanel>
+			</MenuItem.Header>
+		</MenuItem>
+		<MenuItem Command="{Binding RestoreCommand}">
+			<MenuItem.Header>
+				<StackPanel Orientation="Horizontal">
+					<Image Width="16" Height="16" Source="/Assets/CrystalClear_EveraldoCoelho_Refresh48x48.png" VerticalAlignment="Center" />
+					<TextBlock Text="{Binding Task_Restore}" Margin="8 0 0 0" VerticalAlignment="Center" />
+				</StackPanel>
+			</MenuItem.Header>
+		</MenuItem>
+		<MenuItem Header="?" Command="{Binding GoToWebsiteCommand}" />
+	</Menu>
+</UserControl>
