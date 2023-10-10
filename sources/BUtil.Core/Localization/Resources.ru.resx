@@ -139,12 +139,7 @@
     <value>Выключить компьютер</value>
   </data>
   <data name="Application_NewVersion_Notification" xml:space="preserve">
-    <value>Доступна новая {0} версия.
-
-В этой версии:
-{1}
-
-Сейчас программа откроет броузер со страничкой загрузки программы</value>
+    <value>Доступна новая {0} версия.</value>
   </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>ИЗМЕНЕНИЯ</value>
@@ -643,5 +638,8 @@ bin.
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Пользователь не указан.</value>
+  </data>
+  <data name="Button_Download" xml:space="preserve">
+    <value>Скачать</value>
   </data>
 </root>

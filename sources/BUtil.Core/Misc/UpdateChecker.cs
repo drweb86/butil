@@ -22,26 +22,15 @@ namespace BUtil.Core.Misc
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
                 client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
                 
-                await using var releasesStream = await client.GetStreamAsync("https://api.github.com/repos/drweb86/butil/releases");
-                var releases = await JsonSerializer.DeserializeAsync<List<GithubRelease>>(releasesStream);
+                // releases endpoint is broken in github now. it returns invalid result (previous release).
+                await using var releasesStream = await client.GetStreamAsync("https://api.github.com/repos/drweb86/butil/releases/latest");
+                var release = await JsonSerializer.DeserializeAsync<GithubRelease>(releasesStream);
                 var noUpdate = new GithubUpdateInfo(false, null, null);
 
-                if (releases == null)
+                if (release == null || release.Prerelease || release.Draft || !Version.TryParse(release.Tag, out var version))
                     return noUpdate;
 
-                var updatedRelease = releases
-                    .Where(x => !x.Prerelease && !x.Draft)
-                    .FirstOrDefault(x => Version.TryParse(x.Tag, out var version) && CopyrightInfo.Version < version);
-
-                if (updatedRelease == null)
-                    return noUpdate;
-
-                await using var versionRelease = await client.GetStreamAsync(updatedRelease.ApiUrl);
-                var release = await JsonSerializer.DeserializeAsync<GithubReleaseV2>(versionRelease);
-                if (release == null)
-                    return noUpdate;
-
-                return new GithubUpdateInfo(true, updatedRelease.Tag, release.Markdown
+                return new GithubUpdateInfo(true, release.Tag, release.Markdown
                     .Replace("\\r", "\r")
                     .Replace("\\n", "\n")
                     .Replace("#", ""));
@@ -56,16 +45,11 @@ namespace BUtil.Core.Misc
 	}
 
     public record class GithubRelease(
-        [property: JsonPropertyName("id")] long Id,
-        [property: JsonPropertyName("url")] Uri ApiUrl,
         [property: JsonPropertyName("tag_name")] string Tag,
         [property: JsonPropertyName("draft")] bool Draft,
-        [property: JsonPropertyName("prerelease")] bool Prerelease
+        [property: JsonPropertyName("prerelease")] bool Prerelease,
+        [property: JsonPropertyName("body")] string Markdown
     );
-
-    public record class GithubReleaseV2(
-       [property: JsonPropertyName("body")] string Markdown
-   );
 
     public record class GithubUpdateInfo(
         bool HasUpdate,

@@ -118,12 +118,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New {0} version is available.
-        ///
-        ///Changes are:
-        ///{1}
-        ///
-        ///Program will now open browser with the download page.
+        ///   Looks up a localized string similar to New {0} version is available..
         /// </summary>
         public static string Application_NewVersion_Notification {
             get {
@@ -254,6 +249,15 @@ namespace BUtil.Core.Localization {
         public static string Button_CopyToClipboard {
             get {
                 return ResourceManager.GetString("Button_CopyToClipboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download.
+        /// </summary>
+        public static string Button_Download {
+            get {
+                return ResourceManager.GetString("Button_Download", resourceCulture);
             }
         }
         

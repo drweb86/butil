@@ -44,7 +44,12 @@ namespace BUtil.Core.Misc
             SupportManager.DoSupport(SupportRequest.Homepage);
         }
 
-		static readonly string[] _lINKS_UPDATED = new string[]
+        public static void OpenLatestRelease()
+        {
+            SupportManager.DoSupport(SupportRequest.LatestRelease);
+        }
+
+        static readonly string[] _lINKS_UPDATED = new string[]
 		{
 			"https://github.com/drweb86/butil",
             "https://github.com/drweb86/butil/releases/latest",

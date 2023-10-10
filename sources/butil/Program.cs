@@ -5,7 +5,6 @@ using BUtil.Configurator.Configurator.Forms;
 using BUtil.Core.Misc;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
-using System.Linq;
 
 namespace BUtil.Configurator
 {
@@ -18,7 +17,6 @@ namespace BUtil.Configurator
 			args ??= Array.Empty<string>();
 			if (args.Length == 0)
 			{
-                CheckForUpdates();
                 Application.Run(new TasksForm());
 				return;
 			}
@@ -56,28 +54,9 @@ namespace BUtil.Configurator
 			}
 			else
 			{
-				CheckForUpdates();
 				Application.Run(new TasksForm());
 			}
 		}
-
-        private static void CheckForUpdates()
-        {
-            try
-            {
-                var update = UpdateChecker.CheckForUpdate().GetAwaiter().GetResult(); // not supported by .Net (STA for WinForms)
-
-                if (update.HasUpdate)
-                {
-                    Messages.ShowInformationBox(string.Format(Resources.Application_NewVersion_Notification, update.Version, update.Changes));
-                    SupportManager.DoSupport(SupportRequest.Releases);
-                }
-            }
-            catch (InvalidOperationException exc)
-            {
-                Messages.ShowErrorBox(exc.Message);
-            }
-        }
 
         #endregion
 

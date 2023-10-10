@@ -1,0 +1,32 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:cvm="clr-namespace:butil_ui.Controls.UpdateCheckExpander"
+             mc:Ignorable="d"
+             x:Class="butil_ui.Controls.UpdateCheckExpanderView"
+			 x:DataType="cvm:UpdateCheckExpanderViewModel">
+	<Expander IsVisible="{Binding IsUpdateAvailable}" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Stretch">
+		<Expander.Header>
+			<WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" MaxWidth="{Binding $parent.Bounds.Width}" >
+				<TextBlock
+					TextWrapping="Wrap"
+					Margin="0 8 16 8"
+					VerticalAlignment="Center"
+					Text="{Binding UpdateNewsTitle}" />
+				<Button
+					Margin="0 8 16 8"
+					VerticalAlignment="Center"
+					Command="{Binding OpenLatestReleaseCommand}"
+					Content="{Binding Button_Download}" />
+
+			</WrapPanel>
+		</Expander.Header>
+		<TextBlock
+			TextWrapping="Wrap"
+			Margin="0 8 16 8"
+			VerticalAlignment="Center"
+			MaxWidth="{Binding $parent.Bounds.Width}"
+			Text="{Binding UpdateNews}" />
+	</Expander>
+</UserControl>

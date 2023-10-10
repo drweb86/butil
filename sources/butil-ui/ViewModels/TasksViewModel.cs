@@ -4,7 +4,9 @@ using BUtil.Core.Localization;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
 using BUtil.Core.Settings;
+using System;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 namespace butil_ui.ViewModels;
 
@@ -104,7 +106,6 @@ public class TasksViewModel : PageViewModelBase
 
     #endregion
 
-   
 
     #region Commands
 
@@ -149,14 +150,7 @@ public class TasksViewModel : PageViewModelBase
     public string Theme_Title => "🎨 " + Resources.Theme_Title;
     public string Task_Restore => Resources.Task_Restore;
     public string LogFile_OpenLogs => Resources.LogFile_OpenLogs;
-
-
-    // delete.
     public string Task_Launch_Hint => Resources.Task_Launch_Hint;
-    public string Button_Cancel => Resources.Button_Cancel;
-    public string AfterTaskSelection_Field => Resources.AfterTaskSelection_Field;
-    public string Button_Close => Resources.Button_Close;
-    public string AfterTaskSelection_Help => Resources.AfterTaskSelection_Help;
 
     #endregion
 

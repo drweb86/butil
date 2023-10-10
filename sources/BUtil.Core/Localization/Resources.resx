@@ -139,12 +139,7 @@ or warnings will be registered.</value>
     <value>Shutdown</value>
   </data>
   <data name="Application_NewVersion_Notification" xml:space="preserve">
-    <value>New {0} version is available.
-
-Changes are:
-{1}
-
-Program will now open browser with the download page</value>
+    <value>New {0} version is available.</value>
   </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>CHANGES</value>
@@ -642,5 +637,8 @@ See detailed description in the following link.</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>User is not specified.</value>
+  </data>
+  <data name="Button_Download" xml:space="preserve">
+    <value>Download</value>
   </data>
 </root>
