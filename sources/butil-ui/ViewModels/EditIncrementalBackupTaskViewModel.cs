@@ -26,7 +26,7 @@ public class EditIncrementalBackupTaskViewModel : PageViewModelBase
     {
         _taskName = string.IsNullOrEmpty(taskName) ? Resources.Task_Field_Name_NewDefaultValue : taskName; ;
 
-        WindowTitle = taskName;
+        WindowTitle = _taskName;
     }
 
     #region Commands

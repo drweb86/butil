@@ -37,7 +37,7 @@
 			<ListBox.Styles>
 				<Style Selector="ListBoxItem">
 					<Setter Property="CornerRadius" Value="8,8,8,8" />
-					<Setter Property="BorderBrush" Value="White" />
+					<Setter Property="BorderBrush" Value="{Binding $parent[ListBox].Foreground}" />
 					<Setter Property="BorderThickness" Value="1" />
 					<Setter Property="Margin" Value="0,4,0,4" />
 				</Style>

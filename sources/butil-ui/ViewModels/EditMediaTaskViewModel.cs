@@ -1,4 +1,5 @@
-﻿using BUtil.Core.Localization;
+﻿using Avalonia.Media;
+using BUtil.Core.Localization;
 using System;
 
 namespace butil_ui.ViewModels;
@@ -8,7 +9,7 @@ public class EditMediaTaskViewModel : PageViewModelBase
     public EditMediaTaskViewModel(string taskName)
     {
         _taskName = string.IsNullOrEmpty(taskName) ? Resources.Task_Field_Name_NewDefaultValue : taskName;
-        WindowTitle = taskName;
+        WindowTitle = _taskName;
     }
 
     #region Labels
