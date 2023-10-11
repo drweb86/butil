@@ -16,9 +16,8 @@ public class TasksViewModel : PageViewModelBase
     private readonly Color _errorForegroundColor;
     private readonly Color _successForegroundColor;
     private readonly string _theme;
-    private readonly Action<PageViewModelBase> _changePage;
 
-    public TasksViewModel(Action<PageViewModelBase> changePage)
+    public TasksViewModel()
     {
         _theme = ApplicationSettings.Theme;
         _progressGenericForeground = new SolidColorBrush(ColorPalette.GetForeground(SemanticColor.Normal));
@@ -26,7 +25,6 @@ public class TasksViewModel : PageViewModelBase
         _successForegroundColor = ColorPalette.GetForeground(SemanticColor.Success);
 
         WindowTitle = "BUtil - V" + CopyrightInfo.Version.ToString(3);
-        _changePage = changePage;
     }
 
     #region ProgressGenericForeground
@@ -103,7 +101,7 @@ public class TasksViewModel : PageViewModelBase
                 else
                     status = ProcessingStatus.InProgress;
             }
-            var listViewItem = new TaskItemViewModel(taskName, lastLaunchedAt, ColorPalette.GetResultColor(status), _items, _changePage);
+            var listViewItem = new TaskItemViewModel(taskName, lastLaunchedAt, ColorPalette.GetResultColor(status), _items);
             Items.Add(listViewItem);
         }
     }

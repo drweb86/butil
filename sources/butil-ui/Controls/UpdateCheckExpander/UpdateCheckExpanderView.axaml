@@ -5,7 +5,8 @@
 			 xmlns:cvm="clr-namespace:butil_ui.Controls.UpdateCheckExpander"
              mc:Ignorable="d"
              x:Class="butil_ui.Controls.UpdateCheckExpanderView"
-			 x:DataType="cvm:UpdateCheckExpanderViewModel">
+			 x:DataType="cvm:UpdateCheckExpanderViewModel"
+			 IsVisible="{Binding IsUpdateAvailable}">
 	<Expander IsVisible="{Binding IsUpdateAvailable}" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Stretch">
 		<Expander.Header>
 			<WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" MaxWidth="{Binding $parent.Bounds.Width}" >

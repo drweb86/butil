@@ -44,6 +44,7 @@ public partial class MainWindowViewModel : ViewModelBase
 
     public MainWindowViewModel()
     {
+        WindowManager._switchView = x => CurrentPage = x;
         var args = Environment.GetCommandLineArgs().Skip(1).ToArray();
         var settingsService = new SettingsStoreService();
         ApplicationSettings.Theme = settingsService.Load(ThemeSetting.Name, ThemeSetting.DefaultValue);
@@ -58,15 +59,10 @@ public partial class MainWindowViewModel : ViewModelBase
                     taskName = argument.Substring(TasksAppArguments.RunTask.Length + 1);
                 }
             }
-
-            CurrentPage = new LaunchTaskViewModel(taskName);
+            WindowManager.SwitchView(new LaunchTaskViewModel(taskName));
         } else
         {
-            Action<PageViewModelBase> change = x =>
-            {
-                CurrentPage = x;
-            };
-            CurrentPage = new TasksViewModel(change);
+            WindowManager.SwitchView(new TasksViewModel());
         }
     }
 }

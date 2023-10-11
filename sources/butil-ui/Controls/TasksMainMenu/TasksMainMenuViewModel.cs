@@ -101,11 +101,12 @@ namespace butil_ui.Controls.TasksMainMenu
 
         public void ImportMediaTaskCreateCommand()
         {
-
+            WindowManager.SwitchView(new EditMediaTaskViewModel(string.Empty));
         }
 
         public void IncrementalBackupTaskCreateCommand()
         {
+            WindowManager.SwitchView(new EditIncrementalBackupTaskViewModel(string.Empty));
         }
 
         #endregion

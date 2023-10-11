@@ -39,8 +39,8 @@
 		</ScrollViewer>
 
 		<StackPanel Grid.Row="1" Margin="24 8 24 8" Orientation="Horizontal" HorizontalAlignment="Right">
-			<Button MinWidth="120" Padding="0 8 0 8" VerticalAlignment="Center" Content="{Binding Button_OK}" HorizontalContentAlignment="Center" Margin="8 0 8 0" />
-			<Button MinWidth="120" Padding="0 8 0 8" VerticalAlignment="Center" Content="{Binding Button_Cancel}" HorizontalContentAlignment="Center" Margin="8 0 8 0" />
+			<Button MinWidth="120" Padding="0 8 0 8" VerticalAlignment="Center" Content="{Binding Button_OK}" HorizontalContentAlignment="Center" Margin="8 0 8 0" Command="{Binding ButtonCancelCommand}" />
+			<Button MinWidth="120" Padding="0 8 0 8" VerticalAlignment="Center" Content="{Binding Button_Cancel}" HorizontalContentAlignment="Center" Margin="8 0 8 0" Command="{Binding ButtonOkCommand}" />
 		</StackPanel>
 	</Grid>
 

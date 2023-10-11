@@ -5,10 +5,9 @@ namespace butil_ui.ViewModels;
 
 public class EditMediaTaskViewModel : PageViewModelBase
 {
-    public EditMediaTaskViewModel(string taskName, Action<PageViewModelBase> changePage)
+    public EditMediaTaskViewModel(string taskName)
     {
-        _taskName = taskName;
-        _changePage = changePage;
+        _taskName = string.IsNullOrEmpty(taskName) ? Resources.Task_Field_Name_NewDefaultValue : taskName;
         WindowTitle = taskName;
     }
 
@@ -17,8 +16,23 @@ public class EditMediaTaskViewModel : PageViewModelBase
     public string Button_OK => Resources.Button_OK;
     #endregion
 
+    #region Commands
+
+    public void ButtonCancelCommand()
+    {
+        WindowManager.SwitchView(new TasksViewModel());
+    }
+
+    public void ButtonOkCommand()
+    {
+        // TODO: actual saving
+
+        WindowManager.SwitchView(new TasksViewModel());
+    }
+
+    #endregion
+
     private readonly string _taskName;
-    private readonly Action<PageViewModelBase> _changePage;
 
     public void Initialize()
     {

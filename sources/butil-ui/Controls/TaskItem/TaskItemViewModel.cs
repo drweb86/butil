@@ -15,21 +15,18 @@ namespace butil_ui.Controls
     public class TaskItemViewModel : ViewModelBase
     {
         private readonly ObservableCollection<TaskItemViewModel> _items;
-        private readonly Action<PageViewModelBase> _changePage;
 
         public TaskItemViewModel(
             string name,
             string lastLaunchedAt,
             SolidColorBrush foreground,
-            ObservableCollection<TaskItemViewModel> items,
-            Action<PageViewModelBase> changePage)
+            ObservableCollection<TaskItemViewModel> items)
         {
             SuccessForegroundColorBrush = new SolidColorBrush(ColorPalette.GetForeground(SemanticColor.Success));
             Name = name;
             LastLaunchedAt = lastLaunchedAt;
             Foreground = foreground;
             _items = items;
-            _changePage = changePage;
         }
 
         public string Name { get; }
@@ -59,9 +56,9 @@ namespace butil_ui.Controls
                 return;
 
             if (task.Model is IncrementalBackupModelOptionsV2)
-                _changePage(new EditIncrementalBackupTaskViewModel(task.Name, _changePage));
+                WindowManager.SwitchView(new EditIncrementalBackupTaskViewModel(task.Name));
             else if (task.Model is ImportMediaTaskModelOptionsV2)
-                _changePage(new EditMediaTaskViewModel(task.Name, _changePage));
+                WindowManager.SwitchView(new EditMediaTaskViewModel(task.Name));
         }
 
         public void TaskRestoreCommand()
