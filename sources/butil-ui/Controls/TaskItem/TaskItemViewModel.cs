@@ -9,6 +9,7 @@ using System.Collections.ObjectModel;
 using System;
 using BUtil.Core.State;
 using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.Events;
 
 namespace butil_ui.Controls
 {
@@ -19,13 +20,21 @@ namespace butil_ui.Controls
         public TaskItemViewModel(
             string name,
             string lastLaunchedAt,
-            SolidColorBrush foreground,
+            ProcessingStatus status,
             ObservableCollection<TaskItemViewModel> items)
         {
             SuccessForegroundColorBrush = new SolidColorBrush(ColorPalette.GetForeground(SemanticColor.Success));
             Name = name;
             LastLaunchedAt = lastLaunchedAt;
-            Foreground = foreground;
+            Foreground = ColorPalette.GetResultColor(status);
+            switch (status)
+            {
+                case ProcessingStatus.NotStarted: TaskState = string.Empty; break;
+                case ProcessingStatus.FinishedWithErrors: TaskState = "⛔"; break;
+                case ProcessingStatus.FinishedSuccesfully: TaskState = "✅"; break;
+                case ProcessingStatus.InProgress: TaskState = " ?"; break;
+                default: throw new ArgumentOutOfRangeException(nameof(status));
+            }
             _items = items;
         }
 
@@ -35,7 +44,7 @@ namespace butil_ui.Controls
 
         public SolidColorBrush SuccessForegroundColorBrush { get; }
 
-        public string Task_LastExecution_State => Resources.Task_LastExecution_State;
+        public string TaskState { get; }
         public string Task_Delete_Hint => Resources.Task_Delete_Hint;
         public string Task_Launch_Hint => Resources.Task_Launch_Hint;
         public string Task_Edit_Hint => Resources.Task_Edit_Hint;

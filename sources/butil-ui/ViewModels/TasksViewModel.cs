@@ -91,7 +91,7 @@ public class TasksViewModel : PageViewModelBase
         foreach (var taskName in taskNames)
         {
             var lastLogFile = lastLogs.FirstOrDefault(x => x.TaskName == taskName);
-            string lastLaunchedAt = lastLogFile != null ? lastLogFile.CreatedAt.ToString() : "-";
+            string lastLaunchedAt = lastLogFile != null ? lastLogFile.CreatedAt.ToString() : string.Empty;
 
             var status = ProcessingStatus.NotStarted;
             if (lastLogFile != null)
@@ -101,7 +101,7 @@ public class TasksViewModel : PageViewModelBase
                 else
                     status = ProcessingStatus.InProgress;
             }
-            var listViewItem = new TaskItemViewModel(taskName, lastLaunchedAt, ColorPalette.GetResultColor(status), _items);
+            var listViewItem = new TaskItemViewModel(taskName, lastLaunchedAt, status, _items);
             Items.Add(listViewItem);
         }
     }

@@ -12,47 +12,47 @@
 
 	<Grid>
 		<Grid.ColumnDefinitions>
-			
 			<ColumnDefinition Width="*" />
 			<ColumnDefinition Width="Auto" />
 			<ColumnDefinition Width="Auto" />
 		</Grid.ColumnDefinitions>
 
-		<WrapPanel
+		<StackPanel
 			Grid.Column="0"
+			Margin="4 4 0 4"
 			Orientation="Vertical"
+			VerticalAlignment="Stretch"
 			HorizontalAlignment="Stretch"
-			VerticalAlignment="Center"
 			MaxWidth="{Binding $parent.Bounds.Width}">
 			<TextBlock
 				Text="{Binding Path=Name}"
 				TextWrapping="Wrap"
+				FontWeight="Bold"
 				FontSize="16"
-				Margin="0 0 0 8"
+				Margin="6 0 0 8"
 			/>
 			<WrapPanel Orientation="Horizontal">
 				<TextBlock
-					Text="{Binding Path=Task_LastExecution_State}"
+					Text="{Binding Path=TaskState}"
 					Foreground="{Binding Path=Foreground}"
-					TextWrapping="Wrap"
-					Margin="0 0 8 0"
-							/>
+					Padding="0 0 4 0"
+				/>
 				<TextBlock
 					Text="{Binding Path=LastLaunchedAt}"
 					Foreground="{Binding Path=Foreground}"
 					TextWrapping="Wrap"
-							/>
+				/>
 			</WrapPanel>
-		</WrapPanel>
+		</StackPanel>
 
 		<Button Grid.Column="1"
-		VerticalAlignment="Center"
-		Margin="4"
-		Padding="16"
-		MinWidth="40"
-		Foreground="{Binding SuccessForegroundColorBrush}"
-		ToolTip.Tip="{Binding Task_Launch_Hint}"
-		Command="{Binding TaskLaunchCommand}">
+			VerticalAlignment="Center"
+			Margin="4"
+			Padding="16"
+			MinWidth="40"
+			Foreground="{Binding SuccessForegroundColorBrush}"
+			ToolTip.Tip="{Binding Task_Launch_Hint}"
+			Command="{Binding TaskLaunchCommand}">
 			<Path
 				Data="{StaticResource play_regular}"
 				Stroke="{Binding $parent.Foreground}"
