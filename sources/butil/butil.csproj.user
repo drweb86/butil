@@ -29,9 +29,6 @@
     <Compile Update="Tasks\Forms\EditIncrementalBackupTaskForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Tasks\Forms\TasksForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Restore\BlameForm.cs">
       <SubType>Form</SubType>
     </Compile>

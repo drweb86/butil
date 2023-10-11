@@ -31,41 +31,64 @@
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
-		<controls:TasksMainMenuView Grid.Row="1" />
+		<controls:TasksMainMenuView Grid.Row="0" />
 		<controls:UpdateCheckExpanderView
 			Grid.Row="1"
 			HorizontalAlignment="Stretch"
 			Margin="24 8 24 8"
 			ScrollViewer.HorizontalScrollBarVisibility="Disabled" />
-		<Expander Grid.Row="2" HorizontalAlignment="Stretch" Margin="24 8 24 8" IsExpanded="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
-			<Expander.Header>
-				<TextBlock TextWrapping="Wrap"
-						   Foreground="{Binding ProgressGenericForeground}"
-						   Grid.Column="0"
-						   FontWeight="DemiBold"
-						   Margin="0 8 16 8"
-						   VerticalAlignment="Center"
-						   MaxWidth="{Binding $parent.Bounds.Width}"
-						/>
-			</Expander.Header>
-			<ScrollViewer
-				ScrollViewer.VerticalScrollBarVisibility="Visible"
-				ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-				<ItemsRepeater
-					ItemsSource="{Binding Items}"
-					>
-					<ItemsRepeater.ItemTemplate>
-						<DataTemplate>
+		<ListBox ItemsSource="{Binding Items}" Grid.Row="2" Margin="24 8 24 8">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<WrapPanel Orientation="Horizontal">
+						<WrapPanel
+							Orientation="Vertical"
+							HorizontalAlignment="Stretch"
+							MaxWidth="{Binding $parent.Bounds.Width}">
 							<TextBlock
-								Text="{Binding Path=Text}"
-								Foreground="{Binding Path=BackColor}"
+								Text="{Binding Path=Name}"
 								TextWrapping="Wrap"
 								FontWeight="DemiBold"
+								Margin="0 0 0 8"
+						/>
+							<WrapPanel Orientation="Horizontal">
+								<TextBlock
+									Text="{Binding $parent[ListBox].((vm:TasksViewModel)DataContext).Task_LastExecution_State}"
+									Foreground="{Binding Path=Foreground}"
+									TextWrapping="Wrap"
+									Margin="0 0 8 0"
 							/>
-						</DataTemplate>
-					</ItemsRepeater.ItemTemplate>
-				</ItemsRepeater>
-			</ScrollViewer>
-		</Expander>
+								<TextBlock
+									Text="{Binding Path=LastLaunchedAt}"
+									Foreground="{Binding Path=Foreground}"
+									TextWrapping="Wrap"
+							/>
+							</WrapPanel>
+						</WrapPanel>
+						<WrapPanel VerticalAlignment="Center">
+							<!--<Button
+								IsVisible="{Binding IsStopButtonEnabled}"
+								VerticalAlignment="Center"
+								Margin="4"
+								Padding="16"
+								MinWidth="40"
+								Foreground="Red"
+								ToolTip.Tip="{Binding Button_Cancel}"
+								Command="{Binding StopTaskCommand}">
+											<Path
+												Data="{StaticResource stop_regular}"
+												Stroke="{Binding $parent.Foreground}"
+												Fill="{Binding $parent.Foreground}"
+												StrokeThickness="1"
+												Width="32"
+												Height="32"
+												Stretch="Uniform"
+								/>
+							</Button>-->
+						</WrapPanel>
+					</WrapPanel>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
 	</Grid>
 </UserControl>

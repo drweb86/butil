@@ -8,7 +8,6 @@ using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
-using BUtil.Core.Settings;
 using BUtil.Core.TasksTree.Core;
 using System;
 using System.Collections.Generic;
@@ -422,7 +421,7 @@ public class LaunchTaskViewModel : PageViewModelBase
             {
                 if (status != ProcessingStatus.NotStarted)
                 {
-                    item.BackColor = GetResultColor(status);
+                    item.BackColor = ColorPalette.GetResultColor(_theme, status);
                 }
                 break;
             }
@@ -456,18 +455,6 @@ public class LaunchTaskViewModel : PageViewModelBase
     {
         Dispatcher.UIThread.Invoke(update);
         SetProgress(_endedTasks.Count, _items.Count);
-    }
-
-    private SolidColorBrush GetResultColor(ProcessingStatus state)
-    {
-        return state switch
-        {
-            ProcessingStatus.FinishedSuccesfully => new SolidColorBrush(_successForegroundColor),
-            ProcessingStatus.FinishedWithErrors => new SolidColorBrush(_errorForegroundColor),
-            ProcessingStatus.InProgress => new SolidColorBrush(ColorPalette.GetForeground(_theme, SemanticColor.InProgress)),
-            ProcessingStatus.NotStarted => throw new InvalidOperationException(state.ToString()),
-            _ => throw new NotImplementedException(state.ToString()),
-        };
     }
 
     private void OnTaskCompleted()

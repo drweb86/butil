@@ -17,7 +17,6 @@ namespace BUtil.Configurator
 			args ??= Array.Empty<string>();
 			if (args.Length == 0)
 			{
-                Application.Run(new TasksForm());
 				return;
 			}
 
@@ -51,10 +50,6 @@ namespace BUtil.Configurator
             else if (args.Length > 1)
 			{
 				Messages.ShowErrorBox(Resources.CommandLineArguments_Invalid + string.Format(Resources.CommandLineArguments_Help, SupportManager.GetLink(SupportRequest.Homepage)));
-			}
-			else
-			{
-				Application.Run(new TasksForm());
 			}
 		}
 
