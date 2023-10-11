@@ -99,6 +99,15 @@ namespace butil_ui.Controls.TasksMainMenu
             SupportManager.OpenHomePage();
         }
 
+        public void ImportMediaTaskCreateCommand()
+        {
+
+        }
+
+        public void IncrementalBackupTaskCreateCommand()
+        {
+        }
+
         #endregion
 
         #region Labels
@@ -106,6 +115,10 @@ namespace butil_ui.Controls.TasksMainMenu
         public string Task_Restore => Resources.Task_Restore;
         public string LogFile_OpenLogs => Resources.LogFile_OpenLogs;
         public string Task_Launch_Hint => Resources.Task_Launch_Hint;
+        public string Task_Create => Resources.Task_Create;
+        public string Task_Create_Hint => Resources.Task_Create_Hint;
+        public string ImportMediaTask_Create => Resources.ImportMediaTask_Create;
+        public string IncrementalBackupTask_Create => Resources.IncrementalBackupTask_Create;
 
         #endregion
 
