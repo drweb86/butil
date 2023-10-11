@@ -13,8 +13,13 @@
   
   <ItemGroup>
     <None Remove="Assets\butil.ico" />
+    <None Remove="Assets\CrystalClear_EveraldoCoelho_BackupTask48x48.png" />
     <None Remove="Assets\CrystalClear_EveraldoCoelho_OtherOptions48x48.png" />
+    <None Remove="Assets\CrystalClear_EveraldoCoelho_Password48x48.png" />
     <None Remove="Assets\CrystalClear_EveraldoCoelho_Refresh48x48.png" />
+    <None Remove="Assets\CrystalClear_EveraldoCoelho_Schedule48x48.png" />
+    <None Remove="Assets\CrystalClear_EveraldoCoelho_Storages48x48.png" />
+    <None Remove="Assets\CrystalProject_EveraldoCoelho_SourceItems48x48.png" />
     <None Remove="Assets\www.wefunction.com_FunctionFreeIconSet_App.png" />
     <None Remove="Assets\www.wefunction.com_FunctionFreeIconSet_cross_48.png" />
   </ItemGroup>
@@ -39,11 +44,35 @@
     <Compile Update="Controls\TaskItem\TaskItemView.axaml.cs">
       <DependentUpon>TaskItemView.axaml</DependentUpon>
     </Compile>
+    <Compile Update="Controls\NameTask\NameTaskView.axaml.cs">
+      <DependentUpon>NameTaskView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\WhenTask\WhenTaskView.axaml.cs">
+      <DependentUpon>WhenTaskView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\ImportMediaTaskWhereTask\ImportMediaTaskWhereTaskView.axaml.cs">
+      <DependentUpon>ImportMediaTaskWhereTaskView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\WhereTask\WhereTaskView.axaml.cs">
+      <DependentUpon>WhereTaskView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\EncryptionTask\EncryptionTaskView.axaml.cs">
+      <DependentUpon>EncryptionTaskView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\WhatTask\WhatTaskView.axaml.cs">
+      <DependentUpon>WhatTaskView.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Controls\TasksMainMenu\TasksMainMenuView.axaml.cs">
       <DependentUpon>TasksMainMenuView.axaml</DependentUpon>
     </Compile>
     <Compile Update="Controls\UpdateCheckExpander\UpdateCheckExpanderView.axaml.cs">
       <DependentUpon>UpdateCheckExpanderView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\EditMediaTaskView.axaml.cs">
+      <DependentUpon>EditMediaTaskView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\EditIncrementalBackupTaskView.axaml.cs">
+      <DependentUpon>EditIncrementalBackupTaskView.axaml</DependentUpon>
     </Compile>
     <Compile Update="Views\TasksView.axaml.cs">
       <DependentUpon>TasksView.axaml</DependentUpon>

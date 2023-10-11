@@ -21,9 +21,6 @@
 			<Setter Property="VerticalAlignment" Value="Stretch" />
 		</Style>
 	</UserControl.Styles>
-	<Design.DataContext>
-		<vm:LaunchTaskViewModel />
-	</Design.DataContext>
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="*" />

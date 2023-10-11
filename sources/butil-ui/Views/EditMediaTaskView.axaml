@@ -3,12 +3,12 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="clr-namespace:butil_ui.ViewModels"
+    xmlns:controls="clr-namespace:butil_ui.Controls"
     mc:Ignorable="d"
 	d:DesignWidth="800"
 	d:DesignHeight="450"
-    x:Class="butil_ui.Views.TasksView"
-	x:DataType="vm:TasksViewModel"
-	xmlns:controls="clr-namespace:butil_ui.Controls"
+    x:Class="butil_ui.Views.EditMediaTaskView"
+	x:DataType="vm:EditMediaTaskViewModel"
 	Loaded="OnLoaded">
 	<UserControl.Resources>
 		<StreamGeometry x:Key="play_regular">M13.7501344,8.41212026 L38.1671892,21.1169293 C39.7594652,21.9454306 40.3786269,23.9078584 39.5501255,25.5001344 C39.2420737,26.0921715 38.7592263,26.5750189 38.1671892,26.8830707 L13.7501344,39.5878797 C12.1578584,40.4163811 10.1954306,39.7972194 9.36692926,38.2049434 C9.12586301,37.7416442 9,37.2270724 9,36.704809 L9,11.295191 C9,9.50026556 10.4550746,8.045191 12.25,8.045191 C12.6976544,8.045191 13.1396577,8.13766178 13.5485655,8.31589049 L13.7501344,8.41212026 Z M12.5961849,10.629867 L12.4856981,10.5831892 C12.4099075,10.5581 12.3303482,10.545191 12.25,10.545191 C11.8357864,10.545191 11.5,10.8809774 11.5,11.295191 L11.5,36.704809 C11.5,36.8253313 11.5290453,36.9440787 11.584676,37.0509939 C11.7758686,37.4184422 12.2287365,37.5613256 12.5961849,37.370133 L37.0132397,24.665324 C37.1498636,24.5942351 37.2612899,24.4828088 37.3323788,24.3461849 C37.5235714,23.9787365 37.380688,23.5258686 37.0132397,23.334676 L12.5961849,10.629867 Z</StreamGeometry>
@@ -24,22 +24,25 @@
 	</UserControl.Styles>
 	<Grid>
 		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto" />
-			<RowDefinition Height="Auto" />
 			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
-		<controls:TasksMainMenuView Grid.Row="0" />
-		<controls:UpdateCheckExpanderView
-			Grid.Row="1"
-			HorizontalAlignment="Stretch"
-			Margin="24 8 24 8"
-			ScrollViewer.HorizontalScrollBarVisibility="Disabled" />
-		<ListBox ItemsSource="{Binding Items}" Grid.Row="2" Margin="24 8 24 8">
-			<ListBox.ItemTemplate>
-				<DataTemplate>
-					<controls:TaskItemView DataContext="{Binding}" />
-				</DataTemplate>
-			</ListBox.ItemTemplate>
-		</ListBox>
+
+		<ScrollViewer Grid.Row="0"
+				ScrollViewer.VerticalScrollBarVisibility="Visible"
+				ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+			<StackPanel>
+				<controls:NameTaskView Margin="24 8 24 8" />
+				<controls:WhereTaskView Margin="24 8 24 8" />
+				<controls:ImportMediaTaskWhereTaskView Margin="24 8 24 8" />
+			</StackPanel>
+		</ScrollViewer>
+
+		<StackPanel Grid.Row="1" Margin="24 8 24 8" Orientation="Horizontal" HorizontalAlignment="Right">
+			<Button MinWidth="120" Padding="0 8 0 8" VerticalAlignment="Center" Content="{Binding Button_OK}" HorizontalContentAlignment="Center" Margin="8 0 8 0" />
+			<Button MinWidth="120" Padding="0 8 0 8" VerticalAlignment="Center" Content="{Binding Button_Cancel}" HorizontalContentAlignment="Center" Margin="8 0 8 0" />
+		</StackPanel>
 	</Grid>
+
+
 </UserControl>

@@ -26,12 +26,20 @@ public partial class MainWindowViewModel : ViewModelBase
     }
 
 
+    private PageViewModelBase _currentPage;
     /// <summary>
     /// Gets the current page. The property is read-only
     /// </summary>
     public PageViewModelBase? CurrentPage
     {
-        get; set;
+        get => _currentPage;
+        set {
+            if (value != null && value != _currentPage)
+            {
+                _currentPage = value;
+                this.OnPropertyChanged(nameof(CurrentPage));
+            }
+        }
     }
 
     public MainWindowViewModel()
@@ -54,7 +62,11 @@ public partial class MainWindowViewModel : ViewModelBase
             CurrentPage = new LaunchTaskViewModel(taskName);
         } else
         {
-            CurrentPage = new TasksViewModel();
+            Action<PageViewModelBase> change = x =>
+            {
+                CurrentPage = x;
+            };
+            CurrentPage = new TasksViewModel(change);
         }
     }
 }

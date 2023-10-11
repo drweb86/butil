@@ -1,0 +1,22 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:cvm="clr-namespace:butil_ui.Controls"
+             mc:Ignorable="d"
+             x:Class="butil_ui.Controls.WhereTaskView"
+			 x:DataType="cvm:WhereTaskViewModel">
+	<Expander HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
+		<Expander.Header>
+			<StackPanel Orientation="Horizontal">
+				<Image Width="16" Height="16" Source="/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png" VerticalAlignment="Center" />
+				<TextBlock Text="{Binding LeftMenu_Where}" Margin="8 0 0 0" VerticalAlignment="Center" />
+			</StackPanel>
+		</Expander.Header>
+		<ScrollViewer
+			ScrollViewer.VerticalScrollBarVisibility="Visible"
+			ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+			Content
+		</ScrollViewer>
+	</Expander>
+</UserControl>
