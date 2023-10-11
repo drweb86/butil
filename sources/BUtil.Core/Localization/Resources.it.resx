@@ -214,8 +214,7 @@
     <value>Limite upload, GB:</value>
   </data>
   <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
-    <value>Limita la quantità di dati inviati allo spazio di archiviazione durante l'esecuzione di un'attività. 
-	0 - nessun limite.
+    <value>Limita la quantità di dati inviati allo spazio di archiviazione durante l'esecuzione di un'attività. 0 - nessun limite.
 	Quando la quota viene superata, gli altri file verranno ignorati e verranno elaborati la volta successiva.
 	Scenario di utilizzo: copi i dati sul server remoto. 
 	C'è un problema: l'ISP riduce la velocità di caricamento dopo diversi GB. 
@@ -614,7 +613,7 @@
     <value>Questo tipo di attività non è supportato.</value>
   </data>
   <data name="Theme_Title" xml:space="preserve">
-    <value>Tema</value>
+    <value>Tema </value>
   </data>
   <data name="Theme_Value_Dark" xml:space="preserve">
     <value>Tema scuro</value>
@@ -642,5 +641,8 @@
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Non è stata specificato l'utente.</value>
+  </data>
+  <data name="Button_Download" xml:space="preserve">
+    <value>Download</value>
   </data>
 </root>
