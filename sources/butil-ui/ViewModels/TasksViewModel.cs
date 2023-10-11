@@ -4,6 +4,7 @@ using BUtil.Core.Events;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
+using butil_ui.Controls;
 using System.Collections.ObjectModel;
 using System.Linq;
 
@@ -15,12 +16,12 @@ public class TasksViewModel : PageViewModelBase
     private readonly Color _successForegroundColor;
     private readonly string _theme;
 
-    public TasksViewModel(string theme)
+    public TasksViewModel()
     {
-        _theme = theme;
-        _progressGenericForeground = new SolidColorBrush(ColorPalette.GetForeground(theme, SemanticColor.Normal));
-        _errorForegroundColor = ColorPalette.GetForeground(theme, SemanticColor.Error);
-        _successForegroundColor = ColorPalette.GetForeground(theme, SemanticColor.Success);
+        _theme = ApplicationSettings.Theme;
+        _progressGenericForeground = new SolidColorBrush(ColorPalette.GetForeground(SemanticColor.Normal));
+        _errorForegroundColor = ColorPalette.GetForeground(SemanticColor.Error);
+        _successForegroundColor = ColorPalette.GetForeground(SemanticColor.Success);
 
         WindowTitle = "BUtil - V" + CopyrightInfo.Version.ToString(3);
 
@@ -48,8 +49,8 @@ public class TasksViewModel : PageViewModelBase
 
     #region Items
 
-    private ObservableCollection<TaskViewItem> _items = new();
-    public ObservableCollection<TaskViewItem> Items
+    private ObservableCollection<TaskItemViewModel> _items = new();
+    public ObservableCollection<TaskItemViewModel> Items
     {
         get
         {
@@ -100,7 +101,7 @@ public class TasksViewModel : PageViewModelBase
                 else
                     status = ProcessingStatus.InProgress;
             }
-            var listViewItem = new TaskViewItem(taskName, lastLaunchedAt, ColorPalette.GetResultColor(_theme, status));
+            var listViewItem = new TaskItemViewModel(taskName, lastLaunchedAt, ColorPalette.GetResultColor(status), _items);
             Items.Add(listViewItem);
         }
     }
@@ -328,17 +329,3 @@ namespace BUtil.Configurator.Configurator.Controls
     }
 }
 */
-
-public class TaskViewItem
-{
-    public TaskViewItem(string name, string lastLaunchedAt, SolidColorBrush foreground)
-    {
-        Name = name;
-        LastLaunchedAt = lastLaunchedAt;
-        Foreground = foreground;
-    }
-
-    public string Name { get; }
-    public string LastLaunchedAt { get; }
-    public SolidColorBrush Foreground { get; }
-}

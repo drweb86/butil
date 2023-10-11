@@ -39,7 +39,6 @@ namespace BUtil.Configurator.Configurator.Controls
             SetHintForControl(_addButton, Resources.Task_Create_Hint);
             SetHintForControl(_removeButton, Resources.Task_Delete_Hint);
             SetHintForControl(_editButton, Resources.Task_Edit_Hint);
-            SetHintForControl(_executeButton, Resources.Task_Launch_Hint);
             SetHintForControl(_recoverButton, Resources.Task_Restore);
 
             _addToolStripMenuItem.Text = Resources.Task_Create;
@@ -91,7 +90,7 @@ namespace BUtil.Configurator.Configurator.Controls
                         listViewItem.BackColor = Color.Yellow;
                     }
                 }
-                
+
                 _tasksListView.Items.Add(listViewItem);
             }
             _tasksListView.EndUpdate();
@@ -201,12 +200,9 @@ namespace BUtil.Configurator.Configurator.Controls
                 _removeToolStripMenuItem.Enabled =
                 _editButton.Enabled =
                 _editToolStripMenuItem.Enabled =
-                _executeButton.Enabled =
                 _executeToolStripMenuItem.Enabled =
                     _tasksListView.SelectedItems.Count > 0;
 
-            _executeToolStripMenuItem.Enabled =
-                _executeButton.Enabled = _executeButton.Enabled;
         }
 
         private void OnTasksListViewResize(object sender, EventArgs e)

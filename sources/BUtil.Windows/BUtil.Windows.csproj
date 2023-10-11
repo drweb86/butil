@@ -20,10 +20,10 @@
     <ProjectReference Include="..\BUtil.Core\BUtil.Core.csproj" />
   </ItemGroup>
 
-  <PropertyGroup>
-	<PreBuildEvent>
-			xcopy "%userprofile%\.nuget\packages\taskscheduler\2.10.1\lib\net6.0-windows7.0" "$(SolutionDir)..\Output\BUtil\bin" /Y/E
-			xcopy "%userprofile%\.nuget\packages\mediadevices\1.10.0\lib\net7.0" "$(SolutionDir)..\Output\BUtil\bin" /Y
-    </PreBuildEvent>
-  </PropertyGroup>
+	<ItemGroup>
+		<CopyLibraryFiles Include="$(HOMEDRIVE)$(HOMEPATH)\.nuget\packages\taskscheduler\2.10.1\lib\net6.0-windows7.0\*.*;$(HOMEDRIVE)$(HOMEPATH)\.nuget\packages\mediadevices\1.10.0\lib\net7.0\*.*" />
+	</ItemGroup>
+	<Target Name="CopyLibraries" AfterTargets="Build">
+		<Copy SourceFiles="@(CopyLibraryFiles)" DestinationFolder="$(SolutionDir)..\Output\BUtil\bin" />
+	</Target>
 </Project>

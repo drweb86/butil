@@ -40,53 +40,7 @@
 		<ListBox ItemsSource="{Binding Items}" Grid.Row="2" Margin="24 8 24 8">
 			<ListBox.ItemTemplate>
 				<DataTemplate>
-					<WrapPanel Orientation="Horizontal">
-						<WrapPanel
-							Orientation="Vertical"
-							HorizontalAlignment="Stretch"
-							MaxWidth="{Binding $parent.Bounds.Width}">
-							<TextBlock
-								Text="{Binding Path=Name}"
-								TextWrapping="Wrap"
-								FontWeight="DemiBold"
-								Margin="0 0 0 8"
-						/>
-							<WrapPanel Orientation="Horizontal">
-								<TextBlock
-									Text="{Binding $parent[ListBox].((vm:TasksViewModel)DataContext).Task_LastExecution_State}"
-									Foreground="{Binding Path=Foreground}"
-									TextWrapping="Wrap"
-									Margin="0 0 8 0"
-							/>
-								<TextBlock
-									Text="{Binding Path=LastLaunchedAt}"
-									Foreground="{Binding Path=Foreground}"
-									TextWrapping="Wrap"
-							/>
-							</WrapPanel>
-						</WrapPanel>
-						<WrapPanel VerticalAlignment="Center">
-							<!--<Button
-								IsVisible="{Binding IsStopButtonEnabled}"
-								VerticalAlignment="Center"
-								Margin="4"
-								Padding="16"
-								MinWidth="40"
-								Foreground="Red"
-								ToolTip.Tip="{Binding Button_Cancel}"
-								Command="{Binding StopTaskCommand}">
-											<Path
-												Data="{StaticResource stop_regular}"
-												Stroke="{Binding $parent.Foreground}"
-												Fill="{Binding $parent.Foreground}"
-												StrokeThickness="1"
-												Width="32"
-												Height="32"
-												Stretch="Uniform"
-								/>
-							</Button>-->
-						</WrapPanel>
-					</WrapPanel>
+					<controls:TaskItemView DataContext="{Binding}" />
 				</DataTemplate>
 			</ListBox.ItemTemplate>
 		</ListBox>

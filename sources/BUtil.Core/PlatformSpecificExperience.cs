@@ -13,7 +13,7 @@ namespace BUtil.Core
             Instance = new CrossPlatformExperience();
             if (OperatingSystem.IsWindows())
             {
-                var assembly = Assembly.LoadFile(Files.WindowsExperience);
+                var assembly = Assembly.LoadFrom(Files.WindowsExperience);
                 var experienceType = assembly
                     .GetTypes()
                     .Where(x => x.BaseType == typeof(CrossPlatformExperience))

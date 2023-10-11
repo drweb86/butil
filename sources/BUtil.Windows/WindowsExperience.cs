@@ -5,6 +5,7 @@ using BUtil.Core.Options;
 using BUtil.Core.Services;
 using BUtil.Core.Storages;
 using BUtil.Windows.Services;
+using System.Reflection;
 
 namespace BUtil.Windows
 {

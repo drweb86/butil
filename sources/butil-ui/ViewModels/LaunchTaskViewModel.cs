@@ -22,13 +22,13 @@ public class LaunchTaskViewModel : PageViewModelBase
     private readonly Color _errorForegroundColor;
     private readonly Color _successForegroundColor;
 
-    public LaunchTaskViewModel(string taskName, string theme)
+    public LaunchTaskViewModel(string taskName)
     {
         _taskName = taskName;
-        _theme = theme;
-        _progressGenericForeground = new SolidColorBrush(ColorPalette.GetForeground(theme, SemanticColor.Normal));
-        _errorForegroundColor = ColorPalette.GetForeground(theme, SemanticColor.Error);
-        _successForegroundColor = ColorPalette.GetForeground(theme, SemanticColor.Success);
+        _theme = ApplicationSettings.Theme;
+        _progressGenericForeground = new SolidColorBrush(ColorPalette.GetForeground(SemanticColor.Normal));
+        _errorForegroundColor = ColorPalette.GetForeground(SemanticColor.Error);
+        _successForegroundColor = ColorPalette.GetForeground(SemanticColor.Success);
 
         WindowTitle = taskName;
 
@@ -397,7 +397,7 @@ public class LaunchTaskViewModel : PageViewModelBase
 
         _threadTask
             .GetChildren()
-            .Select(x => new LaunchTaskViewItem(x, ColorPalette.GetForeground(_theme, SemanticColor.Normal)))
+            .Select(x => new LaunchTaskViewItem(x, ColorPalette.GetForeground(SemanticColor.Normal)))
             .ToList()
             .ForEach(_items.Add);
     }
@@ -421,7 +421,7 @@ public class LaunchTaskViewModel : PageViewModelBase
             {
                 if (status != ProcessingStatus.NotStarted)
                 {
-                    item.BackColor = ColorPalette.GetResultColor(_theme, status);
+                    item.BackColor = ColorPalette.GetResultColor(status);
                 }
                 break;
             }
@@ -440,7 +440,7 @@ public class LaunchTaskViewModel : PageViewModelBase
 
         foreach (var task in e.Tasks)
         {
-            var listItem = new LaunchTaskViewItem(task, ColorPalette.GetForeground(_theme, SemanticColor.Normal));
+            var listItem = new LaunchTaskViewItem(task, ColorPalette.GetForeground(SemanticColor.Normal));
             _items.Insert(index, listItem);
             index++;
         }

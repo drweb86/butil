@@ -7,21 +7,21 @@ namespace butil_ui.ViewModels;
 
 public static class ColorPalette
 {
-    public static SolidColorBrush GetResultColor(string theme, ProcessingStatus state)
+    public static SolidColorBrush GetResultColor(ProcessingStatus state)
     {
         return state switch
         {
-            ProcessingStatus.FinishedSuccesfully => new SolidColorBrush(GetForeground(theme, SemanticColor.Success)),
-            ProcessingStatus.FinishedWithErrors => new SolidColorBrush(GetForeground(theme, SemanticColor.Error)),
-            ProcessingStatus.InProgress => new SolidColorBrush(GetForeground(theme, SemanticColor.InProgress)),
-            ProcessingStatus.NotStarted => new SolidColorBrush(GetForeground(theme, SemanticColor.Normal)),
+            ProcessingStatus.FinishedSuccesfully => new SolidColorBrush(GetForeground(SemanticColor.Success)),
+            ProcessingStatus.FinishedWithErrors => new SolidColorBrush(GetForeground(SemanticColor.Error)),
+            ProcessingStatus.InProgress => new SolidColorBrush(GetForeground(SemanticColor.InProgress)),
+            ProcessingStatus.NotStarted => new SolidColorBrush(GetForeground(SemanticColor.Normal)),
             _ => throw new NotImplementedException(state.ToString()),
         };
     }
 
-    public static Color GetForeground(string theme, SemanticColor color)
+    public static Color GetForeground(SemanticColor color)
     {
-        if (theme == ThemeSetting.DarkValue)
+        if (ApplicationSettings.Theme == ThemeSetting.DarkValue)
         {
             switch (color)
             {
@@ -32,7 +32,7 @@ public static class ColorPalette
             }
 
         } 
-        else if (theme == ThemeSetting.LightValue)
+        else if (ApplicationSettings.Theme == ThemeSetting.LightValue)
         {
             switch (color)
             {

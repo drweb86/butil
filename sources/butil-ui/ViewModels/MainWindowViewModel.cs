@@ -38,7 +38,7 @@ public partial class MainWindowViewModel : ViewModelBase
     {
         var args = Environment.GetCommandLineArgs().Skip(1).ToArray();
         var settingsService = new SettingsStoreService();
-        var theme = settingsService.Load(ThemeSetting.Name, ThemeSetting.DefaultValue);
+        ApplicationSettings.Theme = settingsService.Load(ThemeSetting.Name, ThemeSetting.DefaultValue);
 
         if (args.Length == 2 && args[0].ToUpperInvariant() == TasksAppArguments.LaunchTask.ToUpperInvariant())
         {
@@ -51,10 +51,10 @@ public partial class MainWindowViewModel : ViewModelBase
                 }
             }
 
-            CurrentPage = new LaunchTaskViewModel(taskName, theme);
+            CurrentPage = new LaunchTaskViewModel(taskName);
         } else
         {
-            CurrentPage = new TasksViewModel(theme);
+            CurrentPage = new TasksViewModel();
         }
     }
 }

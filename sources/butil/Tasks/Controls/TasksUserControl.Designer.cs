@@ -43,7 +43,6 @@
             _removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             _recoverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             _imageList = new System.Windows.Forms.ImageList(components);
-            _executeButton = new System.Windows.Forms.Button();
             _addButton = new System.Windows.Forms.Button();
             _createTaskContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(components);
             _createIncrementalBackupTaskToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,10 +65,10 @@
             _tasksListView.ContextMenuStrip = _contextMenuStrip;
             _tasksListView.FullRowSelect = true;
             _tasksListView.LargeImageList = _imageList;
-            _tasksListView.Location = new System.Drawing.Point(6, 5);
-            _tasksListView.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            _tasksListView.Location = new System.Drawing.Point(4, 3);
+            _tasksListView.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             _tasksListView.Name = "_tasksListView";
-            _tasksListView.Size = new System.Drawing.Size(764, 660);
+            _tasksListView.Size = new System.Drawing.Size(536, 396);
             _tasksListView.SmallImageList = _imageList;
             _tasksListView.TabIndex = 0;
             _tasksListView.UseCompatibleStateImageBehavior = false;
@@ -83,7 +82,7 @@
             _nameColumn.Text = "Name";
             _nameColumn.Width = 404;
             // 
-            // _lastBackupAt
+            // _lastExecutionStateColumn
             // 
             _lastExecutionStateColumn.Text = "State";
             _lastExecutionStateColumn.Width = 120;
@@ -93,13 +92,13 @@
             _contextMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             _contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { _executeToolStripMenuItem, _addToolStripMenuItem, _editToolStripMenuItem, toolStripSeparator1, _removeToolStripMenuItem, _recoverToolStripMenuItem });
             _contextMenuStrip.Name = "_contextMenuStrip";
-            _contextMenuStrip.Size = new System.Drawing.Size(167, 170);
+            _contextMenuStrip.Size = new System.Drawing.Size(134, 160);
             // 
             // _executeToolStripMenuItem
             // 
             _executeToolStripMenuItem.Image = (System.Drawing.Image)resources.GetObject("_executeToolStripMenuItem.Image");
             _executeToolStripMenuItem.Name = "_executeToolStripMenuItem";
-            _executeToolStripMenuItem.Size = new System.Drawing.Size(166, 32);
+            _executeToolStripMenuItem.Size = new System.Drawing.Size(133, 30);
             _executeToolStripMenuItem.Text = "Execute...";
             _executeToolStripMenuItem.Click += ExecuteRequest;
             // 
@@ -108,20 +107,20 @@
             _addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { _createIncrementalBackupTaskToolStripMenuItem, _createImportMultimediaTaskToolStripMenuItem });
             _addToolStripMenuItem.Image = Icons.Add;
             _addToolStripMenuItem.Name = "_addToolStripMenuItem";
-            _addToolStripMenuItem.Size = new System.Drawing.Size(166, 32);
+            _addToolStripMenuItem.Size = new System.Drawing.Size(133, 30);
             _addToolStripMenuItem.Text = "Add...";
             // 
             // _createIncrementalBackupTaskToolStripMenuItem
             // 
             _createIncrementalBackupTaskToolStripMenuItem.Name = "_createIncrementalBackupTaskToolStripMenuItem";
-            _createIncrementalBackupTaskToolStripMenuItem.Size = new System.Drawing.Size(360, 34);
+            _createIncrementalBackupTaskToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             _createIncrementalBackupTaskToolStripMenuItem.Text = "Create incremental backup task";
             _createIncrementalBackupTaskToolStripMenuItem.Click += OnCreateIncrementalBackupTask;
             // 
             // _createImportMultimediaTaskToolStripMenuItem
             // 
             _createImportMultimediaTaskToolStripMenuItem.Name = "_createImportMultimediaTaskToolStripMenuItem";
-            _createImportMultimediaTaskToolStripMenuItem.Size = new System.Drawing.Size(360, 34);
+            _createImportMultimediaTaskToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             _createImportMultimediaTaskToolStripMenuItem.Text = "Create import multimedia task";
             _createImportMultimediaTaskToolStripMenuItem.Click += OnCreateImportMultimediaTask;
             // 
@@ -129,20 +128,20 @@
             // 
             _editToolStripMenuItem.Image = Icons.OtherOptions48x48;
             _editToolStripMenuItem.Name = "_editToolStripMenuItem";
-            _editToolStripMenuItem.Size = new System.Drawing.Size(166, 32);
+            _editToolStripMenuItem.Size = new System.Drawing.Size(133, 30);
             _editToolStripMenuItem.Text = "Edit...";
             _editToolStripMenuItem.Click += OnEditTask;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new System.Drawing.Size(163, 6);
+            toolStripSeparator1.Size = new System.Drawing.Size(130, 6);
             // 
             // _removeToolStripMenuItem
             // 
             _removeToolStripMenuItem.Image = Icons.removeFromListToolStripMenuItem_Image;
             _removeToolStripMenuItem.Name = "_removeToolStripMenuItem";
-            _removeToolStripMenuItem.Size = new System.Drawing.Size(166, 32);
+            _removeToolStripMenuItem.Size = new System.Drawing.Size(133, 30);
             _removeToolStripMenuItem.Text = "Remove";
             _removeToolStripMenuItem.Click += RemoveTaskRequest;
             // 
@@ -150,7 +149,7 @@
             // 
             _recoverToolStripMenuItem.Image = Icons.Refresh48x48;
             _recoverToolStripMenuItem.Name = "_recoverToolStripMenuItem";
-            _recoverToolStripMenuItem.Size = new System.Drawing.Size(166, 32);
+            _recoverToolStripMenuItem.Size = new System.Drawing.Size(133, 30);
             _recoverToolStripMenuItem.Text = "Recover...";
             _recoverToolStripMenuItem.Click += OnOpenRestorationApp;
             // 
@@ -161,31 +160,17 @@
             _imageList.TransparentColor = System.Drawing.Color.Transparent;
             _imageList.Images.SetKeyName(0, "BackupTask16x16.png");
             // 
-            // _executeButton
-            // 
-            _executeButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            _executeButton.Image = (System.Drawing.Image)resources.GetObject("_executeButton.Image");
-            _executeButton.Location = new System.Drawing.Point(6, 5);
-            _executeButton.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            _executeButton.MaximumSize = new System.Drawing.Size(96, 96);
-            _executeButton.MinimumSize = new System.Drawing.Size(96, 96);
-            _executeButton.Name = "_executeButton";
-            _executeButton.Size = new System.Drawing.Size(96, 96);
-            _executeButton.TabIndex = 1;
-            _executeButton.UseVisualStyleBackColor = true;
-            _executeButton.Click += ExecuteRequest;
-            // 
             // _addButton
             // 
             _addButton.ContextMenuStrip = _createTaskContextMenuStrip;
             _addButton.Dock = System.Windows.Forms.DockStyle.Fill;
             _addButton.Image = Icons.add_48;
-            _addButton.Location = new System.Drawing.Point(6, 111);
-            _addButton.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            _addButton.MaximumSize = new System.Drawing.Size(96, 96);
-            _addButton.MinimumSize = new System.Drawing.Size(96, 96);
+            _addButton.Location = new System.Drawing.Point(4, 3);
+            _addButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            _addButton.MaximumSize = new System.Drawing.Size(67, 58);
+            _addButton.MinimumSize = new System.Drawing.Size(67, 58);
             _addButton.Name = "_addButton";
-            _addButton.Size = new System.Drawing.Size(96, 96);
+            _addButton.Size = new System.Drawing.Size(67, 58);
             _addButton.TabIndex = 2;
             _addButton.UseVisualStyleBackColor = true;
             _addButton.Click += OnAddButtonOpenMenu;
@@ -195,19 +180,19 @@
             _createTaskContextMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             _createTaskContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { _createIncrementalBackupTaskToolStripMenuItem2, _createImportMultimediaTaskToolStripMenuItem2 });
             _createTaskContextMenuStrip.Name = "_createTaskContextMenuStrip";
-            _createTaskContextMenuStrip.Size = new System.Drawing.Size(331, 68);
+            _createTaskContextMenuStrip.Size = new System.Drawing.Size(241, 48);
             // 
             // _createIncrementalBackupTaskToolStripMenuItem2
             // 
             _createIncrementalBackupTaskToolStripMenuItem2.Name = "_createIncrementalBackupTaskToolStripMenuItem2";
-            _createIncrementalBackupTaskToolStripMenuItem2.Size = new System.Drawing.Size(330, 32);
+            _createIncrementalBackupTaskToolStripMenuItem2.Size = new System.Drawing.Size(240, 22);
             _createIncrementalBackupTaskToolStripMenuItem2.Text = "Create incremental backup task";
             _createIncrementalBackupTaskToolStripMenuItem2.Click += OnCreateIncrementalBackupTask;
             // 
             // _createImportMultimediaTaskToolStripMenuItem2
             // 
             _createImportMultimediaTaskToolStripMenuItem2.Name = "_createImportMultimediaTaskToolStripMenuItem2";
-            _createImportMultimediaTaskToolStripMenuItem2.Size = new System.Drawing.Size(330, 32);
+            _createImportMultimediaTaskToolStripMenuItem2.Size = new System.Drawing.Size(240, 22);
             _createImportMultimediaTaskToolStripMenuItem2.Text = "Create import multimedia task";
             _createImportMultimediaTaskToolStripMenuItem2.Click += OnCreateImportMultimediaTask;
             // 
@@ -215,12 +200,12 @@
             // 
             _removeButton.Dock = System.Windows.Forms.DockStyle.Fill;
             _removeButton.Image = Icons.cross_48;
-            _removeButton.Location = new System.Drawing.Point(6, 323);
-            _removeButton.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            _removeButton.MaximumSize = new System.Drawing.Size(96, 96);
-            _removeButton.MinimumSize = new System.Drawing.Size(96, 96);
+            _removeButton.Location = new System.Drawing.Point(4, 131);
+            _removeButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            _removeButton.MaximumSize = new System.Drawing.Size(67, 58);
+            _removeButton.MinimumSize = new System.Drawing.Size(67, 58);
             _removeButton.Name = "_removeButton";
-            _removeButton.Size = new System.Drawing.Size(96, 96);
+            _removeButton.Size = new System.Drawing.Size(67, 58);
             _removeButton.TabIndex = 4;
             _removeButton.UseVisualStyleBackColor = true;
             _removeButton.Click += RemoveTaskRequest;
@@ -229,12 +214,12 @@
             // 
             _editButton.Dock = System.Windows.Forms.DockStyle.Fill;
             _editButton.Image = Icons.OtherOptions48x48;
-            _editButton.Location = new System.Drawing.Point(6, 217);
-            _editButton.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            _editButton.MaximumSize = new System.Drawing.Size(96, 96);
-            _editButton.MinimumSize = new System.Drawing.Size(96, 96);
+            _editButton.Location = new System.Drawing.Point(4, 67);
+            _editButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            _editButton.MaximumSize = new System.Drawing.Size(67, 58);
+            _editButton.MinimumSize = new System.Drawing.Size(67, 58);
             _editButton.Name = "_editButton";
-            _editButton.Size = new System.Drawing.Size(96, 96);
+            _editButton.Size = new System.Drawing.Size(67, 58);
             _editButton.TabIndex = 3;
             _editButton.UseVisualStyleBackColor = true;
             _editButton.Click += OnEditTask;
@@ -243,12 +228,12 @@
             // 
             _recoverButton.Dock = System.Windows.Forms.DockStyle.Fill;
             _recoverButton.Image = Icons.Refresh48x48;
-            _recoverButton.Location = new System.Drawing.Point(6, 429);
-            _recoverButton.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            _recoverButton.MaximumSize = new System.Drawing.Size(96, 96);
-            _recoverButton.MinimumSize = new System.Drawing.Size(96, 96);
+            _recoverButton.Location = new System.Drawing.Point(4, 195);
+            _recoverButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            _recoverButton.MaximumSize = new System.Drawing.Size(67, 58);
+            _recoverButton.MinimumSize = new System.Drawing.Size(67, 58);
             _recoverButton.Name = "_recoverButton";
-            _recoverButton.Size = new System.Drawing.Size(96, 96);
+            _recoverButton.Size = new System.Drawing.Size(67, 58);
             _recoverButton.TabIndex = 5;
             _recoverButton.UseVisualStyleBackColor = true;
             _recoverButton.Click += OnOpenRestorationApp;
@@ -262,10 +247,11 @@
             _mainTableLayoutPanel.Controls.Add(_tasksListView, 0, 0);
             _mainTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             _mainTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            _mainTableLayoutPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             _mainTableLayoutPanel.Name = "_mainTableLayoutPanel";
             _mainTableLayoutPanel.RowCount = 1;
             _mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            _mainTableLayoutPanel.Size = new System.Drawing.Size(890, 670);
+            _mainTableLayoutPanel.Size = new System.Drawing.Size(623, 402);
             _mainTableLayoutPanel.TabIndex = 6;
             // 
             // _rightTableLayoutPanel
@@ -274,12 +260,12 @@
             _rightTableLayoutPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             _rightTableLayoutPanel.ColumnCount = 1;
             _rightTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            _rightTableLayoutPanel.Controls.Add(_executeButton, 0, 0);
             _rightTableLayoutPanel.Controls.Add(_addButton, 0, 1);
             _rightTableLayoutPanel.Controls.Add(_editButton, 0, 2);
             _rightTableLayoutPanel.Controls.Add(_removeButton, 0, 3);
             _rightTableLayoutPanel.Controls.Add(_recoverButton, 0, 4);
-            _rightTableLayoutPanel.Location = new System.Drawing.Point(779, 3);
+            _rightTableLayoutPanel.Location = new System.Drawing.Point(546, 2);
+            _rightTableLayoutPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             _rightTableLayoutPanel.Name = "_rightTableLayoutPanel";
             _rightTableLayoutPanel.RowCount = 6;
             _rightTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -288,17 +274,17 @@
             _rightTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             _rightTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             _rightTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            _rightTableLayoutPanel.Size = new System.Drawing.Size(108, 530);
+            _rightTableLayoutPanel.Size = new System.Drawing.Size(75, 256);
             _rightTableLayoutPanel.TabIndex = 7;
             // 
             // TasksUserControl
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             Controls.Add(_mainTableLayoutPanel);
-            Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             Name = "TasksUserControl";
-            Size = new System.Drawing.Size(890, 670);
+            Size = new System.Drawing.Size(623, 402);
             _contextMenuStrip.ResumeLayout(false);
             _createTaskContextMenuStrip.ResumeLayout(false);
             _mainTableLayoutPanel.ResumeLayout(false);
@@ -321,7 +307,6 @@
         private System.Windows.Forms.ColumnHeader _nameColumn;
         private System.Windows.Forms.ImageList _imageList;
         private System.Windows.Forms.ToolStripMenuItem _executeToolStripMenuItem;
-        private System.Windows.Forms.Button _executeButton;
         private System.Windows.Forms.ColumnHeader _lastExecutionStateColumn;
         private System.Windows.Forms.Button _recoverButton;
         private System.Windows.Forms.ToolStripMenuItem _recoverToolStripMenuItem;

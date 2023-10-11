@@ -13,8 +13,10 @@
   
   <ItemGroup>
     <None Remove="Assets\butil.ico" />
+    <None Remove="Assets\CrystalClear_EveraldoCoelho_OtherOptions48x48.png" />
     <None Remove="Assets\CrystalClear_EveraldoCoelho_Refresh48x48.png" />
     <None Remove="Assets\www.wefunction.com_FunctionFreeIconSet_App.png" />
+    <None Remove="Assets\www.wefunction.com_FunctionFreeIconSet_cross_48.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,6 +28,7 @@
 
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.4" />
+    <PackageReference Include="MessageBox.Avalonia" Version="3.1.4" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +36,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Controls\TaskItem\TaskItemView.axaml.cs">
+      <DependentUpon>TaskItemView.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Controls\TasksMainMenu\TasksMainMenuView.axaml.cs">
       <DependentUpon>TasksMainMenuView.axaml</DependentUpon>
     </Compile>
