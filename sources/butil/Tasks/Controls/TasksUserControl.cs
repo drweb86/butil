@@ -21,9 +21,6 @@ namespace BUtil.Configurator.Configurator.Controls
         public TasksUserControl()
         {
             InitializeComponent();
-
-            _lastExecutionStateColumn.Text = Resources.Task_LastExecution_State;
-            OnTasksListViewResize(this, null);
             SetLastExecutionColumnWidth();
         }
 
@@ -37,9 +34,6 @@ namespace BUtil.Configurator.Configurator.Controls
         public override void ApplyLocalization()
         {
             SetHintForControl(_addButton, Resources.Task_Create_Hint);
-            SetHintForControl(_removeButton, Resources.Task_Delete_Hint);
-            SetHintForControl(_editButton, Resources.Task_Edit_Hint);
-            SetHintForControl(_recoverButton, Resources.Task_Restore);
 
             _addToolStripMenuItem.Text = Resources.Task_Create;
             _removeToolStripMenuItem.Text = Resources.Task_Delete;
@@ -57,43 +51,6 @@ namespace BUtil.Configurator.Configurator.Controls
 
         public override void SetOptionsToUi(object settings)
         {
-            ReloadTasks();
-            RefreshTaskControls(this, null);
-        }
-
-        private void ReloadTasks()
-        {
-            var backupTaskStoreService = new TaskV2StoreService();
-            var taskNames = backupTaskStoreService.GetNames();
-
-            var logsService = new LogService();
-            var lastLogs = logsService.GetRecentLogs();
-
-            _tasksListView.BeginUpdate();
-            _tasksListView.Items.Clear();
-            foreach (var taskName in taskNames)
-            {
-                var lastLogFile = lastLogs.FirstOrDefault(x => x.TaskName == taskName);
-                string status = lastLogFile != null ? lastLogFile.CreatedAt.ToString() : "-";
-                var listViewItem = new ListViewItem(new[] { taskName, status }, 0);
-
-                if (lastLogFile != null)
-                {
-                    if (lastLogFile.IsSuccess.HasValue)
-                    {
-                        listViewItem.BackColor = lastLogFile.IsSuccess.Value ? Color.LightGreen : Color.PaleVioletRed;
-                        if (lastLogFile.IsSuccess.Value == false)
-                            listViewItem.ForeColor = Color.White;
-                    }
-                    else
-                    {
-                        listViewItem.BackColor = Color.Yellow;
-                    }
-                }
-
-                _tasksListView.Items.Add(listViewItem);
-            }
-            _tasksListView.EndUpdate();
         }
 
         void OnCreateIncrementalBackupTask(object sender, EventArgs e)
@@ -112,8 +69,6 @@ namespace BUtil.Configurator.Configurator.Controls
 
                 var schedulerService = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
                 schedulerService?.Schedule(task.Name, scheduleInfo);
-
-                ReloadTasks();
             }
         }
         private void OnEditTask(object sender, EventArgs e)
@@ -154,30 +109,6 @@ namespace BUtil.Configurator.Configurator.Controls
 
             storeService.Delete(taskName);
             storeService.Save(task);
-
-            ReloadTasks();
-        }
-
-        void RemoveTaskRequest(object sender, EventArgs e)
-        {
-            var selectedTasks = new List<ListViewItem>();
-            foreach (ListViewItem taskToRemove in _tasksListView.SelectedItems)
-            {
-                selectedTasks.Add(taskToRemove);
-            }
-
-            foreach (var selectedTask in selectedTasks)
-            {
-                if (Messages.ShowYesNoDialog(string.Format(Resources.Task_Delete_Confirm, selectedTask.Text)))
-                {
-                    var backupTasksService = new TaskV2StoreService();
-                    backupTasksService.Delete(selectedTask.Text);
-                    var schedulerService = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
-                    schedulerService?.Unschedule(selectedTask.Text);
-                }
-            }
-            ReloadTasks();
-            RefreshTaskControls(this, e);
         }
 
         void ExecuteRequest(object sender, EventArgs e)
@@ -194,33 +125,12 @@ namespace BUtil.Configurator.Configurator.Controls
 
         void RefreshTaskControls(object sender, EventArgs e)
         {
-            _recoverButton.Enabled =
                 _recoverToolStripMenuItem.Enabled =
-                _removeButton.Enabled =
                 _removeToolStripMenuItem.Enabled =
-                _editButton.Enabled =
                 _editToolStripMenuItem.Enabled =
                 _executeToolStripMenuItem.Enabled =
                     _tasksListView.SelectedItems.Count > 0;
 
-        }
-
-        private void OnTasksListViewResize(object sender, EventArgs e)
-        {
-            var total = Math.Max(_tasksListView.Width - _displacementToBorder, _displacementToBorder);
-            _nameColumn.Width = total - _lastExecutionStateColumn.Width;
-            ;
-        }
-
-        private void OnOpenRestorationApp(object sender, EventArgs e)
-        {
-            var selectedTasks = new List<string>();
-            foreach (ListViewItem taskToExecute in _tasksListView.SelectedItems)
-            {
-                selectedTasks.Add(taskToExecute.Text);
-            }
-
-            SupportManager.OpenRestorationApp(selectedTasks.First());
         }
 
         private void OnCreateImportMultimediaTask(object sender, EventArgs e)
@@ -237,8 +147,6 @@ namespace BUtil.Configurator.Configurator.Controls
 
             new TaskV2StoreService()
                 .Save(task);
-
-            ReloadTasks();
         }
 
         private void OnAddButtonOpenMenu(object sender, EventArgs e)
