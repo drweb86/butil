@@ -25,11 +25,17 @@ namespace butil_ui.Controls
 
             WindowTitle = isNew ? Resources.Task_Field_Name_NewDefaultValue : taskName;
             IsNew = isNew;
-            NameTaskViewModel = new NameTaskViewModel(isNew, Resources.IncrementalBackup_Help, isNew ? Resources.Task_Field_Name_NewDefaultValue : taskName);
+
+            var storeService = new TaskV2StoreService();
+            var task = isNew ? new TaskV2() : storeService.Load(taskName) ?? new TaskV2();
+            NameTaskViewModel = new NameTaskViewModel(isNew, Resources.IncrementalBackup_Help, task.Name);
+            var model = (IncrementalBackupModelOptionsV2)task.Model;
+            EncryptionTaskViewModel = new EncryptionTaskViewModel(model.Password);
         }
 
         public bool IsNew { get; set; }
         public NameTaskViewModel NameTaskViewModel { get; }
+        public EncryptionTaskViewModel EncryptionTaskViewModel { get; }
 
         #region Commands
 
@@ -43,6 +49,10 @@ namespace butil_ui.Controls
             var newTask = new TaskV2
             {
                 Name = NameTaskViewModel.Name,
+                Model = new IncrementalBackupModelOptionsV2
+                {
+                    Password = EncryptionTaskViewModel.Password
+                }
             };
 
             if (!TaskV2Validator.TryValidate(newTask, out var error))

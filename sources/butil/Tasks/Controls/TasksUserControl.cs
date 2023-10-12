@@ -61,7 +61,7 @@ namespace BUtil.Configurator.Configurator.Controls
                 Model = new IncrementalBackupModelOptionsV2()
             };
             var scheduleInfo = new ScheduleInfo();
-            using var form = new EditIncrementalBackupTaskForm(task, scheduleInfo, Tasks.TaskEditorPageEnum.Encryption);
+            using var form = new EditIncrementalBackupTaskForm(task, scheduleInfo, Tasks.TaskEditorPageEnum.SourceItems);
             if (form.ShowDialog() == DialogResult.OK)
             {
                 var backupTaskStoreService = new TaskV2StoreService();
@@ -141,7 +141,7 @@ namespace BUtil.Configurator.Configurator.Controls
                 Model = new ImportMediaTaskModelOptionsV2(),
             };
 
-            using var form = new EditImportMediaTaskForm(task, Tasks.TaskEditorPageEnum.Encryption, true);
+            using var form = new EditImportMediaTaskForm(task, Tasks.TaskEditorPageEnum.Storages, true);
             if (form.ShowDialog() != DialogResult.OK)
                 return;
 

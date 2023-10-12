@@ -13,10 +13,21 @@
 				<TextBlock Text="{Binding LeftMenu_Encryption}" Margin="8 0 0 0" VerticalAlignment="Center" />
 			</StackPanel>
 		</Expander.Header>
-		<ScrollViewer
-			ScrollViewer.VerticalScrollBarVisibility="Visible"
-			ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-			Content
-		</ScrollViewer>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
+
+			<TextBlock Grid.Column="0" Grid.Row="0" Text="{Binding Password_Field}" VerticalAlignment="Center" Margin="0,0,8,0" />
+			<TextBox Grid.Column="1" Grid.Row="0" Text="{Binding Password}" VerticalAlignment="Center" />
+			<Button Grid.Column="2" Grid.Row="0" Content="{Binding Password_Generate}" VerticalAlignment="Center" Margin="4 0 0 0" Command="{Binding PasswordGenerateCommand}" />
+			<TextBlock Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="1" Text="{Binding Password_Help}" TextWrapping="Wrap" Margin="0,8,0,0" />
+		</Grid>
 	</Expander>
 </UserControl>

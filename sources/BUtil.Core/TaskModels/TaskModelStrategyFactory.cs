@@ -27,6 +27,13 @@ namespace BUtil.Core.BackupModels
             if (options is IncrementalBackupModelOptionsV2)
             {
                 var typedOptions = (IncrementalBackupModelOptionsV2)options;
+
+                if (string.IsNullOrWhiteSpace(typedOptions.Password))
+                {
+                    error = Resources.Password_Field_Validation_NotSpecified;
+                    return false;
+                }
+
                 if (typedOptions.Items.Count == 0)
                 {
                     error = Resources.SourceItem_Validation_Empty;

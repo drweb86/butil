@@ -31,7 +31,7 @@
 				<controls:WhatTaskView Margin="24 8 24 8" />
 				<controls:WhenTaskView Margin="24 8 24 8" />
 				<controls:WhereTaskView Margin="24 8 24 8" />
-				<controls:EncryptionTaskView Margin="24 8 24 8" />
+				<controls:EncryptionTaskView Margin="24 8 24 8" DataContext="{Binding EncryptionTaskViewModel}" />
 			</StackPanel>
 		</ScrollViewer>
 

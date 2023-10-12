@@ -8,9 +8,7 @@ namespace butil_ui.Controls
         {
             InitializeComponent();
 
-            var viewModel = new Controls.EncryptionTaskViewModel();
-            this.DataContext = viewModel;
-            viewModel.Initialize();
+            this.DataContext = new EncryptionTaskViewModel("password");
         }
     }
 }

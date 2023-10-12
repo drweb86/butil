@@ -59,7 +59,7 @@ namespace BUtil.Configurator.Controls
             }
         }
 
-        private TaskEditorPageEnum _currentView = TaskEditorPageEnum.Encryption;
+        private TaskEditorPageEnum _currentView = TaskEditorPageEnum.SourceItems;
 
         public TaskNavigationControl()
         {
@@ -68,7 +68,7 @@ namespace BUtil.Configurator.Controls
             BackColor = SystemColors.Window;
             this.BorderStyle = BorderStyle.None;
             _selectedButton = itemsForBackupButton;
-            changeView(itemsForBackupButton, TaskEditorPageEnum.Encryption);
+            changeView(itemsForBackupButton, TaskEditorPageEnum.SourceItems);
             _selectedButtonColor = Color.FromArgb(_halfSelectedButtonColor.A,
                 Math.Abs((_halfSelectedButtonColor.R + 5) % 256),
                 Math.Abs((_halfSelectedButtonColor.G + 5) % 256),
@@ -183,7 +183,7 @@ namespace BUtil.Configurator.Controls
 
         void EncryptionButtonClick(object sender, EventArgs e)
         {
-            changeView(sender, TaskEditorPageEnum.Encryption);
+            changeView(sender, TaskEditorPageEnum.SourceItems);
         }
 
         void leftPanelUserControlLoad(object sender, EventArgs e)
@@ -201,7 +201,7 @@ namespace BUtil.Configurator.Controls
 
         private void OnNameButtonClick(object sender, EventArgs e)
         {
-            changeView(sender, TaskEditorPageEnum.Encryption);
+            changeView(sender, TaskEditorPageEnum.SourceItems);
         }
     }
 }

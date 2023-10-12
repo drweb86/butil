@@ -126,7 +126,6 @@
             this.choosePanelUserControl.Name = "choosePanelUserControl";
             this.choosePanelUserControl.Size = new System.Drawing.Size(161, 426);
             this.choosePanelUserControl.TabIndex = 0;
-            this.choosePanelUserControl.ViewChanged += new BUtil.Configurator.Controls.TaskNavigationControl.ChangeViewEventHandler(this.ViewChangeNotification);
             this.choosePanelUserControl.CanChangeView += new BUtil.Configurator.Controls.TaskNavigationControl.CanChangeViewEventHandler(this.OnCanChangeView);
             // 
             // EditBackupTaskForm
