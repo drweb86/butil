@@ -1,4 +1,5 @@
-﻿using BUtil.Core.Localization;
+﻿using BUtil.Core;
+using BUtil.Core.Localization;
 using BUtil.Core.Options;
 using CommunityToolkit.Mvvm.ComponentModel;
 
@@ -17,6 +18,7 @@ namespace butil_ui.Controls
             Sunday = scheduleInfo.Days.Contains(System.DayOfWeek.Sunday);
             Hours = scheduleInfo.Time.Hours;
             Minutes = scheduleInfo.Time.Minutes;
+            IsWhenAvailable = PlatformSpecificExperience.Instance.GetTaskSchedulerService() != null;
         }
 
         public ScheduleInfo GetScheduleInfo()
@@ -35,6 +37,8 @@ namespace butil_ui.Controls
 
             return scheduleInfo;
         }
+
+        public bool IsWhenAvailable { get; }
 
         #region Labels
         public string LeftMenu_When => Resources.LeftMenu_When;

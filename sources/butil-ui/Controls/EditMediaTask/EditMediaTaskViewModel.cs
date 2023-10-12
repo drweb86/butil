@@ -42,6 +42,10 @@ namespace butil_ui.Controls
             var newTask = new TaskV2
             {
                 Name = NameTaskViewModel.Name,
+                Model = new ImportMediaTaskModelOptionsV2
+                {
+                    
+                }
             };
 
             if (!TaskV2Validator.TryValidate(newTask, out var error))
@@ -56,8 +60,6 @@ namespace butil_ui.Controls
                 storeService.Delete(_taskName);
             }
             storeService.Save(newTask);
-
-            // TODO: actual saving
 
             WindowManager.SwitchView(new TasksViewModel());
         }

@@ -33,7 +33,6 @@ namespace butil_ui.Controls
             EncryptionTaskViewModel = new EncryptionTaskViewModel(model.Password);
 
             var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
-            IsWhenAvailable = schedule != null;
             WhenTaskViewModel = new WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule?.GetSchedule(taskName) ?? new ScheduleInfo());
         }
 
@@ -41,7 +40,6 @@ namespace butil_ui.Controls
         public NameTaskViewModel NameTaskViewModel { get; }
         public EncryptionTaskViewModel EncryptionTaskViewModel { get; }
         public WhenTaskViewModel WhenTaskViewModel { get; }
-        public bool IsWhenAvailable { get; }
 
         #region Commands
 
