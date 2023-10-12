@@ -6,7 +6,6 @@ using BUtil.Configurator.Controls;
 using BUtil.Core.PL;
 using BUtil.Core.Options;
 using BUtil.Core.Localization;
-using BUtil.Configurator.AddBackupTaskWizard.View;
 using BUtil.Configurator.Configurator.Controls.Tasks;
 using BUtil.Core.ConfigurationFileModels.V2;
 

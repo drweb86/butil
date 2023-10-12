@@ -20,8 +20,15 @@ namespace butil_ui.Controls
             WindowTitle = isNew ? Resources.Task_Field_Name_NewDefaultValue : taskName;
             IsNew = isNew;
             NameTaskViewModel = new NameTaskViewModel(isNew, Resources.ImportMediaTask_Help, isNew ? Resources.Task_Field_Name_NewDefaultValue : taskName);
+
+            var storeService = new TaskV2StoreService();
+            var task = isNew ? new TaskV2() { Model = new ImportMediaTaskModelOptionsV2() } : storeService.Load(taskName) ?? new TaskV2() { Model = new ImportMediaTaskModelOptionsV2() };
+            var model = (ImportMediaTaskModelOptionsV2)task.Model;
+
+            ImportMediaTaskWhereTaskViewModel = new ImportMediaTaskWhereTaskViewModel(model.DestinationFolder, model.SkipAlreadyImportedFiles, model.TransformFileName);
         }
 
+        public ImportMediaTaskWhereTaskViewModel ImportMediaTaskWhereTaskViewModel { get; }
         public NameTaskViewModel NameTaskViewModel { get; }
         public bool IsNew { get; set; }
 
@@ -44,7 +51,9 @@ namespace butil_ui.Controls
                 Name = NameTaskViewModel.Name,
                 Model = new ImportMediaTaskModelOptionsV2
                 {
-                    
+                    DestinationFolder = ImportMediaTaskWhereTaskViewModel.OutputFolder,
+                    SkipAlreadyImportedFiles = ImportMediaTaskWhereTaskViewModel.SkipAlreadyImportedFiles,
+                    TransformFileName = ImportMediaTaskWhereTaskViewModel.TransformFileName
                 }
             };
 

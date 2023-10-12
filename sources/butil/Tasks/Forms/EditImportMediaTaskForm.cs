@@ -4,7 +4,6 @@ using System.Windows.Forms;
 using BUtil.Configurator.Configurator.Controls;
 using BUtil.Core.PL;
 using BUtil.Core.Localization;
-using BUtil.Configurator.AddBackupTaskWizard.View;
 using BUtil.Configurator.Configurator.Controls.Tasks;
 using BUtil.Core.ConfigurationFileModels.V2;
 
@@ -15,7 +14,6 @@ namespace BUtil.Configurator.Configurator.Forms
         private readonly Dictionary<TaskEditorPageEnum, BackUserControl> _pages = new Dictionary<TaskEditorPageEnum, BackUserControl>();
         private readonly TaskV2 _task;
         private WhereUserControl _whereUserControl = new WhereUserControl();
-        private ImportMediaTaskWhereUserControl _importMediaTaskWhereUserControl = new ImportMediaTaskWhereUserControl();
 
         public EditImportMediaTaskForm(TaskV2 task, TaskEditorPageEnum startPage, bool isNewTask)
         {
@@ -37,7 +35,6 @@ namespace BUtil.Configurator.Configurator.Forms
         private void SetupUiComponents()
         {
             _pages.Add(TaskEditorPageEnum.SourceItems, _whereUserControl);
-            _pages.Add(TaskEditorPageEnum.Storages, _importMediaTaskWhereUserControl);
 
             foreach (var pagePair in _pages)
             {
@@ -46,9 +43,6 @@ namespace BUtil.Configurator.Configurator.Forms
 
             var settings = (ImportMediaTaskModelOptionsV2)_task.Model;
             _whereUserControl.StorageSettings = settings.From;
-            _importMediaTaskWhereUserControl.TransformFileName = settings.TransformFileName;
-            _importMediaTaskWhereUserControl.DestinationFolder = settings.DestinationFolder;
-            _importMediaTaskWhereUserControl.SkipAlreadyImportedFiles = settings.SkipAlreadyImportedFiles;
         }
 
         private bool SaveTask()
@@ -61,9 +55,6 @@ namespace BUtil.Configurator.Configurator.Forms
 
             var settings = (ImportMediaTaskModelOptionsV2)_task.Model;
             settings.From = _whereUserControl.StorageSettings;
-            settings.TransformFileName = _importMediaTaskWhereUserControl.TransformFileName;
-            settings.DestinationFolder = _importMediaTaskWhereUserControl.DestinationFolder;
-            settings.SkipAlreadyImportedFiles = _importMediaTaskWhereUserControl.SkipAlreadyImportedFiles;
 
             return isValid;
         }

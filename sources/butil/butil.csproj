@@ -63,9 +63,6 @@
     <None Remove="Properties\**" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Tasks\Controls\Tasks\ImportMediaTaskWhereUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="Tasks\Controls\TasksUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
