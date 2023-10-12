@@ -1,7 +1,6 @@
 ﻿using Avalonia.Controls;
-using butil_ui.ViewModels;
 
-namespace butil_ui.Views;
+namespace butil_ui.Controls;
 
 public partial class EditMediaTaskView : UserControl
 {

@@ -12,13 +12,6 @@ namespace butil_ui.Controls.TasksMainMenu
 {
     internal class TasksMainMenuViewModel: ViewModelBase
     {
-        private readonly Color _errorForegroundColor;
-        private readonly Color _successForegroundColor;
-
-        public TasksMainMenuViewModel()
-        {
-        }
-
         #region DarkThemeLabel
 
         private string _darkThemeLabel = string.Empty;
@@ -101,12 +94,12 @@ namespace butil_ui.Controls.TasksMainMenu
 
         public void ImportMediaTaskCreateCommand()
         {
-            WindowManager.SwitchView(new EditMediaTaskViewModel(string.Empty));
+            WindowManager.SwitchView(new EditMediaTaskViewModel(string.Empty, true));
         }
 
         public void IncrementalBackupTaskCreateCommand()
         {
-            WindowManager.SwitchView(new EditIncrementalBackupTaskViewModel(string.Empty));
+            WindowManager.SwitchView(new EditIncrementalBackupTaskViewModel(string.Empty, true));
         }
 
         #endregion

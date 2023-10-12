@@ -6,17 +6,26 @@
              mc:Ignorable="d"
              x:Class="butil_ui.Controls.NameTaskView"
 			 x:DataType="cvm:NameTaskViewModel">
-	<Expander HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
+	<Expander HorizontalAlignment="Stretch" IsExpanded="{Binding IsExpanded}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
 		<Expander.Header>
 			<StackPanel Orientation="Horizontal">
 				<Image Width="16" Height="16" Source="/Assets/CrystalClear_EveraldoCoelho_BackupTask48x48.png" VerticalAlignment="Center" />
-				<TextBlock Text="{Binding Name_Title}" Margin="8 0 0 0" VerticalAlignment="Center" />
+				<TextBlock Text="{Binding Name_Title}" Margin="8,0,0,0" VerticalAlignment="Center" />
 			</StackPanel>
 		</Expander.Header>
-		<ScrollViewer
-			ScrollViewer.VerticalScrollBarVisibility="Visible"
-			ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-			Content
-		</ScrollViewer>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+
+			<TextBlock Grid.Column="0" Grid.Row="0" Text="{Binding Name_Field}" VerticalAlignment="Center" Margin="0,0,8,0" />
+			<TextBox Grid.Column="1" Grid.Row="0" Text="{Binding Name}" VerticalAlignment="Center" />
+			<TextBlock Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1" Text="{Binding Help}" TextWrapping="Wrap" Margin="0,8,0,0" />
+		</Grid>
 	</Expander>
 </UserControl>

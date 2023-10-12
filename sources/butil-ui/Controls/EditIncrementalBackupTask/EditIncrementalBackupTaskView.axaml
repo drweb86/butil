@@ -2,13 +2,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:vm="clr-namespace:butil_ui.ViewModels"
     xmlns:controls="clr-namespace:butil_ui.Controls"
     mc:Ignorable="d"
 	d:DesignWidth="800"
 	d:DesignHeight="450"
-    x:Class="butil_ui.Views.EditIncrementalBackupTaskView"
-	x:DataType="vm:EditIncrementalBackupTaskViewModel"
+    x:Class="butil_ui.Controls.EditIncrementalBackupTaskView"
+	x:DataType="controls:EditIncrementalBackupTaskViewModel"
 	Loaded="OnLoaded">
 	<UserControl.Styles>
 		<Style Selector="Expander">
@@ -28,7 +27,7 @@
 				ScrollViewer.VerticalScrollBarVisibility="Visible"
 				ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 			<StackPanel>
-				<controls:NameTaskView Margin="24 24 24 8" />
+				<controls:NameTaskView Margin="24 24 24 8" DataContext="{Binding NameTaskViewModel}" />
 				<controls:WhatTaskView Margin="24 8 24 8" />
 				<controls:WhenTaskView Margin="24 8 24 8" />
 				<controls:WhereTaskView Margin="24 8 24 8" />
@@ -37,8 +36,8 @@
 		</ScrollViewer>
 
 		<StackPanel Grid.Row="1" Margin="24 8 24 24" Orientation="Horizontal" HorizontalAlignment="Right">
-			<Button MinWidth="120" Padding="0 8 0 8" VerticalAlignment="Center" Content="{Binding Button_OK}" HorizontalContentAlignment="Center" Margin="8 0 8 0" Command="{Binding ButtonCancelCommand}" />
-			<Button MinWidth="120" Padding="0 8 0 8" VerticalAlignment="Center" Content="{Binding Button_Cancel}" HorizontalContentAlignment="Center" Command="{Binding ButtonOkCommand}" />
+			<Button MinWidth="120" Padding="0 8 0 8" VerticalAlignment="Center" Content="{Binding Button_OK}" HorizontalContentAlignment="Center" Margin="8 0 8 0" Command="{Binding ButtonOkCommand}" />
+			<Button MinWidth="120" Padding="0 8 0 8" VerticalAlignment="Center" Content="{Binding Button_Cancel}" HorizontalContentAlignment="Center" Command="{Binding ButtonCancelCommand}" />
 		</StackPanel>
 	</Grid>
 </UserControl>

@@ -30,8 +30,8 @@
 			</MenuItem.Header>
 		</MenuItem>
 		<MenuItem Header="{Binding Task_Create}" ToolTip.Tip="{Binding Task_Create_Hint}">
-			<MenuItem Header="{Binding IncrementalBackupTask_Create}" Command="{Binding ImportMediaTaskCreateCommand}"/>
-			<MenuItem Header="{Binding ImportMediaTask_Create}" Command="{Binding IncrementalBackupTaskCreateCommand}"/>
+			<MenuItem Header="{Binding IncrementalBackupTask_Create}" Command="{Binding IncrementalBackupTaskCreateCommand}"/>
+			<MenuItem Header="{Binding ImportMediaTask_Create}" Command="{Binding ImportMediaTaskCreateCommand}"/>
 		</MenuItem>
 		<MenuItem Header="?" Command="{Binding GoToWebsiteCommand}" />
 	</Menu>

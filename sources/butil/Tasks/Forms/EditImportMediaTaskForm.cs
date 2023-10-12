@@ -14,7 +14,6 @@ namespace BUtil.Configurator.Configurator.Forms
     {
         private readonly Dictionary<TaskEditorPageEnum, BackUserControl> _pages = new Dictionary<TaskEditorPageEnum, BackUserControl>();
         private readonly TaskV2 _task;
-        private TaskNameUserControl _taskNameUserControl = new TaskNameUserControl(Resources.ImportMediaTask_Help);
         private WhereUserControl _whereUserControl = new WhereUserControl();
         private ImportMediaTaskWhereUserControl _importMediaTaskWhereUserControl = new ImportMediaTaskWhereUserControl();
 
@@ -37,7 +36,6 @@ namespace BUtil.Configurator.Configurator.Forms
 
         private void SetupUiComponents()
         {
-            _pages.Add(TaskEditorPageEnum.Name, _taskNameUserControl);
             _pages.Add(TaskEditorPageEnum.SourceItems, _whereUserControl);
             _pages.Add(TaskEditorPageEnum.Storages, _importMediaTaskWhereUserControl);
 
@@ -46,7 +44,6 @@ namespace BUtil.Configurator.Configurator.Forms
                 pagePair.Value.HelpLabel = _toolStripStatusLabel;
             }
 
-            _taskNameUserControl.TaskName = _task.Name;
             var settings = (ImportMediaTaskModelOptionsV2)_task.Model;
             _whereUserControl.StorageSettings = settings.From;
             _importMediaTaskWhereUserControl.TransformFileName = settings.TransformFileName;
@@ -62,7 +59,6 @@ namespace BUtil.Configurator.Configurator.Forms
                 isValid = isValid && pagePair.Value.ValidateUi();
             }
 
-            _task.Name = _taskNameUserControl.TaskName;
             var settings = (ImportMediaTaskModelOptionsV2)_task.Model;
             settings.From = _whereUserControl.StorageSettings;
             settings.TransformFileName = _importMediaTaskWhereUserControl.TransformFileName;

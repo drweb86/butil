@@ -68,10 +68,10 @@
     <Compile Update="Controls\UpdateCheckExpander\UpdateCheckExpanderView.axaml.cs">
       <DependentUpon>UpdateCheckExpanderView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\EditMediaTaskView.axaml.cs">
+    <Compile Update="Controls\EditMediaTask\EditMediaTaskView.axaml.cs">
       <DependentUpon>EditMediaTaskView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\EditIncrementalBackupTaskView.axaml.cs">
+    <Compile Update="Controls\EditIncrementalBackupTask\EditIncrementalBackupTaskView.axaml.cs">
       <DependentUpon>EditIncrementalBackupTaskView.axaml</DependentUpon>
     </Compile>
     <Compile Update="Views\TasksView.axaml.cs">

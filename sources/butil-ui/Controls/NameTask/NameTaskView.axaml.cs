@@ -8,9 +8,7 @@ namespace butil_ui.Controls
         {
             InitializeComponent();
 
-            var viewModel = new Controls.NameTaskViewModel();
-            this.DataContext = viewModel;
-            viewModel.Initialize();
+            this.DataContext = new NameTaskViewModel(true, "Help text", "Some name");
         }
     }
 }

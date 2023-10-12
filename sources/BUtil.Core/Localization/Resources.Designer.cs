@@ -728,12 +728,9 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Imports audios, photos, videos from SD Card of camera, recorder;
-        ///photos and videos from your phone via WI-FI through FTP Server 
-        ///application using template file names.
+        ///   Looks up a localized string similar to Imports audios, photos, videos from SD Card of camera, recorder; photos and videos from your phone via WI-FI through FTP Server application using template file names.
         ///
-        ///See application web-site for documentation how to setup file
-        ///transmission via WI-FI through FTP Server application on the phone..
+        ///See application web-site for documentation how to setup file transmission via WI-FI through FTP Server application on the phone..
         /// </summary>
         public static string ImportMediaTask_Help {
             get {

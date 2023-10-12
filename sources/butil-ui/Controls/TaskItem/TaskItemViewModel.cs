@@ -65,9 +65,9 @@ namespace butil_ui.Controls
                 return;
 
             if (task.Model is IncrementalBackupModelOptionsV2)
-                WindowManager.SwitchView(new EditIncrementalBackupTaskViewModel(task.Name));
+                WindowManager.SwitchView(new EditIncrementalBackupTaskViewModel(task.Name, false));
             else if (task.Model is ImportMediaTaskModelOptionsV2)
-                WindowManager.SwitchView(new EditMediaTaskViewModel(task.Name));
+                WindowManager.SwitchView(new EditMediaTaskViewModel(task.Name, false));
         }
 
         public void TaskRestoreCommand()

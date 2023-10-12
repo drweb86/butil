@@ -36,7 +36,6 @@ namespace BUtil.Configurator.Configurator.Forms
         {
             var encryptionControl = new EncryptionUserControl(_task);
 
-            _views.Add(TaskEditorPageEnum.Name, new TaskNameUserControl(Resources.IncrementalBackup_Help));
             _views.Add(TaskEditorPageEnum.SourceItems, new WhatUserControl(_task));
             _views.Add(TaskEditorPageEnum.Storages, new WhereUserControl());
             _views.Add(TaskEditorPageEnum.Scheduler, new WhenUserControl());
@@ -47,7 +46,7 @@ namespace BUtil.Configurator.Configurator.Forms
             }
 
             ApplyOptionsToUi();
-            ViewChangeNotification(TaskEditorPageEnum.Name);
+            ViewChangeNotification(TaskEditorPageEnum.Encryption);
             UpdateAccessibilitiesView();
         }
 
@@ -79,7 +78,6 @@ namespace BUtil.Configurator.Configurator.Forms
                 pair.Value.GetOptionsFromUi();
             }
 
-            _task.Name = ((TaskNameUserControl)_views[TaskEditorPageEnum.Name]).TaskName;
             ((IncrementalBackupModelOptionsV2)_task.Model).To = ((WhereUserControl)_views[TaskEditorPageEnum.Storages]).StorageSettings;
 
             return isValid;
@@ -96,7 +94,6 @@ namespace BUtil.Configurator.Configurator.Forms
 
         private void ApplyOptionsToUi()
         {
-            ((TaskNameUserControl)_views[TaskEditorPageEnum.Name]).TaskName = _task.Name;
             ((WhereUserControl)_views[TaskEditorPageEnum.Storages]).StorageSettings = ((IncrementalBackupModelOptionsV2)_task.Model).To;
             _views[TaskEditorPageEnum.Scheduler].SetOptionsToUi(_scheduleInfo);
         }

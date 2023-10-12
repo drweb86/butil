@@ -59,7 +59,7 @@ namespace BUtil.Configurator.Controls
             }
         }
 
-        private TaskEditorPageEnum _currentView = TaskEditorPageEnum.Name;
+        private TaskEditorPageEnum _currentView = TaskEditorPageEnum.Encryption;
 
         public TaskNavigationControl()
         {
@@ -68,7 +68,7 @@ namespace BUtil.Configurator.Controls
             BackColor = SystemColors.Window;
             this.BorderStyle = BorderStyle.None;
             _selectedButton = itemsForBackupButton;
-            changeView(itemsForBackupButton, TaskEditorPageEnum.Name);
+            changeView(itemsForBackupButton, TaskEditorPageEnum.Encryption);
             _selectedButtonColor = Color.FromArgb(_halfSelectedButtonColor.A,
                 Math.Abs((_halfSelectedButtonColor.R + 5) % 256),
                 Math.Abs((_halfSelectedButtonColor.G + 5) % 256),
@@ -201,7 +201,7 @@ namespace BUtil.Configurator.Controls
 
         private void OnNameButtonClick(object sender, EventArgs e)
         {
-            changeView(sender, TaskEditorPageEnum.Name);
+            changeView(sender, TaskEditorPageEnum.Encryption);
         }
     }
 }

@@ -2,7 +2,6 @@
 {
     internal enum TaskEditorPageEnum
     {
-        Name,
         SourceItems,
         Storages,
         Scheduler,
