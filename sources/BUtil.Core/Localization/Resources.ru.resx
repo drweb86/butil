@@ -312,7 +312,7 @@
     <value>Импорт всех файлов</value>
   </data>
   <data name="ImportMediaTask_Create" xml:space="preserve">
-    <value>Создать задачу по импорту мультимедиа</value>
+    <value>Импорт мультимедиа</value>
   </data>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
     <value>Редактирование "{0}" задания по импорту мультимедиа</value>
@@ -382,7 +382,7 @@
     <value>Сохранение инкрементной версии</value>
   </data>
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
-    <value>Создать задачу по инкрементному резервному копированию</value>
+    <value>Инкрементное резервное копирование</value>
   </data>
   <data name="LeftMenu_Encryption" xml:space="preserve">
     <value>Шифрование</value>
@@ -541,7 +541,7 @@ bin.
     <value>Маска исключения файлов не указана.</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
-    <value>Создать</value>
+    <value>Новая задача</value>
   </data>
   <data name="Task_Create_Hint" xml:space="preserve">
     <value>Создает новую задачу.</value>

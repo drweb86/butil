@@ -314,7 +314,7 @@
     <value>Importa tutti i file</value>
   </data>
   <data name="ImportMediaTask_Create" xml:space="preserve">
-    <value>Crea attività importazione multimedia</value>
+    <value>Attività importazione multimedia</value>
   </data>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
     <value>Modifica  "{0}" attività importazione multimedia</value>
@@ -385,7 +385,7 @@
     <value>Salvataggio versione incrementale</value>
   </data>
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
-    <value>Crea attività backup incrementale</value>
+    <value>Attività backup incrementale</value>
   </data>
   <data name="LeftMenu_Encryption" xml:space="preserve">
     <value>Criptazione</value>

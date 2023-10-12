@@ -13,10 +13,19 @@
 				<TextBlock Text="{Binding LeftMenu_When}" Margin="8 0 0 0" VerticalAlignment="Center" />
 			</StackPanel>
 		</Expander.Header>
-		<ScrollViewer
-			ScrollViewer.VerticalScrollBarVisibility="Visible"
-			ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-			Content
-		</ScrollViewer>
+		<StackPanel>
+			<TextBlock Text="{Binding Days_Field_Choose}" />
+			<CheckBox IsChecked="{Binding Monday}" Content="{Binding Days_Monday}" />
+			<CheckBox IsChecked="{Binding Tuesday}" Content="{Binding Days_Tuesday}" />
+			<CheckBox IsChecked="{Binding Wednesday}" Content="{Binding Days_Wednesday}" />
+			<CheckBox IsChecked="{Binding Thursday}" Content="{Binding Days_Thursday}" />
+			<CheckBox IsChecked="{Binding Friday}" Content="{Binding Days_Friday}" />
+			<CheckBox IsChecked="{Binding Saturday}" Content="{Binding Days_Saturday}" />
+			<CheckBox IsChecked="{Binding Sunday}" Content="{Binding Days_Sunday}" />
+			<TextBlock Text="{Binding Time_Field_Hour}" Margin="0 4 0 4" />
+			<NumericUpDown Minimum="0" Maximum="23" Value="{Binding Hours}" />
+			<TextBlock Text="{Binding Time_Field_Minute}" Margin="0 4 0 4" />
+			<NumericUpDown Minimum="0" Maximum="59" Value="{Binding Minutes}" />
+		</StackPanel>
 	</Expander>
 </UserControl>

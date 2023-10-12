@@ -78,9 +78,6 @@
     <Compile Update="Common\OptionsHeader.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Tasks\Controls\Tasks\WhenUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="Configurator\Controls\Tasks\WhatUserControl.cs" />
     <Compile Update="Tasks\Controls\Tasks\Where\WhereUserControl.cs">
       <SubType>UserControl</SubType>

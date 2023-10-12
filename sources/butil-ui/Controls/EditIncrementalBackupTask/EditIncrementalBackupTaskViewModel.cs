@@ -31,11 +31,17 @@ namespace butil_ui.Controls
             NameTaskViewModel = new NameTaskViewModel(isNew, Resources.IncrementalBackup_Help, task.Name);
             var model = (IncrementalBackupModelOptionsV2)task.Model;
             EncryptionTaskViewModel = new EncryptionTaskViewModel(model.Password);
+
+            var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
+            IsWhenAvailable = schedule != null;
+            WhenTaskViewModel = new WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule?.GetSchedule(taskName) ?? new ScheduleInfo());
         }
 
         public bool IsNew { get; set; }
         public NameTaskViewModel NameTaskViewModel { get; }
         public EncryptionTaskViewModel EncryptionTaskViewModel { get; }
+        public WhenTaskViewModel WhenTaskViewModel { get; }
+        public bool IsWhenAvailable { get; }
 
         #region Commands
 
@@ -69,9 +75,7 @@ namespace butil_ui.Controls
                 scheduler?.Unschedule(_taskName);
             }
             storeService.Save(newTask);
-            // TODO: scheduler?.Schedule(_taskName);
-
-            // TODO: actual saving
+            scheduler?.Schedule(newTask.Name, WhenTaskViewModel.GetScheduleInfo());
 
             WindowManager.SwitchView(new TasksViewModel());
         }

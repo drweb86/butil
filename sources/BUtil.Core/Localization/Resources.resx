@@ -312,7 +312,7 @@ Usage scenario: You copy data to remote server. There's a problem: ISP drops upl
     <value>Import all files</value>
   </data>
   <data name="ImportMediaTask_Create" xml:space="preserve">
-    <value>Create import media task</value>
+    <value>Import media task</value>
   </data>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
     <value>Edit "{0}" media import task</value>
@@ -381,7 +381,7 @@ Should any one of the copies created fail, including the first (full), restorati
     <value>Saving incremented version</value>
   </data>
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
-    <value>Create incremental backup task</value>
+    <value>Incremental backup task</value>
   </data>
   <data name="LeftMenu_Encryption" xml:space="preserve">
     <value>Encryption</value>
@@ -540,7 +540,7 @@ See detailed description in the following link.</value>
     <value>File exclude pattern is empty.</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
-    <value>Create</value>
+    <value>New</value>
   </data>
   <data name="Task_Create_Hint" xml:space="preserve">
     <value>Creates new task.</value>

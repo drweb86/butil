@@ -642,7 +642,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create import media task.
+        ///   Looks up a localized string similar to Import media task.
         /// </summary>
         public static string ImportMediaTask_Create {
             get {
@@ -813,7 +813,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create incremental backup task.
+        ///   Looks up a localized string similar to Incremental backup task.
         /// </summary>
         public static string IncrementalBackupTask_Create {
             get {
@@ -1272,7 +1272,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create.
+        ///   Looks up a localized string similar to New.
         /// </summary>
         public static string Task_Create {
             get {

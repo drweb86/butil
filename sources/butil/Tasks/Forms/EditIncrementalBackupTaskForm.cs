@@ -36,7 +36,6 @@ namespace BUtil.Configurator.Configurator.Forms
         {
             _views.Add(TaskEditorPageEnum.SourceItems, new WhatUserControl(_task));
             _views.Add(TaskEditorPageEnum.Storages, new WhereUserControl());
-            _views.Add(TaskEditorPageEnum.Scheduler, new WhenUserControl());
             foreach (KeyValuePair<TaskEditorPageEnum, BackUserControl> pair in _views)
             {
                 pair.Value.HelpLabel = _toolStripStatusLabel;
@@ -90,7 +89,6 @@ namespace BUtil.Configurator.Configurator.Forms
         private void ApplyOptionsToUi()
         {
             ((WhereUserControl)_views[TaskEditorPageEnum.Storages]).StorageSettings = ((IncrementalBackupModelOptionsV2)_task.Model).To;
-            _views[TaskEditorPageEnum.Scheduler].SetOptionsToUi(_scheduleInfo);
         }
 
         private bool OnCanChangeView(TaskEditorPageEnum oldView)

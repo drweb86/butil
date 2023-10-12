@@ -178,7 +178,6 @@ namespace BUtil.Configurator.Controls
 
         void SchedulerButtonClick(object sender, EventArgs e)
         {
-            changeView(sender, TaskEditorPageEnum.Scheduler);
         }
 
         void EncryptionButtonClick(object sender, EventArgs e)

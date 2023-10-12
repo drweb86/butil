@@ -8,9 +8,7 @@ namespace butil_ui.Controls
         {
             InitializeComponent();
 
-            var viewModel = new Controls.WhenTaskViewModel();
-            this.DataContext = viewModel;
-            viewModel.Initialize();
+            this.DataContext = new WhenTaskViewModel(new BUtil.Core.Options.ScheduleInfo());
         }
     }
 }
