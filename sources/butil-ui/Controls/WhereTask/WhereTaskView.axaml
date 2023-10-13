@@ -9,14 +9,88 @@
 	<Expander HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
 		<Expander.Header>
 			<StackPanel Orientation="Horizontal">
-				<Image Width="16" Height="16" Source="/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png" VerticalAlignment="Center" />
-				<TextBlock Text="{Binding LeftMenu_Where}" Margin="8 0 0 0" VerticalAlignment="Center" />
+				<Image Width="16" Height="16" Source="{Binding IconSource}" VerticalAlignment="Center" />
+				<TextBlock Text="{Binding Title}" Margin="8 0 0 0" VerticalAlignment="Center" />
 			</StackPanel>
 		</Expander.Header>
-		<ScrollViewer
-			ScrollViewer.VerticalScrollBarVisibility="Visible"
-			ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-			Content
-		</ScrollViewer>
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition />
+				<RowDefinition />
+
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+
+				<RowDefinition />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+
+			<TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Field_TransportProtocol}" VerticalAlignment="Center" />
+			<ComboBox Grid.Row="0" Grid.Column="1" Margin="4 4 4 4" HorizontalAlignment="Stretch" VerticalAlignment="Center" SelectedValue="{Binding Transport}" ItemsSource="{Binding TransportSource}" />
+			
+			<TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding DataStorage_Field_UploadQuota}" ToolTip.Tip="{Binding DataStorage_Field_UploadQuota_Help}" VerticalAlignment="Center" TextDecorations="Underline" />
+			<NumericUpDown Grid.Row="1" Grid.Column="1" Minimum="0" Margin="4 4 4 4" VerticalAlignment="Center" Value="{Binding Quota}"/>
+
+			<!-- Folder -->
+			<TextBlock IsVisible="{Binding IsDirectoryTransport}" Grid.Row="2" Grid.Column="0" Text="{Binding Field_Folder}" VerticalAlignment="Center" />
+			<TextBox IsVisible="{Binding IsDirectoryTransport}" Grid.Row="2" Grid.Column="1" Margin="4 4 4 4" Watermark="P:\Storage\Backup1" VerticalAlignment="Center" Text="{Binding FolderFolder}" />
+			<Button IsVisible="{Binding IsDirectoryTransport}" Grid.Row="2" Grid.Column="2" Content="{Binding Field_Folder_Browse}" VerticalAlignment="Center" Click="BrowseCommand"/>
+
+			<TextBlock IsVisible="{Binding IsDirectoryTransport}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Text="{Binding DataStorage_Script_Help}" VerticalAlignment="Center" TextWrapping="Wrap" />
+			
+			<TextBlock IsVisible="{Binding IsDirectoryTransport}" Grid.Row="4" Grid.Column="0" Text="{Binding DataStorage_Field_ConnectScript}" VerticalAlignment="Center"/>
+			<TextBox IsVisible="{Binding IsDirectoryTransport}" Grid.Row="4" Grid.Column="1" Margin="4 4 4 4" Watermark="net use X: \\myserver\myfolder myPassword /user:myUser" VerticalAlignment="Center" Text="{Binding FolderConnectionScript}" />
+			<Button IsVisible="{Binding IsDirectoryTransport}" Grid.Row="4" Grid.Column="2" Content="{Binding Task_Launch}" VerticalAlignment="Center" Command="{Binding MountTaskLaunchCommand}"/>
+
+			<TextBlock IsVisible="{Binding IsDirectoryTransport}" Grid.Row="5" Grid.Column="0" Text="{Binding DataStorage_Field_DisconnectionScript}" VerticalAlignment="Center"/>
+			<TextBox IsVisible="{Binding IsDirectoryTransport}" Grid.Row="5" Grid.Column="1" Margin="4 4 4 4" Watermark="net use X: /delete" VerticalAlignment="Center" Text="{Binding FolderDisconnectionScript}" />
+			<Button IsVisible="{Binding IsDirectoryTransport}" Grid.Row="5" Grid.Column="2" Content="{Binding Task_Launch}" VerticalAlignment="Center" Command="{Binding UnmountTaskLaunchCommand}"/>
+
+			<!-- SMB -->
+			<TextBlock IsVisible="{Binding IsSmbTransport}" Grid.Row="6" Grid.Column="0" Text="{Binding Url_Field}" VerticalAlignment="Center"/>
+			<TextBox IsVisible="{Binding IsSmbTransport}" Grid.Row="6" Grid.Column="1" Margin="4 4 4 4" Watermark="\\192.168.11.1\share\folder" VerticalAlignment="Center" Text="{Binding SmbUrl}" />
+			<TextBlock IsVisible="{Binding IsSmbTransport}" Grid.Row="7" Grid.Column="0" Text="{Binding User_Field}" VerticalAlignment="Center"/>
+			<TextBox IsVisible="{Binding IsSmbTransport}" Grid.Row="7" Grid.Column="1" Margin="4 4 4 4" VerticalAlignment="Center" Text="{Binding SmbUser}"/>
+			<TextBlock IsVisible="{Binding IsSmbTransport}" Grid.Row="8" Grid.Column="0" Text="{Binding Password_Field}" VerticalAlignment="Center"/>
+			<TextBox IsVisible="{Binding IsSmbTransport}" Grid.Row="8" Grid.Column="1" Margin="4 4 4 4" VerticalAlignment="Center" Text="{Binding SmbPassword}"/>
+
+			<!-- FTPS -->
+			<TextBlock IsVisible="{Binding IsFtpsTransport}" Grid.Row="9" Grid.Column="0" Text="{Binding Server_Field_Address}" VerticalAlignment="Center"/>
+			<TextBox IsVisible="{Binding IsFtpsTransport}" Grid.Row="9" Grid.Column="1" Margin="4 4 4 4" Watermark="192.168.11.1" VerticalAlignment="Center" Text="{Binding FtpsServer}"/>
+			<TextBlock IsVisible="{Binding IsFtpsTransport}" Grid.Row="10" Grid.Column="0" Text="{Binding Ftps_Field_Encryption}" VerticalAlignment="Center"/>
+			<ComboBox IsVisible="{Binding IsFtpsTransport}" Grid.Row="10" Grid.Column="1" Margin="4 4 4 4" HorizontalAlignment="Stretch" VerticalAlignment="Center" ItemsSource="{Binding FtpsEncryptionSource}" SelectedValue="{Binding FtpsEncryption}"/>
+			<TextBlock IsVisible="{Binding IsFtpsTransport}" Grid.Row="11" Grid.Column="0" Text="{Binding Server_Field_Port}" VerticalAlignment="Center"/>
+			<NumericUpDown IsVisible="{Binding IsFtpsTransport}" Grid.Row="11" Grid.Column="1" Minimum="0" Margin="4 4 4 4" VerticalAlignment="Center" Value="{Binding FtpsPort}"/>
+			<TextBlock IsVisible="{Binding IsFtpsTransport}" Grid.Row="12" Grid.Column="0" Text="{Binding User_Field}" VerticalAlignment="Center"/>
+			<TextBox IsVisible="{Binding IsFtpsTransport}" Grid.Row="12" Grid.Column="1" Margin="4 4 4 4" VerticalAlignment="Center" Text="{Binding FtpsUser}"/>
+			<TextBlock IsVisible="{Binding IsFtpsTransport}" Grid.Row="13" Grid.Column="0" Text="{Binding Password_Field}" VerticalAlignment="Center"/>
+			<TextBox IsVisible="{Binding IsFtpsTransport}" Grid.Row="13" Grid.Column="1" Margin="4 4 4 4" VerticalAlignment="Center" Text="{Binding FtpsPassword}"/>
+			<TextBlock IsVisible="{Binding IsFtpsTransport}" Grid.Row="14" Grid.Column="0" Text="{Binding Field_Folder}" VerticalAlignment="Center"/>
+			<TextBox IsVisible="{Binding IsFtpsTransport}" Grid.Row="14" Grid.Column="1" Margin="4 4 4 4" VerticalAlignment="Center" Text="{Binding FtpsFolder}"/>
+
+			<!-- MTP -->
+			<TextBlock IsVisible="{Binding IsMtpTransport}" Grid.Row="15" Grid.Column="0" Text="{Binding Field_Device}" VerticalAlignment="Center"/>
+			<ComboBox IsVisible="{Binding IsMtpTransport}" Grid.Row="15" Grid.Column="1" Margin="4 4 4 4" HorizontalAlignment="Stretch" VerticalAlignment="Center" SelectedValue="{Binding MtpDevice}" ItemsSource="{Binding MtpDevicesSource}"/>
+			<TextBlock IsVisible="{Binding IsMtpTransport}" Grid.Row="16" Grid.Column="0" Text="{Binding Field_Folder}" VerticalAlignment="Center"/>
+			<TextBox IsVisible="{Binding IsMtpTransport}" Grid.Row="16" Grid.Column="1" Margin="4 4 4 4" Watermark="Inernal Storage/DCIM" VerticalAlignment="Center" Text="{Binding MtpFolder}"/>
+		</Grid>
 	</Expander>
 </UserControl>

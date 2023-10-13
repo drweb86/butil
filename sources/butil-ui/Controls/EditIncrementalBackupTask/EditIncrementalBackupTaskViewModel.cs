@@ -34,12 +34,14 @@ namespace butil_ui.Controls
 
             var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
             WhenTaskViewModel = new WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule?.GetSchedule(taskName) ?? new ScheduleInfo());
+            WhereTaskViewModel = new WhereTaskViewModel(model.To, Resources.LeftMenu_Where, "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png");
         }
 
         public bool IsNew { get; set; }
         public NameTaskViewModel NameTaskViewModel { get; }
         public EncryptionTaskViewModel EncryptionTaskViewModel { get; }
         public WhenTaskViewModel WhenTaskViewModel { get; }
+        public WhereTaskViewModel WhereTaskViewModel { get; }
 
         #region Commands
 
@@ -55,7 +57,8 @@ namespace butil_ui.Controls
                 Name = NameTaskViewModel.Name,
                 Model = new IncrementalBackupModelOptionsV2
                 {
-                    Password = EncryptionTaskViewModel.Password
+                    Password = EncryptionTaskViewModel.Password,
+                    To = WhereTaskViewModel.GetStorageSettings(),
                 }
             };
 
@@ -89,6 +92,7 @@ namespace butil_ui.Controls
 
         public void Initialize()
         {
+            WhereTaskViewModel.Initialize();
         }
     }
 }

@@ -9,6 +9,8 @@ using butil_ui.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using BUtil.Core.Logs;
+using BUtil.Core.Misc;
 
 namespace butil_ui.Controls
 {
@@ -26,10 +28,12 @@ namespace butil_ui.Controls
             var model = (ImportMediaTaskModelOptionsV2)task.Model;
 
             ImportMediaTaskWhereTaskViewModel = new ImportMediaTaskWhereTaskViewModel(model.DestinationFolder, model.SkipAlreadyImportedFiles, model.TransformFileName);
+            SourceTaskViewModel = new WhereTaskViewModel(model.From, Resources.LeftMenu_What, "/Assets/CrystalProject_EveraldoCoelho_SourceItems48x48.png");
         }
 
         public ImportMediaTaskWhereTaskViewModel ImportMediaTaskWhereTaskViewModel { get; }
         public NameTaskViewModel NameTaskViewModel { get; }
+        public WhereTaskViewModel SourceTaskViewModel { get; }
         public bool IsNew { get; set; }
 
         #region Labels
@@ -53,7 +57,8 @@ namespace butil_ui.Controls
                 {
                     DestinationFolder = ImportMediaTaskWhereTaskViewModel.OutputFolder,
                     SkipAlreadyImportedFiles = ImportMediaTaskWhereTaskViewModel.SkipAlreadyImportedFiles,
-                    TransformFileName = ImportMediaTaskWhereTaskViewModel.TransformFileName
+                    TransformFileName = ImportMediaTaskWhereTaskViewModel.TransformFileName,
+                    From = SourceTaskViewModel.GetStorageSettings()
                 }
             };
 
@@ -79,6 +84,7 @@ namespace butil_ui.Controls
 
         public void Initialize()
         {
+            SourceTaskViewModel.Initialize();
         }
     }
 }

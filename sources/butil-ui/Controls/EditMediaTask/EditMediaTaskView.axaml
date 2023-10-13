@@ -32,7 +32,7 @@
 				ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 			<StackPanel>
 				<controls:NameTaskView Margin="24 24 24 8" DataContext="{Binding NameTaskViewModel}" />
-				<controls:WhereTaskView Margin="24 8 24 8" />
+				<controls:WhereTaskView Margin="24 8 24 8" DataContext="{Binding SourceTaskViewModel}" />
 				<controls:ImportMediaTaskWhereTaskView Margin="24 8 24 8" DataContext="{Binding ImportMediaTaskWhereTaskViewModel}" />
 			</StackPanel>
 		</ScrollViewer>

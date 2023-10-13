@@ -639,4 +639,7 @@ bin.
   <data name="Button_Download" xml:space="preserve">
     <value>Скачать</value>
   </data>
+  <data name="Field_TransportProtocol" xml:space="preserve">
+    <value>Протокол:</value>
+  </data>
 </root>

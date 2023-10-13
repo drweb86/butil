@@ -570,6 +570,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Protocol:.
+        /// </summary>
+        public static string Field_TransportProtocol {
+            get {
+                return ResourceManager.GetString("Field_TransportProtocol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Integrity verification script.ps1.
         /// </summary>
         public static string File_IntegrityVerificationScript_Ps1 {

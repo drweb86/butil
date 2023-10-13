@@ -37,5 +37,10 @@ namespace BUtil.Core
         {
             return null;
         }
+
+        public virtual ISmbService? GetSmbService()
+        {
+            return null;
+        }
     }
 }

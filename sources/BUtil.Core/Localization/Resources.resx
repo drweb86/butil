@@ -638,4 +638,7 @@ See detailed description in the following link.</value>
   <data name="Button_Download" xml:space="preserve">
     <value>Download</value>
   </data>
+  <data name="Field_TransportProtocol" xml:space="preserve">
+    <value>Protocol:</value>
+  </data>
 </root>

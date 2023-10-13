@@ -40,5 +40,10 @@ namespace BUtil.Windows
         {
             return new OsSleepPreventionService();
         }
+
+        public override ISmbService? GetSmbService()
+        {
+            return new SmbService();
+        }
     }
 }

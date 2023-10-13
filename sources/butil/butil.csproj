@@ -92,9 +92,6 @@
     <Compile Update="Common\ProgressForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Tasks\Forms\EditImportMediaTaskForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

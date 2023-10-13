@@ -90,10 +90,6 @@ namespace BUtil.Configurator.Configurator.Controls
 
             if (task.Model is ImportMediaTaskModelOptionsV2)
             {
-                using var form = new EditImportMediaTaskForm(task, Tasks.TaskEditorPageEnum.SourceItems, false);
-                if (form.ShowDialog() != DialogResult.OK)
-                    return;
-
             }
             else if (task.Model is IncrementalBackupModelOptionsV2)
             {
@@ -140,10 +136,6 @@ namespace BUtil.Configurator.Configurator.Controls
                 Name = Resources.Task_Field_Name_NewDefaultValue,
                 Model = new ImportMediaTaskModelOptionsV2(),
             };
-
-            using var form = new EditImportMediaTaskForm(task, Tasks.TaskEditorPageEnum.Storages, true);
-            if (form.ShowDialog() != DialogResult.OK)
-                return;
 
             new TaskV2StoreService()
                 .Save(task);
