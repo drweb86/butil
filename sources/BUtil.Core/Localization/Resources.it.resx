@@ -643,6 +643,9 @@
     <value>Non è stata specificato l'utente.</value>
   </data>
   <data name="Button_Download" xml:space="preserve">
-    <value>Download</value>
+  <value>Download</value>
+  </data>
+  <data name="Field_TransportProtocol" xml:space="preserve">
+    <value>Protocollo:</value>
   </data>
 </root>
