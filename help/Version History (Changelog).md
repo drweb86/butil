@@ -10,6 +10,9 @@
 ## Bug Fixes
 - Workaround of github bug with public release API was added. As a result of this wrong latest release info was shown.
 
+## Removed Features
+- Password hiding and password confirmation since of no usage.
+
 # 2023.10.06
 
 ## New Features
