@@ -66,9 +66,6 @@
     <Compile Update="Common\BackUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Tasks\Controls\Tasks\TaskNavigationControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="Common\OptionsHeader.cs">
       <SubType>UserControl</SubType>
     </Compile>

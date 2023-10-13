@@ -13,6 +13,8 @@
 		Width="1000"
 		MinWidth="320"
 		MinHeight="320"
+		ExtendClientAreaToDecorationsHint="True"
+		
 		Title="{Binding CurrentPage.WindowTitle}">
 
 	<TransitioningContentControl

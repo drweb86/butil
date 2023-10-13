@@ -27,13 +27,19 @@
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
 		<controls:TasksMainMenuView Grid.Row="0" />
+		<TextBlock IsHitTestVisible="False" Grid.Row="0" Grid.Column="1" />
 		<controls:UpdateCheckExpanderView
 			Grid.Row="1"
+			Grid.ColumnSpan="2"
 			HorizontalAlignment="Stretch"
 			Margin="24 24 24 24"
 			ScrollViewer.HorizontalScrollBarVisibility="Disabled" />
-		<ListBox ItemsSource="{Binding Items}" Grid.Row="2" Margin="24 24 24 24" Background="Transparent">
+		<ListBox Grid.ColumnSpan="2" ItemsSource="{Binding Items}" Grid.Row="2" Margin="24 24 24 24" Background="Transparent">
 			<ListBox.Styles>
 				<Style Selector="ListBoxItem">
 					<Setter Property="CornerRadius" Value="8,8,8,8" />
