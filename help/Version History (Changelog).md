@@ -1,5 +1,8 @@
 # 2023.10.07
 
+## New Features
+- Tasks app was upgraded to AvaloniaUI.
+
 ## Changes
 - Italian language was updated by https://github.com/bovirus .
 - Help became simpler.
@@ -12,6 +15,8 @@
 
 ## Removed Features
 - Password hiding and password confirmation since of no usage.
+- Drag and drop of files into What? section due to poor support from AvaloniaUI.
+- Double click to open file or folder in What? section.
 
 # 2023.10.06
 

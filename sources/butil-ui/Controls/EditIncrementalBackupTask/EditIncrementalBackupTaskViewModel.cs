@@ -10,6 +10,8 @@ using BUtil.Core.Misc;
 using BUtil.Core.Options;
 using BUtil.Core.TasksTree.Core;
 using butil_ui.ViewModels;
+using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace butil_ui.Controls
@@ -35,6 +37,7 @@ namespace butil_ui.Controls
             var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
             WhenTaskViewModel = new WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule?.GetSchedule(taskName) ?? new ScheduleInfo());
             WhereTaskViewModel = new WhereTaskViewModel(model.To, Resources.LeftMenu_Where, "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png");
+            WhatTaskViewModel = new WhatTaskViewModel(model.Items, model.FileExcludePatterns);
         }
 
         public bool IsNew { get; set; }
@@ -42,6 +45,7 @@ namespace butil_ui.Controls
         public EncryptionTaskViewModel EncryptionTaskViewModel { get; }
         public WhenTaskViewModel WhenTaskViewModel { get; }
         public WhereTaskViewModel WhereTaskViewModel { get; }
+        public WhatTaskViewModel WhatTaskViewModel { get; }
 
         #region Commands
 
@@ -59,6 +63,8 @@ namespace butil_ui.Controls
                 {
                     Password = EncryptionTaskViewModel.Password,
                     To = WhereTaskViewModel.GetStorageSettings(),
+                    FileExcludePatterns = WhatTaskViewModel.GetListFileExcludePatterns(),
+                    Items = WhatTaskViewModel.GetListSourceItemV2s(),
                 }
             };
 

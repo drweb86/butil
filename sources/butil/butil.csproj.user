@@ -20,15 +20,6 @@
     <Compile Update="Common\TransparentPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Tasks\Controls\Tasks\What\FileExcludePatternForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Tasks\Controls\Tasks\What\WhatUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Tasks\Forms\EditIncrementalBackupTaskForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Restore\BlameForm.cs">
       <SubType>Form</SubType>
     </Compile>

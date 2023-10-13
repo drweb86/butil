@@ -13,10 +13,71 @@
 				<TextBlock Text="{Binding LeftMenu_What}" Margin="8 0 0 0" VerticalAlignment="Center" />
 			</StackPanel>
 		</Expander.Header>
-		<ScrollViewer
-			ScrollViewer.VerticalScrollBarVisibility="Visible"
-			ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-			Content
-		</ScrollViewer>
+		<StackPanel Orientation="Vertical">
+			<WrapPanel Orientation="Horizontal" Margin="0 8 0 8">
+				<Button Margin="4 4 4 4" Content="{Binding SourceItem_AddFiles}" Click="BrowseFilesCommand" />
+				<Button Margin="4 4 4 4" Content="{Binding SourceItem_AddFolders}" Click="BrowseFoldersCommand" />
+			</WrapPanel>
+			<TextBlock
+				Text="{Binding LeftMenu_What}"
+				Margin="0 8 0 8"
+				VerticalAlignment="Center" />
+			<ListBox Margin="0 8 0 8" MinHeight="50" ItemsSource="{Binding Items}">
+				<ListBox.ItemTemplate>
+					<DataTemplate x:DataType="cvm:SourceItemV2ViewModel">
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto" />
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="Auto" />
+								<ColumnDefinition Width="Auto" />
+							</Grid.ColumnDefinitions>
+							<Image
+								Grid.Column="0"
+								Width="16"
+								Height="16"
+								Margin="2"
+								Source="{Binding IconSource}"
+								VerticalAlignment="Center" />
+							<TextBlock
+								Grid.Column="1"
+								Text="{Binding Target}" VerticalAlignment="Center" />
+							<Button
+								Grid.Column="2"
+								VerticalAlignment="Center"
+								Margin="2"
+								Padding="4"
+								ToolTip.Tip="{Binding SourceItem_OpenInExplorer}"
+								Command="{Binding SourceItemOpenInExplorerCommand}">
+								<Image
+									Width="12"
+									Height="12"
+									Source="/Assets/www.wefunction.com_FunctionFreeIconSet_Folder_48.png"
+									VerticalAlignment="Center" />
+							</Button>
+
+							<Button
+								Grid.Column="3"
+								VerticalAlignment="Center"
+								Margin="2"
+								Padding="4"
+								Foreground="Red"
+								ToolTip.Tip="{Binding Button_Remove}"
+								Command="{Binding TaskDeleteCommand}">
+								<Image
+									Width="12"
+									Height="12"
+									Source="/Assets/www.wefunction.com_FunctionFreeIconSet_cross_48.png"
+									VerticalAlignment="Center" />
+							</Button>
+						</Grid>
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
+			<TextBlock Margin="0 8 0 8" Text="{Binding StorageItem_Field_ExcludePattern}" TextWrapping="Wrap" VerticalAlignment="Center" />
+			<TextBox Margin="0 8 0 8" AcceptsReturn="True" Text="{Binding FileExcludePatterns}" VerticalAlignment="Center" MinHeight="150" />
+			<TextBlock Margin="0 8 0 8" Text="{Binding StorageItem_ExcludePattern_Help}" TextWrapping="Wrap" VerticalAlignment="Center" />
+			<Button Margin="0 8 0 8" Content="{Binding StorageItem_ExcludePattern_GlobbingNetPatterns}" VerticalAlignment="Center" Command="{Binding GlobbingHelpCommand}" />
+		</StackPanel>
 	</Expander>
 </UserControl>

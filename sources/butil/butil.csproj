@@ -63,9 +63,6 @@
     <None Remove="Properties\**" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Tasks\Controls\TasksUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="Common\BackUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
