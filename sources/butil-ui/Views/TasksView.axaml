@@ -32,7 +32,7 @@
 			<ColumnDefinition Width="*" />
 		</Grid.ColumnDefinitions>
 		<controls:TasksMainMenuView Grid.Row="0" />
-		<TextBlock IsHitTestVisible="False" Grid.Row="0" Grid.Column="1" />
+		<!--<TextBlock IsHitTestVisible="False" Grid.Row="0" Grid.Column="1" />-->
 		<controls:UpdateCheckExpanderView
 			Grid.Row="1"
 			Grid.ColumnSpan="2"
