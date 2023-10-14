@@ -642,4 +642,7 @@ bin.
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Протокол:</value>
   </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>Длина названия '{0}' превышена на {1} символов.</value>
+  </data>
 </root>

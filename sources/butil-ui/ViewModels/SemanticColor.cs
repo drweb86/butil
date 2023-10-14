@@ -5,5 +5,11 @@ public enum SemanticColor
     Normal,
     Success,
     Error,
-    InProgress
+    InProgress,
+
+    HeaderBackground,
+    WindowBackground,
+
+    ForegroundWindowFont,
+    ForegroundWindowFontAccented,
 }

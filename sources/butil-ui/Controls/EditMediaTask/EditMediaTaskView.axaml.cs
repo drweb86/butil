@@ -8,12 +8,4 @@ public partial class EditMediaTaskView : UserControl
     {
         InitializeComponent();
     }
-
-    private void OnLoaded(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
-    {
-        if (DataContext != null)
-        {
-            ((EditMediaTaskViewModel)DataContext).Initialize();
-        }
-    }
 }

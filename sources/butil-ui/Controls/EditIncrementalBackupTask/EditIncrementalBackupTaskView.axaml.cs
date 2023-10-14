@@ -8,12 +8,4 @@ public partial class EditIncrementalBackupTaskView : UserControl
     {
         InitializeComponent();
     }
-
-    private void OnLoaded(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
-    {
-        if (DataContext != null)
-        {
-            ((EditIncrementalBackupTaskViewModel)DataContext).Initialize();
-        }
-    }
 }

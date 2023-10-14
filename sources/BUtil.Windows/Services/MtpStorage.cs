@@ -69,7 +69,7 @@ namespace BUtil.Windows.Services
 
             mediaDevice.Connect();
 
-            return _mediaDevice;
+            return mediaDevice;
         }
 
         private void Unmount()

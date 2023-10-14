@@ -1,5 +1,6 @@
 
 using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Storages;
@@ -94,14 +95,18 @@ namespace BUtil.Core.BackupModels
 
                 try
                 {
-                    DateTokenReplacer.ParseString(typedOptions.TransformFileName, DateTime.Now);
+                    var str = DateTokenReplacer.ParseString(typedOptions.TransformFileName, DateTime.Now);
+                    using (var tempFolder = new TempFolder())
+                    {
+                        var fullPath = Path.Combine(tempFolder.Folder, str);
+                        Directory.CreateDirectory(fullPath);
+                    }
                 }
                 catch
                 {
                     error = BUtil.Core.Localization.Resources.ImportMediaTask_Field_TransformFileName_Validation_Invalid;
                     return false;
                 }
-
 
                 return true;
             }

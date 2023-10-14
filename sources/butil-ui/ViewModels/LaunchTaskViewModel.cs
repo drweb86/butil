@@ -26,9 +26,9 @@ public class LaunchTaskViewModel : PageViewModelBase
     {
         _taskName = taskName;
         _theme = ApplicationSettings.Theme;
-        _progressGenericForeground = new SolidColorBrush(ColorPalette.GetForeground(SemanticColor.Normal));
-        _errorForegroundColor = ColorPalette.GetForeground(SemanticColor.Error);
-        _successForegroundColor = ColorPalette.GetForeground(SemanticColor.Success);
+        _progressGenericForeground = new SolidColorBrush(ColorPalette.GetColor(SemanticColor.Normal));
+        _errorForegroundColor = ColorPalette.GetColor(SemanticColor.Error);
+        _successForegroundColor = ColorPalette.GetColor(SemanticColor.Success);
 
         WindowTitle = taskName;
 
@@ -397,7 +397,7 @@ public class LaunchTaskViewModel : PageViewModelBase
 
         _threadTask
             .GetChildren()
-            .Select(x => new LaunchTaskViewItem(x, ColorPalette.GetForeground(SemanticColor.Normal)))
+            .Select(x => new LaunchTaskViewItem(x, ColorPalette.GetColor(SemanticColor.Normal)))
             .ToList()
             .ForEach(_items.Add);
     }
@@ -440,7 +440,7 @@ public class LaunchTaskViewModel : PageViewModelBase
 
         foreach (var task in e.Tasks)
         {
-            var listItem = new LaunchTaskViewItem(task, ColorPalette.GetForeground(SemanticColor.Normal));
+            var listItem = new LaunchTaskViewItem(task, ColorPalette.GetColor(SemanticColor.Normal));
             _items.Insert(index, listItem);
             index++;
         }

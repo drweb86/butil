@@ -85,7 +85,7 @@ namespace BUtil.Core.Storages
             client.Config.EncryptionMode = GetFtpEncryptionMode();
             client.Config.ValidateAnyCertificate = true;
             client.Connect();
-            return _client;
+            return client;
         }
 
         private FtpEncryptionMode GetFtpEncryptionMode()
@@ -110,7 +110,7 @@ namespace BUtil.Core.Storages
 
         public override string? Test()
         {
-            if (string.IsNullOrWhiteSpace(Settings.Folder) && !_client.DirectoryExists(Settings.Folder))
+            if (!string.IsNullOrWhiteSpace(Settings.Folder) && !_client.DirectoryExists(Settings.Folder))
             {
                 return Localization.Resources.Field_Folder_Validation_NotExist;
             }

@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using System.Text.Json;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.ConfigurationFileModels.V1;
+using System.Diagnostics.CodeAnalysis;
+using BUtil.Core.Localization;
+using System.Threading.Tasks;
 
 namespace BUtil.Core.Options
 {
@@ -136,6 +139,32 @@ namespace BUtil.Core.Options
             foreach (var pair in GetFileNames(name))
                 if (File.Exists(pair.Value))
                     File.Delete(pair.Value);
+        }
+
+        public bool TryValidate(string name, [NotNullWhen(false)] out string? error)
+        {
+            if (string.IsNullOrWhiteSpace(name) || ContainsIllegalChars(name))
+            {
+                error = Resources.Name_Field_Validation;
+                return false;
+            }
+
+            var actualFileName = GetFileNames(name).Last().Value;
+            if (actualFileName.Length > 255)
+            {
+                error = string.Format(Resources.Name_Field_Validation_ExceedsLimit, name, actualFileName.Length - 255);
+                return false;
+            }
+
+            error = null;
+            return true;
+        }
+
+        private static bool ContainsIllegalChars(string text)
+        {
+            var invalidChars = new string(Path.GetInvalidFileNameChars()) + new string(Path.GetInvalidPathChars());
+            return invalidChars.Any(ch => text.Contains(ch))
+                || text.Contains("..");
         }
 
         public IEnumerable<string> GetNames()

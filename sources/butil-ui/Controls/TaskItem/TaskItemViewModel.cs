@@ -23,10 +23,11 @@ namespace butil_ui.Controls
             ProcessingStatus status,
             ObservableCollection<TaskItemViewModel> items)
         {
-            SuccessForegroundColorBrush = new SolidColorBrush(ColorPalette.GetForeground(SemanticColor.Success));
+            SuccessForegroundColorBrush = new SolidColorBrush(ColorPalette.GetColor(SemanticColor.Success));
             Name = name;
             LastLaunchedAt = lastLaunchedAt;
             Foreground = ColorPalette.GetResultColor(status);
+            ForegroundWindowFontAccented = new SolidColorBrush(ColorPalette.GetColor(SemanticColor.ForegroundWindowFontAccented));
             switch (status)
             {
                 case ProcessingStatus.NotStarted: TaskState = string.Empty; break;
@@ -43,6 +44,7 @@ namespace butil_ui.Controls
         public SolidColorBrush Foreground { get; }
 
         public SolidColorBrush SuccessForegroundColorBrush { get; }
+        public SolidColorBrush ForegroundWindowFontAccented { get; }
 
         public string TaskState { get; }
         public string Task_Delete_Hint => Resources.Task_Delete_Hint;

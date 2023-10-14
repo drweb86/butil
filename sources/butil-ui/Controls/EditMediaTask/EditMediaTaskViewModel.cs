@@ -73,7 +73,15 @@ namespace butil_ui.Controls
             {
                 storeService.Delete(_taskName);
             }
-            storeService.Save(newTask);
+            try
+            {
+                storeService.Save(newTask);
+            }
+            catch(Exception e)
+            {
+                await Messages.ShowErrorBox(e.Message);
+                return;
+            }
 
             WindowManager.SwitchView(new TasksViewModel());
         }
@@ -81,10 +89,5 @@ namespace butil_ui.Controls
         #endregion
 
         private readonly string _taskName;
-
-        public void Initialize()
-        {
-            SourceTaskViewModel.Initialize();
-        }
     }
 }

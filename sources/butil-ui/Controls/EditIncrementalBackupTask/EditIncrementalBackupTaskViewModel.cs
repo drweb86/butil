@@ -94,11 +94,5 @@ namespace butil_ui.Controls
         public string Button_OK => Resources.Button_OK;
 
         #endregion
-
-
-        public void Initialize()
-        {
-            WhereTaskViewModel.Initialize();
-        }
     }
 }

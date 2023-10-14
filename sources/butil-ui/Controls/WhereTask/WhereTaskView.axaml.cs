@@ -16,7 +16,7 @@ namespace butil_ui.Controls
 
             var viewModel = new Controls.WhereTaskViewModel(new FolderStorageSettingsV2(), BUtil.Core.Localization.Resources.LeftMenu_Where, "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png");
             this.DataContext = viewModel;
-            viewModel.Initialize();
+            this.MtpList.DropDownOpened += UpdateListMtpDevices;
         }
 
         public void BrowseCommand(object? sender, RoutedEventArgs args)
@@ -41,6 +41,12 @@ namespace butil_ui.Controls
             {
                 dataContext.FolderFolder = folder.TryGetLocalPath() ?? folder.Path.ToString();
             }
+        }
+
+        private void UpdateListMtpDevices(object? sender, System.EventArgs e)
+        {
+            var dataContext = DataContext as WhereTaskViewModel ?? throw new NullReferenceException();
+            dataContext.UpdateListMtpDevices();
         }
     }
 }

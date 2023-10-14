@@ -8,7 +8,7 @@
 	d:DesignHeight="450"
     x:Class="butil_ui.Controls.EditIncrementalBackupTaskView"
 	x:DataType="controls:EditIncrementalBackupTaskViewModel"
-	Loaded="OnLoaded">
+	>
 	<UserControl.Styles>
 		<Style Selector="Expander">
 			<Setter Property="VerticalAlignment" Value="Top" />

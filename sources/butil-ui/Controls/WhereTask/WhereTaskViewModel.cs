@@ -67,6 +67,12 @@ namespace butil_ui.Controls
             var mtpStorageSettings = storageSettings as MtpStorageSettings;
             if (mtpStorageSettings != null && mtp != null)
             {
+                var mtpService = PlatformSpecificExperience.Instance.GetMtpService();
+                if (mtpService != null)
+                {
+                    MtpDevicesSource = mtpService.GetItems();
+                }
+
                 Transport = Mtp;
                 Quota = mtpStorageSettings.SingleBackupQuotaGb;
                 MtpDevice = mtpStorageSettings.Device;
@@ -75,6 +81,15 @@ namespace butil_ui.Controls
 
             FtpsEncryptionSource.Add(Ftps_Encryption_Option_Implicit);
             FtpsEncryptionSource.Add(Ftps_Encryption_Option_Explicit);
+        }
+
+        public void UpdateListMtpDevices()
+        {
+            var mtpService = PlatformSpecificExperience.Instance.GetMtpService();
+            if (mtpService != null)
+            {
+                MtpDevicesSource = mtpService.GetItems();
+            }
         }
 
         public async Task MountTaskLaunchCommand()
@@ -625,14 +640,5 @@ namespace butil_ui.Controls
 
         #endregion
 
-        public void Initialize()
-        {
-            var mtpService = PlatformSpecificExperience.Instance.GetMtpService();
-            if (mtpService != null)
-            {
-                MtpDevicesSource = mtpService.GetItems();
-            }
-
-        }
     }
 }

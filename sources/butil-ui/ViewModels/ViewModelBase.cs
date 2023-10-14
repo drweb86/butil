@@ -5,6 +5,8 @@ namespace butil_ui.ViewModels;
 
 public class ViewModelBase : ObservableObject
 {
+    public bool IsFullMenuVisible { get; set; }
+
     #region WindowTitle
 
     private string _windowTitle = "BUtil - V" + CopyrightInfo.Version.ToString(3);

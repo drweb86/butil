@@ -11,24 +11,28 @@ public static class ColorPalette
     {
         return state switch
         {
-            ProcessingStatus.FinishedSuccesfully => new SolidColorBrush(GetForeground(SemanticColor.Success)),
-            ProcessingStatus.FinishedWithErrors => new SolidColorBrush(GetForeground(SemanticColor.Error)),
-            ProcessingStatus.InProgress => new SolidColorBrush(GetForeground(SemanticColor.InProgress)),
-            ProcessingStatus.NotStarted => new SolidColorBrush(GetForeground(SemanticColor.Normal)),
+            ProcessingStatus.FinishedSuccesfully => new SolidColorBrush(GetColor(SemanticColor.Success)),
+            ProcessingStatus.FinishedWithErrors => new SolidColorBrush(GetColor(SemanticColor.Error)),
+            ProcessingStatus.InProgress => new SolidColorBrush(GetColor(SemanticColor.InProgress)),
+            ProcessingStatus.NotStarted => new SolidColorBrush(GetColor(SemanticColor.Normal)),
             _ => throw new NotImplementedException(state.ToString()),
         };
     }
 
-    public static Color GetForeground(SemanticColor color)
+    public static Color GetColor(SemanticColor color)
     {
         if (ApplicationSettings.Theme == ThemeSetting.DarkValue)
         {
             switch (color)
             {
                 case SemanticColor.Normal: return Colors.White;
-                case SemanticColor.Success: return Color.FromRgb(147, 199, 93);
+                case SemanticColor.Success: return Color.FromRgb(42, 130, 67);
                 case SemanticColor.Error: return Color.FromRgb(222, 98, 89);
                 case SemanticColor.InProgress: return Colors.Yellow;
+                case SemanticColor.HeaderBackground: return Color.FromRgb(17,34,51);
+                case SemanticColor.WindowBackground: return Color.FromRgb(40,40,34);
+                case SemanticColor.ForegroundWindowFont: return Color.FromRgb(162,168,175);
+                case SemanticColor.ForegroundWindowFontAccented: return Color.FromRgb(214, 222, 235);
             }
 
         } 
@@ -40,6 +44,10 @@ public static class ColorPalette
                 case SemanticColor.Success: return Color.FromRgb(5, 139, 0);
                 case SemanticColor.Error: return Color.FromRgb(218,59,1);
                 case SemanticColor.InProgress: return Color.FromRgb(128,0,224);
+                case SemanticColor.HeaderBackground: return Color.FromRgb(243, 243, 243);
+                case SemanticColor.WindowBackground: return Color.FromRgb(243, 243, 243);
+                case SemanticColor.ForegroundWindowFont: return Colors.Black;
+                case SemanticColor.ForegroundWindowFontAccented: return Colors.Black;
             }
         }
 

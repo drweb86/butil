@@ -12,11 +12,16 @@
 
 ## Bug Fixes
 - Workaround of github bug with public release API was added. As a result of this wrong latest release info was shown.
+- Validation of FTPS storage with empty folder was fixed.
 
 ## Removed Features
 - Password hiding and password confirmation since of no usage.
 - Drag and drop of files into What? section due to poor support from AvaloniaUI.
 - Double click to open file or folder in What? section.
+- Expand what on incremental backup edit.
+
+## Known Issues
+- Launch task has issue with scrollbar.
 
 # 2023.10.06
 

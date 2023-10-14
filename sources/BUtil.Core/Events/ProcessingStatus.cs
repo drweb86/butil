@@ -5,6 +5,6 @@
         NotStarted,
         InProgress,
         FinishedSuccesfully,
-        FinishedWithErrors
+        FinishedWithErrors,
     }
 }

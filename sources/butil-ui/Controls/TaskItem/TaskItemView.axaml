@@ -26,6 +26,7 @@
 			MaxWidth="{Binding $parent.Bounds.Width}">
 			<TextBlock
 				Text="{Binding Path=Name}"
+				Foreground="{Binding ForegroundWindowFontAccented}"
 				TextWrapping="Wrap"
 				FontWeight="Bold"
 				FontSize="16"

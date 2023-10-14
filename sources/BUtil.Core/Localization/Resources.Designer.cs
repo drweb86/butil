@@ -984,6 +984,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name &apos;{0}&apos; length exceeds limit by {1} chars..
+        /// </summary>
+        public static string Name_Field_Validation_ExceedsLimit {
+            get {
+                return ResourceManager.GetString("Name_Field_Validation_ExceedsLimit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         public static string Name_Title {

@@ -19,13 +19,18 @@ public class TasksViewModel : PageViewModelBase
 
     public TasksViewModel()
     {
+        IsFullMenuVisible = true;
         _theme = ApplicationSettings.Theme;
-        _progressGenericForeground = new SolidColorBrush(ColorPalette.GetForeground(SemanticColor.Normal));
-        _errorForegroundColor = ColorPalette.GetForeground(SemanticColor.Error);
-        _successForegroundColor = ColorPalette.GetForeground(SemanticColor.Success);
+        _progressGenericForeground = new SolidColorBrush(ColorPalette.GetColor(SemanticColor.Normal));
+        _errorForegroundColor = ColorPalette.GetColor(SemanticColor.Error);
+        _successForegroundColor = ColorPalette.GetColor(SemanticColor.Success);
 
         WindowTitle = "BUtil - V" + CopyrightInfo.Version.ToString(3);
+        HeaderBackground = new SolidColorBrush(ColorPalette.GetColor(SemanticColor.HeaderBackground));
+        ForegroundWindowFontAccented = new SolidColorBrush(ColorPalette.GetColor(SemanticColor.ForegroundWindowFontAccented));
     }
+    public SolidColorBrush HeaderBackground { get; }
+    public SolidColorBrush ForegroundWindowFontAccented { get; }
 
     #region ProgressGenericForeground
 

@@ -641,4 +641,7 @@ See detailed description in the following link.</value>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protocol:</value>
   </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>Name '{0}' length exceeds limit by {1} chars.</value>
+  </data>
 </root>
