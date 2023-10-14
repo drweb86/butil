@@ -183,6 +183,9 @@
   <data name="Button_CopyToClipboard" xml:space="preserve">
     <value>Копировать</value>
   </data>
+  <data name="Button_Download" xml:space="preserve">
+    <value>Скачать</value>
+  </data>
   <data name="Button_OK" xml:space="preserve">
     <value>OK</value>
   </data>
@@ -286,6 +289,9 @@
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Папка не существует.</value>
+  </data>
+  <data name="Field_TransportProtocol" xml:space="preserve">
+    <value>Протокол:</value>
   </data>
   <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
     <value>Скрипт проверки целостности.ps1</value>
@@ -434,6 +440,9 @@
   </data>
   <data name="Name_Field_Validation" xml:space="preserve">
     <value>Название не указано или содержит символы пути.</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>Длина названия '{0}' превышена на {1} символов.</value>
   </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Название</value>
@@ -635,14 +644,5 @@ bin.
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Пользователь не указан.</value>
-  </data>
-  <data name="Button_Download" xml:space="preserve">
-    <value>Скачать</value>
-  </data>
-  <data name="Field_TransportProtocol" xml:space="preserve">
-    <value>Протокол:</value>
-  </data>
-  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
-    <value>Длина названия '{0}' превышена на {1} символов.</value>
   </data>
 </root>

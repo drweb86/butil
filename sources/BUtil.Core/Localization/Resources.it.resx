@@ -183,6 +183,9 @@
   <data name="Button_CopyToClipboard" xml:space="preserve">
     <value>Copia</value>
   </data>
+  <data name="Button_Download" xml:space="preserve">
+  <value>Download</value>
+  </data>
   <data name="Button_OK" xml:space="preserve">
     <value>OK</value>
   </data>
@@ -288,6 +291,9 @@
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>La cartella non esiste.</value>
+  </data>
+  <data name="Field_TransportProtocol" xml:space="preserve">
+    <value>Protocollo:</value>
   </data>
   <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
     <value>Script verifica integrità.ps1</value>
@@ -641,11 +647,5 @@
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Non è stata specificato l'utente.</value>
-  </data>
-  <data name="Button_Download" xml:space="preserve">
-  <value>Download</value>
-  </data>
-  <data name="Field_TransportProtocol" xml:space="preserve">
-    <value>Protocollo:</value>
   </data>
 </root>
