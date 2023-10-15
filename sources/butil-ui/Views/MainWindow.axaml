@@ -52,7 +52,6 @@
 		<controls:UpdateCheckExpanderView
 			Grid.Row="1"
 			HorizontalAlignment="Stretch"
-			Margin="24 24 24 24"
 			ScrollViewer.HorizontalScrollBarVisibility="Disabled"
 		/>
 		<ScrollViewer Grid.Row="2" Background="{Binding WindowBackground}">

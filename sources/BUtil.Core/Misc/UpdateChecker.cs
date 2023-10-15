@@ -30,7 +30,7 @@ namespace BUtil.Core.Misc
                 if (release == null || release.Prerelease || release.Draft || !Version.TryParse(release.Tag, out var version))
                     return noUpdate;
 
-                return new GithubUpdateInfo(true, release.Tag, release.Markdown
+                return new GithubUpdateInfo(CopyrightInfo.Version < version, release.Tag, release.Markdown
                     .Replace("\\r", "\r")
                     .Replace("\\n", "\n")
                     .Replace("#", ""));

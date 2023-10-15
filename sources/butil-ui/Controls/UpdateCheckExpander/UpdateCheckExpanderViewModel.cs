@@ -11,6 +11,7 @@ namespace butil_ui.Controls.UpdateCheckExpander
         public void Initialize()
         {
 #if DEBUG
+            // _ = CheckForUpdates();
 #else
             _ = CheckForUpdates(); // we don't wait it to not stop initialization
 #endif
