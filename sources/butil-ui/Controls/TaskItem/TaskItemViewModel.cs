@@ -27,6 +27,7 @@ namespace butil_ui.Controls
             SuccessForegroundColorBrush = new SolidColorBrush(ColorPalette.GetColor(SemanticColor.Success));
             Name = name;
             LastLaunchedAt = lastLaunchedAt;
+            Background = new SolidColorBrush(ColorPalette.GetColor(SemanticColor.WindowFrontBackground));
             Foreground = ColorPalette.GetResultColor(status);
             ForegroundWindowFontAccented = new SolidColorBrush(ColorPalette.GetColor(SemanticColor.ForegroundWindowFontAccented));
             _items = items;
@@ -35,6 +36,7 @@ namespace butil_ui.Controls
         public string Name { get; }
         public string LastLaunchedAt { get; }
         public SolidColorBrush Foreground { get; }
+        public SolidColorBrush Background { get; }
 
         public SolidColorBrush SuccessForegroundColorBrush { get; }
         public SolidColorBrush ForegroundWindowFontAccented { get; }

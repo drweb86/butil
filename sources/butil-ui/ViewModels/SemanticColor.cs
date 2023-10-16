@@ -12,4 +12,6 @@ public enum SemanticColor
 
     ForegroundWindowFont,
     ForegroundWindowFontAccented,
+
+    WindowFrontBackground,
 }

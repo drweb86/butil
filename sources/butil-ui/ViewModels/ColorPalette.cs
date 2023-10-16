@@ -33,6 +33,7 @@ public static class ColorPalette
                 case SemanticColor.WindowBackground: return Color.FromRgb(40,40,34);
                 case SemanticColor.ForegroundWindowFont: return Color.FromRgb(162,168,175);
                 case SemanticColor.ForegroundWindowFontAccented: return Color.FromRgb(214, 222, 235);
+                case SemanticColor.WindowFrontBackground: return Color.FromRgb(11, 41, 66);
             }
 
         } 
@@ -48,6 +49,7 @@ public static class ColorPalette
                 case SemanticColor.WindowBackground: return Color.FromRgb(243, 243, 243);
                 case SemanticColor.ForegroundWindowFont: return Colors.Black;
                 case SemanticColor.ForegroundWindowFontAccented: return Colors.Black;
+                case SemanticColor.WindowFrontBackground: return Color.FromRgb(243, 243, 243);
             }
         }
 
