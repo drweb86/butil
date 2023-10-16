@@ -29,22 +29,18 @@
 		<ScrollViewer
 			Grid.Row="0"
 			ScrollViewer.VerticalScrollBarVisibility="Visible"
-			ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-			<ListBox ItemsSource="{Binding Items}" Margin="24 24 24 24" Background="Transparent">
-				<ListBox.Styles>
-					<Style Selector="ListBoxItem">
-						<Setter Property="CornerRadius" Value="16" />
-						<Setter Property="BorderBrush" Value="{Binding $parent[ListBox].Foreground}" />
-						<Setter Property="BorderThickness" Value="1" />
-						<Setter Property="Margin" Value="0,4,0,4" />
-					</Style>
-				</ListBox.Styles>
-				<ListBox.ItemTemplate>
+			ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+			>
+			<ItemsRepeater ItemsSource="{Binding Items}" Margin="24 24 24 24" Background="Transparent">
+				<ItemsRepeater.Layout>
+					<WrapLayout Orientation="Horizontal" />
+				</ItemsRepeater.Layout>
+				<ItemsRepeater.ItemTemplate>
 					<DataTemplate>
-						<controls:TaskItemView DataContext="{Binding}" />
+						<controls:TaskItemView />
 					</DataTemplate>
-				</ListBox.ItemTemplate>
-			</ListBox>
+				</ItemsRepeater.ItemTemplate>
+			</ItemsRepeater>
 		</ScrollViewer>
 	</Grid>
 </UserControl>

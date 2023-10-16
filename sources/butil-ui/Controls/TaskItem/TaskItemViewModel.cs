@@ -29,14 +29,6 @@ namespace butil_ui.Controls
             LastLaunchedAt = lastLaunchedAt;
             Foreground = ColorPalette.GetResultColor(status);
             ForegroundWindowFontAccented = new SolidColorBrush(ColorPalette.GetColor(SemanticColor.ForegroundWindowFontAccented));
-            switch (status)
-            {
-                case ProcessingStatus.NotStarted: TaskState = string.Empty; break;
-                case ProcessingStatus.FinishedWithErrors: TaskState = "⛔"; break;
-                case ProcessingStatus.FinishedSuccesfully: TaskState = "✅"; break;
-                case ProcessingStatus.InProgress: TaskState = " ?"; break;
-                default: throw new ArgumentOutOfRangeException(nameof(status));
-            }
             _items = items;
         }
 
@@ -47,10 +39,9 @@ namespace butil_ui.Controls
         public SolidColorBrush SuccessForegroundColorBrush { get; }
         public SolidColorBrush ForegroundWindowFontAccented { get; }
 
-        public string TaskState { get; }
-        public string Task_Delete_Hint => Resources.Task_Delete_Hint;
-        public string Task_Launch_Hint => Resources.Task_Launch_Hint;
-        public string Task_Edit_Hint => Resources.Task_Edit_Hint;
+        public string Task_Delete => Resources.Task_Delete;
+        public string Task_Launch => Resources.Task_Launch;
+        public string Task_Edit => Resources.Task_Edit;
         public string Task_Restore => Resources.Task_Restore;
 
         #region Commands

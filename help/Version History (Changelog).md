@@ -1,11 +1,17 @@
 # 2023.10.16
 
+## New Features
+- Cards border color matches task status.
+
 ## Changes
 - Italian language was updated by https://github.com/bovirus .
 - Unhandled exceptions reporting added to UIv2.
+- Reduce space for each cards on Tasks View.
+- Reduce amount of buttons on card.
 
 ## Bug Fixes
 - Scroll viewer for task launch.
+- Removed selection for task cards.
 
 # 2023.10.15
 
