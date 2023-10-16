@@ -71,6 +71,7 @@
 				HorizontalAlignment="Right"
 				VerticalAlignment="Center"
 				Padding="16 8 16 8"
+				CornerRadius="16"
 				Command="{Binding TaskLaunchCommand}"
 				Content="{Binding Task_Launch}">
 			</Button>

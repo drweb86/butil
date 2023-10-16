@@ -29,11 +29,11 @@ public static class ColorPalette
                 case SemanticColor.Success: return Color.FromRgb(42, 130, 67);
                 case SemanticColor.Error: return Color.FromRgb(222, 98, 89);
                 case SemanticColor.InProgress: return Colors.Yellow;
-                case SemanticColor.HeaderBackground: return Color.FromRgb(17,34,51);
-                case SemanticColor.WindowBackground: return Color.FromRgb(40,40,34);
+                case SemanticColor.HeaderBackground: return Color.FromRgb(40, 39, 44);
+                case SemanticColor.WindowBackground: return Color.FromRgb(40,39,44);
                 case SemanticColor.ForegroundWindowFont: return Color.FromRgb(162,168,175);
                 case SemanticColor.ForegroundWindowFontAccented: return Color.FromRgb(214, 222, 235);
-                case SemanticColor.WindowFrontBackground: return Color.FromRgb(11, 41, 66);
+                case SemanticColor.WindowFrontBackground: return Color.FromRgb(28, 27, 32);
             }
 
         } 
