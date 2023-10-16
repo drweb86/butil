@@ -22,8 +22,13 @@
 			<Setter Property="VerticalAlignment" Value="Stretch" />
 		</Style>
 	</UserControl.Styles>
-	<StackPanel>
-		<Expander HorizontalAlignment="Stretch" Margin="0 0 0 8" IsExpanded="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+		<Expander Grid.Row="0" HorizontalAlignment="Stretch" Margin="0 0 0 8" IsExpanded="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
 			<Expander.Header>
 				<Grid>
 					<Grid.ColumnDefinitions>
@@ -46,18 +51,22 @@
 						Maximum="{Binding TotalTasksCount}" Value="{Binding CompletedTasksCount}" ShowProgressText="True" ProgressTextFormat="{Binding ElapsedLabel}" VerticalAlignment="Center" />
 				</Grid>
 			</Expander.Header>
-			<ItemsRepeater ItemsSource="{Binding Items}">
-				<ItemsRepeater.ItemTemplate>
-					<DataTemplate>
-						<TextBlock
-							Text="{Binding Path=Text}"
-							Foreground="{Binding Path=BackColor}"
-							TextWrapping="Wrap"
-							FontWeight="DemiBold"
+			<ScrollViewer
+				ScrollViewer.VerticalScrollBarVisibility="Visible"
+				ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+				<ItemsRepeater ItemsSource="{Binding Items}">
+					<ItemsRepeater.ItemTemplate>
+						<DataTemplate>
+							<TextBlock
+								Text="{Binding Path=Text}"
+								Foreground="{Binding Path=BackColor}"
+								TextWrapping="Wrap"
+								FontWeight="DemiBold"
 							/>
-					</DataTemplate>
-				</ItemsRepeater.ItemTemplate>
-			</ItemsRepeater>
+						</DataTemplate>
+					</ItemsRepeater.ItemTemplate>
+				</ItemsRepeater>
+			</ScrollViewer>
 		</Expander>
 
 		<WrapPanel HorizontalAlignment="Right" Grid.Row="1" Margin="0 8 0 0">
@@ -114,7 +123,5 @@
 				/>
 			</StackPanel>
 		</WrapPanel>
-	</StackPanel>
-
-
+	</Grid>
 </UserControl>

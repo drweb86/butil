@@ -10,10 +10,11 @@ using System;
 using BUtil.Core.State;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace butil_ui.Controls
 {
-    public class TaskItemViewModel : ViewModelBase
+    public class TaskItemViewModel : ObservableObject
     {
         private readonly ObservableCollection<TaskItemViewModel> _items;
 

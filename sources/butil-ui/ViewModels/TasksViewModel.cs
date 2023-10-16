@@ -11,7 +11,7 @@ using System.Linq;
 
 namespace butil_ui.ViewModels;
 
-public class TasksViewModel : PageViewModelBase
+public class TasksViewModel : ViewModelBase
 {
     private readonly Color _errorForegroundColor;
     private readonly Color _successForegroundColor;

@@ -54,8 +54,6 @@
 			HorizontalAlignment="Stretch"
 			ScrollViewer.HorizontalScrollBarVisibility="Disabled"
 		/>
-		<ScrollViewer Grid.Row="2" Background="{Binding WindowBackground}">
-			<TransitioningContentControl Content="{Binding CurrentPage}" />
-		</ScrollViewer>
+		<TransitioningContentControl Grid.Row="2" Content="{Binding CurrentPage}" />
 	</Grid>
 </Window>

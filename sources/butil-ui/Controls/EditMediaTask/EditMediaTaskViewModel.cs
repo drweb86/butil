@@ -14,7 +14,7 @@ using BUtil.Core.Misc;
 
 namespace butil_ui.Controls
 {
-    public class EditMediaTaskViewModel : PageViewModelBase
+    public class EditMediaTaskViewModel : ViewModelBase
     {
         public EditMediaTaskViewModel(string taskName, bool isNew)
         {

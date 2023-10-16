@@ -93,11 +93,11 @@ public partial class MainWindowViewModel : ViewModelBase
     }
 
 
-    private PageViewModelBase _currentPage;
+    private ViewModelBase _currentPage;
     /// <summary>
     /// Gets the current page. The property is read-only
     /// </summary>
-    public PageViewModelBase? CurrentPage
+    public ViewModelBase? CurrentPage
     {
         get => _currentPage;
         set {

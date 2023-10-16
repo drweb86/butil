@@ -1,4 +1,13 @@
-# 2023.10.07
+# 2023.10.16
+
+## Changes
+- Italian language was updated by https://github.com/bovirus .
+- Unhandled exceptions reporting added to UIv2.
+
+## Bug Fixes
+- Scroll viewer for task launch.
+
+# 2023.10.15
 
 ## New Features
 - Tasks app was upgraded to AvaloniaUI.

@@ -1,12 +1,12 @@
 ﻿using BUtil.Core.Localization;
 using BUtil.Core.Misc;
-using butil_ui.ViewModels;
+using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 using System.Threading.Tasks;
 
 namespace butil_ui.Controls.UpdateCheckExpander
 {
-    internal class UpdateCheckExpanderViewModel: ViewModelBase
+    internal class UpdateCheckExpanderViewModel: ObservableObject
     {
         public void Initialize()
         {

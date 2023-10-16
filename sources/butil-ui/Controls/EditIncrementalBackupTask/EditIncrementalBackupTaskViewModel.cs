@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 namespace butil_ui.Controls
 {
 
-    public class EditIncrementalBackupTaskViewModel : PageViewModelBase
+    public class EditIncrementalBackupTaskViewModel : ViewModelBase
     {
         private readonly string _taskName;
 

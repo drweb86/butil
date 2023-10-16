@@ -17,7 +17,7 @@ using System.Threading;
 
 namespace butil_ui.ViewModels;
 
-public class LaunchTaskViewModel : PageViewModelBase
+public class LaunchTaskViewModel : ViewModelBase
 {
     private readonly Color _errorForegroundColor;
     private readonly Color _successForegroundColor;

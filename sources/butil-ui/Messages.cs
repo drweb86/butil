@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace butil_ui
 {
-    internal static class Messages
+    public static class Messages
     {
         public static async Task ShowInformationBox(string message)
         {

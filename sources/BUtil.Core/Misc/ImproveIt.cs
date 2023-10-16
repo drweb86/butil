@@ -43,7 +43,10 @@ namespace BUtil.Core.Misc
                 
                 File.AppendAllText(Files.BugReportFile, builder.ToString());
 
-                HandleUiError?.Invoke(string.Format(Resources.ImproveIt_Message, Files.BugReportFile));
+                if (HandleUiError != null)
+                {
+                    HandleUiError.Invoke(string.Format(Resources.ImproveIt_Message, Files.BugReportFile));
+                }
             }
             finally
             {

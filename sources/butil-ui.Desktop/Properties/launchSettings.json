@@ -1,7 +1,8 @@
 {
   "profiles": {
     "butil-ui.Desktop": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "commandLineArgs": "1LaunchTask \"Task=Новая задача 2\""
     }
   }
 }
