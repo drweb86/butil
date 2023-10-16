@@ -445,6 +445,9 @@
   <data name="Name_Field_Validation" xml:space="preserve">
     <value>Il nome è vuoto o contiene nel percorso caratteri non supportati.</value>
   </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>La lunghezza del nome '{0}' eccede il limite di {1} caratteri.</value>
+  </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Nome</value>
   </data>
