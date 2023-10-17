@@ -8,7 +8,7 @@ if NOT %ERRORLEVEL% == 0 (
 cd ..
 cd ..
 
-set version=2023.10.15.2
+set version=2023.10.16
 dotnet publish /p:Version=%version% /p:AssemblyVersion=%version% /p:Configuration=Release /p:PublishDir=../Output/butil/bin /p:PublishReadyToRun=false /p:RunAnalyzersDuringBuild=False
 if %ERRORLEVEL% NEQ 0 (
 	GOTO error;

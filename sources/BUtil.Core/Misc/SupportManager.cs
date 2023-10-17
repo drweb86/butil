@@ -10,20 +10,20 @@ namespace BUtil.Core.Misc
 	{
         public static void LaunchTasksApp()
 		{
-			Process.Start(Files.TasksAppV2);
+			Process.Start(Files.UIApp);
         }
 
 
         public static void LaunchTask(string taskName)
 		{
-            Process.Start(Files.TasksAppV2, $"{TasksAppArguments.LaunchTask} \"{TasksAppArguments.RunTask}={taskName}\"");
+            Process.Start(Files.UIApp, $"{TasksAppArguments.LaunchTask} \"{TasksAppArguments.RunTask}={taskName}\"");
         }
 
 		public static void OpenRestorationApp(string? taskName = null)
 		{
 			if (string.IsNullOrWhiteSpace(taskName))
 			{
-				Process.Start(Files.TasksApp, TasksAppArguments.Restore);
+				Process.Start(Files.UIApp, TasksAppArguments.Restore);
 				return;
 			}
 
@@ -32,11 +32,11 @@ namespace BUtil.Core.Misc
 
             if (task?.Model is IncrementalBackupModelOptionsV2)
             {
-                Process.Start(Files.TasksApp, $"{TasksAppArguments.Restore} \"{TasksAppArguments.RunTask}={taskName}\"");
+                Process.Start(Files.UIApp, $"{TasksAppArguments.Restore} \"{TasksAppArguments.RunTask}={taskName}\"");
             }
             else
             {
-                Process.Start(Files.TasksApp, TasksAppArguments.Restore);
+                Process.Start(Files.UIApp, TasksAppArguments.Restore);
             }
         }
 

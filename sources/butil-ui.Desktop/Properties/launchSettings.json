@@ -2,7 +2,7 @@
   "profiles": {
     "butil-ui.Desktop": {
       "commandName": "Project",
-      "commandLineArgs": "1LaunchTask \"Task=Новая задача 2\""
+      "commandLineArgs": "Restore"
     }
   }
 }

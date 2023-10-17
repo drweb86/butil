@@ -72,6 +72,9 @@
     <Compile Update="Controls\EditIncrementalBackupTask\EditIncrementalBackupTaskView.axaml.cs">
       <DependentUpon>EditIncrementalBackupTaskView.axaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\RestoreView.axaml.cs">
+      <DependentUpon>RestoreView.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\TasksView.axaml.cs">
       <DependentUpon>TasksView.axaml</DependentUpon>
     </Compile>

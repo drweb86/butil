@@ -1,5 +1,6 @@
 ﻿using Avalonia.Media;
 using BUtil.Core;
+using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Misc;
@@ -93,7 +94,7 @@ public partial class MainWindowViewModel : ViewModelBase
     }
 
 
-    private ViewModelBase _currentPage;
+    private ViewModelBase? _currentPage;
     /// <summary>
     /// Gets the current page. The property is read-only
     /// </summary>
@@ -119,18 +120,31 @@ public partial class MainWindowViewModel : ViewModelBase
         WindowManager._switchView = x => CurrentPage = x;
         var args = Environment.GetCommandLineArgs().Skip(1).ToArray();
 
-        if (args.Length == 2 && args[0].ToUpperInvariant() == TasksAppArguments.LaunchTask.ToUpperInvariant())
+        if (args.Length == 2 && args[0].Cmp(TasksAppArguments.LaunchTask) && args[1].StartsWith(TasksAppArguments.RunTask))
         {
-            var taskName = string.Empty;
-            foreach (var argument in args)
-            {
-                if (argument.StartsWith(TasksAppArguments.RunTask) && argument.Length > TasksAppArguments.RunTask.Length)
-                {
-                    taskName = argument.Substring(TasksAppArguments.RunTask.Length + 1);
-                }
-            }
+            var taskName = args[1].Substring(TasksAppArguments.RunTask.Length + 1);
             WindowManager.SwitchView(new LaunchTaskViewModel(taskName));
-        } else
+        } else if (args.Length == 1 && args[0].Cmp(TasksAppArguments.Restore))
+        {
+            WindowManager.SwitchView(new RestoreViewModel(null, null));
+        } else if (args[0].EndsWith(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile))
+        {
+            var folderStorage = new FolderStorageSettingsV2 { DestinationFolder = System.IO.Path.GetDirectoryName(args[0]) ?? throw new Exception() };
+            WindowManager.SwitchView(new RestoreViewModel(folderStorage, null));
+        }
+        else if (args.Length == 2 && args[0].Cmp(TasksAppArguments.Restore) && args[1].StartsWith(TasksAppArguments.RunTask))
+        {
+            var taskName = args[1].Substring(TasksAppArguments.RunTask.Length + 1);
+            var task = new TaskV2StoreService().Load(taskName);
+            if (task == null || !(task.Model is IncrementalBackupModelOptionsV2))
+                WindowManager.SwitchView(new RestoreViewModel(null, null));
+            else
+            {
+                var incrementalOptions = (IncrementalBackupModelOptionsV2)task.Model ?? throw new Exception();
+                WindowManager.SwitchView(new RestoreViewModel(incrementalOptions.To, incrementalOptions.Password));
+            }
+        }
+        else
         {
             WindowManager.SwitchView(new TasksViewModel());
         }
