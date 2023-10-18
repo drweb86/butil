@@ -49,15 +49,12 @@
     <OutputPath>..\..\Output\BUtil\bin\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="Tasks\Logs\**" />
     <Compile Remove="Controls\**" />
     <Compile Remove="LogsManagement\**" />
     <Compile Remove="Properties\**" />
-    <EmbeddedResource Remove="Tasks\Logs\**" />
     <EmbeddedResource Remove="Controls\**" />
     <EmbeddedResource Remove="LogsManagement\**" />
     <EmbeddedResource Remove="Properties\**" />
-    <None Remove="Tasks\Logs\**" />
     <None Remove="Controls\**" />
     <None Remove="LogsManagement\**" />
     <None Remove="Properties\**" />
@@ -70,9 +67,6 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Configurator\Controls\Tasks\WhatUserControl.cs" />
-    <Compile Update="Tasks\Controls\Tasks\Where\WhereUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="Icons.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

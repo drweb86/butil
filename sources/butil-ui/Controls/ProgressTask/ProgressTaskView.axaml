@@ -1,0 +1,16 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:cvm="clr-namespace:butil_ui.Controls"
+             mc:Ignorable="d"
+             x:Class="butil_ui.Controls.ProgressTaskView"
+			 x:DataType="cvm:ProgressTaskViewModel"
+			 IsVisible="{Binding IsVisible}">
+	<Expander IsVisible="{Binding IsVisible}" HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
+		<Expander.Header>
+			<ProgressBar HorizontalAlignment="Stretch" ShowProgressText="True" Value="{Binding Progress}" MinHeight="30" />
+		</Expander.Header>
+		<TextBlock Text="{Binding Task_Status_InProgress}" />
+	</Expander>
+</UserControl>

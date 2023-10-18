@@ -1,4 +1,5 @@
-﻿using BUtil.Core.BackupModels;
+﻿using Avalonia.Threading;
+using BUtil.Core.BackupModels;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
@@ -20,8 +21,31 @@ public class RestoreViewModel : ViewModelBase
 
         WhereTaskViewModel = new WhereTaskViewModel(storageSettingsV2 ?? new FolderStorageSettingsV2(), Resources.Task_Restore, "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png");
         EncryptionTaskViewModel = new EncryptionTaskViewModel(password ?? string.Empty, false);
+        ProgressTaskViewModel = new ProgressTaskViewModel();
     }
 
+    #region IsSetupVisible
+
+    private bool _isSetupVisible = true;
+
+    public bool IsSetupVisible
+    {
+        get
+        {
+            return _isSetupVisible;
+        }
+        set
+        {
+            if (value == _isSetupVisible)
+                return;
+            _isSetupVisible = value;
+            OnPropertyChanged(nameof(IsSetupVisible));
+        }
+    }
+
+    #endregion
+
+    public ProgressTaskViewModel ProgressTaskViewModel { get; }
     public WhereTaskViewModel WhereTaskViewModel { get; }
     public EncryptionTaskViewModel EncryptionTaskViewModel { get; }
 
@@ -40,13 +64,6 @@ public class RestoreViewModel : ViewModelBase
             return;
         }
 
-        var error = StorageFactory.Test(new StubLog(), storageOptions);
-        if (!string.IsNullOrWhiteSpace(error))
-        {
-            await Messages.ShowErrorBox(error);
-            return;
-        }
-
         if (string.IsNullOrWhiteSpace(EncryptionTaskViewModel.Password))
         {
             await Messages.ShowErrorBox(Resources.Password_Field_Validation_NotSpecified);
@@ -59,22 +76,39 @@ public class RestoreViewModel : ViewModelBase
             return;
         }
 
-        using var storage = StorageFactory.Create(new StubLog(), storageOptions);
-
-        if (!storage.Exists(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile))
+        this.ProgressTaskViewModel.IsVisible = true;
+        this.ProgressTaskViewModel.Activate(async progress =>
         {
-            error = string.Format(Resources.RestoreFrom_Field_Validation_NoStateFiles, IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile);
-            await Messages.ShowErrorBox(error);
-            return;
-        }
-
-        var commonServicesIoc = new CommonServicesIoc();
-        using var services = new StorageSpecificServicesIoc(new StubLog(), storageOptions, commonServicesIoc.HashService);
-        if (!services.IncrementalBackupStateService.TryRead(EncryptionTaskViewModel.Password, out var state))
-        {
-            await Messages.ShowErrorBox(Resources.RestoreFrom_Field_Validation_StateInvalid);
-            return;
-        }
+            progress(10);
+            var error = StorageFactory.Test(new StubLog(), storageOptions);
+            if (!string.IsNullOrWhiteSpace(error))
+            {
+                await Dispatcher.UIThread.InvokeAsync(async () => await Messages.ShowErrorBox(error));
+                this.ProgressTaskViewModel.IsVisible = false;
+                return;
+            }
+            progress(20);
+            using var storage = StorageFactory.Create(new StubLog(), storageOptions);
+            if (!storage.Exists(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile))
+            {
+                error = string.Format(Resources.RestoreFrom_Field_Validation_NoStateFiles, IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile);
+                await Dispatcher.UIThread.InvokeAsync(async () => await Messages.ShowErrorBox(error));
+                this.ProgressTaskViewModel.IsVisible = false;
+                return;
+            }
+            progress(30);
+            var commonServicesIoc = new CommonServicesIoc();
+            using var services = new StorageSpecificServicesIoc(new StubLog(), storageOptions, commonServicesIoc.HashService);
+            if (!services.IncrementalBackupStateService.TryRead(EncryptionTaskViewModel.Password, out var state))
+            {
+                await Dispatcher.UIThread.InvokeAsync(async () => await Messages.ShowErrorBox(Resources.RestoreFrom_Field_Validation_StateInvalid));
+                this.ProgressTaskViewModel.IsVisible = false;
+                return;
+            }
+            this.ProgressTaskViewModel.IsVisible = false;
+            IsSetupVisible = false;
+            progress(100);
+        });
 
     }
 

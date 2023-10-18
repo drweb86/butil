@@ -4,6 +4,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="clr-namespace:butil_ui.ViewModels"
 	xmlns:controls="clr-namespace:butil_ui.Controls"
+    xmlns:v="clr-namespace:butil_ui.Views"
     mc:Ignorable="d"
 	d:DesignWidth="800"
 	d:DesignHeight="450"
@@ -31,12 +32,13 @@
 				ScrollViewer.VerticalScrollBarVisibility="Visible"
 				ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 			<StackPanel Orientation="Vertical">
-				<controls:WhereTaskView Margin="24 8 24 8" DataContext="{Binding WhereTaskViewModel}"/>
-				<controls:EncryptionTaskView Margin="24 8 24 8" DataContext="{Binding EncryptionTaskViewModel}" />
+				<controls:ProgressTaskView DataContext="{Binding ProgressTaskViewModel}"  />
+				<controls:WhereTaskView Margin="24 8 24 8" DataContext="{Binding WhereTaskViewModel}" IsVisible="{Binding $parent[v:RestoreView].((vm:RestoreViewModel)DataContext).IsSetupVisible}"/>
+				<controls:EncryptionTaskView Margin="24 8 24 8" DataContext="{Binding EncryptionTaskViewModel}" IsVisible="{Binding $parent[v:RestoreView].((vm:RestoreViewModel)DataContext).IsSetupVisible}"/>
 			</StackPanel>
 		</ScrollViewer>
 
-		<WrapPanel HorizontalAlignment="Right" Grid.Row="1" Margin="0 8 24 0">
+		<WrapPanel HorizontalAlignment="Right" Grid.Row="1" Margin="0 8 24 0" IsVisible="{Binding IsSetupVisible}">
 			<Button
 				VerticalAlignment="Center"
 				Margin="4"
