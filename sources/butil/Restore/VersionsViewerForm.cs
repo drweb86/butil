@@ -24,7 +24,6 @@ namespace BUtil.RestorationMaster
             _incrementalBackupState = incrementalBackupState;
             _storageSettings = storageSettings;
 
-            _selectVersionToolStripLabel.Text = BUtil.Core.Localization.Resources.BackupVersion_Selector_Title;
             _selectedVersionToolStripLabel.Text = BUtil.Core.Localization.Resources.BackupVersion_Files_Title;
             _changesToolStripLabel.Text = BUtil.Core.Localization.Resources.BackupVersion_Changes_Title;
             _journalSelectedToolStripMenuItem.Text =
@@ -36,69 +35,7 @@ namespace BUtil.RestorationMaster
             recoverToolStripMenuItem.Text = _recoverToolStripButton.Text = BUtil.Core.Localization.Resources.Task_Restore;
             this.Text = Resources.Task_Restore;
         }
-
-        private void OnLoad(object sender, System.EventArgs e)
-        {
-            _versionsListView.BeginUpdate();
-
-            var versionsDesc = _incrementalBackupState.VersionStates
-                .OrderByDescending(x => x.BackupDateUtc)
-                .ToList();
-
-            foreach (var version in versionsDesc)
-            {
-                var totalSize = GetSizeOfVersion(version);
-                var title = $"{version.BackupDateUtc} ({BytesToString(totalSize)})";
-                _versionsListView.Items.Add(new ListViewItem(title) { Tag = version, ImageIndex = 6 });
-            }
-
-            _versionsListView.EndUpdate();
-
-            _versionsListView.Items[0].Selected = true;
-
-            var storageSize = _incrementalBackupState.VersionStates
-                .SelectMany(x => x.SourceItemChanges)
-                .SelectMany(x =>
-                {
-                    var storageFiles = new List<StorageFile>();
-                    storageFiles.AddRange(x.UpdatedFiles);
-                    storageFiles.AddRange(x.CreatedFiles);
-                    return storageFiles;
-                })
-                .GroupBy(x => x.StorageFileName)
-                .Select(x => x.First().StorageFileNameSize)
-                .Sum();
-            _storageToolStripLabel.Text = string.Format(BUtil.Core.Localization.Resources.BackupVersion_Storage_TitleWithSize, BytesToString(storageSize));
-        }
-
-        private static long GetSizeOfVersion(VersionState version)
-        {
-            var versionFolder = SourceItemHelper.GetVersionFolder(version.BackupDateUtc);
-            return version.SourceItemChanges
-                .SelectMany(x =>
-                {
-                    var storageFiles = new List<StorageFile>();
-                    storageFiles.AddRange(x.UpdatedFiles);
-                    storageFiles.AddRange(x.CreatedFiles);
-                    return storageFiles;
-                })
-                .Where(x => x.StorageRelativeFileName.StartsWith(versionFolder))
-                .GroupBy(x => x.StorageFileName)
-                .Select(x => x.First().StorageFileNameSize)
-                .Sum();
-        }
-
-        private static String BytesToString(long byteCount)
-        {
-            string[] suf = { "B", "KB", "MB", "GB", "TB", "PB", "EB" }; //Longs run out around EB
-            if (byteCount == 0)
-                return "0" + suf[0];
-            long bytes = Math.Abs(byteCount);
-            int place = Convert.ToInt32(Math.Floor(Math.Log(bytes, 1024)));
-            double num = Math.Round(bytes / Math.Pow(1024, place), 1);
-            return (Math.Sign(byteCount) * num).ToString() + suf[place];
-        }
-
+        
         private void RefreshChanges(IEnumerable<Tuple<ChangeState, string>> changes)
         {
             _changesListView.BeginUpdate();
@@ -359,6 +296,7 @@ namespace BUtil.RestorationMaster
             _filesTreeView.SelectedNode = _filesTreeView.GetNodeAt(e.X, e.Y);
         }
 
+        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         private void OnVersionChanged(object sender, EventArgs e)
         {
             if (_versionsListView.SelectedItems.Count != 1)
