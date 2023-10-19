@@ -1,4 +1,4 @@
-# ![BUtil Logotype](./help/Assets/Logotype.bmp) BUtil
+# ![BUtil Logotype](./help/Assets/Logotype.png) BUtil
 
 > Backup your data.
 
