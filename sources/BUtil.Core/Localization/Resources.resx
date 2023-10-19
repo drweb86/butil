@@ -163,7 +163,7 @@ or warnings will be registered.</value>
     <value>SELECT VERSION</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>Storage: {0}</value>
+    <value>(all versions occupy on storage {0})</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERSIONS</value>
@@ -643,5 +643,8 @@ See detailed description in the following link.</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>User is not specified.</value>
+  </data>
+  <data name="Field_Version" xml:space="preserve">
+    <value>Version:</value>
   </data>
 </root>

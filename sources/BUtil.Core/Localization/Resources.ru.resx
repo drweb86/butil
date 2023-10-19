@@ -163,7 +163,7 @@
     <value>ВЫБЕРИТЕ ВЕРСИЮ</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>Хранилище: {0}</value>
+    <value>(все версии занимают в хранилище {0})</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>ВЕРСИИ</value>
@@ -559,7 +559,7 @@ bin.
     <value>Удалить</value>
   </data>
   <data name="Task_Delete_Confirm" xml:space="preserve">
-    <value>Удаление задачу "{0}"?</value>
+    <value>Удалить задачу "{0}"?</value>
   </data>
   <data name="Task_Delete_Hint" xml:space="preserve">
     <value>Удаляет выбранную задачу.</value>
@@ -644,5 +644,8 @@ bin.
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Пользователь не указан.</value>
+  </data>
+  <data name="Field_Version" xml:space="preserve">
+    <value>Версия:</value>
   </data>
 </root>

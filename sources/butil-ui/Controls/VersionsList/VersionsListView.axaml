@@ -1,0 +1,30 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:cvm="clr-namespace:butil_ui.Controls"
+             mc:Ignorable="d"
+             x:Class="butil_ui.Controls.VersionsListView"
+			 x:DataType="cvm:VersionsListViewModel">
+	<Expander HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
+		<Expander.Header>
+			<WrapPanel Orientation="Horizontal">
+				<Image Width="16" Height="16" Source="/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png" VerticalAlignment="Center" />
+				<TextBlock Margin="8 0 8 0" Text="{Binding Field_Version}" VerticalAlignment="Center" />
+				<ComboBox Margin="0 4 4 4" HorizontalAlignment="Stretch" VerticalAlignment="Center" SelectedValue="{Binding SelectedVersion}" ItemsSource="{Binding Versions}" DisplayMemberBinding="{Binding Title}" />
+				<TextBlock Text="{Binding StorageSize}" Margin="8 0 0 0" VerticalAlignment="Center" />
+			</WrapPanel>
+		</Expander.Header>
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition />
+			</Grid.RowDefinitions>
+
+			
+		</Grid>
+	</Expander>
+</UserControl>

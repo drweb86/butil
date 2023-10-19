@@ -22,6 +22,7 @@ public class RestoreViewModel : ViewModelBase
         WhereTaskViewModel = new WhereTaskViewModel(storageSettingsV2 ?? new FolderStorageSettingsV2(), Resources.Task_Restore, "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png");
         EncryptionTaskViewModel = new EncryptionTaskViewModel(password ?? string.Empty, false);
         ProgressTaskViewModel = new ProgressTaskViewModel();
+        VersionsListViewModel = new VersionsListViewModel();
     }
 
     #region IsSetupVisible
@@ -48,6 +49,8 @@ public class RestoreViewModel : ViewModelBase
     public ProgressTaskViewModel ProgressTaskViewModel { get; }
     public WhereTaskViewModel WhereTaskViewModel { get; }
     public EncryptionTaskViewModel EncryptionTaskViewModel { get; }
+
+    public VersionsListViewModel VersionsListViewModel { get; }
 
     #region Commands
 
@@ -108,6 +111,7 @@ public class RestoreViewModel : ViewModelBase
             this.ProgressTaskViewModel.IsVisible = false;
             IsSetupVisible = false;
             progress(100);
+            VersionsListViewModel.Initialize(state);
         });
 
     }

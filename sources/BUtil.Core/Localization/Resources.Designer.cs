@@ -190,7 +190,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Storage: {0}.
+        ///   Looks up a localized string similar to (all versions occupy on storage {0}).
         /// </summary>
         public static string BackupVersion_Storage_TitleWithSize {
             get {
@@ -575,6 +575,15 @@ namespace BUtil.Core.Localization {
         public static string Field_TransportProtocol {
             get {
                 return ResourceManager.GetString("Field_TransportProtocol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version:.
+        /// </summary>
+        public static string Field_Version {
+            get {
+                return ResourceManager.GetString("Field_Version", resourceCulture);
             }
         }
         
