@@ -148,7 +148,7 @@
     <value>Удаление незавершенных резервных копий</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
-    <value>ФАЙЛЫ</value>
+    <value>Файлы</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Журнал: {0}</value>

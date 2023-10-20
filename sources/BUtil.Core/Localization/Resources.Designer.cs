@@ -145,7 +145,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FILES.
+        ///   Looks up a localized string similar to Files.
         /// </summary>
         public static string BackupVersion_Files_Title {
             get {

@@ -148,7 +148,7 @@
     <value>Elimina i backup non completati</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
-    <value>FILE</value>
+    <value>File</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
     <value>(tutte le versioni occupano spazio di archiviazione {0})</value>

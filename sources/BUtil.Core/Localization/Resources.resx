@@ -148,7 +148,7 @@ or warnings will be registered.</value>
     <value>Delete uncompleted backups</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
-    <value>FILES</value>
+    <value>Files</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Journal: {0}</value>

@@ -16,7 +16,31 @@
 			<ComboBox Margin="0 4 4 4" HorizontalAlignment="Stretch" VerticalAlignment="Center" SelectedValue="{Binding SelectedVersion}" ItemsSource="{Binding Versions}" DisplayMemberBinding="{Binding Title}" />
 			<TextBlock TextWrapping="Wrap" Text="{Binding StorageSize}" Margin="8 0 0 0" VerticalAlignment="Center" />
 		</WrapPanel>
-		<controls:ProgressTaskView Grid.Row="0" DataContext="{Binding ProgressTaskViewModel}" Margin="24 24 24 0" HorizontalAlignment="Stretch" />
+		<controls:ProgressTaskView Grid.Row="0" DataContext="{Binding ProgressTaskViewModel}" Margin="24 0 24 0" HorizontalAlignment="Stretch" />
+
+		<Expander Margin="24 8 24 24" HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent" IsVisible="{Binding !ProgressTaskViewModel.IsVisible}" >
+			<Expander.Header>
+				<WrapPanel Orientation="Horizontal" Margin="0 8 0 8">
+					<Image Width="16" Height="16" Source="/Assets/CrystalProject_EveraldoCoelho_SourceItems48x48.png" VerticalAlignment="Center" />
+					<TextBlock Margin="8 0 8 0" Text="{Binding BackupVersion_Files_Title}" VerticalAlignment="Center" />
+				</WrapPanel>
+			</Expander.Header>
+			<TreeView ItemsSource="{Binding Nodes}" HorizontalAlignment="Stretch">
+				<TreeView.ItemTemplate>
+					<TreeDataTemplate ItemsSource="{Binding Nodes}">
+						<StackPanel Orientation="Horizontal">
+							<Image
+								Width="16"
+								Height="16"
+								VerticalAlignment="Center"
+								Source="{Binding ImageSource, Converter={StaticResource variableImage}}"
+								Margin="0 0 4 0" />
+							<TextBlock Text="{Binding Target}"/>
+						</StackPanel>
+					</TreeDataTemplate>
+				</TreeView.ItemTemplate>
+			</TreeView>
+		</Expander>
 
 		<Expander Margin="24 0 24 0" HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent" IsVisible="{Binding !ProgressTaskViewModel.IsVisible}" >
 			<Expander.Header>
@@ -45,5 +69,6 @@
 				</ItemsRepeater.ItemTemplate>
 			</ItemsRepeater>
 		</Expander>
+
 	</StackPanel>
 </UserControl>
