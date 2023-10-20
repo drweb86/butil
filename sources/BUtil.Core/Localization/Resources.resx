@@ -169,7 +169,7 @@ or warnings will be registered.</value>
     <value>VERSIONS</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Click on item you want to restore and open context menu by right click.</value>
+    <value>Select file or folder you want to restore in tree and click "Restore".</value>
   </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>Cancel</value>

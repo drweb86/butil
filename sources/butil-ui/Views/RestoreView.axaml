@@ -32,15 +32,20 @@
 				ScrollViewer.VerticalScrollBarVisibility="Visible"
 				ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 			<StackPanel Orientation="Vertical">
-				<controls:ProgressTaskView DataContext="{Binding ProgressTaskViewModel}"  />
 				<controls:WhereTaskView Margin="24 8 24 8" DataContext="{Binding WhereTaskViewModel}" IsVisible="{Binding $parent[v:RestoreView].((vm:RestoreViewModel)DataContext).IsSetupVisible}"/>
 				<controls:EncryptionTaskView Margin="24 8 24 8" DataContext="{Binding EncryptionTaskViewModel}" IsVisible="{Binding $parent[v:RestoreView].((vm:RestoreViewModel)DataContext).IsSetupVisible}"/>
 				<controls:VersionsListView DataContext="{Binding VersionsListViewModel}" IsVisible="{Binding !$parent[v:RestoreView].((vm:RestoreViewModel)DataContext).IsSetupVisible}"/>
 			</StackPanel>
 		</ScrollViewer>
 
-		<WrapPanel HorizontalAlignment="Right" Grid.Row="1" Margin="0 8 24 0" IsVisible="{Binding IsSetupVisible}">
-			<Button
+		<Grid
+			HorizontalAlignment="Stretch"
+			Grid.Row="1"
+			Margin="24 8 24 0"
+			IsVisible="{Binding IsSetupVisible}"
+			ColumnDefinitions="*, Auto, Auto">
+			<controls:ProgressTaskView Grid.Column="0" VerticalAlignment="Center" DataContext="{Binding ProgressTaskViewModel}" HorizontalAlignment="Stretch" />
+			<Button Grid.Column="1"
 				VerticalAlignment="Center"
 				Margin="4"
 				Padding="16"
@@ -48,7 +53,7 @@
 				Content="{Binding Button_Continue}"
 				Command="{Binding ContinueCommand}" 
 				/>
-			<Button
+			<Button Grid.Column="2"
 				VerticalAlignment="Center"
 				Margin="4"
 				Padding="16"
@@ -56,6 +61,6 @@
 				Content="{Binding Button_Close}"
 				Command="{Binding CloseCommand}"
 				/>
-		</WrapPanel>
+		</Grid>
 	</Grid>
 </UserControl>

@@ -168,9 +168,6 @@
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERSIONI</value>
   </data>
-  <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Fai clic sull'elemento che si vuoi ripristinare e apri il menu contestuale facendo clic con il tasto destro.</value>
-  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>Annulla</value>
   </data>

@@ -34,64 +34,8 @@ namespace BUtil.RestorationMaster
             _toolStripStatusLabel.Text = BUtil.Core.Localization.Resources.BackupVersion_Viewer_Help;
             recoverToolStripMenuItem.Text = _recoverToolStripButton.Text = BUtil.Core.Localization.Resources.Task_Restore;
         }
-        
 
-        private IEnumerable<TreeNode> GetChildren(TreeNode Parent)
-        {
-            return Parent.Nodes.Cast<TreeNode>().Concat(
-                   Parent.Nodes.Cast<TreeNode>().SelectMany(GetChildren));
-        }
 
-        private void OnRecover(object sender, EventArgs e)
-        {
-            if (_filesTreeView.SelectedNode == null)
-                return;
-
-            var storageFiles = new List<StorageFile>();
-
-            if (_fbdialog.ShowDialog() == DialogResult.OK)
-            {
-                var destinationFolder = _fbdialog.SelectedPath;
-                //D:\reco-1
-                var tags = GetChildren(_filesTreeView.SelectedNode)
-                    .Select(x => x.Tag as StorageFile)
-                    .Where(x => x != null)
-                    .ToList();
-                if (_filesTreeView.SelectedNode.Tag != null &&
-                    _filesTreeView.SelectedNode.Tag is StorageFile)
-                    tags.Add(_filesTreeView.SelectedNode.Tag as StorageFile);
-
-                TreeNode rootNode = _filesTreeView.SelectedNode;
-                while (rootNode.Parent != null)
-                {
-                    rootNode = rootNode.Parent;
-                }
-
-                Recover(tags, destinationFolder, rootNode.Tag as SourceItemV2);
-            }
-        }
-
-        private void Recover(List<StorageFile> storageFiles, string destinationFolder, SourceItemV2 sourceItem)
-        {
-            if (!storageFiles.Any())
-                return;
-
-            var commonServicesIoc = new CommonServicesIoc();
-            var services = new Core.TasksTree.IncrementalModel.StorageSpecificServicesIoc(new StubLog(), _storageSettings, commonServicesIoc.HashService);
-            using var form = new ProgressForm(reportProgress =>
-            {
-                foreach (var storageFile in storageFiles)
-                {
-                    int percent = ((storageFiles.IndexOf(storageFile) + 1) * 100) / storageFiles.Count;
-                    reportProgress(percent);
-                    services.IncrementalBackupFileService.Download(sourceItem, storageFile, destinationFolder);
-                }
-            });
-            form.ShowDialog();
-
-            //Messages.ShowInformationBox(Resources.Task_Status_Succesfull);
-            services.Dispose();
-        }
 
         private void OnMouseDown(object sender, MouseEventArgs e)
         {

@@ -48,7 +48,10 @@ namespace BUtil.Core.State
                 return false;
             }
             var sourceFile = Directory.GetFiles(extractedFolder).Single();
+            if (File.Exists(destinationFileName))
+                File.Delete(destinationFileName);
             File.Move(sourceFile, destinationFileName);
+
             return true;
         }
 

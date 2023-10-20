@@ -171,7 +171,6 @@
             recoverToolStripMenuItem.Name = "recoverToolStripMenuItem";
             recoverToolStripMenuItem.Size = new System.Drawing.Size(179, 30);
             recoverToolStripMenuItem.Text = "Recover selected...";
-            recoverToolStripMenuItem.Click += OnRecover;
             // 
             // _treeJournalSelectedToolStripMenuItem
             // 
@@ -206,7 +205,6 @@
             _recoverToolStripButton.Name = "_recoverToolStripButton";
             _recoverToolStripButton.Size = new System.Drawing.Size(132, 28);
             _recoverToolStripButton.Text = "Recover selected...";
-            _recoverToolStripButton.Click += OnRecover;
             // 
             // _treeViewJournalSelectedToolStripButton
             // 

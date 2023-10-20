@@ -111,7 +111,7 @@ public class RestoreViewModel : ViewModelBase
             this.ProgressTaskViewModel.IsVisible = false;
             IsSetupVisible = false;
             progress(100);
-            VersionsListViewModel.Initialize(state);
+            VersionsListViewModel.Initialize(state, storageOptions);
         });
 
     }

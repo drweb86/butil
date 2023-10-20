@@ -208,7 +208,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Click on item you want to restore and open context menu by right click..
+        ///   Looks up a localized string similar to Select file or folder you want to restore in tree and click &quot;Restore&quot;..
         /// </summary>
         public static string BackupVersion_Viewer_Help {
             get {

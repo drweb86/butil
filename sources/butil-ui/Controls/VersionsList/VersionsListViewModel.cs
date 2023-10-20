@@ -16,6 +16,7 @@ using Avalonia;
 using Avalonia.Media;
 using butil_ui.ViewModels;
 using Avalonia.Platform.Storage;
+using BUtil.Core.TasksTree.IncrementalModel;
 
 namespace butil_ui.Controls
 {
@@ -26,6 +27,33 @@ namespace butil_ui.Controls
         public string Field_Version => Resources.Field_Version;
         public string BackupVersion_Changes_Title => Resources.BackupVersion_Changes_Title;
         public string BackupVersion_Files_Title => Resources.BackupVersion_Files_Title;
+        public string Task_Restore => Resources.Task_Restore;
+        public string BackupVersion_Viewer_Help => Resources.BackupVersion_Viewer_Help;
+
+        #endregion
+
+        #region SelectedNode
+
+        private FileTreeNode? _selectedNode;
+
+        public FileTreeNode? SelectedNode
+        {
+            get
+            {
+                return _selectedNode;
+            }
+            set
+            {
+                if (value == _selectedNode)
+                    return;
+                if (_selectedNode != null)
+                    _selectedNode.IsSelected = false;
+                _selectedNode = value;
+                if (_selectedNode != null)
+                    _selectedNode.IsSelected = true;
+                OnPropertyChanged(nameof(SelectedNode));
+            }
+        }
 
         #endregion
 
@@ -141,9 +169,11 @@ namespace butil_ui.Controls
         public ProgressTaskViewModel ProgressTaskViewModel { get; } = new ProgressTaskViewModel();
 
         private IncrementalBackupState _state;
-        public void Initialize(IncrementalBackupState state)
+        private IStorageSettingsV2 _storageOptions;
+        public void Initialize(IncrementalBackupState state, IStorageSettingsV2 storageOptions)
         {
             _state = state;
+            _storageOptions = storageOptions;
             Versions = new ObservableCollection<VersionViewItem>(state.VersionStates
                 .OrderByDescending(x => x.BackupDateUtc)
                 .Select(x => new VersionViewItem(x))
@@ -319,7 +349,7 @@ namespace butil_ui.Controls
             //    Nodes[0].Expand();
         }
 
-        private void AddLeaf(string relativePath, StorageFile storageFile, FileTreeNode sourceItemNode)
+        private void AddLeaf(string relativePath, StorageFile storageFile, FileTreeNode sourceItemNode, SourceItemV2 sourceItem)
         {
             string[] names = relativePath.Split(new char[] { '\\' }, StringSplitOptions.RemoveEmptyEntries);
             FileTreeNode? node = null;
@@ -329,7 +359,7 @@ namespace butil_ui.Controls
                 node = FindNode(nodes, names[i]);
                 if (node == null)
                 {
-                    node = i == names.Length - 1 ? new FileTreeNode(null, null, storageFile) : new FileTreeNode(null, names[i], null);
+                    node = i == names.Length - 1 ? new FileTreeNode(sourceItem, null, storageFile) : new FileTreeNode(sourceItem, names[i], null);
                     nodes.Add(node);
                 }
             }
@@ -352,41 +382,105 @@ namespace butil_ui.Controls
 
             var sourceItemRelativeFileName = storageFile.FileState.FileName.Substring(sourceItemDir.Length);
 
-            AddLeaf(sourceItemRelativeFileName, storageFile, sourceItemNode);
+            AddLeaf(sourceItemRelativeFileName, storageFile, sourceItemNode, sourceItem);
         }
 
         public string Title { get; }
         public string DirectoryStorage => Resources.DirectoryStorage;
+
+        #region Commands
+
+        public void RecoverTo(string destinationFolder)
+        {
+            if (SelectedNode == null)
+                return;
+
+            var storageFiles = GetChildren(SelectedNode)
+                .Where(x => x.StorageFile != null)
+                .Select(x => x.StorageFile ?? throw new NullReferenceException())
+                .ToList();
+
+            if (SelectedNode.StorageFile != null)
+                storageFiles.Add(SelectedNode.StorageFile);
+
+            this.ProgressTaskViewModel.Progress = 0;
+            this.ProgressTaskViewModel.IsVisible = true;
+            this.ProgressTaskViewModel.Activate(async progress =>
+            {
+                if (!storageFiles.Any())
+                    return;
+
+                var commonServicesIoc = new CommonServicesIoc();
+                using var services = new BUtil.Core.TasksTree.IncrementalModel.StorageSpecificServicesIoc(new StubLog(),
+                    _storageOptions, commonServicesIoc.HashService);
+                foreach (var storageFile in storageFiles)
+                {
+                    int percent = ((storageFiles.IndexOf(storageFile) + 1) * 100) / storageFiles.Count;
+                    progress(percent);
+                    services.IncrementalBackupFileService.Download(SelectedNode.SourceItem, storageFile, destinationFolder);
+                }
+
+                await Task.Delay(3000);
+                this.ProgressTaskViewModel.IsVisible = false;
+            });
+        }
+
+        private IEnumerable<FileTreeNode> GetChildren(FileTreeNode Parent)
+        {
+            return Parent.Nodes.Cast<FileTreeNode>().Concat(
+                   Parent.Nodes.Cast<FileTreeNode>().SelectMany(GetChildren));
+        }
+
+        #endregion
     }
 
-    public class FileTreeNode
+    public class FileTreeNode: ObservableObject
     {
-        public FileTreeNode(SourceItemV2? sourceItem, string? virtualFolder, StorageFile? storageFile)
+        public FileTreeNode(SourceItemV2 sourceItem, string? virtualFolder, StorageFile? storageFile)
         {
-            Target = sourceItem?.Target ?? virtualFolder ?? System.IO.Path.GetFileName(storageFile?.FileState.FileName) ?? string.Empty;
             SourceItem = sourceItem;
             VirtualFolder = virtualFolder;
             StorageFile = storageFile;
-
-            if (sourceItem != null)
-            {
-                ImageSource = "/Assets/CrystalProject_EveraldoCoelho_SourceItems48x48.png";
-            } else if (virtualFolder != null)
+            if (virtualFolder != null)
             {
                 ImageSource = "/Assets/www.wefunction.com_FunctionFreeIconSet_Folder_48.png";
+                Target = virtualFolder;
             } else if (storageFile != null)
             {
                 ImageSource = "/Assets/CrystalClear_FileNew.png";
+                Target = System.IO.Path.GetFileName(storageFile.FileState.FileName) ?? string.Empty;
             } else
             {
-                throw new ArgumentOutOfRangeException(nameof(storageFile));
+                ImageSource = "/Assets/CrystalProject_EveraldoCoelho_SourceItems48x48.png";
+                Target = sourceItem.Target;
             }
         }
         public string ImageSource { get; }
         public string Target { get; }
-        public SourceItemV2? SourceItem { get; }
+        public SourceItemV2 SourceItem { get; }
         public StorageFile? StorageFile { get; }
         public string? VirtualFolder { get; }
+
+        #region IsSelected
+
+        private bool _isSelected;
+
+        public bool IsSelected
+        {
+            get
+            {
+                return _isSelected;
+            }
+            set
+            {
+                if (value == _isSelected)
+                    return;
+                _isSelected = value;
+                OnPropertyChanged(nameof(IsSelected));
+            }
+        }
+
+        #endregion
 
         public ObservableCollection<FileTreeNode> Nodes { get; } = new();
     }

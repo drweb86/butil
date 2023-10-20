@@ -16,7 +16,7 @@ namespace butil_ui.Controls
             DataContext = new VersionsListViewModel();
         }
 
-        public void BrowseCommand(object? sender, RoutedEventArgs args)
+        public void BrowseFoldersCommand(object? sender, RoutedEventArgs args)
         {
             _ = BrowseCommandInternal();
         }
@@ -24,8 +24,8 @@ namespace butil_ui.Controls
         private async Task BrowseCommandInternal()
         {
             var root = this.VisualRoot as TopLevel ?? throw new NullReferenceException("Invalid Owner");
-            var dataContext = DataContext as WhereTaskViewModel ?? throw new NullReferenceException();
-            var startLocation = await root.StorageProvider.TryGetFolderFromPathAsync(dataContext.FolderFolder);
+            var dataContext = DataContext as VersionsListViewModel ?? throw new NullReferenceException();
+            var startLocation = await root.StorageProvider.TryGetFolderFromPathAsync(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments));
             var folders = await root.StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
             {
                 Title = BUtil.Core.Localization.Resources.Field_Folder,
@@ -36,7 +36,7 @@ namespace butil_ui.Controls
             var folder = folders.FirstOrDefault();
             if (folder != null)
             {
-                dataContext.FolderFolder = folder.TryGetLocalPath() ?? folder.Path.ToString();
+                dataContext.RecoverTo(folder.TryGetLocalPath() ?? folder.Path.ToString());
             }
         }
     }

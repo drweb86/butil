@@ -22,20 +22,38 @@
 			<Expander.Header>
 				<WrapPanel Orientation="Horizontal" Margin="0 8 0 8">
 					<Image Width="16" Height="16" Source="/Assets/CrystalProject_EveraldoCoelho_SourceItems48x48.png" VerticalAlignment="Center" />
-					<TextBlock Margin="8 0 8 0" Text="{Binding BackupVersion_Files_Title}" VerticalAlignment="Center" />
+					<TextBlock TextDecorations="Underline" ToolTip.Tip="{Binding BackupVersion_Viewer_Help}" Margin="8 0 8 0" Text="{Binding BackupVersion_Files_Title}" VerticalAlignment="Center" />
 				</WrapPanel>
 			</Expander.Header>
-			<TreeView ItemsSource="{Binding Nodes}" HorizontalAlignment="Stretch">
+			<TreeView
+				x:Name="_test"
+				ItemsSource="{Binding Nodes}"
+				SelectionMode="Single"
+				SelectedItem="{Binding SelectedNode}"
+				HorizontalAlignment="Stretch">
 				<TreeView.ItemTemplate>
 					<TreeDataTemplate ItemsSource="{Binding Nodes}">
-						<StackPanel Orientation="Horizontal">
+						<StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
 							<Image
 								Width="16"
 								Height="16"
 								VerticalAlignment="Center"
 								Source="{Binding ImageSource, Converter={StaticResource variableImage}}"
-								Margin="0 0 4 0" />
-							<TextBlock Text="{Binding Target}"/>
+								Margin="0 0 4 0"
+							/>
+							<TextBlock
+								TextWrapping="Wrap"
+								VerticalAlignment="Center"
+								HorizontalAlignment="Stretch"
+								Text="{Binding Target}" />
+							<Button
+								VerticalAlignment="Center"
+								IsVisible="{Binding IsSelected}"
+								Content="{Binding $parent[cvm:VersionsListView].((cvm:VersionsListViewModel)DataContext).Task_Restore}"
+								Margin="24 0 0 0"
+								Padding="8 4 8 4"
+								Click="BrowseFoldersCommand"
+							/>
 						</StackPanel>
 					</TreeDataTemplate>
 				</TreeView.ItemTemplate>

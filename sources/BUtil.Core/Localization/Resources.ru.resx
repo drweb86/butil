@@ -169,7 +169,7 @@
     <value>ВЕРСИИ</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Кликните по элементам, которые хотите восстановить, и откройте контекстное меню правой кнопкой мыши.</value>
+    <value>Выберите файл или папку, которую вы хотите восстановить, и кликните "Восстановить".</value>
   </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>Отмена</value>
