@@ -15,6 +15,12 @@ using System.Diagnostics.CodeAnalysis;
 using BUtil.Core.State;
 using System.Linq;
 using System.Collections.ObjectModel;
+using Avalonia.Data.Converters;
+using Avalonia;
+using System.Globalization;
+using System.Reflection;
+using Avalonia.Media;
+using butil_ui.ViewModels;
 
 namespace butil_ui.Controls
 {
@@ -23,6 +29,7 @@ namespace butil_ui.Controls
         #region Labels
 
         public string Field_Version => Resources.Field_Version;
+        public string BackupVersion_Changes_Title => Resources.BackupVersion_Changes_Title;
 
         #endregion
 
@@ -42,6 +49,8 @@ namespace butil_ui.Controls
                     return;
                 _selectedVersion = value;
                 OnPropertyChanged(nameof(SelectedVersion));
+                if (value != null)
+                    OnVersionChanged();
             }
         }
 
@@ -89,8 +98,35 @@ namespace butil_ui.Controls
 
         #endregion
 
-        public void Initialize(BUtil.Core.State.IncrementalBackupState state)
+        #region FileChangeViewItems
+
+        private ObservableCollection<FileChangeViewItem> _fileChangeViewItems = new();
+
+        public ObservableCollection<FileChangeViewItem> FileChangeViewItems
         {
+            get
+            {
+                return _fileChangeViewItems;
+            }
+            set
+            {
+                if (value == _fileChangeViewItems)
+                    return;
+                _fileChangeViewItems = value;
+                OnPropertyChanged(nameof(FileChangeViewItems));
+            }
+        }
+
+        #endregion
+
+        public SolidColorBrush HeaderBackground { get; } = new SolidColorBrush(ColorPalette.GetColor(SemanticColor.HeaderBackground));
+
+        public ProgressTaskViewModel ProgressTaskViewModel { get; } = new ProgressTaskViewModel();
+
+        private IncrementalBackupState _state;
+        public void Initialize(IncrementalBackupState state)
+        {
+            _state = state;
             Versions = new ObservableCollection<VersionViewItem>(state.VersionStates
                 .OrderByDescending(x => x.BackupDateUtc)
                 .Select(x => new VersionViewItem(x))
@@ -114,164 +150,134 @@ namespace butil_ui.Controls
             StorageSize = string.Format(BUtil.Core.Localization.Resources.BackupVersion_Storage_TitleWithSize, SizeHelper.BytesToString(storageSize));
         }
 
-        public VersionsListViewModel()
+        private void OnVersionChanged()
         {
-            //Title = title;
-            //IconSource = LoadFromResource(new Uri("avares://butil-ui" + iconUrl));
-
-            //TransportSource.Add(DirectoryStorage);
-            //var samba = PlatformSpecificExperience.Instance.GetSmbService();
-            //if (samba != null)
-            //    TransportSource.Add(Smb);
-            //TransportSource.Add(Ftps);
-
-            //var mtp = PlatformSpecificExperience.Instance.GetMtpService();
-            //if (mtp != null)
-            //    TransportSource.Add(Mtp);
-
-            //var folderStorageSettings = storageSettings as FolderStorageSettingsV2;
-            //if (folderStorageSettings != null)
-            //{
-            //    Transport = DirectoryStorage;
-            //    Quota = folderStorageSettings.SingleBackupQuotaGb;
-            //    FolderFolder = folderStorageSettings.DestinationFolder;
-            //    FolderConnectionScript = folderStorageSettings.MountPowershellScript;
-            //    FolderDisconnectionScript = folderStorageSettings.UnmountPowershellScript;
-            //}
-
-            //var sambaStorageSettingsV2 = storageSettings as SambaStorageSettingsV2;
-            //if (sambaStorageSettingsV2 != null && samba != null)
-            //{
-            //    Transport = Smb;
-            //    Quota = sambaStorageSettingsV2.SingleBackupQuotaGb;
-            //    SmbUrl = sambaStorageSettingsV2.Url;
-            //    SmbUser = sambaStorageSettingsV2.User;
-            //    SmbPassword = sambaStorageSettingsV2.Password;
-            //}
-
-            //var ftpsStorageSettingsV2 = storageSettings as FtpsStorageSettingsV2;
-            //if (ftpsStorageSettingsV2 != null)
-            //{
-            //    Transport = Ftps;
-            //    Quota = ftpsStorageSettingsV2.SingleBackupQuotaGb;
-            //    FtpsServer = ftpsStorageSettingsV2.Host;
-            //    FtpsEncryption = ftpsStorageSettingsV2.Encryption == FtpsStorageEncryptionV2.Explicit ?
-            //        Ftps_Encryption_Option_Explicit : Ftps_Encryption_Option_Implicit;
-            //    FtpsPort = ftpsStorageSettingsV2.Port;
-            //    FtpsUser = ftpsStorageSettingsV2.User;
-            //    FtpsPassword = ftpsStorageSettingsV2.Password;
-            //    FtpsFolder = ftpsStorageSettingsV2.Folder;
-            //}
-
-            //var mtpStorageSettings = storageSettings as MtpStorageSettings;
-            //if (mtpStorageSettings != null && mtp != null)
-            //{
-            //    var mtpService = PlatformSpecificExperience.Instance.GetMtpService();
-            //    if (mtpService != null)
-            //    {
-            //        MtpDevicesSource = mtpService.GetItems();
-            //    }
-
-            //    Transport = Mtp;
-            //    Quota = mtpStorageSettings.SingleBackupQuotaGb;
-            //    MtpDevice = mtpStorageSettings.Device;
-            //    MtpFolder = mtpStorageSettings.Folder;
-            //}
-
-            //FtpsEncryptionSource.Add(Ftps_Encryption_Option_Implicit);
-            //FtpsEncryptionSource.Add(Ftps_Encryption_Option_Explicit);
+            ProgressTaskViewModel.Activate(async reportProgress =>
+            {
+                reportProgress(0);
+                ProgressTaskViewModel.IsVisible = true;
+                var changes = GetChangesViewItems(SelectedVersion.Version);
+                reportProgress(25);
+                var treeViewFiles = GetTreeViewFiles(_state, SelectedVersion.Version);
+                reportProgress(45);
+                RefreshChanges(changes);
+                reportProgress(85);
+                // RefreshTreeView(treeViewFiles);
+                reportProgress(100);
+                await Task.Delay(3000);
+                ProgressTaskViewModel.IsVisible = false;
+            });
         }
 
-        public void UpdateListMtpDevices()
+        private void RefreshChanges(IEnumerable<Tuple<ChangeState, string>> changes)
         {
-            var mtpService = PlatformSpecificExperience.Instance.GetMtpService();
-            if (mtpService != null)
+            FileChangeViewItems.Clear();
+
+            changes
+                .Select(x => new FileChangeViewItem(x.Item2, x.Item1))
+                .ToList()
+                .ForEach(FileChangeViewItems.Add);
+        }
+
+        private static List<Tuple<SourceItemV2, List<StorageFile>>> GetTreeViewFiles(
+            IncrementalBackupState state,
+            VersionState selectedVersion)
+        {
+            var result = new List<Tuple<SourceItemV2, List<StorageFile>>>();
+
+            var sourceItems = selectedVersion.SourceItemChanges
+                .Select(a => a.SourceItem)
+                .OrderBy(x => x.Target)
+                .ToList();
+
+            foreach (var sourceItem in sourceItems)
             {
-                MtpDevicesSource = mtpService.GetItems();
+                result.Add(new Tuple<SourceItemV2, List<StorageFile>>(
+                    sourceItem,
+                    BuildVersionFiles(state, sourceItem, selectedVersion)
+                    ));
             }
+
+            return result;
         }
 
-        public async Task MountTaskLaunchCommand()
+        private static List<StorageFile> BuildVersionFiles(IncrementalBackupState state, SourceItemV2 sourceItem, VersionState selectedVersion)
         {
-            if (PowershellProcessHelper.Execute(new StubLog(), this.FolderConnectionScript))
-                await Messages.ShowInformationBox(Resources.DataStorage_Field_DisconnectionScript_Ok);
-            else
-                await Messages.ShowErrorBox(Resources.DataStorage_Field_DisconnectionScript_Bad);
-        }
+            List<StorageFile> result = null;
 
-        public async Task UnmountTaskLaunchCommand()
-        {
-            if (PowershellProcessHelper.Execute(new StubLog(), this.FolderDisconnectionScript))
-                await Messages.ShowInformationBox(Resources.DataStorage_Field_DisconnectionScript_Ok);
-            else
-                await Messages.ShowErrorBox(Resources.DataStorage_Field_DisconnectionScript_Bad);
-        }
-
-        private static Bitmap LoadFromResource(Uri resourceUri)
-        {
-            return new Bitmap(AssetLoader.Open(resourceUri));
-        }
-
-        public IStorageSettingsV2 GetStorageSettings()
-        {
-            if (Transport == DirectoryStorage)
+            foreach (var versionState in state.VersionStates)
             {
-                return new FolderStorageSettingsV2
+                var sourceItemChanges = versionState.SourceItemChanges.FirstOrDefault(x => x.SourceItem.CompareTo(sourceItem));
+                if (sourceItemChanges == null)
                 {
-                    SingleBackupQuotaGb = Quota,
-                    DestinationFolder = FolderFolder,
-                    MountPowershellScript = FolderConnectionScript,
-                    UnmountPowershellScript = FolderDisconnectionScript,
-                };
-            } else if (Transport == Ftps)
-            {
-                return new FtpsStorageSettingsV2
+                    result = null;
+                }
+                else
                 {
-                    SingleBackupQuotaGb = Quota,
+                    if (result == null)
+                    {
+                        result = sourceItemChanges.CreatedFiles.ToList();
+                    }
+                    else
+                    {
+                        result.AddRange(sourceItemChanges.CreatedFiles);
+                        foreach (var deletedFile in sourceItemChanges.DeletedFiles)
+                        {
+                            var itemToRemove = result.First(x => x.FileState.FileName == deletedFile);
+                            result.Remove(itemToRemove);
+                        }
+                        foreach (var updatedFile in sourceItemChanges.UpdatedFiles)
+                        {
+                            var itemToRemove = result.First(x => x.FileState.FileName == updatedFile.FileState.FileName);
+                            result.Remove(itemToRemove);
 
-                    Host = FtpsServer,
-                    Encryption = FtpsEncryption == Ftps_Encryption_Option_Explicit ?
-                       FtpsStorageEncryptionV2.Explicit : FtpsStorageEncryptionV2.Implicit,
-                    Port = FtpsPort,
-                    User = FtpsUser,
-                    Password = FtpsPassword,
-                    Folder = FtpsFolder,
-                };
+                            result.Add(updatedFile);
+                        }
+                    }
+                }
+
+                if (versionState == selectedVersion)
+                    break;
             }
-            else if (Transport == Smb)
-            {
-                return new SambaStorageSettingsV2
-                {
-                    SingleBackupQuotaGb = Quota,
-                    Url = SmbUrl,
-                    User = SmbUser,
-                    Password = SmbPassword,
-                };
-            }
-            else if (Transport == Mtp)
-            {
-                return new MtpStorageSettings
-                {
-                    SingleBackupQuotaGb = Quota,
-                    Device = MtpDevice,
-                    Folder = MtpFolder
-                };
-            }
-            throw new System.ArgumentOutOfRangeException();
+
+            return result
+                .OrderBy(x => x.FileState.FileName)
+                .ToList();
         }
+
+        private static IEnumerable<Tuple<ChangeState, string>> GetChangesViewItems(VersionState state)
+        {
+            var result = new List<Tuple<ChangeState, string>>();
+
+            foreach (var sourceItemChanges in state.SourceItemChanges
+                .OrderBy(x => x.SourceItem.Target)
+                .ToList())
+            {
+                if (!sourceItemChanges.CreatedFiles.Any() &&
+                    !sourceItemChanges.UpdatedFiles.Any() &&
+                    !sourceItemChanges.DeletedFiles.Any())
+                    continue;
+
+                sourceItemChanges.UpdatedFiles
+                    .OrderBy(x => x.FileState.FileName)
+                    .ToList()
+                    .ForEach(updateFile => result.Add(new Tuple<ChangeState, string>(ChangeState.Updated, updateFile.FileState.FileName)));
+
+                sourceItemChanges.CreatedFiles
+                    .OrderBy(x => x.FileState.FileName)
+                    .ToList()
+                    .ForEach(updateFile => result.Add(new Tuple<ChangeState, string>(ChangeState.Created, updateFile.FileState.FileName)));
+
+                sourceItemChanges.DeletedFiles
+                    .OrderBy(x => x)
+                    .ToList()
+                    .ForEach(deletedFile => result.Add(new Tuple<ChangeState, string>(ChangeState.Deleted, deletedFile)));
+            }
+            return result;
+        }
+
         public string Title { get; }
-        public Bitmap? IconSource { get; }
         public string DirectoryStorage => Resources.DirectoryStorage;
-        public string Smb => "SMB/CIFS";
-        public string Ftps => "FTPS";
-        public string Mtp => "MTP";
-
-        public List<string> TransportSource { get; } = new List<string>();
-
-
-        public string Ftps_Encryption_Option_Explicit = Resources.Ftps_Encryption_Option_Explicit;
-        public string Ftps_Encryption_Option_Implicit = Resources.Ftps_Encryption_Option_Implicit;
-        public List<string> FtpsEncryptionSource { get; } = new List<string>();
 
         #region Labels
         public string LeftMenu_Where => Resources.LeftMenu_Where;
@@ -294,453 +300,33 @@ namespace butil_ui.Controls
         public string Field_TransportProtocol => Resources.Field_TransportProtocol;
         #endregion
 
-        #region Transport
-
-        private string _Transport;
-
-        public string Transport
-        {
-            get
-            {
-                return _Transport;
-            }
-            set
-            {
-                if (value == _Transport)
-                    return;
-                _Transport = value;
-                OnPropertyChanged(nameof(Transport));
-                IsDirectoryTransport = value == this.DirectoryStorage;
-                IsMtpTransport = value == this.Mtp;
-                IsSmbTransport = value == this.Smb;
-                IsFtpsTransport = value == this.Ftps;
-            }
-        }
-
-        #endregion
-
-        #region IsDirectoryTransport
-
-        private bool _isDirectoryTransport = false;
-
-        public bool IsDirectoryTransport
-        {
-            get
-            {
-                return _isDirectoryTransport;
-            }
-            set
-            {
-                if (value == _isDirectoryTransport)
-                    return;
-                _isDirectoryTransport = value;
-                OnPropertyChanged(nameof(IsDirectoryTransport));
-            }
-        }
-
-        #endregion
-
-        #region IsFtpsTransport
-
-        private bool _isFtpsTransport = false;
-
-        public bool IsFtpsTransport
-        {
-            get
-            {
-                return _isFtpsTransport;
-            }
-            set
-            {
-                if (value == _isFtpsTransport)
-                    return;
-                _isFtpsTransport = value;
-                OnPropertyChanged(nameof(IsFtpsTransport));
-            }
-        }
-
-        #endregion
-
-        #region IsSmbTransport
-
-        private bool _isSmbTransport = false;
-
-        public bool IsSmbTransport
-        {
-            get
-            {
-                return _isSmbTransport;
-            }
-            set
-            {
-                if (value == _isSmbTransport)
-                    return;
-                _isSmbTransport = value;
-                OnPropertyChanged(nameof(IsSmbTransport));
-            }
-        }
-
-        #endregion
-
-        #region IsMtpTransport
-
-        private bool _isMtpTransport = false;
-
-        public bool IsMtpTransport
-        {
-            get
-            {
-                return _isMtpTransport;
-            }
-            set
-            {
-                if (value == _isMtpTransport)
-                    return;
-                _isMtpTransport = value;
-                OnPropertyChanged(nameof(IsMtpTransport));
-            }
-        }
-
-        #endregion
-
-        #region Quota
-
-        private long _quota = 0;
-
-        public long Quota
-        {
-            get
-            {
-                return _quota;
-            }
-            set
-            {
-                if (value == _quota)
-                    return;
-                _quota = value;
-                OnPropertyChanged(nameof(Quota));
-            }
-        }
-
-        #endregion
-
-        #region FolderFolder
-
-        private string _folderFolder = string.Empty;
-
-        public string FolderFolder
-        {
-            get
-            {
-                return _folderFolder;
-            }
-            set
-            {
-                if (value == _folderFolder)
-                    return;
-                _folderFolder = value;
-                OnPropertyChanged(nameof(FolderFolder));
-            }
-        }
-
-        #endregion
-
-        #region FolderConnectionScript
-
-        private string _folderConnectionScript;
-
-        public string FolderConnectionScript
-        {
-            get
-            {
-                return _folderConnectionScript;
-            }
-            set
-            {
-                if (value == _folderConnectionScript)
-                    return;
-                _folderConnectionScript = value;
-                OnPropertyChanged(nameof(FolderConnectionScript));
-            }
-        }
-
-        #endregion
-
-        #region FolderDisconnectionScript
-
-        private string _folderDisconnectionScript;
-
-        public string FolderDisconnectionScript
-        {
-            get
-            {
-                return _folderDisconnectionScript;
-            }
-            set
-            {
-                if (value == _folderDisconnectionScript)
-                    return;
-                _folderDisconnectionScript = value;
-                OnPropertyChanged(nameof(FolderDisconnectionScript));
-            }
-        }
-
-        #endregion
-
-        #region SmbUrl
-
-        private string _smbUrl;
-
-        public string SmbUrl
-        {
-            get
-            {
-                return _smbUrl;
-            }
-            set
-            {
-                if (value == _smbUrl)
-                    return;
-                _smbUrl = value;
-                OnPropertyChanged(nameof(SmbUrl));
-            }
-        }
-
-        #endregion
-
-        #region SmbUser
-
-        private string? _smbUser;
-
-        public string? SmbUser
-        {
-            get
-            {
-                return _smbUser;
-            }
-            set
-            {
-                if (value == _smbUser)
-                    return;
-                _smbUser = value;
-                OnPropertyChanged(nameof(SmbUser));
-            }
-        }
-
-        #endregion
-
-        #region SmbPassword
-
-        private string? _smbPassword;
-
-        public string? SmbPassword
-        {
-            get
-            {
-                return _smbPassword;
-            }
-            set
-            {
-                if (value == _smbPassword)
-                    return;
-                _smbPassword = value;
-                OnPropertyChanged(nameof(SmbPassword));
-            }
-        }
-
-        #endregion
-
-        #region FtpsServer
-
-        private string _ftpsServer;
-
-        public string FtpsServer
-        {
-            get
-            {
-                return _ftpsServer;
-            }
-            set
-            {
-                if (value == _ftpsServer)
-                    return;
-                _ftpsServer = value;
-                OnPropertyChanged(nameof(FtpsServer));
-            }
-        }
-
-        #endregion
-
-        #region FtpsEncryption
-
-        private string _ftpsEncryption;
-
-        public string FtpsEncryption
-        {
-            get
-            {
-                return _ftpsEncryption;
-            }
-            set
-            {
-                if (value == _ftpsEncryption)
-                    return;
-                _ftpsEncryption = value;
-                OnPropertyChanged(nameof(FtpsEncryption));
-            }
-        }
-
-        #endregion
-
-        #region FtpsPort
-
-        private int _ftpsPort;
-
-        public int FtpsPort
-        {
-            get
-            {
-                return _ftpsPort;
-            }
-            set
-            {
-                if (value == _ftpsPort)
-                    return;
-                _ftpsPort = value;
-                OnPropertyChanged(nameof(FtpsPort));
-            }
-        }
-
-        #endregion
-
-        #region FtpsUser
-
-        private string _ftpsUser;
-
-        public string FtpsUser
-        {
-            get
-            {
-                return _ftpsUser;
-            }
-            set
-            {
-                if (value == _ftpsUser)
-                    return;
-                _ftpsUser = value;
-                OnPropertyChanged(nameof(FtpsUser));
-            }
-        }
-
-        #endregion
-
-        #region FtpsPassword
-
-        private string _ftpsPassword;
-
-        public string FtpsPassword
-        {
-            get
-            {
-                return _ftpsPassword;
-            }
-            set
-            {
-                if (value == _ftpsPassword)
-                    return;
-                _ftpsPassword = value;
-                OnPropertyChanged(nameof(FtpsPassword));
-            }
-        }
-
-        #endregion
-
-        #region FtpsFolder
-
-        private string? _ftpsFolder;
-
-        public string? FtpsFolder
-        {
-            get
-            {
-                return _ftpsFolder;
-            }
-            set
-            {
-                if (value == _ftpsFolder)
-                    return;
-                _ftpsFolder = value;
-                OnPropertyChanged(nameof(FtpsFolder));
-            }
-        }
-
-        #endregion
-
-        #region MtpDevice
-
-        private string _mtpDevice;
-
-        public string MtpDevice
-        {
-            get
-            {
-                return _mtpDevice;
-            }
-            set
-            {
-                if (value == _mtpDevice)
-                    return;
-                _mtpDevice = value;
-                OnPropertyChanged(nameof(MtpDevice));
-            }
-        }
-
-        #endregion
-
-        #region MtpFolder
-
-        private string _mtpFolder;
-
-        public string MtpFolder
-        {
-            get
-            {
-                return _mtpFolder;
-            }
-            set
-            {
-                if (value == _mtpFolder)
-                    return;
-                _mtpFolder = value;
-                OnPropertyChanged(nameof(MtpFolder));
-            }
-        }
-
-        #endregion
-
-        #region MtpDevicesSource
-
-        private IEnumerable<string> _mtpDevicesSource;
-
-        public IEnumerable<string> MtpDevicesSource
-        {
-            get
-            {
-                return _mtpDevicesSource;
-            }
-            set
-            {
-                if (value == _mtpDevicesSource)
-                    return;
-                _mtpDevicesSource = value;
-                OnPropertyChanged(nameof(MtpDevicesSource));
-            }
-        }
-
-        #endregion
-
     }
 
+    public class FileChangeViewItem
+    {
+        public FileChangeViewItem(string title, ChangeState state)
+        {
+            Title = title;
+
+            switch (state)
+            {
+                case ChangeState.Created:
+                    ImageSource = "/Assets/VC-Created.png";
+                    break;
+                case ChangeState.Deleted:
+                    ImageSource = "/Assets/VC-Deleted.png";
+                    break;
+                case ChangeState.Updated:
+                    ImageSource = "/Assets/VC-Updated.png";
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(state));
+            }
+
+        }
+        public string Title { get; }
+        public string ImageSource { get; }
+    }
 
 
     public class VersionViewItem
@@ -784,6 +370,51 @@ namespace butil_ui.Controls
             int place = Convert.ToInt32(Math.Floor(Math.Log(bytes, 1024)));
             double num = Math.Round(bytes / Math.Pow(1024, place), 1);
             return (Math.Sign(byteCount) * num).ToString() + suf[place];
+        }
+    }
+
+    public enum ChangeState
+    {
+        Created = 3, // match image indexes
+        Deleted = 4,
+        Updated = 5
+    }
+
+    public class BitmapAssetValueConverter : IValueConverter
+    {
+        public static BitmapAssetValueConverter Instance = new BitmapAssetValueConverter();
+
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value == null)
+                return null;
+
+            if (value is string rawUri)
+            {
+                Uri uri;
+
+                // Allow for assembly overrides
+                if (rawUri.StartsWith("avares://"))
+                {
+                    uri = new Uri(rawUri);
+                }
+                else
+                {
+                    string assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
+                    uri = new Uri($"avares://{assemblyName}{rawUri}");
+                }
+
+                var asset = AssetLoader.Open(uri);
+
+                return new Bitmap(asset);
+            }
+
+            throw new NotSupportedException();
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotSupportedException();
         }
     }
 }

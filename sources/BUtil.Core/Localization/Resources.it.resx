@@ -142,7 +142,7 @@
     <value>È disponibile la nuova versione {0}.</value>
   </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
-    <value>MODIFICHE</value>
+    <value>Modifiche</value>
   </data>
   <data name="BackupVersion_CleanupUncompleted" xml:space="preserve">
     <value>Elimina i backup non completati</value>

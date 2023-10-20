@@ -203,36 +203,7 @@ namespace BUtil.RestorationMaster
             Deleted = 4,
             Updated = 5
         }
-        private static IEnumerable<Tuple<ChangeState, string>> GetChangesViewItems(VersionState state)
-        {
-            var result = new List<Tuple<ChangeState, string>>();
 
-            foreach (var sourceItemChanges in state.SourceItemChanges
-                .OrderBy(x => x.SourceItem.Target)
-                .ToList())
-            {
-                if (!sourceItemChanges.CreatedFiles.Any() &&
-                    !sourceItemChanges.UpdatedFiles.Any() &&
-                    !sourceItemChanges.DeletedFiles.Any())
-                    continue;
-
-                sourceItemChanges.UpdatedFiles
-                    .OrderBy(x => x.FileState.FileName)
-                    .ToList()
-                    .ForEach(updateFile => result.Add(new Tuple<ChangeState, string>(ChangeState.Updated, updateFile.FileState.FileName)));
-
-                sourceItemChanges.CreatedFiles
-                    .OrderBy(x => x.FileState.FileName)
-                    .ToList()
-                    .ForEach(updateFile => result.Add(new Tuple<ChangeState, string>(ChangeState.Created, updateFile.FileState.FileName)));
-
-                sourceItemChanges.DeletedFiles
-                    .OrderBy(x => x)
-                    .ToList()
-                    .ForEach(deletedFile => result.Add(new Tuple<ChangeState, string>(ChangeState.Deleted, deletedFile)));
-            }
-            return result;
-        }
 
         private IEnumerable<TreeNode> GetChildren(TreeNode Parent)
         {
@@ -294,32 +265,6 @@ namespace BUtil.RestorationMaster
         private void OnMouseDown(object sender, MouseEventArgs e)
         {
             _filesTreeView.SelectedNode = _filesTreeView.GetNodeAt(e.X, e.Y);
-        }
-
-        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        private void OnVersionChanged(object sender, EventArgs e)
-        {
-            if (_versionsListView.SelectedItems.Count != 1)
-            {
-                return;
-            }
-            var selectedVersion = _versionsListView.SelectedItems[0].Tag as VersionState;
-            IEnumerable<Tuple<ChangeState, string>> changes = null;
-            List<Tuple<SourceItemV2, List<StorageFile>>> treeViewFiles = null;
-            using var progressForm = new ProgressForm(reportProgress =>
-            {
-                reportProgress(15);
-                changes = GetChangesViewItems(selectedVersion);
-                reportProgress(65);
-                treeViewFiles = GetTreeViewFiles(_incrementalBackupState, selectedVersion);
-
-            });
-            progressForm.ShowDialog();
-
-            _selectedVersionToolStripLabel.Text = string.Format("{0} {1}", Resources.BackupVersion_Files_Title, selectedVersion.BackupDateUtc);
-            _changesToolStripLabel.Text = string.Format("{0} {1}", Resources.BackupVersion_Changes_Title, selectedVersion.BackupDateUtc);
-            RefreshChanges(changes);
-            RefreshTreeView(treeViewFiles);
         }
 
         private void OnJournalSelectedChangesView(object sender, EventArgs e)

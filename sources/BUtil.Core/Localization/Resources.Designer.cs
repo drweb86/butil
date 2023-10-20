@@ -127,7 +127,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CHANGES.
+        ///   Looks up a localized string similar to Changes.
         /// </summary>
         public static string BackupVersion_Changes_Title {
             get {

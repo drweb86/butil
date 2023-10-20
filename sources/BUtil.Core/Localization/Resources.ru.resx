@@ -142,7 +142,7 @@
     <value>Доступна новая {0} версия.</value>
   </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
-    <value>ИЗМЕНЕНИЯ</value>
+    <value>Изменения</value>
   </data>
   <data name="BackupVersion_CleanupUncompleted" xml:space="preserve">
     <value>Удаление незавершенных резервных копий</value>

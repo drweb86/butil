@@ -124,7 +124,6 @@
             _versionsListView.TabIndex = 1;
             _versionsListView.UseCompatibleStateImageBehavior = false;
             _versionsListView.View = System.Windows.Forms.View.List;
-            _versionsListView.SelectedIndexChanged += OnVersionChanged;
             // 
             // _treeToChangesSplitContainer
             // 
@@ -287,7 +286,6 @@
             Name = "VersionsViewerForm";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Restoration";
-            Load += OnLoad;
             _statusStrip.ResumeLayout(false);
             _statusStrip.PerformLayout();
             _versionToContentSplitContainer.Panel1.ResumeLayout(false);

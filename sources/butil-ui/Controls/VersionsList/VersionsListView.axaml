@@ -5,26 +5,45 @@
 			 xmlns:cvm="clr-namespace:butil_ui.Controls"
              mc:Ignorable="d"
              x:Class="butil_ui.Controls.VersionsListView"
+		     xmlns:controls="clr-namespace:butil_ui.Controls"
 			 x:DataType="cvm:VersionsListViewModel">
-	<Expander HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
-		<Expander.Header>
-			<WrapPanel Orientation="Horizontal">
-				<Image Width="16" Height="16" Source="/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png" VerticalAlignment="Center" />
-				<TextBlock Margin="8 0 8 0" Text="{Binding Field_Version}" VerticalAlignment="Center" />
-				<ComboBox Margin="0 4 4 4" HorizontalAlignment="Stretch" VerticalAlignment="Center" SelectedValue="{Binding SelectedVersion}" ItemsSource="{Binding Versions}" DisplayMemberBinding="{Binding Title}" />
-				<TextBlock Text="{Binding StorageSize}" Margin="8 0 0 0" VerticalAlignment="Center" />
-			</WrapPanel>
-		</Expander.Header>
-		<Grid>
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="Auto" />
-				<ColumnDefinition Width="*" />
-			</Grid.ColumnDefinitions>
-			<Grid.RowDefinitions>
-				<RowDefinition />
-			</Grid.RowDefinitions>
+	<UserControl.Resources>
+		<cvm:BitmapAssetValueConverter x:Key="variableImage"/>
+	</UserControl.Resources>
+	<StackPanel Orientation="Vertical">
+		<WrapPanel Orientation="Horizontal" Margin="24 8 24 8" Background="{Binding HeaderBackground}" HorizontalAlignment="Stretch">
+			<TextBlock Margin="8 0 8 0" Text="{Binding Field_Version}" VerticalAlignment="Center" />
+			<ComboBox Margin="0 4 4 4" HorizontalAlignment="Stretch" VerticalAlignment="Center" SelectedValue="{Binding SelectedVersion}" ItemsSource="{Binding Versions}" DisplayMemberBinding="{Binding Title}" />
+			<TextBlock TextWrapping="Wrap" Text="{Binding StorageSize}" Margin="8 0 0 0" VerticalAlignment="Center" />
+		</WrapPanel>
+		<controls:ProgressTaskView Grid.Row="0" DataContext="{Binding ProgressTaskViewModel}" Margin="24 24 24 0" HorizontalAlignment="Stretch" />
 
-			
-		</Grid>
-	</Expander>
+		<Expander Margin="24 0 24 0" HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent" IsVisible="{Binding !ProgressTaskViewModel.IsVisible}" >
+			<Expander.Header>
+				<WrapPanel Orientation="Horizontal" Margin="0 8 0 8">
+					<Image Width="16" Height="16" Source="/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png" VerticalAlignment="Center" />
+					<TextBlock Margin="8 0 8 0" Text="{Binding BackupVersion_Changes_Title}" VerticalAlignment="Center" />
+				</WrapPanel>
+			</Expander.Header>
+			<ItemsRepeater ItemsSource="{Binding FileChangeViewItems}">
+				<ItemsRepeater.ItemTemplate>
+					<DataTemplate>
+						<WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+							<Image
+								Width="16"
+								Height="16"
+								VerticalAlignment="Center"
+								Source="{Binding ImageSource, Converter={StaticResource variableImage}}"
+								Margin="0 0 4 0" />
+							<TextBlock
+								Text="{Binding Path=Title}"
+								TextWrapping="Wrap"
+								VerticalAlignment="Center"
+									/>
+						</WrapPanel>
+					</DataTemplate>
+				</ItemsRepeater.ItemTemplate>
+			</ItemsRepeater>
+		</Expander>
+	</StackPanel>
 </UserControl>

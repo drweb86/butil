@@ -142,7 +142,7 @@ or warnings will be registered.</value>
     <value>New {0} version is available.</value>
   </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
-    <value>CHANGES</value>
+    <value>Changes</value>
   </data>
   <data name="BackupVersion_CleanupUncompleted" xml:space="preserve">
     <value>Delete uncompleted backups</value>
