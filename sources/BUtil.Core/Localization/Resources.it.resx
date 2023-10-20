@@ -150,6 +150,9 @@
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>FILE</value>
   </data>
+  <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
+    <value>(tutte le versioni occupano spazio di archiviazione {0})</value>
+  </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Diario: {0}</value>
   </data>
@@ -647,5 +650,8 @@
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Non è stata specificato l'utente.</value>
+  </data>
+  <data name="Field_Version" xml:space="preserve">
+    <value>Versione:</value>
   </data>
 </root>
