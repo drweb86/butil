@@ -60,12 +60,6 @@
     <None Remove="Properties\**" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Common\BackUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Common\OptionsHeader.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="Configurator\Controls\Tasks\WhatUserControl.cs" />
     <Compile Update="Icons.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -76,9 +70,6 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Update="Common\ProgressForm.cs">
-      <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
