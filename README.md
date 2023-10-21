@@ -6,8 +6,8 @@
 
 ![Tasks application 1](./help/Assets/Image%20-%20Tasks%20App%20-%201.png)
 ![Tasks application 2](./help/Assets/Image%20-%20Tasks%20App%20-%202.png)
-![Restore application](./help/Assets/Image%20-%20Restore%20App.png)
 ![Launch task application](./help/Assets/Image%20-%20Launch%20App.png)
+![Restore application](./help/Assets/Image%20-%20Restore%20App.png)
 
 ![Supported Languages](./help/Assets/Image%20-%20Languages.png)
 
