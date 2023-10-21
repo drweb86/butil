@@ -21,7 +21,6 @@
 ## Requirements
 
 - Microsoft Windows 10 or 11;
-- Microsoft .Net Desktop Runtime 7 (part of installation).
 - Igor Pavlov's 7-zip (part of installation).
 
 ## [Documentation](https://github.com/drweb86/butil/tree/master/help)

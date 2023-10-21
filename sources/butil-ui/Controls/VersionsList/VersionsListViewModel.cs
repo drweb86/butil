@@ -1,21 +1,15 @@
-﻿using BUtil.Core;
-using BUtil.Core.ConfigurationFileModels.V1;
-using BUtil.Core.ConfigurationFileModels.V2;
+﻿using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.Generic;
-using static System.Net.Mime.MediaTypeNames;
 using System.Threading.Tasks;
-using System.Diagnostics.CodeAnalysis;
 using BUtil.Core.State;
 using System.Linq;
 using System.Collections.ObjectModel;
-using Avalonia;
 using Avalonia.Media;
 using butil_ui.ViewModels;
-using Avalonia.Platform.Storage;
 using BUtil.Core.TasksTree.IncrementalModel;
 
 namespace butil_ui.Controls
@@ -51,7 +45,83 @@ namespace butil_ui.Controls
                 _selectedNode = value;
                 if (_selectedNode != null)
                     _selectedNode.IsSelected = true;
+
+                SelectedFileIsVisible = true;
+                if (_selectedNode != null && _selectedNode.StorageFile != null)
+                {
+                    SelectedFileIsVisible = true;
+                    BackupVersion_FileVersion_Title = string.Format(BUtil.Core.Localization.Resources.BackupVersion_FileVersion_Title, System.IO.Path.GetFileName( _selectedNode.StorageFile.FileState.FileName) );
+                    InitBlameForSelectedFile();
+                }
+                else
+                {
+                    SelectedFileIsVisible = false;
+                    BackupVersion_FileVersion_Title = null;
+                }
                 OnPropertyChanged(nameof(SelectedNode));
+            }
+        }
+
+        #endregion
+
+        #region BlameViewItems
+
+        private ObservableCollection<BlameViewItem> _blameViewItems = new();
+
+        public ObservableCollection<BlameViewItem> BlameViewItems
+        {
+            get
+            {
+                return _blameViewItems;
+            }
+            set
+            {
+                if (value == _blameViewItems)
+                    return;
+                _blameViewItems = value;
+                OnPropertyChanged(nameof(BlameViewItems));
+            }
+        }
+
+        #endregion
+
+        #region SelectedFileIsVisible
+
+        private bool _selectedFileIsVisible;
+
+        public bool SelectedFileIsVisible
+        {
+            get
+            {
+                return _selectedFileIsVisible;
+            }
+            set
+            {
+                if (value == _selectedFileIsVisible)
+                    return;
+                _selectedFileIsVisible = value;
+                OnPropertyChanged(nameof(SelectedFileIsVisible));
+            }
+        }
+
+        #endregion
+
+        #region BackupVersion_FileVersion_Title
+
+        private string? _backupVersion_FileVersion_Title;
+
+        public string? BackupVersion_FileVersion_Title
+        {
+            get
+            {
+                return _backupVersion_FileVersion_Title;
+            }
+            set
+            {
+                if (value == _backupVersion_FileVersion_Title)
+                    return;
+                _backupVersion_FileVersion_Title = value;
+                OnPropertyChanged(nameof(BackupVersion_FileVersion_Title));
             }
         }
 
@@ -201,6 +271,7 @@ namespace butil_ui.Controls
         {
             ProgressTaskViewModel.Activate(async reportProgress =>
             {
+                SelectedFileIsVisible = false;
                 reportProgress(0);
                 ProgressTaskViewModel.IsVisible = true;
                 var changes = GetChangesViewItems(SelectedVersion.Version);
@@ -385,9 +456,6 @@ namespace butil_ui.Controls
             AddLeaf(sourceItemRelativeFileName, storageFile, sourceItemNode, sourceItem);
         }
 
-        public string Title { get; }
-        public string DirectoryStorage => Resources.DirectoryStorage;
-
         #region Commands
 
         public void RecoverTo(string destinationFolder)
@@ -431,57 +499,76 @@ namespace butil_ui.Controls
                    Parent.Nodes.Cast<FileTreeNode>().SelectMany(GetChildren));
         }
 
+        public void InitBlameForSelectedFile()
+        {
+            var items = new ObservableCollection<BlameViewItem>();
+            var path = SelectedNode?.StorageFile?.FileState.FileName ?? throw new NullReferenceException();
+
+            var descendingVersions = _state.VersionStates
+                .OrderByDescending(x => x.BackupDateUtc)
+                .ToList();
+
+            foreach (var versionState in descendingVersions)
+            {
+                foreach (var sourceItemChanges in versionState.SourceItemChanges)
+                {
+                    foreach (var deletedFile in sourceItemChanges.DeletedFiles)
+                    {
+                        if (deletedFile == path)
+                        {
+                            items.Add(new BlameViewItem(versionState, ChangeState.Deleted));
+                            break;
+                        }
+                    }
+
+                    foreach (var createdFile in sourceItemChanges.CreatedFiles)
+                    {
+                        if (createdFile.FileState.FileName == path)
+                        {
+                            items.Add(new BlameViewItem(versionState, ChangeState.Created));
+                            break;
+                        }
+                    }
+
+                    foreach (var updatedFile in sourceItemChanges.UpdatedFiles)
+                    {
+                        if (updatedFile.FileState.FileName == path)
+                        {
+                            items.Add(new BlameViewItem(versionState, ChangeState.Updated));
+                            break;
+                        }
+                    }
+                }
+            }
+
+            BlameViewItems = items;
+        }
+
         #endregion
     }
 
-    public class FileTreeNode: ObservableObject
+    public class BlameViewItem
     {
-        public FileTreeNode(SourceItemV2 sourceItem, string? virtualFolder, StorageFile? storageFile)
+        public BlameViewItem(VersionState versionState, ChangeState state)
         {
-            SourceItem = sourceItem;
-            VirtualFolder = virtualFolder;
-            StorageFile = storageFile;
-            if (virtualFolder != null)
+            Title = versionState.BackupDateUtc.ToString();
+            switch (state)
             {
-                ImageSource = "/Assets/www.wefunction.com_FunctionFreeIconSet_Folder_48.png";
-                Target = virtualFolder;
-            } else if (storageFile != null)
-            {
-                ImageSource = "/Assets/CrystalClear_FileNew.png";
-                Target = System.IO.Path.GetFileName(storageFile.FileState.FileName) ?? string.Empty;
-            } else
-            {
-                ImageSource = "/Assets/CrystalProject_EveraldoCoelho_SourceItems48x48.png";
-                Target = sourceItem.Target;
+                case ChangeState.Created:
+                    ImageSource = "/Assets/VC-Created.png";
+                    break;
+                case ChangeState.Deleted:
+                    ImageSource = "/Assets/VC-Deleted.png";
+                    break;
+                case ChangeState.Updated:
+                    ImageSource = "/Assets/VC-Updated.png";
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(state));
             }
+
         }
+        public string Title { get; }
         public string ImageSource { get; }
-        public string Target { get; }
-        public SourceItemV2 SourceItem { get; }
-        public StorageFile? StorageFile { get; }
-        public string? VirtualFolder { get; }
-
-        #region IsSelected
-
-        private bool _isSelected;
-
-        public bool IsSelected
-        {
-            get
-            {
-                return _isSelected;
-            }
-            set
-            {
-                if (value == _isSelected)
-                    return;
-                _isSelected = value;
-                OnPropertyChanged(nameof(IsSelected));
-            }
-        }
-
-        #endregion
-
-        public ObservableCollection<FileTreeNode> Nodes { get; } = new();
     }
 }

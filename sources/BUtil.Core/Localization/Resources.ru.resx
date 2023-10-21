@@ -293,6 +293,9 @@
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Протокол:</value>
   </data>
+  <data name="Field_Version" xml:space="preserve">
+    <value>Версия:</value>
+  </data>
   <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
     <value>Скрипт проверки целостности.ps1</value>
   </data>
@@ -644,8 +647,5 @@ bin.
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Пользователь не указан.</value>
-  </data>
-  <data name="Field_Version" xml:space="preserve">
-    <value>Версия:</value>
   </data>
 </root>

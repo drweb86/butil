@@ -293,6 +293,9 @@ Usage scenario: You copy data to remote server. There's a problem: ISP drops upl
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protocol:</value>
   </data>
+  <data name="Field_Version" xml:space="preserve">
+    <value>Version:</value>
+  </data>
   <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
     <value>Integrity verification script.ps1</value>
   </data>
@@ -643,8 +646,5 @@ See detailed description in the following link.</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>User is not specified.</value>
-  </data>
-  <data name="Field_Version" xml:space="preserve">
-    <value>Version:</value>
   </data>
 </root>

@@ -60,7 +60,7 @@
 			</TreeView>
 		</Expander>
 
-		<Expander Margin="24 0 24 0" HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent" IsVisible="{Binding !ProgressTaskViewModel.IsVisible}" >
+		<Expander Margin="24 0 24 24" HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent" IsVisible="{Binding !ProgressTaskViewModel.IsVisible}" >
 			<Expander.Header>
 				<WrapPanel Orientation="Horizontal" Margin="0 8 0 8">
 					<Image Width="16" Height="16" Source="/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png" VerticalAlignment="Center" />
@@ -88,5 +88,32 @@
 			</ItemsRepeater>
 		</Expander>
 
+		<Expander Margin="24 0 24 24" HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent"
+				  IsVisible="{Binding SelectedFileIsVisible}">
+			<Expander.Header>
+				<WrapPanel Orientation="Horizontal" Margin="0 8 0 8">
+					<Image Width="16" Height="16" Source="/Assets/CrystalClear_FileNew.png" VerticalAlignment="Center" />
+					<TextBlock Margin="8 0 8 0" Text="{Binding BackupVersion_FileVersion_Title}" VerticalAlignment="Center" />
+				</WrapPanel>
+			</Expander.Header>
+			<ItemsRepeater ItemsSource="{Binding BlameViewItems}">
+				<ItemsRepeater.ItemTemplate>
+					<DataTemplate>
+						<WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+							<Image
+								Width="16"
+								Height="16"
+								VerticalAlignment="Center"
+								Source="{Binding ImageSource, Converter={StaticResource variableImage}}"
+								Margin="0 0 4 0" />
+							<TextBlock
+								Text="{Binding Path=Title}"
+								TextWrapping="Wrap"
+								VerticalAlignment="Center" />
+						</WrapPanel>
+					</DataTemplate>
+				</ItemsRepeater.ItemTemplate>
+			</ItemsRepeater>
+		</Expander>
 	</StackPanel>
 </UserControl>

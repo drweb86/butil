@@ -1,3 +1,12 @@
+# 2023.10.21
+
+## New Features
+- Restore app was upgraded to AvaloniaUI. Migration of product is completed from WinForms to Avalonia. Now its theoretically possible to add port layers for Ubuntu and Android.
+- .Net is bundled with setup, setup won't install it anymore.
+
+## Bug Fixes
+- Restore app was not launching.
+
 # 2023.10.16
 
 ## New Features
