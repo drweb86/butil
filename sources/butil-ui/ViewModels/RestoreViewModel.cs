@@ -91,13 +91,15 @@ public class RestoreViewModel : ViewModelBase
                 return;
             }
             progress(20);
-            using var storage = StorageFactory.Create(new StubLog(), storageOptions);
-            if (!storage.Exists(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile))
+            using (var storage = StorageFactory.Create(new StubLog(), storageOptions))
             {
-                error = string.Format(Resources.RestoreFrom_Field_Validation_NoStateFiles, IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile);
-                await Dispatcher.UIThread.InvokeAsync(async () => await Messages.ShowErrorBox(error));
-                this.ProgressTaskViewModel.IsVisible = false;
-                return;
+                if (!storage.Exists(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile))
+                {
+                    error = string.Format(Resources.RestoreFrom_Field_Validation_NoStateFiles, IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile);
+                    await Dispatcher.UIThread.InvokeAsync(async () => await Messages.ShowErrorBox(error));
+                    this.ProgressTaskViewModel.IsVisible = false;
+                    return;
+                }
             }
             progress(30);
             var commonServicesIoc = new CommonServicesIoc();

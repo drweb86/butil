@@ -113,13 +113,7 @@ begin
     Result := Exec('winget', 'install -e --id Microsoft.DotNet.DesktopRuntime.7 --disable-interactivity --accept-source-agreements --accept-package-agreements', '', SW_HIDE, ewWaitUntilTerminated, ResultCode);
     if (not Result) or (ResultCode <> 0) then
     begin
-      SuppressibleMsgBox('Failed to install Microsoft .Net Desktop Runtime 7'
-    + #13#10#13#10
-    + 'Application uses Microsoft .Net Desktop Runtime 7 for running.'
-    + #13#10#13#10
-    + 'Setup will continue, but application will not be able to start.'
-    + #13#10#13#10
-    + 'Please install Microsoft .Net Desktop Runtime 7 before running the application.', mbCriticalError, MB_OK, IDOK);
+      SuppressibleMsgBox('BUtil depends on "Microsoft .Net Desktop Runtime 7". Please install it manually.', mbInformation, MB_OK, IDOK);
       Result := true;
     end;
   end;
@@ -129,13 +123,7 @@ begin
     Result := Exec('winget', 'install -e --id 7zip.7zip --disable-interactivity --accept-source-agreements --accept-package-agreements', '', SW_HIDE, ewWaitUntilTerminated, ResultCode);
     if (not Result) or (ResultCode <> 0) then
     begin
-      SuppressibleMsgBox('Failed to install 7-zip'
-    + #13#10#13#10
-    + 'Application uses 7-zip for compression and decompression.'
-    + #13#10#13#10
-    + 'Setup will continue, but application will not be able to compress or decompress files.'
-    + #13#10#13#10
-    + 'Please install 7-zip to default location before running the application.', mbCriticalError, MB_OK, IDOK);
+      SuppressibleMsgBox('BUtil depends on 7-zip. Please install it manually.', mbInformation, MB_OK, IDOK);
       Result := true;
     end;
   end;
