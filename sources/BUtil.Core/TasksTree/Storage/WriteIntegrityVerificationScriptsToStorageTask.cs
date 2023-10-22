@@ -52,6 +52,14 @@ namespace BUtil.Core.TasksTree.Storage
 
             var storage = _services.Storage;
 
+            if (!_writeStateToStorageTask.IsSuccess)
+            {
+                IsSuccess = false;
+                UpdateStatus(ProcessingStatus.FinishedWithErrors);
+                LogError("Writing state was not successfull!");
+                return;
+            }
+
             using (var tempFolder = new TempFolder())
             {
                 var powershellFile = Path.Combine(tempFolder.Folder, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Ps1);

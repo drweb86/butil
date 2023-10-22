@@ -1,3 +1,12 @@
+# 2023.10.22
+
+## Changes
+- UI was freezing on fast computers on backup of huge amount of files in launch app.
+
+## Bug Fixes
+! FTPS file delete was terminating the Launch app.
+- Null reference exception on attempt to store file with invalid state.
+
 # 2023.10.21
 
 ## New Features

@@ -2,24 +2,50 @@
 using BUtil.Core.Events;
 using BUtil.Core.Settings;
 using System;
+using System.Collections.Concurrent;
+using System.Collections.Generic;
 
 namespace butil_ui.ViewModels;
 
 public static class ColorPalette
 {
-    public static SolidColorBrush GetResultColor(ProcessingStatus state)
+
+    private static ConcurrentDictionary<SemanticColor, SolidColorBrush> _brushCache = new ();
+
+    private static SemanticColor ProcessingStatusToColor(ProcessingStatus status)
     {
-        return state switch
+        return status switch
         {
-            ProcessingStatus.FinishedSuccesfully => new SolidColorBrush(GetColor(SemanticColor.Success)),
-            ProcessingStatus.FinishedWithErrors => new SolidColorBrush(GetColor(SemanticColor.Error)),
-            ProcessingStatus.InProgress => new SolidColorBrush(GetColor(SemanticColor.InProgress)),
-            ProcessingStatus.NotStarted => new SolidColorBrush(GetColor(SemanticColor.Normal)),
-            _ => throw new NotImplementedException(state.ToString()),
+            ProcessingStatus.FinishedSuccesfully => SemanticColor.Success,
+            ProcessingStatus.FinishedWithErrors => SemanticColor.Error,
+            ProcessingStatus.InProgress => SemanticColor.InProgress,
+            ProcessingStatus.NotStarted => SemanticColor.Normal,
+            _ => throw new NotImplementedException(status.ToString()),
         };
     }
 
-    public static Color GetColor(SemanticColor color)
+    public static SolidColorBrush GetProcessingStatusBrush(ProcessingStatus status)
+    {
+        var color = ProcessingStatusToColor(status);
+        if (_brushCache.TryGetValue(color, out var brush))
+            return brush;
+
+        brush = new SolidColorBrush(GetColor(color));
+        _brushCache.AddOrUpdate(color, brush, (a, b) => b);
+        return brush;
+    }
+
+    public static SolidColorBrush GetBrush(SemanticColor color)
+    {
+        if (_brushCache.TryGetValue(color, out var brush))
+            return brush;
+
+        brush = new SolidColorBrush(GetColor(color));
+        _brushCache.AddOrUpdate(color, brush, (a, b) => b);
+        return brush;
+    }
+
+    private static Color GetColor(SemanticColor color)
     {
         if (ApplicationSettings.Theme == ThemeSetting.DarkValue)
         {

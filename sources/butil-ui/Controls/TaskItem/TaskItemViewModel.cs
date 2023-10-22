@@ -24,12 +24,12 @@ namespace butil_ui.Controls
             ProcessingStatus status,
             ObservableCollection<TaskItemViewModel> items)
         {
-            SuccessForegroundColorBrush = new SolidColorBrush(ColorPalette.GetColor(SemanticColor.Success));
+            SuccessForegroundColorBrush = ColorPalette.GetBrush(SemanticColor.Success);
             Name = name;
             LastLaunchedAt = lastLaunchedAt;
-            Background = new SolidColorBrush(ColorPalette.GetColor(SemanticColor.WindowFrontBackground));
-            Foreground = ColorPalette.GetResultColor(status);
-            ForegroundWindowFontAccented = new SolidColorBrush(ColorPalette.GetColor(SemanticColor.ForegroundWindowFontAccented));
+            Background = ColorPalette.GetBrush(SemanticColor.WindowFrontBackground);
+            Foreground = ColorPalette.GetProcessingStatusBrush(status);
+            ForegroundWindowFontAccented = ColorPalette.GetBrush(SemanticColor.ForegroundWindowFontAccented);
             _items = items;
         }
 

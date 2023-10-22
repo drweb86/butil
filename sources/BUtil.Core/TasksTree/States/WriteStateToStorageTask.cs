@@ -50,9 +50,17 @@ namespace BUtil.Core.TasksTree.States
                 UpdateStatus(ProcessingStatus.FinishedWithErrors);
                 return;
             }
-            
-            StateStorageFile = _services.IncrementalBackupStateService.Write(_incrementalBackupModelOptions, _getIncrementedVersionTask.IncrementalBackupState ?? throw new InvalidOperationException());
-            IsSuccess = StateStorageFile != null;
+
+            try
+            {
+                StateStorageFile = _services.IncrementalBackupStateService.Write(_incrementalBackupModelOptions, _getIncrementedVersionTask.IncrementalBackupState ?? throw new InvalidOperationException());
+                IsSuccess = StateStorageFile != null;
+            }
+            catch (Exception ex)
+            {
+                this.LogError(ex.Message);
+                IsSuccess = false;
+            }
             UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
         }
     }

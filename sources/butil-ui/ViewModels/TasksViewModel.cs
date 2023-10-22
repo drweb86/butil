@@ -5,7 +5,6 @@ using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
 using butil_ui.Controls;
-using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 
@@ -13,44 +12,18 @@ namespace butil_ui.ViewModels;
 
 public class TasksViewModel : ViewModelBase
 {
-    private readonly Color _errorForegroundColor;
-    private readonly Color _successForegroundColor;
-    private readonly string _theme;
-
     public TasksViewModel()
     {
         IsFullMenuVisible = true;
-        _theme = ApplicationSettings.Theme;
-        _progressGenericForeground = new SolidColorBrush(ColorPalette.GetColor(SemanticColor.Normal));
-        _errorForegroundColor = ColorPalette.GetColor(SemanticColor.Error);
-        _successForegroundColor = ColorPalette.GetColor(SemanticColor.Success);
+        ProgressGenericForeground = ColorPalette.GetBrush(SemanticColor.Normal);
 
         WindowTitle = "BUtil - V" + CopyrightInfo.Version.ToString(3);
-        HeaderBackground = new SolidColorBrush(ColorPalette.GetColor(SemanticColor.HeaderBackground));
-        ForegroundWindowFontAccented = new SolidColorBrush(ColorPalette.GetColor(SemanticColor.ForegroundWindowFontAccented));
+        HeaderBackground = ColorPalette.GetBrush(SemanticColor.HeaderBackground);
+        ForegroundWindowFontAccented = ColorPalette.GetBrush(SemanticColor.ForegroundWindowFontAccented);
     }
     public SolidColorBrush HeaderBackground { get; }
     public SolidColorBrush ForegroundWindowFontAccented { get; }
-
-    #region ProgressGenericForeground
-
-    private SolidColorBrush _progressGenericForeground;
-    public SolidColorBrush ProgressGenericForeground
-    {
-        get
-        {
-            return _progressGenericForeground;
-        }
-        set
-        {
-            if (value == _progressGenericForeground)
-                return;
-            _progressGenericForeground = value;
-            OnPropertyChanged(nameof(ProgressGenericForeground));
-        }
-    }
-
-    #endregion
+    public SolidColorBrush ProgressGenericForeground { get; }
 
     #region Items
 

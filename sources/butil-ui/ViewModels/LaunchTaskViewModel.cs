@@ -10,6 +10,7 @@ using BUtil.Core.Misc;
 using BUtil.Core.Options;
 using BUtil.Core.TasksTree.Core;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -19,16 +20,11 @@ namespace butil_ui.ViewModels;
 
 public class LaunchTaskViewModel : ViewModelBase
 {
-    private readonly Color _errorForegroundColor;
-    private readonly Color _successForegroundColor;
-
     public LaunchTaskViewModel(string taskName)
     {
         _taskName = taskName;
         _theme = ApplicationSettings.Theme;
-        _progressGenericForeground = new SolidColorBrush(ColorPalette.GetColor(SemanticColor.Normal));
-        _errorForegroundColor = ColorPalette.GetColor(SemanticColor.Error);
-        _successForegroundColor = ColorPalette.GetColor(SemanticColor.Success);
+        _progressGenericForeground = ColorPalette.GetBrush(SemanticColor.Normal);
 
         WindowTitle = taskName;
 
@@ -163,6 +159,7 @@ public class LaunchTaskViewModel : ViewModelBase
 
     #region Items
 
+    private ConcurrentDictionary<Guid, LaunchTaskViewItem> _itemsDict = new ConcurrentDictionary<Guid, LaunchTaskViewItem>();
     private ObservableCollection<LaunchTaskViewItem> _items = new();
     public ObservableCollection<LaunchTaskViewItem> Items
     {
@@ -371,7 +368,7 @@ public class LaunchTaskViewModel : ViewModelBase
         if (_task == null)
         {
             ProgressGenericTitle = BUtil.Core.Localization.Resources.Task_Validation_NotSupported;
-            ProgressGenericForeground = new SolidColorBrush(_errorForegroundColor);
+            ProgressGenericForeground = ColorPalette.GetBrush(SemanticColor.Error);
             CanClose = true;
             IsStartButtonVisible = false;
             TaskNotCompleted = false;
@@ -381,7 +378,7 @@ public class LaunchTaskViewModel : ViewModelBase
         if (!TaskModelStrategyFactory.TryVerify(new StubLog(), _task.Model, out var error))
         {
             ProgressGenericTitle = error;
-            ProgressGenericForeground = new SolidColorBrush(_errorForegroundColor);
+            ProgressGenericForeground = ColorPalette.GetBrush(SemanticColor.Error);
             CanClose = true;
             IsStartButtonVisible = false;
             TaskNotCompleted = false;
@@ -397,9 +394,12 @@ public class LaunchTaskViewModel : ViewModelBase
 
         _threadTask
             .GetChildren()
-            .Select(x => new LaunchTaskViewItem(x, ColorPalette.GetColor(SemanticColor.Normal)))
+            .Select(x => new LaunchTaskViewItem(x, ProcessingStatus.NotStarted))
             .ToList()
-            .ForEach(_items.Add);
+            .ForEach(x => {
+                _items.Add(x);
+                _itemsDict.AddOrUpdate(x.Tag, x, (a, b) => b);
+            });
     }
 
     private void OnTaskProgress(object? sender, TaskProgressEventArgs e)
@@ -415,16 +415,12 @@ public class LaunchTaskViewModel : ViewModelBase
 
     private void UpdateListViewItem(Guid taskId, ProcessingStatus status)
     {
-        foreach (LaunchTaskViewItem item in _items)
+        if (status == ProcessingStatus.NotStarted)
+            return;
+
+        if (_itemsDict.TryGetValue(taskId, out var item))
         {
-            if (item.Tag == taskId)
-            {
-                if (status != ProcessingStatus.NotStarted)
-                {
-                    item.BackColor = ColorPalette.GetResultColor(status);
-                }
-                break;
-            }
+            item.Status = status;
         }
     }
 
@@ -440,8 +436,9 @@ public class LaunchTaskViewModel : ViewModelBase
 
         foreach (var task in e.Tasks)
         {
-            var listItem = new LaunchTaskViewItem(task, ColorPalette.GetColor(SemanticColor.Normal));
+            var listItem = new LaunchTaskViewItem(task, ProcessingStatus.NotStarted);
             _items.Insert(index, listItem);
+            _itemsDict.AddOrUpdate(listItem.Tag, listItem, (a, b) => b);
             index++;
         }
     }
@@ -481,7 +478,7 @@ public class LaunchTaskViewModel : ViewModelBase
                 ProgressGenericTitle += Environment.NewLine + lastMinuteMessage;
             }
 
-            ProgressGenericForeground = new SolidColorBrush(_errorForegroundColor);
+            ProgressGenericForeground = ColorPalette.GetBrush(SemanticColor.Error);
         }
         else
         {
@@ -491,7 +488,7 @@ public class LaunchTaskViewModel : ViewModelBase
             {
                 ProgressGenericTitle += Environment.NewLine + lastMinuteMessage;
             }
-            ProgressGenericForeground = new SolidColorBrush(_successForegroundColor);
+            ProgressGenericForeground = ColorPalette.GetBrush(SemanticColor.Success);
         }
 
         var appStaysAlive = _selectedPowerTask == PowerTask.None;

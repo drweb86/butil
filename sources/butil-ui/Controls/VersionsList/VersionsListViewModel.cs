@@ -234,7 +234,7 @@ namespace butil_ui.Controls
 
         #endregion
 
-        public SolidColorBrush HeaderBackground { get; } = new SolidColorBrush(ColorPalette.GetColor(SemanticColor.HeaderBackground));
+        public SolidColorBrush HeaderBackground { get; } = ColorPalette.GetBrush(SemanticColor.HeaderBackground);
 
         public ProgressTaskViewModel ProgressTaskViewModel { get; } = new ProgressTaskViewModel();
 

@@ -114,8 +114,8 @@ public partial class MainWindowViewModel : ViewModelBase
     {
         var settingsService = new SettingsStoreService();
         ApplicationSettings.Theme = settingsService.Load(ThemeSetting.Name, ThemeSetting.DefaultValue);
-        WindowBackground = new SolidColorBrush(ColorPalette.GetColor(SemanticColor.WindowBackground));
-        HeaderBackground = new SolidColorBrush(ColorPalette.GetColor(SemanticColor.HeaderBackground));
+        WindowBackground = ColorPalette.GetBrush(SemanticColor.WindowBackground);
+        HeaderBackground = ColorPalette.GetBrush(SemanticColor.HeaderBackground);
 
         WindowManager._switchView = x => CurrentPage = x;
         var args = Environment.GetCommandLineArgs().Skip(1).ToArray();
