@@ -168,6 +168,9 @@
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERSIONI</value>
   </data>
+  <data name="BackupVersion_Viewer_Help" xml:space="preserve">
+    <value>Seleziona il file o la cartella da ripristinare nella struttura e seleziona "Ripristina".</value>
+  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>Annulla</value>
   </data>
@@ -291,6 +294,9 @@
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protocollo:</value>
+  </data>
+  <data name="Field_Version" xml:space="preserve">
+    <value>Versione:</value>
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Versione:</value>
@@ -649,6 +655,5 @@
     <value>Utente:</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
-    <value>Non è stata specificato l'utente.</value>
-  </data>
-</root>
+    <value>Non è stato specificato l'utente.</value>
+  </data></root>
