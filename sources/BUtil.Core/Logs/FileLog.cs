@@ -1,4 +1,4 @@
-
+﻿
 using System;
 using System.IO;
 using System.Globalization;
@@ -57,18 +57,9 @@ namespace BUtil.Core.Logs
     <head>
 	    <META HTTP-EQUIV=""CONTENT-TYPE"" CONTENT=""text/html; charset=utf-8"">
 	    <TITLE>{_dateTime.ToString("f", CultureInfo.CurrentUICulture)}</TITLE>
-		<style>
-			body {{
-                margin-bottom: 0cm;
-				font-family: 'Courier New', Courier, monospace;
-			}}
-			p {{
-                color: #ff0000;
-				font-weight: 800;
-			}}
-		</style>
     </head>
-    <body>");
+    <body>
+    <p>{LocalsHelper.ToString(Events.ProcessingStatus.FinishedSuccesfully)}{LocalsHelper.ToString(Events.ProcessingStatus.FinishedWithErrors)}</p>");
 				_logFile = File.AppendText(_fileName);
 			}
 			catch (Exception e)
