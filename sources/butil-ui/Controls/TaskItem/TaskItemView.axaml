@@ -68,6 +68,10 @@
 			/>
 
 			<Button
+				Background="Transparent"
+				BorderBrush="{Binding Foreground}"
+				Foreground="{Binding Foreground}"
+				BorderThickness="1"
 				HorizontalAlignment="Right"
 				VerticalAlignment="Center"
 				Padding="16 8 16 8"

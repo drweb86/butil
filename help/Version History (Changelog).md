@@ -1,3 +1,9 @@
+# 2023.10.24
+
+## Changes
+- Italian language was updated by https://github.com/bovirus .
+- Launch button grabs less attention.
+
 # 2023.10.22
 
 ## Changes
