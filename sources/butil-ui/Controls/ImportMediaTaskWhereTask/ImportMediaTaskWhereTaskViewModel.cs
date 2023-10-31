@@ -3,6 +3,8 @@ using BUtil.Core.Localization;
 using BUtil.Core.TasksTree.MediaSyncBackupModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -19,7 +21,19 @@ namespace butil_ui.Controls
             OutputFolder = outputFolder;
             SkipAlreadyImportedFiles = skipAlreadyImportedFiles;
             TransformFileName = transformFileName;
+            TransformFileNames = new[]
+            {
+                "{DATE:yyyy}\\{DATE:yyyy'-'MM', 'MMMM}\\{DATE:yyyy'-'MM'-'dd', 'dddd}\\{DATE:yyyy'-'MM'-'dd' 'HH'-'mm'-'ss}",
+                "{DATE:yyyy}\\{DATE:MM}\\{DATE:yyyy'-'MM'-'dd}\\{DATE:yyyy'-'MM'-'dd' 'HH'-'mm'-'ss}",
+                "{DATE:yyyy}\\{DATE:MM}\\{DATE:dd}\\{DATE:yyyy'-'MM'-'dd' 'HH'-'mm'-'ss}",
+                "{DATE:yyyy}\\{DATE:yyyy'-'MM'-'dd}\\{DATE:yyyy'-'MM'-'dd' 'HH'-'mm'-'ss}",
+                "{DATE:yyyy'-'MM}\\{DATE:yyyy'-'MM'-'dd' 'HH'-'mm'-'ss}",
+                "{DATE:yyyy'-'MM'-'dd}\\{DATE:yyyy'-'MM'-'dd' 'HH'-'mm'-'ss}",
+                "{DATE:yyyy'-'MM'-'dd' 'HH'-'mm'-'ss}",
+            };
         }
+
+        public IEnumerable<string> TransformFileNames { get; }
 
         #region Labels
         public string LeftMenu_Where => Resources.LeftMenu_Where;

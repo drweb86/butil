@@ -62,14 +62,27 @@
 				Text="{Binding ImportMediaTask_Field_TransformFileName}"
 				VerticalAlignment="Center"
 			/>
-			<TextBox
+			<AutoCompleteBox
+				x:Name="_templateAutoCompleteBox"
+				GotFocus="PossibleTemplatesGotFocus"
 				Grid.Column="1"
 				Grid.Row="2"
 				Text="{Binding TransformFileName}"
+				ItemsSource="{Binding TransformFileNames}"
+				FilterMode="None"
 				VerticalAlignment="Center"
 				Margin="4 0 4 0"
 			/>
-
+			<Button
+				Click="OpenPossibleTemplatesCommand"
+				Grid.Column="2"
+				Grid.Row="2"
+				Content="▼"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Left"
+				Margin="0 0 4 0"
+			/>
+			
 			<TextBlock
 				Grid.ColumnSpan="3"
 				Grid.Column="0"

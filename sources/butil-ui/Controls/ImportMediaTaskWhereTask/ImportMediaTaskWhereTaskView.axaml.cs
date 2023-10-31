@@ -12,7 +12,6 @@ namespace butil_ui.Controls
         public ImportMediaTaskWhereTaskView()
         {
             InitializeComponent();
-
             this.DataContext = new ImportMediaTaskWhereTaskViewModel("the folder", false, "transoform file name");
         }
 
@@ -40,5 +39,20 @@ namespace butil_ui.Controls
             }
         }
 
+        private bool _possibleVariantsWhereShown = false;
+        private void PossibleTemplatesGotFocus(object? sender, Avalonia.Input.GotFocusEventArgs e)
+        {
+            if (!_possibleVariantsWhereShown)
+            {
+                _templateAutoCompleteBox.IsDropDownOpen = true;
+                _possibleVariantsWhereShown = true;
+            }
+        }
+
+        public void OpenPossibleTemplatesCommand(object? sender, RoutedEventArgs args)
+        {
+            _possibleVariantsWhereShown = false;
+            _templateAutoCompleteBox.Focus();
+        }
     }
 }

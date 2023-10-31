@@ -1,5 +1,8 @@
 # 2023.10.24
 
+## New Features
+- Import multimedia: popular file name template examples were added and available as dropdown autocomplete.
+
 ## Changes
 - Italian language was updated by https://github.com/bovirus .
 - Launch button grabs less attention.
