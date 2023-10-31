@@ -3,6 +3,7 @@
 ## Changes
 - Italian language was updated by https://github.com/bovirus .
 - Launch button grabs less attention.
+- During backup task edit, its no longer possible to change password. Previously it could lead to impossibility to perform backup.
 
 # 2023.10.22
 

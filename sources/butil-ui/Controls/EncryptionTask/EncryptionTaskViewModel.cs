@@ -8,10 +8,11 @@ namespace butil_ui.Controls
 {
     public class EncryptionTaskViewModel : ObservableObject
     {
-        public EncryptionTaskViewModel(string password, bool isPasswordCreateMode = true)
+        public EncryptionTaskViewModel(string password, bool isPasswordCreateMode = true, bool isReadonly = false)
         {
             _password = password;
             IsPasswordCreateMode = isPasswordCreateMode;
+            IsReadonly = isReadonly;
         }
 
         public void PasswordGenerateCommand()
@@ -77,6 +78,7 @@ namespace butil_ui.Controls
         }
 
         public bool IsPasswordCreateMode { get; }
+        public bool IsReadonly { get; }
 
         #endregion
     }

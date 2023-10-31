@@ -32,7 +32,7 @@ namespace butil_ui.Controls
             var task = isNew ? new TaskV2() : storeService.Load(taskName) ?? new TaskV2();
             NameTaskViewModel = new NameTaskViewModel(isNew, Resources.IncrementalBackup_Help, task.Name);
             var model = (IncrementalBackupModelOptionsV2)task.Model;
-            EncryptionTaskViewModel = new EncryptionTaskViewModel(model.Password);
+            EncryptionTaskViewModel = new EncryptionTaskViewModel(model.Password, isNew, !isNew);
 
             var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
             WhenTaskViewModel = new WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule?.GetSchedule(taskName) ?? new ScheduleInfo());

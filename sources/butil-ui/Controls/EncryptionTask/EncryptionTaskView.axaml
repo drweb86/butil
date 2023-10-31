@@ -25,8 +25,8 @@
 			</Grid.ColumnDefinitions>
 
 			<TextBlock Grid.Column="0" Grid.Row="0" Text="{Binding Password_Field}" VerticalAlignment="Center" Margin="0,0,8,0" />
-			<TextBox Grid.Column="1" Grid.Row="0" Text="{Binding Password}" VerticalAlignment="Center" />
-			<Button Grid.Column="2" Grid.Row="0" Content="{Binding Password_Generate}" VerticalAlignment="Center" Margin="4 0 0 0" Command="{Binding PasswordGenerateCommand}" IsVisible="{Binding IsPasswordCreateMode}" />
+			<TextBox IsReadOnly="{Binding IsReadonly}" Grid.Column="1" Grid.Row="0" Text="{Binding Password}" VerticalAlignment="Center" />
+			<Button IsEnabled="{Binding !IsReadonly}" Grid.Column="2" Grid.Row="0" Content="{Binding Password_Generate}" VerticalAlignment="Center" Margin="4 0 0 0" Command="{Binding PasswordGenerateCommand}" IsVisible="{Binding IsPasswordCreateMode}" />
 			<TextBlock Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="1" Text="{Binding Password_Help}" TextWrapping="Wrap" Margin="0,8,0,0" IsVisible="{Binding IsPasswordCreateMode}" />
 		</Grid>
 	</Expander>
