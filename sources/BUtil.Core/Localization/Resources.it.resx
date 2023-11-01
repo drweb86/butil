@@ -298,9 +298,6 @@
   <data name="Field_Version" xml:space="preserve">
     <value>Versione:</value>
   </data>
-  <data name="Field_Version" xml:space="preserve">
-    <value>Versione:</value>
-  </data>
   <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
     <value>Script verifica integrità.ps1</value>
   </data>
@@ -656,4 +653,5 @@
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Non è stato specificato l'utente.</value>
-  </data></root>
+  </data>
+</root>

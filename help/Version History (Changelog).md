@@ -1,4 +1,4 @@
-# 2023.10.24
+# 2023.11.1
 
 ## New Features
 - Import multimedia: popular file name template examples were added and available as dropdown autocomplete.

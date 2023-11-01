@@ -300,7 +300,7 @@ namespace butil_ui.Controls
 
         private static List<StorageFile> BuildVersionFiles(IncrementalBackupState state, SourceItemV2 sourceItem, VersionState selectedVersion)
         {
-            List<StorageFile> result = null;
+            List<StorageFile>? result = null;
 
             foreach (var versionState in state.VersionStates)
             {
