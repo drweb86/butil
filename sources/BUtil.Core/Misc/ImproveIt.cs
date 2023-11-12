@@ -28,7 +28,7 @@ namespace BUtil.Core.Misc
                 builder.AppendLine();
                 builder.AppendLine("BUtil " + CopyrightInfo.Version + " - Bug report (" + DateTime.Now.ToString("g", CultureInfo.InvariantCulture) + ")");
                 builder.AppendLine("Please report about it here: ");
-                builder.AppendLine(SupportManager.GetLink(SupportRequest.Homepage));
+                builder.AppendLine(ApplicationLinks.HomePage);
                 builder.AppendLine(exception.Message);
                 builder.AppendLine(exception.StackTrace);
                 builder.AppendLine(exception.Source);

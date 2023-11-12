@@ -50,7 +50,9 @@ namespace butil_ui.Controls
 
         public void TaskLaunchCommand()
         {
-            SupportManager.LaunchTask(Name);
+            PlatformSpecificExperience.Instance
+                .GetSupportManager()
+                .LaunchTask(Name);
         }
 
         public void TaskEditCommand()
@@ -68,7 +70,9 @@ namespace butil_ui.Controls
 
         public void TaskRestoreCommand()
         {
-            SupportManager.OpenRestorationApp(Name);
+            PlatformSpecificExperience.Instance
+                .GetSupportManager()
+                .OpenRestorationApp(Name);
         }
 
         public async Task TaskDeleteCommand()

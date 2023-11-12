@@ -16,16 +16,14 @@ namespace BUtil.Core.FileSystem
 #else
         private static readonly string _userDataFolder = Path.Combine(_applicationDataFolder, "BUtil");
 		#endif
-		private static readonly string _logsDir = Path.Combine(_userDataFolder, "Logs", "v2");
         private static readonly string _settingsDir = Path.Combine(_userDataFolder, "Settings", "v1");
 
-        public static readonly string TempFolder = System.Environment.GetEnvironmentVariable("TEMP") ?? throw new DirectoryNotFoundException("TEMP");
+        public static readonly string TempFolder = System.IO.Path.GetTempPath();
 
         public static string UserDataFolder => _userDataFolder;
 
         public static string BinariesDir => _binariesDir;
 
-        public static string LogsFolder => _logsDir;
         public static string SettingsDir => _settingsDir;
 
         private static void CreateDirectory(string path)
@@ -37,7 +35,6 @@ namespace BUtil.Core.FileSystem
         static Directories()
         {
             CreateDirectory(_userDataFolder);
-            CreateDirectory(_logsDir);
         }
 	}
 }

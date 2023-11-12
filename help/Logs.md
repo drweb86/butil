@@ -5,10 +5,11 @@ Logs are collected for task execution.
 All apps that execute tasks write logs.
 Logs are in HTML format.
 
-Logs are located in ```%appdata%\Butil\Logs\v2```.
+Logs are located in 
+- Windows: ```%appdata%\Butil\Logs\v2``` ,
+- Linux: ```<Download folder>\Butil\Logs\v2``` .
+
 You can change logs location by creating a create symbolic links.
-
-
 
 # Information in logs
 
@@ -27,3 +28,6 @@ It was part of an effort to reduce log sizes. That's why while everything is OK,
 
 ## HTML format of logs
 Since text editor does not work normally with huge logs and for making colors for errors, html format is used.
+
+## Linux logs storage
+Logs are located in Downloads folder, because Firefox snap has no access to other folders.

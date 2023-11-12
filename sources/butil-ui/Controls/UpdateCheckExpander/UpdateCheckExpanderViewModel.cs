@@ -1,4 +1,5 @@
-﻿using BUtil.Core.Localization;
+﻿using BUtil.Core;
+using BUtil.Core.Localization;
 using BUtil.Core.Misc;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System;
@@ -78,12 +79,14 @@ namespace butil_ui.Controls.UpdateCheckExpander
 
         #endregion
 
-        public string UpdateLink => SupportManager.GetLink(SupportRequest.LatestRelease);
+        public string UpdateLink => ApplicationLinks.LatestRelease;
         public string Button_Download => Resources.Button_Download;
 
         public void OpenLatestReleaseCommand()
         {
-            SupportManager.OpenLatestRelease();
+            PlatformSpecificExperience.Instance
+                .GetSupportManager()
+                .OpenLatestRelease();
         }
 
         private async Task CheckForUpdates()

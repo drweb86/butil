@@ -14,27 +14,7 @@ if %ERRORLEVEL% NEQ 0 (
 	GOTO error;
 )
 
-rmdir "../Output/butil/bin/runtimes/linux-arm" /S /Q
-if %ERRORLEVEL% NEQ 0 (
-	GOTO error;
-)
-rmdir "../Output/butil/bin/runtimes/linux-arm64" /S /Q
-if %ERRORLEVEL% NEQ 0 (
-	GOTO error;
-)
-rmdir "../Output/butil/bin/runtimes/linux-musl-x64" /S /Q
-if %ERRORLEVEL% NEQ 0 (
-	GOTO error;
-)
-rmdir "../Output/butil/bin/runtimes/linux-x64" /S /Q
-if %ERRORLEVEL% NEQ 0 (
-	GOTO error;
-)
 rmdir "../Output/butil/bin/runtimes/osx" /S /Q
-if %ERRORLEVEL% NEQ 0 (
-	GOTO error;
-)
-rmdir "../Output/butil/bin/runtimes/unix" /S /Q
 if %ERRORLEVEL% NEQ 0 (
 	GOTO error;
 )
@@ -45,8 +25,18 @@ if NOT %ERRORLEVEL% == 0 (
 	GOTO error;
 )
 
-del ..\Output\butil-binaries.7z
-"c:\Program Files\7-Zip\7z.exe" a -y ..\Output\butil-binaries.7z "..\Output\BUtil\*" -mx9 -t7z -m0=lzma2 -ms=on -sccUTF-8 -ssw
+del ..\Output\BUtil\README.md
+if NOT %ERRORLEVEL% == 0 (
+	GOTO error;
+)
+
+copy ..\help\Readme.Binaries.md ..\Output\BUtil\README.md
+if NOT %ERRORLEVEL% == 0 (
+	GOTO error;
+)
+
+del ..\Output\butil-binaries-Windows,Linux.7z
+"c:\Program Files\7-Zip\7z.exe" a -y ..\Output\butil-binaries-Windows,Linux.7z "..\Output\BUtil\*" -mx9 -t7z -m0=lzma2 -ms=on -sccUTF-8 -ssw
 if NOT %ERRORLEVEL% == 0 (
 	GOTO error;
 )

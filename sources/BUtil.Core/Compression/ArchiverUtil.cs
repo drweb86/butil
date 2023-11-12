@@ -1,6 +1,6 @@
 ﻿namespace BUtil.Core.Compression
 {
-    static class ArchiverUtil
+    public static class ArchiverUtil
     {
         public static int GetCompressionLevel(string extension)
         {

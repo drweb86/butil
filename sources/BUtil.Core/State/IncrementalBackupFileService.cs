@@ -40,7 +40,7 @@ namespace BUtil.Core.State
             var tempArchive = Path.Combine(tempFolder.Folder, "archive.7z");
             var extractedFolder = Path.Combine(tempFolder.Folder, "Extracted");
             _services.Storage.Download(storageFile.StorageRelativeFileName, tempArchive);
-            var archiver = ArchiverFactory.Create(_log);
+            var archiver = PlatformSpecificExperience.Instance.GetArchiver(_log);
             // file can be renamed in real life.
             if (!archiver.Extract(tempArchive, storageFile.StoragePassword, extractedFolder))
             {
@@ -66,7 +66,7 @@ namespace BUtil.Core.State
                 storageFile.StoragePassword = RandomString();
             }
 
-            var archiver = ArchiverFactory.Create(_log);
+            var archiver = PlatformSpecificExperience.Instance.GetArchiver(_log);
             if (!archiver.CompressFile(
                 storageFile.FileState.FileName,
                 storageFile.StoragePassword,

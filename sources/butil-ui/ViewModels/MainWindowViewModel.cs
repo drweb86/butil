@@ -24,7 +24,9 @@ public partial class MainWindowViewModel : ViewModelBase
     {
         new SettingsStoreService()
             .Save(ThemeSetting.Name, ThemeSetting.DarkValue);
-        SupportManager.LaunchTasksApp();
+        PlatformSpecificExperience.Instance
+                .GetSupportManager()
+                .LaunchTasksApp();
         Environment.Exit(0);
     }
 
@@ -32,18 +34,26 @@ public partial class MainWindowViewModel : ViewModelBase
     {
         new SettingsStoreService()
             .Save(ThemeSetting.Name, ThemeSetting.LightValue);
-        SupportManager.LaunchTasksApp();
+        PlatformSpecificExperience.Instance
+                .GetSupportManager()
+                .LaunchTasksApp();
         Environment.Exit(0);
     }
 
     public void OpenLogsCommand()
     {
-        SupportManager.OpenLogs();
+        var logs = PlatformSpecificExperience.Instance.GetFolderService().LogsFolder;
+
+        PlatformSpecificExperience.Instance
+                .GetFolderService()
+                .OpenFolderInShell(logs);
     }
 
     public void RestoreCommand()
     {
-        SupportManager.OpenRestorationApp();
+        PlatformSpecificExperience.Instance
+                .GetSupportManager()
+                .OpenRestorationApp();
     }
 
     public void IncrementalBackupTaskCreateCommand()
@@ -53,7 +63,9 @@ public partial class MainWindowViewModel : ViewModelBase
 
     public void GoToWebsiteCommand()
     {
-        SupportManager.OpenHomePage();
+        PlatformSpecificExperience.Instance
+                .GetSupportManager()
+                .OpenHomePage();
     }
 
     public void ImportMediaTaskCreateCommand()

@@ -35,7 +35,7 @@ namespace BUtil.Core.State
                 _log.WriteLine(LoggingEvent.Debug, $"Reading encrypted compressed state");
                 var destFile = Path.Combine(tempFolder.Folder, IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile);
                 _services.Storage.Download(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile, destFile);
-                var archiver = ArchiverFactory.Create(_log);
+                var archiver = PlatformSpecificExperience.Instance.GetArchiver(_log);
                 if (!archiver.Extract(destFile, password, tempFolder.Folder))
                 {
                     _log.WriteLine(LoggingEvent.Error, $"Failed to read state");
@@ -74,7 +74,7 @@ namespace BUtil.Core.State
 
             storageFile.StorageRelativeFileName = IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile;
             var fileToUpload = Path.Combine(tempFolder.Folder, storageFile.StorageRelativeFileName);
-            var archiver = ArchiverFactory.Create(_log);
+            var archiver = PlatformSpecificExperience.Instance.GetArchiver(_log);
             if (!archiver.CompressFile(jsonFile, incrementalBackupModelOptions.Password, fileToUpload))
             {
                 _log.WriteLine(LoggingEvent.Error, $"Failed state");

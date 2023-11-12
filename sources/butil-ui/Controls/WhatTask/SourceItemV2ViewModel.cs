@@ -1,5 +1,6 @@
 ﻿using Avalonia.Media.Imaging;
 using Avalonia.Platform;
+using BUtil.Core;
 using BUtil.Core.Localization;
 using System;
 using System.Collections.ObjectModel;
@@ -40,10 +41,11 @@ namespace butil_ui.Controls
         #region Commands
         public void SourceItemOpenInExplorerCommand()
         {
+            var service = PlatformSpecificExperience.Instance.GetFolderService();
             if (IsFolder)
-                Process.Start("explorer.exe", $"\"{Target}\"");
+                service.OpenFolderInShell(Target);
             else
-                Process.Start("explorer.exe", $"/select,\"{Target}\"");
+                service.OpenFileInShell(Target);
         }
 
         public void TaskDeleteCommand()

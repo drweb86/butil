@@ -22,8 +22,7 @@
 
 ## Requirements
 
-- Microsoft Windows 10 or 11;
-- Igor Pavlov's 7-zip (part of installation).
+**Windows 10 or 11** or **Ubuntu 23.04**.
 
 ## [Documentation](https://github.com/drweb86/butil/tree/master/help)
 

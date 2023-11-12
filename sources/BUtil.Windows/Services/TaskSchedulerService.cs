@@ -64,7 +64,7 @@ namespace BUtil.Windows.Services
                 {
                     WorkingDirectory = Directories.BinariesDir,
                     Arguments = $"Task={taskName}",
-                    Path = Files.ConsoleBackupTool
+                    Path = WindowsSupportManager.ConsoleBackupTool
                 });
         }
 

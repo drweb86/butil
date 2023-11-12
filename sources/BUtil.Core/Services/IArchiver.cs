@@ -1,6 +1,6 @@
-﻿namespace BUtil.Core.Compression
+﻿namespace BUtil.Core.Services
 {
-    interface IArchiver
+    public interface IArchiver
     {
         bool Extract(
             string archive,

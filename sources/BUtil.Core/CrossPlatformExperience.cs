@@ -6,8 +6,12 @@ using BUtil.Core.Storages;
 
 namespace BUtil.Core
 {
-    public class CrossPlatformExperience
+    public abstract class CrossPlatformExperience
     {
+        public abstract ISupportManager GetSupportManager();
+        public abstract IArchiver GetArchiver(ILog log);
+        public abstract IFolderService GetFolderService();
+
         public virtual IMtpService? GetMtpService()
         {
             return null;

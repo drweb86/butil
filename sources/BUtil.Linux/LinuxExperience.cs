@@ -4,60 +4,60 @@ using BUtil.Core.Logs;
 using BUtil.Core.Options;
 using BUtil.Core.Services;
 using BUtil.Core.Storages;
-using BUtil.Windows.Services;
+using BUtil.Linux.Services;
 
 namespace BUtil.Windows
 {
-    public class WindowsExperience : CrossPlatformExperience
+    public class LinuxExperience : CrossPlatformExperience
     {
-        public override ISupportManager GetSupportManager()
-        {
-            return new WindowsSupportManager();
-        }
-
-        public override IFolderService GetFolderService()
-        {
-            return new WindowsFolderService();
-        }
-
         public override IMtpService? GetMtpService()
         {
-            return new MtpService();
+            return null;
         }
 
         public override IStorage? GetMtpStorage(ILog log, MtpStorageSettings storageSettings)
         {
-            return new MtpStorage(log, storageSettings);
+            return null;
         }
 
         public override ITaskSchedulerService? GetTaskSchedulerService()
         {
-            return new TaskSchedulerService();
+            return null;
         }
 
         public override IShowLogOnSystemLoginService? GetShowLogOnSystemLoginService()
         {
-            return new ShowLogOnSystemLoginService();
+            return null;
         }
 
         public override IWindowBlinkerService? GetWindowBlinkerService()
         {
-            return new WindowBlinkerService();
+            return null;
         }
 
         public override IOsSleepPreventionService? GetIOsSleepPreventionService()
         {
-            return new OsSleepPreventionService();
+            return null;
         }
 
         public override ISmbService? GetSmbService()
         {
-            return new SmbService();
+            return null;
         }
 
         public override IArchiver GetArchiver(ILog log)
         {
-            return new SevenZipArchiver(log);
+            return new AptGetSevenZipArchiver(log);
+        }
+
+        public override IFolderService GetFolderService()
+        {
+            return new LinuxFolderService();
+        }
+
+        public override ISupportManager GetSupportManager()
+        {
+            return new LinuxSupportManager();
         }
     }
 }

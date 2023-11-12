@@ -44,7 +44,7 @@ class Controller
                 var log = new ConsoleLog();
                 log.WriteLine(LoggingEvent.Debug, argument);
                 log.WriteLine(LoggingEvent.Error, Resources.CommandLineArguments_Invalid);
-                log.WriteLine(LoggingEvent.Debug, string.Format(Resources.CommandLineArguments_Help, SupportManager.GetLink(SupportRequest.Homepage)));
+                log.WriteLine(LoggingEvent.Debug, string.Format(Resources.CommandLineArguments_Help, ApplicationLinks.HomePage));
                 log.Close();
                 Environment.Exit(-1);
             }
@@ -54,7 +54,7 @@ class Controller
         {
             var log = new ConsoleLog();
             log.WriteLine(LoggingEvent.Error, Resources.CommandLineArguments_Invalid);
-            log.WriteLine(LoggingEvent.Debug, string.Format(Resources.CommandLineArguments_Help, SupportManager.GetLink(SupportRequest.Homepage)));
+            log.WriteLine(LoggingEvent.Debug, string.Format(Resources.CommandLineArguments_Help, ApplicationLinks.HomePage));
             log.Close();
             Environment.Exit(-1);
         }

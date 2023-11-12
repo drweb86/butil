@@ -1,11 +1,10 @@
-﻿using BUtil.Core.Logs;
+﻿using BUtil.Core.Compression;
+using BUtil.Core.Logs;
 using BUtil.Core.Misc;
-using System;
+using BUtil.Core.Services;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
 
-namespace BUtil.Core.Compression
+namespace BUtil.Windows.Services
 {
     class SevenZipArchiver : IArchiver
     {
