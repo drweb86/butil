@@ -1,11 +1,8 @@
 # 2023.11.12
 
 ## New Features
-- Linux aware 7-zip archiver.
-- Linux aware temp path support.
-- Linux aware folder/file, logs folder open.
-- Linux aware logs location.
-- Linux backup (only Folder, FTPS transports for now).
+- Ubuntu support preview (only Folder, FTPS transports for now, no poweroff switches, no pwsh support).
+Use binaries archive. Instructions are inside it. 
 
 ## Known Issues
 - On Ubuntu wrong folder for documents folder is returned. This will be fixed with upgrade to .Net 8 (see https://learn.microsoft.com/en-us/dotnet/core/compatibility/8.0 ).

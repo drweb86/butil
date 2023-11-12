@@ -422,7 +422,7 @@ namespace butil_ui.Controls
 
         private void AddLeaf(string relativePath, StorageFile storageFile, FileTreeNode sourceItemNode, SourceItemV2 sourceItem)
         {
-            string[] names = relativePath.Split(new char[] { '\\' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] names = relativePath.Split(new char[] { '\\', '/' }, StringSplitOptions.RemoveEmptyEntries);
             FileTreeNode? node = null;
             for (int i = 0; i < names.Length; i++)
             {
