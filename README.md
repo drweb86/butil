@@ -1,6 +1,6 @@
 # ![BUtil Logotype](./help/Assets/Logotype.png) BUtil
 
-> Backup your data.
+> Backup your data Windows, Linux.
 
 > Import photos from phone via WI-FI and more.
 
