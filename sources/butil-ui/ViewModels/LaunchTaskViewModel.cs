@@ -312,7 +312,7 @@ public class LaunchTaskViewModel : ViewModelBase
         _thread = new Thread(() =>
         {
             Thread.CurrentThread.IsBackground = true;
-            PlatformSpecificExperience.Instance.GetIOsSleepPreventionService()?.PreventSleep();
+            PlatformSpecificExperience.Instance.OsSleepPreventionService.PreventSleep();
             _threadTask?.Execute();
             Dispatcher.UIThread.Invoke(OnTaskCompleted);
         });
@@ -500,7 +500,7 @@ public class LaunchTaskViewModel : ViewModelBase
             }
 
             PlatformSpecificExperience.Instance.GetWindowBlinkerService()?.Blink();
-            PlatformSpecificExperience.Instance.GetIOsSleepPreventionService()?.StopPreventSleep();
+            PlatformSpecificExperience.Instance.OsSleepPreventionService.StopPreventSleep();
             return;
         }
 
@@ -511,7 +511,7 @@ public class LaunchTaskViewModel : ViewModelBase
                 ?.ShowLogOnSystemLoginService(_log.LogFilename);
         }
 
-        PlatformSpecificExperience.Instance.GetIOsSleepPreventionService()?.StopPreventSleep();
+        PlatformSpecificExperience.Instance.OsSleepPreventionService.StopPreventSleep();
         PlatformSpecificExperience.Instance.SessionService.DoTask(_selectedPowerTask);
         Environment.Exit(_log.HasErrors ? -1 : 0);
     }

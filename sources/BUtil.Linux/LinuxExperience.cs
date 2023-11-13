@@ -37,10 +37,7 @@ namespace BUtil.Windows
             return null;
         }
 
-        public override IOsSleepPreventionService? GetIOsSleepPreventionService()
-        {
-            return null;
-        }
+        public override IOsSleepPreventionService OsSleepPreventionService => new LinuxOsSleepPreventionService();
 
         public override ISmbService? GetSmbService()
         {
@@ -49,7 +46,7 @@ namespace BUtil.Windows
 
         public override IArchiver GetArchiver(ILog log)
         {
-            return new AptGetSevenZipArchiver(log);
+            return new LinuxAptGetArchiver(log);
         }
 
         public override IFolderService GetFolderService()

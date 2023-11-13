@@ -2,6 +2,7 @@
 
 ## New Features
 - Linux aware Power PC features.
+- Linux prevent sleep was implemented using systemd-inhibit.
 
 ## Bug Fixes
 - Linux Logs location was fixed.

@@ -20,7 +20,7 @@ namespace butil_ui.Controls
             _thread = new Thread(() =>
             {
                 Thread.CurrentThread.IsBackground = true;
-                PlatformSpecificExperience.Instance.GetIOsSleepPreventionService()?.PreventSleep();
+                PlatformSpecificExperience.Instance.OsSleepPreventionService.PreventSleep();
                 action(progress => Dispatcher.UIThread.Invoke(() => this.Progress = progress)).Wait();
             });
             _thread.Start();

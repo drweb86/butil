@@ -3,7 +3,7 @@ using BUtil.Core.Misc;
 using System;
 
 Console.OutputEncoding = System.Text.Encoding.UTF8;
-PlatformSpecificExperience.Instance.GetIOsSleepPreventionService()?.PreventSleep();
+PlatformSpecificExperience.Instance.OsSleepPreventionService.PreventSleep();
 
 Console.WriteLine(CopyrightInfo.Copyright);
 Console.WriteLine();

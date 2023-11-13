@@ -21,14 +21,14 @@ namespace BUtil.Linux.Services
 
         public void LaunchTask(string taskName)
 		{
-            Process.Start("dotnet", $"\"{UIApp}\" {TasksAppArguments.LaunchTask} \"{TasksAppArguments.RunTask}={taskName}\"");
+            Process.Start("systemd-inhibit", $"dotnet \"{UIApp}\" {TasksAppArguments.LaunchTask} \"{TasksAppArguments.RunTask}={taskName}\"");
         }
 
 		public void OpenRestorationApp(string? taskName = null)
 		{
 			if (string.IsNullOrWhiteSpace(taskName))
 			{
-				Process.Start("dotnet", $"\"{UIApp}\" {TasksAppArguments.Restore}");
+				Process.Start("systemd-inhibit", $"dotnet \"{UIApp}\" {TasksAppArguments.Restore}");
                 return;
 			}
 
@@ -37,11 +37,11 @@ namespace BUtil.Linux.Services
 
             if (task?.Model is IncrementalBackupModelOptionsV2)
             {
-                Process.Start("dotnet", $"\"{UIApp}\" {TasksAppArguments.Restore} \"{TasksAppArguments.RunTask}={taskName}\"");
+                Process.Start("systemd-inhibit", $"dotnet \"{UIApp}\" {TasksAppArguments.Restore} \"{TasksAppArguments.RunTask}={taskName}\"");
             }
             else
             {
-                Process.Start("dotnet", $"\"{UIApp}\" {TasksAppArguments.Restore}");
+                Process.Start("systemd-inhibit", $"dotnet \"{UIApp}\" {TasksAppArguments.Restore}");
             }
         }
 

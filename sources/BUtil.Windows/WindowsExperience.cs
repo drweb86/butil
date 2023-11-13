@@ -47,10 +47,7 @@ namespace BUtil.Windows
             return new WindowBlinkerService();
         }
 
-        public override IOsSleepPreventionService? GetIOsSleepPreventionService()
-        {
-            return new OsSleepPreventionService();
-        }
+        public override IOsSleepPreventionService OsSleepPreventionService => new WindowsOsSleepPreventionService();
 
         public override ISmbService? GetSmbService()
         {

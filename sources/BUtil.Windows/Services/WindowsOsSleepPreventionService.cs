@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace BUtil.Windows.Services
 {
-    internal class OsSleepPreventionService: IOsSleepPreventionService
+    internal class WindowsOsSleepPreventionService: IOsSleepPreventionService
     {
         public void PreventSleep()
         {

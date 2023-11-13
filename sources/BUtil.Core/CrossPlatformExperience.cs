@@ -38,10 +38,7 @@ namespace BUtil.Core
             return null;
         }
 
-        public virtual IOsSleepPreventionService? GetIOsSleepPreventionService()
-        {
-            return null;
-        }
+        public abstract IOsSleepPreventionService OsSleepPreventionService { get; }
 
         public virtual ISmbService? GetSmbService()
         {

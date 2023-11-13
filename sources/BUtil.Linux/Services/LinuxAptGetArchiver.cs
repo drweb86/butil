@@ -6,20 +6,20 @@ using System.Diagnostics;
 
 namespace BUtil.Linux.Services
 {
-    class AptGetSevenZipArchiver : IArchiver
+    class LinuxAptGetArchiver : IArchiver
     {
         private readonly ILog _log;
         private static readonly string? _sevenZipFolder;
         private static readonly string? _sevenZipPacker;
 
-        static AptGetSevenZipArchiver()
+        static LinuxAptGetArchiver()
         {
             _sevenZipFolder = Resolve7ZipDirectory();
             if (_sevenZipFolder != null)
                 _sevenZipPacker = Path.Combine(_sevenZipFolder, "7zz");
         }
 
-        internal AptGetSevenZipArchiver(ILog log) 
+        internal LinuxAptGetArchiver(ILog log) 
         {
             _log = log;
         }
