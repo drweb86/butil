@@ -8,6 +8,7 @@ namespace BUtil.Core
 {
     public abstract class CrossPlatformExperience
     {
+        public abstract ISessionService SessionService { get; }
         public abstract ISupportManager GetSupportManager();
         public abstract IArchiver GetArchiver(ILog log);
         public abstract IFolderService GetFolderService();

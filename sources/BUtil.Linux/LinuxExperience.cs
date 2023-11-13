@@ -10,6 +10,8 @@ namespace BUtil.Windows
 {
     public class LinuxExperience : CrossPlatformExperience
     {
+        public override ISessionService SessionService => new LinuxSessionService();
+
         public override IMtpService? GetMtpService()
         {
             return null;

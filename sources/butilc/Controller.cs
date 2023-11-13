@@ -5,6 +5,7 @@ using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Localization;
 using BUtil.Core.BackupModels;
+using BUtil.Core;
 
 class Controller
 {
@@ -89,6 +90,6 @@ class Controller
         {
             log.Close();
         }
-        PowerPC.DoTask(_powerTask);
+        PlatformSpecificExperience.Instance.SessionService.DoTask(_powerTask);
     }
 }

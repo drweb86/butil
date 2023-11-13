@@ -12,7 +12,7 @@ namespace BUtil.Linux.Services
             ProcessHelper.Execute("xdg-user-dir", "DOWNLOAD", null, false, ProcessPriorityClass.Normal, out var stdOutput, out var stdError, out var returnCode);
             if (returnCode != 0)
                 throw new Exception("Cannot locate Download folder at your system" + stdError);
-
+            stdOutput = stdOutput.TrimEnd('\r', '\n');
             LogsFolder = Path.Combine(stdOutput, "BUtil", "Logs", "v2");
             if (!Directory.Exists(LogsFolder))
                 Directory.CreateDirectory(LogsFolder);

@@ -512,7 +512,7 @@ public class LaunchTaskViewModel : ViewModelBase
         }
 
         PlatformSpecificExperience.Instance.GetIOsSleepPreventionService()?.StopPreventSleep();
-        PowerPC.DoTask(_selectedPowerTask);
+        PlatformSpecificExperience.Instance.SessionService.DoTask(_selectedPowerTask);
         Environment.Exit(_log.HasErrors ? -1 : 0);
     }
 

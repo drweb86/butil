@@ -10,6 +10,8 @@ namespace BUtil.Windows
 {
     public class WindowsExperience : CrossPlatformExperience
     {
+        public override ISessionService SessionService => new WindowsSessionService();
+
         public override ISupportManager GetSupportManager()
         {
             return new WindowsSupportManager();

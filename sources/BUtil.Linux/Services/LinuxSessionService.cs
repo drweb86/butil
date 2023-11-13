@@ -1,11 +1,12 @@
-﻿using System;
+﻿using BUtil.Core.Misc;
+using BUtil.Core.Services;
 using System.Diagnostics;
 
-namespace BUtil.Core.Misc
+namespace BUtil.Linux.Services
 {
-	public static class PowerPC
-	{
-		public static void DoTask(PowerTask task)
+	public class LinuxSessionService: ISessionService
+    {
+		public void DoTask(PowerTask task)
         {
             switch (task)
             {
@@ -29,17 +30,17 @@ namespace BUtil.Core.Misc
 		
 		private static void Restart()
 		{
-            Process.Start("shutdown", "-r -t 0");
+            Process.Start("systemctl", "reboot");
         }
 
 		private static void Shutdown()
 		{
-            Process.Start("shutdown", "-s -t 0");
+            Process.Start("systemctl", "poweroff");
 		}
 
 		private static void LogOff()
 		{
-            Process.Start("shutdown", "-I -t 0");
+            Process.Start("gnome-session-quit", "--logout --no-prompt");
 		}
 
 		#endregion

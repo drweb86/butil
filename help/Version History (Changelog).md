@@ -1,3 +1,11 @@
+# 2023.11.13
+
+## New Features
+- Linux aware Power PC features.
+
+## Bug Fixes
+- Linux Logs location was fixed.
+
 # 2023.11.12
 
 ## New Features
