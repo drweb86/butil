@@ -5,6 +5,7 @@ using BUtil.Core.Options;
 using BUtil.Core.Services;
 using BUtil.Core.Storages;
 using BUtil.Linux.Services;
+using BUtil.Windows.Services;
 
 namespace BUtil.Windows
 {
@@ -32,10 +33,7 @@ namespace BUtil.Windows
             return null;
         }
 
-        public override IWindowBlinkerService? GetWindowBlinkerService()
-        {
-            return null;
-        }
+        public override IUiService UiService => new LinuxUiService();
 
         public override IOsSleepPreventionService OsSleepPreventionService => new LinuxOsSleepPreventionService();
 

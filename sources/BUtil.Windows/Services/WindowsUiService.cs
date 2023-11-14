@@ -4,8 +4,10 @@ using System.Runtime.InteropServices;
 
 namespace BUtil.Windows.Services
 {
-    class WindowBlinkerService : IWindowBlinkerService
+    class WindowsUiService : IUiService
     {
+        public bool CanExtendClientAreaToDecorationsHint => true;
+
         public void Blink()
         {
             FlashWindow.Flash(10);

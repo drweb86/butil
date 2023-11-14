@@ -33,10 +33,7 @@ namespace BUtil.Core
             return null;
         }
 
-        public virtual IWindowBlinkerService? GetWindowBlinkerService()
-        {
-            return null;
-        }
+        public abstract IUiService UiService { get; }
 
         public abstract IOsSleepPreventionService OsSleepPreventionService { get; }
 

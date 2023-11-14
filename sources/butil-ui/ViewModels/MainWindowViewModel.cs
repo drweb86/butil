@@ -14,6 +14,8 @@ namespace butil_ui.ViewModels;
 
 public partial class MainWindowViewModel : ViewModelBase
 {
+    public bool CanExtendClientAreaToDecorationsHint => PlatformSpecificExperience.Instance.UiService.CanExtendClientAreaToDecorationsHint;
+
     public string Theme_Value_Dark => Resources.Theme_Value_Dark;
 
     public string Theme_Value_Light => Resources.Theme_Value_Light;

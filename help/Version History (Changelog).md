@@ -2,11 +2,13 @@
 
 ## New Features
 - Linux aware Power PC features.
-- Linux prevent sleep was implemented using systemd-inhibit.
-- Linux support for powershell mount and unmount script.
+- Linux aware sleep prevention during task/restore.
+- Linux aware powershell mount/unmount script.
+- Linux aware Window header.
 
 ## Bug Fixes
 - Linux Logs location was fixed.
+- Linux set process priority fails sometimes.
 
 # 2023.11.12
 

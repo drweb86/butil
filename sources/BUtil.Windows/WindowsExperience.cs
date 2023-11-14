@@ -39,10 +39,7 @@ namespace BUtil.Windows
             return new ShowLogOnSystemLoginService();
         }
 
-        public override IWindowBlinkerService? GetWindowBlinkerService()
-        {
-            return new WindowBlinkerService();
-        }
+        public override IUiService UiService => new WindowsUiService();
 
         public override IOsSleepPreventionService OsSleepPreventionService => new WindowsOsSleepPreventionService();
 

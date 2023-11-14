@@ -40,7 +40,19 @@ namespace BUtil.Core.Misc
                 process.StartInfo.RedirectStandardInput = true;
             }
             process.Start();
-            process.PriorityClass = processPriority;
+
+            if (processPriority != ProcessPriorityClass.Normal)
+            {
+                try
+                {
+                    process.PriorityClass = processPriority;
+                }
+                catch
+                {
+                    // eating
+                }
+            }
+
             if (sendNewLine)
             {
                 try

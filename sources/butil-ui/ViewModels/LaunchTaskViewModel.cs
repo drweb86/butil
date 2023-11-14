@@ -499,7 +499,7 @@ public class LaunchTaskViewModel : ViewModelBase
                 ProcessHelper.ShellExecute(_log.LogFilename);
             }
 
-            PlatformSpecificExperience.Instance.GetWindowBlinkerService()?.Blink();
+            PlatformSpecificExperience.Instance.UiService.Blink();
             PlatformSpecificExperience.Instance.OsSleepPreventionService.StopPreventSleep();
             return;
         }

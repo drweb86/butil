@@ -15,7 +15,7 @@
 		MinWidth="320"
 		MinHeight="320"
 		WindowStartupLocation="CenterScreen"
-		ExtendClientAreaToDecorationsHint="True"
+		ExtendClientAreaToDecorationsHint="{Binding CanExtendClientAreaToDecorationsHint}"
 		Title="{Binding CurrentPage.WindowTitle}"
 		Background="{Binding HeaderBackground}">
 	<Grid
@@ -29,7 +29,7 @@
 		</Grid.RowDefinitions>
 		<StackPanel Grid.Row="0" Orientation="Horizontal">
 			<Menu>
-				<MenuItem Command="{Binding GoToWebsiteCommand}">
+				<MenuItem Command="{Binding GoToWebsiteCommand}" IsVisible="{Binding CanExtendClientAreaToDecorationsHint}">
 					<MenuItem.Header>
 						<StackPanel Orientation="Horizontal">
 							<Image Width="16" Height="16" Source="/Assets/butil.ico" VerticalAlignment="Center" />
