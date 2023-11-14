@@ -3,7 +3,7 @@ using System.IO;
 
 namespace BUtil.Core.FileSystem
 {
-    internal class TempFolder: IDisposable
+    public class TempFolder: IDisposable
     {
         public string Folder { get; private set; }
 

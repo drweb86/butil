@@ -50,8 +50,7 @@ namespace butil_ui.Controls
 
         public void TaskLaunchCommand()
         {
-            PlatformSpecificExperience.Instance
-                .GetSupportManager()
+            PlatformSpecificExperience.Instance.SupportManager
                 .LaunchTask(Name);
         }
 
@@ -70,8 +69,7 @@ namespace butil_ui.Controls
 
         public void TaskRestoreCommand()
         {
-            PlatformSpecificExperience.Instance
-                .GetSupportManager()
+            PlatformSpecificExperience.Instance.SupportManager
                 .OpenRestorationApp(Name);
         }
 

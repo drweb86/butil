@@ -95,7 +95,7 @@ namespace butil_ui.Controls
 
         public async Task MountTaskLaunchCommand()
         {
-            if (PowershellProcessHelper.Execute(new StubLog(), this.FolderConnectionScript))
+            if (PlatformSpecificExperience.Instance.SupportManager.LaunchPowershell(new StubLog(), this.FolderConnectionScript))
                 await Messages.ShowInformationBox(Resources.DataStorage_Field_DisconnectionScript_Ok);
             else
                 await Messages.ShowErrorBox(Resources.DataStorage_Field_DisconnectionScript_Bad);
@@ -103,7 +103,7 @@ namespace butil_ui.Controls
 
         public async Task UnmountTaskLaunchCommand()
         {
-            if (PowershellProcessHelper.Execute(new StubLog(), this.FolderDisconnectionScript))
+            if (PlatformSpecificExperience.Instance.SupportManager.LaunchPowershell(new StubLog(), this.FolderDisconnectionScript))
                 await Messages.ShowInformationBox(Resources.DataStorage_Field_DisconnectionScript_Ok);
             else
                 await Messages.ShowErrorBox(Resources.DataStorage_Field_DisconnectionScript_Bad);

@@ -54,9 +54,6 @@ namespace BUtil.Windows
             return new LinuxFolderService();
         }
 
-        public override ISupportManager GetSupportManager()
-        {
-            return new LinuxSupportManager();
-        }
+        public override ISupportManager SupportManager => new LinuxSupportManager();
     }
 }

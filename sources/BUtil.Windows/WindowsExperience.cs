@@ -12,10 +12,7 @@ namespace BUtil.Windows
     {
         public override ISessionService SessionService => new WindowsSessionService();
 
-        public override ISupportManager GetSupportManager()
-        {
-            return new WindowsSupportManager();
-        }
+        public override ISupportManager SupportManager => new WindowsSupportManager();
 
         public override IFolderService GetFolderService()
         {

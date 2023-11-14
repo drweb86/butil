@@ -85,7 +85,7 @@ namespace butil_ui.Controls.UpdateCheckExpander
         public void OpenLatestReleaseCommand()
         {
             PlatformSpecificExperience.Instance
-                .GetSupportManager()
+                .SupportManager
                 .OpenLatestRelease();
         }
 

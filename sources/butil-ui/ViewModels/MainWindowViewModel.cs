@@ -25,7 +25,7 @@ public partial class MainWindowViewModel : ViewModelBase
         new SettingsStoreService()
             .Save(ThemeSetting.Name, ThemeSetting.DarkValue);
         PlatformSpecificExperience.Instance
-                .GetSupportManager()
+                .SupportManager
                 .LaunchTasksApp();
         Environment.Exit(0);
     }
@@ -35,7 +35,7 @@ public partial class MainWindowViewModel : ViewModelBase
         new SettingsStoreService()
             .Save(ThemeSetting.Name, ThemeSetting.LightValue);
         PlatformSpecificExperience.Instance
-                .GetSupportManager()
+                .SupportManager
                 .LaunchTasksApp();
         Environment.Exit(0);
     }
@@ -52,7 +52,7 @@ public partial class MainWindowViewModel : ViewModelBase
     public void RestoreCommand()
     {
         PlatformSpecificExperience.Instance
-                .GetSupportManager()
+                .SupportManager
                 .OpenRestorationApp();
     }
 
@@ -64,7 +64,7 @@ public partial class MainWindowViewModel : ViewModelBase
     public void GoToWebsiteCommand()
     {
         PlatformSpecificExperience.Instance
-                .GetSupportManager()
+                .SupportManager
                 .OpenHomePage();
     }
 

@@ -3,6 +3,7 @@
 ## New Features
 - Linux aware Power PC features.
 - Linux prevent sleep was implemented using systemd-inhibit.
+- Linux support for powershell mount and unmount script.
 
 ## Bug Fixes
 - Linux Logs location was fixed.

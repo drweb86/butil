@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "butil-ui.Desktop", "butil-u
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BUtil.Windows", "BUtil.Windows\BUtil.Windows.csproj", "{19FCE4E6-E0CD-41EB-9ACC-3619DFC97A46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BUtil.Linux", "BUtil.Linux\BUtil.Linux.csproj", "{C37AE99C-24D6-4B7F-8939-B8F6BA87BCFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BUtil.Linux", "BUtil.Linux\BUtil.Linux.csproj", "{C37AE99C-24D6-4B7F-8939-B8F6BA87BCFB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

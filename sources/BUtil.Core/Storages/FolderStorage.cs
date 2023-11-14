@@ -48,7 +48,7 @@ namespace BUtil.Core.Storages
             Log.WriteLine(LoggingEvent.Debug, $"Mount");
             if (!string.IsNullOrWhiteSpace(this.Settings.MountPowershellScript))
             {
-                if (!PowershellProcessHelper.Execute(Log, this.Settings.MountPowershellScript))
+                if (!PlatformSpecificExperience.Instance.SupportManager.LaunchPowershell(Log, this.Settings.MountPowershellScript))
                     throw new InvalidOperationException($"Cannot mount");
             }
         }
@@ -58,7 +58,7 @@ namespace BUtil.Core.Storages
             Log.WriteLine(LoggingEvent.Debug, $"Unmount");
             if (!string.IsNullOrWhiteSpace(this.Settings.UnmountPowershellScript))
             {
-                if (!PowershellProcessHelper.Execute(Log, this.Settings.UnmountPowershellScript))
+                if (!PlatformSpecificExperience.Instance.SupportManager.LaunchPowershell(Log, this.Settings.UnmountPowershellScript))
                     throw new InvalidOperationException($"Cannot unmount");
             }
         }
