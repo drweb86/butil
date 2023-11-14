@@ -11,7 +11,7 @@ namespace BUtil.Core.Storages
             if (storageSettings is FolderStorageSettingsV2)
                 return new FailoverStorageWrapper(log, new FolderStorage(log, (FolderStorageSettingsV2)storageSettings));
             else if (storageSettings is SambaStorageSettingsV2)
-                return new FailoverStorageWrapper(log, new SambaStorage(log, (SambaStorageSettingsV2)storageSettings));
+                return new FailoverStorageWrapper(log, PlatformSpecificExperience.Instance.GetSmbStorage(log, (SambaStorageSettingsV2)storageSettings));
             else if (storageSettings is FtpsStorageSettingsV2)
                 return new FailoverStorageWrapper(log, new FtpsStorage(log, (FtpsStorageSettingsV2)storageSettings));
             else if (storageSettings is MtpStorageSettings)

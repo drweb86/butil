@@ -1,17 +1,15 @@
-﻿
-using System;
-using System.IO;
-using System.Linq;
-using System.Security;
+﻿using System.Security;
 using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
+using BUtil.Core.Storages;
 
-namespace BUtil.Core.Storages
+namespace BUtil.Linux.Services
 {
-    class SambaStorage : StorageBase<SambaStorageSettingsV2>
+    class LinuxSambaStorage : StorageBase<SambaStorageSettingsV2>
     {
-        internal SambaStorage(ILog log, SambaStorageSettingsV2 settings)
+        internal LinuxSambaStorage(ILog log, SambaStorageSettingsV2 settings)
             : base(log, settings)
         {
             if (string.IsNullOrWhiteSpace(Settings.Url))
@@ -91,7 +89,7 @@ namespace BUtil.Core.Storages
         public override string? Test()
         {
             if (!Directory.Exists(Settings.Url))
-                return string.Format(Localization.Resources.DirectoryStorage_Field_Directory_Validation_NotFound, Settings.Url); ;
+                return string.Format(Resources.DirectoryStorage_Field_Directory_Validation_NotFound, Settings.Url); ;
 
             return null;
         }

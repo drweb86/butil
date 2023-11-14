@@ -10,6 +10,11 @@ namespace BUtil.Windows
 {
     public class WindowsExperience : CrossPlatformExperience
     {
+        public override IStorage GetSmbStorage(ILog log, SambaStorageSettingsV2 settings)
+        {
+            return new WindowsSambaStorage(log, settings);
+        }
+
         public override ISessionService SessionService => new WindowsSessionService();
 
         public override ISupportManager SupportManager => new WindowsSupportManager();
@@ -42,11 +47,6 @@ namespace BUtil.Windows
         public override IUiService UiService => new WindowsUiService();
 
         public override IOsSleepPreventionService OsSleepPreventionService => new WindowsOsSleepPreventionService();
-
-        public override ISmbService? GetSmbService()
-        {
-            return new SmbService();
-        }
 
         public override IArchiver GetArchiver(ILog log)
         {

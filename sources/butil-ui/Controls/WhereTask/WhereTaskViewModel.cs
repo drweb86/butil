@@ -22,9 +22,7 @@ namespace butil_ui.Controls
             Title = title;
             IconSource = LoadFromResource(new Uri("avares://butil-ui" + iconUrl));
             TransportSource.Add(DirectoryStorage);
-            var samba = PlatformSpecificExperience.Instance.GetSmbService();
-            if (samba != null)
-                TransportSource.Add(Smb);
+            TransportSource.Add(Smb);
             TransportSource.Add(Ftps);
 
             var mtp = PlatformSpecificExperience.Instance.GetMtpService();
@@ -42,7 +40,7 @@ namespace butil_ui.Controls
             }
 
             var sambaStorageSettingsV2 = storageSettings as SambaStorageSettingsV2;
-            if (sambaStorageSettingsV2 != null && samba != null)
+            if (sambaStorageSettingsV2 != null)
             {
                 Transport = Smb;
                 Quota = sambaStorageSettingsV2.SingleBackupQuotaGb;

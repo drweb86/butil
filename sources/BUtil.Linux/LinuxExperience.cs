@@ -11,6 +11,11 @@ namespace BUtil.Windows
 {
     public class LinuxExperience : CrossPlatformExperience
     {
+        public override IStorage GetSmbStorage(ILog log, SambaStorageSettingsV2 settings)
+        {
+            return new LinuxSambaStorage(log, settings);
+        }
+
         public override ISessionService SessionService => new LinuxSessionService();
 
         public override IMtpService? GetMtpService()
@@ -36,11 +41,6 @@ namespace BUtil.Windows
         public override IUiService UiService => new LinuxUiService();
 
         public override IOsSleepPreventionService OsSleepPreventionService => new LinuxOsSleepPreventionService();
-
-        public override ISmbService? GetSmbService()
-        {
-            return null;
-        }
 
         public override IArchiver GetArchiver(ILog log)
         {

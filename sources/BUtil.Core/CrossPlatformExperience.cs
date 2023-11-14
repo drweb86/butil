@@ -37,9 +37,6 @@ namespace BUtil.Core
 
         public abstract IOsSleepPreventionService OsSleepPreventionService { get; }
 
-        public virtual ISmbService? GetSmbService()
-        {
-            return null;
-        }
+        public abstract IStorage GetSmbStorage(ILog log, SambaStorageSettingsV2 settings);
     }
 }
