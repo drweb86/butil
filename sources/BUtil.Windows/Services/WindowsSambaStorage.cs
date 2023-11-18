@@ -4,6 +4,7 @@ using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Storages;
+using BUtil.Windows.Utils;
 
 namespace BUtil.Windows.Services
 {
@@ -73,7 +74,7 @@ namespace BUtil.Windows.Services
                 ? @$"net use ""{Settings.Url}"""
                 : @$"net use ""{Settings.Url}"" ""/user:{Settings.User}"" ""{Settings.Password}""";
 
-            if (!CmdProcessHelper.Execute(Log, command))
+            if (!WindowsCmdProcessHelper.Execute(Log, command))
                 throw new InvalidOperationException($"Cannot mount");
         }
 
@@ -82,7 +83,7 @@ namespace BUtil.Windows.Services
             Log.WriteLine(LoggingEvent.Debug, $"Unmount");
 
             var command = @$"net use ""{Settings.Url}"" /delete /y";
-            if (!CmdProcessHelper.Execute(Log, command))
+            if (!WindowsCmdProcessHelper.Execute(Log, command))
                 throw new InvalidOperationException($"Cannot unmount");
         }
 

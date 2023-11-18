@@ -60,21 +60,24 @@ namespace BUtil.Core.TasksTree.Storage
                 return;
             }
 
-            using (var tempFolder = new TempFolder())
+            try
             {
-                var powershellFile = Path.Combine(tempFolder.Folder, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Ps1);
-                File.WriteAllText(powershellFile, GetPowershellScriptContent());
-                storage.Upload(powershellFile, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Ps1);
-                File.Delete(powershellFile);
+                using (var tempFolder = new TempFolder())
+                {
+                    var powershellFile = Path.Combine(tempFolder.Folder, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Ps1);
+                    File.WriteAllText(powershellFile, GetPowershellScriptContent());
+                    storage.Upload(powershellFile, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Ps1);
+                    File.Delete(powershellFile);
+                    IsSuccess = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                LogError("Failed to upload integrity verification script");
+                LogError(ex.Message);
+                IsSuccess = false;
             }
 
-            // TBD: 
-            //var tempFile = Path.GetRandomFileName();
-            //File.WriteAllText(tempFile, string.Empty);
-            //storage.Upload(tempFile, BUtil.Core.Localization.Resources.IntegrityVerificationScriptSh);
-            //File.Delete(tempFile);
-            
-            IsSuccess = true;
             UpdateStatus(ProcessingStatus.FinishedSuccesfully);
         }
 

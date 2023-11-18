@@ -9,9 +9,9 @@ using BUtil.Core.Misc;
 
 namespace BUtil.Core.Storages
 {
-    class FolderStorage : StorageBase<FolderStorageSettingsV2>
+    public class FolderStorage : StorageBase<FolderStorageSettingsV2>
     {
-        internal FolderStorage(ILog log, FolderStorageSettingsV2 settings)
+        public FolderStorage(ILog log, FolderStorageSettingsV2 settings)
             : base(log, settings)
         {
             if (string.IsNullOrWhiteSpace(Settings.DestinationFolder))

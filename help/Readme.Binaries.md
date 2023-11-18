@@ -44,11 +44,9 @@ b. Reboot.
 UI executable is **bin\butil-ui.Desktop.dll**. To launch do the following steps:
 
 a. Open **Terminal**.
-b. Change current directory to package **bin** folder.
-b. Execute `dotnet ./butil-ui.Desktop.dll`.
+b. Execute `dotnet ./bin/butil-ui.Desktop.dll &`.
 
 Console executable is **bin\butilc.dll**. To launch do the following steps:
 
 a. Open **Terminal**.
-b. Change current directory to package **bin** folder.
-b. Execute `dotnet ./butilc.dll`.
+b. Execute `dotnet ./bin/butilc.dll`.

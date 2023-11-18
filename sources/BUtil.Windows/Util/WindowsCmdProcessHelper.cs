@@ -1,10 +1,11 @@
 ﻿
 using BUtil.Core.Logs;
+using BUtil.Core.Misc;
 using System.Diagnostics;
 
-namespace BUtil.Core.Misc
+namespace BUtil.Windows.Utils
 {
-    public static class CmdProcessHelper
+    public static class WindowsCmdProcessHelper
     {
         public static bool Execute(ILog log, string command)
         {

@@ -5,10 +5,15 @@
 - Linux aware sleep prevention during task/restore.
 - Linux aware powershell mount/unmount script.
 - Linux aware Window header.
+- Linux aware SAMBA transport.
+
+## Changes
+- Linux console commands.
 
 ## Bug Fixes
 - Linux Logs location was fixed.
 - Linux set process priority fails sometimes.
+- Integrity verification scripts task error crashed application.
 
 # 2023.11.12
 
