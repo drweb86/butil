@@ -2,11 +2,11 @@
 
 ## New Features
 - Upgrade to .Net 8.
-- Linux aware Power PC features.
-- Linux aware sleep prevention during task/restore.
-- Linux aware powershell mount/unmount script.
-- Linux aware Window header.
-- Linux aware SAMBA transport.
+- Linux Power PC feature support.
+- Linux sleep prevention during task/restore support.
+- Linux powershell mount/unmount script support.
+- Linux Window header.
+- Linux SAMBA transport.
 
 ## Changes
 - Linux console commands.
