@@ -1,6 +1,7 @@
-# 2023.11.13
+# 2023.11.18
 
 ## New Features
+- Upgrade to .Net 8.
 - Linux aware Power PC features.
 - Linux aware sleep prevention during task/restore.
 - Linux aware powershell mount/unmount script.

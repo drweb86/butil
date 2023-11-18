@@ -11,12 +11,6 @@ namespace BUtil.Core.Logs
 		
 		}
 
-		private LogException(SerializationInfo info, StreamingContext context)
-			: base(info, context)
-		{ 
-		
-		}
-
 
 		public LogException(string message)
 			: base(message)

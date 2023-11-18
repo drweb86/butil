@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-	<TargetFramework>net7.0</TargetFramework>
+	<TargetFramework>net8.0</TargetFramework>
     <OutputType>Library</OutputType>
 	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 	<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
@@ -28,8 +28,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="FluentFTP" Version="48.0.0" />
-    <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="7.0.0" />
+    <PackageReference Include="FluentFTP" Version="48.0.3" />
+    <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="8.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Extensions.FileSystemGlobbing">
@@ -45,9 +45,9 @@
   </ItemGroup>
   <PropertyGroup>
     <PreBuildEvent>
-		xcopy "%userprofile%\.nuget\packages\microsoft.extensions.filesystemglobbing\7.0.0\lib\net7.0" "$(SolutionDir)..\Output\BUtil\bin" /Y
+		xcopy "%userprofile%\.nuget\packages\microsoft.extensions.filesystemglobbing\8.0.0\lib\net8.0" "$(SolutionDir)..\Output\BUtil\bin" /Y
 		xcopy "%userprofile%\.nuget\packages\nstack.core\1.0.7\lib\netstandard2.0" "$(SolutionDir)..\Output\BUtil\bin" /Y
-		xcopy "%userprofile%\.nuget\packages\fluentftp\48.0.0\lib\net6.0" "$(SolutionDir)..\Output\BUtil\bin" /Y
+		xcopy "%userprofile%\.nuget\packages\fluentftp\48.0.3\lib\net6.0" "$(SolutionDir)..\Output\BUtil\bin" /Y
 	</PreBuildEvent>
   </PropertyGroup>
 </Project>
