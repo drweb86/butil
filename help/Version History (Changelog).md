@@ -1,3 +1,11 @@
+# 2023.11.19
+
+## New Features
+- Log format was changed to text, because in Linux browser cannot open html files located outside of Download folder. And this folder is not a good choice for logs. Since statuses of backups are calculated based on logs location, it will be undefined until next backup.
+
+## Changes
+- Ubuntu logs were relocated to ```~/.config/BUtil/Logs/v3``` .
+
 # 2023.11.18
 
 ## New Features

@@ -102,10 +102,13 @@ namespace BUtil.Windows.Services
                     out var returnCode);
 
                 var isSuccess = returnCode == 0;
-                if (!string.IsNullOrWhiteSpace(stdOutput))
-                    log.LogProcessOutput(stdOutput, isSuccess);
-                if (!string.IsNullOrWhiteSpace(stdError))
-                    log.LogProcessOutput(stdError, isSuccess);
+                if (!isSuccess)
+                {
+                    if (!string.IsNullOrWhiteSpace(stdOutput))
+                        log.LogProcessOutput(stdOutput, isSuccess);
+                    if (!string.IsNullOrWhiteSpace(stdError))
+                        log.LogProcessOutput(stdError, isSuccess);
+                }
                 if (isSuccess)
                     log.WriteLine(LoggingEvent.Debug, "Unpack successfull.");
                 if (!isSuccess)

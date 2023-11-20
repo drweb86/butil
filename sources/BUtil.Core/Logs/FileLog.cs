@@ -51,15 +51,9 @@ namespace BUtil.Core.Logs
 		{
 			try
 			{
-                File.WriteAllText(_fileName, 
-@$"<!DOCTYPE HTML PUBLIC ""-//W3C//DTD HTML 4.0 Transitional//EN"">
-<html>
-    <head>
-	    <META HTTP-EQUIV=""CONTENT-TYPE"" CONTENT=""text/html; charset=utf-8"">
-	    <TITLE>{_dateTime.ToString("f", CultureInfo.CurrentUICulture)}</TITLE>
-    </head>
-    <body>
-    <p>{LocalsHelper.ToString(Events.ProcessingStatus.FinishedSuccesfully)}{LocalsHelper.ToString(Events.ProcessingStatus.FinishedWithErrors)}</p>");
+                File.WriteAllText(
+                    _fileName, 
+                    @$"{_dateTime.ToString("f", CultureInfo.CurrentUICulture)} {LocalsHelper.ToString(Events.ProcessingStatus.FinishedSuccesfully)}{LocalsHelper.ToString(Events.ProcessingStatus.FinishedWithErrors)}\n");
 				_logFile = File.AppendText(_fileName);
 			}
 			catch (Exception e)
@@ -84,7 +78,7 @@ namespace BUtil.Core.Logs
 
             PreprocessLoggingInformation(loggingEvent);
 
-            string output = HtmlLogFormatter.GetHtmlFormattedLogMessage(loggingEvent, message);
+            string output = LogFormatter.GetFormattedMessage(loggingEvent, message);
             WriteInFile(output);
             if (loggingEvent == LoggingEvent.Error)
                 lock (_logFile)
@@ -101,9 +95,6 @@ namespace BUtil.Core.Logs
                     WriteInFile(Resources.Task_Status_Succesfull);
                 }
                 
-                WriteInFile("</body>");
-				WriteInFile("</html>");
-
                 _logFile.Flush();
                 _logFile.Close();
 

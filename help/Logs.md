@@ -3,11 +3,11 @@
 When task launch fails, you can see reasons why it failed in logs.
 Logs are collected for task execution.
 All apps that execute tasks write logs.
-Logs are in HTML format.
+Logs are in txt format.
 
 Logs are located in 
-- Windows: ```%appdata%\Butil\Logs\v2``` ,
-- Linux: ```<Download folder>\Butil\Logs\v2``` .
+- Windows: ```%appdata%\Butil\Logs\v3``` ,
+- Linux: ```~/.config/BUtil/Logs/v3``` .
 
 You can change logs location by creating a create symbolic links.
 
@@ -26,8 +26,5 @@ If any errors or warnings occur during task execution, program will attempt to o
 ## Amount of information in logs is reduced
 It was part of an effort to reduce log sizes. That's why while everything is OK, not many information is logged. During opening log from hard drive browser cannot load its fully.
 
-## HTML format of logs
-Since text editor does not work normally with huge logs and for making colors for errors, html format is used.
-
-## Linux logs storage
-Logs are located in Downloads folder, because Firefox snap has no access to other folders.
+## TXT format of logs, not HTML anymore
+Main reason is poor support by Linux of html files outside of Downloads folder (no access). Amount of information was reduced to support Windows notepad editor. Colors present in log because of Unicode colored chars.

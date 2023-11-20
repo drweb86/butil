@@ -44,11 +44,9 @@ public partial class MainWindowViewModel : ViewModelBase
 
     public void OpenLogsCommand()
     {
-        var logs = PlatformSpecificExperience.Instance.GetFolderService().LogsFolder;
-
         PlatformSpecificExperience.Instance
                 .GetFolderService()
-                .OpenFolderInShell(logs);
+                .OpenFolderInShell(Directories.LogsFolder);
     }
 
     public void RestoreCommand()

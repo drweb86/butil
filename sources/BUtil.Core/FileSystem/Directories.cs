@@ -32,9 +32,14 @@ namespace BUtil.Core.FileSystem
                 Directory.CreateDirectory(path);
         }
 
+        public static string LogsFolder { get; }
+
         static Directories()
         {
             CreateDirectory(_userDataFolder);
+            LogsFolder = Path.Combine(Directories.UserDataFolder, "Logs", "v3");
+            if (!Directory.Exists(LogsFolder))
+                Directory.CreateDirectory(LogsFolder);
         }
 	}
 }

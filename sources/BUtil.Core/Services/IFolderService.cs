@@ -4,6 +4,5 @@
     {
         void OpenFolderInShell(string folder);
         void OpenFileInShell(string file);
-        string LogsFolder { get; }
     }
 }
