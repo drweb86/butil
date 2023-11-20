@@ -10,26 +10,33 @@ namespace BUtil.Linux.Services
 {
 	public class LinuxSupportManager: ISupportManager
     {
-        public static readonly string UIApp =
-            Path.Combine(Directories.BinariesDir, "butil-ui.Desktop.dll");
-        public static readonly string ConsoleBackupTool =
-            Path.Combine(Directories.BinariesDir, "butilc.dll");
+        private const string UIApp = "butil-ui.Desktop.dll";
+
+        private void LaunchUiAppInternal(bool preventSleep = false, string? arguments = null)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                Arguments = (preventSleep ? "dotnet " : "") + $"\"{UIApp}\"" + (arguments != null ? $" {arguments}": ""),
+                WorkingDirectory = Directories.BinariesDir,
+                FileName = preventSleep ? "systemd-inhibit" : "dotnet"
+            });
+        }
 
         public void LaunchTasksApp()
 		{
-			Process.Start("dotnet", $"\"{UIApp}\"");
+            LaunchUiAppInternal();
         }
 
         public void LaunchTask(string taskName)
 		{
-            Process.Start("systemd-inhibit", $"dotnet \"{UIApp}\" {TasksAppArguments.LaunchTask} \"{TasksAppArguments.RunTask}={taskName}\"");
+            LaunchUiAppInternal(true, $"{TasksAppArguments.LaunchTask} \"{TasksAppArguments.RunTask}={taskName}\"");
         }
 
 		public void OpenRestorationApp(string? taskName = null)
 		{
 			if (string.IsNullOrWhiteSpace(taskName))
 			{
-				Process.Start("systemd-inhibit", $"dotnet \"{UIApp}\" {TasksAppArguments.Restore}");
+                LaunchUiAppInternal(true, TasksAppArguments.Restore);
                 return;
 			}
 
@@ -38,11 +45,11 @@ namespace BUtil.Linux.Services
 
             if (task?.Model is IncrementalBackupModelOptionsV2)
             {
-                Process.Start("systemd-inhibit", $"dotnet \"{UIApp}\" {TasksAppArguments.Restore} \"{TasksAppArguments.RunTask}={taskName}\"");
+                LaunchUiAppInternal(true, $"{TasksAppArguments.Restore} \"{TasksAppArguments.RunTask}={taskName}\"");
             }
             else
             {
-                Process.Start("systemd-inhibit", $"dotnet \"{UIApp}\" {TasksAppArguments.Restore}");
+                LaunchUiAppInternal(true, TasksAppArguments.Restore);
             }
         }
 

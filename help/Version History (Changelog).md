@@ -6,6 +6,9 @@
 ## Changes
 - Ubuntu logs were relocated to ```~/.config/BUtil/Logs/v3``` .
 
+## Bug Fixes
+- Ubuntu: Microsoft broke full path support in .Net 8. It affected launch of tasks and restore app.
+
 # 2023.11.18
 
 ## New Features
