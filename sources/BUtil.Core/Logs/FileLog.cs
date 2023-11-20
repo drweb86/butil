@@ -53,7 +53,7 @@ namespace BUtil.Core.Logs
 			{
                 File.WriteAllText(
                     _fileName, 
-                    @$"{_dateTime.ToString("f", CultureInfo.CurrentUICulture)} {LocalsHelper.ToString(Events.ProcessingStatus.FinishedSuccesfully)}{LocalsHelper.ToString(Events.ProcessingStatus.FinishedWithErrors)}\n");
+                    @$"{_dateTime.ToString("f", CultureInfo.CurrentUICulture)} {LocalsHelper.ToString(Events.ProcessingStatus.FinishedSuccesfully)}{LocalsHelper.ToString(Events.ProcessingStatus.FinishedWithErrors)}" + Environment.NewLine);
 				_logFile = File.AppendText(_fileName);
 			}
 			catch (Exception e)
