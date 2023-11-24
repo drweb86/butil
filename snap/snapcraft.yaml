@@ -1,25 +1,35 @@
-  name: butil
-  version: '0.1' # just for humans, typically '1.2+git' or '1.3.2'
-  summary: BUtil creates incremental backups and imports multimedia on your PC with deduplication and FTPS, SMB/CIFS transports support.
-  grade: devel # must be 'stable' to release into candidate/stable channels
-  base: core22
-  confinement: devmode # use 'strict' once you have the right plugs and slots
+name: butil
+version: '3'
+grade: devel # must be 'stable' to release into candidate/stable channels
+base: core22
+summary: Backup your data. Import photos from phone via WI-FI and more.
+description: |
+  Backup your data. Import photos from phone via WI-FI and more.
+  Features include
+  - Incremental backup with deduplication of files and FTPS, SMB/CIFS transports support;
+  - Import media - Import audios, photos, videos from SD Card of camera, recorder; photos and videos from your phone via WI-FI through FTPS Server application using template file names;
+  - Console for automation scheduling;
+  - Strong 7-zip compression and AES-256 encryption.
+  Minimum Ubuntu version should be 23.10.
+
+confinement: classic
+compression: lzo
+
+architectures: 
+  - build-on: [amd64]
+    build-for: [all]
+
+apps:
+  butil:
+    command: ./butil-ui.Desktop.dll
+    plugs:
+      - desktop
+      - desktop-legacy
+  butilc:
+    command: ./butilc.dll
 
 parts:
   butil:
-    plugin: dotnet
-    dotnet-build-configuration: Release
-    dotnet-self-contained-runtime-identifier: linux-x64
-    source: ./sources
-    build-packages:
-      - dotnet-sdk-8.0
-    stage-packages:
-      - 7zip
-      - curl
-      - apt-transport-https
-      - gnupg2
-      - powershell
-
-apps:
-  BUtil:
-    command: dotnet ./bin/butil-ui.Desktop.dll
+    plugin: dump
+    source: ./Output/BUtil/bin
+    source-type: local
