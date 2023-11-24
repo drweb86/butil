@@ -54,6 +54,7 @@ Do following
 cd ~/Desktop/butil
 git pull
 
+cd ./sources
 dotnet publish /p:Version=2023.11.24 /p:AssemblyVersion=2023.11.24 /p:Configuration=Release /p:PublishDir=../Output/butil/bin /p:PublishReadyToRun=false /p:RunAnalyzersDuringBuild=False
 
 sudo snapcraft

@@ -43,11 +43,10 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <PropertyGroup>
-    <PreBuildEvent>
-		xcopy "%userprofile%\.nuget\packages\microsoft.extensions.filesystemglobbing\8.0.0\lib\net8.0" "$(SolutionDir)..\Output\BUtil\bin" /Y
-		xcopy "%userprofile%\.nuget\packages\nstack.core\1.0.7\lib\netstandard2.0" "$(SolutionDir)..\Output\BUtil\bin" /Y
-		xcopy "%userprofile%\.nuget\packages\fluentftp\48.0.3\lib\net6.0" "$(SolutionDir)..\Output\BUtil\bin" /Y
-	</PreBuildEvent>
-  </PropertyGroup>
+	<ItemGroup>
+		<CopyLibraryFiles Include="$(NuGetPackageRoot)microsoft.extensions.filesystemglobbing\8.0.0\lib\net8.0\*.*;$(NuGetPackageRoot)nstack.core\1.0.7\lib\netstandard2.0\*.*;$(NuGetPackageRoot)fluentftp\48.0.3\lib\net6.0\*.*" />
+	</ItemGroup>
+	<Target Name="CopyLibraries" AfterTargets="Build">
+		<Copy SourceFiles="@(CopyLibraryFiles)" DestinationFolder="$(SolutionDir)..\Output\BUtil\bin" />
+	</Target>
 </Project>
