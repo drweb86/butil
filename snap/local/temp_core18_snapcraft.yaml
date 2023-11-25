@@ -11,14 +11,13 @@ description: |
   - Strong 7-zip compression and AES-256 encryption.
   Minimum Ubuntu version should be 23.10.
 
-base: core22
+base: core18
 
 confinement: classic
 compression: lzo
 
 architectures: 
   - build-on: amd64
-    build-for: all
 
 apps:
   butil:
@@ -32,7 +31,7 @@ apps:
 parts:
   butil:
     plugin: dotnet
-    dotnet-build-configuration: Release
+    # dotnet-build-configuration: Release
     source: ./sources
     # override-pull:
     #   sudo apt-get install dotnet-sdk-8.0

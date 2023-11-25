@@ -10,6 +10,9 @@
 ## Bug Fixes
 - Ubuntu: Microsoft broke full path support in .Net 8. It affected launch of tasks and restore app.
 
+## Removed Features
+- Downgrade to .Net 7. Ubuntu build tool snapcraft does not support .Net 8 unfortunately.
+
 # 2023.11.18
 
 ## New Features
