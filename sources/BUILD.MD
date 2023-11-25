@@ -11,6 +11,7 @@
 
 - InnoSetup 6.2.2 (must be installed in default directory);
 - 7-zip x64 (must be installed in default directory).
+- .Net 7 SDK
 
 ### Build.cmd
 
@@ -34,12 +35,16 @@ sudo apt install snapcraft
 cd /mnt/d/sources/butil
 sudo snapcraft
 # It will propose to install multipass, agree.
-# LXD is required but not installed. Do you wish to install LXD and configure it with the defaults?, agree
+# It will propose to install LXD, agree.
 ```
 
 ### Build
 
 Do following
+
+a. Change version inside snapcraft.yaml
+
+b. Launch
 
 ```
 cd /mnt/d/sources/butil

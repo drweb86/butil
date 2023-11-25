@@ -107,13 +107,13 @@ function InitializeSetup: Boolean;
 var
   ResultCode: integer;
 begin
-  Result := IsDotNetCoreInstalled('Microsoft.WindowsDesktop.App 8');
+  Result := IsDotNetCoreInstalled('Microsoft.WindowsDesktop.App 7');
   if not Result then
   begin
-    Result := Exec('winget', 'install -e --id Microsoft.DotNet.DesktopRuntime.8 --disable-interactivity --accept-source-agreements --accept-package-agreements', '', SW_HIDE, ewWaitUntilTerminated, ResultCode);
+    Result := Exec('winget', 'install -e --id Microsoft.DotNet.DesktopRuntime.7 --disable-interactivity --accept-source-agreements --accept-package-agreements', '', SW_HIDE, ewWaitUntilTerminated, ResultCode);
     if (not Result) or (ResultCode <> 0) then
     begin
-      SuppressibleMsgBox('BUtil depends on "Microsoft .Net Desktop Runtime 8". Please install it manually.', mbInformation, MB_OK, IDOK);
+      SuppressibleMsgBox('BUtil depends on "Microsoft .Net Desktop Runtime 7". Please install it manually.', mbInformation, MB_OK, IDOK);
       Result := true;
     end;
   end;

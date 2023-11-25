@@ -34,7 +34,16 @@ parts:
     plugin: dotnet
     dotnet-build-configuration: Release
     source: ./sources
-    # override-pull:
-    #   sudo apt-get install dotnet-sdk-8.0
     build-packages:
       - dotnet-sdk-7.0
+    stage-packages:
+      - dotnet-sdk-7.0
+      - libicu70
+      - 7zip
+    stage-snaps:
+      - powershell
+
+lint:
+  ignore:
+    - classic 
+    - library
