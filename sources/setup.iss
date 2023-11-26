@@ -49,47 +49,6 @@ UsePreviousAppDir=no
 
 
 [Code]
-function IsDotNetCoreInstalled(DotNetName: string): Boolean;
-var
-  Cmd, Args: string;
-  FileName: string;
-  Output: AnsiString;
-  Command: string;
-  ResultCode: Integer;
-begin
-  FileName := ExpandConstant('{tmp}\dotnet.txt');
-  Cmd := ExpandConstant('{cmd}');
-  Command := 'dotnet --list-runtimes';
-  Args := '/C ' + Command + ' > "' + FileName + '" 2>&1';
-  if Exec(Cmd, Args, '', SW_HIDE, ewWaitUntilTerminated, ResultCode) and
-     (ResultCode = 0) then
-  begin
-    if LoadStringFromFile(FileName, Output) then
-    begin
-      if Pos(DotNetName, Output) > 0 then
-      begin
-        Log('"' + DotNetName + '" found in output of "' + Command + '"');
-        Result := True;
-      end
-        else
-      begin
-        Log('"' + DotNetName + '" not found in output of "' + Command + '"');
-        Result := False;
-      end;
-    end
-      else
-    begin
-      Log('Failed to read output of "' + Command + '"');
-    end;
-  end
-    else
-  begin
-    Log('Failed to execute "' + Command + '"');
-    Result := False;
-  end;
-  DeleteFile(FileName);
-end;
-
 function Is7ZipInstalled(): Boolean;
 begin
   Result := True;
@@ -107,17 +66,6 @@ function InitializeSetup: Boolean;
 var
   ResultCode: integer;
 begin
-  Result := IsDotNetCoreInstalled('Microsoft.WindowsDesktop.App 7');
-  if not Result then
-  begin
-    Result := Exec('winget', 'install -e --id Microsoft.DotNet.DesktopRuntime.7 --disable-interactivity --accept-source-agreements --accept-package-agreements', '', SW_HIDE, ewWaitUntilTerminated, ResultCode);
-    if (not Result) or (ResultCode <> 0) then
-    begin
-      SuppressibleMsgBox('BUtil depends on "Microsoft .Net Desktop Runtime 7". Please install it manually.', mbInformation, MB_OK, IDOK);
-      Result := true;
-    end;
-  end;
-
   if not Is7ZipInstalled() then
   begin
     Result := Exec('winget', 'install -e --id 7zip.7zip --disable-interactivity --accept-source-agreements --accept-package-agreements', '', SW_HIDE, ewWaitUntilTerminated, ResultCode);

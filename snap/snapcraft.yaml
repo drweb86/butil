@@ -1,5 +1,5 @@
 name: butil
-version: '3'
+version: 2023.11.26
 grade: stable
 summary: Backup your data. Import photos from phone via WI-FI and more.
 description: |
@@ -19,17 +19,13 @@ base: core22
 confinement: classic
 compression: lzo
 
-architectures: 
-  - build-on: amd64
-    build-for: all
-
 apps:
   butil:
-    command: usr/bin/dotnet ./butil-ui.Desktop.dll
+    command: bin/butil-ui.Desktop
     plugs:
       - desktop
   butilc:
-    command: usr/bin/dotnet ./butilc.dll
+    command: bin/butilc
 
 parts:
   butil:
@@ -38,9 +34,13 @@ parts:
     source: ./sources
     build-packages:
       - dotnet-sdk-7.0
+    override-build: |     
+      dotnet publish /p:Version=$SNAPCRAFT_PROJECT_VERSION /p:AssemblyVersion=$SNAPCRAFT_PROJECT_VERSION -r linux-x64 -c Release --self-contained true -o $SNAPCRAFT_PART_INSTALL/bin/
+      chmod 0755 $SNAPCRAFT_PART_INSTALL/bin/butil-ui.Desktop
+      chmod 0755 $SNAPCRAFT_PART_INSTALL/bin/butilc
     stage-packages:
       - 7zip
-      - dotnet-sdk-7.0 #used instead of dotnet-runtime-7.0 because snapcraft fails to build.
+      #- dotnet-sdk-7.0 #used instead of dotnet-runtime-7.0 because snapcraft fails to build.
     stage-snaps:
       - powershell
 

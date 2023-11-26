@@ -3,6 +3,7 @@
 ## New Features
 - Log format was changed to text, because in Linux browser cannot open html files located outside of Download folder. And this folder is not a good choice for logs. Since statuses of backups are calculated based on logs location, it will be undefined until next backup.
 - Video, Music, Photo libraries are added to new backup tasks by default.
+- Windows, binaries: binaries are self-contained, no more need to install .Net separately.
 
 ## Changes
 - Ubuntu logs were relocated to ```~/.config/BUtil/Logs/v3``` .

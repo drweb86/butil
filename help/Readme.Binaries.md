@@ -6,8 +6,6 @@
 
 OS: Microsoft Windows 10 or 11.
 
-You need to have installed **Microsoft .Net Desktop Runtime 8**.
-
 You need to have installed **Igor Pavlov's 7-zip** in default installation folder (or be available in any folder inside environment variable PATH).
 
 ### Executables
@@ -21,16 +19,6 @@ Console executable is **bin\butilc.exe**.
 ### Prerequisites
 
 OS: Application is tested on Ubuntu 23.10+ . Probably it might work on other linux distributions as well.
-
-You need to install **Microsoft .Net Desktop Runtime 8**:
-
-a. Open **Terminal**.
-
-b. Execute `lsb_release -a` , see your Ubuntu version.
-
-c. Open https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu , follow instructions for your Ubuntu version, you need to install **runtime**.
-
-d. Reboot your PC.
 
 You need to have installed **Igor Pavlov's 7-zip** (or be available in any folder inside environment variable PATH):
 
