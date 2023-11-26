@@ -1,6 +1,6 @@
 name: butil
 version: '3'
-grade: devel # must be 'stable' to release into candidate/stable channels
+grade: stable
 summary: Backup your data. Import photos from phone via WI-FI and more.
 description: |
   Backup your data. Import photos from phone via WI-FI and more.
@@ -10,6 +10,9 @@ description: |
   - Console for automation scheduling;
   - Strong 7-zip compression and AES-256 encryption.
   Minimum Ubuntu version should be 23.10.
+license: GPL-3.0+ OR MIT OR MS-PL
+issues: https://github.com/drweb86/butil/issues
+source-code: https://github.com/drweb86/butil
 
 base: core22
 
@@ -22,12 +25,11 @@ architectures:
 
 apps:
   butil:
-    command: ./butil-ui.Desktop.dll
+    command: usr/bin/dotnet ./butil-ui.Desktop.dll
     plugs:
       - desktop
-      - desktop-legacy
   butilc:
-    command: ./butilc.dll
+    command: usr/bin/dotnet ./butilc.dll
 
 parts:
   butil:
@@ -37,9 +39,8 @@ parts:
     build-packages:
       - dotnet-sdk-7.0
     stage-packages:
-      - dotnet-sdk-7.0
-      - libicu70
       - 7zip
+      - dotnet-sdk-7.0 #used instead of dotnet-runtime-7.0 because snapcraft fails to build.
     stage-snaps:
       - powershell
 

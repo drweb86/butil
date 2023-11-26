@@ -52,3 +52,9 @@ sudo snapcraft clean
 sudo snapcraft
 
 ```
+
+To test
+```
+sudo snap remove butil --purge
+sudo snap install butil_3_all.snap --classic --dangerous
+```
