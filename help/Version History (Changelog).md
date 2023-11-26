@@ -7,6 +7,7 @@
 
 ## Changes
 - Ubuntu logs were relocated to ```~/.config/BUtil/Logs/v3``` .
+- Ubuntu Powershell is replaced with bash, because snap does not allow to launch powershell.
 
 ## Bug Fixes
 - Ubuntu: Microsoft broke full path support in .Net 8. It affected launch of tasks and restore app.

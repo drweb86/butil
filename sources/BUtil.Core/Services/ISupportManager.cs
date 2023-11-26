@@ -5,7 +5,8 @@ namespace BUtil.Core.Services
 {
     public interface ISupportManager
     {
-        bool LaunchPowershell(ILog log, string script);
+        string ScriptEngineName {  get; }
+        bool LaunchScript(ILog log, string script, string forbiddenForLogs);
 
         void LaunchTasksApp();
 

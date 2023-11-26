@@ -2,6 +2,7 @@
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
@@ -17,8 +18,13 @@ namespace BUtil.Core.ConfigurationFileModels.V2
                 return false;
             }
 
-            if (!TaskModelStrategyFactory.TryVerify(new StubLog(), task.Model, out error))
+            var memoryLog = new MemoryLog();
+
+            if (!TaskModelStrategyFactory.TryVerify(memoryLog, task.Model, out error))
+            {
+                error += Environment.NewLine + Environment.NewLine + memoryLog;
                 return false;
+            }
 
             error = null;
             return true;

@@ -227,7 +227,7 @@
     <value>La quota deve essere 0 (non applicabile) o un valore superiore a 0.</value>
   </data>
   <data name="DataStorage_Script_Help" xml:space="preserve">
-    <value>Se la cartella diventa disponibile dopo l'esecuzione di alcuni comandi, specifica gli script PowerShell per la connessione e la disconnessione.</value>
+    <value>Se la cartella diventa disponibile dopo l'esecuzione di alcuni comandi, specifica gli script {0} per la connessione e la disconnessione.</value>
   </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
     <value>Ottieni stato archivio dati</value>

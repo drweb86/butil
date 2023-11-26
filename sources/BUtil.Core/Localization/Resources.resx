@@ -225,7 +225,7 @@ Usage scenario: You copy data to remote server. There's a problem: ISP drops upl
     <value>Quota should be 0 (do not apply) or value above 0.</value>
   </data>
   <data name="DataStorage_Script_Help" xml:space="preserve">
-    <value>If folder becomes available after executing some commands, specify PowerShell scripts for connection and disconnection.</value>
+    <value>If folder becomes available after executing some commands, specify {0} scripts for connection and disconnection.</value>
   </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
     <value>Get state of storage</value>

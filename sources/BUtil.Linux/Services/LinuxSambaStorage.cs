@@ -46,37 +46,21 @@ namespace BUtil.Linux.Services
                 DestinationFolder = destinationFolder,
                 SingleBackupQuotaGb = Settings.SingleBackupQuotaGb,
                 MountPowershellScript = @$"
-$ErrorActionPreference = ""Stop""
 gio mount -u ""smb://{host}/{share}"" --force
 killall gvfsd
-
-$psi = New-Object System.Diagnostics.ProcessStartInfo;
-$psi.FileName = 'gio';
-$psi.Arguments = 'mount ""smb://{host}/{share}""';
-$psi.UseShellExecute = $false;
-$psi.RedirectStandardInput = $true;
-
-$p = [System.Diagnostics.Process]::Start($psi);
-
-Start-Sleep -s 2 #wait 2 seconds so that the process can be up and running
-
-$p.StandardInput.WriteLine(""{userWithoutDomain}""); # attempt 1
-$p.StandardInput.WriteLine(""{userDomain}"");
-$p.StandardInput.WriteLine(""{Settings.Password}"");
-$p.StandardInput.WriteLine(""{userWithoutDomain}""); # attempt 2
-$p.StandardInput.WriteLine(""{userDomain}"");
-$p.StandardInput.WriteLine(""{Settings.Password}"");
-$p.StandardInput.WriteLine(""{userWithoutDomain}""); # attempt 3
-$p.StandardInput.WriteLine(""{userDomain}"");
-$p.StandardInput.WriteLine(""{Settings.Password}"");
-
-$p.WaitForExit();
+echo ""{userWithoutDomain}
+{userDomain}
+{Settings.Password}
+{userWithoutDomain}
+{userDomain}
+{Settings.Password}
+{userWithoutDomain}
+{userDomain}
+{Settings.Password}"" | gio mount ""smb://{host}/{share}""
 ",
-                UnmountPowershellScript = $"gio mount -u \"smb://{host}/{share}\" --force ",
+                UnmountPowershellScript = $"gio mount -u \"smb://{host}/{share}\" --force",
             });
         }
-
-        private readonly object _uploadLock = new();
 
         public override string? Test()
         {

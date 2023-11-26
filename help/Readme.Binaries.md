@@ -18,23 +18,11 @@ Console executable is **bin\butilc.exe**.
 
 OS: Application is tested on Ubuntu 23.10+ . Probably it might work on other linux distributions as well.
 
-You need to install **Microsoft .Net Runtime 7.0**
-
-a. Open **Terminal**.
-
-b. Execute `sudo apt-get install -y dotnet-runtime-7.0`.
-
 You need to have installed **Igor Pavlov's 7-zip** (or be available in any folder inside environment variable PATH):
 
 a. Open **Terminal**.
 
 b. Execute `sudo apt-get install -y 7zip`.
-
-You need to have installed **Microsoft Powershell** (or be available in any folder inside environment variable PATH):
-
-a. Open https://www.linuxcapable.com/how-to-install-powershell-on-ubuntu-linux/ , follow instructions for your Ubuntu version.
-
-b. Reboot.
 
 ### Executables
 

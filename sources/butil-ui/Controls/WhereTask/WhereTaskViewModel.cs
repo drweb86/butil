@@ -93,18 +93,20 @@ namespace butil_ui.Controls
 
         public async Task MountTaskLaunchCommand()
         {
-            if (PlatformSpecificExperience.Instance.SupportManager.LaunchPowershell(new StubLog(), this.FolderConnectionScript))
+            var memoryLog = new MemoryLog();
+            if (PlatformSpecificExperience.Instance.SupportManager.LaunchScript(memoryLog, this.FolderConnectionScript, "***"))
                 await Messages.ShowInformationBox(Resources.DataStorage_Field_DisconnectionScript_Ok);
             else
-                await Messages.ShowErrorBox(Resources.DataStorage_Field_DisconnectionScript_Bad);
+                await Messages.ShowErrorBox(Resources.DataStorage_Field_DisconnectionScript_Bad + Environment.NewLine + Environment.NewLine + memoryLog);
         }
 
         public async Task UnmountTaskLaunchCommand()
         {
-            if (PlatformSpecificExperience.Instance.SupportManager.LaunchPowershell(new StubLog(), this.FolderDisconnectionScript))
+            var memoryLog = new MemoryLog();
+            if (PlatformSpecificExperience.Instance.SupportManager.LaunchScript(memoryLog, this.FolderDisconnectionScript, "***"))
                 await Messages.ShowInformationBox(Resources.DataStorage_Field_DisconnectionScript_Ok);
             else
-                await Messages.ShowErrorBox(Resources.DataStorage_Field_DisconnectionScript_Bad);
+                await Messages.ShowErrorBox(Resources.DataStorage_Field_DisconnectionScript_Bad + Environment.NewLine + Environment.NewLine + memoryLog);
         }
 
         private static Bitmap LoadFromResource(Uri resourceUri)
@@ -177,7 +179,7 @@ namespace butil_ui.Controls
         public string LeftMenu_Where => Resources.LeftMenu_Where;
         public string DataStorage_Field_UploadQuota => Resources.DataStorage_Field_UploadQuota;
         public string DataStorage_Field_UploadQuota_Help => Resources.DataStorage_Field_UploadQuota_Help;
-        public string DataStorage_Script_Help => Resources.DataStorage_Script_Help;
+        public string DataStorage_Script_Help => string.Format(Resources.DataStorage_Script_Help, PlatformSpecificExperience.Instance.SupportManager.ScriptEngineName);
         public string DataStorage_Field_ConnectScript => Resources.DataStorage_Field_ConnectScript;
         public string DataStorage_Field_DisconnectionScript => Resources.DataStorage_Field_DisconnectionScript;
         public string Field_Folder => Resources.Field_Folder;

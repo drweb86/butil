@@ -56,7 +56,9 @@ namespace BUtil.Windows.Services
             ProcessHelper.ShellExecute(ApplicationLinks.LatestRelease);
         }
 
-        public bool LaunchPowershell(ILog log, string script)
+        public string ScriptEngineName => "Powershell";
+
+        public bool LaunchScript(ILog log, string script, string forbiddenForLogs)
         {
             using var tempDir = new TempFolder();
             var scriptFile = Path.Combine(tempDir.Folder, "script.ps1");

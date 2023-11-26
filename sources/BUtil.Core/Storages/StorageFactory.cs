@@ -34,7 +34,7 @@ namespace BUtil.Core.Storages
 
             try
             {
-                using var storage = Create(new StubLog(), storageSettings);
+                using var storage = Create(log, storageSettings);
                 return storage.Test();
             }
             catch (Exception ex)

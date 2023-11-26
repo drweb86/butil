@@ -372,7 +372,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If folder becomes available after executing some commands, specify PowerShell scripts for connection and disconnection..
+        ///   Looks up a localized string similar to If folder becomes available after executing some commands, specify {0} scripts for connection and disconnection..
         /// </summary>
         public static string DataStorage_Script_Help {
             get {
