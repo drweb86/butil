@@ -10,15 +10,26 @@ namespace BUtil.Linux.Services
 {
 	public class LinuxSupportManager: ISupportManager
     {
-        private const string UIApp = "butil-ui.Desktop.dll";
+        private readonly string _workDir;
+        private readonly string _uiApp;
+
+        public LinuxSupportManager()
+        {
+            var isSnap = Directories.BinariesDir.StartsWith("/snap");
+            _workDir = isSnap ? null : Directories.BinariesDir;
+            _uiApp = isSnap ? "butil.ui" : "butil-ui.Desktop.dll";
+        }
 
         private void LaunchUiAppInternal(bool preventSleep = false, string? arguments = null)
         {
             Process.Start(new ProcessStartInfo
             {
-                Arguments = (preventSleep ? "dotnet " : "") + $"\"{UIApp}\"" + (arguments != null ? $" {arguments}": ""),
-                WorkingDirectory = Directories.BinariesDir,
-                FileName = preventSleep ? "systemd-inhibit" : "dotnet"
+                FileName = preventSleep
+                    ? "systemd-inhibit"
+                    : _uiApp,
+                WorkingDirectory = _workDir,
+                Arguments = (preventSleep ? $"\"{_uiApp}\"" : "")
+                    + (arguments != null ? $" {arguments}" : ""),
             });
         }
 

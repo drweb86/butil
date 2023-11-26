@@ -20,11 +20,11 @@ confinement: classic
 compression: lzo
 
 apps:
-  butil:
+  ui:
     command: bin/butil-ui.Desktop
     plugs:
       - desktop
-  butilc:
+  cli:
     command: bin/butilc
 
 parts:

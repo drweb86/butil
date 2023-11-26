@@ -1,10 +1,8 @@
 # Binaries Readme
 
-## Windows
+## Windows 10 or 11
 
 ### Prerequisites
-
-OS: Microsoft Windows 10 or 11.
 
 You need to have installed **Igor Pavlov's 7-zip** in default installation folder (or be available in any folder inside environment variable PATH).
 
@@ -20,11 +18,17 @@ Console executable is **bin\butilc.exe**.
 
 OS: Application is tested on Ubuntu 23.10+ . Probably it might work on other linux distributions as well.
 
+You need to install **Microsoft .Net Runtime 7.0**
+
+a. Open **Terminal**.
+
+b. Execute `sudo apt-get install -y dotnet-runtime-7.0`.
+
 You need to have installed **Igor Pavlov's 7-zip** (or be available in any folder inside environment variable PATH):
 
 a. Open **Terminal**.
 
-b. Execute `sudo apt-get install 7zip`.
+b. Execute `sudo apt-get install -y 7zip`.
 
 You need to have installed **Microsoft Powershell** (or be available in any folder inside environment variable PATH):
 
