@@ -40,7 +40,6 @@ parts:
       chmod 0755 $SNAPCRAFT_PART_INSTALL/bin/butilc
     stage-packages:
       - 7zip
-      #- dotnet-sdk-7.0 #used instead of dotnet-runtime-7.0 because snapcraft fails to build.
     stage-snaps:
       - powershell
 
