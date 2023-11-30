@@ -1,6 +1,4 @@
-package-repositories:
-  - type: apt
-    ppa: snappy-dev/snapcraft-daily
+adopt-info: butil
 
 name: butil
 grade: stable
@@ -15,7 +13,6 @@ description: |
   Minimum Ubuntu version should be 23.10.
 license: GPL-3.0+ OR MIT OR MS-PL
 issues: https://github.com/drweb86/butil/issues
-source-code: https://github.com/drweb86/butil
 
 base: core22
 
@@ -36,17 +33,19 @@ apps:
 parts:
   butil:
     plugin: dotnet
+    source: .
     dotnet-build-configuration: Release
-    source: https://github.com/drweb86/butil
     override-pull: |
-      snapcraftctl pull
-      snapcraftctl set-version `(git describe --tags --abbrev=0) 2>/dev/null`
+      craftctl default
+      app_version=`git describe --tags --abbrev=0`
+      craftctl set version=$app_version
     build-packages:
       - dotnet-sdk-7.0
       - git
     override-build: |     
       cd ./sources
-      dotnet publish /p:Version=$SNAPCRAFT_PROJECT_VERSION /p:AssemblyVersion=$SNAPCRAFT_PROJECT_VERSION -r linux-x64 -c Release --self-contained true -o $SNAPCRAFT_PART_INSTALL/bin/
+      app_version=`git describe --tags --abbrev=0`
+      dotnet publish /p:Version=$app_version /p:AssemblyVersion=$app_version -r linux-x64 -c Release --self-contained true -o $SNAPCRAFT_PART_INSTALL/bin/
       chmod 0755 $SNAPCRAFT_PART_INSTALL/bin/butil-ui.Desktop
       chmod 0755 $SNAPCRAFT_PART_INSTALL/bin/butilc
     stage-packages:
