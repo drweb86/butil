@@ -1,5 +1,8 @@
+package-repositories:
+  - type: apt
+    ppa: snappy-dev/snapcraft-daily
+
 name: butil
-version: 2023.11.26
 grade: stable
 summary: Backup your data. Import photos from phone via WI-FI and more.
 description: |
@@ -16,6 +19,8 @@ source-code: https://github.com/drweb86/butil
 
 base: core22
 
+architectures: amd64
+
 confinement: classic
 compression: lzo
 
@@ -31,17 +36,20 @@ parts:
   butil:
     plugin: dotnet
     dotnet-build-configuration: Release
-    source: ./sources
+    source: https://github.com/drweb86/butil
+    override-pull: |
+      snapcraftctl pull
+      snapcraftctl set-version `(git describe --tags --abbrev=0) 2>/dev/null`
     build-packages:
       - dotnet-sdk-7.0
+      - git
     override-build: |     
+      cd ./sources
       dotnet publish /p:Version=$SNAPCRAFT_PROJECT_VERSION /p:AssemblyVersion=$SNAPCRAFT_PROJECT_VERSION -r linux-x64 -c Release --self-contained true -o $SNAPCRAFT_PART_INSTALL/bin/
       chmod 0755 $SNAPCRAFT_PART_INSTALL/bin/butil-ui.Desktop
       chmod 0755 $SNAPCRAFT_PART_INSTALL/bin/butilc
     stage-packages:
       - 7zip
-    stage-snaps:
-      - powershell
 
 lint:
   ignore:
