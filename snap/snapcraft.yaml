@@ -19,7 +19,8 @@ source-code: https://github.com/drweb86/butil
 
 base: core22
 
-architectures: amd64
+architectures:
+  - amd64
 
 confinement: classic
 compression: lzo
