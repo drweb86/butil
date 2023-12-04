@@ -3,6 +3,6 @@ Name=BUtil
 Type=Application
 Encoding=UTF-8
 Comment=Backup your data. Import photos from phone via WI-FI and more.
-Exec=butil
+Exec=butil.ui
 Icon=${SNAP}/meta/gui/Snap icon 120x120.png
 Terminal=false

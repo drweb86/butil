@@ -19,16 +19,71 @@ base: core22
 architectures:
   - amd64
 
-confinement: classic
+confinement: strict
 compression: lzo
+
+plugs:
+  personal-files-specified:
+    interface: personal-files
+    write:
+    - $HOME/
 
 apps:
   ui:
     command: bin/butil-ui.Desktop
+    plugs:
+      - desktop
+      - cifs-mount
+      - home
+      - personal-files-specified
+      - network
+      - removable-media
+      - shutdown
+      - wayland
+      - avahi-observe
+      - dcdbas-control
+      - desktop-launch
+      - dm-crypt
+      - framebuffer
+      - fuse-support
+      - hardware-random-observe
+      - hidraw
+      - kernel-crypto-api
+      - personal-files
+      - screen-inhibit-control
+      - scsi-generic
+      - x11
 
+      #- system-files
+      #- mount-control
+      #- sd-control
+      #- gconf
+      #- gsettings
   cli:
     command: bin/butilc
-
+    plugs:
+      - cifs-mount
+      - home
+      - network
+      - removable-media
+      - shutdown
+      - avahi-observe
+      - dcdbas-control
+      - desktop-launch
+      - dm-crypt
+      - framebuffer
+      - fuse-support
+      - hardware-random-observe
+      - hidraw
+      - kernel-crypto-api
+      - personal-files
+      - screen-inhibit-control
+      - scsi-generic
+      #- sd-control
+      #- gsettings
+      #- mount-control
+      #- gconf
+      #- system-files
 parts:
   butil:
     plugin: dotnet
@@ -57,5 +112,4 @@ parts:
 
 lint:
   ignore:
-    - classic
     - library
