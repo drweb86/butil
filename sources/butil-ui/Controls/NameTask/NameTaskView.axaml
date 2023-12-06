@@ -17,6 +17,7 @@
 			<Grid.RowDefinitions>
 				<RowDefinition Height="Auto" />
 				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="Auto" />
@@ -25,7 +26,13 @@
 
 			<TextBlock Grid.Column="0" Grid.Row="0" Text="{Binding Name_Field}" VerticalAlignment="Center" Margin="0,0,8,0" />
 			<TextBox Grid.Column="1" Grid.Row="0" Text="{Binding Name}" VerticalAlignment="Center" />
-			<TextBlock Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1" Text="{Binding Help}" TextWrapping="Wrap" Margin="0,8,0,0" />
+			<Button
+					Grid.Column="1" Grid.Row="1"
+					Margin="0,8,0,0"
+					VerticalAlignment="Center"
+					Command="{Binding OpenCharsPageCommand}"
+					Content="{Binding Icons_Help_Link}" />
+			<TextBlock Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="2" Text="{Binding Help}" TextWrapping="Wrap" Margin="0,8,0,0" />
 		</Grid>
 	</Expander>
 </UserControl>

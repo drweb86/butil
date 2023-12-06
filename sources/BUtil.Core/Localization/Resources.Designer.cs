@@ -651,6 +651,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add character icon to your text.
+        /// </summary>
+        public static string Icons_Help_Link {
+            get {
+                return ResourceManager.GetString("Icons_Help_Link", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Import all files.
         /// </summary>
         public static string ImportMediaTask_AllFiles {

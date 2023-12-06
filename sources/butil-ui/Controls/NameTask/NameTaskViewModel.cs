@@ -1,4 +1,6 @@
 ﻿using BUtil.Core.Localization;
+using BUtil.Core.Misc;
+using BUtil.Core.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace butil_ui.Controls
@@ -15,6 +17,7 @@ namespace butil_ui.Controls
         #region Labels
         public string Name_Title => Resources.Name_Title;
         public string Name_Field => Resources.Name_Field;
+        public string Icons_Help_Link => Resources.Icons_Help_Link;
         public string Help { get; }
 
         #endregion
@@ -38,6 +41,15 @@ namespace butil_ui.Controls
                 _name = value;
                 OnPropertyChanged(nameof(Name));
             }
+        }
+
+        #endregion
+
+        #region Commands
+
+        public void OpenCharsPageCommand()
+        {
+            ProcessHelper.ShellExecute(@"https://github.com/drweb86/butil/blob/master/help/Icons.md");
         }
 
         #endregion

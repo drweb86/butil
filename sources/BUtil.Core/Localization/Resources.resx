@@ -647,4 +647,7 @@ See detailed description in the following link.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>User is not specified.</value>
   </data>
+  <data name="Icons_Help_Link" xml:space="preserve">
+    <value>Add character icon to your text</value>
+  </data>
 </root>
