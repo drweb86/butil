@@ -184,7 +184,7 @@
     <value>Copia</value>
   </data>
   <data name="Button_Download" xml:space="preserve">
-  <value>Download</value>
+    <value>Download</value>
   </data>
   <data name="Button_OK" xml:space="preserve">
     <value>OK</value>
@@ -653,5 +653,8 @@
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Non è stato specificato l'utente.</value>
+  </data>
+  <data name="Icons_Help_Link" xml:space="preserve">
+    <value>Aggiungi icona carattere al testo</value>
   </data>
 </root>
