@@ -36,6 +36,18 @@ namespace BUtil.Core.State
             if (destinationDir != null && !Directory.Exists(destinationDir))
                 Directory.CreateDirectory(destinationDir);
 
+            if (File.Exists(destinationFileName))
+            {
+                var sha512 = _hashService.GetSha512(destinationFileName, false);
+                var size = new FileInfo(destinationFileName).Length;
+
+                if (storageFile.FileState.Sha512 == sha512 && storageFile.FileState.Size == size)
+                {
+                    _log.WriteLine(LoggingEvent.Debug, $"Skip {destinationFileName} because size and SHA-512 match");
+                    return true;
+                }
+            }
+
             using var tempFolder = new TempFolder();
             var tempArchive = Path.Combine(tempFolder.Folder, "archive.7z");
             var extractedFolder = Path.Combine(tempFolder.Folder, "Extracted");
