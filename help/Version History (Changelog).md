@@ -1,4 +1,4 @@
-# 2023.11.21
+# 2023.12.11
 
 ## New Features
 - Log format was changed to text, because in Linux browser cannot open html files located outside of Download folder. And this folder is not a good choice for logs. Since statuses of backups are calculated based on logs location, it will be undefined until next backup.
@@ -13,6 +13,7 @@
 
 ## Bug Fixes
 - Ubuntu: Microsoft broke full path support in .Net 8. It affected launch of tasks and restore app.
+- Ubuntu .Net 7: invalid folders for default backup task.
 
 ## Removed Features
 - Downgrade to .Net 7. Ubuntu build tool snapcraft does not support .Net 8 unfortunately.

@@ -2,7 +2,7 @@
   "profiles": {
     "butil-ui.Desktop": {
       "commandName": "Project",
-      "commandLineArgs": "!LaunchTask \"Task=Новая задача 1\""
+      "commandLineArgs": "!Restore \"Task=Backup important documents and photo collection\""
     }
   }
 }
