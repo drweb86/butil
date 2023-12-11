@@ -1,11 +1,9 @@
-﻿using Avalonia.Platform.Storage;
-using BUtil.Core.Localization;
+﻿using BUtil.Core.Localization;
 using BUtil.Core.TasksTree.MediaSyncBackupModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace butil_ui.Controls
@@ -21,7 +19,7 @@ namespace butil_ui.Controls
             OutputFolder = outputFolder;
             SkipAlreadyImportedFiles = skipAlreadyImportedFiles;
             TransformFileName = transformFileName;
-            TransformFileNames = new[]
+            _transformFileNames = new[]
             {
                 "{DATE:yyyy}\\{DATE:yyyy'-'MM', 'MMMM}\\{DATE:yyyy'-'MM'-'dd', 'dddd}\\{DATE:yyyy'-'MM'-'dd' 'HH'-'mm'-'ss}",
                 "{DATE:yyyy}\\{DATE:MM}\\{DATE:yyyy'-'MM'-'dd}\\{DATE:yyyy'-'MM'-'dd' 'HH'-'mm'-'ss}",
@@ -33,7 +31,7 @@ namespace butil_ui.Controls
             };
         }
 
-        public IEnumerable<string> TransformFileNames { get; }
+        private readonly string[] _transformFileNames;
 
         #region Labels
         public string LeftMenu_Where => Resources.LeftMenu_Where;
@@ -127,6 +125,32 @@ namespace butil_ui.Controls
                 _skipAlreadyImportedFiles = value;
                 OnPropertyChanged(nameof(SkipAlreadyImportedFiles));
             }
+        }
+
+        #endregion
+
+        #region Commands
+
+        public async Task GoPreviousExampleCommand()
+        {
+            var index = Array.FindIndex(_transformFileNames, x => x == _transformFileName);
+            if (index == -1)
+            {
+                TransformFileName = _transformFileNames[0];
+                return;
+            }
+            TransformFileName = _transformFileNames[(index + _transformFileNames.Length - 1) % _transformFileNames.Length];
+        }
+
+        public async Task GoNextExampleCommand()
+        {
+            var index = Array.FindIndex(_transformFileNames.ToArray(), x => x == _transformFileName);
+            if (index == -1)
+            {
+                TransformFileName = _transformFileNames[0];
+                return;
+            }
+            TransformFileName = _transformFileNames[(index + _transformFileNames.Length + 1) % _transformFileNames.Length];
         }
 
         #endregion

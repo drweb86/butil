@@ -14,6 +14,7 @@
 ## Bug Fixes
 - Ubuntu: Microsoft broke full path support in .Net 8. It affected launch of tasks and restore app.
 - Ubuntu .Net 7: invalid folders for default backup task.
+- Avalonia UI: In latest update AutoComplete for template selector does not work. It was replaced with Text box.
 
 ## Removed Features
 - Downgrade to .Net 7. Ubuntu build tool snapcraft does not support .Net 8 unfortunately.

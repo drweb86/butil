@@ -38,21 +38,5 @@ namespace butil_ui.Controls
                 dataContext.OutputFolder = folder.TryGetLocalPath() ?? folder.Path.ToString();
             }
         }
-
-        private bool _possibleVariantsWhereShown = false;
-        private void PossibleTemplatesGotFocus(object? sender, Avalonia.Input.GotFocusEventArgs e)
-        {
-            if (!_possibleVariantsWhereShown)
-            {
-                _templateAutoCompleteBox.IsDropDownOpen = true;
-                _possibleVariantsWhereShown = true;
-            }
-        }
-
-        public void OpenPossibleTemplatesCommand(object? sender, RoutedEventArgs args)
-        {
-            _possibleVariantsWhereShown = false;
-            _templateAutoCompleteBox.Focus();
-        }
     }
 }

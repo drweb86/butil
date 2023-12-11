@@ -18,6 +18,7 @@
 				<ColumnDefinition Width="Auto" />
 				<ColumnDefinition Width="*" />
 				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="Auto" />
 			</Grid.ColumnDefinitions>
 			<Grid.RowDefinitions>
 				<RowDefinition Height="Auto" />
@@ -42,6 +43,7 @@
 			/>
 			<Button
 				Grid.Column="2"
+				Grid.ColumnSpan="2"
 				Grid.Row="0"
 				Content="{Binding Field_Folder_Browse}"
 				VerticalAlignment="Center"
@@ -50,7 +52,7 @@
 			
 			<CheckBox
 				IsChecked="{Binding SkipAlreadyImportedFiles}"
-				Grid.ColumnSpan="3"
+				Grid.ColumnSpan="4"
 				Grid.Column="0"
 				Grid.Row="1"
 				Content="{Binding ImportMediaTask_SkipAlreadyImportedFiles}"
@@ -62,29 +64,36 @@
 				Text="{Binding ImportMediaTask_Field_TransformFileName}"
 				VerticalAlignment="Center"
 			/>
-			<AutoCompleteBox
-				x:Name="_templateAutoCompleteBox"
-				GotFocus="PossibleTemplatesGotFocus"
+			<TextBox
 				Grid.Column="1"
 				Grid.Row="2"
 				Text="{Binding TransformFileName}"
-				ItemsSource="{Binding TransformFileNames}"
-				FilterMode="None"
 				VerticalAlignment="Center"
 				Margin="4 0 4 0"
 			/>
 			<Button
-				Click="OpenPossibleTemplatesCommand"
 				Grid.Column="2"
 				Grid.Row="2"
-				Content="▼"
+				Content="◄"
+				Command="{Binding GoPreviousExampleCommand}"
 				VerticalAlignment="Center"
-				HorizontalAlignment="Left"
+				HorizontalAlignment="Stretch"
+				HorizontalContentAlignment="Center"
+				Margin="0 0 4 0"
+			/>
+			<Button
+				Grid.Column="3"
+				Grid.Row="2"
+				Content="►"
+				Command="{Binding GoNextExampleCommand}"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Stretch"
+				HorizontalContentAlignment="Center"
 				Margin="0 0 4 0"
 			/>
 			
 			<TextBlock
-				Grid.ColumnSpan="3"
+				Grid.ColumnSpan="4"
 				Grid.Column="0"
 				Grid.Row="3"
 				Text="{Binding TransformFileNameExample}"
@@ -92,7 +101,7 @@
 			/>
 
 			<TextBlock
-				Grid.ColumnSpan="3"
+				Grid.ColumnSpan="4"
 				Grid.Column="0"
 				Grid.Row="4"
 				Text="{Binding ImportMediaTask_Field_TransformFileName_Help}"
