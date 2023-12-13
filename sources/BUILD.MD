@@ -36,6 +36,9 @@ cd /mnt/d/sources/butil
 sudo snapcraft
 # It will propose to install multipass, agree.
 # It will propose to install LXD, agree.
+sudo visudo
+# Add this to editor and save, close wsl
+# ad ALL = NOPASSWD : ALL
 ```
 
 ### Build

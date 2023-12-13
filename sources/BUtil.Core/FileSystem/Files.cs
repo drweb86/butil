@@ -6,7 +6,11 @@ namespace BUtil.Core.FileSystem
     public static class Files
     {
         public static readonly string WindowsExperience =
+#if DEBUG
+            Path.Combine(Directories.BinariesDir, @"..\..\..\..\BUtil.Windows\bin\windows\Debug\net7.0-windows7.0\BUtil.Windows.dll");
+#else
             Path.Combine(Directories.BinariesDir, "BUtil.Windows.dll");
+#endif
         public static readonly string LinuxExperience =
             Path.Combine(Directories.BinariesDir, "BUtil.Linux.dll");
 

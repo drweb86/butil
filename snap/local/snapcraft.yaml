@@ -1,7 +1,6 @@
-adopt-info: butil
-
 name: butil
 grade: stable
+version: ###VERSION###
 summary: Backup your data. Import photos from phone via WI-FI and more.
 description: |
   Backup your data. Import photos from phone via WI-FI and more.
@@ -34,17 +33,11 @@ parts:
     plugin: dotnet
     source: .
     dotnet-build-configuration: Release
-    override-pull: |
-      craftctl default
-      app_version=`git describe --tags --abbrev=0`
-      craftctl set version=$app_version
     build-packages:
       - dotnet-sdk-7.0
-      - git
     override-build: |     
       cd ./sources
-      app_version=`git describe --tags --abbrev=0`
-      dotnet publish /p:Version=$app_version /p:AssemblyVersion=$app_version -r linux-x64 -c Release --self-contained true -o $SNAPCRAFT_PART_INSTALL/bin/
+      dotnet publish /p:Version=###VERSION### /p:AssemblyVersion=###VERSION### -r linux-x64 -c Release --self-contained true -o $SNAPCRAFT_PART_INSTALL/bin/
       chmod 0755 $SNAPCRAFT_PART_INSTALL/bin/butil-ui.Desktop
       chmod 0755 $SNAPCRAFT_PART_INSTALL/bin/butilc
     stage-packages:

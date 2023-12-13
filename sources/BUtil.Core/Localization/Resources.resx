@@ -317,6 +317,9 @@ Usage scenario: You copy data to remote server. There's a problem: ISP drops upl
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS encryption:</value>
   </data>
+  <data name="Icons_Help_Link" xml:space="preserve">
+    <value>Add character icon to your text</value>
+  </data>
   <data name="ImportMediaTask_AllFiles" xml:space="preserve">
     <value>Import all files</value>
   </data>
@@ -646,8 +649,5 @@ See detailed description in the following link.</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>User is not specified.</value>
-  </data>
-  <data name="Icons_Help_Link" xml:space="preserve">
-    <value>Add character icon to your text</value>
   </data>
 </root>

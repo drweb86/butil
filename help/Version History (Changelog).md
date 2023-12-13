@@ -1,4 +1,4 @@
-# 2023.12.11
+# 2023.12.12
 
 ## New Features
 - Log format was changed to text, because in Linux browser cannot open html files located outside of Download folder. And this folder is not a good choice for logs. Since statuses of backups are calculated based on logs location, it will be undefined until next backup.
@@ -6,6 +6,7 @@
 - Windows, binaries: binaries are self-contained, no more need to install .Net separately.
 - Icons reference for task names.
 - During restoration already good destination files (by size and checksum) are not overwritten to reduce traffic usage for remote storages.
+- Ubuntu snap publish package as delivery
 
 ## Changes
 - Ubuntu logs were relocated to ```~/.config/BUtil/Logs/v3``` .

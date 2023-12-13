@@ -4,22 +4,18 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-	  <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-	  <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
-	  <UseCommonOutputDirectory>true</UseCommonOutputDirectory>
-	  <OutputPath>$(SolutionDir)..\Output\BUtil\bin\</OutputPath>
-	  <PlatformName>linux</PlatformName>
+    <PlatformName>linux</PlatformName>
   </PropertyGroup>
 
-	<Target Name="CopyLibraries" AfterTargets="Build">
-		<Copy SourceFiles="@(CopyLibraryFiles)" DestinationFolder="$(SolutionDir)..\Output\BUtil\bin" />
-	</Target>
+  <Target Name="CopyLibraries" AfterTargets="Build">
+    <Copy SourceFiles="@(CopyLibraryFiles)" DestinationFolder="$(TargetDir)" />
+  </Target>
 
-	<ItemGroup>
-	  <PackageReference Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="2.88.6" />
-	</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="2.88.6" />
+  </ItemGroup>
 
-	<ItemGroup>
-	  <ProjectReference Include="..\BUtil.Core\BUtil.Core.csproj" />
-	</ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUtil.Core\BUtil.Core.csproj" />
+  </ItemGroup>
 </Project>

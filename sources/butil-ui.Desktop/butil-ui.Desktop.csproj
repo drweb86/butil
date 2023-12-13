@@ -7,8 +7,6 @@
     <Nullable>enable</Nullable>
     <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-	<AppendTargetFrameworkToOutputPath>False</AppendTargetFrameworkToOutputPath>
-    <OutputPath>..\..\Output\BUtil\bin</OutputPath>
     <ApplicationIcon>butil.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>

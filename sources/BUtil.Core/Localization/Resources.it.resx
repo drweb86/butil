@@ -319,6 +319,9 @@
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>Criptazione SSL/TTS:</value>
   </data>
+  <data name="Icons_Help_Link" xml:space="preserve">
+    <value>Aggiungi icona carattere al testo</value>
+  </data>
   <data name="ImportMediaTask_AllFiles" xml:space="preserve">
     <value>Importa tutti i file</value>
   </data>
@@ -653,8 +656,5 @@
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Non è stato specificato l'utente.</value>
-  </data>
-  <data name="Icons_Help_Link" xml:space="preserve">
-    <value>Aggiungi icona carattere al testo</value>
   </data>
 </root>

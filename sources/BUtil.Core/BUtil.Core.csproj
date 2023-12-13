@@ -1,12 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-	<TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <OutputType>Library</OutputType>
-	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-	<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
-	<UseCommonOutputDirectory>true</UseCommonOutputDirectory>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
-    <OutputPath>$(SolutionDir)..\Output\BUtil\bin\</OutputPath>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
@@ -43,10 +39,10 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-	<ItemGroup>
-		<CopyLibraryFiles Include="$(NuGetPackageRoot)microsoft.extensions.filesystemglobbing\8.0.0\lib\net8.0\*.*;$(NuGetPackageRoot)nstack.core\1.0.7\lib\netstandard2.0\*.*;$(NuGetPackageRoot)fluentftp\48.0.3\lib\net6.0\*.*" />
-	</ItemGroup>
-	<Target Name="CopyLibraries" AfterTargets="Build">
-		<Copy SourceFiles="@(CopyLibraryFiles)" DestinationFolder="$(SolutionDir)..\Output\BUtil\bin" />
-	</Target>
+  <ItemGroup>
+    <CopyLibraryFiles Include="$(NuGetPackageRoot)microsoft.extensions.filesystemglobbing\7.0.0\lib\net7.0\*.*;$(NuGetPackageRoot)nstack.core\1.0.7\lib\netstandard2.0\*.*;$(NuGetPackageRoot)fluentftp\48.0.3\lib\net6.0\*.*" />
+  </ItemGroup>
+  <Target Name="CopyLibraries" AfterTargets="Build">
+    <Copy SourceFiles="@(CopyLibraryFiles)" DestinationFolder="$(TargetDir)" />
+  </Target>
 </Project>

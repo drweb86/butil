@@ -317,6 +317,9 @@
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>Шифрование SSL/TTS:</value>
   </data>
+  <data name="Icons_Help_Link" xml:space="preserve">
+    <value>Добавить иконки-символы к тексту</value>
+  </data>
   <data name="ImportMediaTask_AllFiles" xml:space="preserve">
     <value>Импорт всех файлов</value>
   </data>
@@ -647,8 +650,5 @@ bin.
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Пользователь не указан.</value>
-  </data>
-  <data name="Icons_Help_Link" xml:space="preserve">
-    <value>Добавить иконки-символы к тексту</value>
   </data>
 </root>
