@@ -72,9 +72,9 @@ begin
     if (not Result) or (ResultCode <> 0) then
     begin
       SuppressibleMsgBox('BUtil depends on 7-zip. Please install it manually.', mbInformation, MB_OK, IDOK);
-      Result := true;
     end;
   end;
+  Result := true;
 end;
 
 const
