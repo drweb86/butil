@@ -1,5 +1,8 @@
-$version = "2023.12.12"
+$version = Get-Content "..\help\Version History (Changelog).md" -First 1
+$version = $version.Substring(2)
+
 cls
+Write-Output "Version is $version"
 $ErrorActionPreference = "Stop"
 
 Write-Output "Sorting resources..."

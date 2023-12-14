@@ -15,13 +15,15 @@
 
 ### Build.cmd
 
-Update version (it should match the version name and tag of release!) in build.cmd. Launch it.
+Update version (it should match the version name and tag of release!) in Version History file. 
 
-It will create ..\output\butil folders with compiled application.
+Launch build.cmd.
 
-It will create ..\output\BUtil-x.exe with setup.
+It will create <root>\output\butil folders with compiled application.
 
-It will create ..\output\BUtil-binaries.7z with binaries.
+It will create <root>\output\BUtil-x.exe with setup.
+
+It will create <root>\output\BUtil-binaries.7z with binaries.
 
 ## Ubuntu
 
@@ -45,14 +47,10 @@ sudo visudo
 
 Do following
 
-a. Change version inside snapcraft.yaml
-
-b. Launch
+a. Launch
 
 ```
-cd /mnt/d/sources/butil
-sudo snapcraft clean
-sudo snapcraft
+build.cmd
 
 ```
 
