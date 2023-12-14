@@ -1,4 +1,4 @@
-# 2023.12.12
+# 2023.12.14
 
 ## New Features
 - Log format was changed to text, because in Linux browser cannot open html files located outside of Download folder. And this folder is not a good choice for logs. Since statuses of backups are calculated based on logs location, it will be undefined until next backup.
