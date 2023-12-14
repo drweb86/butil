@@ -51,7 +51,16 @@ if (Test-Path "..\snap\snapcraft.yaml")
 }
 
 Write-Output "Publish..."
-& dotnet publish "/p:InformationalVersion=$version" "/p:VersionPrefix=$version" "/p:Version=$version" "/p:AssemblyVersion=$version" /p:Configuration=Release /p:PublishDir=../Output/butil/bin /p:PublishReadyToRun=false /p:RunAnalyzersDuringBuild=False --self-contained true --property WarningLevel=0
+& dotnet publish "/p:InformationalVersion=$version" `
+	"/p:VersionPrefix=$version" `
+	"/p:Version=$version" `
+	"/p:AssemblyVersion=$version" `
+	/p:Configuration=Release `
+	/p:PublishDir=../../Output/butil/bin `
+	/p:PublishReadyToRun=false `
+	/p:RunAnalyzersDuringBuild=False `
+	--self-contained true `
+	--property WarningLevel=0
 if ($LastExitCode -ne 0)
 {
 	Write-Error "Fail." 
@@ -75,7 +84,7 @@ if ($LastExitCode -ne 0)
 }
 
 Write-Output "Pack binaries"
-& "c:\Program Files\7-Zip\7z.exe" a -y "..\Output\BUtil-$version-binaries-Windows,Linux.7z" "..\Output\BUtil\*" -mx9 -t7z -m0=lzma2 -ms=on -sccUTF-8 -ssw
+& "c:\Program Files\7-Zip\7z.exe" a -y "..\Output\BUtil-$version-binaries-Windows.7z" "..\Output\BUtil\*" -mx9 -t7z -m0=lzma2 -ms=on -sccUTF-8 -ssw
 if ($LastExitCode -ne 0)
 {
 	Write-Error "Fail." 

@@ -8,3 +8,4 @@ sources/backend/node_modules/
 sources/backend/dist/
 sources/frontend/node_modules/
 *.snap
+snap/snapcraft.yaml
