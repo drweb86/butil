@@ -5,9 +5,20 @@ cls
 Write-Output "Version is $version"
 $ErrorActionPreference = "Stop"
 
+Write-Output "Deleting everything untracked/non commited."
+pause
+Set-Location ..
+git clean -ffdx
+if ($LastExitCode -ne 0)
+{
+	Write-Error "Fail." 
+	Set-Location sources
+	Exit 1
+}
+Set-Location sources
+
 Write-Output "Sorting resources..."
 Set-Location tools\ResxSorter
-dotnet run --property WarningLevel=0
 if ($LastExitCode -ne 0)
 {
 	Write-Error "Fail." 
