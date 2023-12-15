@@ -19,6 +19,7 @@ Set-Location sources
 
 Write-Output "Sorting resources..."
 Set-Location tools\ResxSorter
+dotnet run --property WarningLevel=0
 if ($LastExitCode -ne 0)
 {
 	Write-Error "Fail." 
