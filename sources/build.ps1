@@ -63,60 +63,61 @@ Write-Output "Publish..."
 	/p:PublishReadyToRun=false `
 	/p:RunAnalyzersDuringBuild=False `
 	--self-contained true `
-	--property WarningLevel=0
+	-bl:binlog-v2.binlog
+
 if ($LastExitCode -ne 0)
 {
 	Write-Error "Fail." 
 	Exit 1
 }
 
-Write-Output "Setup..."
-& "c:\Program Files (x86)\Inno Setup 6\ISCC.exe" setup.iss
-if ($LastExitCode -ne 0)
-{
-	Write-Error "Fail." 
-	Exit 1
-}
+# Write-Output "Setup..."
+# & "c:\Program Files (x86)\Inno Setup 6\ISCC.exe" setup.iss
+# if ($LastExitCode -ne 0)
+# {
+# 	Write-Error "Fail." 
+# 	Exit 1
+# }
 
-Write-Output "Prepare to pack binaries"
-Copy-Item "..\help\Readme.Binaries.md" "..\Output\BUtil\README.md"
-if ($LastExitCode -ne 0)
-{
-	Write-Error "Fail." 
-	Exit 1
-}
+# Write-Output "Prepare to pack binaries"
+# Copy-Item "..\help\Readme.Binaries.md" "..\Output\BUtil\README.md"
+# if ($LastExitCode -ne 0)
+# {
+# 	Write-Error "Fail." 
+# 	Exit 1
+# }
 
-Write-Output "Pack binaries"
-& "c:\Program Files\7-Zip\7z.exe" a -y "..\Output\BUtil-$version-binaries-Windows.7z" "..\Output\BUtil\*" -mx9 -t7z -m0=lzma2 -ms=on -sccUTF-8 -ssw
-if ($LastExitCode -ne 0)
-{
-	Write-Error "Fail." 
-	Exit 1
-}
+# Write-Output "Pack binaries"
+# & "c:\Program Files\7-Zip\7z.exe" a -y "..\Output\BUtil-$version-binaries-Windows.7z" "..\Output\BUtil\*" -mx9 -t7z -m0=lzma2 -ms=on -sccUTF-8 -ssw
+# if ($LastExitCode -ne 0)
+# {
+# 	Write-Error "Fail." 
+# 	Exit 1
+# }
 
-Write-Output "Create snapcraft with version"
-(Get-Content "..\snap\local\snapcraft.yaml").Replace("###VERSION###", "$version") | Set-Content "../snap\snapcraft.yaml"
-if ($LastExitCode -ne 0)
-{
-	Write-Error "Fail." 
-	Exit 1
-}
+# Write-Output "Create snapcraft with version"
+# (Get-Content "..\snap\local\snapcraft.yaml").Replace("###VERSION###", "$version") | Set-Content "../snap\snapcraft.yaml"
+# if ($LastExitCode -ne 0)
+# {
+# 	Write-Error "Fail." 
+# 	Exit 1
+# }
 
-Write-Output "Create snap"
-Set-Location ..
-& wsl.exe sudo snapcraft
-if ($LastExitCode -ne 0)
-{
-	Write-Error "Fail." 
-	Set-Location sources
-	Exit 1
-}
-Set-Location sources
+# Write-Output "Create snap"
+# Set-Location ..
+# & wsl.exe sudo snapcraft
+# if ($LastExitCode -ne 0)
+# {
+# 	Write-Error "Fail." 
+# 	Set-Location sources
+# 	Exit 1
+# }
+# Set-Location sources
 
-Write-Output "Pack snap"
-& "c:\Program Files\7-Zip\7z.exe" a -y ..\Output\BUtil-$version-Ubuntu_amd64.zip "..\*.snap" "..\help\ubuntu-snap\readme.md" -mx9 -t7z -m0=lzma2 -ms=on -sccUTF-8 -ssw
-if ($LastExitCode -ne 0)
-{
-	Write-Error "Fail." 
-	Exit 1
-}
+# Write-Output "Pack snap"
+# & "c:\Program Files\7-Zip\7z.exe" a -y ..\Output\BUtil-$version-Ubuntu_amd64.zip "..\*.snap" "..\help\ubuntu-snap\readme.md" -mx9 -t7z -m0=lzma2 -ms=on -sccUTF-8 -ssw
+# if ($LastExitCode -ne 0)
+# {
+# 	Write-Error "Fail." 
+# 	Exit 1
+# }
