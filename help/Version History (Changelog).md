@@ -1,3 +1,8 @@
+# 2024.01.01
+
+## Changes
+- Deduplication of files was improved, last write time is not taken into account anymore.
+
 # 2023.12.14
 
 ## New Features

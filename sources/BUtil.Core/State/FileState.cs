@@ -30,7 +30,12 @@ namespace BUtil.Core.State
 
         public string ToDeduplicationString()
         {
-            return $"{LastWriteTimeUtc} {Size} {Sha512}";
+            return $"{Size} {Sha512}";
+        }
+
+        public override string ToString()
+        {
+            return $"{FileName} {LastWriteTimeUtc} {Size} {Sha512}";
         }
     }
 }

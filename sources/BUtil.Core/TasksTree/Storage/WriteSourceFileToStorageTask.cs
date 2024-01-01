@@ -37,8 +37,12 @@ namespace BUtil.Core.TasksTree
             StorageFiles = storageFiles;
             if (StorageFiles.Count == 0)
                 throw new InvalidOperationException("StorageFiles should not be 0 elements");
-            if (!StorageFiles.All(x => x.FileState.CompareTo(StorageFiles[0].FileState, true)))
-                throw new InvalidOperationException("StorageFiles deduplication");
+
+            var firstFileState = StorageFiles[0].FileState;
+            var fileStates = StorageFiles.Select(x => x.FileState).ToList();
+            if (!fileStates.All(x => x.CompareTo(firstFileState, true, true)))
+                throw new InvalidOperationException("StorageFiles deduplication: " + string.Join(", ", fileStates));
+
             _singleBackupQuotaGb = singleBackupQuotaGb;
             _versionStates = versionStates;
         }
