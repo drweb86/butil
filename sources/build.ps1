@@ -70,6 +70,7 @@ Write-Output "Publish..."
 	"/p:VersionPrefix=$version" `
 	"/p:Version=$version" `
 	"/p:AssemblyVersion=$version" `
+	"/p:Platform=Any CPU" `
 	/p:Configuration=Release `
 	/p:PublishDir=../../Output/butil/bin `
 	/p:PublishReadyToRun=false `
