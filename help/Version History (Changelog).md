@@ -3,6 +3,9 @@
 ## Changes
 - Deduplication of files was improved, last write time is not taken into account anymore.
 
+## Removed Features
+- Windows: x86 support.
+
 # 2023.12.14
 
 ## New Features
