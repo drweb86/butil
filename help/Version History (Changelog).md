@@ -1,3 +1,8 @@
+# 2024.01.02
+
+## New Features
+- Windows ARM64 support.
+
 # 2024.01.01
 
 ## Changes

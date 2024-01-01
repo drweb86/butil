@@ -16,7 +16,7 @@ issues: https://github.com/drweb86/butil/issues
 base: core22
 
 architectures:
-  - amd64
+  - ###SnapcraftArchitectureLinux###
 
 confinement: classic
 compression: lzo
@@ -37,7 +37,7 @@ parts:
       - dotnet-sdk-7.0
     override-build: |     
       cd ./sources
-      dotnet publish /p:Version=###VERSION### /p:AssemblyVersion=###VERSION### -r linux-x64 -c Release --self-contained true -o $SNAPCRAFT_PART_INSTALL/bin/
+      dotnet publish /p:Version=###VERSION### /p:AssemblyVersion=###VERSION### -r ###CoreRuntimeLinux### -c Release --self-contained true -o $SNAPCRAFT_PART_INSTALL/bin/
       chmod 0755 $SNAPCRAFT_PART_INSTALL/bin/butil-ui.Desktop
       chmod 0755 $SNAPCRAFT_PART_INSTALL/bin/butilc
     stage-packages:

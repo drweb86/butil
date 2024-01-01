@@ -2,6 +2,7 @@
 
 - Windows 11x64 Professional;
 - Microsoft Visual Studio 2022;
+- AMD architecture
 
 # Packaging
 
@@ -19,11 +20,8 @@ Update version (it should match the version name and tag of release!) in Version
 
 Launch build.cmd.
 
-It will create <root>\output\butil folders with compiled application.
-
-It will create <root>\output\BUtil-x.exe with setup.
-
-It will create <root>\output\BUtil-binaries.7z with binaries.
+It will create <root>\output folder with all compiled.
+Special note about Ubuntu-ARM64: since snapcraft require hardware to build for this platform, it won't be available.
 
 ## Ubuntu
 

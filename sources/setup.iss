@@ -1,10 +1,10 @@
 ﻿#define  MyAppName           "BUtil"
-#define  ApplicationVersion  GetVersionNumbersString('..\Output\BUtil\bin\butil-ui.Desktop.exe')
+#define  ApplicationVersion  "###VERSION###"
 #define  CurrentYear         GetDateTimeString('yyyy','','')
 #define  StartYearCopyright  "2011"
 #define  MyAppSupportURL     "https://github.com/drweb86/butil"
 #define  MyAppAuthor         "Siarhei Kuchuk"
-#include ".\setup-strings.iss"
+#include "..\..\sources\setup-strings.iss"
 
 [Setup]
 AppName={#MyAppName}
@@ -24,7 +24,7 @@ VersionInfoVersion={#ApplicationVersion}
 UninstallDisplayName={#MyAppName}
 UninstallDisplayIcon={app}\bin\butil-ui.Desktop.exe
 
-SetupIconFile=.\butil-ui\Assets\butil.ico
+SetupIconFile=..\..\sources\butil-ui\Assets\butil.ico
 
 WizardStyle=modern
 
@@ -32,15 +32,15 @@ DisableWelcomePage=yes
 DefaultDirName={autopf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
-OutputDir=..\Output
-OutputBaseFilename=BUtil_v{#ApplicationVersion}
+OutputDir=..
+OutputBaseFilename=BUtil_v{#ApplicationVersion}_###CORERUNTIME###
 Compression=lzma2/ultra64
 SolidCompression=yes
 PrivilegesRequired=none
 PrivilegesRequiredOverridesAllowed=commandline dialog
 UsePreviousGroup=no
 RestartIfNeededByRun=no
-ArchitecturesInstallIn64BitMode=x64
+ArchitecturesInstallIn64BitMode=###ARCHITECTURE###
 DisableFinishedPage=yes
 DisableProgramGroupPage=yes
 DisableDirPage=yes
@@ -51,15 +51,7 @@ UsePreviousAppDir=no
 [Code]
 function Is7ZipInstalled(): Boolean;
 begin
-  Result := True;
-  if Is64BitInstallMode then
-  begin
-    Result := FileExists(ExpandConstant('{commonpf32}\7-zip\7z.exe')) or FileExists(ExpandConstant('{commonpf64}\7-zip\7z.exe'));
-  end
-  else
-  begin
-    Result := FileExists(ExpandConstant('{commonpf32}\7-zip\7z.exe'));
-  end
+  Result := FileExists(ExpandConstant('{commonpf64}\7-zip\7z.exe'));
 end;
 
 function InitializeSetup: Boolean;
@@ -98,7 +90,7 @@ begin
 end;
 
 [Files]
-Source: "..\Output\BUtil\*.*"; DestDir: "{app}"; Flags: recursesubdirs
+Source: "bin\*.*"; DestDir: "{app}"; Flags: recursesubdirs
 
 [Icons]
 Name: "{group}\{#MyAppName}";       Filename: "{app}\bin\butil-ui.Desktop.exe"
