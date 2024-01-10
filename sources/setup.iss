@@ -90,7 +90,7 @@ begin
 end;
 
 [Files]
-Source: "bin\*.*"; DestDir: "{app}"; Flags: recursesubdirs
+Source: "bin\*.*"; DestDir: "{app}\bin"; Flags: recursesubdirs
 
 [Icons]
 Name: "{group}\{#MyAppName}";       Filename: "{app}\bin\butil-ui.Desktop.exe"
