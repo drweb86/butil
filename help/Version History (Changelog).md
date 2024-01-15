@@ -1,3 +1,9 @@
+# 2024.01.15
+
+## New Features
+- Windows support for local accounts (setup was not able to install 7-zip via win-get, because Microsoft does not support installation for users not authorized in Store).
+- Windows binaries are ready to launch, no need to install 7-zip separately.
+
 # 2024.01.10
 
 ## New Features

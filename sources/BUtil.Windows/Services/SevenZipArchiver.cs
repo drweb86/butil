@@ -1,4 +1,5 @@
 ﻿using BUtil.Core.Compression;
+using BUtil.Core.FileSystem;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Services;
@@ -26,24 +27,15 @@ namespace BUtil.Windows.Services
 
         private static string? Resolve7ZipDirectory()
         {
-            var appDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), "7-zip");
+            var appDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "7-zip");
             if (Directory.Exists(appDir))
                 return appDir;
 
-            if (System.Environment.Is64BitOperatingSystem)
-            {
-                appDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "7-zip");
-                if (Directory.Exists(appDir))
-                    return appDir;
-            }
+            var sevenZip = Path.Combine(Directories.BinariesDir, "7-zip");
+            if (Directory.Exists(sevenZip))
+                return sevenZip;
 
-            string exe = "7z.exe";
-            var result = (Environment.GetEnvironmentVariable("PATH") ?? string.Empty)
-                .Split(';')
-                .Where(s => File.Exists(Path.Combine(s, exe)))
-                .FirstOrDefault();
-
-            return result;
+            return null;
         }
 
         public bool Extract(

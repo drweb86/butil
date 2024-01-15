@@ -2,10 +2,6 @@
 
 ## Windows 10 or 11
 
-### Prerequisites
-
-You need to have installed **Igor Pavlov's 7-zip** in default installation folder (or be available in any folder inside environment variable PATH).
-
 ### Executables
 
 UI executable is **bin\butil-ui.Desktop.exe**.

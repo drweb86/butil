@@ -49,25 +49,6 @@ UsePreviousAppDir=no
 
 
 [Code]
-function Is7ZipInstalled(): Boolean;
-begin
-  Result := FileExists(ExpandConstant('{commonpf64}\7-zip\7z.exe'));
-end;
-
-function InitializeSetup: Boolean;
-var
-  ResultCode: integer;
-begin
-  if not Is7ZipInstalled() then
-  begin
-    Result := Exec('winget', 'install -e --id 7zip.7zip --disable-interactivity --accept-source-agreements --accept-package-agreements', '', SW_HIDE, ewWaitUntilTerminated, ResultCode);
-    if (not Result) or (ResultCode <> 0) then
-    begin
-      SuppressibleMsgBox('BUtil depends on 7-zip. Please install it manually.', mbInformation, MB_OK, IDOK);
-    end;
-  end;
-  Result := true;
-end;
 
 const
   BN_CLICKED = 0;

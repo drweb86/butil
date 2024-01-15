@@ -27,6 +27,21 @@ if ($LastExitCode -ne 0)
 }
 Set-Location ../..
 
+Write-Output "Downloading 7-zip..."
+$WebClient = New-Object System.Net.WebClient
+$sevenZipVersion="7z2301"
+$sevenZipFolder=[System.IO.Path]::GetTempPath() + "$($sevenZipVersion)"
+
+if (-Not (Test-Path "$($sevenZipFolder)"))
+{
+	mkdir "$($sevenZipFolder)"
+	$WebClient.DownloadFile("https://www.7-zip.org/a/$($sevenZipVersion)-x64.exe","$($sevenZipFolder)\x64.exe")
+	$WebClient.DownloadFile("https://www.7-zip.org/a/$($sevenZipVersion)-arm64.exe","$($sevenZipFolder)\arm64.exe")
+
+	& "c:\Program Files\7-Zip\7z.exe" x -y "$($sevenZipFolder)\x64.exe" -o"$($sevenZipFolder)\x64\7-zip"
+	& "c:\Program Files\7-Zip\7z.exe" x -y "$($sevenZipFolder)\arm64.exe" -o"$($sevenZipFolder)\arm64\7-zip"
+}
+
 Write-Output "Clear bin/obj folders..."
 Get-ChildItem .\ -include bin,obj -Recurse | ForEach-Object ($_) { Remove-Item $_.FullName -Force -Recurse }
 if ($LastExitCode -ne 0)
@@ -68,24 +83,27 @@ if (Test-Path "..\snap\snapcraft.yaml")
 class BuildInfo {
     [string]$CoreRuntimeWindows
 	[string]$InnoArchitectureWindows
+	[string]$Windows7ZipBinaries
 	[string]$SnapcraftArchitectureLinux
 	[string]$SnapcraftCoreRuntimeLinux
 
     BuildInfo(
 		[string]$CoreRuntimeWindows,
 		[string]$InnoArchitectureWindows,
+		[string]$Windows7ZipBinaries,
 		[string]$SnapcraftArchitectureLinux,
 		[string]$SnapcraftCoreRuntimeLinux) {
         $this.CoreRuntimeWindows = $CoreRuntimeWindows
 		$this.InnoArchitectureWindows = $InnoArchitectureWindows
+		$this.Windows7ZipBinaries = $Windows7ZipBinaries
 		$this.SnapcraftArchitectureLinux = $SnapcraftArchitectureLinux
 		$this.SnapcraftCoreRuntimeLinux = $SnapcraftCoreRuntimeLinux
     }
 }
 
 $platforms = New-Object System.Collections.ArrayList
-[void]$platforms.Add([BuildInfo]::new("win-x64", "x64", "amd64", "linux-x64"))
-[void]$platforms.Add([BuildInfo]::new("win-arm64", "arm64", "arm64", "linux-arm64"))
+[void]$platforms.Add([BuildInfo]::new("win-x64", "x64", "$($sevenZipFolder)\x64", "amd64", "linux-x64"))
+[void]$platforms.Add([BuildInfo]::new("win-arm64", "arm64", "$($sevenZipFolder)\arm64", "arm64", "linux-arm64"))
 
 ForEach ($platform in $platforms)
 {
@@ -103,6 +121,14 @@ ForEach ($platform in $platforms)
 		/p:RunAnalyzersDuringBuild=False `
 		--self-contained true `
 		--property WarningLevel=0
+	if ($LastExitCode -ne 0)
+	{
+		Write-Error "Fail." 
+		Exit 1
+	}
+
+	Write-Output "Copy 7-zip"
+	Copy-Item -Path "$($platform.Windows7ZipBinaries)\*" -Destination "../Output/$($platform.CoreRuntimeWindows)/bin" -Recurse -Force -Verbose
 	if ($LastExitCode -ne 0)
 	{
 		Write-Error "Fail." 
