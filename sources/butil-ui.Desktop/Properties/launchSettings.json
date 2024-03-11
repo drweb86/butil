@@ -2,7 +2,7 @@
   "profiles": {
     "butil-ui.Desktop": {
       "commandName": "Project",
-      "commandLineArgs": "!Restore \"Task=Backup important documents and photo collection\""
+      "commandLineArgs": "RestoreTask \"Task=👍👍👍check bug with same content, different last write time\""
     }
   }
 }

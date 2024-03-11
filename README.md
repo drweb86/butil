@@ -22,7 +22,7 @@
 
 ## Requirements
 
-**Windows 10 or 11 x64, ARM64** or **Ubuntu 23.10+**.
+**Windows 10 or 11 x64, ARM64** or [**Ubuntu 23.10+**](./help/Ubuntu.md).
 
 ## [Documentation](https://github.com/drweb86/butil/tree/master/help)
 

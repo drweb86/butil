@@ -15,9 +15,8 @@ namespace BUtil.Linux.Services
 
         public LinuxSupportManager()
         {
-            var isSnap = Directories.BinariesDir.StartsWith("/snap");
-            _workDir = isSnap ? null : Directories.BinariesDir;
-            _uiApp = isSnap ? "butil.ui" : "butil-ui.Desktop.dll";
+            _workDir = Directories.BinariesDir;
+            _uiApp = "butil-ui.Desktop";
         }
 
         private void LaunchUiAppInternal(bool preventSleep = false, string? arguments = null)

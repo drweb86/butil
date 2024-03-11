@@ -61,49 +61,24 @@ if (Test-Path "..\Output")
 	}
 }
 
-Write-Output "Clear snaps..."
-Remove-Item "..\*.snap" -Confirm:$false
-if ($LastExitCode -ne 0)
-{
-	Write-Error "Fail." 
-	Exit 1
-}
-
-Write-Output "Clear snapcraft..."
-if (Test-Path "..\snap\snapcraft.yaml")
-{
-	Remove-Item "..\snap\snapcraft.yaml" -Confirm:$false
-	if ($LastExitCode -ne 0)
-	{
-		Write-Error "Fail." 
-		Exit 1
-	}
-}
-
 class BuildInfo {
     [string]$CoreRuntimeWindows
 	[string]$InnoArchitectureWindows
 	[string]$Windows7ZipBinaries
-	[string]$SnapcraftArchitectureLinux
-	[string]$SnapcraftCoreRuntimeLinux
 
     BuildInfo(
 		[string]$CoreRuntimeWindows,
 		[string]$InnoArchitectureWindows,
-		[string]$Windows7ZipBinaries,
-		[string]$SnapcraftArchitectureLinux,
-		[string]$SnapcraftCoreRuntimeLinux) {
+		[string]$Windows7ZipBinaries) {
         $this.CoreRuntimeWindows = $CoreRuntimeWindows
 		$this.InnoArchitectureWindows = $InnoArchitectureWindows
 		$this.Windows7ZipBinaries = $Windows7ZipBinaries
-		$this.SnapcraftArchitectureLinux = $SnapcraftArchitectureLinux
-		$this.SnapcraftCoreRuntimeLinux = $SnapcraftCoreRuntimeLinux
     }
 }
 
 $platforms = New-Object System.Collections.ArrayList
-[void]$platforms.Add([BuildInfo]::new("win-x64", "x64", "$($sevenZipFolder)\x64", "amd64", "linux-x64"))
-[void]$platforms.Add([BuildInfo]::new("win-arm64", "arm64", "$($sevenZipFolder)\arm64", "arm64", "linux-arm64"))
+[void]$platforms.Add([BuildInfo]::new("win-x64", "x64", "$($sevenZipFolder)\x64"))
+[void]$platforms.Add([BuildInfo]::new("win-arm64", "arm64", "$($sevenZipFolder)\arm64"))
 
 ForEach ($platform in $platforms)
 {
@@ -163,35 +138,14 @@ ForEach ($platform in $platforms)
 		Exit 1
 	}
 
-	if ($platform.SnapcraftArchitectureLinux -ne "arm64")
+	Write-Output "Clear binaries"
+	Remove-Item "..\Output\$($platform.CoreRuntimeWindows)" -Confirm:$false -Recurse:$true
+	if ($LastExitCode -ne 0)
 	{
-		Write-Output "Create snapcraft with version"
-		(Get-Content "..\snap\local\snapcraft.yaml").Replace("###VERSION###", "$version").Replace("###CoreRuntimeLinux###", "$($platform.SnapcraftCoreRuntimeLinux)").Replace("###SnapcraftArchitectureLinux###", "$($platform.SnapcraftArchitectureLinux)") | Set-Content "../snap/snapcraft.yaml"
-		if ($LastExitCode -ne 0)
-		{
-			Write-Error "Fail." 
-			Exit 1
-		}
-
-		Write-Output "Create snap"
-		Set-Location ..
-		& wsl.exe sudo snapcraft
-		if ($LastExitCode -ne 0)
-		{
-			Write-Error "Fail." 
-			Set-Location sources
-			Exit 1
-		}
-		Set-Location sources
-
-		Write-Output "Pack snap"
-		& "c:\Program Files\7-Zip\7z.exe" a -y "..\Output\BUtil_v$($version)_ubuntu-$($platform.SnapcraftArchitectureLinux).tar" "..\butil_$($version)_$($platform.SnapcraftArchitectureLinux).snap" "..\help\ubuntu-snap\readme.md"
-		if ($LastExitCode -ne 0)
-		{
-			Write-Error "Fail." 
-			Exit 1
-		}
-
-		Remove-Item "../snap/snapcraft.yaml"
+		Write-Error "Fail." 
+		Exit 1
 	}
 }
+
+Write-Output "The following artefacts are produced:"
+Get-ChildItem "..\Output"
