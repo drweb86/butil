@@ -13,7 +13,7 @@ namespace BUtil.Tests
         }
 
         [TestMethod]
-        public void DeleteInitialVersion()
+        public void Delete2Version()
         {
             // set
             var s1 = new Core.ConfigurationFileModels.V2.SourceItemV2(@"x:\test", true);
@@ -66,6 +66,59 @@ namespace BUtil.Tests
             Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles[1].StorageFileName, @"21");
             Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles[2].FileState.FileName, @"x:\test\3");
             Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles[2].StorageFileName, @"3");
+            Assert.AreEqual(version2.SourceItemChanges.First().DeletedFiles.Count(), 0);
+            Assert.AreEqual(version2.SourceItemChanges.First().UpdatedFiles.Count(), 0);
+        }
+
+        [TestMethod]
+        public void CheckIndexing()
+        {
+            // set
+            var s1 = new Core.ConfigurationFileModels.V2.SourceItemV2(@"x:\test", true);
+
+            var version1initial = new VersionState(new DateTime(2000, 1, 1), [
+                new SourceItemChanges(
+                    s1,
+                    new List<string>() { }, // deleted
+                    new List<StorageFile> { }, // updated
+                    // created
+                    new List<StorageFile>
+                    {
+                        StorageFileEx(s1, 1, 1),
+                        StorageFileEx(s1, 2, 2),
+                    }
+                ) ]);
+
+            var version2 = new VersionState(new DateTime(3000, 1, 1), new[] {
+                new SourceItemChanges(
+                    s1,
+                    // deleted
+                    new List<string>(),
+                    // updated
+                    new List<StorageFile> { StorageFileEx(s1, 2, 1) },
+                    // created
+                    new List<StorageFile> { StorageFileEx(s1, 4, 2) }
+                ) });
+
+            var versionsDesc = new IncrementalBackupState();
+            versionsDesc.VersionStates.Add(version1initial);
+            versionsDesc.VersionStates.Add(version2);
+
+            // act
+            DeleteVersionUtil.DeleteVersion(versionsDesc, version1initial, out var storageFilesToDelete);
+
+            // assert
+            Assert.AreEqual(versionsDesc.VersionStates.Count, 1);
+
+            var filesToDelete = storageFilesToDelete.ToArray();
+            Assert.AreEqual(filesToDelete.Length, 0);
+            Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles.Count(), 3);
+            Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles[0].FileState.FileName, @"x:\test\4");
+            Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles[0].StorageFileName, @"2");
+            Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles[1].FileState.FileName, @"x:\test\1");
+            Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles[1].StorageFileName, @"1");
+            Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles[2].FileState.FileName, @"x:\test\2");
+            Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles[2].StorageFileName, @"1");
             Assert.AreEqual(version2.SourceItemChanges.First().DeletedFiles.Count(), 0);
             Assert.AreEqual(version2.SourceItemChanges.First().UpdatedFiles.Count(), 0);
         }
