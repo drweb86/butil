@@ -30,23 +30,25 @@ namespace BUtil.Core.TasksTree.IncrementalModel
             var storageFilesToDeleteList = new List<string>();
             storageFilesToDelete = storageFilesToDeleteList;
 
-            var orderedVersions = state.VersionStates
+            var orderedVersionsDesc = state.VersionStates
                 .OrderByDescending(x => x.BackupDateUtc)
                 .ToList();
-            var lastVersion = orderedVersions.First();
-            var firstVersion = orderedVersions.Last();
+            var recentVersion = orderedVersionsDesc.First();
+            var initialVersion = orderedVersionsDesc.Last();
 
             if (state.VersionStates.Count == 1)
             {
-                DeleteSingleVersion(state, versionToDelete, storageFilesToDeleteList);
+                throw new System.NotSupportedException("Not supported!");
+                // DeleteSingleVersion(state, versionToDelete, storageFilesToDeleteList);
             }
-            else if (lastVersion == versionToDelete) // if last version is deleted
+            else if (recentVersion == versionToDelete)
             {
-                DeleteLastVersion(state, versionToDelete, storageFilesToDeleteList);
+                throw new System.NotSupportedException("Not supported!");
+                // DeleteRecentVersion(state, versionToDelete, storageFilesToDeleteList);
             }
             else
             {
-                var toVersion = orderedVersions[orderedVersions.IndexOf(versionToDelete) - 1];
+                var toVersion = orderedVersionsDesc[orderedVersionsDesc.IndexOf(versionToDelete) - 1];
                 DeletePreviousVersion(state, versionToDelete, toVersion, storageFilesToDeleteList);
             }
 
@@ -184,7 +186,7 @@ namespace BUtil.Core.TasksTree.IncrementalModel
             }
         }
 
-        private static void DeleteLastVersion(
+        private static void DeleteRecentVersion(
             IncrementalBackupState state,
             VersionState versionToDelete,
             List<string> storageFilesToDeleteList)

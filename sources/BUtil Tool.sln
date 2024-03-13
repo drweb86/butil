@@ -30,6 +30,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\help\Version History (Changelog).md = ..\help\Version History (Changelog).md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BUtil.Tests", "BUtil.Tests\BUtil.Tests.csproj", "{3AF7C053-11AC-415C-932E-CD788E4EE7E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -108,6 +110,18 @@ Global
 		{C37AE99C-24D6-4B7F-8939-B8F6BA87BCFB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C37AE99C-24D6-4B7F-8939-B8F6BA87BCFB}.Release|x86.ActiveCfg = Release|Any CPU
 		{C37AE99C-24D6-4B7F-8939-B8F6BA87BCFB}.Release|x86.Build.0 = Release|Any CPU
+		{3AF7C053-11AC-415C-932E-CD788E4EE7E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AF7C053-11AC-415C-932E-CD788E4EE7E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AF7C053-11AC-415C-932E-CD788E4EE7E2}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3AF7C053-11AC-415C-932E-CD788E4EE7E2}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3AF7C053-11AC-415C-932E-CD788E4EE7E2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3AF7C053-11AC-415C-932E-CD788E4EE7E2}.Debug|x86.Build.0 = Debug|Any CPU
+		{3AF7C053-11AC-415C-932E-CD788E4EE7E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AF7C053-11AC-415C-932E-CD788E4EE7E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AF7C053-11AC-415C-932E-CD788E4EE7E2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3AF7C053-11AC-415C-932E-CD788E4EE7E2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3AF7C053-11AC-415C-932E-CD788E4EE7E2}.Release|x86.ActiveCfg = Release|Any CPU
+		{3AF7C053-11AC-415C-932E-CD788E4EE7E2}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
