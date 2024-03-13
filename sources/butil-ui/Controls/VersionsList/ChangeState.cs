@@ -1,9 +1,8 @@
-﻿namespace butil_ui.Controls
+﻿namespace butil_ui.Controls;
+
+public enum ChangeState
 {
-    public enum ChangeState
-    {
-        Created = 3, // match image indexes
-        Deleted = 4,
-        Updated = 5
-    }
+    Created = 3, // match image indexes
+    Deleted = 4,
+    Updated = 5
 }

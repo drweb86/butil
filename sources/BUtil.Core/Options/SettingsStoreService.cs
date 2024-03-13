@@ -1,40 +1,39 @@
-﻿using System.IO;
+﻿using BUtil.Core.FileSystem;
 using System;
-using BUtil.Core.FileSystem;
+using System.IO;
 
-namespace BUtil.Core.Options
+namespace BUtil.Core.Options;
+
+public class SettingsStoreService
 {
-    public class SettingsStoreService
+    public SettingsStoreService()
     {
-        public SettingsStoreService()
-        {
-            if (!Directory.Exists(Directories.SettingsDir))
-                Directory.CreateDirectory(Directories.SettingsDir);
-        }
+        if (!Directory.Exists(Directories.SettingsDir))
+            Directory.CreateDirectory(Directories.SettingsDir);
+    }
 
-        public string Load(string name, string defaultValue)
-        {
-            var file = GetFileName(name);
-            if (File.Exists(file))
-                return File.ReadAllText(file);
+    public string Load(string name, string defaultValue)
+    {
+        var file = GetFileName(name);
+        if (File.Exists(file))
+            return File.ReadAllText(file);
 
-            return defaultValue;
-        }
+        return defaultValue;
+    }
 
-        public void Save(string name, string value)
-        {
-            var file = GetFileName(name);
-            if (File.Exists(file))
-                File.Delete(file);
-            File.WriteAllText(file, value);
-        }
+    public void Save(string name, string value)
+    {
+        var file = GetFileName(name);
+        if (File.Exists(file))
+            File.Delete(file);
+        File.WriteAllText(file, value);
+    }
 
-        private string GetFileName(string name)
-        {
-            if (name.Contains("..") || name.Contains('/') || name.Contains('\\'))
-                throw new ArgumentException(nameof(name));
+    private string GetFileName(string name)
+    {
+        if (name.Contains("..") || name.Contains('/') || name.Contains('\\'))
+            throw new ArgumentException(nameof(name));
 
-            return Path.Combine(Directories.SettingsDir, name);
-        }
+        return Path.Combine(Directories.SettingsDir, name);
     }
 }

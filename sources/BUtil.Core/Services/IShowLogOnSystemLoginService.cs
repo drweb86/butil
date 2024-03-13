@@ -1,7 +1,6 @@
-﻿namespace BUtil.Core.Services
+﻿namespace BUtil.Core.Services;
+
+public interface IShowLogOnSystemLoginService
 {
-    public interface IShowLogOnSystemLoginService
-    {
-        public void ShowLogOnSystemLoginService(string fileName);
-    }
+    public void ShowLogOnSystemLoginService(string fileName);
 }

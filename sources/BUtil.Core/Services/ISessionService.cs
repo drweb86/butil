@@ -1,9 +1,8 @@
 ﻿using BUtil.Core.Misc;
 
-namespace BUtil.Core.Services
+namespace BUtil.Core.Services;
+
+public interface ISessionService
 {
-    public interface ISessionService
-    {
-        void DoTask(PowerTask task);
-    }
+    void DoTask(PowerTask task);
 }

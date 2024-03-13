@@ -4,51 +4,50 @@ using BUtil.Core.State;
 using System;
 using System.IO;
 
-namespace BUtil.Core.Misc
+namespace BUtil.Core.Misc;
+
+public static class SourceItemHelper
 {
-    public static class SourceItemHelper
+    public static string GetFriendlyFileName(SourceItemV2 item, string fileName)
     {
-        public static string GetFriendlyFileName(SourceItemV2 item, string fileName)
-        {
-            if (!item.IsFolder)
-                return fileName;
-            
-            var target = item.Target.TrimEnd(new char[] { '\\', '/' });
-            return fileName.Substring(target.Length + 1);
-        }
+        if (!item.IsFolder)
+            return fileName;
 
-        public static string GetSourceItemDirectory(SourceItemV2 sourceItem)
-        {
-            var dir = sourceItem.IsFolder ?
-                sourceItem.Target :
-                Path.GetDirectoryName(sourceItem.Target) ?? throw new InvalidDataException(sourceItem.Target);
+        var target = item.Target.TrimEnd(new char[] { '\\', '/' });
+        return fileName.Substring(target.Length + 1);
+    }
 
-            return dir.TrimEnd(Path.DirectorySeparatorChar);
-        }
+    public static string GetSourceItemDirectory(SourceItemV2 sourceItem)
+    {
+        var dir = sourceItem.IsFolder ?
+            sourceItem.Target :
+            Path.GetDirectoryName(sourceItem.Target) ?? throw new InvalidDataException(sourceItem.Target);
 
-        public static string GetSourceItemRelativeFileName(string sourceItemDirectory, FileState fileState)
-        {
-            return fileState.FileName.Substring(sourceItemDirectory.Length + 1);
-        }
+        return dir.TrimEnd(Path.DirectorySeparatorChar);
+    }
 
-        public static string GetVersionFolder(
-            DateTime backupDateUtc)
-        {
-            return backupDateUtc.ToString("yyyy-MM-dd-T-HH-mm-ss");
-        }
+    public static string GetSourceItemRelativeFileName(string sourceItemDirectory, FileState fileState)
+    {
+        return fileState.FileName.Substring(sourceItemDirectory.Length + 1);
+    }
 
-        public static string GetVersionFolderMask()
-        {
-            return "????-??-??-T-??-??-??";
-        }
+    public static string GetVersionFolder(
+        DateTime backupDateUtc)
+    {
+        return backupDateUtc.ToString("yyyy-MM-dd-T-HH-mm-ss");
+    }
 
-        public static string GetCompressedStorageRelativeFileName(VersionState versionState)
-        {
-            var readableDate = GetVersionFolder(versionState.BackupDateUtc);
+    public static string GetVersionFolderMask()
+    {
+        return "????-??-??-T-??-??-??";
+    }
 
-            return Path.Combine(
-                readableDate,
-                $"{Guid.NewGuid()}.7z");
-        }
+    public static string GetCompressedStorageRelativeFileName(VersionState versionState)
+    {
+        var readableDate = GetVersionFolder(versionState.BackupDateUtc);
+
+        return Path.Combine(
+            readableDate,
+            $"{Guid.NewGuid()}.7z");
     }
 }

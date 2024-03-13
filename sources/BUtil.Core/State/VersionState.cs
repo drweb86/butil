@@ -2,19 +2,18 @@
 using System;
 using System.Collections.Generic;
 
-namespace BUtil.Core.State
+namespace BUtil.Core.State;
+
+
+public class VersionState
 {
+    public DateTime BackupDateUtc { get; set; }
+    public IEnumerable<SourceItemChanges> SourceItemChanges { get; set; } = new List<SourceItemChanges>();
+    public VersionState() { } // deserialization
 
-    public class VersionState
+    public VersionState(DateTime backupDateUtc, IEnumerable<SourceItemChanges> sourceItemChanges)
     {
-        public DateTime BackupDateUtc { get; set; }
-        public IEnumerable<SourceItemChanges> SourceItemChanges { get; set;} = new List<SourceItemChanges>();
-        public VersionState() { } // deserialization
-
-        public VersionState(DateTime backupDateUtc, IEnumerable<SourceItemChanges> sourceItemChanges)
-        {
-            BackupDateUtc = backupDateUtc;
-            SourceItemChanges = sourceItemChanges;
-        }
+        BackupDateUtc = backupDateUtc;
+        SourceItemChanges = sourceItemChanges;
     }
 }

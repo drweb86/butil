@@ -1,7 +1,6 @@
-﻿namespace BUtil.Core.State
+﻿namespace BUtil.Core.State;
+
+public static class StorageIntegrityMethod
 {
-    public static class StorageIntegrityMethod
-    {
-        public const string Sha512 = "SHA512";
-    }
+    public const string Sha512 = "SHA512";
 }

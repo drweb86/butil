@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
 
-namespace BUtil.Core.Services
+namespace BUtil.Core.Services;
+
+public interface IFolderService
 {
-    public interface IFolderService
-    {
-        IEnumerable<string> GetDefaultBackupFolders();
-        void OpenFolderInShell(string folder);
-        void OpenFileInShell(string file);
-    }
+    IEnumerable<string> GetDefaultBackupFolders();
+    void OpenFolderInShell(string folder);
+    void OpenFileInShell(string file);
 }

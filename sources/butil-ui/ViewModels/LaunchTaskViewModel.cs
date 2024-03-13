@@ -179,7 +179,7 @@ public class LaunchTaskViewModel : ViewModelBase
     #endregion
 
     #region ProgressGenericTitle
-    
+
     private string _progressGenericTitle = Resources.Task_List;
     public string ProgressGenericTitle
     {
@@ -303,7 +303,7 @@ public class LaunchTaskViewModel : ViewModelBase
     public void StartTaskCommand()
     {
         IsStartButtonVisible = false;
-        IsStopButtonEnabled  = true;
+        IsStopButtonEnabled = true;
         ProgressGenericTitle = Resources.Task_Status_InProgress;
 
         _startTime = DateTime.Now;
@@ -360,7 +360,7 @@ public class LaunchTaskViewModel : ViewModelBase
     private BuTask? _threadTask;
     private Thread? _thread;
     private DateTime _startTime = DateTime.Now;
-    private readonly System.Timers.Timer _timer = new (1000);
+    private readonly System.Timers.Timer _timer = new(1000);
 
     public void Initialize()
     {
@@ -396,7 +396,8 @@ public class LaunchTaskViewModel : ViewModelBase
             .GetChildren()
             .Select(x => new LaunchTaskViewItem(x, ProcessingStatus.NotStarted))
             .ToList()
-            .ForEach(x => {
+            .ForEach(x =>
+            {
                 _items.Add(x);
                 _itemsDict.AddOrUpdate(x.Tag, x, (a, b) => b);
             });

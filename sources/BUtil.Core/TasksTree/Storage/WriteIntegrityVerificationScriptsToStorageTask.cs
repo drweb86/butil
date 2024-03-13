@@ -9,100 +9,100 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace BUtil.Core.TasksTree.Storage
+namespace BUtil.Core.TasksTree.Storage;
+
+internal class WriteIntegrityVerificationScriptsToStorageTask : BuTask
 {
-    internal class WriteIntegrityVerificationScriptsToStorageTask : BuTask
+    private readonly StorageSpecificServicesIoc _services;
+    private readonly CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask;
+    private readonly WriteSourceFilesToStorageTask _writeSourceFilesToStorageTask;
+    private readonly WriteStateToStorageTask _writeStateToStorageTask;
+
+    public WriteIntegrityVerificationScriptsToStorageTask(StorageSpecificServicesIoc services, TaskEvents events,
+        CalculateIncrementedVersionForStorageTask getIncrementedVersionTask,
+        WriteSourceFilesToStorageTask writeSourceFilesToStorageTask,
+        States.WriteStateToStorageTask writeStateToStorageTask)
+        : base(services.Log, events, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Saving)
     {
-        private readonly StorageSpecificServicesIoc _services;
-        private readonly CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask;
-        private readonly WriteSourceFilesToStorageTask _writeSourceFilesToStorageTask;
-        private readonly WriteStateToStorageTask _writeStateToStorageTask;
+        _services = services;
+        _getIncrementedVersionTask = getIncrementedVersionTask;
+        _writeSourceFilesToStorageTask = writeSourceFilesToStorageTask;
+        _writeStateToStorageTask = writeStateToStorageTask;
+    }
 
-        public WriteIntegrityVerificationScriptsToStorageTask(StorageSpecificServicesIoc services, TaskEvents events,
-            CalculateIncrementedVersionForStorageTask getIncrementedVersionTask,
-            WriteSourceFilesToStorageTask writeSourceFilesToStorageTask,
-            States.WriteStateToStorageTask writeStateToStorageTask)
-            : base(services.Log, events, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Saving)
+    public override void Execute()
+    {
+        UpdateStatus(ProcessingStatus.InProgress);
+
+        if (!_getIncrementedVersionTask.VersionIsNeeded)
         {
-            _services = services;
-            _getIncrementedVersionTask = getIncrementedVersionTask;
-            _writeSourceFilesToStorageTask = writeSourceFilesToStorageTask;
-            _writeStateToStorageTask = writeStateToStorageTask;
-        }
-
-        public override void Execute()
-        {
-            UpdateStatus(ProcessingStatus.InProgress);
-
-            if (!_getIncrementedVersionTask.VersionIsNeeded)
-            {
-                LogDebug("Version is not needed.");
-                IsSuccess = true;
-                UpdateStatus(ProcessingStatus.FinishedSuccesfully);
-                return;
-            }
-
-            if (!_writeSourceFilesToStorageTask.IsSuccess)
-            {
-                LogDebug("Writing source files to storage has failed. Skipping.");
-                IsSuccess = false;
-                UpdateStatus(ProcessingStatus.FinishedWithErrors);
-                return;
-            }
-
-            var storage = _services.Storage;
-
-            if (!_writeStateToStorageTask.IsSuccess)
-            {
-                IsSuccess = false;
-                UpdateStatus(ProcessingStatus.FinishedWithErrors);
-                LogError("Writing state was not successfull!");
-                return;
-            }
-
-            try
-            {
-                using (var tempFolder = new TempFolder())
-                {
-                    var powershellFile = Path.Combine(tempFolder.Folder, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Ps1);
-                    File.WriteAllText(powershellFile, GetPowershellScriptContent());
-                    storage.Upload(powershellFile, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Ps1);
-                    File.Delete(powershellFile);
-                    IsSuccess = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                LogError("Failed to upload integrity verification script");
-                LogError(ex.Message);
-                IsSuccess = false;
-            }
-
+            LogDebug("Version is not needed.");
+            IsSuccess = true;
             UpdateStatus(ProcessingStatus.FinishedSuccesfully);
+            return;
         }
 
-        private string GetPowershellScriptContent()
+        if (!_writeSourceFilesToStorageTask.IsSuccess)
         {
-            var storageFiles = (_getIncrementedVersionTask.IncrementalBackupState ?? throw new Exception()).VersionStates
-                .SelectMany(x => x.SourceItemChanges)
-                .SelectMany(x =>
-                {
-                    var items = new List<StorageFile>();
-                    items.AddRange(x.UpdatedFiles);
-                    items.AddRange(x.CreatedFiles);
-                    return items;
-                })
-                .ToList();
-            storageFiles.Add((_writeStateToStorageTask.StateStorageFile ?? throw new Exception()));
+            LogDebug("Writing source files to storage has failed. Skipping.");
+            IsSuccess = false;
+            UpdateStatus(ProcessingStatus.FinishedWithErrors);
+            return;
+        }
 
-            var lines = storageFiles
-                .GroupBy(x => x.StorageRelativeFileName)
-                .Select(x => x.First())
-                .Select(x => $@"[void]$fileInfos.Add([FileInfo]::new(""{x.StorageRelativeFileName}"", {x.StorageFileNameSize}, ""{x.StorageIntegrityMethodInfo}""))")
-                .ToList();
-            var lineContent = string.Join("\r\n", lines);
+        var storage = _services.Storage;
 
-            var scriptPrefix = @"<# 
+        if (!_writeStateToStorageTask.IsSuccess)
+        {
+            IsSuccess = false;
+            UpdateStatus(ProcessingStatus.FinishedWithErrors);
+            LogError("Writing state was not successfull!");
+            return;
+        }
+
+        try
+        {
+            using (var tempFolder = new TempFolder())
+            {
+                var powershellFile = Path.Combine(tempFolder.Folder, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Ps1);
+                File.WriteAllText(powershellFile, GetPowershellScriptContent());
+                storage.Upload(powershellFile, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Ps1);
+                File.Delete(powershellFile);
+                IsSuccess = true;
+            }
+        }
+        catch (Exception ex)
+        {
+            LogError("Failed to upload integrity verification script");
+            LogError(ex.Message);
+            IsSuccess = false;
+        }
+
+        UpdateStatus(ProcessingStatus.FinishedSuccesfully);
+    }
+
+    private string GetPowershellScriptContent()
+    {
+        var storageFiles = (_getIncrementedVersionTask.IncrementalBackupState ?? throw new Exception()).VersionStates
+            .SelectMany(x => x.SourceItemChanges)
+            .SelectMany(x =>
+            {
+                var items = new List<StorageFile>();
+                items.AddRange(x.UpdatedFiles);
+                items.AddRange(x.CreatedFiles);
+                return items;
+            })
+            .ToList();
+        storageFiles.Add((_writeStateToStorageTask.StateStorageFile ?? throw new Exception()));
+
+        var lines = storageFiles
+            .GroupBy(x => x.StorageRelativeFileName)
+            .Select(x => x.First())
+            .Select(x => $@"[void]$fileInfos.Add([FileInfo]::new(""{x.StorageRelativeFileName}"", {x.StorageFileNameSize}, ""{x.StorageIntegrityMethodInfo}""))")
+            .ToList();
+        var lineContent = string.Join("\r\n", lines);
+
+        var scriptPrefix = @"<# 
 
 This script verifies integrity of all backup files.
 
@@ -145,8 +145,8 @@ function Write-Error($message) {
 $fileInfos = New-Object System.Collections.ArrayList
 ";
 
-            var script = scriptPrefix +
-                lineContent +
+        var script = scriptPrefix +
+            lineContent +
 @"
 
 Write-Host ""Verification by SHA512 and size:""
@@ -179,7 +179,6 @@ else
 }
 
 pause";
-            return script;
-        }
+        return script;
     }
 }

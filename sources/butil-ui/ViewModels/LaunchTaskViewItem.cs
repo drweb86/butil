@@ -1,12 +1,11 @@
-﻿using Avalonia.Media;
-using BUtil.Core.Events;
+﻿using BUtil.Core.Events;
 using BUtil.Core.TasksTree.Core;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 
 namespace butil_ui.ViewModels;
 
-public class LaunchTaskViewItem: ObservableObject
+public class LaunchTaskViewItem : ObservableObject
 {
     public LaunchTaskViewItem(BuTask task, ProcessingStatus status)
     {

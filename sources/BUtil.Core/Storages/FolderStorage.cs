@@ -1,167 +1,165 @@
 ﻿
+using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.Logs;
 using System;
 using System.IO;
 using System.Linq;
 using System.Security;
-using BUtil.Core.ConfigurationFileModels.V2;
-using BUtil.Core.Logs;
-using BUtil.Core.Misc;
 
-namespace BUtil.Core.Storages
+namespace BUtil.Core.Storages;
+
+public class FolderStorage : StorageBase<FolderStorageSettingsV2>
 {
-    public class FolderStorage : StorageBase<FolderStorageSettingsV2>
+    public FolderStorage(ILog log, FolderStorageSettingsV2 settings)
+        : base(log, settings)
     {
-        public FolderStorage(ILog log, FolderStorageSettingsV2 settings)
-            : base(log, settings)
-        {
-            if (string.IsNullOrWhiteSpace(Settings.DestinationFolder))
-                throw new InvalidDataException(BUtil.Core.Localization.Resources.DirectoryStorage_Field_Directory_Validation_Empty);
+        if (string.IsNullOrWhiteSpace(Settings.DestinationFolder))
+            throw new InvalidDataException(BUtil.Core.Localization.Resources.DirectoryStorage_Field_Directory_Validation_Empty);
 
-            Mount();
-        }
+        Mount();
+    }
 
-        private readonly object _uploadLock = new();
-        public override IStorageUploadResult Upload(string sourceFile, string relativeFileName)
+    private readonly object _uploadLock = new();
+    public override IStorageUploadResult Upload(string sourceFile, string relativeFileName)
+    {
+        lock (_uploadLock) // because we're limited by upload speed and Samba has limit of 6 parallel uploads usually
         {
-            lock (_uploadLock) // because we're limited by upload speed and Samba has limit of 6 parallel uploads usually
+            var destinationFile = Path.Combine(Settings.DestinationFolder, relativeFileName);
+
+            Log.WriteLine(LoggingEvent.Debug, $"Copying \"{sourceFile}\" to \"{destinationFile}\"");
+
+            var destinationDirectory = Path.GetDirectoryName(destinationFile) ?? string.Empty;
+            if (!Directory.Exists(destinationDirectory))
+                Directory.CreateDirectory(destinationDirectory);
+
+            Copy(sourceFile, destinationFile);
+
+            return new IStorageUploadResult
             {
-                var destinationFile = Path.Combine(Settings.DestinationFolder, relativeFileName);
-
-                Log.WriteLine(LoggingEvent.Debug, $"Copying \"{sourceFile}\" to \"{destinationFile}\"");
-
-                var destinationDirectory = Path.GetDirectoryName(destinationFile) ?? string.Empty;
-                if (!Directory.Exists(destinationDirectory))
-                    Directory.CreateDirectory(destinationDirectory);
-
-                Copy(sourceFile, destinationFile);
-
-                return new IStorageUploadResult
-                {
-                    StorageFileName = destinationFile,
-                    StorageFileNameSize = new FileInfo(destinationFile).Length,
-                };
-            }
+                StorageFileName = destinationFile,
+                StorageFileNameSize = new FileInfo(destinationFile).Length,
+            };
         }
+    }
 
-        private void Mount()
+    private void Mount()
+    {
+        Log.WriteLine(LoggingEvent.Debug, $"Mount");
+        if (!string.IsNullOrWhiteSpace(this.Settings.MountPowershellScript))
         {
-            Log.WriteLine(LoggingEvent.Debug, $"Mount");
-            if (!string.IsNullOrWhiteSpace(this.Settings.MountPowershellScript))
-            {
-                if (!PlatformSpecificExperience.Instance.SupportManager.LaunchScript(Log, this.Settings.MountPowershellScript, "***"))
-                    throw new InvalidOperationException($"Cannot mount");
-            }
+            if (!PlatformSpecificExperience.Instance.SupportManager.LaunchScript(Log, this.Settings.MountPowershellScript, "***"))
+                throw new InvalidOperationException($"Cannot mount");
         }
+    }
 
-        private void Unmount()
+    private void Unmount()
+    {
+        Log.WriteLine(LoggingEvent.Debug, $"Unmount");
+        if (!string.IsNullOrWhiteSpace(this.Settings.UnmountPowershellScript))
         {
-            Log.WriteLine(LoggingEvent.Debug, $"Unmount");
-            if (!string.IsNullOrWhiteSpace(this.Settings.UnmountPowershellScript))
-            {
-                if (!PlatformSpecificExperience.Instance.SupportManager.LaunchScript(Log, this.Settings.UnmountPowershellScript, "***"))
-                    throw new InvalidOperationException($"Cannot unmount");
-            }
+            if (!PlatformSpecificExperience.Instance.SupportManager.LaunchScript(Log, this.Settings.UnmountPowershellScript, "***"))
+                throw new InvalidOperationException($"Cannot unmount");
         }
+    }
 
-        public override string? Test()
+    public override string? Test()
+    {
+        if (!Directory.Exists(Settings.DestinationFolder))
+            return string.Format(Localization.Resources.DirectoryStorage_Field_Directory_Validation_NotFound, Settings.DestinationFolder);
+        if (!Path.IsPathFullyQualified(Settings.DestinationFolder))
+            return string.Format(Localization.Resources.DirectoryStorage_Field_Directory_Validation_NotFound, Settings.DestinationFolder);
+
+        return null;
+    }
+
+    public override bool Exists(string relativeFileName)
+    {
+        var fullPathName = Path.Combine(Settings.DestinationFolder, relativeFileName);
+
+        return File.Exists(fullPathName);
+    }
+
+    public override void Delete(string relativeFileName)
+    {
+        var fullPathName = Path.Combine(Settings.DestinationFolder, relativeFileName);
+
+        if (File.Exists(fullPathName))
+            File.Delete(fullPathName);
+    }
+
+    public override void DeleteFolder(string relativeFolderName)
+    {
+        var fullPathName = string.IsNullOrWhiteSpace(relativeFolderName)
+            ? Settings.DestinationFolder
+            : Path.Combine(Settings.DestinationFolder, relativeFolderName);
+
+        if (Directory.Exists(fullPathName))
+            Directory.Delete(fullPathName, true);
+    }
+
+    public override string[] GetFolders(string relativeFolderName, string? mask = null)
+    {
+        var fullPathName = string.IsNullOrWhiteSpace(relativeFolderName)
+            ? Settings.DestinationFolder
+            : Path.Combine(Settings.DestinationFolder, relativeFolderName);
+
+        return Directory
+            .GetDirectories(fullPathName, mask ?? "*.*")
+            .Select(x => x.Substring(fullPathName.Length))
+            .Select(x => x.Trim(new[] { '\\', '/' }))
+            .ToArray();
+    }
+
+    public override void Download(string relativeFileName, string targetFileName)
+    {
+        var file = Path.Combine(Settings.DestinationFolder, relativeFileName);
+        Copy(file, targetFileName);
+    }
+
+    public static void Copy(string inputFile, string outputFilePath)
+    {
+        int bufferSize = 16 * 1024 * 1024;
+
+        using var inputFileStream = new FileStream(inputFile, FileMode.Open, FileAccess.Read, FileShare.ReadWrite, bufferSize);
+        using var outputFileStream = new FileStream(outputFilePath, FileMode.OpenOrCreate, FileAccess.Write, FileShare.None, bufferSize);
+        outputFileStream.SetLength(inputFileStream.Length);
+        int bytesRead = -1;
+        byte[] bytes = new byte[bufferSize];
+
+        while ((bytesRead = inputFileStream.Read(bytes, 0, bufferSize)) > 0)
         {
-            if (!Directory.Exists(Settings.DestinationFolder))
-                return string.Format(Localization.Resources.DirectoryStorage_Field_Directory_Validation_NotFound, Settings.DestinationFolder);
-            if (!Path.IsPathFullyQualified(Settings.DestinationFolder))
-                return string.Format(Localization.Resources.DirectoryStorage_Field_Directory_Validation_NotFound, Settings.DestinationFolder);
-
-            return null;
+            outputFileStream.Write(bytes, 0, bytesRead);
         }
+    }
 
-        public override bool Exists(string relativeFileName)
+    public override string[] GetFiles(string? relativeFolderName = null, SearchOption option = SearchOption.TopDirectoryOnly)
+    {
+        if (relativeFolderName != null)
         {
-            var fullPathName = Path.Combine(Settings.DestinationFolder, relativeFileName);
-
-            return File.Exists(fullPathName);
+            if (relativeFolderName.Contains(".."))
+                throw new SecurityException(nameof(relativeFolderName));
         }
 
-        public override void Delete(string relativeFileName)
-        {
-            var fullPathName = Path.Combine(Settings.DestinationFolder, relativeFileName);
+        var actualFolder = relativeFolderName == null ?
+            Settings.DestinationFolder :
+            Path.Combine(Settings.DestinationFolder, relativeFolderName);
 
-            if (File.Exists(fullPathName))
-                File.Delete(fullPathName);
-        }
+        return Directory
+            .GetFiles(actualFolder, "*.*", option)
+            .Select(x => x.Substring(actualFolder.Length))
+            .Select(x => x.Trim(new[] { '\\', '/' }))
+            .ToArray();
+    }
 
-        public override void DeleteFolder(string relativeFolderName)
-        {
-            var fullPathName = string.IsNullOrWhiteSpace(relativeFolderName)
-                ? Settings.DestinationFolder
-                : Path.Combine(Settings.DestinationFolder, relativeFolderName);
+    public override DateTime GetModifiedTime(string relativeFileName)
+    {
+        var actualFile = Path.Combine(Settings.DestinationFolder, relativeFileName);
 
-            if (Directory.Exists(fullPathName))
-                Directory.Delete(fullPathName, true);
-        }
+        return File.GetLastWriteTime(actualFile);
+    }
 
-        public override string[] GetFolders(string relativeFolderName, string? mask = null)
-        {
-            var fullPathName = string.IsNullOrWhiteSpace(relativeFolderName)
-                ? Settings.DestinationFolder
-                : Path.Combine(Settings.DestinationFolder, relativeFolderName);
-
-            return Directory
-                .GetDirectories(fullPathName, mask ?? "*.*")
-                .Select(x => x.Substring(fullPathName.Length))
-                .Select(x => x.Trim(new[] { '\\', '/' }))
-                .ToArray();
-        }
-
-        public override void Download(string relativeFileName, string targetFileName)
-        {
-            var file = Path.Combine(Settings.DestinationFolder, relativeFileName);
-            Copy(file, targetFileName);
-        }
-
-        public static void Copy(string inputFile, string outputFilePath)
-        {
-            int bufferSize = 16 * 1024 * 1024;
-
-            using var inputFileStream = new FileStream(inputFile, FileMode.Open, FileAccess.Read, FileShare.ReadWrite, bufferSize);
-            using var outputFileStream = new FileStream(outputFilePath, FileMode.OpenOrCreate, FileAccess.Write, FileShare.None, bufferSize);
-            outputFileStream.SetLength(inputFileStream.Length);
-            int bytesRead = -1;
-            byte[] bytes = new byte[bufferSize];
-
-            while ((bytesRead = inputFileStream.Read(bytes, 0, bufferSize)) > 0)
-            {
-                outputFileStream.Write(bytes, 0, bytesRead);
-            }
-        }
-
-        public override string[] GetFiles(string? relativeFolderName = null, SearchOption option = SearchOption.TopDirectoryOnly)
-        {
-            if (relativeFolderName != null)
-            {
-                if (relativeFolderName.Contains(".."))
-                    throw new SecurityException(nameof(relativeFolderName));
-            }
-
-            var actualFolder = relativeFolderName == null ?
-                Settings.DestinationFolder :
-                Path.Combine(Settings.DestinationFolder, relativeFolderName);
-
-            return Directory
-                .GetFiles(actualFolder, "*.*", option)
-                .Select(x => x.Substring(actualFolder.Length))
-                .Select(x => x.Trim(new[] { '\\', '/' }))
-                .ToArray();
-        }
-
-        public override DateTime GetModifiedTime(string relativeFileName)
-        {
-            var actualFile = Path.Combine(Settings.DestinationFolder, relativeFileName);
-
-            return File.GetLastWriteTime(actualFile);
-        }
-
-        public override void Dispose()
-        {
-            Unmount();
-        }
+    public override void Dispose()
+    {
+        Unmount();
     }
 }

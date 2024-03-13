@@ -11,53 +11,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace BUtil.Core.TasksTree.MediaSyncBackupModel
+namespace BUtil.Core.TasksTree.MediaSyncBackupModel;
+
+class ImportFilesTask : SequentialBuTask
 {
-    class ImportFilesTask : SequentialBuTask
+    private readonly TaskV2 _task;
+    private readonly GetStateOfSourceItemTask _getStateOfSourceItemTask;
+    private readonly CommonServicesIoc _commonServicesIoc;
+
+    public ImportFilesTask(ILog log, TaskEvents backupEvents, TaskV2 backupTask, GetStateOfSourceItemTask getStateOfSourceItemTask, CommonServicesIoc commonServicesIoc)
+        : base(log, backupEvents, BUtil.Core.Localization.Resources.ImportMediaTask_AllFiles)
     {
-        private readonly TaskV2 _task;
-        private readonly GetStateOfSourceItemTask _getStateOfSourceItemTask;
-        private readonly CommonServicesIoc _commonServicesIoc;
+        Children = new List<BuTask>();
+        _task = backupTask;
+        _getStateOfSourceItemTask = getStateOfSourceItemTask;
+        _commonServicesIoc = commonServicesIoc;
+    }
 
-        public ImportFilesTask(ILog log, TaskEvents backupEvents, TaskV2 backupTask, GetStateOfSourceItemTask getStateOfSourceItemTask, CommonServicesIoc commonServicesIoc)
-            : base(log, backupEvents, BUtil.Core.Localization.Resources.ImportMediaTask_AllFiles)
+    public override void Execute()
+    {
+        UpdateStatus(ProcessingStatus.InProgress);
+
+        var options = (ImportMediaTaskModelOptionsV2)_task.Model;
+
+        var importMediaFileService = new ImportMediaFileService();
+        var importMediaState = options.SkipAlreadyImportedFiles ? importMediaFileService.Load(_task.Name) ?? new ImportMediaState() : new ImportMediaState();
+        var fromStorage = StorageFactory.Create(this.Log, options.From);
+        var toStorage = StorageFactory.Create(this.Log, new FolderStorageSettingsV2 { DestinationFolder = options.DestinationFolder });
+        var transformFileName = options.TransformFileName;
+
+        var fromStorageFiles = fromStorage.GetFiles(null, SearchOption.AllDirectories);
+        var fromStorageFilesToProcess = fromStorageFiles.Where(x => !importMediaState.Files.Contains(x)).ToList();
+
+        var tasks = fromStorageFilesToProcess
+            .Select(x => new ImportSingleFileTask(Log, Events, x, fromStorage, toStorage, transformFileName, _getStateOfSourceItemTask.SourceItemState ?? throw new InvalidOperationException(), _commonServicesIoc))
+            .ToList();
+        Events.DuringExecutionTasksAdded(Id, tasks);
+
+        Children = tasks;
+        base.Execute();
+
+        importMediaState.Files.AddRange(tasks.Where(x => x.IsSuccess).Select(x => x.File));
+
+        if (options.SkipAlreadyImportedFiles)
         {
-            Children = new List<BuTask>();
-            _task = backupTask;
-            _getStateOfSourceItemTask = getStateOfSourceItemTask;
-            _commonServicesIoc = commonServicesIoc;
+            importMediaFileService.Save(importMediaState, _task.Name);
         }
-
-        public override void Execute()
-        {
-            UpdateStatus(ProcessingStatus.InProgress);
-
-            var options = (ImportMediaTaskModelOptionsV2)_task.Model;
-
-            var importMediaFileService = new ImportMediaFileService();
-            var importMediaState = options.SkipAlreadyImportedFiles ? importMediaFileService.Load(_task.Name) ?? new ImportMediaState() : new ImportMediaState();
-            var fromStorage = StorageFactory.Create(this.Log, options.From);
-            var toStorage = StorageFactory.Create(this.Log, new FolderStorageSettingsV2 { DestinationFolder = options.DestinationFolder });
-            var transformFileName = options.TransformFileName;
-
-            var fromStorageFiles = fromStorage.GetFiles(null, SearchOption.AllDirectories);
-            var fromStorageFilesToProcess = fromStorageFiles.Where(x => !importMediaState.Files.Contains(x)).ToList();
-            
-            var tasks = fromStorageFilesToProcess
-                .Select(x => new ImportSingleFileTask(Log, Events, x, fromStorage, toStorage, transformFileName, _getStateOfSourceItemTask.SourceItemState ?? throw new InvalidOperationException(), _commonServicesIoc))
-                .ToList();
-            Events.DuringExecutionTasksAdded(Id, tasks);
-            
-            Children = tasks;
-            base.Execute();
-
-            importMediaState.Files.AddRange(tasks.Where(x => x.IsSuccess).Select(x => x.File));
-
-            if (options.SkipAlreadyImportedFiles)
-            {
-                importMediaFileService.Save(importMediaState, _task.Name);
-            }
-            UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
-        }
+        UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
     }
 }

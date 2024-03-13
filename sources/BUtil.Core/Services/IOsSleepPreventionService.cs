@@ -1,8 +1,7 @@
-﻿namespace BUtil.Core.Services
+﻿namespace BUtil.Core.Services;
+
+public interface IOsSleepPreventionService
 {
-    public interface IOsSleepPreventionService
-    {
-        void PreventSleep();
-        void StopPreventSleep();
-    }
+    void PreventSleep();
+    void StopPreventSleep();
 }

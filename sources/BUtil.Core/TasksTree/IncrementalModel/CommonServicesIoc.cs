@@ -2,22 +2,21 @@
 using BUtil.Core.Options;
 using System;
 
-namespace BUtil.Core.TasksTree.IncrementalModel
+namespace BUtil.Core.TasksTree.IncrementalModel;
+
+public class CommonServicesIoc : IDisposable
 {
-    public class CommonServicesIoc: IDisposable
+    public ICashedHashStoreService CashedHashStoreService { get; }
+    public IHashService HashService { get; }
+
+    public CommonServicesIoc()
     {
-        public ICashedHashStoreService CashedHashStoreService { get; }
-        public IHashService HashService { get; }
+        CashedHashStoreService = new CashedHashStoreService();
+        HashService = new CachedHashService(CashedHashStoreService);
+    }
 
-        public CommonServicesIoc()
-        {
-            CashedHashStoreService = new CashedHashStoreService();
-            HashService = new CachedHashService(CashedHashStoreService);
-        }
-
-        public void Dispose()
-        {
-            HashService.Dispose();
-        }
+    public void Dispose()
+    {
+        HashService.Dispose();
     }
 }

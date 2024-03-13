@@ -4,39 +4,38 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BUtil.Core.TasksTree.Core
+namespace BUtil.Core.TasksTree.Core;
+
+
+public class SequentialBuTask : BuTask
 {
+    public IEnumerable<BuTask> Children { get; set; } = Enumerable.Empty<BuTask>();
 
-    public class SequentialBuTask : BuTask
+    public SequentialBuTask(ILog log, TaskEvents events, string title, IEnumerable<BuTask>? children = null)
+        : base(log, events, title)
     {
-        public IEnumerable<BuTask> Children { get; set; } = Enumerable.Empty<BuTask>();
+        if (children != null)
+            Children = children;
+    }
 
-        public SequentialBuTask(ILog log, TaskEvents events, string title, IEnumerable<BuTask>? children = null)
-            : base(log, events, title)
+    public override void Execute()
+    {
+        foreach (var child in Children)
         {
-            if (children != null)
-                Children = children;
+            child.Execute();
         }
+        IsSuccess = Children.All(x => x.IsSuccess);
+    }
 
-        public override void Execute()
+    public override IEnumerable<BuTask> GetChildren()
+    {
+        var actualSelfChildren = Children ?? Array.Empty<BuTask>();
+        var children = new List<BuTask>();
+        foreach (var child in actualSelfChildren)
         {
-            foreach (var child in Children)
-            {
-                child.Execute();
-            }
-            IsSuccess = Children.All(x => x.IsSuccess);
+            children.Add(child);
+            children.AddRange(child.GetChildren());
         }
-
-        public override IEnumerable<BuTask> GetChildren()
-        {
-            var actualSelfChildren = Children ?? Array.Empty<BuTask>();
-            var children = new List<BuTask>();
-            foreach (var child in actualSelfChildren)
-            {
-                children.Add(child);
-                children.AddRange(child.GetChildren());
-            }
-            return children;
-        }
+        return children;
     }
 }

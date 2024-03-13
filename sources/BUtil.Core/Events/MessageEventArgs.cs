@@ -1,16 +1,15 @@
 ﻿using System;
 
-namespace BUtil.Core.Events
+namespace BUtil.Core.Events;
+
+public class MessageEventArgs : EventArgs
 {
-    public class MessageEventArgs : EventArgs
+    public string Message { get; }
+
+
+    public MessageEventArgs(
+        string message)
     {
-        public string Message { get; }
-
-
-        public MessageEventArgs(
-            string message)
-        {
-            Message = message;
-        }
+        Message = message;
     }
 }

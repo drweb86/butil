@@ -1,10 +1,9 @@
-﻿namespace BUtil.Core.Events
+﻿namespace BUtil.Core.Events;
+
+public enum ProcessingStatus
 {
-    public enum ProcessingStatus
-    {
-        NotStarted,
-        InProgress,
-        FinishedSuccesfully,
-        FinishedWithErrors,
-    }
+    NotStarted,
+    InProgress,
+    FinishedSuccesfully,
+    FinishedWithErrors,
 }

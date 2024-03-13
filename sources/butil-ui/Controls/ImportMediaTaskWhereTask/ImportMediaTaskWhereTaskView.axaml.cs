@@ -5,38 +5,37 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace butil_ui.Controls
+namespace butil_ui.Controls;
+
+public partial class ImportMediaTaskWhereTaskView : UserControl
 {
-    public partial class ImportMediaTaskWhereTaskView : UserControl
+    public ImportMediaTaskWhereTaskView()
     {
-        public ImportMediaTaskWhereTaskView()
-        {
-            InitializeComponent();
-            this.DataContext = new ImportMediaTaskWhereTaskViewModel("the folder", false, "transoform file name");
-        }
+        InitializeComponent();
+        this.DataContext = new ImportMediaTaskWhereTaskViewModel("the folder", false, "transoform file name");
+    }
 
-        public void BrowseCommand(object? sender, RoutedEventArgs args)
-        {
-            _ = BrowseCommandInternal();
-        }
+    public void BrowseCommand(object? sender, RoutedEventArgs args)
+    {
+        _ = BrowseCommandInternal();
+    }
 
-        private async Task BrowseCommandInternal()
+    private async Task BrowseCommandInternal()
+    {
+        var root = this.VisualRoot as TopLevel ?? throw new NullReferenceException("Invalid Owner");
+        var dataContext = DataContext as ImportMediaTaskWhereTaskViewModel ?? throw new NullReferenceException();
+        var startLocation = await root.StorageProvider.TryGetFolderFromPathAsync(dataContext.OutputFolder);
+        var folders = await root.StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
         {
-            var root = this.VisualRoot as TopLevel ?? throw new NullReferenceException("Invalid Owner");
-            var dataContext = DataContext as ImportMediaTaskWhereTaskViewModel ?? throw new NullReferenceException();
-            var startLocation = await root.StorageProvider.TryGetFolderFromPathAsync(dataContext.OutputFolder);
-            var folders = await root.StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
-            {
-                Title = BUtil.Core.Localization.Resources.ImportMediaTask_Field_OutputFolder,
-                SuggestedStartLocation = startLocation,
-                AllowMultiple = false
-            });
+            Title = BUtil.Core.Localization.Resources.ImportMediaTask_Field_OutputFolder,
+            SuggestedStartLocation = startLocation,
+            AllowMultiple = false
+        });
 
-            var folder = folders.FirstOrDefault();
-            if (folder != null)
-            {
-                dataContext.OutputFolder = folder.TryGetLocalPath() ?? folder.Path.ToString();
-            }
+        var folder = folders.FirstOrDefault();
+        if (folder != null)
+        {
+            dataContext.OutputFolder = folder.TryGetLocalPath() ?? folder.Path.ToString();
         }
     }
 }

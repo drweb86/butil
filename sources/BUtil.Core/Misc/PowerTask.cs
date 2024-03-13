@@ -1,10 +1,9 @@
-﻿namespace BUtil.Core.Misc
+﻿namespace BUtil.Core.Misc;
+
+public enum PowerTask
 {
-    public enum PowerTask
-    {
-        Shutdown,
-        LogOff,
-        Reboot,
-        None
-    }
+    Shutdown,
+    LogOff,
+    Reboot,
+    None
 }

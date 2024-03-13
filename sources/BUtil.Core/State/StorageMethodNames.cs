@@ -1,7 +1,6 @@
-﻿namespace BUtil.Core.State
+﻿namespace BUtil.Core.State;
+
+public static class StorageMethodNames
 {
-    public static class StorageMethodNames
-    {
-        public const string SevenZipEncrypted = "Encrypted 7z";
-    }
+    public const string SevenZipEncrypted = "Encrypted 7z";
 }

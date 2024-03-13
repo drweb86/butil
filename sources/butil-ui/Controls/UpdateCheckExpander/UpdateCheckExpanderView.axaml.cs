@@ -1,16 +1,15 @@
 using Avalonia.Controls;
 
-namespace butil_ui.Controls
-{
-    public partial class UpdateCheckExpanderView : UserControl
-    {
-        public UpdateCheckExpanderView()
-        {
-            InitializeComponent();
+namespace butil_ui.Controls;
 
-            var viewModel = new Controls.UpdateCheckExpander.UpdateCheckExpanderViewModel();
-            this.DataContext = viewModel;
-            viewModel.Initialize();
-        }
+public partial class UpdateCheckExpanderView : UserControl
+{
+    public UpdateCheckExpanderView()
+    {
+        InitializeComponent();
+
+        var viewModel = new Controls.UpdateCheckExpander.UpdateCheckExpanderViewModel();
+        this.DataContext = viewModel;
+        viewModel.Initialize();
     }
 }

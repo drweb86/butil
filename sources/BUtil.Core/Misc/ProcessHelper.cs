@@ -2,96 +2,95 @@
 using System.Diagnostics;
 using System.Text;
 
-namespace BUtil.Core.Misc
+namespace BUtil.Core.Misc;
+
+public static class ProcessHelper
 {
-    public static class ProcessHelper
+    public static void Execute(
+        string executable,
+        string args,
+        string? workingDirectory,
+
+        bool sendNewLine,
+        ProcessPriorityClass processPriority,
+
+        out string stdOutput,
+        out string stdError,
+        out int returnCode)
     {
-        public static void Execute(
-            string executable,
-            string args,
-            string? workingDirectory,
+        var stdOutputBuilder = new StringBuilder();
+        var stdErrorBuilder = new StringBuilder();
 
-            bool sendNewLine,
-            ProcessPriorityClass processPriority,
+        var process = new Process();
 
-            out string stdOutput,
-            out string stdError,
-            out int returnCode)
+        process.StartInfo.FileName = executable;
+        if (workingDirectory != null)
+            process.StartInfo.WorkingDirectory = workingDirectory;
+        process.StartInfo.Arguments = args;
+        process.StartInfo.UseShellExecute = false;
+        process.StartInfo.CreateNoWindow = true;
+
+        process.StartInfo.RedirectStandardError = true;
+        process.StartInfo.RedirectStandardOutput = true;
+
+        process.OutputDataReceived += (s, a) => stdOutputBuilder.AppendLine(a.Data);
+        process.ErrorDataReceived += (s, a) => stdErrorBuilder.AppendLine(a.Data);
+        if (sendNewLine)
         {
-            var stdOutputBuilder = new StringBuilder();
-            var stdErrorBuilder = new StringBuilder();
+            process.StartInfo.RedirectStandardInput = true;
+        }
+        process.Start();
 
-            var process = new Process();
-            
-            process.StartInfo.FileName = executable;
-            if (workingDirectory != null)
-                process.StartInfo.WorkingDirectory = workingDirectory;
-            process.StartInfo.Arguments = args;
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.CreateNoWindow = true;
-
-            process.StartInfo.RedirectStandardError = true;
-            process.StartInfo.RedirectStandardOutput = true;
-
-            process.OutputDataReceived += (s, a) => stdOutputBuilder.AppendLine(a.Data);
-            process.ErrorDataReceived += (s, a) => stdErrorBuilder.AppendLine(a.Data);
-            if (sendNewLine)
+        if (processPriority != ProcessPriorityClass.Normal)
+        {
+            try
             {
-                process.StartInfo.RedirectStandardInput = true;
+                process.PriorityClass = processPriority;
             }
-            process.Start();
-
-            if (processPriority != ProcessPriorityClass.Normal)
+            catch
             {
-                try
-                {
-                    process.PriorityClass = processPriority;
-                }
-                catch
-                {
-                    // eating
-                }
-            }
-
-            if (sendNewLine)
-            {
-                try
-                {
-                    process.StandardInput.WriteLine();
-                }
-                catch // process might end here.
-                { }
-            }
-            process.BeginErrorReadLine();
-            process.BeginOutputReadLine();
-
-            process.WaitForExit();
-            if (process.HasExited)
-            {
-                stdOutput = stdOutputBuilder.ToString();
-                stdError = stdErrorBuilder.ToString();
-                returnCode = process.ExitCode;
-            }
-            else
-            {
-                process.Kill();
-                stdOutput = string.Empty;
-                stdError = "Processed was killed due to cancellation.";
-                returnCode = -1;
+                // eating
             }
         }
 
-        public static void ShellExecute(string argument)
+        if (sendNewLine)
         {
-            var process = new Process()
+            try
             {
-                StartInfo = new ProcessStartInfo
-                {
-                    FileName = argument,
-                    UseShellExecute = true,
-                }
-            };
-            process.Start();
+                process.StandardInput.WriteLine();
+            }
+            catch // process might end here.
+            { }
         }
+        process.BeginErrorReadLine();
+        process.BeginOutputReadLine();
+
+        process.WaitForExit();
+        if (process.HasExited)
+        {
+            stdOutput = stdOutputBuilder.ToString();
+            stdError = stdErrorBuilder.ToString();
+            returnCode = process.ExitCode;
+        }
+        else
+        {
+            process.Kill();
+            stdOutput = string.Empty;
+            stdError = "Processed was killed due to cancellation.";
+            returnCode = -1;
+        }
+    }
+
+    public static void ShellExecute(string argument)
+    {
+        var process = new Process()
+        {
+            StartInfo = new ProcessStartInfo
+            {
+                FileName = argument,
+                UseShellExecute = true,
+            }
+        };
+        process.Start();
     }
 }

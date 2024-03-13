@@ -1,17 +1,16 @@
 ﻿using BUtil.Core.Services;
 
-namespace BUtil.Linux.Services
-{
-    internal class LinuxOsSleepPreventionService : IOsSleepPreventionService
-    {
-        public void PreventSleep()
-        {
-            // search for systemd-inhibit
-        }
+namespace BUtil.Linux.Services;
 
-        public void StopPreventSleep()
-        {
-            // search for systemd-inhibit
-        }
+internal class LinuxOsSleepPreventionService : IOsSleepPreventionService
+{
+    public void PreventSleep()
+    {
+        // search for systemd-inhibit
+    }
+
+    public void StopPreventSleep()
+    {
+        // search for systemd-inhibit
     }
 }

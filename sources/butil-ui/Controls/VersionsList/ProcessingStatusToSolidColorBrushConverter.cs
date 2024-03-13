@@ -1,32 +1,31 @@
-﻿using System;
+﻿using Avalonia.Data;
 using Avalonia.Data.Converters;
-using System.Globalization;
 using BUtil.Core.Events;
 using butil_ui.ViewModels;
-using Avalonia.Data;
+using System;
+using System.Globalization;
 
-namespace butil_ui.Controls
+namespace butil_ui.Controls;
+
+public class ProcessingStatusToSolidColorBrushConverter : IValueConverter
 {
-    public class ProcessingStatusToSolidColorBrushConverter : IValueConverter
+    public static ProcessingStatusToSolidColorBrushConverter Instance = new ProcessingStatusToSolidColorBrushConverter();
+
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        public static ProcessingStatusToSolidColorBrushConverter Instance = new ProcessingStatusToSolidColorBrushConverter();
-
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            if (value == null)
-                return BindingNotification.UnsetValue;
-
-            if (value is ProcessingStatus processingStatusValue)
-            {
-                return ColorPalette.GetProcessingStatusBrush(processingStatusValue);
-            }
-
+        if (value == null)
             return BindingNotification.UnsetValue;
+
+        if (value is ProcessingStatus processingStatusValue)
+        {
+            return ColorPalette.GetProcessingStatusBrush(processingStatusValue);
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            return BindingNotification.UnsetValue;
-        }
+        return BindingNotification.UnsetValue;
+    }
+
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        return BindingNotification.UnsetValue;
     }
 }

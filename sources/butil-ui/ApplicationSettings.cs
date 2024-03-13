@@ -1,8 +1,7 @@
 ﻿
-namespace butil_ui
+namespace butil_ui;
+
+internal static class ApplicationSettings
 {
-    internal static class ApplicationSettings
-    {
-        public static string Theme { get; set; } = string.Empty;
-    }
+    public static string Theme { get; set; } = string.Empty;
 }

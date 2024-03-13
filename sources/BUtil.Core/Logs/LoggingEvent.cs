@@ -1,8 +1,7 @@
-﻿namespace BUtil.Core.Logs
+﻿namespace BUtil.Core.Logs;
+
+public enum LoggingEvent
 {
-    public enum LoggingEvent
-    {
-        Error = 0,
-        Debug,
-    };
-}
+    Error = 0,
+    Debug,
+};

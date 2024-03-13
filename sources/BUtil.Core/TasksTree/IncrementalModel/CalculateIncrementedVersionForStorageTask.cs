@@ -8,50 +8,49 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BUtil.Core.TasksTree
+namespace BUtil.Core.TasksTree;
+
+internal class CalculateIncrementedVersionForStorageTask : BuTask
 {
-    internal class CalculateIncrementedVersionForStorageTask: BuTask
+    public bool VersionIsNeeded { get; private set; }
+    public IncrementalBackupState? IncrementalBackupState { get; private set; }
+
+    private readonly GetStateOfStorageTask _storageStateTask;
+    private readonly IEnumerable<GetStateOfSourceItemTask> _getSourceItemStateTasks;
+    public CalculateIncrementedVersionForStorageTask(ILog log, TaskEvents events, GetStateOfStorageTask storageStateTask,
+        IEnumerable<GetStateOfSourceItemTask> getSourceItemStateTasks) :
+        base(log, events, BUtil.Core.Localization.Resources.IncrementalBackup_Version_Calculate)
     {
-        public bool VersionIsNeeded { get; private set; }
-        public IncrementalBackupState? IncrementalBackupState { get; private set; }
+        _storageStateTask = storageStateTask;
+        _getSourceItemStateTasks = getSourceItemStateTasks;
+    }
 
-        private readonly GetStateOfStorageTask _storageStateTask;
-        private readonly IEnumerable<GetStateOfSourceItemTask> _getSourceItemStateTasks;
-        public CalculateIncrementedVersionForStorageTask(ILog log, TaskEvents events, GetStateOfStorageTask storageStateTask,
-            IEnumerable<GetStateOfSourceItemTask> getSourceItemStateTasks) :
-            base(log, events, BUtil.Core.Localization.Resources.IncrementalBackup_Version_Calculate)
+    public override void Execute()
+    {
+        UpdateStatus(ProcessingStatus.InProgress);
+
+        var storageState = _storageStateTask.StorageState;
+        if (storageState == null)
         {
-            _storageStateTask = storageStateTask;
-            _getSourceItemStateTasks = getSourceItemStateTasks;
+            UpdateStatus(ProcessingStatus.FinishedWithErrors);
+            IsSuccess = false;
+            return;
         }
-        
-        public override void Execute()
-        {
-            UpdateStatus(ProcessingStatus.InProgress);
 
-            var storageState = _storageStateTask.StorageState;
-            if (storageState == null)
-            {
-                UpdateStatus(ProcessingStatus.FinishedWithErrors);
-                IsSuccess = false;
-                return;
-            }
-
-            var sourceItemStates = _getSourceItemStateTasks
-                .Select(item => item.SourceItemState ?? throw new InvalidOperationException())
-                .ToList();
+        var sourceItemStates = _getSourceItemStateTasks
+            .Select(item => item.SourceItemState ?? throw new InvalidOperationException())
+            .ToList();
 
 
-            var versionState = SourceItemStateComparer.Compare(storageState.LastSourceItemStates, sourceItemStates);
-            storageState.VersionStates.Add(versionState);
-            storageState.LastSourceItemStates = sourceItemStates
-                .Select(x => x.ShallowClone())
-                .ToList();
-            IncrementalBackupState = storageState;
-            VersionIsNeeded = versionState.SourceItemChanges.Any(x => x.CreatedFiles.Any() || x.UpdatedFiles.Any() || x.DeletedFiles.Any());
+        var versionState = SourceItemStateComparer.Compare(storageState.LastSourceItemStates, sourceItemStates);
+        storageState.VersionStates.Add(versionState);
+        storageState.LastSourceItemStates = sourceItemStates
+            .Select(x => x.ShallowClone())
+            .ToList();
+        IncrementalBackupState = storageState;
+        VersionIsNeeded = versionState.SourceItemChanges.Any(x => x.CreatedFiles.Any() || x.UpdatedFiles.Any() || x.DeletedFiles.Any());
 
-            UpdateStatus(ProcessingStatus.FinishedSuccesfully);
-            IsSuccess = true;
-        }
+        UpdateStatus(ProcessingStatus.FinishedSuccesfully);
+        IsSuccess = true;
     }
 }

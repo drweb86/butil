@@ -19,7 +19,8 @@ public partial class App : Application
         if (theme == ThemeSetting.DarkValue)
         {
             this.RequestedThemeVariant = ThemeVariant.Dark;
-        } else if (theme == ThemeSetting.LightValue)
+        }
+        else if (theme == ThemeSetting.LightValue)
         {
             this.RequestedThemeVariant = ThemeVariant.Light;
         }

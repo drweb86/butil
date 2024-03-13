@@ -1,45 +1,43 @@
 ﻿using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
 using BUtil.Core.Misc;
-using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
 using System;
 using System.Linq;
 
-namespace BUtil.Core.TasksTree
+namespace BUtil.Core.TasksTree;
+
+internal class DeleteUnversionedFilesStorageTask : BuTask
 {
-    internal class DeleteUnversionedFilesStorageTask : BuTask
+    public StorageSpecificServicesIoc _services;
+    private readonly GetStateOfStorageTask _getStateOfStorageTask;
+    public IStorageSettingsV2 StorageSettings { get; }
+
+    public DeleteUnversionedFilesStorageTask(StorageSpecificServicesIoc services, TaskEvents events, GetStateOfStorageTask getStateOfStorageTask) :
+        base(services.Log, events, Localization.Resources.BackupVersion_CleanupUncompleted)
     {
-        public StorageSpecificServicesIoc _services;
-        private readonly GetStateOfStorageTask _getStateOfStorageTask;
-        public IStorageSettingsV2 StorageSettings { get; }
+        StorageSettings = services.StorageSettings;
+        _services = services;
+        _getStateOfStorageTask = getStateOfStorageTask;
+    }
 
-        public DeleteUnversionedFilesStorageTask(StorageSpecificServicesIoc services, TaskEvents events, GetStateOfStorageTask getStateOfStorageTask) :
-            base(services.Log, events, Localization.Resources.BackupVersion_CleanupUncompleted)
+    public override void Execute()
+    {
+        UpdateStatus(ProcessingStatus.InProgress);
+
+        var allowedFolders = (_getStateOfStorageTask.StorageState ?? throw new Exception())
+            .VersionStates
+            .Select(x => SourceItemHelper.GetVersionFolder(x.BackupDateUtc));
+
+        var relativeFolders = this._services.Storage.GetFolders(string.Empty, SourceItemHelper.GetVersionFolderMask());
+        var foldersToDelete = relativeFolders.Except(allowedFolders);
+        foreach (var folderToDelete in foldersToDelete)
         {
-            StorageSettings = services.StorageSettings;
-            _services = services;
-            _getStateOfStorageTask = getStateOfStorageTask;
+            this._services.Storage.DeleteFolder(folderToDelete);
         }
 
-        public override void Execute()
-        {
-            UpdateStatus(ProcessingStatus.InProgress);
-
-            var allowedFolders = (_getStateOfStorageTask.StorageState ?? throw new Exception())
-                .VersionStates
-                .Select(x => SourceItemHelper.GetVersionFolder(x.BackupDateUtc));
-
-            var relativeFolders = this._services.Storage.GetFolders(string.Empty, SourceItemHelper.GetVersionFolderMask());
-            var foldersToDelete = relativeFolders.Except(allowedFolders);
-            foreach (var folderToDelete in foldersToDelete)
-            {
-                this._services.Storage.DeleteFolder(folderToDelete);
-            }
-
-            IsSuccess = true;
-            UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
-        }
+        IsSuccess = true;
+        UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
     }
 }

@@ -1,28 +1,27 @@
 ﻿using System;
 
-namespace BUtil.Core.ConfigurationFileModels.V1
+namespace BUtil.Core.ConfigurationFileModels.V1;
+
+public class SourceItemV1
 {
-    public class SourceItemV1
+    public Guid Id { get; set; } = Guid.NewGuid();
+
+    public SourceItemV1() : this(string.Empty, false) { } // deserialization
+
+    public SourceItemV1(string target, bool isFolder)
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
+        Target = target;
+        IsFolder = isFolder;
+    }
 
-        public SourceItemV1() : this(string.Empty, false) { } // deserialization
+    public string Target { get; set; }
 
-        public SourceItemV1(string target, bool isFolder)
-        {
-            Target = target;
-            IsFolder = isFolder;
-        }
+    public bool IsFolder { get; set; }
 
-        public string Target { get; set; }
-
-        public bool IsFolder { get; set; }
-
-        public bool CompareTo(SourceItemV1 x)
-        {
-            return
-                x.Target == Target &&
-                x.IsFolder == IsFolder;
-        }
+    public bool CompareTo(SourceItemV1 x)
+    {
+        return
+            x.Target == Target &&
+            x.IsFolder == IsFolder;
     }
 }

@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace BUtil.Core
+namespace BUtil.Core;
+
+public interface IMtpService
 {
-    public interface IMtpService
-    {
-        IEnumerable<string> GetItems();
-    }
+    IEnumerable<string> GetItems();
 }

@@ -1,21 +1,20 @@
 ﻿using System;
 using System.IO;
 
-namespace BUtil.Core.FileSystem
+namespace BUtil.Core.FileSystem;
+
+public class TempFolder : IDisposable
 {
-    public class TempFolder: IDisposable
+    public string Folder { get; private set; }
+
+    public TempFolder()
     {
-        public string Folder { get; private set; }
+        Folder = Path.GetTempFileName() + ".Folder";
+        Directory.CreateDirectory(Folder);
+    }
 
-        public TempFolder()
-        {
-            Folder = Path.GetTempFileName() + ".Folder";
-            Directory.CreateDirectory(Folder);
-        }
-
-        public void Dispose()
-        {
-            Directory.Delete(Folder, true);
-        }
+    public void Dispose()
+    {
+        Directory.Delete(Folder, true);
     }
 }

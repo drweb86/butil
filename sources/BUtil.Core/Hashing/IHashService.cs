@@ -1,9 +1,8 @@
 ﻿using System;
 
-namespace BUtil.Core.Hashing
+namespace BUtil.Core.Hashing;
+
+public interface IHashService : IDisposable
 {
-    public interface IHashService: IDisposable
-    {
-        string GetSha512(string file, bool trySpeedupNextTime);
-    }
+    string GetSha512(string file, bool trySpeedupNextTime);
 }

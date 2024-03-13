@@ -1,8 +1,7 @@
-﻿namespace BUtil.Core.Services
+﻿namespace BUtil.Core.Services;
+
+public interface IUiService
 {
-    public interface IUiService
-    {
-        void Blink();
-        bool CanExtendClientAreaToDecorationsHint {  get; }
-    }
+    void Blink();
+    bool CanExtendClientAreaToDecorationsHint { get; }
 }

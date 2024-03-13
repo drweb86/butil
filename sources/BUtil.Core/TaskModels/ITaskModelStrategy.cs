@@ -1,10 +1,9 @@
 ﻿using BUtil.Core.Events;
 using BUtil.Core.TasksTree.Core;
 
-namespace BUtil.Core.BackupModels
+namespace BUtil.Core.BackupModels;
+
+public interface ITaskModelStrategy
 {
-    public interface ITaskModelStrategy
-    {
-        BuTask GetTask(TaskEvents events);
-    }
+    BuTask GetTask(TaskEvents events);
 }

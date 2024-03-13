@@ -1,9 +1,8 @@
-﻿namespace BUtil.Core.Options
+﻿namespace BUtil.Core.Options;
+
+public interface ITaskSchedulerService
 {
-    public interface ITaskSchedulerService
-    {
-        ScheduleInfo GetSchedule(string taskName);
-        void Schedule(string taskName, ScheduleInfo scheduleInfo);
-        void Unschedule(string taskName);
-    }
+    ScheduleInfo GetSchedule(string taskName);
+    void Schedule(string taskName, ScheduleInfo scheduleInfo);
+    void Unschedule(string taskName);
 }

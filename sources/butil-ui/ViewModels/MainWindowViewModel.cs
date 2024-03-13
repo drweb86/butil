@@ -113,7 +113,8 @@ public partial class MainWindowViewModel : ViewModelBase
     public ViewModelBase? CurrentPage
     {
         get => _currentPage;
-        set {
+        set
+        {
             if (value != null && value != _currentPage)
             {
                 _currentPage = value;
@@ -136,10 +137,12 @@ public partial class MainWindowViewModel : ViewModelBase
         {
             var taskName = args[1].Substring(TasksAppArguments.RunTask.Length + 1);
             WindowManager.SwitchView(new LaunchTaskViewModel(taskName));
-        } else if (args.Length == 1 && args[0].Cmp(TasksAppArguments.Restore))
+        }
+        else if (args.Length == 1 && args[0].Cmp(TasksAppArguments.Restore))
         {
             WindowManager.SwitchView(new RestoreViewModel(null, null));
-        } else if (args.Length == 1 && args[0].EndsWith(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile))
+        }
+        else if (args.Length == 1 && args[0].EndsWith(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile))
         {
             var folderStorage = new FolderStorageSettingsV2 { DestinationFolder = System.IO.Path.GetDirectoryName(args[0]) ?? throw new Exception() };
             WindowManager.SwitchView(new RestoreViewModel(folderStorage, null));

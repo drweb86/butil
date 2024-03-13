@@ -1,12 +1,11 @@
 using Avalonia.Controls;
 
-namespace butil_ui.Controls
+namespace butil_ui.Controls;
+
+public partial class ProgressTaskView : UserControl
 {
-    public partial class ProgressTaskView : UserControl
+    public ProgressTaskView()
     {
-        public ProgressTaskView()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

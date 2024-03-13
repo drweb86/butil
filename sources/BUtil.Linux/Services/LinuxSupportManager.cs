@@ -6,130 +6,129 @@ using BUtil.Core.Options;
 using BUtil.Core.Services;
 using System.Diagnostics;
 
-namespace BUtil.Linux.Services
+namespace BUtil.Linux.Services;
+
+public class LinuxSupportManager : ISupportManager
 {
-	public class LinuxSupportManager: ISupportManager
+    private readonly string _workDir;
+    private readonly string _uiApp;
+
+    public LinuxSupportManager()
     {
-        private readonly string _workDir;
-        private readonly string _uiApp;
+        _workDir = Directories.BinariesDir;
+        _uiApp = "butil-ui.Desktop";
+    }
 
-        public LinuxSupportManager()
+    private void LaunchUiAppInternal(bool preventSleep = false, string? arguments = null)
+    {
+        Process.Start(new ProcessStartInfo
         {
-            _workDir = Directories.BinariesDir;
-            _uiApp = "butil-ui.Desktop";
-        }
+            FileName = preventSleep
+                ? "systemd-inhibit"
+                : _uiApp,
+            WorkingDirectory = _workDir,
+            Arguments = (preventSleep ? $"\"{_uiApp}\"" : "")
+                + (arguments != null ? $" {arguments}" : ""),
+        });
+    }
 
-        private void LaunchUiAppInternal(bool preventSleep = false, string? arguments = null)
+    public void LaunchTasksApp()
+    {
+        LaunchUiAppInternal();
+    }
+
+    public void LaunchTask(string taskName)
+    {
+        LaunchUiAppInternal(true, $"{TasksAppArguments.LaunchTask} \"{TasksAppArguments.RunTask}={taskName}\"");
+    }
+
+    public void OpenRestorationApp(string? taskName = null)
+    {
+        if (string.IsNullOrWhiteSpace(taskName))
         {
-            Process.Start(new ProcessStartInfo
-            {
-                FileName = preventSleep
-                    ? "systemd-inhibit"
-                    : _uiApp,
-                WorkingDirectory = _workDir,
-                Arguments = (preventSleep ? $"\"{_uiApp}\"" : "")
-                    + (arguments != null ? $" {arguments}" : ""),
-            });
+            LaunchUiAppInternal(true, TasksAppArguments.Restore);
+            return;
         }
 
-        public void LaunchTasksApp()
-		{
-            LaunchUiAppInternal();
-        }
+        var task = new TaskV2StoreService()
+                .Load(taskName);
 
-        public void LaunchTask(string taskName)
-		{
-            LaunchUiAppInternal(true, $"{TasksAppArguments.LaunchTask} \"{TasksAppArguments.RunTask}={taskName}\"");
-        }
-
-		public void OpenRestorationApp(string? taskName = null)
-		{
-			if (string.IsNullOrWhiteSpace(taskName))
-			{
-                LaunchUiAppInternal(true, TasksAppArguments.Restore);
-                return;
-			}
-
-            var task = new TaskV2StoreService()
-				.Load(taskName);
-
-            if (task?.Model is IncrementalBackupModelOptionsV2)
-            {
-                LaunchUiAppInternal(true, $"{TasksAppArguments.Restore} \"{TasksAppArguments.RunTask}={taskName}\"");
-            }
-            else
-            {
-                LaunchUiAppInternal(true, TasksAppArguments.Restore);
-            }
-        }
-
-        public void OpenHomePage()
+        if (task?.Model is IncrementalBackupModelOptionsV2)
         {
-            ProcessHelper.ShellExecute(ApplicationLinks.HomePage);
+            LaunchUiAppInternal(true, $"{TasksAppArguments.Restore} \"{TasksAppArguments.RunTask}={taskName}\"");
         }
-
-        public void OpenLatestRelease()
+        else
         {
-            ProcessHelper.ShellExecute(ApplicationLinks.LatestRelease);
+            LaunchUiAppInternal(true, TasksAppArguments.Restore);
         }
+    }
 
-        public string ScriptEngineName => "Bash";
+    public void OpenHomePage()
+    {
+        ProcessHelper.ShellExecute(ApplicationLinks.HomePage);
+    }
 
-        public bool LaunchScript(ILog log, string script, string forbiddenForLogs)
-        {
-            // hack
-            forbiddenForLogs = null;
+    public void OpenLatestRelease()
+    {
+        ProcessHelper.ShellExecute(ApplicationLinks.LatestRelease);
+    }
 
-            script = script.Replace("\r", string.Empty);
+    public string ScriptEngineName => "Bash";
 
-            // hack.
-            if (forbiddenForLogs != null)
-                log.WriteLine(LoggingEvent.Debug, "Run script\n" + script.Replace(forbiddenForLogs, "***"));
+    public bool LaunchScript(ILog log, string script, string forbiddenForLogs)
+    {
+        // hack
+        forbiddenForLogs = null;
 
-            using var tempDir = new TempFolder();
-            var scriptFile = Path.Combine(tempDir.Folder, "script.sh");
-            File.WriteAllText(scriptFile, "#!/bin/bash" + Environment.NewLine + script);
+        script = script.Replace("\r", string.Empty);
 
-            log.WriteLine(LoggingEvent.Debug, $"Set permissions to script");
+        // hack.
+        if (forbiddenForLogs != null)
+            log.WriteLine(LoggingEvent.Debug, "Run script\n" + script.Replace(forbiddenForLogs, "***"));
 
-            ProcessHelper.Execute("chmod", $"-v +x \"{scriptFile}\"",
-                null,
-                false,
-                ProcessPriorityClass.Idle,
+        using var tempDir = new TempFolder();
+        var scriptFile = Path.Combine(tempDir.Folder, "script.sh");
+        File.WriteAllText(scriptFile, "#!/bin/bash" + Environment.NewLine + script);
 
-                out var stdOutput,
-                out var stdError,
-                out var returnCode);
-            var isSuccess = returnCode == 0;
-            if (!string.IsNullOrWhiteSpace(stdOutput))
-                log.LogProcessOutput(stdOutput, isSuccess);
-            if (!string.IsNullOrWhiteSpace(stdError))
-                log.LogProcessOutput(stdError, isSuccess);
-            if (!isSuccess)
-                log.WriteLine(LoggingEvent.Error, "Executing permissions failed.");
+        log.WriteLine(LoggingEvent.Debug, $"Set permissions to script");
 
-            log.WriteLine(LoggingEvent.Debug, $"Executing script");
+        ProcessHelper.Execute("chmod", $"-v +x \"{scriptFile}\"",
+            null,
+            false,
+            ProcessPriorityClass.Idle,
 
-            ProcessHelper.Execute("bash",
-                $"-c \"{scriptFile}\"",
-                null,
-                false,
-                ProcessPriorityClass.Idle,
+            out var stdOutput,
+            out var stdError,
+            out var returnCode);
+        var isSuccess = returnCode == 0;
+        if (!string.IsNullOrWhiteSpace(stdOutput))
+            log.LogProcessOutput(stdOutput, isSuccess);
+        if (!string.IsNullOrWhiteSpace(stdError))
+            log.LogProcessOutput(stdError, isSuccess);
+        if (!isSuccess)
+            log.WriteLine(LoggingEvent.Error, "Executing permissions failed.");
 
-                out stdOutput,
-                out stdError,
-                out returnCode);
+        log.WriteLine(LoggingEvent.Debug, $"Executing script");
 
-            isSuccess = returnCode == 0;
-            if (!string.IsNullOrWhiteSpace(stdOutput))
-                log.LogProcessOutput(stdOutput, isSuccess);
-            if (!string.IsNullOrWhiteSpace(stdError))
-                log.LogProcessOutput(stdError, isSuccess);
-            if (isSuccess)
-                log.WriteLine(LoggingEvent.Debug, "Executing successfull.");
-            if (!isSuccess)
-                log.WriteLine(LoggingEvent.Error, "Executing failed.");
-            return isSuccess;
-        }
+        ProcessHelper.Execute("bash",
+            $"-c \"{scriptFile}\"",
+            null,
+            false,
+            ProcessPriorityClass.Idle,
+
+            out stdOutput,
+            out stdError,
+            out returnCode);
+
+        isSuccess = returnCode == 0;
+        if (!string.IsNullOrWhiteSpace(stdOutput))
+            log.LogProcessOutput(stdOutput, isSuccess);
+        if (!string.IsNullOrWhiteSpace(stdError))
+            log.LogProcessOutput(stdError, isSuccess);
+        if (isSuccess)
+            log.WriteLine(LoggingEvent.Debug, "Executing successfull.");
+        if (!isSuccess)
+            log.WriteLine(LoggingEvent.Error, "Executing failed.");
+        return isSuccess;
     }
 }

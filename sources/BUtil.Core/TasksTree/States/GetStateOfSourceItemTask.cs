@@ -12,75 +12,74 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace BUtil.Core.TasksTree
+namespace BUtil.Core.TasksTree;
+
+internal class GetStateOfSourceItemTask : SequentialBuTask
 {
-    internal class GetStateOfSourceItemTask : SequentialBuTask
+    private readonly IEnumerable<string> _fileExcludePatterns;
+    private readonly CommonServicesIoc _commonServicesIoc;
+
+    public SourceItemState? SourceItemState { get; private set; }
+
+    public SourceItemV2 SourceItem { get; }
+
+    public GetStateOfSourceItemTask(ILog log, TaskEvents events, SourceItemV2 sourceItem, IEnumerable<string> fileExcludePatterns, CommonServicesIoc commonServicesIoc) :
+        base(log, events, string.Format(BUtil.Core.Localization.Resources.SourceItem_State_Get, sourceItem.Target))
     {
-        private readonly IEnumerable<string> _fileExcludePatterns;
-        private readonly CommonServicesIoc _commonServicesIoc;
+        SourceItem = sourceItem;
+        this._fileExcludePatterns = fileExcludePatterns;
+        _commonServicesIoc = commonServicesIoc;
+    }
 
-        public SourceItemState? SourceItemState { get; private set; } 
-
-        public SourceItemV2 SourceItem { get; }
-
-        public GetStateOfSourceItemTask(ILog log, TaskEvents events, SourceItemV2 sourceItem, IEnumerable<string> fileExcludePatterns, CommonServicesIoc commonServicesIoc) : 
-            base(log, events, string.Format(BUtil.Core.Localization.Resources.SourceItem_State_Get, sourceItem.Target))
+    public override void Execute()
+    {
+        UpdateStatus(ProcessingStatus.InProgress);
+        var files = new List<string>();
+        if (SourceItem.IsFolder)
         {
-            SourceItem = sourceItem;
-            this._fileExcludePatterns = fileExcludePatterns;
-            _commonServicesIoc = commonServicesIoc;
+
+            files = GetDirectoryFiles(SourceItem.Target);
+
+        }
+        else
+        {
+            files.Add(SourceItem.Target);
         }
 
-        public override void Execute()
+        var getFileStateTasks = files
+            .Select(file => new GetStateOfFileTask(Log, Events, _commonServicesIoc, SourceItem, file))
+            .ToList();
+        Children = getFileStateTasks;
+        Events.DuringExecutionTasksAdded(Id, Children);
+
+        base.Execute();
+
+        SourceItemState = new SourceItemState(SourceItem,
+            getFileStateTasks
+            .Select(x => x.State ?? throw new InvalidOperationException())
+            .ToList());
+
+        UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
+    }
+
+    private List<string> GetDirectoryFiles(string folder)
+    {
+        Matcher matcher = new();
+
+        foreach (var excludeFilePattern in _fileExcludePatterns)
         {
-            UpdateStatus(ProcessingStatus.InProgress);
-            var files = new List<string>();
-            if (SourceItem.IsFolder)
-            {
-                
-                files = GetDirectoryFiles(SourceItem.Target);
-
-            }
-            else
-            {
-                files.Add(SourceItem.Target);
-            }
-
-            var getFileStateTasks = files
-                .Select(file => new GetStateOfFileTask(Log, Events, _commonServicesIoc, SourceItem, file))
-                .ToList();
-            Children = getFileStateTasks;
-            Events.DuringExecutionTasksAdded(Id, Children);
-
-            base.Execute();
-
-            SourceItemState = new SourceItemState(SourceItem,
-                getFileStateTasks
-                .Select(x => x.State ?? throw new InvalidOperationException())
-                .ToList());
-
-            UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
+            var actualPattern = excludeFilePattern;
+            if (excludeFilePattern.StartsWith(folder) && (folder.Length + 1) < excludeFilePattern.Length)
+                actualPattern = actualPattern.Substring(folder.Length + 1);
+            matcher.AddExclude(actualPattern);
         }
 
-        private List<string> GetDirectoryFiles(string folder)
-        {
-            Matcher matcher = new();
-            
-            foreach (var excludeFilePattern in _fileExcludePatterns)
-            {
-                var actualPattern = excludeFilePattern;
-                if (excludeFilePattern.StartsWith(folder) && (folder.Length + 1) < excludeFilePattern.Length)
-                    actualPattern = actualPattern.Substring(folder.Length + 1);
-                matcher.AddExclude(actualPattern);
-            }
-            
-            matcher.AddIncludePatterns(new[] { "**/*" });
+        matcher.AddIncludePatterns(new[] { "**/*" });
 
-            return matcher
-                .Execute(new DirectoryInfoWrapperEx(new DirectoryInfo(folder)))
-                .Files
-                .Select(x => new FileInfo(Path.Combine(folder, x.Path)).FullName)
-                .ToList();
-        }
+        return matcher
+            .Execute(new DirectoryInfoWrapperEx(new DirectoryInfo(folder)))
+            .Files
+            .Select(x => new FileInfo(Path.Combine(folder, x.Path)).FullName)
+            .ToList();
     }
 }

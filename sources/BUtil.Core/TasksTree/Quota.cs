@@ -1,28 +1,25 @@
-﻿using System;
+﻿namespace BUtil.Core.TasksTree;
 
-namespace BUtil.Core.TasksTree
+internal class Quota
 {
-    internal class Quota
+    private long _quota;
+    private readonly object _lock = new();
+
+    public Quota(long quota = 0)
     {
-        private long _quota;
-        private readonly object _lock = new();
+        _quota = quota == 0 ? long.MaxValue : quota;
+    }
 
-        public Quota(long quota = 0)
+    public bool TryQuota(long quotaDemand)
+    {
+        lock (_lock)
         {
-            _quota = quota == 0 ? long.MaxValue : quota;
-        }
-
-        public bool TryQuota(long quotaDemand)
-        {
-            lock (_lock)
+            if (quotaDemand <= _quota)
             {
-                if (quotaDemand <= _quota)
-                {
-                    _quota -= quotaDemand;
-                    return true;
-                }
-                return false;
+                _quota -= quotaDemand;
+                return true;
             }
+            return false;
         }
     }
 }
