@@ -190,7 +190,7 @@
     <value>OK</value>
   </data>
   <data name="Button_Remove" xml:space="preserve">
-    <value>Удалить из списка</value>
+    <value>Удалить</value>
   </data>
   <data name="Button_Save" xml:space="preserve">
     <value>Сохранить</value>
@@ -650,5 +650,13 @@ bin.
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Пользователь не указан.</value>
+  </data>
+  <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
+    <value>Удалить версию "{0}"?
+
+Изменения из удаленной версии будут интегрированы в версию "{1}".</value>
+  </data>
+  <data name="BackupVersion_Button_Delete" xml:space="preserve">
+    <value>Удалить версию</value>
   </data>
 </root>

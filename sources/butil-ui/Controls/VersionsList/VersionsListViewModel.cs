@@ -1,4 +1,5 @@
 ﻿using Avalonia.Media;
+using Avalonia.Platform.Storage;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
@@ -23,6 +24,7 @@ public class VersionsListViewModel : ObservableObject
     public string BackupVersion_Files_Title => Resources.BackupVersion_Files_Title;
     public string Task_Restore => Resources.Task_Restore;
     public string BackupVersion_Viewer_Help => Resources.BackupVersion_Viewer_Help;
+    public string BackupVersion_Button_Delete => Resources.BackupVersion_Button_Delete;
 
     #endregion
 
@@ -101,6 +103,27 @@ public class VersionsListViewModel : ObservableObject
                 return;
             _selectedFileIsVisible = value;
             OnPropertyChanged(nameof(SelectedFileIsVisible));
+        }
+    }
+
+    #endregion
+
+    #region IsDeleteBackupVersionEnabled
+
+    private bool _isDeleteBackupVersionEnabled;
+
+    public bool IsDeleteBackupVersionEnabled
+    {
+        get
+        {
+            return _isDeleteBackupVersionEnabled;
+        }
+        set
+        {
+            if (value == _isDeleteBackupVersionEnabled)
+                return;
+            _isDeleteBackupVersionEnabled = value;
+            OnPropertyChanged(nameof(IsDeleteBackupVersionEnabled));
         }
     }
 
@@ -269,6 +292,8 @@ public class VersionsListViewModel : ObservableObject
 
     private void OnVersionChanged()
     {
+        IsDeleteBackupVersionEnabled = SelectedVersion != null && Versions != null && Versions[0] != SelectedVersion;
+
         ProgressTaskViewModel.Activate(async reportProgress =>
         {
             SelectedFileIsVisible = false;
@@ -457,6 +482,43 @@ public class VersionsListViewModel : ObservableObject
     }
 
     #region Commands
+
+    public async Task DeleteBackupVersionCommand()
+    {
+        var closestFreshVersion = Versions[Versions.IndexOf(SelectedVersion) - 1];
+        if (!await Messages.ShowYesNoDialog(string.Format(Resources.BackupVersion_Delete_Confirm, this.SelectedVersion.Title, closestFreshVersion.Title)))
+        {
+            return;
+        }
+
+
+        // TODO: delete.
+        // TODO: version diff
+        // TODO: form task
+        // TODO: execute task.
+
+        this.ProgressTaskViewModel.Progress = 0;
+        this.ProgressTaskViewModel.IsVisible = true;
+        this.ProgressTaskViewModel.Activate(async progress =>
+        {
+            //progress(5);
+            //ProgressTaskViewModel.IsVisible = true;
+
+            //DeleteVersionUtil.
+            //var commonServicesIoc = new CommonServicesIoc();
+            //using var services = new BUtil.Core.TasksTree.IncrementalModel.StorageSpecificServicesIoc(new StubLog(),
+            //    _storageOptions, commonServicesIoc.HashService);
+            //foreach (var storageFile in storageFiles)
+            //{
+            //    int percent = ((storageFiles.IndexOf(storageFile) + 1) * 100) / storageFiles.Count;
+            //    progress(percent);
+            //    services.IncrementalBackupFileService.Download(SelectedNode.SourceItem, storageFile, destinationFolder);
+            //}
+
+            //await Task.Delay(3000);
+            //this.ProgressTaskViewModel.IsVisible = false;
+        });
+    }
 
     public void RecoverTo(string destinationFolder)
     {

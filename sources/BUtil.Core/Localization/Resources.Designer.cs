@@ -127,6 +127,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete version.
+        /// </summary>
+        public static string BackupVersion_Button_Delete {
+            get {
+                return ResourceManager.GetString("BackupVersion_Button_Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Changes.
         /// </summary>
         public static string BackupVersion_Changes_Title {
@@ -141,6 +150,17 @@ namespace BUtil.Core.Localization {
         public static string BackupVersion_CleanupUncompleted {
             get {
                 return ResourceManager.GetString("BackupVersion_CleanupUncompleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you really want to delete version &quot;{0}&quot;?
+        ///
+        ///Deleted version changes will become part of version &quot;{1}&quot;..
+        /// </summary>
+        public static string BackupVersion_Delete_Confirm {
+            get {
+                return ResourceManager.GetString("BackupVersion_Delete_Confirm", resourceCulture);
             }
         }
         
