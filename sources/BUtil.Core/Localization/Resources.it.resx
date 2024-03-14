@@ -657,4 +657,12 @@
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Non è stato specificato l'utente.</value>
   </data>
+  <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
+    <value>Vuoi eliminare la versione "{0}"?
+
+Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</value>
+  </data>
+  <data name="BackupVersion_Button_Delete" xml:space="preserve">
+    <value>Elimina versione</value>
+  </data>
 </root>
