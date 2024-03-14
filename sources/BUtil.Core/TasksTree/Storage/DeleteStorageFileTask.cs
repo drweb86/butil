@@ -3,7 +3,7 @@ using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
 using System;
 
-namespace BUtil.Core.TasksTree;
+namespace BUtil.Core.TasksTree.Storage;
 
 internal class DeleteStorageFileTask : BuTask
 {
@@ -28,7 +28,7 @@ internal class DeleteStorageFileTask : BuTask
         {
             _services.Storage.Delete(_relativeFileName);
         }
-        catch(Exception e)
+        catch (Exception e)
         {
             LogError(e.Message);
             IsSuccess = false;

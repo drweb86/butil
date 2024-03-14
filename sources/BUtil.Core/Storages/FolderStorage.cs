@@ -162,4 +162,16 @@ public class FolderStorage : StorageBase<FolderStorageSettingsV2>
     {
         Unmount();
     }
+
+    public override void Move(string fromRelativeFileName, string toRelativeFileName)
+    {
+        var fromPath = Path.Combine(Settings.DestinationFolder, fromRelativeFileName);
+        var toPath = Path.Combine(Settings.DestinationFolder, toRelativeFileName);
+
+        var destinationDirectory = Path.GetDirectoryName(toPath) ?? string.Empty;
+        if (!Directory.Exists(destinationDirectory))
+            Directory.CreateDirectory(destinationDirectory);
+
+        File.Move(fromPath, toPath);
+    }
 }

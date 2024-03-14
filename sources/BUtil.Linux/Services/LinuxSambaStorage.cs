@@ -111,4 +111,9 @@ echo ""{userWithoutDomain}
     {
         _proxy.Dispose();
     }
+
+    public override void Move(string fromRelativeFileName, string toRelativeFileName)
+    {
+        _proxy.Move(fromRelativeFileName, toRelativeFileName);
+    }
 }

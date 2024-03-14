@@ -212,4 +212,17 @@ class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
     {
         Unmount();
     }
+
+    public override void Move(string fromRelativeFileName, string toRelativeFileName)
+    {
+        var fromRemotePath = GetRemoteNotNullablePath(fromRelativeFileName);
+        var toRemotePath = GetRemoteNotNullablePath(toRelativeFileName);
+
+        var dir = Path.GetDirectoryName(toRemotePath);
+        if (!_client.DirectoryExists(dir))
+            _client.CreateDirectory(dir);
+
+        if (!_client.MoveFile(fromRemotePath, toRemotePath))
+            throw new Exception();
+    }
 }

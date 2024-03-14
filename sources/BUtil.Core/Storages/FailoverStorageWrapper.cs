@@ -82,4 +82,11 @@ public class FailoverStorageWrapper : IStorage
             error => _log.WriteLine(LoggingEvent.Error, $"Get file \"{relativeFileName}\" modified date"),
             () => _storage.GetModifiedTime(relativeFileName));
     }
+
+    public void Move(string fromRelativeFileName, string toRelativeFileName)
+    {
+        ExecuteFailover.TryNTimes(
+            error => _log.WriteLine(LoggingEvent.Error, $"Move file \"{fromRelativeFileName}\" to \"{toRelativeFileName}\""),
+            () => _storage.Move(fromRelativeFileName, toRelativeFileName));
+    }
 }

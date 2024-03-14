@@ -3,6 +3,7 @@ using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Storages;
 using MediaDevices;
+using System.Diagnostics;
 using System.Security;
 
 namespace BUtil.Windows.Services;
@@ -165,5 +166,20 @@ class MtpStorage : StorageBase<MtpStorageSettings>
     public override void Dispose()
     {
         Unmount();
+    }
+
+    public override void Move(string fromRelativeFileName, string toRelativeFileName)
+    {
+        lock (_uploadLock) // because we're limited by upload speed by Server and Internet
+        {
+            var fromRemotePath = GetRemotePath(fromRelativeFileName, false);
+            var toRemotePath = GetRemotePath(toRelativeFileName, false);
+
+            var destinationDirectory = Path.GetDirectoryName(toRemotePath) ?? string.Empty;
+            if (!_mediaDevice.DirectoryExists(destinationDirectory))
+                _mediaDevice.CreateDirectory(destinationDirectory);
+
+            _mediaDevice.Rename(fromRemotePath, toRemotePath);
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿using BUtil.Core.State;
+﻿using BUtil.Core.Misc;
+using BUtil.Core.State;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -25,8 +27,11 @@ public class DeleteVersionUtil
     }
 
     public static void DeleteVersion(IncrementalBackupState state, VersionState versionToDelete,
-        out IEnumerable<string> storageRelativeFileNamesToDelete)
+        out IEnumerable<string> storageRelativeFileNamesToDelete,
+        out Dictionary<string, string> storageRelativeFileNameUpdate)
     {
+        storageRelativeFileNameUpdate = new Dictionary<string, string>();
+
         var storageRelativeFileNamesToDeleteList = new List<string>();
         storageRelativeFileNamesToDelete = storageRelativeFileNamesToDeleteList;
 
@@ -50,9 +55,73 @@ public class DeleteVersionUtil
         {
             var toVersion = orderedVersionsDesc[orderedVersionsDesc.IndexOf(versionToDelete) - 1];
             DeletePreviousVersion(state, versionToDelete, toVersion, storageRelativeFileNamesToDeleteList);
-        }
+            RemoveUnchangedFiles(state, storageRelativeFileNamesToDeleteList);
 
-        RemoveUnchangedFiles(state, storageRelativeFileNamesToDeleteList);
+            var filesToMove = new List<StorageFile>();
+
+            // all files
+            versionToDelete.SourceItemChanges.ToList().ForEach(x =>
+            {
+                filesToMove.AddRange(x.CreatedFiles);
+                filesToMove.AddRange(x.UpdatedFiles);
+            });
+
+            // distinct
+            filesToMove = filesToMove.GroupBy(p => p.StorageFileName)
+              .Select(g => g.First())
+              .ToList();
+
+            // see only files located in version folder
+            var moveDictionary = new Dictionary<string, Tuple<StorageFile, string>>();
+            var versionFolder = SourceItemHelper.GetVersionFolder(versionToDelete.BackupDateUtc);
+            var newVersionFolder = SourceItemHelper.GetVersionFolder(toVersion.BackupDateUtc);
+            filesToMove = filesToMove
+                .Where(x => x.StorageRelativeFileName.StartsWith(versionFolder))
+                .ToList();
+            foreach (var fileToMove in filesToMove)
+            {
+                var newPath = fileToMove.StorageRelativeFileName.Replace(versionFolder, newVersionFolder);
+                storageRelativeFileNameUpdate.Add(fileToMove.StorageRelativeFileName, newPath);
+                moveDictionary.Add(fileToMove.StorageRelativeFileName, new Tuple<StorageFile, string>(fileToMove, newPath));
+            }
+
+            foreach (var version in state.VersionStates)
+            {
+                foreach (var change in version.SourceItemChanges)
+                {
+                    foreach (var file in change.UpdatedFiles)
+                    {
+                        if (moveDictionary.TryGetValue(file.StorageRelativeFileName, out var value))
+                        {
+                            PatchStorageFile(value.Item1, value.Item2, versionFolder, newVersionFolder, file);
+                        }
+                    }
+                    foreach (var file in change.CreatedFiles)
+                    {
+                        if (moveDictionary.TryGetValue(file.StorageRelativeFileName, out var value))
+                        {
+                            PatchStorageFile(value.Item1, value.Item2, versionFolder, newVersionFolder, file);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private static void PatchStorageFile(
+        StorageFile sourceStorageFile,
+        string patchedStorageRelativeFileName,
+        string versionFolder,
+        string newVersionFolder,
+        StorageFile destinationStorageFile)
+    {
+        destinationStorageFile.StorageMethod = sourceStorageFile.StorageMethod;
+        destinationStorageFile.StorageIntegrityMethod = sourceStorageFile.StorageIntegrityMethod;
+        destinationStorageFile.StorageIntegrityMethodInfo = sourceStorageFile.StorageIntegrityMethodInfo;
+        destinationStorageFile.StorageFileNameSize = sourceStorageFile.StorageFileNameSize;
+        destinationStorageFile.StoragePassword = sourceStorageFile.StoragePassword;
+        destinationStorageFile.StorageFileName = sourceStorageFile.StorageFileName.Replace(versionFolder, newVersionFolder);
+        destinationStorageFile.StorageRelativeFileName = patchedStorageRelativeFileName;
     }
 
     private static void DeletePreviousVersion(

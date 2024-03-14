@@ -161,4 +161,16 @@ class WindowsSambaStorage : StorageBase<SambaStorageSettingsV2>
     {
         Unmount();
     }
+
+    public override void Move(string fromRelativeFileName, string toRelativeFileName)
+    {
+        var from = Path.Combine(Settings.Url, fromRelativeFileName);
+        var to = Path.Combine(Settings.Url, toRelativeFileName);
+
+        var destinationDirectory = Path.GetDirectoryName(to) ?? string.Empty;
+        if (!Directory.Exists(destinationDirectory))
+            Directory.CreateDirectory(destinationDirectory);
+
+        File.Move(from, to);
+    }
 }

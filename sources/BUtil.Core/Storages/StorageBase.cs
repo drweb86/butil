@@ -26,5 +26,6 @@ public abstract class StorageBase<TStorageSettings> : IStorage
     public abstract DateTime GetModifiedTime(string relativeFileName);
     public abstract void Download(string relativeFileName, string targetFileName);
     public abstract bool Exists(string relativeFileName);
+    public abstract void Move(string fromRelativeFileName, string toRelativeFileName);
     public abstract void Dispose();
 }

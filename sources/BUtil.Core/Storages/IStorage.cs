@@ -8,6 +8,7 @@ public interface IStorage : IDisposable
 {
     IStorageUploadResult Upload(string sourceFile, string relativeFileName);
     void Delete(string relativeFileName);
+    void Move(string fromRelativeFileName, string toRelativeFileName);
     void Download(string relativeFileName, string targetFileName);
     bool Exists(string relativeFileName);
     void DeleteFolder(string relativeFolderName);

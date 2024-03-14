@@ -52,7 +52,7 @@ public class DeleteVersionTests
         versionsDesc.VersionStates.Add(version2);
 
         // act
-        DeleteVersionUtil.DeleteVersion(versionsDesc, version1initial, out var storageFilesToDelete);
+        DeleteVersionUtil.DeleteVersion(versionsDesc, version1initial, out var storageFilesToDelete, out var patch);
 
         // assert
         Assert.AreEqual(versionsDesc.VersionStates.Count, 1);
@@ -107,7 +107,7 @@ public class DeleteVersionTests
         versionsDesc.VersionStates.Add(version2);
 
         // act
-        DeleteVersionUtil.DeleteVersion(versionsDesc, version1initial, out var storageFilesToDelete);
+        DeleteVersionUtil.DeleteVersion(versionsDesc, version1initial, out var storageFilesToDelete, out var patch);
 
         // assert
         Assert.AreEqual(versionsDesc.VersionStates.Count, 1);
