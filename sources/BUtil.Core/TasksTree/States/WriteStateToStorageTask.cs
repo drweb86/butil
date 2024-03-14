@@ -8,7 +8,7 @@ using System;
 
 namespace BUtil.Core.TasksTree.States;
 
-internal class WriteStateToStorageTask : BuTask
+internal class SaveStateToStorageTask : BuTask
 {
     private readonly IncrementalBackupModelOptionsV2 _incrementalBackupModelOptions;
     private readonly StorageSpecificServicesIoc _services;
@@ -17,7 +17,7 @@ internal class WriteStateToStorageTask : BuTask
 
     public StorageFile? StateStorageFile { get; private set; }
 
-    public WriteStateToStorageTask(
+    public SaveStateToStorageTask(
         StorageSpecificServicesIoc services,
         TaskEvents events,
         CalculateIncrementedVersionForStorageTask getIncrementedVersionTask,

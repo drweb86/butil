@@ -1,9 +1,11 @@
 ﻿using Avalonia.Media;
 using Avalonia.Platform.Storage;
 using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.Events;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.State;
+using BUtil.Core.TasksTree.DeleteBackupVersion;
 using BUtil.Core.TasksTree.IncrementalModel;
 using butil_ui.ViewModels;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -263,10 +265,12 @@ public class VersionsListViewModel : ObservableObject
 
     private IncrementalBackupState _state;
     private IStorageSettingsV2 _storageOptions;
-    public void Initialize(IncrementalBackupState state, IStorageSettingsV2 storageOptions)
+    private string _password;
+    public void Initialize(IncrementalBackupState state, IStorageSettingsV2 storageOptions, string password)
     {
         _state = state;
         _storageOptions = storageOptions;
+        _password = password;
         Versions = new ObservableCollection<VersionViewItem>(state.VersionStates
             .OrderByDescending(x => x.BackupDateUtc)
             .Select(x => new VersionViewItem(x))
@@ -491,32 +495,24 @@ public class VersionsListViewModel : ObservableObject
             return;
         }
 
-
-        // TODO: delete.
-        // TODO: version diff
-        // TODO: form task
-        // TODO: execute task.
-
         this.ProgressTaskViewModel.Progress = 0;
         this.ProgressTaskViewModel.IsVisible = true;
         this.ProgressTaskViewModel.Activate(async progress =>
         {
-            //progress(5);
-            //ProgressTaskViewModel.IsVisible = true;
+            progress(15);
+            ProgressTaskViewModel.IsVisible = true;
 
-            //DeleteVersionUtil.
-            //var commonServicesIoc = new CommonServicesIoc();
-            //using var services = new BUtil.Core.TasksTree.IncrementalModel.StorageSpecificServicesIoc(new StubLog(),
-            //    _storageOptions, commonServicesIoc.HashService);
-            //foreach (var storageFile in storageFiles)
-            //{
-            //    int percent = ((storageFiles.IndexOf(storageFile) + 1) * 100) / storageFiles.Count;
-            //    progress(percent);
-            //    services.IncrementalBackupFileService.Download(SelectedNode.SourceItem, storageFile, destinationFolder);
-            //}
+            var stubLog = new StubLog();
+            var events = new TaskEvents();
+            var commonServicesIoc = new CommonServicesIoc();
+            using var services = new BUtil.Core.TasksTree.IncrementalModel.StorageSpecificServicesIoc(new StubLog(),
+                _storageOptions, commonServicesIoc.HashService);
+            var task = new DeleteBackupVersionTask(stubLog, services, events, _state, new IncrementalBackupModelOptionsV2() { Password = _password},SelectedVersion.Version);
+            task.Execute();
 
-            //await Task.Delay(3000);
-            //this.ProgressTaskViewModel.IsVisible = false;
+            progress(100);
+            await Task.Delay(1000);
+            this.ProgressTaskViewModel.IsVisible = false;
         });
     }
 
