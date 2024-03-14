@@ -5,6 +5,7 @@ using BUtil.Core.Logs;
 using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
+using BUtil.Core.TasksTree.Storage;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -23,9 +24,17 @@ public class DeleteBackupVersionTask : SequentialBuTask
     {
         DeleteVersionUtil.DeleteVersion(state, versionState, out var storageFilesToDelete);
 
+        // перенос файлов
+        // переиндексация
+
         var tasks = new List<BuTask>();
         storageFilesToDelete.ToList().ForEach(x => tasks.Add(new DeleteStorageFileTask(storageSpecificServicesIoc, Events, x)));
-        tasks.Add(new SaveStateToStorageTask(storageSpecificServicesIoc, Events, state, options));
+        var saveStateTask = new SaveStateToStorageTask(storageSpecificServicesIoc, Events, state, options);
+        tasks.Add(saveStateTask);
+#pragma warning disable CS8603 // Possible null reference return.
+        tasks.Add(new WriteIntegrityVerificationScriptsToStorageTask(storageSpecificServicesIoc, Events, () => true,
+            () => state, saveStateTask, saveStateTask, () => saveStateTask.StateFile));
+#pragma warning restore CS8603 // Possible null reference return.
         Children = tasks.ToArray();
     }
 

@@ -9,26 +9,26 @@ public class DeleteVersionUtil
 {
     private static void AddUpdatedCreatedStorageFiles(
         VersionState version,
-        List<string> storageFileNames)
+        List<string> storageRelativeFileNames)
     {
         version.SourceItemChanges
             .ToList()
-            .ForEach(sourceItemChange => AddUpdatedCreatedStorageFiles(sourceItemChange, storageFileNames));
+            .ForEach(sourceItemChange => AddUpdatedCreatedStorageFiles(sourceItemChange, storageRelativeFileNames));
     }
 
     private static void AddUpdatedCreatedStorageFiles(
         SourceItemChanges sourceItemChange,
-        List<string> storageFileNames)
+        List<string> storageRelativeFileNames)
     {
-        storageFileNames.AddRange(sourceItemChange.UpdatedFiles.Select(x => x.StorageFileName).ToList());
-        storageFileNames.AddRange(sourceItemChange.CreatedFiles.Select(x => x.StorageFileName).ToList());
+        storageRelativeFileNames.AddRange(sourceItemChange.UpdatedFiles.Select(x => x.StorageRelativeFileName).ToList());
+        storageRelativeFileNames.AddRange(sourceItemChange.CreatedFiles.Select(x => x.StorageRelativeFileName).ToList());
     }
 
     public static void DeleteVersion(IncrementalBackupState state, VersionState versionToDelete,
-        out IEnumerable<string> storageFilesToDelete)
+        out IEnumerable<string> storageRelativeFileNamesToDelete)
     {
-        var storageFilesToDeleteList = new List<string>();
-        storageFilesToDelete = storageFilesToDeleteList;
+        var storageRelativeFileNamesToDeleteList = new List<string>();
+        storageRelativeFileNamesToDelete = storageRelativeFileNamesToDeleteList;
 
         var orderedVersionsDesc = state.VersionStates
             .OrderByDescending(x => x.BackupDateUtc)
@@ -49,17 +49,17 @@ public class DeleteVersionUtil
         else
         {
             var toVersion = orderedVersionsDesc[orderedVersionsDesc.IndexOf(versionToDelete) - 1];
-            DeletePreviousVersion(state, versionToDelete, toVersion, storageFilesToDeleteList);
+            DeletePreviousVersion(state, versionToDelete, toVersion, storageRelativeFileNamesToDeleteList);
         }
 
-        RemoveUnchangedFiles(state, storageFilesToDeleteList);
+        RemoveUnchangedFiles(state, storageRelativeFileNamesToDeleteList);
     }
 
     private static void DeletePreviousVersion(
         IncrementalBackupState state,
         VersionState fromVersion,
         VersionState toVersion,
-        List<string> storageFilesToDeleteList)
+        List<string> storageRelativeFileNamesToDeleteList)
     {
         state.VersionStates.Remove(fromVersion);
 
@@ -68,11 +68,11 @@ public class DeleteVersionUtil
             var toSourceItemChanges = toVersion.SourceItemChanges.SingleOrDefault(x => x.SourceItem.CompareTo(fromSourceItemChanges.SourceItem));
             if (toSourceItemChanges == null) // source item was deleted in new version.
             {
-                AddUpdatedCreatedStorageFiles(fromSourceItemChanges, storageFilesToDeleteList);
+                AddUpdatedCreatedStorageFiles(fromSourceItemChanges, storageRelativeFileNamesToDeleteList);
             }
             else // source item was changed.
             {
-                UpdateSourceItemChanges(fromSourceItemChanges, toSourceItemChanges, storageFilesToDeleteList);
+                UpdateSourceItemChanges(fromSourceItemChanges, toSourceItemChanges, storageRelativeFileNamesToDeleteList);
             }
         }
     }
@@ -130,7 +130,7 @@ public class DeleteVersionUtil
     private static void UpdateSourceItemChanges(
         SourceItemChanges from,
         SourceItemChanges to,
-        List<string> storageFilesToDeleteList)
+        List<string> storageRelativeFileNamesToDeleteList)
     {
         foreach (var fromDeletedFile in from.DeletedFiles)
         {
@@ -153,13 +153,13 @@ public class DeleteVersionUtil
             {
                 to.UpdatedFiles.Remove(storageFile);
                 to.CreatedFiles.Add(storageFile);
-                storageFilesToDeleteList.Add(createdFile.StorageFileName);
+                storageRelativeFileNamesToDeleteList.Add(createdFile.StorageRelativeFileName);
             }
             // Created=>Deleted ? Clear deleted, delete old file
             else if (TryFindStorageFile(to.DeletedFiles, createdFile))
             {
                 to.DeletedFiles.Remove(createdFile.FileState.FileName);
-                storageFilesToDeleteList.Add(createdFile.StorageFileName);
+                storageRelativeFileNamesToDeleteList.Add(createdFile.StorageRelativeFileName);
             }
             else
             {
@@ -172,12 +172,12 @@ public class DeleteVersionUtil
             // Updated=>Updated ? delete old file
             if (TryFindStorageFile(to.UpdatedFiles, updatedFile, out var storageFile))
             {
-                storageFilesToDeleteList.Add(updatedFile.StorageFileName);
+                storageRelativeFileNamesToDeleteList.Add(updatedFile.StorageRelativeFileName);
             }
             // Updated=>Deleted ? delete old file
             else if (TryFindStorageFile(to.DeletedFiles, updatedFile))
             {
-                storageFilesToDeleteList.Add(updatedFile.StorageFileName);
+                storageRelativeFileNamesToDeleteList.Add(updatedFile.StorageRelativeFileName);
             }
             else
             {
@@ -206,7 +206,7 @@ public class DeleteVersionUtil
         state.LastSourceItemStates.Clear();
     }
 
-    private static void RemoveUnchangedFiles(IncrementalBackupState state, List<string> storageFileNamesToDelete)
+    private static void RemoveUnchangedFiles(IncrementalBackupState state, List<string> storageRelativeFileNamesToDeleteList)
     {
         foreach (var version in state.VersionStates)
         {
@@ -214,16 +214,16 @@ public class DeleteVersionUtil
             {
                 foreach (var file in sourceItemChange.UpdatedFiles)
                 {
-                    var storageFileName = file.StorageFileName;
-                    if (storageFileNamesToDelete.Contains(storageFileName))
-                        storageFileNamesToDelete.Remove(storageFileName);
+                    var storageFileName = file.StorageRelativeFileName;
+                    if (storageRelativeFileNamesToDeleteList.Contains(storageFileName))
+                        storageRelativeFileNamesToDeleteList.Remove(storageFileName);
                 }
 
                 foreach (var file in sourceItemChange.CreatedFiles)
                 {
-                    var storageFileName = file.StorageFileName;
-                    if (storageFileNamesToDelete.Contains(storageFileName))
-                        storageFileNamesToDelete.Remove(storageFileName);
+                    var storageFileName = file.StorageRelativeFileName;
+                    if (storageRelativeFileNamesToDeleteList.Contains(storageFileName))
+                        storageRelativeFileNamesToDeleteList.Remove(storageFileName);
                 }
             }
         }

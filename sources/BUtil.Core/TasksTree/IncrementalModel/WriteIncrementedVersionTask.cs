@@ -4,6 +4,7 @@ using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
 using BUtil.Core.TasksTree.States;
 using BUtil.Core.TasksTree.Storage;
+using System;
 using System.Collections.Generic;
 
 namespace BUtil.Core.TasksTree;
@@ -36,10 +37,14 @@ internal class WriteIncrementedVersionTask : SequentialBuTask
             incrementalBackupModelOptions);
 
         childTaks.Add(writeStateToStorageTask);
+#pragma warning disable CS8603 // Possible null reference return.
         childTaks.Add(new WriteIntegrityVerificationScriptsToStorageTask(services, events,
-            calculateIncrementedVersionForStorageTask,
+            () => calculateIncrementedVersionForStorageTask.VersionIsNeeded,
+            getState: () => calculateIncrementedVersionForStorageTask.IncrementalBackupState,
             _writeSourceFilesToStorageTask,
-            writeStateToStorageTask));
+            writeStateToStorageTask,
+            () => writeStateToStorageTask.StateStorageFile));
+#pragma warning restore CS8603 // Possible null reference return.
 
         Children = childTaks;
     }

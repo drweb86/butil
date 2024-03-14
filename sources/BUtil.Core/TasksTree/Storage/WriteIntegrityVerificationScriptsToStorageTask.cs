@@ -14,27 +14,33 @@ namespace BUtil.Core.TasksTree.Storage;
 internal class WriteIntegrityVerificationScriptsToStorageTask : BuTask
 {
     private readonly StorageSpecificServicesIoc _services;
-    private readonly CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask;
-    private readonly WriteSourceFilesToStorageTask _writeSourceFilesToStorageTask;
-    private readonly WriteStateToStorageTask _writeStateToStorageTask;
+    private readonly Func<bool> _isVersionNeeded;
+    private readonly Func<IncrementalBackupState> _getState;
+    private readonly BuTask _writeSourceFilesToStorageTask;
+    private readonly BuTask _writeStateToStorageTask;
+    private readonly Func<StorageFile> _getStateStorageFile;
 
     public WriteIntegrityVerificationScriptsToStorageTask(StorageSpecificServicesIoc services, TaskEvents events,
-        CalculateIncrementedVersionForStorageTask getIncrementedVersionTask,
-        WriteSourceFilesToStorageTask writeSourceFilesToStorageTask,
-        States.WriteStateToStorageTask writeStateToStorageTask)
+        Func<bool> isVersionNeeded,
+        Func<IncrementalBackupState> getState,
+        BuTask writeSourceFilesToStorageTask,
+        BuTask writeStateToStorageTask,
+        Func<StorageFile> getStateStorageFile)
         : base(services.Log, events, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Saving)
     {
         _services = services;
-        _getIncrementedVersionTask = getIncrementedVersionTask;
+        _isVersionNeeded = isVersionNeeded;
+        _getState = getState;
         _writeSourceFilesToStorageTask = writeSourceFilesToStorageTask;
         _writeStateToStorageTask = writeStateToStorageTask;
+        _getStateStorageFile = getStateStorageFile;
     }
 
     public override void Execute()
     {
         UpdateStatus(ProcessingStatus.InProgress);
 
-        if (!_getIncrementedVersionTask.VersionIsNeeded)
+        if (!_isVersionNeeded())
         {
             LogDebug("Version is not needed.");
             IsSuccess = true;
@@ -83,7 +89,7 @@ internal class WriteIntegrityVerificationScriptsToStorageTask : BuTask
 
     private string GetPowershellScriptContent()
     {
-        var storageFiles = (_getIncrementedVersionTask.IncrementalBackupState ?? throw new Exception()).VersionStates
+        var storageFiles = _getState().VersionStates
             .SelectMany(x => x.SourceItemChanges)
             .SelectMany(x =>
             {
@@ -93,7 +99,7 @@ internal class WriteIntegrityVerificationScriptsToStorageTask : BuTask
                 return items;
             })
             .ToList();
-        storageFiles.Add((_writeStateToStorageTask.StateStorageFile ?? throw new Exception()));
+        storageFiles.Add((_getStateStorageFile() ?? throw new Exception()));
 
         var lines = storageFiles
             .GroupBy(x => x.StorageRelativeFileName)

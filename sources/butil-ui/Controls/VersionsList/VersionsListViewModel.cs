@@ -1,5 +1,6 @@
 ﻿using Avalonia.Media;
 using Avalonia.Platform.Storage;
+using Avalonia.Threading;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
 using BUtil.Core.Localization;
@@ -296,16 +297,20 @@ public class VersionsListViewModel : ObservableObject
 
     private void OnVersionChanged()
     {
-        IsDeleteBackupVersionEnabled = SelectedVersion != null && Versions != null && Versions[0] != SelectedVersion;
+        var version = SelectedVersion;
+        if (version == null)
+            return;
+
+        IsDeleteBackupVersionEnabled = version != null && Versions != null && Versions[0] != version;
 
         ProgressTaskViewModel.Activate(async reportProgress =>
         {
             SelectedFileIsVisible = false;
             reportProgress(0);
             ProgressTaskViewModel.IsVisible = true;
-            var changes = GetChangesViewItems(SelectedVersion.Version);
+            var changes = GetChangesViewItems(version.Version);
             reportProgress(25);
-            var treeViewFiles = GetTreeViewFiles(_state, SelectedVersion.Version);
+            var treeViewFiles = GetTreeViewFiles(_state, version.Version);
             reportProgress(45);
             RefreshChanges(changes);
             reportProgress(85);
@@ -489,8 +494,9 @@ public class VersionsListViewModel : ObservableObject
 
     public async Task DeleteBackupVersionCommand()
     {
-        var closestFreshVersion = Versions[Versions.IndexOf(SelectedVersion) - 1];
-        if (!await Messages.ShowYesNoDialog(string.Format(Resources.BackupVersion_Delete_Confirm, this.SelectedVersion.Title, closestFreshVersion.Title)))
+        var versionToDelete = SelectedVersion;
+        var closestFreshVersion = Versions[Versions.IndexOf(versionToDelete) - 1];
+        if (!await Messages.ShowYesNoDialog(string.Format(Resources.BackupVersion_Delete_Confirm, versionToDelete.Title, closestFreshVersion.Title)))
         {
             return;
         }
@@ -512,6 +518,13 @@ public class VersionsListViewModel : ObservableObject
 
             progress(100);
             await Task.Delay(1000);
+
+            Versions.Remove(SelectedVersion);
+            Dispatcher.UIThread.Invoke(() =>
+            {
+                SelectedVersion = closestFreshVersion;
+            });
+
             this.ProgressTaskViewModel.IsVisible = false;
         });
     }

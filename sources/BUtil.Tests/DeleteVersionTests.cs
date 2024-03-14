@@ -9,7 +9,9 @@ public class DeleteVersionTests
 {
     private StorageFile StorageFileEx(SourceItemV2 item, int fileId, int storageFileId)
     {
-        return new StorageFile(new FileState(Path.Combine(item.Target, fileId.ToString()), DateTime.MinValue, 0, string.Empty)) { StorageFileName = storageFileId.ToString() };
+        return new StorageFile(
+            new FileState(Path.Combine(item.Target, fileId.ToString()), DateTime.MinValue, 0, string.Empty)) { 
+            StorageRelativeFileName = storageFileId.ToString() };
     }
 
     [TestMethod]
@@ -61,11 +63,11 @@ public class DeleteVersionTests
         Assert.AreEqual(filesToDelete[1], "2");
         Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles.Count(), 3);
         Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles[0].FileState.FileName, @"x:\test\4");
-        Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles[0].StorageFileName, @"4");
+        Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles[0].StorageRelativeFileName, @"4");
         Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles[1].FileState.FileName, @"x:\test\2");
-        Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles[1].StorageFileName, @"21");
+        Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles[1].StorageRelativeFileName, @"21");
         Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles[2].FileState.FileName, @"x:\test\3");
-        Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles[2].StorageFileName, @"3");
+        Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles[2].StorageRelativeFileName, @"3");
         Assert.AreEqual(version2.SourceItemChanges.First().DeletedFiles.Count(), 0);
         Assert.AreEqual(version2.SourceItemChanges.First().UpdatedFiles.Count(), 0);
     }
@@ -114,11 +116,11 @@ public class DeleteVersionTests
         Assert.AreEqual(filesToDelete.Length, 0);
         Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles.Count(), 3);
         Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles[0].FileState.FileName, @"x:\test\4");
-        Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles[0].StorageFileName, @"2");
+        Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles[0].StorageRelativeFileName, @"2");
         Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles[1].FileState.FileName, @"x:\test\1");
-        Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles[1].StorageFileName, @"1");
+        Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles[1].StorageRelativeFileName, @"1");
         Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles[2].FileState.FileName, @"x:\test\2");
-        Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles[2].StorageFileName, @"1");
+        Assert.AreEqual(version2.SourceItemChanges.First().CreatedFiles[2].StorageRelativeFileName, @"1");
         Assert.AreEqual(version2.SourceItemChanges.First().DeletedFiles.Count(), 0);
         Assert.AreEqual(version2.SourceItemChanges.First().UpdatedFiles.Count(), 0);
     }

@@ -13,6 +13,8 @@ internal class SaveStateToStorageTask : BuTask
     private readonly IncrementalBackupState _state;
     private readonly IncrementalBackupModelOptionsV2 _options;
 
+    public StorageFile? StateFile { get; private set; }
+
     public SaveStateToStorageTask(
         StorageSpecificServicesIoc services,
         TaskEvents events,
@@ -31,8 +33,8 @@ internal class SaveStateToStorageTask : BuTask
 
         try
         {
-            var file = _services.IncrementalBackupStateService.Write(_options, _state);
-            IsSuccess = file != null;
+            StateFile = _services.IncrementalBackupStateService.Write(_options, _state);
+            IsSuccess = StateFile != null;
         }
         catch (Exception ex)
         {
