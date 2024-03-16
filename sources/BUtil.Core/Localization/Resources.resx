@@ -141,11 +141,19 @@ or warnings will be registered.</value>
   <data name="Application_NewVersion_Notification" xml:space="preserve">
     <value>New {0} version is available.</value>
   </data>
+  <data name="BackupVersion_Button_Delete" xml:space="preserve">
+    <value>Delete version</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Changes</value>
   </data>
   <data name="BackupVersion_CleanupUncompleted" xml:space="preserve">
     <value>Delete uncompleted backups</value>
+  </data>
+  <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
+    <value>Do you really want to delete version "{0}"?
+
+Deleted version changes will become part of version "{1}".</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Files</value>
@@ -649,13 +657,5 @@ See detailed description in the following link.</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>User is not specified.</value>
-  </data>
-  <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
-    <value>Do you really want to delete version "{0}"?
-
-Deleted version changes will become part of version "{1}".</value>
-  </data>
-  <data name="BackupVersion_Button_Delete" xml:space="preserve">
-    <value>Delete version</value>
   </data>
 </root>

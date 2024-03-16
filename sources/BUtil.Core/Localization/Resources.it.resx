@@ -141,11 +141,19 @@
   <data name="Application_NewVersion_Notification" xml:space="preserve">
     <value>È disponibile la nuova versione {0}.</value>
   </data>
+  <data name="BackupVersion_Button_Delete" xml:space="preserve">
+    <value>Elimina versione</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Modifiche</value>
   </data>
   <data name="BackupVersion_CleanupUncompleted" xml:space="preserve">
     <value>Elimina i backup non completati</value>
+  </data>
+  <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
+    <value>Vuoi eliminare la versione "{0}"?
+
+Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>File</value>
@@ -656,13 +664,5 @@
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Non è stato specificato l'utente.</value>
-  </data>
-  <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
-    <value>Vuoi eliminare la versione "{0}"?
-
-Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</value>
-  </data>
-  <data name="BackupVersion_Button_Delete" xml:space="preserve">
-    <value>Elimina versione</value>
   </data>
 </root>

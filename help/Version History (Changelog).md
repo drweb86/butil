@@ -1,4 +1,4 @@
-# 2024.03.11
+# 2024.03.16
 
 ## New Features
 - Windows support for local accounts (setup was not able to install 7-zip via win-get, because Microsoft does not support installation for users not authorized in Store).
