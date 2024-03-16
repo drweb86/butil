@@ -66,7 +66,8 @@ namespace Codice.SortResX
             var nodesFileNames = new[] {
                 "LogFile_Marker_Errors",
                 "LogFile_Marker_Successful",
-                "File_IntegrityVerificationScript_Ps1"
+                "File_IntegrityVerificationScript_Ps1",
+		"BackupVersion_Button_Delete"
             };
 
             foreach (XmlAttribute attribute in mDoc.DocumentElement.SelectNodes(query))

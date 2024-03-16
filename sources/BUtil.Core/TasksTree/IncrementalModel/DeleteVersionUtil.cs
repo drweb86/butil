@@ -76,6 +76,7 @@ public class DeleteVersionUtil
             var versionFolder = SourceItemHelper.GetVersionFolder(versionToDelete.BackupDateUtc);
             var newVersionFolder = SourceItemHelper.GetVersionFolder(toVersion.BackupDateUtc);
             filesToMove = filesToMove
+                .Where(x => !storageRelativeFileNamesToDeleteList.Contains(x.StorageRelativeFileName))
                 .Where(x => x.StorageRelativeFileName.StartsWith(versionFolder))
                 .ToList();
             foreach (var fileToMove in filesToMove)

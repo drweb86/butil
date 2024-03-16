@@ -30,6 +30,7 @@ internal class MoveStorageFileTask : BuTask
         try
         {
             _services.Storage.Move(_fromRelativeFileName, _toRelativeFileName);
+            IsSuccess = true;
         }
         catch (Exception e)
         {

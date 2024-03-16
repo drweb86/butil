@@ -27,6 +27,7 @@ internal class DeleteStorageFileTask : BuTask
         try
         {
             _services.Storage.Delete(_relativeFileName);
+            IsSuccess = true;
         }
         catch (Exception e)
         {

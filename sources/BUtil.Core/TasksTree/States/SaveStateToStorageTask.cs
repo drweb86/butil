@@ -5,7 +5,7 @@ using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
 using System;
 
-namespace BUtil.Core.TasksTree.DeleteBackupVersion;
+namespace BUtil.Core.TasksTree.States;
 
 internal class SaveStateToStorageTask : BuTask
 {
@@ -38,7 +38,7 @@ internal class SaveStateToStorageTask : BuTask
         }
         catch (Exception ex)
         {
-            this.LogError(ex.Message);
+            LogError(ex.Message);
             IsSuccess = false;
         }
         UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);

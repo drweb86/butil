@@ -4,6 +4,7 @@
 - Windows support for local accounts (setup was not able to install 7-zip via win-get, because Microsoft does not support installation for users not authorized in Store).
 - Windows binaries are ready to launch, no need to install 7-zip separately.
 - Update to .Net 8.
+- Ability to delete previous versions (can be done from restoration view). With this feature incremental backup becomes self-sufficient when storage quota is exceeded.
 
 ## Removed Features
 - SNAP support is dropped (.Net does not support confined environment properly, Snap does not support .Net, not possible to get proper access to files, Avalonia does not support snap properly)

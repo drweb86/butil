@@ -1,10 +1,12 @@
 ﻿using Avalonia.Media;
 using Avalonia.Platform.Storage;
 using Avalonia.Threading;
+using BUtil.Core;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
+using BUtil.Core.Misc;
 using BUtil.Core.State;
 using BUtil.Core.TasksTree.DeleteBackupVersion;
 using BUtil.Core.TasksTree.IncrementalModel;
@@ -13,6 +15,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -505,17 +508,31 @@ public class VersionsListViewModel : ObservableObject
         this.ProgressTaskViewModel.IsVisible = true;
         this.ProgressTaskViewModel.Activate(async progress =>
         {
-            progress(15);
+            progress(50);
             ProgressTaskViewModel.IsVisible = true;
 
-            var stubLog = new StubLog();
+            var deleteVersionLog = new FileLog(Resources.BackupVersion_Button_Delete);
+            deleteVersionLog.Open();
             var events = new TaskEvents();
             var commonServicesIoc = new CommonServicesIoc();
-            using var services = new BUtil.Core.TasksTree.IncrementalModel.StorageSpecificServicesIoc(new StubLog(),
+            using var services = new StorageSpecificServicesIoc(deleteVersionLog,
                 _storageOptions, commonServicesIoc.HashService);
-            var task = new DeleteBackupVersionTask(stubLog, services, events, _state, new IncrementalBackupModelOptionsV2() { Password = _password},SelectedVersion.Version);
-            task.Execute();
+            var task = new DeleteBackupVersionTask(services, events, _state, new IncrementalBackupModelOptionsV2() { Password = _password},SelectedVersion.Version);
+            try
+            {
+                task.Execute();
+            }
+            catch (Exception ex)
+            {
+                deleteVersionLog.WriteLine(LoggingEvent.Error, ex.ToString());
+            }
+            if (deleteVersionLog.HasErrors)
+                deleteVersionLog.WriteLine(LoggingEvent.Error, "Some files in backup are damaged! Version index might contain errors. You need to create new storage and recreate backup.");
 
+            deleteVersionLog.Close();
+
+            if (deleteVersionLog.HasErrors)
+                Process.Start(deleteVersionLog.LogFilename);
             progress(100);
             await Task.Delay(1000);
 
