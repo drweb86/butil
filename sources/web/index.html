@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Disable cache -->
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="0">
+    </head>
+<body>
+<h1>Download page</h1>
+<a href="">Setup</a>
+<script>
+    var version = "2024.03.16";
+    var setupWindowsArm64 = 'BUtil_v' + version + '_win-arm64.exe';
+    var setupWindowsX64 = 'BUtil_v' + version + '_win-x64.exe';
+    var binariesWindowsArm64 = 'BUtil_v' + version + '_win-arm64-binaries.7z';
+    var binariesWindowsX64 = 'BUtil_v' + version + '_win-x64-binaries.7z';
+
+    function download(fileName) {
+        const a = document.createElement('a')
+        a.href = './' + fileName;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
+
+    navigator
+        .userAgentData
+        .getHighEntropyValues(["architecture"])
+        .then(ua => {
+            if (navigator.userAgentData.platform === "Windows") {
+                if (ua.architecture === 'arm') {
+                    download(setupWindowsArm64);
+                } else {
+                    download(setupWindowsX64);
+                }
+            }
+        });
+
+    var isX64Windows = window.navigator.userAgent.includes('Win64');
+
+
+
+/*navigator.userAgentData.getHighEntropyValues(["architecture", "bitness"])
+ .then(ua => {
+   if (navigator.userAgentData.platform === "Windows") {
+     if (ua.architecture === 'x86') {
+       if (ua.bitness === '64') {
+         console.log("x86_64");
+       }
+       else if (ua.bitness === '32') {
+         console.log("x86");
+       }
+     }
+     else if (ua.architecture === 'arm') {
+       if (ua.bitness === '64') {
+         console.log("ARM64");
+       }
+       else if (ua.bitness === '32') {
+         console.log("ARM32");
+       }
+     }
+   }
+   else {
+     console.log("Not running on Windows");
+   }
+ });*/
+
+    console.log(window.navigator);
+</script>
+<p>HTML links are defined with the a tag. The link address is specified in the href attribute:</p>
+
+<a href="https://www.w3schools.com">Visit 1W3Schools</a>
+
+</body>
+</html>
