@@ -9,26 +9,42 @@
 <body>
     <style>
         .button {
-            width: auto;
-            margin: 50px auto;
+            width: 100%;
+            display: flex;
+            margin-top: 36px;
+            margin-bottom: 36px;
+            justify-content: center;
         }
 
         .button a {
             display: block;
-            height: 50px;
             width: auto;
             color: white;
-            font: 17px/50px sans-serif,Helvetica;
             text-decoration: none;
             text-align: center;
-            text-transform: uppercase;
-            background: #355C7D; 
-            -webkit-border-radius: 10px;
-            -moz-border-radius: 10px;
-            border-radius: 13px;
+            background: #4db2ec; 
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
             -webkit-box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
             -moz-box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
             box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+            white-space: pre-wrap; /* CSS3 */    
+            white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+            padding: 16px 36px 16px 36px;
+            font-family: sans-serif,Helvetica;
+
+            p {
+                text-transform: uppercase;
+                font-size: medium;
+                margin: 0%;
+                font-weight: 400;
+            }
+
+            span {
+                font-size: small;
+                opacity: 0.7;
+            }
         }
 
     </style>
@@ -73,10 +89,10 @@
             else if (navigator.userAgentData.platform === "Windows") {
                 if (ua.architecture === 'arm') {
                     defaultDownloadElement.href="./" + setupWindowsArm64;
-                    defaultDownloadElement.innerHTML = "Download Setup (detected Windows, ARM64)"
+                    defaultDownloadElement.innerHTML = "<p>Download Setup</p><span>(detected Windows, ARM64)</span>"
                 } else {
                     defaultDownloadElement.href="./" + setupWindowsX64;
-                    defaultDownloadElement.innerHTML = "Download Setup (detected Windows, X64)"
+                    defaultDownloadElement.innerHTML = "<p>Download Setup</p><span>(detected Windows, X64)</span>"
                 }
             } else {
                 defaultDownloadElement.href="#";
