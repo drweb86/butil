@@ -4,6 +4,8 @@
 
 > Import photos from phone via WI-FI and more.
 
+[Download](https://drweb86.synology.me:88/?release=2024.03.28)
+
 ![Tasks application 1](./help/Assets/Image%20-%20Tasks%20App%20-%201.png)
 ![Tasks application 2](./help/Assets/Image%20-%20Tasks%20App%20-%202.png)
 ![Launch task application](./help/Assets/Image%20-%20Launch%20App.png)
