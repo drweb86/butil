@@ -1,3 +1,8 @@
+# 2024.03.28
+
+## Bug Fixes
+- 7-zip binaries were missing with setup due to lack of internet during build.
+
 # 2024.03.16
 
 ## New Features
