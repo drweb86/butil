@@ -5,8 +5,11 @@
 			 xmlns:cvm="clr-namespace:butil_ui.Controls"
              mc:Ignorable="d"
              x:Class="butil_ui.Controls.TaskExecuterView"
-			 x:DataType="cvm:TaskExecuterViewModel"
-			 IsVisible="{Binding IsVisible}">
+			 x:DataType="cvm:TaskExecuterViewModel">
+
+	<UserControl.Resources>
+		<cvm:ProcessingStatusToSolidColorBrushConverter x:Key="ProcessingStatusToSolidColorBrushConverter"/>
+	</UserControl.Resources>
 	<UserControl.Styles>
 		<Style Selector="Expander">
 			<Setter Property="VerticalAlignment" Value="Top" />

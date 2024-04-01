@@ -14,7 +14,6 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace butil_ui.Controls;
 
@@ -24,15 +23,15 @@ public class TaskExecuterViewModel : ObservableObject
     private readonly System.Timers.Timer _timer = new(1000);
     private readonly List<string> _lastMinuteMessagesToUser = new();
     private readonly HashSet<Guid> _endedTasks = new();
-    private readonly Action<bool> _onTaskComplete;
+    private readonly Action<bool> _onTaskComplete = null!;
     private FileLog? _log;
-    private BuTask _threadTask;
+    private BuTask _threadTask = null!;
     private Thread? _thread;
 
     public TaskExecuterViewModel(string error)
     {
         ProgressGenericTitle = error;
-        ProgressGenericForeground = ColorPalette.GetBrush(SemanticColor.Error);
+        _progressGenericForeground = ColorPalette.GetBrush(SemanticColor.Error);
         CanClose = true;
         IsStartButtonVisible = false;
         TaskNotCompleted = false;
@@ -41,7 +40,7 @@ public class TaskExecuterViewModel : ObservableObject
     public TaskExecuterViewModel(
         TaskEvents taskEvents,
         string logName,
-        Func<ILog, BuTask> createThreadTask,
+        Func<ILog, BuTask> createTask,
         Action<bool> onTaskComplete)
     {
         _progressGenericForeground = ColorPalette.GetBrush(SemanticColor.Normal);
@@ -56,7 +55,8 @@ public class TaskExecuterViewModel : ObservableObject
         _startTime = DateTime.Now;
 
         _log = new FileLog(logName);
-        _threadTask = createThreadTask(_log);
+        _log.Open();
+        _threadTask = createTask(_log);
 
 
         _threadTask
@@ -70,11 +70,6 @@ public class TaskExecuterViewModel : ObservableObject
             });
 
         _onTaskComplete = onTaskComplete;
-    }
-
-    public void Start()
-    {
-        _log.Open();
     }
 
     #region TotalTasksCount
@@ -454,7 +449,7 @@ public class TaskExecuterViewModel : ObservableObject
         var appStaysAlive = _selectedPowerTask == PowerTask.None;
         if (appStaysAlive)
         {
-            if (!_log.HasErrors)
+            if (_log.HasErrors)
             {
                 ProcessHelper.ShellExecute(_log.LogFilename);
             }

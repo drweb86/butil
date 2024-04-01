@@ -22,22 +22,22 @@
 			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
 
-		<TaskExecuterView Grid.Row="0"/>
+		<cvm:TaskExecuterView Grid.Row="0" DataContext="{Binding TaskExecuterViewModel}" />
 
 		<WrapPanel HorizontalAlignment="Right" Grid.Row="1" Margin="0 8 0 0">
-			<StackPanel VerticalAlignment="Center" Margin="4" IsVisible="{Binding TaskNotCompleted}">
+			<StackPanel VerticalAlignment="Center" Margin="4" IsVisible="{Binding TaskExecuterViewModel.TaskNotCompleted}">
 				<Label HorizontalAlignment="Stretch" VerticalAlignment="Center" ToolTip.Tip="{Binding AfterTaskSelection_Help}" Content="{Binding AfterTaskSelection_Field}" />
-				<ComboBox HorizontalAlignment="Stretch" VerticalAlignment="Center" ItemsSource="{Binding PowerTasks}" SelectedIndex="{Binding SelectedPowerTask}" />
+				<ComboBox HorizontalAlignment="Stretch" VerticalAlignment="Center" ItemsSource="{Binding PowerTasks}" SelectedIndex="{Binding TaskExecuterViewModel.SelectedPowerTask}" />
 			</StackPanel>
 			<StackPanel Orientation="Horizontal">
 				<Button
-					IsVisible="{Binding IsStartButtonVisible}"
+					IsVisible="{Binding TaskExecuterViewModel.IsStartButtonVisible}"
 					VerticalAlignment="Center"
 					Margin="4"
 					Padding="16"
 					ToolTip.Tip="{Binding Task_Launch_Hint}"
 					Foreground="Green"
-					Command="{Binding StartTaskCommand}">
+					Command="{Binding TaskExecuterViewModel.StartTaskCommand}">
 					<Path
 						Data="{StaticResource play_regular}"
 						Stroke="{Binding $parent.Foreground}"
@@ -49,7 +49,7 @@
 					/>
 				</Button>
 				<Button
-					IsVisible="{Binding IsStopButtonEnabled}"
+					IsVisible="{Binding TaskExecuterViewModel.IsStopButtonEnabled}"
 					VerticalAlignment="Center"
 					Margin="4"
 					Padding="16"
@@ -68,7 +68,7 @@
 					/>
 				</Button>
 				<Button
-					IsVisible="{Binding CanClose}"
+					IsVisible="{Binding TaskExecuterViewModel.CanClose}"
 					VerticalAlignment="Center"
 					Margin="4"
 					Padding="16"

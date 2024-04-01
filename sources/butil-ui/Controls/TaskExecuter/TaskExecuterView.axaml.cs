@@ -7,5 +7,7 @@ public partial class TaskExecuterView : UserControl
     public TaskExecuterView()
     {
         InitializeComponent();
+
+        this.DataContext = new TaskExecuterViewModel("error");
     }
 }

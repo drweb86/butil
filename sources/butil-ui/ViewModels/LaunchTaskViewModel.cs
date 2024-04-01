@@ -121,7 +121,7 @@ public class LaunchTaskViewModel : ViewModelBase
         _task = new TaskV2StoreService().Load(_taskName);
         if (_task == null)
         {
-            TaskExecuterViewModel = new TaskExecuterViewModel(BUtil.Core.Localization.Resources.Task_Validation_NotSupported);
+            TaskExecuterViewModel = new TaskExecuterViewModel(Resources.Task_Validation_NotSupported);
             return;
         }
 
