@@ -69,9 +69,10 @@ class WindowsSambaStorage : StorageBase<SambaStorageSettingsV2>
     {
         Log.WriteLine(LoggingEvent.Debug, $"Mount");
 
-        var command = string.IsNullOrWhiteSpace(Settings.User)
-            ? @$"net use ""{Settings.Url}"""
-            : @$"net use ""{Settings.Url}"" ""/user:{Settings.User}"" ""{Settings.Password}""";
+        if (string.IsNullOrWhiteSpace(Settings.User))
+            return;
+
+        var command = @$"net use ""{Settings.Url}"" ""/user:{Settings.User}"" ""{Settings.Password}""";
 
         if (!WindowsCmdProcessHelper.Execute(Log, command))
             throw new InvalidOperationException($"Cannot mount");
@@ -80,6 +81,9 @@ class WindowsSambaStorage : StorageBase<SambaStorageSettingsV2>
     private void Unmount()
     {
         Log.WriteLine(LoggingEvent.Debug, $"Unmount");
+
+        if (string.IsNullOrWhiteSpace(Settings.User))
+            return;
 
         var command = @$"net use ""{Settings.Url}"" /delete /y";
         if (!WindowsCmdProcessHelper.Execute(Log, command))
@@ -111,8 +115,11 @@ class WindowsSambaStorage : StorageBase<SambaStorageSettingsV2>
 
     public override void Download(string relativeFileName, string targetFileName)
     {
-        var file = Path.Combine(Settings.Url, relativeFileName);
-        Copy(file, targetFileName);
+        lock (_uploadLock) // because we're limited by upload speed and Samba has limit of 6 parallel uploads usually
+        {
+            var file = Path.Combine(Settings.Url, relativeFileName);
+            Copy(file, targetFileName);
+        }
     }
 
     public static void Copy(string inputFile, string outputFilePath)

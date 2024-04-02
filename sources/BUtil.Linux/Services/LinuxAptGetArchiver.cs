@@ -63,47 +63,43 @@ class LinuxAptGetArchiver : IArchiver
         if (_sevenZipPacker == null || _sevenZipFolder == null)
             throw new InvalidDataException("7-zip was not found. Please install it using command 'sudo apt-get install 7zip'");
 
-        lock (_lock) // 7-zip utilizes all CPU cores, parallel compression will freeze PC.
-                     // we explicitely avoid it via locking.
+        var passwordIsSet = !string.IsNullOrWhiteSpace(password);
+        string input = Environment.NewLine; // to handle wrong password
+        string arguments;
+        if (!passwordIsSet)
         {
-            var passwordIsSet = !string.IsNullOrWhiteSpace(password);
-            string input = Environment.NewLine; // to handle wrong password
-            string arguments;
-            if (!passwordIsSet)
-            {
-                arguments = $@"x -y ""{archive}"" -o""{outputDirectory}"" -sccUTF-8";
-                log.WriteLine(LoggingEvent.Debug, $"Extracting \"{archive}\" to \"{outputDirectory}\"");
-            }
-            else
-            {
-                arguments = $@"x -y ""{archive}"" -o""{outputDirectory}"" -p""{password}"" -sccUTF-8";
-                log.WriteLine(LoggingEvent.Debug, $"Extracting \"{archive}\" to \"{outputDirectory}\" with password");
-            }
-
-            ProcessHelper.Execute(
-                _sevenZipPacker,
-                arguments,
-                _sevenZipFolder,
-                true,
-                ProcessPriorityClass.Idle,
-                out var stdOutput,
-                out var stdError,
-                out var returnCode);
-
-            var isSuccess = returnCode == 0;
-            if (!isSuccess)
-            {
-                if (!string.IsNullOrWhiteSpace(stdOutput))
-                    log.LogProcessOutput(stdOutput, isSuccess);
-                if (!string.IsNullOrWhiteSpace(stdError))
-                    log.LogProcessOutput(stdError, isSuccess);
-            }
-            if (isSuccess)
-                log.WriteLine(LoggingEvent.Debug, "Unpack successfull.");
-            if (!isSuccess)
-                log.WriteLine(LoggingEvent.Error, "Unpack failed.");
-            return isSuccess;
+            arguments = $@"x -y ""{archive}"" -o""{outputDirectory}"" -sccUTF-8";
+            log.WriteLine(LoggingEvent.Debug, $"Extracting \"{archive}\" to \"{outputDirectory}\"");
         }
+        else
+        {
+            arguments = $@"x -y ""{archive}"" -o""{outputDirectory}"" -p""{password}"" -sccUTF-8";
+            log.WriteLine(LoggingEvent.Debug, $"Extracting \"{archive}\" to \"{outputDirectory}\" with password");
+        }
+
+        ProcessHelper.Execute(
+            _sevenZipPacker,
+            arguments,
+            _sevenZipFolder,
+            true,
+            ProcessPriorityClass.Idle,
+            out var stdOutput,
+            out var stdError,
+            out var returnCode);
+
+        var isSuccess = returnCode == 0;
+        if (!isSuccess)
+        {
+            if (!string.IsNullOrWhiteSpace(stdOutput))
+                log.LogProcessOutput(stdOutput, isSuccess);
+            if (!string.IsNullOrWhiteSpace(stdError))
+                log.LogProcessOutput(stdError, isSuccess);
+        }
+        if (isSuccess)
+            log.WriteLine(LoggingEvent.Debug, "Unpack successfull.");
+        if (!isSuccess)
+            log.WriteLine(LoggingEvent.Error, "Unpack failed.");
+        return isSuccess;
     }
 
     private static bool CompressFile(

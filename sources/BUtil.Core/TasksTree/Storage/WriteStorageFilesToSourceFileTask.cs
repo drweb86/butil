@@ -10,7 +10,7 @@ using System.Linq;
 
 namespace BUtil.Core.TasksTree.Storage;
 
-public class WriteStorageFilesToSourceFileTask : SequentialBuTask
+public class WriteStorageFilesToSourceFileTask : ParallelBuTask
 {
     private readonly CommonServicesIoc _commonServicesIoc;
     private readonly StorageSpecificServicesIoc _storageSpecificServicesIoc;

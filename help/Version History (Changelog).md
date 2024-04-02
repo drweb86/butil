@@ -3,6 +3,9 @@
 ## New Features
 - During recovery or version deletion, real progress is shown
 - During recovery or version deletion, logs are written.
+- Recovery speed should be increased, but PC might be a little bit unresponsive during process.
+- If user mounted network SMB/CIFS share on Windows, then he may skip for CIFS storage credentials. In this case invoking 'net use' command will be skipped.
+Main idea behind change is to avoid already mounted error. And use it recovery.
 
 # 2024.03.28
 
