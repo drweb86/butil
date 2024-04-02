@@ -1,11 +1,13 @@
 ﻿using Avalonia.Threading;
 using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.Events;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.IncrementalModel;
 using butil_ui.Controls;
+using butil_ui.UiProgressTasks;
 using System;
 using System.Threading.Tasks;
 
@@ -19,7 +21,6 @@ public class RestoreViewModel : ViewModelBase
 
         WhereTaskViewModel = new WhereTaskViewModel(storageSettingsV2 ?? new FolderStorageSettingsV2(), Resources.Task_Restore, "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png");
         EncryptionTaskViewModel = new EncryptionTaskViewModel(password ?? string.Empty, false);
-        ProgressTaskViewModel = new ProgressTaskViewModel();
         VersionsListViewModel = new VersionsListViewModel();
     }
 
@@ -44,7 +45,27 @@ public class RestoreViewModel : ViewModelBase
 
     #endregion
 
-    public ProgressTaskViewModel ProgressTaskViewModel { get; }
+    #region TaskExecuterViewModel
+
+    private TaskExecuterViewModel? _taskExecuterViewModel;
+
+    public TaskExecuterViewModel? TaskExecuterViewModel
+    {
+        get
+        {
+            return _taskExecuterViewModel;
+        }
+        set
+        {
+            if (value == _taskExecuterViewModel)
+                return;
+            _taskExecuterViewModel = value;
+            OnPropertyChanged(nameof(TaskExecuterViewModel));
+        }
+    }
+
+    #endregion
+
     public WhereTaskViewModel WhereTaskViewModel { get; }
     public EncryptionTaskViewModel EncryptionTaskViewModel { get; }
 
@@ -71,54 +92,33 @@ public class RestoreViewModel : ViewModelBase
             return;
         }
 
-        if (string.IsNullOrWhiteSpace(EncryptionTaskViewModel.Password))
-        {
-            await Messages.ShowErrorBox(Resources.Password_Field_Validation_NotSpecified);
-            return;
-        }
-
-        this.ProgressTaskViewModel.IsVisible = true;
-        this.ProgressTaskViewModel.Activate(async progress =>
-        {
-            progress(10);
-            var error = StorageFactory.Test(new StubLog(), storageOptions);
-            if (!string.IsNullOrWhiteSpace(error))
+        var taskEvents = new TaskEvents();
+        OpenIncrementalBackupTask openIncrementalBackupTask = null;
+        this.TaskExecuterViewModel = new TaskExecuterViewModel(
+            taskEvents,
+            Resources.Task_Restore,
+            log => 
             {
-                await Dispatcher.UIThread.InvokeAsync(async () => await Messages.ShowErrorBox(error));
-                this.ProgressTaskViewModel.IsVisible = false;
-                return;
-            }
-            progress(20);
-            using (var storage = StorageFactory.Create(new StubLog(), storageOptions))
+                openIncrementalBackupTask = new OpenIncrementalBackupTask(log, taskEvents, storageOptions, EncryptionTaskViewModel.Password);
+                return openIncrementalBackupTask;
+            },
+            isOk =>
             {
-                if (!storage.Exists(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile))
+                if (isOk)
                 {
-                    error = string.Format(Resources.RestoreFrom_Field_Validation_NoStateFiles, IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile);
-                    await Dispatcher.UIThread.InvokeAsync(async () => await Messages.ShowErrorBox(error));
-                    this.ProgressTaskViewModel.IsVisible = false;
-                    return;
+                    IsSetupVisible = false;
+                    TaskExecuterViewModel = null!;
+                    VersionsListViewModel.Initialize(openIncrementalBackupTask.StorageState!, storageOptions, EncryptionTaskViewModel.Password);
                 }
-            }
-            progress(30);
-            var commonServicesIoc = new CommonServicesIoc();
-            using var services = new StorageSpecificServicesIoc(new StubLog(), storageOptions, commonServicesIoc.HashService);
-            if (!services.IncrementalBackupStateService.TryRead(EncryptionTaskViewModel.Password, out var state))
-            {
-                await Dispatcher.UIThread.InvokeAsync(async () => await Messages.ShowErrorBox(Resources.RestoreFrom_Field_Validation_StateInvalid));
-                this.ProgressTaskViewModel.IsVisible = false;
-                return;
-            }
-            this.ProgressTaskViewModel.IsVisible = false;
-            IsSetupVisible = false;
-            progress(100);
-            VersionsListViewModel.Initialize(state, storageOptions, EncryptionTaskViewModel.Password);
-        });
+            });
 
+        TaskExecuterViewModel.StartTaskCommand();
     }
 
     #endregion
 
     #region Labels
+
     public string AfterTaskSelection_Field => Resources.AfterTaskSelection_Field;
     public string Button_Close => Resources.Button_Close;
     public string AfterTaskSelection_Help => Resources.AfterTaskSelection_Help;

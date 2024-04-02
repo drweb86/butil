@@ -456,6 +456,7 @@ public class TaskExecuterViewModel : ObservableObject
 
             PlatformSpecificExperience.Instance.UiService.Blink();
             PlatformSpecificExperience.Instance.OsSleepPreventionService.StopPreventSleep();
+            _onTaskComplete(!_log.HasErrors);
             return;
         }
 
@@ -468,7 +469,6 @@ public class TaskExecuterViewModel : ObservableObject
 
         PlatformSpecificExperience.Instance.OsSleepPreventionService.StopPreventSleep();
         PlatformSpecificExperience.Instance.SessionService.DoTask(_selectedPowerTask);
-
         _onTaskComplete(!_log.HasErrors);
 
         Environment.Exit(_log.HasErrors ? -1 : 0);
