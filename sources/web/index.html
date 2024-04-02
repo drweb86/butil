@@ -8,6 +8,14 @@
     </head>
 <body>
     <style>
+        * {
+            font-family: "Segoe UI", "Helvetica Neue", "Helvetica", Arial, sans-serif;
+        }
+
+        body {
+            margin: 0px
+        }
+
         .button {
             width: 100%;
             display: flex;
@@ -22,7 +30,7 @@
             color: white;
             text-decoration: none;
             text-align: center;
-            background: #4db2ec; 
+            background: #0066b8; 
             -webkit-border-radius: 4px;
             -moz-border-radius: 4px;
             border-radius: 4px;
@@ -32,13 +40,11 @@
             white-space: pre-wrap; /* CSS3 */    
             white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
             padding: 16px 36px 16px 36px;
-            font-family: sans-serif,Helvetica;
 
             p {
-                text-transform: uppercase;
                 font-size: medium;
                 margin: 0%;
-                font-weight: 400;
+                font-weight: 600;
             }
 
             span {
@@ -47,20 +53,83 @@
             }
         }
 
+        td {
+            font-weight: 600;
+
+            a {
+                background: #0066b8;
+                color: #fff;
+                display: inline-block;
+                border-radius: 2px;
+                padding: 0 3px;
+                white-space: nowrap;
+                font-size: 12px;
+                font-weight: normal;
+                text-decoration: none;
+            }
+        }
+
+        .downloads {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        
+
+        .download-page-header {
+            background: #2c2c32;
+            min-height: 50px;
+            align-content: center;
+                padding-left: 16px;
+
+            .download-page-header-title-block {
+
+                .download-page-header--title {
+                    position: relative;
+                    background-image: url("./Icon 120x120.png");
+                    background-size: 24px 24px;
+                    background-repeat: no-repeat;
+                    background-position: left 50%;
+                    padding-left: 36px;
+                    font-size: 20px;
+                    letter-spacing: -0.04rem;
+                    color: #fff;
+                    line-height: 20px;
+                }
+            }
+        }
     </style>
     
-    <div class="button">
-        <a href="#" id="default-setup">Download Setup</a>
+    <div class="download-page-header">
+        <div class="download-page-header-title-block">
+            <span class="download-page-header--title">BUtil</span>
+        </div>
     </div>
 
-    <h1>Other download options</h1>
-    <ul>
-        <li><a href="" id="win-x64-setup">Windows X64 Setup</a></li>
-        <li><a href="" id="win-arm64-setup">Windows ARM64 Setup</a></li>
-        <li><a href="" id="win-x64-binaries">Windows X64 Binaries</a></li>
-        <li><a href="" id="win-arm64-binaries">Windows ARM64 Binaries</a></li>
-        <li><a href="" id="linux-ubuntu">Ubuntu X64 / ARM64</a></li>
-    </ul>
+    <div>
+        <div class="button">
+            <a href="#" id="default-setup">Download</a>
+        </div>
+        <table class="downloads">
+            <tbody>
+                <tr>
+                    <td><strong>Windows Installer</strong></td>
+                    <td><a href="" id="win-x64-setup">x64</a></td>
+                    <td><a href="" id="win-arm64-setup">Arm64</a></td>
+                </tr>
+                <tr>
+                    <td><strong>.zip</strong></td>
+                    <td><a href="" id="win-x64-binaries">x64</a></td>
+                    <td><a href="" id="win-arm64-binaries">Arm64</a></td>
+                </tr>
+                <tr>
+                    <td><strong>Ubuntu</strong></td>
+                    <td colspan="2"><a href="" id="linux-ubuntu">Build x64 / Arm64</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 <script>
     var urlParams = new URLSearchParams(window.location.search);
@@ -89,10 +158,10 @@
             else if (navigator.userAgentData.platform === "Windows") {
                 if (ua.architecture === 'arm') {
                     defaultDownloadElement.href="./" + setupWindowsArm64;
-                    defaultDownloadElement.innerHTML = "<p>Download Setup</p><span>(detected Windows, ARM64)</span>"
+                    defaultDownloadElement.innerHTML = "<p>Download for Windows</p><span>(detected Windows, ARM64)</span>"
                 } else {
                     defaultDownloadElement.href="./" + setupWindowsX64;
-                    defaultDownloadElement.innerHTML = "<p>Download Setup</p><span>(detected Windows, X64)</span>"
+                    defaultDownloadElement.innerHTML = "<p>Download for Windows</p><span>(detected Windows, X64)</span>"
                 }
             } else {
                 defaultDownloadElement.href="#";
