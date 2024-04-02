@@ -4,22 +4,21 @@ using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.State;
-using BUtil.Core.TasksTree;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace butil_ui.UiProgressTasks;
+namespace BUtil.Core.TasksTree.States;
 
-public class OpenIncrementalBackupTask : SequentialBuTask
+public class GetExistingVersionStateFromStorageTask : SequentialBuTask
 {
     private readonly CommonServicesIoc _commonServicesIoc = new();
     private readonly StorageSpecificServicesIoc _storageSpecificServicesIoc;
     private readonly GetStateOfStorageTask _getStateOfStorageTask;
 
-    public OpenIncrementalBackupTask(ILog log, TaskEvents events, IStorageSettingsV2 storageSettings, string password) 
-        : base(log, events, "Open incremental copy")
+    public GetExistingVersionStateFromStorageTask(ILog log, TaskEvents events, IStorageSettingsV2 storageSettings, string password)
+        : base(log, events, "Get existing version state from storage")
     {
         _storageSpecificServicesIoc = new StorageSpecificServicesIoc(log, storageSettings, _commonServicesIoc.HashService);
         _getStateOfStorageTask = new(_storageSpecificServicesIoc, events, password);
@@ -28,7 +27,6 @@ public class OpenIncrementalBackupTask : SequentialBuTask
 
     public override void Execute()
     {
-        Events.OnMessage += OnAddLastMinuteLogMessage;
         UpdateStatus(ProcessingStatus.InProgress);
 
         base.Execute();
@@ -43,24 +41,10 @@ public class OpenIncrementalBackupTask : SequentialBuTask
         }
 
         UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
-        Events.OnMessage -= OnAddLastMinuteLogMessage;
-        PutLastMinuteLogMessages();
-        LastMinuteMessage = string.Join(". ", _lastMinuteLogMessages);
+
         _commonServicesIoc.Dispose();
         _storageSpecificServicesIoc.Dispose();
     }
-    private void PutLastMinuteLogMessages()
-    {
-        foreach (var lastMinuteLogMessage in _lastMinuteLogMessages)
-            Log.WriteLine(LoggingEvent.Debug, lastMinuteLogMessage);
-    }
 
-    private readonly List<string> _lastMinuteLogMessages = new();
-    private void OnAddLastMinuteLogMessage(object? sender, MessageEventArgs e)
-    {
-        _lastMinuteLogMessages.Add(e.Message);
-    }
-
-    public string? LastMinuteMessage { get; private set; }
     public IncrementalBackupState? StorageState => _getStateOfStorageTask.StorageState;
 }

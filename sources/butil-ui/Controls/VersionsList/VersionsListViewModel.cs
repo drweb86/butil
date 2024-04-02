@@ -5,11 +5,9 @@ using BUtil.Core;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
 using BUtil.Core.Localization;
-using BUtil.Core.Logs;
-using BUtil.Core.Misc;
 using BUtil.Core.State;
-using BUtil.Core.TasksTree.DeleteBackupVersion;
-using BUtil.Core.TasksTree.IncrementalModel;
+using BUtil.Core.TasksTree.States;
+using BUtil.Core.TasksTree.Storage;
 using butil_ui.ViewModels;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System;
@@ -23,6 +21,13 @@ namespace butil_ui.Controls;
 
 public class VersionsListViewModel : ObservableObject
 {
+    public VersionsListViewModel(RestoreViewModel restoreViewModel)
+    {
+        ParentViewModel = restoreViewModel;
+    }
+
+    public RestoreViewModel ParentViewModel { get; private set; }
+
     #region Labels
 
     public string Field_Version => Resources.Field_Version;
@@ -265,11 +270,10 @@ public class VersionsListViewModel : ObservableObject
 
     public SolidColorBrush HeaderBackground { get; } = ColorPalette.GetBrush(SemanticColor.HeaderBackground);
 
-    public ProgressTaskViewModel ProgressTaskViewModel { get; } = new ProgressTaskViewModel();
-
     private IncrementalBackupState _state;
     private IStorageSettingsV2 _storageOptions;
     private string _password;
+
     public void Initialize(IncrementalBackupState state, IStorageSettingsV2 storageOptions, string password)
     {
         _state = state;
@@ -306,22 +310,11 @@ public class VersionsListViewModel : ObservableObject
 
         IsDeleteBackupVersionEnabled = version != null && Versions != null && Versions[0] != version;
 
-        ProgressTaskViewModel.Activate(async reportProgress =>
-        {
             SelectedFileIsVisible = false;
-            reportProgress(0);
-            ProgressTaskViewModel.IsVisible = true;
             var changes = GetChangesViewItems(version.Version);
-            reportProgress(25);
             var treeViewFiles = GetTreeViewFiles(_state, version.Version);
-            reportProgress(45);
             RefreshChanges(changes);
-            reportProgress(85);
             RefreshTreeView(treeViewFiles);
-            reportProgress(100);
-            await Task.Delay(3000);
-            ProgressTaskViewModel.IsVisible = false;
-        });
     }
 
     private void RefreshChanges(IEnumerable<Tuple<ChangeState, string>> changes)
@@ -504,46 +497,23 @@ public class VersionsListViewModel : ObservableObject
             return;
         }
 
-        this.ProgressTaskViewModel.Progress = 0;
-        this.ProgressTaskViewModel.IsVisible = true;
-        this.ProgressTaskViewModel.Activate(async progress =>
-        {
-            progress(50);
-            ProgressTaskViewModel.IsVisible = true;
-
-            var deleteVersionLog = new FileLog(Resources.BackupVersion_Button_Delete);
-            deleteVersionLog.Open();
-            var events = new TaskEvents();
-            var commonServicesIoc = new CommonServicesIoc();
-            using var services = new StorageSpecificServicesIoc(deleteVersionLog,
-                _storageOptions, commonServicesIoc.HashService);
-            var task = new DeleteBackupVersionTask(services, events, _state, new IncrementalBackupModelOptionsV2() { Password = _password},SelectedVersion.Version);
-            try
+        ParentViewModel.TaskExecuterViewModel = new TaskExecuterViewModel(
+            new TaskEvents(),
+            Resources.Task_Restore,
+            log => new DeleteIncrementalBackupVersionTask(log, new TaskEvents(), _state, new IncrementalBackupModelOptionsV2() { Password = _password }, SelectedVersion.Version, _storageOptions),
+            isOk =>
             {
-                task.Execute();
-            }
-            catch (Exception ex)
-            {
-                deleteVersionLog.WriteLine(LoggingEvent.Error, ex.ToString());
-            }
-            if (deleteVersionLog.HasErrors)
-                deleteVersionLog.WriteLine(LoggingEvent.Error, "Some files in backup are damaged! Version index might contain errors. You need to create new storage and recreate backup.");
-
-            deleteVersionLog.Close();
-
-            if (deleteVersionLog.HasErrors)
-                Process.Start(deleteVersionLog.LogFilename);
-            progress(100);
-            await Task.Delay(1000);
-
-            Versions.Remove(SelectedVersion);
-            Dispatcher.UIThread.Invoke(() =>
-            {
-                SelectedVersion = closestFreshVersion;
+                if (isOk)
+                {
+                    Versions.Remove(SelectedVersion);
+                    Dispatcher.UIThread.Invoke(() =>
+                    {
+                        SelectedVersion = closestFreshVersion;
+                    });
+                    this.ParentViewModel.TaskExecuterViewModel = null;
+                }
             });
-
-            this.ProgressTaskViewModel.IsVisible = false;
-        });
+        ParentViewModel.TaskExecuterViewModel.StartTaskCommand();
     }
 
     public void RecoverTo(string destinationFolder)
@@ -559,26 +529,18 @@ public class VersionsListViewModel : ObservableObject
         if (SelectedNode.StorageFile != null)
             storageFiles.Add(SelectedNode.StorageFile);
 
-        this.ProgressTaskViewModel.Progress = 0;
-        this.ProgressTaskViewModel.IsVisible = true;
-        this.ProgressTaskViewModel.Activate(async progress =>
-        {
-            if (!storageFiles.Any())
-                return;
-
-            var commonServicesIoc = new CommonServicesIoc();
-            using var services = new BUtil.Core.TasksTree.IncrementalModel.StorageSpecificServicesIoc(new StubLog(),
-                _storageOptions, commonServicesIoc.HashService);
-            foreach (var storageFile in storageFiles)
+        ParentViewModel.TaskExecuterViewModel = new TaskExecuterViewModel(
+            new TaskEvents(),
+            Resources.Task_Restore,
+            log => new WriteStorageFilesToSourceFileTask(log, new TaskEvents(), _storageOptions, SelectedNode.SourceItem, storageFiles, destinationFolder),
+            isOk =>
             {
-                int percent = ((storageFiles.IndexOf(storageFile) + 1) * 100) / storageFiles.Count;
-                progress(percent);
-                services.IncrementalBackupFileService.Download(SelectedNode.SourceItem, storageFile, destinationFolder);
-            }
-
-            await Task.Delay(3000);
-            this.ProgressTaskViewModel.IsVisible = false;
-        });
+                if (isOk)
+                {
+                    this.ParentViewModel.TaskExecuterViewModel = null;
+                }
+            });
+        this.ParentViewModel.TaskExecuterViewModel.StartTaskCommand();
     }
 
     private IEnumerable<FileTreeNode> GetChildren(FileTreeNode Parent)

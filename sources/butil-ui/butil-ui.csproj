@@ -58,9 +58,6 @@
     <Compile Update="Controls\TaskExecuter\TaskExecuterView.axaml.cs">
       <DependentUpon>TaskExecuterView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Controls\ProgressTask\ProgressTaskView.axaml.cs">
-      <DependentUpon>ProgressTaskView.axaml</DependentUpon>
-    </Compile>
     <Compile Update="Controls\TaskItem\TaskItemView.axaml.cs">
       <DependentUpon>TaskItemView.axaml</DependentUpon>
     </Compile>

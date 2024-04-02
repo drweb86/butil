@@ -12,7 +12,7 @@ public partial class VersionsListView : UserControl
     public VersionsListView()
     {
         InitializeComponent();
-        DataContext = new VersionsListViewModel();
+        DataContext = new VersionsListViewModel(null);
     }
 
     public void BrowseFoldersCommand(object? sender, RoutedEventArgs args)

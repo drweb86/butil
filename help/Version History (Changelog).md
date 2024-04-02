@@ -1,3 +1,9 @@
+# 2024.04.02
+
+## New Features
+- During recovery or version deletion, real progress is shown
+- During recovery or version deletion, logs are written.
+
 # 2024.03.28
 
 ## Bug Fixes

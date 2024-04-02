@@ -6,8 +6,8 @@ using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.IncrementalModel;
+using BUtil.Core.TasksTree.States;
 using butil_ui.Controls;
-using butil_ui.UiProgressTasks;
 using System;
 using System.Threading.Tasks;
 
@@ -21,7 +21,7 @@ public class RestoreViewModel : ViewModelBase
 
         WhereTaskViewModel = new WhereTaskViewModel(storageSettingsV2 ?? new FolderStorageSettingsV2(), Resources.Task_Restore, "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png");
         EncryptionTaskViewModel = new EncryptionTaskViewModel(password ?? string.Empty, false);
-        VersionsListViewModel = new VersionsListViewModel();
+        VersionsListViewModel = new VersionsListViewModel(this);
     }
 
     #region IsSetupVisible
@@ -93,13 +93,13 @@ public class RestoreViewModel : ViewModelBase
         }
 
         var taskEvents = new TaskEvents();
-        OpenIncrementalBackupTask openIncrementalBackupTask = null;
+        GetExistingVersionStateFromStorageTask openIncrementalBackupTask = null;
         this.TaskExecuterViewModel = new TaskExecuterViewModel(
             taskEvents,
             Resources.Task_Restore,
             log => 
             {
-                openIncrementalBackupTask = new OpenIncrementalBackupTask(log, taskEvents, storageOptions, EncryptionTaskViewModel.Password);
+                openIncrementalBackupTask = new GetExistingVersionStateFromStorageTask(log, taskEvents, storageOptions, EncryptionTaskViewModel.Password);
                 return openIncrementalBackupTask;
             },
             isOk =>
