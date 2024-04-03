@@ -97,7 +97,7 @@ public class RestoreViewModel : ViewModelBase
         this.TaskExecuterViewModel = new TaskExecuterViewModel(
             taskEvents,
             Resources.Task_Restore,
-            log => 
+            (log, taskEvents) => 
             {
                 openIncrementalBackupTask = new GetExistingVersionStateFromStorageTask(log, taskEvents, storageOptions, EncryptionTaskViewModel.Password);
                 return openIncrementalBackupTask;
@@ -107,7 +107,7 @@ public class RestoreViewModel : ViewModelBase
                 if (isOk)
                 {
                     IsSetupVisible = false;
-                    TaskExecuterViewModel = null!;
+                    this.TaskExecuterViewModel.IsCollapsed = true;
                     VersionsListViewModel.Initialize(openIncrementalBackupTask.StorageState!, storageOptions, EncryptionTaskViewModel.Password);
                 }
             });

@@ -134,9 +134,9 @@ public class LaunchTaskViewModel : ViewModelBase
         TaskExecuterViewModel = new TaskExecuterViewModel(
             _taskEvents,
             _task.Name,
-            log => TaskModelStrategyFactory
+            (log, taskEvents) => TaskModelStrategyFactory
                 .Create(log, _task)
-                .GetTask(_taskEvents),
+                .GetTask(taskEvents),
             OnTaskCompleted
             );
     }

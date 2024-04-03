@@ -7,9 +7,16 @@ public class TempFolder : IDisposable
 {
     public string Folder { get; private set; }
 
-    public TempFolder()
+    public TempFolder(string? baseFolder = null)
     {
-        Folder = Path.GetTempFileName() + ".Folder";
+        if (baseFolder == null)
+        {
+            Folder = Path.GetTempFileName() + ".Folder";
+        }
+        else
+        {
+             Folder = Path.Combine(baseFolder, Guid.NewGuid().ToString());
+        }
         Directory.CreateDirectory(Folder);
     }
 

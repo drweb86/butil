@@ -18,7 +18,7 @@
 			<Setter Property="VerticalAlignment" Value="Stretch" />
 		</Style>
 	</UserControl.Styles>
-	<Expander HorizontalAlignment="Stretch" Margin="0 0 0 8" IsExpanded="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
+	<Expander HorizontalAlignment="Stretch" Margin="0 0 0 8" IsExpanded="{Binding !IsCollapsed}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
 		<Expander.Header>
 			<Grid>
 				<Grid.ColumnDefinitions>

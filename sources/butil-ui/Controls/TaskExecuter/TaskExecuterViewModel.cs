@@ -40,7 +40,7 @@ public class TaskExecuterViewModel : ObservableObject
     public TaskExecuterViewModel(
         TaskEvents taskEvents,
         string logName,
-        Func<ILog, BuTask> createTask,
+        Func<ILog, TaskEvents, BuTask> createTask,
         Action<bool> onTaskComplete)
     {
         _progressGenericForeground = ColorPalette.GetBrush(SemanticColor.Normal);
@@ -56,7 +56,7 @@ public class TaskExecuterViewModel : ObservableObject
 
         _log = new FileLog(logName);
         _log.Open();
-        _threadTask = createTask(_log);
+        _threadTask = createTask(_log, taskEvents);
 
 
         _threadTask
@@ -71,6 +71,26 @@ public class TaskExecuterViewModel : ObservableObject
 
         _onTaskComplete = onTaskComplete;
     }
+
+    #region IsCollapsed
+
+    private bool _isCollapsed = false;
+    public bool IsCollapsed
+    {
+        get
+        {
+            return _isCollapsed;
+        }
+        set
+        {
+            if (value == _isCollapsed)
+                return;
+            _isCollapsed = value;
+            OnPropertyChanged(nameof(IsCollapsed));
+        }
+    }
+
+    #endregion
 
     #region TotalTasksCount
 
@@ -172,7 +192,6 @@ public class TaskExecuterViewModel : ObservableObject
     }
 
     #endregion
-
 
     #region ElapsedLabel
 
@@ -355,7 +374,11 @@ public class TaskExecuterViewModel : ObservableObject
 
         if (e.Status == ProcessingStatus.FinishedWithErrors ||
             e.Status == ProcessingStatus.FinishedSuccesfully)
-            _endedTasks.Add(e.TaskId);
+            lock (_endedTasks)
+            {
+                _endedTasks.Add(e.TaskId);
+            }
+
         ScheduleUpdate(() => UpdateListViewItem(e.TaskId, e.Status));
     }
 

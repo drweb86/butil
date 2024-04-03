@@ -500,7 +500,7 @@ public class VersionsListViewModel : ObservableObject
         ParentViewModel.TaskExecuterViewModel = new TaskExecuterViewModel(
             new TaskEvents(),
             Resources.Task_Restore,
-            log => new DeleteIncrementalBackupVersionTask(log, new TaskEvents(), _state, new IncrementalBackupModelOptionsV2() { Password = _password }, SelectedVersion.Version, _storageOptions),
+            (log, taskEvents) => new DeleteIncrementalBackupVersionTask(log, taskEvents, _state, new IncrementalBackupModelOptionsV2() { Password = _password }, SelectedVersion.Version, _storageOptions),
             isOk =>
             {
                 if (isOk)
@@ -509,8 +509,8 @@ public class VersionsListViewModel : ObservableObject
                     Dispatcher.UIThread.Invoke(() =>
                     {
                         SelectedVersion = closestFreshVersion;
+                        this.ParentViewModel.TaskExecuterViewModel.IsCollapsed = true;
                     });
-                    this.ParentViewModel.TaskExecuterViewModel = null;
                 }
             });
         ParentViewModel.TaskExecuterViewModel.StartTaskCommand();
@@ -532,12 +532,12 @@ public class VersionsListViewModel : ObservableObject
         ParentViewModel.TaskExecuterViewModel = new TaskExecuterViewModel(
             new TaskEvents(),
             Resources.Task_Restore,
-            log => new WriteStorageFilesToSourceFileTask(log, new TaskEvents(), _storageOptions, SelectedNode.SourceItem, storageFiles, destinationFolder),
+            (log, taskEvents) => new WriteStorageFilesToSourceFileTask(log, taskEvents, _storageOptions, SelectedNode.SourceItem, storageFiles, destinationFolder),
             isOk =>
             {
                 if (isOk)
                 {
-                    this.ParentViewModel.TaskExecuterViewModel = null;
+                    this.ParentViewModel.TaskExecuterViewModel.IsCollapsed = true;
                 }
             });
         this.ParentViewModel.TaskExecuterViewModel.StartTaskCommand();

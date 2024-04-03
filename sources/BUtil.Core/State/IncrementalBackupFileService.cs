@@ -48,7 +48,10 @@ public class IncrementalBackupFileService
 
         using var tempFolder = new TempFolder();
         var tempArchive = Path.Combine(tempFolder.Folder, "archive.7z");
-        var extractedFolder = Path.Combine(tempFolder.Folder, "Extracted");
+        
+        // to make recovery twice faster we extract to folder near destination
+        using var tempFolderAtDestination = new TempFolder(destinationFolder);
+        var extractedFolder = Path.Combine(tempFolderAtDestination.Folder, "Extracted");
         _services.Storage.Download(storageFile.StorageRelativeFileName, tempArchive);
         var archiver = PlatformSpecificExperience.Instance.GetArchiver(_log);
         // file can be renamed in real life.

@@ -32,10 +32,10 @@
 				ScrollViewer.VerticalScrollBarVisibility="Visible"
 				ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 			<StackPanel Orientation="Vertical">
+				<controls:TaskExecuterView Margin="24 8 24 8" DataContext="{Binding TaskExecuterViewModel}" IsVisible="{Binding $parent[v:RestoreView].((vm:RestoreViewModel)DataContext).TaskExecuterViewModel, Converter={x:Static ObjectConverters.IsNotNull}}" />
 				<controls:WhereTaskView Margin="24 8 24 8" DataContext="{Binding WhereTaskViewModel}" IsVisible="{Binding $parent[v:RestoreView].((vm:RestoreViewModel)DataContext).IsSetupVisible}"/>
 				<controls:EncryptionTaskView Margin="24 8 24 8" DataContext="{Binding EncryptionTaskViewModel}" IsVisible="{Binding $parent[v:RestoreView].((vm:RestoreViewModel)DataContext).IsSetupVisible}"/>
 				<controls:VersionsListView DataContext="{Binding VersionsListViewModel}" IsVisible="{Binding !$parent[v:RestoreView].((vm:RestoreViewModel)DataContext).IsSetupVisible}"/>
-				<controls:TaskExecuterView Margin="24 8 24 8" DataContext="{Binding TaskExecuterViewModel}" IsVisible="{Binding $parent[v:RestoreView].((vm:RestoreViewModel)DataContext).TaskExecuterViewModel, Converter={x:Static ObjectConverters.IsNotNull}}" />
 			</StackPanel>
 		</ScrollViewer>
 
