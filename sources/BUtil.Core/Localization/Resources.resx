@@ -658,4 +658,10 @@ See detailed description in the following link.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>User is not specified.</value>
   </data>
+  <data name="File_Deleting" xml:space="preserve">
+    <value>Deleting "{0}"</value>
+  </data>
+  <data name="File_Moving" xml:space="preserve">
+    <value>Moving "{0}" to "{1}"</value>
+  </data>
 </root>

@@ -6,14 +6,14 @@ namespace BUtil.Core.Storages;
 
 public class StorageFactory
 {
-    public static IStorage Create(ILog log, IStorageSettingsV2 storageSettings)
+    public static IStorage Create(ILog log, IStorageSettingsV2 storageSettings, bool autodetectConnectionSettings)
     {
         if (storageSettings is FolderStorageSettingsV2)
             return new FailoverStorageWrapper(log, new FolderStorage(log, (FolderStorageSettingsV2)storageSettings));
         else if (storageSettings is SambaStorageSettingsV2)
             return new FailoverStorageWrapper(log, PlatformSpecificExperience.Instance.GetSmbStorage(log, (SambaStorageSettingsV2)storageSettings));
         else if (storageSettings is FtpsStorageSettingsV2)
-            return new FailoverStorageWrapper(log, new FtpsStorage(log, (FtpsStorageSettingsV2)storageSettings));
+            return new FailoverStorageWrapper(log, new FtpsStorage(log, (FtpsStorageSettingsV2)storageSettings, autodetectConnectionSettings));
         else if (storageSettings is MtpStorageSettings)
         {
             var mtpStorage = PlatformSpecificExperience.Instance.GetMtpStorage(log, (MtpStorageSettings)storageSettings);
@@ -34,7 +34,7 @@ public class StorageFactory
 
         try
         {
-            using var storage = Create(log, storageSettings);
+            using var storage = Create(log, storageSettings, true);
             return storage.Test();
         }
         catch (Exception ex)

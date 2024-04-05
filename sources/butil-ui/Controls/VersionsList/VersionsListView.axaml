@@ -14,7 +14,7 @@
 		<WrapPanel Orientation="Horizontal" Margin="24 8 24 8" Background="{Binding HeaderBackground}" HorizontalAlignment="Stretch" IsEnabled="{Binding !ParentViewModel.TaskExecuterViewModel.TaskNotCompleted}">
 			<TextBlock Margin="8 0 8 0" Text="{Binding Field_Version}" VerticalAlignment="Center" />
 			<ComboBox Margin="0 4 4 4" HorizontalAlignment="Stretch" VerticalAlignment="Center" SelectedValue="{Binding SelectedVersion}" ItemsSource="{Binding Versions}" DisplayMemberBinding="{Binding Title}" />
-			<Button Padding="8" VerticalAlignment="Center" Content="{Binding BackupVersion_Button_Delete}" HorizontalContentAlignment="Center" Margin="8 0 8 0" Command="{Binding DeleteBackupVersionCommand}" IsEnabled="{Binding IsDeleteBackupVersionEnabled}" IsVisible="{Binding ParentViewModel.TaskExecuterViewModel, Converter={x:Static ObjectConverters.IsNull}}" />
+			<Button Padding="8" VerticalAlignment="Center" Content="{Binding BackupVersion_Button_Delete}" HorizontalContentAlignment="Center" Margin="8 0 8 0" Command="{Binding DeleteBackupVersionCommand}" IsEnabled="{Binding IsDeleteBackupVersionEnabled}" />
 			<TextBlock TextWrapping="Wrap" Text="{Binding StorageSize}" Margin="8 0 0 0" VerticalAlignment="Center" />
 		</WrapPanel>
 

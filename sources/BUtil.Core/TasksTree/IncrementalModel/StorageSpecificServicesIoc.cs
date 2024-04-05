@@ -21,11 +21,11 @@ public class StorageSpecificServicesIoc : IDisposable
     private readonly Lazy<IncrementalBackupFileService> _incrementalBackupFileService;
     public IncrementalBackupFileService IncrementalBackupFileService { get { return _incrementalBackupFileService.Value; } }
 
-    public StorageSpecificServicesIoc(ILog log, IStorageSettingsV2 storageSettings, IHashService hashService)
+    public StorageSpecificServicesIoc(ILog log, IStorageSettingsV2 storageSettings, IHashService hashService, bool autodetectConnectionSettings = false)
     {
         Log = log;
         StorageSettings = storageSettings;
-        _storage = new Lazy<IStorage>(() => StorageFactory.Create(log, storageSettings));
+        _storage = new Lazy<IStorage>(() => StorageFactory.Create(log, storageSettings, autodetectConnectionSettings));
         _incrementalBackupStateService = new Lazy<IncrementalBackupStateService>(() => new IncrementalBackupStateService(this, hashService));
         _incrementalBackupFileService = new Lazy<IncrementalBackupFileService>(() => new IncrementalBackupFileService(hashService, this));
     }

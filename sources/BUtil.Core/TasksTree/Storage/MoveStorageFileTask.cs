@@ -1,4 +1,5 @@
 ﻿using BUtil.Core.Events;
+using BUtil.Core.Localization;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
 using System;
@@ -16,7 +17,7 @@ internal class MoveStorageFileTask : BuTask
         TaskEvents events,
         string fromRelativeFileName,
         string toRelativeFileName) :
-        base(services.Log, events, $"Move storage file \"{fromRelativeFileName}\" to \"{toRelativeFileName}\"")
+        base(services.Log, events, string.Format(Resources.File_Moving, fromRelativeFileName, toRelativeFileName))
     {
         _services = services;
         _fromRelativeFileName = fromRelativeFileName;

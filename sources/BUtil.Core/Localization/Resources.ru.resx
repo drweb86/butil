@@ -659,4 +659,10 @@ bin.
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Пользователь не указан.</value>
   </data>
+  <data name="File_Deleting" xml:space="preserve">
+    <value>Удаление "{0}"</value>
+  </data>
+  <data name="File_Moving" xml:space="preserve">
+    <value>Перемещение "{0}" в "{1}"</value>
+  </data>
 </root>

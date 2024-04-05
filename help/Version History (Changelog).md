@@ -1,4 +1,4 @@
-# 2024.04.02
+# 2024.04.05
 
 ## New Features
 - During recovery or version deletion, real progress is shown
@@ -7,6 +7,11 @@
 - If user mounted network SMB/CIFS share on Windows, then he may skip for CIFS storage credentials. In this case invoking 'net use' command will be skipped.
 Main idea behind change is to avoid already mounted error. And use it recovery.
 - Restoration speed was increased in 2 times for Windows.
+
+## Bug Fixes
+- FTPS MITM attacks. Be aware that if you had previously setupped FTPS with self-signed certificate, you need to do the following steps:
+a. Open task with FTPS in Edit mode,
+b. Click Save.
 
 # 2024.03.28
 

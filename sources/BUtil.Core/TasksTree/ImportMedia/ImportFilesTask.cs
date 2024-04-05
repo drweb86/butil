@@ -36,8 +36,8 @@ class ImportFilesTask : SequentialBuTask
 
         var importMediaFileService = new ImportMediaFileService();
         var importMediaState = options.SkipAlreadyImportedFiles ? importMediaFileService.Load(_task.Name) ?? new ImportMediaState() : new ImportMediaState();
-        var fromStorage = StorageFactory.Create(this.Log, options.From);
-        var toStorage = StorageFactory.Create(this.Log, new FolderStorageSettingsV2 { DestinationFolder = options.DestinationFolder });
+        var fromStorage = StorageFactory.Create(this.Log, options.From, false);
+        var toStorage = StorageFactory.Create(this.Log, new FolderStorageSettingsV2 { DestinationFolder = options.DestinationFolder }, false);
         var transformFileName = options.TransformFileName;
 
         var fromStorageFiles = fromStorage.GetFiles(null, SearchOption.AllDirectories);

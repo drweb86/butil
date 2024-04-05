@@ -23,7 +23,7 @@ public class WriteStorageFilesToSourceFileTask : ParallelBuTask
         : base(log, events, Resources.Task_Restore)
     {
         _commonServicesIoc = new CommonServicesIoc();
-        _storageSpecificServicesIoc = new StorageSpecificServicesIoc(log, storageSettings, _commonServicesIoc.HashService);
+        _storageSpecificServicesIoc = new StorageSpecificServicesIoc(log, storageSettings, _commonServicesIoc.HashService, true);
 
         Children = storageFiles
             .Select(x => new WriteStorageFileToSourceFileTask(_storageSpecificServicesIoc, events, sourceItem, x, destinationFolder))

@@ -1,4 +1,5 @@
 ﻿using BUtil.Core.Events;
+using BUtil.Core.Localization;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
 using System;
@@ -14,7 +15,7 @@ internal class DeleteStorageFileTask : BuTask
         StorageSpecificServicesIoc services,
         TaskEvents events,
         string relativeFileName) :
-        base(services.Log, events, $"Delete storage file \"{relativeFileName}\"")
+        base(services.Log, events, string.Format(Resources.File_Deleting, relativeFileName))
     {
         _services = services;
         _relativeFileName = relativeFileName;

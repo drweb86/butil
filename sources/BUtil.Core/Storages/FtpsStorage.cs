@@ -5,6 +5,7 @@ using FluentFTP;
 using System;
 using System.IO;
 using System.Linq;
+using System.Net.Security;
 using System.Security;
 using System.Text.RegularExpressions;
 
@@ -14,8 +15,9 @@ class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
 {
     private readonly string? _normalizedFolder;
     private readonly FtpClient _client;
+    private readonly bool _autodetectConnectionSettings;
 
-    internal FtpsStorage(ILog log, FtpsStorageSettingsV2 settings)
+    internal FtpsStorage(ILog log, FtpsStorageSettingsV2 settings, bool autodetectConnectionSettings)
         : base(log, settings)
     {
         if (string.IsNullOrWhiteSpace(Settings.Host))
@@ -30,9 +32,11 @@ class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
         _normalizedFolder = NormalizeNullablePath(Settings.Folder);
 
         _client = Mount();
+        _autodetectConnectionSettings = autodetectConnectionSettings;
     }
 
     private readonly object _uploadLock = new();
+
     public override IStorageUploadResult Upload(string sourceFile, string relativeFileName)
     {
         lock (_uploadLock) // because we're limited by upload speed by Server and Internet
@@ -84,8 +88,32 @@ class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
         var client = new FtpClient(Settings.Host, Settings.User, Settings.Password, Settings.Port);
         client.Config.EncryptionMode = GetFtpEncryptionMode();
         client.Config.ValidateAnyCertificate = true;
+        client.ValidateCertificate += OnClientValidateCertificate;
         client.Connect();
         return client;
+    }
+
+    private void OnClientValidateCertificate(FluentFTP.Client.BaseClient.BaseFtpClient control, FtpSslValidationEventArgs e)
+    {
+        if (e.PolicyErrors == SslPolicyErrors.None)
+        {
+            e.Accept = true;
+            return;
+        }
+
+        if (_autodetectConnectionSettings)
+        {
+            Settings.TrustedCertificate = e.Certificate.GetRawCertDataString();
+        }
+
+        if (e.Certificate.GetRawCertDataString() == Settings.TrustedCertificate)
+        {
+            e.Accept = true;
+            return;
+        }
+
+        Log.WriteLine(LoggingEvent.Error, $"Received certificate from FTPS server violates policy {e.PolicyErrors}. Connection will not be accepted. You're facing Man-in-the-middle attack.");
+        Log.WriteLine(LoggingEvent.Error, $"If you trust this certificate, open in BUtil this task in Edit mode and click Save. Application will record this certificate as trusted.");
     }
 
     private FtpEncryptionMode GetFtpEncryptionMode()

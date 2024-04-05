@@ -608,6 +608,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Deleting &quot;{0}&quot;.
+        /// </summary>
+        public static string File_Deleting {
+            get {
+                return ResourceManager.GetString("File_Deleting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Integrity verification script.ps1.
         /// </summary>
         public static string File_IntegrityVerificationScript_Ps1 {
@@ -631,6 +640,15 @@ namespace BUtil.Core.Localization {
         public static string File_List_Saving {
             get {
                 return ResourceManager.GetString("File_List_Saving", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Moving &quot;{0}&quot; to &quot;{1}&quot;.
+        /// </summary>
+        public static string File_Moving {
+            get {
+                return ResourceManager.GetString("File_Moving", resourceCulture);
             }
         }
         
