@@ -665,4 +665,10 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Non è stato specificato l'utente.</value>
   </data>
+  <data name="File_Deleting" xml:space="preserve">
+    <value>Eliminazione di "{0}"</value>
+  </data>
+  <data name="File_Moving" xml:space="preserve">
+    <value>Spostamento di "{0}" in "{1}"</value>
+  </data>
 </root>
