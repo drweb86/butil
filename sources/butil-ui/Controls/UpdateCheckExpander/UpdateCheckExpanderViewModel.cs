@@ -11,11 +11,7 @@ internal class UpdateCheckExpanderViewModel : ObservableObject
 {
     public void Initialize()
     {
-#if DEBUG
-        // _ = CheckForUpdates();
-#else
-        _ = CheckForUpdates(); // we don't wait it to not stop initialization
-#endif
+        _ = CheckForUpdates();
     }
 
 

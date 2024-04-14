@@ -1,8 +1,13 @@
 $version = Get-Content "..\help\Version History (Changelog).md" -First 1
 $version = $version.Substring(2)
+$changes = Get-Content -Path "..\help\Version History (Changelog).md" -Raw
+$changes = $changes.Substring($changes.IndexOf("`n")).Trim("`n", "`r")
+$changes = $changes.Substring(0, $changes.IndexOf("`n# ")).Trim("`n", "`r");
+$changes = $changes.Replace("`r", "").Replace("`n", "\n").Replace("'", "").Replace("""", "")
 
 Clear-Host
 Write-Output "Version is $version"
+Write-Output "Changes are $changes"
 $ErrorActionPreference = "Stop"
 
 Write-Output "Deleting everything untracked/non commited."
@@ -147,5 +152,15 @@ ForEach ($platform in $platforms)
 	}
 }
 
-Write-Output "The following artefacts are produced:"
+Write-Output "Create latest.json"
+$latestJson = '{ "Version": "' + $version + '", "Changes": "' + $changes + '" }';
+Write-Output "Compacted changes are $changes"
+Set-Content -Path "..\Output\latest.json" -Value $latestJson
+if ($LastExitCode -ne 0)
+{
+	Write-Error "Fail." 
+	Exit 1
+}
+
+Write-Output "The following artefacts are produced. Copy them to \\nas\butil-website."
 Get-ChildItem "..\Output"

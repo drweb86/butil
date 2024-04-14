@@ -1,17 +1,17 @@
 
+using BUtil.Core.FileSystem;
 using System;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace BUtil.Core.Misc;
 
 public static class UpdateChecker
 {
-    public static async Task<GithubUpdateInfo> CheckForUpdate()
+    public static async Task<AppUpdateInfo> CheckForUpdate()
     {
         try
         {
@@ -20,15 +20,20 @@ public static class UpdateChecker
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
             client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
 
-            // releases endpoint is broken in github now. it returns invalid result (previous release).
-            await using var releasesStream = await client.GetStreamAsync("https://api.github.com/repos/drweb86/butil/releases/latest");
-            var release = await JsonSerializer.DeserializeAsync<GithubRelease>(releasesStream);
-            var noUpdate = new GithubUpdateInfo(false, null, null);
+#if DEBUG
+            var path = Path.Combine(Directories.BinariesDir, @"..\..\..\..\web\latest.json");
+            using var releasesStream = File.OpenRead(path);
+#else
+            await using var releasesStream = await client.GetStreamAsync("https://drweb86.synology.me:88/latest.json");
+#endif
 
-            if (release == null || release.Prerelease || release.Draft || !Version.TryParse(release.Tag, out var version))
+            var release = await JsonSerializer.DeserializeAsync<AppRelease>(releasesStream);
+            var noUpdate = new AppUpdateInfo(false, null, null);
+
+            if (release == null || !Version.TryParse(release.Version, out var version))
                 return noUpdate;
 
-            return new GithubUpdateInfo(CopyrightInfo.Version < version, release.Tag, release.Markdown
+            return new AppUpdateInfo(CopyrightInfo.Version < version, release.Version, release.Changes
                 .Replace("\\r", "\r")
                 .Replace("\\n", "\n")
                 .Replace("#", ""));
@@ -42,14 +47,12 @@ public static class UpdateChecker
     }
 }
 
-public record class GithubRelease(
-    [property: JsonPropertyName("tag_name")] string Tag,
-    [property: JsonPropertyName("draft")] bool Draft,
-    [property: JsonPropertyName("prerelease")] bool Prerelease,
-    [property: JsonPropertyName("body")] string Markdown
+internal record class AppRelease(
+    string Version,
+    string Changes
 );
 
-public record class GithubUpdateInfo(
+public record class AppUpdateInfo(
     bool HasUpdate,
     string? Version,
     string? Changes
