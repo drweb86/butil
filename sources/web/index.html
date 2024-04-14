@@ -133,42 +133,53 @@
     </div>
 
 <script>
-    var urlParams = new URLSearchParams(window.location.search);
-    var version = urlParams.get('release');
-    var setupWindowsArm64 = 'BUtil_v' + version + '_win-arm64.exe';
-    var setupWindowsX64 = 'BUtil_v' + version + '_win-x64.exe';
-    var binariesWindowsArm64 = 'BUtil_v' + version + '_win-arm64-binaries.7z';
-    var binariesWindowsX64 = 'BUtil_v' + version + '_win-x64-binaries.7z';
-    var ubuntuUrl = 'https://github.com/drweb86/butil/blob/master/help/Ubuntu.md';
+    async function getLastVersion() {
+        const avoidCacheToken = Date.now();
+        const latestVersionResponse = await fetch(`./latest.json?timestamp=${avoidCacheToken}`);
+        if (!latestVersionResponse.ok) {
+            console.error('Failed to get latest.json file.', latestVersionResponse);
+            throw new Error('Failed to get latest.json file.');
+        }
 
-    document.getElementById("win-x64-setup").href="./" + setupWindowsX64;
-    document.getElementById("win-arm64-setup").href="./" + setupWindowsArm64;
-    document.getElementById("win-x64-binaries").href="./" + binariesWindowsX64;
-    document.getElementById("win-arm64-binaries").href="./" + binariesWindowsArm64;
-    document.getElementById("linux-ubuntu").href=ubuntuUrl;
+        const appVersionInfo = await latestVersionResponse.json();
+        return appVersionInfo.Version;
+    }
 
-    navigator
-        .userAgentData
-        .getHighEntropyValues(["architecture"])
-        .then(ua => {
-            var defaultDownloadElement = document.getElementById("default-setup");
-            if (navigator.userAgentData.platform.includes("Linux")) {
-                defaultDownloadElement.href=ubuntuUrl;
-                defaultDownloadElement.innerHTML = "Ubuntu build instructions"
-            }
-            else if (navigator.userAgentData.platform === "Windows") {
-                if (ua.architecture === 'arm') {
-                    defaultDownloadElement.href="./" + setupWindowsArm64;
-                    defaultDownloadElement.innerHTML = "<p>Download for Windows</p><span>(detected Windows, ARM64)</span>"
-                } else {
-                    defaultDownloadElement.href="./" + setupWindowsX64;
-                    defaultDownloadElement.innerHTML = "<p>Download for Windows</p><span>(detected Windows, X64)</span>"
-                }
+    async function setReleaseInfo() {
+        var version = await getLastVersion();
+        var setupWindowsArm64 = 'BUtil_v' + version + '_win-arm64.exe';
+        var setupWindowsX64 = 'BUtil_v' + version + '_win-x64.exe';
+        var binariesWindowsArm64 = 'BUtil_v' + version + '_win-arm64-binaries.7z';
+        var binariesWindowsX64 = 'BUtil_v' + version + '_win-x64-binaries.7z';
+        var ubuntuUrl = 'https://github.com/drweb86/butil/blob/master/help/Ubuntu.md';
+
+        document.getElementById("win-x64-setup").href="./" + setupWindowsX64;
+        document.getElementById("win-arm64-setup").href="./" + setupWindowsArm64;
+        document.getElementById("win-x64-binaries").href="./" + binariesWindowsX64;
+        document.getElementById("win-arm64-binaries").href="./" + binariesWindowsArm64;
+        document.getElementById("linux-ubuntu").href=ubuntuUrl;
+
+        const ua = await navigator.userAgentData.getHighEntropyValues(["architecture"]);
+        var defaultDownloadElement = document.getElementById("default-setup");
+        if (navigator.userAgentData.platform.includes("Linux")) {
+                        defaultDownloadElement.href=ubuntuUrl;
+                        defaultDownloadElement.innerHTML = "Ubuntu build instructions"
+        }
+        else if (navigator.userAgentData.platform === "Windows") {
+            if (ua.architecture === 'arm') {
+                defaultDownloadElement.href="./" + setupWindowsArm64;
+                defaultDownloadElement.innerHTML = "<p>Download for Windows</p><span>(detected Windows, arm64)</span>"
             } else {
-                defaultDownloadElement.href="#";
-                defaultDownloadElement.innerHTML = "Your platform is not detected/supported."
+                defaultDownloadElement.href="./" + setupWindowsX64;
+                defaultDownloadElement.innerHTML = "<p>Download for Windows</p><span>(detected Windows, x64)</span>"
             }
-        });
+        } else {
+            defaultDownloadElement.href="#";
+            defaultDownloadElement.innerHTML = "Your platform is not detected/supported."
+        }
+    }
+
+    setReleaseInfo();
 </script>
 
 </body>
