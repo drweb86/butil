@@ -2,6 +2,7 @@
 
 ## Changes
 - Change version lookup URL.
+- Italian language was updated by https://github.com/bovirus .
 
 # 2024.04.05
 
