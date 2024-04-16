@@ -1,4 +1,4 @@
-# ![BUtil Logotype](./help/Assets/Logotype.png) BUtil
+# ![BUtil Logotype](./help/Assets/Logotype.gif) BUtil
 
 > Backup your data Windows, Linux.
 
