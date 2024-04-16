@@ -87,21 +87,13 @@ internal class UpdateCheckExpanderViewModel : ObservableObject
 
     private async Task CheckForUpdates()
     {
-        try
-        {
-            var update = await UpdateChecker.CheckForUpdate();
+        var update = await UpdateChecker.CheckForUpdate();
 
-            IsUpdateAvailable = update.HasUpdate;
-            if (IsUpdateAvailable)
-            {
-                UpdateNews = update.Changes ?? string.Empty;
-                UpdateNewsTitle = string.Format(Resources.Application_NewVersion_Notification, update.Version);
-            }
-        }
-        catch (InvalidOperationException)
+        IsUpdateAvailable = update.HasUpdate;
+        if (IsUpdateAvailable)
         {
-            // For now lets eat those errors.
-            // Messages.ShowErrorBox(exc.Message);
+            UpdateNews = update.Changes ?? string.Empty;
+            UpdateNewsTitle = string.Format(Resources.Application_NewVersion_Notification, update.Version);
         }
     }
 }

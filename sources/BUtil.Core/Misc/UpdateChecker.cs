@@ -38,7 +38,10 @@ public static class UpdateChecker
                 .Replace("\\n", "\n")
                 .Replace("#", ""));
         }
-        catch (Exception e) { throw new InvalidOperationException(e.Message, e); }
+        catch 
+        { 
+            return new AppUpdateInfo(false, null, null); ;
+        }
     }
 }
 

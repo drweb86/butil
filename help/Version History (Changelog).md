@@ -1,3 +1,8 @@
+# 2024.04.14.1
+
+## Bug Fixes
+- Offline mode could crash app.
+
 # 2024.04.14
 
 ## Changes
