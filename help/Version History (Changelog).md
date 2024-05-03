@@ -1,3 +1,9 @@
+# 2024.05.03
+(unreleased)
+
+## New Features
+- Synchronization of files between devices.
+
 # 2024.04.14.1
 
 ## Bug Fixes
