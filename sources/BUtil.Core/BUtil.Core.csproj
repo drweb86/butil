@@ -7,13 +7,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Jobs\**" />
-    <Compile Remove="Synchronization\**" />
     <Compile Remove="TasksTree\Apps\**" />
     <EmbeddedResource Remove="Jobs\**" />
-    <EmbeddedResource Remove="Synchronization\**" />
     <EmbeddedResource Remove="TasksTree\Apps\**" />
     <None Remove="Jobs\**" />
-    <None Remove="Synchronization\**" />
     <None Remove="TasksTree\Apps\**" />
   </ItemGroup>
   <ItemGroup>
