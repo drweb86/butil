@@ -1,42 +1,44 @@
 ﻿namespace BUtil.Core.Synchronization;
 
+using BUtil.Core.FileSystem;
+using BUtil.Core.Storages;
+using System.IO;
 using System.Text.Json;
 
 class SynchronizationRemoteStateService
 {
-    private readonly SynchronizationRemoteStorageService _remoteStorageService;
+    private readonly IStorage _storage;
 
-    public SynchronizationRemoteStateService(SynchronizationRemoteStorageService remoteStorageService)
+    public SynchronizationRemoteStateService(IStorage storage)
     {
-        _remoteStorageService = remoteStorageService;
+        _storage = storage;
     }
 
-    private string GetFileName()
-    {
-        return $"remote file state - V1.json";
-    }
+    private readonly string _remoteFile = "Remote State - V1.json";
 
     public SynchronizationState? Load()
     {
-        var fileName = GetFileName();
-        if (!_remoteStorageService.Exists(fileName))
+        if (!_storage.Exists(_remoteFile))
             return null;
 
-        var content = _remoteStorageService.ReadAllText(fileName);
+        using var tempFolder = new TempFolder();
+        var localFile = Path.Combine(tempFolder.Folder, _remoteFile);
+        _storage.Download(_remoteFile, localFile);
 
+        var content = File.ReadAllText(localFile);
         return JsonSerializer.Deserialize<SynchronizationState>(content);
     }
 
     public void Save(SynchronizationState localFileState)
     {
-        var fileName = GetFileName();
+        if (_storage.Exists(_remoteFile))
+            _storage.Delete(_remoteFile);
 
-        if (_remoteStorageService.Exists(fileName))
-            _remoteStorageService.Delete(fileName);
+        using var tempFolder = new TempFolder();
+        var localFile = Path.Combine(tempFolder.Folder, _remoteFile);
+        var content = JsonSerializer.Serialize(localFileState, new JsonSerializerOptions { WriteIndented = true });
+        File.WriteAllText(localFile, content);
 
-        _remoteStorageService.WriteAllText(fileName, JsonSerializer.Serialize(localFileState, new JsonSerializerOptions
-        {
-            WriteIndented = true,
-        }));
+        _storage.Upload(localFile, _remoteFile);
     }
 }

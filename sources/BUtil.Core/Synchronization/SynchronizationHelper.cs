@@ -1,6 +1,7 @@
 ﻿
 
 using BUtil.Core.Hashing;
+using BUtil.Core.Storages;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,17 +10,17 @@ namespace BUtil.Core.Synchronization;
 
 internal class SynchronizationHelper
 {
-    private SynchronizationRemoteStorageService _remoteStorageService;
+    private IStorage _remoteStorage;
     private SynchronizationLocalStateService _localStateService;
     private SynchronizationActualFilesService _actualFilesService;
     private SynchronizationRemoteStateService _remoteStateService;
 
-    public SynchronizationHelper(IHashService hashService, string taskName, string hiveFolder, string syncFolder)
+    public SynchronizationHelper(IHashService hashService, IStorage remoteStorage, string taskName, string syncFolder)
     {
-        _remoteStorageService = new SynchronizationRemoteStorageService(hiveFolder);
+        _remoteStorage = remoteStorage;
         _localStateService = new SynchronizationLocalStateService(hashService, taskName, syncFolder);
         _actualFilesService = new SynchronizationActualFilesService(hashService);
-        _remoteStateService = new SynchronizationRemoteStateService(_remoteStorageService);
+        _remoteStateService = new SynchronizationRemoteStateService(_remoteStorage);
     }
 
     public void Sync(string taskName, string hiveFolder, string syncFolder)
@@ -64,11 +65,11 @@ internal class SynchronizationHelper
                 case SynchronizationDecision.DoNothing:
                     break;
                 case SynchronizationDecision.Delete:
-                    _remoteStorageService.Delete(item.RelativeFileName);
+                    _remoteStorage.Delete(item.RelativeFileName);
                     break;
                 case SynchronizationDecision.Create:
                 case SynchronizationDecision.Update:
-                    _remoteStorageService.Upload(syncFolder, item.RelativeFileName);
+                    _remoteStorage.Upload(Path.Combine(syncFolder, item.RelativeFileName), item.RelativeFileName);
                     break;
 
             }
@@ -88,7 +89,7 @@ internal class SynchronizationHelper
                     break;
                 case SynchronizationDecision.Create:
                 case SynchronizationDecision.Update:
-                    _remoteStorageService.Download(syncFolder, item.RelativeFileName);
+                    _remoteStorage.Download(item.RelativeFileName, Path.Combine(syncFolder, item.RelativeFileName));
                     break;
 
             }
@@ -99,7 +100,7 @@ internal class SynchronizationHelper
     {
         foreach (var item in remoteState.FileSystemEntries)
         {
-            _remoteStorageService.Download(syncFolder, item.RelativeFileName);
+            _remoteStorage.Download(item.RelativeFileName, Path.Combine(syncFolder, item.RelativeFileName));
         }
         _localStateService.Save(remoteState);
     }
@@ -108,7 +109,7 @@ internal class SynchronizationHelper
     {
         foreach (var item in actualFiles.FileSystemEntries)
         {
-            _remoteStorageService.Upload(syncFolder, item.RelativeFileName);
+            _remoteStorage.Upload(Path.Combine(syncFolder, item.RelativeFileName), item.RelativeFileName);
         }
         _localStateService.Save(actualFiles);
         _remoteStateService.Save(actualFiles);
