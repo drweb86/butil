@@ -1,0 +1,43 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="clr-namespace:butil_ui.Controls"
+    mc:Ignorable="d"
+	d:DesignWidth="800"
+	d:DesignHeight="450"
+    x:Class="butil_ui.Controls.EditSynchronizationTaskView"
+	x:DataType="controls:EditSynchronizationTaskViewModel"
+	>
+	<UserControl.Styles>
+		<Style Selector="Expander">
+			<Setter Property="VerticalAlignment" Value="Top" />
+		</Style>
+		<Style Selector="Expander:expanded">
+			<Setter Property="VerticalAlignment" Value="Stretch" />
+		</Style>
+	</UserControl.Styles>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+		<ScrollViewer Grid.Row="0"
+				ScrollViewer.VerticalScrollBarVisibility="Visible"
+				ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+			<StackPanel>
+				<controls:NameTaskView Margin="24 24 24 8" DataContext="{Binding NameTaskViewModel}" />
+				<controls:FolderSectionView Margin="24 8 24 8" DataContext="{Binding What}" />
+				<controls:WhenTaskView Margin="24 8 24 8" DataContext="{Binding WhenTaskViewModel}" IsVisible="{Binding IsWhenAvailable}" />
+				<controls:WhereTaskView Margin="24 8 24 8" DataContext="{Binding WhereTaskViewModel}"/>
+				<controls:EncryptionTaskView Margin="24 8 24 8" DataContext="{Binding EncryptionTaskViewModel}" />
+			</StackPanel>
+		</ScrollViewer>
+
+		<StackPanel Grid.Row="1" Margin="24 8 24 24" Orientation="Horizontal" HorizontalAlignment="Right">
+			<Button MinWidth="120" Padding="0 8 0 8" VerticalAlignment="Center" Content="{Binding Button_OK}" HorizontalContentAlignment="Center" Margin="8 0 8 0" Command="{Binding ButtonOkCommand}" />
+			<Button MinWidth="120" Padding="0 8 0 8" VerticalAlignment="Center" Content="{Binding Button_Cancel}" HorizontalContentAlignment="Center" Command="{Binding ButtonCancelCommand}" />
+		</StackPanel>
+	</Grid>
+</UserControl>

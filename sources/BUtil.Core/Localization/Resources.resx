@@ -664,4 +664,10 @@ See detailed description in the following link.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>User is not specified.</value>
   </data>
+  <data name="SynchronizationTask_Create" xml:space="preserve">
+    <value>Synchronization</value>
+  </data>
+  <data name="SynchronizationTask_Help" xml:space="preserve">
+    <value>Two-way synchronization of files between devices using centralized storage.</value>
+  </data>
 </root>

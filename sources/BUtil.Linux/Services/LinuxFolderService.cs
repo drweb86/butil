@@ -5,8 +5,14 @@ namespace BUtil.Linux.Services;
 
 internal class LinuxFolderService : IFolderService
 {
+    public string GetDefaultSynchronizationFolder()
+    {
+        return Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+    }
+
     public IEnumerable<string> GetDefaultBackupFolders()
     {
+        // TODO: revert!
         return new[] {
             Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
         };

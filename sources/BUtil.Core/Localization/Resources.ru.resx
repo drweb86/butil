@@ -665,4 +665,10 @@ bin.
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Пользователь не указан.</value>
   </data>
+  <data name="SynchronizationTask_Create" xml:space="preserve">
+    <value>Синхронизация</value>
+  </data>
+  <data name="SynchronizationTask_Help" xml:space="preserve">
+    <value>Двухсторонняя синхронизация файлов между устройствами с использованием централизованного хранилища.</value>
+  </data>
 </root>

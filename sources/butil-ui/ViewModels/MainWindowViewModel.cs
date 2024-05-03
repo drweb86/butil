@@ -73,6 +73,11 @@ public partial class MainWindowViewModel : ViewModelBase
         WindowManager.SwitchView(new EditMediaTaskViewModel(string.Empty, true));
     }
 
+    public void SynchronizationTaskCreateCommand()
+    {
+        WindowManager.SwitchView(new EditSynchronizationTaskViewModel(string.Empty, true));
+    }
+
     #endregion
 
     #region Labels
@@ -83,6 +88,7 @@ public partial class MainWindowViewModel : ViewModelBase
     public string Task_Create => Resources.Task_Create;
     public string ImportMediaTask_Create => Resources.ImportMediaTask_Create;
     public string IncrementalBackupTask_Create => Resources.IncrementalBackupTask_Create;
+    public string SynchronizationTask_Create => Resources.SynchronizationTask_Create;
 
     #endregion
 

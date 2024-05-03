@@ -17,6 +17,8 @@ public static class TaskModelStrategyFactory
     {
         if (task.Model is IncrementalBackupModelOptionsV2)
             return new IncrementalBackupModelStrategy(log, task);
+        if (task.Model is SynchronizationTaskModelOptionsV2)
+            return new SynchronizationTaskModelOptionsStrategy(log, task);
         if (task.Model is ImportMediaTaskModelOptionsV2)
             return new ImportMediaTaskModelStrategy(log, task);
         throw new ArgumentOutOfRangeException(nameof(task));
@@ -59,6 +61,32 @@ public static class TaskModelStrategyFactory
                         return false;
                     }
                 }
+            }
+
+            var storageError = StorageFactory.Test(log, typedOptions.To);
+            if (storageError != null)
+            {
+                error = storageError;
+                return false;
+            }
+
+            return true;
+        }
+        else if (options is SynchronizationTaskModelOptionsV2)
+        {
+            var typedOptions = (SynchronizationTaskModelOptionsV2)options;
+
+            if (string.IsNullOrWhiteSpace(typedOptions.Password))
+            {
+                error = Resources.Password_Field_Validation_NotSpecified;
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(typedOptions.LocalFolder) ||
+                !Directory.Exists(typedOptions.LocalFolder))
+            {
+                error = string.Format(Resources.SourceItem_Validation_NotExists, typedOptions.LocalFolder);
+                return false;
             }
 
             var storageError = StorageFactory.Test(log, typedOptions.To);

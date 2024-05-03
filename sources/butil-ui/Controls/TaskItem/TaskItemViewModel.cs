@@ -60,6 +60,8 @@ public class TaskItemViewModel : ObservableObject
 
         if (task.Model is IncrementalBackupModelOptionsV2)
             WindowManager.SwitchView(new EditIncrementalBackupTaskViewModel(task.Name, false));
+        else if (task.Model is SynchronizationTaskModelOptionsV2)
+            WindowManager.SwitchView(new EditSynchronizationTaskViewModel(task.Name, false));
         else if (task.Model is ImportMediaTaskModelOptionsV2)
             WindowManager.SwitchView(new EditMediaTaskViewModel(task.Name, false));
     }

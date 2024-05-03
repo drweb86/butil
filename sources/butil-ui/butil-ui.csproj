@@ -55,6 +55,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Controls\EditSynchronizationTask\EditSynchronizationTaskViewView.axaml.cs">
+      <DependentUpon>EditSynchronizationTaskViewView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\FolderSection\FolderSectionView.axaml.cs">
+      <DependentUpon>FolderSectionView.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Controls\TaskExecuter\TaskExecuterView.axaml.cs">
       <DependentUpon>TaskExecuterView.axaml</DependentUpon>
     </Compile>

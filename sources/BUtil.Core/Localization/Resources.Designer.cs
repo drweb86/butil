@@ -1346,6 +1346,24 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Synchronization.
+        /// </summary>
+        public static string SynchronizationTask_Create {
+            get {
+                return ResourceManager.GetString("SynchronizationTask_Create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Two-way synchronization of files between devices using centralized storage..
+        /// </summary>
+        public static string SynchronizationTask_Help {
+            get {
+                return ResourceManager.GetString("SynchronizationTask_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to New.
         /// </summary>
         public static string Task_Create {
