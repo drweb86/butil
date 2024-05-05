@@ -671,4 +671,10 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Non è stato specificato l'utente.</value>
   </data>
+  <data name="SynchronizationTask_Create" xml:space="preserve">
+    <value>Sincronizzazione</value>
+  </data>
+  <data name="SynchronizationTask_Help" xml:space="preserve">
+    <value>Sincronizzazione bidirezionale file tra dispositivi mediante archiviazione centralizzata.</value>
+  </data>
 </root>
