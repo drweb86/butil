@@ -19,15 +19,17 @@ internal class SynchronizationHelper
     {
         _remoteStorage = remoteStorage;
         _localStateService = new SynchronizationLocalStateService(hashService, taskName, syncFolder);
-        _actualFilesService = new SynchronizationActualFilesService(hashService);
+        _actualFilesService = new SynchronizationActualFilesService(hashService, syncFolder);
         _remoteStateService = new SynchronizationRemoteStateService(_remoteStorage);
     }
 
     public void Sync(string taskName, string hiveFolder, string syncFolder)
     {
+        // boom
         var localState = _localStateService.Load();
-        var actualFiles = _actualFilesService.Calculate(syncFolder);
+        var actualFiles = _actualFilesService.Calculate();
         var remoteState = _remoteStateService.Load();
+        // done!
 
         if (remoteState == null)
         {
@@ -39,7 +41,7 @@ internal class SynchronizationHelper
         {
             DownloadFirstVersion(syncFolder, remoteState);
             localState = _localStateService.Load()!;
-            actualFiles = _actualFilesService.Calculate(syncFolder);
+            actualFiles = _actualFilesService.Calculate();
         }
 
         var syncService = new SynchronizationDecisionService();
@@ -50,7 +52,7 @@ internal class SynchronizationHelper
         if (syncItems.Any(x => x.RemoteAction != SynchronizationDecision.DoNothing) ||
             syncItems.Any(x => x.ActualFileAction != SynchronizationDecision.DoNothing))
         {
-            var state = _actualFilesService.Calculate(syncFolder);
+            var state = _actualFilesService.Calculate();
             _localStateService.Save(state);
             _remoteStateService.Save(state);
         }
