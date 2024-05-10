@@ -26,4 +26,9 @@ class SynchronizationStateFile
             (excludeModifiedAtUtc || (!excludeModifiedAtUtc && other.ModifiedAtUtc.Equals(ModifiedAtUtc))) &&
             other.Sha512.Equals(Sha512);
     }
+
+    internal SynchronizationStateFile Clone()
+    {
+        return new SynchronizationStateFile(RelativeFileName, ModifiedAtUtc, Sha512, Size);
+    }
 }
