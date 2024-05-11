@@ -1,8 +1,11 @@
-# 2024.05.03
+# 2024.05.11
 (unreleased)
 
 ## New Features
 - Synchronization of files between devices.
+
+## Bug Fixes
+- Errors for FTPS were not logged.
 
 # 2024.04.14.1
 

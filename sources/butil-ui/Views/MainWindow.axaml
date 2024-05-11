@@ -40,7 +40,7 @@
 				<MenuItem FontWeight="Bold" Header="{Binding Task_Create}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}">
 					<MenuItem FontWeight="Normal" Header="{Binding IncrementalBackupTask_Create}" Command="{Binding IncrementalBackupTaskCreateCommand}"/>
 					<MenuItem FontWeight="Normal" Header="{Binding ImportMediaTask_Create}" Command="{Binding ImportMediaTaskCreateCommand}"/>
-					<MenuItem FontWeight="Normal" Header="{Binding SynchronizationTask_Create}" Command="{Binding SynchronizationTaskCreateCommand}"/>
+					<MenuItem FontWeight="Normal" Header="{Binding SynchronizationTask_Create}" Command="{Binding SynchronizationTaskCreateCommand}" IsEnabled="False" />
 				</MenuItem>
 				<MenuItem Header="{Binding Theme_Title}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}">
 					<MenuItem Header="{Binding Theme_Value_Dark}" Command="{Binding GoDarkSide}" />
