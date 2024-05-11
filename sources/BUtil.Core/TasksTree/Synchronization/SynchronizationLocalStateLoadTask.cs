@@ -4,7 +4,7 @@ using BUtil.Core.TasksTree.Core;
 using System;
 
 namespace BUtil.Core.TasksTree.Synchronization;
-internal class SynchronizationLocalStateLoadTask: BuTask
+internal class SynchronizationLocalStateLoadTask: BuTaskV2
 {
     private readonly SynchronizationServices _synchronizationServices;
 
@@ -16,20 +16,8 @@ internal class SynchronizationLocalStateLoadTask: BuTask
         _synchronizationServices = synchronizationServices;
     }
 
-    public override void Execute()
+    protected override void ExecuteInternal()
     {
-        this.UpdateStatus(ProcessingStatus.InProgress);
-        try
-        {
-            SynchronizationState = _synchronizationServices.LocalStateService.Load();
-            IsSuccess = true;
-            this.UpdateStatus(ProcessingStatus.FinishedSuccesfully);
-        }
-        catch (Exception ex)
-        {
-            this.LogError(ex.ToString());
-            IsSuccess = false;
-            this.UpdateStatus(ProcessingStatus.FinishedWithErrors);
-        }
+        SynchronizationState = _synchronizationServices.LocalStateService.Load();
     }
 }

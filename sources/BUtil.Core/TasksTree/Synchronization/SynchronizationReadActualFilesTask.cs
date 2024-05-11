@@ -9,15 +9,15 @@ namespace BUtil.Core.TasksTree.Synchronization;
 internal class SynchronizationReadActualFilesTask: SequentialBuTask
 {
     private readonly SynchronizationServices _synchronizationServices;
-    private readonly string _syncFolder;
+    private readonly string _localFolder;
 
     public SynchronizationState? SynchronizationState { get; private set; }
 
-    public SynchronizationReadActualFilesTask(SynchronizationServices synchronizationServices, TaskEvents events, string syncFolder)
+    public SynchronizationReadActualFilesTask(SynchronizationServices synchronizationServices, TaskEvents events, string localFolder)
         : base(synchronizationServices.Log, events, "Read files state")
     {
         _synchronizationServices = synchronizationServices;
-        _syncFolder = syncFolder;
+        _localFolder = localFolder;
     }
 
     public override void Execute()
@@ -26,8 +26,8 @@ internal class SynchronizationReadActualFilesTask: SequentialBuTask
         try
         {
             var childTasks = Directory
-                .GetFiles(_syncFolder, "*.*", SearchOption.AllDirectories)
-                .Select(x => new SynchronizationReadActualFileTask(_synchronizationServices, Events, _syncFolder, x))
+                .GetFiles(_localFolder, "*.*", SearchOption.AllDirectories)
+                .Select(x => new SynchronizationReadActualFileTask(_synchronizationServices, Events, _localFolder, x))
                 .ToList();
             Children = childTasks;
             Events.DuringExecutionTasksAdded(this.Id, childTasks);
@@ -41,7 +41,6 @@ internal class SynchronizationReadActualFilesTask: SequentialBuTask
                 .ToList()
                 .ForEach(SynchronizationState.FileSystemEntries.Add);
 
-            IsSuccess = childTasks.All(x => x.IsSuccess);
             this.UpdateStatus(ProcessingStatus.FinishedSuccesfully);
         }
         catch (Exception ex)

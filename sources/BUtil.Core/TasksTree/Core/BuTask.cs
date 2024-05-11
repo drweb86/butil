@@ -1,5 +1,6 @@
 ﻿using BUtil.Core.Events;
 using BUtil.Core.Logs;
+using BUtil.Core.Synchronization;
 using System;
 using System.Collections.Generic;
 
@@ -52,4 +53,30 @@ public abstract class BuTask
     }
 
     public bool IsSuccess { get; protected set; }
+}
+
+public abstract class BuTaskV2 : BuTask
+{
+    protected BuTaskV2(ILog log, TaskEvents events, string title) : base(log, events, title)
+    {
+    }
+
+    protected abstract void ExecuteInternal();
+
+    public override void Execute()
+    {
+        this.UpdateStatus(ProcessingStatus.InProgress);
+
+        try
+        {
+            ExecuteInternal();
+            IsSuccess = true;
+            this.UpdateStatus(ProcessingStatus.FinishedSuccesfully);
+        }
+        catch (Exception ex)
+        {
+            this.LogError(ex.ToString());
+            this.UpdateStatus(ProcessingStatus.FinishedWithErrors);
+        }
+    }
 }
