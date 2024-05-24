@@ -74,10 +74,15 @@ class Controller
         try
         {
             var backupTaskStoreService = new TaskV2StoreService();
-            var task = backupTaskStoreService.Load(_taskName);
-            if (task == null)
+            var task = backupTaskStoreService.Load(_taskName, out var isNotFound, out var isNotSupported)!;
+            if (isNotFound)
             {
                 log.WriteLine(LoggingEvent.Error, string.Format(Resources.Task_Validation_NotFound, _taskName));
+                Environment.Exit(-1);
+            }
+            if (isNotSupported)
+            {
+                log.WriteLine(LoggingEvent.Error, Resources.Task_Validation_NotSupported);
                 Environment.Exit(-1);
             }
 

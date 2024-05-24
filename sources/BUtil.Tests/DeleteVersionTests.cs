@@ -18,7 +18,7 @@ public class DeleteVersionTests
     public void Delete2Version()
     {
         // set
-        var s1 = new Core.ConfigurationFileModels.V2.SourceItemV2(@"x:\test", true);
+        var s1 = new SourceItemV2(@"x:\test", true);
 
         var version1initial = new VersionState(new DateTime(2000, 1, 1), [
             new SourceItemChanges(
@@ -76,7 +76,7 @@ public class DeleteVersionTests
     public void CheckIndexing()
     {
         // set
-        var s1 = new Core.ConfigurationFileModels.V2.SourceItemV2(@"x:\test", true);
+        var s1 = new SourceItemV2(@"x:\test", true);
 
         var version1initial = new VersionState(new DateTime(2000, 1, 1), [
             new SourceItemChanges(

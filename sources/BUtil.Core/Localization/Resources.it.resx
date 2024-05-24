@@ -542,9 +542,6 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
   <data name="State_LoadFromEverywhere" xml:space="preserve">
     <value>Richiedi stato elementi sorgenti e archivi</value>
   </data>
-  <data name="State_Saving" xml:space="preserve">
-    <value>Salvataggio stato</value>
-  </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
     <value>Aggiungi maschera esclusione file</value>
   </data>

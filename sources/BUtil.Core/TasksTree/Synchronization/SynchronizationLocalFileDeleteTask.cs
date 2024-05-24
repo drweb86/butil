@@ -1,4 +1,5 @@
 ﻿using BUtil.Core.Events;
+using BUtil.Core.Localization;
 using BUtil.Core.Synchronization;
 using BUtil.Core.TasksTree.Core;
 using System;
@@ -12,7 +13,7 @@ internal class SynchronizationLocalFileDeleteTask : BuTaskV2
 
     public SynchronizationLocalFileDeleteTask(SynchronizationServices synchronizationServices, TaskEvents events,
         string localFolder, string relativeFileName)
-        : base(synchronizationServices.Log, events, $"Delete local file {relativeFileName}")
+        : base(synchronizationServices.Log, events, string.Format(Resources.File_Deleting, relativeFileName))
     {
         _localFolder = localFolder;
         _relativeFileName = relativeFileName;

@@ -30,10 +30,22 @@ public class TaskV2StoreService
 
     public TaskV2? Load(string name)
     {
+        return Load(name, out var isNotFound, out var isNotSupported);
+    }
+
+    public TaskV2? Load(string name, out bool isNotFound, out bool isNotSupported)
+    {
+        isNotFound = true;
+        isNotSupported = false;
+
         foreach (var pair in GetFileNames(name))
         {
             if (!File.Exists(pair.Value))
                 continue;
+
+            isNotFound = false;
+            isNotSupported = true;
+
             var json = File.ReadAllText(pair.Value);
 
             if (pair.Key == 1)
@@ -43,7 +55,10 @@ public class TaskV2StoreService
                     var task = JsonSerializer.Deserialize<BackupTaskV1>(json);
                     if (task == null)
                         continue;
-                    return UpgradeV1ToLatest(task);
+
+                    var result = UpgradeV1ToLatest(task);
+                    isNotSupported = result == null;
+                    return result;
                 }
                 catch (System.Text.Json.JsonException)
                 {
@@ -52,7 +67,9 @@ public class TaskV2StoreService
             }
             else if (pair.Key == 2)
             {
-                return JsonSerializer.Deserialize<TaskV2>(json);
+                var result = JsonSerializer.Deserialize<TaskV2>(json);
+                isNotSupported = result == null;
+                return result;
             }
             else
             {

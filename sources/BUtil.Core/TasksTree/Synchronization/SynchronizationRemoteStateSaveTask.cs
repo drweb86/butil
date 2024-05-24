@@ -17,7 +17,7 @@ internal class SynchronizationRemoteStateSaveTask: BuTaskV2
         SynchronizationServices synchronizationServices,
         TaskEvents events,
         Func<SynchronizationState> getSynchronizationState)
-        : base(synchronizationServices.Log, events, "Save remote state")
+        : base(synchronizationServices.Log, events, Localization.Resources.DataStorage_State_Saving)
     {
         _dependantTasks = dependantTasks;
         _synchronizationServices = synchronizationServices;

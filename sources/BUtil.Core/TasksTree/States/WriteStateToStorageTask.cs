@@ -23,7 +23,7 @@ internal class WriteStateToStorageTask : BuTask
         CalculateIncrementedVersionForStorageTask getIncrementedVersionTask,
         WriteSourceFilesToStorageTask writeSourceFilesToStorageTask,
         IncrementalBackupModelOptionsV2 incrementalBackupModelOptions)
-        : base(services.Log, events, Localization.Resources.State_Saving)
+        : base(services.Log, events, Localization.Resources.DataStorage_State_Saving)
     {
         _incrementalBackupModelOptions = incrementalBackupModelOptions;
         _services = services;

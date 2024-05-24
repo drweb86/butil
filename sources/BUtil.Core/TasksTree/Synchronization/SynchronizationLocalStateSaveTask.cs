@@ -1,4 +1,5 @@
 ﻿using BUtil.Core.Events;
+using BUtil.Core.Localization;
 using BUtil.Core.Synchronization;
 using BUtil.Core.TasksTree.Core;
 using System;
@@ -17,7 +18,7 @@ internal class SynchronizationLocalStateSaveTask : BuTaskV2
         SynchronizationServices synchronizationServices,
         TaskEvents events,
         Func<SynchronizationState> getSynchronizationState)
-        : base(synchronizationServices.Log, events, "Save local state")
+        : base(synchronizationServices.Log, events, Resources.Local_State_Saving)
     {
         _dependantTasks = dependantTasks;
         _synchronizationServices = synchronizationServices;

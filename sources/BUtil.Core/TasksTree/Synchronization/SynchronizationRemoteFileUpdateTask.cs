@@ -1,4 +1,5 @@
 ﻿using BUtil.Core.Events;
+using BUtil.Core.Localization;
 using BUtil.Core.Synchronization;
 using BUtil.Core.TasksTree.Core;
 using System;
@@ -11,10 +12,10 @@ internal class SynchronizationRemoteFileUpdateTask : BuTaskV2
     private readonly string _localFolder;
     private readonly string _relativeFileName;
 
-    public SynchronizationRemoteFileUpdateTask(SynchronizationServices synchronizationServices, TaskEvents events, 
+    public SynchronizationRemoteFileUpdateTask(SynchronizationServices synchronizationServices, TaskEvents events,
         string localFolder,
         string relativeFileName)
-        : base(synchronizationServices.Log, events, $"Upload {relativeFileName}")
+        : base(synchronizationServices.Log, events, $"[{Resources.DataStorage_Title}] {string.Format(Resources.File_Saving, relativeFileName)}")
     {
         _synchronizationServices = synchronizationServices;
         _localFolder = localFolder;

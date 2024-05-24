@@ -20,7 +20,7 @@ internal class SaveStateToStorageTask : BuTask
         TaskEvents events,
         IncrementalBackupState state,
         IncrementalBackupModelOptionsV2 options)
-        : base(services.Log, events, Localization.Resources.State_Saving)
+        : base(services.Log, events, Localization.Resources.DataStorage_State_Saving)
     {
         _services = services;
         _state = state;

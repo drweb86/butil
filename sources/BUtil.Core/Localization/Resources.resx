@@ -537,8 +537,8 @@ Point to a directory containing this file.</value>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
     <value>Get state of source items and storages</value>
   </data>
-  <data name="State_Saving" xml:space="preserve">
-    <value>Writing state</value>
+  <data name="DataStorage_State_Saving" xml:space="preserve">
+    <value>Writing storage state</value>
   </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
     <value>Add file exclude pattern</value>
@@ -669,5 +669,17 @@ See detailed description in the following link.</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Two-way synchronization of files between devices using centralized storage.</value>
+  </data>
+  <data name="Local_State_Get" xml:space="preserve">
+    <value>Get local state</value>
+  </data>
+  <data name="Local_State_Saving" xml:space="preserve">
+    <value>Writing local state</value>
+  </data>
+  <data name="StorageItem_Remote_Marker" xml:space="preserve">
+    <value>Remote</value>
+  </data>
+  <data name="DataStorage_Title" xml:space="preserve">
+    <value>Storage</value>
   </data>
 </root>

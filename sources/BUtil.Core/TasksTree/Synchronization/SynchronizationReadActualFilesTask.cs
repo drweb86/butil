@@ -14,7 +14,7 @@ internal class SynchronizationReadActualFilesTask: SequentialBuTask
     public SynchronizationState? SynchronizationState { get; private set; }
 
     public SynchronizationReadActualFilesTask(SynchronizationServices synchronizationServices, TaskEvents events, string localFolder)
-        : base(synchronizationServices.Log, events, "Read files state")
+        : base(synchronizationServices.Log, events, string.Format(BUtil.Core.Localization.Resources.SourceItem_State_Get, localFolder))
     {
         _synchronizationServices = synchronizationServices;
         _localFolder = localFolder;

@@ -1,4 +1,4 @@
-# 2024.05.11
+# 2024.05.24
 (unreleased)
 
 ## New Features
@@ -6,6 +6,8 @@
 
 ## Bug Fixes
 - Errors for FTPS were not logged.
+- Wrong task name fix.
+- FTPS backup with mass amount of files was failing.
 
 # 2024.04.14.1
 

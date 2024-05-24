@@ -1,4 +1,5 @@
 ﻿using BUtil.Core.Events;
+using BUtil.Core.Misc;
 using BUtil.Core.Synchronization;
 using BUtil.Core.TasksTree.Core;
 using System;
@@ -12,7 +13,7 @@ internal class SynchronizationReadActualFileTask : BuTaskV2
     public SynchronizationStateFile? StateFile { get; private set; }
 
     public SynchronizationReadActualFileTask(SynchronizationServices synchronizationServices, TaskEvents events, string localFolder, string fullPath)
-        : base(synchronizationServices.Log, events, $"Get state of {fullPath.Substring(localFolder.Length + 1)}")
+        : base(synchronizationServices.Log, events, string.Format(Localization.Resources.State_File_Get, SourceItemHelper.GetFriendlyFileName(new ConfigurationFileModels.V2.SourceItemV2(localFolder, true), fullPath)))
     {
         _synchronizationServices = synchronizationServices;
         _file = fullPath;

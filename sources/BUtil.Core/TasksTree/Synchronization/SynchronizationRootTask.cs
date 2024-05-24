@@ -73,6 +73,7 @@ class SynchronizationRootTask : SequentialBuTask
 
     private void NormalUpdate()
     {
+        LogDebug("Normal update.");
         var syncService = new SynchronizationDecisionService();
         var syncItems = syncService.Decide(_localState!, _actualFiles, _remoteState!);
         
@@ -136,6 +137,7 @@ class SynchronizationRootTask : SequentialBuTask
 
     private void DownloadFirstVesion()
     {
+        LogDebug("Download first version");
         var synchronizationFileDownloadTasks = new List<SynchronizationRemoteFileDownloadTask>();
 
         foreach (var item in _remoteState!.FileSystemEntries)
@@ -162,6 +164,7 @@ class SynchronizationRootTask : SequentialBuTask
     // TODO: think of partial upload.
     private void UploadFirstRemoteVersion()
     {
+        LogDebug("Upload first remote version");
         var synchronizationFileUploadTasks = new List<SynchronizationRemoteFileUpdateTask>();
         
         foreach (var item in _actualFiles.FileSystemEntries)

@@ -1,4 +1,5 @@
 ﻿using BUtil.Core.Events;
+using BUtil.Core.Localization;
 using BUtil.Core.Synchronization;
 using BUtil.Core.TasksTree.Core;
 using System;
@@ -13,7 +14,7 @@ internal class SynchronizationRemoteFileDownloadTask : BuTaskV2
 
     public SynchronizationRemoteFileDownloadTask(SynchronizationServices synchronizationServices, TaskEvents events,
         string localFolder, string relativeFileName)
-        : base(synchronizationServices.Log, events, $"Download {relativeFileName}")
+        : base(synchronizationServices.Log, events, string.Format(Resources.File_Saving, relativeFileName))
     {
         _synchronizationServices = synchronizationServices;
         _localFolder = localFolder;

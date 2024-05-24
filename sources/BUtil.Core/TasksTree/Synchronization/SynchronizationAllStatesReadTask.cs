@@ -1,4 +1,5 @@
 ﻿using BUtil.Core.Events;
+using BUtil.Core.Localization;
 using BUtil.Core.Synchronization;
 using BUtil.Core.TasksTree.Core;
 using System;
@@ -22,7 +23,7 @@ internal class SynchronizationAllStatesReadTask : ParallelBuTask
     public SynchronizationAllStatesReadTask(
         SynchronizationServices synchronizationServices, 
         TaskEvents events, string localFolder) : 
-        base(synchronizationServices.Log, events, "Read all states")
+        base(synchronizationServices.Log, events, Resources.State_LoadFromEverywhere)
     {
         _synchronizationServices = synchronizationServices;
         _synchronizationLocalStateLoadTask = new SynchronizationLocalStateLoadTask(_synchronizationServices, Events);

@@ -1,7 +1,7 @@
 ﻿using BUtil.Core.Events;
+using BUtil.Core.Localization;
 using BUtil.Core.Synchronization;
 using BUtil.Core.TasksTree.Core;
-using System;
 
 namespace BUtil.Core.TasksTree.Synchronization;
 internal class SynchronizationLocalStateLoadTask: BuTaskV2
@@ -11,7 +11,7 @@ internal class SynchronizationLocalStateLoadTask: BuTaskV2
     public SynchronizationState? SynchronizationState { get; private set; }
 
     public SynchronizationLocalStateLoadTask(SynchronizationServices synchronizationServices, TaskEvents events) 
-        : base(synchronizationServices.Log, events, "Load local state")
+        : base(synchronizationServices.Log, events, Resources.Local_State_Get)
     {
         _synchronizationServices = synchronizationServices;
     }

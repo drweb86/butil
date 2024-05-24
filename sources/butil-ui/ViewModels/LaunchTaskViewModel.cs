@@ -118,8 +118,13 @@ public class LaunchTaskViewModel : ViewModelBase
 
     public void Initialize()
     {
-        _task = new TaskV2StoreService().Load(_taskName);
-        if (_task == null)
+        _task = new TaskV2StoreService().Load(_taskName, out var isNotFound, out var isNotSupported);
+        if (isNotFound)
+        {
+            TaskExecuterViewModel = new TaskExecuterViewModel(string.Format(Resources.Task_Validation_NotFound, _taskName));
+            return;
+        }
+        if (isNotSupported)
         {
             TaskExecuterViewModel = new TaskExecuterViewModel(Resources.Task_Validation_NotSupported);
             return;

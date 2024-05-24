@@ -410,6 +410,24 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Writing storage state.
+        /// </summary>
+        public static string DataStorage_State_Saving {
+            get {
+                return ResourceManager.GetString("DataStorage_State_Saving", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Storage.
+        /// </summary>
+        public static string DataStorage_Title {
+            get {
+                return ResourceManager.GetString("DataStorage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Storage is not specified..
         /// </summary>
         public static string DataStorage_Validation_NotSpecified {
@@ -968,6 +986,24 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Get local state.
+        /// </summary>
+        public static string Local_State_Get {
+            get {
+                return ResourceManager.GetString("Local_State_Get", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Writing local state.
+        /// </summary>
+        public static string Local_State_Saving {
+            get {
+                return ResourceManager.GetString("Local_State_Saving", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Errors.
         /// </summary>
         public static string LogFile_Marker_Errors {
@@ -1267,15 +1303,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Writing state.
-        /// </summary>
-        public static string State_Saving {
-            get {
-                return ResourceManager.GetString("State_Saving", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Add file exclude pattern.
         /// </summary>
         public static string StorageItem_ExcludePattern_Add {
@@ -1342,6 +1369,15 @@ namespace BUtil.Core.Localization {
         public static string StorageItem_Field_ExcludePattern_Validation {
             get {
                 return ResourceManager.GetString("StorageItem_Field_ExcludePattern_Validation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remote.
+        /// </summary>
+        public static string StorageItem_Remote_Marker {
+            get {
+                return ResourceManager.GetString("StorageItem_Remote_Marker", resourceCulture);
             }
         }
         

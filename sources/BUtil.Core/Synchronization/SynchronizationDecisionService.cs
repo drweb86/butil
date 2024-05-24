@@ -34,6 +34,30 @@ class SynchronizationDecisionService
         item.ActualFileAction = SynchronizationDecision.DoNothing;
         item.RemoteAction = SynchronizationDecision.DoNothing;
 
+        // test case #001
+        if (item.ExistsLocally &&
+            item.RemoteState == null &&
+            item.LocalState == null &&
+            item.ActualFileToLocalStateRelation == SynchronizationRelation.Created &&
+            item.RemoteStateToLocalStateRelation == SynchronizationRelation.NotChanged)
+        {
+            item.ActualFileAction = SynchronizationDecision.DoNothing;
+            item.RemoteAction = SynchronizationDecision.Create;
+            return;
+        }
+
+        // test case #002
+        if (item.ExistsLocally &&
+            item.RemoteState != null &&
+            item.LocalState != null &&
+            item.ActualFileToLocalStateRelation == SynchronizationRelation.NotChanged &&
+            item.RemoteStateToLocalStateRelation == SynchronizationRelation.NotChanged)
+        {
+            item.ActualFileAction = SynchronizationDecision.DoNothing;
+            item.RemoteAction = SynchronizationDecision.DoNothing;
+            return;
+        }
+
         if (item.ExistsLocally &&
             item.ActualFileToLocalStateRelation == SynchronizationRelation.NotChanged &&
             item.RemoteStateToLocalStateRelation == SynchronizationRelation.Created)
