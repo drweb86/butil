@@ -7,6 +7,8 @@ using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.Synchronization;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
+using System.Text.Json.Nodes;
 
 namespace BUtil.Core.TasksTree.IncrementalModel;
 
@@ -76,7 +78,14 @@ class SynchronizationRootTask : SequentialBuTask
         LogDebug("Normal update.");
         var syncService = new SynchronizationDecisionService();
         var syncItems = syncService.Decide(_localState!, _actualFiles, _remoteState!);
-        
+        LogDebug("Local state");
+        LogDebug(JsonSerializer.Serialize(_localState));
+        LogDebug("Actual files");
+        LogDebug(JsonSerializer.Serialize(_actualFiles));
+        LogDebug("Remote state");
+        LogDebug(JsonSerializer.Serialize(_remoteState));
+        LogDebug("Decisions");
+        LogDebug(JsonSerializer.Serialize(syncItems));
         var tasks = new List<BuTask>();
         ExecuteActionsLocally(tasks, syncItems);
         ExecuteActionsRemotely(tasks, syncItems);

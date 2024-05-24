@@ -58,6 +58,18 @@ class SynchronizationDecisionService
             return;
         }
 
+        // test case #003
+        if (item.ExistsLocally &&
+            item.RemoteState != null &&
+            item.LocalState != null &&
+            item.ActualFileToLocalStateRelation == SynchronizationRelation.NotChanged &&
+            item.RemoteStateToLocalStateRelation == SynchronizationRelation.Changed)
+        {
+            item.ActualFileAction = SynchronizationDecision.Update;
+            item.RemoteAction = SynchronizationDecision.DoNothing;
+            return;
+        }
+
         if (item.ExistsLocally &&
             item.ActualFileToLocalStateRelation == SynchronizationRelation.NotChanged &&
             item.RemoteStateToLocalStateRelation == SynchronizationRelation.Created)
@@ -74,13 +86,16 @@ class SynchronizationDecisionService
             item.RemoteAction = SynchronizationDecision.Update;
         }
 
+        // test case #004
         if (item.ExistsLocally &&
             item.ActualFileToLocalStateRelation == SynchronizationRelation.NotChanged &&
             item.RemoteStateToLocalStateRelation == SynchronizationRelation.Deleted)
         {
             item.ActualFileAction = SynchronizationDecision.Delete;
+            return;
         }
 
+        // test case #005
         if (item.RemoteState != null &&
             item.ActualFile != null &&
 
@@ -97,6 +112,7 @@ class SynchronizationDecisionService
             {
                 item.RemoteAction = SynchronizationDecision.Update;
             }
+            return;
         }
 
         if (item.ExistsLocally &&
@@ -106,20 +122,22 @@ class SynchronizationDecisionService
             item.RemoteAction = SynchronizationDecision.Create;
         }
 
+        // #006
         if (item.ExistsLocally &&
             item.ActualFileToLocalStateRelation == SynchronizationRelation.Changed &&
             item.RemoteStateToLocalStateRelation == SynchronizationRelation.NotChanged)
         {
             item.RemoteAction = SynchronizationDecision.Update;
+            return;
         }
 
+        // #007
         if (item.RemoteState != null &&
             item.ActualFile != null &&
 
             item.ExistsLocally &&
             item.ActualFileToLocalStateRelation == SynchronizationRelation.Changed &&
-            (item.RemoteStateToLocalStateRelation == SynchronizationRelation.Created ||
-            item.RemoteStateToLocalStateRelation == SynchronizationRelation.Changed))
+            item.RemoteStateToLocalStateRelation == SynchronizationRelation.Changed)
         {
             if (item.RemoteState.ModifiedAtUtc > item.ActualFile.ModifiedAtUtc)
             {
@@ -129,13 +147,16 @@ class SynchronizationDecisionService
             {
                 item.RemoteAction = SynchronizationDecision.Update;
             }
+            return;
         }
 
+        // #008
         if (item.ExistsLocally &&
             item.ActualFileToLocalStateRelation == SynchronizationRelation.Changed &&
             item.RemoteStateToLocalStateRelation == SynchronizationRelation.Deleted)
         {
             item.RemoteAction = SynchronizationDecision.Create;
+            return;
         }
 
         if (!item.ExistsLocally &&
