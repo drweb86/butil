@@ -2,7 +2,7 @@
 
 using System.Diagnostics;
 
-[DebuggerDisplay("{RelativeFileName}: ActualFileAction = {ActualFileAction}, ActualFileAction={ActualFileAction}")]
+[DebuggerDisplay("{RelativeFileName}: ActualFileAction = {ActualFileAction}, ActualFileAction={ActualFileAction}, ForceUpdateState={ForceUpdateState}")]
 class SynchronizationConsolidatedFileInfo
 {
     public SynchronizationConsolidatedFileInfo() { } // deserialization
@@ -27,4 +27,7 @@ class SynchronizationConsolidatedFileInfo
     public bool ExistsLocally => ActualFile != null;
     public SynchronizationDecision ActualFileAction { get; set; }
     public SynchronizationDecision RemoteAction { get; set; }
+
+    // special cases
+    public bool ForceUpdateState { get; set; }
 }

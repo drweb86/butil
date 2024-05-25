@@ -49,8 +49,9 @@ internal class SynchronizationHelper
         ExecuteActionsLocally(syncFolder, syncItems);
         ExecuteActionsRemotely(syncFolder, syncItems);
 
-        if (syncItems.Any(x => x.RemoteAction != SynchronizationDecision.DoNothing) ||
-            syncItems.Any(x => x.ActualFileAction != SynchronizationDecision.DoNothing))
+        if (syncItems.Any(x => x.RemoteAction != SynchronizationDecision.DoNothing ||
+                    x.ActualFileAction != SynchronizationDecision.DoNothing ||
+                    x.ForceUpdateState))
         {
             var state = _actualFilesService.Calculate();
             _localStateService.Save(state);
@@ -69,7 +70,6 @@ internal class SynchronizationHelper
                 case SynchronizationDecision.Delete:
                     _remoteStorage.Delete(item.RelativeFileName);
                     break;
-                case SynchronizationDecision.Create:
                 case SynchronizationDecision.Update:
                     _remoteStorage.Upload(Path.Combine(syncFolder, item.RelativeFileName), item.RelativeFileName);
                     break;
@@ -89,7 +89,6 @@ internal class SynchronizationHelper
                 case SynchronizationDecision.Delete:
                     File.Delete(Path.Combine(syncFolder, item.RelativeFileName));
                     break;
-                case SynchronizationDecision.Create:
                 case SynchronizationDecision.Update:
                     _remoteStorage.Download(item.RelativeFileName, Path.Combine(syncFolder, item.RelativeFileName));
                     break;

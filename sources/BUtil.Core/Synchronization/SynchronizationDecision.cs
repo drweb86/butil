@@ -4,6 +4,5 @@ enum SynchronizationDecision
 {
     DoNothing,
     Delete,
-    Update,
-    Create
+    Update
 }

@@ -25,7 +25,7 @@ public class SynchronizationDecisionServiceTests
         Assert.IsTrue(item.ActualFileToLocalStateRelation == SynchronizationRelation.Created);
         Assert.IsTrue(item.RemoteStateToLocalStateRelation == SynchronizationRelation.NotChanged);
         Assert.IsTrue(item.ActualFileAction == SynchronizationDecision.DoNothing);
-        Assert.IsTrue(item.RemoteAction == SynchronizationDecision.Create);
+        Assert.IsTrue(item.RemoteAction == SynchronizationDecision.Update);
     }
 
     [TestMethod("Normal update: No changes (#002)")]
@@ -246,6 +246,78 @@ public class SynchronizationDecisionServiceTests
         Assert.IsTrue(item.ActualFileToLocalStateRelation == SynchronizationRelation.Changed);
         Assert.IsTrue(item.RemoteStateToLocalStateRelation == SynchronizationRelation.Deleted);
         Assert.IsTrue(item.ActualFileAction == SynchronizationDecision.DoNothing);
-        Assert.IsTrue(item.RemoteAction == SynchronizationDecision.Create);
+        Assert.IsTrue(item.RemoteAction == SynchronizationDecision.Update);
+    }
+
+    [TestMethod("Normal update: Actual file: Deleted (comparing to state), Remote in Local: Unchanged (#009)")]
+    public void NormalUpdate_AF_Deleted_Remote_Unchanged()
+    {
+        // Arrange
+        var service = new SynchronizationDecisionService();
+        var timeStamp = DateTime.Now;
+        var localState = new SynchronizationState();
+        localState.FileSystemEntries.Add(new SynchronizationStateFile("a.txt", timeStamp, "sha512", 5));
+        var actualFiles = new SynchronizationState();
+        var remoteState = new SynchronizationState();
+        remoteState.FileSystemEntries.Add(new SynchronizationStateFile("a.txt", timeStamp, "sha512", 5));
+
+        // Act
+        var decisions = service.Decide(localState, actualFiles, remoteState);
+
+        // Assert
+        var item = decisions.Single();
+        Assert.IsTrue(item.ExistsLocally == false);
+        Assert.IsTrue(item.ActualFileToLocalStateRelation == SynchronizationRelation.Deleted);
+        Assert.IsTrue(item.RemoteStateToLocalStateRelation == SynchronizationRelation.NotChanged);
+        Assert.IsTrue(item.ActualFileAction == SynchronizationDecision.DoNothing);
+        Assert.IsTrue(item.RemoteAction == SynchronizationDecision.Delete);
+    }
+
+    [TestMethod("Normal update: Actual file: Deleted (comparing to state), Remote in Local: Deleted (#011)")]
+    public void NormalUpdate_AF_Deleted_Remote_Deleted()
+    {
+        // Arrange
+        var service = new SynchronizationDecisionService();
+        var timeStamp = DateTime.Now;
+        var localState = new SynchronizationState();
+        localState.FileSystemEntries.Add(new SynchronizationStateFile("a.txt", timeStamp, "sha512", 5));
+        var actualFiles = new SynchronizationState();
+        var remoteState = new SynchronizationState();
+
+        // Act
+        var decisions = service.Decide(localState, actualFiles, remoteState);
+
+        // Assert
+        var item = decisions.Single();
+        Assert.IsTrue(item.ExistsLocally == false);
+        Assert.IsTrue(item.ActualFileToLocalStateRelation == SynchronizationRelation.Deleted);
+        Assert.IsTrue(item.RemoteStateToLocalStateRelation == SynchronizationRelation.Deleted);
+        Assert.IsTrue(item.ActualFileAction == SynchronizationDecision.DoNothing);
+        Assert.IsTrue(item.RemoteAction == SynchronizationDecision.DoNothing);
+    }
+
+    [TestMethod("Normal update: Actual file: Deleted (comparing to state), Remote in Local: Changed (#010)")]
+    public void NormalUpdate_AF_Deleted_Remote_Changed()
+    {
+        // Arrange
+        var service = new SynchronizationDecisionService();
+        var timeStamp = DateTime.Now;
+        var localState = new SynchronizationState();
+        localState.FileSystemEntries.Add(new SynchronizationStateFile("a.txt", timeStamp, "sha512", 5));
+        var actualFiles = new SynchronizationState();
+        var remoteState = new SynchronizationState();
+        remoteState.FileSystemEntries.Add(new SynchronizationStateFile("a.txt", timeStamp.AddSeconds(1), "sha512-2", 5));
+
+
+        // Act
+        var decisions = service.Decide(localState, actualFiles, remoteState);
+
+        // Assert
+        var item = decisions.Single();
+        Assert.IsTrue(item.ExistsLocally == false);
+        Assert.IsTrue(item.ActualFileToLocalStateRelation == SynchronizationRelation.Deleted);
+        Assert.IsTrue(item.RemoteStateToLocalStateRelation == SynchronizationRelation.Changed);
+        Assert.IsTrue(item.ActualFileAction == SynchronizationDecision.Update);
+        Assert.IsTrue(item.RemoteAction == SynchronizationDecision.DoNothing);
     }
 }

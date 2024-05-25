@@ -116,7 +116,6 @@ class SynchronizationRootTask : SequentialBuTask
                 case SynchronizationDecision.Delete:
                     tasks.Add(new SynchronizationRemoteFileDeleteTask(_synchronizationServices, Events, item.RelativeFileName));
                     break;
-                case SynchronizationDecision.Create:
                 case SynchronizationDecision.Update:
                     tasks.Add(new SynchronizationRemoteFileUpdateTask(_synchronizationServices, Events, _localFolder, item.RelativeFileName));
                     break;
@@ -136,7 +135,6 @@ class SynchronizationRootTask : SequentialBuTask
                 case SynchronizationDecision.Delete:
                     tasks.Add(new SynchronizationLocalFileDeleteTask(_synchronizationServices, Events, _localFolder, item.RelativeFileName));
                     break;
-                case SynchronizationDecision.Create:
                 case SynchronizationDecision.Update:
                     tasks.Add(new SynchronizationRemoteFileDownloadTask(_synchronizationServices, Events, _localFolder, item.RelativeFileName));
                     break;
