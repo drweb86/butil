@@ -539,6 +539,9 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
   <data name="State_File_Get" xml:space="preserve">
     <value>Richiedi stato del file "{0}"</value>
   </data>
+  <data name="DataStorage_State_Saving" xml:space="preserve">
+    <value>Scrittura stato archiviazione</value>
+  </data>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
     <value>Richiedi stato elementi sorgenti e archivi</value>
   </data>
@@ -673,5 +676,17 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Sincronizzazione bidirezionale file tra dispositivi mediante archiviazione centralizzata.</value>
+  </data>
+  <data name="Local_State_Get" xml:space="preserve">
+    <value>Get local state</value>
+  </data>
+  <data name="Local_State_Saving" xml:space="preserve">
+    <value>Scrittura stato locale</value>
+  </data>
+  <data name="StorageItem_Remote_Marker" xml:space="preserve">
+    <value>Remoto</value>
+  </data>
+  <data name="DataStorage_Title" xml:space="preserve">
+    <value>Storage</value>
   </data>
 </root>
