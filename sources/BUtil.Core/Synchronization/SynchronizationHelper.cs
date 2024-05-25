@@ -15,11 +15,11 @@ internal class SynchronizationHelper
     private SynchronizationActualFilesService _actualFilesService;
     private SynchronizationRemoteStateService _remoteStateService;
 
-    public SynchronizationHelper(IHashService hashService, IStorage remoteStorage, string taskName, string syncFolder)
+    public SynchronizationHelper(IHashService hashService, IStorage remoteStorage, string taskName, string localFolder, string? subfolder)
     {
         _remoteStorage = remoteStorage;
-        _localStateService = new SynchronizationLocalStateService(hashService, taskName, syncFolder);
-        _actualFilesService = new SynchronizationActualFilesService(hashService, syncFolder);
+        _localStateService = new SynchronizationLocalStateService(taskName, localFolder, subfolder);
+        _actualFilesService = new SynchronizationActualFilesService(hashService, localFolder);
         _remoteStateService = new SynchronizationRemoteStateService(_remoteStorage);
     }
 

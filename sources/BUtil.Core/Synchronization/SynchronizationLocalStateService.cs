@@ -1,22 +1,27 @@
 ﻿namespace BUtil.Core.Synchronization;
 
+using BUtil.Core.FileSystem;
 using BUtil.Core.Hashing;
-using System;
+using BUtil.Core.TasksTree.Synchronization;
 using System.IO;
 using System.Text.Json;
 
 class SynchronizationLocalStateService
 {
-    private readonly string _taskId;
+    private readonly string _taskName;
+    private readonly string _localFolder;
+    private readonly string? _subfolder;
 
-    public SynchronizationLocalStateService(IHashService hashService, string taskName, string syncFolder)
+    public SynchronizationLocalStateService(string taskName, string localFolder, string? subfolder)
     {
-        _taskId = taskName + " " + hashService.GetSha512(syncFolder);
+        _taskName = taskName;
+        _localFolder = localFolder;
+        _subfolder = subfolder;
     }
 
     private string GetFileName()
     {
-        return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "BUtil", "POC", $"{_taskId} - local file state - V1.json");
+        return Path.Combine(Directories.StateFolder, $"{_taskName}-SynchronizationLocalState.v1.json");
     }
 
     public SynchronizationState? Load()
@@ -33,11 +38,20 @@ class SynchronizationLocalStateService
         if (!File.Exists(fileName))
             return null;
 
-        return JsonSerializer.Deserialize<SynchronizationState>(File.ReadAllText(fileName));
+        var state = JsonSerializer.Deserialize<SynchronizationLocalState>(File.ReadAllText(fileName));
+        if (state == null)
+            return null;
+
+        if (state.LocalFolder != _localFolder ||
+            state.Subfolder != _subfolder)
+            return null;
+
+        return state.SynchronizationState;
     }
 
     public void Save(SynchronizationState localFileState)
     {
+
         var fileName = GetFileName();
 
         var directory = Path.GetDirectoryName(fileName);
@@ -50,7 +64,15 @@ class SynchronizationLocalStateService
         if (File.Exists(fileName))
             File.Delete(fileName);
 
-        File.WriteAllText(fileName, JsonSerializer.Serialize(localFileState, new JsonSerializerOptions
+        var wrapper = new SynchronizationLocalState
+        {
+            Subfolder = _subfolder,
+            LocalFolder = _localFolder,
+            SynchronizationState = localFileState,
+        };
+
+
+        File.WriteAllText(fileName, JsonSerializer.Serialize(wrapper, new JsonSerializerOptions
         {
             WriteIndented = true,
         }));

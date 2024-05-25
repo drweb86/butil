@@ -27,7 +27,7 @@ class SynchronizationRootTask : SequentialBuTask
     {
         var options = (SynchronizationTaskModelOptionsV2)task.Model;
         _localFolder = options.LocalFolder;
-        _synchronizationServices = new SynchronizationServices(log, task.Name, _localFolder, options.To, false);
+        _synchronizationServices = new SynchronizationServices(log, task.Name, _localFolder, options.Subfolder, options.To, false);
 
         _synchronizationAllStatesReadTask = new SynchronizationAllStatesReadTask(_synchronizationServices, Events, _localFolder);
 

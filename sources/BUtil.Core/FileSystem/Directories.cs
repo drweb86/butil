@@ -21,6 +21,7 @@ public static class Directories
     public static readonly string TempFolder = System.IO.Path.GetTempPath();
 
     public static string UserDataFolder => _userDataFolder;
+    public static string StateFolder => Path.Combine(_userDataFolder, "States");
 
     public static string BinariesDir => _binariesDir;
 
@@ -40,5 +41,7 @@ public static class Directories
         LogsFolder = Path.Combine(Directories.UserDataFolder, "Logs", "v3");
         if (!Directory.Exists(LogsFolder))
             Directory.CreateDirectory(LogsFolder);
+        if (!Directory.Exists(StateFolder))
+            Directory.CreateDirectory(StateFolder);
     }
 }
