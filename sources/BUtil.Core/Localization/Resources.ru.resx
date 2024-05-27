@@ -683,4 +683,19 @@ bin.
   <data name="DataStorage_Title" xml:space="preserve">
     <value>Хранилище</value>
   </data>
+  <data name="RepositorySubfolder_Field" xml:space="preserve">
+    <value>Подкаталог репозитория (необязательно):</value>
+  </data>
+  <data name="RepositorySubfolder_Help" xml:space="preserve">
+    <value>Вы можете синхронизировать папку в подкаталог репозитория, если не хотите иметь все содержимое репозитория на устройстве.</value>
+  </data>
+  <data name="SynchronizationMode_Field" xml:space="preserve">
+    <value>Режим синхронизации:</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
+    <value>Двусторонняя</value>
+  </data>
+  <data name="SynchronizationMode_Field_Read" xml:space="preserve">
+    <value>Чтение</value>
+  </data>
 </root>

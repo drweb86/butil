@@ -29,7 +29,7 @@ public class EditSynchronizationTaskViewModel : ViewModelBase
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
         WhenTaskViewModel = new WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule?.GetSchedule(taskName) ?? new ScheduleInfo());
         WhereTaskViewModel = new WhereTaskViewModel(model.To, Resources.LeftMenu_Where, "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png");
-        What = new FolderSectionViewModel(model.LocalFolder);
+        What = new SynchronizationWhatViewModel(model.LocalFolder, model.Subfolder, model.SynchronizationMode);
     }
 
     public bool IsNew { get; set; }
@@ -37,7 +37,7 @@ public class EditSynchronizationTaskViewModel : ViewModelBase
     public EncryptionTaskViewModel EncryptionTaskViewModel { get; }
     public WhenTaskViewModel WhenTaskViewModel { get; }
     public WhereTaskViewModel WhereTaskViewModel { get; }
-    public FolderSectionViewModel What { get; }
+    public SynchronizationWhatViewModel What { get; }
 
     #region Commands
 
@@ -56,6 +56,8 @@ public class EditSynchronizationTaskViewModel : ViewModelBase
                 Password = EncryptionTaskViewModel.Password,
                 To = WhereTaskViewModel.GetStorageSettings(),
                 LocalFolder = What.Folder,
+                Subfolder = string.IsNullOrWhiteSpace(What.Subfolder) ? null : What.Subfolder,
+                SynchronizationMode = What.SynchronizationMode
             }
         };
 

@@ -28,7 +28,7 @@
 				ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 			<StackPanel>
 				<controls:NameTaskView Margin="24 24 24 8" DataContext="{Binding NameTaskViewModel}" />
-				<controls:FolderSectionView Margin="24 8 24 8" DataContext="{Binding What}" />
+				<controls:SynchronizationWhatView Margin="24 8 24 8" DataContext="{Binding What}" />
 				<controls:WhenTaskView Margin="24 8 24 8" DataContext="{Binding WhenTaskViewModel}" IsVisible="{Binding IsWhenAvailable}" />
 				<controls:WhereTaskView Margin="24 8 24 8" DataContext="{Binding WhereTaskViewModel}"/>
 				<controls:EncryptionTaskView Margin="24 8 24 8" DataContext="{Binding EncryptionTaskViewModel}" />

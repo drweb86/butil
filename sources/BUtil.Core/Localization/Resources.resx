@@ -682,4 +682,19 @@ See detailed description in the following link.</value>
   <data name="DataStorage_Title" xml:space="preserve">
     <value>Storage</value>
   </data>
+  <data name="RepositorySubfolder_Field" xml:space="preserve">
+    <value>Repository subfolder (optional):</value>
+  </data>
+  <data name="RepositorySubfolder_Help" xml:space="preserve">
+    <value>You can synchronize folder to particular subfolder of repository, if you don't want to have all content of repository on device.</value>
+  </data>
+  <data name="SynchronizationMode_Field" xml:space="preserve">
+    <value>Synchronization mode:</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
+    <value>Two-way</value>
+  </data>
+  <data name="SynchronizationMode_Field_Read" xml:space="preserve">
+    <value>Read</value>
+  </data>
 </root>

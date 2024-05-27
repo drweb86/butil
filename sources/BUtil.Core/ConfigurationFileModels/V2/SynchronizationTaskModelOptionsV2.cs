@@ -5,5 +5,6 @@ public class SynchronizationTaskModelOptionsV2 : ITaskModelOptionsV2
     public IStorageSettingsV2 To { get; set; } = new FolderStorageSettingsV2();
     public string LocalFolder { get; set; } = PlatformSpecificExperience.Instance.GetFolderService().GetDefaultSynchronizationFolder();
     public string? Subfolder { get; set; }
+    public SynchronizationTaskModelMode SynchronizationMode { get; set; }
     public string Password { get; set; } = string.Empty;
 }

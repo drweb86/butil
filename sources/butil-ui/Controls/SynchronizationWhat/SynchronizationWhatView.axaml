@@ -1,0 +1,95 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:cvm="clr-namespace:butil_ui.Controls"
+             mc:Ignorable="d"
+             x:Class="butil_ui.Controls.SynchronizationWhatView"
+			 x:DataType="cvm:SynchronizationWhatViewModel">
+	<Expander HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
+		<Expander.Header>
+			<StackPanel Orientation="Horizontal">
+				<Image Width="16" Height="16" Source="/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png" VerticalAlignment="Center" />
+				<TextBlock Text="{Binding LeftMenu_What}" Margin="8 0 0 0" VerticalAlignment="Center" />
+			</StackPanel>
+		</Expander.Header>
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+
+			<TextBlock
+				Grid.Column="0"
+				Grid.Row="0"
+				Text="{Binding Field_Folder}"
+				VerticalAlignment="Center"
+			/>
+			<TextBox
+				Grid.Column="1"
+				Grid.Row="0"
+				Text="{Binding Folder}"
+				VerticalAlignment="Center"
+				Margin="4 0 4 0"
+			/>
+			<Button
+				Grid.Column="2"
+				Grid.Row="0"
+				Content="{Binding Field_Folder_Browse}"
+				VerticalAlignment="Center"
+				Click="BrowseCommand"
+			/>
+
+			<TextBlock
+				Grid.Column="0"
+				Grid.Row="1"
+				Margin="0 8 0 8"
+				Text="{Binding SynchronizationMode_Field}"
+				VerticalAlignment="Center"
+			/>
+			<ComboBox
+				Grid.Column="1"
+				Grid.ColumnSpan="2"
+				Grid.Row="1"
+				VerticalAlignment="Center"
+				Margin="0 8 0 8"
+				HorizontalAlignment="Stretch"
+				SelectedIndex="{Binding SynchronizationMode}"
+			>
+				<ComboBoxItem Content="{Binding SynchronizationMode_Field_TwoWay}" />
+				<ComboBoxItem Content="{Binding SynchronizationMode_Field_Read}" />
+			</ComboBox>
+
+			<TextBlock
+				Grid.Column="0"
+				Grid.ColumnSpan="3"
+				Grid.Row="2"
+				Margin="0 8 0 8"
+				Text="{Binding RepositorySubfolder_Help}"
+				VerticalAlignment="Center"
+			/>
+			<TextBlock
+				Grid.Column="0"
+				Grid.Row="3"
+				Margin="0 8 0 8"
+				Text="{Binding RepositorySubfolder_Field}"
+				VerticalAlignment="Center"
+			/>
+			<TextBox
+				Grid.Column="1"
+				Grid.ColumnSpan="2"
+				Grid.Row="3"
+				Margin="0 8 0 8"
+				Text="{Binding Subfolder}"
+				VerticalAlignment="Center"
+			/>
+		</Grid>
+	</Expander>
+</UserControl>
