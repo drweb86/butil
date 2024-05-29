@@ -689,4 +689,19 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
   <data name="DataStorage_Title" xml:space="preserve">
     <value>Storage</value>
   </data>
+  <data name="RepositorySubfolder_Field" xml:space="preserve">
+    <value>Sottocartella repository (facoltativa):</value>
+  </data>
+  <data name="RepositorySubfolder_Help" xml:space="preserve">
+    <value>Se non vuoi avere tutto il contenuto del repository nel dispositivo è possibile sincronizzare la cartella con una particolare sottocartella del repository.</value>
+  </data>
+  <data name="SynchronizationMode_Field" xml:space="preserve">
+    <value>Modalità sincronizzazione:</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
+    <value>Bidiriezionale</value>
+  </data>
+  <data name="SynchronizationMode_Field_Read" xml:space="preserve">
+    <value>Lettura</value>
+  </data>
 </root>
