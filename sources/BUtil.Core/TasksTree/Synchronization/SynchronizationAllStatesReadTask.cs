@@ -22,7 +22,8 @@ internal class SynchronizationAllStatesReadTask : ParallelBuTask
 
     public SynchronizationAllStatesReadTask(
         SynchronizationServices synchronizationServices, 
-        TaskEvents events, string localFolder) : 
+        TaskEvents events,
+        string localFolder) : 
         base(synchronizationServices.Log, events, Resources.State_LoadFromEverywhere)
     {
         _synchronizationServices = synchronizationServices;

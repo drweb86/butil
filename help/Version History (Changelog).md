@@ -4,6 +4,9 @@
 ## New Features
 - Synchronization of files between devices.
 
+## Changes
+- Italian language was updated by https://github.com/bovirus .
+
 ## Bug Fixes
 - Errors for FTPS were not logged.
 - Wrong task name fix.

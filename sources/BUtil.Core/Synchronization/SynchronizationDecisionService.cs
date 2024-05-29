@@ -1,4 +1,5 @@
-﻿using BUtil.Core.Misc;
+﻿using BUtil.Core.FileSystem;
+using BUtil.Core.Misc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,13 @@ namespace BUtil.Core.Synchronization;
 
 class SynchronizationDecisionService
 {
+    private readonly string? _repositorySubfolderNormalized;
+
+    public SynchronizationDecisionService(string? repositorySubfolder)
+    {
+        _repositorySubfolderNormalized = FileHelper.NormalizeRelativePath(repositorySubfolder);
+    }
+
     public IEnumerable<SynchronizationConsolidatedFileInfo> Decide(
         SynchronizationState localState,
         SynchronizationState actualFiles,
@@ -174,6 +182,15 @@ class SynchronizationDecisionService
             item.ForceUpdateState = true;
             return;
         }
+
+        // #012
+        if (!item.ExistsLocally &&
+            item.ActualFileToLocalStateRelation == SynchronizationRelation.NotChanged &&
+            item.RemoteStateToLocalStateRelation == SynchronizationRelation.Created)
+        {
+            item.ActualFileAction = SynchronizationDecision.Update;
+            return;
+        }
     }
 
     private void BuildRelations(IEnumerable<SynchronizationConsolidatedFileInfo> items)
@@ -202,25 +219,42 @@ class SynchronizationDecisionService
 
         AddState(items, actualFiles, (x, actualFile) => x.ActualFile = actualFile);
         AddState(items, localState, (x, localState) => x.LocalState = localState);
-        AddState(items, remoteState, (x, remoteState) => x.RemoteState = remoteState);
+        AddState(items, remoteState, (x, remoteState) => x.RemoteState = remoteState, true);
 
         return items.Values.ToList();
     }
 
-    private static void AddState(
+    private void AddState(
         Dictionary<string, SynchronizationConsolidatedFileInfo> items,
         SynchronizationState state,
-        Action<SynchronizationConsolidatedFileInfo, SynchronizationStateFile> filler)
+        Action<SynchronizationConsolidatedFileInfo, SynchronizationStateFile> filler,
+        bool containsRepositorySubfolder = false)
     {
         foreach (var item in state.FileSystemEntries)
         {
-            if (!items.ContainsKey(item.RelativeFileName))
+            var actualRelativeFileName = GetActualRelativeFileName(item.RelativeFileName, containsRepositorySubfolder, out var isInvalid);
+            if (isInvalid)
             {
-                items.Add(item.RelativeFileName, new SynchronizationConsolidatedFileInfo(item.RelativeFileName));
+                continue;
             }
 
-            filler(items[item.RelativeFileName], item);
+            if (!items.ContainsKey(actualRelativeFileName))
+            {
+                items.Add(actualRelativeFileName, new SynchronizationConsolidatedFileInfo(actualRelativeFileName));
+            }
+
+            filler(items[actualRelativeFileName], item);
         }
+    }
+
+    private string GetActualRelativeFileName(string relativeFileName, bool containsRepositorySubfolder, out bool isInvalid)
+    {
+        if (containsRepositorySubfolder && _repositorySubfolderNormalized != null)
+        {
+            return FileHelper.TrimRelativePath(relativeFileName, _repositorySubfolderNormalized, out isInvalid);
+        }
+        isInvalid = false;
+        return relativeFileName;
     }
 
     private SynchronizationRelation ResolveRelation(

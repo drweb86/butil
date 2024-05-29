@@ -8,7 +8,6 @@ using BUtil.Core.TasksTree.Synchronization;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
-using System.Text.Json.Nodes;
 
 namespace BUtil.Core.TasksTree.IncrementalModel;
 
@@ -17,6 +16,7 @@ class SynchronizationRootTask : SequentialBuTask
     private readonly SynchronizationServices _synchronizationServices;
     private readonly SynchronizationAllStatesReadTask _synchronizationAllStatesReadTask;
     private readonly string _localFolder;
+    private readonly SynchronizationTaskModelMode _synchronizationTaskMode;
 
     private SynchronizationState? _localState;
     private SynchronizationState? _remoteState;
@@ -27,7 +27,8 @@ class SynchronizationRootTask : SequentialBuTask
     {
         var options = (SynchronizationTaskModelOptionsV2)task.Model;
         _localFolder = options.LocalFolder;
-        _synchronizationServices = new SynchronizationServices(log, task.Name, _localFolder, options.Subfolder, options.To, false);
+        _synchronizationTaskMode = options.SynchronizationMode;
+        _synchronizationServices = new SynchronizationServices(log, task.Name, _localFolder, options.RepositorySubfolder, options.To, false);
 
         _synchronizationAllStatesReadTask = new SynchronizationAllStatesReadTask(_synchronizationServices, Events, _localFolder);
 
@@ -49,7 +50,10 @@ class SynchronizationRootTask : SequentialBuTask
 
             if (_remoteState == null)
             {
-                UploadFirstRemoteVersion();
+                if (_synchronizationTaskMode == SynchronizationTaskModelMode.TwoWay)
+                {
+                    UploadFirstRemoteVersion();
+                }
             }
             else
             {
@@ -65,7 +69,6 @@ class SynchronizationRootTask : SequentialBuTask
             }
         }
 
-
         UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
         Events.OnMessage -= OnAddLastMinuteLogMessage;
         PutLastMinuteLogMessages();
@@ -76,7 +79,7 @@ class SynchronizationRootTask : SequentialBuTask
     private void NormalUpdate()
     {
         LogDebug("Normal update.");
-        var syncService = new SynchronizationDecisionService();
+        var syncService = new SynchronizationDecisionService(null);
         var syncItems = syncService.Decide(_localState!, _actualFiles, _remoteState!);
         LogDebug("Local state");
         LogDebug(JsonSerializer.Serialize(_localState));
@@ -88,7 +91,10 @@ class SynchronizationRootTask : SequentialBuTask
         LogDebug(JsonSerializer.Serialize(syncItems));
         var tasks = new List<BuTask>();
         ExecuteActionsLocally(tasks, syncItems);
-        ExecuteActionsRemotely(tasks, syncItems);
+        if (_synchronizationTaskMode == SynchronizationTaskModelMode.TwoWay)
+        {
+            ExecuteActionsRemotely(tasks, syncItems);
+        }
 
         if (syncItems.Any(x => x.RemoteAction != SynchronizationDecision.DoNothing) ||
             syncItems.Any(x => x.ActualFileAction != SynchronizationDecision.DoNothing))
@@ -97,7 +103,10 @@ class SynchronizationRootTask : SequentialBuTask
             tasks.Add(loadActualFilesStateTask);
 
             tasks.Add(new SynchronizationLocalStateSaveTask(tasks.ToArray(), _synchronizationServices, Events, () => loadActualFilesStateTask.SynchronizationState!));
-            tasks.Add(new SynchronizationRemoteStateSaveTask(tasks.ToArray(), _synchronizationServices, Events, () => loadActualFilesStateTask.SynchronizationState!));
+            if (_synchronizationTaskMode == SynchronizationTaskModelMode.TwoWay)
+            {
+                tasks.Add(new SynchronizationRemoteStateSaveTask(tasks.ToArray(), _synchronizationServices, Events, () => loadActualFilesStateTask.SynchronizationState!));
+            }
         }
 
         Events.DuringExecutionTasksAdded(Id, tasks);

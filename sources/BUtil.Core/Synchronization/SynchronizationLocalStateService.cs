@@ -1,7 +1,6 @@
 ﻿namespace BUtil.Core.Synchronization;
 
 using BUtil.Core.FileSystem;
-using BUtil.Core.Hashing;
 using BUtil.Core.TasksTree.Synchronization;
 using System.IO;
 using System.Text.Json;
@@ -10,13 +9,13 @@ class SynchronizationLocalStateService
 {
     private readonly string _taskName;
     private readonly string _localFolder;
-    private readonly string? _subfolder;
+    private readonly string? _repositorySubfolder;
 
-    public SynchronizationLocalStateService(string taskName, string localFolder, string? subfolder)
+    public SynchronizationLocalStateService(string taskName, string localFolder, string? repositorySubfolder)
     {
         _taskName = taskName;
         _localFolder = localFolder;
-        _subfolder = subfolder;
+        _repositorySubfolder = repositorySubfolder;
     }
 
     private string GetFileName()
@@ -43,7 +42,7 @@ class SynchronizationLocalStateService
             return null;
 
         if (state.LocalFolder != _localFolder ||
-            state.Subfolder != _subfolder)
+            state.RepositorySubfolder != _repositorySubfolder)
             return null;
 
         return state.SynchronizationState;
@@ -66,7 +65,7 @@ class SynchronizationLocalStateService
 
         var wrapper = new SynchronizationLocalState
         {
-            Subfolder = _subfolder,
+            RepositorySubfolder = _repositorySubfolder,
             LocalFolder = _localFolder,
             SynchronizationState = localFileState,
         };

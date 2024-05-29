@@ -21,12 +21,12 @@ internal class SynchronizationServices : IDisposable
     private readonly Lazy<IStorage> _remoteStorage;
     public IStorage RemoteStorage => _remoteStorage.Value;
 
-    public SynchronizationServices(ILog log, string taskName, string localFolder, string? subfolder, IStorageSettingsV2 remoteStorageSettings, bool autodetectConnectionSettings)
+    public SynchronizationServices(ILog log, string taskName, string localFolder, string? repositorySubfolder, IStorageSettingsV2 remoteStorageSettings, bool autodetectConnectionSettings)
     {
         Log = log;
         CachedHashStoreService = new CashedHashStoreService();
         HashService = new CachedHashService(CachedHashStoreService);
-        LocalStateService = new SynchronizationLocalStateService(taskName, localFolder, subfolder);
+        LocalStateService = new SynchronizationLocalStateService(taskName, localFolder, repositorySubfolder);
         _remoteStorage = new Lazy<IStorage>(() => StorageFactory.Create(log, remoteStorageSettings, autodetectConnectionSettings));
         _remoteStateService = new Lazy<SynchronizationRemoteStateService>(() => new SynchronizationRemoteStateService(RemoteStorage));
         ActualFilesService = new SynchronizationActualFilesService(HashService, localFolder);

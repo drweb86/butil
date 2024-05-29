@@ -44,7 +44,7 @@ internal class SynchronizationHelper
             actualFiles = _actualFilesService.Calculate();
         }
 
-        var syncService = new SynchronizationDecisionService();
+        var syncService = new SynchronizationDecisionService(null);
         var syncItems = syncService.Decide(localState, actualFiles, remoteState);
         ExecuteActionsLocally(syncFolder, syncItems);
         ExecuteActionsRemotely(syncFolder, syncItems);

@@ -10,7 +10,7 @@ public class SynchronizationDecisionServiceTests
     public void NormalUpdate_CreatedFile()
     {
         // Arrange
-        var service = new SynchronizationDecisionService();
+        var service = new SynchronizationDecisionService(null);
         var localState = new SynchronizationState();
         var actualFiles = new SynchronizationState();
         actualFiles.FileSystemEntries.Add(new SynchronizationStateFile("a.txt", DateTime.Now, "sha512", 5));
@@ -32,7 +32,7 @@ public class SynchronizationDecisionServiceTests
     public void NormalUpdate_NotChangedFile()
     {
         // Arrange
-        var service = new SynchronizationDecisionService();
+        var service = new SynchronizationDecisionService(null);
         var localState = new SynchronizationState();
         var timeStamp = DateTime.Now;
         localState.FileSystemEntries.Add(new SynchronizationStateFile("a.txt", timeStamp, "sha512", 5));
@@ -57,7 +57,7 @@ public class SynchronizationDecisionServiceTests
     public void NormalUpdate_AF_Exists_NoChanges_Remote_Created()
     {
         // Arrange
-        var service = new SynchronizationDecisionService();
+        var service = new SynchronizationDecisionService(null);
         var timeStamp = DateTime.Now;
         var localState = new SynchronizationState();
         localState.FileSystemEntries.Add(new SynchronizationStateFile("a.txt", timeStamp, "sha512", 5));
@@ -82,7 +82,7 @@ public class SynchronizationDecisionServiceTests
     public void NormalUpdate_AF_Exists_NoChanges_Remote_Deleted()
     {
         // Arrange
-        var service = new SynchronizationDecisionService();
+        var service = new SynchronizationDecisionService(null);
         var timeStamp = DateTime.Now;
         var localState = new SynchronizationState();
         localState.FileSystemEntries.Add(new SynchronizationStateFile("a.txt", timeStamp, "sha512", 5));
@@ -106,7 +106,7 @@ public class SynchronizationDecisionServiceTests
     public void NormalUpdate_AF_Created_Remote_Created_Wins_Remote()
     {
         // Arrange
-        var service = new SynchronizationDecisionService();
+        var service = new SynchronizationDecisionService(null);
         var timeStamp = DateTime.Now;
         var localState = new SynchronizationState();
         var actualFiles = new SynchronizationState();
@@ -130,7 +130,7 @@ public class SynchronizationDecisionServiceTests
     public void NormalUpdate_AF_Created_Remote_Created_Wins_Local()
     {
         // Arrange
-        var service = new SynchronizationDecisionService();
+        var service = new SynchronizationDecisionService(null);
         var timeStamp = DateTime.Now;
         var localState = new SynchronizationState();
         var actualFiles = new SynchronizationState();
@@ -154,7 +154,7 @@ public class SynchronizationDecisionServiceTests
     public void NormalUpdate_AF_Modified_Remote_Unchanged()
     {
         // Arrange
-        var service = new SynchronizationDecisionService();
+        var service = new SynchronizationDecisionService(null);
         var timeStamp = DateTime.Now;
         var localState = new SynchronizationState();
         localState.FileSystemEntries.Add(new SynchronizationStateFile("a.txt", timeStamp, "sha512-2", 5));
@@ -179,7 +179,7 @@ public class SynchronizationDecisionServiceTests
     public void NormalUpdate_AF_Modified_Remote_Modified_Remote_Wins()
     {
         // Arrange
-        var service = new SynchronizationDecisionService();
+        var service = new SynchronizationDecisionService(null);
         var timeStamp = DateTime.Now;
         var localState = new SynchronizationState();
         localState.FileSystemEntries.Add(new SynchronizationStateFile("a.txt", timeStamp, "sha512-2", 5));
@@ -204,7 +204,7 @@ public class SynchronizationDecisionServiceTests
     public void NormalUpdate_AF_Modified_Remote_Modified_Local_Wins()
     {
         // Arrange
-        var service = new SynchronizationDecisionService();
+        var service = new SynchronizationDecisionService(null);
         var timeStamp = DateTime.Now;
         var localState = new SynchronizationState();
         localState.FileSystemEntries.Add(new SynchronizationStateFile("a.txt", timeStamp, "sha512-2", 5));
@@ -229,7 +229,7 @@ public class SynchronizationDecisionServiceTests
     public void NormalUpdate_AF_Modified_Remote_Deleted()
     {
         // Arrange
-        var service = new SynchronizationDecisionService();
+        var service = new SynchronizationDecisionService(null);
         var timeStamp = DateTime.Now;
         var localState = new SynchronizationState();
         localState.FileSystemEntries.Add(new SynchronizationStateFile("a.txt", timeStamp, "sha512-2", 5));
@@ -253,7 +253,7 @@ public class SynchronizationDecisionServiceTests
     public void NormalUpdate_AF_Deleted_Remote_Unchanged()
     {
         // Arrange
-        var service = new SynchronizationDecisionService();
+        var service = new SynchronizationDecisionService(null);
         var timeStamp = DateTime.Now;
         var localState = new SynchronizationState();
         localState.FileSystemEntries.Add(new SynchronizationStateFile("a.txt", timeStamp, "sha512", 5));
@@ -277,7 +277,7 @@ public class SynchronizationDecisionServiceTests
     public void NormalUpdate_AF_Deleted_Remote_Deleted()
     {
         // Arrange
-        var service = new SynchronizationDecisionService();
+        var service = new SynchronizationDecisionService(null);
         var timeStamp = DateTime.Now;
         var localState = new SynchronizationState();
         localState.FileSystemEntries.Add(new SynchronizationStateFile("a.txt", timeStamp, "sha512", 5));
@@ -300,7 +300,7 @@ public class SynchronizationDecisionServiceTests
     public void NormalUpdate_AF_Deleted_Remote_Changed()
     {
         // Arrange
-        var service = new SynchronizationDecisionService();
+        var service = new SynchronizationDecisionService(null);
         var timeStamp = DateTime.Now;
         var localState = new SynchronizationState();
         localState.FileSystemEntries.Add(new SynchronizationStateFile("a.txt", timeStamp, "sha512", 5));
@@ -319,5 +319,30 @@ public class SynchronizationDecisionServiceTests
         Assert.IsTrue(item.RemoteStateToLocalStateRelation == SynchronizationRelation.Changed);
         Assert.IsTrue(item.ActualFileAction == SynchronizationDecision.Update);
         Assert.IsTrue(item.RemoteAction == SynchronizationDecision.DoNothing);
+    }
+
+    [TestMethod("Subfolder matching")] // #012
+    public void Subfolder_Matching()
+    {
+        // Arrange
+        var service = new SynchronizationDecisionService("\\1/2///\\\\");
+        var localState = new SynchronizationState();
+        localState.FileSystemEntries.Add(new SynchronizationStateFile("a.txt", DateTime.Now, "sha512", 5));
+        var actualFiles = new SynchronizationState();
+        actualFiles.FileSystemEntries.Add(new SynchronizationStateFile("a.txt", DateTime.Now, "sha512", 5));
+        var remoteState = new SynchronizationState();
+        remoteState.FileSystemEntries.Add(new SynchronizationStateFile("1.txt", DateTime.Now, "sha512", 5));
+        remoteState.FileSystemEntries.Add(new SynchronizationStateFile("1\\2.txt", DateTime.Now, "sha512", 5));
+        remoteState.FileSystemEntries.Add(new SynchronizationStateFile("1/2.txt", DateTime.Now, "sha512", 5));
+        remoteState.FileSystemEntries.Add(new SynchronizationStateFile("1/2/1.txt", DateTime.Now, "sha512", 5));
+        remoteState.FileSystemEntries.Add(new SynchronizationStateFile("1\\2\\2.txt", DateTime.Now, "sha512", 5));
+        remoteState.FileSystemEntries.Add(new SynchronizationStateFile("1\\2\\a.txt", DateTime.Now, "sha512-1", 6));
+
+        // Act
+        var decisions = service.Decide(localState, actualFiles, remoteState);
+
+        // Assert
+        Assert.IsTrue(decisions.Count() == 3);
+        Assert.IsTrue(decisions.All(x => x.ActualFileAction == SynchronizationDecision.Update));
     }
 }

@@ -8,11 +8,11 @@ public class SynchronizationWhatViewModel : ObservableObject
 {
     public SynchronizationWhatViewModel(
         string folder,
-        string? subfolder,
+        string? repositorySubfolder,
         SynchronizationTaskModelMode synchronizationMode)
     {
         Folder = folder;
-        Subfolder = subfolder;
+        RepositorySubfolder = repositorySubfolder;
         SynchronizationMode = synchronizationMode;
     }
 
@@ -31,20 +31,20 @@ public class SynchronizationWhatViewModel : ObservableObject
 
     #region Subfolder
 
-    private string? _subfolder;
+    private string? _repositorySubfolder;
 
-    public string? Subfolder
+    public string? RepositorySubfolder
     {
         get
         {
-            return _subfolder;
+            return _repositorySubfolder;
         }
         set
         {
-            if (value == _subfolder)
+            if (value == _repositorySubfolder)
                 return;
-            _subfolder = value;
-            OnPropertyChanged(nameof(Subfolder));
+            _repositorySubfolder = value;
+            OnPropertyChanged(nameof(RepositorySubfolder));
         }
     }
 
