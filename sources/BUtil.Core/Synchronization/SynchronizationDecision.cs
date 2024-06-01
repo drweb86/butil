@@ -1,6 +1,6 @@
 ﻿namespace BUtil.Core.Synchronization;
 
-enum SynchronizationDecision
+public enum SynchronizationDecision
 {
     DoNothing,
     Delete,

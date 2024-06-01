@@ -530,7 +530,7 @@
     <value>Не указано, что обрабатывать.</value>
   </data>
   <data name="SourceItem_Validation_NotExists" xml:space="preserve">
-    <value>"{0}" не существует, поправьте список.</value>
+    <value>"{0}" не существует.</value>
   </data>
   <data name="State_File_Get" xml:space="preserve">
     <value>Получение состояния файла "{0}"</value>

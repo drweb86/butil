@@ -14,6 +14,7 @@ internal class SynchronizationServices : IDisposable
     public readonly ICashedHashStoreService CachedHashStoreService;
     public readonly SynchronizationLocalStateService LocalStateService;
     public readonly SynchronizationActualFilesService ActualFilesService;
+    public readonly SynchronizationDecisionService DecisionService;
 
     private readonly Lazy<SynchronizationRemoteStateService> _remoteStateService;
     public SynchronizationRemoteStateService RemoteStateService => _remoteStateService.Value;
@@ -30,6 +31,7 @@ internal class SynchronizationServices : IDisposable
         _remoteStorage = new Lazy<IStorage>(() => StorageFactory.Create(log, remoteStorageSettings, autodetectConnectionSettings));
         _remoteStateService = new Lazy<SynchronizationRemoteStateService>(() => new SynchronizationRemoteStateService(RemoteStorage));
         ActualFilesService = new SynchronizationActualFilesService(HashService, localFolder);
+        DecisionService = new SynchronizationDecisionService(repositorySubfolder);
     }
 
 

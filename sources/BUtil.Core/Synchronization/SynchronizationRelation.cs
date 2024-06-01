@@ -1,6 +1,6 @@
 ﻿namespace BUtil.Core.Synchronization;
 
-enum SynchronizationRelation
+public enum SynchronizationRelation
 {
     NotChanged,
     Created,

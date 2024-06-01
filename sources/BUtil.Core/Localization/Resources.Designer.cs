@@ -1294,7 +1294,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;{0}&quot; does not exist, correct list of source items..
+        ///   Looks up a localized string similar to &quot;{0}&quot; does not exist..
         /// </summary>
         public static string SourceItem_Validation_NotExists {
             get {

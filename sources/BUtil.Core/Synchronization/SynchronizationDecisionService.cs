@@ -1,4 +1,5 @@
-﻿using BUtil.Core.FileSystem;
+﻿using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.FileSystem;
 using BUtil.Core.Misc;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ class SynchronizationDecisionService
     }
 
     public IEnumerable<SynchronizationConsolidatedFileInfo> Decide(
+        SynchronizationTaskModelMode synchronizationMode,
         SynchronizationState localState,
         SynchronizationState actualFiles,
         SynchronizationState remoteState)
@@ -24,20 +26,37 @@ class SynchronizationDecisionService
 
         BuildRelations(items);
 
-        ResolveActions(items);
+        ResolveActions(items, synchronizationMode);
 
         return items;
     }
 
-    private static void ResolveActions(IEnumerable<SynchronizationConsolidatedFileInfo> items)
+    private static void ResolveActions(
+        IEnumerable<SynchronizationConsolidatedFileInfo> items,
+        SynchronizationTaskModelMode synchronizationMode)
     {
         foreach (var item in items)
         {
-            ResolveAction(item);
+            ResolveAction(item, synchronizationMode);
         }
     }
 
-    private static void ResolveAction(SynchronizationConsolidatedFileInfo item)
+    private static void ResolveAction(
+        SynchronizationConsolidatedFileInfo item,
+        SynchronizationTaskModelMode synchronizationMode)
+    {
+        switch (synchronizationMode)
+        {
+            case SynchronizationTaskModelMode.TwoWay:
+                ResolveActionTwoWayMode(item);
+                break;
+            case SynchronizationTaskModelMode.Read:
+                ResolveActionReadonlyMode(item);
+                break;
+        }
+    }
+
+    private static void ResolveActionTwoWayMode(SynchronizationConsolidatedFileInfo item)
     {
         item.ActualFileAction = SynchronizationDecision.DoNothing;
         item.RemoteAction = SynchronizationDecision.DoNothing;
@@ -193,6 +212,163 @@ class SynchronizationDecisionService
         }
     }
 
+    private static void ResolveActionReadonlyMode(SynchronizationConsolidatedFileInfo item)
+    {
+        item.ActualFileAction = SynchronizationDecision.DoNothing;
+        item.RemoteAction = SynchronizationDecision.DoNothing;
+
+        // test case #001
+        if (item.ExistsLocally &&
+            item.RemoteState == null &&
+            item.LocalState == null &&
+            item.ActualFileToLocalStateRelation == SynchronizationRelation.Created &&
+            item.RemoteStateToLocalStateRelation == SynchronizationRelation.NotChanged)
+        {
+            item.RemoteAction = SynchronizationDecision.Update;
+            return;
+        }
+
+        // test case #002
+        if (item.ExistsLocally &&
+            item.RemoteState != null &&
+            item.LocalState != null &&
+            item.ActualFileToLocalStateRelation == SynchronizationRelation.NotChanged &&
+            item.RemoteStateToLocalStateRelation == SynchronizationRelation.NotChanged)
+        {
+            return;
+        }
+
+        // test case #003
+        if (item.ExistsLocally &&
+            item.RemoteState != null &&
+            item.LocalState != null &&
+            item.ActualFileToLocalStateRelation == SynchronizationRelation.NotChanged &&
+            item.RemoteStateToLocalStateRelation == SynchronizationRelation.Changed)
+        {
+            item.ActualFileAction = SynchronizationDecision.Update;
+            return;
+        }
+
+        // #009
+        if (!item.ExistsLocally &&
+            item.RemoteState != null &&
+            item.ActualFileToLocalStateRelation == SynchronizationRelation.Deleted &&
+            item.RemoteStateToLocalStateRelation == SynchronizationRelation.NotChanged)
+        {
+            item.RemoteAction = SynchronizationDecision.Delete;
+            return;
+        }
+
+        if (item.ExistsLocally &&
+            item.ActualFileToLocalStateRelation == SynchronizationRelation.NotChanged &&
+            item.RemoteStateToLocalStateRelation == SynchronizationRelation.Changed)
+        {
+            item.ActualFileAction = SynchronizationDecision.Delete;
+            item.RemoteAction = SynchronizationDecision.Update;
+        }
+
+        // test case #004
+        if (item.ExistsLocally &&
+            item.ActualFileToLocalStateRelation == SynchronizationRelation.NotChanged &&
+            item.RemoteStateToLocalStateRelation == SynchronizationRelation.Deleted)
+        {
+            item.ActualFileAction = SynchronizationDecision.Delete;
+            return;
+        }
+
+        // test case #005
+        if (item.RemoteState != null &&
+            item.ActualFile != null &&
+
+            item.ExistsLocally &&
+            item.ActualFileToLocalStateRelation == SynchronizationRelation.Created &&
+            (item.RemoteStateToLocalStateRelation == SynchronizationRelation.Created ||
+            item.RemoteStateToLocalStateRelation == SynchronizationRelation.Changed))
+        {
+            if (item.RemoteState.ModifiedAtUtc > item.ActualFile.ModifiedAtUtc)
+            {
+                item.ActualFileAction = SynchronizationDecision.Update;
+            }
+            else
+            {
+                item.RemoteAction = SynchronizationDecision.Update;
+            }
+            return;
+        }
+
+        if (item.ExistsLocally &&
+            item.ActualFileToLocalStateRelation == SynchronizationRelation.Created &&
+            item.RemoteStateToLocalStateRelation == SynchronizationRelation.Deleted)
+        {
+            item.RemoteAction = SynchronizationDecision.Update;
+        }
+
+        // #006
+        if (item.ExistsLocally &&
+            item.ActualFileToLocalStateRelation == SynchronizationRelation.Changed &&
+            item.RemoteStateToLocalStateRelation == SynchronizationRelation.NotChanged)
+        {
+            item.RemoteAction = SynchronizationDecision.Update;
+            return;
+        }
+
+        // #007
+        if (item.RemoteState != null &&
+            item.ActualFile != null &&
+
+            item.ExistsLocally &&
+            item.ActualFileToLocalStateRelation == SynchronizationRelation.Changed &&
+            item.RemoteStateToLocalStateRelation == SynchronizationRelation.Changed)
+        {
+            if (item.RemoteState.ModifiedAtUtc > item.ActualFile.ModifiedAtUtc)
+            {
+                item.ActualFileAction = SynchronizationDecision.Update;
+            }
+            else
+            {
+                item.RemoteAction = SynchronizationDecision.Update;
+            }
+            return;
+        }
+
+        // #008
+        if (item.ExistsLocally &&
+            item.ActualFileToLocalStateRelation == SynchronizationRelation.Changed &&
+            item.RemoteStateToLocalStateRelation == SynchronizationRelation.Deleted)
+        {
+            item.RemoteAction = SynchronizationDecision.Update;
+            return;
+        }
+
+        // #010
+        if (!item.ExistsLocally &&
+            item.ActualFileToLocalStateRelation == SynchronizationRelation.Deleted &&
+            item.RemoteStateToLocalStateRelation == SynchronizationRelation.Changed)
+        {
+            item.ActualFileAction = SynchronizationDecision.Update;
+            return;
+        }
+
+        // #011
+        if (!item.ExistsLocally &&
+            item.ActualFileToLocalStateRelation == SynchronizationRelation.Deleted &&
+            item.RemoteStateToLocalStateRelation == SynchronizationRelation.Deleted)
+        {
+            item.ForceUpdateState = true;
+            return;
+        }
+
+        // #012
+        if (!item.ExistsLocally &&
+            item.ActualFileToLocalStateRelation == SynchronizationRelation.NotChanged &&
+            item.RemoteStateToLocalStateRelation == SynchronizationRelation.Created)
+        {
+            item.ActualFileAction = SynchronizationDecision.Update;
+            return;
+        }
+    }
+
+
     private void BuildRelations(IEnumerable<SynchronizationConsolidatedFileInfo> items)
     {
         foreach (var item in items)
@@ -205,6 +381,8 @@ class SynchronizationDecisionService
                 item.LocalState);
         }
     }
+
+
 
     private IEnumerable<SynchronizationConsolidatedFileInfo> UnionStates(
         SynchronizationState actualFiles,

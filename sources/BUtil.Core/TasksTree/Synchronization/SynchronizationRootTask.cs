@@ -5,6 +5,7 @@ using BUtil.Core.Logs;
 using BUtil.Core.Synchronization;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.Synchronization;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
@@ -23,7 +24,7 @@ class SynchronizationRootTask : SequentialBuTask
     private SynchronizationState _actualFiles = null!;
 
     public SynchronizationRootTask(ILog log, TaskEvents backupEvents, TaskV2 task)
-        : base(log, backupEvents, Resources.IncrementalBackup_Title, null)
+        : base(log, backupEvents, Resources.SynchronizationTask_Create, null)
     {
         var options = (SynchronizationTaskModelOptionsV2)task.Model;
         _localFolder = options.LocalFolder;
@@ -79,8 +80,7 @@ class SynchronizationRootTask : SequentialBuTask
     private void NormalUpdate()
     {
         LogDebug("Normal update.");
-        var syncService = new SynchronizationDecisionService(null);
-        var syncItems = syncService.Decide(_localState!, _actualFiles, _remoteState!);
+        var syncItems = _synchronizationServices.DecisionService.Decide(_synchronizationTaskMode, _localState!, _actualFiles, _remoteState!);
         LogDebug("Local state");
         LogDebug(JsonSerializer.Serialize(_localState));
         LogDebug("Actual files");
@@ -102,7 +102,7 @@ class SynchronizationRootTask : SequentialBuTask
             var loadActualFilesStateTask = new SynchronizationReadActualFilesTask(_synchronizationServices, Events, _localFolder);
             tasks.Add(loadActualFilesStateTask);
 
-            tasks.Add(new SynchronizationLocalStateSaveTask(tasks.ToArray(), _synchronizationServices, Events, () => loadActualFilesStateTask.SynchronizationState!));
+            tasks.Add(new SynchronizationLocalStateSaveTask(tasks.ToArray(), _synchronizationServices, Events, () => GetLocalState(loadActualFilesStateTask.SynchronizationState!)));
             if (_synchronizationTaskMode == SynchronizationTaskModelMode.TwoWay)
             {
                 tasks.Add(new SynchronizationRemoteStateSaveTask(tasks.ToArray(), _synchronizationServices, Events, () => loadActualFilesStateTask.SynchronizationState!));
@@ -112,6 +112,24 @@ class SynchronizationRootTask : SequentialBuTask
         Events.DuringExecutionTasksAdded(Id, tasks);
         Children = tasks;
         base.Execute();
+    }
+
+    private SynchronizationState GetLocalState(SynchronizationState actualFilesState)
+    {
+        var synced = _synchronizationServices.DecisionService.Decide(_synchronizationTaskMode, _localState!, actualFilesState, _remoteState!);
+
+        var syncedState = new SynchronizationState
+        {
+            FileSystemEntries = synced
+                .Where(x => x.ActualFileAction == SynchronizationDecision.DoNothing &&
+                    x.RemoteAction == SynchronizationDecision.DoNothing &&
+                    x.RemoteState != null && // because we cannot store in local state non-known to repository items
+                    x.ExistsLocally)
+                .Select(x => x.ActualFile!)
+                .ToList()
+        };
+
+        return syncedState;
     }
 
     private void ExecuteActionsRemotely(List<BuTask> tasks, IEnumerable<SynchronizationConsolidatedFileInfo> syncItems)
@@ -145,7 +163,7 @@ class SynchronizationRootTask : SequentialBuTask
                     tasks.Add(new SynchronizationLocalFileDeleteTask(_synchronizationServices, Events, _localFolder, item.RelativeFileName));
                     break;
                 case SynchronizationDecision.Update:
-                    tasks.Add(new SynchronizationRemoteFileDownloadTask(_synchronizationServices, Events, _localFolder, item.RelativeFileName));
+                    tasks.Add(new SynchronizationRemoteFileDownloadTask(_synchronizationServices, Events, _localFolder, item.RelativeFileName, item.RemoteState!.ModifiedAtUtc));
                     break;
             }
         }
@@ -158,7 +176,7 @@ class SynchronizationRootTask : SequentialBuTask
 
         foreach (var item in _remoteState!.FileSystemEntries)
         {
-            synchronizationFileDownloadTasks.Add(new SynchronizationRemoteFileDownloadTask(_synchronizationServices, Events, _localFolder, item.RelativeFileName));
+            synchronizationFileDownloadTasks.Add(new SynchronizationRemoteFileDownloadTask(_synchronizationServices, Events, _localFolder, item.RelativeFileName, item.ModifiedAtUtc));
         }
 
         var tasks = new List<BuTask>();

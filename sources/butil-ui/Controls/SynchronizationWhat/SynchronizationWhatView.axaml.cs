@@ -12,7 +12,7 @@ public partial class SynchronizationWhatView : UserControl
     public SynchronizationWhatView()
     {
         InitializeComponent();
-        this.DataContext = new FolderSectionViewModel("the folder");
+        this.DataContext = new SynchronizationWhatViewModel("the folder", null, BUtil.Core.ConfigurationFileModels.V2.SynchronizationTaskModelMode.TwoWay);
     }
 
     public void BrowseCommand(object? sender, RoutedEventArgs args)
@@ -23,7 +23,7 @@ public partial class SynchronizationWhatView : UserControl
     private async Task BrowseCommandInternal()
     {
         var root = this.VisualRoot as TopLevel ?? throw new NullReferenceException("Invalid Owner");
-        var dataContext = DataContext as FolderSectionViewModel ?? throw new NullReferenceException();
+        var dataContext = DataContext as SynchronizationWhatViewModel ?? throw new NullReferenceException();
         var startLocation = await root.StorageProvider.TryGetFolderFromPathAsync(dataContext.Folder);
         var folders = await root.StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
         {

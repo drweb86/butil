@@ -534,7 +534,7 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
     <value>Nessun elemento da elaborare.</value>
   </data>
   <data name="SourceItem_Validation_NotExists" xml:space="preserve">
-    <value>"{0}" non esiste, correggi elenco elementi sorgenti.</value>
+    <value>"{0}" non esiste.</value>
   </data>
   <data name="State_File_Get" xml:space="preserve">
     <value>Richiedi stato del file "{0}"</value>

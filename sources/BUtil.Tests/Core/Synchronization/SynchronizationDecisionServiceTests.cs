@@ -1,10 +1,14 @@
-﻿using BUtil.Core.Synchronization;
+﻿using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.Synchronization;
+using System.IO.Enumeration;
 
 namespace BUtil.Tests.Core.Synchronization;
 
 [TestClass]
 public class SynchronizationDecisionServiceTests
 {
+    #region Two-Way Sync Decision Making
+
 
     [TestMethod("Normal update: Create file (actual) (#001)")]
     public void NormalUpdate_CreatedFile()
@@ -17,7 +21,7 @@ public class SynchronizationDecisionServiceTests
         var remoteState = new SynchronizationState();
 
         // Act
-        var decisions = service.Decide(localState, actualFiles, remoteState);
+        var decisions = service.Decide(SynchronizationTaskModelMode.TwoWay, localState, actualFiles, remoteState);
 
         // Assert
         var item = decisions.Single();
@@ -42,7 +46,7 @@ public class SynchronizationDecisionServiceTests
         remoteState.FileSystemEntries.Add(new SynchronizationStateFile("a.txt", timeStamp, "sha512", 5));
 
         // Act
-        var decisions = service.Decide(localState, actualFiles, remoteState);
+        var decisions = service.Decide(SynchronizationTaskModelMode.TwoWay, localState, actualFiles, remoteState);
 
         // Assert
         var item = decisions.Single();
@@ -67,7 +71,7 @@ public class SynchronizationDecisionServiceTests
         remoteState.FileSystemEntries.Add(new SynchronizationStateFile("a.txt", timeStamp.AddSeconds(1), "sha512-Modified", 5));
 
         // Act
-        var decisions = service.Decide(localState, actualFiles, remoteState);
+        var decisions = service.Decide(SynchronizationTaskModelMode.TwoWay, localState, actualFiles, remoteState);
 
         // Assert
         var item = decisions.Single();
@@ -91,7 +95,7 @@ public class SynchronizationDecisionServiceTests
         var remoteState = new SynchronizationState();
 
         // Act
-        var decisions = service.Decide(localState, actualFiles, remoteState);
+        var decisions = service.Decide(SynchronizationTaskModelMode.TwoWay, localState, actualFiles, remoteState);
 
         // Assert
         var item = decisions.Single();
@@ -115,7 +119,7 @@ public class SynchronizationDecisionServiceTests
         remoteState.FileSystemEntries.Add(new SynchronizationStateFile("a.txt", timeStamp.AddSeconds(1), "sha512-modified", 5));
 
         // Act
-        var decisions = service.Decide(localState, actualFiles, remoteState);
+        var decisions = service.Decide(SynchronizationTaskModelMode.TwoWay, localState, actualFiles, remoteState);
 
         // Assert
         var item = decisions.Single();
@@ -139,7 +143,7 @@ public class SynchronizationDecisionServiceTests
         remoteState.FileSystemEntries.Add(new SynchronizationStateFile("a.txt", timeStamp.AddSeconds(-1), "sha512-modified", 5));
 
         // Act
-        var decisions = service.Decide(localState, actualFiles, remoteState);
+        var decisions = service.Decide(SynchronizationTaskModelMode.TwoWay, localState, actualFiles, remoteState);
 
         // Assert
         var item = decisions.Single();
@@ -164,7 +168,7 @@ public class SynchronizationDecisionServiceTests
         remoteState.FileSystemEntries.Add(new SynchronizationStateFile("a.txt", timeStamp, "sha512-2", 5));
 
         // Act
-        var decisions = service.Decide(localState, actualFiles, remoteState);
+        var decisions = service.Decide(SynchronizationTaskModelMode.TwoWay, localState, actualFiles, remoteState);
 
         // Assert
         var item = decisions.Single();
@@ -189,7 +193,7 @@ public class SynchronizationDecisionServiceTests
         remoteState.FileSystemEntries.Add(new SynchronizationStateFile("a.txt", timeStamp.AddSeconds(1), "sha512-3", 5));
 
         // Act
-        var decisions = service.Decide(localState, actualFiles, remoteState);
+        var decisions = service.Decide(SynchronizationTaskModelMode.TwoWay, localState, actualFiles, remoteState);
 
         // Assert
         var item = decisions.Single();
@@ -214,7 +218,7 @@ public class SynchronizationDecisionServiceTests
         remoteState.FileSystemEntries.Add(new SynchronizationStateFile("a.txt", timeStamp.AddSeconds(-1), "sha512-3", 5));
 
         // Act
-        var decisions = service.Decide(localState, actualFiles, remoteState);
+        var decisions = service.Decide(SynchronizationTaskModelMode.TwoWay, localState, actualFiles, remoteState);
 
         // Assert
         var item = decisions.Single();
@@ -238,7 +242,7 @@ public class SynchronizationDecisionServiceTests
         var remoteState = new SynchronizationState();
 
         // Act
-        var decisions = service.Decide(localState, actualFiles, remoteState);
+        var decisions = service.Decide(SynchronizationTaskModelMode.TwoWay, localState, actualFiles, remoteState);
 
         // Assert
         var item = decisions.Single();
@@ -262,7 +266,7 @@ public class SynchronizationDecisionServiceTests
         remoteState.FileSystemEntries.Add(new SynchronizationStateFile("a.txt", timeStamp, "sha512", 5));
 
         // Act
-        var decisions = service.Decide(localState, actualFiles, remoteState);
+        var decisions = service.Decide(SynchronizationTaskModelMode.TwoWay, localState, actualFiles, remoteState);
 
         // Assert
         var item = decisions.Single();
@@ -285,7 +289,7 @@ public class SynchronizationDecisionServiceTests
         var remoteState = new SynchronizationState();
 
         // Act
-        var decisions = service.Decide(localState, actualFiles, remoteState);
+        var decisions = service.Decide(SynchronizationTaskModelMode.TwoWay, localState, actualFiles, remoteState);
 
         // Assert
         var item = decisions.Single();
@@ -310,7 +314,7 @@ public class SynchronizationDecisionServiceTests
 
 
         // Act
-        var decisions = service.Decide(localState, actualFiles, remoteState);
+        var decisions = service.Decide(SynchronizationTaskModelMode.TwoWay, localState, actualFiles, remoteState);
 
         // Assert
         var item = decisions.Single();
@@ -339,10 +343,96 @@ public class SynchronizationDecisionServiceTests
         remoteState.FileSystemEntries.Add(new SynchronizationStateFile("1\\2\\a.txt", DateTime.Now, "sha512-1", 6));
 
         // Act
-        var decisions = service.Decide(localState, actualFiles, remoteState);
+        var decisions = service.Decide(SynchronizationTaskModelMode.TwoWay, localState, actualFiles, remoteState);
 
         // Assert
         Assert.IsTrue(decisions.Count() == 3);
         Assert.IsTrue(decisions.All(x => x.ActualFileAction == SynchronizationDecision.Update));
     }
+
+    #endregion
+
+    #region Readonly Sync Decision Making
+
+    [TestMethod("Readonly updates")]
+    [DataRow(SynchronizationRelation.NotChanged, SynchronizationRelation.NotChanged, SynchronizationDecision.DoNothing)] // #1
+    [DataRow(SynchronizationRelation.NotChanged, SynchronizationRelation.Created, SynchronizationDecision.Update)] // #2 ....
+    [DataRow(SynchronizationRelation.NotChanged, SynchronizationRelation.Changed, SynchronizationDecision.Update)]
+    [DataRow(SynchronizationRelation.NotChanged, SynchronizationRelation.Deleted, SynchronizationDecision.Delete)]
+    [DataRow(SynchronizationRelation.Created, SynchronizationRelation.NotChanged, SynchronizationDecision.DoNothing)] // #5
+    [DataRow(SynchronizationRelation.Created, SynchronizationRelation.Created, SynchronizationDecision.Update)]
+    [DataRow(SynchronizationRelation.Created, SynchronizationRelation.Changed, SynchronizationDecision.Update)]
+    [DataRow(SynchronizationRelation.Created, SynchronizationRelation.Deleted, SynchronizationDecision.Delete)]
+    [DataRow(SynchronizationRelation.Changed, SynchronizationRelation.NotChanged, SynchronizationDecision.Update)] //#9
+    [DataRow(SynchronizationRelation.Changed, SynchronizationRelation.Created, SynchronizationDecision.Update)]
+    [DataRow(SynchronizationRelation.Changed, SynchronizationRelation.Changed, SynchronizationDecision.Update)]
+    [DataRow(SynchronizationRelation.Changed, SynchronizationRelation.Deleted, SynchronizationDecision.Delete)]  // #12
+    [DataRow(SynchronizationRelation.Deleted, SynchronizationRelation.NotChanged, SynchronizationDecision.Update)]
+    [DataRow(SynchronizationRelation.Deleted, SynchronizationRelation.Created, SynchronizationDecision.Update)]
+    [DataRow(SynchronizationRelation.Deleted, SynchronizationRelation.Changed, SynchronizationDecision.Update)]
+    [DataRow(SynchronizationRelation.Deleted, SynchronizationRelation.Deleted, SynchronizationDecision.DoNothing)] // #16
+    public void ReadonlyUpdates(
+        SynchronizationRelation actualFile,
+        SynchronizationRelation remoteFile,
+
+        SynchronizationDecision actualFileAction)
+    {
+        // Arrange
+        var service = new SynchronizationDecisionService(null);
+        var localState = new SynchronizationState();
+        var actualFiles = new SynchronizationState();
+        var remoteState = new SynchronizationState();
+
+        var fileSystemEntry = new SynchronizationStateFile("a.txt", DateTime.MinValue, "sha", 1);
+
+        switch (actualFile)
+        {
+            case SynchronizationRelation.NotChanged:
+                actualFiles.FileSystemEntries.Add(fileSystemEntry);
+                localState.FileSystemEntries.Add(fileSystemEntry);
+                break;
+            case SynchronizationRelation.Created:
+                actualFiles.FileSystemEntries.Add(fileSystemEntry);
+                break;
+            case SynchronizationRelation.Changed:
+                var changed = fileSystemEntry.Clone();
+                changed.Sha512 = "sha-actual-file";
+                actualFiles.FileSystemEntries.Add(changed);
+                localState.FileSystemEntries.Add(fileSystemEntry);
+                break;
+            case SynchronizationRelation.Deleted:
+                localState.FileSystemEntries.Add(fileSystemEntry);
+                break;
+        }
+
+        switch (remoteFile)
+        {
+            case SynchronizationRelation.NotChanged:
+                if (actualFile != SynchronizationRelation.Deleted)
+                {
+                    remoteState.FileSystemEntries.Add(fileSystemEntry);
+                }
+                break;
+            case SynchronizationRelation.Created:
+                break;
+            case SynchronizationRelation.Changed:
+                break;
+            case SynchronizationRelation.Deleted:
+                break;
+
+        }
+
+        // Act
+        var decisions = service.Decide(SynchronizationTaskModelMode.Read, localState, actualFiles, remoteState);
+
+        // Assert
+        var item = decisions.Single();
+        Assert.IsTrue(item.ExistsLocally == (actualFile != SynchronizationRelation.Deleted));
+        Assert.IsTrue(item.ActualFileToLocalStateRelation == actualFile);
+        Assert.IsTrue(item.RemoteStateToLocalStateRelation == remoteFile);
+        Assert.IsTrue(item.ActualFileAction == actualFileAction);
+        Assert.IsTrue(item.RemoteAction == SynchronizationDecision.DoNothing);
+    }
+
+    #endregion
 }
