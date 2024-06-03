@@ -82,13 +82,13 @@ class SynchronizationRootTask : SequentialBuTask
         LogDebug("Normal update.");
         var syncItems = _synchronizationServices.DecisionService.Decide(_synchronizationTaskMode, _localState!, _actualFiles, _remoteState!);
         LogDebug("Local state");
-        LogDebug(JsonSerializer.Serialize(_localState));
+        LogDebug(JsonSerializer.Serialize(_localState, new JsonSerializerOptions { WriteIndented = true }));
         LogDebug("Actual files");
-        LogDebug(JsonSerializer.Serialize(_actualFiles));
+        LogDebug(JsonSerializer.Serialize(_actualFiles, new JsonSerializerOptions { WriteIndented = true }));
         LogDebug("Remote state");
-        LogDebug(JsonSerializer.Serialize(_remoteState));
+        LogDebug(JsonSerializer.Serialize(_remoteState, new JsonSerializerOptions { WriteIndented = true }));
         LogDebug("Decisions");
-        LogDebug(JsonSerializer.Serialize(syncItems));
+        LogDebug(JsonSerializer.Serialize(syncItems, new JsonSerializerOptions { WriteIndented = true }));
         var tasks = new List<BuTask>();
         ExecuteActionsLocally(tasks, syncItems);
         if (_synchronizationTaskMode == SynchronizationTaskModelMode.TwoWay)
@@ -97,7 +97,8 @@ class SynchronizationRootTask : SequentialBuTask
         }
 
         if (syncItems.Any(x => x.RemoteAction != SynchronizationDecision.DoNothing) ||
-            syncItems.Any(x => x.ActualFileAction != SynchronizationDecision.DoNothing))
+            syncItems.Any(x => x.ActualFileAction != SynchronizationDecision.DoNothing) ||
+            syncItems.Any(x => x.ForceUpdateState))
         {
             var loadActualFilesStateTask = new SynchronizationReadActualFilesTask(_synchronizationServices, Events, _localFolder);
             tasks.Add(loadActualFilesStateTask);

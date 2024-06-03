@@ -19,8 +19,13 @@ class SynchronizationStateFile
     public string Sha512 { get; set; } = null!;
     public long Size { get; set; }
 
-    public bool Equal(SynchronizationStateFile other, bool excludeModifiedAtUtc = true)
+    public bool Equal(SynchronizationStateFile? other, bool excludeModifiedAtUtc = true)
     {
+        if (other == null)
+        {  
+            return false; 
+        }
+
         return other.RelativeFileName.Equals(RelativeFileName) &&
             other.Size.Equals(Size) &&
             (excludeModifiedAtUtc || (!excludeModifiedAtUtc && other.ModifiedAtUtc.Equals(ModifiedAtUtc))) &&

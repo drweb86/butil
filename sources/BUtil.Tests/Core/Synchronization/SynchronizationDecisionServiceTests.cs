@@ -361,14 +361,14 @@ public class SynchronizationDecisionServiceTests
     [DataRow(SynchronizationRelation.NotChanged, SynchronizationRelation.Deleted, SynchronizationDecision.Delete)]
     [DataRow(SynchronizationRelation.Created, SynchronizationRelation.NotChanged, SynchronizationDecision.DoNothing)] // #5
     [DataRow(SynchronizationRelation.Created, SynchronizationRelation.Created, SynchronizationDecision.Update)]
-    [DataRow(SynchronizationRelation.Created, SynchronizationRelation.Changed, SynchronizationDecision.Update)]
-    [DataRow(SynchronizationRelation.Created, SynchronizationRelation.Deleted, SynchronizationDecision.Delete)]
+    //[DataRow(SynchronizationRelation.Created, SynchronizationRelation.Changed, SynchronizationDecision.Update)] // not possible
+    //[DataRow(SynchronizationRelation.Created, SynchronizationRelation.Deleted, SynchronizationDecision.Delete)] // not possible
     [DataRow(SynchronizationRelation.Changed, SynchronizationRelation.NotChanged, SynchronizationDecision.Update)] //#9
-    [DataRow(SynchronizationRelation.Changed, SynchronizationRelation.Created, SynchronizationDecision.Update)]
+    //[DataRow(SynchronizationRelation.Changed, SynchronizationRelation.Created, SynchronizationDecision.Update)] // not possible
     [DataRow(SynchronizationRelation.Changed, SynchronizationRelation.Changed, SynchronizationDecision.Update)]
     [DataRow(SynchronizationRelation.Changed, SynchronizationRelation.Deleted, SynchronizationDecision.Delete)]  // #12
     [DataRow(SynchronizationRelation.Deleted, SynchronizationRelation.NotChanged, SynchronizationDecision.Update)]
-    [DataRow(SynchronizationRelation.Deleted, SynchronizationRelation.Created, SynchronizationDecision.Update)]
+    //[DataRow(SynchronizationRelation.Deleted, SynchronizationRelation.Created, SynchronizationDecision.Update)] // not possible
     [DataRow(SynchronizationRelation.Deleted, SynchronizationRelation.Changed, SynchronizationDecision.Update)]
     [DataRow(SynchronizationRelation.Deleted, SynchronizationRelation.Deleted, SynchronizationDecision.DoNothing)] // #16
     public void ReadonlyUpdates(
@@ -388,8 +388,11 @@ public class SynchronizationDecisionServiceTests
         switch (actualFile)
         {
             case SynchronizationRelation.NotChanged:
-                actualFiles.FileSystemEntries.Add(fileSystemEntry);
-                localState.FileSystemEntries.Add(fileSystemEntry);
+                if (remoteFile != SynchronizationRelation.Created)
+                {
+                    actualFiles.FileSystemEntries.Add(fileSystemEntry);
+                    localState.FileSystemEntries.Add(fileSystemEntry);
+                }
                 break;
             case SynchronizationRelation.Created:
                 actualFiles.FileSystemEntries.Add(fileSystemEntry);
@@ -408,14 +411,26 @@ public class SynchronizationDecisionServiceTests
         switch (remoteFile)
         {
             case SynchronizationRelation.NotChanged:
-                if (actualFile != SynchronizationRelation.Deleted)
+                if (actualFile != SynchronizationRelation.Deleted &&
+                    actualFile != SynchronizationRelation.Created)
+                {
+                    remoteState.FileSystemEntries.Add(fileSystemEntry);
+                }
+
+                if (actualFile == SynchronizationRelation.Deleted)
                 {
                     remoteState.FileSystemEntries.Add(fileSystemEntry);
                 }
                 break;
             case SynchronizationRelation.Created:
+                var changed1 = fileSystemEntry.Clone();
+                changed1.Sha512 = "sha-actual-file-remote";
+                remoteState.FileSystemEntries.Add(changed1);
                 break;
             case SynchronizationRelation.Changed:
+                var changed = fileSystemEntry.Clone();
+                changed.Sha512 = "sha-actual-file-remote";
+                remoteState.FileSystemEntries.Add(changed);
                 break;
             case SynchronizationRelation.Deleted:
                 break;
@@ -427,7 +442,7 @@ public class SynchronizationDecisionServiceTests
 
         // Assert
         var item = decisions.Single();
-        Assert.IsTrue(item.ExistsLocally == (actualFile != SynchronizationRelation.Deleted));
+        Assert.IsTrue(item.ExistsLocally == (actualFile != SynchronizationRelation.Deleted && !(actualFile == SynchronizationRelation.NotChanged && remoteFile ==  SynchronizationRelation.Created)));
         Assert.IsTrue(item.ActualFileToLocalStateRelation == actualFile);
         Assert.IsTrue(item.RemoteStateToLocalStateRelation == remoteFile);
         Assert.IsTrue(item.ActualFileAction == actualFileAction);

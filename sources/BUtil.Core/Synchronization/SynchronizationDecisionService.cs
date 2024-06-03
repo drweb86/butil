@@ -31,7 +31,7 @@ class SynchronizationDecisionService
         return items;
     }
 
-    private static void ResolveActions(
+    private void ResolveActions(
         IEnumerable<SynchronizationConsolidatedFileInfo> items,
         SynchronizationTaskModelMode synchronizationMode)
     {
@@ -41,10 +41,22 @@ class SynchronizationDecisionService
         }
     }
 
-    private static void ResolveAction(
+    private void ResolveAction(
         SynchronizationConsolidatedFileInfo item,
         SynchronizationTaskModelMode synchronizationMode)
     {
+        item.ActualFileAction = SynchronizationDecision.DoNothing;
+        item.RemoteAction = SynchronizationDecision.DoNothing;
+
+        // TODO: hanble relative paths
+        if (item.ActualFile != null &&
+            item.RemoteState != null &&
+            item.ActualFile.Equal(item.RemoteState))
+        {
+            item.ForceUpdateState = !item.RemoteState.Equal(item.LocalState);
+            return;
+        }
+
         switch (synchronizationMode)
         {
             case SynchronizationTaskModelMode.TwoWay:
@@ -214,157 +226,62 @@ class SynchronizationDecisionService
 
     private static void ResolveActionReadonlyMode(SynchronizationConsolidatedFileInfo item)
     {
-        item.ActualFileAction = SynchronizationDecision.DoNothing;
-        item.RemoteAction = SynchronizationDecision.DoNothing;
-
-        // test case #001
-        if (item.ExistsLocally &&
-            item.RemoteState == null &&
-            item.LocalState == null &&
-            item.ActualFileToLocalStateRelation == SynchronizationRelation.Created &&
-            item.RemoteStateToLocalStateRelation == SynchronizationRelation.NotChanged)
+        if (item.ActualFileToLocalStateRelation == SynchronizationRelation.NotChanged)
         {
-            item.RemoteAction = SynchronizationDecision.Update;
-            return;
-        }
-
-        // test case #002
-        if (item.ExistsLocally &&
-            item.RemoteState != null &&
-            item.LocalState != null &&
-            item.ActualFileToLocalStateRelation == SynchronizationRelation.NotChanged &&
-            item.RemoteStateToLocalStateRelation == SynchronizationRelation.NotChanged)
-        {
-            return;
-        }
-
-        // test case #003
-        if (item.ExistsLocally &&
-            item.RemoteState != null &&
-            item.LocalState != null &&
-            item.ActualFileToLocalStateRelation == SynchronizationRelation.NotChanged &&
-            item.RemoteStateToLocalStateRelation == SynchronizationRelation.Changed)
-        {
-            item.ActualFileAction = SynchronizationDecision.Update;
-            return;
-        }
-
-        // #009
-        if (!item.ExistsLocally &&
-            item.RemoteState != null &&
-            item.ActualFileToLocalStateRelation == SynchronizationRelation.Deleted &&
-            item.RemoteStateToLocalStateRelation == SynchronizationRelation.NotChanged)
-        {
-            item.RemoteAction = SynchronizationDecision.Delete;
-            return;
-        }
-
-        if (item.ExistsLocally &&
-            item.ActualFileToLocalStateRelation == SynchronizationRelation.NotChanged &&
-            item.RemoteStateToLocalStateRelation == SynchronizationRelation.Changed)
-        {
-            item.ActualFileAction = SynchronizationDecision.Delete;
-            item.RemoteAction = SynchronizationDecision.Update;
-        }
-
-        // test case #004
-        if (item.ExistsLocally &&
-            item.ActualFileToLocalStateRelation == SynchronizationRelation.NotChanged &&
-            item.RemoteStateToLocalStateRelation == SynchronizationRelation.Deleted)
-        {
-            item.ActualFileAction = SynchronizationDecision.Delete;
-            return;
-        }
-
-        // test case #005
-        if (item.RemoteState != null &&
-            item.ActualFile != null &&
-
-            item.ExistsLocally &&
-            item.ActualFileToLocalStateRelation == SynchronizationRelation.Created &&
-            (item.RemoteStateToLocalStateRelation == SynchronizationRelation.Created ||
-            item.RemoteStateToLocalStateRelation == SynchronizationRelation.Changed))
-        {
-            if (item.RemoteState.ModifiedAtUtc > item.ActualFile.ModifiedAtUtc)
+            switch (item.RemoteStateToLocalStateRelation)
             {
-                item.ActualFileAction = SynchronizationDecision.Update;
+                case SynchronizationRelation.NotChanged: 
+                    item.ActualFileAction = SynchronizationDecision.DoNothing;
+                    break;
+                case SynchronizationRelation.Created: 
+                case SynchronizationRelation.Changed: 
+                    item.ActualFileAction = SynchronizationDecision.Update;
+                    break;
+                case SynchronizationRelation.Deleted: 
+                    item.ActualFileAction = SynchronizationDecision.Delete;
+                    break;
             }
-            else
+        }
+
+        if (item.ActualFileToLocalStateRelation == SynchronizationRelation.Created)
+        {
+            switch (item.RemoteStateToLocalStateRelation)
             {
-                item.RemoteAction = SynchronizationDecision.Update;
+                case SynchronizationRelation.NotChanged:
+                    item.ActualFileAction = SynchronizationDecision.DoNothing;
+                    break;
+                case SynchronizationRelation.Created:
+                    item.ActualFileAction = SynchronizationDecision.Update;
+                    break;
             }
-            return;
         }
 
-        if (item.ExistsLocally &&
-            item.ActualFileToLocalStateRelation == SynchronizationRelation.Created &&
-            item.RemoteStateToLocalStateRelation == SynchronizationRelation.Deleted)
+        if (item.ActualFileToLocalStateRelation == SynchronizationRelation.Changed)
         {
-            item.RemoteAction = SynchronizationDecision.Update;
-        }
-
-        // #006
-        if (item.ExistsLocally &&
-            item.ActualFileToLocalStateRelation == SynchronizationRelation.Changed &&
-            item.RemoteStateToLocalStateRelation == SynchronizationRelation.NotChanged)
-        {
-            item.RemoteAction = SynchronizationDecision.Update;
-            return;
-        }
-
-        // #007
-        if (item.RemoteState != null &&
-            item.ActualFile != null &&
-
-            item.ExistsLocally &&
-            item.ActualFileToLocalStateRelation == SynchronizationRelation.Changed &&
-            item.RemoteStateToLocalStateRelation == SynchronizationRelation.Changed)
-        {
-            if (item.RemoteState.ModifiedAtUtc > item.ActualFile.ModifiedAtUtc)
+            switch (item.RemoteStateToLocalStateRelation)
             {
-                item.ActualFileAction = SynchronizationDecision.Update;
+                case SynchronizationRelation.NotChanged:
+                case SynchronizationRelation.Changed:
+                    item.ActualFileAction = SynchronizationDecision.Update;
+                    break;
+                case SynchronizationRelation.Deleted:
+                    item.ActualFileAction = SynchronizationDecision.Delete;
+                    break;
             }
-            else
+        }
+
+        if (item.ActualFileToLocalStateRelation == SynchronizationRelation.Deleted)
+        {
+            switch (item.RemoteStateToLocalStateRelation)
             {
-                item.RemoteAction = SynchronizationDecision.Update;
+                case SynchronizationRelation.NotChanged:
+                case SynchronizationRelation.Changed:
+                    item.ActualFileAction = SynchronizationDecision.Update;
+                    break;
+                case SynchronizationRelation.Deleted:
+                    item.ActualFileAction = SynchronizationDecision.DoNothing;
+                    break;
             }
-            return;
-        }
-
-        // #008
-        if (item.ExistsLocally &&
-            item.ActualFileToLocalStateRelation == SynchronizationRelation.Changed &&
-            item.RemoteStateToLocalStateRelation == SynchronizationRelation.Deleted)
-        {
-            item.RemoteAction = SynchronizationDecision.Update;
-            return;
-        }
-
-        // #010
-        if (!item.ExistsLocally &&
-            item.ActualFileToLocalStateRelation == SynchronizationRelation.Deleted &&
-            item.RemoteStateToLocalStateRelation == SynchronizationRelation.Changed)
-        {
-            item.ActualFileAction = SynchronizationDecision.Update;
-            return;
-        }
-
-        // #011
-        if (!item.ExistsLocally &&
-            item.ActualFileToLocalStateRelation == SynchronizationRelation.Deleted &&
-            item.RemoteStateToLocalStateRelation == SynchronizationRelation.Deleted)
-        {
-            item.ForceUpdateState = true;
-            return;
-        }
-
-        // #012
-        if (!item.ExistsLocally &&
-            item.ActualFileToLocalStateRelation == SynchronizationRelation.NotChanged &&
-            item.RemoteStateToLocalStateRelation == SynchronizationRelation.Created)
-        {
-            item.ActualFileAction = SynchronizationDecision.Update;
-            return;
         }
     }
 
