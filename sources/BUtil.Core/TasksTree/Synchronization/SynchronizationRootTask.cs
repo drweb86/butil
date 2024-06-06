@@ -18,6 +18,7 @@ class SynchronizationRootTask : SequentialBuTask
     private readonly SynchronizationAllStatesReadTask _synchronizationAllStatesReadTask;
     private readonly string _localFolder;
     private readonly SynchronizationTaskModelMode _synchronizationTaskMode;
+    private readonly string? _repositorySubfolder;
 
     private SynchronizationState? _localState;
     private SynchronizationState? _remoteState;
@@ -29,6 +30,7 @@ class SynchronizationRootTask : SequentialBuTask
         var options = (SynchronizationTaskModelOptionsV2)task.Model;
         _localFolder = options.LocalFolder;
         _synchronizationTaskMode = options.SynchronizationMode;
+        _repositorySubfolder = options.RepositorySubfolder;
         _synchronizationServices = new SynchronizationServices(log, task.Name, _localFolder, options.RepositorySubfolder, options.To, false);
 
         _synchronizationAllStatesReadTask = new SynchronizationAllStatesReadTask(_synchronizationServices, Events, _localFolder);
@@ -45,29 +47,39 @@ class SynchronizationRootTask : SequentialBuTask
 
         if (IsSuccess)
         {
-            _localState = _synchronizationAllStatesReadTask.LocalState;
-            _remoteState = _synchronizationAllStatesReadTask.RemoteState;
+            if (_synchronizationAllStatesReadTask.LocalState == null)
+            {
+                this.LogDebug("Synchronizing first time locally.");
+            }
+            _localState = _synchronizationAllStatesReadTask.LocalState ?? new SynchronizationState();
+
+            if (_synchronizationAllStatesReadTask.RemoteState == null)
+            {
+                this.LogDebug("Repository is empty.");
+            }
+            _remoteState = _synchronizationAllStatesReadTask.RemoteState ?? new SynchronizationState();
+
             _actualFiles = _synchronizationAllStatesReadTask.ActualFiles;
 
-            if (_remoteState == null)
-            {
-                if (_synchronizationTaskMode == SynchronizationTaskModelMode.TwoWay)
-                {
-                    UploadFirstRemoteVersion();
-                }
-            }
-            else
-            {
-                if (_localState == null)
-                {
-                    DownloadFirstVesion();
-                }
+            //if (_remoteState == null)
+            //{
+            //    if (_synchronizationTaskMode == SynchronizationTaskModelMode.TwoWay)
+            //    {
+            //        UploadFirstRemoteVersion();
+            //    }
+            //}
+            //else
+            //{
+            //    if (_localState == null)
+            //    {
+            //        DownloadFirstVesion();
+            //    }
 
-                if (IsSuccess)
-                {
+            //    if (IsSuccess)
+            //    {
                     NormalUpdate();
-                }
-            }
+            //    }
+            //}
         }
 
         UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
@@ -91,10 +103,7 @@ class SynchronizationRootTask : SequentialBuTask
         LogDebug(JsonSerializer.Serialize(syncItems, new JsonSerializerOptions { WriteIndented = true }));
         var tasks = new List<BuTask>();
         ExecuteActionsLocally(tasks, syncItems);
-        if (_synchronizationTaskMode == SynchronizationTaskModelMode.TwoWay)
-        {
-            ExecuteActionsRemotely(tasks, syncItems);
-        }
+        ExecuteActionsRemotely(tasks, syncItems);
 
         if (syncItems.Any(x => x.RemoteAction != SynchronizationDecision.DoNothing) ||
             syncItems.Any(x => x.ActualFileAction != SynchronizationDecision.DoNothing) ||
@@ -164,33 +173,9 @@ class SynchronizationRootTask : SequentialBuTask
                     tasks.Add(new SynchronizationLocalFileDeleteTask(_synchronizationServices, Events, _localFolder, item.RelativeFileName));
                     break;
                 case SynchronizationDecision.Update:
-                    tasks.Add(new SynchronizationRemoteFileDownloadTask(_synchronizationServices, Events, _localFolder, item.RelativeFileName, item.RemoteState!.ModifiedAtUtc));
+                    tasks.Add(new SynchronizationRemoteFileDownloadTask(_synchronizationServices, Events, _localFolder, item.RelativeFileName, item.RemoteState!.ModifiedAtUtc, _repositorySubfolder));
                     break;
             }
-        }
-    }
-
-    private void DownloadFirstVesion()
-    {
-        LogDebug("Download first version");
-        var synchronizationFileDownloadTasks = new List<SynchronizationRemoteFileDownloadTask>();
-
-        foreach (var item in _remoteState!.FileSystemEntries)
-        {
-            synchronizationFileDownloadTasks.Add(new SynchronizationRemoteFileDownloadTask(_synchronizationServices, Events, _localFolder, item.RelativeFileName, item.ModifiedAtUtc));
-        }
-
-        var tasks = new List<BuTask>();
-        tasks.AddRange(synchronizationFileDownloadTasks);
-        tasks.Add(new SynchronizationLocalStateSaveTask(synchronizationFileDownloadTasks.ToArray(), _synchronizationServices, Events, () => _remoteState));
-
-        Events.DuringExecutionTasksAdded(Id, tasks);
-        Children = tasks;
-        base.Execute();
-
-        if (IsSuccess)
-        {
-            _localState = _remoteState.Clone();
         }
     }
 

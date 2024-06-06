@@ -1,5 +1,6 @@
 ﻿using BUtil.Core.ConfigurationFileModels.V1;
 using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using System;
 using System.Collections.Generic;
@@ -24,8 +25,7 @@ public class TaskV2StoreService
 #else
         _folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BUtil Backup Tasks");
 #endif
-        if (!Directory.Exists(_folder))
-            Directory.CreateDirectory(_folder);
+        FileHelper.EnsureFolderCreated(_folder);
     }
 
     public TaskV2? Load(string name)

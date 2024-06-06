@@ -3,6 +3,7 @@ using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Storages;
 using BUtil.Windows.Utils;
+using System.IO;
 using System.Security;
 
 namespace BUtil.Windows.Services;

@@ -1,5 +1,6 @@
 ﻿
 using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.FileSystem;
 using BUtil.Core.Logs;
 using System;
 using System.IO;
@@ -29,8 +30,7 @@ public class FolderStorage : StorageBase<FolderStorageSettingsV2>
             Log.WriteLine(LoggingEvent.Debug, $"Copying \"{sourceFile}\" to \"{destinationFile}\"");
 
             var destinationDirectory = Path.GetDirectoryName(destinationFile) ?? string.Empty;
-            if (!Directory.Exists(destinationDirectory))
-                Directory.CreateDirectory(destinationDirectory);
+            FileHelper.EnsureFolderCreated(destinationDirectory);
 
             Copy(sourceFile, destinationFile);
 
@@ -169,8 +169,7 @@ public class FolderStorage : StorageBase<FolderStorageSettingsV2>
         var toPath = Path.Combine(Settings.DestinationFolder, toRelativeFileName);
 
         var destinationDirectory = Path.GetDirectoryName(toPath) ?? string.Empty;
-        if (!Directory.Exists(destinationDirectory))
-            Directory.CreateDirectory(destinationDirectory);
+        FileHelper.EnsureFolderCreated(destinationDirectory);
 
         File.Move(fromPath, toPath);
     }

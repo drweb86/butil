@@ -1,4 +1,5 @@
 ﻿
+using BUtil.Core.FileSystem;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -33,8 +34,7 @@ public class CashedHashStoreService : ICashedHashStoreService
 #else
         _folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Cache-V1");
 #endif
-        if (!Directory.Exists(_folder))
-            Directory.CreateDirectory(_folder);
+        FileHelper.EnsureFolderCreated(_folder);
     }
 
     public IEnumerable<CachedHash>? Load()

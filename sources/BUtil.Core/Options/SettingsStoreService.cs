@@ -8,8 +8,7 @@ public class SettingsStoreService
 {
     public SettingsStoreService()
     {
-        if (!Directory.Exists(Directories.SettingsDir))
-            Directory.CreateDirectory(Directories.SettingsDir);
+        FileHelper.EnsureFolderCreated(Directories.SettingsDir);
     }
 
     public string Load(string name, string defaultValue)

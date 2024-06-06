@@ -1,4 +1,5 @@
 ﻿
+using BUtil.Core.FileSystem;
 using System;
 using System.IO;
 using System.Text.Json;
@@ -17,8 +18,7 @@ public class ImportMediaFileService
 #else
         _folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BUtil Backup Tasks - States");
 #endif
-        if (!Directory.Exists(_folder))
-            Directory.CreateDirectory(_folder);
+        FileHelper.EnsureFolderCreated(_folder);
     }
 
     public ImportMediaState? Load(string name)

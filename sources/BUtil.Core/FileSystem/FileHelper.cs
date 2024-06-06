@@ -1,10 +1,35 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 
 namespace BUtil.Core.FileSystem;
 
-internal class FileHelper
+internal static class FileHelper
 {
+    public static void EnsureFolderCreatedForFile(string file)
+    {
+        var folder = Path.GetDirectoryName(file)!;
+        if (!Directory.Exists(folder))
+        {
+            Directory.CreateDirectory(folder);
+        }
+    }
+
+    public static void EnsureFolderCreated(string folder)
+    {
+        if (!Directory.Exists(folder))
+        {
+            Directory.CreateDirectory(folder);
+        }
+    }
+
+    public static string Combine(string? subfolder, string relativeFileName)
+    {
+        return string.IsNullOrWhiteSpace(subfolder)
+            ? relativeFileName
+            : Path.Combine(subfolder, relativeFileName);
+    }
+
     internal static string? NormalizeRelativePath(string? repositorySubfolder)
     {
         var parts = (repositorySubfolder ?? string.Empty)

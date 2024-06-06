@@ -27,21 +27,13 @@ public static class Directories
 
     public static string SettingsDir => _settingsDir;
 
-    private static void CreateDirectory(string path)
-    {
-        if (!Directory.Exists(path))
-            Directory.CreateDirectory(path);
-    }
-
     public static string LogsFolder { get; }
 
     static Directories()
     {
-        CreateDirectory(_userDataFolder);
+        FileHelper.EnsureFolderCreated(_userDataFolder);
         LogsFolder = Path.Combine(Directories.UserDataFolder, "Logs", "v3");
-        if (!Directory.Exists(LogsFolder))
-            Directory.CreateDirectory(LogsFolder);
-        if (!Directory.Exists(StateFolder))
-            Directory.CreateDirectory(StateFolder);
+        FileHelper.EnsureFolderCreated(LogsFolder);
+        FileHelper.EnsureFolderCreated(StateFolder);
     }
 }

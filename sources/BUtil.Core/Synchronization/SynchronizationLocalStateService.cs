@@ -30,8 +30,7 @@ class SynchronizationLocalStateService
         var directory = Path.GetDirectoryName(fileName);
         if (directory != null)
         {
-            if (!Directory.Exists(directory))
-                Directory.CreateDirectory(directory);
+            FileHelper.EnsureFolderCreated(directory);
         }
 
         if (!File.Exists(fileName))
@@ -56,8 +55,7 @@ class SynchronizationLocalStateService
         var directory = Path.GetDirectoryName(fileName);
         if (directory != null)
         {
-            if (!Directory.Exists(directory))
-                Directory.CreateDirectory(directory);
+            FileHelper.EnsureFolderCreated(directory);
         }
 
         if (File.Exists(fileName))
