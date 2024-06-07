@@ -19,6 +19,6 @@ internal class SynchronizationRemoteFileDeleteTask : BuTaskV2
 
     protected override void ExecuteInternal()
     {
-        _synchronizationServices.RemoteStorage.Delete(_relativeFileName);
+        _synchronizationServices.StorageSpecificServices.Storage.Delete(_relativeFileName);
     }
 }

@@ -1,10 +1,18 @@
-﻿using System;
+﻿using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.Misc;
+using BUtil.Core.State;
+using System;
 
 namespace BUtil.Core.Synchronization;
 
 class SynchronizationStateFile
 {
     public SynchronizationStateFile() { } // deserialization
+
+    public SynchronizationStateFile(SourceItemV2 sourceItem, FileState fileState)
+        : this(SourceItemHelper.GetSourceItemRelativeFileName(sourceItem.Target, fileState), fileState.LastWriteTimeUtc, fileState.Sha512, fileState.Size )
+    {
+    }
 
     public SynchronizationStateFile(string relativeFileName, DateTime modifiedAtUtc, string sha512, long size)
     {

@@ -35,7 +35,7 @@ internal class SynchronizationRemoteFileDownloadTask : BuTaskV2
         FileHelper.EnsureFolderCreatedForFile(destinationFile);
 
         var actualRemoteFile = FileHelper.Combine(_repositorySubfolder, _relativeFileName);
-        _synchronizationServices.RemoteStorage.Download(actualRemoteFile, destinationFile);
+        _synchronizationServices.StorageSpecificServices.Storage.Download(actualRemoteFile, destinationFile);
         if (_lastWriteTimeUtc != null)
         {
             File.SetLastWriteTimeUtc(destinationFile, _lastWriteTimeUtc.Value);

@@ -24,6 +24,6 @@ internal class SynchronizationRemoteFileUpdateTask : BuTaskV2
 
     protected override void ExecuteInternal()
     {
-        _synchronizationServices.RemoteStorage.Upload(Path.Combine(_localFolder, _relativeFileName), _relativeFileName);
+        _synchronizationServices.StorageSpecificServices.Storage.Upload(Path.Combine(_localFolder, _relativeFileName), _relativeFileName);
     }
 }

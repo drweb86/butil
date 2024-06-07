@@ -16,19 +16,6 @@ class SynchronizationRemoteStateService
 
     private readonly string _remoteFile = "Remote State - V1.json";
 
-    public SynchronizationState? Load()
-    {
-        if (!_storage.Exists(_remoteFile))
-            return null;
-
-        using var tempFolder = new TempFolder();
-        var localFile = Path.Combine(tempFolder.Folder, _remoteFile);
-        _storage.Download(_remoteFile, localFile);
-
-        var content = File.ReadAllText(localFile);
-        return JsonSerializer.Deserialize<SynchronizationState>(content);
-    }
-
     public void Save(SynchronizationState localFileState)
     {
         if (_storage.Exists(_remoteFile))

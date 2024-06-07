@@ -16,7 +16,7 @@ internal class WriteIncrementedVersionTask : SequentialBuTask
     public WriteIncrementedVersionTask(
         StorageSpecificServicesIoc services,
         TaskEvents events,
-        GetStateOfStorageTask storageStateTask,
+        RemoteStateLoadTask storageStateTask,
         IEnumerable<GetStateOfSourceItemTask> getSourceItemStateTasks,
         IncrementalBackupModelOptionsV2 incrementalBackupModelOptions) :
         base(services.Log, events, Localization.Resources.IncrementalBackup_Version_Save)

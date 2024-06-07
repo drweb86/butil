@@ -3,6 +3,7 @@ using BUtil.Core.Hashing;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
 using BUtil.Core.Storages;
+using BUtil.Core.TasksTree.IncrementalModel;
 using System;
 
 namespace BUtil.Core.Synchronization;
@@ -10,33 +11,30 @@ namespace BUtil.Core.Synchronization;
 internal class SynchronizationServices : IDisposable
 {
     public readonly ILog Log;
-    public readonly IHashService HashService;
-    public readonly ICashedHashStoreService CachedHashStoreService;
     public readonly SynchronizationLocalStateService LocalStateService;
     public readonly SynchronizationActualFilesService ActualFilesService;
     public readonly SynchronizationDecisionService DecisionService;
 
+    public CommonServicesIoc CommonServices { get; }
+    public StorageSpecificServicesIoc StorageSpecificServices { get; }
+
     private readonly Lazy<SynchronizationRemoteStateService> _remoteStateService;
     public SynchronizationRemoteStateService RemoteStateService => _remoteStateService.Value;
-
-    private readonly Lazy<IStorage> _remoteStorage;
-    public IStorage RemoteStorage => _remoteStorage.Value;
 
     public SynchronizationServices(ILog log, string taskName, string localFolder, string? repositorySubfolder, IStorageSettingsV2 remoteStorageSettings, bool autodetectConnectionSettings)
     {
         Log = log;
-        CachedHashStoreService = new CashedHashStoreService();
-        HashService = new CachedHashService(CachedHashStoreService);
         LocalStateService = new SynchronizationLocalStateService(taskName, localFolder, repositorySubfolder);
-        _remoteStorage = new Lazy<IStorage>(() => StorageFactory.Create(log, remoteStorageSettings, autodetectConnectionSettings));
-        _remoteStateService = new Lazy<SynchronizationRemoteStateService>(() => new SynchronizationRemoteStateService(RemoteStorage));
-        ActualFilesService = new SynchronizationActualFilesService(HashService, localFolder);
         DecisionService = new SynchronizationDecisionService(repositorySubfolder);
+        CommonServices = new CommonServicesIoc();
+        ActualFilesService = new SynchronizationActualFilesService(CommonServices.HashService, localFolder);
+        StorageSpecificServices = new StorageSpecificServicesIoc(log, remoteStorageSettings, CommonServices.HashService, autodetectConnectionSettings);
+        _remoteStateService = new Lazy<SynchronizationRemoteStateService>(() => new SynchronizationRemoteStateService(StorageSpecificServices.Storage));
     }
-
 
     public void Dispose()
     {
-        HashService.Dispose();
+        StorageSpecificServices.Dispose();
+        CommonServices.Dispose();
     }
 }

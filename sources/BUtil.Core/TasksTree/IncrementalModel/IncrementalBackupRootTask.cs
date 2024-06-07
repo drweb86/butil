@@ -8,12 +8,12 @@ using System.Collections.Generic;
 
 namespace BUtil.Core.TasksTree.IncrementalModel;
 
-class IncrementalBackupTask : SequentialBuTask
+class IncrementalBackupRootTask : SequentialBuTask
 {
     private readonly CommonServicesIoc _commonServicesIoc;
     private readonly StorageSpecificServicesIoc _storageService;
 
-    public IncrementalBackupTask(ILog log, TaskEvents backupEvents, TaskV2 backupTask)
+    public IncrementalBackupRootTask(ILog log, TaskEvents backupEvents, TaskV2 backupTask)
         : base(log, backupEvents, Resources.IncrementalBackup_Title, null)
     {
         var tasks = new List<BuTask>();
@@ -27,7 +27,7 @@ class IncrementalBackupTask : SequentialBuTask
         var readSatesTask = new GetStateOfSourceItemsAndStoragesTask(Log, Events, modelOptions.Items, _commonServicesIoc, _storageService, modelOptions.FileExcludePatterns, ((IncrementalBackupModelOptionsV2)backupTask.Model).Password);
         tasks.Add(readSatesTask);
 
-        tasks.Add(new WriteIncrementedVersionTask(_storageService, Events, readSatesTask.StorageStateTask, readSatesTask.GetSourceItemStateTasks, (IncrementalBackupModelOptionsV2)backupTask.Model));
+        tasks.Add(new WriteIncrementedVersionTask(_storageService, Events, readSatesTask.RemoteStateLoadTask, readSatesTask.GetSourceItemStateTasks, (IncrementalBackupModelOptionsV2)backupTask.Model));
 
         Children = tasks;
     }

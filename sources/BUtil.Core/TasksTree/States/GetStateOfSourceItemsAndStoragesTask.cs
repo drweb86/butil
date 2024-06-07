@@ -13,7 +13,7 @@ namespace BUtil.Core.TasksTree.States;
 internal class GetStateOfSourceItemsAndStoragesTask : ParallelBuTask
 {
     public IEnumerable<GetStateOfSourceItemTask> GetSourceItemStateTasks { get; }
-    public GetStateOfStorageTask StorageStateTask { get; }
+    public RemoteStateLoadTask RemoteStateLoadTask { get; }
     public DeleteUnversionedFilesStorageTask DeleteUnversionedFilesStorageTask { get; }
 
     public GetStateOfSourceItemsAndStoragesTask(
@@ -37,8 +37,8 @@ internal class GetStateOfSourceItemsAndStoragesTask : ParallelBuTask
         }
         GetSourceItemStateTasks = setSourceItemStateTasks;
 
-        var getStorageStateTask = new GetStateOfStorageTask(servicesIoc, Events, password);
-        StorageStateTask = getStorageStateTask;
+        var getStorageStateTask = new RemoteStateLoadTask(servicesIoc, Events, password);
+        RemoteStateLoadTask = getStorageStateTask;
         childTasks.Add(getStorageStateTask);
 
         var deleteUnversionedFilesStorageTask = new DeleteUnversionedFilesStorageTask(servicesIoc, Events, getStorageStateTask);
@@ -52,7 +52,7 @@ internal class GetStateOfSourceItemsAndStoragesTask : ParallelBuTask
     {
         UpdateStatus(ProcessingStatus.InProgress);
 
-        var storageTasksExecuter = new ParallelExecuter(new[] { StorageStateTask }, 1);
+        var storageTasksExecuter = new ParallelExecuter(new[] { RemoteStateLoadTask }, 1);
         var sourceItemGroupTasks = GetSourceItemStateTasks
             .GroupBy(x => Directory.GetDirectoryRoot(x.SourceItem.Target))
             .Select(x => new SequentialBuTask(new StubLog(), new TaskEvents(), string.Empty, x.ToList()))

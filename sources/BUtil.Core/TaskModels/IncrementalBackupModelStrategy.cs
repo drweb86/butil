@@ -19,6 +19,6 @@ class IncrementalBackupModelStrategy : ITaskModelStrategy
 
     public BuTask GetTask(TaskEvents events)
     {
-        return new IncrementalBackupTask(_log, events, _task);
+        return new IncrementalBackupRootTask(_log, events, _task);
     }
 }

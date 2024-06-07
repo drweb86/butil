@@ -15,25 +15,18 @@ namespace BUtil.Core.TasksTree.IncrementalModel;
 class SynchronizationRootTask : SequentialBuTask
 {
     private readonly SynchronizationServices _synchronizationServices;
-    private readonly SynchronizationAllStatesReadTask _synchronizationAllStatesReadTask;
-    private readonly string _localFolder;
-    private readonly SynchronizationTaskModelMode _synchronizationTaskMode;
-    private readonly string? _repositorySubfolder;
+    private readonly SynchronizationModel _model = new SynchronizationModel();
 
-    private SynchronizationState? _localState;
-    private SynchronizationState? _remoteState;
-    private SynchronizationState _actualFiles = null!;
+    private readonly SynchronizationAllStatesReadTask _synchronizationAllStatesReadTask;
 
     public SynchronizationRootTask(ILog log, TaskEvents backupEvents, TaskV2 task)
         : base(log, backupEvents, Resources.SynchronizationTask_Create, null)
     {
         var options = (SynchronizationTaskModelOptionsV2)task.Model;
-        _localFolder = options.LocalFolder;
-        _synchronizationTaskMode = options.SynchronizationMode;
-        _repositorySubfolder = options.RepositorySubfolder;
-        _synchronizationServices = new SynchronizationServices(log, task.Name, _localFolder, options.RepositorySubfolder, options.To, false);
+        _model.TaskOptions = (SynchronizationTaskModelOptionsV2)task.Model;
+        _synchronizationServices = new SynchronizationServices(log, task.Name, _model.TaskOptions.LocalFolder, options.RepositorySubfolder, options.To, false);
 
-        _synchronizationAllStatesReadTask = new SynchronizationAllStatesReadTask(_synchronizationServices, Events, _localFolder);
+        _synchronizationAllStatesReadTask = new SynchronizationAllStatesReadTask(_synchronizationServices, Events, _model);
 
         Children = new List<BuTask> { _synchronizationAllStatesReadTask };
     }
@@ -47,39 +40,7 @@ class SynchronizationRootTask : SequentialBuTask
 
         if (IsSuccess)
         {
-            if (_synchronizationAllStatesReadTask.LocalState == null)
-            {
-                this.LogDebug("Synchronizing first time locally.");
-            }
-            _localState = _synchronizationAllStatesReadTask.LocalState ?? new SynchronizationState();
-
-            if (_synchronizationAllStatesReadTask.RemoteState == null)
-            {
-                this.LogDebug("Repository is empty.");
-            }
-            _remoteState = _synchronizationAllStatesReadTask.RemoteState ?? new SynchronizationState();
-
-            _actualFiles = _synchronizationAllStatesReadTask.ActualFiles;
-
-            //if (_remoteState == null)
-            //{
-            //    if (_synchronizationTaskMode == SynchronizationTaskModelMode.TwoWay)
-            //    {
-            //        UploadFirstRemoteVersion();
-            //    }
-            //}
-            //else
-            //{
-            //    if (_localState == null)
-            //    {
-            //        DownloadFirstVesion();
-            //    }
-
-            //    if (IsSuccess)
-            //    {
-                    NormalUpdate();
-            //    }
-            //}
+            NormalUpdate();
         }
 
         UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
@@ -92,13 +53,13 @@ class SynchronizationRootTask : SequentialBuTask
     private void NormalUpdate()
     {
         LogDebug("Normal update.");
-        var syncItems = _synchronizationServices.DecisionService.Decide(_synchronizationTaskMode, _localState!, _actualFiles, _remoteState!);
+        var syncItems = _synchronizationServices.DecisionService.Decide(_model.TaskOptions.SynchronizationMode, _model.LocalState, _model.ActualFiles, _model.RemoteState);
         LogDebug("Local state");
-        LogDebug(JsonSerializer.Serialize(_localState, new JsonSerializerOptions { WriteIndented = true }));
+        LogDebug(JsonSerializer.Serialize(_model.LocalState, new JsonSerializerOptions { WriteIndented = true }));
         LogDebug("Actual files");
-        LogDebug(JsonSerializer.Serialize(_actualFiles, new JsonSerializerOptions { WriteIndented = true }));
+        LogDebug(JsonSerializer.Serialize(_model.ActualFiles, new JsonSerializerOptions { WriteIndented = true }));
         LogDebug("Remote state");
-        LogDebug(JsonSerializer.Serialize(_remoteState, new JsonSerializerOptions { WriteIndented = true }));
+        LogDebug(JsonSerializer.Serialize(_model.RemoteState, new JsonSerializerOptions { WriteIndented = true }));
         LogDebug("Decisions");
         LogDebug(JsonSerializer.Serialize(syncItems, new JsonSerializerOptions { WriteIndented = true }));
         var tasks = new List<BuTask>();
@@ -109,13 +70,13 @@ class SynchronizationRootTask : SequentialBuTask
             syncItems.Any(x => x.ActualFileAction != SynchronizationDecision.DoNothing) ||
             syncItems.Any(x => x.ForceUpdateState))
         {
-            var loadActualFilesStateTask = new SynchronizationReadActualFilesTask(_synchronizationServices, Events, _localFolder);
-            tasks.Add(loadActualFilesStateTask);
+            var getSourceItemStateTask = new GetStateOfSourceItemTask(Log, Events, _model.ToSourceItem(), new List<string>(), _synchronizationServices.CommonServices);
+            tasks.Add(getSourceItemStateTask);
 
-            tasks.Add(new SynchronizationLocalStateSaveTask(tasks.ToArray(), _synchronizationServices, Events, () => GetLocalState(loadActualFilesStateTask.SynchronizationState!)));
-            if (_synchronizationTaskMode == SynchronizationTaskModelMode.TwoWay)
+            tasks.Add(new SynchronizationLocalStateSaveTask(tasks.ToArray(), _synchronizationServices, Events, () => GetLocalState(GetActualFiles(getSourceItemStateTask))));
+            if (_model.TaskOptions.SynchronizationMode == SynchronizationTaskModelMode.TwoWay)
             {
-                tasks.Add(new SynchronizationRemoteStateSaveTask(tasks.ToArray(), _synchronizationServices, Events, () => loadActualFilesStateTask.SynchronizationState!));
+                tasks.Add(new SynchronizationRemoteStateSaveTask(tasks.ToArray(), _synchronizationServices, Events, () => GetActualFiles(getSourceItemStateTask)));
             }
         }
 
@@ -124,9 +85,30 @@ class SynchronizationRootTask : SequentialBuTask
         base.Execute();
     }
 
+    private SynchronizationState GetActualFiles(GetStateOfSourceItemTask task)
+    {
+        if (!task.IsSuccess)
+        {
+            throw new InvalidOperationException("Source item state population has failed!");
+        }
+
+        var state = task.SourceItemState;
+        if (state == null)
+        {
+            throw new InvalidOperationException("Source item state is corrupted (null)!");
+        }
+
+        return new SynchronizationState()
+        {
+            FileSystemEntries = state.FileStates
+                .Select(x => new SynchronizationStateFile(state.SourceItem, x))
+                .ToList(),
+        };
+    }
+
     private SynchronizationState GetLocalState(SynchronizationState actualFilesState)
     {
-        var synced = _synchronizationServices.DecisionService.Decide(_synchronizationTaskMode, _localState!, actualFilesState, _remoteState!);
+        var synced = _synchronizationServices.DecisionService.Decide(_model.TaskOptions.SynchronizationMode, _model.LocalState, actualFilesState, _model.RemoteState);
 
         var syncedState = new SynchronizationState
         {
@@ -154,7 +136,7 @@ class SynchronizationRootTask : SequentialBuTask
                     tasks.Add(new SynchronizationRemoteFileDeleteTask(_synchronizationServices, Events, item.RelativeFileName));
                     break;
                 case SynchronizationDecision.Update:
-                    tasks.Add(new SynchronizationRemoteFileUpdateTask(_synchronizationServices, Events, _localFolder, item.RelativeFileName));
+                    tasks.Add(new SynchronizationRemoteFileUpdateTask(_synchronizationServices, Events, _model.TaskOptions.LocalFolder, item.RelativeFileName));
                     break;
 
             }
@@ -170,10 +152,10 @@ class SynchronizationRootTask : SequentialBuTask
                 case SynchronizationDecision.DoNothing:
                     break;
                 case SynchronizationDecision.Delete:
-                    tasks.Add(new SynchronizationLocalFileDeleteTask(_synchronizationServices, Events, _localFolder, item.RelativeFileName));
+                    tasks.Add(new SynchronizationLocalFileDeleteTask(_synchronizationServices, Events, _model.TaskOptions.LocalFolder, item.RelativeFileName));
                     break;
                 case SynchronizationDecision.Update:
-                    tasks.Add(new SynchronizationRemoteFileDownloadTask(_synchronizationServices, Events, _localFolder, item.RelativeFileName, item.RemoteState!.ModifiedAtUtc, _repositorySubfolder));
+                    tasks.Add(new SynchronizationRemoteFileDownloadTask(_synchronizationServices, Events, _model.TaskOptions.LocalFolder, item.RelativeFileName, item.RemoteState!.ModifiedAtUtc, _model.TaskOptions.RepositorySubfolder));
                     break;
             }
         }
@@ -187,15 +169,15 @@ class SynchronizationRootTask : SequentialBuTask
         LogDebug("Upload first remote version");
         var synchronizationFileUploadTasks = new List<SynchronizationRemoteFileUpdateTask>();
         
-        foreach (var item in _actualFiles.FileSystemEntries)
+        foreach (var item in _model.ActualFiles.FileSystemEntries)
         {
-            synchronizationFileUploadTasks.Add(new SynchronizationRemoteFileUpdateTask(_synchronizationServices, Events, _localFolder, item.RelativeFileName));
+            synchronizationFileUploadTasks.Add(new SynchronizationRemoteFileUpdateTask(_synchronizationServices, Events, _model.TaskOptions.LocalFolder, item.RelativeFileName));
         }
 
         var tasks = new List<BuTask>();
         tasks.AddRange(synchronizationFileUploadTasks);
-        tasks.Add(new SynchronizationLocalStateSaveTask(synchronizationFileUploadTasks.ToArray(), _synchronizationServices, Events, () => _actualFiles));
-        tasks.Add(new SynchronizationRemoteStateSaveTask(synchronizationFileUploadTasks.ToArray(), _synchronizationServices, Events, () => _actualFiles));
+        tasks.Add(new SynchronizationLocalStateSaveTask(synchronizationFileUploadTasks.ToArray(), _synchronizationServices, Events, () => _model.ActualFiles));
+        tasks.Add(new SynchronizationRemoteStateSaveTask(synchronizationFileUploadTasks.ToArray(), _synchronizationServices, Events, () => _model.ActualFiles));
 
         Events.DuringExecutionTasksAdded(Id, tasks);
 

@@ -15,9 +15,9 @@ internal class CalculateIncrementedVersionForStorageTask : BuTask
     public bool VersionIsNeeded { get; private set; }
     public IncrementalBackupState? IncrementalBackupState { get; private set; }
 
-    private readonly GetStateOfStorageTask _storageStateTask;
+    private readonly RemoteStateLoadTask _storageStateTask;
     private readonly IEnumerable<GetStateOfSourceItemTask> _getSourceItemStateTasks;
-    public CalculateIncrementedVersionForStorageTask(ILog log, TaskEvents events, GetStateOfStorageTask storageStateTask,
+    public CalculateIncrementedVersionForStorageTask(ILog log, TaskEvents events, RemoteStateLoadTask storageStateTask,
         IEnumerable<GetStateOfSourceItemTask> getSourceItemStateTasks) :
         base(log, events, BUtil.Core.Localization.Resources.IncrementalBackup_Version_Calculate)
     {

@@ -15,7 +15,7 @@ public class GetExistingVersionStateFromStorageTask : SequentialBuTask
 {
     private readonly CommonServicesIoc _commonServicesIoc = new();
     private readonly StorageSpecificServicesIoc _storageSpecificServicesIoc;
-    private readonly GetStateOfStorageTask _getStateOfStorageTask;
+    private readonly RemoteStateLoadTask _getStateOfStorageTask;
 
     public GetExistingVersionStateFromStorageTask(ILog log, TaskEvents events, IStorageSettingsV2 storageSettings, string password)
         : base(log, events, "Get existing version state from storage")
