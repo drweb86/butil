@@ -57,6 +57,10 @@ public class LinuxSupportManager : ISupportManager
         {
             LaunchUiAppInternal(true, $"{TasksAppArguments.Restore} \"{TasksAppArguments.RunTask}={taskName}\"");
         }
+        else if (task?.Model is SynchronizationTaskModelOptionsV2)
+        {
+            LaunchUiAppInternal(true, $"{TasksAppArguments.Restore} \"{TasksAppArguments.RunTask}={taskName}\"");
+        }
         else
         {
             LaunchUiAppInternal(true, TasksAppArguments.Restore);

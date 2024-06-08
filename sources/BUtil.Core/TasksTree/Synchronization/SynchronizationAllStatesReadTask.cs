@@ -1,5 +1,7 @@
 ﻿using BUtil.Core.Events;
 using BUtil.Core.Localization;
+using BUtil.Core.Misc;
+using BUtil.Core.State;
 using BUtil.Core.Synchronization;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
@@ -7,6 +9,7 @@ using BUtil.Core.TasksTree.States;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 
 namespace BUtil.Core.TasksTree.Synchronization;
 
@@ -27,7 +30,7 @@ internal class SynchronizationAllStatesReadTask : ParallelBuTask
         _synchronizationServices = synchronizationServices;
         _model = model;
 
-        _getStateOfSourceItemsAndStoragesTask = new GetStateOfSourceItemsAndStoragesTask(Log, Events, [_model.ToSourceItem()], 
+        _getStateOfSourceItemsAndStoragesTask = new GetStateOfSourceItemsAndStoragesTask(Log, Events, [_model.LocalSourceItem], 
             synchronizationServices.CommonServices, synchronizationServices.StorageSpecificServices, new List<string>(), _model.TaskOptions.Password);
         _synchronizationLocalStateLoadTask = new SynchronizationLocalStateLoadTask(_synchronizationServices, Events);
 
@@ -48,8 +51,29 @@ internal class SynchronizationAllStatesReadTask : ParallelBuTask
             if (IsSuccess)
             {
                 _model.RemoteState = GetRemoteState();
+                _model.RemoteStorageState = GetRemoteStorageState();
+
+                var lastVersion = _model.RemoteStorageState.VersionStates
+                    .OrderByDescending(x => x.BackupDateUtc)
+                    .FirstOrDefault();
+
+                _model.RemoteSourceItem = lastVersion?.SourceItemChanges.SingleOrDefault(x => SynchronizationHelper.IsSynchronizationSourceItem(x.SourceItem))?.SourceItem ?? _model.LocalSourceItem;
+
+                _model.RemoteStorageFiles = lastVersion != null
+                    ? SourceItemHelper.BuildVersionFiles(
+                        _model.RemoteStorageState,
+                        _model.RemoteSourceItem,
+                        lastVersion)
+                    : new List<StorageFile>();
                 _model.LocalState = GetLocalState();
                 _model.ActualFiles = GetActualFiles();
+
+                LogDebug("Local state");
+                LogDebug(JsonSerializer.Serialize(_model.LocalState, new JsonSerializerOptions { WriteIndented = true }));
+                LogDebug("Actual files");
+                LogDebug(JsonSerializer.Serialize(_model.ActualFiles, new JsonSerializerOptions { WriteIndented = true }));
+                LogDebug("Remote state");
+                LogDebug(JsonSerializer.Serialize(_model.RemoteState, new JsonSerializerOptions { WriteIndented = true }));
             }
         }
         catch (Exception ex)
@@ -95,6 +119,16 @@ internal class SynchronizationAllStatesReadTask : ParallelBuTask
         }
 
         return _synchronizationLocalStateLoadTask.SynchronizationState;
+    }
+
+    private IncrementalBackupState GetRemoteStorageState()
+    {
+        if (!_getStateOfSourceItemsAndStoragesTask.RemoteStateLoadTask.IsSuccess)
+        {
+            throw new InvalidOperationException("Remote state population has failed!");
+        }
+
+        return _getStateOfSourceItemsAndStoragesTask.RemoteStateLoadTask.StorageState!;
     }
 
     private SynchronizationState GetRemoteState()

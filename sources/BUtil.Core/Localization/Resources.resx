@@ -147,8 +147,8 @@ or warnings will be registered.</value>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Changes</value>
   </data>
-  <data name="BackupVersion_CleanupUncompleted" xml:space="preserve">
-    <value>Delete uncompleted backups</value>
+  <data name="DataStorage_Maintenance" xml:space="preserve">
+    <value>Data storage maintenance</value>
   </data>
   <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
     <value>Do you really want to delete version "{0}"?

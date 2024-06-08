@@ -5,6 +5,7 @@ using BUtil.Core;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
 using BUtil.Core.Localization;
+using BUtil.Core.Misc;
 using BUtil.Core.State;
 using BUtil.Core.TasksTree.States;
 using BUtil.Core.TasksTree.Storage;
@@ -327,51 +328,6 @@ public class VersionsListViewModel : ObservableObject
             .ForEach(FileChangeViewItems.Add);
     }
 
-
-    private static List<StorageFile> BuildVersionFiles(IncrementalBackupState state, SourceItemV2 sourceItem, VersionState selectedVersion)
-    {
-        List<StorageFile>? result = null;
-
-        foreach (var versionState in state.VersionStates)
-        {
-            var sourceItemChanges = versionState.SourceItemChanges.FirstOrDefault(x => x.SourceItem.CompareTo(sourceItem));
-            if (sourceItemChanges == null)
-            {
-                result = null;
-            }
-            else
-            {
-                if (result == null)
-                {
-                    result = sourceItemChanges.CreatedFiles.ToList();
-                }
-                else
-                {
-                    result.AddRange(sourceItemChanges.CreatedFiles);
-                    foreach (var deletedFile in sourceItemChanges.DeletedFiles)
-                    {
-                        var itemToRemove = result.First(x => x.FileState.FileName == deletedFile);
-                        result.Remove(itemToRemove);
-                    }
-                    foreach (var updatedFile in sourceItemChanges.UpdatedFiles)
-                    {
-                        var itemToRemove = result.First(x => x.FileState.FileName == updatedFile.FileState.FileName);
-                        result.Remove(itemToRemove);
-
-                        result.Add(updatedFile);
-                    }
-                }
-            }
-
-            if (versionState == selectedVersion)
-                break;
-        }
-
-        return result
-            .OrderBy(x => x.FileState.FileName)
-            .ToList();
-    }
-
     private static IEnumerable<Tuple<ChangeState, string>> GetChangesViewItems(VersionState state)
     {
         var result = new List<Tuple<ChangeState, string>>();
@@ -419,7 +375,7 @@ public class VersionsListViewModel : ObservableObject
         {
             result.Add(new Tuple<SourceItemV2, List<StorageFile>>(
                 sourceItem,
-                BuildVersionFiles(state, sourceItem, selectedVersion)
+                SourceItemHelper.BuildVersionFiles(state, sourceItem, selectedVersion)
                 ));
         }
 

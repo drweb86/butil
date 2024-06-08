@@ -157,12 +157,17 @@ public partial class MainWindowViewModel : ViewModelBase
         {
             var taskName = args[1].Substring(TasksAppArguments.RunTask.Length + 1);
             var task = new TaskV2StoreService().Load(taskName);
-            if (task == null || !(task.Model is IncrementalBackupModelOptionsV2))
+            if (task == null || ( !(task.Model is IncrementalBackupModelOptionsV2) && !(task.Model is SynchronizationTaskModelOptionsV2))   )
                 WindowManager.SwitchView(new RestoreViewModel(null, null));
-            else
+            else if (task.Model is IncrementalBackupModelOptionsV2)
             {
                 var incrementalOptions = (IncrementalBackupModelOptionsV2)task.Model ?? throw new Exception();
                 WindowManager.SwitchView(new RestoreViewModel(incrementalOptions.To, incrementalOptions.Password));
+            }
+            else if (task.Model is SynchronizationTaskModelOptionsV2)
+            {
+                var options = (SynchronizationTaskModelOptionsV2)task.Model ?? throw new Exception();
+                WindowManager.SwitchView(new RestoreViewModel(options.To, options.Password));
             }
         }
         else

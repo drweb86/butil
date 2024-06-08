@@ -1,44 +1,38 @@
 ﻿using BUtil.Core.Events;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
+using BUtil.Core.State;
 using BUtil.Core.Synchronization;
 using BUtil.Core.TasksTree.Core;
-using System;
+using BUtil.Core.TasksTree.IncrementalModel;
 using System.IO;
+using System.Linq;
 
 namespace BUtil.Core.TasksTree.Synchronization;
+
 internal class SynchronizationRemoteFileDownloadTask : BuTaskV2
 {
     private readonly SynchronizationServices _synchronizationServices;
-    private readonly string _localFolder;
-    private readonly string _relativeFileName;
-    private readonly DateTime? _lastWriteTimeUtc;
-    private readonly string? _repositorySubfolder;
+    private readonly StorageFile _storageFile;
+    private readonly string _destinationFile;
 
     public SynchronizationRemoteFileDownloadTask(SynchronizationServices synchronizationServices, TaskEvents events,
-        string localFolder, 
-        string relativeFileName,
-        DateTime? lastWriteTimeUtc,
-        string? repositorySubfolder)
-        : base(synchronizationServices.Log, events, string.Format(Resources.File_Saving, relativeFileName))
+        SynchronizationModel model, string relativeFileName)
+    : base(
+        synchronizationServices.Log,
+        events,
+        string.Format(Resources.File_Saving, relativeFileName))
     {
+        var actualRemoteRelativeFileName = FileHelper.Combine(FileHelper.NormalizeRelativePath(model.TaskOptions.RepositorySubfolder), relativeFileName);
+        var actualRemoteFile = Path.Combine(model.RemoteSourceItem.Target, actualRemoteRelativeFileName);
+        _storageFile = model.RemoteStorageFiles.Single(x => FileHelper.CompareFileNames(x.FileState.FileName, actualRemoteFile));
         _synchronizationServices = synchronizationServices;
-        _localFolder = localFolder;
-        _relativeFileName = relativeFileName;
-        _lastWriteTimeUtc = lastWriteTimeUtc;
-        _repositorySubfolder = repositorySubfolder;
+        _destinationFile = Path.Combine(model.TaskOptions.LocalFolder, relativeFileName)!;
     }
 
     protected override void ExecuteInternal()
     {
-        var destinationFile = Path.Combine(_localFolder, _relativeFileName)!;
-        FileHelper.EnsureFolderCreatedForFile(destinationFile);
-
-        var actualRemoteFile = FileHelper.Combine(_repositorySubfolder, _relativeFileName);
-        _synchronizationServices.StorageSpecificServices.Storage.Download(actualRemoteFile, destinationFile);
-        if (_lastWriteTimeUtc != null)
-        {
-            File.SetLastWriteTimeUtc(destinationFile, _lastWriteTimeUtc.Value);
-        }
+        _synchronizationServices.StorageSpecificServices.IncrementalBackupFileService.Download(_storageFile, _destinationFile);
+        File.SetLastWriteTimeUtc(_destinationFile, _storageFile.FileState.LastWriteTimeUtc);
     }
 }

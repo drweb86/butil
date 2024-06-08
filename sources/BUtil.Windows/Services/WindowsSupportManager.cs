@@ -40,6 +40,10 @@ public class WindowsSupportManager : ISupportManager
         {
             Process.Start(UIApp, $"{TasksAppArguments.Restore} \"{TasksAppArguments.RunTask}={taskName}\"");
         }
+        else if (task?.Model is SynchronizationTaskModelOptionsV2)
+        {
+            Process.Start(UIApp, $"{TasksAppArguments.Restore} \"{TasksAppArguments.RunTask}={taskName}\"");
+        }
         else
         {
             Process.Start(UIApp, TasksAppArguments.Restore);

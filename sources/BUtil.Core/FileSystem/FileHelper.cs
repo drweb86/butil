@@ -30,6 +30,11 @@ internal static class FileHelper
             : Path.Combine(subfolder, relativeFileName);
     }
 
+    public static bool CompareFileNames(string name1, string name2)
+    {
+        return name1.Replace('\\', '/').Cmp(name2.Replace('\\', '/'));
+    }
+
     internal static string? NormalizeRelativePath(string? repositorySubfolder)
     {
         var parts = (repositorySubfolder ?? string.Empty)

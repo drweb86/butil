@@ -147,8 +147,8 @@
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Изменения</value>
   </data>
-  <data name="BackupVersion_CleanupUncompleted" xml:space="preserve">
-    <value>Удаление незавершенных резервных копий</value>
+  <data name="DataStorage_Maintenance" xml:space="preserve">
+    <value>Обслуживание хранилища данных</value>
   </data>
   <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
     <value>Удалить версию "{0}"?

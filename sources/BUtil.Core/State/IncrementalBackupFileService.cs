@@ -23,17 +23,17 @@ public class IncrementalBackupFileService
         _services = services;
     }
 
-    public bool Download(SourceItemV2 sourceItem, StorageFile storageFile, string destinationFolder)
+    public bool Download(StorageFile storageFile, string destinationFileName)
     {
         _log.WriteLine(LoggingEvent.Debug, $"Storage: downloading \"{storageFile.FileState.FileName}\"");
 
-        var sourceItemDiectory = SourceItemHelper.GetSourceItemDirectory(sourceItem);
-        var sourceItemRelativeFileName = SourceItemHelper.GetSourceItemRelativeFileName(sourceItemDiectory, storageFile.FileState);
-        var destinationFileName = Path.Combine(destinationFolder, sourceItemRelativeFileName);
-        var destinationDir = Path.GetDirectoryName(destinationFileName);
-        if (destinationDir != null && !Directory.Exists(destinationDir))
-            Directory.CreateDirectory(destinationDir);
+        var destinationFolder = Path.GetDirectoryName(destinationFileName)!;
+        FileHelper.EnsureFolderCreatedForFile(destinationFileName);
+        return DownloadInternal(storageFile, destinationFileName, destinationFolder);
+    }
 
+    private bool DownloadInternal(StorageFile storageFile, string destinationFileName, string destinationFolder)
+    {
         if (File.Exists(destinationFileName))
         {
             var sha512 = _hashService.GetSha512(destinationFileName, false);
@@ -45,11 +45,8 @@ public class IncrementalBackupFileService
                 return true;
             }
         }
-
         using var tempFolder = new TempFolder();
         var tempArchive = Path.Combine(tempFolder.Folder, "archive.7z");
-        
-        // to make recovery twice faster we extract to folder near destination
         using var tempFolderAtDestination = new TempFolder(destinationFolder);
         var extractedFolder = Path.Combine(tempFolderAtDestination.Folder, "Extracted");
         _services.Storage.Download(storageFile.StorageRelativeFileName, tempArchive);
@@ -66,6 +63,18 @@ public class IncrementalBackupFileService
         File.Move(sourceFile, destinationFileName);
 
         return true;
+    }
+
+    public bool Download(SourceItemV2 sourceItem, StorageFile storageFile, string destinationFolder)
+    {
+        _log.WriteLine(LoggingEvent.Debug, $"Storage: downloading \"{storageFile.FileState.FileName}\"");
+
+        var sourceItemDiectory = SourceItemHelper.GetSourceItemDirectory(sourceItem);
+        var sourceItemRelativeFileName = SourceItemHelper.GetSourceItemRelativeFileName(sourceItemDiectory, storageFile.FileState);
+        var destinationFileName = Path.Combine(destinationFolder, sourceItemRelativeFileName);
+        FileHelper.EnsureFolderCreatedForFile(destinationFileName);
+
+        return DownloadInternal(storageFile, destinationFileName, destinationFolder);
     }
 
     public bool Upload(StorageFile storageFile)

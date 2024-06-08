@@ -145,15 +145,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete uncompleted backups.
-        /// </summary>
-        public static string BackupVersion_CleanupUncompleted {
-            get {
-                return ResourceManager.GetString("BackupVersion_CleanupUncompleted", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Do you really want to delete version &quot;{0}&quot;?
         ///
         ///Deleted version changes will become part of version &quot;{1}&quot;..
@@ -388,6 +379,15 @@ namespace BUtil.Core.Localization {
         public static string DataStorage_Field_UploadQuota_Validation {
             get {
                 return ResourceManager.GetString("DataStorage_Field_UploadQuota_Validation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data storage maintenance.
+        /// </summary>
+        public static string DataStorage_Maintenance {
+            get {
+                return ResourceManager.GetString("DataStorage_Maintenance", resourceCulture);
             }
         }
         
