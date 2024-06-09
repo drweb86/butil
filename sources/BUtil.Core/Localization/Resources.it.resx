@@ -147,6 +147,9 @@
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Modifiche</value>
   </data>
+  <data name="DataStorage_Maintenance" xml:space="preserve">
+    <value>Manutenzione archiviazione dati</value>
+  </data>
   <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
     <value>Vuoi eliminare la versione "{0}"?
 
@@ -369,8 +372,9 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
     <value>Importa "{0}"</value>
   </data>
   <data name="ImportMediaTask_Help" xml:space="preserve">
-    <value>Consulta il sito web dell'applicazione per la documentazione su come impostare 
-	il file trasmissione via WI-FI tramite l'applicazione FTP Server sul telefono.</value>
+    <value>Importa audio, foto, video dalla scheda SD della fotocamera, registratore; foto e video dal telefono tramite WI-FI tramite l'applicazione server FTP usando modelli di nome file.
+
+Consulta il sito web dell'applicazione per la documentazione su come impostare la trasmissione di file tramite WI-FI tramite l'applicazione server FTP sul telefono.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Sorgente dati importazione</value>
