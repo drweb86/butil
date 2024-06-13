@@ -3,6 +3,7 @@ using BUtil.Core.Events;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
+using BUtil.Core.State;
 using BUtil.Core.Synchronization;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.Synchronization;
@@ -116,6 +117,54 @@ class SynchronizationRootTask : SequentialBuTask
 
     private void ExecuteActionsRemotely(List<BuTask> tasks, IEnumerable<SynchronizationConsolidatedFileInfo> syncItems)
     {
+        var itemsWithRemoteAction = syncItems
+            .Where(x => x.RemoteAction != SynchronizationDecision.DoNothing)
+            .ToList();
+
+        var deleteItems = itemsWithRemoteAction
+            .Where(x => x.RemoteAction == SynchronizationDecision.Delete)
+            .ToList();
+        var updateCreateItems = itemsWithRemoteAction
+            .Where(x => x.RemoteAction == SynchronizationDecision.Update)
+            .ToList();
+
+        var gb = 1024 * 1024 * 1024;
+        var quotaGb = new Quota(_model.TaskOptions.To.SingleBackupQuotaGb * gb);
+        var updateCreateItemsActual = updateCreateItems
+            .Where(x => quotaGb.TryQuota(x.ActualFile!.Size))
+            .ToList();
+
+        // we ignore quota if we have nothing to work with.
+        if (updateCreateItemsActual.Count == 0 && updateCreateItems.Any())
+        {
+            updateCreateItemsActual.Add(updateCreateItems[0]);
+        }
+
+        if (updateCreateItemsActual.Count == 0 && deleteItems.Count == 0)
+        {
+            LogDebug("Remote version changes are not needed!");
+            return;
+        }
+
+        if (updateCreateItemsActual.Count != updateCreateItems.Count)
+        {
+            var skippedFiles = updateCreateItems.Except(updateCreateItemsActual).ToList();
+            Events.Message(string.Format(BUtil.Core.Localization.Resources.Task_Status_PartialDueToQuota, skippedFiles.Count, skippedFiles.Sum(x => x.ActualFile!.Size) / gb));
+            LogDebug("Some files will be skipped because of quota:");
+            skippedFiles.ForEach(x => LogDebug(x.ActualFile!.RelativeFileName));
+        }
+
+        //var sourceItemChanges = new SourceItemChanges()
+        //var versionChanges = new List<SourceItemChanges>() { new So }
+        //var version = new VersionState(DateTime.UtcNow, )
+        //foreach (var createUpdateItem in )
+        // 2. Any
+        // формируем новую версию с учетом удаленных файлов и квоты
+        // формируем новое последнее состояние
+        // запускаем задачи
+        // запускаем сохранения состояния с учетом частичных путей и успеха части либо целого по аплоаду файлов.
+        // 4.
+
         foreach (var item in syncItems)
         {
             switch (item.RemoteAction)

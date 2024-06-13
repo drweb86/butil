@@ -32,7 +32,10 @@ internal class SynchronizationRemoteFileDownloadTask : BuTaskV2
 
     protected override void ExecuteInternal()
     {
-        _synchronizationServices.StorageSpecificServices.IncrementalBackupFileService.Download(_storageFile, _destinationFile);
+        if (!_synchronizationServices.StorageSpecificServices.IncrementalBackupFileService.Download(_storageFile, _destinationFile))
+        {
+            throw new InvalidDataException($"Failed to download {_storageFile.StorageFileName}!");
+        }
         File.SetLastWriteTimeUtc(_destinationFile, _storageFile.FileState.LastWriteTimeUtc);
     }
 }
