@@ -54,6 +54,22 @@ public abstract class BuTask
     public bool IsSuccess { get; protected set; }
 }
 
+public class FunctionBuTaskV2<TResult>: BuTaskV2
+{
+    private readonly Func<TResult> _action;
+    public TResult? Result { get; protected set; }
+
+    public FunctionBuTaskV2(ILog log, TaskEvents events, string title, Func<TResult> action): base (log, events, title) 
+    {
+        _action = action;
+    }
+
+    protected override void ExecuteInternal()
+    {
+        Result = _action();
+    }
+}
+
 public abstract class BuTaskV2 : BuTask
 {
     protected BuTaskV2(ILog log, TaskEvents events, string title) : base(log, events, title)

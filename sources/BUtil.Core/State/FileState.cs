@@ -12,6 +12,8 @@ public class FileState
 
     public FileState() { } // Deserialization
 
+    public FileState(FileState fileState): this(fileState.FileName, fileState.LastWriteTimeUtc, fileState.Size, fileState.Sha512) { }
+
     public FileState(string fileName, DateTime lastWriteTimeUtc, long size, string sha512)
     {
         FileName = fileName;

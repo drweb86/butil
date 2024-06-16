@@ -16,6 +16,7 @@ internal class WriteSourceFileToStorageTask : BuTask
     private readonly StorageSpecificServicesIoc _services;
     private readonly Quota _singleBackupQuotaGb;
     private readonly List<VersionState> _versionStates;
+    private readonly string _actualFile;
 
     public List<StorageFile> StorageFiles { get; }
     public bool IsSkipped { get; private set; }
@@ -27,7 +28,8 @@ internal class WriteSourceFileToStorageTask : BuTask
         List<StorageFile> storageFiles,
         Quota singleBackupQuotaGb,
         SourceItemV2 sourceItem,
-        List<VersionState> versionStates) :
+        List<VersionState> versionStates,
+        string actualFile) :
         base(services.Log, events, string.Format(Localization.Resources.File_Saving,
             string.Join(", ", storageFiles
                 .Select(x => SourceItemHelper.GetFriendlyFileName(sourceItem, x.FileState.FileName)))))
@@ -44,11 +46,16 @@ internal class WriteSourceFileToStorageTask : BuTask
 
         _singleBackupQuotaGb = singleBackupQuotaGb;
         _versionStates = versionStates;
+        _actualFile = actualFile;
     }
 
     public override void Execute()
     {
         UpdateStatus(ProcessingStatus.InProgress);
+
+        var actualStorageFile = new StorageFile(StorageFiles.First());
+        actualStorageFile.FileState.FileName = _actualFile;
+
         if (FileAlreadyInStorage(out var matchingFile))
         {
             LogDebug("Skipped because file is already is in storage.");
@@ -56,14 +63,14 @@ internal class WriteSourceFileToStorageTask : BuTask
             StorageFiles
                     .ForEach(x => x.SetStoragePropertiesFrom(matchingFile));
         }
-        else if (_singleBackupQuotaGb.TryQuota(StorageFiles[0].FileState.Size))
+        else if (_singleBackupQuotaGb.TryQuota(actualStorageFile.FileState.Size))
         {
             try
             {
-                IsSuccess = _services.IncrementalBackupFileService.Upload(StorageFiles[0]);
-                StorageFiles.Skip(1)
+                IsSuccess = _services.IncrementalBackupFileService.Upload(actualStorageFile);
+                StorageFiles
                     .ToList()
-                    .ForEach(x => x.SetStoragePropertiesFrom(StorageFiles[0]));
+                    .ForEach(x => x.SetStoragePropertiesFrom(actualStorageFile));
             }
             catch
             {

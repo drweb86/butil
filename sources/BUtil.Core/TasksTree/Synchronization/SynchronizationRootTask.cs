@@ -3,12 +3,16 @@ using BUtil.Core.Events;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
+using BUtil.Core.Misc;
 using BUtil.Core.State;
 using BUtil.Core.Synchronization;
 using BUtil.Core.TasksTree.Core;
+using BUtil.Core.TasksTree.States;
+using BUtil.Core.TasksTree.Storage;
 using BUtil.Core.TasksTree.Synchronization;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text.Json;
@@ -128,36 +132,55 @@ class SynchronizationRootTask : SequentialBuTask
             .Where(x => x.RemoteAction == SynchronizationDecision.Update)
             .ToList();
 
-        var gb = 1024 * 1024 * 1024;
-        var quotaGb = new Quota(_model.TaskOptions.To.SingleBackupQuotaGb * gb);
-        var updateCreateItemsActual = updateCreateItems
-            .Where(x => quotaGb.TryQuota(x.ActualFile!.Size))
-            .ToList();
-
-        // we ignore quota if we have nothing to work with.
-        if (updateCreateItemsActual.Count == 0 && updateCreateItems.Any())
+        var deletedFiles = new List<string>();
+        foreach (var deletedFile in deleteItems)
         {
-            updateCreateItemsActual.Add(updateCreateItems[0]);
+            var actualLocalFile = Path.Combine(_model.LocalSourceItem.Target, deletedFile.RelativeFileName);
+            deletedFiles.Add(actualLocalFile);
         }
 
-        if (updateCreateItemsActual.Count == 0 && deleteItems.Count == 0)
+        var versionUtc = DateTime.UtcNow;
+        var sourceItemDir = SourceItemHelper.GetSourceItemDirectory(_model.RemoteSourceItem);
+
+        var actualRemoteSourceItem = _model.RemoteSourceItem ?? _model.CreateVirtualSourceItem();
+        var storageUploadTaskOptions = new StorageUploadTaskOptions(
+            _model.RemoteStorageState ?? new IncrementalBackupState(),
+            [ 
+                new StorageUploadTaskSourceItemChange
+                (
+                    actualRemoteSourceItem,
+                    deletedFiles,
+                    updateCreateItems
+                        .Select(x => new FileState(Path.Combine(_model.LocalSourceItem.Target, x.ActualFile!.RelativeFileName), x.ActualFile!.ModifiedAtUtc, x.ActualFile!.Size, x.ActualFile!.Sha512))
+                        .ToList(),
+                    x => {
+                        var relativeFileName = x.Substring(0, _model.LocalSourceItem.Target.Length + 1);
+                        var actualRemoteRelativeFileName = FileHelper.Combine(FileHelper.NormalizeRelativePath(_model.TaskOptions.RepositorySubfolder), relativeFileName);
+                        var actualRemoteFile = Path.Combine(actualRemoteSourceItem.Target, actualRemoteRelativeFileName);
+                        return actualRemoteFile;
+                    }
+                ) 
+            ]
+        );
+        tasks.Add(new StorageUploadTask(_synchronizationServices.StorageSpecificServices, Events, storageUploadTaskOptions));
+            /*
+.        tasks.Add(new FunctionBuTaskV2(Log, Events, Localization.Resources.DataStorage_State_Saving, () => _services.IncrementalBackupStateService.Write(_password, _getState()));
+        foreach (var updateCreateItem in updateCreateItems)
         {
-            LogDebug("Remote version changes are not needed!");
-            return;
+            var actualRemoteRelativeFileName = FileHelper.Combine(FileHelper.NormalizeRelativePath(_model.TaskOptions.RepositorySubfolder), updateCreateItem.RelativeFileName);
+            var actualRemoteFile = Path.Combine(_model.RemoteSourceItem.Target, actualRemoteRelativeFileName);
+
+
         }
 
-        if (updateCreateItemsActual.Count != updateCreateItems.Count)
-        {
-            var skippedFiles = updateCreateItems.Except(updateCreateItemsActual).ToList();
-            Events.Message(string.Format(BUtil.Core.Localization.Resources.Task_Status_PartialDueToQuota, skippedFiles.Count, skippedFiles.Sum(x => x.ActualFile!.Size) / gb));
-            LogDebug("Some files will be skipped because of quota:");
-            skippedFiles.ForEach(x => LogDebug(x.ActualFile!.RelativeFileName));
-        }
+        var sourceItemChanges = new SourceItemChanges(
+            _model.RemoteSourceItem,
+            deletedFiles,
+            updatedFiles,
+            createdFiles);
 
-        //var sourceItemChanges = new SourceItemChanges()
-        //var versionChanges = new List<SourceItemChanges>() { new So }
-        //var version = new VersionState(DateTime.UtcNow, )
-        //foreach (var createUpdateItem in )
+        var sourceItemChangesList = new List<SourceItemChanges>() { sourceItemChanges };
+        var version = new VersionState(versionUtc, sourceItemChangesList);
         // 2. Any
         // формируем новую версию с учетом удаленных файлов и квоты
         // формируем новое последнее состояние
@@ -179,7 +202,7 @@ class SynchronizationRootTask : SequentialBuTask
                     break;
 
             }
-        }
+        }*/
     }
 
     private void ExecuteActionsLocally(List<BuTask> tasks, IEnumerable<SynchronizationConsolidatedFileInfo> syncItems)

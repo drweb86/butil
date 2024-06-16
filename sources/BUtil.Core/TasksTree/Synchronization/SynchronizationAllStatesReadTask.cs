@@ -57,7 +57,7 @@ internal class SynchronizationAllStatesReadTask : ParallelBuTask
                     .OrderByDescending(x => x.BackupDateUtc)
                     .FirstOrDefault();
 
-                _model.RemoteSourceItem = lastVersion?.SourceItemChanges.SingleOrDefault(x => SynchronizationHelper.IsSynchronizationSourceItem(x.SourceItem))?.SourceItem ?? _model.LocalSourceItem;
+                _model.RemoteSourceItem = lastVersion?.SourceItemChanges.SingleOrDefault(x => SynchronizationHelper.IsSynchronizationSourceItem(x.SourceItem))?.SourceItem ?? _model.CreateVirtualSourceItem();
 
                 _model.RemoteStorageFiles = lastVersion != null
                     ? SourceItemHelper.BuildVersionFiles(

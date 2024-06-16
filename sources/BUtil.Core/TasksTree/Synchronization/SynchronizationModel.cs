@@ -28,4 +28,8 @@ class SynchronizationModel
     }
 
     public SourceItemV2 LocalSourceItem { get; }
+    public SourceItemV2 CreateVirtualSourceItem()
+    {
+        return new SourceItemV2("x:\\", true) { Id = SynchronizationHelper.SynchronizationSourceItemId };
+    }
 }

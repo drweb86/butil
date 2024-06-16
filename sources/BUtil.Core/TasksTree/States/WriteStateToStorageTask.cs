@@ -53,7 +53,7 @@ internal class WriteStateToStorageTask : BuTask
 
         try
         {
-            StateStorageFile = _services.IncrementalBackupStateService.Write(_incrementalBackupModelOptions, _getIncrementedVersionTask.IncrementalBackupState ?? throw new InvalidOperationException());
+            StateStorageFile = _services.IncrementalBackupStateService.Write(_incrementalBackupModelOptions.Password, _getIncrementedVersionTask.IncrementalBackupState ?? throw new InvalidOperationException());
             IsSuccess = StateStorageFile != null;
         }
         catch (Exception ex)

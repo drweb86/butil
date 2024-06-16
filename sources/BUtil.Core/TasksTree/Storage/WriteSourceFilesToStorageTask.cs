@@ -66,7 +66,9 @@ internal class WriteSourceFilesToStorageTask : ParallelBuTask
                     x.ToList(),
                     singleBackupQuotaGb,
                     sourceItemChange.SourceItem,
-                    versionStates))
+                    versionStates,
+                    x.ToList().First().FileState.FileName
+                    ))
                 .ToList();
             WriteFileTasks.AddRange(copyTasks);
         }

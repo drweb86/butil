@@ -46,7 +46,12 @@ public static class SourceItemHelper
 
     public static string GetCompressedStorageRelativeFileName(VersionState versionState)
     {
-        var readableDate = GetVersionFolder(versionState.BackupDateUtc);
+        return GetCompressedStorageRelativeFileName(versionState.BackupDateUtc);
+    }
+
+    public static string GetCompressedStorageRelativeFileName(DateTime backupDateUtc)
+    {
+        var readableDate = GetVersionFolder(backupDateUtc);
 
         return Path.Combine(
             readableDate,

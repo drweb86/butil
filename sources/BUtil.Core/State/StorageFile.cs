@@ -13,6 +13,18 @@ public class StorageFile
 
     public StorageFile() { }
 
+    public StorageFile(StorageFile storageFile) 
+    {
+        FileState = new FileState(storageFile.FileState);
+        StorageRelativeFileName = storageFile.StorageRelativeFileName;
+        StorageFileName  = storageFile.StorageFileName;
+        StorageFileNameSize  = storageFile.StorageFileNameSize;
+        StorageMethod  = storageFile.StorageMethod;
+        StorageIntegrityMethod  = storageFile.StorageIntegrityMethod;
+        StorageIntegrityMethodInfo  = storageFile.StorageIntegrityMethodInfo;
+        StoragePassword  = storageFile.StoragePassword;
+    }
+
     public StorageFile(FileState fileState)
     {
         FileState = fileState;

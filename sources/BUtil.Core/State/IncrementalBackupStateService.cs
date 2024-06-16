@@ -51,7 +51,7 @@ public class IncrementalBackupStateService
         return true;
     }
 
-    public StorageFile? Write(IncrementalBackupModelOptionsV2 incrementalBackupModelOptions, IncrementalBackupState state)
+    public StorageFile? Write(string password, IncrementalBackupState state)
     {
         _log.WriteLine(LoggingEvent.Debug, $"Writing state");
         if (_services.Storage.Exists(IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile))
@@ -73,7 +73,7 @@ public class IncrementalBackupStateService
         storageFile.StorageRelativeFileName = IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile;
         var fileToUpload = Path.Combine(tempFolder.Folder, storageFile.StorageRelativeFileName);
         var archiver = PlatformSpecificExperience.Instance.GetArchiver(_log);
-        if (!archiver.CompressFile(jsonFile, incrementalBackupModelOptions.Password, fileToUpload))
+        if (!archiver.CompressFile(jsonFile, password, fileToUpload))
         {
             _log.WriteLine(LoggingEvent.Error, $"Failed state");
             return null;

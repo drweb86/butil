@@ -33,7 +33,7 @@ internal class SaveStateToStorageTask : BuTask
 
         try
         {
-            StateFile = _services.IncrementalBackupStateService.Write(_options, _state);
+            StateFile = _services.IncrementalBackupStateService.Write(_options.Password, _state);
             IsSuccess = StateFile != null;
         }
         catch (Exception ex)
