@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="MediaDevices" Version="1.10.0" />
-    <PackageReference Include="TaskScheduler" Version="2.10.1" />
+    <PackageReference Include="TaskScheduler" Version="2.11.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <CopyLibraryFiles Include="$(NuGetPackageRoot)taskscheduler\2.10.1\lib\net6.0-windows7.0\*.*;$(NuGetPackageRoot)mediadevices\1.10.0\lib\net7.0\*.*" />
+    <CopyLibraryFiles Include="$(NuGetPackageRoot)taskscheduler\2.11.0\lib\net8.0-windows7.0\*.*;$(NuGetPackageRoot)mediadevices\1.10.0\lib\net7.0\*.*" />
   </ItemGroup>
   <Target Name="CopyLibraries" AfterTargets="Build">
     <Copy SourceFiles="@(CopyLibraryFiles)" DestinationFolder="$(TargetDir)" />

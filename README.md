@@ -13,7 +13,7 @@
 
 ![Supported Languages](./help/Assets/Image%20-%20Languages.png)
 
-[English] [Russian] [Italian](https://github.com/bovirus)
+[English] [Russian] [Italian](https://github.com/bovirus) [Ukrainian](https://github.com/Kopejkin)
 
 ## Features
 

@@ -1,0 +1,584 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Task_Status_FailedSeeLog" xml:space="preserve">
+    <value>Помилка (Дивіться журнал)</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
+    <value>Папка:</value>
+  </data>
+  <data name="LeftMenu_Where_Hint" xml:space="preserve">
+    <value>Тут можна вказати місця, куди помістити дані.</value>
+  </data>
+  <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
+    <value>Скрипт перевірки цілісності.ps1</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
+    <value>Неправильний рядок перетворення імені файлу.</value>
+  </data>
+  <data name="Button_Cancel" xml:space="preserve">
+    <value>Скасувати</value>
+  </data>
+  <data name="LeftMenu_Encryption" xml:space="preserve">
+    <value>Шифрування</value>
+  </data>
+  <data name="Task_Field_Choose" xml:space="preserve">
+    <value>Виберіть завдання:</value>
+  </data>
+  <data name="BackupVersion_Button_Delete" xml:space="preserve">
+    <value>Видалити версію</value>
+  </data>
+  <data name="Time_Field_Hour" xml:space="preserve">
+    <value>Години:</value>
+  </data>
+  <data name="BackupVersion_Versions_Title" xml:space="preserve">
+    <value>ВЕРСІЇ</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
+    <value>Папку не вказано.</value>
+  </data>
+  <data name="Theme_Value_Dark" xml:space="preserve">
+    <value>Темна</value>
+  </data>
+  <data name="Field_Folder_Validation_Empty" xml:space="preserve">
+    <value>Папку не вказано.</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
+    <value>Завершено з помилками</value>
+  </data>
+  <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
+    <value>Куди імпортувати файли:</value>
+  </data>
+  <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
+    <value>(всі версії займають у сховищі {0})</value>
+  </data>
+  <data name="DataStorage_Script_Help" xml:space="preserve">
+    <value>Якщо папка стає доступною після виконання команд, вкажіть {0} скрипти для підключення та відключення сховища.</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
+    <value>Папку "{0}" не знайдено.</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
+    <value>Явне</value>
+  </data>
+  <data name="Button_Remove" xml:space="preserve">
+    <value>Видалити</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
+    <value>Квота повинна бути 0 (щоб не застосовувалася) або число більше від нуля.</value>
+  </data>
+  <data name="Task_Edit" xml:space="preserve">
+    <value>Змінити</value>
+  </data>
+  <data name="Task_List" xml:space="preserve">
+    <value>Завдання</value>
+  </data>
+  <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
+    <value>Скрипт підключення:</value>
+  </data>
+  <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
+    <value>Збереження скриптів перевірки цілісності</value>
+  </data>
+  <data name="AfterTaskSelection_Help" xml:space="preserve">
+    <value>Якщо виберете щось крім "Нічого не робити", програма 
+налаштує ОС таким чином, щоб під час наступного вашого
+входу в систему було відображено звіт, якщо будуть
+зареєстровані помилки або попередження.</value>
+  </data>
+  <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
+    <value>У вказаному каталозі немає файлів "{0}". 
+
+Вкажіть каталог, який містить цей файл.</value>
+  </data>
+  <data name="CommandLineArguments_Invalid" xml:space="preserve">
+    <value>Некоректні аргументи командного рядка.</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
+    <value>Не вказано шаблон імені файлу.</value>
+  </data>
+  <data name="Server_Field_Port_Validation" xml:space="preserve">
+    <value>Неправильний порт.</value>
+  </data>
+  <data name="Messages_Header_Information" xml:space="preserve">
+    <value>Інформація</value>
+  </data>
+  <data name="Password_Generate" xml:space="preserve">
+    <value>Згенерувати...</value>
+  </data>
+  <data name="Task_Create" xml:space="preserve">
+    <value>Нове завдання</value>
+  </data>
+  <data name="AfterTaskSelection_LogOff" xml:space="preserve">
+    <value>Завершити мій сеанс</value>
+  </data>
+  <data name="Task_Delete" xml:space="preserve">
+    <value>Видалити</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
+    <value>Журнал: {0}</value>
+  </data>
+  <data name="DataStorage_State_Get" xml:space="preserve">
+    <value>Отримання стану сховища</value>
+  </data>
+  <data name="Task_Status_Unknown" xml:space="preserve">
+    <value>Невідомо</value>
+  </data>
+  <data name="IncrementalBackup_Version_Save" xml:space="preserve">
+    <value>Збереження інкрементної версії</value>
+  </data>
+  <data name="Days_Thursday" xml:space="preserve">
+    <value>Четвер</value>
+  </data>
+  <data name="File_List_Saving" xml:space="preserve">
+    <value>Збереження файлів</value>
+  </data>
+  <data name="BackupVersion_Viewer_Help" xml:space="preserve">
+    <value>Виберіть файл або папку, яку потрібно відновити, і натисніть "Відновити".</value>
+  </data>
+  <data name="LogFile_Marker_Errors" xml:space="preserve">
+    <value>Помилки</value>
+  </data>
+  <data name="Days_Tuesday" xml:space="preserve">
+    <value>Вівторок</value>
+  </data>
+  <data name="Server_Field_Address" xml:space="preserve">
+    <value>Сервер:</value>
+  </data>
+  <data name="Task_Restore" xml:space="preserve">
+    <value>Відновити</value>
+  </data>
+  <data name="Messages_Header_Question" xml:space="preserve">
+    <value>Питання</value>
+  </data>
+  <data name="Task_Launch" xml:space="preserve">
+    <value>Запустити</value>
+  </data>
+  <data name="Task_Status_Succesfull" xml:space="preserve">
+    <value>Успішно завершено</value>
+  </data>
+  <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
+    <value>Видалити версію "{0}"?
+
+Зміни з видаленої версії будуть інтегровані у версію"{1}".</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
+    <value>Приклад:
+Уявіть, у вас є файл {0} (який змінено {1}).
+З урахуванням каталогу і шаблону, шлях збереження файлу буде таким:
+{2}</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
+    <value>Формати шаблонів імен файлів</value>
+  </data>
+  <data name="Button_Continue" xml:space="preserve">
+    <value>Продовжити &gt;</value>
+  </data>
+  <data name="SourceItem_OpenInExplorer" xml:space="preserve">
+    <value>Відкрити у Провіднику...</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
+    <value>Обмежує кількість даних, що надсилаються до сховища під час виконання завдання. 0 - без обмежень.
+Коли квоту перевищено, файли будуть пропущені і оброблені наступного разу.
+Сценарій використання: Наприклад, ви копіюєте дані на віддалений сервер. Проблема - провайдер обмежує швидкість під час вивантаження даних, розмір яких перевищує кілька ГБ. Це налаштування дозволяє вирішити цю проблему.</value>
+  </data>
+  <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
+    <value>Нічого не робити</value>
+  </data>
+  <data name="Button_CopyToClipboard" xml:space="preserve">
+    <value>Копіювати</value>
+  </data>
+  <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
+    <value>Маску виключення файлів не вказано.</value>
+  </data>
+  <data name="Days_Sunday" xml:space="preserve">
+    <value>Неділя</value>
+  </data>
+  <data name="LogFile_Marker_Successful" xml:space="preserve">
+    <value>Успішно</value>
+  </data>
+  <data name="Task_Create_Hint" xml:space="preserve">
+    <value>Створити нове завдання.</value>
+  </data>
+  <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
+    <value>Сховище не вказано.</value>
+  </data>
+  <data name="Button_Close" xml:space="preserve">
+    <value>Закрити</value>
+  </data>
+  <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
+    <value>Нове завдання</value>
+  </data>
+  <data name="Password_Generator_Header" xml:space="preserve">
+    <value>Генератор паролів</value>
+  </data>
+  <data name="BackupVersion_Selector_Title" xml:space="preserve">
+    <value>ВИБЕРІТЬ ВЕРСІЮ</value>
+  </data>
+  <data name="Password_Help" xml:space="preserve">
+    <value>Рекомендована мінімальна довжина пароля - 50 символів.</value>
+  </data>
+  <data name="Button_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="SourceItem_AddFolders" xml:space="preserve">
+    <value>Додати папки...</value>
+  </data>
+  <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
+    <value>Перетягуйте сюди файли та папки з Провідника, щоб додати їх до списку.</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
+    <value>Ліміт вивантаження, ГБ:</value>
+  </data>
+  <data name="Password_Field" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="CommandLineArguments_Help" xml:space="preserve">
+    <value>Відвідайте {0}, щоб ознайомитися з аргументами командного рядка.</value>
+  </data>
+  <data name="Theme_Value_Light" xml:space="preserve">
+    <value>Світла</value>
+  </data>
+  <data name="Time_Field_Minute" xml:space="preserve">
+    <value>Хвилини:</value>
+  </data>
+  <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
+    <value>Журнал для вибраного...</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
+    <value>Успішно завершено</value>
+  </data>
+  <data name="Time_Field_Elapsed" xml:space="preserve">
+    <value>Минуло:</value>
+  </data>
+  <data name="LeftMenu_When_Help" xml:space="preserve">
+    <value>Тут можна налаштувати планувальник. Планувальник дозволяє автоматизувати виконання завдання.</value>
+  </data>
+  <data name="Url_Field" xml:space="preserve">
+    <value>Url:</value>
+  </data>
+  <data name="BackupVersion_Files_Title" xml:space="preserve">
+    <value>Файли</value>
+  </data>
+  <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
+    <value>Папки не існує.</value>
+  </data>
+  <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
+    <value>Паролі не збігаються.</value>
+  </data>
+  <data name="BackupVersion_Changes_Title" xml:space="preserve">
+    <value>Зміни</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
+    <value>Змінити маску виключення файлів</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
+    <value>Виключити файли з обробки за маскою.</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
+    <value>Тут можна зазначити винятки файлів за маскою.
+Маскою може бути ім'я файлу, ім'я папки або байдужий знак. 
+Приклади:
+d:\temp,
+d:\temp\file.txt,
+d:\temp\**\*.txt або 
+bin.
+Детальний опис масок дивіться за наступним посиланням.</value>
+  </data>
+  <data name="Field_Folder_Browse" xml:space="preserve">
+    <value>Вибрати папку</value>
+  </data>
+  <data name="BackupVersion_Select" xml:space="preserve">
+    <value>Відкрити вибрану версію...</value>
+  </data>
+  <data name="Task_Validation_NotFound" xml:space="preserve">
+    <value>Завдання "{0}" не знайдено.</value>
+  </data>
+  <data name="Button_Save" xml:space="preserve">
+    <value>Зберегти</value>
+  </data>
+  <data name="Days_Friday" xml:space="preserve">
+    <value>П'ятниця</value>
+  </data>
+  <data name="Field_TransportProtocol" xml:space="preserve">
+    <value>Протокол:</value>
+  </data>
+  <data name="Field_Version" xml:space="preserve">
+    <value>Версія:</value>
+  </data>
+  <data name="User_Field" xml:space="preserve">
+    <value>Користувач:</value>
+  </data>
+  <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
+    <value>Неможливо редагувати цей тип завдання тут.</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
+    <value>Перетворення імені файлу:</value>
+  </data>
+  <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
+    <value>Пароль не вказано.</value>
+  </data>
+  <data name="ImproveIt_Message" xml:space="preserve">
+    <value>У програмі виникла непередбачена помилка
+
+Ви можете покращити якість програми, якщо надішлете інформацію, збережену на робочому столі у файлі
+"{0}",
+розробникам
+
+Наразі програма завершить свою роботу.</value>
+  </data>
+  <data name="File_Saving" xml:space="preserve">
+    <value>Збереження "{0}"</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
+    <value>Підтримувані токени: 
+{DATE:Format} - Вставляє дату зміни файлу в зазначеному форматі.
+Всі варіанти доступні в інтернеті за фразою "C# DateTime format".</value>
+  </data>
+  <data name="Days_Monday" xml:space="preserve">
+    <value>Понеділок</value>
+  </data>
+  <data name="ImportMediaTask_AllFiles" xml:space="preserve">
+    <value>Імпорт всіх файлів</value>
+  </data>
+  <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
+    <value>Вимкнути комп'ютер</value>
+  </data>
+  <data name="IncrementalBackupTask_Create" xml:space="preserve">
+    <value>Інкрементне резервне копіювання</value>
+  </data>
+  <data name="AfterTaskSelection_Field" xml:space="preserve">
+    <value>Після закінчення завдання:</value>
+  </data>
+  <data name="File_Moving" xml:space="preserve">
+    <value>Переміщення "{0}" в "{1}"</value>
+  </data>
+  <data name="LogFile_OpenLogs" xml:space="preserve">
+    <value>Журнали</value>
+  </data>
+  <data name="Password_Use" xml:space="preserve">
+    <value>Використовувати</value>
+  </data>
+  <data name="Task_LastExecution_State" xml:space="preserve">
+    <value>Стан</value>
+  </data>
+  <data name="File_Deleting" xml:space="preserve">
+    <value>Видалення "{0}"</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
+    <value>Скрипт відключення:</value>
+  </data>
+  <data name="Password_Field_Length" xml:space="preserve">
+    <value>Довжина:</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>Довжину назви '{0}' перевищено на {1} шт. символів.</value>
+  </data>
+  <data name="Url_Field_Validation" xml:space="preserve">
+    <value>URL не вказано.</value>
+  </data>
+  <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
+    <value>Редагування "{0}" завдання імпорту мультимедіа</value>
+  </data>
+  <data name="Field_Device" xml:space="preserve">
+    <value>Пристрій:</value>
+  </data>
+  <data name="Messages_Header_Error" xml:space="preserve">
+    <value>Помилка</value>
+  </data>
+  <data name="SourceItem_State_Get" xml:space="preserve">
+    <value>Отримання стану каталогу "{0}"</value>
+  </data>
+  <data name="IncrementalBackup_Title" xml:space="preserve">
+    <value>Інкрементне резервне копіювання</value>
+  </data>
+  <data name="Field_Folder" xml:space="preserve">
+    <value>Папка:</value>
+  </data>
+  <data name="DirectoryStorage" xml:space="preserve">
+    <value>Папка</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
+    <value>Неявне</value>
+  </data>
+  <data name="Task_Delete_Hint" xml:space="preserve">
+    <value>Видалити вибране завдання.</value>
+  </data>
+  <data name="Task_Launch_Hint" xml:space="preserve">
+    <value>Запустити вибране завдання.</value>
+  </data>
+  <data name="Application_NewVersion_Notification" xml:space="preserve">
+    <value>Доступна нова версія {0}.</value>
+  </data>
+  <data name="State_LoadFromEverywhere" xml:space="preserve">
+    <value>Отримання стану файлів та сховищ</value>
+  </data>
+  <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
+    <value>Маска виключення файлів:</value>
+  </data>
+  <data name="SourceItem_AddFiles" xml:space="preserve">
+    <value>Додати файли...</value>
+  </data>
+  <data name="State_File_Get" xml:space="preserve">
+    <value>Отримання стану файлу "{0}"</value>
+  </data>
+  <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
+    <value>Завершено частково. Оскільки для сховища було вказано квоту, частину файлів було пропущено цього разу. Залишилося файлів - {0}, розмір - {1} ГБ.</value>
+  </data>
+  <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
+    <value>Не вдалося прочитати стан.</value>
+  </data>
+  <data name="Name_Title" xml:space="preserve">
+    <value>Ім'я</value>
+  </data>
+  <data name="Name_Field_Validation" xml:space="preserve">
+    <value>Назву не вказано або назва містить символи шляху.</value>
+  </data>
+  <data name="Name_Field" xml:space="preserve">
+    <value>Назва:</value>
+  </data>
+  <data name="LeftMenu_Where" xml:space="preserve">
+    <value>Куди?</value>
+  </data>
+  <data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
+    <value>Обчислення інкрементної версії</value>
+  </data>
+  <data name="SourceItem_Validation_NotExists" xml:space="preserve">
+    <value>"{0}" не існує, виправте список.</value>
+  </data>
+  <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
+    <value>Вказати джерело даних</value>
+  </data>
+  <data name="LeftMenu_When" xml:space="preserve">
+    <value>Коли?</value>
+  </data>
+  <data name="LeftMenu_What" xml:space="preserve">
+    <value>Що?</value>
+  </data>
+  <data name="LeftMenu_What_Hint" xml:space="preserve">
+    <value>Сюди можна додавати файли та папки, призначені для обробки.</value>
+  </data>
+  <data name="LeftMenu_What_Validation" xml:space="preserve">
+    <value>Не вказано, що обробляти.</value>
+  </data>
+  <data name="Days_Wednesday" xml:space="preserve">
+    <value>Середа</value>
+  </data>
+  <data name="ImportMediaTask_Create" xml:space="preserve">
+    <value>Імпорт мультимедіа</value>
+  </data>
+  <data name="Task_Edit_Hint" xml:space="preserve">
+    <value>Змінити вибране завдання.</value>
+  </data>
+  <data name="SourceItem_Validation_Empty" xml:space="preserve">
+    <value>Не вказано, що обробляти.</value>
+  </data>
+  <data name="Theme_Title" xml:space="preserve">
+    <value>Тема</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
+    <value>Додати маску виключення файлів</value>
+  </data>
+  <data name="Field_Device_Validation_Empty" xml:space="preserve">
+    <value>Пристрій не вказано.</value>
+  </data>
+  <data name="Days_Saturday" xml:space="preserve">
+    <value>Субота</value>
+  </data>
+  <data name="Icons_Help_Link" xml:space="preserve">
+    <value>Додати піктограми-символи до тексту</value>
+  </data>
+  <data name="Password_Field_Confirm" xml:space="preserve">
+    <value>Повторіть пароль:</value>
+  </data>
+  <data name="ImportMediaTask_File" xml:space="preserve">
+    <value>Імпорт "{0}"</value>
+  </data>
+  <data name="ImportMediaTask_Help" xml:space="preserve">
+    <value>Імпортує аудіо, фото, відео з SD-картки фотоапарата, рекордера; фото та відео з вашого телефону через WI-FI за допомогою програми FTP Server, використовуючи шаблони імен файлів.
+
+На сайті програми розміщено інструкцію з налаштування передавання файлів через WI-FI у програмі FTP Server на телефоні.</value>
+  </data>
+  <data name="Task_Status_InProgress" xml:space="preserve">
+    <value>Виконується...</value>
+  </data>
+  <data name="IncrementalBackup_Help" xml:space="preserve">
+    <value>Найпростіша форма інкрементного резервування складається з ідентифікації, запису та зберігання лише тих файлів, що змінилися з моменту останнього резервного копіювання.
+
+Оскільки такі зміни зазвичай невеликі, інкрементні резервні копії мають значно менший розмір та створюються швидше, ніж під час повного резервування.
+
+Наприклад, повну резервну копію зроблено в п'ятницю, у понеділок резервна копія міститиме лише ті файли, що змінилися з п'ятниці. А резервна копія у вівторок - лише ті файли, що змінилися з понеділка, і так далі.
+
+Але якщо хоча б одну з копій, включно з першою (повною), буде пошкоджено, повне відновлення буде неможливим.</value>
+  </data>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
+    <value>Пропускати раніше імпортовані файли</value>
+  </data>
+  <data name="Task_Delete_Confirm" xml:space="preserve">
+    <value>Видалити завдання "{0}"?</value>
+  </data>
+  <data name="Task_Validation_NotSupported" xml:space="preserve">
+    <value>Це завдання не підтримується.</value>
+  </data>
+  <data name="Field_Device_Validation_NotFound" xml:space="preserve">
+    <value>Пристрій не знайдено.</value>
+  </data>
+  <data name="User_Field_Validation" xml:space="preserve">
+    <value>Користувача не вказано.</value>
+  </data>
+  <data name="Button_Download" xml:space="preserve">
+    <value>Завантажити</value>
+  </data>
+  <data name="Days_Field_Choose" xml:space="preserve">
+    <value>Виберіть дні тижня:</value>
+  </data>
+  <data name="Ftps_Field_Encryption" xml:space="preserve">
+    <value>Шифрування SSL/TTS:</value>
+  </data>
+  <data name="Server_Field_Port" xml:space="preserve">
+    <value>Порт:</value>
+  </data>
+  <data name="Server_Field_Address_Validation" xml:space="preserve">
+    <value>Сервер не вказано.</value>
+  </data>
+  <data name="AfterTaskSelection_Reboot" xml:space="preserve">
+    <value>Перезавантаження</value>
+  </data>
+</root>

@@ -1,11 +1,13 @@
-# 2024.05.24
+# 2024.06.21
 (unreleased)
 
 ## New Features
 - Synchronization of files between devices.
+- Added Ukrainian language by https://github.com/Kopejkin .
 
 ## Changes
 - Italian language was updated by https://github.com/bovirus .
+- Libraries updates.
 
 ## Bug Fixes
 - Errors for FTPS were not logged.
