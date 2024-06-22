@@ -1,5 +1,4 @@
-﻿using BUtil.Core.ConfigurationFileModels.V2;
-using BUtil.Core.Events;
+﻿using BUtil.Core.Events;
 using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
@@ -7,40 +6,56 @@ using System;
 
 namespace BUtil.Core.TasksTree.States;
 
-internal class SaveStateToStorageTask : BuTask
+internal class SaveStateToStorageTask : BuTaskV2
 {
     private readonly StorageSpecificServicesIoc _services;
-    private readonly IncrementalBackupState _state;
-    private readonly IncrementalBackupModelOptionsV2 _options;
+    private readonly IncrementalBackupState? _state;
+    private readonly Func<IncrementalBackupState?>? _getState;
+    private readonly string _password;
 
     public StorageFile? StateFile { get; private set; }
 
     public SaveStateToStorageTask(
         StorageSpecificServicesIoc services,
         TaskEvents events,
-        IncrementalBackupState state,
-        IncrementalBackupModelOptionsV2 options)
+        Func<IncrementalBackupState?> getState,
+        string password)
+        : this(services, events, password)
+    {
+        _getState = getState;
+    }
+
+    public SaveStateToStorageTask(
+        StorageSpecificServicesIoc services,
+        TaskEvents events,
+        IncrementalBackupState? state,
+        string password)
+        : this(services, events, password)
+    {
+        _state = state;
+    }
+
+    private SaveStateToStorageTask(StorageSpecificServicesIoc services, TaskEvents events, string password)
         : base(services.Log, events, Localization.Resources.DataStorage_State_Saving)
     {
         _services = services;
-        _state = state;
-        _options = options;
+        _password = password;
     }
 
-    public override void Execute()
+    protected override void ExecuteInternal()
     {
-        UpdateStatus(ProcessingStatus.InProgress);
-
-        try
+        var actualState = _state ?? _getState!();
+        if (actualState == null)
         {
-            StateFile = _services.IncrementalBackupStateService.Write(_options.Password, _state);
-            IsSuccess = StateFile != null;
+            LogDebug("State is null. Version is not needed. Skipping save.");
         }
-        catch (Exception ex)
+        else
         {
-            LogError(ex.Message);
-            IsSuccess = false;
+            StateFile = _services.IncrementalBackupStateService.Write(_password, actualState);
+            if (StateFile == null)
+            {
+                throw new Exception("Failed to save state!");
+            }
         }
-        UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
     }
 }

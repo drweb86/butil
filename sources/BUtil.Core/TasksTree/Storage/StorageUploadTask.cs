@@ -7,9 +7,9 @@ using BUtil.Core.State;
 using BUtil.Core.Synchronization;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
+using BUtil.Core.TasksTree.States;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 
 namespace BUtil.Core.TasksTree.Storage;
@@ -17,14 +17,17 @@ namespace BUtil.Core.TasksTree.Storage;
 internal class StorageUploadTask : SequentialBuTask
 {
     private readonly StorageSpecificServicesIoc _services;
+    private readonly string _password;
     private readonly StorageUploadTaskOptions _options;
 
     public StorageUploadTask(
         StorageSpecificServicesIoc services,
         TaskEvents events,
+        string password,
         StorageUploadTaskOptions options) : base(services.Log, events, "Sending data to storage")
     {
         _services = services;
+        _password = password;
         _options = options;
     }
 
@@ -75,13 +78,100 @@ internal class StorageUploadTask : SequentialBuTask
 
         ActualUpload(storageToWriteTasks, tasks);
 
-        // Patch state
+        SaveState(storageToWriteTasks, tasks, versionUtc);
 
-        // Save state
-
-        // Save scripts
+        Events.DuringExecutionTasksAdded(Id, tasks);
+        base.Execute();
 
         UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
+    }
+
+    private void SaveState(Dictionary<SourceItemV2, List<WriteSourceFileToStorageTask>> storageToWriteTasks, List<BuTask> tasks, DateTime versionUtc)
+    {
+        Func<IncrementalBackupState?> getState = () => GetIncrementedBackupState(storageToWriteTasks, _options.PreviousState, versionUtc);
+        Func<bool> isVersionNeeded = () => true;
+
+        var saveStateToStorageTask = new SaveStateToStorageTask(_services, Events, getState, _password);
+
+        tasks.Add(saveStateToStorageTask);
+        tasks.Add(new WriteIntegrityVerificationScriptsToStorageTask(_services, Events, isVersionNeeded, getState, new CompletedTask(Log, Events, true), saveStateToStorageTask, () => saveStateToStorageTask.StateFile!));
+    }
+
+    private IncrementalBackupState? GetIncrementedBackupState(
+        Dictionary<SourceItemV2, List<WriteSourceFileToStorageTask>> storageToWriteTasks,
+        IncrementalBackupState previousState,
+        DateTime versionUtc)
+    {
+        var sourceItemChanges = new List<SourceItemChanges>();
+        var versionState = new VersionState(versionUtc, sourceItemChanges);
+        previousState.VersionStates.Add(versionState);
+
+        bool versionIsNeeded = false;
+        foreach (var change in _options.Changes)
+        {
+            var deletedFiles = new List<string>();
+            var updatedFiles = new List<StorageFile>();
+            var createdFiles = new List<StorageFile>();
+            var sourceItemChangesItem = new SourceItemChanges(change.SourceItem, deletedFiles, updatedFiles, createdFiles);
+            sourceItemChanges.Add(sourceItemChangesItem);
+
+
+            // state.
+            var state = previousState.LastSourceItemStates.SingleOrDefault(x => x.SourceItem.Id == change.SourceItem.Id);
+            if (state == null)
+            {
+                state = new SourceItemState(change.SourceItem, new List<FileState>());
+                previousState.LastSourceItemStates.Add(state);
+                versionIsNeeded = true;
+            }
+
+            // register deleted files
+            foreach (var deletedFile in change.DeletedFiles)
+            {
+                var actualFile = change.ActualFileToRemoteFileConverter(deletedFile);
+                var itemToDelete = state.FileStates.Single(x => x.FileName == actualFile);
+                state.FileStates.Remove(itemToDelete);
+                deletedFiles.Add(actualFile);
+                versionIsNeeded = true;
+            }
+
+            // register updated file
+            if (storageToWriteTasks.Any(x => x.Key.Id == change.SourceItem.Id))
+            {
+                var createUpdateTasks = storageToWriteTasks.Single(x => x.Key.Id == change.SourceItem.Id).Value;
+                foreach (var createdUpdateTask in createUpdateTasks)
+                {
+                    if (!createdUpdateTask.IsSuccess ||
+                        !createdUpdateTask.IsSkipped ||
+                        !createdUpdateTask.IsSkippedBecauseOfQuota)
+                        continue;
+
+                    versionIsNeeded = true;
+                    
+                    foreach (var storageFile in createdUpdateTask.StorageFiles)
+                    {
+                        var existingItem = state.FileStates.SingleOrDefault(x => x.FileName == storageFile.FileState.FileName);
+                        if (existingItem != null)
+                        {
+                            state.FileStates.Remove(existingItem);
+                            state.FileStates.Add(storageFile.FileState);
+                            updatedFiles.Add(storageFile);
+                        }
+                        else
+                        {
+                            state.FileStates.Add(storageFile.FileState);
+                            createdFiles.Add(storageFile);
+                        }
+                    }
+                }
+            }
+        }
+
+        if (versionIsNeeded)
+        {
+            return previousState;
+        }
+        return null;
     }
 
     private void ActualUpload(Dictionary<SourceItemV2, List<WriteSourceFileToStorageTask>> storageToWriteTasks, List<BuTask> tasks)

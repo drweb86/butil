@@ -15,14 +15,14 @@ internal class WriteIntegrityVerificationScriptsToStorageTask : BuTask
 {
     private readonly StorageSpecificServicesIoc _services;
     private readonly Func<bool> _isVersionNeeded;
-    private readonly Func<IncrementalBackupState> _getState;
+    private readonly Func<IncrementalBackupState?> _getState;
     private readonly BuTask _writeSourceFilesToStorageTask;
     private readonly BuTask _writeStateToStorageTask;
     private readonly Func<StorageFile> _getStateStorageFile;
 
     public WriteIntegrityVerificationScriptsToStorageTask(StorageSpecificServicesIoc services, TaskEvents events,
         Func<bool> isVersionNeeded,
-        Func<IncrementalBackupState> getState,
+        Func<IncrementalBackupState?> getState,
         BuTask writeSourceFilesToStorageTask,
         BuTask writeStateToStorageTask,
         Func<StorageFile> getStateStorageFile)
@@ -66,12 +66,22 @@ internal class WriteIntegrityVerificationScriptsToStorageTask : BuTask
             return;
         }
 
+        var state = _getState();
+        if (state == null)
+        {
+            LogDebug("Version is not needed.");
+            IsSuccess = true;
+            UpdateStatus(ProcessingStatus.FinishedSuccesfully);
+            return;
+        }
+
         try
         {
             using (var tempFolder = new TempFolder())
             {
                 var powershellFile = Path.Combine(tempFolder.Folder, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Ps1);
-                File.WriteAllText(powershellFile, GetPowershellScriptContent());
+                File.WriteAllText(powershellFile, GetPowershellScriptContent(state));
+                // TODO: check for null!
                 storage.Upload(powershellFile, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Ps1);
                 File.Delete(powershellFile);
                 IsSuccess = true;
@@ -87,9 +97,9 @@ internal class WriteIntegrityVerificationScriptsToStorageTask : BuTask
         UpdateStatus(ProcessingStatus.FinishedSuccesfully);
     }
 
-    private string GetPowershellScriptContent()
+    private string GetPowershellScriptContent(IncrementalBackupState state)
     {
-        var storageFiles = _getState().VersionStates
+        var storageFiles = state.VersionStates
             .SelectMany(x => x.SourceItemChanges)
             .SelectMany(x =>
             {

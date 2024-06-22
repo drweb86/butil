@@ -1,8 +1,5 @@
 ﻿using BUtil.Core.ConfigurationFileModels.V2;
-using BUtil.Core.Hashing;
 using BUtil.Core.Logs;
-using BUtil.Core.Options;
-using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.IncrementalModel;
 using System;
 
@@ -18,9 +15,6 @@ internal class SynchronizationServices : IDisposable
     public CommonServicesIoc CommonServices { get; }
     public StorageSpecificServicesIoc StorageSpecificServices { get; }
 
-    private readonly Lazy<SynchronizationRemoteStateService> _remoteStateService;
-    public SynchronizationRemoteStateService RemoteStateService => _remoteStateService.Value;
-
     public SynchronizationServices(ILog log, string taskName, string localFolder, string? repositorySubfolder, IStorageSettingsV2 remoteStorageSettings, bool autodetectConnectionSettings)
     {
         Log = log;
@@ -29,7 +23,6 @@ internal class SynchronizationServices : IDisposable
         CommonServices = new CommonServicesIoc();
         ActualFilesService = new SynchronizationActualFilesService(CommonServices.HashService, localFolder);
         StorageSpecificServices = new StorageSpecificServicesIoc(log, remoteStorageSettings, CommonServices.HashService, autodetectConnectionSettings);
-        _remoteStateService = new Lazy<SynchronizationRemoteStateService>(() => new SynchronizationRemoteStateService(StorageSpecificServices.Storage));
     }
 
     public void Dispose()
