@@ -1,11 +1,8 @@
 ﻿using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
-using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
-using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.State;
-using BUtil.Core.Synchronization;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
 using BUtil.Core.TasksTree.States;
@@ -62,38 +59,31 @@ internal class StorageUploadTask : SequentialBuTask
         foreach (var change in _options.Changes)
         {
             var writeTasks = change.CreatedUpdatedFiles
-                .Select(x =>
-                {
-                    var storageFile = new StorageFile(x);
-                    storageFile.StorageRelativeFileName = SourceItemHelper.GetCompressedStorageRelativeFileName(versionUtc);
-                    storageFile.StorageMethod = StorageMethodNames.SevenZipEncrypted;
-                    return storageFile;
-                })
+                .Select(x => new StorageFile(x, StorageMethodNames.SevenZipEncrypted, SourceItemHelper.GetCompressedStorageRelativeFileName(versionUtc)))
                 .GroupBy(x => x.FileState.ToDeduplicationString())
-                .Select(x => new WriteSourceFileToStorageTask(
-                    _services,
-                    Events,
-                    x
-                        .ToList()
-                        .Select(x =>
-                        {
-                            var storageFile = new StorageFile(x);
-                            storageFile.FileState.FileName = change.ActualFileToRemoteFileConverter(x.FileState.FileName);
-                            return storageFile;
-                        })
-                        .ToList(),
-                    quotaGb,
-                    change.SourceItem,
-                    _options.PreviousState.VersionStates,
-                    x.ToList().First().FileState.FileName))
+                .Select(x => new WriteSourceFileToStorageTask(_services, Events,
+                    PatchRemoteFileNames(x.ToList(), change), quotaGb, change.SourceItem,
+                    _options.PreviousState.VersionStates, x.ToList().First().FileState.FileName))
                 .ToList();
 
             storageToWriteTasks.Add(change.SourceItem, writeTasks);
+
+            tasks.AddRange(writeTasks);
         }
-        
-        storageToWriteTasks.ToList().ForEach(x => tasks.AddRange(x.Value));
-        
+
         return storageToWriteTasks;
+    }
+
+    private static List<StorageFile> PatchRemoteFileNames(IEnumerable<StorageFile> storageFiles, StorageUploadTaskSourceItemChange change)
+    {
+        return storageFiles
+            .Select(x =>
+            {
+                var storageFile = new StorageFile(x);
+                storageFile.FileState.FileName = change.ActualFileToRemoteFileConverter(x.FileState.FileName);
+                return storageFile;
+            })
+            .ToList();
     }
 
     private void SaveState(Dictionary<SourceItemV2, List<WriteSourceFileToStorageTask>> storageToWriteTasks, List<BuTask> tasks, DateTime versionUtc)

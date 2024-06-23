@@ -30,6 +30,13 @@ public class StorageFile
         FileState = fileState;
     }
 
+    public StorageFile(FileState fileState, string storageMethod, string storageRelativeFileName)
+    {
+        FileState = fileState;
+        StorageMethod = storageMethod;
+        StorageRelativeFileName = storageRelativeFileName;
+    }
+
     internal void SetStoragePropertiesFrom(StorageFile matchingFile)
     {
         StorageRelativeFileName = matchingFile.StorageRelativeFileName;

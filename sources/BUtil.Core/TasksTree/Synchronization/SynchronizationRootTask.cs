@@ -144,7 +144,7 @@ class SynchronizationRootTask : SequentialBuTask
         var actualRemoteSourceItem = _model.RemoteSourceItem ?? _model.CreateVirtualSourceItem();
         var storageUploadTaskOptions = new StorageUploadTaskOptions(
             _model.RemoteStorageState ?? new IncrementalBackupState(),
-            [ 
+            [
                 new StorageUploadTaskSourceItemChange
                 (
                     actualRemoteSourceItem,
@@ -152,16 +152,20 @@ class SynchronizationRootTask : SequentialBuTask
                     updateCreateItems
                         .Select(x => new FileState(Path.Combine(_model.LocalSourceItem.Target, x.ActualFile!.RelativeFileName), x.ActualFile!.ModifiedAtUtc, x.ActualFile!.Size, x.ActualFile!.Sha512))
                         .ToList(),
-                    x => {
-                        var relativeFileName = x.Substring(0, _model.LocalSourceItem.Target.Length + 1);
-                        var actualRemoteRelativeFileName = FileHelper.Combine(FileHelper.NormalizeRelativePath(_model.TaskOptions.RepositorySubfolder), relativeFileName);
-                        var actualRemoteFile = Path.Combine(actualRemoteSourceItem.Target, actualRemoteRelativeFileName);
-                        return actualRemoteFile;
-                    }
-                ) 
+                    fileName => ConvertFileNameToStorageRelatedByRepositorySubfolderAndVirtualizedRemoteSourceItem(actualRemoteSourceItem, fileName)
+                )
             ]
         );
         tasks.Add(new StorageUploadTask(_synchronizationServices.StorageSpecificServices, Events, _model.TaskOptions.Password, storageUploadTaskOptions));
+    }
+
+    private string ConvertFileNameToStorageRelatedByRepositorySubfolderAndVirtualizedRemoteSourceItem(SourceItemV2 actualRemoteSourceItem, string fileName)
+    {
+        var relativeFileName = FileHelper.GetRelativeFileName(_model.LocalSourceItem.Target, fileName);
+        var sourceItemRelativeFileName = FileHelper.Combine(FileHelper.NormalizeRelativePath(_model.TaskOptions.RepositorySubfolder), relativeFileName);
+        var sourceItemVirtualFilePath = Path.Combine(actualRemoteSourceItem.Target, sourceItemRelativeFileName);
+        sourceItemVirtualFilePath = Path.GetFullPath(sourceItemVirtualFilePath); // fix delimiters.
+        return sourceItemVirtualFilePath;
     }
 
     private void ExecuteActionsLocally(List<BuTask> tasks, IEnumerable<SynchronizationConsolidatedFileInfo> syncItems)

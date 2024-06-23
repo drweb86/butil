@@ -61,4 +61,9 @@ internal static class FileHelper
         }
         return relativeFileName.Substring(relativePathToTrimNormalized.Length + 1);
     }
+
+    internal static string GetRelativeFileName(string folder, string file)
+    {
+        return file.Substring(folder.Length + 1);
+    }
 }

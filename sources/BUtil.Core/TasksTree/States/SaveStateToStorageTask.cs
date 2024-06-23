@@ -45,17 +45,17 @@ internal class SaveStateToStorageTask : BuTaskV2
     protected override void ExecuteInternal()
     {
         var actualState = _state ?? _getState!();
+
         if (actualState == null)
         {
             LogDebug("State is null. Version is not needed. Skipping save.");
+            return;
         }
-        else
+
+        StateFile = _services.IncrementalBackupStateService.Write(_password, actualState);
+        if (StateFile == null)
         {
-            StateFile = _services.IncrementalBackupStateService.Write(_password, actualState);
-            if (StateFile == null)
-            {
-                throw new Exception("Failed to save state!");
-            }
+            throw new Exception("Failed to save state!");
         }
     }
 }
