@@ -8,6 +8,7 @@ Name: french; MessagesFile: "compiler:Languages\French.isl"
 Name: italian; MessagesFile: "compiler:Languages\Italian.isl"
 Name: russian; MessagesFile: "compiler:Languages\Russian.isl"
 Name: ukrainian; MessagesFile: "compiler:Languages\Ukrainian.isl"
+; TODO: Hindi language pack file is missing across the internet for Inno Setup.
 
 [Messages]
 arabic.BeveledLabel=اللغة العربية
@@ -19,4 +20,4 @@ french.BeveledLabel=Français
 italian.BeveledLabel=Italiano
 russian.BeveledLabel=Русский
 ukrainian.BeveledLabel=Українська
-
+; TODO: Hindi language pack file is missing across the internet for Inno Setup.
