@@ -3,6 +3,7 @@ Currently program was translated into the following languages
 | Language  | Author                                                      |
 | --------- | ----------------------------------------------------------- | 
 | French    | ChadGPT                                                     |
+| German    | ChadGPT                                                     |
 | Italian   | https://github.com/bovirus                                  |
 | Russian   | me                                                          |
 | Ukrainian | https://github.com/drweb86/butil/issues/created_by/Kopejkin |

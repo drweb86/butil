@@ -124,7 +124,10 @@
     <value>Après l'achèvement de la tâche :</value>
   </data>
   <data name="AfterTaskSelection_Help" xml:space="preserve">
-    <value>Si vous choisissez autre chose que 'ne rien faire', le programme configurera le système d'exploitation pour vous montrer un rapport lors de votre prochaine connexion au système si des erreurs ou des avertissements sont enregistrés.</value>
+    <value>Si vous choisissez autre chose que 'ne rien faire', le 
+programme configurera le système d'exploitation pour vous 
+montrer un rapport lors de votre prochaine connexion au 
+système si des erreurs ou des avertissements sont enregistrés.</value>
   </data>
   <data name="AfterTaskSelection_LogOff" xml:space="preserve">
     <value>Se déconnecter</value>
@@ -148,7 +151,9 @@
     <value>Supprimer la version</value>
   </data>
   <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
-    <value>Voulez-vous vraiment supprimer la version ""{0}"" ? Les changements de version supprimés feront partie de la version ""{1}"".</value>
+    <value>Voulez-vous vraiment supprimer la version "{0}" ? 
+
+Les changements de version supprimés feront partie de la version "{1}".</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Fichiers</value>
@@ -220,7 +225,10 @@
     <value>Limite d'upload, Go :</value>
   </data>
   <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
-    <value>Limite la quantité de données envoyées pendant l'exécution d'une tâche vers le stockage. 0 - aucune limite. Lorsque le quota est dépassé, les autres fichiers seront sautés et seront traités la prochaine fois. Scénario d'utilisation : Vous copiez des données sur un serveur distant. Il y a un problème : le fournisseur d'accès réduit la vitesse d'upload après plusieurs gigaoctets. Ce paramètre vous permet de gérer cela.</value>
+    <value>Limite la quantité de données envoyées pendant l'exécution d'une tâche vers le stockage. 0 - aucune limite. 
+Lorsque le quota est dépassé, les autres fichiers seront sautés et seront traités la prochaine fois. 
+Scénario d'utilisation : Vous copiez des données sur un serveur distant. 
+Il y a un problème : le fournisseur d'accès réduit la vitesse d'upload après plusieurs gigaoctets. Ce paramètre vous permet de gérer cela.</value>
   </data>
   <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
     <value>Le quota doit être 0 (ne pas appliquer) ou une valeur supérieure à 0.</value>
@@ -343,10 +351,14 @@
     <value>Transformations de nom de fichier :</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
-    <value>Exemple : Imaginez que vous ayez le fichier {0} (modifié le {1}). Avec ce répertoire et cette chaîne de modèle, le fichier sera stocké sous : {2}</value>
+    <value>Exemple : 
+Imaginez que vous ayez le fichier {0} (modifié le {1}). 
+Avec ce répertoire et cette chaîne de modèle, le fichier sera stocké sous : {2}</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
-    <value>Tokens pris en charge : {DATE:Format} - Insère la date de modification du fichier dans le format spécifié. Pour voir toutes les options, recherchez ""C# DateTime format"".</value>
+    <value>Tokens pris en charge : 
+{DATE:Format} - Insère la date de modification du fichier dans le format spécifié. 
+Pour voir toutes les options, recherchez "C# DateTime format".</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
     <value>Nom de fichier de transformation vide.</value>
@@ -358,7 +370,9 @@
     <value>Importer "{0}"</value>
   </data>
   <data name="ImportMediaTask_Help" xml:space="preserve">
-    <value>Importe des audios, photos, vidéos depuis la carte SD de la caméra, enregistreur ; photos et vidéos depuis votre téléphone via WI-FI grâce à l'application serveur FTP en utilisant des noms de fichiers modèles. Consultez le site web de l'application pour voir la documentation sur la configuration de la transmission de fichiers via WI-FI à l'aide de l'application serveur FTP sur le téléphone.</value>
+    <value>Importe des audios, photos, vidéos depuis la carte SD de la caméra, enregistreur ; photos et vidéos depuis votre téléphone via WI-FI grâce à l'application serveur FTP en utilisant des noms de fichiers modèles. 
+
+Consultez le site web de l'application pour voir la documentation sur la configuration de la transmission de fichiers via WI-FI à l'aide de l'application serveur FTP sur le téléphone.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Importer la source de données</value>
@@ -367,10 +381,18 @@
     <value>Ignorer les fichiers déjà importés</value>
   </data>
   <data name="ImproveIt_Message" xml:space="preserve">
-    <value>Une erreur inattendue est survenue. Veuillez contacter les développeurs avec les informations enregistrées sur votre bureau dans ""{0}"" L'application va maintenant se fermer.</value>
+    <value>Une erreur inattendue est survenue. 
+
+Veuillez contacter les développeurs avec les informations enregistrées sur votre bureau dans "{0}" 
+
+L'application va maintenant se fermer.</value>
   </data>
   <data name="IncrementalBackup_Help" xml:space="preserve">
-    <value>La forme la plus basique de sauvegarde incrémentielle consiste à identifier, enregistrer et donc, préserver uniquement les fichiers qui ont changé depuis la dernière sauvegarde. Étant donné que les changements sont généralement faibles, les sauvegardes incrémentielles sont beaucoup plus petites et plus rapides que les sauvegardes complètes. Par exemple, après une sauvegarde complète le vendredi, une sauvegarde le lundi contiendra uniquement les fichiers qui ont changé depuis vendredi. Une sauvegarde le mardi contient uniquement les fichiers qui ont changé depuis lundi, et ainsi de suite. Si l'une des copies créées échoue, y compris la première (complète), la restauration sera incomplète.</value>
+    <value>La forme la plus basique de sauvegarde incrémentielle consiste à identifier, enregistrer et donc, préserver uniquement les fichiers qui ont changé depuis la dernière sauvegarde. 
+
+Étant donné que les changements sont généralement faibles, les sauvegardes incrémentielles sont beaucoup plus petites et plus rapides que les sauvegardes complètes. 
+
+Par exemple, après une sauvegarde complète le vendredi, une sauvegarde le lundi contiendra uniquement les fichiers qui ont changé depuis vendredi. Une sauvegarde le mardi contient uniquement les fichiers qui ont changé depuis lundi, et ainsi de suite. Si l'une des copies créées échoue, y compris la première (complète), la restauration sera incomplète.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Sauvegarde incrémentielle</value>
@@ -469,7 +491,9 @@
     <value>Utiliser</value>
   </data>
   <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
-    <value>Impossible de localiser les fichiers ""{0}"" dans le répertoire. Indiquez un répertoire contenant ce fichier.</value>
+    <value>Impossible de localiser les fichiers "{0}" dans le répertoire. 
+
+Indiquez un répertoire contenant ce fichier.</value>
   </data>
   <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
     <value>Impossible de lire l'état.</value>
@@ -523,7 +547,15 @@
     <value>Globing de fichier dans .NET : Modèles</value>
   </data>
   <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
-    <value>Ici, vous pouvez spécifier des modèles d'exclusion de fichier globing. Il peut s'agir d'un nom de fichier ou de dossier ou d'un caractère générique. Exemples : d:\temp, d:\temp\file.txt, d:\temp\**\*.txt ou bin. Consultez la description détaillée dans le lien suivant.</value>
+    <value>Ici, vous pouvez spécifier des modèles d'exclusion de fichier globing. 
+Il peut s'agir d'un nom de fichier ou de dossier ou d'un caractère générique. 
+Exemples : 
+d:\temp,
+d:\temp\file.txt,
+d:\temp\**\*.txt ou 
+bin.
+
+Consultez la description détaillée dans le lien suivant.</value>
   </data>
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
     <value>Ignore le traitement des fichiers par le modèle d'exclusion.</value>
