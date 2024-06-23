@@ -17,6 +17,8 @@ internal class StorageUploadTask : SequentialBuTask
     private readonly StorageSpecificServicesIoc _services;
     private readonly string _password;
     private readonly StorageUploadTaskOptions _options;
+    private readonly Quota _quota;
+    private DateTime _versionUtc;
 
     public StorageUploadTask(
         StorageSpecificServicesIoc services,
@@ -27,21 +29,21 @@ internal class StorageUploadTask : SequentialBuTask
         _services = services;
         _password = password;
         _options = options;
+        var gb = 1024 * 1024 * 1024;
+        _quota = new Quota(services.StorageSettings.SingleBackupQuotaGb * gb);
+        _versionUtc = DateTime.UtcNow;
     }
 
     public override void Execute()
     {
         UpdateStatus(ProcessingStatus.InProgress);
+
         var tasks = new List<BuTask>();
         Children = tasks;
 
-        var gb = 1024 * 1024 * 1024;
-        var quotaGb = new Quota(_services.StorageSettings.SingleBackupQuotaGb * gb);
-        var versionUtc = DateTime.UtcNow;
+        var storageToWriteTasks = CreateWriteSourceFileToStorageTasks(tasks);
 
-        var storageToWriteTasks = CreateStorageTasks(quotaGb, versionUtc, tasks);
-
-        SaveState(storageToWriteTasks, tasks, versionUtc);
+        CreateSaveStateTasks(storageToWriteTasks, tasks);
 
         Events.DuringExecutionTasksAdded(Id, tasks);
         base.Execute();
@@ -49,21 +51,18 @@ internal class StorageUploadTask : SequentialBuTask
         UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
     }
 
-    private Dictionary<SourceItemV2, List<WriteSourceFileToStorageTask>> CreateStorageTasks(
-        Quota quotaGb,
-        DateTime versionUtc,
-        List<BuTask> tasks)
+    private Dictionary<SourceItemV2, List<WriteSourceFileToStorageTask>> CreateWriteSourceFileToStorageTasks(List<BuTask> tasks)
     {
         var storageToWriteTasks = new Dictionary<SourceItemV2, List<WriteSourceFileToStorageTask>>();
 
         foreach (var change in _options.Changes)
         {
             var writeTasks = change.CreatedUpdatedFiles
-                .Select(x => new StorageFile(x, StorageMethodNames.SevenZipEncrypted, SourceItemHelper.GetCompressedStorageRelativeFileName(versionUtc)))
+                .Select(x => new StorageFile(x, StorageMethodNames.SevenZipEncrypted, SourceItemHelper.GetCompressedStorageRelativeFileName(_versionUtc)))
                 .GroupBy(x => x.FileState.ToDeduplicationString())
                 .Select(x => new WriteSourceFileToStorageTask(_services, Events,
-                    PatchRemoteFileNames(x.ToList(), change), quotaGb, change.SourceItem,
-                    _options.PreviousState.VersionStates, x.ToList().First().FileState.FileName))
+                    PatchRemoteFileNames(x.ToList(), change), _quota, change.SourceItem,
+                    _options.State.VersionStates, x.ToList().First().FileState.FileName, false))
                 .ToList();
 
             storageToWriteTasks.Add(change.SourceItem, writeTasks);
@@ -86,25 +85,20 @@ internal class StorageUploadTask : SequentialBuTask
             .ToList();
     }
 
-    private void SaveState(Dictionary<SourceItemV2, List<WriteSourceFileToStorageTask>> storageToWriteTasks, List<BuTask> tasks, DateTime versionUtc)
+    private void CreateSaveStateTasks(Dictionary<SourceItemV2, List<WriteSourceFileToStorageTask>> storageToWriteTasks, List<BuTask> tasks)
     {
-        Func<IncrementalBackupState?> getState = () => GetIncrementedBackupState(storageToWriteTasks, _options.PreviousState, versionUtc);
-        Func<bool> isVersionNeeded = () => true;
+        var isVersionNeeded = new Lazy<bool>(() => IncrementState(storageToWriteTasks));
 
-        var saveStateToStorageTask = new SaveStateToStorageTask(_services, Events, getState, _password);
+        var saveStateToStorageTask = new SaveStateToStorageTask(_services, Events, () => isVersionNeeded.Value ? _options.State : null, _password);
 
         tasks.Add(saveStateToStorageTask);
-        tasks.Add(new WriteIntegrityVerificationScriptsToStorageTask(_services, Events, isVersionNeeded, getState, new CompletedTask(Log, Events, true), saveStateToStorageTask, () => saveStateToStorageTask.StateFile!));
+        tasks.Add(new WriteIntegrityVerificationScriptsToStorageTask(_services, Events, () => isVersionNeeded.Value, () => _options.State, new CompletedTask(Log, Events, true), saveStateToStorageTask, () => saveStateToStorageTask.StateFile!));
     }
 
-    private IncrementalBackupState? GetIncrementedBackupState(
-        Dictionary<SourceItemV2, List<WriteSourceFileToStorageTask>> storageToWriteTasks,
-        IncrementalBackupState previousState,
-        DateTime versionUtc)
+    private bool IncrementState(Dictionary<SourceItemV2, List<WriteSourceFileToStorageTask>> storageToWriteTasks)
     {
         var sourceItemChanges = new List<SourceItemChanges>();
-        var versionState = new VersionState(versionUtc, sourceItemChanges);
-        previousState.VersionStates.Add(versionState);
+        var versionState = new VersionState(_versionUtc, sourceItemChanges);
 
         bool versionIsNeeded = false;
         foreach (var change in _options.Changes)
@@ -115,15 +109,8 @@ internal class StorageUploadTask : SequentialBuTask
             var sourceItemChangesItem = new SourceItemChanges(change.SourceItem, deletedFiles, updatedFiles, createdFiles);
             sourceItemChanges.Add(sourceItemChangesItem);
 
-
-            // state.
-            var state = previousState.LastSourceItemStates.SingleOrDefault(x => x.SourceItem.Id == change.SourceItem.Id);
-            if (state == null)
-            {
-                state = new SourceItemState(change.SourceItem, new List<FileState>());
-                previousState.LastSourceItemStates.Add(state);
-                versionIsNeeded = true;
-            }
+            var state = GetOrCreateSourceItemState(change, out var isCreated);
+            versionIsNeeded = versionIsNeeded || isCreated;
 
             // register deleted files
             foreach (var deletedFile in change.DeletedFiles)
@@ -142,12 +129,12 @@ internal class StorageUploadTask : SequentialBuTask
                 foreach (var createdUpdateTask in createUpdateTasks)
                 {
                     if (!createdUpdateTask.IsSuccess ||
-                        !createdUpdateTask.IsSkipped ||
-                        !createdUpdateTask.IsSkippedBecauseOfQuota)
+                        createdUpdateTask.IsSkipped ||
+                        createdUpdateTask.IsSkippedBecauseOfQuota)
                         continue;
 
                     versionIsNeeded = true;
-                    
+
                     foreach (var storageFile in createdUpdateTask.StorageFiles)
                     {
                         var existingItem = state.FileStates.SingleOrDefault(x => x.FileName == storageFile.FileState.FileName);
@@ -169,16 +156,23 @@ internal class StorageUploadTask : SequentialBuTask
 
         if (versionIsNeeded)
         {
-            return previousState;
+            _options.State.VersionStates.Add(versionState);
         }
-        return null;
+
+        return versionIsNeeded;
     }
 
-    private void ActualUpload(Dictionary<SourceItemV2, List<WriteSourceFileToStorageTask>> storageToWriteTasks, List<BuTask> tasks)
+    private SourceItemState GetOrCreateSourceItemState(StorageUploadTaskSourceItemChange change, out bool isCreated)
     {
-        foreach (var tasksPair in storageToWriteTasks)
+        isCreated = false;
+        var state = _options.State.LastSourceItemStates.SingleOrDefault(x => x.SourceItem.Id == change.SourceItem.Id);
+        if (state == null)
         {
-            tasks.AddRange(tasksPair.Value);
+            state = new SourceItemState(change.SourceItem, new List<FileState>());
+            _options.State.LastSourceItemStates.Add(state);
+            isCreated = true;
         }
+
+        return state;
     }
 }

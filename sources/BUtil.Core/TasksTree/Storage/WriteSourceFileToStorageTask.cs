@@ -17,6 +17,7 @@ internal class WriteSourceFileToStorageTask : BuTask
     private readonly Quota _singleBackupQuotaGb;
     private readonly List<VersionState> _versionStates;
     private readonly string _actualFile;
+    private readonly bool _ignoreLastVersion;
 
     public List<StorageFile> StorageFiles { get; }
     public bool IsSkipped { get; private set; }
@@ -29,7 +30,8 @@ internal class WriteSourceFileToStorageTask : BuTask
         Quota singleBackupQuotaGb,
         SourceItemV2 sourceItem,
         List<VersionState> versionStates,
-        string actualFile) :
+        string actualFile,
+        bool ignoreLastVersion) :
         base(services.Log, events, string.Format(Localization.Resources.File_Saving,
             string.Join(", ", storageFiles
                 .Select(x => SourceItemHelper.GetFriendlyFileName(sourceItem, x.FileState.FileName)))))
@@ -47,6 +49,7 @@ internal class WriteSourceFileToStorageTask : BuTask
         _singleBackupQuotaGb = singleBackupQuotaGb;
         _versionStates = versionStates;
         _actualFile = actualFile;
+        _ignoreLastVersion = ignoreLastVersion;
     }
 
     public override void Execute()
@@ -91,12 +94,13 @@ internal class WriteSourceFileToStorageTask : BuTask
     private bool FileAlreadyInStorage([NotNullWhen(true)] out StorageFile? matchingStorageFile)
     {
         matchingStorageFile = null;
-        if (this._versionStates.Count < 2)
+        var ignoreVersionsCount = _ignoreLastVersion ? 1 : 0;
+        if (this._versionStates.Count <= ignoreVersionsCount)
         {
             return false;
         }
 
-        var previousVersions = this._versionStates.Take(this._versionStates.Count - 1).ToArray();
+        var previousVersions = this._versionStates.Take(this._versionStates.Count - ignoreVersionsCount).ToArray();
         foreach (var previousVersion in previousVersions)
         {
             foreach (var sourceItemChange in previousVersion.SourceItemChanges)

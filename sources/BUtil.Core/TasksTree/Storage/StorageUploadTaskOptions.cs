@@ -5,14 +5,14 @@ namespace BUtil.Core.TasksTree.Storage;
 
 class StorageUploadTaskOptions
 { 
-    public IncrementalBackupState PreviousState { get; }
+    public IncrementalBackupState State { get; }
     public IEnumerable<StorageUploadTaskSourceItemChange> Changes { get; }
 
     public StorageUploadTaskOptions(
-        IncrementalBackupState previousState,
+        IncrementalBackupState state,
         IEnumerable<StorageUploadTaskSourceItemChange> changes)
     {
-        PreviousState = previousState;
+        State = state;
         Changes = changes;
     }
 }
