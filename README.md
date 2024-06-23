@@ -13,7 +13,7 @@
 
 ![Supported Languages](./help/Assets/Image%20-%20Languages.png)
 
-[English] [Russian] [Italian](https://github.com/bovirus) [Ukrainian](https://github.com/Kopejkin) [French](https://ask.chadgpt.ru/) [German](https://ask.chadgpt.ru/) [Chinese](https://ask.chadgpt.ru/) [Spanish](https://ask.chadgpt.ru/)
+[Arabic](https://ask.chadgpt.ru/) [Chinese](https://ask.chadgpt.ru/) [English] [French](https://ask.chadgpt.ru/) [German](https://ask.chadgpt.ru/) [Italian](https://github.com/bovirus) [Russian] [Spanish](https://ask.chadgpt.ru/) [Ukrainian](https://github.com/Kopejkin)
 
 ## Features
 

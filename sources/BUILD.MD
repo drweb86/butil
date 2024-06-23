@@ -15,6 +15,10 @@
 File: https://github.com/kira-96/Inno-Setup-Chinese-Simplified-Translation/blob/main/ChineseSimplified.isl
 To be put into
 C:\Program Files (x86)\Inno Setup 6\Languages\ChineseSimplified.isl
+- Arabic language
+File: https://github.com/parmaja/innosetup/blob/master/languages/Arabic.isl
+To be put into
+C:\Program Files (x86)\Inno Setup 6\Languages\Arabic.isl
 - 7-zip x64 (must be installed in default directory).
 - .Net 8 SDK
 

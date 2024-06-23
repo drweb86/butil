@@ -1,4 +1,5 @@
 ﻿[Languages]
+Name: arabic; MessagesFile: "compiler:Languages\Arabic.isl"
 Name: chinese; MessagesFile: "compiler:Languages\ChineseSimplified.isl"
 Name: german; MessagesFile: "compiler:Languages\German.isl"
 Name: english; MessagesFile: "compiler:Default.isl"
@@ -9,6 +10,7 @@ Name: russian; MessagesFile: "compiler:Languages\Russian.isl"
 Name: ukrainian; MessagesFile: "compiler:Languages\Ukrainian.isl"
 
 [Messages]
+arabic.BeveledLabel=اللغة العربية
 chinese.BeveledLabel=中文
 german.BeveledLabel=Deutsch
 english.BeveledLabel=English
