@@ -109,47 +109,23 @@ internal class StorageUploadTask : SequentialBuTask
             var sourceItemChangesItem = new SourceItemChanges(change.SourceItem, deletedFiles, updatedFiles, createdFiles);
             sourceItemChanges.Add(sourceItemChangesItem);
 
-            var state = GetOrCreateSourceItemState(change, out var isCreated);
-            versionIsNeeded = versionIsNeeded || isCreated;
+            var state = GetOrCreateSourceItemState(change);
 
-            // register deleted files
-            foreach (var deletedFile in change.DeletedFiles)
-            {
-                var actualFile = change.ActualFileToRemoteFileConverter(deletedFile);
-                var itemToDelete = state.FileStates.Single(x => x.FileName == actualFile);
-                state.FileStates.Remove(itemToDelete);
-                deletedFiles.Add(actualFile);
-                versionIsNeeded = true;
-            }
+            RegisterDeletedFiles(change, deletedFiles, state);
+            versionIsNeeded = versionIsNeeded || change.DeletedFiles.Any();
 
             // register updated file
             if (storageToWriteTasks.Any(x => x.Key.Id == change.SourceItem.Id))
             {
-                var createUpdateTasks = storageToWriteTasks.Single(x => x.Key.Id == change.SourceItem.Id).Value;
-                foreach (var createdUpdateTask in createUpdateTasks)
+                var completedTasks = storageToWriteTasks
+                    .Single(x => x.Key.Id == change.SourceItem.Id).Value
+                    .Where(x => x.IsSuccess && !x.IsSkipped && !x.IsSkippedBecauseOfQuota)
+                    .ToList();
+
+                versionIsNeeded = versionIsNeeded || completedTasks.Any();
+                foreach (var completedTask in completedTasks)
                 {
-                    if (!createdUpdateTask.IsSuccess ||
-                        createdUpdateTask.IsSkipped ||
-                        createdUpdateTask.IsSkippedBecauseOfQuota)
-                        continue;
-
-                    versionIsNeeded = true;
-
-                    foreach (var storageFile in createdUpdateTask.StorageFiles)
-                    {
-                        var existingItem = state.FileStates.SingleOrDefault(x => x.FileName == storageFile.FileState.FileName);
-                        if (existingItem != null)
-                        {
-                            state.FileStates.Remove(existingItem);
-                            state.FileStates.Add(storageFile.FileState);
-                            updatedFiles.Add(storageFile);
-                        }
-                        else
-                        {
-                            state.FileStates.Add(storageFile.FileState);
-                            createdFiles.Add(storageFile);
-                        }
-                    }
+                    RegisterFileUpload(updatedFiles, createdFiles, state, completedTask);
                 }
             }
         }
@@ -162,15 +138,43 @@ internal class StorageUploadTask : SequentialBuTask
         return versionIsNeeded;
     }
 
-    private SourceItemState GetOrCreateSourceItemState(StorageUploadTaskSourceItemChange change, out bool isCreated)
+    private static void RegisterFileUpload(List<StorageFile> updatedFiles, List<StorageFile> createdFiles, SourceItemState state, WriteSourceFileToStorageTask createdUpdateTask)
     {
-        isCreated = false;
+        foreach (var storageFile in createdUpdateTask.StorageFiles)
+        {
+            var existingItem = state.FileStates.SingleOrDefault(x => x.FileName == storageFile.FileState.FileName);
+            if (existingItem != null)
+            {
+                state.FileStates.Remove(existingItem);
+                state.FileStates.Add(storageFile.FileState);
+                updatedFiles.Add(storageFile);
+            }
+            else
+            {
+                state.FileStates.Add(storageFile.FileState);
+                createdFiles.Add(storageFile);
+            }
+        }
+    }
+
+    private static void RegisterDeletedFiles(StorageUploadTaskSourceItemChange change, List<string> deletedFiles, SourceItemState state)
+    {
+        foreach (var deletedFile in change.DeletedFiles)
+        {
+            var actualFile = change.ActualFileToRemoteFileConverter(deletedFile);
+            var itemToDelete = state.FileStates.Single(x => x.FileName == actualFile);
+            state.FileStates.Remove(itemToDelete);
+            deletedFiles.Add(actualFile);
+        }
+    }
+
+    private SourceItemState GetOrCreateSourceItemState(StorageUploadTaskSourceItemChange change)
+    {
         var state = _options.State.LastSourceItemStates.SingleOrDefault(x => x.SourceItem.Id == change.SourceItem.Id);
         if (state == null)
         {
             state = new SourceItemState(change.SourceItem, new List<FileState>());
             _options.State.LastSourceItemStates.Add(state);
-            isCreated = true;
         }
 
         return state;

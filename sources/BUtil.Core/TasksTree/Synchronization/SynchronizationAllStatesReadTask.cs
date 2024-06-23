@@ -115,6 +115,13 @@ internal class SynchronizationAllStatesReadTask : SequentialBuTask
 
     private SynchronizationState GetLocalState()
     {
+        if (_remoteStateLoadTask.StorageState == null || !_remoteStateLoadTask.StorageState.VersionStates.Any())
+        {
+            LogDebug("Remote version state is missing => treating local state as empty to avoid data loss!");
+
+            return new SynchronizationState();
+        }
+
         if (!_synchronizationLocalStateLoadTask.IsSuccess)
         {
             throw new InvalidOperationException("Local state population has failed!");

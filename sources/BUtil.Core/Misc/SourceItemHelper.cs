@@ -1,5 +1,6 @@
 ﻿
 using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.FileSystem;
 using BUtil.Core.State;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ public static class SourceItemHelper
 
     public static string GetSourceItemRelativeFileName(string sourceItemDirectory, FileState fileState)
     {
-        return fileState.FileName.Substring(sourceItemDirectory.Length + 1);
+        return FileHelper.GetRelativeFileName(sourceItemDirectory, fileState.FileName);
     }
 
     public static string GetVersionFolder(

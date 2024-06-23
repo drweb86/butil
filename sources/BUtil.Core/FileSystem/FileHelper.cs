@@ -64,6 +64,10 @@ internal static class FileHelper
 
     internal static string GetRelativeFileName(string folder, string file)
     {
+        folder = folder
+            .TrimEnd('\\')
+            .TrimEnd('/');
+
         return file.Substring(folder.Length + 1);
     }
 }
