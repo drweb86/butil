@@ -2,6 +2,7 @@ Currently program was translated into the following languages
 
 | Language  | Author                                                      |
 | --------- | ----------------------------------------------------------- | 
+| Chinese   | ChadGPT                                                     |
 | French    | ChadGPT                                                     |
 | German    | ChadGPT                                                     |
 | Italian   | https://github.com/bovirus                                  |

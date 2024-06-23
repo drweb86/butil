@@ -11,6 +11,10 @@
 ### Prerequisites
 
 - InnoSetup 6.2.2 (must be installed in default directory);
+- Chinese simplified language
+File: https://github.com/kira-96/Inno-Setup-Chinese-Simplified-Translation/blob/main/ChineseSimplified.isl
+To be put into
+C:\Program Files (x86)\Inno Setup 6\Languages\ChineseSimplified.isl
 - 7-zip x64 (must be installed in default directory).
 - .Net 8 SDK
 
