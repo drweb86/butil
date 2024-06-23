@@ -7,6 +7,7 @@ Name: spanish; MessagesFile: "compiler:Languages\Spanish.isl"
 Name: french; MessagesFile: "compiler:Languages\French.isl"
 Name: italian; MessagesFile: "compiler:Languages\Italian.isl"
 Name: russian; MessagesFile: "compiler:Languages\Russian.isl"
+Name: portuguese; MessagesFile: "compiler:Languages\Portuguese.isl"
 Name: ukrainian; MessagesFile: "compiler:Languages\Ukrainian.isl"
 ; TODO: Hindi language pack file is missing across the internet for Inno Setup.
 
@@ -18,6 +19,7 @@ english.BeveledLabel=English
 spanish.BeveledLabel=Español
 french.BeveledLabel=Français
 italian.BeveledLabel=Italiano
+portuguese.BeveledLabel=Portugues
 russian.BeveledLabel=Русский
 ukrainian.BeveledLabel=Українська
 ; TODO: Hindi language pack file is missing across the internet for Inno Setup.

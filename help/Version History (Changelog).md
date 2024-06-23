@@ -4,7 +4,7 @@
 ## New Features
 - Synchronization of files between devices.
 - Added Ukrainian language by https://github.com/Kopejkin .
-- Added Arabic, Chinese, German, Hindi, French, Spanish languages by https://ask.chadgpt.ru/ .
+- Added Arabic, Chinese, German, Hindi, French, Portuguese, Spanish languages by https://ask.chadgpt.ru/ .
 
 ## Changes
 - Italian language was updated by https://github.com/bovirus .
