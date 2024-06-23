@@ -705,4 +705,7 @@ Consulta il sito web dell'applicazione per la documentazione su come impostare l
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Lettura</value>
   </data>
+  <data name="DataStorage_Data_Saving" xml:space="preserve">
+    <value>Scrittura dei dati nella memoria</value>
+  </data>
 </root>

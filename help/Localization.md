@@ -1,9 +1,11 @@
 Currently program was translated into the following languages
 
-| Language | Author                     |
-| -------- | -------------------------- | 
-| Russian  | me                         |
-| Italian  | https://github.com/bovirus |
+| Language  | Author                                                      |
+| --------- | ----------------------------------------------------------- | 
+| French    | ChadGPT                                                     |
+| Italian   | https://github.com/bovirus                                  |
+| Russian   | me                                                          |
+| Ukrainian | https://github.com/drweb86/butil/issues/created_by/Kopejkin |
 
 # How to Create A New Translation
 

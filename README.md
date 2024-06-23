@@ -13,7 +13,7 @@
 
 ![Supported Languages](./help/Assets/Image%20-%20Languages.png)
 
-[English] [Russian] [Italian](https://github.com/bovirus) [Ukrainian](https://github.com/Kopejkin)
+[English] [Russian] [Italian](https://github.com/bovirus) [Ukrainian](https://github.com/Kopejkin) [French](https://ask.chadgpt.ru/)
 
 ## Features
 

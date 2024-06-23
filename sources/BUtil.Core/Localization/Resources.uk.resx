@@ -620,4 +620,7 @@ bin.
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Читання</value>
   </data>
+  <data name="DataStorage_Data_Saving" xml:space="preserve">
+    <value>Запис даних до сховища</value>
+  </data>
 </root>

@@ -4,6 +4,7 @@
 ## New Features
 - Synchronization of files between devices.
 - Added Ukrainian language by https://github.com/Kopejkin .
+- Added French language by https://ask.chadgpt.ru/ .
 
 ## Changes
 - Italian language was updated by https://github.com/bovirus .
