@@ -697,4 +697,7 @@ See detailed description in the following link.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Read</value>
   </data>
+  <data name="DataStorage_Data_Saving" xml:space="preserve">
+    <value>Writing data to storage</value>
+  </data>
 </root>

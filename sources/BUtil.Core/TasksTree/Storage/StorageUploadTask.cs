@@ -1,6 +1,7 @@
 ﻿using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
 using BUtil.Core.FileSystem;
+using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.State;
@@ -24,7 +25,7 @@ internal class StorageUploadTask : SequentialBuTask
         StorageSpecificServicesIoc services,
         TaskEvents events,
         string password,
-        StorageUploadTaskOptions options) : base(services.Log, events, "Sending data to storage")
+        StorageUploadTaskOptions options) : base(services.Log, events, Resources.DataStorage_Data_Saving)
     {
         _services = services;
         _password = password;
@@ -34,11 +35,28 @@ internal class StorageUploadTask : SequentialBuTask
     public override void Execute()
     {
         UpdateStatus(ProcessingStatus.InProgress);
+        var tasks = new List<BuTask>();
+        Children = tasks;
 
         var gb = 1024 * 1024 * 1024;
         var quotaGb = new Quota(_services.StorageSettings.SingleBackupQuotaGb * gb);
         var versionUtc = DateTime.UtcNow;
 
+        var storageToWriteTasks = CreateStorageTasks(quotaGb, versionUtc, tasks);
+
+        SaveState(storageToWriteTasks, tasks, versionUtc);
+
+        Events.DuringExecutionTasksAdded(Id, tasks);
+        base.Execute();
+
+        UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
+    }
+
+    private Dictionary<SourceItemV2, List<WriteSourceFileToStorageTask>> CreateStorageTasks(
+        Quota quotaGb,
+        DateTime versionUtc,
+        List<BuTask> tasks)
+    {
         var storageToWriteTasks = new Dictionary<SourceItemV2, List<WriteSourceFileToStorageTask>>();
 
         foreach (var change in _options.Changes)
@@ -72,18 +90,10 @@ internal class StorageUploadTask : SequentialBuTask
 
             storageToWriteTasks.Add(change.SourceItem, writeTasks);
         }
-
-        var tasks = new List<BuTask>();
-        Children = tasks;
-
-        ActualUpload(storageToWriteTasks, tasks);
-
-        SaveState(storageToWriteTasks, tasks, versionUtc);
-
-        Events.DuringExecutionTasksAdded(Id, tasks);
-        base.Execute();
-
-        UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
+        
+        storageToWriteTasks.ToList().ForEach(x => tasks.AddRange(x.Value));
+        
+        return storageToWriteTasks;
     }
 
     private void SaveState(Dictionary<SourceItemV2, List<WriteSourceFileToStorageTask>> storageToWriteTasks, List<BuTask> tasks, DateTime versionUtc)
@@ -180,7 +190,5 @@ internal class StorageUploadTask : SequentialBuTask
         {
             tasks.AddRange(tasksPair.Value);
         }
-        Events.DuringExecutionTasksAdded(Id, tasks);
-        base.Execute();
     }
 }

@@ -5,7 +5,6 @@ using BUtil.Core.State;
 using BUtil.Core.Synchronization;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
-using BUtil.Core.TasksTree.States;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,13 +12,14 @@ using System.Text.Json;
 
 namespace BUtil.Core.TasksTree.Synchronization;
 
-internal class SynchronizationAllStatesReadTask : ParallelBuTask
+internal class SynchronizationAllStatesReadTask : SequentialBuTask
 {
     private readonly SynchronizationServices _synchronizationServices;
     private readonly SynchronizationModel _model;
 
-    private readonly GetStateOfSourceItemsAndStoragesTask _getStateOfSourceItemsAndStoragesTask;
     private readonly SynchronizationLocalStateLoadTask _synchronizationLocalStateLoadTask;
+    private readonly GetStateOfSourceItemTask _setStateOfSourceItemTask;
+    private readonly RemoteStateLoadTask _remoteStateLoadTask;
 
     public SynchronizationAllStatesReadTask(
         SynchronizationServices synchronizationServices, 
@@ -30,15 +30,24 @@ internal class SynchronizationAllStatesReadTask : ParallelBuTask
         _synchronizationServices = synchronizationServices;
         _model = model;
 
-        _getStateOfSourceItemsAndStoragesTask = new GetStateOfSourceItemsAndStoragesTask(Log, Events, [_model.LocalSourceItem], 
-            synchronizationServices.CommonServices, synchronizationServices.StorageSpecificServices, new List<string>(), _model.TaskOptions.Password);
-        _synchronizationLocalStateLoadTask = new SynchronizationLocalStateLoadTask(_synchronizationServices, Events);
+        var tasks = new List<BuTask>();
 
-        Children = new List<BuTask>
+        _synchronizationLocalStateLoadTask = new SynchronizationLocalStateLoadTask(_synchronizationServices, Events);
+        tasks.Add(_synchronizationLocalStateLoadTask);
+
+        _setStateOfSourceItemTask = new GetStateOfSourceItemTask(Log, Events, _model.LocalSourceItem, new List<string>(), synchronizationServices.CommonServices);
+        tasks.Add(_setStateOfSourceItemTask);
+
+        _remoteStateLoadTask = new RemoteStateLoadTask(synchronizationServices.StorageSpecificServices, Events, model.TaskOptions.Password);
+        tasks.Add(_remoteStateLoadTask);
+
+        if (model.TaskOptions.SynchronizationMode == ConfigurationFileModels.V2.SynchronizationTaskModelMode.TwoWay)
         {
-            _getStateOfSourceItemsAndStoragesTask,
-            _synchronizationLocalStateLoadTask,
-        };
+            var deleteUnversionedFilesStorageTask = new DeleteUnversionedFilesStorageTask(synchronizationServices.StorageSpecificServices, Events, _remoteStateLoadTask);
+            tasks.Add(deleteUnversionedFilesStorageTask);
+        }
+
+        Children = tasks;
     }
 
     public override void Execute()
@@ -85,13 +94,12 @@ internal class SynchronizationAllStatesReadTask : ParallelBuTask
 
     private SynchronizationState GetActualFiles()
     {
-        var getStateOfSourceItemTask = _getStateOfSourceItemsAndStoragesTask.GetSourceItemStateTasks.Single();
-        if (!getStateOfSourceItemTask.IsSuccess)
+        if (!_setStateOfSourceItemTask.IsSuccess)
         {
             throw new InvalidOperationException("Source item state population has failed!");
         }
 
-        var state = getStateOfSourceItemTask.SourceItemState;
+        var state = _setStateOfSourceItemTask.SourceItemState;
         if (state == null)
         {
             throw new InvalidOperationException("Source item state is corrupted (null)!");
@@ -123,28 +131,25 @@ internal class SynchronizationAllStatesReadTask : ParallelBuTask
 
     private IncrementalBackupState GetRemoteStorageState()
     {
-        if (!_getStateOfSourceItemsAndStoragesTask.RemoteStateLoadTask.IsSuccess)
+        if (!_remoteStateLoadTask.IsSuccess)
         {
             throw new InvalidOperationException("Remote state population has failed!");
         }
 
-        return _getStateOfSourceItemsAndStoragesTask.RemoteStateLoadTask.StorageState!;
+        return _remoteStateLoadTask.StorageState!;
     }
 
     private SynchronizationState GetRemoteState()
     {
-        if (!_getStateOfSourceItemsAndStoragesTask.RemoteStateLoadTask.IsSuccess)
-        {
-            throw new InvalidOperationException("Remote state population has failed!");
-        }
+        var remoteState = GetRemoteStorageState();
 
-        if (_getStateOfSourceItemsAndStoragesTask.RemoteStateLoadTask.StorageState == null)
+        if (remoteState == null)
         {
             LogDebug("Remote state is missing!");
             return new SynchronizationState();
         }
 
-        var state = _getStateOfSourceItemsAndStoragesTask.RemoteStateLoadTask.StorageState.LastSourceItemStates.SingleOrDefault(x => x.SourceItem.Id == Guid.Empty);
+        var state = remoteState.LastSourceItemStates.SingleOrDefault(x => SynchronizationHelper.IsSynchronizationSourceItem(x.SourceItem));
         if (state == null)
         {
             LogDebug("Remote state source item state is missing!");

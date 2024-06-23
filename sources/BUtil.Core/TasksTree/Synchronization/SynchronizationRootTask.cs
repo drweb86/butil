@@ -7,14 +7,12 @@ using BUtil.Core.Misc;
 using BUtil.Core.State;
 using BUtil.Core.Synchronization;
 using BUtil.Core.TasksTree.Core;
-using BUtil.Core.TasksTree.States;
 using BUtil.Core.TasksTree.Storage;
 using BUtil.Core.TasksTree.Synchronization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Text.Json;
 
 namespace BUtil.Core.TasksTree.IncrementalModel;
@@ -118,6 +116,10 @@ class SynchronizationRootTask : SequentialBuTask
 
     private void ExecuteActionsRemotely(List<BuTask> tasks, IEnumerable<SynchronizationConsolidatedFileInfo> syncItems)
     {
+        if (_model.TaskOptions.SynchronizationMode != SynchronizationTaskModelMode.TwoWay)
+            return;
+
+
         var itemsWithRemoteAction = syncItems
             .Where(x => x.RemoteAction != SynchronizationDecision.DoNothing)
             .ToList();

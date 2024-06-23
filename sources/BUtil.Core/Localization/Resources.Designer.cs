@@ -318,6 +318,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Writing data to storage.
+        /// </summary>
+        public static string DataStorage_Data_Saving {
+            get {
+                return ResourceManager.GetString("DataStorage_Data_Saving", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Connection script:.
         /// </summary>
         public static string DataStorage_Field_ConnectScript {
