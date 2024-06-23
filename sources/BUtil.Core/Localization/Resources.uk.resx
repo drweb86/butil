@@ -581,4 +581,43 @@ bin.
   <data name="AfterTaskSelection_Reboot" xml:space="preserve">
     <value>Перезавантаження</value>
   </data>
+  <data name="DataStorage_Maintenance" xml:space="preserve">
+    <value>Обслуговування сховищ даних</value>
+  </data>
+  <data name="DataStorage_State_Saving" xml:space="preserve">
+    <value>Збереження стану сховища</value>
+  </data>
+  <data name="SynchronizationTask_Create" xml:space="preserve">
+    <value>Синхронізація</value>
+  </data>
+  <data name="SynchronizationTask_Help" xml:space="preserve">
+    <value>Двостороння синхронізація файлів між пристроями за допомогою централізованого сховища.</value>
+  </data>
+  <data name="Local_State_Get" xml:space="preserve">
+    <value>Отримання локального стану</value>
+  </data>
+  <data name="Local_State_Saving" xml:space="preserve">
+    <value>Збереження локального стану</value>
+  </data>
+  <data name="StorageItem_Remote_Marker" xml:space="preserve">
+    <value>Віддалений</value>
+  </data>
+  <data name="DataStorage_Title" xml:space="preserve">
+    <value>Сховище</value>
+  </data>
+  <data name="RepositorySubfolder_Field" xml:space="preserve">
+    <value>Підкаталог репозиторію (необов'язково):</value>
+  </data>
+  <data name="RepositorySubfolder_Help" xml:space="preserve">
+    <value>Ви можете синхронізувати папку в підкаталог репозиторію, якщо не хочете мати весь вміст репозиторію на пристрої.</value>
+  </data>
+  <data name="SynchronizationMode_Field" xml:space="preserve">
+    <value>Режим синхронізації:</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
+    <value>Двостороння</value>
+  </data>
+  <data name="SynchronizationMode_Field_Read" xml:space="preserve">
+    <value>Читання</value>
+  </data>
 </root>
