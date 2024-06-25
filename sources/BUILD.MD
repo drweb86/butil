@@ -10,7 +10,7 @@
 
 ### Prerequisites
 
-- InnoSetup 6.2.2 (must be installed in default directory);
+- InnoSetup 6.3.1 (must be installed in default directory);
 - Chinese simplified language
 File: https://github.com/kira-96/Inno-Setup-Chinese-Simplified-Translation/blob/main/ChineseSimplified.isl
 To be put into
@@ -19,6 +19,10 @@ C:\Program Files (x86)\Inno Setup 6\Languages\ChineseSimplified.isl
 File: https://github.com/parmaja/innosetup/blob/master/languages/Arabic.isl
 To be put into
 C:\Program Files (x86)\Inno Setup 6\Languages\Arabic.isl
+- Hindi language
+File: https://jrsoftware.org/files/istrans/; search for Hindi
+To be put into
+C:\Program Files (x86)\Inno Setup 6\Languages\Hindi.islu
 - 7-zip x64 (must be installed in default directory).
 - .Net 8 SDK
 
