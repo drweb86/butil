@@ -96,9 +96,21 @@ class SynchronizationRootTask : SequentialBuTask
         };
     }
 
+    private SynchronizationState GetRemoteState()
+    {
+        var state = _model.RemoteStorageState.LastSourceItemStates.Single(x => SynchronizationHelper.IsSynchronizationSourceItem(x.SourceItem));
+        return new SynchronizationState()
+        {
+            FileSystemEntries = state.FileStates
+                .Select(x => new SynchronizationStateFile(state.SourceItem, x))
+                .ToList(),
+        };
+    }
+
     private SynchronizationState GetLocalState(SynchronizationState actualFilesState)
     {
-        var synced = _synchronizationServices.DecisionService.Decide(_model.TaskOptions.SynchronizationMode, _model.LocalState, actualFilesState, _model.RemoteState);
+        var remoteState = GetRemoteState();
+        var synced = _synchronizationServices.DecisionService.Decide(_model.TaskOptions.SynchronizationMode, _model.LocalState, actualFilesState, remoteState);
 
         var syncedState = new SynchronizationState
         {
