@@ -88,9 +88,6 @@ or warnings will be registered.</value>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Changes</value>
   </data>
-  <data name="DataStorage_Maintenance" xml:space="preserve">
-    <value>Data storage maintenance</value>
-  </data>
   <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
     <value>Do you really want to delete version "{0}"?
 
@@ -150,6 +147,9 @@ Deleted version changes will become part of version "{1}".</value>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Invalid command line arguments.</value>
   </data>
+  <data name="DataStorage_Data_Saving" xml:space="preserve">
+    <value>Writing data to storage</value>
+  </data>
   <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
     <value>Connection script:</value>
   </data>
@@ -173,11 +173,20 @@ Usage scenario: You copy data to remote server. There's a problem: ISP drops upl
   <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
     <value>Quota should be 0 (do not apply) or value above 0.</value>
   </data>
+  <data name="DataStorage_Maintenance" xml:space="preserve">
+    <value>Data storage maintenance</value>
+  </data>
   <data name="DataStorage_Script_Help" xml:space="preserve">
     <value>If folder becomes available after executing some commands, specify {0} scripts for connection and disconnection.</value>
   </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
     <value>Get state of storage</value>
+  </data>
+  <data name="DataStorage_State_Saving" xml:space="preserve">
+    <value>Writing storage state</value>
+  </data>
+  <data name="DataStorage_Title" xml:space="preserve">
+    <value>Storage</value>
   </data>
   <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
     <value>Storage is not specified.</value>
@@ -377,6 +386,12 @@ Should any one of the copies created fail, including the first (full), restorati
   <data name="LeftMenu_Where_Hint" xml:space="preserve">
     <value>In this place you can add locations where you would like your files to be copied.</value>
   </data>
+  <data name="Local_State_Get" xml:space="preserve">
+    <value>Get local state</value>
+  </data>
+  <data name="Local_State_Saving" xml:space="preserve">
+    <value>Writing local state</value>
+  </data>
   <data name="LogFile_Marker_Errors" xml:space="preserve">
     <value>Errors</value>
   </data>
@@ -434,6 +449,12 @@ Should any one of the copies created fail, including the first (full), restorati
   <data name="Password_Use" xml:space="preserve">
     <value>Use</value>
   </data>
+  <data name="RepositorySubfolder_Field" xml:space="preserve">
+    <value>Repository subfolder (optional):</value>
+  </data>
+  <data name="RepositorySubfolder_Help" xml:space="preserve">
+    <value>You can synchronize folder to particular subfolder of repository, if you don't want to have all content of repository on device.</value>
+  </data>
   <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
     <value>Cannot locate files "{0}" in directory. 
 
@@ -478,9 +499,6 @@ Point to a directory containing this file.</value>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
     <value>Get state of source items and storages</value>
   </data>
-  <data name="DataStorage_State_Saving" xml:space="preserve">
-    <value>Writing storage state</value>
-  </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
     <value>Add file exclude pattern</value>
   </data>
@@ -508,6 +526,24 @@ See detailed description in the following link.</value>
   </data>
   <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
     <value>File exclude pattern is empty.</value>
+  </data>
+  <data name="StorageItem_Remote_Marker" xml:space="preserve">
+    <value>Remote</value>
+  </data>
+  <data name="SynchronizationMode_Field" xml:space="preserve">
+    <value>Synchronization mode:</value>
+  </data>
+  <data name="SynchronizationMode_Field_Read" xml:space="preserve">
+    <value>Read</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
+    <value>Two-way</value>
+  </data>
+  <data name="SynchronizationTask_Create" xml:space="preserve">
+    <value>Synchronization</value>
+  </data>
+  <data name="SynchronizationTask_Help" xml:space="preserve">
+    <value>Two-way synchronization of files between devices using centralized storage.</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>New</value>
@@ -604,41 +640,5 @@ See detailed description in the following link.</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>User is not specified.</value>
-  </data>
-  <data name="SynchronizationTask_Create" xml:space="preserve">
-    <value>Synchronization</value>
-  </data>
-  <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Two-way synchronization of files between devices using centralized storage.</value>
-  </data>
-  <data name="Local_State_Get" xml:space="preserve">
-    <value>Get local state</value>
-  </data>
-  <data name="Local_State_Saving" xml:space="preserve">
-    <value>Writing local state</value>
-  </data>
-  <data name="StorageItem_Remote_Marker" xml:space="preserve">
-    <value>Remote</value>
-  </data>
-  <data name="DataStorage_Title" xml:space="preserve">
-    <value>Storage</value>
-  </data>
-  <data name="RepositorySubfolder_Field" xml:space="preserve">
-    <value>Repository subfolder (optional):</value>
-  </data>
-  <data name="RepositorySubfolder_Help" xml:space="preserve">
-    <value>You can synchronize folder to particular subfolder of repository, if you don't want to have all content of repository on device.</value>
-  </data>
-  <data name="SynchronizationMode_Field" xml:space="preserve">
-    <value>Synchronization mode:</value>
-  </data>
-  <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
-    <value>Two-way</value>
-  </data>
-  <data name="SynchronizationMode_Field_Read" xml:space="preserve">
-    <value>Read</value>
-  </data>
-  <data name="DataStorage_Data_Saving" xml:space="preserve">
-    <value>Writing data to storage</value>
   </data>
 </root>

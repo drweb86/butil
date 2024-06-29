@@ -147,9 +147,6 @@
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Изменения</value>
   </data>
-  <data name="DataStorage_Maintenance" xml:space="preserve">
-    <value>Обслуживание хранилища данных</value>
-  </data>
   <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
     <value>Удалить версию "{0}"?
 
@@ -209,6 +206,9 @@
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Некорректные аргументы командной строки.</value>
   </data>
+  <data name="DataStorage_Data_Saving" xml:space="preserve">
+    <value>Запись данных в хранилище</value>
+  </data>
   <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
     <value>Скрипт подключения:</value>
   </data>
@@ -232,11 +232,20 @@
   <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
     <value>Квота должна быть 0 (чтобы не применялась) или число больше нуля.</value>
   </data>
+  <data name="DataStorage_Maintenance" xml:space="preserve">
+    <value>Обслуживание хранилища данных</value>
+  </data>
   <data name="DataStorage_Script_Help" xml:space="preserve">
     <value>Если папка становится доступной после выполнения комманд, укажите {0} скрипты для подключения и отключения хранилища.</value>
   </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
     <value>Получение состояния хранилища</value>
+  </data>
+  <data name="DataStorage_State_Saving" xml:space="preserve">
+    <value>Сохранение состояния хранилища</value>
+  </data>
+  <data name="DataStorage_Title" xml:space="preserve">
+    <value>Хранилище</value>
   </data>
   <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
     <value>Хранилище не указано.</value>
@@ -437,6 +446,12 @@
   <data name="LeftMenu_Where_Hint" xml:space="preserve">
     <value>Здесь можно указать места, в которые поместить данные.</value>
   </data>
+  <data name="Local_State_Get" xml:space="preserve">
+    <value>Получение локального состояния</value>
+  </data>
+  <data name="Local_State_Saving" xml:space="preserve">
+    <value>Сохранение локального состояния</value>
+  </data>
   <data name="LogFile_Marker_Errors" xml:space="preserve">
     <value>Ошибки</value>
   </data>
@@ -494,6 +509,12 @@
   <data name="Password_Use" xml:space="preserve">
     <value>Использовать</value>
   </data>
+  <data name="RepositorySubfolder_Field" xml:space="preserve">
+    <value>Подкаталог репозитория (необязательно):</value>
+  </data>
+  <data name="RepositorySubfolder_Help" xml:space="preserve">
+    <value>Вы можете синхронизировать папку в подкаталог репозитория, если не хотите иметь все содержимое репозитория на устройстве.</value>
+  </data>
   <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
     <value>В указанном каталоге нет файлов "{0}". 
 
@@ -538,9 +559,6 @@
   <data name="State_LoadFromEverywhere" xml:space="preserve">
     <value>Получение состояний файлов и хранилищ</value>
   </data>
-  <data name="DataStorage_State_Saving" xml:space="preserve">
-    <value>Сохранение состояния хранилища</value>
-  </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
     <value>Добавить маску исключения файлов</value>
   </data>
@@ -568,6 +586,24 @@ bin.
   </data>
   <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
     <value>Маска исключения файлов не указана.</value>
+  </data>
+  <data name="StorageItem_Remote_Marker" xml:space="preserve">
+    <value>Удаленный</value>
+  </data>
+  <data name="SynchronizationMode_Field" xml:space="preserve">
+    <value>Режим синхронизации:</value>
+  </data>
+  <data name="SynchronizationMode_Field_Read" xml:space="preserve">
+    <value>Чтение</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
+    <value>Двусторонняя</value>
+  </data>
+  <data name="SynchronizationTask_Create" xml:space="preserve">
+    <value>Синхронизация</value>
+  </data>
+  <data name="SynchronizationTask_Help" xml:space="preserve">
+    <value>Двухсторонняя синхронизация файлов между устройствами с использованием централизованного хранилища.</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Новая задача</value>
@@ -664,41 +700,5 @@ bin.
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Пользователь не указан.</value>
-  </data>
-  <data name="SynchronizationTask_Create" xml:space="preserve">
-    <value>Синхронизация</value>
-  </data>
-  <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Двухсторонняя синхронизация файлов между устройствами с использованием централизованного хранилища.</value>
-  </data>
-  <data name="Local_State_Get" xml:space="preserve">
-    <value>Получение локального состояния</value>
-  </data>
-  <data name="Local_State_Saving" xml:space="preserve">
-    <value>Сохранение локального состояния</value>
-  </data>
-  <data name="StorageItem_Remote_Marker" xml:space="preserve">
-    <value>Удаленный</value>
-  </data>
-  <data name="DataStorage_Title" xml:space="preserve">
-    <value>Хранилище</value>
-  </data>
-  <data name="RepositorySubfolder_Field" xml:space="preserve">
-    <value>Подкаталог репозитория (необязательно):</value>
-  </data>
-  <data name="RepositorySubfolder_Help" xml:space="preserve">
-    <value>Вы можете синхронизировать папку в подкаталог репозитория, если не хотите иметь все содержимое репозитория на устройстве.</value>
-  </data>
-  <data name="SynchronizationMode_Field" xml:space="preserve">
-    <value>Режим синхронизации:</value>
-  </data>
-  <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
-    <value>Двусторонняя</value>
-  </data>
-  <data name="SynchronizationMode_Field_Read" xml:space="preserve">
-    <value>Чтение</value>
-  </data>
-  <data name="DataStorage_Data_Saving" xml:space="preserve">
-    <value>Запись данных в хранилище</value>
   </data>
 </root>

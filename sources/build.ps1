@@ -34,7 +34,7 @@ Set-Location ../..
 
 Write-Output "Downloading 7-zip..."
 $WebClient = New-Object System.Net.WebClient
-$sevenZipVersion="7z2301"
+$sevenZipVersion="7z2407"
 $sevenZipFolder=[System.IO.Path]::GetTempPath() + "$($sevenZipVersion)"
 
 if (-Not (Test-Path "$($sevenZipFolder)"))

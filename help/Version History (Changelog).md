@@ -1,14 +1,14 @@
-# 2024.06.21
-(unreleased)
+# 2024.06.29
 
 ## New Features
-- Synchronization of files between devices.
+- Synchronization of files between devices (ALPHA).
 - Added Ukrainian language by https://github.com/Kopejkin .
 - Added Arabic, Chinese, German, Hindi, French, Portuguese, Spanish languages by https://ask.chadgpt.ru/ .
 
 ## Changes
 - Italian language was updated by https://github.com/bovirus .
 - Libraries updates.
+- Igor Pavlov's 7-zip version update to 24.07.
 
 ## Bug Fixes
 - Errors for FTPS were not logged.

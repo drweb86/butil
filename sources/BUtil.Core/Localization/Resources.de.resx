@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -58,22 +58,279 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
+  <value>Nichts tun</value>
+</data>
+  <data name="AfterTaskSelection_Field" xml:space="preserve">
+  <value>Nach Abschluss der Aufgabe:</value>
+</data>
+  <data name="AfterTaskSelection_Help" xml:space="preserve">
+  <value>Wenn Sie etwas anderes als 'nichts tun' auswählen,
+wird das Programm das Betriebssystem so konfigurieren, dass es Ihnen
+bei Ihrem nächsten Anmelden am System einen Bericht anzeigt,
+wenn Fehler oder Warnungen registriert werden.</value>
+</data>
+  <data name="AfterTaskSelection_LogOff" xml:space="preserve">
+  <value>Abmelden</value>
+</data>
+  <data name="AfterTaskSelection_Reboot" xml:space="preserve">
+  <value>Neustarten</value>
+</data>
+  <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
+  <value>Herunterfahren</value>
+</data>
+  <data name="Application_NewVersion_Notification" xml:space="preserve">
+  <value>Eine neue {0} Version ist verfügbar.</value>
+</data>
+  <data name="BackupVersion_Button_Delete" xml:space="preserve">
+  <value>Version löschen</value>
+</data>
+  <data name="BackupVersion_Changes_Title" xml:space="preserve">
+  <value>Änderungen</value>
+</data>
+  <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
+  <value>Möchten Sie wirklich die Version "{0}" löschen?
 
+Die Änderungen der gelöschten Version werden Teil der Version "{1}".</value>
+</data>
+  <data name="BackupVersion_Files_Title" xml:space="preserve">
+  <value>Dateien</value>
+</data>
+  <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
+  <value>Journal: {0}</value>
+</data>
+  <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
+  <value>Journal für ausgewählte...</value>
+</data>
+  <data name="BackupVersion_Select" xml:space="preserve">
+  <value>Ausgewählte Version öffnen...</value>
+</data>
+  <data name="BackupVersion_Selector_Title" xml:space="preserve">
+  <value>VERSION AUSWÄHLEN</value>
+</data>
+  <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
+  <value>(alle Versionen belegen auf dem Speicher {0})</value>
+</data>
+  <data name="BackupVersion_Versions_Title" xml:space="preserve">
+  <value>VERSIONEN</value>
+</data>
+  <data name="BackupVersion_Viewer_Help" xml:space="preserve">
+  <value>Wählen Sie die Datei oder den Ordner, den Sie im Baum wiederherstellen möchten, und klicken Sie auf "Wiederherstellen".</value>
+</data>
+  <data name="Button_Cancel" xml:space="preserve">
+  <value>Abbrechen</value>
+</data>
+  <data name="Button_Close" xml:space="preserve">
+  <value>Schließen</value>
+</data>
+  <data name="Button_Continue" xml:space="preserve">
+  <value>Weiter &gt;</value>
+</data>
+  <data name="Button_CopyToClipboard" xml:space="preserve">
+  <value>Kopieren</value>
+</data>
+  <data name="Button_Download" xml:space="preserve">
+  <value>Herunterladen</value>
+</data>
+  <data name="Button_OK" xml:space="preserve">
+  <value>OK</value>
+</data>
+  <data name="Button_Remove" xml:space="preserve">
+  <value>Entfernen</value>
+</data>
+  <data name="Button_Save" xml:space="preserve">
+  <value>Speichern</value>
+</data>
+  <data name="CommandLineArguments_Help" xml:space="preserve">
+  <value>Besuchen Sie {0}, um die Befehlszeilenargumente zu sehen.</value>
+</data>
+  <data name="CommandLineArguments_Invalid" xml:space="preserve">
+  <value>Ungültige Befehlszeilenargumente.</value>
+</data>
+  <data name="DataStorage_Data_Saving" xml:space="preserve">
+    <value>Daten in den Speicher schreiben</value>
+  </data>
+  <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
+  <value>Verbindungsskript:</value>
+</data>
+  <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
+  <value>Trennungsskript:</value>
+</data>
+  <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
+  <value>Mit Fehlern beendet</value>
+</data>
+  <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
+  <value>Erfolgreich abgeschlossen</value>
+</data>
+  <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
+  <value>Upload-Limit, GB:</value>
+</data>
+  <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
+  <value>Begrenzt die Menge der während der Ausführung einer Aufgabe auf den Speicher gesendeten Daten. 0 - kein Limit.
+Wenn das Limit überschritten wird, werden andere Dateien übersprungen und beim nächsten Mal verarbeitet.
+Anwendungsszenario: Sie kopieren Daten auf einen entfernten Server. Es gibt ein Problem: Der ISP senkt die Upload-Geschwindigkeit nach mehreren Gigabyte. Diese Einstellung ermöglicht es Ihnen, damit umzugehen.</value>
+</data>
+  <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
+  <value>Das Kontingent sollte 0 (nicht anwenden) oder einen Wert über 0 betragen.</value>
+</data>
+  <data name="DataStorage_Maintenance" xml:space="preserve">
+  <value>Datenspeicherwartung</value>
+</data>
+  <data name="DataStorage_Script_Help" xml:space="preserve">
+  <value>Falls der Ordner nach dem Ausführen einiger Befehle verfügbar wird, geben Sie {0} Skripte für Verbindung und Trennung an.</value>
+</data>
+  <data name="DataStorage_State_Get" xml:space="preserve">
+  <value>Zustand des Speichers ermitteln</value>
+</data>
+  <data name="DataStorage_State_Saving" xml:space="preserve">
+  <value>Speicherzustand wird geschrieben</value>
+</data>
+  <data name="DataStorage_Title" xml:space="preserve">
+    <value>Speicher</value>
+  </data>
+  <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
+  <value>Speicher ist nicht angegeben.</value>
+</data>
+  <data name="Days_Field_Choose" xml:space="preserve">
+  <value>Wählen Sie Wochentage:</value>
+</data>
+  <data name="Days_Friday" xml:space="preserve">
+  <value>Freitag</value>
+</data>
+  <data name="Days_Monday" xml:space="preserve">
+  <value>Montag</value>
+</data>
+  <data name="Days_Saturday" xml:space="preserve">
+  <value>Samstag</value>
+</data>
+  <data name="Days_Sunday" xml:space="preserve">
+  <value>Sonntag</value>
+</data>
+  <data name="Days_Thursday" xml:space="preserve">
+  <value>Donnerstag</value>
+</data>
+  <data name="Days_Tuesday" xml:space="preserve">
+  <value>Dienstag</value>
+</data>
+  <data name="Days_Wednesday" xml:space="preserve">
+  <value>Mittwoch</value>
+</data>
+  <data name="DirectoryStorage" xml:space="preserve">
+  <value>Verzeichnis</value>
+</data>
+  <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
+  <value>Ordner:</value>
+</data>
+  <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
+  <value>Verzeichnis ist nicht angegeben.</value>
+</data>
+  <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
+  <value>Verzeichnis "{0}" existiert nicht.</value>
+</data>
+  <data name="Field_Device" xml:space="preserve">
+  <value>Gerät:</value>
+</data>
+  <data name="Field_Device_Validation_Empty" xml:space="preserve">
+  <value>Gerät ist nicht angegeben.</value>
+</data>
+  <data name="Field_Device_Validation_NotFound" xml:space="preserve">
+  <value>Gerät wurde nicht gefunden.</value>
+</data>
+  <data name="Field_Folder" xml:space="preserve">
+  <value>Ordner:</value>
+</data>
+  <data name="Field_Folder_Browse" xml:space="preserve">
+  <value>Durchsuchen</value>
+</data>
+  <data name="Field_Folder_Validation_Empty" xml:space="preserve">
+  <value>Ordner ist nicht angegeben.</value>
+</data>
+  <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
+  <value>Ordner existiert nicht.</value>
+</data>
+  <data name="Field_TransportProtocol" xml:space="preserve">
+  <value>Protokoll:</value>
+</data>
+  <data name="Field_Version" xml:space="preserve">
+  <value>Version:</value>
+</data>
+  <data name="File_Deleting" xml:space="preserve">
+  <value>Löschen von "{0}"</value>
+</data>
+  <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
+  <value>Integritätsüberprüfungsskript.ps1</value>
+</data>
+  <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
+  <value>Speichern von Integritätsüberprüfungsskripten</value>
+</data>
+  <data name="File_List_Saving" xml:space="preserve">
+  <value>Dateien speichern</value>
+</data>
+  <data name="File_Moving" xml:space="preserve">
+  <value>Verschieben von "{0}" nach "{1}"</value>
+</data>
+  <data name="File_Saving" xml:space="preserve">
+  <value>Speichern von "{0}"</value>
+</data>
+  <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
+  <value>Explizit</value>
+</data>
+  <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
+  <value>Implizit</value>
+</data>
+  <data name="Ftps_Field_Encryption" xml:space="preserve">
+  <value>SSL/TTS-Verschlüsselung:</value>
+</data>
+  <data name="Icons_Help_Link" xml:space="preserve">
+  <value>Fügen Sie ein Charakter-Icon zu Ihrem Text hinzu</value>
+</data>
+  <data name="ImportMediaTask_AllFiles" xml:space="preserve">
+  <value>Alle Dateien importieren</value>
+</data>
+  <data name="ImportMediaTask_Create" xml:space="preserve">
+  <value>Medienaufgabe importieren</value>
+</data>
+  <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
+  <value>"{0}" Medienimportaufgabe bearbeiten</value>
+</data>
+  <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
+  <value>Ausgabeordner:</value>
+</data>
+  <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
+  <value>Dateinamen-Transformationen:</value>
+</data>
+  <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
+  <value>Beispiel:
+Stellen Sie sich vor, Sie haben die Datei {0} (geändert am {1}).
+Mit diesem Verzeichnis und dem Template-String wird die Datei wie folgt gespeichert:
+{2}</value>
+</data>
+  <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
+  <value>Unterstützte Token:
+{DATE:Format} - Fügt das Änderungsdatum der Datei im angegebenen Format ein.
+Um alle Optionen zu sehen, googeln Sie "C# DateTime format".</value>
+</data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
+  <value>Transformierter Dateiname ist leer.</value>
+</data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
+  <value>Ungültiger transformierter Dateiname.</value>
+</data>
   <data name="ImportMediaTask_File" xml:space="preserve">
   <value>Importiere "{0}"</value>
 </data>
-<data name="ImportMediaTask_Help" xml:space="preserve">
+  <data name="ImportMediaTask_Help" xml:space="preserve">
   <value>Importiert Audios, Fotos, Videos von der SD-Karte der Kamera, des Recorders; Fotos und Videos von Ihrem Telefon über WI-FI durch die FTP-Server-Anwendung unter Verwendung von Vorlagendateinamen.
 
 Weitere Informationen zur Einrichtung der Dateiübertragung über WI-FI durch die FTP-Server-Anwendung auf dem Telefon finden Sie auf der Website der Anwendung.</value>
 </data>
-<data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
+  <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
   <value>Datenquelle importieren</value>
 </data>
-<data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
   <value>Bereits importierte Dateien überspringen</value>
 </data>
-<data name="ImproveIt_Message" xml:space="preserve">
+  <data name="ImproveIt_Message" xml:space="preserve">
   <value>Ein unerwarteter Fehler ist aufgetreten.
 
 Bitte kontaktieren Sie die Entwickler mit den Informationen, die auf Ihrem Desktop in
@@ -81,7 +338,7 @@ Bitte kontaktieren Sie die Entwickler mit den Informationen, die auf Ihrem Deskt
 
 gespeichert sind. Die Anwendung wird jetzt geschlossen.</value>
 </data>
-<data name="IncrementalBackup_Help" xml:space="preserve">
+  <data name="IncrementalBackup_Help" xml:space="preserve">
   <value>Die grundlegendste Form des inkrementellen Backups besteht darin, nur diejenigen Dateien zu identifizieren, zu protokollieren und somit zu speichern, die seit dem letzten Backup geändert wurden.
 
 Da Änderungen normalerweise gering sind, sind inkrementelle Backups viel kleiner und schneller als vollständige Backups.
@@ -90,159 +347,168 @@ Zum Beispiel enthält ein Backup am Montag nach einem vollständigen Backup am F
 
 Wenn eine der erstellten Kopien ausfällt, einschließlich der ersten (vollständigen), wird die Wiederherstellung unvollständig sein.</value>
 </data>
-<data name="IncrementalBackup_Title" xml:space="preserve">
+  <data name="IncrementalBackup_Title" xml:space="preserve">
   <value>Inkrementelles Backup</value>
 </data>
-<data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
+  <data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
   <value>Inkrementierte Version berechnen</value>
 </data>
-<data name="IncrementalBackup_Version_Save" xml:space="preserve">
+  <data name="IncrementalBackup_Version_Save" xml:space="preserve">
   <value>Inkrementierte Version speichern</value>
 </data>
-<data name="IncrementalBackupTask_Create" xml:space="preserve">
+  <data name="IncrementalBackupTask_Create" xml:space="preserve">
   <value>Inkrementelles Backup-Aufgabe</value>
 </data>
-<data name="LeftMenu_Encryption" xml:space="preserve">
+  <data name="LeftMenu_Encryption" xml:space="preserve">
   <value>Verschlüsselung</value>
 </data>
-<data name="LeftMenu_What" xml:space="preserve">
+  <data name="LeftMenu_What" xml:space="preserve">
   <value>Was?</value>
 </data>
-<data name="LeftMenu_What_Hint" xml:space="preserve">
+  <data name="LeftMenu_What_Hint" xml:space="preserve">
   <value>Hier können Sie Ordner und Dateien hinzufügen, die Sie verarbeiten müssen.</value>
 </data>
-<data name="LeftMenu_What_Validation" xml:space="preserve">
+  <data name="LeftMenu_What_Validation" xml:space="preserve">
   <value>Keine zu verarbeitenden Elemente.</value>
 </data>
-<data name="LeftMenu_When" xml:space="preserve">
+  <data name="LeftMenu_When" xml:space="preserve">
   <value>Wann?</value>
 </data>
-<data name="LeftMenu_When_Help" xml:space="preserve">
+  <data name="LeftMenu_When_Help" xml:space="preserve">
   <value>Hier können Sie einen Zeitplan einrichten. Ein Zeitplaner kann Ihnen helfen, die Aufgabe automatisch zu starten.</value>
 </data>
-<data name="LeftMenu_Where" xml:space="preserve">
+  <data name="LeftMenu_Where" xml:space="preserve">
   <value>Wo?</value>
 </data>
-<data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
+  <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
   <value>Ziehen und ablegen Sie hier Dateien und Ordner aus dem Explorer.</value>
 </data>
-<data name="LeftMenu_Where_Hint" xml:space="preserve">
+  <data name="LeftMenu_Where_Hint" xml:space="preserve">
   <value>Hier können Sie Speicherorte hinzufügen, an die Ihre Dateien kopiert werden sollen.</value>
 </data>
-<data name="LogFile_Marker_Errors" xml:space="preserve">
+  <data name="Local_State_Get" xml:space="preserve">
+    <value>Lokalen Zustand abrufen</value>
+  </data>
+  <data name="Local_State_Saving" xml:space="preserve">
+    <value>Lokalen Zustand schreiben</value>
+  </data>
+  <data name="LogFile_Marker_Errors" xml:space="preserve">
   <value>Fehler</value>
 </data>
-<data name="LogFile_Marker_Successful" xml:space="preserve">
+  <data name="LogFile_Marker_Successful" xml:space="preserve">
   <value>Erfolgreich</value>
 </data>
-<data name="LogFile_OpenLogs" xml:space="preserve">
+  <data name="LogFile_OpenLogs" xml:space="preserve">
   <value>Protokolle</value>
 </data>
-<data name="Messages_Header_Error" xml:space="preserve">
+  <data name="Messages_Header_Error" xml:space="preserve">
   <value>Fehler</value>
 </data>
-<data name="Messages_Header_Information" xml:space="preserve">
+  <data name="Messages_Header_Information" xml:space="preserve">
   <value>Information</value>
 </data>
-<data name="Messages_Header_Question" xml:space="preserve">
+  <data name="Messages_Header_Question" xml:space="preserve">
   <value>Frage</value>
 </data>
-<data name="Name_Field" xml:space="preserve">
+  <data name="Name_Field" xml:space="preserve">
   <value>Name:</value>
 </data>
-<data name="Name_Field_Validation" xml:space="preserve">
+  <data name="Name_Field_Validation" xml:space="preserve">
   <value>Der Name ist leer oder enthält nicht unterstützte Pfadzeichen.</value>
 </data>
-<data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
   <value>Die Länge des Namens '{0}' überschreitet die Begrenzung um {1} Zeichen.</value>
 </data>
-<data name="Name_Title" xml:space="preserve">
+  <data name="Name_Title" xml:space="preserve">
   <value>Name</value>
 </data>
-<data name="Password_Field" xml:space="preserve">
+  <data name="Password_Field" xml:space="preserve">
   <value>Passwort:</value>
 </data>
-<data name="Password_Field_Confirm" xml:space="preserve">
+  <data name="Password_Field_Confirm" xml:space="preserve">
   <value>Passwort bestätigen:</value>
 </data>
-<data name="Password_Field_Length" xml:space="preserve">
+  <data name="Password_Field_Length" xml:space="preserve">
   <value>Länge:</value>
 </data>
-<data name="Password_Field_Validation_NotMatch" xml:space="preserve">
+  <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
   <value>Passwörter stimmen nicht überein.</value>
 </data>
-<data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
+  <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
   <value>Passwort ist nicht angegeben.</value>
 </data>
-<data name="Password_Generate" xml:space="preserve">
+  <data name="Password_Generate" xml:space="preserve">
   <value>Passwort generieren...</value>
 </data>
-<data name="Password_Generator_Header" xml:space="preserve">
+  <data name="Password_Generator_Header" xml:space="preserve">
   <value>Passwort-Generator</value>
 </data>
-<data name="Password_Help" xml:space="preserve">
+  <data name="Password_Help" xml:space="preserve">
   <value>Die empfohlene Mindestlänge des Passworts beträgt 50 Zeichen oder mehr.</value>
 </data>
-<data name="Password_Use" xml:space="preserve">
+  <data name="Password_Use" xml:space="preserve">
   <value>Verwenden</value>
 </data>
-<data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
+  <data name="RepositorySubfolder_Field" xml:space="preserve">
+    <value>Repository-Unterordner (optional):</value>
+  </data>
+  <data name="RepositorySubfolder_Help" xml:space="preserve">
+    <value>Sie können einen Ordner mit einem bestimmten Unterordner des Repositories synchronisieren, wenn Sie nicht den gesamten Inhalt des Repositories auf dem Gerät haben möchten.</value>
+  </data>
+  <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
   <value>Dateien "{0}" im Verzeichnis nicht gefunden. 
 
 Zeigen Sie auf ein Verzeichnis, das diese Datei enthält.</value>
 </data>
-<data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
+  <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
   <value>Zustand kann nicht gelesen werden.</value>
 </data>
-<data name="Server_Field_Address" xml:space="preserve">
+  <data name="Server_Field_Address" xml:space="preserve">
   <value>Servername:</value>
 </data>
-<data name="Server_Field_Address_Validation" xml:space="preserve">
+  <data name="Server_Field_Address_Validation" xml:space="preserve">
   <value>Der Servername ist nicht angegeben.</value>
 </data>
-<data name="Server_Field_Port" xml:space="preserve">
+  <data name="Server_Field_Port" xml:space="preserve">
   <value>Port:</value>
 </data>
-<data name="Server_Field_Port_Validation" xml:space="preserve">
+  <data name="Server_Field_Port_Validation" xml:space="preserve">
   <value>Port ist ungültig.</value>
 </data>
-<data name="SourceItem_AddFiles" xml:space="preserve">
+  <data name="SourceItem_AddFiles" xml:space="preserve">
   <value>Dateien hinzufügen...</value>
 </data>
-<data name="SourceItem_AddFolders" xml:space="preserve">
+  <data name="SourceItem_AddFolders" xml:space="preserve">
   <value>Ordner hinzufügen...</value>
 </data>
-<data name="SourceItem_OpenInExplorer" xml:space="preserve">
+  <data name="SourceItem_OpenInExplorer" xml:space="preserve">
   <value>Im Explorer öffnen...</value>
 </data>
-<data name="SourceItem_State_Get" xml:space="preserve">
+  <data name="SourceItem_State_Get" xml:space="preserve">
   <value>Zustand der Quellelement "{0}" abrufen</value>
 </data>
-<data name="SourceItem_Validation_Empty" xml:space="preserve">
+  <data name="SourceItem_Validation_Empty" xml:space="preserve">
   <value>Keine zu verarbeitenden Elemente.</value>
 </data>
-<data name="SourceItem_Validation_NotExists" xml:space="preserve">
+  <data name="SourceItem_Validation_NotExists" xml:space="preserve">
   <value>"{0}" existiert nicht.</value>
 </data>
-<data name="State_File_Get" xml:space="preserve">
+  <data name="State_File_Get" xml:space="preserve">
   <value>Zustand der Datei "{0}" abrufen</value>
 </data>
-<data name="State_LoadFromEverywhere" xml:space="preserve">
+  <data name="State_LoadFromEverywhere" xml:space="preserve">
   <value>Zustand der Quellobjekte und Speichermedien abrufen</value>
 </data>
-<data name="DataStorage_State_Saving" xml:space="preserve">
-  <value>Speicherzustand wird geschrieben</value>
-</data>
-<data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
+  <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
   <value>Ausnahmemuster für Dateien hinzufügen</value>
 </data>
-<data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
+  <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
   <value>Ausnahmemuster für Dateien bearbeiten</value>
 </data>
-<data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
+  <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
   <value>Datei Globbing in .NET: Muster</value>
 </data>
-<data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
+  <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
   <value>Hier können Sie Dateiglobbing-Ausnahmemuster angeben. 
 Es kann ein Dateiname oder Ordnername oder Wildcard sein. 
 Beispiele: 
@@ -252,316 +518,85 @@ d:\temp\**\*.txt oder
 bin. 
 Siehe detaillierte Beschreibung im folgenden Link.</value>
 </data>
-<data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
+  <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
   <value>Überspringt die Verarbeitung von Dateien nach Ausnahmemuster.</value>
 </data>
-<data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
+  <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
   <value>Dateiausnahmemuster:</value>
 </data>
-<data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
+  <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
   <value>Dateiausnahmemuster ist leer.</value>
 </data>
-<data name="Task_Create" xml:space="preserve">
+  <data name="StorageItem_Remote_Marker" xml:space="preserve">
+    <value>Fern</value>
+  </data>
+  <data name="SynchronizationMode_Field" xml:space="preserve">
+    <value>Synchronisationsmodus:</value>
+  </data>
+  <data name="SynchronizationMode_Field_Read" xml:space="preserve">
+    <value>Lesen</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
+    <value>Zwei-Wege</value>
+  </data>
+  <data name="SynchronizationTask_Create" xml:space="preserve">
+    <value>Synchronisation</value>
+  </data>
+  <data name="SynchronizationTask_Help" xml:space="preserve">
+    <value>Zwei-Wege-Synchronisierung von Dateien zwischen Geräten unter Verwendung eines zentralisierten Speichers.</value>
+  </data>
+  <data name="Task_Create" xml:space="preserve">
   <value>Neu</value>
 </data>
-<data name="Task_Create_Hint" xml:space="preserve">
+  <data name="Task_Create_Hint" xml:space="preserve">
   <value>Erstellt eine neue Aufgabe.</value>
 </data>
-<data name="Task_Delete" xml:space="preserve">
+  <data name="Task_Delete" xml:space="preserve">
   <value>Löschen</value>
 </data>
-<data name="Task_Delete_Confirm" xml:space="preserve">
+  <data name="Task_Delete_Confirm" xml:space="preserve">
   <value>Möchten Sie wirklich "{0}" löschen?</value>
 </data>
-<data name="Task_Delete_Hint" xml:space="preserve">
+  <data name="Task_Delete_Hint" xml:space="preserve">
   <value>Die ausgewählte Aufgabe wird gelöscht.</value>
 </data>
-<data name="Task_Edit" xml:space="preserve">
+  <data name="Task_Edit" xml:space="preserve">
   <value>Bearbeiten</value>
 </data>
-<data name="Task_Edit_Hint" xml:space="preserve">
+  <data name="Task_Edit_Hint" xml:space="preserve">
   <value>Die ausgewählte Aufgabe wird bearbeitet.</value>
 </data>
-<data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
+  <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
   <value>Sie können diesen Aufgabentyp nicht im CLI bearbeiten.</value>
 </data>
-<data name="Task_Field_Choose" xml:space="preserve">
+  <data name="Task_Field_Choose" xml:space="preserve">
   <value>Wählen Sie die Aufgabe:</value>
 </data>
-<data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
+  <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
   <value>Neue Aufgabe</value>
 </data>
-<data name="Task_LastExecution_State" xml:space="preserve">
+  <data name="Task_LastExecution_State" xml:space="preserve">
   <value>Zustand</value>
 </data>
-<data name="Task_Launch" xml:space="preserve">
+  <data name="Task_Launch" xml:space="preserve">
   <value>Starten</value>
 </data>
-<data name="Task_Launch_Hint" xml:space="preserve">
+  <data name="Task_Launch_Hint" xml:space="preserve">
   <value>Die ausgewählte Aufgabe wird gestartet.</value>
 </data>
-<data name="Task_List" xml:space="preserve">
+  <data name="Task_List" xml:space="preserve">
   <value>Aufgaben</value>
 </data>
-<data name="Task_Restore" xml:space="preserve">
+  <data name="Task_Restore" xml:space="preserve">
   <value>Wiederherstellen</value>
 </data>
-<data name="Task_Status_FailedSeeLog" xml:space="preserve">
+  <data name="Task_Status_FailedSeeLog" xml:space="preserve">
   <value>Fehlgeschlagen (siehe geöffnetes Protokoll)</value>
 </data>
-<data name="Task_Status_InProgress" xml:space="preserve">
+  <data name="Task_Status_InProgress" xml:space="preserve">
   <value>Aufgabe ist in Bearbeitung...</value>
 </data>
-<data name="AfterTaskSelection_DoNothing" xml:space="preserve">
-  <value>Nichts tun</value>
-</data>
-<data name="AfterTaskSelection_Field" xml:space="preserve">
-  <value>Nach Abschluss der Aufgabe:</value>
-</data>
-<data name="AfterTaskSelection_Help" xml:space="preserve">
-  <value>Wenn Sie etwas anderes als 'nichts tun' auswählen,
-wird das Programm das Betriebssystem so konfigurieren, dass es Ihnen
-bei Ihrem nächsten Anmelden am System einen Bericht anzeigt,
-wenn Fehler oder Warnungen registriert werden.</value>
-</data>
-<data name="AfterTaskSelection_LogOff" xml:space="preserve">
-  <value>Abmelden</value>
-</data>
-<data name="AfterTaskSelection_Reboot" xml:space="preserve">
-  <value>Neustarten</value>
-</data>
-<data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
-  <value>Herunterfahren</value>
-</data>
-<data name="Application_NewVersion_Notification" xml:space="preserve">
-  <value>Eine neue {0} Version ist verfügbar.</value>
-</data>
-<data name="BackupVersion_Button_Delete" xml:space="preserve">
-  <value>Version löschen</value>
-</data>
-<data name="BackupVersion_Changes_Title" xml:space="preserve">
-  <value>Änderungen</value>
-</data>
-<data name="DataStorage_Maintenance" xml:space="preserve">
-  <value>Datenspeicherwartung</value>
-</data>
-<data name="BackupVersion_Delete_Confirm" xml:space="preserve">
-  <value>Möchten Sie wirklich die Version "{0}" löschen?
-
-Die Änderungen der gelöschten Version werden Teil der Version "{1}".</value>
-</data>
-<data name="BackupVersion_Files_Title" xml:space="preserve">
-  <value>Dateien</value>
-</data>
-<data name="BackupVersion_FileVersion_Title" xml:space="preserve">
-  <value>Journal: {0}</value>
-</data>
-<data name="BackupVersion_FileVersions_Open" xml:space="preserve">
-  <value>Journal für ausgewählte...</value>
-</data>
-<data name="BackupVersion_Select" xml:space="preserve">
-  <value>Ausgewählte Version öffnen...</value>
-</data>
-<data name="BackupVersion_Selector_Title" xml:space="preserve">
-  <value>VERSION AUSWÄHLEN</value>
-</data>
-<data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-  <value>(alle Versionen belegen auf dem Speicher {0})</value>
-</data>
-<data name="BackupVersion_Versions_Title" xml:space="preserve">
-  <value>VERSIONEN</value>
-</data>
-<data name="BackupVersion_Viewer_Help" xml:space="preserve">
-  <value>Wählen Sie die Datei oder den Ordner, den Sie im Baum wiederherstellen möchten, und klicken Sie auf "Wiederherstellen".</value>
-</data>
-<data name="Button_Cancel" xml:space="preserve">
-  <value>Abbrechen</value>
-</data>
-<data name="Button_Close" xml:space="preserve">
-  <value>Schließen</value>
-</data>
-<data name="Button_Continue" xml:space="preserve">
-  <value>Weiter &gt;</value>
-</data>
-<data name="Button_CopyToClipboard" xml:space="preserve">
-  <value>Kopieren</value>
-</data>
-<data name="Button_Download" xml:space="preserve">
-  <value>Herunterladen</value>
-</data>
-<data name="Button_OK" xml:space="preserve">
-  <value>OK</value>
-</data>
-<data name="Button_Remove" xml:space="preserve">
-  <value>Entfernen</value>
-</data>
-<data name="Button_Save" xml:space="preserve">
-  <value>Speichern</value>
-</data>
-<data name="CommandLineArguments_Help" xml:space="preserve">
-  <value>Besuchen Sie {0}, um die Befehlszeilenargumente zu sehen.</value>
-</data>
-<data name="CommandLineArguments_Invalid" xml:space="preserve">
-  <value>Ungültige Befehlszeilenargumente.</value>
-</data>
-<data name="DataStorage_Field_ConnectScript" xml:space="preserve">
-  <value>Verbindungsskript:</value>
-</data>
-<data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
-  <value>Trennungsskript:</value>
-</data>
-<data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
-  <value>Mit Fehlern beendet</value>
-</data>
-<data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
-  <value>Erfolgreich abgeschlossen</value>
-</data>
-<data name="DataStorage_Field_UploadQuota" xml:space="preserve">
-  <value>Upload-Limit, GB:</value>
-</data>
-<data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
-  <value>Begrenzt die Menge der während der Ausführung einer Aufgabe auf den Speicher gesendeten Daten. 0 - kein Limit.
-Wenn das Limit überschritten wird, werden andere Dateien übersprungen und beim nächsten Mal verarbeitet.
-Anwendungsszenario: Sie kopieren Daten auf einen entfernten Server. Es gibt ein Problem: Der ISP senkt die Upload-Geschwindigkeit nach mehreren Gigabyte. Diese Einstellung ermöglicht es Ihnen, damit umzugehen.</value>
-</data>
-<data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
-  <value>Das Kontingent sollte 0 (nicht anwenden) oder einen Wert über 0 betragen.</value>
-</data>
-<data name="DataStorage_Script_Help" xml:space="preserve">
-  <value>Falls der Ordner nach dem Ausführen einiger Befehle verfügbar wird, geben Sie {0} Skripte für Verbindung und Trennung an.</value>
-</data>
-<data name="DataStorage_State_Get" xml:space="preserve">
-  <value>Zustand des Speichers ermitteln</value>
-</data>
-<data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
-  <value>Speicher ist nicht angegeben.</value>
-</data>
-<data name="Days_Field_Choose" xml:space="preserve">
-  <value>Wählen Sie Wochentage:</value>
-</data>
-<data name="Days_Friday" xml:space="preserve">
-  <value>Freitag</value>
-</data>
-<data name="Days_Monday" xml:space="preserve">
-  <value>Montag</value>
-</data>
-<data name="Days_Saturday" xml:space="preserve">
-  <value>Samstag</value>
-</data>
-<data name="Days_Sunday" xml:space="preserve">
-  <value>Sonntag</value>
-</data>
-<data name="Days_Thursday" xml:space="preserve">
-  <value>Donnerstag</value>
-</data>
-<data name="Days_Tuesday" xml:space="preserve">
-  <value>Dienstag</value>
-</data>
-<data name="Days_Wednesday" xml:space="preserve">
-  <value>Mittwoch</value>
-</data>
-<data name="DirectoryStorage" xml:space="preserve">
-  <value>Verzeichnis</value>
-</data>
-<data name="DirectoryStorage_Field_Directory" xml:space="preserve">
-  <value>Ordner:</value>
-</data>
-<data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
-  <value>Verzeichnis ist nicht angegeben.</value>
-</data>
-<data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
-  <value>Verzeichnis "{0}" existiert nicht.</value>
-</data>
-<data name="Field_Device" xml:space="preserve">
-  <value>Gerät:</value>
-</data>
-<data name="Field_Device_Validation_Empty" xml:space="preserve">
-  <value>Gerät ist nicht angegeben.</value>
-</data>
-<data name="Field_Device_Validation_NotFound" xml:space="preserve">
-  <value>Gerät wurde nicht gefunden.</value>
-</data>
-<data name="Field_Folder" xml:space="preserve">
-  <value>Ordner:</value>
-</data>
-<data name="Field_Folder_Browse" xml:space="preserve">
-  <value>Durchsuchen</value>
-</data>
-<data name="Field_Folder_Validation_Empty" xml:space="preserve">
-  <value>Ordner ist nicht angegeben.</value>
-</data>
-<data name="Field_Folder_Validation_NotExist" xml:space="preserve">
-  <value>Ordner existiert nicht.</value>
-</data>
-<data name="Field_TransportProtocol" xml:space="preserve">
-  <value>Protokoll:</value>
-</data>
-<data name="Field_Version" xml:space="preserve">
-  <value>Version:</value>
-</data>
-<data name="File_Deleting" xml:space="preserve">
-  <value>Löschen von "{0}"</value>
-</data>
-<data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
-  <value>Integritätsüberprüfungsskript.ps1</value>
-</data>
-<data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
-  <value>Speichern von Integritätsüberprüfungsskripten</value>
-</data>
-<data name="File_List_Saving" xml:space="preserve">
-  <value>Dateien speichern</value>
-</data>
-<data name="File_Moving" xml:space="preserve">
-  <value>Verschieben von "{0}" nach "{1}"</value>
-</data>
-<data name="File_Saving" xml:space="preserve">
-  <value>Speichern von "{0}"</value>
-</data>
-<data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
-  <value>Explizit</value>
-</data>
-<data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
-  <value>Implizit</value>
-</data>
-<data name="Ftps_Field_Encryption" xml:space="preserve">
-  <value>SSL/TTS-Verschlüsselung:</value>
-</data>
-<data name="Icons_Help_Link" xml:space="preserve">
-  <value>Fügen Sie ein Charakter-Icon zu Ihrem Text hinzu</value>
-</data>
-<data name="ImportMediaTask_AllFiles" xml:space="preserve">
-  <value>Alle Dateien importieren</value>
-</data>
-<data name="ImportMediaTask_Create" xml:space="preserve">
-  <value>Medienaufgabe importieren</value>
-</data>
-<data name="ImportMediaTask_Edit_Title" xml:space="preserve">
-  <value>"{0}" Medienimportaufgabe bearbeiten</value>
-</data>
-<data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
-  <value>Ausgabeordner:</value>
-</data>
-<data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
-  <value>Dateinamen-Transformationen:</value>
-</data>
-<data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
-  <value>Beispiel:
-Stellen Sie sich vor, Sie haben die Datei {0} (geändert am {1}).
-Mit diesem Verzeichnis und dem Template-String wird die Datei wie folgt gespeichert:
-{2}</value>
-</data>
-<data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
-  <value>Unterstützte Token:
-{DATE:Format} - Fügt das Änderungsdatum der Datei im angegebenen Format ein.
-Um alle Optionen zu sehen, googeln Sie "C# DateTime format".</value>
-</data>
-<data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
-  <value>Transformierter Dateiname ist leer.</value>
-</data>
-<data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
-  <value>Ungültiger transformierter Dateiname.</value>
-</data>
-<data name="Task_Status_PartialDueToQuota" xml:space="preserve">
+  <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
     <value>Teilweise abgeschlossen. Aufgrund des Speicherkontingents wurden einige Dateien diesmal übersprungen. Verbleibende {0} Dateien mit {1} GB.</value>
   </data>
   <data name="Task_Status_Succesfull" xml:space="preserve">
@@ -605,41 +640,5 @@ Um alle Optionen zu sehen, googeln Sie "C# DateTime format".</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Benutzer ist nicht angegeben.</value>
-  </data>
-  <data name="SynchronizationTask_Create" xml:space="preserve">
-    <value>Synchronisation</value>
-  </data>
-  <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Zwei-Wege-Synchronisierung von Dateien zwischen Geräten unter Verwendung eines zentralisierten Speichers.</value>
-  </data>
-  <data name="Local_State_Get" xml:space="preserve">
-    <value>Lokalen Zustand abrufen</value>
-  </data>
-  <data name="Local_State_Saving" xml:space="preserve">
-    <value>Lokalen Zustand schreiben</value>
-  </data>
-  <data name="StorageItem_Remote_Marker" xml:space="preserve">
-    <value>Fern</value>
-  </data>
-  <data name="DataStorage_Title" xml:space="preserve">
-    <value>Speicher</value>
-  </data>
-  <data name="RepositorySubfolder_Field" xml:space="preserve">
-    <value>Repository-Unterordner (optional):</value>
-  </data>
-  <data name="RepositorySubfolder_Help" xml:space="preserve">
-    <value>Sie können einen Ordner mit einem bestimmten Unterordner des Repositories synchronisieren, wenn Sie nicht den gesamten Inhalt des Repositories auf dem Gerät haben möchten.</value>
-  </data>
-  <data name="SynchronizationMode_Field" xml:space="preserve">
-    <value>Synchronisationsmodus:</value>
-  </data>
-  <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
-    <value>Zwei-Wege</value>
-  </data>
-  <data name="SynchronizationMode_Field_Read" xml:space="preserve">
-    <value>Lesen</value>
-  </data>
-  <data name="DataStorage_Data_Saving" xml:space="preserve">
-    <value>Daten in den Speicher schreiben</value>
   </data>
 </root>

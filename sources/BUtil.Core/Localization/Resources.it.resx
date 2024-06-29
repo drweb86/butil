@@ -88,9 +88,6 @@
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Modifiche</value>
   </data>
-  <data name="DataStorage_Maintenance" xml:space="preserve">
-    <value>Manutenzione archiviazione dati</value>
-  </data>
   <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
     <value>Vuoi eliminare la versione "{0}"?
 
@@ -150,6 +147,9 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Argomenti riga di comando non validi.</value>
   </data>
+  <data name="DataStorage_Data_Saving" xml:space="preserve">
+    <value>Scrittura dati nell'archivio</value>
+  </data>
   <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
     <value>Script connessione:</value>
   </data>
@@ -175,11 +175,20 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
   <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
     <value>La quota deve essere 0 (non applicabile) o un valore superiore a 0.</value>
   </data>
+  <data name="DataStorage_Maintenance" xml:space="preserve">
+    <value>Manutenzione archiviazione dati</value>
+  </data>
   <data name="DataStorage_Script_Help" xml:space="preserve">
     <value>Se la cartella diventa disponibile dopo l'esecuzione di alcuni comandi, specifica gli script {0} per la connessione e la disconnessione.</value>
   </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
     <value>Ottieni stato archivio dati</value>
+  </data>
+  <data name="DataStorage_State_Saving" xml:space="preserve">
+    <value>Scrittura stato archiviazione</value>
+  </data>
+  <data name="DataStorage_Title" xml:space="preserve">
+    <value>Storage</value>
   </data>
   <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
     <value>Non è stato impostato lo spazio di archiviazione.</value>
@@ -383,6 +392,12 @@ Consulta il sito web dell'applicazione per la documentazione su come impostare l
   <data name="LeftMenu_Where_Hint" xml:space="preserve">
     <value>Qui puoi aggiungere i percorsi in cui vuoi copiare i file.</value>
   </data>
+  <data name="Local_State_Get" xml:space="preserve">
+    <value>Get local state</value>
+  </data>
+  <data name="Local_State_Saving" xml:space="preserve">
+    <value>Scrittura stato locale</value>
+  </data>
   <data name="LogFile_Marker_Errors" xml:space="preserve">
     <value>Errori</value>
   </data>
@@ -440,6 +455,12 @@ Consulta il sito web dell'applicazione per la documentazione su come impostare l
   <data name="Password_Use" xml:space="preserve">
     <value>Use</value>
   </data>
+  <data name="RepositorySubfolder_Field" xml:space="preserve">
+    <value>Sottocartella repository (facoltativa):</value>
+  </data>
+  <data name="RepositorySubfolder_Help" xml:space="preserve">
+    <value>Se non vuoi avere tutto il contenuto del repository nel dispositivo è possibile sincronizzare la cartella con una particolare sottocartella del repository.</value>
+  </data>
   <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
     <value>Impossibile individuare i file "{0}" nella cartella. 
 
@@ -481,9 +502,6 @@ Consulta il sito web dell'applicazione per la documentazione su come impostare l
   <data name="State_File_Get" xml:space="preserve">
     <value>Richiedi stato del file "{0}"</value>
   </data>
-  <data name="DataStorage_State_Saving" xml:space="preserve">
-    <value>Scrittura stato archiviazione</value>
-  </data>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
     <value>Richiedi stato elementi sorgenti e archivi</value>
   </data>
@@ -514,6 +532,24 @@ Consulta il sito web dell'applicazione per la documentazione su come impostare l
   </data>
   <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
     <value>La maschera esclusione file è vuota.</value>
+  </data>
+  <data name="StorageItem_Remote_Marker" xml:space="preserve">
+    <value>Remoto</value>
+  </data>
+  <data name="SynchronizationMode_Field" xml:space="preserve">
+    <value>Modalità sincronizzazione:</value>
+  </data>
+  <data name="SynchronizationMode_Field_Read" xml:space="preserve">
+    <value>Lettura</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
+    <value>Bidiriezionale</value>
+  </data>
+  <data name="SynchronizationTask_Create" xml:space="preserve">
+    <value>Sincronizzazione</value>
+  </data>
+  <data name="SynchronizationTask_Help" xml:space="preserve">
+    <value>Sincronizzazione bidirezionale file tra dispositivi mediante archiviazione centralizzata.</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Crea</value>
@@ -612,41 +648,5 @@ Consulta il sito web dell'applicazione per la documentazione su come impostare l
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Non è stato specificato l'utente.</value>
-  </data>
-  <data name="SynchronizationTask_Create" xml:space="preserve">
-    <value>Sincronizzazione</value>
-  </data>
-  <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Sincronizzazione bidirezionale file tra dispositivi mediante archiviazione centralizzata.</value>
-  </data>
-  <data name="Local_State_Get" xml:space="preserve">
-    <value>Get local state</value>
-  </data>
-  <data name="Local_State_Saving" xml:space="preserve">
-    <value>Scrittura stato locale</value>
-  </data>
-  <data name="StorageItem_Remote_Marker" xml:space="preserve">
-    <value>Remoto</value>
-  </data>
-  <data name="DataStorage_Title" xml:space="preserve">
-    <value>Storage</value>
-  </data>
-  <data name="RepositorySubfolder_Field" xml:space="preserve">
-    <value>Sottocartella repository (facoltativa):</value>
-  </data>
-  <data name="RepositorySubfolder_Help" xml:space="preserve">
-    <value>Se non vuoi avere tutto il contenuto del repository nel dispositivo è possibile sincronizzare la cartella con una particolare sottocartella del repository.</value>
-  </data>
-  <data name="SynchronizationMode_Field" xml:space="preserve">
-    <value>Modalità sincronizzazione:</value>
-  </data>
-  <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
-    <value>Bidiriezionale</value>
-  </data>
-  <data name="SynchronizationMode_Field_Read" xml:space="preserve">
-    <value>Lettura</value>
-  </data>
-  <data name="DataStorage_Data_Saving" xml:space="preserve">
-    <value>Scrittura dati nell'archivio</value>
   </data>
 </root>
