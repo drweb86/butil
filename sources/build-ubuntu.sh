@@ -1,79 +1,95 @@
 #!/bin/bash
 
+# Fail on first error.
+set -e
+
 version=2024.06.29
 
-tempFolder=./butil-${version}-temporary
-outputFolder=./butil-${version}
+sourceCodeInstallationDirectory=/usr/local/src/butil
+binariesInstallationDirectory=/usr/local/butil
 
+if [ "$(id -u)" -ne 0 ]; then
+        echo 'This script must be run by root' >&2
+        exit 1
+fi
+
+echo
 echo Installing dependencies
+echo
+apt-get update
+apt-get install -y git dotnet-sdk-8.0 7zip
 
-sudo apt-get update
-sudo apt-get install -y git dotnet-sdk-8.0 7zip
-sudo apt update
+echo
+echo Cleaning installation directories
+echo
+rm -rf ${sourceCodeInstallationDirectory}
+rm -rf ${binariesInstallationDirectory}
 
-echo Getting sources
+echo
+echo Get source code
+echo
+git clone https://github.com/drweb86/butil.git ${sourceCodeInstallationDirectory}
+cd ${sourceCodeInstallationDirectory}
 
-rm -rf ${tempFolder}
-rm -rf ${outputFolder}
-git clone https://github.com/drweb86/butil.git ${tempFolder}
-cd ${tempFolder}
+echo
+echo Update to tag
+echo
 git checkout tags/${version}
 
+echo
 echo Building
-
+echo
 cd ./sources
-dotnet publish /p:Version=${version} /p:AssemblyVersion=${version} -c Release --self-contained true -o ../.${outputFolder}
+dotnet publish /p:Version=${version} /p:AssemblyVersion=${version} -c Release --property:PublishDir=${binariesInstallationDirectory}
 
-cd ../..
-echo Creating shortcuts
+echo
+echo Prepare icon
+echo
+cp ${sourceCodeInstallationDirectory}/sources/butil-ui/Assets/butil.ico ${binariesInstallationDirectory}/butil.ico
 
-cp ${tempFolder}/sources/butil-ui/Assets/butil.ico ${outputFolder}/butil.ico
+echo
+echo Create shortcuts
+echo
+declare -a shortcutLocations=("/usr/share/applications" "~/Desktop")
 
-uiShortcut=${HOME}/Desktop/BUtil.desktop
+for shortcutLocation in "${shortcutLocations[@]}"
+do
+    echo
+    echo Create shortcut in ${shortcutLocation}
+    echo
 
-cat > ${uiShortcut} << EOL
+    shortcutFile=${shortcutLocation}/BUtil.desktop
+cat > ${shortcutFile} << EOL
 [Desktop Entry]
 Encoding=UTF-8
-Version=1.0
+Version=${version}
+Name=BUtil
+GenericName=Incremental backup, Synchronization, Import media
+Categories=Incremental backup;Synchronization;Import media
+Comment=BUtil creates incremental backups and imports multimedia on your PC with deduplication and FTPS, SMB/CIFS, MTP transports support for Windows and Linux.
 Type=Application
 Terminal=false
-Exec=$(pwd)/${outputFolder}/butil-ui.Desktop
-Name=BUtil
-Icon=$(pwd)/${outputFolder}/butil.ico
+Exec=${binariesInstallationDirectory}/butil-ui.Desktop
+Icon=${binariesInstallationDirectory}/butil.ico
 EOL
 
-chmod -R 775 ${uiShortcut}
-gio set "${uiShortcut}" metadata::trusted true
+    chmod -R 775 ${shortcutFile}
+    gio set "${shortcutFile}" metadata::trusted true
 
+done
 
-
-
-desktopShortcut=~/Desktop/BUtil.desktop
-
-cat > ${desktopShortcut} << EOL
-[Desktop Entry]
-Encoding=UTF-8
-Version=1.0
-Type=Application
-Terminal=false
-Exec=$(pwd)/${outputFolder}/butil-ui.Desktop
-Name=BUtil
-Icon=$(pwd)/${outputFolder}/butil.ico
-EOL
-
-chmod -R 775 ${desktopShortcut}
-gio set ${desktopShortcut} metadata::trusted true
-
-
-sudo chmod -R 775 ${desktopShortcut}
-sudo gio set "${desktopShortcut}" metadata::trusted yes
-
-
-
-
-rm -rf ${tempFolder}
-
+echo
+echo
 echo Everything is completed 
-echo Folder      : ${outputFolder}
-echo UI tool     : butil-ui.Desktop, see desktop shortcut
-echo Console tool: butilc, see desktop shortcut
+echo
+echo
+echo Application was installed too:
+echo
+echo Binaries: ${sourceCodeInstallationDirectory}
+echo Sources: ${binariesInstallationDirectory}
+echo
+echo Shortcut on desktop and for quick search are provisioned for UI tool.
+echo Console tool: ${binariesInstallationDirectory}/butilc
+echo
+echo
+sleep 2m
