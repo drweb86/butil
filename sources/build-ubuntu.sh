@@ -43,7 +43,33 @@ Icon=$(pwd)/${outputFolder}/butil.ico
 EOL
 
 chmod -R 775 ${uiShortcut}
-gio set "${uiShortcut}" metadata::trusted yes
+gio set "${uiShortcut}" metadata::trusted true
+
+
+
+
+desktopShortcut=~/Desktop/BUtil.desktop
+
+cat > ${desktopShortcut} << EOL
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Terminal=false
+Exec=$(pwd)/${outputFolder}/butil-ui.Desktop
+Name=BUtil
+Icon=$(pwd)/${outputFolder}/butil.ico
+EOL
+
+chmod -R 775 ${desktopShortcut}
+gio set ${desktopShortcut} metadata::trusted true
+
+
+sudo chmod -R 775 ${desktopShortcut}
+sudo gio set "${desktopShortcut}" metadata::trusted yes
+
+
+
 
 rm -rf ${tempFolder}
 
