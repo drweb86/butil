@@ -27,7 +27,7 @@ dotnet publish /p:Version=${version} /p:AssemblyVersion=${version} -c Release --
 cd ../..
 echo Creating shortcuts
 
-cp ${tempFolder}sources/butil-ui/Assets/butil.ico ${outputFolder}/butil.ico
+cp ${tempFolder}/sources/butil-ui/Assets/butil.ico ${outputFolder}/butil.ico
 
 uiShortcut=${HOME}/Desktop/BUtil.desktop
 
@@ -44,22 +44,6 @@ EOL
 
 chmod -R 775 ${uiShortcut}
 gio set "${uiShortcut}" metadata::trusted yes
-
-consoleShortcut="${HOME}/Desktop/BUtil Console.desktop"
-
-cat > "${consoleShortcut}" << EOL
-[Desktop Entry]
-Encoding=UTF-8
-Version=1.0
-Type=Application
-Terminal=true
-Exec=$(pwd)/${outputFolder}/butilc
-Name=BUtil Console
-Icon=$(pwd)/${outputFolder}/butil.ico
-EOL
-
-chmod -R 775 "${consoleShortcut}"
-gio set "${consoleShortcut}" metadata::trusted yes
 
 rm -rf ${tempFolder}
 
