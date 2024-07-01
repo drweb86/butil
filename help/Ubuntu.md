@@ -1,7 +1,17 @@
-# Build instruction for Ubuntu 23.10
+# Ubuntu
+
+## Installation
 
 Open terminal, paste
 
 ```
-sudo wget -O - https://raw.githubusercontent.com/drweb86/butil/master/sources/build-ubuntu.sh | bash
+wget -O - https://raw.githubusercontent.com/drweb86/butil/master/sources/ubuntu-install.sh | bash
+```
+
+## Uninstallation
+
+Open terminal, paste
+
+```
+wget -O - https://raw.githubusercontent.com/drweb86/butil/master/sources/ubuntu-uninstall.sh | bash
 ```

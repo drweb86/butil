@@ -8,58 +8,46 @@ version=2024.06.29
 sourceCodeInstallationDirectory=/usr/local/src/butil
 binariesInstallationDirectory=/usr/local/butil
 
-if [ "$(id -u)" -ne 0 ]; then
-        echo 'This script must be run by root' >&2
-        exit 1
-fi
-
 echo
 echo Installing dependencies
 echo
-apt-get update
-apt-get install -y git dotnet-sdk-8.0 7zip
+sudo apt-get update
+sudo apt-get install -y git dotnet-sdk-8.0 7zip
 
 echo
 echo Cleaning installation directories
 echo
-rm -rf ${sourceCodeInstallationDirectory}
-rm -rf ${binariesInstallationDirectory}
+sudo rm -rf ${sourceCodeInstallationDirectory}
+sudo rm -rf ${binariesInstallationDirectory}
 
 echo
 echo Get source code
 echo
-git clone https://github.com/drweb86/butil.git ${sourceCodeInstallationDirectory}
+sudo git clone https://github.com/drweb86/butil.git ${sourceCodeInstallationDirectory}
 cd ${sourceCodeInstallationDirectory}
 
 echo
 echo Update to tag
 echo
-git checkout tags/${version}
+sudo git checkout tags/${version}
 
 echo
 echo Building
 echo
 cd ./sources
-dotnet publish /p:Version=${version} /p:AssemblyVersion=${version} -c Release --property:PublishDir=${binariesInstallationDirectory}
+sudo dotnet publish /p:Version=${version} /p:AssemblyVersion=${version} -c Release --property:PublishDir=${binariesInstallationDirectory} --use-current-runtime --self-contained
 
 echo
 echo Prepare icon
 echo
-cp ${sourceCodeInstallationDirectory}/sources/butil-ui/Assets/butil.ico ${binariesInstallationDirectory}/butil.ico
+sudo cp ${sourceCodeInstallationDirectory}/sources/butil-ui/Assets/butil.ico ${binariesInstallationDirectory}/butil.ico
 
 echo
-echo Create shortcuts
+echo Prepare shortcut
 echo
-declare -a shortcutLocations=("/usr/share/applications" "~/Desktop")
 
-for shortcutLocation in "${shortcutLocations[@]}"
-do
-    echo
-    echo Create shortcut in ${shortcutLocation}
-    echo
-
-    shortcutFile=${shortcutLocation}/BUtil.desktop
-cat > ${shortcutFile} << EOL
+temporaryShortcut=/tmp/BUtil.desktop
+cat > ${temporaryShortcut} << EOL
 [Desktop Entry]
 Encoding=UTF-8
 Version=${version}
@@ -72,9 +60,23 @@ Terminal=false
 Exec=${binariesInstallationDirectory}/butil-ui.Desktop
 Icon=${binariesInstallationDirectory}/butil.ico
 EOL
+sudo chmod -R 775 ${temporaryShortcut}
 
-    chmod -R 775 ${shortcutFile}
-    gio set "${shortcutFile}" metadata::trusted true
+desktopDir=$(xdg-user-dir DESKTOP)
+declare -a shortcutLocations=("/usr/share/applications" "${desktopDir}")
+
+for shortcutLocation in "${shortcutLocations[@]}"
+do
+
+shortcutFile=${shortcutLocation}/BUtil.desktop
+
+echo
+echo Create shortcut in ${shortcutFile}
+echo
+
+sudo cp ${temporaryShortcut} "${shortcutFile}"
+sudo chmod -R 775 "${shortcutFile}"
+gio set "${shortcutFile}" metadata::trusted true
 
 done
 
