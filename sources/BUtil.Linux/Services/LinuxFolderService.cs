@@ -10,12 +10,16 @@ internal class LinuxFolderService : IFolderService
         return Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
     }
 
+
     public IEnumerable<string> GetDefaultBackupFolders()
     {
-        // TODO: revert!
-        return new[] {
-            Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
-        };
+        return [
+            Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
+            Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+            Environment.GetFolderPath(Environment.SpecialFolder.MyVideos),
+            Environment.GetFolderPath(Environment.SpecialFolder.MyMusic),
+            Environment.GetFolderPath(Environment.SpecialFolder.MyPictures),
+        ];
     }
 
     public void OpenFolderInShell(string folder)
