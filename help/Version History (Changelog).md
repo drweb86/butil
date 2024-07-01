@@ -1,5 +1,4 @@
-# 2024.07.01
-(unreleased)
+# 2024.06.29.2
 
 ## New Features
 - Ubuntu: installation script installs and uninstall application to proper Linux locations. Desktop and quick search shortcuts are created.
