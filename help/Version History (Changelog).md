@@ -1,4 +1,4 @@
-# 2024.06.29.3
+# 2024.06.29.4
 
 ## New Features
 - Ubuntu: installation script installs and uninstall application to proper Linux locations. Desktop and quick search shortcuts are created.
@@ -6,6 +6,7 @@
 ## Bug Fixes
 - Ubuntu 24: spawn restoration, backup from UI crashes (they broke system-inhibit).
 - Ubuntu 24: backup of userprofile folder crashes app.
+- Ubuntu 24: 7-zip resolved name is different.
 
 # 2024.06.29
 

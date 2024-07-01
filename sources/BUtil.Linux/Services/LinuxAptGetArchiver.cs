@@ -16,7 +16,7 @@ class LinuxAptGetArchiver : IArchiver
     {
         _sevenZipFolder = Resolve7ZipDirectory();
         if (_sevenZipFolder != null)
-            _sevenZipPacker = Path.Combine(_sevenZipFolder, "7zz");
+            _sevenZipPacker = Path.Combine(_sevenZipFolder, "7z");
     }
 
     internal LinuxAptGetArchiver(ILog log)
@@ -26,7 +26,7 @@ class LinuxAptGetArchiver : IArchiver
 
     private static string? Resolve7ZipDirectory()
     {
-        string exe = "7zz";
+        string exe = "7z";
         var result = (Environment.GetEnvironmentVariable("PATH") ?? string.Empty)
             .Split(':') // because its ubuntu, babe.
             .Where(s => File.Exists(Path.Combine(s, exe)))
@@ -61,7 +61,7 @@ class LinuxAptGetArchiver : IArchiver
         string outputDirectory)
     {
         if (_sevenZipPacker == null || _sevenZipFolder == null)
-            throw new InvalidDataException("7-zip was not found. Please install it using command 'sudo apt-get install 7zip'");
+            throw new InvalidDataException("7-zip was not found. Use installation script.'");
 
         var passwordIsSet = !string.IsNullOrWhiteSpace(password);
         string input = Environment.NewLine; // to handle wrong password
