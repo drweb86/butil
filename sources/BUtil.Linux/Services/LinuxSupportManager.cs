@@ -19,15 +19,13 @@ public class LinuxSupportManager : ISupportManager
         _uiApp = "butil-ui.Desktop";
     }
 
-    private void LaunchUiAppInternal(bool preventSleep = false, string? arguments = null)
+    private void LaunchUiAppInternal(string? arguments = null)
     {
         Process.Start(new ProcessStartInfo
         {
-            FileName = preventSleep
-                ? "systemd-inhibit"
-                : _uiApp,
+            FileName = "systemd-inhibit",
             WorkingDirectory = _workDir,
-            Arguments = (preventSleep ? $"\"{_uiApp}\"" : "")
+            Arguments = $"\"./{_uiApp}\""
                 + (arguments != null ? $" {arguments}" : ""),
         });
     }
@@ -39,14 +37,14 @@ public class LinuxSupportManager : ISupportManager
 
     public void LaunchTask(string taskName)
     {
-        LaunchUiAppInternal(true, $"{TasksAppArguments.LaunchTask} \"{TasksAppArguments.RunTask}={taskName}\"");
+        LaunchUiAppInternal($"{TasksAppArguments.LaunchTask} \"{TasksAppArguments.RunTask}={taskName}\"");
     }
 
     public void OpenRestorationApp(string? taskName = null)
     {
         if (string.IsNullOrWhiteSpace(taskName))
         {
-            LaunchUiAppInternal(true, TasksAppArguments.Restore);
+            LaunchUiAppInternal(TasksAppArguments.Restore);
             return;
         }
 
@@ -55,15 +53,15 @@ public class LinuxSupportManager : ISupportManager
 
         if (task?.Model is IncrementalBackupModelOptionsV2)
         {
-            LaunchUiAppInternal(true, $"{TasksAppArguments.Restore} \"{TasksAppArguments.RunTask}={taskName}\"");
+            LaunchUiAppInternal($"{TasksAppArguments.Restore} \"{TasksAppArguments.RunTask}={taskName}\"");
         }
         else if (task?.Model is SynchronizationTaskModelOptionsV2)
         {
-            LaunchUiAppInternal(true, $"{TasksAppArguments.Restore} \"{TasksAppArguments.RunTask}={taskName}\"");
+            LaunchUiAppInternal($"{TasksAppArguments.Restore} \"{TasksAppArguments.RunTask}={taskName}\"");
         }
         else
         {
-            LaunchUiAppInternal(true, TasksAppArguments.Restore);
+            LaunchUiAppInternal(TasksAppArguments.Restore);
         }
     }
 

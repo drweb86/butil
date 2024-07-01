@@ -1,3 +1,12 @@
+# 2024.07.01
+(unreleased)
+
+## New Features
+- Ubuntu: installation script installs and uninstall application to proper Linux locations. Desktop and quick search shortcuts are created.
+
+## Bug Fixes
+- Ubuntu 24: spawn restoration, backup from UI crashes (they broke system-inhibit).
+
 # 2024.06.29
 
 ## New Features
