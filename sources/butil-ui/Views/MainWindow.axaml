@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:views="clr-namespace:butil_ui.Views"
 		xmlns:controls="clr-namespace:butil_ui.Controls"
+		xmlns:dialogHost="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="butil_ui.Views.MainWindow"
         Icon="/Assets/butil.ico"
@@ -18,43 +19,57 @@
 		ExtendClientAreaToDecorationsHint="{Binding CanExtendClientAreaToDecorationsHint}"
 		Title="{Binding CurrentPage.WindowTitle}"
 		Background="{Binding HeaderBackground}">
-	<Grid
+	<dialogHost:DialogHost 
+		CloseOnClickAway="True" 
 		MinHeight="{Binding $parent.Height}"
 		Height="{Binding $parent.Height}"
 		MaxHeight="{Binding $parent.Height}">
-		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto" />
-			<RowDefinition Height="Auto" />
-			<RowDefinition Height="*" />
-		</Grid.RowDefinitions>
-		<StackPanel Grid.Row="0" Orientation="Horizontal">
-			<Menu>
-				<MenuItem Command="{Binding GoToWebsiteCommand}" IsVisible="{Binding CanExtendClientAreaToDecorationsHint}">
-					<MenuItem.Header>
-						<StackPanel Orientation="Horizontal">
-							<Image Width="16" Height="16" Source="/Assets/butil.ico" VerticalAlignment="Center" />
-							<TextBlock Text="{Binding CurrentPage.WindowTitle}" Margin="8 0 0 0" VerticalAlignment="Center" />
-						</StackPanel>
-					</MenuItem.Header>
-				</MenuItem>
-				<MenuItem FontWeight="Bold" Header="{Binding Task_Create}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}">
-					<MenuItem FontWeight="Normal" Header="{Binding IncrementalBackupTask_Create}" Command="{Binding IncrementalBackupTaskCreateCommand}"/>
-					<MenuItem FontWeight="Normal" Header="{Binding ImportMediaTask_Create}" Command="{Binding ImportMediaTaskCreateCommand}"/>
-					<MenuItem FontWeight="Normal" Header="{Binding SynchronizationTask_Create}" Command="{Binding SynchronizationTaskCreateCommand}" />
-				</MenuItem>
-				<MenuItem Header="{Binding Theme_Title}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}">
-					<MenuItem Header="{Binding Theme_Value_Dark}" Command="{Binding GoDarkSide}" />
-					<MenuItem Header="{Binding Theme_Value_Light}" Command="{Binding GoLightSide}" />
-				</MenuItem>
-				<MenuItem Command="{Binding OpenLogsCommand}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}" Header="{Binding LogFile_OpenLogs}" />
-				<MenuItem Command="{Binding RestoreCommand}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}" Header="{Binding Task_Restore}" />
-			</Menu>
-		</StackPanel>
-		<controls:UpdateCheckExpanderView
-			Grid.Row="1"
-			HorizontalAlignment="Stretch"
-			ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-		/>
-		<TransitioningContentControl Grid.Row="2" Content="{Binding CurrentPage}" Background="{Binding WindowBackground}" />
-	</Grid>
+		<dialogHost:DialogHost.DataTemplates>
+			<DataTemplate DataType="views:DialogViewModel">
+				<StackPanel>
+					<TextBlock TextAlignment="Center" Text="{Binding Text}" />
+					<Button Margin="0 8 0 0"
+							Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHost:DialogHost}, Path=CloseDialogCommand}">
+						THANKS, CLOSE
+					</Button>
+				</StackPanel>
+			</DataTemplate>
+		</dialogHost:DialogHost.DataTemplates>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<StackPanel Grid.Row="0" Orientation="Horizontal">
+				<Menu>
+					<MenuItem Command="{Binding GoToWebsiteCommand}" IsVisible="{Binding CanExtendClientAreaToDecorationsHint}">
+						<MenuItem.Header>
+							<StackPanel Orientation="Horizontal">
+								<Image Width="16" Height="16" Source="/Assets/butil.ico" VerticalAlignment="Center" />
+								<TextBlock Text="{Binding CurrentPage.WindowTitle}" Margin="8 0 0 0" VerticalAlignment="Center" />
+							</StackPanel>
+						</MenuItem.Header>
+					</MenuItem>
+					<MenuItem FontWeight="Bold" Header="{Binding Task_Create}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}">
+						<MenuItem FontWeight="Normal" Header="{Binding IncrementalBackupTask_Create}" Command="{Binding IncrementalBackupTaskCreateCommand}"/>
+						<MenuItem FontWeight="Normal" Header="{Binding ImportMediaTask_Create}" Command="{Binding ImportMediaTaskCreateCommand}"/>
+						<MenuItem FontWeight="Normal" Header="{Binding SynchronizationTask_Create}" Command="{Binding SynchronizationTaskCreateCommand}" />
+					</MenuItem>
+					<MenuItem Header="{Binding Theme_Title}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}">
+						<MenuItem Header="{Binding Theme_Value_Dark}" Command="{Binding GoDarkSide}" />
+						<MenuItem Header="{Binding Theme_Value_Light}" Command="{Binding GoLightSide}" />
+					</MenuItem>
+					<MenuItem Command="{Binding OpenLogsCommand}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}" Header="{Binding LogFile_OpenLogs}" />
+					<MenuItem Command="{Binding RestoreCommand}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}" Header="{Binding Task_Restore}" />
+				</Menu>
+			</StackPanel>
+			<controls:UpdateCheckExpanderView
+				Grid.Row="1"
+				HorizontalAlignment="Stretch"
+				ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+			/>
+			<TransitioningContentControl Grid.Row="2" Content="{Binding CurrentPage}" Background="{Binding WindowBackground}" />
+		</Grid>
+	</dialogHost:DialogHost>
 </Window>

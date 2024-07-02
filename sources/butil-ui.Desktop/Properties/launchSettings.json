@@ -2,7 +2,7 @@
   "profiles": {
     "butil-ui.Desktop": {
       "commandName": "Project",
-      "commandLineArgs": "LaunchTask \"Task=Синхронизация - пользователь 1\""
+      "commandLineArgs": "!LaunchTask \"Task=Синхронизация - пользователь 1\""
     }
   }
 }

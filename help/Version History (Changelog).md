@@ -1,4 +1,4 @@
-# 2024.06.29.5
+# 2024.06.29.6
 
 ## New Features
 - Ubuntu: installation script installs and uninstall application to proper Linux locations. Desktop and quick search shortcuts are created.
@@ -8,6 +8,7 @@
 - Ubuntu 24: backup of userprofile folder crashes app.
 - Ubuntu 24: 7-zip resolved name is different (its not Ubuntu 23 compatible anymore).
 - Ubuntu 24: Default font is changed and it breaks menu.
+- Ubuntu 24: In new OS version fonts are not propagated to child windows which causes squares instead of localized text.
 
 # 2024.06.29
 

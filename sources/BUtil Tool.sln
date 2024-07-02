@@ -27,6 +27,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BUtil.Linux", "BUtil.Linux\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6D049071-90DE-4771-B8B5-80D895EBF1DB}"
 	ProjectSection(SolutionItems) = preProject
+		ubuntu-install.sh = ubuntu-install.sh
 		..\help\Version History (Changelog).md = ..\help\Version History (Changelog).md
 	EndProjectSection
 EndProject
