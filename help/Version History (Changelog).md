@@ -1,14 +1,17 @@
-# 2024.06.29.6
+# 2024.06.29.8
 
 ## New Features
 - Ubuntu: installation script installs and uninstall application to proper Linux locations. Desktop and quick search shortcuts are created.
 
+## Changes
+- Dialogs are cross-platform now.
+
 ## Bug Fixes
 - Ubuntu 24: spawn restoration, backup from UI crashes (they broke system-inhibit).
-- Ubuntu 24: backup of userprofile folder crashes app.
+- Ubuntu 24: backup of userprofile folder crashes app (they put bus devices there).
 - Ubuntu 24: 7-zip resolved name is different (its not Ubuntu 23 compatible anymore).
-- Ubuntu 24: Default font is changed and it breaks menu.
-- Ubuntu 24: In new OS version fonts are not propagated to child windows which causes squares instead of localized text.
+- Ubuntu 24: Default font is changed and it breaks menu (they broke font).
+- Ubuntu 24: In new OS version fonts are not propagated to child windows which causes squares instead of localized text (they broke child dialogs in snaps and now its broken in for non-snapped apps).
 
 # 2024.06.29
 

@@ -9,32 +9,17 @@ public static class Messages
 {
     public static async Task ShowInformationBox(string message)
     {
-        var result = await DialogHost.Show(new DialogViewModel(message));
-
-        //await MessageBoxManager
-        //    .GetMessageBoxStandard(Resources.Messages_Header_Information, message, ButtonEnum.Ok, Icon.Info)
-        //    .ShowAsync();
+        await DialogHost.Show(new DialogViewModel(Resources.Messages_Header_Information, message));
     }
 
     public static async Task ShowErrorBox(string message)
     {
-        var result = await DialogHost.Show(new DialogViewModel(message));
-
-        //await MessageBoxManager
-        //    .GetMessageBoxStandard(Resources.Messages_Header_Error, message, ButtonEnum.Ok, Icon.Error)
-        //    .ShowAsync();
+        await DialogHost.Show(new DialogViewModel(Resources.Messages_Header_Error, message));
     }
 
     public static async Task<bool> ShowYesNoDialog(string question)
     {
-        var result = await DialogHost.Show(new DialogViewModel(question));
-
-
-        //var response = await MessageBoxManager
-        //    .GetMessageBoxStandard(Resources.Messages_Header_Question, question, ButtonEnum.YesNo, Icon.Question)
-        //    .ShowAsync();
-
-        //return response == ButtonResult.Yes;
-        return false;
+        var result = await DialogHost.Show(new DialogViewModel(Resources.Messages_Header_Question, question, Resources.Button_OK, Resources.Button_Cancel));
+        return (result as string) == "1";
     }
 }

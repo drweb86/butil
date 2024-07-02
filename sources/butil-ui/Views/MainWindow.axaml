@@ -26,12 +26,30 @@
 		MaxHeight="{Binding $parent.Height}">
 		<dialogHost:DialogHost.DataTemplates>
 			<DataTemplate DataType="views:DialogViewModel">
-				<StackPanel>
-					<TextBlock TextAlignment="Center" Text="{Binding Text}" />
-					<Button Margin="0 8 0 0"
-							Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHost:DialogHost}, Path=CloseDialogCommand}">
-						THANKS, CLOSE
-					</Button>
+				<StackPanel Margin="8 8 8 8">
+					<TextBlock TextAlignment="Center" Text="{Binding Header}" Margin="8 8 8 8" />
+					<TextBlock Text="{Binding Message}" Margin="8 8 8 8" />
+					<WrapPanel>
+						<Button Margin="8 8 8 8"
+								MinHeight="32"
+								MinWidth="140"
+								HorizontalContentAlignment="Center"
+								VerticalContentAlignment="Center"
+								Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHost:DialogHost}, Path=CloseDialogCommand}"
+								CommandParameter="{Binding Button1Arg}"
+								Content="{Binding Button1Text}"
+						/>
+						<Button Margin="8 8 8 8"
+								MinHeight="32"
+								MinWidth="140"
+								HorizontalContentAlignment="Center"
+								VerticalContentAlignment="Center"
+								IsVisible="{Binding Button2Visible}"
+								Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHost:DialogHost}, Path=CloseDialogCommand}"
+								CommandParameter="{Binding Button2Arg}" 
+								Content="{Binding Button2Text}"
+						/>
+					</WrapPanel>
 				</StackPanel>
 			</DataTemplate>
 		</dialogHost:DialogHost.DataTemplates>
