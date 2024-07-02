@@ -6,7 +6,8 @@
 ## Bug Fixes
 - Ubuntu 24: spawn restoration, backup from UI crashes (they broke system-inhibit).
 - Ubuntu 24: backup of userprofile folder crashes app.
-- Ubuntu 24: 7-zip resolved name is different.
+- Ubuntu 24: 7-zip resolved name is different (its not Ubuntu 23 compatible anymore).
+- Ubuntu 24: Default font is changed and it breaks menu.
 
 # 2024.06.29
 
