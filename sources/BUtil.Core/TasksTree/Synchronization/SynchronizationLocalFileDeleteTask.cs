@@ -1,8 +1,8 @@
 ﻿using BUtil.Core.Events;
+using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Synchronization;
 using BUtil.Core.TasksTree.Core;
-using System;
 using System.IO;
 
 namespace BUtil.Core.TasksTree.Synchronization;
@@ -21,6 +21,6 @@ internal class SynchronizationLocalFileDeleteTask : BuTaskV2
 
     protected override void ExecuteInternal()
     {
-        File.Delete(Path.Combine(_localFolder, _relativeFileName));
+        File.Delete(FileHelper.Combine(_localFolder, _relativeFileName));
     }
 }

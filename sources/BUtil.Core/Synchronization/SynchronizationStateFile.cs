@@ -16,7 +16,7 @@ class SynchronizationStateFile
 
     public SynchronizationStateFile(string relativeFileName, DateTime modifiedAtUtc, string sha512, long size)
     {
-        RelativeFileName = relativeFileName;
+        RelativeFileName = relativeFileName.Replace('/', '\\');
         ModifiedAtUtc = modifiedAtUtc;
         Sha512 = sha512;
         Size = size;

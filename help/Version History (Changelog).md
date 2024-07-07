@@ -1,3 +1,8 @@
+# 2024.07.06
+
+## Bug Fixes
+- Ubuntu: synchronization was building incorrect relative paths.
+
 # 2024.06.29.8
 
 ## New Features

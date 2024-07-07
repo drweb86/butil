@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -23,11 +24,49 @@ internal static class FileHelper
         }
     }
 
-    public static string Combine(string? subfolder, string relativeFileName)
+    public static string Combine(params string?[] paths)
     {
-        return string.IsNullOrWhiteSpace(subfolder)
-            ? relativeFileName
-            : Path.Combine(subfolder, relativeFileName);
+        return Combine(null, paths);
+    }
+
+    public static string Combine(char? separator, params string?[] paths)
+    {
+        var actualPaths = (paths ?? new string[0])
+            .Where(x => !string.IsNullOrEmpty(x))
+            .Select(x => x!)
+            .ToList();
+
+        if (actualPaths.Count == 0)
+            throw new ArgumentException("No paths provided");
+
+        var actualSeparator = separator ?? System.IO.Path.DirectorySeparatorChar;
+
+        var parts = new List<string>();
+
+        foreach (var path in actualPaths)
+        {
+            // Split the input by directory separator and add to parts list
+            var segments = path.Split(new[] { '\\', '/' }, StringSplitOptions.RemoveEmptyEntries);
+            parts.AddRange(segments);
+        }
+
+        // Combine the parts into a single path
+        var combinedPath = string.Join(actualSeparator.ToString(), parts);
+
+        // Prepend the leading slash if the first path had it
+        if (actualPaths[0][0] == '\\' || actualPaths[0][0] == '/')
+        {
+            combinedPath = actualSeparator + combinedPath;
+        }
+        if (actualPaths[0].Length > 1)
+        {
+            if (actualPaths[0][1] == '\\' || actualPaths[0][1] == '/')
+            {
+                combinedPath = actualSeparator + combinedPath;
+            }
+        }
+
+        return combinedPath;
     }
 
     public static bool CompareFileNames(string name1, string name2)

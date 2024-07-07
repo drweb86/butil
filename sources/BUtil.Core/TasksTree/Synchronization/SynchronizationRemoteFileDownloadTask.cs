@@ -24,10 +24,10 @@ internal class SynchronizationRemoteFileDownloadTask : BuTaskV2
         string.Format(Resources.File_Saving, relativeFileName))
     {
         var actualRemoteRelativeFileName = FileHelper.Combine(FileHelper.NormalizeRelativePath(model.TaskOptions.RepositorySubfolder), relativeFileName);
-        var actualRemoteFile = Path.Combine(model.RemoteSourceItem.Target, actualRemoteRelativeFileName);
+        var actualRemoteFile = FileHelper.Combine('\\', model.RemoteSourceItem.Target, actualRemoteRelativeFileName);
         _storageFile = model.RemoteStorageFiles.Single(x => FileHelper.CompareFileNames(x.FileState.FileName, actualRemoteFile));
         _synchronizationServices = synchronizationServices;
-        _destinationFile = Path.Combine(model.TaskOptions.LocalFolder, relativeFileName)!;
+        _destinationFile = FileHelper.Combine(model.TaskOptions.LocalFolder, relativeFileName)!;
     }
 
     protected override void ExecuteInternal()

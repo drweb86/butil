@@ -162,7 +162,11 @@ class SynchronizationRootTask : SequentialBuTask
                     actualRemoteSourceItem,
                     deletedFiles,
                     updateCreateItems
-                        .Select(x => new FileState(Path.Combine(_model.LocalSourceItem.Target, x.ActualFile!.RelativeFileName), x.ActualFile!.ModifiedAtUtc, x.ActualFile!.Size, x.ActualFile!.Sha512))
+                        .Select(x => {
+                            var actualFile = x.ActualFile!;
+                            var fileStateFileName = FileHelper.Combine(_model.LocalSourceItem.Target, actualFile.RelativeFileName);
+                            return new FileState(fileStateFileName, actualFile.ModifiedAtUtc, actualFile.Size, actualFile.Sha512);
+                        })
                         .ToList(),
                     fileName => ConvertFileNameToStorageRelatedByRepositorySubfolderAndVirtualizedRemoteSourceItem(actualRemoteSourceItem, fileName)
                 )
@@ -175,8 +179,7 @@ class SynchronizationRootTask : SequentialBuTask
     {
         var relativeFileName = FileHelper.GetRelativeFileName(_model.LocalSourceItem.Target, fileName);
         var sourceItemRelativeFileName = FileHelper.Combine(FileHelper.NormalizeRelativePath(_model.TaskOptions.RepositorySubfolder), relativeFileName);
-        var sourceItemVirtualFilePath = Path.Combine(actualRemoteSourceItem.Target, sourceItemRelativeFileName);
-        sourceItemVirtualFilePath = Path.GetFullPath(sourceItemVirtualFilePath); // fix delimiters.
+        var sourceItemVirtualFilePath = FileHelper.Combine('\\', actualRemoteSourceItem.Target, sourceItemRelativeFileName);
         return sourceItemVirtualFilePath;
     }
 
