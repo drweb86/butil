@@ -3,6 +3,7 @@
 ## Bug Fixes
 - Ubuntu: synchronization was building incorrect relative paths.
 - Ubuntu 24: handle devices added as files to user profile.
+- Ubuntu: more clear help about globbing.
 
 # 2024.06.29.8
 

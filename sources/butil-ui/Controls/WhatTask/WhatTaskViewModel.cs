@@ -1,4 +1,5 @@
-﻿using BUtil.Core.ConfigurationFileModels.V2;
+﻿using BUtil.Core;
+using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Localization;
 using BUtil.Core.Misc;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -22,7 +23,7 @@ public class WhatTaskViewModel : ObservableObject
     }
 
     #region Labels
-    public string StorageItem_ExcludePattern_Help => Resources.StorageItem_ExcludePattern_Help;
+    public string StorageItem_ExcludePattern_Help => PlatformSpecificExperience.Instance.GetFolderService().GetStorageItemExcludePatternHelp();
     public string LeftMenu_What => Resources.LeftMenu_What;
     public string SourceItem_AddFiles => Resources.SourceItem_AddFiles;
     public string SourceItem_AddFolders => Resources.SourceItem_AddFolders;

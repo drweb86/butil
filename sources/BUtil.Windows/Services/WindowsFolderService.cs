@@ -1,4 +1,5 @@
-﻿using BUtil.Core.Services;
+﻿using BUtil.Core.Localization;
+using BUtil.Core.Services;
 using System.Diagnostics;
 
 namespace BUtil.Windows.Services;
@@ -17,5 +18,10 @@ internal class WindowsFolderService : IFolderService
     public void OpenFileInShell(string file)
     {
         Process.Start("explorer.exe", $"/select,\"{file}\"");
+    }
+
+    public string GetStorageItemExcludePatternHelp()
+    {
+        return Resources.StorageItem_ExcludePattern_Help;
     }
 }
