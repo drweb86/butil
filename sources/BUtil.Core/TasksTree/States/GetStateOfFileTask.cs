@@ -9,7 +9,7 @@ using System.IO;
 
 namespace BUtil.Core.TasksTree.States;
 
-internal class GetStateOfFileTask : BuTask
+internal class GetStateOfFileTask : BuTaskV2
 {
     private readonly CommonServicesIoc _servicesIoc;
     private readonly string _fileName;
@@ -23,14 +23,9 @@ internal class GetStateOfFileTask : BuTask
         Title = string.Format(Localization.Resources.State_File_Get, SourceItemHelper.GetFriendlyFileName(item, fileName));
     }
 
-    public override void Execute()
+    protected override void ExecuteInternal()
     {
-        UpdateStatus(ProcessingStatus.InProgress);
         var fileInfo = new FileInfo(_fileName);
-
         State = new FileState(_fileName, fileInfo.LastWriteTimeUtc, fileInfo.Length, _servicesIoc.HashService.GetSha512(_fileName, true));
-
-        IsSuccess = true;
-        UpdateStatus(ProcessingStatus.FinishedSuccesfully);
     }
 }

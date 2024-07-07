@@ -56,7 +56,8 @@ internal class GetStateOfSourceItemTask : SequentialBuTask
 
         SourceItemState = new SourceItemState(SourceItem,
             getFileStateTasks
-            .Select(x => x.State ?? throw new InvalidOperationException())
+            .Where(x => x.IsSuccess)
+            .Select(x => x.State!)
             .ToList());
 
         UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
