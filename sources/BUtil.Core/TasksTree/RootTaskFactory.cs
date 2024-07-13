@@ -21,7 +21,7 @@ public static class RootTaskFactory
         if (task.Model is SynchronizationTaskModelOptionsV2)
             return new SynchronizationRootTask(log, events, task);
         if (task.Model is ImportMediaTaskModelOptionsV2)
-            return new ImportMediaTask(log, events, task);
+            return new ImportMediaRootTask(log, events, task);
         throw new ArgumentOutOfRangeException(nameof(task));
     }
 
