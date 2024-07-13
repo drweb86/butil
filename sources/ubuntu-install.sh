@@ -38,9 +38,9 @@ cd ./sources
 sudo dotnet publish /p:Version=${version} /p:AssemblyVersion=${version} -c Release --property:PublishDir=${binariesInstallationDirectory} --use-current-runtime --self-contained
 
 echo
-echo Prepare icon
+echo Prepare PNG icon for Gnome, ico files are not handled
 echo
-sudo cp ${sourceCodeInstallationDirectory}/sources/butil-ui/Assets/butil.ico ${binariesInstallationDirectory}/butil.ico
+sudo cp "${sourceCodeInstallationDirectory}/help/Assets/Icon 120x120.png" "${binariesInstallationDirectory}/Icon 120x120.png"
 
 echo
 echo Prepare shortcut
@@ -54,11 +54,11 @@ Version=${version}
 Name=BUtil
 GenericName=Incremental backup, Synchronization, Import media
 Categories=Incremental backup;Synchronization;Import media
-Comment=BUtil creates incremental backups and imports multimedia on your PC with deduplication and FTPS, SMB/CIFS, MTP transports support for Windows and Linux.
+Comment=BUtil creates incremental backups, incremental synchronization and imports multimedia on your PC with deduplication and FTPS, SMB/CIFS, MTP transports support for Windows and Linux.
 Type=Application
 Terminal=false
 Exec=${binariesInstallationDirectory}/butil-ui.Desktop
-Icon=${binariesInstallationDirectory}/butil.ico
+Icon=${binariesInstallationDirectory}/Icon 120x120.png
 EOL
 sudo chmod -R 775 ${temporaryShortcut}
 
