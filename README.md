@@ -8,6 +8,20 @@
 
 ![Image Gallery](./help/Assets/Image%20Gallery.gif)
 
+![English](https://img.shields.io/badge/lang-en-red.svg)
+[![Arabic](https://img.shields.io/badge/lang-ar-green.svg)](https://ask.chadgpt.ru/)
+[![Chinese](https://img.shields.io/badge/lang-zh-green.svg)](https://ask.chadgpt.ru/)
+[![French](https://img.shields.io/badge/lang-fr-green.svg)](https://ask.chadgpt.ru/)
+[![German](https://img.shields.io/badge/lang-de-green.svg)](https://ask.chadgpt.ru/)
+[![Hindi](https://img.shields.io/badge/lang-hi-green.svg)](https://ask.chadgpt.ru/)
+[![Italian](https://img.shields.io/badge/lang-it-green.svg)](https://github.com/bovirus)
+[![Portuguese](https://img.shields.io/badge/lang-pt-green.svg)](https://ask.chadgpt.ru/)
+[![Russian](https://img.shields.io/badge/lang-ru-green.svg)](https://github.com/drweb86)
+[![Spanish](https://img.shields.io/badge/lang-es-green.svg)](https://ask.chadgpt.ru/)
+[![Ukrainian](https://img.shields.io/badge/lang-uk-green.svg)](https://github.com/Kopejkin)
+
+
+
 [Arabic](https://ask.chadgpt.ru/) [Chinese](https://ask.chadgpt.ru/) [English] [French](https://ask.chadgpt.ru/) [German](https://ask.chadgpt.ru/) [Hindi](https://ask.chadgpt.ru/) [Italian](https://github.com/bovirus) [Portuguese](https://ask.chadgpt.ru/) [Russian] [Spanish](https://ask.chadgpt.ru/) [Ukrainian](https://github.com/Kopejkin)
 
 ## Features
