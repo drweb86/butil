@@ -1,6 +1,6 @@
-﻿using BUtil.Core.BackupModels;
-using BUtil.Core.Logs;
+﻿using BUtil.Core.Logs;
 using BUtil.Core.Options;
+using BUtil.Core.TasksTree;
 using System;
 using System.Diagnostics.CodeAnalysis;
 
@@ -17,7 +17,7 @@ public static class TaskV2Validator
 
         var memoryLog = new MemoryLog();
 
-        if (!TaskModelStrategyFactory.TryVerify(memoryLog, task.Model, out error))
+        if (!RootTaskFactory.TryVerify(memoryLog, task.Model, out error))
         {
             error += Environment.NewLine + Environment.NewLine + memoryLog;
             return false;

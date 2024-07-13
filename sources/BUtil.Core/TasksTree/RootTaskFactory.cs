@@ -1,26 +1,27 @@
-
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Storages;
+using BUtil.Core.TasksTree.Core;
+using BUtil.Core.TasksTree.IncrementalModel;
 using BUtil.Core.TasksTree.MediaSyncBackupModel;
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 
-namespace BUtil.Core.BackupModels;
+namespace BUtil.Core.TasksTree;
 
-public static class TaskModelStrategyFactory
+public static class RootTaskFactory
 {
-    public static ITaskModelStrategy Create(ILog log, TaskV2 task)
+    public static BuTask Create(ILog log, TaskV2 task, Events.TaskEvents events)
     {
         if (task.Model is IncrementalBackupModelOptionsV2)
-            return new IncrementalBackupModelStrategy(log, task);
+            return new IncrementalBackupRootTask(log, events, task);
         if (task.Model is SynchronizationTaskModelOptionsV2)
-            return new SynchronizationTaskModelOptionsStrategy(log, task);
+            return new SynchronizationRootTask(log, events, task);
         if (task.Model is ImportMediaTaskModelOptionsV2)
-            return new ImportMediaTaskModelStrategy(log, task);
+            return new ImportMediaTask(log, events, task);
         throw new ArgumentOutOfRangeException(nameof(task));
     }
 
@@ -118,7 +119,7 @@ public static class TaskModelStrategyFactory
 
             if (string.IsNullOrWhiteSpace(typedOptions.TransformFileName))
             {
-                error = BUtil.Core.Localization.Resources.ImportMediaTask_Field_TransformFileName_Validation_Empty;
+                error = Resources.ImportMediaTask_Field_TransformFileName_Validation_Empty;
                 return false;
             }
 
@@ -133,7 +134,7 @@ public static class TaskModelStrategyFactory
             }
             catch
             {
-                error = BUtil.Core.Localization.Resources.ImportMediaTask_Field_TransformFileName_Validation_Invalid;
+                error = Resources.ImportMediaTask_Field_TransformFileName_Validation_Invalid;
                 return false;
             }
 

@@ -1,9 +1,9 @@
 using BUtil.Core;
-using BUtil.Core.BackupModels;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
+using BUtil.Core.TasksTree;
 using System;
 using System.Globalization;
 
@@ -86,9 +86,7 @@ class Controller
                 Environment.Exit(-1);
             }
 
-            TaskModelStrategyFactory
-                .Create(log, task)
-                .GetTask(new BUtil.Core.Events.TaskEvents())
+            RootTaskFactory.Create(log, task, new BUtil.Core.Events.TaskEvents())
                 .Execute();
         }
         finally

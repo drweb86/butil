@@ -1,10 +1,10 @@
-﻿using BUtil.Core.BackupModels;
-using BUtil.Core.ConfigurationFileModels.V2;
+﻿using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
+using BUtil.Core.TasksTree;
 using butil_ui.Controls;
 using System;
 
@@ -130,7 +130,7 @@ public class LaunchTaskViewModel : ViewModelBase
             return;
         }
 
-        if (!TaskModelStrategyFactory.TryVerify(new StubLog(), _task.Model, out var error))
+        if (!RootTaskFactory.TryVerify(new StubLog(), _task.Model, out var error))
         {
             TaskExecuterViewModel = new TaskExecuterViewModel(error);
             return;
@@ -139,11 +139,8 @@ public class LaunchTaskViewModel : ViewModelBase
         TaskExecuterViewModel = new TaskExecuterViewModel(
             _taskEvents,
             _task.Name,
-            (log, taskEvents) => TaskModelStrategyFactory
-                .Create(log, _task)
-                .GetTask(taskEvents),
-            OnTaskCompleted
-            );
+            (log, taskEvents) => RootTaskFactory.Create(log, _task, taskEvents),
+            OnTaskCompleted);
     }
 
 
