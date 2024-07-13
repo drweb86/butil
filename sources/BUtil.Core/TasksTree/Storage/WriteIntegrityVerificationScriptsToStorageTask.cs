@@ -11,7 +11,7 @@ using System.Linq;
 
 namespace BUtil.Core.TasksTree.Storage;
 
-internal class WriteIntegrityVerificationScriptsToStorageTask : BuTask
+internal class WriteIntegrityVerificationScriptsToStorageTask : BuTaskV2
 {
     private readonly StorageSpecificServicesIoc _services;
     private readonly Func<bool> _isVersionNeeded;
@@ -36,65 +36,41 @@ internal class WriteIntegrityVerificationScriptsToStorageTask : BuTask
         _getStateStorageFile = getStateStorageFile;
     }
 
-    public override void Execute()
+    protected override void ExecuteInternal()
     {
-        UpdateStatus(ProcessingStatus.InProgress);
-
         if (!_isVersionNeeded())
         {
             LogDebug("Version is not needed.");
-            IsSuccess = true;
-            UpdateStatus(ProcessingStatus.FinishedSuccesfully);
+            IsSkipped = true;
             return;
         }
 
         if (!_writeSourceFilesToStorageTask.IsSuccess)
-        {
-            LogDebug("Writing source files to storage has failed. Skipping.");
-            IsSuccess = false;
-            UpdateStatus(ProcessingStatus.FinishedWithErrors);
-            return;
-        }
+            throw new Exception("Writing source files to storage has failed. Skipping.");
 
         var storage = _services.Storage;
 
         if (!_writeStateToStorageTask.IsSuccess)
-        {
-            IsSuccess = false;
-            UpdateStatus(ProcessingStatus.FinishedWithErrors);
-            LogError("Writing state was not successfull!");
-            return;
-        }
+            throw new Exception("Writing state was not successfull!");
 
         var state = _getState();
         if (state == null)
         {
             LogDebug("Version is not needed.");
-            IsSuccess = true;
-            UpdateStatus(ProcessingStatus.FinishedSuccesfully);
+            IsSkipped = true;
             return;
         }
 
-        try
+        using (var tempFolder = new TempFolder())
         {
-            using (var tempFolder = new TempFolder())
-            {
-                var powershellFile = Path.Combine(tempFolder.Folder, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Ps1);
-                File.WriteAllText(powershellFile, GetPowershellScriptContent(state));
-                // TODO: check for null!
-                storage.Upload(powershellFile, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Ps1);
-                File.Delete(powershellFile);
-                IsSuccess = true;
-            }
+            var powershellFile = Path.Combine(tempFolder.Folder, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Ps1);
+            File.WriteAllText(powershellFile, GetPowershellScriptContent(state));
+            // TODO: check for null!
+            var uploadedFile = storage.Upload(powershellFile, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Ps1);
+            if (uploadedFile == null)
+                throw new Exception("Cannot save integrity verification scripts!");
+            File.Delete(powershellFile);
         }
-        catch (Exception ex)
-        {
-            LogError("Failed to upload integrity verification script");
-            LogError(ex.Message);
-            IsSuccess = false;
-        }
-
-        UpdateStatus(ProcessingStatus.FinishedSuccesfully);
     }
 
     private string GetPowershellScriptContent(IncrementalBackupState state)

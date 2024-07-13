@@ -93,13 +93,13 @@ public class RestoreViewModel : ViewModelBase
         }
 
         var taskEvents = new TaskEvents();
-        GetExistingVersionStateFromStorageTask openIncrementalBackupTask = null;
+        GetExistingVersionStateFromStorageRootTask openIncrementalBackupTask = null;
         this.TaskExecuterViewModel = new TaskExecuterViewModel(
             taskEvents,
             Resources.Task_Restore,
             (log, taskEvents) => 
             {
-                openIncrementalBackupTask = new GetExistingVersionStateFromStorageTask(log, taskEvents, storageOptions, EncryptionTaskViewModel.Password);
+                openIncrementalBackupTask = new GetExistingVersionStateFromStorageRootTask(log, taskEvents, storageOptions, EncryptionTaskViewModel.Password);
                 return openIncrementalBackupTask;
             },
             isOk =>

@@ -1,5 +1,8 @@
 # 2024.07.13
 
+## Changes
+- Skipped tasks are visible.
+
 ## Bug Fixes
 
 - Ubuntu: Gnome: Wayland: application icon is properly resolved thanks to guys from Gnome and Avalonia Teams.

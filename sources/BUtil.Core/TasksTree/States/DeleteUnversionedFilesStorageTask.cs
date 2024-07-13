@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace BUtil.Core.TasksTree;
 
-internal class DeleteUnversionedFilesStorageTask : BuTask
+internal class DeleteUnversionedFilesStorageTask : BuTaskV2
 {
     public StorageSpecificServicesIoc _services;
     private readonly RemoteStateLoadTask _getStateOfStorageTask;
@@ -22,13 +22,11 @@ internal class DeleteUnversionedFilesStorageTask : BuTask
         _getStateOfStorageTask = getStateOfStorageTask;
     }
 
-    public override void Execute()
+    protected override void ExecuteInternal()
     {
-        UpdateStatus(ProcessingStatus.InProgress);
-
         var allowedFolders = (_getStateOfStorageTask.StorageState ?? throw new Exception())
-            .VersionStates
-            .Select(x => SourceItemHelper.GetVersionFolder(x.BackupDateUtc));
+          .VersionStates
+          .Select(x => SourceItemHelper.GetVersionFolder(x.BackupDateUtc));
 
         var relativeFolders = this._services.Storage.GetFolders(string.Empty, SourceItemHelper.GetVersionFolderMask());
         var foldersToDelete = relativeFolders.Except(allowedFolders);
@@ -36,8 +34,5 @@ internal class DeleteUnversionedFilesStorageTask : BuTask
         {
             this._services.Storage.DeleteFolder(folderToDelete);
         }
-
-        IsSuccess = true;
-        UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
     }
 }

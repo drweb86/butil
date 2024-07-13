@@ -10,7 +10,7 @@ using System.Linq;
 
 namespace BUtil.Core.TasksTree;
 
-internal class CalculateIncrementedVersionForStorageTask : BuTask
+internal class CalculateIncrementedVersionForStorageTask : BuTaskV2
 {
     public bool VersionIsNeeded { get; private set; }
     public IncrementalBackupState? IncrementalBackupState { get; private set; }
@@ -25,22 +25,15 @@ internal class CalculateIncrementedVersionForStorageTask : BuTask
         _getSourceItemStateTasks = getSourceItemStateTasks;
     }
 
-    public override void Execute()
+    protected override void ExecuteInternal()
     {
-        UpdateStatus(ProcessingStatus.InProgress);
-
         var storageState = _storageStateTask.StorageState;
         if (storageState == null)
-        {
-            UpdateStatus(ProcessingStatus.FinishedWithErrors);
-            IsSuccess = false;
-            return;
-        }
+            throw new ArgumentNullException(nameof(_storageStateTask.StorageState));
 
         var sourceItemStates = _getSourceItemStateTasks
             .Select(item => item.SourceItemState ?? throw new InvalidOperationException())
             .ToList();
-
 
         var versionState = SourceItemStateComparer.Compare(storageState.LastSourceItemStates, sourceItemStates);
         storageState.VersionStates.Add(versionState);
@@ -49,8 +42,5 @@ internal class CalculateIncrementedVersionForStorageTask : BuTask
             .ToList();
         IncrementalBackupState = storageState;
         VersionIsNeeded = versionState.SourceItemChanges.Any(x => x.CreatedFiles.Any() || x.UpdatedFiles.Any() || x.DeletedFiles.Any());
-
-        UpdateStatus(ProcessingStatus.FinishedSuccesfully);
-        IsSuccess = true;
     }
 }

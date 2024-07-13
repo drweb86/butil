@@ -25,6 +25,7 @@ public class SequentialBuTask : BuTask
             child.Execute();
         }
         IsSuccess = Children.All(x => x.IsSuccess);
+        IsSkipped = Children.All(x => x.IsSkipped);
     }
 
     public override IEnumerable<BuTask> GetChildren()

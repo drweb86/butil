@@ -2,11 +2,10 @@
 using BUtil.Core.Localization;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
-using System;
 
 namespace BUtil.Core.TasksTree.Storage;
 
-internal class DeleteStorageFileTask : BuTask
+internal class DeleteStorageFileTask : BuTaskV2
 {
     private readonly StorageSpecificServicesIoc _services;
     private readonly string _relativeFileName;
@@ -21,21 +20,8 @@ internal class DeleteStorageFileTask : BuTask
         _relativeFileName = relativeFileName;
     }
 
-    public override void Execute()
+    protected override void ExecuteInternal()
     {
-        UpdateStatus(ProcessingStatus.InProgress);
-
-        try
-        {
-            _services.Storage.Delete(_relativeFileName);
-            IsSuccess = true;
-        }
-        catch (Exception e)
-        {
-            LogError(e.Message);
-            IsSuccess = false;
-        }
-
-        UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
+        _services.Storage.Delete(_relativeFileName);
     }
 }

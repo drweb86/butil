@@ -8,7 +8,7 @@ using System;
 
 namespace BUtil.Core.TasksTree.States;
 
-internal class WriteStateToStorageTask : BuTask
+internal class WriteStateToStorageTask : BuTaskV2
 {
     private readonly IncrementalBackupModelOptionsV2 _incrementalBackupModelOptions;
     private readonly StorageSpecificServicesIoc _services;
@@ -31,36 +31,20 @@ internal class WriteStateToStorageTask : BuTask
         _writeSourceFilesToStorageTask = writeSourceFilesToStorageTask;
     }
 
-    public override void Execute()
+    protected override void ExecuteInternal()
     {
-        UpdateStatus(ProcessingStatus.InProgress);
-
         if (!_getIncrementedVersionTask.VersionIsNeeded)
         {
             LogDebug("Version is not needed.");
-            IsSuccess = true;
-            UpdateStatus(ProcessingStatus.FinishedSuccesfully);
+            IsSkipped = true;
             return;
         }
 
         if (!_writeSourceFilesToStorageTask.IsSuccess)
-        {
-            LogDebug("Writing source files to storage has failed. Skipping.");
-            IsSuccess = false;
-            UpdateStatus(ProcessingStatus.FinishedWithErrors);
-            return;
-        }
+            throw new Exception("Writing source files to storage has failed. Skipping.");
 
-        try
-        {
-            StateStorageFile = _services.IncrementalBackupStateService.Write(_incrementalBackupModelOptions.Password, _getIncrementedVersionTask.IncrementalBackupState ?? throw new InvalidOperationException());
-            IsSuccess = StateStorageFile != null;
-        }
-        catch (Exception ex)
-        {
-            this.LogError(ex.Message);
-            IsSuccess = false;
-        }
-        UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
+        StateStorageFile = _services.IncrementalBackupStateService.Write(_incrementalBackupModelOptions.Password, _getIncrementedVersionTask.IncrementalBackupState ?? throw new InvalidOperationException());
+        if (StateStorageFile == null)
+            throw new InvalidOperationException("Failed to upload state storage file.");
     }
 }

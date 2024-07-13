@@ -12,6 +12,7 @@ public static class LocalsHelper
             case ProcessingStatus.NotStarted: return "⏳";
             case ProcessingStatus.InProgress: return "👉";
             case ProcessingStatus.FinishedSuccesfully: return "✅";
+            case ProcessingStatus.Skipped: return "⏩";
             case ProcessingStatus.FinishedWithErrors: return "❌";
             default:
                 throw new NotImplementedException("State " + state + " is not implemented");

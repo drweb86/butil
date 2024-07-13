@@ -36,6 +36,16 @@ public abstract class BuTask
 
     protected void UpdateStatus(ProcessingStatus status)
     {
+        if (status == ProcessingStatus.FinishedSuccesfully)
+            IsSuccess = true;
+        if (status == ProcessingStatus.FinishedWithErrors)
+            IsSuccess = false;
+        if (status == ProcessingStatus.Skipped)
+        {
+            IsSuccess = true;
+            IsSkipped = true;
+        }
+
         if (status == ProcessingStatus.FinishedWithErrors)
             LogEvent(LoggingEvent.Error, LocalsHelper.ToString(status));
         Events.TaskProgessUpdate(Id, status);
@@ -52,6 +62,7 @@ public abstract class BuTask
     }
 
     public bool IsSuccess { get; protected set; }
+    public bool IsSkipped { get; protected set; }
 }
 
 public class FunctionBuTaskV2<TResult>: BuTaskV2
@@ -86,7 +97,7 @@ public abstract class BuTaskV2 : BuTask
         {
             ExecuteInternal();
             IsSuccess = true;
-            this.UpdateStatus(ProcessingStatus.FinishedSuccesfully);
+            this.UpdateStatus(IsSkipped ? ProcessingStatus.Skipped : ProcessingStatus.FinishedSuccesfully);
         }
         catch (Exception ex)
         {

@@ -49,6 +49,7 @@ internal class SaveStateToStorageTask : BuTaskV2
         if (actualState == null)
         {
             LogDebug("State is null. Version is not needed. Skipping save.");
+            IsSkipped = true;
             return;
         }
 

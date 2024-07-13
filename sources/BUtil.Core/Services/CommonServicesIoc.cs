@@ -2,7 +2,7 @@
 using BUtil.Core.Options;
 using System;
 
-namespace BUtil.Core.TasksTree.IncrementalModel;
+namespace BUtil.Core.Services;
 
 public class CommonServicesIoc : IDisposable
 {

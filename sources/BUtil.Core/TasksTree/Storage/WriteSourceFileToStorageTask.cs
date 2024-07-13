@@ -11,7 +11,7 @@ using System.Linq;
 
 namespace BUtil.Core.TasksTree;
 
-internal class WriteSourceFileToStorageTask : BuTask
+internal class WriteSourceFileToStorageTask : BuTaskV2
 {
     private readonly StorageSpecificServicesIoc _services;
     private readonly Quota _singleBackupQuotaGb;
@@ -20,7 +20,6 @@ internal class WriteSourceFileToStorageTask : BuTask
     private readonly bool _ignoreLastVersion;
 
     public List<StorageFile> StorageFiles { get; }
-    public bool IsSkipped { get; private set; }
     public bool IsSkippedBecauseOfQuota { get; private set; }
 
     public WriteSourceFileToStorageTask(
@@ -52,43 +51,40 @@ internal class WriteSourceFileToStorageTask : BuTask
         _ignoreLastVersion = ignoreLastVersion;
     }
 
-    public override void Execute()
+    protected override void ExecuteInternal()
     {
-        UpdateStatus(ProcessingStatus.InProgress);
-
         var actualStorageFile = new StorageFile(StorageFiles.First());
         actualStorageFile.FileState.FileName = _actualFile;
 
         if (FileAlreadyInStorage(out var matchingFile))
         {
             LogDebug("Skipped because file is already is in storage.");
-            IsSuccess = true;
-            StorageFiles
-                    .ForEach(x => x.SetStoragePropertiesFrom(matchingFile));
+            StorageFiles.ForEach(x => x.SetStoragePropertiesFrom(matchingFile));
+            IsSkipped = true;
+            return;
         }
-        else if (_singleBackupQuotaGb.TryQuota(actualStorageFile.FileState.Size))
-        {
-            try
-            {
-                IsSuccess = _services.IncrementalBackupFileService.Upload(actualStorageFile);
-                StorageFiles
-                    .ToList()
-                    .ForEach(x => x.SetStoragePropertiesFrom(actualStorageFile));
-            }
-            catch
-            {
-                IsSkipped = true; // because some files can be locked
-                IsSuccess = true;
-            }
-        }
-        else
+
+        if (!_singleBackupQuotaGb.TryQuota(actualStorageFile.FileState.Size))
         {
             LogDebug("Skipped because of quota.");
             IsSkipped = true;
             IsSkippedBecauseOfQuota = true;
-            IsSuccess = true;
+            return;
         }
-        UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
+
+        try
+        {
+            if (!_services.IncrementalBackupFileService.Upload(actualStorageFile))
+                throw new Exception("Upload has failed!");
+            StorageFiles
+                .ToList()
+                .ForEach(x => x.SetStoragePropertiesFrom(actualStorageFile));
+        }
+        catch (Exception e)
+        {
+            LogError(e.ToString());
+            IsSkipped = true; // because some files can be locked
+        }
     }
 
     private bool FileAlreadyInStorage([NotNullWhen(true)] out StorageFile? matchingStorageFile)

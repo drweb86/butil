@@ -6,6 +6,7 @@ public enum SemanticColor
     Success,
     Error,
     InProgress,
+    Skipped,
 
     HeaderBackground,
     WindowBackground,

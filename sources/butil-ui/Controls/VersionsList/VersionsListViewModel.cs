@@ -456,7 +456,7 @@ public class VersionsListViewModel : ObservableObject
         ParentViewModel.TaskExecuterViewModel = new TaskExecuterViewModel(
             new TaskEvents(),
             Resources.Task_Restore,
-            (log, taskEvents) => new DeleteIncrementalBackupVersionTask(log, taskEvents, _state, new IncrementalBackupModelOptionsV2() { Password = _password }, SelectedVersion.Version, _storageOptions),
+            (log, taskEvents) => new DeleteIncrementalBackupVersionrRootTask(log, taskEvents, _state, new IncrementalBackupModelOptionsV2() { Password = _password }, SelectedVersion.Version, _storageOptions),
             isOk =>
             {
                 if (isOk)

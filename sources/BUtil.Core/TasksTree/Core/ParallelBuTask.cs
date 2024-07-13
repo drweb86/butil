@@ -30,6 +30,7 @@ public abstract class ParallelBuTask : BuTask
         var executer = new ParallelExecuter(children, Environment.ProcessorCount);
         executer.Wait();
         IsSuccess = Children.All(x => x.IsSuccess);
+        IsSkipped = Children.All(x => x.IsSkipped);
     }
 
     public override IEnumerable<BuTask> GetChildren()

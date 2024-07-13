@@ -6,4 +6,5 @@ public enum ProcessingStatus
     InProgress,
     FinishedSuccesfully,
     FinishedWithErrors,
+    Skipped
 }

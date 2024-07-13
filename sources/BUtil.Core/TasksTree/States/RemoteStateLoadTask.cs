@@ -6,7 +6,7 @@ using BUtil.Core.TasksTree.IncrementalModel;
 
 namespace BUtil.Core.TasksTree;
 
-internal class RemoteStateLoadTask : BuTask
+internal class RemoteStateLoadTask : BuTaskV2
 {
     public StorageSpecificServicesIoc _services;
     private readonly string _password;
@@ -17,14 +17,13 @@ internal class RemoteStateLoadTask : BuTask
         base(services.Log, events, Localization.Resources.DataStorage_State_Get)
     {
         _services = services;
-        this._password = password;
+        _password = password;
     }
 
-    public override void Execute()
+    protected override void ExecuteInternal()
     {
-        UpdateStatus(ProcessingStatus.InProgress);
-        IsSuccess = _services.IncrementalBackupStateService.TryRead(_password, out var state);
+        if (!_services.IncrementalBackupStateService.TryRead(_password, out var state))
+            throw new System.InvalidOperationException("Failed to read state!");
         StorageState = state;
-        UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
     }
 }

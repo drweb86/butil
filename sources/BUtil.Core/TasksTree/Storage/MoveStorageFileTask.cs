@@ -2,11 +2,10 @@
 using BUtil.Core.Localization;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
-using System;
 
 namespace BUtil.Core.TasksTree.Storage;
 
-internal class MoveStorageFileTask : BuTask
+internal class MoveStorageFileTask : BuTaskV2
 {
     private readonly StorageSpecificServicesIoc _services;
     private readonly string _fromRelativeFileName;
@@ -24,21 +23,8 @@ internal class MoveStorageFileTask : BuTask
         _toRelativeFileName = toRelativeFileName;
     }
 
-    public override void Execute()
+    protected override void ExecuteInternal()
     {
-        UpdateStatus(ProcessingStatus.InProgress);
-
-        try
-        {
-            _services.Storage.Move(_fromRelativeFileName, _toRelativeFileName);
-            IsSuccess = true;
-        }
-        catch (Exception e)
-        {
-            LogError(e.Message);
-            IsSuccess = false;
-        }
-
-        UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
+        _services.Storage.Move(_fromRelativeFileName, _toRelativeFileName);
     }
 }

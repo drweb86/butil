@@ -1,10 +1,10 @@
 ﻿using BUtil.Core.Events;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Logs;
+using BUtil.Core.Services;
 using BUtil.Core.State;
 using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.Core;
-using BUtil.Core.TasksTree.IncrementalModel;
 using BUtil.Core.TasksTree.States;
 using System;
 using System.IO;
@@ -12,7 +12,7 @@ using System.Linq;
 
 namespace BUtil.Core.TasksTree.MediaSyncBackupModel;
 
-class ImportSingleFileTask : BuTask
+class ImportSingleFileTask : BuTaskV2
 {
     private readonly string _transformFileName;
     private readonly IStorage _fromStorage;
@@ -43,53 +43,35 @@ class ImportSingleFileTask : BuTask
         Title = string.Format(BUtil.Core.Localization.Resources.ImportMediaTask_File, Path.GetFileNameWithoutExtension(fromFile));
     }
 
-    public override void Execute()
+    protected override void ExecuteInternal()
     {
-        UpdateStatus(ProcessingStatus.InProgress);
-        try
+        var lastWriteTime = _fromStorage.GetModifiedTime(this.File);
+        var destinationFileName = GetDestinationFileName(lastWriteTime);
+        var actualFileName = GetActualDestinationFileName(destinationFileName);
+        var destFolder = Path.GetDirectoryName(actualFileName);
+
+        using (var temp = new TempFolder())
         {
-            var lastWriteTime = _fromStorage.GetModifiedTime(this.File);
-            var destinationFileName = GetDestinationFileName(lastWriteTime);
-            var actualFileName = GetActualDestinationFileName(destinationFileName);
-            var destFolder = Path.GetDirectoryName(actualFileName);
+            var exchangeFile = Path.Combine(temp.Folder, Path.GetFileName(this.File));
+            _fromStorage.Download(this.File, exchangeFile);
+            System.IO.File.SetCreationTime(exchangeFile, lastWriteTime);
+            System.IO.File.SetLastWriteTime(exchangeFile, lastWriteTime);
 
-            using (var temp = new TempFolder())
+            var fileInfo = new FileInfo(exchangeFile);
+            var state = new FileState(exchangeFile, fileInfo.LastWriteTimeUtc, fileInfo.Length, this._commonServicesIoc.HashService.GetSha512(exchangeFile, true));
+
+            if (_state.FileStates.Any(x => x.CompareTo(state, true)))
             {
-                var exchangeFile = Path.Combine(temp.Folder, Path.GetFileName(this.File));
-                _fromStorage.Download(this.File, exchangeFile);
-                System.IO.File.SetCreationTime(exchangeFile, lastWriteTime);
-                System.IO.File.SetLastWriteTime(exchangeFile, lastWriteTime);
-
-                var getState = new GetStateOfFileTask(Log, new TaskEvents(), _commonServicesIoc, _state.SourceItem, exchangeFile);
-                getState.Execute();
-                if (!getState.IsSuccess)
-                {
-                    IsSuccess = false;
-                    UpdateStatus(ProcessingStatus.FinishedWithErrors);
-                    return;
-                }
-                if (_state.FileStates.Any(x => x.CompareTo(getState.State ?? throw new InvalidOperationException(), true)))
-                {
-                    Log.WriteLine(LoggingEvent.Debug, $"File {File} is already exists in destination folder. Skipping.");
-                    IsSuccess = true;
-                    UpdateStatus(ProcessingStatus.FinishedSuccesfully);
-                    return;
-                }
-
-                var uploadedFileName = _toStorage.Upload(exchangeFile, actualFileName);
-                System.IO.File.SetCreationTime(uploadedFileName.StorageFileName, lastWriteTime);
-                System.IO.File.SetLastWriteTime(uploadedFileName.StorageFileName, lastWriteTime);
+                Log.WriteLine(LoggingEvent.Debug, $"File {File} is already exists in destination folder. Skipping.");
+                IsSkipped = true;
+                return;
             }
 
-            IsSuccess = true;
-            UpdateStatus(ProcessingStatus.FinishedSuccesfully);
-        }
-        catch (Exception ex)
-        {
-            IsSuccess = false;
-
-            this.LogError(ex.Message);
-            UpdateStatus(ProcessingStatus.FinishedWithErrors);
+            var uploadedFileName = _toStorage.Upload(exchangeFile, actualFileName);
+            if (uploadedFileName == null)
+                throw new IOException($"Failed to upload file {exchangeFile}");
+            System.IO.File.SetCreationTime(uploadedFileName.StorageFileName, lastWriteTime);
+            System.IO.File.SetLastWriteTime(uploadedFileName.StorageFileName, lastWriteTime);
         }
     }
 

@@ -9,7 +9,7 @@ using System;
 
 namespace BUtil.Core.TasksTree.Storage;
 
-public class WriteStorageFileToSourceFileTask : BuTask
+public class WriteStorageFileToSourceFileTask : BuTaskV2
 {
     private readonly StorageSpecificServicesIoc _storageSpecificServices;
     private readonly SourceItemV2 _sourceItem;
@@ -33,21 +33,9 @@ public class WriteStorageFileToSourceFileTask : BuTask
         _destinationFolder = destinationFolder;
     }
 
-    public override void Execute()
+    protected override void ExecuteInternal()
     {
-        UpdateStatus(ProcessingStatus.InProgress);
-
-        try
-        {
-            _storageSpecificServices.IncrementalBackupFileService.Download(_sourceItem, _storageFile, _destinationFolder);
-            IsSuccess = true;
-        }
-        catch (Exception e)
-        {
-            LogError(e.Message);
-            IsSuccess = false;
-        }
-
-        UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
+        if (!_storageSpecificServices.IncrementalBackupFileService.Download(_sourceItem, _storageFile, _destinationFolder))
+            throw new Exception("Download has failed!");
     }
 }

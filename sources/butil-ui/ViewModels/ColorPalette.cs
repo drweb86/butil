@@ -19,6 +19,7 @@ public static class ColorPalette
             ProcessingStatus.FinishedWithErrors => SemanticColor.Error,
             ProcessingStatus.InProgress => SemanticColor.InProgress,
             ProcessingStatus.NotStarted => SemanticColor.Normal,
+            ProcessingStatus.Skipped => SemanticColor.Skipped,
             _ => throw new NotImplementedException(status.ToString()),
         };
     }
@@ -54,6 +55,7 @@ public static class ColorPalette
                 case SemanticColor.Success: return Color.FromRgb(42, 130, 67);
                 case SemanticColor.Error: return Color.FromRgb(222, 98, 89);
                 case SemanticColor.InProgress: return Colors.Yellow;
+                case SemanticColor.Skipped: return Color.FromRgb(118, 121, 130);
                 case SemanticColor.HeaderBackground: return Color.FromRgb(40, 39, 44);
                 case SemanticColor.WindowBackground: return Color.FromRgb(40, 39, 44);
                 case SemanticColor.ForegroundWindowFont: return Color.FromRgb(162, 168, 175);
@@ -70,6 +72,8 @@ public static class ColorPalette
                 case SemanticColor.Success: return Color.FromRgb(5, 139, 0);
                 case SemanticColor.Error: return Color.FromRgb(218, 59, 1);
                 case SemanticColor.InProgress: return Color.FromRgb(128, 0, 224);
+                case SemanticColor.Skipped: return Colors.DarkGray;
+
                 case SemanticColor.HeaderBackground: return Color.FromRgb(243, 243, 243);
                 case SemanticColor.WindowBackground: return Color.FromRgb(243, 243, 243);
                 case SemanticColor.ForegroundWindowFont: return Colors.Black;

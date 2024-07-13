@@ -3,6 +3,7 @@ using BUtil.Core.Events;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
+using BUtil.Core.Services;
 using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
@@ -11,13 +12,13 @@ using System.Linq;
 
 namespace BUtil.Core.TasksTree.States;
 
-public class GetExistingVersionStateFromStorageTask : SequentialBuTask
+public class GetExistingVersionStateFromStorageRootTask : SequentialBuTask
 {
     private readonly CommonServicesIoc _commonServicesIoc = new();
     private readonly StorageSpecificServicesIoc _storageSpecificServicesIoc;
     private readonly RemoteStateLoadTask _getStateOfStorageTask;
 
-    public GetExistingVersionStateFromStorageTask(ILog log, TaskEvents events, IStorageSettingsV2 storageSettings, string password)
+    public GetExistingVersionStateFromStorageRootTask(ILog log, TaskEvents events, IStorageSettingsV2 storageSettings, string password)
         : base(log, events, "Get existing version state from storage")
     {
         _storageSpecificServicesIoc = new StorageSpecificServicesIoc(log, storageSettings, _commonServicesIoc.HashService);
