@@ -8,7 +8,6 @@ namespace BUtil.Core.Synchronization;
 
 internal class SynchronizationServices : IDisposable
 {
-    public readonly ILog Log;
     public readonly SynchronizationLocalStateService LocalStateService;
     public readonly SynchronizationActualFilesService ActualFilesService;
     public readonly SynchronizationDecisionService DecisionService;
@@ -18,12 +17,11 @@ internal class SynchronizationServices : IDisposable
 
     public SynchronizationServices(ILog log, string taskName, string localFolder, string? repositorySubfolder, IStorageSettingsV2 remoteStorageSettings, bool autodetectConnectionSettings)
     {
-        Log = log;
         LocalStateService = new SynchronizationLocalStateService(taskName, localFolder, repositorySubfolder);
         DecisionService = new SynchronizationDecisionService(repositorySubfolder);
-        CommonServices = new CommonServicesIoc();
+        CommonServices = new CommonServicesIoc(log);
         ActualFilesService = new SynchronizationActualFilesService(CommonServices.HashService, localFolder);
-        StorageSpecificServices = new StorageSpecificServicesIoc(log, remoteStorageSettings, CommonServices.HashService, autodetectConnectionSettings);
+        StorageSpecificServices = new StorageSpecificServicesIoc(CommonServices, remoteStorageSettings, autodetectConnectionSettings);
     }
 
     public void Dispose()

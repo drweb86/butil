@@ -19,8 +19,8 @@ class ImportFilesTask : SequentialBuTask
     private readonly GetStateOfSourceItemTask _getStateOfSourceItemTask;
     private readonly CommonServicesIoc _commonServicesIoc;
 
-    public ImportFilesTask(ILog log, TaskEvents backupEvents, TaskV2 backupTask, GetStateOfSourceItemTask getStateOfSourceItemTask, CommonServicesIoc commonServicesIoc)
-        : base(log, backupEvents, BUtil.Core.Localization.Resources.ImportMediaTask_AllFiles)
+    public ImportFilesTask(TaskEvents backupEvents, TaskV2 backupTask, GetStateOfSourceItemTask getStateOfSourceItemTask, CommonServicesIoc commonServicesIoc)
+        : base(commonServicesIoc.Log, backupEvents, BUtil.Core.Localization.Resources.ImportMediaTask_AllFiles)
     {
         Children = new List<BuTask>();
         _task = backupTask;
@@ -44,7 +44,7 @@ class ImportFilesTask : SequentialBuTask
         var fromStorageFilesToProcess = fromStorageFiles.Where(x => !importMediaState.Files.Contains(x)).ToList();
 
         var tasks = fromStorageFilesToProcess
-            .Select(x => new ImportSingleFileTask(Log, Events, x, fromStorage, toStorage, transformFileName, _getStateOfSourceItemTask.SourceItemState ?? throw new InvalidOperationException(), _commonServicesIoc))
+            .Select(x => new ImportSingleFileTask(Events, x, fromStorage, toStorage, transformFileName, _getStateOfSourceItemTask.SourceItemState ?? throw new InvalidOperationException(), _commonServicesIoc))
             .ToList();
         Events.DuringExecutionTasksAdded(Id, tasks);
 

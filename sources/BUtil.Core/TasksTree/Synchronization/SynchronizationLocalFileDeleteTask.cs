@@ -13,7 +13,7 @@ internal class SynchronizationLocalFileDeleteTask : BuTaskV2
 
     public SynchronizationLocalFileDeleteTask(SynchronizationServices synchronizationServices, TaskEvents events,
         string localFolder, string relativeFileName)
-        : base(synchronizationServices.Log, events, string.Format(Resources.File_Deleting, relativeFileName))
+        : base(synchronizationServices.CommonServices.Log, events, string.Format(Resources.File_Deleting, relativeFileName))
     {
         _localFolder = localFolder;
         _relativeFileName = relativeFileName;

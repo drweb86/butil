@@ -23,8 +23,8 @@ internal class GetStateOfSourceItemTask : SequentialBuTask
 
     public SourceItemV2 SourceItem { get; }
 
-    public GetStateOfSourceItemTask(ILog log, TaskEvents events, SourceItemV2 sourceItem, IEnumerable<string> fileExcludePatterns, CommonServicesIoc commonServicesIoc) :
-        base(log, events, string.Format(BUtil.Core.Localization.Resources.SourceItem_State_Get, sourceItem.Target))
+    public GetStateOfSourceItemTask(TaskEvents events, SourceItemV2 sourceItem, IEnumerable<string> fileExcludePatterns, CommonServicesIoc commonServicesIoc) :
+        base(commonServicesIoc.Log, events, string.Format(BUtil.Core.Localization.Resources.SourceItem_State_Get, sourceItem.Target))
     {
         SourceItem = sourceItem;
         this._fileExcludePatterns = fileExcludePatterns;
@@ -47,7 +47,7 @@ internal class GetStateOfSourceItemTask : SequentialBuTask
         }
 
         var getFileStateTasks = files
-            .Select(file => new GetStateOfFileTask(Log, Events, _commonServicesIoc, SourceItem, file))
+            .Select(file => new GetStateOfFileTask(Events, _commonServicesIoc, SourceItem, file))
             .ToList();
         Children = getFileStateTasks;
         Events.DuringExecutionTasksAdded(Id, Children);

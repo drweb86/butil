@@ -11,7 +11,7 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel;
 
 class ImportMediaRootTask : SequentialBuTask
 {
-    private readonly CommonServicesIoc _commonServicesIoc = new();
+    private readonly CommonServicesIoc _commonServicesIoc;
 
     public ImportMediaRootTask(ILog log, TaskEvents backupEvents, TaskV2 backupTask)
         : base(log, backupEvents, string.Empty)
@@ -19,8 +19,9 @@ class ImportMediaRootTask : SequentialBuTask
         var typedModel = (ImportMediaTaskModelOptionsV2)backupTask.Model;
         var sourceItem = new SourceItemV2(typedModel.DestinationFolder, true);
 
-        var getStateOfSourceItemTask = new GetStateOfSourceItemTask(log, backupEvents, sourceItem, Array.Empty<string>(), _commonServicesIoc);
-        var importFiles = new ImportFilesTask(log, backupEvents, backupTask, getStateOfSourceItemTask, _commonServicesIoc);
+        _commonServicesIoc = new CommonServicesIoc(log);
+        var getStateOfSourceItemTask = new GetStateOfSourceItemTask(backupEvents, sourceItem, Array.Empty<string>(), _commonServicesIoc);
+        var importFiles = new ImportFilesTask(backupEvents, backupTask, getStateOfSourceItemTask, _commonServicesIoc);
 
         Children = [getStateOfSourceItemTask, importFiles];
     }

@@ -18,21 +18,20 @@ internal class GetStateOfSourceItemsAndStoragesTask : ParallelBuTask
     public DeleteUnversionedFilesStorageTask DeleteUnversionedFilesStorageTask { get; }
 
     public GetStateOfSourceItemsAndStoragesTask(
-        ILog log,
         TaskEvents events,
         IEnumerable<SourceItemV2> sourceItems,
         CommonServicesIoc commonServicesIoc,
         StorageSpecificServicesIoc servicesIoc,
         IEnumerable<string> fileExcludePatterns,
         string password)
-        : base(log, events, Localization.Resources.State_LoadFromEverywhere, null)
+        : base(commonServicesIoc.Log, events, Localization.Resources.State_LoadFromEverywhere, null)
     {
         var childTasks = new List<BuTask>();
         var setSourceItemStateTasks = new List<GetStateOfSourceItemTask>();
 
         foreach (var item in sourceItems)
         {
-            var getSourceItemStateTask = new GetStateOfSourceItemTask(log, Events, item, fileExcludePatterns, commonServicesIoc);
+            var getSourceItemStateTask = new GetStateOfSourceItemTask(Events, item, fileExcludePatterns, commonServicesIoc);
             setSourceItemStateTasks.Add(getSourceItemStateTask);
             childTasks.Add(getSourceItemStateTask);
         }

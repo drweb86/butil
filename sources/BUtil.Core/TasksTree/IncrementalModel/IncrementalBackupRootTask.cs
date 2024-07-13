@@ -19,13 +19,13 @@ class IncrementalBackupRootTask : SequentialBuTask
     {
         var tasks = new List<BuTask>();
 
-        _commonServicesIoc = new CommonServicesIoc();
+        _commonServicesIoc = new CommonServicesIoc(log);
         var modelOptions = (IncrementalBackupModelOptionsV2)backupTask.Model;
         var storage = modelOptions.To;
 
-        _storageService = new StorageSpecificServicesIoc(Log, storage, _commonServicesIoc.HashService);
+        _storageService = new StorageSpecificServicesIoc(_commonServicesIoc, storage);
 
-        var readSatesTask = new GetStateOfSourceItemsAndStoragesTask(Log, Events, modelOptions.Items, _commonServicesIoc, _storageService, modelOptions.FileExcludePatterns, ((IncrementalBackupModelOptionsV2)backupTask.Model).Password);
+        var readSatesTask = new GetStateOfSourceItemsAndStoragesTask(Events, modelOptions.Items, _commonServicesIoc, _storageService, modelOptions.FileExcludePatterns, ((IncrementalBackupModelOptionsV2)backupTask.Model).Password);
         tasks.Add(readSatesTask);
 
         tasks.Add(new WriteIncrementedVersionTask(_storageService, Events, readSatesTask.RemoteStateLoadTask, readSatesTask.GetSourceItemStateTasks, (IncrementalBackupModelOptionsV2)backupTask.Model));

@@ -15,8 +15,8 @@ internal class GetStateOfFileTask : BuTaskV2
     private readonly string _fileName;
     public FileState? State { get; private set; }
 
-    public GetStateOfFileTask(ILog log, TaskEvents events, CommonServicesIoc servicesIoc, SourceItemV2 item, string fileName) :
-        base(log, events, string.Empty)
+    public GetStateOfFileTask(TaskEvents events, CommonServicesIoc servicesIoc, SourceItemV2 item, string fileName) :
+        base(servicesIoc.Log, events, string.Empty)
     {
         _servicesIoc = servicesIoc;
         _fileName = fileName;

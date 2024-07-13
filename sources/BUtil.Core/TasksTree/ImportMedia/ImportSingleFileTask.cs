@@ -23,7 +23,6 @@ class ImportSingleFileTask : BuTaskV2
     public string File { get; private set; }
 
     public ImportSingleFileTask(
-        ILog log,
         TaskEvents backupEvents,
         string fromFile,
         IStorage fromStorage,
@@ -31,7 +30,7 @@ class ImportSingleFileTask : BuTaskV2
         string transformFileName,
         SourceItemState state,
         CommonServicesIoc commonServicesIoc)
-        : base(log, backupEvents, string.Empty)
+        : base(commonServicesIoc.Log, backupEvents, string.Empty)
     {
         File = fromFile;
         _state = state;

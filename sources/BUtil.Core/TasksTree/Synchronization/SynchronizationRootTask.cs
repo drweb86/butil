@@ -58,7 +58,7 @@ class SynchronizationRootTask : SequentialBuTask
                 syncItems.Any(x => x.ActualFileAction != SynchronizationDecision.DoNothing) ||
                 syncItems.Any(x => x.ForceUpdateState))
             {
-                var getSourceItemStateTask = new GetStateOfSourceItemTask(Log, Events, _model.LocalSourceItem, new List<string>(), _synchronizationServices.CommonServices);
+                var getSourceItemStateTask = new GetStateOfSourceItemTask(Events, _model.LocalSourceItem, new List<string>(), _synchronizationServices.CommonServices);
                 tasks.Add(getSourceItemStateTask);
                 tasks.Add(new SynchronizationLocalStateSaveTask(tasks.ToArray(), _synchronizationServices, Events, () => GetLocalState(GetActualFiles(getSourceItemStateTask))));
             }

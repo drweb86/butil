@@ -14,14 +14,15 @@ namespace BUtil.Core.TasksTree.States;
 
 public class GetExistingVersionStateFromStorageRootTask : SequentialBuTask
 {
-    private readonly CommonServicesIoc _commonServicesIoc = new();
+    private readonly CommonServicesIoc _commonServicesIoc;
     private readonly StorageSpecificServicesIoc _storageSpecificServicesIoc;
     private readonly RemoteStateLoadTask _getStateOfStorageTask;
 
     public GetExistingVersionStateFromStorageRootTask(ILog log, TaskEvents events, IStorageSettingsV2 storageSettings, string password)
         : base(log, events, "Get existing version state from storage")
     {
-        _storageSpecificServicesIoc = new StorageSpecificServicesIoc(log, storageSettings, _commonServicesIoc.HashService);
+        _commonServicesIoc = new CommonServicesIoc(log);
+        _storageSpecificServicesIoc = new StorageSpecificServicesIoc(_commonServicesIoc, storageSettings);
         _getStateOfStorageTask = new(_storageSpecificServicesIoc, events, password);
         Children = new List<BuTask> { _getStateOfStorageTask };
     }

@@ -1,6 +1,7 @@
 ﻿using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Hashing;
 using BUtil.Core.Logs;
+using BUtil.Core.Services;
 using BUtil.Core.State;
 using BUtil.Core.Storages;
 using BUtil.Core.Synchronization;
@@ -22,13 +23,13 @@ public class StorageSpecificServicesIoc : IDisposable
     private readonly Lazy<IncrementalBackupFileService> _incrementalBackupFileService;
     public IncrementalBackupFileService IncrementalBackupFileService { get { return _incrementalBackupFileService.Value; } }
 
-    public StorageSpecificServicesIoc(ILog log, IStorageSettingsV2 storageSettings, IHashService hashService, bool autodetectConnectionSettings = false)
+    public StorageSpecificServicesIoc(CommonServicesIoc commonServices, IStorageSettingsV2 storageSettings, bool autodetectConnectionSettings = false)
     {
-        Log = log;
+        Log = commonServices.Log;
         StorageSettings = storageSettings;
-        _storage = new Lazy<IStorage>(() => StorageFactory.Create(log, storageSettings, autodetectConnectionSettings));
-        _incrementalBackupStateService = new Lazy<IncrementalBackupStateService>(() => new IncrementalBackupStateService(this, hashService));
-        _incrementalBackupFileService = new Lazy<IncrementalBackupFileService>(() => new IncrementalBackupFileService(hashService, this));
+        _storage = new Lazy<IStorage>(() => StorageFactory.Create(Log, storageSettings, autodetectConnectionSettings));
+        _incrementalBackupStateService = new Lazy<IncrementalBackupStateService>(() => new IncrementalBackupStateService(this, commonServices.HashService));
+        _incrementalBackupFileService = new Lazy<IncrementalBackupFileService>(() => new IncrementalBackupFileService(commonServices.HashService, this));
     }
 
     public void Dispose()

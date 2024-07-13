@@ -18,7 +18,7 @@ internal class SynchronizationLocalStateSaveTask : BuTaskV2
         SynchronizationServices synchronizationServices,
         TaskEvents events,
         Func<SynchronizationState> getSynchronizationState)
-        : base(synchronizationServices.Log, events, Resources.Local_State_Saving)
+        : base(synchronizationServices.CommonServices.Log, events, Resources.Local_State_Saving)
     {
         _dependantTasks = dependantTasks;
         _synchronizationServices = synchronizationServices;

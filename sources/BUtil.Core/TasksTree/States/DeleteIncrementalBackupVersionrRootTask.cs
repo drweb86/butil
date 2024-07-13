@@ -25,8 +25,8 @@ public class DeleteIncrementalBackupVersionrRootTask : SequentialBuTask
         IStorageSettingsV2 storageSettingsV2)
         : base(log, events, $"Delete incremental backup version {versionToDelete.BackupDateUtc}")
     {
-        _commonServicesIoc = new CommonServicesIoc();
-        _storageSpecificServicesIoc = new StorageSpecificServicesIoc(log, storageSettingsV2, _commonServicesIoc.HashService);
+        _commonServicesIoc = new CommonServicesIoc(log);
+        _storageSpecificServicesIoc = new StorageSpecificServicesIoc(_commonServicesIoc, storageSettingsV2);
 
         DeleteVersionUtil.DeleteVersion(state, versionToDelete, out var storageFilesToDelete, out var storageFileMovements);
 

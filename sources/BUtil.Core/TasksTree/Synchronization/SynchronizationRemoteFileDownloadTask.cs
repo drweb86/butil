@@ -19,7 +19,7 @@ internal class SynchronizationRemoteFileDownloadTask : BuTaskV2
     public SynchronizationRemoteFileDownloadTask(SynchronizationServices synchronizationServices, TaskEvents events,
         SynchronizationModel model, string relativeFileName)
     : base(
-        synchronizationServices.Log,
+        synchronizationServices.CommonServices.Log,
         events,
         string.Format(Resources.File_Saving, relativeFileName))
     {

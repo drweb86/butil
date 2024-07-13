@@ -1,4 +1,5 @@
 ﻿using BUtil.Core.Hashing;
+using BUtil.Core.Logs;
 using BUtil.Core.Options;
 using System;
 
@@ -8,9 +9,11 @@ public class CommonServicesIoc : IDisposable
 {
     public ICashedHashStoreService CashedHashStoreService { get; }
     public IHashService HashService { get; }
+    public ILog Log { get; }
 
-    public CommonServicesIoc()
+    public CommonServicesIoc(ILog log)
     {
+        Log = log;
         CashedHashStoreService = new CashedHashStoreService();
         HashService = new CachedHashService(CashedHashStoreService);
     }

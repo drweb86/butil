@@ -25,7 +25,7 @@ internal class SynchronizationAllStatesReadTask : SequentialBuTask
         SynchronizationServices synchronizationServices, 
         TaskEvents events,
         SynchronizationModel model) : 
-        base(synchronizationServices.Log, events, Resources.State_LoadFromEverywhere)
+        base(synchronizationServices.CommonServices.Log, events, Resources.State_LoadFromEverywhere)
     {
         _synchronizationServices = synchronizationServices;
         _model = model;
@@ -35,7 +35,7 @@ internal class SynchronizationAllStatesReadTask : SequentialBuTask
         _synchronizationLocalStateLoadTask = new SynchronizationLocalStateLoadTask(_synchronizationServices, Events);
         tasks.Add(_synchronizationLocalStateLoadTask);
 
-        _setStateOfSourceItemTask = new GetStateOfSourceItemTask(Log, Events, _model.LocalSourceItem, new List<string>(), synchronizationServices.CommonServices);
+        _setStateOfSourceItemTask = new GetStateOfSourceItemTask(Events, _model.LocalSourceItem, new List<string>(), synchronizationServices.CommonServices);
         tasks.Add(_setStateOfSourceItemTask);
 
         _remoteStateLoadTask = new RemoteStateLoadTask(synchronizationServices.StorageSpecificServices, Events, model.TaskOptions.Password);

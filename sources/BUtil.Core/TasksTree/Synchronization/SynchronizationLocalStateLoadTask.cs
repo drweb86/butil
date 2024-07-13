@@ -11,7 +11,7 @@ internal class SynchronizationLocalStateLoadTask: BuTaskV2
     public SynchronizationState? SynchronizationState { get; private set; }
 
     public SynchronizationLocalStateLoadTask(SynchronizationServices synchronizationServices, TaskEvents events) 
-        : base(synchronizationServices.Log, events, Resources.Local_State_Get)
+        : base(synchronizationServices.CommonServices.Log, events, Resources.Local_State_Get)
     {
         _synchronizationServices = synchronizationServices;
     }
