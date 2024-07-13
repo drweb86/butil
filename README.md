@@ -6,12 +6,7 @@
 
 [Download](https://drweb86.synology.me:88)
 
-![Tasks application 1](./help/Assets/Image%20-%20Tasks%20App%20-%201.png)
-![Tasks application 2](./help/Assets/Image%20-%20Tasks%20App%20-%202.png)
-![Launch task application](./help/Assets/Image%20-%20Launch%20App.png)
-![Restore application](./help/Assets/Image%20-%20Restore%20App.png)
-
-![Supported Languages](./help/Assets/Image%20-%20Languages.png)
+![Image Gallery](./help/Assets/Image%20Gallery.gif)
 
 [Arabic](https://ask.chadgpt.ru/) [Chinese](https://ask.chadgpt.ru/) [English] [French](https://ask.chadgpt.ru/) [German](https://ask.chadgpt.ru/) [Hindi](https://ask.chadgpt.ru/) [Italian](https://github.com/bovirus) [Portuguese](https://ask.chadgpt.ru/) [Russian] [Spanish](https://ask.chadgpt.ru/) [Ukrainian](https://github.com/Kopejkin)
 
