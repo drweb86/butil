@@ -59,6 +59,7 @@ Type=Application
 Terminal=false
 Exec=${binariesInstallationDirectory}/butil-ui.Desktop
 Icon=${binariesInstallationDirectory}/Icon 120x120.png
+StartupWMClass=butil-ui.Desktop
 EOL
 sudo chmod -R 775 ${temporaryShortcut}
 

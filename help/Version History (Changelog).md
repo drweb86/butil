@@ -1,3 +1,9 @@
+# 2024.07.13
+
+## Bug Fixes
+
+- Ubuntu: Gnome: Wayland: application icon is properly resolved thanks to guys from Gnome and Avalonia Teams.
+
 # 2024.07.06
 
 ## Bug Fixes
