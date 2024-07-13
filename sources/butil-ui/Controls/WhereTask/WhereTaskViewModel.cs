@@ -472,7 +472,7 @@ public class WhereTaskViewModel : ObservableObject
 
     #region FtpsEncryption
 
-    private string _ftpsEncryption;
+    private string _ftpsEncryption = Resources.Ftps_Encryption_Option_Explicit; // Most popular option
 
     public string FtpsEncryption
     {
