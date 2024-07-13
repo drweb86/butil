@@ -47,7 +47,7 @@
 		</Expander.Header>
 		<ScrollViewer
 			ScrollViewer.VerticalScrollBarVisibility="Visible"
-			ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+			ScrollViewer.HorizontalScrollBarVisibility="Visible">
 			<ItemsRepeater ItemsSource="{Binding Items}">
 				<ItemsRepeater.ItemTemplate>
 					<DataTemplate>
@@ -56,6 +56,7 @@
 							Foreground="{Binding Status, Converter={StaticResource ProcessingStatusToSolidColorBrushConverter}}"
 							TextWrapping="Wrap"
 							FontWeight="DemiBold"
+							MaxLines="1"
 							/>
 					</DataTemplate>
 				</ItemsRepeater.ItemTemplate>

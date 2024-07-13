@@ -4,6 +4,7 @@
 
 - Ubuntu: Gnome: Wayland: application icon is properly resolved thanks to guys from Gnome and Avalonia Teams.
 - FTPS default mode was missing.
+- Attempt to fix empty progress log on scrolling.
 
 # 2024.07.06
 
