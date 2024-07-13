@@ -20,10 +20,6 @@
 [![Spanish](https://img.shields.io/badge/lang-Spanish-green.svg)](https://ask.chadgpt.ru/)
 [![Ukrainian](https://img.shields.io/badge/lang-Ukrainian-green.svg)](https://github.com/Kopejkin)
 
-
-
-[Arabic](https://ask.chadgpt.ru/) [Chinese](https://ask.chadgpt.ru/) [English] [French](https://ask.chadgpt.ru/) [German](https://ask.chadgpt.ru/) [Hindi](https://ask.chadgpt.ru/) [Italian](https://github.com/bovirus) [Portuguese](https://ask.chadgpt.ru/) [Russian] [Spanish](https://ask.chadgpt.ru/) [Ukrainian](https://github.com/Kopejkin)
-
 ## Features
 
 - **Incremental backup** with deduplication of files and **FTPS**, **SMB/CIFS**, **MTP** transports support;
