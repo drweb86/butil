@@ -55,7 +55,7 @@ internal class GetStateOfSourceItemsAndStoragesTask : ParallelBuTask
         var storageTasksExecuter = new ParallelExecuter(new[] { RemoteStateLoadTask }, 1);
         var sourceItemGroupTasks = GetSourceItemStateTasks
             .GroupBy(x => Directory.GetDirectoryRoot(x.SourceItem.Target))
-            .Select(x => new SequentialBuTask(new StubLog(), new TaskEvents(), string.Empty, x.ToList()))
+            .Select(x => new SequentialBuTask(Log, new TaskEvents(), string.Empty, x.ToList()))
             .ToList();
         var sourceItemGroupTasksExecuter = new ParallelExecuter(sourceItemGroupTasks, 10);
 

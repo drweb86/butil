@@ -130,11 +130,16 @@ public class LaunchTaskViewModel : ViewModelBase
             return;
         }
 
-        if (!RootTaskFactory.TryVerify(new StubLog(), _task.Model, false, out var error))
+        var fileLog = new FileLog(_task.Name);
+        fileLog.Open();
+        if (!RootTaskFactory.TryVerify(fileLog, _task.Model, false, out var error))
         {
+            fileLog.Close(false);
             TaskExecuterViewModel = new TaskExecuterViewModel(error);
             return;
         }
+        fileLog.Close(true);
+        System.IO.File.Delete(fileLog.LogFilename);
 
         TaskExecuterViewModel = new TaskExecuterViewModel(
             _taskEvents,
