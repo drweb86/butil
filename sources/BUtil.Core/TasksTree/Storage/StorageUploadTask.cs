@@ -48,6 +48,17 @@ internal class StorageUploadTask : SequentialBuTask
         Events.DuringExecutionTasksAdded(Id, tasks);
         base.Execute();
 
+        var skippedBecauseOfQuotaFiles = storageToWriteTasks
+            .SelectMany(x => x.Value)
+            .Where(x => x.IsSkippedBecauseOfQuota)
+            .SelectMany(x => x.StorageFiles)
+            .ToList();
+        if (skippedBecauseOfQuotaFiles.Any())
+        {
+            var gigabyte = 1024 * 1024 * 1024;
+            _services.CommonServices.LastMinuteMessageService.AddLastMinuteLogMessage(string.Format(BUtil.Core.Localization.Resources.Task_Status_PartialDueToQuota, skippedBecauseOfQuotaFiles.Count, skippedBecauseOfQuotaFiles.Sum(x => x.FileState.Size) / gigabyte));
+
+        }
         UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
     }
 
