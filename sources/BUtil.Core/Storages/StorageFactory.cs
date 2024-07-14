@@ -24,7 +24,7 @@ public class StorageFactory
         throw new ArgumentOutOfRangeException(nameof(storageSettings));
     }
 
-    public static string? Test(ILog log, IStorageSettingsV2 storageSettings)
+    public static string? Test(ILog log, IStorageSettingsV2 storageSettings, bool writeMode)
     {
         if (storageSettings == null)
             return BUtil.Core.Localization.Resources.DataStorage_Validation_NotSpecified;
@@ -35,7 +35,7 @@ public class StorageFactory
         try
         {
             using var storage = Create(log, storageSettings, true);
-            return storage.Test();
+            return storage.Test(writeMode);
         }
         catch (Exception ex)
         {

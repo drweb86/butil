@@ -8,7 +8,7 @@ namespace BUtil.Core.ConfigurationFileModels.V2;
 
 public static class TaskV2Validator
 {
-    public static bool TryValidate(TaskV2 task, [NotNullWhen(false)] out string? error)
+    public static bool TryValidate(TaskV2 task, bool writeMode, [NotNullWhen(false)] out string? error)
     {
         if (!new TaskV2StoreService().TryValidate(task.Name, out error))
         {
@@ -17,7 +17,7 @@ public static class TaskV2Validator
 
         var memoryLog = new MemoryLog();
 
-        if (!RootTaskFactory.TryVerify(memoryLog, task.Model, out error))
+        if (!RootTaskFactory.TryVerify(memoryLog, task.Model, writeMode, out error))
         {
             error += Environment.NewLine + Environment.NewLine + memoryLog;
             return false;

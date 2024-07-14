@@ -6,6 +6,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Net.Security;
+using System.Reflection;
 using System.Security;
 using System.Text.RegularExpressions;
 
@@ -136,7 +137,7 @@ class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
         _client.Dispose();
     }
 
-    public override string? Test()
+    public override string? Test(bool writeMode)
     {
         if (!string.IsNullOrWhiteSpace(Settings.Folder) && !_client.DirectoryExists(Settings.Folder))
         {
@@ -151,6 +152,16 @@ class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
             catch (Exception e)
             {
                 return e.Message;
+            }
+
+            if (writeMode)
+            {
+                var folder = Guid.NewGuid().ToString();
+                var file = Path.Combine("BUtil check " + folder, Guid.NewGuid().ToString());
+                var uploaded = Upload(Assembly.GetExecutingAssembly().Location, file);
+                if (uploaded == null)
+                    throw new Exception("Failed to upload!");
+                DeleteFolder(folder);
             }
         }
         return null;

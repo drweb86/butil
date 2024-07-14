@@ -17,7 +17,7 @@ public abstract class StorageBase<TStorageSettings> : IStorage
     protected readonly TStorageSettings Settings;
 
     public abstract IStorageUploadResult Upload(string sourceFile, string relativeFileName);
-    public abstract string? Test();
+    public abstract string? Test(bool writeMode);
 
     public abstract void Delete(string relativeFileName);
     public abstract void DeleteFolder(string relativeFolderName);

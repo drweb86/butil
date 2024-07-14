@@ -130,7 +130,7 @@ public class LaunchTaskViewModel : ViewModelBase
             return;
         }
 
-        if (!RootTaskFactory.TryVerify(new StubLog(), _task.Model, out var error))
+        if (!RootTaskFactory.TryVerify(new StubLog(), _task.Model, false, out var error))
         {
             TaskExecuterViewModel = new TaskExecuterViewModel(error);
             return;

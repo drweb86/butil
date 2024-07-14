@@ -2,6 +2,7 @@
 
 ## Changes
 - Skipped tasks are visible.
+- Storage verification was improved.
 
 ## Bug Fixes
 

@@ -25,7 +25,7 @@ public static class RootTaskFactory
         throw new ArgumentOutOfRangeException(nameof(task));
     }
 
-    public static bool TryVerify(ILog log, ITaskModelOptionsV2 options, [NotNullWhen(false)] out string? error)
+    public static bool TryVerify(ILog log, ITaskModelOptionsV2 options, bool writeMode, [NotNullWhen(false)] out string? error)
     {
         error = null;
         if (options is IncrementalBackupModelOptionsV2)
@@ -64,7 +64,7 @@ public static class RootTaskFactory
                 }
             }
 
-            var storageError = StorageFactory.Test(log, typedOptions.To);
+            var storageError = StorageFactory.Test(log, typedOptions.To, writeMode);
             if (storageError != null)
             {
                 error = storageError;
@@ -90,7 +90,7 @@ public static class RootTaskFactory
                 return false;
             }
 
-            var storageError = StorageFactory.Test(log, typedOptions.To);
+            var storageError = StorageFactory.Test(log, typedOptions.To, writeMode && typedOptions.SynchronizationMode == SynchronizationTaskModelMode.TwoWay);
             if (storageError != null)
             {
                 error = storageError;
@@ -103,14 +103,14 @@ public static class RootTaskFactory
         {
             var typedOptions = (ImportMediaTaskModelOptionsV2)options;
 
-            var storageError = StorageFactory.Test(log, new FolderStorageSettingsV2 { DestinationFolder = typedOptions.DestinationFolder });
+            var storageError = StorageFactory.Test(log, new FolderStorageSettingsV2 { DestinationFolder = typedOptions.DestinationFolder }, writeMode);
             if (storageError != null)
             {
                 error = storageError;
                 return false;
             }
 
-            var storageError2 = StorageFactory.Test(log, typedOptions.From);
+            var storageError2 = StorageFactory.Test(log, typedOptions.From, false);
             if (storageError2 != null)
             {
                 error = storageError2;

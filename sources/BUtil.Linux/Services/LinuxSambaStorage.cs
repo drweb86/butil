@@ -62,9 +62,9 @@ echo ""{userWithoutDomain}
         });
     }
 
-    public override string? Test()
+    public override string? Test(bool writeMode)
     {
-        return _proxy.Test();
+        return _proxy.Test(writeMode);
     }
 
     public override IStorageUploadResult Upload(string sourceFile, string relativeFileName)

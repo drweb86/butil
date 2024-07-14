@@ -55,7 +55,7 @@ public class EditMediaTaskViewModel : ViewModelBase
             }
         };
 
-        if (!TaskV2Validator.TryValidate(newTask, out var error))
+        if (!TaskV2Validator.TryValidate(newTask, true, out var error))
         {
             await Messages.ShowErrorBox(error);
             return;

@@ -15,5 +15,5 @@ public interface IStorage : IDisposable
     string[] GetFolders(string relativeFolderName, string? mask = null);
     string[] GetFiles(string? relativeFolderName = null, SearchOption option = SearchOption.TopDirectoryOnly);
     DateTime GetModifiedTime(string relativeFileName);
-    string? Test();
+    string? Test(bool writeMode);
 }

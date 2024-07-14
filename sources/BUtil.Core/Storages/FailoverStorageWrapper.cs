@@ -57,9 +57,9 @@ public class FailoverStorageWrapper : IStorage
             () => _storage.GetFolders(relativeFolderName, mask));
     }
 
-    public string? Test()
+    public string? Test(bool writeMode)
     {
-        return _storage.Test();
+        return _storage.Test(writeMode);
     }
 
     public IStorageUploadResult Upload(string sourceFile, string relativeFileName)
