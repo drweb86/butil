@@ -18,7 +18,11 @@ public class FileLog : LogBase
 
     ~FileLog()
     {
-        Close();
+        if (_logFile != null)
+        {
+            WriteLine(LoggingEvent.Error, "Memory leak " + new Exception().StackTrace);
+            Close(false);
+        }
     }
 
     public FileLog(string taskName)
@@ -76,8 +80,6 @@ public class FileLog : LogBase
         if (_logFile == null)
             return;
 
-        PreprocessLoggingInformation(loggingEvent);
-
         string output = LogFormatter.GetFormattedMessage(loggingEvent, message);
         WriteInFile(output);
         if (loggingEvent == LoggingEvent.Error)
@@ -85,11 +87,11 @@ public class FileLog : LogBase
                 _logFile.Flush();
     }
 
-    public override void Close()
+    public override void Close(bool isSuccess)
     {
         if (_logFile != null)
         {
-            if (!HasErrors)
+            if (isSuccess)
             {
                 //No any error or warning registered during backup!
                 WriteInFile(Resources.Task_Status_Succesfull);
@@ -98,7 +100,7 @@ public class FileLog : LogBase
             _logFile.Flush();
             _logFile.Close();
 
-            var fileNameUpdated = GetFileName(!HasErrors);
+            var fileNameUpdated = GetFileName(isSuccess);
             File.Move(_fileName, fileNameUpdated);
             _fileName = fileNameUpdated;
 

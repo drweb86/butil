@@ -334,7 +334,7 @@ public class TaskExecuterViewModel : ObservableObject
             Thread.CurrentThread.IsBackground = true;
             PlatformSpecificExperience.Instance.OsSleepPreventionService.PreventSleep();
             _threadTask?.Execute();
-            Dispatcher.UIThread.Invoke(OnTaskCompleted);
+            Dispatcher.UIThread.Invoke(() => OnTaskCompleted(_threadTask?.IsSuccess ?? false));
         });
         _thread.Start();
     }
@@ -432,12 +432,12 @@ public class TaskExecuterViewModel : ObservableObject
         return _lastMinuteMessage;
     }
 
-    private void OnTaskCompleted()
+    private void OnTaskCompleted(bool isSuccess)
     {
         if (_log == null)
             return;
 
-        _log.Close();
+        _log.Close(isSuccess);
 
         _timer.Enabled = false;
         _timer.Stop();
@@ -447,7 +447,7 @@ public class TaskExecuterViewModel : ObservableObject
         CanClose = true;
 
         var lastMinuteMessage = GetLastMinuteConsolidatedMessage();
-        if (_log.HasErrors)
+        if (!isSuccess)
         {
             ProgressGenericTitle = $"{Resources.Task_Status_FailedSeeLog} ({TimeSpanToStringHelper(DateTime.Now.Subtract(_startTime))})";
             if (!string.IsNullOrEmpty(lastMinuteMessage))
@@ -471,18 +471,18 @@ public class TaskExecuterViewModel : ObservableObject
         var appStaysAlive = _selectedPowerTask == PowerTask.None;
         if (appStaysAlive)
         {
-            if (_log.HasErrors)
+            if (!isSuccess)
             {
                 ProcessHelper.ShellExecute(_log.LogFilename);
             }
 
             PlatformSpecificExperience.Instance.UiService.Blink();
             PlatformSpecificExperience.Instance.OsSleepPreventionService.StopPreventSleep();
-            _onTaskComplete(!_log.HasErrors);
+            _onTaskComplete(isSuccess);
             return;
         }
 
-        if (_log.HasErrors)
+        if (!isSuccess)
         {
             PlatformSpecificExperience.Instance
                 .GetShowLogOnSystemLoginService()
@@ -491,8 +491,8 @@ public class TaskExecuterViewModel : ObservableObject
 
         PlatformSpecificExperience.Instance.OsSleepPreventionService.StopPreventSleep();
         PlatformSpecificExperience.Instance.SessionService.DoTask(_selectedPowerTask);
-        _onTaskComplete(!_log.HasErrors);
+        _onTaskComplete(isSuccess);
 
-        Environment.Exit(_log.HasErrors ? -1 : 0);
+        Environment.Exit(!isSuccess ? -1 : 0);
     }
 }

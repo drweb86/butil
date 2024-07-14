@@ -9,6 +9,7 @@
 - FTPS default mode was missing.
 - Attempt to fix empty progress log on scrolling.
 - Synchronization: Message about quota reach limit was missing.
+- Failover errors were treated as task errors.
 
 # 2024.07.06
 

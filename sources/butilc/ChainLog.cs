@@ -14,9 +14,8 @@ class ChainLog : ILog
             };
     }
 
-    public bool HasErrors => _logs.Any(x => x.HasErrors);
     public void Open() => _logs.ForEach(x => x.Open());
-    public void Close() => _logs.ForEach(x => x.Close());
+    public void Close(bool isSuccess) => _logs.ForEach(x => x.Close(isSuccess));
     public void LogProcessOutput(string consoleOutput, bool finishedSuccessfully)
         => _logs.ForEach(x => x.LogProcessOutput(consoleOutput, finishedSuccessfully));
     public void WriteLine(LoggingEvent loggingEvent, string message)

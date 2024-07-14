@@ -46,7 +46,7 @@ class Controller
                 log.WriteLine(LoggingEvent.Debug, argument);
                 log.WriteLine(LoggingEvent.Error, Resources.CommandLineArguments_Invalid);
                 log.WriteLine(LoggingEvent.Debug, string.Format(Resources.CommandLineArguments_Help, ApplicationLinks.HomePage));
-                log.Close();
+                log.Close(false);
                 Environment.Exit(-1);
             }
         }
@@ -56,7 +56,7 @@ class Controller
             var log = new ConsoleLog();
             log.WriteLine(LoggingEvent.Error, Resources.CommandLineArguments_Invalid);
             log.WriteLine(LoggingEvent.Debug, string.Format(Resources.CommandLineArguments_Help, ApplicationLinks.HomePage));
-            log.Close();
+            log.Close(false);
             Environment.Exit(-1);
         }
 
@@ -71,6 +71,7 @@ class Controller
     {
         var log = new ChainLog(_taskName);
         string? lastMinuteMessage = null;
+        bool isSuccess = false;
         log.Open();
         try
         {
@@ -87,15 +88,15 @@ class Controller
                 Environment.Exit(-1);
             }
 
-            RootTaskFactory.Create(log, task, new BUtil.Core.Events.TaskEvents(), x => lastMinuteMessage = x)
-                .Execute();
-
+            var actualTask = RootTaskFactory.Create(log, task, new BUtil.Core.Events.TaskEvents(), x => lastMinuteMessage = x);
+            actualTask.Execute();
+            isSuccess = actualTask.IsSuccess;
             if (lastMinuteMessage != null)
                 Console.WriteLine(lastMinuteMessage);
         }
         finally
         {
-            log.Close();
+            log.Close(isSuccess);
         }
         PlatformSpecificExperience.Instance.SessionService.DoTask(_powerTask);
     }

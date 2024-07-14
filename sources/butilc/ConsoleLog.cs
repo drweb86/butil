@@ -5,8 +5,6 @@ public class ConsoleLog : LogBase
 {
     public override void WriteLine(LoggingEvent loggingEvent, string message)
     {
-        PreprocessLoggingInformation(loggingEvent);
-
         if (loggingEvent == LoggingEvent.Error)
         {
             FastStdConsole.Flush();
@@ -22,5 +20,5 @@ public class ConsoleLog : LogBase
     }
 
     public override void Open() { }
-    public override void Close() => FastStdConsole.Flush();
+    public override void Close(bool isSuccess) => FastStdConsole.Flush();
 }

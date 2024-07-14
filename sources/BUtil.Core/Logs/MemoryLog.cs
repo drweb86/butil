@@ -6,7 +6,7 @@ public class MemoryLog : ILog
 {
     public bool HasErrors => false;
 
-    public void Close()
+    public void Close(bool isSuccess)
     {
     }
 
