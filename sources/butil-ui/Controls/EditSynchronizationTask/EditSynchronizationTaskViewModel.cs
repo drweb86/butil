@@ -27,7 +27,7 @@ public class EditSynchronizationTaskViewModel : ViewModelBase
         EncryptionTaskViewModel = new EncryptionTaskViewModel(model.Password, isNew, !isNew);
 
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
-        WhenTaskViewModel = new WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule?.GetSchedule(taskName) ?? new ScheduleInfo());
+        WhenTaskViewModel = new WhenTaskViewModel(isNew ? new ScheduleInfo() { Time = new System.TimeSpan(0, 0, 0), Days = new System.Collections.Generic.List<System.DayOfWeek> { System.DayOfWeek.Monday, System.DayOfWeek.Tuesday, System.DayOfWeek.Wednesday, System.DayOfWeek.Thursday, System.DayOfWeek.Friday, System.DayOfWeek.Saturday, System.DayOfWeek.Sunday } } : schedule?.GetSchedule(taskName) ?? new ScheduleInfo());
         WhereTaskViewModel = new WhereTaskViewModel(model.To, Resources.LeftMenu_Where, "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png");
         What = new SynchronizationWhatViewModel(model.LocalFolder, model.RepositorySubfolder, model.SynchronizationMode);
     }

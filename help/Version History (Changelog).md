@@ -1,8 +1,10 @@
 # 2024.07.13
 
 ## Changes
+
 - Skipped tasks are visible.
 - Storage verification was improved.
+- Windows: New synchronization tasks will have by default midnight execution schedule.
 
 ## Bug Fixes
 
