@@ -18,7 +18,7 @@ public class IncrementalBackupStateService
 
     public IncrementalBackupStateService(StorageSpecificServicesIoc services, IHashService hashService)
     {
-        _log = services.Log;
+        _log = services.CommonServices.Log;
         _services = services;
         _hashService = hashService;
     }

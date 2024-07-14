@@ -23,7 +23,7 @@ public class WriteStorageFileToSourceFileTask : BuTaskV2
         StorageFile storageFile,
         string destinationFolder)
         : base(
-            storageSpecificServices.Log,
+            storageSpecificServices.CommonServices.Log,
             events,
             string.Format(Resources.File_Saving, SourceItemHelper.GetFriendlyFileName(sourceItem, storageFile.FileState.FileName)))
     {

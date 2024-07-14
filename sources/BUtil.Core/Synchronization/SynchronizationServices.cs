@@ -15,11 +15,11 @@ internal class SynchronizationServices : IDisposable
     public CommonServicesIoc CommonServices { get; }
     public StorageSpecificServicesIoc StorageSpecificServices { get; }
 
-    public SynchronizationServices(ILog log, string taskName, string localFolder, string? repositorySubfolder, IStorageSettingsV2 remoteStorageSettings, bool autodetectConnectionSettings)
+    public SynchronizationServices(ILog log, string taskName, string localFolder, string? repositorySubfolder, IStorageSettingsV2 remoteStorageSettings, bool autodetectConnectionSettings, Action<string?> onGetLastMinuteMessage)
     {
         LocalStateService = new SynchronizationLocalStateService(taskName, localFolder, repositorySubfolder);
         DecisionService = new SynchronizationDecisionService(repositorySubfolder);
-        CommonServices = new CommonServicesIoc(log);
+        CommonServices = new CommonServicesIoc(log, onGetLastMinuteMessage);
         ActualFilesService = new SynchronizationActualFilesService(CommonServices.HashService, localFolder);
         StorageSpecificServices = new StorageSpecificServicesIoc(CommonServices, remoteStorageSettings, autodetectConnectionSettings);
     }

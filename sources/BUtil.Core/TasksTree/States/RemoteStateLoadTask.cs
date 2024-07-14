@@ -14,7 +14,7 @@ internal class RemoteStateLoadTask : BuTaskV2
     public IncrementalBackupState? StorageState { get; private set; }
 
     public RemoteStateLoadTask(StorageSpecificServicesIoc services, TaskEvents events, string password) :
-        base(services.Log, events, Localization.Resources.DataStorage_State_Get)
+        base(services.CommonServices.Log, events, Localization.Resources.DataStorage_State_Get)
     {
         _services = services;
         _password = password;

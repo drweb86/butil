@@ -19,7 +19,7 @@ internal class WriteIncrementedVersionTask : SequentialBuTask
         RemoteStateLoadTask storageStateTask,
         IEnumerable<GetStateOfSourceItemTask> getSourceItemStateTasks,
         IncrementalBackupModelOptionsV2 incrementalBackupModelOptions) :
-        base(services.Log, events, Localization.Resources.IncrementalBackup_Version_Save)
+        base(services.CommonServices.Log, events, Localization.Resources.IncrementalBackup_Version_Save)
     {
         var childTaks = new List<BuTask>();
 

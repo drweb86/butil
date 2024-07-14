@@ -24,7 +24,7 @@ internal class StorageUploadTask : SequentialBuTask
         StorageSpecificServicesIoc services,
         TaskEvents events,
         string password,
-        StorageUploadTaskOptions options) : base(services.Log, events, Resources.DataStorage_Data_Saving)
+        StorageUploadTaskOptions options) : base(services.CommonServices.Log, events, Resources.DataStorage_Data_Saving)
     {
         _services = services;
         _password = password;

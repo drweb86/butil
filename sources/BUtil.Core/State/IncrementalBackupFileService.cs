@@ -18,7 +18,7 @@ public class IncrementalBackupFileService
 
     public IncrementalBackupFileService(IHashService hashService, StorageSpecificServicesIoc services)
     {
-        _log = services.Log;
+        _log = services.CommonServices.Log;
         _hashService = hashService;
         _services = services;
     }

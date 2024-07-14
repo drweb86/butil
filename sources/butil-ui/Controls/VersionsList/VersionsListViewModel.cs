@@ -456,7 +456,7 @@ public class VersionsListViewModel : ObservableObject
         ParentViewModel.TaskExecuterViewModel = new TaskExecuterViewModel(
             new TaskEvents(),
             Resources.Task_Restore,
-            (log, taskEvents) => new DeleteIncrementalBackupVersionrRootTask(log, taskEvents, _state, new IncrementalBackupModelOptionsV2() { Password = _password }, SelectedVersion.Version, _storageOptions),
+            (log, taskEvents, onGetLastMinuteMessage) => new DeleteIncrementalBackupVersionrRootTask(log, taskEvents, _state, new IncrementalBackupModelOptionsV2() { Password = _password }, SelectedVersion.Version, _storageOptions, onGetLastMinuteMessage),
             isOk =>
             {
                 if (isOk)
@@ -488,7 +488,7 @@ public class VersionsListViewModel : ObservableObject
         ParentViewModel.TaskExecuterViewModel = new TaskExecuterViewModel(
             new TaskEvents(),
             Resources.Task_Restore,
-            (log, taskEvents) => new WriteStorageFilesToSourceFileTask(log, taskEvents, _storageOptions, SelectedNode.SourceItem, storageFiles, destinationFolder),
+            (log, taskEvents, onGetLastMinuteMessage) => new WriteStorageFilesToSourceFileRootTask(log, taskEvents, _storageOptions, SelectedNode.SourceItem, storageFiles, destinationFolder, onGetLastMinuteMessage),
             isOk =>
             {
                 if (isOk)

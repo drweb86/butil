@@ -14,14 +14,14 @@ namespace BUtil.Core.TasksTree;
 
 public static class RootTaskFactory
 {
-    public static BuTask Create(ILog log, TaskV2 task, Events.TaskEvents events)
+    public static BuTask Create(ILog log, TaskV2 task, Events.TaskEvents events, Action<string?> onGetLastMinuteMessage)
     {
         if (task.Model is IncrementalBackupModelOptionsV2)
-            return new IncrementalBackupRootTask(log, events, task);
+            return new IncrementalBackupRootTask(log, events, task, onGetLastMinuteMessage);
         if (task.Model is SynchronizationTaskModelOptionsV2)
-            return new SynchronizationRootTask(log, events, task);
+            return new SynchronizationRootTask(log, events, task, onGetLastMinuteMessage);
         if (task.Model is ImportMediaTaskModelOptionsV2)
-            return new ImportMediaRootTask(log, events, task);
+            return new ImportMediaRootTask(log, events, task, onGetLastMinuteMessage);
         throw new ArgumentOutOfRangeException(nameof(task));
     }
 

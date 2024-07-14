@@ -15,7 +15,7 @@ internal class DeleteUnversionedFilesStorageTask : BuTaskV2
     public IStorageSettingsV2 StorageSettings { get; }
 
     public DeleteUnversionedFilesStorageTask(StorageSpecificServicesIoc services, TaskEvents events, RemoteStateLoadTask getStateOfStorageTask) :
-        base(services.Log, events, Localization.Resources.DataStorage_Maintenance)
+        base(services.CommonServices.Log, events, Localization.Resources.DataStorage_Maintenance)
     {
         StorageSettings = services.StorageSettings;
         _services = services;

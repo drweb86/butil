@@ -36,7 +36,7 @@ internal class SaveStateToStorageTask : BuTaskV2
     }
 
     private SaveStateToStorageTask(StorageSpecificServicesIoc services, TaskEvents events, string password)
-        : base(services.Log, events, Localization.Resources.DataStorage_State_Saving)
+        : base(services.CommonServices.Log, events, Localization.Resources.DataStorage_State_Saving)
     {
         _services = services;
         _password = password;

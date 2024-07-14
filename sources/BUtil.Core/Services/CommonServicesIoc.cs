@@ -7,19 +7,26 @@ namespace BUtil.Core.Services;
 
 public class CommonServicesIoc : IDisposable
 {
-    public ICashedHashStoreService CashedHashStoreService { get; }
-    public IHashService HashService { get; }
-    public ILog Log { get; }
+    private readonly Action<string?> _onGetLastMinuteMessage;
 
-    public CommonServicesIoc(ILog log)
+    public readonly ILastMinuteMessageService LastMinuteMessageService;
+    public readonly ICashedHashStoreService CashedHashStoreService;
+    public readonly IHashService HashService;
+    public readonly ILog Log;
+
+    public CommonServicesIoc(ILog log, Action<string?> onGetLastMinuteMessage)
     {
         Log = log;
+        LastMinuteMessageService = new LastMinuteMessageService(log);
         CashedHashStoreService = new CashedHashStoreService();
         HashService = new CachedHashService(CashedHashStoreService);
+        _onGetLastMinuteMessage = onGetLastMinuteMessage;
     }
 
     public void Dispose()
     {
+        _onGetLastMinuteMessage(LastMinuteMessageService.GetLastMinuteMessages());
         HashService.Dispose();
+        LastMinuteMessageService.Dispose();
     }
 }

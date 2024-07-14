@@ -70,6 +70,7 @@ class Controller
     public void Launch()
     {
         var log = new ChainLog(_taskName);
+        string? lastMinuteMessage = null;
         log.Open();
         try
         {
@@ -86,8 +87,11 @@ class Controller
                 Environment.Exit(-1);
             }
 
-            RootTaskFactory.Create(log, task, new BUtil.Core.Events.TaskEvents())
+            RootTaskFactory.Create(log, task, new BUtil.Core.Events.TaskEvents(), x => lastMinuteMessage = x)
                 .Execute();
+
+            if (lastMinuteMessage != null)
+                Console.WriteLine(lastMinuteMessage);
         }
         finally
         {

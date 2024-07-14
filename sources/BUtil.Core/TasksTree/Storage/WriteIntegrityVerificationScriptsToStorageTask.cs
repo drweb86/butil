@@ -26,7 +26,7 @@ internal class WriteIntegrityVerificationScriptsToStorageTask : BuTaskV2
         BuTask writeSourceFilesToStorageTask,
         BuTask writeStateToStorageTask,
         Func<StorageFile> getStateStorageFile)
-        : base(services.Log, events, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Saving)
+        : base(services.CommonServices.Log, events, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Saving)
     {
         _services = services;
         _isVersionNeeded = isVersionNeeded;

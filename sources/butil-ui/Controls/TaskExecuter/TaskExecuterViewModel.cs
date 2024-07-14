@@ -21,7 +21,6 @@ public class TaskExecuterViewModel : ObservableObject
 {
     private DateTime _startTime;
     private readonly System.Timers.Timer _timer = new(1000);
-    private readonly List<string> _lastMinuteMessagesToUser = new();
     private readonly HashSet<Guid> _endedTasks = new();
     private readonly Action<bool> _onTaskComplete = null!;
     private FileLog? _log;
@@ -40,12 +39,11 @@ public class TaskExecuterViewModel : ObservableObject
     public TaskExecuterViewModel(
         TaskEvents taskEvents,
         string logName,
-        Func<ILog, TaskEvents, BuTask> createTask,
+        Func<ILog, TaskEvents, Action<string?>, BuTask> createTask,
         Action<bool> onTaskComplete)
     {
         _progressGenericForeground = ColorPalette.GetBrush(SemanticColor.Normal);
 
-        taskEvents.OnMessage += OnAddLastMinuteMessageToUser;
         taskEvents.OnTaskProgress += OnTaskProgress;
         taskEvents.OnDuringExecutionTasksAdded += OnDuringExecutionTasksAdded;
 
@@ -56,7 +54,7 @@ public class TaskExecuterViewModel : ObservableObject
 
         _log = new FileLog(logName);
         _log.Open();
-        _threadTask = createTask(_log, taskEvents);
+        _threadTask = createTask(_log, taskEvents, OnPopulateLastMinuteMessage);
 
 
         _threadTask
@@ -70,6 +68,12 @@ public class TaskExecuterViewModel : ObservableObject
             });
 
         _onTaskComplete = onTaskComplete;
+    }
+
+    private string? _lastMinuteMessage;
+    private void OnPopulateLastMinuteMessage(string? message)
+    {
+        _lastMinuteMessage = message;
     }
 
     #region IsCollapsed
@@ -423,14 +427,9 @@ public class TaskExecuterViewModel : ObservableObject
         TotalTasksCount = total;
     }
 
-    private void OnAddLastMinuteMessageToUser(object? sender, MessageEventArgs e)
+    private string? GetLastMinuteConsolidatedMessage()
     {
-        _lastMinuteMessagesToUser.Add(e.Message);
-    }
-
-    private string GetLastMinuteConsolidatedMessage()
-    {
-        return string.Join(Environment.NewLine, _lastMinuteMessagesToUser.ToArray());
+        return _lastMinuteMessage;
     }
 
     private void OnTaskCompleted()

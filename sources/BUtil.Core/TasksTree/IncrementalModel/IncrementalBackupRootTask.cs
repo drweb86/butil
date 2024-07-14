@@ -14,12 +14,12 @@ class IncrementalBackupRootTask : SequentialBuTask
     private readonly CommonServicesIoc _commonServicesIoc;
     private readonly StorageSpecificServicesIoc _storageService;
 
-    public IncrementalBackupRootTask(ILog log, TaskEvents backupEvents, TaskV2 backupTask)
+    public IncrementalBackupRootTask(ILog log, TaskEvents backupEvents, TaskV2 backupTask, System.Action<string?> onGetLastMinuteMessage)
         : base(log, backupEvents, Resources.IncrementalBackup_Title, null)
     {
         var tasks = new List<BuTask>();
 
-        _commonServicesIoc = new CommonServicesIoc(log);
+        _commonServicesIoc = new CommonServicesIoc(log, onGetLastMinuteMessage);
         var modelOptions = (IncrementalBackupModelOptionsV2)backupTask.Model;
         var storage = modelOptions.To;
 
@@ -35,7 +35,6 @@ class IncrementalBackupRootTask : SequentialBuTask
 
     public override void Execute()
     {
-        Events.OnMessage += OnAddLastMinuteLogMessage;
         UpdateStatus(ProcessingStatus.InProgress);
         base.Execute();
 
@@ -43,19 +42,5 @@ class IncrementalBackupRootTask : SequentialBuTask
         _commonServicesIoc.Dispose();
 
         UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
-        Events.OnMessage -= OnAddLastMinuteLogMessage;
-        PutLastMinuteLogMessages();
-    }
-
-    private void PutLastMinuteLogMessages()
-    {
-        foreach (var lastMinuteLogMessage in _lastMinuteLogMessages)
-            Log.WriteLine(LoggingEvent.Debug, lastMinuteLogMessage);
-    }
-
-    private readonly List<string> _lastMinuteLogMessages = new();
-    private void OnAddLastMinuteLogMessage(object? sender, MessageEventArgs e)
-    {
-        _lastMinuteLogMessages.Add(e.Message);
     }
 }

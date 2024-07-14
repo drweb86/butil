@@ -18,7 +18,7 @@ internal class WriteSourceFilesToStorageTask : ParallelBuTask
         StorageSpecificServicesIoc services,
         TaskEvents events,
         CalculateIncrementedVersionForStorageTask getIncrementedVersionTask)
-        : base(services.Log, events, Localization.Resources.File_List_Saving)
+        : base(services.CommonServices.Log, events, Localization.Resources.File_List_Saving)
     {
         _services = services;
         _getIncrementedVersionTask = getIncrementedVersionTask;
@@ -105,7 +105,7 @@ internal class WriteSourceFilesToStorageTask : ParallelBuTask
         if (skippedBecauseOfQuotaFiles.Any())
         {
             var gigabyte = 1024 * 1024 * 1024;
-            Events.Message(string.Format(BUtil.Core.Localization.Resources.Task_Status_PartialDueToQuota, skippedBecauseOfQuotaFiles.Count, skippedBecauseOfQuotaFiles.Sum(x => x.FileState.Size) / gigabyte));
+            _services.CommonServices.LastMinuteMessageService.AddLastMinuteLogMessage(string.Format(BUtil.Core.Localization.Resources.Task_Status_PartialDueToQuota, skippedBecauseOfQuotaFiles.Count, skippedBecauseOfQuotaFiles.Sum(x => x.FileState.Size) / gigabyte));
         }
     }
 

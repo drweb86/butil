@@ -24,12 +24,12 @@ class SynchronizationRootTask : SequentialBuTask
 
     private readonly SynchronizationAllStatesReadTask _synchronizationAllStatesReadTask;
 
-    public SynchronizationRootTask(ILog log, TaskEvents backupEvents, TaskV2 task)
+    public SynchronizationRootTask(ILog log, TaskEvents backupEvents, TaskV2 task, Action<string?> onGetLastMinuteMessage)
         : base(log, backupEvents, Resources.SynchronizationTask_Create, null)
     {
         var options = (SynchronizationTaskModelOptionsV2)task.Model;
         _model = new SynchronizationModel((SynchronizationTaskModelOptionsV2)task.Model);
-        _synchronizationServices = new SynchronizationServices(log, task.Name, _model.TaskOptions.LocalFolder, FileHelper.NormalizeRelativePath(options.RepositorySubfolder), options.To, false);
+        _synchronizationServices = new SynchronizationServices(log, task.Name, _model.TaskOptions.LocalFolder, FileHelper.NormalizeRelativePath(options.RepositorySubfolder), options.To, false, onGetLastMinuteMessage);
 
         _synchronizationAllStatesReadTask = new SynchronizationAllStatesReadTask(_synchronizationServices, Events, _model);
 
@@ -38,7 +38,6 @@ class SynchronizationRootTask : SequentialBuTask
 
     public override void Execute()
     {
-        Events.OnMessage += OnAddLastMinuteLogMessage;
         UpdateStatus(ProcessingStatus.InProgress);
 
         base.Execute();
@@ -69,8 +68,6 @@ class SynchronizationRootTask : SequentialBuTask
         }
 
         UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
-        Events.OnMessage -= OnAddLastMinuteLogMessage;
-        PutLastMinuteLogMessages();
 
         _synchronizationServices.Dispose();
     }
@@ -199,17 +196,5 @@ class SynchronizationRootTask : SequentialBuTask
                     break;
             }
         }
-    }
-
-    private void PutLastMinuteLogMessages()
-    {
-        foreach (var lastMinuteLogMessage in _lastMinuteLogMessages)
-            Log.WriteLine(LoggingEvent.Debug, lastMinuteLogMessage);
-    }
-
-    private readonly List<string> _lastMinuteLogMessages = new();
-    private void OnAddLastMinuteLogMessage(object? sender, MessageEventArgs e)
-    {
-        _lastMinuteLogMessages.Add(e.Message);
     }
 }

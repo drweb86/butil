@@ -16,7 +16,7 @@ internal class MoveStorageFileTask : BuTaskV2
         TaskEvents events,
         string fromRelativeFileName,
         string toRelativeFileName) :
-        base(services.Log, events, string.Format(Resources.File_Moving, fromRelativeFileName, toRelativeFileName))
+        base(services.CommonServices.Log, events, string.Format(Resources.File_Moving, fromRelativeFileName, toRelativeFileName))
     {
         _services = services;
         _fromRelativeFileName = fromRelativeFileName;

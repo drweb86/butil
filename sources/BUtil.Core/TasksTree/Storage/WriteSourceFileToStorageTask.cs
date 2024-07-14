@@ -31,7 +31,7 @@ internal class WriteSourceFileToStorageTask : BuTaskV2
         List<VersionState> versionStates,
         string actualFile,
         bool ignoreLastVersion) :
-        base(services.Log, events, string.Format(Localization.Resources.File_Saving,
+        base(services.CommonServices.Log, events, string.Format(Localization.Resources.File_Saving,
             string.Join(", ", storageFiles
                 .Select(x => SourceItemHelper.GetFriendlyFileName(sourceItem, x.FileState.FileName)))))
     {

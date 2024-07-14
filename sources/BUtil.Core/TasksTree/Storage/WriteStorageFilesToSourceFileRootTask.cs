@@ -6,24 +6,26 @@ using BUtil.Core.Services;
 using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace BUtil.Core.TasksTree.Storage;
 
-public class WriteStorageFilesToSourceFileTask : ParallelBuTask
+public class WriteStorageFilesToSourceFileRootTask : ParallelBuTask
 {
     private readonly CommonServicesIoc _commonServicesIoc;
     private readonly StorageSpecificServicesIoc _storageSpecificServicesIoc;
 
-    public WriteStorageFilesToSourceFileTask(ILog log, TaskEvents events,
+    public WriteStorageFilesToSourceFileRootTask(ILog log, TaskEvents events,
         IStorageSettingsV2 storageSettings,
         SourceItemV2 sourceItem,
         IEnumerable<StorageFile> storageFiles,
-        string destinationFolder)
+        string destinationFolder,
+        Action<string?> onGetLastMinuteMessage)
         : base(log, events, Resources.Task_Restore)
     {
-        _commonServicesIoc = new CommonServicesIoc(log);
+        _commonServicesIoc = new CommonServicesIoc(log, onGetLastMinuteMessage);
         _storageSpecificServicesIoc = new StorageSpecificServicesIoc(_commonServicesIoc, storageSettings, true);
 
         Children = storageFiles

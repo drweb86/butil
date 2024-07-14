@@ -10,7 +10,6 @@ public class TaskEvents
 {
     public event EventHandler<TaskProgressEventArgs>? OnTaskProgress;
     public event EventHandler<DuringExecutionTasksAddedEventArgs>? OnDuringExecutionTasksAdded;
-    public event EventHandler<MessageEventArgs>? OnMessage;
 
     public void TaskProgessUpdate(Guid taskId, ProcessingStatus status)
     {
@@ -31,13 +30,5 @@ public class TaskEvents
         if (handler == null)
             return;
         handler(this, new DuringExecutionTasksAddedEventArgs(taskId, tasks));
-    }
-
-    public void Message(string message)
-    {
-        var handler = OnMessage;
-        if (handler == null)
-            return;
-        handler(this, new MessageEventArgs(message));
     }
 }

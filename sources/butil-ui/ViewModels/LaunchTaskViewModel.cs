@@ -139,7 +139,7 @@ public class LaunchTaskViewModel : ViewModelBase
         TaskExecuterViewModel = new TaskExecuterViewModel(
             _taskEvents,
             _task.Name,
-            (log, taskEvents) => RootTaskFactory.Create(log, _task, taskEvents),
+            (log, taskEvents, onGetLastMinuteMessage) => RootTaskFactory.Create(log, _task, taskEvents, onGetLastMinuteMessage),
             OnTaskCompleted);
     }
 

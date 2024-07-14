@@ -97,9 +97,9 @@ public class RestoreViewModel : ViewModelBase
         this.TaskExecuterViewModel = new TaskExecuterViewModel(
             taskEvents,
             Resources.Task_Restore,
-            (log, taskEvents) => 
+            (log, taskEvents, getLastMinuteMessage) => 
             {
-                openIncrementalBackupTask = new GetExistingVersionStateFromStorageRootTask(log, taskEvents, storageOptions, EncryptionTaskViewModel.Password);
+                openIncrementalBackupTask = new GetExistingVersionStateFromStorageRootTask(log, taskEvents, storageOptions, EncryptionTaskViewModel.Password, getLastMinuteMessage);
                 return openIncrementalBackupTask;
             },
             isOk =>

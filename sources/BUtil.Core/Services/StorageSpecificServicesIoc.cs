@@ -11,7 +11,7 @@ namespace BUtil.Core.TasksTree.IncrementalModel;
 
 public class StorageSpecificServicesIoc : IDisposable
 {
-    public ILog Log { get; }
+    public CommonServicesIoc CommonServices { get; }
     public IStorageSettingsV2 StorageSettings { get; }
 
     private readonly Lazy<IStorage> _storage;
@@ -25,9 +25,9 @@ public class StorageSpecificServicesIoc : IDisposable
 
     public StorageSpecificServicesIoc(CommonServicesIoc commonServices, IStorageSettingsV2 storageSettings, bool autodetectConnectionSettings = false)
     {
-        Log = commonServices.Log;
+        CommonServices = commonServices;
         StorageSettings = storageSettings;
-        _storage = new Lazy<IStorage>(() => StorageFactory.Create(Log, storageSettings, autodetectConnectionSettings));
+        _storage = new Lazy<IStorage>(() => StorageFactory.Create(commonServices.Log, storageSettings, autodetectConnectionSettings));
         _incrementalBackupStateService = new Lazy<IncrementalBackupStateService>(() => new IncrementalBackupStateService(this, commonServices.HashService));
         _incrementalBackupFileService = new Lazy<IncrementalBackupFileService>(() => new IncrementalBackupFileService(commonServices.HashService, this));
     }

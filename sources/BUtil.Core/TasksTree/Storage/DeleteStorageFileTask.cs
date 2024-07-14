@@ -14,7 +14,7 @@ internal class DeleteStorageFileTask : BuTaskV2
         StorageSpecificServicesIoc services,
         TaskEvents events,
         string relativeFileName) :
-        base(services.Log, events, string.Format(Resources.File_Deleting, relativeFileName))
+        base(services.CommonServices.Log, events, string.Format(Resources.File_Deleting, relativeFileName))
     {
         _services = services;
         _relativeFileName = relativeFileName;

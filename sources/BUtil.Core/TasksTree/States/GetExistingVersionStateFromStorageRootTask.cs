@@ -18,10 +18,10 @@ public class GetExistingVersionStateFromStorageRootTask : SequentialBuTask
     private readonly StorageSpecificServicesIoc _storageSpecificServicesIoc;
     private readonly RemoteStateLoadTask _getStateOfStorageTask;
 
-    public GetExistingVersionStateFromStorageRootTask(ILog log, TaskEvents events, IStorageSettingsV2 storageSettings, string password)
+    public GetExistingVersionStateFromStorageRootTask(ILog log, TaskEvents events, IStorageSettingsV2 storageSettings, string password, System.Action<string?> getLastMinuteMessage)
         : base(log, events, "Get existing version state from storage")
     {
-        _commonServicesIoc = new CommonServicesIoc(log);
+        _commonServicesIoc = new CommonServicesIoc(log, getLastMinuteMessage);
         _storageSpecificServicesIoc = new StorageSpecificServicesIoc(_commonServicesIoc, storageSettings);
         _getStateOfStorageTask = new(_storageSpecificServicesIoc, events, password);
         Children = new List<BuTask> { _getStateOfStorageTask };
@@ -37,7 +37,7 @@ public class GetExistingVersionStateFromStorageRootTask : SequentialBuTask
         {
             if (!_getStateOfStorageTask.StorageState!.VersionStates.Any())
             {
-                Events.Message(string.Format(Resources.RestoreFrom_Field_Validation_NoStateFiles, IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile));
+                _commonServicesIoc.LastMinuteMessageService.AddLastMinuteLogMessage(string.Format(Resources.RestoreFrom_Field_Validation_NoStateFiles, IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile));
                 IsSuccess = false;
             }
         }

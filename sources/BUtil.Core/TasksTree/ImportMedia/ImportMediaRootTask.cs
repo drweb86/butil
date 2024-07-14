@@ -5,7 +5,6 @@ using BUtil.Core.Logs;
 using BUtil.Core.Services;
 using BUtil.Core.TasksTree.Core;
 using System;
-using System.Collections.Generic;
 
 namespace BUtil.Core.TasksTree.MediaSyncBackupModel;
 
@@ -13,13 +12,13 @@ class ImportMediaRootTask : SequentialBuTask
 {
     private readonly CommonServicesIoc _commonServicesIoc;
 
-    public ImportMediaRootTask(ILog log, TaskEvents backupEvents, TaskV2 backupTask)
+    public ImportMediaRootTask(ILog log, TaskEvents backupEvents, TaskV2 backupTask, Action<string?> onGetLastMinuteMessage)
         : base(log, backupEvents, string.Empty)
     {
         var typedModel = (ImportMediaTaskModelOptionsV2)backupTask.Model;
         var sourceItem = new SourceItemV2(typedModel.DestinationFolder, true);
 
-        _commonServicesIoc = new CommonServicesIoc(log);
+        _commonServicesIoc = new CommonServicesIoc(log, onGetLastMinuteMessage);
         var getStateOfSourceItemTask = new GetStateOfSourceItemTask(backupEvents, sourceItem, Array.Empty<string>(), _commonServicesIoc);
         var importFiles = new ImportFilesTask(backupEvents, backupTask, getStateOfSourceItemTask, _commonServicesIoc);
 
@@ -28,26 +27,11 @@ class ImportMediaRootTask : SequentialBuTask
 
     public override void Execute()
     {
-        Events.OnMessage += OnAddLastMinuteLogMessage;
         UpdateStatus(ProcessingStatus.InProgress);
 
         base.Execute();
 
         UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
-        Events.OnMessage -= OnAddLastMinuteLogMessage;
-        PutLastMinuteLogMessages();
         _commonServicesIoc.Dispose();
-    }
-
-    private void PutLastMinuteLogMessages()
-    {
-        foreach (var lastMinuteLogMessage in _lastMinuteLogMessages)
-            Log.WriteLine(LoggingEvent.Debug, lastMinuteLogMessage);
-    }
-
-    private readonly List<string> _lastMinuteLogMessages = new();
-    private void OnAddLastMinuteLogMessage(object? sender, MessageEventArgs e)
-    {
-        _lastMinuteLogMessages.Add(e.Message);
     }
 }

@@ -6,6 +6,7 @@ using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
 using BUtil.Core.TasksTree.Storage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -22,10 +23,11 @@ public class DeleteIncrementalBackupVersionrRootTask : SequentialBuTask
         IncrementalBackupState state,
         IncrementalBackupModelOptionsV2 options,
         VersionState versionToDelete,
-        IStorageSettingsV2 storageSettingsV2)
+        IStorageSettingsV2 storageSettingsV2,
+        Action<string?> onGetLastMinuteMessage)
         : base(log, events, $"Delete incremental backup version {versionToDelete.BackupDateUtc}")
     {
-        _commonServicesIoc = new CommonServicesIoc(log);
+        _commonServicesIoc = new CommonServicesIoc(log, onGetLastMinuteMessage);
         _storageSpecificServicesIoc = new StorageSpecificServicesIoc(_commonServicesIoc, storageSettingsV2);
 
         DeleteVersionUtil.DeleteVersion(state, versionToDelete, out var storageFilesToDelete, out var storageFileMovements);
