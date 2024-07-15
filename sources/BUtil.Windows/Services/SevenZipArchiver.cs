@@ -67,7 +67,7 @@ class SevenZipArchiver : IArchiver
             throw new InvalidDataException("7-zip was not found.");
 
         var passwordIsSet = !string.IsNullOrWhiteSpace(password);
-        string input = Environment.NewLine; // to handle wrong password
+        string input; // to handle wrong password
         string arguments;
         if (!passwordIsSet)
         {

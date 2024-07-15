@@ -99,10 +99,8 @@ public static class RootTaskFactory
 
             return true;
         }
-        else if (options is ImportMediaTaskModelOptionsV2)
+        else if (options is ImportMediaTaskModelOptionsV2 typedOptions)
         {
-            var typedOptions = (ImportMediaTaskModelOptionsV2)options;
-
             var storageError = StorageFactory.Test(log, new FolderStorageSettingsV2 { DestinationFolder = typedOptions.DestinationFolder }, writeMode);
             if (storageError != null)
             {
@@ -126,11 +124,9 @@ public static class RootTaskFactory
             try
             {
                 var str = DateTokenReplacer.ParseString(typedOptions.TransformFileName, DateTime.Now);
-                using (var tempFolder = new TempFolder())
-                {
-                    var fullPath = Path.Combine(tempFolder.Folder, str);
-                    Directory.CreateDirectory(fullPath);
-                }
+                using var tempFolder = new TempFolder();
+                var fullPath = Path.Combine(tempFolder.Folder, str);
+                Directory.CreateDirectory(fullPath);
             }
             catch
             {

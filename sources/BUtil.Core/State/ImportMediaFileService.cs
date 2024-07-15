@@ -10,6 +10,7 @@ public class ImportMediaFileService
 {
     private readonly string _folder;
     private const string _extension = ".json";
+    private static readonly JsonSerializerOptions _jsonSerializerOptions = new() { WriteIndented = true };
 
     public ImportMediaFileService()
     {
@@ -34,7 +35,7 @@ public class ImportMediaFileService
     public void Save(ImportMediaState task, string name)
     {
         var fileName = GetFileName(name);
-        var json = JsonSerializer.Serialize(task, new JsonSerializerOptions { WriteIndented = true });
+        var json = JsonSerializer.Serialize(task, _jsonSerializerOptions);
         if (File.Exists(fileName))
             File.Delete(fileName);
         File.WriteAllText(fileName, json);
@@ -43,7 +44,7 @@ public class ImportMediaFileService
     private string GetFileName(string name)
     {
         if (name.Contains("..") || name.Contains('/') || name.Contains('\\'))
-            throw new ArgumentException(nameof(name));
+            throw new ArgumentException("No .. / and \\");
 
         return Path.Combine(_folder, $"{name}{_extension}");
     }

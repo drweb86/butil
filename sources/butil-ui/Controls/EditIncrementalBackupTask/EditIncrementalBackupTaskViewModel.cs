@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace butil_ui.Controls;
 
-
 public class EditIncrementalBackupTaskViewModel : ViewModelBase
 {
     private readonly string _taskName;
@@ -40,7 +39,9 @@ public class EditIncrementalBackupTaskViewModel : ViewModelBase
 
     #region Commands
 
+#pragma warning disable CA1822 // Mark members as static
     public void ButtonCancelCommand()
+#pragma warning restore CA1822 // Mark members as static
     {
         WindowManager.SwitchView(new TasksViewModel());
     }
@@ -81,8 +82,8 @@ public class EditIncrementalBackupTaskViewModel : ViewModelBase
     #endregion
 
     #region Labels
-    public string Button_Cancel => Resources.Button_Cancel;
-    public string Button_OK => Resources.Button_OK;
+    public static string Button_Cancel => Resources.Button_Cancel;
+    public static string Button_OK => Resources.Button_OK;
 
     #endregion
 }

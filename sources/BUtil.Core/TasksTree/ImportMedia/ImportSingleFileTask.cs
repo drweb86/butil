@@ -49,29 +49,25 @@ class ImportSingleFileTask : BuTaskV2
         var actualFileName = GetActualDestinationFileName(destinationFileName);
         var destFolder = Path.GetDirectoryName(actualFileName);
 
-        using (var temp = new TempFolder())
+        using var temp = new TempFolder();
+        var exchangeFile = Path.Combine(temp.Folder, Path.GetFileName(this.File));
+        _fromStorage.Download(this.File, exchangeFile);
+        System.IO.File.SetCreationTime(exchangeFile, lastWriteTime);
+        System.IO.File.SetLastWriteTime(exchangeFile, lastWriteTime);
+
+        var fileInfo = new FileInfo(exchangeFile);
+        var state = new FileState(exchangeFile, fileInfo.LastWriteTimeUtc, fileInfo.Length, this._commonServicesIoc.HashService.GetSha512(exchangeFile, true));
+
+        if (_state.FileStates.Any(x => x.CompareTo(state, true)))
         {
-            var exchangeFile = Path.Combine(temp.Folder, Path.GetFileName(this.File));
-            _fromStorage.Download(this.File, exchangeFile);
-            System.IO.File.SetCreationTime(exchangeFile, lastWriteTime);
-            System.IO.File.SetLastWriteTime(exchangeFile, lastWriteTime);
-
-            var fileInfo = new FileInfo(exchangeFile);
-            var state = new FileState(exchangeFile, fileInfo.LastWriteTimeUtc, fileInfo.Length, this._commonServicesIoc.HashService.GetSha512(exchangeFile, true));
-
-            if (_state.FileStates.Any(x => x.CompareTo(state, true)))
-            {
-                Log.WriteLine(LoggingEvent.Debug, $"File {File} is already exists in destination folder. Skipping.");
-                IsSkipped = true;
-                return;
-            }
-
-            var uploadedFileName = _toStorage.Upload(exchangeFile, actualFileName);
-            if (uploadedFileName == null)
-                throw new IOException($"Failed to upload file {exchangeFile}");
-            System.IO.File.SetCreationTime(uploadedFileName.StorageFileName, lastWriteTime);
-            System.IO.File.SetLastWriteTime(uploadedFileName.StorageFileName, lastWriteTime);
+            Log.WriteLine(LoggingEvent.Debug, $"File {File} is already exists in destination folder. Skipping.");
+            IsSkipped = true;
+            return;
         }
+
+        var uploadedFileName = _toStorage.Upload(exchangeFile, actualFileName) ?? throw new IOException($"Failed to upload file {exchangeFile}");
+        System.IO.File.SetCreationTime(uploadedFileName.StorageFileName, lastWriteTime);
+        System.IO.File.SetLastWriteTime(uploadedFileName.StorageFileName, lastWriteTime);
     }
 
     private string GetActualDestinationFileName(string destFile)

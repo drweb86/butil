@@ -17,7 +17,9 @@ class WindowsUiService : IUiService
     {
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
+#pragma warning disable SYSLIB1054 // Use 'LibraryImportAttribute' instead of 'DllImportAttribute' to generate P/Invoke marshalling code at compile time
         private static extern bool FlashWindowEx(ref FLASHWINFO pwfi);
+#pragma warning restore SYSLIB1054 // Use 'LibraryImportAttribute' instead of 'DllImportAttribute' to generate P/Invoke marshalling code at compile time
 
         [StructLayout(LayoutKind.Sequential)]
         private struct FLASHWINFO

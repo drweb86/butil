@@ -32,7 +32,9 @@ public class StorageSpecificServicesIoc : IDisposable
         _incrementalBackupFileService = new Lazy<IncrementalBackupFileService>(() => new IncrementalBackupFileService(commonServices.HashService, this));
     }
 
+#pragma warning disable CA1816 // Dispose methods should call SuppressFinalize
     public void Dispose()
+#pragma warning restore CA1816 // Dispose methods should call SuppressFinalize
     {
         if (_storage.IsValueCreated)
             _storage.Value.Dispose();

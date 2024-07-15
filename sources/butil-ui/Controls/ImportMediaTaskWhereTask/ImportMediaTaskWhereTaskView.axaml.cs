@@ -32,10 +32,9 @@ public partial class ImportMediaTaskWhereTaskView : UserControl
             AllowMultiple = false
         });
 
-        var folder = folders.FirstOrDefault();
-        if (folder != null)
+        if (folders.Count == 1)
         {
-            dataContext.OutputFolder = folder.TryGetLocalPath() ?? folder.Path.ToString();
+            dataContext.OutputFolder = folders[0].TryGetLocalPath() ?? folders[0].Path.ToString();
         }
     }
 }

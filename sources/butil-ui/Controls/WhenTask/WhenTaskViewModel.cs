@@ -41,19 +41,19 @@ public class WhenTaskViewModel : ObservableObject
     public bool IsWhenAvailable { get; }
 
     #region Labels
-    public string LeftMenu_When => Resources.LeftMenu_When;
-    public string Time_Field_Hour => Resources.Time_Field_Hour;
-    public string Time_Field_Minute => Resources.Time_Field_Minute;
-    public string Days_Field_Choose => Resources.Days_Field_Choose;
+    public static string LeftMenu_When => Resources.LeftMenu_When;
+    public static string Time_Field_Hour => Resources.Time_Field_Hour;
+    public static string Time_Field_Minute => Resources.Time_Field_Minute;
+    public static string Days_Field_Choose => Resources.Days_Field_Choose;
 
 
-    public string Days_Monday => Resources.Days_Monday;
-    public string Days_Tuesday => Resources.Days_Tuesday;
-    public string Days_Wednesday => Resources.Days_Wednesday;
-    public string Days_Thursday => Resources.Days_Thursday;
-    public string Days_Friday => Resources.Days_Friday;
-    public string Days_Saturday => Resources.Days_Saturday;
-    public string Days_Sunday => Resources.Days_Sunday;
+    public static string Days_Monday => Resources.Days_Monday;
+    public static string Days_Tuesday => Resources.Days_Tuesday;
+    public static string Days_Wednesday => Resources.Days_Wednesday;
+    public static string Days_Thursday => Resources.Days_Thursday;
+    public static string Days_Friday => Resources.Days_Friday;
+    public static string Days_Saturday => Resources.Days_Saturday;
+    public static string Days_Sunday => Resources.Days_Sunday;
 
     #endregion
 

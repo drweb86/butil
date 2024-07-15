@@ -4,13 +4,13 @@ using System.Text.RegularExpressions;
 
 namespace BUtil.Core.TasksTree.MediaSyncBackupModel;
 
-public static class DateTokenReplacer
+public static partial class DateTokenReplacer
 {
-    private const string RegexIncludeBrackets = @"{(?<Param>.*?)}";
+    private const string _regexIncludeBrackets = @"{(?<Param>.*?)}";
 
     public static string ParseString(string input, DateTime date)
     {
-        return Regex.Replace(input, RegexIncludeBrackets, match =>
+        return RegexIncludeBracketsCompileTime().Replace(input, match =>
         {
             string cleanedString = match.Groups["Param"].Value;
             if (cleanedString.StartsWith("DATE:"))
@@ -21,4 +21,7 @@ public static class DateTokenReplacer
             return string.Empty;
         });
     }
+
+    [GeneratedRegex(_regexIncludeBrackets)]
+    private static partial Regex RegexIncludeBracketsCompileTime();
 }

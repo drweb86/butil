@@ -6,18 +6,11 @@ using BUtil.Core.TasksTree.Core;
 using System.IO;
 
 namespace BUtil.Core.TasksTree.Synchronization;
-internal class SynchronizationLocalFileDeleteTask : BuTaskV2
+internal class SynchronizationLocalFileDeleteTask(SynchronizationServices synchronizationServices, TaskEvents events,
+    string localFolder, string relativeFileName) : BuTaskV2(synchronizationServices.CommonServices.Log, events, string.Format(Resources.File_Deleting, relativeFileName))
 {
-    private readonly string _localFolder;
-    private readonly string _relativeFileName;
-
-    public SynchronizationLocalFileDeleteTask(SynchronizationServices synchronizationServices, TaskEvents events,
-        string localFolder, string relativeFileName)
-        : base(synchronizationServices.CommonServices.Log, events, string.Format(Resources.File_Deleting, relativeFileName))
-    {
-        _localFolder = localFolder;
-        _relativeFileName = relativeFileName;
-    }
+    private readonly string _localFolder = localFolder;
+    private readonly string _relativeFileName = relativeFileName;
 
     protected override void ExecuteInternal()
     {

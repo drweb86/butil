@@ -27,7 +27,7 @@ public class EditSynchronizationTaskViewModel : ViewModelBase
         EncryptionTaskViewModel = new EncryptionTaskViewModel(model.Password, isNew, !isNew);
 
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
-        WhenTaskViewModel = new WhenTaskViewModel(isNew ? new ScheduleInfo() { Time = new System.TimeSpan(0, 0, 0), Days = new System.Collections.Generic.List<System.DayOfWeek> { System.DayOfWeek.Monday, System.DayOfWeek.Tuesday, System.DayOfWeek.Wednesday, System.DayOfWeek.Thursday, System.DayOfWeek.Friday, System.DayOfWeek.Saturday, System.DayOfWeek.Sunday } } : schedule?.GetSchedule(taskName) ?? new ScheduleInfo());
+        WhenTaskViewModel = new WhenTaskViewModel(isNew ? new ScheduleInfo() { Time = new System.TimeSpan(Constants.DefaultHours, Constants.DefaultMinutes, 0), Days = [System.DayOfWeek.Monday, System.DayOfWeek.Tuesday, System.DayOfWeek.Wednesday, System.DayOfWeek.Thursday, System.DayOfWeek.Friday, System.DayOfWeek.Saturday, System.DayOfWeek.Sunday] } : schedule?.GetSchedule(taskName) ?? new ScheduleInfo());
         WhereTaskViewModel = new WhereTaskViewModel(model.To, Resources.LeftMenu_Where, "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png");
         What = new SynchronizationWhatViewModel(model.LocalFolder, model.RepositorySubfolder, model.SynchronizationMode);
     }
@@ -41,7 +41,9 @@ public class EditSynchronizationTaskViewModel : ViewModelBase
 
     #region Commands
 
+#pragma warning disable CA1822 // Mark members as static
     public void ButtonCancelCommand()
+#pragma warning restore CA1822 // Mark members as static
     {
         WindowManager.SwitchView(new TasksViewModel());
     }
@@ -83,8 +85,8 @@ public class EditSynchronizationTaskViewModel : ViewModelBase
     #endregion
 
     #region Labels
-    public string Button_Cancel => Resources.Button_Cancel;
-    public string Button_OK => Resources.Button_OK;
+    public static string Button_Cancel => Resources.Button_Cancel;
+    public static string Button_OK => Resources.Button_OK;
 
     #endregion
 }

@@ -21,10 +21,10 @@ public class TaskExecuterViewModel : ObservableObject
 {
     private DateTime _startTime;
     private readonly System.Timers.Timer _timer = new(1000);
-    private readonly HashSet<Guid> _endedTasks = new();
+    private readonly HashSet<Guid> _endedTasks = [];
     private readonly Action<bool> _onTaskComplete = null!;
-    private FileLog? _log;
-    private BuTask _threadTask = null!;
+    private readonly FileLog? _log;
+    private readonly BuTask _threadTask = null!;
     private Thread? _thread;
 
     public TaskExecuterViewModel(string error)
@@ -178,8 +178,8 @@ public class TaskExecuterViewModel : ObservableObject
 
     #region Items
 
-    private ConcurrentDictionary<Guid, LaunchTaskViewItem> _itemsDict = new ConcurrentDictionary<Guid, LaunchTaskViewItem>();
-    private ObservableCollection<LaunchTaskViewItem> _items = new();
+    private readonly ConcurrentDictionary<Guid, LaunchTaskViewItem> _itemsDict = new();
+    private ObservableCollection<LaunchTaskViewItem> _items = [];
     public ObservableCollection<LaunchTaskViewItem> Items
     {
         get
@@ -403,7 +403,7 @@ public class TaskExecuterViewModel : ObservableObject
         SetProgress(_endedTasks.Count, _items.Count);
     }
 
-    private string TimeSpanToStringHelper(TimeSpan timeSpan)
+    private static string TimeSpanToStringHelper(TimeSpan timeSpan)
     {
         if (timeSpan.Days > 0)
             return $"{timeSpan.Days}:{timeSpan.Hours:00}:{timeSpan.Minutes:00}:{timeSpan.Seconds:00}";

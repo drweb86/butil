@@ -8,7 +8,7 @@ public class IncrementalBackupState
     public List<SourceItemState> LastSourceItemStates { get; set; }
     public IncrementalBackupState()
     {
-        VersionStates = new List<VersionState>();
-        LastSourceItemStates = new List<SourceItemState>();
+        VersionStates = [];
+        LastSourceItemStates = [];
     }
 }

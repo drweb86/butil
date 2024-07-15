@@ -323,7 +323,7 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
             .ForEach(FileChangeViewItems.Add);
     }
 
-    private static IEnumerable<Tuple<ChangeState, string>> GetChangesViewItems(VersionState state)
+    private static List<Tuple<ChangeState, string>> GetChangesViewItems(VersionState state)
     {
         var result = new List<Tuple<ChangeState, string>>();
 

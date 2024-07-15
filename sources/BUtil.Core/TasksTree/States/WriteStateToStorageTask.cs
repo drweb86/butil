@@ -8,28 +8,19 @@ using System;
 
 namespace BUtil.Core.TasksTree.States;
 
-internal class WriteStateToStorageTask : BuTaskV2
+internal class WriteStateToStorageTask(
+    StorageSpecificServicesIoc services,
+    TaskEvents events,
+    CalculateIncrementedVersionForStorageTask getIncrementedVersionTask,
+    WriteSourceFilesToStorageTask writeSourceFilesToStorageTask,
+    IncrementalBackupModelOptionsV2 incrementalBackupModelOptions) : BuTaskV2(services.CommonServices.Log, events, Localization.Resources.DataStorage_State_Saving)
 {
-    private readonly IncrementalBackupModelOptionsV2 _incrementalBackupModelOptions;
-    private readonly StorageSpecificServicesIoc _services;
-    private readonly CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask;
-    private readonly WriteSourceFilesToStorageTask _writeSourceFilesToStorageTask;
+    private readonly IncrementalBackupModelOptionsV2 _incrementalBackupModelOptions = incrementalBackupModelOptions;
+    private readonly StorageSpecificServicesIoc _services = services;
+    private readonly CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask = getIncrementedVersionTask;
+    private readonly WriteSourceFilesToStorageTask _writeSourceFilesToStorageTask = writeSourceFilesToStorageTask;
 
     public StorageFile? StateStorageFile { get; private set; }
-
-    public WriteStateToStorageTask(
-        StorageSpecificServicesIoc services,
-        TaskEvents events,
-        CalculateIncrementedVersionForStorageTask getIncrementedVersionTask,
-        WriteSourceFilesToStorageTask writeSourceFilesToStorageTask,
-        IncrementalBackupModelOptionsV2 incrementalBackupModelOptions)
-        : base(services.CommonServices.Log, events, Localization.Resources.DataStorage_State_Saving)
-    {
-        _incrementalBackupModelOptions = incrementalBackupModelOptions;
-        _services = services;
-        _getIncrementedVersionTask = getIncrementedVersionTask;
-        _writeSourceFilesToStorageTask = writeSourceFilesToStorageTask;
-    }
 
     protected override void ExecuteInternal()
     {

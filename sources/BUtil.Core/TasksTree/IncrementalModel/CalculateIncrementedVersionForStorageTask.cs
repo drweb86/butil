@@ -10,27 +10,18 @@ using System.Linq;
 
 namespace BUtil.Core.TasksTree;
 
-internal class CalculateIncrementedVersionForStorageTask : BuTaskV2
+internal class CalculateIncrementedVersionForStorageTask(ILog log, TaskEvents events, RemoteStateLoadTask storageStateTask,
+    IEnumerable<GetStateOfSourceItemTask> getSourceItemStateTasks) : BuTaskV2(log, events, BUtil.Core.Localization.Resources.IncrementalBackup_Version_Calculate)
 {
     public bool VersionIsNeeded { get; private set; }
     public IncrementalBackupState? IncrementalBackupState { get; private set; }
 
-    private readonly RemoteStateLoadTask _storageStateTask;
-    private readonly IEnumerable<GetStateOfSourceItemTask> _getSourceItemStateTasks;
-    public CalculateIncrementedVersionForStorageTask(ILog log, TaskEvents events, RemoteStateLoadTask storageStateTask,
-        IEnumerable<GetStateOfSourceItemTask> getSourceItemStateTasks) :
-        base(log, events, BUtil.Core.Localization.Resources.IncrementalBackup_Version_Calculate)
-    {
-        _storageStateTask = storageStateTask;
-        _getSourceItemStateTasks = getSourceItemStateTasks;
-    }
+    private readonly RemoteStateLoadTask _storageStateTask = storageStateTask;
+    private readonly IEnumerable<GetStateOfSourceItemTask> _getSourceItemStateTasks = getSourceItemStateTasks;
 
     protected override void ExecuteInternal()
     {
-        var storageState = _storageStateTask.StorageState;
-        if (storageState == null)
-            throw new ArgumentNullException(nameof(_storageStateTask.StorageState));
-
+        var storageState = _storageStateTask.StorageState ?? throw new ArgumentNullException(nameof(_storageStateTask.StorageState));
         var sourceItemStates = _getSourceItemStateTasks
             .Select(item => item.SourceItemState ?? throw new InvalidOperationException())
             .ToList();
@@ -41,6 +32,6 @@ internal class CalculateIncrementedVersionForStorageTask : BuTaskV2
             .Select(x => x.ShallowClone())
             .ToList();
         IncrementalBackupState = storageState;
-        VersionIsNeeded = versionState.SourceItemChanges.Any(x => x.CreatedFiles.Any() || x.UpdatedFiles.Any() || x.DeletedFiles.Any());
+        VersionIsNeeded = versionState.SourceItemChanges.Any(x => x.CreatedFiles.Count != 0 || x.UpdatedFiles.Count != 0 || x.DeletedFiles.Count != 0);
     }
 }

@@ -5,23 +5,15 @@ using BUtil.Core.TasksTree.IncrementalModel;
 
 namespace BUtil.Core.TasksTree.Storage;
 
-internal class MoveStorageFileTask : BuTaskV2
+internal class MoveStorageFileTask(
+    StorageSpecificServicesIoc services,
+    TaskEvents events,
+    string fromRelativeFileName,
+    string toRelativeFileName) : BuTaskV2(services.CommonServices.Log, events, string.Format(Resources.File_Moving, fromRelativeFileName, toRelativeFileName))
 {
-    private readonly StorageSpecificServicesIoc _services;
-    private readonly string _fromRelativeFileName;
-    private readonly string _toRelativeFileName;
-
-    public MoveStorageFileTask(
-        StorageSpecificServicesIoc services,
-        TaskEvents events,
-        string fromRelativeFileName,
-        string toRelativeFileName) :
-        base(services.CommonServices.Log, events, string.Format(Resources.File_Moving, fromRelativeFileName, toRelativeFileName))
-    {
-        _services = services;
-        _fromRelativeFileName = fromRelativeFileName;
-        _toRelativeFileName = toRelativeFileName;
-    }
+    private readonly StorageSpecificServicesIoc _services = services;
+    private readonly string _fromRelativeFileName = fromRelativeFileName;
+    private readonly string _toRelativeFileName = toRelativeFileName;
 
     protected override void ExecuteInternal()
     {

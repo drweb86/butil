@@ -30,13 +30,15 @@ public class EditMediaTaskViewModel : ViewModelBase
     public bool IsNew { get; set; }
 
     #region Labels
-    public string Button_Cancel => Resources.Button_Cancel;
-    public string Button_OK => Resources.Button_OK;
+    public static string Button_Cancel => Resources.Button_Cancel;
+    public static string Button_OK => Resources.Button_OK;
     #endregion
 
     #region Commands
 
+#pragma warning disable CA1822 // Mark members as static
     public void ButtonCancelCommand()
+#pragma warning restore CA1822 // Mark members as static
     {
         WindowManager.SwitchView(new TasksViewModel());
     }

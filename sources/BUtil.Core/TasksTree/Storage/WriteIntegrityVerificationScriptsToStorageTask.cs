@@ -11,30 +11,19 @@ using System.Linq;
 
 namespace BUtil.Core.TasksTree.Storage;
 
-internal class WriteIntegrityVerificationScriptsToStorageTask : BuTaskV2
+internal class WriteIntegrityVerificationScriptsToStorageTask(StorageSpecificServicesIoc services, TaskEvents events,
+    Func<bool> isVersionNeeded,
+    Func<IncrementalBackupState?> getState,
+    BuTask writeSourceFilesToStorageTask,
+    BuTask writeStateToStorageTask,
+    Func<StorageFile> getStateStorageFile) : BuTaskV2(services.CommonServices.Log, events, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Saving)
 {
-    private readonly StorageSpecificServicesIoc _services;
-    private readonly Func<bool> _isVersionNeeded;
-    private readonly Func<IncrementalBackupState?> _getState;
-    private readonly BuTask _writeSourceFilesToStorageTask;
-    private readonly BuTask _writeStateToStorageTask;
-    private readonly Func<StorageFile> _getStateStorageFile;
-
-    public WriteIntegrityVerificationScriptsToStorageTask(StorageSpecificServicesIoc services, TaskEvents events,
-        Func<bool> isVersionNeeded,
-        Func<IncrementalBackupState?> getState,
-        BuTask writeSourceFilesToStorageTask,
-        BuTask writeStateToStorageTask,
-        Func<StorageFile> getStateStorageFile)
-        : base(services.CommonServices.Log, events, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Saving)
-    {
-        _services = services;
-        _isVersionNeeded = isVersionNeeded;
-        _getState = getState;
-        _writeSourceFilesToStorageTask = writeSourceFilesToStorageTask;
-        _writeStateToStorageTask = writeStateToStorageTask;
-        _getStateStorageFile = getStateStorageFile;
-    }
+    private readonly StorageSpecificServicesIoc _services = services;
+    private readonly Func<bool> _isVersionNeeded = isVersionNeeded;
+    private readonly Func<IncrementalBackupState?> _getState = getState;
+    private readonly BuTask _writeSourceFilesToStorageTask = writeSourceFilesToStorageTask;
+    private readonly BuTask _writeStateToStorageTask = writeStateToStorageTask;
+    private readonly Func<StorageFile> _getStateStorageFile = getStateStorageFile;
 
     protected override void ExecuteInternal()
     {
@@ -61,16 +50,12 @@ internal class WriteIntegrityVerificationScriptsToStorageTask : BuTaskV2
             return;
         }
 
-        using (var tempFolder = new TempFolder())
-        {
-            var powershellFile = Path.Combine(tempFolder.Folder, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Ps1);
-            File.WriteAllText(powershellFile, GetPowershellScriptContent(state));
-            // TODO: check for null!
-            var uploadedFile = storage.Upload(powershellFile, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Ps1);
-            if (uploadedFile == null)
-                throw new Exception("Cannot save integrity verification scripts!");
-            File.Delete(powershellFile);
-        }
+        using var tempFolder = new TempFolder();
+        var powershellFile = Path.Combine(tempFolder.Folder, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Ps1);
+        File.WriteAllText(powershellFile, GetPowershellScriptContent(state));
+        // TODO: check for null!
+        var uploadedFile = storage.Upload(powershellFile, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Ps1) ?? throw new Exception("Cannot save integrity verification scripts!");
+        File.Delete(powershellFile);
     }
 
     private string GetPowershellScriptContent(IncrementalBackupState state)

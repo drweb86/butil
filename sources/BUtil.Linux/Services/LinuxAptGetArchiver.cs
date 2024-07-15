@@ -64,7 +64,7 @@ class LinuxAptGetArchiver : IArchiver
             throw new InvalidDataException("7-zip was not found. Use installation script.'");
 
         var passwordIsSet = !string.IsNullOrWhiteSpace(password);
-        string input = Environment.NewLine; // to handle wrong password
+        string input;
         string arguments;
         if (!passwordIsSet)
         {

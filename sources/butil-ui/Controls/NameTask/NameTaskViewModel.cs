@@ -4,28 +4,22 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace butil_ui.Controls;
 
-public class NameTaskViewModel : ObservableObject
+public class NameTaskViewModel(bool isExpanded, string help, string name) : ObservableObject
 {
-    public NameTaskViewModel(bool isExpanded, string help, string name)
-    {
-        Help = help;
-        IsExpanded = isExpanded;
-        _name = name;
-    }
 
     #region Labels
-    public string Name_Title => Resources.Name_Title;
-    public string Name_Field => Resources.Name_Field;
-    public string Icons_Help_Link => Resources.Icons_Help_Link;
-    public string Help { get; }
+    public static string Name_Title => Resources.Name_Title;
+    public static string Name_Field => Resources.Name_Field;
+    public static string Icons_Help_Link => Resources.Icons_Help_Link;
+    public string Help { get; } = help;
 
     #endregion
 
-    public bool IsExpanded { get; }
+    public bool IsExpanded { get; } = isExpanded;
 
     #region Name
 
-    private string _name;
+    private string _name = name;
 
     public string Name
     {
@@ -46,7 +40,9 @@ public class NameTaskViewModel : ObservableObject
 
     #region Commands
 
+#pragma warning disable CA1822 // Mark members as static
     public void OpenCharsPageCommand()
+#pragma warning restore CA1822 // Mark members as static
     {
         ProcessHelper.ShellExecute(@"https://github.com/drweb86/butil/blob/master/help/Icons.md");
     }

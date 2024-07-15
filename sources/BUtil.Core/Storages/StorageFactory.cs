@@ -8,17 +8,15 @@ public class StorageFactory
 {
     public static IStorage Create(ILog log, IStorageSettingsV2 storageSettings, bool autodetectConnectionSettings)
     {
-        if (storageSettings is FolderStorageSettingsV2)
-            return new FailoverStorageWrapper(log, new FolderStorage(log, (FolderStorageSettingsV2)storageSettings));
-        else if (storageSettings is SambaStorageSettingsV2)
-            return new FailoverStorageWrapper(log, PlatformSpecificExperience.Instance.GetSmbStorage(log, (SambaStorageSettingsV2)storageSettings));
-        else if (storageSettings is FtpsStorageSettingsV2)
-            return new FailoverStorageWrapper(log, new FtpsStorage(log, (FtpsStorageSettingsV2)storageSettings, autodetectConnectionSettings));
-        else if (storageSettings is MtpStorageSettings)
+        if (storageSettings is FolderStorageSettingsV2 folder)
+            return new FailoverStorageWrapper(log, new FolderStorage(log, folder));
+        else if (storageSettings is SambaStorageSettingsV2 samba)
+            return new FailoverStorageWrapper(log, PlatformSpecificExperience.Instance.GetSmbStorage(log, samba));
+        else if (storageSettings is FtpsStorageSettingsV2 ftps)
+            return new FailoverStorageWrapper(log, new FtpsStorage(log, ftps, autodetectConnectionSettings));
+        else if (storageSettings is MtpStorageSettings mtp)
         {
-            var mtpStorage = PlatformSpecificExperience.Instance.GetMtpStorage(log, (MtpStorageSettings)storageSettings);
-            if (mtpStorage == null)
-                throw new NotSupportedException("Your OS does not support MTP storage");
+            var mtpStorage = PlatformSpecificExperience.Instance.GetMtpStorage(log, mtp) ?? throw new NotSupportedException("Your OS does not support MTP storage");
             return new FailoverStorageWrapper(log, mtpStorage);
         }
         throw new ArgumentOutOfRangeException(nameof(storageSettings));

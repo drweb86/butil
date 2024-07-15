@@ -8,6 +8,6 @@ public partial class TaskExecuterView : UserControl
     {
         InitializeComponent();
 
-        this.DataContext = new TaskExecuterViewModel("error");
+        DataContext = new TaskExecuterViewModel("error");
     }
 }

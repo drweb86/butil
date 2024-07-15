@@ -32,10 +32,9 @@ public partial class VersionsListView : UserControl
             AllowMultiple = false
         });
 
-        var folder = folders.FirstOrDefault();
-        if (folder != null)
+        if (folders.Count == 1)
         {
-            dataContext.RecoverTo(folder.TryGetLocalPath() ?? folder.Path.ToString());
+            dataContext.RecoverTo(folders[0].TryGetLocalPath() ?? folders[0].Path.ToString());
         }
     }
 }

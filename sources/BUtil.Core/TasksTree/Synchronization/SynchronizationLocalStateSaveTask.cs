@@ -7,23 +7,15 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace BUtil.Core.TasksTree.Synchronization;
-internal class SynchronizationLocalStateSaveTask : BuTaskV2
+internal class SynchronizationLocalStateSaveTask(
+    IEnumerable<BuTask> dependantTasks,
+    SynchronizationServices synchronizationServices,
+    TaskEvents events,
+    Func<SynchronizationState> getSynchronizationState) : BuTaskV2(synchronizationServices.CommonServices.Log, events, Resources.Local_State_Saving)
 {
-    private readonly IEnumerable<BuTask> _dependantTasks;
-    private readonly SynchronizationServices _synchronizationServices;
-    private readonly Func<SynchronizationState> _getSynchronizationState;
-
-    public SynchronizationLocalStateSaveTask(
-        IEnumerable<BuTask> dependantTasks,
-        SynchronizationServices synchronizationServices,
-        TaskEvents events,
-        Func<SynchronizationState> getSynchronizationState)
-        : base(synchronizationServices.CommonServices.Log, events, Resources.Local_State_Saving)
-    {
-        _dependantTasks = dependantTasks;
-        _synchronizationServices = synchronizationServices;
-        _getSynchronizationState = getSynchronizationState;
-    }
+    private readonly IEnumerable<BuTask> _dependantTasks = dependantTasks;
+    private readonly SynchronizationServices _synchronizationServices = synchronizationServices;
+    private readonly Func<SynchronizationState> _getSynchronizationState = getSynchronizationState;
 
     protected override void ExecuteInternal()
     {

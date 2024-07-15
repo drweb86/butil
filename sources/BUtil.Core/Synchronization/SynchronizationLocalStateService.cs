@@ -5,18 +5,12 @@ using BUtil.Core.TasksTree.Synchronization;
 using System.IO;
 using System.Text.Json;
 
-class SynchronizationLocalStateService
+class SynchronizationLocalStateService(string taskName, string localFolder, string? repositorySubfolder)
 {
-    private readonly string _taskName;
-    private readonly string _localFolder;
-    private readonly string? _repositorySubfolder;
-
-    public SynchronizationLocalStateService(string taskName, string localFolder, string? repositorySubfolder)
-    {
-        _taskName = taskName;
-        _localFolder = localFolder;
-        _repositorySubfolder = repositorySubfolder;
-    }
+    private readonly string _taskName = taskName;
+    private readonly string _localFolder = localFolder;
+    private readonly string? _repositorySubfolder = repositorySubfolder;
+    private static readonly JsonSerializerOptions _jsonSerializerOptions = new() { WriteIndented = true };
 
     private string GetFileName()
     {
@@ -69,9 +63,6 @@ class SynchronizationLocalStateService
         };
 
 
-        File.WriteAllText(fileName, JsonSerializer.Serialize(wrapper, new JsonSerializerOptions
-        {
-            WriteIndented = true,
-        }));
+        File.WriteAllText(fileName, JsonSerializer.Serialize(wrapper, _jsonSerializerOptions));
     }
 }

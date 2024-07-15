@@ -1,14 +1,9 @@
 ﻿namespace BUtil.Core.TasksTree;
 
-internal class Quota
+internal class Quota(long quota = 0)
 {
-    private long _quota;
+    private long _quota = quota == 0 ? long.MaxValue : quota;
     private readonly object _lock = new();
-
-    public Quota(long quota = 0)
-    {
-        _quota = quota == 0 ? long.MaxValue : quota;
-    }
 
     public bool TryQuota(long quotaDemand)
     {

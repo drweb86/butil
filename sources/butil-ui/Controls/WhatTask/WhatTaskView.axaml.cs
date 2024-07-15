@@ -12,7 +12,7 @@ public partial class WhatTaskView : UserControl
     {
         InitializeComponent();
 
-        this.DataContext = new WhatTaskViewModel(new System.Collections.Generic.List<BUtil.Core.ConfigurationFileModels.V2.SourceItemV2> { }, new System.Collections.Generic.List<string> { });
+        DataContext = new WhatTaskViewModel([], []);
     }
 
     public void BrowseFilesCommand(object? sender, RoutedEventArgs args)

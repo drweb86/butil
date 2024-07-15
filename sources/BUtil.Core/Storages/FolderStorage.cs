@@ -74,9 +74,7 @@ public class FolderStorage : StorageBase<FolderStorageSettingsV2>
         {
             var folder = Guid.NewGuid().ToString();
             var file = Path.Combine("BUtil check " + folder, Guid.NewGuid().ToString());
-            var uploaded = Upload(Assembly.GetExecutingAssembly().Location, file);
-            if (uploaded == null)
-                throw new Exception("Failed to upload!");
+            _ = Upload(Assembly.GetExecutingAssembly().Location, file) ?? throw new Exception("Failed to upload!");
             DeleteFolder(folder);
         }
 
@@ -116,8 +114,8 @@ public class FolderStorage : StorageBase<FolderStorageSettingsV2>
 
         return Directory
             .GetDirectories(fullPathName, mask ?? "*.*")
-            .Select(x => x.Substring(fullPathName.Length))
-            .Select(x => x.Trim(new[] { '\\', '/' }))
+            .Select(x => x[fullPathName.Length..])
+            .Select(x => x.Trim(['\\', '/']))
             .ToArray();
     }
 
@@ -157,8 +155,8 @@ public class FolderStorage : StorageBase<FolderStorageSettingsV2>
 
         return Directory
             .GetFiles(actualFolder, "*.*", option)
-            .Select(x => x.Substring(actualFolder.Length))
-            .Select(x => x.Trim(new[] { '\\', '/' }))
+            .Select(x => x[actualFolder.Length..])
+            .Select(x => x.Trim(['\\', '/']))
             .ToArray();
     }
 
@@ -169,7 +167,9 @@ public class FolderStorage : StorageBase<FolderStorageSettingsV2>
         return File.GetLastWriteTime(actualFile);
     }
 
+#pragma warning disable CA1816 // Dispose methods should call SuppressFinalize
     public override void Dispose()
+#pragma warning restore CA1816 // Dispose methods should call SuppressFinalize
     {
         Unmount();
     }

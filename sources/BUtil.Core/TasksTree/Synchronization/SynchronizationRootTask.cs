@@ -21,6 +21,7 @@ class SynchronizationRootTask : SequentialBuTask
 {
     private readonly SynchronizationServices _synchronizationServices;
     private readonly SynchronizationModel _model;
+    private static readonly JsonSerializerOptions _jsonSerializerOptions = new() { WriteIndented = true };
 
     private readonly SynchronizationAllStatesReadTask _synchronizationAllStatesReadTask;
 
@@ -33,7 +34,7 @@ class SynchronizationRootTask : SequentialBuTask
 
         _synchronizationAllStatesReadTask = new SynchronizationAllStatesReadTask(_synchronizationServices, Events, _model);
 
-        Children = new List<BuTask> { _synchronizationAllStatesReadTask };
+        Children = [_synchronizationAllStatesReadTask];
     }
 
     public override void Execute()
@@ -46,7 +47,7 @@ class SynchronizationRootTask : SequentialBuTask
         {
             var syncItems = _synchronizationServices.DecisionService.Decide(_model.TaskOptions.SynchronizationMode, _model.LocalState, _model.ActualFiles, _model.RemoteState);
             LogDebug("Decisions");
-            LogDebug(JsonSerializer.Serialize(syncItems, new JsonSerializerOptions { WriteIndented = true }));
+            LogDebug(JsonSerializer.Serialize(syncItems, _jsonSerializerOptions));
             var tasks = new List<BuTask>();
             ExecuteActionsLocally(tasks, syncItems);
             ExecuteActionsRemotely(tasks, syncItems);
@@ -57,9 +58,9 @@ class SynchronizationRootTask : SequentialBuTask
                 syncItems.Any(x => x.ActualFileAction != SynchronizationDecision.DoNothing) ||
                 syncItems.Any(x => x.ForceUpdateState))
             {
-                var getSourceItemStateTask = new GetStateOfSourceItemTask(Events, _model.LocalSourceItem, new List<string>(), _synchronizationServices.CommonServices);
+                var getSourceItemStateTask = new GetStateOfSourceItemTask(Events, _model.LocalSourceItem, [], _synchronizationServices.CommonServices);
                 tasks.Add(getSourceItemStateTask);
-                tasks.Add(new SynchronizationLocalStateSaveTask(tasks.ToArray(), _synchronizationServices, Events, () => GetLocalState(GetActualFiles(getSourceItemStateTask))));
+                tasks.Add(new SynchronizationLocalStateSaveTask([.. tasks], _synchronizationServices, Events, () => GetLocalState(GetActualFiles(getSourceItemStateTask))));
             }
 
             Events.DuringExecutionTasksAdded(Id, tasks);
@@ -72,19 +73,14 @@ class SynchronizationRootTask : SequentialBuTask
         _synchronizationServices.Dispose();
     }
 
-    private SynchronizationState GetActualFiles(GetStateOfSourceItemTask task)
+    private static SynchronizationState GetActualFiles(GetStateOfSourceItemTask task)
     {
         if (!task.IsSuccess)
         {
             throw new InvalidOperationException("Source item state population has failed!");
         }
 
-        var state = task.SourceItemState;
-        if (state == null)
-        {
-            throw new InvalidOperationException("Source item state is corrupted (null)!");
-        }
-
+        var state = task.SourceItemState ?? throw new InvalidOperationException("Source item state is corrupted (null)!");
         return new SynchronizationState()
         {
             FileSystemEntries = state.FileStates
@@ -150,7 +146,7 @@ class SynchronizationRootTask : SequentialBuTask
         var versionUtc = DateTime.UtcNow;
         var sourceItemDir = SourceItemHelper.GetSourceItemDirectory(_model.RemoteSourceItem);
 
-        var actualRemoteSourceItem = _model.RemoteSourceItem ?? _model.CreateVirtualSourceItem();
+        var actualRemoteSourceItem = _model.RemoteSourceItem ?? SynchronizationModel.CreateVirtualSourceItem();
         var storageUploadTaskOptions = new StorageUploadTaskOptions(
             _model.RemoteStorageState ?? new IncrementalBackupState(),
             [

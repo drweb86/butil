@@ -9,29 +9,20 @@ using System;
 
 namespace BUtil.Core.TasksTree.Storage;
 
-public class WriteStorageFileToSourceFileTask : BuTaskV2
+public class WriteStorageFileToSourceFileTask(
+    StorageSpecificServicesIoc storageSpecificServices,
+    TaskEvents events,
+    SourceItemV2 sourceItem,
+    StorageFile storageFile,
+    string destinationFolder) : BuTaskV2(
+        storageSpecificServices.CommonServices.Log,
+        events,
+        string.Format(Resources.File_Saving, SourceItemHelper.GetFriendlyFileName(sourceItem, storageFile.FileState.FileName)))
 {
-    private readonly StorageSpecificServicesIoc _storageSpecificServices;
-    private readonly SourceItemV2 _sourceItem;
-    private readonly StorageFile _storageFile;
-    private readonly string _destinationFolder;
-
-    public WriteStorageFileToSourceFileTask(
-        StorageSpecificServicesIoc storageSpecificServices,
-        TaskEvents events,
-        SourceItemV2 sourceItem,
-        StorageFile storageFile,
-        string destinationFolder)
-        : base(
-            storageSpecificServices.CommonServices.Log,
-            events,
-            string.Format(Resources.File_Saving, SourceItemHelper.GetFriendlyFileName(sourceItem, storageFile.FileState.FileName)))
-    {
-        _storageSpecificServices = storageSpecificServices;
-        _sourceItem = sourceItem;
-        _storageFile = storageFile;
-        _destinationFolder = destinationFolder;
-    }
+    private readonly StorageSpecificServicesIoc _storageSpecificServices = storageSpecificServices;
+    private readonly SourceItemV2 _sourceItem = sourceItem;
+    private readonly StorageFile _storageFile = storageFile;
+    private readonly string _destinationFolder = destinationFolder;
 
     protected override void ExecuteInternal()
     {

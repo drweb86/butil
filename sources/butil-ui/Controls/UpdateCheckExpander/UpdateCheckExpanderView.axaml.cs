@@ -8,8 +8,8 @@ public partial class UpdateCheckExpanderView : UserControl
     {
         InitializeComponent();
 
-        var viewModel = new Controls.UpdateCheckExpander.UpdateCheckExpanderViewModel();
-        this.DataContext = viewModel;
+        var viewModel = new UpdateCheckExpander.UpdateCheckExpanderViewModel();
+        DataContext = viewModel;
         viewModel.Initialize();
     }
 }

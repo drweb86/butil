@@ -148,7 +148,7 @@ public partial class MainWindowViewModel : ViewModelBase
     public MainWindowViewModel()
     {
         var settingsService = new SettingsStoreService();
-        ApplicationSettings.Theme = settingsService.Load(ThemeSetting.Name, ThemeSetting.DefaultValue);
+        ApplicationSettings.Theme = SettingsStoreService.Load(ThemeSetting.Name, ThemeSetting.DefaultValue);
         WindowBackground = ColorPalette.GetBrush(SemanticColor.WindowBackground);
         HeaderBackground = ColorPalette.GetBrush(SemanticColor.HeaderBackground);
 

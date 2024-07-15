@@ -5,22 +5,14 @@ using System.Collections.Generic;
 
 namespace BUtil.Core.TasksTree.Storage;
 
-class StorageUploadTaskSourceItemChange
+class StorageUploadTaskSourceItemChange(
+    SourceItemV2 sourceItem,
+    IEnumerable<string> deletedFiles,
+    IEnumerable<FileState> createdUpdatedFiles,
+    Func<string, string> actualFileToRemoteFileConverter)
 {
-    public SourceItemV2 SourceItem { get; }
-    public IEnumerable<string> DeletedFiles { get; }
-    public IEnumerable<FileState> CreatedUpdatedFiles { get; }
-    public Func<string, string> ActualFileToRemoteFileConverter { get; }
-
-    public StorageUploadTaskSourceItemChange(
-        SourceItemV2 sourceItem,
-        IEnumerable<string> deletedFiles,
-        IEnumerable<FileState> createdUpdatedFiles,
-        Func<string, string> actualFileToRemoteFileConverter)
-    {
-        SourceItem = sourceItem;
-        DeletedFiles = deletedFiles;
-        CreatedUpdatedFiles = createdUpdatedFiles;
-        ActualFileToRemoteFileConverter = actualFileToRemoteFileConverter;
-    }
+    public SourceItemV2 SourceItem { get; } = sourceItem;
+    public IEnumerable<string> DeletedFiles { get; } = deletedFiles;
+    public IEnumerable<FileState> CreatedUpdatedFiles { get; } = createdUpdatedFiles;
+    public Func<string, string> ActualFileToRemoteFileConverter { get; } = actualFileToRemoteFileConverter;
 }

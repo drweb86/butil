@@ -18,7 +18,7 @@ internal class StorageUploadTask : SequentialBuTask
     private readonly string _password;
     private readonly StorageUploadTaskOptions _options;
     private readonly Quota _quota;
-    private DateTime _versionUtc;
+    private readonly DateTime _versionUtc;
 
     public StorageUploadTask(
         StorageSpecificServicesIoc services,
@@ -53,7 +53,7 @@ internal class StorageUploadTask : SequentialBuTask
             .Where(x => x.IsSkippedBecauseOfQuota)
             .SelectMany(x => x.StorageFiles)
             .ToList();
-        if (skippedBecauseOfQuotaFiles.Any())
+        if (skippedBecauseOfQuotaFiles.Count != 0)
         {
             var gigabyte = 1024 * 1024 * 1024;
             _services.CommonServices.LastMinuteMessageService.AddLastMinuteLogMessage(string.Format(BUtil.Core.Localization.Resources.Task_Status_PartialDueToQuota, skippedBecauseOfQuotaFiles.Count, skippedBecauseOfQuotaFiles.Sum(x => x.FileState.Size) / gigabyte));
@@ -72,7 +72,7 @@ internal class StorageUploadTask : SequentialBuTask
                 .Select(x => new StorageFile(x, StorageMethodNames.SevenZipEncrypted, SourceItemHelper.GetCompressedStorageRelativeFileName(_versionUtc)))
                 .GroupBy(x => x.FileState.ToDeduplicationString())
                 .Select(x => new WriteSourceFileToStorageTask(_services, Events,
-                    PatchRemoteFileNames(x.ToList(), change), _quota, change.SourceItem,
+                    PatchRemoteFileNames([.. x], change), _quota, change.SourceItem,
                     _options.State.VersionStates, x.ToList().First().FileState.FileName, false))
                 .ToList();
 
@@ -133,7 +133,7 @@ internal class StorageUploadTask : SequentialBuTask
                     .Where(x => x.IsSuccess && !x.IsSkipped && !x.IsSkippedBecauseOfQuota)
                     .ToList();
 
-                versionIsNeeded = versionIsNeeded || completedTasks.Any();
+                versionIsNeeded = versionIsNeeded || completedTasks.Count != 0;
                 foreach (var completedTask in completedTasks)
                 {
                     RegisterFileUpload(updatedFiles, createdFiles, state, completedTask);
@@ -184,7 +184,7 @@ internal class StorageUploadTask : SequentialBuTask
         var state = _options.State.LastSourceItemStates.SingleOrDefault(x => x.SourceItem.Id == change.SourceItem.Id);
         if (state == null)
         {
-            state = new SourceItemState(change.SourceItem, new List<FileState>());
+            state = new SourceItemState(change.SourceItem, []);
             _options.State.LastSourceItemStates.Add(state);
         }
 

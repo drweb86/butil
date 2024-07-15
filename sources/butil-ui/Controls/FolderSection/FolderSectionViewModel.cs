@@ -11,9 +11,9 @@ public class FolderSectionViewModel : ObservableObject
     }
 
     #region Labels
-    public string LeftMenu_What => Resources.LeftMenu_What;
-    public string Field_Folder => Resources.Field_Folder;
-    public string Field_Folder_Browse => Resources.Field_Folder_Browse;
+    public static string LeftMenu_What => Resources.LeftMenu_What;
+    public static string Field_Folder => Resources.Field_Folder;
+    public static string Field_Folder_Browse => Resources.Field_Folder_Browse;
 
     #endregion
 

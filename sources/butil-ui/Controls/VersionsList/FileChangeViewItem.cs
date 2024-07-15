@@ -2,28 +2,14 @@
 
 namespace butil_ui.Controls;
 
-public class FileChangeViewItem
+public class FileChangeViewItem(string title, ChangeState state)
 {
-    public FileChangeViewItem(string title, ChangeState state)
+    public string Title { get; } = title;
+    public string ImageSource { get; } = state switch
     {
-        Title = title;
-
-        switch (state)
-        {
-            case ChangeState.Created:
-                ImageSource = "/Assets/VC-Created.png";
-                break;
-            case ChangeState.Deleted:
-                ImageSource = "/Assets/VC-Deleted.png";
-                break;
-            case ChangeState.Updated:
-                ImageSource = "/Assets/VC-Updated.png";
-                break;
-            default:
-                throw new ArgumentOutOfRangeException(nameof(state));
-        }
-
-    }
-    public string Title { get; }
-    public string ImageSource { get; }
+        ChangeState.Created => "/Assets/VC-Created.png",
+        ChangeState.Deleted => "/Assets/VC-Deleted.png",
+        ChangeState.Updated => "/Assets/VC-Updated.png",
+        _ => throw new ArgumentOutOfRangeException(nameof(state)),
+    };
 }

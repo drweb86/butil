@@ -3,21 +3,15 @@
 using BUtil.Core.Hashing;
 using System.IO;
 
-class SynchronizationActualFilesService
+class SynchronizationActualFilesService(IHashService hashService, string folder)
 {
-    private readonly IHashService _hashService;
-    private readonly string _folder;
-
-    public SynchronizationActualFilesService(IHashService hashService, string folder)
-    {
-        _hashService = hashService;
-        _folder = folder;
-    }
+    private readonly IHashService _hashService = hashService;
+    private readonly string _folder = folder;
 
     public SynchronizationStateFile CalculateItem(string file)
     {
         return new SynchronizationStateFile(
-                file.Substring(_folder.Length + 1),
+                file[(_folder.Length + 1)..],
                 File.GetLastWriteTimeUtc(file),
                 _hashService.GetSha512(file, true),
                 new FileInfo(file).Length);

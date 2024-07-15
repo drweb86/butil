@@ -11,7 +11,6 @@ using System.Linq;
 
 namespace butil_ui.Controls;
 
-
 public class WhatTaskViewModel : ObservableObject
 {
     public WhatTaskViewModel(
@@ -23,19 +22,17 @@ public class WhatTaskViewModel : ObservableObject
     }
 
     #region Labels
-    public string StorageItem_ExcludePattern_Help => PlatformSpecificExperience.Instance.GetFolderService().GetStorageItemExcludePatternHelp();
-    public string LeftMenu_What => Resources.LeftMenu_What;
-    public string SourceItem_AddFiles => Resources.SourceItem_AddFiles;
-    public string SourceItem_AddFolders => Resources.SourceItem_AddFolders;
-    public string StorageItem_Field_ExcludePattern => Resources.StorageItem_Field_ExcludePattern;
-    public string StorageItem_ExcludePattern_GlobbingNetPatterns => Resources.StorageItem_ExcludePattern_GlobbingNetPatterns;
-
-
+    public static string StorageItem_ExcludePattern_Help => PlatformSpecificExperience.Instance.GetFolderService().GetStorageItemExcludePatternHelp();
+    public static string LeftMenu_What => Resources.LeftMenu_What;
+    public static string SourceItem_AddFiles => Resources.SourceItem_AddFiles;
+    public static string SourceItem_AddFolders => Resources.SourceItem_AddFolders;
+    public static string StorageItem_Field_ExcludePattern => Resources.StorageItem_Field_ExcludePattern;
+    public static string StorageItem_ExcludePattern_GlobbingNetPatterns => Resources.StorageItem_ExcludePattern_GlobbingNetPatterns;
     #endregion
 
     #region Items
 
-    public ObservableCollection<SourceItemV2ViewModel> _items = new();
+    public ObservableCollection<SourceItemV2ViewModel> _items = [];
 
     public ObservableCollection<SourceItemV2ViewModel> Items
     {
@@ -94,7 +91,9 @@ public class WhatTaskViewModel : ObservableObject
 
     #region Commands
 
+#pragma warning disable CA1822 // Mark members as static
     public void GlobbingHelpCommand()
+#pragma warning restore CA1822 // Mark members as static
     {
         ProcessHelper.ShellExecute("https://learn.microsoft.com/en-us/dotnet/core/extensions/file-globbing#pattern-formats");
     }

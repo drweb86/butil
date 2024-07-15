@@ -5,20 +5,13 @@ using BUtil.Core.TasksTree.IncrementalModel;
 
 namespace BUtil.Core.TasksTree.Storage;
 
-internal class DeleteStorageFileTask : BuTaskV2
+internal class DeleteStorageFileTask(
+    StorageSpecificServicesIoc services,
+    TaskEvents events,
+    string relativeFileName) : BuTaskV2(services.CommonServices.Log, events, string.Format(Resources.File_Deleting, relativeFileName))
 {
-    private readonly StorageSpecificServicesIoc _services;
-    private readonly string _relativeFileName;
-
-    public DeleteStorageFileTask(
-        StorageSpecificServicesIoc services,
-        TaskEvents events,
-        string relativeFileName) :
-        base(services.CommonServices.Log, events, string.Format(Resources.File_Deleting, relativeFileName))
-    {
-        _services = services;
-        _relativeFileName = relativeFileName;
-    }
+    private readonly StorageSpecificServicesIoc _services = services;
+    private readonly string _relativeFileName = relativeFileName;
 
     protected override void ExecuteInternal()
     {

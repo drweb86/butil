@@ -9,7 +9,7 @@ namespace BUtil.Core.TasksTree.Core;
 
 public abstract class ParallelBuTask : BuTask
 {
-    public IEnumerable<BuTask> Children { get; set; } = new List<BuTask>();
+    public IEnumerable<BuTask> Children { get; set; } = [];
 
     protected ParallelBuTask(ILog log, TaskEvents events, string title, IEnumerable<BuTask>? children = null)
         : base(log, events, title)
@@ -35,7 +35,7 @@ public abstract class ParallelBuTask : BuTask
 
     public override IEnumerable<BuTask> GetChildren()
     {
-        var actualSelfChildren = Children ?? Array.Empty<BuTask>();
+        var actualSelfChildren = Children ?? [];
         var children = new List<BuTask>();
         foreach (var child in actualSelfChildren)
         {

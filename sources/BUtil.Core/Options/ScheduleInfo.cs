@@ -8,7 +8,7 @@ public class ScheduleInfo
 {
     public ScheduleInfo()
     {
-        Days = new List<DayOfWeek>();
+        Days = [];
         Time = new TimeSpan(Constants.DefaultHours, Constants.DefaultMinutes, 0);
     }
 

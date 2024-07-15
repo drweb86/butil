@@ -8,6 +8,6 @@ public partial class EncryptionTaskView : UserControl
     {
         InitializeComponent();
 
-        this.DataContext = new EncryptionTaskViewModel("password");
+        DataContext = new EncryptionTaskViewModel("password");
     }
 }

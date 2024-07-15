@@ -4,9 +4,9 @@ namespace butil_ui.Controls;
 
 static class SizeHelper
 {
-    public static String BytesToString(long byteCount)
+    public static string BytesToString(long byteCount)
     {
-        string[] suf = { "B", "KB", "MB", "GB", "TB", "PB", "EB" }; //Longs run out around EB
+        string[] suf = [ "B", "KB", "MB", "GB", "TB", "PB", "EB" ]; //Longs run out around EB
         if (byteCount == 0)
             return "0" + suf[0];
         long bytes = Math.Abs(byteCount);

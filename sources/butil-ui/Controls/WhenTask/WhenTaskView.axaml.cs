@@ -8,6 +8,6 @@ public partial class WhenTaskView : UserControl
     {
         InitializeComponent();
 
-        this.DataContext = new WhenTaskViewModel(new BUtil.Core.Options.ScheduleInfo());
+        DataContext = new WhenTaskViewModel(new BUtil.Core.Options.ScheduleInfo());
     }
 }

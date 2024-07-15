@@ -44,7 +44,7 @@ public class DeleteIncrementalBackupVersionrRootTask : SequentialBuTask
         tasks.Add(new WriteIntegrityVerificationScriptsToStorageTask(_storageSpecificServicesIoc, Events, () => true,
             () => state, saveStateTask, saveStateTask, () => saveStateTask.StateFile!));
 
-        Children = tasks.ToArray();
+        Children = [.. tasks];
     }
 
     public override void Execute()

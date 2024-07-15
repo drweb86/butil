@@ -26,7 +26,7 @@ public interface ICashedHashStoreService
 public class CashedHashStoreService : ICashedHashStoreService
 {
     private readonly string _folder;
-
+    private static readonly JsonSerializerOptions _jsonSerializerOptions = new() { WriteIndented = true };
     public CashedHashStoreService()
     {
 #if DEBUG
@@ -53,7 +53,7 @@ public class CashedHashStoreService : ICashedHashStoreService
         var nonExpiredItems = cachedHashes
             .Where(x => x.Expiration > utcNow)
             .ToList();
-        var json = JsonSerializer.Serialize(nonExpiredItems, new JsonSerializerOptions { WriteIndented = true });
+        var json = JsonSerializer.Serialize(nonExpiredItems, _jsonSerializerOptions);
         if (File.Exists(fileName))
             File.Delete(fileName);
         File.WriteAllText(fileName, json);

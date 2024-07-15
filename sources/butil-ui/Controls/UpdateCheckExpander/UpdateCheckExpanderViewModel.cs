@@ -2,7 +2,6 @@
 using BUtil.Core.Localization;
 using BUtil.Core.Misc;
 using CommunityToolkit.Mvvm.ComponentModel;
-using System;
 using System.Threading.Tasks;
 
 namespace butil_ui.Controls.UpdateCheckExpander;
@@ -75,10 +74,12 @@ internal class UpdateCheckExpanderViewModel : ObservableObject
 
     #endregion
 
-    public string UpdateLink => ApplicationLinks.LatestRelease;
-    public string Button_Download => Resources.Button_Download;
+    public static string UpdateLink => ApplicationLinks.LatestRelease;
+    public static string Button_Download => Resources.Button_Download;
 
+#pragma warning disable CA1822 // Mark members as static
     public void OpenLatestReleaseCommand()
+#pragma warning restore CA1822 // Mark members as static
     {
         PlatformSpecificExperience.Instance
             .SupportManager

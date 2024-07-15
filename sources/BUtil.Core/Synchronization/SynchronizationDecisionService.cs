@@ -7,14 +7,9 @@ using System.Linq;
 
 namespace BUtil.Core.Synchronization;
 
-class SynchronizationDecisionService
+class SynchronizationDecisionService(string? repositorySubfolder)
 {
-    private readonly string? _repositorySubfolderNormalized;
-
-    public SynchronizationDecisionService(string? repositorySubfolder)
-    {
-        _repositorySubfolderNormalized = FileHelper.NormalizeRelativePath(repositorySubfolder);
-    }
+    private readonly string? _repositorySubfolderNormalized = FileHelper.NormalizeRelativePath(repositorySubfolder);
 
     public IEnumerable<SynchronizationConsolidatedFileInfo> Decide(
         SynchronizationTaskModelMode synchronizationMode,
@@ -31,7 +26,7 @@ class SynchronizationDecisionService
         return items;
     }
 
-    private void ResolveActions(
+    private static void ResolveActions(
         IEnumerable<SynchronizationConsolidatedFileInfo> items,
         SynchronizationTaskModelMode synchronizationMode)
     {
@@ -41,7 +36,7 @@ class SynchronizationDecisionService
         }
     }
 
-    private void ResolveAction(
+    private static void ResolveAction(
         SynchronizationConsolidatedFileInfo item,
         SynchronizationTaskModelMode synchronizationMode)
     {
@@ -286,7 +281,7 @@ class SynchronizationDecisionService
     }
 
 
-    private void BuildRelations(IEnumerable<SynchronizationConsolidatedFileInfo> items)
+    private static void BuildRelations(IEnumerable<SynchronizationConsolidatedFileInfo> items)
     {
         foreach (var item in items)
         {
@@ -316,7 +311,7 @@ class SynchronizationDecisionService
         AddState(items, localState, (x, localState) => x.LocalState = localState);
         AddState(items, remoteState, (x, remoteState) => x.RemoteState = remoteState, true);
 
-        return items.Values.ToList();
+        return [.. items.Values];
     }
 
     private void AddState(
@@ -333,10 +328,12 @@ class SynchronizationDecisionService
                 continue;
             }
 
+#pragma warning disable CA1854 // Prefer the 'IDictionary.TryGetValue(TKey, out TValue)' method
             if (!items.ContainsKey(actualRelativeFileName))
             {
                 items.Add(actualRelativeFileName, new SynchronizationConsolidatedFileInfo(actualRelativeFileName));
             }
+#pragma warning restore CA1854 // Prefer the 'IDictionary.TryGetValue(TKey, out TValue)' method
 
             filler(items[actualRelativeFileName], item);
         }
@@ -352,7 +349,7 @@ class SynchronizationDecisionService
         return relativeFileName;
     }
 
-    private SynchronizationRelation ResolveRelation(
+    private static SynchronizationRelation ResolveRelation(
         SynchronizationStateFile? primary,
         SynchronizationStateFile? secondary)
     {

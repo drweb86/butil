@@ -4,6 +4,7 @@ using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
 using BUtil.Core.TasksTree;
+using butilc;
 using System;
 using System.Globalization;
 
@@ -19,7 +20,7 @@ class Controller
         const string _reboot = "Reboot";
         const string _taskCommandLineArgument = "Task=";
 
-        args ??= Array.Empty<string>();
+        args ??= [];
 
         foreach (string argument in args)
         {

@@ -5,16 +5,10 @@ using System.IO;
 
 namespace BUtil.Core.Storages;
 
-public abstract class StorageBase<TStorageSettings> : IStorage
+public abstract class StorageBase<TStorageSettings>(ILog log, TStorageSettings settings) : IStorage
 {
-    protected StorageBase(ILog log, TStorageSettings settings)
-    {
-        Log = log;
-        Settings = settings;
-    }
-
-    protected readonly ILog Log;
-    protected readonly TStorageSettings Settings;
+    protected readonly ILog Log = log;
+    protected readonly TStorageSettings Settings = settings;
 
     public abstract IStorageUploadResult Upload(string sourceFile, string relativeFileName);
     public abstract string? Test(bool writeMode);

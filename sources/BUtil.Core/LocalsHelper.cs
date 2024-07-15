@@ -7,15 +7,14 @@ public static class LocalsHelper
 {
     public static string ToString(ProcessingStatus state)
     {
-        switch (state)
+        return state switch
         {
-            case ProcessingStatus.NotStarted: return "⏳";
-            case ProcessingStatus.InProgress: return "👉";
-            case ProcessingStatus.FinishedSuccesfully: return "✅";
-            case ProcessingStatus.Skipped: return "⏩";
-            case ProcessingStatus.FinishedWithErrors: return "❌";
-            default:
-                throw new NotImplementedException("State " + state + " is not implemented");
-        }
+            ProcessingStatus.NotStarted => "⏳",
+            ProcessingStatus.InProgress => "👉",
+            ProcessingStatus.FinishedSuccesfully => "✅",
+            ProcessingStatus.Skipped => "⏩",
+            ProcessingStatus.FinishedWithErrors => "❌",
+            _ => throw new NotImplementedException("State " + state + " is not implemented"),
+        };
     }
 }

@@ -17,15 +17,15 @@ public class SynchronizationWhatViewModel : ObservableObject
     }
 
     #region Labels
-    public string LeftMenu_What => Resources.LeftMenu_What;
-    public string Field_Folder => Resources.Field_Folder;
-    public string Field_Folder_Browse => Resources.Field_Folder_Browse;
+    public static string LeftMenu_What => Resources.LeftMenu_What;
+    public static string Field_Folder => Resources.Field_Folder;
+    public static string Field_Folder_Browse => Resources.Field_Folder_Browse;
 
-    public string RepositorySubfolder_Field => Resources.RepositorySubfolder_Field;
-    public string RepositorySubfolder_Help => Resources.RepositorySubfolder_Help;
-    public string SynchronizationMode_Field => Resources.SynchronizationMode_Field;
-    public string SynchronizationMode_Field_TwoWay => Resources.SynchronizationMode_Field_TwoWay;
-    public string SynchronizationMode_Field_Read => Resources.SynchronizationMode_Field_Read;
+    public static string RepositorySubfolder_Field => Resources.RepositorySubfolder_Field;
+    public static string RepositorySubfolder_Help => Resources.RepositorySubfolder_Help;
+    public static string SynchronizationMode_Field => Resources.SynchronizationMode_Field;
+    public static string SynchronizationMode_Field_TwoWay => Resources.SynchronizationMode_Field_TwoWay;
+    public static string SynchronizationMode_Field_Read => Resources.SynchronizationMode_Field_Read;
 
     #endregion
 

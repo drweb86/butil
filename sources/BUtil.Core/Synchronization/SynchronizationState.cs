@@ -5,7 +5,7 @@ namespace BUtil.Core.Synchronization;
 
 class SynchronizationState
 {
-    public List<SynchronizationStateFile> FileSystemEntries { get; set; } = new ();
+    public List<SynchronizationStateFile> FileSystemEntries { get; set; } = [];
 
     internal SynchronizationState Clone()
     {

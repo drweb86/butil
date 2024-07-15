@@ -32,8 +32,8 @@ class SourceItemStateComparer
                 var addedSourceItem = pair.Key;
                 var sourceItemChanges = new SourceItemChanges(
                     addedSourceItem.SourceItem,
-                    new List<string>(),
-                    new List<StorageFile>(),
+                    [],
+                    [],
                     addedSourceItem.FileStates
                         .Select(x => new StorageFile(x))
                         .ToList()

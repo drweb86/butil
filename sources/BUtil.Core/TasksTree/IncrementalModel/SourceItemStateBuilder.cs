@@ -55,7 +55,7 @@ class SourceItemStateBuilder
             {
                 if (result == null)
                 {
-                    result = sourceItemChanges.CreatedFiles.ToList();
+                    result = [.. sourceItemChanges.CreatedFiles];
                 }
                 else
                 {
@@ -79,7 +79,7 @@ class SourceItemStateBuilder
                 break;
         }
 
-        return (result ?? new List<StorageFile>())
+        return (result ?? [])
             .Select(x => x.FileState)
             .ToList();
     }

@@ -11,7 +11,7 @@ public class SettingsStoreService
         FileHelper.EnsureFolderCreated(Directories.SettingsDir);
     }
 
-    public string Load(string name, string defaultValue)
+    public static string Load(string name, string defaultValue)
     {
         var file = GetFileName(name);
         if (File.Exists(file))
@@ -20,7 +20,7 @@ public class SettingsStoreService
         return defaultValue;
     }
 
-    public void Save(string name, string value)
+    public static void Save(string name, string value)
     {
         var file = GetFileName(name);
         if (File.Exists(file))
@@ -28,10 +28,10 @@ public class SettingsStoreService
         File.WriteAllText(file, value);
     }
 
-    private string GetFileName(string name)
+    private static string GetFileName(string name)
     {
         if (name.Contains("..") || name.Contains('/') || name.Contains('\\'))
-            throw new ArgumentException(nameof(name));
+            throw new ArgumentException("No .. / and \\");
 
         return Path.Combine(Directories.SettingsDir, name);
     }

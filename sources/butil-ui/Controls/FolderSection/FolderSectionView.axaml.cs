@@ -32,10 +32,9 @@ public partial class FolderSectionView : UserControl
             AllowMultiple = false
         });
 
-        var folder = folders.FirstOrDefault();
-        if (folder != null)
+        if (folders.Count == 1)
         {
-            dataContext.Folder = folder.TryGetLocalPath() ?? folder.Path.ToString();
+            dataContext.Folder = folders[0].TryGetLocalPath() ?? folders[0].Path.ToString();
         }
     }
 }

@@ -8,19 +8,11 @@ using System.Linq;
 
 namespace BUtil.Core.TasksTree;
 
-internal class DeleteUnversionedFilesStorageTask : BuTaskV2
+internal class DeleteUnversionedFilesStorageTask(StorageSpecificServicesIoc services, TaskEvents events, RemoteStateLoadTask getStateOfStorageTask) : BuTaskV2(services.CommonServices.Log, events, Localization.Resources.DataStorage_Maintenance)
 {
-    public StorageSpecificServicesIoc _services;
-    private readonly RemoteStateLoadTask _getStateOfStorageTask;
-    public IStorageSettingsV2 StorageSettings { get; }
-
-    public DeleteUnversionedFilesStorageTask(StorageSpecificServicesIoc services, TaskEvents events, RemoteStateLoadTask getStateOfStorageTask) :
-        base(services.CommonServices.Log, events, Localization.Resources.DataStorage_Maintenance)
-    {
-        StorageSettings = services.StorageSettings;
-        _services = services;
-        _getStateOfStorageTask = getStateOfStorageTask;
-    }
+    public StorageSpecificServicesIoc _services = services;
+    private readonly RemoteStateLoadTask _getStateOfStorageTask = getStateOfStorageTask;
+    public IStorageSettingsV2 StorageSettings { get; } = services.StorageSettings;
 
     protected override void ExecuteInternal()
     {

@@ -14,5 +14,5 @@ public class ImportMediaState
         Files.AddRange(files);
     }
 
-    public List<string> Files { get; set; } = new();
+    public List<string> Files { get; set; } = [];
 }

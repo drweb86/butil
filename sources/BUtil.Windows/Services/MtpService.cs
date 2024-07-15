@@ -7,9 +7,8 @@ class MtpService : IMtpService
 {
     public IEnumerable<string> GetItems()
     {
-        return MediaDevice.GetDevices()
+        return [.. MediaDevice.GetDevices()
             .Select(x => x.FriendlyName)
-            .Order()
-            .ToList();
+            .Order()];
     }
 }

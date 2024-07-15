@@ -10,18 +10,12 @@ using System.Text.Json;
 
 namespace BUtil.Core.State;
 
-public class IncrementalBackupStateService
+public class IncrementalBackupStateService(StorageSpecificServicesIoc services, IHashService hashService)
 {
-    private readonly ILog _log;
-    private readonly StorageSpecificServicesIoc _services;
-    private readonly IHashService _hashService;
-
-    public IncrementalBackupStateService(StorageSpecificServicesIoc services, IHashService hashService)
-    {
-        _log = services.CommonServices.Log;
-        _services = services;
-        _hashService = hashService;
-    }
+    private readonly ILog _log = services.CommonServices.Log;
+    private readonly StorageSpecificServicesIoc _services = services;
+    private readonly IHashService _hashService = hashService;
+    private static readonly JsonSerializerOptions _jsonSerializerOptions = new() { WriteIndented = true };
 
     public bool TryRead(string password, [NotNullWhen(true)] out IncrementalBackupState? state)
     {
@@ -62,15 +56,14 @@ public class IncrementalBackupStateService
         using var tempFolder = new TempFolder();
         var jsonFile = Path.Combine(tempFolder.Folder, IncrementalBackupModelConstants.StorageIncrementedNonEncryptedNonCompressedStateFile);
         using (var jsonFileWriter = File.OpenWrite(jsonFile))
-            JsonSerializer.Serialize(jsonFileWriter, state, new JsonSerializerOptions { WriteIndented = true });
+            JsonSerializer.Serialize(jsonFileWriter, state, _jsonSerializerOptions);
 
         var storageFile = new StorageFile
         {
             StorageMethod = StorageMethodNames.SevenZipEncrypted,
-            StorageIntegrityMethod = StorageIntegrityMethod.Sha512
+            StorageIntegrityMethod = StorageIntegrityMethod.Sha512,
+            StorageRelativeFileName = IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile
         };
-
-        storageFile.StorageRelativeFileName = IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile;
         var fileToUpload = Path.Combine(tempFolder.Folder, storageFile.StorageRelativeFileName);
         var archiver = PlatformSpecificExperience.Instance.GetArchiver(_log);
         if (!archiver.CompressFile(jsonFile, password, fileToUpload))

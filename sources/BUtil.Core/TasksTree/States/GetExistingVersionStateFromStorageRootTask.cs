@@ -24,7 +24,7 @@ public class GetExistingVersionStateFromStorageRootTask : SequentialBuTask
         _commonServicesIoc = new CommonServicesIoc(log, getLastMinuteMessage);
         _storageSpecificServicesIoc = new StorageSpecificServicesIoc(_commonServicesIoc, storageSettings);
         _getStateOfStorageTask = new(_storageSpecificServicesIoc, events, password);
-        Children = new List<BuTask> { _getStateOfStorageTask };
+        Children = [_getStateOfStorageTask];
     }
 
     public override void Execute()
@@ -35,7 +35,7 @@ public class GetExistingVersionStateFromStorageRootTask : SequentialBuTask
 
         if (IsSuccess)
         {
-            if (!_getStateOfStorageTask.StorageState!.VersionStates.Any())
+            if (_getStateOfStorageTask.StorageState!.VersionStates.Count == 0)
             {
                 _commonServicesIoc.LastMinuteMessageService.AddLastMinuteLogMessage(string.Format(Resources.RestoreFrom_Field_Validation_NoStateFiles, IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile));
                 IsSuccess = false;

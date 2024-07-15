@@ -6,19 +6,12 @@ using BUtil.Core.TasksTree.IncrementalModel;
 
 namespace BUtil.Core.TasksTree;
 
-internal class RemoteStateLoadTask : BuTaskV2
+internal class RemoteStateLoadTask(StorageSpecificServicesIoc services, TaskEvents events, string password) : BuTaskV2(services.CommonServices.Log, events, Localization.Resources.DataStorage_State_Get)
 {
-    public StorageSpecificServicesIoc _services;
-    private readonly string _password;
+    public StorageSpecificServicesIoc _services = services;
+    private readonly string _password = password;
 
     public IncrementalBackupState? StorageState { get; private set; }
-
-    public RemoteStateLoadTask(StorageSpecificServicesIoc services, TaskEvents events, string password) :
-        base(services.CommonServices.Log, events, Localization.Resources.DataStorage_State_Get)
-    {
-        _services = services;
-        _password = password;
-    }
 
     protected override void ExecuteInternal()
     {

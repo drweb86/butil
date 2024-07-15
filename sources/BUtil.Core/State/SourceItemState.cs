@@ -8,7 +8,7 @@ namespace BUtil.Core.State;
 public class SourceItemState
 {
     public SourceItemV2 SourceItem { get; set; } = new();
-    public List<FileState> FileStates { get; set; } = new();
+    public List<FileState> FileStates { get; set; } = [];
     public SourceItemState() { } // deserialization
     public SourceItemState(SourceItemV2 sourceItem, List<FileState> fileStates)
     {
@@ -18,6 +18,6 @@ public class SourceItemState
 
     public SourceItemState ShallowClone()
     {
-        return new SourceItemState(SourceItem, FileStates.ToList());
+        return new SourceItemState(SourceItem, [.. FileStates]);
     }
 }

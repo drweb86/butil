@@ -53,7 +53,7 @@ class MtpStorage : StorageBase<MtpStorageSettings>
         return this._mediaDevice
             .GetDirectories(remotePath, mask)
             .Select(NormalizePathNotNull)
-            .Select(x => remotePath == null ? x : x.Substring(remotePath.Length))
+            .Select(x => remotePath == null ? x : x[remotePath.Length..])
             .Select(NormalizePathNotNull)
             .ToArray();
     }
@@ -89,9 +89,7 @@ class MtpStorage : StorageBase<MtpStorageSettings>
         {
             var folder = Guid.NewGuid().ToString();
             var file = Path.Combine("BUtil check " + folder, Guid.NewGuid().ToString());
-            var uploaded = Upload(Assembly.GetExecutingAssembly().Location, file);
-            if (uploaded == null)
-                throw new Exception("Failed to upload!");
+            _ = Upload(Assembly.GetExecutingAssembly().Location, file) ?? throw new Exception("Failed to upload!");
             DeleteFolder(folder);
         }
 
@@ -129,7 +127,7 @@ class MtpStorage : StorageBase<MtpStorageSettings>
         if (path.Contains(".."))
             throw new SecurityException("[..] is not allowed in path.");
 
-        return path.Trim(new[] { '\\', '/' });
+        return path.Trim(['\\', '/']);
     }
 
     private string GetRemotePath(string? relativePath, bool allowNull)
@@ -148,7 +146,7 @@ class MtpStorage : StorageBase<MtpStorageSettings>
         return this._mediaDevice
             .GetFiles(remoteFolder, "*.*", option)
             .Select(NormalizePathNotNull)
-            .Select(x => remoteFolder == null ? x : x.Substring(remoteFolder.Length))
+            .Select(x => remoteFolder == null ? x : x[remoteFolder.Length..])
             .Select(NormalizePathNotNull)
             .ToArray();
     }
@@ -160,7 +158,7 @@ class MtpStorage : StorageBase<MtpStorageSettings>
         return MaxDate(fileInfo.CreationTime, fileInfo.LastWriteTime);
     }
 
-    private DateTime MaxDate(params DateTime?[] dates)
+    private static DateTime MaxDate(params DateTime?[] dates)
     {
         foreach (var date in dates)
         {

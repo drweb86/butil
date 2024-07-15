@@ -5,20 +5,13 @@ using System.Security.Cryptography;
 
 namespace butil_ui.Controls;
 
-public class EncryptionTaskViewModel : ObservableObject
+public class EncryptionTaskViewModel(string password, bool isPasswordCreateMode = true, bool isReadonly = false) : ObservableObject
 {
-    public EncryptionTaskViewModel(string password, bool isPasswordCreateMode = true, bool isReadonly = false)
-    {
-        _password = password;
-        IsPasswordCreateMode = isPasswordCreateMode;
-        IsReadonly = isReadonly;
-    }
-
     public void PasswordGenerateCommand()
     {
         int count = 255;
         string temp = string.Empty;
-        bool suit = false;
+        bool suit;
         char ch;
 
         byte[] resultentropy = new byte[count];
@@ -51,15 +44,15 @@ public class EncryptionTaskViewModel : ObservableObject
     }
 
     #region Labels
-    public string LeftMenu_Encryption => Resources.LeftMenu_Encryption;
-    public string Password_Field => Resources.Password_Field;
-    public string Password_Help => Resources.Password_Help;
-    public string Password_Generate => Resources.Password_Generate;
+    public static string LeftMenu_Encryption => Resources.LeftMenu_Encryption;
+    public static string Password_Field => Resources.Password_Field;
+    public static string Password_Help => Resources.Password_Help;
+    public static string Password_Generate => Resources.Password_Generate;
     #endregion
 
     #region Password
 
-    private string _password;
+    private string _password = password;
 
     public string Password
     {
@@ -76,8 +69,8 @@ public class EncryptionTaskViewModel : ObservableObject
         }
     }
 
-    public bool IsPasswordCreateMode { get; }
-    public bool IsReadonly { get; }
+    public bool IsPasswordCreateMode { get; } = isPasswordCreateMode;
+    public bool IsReadonly { get; } = isReadonly;
 
     #endregion
 }

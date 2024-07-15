@@ -11,37 +11,26 @@ using System.Threading.Tasks;
 
 namespace butil_ui.Controls;
 
-public class TaskItemViewModel : ObservableObject
+public class TaskItemViewModel(
+    string name,
+    string lastLaunchedAt,
+    ProcessingStatus status,
+    ObservableCollection<TaskItemViewModel> items) : ObservableObject
 {
-    private readonly ObservableCollection<TaskItemViewModel> _items;
+    private readonly ObservableCollection<TaskItemViewModel> _items = items;
 
-    public TaskItemViewModel(
-        string name,
-        string lastLaunchedAt,
-        ProcessingStatus status,
-        ObservableCollection<TaskItemViewModel> items)
-    {
-        SuccessForegroundColorBrush = ColorPalette.GetBrush(SemanticColor.Success);
-        Name = name;
-        LastLaunchedAt = lastLaunchedAt;
-        Background = ColorPalette.GetBrush(SemanticColor.WindowFrontBackground);
-        Foreground = ColorPalette.GetProcessingStatusBrush(status);
-        ForegroundWindowFontAccented = ColorPalette.GetBrush(SemanticColor.ForegroundWindowFontAccented);
-        _items = items;
-    }
+    public string Name { get; } = name;
+    public string LastLaunchedAt { get; } = lastLaunchedAt;
+    public SolidColorBrush Foreground { get; } = ColorPalette.GetProcessingStatusBrush(status);
+    public SolidColorBrush Background { get; } = ColorPalette.GetBrush(SemanticColor.WindowFrontBackground);
 
-    public string Name { get; }
-    public string LastLaunchedAt { get; }
-    public SolidColorBrush Foreground { get; }
-    public SolidColorBrush Background { get; }
+    public SolidColorBrush SuccessForegroundColorBrush { get; } = ColorPalette.GetBrush(SemanticColor.Success);
+    public SolidColorBrush ForegroundWindowFontAccented { get; } = ColorPalette.GetBrush(SemanticColor.ForegroundWindowFontAccented);
 
-    public SolidColorBrush SuccessForegroundColorBrush { get; }
-    public SolidColorBrush ForegroundWindowFontAccented { get; }
-
-    public string Task_Delete => Resources.Task_Delete;
-    public string Task_Launch => Resources.Task_Launch;
-    public string Task_Edit => Resources.Task_Edit;
-    public string Task_Restore => Resources.Task_Restore;
+    public static string Task_Delete => Resources.Task_Delete;
+    public static string Task_Launch => Resources.Task_Launch;
+    public static string Task_Edit => Resources.Task_Edit;
+    public static string Task_Restore => Resources.Task_Restore;
 
     #region Commands
 

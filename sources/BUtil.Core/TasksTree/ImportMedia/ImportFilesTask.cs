@@ -22,7 +22,7 @@ class ImportFilesTask : SequentialBuTask
     public ImportFilesTask(TaskEvents backupEvents, TaskV2 backupTask, GetStateOfSourceItemTask getStateOfSourceItemTask, CommonServicesIoc commonServicesIoc)
         : base(commonServicesIoc.Log, backupEvents, BUtil.Core.Localization.Resources.ImportMediaTask_AllFiles)
     {
-        Children = new List<BuTask>();
+        Children = [];
         _task = backupTask;
         _getStateOfSourceItemTask = getStateOfSourceItemTask;
         _commonServicesIoc = commonServicesIoc;

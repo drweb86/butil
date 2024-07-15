@@ -1,18 +1,14 @@
 ﻿using BUtil.Core.Logs;
 using System.Collections.Generic;
-using System.Linq;
 
-class ChainLog : ILog
+namespace butilc;
+
+class ChainLog(string taskName) : ILog
 {
-    private readonly List<LogBase> _logs;
-
-    public ChainLog(string taskName)
-    {
-        _logs = new() {
-                new FileLog(taskName),
-                new ConsoleLog()
-            };
-    }
+    private readonly List<LogBase> _logs = [
+            new FileLog(taskName),
+            new ConsoleLog()
+        ];
 
     public void Open() => _logs.ForEach(x => x.Open());
     public void Close(bool isSuccess) => _logs.ForEach(x => x.Close(isSuccess));

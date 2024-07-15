@@ -52,7 +52,7 @@ internal class GetStateOfSourceItemsAndStoragesTask : ParallelBuTask
     {
         UpdateStatus(ProcessingStatus.InProgress);
 
-        var storageTasksExecuter = new ParallelExecuter(new[] { RemoteStateLoadTask }, 1);
+        var storageTasksExecuter = new ParallelExecuter([RemoteStateLoadTask], 1);
         var sourceItemGroupTasks = GetSourceItemStateTasks
             .GroupBy(x => Directory.GetDirectoryRoot(x.SourceItem.Target))
             .Select(x => new SequentialBuTask(Log, new TaskEvents(), string.Empty, x.ToList()))
@@ -62,7 +62,7 @@ internal class GetStateOfSourceItemsAndStoragesTask : ParallelBuTask
         sourceItemGroupTasksExecuter.Wait();
         storageTasksExecuter.Wait();
 
-        var deleteUnversionedFilesStorageTasksExecuter = new ParallelExecuter(new[] { DeleteUnversionedFilesStorageTask }, 1);
+        var deleteUnversionedFilesStorageTasksExecuter = new ParallelExecuter([DeleteUnversionedFilesStorageTask], 1);
         deleteUnversionedFilesStorageTasksExecuter.Wait();
 
         IsSuccess = Children.All(x => x.IsSuccess);

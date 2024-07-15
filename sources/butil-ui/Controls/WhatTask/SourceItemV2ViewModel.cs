@@ -55,8 +55,8 @@ public class SourceItemV2ViewModel
     #endregion
 
     #region Labels
-    public string SourceItem_OpenInExplorer => Resources.SourceItem_OpenInExplorer;
-    public string Button_Remove => Resources.Button_Remove;
+    public static string SourceItem_OpenInExplorer => Resources.SourceItem_OpenInExplorer;
+    public static string Button_Remove => Resources.Button_Remove;
 
     #endregion
 }

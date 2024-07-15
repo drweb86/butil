@@ -9,7 +9,7 @@ namespace BUtil.Core.TasksTree.Core;
 
 public class SequentialBuTask : BuTask
 {
-    public IEnumerable<BuTask> Children { get; set; } = Enumerable.Empty<BuTask>();
+    public IEnumerable<BuTask> Children { get; set; } = [];
 
     public SequentialBuTask(ILog log, TaskEvents events, string title, IEnumerable<BuTask>? children = null)
         : base(log, events, title)
@@ -30,7 +30,7 @@ public class SequentialBuTask : BuTask
 
     public override IEnumerable<BuTask> GetChildren()
     {
-        var actualSelfChildren = Children ?? Array.Empty<BuTask>();
+        var actualSelfChildren = Children ?? [];
         var children = new List<BuTask>();
         foreach (var child in actualSelfChildren)
         {

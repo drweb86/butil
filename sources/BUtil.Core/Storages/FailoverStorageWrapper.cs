@@ -6,16 +6,10 @@ using System.IO;
 
 namespace BUtil.Core.Storages;
 
-public class FailoverStorageWrapper : IStorage
+public class FailoverStorageWrapper(ILog log, IStorage storage) : IStorage
 {
-    private readonly ILog _log;
-    private readonly IStorage _storage;
-
-    public FailoverStorageWrapper(ILog log, IStorage storage)
-    {
-        _log = log;
-        _storage = storage;
-    }
+    private readonly ILog _log = log;
+    private readonly IStorage _storage = storage;
 
     public void Delete(string file)
     {
@@ -24,7 +18,9 @@ public class FailoverStorageWrapper : IStorage
             () => _storage.Delete(file));
     }
 
+#pragma warning disable CA1816 // Dispose methods should call SuppressFinalize
     public void Dispose()
+#pragma warning restore CA1816 // Dispose methods should call SuppressFinalize
     {
         _storage.Dispose();
     }

@@ -5,15 +5,10 @@ using System.IO;
 
 namespace BUtil.Core.TasksTree;
 
-class DirectoryInfoWrapperEx : DirectoryInfoWrapper
+class DirectoryInfoWrapperEx(DirectoryInfo directoryInfo) : DirectoryInfoWrapper(directoryInfo)
 {
-    private readonly DirectoryInfo _directoryInfo;
-    private readonly List<string> _skipDirectories = new List<string> { "System Volume Information", "$RECYCLE.BIN", "Recovery" };
-
-    public DirectoryInfoWrapperEx(DirectoryInfo directoryInfo) : base(directoryInfo)
-    {
-        _directoryInfo = directoryInfo;
-    }
+    private readonly DirectoryInfo _directoryInfo = directoryInfo;
+    private readonly List<string> _skipDirectories = ["System Volume Information", "$RECYCLE.BIN", "Recovery"];
 
     public override IEnumerable<FileSystemInfoBase> EnumerateFileSystemInfos()
     {

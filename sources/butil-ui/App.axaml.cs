@@ -15,7 +15,7 @@ public partial class App : Application
     public override void Initialize()
     {
         var settingsService = new SettingsStoreService();
-        var theme = settingsService.Load(ThemeSetting.Name, ThemeSetting.DefaultValue);
+        var theme = SettingsStoreService.Load(ThemeSetting.Name, ThemeSetting.DefaultValue);
         if (theme == ThemeSetting.DarkValue)
         {
             this.RequestedThemeVariant = ThemeVariant.Dark;

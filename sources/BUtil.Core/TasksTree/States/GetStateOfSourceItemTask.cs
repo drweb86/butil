@@ -14,22 +14,15 @@ using System.Linq;
 
 namespace BUtil.Core.TasksTree;
 
-internal class GetStateOfSourceItemTask : SequentialBuTask
+internal class GetStateOfSourceItemTask(TaskEvents events, SourceItemV2 sourceItem, IEnumerable<string> fileExcludePatterns, CommonServicesIoc commonServicesIoc) : SequentialBuTask(commonServicesIoc.Log, events, string.Format(BUtil.Core.Localization.Resources.SourceItem_State_Get, sourceItem.Target))
 {
-    private readonly IEnumerable<string> _fileExcludePatterns;
-    private readonly CommonServicesIoc _commonServicesIoc;
+    private readonly IEnumerable<string> _fileExcludePatterns = fileExcludePatterns;
+    private readonly CommonServicesIoc _commonServicesIoc = commonServicesIoc;
+    private static readonly string[] _includeGroups = ["**/*"];
 
-    public SourceItemState? SourceItemState { get; private set; }
+public SourceItemState? SourceItemState { get; private set; }
 
-    public SourceItemV2 SourceItem { get; }
-
-    public GetStateOfSourceItemTask(TaskEvents events, SourceItemV2 sourceItem, IEnumerable<string> fileExcludePatterns, CommonServicesIoc commonServicesIoc) :
-        base(commonServicesIoc.Log, events, string.Format(BUtil.Core.Localization.Resources.SourceItem_State_Get, sourceItem.Target))
-    {
-        SourceItem = sourceItem;
-        this._fileExcludePatterns = fileExcludePatterns;
-        _commonServicesIoc = commonServicesIoc;
-    }
+    public SourceItemV2 SourceItem { get; } = sourceItem;
 
     public override void Execute()
     {
@@ -71,11 +64,11 @@ internal class GetStateOfSourceItemTask : SequentialBuTask
         {
             var actualPattern = excludeFilePattern;
             if (excludeFilePattern.StartsWith(folder) && (folder.Length + 1) < excludeFilePattern.Length)
-                actualPattern = actualPattern.Substring(folder.Length + 1);
+                actualPattern = actualPattern[(folder.Length + 1)..];
             matcher.AddExclude(actualPattern);
         }
 
-        matcher.AddIncludePatterns(new[] { "**/*" });
+        matcher.AddIncludePatterns(_includeGroups);
 
         return matcher
             .Execute(new DirectoryInfoWrapperEx(new DirectoryInfo(folder)))

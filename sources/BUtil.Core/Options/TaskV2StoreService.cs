@@ -17,6 +17,7 @@ public class TaskV2StoreService
     private const string _genericFilter = "*.json";
     private const string _extensionV1 = ".json";
     private const string _extensionV2 = ".v2.json";
+    private static readonly JsonSerializerOptions _jsonSerializerOptions = new() { WriteIndented = true };
 
     public TaskV2StoreService()
     {
@@ -30,7 +31,7 @@ public class TaskV2StoreService
 
     public TaskV2? Load(string name)
     {
-        return Load(name, out var isNotFound, out var isNotSupported);
+        return Load(name, out var _, out var _);
     }
 
     public TaskV2? Load(string name, out bool isNotFound, out bool isNotSupported)
@@ -82,8 +83,7 @@ public class TaskV2StoreService
 
     private TaskV2? UpgradeV1ToLatest(BackupTaskV1 task)
     {
-        var incrementalModelV1 = task.Model as IncrementalBackupModelOptionsV1;
-        if (incrementalModelV1 == null)
+        if (task.Model is not IncrementalBackupModelOptionsV1 incrementalModelV1)
         {
             return null;
         }
@@ -101,7 +101,7 @@ public class TaskV2StoreService
         };
     }
 
-    private IStorageSettingsV2 UpgradeStorageSettingsV1ToLatest(IStorageSettingsV1 storageSettingsV1)
+    private static IStorageSettingsV2 UpgradeStorageSettingsV1ToLatest(IStorageSettingsV1 storageSettingsV1)
     {
         if (storageSettingsV1 is SambaStorageSettingsV1)
         {
@@ -114,9 +114,8 @@ public class TaskV2StoreService
                 User = typedStorage.User,
             };
         }
-        else if (storageSettingsV1 is FolderStorageSettingsV1)
+        else if (storageSettingsV1 is FolderStorageSettingsV1 typedStorage)
         {
-            var typedStorage = (FolderStorageSettingsV1)storageSettingsV1;
             return new FolderStorageSettingsV2
             {
                 DestinationFolder = typedStorage.DestinationFolder,
@@ -146,7 +145,7 @@ public class TaskV2StoreService
         Delete(task.Name);
 
         var fileName = GetFileNames(task.Name).Last().Value;
-        var json = JsonSerializer.Serialize(task, new JsonSerializerOptions { WriteIndented = true });
+        var json = JsonSerializer.Serialize(task, _jsonSerializerOptions);
         File.WriteAllText(fileName, json);
     }
 
@@ -185,19 +184,18 @@ public class TaskV2StoreService
 
     public IEnumerable<string> GetNames()
     {
-        return Directory
+        return [.. Directory
             .GetFiles(_folder, _genericFilter)
             .Select(x => Path.GetFileName(x) ?? throw new InvalidDataException(x))
             .Select(x => x.Replace(_extensionV2, string.Empty))
             .Select(x => x.Replace(_extensionV1, string.Empty))
-            .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)
-            .ToList();
+            .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
     }
 
     private Dictionary<int, string> GetFileNames(string name)
     {
         if (name.Contains("..") || name.Contains('/') || name.Contains('\\'))
-            throw new ArgumentException(nameof(name));
+            throw new ArgumentException("No .. / and \\");
 
         return new Dictionary<int, string>
         {

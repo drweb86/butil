@@ -16,8 +16,8 @@ public static class SourceItemHelper
         if (!item.IsFolder)
             return fileName;
 
-        var target = item.Target.TrimEnd(new char[] { '\\', '/' });
-        return fileName.Substring(target.Length + 1);
+        var target = item.Target.TrimEnd(['\\', '/']);
+        return fileName[(target.Length + 1)..];
     }
 
     public static string GetSourceItemDirectory(SourceItemV2 sourceItem)
@@ -74,7 +74,7 @@ public static class SourceItemHelper
             {
                 if (result == null)
                 {
-                    result = sourceItemChanges.CreatedFiles.ToList();
+                    result = [.. sourceItemChanges.CreatedFiles];
                 }
                 else
                 {
@@ -100,8 +100,6 @@ public static class SourceItemHelper
 
         result.EnsureNotNull(string.Empty);
 
-        return result!
-            .OrderBy(x => x.FileState.FileName)
-            .ToList();
+        return [.. result!.OrderBy(x => x.FileState.FileName)];
     }
 }

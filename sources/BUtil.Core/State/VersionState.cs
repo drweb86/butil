@@ -8,7 +8,7 @@ namespace BUtil.Core.State;
 public class VersionState
 {
     public DateTime BackupDateUtc { get; set; }
-    public IEnumerable<SourceItemChanges> SourceItemChanges { get; set; } = new List<SourceItemChanges>();
+    public IEnumerable<SourceItemChanges> SourceItemChanges { get; set; } = [];
     public VersionState() { } // deserialization
 
     public VersionState(DateTime backupDateUtc, IEnumerable<SourceItemChanges> sourceItemChanges)

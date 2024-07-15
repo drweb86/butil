@@ -1,6 +1,8 @@
 ﻿using BUtil.Core.Logs;
 using System;
 
+namespace butilc;
+
 public class ConsoleLog : LogBase
 {
     public override void WriteLine(LoggingEvent loggingEvent, string message)

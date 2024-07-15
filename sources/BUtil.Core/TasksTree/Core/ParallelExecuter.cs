@@ -7,14 +7,14 @@ namespace BUtil.Core.TasksTree.Core;
 
 public class ParallelExecuter
 {
-    private readonly List<Thread> _threads = new();
-    private readonly ConcurrentQueue<BuTask> tasks = new();
+    private readonly List<Thread> _threads = [];
+    private readonly ConcurrentQueue<BuTask> _tasks = new();
 
     public ParallelExecuter(IEnumerable<BuTask> tasks, int parallel)
     {
         tasks
             .ToList()
-            .ForEach(this.tasks.Enqueue);
+            .ForEach(this._tasks.Enqueue);
         for (int i = 0; i < parallel; i++)
         {
             var thread = new Thread(ExecuteThread);
@@ -25,7 +25,7 @@ public class ParallelExecuter
 
     private void ExecuteThread()
     {
-        while (tasks.TryDequeue(out var task))
+        while (_tasks.TryDequeue(out var task))
         {
             task.Execute();
         }

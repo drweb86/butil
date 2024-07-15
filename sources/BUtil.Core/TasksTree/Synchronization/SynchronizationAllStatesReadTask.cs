@@ -20,6 +20,7 @@ internal class SynchronizationAllStatesReadTask : SequentialBuTask
     private readonly SynchronizationLocalStateLoadTask _synchronizationLocalStateLoadTask;
     private readonly GetStateOfSourceItemTask _setStateOfSourceItemTask;
     private readonly RemoteStateLoadTask _remoteStateLoadTask;
+    private static readonly JsonSerializerOptions _jsonSerializerOptions = new() { WriteIndented = true };
 
     public SynchronizationAllStatesReadTask(
         SynchronizationServices synchronizationServices, 
@@ -35,7 +36,7 @@ internal class SynchronizationAllStatesReadTask : SequentialBuTask
         _synchronizationLocalStateLoadTask = new SynchronizationLocalStateLoadTask(_synchronizationServices, Events);
         tasks.Add(_synchronizationLocalStateLoadTask);
 
-        _setStateOfSourceItemTask = new GetStateOfSourceItemTask(Events, _model.LocalSourceItem, new List<string>(), synchronizationServices.CommonServices);
+        _setStateOfSourceItemTask = new GetStateOfSourceItemTask(Events, _model.LocalSourceItem, [], synchronizationServices.CommonServices);
         tasks.Add(_setStateOfSourceItemTask);
 
         _remoteStateLoadTask = new RemoteStateLoadTask(synchronizationServices.StorageSpecificServices, Events, model.TaskOptions.Password);
@@ -66,23 +67,23 @@ internal class SynchronizationAllStatesReadTask : SequentialBuTask
                     .OrderByDescending(x => x.BackupDateUtc)
                     .FirstOrDefault();
 
-                _model.RemoteSourceItem = lastVersion?.SourceItemChanges.SingleOrDefault(x => SynchronizationHelper.IsSynchronizationSourceItem(x.SourceItem))?.SourceItem ?? _model.CreateVirtualSourceItem();
+                _model.RemoteSourceItem = lastVersion?.SourceItemChanges.SingleOrDefault(x => SynchronizationHelper.IsSynchronizationSourceItem(x.SourceItem))?.SourceItem ?? SynchronizationModel.CreateVirtualSourceItem();
 
                 _model.RemoteStorageFiles = lastVersion != null
                     ? SourceItemHelper.BuildVersionFiles(
                         _model.RemoteStorageState,
                         _model.RemoteSourceItem,
                         lastVersion)
-                    : new List<StorageFile>();
+                    : [];
                 _model.LocalState = GetLocalState();
                 _model.ActualFiles = GetActualFiles();
 
                 LogDebug("Local state");
-                LogDebug(JsonSerializer.Serialize(_model.LocalState, new JsonSerializerOptions { WriteIndented = true }));
+                LogDebug(JsonSerializer.Serialize(_model.LocalState, _jsonSerializerOptions));
                 LogDebug("Actual files");
-                LogDebug(JsonSerializer.Serialize(_model.ActualFiles, new JsonSerializerOptions { WriteIndented = true }));
+                LogDebug(JsonSerializer.Serialize(_model.ActualFiles, _jsonSerializerOptions));
                 LogDebug("Remote state");
-                LogDebug(JsonSerializer.Serialize(_model.RemoteState, new JsonSerializerOptions { WriteIndented = true }));
+                LogDebug(JsonSerializer.Serialize(_model.RemoteState, _jsonSerializerOptions));
             }
         }
         catch (Exception ex)
@@ -99,12 +100,7 @@ internal class SynchronizationAllStatesReadTask : SequentialBuTask
             throw new InvalidOperationException("Source item state population has failed!");
         }
 
-        var state = _setStateOfSourceItemTask.SourceItemState;
-        if (state == null)
-        {
-            throw new InvalidOperationException("Source item state is corrupted (null)!");
-        }
-
+        var state = _setStateOfSourceItemTask.SourceItemState ?? throw new InvalidOperationException("Source item state is corrupted (null)!");
         return new SynchronizationState()
         {
             FileSystemEntries = state.FileStates
@@ -115,7 +111,7 @@ internal class SynchronizationAllStatesReadTask : SequentialBuTask
 
     private SynchronizationState GetLocalState()
     {
-        if (_remoteStateLoadTask.StorageState == null || !_remoteStateLoadTask.StorageState.VersionStates.Any())
+        if (_remoteStateLoadTask.StorageState == null || _remoteStateLoadTask.StorageState.VersionStates.Count == 0)
         {
             LogDebug("Remote version state is missing => treating local state as empty to avoid data loss!");
 

@@ -5,21 +5,15 @@ using System.Collections.Generic;
 
 namespace BUtil.Core.TasksTree.Core;
 
-public abstract class BuTask
+public abstract class BuTask(ILog log, TaskEvents events, string title)
 {
     public Guid Id { get; } = Guid.NewGuid();
-    public string Title { get; protected set; }
-    protected readonly TaskEvents Events;
-    protected readonly ILog Log;
+    public string Title { get; protected set; } = title;
+    protected readonly TaskEvents Events = events;
+    protected readonly ILog Log = log;
     public virtual IEnumerable<BuTask> GetChildren()
     {
-        return Array.Empty<BuTask>();
-    }
-    protected BuTask(ILog log, TaskEvents events, string title)
-    {
-        Log = log;
-        Events = events;
-        Title = title;
+        return [];
     }
 
     public abstract void Execute();
@@ -65,15 +59,10 @@ public abstract class BuTask
     public bool IsSkipped { get; protected set; }
 }
 
-public class FunctionBuTaskV2<TResult>: BuTaskV2
+public class FunctionBuTaskV2<TResult>(ILog log, TaskEvents events, string title, Func<TResult> action) : BuTaskV2(log, events, title)
 {
-    private readonly Func<TResult> _action;
+    private readonly Func<TResult> _action = action;
     public TResult? Result { get; protected set; }
-
-    public FunctionBuTaskV2(ILog log, TaskEvents events, string title, Func<TResult> action): base (log, events, title) 
-    {
-        _action = action;
-    }
 
     protected override void ExecuteInternal()
     {
@@ -81,12 +70,8 @@ public class FunctionBuTaskV2<TResult>: BuTaskV2
     }
 }
 
-public abstract class BuTaskV2 : BuTask
+public abstract class BuTaskV2(ILog log, TaskEvents events, string title) : BuTask(log, events, title)
 {
-    protected BuTaskV2(ILog log, TaskEvents events, string title) : base(log, events, title)
-    {
-    }
-
     protected abstract void ExecuteInternal();
 
     public override void Execute()

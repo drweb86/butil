@@ -10,15 +10,6 @@ namespace BUtil.Core.TasksTree.IncrementalModel;
 public class DeleteVersionUtil
 {
     private static void AddUpdatedCreatedStorageFiles(
-        VersionState version,
-        List<string> storageRelativeFileNames)
-    {
-        version.SourceItemChanges
-            .ToList()
-            .ForEach(sourceItemChange => AddUpdatedCreatedStorageFiles(sourceItemChange, storageRelativeFileNames));
-    }
-
-    private static void AddUpdatedCreatedStorageFiles(
         SourceItemChanges sourceItemChange,
         List<string> storageRelativeFileNames)
     {
@@ -30,7 +21,7 @@ public class DeleteVersionUtil
         out IEnumerable<string> storageRelativeFileNamesToDelete,
         out Dictionary<string, string> storageRelativeFileNameUpdate)
     {
-        storageRelativeFileNameUpdate = new Dictionary<string, string>();
+        storageRelativeFileNameUpdate = [];
 
         var storageRelativeFileNamesToDeleteList = new List<string>();
         storageRelativeFileNamesToDelete = storageRelativeFileNamesToDeleteList;
@@ -240,7 +231,7 @@ public class DeleteVersionUtil
         foreach (var updatedFile in from.UpdatedFiles)
         {
             // Updated=>Updated ? delete old file
-            if (TryFindStorageFile(to.UpdatedFiles, updatedFile, out var storageFile))
+            if (TryFindStorageFile(to.UpdatedFiles, updatedFile, out var _))
             {
                 storageRelativeFileNamesToDeleteList.Add(updatedFile.StorageRelativeFileName);
             }
@@ -256,26 +247,6 @@ public class DeleteVersionUtil
         }
     }
 
-    private static void DeleteRecentVersion(
-        IncrementalBackupState state,
-        VersionState versionToDelete,
-        List<string> storageFilesToDeleteList)
-    {
-        state.VersionStates.Remove(versionToDelete);
-        AddUpdatedCreatedStorageFiles(versionToDelete, storageFilesToDeleteList);
-        state.LastSourceItemStates = SourceItemStateBuilder.Build(state.VersionStates, state.VersionStates.First());
-    }
-
-    private static void DeleteSingleVersion(
-        IncrementalBackupState state,
-        VersionState versionToDelete,
-        List<string> storageFilesToDeleteList)
-    {
-        state.VersionStates.Remove(versionToDelete);
-        AddUpdatedCreatedStorageFiles(versionToDelete, storageFilesToDeleteList);
-        state.LastSourceItemStates.Clear();
-    }
-
     private static void RemoveUnchangedFiles(IncrementalBackupState state, List<string> storageRelativeFileNamesToDeleteList)
     {
         foreach (var version in state.VersionStates)
@@ -285,15 +256,13 @@ public class DeleteVersionUtil
                 foreach (var file in sourceItemChange.UpdatedFiles)
                 {
                     var storageFileName = file.StorageRelativeFileName;
-                    if (storageRelativeFileNamesToDeleteList.Contains(storageFileName))
-                        storageRelativeFileNamesToDeleteList.Remove(storageFileName);
+                    storageRelativeFileNamesToDeleteList.Remove(storageFileName);
                 }
 
                 foreach (var file in sourceItemChange.CreatedFiles)
                 {
                     var storageFileName = file.StorageRelativeFileName;
-                    if (storageRelativeFileNamesToDeleteList.Contains(storageFileName))
-                        storageRelativeFileNamesToDeleteList.Remove(storageFileName);
+                    storageRelativeFileNamesToDeleteList.Remove(storageFileName);
                 }
             }
         }

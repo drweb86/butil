@@ -10,18 +10,11 @@ using System.Security.Cryptography;
 
 namespace BUtil.Core.State;
 
-public class IncrementalBackupFileService
+public class IncrementalBackupFileService(IHashService hashService, StorageSpecificServicesIoc services)
 {
-    private readonly ILog _log;
-    private readonly IHashService _hashService;
-    private readonly StorageSpecificServicesIoc _services;
-
-    public IncrementalBackupFileService(IHashService hashService, StorageSpecificServicesIoc services)
-    {
-        _log = services.CommonServices.Log;
-        _hashService = hashService;
-        _services = services;
-    }
+    private readonly ILog _log = services.CommonServices.Log;
+    private readonly IHashService _hashService = hashService;
+    private readonly StorageSpecificServicesIoc _services = services;
 
     public bool Download(StorageFile storageFile, string destinationFileName)
     {

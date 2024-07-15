@@ -47,7 +47,7 @@ public class TaskSchedulerService : ITaskSchedulerService
     {
         Unschedule(taskName);
 
-        if (!scheduleInfo.Days.Any())
+        if (scheduleInfo.Days.Count == 0)
             return;
 
         var schedulerTaskName = GetScheduledTaskName(taskName);
@@ -74,7 +74,7 @@ public class TaskSchedulerService : ITaskSchedulerService
         TaskService.Instance.RootFolder.DeleteTask(schedulerTaskName, false);
     }
 
-    private DaysOfTheWeek GetDaysOfTheWeek(List<DayOfWeek> days)
+    private static DaysOfTheWeek GetDaysOfTheWeek(List<DayOfWeek> days)
     {
         DaysOfTheWeek result = 0;
         foreach (var day in days)
@@ -98,7 +98,7 @@ public class TaskSchedulerService : ITaskSchedulerService
         return result;
     }
 
-    private string GetScheduledTaskName(string taskName)
+    private static string GetScheduledTaskName(string taskName)
     {
         return $"BUtil {taskName} task";
     }

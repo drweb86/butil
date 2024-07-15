@@ -19,7 +19,7 @@ class ImportMediaRootTask : SequentialBuTask
         var sourceItem = new SourceItemV2(typedModel.DestinationFolder, true);
 
         _commonServicesIoc = new CommonServicesIoc(log, onGetLastMinuteMessage);
-        var getStateOfSourceItemTask = new GetStateOfSourceItemTask(backupEvents, sourceItem, Array.Empty<string>(), _commonServicesIoc);
+        var getStateOfSourceItemTask = new GetStateOfSourceItemTask(backupEvents, sourceItem, [], _commonServicesIoc);
         var importFiles = new ImportFilesTask(backupEvents, backupTask, getStateOfSourceItemTask, _commonServicesIoc);
 
         Children = [getStateOfSourceItemTask, importFiles];

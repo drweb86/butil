@@ -9,20 +9,13 @@ using System.Linq;
 
 namespace BUtil.Core.TasksTree.Storage;
 
-internal class WriteSourceFilesToStorageTask : ParallelBuTask
+internal class WriteSourceFilesToStorageTask(
+    StorageSpecificServicesIoc services,
+    TaskEvents events,
+    CalculateIncrementedVersionForStorageTask getIncrementedVersionTask) : ParallelBuTask(services.CommonServices.Log, events, Localization.Resources.File_List_Saving)
 {
-    private readonly StorageSpecificServicesIoc _services;
-    private readonly CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask;
-
-    public WriteSourceFilesToStorageTask(
-        StorageSpecificServicesIoc services,
-        TaskEvents events,
-        CalculateIncrementedVersionForStorageTask getIncrementedVersionTask)
-        : base(services.CommonServices.Log, events, Localization.Resources.File_List_Saving)
-    {
-        _services = services;
-        _getIncrementedVersionTask = getIncrementedVersionTask;
-    }
+    private readonly StorageSpecificServicesIoc _services = services;
+    private readonly CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask = getIncrementedVersionTask;
 
     public override void Execute()
     {
@@ -32,12 +25,12 @@ internal class WriteSourceFilesToStorageTask : ParallelBuTask
         {
             LogDebug("Version is not needed.");
             IsSuccess = true;
-            Children = new List<BuTask>();
+            Children = [];
             UpdateStatus(ProcessingStatus.FinishedSuccesfully);
             return;
         }
 
-        List<WriteSourceFileToStorageTask> WriteFileTasks = new();
+        List<WriteSourceFileToStorageTask> WriteFileTasks = [];
         var versionStates = (_getIncrementedVersionTask.IncrementalBackupState ?? throw new Exception()).VersionStates;
         var versionState = versionStates.Last();
         var singleBackupQuotaGb = new Quota(_services.StorageSettings.SingleBackupQuotaGb * 1024 * 1024 * 1024);
@@ -63,7 +56,7 @@ internal class WriteSourceFilesToStorageTask : ParallelBuTask
                 .Select(x => new WriteSourceFileToStorageTask(
                     _services,
                     Events,
-                    x.ToList(),
+                    [.. x],
                     singleBackupQuotaGb,
                     sourceItemChange.SourceItem,
                     versionStates,
@@ -102,14 +95,14 @@ internal class WriteSourceFilesToStorageTask : ParallelBuTask
             .Where(x => x.IsSkippedBecauseOfQuota)
             .SelectMany(x => x.StorageFiles)
             .ToList();
-        if (skippedBecauseOfQuotaFiles.Any())
+        if (skippedBecauseOfQuotaFiles.Count != 0)
         {
             var gigabyte = 1024 * 1024 * 1024;
             _services.CommonServices.LastMinuteMessageService.AddLastMinuteLogMessage(string.Format(BUtil.Core.Localization.Resources.Task_Status_PartialDueToQuota, skippedBecauseOfQuotaFiles.Count, skippedBecauseOfQuotaFiles.Sum(x => x.FileState.Size) / gigabyte));
         }
     }
 
-    private string GetStorageRelativeFileName(VersionState versionState)
+    private static string GetStorageRelativeFileName(VersionState versionState)
     {
         return SourceItemHelper.GetCompressedStorageRelativeFileName(versionState);
     }
