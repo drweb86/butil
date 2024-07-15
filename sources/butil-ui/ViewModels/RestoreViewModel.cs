@@ -1,11 +1,6 @@
-﻿using Avalonia.Threading;
-using BUtil.Core.ConfigurationFileModels.V2;
+﻿using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
 using BUtil.Core.Localization;
-using BUtil.Core.Logs;
-using BUtil.Core.Misc;
-using BUtil.Core.Storages;
-using BUtil.Core.TasksTree.IncrementalModel;
 using BUtil.Core.TasksTree.States;
 using butil_ui.Controls;
 using System;
@@ -73,7 +68,9 @@ public class RestoreViewModel : ViewModelBase
 
     #region Commands
 
+#pragma warning disable CA1822 // Mark members as static
     public void CloseCommand()
+#pragma warning restore CA1822 // Mark members as static
     {
         Environment.Exit(0);
     }
@@ -93,7 +90,7 @@ public class RestoreViewModel : ViewModelBase
         }
 
         var taskEvents = new TaskEvents();
-        GetExistingVersionStateFromStorageRootTask openIncrementalBackupTask = null;
+        GetExistingVersionStateFromStorageRootTask openIncrementalBackupTask = null!;
         this.TaskExecuterViewModel = new TaskExecuterViewModel(
             taskEvents,
             Resources.Task_Restore,
@@ -107,7 +104,7 @@ public class RestoreViewModel : ViewModelBase
                 if (isOk)
                 {
                     IsSetupVisible = false;
-                    this.TaskExecuterViewModel.IsCollapsed = true;
+                    TaskExecuterViewModel!.IsCollapsed = true;
                     VersionsListViewModel.Initialize(openIncrementalBackupTask.StorageState!, storageOptions, EncryptionTaskViewModel.Password);
                 }
             });
@@ -119,11 +116,11 @@ public class RestoreViewModel : ViewModelBase
 
     #region Labels
 
-    public string AfterTaskSelection_Field => Resources.AfterTaskSelection_Field;
-    public string Button_Close => Resources.Button_Close;
-    public string AfterTaskSelection_Help => Resources.AfterTaskSelection_Help;
-    public string Button_Continue => Resources.Button_Continue;
-    public string Task_Restore => Resources.Task_Restore;
+    public static string AfterTaskSelection_Field => Resources.AfterTaskSelection_Field;
+    public static string Button_Close => Resources.Button_Close;
+    public static string AfterTaskSelection_Help => Resources.AfterTaskSelection_Help;
+    public static string Button_Continue => Resources.Button_Continue;
+    public static string Task_Restore => Resources.Task_Restore;
 
     #endregion
 }

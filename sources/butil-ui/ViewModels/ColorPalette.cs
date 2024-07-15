@@ -8,8 +8,7 @@ namespace butil_ui.ViewModels;
 
 public static class ColorPalette
 {
-
-    private static ConcurrentDictionary<SemanticColor, SolidColorBrush> _brushCache = new();
+    private static readonly ConcurrentDictionary<SemanticColor, SolidColorBrush> _brushCache = new();
 
     private static SemanticColor ProcessingStatusToColor(ProcessingStatus status)
     {

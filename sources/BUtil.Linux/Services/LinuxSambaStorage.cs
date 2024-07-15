@@ -7,7 +7,7 @@ namespace BUtil.Linux.Services;
 
 class LinuxSambaStorage : StorageBase<SambaStorageSettingsV2>
 {
-    private IStorage _proxy;
+    private readonly FolderStorage _proxy;
 
     internal LinuxSambaStorage(ILog log, SambaStorageSettingsV2 settings)
         : base(log, settings)
@@ -33,6 +33,10 @@ class LinuxSambaStorage : StorageBase<SambaStorageSettingsV2>
             path.Split('/', '\\', StringSplitOptions.RemoveEmptyEntries)
                 .Skip(1)
                 .ToArray());
+
+        if (Settings.User == null)
+            throw new InvalidOperationException(BUtil.Core.Localization.Resources.User_Field_Validation);
+
         var splittedUser = Settings.User.Split('/', '\\');
         var userDomain = splittedUser.Length == 1 ? string.Empty : splittedUser[0];
         var userWithoutDomain = splittedUser.Length == 2 ? splittedUser[1] : Settings.User;

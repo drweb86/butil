@@ -5,19 +5,12 @@ using System;
 
 namespace butil_ui.ViewModels;
 
-public class LaunchTaskViewItem : ObservableObject
+public class LaunchTaskViewItem(BuTask task, ProcessingStatus status) : ObservableObject
 {
-    public LaunchTaskViewItem(BuTask task, ProcessingStatus status)
-    {
-        Tag = task.Id;
-        Text = task.Title;
-        _status = status;
-    }
+    public Guid Tag { get; } = task.Id;
+    public string Text { get; } = task.Title;
 
-    public Guid Tag { get; }
-    public string Text { get; }
-    public ProcessingStatus _status;
-
+    private ProcessingStatus _status = status;
     public ProcessingStatus Status
     {
         get => _status;

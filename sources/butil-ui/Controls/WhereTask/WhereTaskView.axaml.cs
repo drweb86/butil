@@ -36,10 +36,9 @@ public partial class WhereTaskView : UserControl
             AllowMultiple = false
         });
 
-        var folder = folders.FirstOrDefault();
-        if (folder != null)
+        if (folders.Count == 1)
         {
-            dataContext.FolderFolder = folder.TryGetLocalPath() ?? folder.Path.ToString();
+            dataContext.FolderFolder = folders[0].TryGetLocalPath() ?? folders[0].Path.ToString();
         }
     }
 

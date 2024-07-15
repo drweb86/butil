@@ -20,9 +20,9 @@ public class LaunchTaskViewModel : ViewModelBase
 
     #region TaskExecuterViewModel
 
-    private TaskExecuterViewModel _taskExecuterViewModel;
+    private TaskExecuterViewModel? _taskExecuterViewModel;
 
-    public TaskExecuterViewModel TaskExecuterViewModel
+    public TaskExecuterViewModel? TaskExecuterViewModel
     {
         get
         {
@@ -81,12 +81,16 @@ public class LaunchTaskViewModel : ViewModelBase
 
     #region Commands
 
+#pragma warning disable CA1822 // Mark members as static
     public void CloseCommand()
+#pragma warning restore CA1822 // Mark members as static
     {
         Environment.Exit(0);
     }
 
+#pragma warning disable CA1822 // Mark members as static
     public void StopTaskCommand()
+#pragma warning restore CA1822 // Mark members as static
     {
         Environment.Exit(-1);
     }
@@ -94,20 +98,19 @@ public class LaunchTaskViewModel : ViewModelBase
     #endregion
 
     #region Labels
-    public string Theme_Title => "🎨 " + BUtil.Core.Localization.Resources.Theme_Title;
-    public string Task_Launch_Hint => Resources.Task_Launch_Hint;
-    public string Button_Cancel => Resources.Button_Cancel;
-    public string AfterTaskSelection_Field => Resources.AfterTaskSelection_Field;
-    public string Button_Close => Resources.Button_Close;
-    public string AfterTaskSelection_Help => Resources.AfterTaskSelection_Help;
-    public string[] PowerTasks
+    public static string Task_Launch_Hint => Resources.Task_Launch_Hint;
+    public static string Button_Cancel => Resources.Button_Cancel;
+    public static string AfterTaskSelection_Field => Resources.AfterTaskSelection_Field;
+    public static string Button_Close => Resources.Button_Close;
+    public static string AfterTaskSelection_Help => Resources.AfterTaskSelection_Help;
+    public static string[] PowerTasks
     {
-        get => new[] {
+        get => [
             Resources.AfterTaskSelection_ShutdownPc,
             Resources.AfterTaskSelection_LogOff,
             Resources.AfterTaskSelection_Reboot,
             Resources.AfterTaskSelection_DoNothing,
-        };
+        ];
     }
 
     #endregion
@@ -129,6 +132,9 @@ public class LaunchTaskViewModel : ViewModelBase
             TaskExecuterViewModel = new TaskExecuterViewModel(Resources.Task_Validation_NotSupported);
             return;
         }
+
+        if (_task == null)
+            throw new InvalidOperationException("task is null");
 
         var fileLog = new FileLog(_task.Name);
         fileLog.Open();
@@ -160,7 +166,7 @@ public class LaunchTaskViewModel : ViewModelBase
             WindowTitle = $"{_taskName} - {Resources.Task_Status_Succesfull}";
         }
 
-        var appStaysAlive = this._taskExecuterViewModel.SelectedPowerTask == PowerTask.None;
+        var appStaysAlive = this._taskExecuterViewModel!.SelectedPowerTask == PowerTask.None;
         if (!appStaysAlive)
         {
             Environment.Exit(isOk ? 0 : -1);

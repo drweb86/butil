@@ -31,7 +31,7 @@ internal static class FileHelper
 
     public static string Combine(char? separator, params string?[] paths)
     {
-        var actualPaths = (paths ?? new string[0])
+        var actualPaths = (paths ?? [])
             .Where(x => !string.IsNullOrEmpty(x))
             .Select(x => x!)
             .ToList();
@@ -98,7 +98,7 @@ internal static class FileHelper
         {
             return String.Empty;
         }
-        return relativeFileName.Substring(relativePathToTrimNormalized.Length + 1);
+        return relativeFileName[(relativePathToTrimNormalized.Length + 1)..];
     }
 
     internal static string GetRelativeFileName(string folder, string file)

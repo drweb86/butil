@@ -80,11 +80,24 @@ public class FileLog : LogBase
         if (_logFile == null)
             return;
 
-        string output = LogFormatter.GetFormattedMessage(loggingEvent, message);
+        string output = GetFormattedMessage(loggingEvent, message);
         WriteInFile(output);
         if (loggingEvent == LoggingEvent.Error)
             lock (_logFile)
                 _logFile.Flush();
+    }
+
+    private static string GetFormattedMessage(LoggingEvent loggingEvent, string message)
+    {
+        var information = string.Format(CultureInfo.CurrentUICulture,
+                        "{0:HH:mm} {1}",
+                        DateTime.Now,
+                        message);
+
+        if (loggingEvent == LoggingEvent.Error)
+            return $"⛔ERROR {information}";
+        else
+            return $"✅ {information}";
     }
 
     public override void Close(bool isSuccess)

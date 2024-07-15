@@ -9,9 +9,7 @@ namespace butil_ui.Controls;
 
 public class ProcessingStatusToSolidColorBrushConverter : IValueConverter
 {
-    public static ProcessingStatusToSolidColorBrushConverter Instance = new ProcessingStatusToSolidColorBrushConverter();
-
-    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
         if (value == null)
             return BindingNotification.UnsetValue;
@@ -24,7 +22,7 @@ public class ProcessingStatusToSolidColorBrushConverter : IValueConverter
         return BindingNotification.UnsetValue;
     }
 
-    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
         return BindingNotification.UnsetValue;
     }

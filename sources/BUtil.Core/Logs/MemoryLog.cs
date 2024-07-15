@@ -4,8 +4,6 @@ namespace BUtil.Core.Logs;
 
 public class MemoryLog : ILog
 {
-    public bool HasErrors => false;
-
     public void Close(bool isSuccess)
     {
     }
@@ -14,7 +12,7 @@ public class MemoryLog : ILog
     {
     }
 
-    private StringBuilder _log = new StringBuilder();
+    private readonly StringBuilder _log = new();
 
     public void LogProcessOutput(string consoleOutput, bool finishedSuccessfully)
     {
@@ -24,9 +22,10 @@ public class MemoryLog : ILog
 
     public void WriteLine(LoggingEvent loggingEvent, string message)
     {
-        _log.Append(loggingEvent.ToString());
-        _log.Append(" ");
-        _log.AppendLine(message);
+        _log
+            .Append(loggingEvent.ToString())
+            .Append(' ')
+            .AppendLine(message);
     }
 
     public override string ToString()

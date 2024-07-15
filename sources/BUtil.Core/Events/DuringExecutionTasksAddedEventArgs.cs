@@ -4,14 +4,8 @@ using System.Collections.Generic;
 
 namespace BUtil.Core.Events;
 
-public class DuringExecutionTasksAddedEventArgs : EventArgs
+public class DuringExecutionTasksAddedEventArgs(Guid taskId, IEnumerable<BuTask> tasks) : EventArgs
 {
-    public Guid TaskId { get; }
-    public IEnumerable<BuTask> Tasks { get; }
-
-    public DuringExecutionTasksAddedEventArgs(Guid taskId, IEnumerable<BuTask> tasks)
-    {
-        TaskId = taskId;
-        Tasks = tasks;
-    }
+    public Guid TaskId { get; } = taskId;
+    public IEnumerable<BuTask> Tasks { get; } = tasks;
 }

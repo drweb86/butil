@@ -25,8 +25,7 @@ public class WhereTaskViewModel : ObservableObject
         if (mtp != null)
             TransportSource.Add(Mtp);
 
-        var folderStorageSettings = storageSettings as FolderStorageSettingsV2;
-        if (folderStorageSettings != null)
+        if (storageSettings is FolderStorageSettingsV2 folderStorageSettings)
         {
             Transport = DirectoryStorage;
             Quota = folderStorageSettings.SingleBackupQuotaGb;
@@ -35,8 +34,7 @@ public class WhereTaskViewModel : ObservableObject
             FolderDisconnectionScript = folderStorageSettings.UnmountPowershellScript;
         }
 
-        var sambaStorageSettingsV2 = storageSettings as SambaStorageSettingsV2;
-        if (sambaStorageSettingsV2 != null)
+        if (storageSettings is SambaStorageSettingsV2 sambaStorageSettingsV2)
         {
             Transport = Smb;
             Quota = sambaStorageSettingsV2.SingleBackupQuotaGb;
@@ -45,8 +43,7 @@ public class WhereTaskViewModel : ObservableObject
             SmbPassword = sambaStorageSettingsV2.Password;
         }
 
-        var ftpsStorageSettingsV2 = storageSettings as FtpsStorageSettingsV2;
-        if (ftpsStorageSettingsV2 != null)
+        if (storageSettings is FtpsStorageSettingsV2 ftpsStorageSettingsV2)
         {
             Transport = Ftps;
             Quota = ftpsStorageSettingsV2.SingleBackupQuotaGb;
@@ -59,8 +56,7 @@ public class WhereTaskViewModel : ObservableObject
             FtpsFolder = ftpsStorageSettingsV2.Folder;
         }
 
-        var mtpStorageSettings = storageSettings as MtpStorageSettings;
-        if (mtpStorageSettings != null && mtp != null)
+        if (storageSettings is MtpStorageSettings mtpStorageSettings && mtp != null)
         {
             var mtpService = PlatformSpecificExperience.Instance.GetMtpService();
             if (mtpService != null)
@@ -98,8 +94,11 @@ public class WhereTaskViewModel : ObservableObject
 
     public async Task UnmountTaskLaunchCommand()
     {
+        if (string.IsNullOrWhiteSpace(FolderDisconnectionScript))
+            return;
+
         var memoryLog = new MemoryLog();
-        if (PlatformSpecificExperience.Instance.SupportManager.LaunchScript(memoryLog, this.FolderDisconnectionScript, "***"))
+        if (PlatformSpecificExperience.Instance.SupportManager.LaunchScript(memoryLog, FolderDisconnectionScript, "***"))
             await Messages.ShowInformationBox(Resources.DataStorage_Field_DisconnectionScript_Ok);
         else
             await Messages.ShowErrorBox(Resources.DataStorage_Field_DisconnectionScript_Bad + Environment.NewLine + Environment.NewLine + memoryLog);
@@ -160,59 +159,59 @@ public class WhereTaskViewModel : ObservableObject
     }
     public string Title { get; }
     public Bitmap? IconSource { get; }
-    public string DirectoryStorage => Resources.DirectoryStorage;
-    public string Smb => "SMB/CIFS";
-    public string Ftps => "FTPS";
-    public string Mtp => "MTP";
+    public static string DirectoryStorage => Resources.DirectoryStorage;
+    public static string Smb => "SMB/CIFS";
+    public static string Ftps => "FTPS";
+    public static string Mtp => "MTP";
 
-    public List<string> TransportSource { get; } = new List<string>();
+    public List<string> TransportSource { get; } = [];
 
 
     public string Ftps_Encryption_Option_Explicit = Resources.Ftps_Encryption_Option_Explicit;
     public string Ftps_Encryption_Option_Implicit = Resources.Ftps_Encryption_Option_Implicit;
-    public List<string> FtpsEncryptionSource { get; } = new List<string>();
+    public List<string> FtpsEncryptionSource { get; } = [];
 
     #region Labels
-    public string LeftMenu_Where => Resources.LeftMenu_Where;
-    public string DataStorage_Field_UploadQuota => Resources.DataStorage_Field_UploadQuota;
-    public string DataStorage_Field_UploadQuota_Help => Resources.DataStorage_Field_UploadQuota_Help;
-    public string DataStorage_Script_Help => string.Format(Resources.DataStorage_Script_Help, PlatformSpecificExperience.Instance.SupportManager.ScriptEngineName);
-    public string DataStorage_Field_ConnectScript => Resources.DataStorage_Field_ConnectScript;
-    public string DataStorage_Field_DisconnectionScript => Resources.DataStorage_Field_DisconnectionScript;
-    public string Field_Folder => Resources.Field_Folder;
+    public static string LeftMenu_Where => Resources.LeftMenu_Where;
+    public static string DataStorage_Field_UploadQuota => Resources.DataStorage_Field_UploadQuota;
+    public static string DataStorage_Field_UploadQuota_Help => Resources.DataStorage_Field_UploadQuota_Help;
+    public static string DataStorage_Script_Help => string.Format(Resources.DataStorage_Script_Help, PlatformSpecificExperience.Instance.SupportManager.ScriptEngineName);
+    public static string DataStorage_Field_ConnectScript => Resources.DataStorage_Field_ConnectScript;
+    public static string DataStorage_Field_DisconnectionScript => Resources.DataStorage_Field_DisconnectionScript;
+    public static string Field_Folder => Resources.Field_Folder;
 
-    public string Url_Field => Resources.Url_Field;
-    public string User_Field => Resources.User_Field;
-    public string Password_Field => Resources.Password_Field;
-    public string Server_Field_Address => Resources.Server_Field_Address;
-    public string Server_Field_Port => Resources.Server_Field_Port;
-    public string Ftps_Field_Encryption => Resources.Ftps_Field_Encryption;
-    public string Field_Device => Resources.Field_Device;
-    public string Field_Folder_Browse => Resources.Field_Folder_Browse;
-    public string Task_Launch => Resources.Task_Launch;
-    public string Field_TransportProtocol => Resources.Field_TransportProtocol;
+    public static string Url_Field => Resources.Url_Field;
+    public static string User_Field => Resources.User_Field;
+    public static string Password_Field => Resources.Password_Field;
+    public static string Server_Field_Address => Resources.Server_Field_Address;
+    public static string Server_Field_Port => Resources.Server_Field_Port;
+    public static string Ftps_Field_Encryption => Resources.Ftps_Field_Encryption;
+    public static string Field_Device => Resources.Field_Device;
+    public static string Field_Folder_Browse => Resources.Field_Folder_Browse;
+    public static string Task_Launch => Resources.Task_Launch;
+    public static string Field_TransportProtocol => Resources.Field_TransportProtocol;
     #endregion
 
     #region Transport
 
-    private string _Transport;
+    private string? _transport;
 
-    public string Transport
+    public string? Transport
     {
         get
         {
-            return _Transport;
+            return _transport;
         }
         set
         {
-            if (value == _Transport)
+            if (value == _transport)
                 return;
-            _Transport = value;
+            _transport = value;
             OnPropertyChanged(nameof(Transport));
-            IsDirectoryTransport = value == this.DirectoryStorage;
-            IsMtpTransport = value == this.Mtp;
-            IsSmbTransport = value == this.Smb;
-            IsFtpsTransport = value == this.Ftps;
+            IsDirectoryTransport = value == DirectoryStorage;
+            IsMtpTransport = value == Mtp;
+            IsSmbTransport = value == Smb;
+            IsFtpsTransport = value == Ftps;
         }
     }
 
@@ -346,9 +345,9 @@ public class WhereTaskViewModel : ObservableObject
 
     #region FolderConnectionScript
 
-    private string _folderConnectionScript;
+    private string? _folderConnectionScript;
 
-    public string FolderConnectionScript
+    public string? FolderConnectionScript
     {
         get
         {
@@ -367,9 +366,9 @@ public class WhereTaskViewModel : ObservableObject
 
     #region FolderDisconnectionScript
 
-    private string _folderDisconnectionScript;
+    private string? _folderDisconnectionScript;
 
-    public string FolderDisconnectionScript
+    public string? FolderDisconnectionScript
     {
         get
         {
@@ -388,9 +387,9 @@ public class WhereTaskViewModel : ObservableObject
 
     #region SmbUrl
 
-    private string _smbUrl;
+    private string? _smbUrl;
 
-    public string SmbUrl
+    public string? SmbUrl
     {
         get
         {
@@ -451,9 +450,9 @@ public class WhereTaskViewModel : ObservableObject
 
     #region FtpsServer
 
-    private string _ftpsServer;
+    private string? _ftpsServer;
 
-    public string FtpsServer
+    public string? FtpsServer
     {
         get
         {
@@ -514,9 +513,9 @@ public class WhereTaskViewModel : ObservableObject
 
     #region FtpsUser
 
-    private string _ftpsUser;
+    private string? _ftpsUser;
 
-    public string FtpsUser
+    public string? FtpsUser
     {
         get
         {
@@ -535,9 +534,9 @@ public class WhereTaskViewModel : ObservableObject
 
     #region FtpsPassword
 
-    private string _ftpsPassword;
+    private string? _ftpsPassword;
 
-    public string FtpsPassword
+    public string? FtpsPassword
     {
         get
         {
@@ -577,9 +576,9 @@ public class WhereTaskViewModel : ObservableObject
 
     #region MtpDevice
 
-    private string _mtpDevice;
+    private string? _mtpDevice;
 
-    public string MtpDevice
+    public string? MtpDevice
     {
         get
         {
@@ -598,9 +597,9 @@ public class WhereTaskViewModel : ObservableObject
 
     #region MtpFolder
 
-    private string _mtpFolder;
+    private string? _mtpFolder;
 
-    public string MtpFolder
+    public string? MtpFolder
     {
         get
         {
@@ -619,7 +618,7 @@ public class WhereTaskViewModel : ObservableObject
 
     #region MtpDevicesSource
 
-    private IEnumerable<string> _mtpDevicesSource;
+    private IEnumerable<string> _mtpDevicesSource = [];
 
     public IEnumerable<string> MtpDevicesSource
     {

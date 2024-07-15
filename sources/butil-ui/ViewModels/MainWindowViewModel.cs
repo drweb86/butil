@@ -14,15 +14,17 @@ namespace butil_ui.ViewModels;
 
 public partial class MainWindowViewModel : ViewModelBase
 {
-    public bool CanExtendClientAreaToDecorationsHint => PlatformSpecificExperience.Instance.UiService.CanExtendClientAreaToDecorationsHint;
+    public static bool CanExtendClientAreaToDecorationsHint => PlatformSpecificExperience.Instance.UiService.CanExtendClientAreaToDecorationsHint;
 
-    public string Theme_Value_Dark => Resources.Theme_Value_Dark;
+    public static string Theme_Value_Dark => Resources.Theme_Value_Dark;
 
-    public string Theme_Value_Light => Resources.Theme_Value_Light;
+    public static string Theme_Value_Light => Resources.Theme_Value_Light;
 
     #region Commands
 
+#pragma warning disable CA1822 // Mark members as static
     public void GoDarkSide()
+#pragma warning restore CA1822 // Mark members as static
     {
         new SettingsStoreService()
             .Save(ThemeSetting.Name, ThemeSetting.DarkValue);
@@ -32,7 +34,9 @@ public partial class MainWindowViewModel : ViewModelBase
         Environment.Exit(0);
     }
 
+#pragma warning disable CA1822 // Mark members as static
     public void GoLightSide()
+#pragma warning restore CA1822 // Mark members as static
     {
         new SettingsStoreService()
             .Save(ThemeSetting.Name, ThemeSetting.LightValue);
@@ -42,38 +46,50 @@ public partial class MainWindowViewModel : ViewModelBase
         Environment.Exit(0);
     }
 
+#pragma warning disable CA1822 // Mark members as static
     public void OpenLogsCommand()
+#pragma warning restore CA1822 // Mark members as static
     {
         PlatformSpecificExperience.Instance
                 .GetFolderService()
                 .OpenFolderInShell(Directories.LogsFolder);
     }
 
+#pragma warning disable CA1822 // Mark members as static
     public void RestoreCommand()
+#pragma warning restore CA1822 // Mark members as static
     {
         PlatformSpecificExperience.Instance
                 .SupportManager
                 .OpenRestorationApp();
     }
 
+#pragma warning disable CA1822 // Mark members as static
     public void IncrementalBackupTaskCreateCommand()
+#pragma warning restore CA1822 // Mark members as static
     {
         WindowManager.SwitchView(new EditIncrementalBackupTaskViewModel(string.Empty, true));
     }
 
+#pragma warning disable CA1822 // Mark members as static
     public void GoToWebsiteCommand()
+#pragma warning restore CA1822 // Mark members as static
     {
         PlatformSpecificExperience.Instance
                 .SupportManager
                 .OpenHomePage();
     }
 
+#pragma warning disable CA1822 // Mark members as static
     public void ImportMediaTaskCreateCommand()
+#pragma warning restore CA1822 // Mark members as static
     {
         WindowManager.SwitchView(new EditMediaTaskViewModel(string.Empty, true));
     }
 
+#pragma warning disable CA1822 // Mark members as static
     public void SynchronizationTaskCreateCommand()
+#pragma warning restore CA1822 // Mark members as static
     {
         WindowManager.SwitchView(new EditSynchronizationTaskViewModel(string.Empty, true));
     }
@@ -81,14 +97,14 @@ public partial class MainWindowViewModel : ViewModelBase
     #endregion
 
     #region Labels
-    public string Theme_Title => Resources.Theme_Title;
-    public string Task_Restore => Resources.Task_Restore;
-    public string LogFile_OpenLogs => Resources.LogFile_OpenLogs;
-    public string Task_Launch_Hint => Resources.Task_Launch_Hint;
-    public string Task_Create => Resources.Task_Create;
-    public string ImportMediaTask_Create => Resources.ImportMediaTask_Create;
-    public string IncrementalBackupTask_Create => Resources.IncrementalBackupTask_Create;
-    public string SynchronizationTask_Create => Resources.SynchronizationTask_Create + " (BETA)";
+    public static string Theme_Title => Resources.Theme_Title;
+    public static string Task_Restore => Resources.Task_Restore;
+    public static string LogFile_OpenLogs => Resources.LogFile_OpenLogs;
+    public static string Task_Launch_Hint => Resources.Task_Launch_Hint;
+    public static string Task_Create => Resources.Task_Create;
+    public static string ImportMediaTask_Create => Resources.ImportMediaTask_Create;
+    public static string IncrementalBackupTask_Create => Resources.IncrementalBackupTask_Create;
+    public static string SynchronizationTask_Create => Resources.SynchronizationTask_Create + " (BETA)";
 
     #endregion
 
@@ -141,7 +157,7 @@ public partial class MainWindowViewModel : ViewModelBase
 
         if (args.Length == 2 && args[0].Cmp(TasksAppArguments.LaunchTask) && args[1].StartsWith(TasksAppArguments.RunTask))
         {
-            var taskName = args[1].Substring(TasksAppArguments.RunTask.Length + 1);
+            var taskName = args[1][(TasksAppArguments.RunTask.Length + 1)..];
             WindowManager.SwitchView(new LaunchTaskViewModel(taskName));
         }
         else if (args.Length == 1 && args[0].Cmp(TasksAppArguments.Restore))
@@ -155,18 +171,18 @@ public partial class MainWindowViewModel : ViewModelBase
         }
         else if (args.Length == 2 && args[0].Cmp(TasksAppArguments.Restore) && args[1].StartsWith(TasksAppArguments.RunTask))
         {
-            var taskName = args[1].Substring(TasksAppArguments.RunTask.Length + 1);
+            var taskName = args[1][(TasksAppArguments.RunTask.Length + 1)..];
             var task = new TaskV2StoreService().Load(taskName);
-            if (task == null || ( !(task.Model is IncrementalBackupModelOptionsV2) && !(task.Model is SynchronizationTaskModelOptionsV2))   )
+            if (task == null || ( task.Model is not IncrementalBackupModelOptionsV2 && task.Model is not SynchronizationTaskModelOptionsV2)   )
                 WindowManager.SwitchView(new RestoreViewModel(null, null));
-            else if (task.Model is IncrementalBackupModelOptionsV2)
+            else if (task.Model is IncrementalBackupModelOptionsV2 v)
             {
-                var incrementalOptions = (IncrementalBackupModelOptionsV2)task.Model ?? throw new Exception();
+                var incrementalOptions = v ?? throw new Exception();
                 WindowManager.SwitchView(new RestoreViewModel(incrementalOptions.To, incrementalOptions.Password));
             }
-            else if (task.Model is SynchronizationTaskModelOptionsV2)
+            else if (task.Model is SynchronizationTaskModelOptionsV2 synchronizationTaskViewModelOptions)
             {
-                var options = (SynchronizationTaskModelOptionsV2)task.Model ?? throw new Exception();
+                var options = synchronizationTaskViewModelOptions ?? throw new Exception();
                 WindowManager.SwitchView(new RestoreViewModel(options.To, options.Password));
             }
         }

@@ -14,29 +14,23 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace butil_ui.Controls;
 
-public class VersionsListViewModel : ObservableObject
+public class VersionsListViewModel(RestoreViewModel restoreViewModel) : ObservableObject
 {
-    public VersionsListViewModel(RestoreViewModel restoreViewModel)
-    {
-        ParentViewModel = restoreViewModel;
-    }
-
-    public RestoreViewModel ParentViewModel { get; private set; }
+    public RestoreViewModel ParentViewModel { get; } = restoreViewModel;
 
     #region Labels
 
-    public string Field_Version => Resources.Field_Version;
-    public string BackupVersion_Changes_Title => Resources.BackupVersion_Changes_Title;
-    public string BackupVersion_Files_Title => Resources.BackupVersion_Files_Title;
-    public string Task_Restore => Resources.Task_Restore;
-    public string BackupVersion_Viewer_Help => Resources.BackupVersion_Viewer_Help;
-    public string BackupVersion_Button_Delete => Resources.BackupVersion_Button_Delete;
+    public static string Field_Version => Resources.Field_Version;
+    public static string BackupVersion_Changes_Title => Resources.BackupVersion_Changes_Title;
+    public static string BackupVersion_Files_Title => Resources.BackupVersion_Files_Title;
+    public static string Task_Restore => Resources.Task_Restore;
+    public static string BackupVersion_Viewer_Help => Resources.BackupVersion_Viewer_Help;
+    public static string BackupVersion_Button_Delete => Resources.BackupVersion_Button_Delete;
 
     #endregion
 
@@ -80,7 +74,7 @@ public class VersionsListViewModel : ObservableObject
 
     #region BlameViewItems
 
-    private ObservableCollection<BlameViewItem> _blameViewItems = new();
+    private ObservableCollection<BlameViewItem> _blameViewItems = [];
 
     public ObservableCollection<BlameViewItem> BlameViewItems
     {
@@ -164,7 +158,7 @@ public class VersionsListViewModel : ObservableObject
 
     #region SelectedVersion
 
-    private VersionViewItem _selectedVersion = new VersionViewItem(new VersionState());
+    private VersionViewItem _selectedVersion = new(new VersionState());
 
     public VersionViewItem SelectedVersion
     {
@@ -187,7 +181,7 @@ public class VersionsListViewModel : ObservableObject
 
     #region Versions
 
-    private ObservableCollection<VersionViewItem> _versions = new();
+    private ObservableCollection<VersionViewItem> _versions = [];
 
     public ObservableCollection<VersionViewItem> Versions
     {
@@ -229,7 +223,7 @@ public class VersionsListViewModel : ObservableObject
 
     #region FileChangeViewItems
 
-    private ObservableCollection<FileChangeViewItem> _fileChangeViewItems = new();
+    private ObservableCollection<FileChangeViewItem> _fileChangeViewItems = [];
 
     public ObservableCollection<FileChangeViewItem> FileChangeViewItems
     {
@@ -250,7 +244,7 @@ public class VersionsListViewModel : ObservableObject
 
     #region Files
 
-    private ObservableCollection<FileTreeNode> _nodes = new();
+    private ObservableCollection<FileTreeNode> _nodes = [];
 
     public ObservableCollection<FileTreeNode> Nodes
     {
@@ -274,6 +268,7 @@ public class VersionsListViewModel : ObservableObject
     private IncrementalBackupState _state;
     private IStorageSettingsV2 _storageOptions;
     private string _password;
+    private static readonly char[] _separators = ['\\', '/'];
 
     public void Initialize(IncrementalBackupState state, IStorageSettingsV2 storageOptions, string password)
     {
@@ -336,9 +331,9 @@ public class VersionsListViewModel : ObservableObject
             .OrderBy(x => x.SourceItem.Target)
             .ToList())
         {
-            if (!sourceItemChanges.CreatedFiles.Any() &&
-                !sourceItemChanges.UpdatedFiles.Any() &&
-                !sourceItemChanges.DeletedFiles.Any())
+            if (sourceItemChanges.CreatedFiles.Count == 0 &&
+                sourceItemChanges.UpdatedFiles.Count == 0 &&
+                sourceItemChanges.DeletedFiles.Count == 0)
                 continue;
 
             sourceItemChanges.UpdatedFiles
@@ -406,9 +401,9 @@ public class VersionsListViewModel : ObservableObject
         //    Nodes[0].Expand();
     }
 
-    private void AddLeaf(string relativePath, StorageFile storageFile, FileTreeNode sourceItemNode, SourceItemV2 sourceItem)
+    private static void AddLeaf(string relativePath, StorageFile storageFile, FileTreeNode sourceItemNode, SourceItemV2 sourceItem)
     {
-        string[] names = relativePath.Split(new char[] { '\\', '/' }, StringSplitOptions.RemoveEmptyEntries);
+        string[] names = relativePath.Split(_separators, StringSplitOptions.RemoveEmptyEntries);
         FileTreeNode? node = null;
         for (int i = 0; i < names.Length; i++)
         {
@@ -423,7 +418,7 @@ public class VersionsListViewModel : ObservableObject
     }
 
 
-    private FileTreeNode? FindNode(ObservableCollection<FileTreeNode> nodes, string p)
+    private static FileTreeNode? FindNode(ObservableCollection<FileTreeNode> nodes, string p)
     {
         for (int i = 0; i < nodes.Count; i++)
             if (nodes[i].Target == p)
@@ -431,13 +426,13 @@ public class VersionsListViewModel : ObservableObject
         return null;
     }
 
-    private void AddAsLeaves(FileTreeNode sourceItemNode, SourceItemV2 sourceItem, StorageFile storageFile)
+    private static void AddAsLeaves(FileTreeNode sourceItemNode, SourceItemV2 sourceItem, StorageFile storageFile)
     {
         var sourceItemDir = sourceItem.IsFolder ?
                         sourceItem.Target :
-                        System.IO.Path.GetDirectoryName(sourceItem.Target);
+                        System.IO.Path.GetDirectoryName(sourceItem.Target)!;
 
-        var sourceItemRelativeFileName = storageFile.FileState.FileName.Substring(sourceItemDir.Length);
+        var sourceItemRelativeFileName = storageFile.FileState.FileName[sourceItemDir.Length..];
 
         AddLeaf(sourceItemRelativeFileName, storageFile, sourceItemNode, sourceItem);
     }
@@ -465,7 +460,7 @@ public class VersionsListViewModel : ObservableObject
                     Dispatcher.UIThread.Invoke(() =>
                     {
                         SelectedVersion = closestFreshVersion;
-                        this.ParentViewModel.TaskExecuterViewModel.IsCollapsed = true;
+                        ParentViewModel.TaskExecuterViewModel!.IsCollapsed = true;
                     });
                 }
             });
@@ -493,10 +488,10 @@ public class VersionsListViewModel : ObservableObject
             {
                 if (isOk)
                 {
-                    this.ParentViewModel.TaskExecuterViewModel.IsCollapsed = true;
+                    ParentViewModel.TaskExecuterViewModel!.IsCollapsed = true;
                 }
             });
-        this.ParentViewModel.TaskExecuterViewModel.StartTaskCommand();
+        ParentViewModel.TaskExecuterViewModel.StartTaskCommand();
     }
 
     private IEnumerable<FileTreeNode> GetChildren(FileTreeNode Parent)
@@ -551,29 +546,4 @@ public class VersionsListViewModel : ObservableObject
     }
 
     #endregion
-}
-
-public class BlameViewItem
-{
-    public BlameViewItem(VersionState versionState, ChangeState state)
-    {
-        Title = versionState.BackupDateUtc.ToString();
-        switch (state)
-        {
-            case ChangeState.Created:
-                ImageSource = "/Assets/VC-Created.png";
-                break;
-            case ChangeState.Deleted:
-                ImageSource = "/Assets/VC-Deleted.png";
-                break;
-            case ChangeState.Updated:
-                ImageSource = "/Assets/VC-Updated.png";
-                break;
-            default:
-                throw new ArgumentOutOfRangeException(nameof(state));
-        }
-
-    }
-    public string Title { get; }
-    public string ImageSource { get; }
 }

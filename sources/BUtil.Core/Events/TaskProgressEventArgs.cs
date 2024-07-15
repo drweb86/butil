@@ -2,17 +2,11 @@
 
 namespace BUtil.Core.Events;
 
-public class TaskProgressEventArgs : EventArgs
+public class TaskProgressEventArgs(
+    Guid taskId,
+    ProcessingStatus status) : EventArgs
 {
-    public Guid TaskId { get; }
+    public Guid TaskId { get; } = taskId;
 
-    public ProcessingStatus Status { get; }
-
-    public TaskProgressEventArgs(
-        Guid taskId,
-        ProcessingStatus status)
-    {
-        TaskId = taskId;
-        Status = status;
-    }
+    public ProcessingStatus Status { get; } = status;
 }

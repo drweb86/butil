@@ -19,8 +19,8 @@ public class ImportMediaTaskWhereTaskViewModel : ObservableObject
         OutputFolder = outputFolder;
         SkipAlreadyImportedFiles = skipAlreadyImportedFiles;
         TransformFileName = transformFileName;
-        _transformFileNames = new[]
-        {
+        _transformFileNames =
+        [
             "{DATE:yyyy}\\{DATE:yyyy'-'MM', 'MMMM}\\{DATE:yyyy'-'MM'-'dd', 'dddd}\\{DATE:yyyy'-'MM'-'dd' 'HH'-'mm'-'ss}",
             "{DATE:yyyy}\\{DATE:MM}\\{DATE:yyyy'-'MM'-'dd}\\{DATE:yyyy'-'MM'-'dd' 'HH'-'mm'-'ss}",
             "{DATE:yyyy}\\{DATE:MM}\\{DATE:dd}\\{DATE:yyyy'-'MM'-'dd' 'HH'-'mm'-'ss}",
@@ -28,19 +28,19 @@ public class ImportMediaTaskWhereTaskViewModel : ObservableObject
             "{DATE:yyyy'-'MM}\\{DATE:yyyy'-'MM'-'dd' 'HH'-'mm'-'ss}",
             "{DATE:yyyy'-'MM'-'dd}\\{DATE:yyyy'-'MM'-'dd' 'HH'-'mm'-'ss}",
             "{DATE:yyyy'-'MM'-'dd' 'HH'-'mm'-'ss}",
-        };
+        ];
     }
 
     private readonly string[] _transformFileNames;
 
     #region Labels
-    public string LeftMenu_Where => Resources.LeftMenu_Where;
-    public string ImportMediaTask_Field_OutputFolder => Resources.ImportMediaTask_Field_OutputFolder;
-    public string Field_Folder_Browse => Resources.Field_Folder_Browse;
-    public string ImportMediaTask_SkipAlreadyImportedFiles => Resources.ImportMediaTask_SkipAlreadyImportedFiles;
-    public string ImportMediaTask_Field_TransformFileName_Example => Resources.ImportMediaTask_Field_TransformFileName_Example;
-    public string ImportMediaTask_Field_TransformFileName => Resources.ImportMediaTask_Field_TransformFileName;
-    public string ImportMediaTask_Field_TransformFileName_Help => Resources.ImportMediaTask_Field_TransformFileName_Help;
+    public static string LeftMenu_Where => Resources.LeftMenu_Where;
+    public static string ImportMediaTask_Field_OutputFolder => Resources.ImportMediaTask_Field_OutputFolder;
+    public static string Field_Folder_Browse => Resources.Field_Folder_Browse;
+    public static string ImportMediaTask_SkipAlreadyImportedFiles => Resources.ImportMediaTask_SkipAlreadyImportedFiles;
+    public static string ImportMediaTask_Field_TransformFileName_Example => Resources.ImportMediaTask_Field_TransformFileName_Example;
+    public static string ImportMediaTask_Field_TransformFileName => Resources.ImportMediaTask_Field_TransformFileName;
+    public static string ImportMediaTask_Field_TransformFileName_Help => Resources.ImportMediaTask_Field_TransformFileName_Help;
 
     #endregion
 
@@ -131,7 +131,7 @@ public class ImportMediaTaskWhereTaskViewModel : ObservableObject
 
     #region Commands
 
-    public async Task GoPreviousExampleCommand()
+    public void GoPreviousExampleCommand()
     {
         var index = Array.FindIndex(_transformFileNames, x => x == _transformFileName);
         if (index == -1)
@@ -142,7 +142,7 @@ public class ImportMediaTaskWhereTaskViewModel : ObservableObject
         TransformFileName = _transformFileNames[(index + _transformFileNames.Length - 1) % _transformFileNames.Length];
     }
 
-    public async Task GoNextExampleCommand()
+    public void GoNextExampleCommand()
     {
         var index = Array.FindIndex(_transformFileNames.ToArray(), x => x == _transformFileName);
         if (index == -1)

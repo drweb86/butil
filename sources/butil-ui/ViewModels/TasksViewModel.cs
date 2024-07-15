@@ -27,7 +27,7 @@ public class TasksViewModel : ViewModelBase
 
     #region Items
 
-    private ObservableCollection<TaskItemViewModel> _items = new();
+    private ObservableCollection<TaskItemViewModel> _items = [];
     public ObservableCollection<TaskItemViewModel> Items
     {
         get
@@ -51,8 +51,8 @@ public class TasksViewModel : ViewModelBase
     #endregion
 
     #region Labels
-    public string Task_LastExecution_State => Resources.Task_LastExecution_State;
-    public string Task_Launch_Hint => Resources.Task_Launch_Hint;
+    public static string Task_LastExecution_State => Resources.Task_LastExecution_State;
+    public static string Task_Launch_Hint => Resources.Task_Launch_Hint;
 
     #endregion
 

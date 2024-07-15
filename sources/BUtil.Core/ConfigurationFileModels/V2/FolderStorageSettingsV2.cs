@@ -8,9 +8,9 @@ public class FolderStorageSettingsV2 : IStorageSettingsV2
     /// <summary>
     /// Its not powershell anymore on Ubuntu. SHould be renamed.
     /// </summary>
-    public string MountPowershellScript { get; set; } = string.Empty;
+    public string? MountPowershellScript { get; set; }
     /// <summary>
     /// Its not powershell anymore on Ubuntu. SHould be renamed.
     /// </summary>
-    public string UnmountPowershellScript { get; set; } = string.Empty;
+    public string? UnmountPowershellScript { get; set; }
 }
