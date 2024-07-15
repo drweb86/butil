@@ -29,6 +29,8 @@ internal static class FileHelper
         return Combine(null, paths);
     }
 
+    internal static readonly char[] _separators = ['\\', '/'];
+
     public static string Combine(char? separator, params string?[] paths)
     {
         var actualPaths = (paths ?? [])
@@ -46,7 +48,7 @@ internal static class FileHelper
         foreach (var path in actualPaths)
         {
             // Split the input by directory separator and add to parts list
-            var segments = path.Split(new[] { '\\', '/' }, StringSplitOptions.RemoveEmptyEntries);
+            var segments = path.Split(_separators, StringSplitOptions.RemoveEmptyEntries);
             parts.AddRange(segments);
         }
 
@@ -107,6 +109,6 @@ internal static class FileHelper
             .TrimEnd('\\')
             .TrimEnd('/');
 
-        return file.Substring(folder.Length + 1);
+        return file[(folder.Length + 1)..];
     }
 }

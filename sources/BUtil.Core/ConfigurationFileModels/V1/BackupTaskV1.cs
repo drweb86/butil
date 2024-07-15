@@ -6,10 +6,10 @@ public class BackupTaskV1
 {
     public BackupTaskV1()
     {
-        Items = new();
-        Storages = new();
+        Items = [];
+        Storages = [];
         Model = new IncrementalBackupModelOptionsV1();
-        FileExcludePatterns = new List<string>();
+        FileExcludePatterns = [];
     }
 
     public IBackupModelOptionsV1 Model { get; set; }

@@ -10,6 +10,6 @@ public class IncrementalBackupModelOptionsV2 : ITaskModelOptionsV2
     public List<SourceItemV2> Items { get; set; } = Directories.GetDefaultBackupFolders()
         .Select(x => new SourceItemV2(x, true))
         .ToList();
-    public List<string> FileExcludePatterns { get; set; } = new();
+    public List<string> FileExcludePatterns { get; set; } = [];
     public string Password { get; set; } = string.Empty;
 }

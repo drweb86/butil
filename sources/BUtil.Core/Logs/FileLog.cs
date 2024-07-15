@@ -47,8 +47,7 @@ public class FileLog : LogBase
 
     private string GetFileName(bool? isSuccess)
     {
-        var logService = new LogService();
-        return logService.GetFileName(_taskName, _dateTime, isSuccess);
+        return LogService.GetFileName(_taskName, _dateTime, isSuccess);
     }
 
     public override void Open()
@@ -119,7 +118,9 @@ public class FileLog : LogBase
 
             _logFile = null;
 
+#pragma warning disable CA1816 // Dispose methods should call SuppressFinalize
             GC.SuppressFinalize(this);
+#pragma warning restore CA1816 // Dispose methods should call SuppressFinalize
         }
     }
 }

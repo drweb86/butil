@@ -5,10 +5,12 @@ namespace BUtil.Core.Logs;
 
 public abstract class LogBase : ILog
 {
+    private static readonly char[] _separator = ['\n', '\r'];
+
     public void LogProcessOutput(string consoleOutput, bool finishedSuccessfully)
     {
         consoleOutput
-            .Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries)
+            .Split(_separator, StringSplitOptions.RemoveEmptyEntries)
             .ToList()
             .ForEach(x => WriteLine(finishedSuccessfully ? LoggingEvent.Debug : LoggingEvent.Error, x));
     }

@@ -5,6 +5,7 @@
 - Skipped tasks are visible.
 - Storage verification was improved.
 - Windows: New synchronization tasks will have by default midnight execution schedule.
+- Code base was upgraded to language c# latest version.
 
 ## Bug Fixes
 

@@ -10,13 +10,15 @@ namespace BUtil.Core.Misc;
 
 public static class ImproveIt
 {
+#pragma warning disable CA2211 // Non-constant fields should not be visible
     public static Action<string>? HandleUiError;
+#pragma warning restore CA2211 // Non-constant fields should not be visible
 
     static ImproveIt()
     {
         AppDomain.CurrentDomain.UnhandledException +=
             new UnhandledExceptionEventHandler(
-                unhandledException);
+                UnhandledException);
     }
 
     public static void ProcessUnhandledException(Exception exception)
@@ -43,10 +45,7 @@ public static class ImproveIt
 
             File.AppendAllText(Files.BugReportFile, builder.ToString());
 
-            if (HandleUiError != null)
-            {
-                HandleUiError.Invoke(string.Format(Resources.ImproveIt_Message, Files.BugReportFile));
-            }
+            HandleUiError?.Invoke(string.Format(Resources.ImproveIt_Message, Files.BugReportFile));
         }
         finally
         {
@@ -54,7 +53,7 @@ public static class ImproveIt
         }
     }
 
-    private static void unhandledException(object sender, UnhandledExceptionEventArgs exception)
+    private static void UnhandledException(object sender, UnhandledExceptionEventArgs exception)
     {
         ProcessUnhandledException((Exception)exception.ExceptionObject);
     }

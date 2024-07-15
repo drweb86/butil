@@ -10,31 +10,23 @@ using System.Text;
 
 namespace BUtil.Core.Hashing;
 
-internal class CachedHashService : IHashService, IDisposable
+internal class CachedHashService(ICashedHashStoreService cashedHashStoreService) : IHashService, IDisposable
 {
-    private readonly ICashedHashStoreService _cashedHashStoreService;
+    private readonly ICashedHashStoreService _cashedHashStoreService = cashedHashStoreService;
     private readonly object _sync = new();
-    private readonly ConcurrentBag<CachedHash> _cachedHashes = new();
+    private readonly ConcurrentBag<CachedHash> _cachedHashes = [];
     private bool _isCachedHashesLoaded = false;
     private const int _daysExpiration = 365;
-
-    public CachedHashService(ICashedHashStoreService cashedHashStoreService)
-    {
-        _cashedHashStoreService = cashedHashStoreService;
-    }
 
     public string GetSha512(string input)
     {
         var bytes = System.Text.Encoding.UTF8.GetBytes(input);
-        using (var hash = System.Security.Cryptography.SHA512.Create())
-        {
-            var hashedInputBytes = hash.ComputeHash(bytes);
+        var hashedInputBytes = System.Security.Cryptography.SHA512.HashData(bytes);
 
-            var hashedInputStringBuilder = new System.Text.StringBuilder(128);
-            foreach (var b in hashedInputBytes)
-                hashedInputStringBuilder.Append(b.ToString("X2"));
-            return hashedInputStringBuilder.ToString();
-        }
+        var hashedInputStringBuilder = new System.Text.StringBuilder(128);
+        foreach (var b in hashedInputBytes)
+            hashedInputStringBuilder.Append(b.ToString("X2"));
+        return hashedInputStringBuilder.ToString();
     }
 
     public string GetSha512(string file, bool trySpeedupNextTime)
@@ -87,7 +79,7 @@ internal class CachedHashService : IHashService, IDisposable
         {
             if (!_isCachedHashesLoaded)
             {
-                var cachedHashes = _cashedHashStoreService.Load() ?? new List<CachedHash>();
+                var cachedHashes = _cashedHashStoreService.Load() ?? [];
                 foreach (var cachedHash in cachedHashes)
                     _cachedHashes.Add(cachedHash);
                 _isCachedHashesLoaded = true;
