@@ -265,9 +265,9 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
 
     public SolidColorBrush HeaderBackground { get; } = ColorPalette.GetBrush(SemanticColor.HeaderBackground);
 
-    private IncrementalBackupState _state;
-    private IStorageSettingsV2 _storageOptions;
-    private string _password;
+    private IncrementalBackupState? _state;
+    private IStorageSettingsV2? _storageOptions;
+    private string _password = string.Empty;
     private static readonly char[] _separators = ['\\', '/'];
 
     public void Initialize(IncrementalBackupState state, IStorageSettingsV2 storageOptions, string password)
@@ -301,16 +301,16 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
     private void OnVersionChanged()
     {
         var version = SelectedVersion;
-        if (version == null)
+        if (version == null || _state == null)
             return;
 
-        IsDeleteBackupVersionEnabled = version != null && Versions != null && Versions[0] != version;
+        IsDeleteBackupVersionEnabled = Versions != null && Versions[0] != version;
 
-            SelectedFileIsVisible = false;
-            var changes = GetChangesViewItems(version.Version);
-            var treeViewFiles = GetTreeViewFiles(_state, version.Version);
-            RefreshChanges(changes);
-            RefreshTreeView(treeViewFiles);
+        SelectedFileIsVisible = false;
+        var changes = GetChangesViewItems(version.Version);
+        var treeViewFiles = GetTreeViewFiles(_state, version.Version);
+        RefreshChanges(changes);
+        RefreshTreeView(treeViewFiles);
     }
 
     private void RefreshChanges(IEnumerable<Tuple<ChangeState, string>> changes)
@@ -442,6 +442,12 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
     public async Task DeleteBackupVersionCommand()
     {
         var versionToDelete = SelectedVersion;
+        if (_state == null ||
+            _storageOptions == null)
+        {
+            return;
+        }
+
         var closestFreshVersion = Versions[Versions.IndexOf(versionToDelete) - 1];
         if (!await Messages.ShowYesNoDialog(string.Format(Resources.BackupVersion_Delete_Confirm, versionToDelete.Title, closestFreshVersion.Title)))
         {
@@ -483,7 +489,7 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
         ParentViewModel.TaskExecuterViewModel = new TaskExecuterViewModel(
             new TaskEvents(),
             Resources.Task_Restore,
-            (log, taskEvents, onGetLastMinuteMessage) => new WriteStorageFilesToSourceFileRootTask(log, taskEvents, _storageOptions, SelectedNode.SourceItem, storageFiles, destinationFolder, onGetLastMinuteMessage),
+            (log, taskEvents, onGetLastMinuteMessage) => new WriteStorageFilesToSourceFileRootTask(log, taskEvents, _storageOptions!, SelectedNode.SourceItem, storageFiles, destinationFolder, onGetLastMinuteMessage),
             isOk =>
             {
                 if (isOk)
@@ -505,7 +511,7 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
         var items = new ObservableCollection<BlameViewItem>();
         var path = SelectedNode?.StorageFile?.FileState.FileName ?? throw new NullReferenceException();
 
-        var descendingVersions = _state.VersionStates
+        var descendingVersions = _state!.VersionStates
             .OrderByDescending(x => x.BackupDateUtc)
             .ToList();
 

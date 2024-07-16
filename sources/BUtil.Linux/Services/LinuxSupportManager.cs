@@ -77,16 +77,9 @@ public class LinuxSupportManager : ISupportManager
 
     public string ScriptEngineName => "Bash";
 
-    public bool LaunchScript(ILog log, string script, string forbiddenForLogs)
+    public bool LaunchScript(ILog log, string script, string _)
     {
-        // hack
-        forbiddenForLogs = null;
-
         script = script.Replace("\r", string.Empty);
-
-        // hack.
-        if (forbiddenForLogs != null)
-            log.WriteLine(LoggingEvent.Debug, "Run script\n" + script.Replace(forbiddenForLogs, "***"));
 
         using var tempDir = new TempFolder();
         var scriptFile = Path.Combine(tempDir.Folder, "script.sh");

@@ -26,8 +26,7 @@ public partial class MainWindowViewModel : ViewModelBase
     public void GoDarkSide()
 #pragma warning restore CA1822 // Mark members as static
     {
-        new SettingsStoreService()
-            .Save(ThemeSetting.Name, ThemeSetting.DarkValue);
+        SettingsStoreService.Save(ThemeSetting.Name, ThemeSetting.DarkValue);
         PlatformSpecificExperience.Instance
                 .SupportManager
                 .LaunchTasksApp();
@@ -38,8 +37,7 @@ public partial class MainWindowViewModel : ViewModelBase
     public void GoLightSide()
 #pragma warning restore CA1822 // Mark members as static
     {
-        new SettingsStoreService()
-            .Save(ThemeSetting.Name, ThemeSetting.LightValue);
+        SettingsStoreService.Save(ThemeSetting.Name, ThemeSetting.LightValue);
         PlatformSpecificExperience.Instance
                 .SupportManager
                 .LaunchTasksApp();

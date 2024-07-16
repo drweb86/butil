@@ -85,6 +85,9 @@ public class WhereTaskViewModel : ObservableObject
 
     public async Task MountTaskLaunchCommand()
     {
+        if (string.IsNullOrWhiteSpace(FolderConnectionScript))
+            return;
+
         var memoryLog = new MemoryLog();
         if (PlatformSpecificExperience.Instance.SupportManager.LaunchScript(memoryLog, this.FolderConnectionScript, "***"))
             await Messages.ShowInformationBox(Resources.DataStorage_Field_DisconnectionScript_Ok);
@@ -127,12 +130,12 @@ public class WhereTaskViewModel : ObservableObject
             {
                 SingleBackupQuotaGb = Quota,
 
-                Host = FtpsServer,
+                Host = FtpsServer!,
                 Encryption = FtpsEncryption == Ftps_Encryption_Option_Explicit ?
                    FtpsStorageEncryptionV2.Explicit : FtpsStorageEncryptionV2.Implicit,
                 Port = FtpsPort,
-                User = FtpsUser,
-                Password = FtpsPassword,
+                User = FtpsUser!,
+                Password = FtpsPassword!,
                 Folder = FtpsFolder,
             };
         }
@@ -141,7 +144,7 @@ public class WhereTaskViewModel : ObservableObject
             return new SambaStorageSettingsV2
             {
                 SingleBackupQuotaGb = Quota,
-                Url = SmbUrl,
+                Url = SmbUrl!,
                 User = SmbUser,
                 Password = SmbPassword,
             };
@@ -151,8 +154,8 @@ public class WhereTaskViewModel : ObservableObject
             return new MtpStorageSettings
             {
                 SingleBackupQuotaGb = Quota,
-                Device = MtpDevice,
-                Folder = MtpFolder
+                Device = MtpDevice!,
+                Folder = MtpFolder!
             };
         }
         throw new System.ArgumentOutOfRangeException();
