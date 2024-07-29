@@ -1,3 +1,13 @@
+# 2024.07.29
+
+## Changes
+
+- Reduced storage validation errors message size.
+
+## Bug Fixes
+
+- FTPS validation could prevent creation of task.
+
 # 2024.07.16
 
 ## Changes

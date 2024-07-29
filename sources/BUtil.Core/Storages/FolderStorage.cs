@@ -63,20 +63,12 @@ public class FolderStorage : StorageBase<FolderStorageSettingsV2>
         }
     }
 
-    public override string? Test(bool writeMode)
+    public override string? Test()
     {
         if (!Directory.Exists(Settings.DestinationFolder))
             return string.Format(Localization.Resources.DirectoryStorage_Field_Directory_Validation_NotFound, Settings.DestinationFolder);
         if (!Path.IsPathFullyQualified(Settings.DestinationFolder))
             return string.Format(Localization.Resources.DirectoryStorage_Field_Directory_Validation_NotFound, Settings.DestinationFolder);
-
-        if (writeMode)
-        {
-            var folder = Guid.NewGuid().ToString();
-            var file = Path.Combine("BUtil check " + folder, Guid.NewGuid().ToString());
-            _ = Upload(Assembly.GetExecutingAssembly().Location, file) ?? throw new Exception("Failed to upload!");
-            DeleteFolder(folder);
-        }
 
         return null;
     }

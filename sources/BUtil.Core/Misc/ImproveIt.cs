@@ -31,7 +31,7 @@ public static class ImproveIt
             builder.AppendLine("BUtil " + CopyrightInfo.Version + " - Bug report (" + DateTime.Now.ToString("g", CultureInfo.InvariantCulture) + ")");
             builder.AppendLine("Please report about it here: ");
             builder.AppendLine(ApplicationLinks.HomePage);
-            builder.AppendLine(exception.Message);
+            builder.AppendLine(ExceptionHelper.ToString(exception));
             builder.AppendLine(exception.StackTrace);
             builder.AppendLine(exception.Source);
 

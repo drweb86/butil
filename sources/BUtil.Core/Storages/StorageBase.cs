@@ -11,7 +11,7 @@ public abstract class StorageBase<TStorageSettings>(ILog log, TStorageSettings s
     protected readonly TStorageSettings Settings = settings;
 
     public abstract IStorageUploadResult Upload(string sourceFile, string relativeFileName);
-    public abstract string? Test(bool writeMode);
+    public abstract string? Test();
 
     public abstract void Delete(string relativeFileName);
     public abstract void DeleteFolder(string relativeFolderName);

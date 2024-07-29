@@ -1,5 +1,6 @@
 ﻿using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Localization;
+using BUtil.Core.Misc;
 using BUtil.Core.Options;
 using butil_ui.ViewModels;
 using System;
@@ -74,7 +75,7 @@ public class EditMediaTaskViewModel : ViewModelBase
         }
         catch (Exception e)
         {
-            await Messages.ShowErrorBox(e.Message);
+            await Messages.ShowErrorBox(ExceptionHelper.ToString(e));
             return;
         }
 

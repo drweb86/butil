@@ -1,12 +1,12 @@
 ﻿
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Logs;
+using BUtil.Core.Misc;
 using FluentFTP;
 using System;
 using System.IO;
 using System.Linq;
 using System.Net.Security;
-using System.Reflection;
 using System.Security;
 using System.Text.RegularExpressions;
 
@@ -137,7 +137,7 @@ class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
         _client.Dispose();
     }
 
-    public override string? Test(bool writeMode)
+    public override string? Test()
     {
         if (!string.IsNullOrWhiteSpace(Settings.Folder) && !_client.DirectoryExists(Settings.Folder))
         {
@@ -151,15 +151,7 @@ class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
             }
             catch (Exception e)
             {
-                return e.Message;
-            }
-
-            if (writeMode)
-            {
-                var folder = Guid.NewGuid().ToString();
-                var file = Path.Combine("BUtil check " + folder, Guid.NewGuid().ToString());
-                _ = Upload(Assembly.GetExecutingAssembly().Location, file) ?? throw new Exception("Failed to upload!");
-                DeleteFolder(folder);
+                return ExceptionHelper.ToString(e);
             }
         }
         return null;

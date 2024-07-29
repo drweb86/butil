@@ -3,8 +3,6 @@ using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Storages;
 using BUtil.Windows.Utils;
-using System.IO;
-using System.Reflection;
 using System.Security;
 
 namespace BUtil.Windows.Services;
@@ -92,18 +90,10 @@ class WindowsSambaStorage : StorageBase<SambaStorageSettingsV2>
             throw new InvalidOperationException($"Cannot unmount");
     }
 
-    public override string? Test(bool writeMode)
+    public override string? Test()
     {
         if (!Directory.Exists(Settings.Url))
             return string.Format(Resources.DirectoryStorage_Field_Directory_Validation_NotFound, Settings.Url); ;
-
-        if (writeMode)
-        {
-            var folder = Guid.NewGuid().ToString();
-            var file = Path.Combine("BUtil check " + folder, Guid.NewGuid().ToString());
-            _ = Upload(Assembly.GetExecutingAssembly().Location, file) ?? throw new Exception("Failed to upload!");
-            DeleteFolder(folder);
-        }
 
         return null;
     }

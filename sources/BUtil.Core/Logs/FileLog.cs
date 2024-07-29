@@ -1,5 +1,6 @@
 ﻿
 using BUtil.Core.Localization;
+using BUtil.Core.Misc;
 using System;
 using System.Globalization;
 using System.IO;
@@ -40,7 +41,7 @@ public class FileLog : LogBase
         }
         catch (ArgumentException e)
         {
-            throw new LogException(e.Message);
+            throw new LogException(ExceptionHelper.ToString(e));
         }
         _taskName = taskName;
     }
@@ -61,7 +62,7 @@ public class FileLog : LogBase
         }
         catch (Exception e)
         {
-            throw new LogException(e.Message, e);
+            throw new LogException(ExceptionHelper.ToString(e), e);
         }
     }
 

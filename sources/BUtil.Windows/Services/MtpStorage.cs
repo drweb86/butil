@@ -3,8 +3,6 @@ using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Storages;
 using MediaDevices;
-using System.Diagnostics;
-using System.Reflection;
 using System.Security;
 
 namespace BUtil.Windows.Services;
@@ -78,19 +76,11 @@ class MtpStorage : StorageBase<MtpStorageSettings>
         _mediaDevice?.Dispose();
     }
 
-    public override string? Test(bool writeMode)
+    public override string? Test()
     {
         if (!_mediaDevice.DirectoryExists(Settings.Folder))
         {
             return BUtil.Core.Localization.Resources.Field_Folder_Validation_NotExist;
-        }
-
-        if (writeMode)
-        {
-            var folder = Guid.NewGuid().ToString();
-            var file = Path.Combine("BUtil check " + folder, Guid.NewGuid().ToString());
-            _ = Upload(Assembly.GetExecutingAssembly().Location, file) ?? throw new Exception("Failed to upload!");
-            DeleteFolder(folder);
         }
 
         return null;

@@ -1,23 +1,24 @@
 ﻿using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Logs;
+using BUtil.Core.Misc;
 using System;
 
 namespace BUtil.Core.Storages;
 
 public class StorageFactory
 {
-    public static IStorage Create(ILog log, IStorageSettingsV2 storageSettings, bool autodetectConnectionSettings)
+    public static IStorage Create(ILog log, IStorageSettingsV2 storageSettings, bool autodetectConnectionSettings, int? triesCount = null)
     {
         if (storageSettings is FolderStorageSettingsV2 folder)
-            return new FailoverStorageWrapper(log, new FolderStorage(log, folder));
+            return new FailoverStorageWrapper(log, new FolderStorage(log, folder), triesCount);
         else if (storageSettings is SambaStorageSettingsV2 samba)
-            return new FailoverStorageWrapper(log, PlatformSpecificExperience.Instance.GetSmbStorage(log, samba));
+            return new FailoverStorageWrapper(log, PlatformSpecificExperience.Instance.GetSmbStorage(log, samba), triesCount);
         else if (storageSettings is FtpsStorageSettingsV2 ftps)
-            return new FailoverStorageWrapper(log, new FtpsStorage(log, ftps, autodetectConnectionSettings));
+            return new FailoverStorageWrapper(log, new FtpsStorage(log, ftps, autodetectConnectionSettings), triesCount);
         else if (storageSettings is MtpStorageSettings mtp)
         {
             var mtpStorage = PlatformSpecificExperience.Instance.GetMtpStorage(log, mtp) ?? throw new NotSupportedException("Your OS does not support MTP storage");
-            return new FailoverStorageWrapper(log, mtpStorage);
+            return new FailoverStorageWrapper(log, mtpStorage, triesCount);
         }
         throw new ArgumentOutOfRangeException(nameof(storageSettings));
     }
@@ -32,12 +33,19 @@ public class StorageFactory
 
         try
         {
-            using var storage = Create(log, storageSettings, true);
-            return storage.Test(writeMode);
+            using var storage = Create(log, storageSettings, true, 1);
+            var readonlyChecksError = storage.Test();
+            if (!string.IsNullOrWhiteSpace(readonlyChecksError))
+                return readonlyChecksError;
+
+            if (writeMode)
+                StorageHelper.WriteTest(storage);
+
+            return null;
         }
         catch (Exception ex)
         {
-            return ex.Message;
+            return ExceptionHelper.ToString(ex);
         }
     }
 }

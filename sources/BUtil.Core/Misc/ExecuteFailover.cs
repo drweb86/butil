@@ -17,10 +17,10 @@ public class ExecuteFailover
             catch (Exception e)
             {
                 logError(e.ToString());
+                if (--times <= 0)
+                    throw new InvalidOperationException("No more attempts left");
                 logError("Retrying in 30 seconds");
                 Thread.Sleep(30 * 1000);
-                if (--times <= 0)
-                    throw;
             }
         }
     }
@@ -36,10 +36,10 @@ public class ExecuteFailover
             catch (Exception e)
             {
                 logError(e.ToString());
+                if (--times <= 0)
+                    throw new InvalidOperationException("No more attempts left");
                 logError("Retrying in 30 seconds");
                 Thread.Sleep(30 * 1000);
-                if (--times <= 0)
-                    throw;
             }
         }
         throw new NotImplementedException();
