@@ -1,3 +1,9 @@
+# 2024.08.02
+
+## Bug Fixes
+
+- 7-zip in Windows installation was missing.
+
 # 2024.07.29
 
 ## Changes
