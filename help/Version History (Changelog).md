@@ -1,3 +1,10 @@
+# 2024.08.08
+
+## Bug Fixes
+
+- Scheduler failed to launch when task name had spaces.
+Manual actions are needed. Open task in editor and click save one by one. Scheduler tasks will be recreated.
+
 # 2024.08.02
 
 ## Bug Fixes

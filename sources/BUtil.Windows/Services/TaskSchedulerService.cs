@@ -63,8 +63,8 @@ public class TaskSchedulerService : ITaskSchedulerService
             new ExecAction
             {
                 WorkingDirectory = Directories.BinariesDir,
-                Arguments = $"Task={taskName}",
-                Path = WindowsSupportManager.ConsoleBackupTool
+                Arguments = $"\"Task={taskName}\"",
+                Path = $"\"{WindowsSupportManager.ConsoleBackupTool}\""
             });
     }
 

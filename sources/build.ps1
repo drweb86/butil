@@ -173,3 +173,6 @@ if ($LastExitCode -ne 0)
 
 Write-Output "The following artefacts are produced. Copy them to \\nas\butil-website."
 Get-ChildItem "..\Output"
+
+Write-Output "A. Copy them to \\nas\butil-website."
+Write-Output "B. Release to win-get."
