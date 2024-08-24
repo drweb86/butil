@@ -4,6 +4,7 @@
 ## Changes
 
 - 7-zip update to 24.08
+- Update libraries
 - Unit-tests are part of build.ps1 script execution
 
 # 2024.08.08
