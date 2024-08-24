@@ -1,3 +1,9 @@
+# 2024.08.24 (unreleased)
+
+## Changes
+
+- 7-zip update to 24.08
+
 # 2024.08.08
 
 ## Bug Fixes

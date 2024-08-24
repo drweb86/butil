@@ -32,7 +32,7 @@ if ($LastExitCode -ne 0)
 }
 Set-Location ../..
 
-$sevenZipVersion="7z2407"
+$sevenZipVersion="7z2408"
 $sevenZipFolder=[System.IO.Path]::GetTempPath() + "$($sevenZipVersion)"
 
 Write-Output "Clear 7-zip folder..."
