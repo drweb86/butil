@@ -56,6 +56,14 @@ $WebClient.DownloadFile("https://www.7-zip.org/a/$($sevenZipVersion)-arm64.exe",
 & "c:\Program Files\7-Zip\7z.exe" x -y "$($sevenZipFolder)\x64.exe" -o"$($sevenZipFolder)\x64\7-zip"
 & "c:\Program Files\7-Zip\7z.exe" x -y "$($sevenZipFolder)\arm64.exe" -o"$($sevenZipFolder)\arm64\7-zip"
 
+Write-Output "Run tests..."
+& dotnet test
+if ($LastExitCode -ne 0)
+{
+	Write-Error "Fail." 
+	Exit 1
+}
+
 Write-Output "Clear bin/obj folders..."
 Get-ChildItem .\ -include bin,obj -Recurse | ForEach-Object ($_) { Remove-Item $_.FullName -Force -Recurse }
 if ($LastExitCode -ne 0)

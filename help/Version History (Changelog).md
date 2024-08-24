@@ -1,8 +1,10 @@
-# 2024.08.24 (unreleased)
+# 2024.08.24
+(unreleased)
 
 ## Changes
 
 - 7-zip update to 24.08
+- Unit-tests are part of build.ps1 script execution
 
 # 2024.08.08
 
