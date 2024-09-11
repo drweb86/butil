@@ -1,0 +1,700 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
+    <value>Tidak melakukan apa-apa</value>
+    </data>
+    <data name="AfterTaskSelection_Field" xml:space="preserve">
+    <value>Setelah penyelesaian tugas:</value>
+    </data>
+    <data name="AfterTaskSelection_Help" xml:space="preserve">
+    <value>Jika Anda memilih sesuatu selain 'tidak melakukan apa-apa', program akan mengonfigurasi OS untuk menunjukkan laporan pada login Anda berikutnya ke sistem jika ada kesalahan atau peringatan yang terdaftar.</value>
+    </data>
+    <data name="AfterTaskSelection_LogOff" xml:space="preserve">
+    <value>Keluar</value>
+    </data>
+    <data name="AfterTaskSelection_Reboot" xml:space="preserve">
+    <value>Mulai ulang</value>
+    </data>
+    <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
+    <value>Matikan</value>
+    </data>
+    <data name="Application_NewVersion_Notification" xml:space="preserve">
+    <value>Versi {0} yang baru tersedia.</value>
+    </data>
+    <data name="BackupVersion_Button_Delete" xml:space="preserve">
+    <value>Hapus versi</value>
+    </data>
+    <data name="BackupVersion_Changes_Title" xml:space="preserve">
+    <value>Perubahan</value>
+    </data>
+    <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
+    <value>Apakah Anda benar-benar ingin menghapus versi "{0}"?
+    
+    Perubahan versi yang dihapus akan menjadi bagian dari versi "{1}".</value>
+    </data>
+    <data name="BackupVersion_Files_Title" xml:space="preserve">
+    <value>File</value>
+    </data>
+    <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
+    <value>Jurnal: {0}</value>
+    </data>
+    <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
+    <value>Jurnal untuk yang dipilih...</value>
+    </data>
+    <data name="BackupVersion_Select" xml:space="preserve">
+    <value>Buka versi yang dipilih...</value>
+    </data>
+    <data name="BackupVersion_Selector_Title" xml:space="preserve">
+    <value>PILIH VERSI</value>
+    </data>
+    <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
+    <value>(semua versi memakan penyimpanan {0})</value>
+    </data>
+    <data name="BackupVersion_Versions_Title" xml:space="preserve">
+    <value>VERSI</value>
+    </data>
+    <data name="BackupVersion_Viewer_Help" xml:space="preserve">
+    <value>Pilih file atau folder yang ingin Anda pulihkan di pohon dan klik "Pulihkan".</value>
+    </data>
+    <data name="Button_Cancel" xml:space="preserve">
+    <value>Batal</value>
+    </data>
+    <data name="Button_Close" xml:space="preserve">
+    <value>Tutup</value>
+    </data>
+    <data name="Button_Continue" xml:space="preserve">
+    <value>Lanjutkan &gt;</value>
+    </data>
+    <data name="Button_CopyToClipboard" xml:space="preserve">
+    <value>Salin</value>
+    </data>
+    <data name="Button_Download" xml:space="preserve">
+    <value>Unduh</value>
+    </data>
+    <data name="Button_OK" xml:space="preserve">
+    <value>OK</value>
+    </data>
+    <data name="Button_Remove" xml:space="preserve">
+    <value>Hapus</value>
+    </data>
+    <data name="Button_Save" xml:space="preserve">
+    <value>Simpan</value>
+    </data>
+    <data name="CommandLineArguments_Help" xml:space="preserve">
+    <value>Kunjungi {0} untuk melihat argumen baris perintah.</value>
+    </data>
+    <data name="CommandLineArguments_Invalid" xml:space="preserve">
+    <value>Argumen baris perintah tidak valid.</value>
+    </data>
+    <data name="DataStorage_Data_Saving" xml:space="preserve">
+    <value>Menulis data ke penyimpanan</value>
+    </data>
+    <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
+    <value>Script koneksi:</value>
+    </data>
+    <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
+    <value>Script pemutusan:</value>
+    </data>
+    <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
+    <value>Selesai dengan kesalahan</value>
+    </data>
+    <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
+    <value>Selesai dengan sukses</value>
+    </data>
+    <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
+    <value>Batas unggah, GB:</value>
+    </data>
+    <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
+    <value>Membatasi jumlah data yang dikirim selama satu eksekusi tugas ke penyimpanan. 0 - tanpa batas. 
+    Ketika kuota terlampaui, file lain akan dilewati dan akan diproses lain kali. 
+    Skenario penggunaan: Anda menyalin data ke server jarak jauh. Ada masalah: ISP menurunkan kecepatan unggah setelah beberapa gigabyte. Pengaturan ini memungkinkan Anda menanganinya.</value>
+    </data>
+    <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
+    <value>Kuota harus 0 (tidak diterapkan) atau nilai di atas 0.</value>
+    </data>
+    <data name="DataStorage_Maintenance" xml:space="preserve">
+    <value>Pemeliharaan penyimpanan data</value>
+    </data>
+    <data name="DataStorage_Script_Help" xml:space="preserve">
+    <value>Jika folder tersedia setelah mengeksekusi beberapa perintah, tentukan {0} script untuk koneksi dan pemutusan.</value>
+    </data>
+    <data name="DataStorage_State_Get" xml:space="preserve">
+    <value>Dapatkan status penyimpanan</value>
+    </data>
+    <data name="DataStorage_State_Saving" xml:space="preserve">
+    <value>Menulis status penyimpanan</value>
+    </data>
+    <data name="DataStorage_Title" xml:space="preserve">
+    <value>Penyimpanan</value>
+    </data>
+    <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
+    <value>Penyimpanan tidak ditentukan.</value>
+    </data>
+    <data name="Days_Field_Choose" xml:space="preserve">
+    <value>Pilih hari dalam seminggu:</value>
+    </data>
+    <data name="Days_Friday" xml:space="preserve">
+    <value>Jumat</value>
+    </data>
+    <data name="Days_Monday" xml:space="preserve">
+    <value>Senin</value>
+    </data>
+    <data name="Days_Saturday" xml:space="preserve">
+    <value>Sabtu</value>
+    </data>
+    <data name="Days_Sunday" xml:space="preserve">
+    <value>Minggu</value>
+    </data>
+    <data name="Days_Thursday" xml:space="preserve">
+    <value>Kamis</value>
+    </data>
+    <data name="Days_Tuesday" xml:space="preserve">
+    <value>Selasa</value>
+    </data>
+    <data name="Days_Wednesday" xml:space="preserve">
+    <value>Rabu</value>
+    </data>
+    <data name="DirectoryStorage" xml:space="preserve">
+    <value>Direktori</value>
+    </data>
+    <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
+    <value>Folder:</value>
+    </data>
+    <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
+    <value>Direktori tidak ditentukan.</value>
+    </data>
+    <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
+    <value>Direktori "{0}" tidak ada.</value>
+    </data>
+    <data name="Field_Device" xml:space="preserve">
+    <value>Perangkat:</value>
+    </data>
+    <data name="Field_Device_Validation_Empty" xml:space="preserve">
+    <value>Perangkat tidak ditentukan.</value>
+    </data>
+    <data name="Field_Device_Validation_NotFound" xml:space="preserve">
+    <value>Perangkat tidak ditemukan.</value>
+    </data>
+    <data name="Field_Folder" xml:space="preserve">
+    <value>Folder:</value>
+    </data>
+    <data name="Field_Folder_Browse" xml:space="preserve">
+    <value>Jelajahi</value>
+    </data>
+    <data name="Field_Folder_Validation_Empty" xml:space="preserve">
+    <value>Folder tidak ditentukan.</value>
+    </data>
+    <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
+    <value>Folder tidak ada.</value>
+    </data>
+    <data name="Field_TransportProtocol" xml:space="preserve">
+    <value>Protokol:</value>
+    </data>
+    <data name="Field_Version" xml:space="preserve">
+    <value>Versi:</value>
+    </data>
+    <data name="File_Deleting" xml:space="preserve">
+    <value>Menghapus "{0}"</value>
+    </data>
+    <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
+    <value>Script verifikasi integritas.ps1</value>
+    </data>
+    <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
+    <value>Menyimpan script verifikasi integritas</value>
+    </data>
+    <data name="File_List_Saving" xml:space="preserve">
+    <value>Menyimpan file</value>
+    </data>
+    <data name="File_Moving" xml:space="preserve">
+    <value>Pindah "{0}" ke "{1}"</value>
+    </data>
+    <data name="File_Saving" xml:space="preserve">
+    <value>Menyimpan "{0}"</value>
+    </data>
+    <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
+    <value>Eksplisit</value>
+    </data>
+    <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
+    <value>Implisit</value>
+    </data>
+    <data name="Ftps_Field_Encryption" xml:space="preserve">
+    <value>Enkripsi SSL/TTS:</value>
+    </data>
+    <data name="Icons_Help_Link" xml:space="preserve">
+    <value>Tambahkan ikon karakter ke teks Anda</value>
+    </data>
+    <data name="ImportMediaTask_AllFiles" xml:space="preserve">
+    <value>Impor semua file</value>
+    </data>
+    <data name="ImportMediaTask_Create" xml:space="preserve">
+    <value>Impor tugas media</value>
+    </data>
+    <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
+    <value>Edit tugas impor media "{0}"</value>
+    </data>
+    <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
+    <value>Folder keluaran:</value>
+    </data>
+    <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
+    <value>Transformasi nama file:</value>
+    </data>
+    <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
+    <value>Contoh:
+    Bayangkan Anda memiliki file {0} (dimodifikasi pada {1}).
+    Dengan direktori ini dan string template, file akan disimpan sebagai:
+    {2}</value>
+    </data>
+    <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
+    <value>Token yang didukung:
+    {DATE:Format} - Menyisipkan tanggal modifikasi file dalam format yang ditentukan.
+    Untuk melihat semua opsi, cari "format DateTime C#".</value>
+    </data>
+    <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
+    <value>Nama file transformasi kosong.</value>
+    </data>
+    <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
+    <value>String nama file transformasi tidak valid.</value>
+    </data>
+    <data name="ImportMediaTask_File" xml:space="preserve">
+    <value>Impor "{0}"</value>
+    </data>
+    <data name="ImportMediaTask_Help" xml:space="preserve">
+    <value>Mengimpor audio, foto, video dari kartu SD kamera, perekam; foto dan video dari ponsel Anda melalui WI-FI menggunakan aplikasi FTP Server dengan nama file templat.
+    
+    Lihat situs web aplikasi untuk dokumentasi tentang cara mengatur transmisi file melalui WI-FI menggunakan aplikasi FTP Server di ponsel.</value>
+    </data>
+    <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
+    <value>Sumber data impor</value>
+    </data>
+    <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
+    <value>Lewati file yang sudah diimpor</value>
+    </data>
+    <data name="ImproveIt_Message" xml:space="preserve">
+    <value>Terjadi kesalahan yang tidak terduga.
+    
+    Silakan hubungi pengembang dengan informasi yang disimpan di desktop Anda dalam
+    "{0}"
+    
+    Aplikasi sekarang akan ditutup.</value>
+    </data>
+    <data name="IncrementalBackup_Help" xml:space="preserve">
+    <value>Bentuk paling dasar dari pencadangan inkremental terdiri dari mengidentifikasi, merekam, dan dengan demikian, mempertahankan hanya file yang telah berubah sejak pencadangan terakhir.
+    
+    Karena perubahan biasanya rendah, pencadangan inkremental jauh lebih kecil dan lebih cepat daripada pencadangan penuh.
+    
+    Misalnya, setelah pencadangan penuh pada hari Jumat, pencadangan hari Senin hanya akan berisi file yang berubah sejak hari Jumat. Pencadangan hari Selasa hanya berisi file yang berubah sejak hari Senin, dan seterusnya.
+    
+    Jika salah satu salinan yang dibuat gagal, termasuk yang pertama (penuh), pemulihan akan tidak lengkap.</value>
+    </data>
+    <data name="IncrementalBackup_Title" xml:space="preserve">
+    <value>Pencadangan inkremental</value>
+    </data>
+    <data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
+    <value>Hitung versi yang ditingkatkan</value>
+    </data>
+    <data name="IncrementalBackup_Version_Save" xml:space="preserve">
+    <value>Menyimpan versi yang ditingkatkan</value>
+    </data>
+    <data name="IncrementalBackupTask_Create" xml:space="preserve">
+    <value>Tugas pencadangan inkremental</value>
+    </data>
+    <data name="LeftMenu_Encryption" xml:space="preserve">
+    <value>Enkripsi</value>
+    </data>
+    <data name="LeftMenu_What" xml:space="preserve">
+    <value>Apa?</value>
+    </data>
+    <data name="LeftMenu_What_Hint" xml:space="preserve">
+    <value>Di sini Anda dapat menambahkan folder dan file yang perlu Anda proses.</value>
+    </data>
+    <data name="LeftMenu_What_Validation" xml:space="preserve">
+    <value>Tidak ada item untuk diproses.</value>
+    </data>
+    <data name="LeftMenu_When" xml:space="preserve">
+    <value>Kapan?</value>
+    </data>
+    <data name="LeftMenu_When_Help" xml:space="preserve">
+    <value>Di sini Anda dapat mengatur penjadwalan. Penjadwalan dapat membantu Anda mengotomatiskan peluncuran tugas.</value>
+    </data>
+    <data name="LeftMenu_Where" xml:space="preserve">
+    <value>Di mana?</value>
+    </data>
+    <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
+    <value>Seret dan lepas file dan folder di sini dari Explorer.</value>
+    </data>
+    <data name="LeftMenu_Where_Hint" xml:space="preserve">
+    <value>Di tempat ini Anda dapat menambahkan lokasi di mana Anda ingin file Anda disalin.</value>
+    </data>
+    <data name="Local_State_Get" xml:space="preserve">
+    <value>Dapatkan status lokal</value>
+    </data>
+    <data name="Local_State_Saving" xml:space="preserve">
+    <value>Menulis status lokal</value>
+    </data>
+    <data name="LogFile_Marker_Errors" xml:space="preserve">
+    <value>Kesalahan</value>
+    </data>
+    <data name="LogFile_Marker_Successful" xml:space="preserve">
+    <value>Berhasil</value>
+    </data>
+    <data name="LogFile_OpenLogs" xml:space="preserve">
+    <value>Log</value>
+    </data>
+    <data name="Messages_Header_Error" xml:space="preserve">
+    <value>Kesalahan</value>
+    </data>
+    <data name="Messages_Header_Information" xml:space="preserve">
+    <value>Informasi</value>
+    </data>
+    <data name="Messages_Header_Question" xml:space="preserve">
+    <value>Pertanyaan</value>
+    </data>
+    <data name="Name_Field" xml:space="preserve">
+    <value>Nama:</value>
+    </data>
+    <data name="Name_Field_Validation" xml:space="preserve">
+    <value>Nama kosong atau mengandung karakter jalur yang tidak didukung.</value>
+    </data>
+    <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>Panjang nama '{0}' melebihi batas sebanyak {1} karakter.</value>
+    </data>
+    <data name="Name_Title" xml:space="preserve">
+    <value>Nama</value>
+    </data>
+    <data name="Password_Field" xml:space="preserve">
+    <value>Kata sandi:</value>
+    </data>
+    <data name="Password_Field_Confirm" xml:space="preserve">
+    <value>Konfirmasi kata sandi:</value>
+    </data>
+    <data name="Password_Field_Length" xml:space="preserve">
+    <value>Panjang:</value>
+    </data>
+    <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
+    <value>Kata sandi tidak cocok.</value>
+    </data>
+    <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
+    <value>Kata sandi tidak ditentukan.</value>
+    </data>
+    <data name="Password_Generate" xml:space="preserve">
+    <value>Hasilkan kata sandi...</value>
+    </data>
+    <data name="Password_Generator_Header" xml:space="preserve">
+    <value>Generator kata sandi</value>
+    </data>
+    <data name="Password_Help" xml:space="preserve">
+    <value>Panjang kata sandi minimum yang direkomendasikan adalah 50 karakter atau lebih.</value>
+    </data>
+    <data name="Password_Use" xml:space="preserve">
+    <value>Gunakan</value>
+    </data>
+    <data name="RepositorySubfolder_Field" xml:space="preserve">
+    <value>Subfolder repositori (opsional):</value>
+    </data>
+    <data name="RepositorySubfolder_Help" xml:space="preserve">
+    <value>Anda dapat menyinkronkan folder ke subfolder tertentu dari repositori, jika Anda tidak ingin semua konten repositori di perangkat.</value>
+    </data>
+    <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
+    <value>Tidak dapat menemukan file "{0}" di direktori.
+    
+    Tunjuk ke direktori yang berisi file ini.</value>
+    </data>
+    <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
+    <value>Tidak dapat membaca status.</value>
+    </data>
+    <data name="Server_Field_Address" xml:space="preserve">
+    <value>Nama server:</value>
+    </data>
+    <data name="Server_Field_Address_Validation" xml:space="preserve">
+    <value>Nama server tidak boleh ditentukan.</value>
+    </data>
+    <data name="Server_Field_Port" xml:space="preserve">
+    <value>Port:</value>
+    </data>
+    <data name="Server_Field_Port_Validation" xml:space="preserve">
+    <value>Port tidak valid.</value>
+    </data>
+    <data name="SourceItem_AddFiles" xml:space="preserve">
+    <value>Tambahkan file...</value>
+    </data>
+    <data name="SourceItem_AddFolders" xml:space="preserve">
+    <value>Tambahkan folder...</value>
+    </data>
+    <data name="SourceItem_OpenInExplorer" xml:space="preserve">
+    <value>Buka di Explorer...</value>
+    </data>
+    <data name="SourceItem_State_Get" xml:space="preserve">
+    <value>Dapatkan status item sumber "{0}"</value>
+    </data>
+    <data name="SourceItem_Validation_Empty" xml:space="preserve">
+    <value>Tidak ada item untuk diproses.</value>
+    </data>
+    <data name="SourceItem_Validation_NotExists" xml:space="preserve">
+    <value>"{0}" tidak ada.</value>
+    </data>
+    <data name="State_File_Get" xml:space="preserve">
+    <value>Dapatkan status file "{0}"</value>
+    </data>
+    <data name="State_LoadFromEverywhere" xml:space="preserve">
+    <value>Dapatkan status item sumber dan penyimpanan</value>
+    </data>
+    <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
+    <value>Tambahkan pola pengecualian file</value>
+    </data>
+    <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
+    <value>Edit pola pengecualian file</value>
+    </data>
+    <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
+    <value>Pola globbing file dalam .NET: Pola</value>
+    </data>
+    <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
+    <value>Di sini Anda dapat menentukan pola pengecualian globbing file. 
+    Ini bisa menjadi nama file atau nama folder atau wildcard. 
+    Contoh: 
+    d:\temp, 
+    d:\temp\file.txt, 
+    d:\temp\**\*.txt atau 
+    bin. 
+    Lihat deskripsi rinci dalam tautan berikut.</value>
+    </data>
+    <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
+    <value>Melewati pemrosesan file berdasarkan pola pengecualian.</value>
+    </data>
+    <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
+    <value>Pola pengecualian file:</value>
+    </data>
+    <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
+    <value>Pola pengecualian file kosong.</value>
+    </data>
+    <data name="StorageItem_Remote_Marker" xml:space="preserve">
+    <value>Jarak jauh</value>
+    </data>
+    <data name="SynchronizationMode_Field" xml:space="preserve">
+    <value>Mode sinkronisasi:</value>
+    </data>
+    <data name="SynchronizationMode_Field_Read" xml:space="preserve">
+    <value>Baca</value>
+    </data>
+    <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
+    <value>Dua arah</value>
+    </data>
+    <data name="SynchronizationTask_Create" xml:space="preserve">
+    <value>Sinkronisasi</value>
+    </data>
+    <data name="SynchronizationTask_Help" xml:space="preserve">
+    <value>Sinkronisasi dua arah file antara perangkat dengan menggunakan penyimpanan terpusat.</value>
+    </data>
+    <data name="Task_Create" xml:space="preserve">
+    <value>Baru</value>
+    </data>
+    <data name="Task_Create_Hint" xml:space="preserve">
+    <value>Membuat tugas baru.</value>
+    </data>
+    <data name="Task_Delete" xml:space="preserve">
+    <value>Hapus</value>
+    </data>
+    <data name="Task_Delete_Confirm" xml:space="preserve">
+    <value>Apakah Anda benar-benar ingin menghapus "{0}"?</value>
+    </data>
+    <data name="Task_Delete_Hint" xml:space="preserve">
+    <value>Menghapus tugas yang dipilih.</value>
+    </data>
+    <data name="Task_Edit" xml:space="preserve">
+    <value>Edit</value>
+    </data>
+    <data name="Task_Edit_Hint" xml:space="preserve">
+    <value>Mengedit tugas yang dipilih.</value>
+    </data>
+    <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
+    <value>Anda tidak dapat mengedit tipe tugas ini di CLI.</value>
+    </data>
+    <data name="Task_Field_Choose" xml:space="preserve">
+    <value>Pilih tugas:</value>
+    </data>
+    <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
+    <value>Tugas baru</value>
+    </data>
+    <data name="Task_LastExecution_State" xml:space="preserve">
+    <value>Status</value>
+    </data>
+    <data name="Task_Launch" xml:space="preserve">
+    <value>Jalankan</value>
+    </data>
+    <data name="Task_Launch_Hint" xml:space="preserve">
+    <value>Menjalankan tugas yang dipilih.</value>
+    </data>
+    <data name="Task_List" xml:space="preserve">
+    <value>Tugas</value>
+    </data>
+    <data name="Task_Restore" xml:space="preserve">
+    <value>Pulihkan</value>
+    </data>
+    <data name="Task_Status_FailedSeeLog" xml:space="preserve">
+    <value>Gagal (lihat log yang dibuka)</value>
+    </data>
+    <data name="Task_Status_InProgress" xml:space="preserve">
+    <value>Tugas sedang berjalan...</value>
+    </data>
+    <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
+    <value>Diselesaikan sebagian. Karena kuota penyimpanan, beberapa file dilewati kali ini. Tersisa {0} file dengan total {1} GB.</value>
+    </data>
+    <data name="Task_Status_Succesfull" xml:space="preserve">
+    <value>Berhasil</value>
+    </data>
+    <data name="Task_Status_Unknown" xml:space="preserve">
+    <value>Tidak diketahui</value>
+    </data>
+    <data name="Task_Validation_NotFound" xml:space="preserve">
+    <value>Tugas '{0}' tidak ditemukan.</value>
+    </data>
+    <data name="Task_Validation_NotSupported" xml:space="preserve">
+    <value>Tipe tugas ini tidak didukung.</value>
+    </data>
+    <data name="Theme_Title" xml:space="preserve">
+    <value>Tema</value>
+    </data>
+    <data name="Theme_Value_Dark" xml:space="preserve">
+    <value>Gelap</value>
+    </data>
+    <data name="Theme_Value_Light" xml:space="preserve">
+    <value>Terang</value>
+    </data>
+    <data name="Time_Field_Elapsed" xml:space="preserve">
+    <value>Waktu berlalu:</value>
+    </data>
+    <data name="Time_Field_Hour" xml:space="preserve">
+    <value>Jam:</value>
+    </data>
+    <data name="Time_Field_Minute" xml:space="preserve">
+    <value>Menit:</value>
+    </data>
+    <data name="Url_Field" xml:space="preserve">
+    <value>Url:</value>
+    </data>
+    <data name="Url_Field_Validation" xml:space="preserve">
+    <value>Url tidak ditentukan.</value>
+    </data>
+    <data name="User_Field" xml:space="preserve">
+    <value>Pengguna:</value>
+    </data>
+    <data name="User_Field_Validation" xml:space="preserve">
+    <value>Pengguna tidak ditentukan.</value>
+    </data>
+</root>

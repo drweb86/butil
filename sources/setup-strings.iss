@@ -7,6 +7,7 @@ Name: english; MessagesFile: "compiler:Default.isl"
 Name: spanish; MessagesFile: "compiler:Languages\Spanish.isl"
 Name: french; MessagesFile: "compiler:Languages\French.isl"
 Name: hindi; MessagesFile: "compiler:Languages\Hindi.islu"
+Name: indonesian; MessagesFile: "compiler:Languages\Indonesian.isl"
 Name: italian; MessagesFile: "compiler:Languages\Italian.isl"
 Name: russian; MessagesFile: "compiler:Languages\Russian.isl"
 Name: portuguese; MessagesFile: "compiler:Languages\Portuguese.isl"
@@ -22,6 +23,7 @@ english.BeveledLabel=English
 spanish.BeveledLabel=Español
 french.BeveledLabel=Français
 hindi.BeveledLabel=हिंदी
+indonesian.BeveledLabel=Bahasa Indonesia
 italian.BeveledLabel=Italiano
 portuguese.BeveledLabel=Portugues
 russian.BeveledLabel=Русский
