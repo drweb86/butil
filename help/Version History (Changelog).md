@@ -2,7 +2,7 @@
 (unreleased)
 
 ## New Features
-- Bengali language.
+- Bengali, Urdu languages.
 
 ## Changes
 

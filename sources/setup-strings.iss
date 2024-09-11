@@ -11,6 +11,7 @@ Name: italian; MessagesFile: "compiler:Languages\Italian.isl"
 Name: russian; MessagesFile: "compiler:Languages\Russian.isl"
 Name: portuguese; MessagesFile: "compiler:Languages\Portuguese.isl"
 Name: ukrainian; MessagesFile: "compiler:Languages\Ukrainian.isl"
+Name: urdu; MessagesFile: "compiler:Languages\Urdu.isl"
 
 [Messages]
 arabic.BeveledLabel=اللغة العربية
@@ -25,4 +26,4 @@ italian.BeveledLabel=Italiano
 portuguese.BeveledLabel=Portugues
 russian.BeveledLabel=Русский
 ukrainian.BeveledLabel=Українська
-
+urdu.BeveledLabel=اردو

@@ -27,6 +27,10 @@ C:\Program Files (x86)\Inno Setup 6\Languages\Hindi.islu
 File: https://raw.githubusercontent.com/jrsoftware/issrc/main/Files/Languages/Unofficial/Bengali.islu
 To be put into
 C:\Program Files (x86)\Inno Setup 6\Languages\Bengali.islu
+- Urdu language
+File: https://raw.githubusercontent.com/jrsoftware/issrc/main/Files/Languages/Unofficial/Urdu.isl
+To be put into
+C:\Program Files (x86)\Inno Setup 6\Languages\Urdu.isl
 - 7-zip x64 (must be installed in default directory).
 - .Net 8 SDK
 

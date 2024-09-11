@@ -11,5 +11,8 @@
     <EmbeddedResource Update="Localization\Resources.ru.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Update="Localization\Resources.ur.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
