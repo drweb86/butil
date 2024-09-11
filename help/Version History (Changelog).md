@@ -1,5 +1,8 @@
-# 2024.08.24
+# 2024.09.11
 (unreleased)
+
+## New Features
+- Bengali language.
 
 ## Changes
 

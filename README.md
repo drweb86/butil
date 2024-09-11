@@ -10,6 +10,7 @@
 
 ![English](https://img.shields.io/badge/lang-English-red.svg)
 [![Arabic](https://img.shields.io/badge/lang-Arabic-green.svg)](https://ask.chadgpt.ru/)
+[![Bengal](https://img.shields.io/badge/lang-Bengal-green.svg)](https://ask.chadgpt.ru/)
 [![Chinese](https://img.shields.io/badge/lang-Chinese-green.svg)](https://ask.chadgpt.ru/)
 [![French](https://img.shields.io/badge/lang-French-green.svg)](https://ask.chadgpt.ru/)
 [![German](https://img.shields.io/badge/lang-German-green.svg)](https://ask.chadgpt.ru/)

@@ -1,0 +1,641 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
+      <value>কিছুই করবেন না</value>
+  </data>
+  <data name="AfterTaskSelection_Field" xml:space="preserve">
+      <value>কার্য সম্পন্ন করার পর:</value>
+  </data>
+  <data name="AfterTaskSelection_Help" xml:space="preserve">
+      <value>যদি আপনি 'কিছুই করবেন না' এর বাইরে কিছু পছন্দ করেন তবে প্রোগ্রামটি আপনাকে পরবর্তী লগইন করার সময় যদি কোন ত্রুটি বা সতর্কতা ওঠে তার রিপোর্ট দেখানোর জন্য OS কনফিগার করবে।</value>
+  </data>
+  <data name="AfterTaskSelection_LogOff" xml:space="preserve">
+      <value>লগ অফ</value>
+  </data>
+  <data name="AfterTaskSelection_Reboot" xml:space="preserve">
+      <value>রিবুট</value>
+  </data>
+  <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
+      <value>শাটডাউন</value>
+  </data>
+  <data name="Application_NewVersion_Notification" xml:space="preserve">
+      <value>নতুন {0} সংস্করণ উপলব্ধ।</value>
+  </data>
+  <data name="BackupVersion_Button_Delete" xml:space="preserve">
+      <value>সংস্করণ মুছুন</value>
+  </data>
+  <data name="BackupVersion_Changes_Title" xml:space="preserve">
+      <value>পরিবর্তনগুলি</value>
+  </data>
+  <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
+      <value>আপনি কি সত্যিই সংস্করণ "{0}" মুছতে চান?
+
+  মুছে ফেলা সংস্করণের পরিবর্তনগুলি সংস্করণ "{1}" এর অংশ হয়ে যাবে।</value>
+  </data>
+  <data name="BackupVersion_Files_Title" xml:space="preserve">
+      <value>ফাইল</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
+      <value>জার্নাল: {0}</value>
+  </data>
+  <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
+      <value>নির্বাচিতের জন্য জার্নাল...</value>
+  </data>
+  <data name="BackupVersion_Select" xml:space="preserve">
+      <value>নির্বাচিত সংস্করণ খুলুন...</value>
+  </data>
+  <data name="BackupVersion_Selector_Title" xml:space="preserve">
+      <value>সংস্করণ নির্বাচন করুন</value>
+  </data>
+  <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
+      <value>(সমস্ত সংস্করণ সংরক্ষণের {0} জায়গা দখল করে)</value>
+  </data>
+  <data name="BackupVersion_Versions_Title" xml:space="preserve">
+      <value>সংস্করণ</value>
+  </data>
+  <data name="BackupVersion_Viewer_Help" xml:space="preserve">
+      <value>আপনার পুনরুদ্ধার করতে চান এমন ফাইল বা ফোল্ডারটি গাছের মধ্যে নির্বাচন করুন এবং "পুনরুদ্ধার" এ ক্লিক করুন।</value>
+  </data>
+  <data name="Button_Cancel" xml:space="preserve">
+      <value>বাতিল করুন</value>
+  </data>
+  <data name="Button_Close" xml:space="preserve">
+      <value>বন্ধ করুন</value>
+  </data>
+  <data name="Button_Continue" xml:space="preserve">
+      <value>চালিয়ে যান &gt;</value>
+  </data>
+  <data name="Button_CopyToClipboard" xml:space="preserve">
+      <value>কপি করুন</value>
+  </data>
+  <data name="Button_Download" xml:space="preserve">
+      <value>ডাউনলোড করুন</value>
+  </data>
+  <data name="Button_OK" xml:space="preserve">
+      <value>ঠিক আছে</value>
+  </data>
+  <data name="Button_Remove" xml:space="preserve">
+      <value>অপসারণ করুন</value>
+  </data>
+  <data name="Button_Save" xml:space="preserve">
+      <value>সংরক্ষণ করুন</value>
+  </data>
+  <data name="CommandLineArguments_Help" xml:space="preserve">
+      <value>কমান্ড লাইন আর্গুমেন্টগুলি দেখতে {0} এ যান।</value>
+  </data>
+  <data name="CommandLineArguments_Invalid" xml:space="preserve">
+      <value>অবৈধ কমান্ড লাইন আর্গুমেন্ট।</value>
+  </data>
+  <data name="DataStorage_Data_Saving" xml:space="preserve">
+      <value>সংরক্ষণে তথ্য লেখার কাজ চলছে</value>
+  </data>
+  <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
+      <value>সংযোগ স্ক্রিপ্ট:</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
+      <value>আনকানেকশন স্ক্রিপ্ট:</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
+      <value>ত্রুটি দ্বারা শেষ হয়েছে</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
+      <value>সফলভাবে শেষ হয়েছে</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
+      <value>আপলোড সীমা, জিবি:</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
+      <value>একটি কাজের সম্পাদনাকালে সঞ্চয়ে প্রেরিত ডেটার পরিমাণ সীমাবদ্ধ করে। 0 - কোন সীমা নেই। 
+  যখন কোটা অতিক্রম করা হয়, অন্যান্য ফাইলগুলো বাদ দেওয়া হবে এবং পরবর্তী সময় প্রক্রিয়া করা হবে। 
+  ব্যবহারের দৃশ্যপট: আপনি দূরবর্তী সার্ভারে তথ্য কপি করছেন। একটি সমস্যা: ISP কিছু গিগাবাইটের পরে আপলোড স্পীড কমিয়ে দেয়। এই সেটিংটি আপনাকে এটি মোকাবেলা করতে সহায়তা করে।</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
+      <value>কোটা 0 (প্রযোজ্য নয়) অথবা 0 এর ওপরে একটি মান হতে হবে।</value>
+  </data>
+  <data name="DataStorage_Maintenance" xml:space="preserve">
+      <value>ডেটা সঞ্চয়স্থল রক্ষণাবেক্ষণ</value>
+  </data>
+  <data name="DataStorage_Script_Help" xml:space="preserve">
+      <value>যদি কিছু কমান্ড কার্যকর করার পর ফোল্ডার উপলব্ধ হয়, তাহলে সংযোগ ও বিচ্ছিন্নতার জন্য {0} স্ক্রিপ্ট নির্দিষ্ট করুন।</value>
+  </data>
+  <data name="DataStorage_State_Get" xml:space="preserve">
+      <value>সংরক্ষণের অবস্থা পান</value>
+  </data>
+  <data name="DataStorage_State_Saving" xml:space="preserve">
+      <value>সংরক্ষণের অবস্থা লেখা হচ্ছে</value>
+  </data>
+  <data name="DataStorage_Title" xml:space="preserve">
+      <value>সংরক্ষণাগার</value>
+  </data>
+  <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
+      <value>সংরক্ষণাগার নির্দিষ্ট করা হয়নি।</value>
+  </data>
+  <data name="Days_Field_Choose" xml:space="preserve">
+      <value>সপ্তাহের দিনগুলো নির্বাচন করুন:</value>
+  </data>
+  <data name="Days_Friday" xml:space="preserve">
+      <value>শুক্রবার</value>
+  </data>
+  <data name="Days_Monday" xml:space="preserve">
+      <value>সোমবার</value>
+  </data>
+  <data name="Days_Saturday" xml:space="preserve">
+      <value>শনিবার</value>
+  </data>
+  <data name="Days_Sunday" xml:space="preserve">
+      <value>রবিবার</value>
+  </data>
+  <data name="Days_Thursday" xml:space="preserve">
+      <value>বৃহস্পতিবার</value>
+  </data>
+  <data name="Days_Tuesday" xml:space="preserve">
+      <value>মঙ্গলবার</value>
+  </data>
+  <data name="Days_Wednesday" xml:space="preserve">
+      <value>বুধবার</value>
+  </data>
+  <data name="DirectoryStorage" xml:space="preserve">
+      <value>ডিরেক্টরি</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
+      <value>ফোল্ডার:</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
+      <value>ডিরেক্টরি নির্দিষ্ট করা হয়নি।</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
+      <value>ডিরেক্টরি "{0}" অস্তিত্ব নেই।</value>
+  </data>
+  <data name="Field_Device" xml:space="preserve">
+      <value>ডিভাইস:</value>
+  </data>
+  <data name="Field_Device_Validation_Empty" xml:space="preserve">
+      <value>ডিভাইস নির্দিষ্ট করা হয়নি।</value>
+  </data>
+  <data name="Field_Device_Validation_NotFound" xml:space="preserve">
+      <value>ডিভাইস খুঁজে পাওয়া যায়নি।</value>
+  </data>
+  <data name="Field_Folder" xml:space="preserve">
+      <value>ফোল্ডার:</value>
+  </data>
+  <data name="Field_Folder_Browse" xml:space="preserve">
+      <value>ব্রাউজ করুন</value>
+  </data>
+  <data name="Field_Folder_Validation_Empty" xml:space="preserve">
+      <value>ফোল্ডার নির্দিষ্ট করা হয়নি।</value>
+  </data>
+  <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
+      <value>ফোল্ডার বিদ্যমান নয়।</value>
+  </data>
+  <data name="Field_TransportProtocol" xml:space="preserve">
+      <value>প্রোটোকল:</value>
+  </data>
+  <data name="Field_Version" xml:space="preserve">
+      <value>সংস্করণ:</value>
+  </data>
+  <data name="File_Deleting" xml:space="preserve">
+      <value>মুছা হচ্ছে "{0}"</value>
+  </data>
+  <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
+      <value>অখণ্ডতা যাচাইকরণ স্ক্রিপ্ট.ps1</value>
+  </data>
+  <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
+      <value>অখণ্ডতা যাচাইকরণ স্ক্রিপ্টগুলি সংরক্ষণ করছে</value>
+  </data>
+  <data name="File_List_Saving" xml:space="preserve">
+      <value>ফাইলগুলি সংরক্ষণ করা হচ্ছে</value>
+  </data>
+  <data name="File_Moving" xml:space="preserve">
+      <value>মুভ করা হচ্ছে "{0}" থেকে "{1}"</value>
+  </data>
+  <data name="File_Saving" xml:space="preserve">
+      <value>সংরক্ষণ করা হচ্ছে "{0}"</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
+      <value>স্পষ্ট</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
+      <value>গোপন</value>
+  </data>
+  <data name="Ftps_Field_Encryption" xml:space="preserve">
+      <value>SSL/TTS এনক্রিপশন:</value>
+  </data>
+  <data name="Icons_Help_Link" xml:space="preserve">
+      <value>আপনার টেক্সটের সাথে চরিত্র আইকন যুক্ত করুন</value>
+  </data>
+  <data name="ImportMediaTask_AllFiles" xml:space="preserve">
+      <value>সমস্ত ফাইল আমদানি করুন</value>
+  </data>
+  <data name="ImportMediaTask_Create" xml:space="preserve">
+      <value>মিডিয়া আমদানি কাজ</value>
+  </data>
+  <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
+      <value>"{0}" মিডিয়া আমদানি কাজ সম্পাদনা করুন</value>
+  </data>
+  <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
+      <value>আউটপুট ফোল্ডার:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
+      <value>ফাইলের নাম পরিবর্তন:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
+      <value>উদাহরণ: 
+  আপনার কাছে {0} (যা {1} এ পরিবর্তিত হয়েছে) ফাইল আছে।
+  এই ডিরেক্টরি এবং টেমপ্লেট স্ট্রিং দিয়ে ফাইলটি হিসাবে সংরক্ষিত হবে:
+  {2}</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
+      <value>সমর্থিত টোকেনগুলি: 
+  {DATE:Format} - নির্দিষ্ট ফরম্যাটে ফাইল পরিবর্তনের তারিখ অন্তর্ভুক্ত করে। 
+  সমস্ত অপশন দেখতে গুগল করুন "C# DateTime format"।</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
+      <value>পরিবর্তিত ফাইলের নাম খালি।</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
+      <value>অবৈধ ফাইলের নাম পরিবর্তনের স্ট্রিং।</value>
+  </data>
+  <data name="ImportMediaTask_File" xml:space="preserve">
+      <value>আমদানি করুন "{0}"</value>
+  </data>
+  <data name="ImportMediaTask_Help" xml:space="preserve">
+      <value>SD কার্ড থেকে অডিও, ছবি, ভিডিও আমদানি করে, রেকর্ডার; আপনার ফোন থেকে WIFI এর মাধ্যমে FTP সার্ভার অ্যাপ্লিকেশন ব্যবহার করে ভিডিও এবং ছবি।
+
+  ফাইল স্থানান্তর সেটআপ করার জন্য অ্যাপ্লিকেশন ওয়েব-সাইট দেখুন WIFI এর মাধ্যমে FTP সার্ভার অ্যাপ্লিকেশন ফোনে।</value>
+  </data>
+  <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
+      <value>আমদানিকারক ডেটা উৎস</value>
+  </data>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
+      <value>আগে আমদানি করা ফাইল উপেক্ষা করুন</value>
+  </data>
+  <data name="ImproveIt_Message" xml:space="preserve">
+      <value>একটি অপ্রত্যাশিত ত্রুটি ঘটেছে।
+
+  দয়া করে বিকাশকারীদের সাথে আপনার ডেস্কটপে সংরক্ষিত তথ্য নিয়ে যোগাযোগ করুন
+  "{0}"
+
+  এখন অ্যাপ্লিকেশন বন্ধ হবে।</value>
+  </data>
+  <data name="IncrementalBackup_Help" xml:space="preserve">
+      <value>ইনক্রিমেন্টাল ব্যাকআপের সবচেয়ে আধারভূত ফর্ম হচ্ছে, সর্বশেষ ব্যাকআপ থেকে যে ফাইলগুলি পরিবর্তিত হয়েছে তা চিহ্নিত করা, রেকর্ডিং এবং তাই, শুধুমাত্র সেই ফাইলগুলি সংরক্ষণ করা।
+
+  যেহেতু পরিবর্তনের সংখ্যা সাধারণত কম থাকে, ইনক্রিমেন্টাল ব্যাকআপগুলি সম্পূর্ণ ব্যাকআপের তুলনায় অনেক ছোট এবং দ্রুত হয়।
+
+  উদাহরণস্বরূপ, শুক্রবার একটি সম্পূর্ণ ব্যাকআপ করার পরে, সোমবারের ব্যাকআপে শুধুমাত্র সেই ফাইলগুলি থাকবে যা শুক্রবার থেকে পরিবর্তিত হয়েছে। মঙ্গলবারের ব্যাকআপে শুধুমাত্র সেই ফাইলগুলি থাকবে যা সোমবার থেকে পরিবর্তিত হয়েছে এবং তাই। 
+
+  যদি কোনও একটি তৈরি কপি ব্যর্থ হয়, প্রথম (সম্পূর্ণ) সহ, পুনরুদ্ধরণ অসম্পূর্ণ হবে।</value>
+  </data>
+  <data name="IncrementalBackup_Title" xml:space="preserve">
+      <value>ইনক্রিমেন্টাল ব্যাকআপ</value>
+  </data>
+  <data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
+      <value>ইনক্রিমেন্টেড সংস্করণ গণনা করা হচ্ছে</value>
+  </data>
+  <data name="IncrementalBackup_Version_Save" xml:space="preserve">
+      <value>ইনক্রিমেন্টেড সংস্করণ সংরক্ষণ করা হচ্ছে</value>
+  </data>
+  <data name="IncrementalBackupTask_Create" xml:space="preserve">
+      <value>ইনক্রিমেন্টাল ব্যাকআপ কাজ</value>
+  </data>
+  <data name="LeftMenu_Encryption" xml:space="preserve">
+      <value>এনক্রিপশন</value>
+  </data>
+  <data name="LeftMenu_What" xml:space="preserve">
+      <value>কি?</value>
+  </data>
+  <data name="LeftMenu_What_Hint" xml:space="preserve">
+      <value>এখানে আপনি প্রক্রিয়াকরণের জন্য আপনাকে প্রয়োজনীয় ফোল্ডার এবং ফাইল যুক্ত করতে পারেন।</value>
+  </data>
+  <data name="LeftMenu_What_Validation" xml:space="preserve">
+      <value>প্রক্রিয়াকরণের জন্য কোন আইটেম নেই।</value>
+  </data>
+  <data name="LeftMenu_When" xml:space="preserve">
+      <value>কখন?</value>
+  </data>
+  <data name="LeftMenu_When_Help" xml:space="preserve">
+      <value>এখানে আপনি একটি সময়সূচী সেট আপ করতে পারেন। সময়সূচী আপনাকে কাজের সূচনার স্বয়ংক্রিয় করতে সাহায্য করতে পারে।</value>
+  </data>
+  <data name="LeftMenu_Where" xml:space="preserve">
+      <value>কোথায়?</value>
+  </data>
+  <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
+      <value>এক্সপ্লোরার থেকে এখানে ড্র্যাগ এবং ড্রপ করুন ফাইল এবং ফোল্ডারগুলো।</value>
+  </data>
+  <data name="LeftMenu_Where_Hint" xml:space="preserve">
+      <value>এই স্থানে আপনি আপনার ফাইলগুলি কপি করতে চান এমন অবস্থানগুলি যুক্ত করতে পারেন।</value>
+  </data>
+  <data name="Local_State_Get" xml:space="preserve">
+      <value>স্থানীয় অবস্থা পান</value>
+  </data>
+  <data name="Local_State_Saving" xml:space="preserve">
+      <value>স্থানীয় অবস্থা লেখা হচ্ছে</value>
+  </data>
+  <data name="LogFile_Marker_Errors" xml:space="preserve">
+      <value>ত্রুটিসমূহ</value>
+  </data>
+  <data name="LogFile_Marker_Successful" xml:space="preserve">
+      <value>সফল</value>
+  </data>
+  <data name="LogFile_OpenLogs" xml:space="preserve">
+      <value>লগগুলি</value>
+  </data>
+  <data name="Messages_Header_Error" xml:space="preserve">
+      <value>ত্রুটি</value>
+  </data>
+  <data name="Messages_Header_Information" xml:space="preserve">
+      <value>তথ্য</value>
+  </data>
+  <data name="Messages_Header_Question" xml:space="preserve">
+      <value>প্রশ্ন</value>
+  </data>
+  <data name="Name_Field" xml:space="preserve">
+      <value>নাম:</value>
+  </data>
+  <data name="Name_Field_Validation" xml:space="preserve">
+      <value>নাম খালি অথবা সমর্থিত পাথ অক্ষরগুলি নেই।</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+      <value>নাম '{0}' এর দৈর্ঘ্য সীমা {1} অক্ষরের বেশি।</value>
+  </data>
+  <data name="Name_Title" xml:space="preserve">
+      <value>নাম</value>
+  </data>
+  <data name="Password_Field" xml:space="preserve">
+      <value>পাসওয়ার্ড:</value>
+  </data>
+  <data name="Password_Field_Confirm" xml:space="preserve">
+      <value>পাসওয়ার্ড নিশ্চিত করুন:</value>
+  </data>
+  <data name="Password_Field_Length" xml:space="preserve">
+      <value>দৈর্ঘ্য:</value>
+  </data>
+  <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
+      <value>পাসওয়ার্ড মেলে না।</value>
+  </data>
+  <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
+      <value>পাসওয়ার্ড উল্লেখ করা হয়নি।</value>
+  </data>
+  <data name="Password_Generate" xml:space="preserve">
+      <value>পাসওয়ার্ড তৈরি করুন...</value>
+  </data>
+  <data name="Password_Generator_Header" xml:space="preserve">
+      <value>পাসওয়ার্ড জেনারেটর</value>
+  </data>
+  <data name="Password_Help" xml:space="preserve">
+      <value>অনুমোদিত ন্যূনতম পাসওয়ার্ডের দৈর্ঘ্য 50 অক্ষর এবং তার অধিক।</value>
+  </data>
+  <data name="Password_Use" xml:space="preserve">
+      <value>ব্যবহার করুন</value>
+  </data>
+  <data name="RepositorySubfolder_Field" xml:space="preserve">
+      <value>গুদাম সাবফোল্ডার (ঐচ্ছিক):</value>
+  </data>
+  <data name="RepositorySubfolder_Help" xml:space="preserve">
+      <value>যদি আপনি গুদামের সমস্ত বিষয়বস্তু আপনার ডিভাইসে রাখতে না চান তবে আপনি একটি নির্দিষ্ট সাবফোল্ডারে ফোল্ডারটি সিঙ্ক্রোনাইজ করতে পারেন।</value>
+  </data>
+  <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
+      <value>ডিরেক্টরিতে "{0}" ফাইলগুলি খুঁজে পাওয়া যাচ্ছে না।
+
+  এই ফাইলটি ধারণকারী একটি ডিস্কফোল্ডারের দিকে নির্দেশ করুন।</value>
+  </data>
+  <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
+      <value>রাষ্ট্র পড়তে পারছে না।</value>
+  </data>
+  <data name="Server_Field_Address" xml:space="preserve">
+      <value>সার্ভারের নাম:</value>
+  </data>
+  <data name="Server_Field_Address_Validation" xml:space="preserve">
+      <value>সার্ভারের নাম নির্দিষ্ট করা হবে না।</value>
+  </data>
+  <data name="Server_Field_Port" xml:space="preserve">
+      <value>পোর্ট:</value>
+  </data>
+  <data name="Server_Field_Port_Validation" xml:space="preserve">
+      <value>পোর্ট অবৈধ।</value>
+  </data>
+  <data name="SourceItem_AddFiles" xml:space="preserve">
+      <value>ফাইল যোগ করুন...</value>
+  </data>
+  <data name="SourceItem_AddFolders" xml:space="preserve">
+      <value>ফোল্ডার যোগ করুন...</value>
+  </data>
+  <data name="SourceItem_OpenInExplorer" xml:space="preserve">
+      <value>এক্সপ্লোরারে খুলুন...</value>
+  </data>
+  <data name="SourceItem_State_Get" xml:space="preserve">
+      <value>সূত্র আইটেম "{0}" এর অবস্থা পান</value>
+  </data>
+  <data name="SourceItem_Validation_Empty" xml:space="preserve">
+      <value>প্রক্রিয়াকরণের জন্য কোন আইটেম নেই।</value>
+  </data>
+  <data name="SourceItem_Validation_NotExists" xml:space="preserve">
+      <value>"{0}" অস্তিত্ব নেই।</value>
+  </data>
+  <data name="State_File_Get" xml:space="preserve">
+      <value>ফাইল "{0}" এর অবস্থা পান</value>
+  </data>
+  <data name="State_LoadFromEverywhere" xml:space="preserve">
+      <value>সূত্র আইটেম এবং সঞ্চয়ের অবস্থা পান</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
+      <value>ফাইল বাদ দেওয়ার প্যাটার্ন যোগ করুন</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
+      <value>ফাইল বাদ দেওয়ার প্যাটার্ন সম্পাদনা করুন</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
+      <value>.NET এ ফাইল গ্লবিং: প্যাটার্ন</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
+      <value>এখানে আপনি ফাইল গ্লবিং বাদ দেওয়ার প্যাটার্নগুলি নির্দিষ্ট করতে পারেন। 
+  এটি একটি ফাইলের নাম, অথবা ফোল্ডারের নাম অথবা ওয়াইল্ডকার্ড হতে পারে। 
+  উদাহরণ: 
+  d:\temp, 
+  d:\temp\file.txt, 
+  d:\temp\**\*.txt অথবা 
+  bin। 
+  নিচের লিঙ্কে বিস্তারিত বর্ণনা দেখুন।</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
+      <value>ফাইল বাদ দেওয়া প্যাটার্ন দ্বারা প্রক্রিয়াকরণ এড়ান।</value>
+  </data>
+  <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
+      <value>ফাইল বাদ দেওয়ার প্যাটার্ন:</value>
+  </data>
+  <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
+      <value>ফাইল বাদ দেওয়া প্যাটার্ন খালি।</value>
+  </data>
+  <data name="StorageItem_Remote_Marker" xml:space="preserve">
+      <value>দূরে</value>
+  </data>
+  <data name="SynchronizationMode_Field" xml:space="preserve">
+      <value>সমন্বয় মোড:</value>
+  </data>
+  <data name="SynchronizationMode_Field_Read" xml:space="preserve">
+      <value>পড়ুন</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
+      <value>দুই দিকের</value>
+  </data>
+  <data name="SynchronizationTask_Create" xml:space="preserve">
+      <value>সমন্বয়</value>
+  </data>
+  <data name="SynchronizationTask_Help" xml:space="preserve">
+      <value>ডিভাইসগুলির মধ্যে কেন্দ্রীভূত সঞ্চয়ের মাধ্যমে ফাইলগুলির দুই দিকের সমন্বয়।</value>
+  </data>
+  <data name="Task_Create" xml:space="preserve">
+      <value>নতুন</value>
+  </data>
+  <data name="Task_Create_Hint" xml:space="preserve">
+      <value>নতুন কাজ তৈরি করুন।</value>
+  </data>
+  <data name="Task_Delete" xml:space="preserve">
+      <value>মুছুন</value>
+  </data>
+  <data name="Task_Delete_Confirm" xml:space="preserve">
+      <value>আপনি কি সত্যিই "{0}" মুছতে চান?</value>
+  </data>
+  <data name="Task_Delete_Hint" xml:space="preserve">
+      <value>নির্বাচিত কাজটি মুছে দিন।</value>
+  </data>
+  <data name="Task_Edit" xml:space="preserve">
+      <value>সম্পাদনা করুন</value>
+  </data>
+  <data name="Task_Edit_Hint" xml:space="preserve">
+      <value>নির্বাচিত কাজটি সম্পাদনা করুন।</value>
+  </data>
+  <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
+      <value>আপনি CLI তে এই ধরনের কাজ সম্পাদনা করতে পারবেন না।</value>
+  </data>
+  <data name="Task_Field_Choose" xml:space="preserve">
+      <value>কার্য নির্বাচন করুন:</value>
+  </data>
+  <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
+      <value>নতুন কাজ</value>
+  </data>
+  <data name="Task_LastExecution_State" xml:space="preserve">
+      <value>অবস্থা</value>
+  </data>
+  <data name="Task_Launch" xml:space="preserve">
+      <value>শুরু করুন</value>
+  </data>
+  <data name="Task_Launch_Hint" xml:space="preserve">
+      <value>নির্বাচিত কাজটি শুরু করুন।</value>
+  </data>
+  <data name="Task_List" xml:space="preserve">
+      <value>কাজ</value>
+  </data>
+  <data name="Task_Restore" xml:space="preserve">
+      <value>পুনরুদ্ধার করুন</value>
+  </data>
+  <data name="Task_Status_FailedSeeLog" xml:space="preserve">
+      <value>ব্যর্থ হয়েছে (মোড লগ দেখুন)</value>
+  </data>
+  <data name="Task_Status_InProgress" xml:space="preserve">
+      <value>কাজটি চলমান...</value>
+  </data>
+  <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
+      <value>আংশিকভাবে সম্পন্ন হয়েছে। স্টোরেজের কোটা কারণে এই সময়ে কিছু ফাইল বাদ পড়েছে। অবশিষ্ট {0} ফাইল {1}GB এর।</value>
+  </data>
+  <data name="Task_Status_Succesfull" xml:space="preserve">
+      <value>সফল</value>
+  </data>
+  <data name="Task_Status_Unknown" xml:space="preserve">
+      <value>অজানা</value>
+  </data>
+  <data name="Task_Validation_NotFound" xml:space="preserve">
+      <value>কার্য '{0}' পাওয়া যায়নি।</value>
+  </data>
+  <data name="Task_Validation_NotSupported" xml:space="preserve">
+      <value>এই কাজের প্রকার সমর্থিত নয়।</value>
+  </data>
+  <data name="Theme_Title" xml:space="preserve">
+      <value>থিম</value>
+  </data>
+  <data name="Theme_Value_Dark" xml:space="preserve">
+      <value>অন্ধকার</value>
+  </data>
+  <data name="Theme_Value_Light" xml:space="preserve">
+      <value>হালকা</value>
+  </data>
+  <data name="Time_Field_Elapsed" xml:space="preserve">
+      <value>গতি:</value>
+  </data>
+  <data name="Time_Field_Hour" xml:space="preserve">
+      <value>ঘণ্টা:</value>
+  </data>
+  <data name="Time_Field_Minute" xml:space="preserve">
+      <value>মিনিট:</value>
+  </data>
+  <data name="Url_Field" xml:space="preserve">
+      <value>ইউআরএল:</value>
+  </data>
+  <data name="Url_Field_Validation" xml:space="preserve">
+      <value>ইউআরএল নির্দিষ্ট করা হয়নি।</value>
+  </data>
+  <data name="User_Field" xml:space="preserve">
+      <value>ব্যবহারকারী:</value>
+  </data>
+  <data name="User_Field_Validation" xml:space="preserve">
+      <value>ব্যবহারকারী নির্দিষ্ট করা হয়নি।</value>
+  </data>
+</root>
