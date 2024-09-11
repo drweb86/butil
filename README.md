@@ -17,6 +17,7 @@
 [![Hindi](https://img.shields.io/badge/lang-Hindi-green.svg)](https://ask.chadgpt.ru/)
 [![Indonesian](https://img.shields.io/badge/lang-Indonesian-green.svg)](https://ask.chadgpt.ru/)
 [![Italian](https://img.shields.io/badge/lang-Italian-green.svg)](https://github.com/bovirus)
+[![Japanese](https://img.shields.io/badge/lang-Japanese-green.svg)](https://ask.chadgpt.ru/)
 [![Portuguese](https://img.shields.io/badge/lang-Portuguese-green.svg)](https://ask.chadgpt.ru/)
 [![Russian](https://img.shields.io/badge/lang-Russian-green.svg)](https://github.com/drweb86)
 [![Spanish](https://img.shields.io/badge/lang-Spanish-green.svg)](https://ask.chadgpt.ru/)

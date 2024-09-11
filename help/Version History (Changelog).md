@@ -2,7 +2,7 @@
 (unreleased)
 
 ## New Features
-- Bengali, Urdu, Indonesian languages.
+- Bengali, Urdu, Indonesian, Japanese languages.
 
 ## Changes
 

@@ -1,0 +1,690 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
+    <value>何もしない</value>
+    </data>
+    <data name="AfterTaskSelection_Field" xml:space="preserve">
+    <value>タスク完了後:</value>
+    </data>
+    <data name="AfterTaskSelection_Help" xml:space="preserve">
+    <value>「何もしない」以外の選択肢を選ぶと、プログラムがOSを設定して、次回システムにログオンする際に、エラーや警告が登録された場合、その報告を表示します。</value>
+    </data>
+    <data name="AfterTaskSelection_LogOff" xml:space="preserve">
+    <value>ログオフ</value>
+    </data>
+    <data name="AfterTaskSelection_Reboot" xml:space="preserve">
+    <value>再起動</value>
+    </data>
+    <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
+    <value>シャットダウン</value>
+    </data>
+    <data name="Application_NewVersion_Notification" xml:space="preserve">
+    <value>新しい {0} バージョンが利用可能です。</value>
+    </data>
+    <data name="BackupVersion_Button_Delete" xml:space="preserve">
+    <value>バージョンを削除</value>
+    </data>
+    <data name="BackupVersion_Changes_Title" xml:space="preserve">
+    <value>変更点</value>
+    </data>
+    <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
+    <value>本当にバージョン「{0}」を削除しますか？削除されたバージョンの変更はバージョン「{1}」の一部になります。</value>
+    </data>
+    <data name="BackupVersion_Files_Title" xml:space="preserve">
+    <value>ファイル</value>
+    </data>
+    <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
+    <value>ジャーナル: {0}</value>
+    </data>
+    <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
+    <value>選択した項目のジャーナル...</value>
+    </data>
+    <data name="BackupVersion_Select" xml:space="preserve">
+    <value>選択したバージョンを開く...</value>
+    </data>
+    <data name="BackupVersion_Selector_Title" xml:space="preserve">
+    <value>バージョンを選択</value>
+    </data>
+    <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
+    <value>(すべてのバージョンはストレージ上に {0} を占有しています)</value>
+    </data>
+    <data name="BackupVersion_Versions_Title" xml:space="preserve">
+    <value>バージョン</value>
+    </data>
+    <data name="BackupVersion_Viewer_Help" xml:space="preserve">
+    <value>復元したいファイルまたはフォルダーをツリーで選択し、「復元」をクリックしてください。</value>
+    </data>
+    <data name="Button_Cancel" xml:space="preserve">
+    <value>キャンセル</value>
+    </data>
+    <data name="Button_Close" xml:space="preserve">
+    <value>閉じる</value>
+    </data>
+    <data name="Button_Continue" xml:space="preserve">
+    <value>続行 &gt;</value>
+    </data>
+    <data name="Button_CopyToClipboard" xml:space="preserve">
+    <value>コピー</value>
+    </data>
+    <data name="Button_Download" xml:space="preserve">
+    <value>ダウンロード</value>
+    </data>
+    <data name="Button_OK" xml:space="preserve">
+    <value>OK</value>
+    </data>
+    <data name="Button_Remove" xml:space="preserve">
+    <value>削除</value>
+    </data>
+    <data name="Button_Save" xml:space="preserve">
+    <value>保存</value>
+    </data>
+    <data name="CommandLineArguments_Help" xml:space="preserve">
+    <value>{0}を訪れてコマンドライン引数を確認してください。</value>
+    </data>
+    <data name="CommandLineArguments_Invalid" xml:space="preserve">
+    <value>無効なコマンドライン引数です。</value>
+    </data>
+    <data name="DataStorage_Data_Saving" xml:space="preserve">
+    <value>ストレージにデータを書き込み中</value>
+    </data>
+    <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
+    <value>接続スクリプト:</value>
+    </data>
+    <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
+    <value>切断スクリプト:</value>
+    </data>
+    <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
+    <value>エラーで終了しました</value>
+    </data>
+    <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
+    <value>正常に終了しました</value>
+    </data>
+    <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
+    <value>アップロード制限, GB:</value>
+    </data>
+    <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
+    <value>タスク実行中にストレージに送信されるデータ量を制限します。0 - 制限なし。
+クォータを超えた場合、他のファイルはスキップされ、次回処理されます。
+使用例: リモートサーバにデータをコピーします。問題が発生します: ISPが数ギガバイト後にアップロード速度を低下させます。この設定を使用すると対処できます。</value>
+    </data>
+    <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
+    <value>クォータは0（適用しない）か、0以上の値である必要があります。</value>
+    </data>
+    <data name="DataStorage_Maintenance" xml:space="preserve">
+    <value>データストレージメンテナンス</value>
+    </data>
+    <data name="DataStorage_Script_Help" xml:space="preserve">
+    <value>フォルダーが特定のコマンドを実行した後に利用可能になる場合、接続および切断のためのスクリプト {0} を指定してください。</value>
+    </data>
+    <data name="DataStorage_State_Get" xml:space="preserve">
+    <value>ストレージの状態を取得</value>
+    </data>
+    <data name="DataStorage_State_Saving" xml:space="preserve">
+    <value>ストレージ状態を書き込み中</value>
+    </data>
+    <data name="DataStorage_Title" xml:space="preserve">
+    <value>ストレージ</value>
+    </data>
+    <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
+    <value>ストレージが指定されていません。</value>
+    </data>
+    <data name="Days_Field_Choose" xml:space="preserve">
+    <value>週の日を選択してください:</value>
+    </data>
+    <data name="Days_Friday" xml:space="preserve">
+    <value>金曜日</value>
+    </data>
+    <data name="Days_Monday" xml:space="preserve">
+    <value>月曜日</value>
+    </data>
+    <data name="Days_Saturday" xml:space="preserve">
+    <value>土曜日</value>
+    </data>
+    <data name="Days_Sunday" xml:space="preserve">
+    <value>日曜日</value>
+    </data>
+    <data name="Days_Thursday" xml:space="preserve">
+    <value>木曜日</value>
+    </data>
+    <data name="Days_Tuesday" xml:space="preserve">
+    <value>火曜日</value>
+    </data>
+    <data name="Days_Wednesday" xml:space="preserve">
+    <value>水曜日</value>
+    </data>
+    <data name="DirectoryStorage" xml:space="preserve">
+    <value>ディレクトリ</value>
+    </data>
+    <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
+    <value>フォルダー:</value>
+    </data>
+    <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
+    <value>ディレクトリが指定されていません。</value>
+    </data>
+    <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
+    <value>ディレクトリ「{0}」は存在しません。</value>
+    </data>
+    <data name="Field_Device" xml:space="preserve">
+    <value>デバイス:</value>
+    </data>
+    <data name="Field_Device_Validation_Empty" xml:space="preserve">
+    <value>デバイスが指定されていません。</value>
+    </data>
+    <data name="Field_Device_Validation_NotFound" xml:space="preserve">
+    <value>デバイスが見つかりません。</value>
+    </data>
+    <data name="Field_Folder" xml:space="preserve">
+    <value>フォルダー:</value>
+    </data>
+    <data name="Field_Folder_Browse" xml:space="preserve">
+    <value>参照</value>
+    </data>
+    <data name="Field_Folder_Validation_Empty" xml:space="preserve">
+    <value>フォルダーが指定されていません。</value>
+    </data>
+    <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
+    <value>フォルダーが存在しません。</value>
+    </data>
+    <data name="Field_TransportProtocol" xml:space="preserve">
+    <value>プロトコル:</value>
+    </data>
+    <data name="Field_Version" xml:space="preserve">
+    <value>バージョン:</value>
+    </data>
+    <data name="File_Deleting" xml:space="preserve">
+    <value>「{0}」を削除中</value>
+    </data>
+    <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
+    <value>整合性確認スクリプト.ps1</value>
+    </data>
+    <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
+    <value>整合性確認スクリプトを保存中</value>
+    </data>
+    <data name="File_List_Saving" xml:space="preserve">
+    <value>ファイルを保存中</value>
+    </data>
+    <data name="File_Moving" xml:space="preserve">
+    <value>「{0}」を「{1}」に移動中</value>
+    </data>
+    <data name="File_Saving" xml:space="preserve">
+    <value>「{0}」を保存中</value>
+    </data>
+    <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
+    <value>エクスプリシット</value>
+    </data>
+    <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
+    <value>インプリシット</value>
+    </data>
+    <data name="Ftps_Field_Encryption" xml:space="preserve">
+    <value>SSL/TTS暗号化:</value>
+    </data>
+    <data name="Icons_Help_Link" xml:space="preserve">
+    <value>テキストにキャラクターアイコンを追加</value>
+    </data>
+    <data name="ImportMediaTask_AllFiles" xml:space="preserve">
+    <value>すべてのファイルをインポート</value>
+    </data>
+    <data name="ImportMediaTask_Create" xml:space="preserve">
+    <value>メディアインポートタスクを作成</value>
+    </data>
+    <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
+    <value>「{0}」メディアインポートタスクを編集</value>
+    </data>
+    <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
+    <value>出力フォルダー:</value>
+    </data>
+    <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
+    <value>ファイル名変換:</value>
+    </data>
+    <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
+    <value>例:
+ファイル {0}（{1} に変更された）を想像してください。
+このディレクトリとテンプレートを使用すると、ファイルは以下のように保存されます:
+{2}</value>
+    </data>
+    <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
+    <value>サポートされているトークン:
+{DATE:Format} - 指定された形式でファイルの変更日を挿入します。
+すべてのオプションを見るには「C# DateTime format」をググってください。</value>
+    </data>
+    <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
+    <value>ファイル名変換が空です。</value>
+    </data>
+    <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
+    <value>無効なファイル名変換文字列です。</value>
+    </data>
+    <data name="ImportMediaTask_File" xml:space="preserve">
+    <value>「{0}」をインポート</value>
+    </data>
+    <data name="ImportMediaTask_Help" xml:space="preserve">
+    <value>カメラやレコーダーのSDカードから音声、写真、動画をインポートします; お使いのスマートフォンからFTPサーバアプリを使用して写真や動画をWi-Fi経由でインポートします。
+ファイル傳送の設定方法については、アプリケーションのウェブサイトのドキュメントをご覧ください。</value>
+    </data>
+    <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
+    <value>インポートデータソース</value>
+    </data>
+    <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
+    <value>既にインポートされたファイルをスキップ</value>
+    </data>
+    <data name="ImproveIt_Message" xml:space="preserve">
+    <value>予期しないエラーが発生しました。
+デスクトップに保存されている情報を開発者に連絡してください。
+「{0}」
+アプリケーションは閉じます。</value>
+    </data>
+    <data name="IncrementalBackup_Help" xml:space="preserve">
+    <value>最も基本的な増分バックアップの形は、前回のバックアップ以来変更されたファイルのみを特定し、記録することです。
+変更されているファイルが通常少ないため、増分バックアップはフルバックアップよりもはるかに小さく、迅速です。
+例えば、金曜日にフルバックアップを行った場合、月曜日のバックアップには金曜日以来変更されたファイルのみが含まれます。火曜日のバックアップには月曜日以来変更されたファイルのみが含まれます。</value>
+    </data>
+    <data name="IncrementalBackup_Title" xml:space="preserve">
+    <value>増分バックアップ</value>
+    </data>
+    <data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
+    <value>インクリメントバージョンを計算</value>
+    </data>
+    <data name="IncrementalBackup_Version_Save" xml:space="preserve">
+    <value>インクリメントバージョンを保存中</value>
+    </data>
+    <data name="IncrementalBackupTask_Create" xml:space="preserve">
+    <value>増分バックアップタスク</value>
+    </data>
+    <data name="LeftMenu_Encryption" xml:space="preserve">
+    <value>暗号化</value>
+    </data>
+    <data name="LeftMenu_What" xml:space="preserve">
+    <value>何ですか？</value>
+    </data>
+    <data name="LeftMenu_What_Hint" xml:space="preserve">
+    <value>ここで処理が必要なフォルダやファイルを追加できます。</value>
+    </data>
+    <data name="LeftMenu_What_Validation" xml:space="preserve">
+    <value>処理する項目がありません。</value>
+    </data>
+    <data name="LeftMenu_When" xml:space="preserve">
+    <value>いつですか？</value>
+    </data>
+    <data name="LeftMenu_When_Help" xml:space="preserve">
+    <value>ここでスケジューラーを設定できます。スケジューラはタスクの起動を自動化するのに役立ちます。</value>
+    </data>
+    <data name="LeftMenu_Where" xml:space="preserve">
+    <value>どこですか？</value>
+    </data>
+    <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
+    <value>エクスプローラーからファイルやフォルダをドラッグアンドドロップします。</value>
+    </data>
+    <data name="LeftMenu_Where_Hint" xml:space="preserve">
+    <value>ここでファイルをコピーしたい場所を追加できます。</value>
+    </data>
+    <data name="Local_State_Get" xml:space="preserve">
+    <value>ローカル状態を取得</value>
+    </data>
+    <data name="Local_State_Saving" xml:space="preserve">
+    <value>ローカル状態を書き込み中</value>
+    </data>
+    <data name="LogFile_Marker_Errors" xml:space="preserve">
+    <value>エラー</value>
+    </data>
+    <data name="LogFile_Marker_Successful" xml:space="preserve">
+    <value>成功</value>
+    </data>
+    <data name="LogFile_OpenLogs" xml:space="preserve">
+    <value>ログ</value>
+    </data>
+    <data name="Messages_Header_Error" xml:space="preserve">
+    <value>エラー</value>
+    </data>
+    <data name="Messages_Header_Information" xml:space="preserve">
+    <value>情報</value>
+    </data>
+    <data name="Messages_Header_Question" xml:space="preserve">
+    <value>質問</value>
+    </data>
+    <data name="Name_Field" xml:space="preserve">
+    <value>名前:</value>
+    </data>
+    <data name="Name_Field_Validation" xml:space="preserve">
+    <value>名前が空またはサポートされていないパス文字を含んでいます。</value>
+    </data>
+    <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>名前「{0}」の長さが制限を{1}文字超えています。</value>
+    </data>
+    <data name="Name_Title" xml:space="preserve">
+    <value>名前</value>
+    </data>
+    <data name="Password_Field" xml:space="preserve">
+    <value>パスワード:</value>
+    </data>
+    <data name="Password_Field_Confirm" xml:space="preserve">
+    <value>パスワードの確認:</value>
+    </data>
+    <data name="Password_Field_Length" xml:space="preserve">
+    <value>長さ:</value>
+    </data>
+    <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
+    <value>パスワードが一致しません。</value>
+    </data>
+    <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
+    <value>パスワードが指定されていません。</value>
+    </data>
+    <data name="Password_Generate" xml:space="preserve">
+    <value>パスワードを生成...</value>
+    </data>
+    <data name="Password_Generator_Header" xml:space="preserve">
+    <value>パスワード生成器</value>
+    </data>
+    <data name="Password_Help" xml:space="preserve">
+    <value>推奨される最小パスワード長は50文字以上です。</value>
+    </data>
+    <data name="Password_Use" xml:space="preserve">
+    <value>使用</value>
+    </data>
+    <data name="RepositorySubfolder_Field" xml:space="preserve">
+    <value>リポジトリサブフォルダー（任意）:</value>
+    </data>
+    <data name="RepositorySubfolder_Help" xml:space="preserve">
+    <value>リポジトリの特定のサブフォルダーにフォルダーを同期できます。リポジトリのすべての内容をデバイスに持ちたくない場合。</value>
+    </data>
+    <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
+    <value>ディレクトリ内にファイル「{0}」が見つかりません。
+このファイルを含むディレクトリを指定してください。</value>
+    </data>
+    <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
+    <value>状態を読み取ることができません。</value>
+    </data>
+    <data name="Server_Field_Address" xml:space="preserve">
+    <value>サーバー名:</value>
+    </data>
+    <data name="Server_Field_Address_Validation" xml:space="preserve">
+    <value>サーバー名が指定されていません。</value>
+    </data>
+    <data name="Server_Field_Port" xml:space="preserve">
+    <value>ポート:</value>
+    </data>
+    <data name="Server_Field_Port_Validation" xml:space="preserve">
+    <value>ポートが無効です。</value>
+    </data>
+    <data name="SourceItem_AddFiles" xml:space="preserve">
+    <value>ファイルを追加...</value>
+    </data>
+    <data name="SourceItem_AddFolders" xml:space="preserve">
+    <value>フォルダーを追加...</value>
+    </data>
+    <data name="SourceItem_OpenInExplorer" xml:space="preserve">
+    <value>エクスプローラーで開く...</value>
+    </data>
+    <data name="SourceItem_State_Get" xml:space="preserve">
+    <value>ソースアイテム「{0}」の状態を取得</value>
+    </data>
+    <data name="SourceItem_Validation_Empty" xml:space="preserve">
+    <value>処理するアイテムがありません。</value>
+    </data>
+    <data name="SourceItem_Validation_NotExists" xml:space="preserve">
+    <value>「{0}」は存在しません。</value>
+    </data>
+    <data name="State_File_Get" xml:space="preserve">
+    <value>ファイル「{0}」の状態を取得</value>
+    </data>
+    <data name="State_LoadFromEverywhere" xml:space="preserve">
+    <value>ソースアイテムとストレージの状態を取得</value>
+    </data>
+    <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
+    <value>ファイル除外パターンを追加</value>
+    </data>
+    <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
+    <value>ファイル除外パターンを編集</value>
+    </data>
+    <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
+    <value>.NETにおけるファイルグロビング：パターン</value>
+    </data>
+    <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
+    <value>ここでファイルグロビング除外パターンを指定できます。
+ファイル名、フォルダ名、またはワイルドカードになることがあります。
+例:
+d:\temp,
+d:\temp\file.txt,
+d:\temp\**\*.txtまたは
+bin.
+詳細な説明は以下のリンクを参照してください。</value>
+    </data>
+    <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
+    <value>除外パターンによりファイルの処理をスキップします。</value>
+    </data>
+    <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
+    <value>ファイル除外パターン:</value>
+    </data>
+    <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
+    <value>ファイル除外パターンが空です。</value>
+    </data>
+    <data name="StorageItem_Remote_Marker" xml:space="preserve">
+    <value>リモート</value>
+    </data>
+    <data name="SynchronizationMode_Field" xml:space="preserve">
+    <value>同期モード:</value>
+    </data>
+    <data name="SynchronizationMode_Field_Read" xml:space="preserve">
+    <value>読み取り</value>
+    </data>
+    <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
+    <value>双方向</value>
+    </data>
+    <data name="SynchronizationTask_Create" xml:space="preserve">
+    <value>同期</value>
+    </data>
+    <data name="SynchronizationTask_Help" xml:space="preserve">
+    <value>中央集約型ストレージを使用したデバイス間のファイルの双方向同期。</value>
+    </data>
+    <data name="Task_Create" xml:space="preserve">
+    <value>新しい</value>
+    </data>
+    <data name="Task_Create_Hint" xml:space="preserve">
+    <value>新しいタスクを作成します。</value>
+    </data>
+    <data name="Task_Delete" xml:space="preserve">
+    <value>削除</value>
+    </data>
+    <data name="Task_Delete_Confirm" xml:space="preserve">
+    <value>本当に「{0}」を削除しますか？</value>
+    </data>
+    <data name="Task_Delete_Hint" xml:space="preserve">
+    <value>選択したタスクを削除します。</value>
+    </data>
+    <data name="Task_Edit" xml:space="preserve">
+    <value>編集</value>
+    </data>
+    <data name="Task_Edit_Hint" xml:space="preserve">
+    <value>選択したタスクを編集します。</value>
+    </data>
+    <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
+    <value>このタイプのタスクはCLIで編集できません。</value>
+    </data>
+    <data name="Task_Field_Choose" xml:space="preserve">
+    <value>タスクを選択してください:</value>
+    </data>
+    <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
+    <value>新しいタスク</value>
+    </data>
+    <data name="Task_LastExecution_State" xml:space="preserve">
+    <value>状態</value>
+    </data>
+    <data name="Task_Launch" xml:space="preserve">
+    <value>起動</value>
+    </data>
+    <data name="Task_Launch_Hint" xml:space="preserve">
+    <value>選択したタスクを起動します。</value>
+    </data>
+    <data name="Task_List" xml:space="preserve">
+    <value>タスク</value>
+    </data>
+    <data name="Task_Restore" xml:space="preserve">
+    <value>復元</value>
+    </data>
+    <data name="Task_Status_FailedSeeLog" xml:space="preserve">
+    <value>失敗しました（開いたログを参照）</value>
+    </data>
+    <data name="Task_Status_InProgress" xml:space="preserve">
+    <value>タスクが進行中...</value>
+    </data>
+    <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
+    <value>部分的に完了しました。ストレージのクォータのため、今回スキップされたファイルがあります。残り {0} ファイル、合計 {1} GB。</value>
+    </data>
+    <data name="Task_Status_Succesfull" xml:space="preserve">
+    <value>成功</value>
+    </data>
+    <data name="Task_Status_Unknown" xml:space="preserve">
+    <value>不明</value>
+    </data>
+    <data name="Task_Validation_NotFound" xml:space="preserve">
+    <value>タスク「{0}」が見つかりませんでした。</value>
+    </data>
+    <data name="Task_Validation_NotSupported" xml:space="preserve">
+    <value>このタスクタイプはサポートされていません。</value>
+    </data>
+    <data name="Theme_Title" xml:space="preserve">
+    <value>テーマ</value>
+    </data>
+    <data name="Theme_Value_Dark" xml:space="preserve">
+    <value>ダーク</value>
+    </data>
+    <data name="Theme_Value_Light" xml:space="preserve">
+    <value>ライト</value>
+    </data>
+    <data name="Time_Field_Elapsed" xml:space="preserve">
+    <value>経過時間:</value>
+    </data>
+    <data name="Time_Field_Hour" xml:space="preserve">
+    <value>時間:</value>
+    </data>
+    <data name="Time_Field_Minute" xml:space="preserve">
+    <value>分:</value>
+    </data>
+    <data name="Url_Field" xml:space="preserve">
+    <value>URL:</value>
+    </data>
+    <data name="Url_Field_Validation" xml:space="preserve">
+    <value>URLが指定されていません。</value>
+    </data>
+    <data name="User_Field" xml:space="preserve">
+    <value>ユーザー:</value>
+    </data>
+    <data name="User_Field_Validation" xml:space="preserve">
+    <value>ユーザーが指定されていません。</value>
+    </data>
+</root>
