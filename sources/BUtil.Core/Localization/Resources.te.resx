@@ -1,0 +1,699 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
+    <value>ఏది చేయకండి</value>
+    </data>
+    <data name="AfterTaskSelection_Field" xml:space="preserve">
+    <value>పనిని పూర్తి చేసిన తర్వాత:</value>
+    </data>
+    <data name="AfterTaskSelection_Help" xml:space="preserve">
+    <value>'ఏది చేయకండి' కంటే ఏమైనా ఎంచుకుంటే, 
+    ప్రోగ్రామ్ తెరపై నేడు మీ లాగిన్‌లో ఏదైనా లోపాలు లేదా హెచ్చరికలు నమోదు అవుతాయో చూడటానికి OS ను కాన్ఫిగర్ చేస్తుంది.</value>
+    </data>
+    <data name="AfterTaskSelection_LogOff" xml:space="preserve">
+    <value>లాగ్ ఆఫ్</value>
+    </data>
+    <data name="AfterTaskSelection_Reboot" xml:space="preserve">
+    <value>రిబూట్</value>
+    </data>
+    <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
+    <value>ఆఫ్ చేయండి</value>
+    </data>
+    <data name="Application_NewVersion_Notification" xml:space="preserve">
+    <value>కొత్త {0} వెర్షన్ అందుబాటులో ఉంది.</value>
+    </data>
+    <data name="BackupVersion_Button_Delete" xml:space="preserve">
+    <value>వెర్షన్‌ను తొలగించండి</value>
+    </data>
+    <data name="BackupVersion_Changes_Title" xml:space="preserve">
+    <value>లొరికిన వెర్షన్లు</value>
+    </data>
+    <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
+    <value>మీరు నిజంగా వెర్షన్ "{0}" ని తొలగించాలనుకుంటున్నారా?
+    
+    తొలగించిన వెర్షన్ మార్పులు వెర్షన్ "{1}" లో భాగం అవుతాయి.</value>
+    </data>
+    <data name="BackupVersion_Files_Title" xml:space="preserve">
+    <value>ఫైల్స్</value>
+    </data>
+    <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
+    <value>జర్నల్: {0}</value>
+    </data>
+    <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
+    <value>ఎంచుకున్నకు జర్నల్...</value>
+    </data>
+    <data name="BackupVersion_Select" xml:space="preserve">
+    <value>ఎంచుకున్న వెర్షన్‌ను తెరవండి...</value>
+    </data>
+    <data name="BackupVersion_Selector_Title" xml:space="preserve">
+    <value>వెర్షన్‌ను ఎంచుకోండి</value>
+    </data>
+    <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
+    <value>(అన్ని వెర్షన్లు నిల్వలో {0} స్థానం బలంగా occupye)</value>
+    </data>
+    <data name="BackupVersion_Versions_Title" xml:space="preserve">
+    <value>వెర్షన్లు</value>
+    </data>
+    <data name="BackupVersion_Viewer_Help" xml:space="preserve">
+    <value>మీరు పునరుద్ధరించాలనుకుంటున్న ఫైలు లేదా ఫోల్డర్‌ని చెట్టులో ఎంచుకోండి మరియు "పునరుద్ధరించండి" పై క్లిక్ చేయండి.</value>
+    </data>
+    <data name="Button_Cancel" xml:space="preserve">
+    <value>రద్దు చేయండి</value>
+    </data>
+    <data name="Button_Close" xml:space="preserve">
+    <value>మూసివేయండి</value>
+    </data>
+    <data name="Button_Continue" xml:space="preserve">
+    <value>కొనసాగించండి &gt;</value>
+    </data>
+    <data name="Button_CopyToClipboard" xml:space="preserve">
+    <value>నకలు చేయండి</value>
+    </data>
+    <data name="Button_Download" xml:space="preserve">
+    <value>డౌన్‌లోడ్</value>
+    </data>
+    <data name="Button_OK" xml:space="preserve">
+    <value>సరే</value>
+    </data>
+    <data name="Button_Remove" xml:space="preserve">
+    <value>తొలగించు</value>
+    </data>
+    <data name="Button_Save" xml:space="preserve">
+    <value>సేవ్</value>
+    </data>
+    <data name="CommandLineArguments_Help" xml:space="preserve">
+    <value>కమాండ్‌లైన్ ఆర్గ్యుమెంట్స్ చూడడానికి {0}కి వెళ్తారు.</value>
+    </data>
+    <data name="CommandLineArguments_Invalid" xml:space="preserve">
+    <value>చెల్లని కమాండ్‌లైన్ ఆర్గ్యుమెంట్స్.</value>
+    </data>
+    <data name="DataStorage_Data_Saving" xml:space="preserve">
+    <value>చౌకగా నిల్వకు విబంధం పటం రాస్తోంది</value>
+    </data>
+    <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
+    <value>సంప్రదింపు స్క్రిప్ట్:</value>
+    </data>
+    <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
+    <value>డిస్కనెక్షన్ స్క్రిప్ట్:</value>
+    </data>
+    <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
+    <value>తోడ పాయింట్లు వేగం, మిమ్మల్ని ఓదార్చేస్తుంది</value>
+    </data>
+    <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
+    <value>సఫలవంతమైన ముగింపు</value>
+    </data>
+    <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
+    <value>అప్‌లోడ్ పరిమాణం, GB:</value>
+    </data>
+    <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
+    <value>ఒక టాస్ నిర్వహణ సమయంలో నిల్వకు పంపబడే డేటా పరిమాణాన్ని పరిమితం చేస్తుంది. 0 - పరిమితి లేదు.
+    జనరేషన్ శ్రేణి ప్రవేశించినప్పుడు, ఇతర ఫైళ్లు విస్మరించబడతాయి మరియు యథావిధిగా తద్వారా ప్రాసెస్ చేయబడతాయి.
+    వాడుక వేదిక: మీ ఫైల్‌ని ఎక్కడికి పంపించుకోవాలో పునరావృతించాలనుకుంటే. ఇంత మందులు తగ్గినప్పుడు ఐఎస్‌పి అప్‌లోడ్ వేగాన్ని కాపాల్ని వేయగలదు. ఈ సెటింగ్‌ను చేరుకోవడానికి వీలను మిమ్మల్ని నమోదు చేయగలరు.</value>
+    </data>
+    <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
+    <value>quota 0 (అవిష్కరణ చేయబడు) లాంటిది ఉత్తీర్ణం లేదా 0 పై విలువల నుండి ఉండాలి.</value>
+    </data>
+    <data name="DataStorage_Maintenance" xml:space="preserve">
+    <value>డేటా నిల్వ నిర్వహణ</value>
+    </data>
+    <data name="DataStorage_Script_Help" xml:space="preserve">
+    <value>ప్రాంప్ట్ చేసిన క్రమానికి కొన్ని ఆదేశాలు పూర్తి చేసిన తర్వాత ఫోల్డర్ ప్రచారంలో అయితే, పొందుకు ఒక్కొక్క స్క్రిప్ట్లు {0}తో ప్రచార మరియు డిస్కనెక్షన్ కోసం స్పెసిఫై చేయండి.</value>
+    </data>
+    <data name="DataStorage_State_Get" xml:space="preserve">
+    <value>నిల్వ రాష్ట్రాన్ని పొందు</value>
+    </data>
+    <data name="DataStorage_State_Saving" xml:space="preserve">
+    <value>నిల్వ రాష్ట్రం రాస్తోంది</value>
+    </data>
+    <data name="DataStorage_Title" xml:space="preserve">
+    <value>నిల్వ</value>
+    </data>
+    <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
+    <value>నిల్వను సూచించబడలేదు.</value>
+    </data>
+    <data name="Days_Field_Choose" xml:space="preserve">
+    <value>వారం రోజుల నుండి ఎంచుకోండి:</value>
+    </data>
+    <data name="Days_Friday" xml:space="preserve">
+    <value>శుక్రవారం</value>
+    </data>
+    <data name="Days_Monday" xml:space="preserve">
+    <value>సోమవారం</value>
+    </data>
+    <data name="Days_Saturday" xml:space="preserve">
+    <value>శనివారం</value>
+    </data>
+    <data name="Days_Sunday" xml:space="preserve">
+    <value>ఆదివారం</value>
+    </data>
+    <data name="Days_Thursday" xml:space="preserve">
+    <value>గురువారం</value>
+    </data>
+    <data name="Days_Tuesday" xml:space="preserve">
+    <value>మంగళవారం</value>
+    </data>
+    <data name="Days_Wednesday" xml:space="preserve">
+    <value>బుధవారం</value>
+    </data>
+    <data name="DirectoryStorage" xml:space="preserve">
+    <value>డైరెక్టరీ</value>
+    </data>
+    <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
+    <value>ఫోల్డర్:</value>
+    </data>
+    <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
+    <value>డైరెక్టరీని సూచించబడలేదు.</value>
+    </data>
+    <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
+    <value>డైరెక్టరీ "{0}" లేదు.</value>
+    </data>
+    <data name="Field_Device" xml:space="preserve">
+    <value>సాధనం:</value>
+    </data>
+    <data name="Field_Device_Validation_Empty" xml:space="preserve">
+    <value>సాధనం సూచించబడలేదు.</value>
+    </data>
+    <data name="Field_Device_Validation_NotFound" xml:space="preserve">
+    <value>సాధనం కనిపిస్తున్నది లేదు.</value>
+    </data>
+    <data name="Field_Folder" xml:space="preserve">
+    <value>ఫోల్డర్:</value>
+    </data>
+    <data name="Field_Folder_Browse" xml:space="preserve">
+    <value>కోసం</value>
+    </data>
+    <data name="Field_Folder_Validation_Empty" xml:space="preserve">
+    <value>ఫోల్డర్‌ను సూచించబడలేదు.</value>
+    </data>
+    <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
+    <value>ఫోల్డర్ లేదు.</value>
+    </data>
+    <data name="Field_TransportProtocol" xml:space="preserve">
+    <value>ప్రోటోకాల్:</value>
+    </data>
+    <data name="Field_Version" xml:space="preserve">
+    <value>వెర్షన్:</value>
+    </data>
+    <data name="File_Deleting" xml:space="preserve">
+    <value>తొలగిస్తున్న "{0}"</value>
+    </data>
+    <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
+    <value>అఖండతను పరిశీలన చేసే స్క్రిప్ట్.ps1</value>
+    </data>
+    <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
+    <value>అఖండతను పరిశీలించే స్క్రిప్ట్‌లను సేవ్ చేయడం</value>
+    </data>
+    <data name="File_List_Saving" xml:space="preserve">
+    <value>ఫైల్స్ సేవ్ చేయడం</value>
+    </data>
+    <data name="File_Moving" xml:space="preserve">
+    <value>"{0}" ను "{1}" కు కదుపుతుంది</value>
+    </data>
+    <data name="File_Saving" xml:space="preserve">
+    <value>సేవ్ చేస్తున్న "{0}"</value>
+    </data>
+    <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
+    <value>ప్రత్యక్షంగా</value>
+    </data>
+    <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
+    <value>ఆంతరికి</value>
+    </data>
+    <data name="Ftps_Field_Encryption" xml:space="preserve">
+    <value>SSL/TTS సంకేతీకరణ:</value>
+    </data>
+    <data name="Icons_Help_Link" xml:space="preserve">
+    <value>మీ కంటెంట్‌కి అక్షర చిహ్నాన్ని జోడించండి</value>
+    </data>
+    <data name="ImportMediaTask_AllFiles" xml:space="preserve">
+    <value>మొత్తం ఫైల్స్‌ను దిగుమతి చేసుకోండి</value>
+    </data>
+    <data name="ImportMediaTask_Create" xml:space="preserve">
+    <value>మాధ్యమ దిగుమతి పనిచేస్తుంది</value>
+    </data>
+    <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
+    <value>"{0}" మాధ్యమ దిగుమతి పనిని ఎడిట్ చేయండి</value>
+    </data>
+    <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
+    <value>ఔట్‌పుట్ ఫోల్డర్:</value>
+    </data>
+    <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
+    <value>ఫైల్ పేరు మార్పులు:</value>
+    </data>
+    <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
+    <value>ఉదాహరణ:
+    మీరు {0} (సవరించబడింది {1}) ఫైల్‌ను కలిగి ఉంటే ఊహించుకోండి.
+    ఈ డైరెక్టరీ మరియు టెంప్లేట్ స్ట్రింగ్‌తో, ఫైల్ గా స్టోర్ చేయబడుతుంది:
+    {2}</value>
+    </data>
+    <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
+    <value>మద్దతు పొందిన టోకెన్లు:
+    {DATE:Format} - ఈ ఫైల్ సవరిణ తేదీని సూచించిన ఫార్మాట్‌లో చేర్చండి.
+    అన్ని ఆప్షన్స్‌ను చూడటానికి "C# DateTime format" ను గూగుల్ చేయండి.</value>
+    </data>
+    <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
+    <value>మార్పు ఫైల్ పేరు ఖాళీగా ఉంది.</value>
+    </data>
+    <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
+    <value>చెల్లని మార్పు ఫైల్ పేరు స్ట్రింగ్.</value>
+    </data>
+    <data name="ImportMediaTask_File" xml:space="preserve">
+    <value>దిగుమతి "{0}"</value>
+    </data>
+    <data name="ImportMediaTask_Help" xml:space="preserve">
+    <value>SD కార్డ్ నుండి కధల వాయిస్, ఫోటోలు, వీడియోలు దిగుమతి తీసుకొనండి; మీ ఫోన్ ద్వారా WI-FI తో ఛాయాచిత్ర అప్ డేట్లను ఫోటోలు మరియు వీడియోలను APPS FTP సర్వర్‌లో ఉండటం ద్వారా సంక్లిష్టం చేస్తుంది.
+    
+    ఫోన్ పైకి Wi-Fi ద్వారా FTP సర్వర్ అప్లికేషన్ ద్వారా డాక్యుమెంట్ యొక్క ఫైల్ ద్రవ్యం సెటప్ ఎలా జరగాలో ఆప్ వెబ్-సైట్‌ను చూడండి.</value>
+    </data>
+    <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
+    <value>డేటా త్రేణిని దిగుమతి చేయండి</value>
+    </data>
+    <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
+    <value>ఇప్పటికే దిగుమతి చేసుకున్న ఫైల్స్‌ను సంక్రమించండి</value>
+    </data>
+    <data name="ImproveIt_Message" xml:space="preserve">
+    <value>ఒక అప్రత్యాశిత లోపం జరగడం జరిగింది.
+    
+    దయచేసి మీ డెస్క్‌టాప్‌లో రక్షించబడిన సమాచారంతో డెవలపర్లతో సంప్రదించండి
+    "{0}"
+    
+    అప్లికేషన్ ఇప్పుడు మూసివేయబడుతుంది.</value>
+    </data>
+    <data name="IncrementalBackup_Help" xml:space="preserve">
+    <value>ఓ అన్‌ డేట్ క్రింద, ఈ కొత్త రూపం పునరావృత విలువలు రిస్క్ చేయడమేలేదు కనుక, తక్కువగా ఉండడంతో చిత్రాల రక్షణకు నిరసించడం లేదా నిలవడం లేదు. 
+    
+    ఆ మార్పులు సాధారణంగా తక్కువగా ఉండటం వలన, పరిమితి నంతలో increments కి చాలా చిన్న మరియు తక్షణంగా ఉంటుంది. 
+    
+    ఉదాహరణకు, శుక్రవారం పూర్తి బ్యాకప్ చేసినను, సోమవారం బ్యాకప్ కేవలం శుక్రవారం నుండి మార్పులు చేసిన ఫైల్స్ మాత్రమే ఉండాలి. మంగళవారం బ్యాకప్ కేవలం సోమవారం కు మార్పులు చేసిన ఫైల్స్ వాటిని మాత్రమే మహమ్మారి తదితర వివరాలు.</value>
+    </data>
+    <data name="IncrementalBackup_Title" xml:space="preserve">
+    <value>ఇంక్రిమెంటల్ బ్యాకప్</value>
+    </data>
+    <data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
+    <value>ఇంక్రిమెంటెడ్ వెర్షన్‌ను లెక్కించండి</value>
+    </data>
+    <data name="IncrementalBackup_Version_Save" xml:space="preserve">
+    <value>ఇంక్రిమెంటెడ్ వెర్షన్ సేవ్ చేయడం</value>
+    </data>
+    <data name="IncrementalBackupTask_Create" xml:space="preserve">
+    <value>ఇంక్రిమెంటల్ బ్యాకప్ పనేలు</value>
+    </data>
+    <data name="LeftMenu_Encryption" xml:space="preserve">
+    <value>సంకేతీకరణ</value>
+    </data>
+    <data name="LeftMenu_What" xml:space="preserve">
+    <value>ఏం?</value>
+    </data>
+    <data name="LeftMenu_What_Hint" xml:space="preserve">
+    <value>మీరు ప్రాసెస్ చేయాలి అనుకుంటున్న ఫోల్డర్లను మరియు ఫైల్స్‌ని ఇక్కడ జోడించవచ్చు.</value>
+    </data>
+    <data name="LeftMenu_What_Validation" xml:space="preserve">
+    <value>ప్రాసెస్ చేయడానికి ఐటమ్స్ లేవు.</value>
+    </data>
+    <data name="LeftMenu_When" xml:space="preserve">
+    <value>ఎప్పుడు?</value>
+    </data>
+    <data name="LeftMenu_When_Help" xml:space="preserve">
+    <value>ఇక్కడ మీరు షెడ్యూలర్ డిజైన్ చేయవచ్చు. షెడ్యూలర్ మీ పని ప్రారంభించుటలో సహాయపడుతుంది.</value>
+    </data>
+    <data name="LeftMenu_Where" xml:space="preserve">
+    <value>ఎక్కడ?</value>
+    </data>
+    <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
+    <value>ఎక్స్‌ప్లోరర్ నుండి ఇక్కడ ఫైల్స్ మరియు ఫోల్డర్లను డ్రాగ్ చేయండి.</value>
+    </data>
+    <data name="LeftMenu_Where_Hint" xml:space="preserve">
+    <value>ఈ ప్రదేశంలో మీరు మీ ఫైల్‌ని కాపీ చేయాలనుకుంటున్న స్థలాలను జోడించవచ్చు.</value>
+    </data>
+    <data name="Local_State_Get" xml:space="preserve">
+    <value>స్థానిక స్థితిని పొందండి</value>
+    </data>
+    <data name="Local_State_Saving" xml:space="preserve">
+    <value>స్థానిక స్థితిని రాస్తోంది</value>
+    </data>
+    <data name="LogFile_Marker_Errors" xml:space="preserve">
+    <value>లోపాలు</value>
+    </data>
+    <data name="LogFile_Marker_Successful" xml:space="preserve">
+    <value>విజయవంతంగా</value>
+    </data>
+    <data name="LogFile_OpenLogs" xml:space="preserve">
+    <value>లాగ్స్</value>
+    </data>
+    <data name="Messages_Header_Error" xml:space="preserve">
+    <value>లోపం</value>
+    </data>
+    <data name="Messages_Header_Information" xml:space="preserve">
+    <value>సాల్తన</value>
+    </data>
+    <data name="Messages_Header_Question" xml:space="preserve">
+    <value>ప్రశ్న</value>
+    </data>
+    <data name="Name_Field" xml:space="preserve">
+    <value>పేరు:</value>
+    </data>
+    <data name="Name_Field_Validation" xml:space="preserve">
+    <value>పేరు ఖాళీగా ఉంది లేదా మద్దతు పొందని మార్గం అక్షరాలు కలిగి ఉంది.</value>
+    </data>
+    <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>పేరు '{0}' పరిమితిని {1} అక్షరాలు అధిగమించింది.</value>
+    </data>
+    <data name="Name_Title" xml:space="preserve">
+    <value>పేరు</value>
+    </data>
+    <data name="Password_Field" xml:space="preserve">
+    <value>పాస్వర్డ్:</value>
+    </data>
+    <data name="Password_Field_Confirm" xml:space="preserve">
+    <value>పాస్వర్డ్ నిర్ధారించు:</value>
+    </data>
+    <data name="Password_Field_Length" xml:space="preserve">
+    <value>నిడివి:</value>
+    </data>
+    <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
+    <value>పాస్వర్డ్‌లు సరిపోల artifactే.</value>
+    </data>
+    <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
+    <value>పాస్వర్డ్‌ను సూచించలేదు.</value>
+    </data>
+    <data name="Password_Generate" xml:space="preserve">
+    <value>పాస్వర్డ్ రూపొందించు...</value>
+    </data>
+    <data name="Password_Generator_Header" xml:space="preserve">
+    <value>పాస్వర్డ్ జనరేటర్లు</value>
+    </data>
+    <data name="Password_Help" xml:space="preserve">
+    <value>సిఫార్సు చేసిన కనిష్ట పాస్వర్డ్ నిడివి 50 అక్షరాలు మరియు ఎక్కువ.</value>
+    </data>
+    <data name="Password_Use" xml:space="preserve">
+    <value>ఉపయోగించు</value>
+    </data>
+    <data name="RepositorySubfolder_Field" xml:space="preserve">
+    <value>రిపోజిటరీ ఉపఫోల్డర్ (ఐచ్చిక):</value>
+    </data>
+    <data name="RepositorySubfolder_Help" xml:space="preserve">
+    <value>రిపోజిటరీలోని ప్రత్యేక ఉపఫోల్డర్‌కు మీరు ఫోల్డర్‌ను సింగ్రోజ్జ్ చేసుకోవచ్చు, మీరు ఆ పూర్వపు చిహ్నం వినియోగిస్తున్నట్లయితే.</value>
+    </data>
+    <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
+    <value>డైరెక్టరీలో "{0}" ఫైల్స్ కనుగొనలేరు.
+    
+    ఈ ఫైల్‌ను కలిగి ఉన్న డైరెక్టరీకి సందర్భం చూపండి.</value>
+    </data>
+    <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
+    <value>స్థితిని చదవలేరు.</value>
+    </data>
+    <data name="Server_Field_Address" xml:space="preserve">
+    <value>సర్వర్ పేరు:</value>
+    </data>
+    <data name="Server_Field_Address_Validation" xml:space="preserve">
+    <value>సర్వర్ పేరు సూచించబడలేదు.</value>
+    </data>
+    <data name="Server_Field_Port" xml:space="preserve">
+    <value>పోర్ట్:</value>
+    </data>
+    <data name="Server_Field_Port_Validation" xml:space="preserve">
+    <value>పోర్ట్ చెల్లించబడలేదు.</value>
+    </data>
+    <data name="SourceItem_AddFiles" xml:space="preserve">
+    <value>ఫైల్స్‌ను జోడించండి...</value>
+    </data>
+    <data name="SourceItem_AddFolders" xml:space="preserve">
+    <value>ఫోటోలు జోడించండి...</value>
+    </data>
+    <data name="SourceItem_OpenInExplorer" xml:space="preserve">
+    <value>ఎక్స్‌ప్లోరర్‌లో తెరవండి...</value>
+    </data>
+    <data name="SourceItem_State_Get" xml:space="preserve">
+    <value>స్రోత అంశం యొక్క స్థితిని పొందండి "{0}"</value>
+    </data>
+    <data name="SourceItem_Validation_Empty" xml:space="preserve">
+    <value>ప్రాసెస్ చేయడానికి ఐటమ్స్ లేవు.</value>
+    </data>
+    <data name="SourceItem_Validation_NotExists" xml:space="preserve">
+    <value>"{0}" లేదు.</value>
+    </data>
+    <data name="State_File_Get" xml:space="preserve">
+    <value>ఫైల్ యొక్క స్థితిని పొందండి "{0}"</value>
+    </data>
+    <data name="State_LoadFromEverywhere" xml:space="preserve">
+    <value>స్రోత అంశాలు మరియు నిల్వలకు స్థితిని పొందండి</value>
+    </data>
+    <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
+    <value>ఫైల్స్‌ను వదిలి పెట్టండి</value>
+    </data>
+    <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
+    <value>ఫైల్స్‌ను వదిలి పెట్టండి</value>
+    </data>
+    <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
+    <value>.NETలో ఫైల్ గ్లోబింగ్: నమూనాలు</value>
+    </data>
+    <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
+    <value>ఇక్కడ మీరు ఫైల్ గ్లోబింగ్ వెతక్కు ప్రామాణికాలను స్పష్టంగా పేర్కొనవచ్చు.
+    ఇది ఫైల్ పేరు లేదా ఫోల్డర్ పేరు లేదా క్వేదీయాంశ సంబంధం అవుతుంది.
+    ఉదాహరణలు:
+    d:\temp,
+    d:\temp\file.txt,
+    d:\temp\**\*.txt లేదా
+    bin.
+    ఇంకా వ్యక్తిగత వివరణ కోసం కింది లింక్ చూడండి.</value>
+    </data>
+    <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
+    <value>ఫైల్స్‌ పొందుపరచటంలో విస్మరించు వెతక్కు ప్రామాణికత.</value>
+    </data>
+    <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
+    <value>ఫైల్ వదిలి పెట్టు నియమావళి:</value>
+    </data>
+    <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
+    <value>ఫైల్ వదిలి పెట్టు నియమావళి ఖాళీగా ఉంది.</value>
+    </data>
+    <data name="StorageItem_Remote_Marker" xml:space="preserve">
+    <value>దూరం</value>
+    </data>
+    <data name="SynchronizationMode_Field" xml:space="preserve">
+    <value>సంక్రియాకరణ మోడ్:</value>
+    </data>
+    <data name="SynchronizationMode_Field_Read" xml:space="preserve">
+    <value>చదవు</value>
+    </data>
+    <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
+    <value>రెండువాళ్ళు</value>
+    </data>
+    <data name="SynchronizationTask_Create" xml:space="preserve">
+    <value>సంక్రియాకరణ</value>
+    </data>
+    <data name="SynchronizationTask_Help" xml:space="preserve">
+    <value>కేంద్రిత నిల్వ(using) మధ్య ఫైల్స్ రెండువైపు పొందుపరచడం.</value>
+    </data>
+    <data name="Task_Create" xml:space="preserve">
+    <value>కొత్త</value>
+    </data>
+    <data name="Task_Create_Hint" xml:space="preserve">
+    <value>కొత్త పనిని సృష్టించండి.</value>
+    </data>
+    <data name="Task_Delete" xml:space="preserve">
+    <value>తొలగించు</value>
+    </data>
+    <data name="Task_Delete_Confirm" xml:space="preserve">
+    <value>మీరు నిజంగా "{0}" తొలగించాలనుకుంటున్నారా?</value>
+    </data>
+    <data name="Task_Delete_Hint" xml:space="preserve">
+    <value>ఎంచుకున్న పనిని తొలగిస్తుంది.</value>
+    </data>
+    <data name="Task_Edit" xml:space="preserve">
+    <value>సవరణ</value>
+    </data>
+    <data name="Task_Edit_Hint" xml:space="preserve">
+    <value>ఎంచుకున్న పనిని సవరించండి.</value>
+    </data>
+    <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
+    <value>రక్కగా CLI లో ఈ రకమైన పనిని సవరించడం మీకు సాధ్యం కాదు.</value>
+    </data>
+    <data name="Task_Field_Choose" xml:space="preserve">
+    <value>పనిని ఎంచుకోండి:</value>
+    </data>
+    <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
+    <value>కొత్త పని</value>
+    </data>
+    <data name="Task_LastExecution_State" xml:space="preserve">
+    <value>స్థితి</value>
+    </data>
+    <data name="Task_Launch" xml:space="preserve">
+    <value>ప్రారంభించు</value>
+    </data>
+    <data name="Task_Launch_Hint" xml:space="preserve">
+    <value>ఎంచుకున్న పనిని ప్రారంభిస్తుంది.</value>
+    </data>
+    <data name="Task_List" xml:space="preserve">
+    <value>పనులు</value>
+    </data>
+    <data name="Task_Restore" xml:space="preserve">
+    <value>పునరుద్ధరించు</value>
+    </data>
+    <data name="Task_Status_FailedSeeLog" xml:space="preserve">
+    <value>ఊసరవేళ (ఉంచిన లాగును చూడండి)</value>
+    </data>
+    <data name="Task_Status_InProgress" xml:space="preserve">
+    <value>క్రియలో ఉంది...</value>
+    </data>
+    <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
+    <value>భాగస్వామ్యంగా పూర్తయింది. నిల్వ కోటా కారణంగా కొన్ని ఫైల్స్ ఈ సారి విస్మరించబడ్డాయి. మిగిలిన {0} ఫైల్స్ {1} GB.</value>
+    </data>
+    <data name="Task_Status_Succesfull" xml:space="preserve">
+    <value>విజయవంతం</value>
+    </data>
+    <data name="Task_Status_Unknown" xml:space="preserve">
+    <value>తెలియని</value>
+    </data>
+    <data name="Task_Validation_NotFound" xml:space="preserve">
+    <value>పని '{0}' కనుగొనబడలేదు.</value>
+    </data>
+    <data name="Task_Validation_NotSupported" xml:space="preserve">
+    <value>ఈ విధమైన పనిని మద్దతు ఇవ్వడం లేదు.</value>
+    </data>
+    <data name="Theme_Title" xml:space="preserve">
+    <value>థీమ్</value>
+    </data>
+    <data name="Theme_Value_Dark" xml:space="preserve">
+    <value>అంధకారం</value>
+    </data>
+    <data name="Theme_Value_Light" xml:space="preserve">
+    <value>ప్రకాశం</value>
+    </data>
+    <data name="Time_Field_Elapsed" xml:space="preserve">
+    <value>కాలం:</value>
+    </data>
+    <data name="Time_Field_Hour" xml:space="preserve">
+    <value>ముగింపు:</value>
+    </data>
+    <data name="Time_Field_Minute" xml:space="preserve">
+    <value>నిమిషం:</value>
+    </data>
+    <data name="Url_Field" xml:space="preserve">
+    <value>URL:</value>
+    </data>
+    <data name="Url_Field_Validation" xml:space="preserve">
+    <value>URLని వెల్లడించుకునే లేదు.</value>
+    </data>
+    <data name="User_Field" xml:space="preserve">
+    <value>యూజర్:</value>
+    </data>
+    <data name="User_Field_Validation" xml:space="preserve">
+    <value>యూజర్ ఉదహరించவில்லை.</value>
+    </data>
+</root>
