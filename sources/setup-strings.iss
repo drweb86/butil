@@ -13,7 +13,6 @@ Name: japanese; MessagesFile: "compiler:Languages\Japanese.isl"
 Name: Marathi; MessagesFile: "compiler:Languages\Marathi.islu"
 Name: russian; MessagesFile: "compiler:Languages\Russian.isl"
 Name: portuguese; MessagesFile: "compiler:Languages\Portuguese.isl"
-Name: Telugu; MessagesFile: "compiler:Languages\Telugu.isl"
 Name: ukrainian; MessagesFile: "compiler:Languages\Ukrainian.isl"
 Name: urdu; MessagesFile: "compiler:Languages\Urdu.isl"
 
