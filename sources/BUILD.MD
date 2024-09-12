@@ -35,6 +35,10 @@ C:\Program Files (x86)\Inno Setup 6\Languages\Urdu.isl
 File: https://raw.githubusercontent.com/jrsoftware/issrc/main/Files/Languages/Unofficial/Indonesian.isl
 To be put into
 C:\Program Files (x86)\Inno Setup 6\Languages\Indonesian.isl
+- Marathi
+File: https://raw.githubusercontent.com/jrsoftware/issrc/main/Files/Languages/Unofficial/Marathi.islu
+To be put into
+C:\Program Files (x86)\Inno Setup 6\Languages\Marathi.islu
 - 7-zip x64 (must be installed in default directory).
 - .Net 8 SDK
 

@@ -10,6 +10,7 @@ Name: hindi; MessagesFile: "compiler:Languages\Hindi.islu"
 Name: indonesian; MessagesFile: "compiler:Languages\Indonesian.isl"
 Name: italian; MessagesFile: "compiler:Languages\Italian.isl"
 Name: japanese; MessagesFile: "compiler:Languages\Japanese.isl"
+Name: Marathi; MessagesFile: "compiler:Languages\Marathi.islu"
 Name: russian; MessagesFile: "compiler:Languages\Russian.isl"
 Name: portuguese; MessagesFile: "compiler:Languages\Portuguese.isl"
 Name: ukrainian; MessagesFile: "compiler:Languages\Ukrainian.isl"
@@ -27,6 +28,7 @@ hindi.BeveledLabel=हिंदी
 indonesian.BeveledLabel=Bahasa Indonesia
 italian.BeveledLabel=Italiano
 japanese.BeveledLabel=日本語
+Marathi.BeveledLabel=मराठी
 portuguese.BeveledLabel=Portugues
 russian.BeveledLabel=Русский
 ukrainian.BeveledLabel=Українська

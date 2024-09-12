@@ -2,7 +2,7 @@
 (unreleased)
 
 ## New Features
-- Bengali, Urdu, Indonesian, Japanese, Nigerian Pidgin languages.
+- Bengali, Urdu, Indonesian, Japanese, Nigerian Pidgin, Marathi languages.
 
 ## Changes
 
