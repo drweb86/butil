@@ -13,6 +13,8 @@ public class CommonServicesIoc : IDisposable
     public readonly ICashedHashStoreService CashedHashStoreService;
     public readonly IHashService HashService;
     public readonly ILog Log;
+    internal readonly IEncryptionService EncryptionService = new AES256EncryptionService();
+    internal readonly ICompressionService BrotliCompressionService = new BrotliCompressionService();
 
     public CommonServicesIoc(ILog log, Action<string?> onGetLastMinuteMessage)
     {

@@ -18,3 +18,7 @@ Why Zip format is not used and app relies on external 7-ZIP? It's because while 
 ## 7z is included in the package
 
 Reason for that is broken by MS support for Win-Get for unauthorized in Store users to download any software.
+
+## Why archiver was removed ?
+
+Reason for that, that each file is compressed individually and gain of space was just 7%. Also nowadays stored files are already compressed in most cases. Also 7-zip was not cross-platform.

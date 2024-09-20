@@ -6,7 +6,6 @@ using BUtil.Core.Misc;
 using BUtil.Core.Services;
 using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;
-using BUtil.Core.TasksTree.IncrementalModel;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -37,7 +36,7 @@ public class GetExistingVersionStateFromStorageRootTask : SequentialBuTask
         {
             if (_getStateOfStorageTask.StorageState!.VersionStates.Count == 0)
             {
-                _commonServicesIoc.LastMinuteMessageService.AddLastMinuteLogMessage(string.Format(Resources.RestoreFrom_Field_Validation_NoStateFiles, IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile));
+                _commonServicesIoc.LastMinuteMessageService.AddLastMinuteLogMessage(string.Format(Resources.RestoreFrom_Field_Validation_NoStateFiles, string.Join(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile, IncrementalBackupModelConstants.BrotliAes256V1StateFile)));
                 IsSuccess = false;
             }
         }

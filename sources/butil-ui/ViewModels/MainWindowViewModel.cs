@@ -162,6 +162,11 @@ public partial class MainWindowViewModel : ViewModelBase
         {
             WindowManager.SwitchView(new RestoreViewModel(null, null));
         }
+        else if (args.Length == 1 && args[0].EndsWith(IncrementalBackupModelConstants.BrotliAes256V1StateFile))
+        {
+            var folderStorage = new FolderStorageSettingsV2 { DestinationFolder = System.IO.Path.GetDirectoryName(args[0]) ?? throw new Exception() };
+            WindowManager.SwitchView(new RestoreViewModel(folderStorage, null));
+        }
         else if (args.Length == 1 && args[0].EndsWith(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile))
         {
             var folderStorage = new FolderStorageSettingsV2 { DestinationFolder = System.IO.Path.GetDirectoryName(args[0]) ?? throw new Exception() };

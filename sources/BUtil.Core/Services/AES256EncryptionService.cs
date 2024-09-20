@@ -1,63 +1,104 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
 namespace BUtil.Core.Services;
 
-internal static class AES256EncryptionService
+internal interface IEncryptionService
 {
-    static void EncryptFile(string inputFile, string outputFile, string password, string iv)
+    void EncryptFile(string inputFile, string outputFile, string password);
+    void EncryptStream(Stream inputStream, Stream outputStream, string password);
+    void DecryptFile(string inputFile, string outputFile, string password); //  TODO: must throw error if failed.
+    void DecryptStream(Stream inputStream, Stream outputStream, string password); // TODO: must throw error if failed.
+}
+
+internal class AES256EncryptionService: IEncryptionService
+{
+    public void EncryptFile(string inputFile, string outputFile, string password)
     {
-        using (Aes aes = Aes.Create())
-        {
-            aes.KeySize = 256;
-            aes.BlockSize = 128;
-            aes.Mode = CipherMode.CBC;
-            aes.Padding = PaddingMode.PKCS7;
-
-            byte[] key = DeriveKeyFromPassword(password, aes.KeySize);
-            aes.Key = key;
-            aes.IV = Encoding.UTF8.GetBytes(iv.PadRight(16, '0').Substring(0, 16));
-
-            using (FileStream inputFileStream = new FileStream(inputFile, FileMode.Open))
-            using (FileStream outputFileStream = new FileStream(outputFile, FileMode.Create))
-            using (ICryptoTransform encryptor = aes.CreateEncryptor())
-            using (CryptoStream cryptoStream = new CryptoStream(outputFileStream, encryptor, CryptoStreamMode.Write))
-            {
-                inputFileStream.CopyTo(cryptoStream);
-            }
-        }
+        using var fsInput = new FileStream(inputFile, FileMode.Open, FileAccess.Read);
+        using var fsOutput = new FileStream(outputFile, FileMode.Create, FileAccess.Write);
+        EncryptStream(fsInput, fsOutput, password);
     }
 
-    static void DecryptFile(string inputFile, string outputFile, string password, string iv)
+    public void EncryptStream(Stream inputStream, Stream outputStream, string password)
     {
-        using (Aes aes = Aes.Create())
+        const int version = 1;
+        const int keySize = 256;
+        const int createKeyIterations = 1000;
+        const string hashAlgorithm = "SHA512";
+
+        using var aes = Aes.Create();
+        aes.KeySize = keySize;
+        var keySalt = CreateRandomBytes(aes.KeySize / 8);
+        var iv = CreateRandomBytes(aes.BlockSize / 8);
+
+        using (var binaryWriter = new BinaryWriter(outputStream, Encoding.ASCII, true))
         {
-            aes.KeySize = 256;
-            aes.BlockSize = 128;
-            aes.Mode = CipherMode.CBC;
-            aes.Padding = PaddingMode.PKCS7;
+            aes.Key = CreateKey(password, keySalt, createKeyIterations, hashAlgorithm);
+            aes.IV = iv;
 
-            byte[] key = DeriveKeyFromPassword(password, aes.KeySize);
-            aes.Key = key;
-            aes.IV = Encoding.UTF8.GetBytes(iv.PadRight(16, '0').Substring(0, 16));
-
-            using (FileStream inputFileStream = new FileStream(inputFile, FileMode.Open))
-            using (FileStream outputFileStream = new FileStream(outputFile, FileMode.Create))
-            using (ICryptoTransform decryptor = aes.CreateDecryptor())
-            using (CryptoStream cryptoStream = new CryptoStream(inputFileStream, decryptor, CryptoStreamMode.Read))
-            {
-                cryptoStream.CopyTo(outputFileStream);
-            }
+            binaryWriter.Write(version);
+            binaryWriter.Write(aes.KeySize);
+            binaryWriter.Write(aes.BlockSize);
+            binaryWriter.Write(createKeyIterations);
+            binaryWriter.Write(hashAlgorithm);
         }
+
+        outputStream.Write(keySalt);
+        outputStream.Write(iv);
+        using var cryptoStream = new CryptoStream(outputStream, aes.CreateEncryptor(), CryptoStreamMode.Write);
+        inputStream.CopyTo(cryptoStream);
     }
 
-    static byte[] DeriveKeyFromPassword(string password, int keySizeInBits)
+    public void DecryptStream(Stream inputStream, Stream outputStream, string password)
     {
-        const int iterations = 10000;
-        using (var deriveBytes = new Rfc2898DeriveBytes(password, Encoding.UTF8.GetBytes("saltysalt"), iterations, HashAlgorithmName.SHA256))
+        using var binaryReader = new BinaryReader(inputStream, Encoding.ASCII, true);
+        var version = binaryReader.ReadInt32();
+
+        if (version != 1)
+            throw new InvalidOperationException("Unsupported version");
+
+        using var aes = Aes.Create();
+        aes.KeySize = binaryReader.ReadInt32();
+        aes.BlockSize = binaryReader.ReadInt32();
+        int iterations = binaryReader.ReadInt32();
+        var hashAlgorithm = binaryReader.ReadString();
+
+        var keySalt = new byte[aes.KeySize / 8];
+        inputStream.ReadExactly(keySalt);
+        aes.Key = CreateKey(password, keySalt, iterations, hashAlgorithm);
+
+        var iv = new byte[aes.BlockSize / 8];
+        inputStream.ReadExactly(iv);
+        aes.IV = iv;
+
+        using var cryptoStream = new CryptoStream(outputStream, aes.CreateDecryptor(), CryptoStreamMode.Write);
+        inputStream.CopyTo(cryptoStream);
+    }
+
+    public void DecryptFile(string inputFile, string outputFile, string password)
+    {
+        using var fsInput = new FileStream(inputFile, FileMode.Open, FileAccess.Read);
+        using var fsOutput = new FileStream(outputFile, FileMode.Create, FileAccess.Write);
+        DecryptStream(fsInput, fsOutput, password);
+    }
+
+    static byte[] CreateRandomBytes(int bytesLength)
+    {
+        return RandomNumberGenerator.GetBytes(bytesLength);
+    }
+
+    static byte[] CreateKey(string password, byte[] salt, int iterations, string hashAlgorithm)
+    {
+        var algorithm = hashAlgorithm switch
         {
-            return deriveBytes.GetBytes(keySizeInBits / 8);
-        }
+            "SHA512" => HashAlgorithmName.SHA512,
+            // Compatibility: https://learn.microsoft.com/en-us/dotnet/standard/security/cross-platform-cryptography#sha-3
+            _ => throw new ArgumentOutOfRangeException(nameof(hashAlgorithm)),
+        };
+        using var keyGenerator = new Rfc2898DeriveBytes(password, salt, iterations, algorithm);
+        return keyGenerator.GetBytes(salt.Length);
     }
 }

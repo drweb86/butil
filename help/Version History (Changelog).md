@@ -1,4 +1,4 @@
-# 2024.09.11
+# 2024.09.20
 (unreleased)
 
 ## New Features
@@ -7,6 +7,7 @@
 ## Changes
 
 - 7-zip update to 24.08
+- 7-zip is not used anymore to compress/encrypt files because of 7% average space profit (each file is compressed individually) with drawbacks of not supporting Android devices
 - Update libraries
 - Unit-tests are part of build.ps1 script execution
 

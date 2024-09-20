@@ -21,9 +21,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="FluentFTP" Version="51.0.0" />
+    <PackageReference Include="FluentFTP" Version="51.1.0" />
     <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="8.0.0" />
-    <PackageReference Include="MSTest.TestFramework" Version="3.5.2" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.6.0" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Extensions.FileSystemGlobbing">
@@ -38,7 +38,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <CopyLibraryFiles Include="$(NuGetPackageRoot)microsoft.extensions.filesystemglobbing\8.0.0\lib\net8.0\*.*;$(NuGetPackageRoot)nstack.core\1.0.7\lib\netstandard2.0\*.*;$(NuGetPackageRoot)fluentftp\51.0.0\lib\net6.0\*.*" />
+    <CopyLibraryFiles Include="$(NuGetPackageRoot)microsoft.extensions.filesystemglobbing\8.0.0\lib\net8.0\*.*;$(NuGetPackageRoot)nstack.core\1.0.7\lib\netstandard2.0\*.*;$(NuGetPackageRoot)fluentftp\51.1.0\lib\net6.0\*.*" />
   </ItemGroup>
   <Target Name="CopyLibraries" AfterTargets="Build">
     <Copy SourceFiles="@(CopyLibraryFiles)" DestinationFolder="$(TargetDir)" />

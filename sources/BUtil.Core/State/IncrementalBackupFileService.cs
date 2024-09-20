@@ -3,7 +3,7 @@ using BUtil.Core.FileSystem;
 using BUtil.Core.Hashing;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
-using BUtil.Core.TasksTree.IncrementalModel;
+using BUtil.Core.Services;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -38,22 +38,44 @@ public class IncrementalBackupFileService(IHashService hashService, StorageSpeci
                 return true;
             }
         }
-        using var tempFolder = new TempFolder();
-        var tempArchive = Path.Combine(tempFolder.Folder, "archive.7z");
-        using var tempFolderAtDestination = new TempFolder(destinationFolder);
-        var extractedFolder = Path.Combine(tempFolderAtDestination.Folder, "Extracted");
-        _services.Storage.Download(storageFile.StorageRelativeFileName, tempArchive);
-        var archiver = PlatformSpecificExperience.Instance.GetArchiver(_log);
-        // file can be renamed in real life.
-        if (!archiver.Extract(tempArchive, storageFile.StoragePassword, extractedFolder))
+        
+        if (storageFile.StorageMethod == StorageMethodNames.SevenZipEncrypted)
         {
-            _log.WriteLine(LoggingEvent.Error, $"Extracting \"{storageFile.FileState.FileName}\" failed");
-            return false;
+            using var tempFolder = new TempFolder();
+            var tempArchive = Path.Combine(tempFolder.Folder, "archive.7z");
+            using var tempFolderAtDestination = new TempFolder(destinationFolder);
+            var extractedFolder = Path.Combine(tempFolderAtDestination.Folder, "Extracted");
+            _services.Storage.Download(storageFile.StorageRelativeFileName, tempArchive);
+            var archiver = PlatformSpecificExperience.Instance.GetArchiver(_log);
+            // file can be renamed in real life.
+            if (!archiver.Extract(tempArchive, storageFile.StoragePassword, extractedFolder))
+            {
+                _log.WriteLine(LoggingEvent.Error, $"Extracting \"{storageFile.FileState.FileName}\" failed");
+                return false;
+            }
+            var sourceFile = Directory.GetFiles(extractedFolder).Single();
+            if (File.Exists(destinationFileName))
+                File.Delete(destinationFileName);
+            File.Move(sourceFile, destinationFileName);
         }
-        var sourceFile = Directory.GetFiles(extractedFolder).Single();
-        if (File.Exists(destinationFileName))
-            File.Delete(destinationFileName);
-        File.Move(sourceFile, destinationFileName);
+        else if (storageFile.StorageMethod == StorageMethodNames.Aes256EncryptedV1)
+        {
+            using var tempFolderAtDestination = new TempFolder(destinationFolder);
+            var extractedFolder = Path.Combine(tempFolderAtDestination.Folder, "Extracted");
+            var aesFile = Path.Combine(extractedFolder, "file.aes256v1");
+            _services.Storage.Download(storageFile.StorageRelativeFileName, aesFile);
+            var decryptedFile = Path.Combine(extractedFolder, "file.decrypted");
+            try
+            {
+                _services.CommonServices.EncryptionService.DecryptFile(aesFile, decryptedFile, storageFile.StoragePassword);
+            }
+            catch
+            {
+                _log.WriteLine(LoggingEvent.Error, $"Extracting \"{storageFile.FileState.FileName}\" failed");
+                return false;
+            }
+            File.Move(decryptedFile, destinationFileName);
+        }
 
         return true;
     }
@@ -82,14 +104,12 @@ public class IncrementalBackupFileService(IHashService hashService, StorageSpeci
         }
 
         var archiver = PlatformSpecificExperience.Instance.GetArchiver(_log);
-        if (!archiver.CompressFile(
+        storageFile.StorageMethod = StorageMethodNames.Aes256EncryptedV1;
+
+        _services.CommonServices.EncryptionService.EncryptFile(
             storageFile.FileState.FileName,
-            storageFile.StoragePassword,
-            archiveFile))
-        {
-            _log.WriteLine(LoggingEvent.Error, $"Error compressing \"{storageFile.FileState.FileName}\"");
-            return false;
-        }
+            archiveFile,
+            storageFile.StoragePassword);
 
         var uploadResult = _services.Storage.Upload(archiveFile, storageFile.StorageRelativeFileName);
         storageFile.StorageFileNameSize = uploadResult.StorageFileNameSize;
