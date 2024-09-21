@@ -10,6 +10,7 @@ public interface IStorage : IDisposable
     void Delete(string relativeFileName);
     void Move(string fromRelativeFileName, string toRelativeFileName);
     void Download(string relativeFileName, string targetFileName);
+    void Download(Stream outputStream, string relativeFileName);
     bool Exists(string relativeFileName);
     void DeleteFolder(string relativeFolderName);
     string[] GetFolders(string relativeFolderName, string? mask = null);

@@ -26,7 +26,6 @@ public class WriteStorageFileToSourceFileTask(
 
     protected override void ExecuteInternal()
     {
-        if (!_storageSpecificServices.IncrementalBackupFileService.Download(_sourceItem, _storageFile, _destinationFolder))
-            throw new Exception("Download has failed!");
+        _storageSpecificServices.ApplicationStorageService.Download(_sourceItem, _storageFile, _destinationFolder);
     }
 }

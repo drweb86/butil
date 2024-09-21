@@ -34,6 +34,12 @@ public class FailoverStorageWrapper(ILog log, IStorage storage, int? triesCount)
             _triesCount);
     }
 
+    public void Download(Stream outputStream, string relativeFileName)
+    {
+        // no faiover for streams.
+        _storage.Download(outputStream, relativeFileName);
+    }
+
     public bool Exists(string relativeFileName)
     {
         return ExecuteFailover.TryNTimes(

@@ -179,6 +179,13 @@ class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
         }
     }
 
+    public override void Download(Stream outputStream, string relativeFileName)
+    {
+        var remotePath = GetRemoteNotNullablePath(relativeFileName);
+        if (!_client.DownloadStream(outputStream, remotePath))
+            throw new Exception();
+    }
+
     private static string? NormalizeNullablePath(string? path)
     {
         if (path == null)

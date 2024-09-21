@@ -74,7 +74,7 @@ internal class WriteSourceFileToStorageTask : BuTaskV2
 
         try
         {
-            if (!_services.IncrementalBackupFileService.Upload(actualStorageFile))
+            if (!_services.ApplicationStorageService.Upload(actualStorageFile))
                 throw new Exception("Upload has failed!");
             StorageFiles
                 .ToList()

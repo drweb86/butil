@@ -101,6 +101,11 @@ echo ""{userWithoutDomain}
         _proxy.Download(relativeFileName, targetFileName);
     }
 
+    public override void Download(Stream outputStream, string relativeFileName)
+    {
+        _proxy.Download(outputStream, relativeFileName);
+    }
+
     public override string[] GetFiles(string? relativeFolderName = null, SearchOption option = SearchOption.TopDirectoryOnly)
     {
         return _proxy.GetFiles(relativeFolderName, option);

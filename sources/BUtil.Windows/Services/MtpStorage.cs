@@ -104,6 +104,12 @@ class MtpStorage : StorageBase<MtpStorageSettings>
         _mediaDevice.DownloadFile(remotePath, targetFileName);
     }
 
+    public override void Download(Stream outputStream, string relativeFileName)
+    {
+        var remotePath = this.GetRemotePath(relativeFileName, false);
+        _mediaDevice.DownloadFile(remotePath, outputStream);
+    }
+
     private static string? NormalizeNullablePath(string? path)
     {
         if (path == null)
