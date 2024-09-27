@@ -138,27 +138,21 @@ public class ApplicationStorageService(IHashService hashService, StorageSpecific
     public bool Upload(StorageFile storageFile)
     {
         using var tempFolder = new TempFolder();
-        var archiveFile = Path.Combine(tempFolder.Folder, "archive.7z");
+        var file = Path.Combine(tempFolder.Folder, "file");
 
-        var encryptionEnabled = storageFile.StorageMethod == StorageMethodNames.SevenZipEncrypted;
-        if (encryptionEnabled)
-        {
-            storageFile.StoragePassword = RandomString();
-        }
-
-        var archiver = PlatformSpecificExperience.Instance.GetArchiver(_log);
-        storageFile.StorageMethod = StorageMethodNames.Aes256Encrypted;
-
+        storageFile.StoragePassword = RandomString();
         _services.CommonServices.EncryptionService.EncryptAes256File(
             storageFile.FileState.FileName,
-            archiveFile,
+            file,
             storageFile.StoragePassword);
 
-        var uploadResult = _services.Storage.Upload(archiveFile, storageFile.StorageRelativeFileName);
+        var uploadResult = _services.Storage.Upload(file, storageFile.StorageRelativeFileName);
+        
+        storageFile.StorageMethod = StorageMethodNames.Aes256Encrypted;
         storageFile.StorageFileNameSize = uploadResult.StorageFileNameSize;
         storageFile.StorageFileName = uploadResult.StorageFileName;
         storageFile.StorageIntegrityMethod = StorageIntegrityMethod.Sha512;
-        storageFile.StorageIntegrityMethodInfo = _hashService.GetSha512(archiveFile, false);
+        storageFile.StorageIntegrityMethodInfo = _hashService.GetSha512(file, false);
         return true;
     }
 

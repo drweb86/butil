@@ -56,7 +56,7 @@ public static class SourceItemHelper
 
         return Path.Combine(
             readableDate,
-            $"{Guid.NewGuid()}.7z");
+            $"{Guid.NewGuid()}.aes256v1");
     }
 
     public static List<StorageFile> BuildVersionFiles(IncrementalBackupState state, SourceItemV2 sourceItem, VersionState selectedVersion)
