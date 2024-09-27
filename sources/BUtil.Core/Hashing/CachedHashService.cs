@@ -2,7 +2,6 @@
 using BUtil.Core.Options;
 using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -17,17 +16,6 @@ internal class CachedHashService(ICashedHashStoreService cashedHashStoreService)
     private readonly ConcurrentBag<CachedHash> _cachedHashes = [];
     private bool _isCachedHashesLoaded = false;
     private const int _daysExpiration = 365;
-
-    public string GetSha512(string input)
-    {
-        var bytes = System.Text.Encoding.UTF8.GetBytes(input);
-        var hashedInputBytes = System.Security.Cryptography.SHA512.HashData(bytes);
-
-        var hashedInputStringBuilder = new System.Text.StringBuilder(128);
-        foreach (var b in hashedInputBytes)
-            hashedInputStringBuilder.Append(b.ToString("X2"));
-        return hashedInputStringBuilder.ToString();
-    }
 
     public string GetSha512(string file, bool trySpeedupNextTime)
     {

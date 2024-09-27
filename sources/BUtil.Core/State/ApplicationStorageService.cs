@@ -55,8 +55,8 @@ public class ApplicationStorageService(IHashService hashService, StorageSpecific
 
     private void VerifyAndMoveFile(StorageFile storageFile, string resultFile, string destinationFileName)
     {
-        var sha512 = _services.CommonServices.HashService.GetSha512(resultFile);
-        if (!string.IsNullOrWhiteSpace(storageFile.FileState.Sha512) && storageFile.FileState.Sha512 != sha512)
+        var sha512 = _services.CommonServices.HashService.GetSha512(resultFile, false);
+        if (!string.IsNullOrWhiteSpace(storageFile.FileState.Sha512) && !string.Equals(storageFile.FileState.Sha512, sha512, StringComparison.OrdinalIgnoreCase))
             throw new InvalidDataException($"Downloaded content for \"{destinationFileName}\" is invalid: SHAv2 512 of file is {sha512}, but expected SHAv2 512 is {storageFile.FileState.Sha512}.");
 
         var size = new FileInfo(resultFile).Length;
