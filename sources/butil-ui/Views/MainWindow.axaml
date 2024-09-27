@@ -28,7 +28,12 @@
 			<DataTemplate DataType="views:DialogViewModel">
 				<StackPanel Margin="8 8 8 8">
 					<TextBlock IsVisible="{Binding Header, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" TextAlignment="Center" Text="{Binding Header}" Margin="8 8 8 8" />
-					<TextBlock Text="{Binding Message}" Margin="8 8 8 8" TextWrapping="WrapWithOverflow" />
+					<TextBox MaxHeight="300"
+							 AcceptsReturn="True"
+							 TextWrapping="Wrap"
+							 Text="{Binding Message}"
+							 Margin="8 8 8 8"
+							 IsReadOnly="True"/>
 					<WrapPanel HorizontalAlignment="Right">
 						<Button Margin="8 8 8 8"
 								MinHeight="32"

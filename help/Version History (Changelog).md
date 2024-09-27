@@ -4,6 +4,7 @@
 ## New Features
 
 - Bengali, Urdu, Indonesian, Japanese, Nigerian Pidgin, Marathi, Telugu languages.
+- It is possible to copy text from message.
 
 ## Changes
 
@@ -18,6 +19,7 @@
 ## Bug Fixes
 
 - Message buttons locations was invalid
+- Message text locations was invalid
 
 # 2024.08.08
 
