@@ -2,9 +2,9 @@
 
 namespace butil_ui.Views;
 
-public class DialogViewModel(string header, string message, string? button1 = null, string? button2 = null)
+public class DialogViewModel(string? header, string message, string? button1 = null, string? button2 = null)
 {
-    public string Header { get; } = header;
+    public string? Header { get; } = header;
     public string Message { get; } = message;
     public string? Button1Text { get; } = button1 ?? Resources.Button_OK;
     public string Button1Arg { get; } = "1";

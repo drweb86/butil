@@ -33,9 +33,6 @@ public static class UpdateChecker
 
     public static async Task<AppUpdateInfo> CheckForUpdateGithub()
     {
-#if DEBUG
-        return new AppUpdateInfo(false, null, null);
-#endif
         try
         {
             var apiResponse = await GetResponse(ApplicationLinks.ApiLatestRelease);

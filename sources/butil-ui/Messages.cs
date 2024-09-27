@@ -19,7 +19,7 @@ public static class Messages
 
     public static async Task<bool> ShowYesNoDialog(string question)
     {
-        var result = await DialogHost.Show(new DialogViewModel(Resources.Messages_Header_Question, question, Resources.Button_OK, Resources.Button_Cancel));
+        var result = await DialogHost.Show(new DialogViewModel(null, question, Resources.Button_OK, Resources.Button_Cancel));
         return (result as string) == "1";
     }
 }
