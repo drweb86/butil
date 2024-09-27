@@ -55,20 +55,17 @@ public class ApplicationStorageService(IHashService hashService, StorageSpecific
 
     private void VerifyAndMoveFile(StorageFile storageFile, string resultFile, string destinationFileName)
     {
-        if (storageFile.FileState != null)
-        {
-            var sha512 = _services.CommonServices.HashService.GetSha512(resultFile);
-            if (storageFile.FileState.Sha512 != sha512)
-                throw new InvalidDataException($"Downloaded content for \"{destinationFileName}\" is invalid: SHAv2 512 of file is {sha512}, but expected SHAv2 512 is {storageFile.FileState.Sha512}.");
+        var sha512 = _services.CommonServices.HashService.GetSha512(resultFile);
+        if (!string.IsNullOrWhiteSpace(storageFile.FileState.Sha512) && storageFile.FileState.Sha512 != sha512)
+            throw new InvalidDataException($"Downloaded content for \"{destinationFileName}\" is invalid: SHAv2 512 of file is {sha512}, but expected SHAv2 512 is {storageFile.FileState.Sha512}.");
 
-            var size = new FileInfo(resultFile).Length;
-            if (storageFile.FileState.Size != size)
-                throw new InvalidDataException($"Downloaded content for \"{destinationFileName}\" is invalid: size of file is {size}, but expected size is {storageFile.FileState.Size}.");
-        }
+        var size = new FileInfo(resultFile).Length;
+        if (storageFile.FileState.Size != 0 && storageFile.FileState.Size != size)
+            throw new InvalidDataException($"Downloaded content for \"{destinationFileName}\" is invalid: size of file is {size}, but expected size is {storageFile.FileState.Size}.");
 
         File.Move(resultFile, destinationFileName, true);
 
-        if (storageFile.FileState != null)
+        if (storageFile.FileState.LastWriteTimeUtc != default)
             File.SetLastWriteTimeUtc(destinationFileName, storageFile.FileState.LastWriteTimeUtc);
     }
 

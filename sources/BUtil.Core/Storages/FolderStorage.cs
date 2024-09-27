@@ -117,13 +117,6 @@ public class FolderStorage : StorageBase<FolderStorageSettingsV2>
         Copy(file, targetFileName);
     }
 
-    public override void Download(Stream outputStream, string relativeFileName)
-    {
-        var file = Path.Combine(Settings.DestinationFolder, relativeFileName);
-        using var fileStream = new FileStream(file, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-        fileStream.CopyTo(outputStream);
-    }
-
     public static void Copy(string inputFile, string outputFilePath)
     {
         int bufferSize = 16 * 1024 * 1024;

@@ -122,16 +122,6 @@ class WindowsSambaStorage : StorageBase<SambaStorageSettingsV2>
         }
     }
 
-    public override void Download(Stream outputStream, string relativeFileName)
-    {
-        lock (_uploadLock) // because we're limited by upload speed and Samba has limit of 6 parallel uploads usually
-        {
-            var file = Path.Combine(Settings.Url, relativeFileName);
-            using var fileStream = new FileStream(file, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-            fileStream.CopyTo(outputStream);
-        }
-    }
-
     public static void Copy(string inputFile, string outputFilePath)
     {
         int bufferSize = 16 * 1024 * 1024;

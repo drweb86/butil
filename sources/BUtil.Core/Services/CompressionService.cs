@@ -25,16 +25,11 @@ internal class CompressionService : ICompressionService
         inputStream.CopyTo(brotliStream);
     }
 
-    private void DecompressBrotliStream(Stream inputStream, Stream outputStream)
-    {
-        using var brotliStream = new BrotliStream(outputStream, CompressionMode.Decompress);
-        inputStream.CopyTo(brotliStream);
-    }
-
     public void DecompressBrotliFile(string inputFile, string outputFile)
     {
-        using var fsInput = new FileStream(inputFile, FileMode.Open, FileAccess.Read);
-        using var fsOutput = new FileStream(outputFile, FileMode.Create, FileAccess.Write);
-        DecompressBrotliStream(fsInput, fsOutput);
+        using var inputStream = new FileStream(inputFile, FileMode.Open, FileAccess.Read);
+        using var brotliStream = new BrotliStream(inputStream, CompressionMode.Decompress);
+        using var outputStream = new FileStream(outputFile, FileMode.Create, FileAccess.Write);
+        brotliStream.CopyTo(outputStream);
     }
 }

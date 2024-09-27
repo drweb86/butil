@@ -22,22 +22,24 @@ public class IncrementalBackupStateService(StorageSpecificServicesIoc services, 
         _log.WriteLine(LoggingEvent.Debug, $"Reading state");
         using var tempFolder = new TempFolder();
         string destFile = Path.Combine(tempFolder.Folder, "file.json");
-        if (_services.Storage.Exists(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile))
+
+        if (_services.Storage.Exists(IncrementalBackupModelConstants.BrotliAes256V1StateFile))
         {
-            _services.ApplicationStorageService.Download(new StorageFile { StorageRelativeFileName = IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile, StorageMethod = StorageMethodNames.SevenZipEncrypted, StoragePassword = password }, destFile);
+            _services.ApplicationStorageService.Download(new StorageFile { StorageRelativeFileName = IncrementalBackupModelConstants.BrotliAes256V1StateFile, StorageMethod = StorageMethodNames.BrotliCompressedAes256Encrypted, StoragePassword = password, FileState = new FileState() { FileName = IncrementalBackupModelConstants.BrotliAes256V1StateFile } }, destFile);
             using var uncompressedFileStream = File.OpenRead(destFile);
             state = JsonSerializer.Deserialize<IncrementalBackupState>(uncompressedFileStream);
             return state != null;
         }
 
-        if (_services.Storage.Exists(IncrementalBackupModelConstants.BrotliAes256V1StateFile))
+        if (_services.Storage.Exists(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile))
         {
-            _services.ApplicationStorageService.Download(new StorageFile { StorageRelativeFileName = IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile, StorageMethod = StorageMethodNames.BrotliCompressedAes256Encrypted, StoragePassword = password }, destFile);
+            _services.ApplicationStorageService.Download(new StorageFile { StorageRelativeFileName = IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile, StorageMethod = StorageMethodNames.SevenZipEncrypted, StoragePassword = password, FileState = new FileState() { FileName = IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile } }, destFile);
             using var uncompressedFileStream = File.OpenRead(destFile);
             state = JsonSerializer.Deserialize<IncrementalBackupState>(uncompressedFileStream);
             return state != null;
         }
-        
+
+       
         state = new IncrementalBackupState();
         return true;
     }
@@ -45,10 +47,15 @@ public class IncrementalBackupStateService(StorageSpecificServicesIoc services, 
     public StorageFile? Write(string password, IncrementalBackupState state)
     {
         _log.WriteLine(LoggingEvent.Debug, $"Writing state");
-        if (_services.Storage.Exists(IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile))
-            _services.Storage.Delete(IncrementalBackupModelConstants.StorageIncrementalNonEncryptedCompressedStateFile);
         if (_services.Storage.Exists(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile))
+        {
+            using var stubTempFolder = new TempFolder();
+            var stubFile = Path.Combine(stubTempFolder.Folder, "STUB");
+            File.WriteAllText(stubFile, "NOT SUPPORTED. STUB FILE TO PREVENT OLD VERSIONS FROM USAGE.");
+
             _services.Storage.Delete(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile);
+            _services.Storage.Upload(stubFile, IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile);
+        }
         if (_services.Storage.Exists(IncrementalBackupModelConstants.BrotliAes256V1StateFile))
             _services.Storage.Delete(IncrementalBackupModelConstants.BrotliAes256V1StateFile);
 

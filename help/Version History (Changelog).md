@@ -10,6 +10,7 @@
 - 7-zip is not used anymore to compress/encrypt files because of 7% average space profit (each file is compressed individually) with drawbacks of not supporting Android devices
 - Update libraries
 - Unit-tests are part of build.ps1 script execution
+- Storage format upgrade. Previous versions of applications won't be able to open it. Backward compatibility for restoration etc will be preserved for some time.
 
 # 2024.08.08
 

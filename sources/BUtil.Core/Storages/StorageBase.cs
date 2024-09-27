@@ -19,7 +19,6 @@ public abstract class StorageBase<TStorageSettings>(ILog log, TStorageSettings s
     public abstract string[] GetFiles(string? relativeFolderName = null, SearchOption option = SearchOption.TopDirectoryOnly);
     public abstract DateTime GetModifiedTime(string relativeFileName);
     public abstract void Download(string relativeFileName, string targetFileName);
-    public abstract void Download(Stream outputStream, string relativeFileName);
     public abstract bool Exists(string relativeFileName);
     public abstract void Move(string fromRelativeFileName, string toRelativeFileName);
     public abstract void Dispose();

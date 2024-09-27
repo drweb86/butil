@@ -15,13 +15,9 @@ internal class EncryptionService: IEncryptionService
 {
     public void EncryptAes256File(string inputFile, string outputFile, string password)
     {
-        using var fsInput = new FileStream(inputFile, FileMode.Open, FileAccess.Read);
-        using var fsOutput = new FileStream(outputFile, FileMode.Create, FileAccess.Write);
-        EncryptAes256Stream(fsInput, fsOutput, password);
-    }
+        using var inputStream = new FileStream(inputFile, FileMode.Open, FileAccess.Read);
+        using var outputStream = new FileStream(outputFile, FileMode.Create, FileAccess.Write);
 
-    private void EncryptAes256Stream(Stream inputStream, Stream outputStream, string password)
-    {
         const int version = 1;
         const int keySize = 256;
         const int createKeyIterations = 1000;

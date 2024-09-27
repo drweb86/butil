@@ -102,7 +102,7 @@ public partial class MainWindowViewModel : ViewModelBase
     public static string Task_Create => Resources.Task_Create;
     public static string ImportMediaTask_Create => Resources.ImportMediaTask_Create;
     public static string IncrementalBackupTask_Create => Resources.IncrementalBackupTask_Create;
-    public static string SynchronizationTask_Create => Resources.SynchronizationTask_Create + " (BETA)";
+    public static string SynchronizationTask_Create => Resources.SynchronizationTask_Create + " (RC)";
 
     #endregion
 
