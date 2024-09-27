@@ -11,6 +11,7 @@
 - Update libraries
 - Unit-tests are part of build.ps1 script execution
 - Storage format upgrade. Previous versions of applications won't be able to open it. Backward compatibility for restoration etc will be preserved for some time.
+- Checking for updates was switched back to github since upload was fixed, personal site at NAS will be shutdown after some time.
 
 # 2024.08.08
 

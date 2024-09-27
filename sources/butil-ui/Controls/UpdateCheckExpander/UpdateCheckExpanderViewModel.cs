@@ -10,7 +10,9 @@ internal class UpdateCheckExpanderViewModel : ObservableObject
 {
     public void Initialize()
     {
+#if RELEASE
         _ = CheckForUpdates();
+#endif
     }
 
 
@@ -88,7 +90,7 @@ internal class UpdateCheckExpanderViewModel : ObservableObject
 
     private async Task CheckForUpdates()
     {
-        var update = await UpdateChecker.CheckForUpdate();
+        var update = await UpdateChecker.CheckForUpdateGithub();
 
         IsUpdateAvailable = update.HasUpdate;
         if (IsUpdateAvailable)
