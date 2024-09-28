@@ -60,7 +60,7 @@ internal class WriteSourceFileToStorageTask : BuTaskV2
         {
             LogDebug("Skipped because file is already is in storage.");
             StorageFiles.ForEach(x => x.SetStoragePropertiesFrom(matchingFile));
-            IsSkipped = true;
+            IsSkipped = false;
             return;
         }
 

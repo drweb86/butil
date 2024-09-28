@@ -20,6 +20,7 @@
 
 - Message buttons locations was invalid
 - Message text locations was invalid
+! Incremental backup creates version when duplicate files exists
 
 # 2024.08.08
 
