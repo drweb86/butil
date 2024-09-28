@@ -1,4 +1,4 @@
-# 2024.09.20
+# 2024.09.28
 (unreleased)
 
 ## New Features
@@ -23,6 +23,7 @@
 - Message text locations was invalid
 ! Incremental backup creates version when duplicate files exists
 - Task status was missing on rename
+- Import multimedia with skip already imported flag was not working correctly during rename of task
  
 # 2024.08.08
 

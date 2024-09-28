@@ -8,18 +8,29 @@ namespace BUtil.Core.State;
 
 public class ImportMediaFileService
 {
-    private readonly string _folder;
     private const string _extension = ".json";
     private static readonly JsonSerializerOptions _jsonSerializerOptions = new() { WriteIndented = true };
 
-    public ImportMediaFileService()
+    public static void DeleteState(string name)
     {
-#if DEBUG
-        _folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BUtil Backup Tasks - DEBUG - States");
-#else
-        _folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BUtil Backup Tasks - States");
-#endif
-        FileHelper.EnsureFolderCreated(_folder);
+        var file = GetFileName(name);
+
+        if (File.Exists(file))
+            File.Delete(file);
+    }
+
+    public static void MoveState(string oldName, string newName)
+    {
+        var oldFile = GetFileName(oldName);
+        var newFile = GetFileName(newName);
+        if (File.Exists(oldFile) && oldFile != newName)
+        {
+            try
+            {
+                File.Move(oldFile, newFile);
+            }
+            catch { }
+        }
     }
 
     public ImportMediaState? Load(string name)
@@ -41,11 +52,11 @@ public class ImportMediaFileService
         File.WriteAllText(fileName, json);
     }
 
-    private string GetFileName(string name)
+    private static string GetFileName(string name)
     {
         if (name.Contains("..") || name.Contains('/') || name.Contains('\\'))
             throw new ArgumentException("No .. / and \\");
 
-        return Path.Combine(_folder, $"{name}{_extension}");
+        return Path.Combine(Directories.ImportStateFolder, $"{name}{_extension}");
     }
 }

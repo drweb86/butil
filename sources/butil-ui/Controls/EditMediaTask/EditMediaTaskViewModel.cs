@@ -3,6 +3,7 @@ using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
+using BUtil.Core.State;
 using butil_ui.ViewModels;
 using System;
 using System.Threading.Tasks;
@@ -70,6 +71,7 @@ public class EditMediaTaskViewModel : ViewModelBase
         {
             storeService.Delete(_taskName);
             LogService.MoveLogs(_taskName, newTask.Name);
+            ImportMediaFileService.MoveState(_taskName, newTask.Name);
         }
         try
         {

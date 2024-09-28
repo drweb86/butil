@@ -33,7 +33,8 @@
 							 TextWrapping="Wrap"
 							 Text="{Binding Message}"
 							 Margin="8 8 8 8"
-							 IsReadOnly="True"/>
+							 IsReadOnly="True"
+							 BorderThickness="0" />
 					<WrapPanel HorizontalAlignment="Right">
 						<Button Margin="8 8 8 8"
 								MinHeight="32"

@@ -5,6 +5,7 @@ using BUtil.Core.Events;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
+using BUtil.Core.State;
 using butil_ui.ViewModels;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System.Collections.ObjectModel;
@@ -70,6 +71,7 @@ public class TaskItemViewModel(
         new TaskV2StoreService()
             .Delete(Name);
         LogService.DeleteLogs(Name);
+        ImportMediaFileService.DeleteState(Name);
         PlatformSpecificExperience.Instance
             .GetTaskSchedulerService()?.Unschedule(Name);
         _items.Remove(this);

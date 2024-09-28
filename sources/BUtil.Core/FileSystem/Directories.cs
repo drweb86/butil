@@ -30,12 +30,20 @@ public static class Directories
 
     public static string LogsFolder { get; }
 
+    public static string ImportStateFolder { get; }
+
     static Directories()
     {
         FileHelper.EnsureFolderCreated(_userDataFolder);
         LogsFolder = Path.Combine(Directories.UserDataFolder, "Logs", "v3");
         FileHelper.EnsureFolderCreated(LogsFolder);
         FileHelper.EnsureFolderCreated(StateFolder);
+#if DEBUG
+        ImportStateFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BUtil Backup Tasks - DEBUG - States");
+#else
+        ImportStateFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BUtil Backup Tasks - States");
+#endif
+        FileHelper.EnsureFolderCreated(ImportStateFolder);
     }
 
     public static IEnumerable<string> GetDefaultBackupFolders()
