@@ -1,6 +1,7 @@
 ﻿using BUtil.Core;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Localization;
+using BUtil.Core.Logs;
 using BUtil.Core.Options;
 using butil_ui.ViewModels;
 using System.Threading.Tasks;
@@ -75,6 +76,7 @@ public class EditSynchronizationTaskViewModel : ViewModelBase
         {
             storeService.Delete(_taskName);
             scheduler?.Unschedule(_taskName);
+            LogService.MoveLogs(_taskName, newTask.Name);
         }
         storeService.Save(newTask);
         scheduler?.Schedule(newTask.Name, WhenTaskViewModel.GetScheduleInfo());

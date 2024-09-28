@@ -68,7 +68,7 @@ public class TasksViewModel : ViewModelBase
 
         foreach (var taskName in taskNames)
         {
-            var lastLogFile = lastLogs.FirstOrDefault(x => x.TaskName == taskName);
+            var lastLogFile = lastLogs.FirstOrDefault(x => x.TaskName.Cmp(taskName));
             string lastLaunchedAt = lastLogFile != null ? lastLogFile.CreatedAt.ToString() : string.Empty;
 
             var status = ProcessingStatus.NotStarted;

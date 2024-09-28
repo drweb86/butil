@@ -3,6 +3,7 @@ using BUtil.Core;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
 using BUtil.Core.Localization;
+using BUtil.Core.Logs;
 using BUtil.Core.Options;
 using butil_ui.ViewModels;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -68,6 +69,7 @@ public class TaskItemViewModel(
 
         new TaskV2StoreService()
             .Delete(Name);
+        LogService.DeleteLogs(Name);
         PlatformSpecificExperience.Instance
             .GetTaskSchedulerService()?.Unschedule(Name);
         _items.Remove(this);

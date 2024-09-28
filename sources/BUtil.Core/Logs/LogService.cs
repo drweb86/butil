@@ -18,18 +18,62 @@ public class LogService
             $"{_dateTime.ToString(_dateMask, CultureInfo.CurrentUICulture)} {taskName} ({postfix}).txt");
     }
 
+    private static string GetMask(string taskNamePart)
+    {
+        return $"????-??-?? ??-??-?? {taskNamePart} (*).txt";
+    }
+
     public IEnumerable<LogFileInfo> GetRecentLogs()
     {
         return Directory
-            .GetFiles(Directories.LogsFolder, "????-??-?? ??-??-?? * (*).txt")
+            .GetFiles(Directories.LogsFolder, GetMask("*"))
             .OrderByDescending(x => x)
             .Select(ParseFileName)
-            .GroupBy(x => x.TaskName)
+            .GroupBy(x => x.TaskName.ToLowerInvariant())
             .Select(x => x.First())
             .ToList();
     }
 
-    private LogFileInfo ParseFileName(string logFileName)
+    public static void MoveLogs(string oldTaskName, string newTaskName)
+    {
+        if (oldTaskName.Cmp(newTaskName))
+            return;
+
+        Directory
+            .GetFiles(Directories.LogsFolder, GetMask("*"))
+            .OrderByDescending(x => x)
+            .Select(ParseFileName)
+            .Where(x => x.TaskName.Cmp(oldTaskName))
+            .ToList()
+            .ForEach(x => MoveLog(x, newTaskName));
+
+    }
+
+    public static void DeleteLogs(string taskName)
+    {
+        Directory
+            .GetFiles(Directories.LogsFolder, GetMask("*"))
+            .OrderByDescending(x => x)
+            .Select(ParseFileName)
+            .Where(x => x.TaskName.Cmp(taskName))
+            .ToList()
+            .ForEach(DeleteLog);
+    }
+
+    private static void DeleteLog(LogFileInfo logFileInfo)
+    {
+        var file = GetFileName(logFileInfo.TaskName, logFileInfo.CreatedAt, logFileInfo.IsSuccess);
+        File.Delete(file);
+    }
+
+    private static void MoveLog(LogFileInfo logFileInfo, string newTaskName)
+    {
+        var oldFile = GetFileName(logFileInfo.TaskName, logFileInfo.CreatedAt, logFileInfo.IsSuccess);
+        var newFile = GetFileName(newTaskName, logFileInfo.CreatedAt, logFileInfo.IsSuccess);
+        File.Move(oldFile, newFile);
+    }
+
+    private static LogFileInfo ParseFileName(string logFileName)
     {
         var fileName = Path.GetFileName(logFileName);
 

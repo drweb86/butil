@@ -1,5 +1,6 @@
 ﻿using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Localization;
+using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
 using butil_ui.ViewModels;
@@ -68,6 +69,7 @@ public class EditMediaTaskViewModel : ViewModelBase
         if (!IsNew)
         {
             storeService.Delete(_taskName);
+            LogService.MoveLogs(_taskName, newTask.Name);
         }
         try
         {

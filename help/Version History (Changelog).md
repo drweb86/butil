@@ -5,6 +5,7 @@
 
 - Bengali, Urdu, Indonesian, Japanese, Nigerian Pidgin, Marathi, Telugu languages.
 - It is possible to copy text from message.
+- On task deletion log files are deleted as well.
 
 ## Changes
 
@@ -21,7 +22,8 @@
 - Message buttons locations was invalid
 - Message text locations was invalid
 ! Incremental backup creates version when duplicate files exists
-
+- Task status was missing on rename
+ 
 # 2024.08.08
 
 ## Bug Fixes
