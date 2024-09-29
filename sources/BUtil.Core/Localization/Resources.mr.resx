@@ -120,276 +120,276 @@
   <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
     <value>काहीही करणे नाही</value>
     </data>
-    <data name="AfterTaskSelection_Field" xml:space="preserve">
+  <data name="AfterTaskSelection_Field" xml:space="preserve">
     <value>कार्य पूर्ण झाल्यावर:</value>
     </data>
-    <data name="AfterTaskSelection_Help" xml:space="preserve">
+  <data name="AfterTaskSelection_Help" xml:space="preserve">
     <value>जर तुम्ही 'काहीही करणे नाही' यापेक्षा काहीतरी निवडले तर
     कार्यक्रम OS ला कॉन्फिगर करेल जेणेकरून तुमच्या सिस्टमवरील 
     उद्या लॉगिनसाठी किमान कोणतेही त्रुटी किंवा चेतावणी 
     नोंदवली गेली असल्यास तुम्हाला अहवाल दाखवला जाईल.</value>
     </data>
-    <data name="AfterTaskSelection_LogOff" xml:space="preserve">
+  <data name="AfterTaskSelection_LogOff" xml:space="preserve">
     <value>लॉग ऑफ</value>
     </data>
-    <data name="AfterTaskSelection_Reboot" xml:space="preserve">
+  <data name="AfterTaskSelection_Reboot" xml:space="preserve">
     <value>पुनरारंभ</value>
     </data>
-    <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
+  <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
     <value>शटडाऊन</value>
     </data>
-    <data name="Application_NewVersion_Notification" xml:space="preserve">
+  <data name="Application_NewVersion_Notification" xml:space="preserve">
     <value>नवीन {0} आवृत्ती उपलब्ध आहे.</value>
     </data>
-    <data name="BackupVersion_Button_Delete" xml:space="preserve">
+  <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>आवृत्ती हटवा</value>
     </data>
-    <data name="BackupVersion_Changes_Title" xml:space="preserve">
+  <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>बदल</value>
     </data>
-    <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
+  <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
     <value>तुम्हाला खरोखरच आवृत्ती "{0}" हटवायची आहे का?
     
     हटवलेल्या आवृत्तीच्या बदलांचा भाग "{1}" आवृत्तीत होईल.</value>
     </data>
-    <data name="BackupVersion_Files_Title" xml:space="preserve">
+  <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>फाइल्स</value>
     </data>
-    <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
+  <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>जर्नल: {0}</value>
     </data>
-    <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
+  <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
     <value>निवडलेल्या जर्नल...</value>
     </data>
-    <data name="BackupVersion_Select" xml:space="preserve">
+  <data name="BackupVersion_Select" xml:space="preserve">
     <value>निवडलेली आवृत्ती उघडा...</value>
     </data>
-    <data name="BackupVersion_Selector_Title" xml:space="preserve">
+  <data name="BackupVersion_Selector_Title" xml:space="preserve">
     <value>आवृत्ती निवडा</value>
     </data>
-    <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
+  <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
     <value>(सर्व आवृत्त्या संग्रहात {0} जागा घेतात)</value>
     </data>
-    <data name="BackupVersion_Versions_Title" xml:space="preserve">
+  <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>आवृत्त्या</value>
     </data>
-    <data name="BackupVersion_Viewer_Help" xml:space="preserve">
+  <data name="BackupVersion_Viewer_Help" xml:space="preserve">
     <value>तुम्हाला पुनर्स्थापन करायची असलेली फाइल किंवा फोल्डर ट्रीमध्ये निवडा आणि "पुनर्स्थापन करा" वर क्लिक करा.</value>
     </data>
-    <data name="Button_Cancel" xml:space="preserve">
+  <data name="Button_Cancel" xml:space="preserve">
     <value>रद्द करा</value>
     </data>
-    <data name="Button_Close" xml:space="preserve">
+  <data name="Button_Close" xml:space="preserve">
     <value>बंद करा</value>
     </data>
-    <data name="Button_Continue" xml:space="preserve">
+  <data name="Button_Continue" xml:space="preserve">
     <value>सुरु ठेवा &gt;</value>
     </data>
-    <data name="Button_CopyToClipboard" xml:space="preserve">
+  <data name="Button_CopyToClipboard" xml:space="preserve">
     <value>कॉपी करा</value>
     </data>
-    <data name="Button_Download" xml:space="preserve">
+  <data name="Button_Download" xml:space="preserve">
     <value>डाउनलोड करा</value>
     </data>
-    <data name="Button_OK" xml:space="preserve">
+  <data name="Button_OK" xml:space="preserve">
     <value>ठीक आहे</value>
     </data>
-    <data name="Button_Remove" xml:space="preserve">
+  <data name="Button_Remove" xml:space="preserve">
     <value>हटवा</value>
     </data>
-    <data name="Button_Save" xml:space="preserve">
+  <data name="Button_Save" xml:space="preserve">
     <value>संग्रहित करा</value>
     </data>
-    <data name="CommandLineArguments_Help" xml:space="preserve">
+  <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>कमांड लाइन आर्ग्युमेंट्स पाहण्यासाठी {0} ला भेट द्या.</value>
     </data>
-    <data name="CommandLineArguments_Invalid" xml:space="preserve">
+  <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>अवैध कमांड लाइन आर्ग्युमेंट्स.</value>
     </data>
-    <data name="DataStorage_Data_Saving" xml:space="preserve">
+  <data name="DataStorage_Data_Saving" xml:space="preserve">
     <value>डेटा संग्रहात लिहित आहे</value>
     </data>
-    <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
+  <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
     <value>कनेक्शन स्क्रिप्ट:</value>
     </data>
-    <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
+  <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
     <value>डिसकनेक्शन स्क्रिप्ट:</value>
     </data>
-    <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
+  <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
     <value>चुकांबरोबर समाप्त</value>
     </data>
-    <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
+  <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
     <value>यशस्वीपणे संपले</value>
     </data>
-    <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
+  <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
     <value>अपलोड मर्यादा, जीबी:</value>
     </data>
-    <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
+  <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
     <value>एकाच कार्यान्वयनादरम्यान संग्रहात पाठवलेल्या डेटाची मात्रा मर्यादित करते. 0 - कोणतीही मर्यादा नाही.
     जेव्हा कोटा ओलांडला जातो, इतर फाइल्स वगळल्या जातील आणि पुढील वेळेस प्रक्रिया केले जातील.
     उपयोगाच्या उदाहरण: तुम्ही डेटा दूरस्थ सर्व्हरवर कॉपी करता. येथे एक समस्या आहे: ISP काही गीगाबाइट्सनंतर अपलोड स्पीड कमी करतो. ही सेटिंग तुम्हाला त्याचे व्यवस्थापन करण्यास मदत करताना अनुमति देते.</value>
     </data>
-    <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
+  <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
     <value>कोटा 0 (अर्ज करू नका) किंवा 0 च्या वर असावा.</value>
     </data>
-    <data name="DataStorage_Maintenance" xml:space="preserve">
+  <data name="DataStorage_Maintenance" xml:space="preserve">
     <value>डेटा संग्रहाचे देखभाल</value>
     </data>
-    <data name="DataStorage_Script_Help" xml:space="preserve">
+  <data name="DataStorage_Script_Help" xml:space="preserve">
     <value>जर काही आदेशांचे कार्यान्वयन केल्यानंतर फोल्डर उपलब्ध झाला असेल, तर कनेक्शन आणि डिसकनेक्शनसाठी {0} स्क्रिप्ट निर्दिष्ट करा.</value>
     </data>
-    <data name="DataStorage_State_Get" xml:space="preserve">
+  <data name="DataStorage_State_Get" xml:space="preserve">
     <value>संग्रहाची स्थिती मिळवा</value>
     </data>
-    <data name="DataStorage_State_Saving" xml:space="preserve">
+  <data name="DataStorage_State_Saving" xml:space="preserve">
     <value>संग्रहाची स्थिती लिहित आहे</value>
     </data>
-    <data name="DataStorage_Title" xml:space="preserve">
+  <data name="DataStorage_Title" xml:space="preserve">
     <value>संग्रह</value>
     </data>
-    <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
+  <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
     <value>संग्रह निर्दिष्ट केलेले नाही.</value>
     </data>
-    <data name="Days_Field_Choose" xml:space="preserve">
+  <data name="Days_Field_Choose" xml:space="preserve">
     <value>आठवड्याच्या दिवसांची निवड करा:</value>
     </data>
-    <data name="Days_Friday" xml:space="preserve">
+  <data name="Days_Friday" xml:space="preserve">
     <value>शुक्रवार</value>
     </data>
-    <data name="Days_Monday" xml:space="preserve">
+  <data name="Days_Monday" xml:space="preserve">
     <value>सोमवार</value>
     </data>
-    <data name="Days_Saturday" xml:space="preserve">
+  <data name="Days_Saturday" xml:space="preserve">
     <value>शनिवार</value>
     </data>
-    <data name="Days_Sunday" xml:space="preserve">
+  <data name="Days_Sunday" xml:space="preserve">
     <value>रविवार</value>
     </data>
-    <data name="Days_Thursday" xml:space="preserve">
+  <data name="Days_Thursday" xml:space="preserve">
     <value>गुरुवार</value>
     </data>
-    <data name="Days_Tuesday" xml:space="preserve">
+  <data name="Days_Tuesday" xml:space="preserve">
     <value>मंगळवार</value>
     </data>
-    <data name="Days_Wednesday" xml:space="preserve">
+  <data name="Days_Wednesday" xml:space="preserve">
     <value>बुधवार</value>
     </data>
-    <data name="DirectoryStorage" xml:space="preserve">
+  <data name="DirectoryStorage" xml:space="preserve">
     <value>डायरेक्टरी</value>
     </data>
-    <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
+  <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
     <value>फोल्डर:</value>
     </data>
-    <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
+  <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
     <value>डायरेक्टरी निर्दिष्ट केलेली नाही.</value>
     </data>
-    <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
+  <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
     <value>डायरेक्टरी "{0}" अस्तित्वात नाही.</value>
     </data>
-    <data name="Field_Device" xml:space="preserve">
+  <data name="Field_Device" xml:space="preserve">
     <value>यन्त्र:</value>
     </data>
-    <data name="Field_Device_Validation_Empty" xml:space="preserve">
+  <data name="Field_Device_Validation_Empty" xml:space="preserve">
     <value>यन्त्र निर्दिष्ट केलेले नाही.</value>
     </data>
-    <data name="Field_Device_Validation_NotFound" xml:space="preserve">
+  <data name="Field_Device_Validation_NotFound" xml:space="preserve">
     <value>यन्त्र सापडत नाही.</value>
     </data>
-    <data name="Field_Folder" xml:space="preserve">
+  <data name="Field_Folder" xml:space="preserve">
     <value>फोल्डर:</value>
     </data>
-    <data name="Field_Folder_Browse" xml:space="preserve">
+  <data name="Field_Folder_Browse" xml:space="preserve">
     <value>ब्राउझ करा</value>
     </data>
-    <data name="Field_Folder_Validation_Empty" xml:space="preserve">
+  <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>फोल्डर निर्दिष्ट केलेला नाही.</value>
     </data>
-    <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
+  <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>फोल्डर अस्तित्वात नाही.</value>
     </data>
-    <data name="Field_TransportProtocol" xml:space="preserve">
+  <data name="Field_TransportProtocol" xml:space="preserve">
     <value>प्रोटोकॉल:</value>
     </data>
-    <data name="Field_Version" xml:space="preserve">
+  <data name="Field_Version" xml:space="preserve">
     <value>आवृत्ती:</value>
     </data>
-    <data name="File_Deleting" xml:space="preserve">
+  <data name="File_Deleting" xml:space="preserve">
     <value>हटवणे "{0}"</value>
     </data>
-    <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
+  <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
     <value>अखंडता पडताळणी स्क्रिप्ट.ps1</value>
     </data>
-    <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
+  <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
     <value>अखंडता पडताळणी स्क्रिप्ट सुरक्षित करणे</value>
     </data>
-    <data name="File_List_Saving" xml:space="preserve">
+  <data name="File_List_Saving" xml:space="preserve">
     <value>फाइल्स तयार करणे</value>
     </data>
-    <data name="File_Moving" xml:space="preserve">
+  <data name="File_Moving" xml:space="preserve">
     <value>"{0}" च्या ठिकाणी "{1}" मध्ये हलवित आहे</value>
     </data>
-    <data name="File_Saving" xml:space="preserve">
+  <data name="File_Saving" xml:space="preserve">
     <value>संग्रहित करणे "{0}"</value>
     </data>
-    <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
+  <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>स्पष्ट</value>
     </data>
-    <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
+  <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
     <value>अप्रकट</value>
     </data>
-    <data name="Ftps_Field_Encryption" xml:space="preserve">
+  <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS एन्क्रिप्शन:</value>
     </data>
-    <data name="Icons_Help_Link" xml:space="preserve">
+  <data name="Icons_Help_Link" xml:space="preserve">
     <value>तुमच्या मजकुरात वर्ण आयकॉन जोडा</value>
     </data>
-    <data name="ImportMediaTask_AllFiles" xml:space="preserve">
+  <data name="ImportMediaTask_AllFiles" xml:space="preserve">
     <value>सर्व फाइल्स आयात करा</value>
     </data>
-    <data name="ImportMediaTask_Create" xml:space="preserve">
+  <data name="ImportMediaTask_Create" xml:space="preserve">
     <value>मीडिया आयात कार्य</value>
     </data>
-    <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
+  <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
     <value>"{0}" मीडिया आयात कार्य संपादित करा</value>
     </data>
-    <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
+  <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
     <value>आउटपुट फोल्डर:</value>
     </data>
-    <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
+  <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
     <value>फाइल नाव रुपांतरण:</value>
     </data>
-    <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
+  <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
     <value>उदाहरण:
     कल्पना करा की तुमच्याकडे फाइल {0} (जुन्या {1}).
     या डायरेक्टरी आणि टेम्पलेट स्ट्रिंगसह, फाइल असा संग्रहित केला जाईल:
     {2}</value>
     </data>
-    <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
+  <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
     <value>समर्थित टोकन्स:
     {DATE:Format} - निर्दिष्ट केलेल्या फॉरमॅटमध्ये फाइल बदलण्याची तारीखाची अंशभूत करते.
     सर्व पर्याय पाहण्यासाठी "C# DateTime format" यावर google करा.</value>
     </data>
-    <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
     <value>फाइल नाव रुपांतरण रिक्त आहे.</value>
     </data>
-    <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
     <value>अवैध ट्रान्सफॉर्म फाइल नाम स्ट्रिंग.</value>
     </data>
-    <data name="ImportMediaTask_File" xml:space="preserve">
+  <data name="ImportMediaTask_File" xml:space="preserve">
     <value>आयात "{0}"</value>
     </data>
-    <data name="ImportMediaTask_Help" xml:space="preserve">
+  <data name="ImportMediaTask_Help" xml:space="preserve">
     <value>SD कार्डवरून ऑडिओ, छायाचित्रे, व्हिडिओ आयात करते; फोनवरून फोटो आणि व्हिडिओ WI-FI द्वारे FTP सर्व्हर अनुप्रयोगाच्या माध्यमा द्वारे टेम्पलेट फाइल नावांच्या साह्याने.
     
     फाइल ट्रान्समिशन सेटअप कसा करावा याबद्दलची माहिती पाहण्यासाठी अनुप्रयोगाच्या वेब साइटला भेट द्या.</value>
     </data>
-    <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
+  <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>डेटा स्रोत आयात करा</value>
     </data>
-    <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>आधीच आयात केलेल्या फाइल्स वगळा</value>
     </data>
-    <data name="ImproveIt_Message" xml:space="preserve">
+  <data name="ImproveIt_Message" xml:space="preserve">
     <value>अनपेक्षित त्रुटी आली आहे.
     
     कृपया तुमच्या डेस्कटॉपवरील माहितीसह विकासकांशी संपर्क साधा
@@ -397,7 +397,7 @@
     
     अनुप्रयोग आता बंद होईल.</value>
     </data>
-    <data name="IncrementalBackup_Help" xml:space="preserve">
+  <data name="IncrementalBackup_Help" xml:space="preserve">
     <value>इन्क्रमेंटल बॅकअपचा सर्वात मूलभूत प्रकार म्हणजे अद्ययावत केल्या गेलेल्या फाइल्सना ओळखणे, नोंदवणे आणि जतन करणे.
     
     ज्यामुळे बदल सहसा कमी असतात, इन्क्रमेंटल बॅकअप पूर्ण बॅकअपपेक्षा लहान आणि जलद असतात.
@@ -406,168 +406,168 @@
     
     जर तयार केलेल्या कोणत्याही प्रतिमध्ये अयशस्वी झाल्यास, पहिल्या (पूर्ण) समावेशासहित, पुनर्स्थापन अपूर्ण असेल.</value>
     </data>
-    <data name="IncrementalBackup_Title" xml:space="preserve">
+  <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>इन्क्रमेंटल बॅकअप</value>
     </data>
-    <data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
+  <data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
     <value>इन्क्रिमेंट केलेल्या आवृत्तीस गणना</value>
     </data>
-    <data name="IncrementalBackup_Version_Save" xml:space="preserve">
+  <data name="IncrementalBackup_Version_Save" xml:space="preserve">
     <value>इन्क्रिमेंट केलेल्या आवृत्तीस सुरक्षित करणे</value>
     </data>
-    <data name="IncrementalBackupTask_Create" xml:space="preserve">
+  <data name="IncrementalBackupTask_Create" xml:space="preserve">
     <value>इन्क्रमेंटल बॅकअप कार्य</value>
     </data>
-    <data name="LeftMenu_Encryption" xml:space="preserve">
+  <data name="LeftMenu_Encryption" xml:space="preserve">
     <value>एन्क्रिप्शन</value>
     </data>
-    <data name="LeftMenu_What" xml:space="preserve">
+  <data name="LeftMenu_What" xml:space="preserve">
     <value>काय?</value>
     </data>
-    <data name="LeftMenu_What_Hint" xml:space="preserve">
+  <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>येथे तुम्ही प्रक्रिया करण्यासाठी आवश्यक फोल्डर आणि फाइल्स जोडू शकता.</value>
     </data>
-    <data name="LeftMenu_What_Validation" xml:space="preserve">
+  <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>प्रक्रिया करण्यास काहीही नाही.</value>
     </data>
-    <data name="LeftMenu_When" xml:space="preserve">
+  <data name="LeftMenu_When" xml:space="preserve">
     <value>कधी?</value>
     </data>
-    <data name="LeftMenu_When_Help" xml:space="preserve">
+  <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>येथे तुम्ही एक शिडी सेट करू शकता. शिडी तुम्हाला कार्य प्रारंभ करण्यास स्वायत्त करण्यात मदत करू शकते.</value>
     </data>
-    <data name="LeftMenu_Where" xml:space="preserve">
+  <data name="LeftMenu_Where" xml:space="preserve">
     <value>कुठे?</value>
     </data>
-    <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
+  <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
     <value>एक्सप्लोररमधून येथे फाइल्स आणि फोल्डर्स ड्रॅग आणि ड्रॉप करा.</value>
     </data>
-    <data name="LeftMenu_Where_Hint" xml:space="preserve">
+  <data name="LeftMenu_Where_Hint" xml:space="preserve">
     <value>या ठिकाणी तुम्ही तुमच्या फाइल्स कॉपी करायच्या ठिकाणांची भर घालू शकता.</value>
     </data>
-    <data name="Local_State_Get" xml:space="preserve">
+  <data name="Local_State_Get" xml:space="preserve">
     <value>स्थानिक स्थिती मिळवा</value>
     </data>
-    <data name="Local_State_Saving" xml:space="preserve">
+  <data name="Local_State_Saving" xml:space="preserve">
     <value>स्थानिक स्थिती लिहित आहे</value>
     </data>
-    <data name="LogFile_Marker_Errors" xml:space="preserve">
+  <data name="LogFile_Marker_Errors" xml:space="preserve">
     <value>त्रुटी</value>
     </data>
-    <data name="LogFile_Marker_Successful" xml:space="preserve">
+  <data name="LogFile_Marker_Successful" xml:space="preserve">
     <value>यशस्वी</value>
     </data>
-    <data name="LogFile_OpenLogs" xml:space="preserve">
+  <data name="LogFile_OpenLogs" xml:space="preserve">
     <value>लॉग</value>
     </data>
-    <data name="Messages_Header_Error" xml:space="preserve">
+  <data name="Messages_Header_Error" xml:space="preserve">
     <value>त्रुटी</value>
     </data>
-    <data name="Messages_Header_Information" xml:space="preserve">
+  <data name="Messages_Header_Information" xml:space="preserve">
     <value>माहिती</value>
     </data>
-    <data name="Messages_Header_Question" xml:space="preserve">
+  <data name="Messages_Header_Question" xml:space="preserve">
     <value>प्रश्न</value>
     </data>
-    <data name="Name_Field" xml:space="preserve">
+  <data name="Name_Field" xml:space="preserve">
     <value>नाव:</value>
     </data>
-    <data name="Name_Field_Validation" xml:space="preserve">
+  <data name="Name_Field_Validation" xml:space="preserve">
     <value>नाव रिक्त आहे किंवा समर्थित पथ वर्ण नाही.</value>
     </data>
-    <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
     <value>नाव '{0}' लांबी मर्यादेपेक्षा {1} अक्षरे वाढवित आहे.</value>
     </data>
-    <data name="Name_Title" xml:space="preserve">
+  <data name="Name_Title" xml:space="preserve">
     <value>नाव</value>
     </data>
-    <data name="Password_Field" xml:space="preserve">
+  <data name="Password_Field" xml:space="preserve">
     <value>पारणांक:</value>
     </data>
-    <data name="Password_Field_Confirm" xml:space="preserve">
+  <data name="Password_Field_Confirm" xml:space="preserve">
     <value>पारणांकाची पुष्टी करा:</value>
     </data>
-    <data name="Password_Field_Length" xml:space="preserve">
+  <data name="Password_Field_Length" xml:space="preserve">
     <value>लांबी:</value>
     </data>
-    <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
+  <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
     <value>पारणांकांची जुळणी होत नाही.</value>
     </data>
-    <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
+  <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
     <value>पारणांक निर्दिष्ट केलेला नाही.</value>
     </data>
-    <data name="Password_Generate" xml:space="preserve">
+  <data name="Password_Generate" xml:space="preserve">
     <value>पारणांक तयार करा...</value>
     </data>
-    <data name="Password_Generator_Header" xml:space="preserve">
+  <data name="Password_Generator_Header" xml:space="preserve">
     <value>पारणांक जनरेटर</value>
     </data>
-    <data name="Password_Help" xml:space="preserve">
+  <data name="Password_Help" xml:space="preserve">
     <value>सिफारिश केलेली किमान पारणांक लांबी 50 वर्णे आणि त्यापेक्षा जास्त आहे.</value>
     </data>
-    <data name="Password_Use" xml:space="preserve">
+  <data name="Password_Use" xml:space="preserve">
     <value>वापर करा</value>
     </data>
-    <data name="RepositorySubfolder_Field" xml:space="preserve">
+  <data name="RepositorySubfolder_Field" xml:space="preserve">
     <value>संग्रह उपफोल्डर (ऐच्छिक):</value>
     </data>
-    <data name="RepositorySubfolder_Help" xml:space="preserve">
+  <data name="RepositorySubfolder_Help" xml:space="preserve">
     <value>जर तुम्हाला तुमच्या उपकरणावर संग्रहातील सर्व सामग्री ठेवायची नसेल तर तुम्ही संग्रहाच्या विशिष्ट उपफोल्डरवर फोल्डर समन्वयित करू शकता.</value>
     </data>
-    <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
+  <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
     <value>डायरेक्टरीमध्ये फाइल "{0}" शोधता येत नाही.
     
     या फाइलच्या समावेश असलेल्या डायरेक्टरीस सूचित करा.</value>
     </data>
-    <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
+  <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
     <value>स्थिती वाचन करता येत नाही.</value>
     </data>
-    <data name="Server_Field_Address" xml:space="preserve">
+  <data name="Server_Field_Address" xml:space="preserve">
     <value>सर्व्हर नाव:</value>
     </data>
-    <data name="Server_Field_Address_Validation" xml:space="preserve">
+  <data name="Server_Field_Address_Validation" xml:space="preserve">
     <value>सर्व्हर नाव निर्दिष्ट केलेले नाही.</value>
     </data>
-    <data name="Server_Field_Port" xml:space="preserve">
+  <data name="Server_Field_Port" xml:space="preserve">
     <value>पोर्ट:</value>
     </data>
-    <data name="Server_Field_Port_Validation" xml:space="preserve">
+  <data name="Server_Field_Port_Validation" xml:space="preserve">
     <value>पोर्ट अवैध आहे.</value>
     </data>
-    <data name="SourceItem_AddFiles" xml:space="preserve">
+  <data name="SourceItem_AddFiles" xml:space="preserve">
     <value>फाइल्स जोडा...</value>
     </data>
-    <data name="SourceItem_AddFolders" xml:space="preserve">
+  <data name="SourceItem_AddFolders" xml:space="preserve">
     <value>फोल्डर्स जोडा...</value>
     </data>
-    <data name="SourceItem_OpenInExplorer" xml:space="preserve">
+  <data name="SourceItem_OpenInExplorer" xml:space="preserve">
     <value>एक्सप्लोररमध्ये उघडा...</value>
     </data>
-    <data name="SourceItem_State_Get" xml:space="preserve">
+  <data name="SourceItem_State_Get" xml:space="preserve">
     <value>स्रोत आयटम "{0}" ची स्थिती मिळवा</value>
     </data>
-    <data name="SourceItem_Validation_Empty" xml:space="preserve">
+  <data name="SourceItem_Validation_Empty" xml:space="preserve">
     <value>प्रक्रिया करण्यास काहीही नाही.</value>
     </data>
-    <data name="SourceItem_Validation_NotExists" xml:space="preserve">
+  <data name="SourceItem_Validation_NotExists" xml:space="preserve">
     <value>"{0}" अस्तित्वात नाही.</value>
     </data>
-    <data name="State_File_Get" xml:space="preserve">
+  <data name="State_File_Get" xml:space="preserve">
     <value>फाइल "{0}" ची स्थिती मिळवा</value>
     </data>
-    <data name="State_LoadFromEverywhere" xml:space="preserve">
+  <data name="State_LoadFromEverywhere" xml:space="preserve">
     <value>स्रोत आयटम आणि संग्रहांची स्थिती मिळवा</value>
     </data>
-    <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
+  <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
     <value>फाईल वगळण्याचे पॅटर्न जोडा</value>
     </data>
-    <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
+  <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
     <value>फाईल वगळण्याचे पॅटर्न संपादित करा</value>
     </data>
-    <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
+  <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
     <value>फाइल ग्लोबिंग अ म .नेट: पॅटर्न</value>
     </data>
-    <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
+  <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
     <value>येथे तुम्ही फाइल ग्लोबिंग वगळण्याचे पॅटर्न निर्दिष्ट करू शकता.
     हे एक फाइल नाव, किंवा फोल्डर नाव किंवा वाईल्डकार्ड असू शकते.
     उदाहरण:
@@ -577,127 +577,127 @@
     bin.
     अधिक तपशीलवार वर्णनासाठी खालील दुव्यावर पहा.</value>
     </data>
-    <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
+  <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
     <value>वगळण्याच्या पॅटर्नद्वारे फाइल्सच्या प्रक्रियेस वगळते.</value>
     </data>
-    <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
+  <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
     <value>फाइल वगळण्याचे पॅटर्न:</value>
     </data>
-    <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
+  <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
     <value>फाइल वगळण्याचे पॅटर्न रिक्त आहे.</value>
     </data>
-    <data name="StorageItem_Remote_Marker" xml:space="preserve">
+  <data name="StorageItem_Remote_Marker" xml:space="preserve">
     <value>दूरस्थ</value>
     </data>
-    <data name="SynchronizationMode_Field" xml:space="preserve">
+  <data name="SynchronizationMode_Field" xml:space="preserve">
     <value>समानांतर मोड:</value>
     </data>
-    <data name="SynchronizationMode_Field_Read" xml:space="preserve">
+  <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>वाचन</value>
     </data>
-    <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
+  <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>दोन मार्ग</value>
     </data>
-    <data name="SynchronizationTask_Create" xml:space="preserve">
+  <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>समानांतर</value>
     </data>
-    <data name="SynchronizationTask_Help" xml:space="preserve">
+  <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>संपूर्ण संचयाचे संदेशाच्या वापरातून फाईल्सचे दोन मार्ग समानांतर.</value>
     </data>
-    <data name="Task_Create" xml:space="preserve">
+  <data name="Task_Create" xml:space="preserve">
     <value>नवीन</value>
     </data>
-    <data name="Task_Create_Hint" xml:space="preserve">
+  <data name="Task_Create_Hint" xml:space="preserve">
     <value>नवीन कार्य तयार करते.</value>
     </data>
-    <data name="Task_Delete" xml:space="preserve">
+  <data name="Task_Delete" xml:space="preserve">
     <value>हटवा</value>
     </data>
-    <data name="Task_Delete_Confirm" xml:space="preserve">
+  <data name="Task_Delete_Confirm" xml:space="preserve">
     <value>तुम्हाला खरोखरच "{0}" हटवायचे आहे का?</value>
     </data>
-    <data name="Task_Delete_Hint" xml:space="preserve">
+  <data name="Task_Delete_Hint" xml:space="preserve">
     <value>निवडलेले कार्य हटवितो.</value>
     </data>
-    <data name="Task_Edit" xml:space="preserve">
+  <data name="Task_Edit" xml:space="preserve">
     <value>संपादित करा</value>
     </data>
-    <data name="Task_Edit_Hint" xml:space="preserve">
+  <data name="Task_Edit_Hint" xml:space="preserve">
     <value>निवडलेल्या कार्याचे संपादन करते.</value>
     </data>
-    <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
+  <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
     <value>तुम्ही CLI मध्ये या प्रकारच्या कार्याचे संपादन करू शकत नाही.</value>
     </data>
-    <data name="Task_Field_Choose" xml:space="preserve">
+  <data name="Task_Field_Choose" xml:space="preserve">
     <value>कार्याची निवड करा:</value>
     </data>
-    <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
+  <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
     <value>नवीन कार्य</value>
     </data>
-    <data name="Task_LastExecution_State" xml:space="preserve">
+  <data name="Task_LastExecution_State" xml:space="preserve">
     <value>स्थिती</value>
     </data>
-    <data name="Task_Launch" xml:space="preserve">
+  <data name="Task_Launch" xml:space="preserve">
     <value>लॉन्च करा</value>
     </data>
-    <data name="Task_Launch_Hint" xml:space="preserve">
+  <data name="Task_Launch_Hint" xml:space="preserve">
     <value>निवडलेले कार्य सुरू करते.</value>
     </data>
-    <data name="Task_List" xml:space="preserve">
+  <data name="Task_List" xml:space="preserve">
     <value>कार्य</value>
     </data>
-    <data name="Task_Restore" xml:space="preserve">
+  <data name="Task_Restore" xml:space="preserve">
     <value>पुनर्स्थापित करा</value>
     </data>
-    <data name="Task_Status_FailedSeeLog" xml:space="preserve">
+  <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>अयशस्वी (उघडलेल्या लॉगला पहा)</value>
     </data>
-    <data name="Task_Status_InProgress" xml:space="preserve">
+  <data name="Task_Status_InProgress" xml:space="preserve">
     <value>कार्य चालू आहे...</value>
     </data>
-    <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
+  <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
     <value>अर्धवट पूर्ण झाले. संग्रहण किमान काही फाइल हेच वगळले गेले होते. उर्वरित {0} फाइल्स {1} GB सह.</value>
     </data>
-    <data name="Task_Status_Succesfull" xml:space="preserve">
+  <data name="Task_Status_Succesfull" xml:space="preserve">
     <value>यशस्वी</value>
     </data>
-    <data name="Task_Status_Unknown" xml:space="preserve">
+  <data name="Task_Status_Unknown" xml:space="preserve">
     <value>अज्ञात</value>
     </data>
-    <data name="Task_Validation_NotFound" xml:space="preserve">
+  <data name="Task_Validation_NotFound" xml:space="preserve">
     <value>कार्य '{0}' सापडले नाही.</value>
     </data>
-    <data name="Task_Validation_NotSupported" xml:space="preserve">
+  <data name="Task_Validation_NotSupported" xml:space="preserve">
     <value>हा कार्य प्रकार समर्थित नाही.</value>
     </data>
-    <data name="Theme_Title" xml:space="preserve">
+  <data name="Theme_Title" xml:space="preserve">
     <value>थीम</value>
     </data>
-    <data name="Theme_Value_Dark" xml:space="preserve">
+  <data name="Theme_Value_Dark" xml:space="preserve">
     <value>गडद</value>
     </data>
-    <data name="Theme_Value_Light" xml:space="preserve">
+  <data name="Theme_Value_Light" xml:space="preserve">
     <value>उजळ</value>
     </data>
-    <data name="Time_Field_Elapsed" xml:space="preserve">
+  <data name="Time_Field_Elapsed" xml:space="preserve">
     <value>गेल्या कालावधी:</value>
     </data>
-    <data name="Time_Field_Hour" xml:space="preserve">
+  <data name="Time_Field_Hour" xml:space="preserve">
     <value>तास:</value>
     </data>
-    <data name="Time_Field_Minute" xml:space="preserve">
+  <data name="Time_Field_Minute" xml:space="preserve">
     <value>मिनिट:</value>
     </data>
-    <data name="Url_Field" xml:space="preserve">
+  <data name="Url_Field" xml:space="preserve">
     <value>यूआरएल:</value>
     </data>
-    <data name="Url_Field_Validation" xml:space="preserve">
+  <data name="Url_Field_Validation" xml:space="preserve">
     <value>यूआरएल निर्दिष्ट केलेला नाही.</value>
     </data>
-    <data name="User_Field" xml:space="preserve">
+  <data name="User_Field" xml:space="preserve">
     <value>वापरकर्ता:</value>
     </data>
-    <data name="User_Field_Validation" xml:space="preserve">
+  <data name="User_Field_Validation" xml:space="preserve">
     <value>वापरकर्ता निर्दिष्ट केलेला नाही.</value>
     </data>
 </root>

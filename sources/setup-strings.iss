@@ -1,6 +1,6 @@
 ﻿[Languages]
 Name: arabic; MessagesFile: "compiler:Languages\Arabic.isl"
-Name: bengali; MessagesFile: "compiler:Languages\Bengali.isl"
+Name: bengali; MessagesFile: "compiler:Languages\Bengali.islu"
 Name: chinese; MessagesFile: "compiler:Languages\ChineseSimplified.isl"
 Name: english; MessagesFile: "compiler:Default.isl"
 Name: german; MessagesFile: "compiler:Languages\German.isl"
