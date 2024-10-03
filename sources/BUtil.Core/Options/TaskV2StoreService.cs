@@ -31,6 +31,8 @@ public class TaskV2StoreService
 
     public TaskV2? Load(string name)
     {
+        AutoUpgrade();
+
         return Load(name, out var _, out var _);
     }
 
@@ -184,12 +186,30 @@ public class TaskV2StoreService
 
     public IEnumerable<string> GetNames()
     {
+        AutoUpgrade();
+
         return [.. Directory
             .GetFiles(_folder, _genericFilter)
             .Select(x => Path.GetFileName(x) ?? throw new InvalidDataException(x))
             .Select(x => x.Replace(_extensionV2, string.Empty))
             .Select(x => x.Replace(_extensionV1, string.Empty))
             .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
+    }
+
+    private void AutoUpgrade()
+    {
+        var obsoletedTasks = Directory
+            .GetFiles(_folder, _genericFilter)
+            .Select(x => Path.GetFileName(x) ?? throw new InvalidDataException(x))
+            .Where(x => !x.EndsWith(_extensionV2))
+            .Select(x => x.Replace(_extensionV1, string.Empty));
+
+        foreach (var name in obsoletedTasks)
+        {
+            var task = Load(name);
+            if (task != null)
+                Save(task);
+        }
     }
 
     private Dictionary<int, string> GetFileNames(string name)

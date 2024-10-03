@@ -1,3 +1,11 @@
+# 2024.10.03
+(unpublished)
+
+## New Features
+
+- Old task format tasks are automigrated during load to the latest format.
+After half a year old format version support will be dropped. Automigrate of old all tasks happens on load of UI apploication and on executing any task.
+
 # 2024.09.29
 
 ## New Features
