@@ -49,7 +49,7 @@ internal class WriteSourceFilesToStorageTask(
                     string storageRelativeFileName = GetStorageRelativeFileName(versionState);
 
                     x.StorageRelativeFileName = storageRelativeFileName;
-                    x.StorageMethod = StorageMethodNames.SevenZipEncrypted;
+                    x.StorageMethod = StorageMethodNames.Aes256Encrypted;
                     return x;
                 })
                 .GroupBy(x => x.FileState.ToDeduplicationString())

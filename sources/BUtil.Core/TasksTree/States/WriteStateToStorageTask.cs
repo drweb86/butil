@@ -39,3 +39,23 @@ internal class WriteStateToStorageTask(
             throw new InvalidOperationException("Failed to upload state storage file.");
     }
 }
+
+
+internal class WriteStateToStorageDirectTask(
+    StorageSpecificServicesIoc services,
+    TaskEvents events,
+    IncrementalBackupState incrementalBackupState,
+    IncrementalBackupModelOptionsV2 incrementalBackupModelOptions) : BuTaskV2(services.CommonServices.Log, events, Localization.Resources.DataStorage_State_Saving)
+{
+    private readonly IncrementalBackupModelOptionsV2 _incrementalBackupModelOptions = incrementalBackupModelOptions;
+    private readonly StorageSpecificServicesIoc _services = services;
+    private readonly IncrementalBackupState _incrementalBackupState = incrementalBackupState;
+
+    public StorageFile? StateStorageFile { get; private set; }
+
+    protected override void ExecuteInternal()
+    {
+        StateStorageFile = _services.IncrementalBackupStateService.Write(_incrementalBackupModelOptions.Password, _incrementalBackupState) ?? 
+            throw new InvalidOperationException("Failed to upload state storage file.");
+    }
+}

@@ -1,7 +1,6 @@
 ﻿
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
-using BUtil.Core.Logs;
 using BUtil.Core.Services;
 using BUtil.Core.TasksTree.Core;
 using System.Collections.Generic;
@@ -14,7 +13,7 @@ internal class GetStateOfSourceItemsAndStoragesTask : ParallelBuTask
 {
     public IEnumerable<GetStateOfSourceItemTask> GetSourceItemStateTasks { get; }
     public RemoteStateLoadTask RemoteStateLoadTask { get; }
-    public DeleteUnversionedFilesStorageTask DeleteUnversionedFilesStorageTask { get; }
+    public DataStorageMaintananceTask DeleteUnversionedFilesStorageTask { get; }
 
     public GetStateOfSourceItemsAndStoragesTask(
         TaskEvents events,
@@ -40,7 +39,7 @@ internal class GetStateOfSourceItemsAndStoragesTask : ParallelBuTask
         RemoteStateLoadTask = getStorageStateTask;
         childTasks.Add(getStorageStateTask);
 
-        var deleteUnversionedFilesStorageTask = new DeleteUnversionedFilesStorageTask(servicesIoc, Events, getStorageStateTask);
+        var deleteUnversionedFilesStorageTask = new DataStorageMaintananceTask(servicesIoc, Events, getStorageStateTask);
         DeleteUnversionedFilesStorageTask = deleteUnversionedFilesStorageTask;
         childTasks.Add(deleteUnversionedFilesStorageTask);
 

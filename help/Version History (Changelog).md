@@ -5,6 +5,11 @@
 
 - Old task format tasks are automigrated during load to the latest format.
 After half a year old format version support will be dropped. Automigrate of old all tasks happens on load of UI apploication and on executing any task.
+- Old storage format will be upgraded to the latest. Format upgrade is removal of 7-zip files.
+During upgrade Storage Quota setting will be disregarded.
+Upgrade is done by chunks by 50 files. It might take some time.
+During uppgrade you can stop it at any moment but except during state upload (which might damage the backup index).
+Old storage format will be dropped after half a year. You will need to use previous app version to open it.
 
 # 2024.09.29
 

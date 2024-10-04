@@ -7,6 +7,7 @@ using BUtil.Core.TasksTree.Core;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.IO;
 using System.Linq;
 
 namespace BUtil.Core.TasksTree;
@@ -27,13 +28,15 @@ internal class WriteSourceFileToStorageTask : BuTaskV2
         TaskEvents events,
         List<StorageFile> storageFiles,
         Quota singleBackupQuotaGb,
-        SourceItemV2 sourceItem,
+        SourceItemV2? sourceItem,
         List<VersionState> versionStates,
         string actualFile,
         bool ignoreLastVersion) :
         base(services.CommonServices.Log, events, string.Format(Localization.Resources.File_Saving,
-            string.Join(", ", storageFiles
-                .Select(x => SourceItemHelper.GetFriendlyFileName(sourceItem, x.FileState.FileName)))))
+            sourceItem != null 
+                ? string.Join(", ", storageFiles.Select(x => SourceItemHelper.GetFriendlyFileName(sourceItem, x.FileState.FileName)))
+                : Path.GetFileName(actualFile)
+            ))
     {
         _services = services;
         StorageFiles = storageFiles;
