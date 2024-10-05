@@ -41,6 +41,15 @@ class SynchronizationRootTask : SequentialBuTask
     {
         UpdateStatus(ProcessingStatus.InProgress);
 
+        if (!string.IsNullOrWhiteSpace(this._model.TaskOptions.RepositorySubfolder))
+        {
+            LogError("RepositorySubfolder setting is dropped from sync task! Edit task and save it taking into consideration setting removal.");
+            this._synchronizationServices.CommonServices.LastMinuteMessageService.AddLastMinuteLogMessage("RepositorySubfolder setting is dropped from sync task! Edit task and save it taking into consideration its removal!");
+            UpdateStatus(ProcessingStatus.FinishedWithErrors);
+            IsSuccess = false;
+            return;
+        }
+
         base.Execute();
 
         if (IsSuccess)

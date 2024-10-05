@@ -5,6 +5,7 @@ using BUtil.Core.State;
 using BUtil.Core.Synchronization;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
+using BUtil.Core.TasksTree.States;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,7 +45,7 @@ internal class SynchronizationAllStatesReadTask : SequentialBuTask
 
         if (model.TaskOptions.SynchronizationMode == ConfigurationFileModels.V2.SynchronizationTaskModelMode.TwoWay)
         {
-            var deleteUnversionedFilesStorageTask = new DataStorageMaintananceTask(synchronizationServices.StorageSpecificServices, Events, _remoteStateLoadTask);
+            var deleteUnversionedFilesStorageTask = new DataStorageMaintananceTask(synchronizationServices.StorageSpecificServices, Events, _remoteStateLoadTask, new ConfigurationFileModels.V2.IncrementalBackupModelOptionsV2 { Password = model.TaskOptions.Password });
             tasks.Add(deleteUnversionedFilesStorageTask);
         }
 

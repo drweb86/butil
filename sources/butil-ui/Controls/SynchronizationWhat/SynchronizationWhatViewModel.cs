@@ -8,11 +8,9 @@ public class SynchronizationWhatViewModel : ObservableObject
 {
     public SynchronizationWhatViewModel(
         string folder,
-        string? repositorySubfolder,
         SynchronizationTaskModelMode synchronizationMode)
     {
         Folder = folder;
-        RepositorySubfolder = repositorySubfolder;
         SynchronizationMode = synchronizationMode;
     }
 
@@ -21,32 +19,9 @@ public class SynchronizationWhatViewModel : ObservableObject
     public static string Field_Folder => Resources.Field_Folder;
     public static string Field_Folder_Browse => Resources.Field_Folder_Browse;
 
-    public static string RepositorySubfolder_Field => Resources.RepositorySubfolder_Field;
-    public static string RepositorySubfolder_Help => Resources.RepositorySubfolder_Help;
     public static string SynchronizationMode_Field => Resources.SynchronizationMode_Field;
     public static string SynchronizationMode_Field_TwoWay => Resources.SynchronizationMode_Field_TwoWay;
     public static string SynchronizationMode_Field_Read => Resources.SynchronizationMode_Field_Read;
-
-    #endregion
-
-    #region Subfolder
-
-    private string? _repositorySubfolder;
-
-    public string? RepositorySubfolder
-    {
-        get
-        {
-            return _repositorySubfolder;
-        }
-        set
-        {
-            if (value == _repositorySubfolder)
-                return;
-            _repositorySubfolder = value;
-            OnPropertyChanged(nameof(RepositorySubfolder));
-        }
-    }
 
     #endregion
 

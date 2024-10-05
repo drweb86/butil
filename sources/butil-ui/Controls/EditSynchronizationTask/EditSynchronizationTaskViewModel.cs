@@ -30,7 +30,7 @@ public class EditSynchronizationTaskViewModel : ViewModelBase
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
         WhenTaskViewModel = new WhenTaskViewModel(isNew ? new ScheduleInfo() { Time = new System.TimeSpan(Constants.DefaultHours, Constants.DefaultMinutes, 0), Days = [System.DayOfWeek.Monday, System.DayOfWeek.Tuesday, System.DayOfWeek.Wednesday, System.DayOfWeek.Thursday, System.DayOfWeek.Friday, System.DayOfWeek.Saturday, System.DayOfWeek.Sunday] } : schedule?.GetSchedule(taskName) ?? new ScheduleInfo());
         WhereTaskViewModel = new WhereTaskViewModel(model.To, Resources.LeftMenu_Where, "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png");
-        What = new SynchronizationWhatViewModel(model.LocalFolder, model.RepositorySubfolder, model.SynchronizationMode);
+        What = new SynchronizationWhatViewModel(model.LocalFolder, model.SynchronizationMode);
     }
 
     public bool IsNew { get; set; }
@@ -59,7 +59,6 @@ public class EditSynchronizationTaskViewModel : ViewModelBase
                 Password = EncryptionTaskViewModel.Password,
                 To = WhereTaskViewModel.GetStorageSettings(),
                 LocalFolder = What.Folder,
-                RepositorySubfolder = string.IsNullOrWhiteSpace(What.RepositorySubfolder) ? null : What.RepositorySubfolder,
                 SynchronizationMode = What.SynchronizationMode
             }
         };

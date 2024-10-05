@@ -1184,24 +1184,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Repository subfolder (optional):.
-        /// </summary>
-        public static string RepositorySubfolder_Field {
-            get {
-                return ResourceManager.GetString("RepositorySubfolder_Field", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to You can synchronize folder to particular subfolder of repository, if you don&apos;t want to have all content of repository on device..
-        /// </summary>
-        public static string RepositorySubfolder_Help {
-            get {
-                return ResourceManager.GetString("RepositorySubfolder_Help", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Cannot locate files &quot;{0}&quot; in directory. 
         ///
         ///Point to a directory containing this file..

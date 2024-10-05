@@ -449,12 +449,6 @@ Should any one of the copies created fail, including the first (full), restorati
   <data name="Password_Use" xml:space="preserve">
     <value>Use</value>
   </data>
-  <data name="RepositorySubfolder_Field" xml:space="preserve">
-    <value>Repository subfolder (optional):</value>
-  </data>
-  <data name="RepositorySubfolder_Help" xml:space="preserve">
-    <value>You can synchronize folder to particular subfolder of repository, if you don't want to have all content of repository on device.</value>
-  </data>
   <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
     <value>Cannot locate files "{0}" in directory. 
 

@@ -12,7 +12,7 @@ public partial class SynchronizationWhatView : UserControl
     public SynchronizationWhatView()
     {
         InitializeComponent();
-        this.DataContext = new SynchronizationWhatViewModel("the folder", null, BUtil.Core.ConfigurationFileModels.V2.SynchronizationTaskModelMode.TwoWay);
+        this.DataContext = new SynchronizationWhatViewModel("the folder", BUtil.Core.ConfigurationFileModels.V2.SynchronizationTaskModelMode.TwoWay);
     }
 
     public void BrowseCommand(object? sender, RoutedEventArgs args)

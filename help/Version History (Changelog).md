@@ -5,12 +5,17 @@
 
 - Old task format tasks are automigrated during load to the latest format.
 After half a year old format version support will be dropped. Automigrate of old all tasks happens on load of UI apploication and on executing any task.
-- Old storage format will be upgraded to the latest. Format upgrade is removal of 7-zip files.
+- Old storage format will be upgraded to the latest. Format upgrade is repacking of 7-zip files in the storage.
 During upgrade Storage Quota setting will be disregarded.
 Upgrade is done by chunks by 50 files. It might take some time.
 During uppgrade you can stop it at any moment but except during state upload (which might damage the backup index).
+Upgrade is started on any task execution.
 Old storage format will be dropped after half a year. You will need to use previous app version to open it.
-
+If you have huge backup on slow remote NAS, consider recreating backup from scratch.
+- Synchronization mode subdirectory parameter is removed.
+It is removed because in secure scenarios you need to create a separate account and separate storage for such tasks.
+If you were using this parameter - edit and save sync task given that this param will be empty.
+ 
 # 2024.09.29
 
 ## New Features

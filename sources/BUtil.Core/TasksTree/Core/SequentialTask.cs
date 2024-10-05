@@ -58,7 +58,6 @@ public class SequentialBuTaskV2 : BuTaskV2
     }
 }
 
-[Obsolete("SequentialBuTaskV2")]
 public class SequentialBuTask : BuTask
 {
     public IEnumerable<BuTask> Children { get; set; } = [];
