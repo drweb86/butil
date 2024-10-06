@@ -18,7 +18,11 @@ If you have huge backup on slow remote NAS, consider recreating backup from scra
 - Synchronization mode subdirectory parameter is removed.
 It is removed because in secure scenarios you need to create a separate account and separate storage for such tasks.
 If you were using this parameter - edit and save sync task given that this param will be empty.
- 
+
+## Bug Fixes
+
+- SHA 512 hashes were not calculated.
+
 # 2024.09.29
 
 ## New Features

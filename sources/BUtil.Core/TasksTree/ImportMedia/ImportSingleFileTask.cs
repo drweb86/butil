@@ -56,7 +56,7 @@ class ImportSingleFileTask : BuTaskV2
         System.IO.File.SetLastWriteTime(exchangeFile, lastWriteTime);
 
         var fileInfo = new FileInfo(exchangeFile);
-        var state = new FileState(exchangeFile, fileInfo.LastWriteTimeUtc, fileInfo.Length, this._commonServicesIoc.HashService.GetSha512(exchangeFile, true));
+        var state = new FileState(exchangeFile, fileInfo.LastWriteTimeUtc, fileInfo.Length, this._commonServicesIoc.CachedHashService.GetSha512(exchangeFile, true));
 
         if (_state.FileStates.Any(x => x.CompareTo(state, true)))
         {

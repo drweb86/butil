@@ -1,36 +1,35 @@
 ﻿
+using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
 using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.Json;
 
 namespace BUtil.Core.Hashing;
 
-internal class CachedHashService(ICashedHashStoreService cashedHashStoreService) : IHashService, IDisposable
+internal class CachedHashService() : ICachedHashService, IDisposable
 {
-    private readonly ICashedHashStoreService _cashedHashStoreService = cashedHashStoreService;
-    private readonly object _sync = new();
     private readonly ConcurrentBag<CachedHash> _cachedHashes = [];
-    private bool _isCachedHashesLoaded = false;
-    private const int _daysExpiration = 365;
+    private bool _isLoaded = false;
 
-    public string GetSha512(string file, bool trySpeedupNextTime)
+    public string GetSha512(string file, bool putIntoCache)
     {
-        if (!trySpeedupNextTime)
+        if (!putIntoCache)
         {
             return GetSha512Internal(file);
         }
 
-        EnsureCacheIsLoaded();
+        EnsureLoaded();
 
-        var cachedEntity = GetCreateOrUpdateCachedHash(file);
-        return cachedEntity.Sha512;
+        return GetCreateOrUpdateCachedHash(file);
     }
 
-    private CachedHash GetCreateOrUpdateCachedHash(string file)
+    private string GetCreateOrUpdateCachedHash(string file)
     {
         var fileInfo = new FileInfo(file);
         var cachedEntity = _cachedHashes.SingleOrDefault(x => x.File == fileInfo.FullName);
@@ -50,7 +49,8 @@ internal class CachedHashService(ICashedHashStoreService cashedHashStoreService)
                 cachedEntity.Sha512 = string.Empty;
             }
         }
-        cachedEntity.Expiration = DateTime.UtcNow.AddDays(_daysExpiration);
+        const int daysExpiration = 365;
+        cachedEntity.Expiration = DateTime.UtcNow.AddDays(daysExpiration);
         cachedEntity.Size = fileInfo.Length;
         cachedEntity.LastWriteTimeUtc = fileInfo.LastWriteTimeUtc;
         if (string.IsNullOrWhiteSpace(cachedEntity.Sha512))
@@ -58,19 +58,20 @@ internal class CachedHashService(ICashedHashStoreService cashedHashStoreService)
             cachedEntity.Sha512 = GetSha512Internal(file);
         }
 
-        return cachedEntity;
+        return cachedEntity.Sha512;
     }
 
-    private void EnsureCacheIsLoaded()
+    private void EnsureLoaded()
     {
-        lock (_sync)
+        if (_isLoaded)
+            return;
+
+        lock (this)
         {
-            if (!_isCachedHashesLoaded)
+            if (!_isLoaded)
             {
-                var cachedHashes = _cashedHashStoreService.Load() ?? [];
-                foreach (var cachedHash in cachedHashes)
-                    _cachedHashes.Add(cachedHash);
-                _isCachedHashesLoaded = true;
+                Load();
+                _isLoaded = true;
             }
         }
     }
@@ -98,11 +99,40 @@ internal class CachedHashService(ICashedHashStoreService cashedHashStoreService)
 
     public void Dispose()
     {
-        if (_cachedHashes != null)
-        {
-            var items = new CachedHash[_cachedHashes.Count];
-            _cachedHashes.CopyTo(items, 0);
-            _cashedHashStoreService.Save(_cachedHashes);
-        }
+        Save();
+    }
+
+    private void Load()
+    {
+        var file = GetFile();
+        if (!File.Exists(file))
+            return;
+
+        using var stream = File.OpenRead(file);
+        var items = JsonSerializer.Deserialize<List<CachedHash>>(stream) ?? new List<CachedHash>();
+        items.ForEach(_cachedHashes.Add);
+    }
+
+    private void Save()
+    {
+        if (_cachedHashes == null)
+            return;
+
+        var fileName = GetFile();
+        var utcNow = DateTime.UtcNow;
+
+        var storeItems = _cachedHashes
+            .ToList()
+            .Where(x => x.Expiration > utcNow)
+            .ToList();
+
+        using var stream = File.OpenWrite(fileName);
+        using var writer = new Utf8JsonWriter(stream,new JsonWriterOptions { Indented = true } );
+        JsonSerializer.Serialize(writer, storeItems);
+    }
+
+    private static string GetFile()
+    {
+        return Path.Combine(Directories.StateFolder, $"sha512-cache.json");
     }
 }

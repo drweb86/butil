@@ -3,9 +3,9 @@
 using BUtil.Core.Hashing;
 using System.IO;
 
-class SynchronizationActualFilesService(IHashService hashService, string folder)
+class SynchronizationActualFilesService(ICachedHashService hashService, string folder)
 {
-    private readonly IHashService _hashService = hashService;
+    private readonly ICachedHashService _hashService = hashService;
     private readonly string _folder = folder;
 
     public SynchronizationStateFile CalculateItem(string file)

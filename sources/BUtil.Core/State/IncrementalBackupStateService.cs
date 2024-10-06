@@ -10,11 +10,11 @@ using System.Text.Json;
 
 namespace BUtil.Core.State;
 
-public class IncrementalBackupStateService(StorageSpecificServicesIoc services, IHashService hashService)
+public class IncrementalBackupStateService(StorageSpecificServicesIoc services, ICachedHashService hashService)
 {
     private readonly ILog _log = services.CommonServices.Log;
     private readonly StorageSpecificServicesIoc _services = services;
-    private readonly IHashService _hashService = hashService;
+    private readonly ICachedHashService _hashService = hashService;
     private static readonly JsonSerializerOptions _jsonSerializerOptions = new() { WriteIndented = true };
 
     public bool TryRead(string password, [NotNullWhen(true)] out IncrementalBackupState? state)

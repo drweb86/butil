@@ -2,7 +2,7 @@
 
 namespace BUtil.Core.Hashing;
 
-public interface IHashService : IDisposable
+public interface ICachedHashService : IDisposable
 {
     string GetSha512(string file, bool trySpeedupNextTime);
 }

@@ -19,7 +19,7 @@ internal class SynchronizationServices : IDisposable
         LocalStateService = new SynchronizationLocalStateService(taskName, localFolder, repositorySubfolder);
         DecisionService = new SynchronizationDecisionService(repositorySubfolder);
         CommonServices = new CommonServicesIoc(log, onGetLastMinuteMessage);
-        ActualFilesService = new SynchronizationActualFilesService(CommonServices.HashService, localFolder);
+        ActualFilesService = new SynchronizationActualFilesService(CommonServices.CachedHashService, localFolder);
         StorageSpecificServices = new StorageSpecificServicesIoc(CommonServices, remoteStorageSettings, autodetectConnectionSettings);
     }
 

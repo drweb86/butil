@@ -24,8 +24,8 @@ public class StorageSpecificServicesIoc : IDisposable
         CommonServices = commonServices;
         StorageSettings = storageSettings;
         _storage = new Lazy<IStorage>(() => StorageFactory.Create(commonServices.Log, storageSettings, autodetectConnectionSettings));
-        _incrementalBackupStateService = new Lazy<IncrementalBackupStateService>(() => new IncrementalBackupStateService(this, commonServices.HashService));
-        _incrementalBackupFileService = new Lazy<ApplicationStorageService>(() => new ApplicationStorageService(commonServices.HashService, this));
+        _incrementalBackupStateService = new Lazy<IncrementalBackupStateService>(() => new IncrementalBackupStateService(this, commonServices.CachedHashService));
+        _incrementalBackupFileService = new Lazy<ApplicationStorageService>(() => new ApplicationStorageService(commonServices.CachedHashService, this));
     }
 
 #pragma warning disable CA1816 // Dispose methods should call SuppressFinalize

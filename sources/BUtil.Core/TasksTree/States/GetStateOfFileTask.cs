@@ -26,6 +26,6 @@ internal class GetStateOfFileTask : BuTaskV2
     protected override void ExecuteInternal()
     {
         var fileInfo = new FileInfo(_fileName);
-        State = new FileState(_fileName, fileInfo.LastWriteTimeUtc, fileInfo.Length, _servicesIoc.HashService.GetSha512(_fileName, true));
+        State = new FileState(_fileName, fileInfo.LastWriteTimeUtc, fileInfo.Length, _servicesIoc.CachedHashService.GetSha512(_fileName, true));
     }
 }

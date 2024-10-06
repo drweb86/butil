@@ -11,10 +11,10 @@ using System.Security.Cryptography;
 
 namespace BUtil.Core.State;
 
-public class ApplicationStorageService(IHashService hashService, StorageSpecificServicesIoc services)
+public class ApplicationStorageService(ICachedHashService hashService, StorageSpecificServicesIoc services)
 {
     private readonly ILog _log = services.CommonServices.Log;
-    private readonly IHashService _hashService = hashService;
+    private readonly ICachedHashService _hashService = hashService;
     private readonly StorageSpecificServicesIoc _services = services;
 
     public void Download(StorageFile storageFile, string destinationFileName)
@@ -55,7 +55,7 @@ public class ApplicationStorageService(IHashService hashService, StorageSpecific
 
     private void VerifyAndMoveFile(StorageFile storageFile, string resultFile, string destinationFileName)
     {
-        var sha512 = _services.CommonServices.HashService.GetSha512(resultFile, false);
+        var sha512 = _services.CommonServices.CachedHashService.GetSha512(resultFile, false);
         if (!string.IsNullOrWhiteSpace(storageFile.FileState.Sha512) && !string.Equals(storageFile.FileState.Sha512, sha512, StringComparison.OrdinalIgnoreCase))
             throw new InvalidDataException($"Downloaded content for \"{destinationFileName}\" is invalid: SHAv2 512 of file is {sha512}, but expected SHAv2 512 is {storageFile.FileState.Sha512}.");
 
