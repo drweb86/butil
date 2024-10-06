@@ -466,6 +466,12 @@ Consulta il sito web dell'applicazione per la documentazione su come impostare l
 
 	Punta ad una cartella contenente questo file.</value>
   </data>
+  <data name="RepositorySubfolder_Field" xml:space="preserve">
+    <value>Sotto cartella repository (facoltativo):</value>
+  </data>
+  <data name="RepositorySubfolder_Help" xml:space="preserve">
+    <value>Se non vuoi avere tutto il contenuto del repository sul dispositivo, è possibile sincronizzare la cartella con una particolare sotto cartella del repository.</value>
+  </data>
   <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
     <value>Impossibile leggere lo stato.</value>
   </data>
