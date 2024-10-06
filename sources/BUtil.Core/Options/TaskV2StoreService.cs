@@ -206,7 +206,7 @@ public class TaskV2StoreService
 
         foreach (var name in obsoletedTasks)
         {
-            var task = Load(name);
+            var task = Load(name, out var _, out var __);
             if (task != null)
                 Save(task);
         }
