@@ -61,6 +61,7 @@ internal class WriteSourceFilesToStorageTask(
                     sourceItemChange.SourceItem,
                     versionStates,
                     x.ToList().First().FileState.FileName,
+                    null,
                     true))
                 .ToList();
             WriteFileTasks.AddRange(copyTasks);

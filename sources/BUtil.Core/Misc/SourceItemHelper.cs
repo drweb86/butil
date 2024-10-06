@@ -50,13 +50,15 @@ public static class SourceItemHelper
         return GetCompressedStorageRelativeFileName(versionState.BackupDateUtc);
     }
 
+    public const string AES256V1Extension = "aes256v1";
+
     public static string GetCompressedStorageRelativeFileName(DateTime backupDateUtc)
     {
         var readableDate = GetVersionFolder(backupDateUtc);
 
         return Path.Combine(
             readableDate,
-            $"{Guid.NewGuid()}.aes256v1");
+            $"{Guid.NewGuid()}.{AES256V1Extension}");
     }
 
     public static List<StorageFile> BuildVersionFiles(IncrementalBackupState state, SourceItemV2 sourceItem, VersionState selectedVersion)

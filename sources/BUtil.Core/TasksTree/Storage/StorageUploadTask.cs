@@ -73,7 +73,7 @@ internal class StorageUploadTask : SequentialBuTask
                 .GroupBy(x => x.FileState.ToDeduplicationString())
                 .Select(x => new WriteSourceFileToStorageTask(_services, Events,
                     PatchRemoteFileNames([.. x], change), _quota, change.SourceItem,
-                    _options.State.VersionStates, x.ToList().First().FileState.FileName, false))
+                    _options.State.VersionStates, x.ToList().First().FileState.FileName, null, false))
                 .ToList();
 
             storageToWriteTasks.Add(change.SourceItem, writeTasks);

@@ -16,14 +16,14 @@ public class UpgradeStorageFormatTask : SequentialBuTaskV2
         IEnumerable<StorageFile> outdatedStorageFiles)
         : base(storageSpecificServicesIoc.CommonServices.Log, events, "Upgrade storage format")
     {
-        var chunkFiles = 50;
+        var chunkFiles = 100;
 
         Children = outdatedStorageFiles
             .GroupBy(x => x.StorageRelativeFileName)
             .Select((s, i) => new { Value = s, Index = i })
             .GroupBy(x => x.Index / chunkFiles)
             .Select(grp => grp.Select(x => x.Value).ToArray())
-            .Select(x => new UpgradeStorageFormatChunkTask(Events, storageSpecificServicesIoc, incrementalBackupState, incrementalBackupModelOptions, x.ToList()))
+            .Select((x, i) => new UpgradeStorageFormatChunkTask(Events, storageSpecificServicesIoc, incrementalBackupState, incrementalBackupModelOptions, x.ToList(), i))
             .ToArray();
     }
 }

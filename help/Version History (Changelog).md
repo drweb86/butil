@@ -1,7 +1,7 @@
 # 2024.10.03
 (unpublished)
 
-## New Features
+## Changes
 
 - Old task format tasks are automigrated during load to the latest format.
 After half a year old format version support will be dropped. Automigrate of old all tasks happens on load of UI apploication and on executing any task.
@@ -12,6 +12,9 @@ During uppgrade you can stop it at any moment but except during state upload (wh
 Upgrade is started on any task execution.
 Old storage format will be dropped after half a year. You will need to use previous app version to open it.
 If you have huge backup on slow remote NAS, consider recreating backup from scratch.
+
+## Removed Features
+
 - Synchronization mode subdirectory parameter is removed.
 It is removed because in secure scenarios you need to create a separate account and separate storage for such tasks.
 If you were using this parameter - edit and save sync task given that this param will be empty.

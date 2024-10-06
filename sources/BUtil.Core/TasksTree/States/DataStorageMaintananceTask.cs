@@ -53,6 +53,8 @@ internal class DataStorageMaintananceTask(
             return;
 
         var task = new UpgradeStorageFormatTask(_services, Events, _getStateOfStorageTask.StorageState!, _incrementalBackupModelOptionsV2, outdatedStorageFiles);
+        
+        Events.DuringExecutionTasksAdded(Id, task.GetChildren());
         Events.DuringExecutionTasksAdded(Id, [task]);
 
         var storageTasksExecuter = new ParallelExecuter([task], 1);

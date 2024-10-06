@@ -38,7 +38,7 @@ public class SequentialBuTaskV2 : BuTaskV2
                 break;
             }
         }
-        if (Children.Any(x => x.IsSuccess))
+        if (Children.Any(x => !x.IsSuccess))
         {
             throw new Exception("Some tasks were failed.");
         }
