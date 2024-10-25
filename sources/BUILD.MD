@@ -20,7 +20,7 @@ File: https://github.com/parmaja/innosetup/blob/master/languages/Arabic.isl
 To be put into
 C:\Program Files (x86)\Inno Setup 6\Languages\Arabic.isl
 - Hindi language
-File: https://jrsoftware.org/files/istrans/; search for Hindi
+File: https://raw.githubusercontent.com/jrsoftware/issrc/main/Files/Languages/Unofficial/Hindi.islu
 To be put into
 C:\Program Files (x86)\Inno Setup 6\Languages\Hindi.islu
 - Bengali language
@@ -45,6 +45,8 @@ C:\Program Files (x86)\Inno Setup 6\Languages\Marathi.islu
 ### Build.cmd
 
 Update version (it should match the version name and tag of release!) in Version History file. 
+
+Update version in the ubuntu-install.sh script
 
 Launch build.cmd.
 
