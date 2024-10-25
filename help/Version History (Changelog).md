@@ -23,7 +23,7 @@ If you were using this parameter - edit and save sync task given that this param
 
 - SHA 512 hashes were not calculated.
 ! Hashes cache was inproperly calculated on adding new files.
-- If hash file has incorrect JSON, application failed to start task.
+- If hashes cache had incorrect JSON, application failed to start task.
 
 # 2024.09.29
 
