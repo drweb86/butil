@@ -104,13 +104,20 @@ internal class CachedHashService() : ICachedHashService, IDisposable
 
     private void Load()
     {
-        var file = GetFile();
-        if (!File.Exists(file))
-            return;
+        try
+        {
+            var file = GetFile();
+            if (!File.Exists(file))
+                return;
 
-        using var stream = File.OpenRead(file);
-        var items = JsonSerializer.Deserialize<List<CachedHash>>(stream) ?? new List<CachedHash>();
-        items.ForEach(_cachedHashes.Add);
+            using var stream = File.OpenRead(file);
+            var items = JsonSerializer.Deserialize<List<CachedHash>>(stream) ?? new List<CachedHash>();
+            items.ForEach(_cachedHashes.Add);
+        }
+        catch (System.Text.Json.JsonException)
+        {
+            // eating exception
+        }
     }
 
     private void Save()
@@ -118,7 +125,7 @@ internal class CachedHashService() : ICachedHashService, IDisposable
         if (_cachedHashes == null)
             return;
 
-        var fileName = GetFile();
+        var file = GetFile();
         var utcNow = DateTime.UtcNow;
 
         var storeItems = _cachedHashes
@@ -126,9 +133,11 @@ internal class CachedHashService() : ICachedHashService, IDisposable
             .Where(x => x.Expiration > utcNow)
             .ToList();
 
-        using var stream = File.OpenWrite(fileName);
+        using var stream = File.Open(file, FileMode.Create);
         using var writer = new Utf8JsonWriter(stream,new JsonWriterOptions { Indented = true } );
         JsonSerializer.Serialize(writer, storeItems);
+        writer.Flush();
+        stream.Flush();
     }
 
     private static string GetFile()
