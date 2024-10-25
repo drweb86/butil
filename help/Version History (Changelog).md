@@ -1,4 +1,4 @@
-# 2024.10.03
+﻿# 2024.10.03
 (unpublished)
 
 ## Changes
@@ -12,12 +12,18 @@ During uppgrade you can stop it at any moment but except during state upload (wh
 Upgrade is started on any task execution.
 Old storage format will be dropped after half a year. You will need to use previous app version to open it.
 If you have huge backup on slow remote NAS, consider recreating backup from scratch.
+- AvaloniaUI was updated to 11.1.4
 
 ## Removed Features
 
-- Synchronization mode subdirectory parameter is removed.
+- Synchroniпzation mode subdirectory parameter is removed.
 It is removed because in secure scenarios you need to create a separate account and separate storage for such tasks.
 If you were using this parameter - edit and save sync task given that this param will be empty.
+
+## New Features
+
+- Possibility to specify minimum last write time for import of pictures.
+Supported case: user moved to new PC and needs to import files he created after some point in the time.
 
 ## Bug Fixes
 

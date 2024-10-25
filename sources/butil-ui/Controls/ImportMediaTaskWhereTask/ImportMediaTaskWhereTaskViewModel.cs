@@ -12,7 +12,8 @@ public class ImportMediaTaskWhereTaskViewModel : ObservableObject
     public ImportMediaTaskWhereTaskViewModel(
         string outputFolder,
         bool skipAlreadyImportedFiles,
-        string transformFileName
+        string transformFileName,
+        DateTime? fileLastWriteTimeMin
         )
     {
         OutputFolder = outputFolder;
@@ -28,11 +29,14 @@ public class ImportMediaTaskWhereTaskViewModel : ObservableObject
             "{DATE:yyyy'-'MM'-'dd}\\{DATE:yyyy'-'MM'-'dd' 'HH'-'mm'-'ss}",
             "{DATE:yyyy'-'MM'-'dd' 'HH'-'mm'-'ss}",
         ];
+        _fileLastWriteTimeMin = fileLastWriteTimeMin;
     }
 
     private readonly string[] _transformFileNames;
 
     #region Labels
+
+    public static string File_LastWriteTime_Min_Field => Resources.File_LastWriteTime_Min_Field;
     public static string LeftMenu_Where => Resources.LeftMenu_Where;
     public static string ImportMediaTask_Field_OutputFolder => Resources.ImportMediaTask_Field_OutputFolder;
     public static string Field_Folder_Browse => Resources.Field_Folder_Browse;
@@ -81,6 +85,27 @@ public class ImportMediaTaskWhereTaskViewModel : ObservableObject
                 return;
             _transformFileNameExample = value;
             OnPropertyChanged(nameof(TransformFileNameExample));
+        }
+    }
+
+    #endregion
+
+    #region FileLastWriteTimeMin
+
+    private DateTimeOffset? _fileLastWriteTimeMin;
+
+    public DateTimeOffset? FileLastWriteTimeMin
+    {
+        get
+        {
+            return _fileLastWriteTimeMin;
+        }
+        set
+        {
+            if (value == _fileLastWriteTimeMin)
+                return;
+            _fileLastWriteTimeMin = value;
+            OnPropertyChanged(nameof(FileLastWriteTimeMin));
         }
     }
 

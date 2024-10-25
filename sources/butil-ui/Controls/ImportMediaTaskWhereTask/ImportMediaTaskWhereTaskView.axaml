@@ -26,6 +26,7 @@
 				<RowDefinition Height="Auto" />
 				<RowDefinition Height="Auto" />
 				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
 			</Grid.RowDefinitions>
 
 			<TextBlock
@@ -61,19 +62,32 @@
 			<TextBlock
 				Grid.Column="0"
 				Grid.Row="2"
+				Text="{Binding File_LastWriteTime_Min_Field}"
+				VerticalAlignment="Center"
+			/>
+			<DatePicker
+				Grid.Column="1"
+				Grid.ColumnSpan="3"
+				Grid.Row="2"
+				Margin="4 4 4 4"
+				SelectedDate="{Binding FileLastWriteTimeMin}"/>
+
+			<TextBlock
+				Grid.Column="0"
+				Grid.Row="3"
 				Text="{Binding ImportMediaTask_Field_TransformFileName}"
 				VerticalAlignment="Center"
 			/>
 			<TextBox
 				Grid.Column="1"
-				Grid.Row="2"
+				Grid.Row="3"
 				Text="{Binding TransformFileName}"
 				VerticalAlignment="Center"
 				Margin="4 0 4 0"
 			/>
 			<Button
 				Grid.Column="2"
-				Grid.Row="2"
+				Grid.Row="3"
 				Content="◄"
 				Command="{Binding GoPreviousExampleCommand}"
 				VerticalAlignment="Center"
@@ -83,7 +97,7 @@
 			/>
 			<Button
 				Grid.Column="3"
-				Grid.Row="2"
+				Grid.Row="3"
 				Content="►"
 				Command="{Binding GoNextExampleCommand}"
 				VerticalAlignment="Center"
@@ -95,7 +109,7 @@
 			<TextBlock
 				Grid.ColumnSpan="4"
 				Grid.Column="0"
-				Grid.Row="3"
+				Grid.Row="4"
 				Text="{Binding TransformFileNameExample}"
 				Margin="0 8 0 8"
 			/>
@@ -103,7 +117,7 @@
 			<TextBlock
 				Grid.ColumnSpan="4"
 				Grid.Column="0"
-				Grid.Row="4"
+				Grid.Row="5"
 				Text="{Binding ImportMediaTask_Field_TransformFileName_Help}"
 			/>
 		</Grid>

@@ -12,4 +12,6 @@ public class ImportMediaTaskModelOptionsV2 : ITaskModelOptionsV2
                 Environment.GetFolderPath(Environment.SpecialFolder.MyPictures),
                 "Camera Roll");
     public bool SkipAlreadyImportedFiles { get; set; } = true;
+
+    public DateTime? FileLastWriteTimeMin { get; set; }
 }

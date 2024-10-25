@@ -662,6 +662,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Process files older then:.
+        /// </summary>
+        public static string File_LastWriteTime_Min_Field {
+            get {
+                return ResourceManager.GetString("File_LastWriteTime_Min_Field", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Saving files.
         /// </summary>
         public static string File_List_Saving {
@@ -1184,6 +1193,24 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string RepositorySubfolder_Field {
+            get {
+                return ResourceManager.GetString("RepositorySubfolder_Field", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string RepositorySubfolder_Help {
+            get {
+                return ResourceManager.GetString("RepositorySubfolder_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cannot locate files &quot;{0}&quot; in directory. 
         ///
         ///Point to a directory containing this file..
@@ -1603,6 +1630,15 @@ namespace BUtil.Core.Localization {
         public static string Task_Status_Succesfull {
             get {
                 return ResourceManager.GetString("Task_Status_Succesfull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Task_Status_Successful {
+            get {
+                return ResourceManager.GetString("Task_Status_Successful", resourceCulture);
             }
         }
         

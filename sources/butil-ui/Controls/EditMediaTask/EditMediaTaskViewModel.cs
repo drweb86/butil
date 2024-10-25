@@ -23,7 +23,7 @@ public class EditMediaTaskViewModel : ViewModelBase
         var task = isNew ? new TaskV2() { Model = new ImportMediaTaskModelOptionsV2() } : storeService.Load(taskName) ?? new TaskV2() { Model = new ImportMediaTaskModelOptionsV2() };
         var model = (ImportMediaTaskModelOptionsV2)task.Model;
 
-        ImportMediaTaskWhereTaskViewModel = new ImportMediaTaskWhereTaskViewModel(model.DestinationFolder, model.SkipAlreadyImportedFiles, model.TransformFileName);
+        ImportMediaTaskWhereTaskViewModel = new ImportMediaTaskWhereTaskViewModel(model.DestinationFolder, model.SkipAlreadyImportedFiles, model.TransformFileName, model.FileLastWriteTimeMin);
         SourceTaskViewModel = new WhereTaskViewModel(model.From, Resources.LeftMenu_What, "/Assets/CrystalProject_EveraldoCoelho_SourceItems48x48.png");
     }
 
@@ -55,6 +55,7 @@ public class EditMediaTaskViewModel : ViewModelBase
             {
                 DestinationFolder = ImportMediaTaskWhereTaskViewModel.OutputFolder,
                 SkipAlreadyImportedFiles = ImportMediaTaskWhereTaskViewModel.SkipAlreadyImportedFiles,
+                FileLastWriteTimeMin = ImportMediaTaskWhereTaskViewModel.FileLastWriteTimeMin?.DateTime ?? null,
                 TransformFileName = ImportMediaTaskWhereTaskViewModel.TransformFileName,
                 From = SourceTaskViewModel.GetStorageSettings()
             }

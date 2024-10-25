@@ -5,7 +5,6 @@ using BUtil.Core.Services;
 using BUtil.Core.State;
 using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.Core;
-using BUtil.Core.TasksTree.States;
 using System;
 using System.IO;
 using System.Linq;
@@ -15,6 +14,7 @@ namespace BUtil.Core.TasksTree.MediaSyncBackupModel;
 class ImportSingleFileTask : BuTaskV2
 {
     private readonly string _transformFileName;
+    private readonly DateTime? _fileLastWriteTimeMin;
     private readonly IStorage _fromStorage;
     private readonly IStorage _toStorage;
     private readonly SourceItemState _state;
@@ -24,6 +24,7 @@ class ImportSingleFileTask : BuTaskV2
 
     public ImportSingleFileTask(
         TaskEvents backupEvents,
+        DateTime? fileLastWriteTimeMin,
         string fromFile,
         IStorage fromStorage,
         IStorage toStorage,
@@ -32,6 +33,7 @@ class ImportSingleFileTask : BuTaskV2
         CommonServicesIoc commonServicesIoc)
         : base(commonServicesIoc.Log, backupEvents, string.Empty)
     {
+        _fileLastWriteTimeMin = fileLastWriteTimeMin;
         File = fromFile;
         _state = state;
         _commonServicesIoc = commonServicesIoc;
@@ -45,6 +47,14 @@ class ImportSingleFileTask : BuTaskV2
     protected override void ExecuteInternal()
     {
         var lastWriteTime = _fromStorage.GetModifiedTime(this.File);
+
+        if (_fileLastWriteTimeMin != null && _fileLastWriteTimeMin > lastWriteTime)
+        {
+            Log.WriteLine(LoggingEvent.Debug, $"File {File} last write time < start date. Skipping.");
+            IsSkipped = true;
+            return;
+        }
+
         var destinationFileName = GetDestinationFileName(lastWriteTime);
         var actualFileName = GetActualDestinationFileName(destinationFileName);
         var destFolder = Path.GetDirectoryName(actualFileName);

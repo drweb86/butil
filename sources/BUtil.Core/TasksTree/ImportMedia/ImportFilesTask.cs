@@ -44,7 +44,7 @@ class ImportFilesTask : SequentialBuTask
         var fromStorageFilesToProcess = fromStorageFiles.Where(x => !importMediaState.Files.Contains(x)).ToList();
 
         var tasks = fromStorageFilesToProcess
-            .Select(x => new ImportSingleFileTask(Events, x, fromStorage, toStorage, transformFileName, _getStateOfSourceItemTask.SourceItemState ?? throw new InvalidOperationException(), _commonServicesIoc))
+            .Select(x => new ImportSingleFileTask(Events, options.FileLastWriteTimeMin, x, fromStorage, toStorage, transformFileName, _getStateOfSourceItemTask.SourceItemState ?? throw new InvalidOperationException(), _commonServicesIoc))
             .ToList();
         Events.DuringExecutionTasksAdded(Id, tasks);
 

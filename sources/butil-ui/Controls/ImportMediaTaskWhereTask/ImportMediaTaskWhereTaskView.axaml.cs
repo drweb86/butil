@@ -12,7 +12,7 @@ public partial class ImportMediaTaskWhereTaskView : UserControl
     public ImportMediaTaskWhereTaskView()
     {
         InitializeComponent();
-        this.DataContext = new ImportMediaTaskWhereTaskViewModel("the folder", false, "transoform file name");
+        this.DataContext = new ImportMediaTaskWhereTaskViewModel("the folder", false, "transoform file name", null);
     }
 
     public void BrowseCommand(object? sender, RoutedEventArgs args)
