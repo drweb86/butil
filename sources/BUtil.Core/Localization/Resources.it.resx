@@ -649,4 +649,7 @@ Consulta il sito web dell'applicazione per la documentazione su come impostare l
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Non è stato specificato l'utente.</value>
   </data>
+  <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
+    <value>Elabora file più vecchi di allora:</value>
+  </data>
 </root>
