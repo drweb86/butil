@@ -1267,15 +1267,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add files....
-        /// </summary>
-        public static string SourceItem_AddFiles {
-            get {
-                return ResourceManager.GetString("SourceItem_AddFiles", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Add folders....
         /// </summary>
         public static string SourceItem_AddFolders {

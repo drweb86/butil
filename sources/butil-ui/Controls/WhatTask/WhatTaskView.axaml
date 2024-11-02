@@ -15,7 +15,6 @@
 		</Expander.Header>
 		<StackPanel Orientation="Vertical">
 			<WrapPanel Orientation="Horizontal" Margin="0 8 0 8">
-				<Button Margin="4 4 4 4" Content="{Binding SourceItem_AddFiles}" Click="BrowseFilesCommand" />
 				<Button Margin="4 4 4 4" Content="{Binding SourceItem_AddFolders}" Click="BrowseFoldersCommand" />
 			</WrapPanel>
 			<TextBlock
