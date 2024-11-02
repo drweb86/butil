@@ -39,8 +39,17 @@ C:\Program Files (x86)\Inno Setup 6\Languages\Indonesian.isl
 File: https://raw.githubusercontent.com/jrsoftware/issrc/main/Files/Languages/Unofficial/Marathi.islu
 To be put into
 C:\Program Files (x86)\Inno Setup 6\Languages\Marathi.islu
+- Tamil
+File: https://raw.githubusercontent.com/jrsoftware/issrc/refs/heads/main/Files/Languages/Tamil.isl
+To be put into
+C:\Program Files (x86)\Inno Setup 6\Languages\Tamil.isl
+- Vietnamese
+File: https://raw.githubusercontent.com/jrsoftware/issrc/refs/heads/main/Files/Languages/Unofficial/Vietnamese.isl
+To be put into
+C:\Program Files (x86)\Inno Setup 6\Languages\Vietnamese.isl
 - 7-zip x64 (must be installed in default directory).
 - .Net 8 SDK
+
 
 ### Build.cmd
 

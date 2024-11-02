@@ -13,8 +13,11 @@ Name: japanese; MessagesFile: "compiler:Languages\Japanese.isl"
 Name: Marathi; MessagesFile: "compiler:Languages\Marathi.islu"
 Name: russian; MessagesFile: "compiler:Languages\Russian.isl"
 Name: portuguese; MessagesFile: "compiler:Languages\Portuguese.isl"
+Name: tamil; MessagesFile: "compiler:Languages\Tamil.isl"
+Name: turskish; MessagesFile: "compiler:Languages\Turkish.isl"
 Name: ukrainian; MessagesFile: "compiler:Languages\Ukrainian.isl"
 Name: urdu; MessagesFile: "compiler:Languages\Urdu.isl"
+Name: vietnamese; MessagesFile: "compiler:Languages\Vietnamese.isl"
 
 [Messages]
 arabic.BeveledLabel=اللغة العربية
@@ -31,5 +34,8 @@ japanese.BeveledLabel=日本語
 Marathi.BeveledLabel=मराठी
 portuguese.BeveledLabel=Portugues
 russian.BeveledLabel=Русский
+tamil.BeveledLabel=தமிழ்
+turskish.BeveledLabel=Türkçe
 ukrainian.BeveledLabel=Українська
 urdu.BeveledLabel=اردو
+vietnamese.BeveledLabel=tiếng Việt

@@ -4,7 +4,7 @@
 
 > Import photos from phone via WI-FI and more.
 
-[Download](https://drweb86.synology.me:88)
+<!-- [Download](https://drweb86.synology.me:88) -->
 
 ![Image Gallery](./help/Assets/Image%20Gallery.gif)
 
@@ -23,9 +23,13 @@
 [![Portuguese](https://img.shields.io/badge/lang-Portuguese-green.svg)](https://ask.chadgpt.ru/)
 [![Russian](https://img.shields.io/badge/lang-Russian-green.svg)](https://github.com/drweb86)
 [![Spanish](https://img.shields.io/badge/lang-Spanish-green.svg)](https://ask.chadgpt.ru/)
-[![Telugu](https://img.shields.io/badge/lang-Telugu-green.svg)](https://github.com/drweb86)
+[![Tamil](https://img.shields.io/badge/lang-Tamil-green.svg)](https://ask.chatgpt.ru/)
+[![Telugu](https://img.shields.io/badge/lang-Telugu-green.svg)](https://ask.chadgpt.ru/)
+[![Turkish](https://img.shields.io/badge/lang-Turkish-green.svg)](https://ask.chatgpt.ru/)
 [![Ukrainian](https://img.shields.io/badge/lang-Ukrainian-green.svg)](https://github.com/Kopejkin)
 [![Urdu](https://img.shields.io/badge/lang-Urdu-green.svg)](https://ask.chadgpt.ru/)
+[![Vietnamese](https://img.shields.io/badge/lang-Vietnamese-green.svg)](https://ask.chatgpt.ru/)
+[![Yue Chinese](https://img.shields.io/badge/lang-YueChinese-green.svg)](https://ask.chatgpt.ru/)
 
 ## Features
 

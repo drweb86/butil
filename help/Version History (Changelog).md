@@ -1,13 +1,16 @@
 ﻿# 2024.11.02
 (unreleased)
 
+## New Features
+- Added Turkish, Tamil, Yue Chinese, Vietnamese languages.
+
 ## Removed Features
 - For incremental backup it won't be possible to specify Files (Add Files...) anymore due to low usage, only folders.
 
 ## Changes
 - Italian language was updated by https://github.com/bovirus .
 - AvaloniaUI was updated to 11.2.0
-- 
+
 # 2024.10.25
 
 ## Changes

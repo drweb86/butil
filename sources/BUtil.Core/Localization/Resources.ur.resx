@@ -1,5 +1,64 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
@@ -53,455 +112,444 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0,
-      Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0,
-      Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
-  <value>کچھ نہ کریں</value>
+    <value>کچھ نہ کریں</value>
   </data>
   <data name="AfterTaskSelection_Field" xml:space="preserve">
-  <value>کام مکمل ہونے کے بعد:</value>
+    <value>کام مکمل ہونے کے بعد:</value>
   </data>
   <data name="AfterTaskSelection_Help" xml:space="preserve">
-  <value>اگر آپ 'کچھ نہ کریں' کے علاوہ کچھ منتخب کرتے ہیں تو پروگرام آپ کے اگلے لاگ ان پر آپ کو رپورٹ دکھانے کے لئے OS کو ترتیب دے گا اگر کوئی غلطیاں یا انتباہات درج ہوں گے۔</value>
+    <value>اگر آپ 'کچھ نہ کریں' کے علاوہ کچھ منتخب کرتے ہیں تو پروگرام آپ کے اگلے لاگ ان پر آپ کو رپورٹ دکھانے کے لئے OS کو ترتیب دے گا اگر کوئی غلطیاں یا انتباہات درج ہوں گے۔</value>
   </data>
   <data name="AfterTaskSelection_LogOff" xml:space="preserve">
-  <value>لاگ آف کریں</value>
+    <value>لاگ آف کریں</value>
   </data>
   <data name="AfterTaskSelection_Reboot" xml:space="preserve">
-  <value>ریبوٹ کریں</value>
+    <value>ریبوٹ کریں</value>
   </data>
   <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
-  <value>بند کریں</value>
+    <value>بند کریں</value>
   </data>
   <data name="Application_NewVersion_Notification" xml:space="preserve">
-  <value>نئی {0} ورژن دستیاب ہے۔</value>
+    <value>نئی {0} ورژن دستیاب ہے۔</value>
   </data>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
-  <value>ورژن حذف کریں</value>
+    <value>ورژن حذف کریں</value>
   </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
-  <value>تبدیلیاں</value>
+    <value>تبدیلیاں</value>
   </data>
   <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
-  <value>کیا آپ واقعی ورژن "{0}" حذف کرنا چاہتے ہیں؟
+    <value>کیا آپ واقعی ورژن "{0}" حذف کرنا چاہتے ہیں؟
   حذف شدہ ورژن کی تبدیلیاں ورژن "{1}" کا حصہ بن جائیں گی۔</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
-  <value>فائلیں</value>
+    <value>فائلیں</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
-  <value>جرنل: {0}</value>
+    <value>جرنل: {0}</value>
   </data>
   <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
-  <value>منتخب شدہ کے لئے جرنل...</value>
+    <value>منتخب شدہ کے لئے جرنل...</value>
   </data>
   <data name="BackupVersion_Select" xml:space="preserve">
-  <value>منتخب ورژن کھولیں...</value>
+    <value>منتخب ورژن کھولیں...</value>
   </data>
   <data name="BackupVersion_Selector_Title" xml:space="preserve">
-  <value>ورژن منتخب کریں</value>
+    <value>ورژن منتخب کریں</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-  <value>(تمام ورژن اسٹوریج پر {0} جگہ گھیرتے ہیں)</value>
+    <value>(تمام ورژن اسٹوریج پر {0} جگہ گھیرتے ہیں)</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
-  <value>ورژن</value>
+    <value>ورژن</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-  <value>درخت میں وہ فائل یا فولڈر منتخب کریں جسے آپ بحال کرنا چاہتے ہیں اور "بحال کریں" پر کلک کریں۔</value>
+    <value>درخت میں وہ فائل یا فولڈر منتخب کریں جسے آپ بحال کرنا چاہتے ہیں اور "بحال کریں" پر کلک کریں۔</value>
   </data>
   <data name="Button_Cancel" xml:space="preserve">
-  <value>منسوخ کریں</value>
+    <value>منسوخ کریں</value>
   </data>
   <data name="Button_Close" xml:space="preserve">
-  <value>بند کریں</value>
+    <value>بند کریں</value>
   </data>
   <data name="Button_Continue" xml:space="preserve">
-  <value>جاری رکھیں &gt;</value>
+    <value>جاری رکھیں &gt;</value>
   </data>
   <data name="Button_CopyToClipboard" xml:space="preserve">
-  <value>کاپی کریں</value>
+    <value>کاپی کریں</value>
   </data>
   <data name="Button_Download" xml:space="preserve">
-  <value>ڈاؤن لوڈ کریں</value>
+    <value>ڈاؤن لوڈ کریں</value>
   </data>
   <data name="Button_OK" xml:space="preserve">
-  <value>ٹھیک ہے</value>
+    <value>ٹھیک ہے</value>
   </data>
   <data name="Button_Remove" xml:space="preserve">
-  <value>ہٹا دیں</value>
+    <value>ہٹا دیں</value>
   </data>
   <data name="Button_Save" xml:space="preserve">
-  <value>محفوظ کریں</value>
+    <value>محفوظ کریں</value>
   </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
-  <value>کمانڈ لائن دلائل دیکھنے کے لئے {0} پر جائیں۔</value>
+    <value>کمانڈ لائن دلائل دیکھنے کے لئے {0} پر جائیں۔</value>
   </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
-  <value>غلط کمانڈ لائن دلائل۔</value>
+    <value>غلط کمانڈ لائن دلائل۔</value>
   </data>
   <data name="DataStorage_Data_Saving" xml:space="preserve">
-  <value>ڈےٹا محفوظ کرنا</value>
+    <value>ڈےٹا محفوظ کرنا</value>
   </data>
   <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
-  <value>کنکشن اسکرپٹ:</value>
+    <value>کنکشن اسکرپٹ:</value>
   </data>
   <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
-  <value>ڈسکنکشن اسکرپٹ:</value>
+    <value>ڈسکنکشن اسکرپٹ:</value>
   </data>
   <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
-  <value>غلطیوں کے ساتھ مکمل</value>
+    <value>غلطیوں کے ساتھ مکمل</value>
   </data>
   <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
-  <value>کامیابی کے ساتھ مکمل</value>
+    <value>کامیابی کے ساتھ مکمل</value>
   </data>
   <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
-  <value>اپ لوڈ حد، جی بی:</value>
+    <value>اپ لوڈ حد، جی بی:</value>
   </data>
   <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
-  <value>ایک ٹاسک کے ایکزیکیوٹ کے دوران بھیجی جانے والی ڈیٹا کی مقدار کی حد۔ 0 - کوئی حد نہیں۔
+    <value>ایک ٹاسک کے ایکزیکیوٹ کے دوران بھیجی جانے والی ڈیٹا کی مقدار کی حد۔ 0 - کوئی حد نہیں۔
   جب کوٹہ کی حد سے تجاوز کیا جاتا ہے، دیگر فائلوں کو چھوڑ دیا جائے گا اور اگلی بار پروسیس کیا جائے گا۔
   استعمال کا منظر: آپ دور دراز کے سرور پر ڈیٹا کاپی کرتے ہیں۔ ایک مسئلہ ہے: آئی ایس پی اپ لوڈ کی رفتار کو چند گیگا بائٹس کے بعد کم کرتا ہے۔ یہ سیٹنگ اس کے ساتھ نمٹنے کی اجازت دیتی ہے۔ </value>
   </data>
   <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
-  <value>کوٹہ 0 (لاگو نہ کریں) یا 0 سے اوپر کی قیمت ہونی چاہیے۔</value>
+    <value>کوٹہ 0 (لاگو نہ کریں) یا 0 سے اوپر کی قیمت ہونی چاہیے۔</value>
   </data>
   <data name="DataStorage_Maintenance" xml:space="preserve">
-  <value>ڈیٹا اسٹوریج کی دیکھ بھال</value>
+    <value>ڈیٹا اسٹوریج کی دیکھ بھال</value>
   </data>
   <data name="DataStorage_Script_Help" xml:space="preserve">
-  <value>اگر کچھ کمانڈز چلانے کے بعد فولڈر دستیاب ہو جاتا ہے تو کنکشن اور ڈسکنکشن کے لئے {0} اسکرپٹس کی وضاحت کریں۔</value>
+    <value>اگر کچھ کمانڈز چلانے کے بعد فولڈر دستیاب ہو جاتا ہے تو کنکشن اور ڈسکنکشن کے لئے {0} اسکرپٹس کی وضاحت کریں۔</value>
   </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
-  <value>اسٹوریج کی حالت حاصل کریں</value>
+    <value>اسٹوریج کی حالت حاصل کریں</value>
   </data>
   <data name="DataStorage_State_Saving" xml:space="preserve">
-  <value>اسٹوریج کی حالت لکھنا</value>
+    <value>اسٹوریج کی حالت لکھنا</value>
   </data>
   <data name="DataStorage_Title" xml:space="preserve">
-  <value>اسٹوریج</value>
+    <value>اسٹوریج</value>
   </data>
   <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
-  <value>اسٹوریج کی وضاحت نہیں کی گئی۔</value>
+    <value>اسٹوریج کی وضاحت نہیں کی گئی۔</value>
   </data>
   <data name="Days_Field_Choose" xml:space="preserve">
-  <value>ہفتے کے دن منتخب کریں:</value>
+    <value>ہفتے کے دن منتخب کریں:</value>
   </data>
   <data name="Days_Friday" xml:space="preserve">
-  <value>جمعہ</value>
+    <value>جمعہ</value>
   </data>
   <data name="Days_Monday" xml:space="preserve">
-  <value>پیر</value>
+    <value>پیر</value>
   </data>
   <data name="Days_Saturday" xml:space="preserve">
-  <value>ہفتہ</value>
+    <value>ہفتہ</value>
   </data>
   <data name="Days_Sunday" xml:space="preserve">
-  <value>اتوار</value>
+    <value>اتوار</value>
   </data>
   <data name="Days_Thursday" xml:space="preserve">
-  <value>جمعرات</value>
+    <value>جمعرات</value>
   </data>
   <data name="Days_Tuesday" xml:space="preserve">
-  <value>منگل</value>
+    <value>منگل</value>
   </data>
   <data name="Days_Wednesday" xml:space="preserve">
-  <value>بدھ</value>
+    <value>بدھ</value>
   </data>
   <data name="DirectoryStorage" xml:space="preserve">
-  <value>ڈائریکٹری</value>
+    <value>ڈائریکٹری</value>
   </data>
   <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
-  <value>فولڈر:</value>
+    <value>فولڈر:</value>
   </data>
   <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
-  <value>ڈائریکٹری کی وضاحت نہیں کی گئی۔</value>
+    <value>ڈائریکٹری کی وضاحت نہیں کی گئی۔</value>
   </data>
   <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
-  <value>ڈائریکٹری "{0}" موجود نہیں۔</value>
+    <value>ڈائریکٹری "{0}" موجود نہیں۔</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
-  <value>آلہ:</value>
+    <value>آلہ:</value>
   </data>
   <data name="Field_Device_Validation_Empty" xml:space="preserve">
-  <value>آلہ کی وضاحت نہیں کی گئی۔</value>
+    <value>آلہ کی وضاحت نہیں کی گئی۔</value>
   </data>
   <data name="Field_Device_Validation_NotFound" xml:space="preserve">
-  <value>آلہ نہیں ملا۔</value>
+    <value>آلہ نہیں ملا۔</value>
   </data>
   <data name="Field_Folder" xml:space="preserve">
-  <value>فولڈر:</value>
+    <value>فولڈر:</value>
   </data>
   <data name="Field_Folder_Browse" xml:space="preserve">
-  <value>براؤز کریں</value>
+    <value>براؤز کریں</value>
   </data>
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
-  <value>فولڈر کی وضاحت نہیں کی گئی۔</value>
+    <value>فولڈر کی وضاحت نہیں کی گئی۔</value>
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
-  <value>فولڈر موجود نہیں۔</value>
+    <value>فولڈر موجود نہیں۔</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
-  <value>پروٹوکول:</value>
+    <value>پروٹوکول:</value>
   </data>
   <data name="Field_Version" xml:space="preserve">
-  <value>ورژن:</value>
+    <value>ورژن:</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
-  <value>حذف کرنا "{0}"</value>
+    <value>حذف کرنا "{0}"</value>
   </data>
   <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
-  <value>انضباط کی تصدیق کا اسکرپٹ.ps1</value>
+    <value>انضباط کی تصدیق کا اسکرپٹ.ps1</value>
   </data>
   <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
-  <value>انضباط کی تصدیق کے اسکرپٹس کو محفوظ کرنا</value>
+    <value>انضباط کی تصدیق کے اسکرپٹس کو محفوظ کرنا</value>
   </data>
   <data name="File_List_Saving" xml:space="preserve">
-  <value>فائلیں محفوظ کرنا</value>
+    <value>فائلیں محفوظ کرنا</value>
   </data>
   <data name="File_Moving" xml:space="preserve">
-  <value>منتقل کرنا "{0}" سے "{1}"</value>
+    <value>منتقل کرنا "{0}" سے "{1}"</value>
   </data>
   <data name="File_Saving" xml:space="preserve">
-  <value>محفوظ کرنا "{0}"</value>
+    <value>محفوظ کرنا "{0}"</value>
   </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
-  <value>صریح</value>
+    <value>صریح</value>
   </data>
   <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
-  <value>نامیاتی</value>
+    <value>نامیاتی</value>
   </data>
   <data name="Ftps_Field_Encryption" xml:space="preserve">
-  <value>SSL/TTS انکرپشن:</value>
+    <value>SSL/TTS انکرپشن:</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
-  <value>اپنے متن میں کردار کا آئیکن شامل کریں</value>
+    <value>اپنے متن میں کردار کا آئیکن شامل کریں</value>
   </data>
   <data name="ImportMediaTask_AllFiles" xml:space="preserve">
-  <value>تمام فائلیں درآمد کریں</value>
+    <value>تمام فائلیں درآمد کریں</value>
   </data>
   <data name="ImportMediaTask_Create" xml:space="preserve">
-  <value>میڈیا ٹاسک درآمد کریں</value>
+    <value>میڈیا ٹاسک درآمد کریں</value>
   </data>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
-  <value>ایڈیٹ کریں "{0}" میڈیا درآمد ٹاسک</value>
+    <value>ایڈیٹ کریں "{0}" میڈیا درآمد ٹاسک</value>
   </data>
   <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
-  <value>آؤٹ پٹ فولڈر:</value>
+    <value>آؤٹ پٹ فولڈر:</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
-  <value>فائل نام کی تبدیلی:</value>
+    <value>فائل نام کی تبدیلی:</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
-  <value>مثال:
+    <value>مثال:
   تصور کریں کہ آپ کے پاس فائل {0} ہے (جو {1} پر ترمیم کی گئی)۔
   اس ڈائریکٹری اور سانچے کے ساتھ فائل محفوظ کی جائے گی:
   {2}</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
-  <value>تائید شدہ ٹوکن:
+    <value>تائید شدہ ٹوکن:
   {DATE:Format} - مخصوص شکل میں فائل کی ترمیم کی تاریخ داخل کرتا ہے۔
   تمام اختیارات دیکھنے کے لئے "C# DateTime format" گوگل کریں۔</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
-  <value>تبدیل شدہ فائل کا نام خالی ہے۔</value>
+    <value>تبدیل شدہ فائل کا نام خالی ہے۔</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
-  <value>غلط تبدیل شدہ فائل کا نام کا سٹرنگ۔</value>
+    <value>غلط تبدیل شدہ فائل کا نام کا سٹرنگ۔</value>
   </data>
   <data name="ImportMediaTask_File" xml:space="preserve">
-  <value>درآمد کریں "{0}"</value>
+    <value>درآمد کریں "{0}"</value>
   </data>
   <data name="ImportMediaTask_Help" xml:space="preserve">
-  <value>SD کارڈ سے آڈیوز، تصاویر، ویڈیوز درآمد کرتا ہے؛ کیمرا، ریکارڈر؛ آپ کے فون سے WI-FI کے ذریعے FTP سرور ایپلیکیشن کے ذریعے تصاویر اور ویڈیوز۔
+    <value>SD کارڈ سے آڈیوز، تصاویر، ویڈیوز درآمد کرتا ہے؛ کیمرا، ریکارڈر؛ آپ کے فون سے WI-FI کے ذریعے FTP سرور ایپلیکیشن کے ذریعے تصاویر اور ویڈیوز۔
 
   فائل کی ترسیل کے طریقے کے لئے ایپلیکیشن کی ویب سائٹ پر دستاویزات دیکھیں۔</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-  <value>درآمد ڈیٹا کا ماخذ</value>
+    <value>درآمد ڈیٹا کا ماخذ</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
-  <value>پہلے سے درآمد شدہ فائلوں کو چھوڑ دیں</value>
+    <value>پہلے سے درآمد شدہ فائلوں کو چھوڑ دیں</value>
   </data>
   <data name="ImproveIt_Message" xml:space="preserve">
-  <value>ایک غیر متوقع غلطی پیش آئی۔
+    <value>ایک غیر متوقع غلطی پیش آئی۔
   برائے مہربانی اپنے ڈیسک ٹاپ پر محفوظ معلومات کے ساتھ ڈویلپرز سے رابطہ کریں
   "{0}"
   ایپلیکیشن اب بند ہو جائے گی۔</value>
   </data>
   <data name="IncrementalBackup_Help" xml:space="preserve">
-  <value>انکریمنٹل بیک اپ کی سب سے بنیادی شکل میں صرف ان فائلوں کی شناخت، ریکارڈنگ اور حفاظت شامل ہے جو آخری بیک اپ کے بعد تبدیل ہو گئی ہیں۔ 
+    <value>انکریمنٹل بیک اپ کی سب سے بنیادی شکل میں صرف ان فائلوں کی شناخت، ریکارڈنگ اور حفاظت شامل ہے جو آخری بیک اپ کے بعد تبدیل ہو گئی ہیں۔ 
   چونکہ تبدیلیاں عام طور پر کم ہوتی ہیں، انکریمنٹل بیک اپ مکمل بیک اپ کے مقابلے میں بہت چھوٹے اور تیز ہوتے ہیں۔ 
   مثال کے طور پر، جمعہ کو مکمل بیک اپ کے بعد، پیر کا بیک اپ صرف وہ فائلیں شامل کرے گا جو جمعہ کے بعد بدلی ہیں۔ منگل کا بیک اپ صرف وہی فائلیں شامل کرے گا جو پیر کے بعد بدلی ہیں، اور اسی طرح آگے۔ 
   اگر بنائی گئی کسی بھی کاپی میں ناکام ہوجائیں، بشمول پہلی (مکمل)، بحالی مکمل نہیں ہوگی۔</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
-  <value>انکریمنٹل بیک اپ</value>
+    <value>انکریمنٹل بیک اپ</value>
   </data>
   <data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
-  <value>انکریمنٹڈ ورژن کا حساب لگائیں</value>
+    <value>انکریمنٹڈ ورژن کا حساب لگائیں</value>
   </data>
   <data name="IncrementalBackup_Version_Save" xml:space="preserve">
-  <value>انکریمنٹڈ ورژن کو محفوظ کرنا</value>
+    <value>انکریمنٹڈ ورژن کو محفوظ کرنا</value>
   </data>
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
-  <value>انکریمنٹل بیک اپ ٹاسک</value>
+    <value>انکریمنٹل بیک اپ ٹاسک</value>
   </data>
   <data name="LeftMenu_Encryption" xml:space="preserve">
-  <value>انکرپشن</value>
+    <value>انکرپشن</value>
   </data>
   <data name="LeftMenu_What" xml:space="preserve">
-  <value>کیا؟</value>
+    <value>کیا؟</value>
   </data>
   <data name="LeftMenu_What_Hint" xml:space="preserve">
-  <value>یہاں آپ ان فولڈرز اور فائلوں کو شامل کرسکتے ہیں جنہیں آپ پروسیس کرنا چاہتے ہیں۔</value>
+    <value>یہاں آپ ان فولڈرز اور فائلوں کو شامل کرسکتے ہیں جنہیں آپ پروسیس کرنا چاہتے ہیں۔</value>
   </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
-  <value>پروسیس کرنے کے لیے کوئی آئٹمز نہیں۔</value>
+    <value>پروسیس کرنے کے لیے کوئی آئٹمز نہیں۔</value>
   </data>
   <data name="LeftMenu_When" xml:space="preserve">
-  <value>کب؟</value>
+    <value>کب؟</value>
   </data>
   <data name="LeftMenu_When_Help" xml:space="preserve">
-  <value>یہاں آپ شیڈولر ترتیب دے سکتے ہیں۔ شیڈولر آپ کو ٹاسک کے آغاز کو خودکار کرنے میں مدد دے سکتا ہے۔</value>
+    <value>یہاں آپ شیڈولر ترتیب دے سکتے ہیں۔ شیڈولر آپ کو ٹاسک کے آغاز کو خودکار کرنے میں مدد دے سکتا ہے۔</value>
   </data>
   <data name="LeftMenu_Where" xml:space="preserve">
-  <value>کہاں؟</value>
+    <value>کہاں؟</value>
   </data>
   <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
-  <value>ایکسپلورر سے یہاں فائلیں اور فولڈرز کو گھسیٹیں اور چھوڑیں۔</value>
+    <value>ایکسپلورر سے یہاں فائلیں اور فولڈرز کو گھسیٹیں اور چھوڑیں۔</value>
   </data>
   <data name="LeftMenu_Where_Hint" xml:space="preserve">
-  <value>اس جگہ آپ ان مقامات کو شامل کرسکتے ہیں جہاں آپ چاہتے ہیں کہ آپ کی فائلوں کو کاپی کیا جائے۔</value>
+    <value>اس جگہ آپ ان مقامات کو شامل کرسکتے ہیں جہاں آپ چاہتے ہیں کہ آپ کی فائلوں کو کاپی کیا جائے۔</value>
   </data>
   <data name="Local_State_Get" xml:space="preserve">
-  <value>مقامی حالت حاصل کریں</value>
+    <value>مقامی حالت حاصل کریں</value>
   </data>
   <data name="Local_State_Saving" xml:space="preserve">
-  <value>مقامی حالت لکھنا</value>
+    <value>مقامی حالت لکھنا</value>
   </data>
   <data name="LogFile_Marker_Errors" xml:space="preserve">
-  <value>غلطیاں</value>
+    <value>غلطیاں</value>
   </data>
   <data name="LogFile_Marker_Successful" xml:space="preserve">
-  <value>کامیاب</value>
+    <value>کامیاب</value>
   </data>
   <data name="LogFile_OpenLogs" xml:space="preserve">
-  <value>لاگ</value>
+    <value>لاگ</value>
   </data>
   <data name="Messages_Header_Error" xml:space="preserve">
-  <value>غلطی</value>
+    <value>غلطی</value>
   </data>
   <data name="Messages_Header_Information" xml:space="preserve">
-  <value>اطلاعات</value>
+    <value>اطلاعات</value>
   </data>
   <data name="Messages_Header_Question" xml:space="preserve">
-  <value>سوال</value>
+    <value>سوال</value>
   </data>
   <data name="Name_Field" xml:space="preserve">
-  <value>نام:</value>
+    <value>نام:</value>
   </data>
   <data name="Name_Field_Validation" xml:space="preserve">
-  <value>نام خالی ہے یا غیر حمایت یافتہ راستے کے کردار پر مشتمل ہے۔</value>
+    <value>نام خالی ہے یا غیر حمایت یافتہ راستے کے کردار پر مشتمل ہے۔</value>
   </data>
   <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
-  <value>نام '{0}' کی لمبائی حد سے تجاوز کر گئی ہے {1} کرداروں سے۔</value>
+    <value>نام '{0}' کی لمبائی حد سے تجاوز کر گئی ہے {1} کرداروں سے۔</value>
   </data>
   <data name="Name_Title" xml:space="preserve">
-  <value>نام</value>
+    <value>نام</value>
   </data>
   <data name="Password_Field" xml:space="preserve">
-  <value>پاس ورڈ:</value>
+    <value>پاس ورڈ:</value>
   </data>
   <data name="Password_Field_Confirm" xml:space="preserve">
-  <value>پاس ورڈ کی تصدیق کریں:</value>
+    <value>پاس ورڈ کی تصدیق کریں:</value>
   </data>
   <data name="Password_Field_Length" xml:space="preserve">
-  <value>لمبائی:</value>
+    <value>لمبائی:</value>
   </data>
   <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
-  <value>پاس ورڈ میل نہیں کھاتے۔</value>
+    <value>پاس ورڈ میل نہیں کھاتے۔</value>
   </data>
   <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
-  <value>پاس ورڈ کی وضاحت نہیں کی گئی۔</value>
+    <value>پاس ورڈ کی وضاحت نہیں کی گئی۔</value>
   </data>
   <data name="Password_Generate" xml:space="preserve">
-  <value>پاس ورڈ جنریٹ کریں...</value>
+    <value>پاس ورڈ جنریٹ کریں...</value>
   </data>
   <data name="Password_Generator_Header" xml:space="preserve">
-  <value>پاس ورڈ جنریٹر</value>
+    <value>پاس ورڈ جنریٹر</value>
   </data>
   <data name="Password_Help" xml:space="preserve">
-  <value>مجوزہ کم از کم پاس ورڈ کی لمبائی 50 کردار اور اس سے زیادہ ہے۔</value>
+    <value>مجوزہ کم از کم پاس ورڈ کی لمبائی 50 کردار اور اس سے زیادہ ہے۔</value>
   </data>
   <data name="Password_Use" xml:space="preserve">
-  <value>استعمال کریں</value>
-  </data>
-  <data name="RepositorySubfolder_Field" xml:space="preserve">
-  <value>ریپوزٹری ذیلی فولڈر (آپشنل):</value>
-  </data>
-  <data name="RepositorySubfolder_Help" xml:space="preserve">
-  <value>اگر آپ اپنی ڈیوائس پر ریپوزٹری کا مکمل مواد نہیں رکھنا چاہتے ہیں تو آپ کسی خاص ذیلی فولڈر میں فولڈر کو ہم آہنگ کر سکتے ہیں۔</value>
+    <value>استعمال کریں</value>
   </data>
   <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
-  <value>فائلیں "{0}" ڈائریکٹری میں نہیں مل سکیں۔
+    <value>فائلیں "{0}" ڈائریکٹری میں نہیں مل سکیں۔
   اس فائل والی ڈائریکٹری کی طرف اشارہ کریں۔</value>
   </data>
   <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
-  <value>حالت کو پڑھا نہیں جا سکا۔</value>
+    <value>حالت کو پڑھا نہیں جا سکا۔</value>
   </data>
   <data name="Server_Field_Address" xml:space="preserve">
-  <value>سرور کا نام:</value>
+    <value>سرور کا نام:</value>
   </data>
   <data name="Server_Field_Address_Validation" xml:space="preserve">
-  <value>سرور کا نام واضح نہیں کیا جانا چاہیے۔</value>
+    <value>سرور کا نام واضح نہیں کیا جانا چاہیے۔</value>
   </data>
   <data name="Server_Field_Port" xml:space="preserve">
-  <value>پورٹ:</value>
+    <value>پورٹ:</value>
   </data>
   <data name="Server_Field_Port_Validation" xml:space="preserve">
-  <value>پورٹ غلط ہے۔</value>
-  </data>
-  <data name="SourceItem_AddFiles" xml:space="preserve">
-  <value>فائلیں شامل کریں...</value>
+    <value>پورٹ غلط ہے۔</value>
   </data>
   <data name="SourceItem_AddFolders" xml:space="preserve">
-  <value>فولڈرز شامل کریں...</value>
+    <value>فولڈرز شامل کریں...</value>
   </data>
   <data name="SourceItem_OpenInExplorer" xml:space="preserve">
-  <value>ایکسپلورر میں کھولیں...</value>
+    <value>ایکسپلورر میں کھولیں...</value>
   </data>
   <data name="SourceItem_State_Get" xml:space="preserve">
-  <value>ماخذ آئٹم "{0}" کی حالت حاصل کریں</value>
+    <value>ماخذ آئٹم "{0}" کی حالت حاصل کریں</value>
   </data>
   <data name="SourceItem_Validation_Empty" xml:space="preserve">
-  <value>پروسیس کرنے کے لئے کوئی آئٹمز نہیں۔</value>
+    <value>پروسیس کرنے کے لئے کوئی آئٹمز نہیں۔</value>
   </data>
   <data name="SourceItem_Validation_NotExists" xml:space="preserve">
-  <value>"{0}" موجود نہیں۔</value>
+    <value>"{0}" موجود نہیں۔</value>
   </data>
   <data name="State_File_Get" xml:space="preserve">
-  <value>فائل "{0}" کی حالت حاصل کریں</value>
+    <value>فائل "{0}" کی حالت حاصل کریں</value>
   </data>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
-  <value>ماخذ آئٹمز اور اسٹوریج کی حالت حاصل کریں</value>
+    <value>ماخذ آئٹمز اور اسٹوریج کی حالت حاصل کریں</value>
   </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
-  <value>فائل خارج کرنے کا پیٹرن شامل کریں</value>
+    <value>فائل خارج کرنے کا پیٹرن شامل کریں</value>
   </data>
   <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
-  <value>فائل خارج کرنے کے پیٹرن میں ترمیم کریں</value>
+    <value>فائل خارج کرنے کے پیٹرن میں ترمیم کریں</value>
   </data>
   <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
-  <value>.NET میں فائل گلوبنگ: پیٹرن</value>
+    <value>.NET میں فائل گلوبنگ: پیٹرن</value>
   </data>
   <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
-  <value>یہاں آپ فائل گلوبنگ خارج کرنے کے پیٹرن کی وضاحت کرسکتے ہیں۔
+    <value>یہاں آپ فائل گلوبنگ خارج کرنے کے پیٹرن کی وضاحت کرسکتے ہیں۔
   یہ ایک فائل کا نام یا فولڈر کا نام یا وائلڈکارڈ ہوسکتا ہے۔
   مثال:
   d:\temp،
@@ -511,126 +559,126 @@
   تفصیلی وضاحت کے لئے مندرجہ ذیل لنک دیکھیں۔</value>
   </data>
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
-  <value>خارج کے پیٹرن کے ذریعہ فائلوں کی پروسیسنگ کو چھوڑ دیتا ہے۔</value>
+    <value>خارج کے پیٹرن کے ذریعہ فائلوں کی پروسیسنگ کو چھوڑ دیتا ہے۔</value>
   </data>
   <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
-  <value>فائل خارج کرنے کا پیٹرن:</value>
+    <value>فائل خارج کرنے کا پیٹرن:</value>
   </data>
   <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
-  <value>فائل خارج کرنے کا پیٹرن خالی ہے۔</value>
+    <value>فائل خارج کرنے کا پیٹرن خالی ہے۔</value>
   </data>
   <data name="StorageItem_Remote_Marker" xml:space="preserve">
-  <value>دور دراز</value>
+    <value>دور دراز</value>
   </data>
   <data name="SynchronizationMode_Field" xml:space="preserve">
-  <value>ہم وقت سازی کا طریقہ:</value>
+    <value>ہم وقت سازی کا طریقہ:</value>
   </data>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
-  <value>پڑھیں</value>
+    <value>پڑھیں</value>
   </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
-  <value>دونوں طرف</value>
+    <value>دونوں طرف</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
-  <value>ہم وقت سازی</value>
+    <value>ہم وقت سازی</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-  <value>مختلف ڈیوائسز کے درمیان فائلوں کی دونوں طرف کی ہم وقت سازی کرتے ہوئے مرکزی اسٹوریج کا استعمال کرتے ہیں۔</value>
+    <value>مختلف ڈیوائسز کے درمیان فائلوں کی دونوں طرف کی ہم وقت سازی کرتے ہوئے مرکزی اسٹوریج کا استعمال کرتے ہیں۔</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
-  <value>نیا</value>
+    <value>نیا</value>
   </data>
   <data name="Task_Create_Hint" xml:space="preserve">
-  <value>نیا کام تخلیق کرتا ہے۔</value>
+    <value>نیا کام تخلیق کرتا ہے۔</value>
   </data>
   <data name="Task_Delete" xml:space="preserve">
-  <value>حذف کریں</value>
+    <value>حذف کریں</value>
   </data>
   <data name="Task_Delete_Confirm" xml:space="preserve">
-  <value>کیا آپ واقعی "{0}" حذف کرنا چاہتے ہیں؟</value>
+    <value>کیا آپ واقعی "{0}" حذف کرنا چاہتے ہیں؟</value>
   </data>
   <data name="Task_Delete_Hint" xml:space="preserve">
-  <value>منتخب شدہ ٹاسک کو حذف کرتا ہے۔</value>
+    <value>منتخب شدہ ٹاسک کو حذف کرتا ہے۔</value>
   </data>
   <data name="Task_Edit" xml:space="preserve">
-  <value>ترمیم کریں</value>
+    <value>ترمیم کریں</value>
   </data>
   <data name="Task_Edit_Hint" xml:space="preserve">
-  <value>منتخب ٹاسک میں ترمیم کریں۔</value>
+    <value>منتخب ٹاسک میں ترمیم کریں۔</value>
   </data>
   <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
-  <value>آپ اس قسم کے کام کو CLI میں ترمیم نہیں کرسکتے۔</value>
+    <value>آپ اس قسم کے کام کو CLI میں ترمیم نہیں کرسکتے۔</value>
   </data>
   <data name="Task_Field_Choose" xml:space="preserve">
-  <value>کام منتخب کریں:</value>
+    <value>کام منتخب کریں:</value>
   </data>
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
-  <value>نیا کام</value>
+    <value>نیا کام</value>
   </data>
   <data name="Task_LastExecution_State" xml:space="preserve">
-  <value>حالت</value>
+    <value>حالت</value>
   </data>
   <data name="Task_Launch" xml:space="preserve">
-  <value>چلائیں</value>
+    <value>چلائیں</value>
   </data>
   <data name="Task_Launch_Hint" xml:space="preserve">
-  <value>منتخب کام کو چلاتا ہے۔</value>
+    <value>منتخب کام کو چلاتا ہے۔</value>
   </data>
   <data name="Task_List" xml:space="preserve">
-  <value>کام</value>
+    <value>کام</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
-  <value>بحال کریں</value>
+    <value>بحال کریں</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
-  <value>ناکام (کھلے لاگ میں دیکھیں)</value>
+    <value>ناکام (کھلے لاگ میں دیکھیں)</value>
   </data>
   <data name="Task_Status_InProgress" xml:space="preserve">
-  <value>کام جاری ہے...</value>
+    <value>کام جاری ہے...</value>
   </data>
   <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
-  <value>جزوی طور پر مکمل۔ اسٹوریج کوٹہ کی وجہ سے بعض فائلیں اس بار چھوڑ دی گئی تھیں۔ باقی {0} فائلیں {1} جی بی ہیں۔</value>
+    <value>جزوی طور پر مکمل۔ اسٹوریج کوٹہ کی وجہ سے بعض فائلیں اس بار چھوڑ دی گئی تھیں۔ باقی {0} فائلیں {1} جی بی ہیں۔</value>
   </data>
   <data name="Task_Status_Succesfull" xml:space="preserve">
-  <value>کامیاب</value>
+    <value>کامیاب</value>
   </data>
   <data name="Task_Status_Unknown" xml:space="preserve">
-  <value>نامعلوم</value>
+    <value>نامعلوم</value>
   </data>
   <data name="Task_Validation_NotFound" xml:space="preserve">
-  <value>کام '{0}' نہیں ملا۔</value>
+    <value>کام '{0}' نہیں ملا۔</value>
   </data>
   <data name="Task_Validation_NotSupported" xml:space="preserve">
-  <value>یہ کام کی قسم حمایت یافتہ نہیں ہے۔</value>
+    <value>یہ کام کی قسم حمایت یافتہ نہیں ہے۔</value>
   </data>
   <data name="Theme_Title" xml:space="preserve">
-  <value>موضوع</value>
+    <value>موضوع</value>
   </data>
   <data name="Theme_Value_Dark" xml:space="preserve">
-  <value>تاریک</value>
+    <value>تاریک</value>
   </data>
   <data name="Theme_Value_Light" xml:space="preserve">
-  <value>ہلکا</value>
+    <value>ہلکا</value>
   </data>
   <data name="Time_Field_Elapsed" xml:space="preserve">
-  <value>وقت گزرا:</value>
+    <value>وقت گزرا:</value>
   </data>
   <data name="Time_Field_Hour" xml:space="preserve">
-  <value>گھنٹہ:</value>
+    <value>گھنٹہ:</value>
   </data>
   <data name="Time_Field_Minute" xml:space="preserve">
-  <value>منٹ:</value>
+    <value>منٹ:</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
-  <value>یو آر ایل:</value>
+    <value>یو آر ایل:</value>
   </data>
   <data name="Url_Field_Validation" xml:space="preserve">
-  <value>یو آر ایل کی وضاحت نہیں کی گئی۔</value>
+    <value>یو آر ایل کی وضاحت نہیں کی گئی۔</value>
   </data>
   <data name="User_Field" xml:space="preserve">
-  <value>صارف:</value>
+    <value>صارف:</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
-  <value>صارف کی وضاحت نہیں کی گئی۔</value>
+    <value>صارف کی وضاحت نہیں کی گئی۔</value>
   </data>
 </root>

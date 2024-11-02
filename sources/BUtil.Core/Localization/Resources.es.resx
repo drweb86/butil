@@ -119,262 +119,262 @@
   </resheader>
   <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
     <value>No hacer nada</value>
-</data>
+  </data>
   <data name="AfterTaskSelection_Field" xml:space="preserve">
     <value>Después de completar la tarea:</value>
-</data>
+  </data>
   <data name="AfterTaskSelection_Help" xml:space="preserve">
     <value>Si elige algo diferente a 'no hacer nada' 
 el programa configurará el SO para mostrarle un informe
 en su próximo inicio de sesión si se registran errores
 o advertencias.</value>
-</data>
+  </data>
   <data name="AfterTaskSelection_LogOff" xml:space="preserve">
     <value>Cerrar sesión</value>
-</data>
+  </data>
   <data name="AfterTaskSelection_Reboot" xml:space="preserve">
     <value>Reiniciar</value>
-</data>
+  </data>
   <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
     <value>Apagar</value>
-</data>
+  </data>
   <data name="Application_NewVersion_Notification" xml:space="preserve">
     <value>Una nueva versión de {0} está disponible.</value>
-</data>
+  </data>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Eliminar versión</value>
-</data>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Cambios</value>
-</data>
+  </data>
   <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
     <value>¿Realmente desea eliminar la versión "{0}"?
 
 Los cambios de la versión eliminada se convertirán en parte de la versión "{1}".</value>
-</data>
+  </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Archivos</value>
-</data>
+  </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Diario: {0}</value>
-</data>
+  </data>
   <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
     <value>Diario para seleccionado...</value>
-</data>
+  </data>
   <data name="BackupVersion_Select" xml:space="preserve">
     <value>Abrir versión seleccionada...</value>
-</data>
+  </data>
   <data name="BackupVersion_Selector_Title" xml:space="preserve">
     <value>SELECCIONAR VERSIÓN</value>
-</data>
+  </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
     <value>(todas las versiones ocupan en almacenamiento {0})</value>
-</data>
+  </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERSIONES</value>
-</data>
+  </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
     <value>Seleccione el archivo o carpeta que desea restaurar en el árbol y haga clic en "Restaurar".</value>
-</data>
+  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>Cancelar</value>
-</data>
+  </data>
   <data name="Button_Close" xml:space="preserve">
     <value>Cerrar</value>
-</data>
+  </data>
   <data name="Button_Continue" xml:space="preserve">
     <value>Continuar &gt;</value>
-</data>
+  </data>
   <data name="Button_CopyToClipboard" xml:space="preserve">
     <value>Copiar</value>
-</data>
+  </data>
   <data name="Button_Download" xml:space="preserve">
     <value>Descargar</value>
-</data>
+  </data>
   <data name="Button_OK" xml:space="preserve">
     <value>OK</value>
-</data>
+  </data>
   <data name="Button_Remove" xml:space="preserve">
     <value>Eliminar</value>
-</data>
+  </data>
   <data name="Button_Save" xml:space="preserve">
     <value>Guardar</value>
-</data>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Visite {0} para ver los argumentos de la línea de comandos.</value>
-</data>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Argumentos de línea de comandos inválidos.</value>
-</data>
+  </data>
   <data name="DataStorage_Data_Saving" xml:space="preserve">
-  <value>Guardando datos en el almacenamiento</value>
-</data>
+    <value>Guardando datos en el almacenamiento</value>
+  </data>
   <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
     <value>Script de conexión:</value>
-</data>
+  </data>
   <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
     <value>Script de desconexión:</value>
-</data>
+  </data>
   <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
     <value>Finalizado con errores</value>
-</data>
+  </data>
   <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
     <value>Finalizado con éxito</value>
-</data>
+  </data>
   <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
     <value>Límite de carga, GB:</value>
-</data>
+  </data>
   <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
     <value>Limita la cantidad de datos enviados durante una ejecución de tarea al almacenamiento. 0 - sin límite.
 Cuando se excede la cuota, se omitirán otros archivos y se procesarán la próxima vez.
 Escenario de uso: Copia datos a un servidor remoto. Hay un problema: el ISP reduce la velocidad de carga después de varios gigabytes. Esta configuración le permite manejarlo.</value>
-</data>
+  </data>
   <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
     <value>La cuota debe ser 0 (no aplicar) o un valor superior a 0.</value>
-</data>
+  </data>
   <data name="DataStorage_Maintenance" xml:space="preserve">
     <value>Mantenimiento del almacenamiento de datos</value>
-</data>
+  </data>
   <data name="DataStorage_Script_Help" xml:space="preserve">
     <value>Si la carpeta se vuelve disponible después de ejecutar algunos comandos, especifique scripts de conexión y desconexión {0}.</value>
-</data>
+  </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
     <value>Obtener estado del almacenamiento</value>
-</data>
+  </data>
   <data name="DataStorage_State_Saving" xml:space="preserve">
     <value>Guardando estado del almacenamiento</value>
   </data>
   <data name="DataStorage_Title" xml:space="preserve">
-  <value>Almacenamiento</value>
-</data>
+    <value>Almacenamiento</value>
+  </data>
   <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
     <value>El almacenamiento no está especificado.</value>
-</data>
+  </data>
   <data name="Days_Field_Choose" xml:space="preserve">
     <value>Elija los días de la semana:</value>
-</data>
+  </data>
   <data name="Days_Friday" xml:space="preserve">
     <value>Viernes</value>
-</data>
+  </data>
   <data name="Days_Monday" xml:space="preserve">
     <value>Lunes</value>
-</data>
+  </data>
   <data name="Days_Saturday" xml:space="preserve">
     <value>Sábado</value>
-</data>
+  </data>
   <data name="Days_Sunday" xml:space="preserve">
     <value>Domingo</value>
-</data>
+  </data>
   <data name="Days_Thursday" xml:space="preserve">
     <value>Jueves</value>
-</data>
+  </data>
   <data name="Days_Tuesday" xml:space="preserve">
     <value>Martes</value>
-</data>
+  </data>
   <data name="Days_Wednesday" xml:space="preserve">
     <value>Miércoles</value>
-</data>
+  </data>
   <data name="DirectoryStorage" xml:space="preserve">
     <value>Directorio</value>
-</data>
+  </data>
   <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
     <value>Carpeta:</value>
-</data>
+  </data>
   <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
     <value>El directorio no está especificado.</value>
-</data>
+  </data>
   <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
     <value>El directorio "{0}" no existe.</value>
-</data>
+  </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Dispositivo:</value>
-</data>
+  </data>
   <data name="Field_Device_Validation_Empty" xml:space="preserve">
     <value>El dispositivo no está especificado.</value>
-</data>
+  </data>
   <data name="Field_Device_Validation_NotFound" xml:space="preserve">
     <value>El dispositivo no se encuentra.</value>
-</data>
+  </data>
   <data name="Field_Folder" xml:space="preserve">
     <value>Carpeta:</value>
-</data>
+  </data>
   <data name="Field_Folder_Browse" xml:space="preserve">
     <value>Examinar</value>
-</data>
+  </data>
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>La carpeta no está especificada.</value>
-</data>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>La carpeta no existe.</value>
-</data>
+  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protocolo:</value>
-</data>
+  </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Versión:</value>
-</data>
+  </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Eliminando "{0}"</value>
-</data>
+  </data>
   <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
     <value>Script de verificación de integridad.ps1</value>
-</data>
+  </data>
   <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
     <value>Guardando scripts de verificación de integridad</value>
-</data>
+  </data>
   <data name="File_List_Saving" xml:space="preserve">
     <value>Guardando archivos</value>
-</data>
+  </data>
   <data name="File_Moving" xml:space="preserve">
     <value>Moviendo "{0}" a "{1}"</value>
-</data>
+  </data>
   <data name="File_Saving" xml:space="preserve">
     <value>Guardando "{0}"</value>
-</data>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Explícito</value>
-</data>
+  </data>
   <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
     <value>Implícito</value>
-</data>
+  </data>
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>Encriptación SSL/TTS:</value>
-</data>
+  </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Agregar icono de carácter a tu texto</value>
-</data>
+  </data>
   <data name="ImportMediaTask_AllFiles" xml:space="preserve">
     <value>Importar todos los archivos</value>
-</data>
+  </data>
   <data name="ImportMediaTask_Create" xml:space="preserve">
     <value>Crear tarea de importación de medios</value>
-</data>
+  </data>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
     <value>Editar "{0}" tarea de importación de medios</value>
-</data>
+  </data>
   <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
     <value>Carpeta de salida:</value>
-</data>
+  </data>
   <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
     <value>Transformaciones del nombre del archivo:</value>
-</data>
+  </data>
   <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
     <value>Ejemplo:
 Imagina que tienes el archivo {0} (modificado en {1}).
 Con este directorio y cadena de plantilla el archivo se almacenará como:
 {2}</value>
-</data>
+  </data>
   <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
     <value>Tokens soportados:
 {DATE:Format} - Inserta la fecha de modificación del archivo en el formato especificado.
 Para ver todas las opciones, googlee "C# DateTime format".</value>
-</data>
+  </data>
   <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
     <value>La transformación del nombre del archivo está vacía.</value>
-</data>
+  </data>
   <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
     <value>Cadena de nombre de archivo transformado inválida.</value>
-</data>
+  </data>
   <data name="ImportMediaTask_File" xml:space="preserve">
     <value>Importar "{0}"</value>
   </data>
@@ -446,11 +446,11 @@ Si falla alguna de las copias creadas, incluida la primera (completa), la restau
     <value>En este lugar puedes agregar ubicaciones donde te gustaría que se copien tus archivos.</value>
   </data>
   <data name="Local_State_Get" xml:space="preserve">
-  <value>Obtener estado local</value>
-</data>
+    <value>Obtener estado local</value>
+  </data>
   <data name="Local_State_Saving" xml:space="preserve">
-  <value>Guardando estado local</value>
-</data>
+    <value>Guardando estado local</value>
+  </data>
   <data name="LogFile_Marker_Errors" xml:space="preserve">
     <value>Errores</value>
   </data>
@@ -508,12 +508,6 @@ Si falla alguna de las copias creadas, incluida la primera (completa), la restau
   <data name="Password_Use" xml:space="preserve">
     <value>Usar</value>
   </data>
-  <data name="RepositorySubfolder_Field" xml:space="preserve">
-  <value>Subcarpeta del repositorio (opcional):</value>
-</data>
-  <data name="RepositorySubfolder_Help" xml:space="preserve">
-  <value>Puedes sincronizar la carpeta con una subcarpeta particular del repositorio, si no deseas tener todo el contenido del repositorio en el dispositivo.</value>
-</data>
   <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
     <value>No se pueden localizar los archivos "{0}" en el directorio.
 
@@ -533,9 +527,6 @@ Señala un directorio que contenga este archivo.</value>
   </data>
   <data name="Server_Field_Port_Validation" xml:space="preserve">
     <value>El puerto es inválido.</value>
-  </data>
-  <data name="SourceItem_AddFiles" xml:space="preserve">
-    <value>Agregar archivos...</value>
   </data>
   <data name="SourceItem_AddFolders" xml:space="preserve">
     <value>Agregar carpetas...</value>
@@ -587,23 +578,23 @@ Consulta la descripción detallada en el siguiente enlace.</value>
     <value>El patrón de exclusión de archivos está vacío.</value>
   </data>
   <data name="StorageItem_Remote_Marker" xml:space="preserve">
-  <value>Remoto</value>
-</data>
+    <value>Remoto</value>
+  </data>
   <data name="SynchronizationMode_Field" xml:space="preserve">
-  <value>Modo de sincronización:</value>
-</data>
+    <value>Modo de sincronización:</value>
+  </data>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
-  <value>Lectura</value>
-</data>
+    <value>Lectura</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
-  <value>Bidireccional</value>
-</data>
+    <value>Bidireccional</value>
+  </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
-  <value>Sincronización</value>
-</data>
+    <value>Sincronización</value>
+  </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-  <value>Sincronización bidireccional de archivos entre dispositivos utilizando almacenamiento centralizado.</value>
-</data>
+    <value>Sincronización bidireccional de archivos entre dispositivos utilizando almacenamiento centralizado.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Nuevo</value>
   </data>
@@ -656,48 +647,48 @@ Consulta la descripción detallada en el siguiente enlace.</value>
     <value>La tarea está en progreso...</value>
   </data>
   <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
-  <value>Completado parcialmente. Debido a la cuota de almacenamiento, algunos archivos se omitieron esta vez. Quedan {0} archivos de {1} GB.</value>
-</data>
+    <value>Completado parcialmente. Debido a la cuota de almacenamiento, algunos archivos se omitieron esta vez. Quedan {0} archivos de {1} GB.</value>
+  </data>
   <data name="Task_Status_Succesfull" xml:space="preserve">
-  <value>Exitoso</value>
-</data>
+    <value>Exitoso</value>
+  </data>
   <data name="Task_Status_Unknown" xml:space="preserve">
-  <value>Desconocido</value>
-</data>
+    <value>Desconocido</value>
+  </data>
   <data name="Task_Validation_NotFound" xml:space="preserve">
-  <value>No se encontró la tarea '{0}'.</value>
-</data>
+    <value>No se encontró la tarea '{0}'.</value>
+  </data>
   <data name="Task_Validation_NotSupported" xml:space="preserve">
-  <value>Este tipo de tarea no es compatible.</value>
-</data>
+    <value>Este tipo de tarea no es compatible.</value>
+  </data>
   <data name="Theme_Title" xml:space="preserve">
-  <value>Tema</value>
-</data>
+    <value>Tema</value>
+  </data>
   <data name="Theme_Value_Dark" xml:space="preserve">
-  <value>Oscuro</value>
-</data>
+    <value>Oscuro</value>
+  </data>
   <data name="Theme_Value_Light" xml:space="preserve">
-  <value>Claro</value>
-</data>
+    <value>Claro</value>
+  </data>
   <data name="Time_Field_Elapsed" xml:space="preserve">
-  <value>Transcurrido:</value>
-</data>
+    <value>Transcurrido:</value>
+  </data>
   <data name="Time_Field_Hour" xml:space="preserve">
-  <value>Hora:</value>
-</data>
+    <value>Hora:</value>
+  </data>
   <data name="Time_Field_Minute" xml:space="preserve">
-  <value>Minuto:</value>
-</data>
+    <value>Minuto:</value>
+  </data>
   <data name="Url_Field" xml:space="preserve">
-  <value>Url:</value>
-</data>
+    <value>Url:</value>
+  </data>
   <data name="Url_Field_Validation" xml:space="preserve">
-  <value>No se especificó la URL.</value>
-</data>
+    <value>No se especificó la URL.</value>
+  </data>
   <data name="User_Field" xml:space="preserve">
-  <value>Usuario:</value>
-</data>
+    <value>Usuario:</value>
+  </data>
   <data name="User_Field_Validation" xml:space="preserve">
-  <value>No se especificó el usuario.</value>
-</data>
+    <value>No se especificó el usuario.</value>
+  </data>
 </root>

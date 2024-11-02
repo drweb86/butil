@@ -118,575 +118,577 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
-    <value>Ne rien faire</value>
+    <value>Không làm gì</value>
   </data>
   <data name="AfterTaskSelection_Field" xml:space="preserve">
-    <value>Après l'achèvement de la tâche :</value>
+    <value>Sau khi hoàn thành nhiệm vụ:</value>
   </data>
   <data name="AfterTaskSelection_Help" xml:space="preserve">
-    <value>Si vous choisissez autre chose que 'ne rien faire', le 
-programme configurera le système d'exploitation pour vous 
-montrer un rapport lors de votre prochaine connexion au 
-système si des erreurs ou des avertissements sont enregistrés.</value>
+    <value>Nếu bạn chọn một cái gì đó khác ngoài 'không làm gì', chương trình sẽ cấu hình hệ điều hành để hiển thị báo cáo cho bạn khi bạn đăng nhập vào hệ thống nếu có lỗi hoặc cảnh báo nào được ghi lại.</value>
   </data>
   <data name="AfterTaskSelection_LogOff" xml:space="preserve">
-    <value>Se déconnecter</value>
+    <value>Đăng xuất</value>
   </data>
   <data name="AfterTaskSelection_Reboot" xml:space="preserve">
-    <value>Redémarrer</value>
+    <value>Khởi động lại</value>
   </data>
   <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
-    <value>Éteindre</value>
+    <value>Tắt máy</value>
   </data>
   <data name="Application_NewVersion_Notification" xml:space="preserve">
-    <value>Nouvelle version de {0} est disponible.</value>
+    <value>Phiên bản {0} mới có sẵn.</value>
   </data>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
-    <value>Supprimer la version</value>
+    <value>Xóa phiên bản</value>
   </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
-    <value>Changements</value>
+    <value>Thay đổi</value>
   </data>
   <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
-    <value>Voulez-vous vraiment supprimer la version "{0}" ? 
+    <value>Bạn có thực sự muốn xóa phiên bản "{0}"? 
 
-Les changements de version supprimés feront partie de la version "{1}".</value>
+Những thay đổi của phiên bản đã xóa sẽ trở thành một phần của phiên bản "{1}".</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
-    <value>Fichiers</value>
+    <value>Tập tin</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
-    <value>Journal : {0}</value>
+    <value>Nhật ký: {0}</value>
   </data>
   <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
-    <value>Journal pour sélectionné...</value>
+    <value>Nhật ký cho đã chọn...</value>
   </data>
   <data name="BackupVersion_Select" xml:space="preserve">
-    <value>Ouvrir la version sélectionnée...</value>
+    <value>Mở phiên bản đã chọn...</value>
   </data>
   <data name="BackupVersion_Selector_Title" xml:space="preserve">
-    <value>SÉLECTIONNER LA VERSION</value>
+    <value>CHỌN PHIÊN BẢN</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(toutes les versions occupent sur le stockage {0})</value>
+    <value>(tất cả các phiên bản chiếm {0} trên bộ nhớ)</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
-    <value>VERSIONS</value>
+    <value>CÁC PHIÊN BẢN</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Sélectionnez le fichier ou le dossier que vous voulez restaurer dans l'arborescence et cliquez sur "Restaurer".</value>
+    <value>Chọn tập tin hoặc thư mục bạn muốn khôi phục trong cây và nhấp vào "Khôi phục".</value>
   </data>
   <data name="Button_Cancel" xml:space="preserve">
-    <value>Annuler</value>
+    <value>Hủy</value>
   </data>
   <data name="Button_Close" xml:space="preserve">
-    <value>Fermer</value>
+    <value>Đóng</value>
   </data>
   <data name="Button_Continue" xml:space="preserve">
-    <value>Continuer &gt;</value>
+    <value>Tiếp tục &gt;</value>
   </data>
   <data name="Button_CopyToClipboard" xml:space="preserve">
-    <value>Copier</value>
+    <value>Sao chép</value>
   </data>
   <data name="Button_Download" xml:space="preserve">
-    <value>Télécharger</value>
+    <value>Tải về</value>
   </data>
   <data name="Button_OK" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="Button_Remove" xml:space="preserve">
-    <value>Supprimer</value>
+    <value>Xóa bỏ</value>
   </data>
   <data name="Button_Save" xml:space="preserve">
-    <value>Sauvegarder</value>
+    <value>Lưu</value>
   </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
-    <value>Visitez {0} pour voir les arguments en ligne de commande.</value>
+    <value>Truy cập {0} để xem các tham số dòng lệnh.</value>
   </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
-    <value>Arguments en ligne de commande non valides.</value>
+    <value>Các tham số dòng lệnh không hợp lệ.</value>
   </data>
   <data name="DataStorage_Data_Saving" xml:space="preserve">
-    <value>Écriture des données sur le stockage</value>
+    <value>Đang ghi dữ liệu vào bộ nhớ</value>
   </data>
   <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
-    <value>Script de connexion :</value>
+    <value>Script kết nối:</value>
   </data>
   <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
-    <value>Script de déconnexion :</value>
+    <value>Script ngắt kết nối:</value>
   </data>
   <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
-    <value>Terminé avec des erreurs</value>
+    <value>Hoàn thành với lỗi</value>
   </data>
   <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
-    <value>Terminé avec succès</value>
+    <value>Hoàn thành thành công</value>
   </data>
   <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
-    <value>Limite d'upload, Go :</value>
+    <value>Giới hạn tải lên, GB:</value>
   </data>
   <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
-    <value>Limite la quantité de données envoyées pendant l'exécution d'une tâche vers le stockage. 0 - aucune limite. 
-Lorsque le quota est dépassé, les autres fichiers seront sautés et seront traités la prochaine fois. 
-Scénario d'utilisation : Vous copiez des données sur un serveur distant. 
-Il y a un problème : le fournisseur d'accès réduit la vitesse d'upload après plusieurs gigaoctets. Ce paramètre vous permet de gérer cela.</value>
+    <value>Giới hạn lượng dữ liệu được gửi trong một lần thực thi nhiệm vụ đến bộ nhớ. 0 - không giới hạn. 
+Khi vượt quá giới hạn, các tệp khác sẽ bị bỏ qua và sẽ được xử lý lần sau. 
+Kịch bản sử dụng: Bạn sao chép dữ liệu đến máy chủ từ xa. Có một vấn đề: Nhà cung cấp dịch vụ Internet giảm tốc độ tải lên sau vài gigabyte. Cài đặt này cho phép bạn xử lý nó.</value>
   </data>
   <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
-    <value>Le quota doit être 0 (ne pas appliquer) ou une valeur supérieure à 0.</value>
+    <value>Giới hạn nên là 0 (không áp dụng) hoặc giá trị lớn hơn 0.</value>
   </data>
   <data name="DataStorage_Maintenance" xml:space="preserve">
-    <value>Entretien du stockage des données</value>
+    <value>Bảo trì bộ nhớ dữ liệu</value>
   </data>
   <data name="DataStorage_Script_Help" xml:space="preserve">
-    <value>Si le dossier devient disponible après avoir exécuté certaines commandes, spécifiez {0} scripts pour la connexion et la déconnexion.</value>
+    <value>Nếu thư mục trở nên khả dụng sau khi thực thi một số lệnh, hãy chỉ định {0} các script cho kết nối và ngắt kết nối.</value>
   </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
-    <value>Obtenez l'état du stockage</value>
+    <value>Lấy trạng thái của bộ nhớ</value>
   </data>
   <data name="DataStorage_State_Saving" xml:space="preserve">
-    <value>Enregistrement de l'état du stockage</value>
+    <value>Đang ghi trạng thái bộ nhớ</value>
   </data>
   <data name="DataStorage_Title" xml:space="preserve">
-    <value>Stockage</value>
+    <value>Bộ nhớ</value>
   </data>
   <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
-    <value>Le stockage n'est pas spécifié.</value>
+    <value>Bộ nhớ không được chỉ định.</value>
   </data>
   <data name="Days_Field_Choose" xml:space="preserve">
-    <value>Choisissez les jours de la semaine :</value>
+    <value>Chọn các ngày trong tuần:</value>
   </data>
   <data name="Days_Friday" xml:space="preserve">
-    <value>Vendredi</value>
+    <value>Thứ Sáu</value>
   </data>
   <data name="Days_Monday" xml:space="preserve">
-    <value>Lundi</value>
+    <value>Thứ Hai</value>
   </data>
   <data name="Days_Saturday" xml:space="preserve">
-    <value>Samedi</value>
+    <value>Thứ Bảy</value>
   </data>
   <data name="Days_Sunday" xml:space="preserve">
-    <value>Dimanche</value>
+    <value>Chủ Nhật</value>
   </data>
   <data name="Days_Thursday" xml:space="preserve">
-    <value>Jeudi</value>
+    <value>Thứ Năm</value>
   </data>
   <data name="Days_Tuesday" xml:space="preserve">
-    <value>Mardi</value>
+    <value>Thứ Ba</value>
   </data>
   <data name="Days_Wednesday" xml:space="preserve">
-    <value>Mercredi</value>
+    <value>Thứ Tư</value>
   </data>
   <data name="DirectoryStorage" xml:space="preserve">
-    <value>Répertoire</value>
+    <value>Thư mục</value>
   </data>
   <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
-    <value>Dossier :</value>
+    <value>Thư mục:</value>
   </data>
   <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
-    <value>Le répertoire n'est pas spécifié.</value>
+    <value>Thư mục không được chỉ định.</value>
   </data>
   <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
-    <value>Le répertoire "{0}" n'existe pas.</value>
+    <value>Thư mục "{0}" không tồn tại.</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
-    <value>Appareil :</value>
+    <value>Thiết bị:</value>
   </data>
   <data name="Field_Device_Validation_Empty" xml:space="preserve">
-    <value>Appareil non spécifié.</value>
+    <value>Thiết bị không được chỉ định.</value>
   </data>
   <data name="Field_Device_Validation_NotFound" xml:space="preserve">
-    <value>Appareil non trouvé.</value>
+    <value>Thiết bị không được tìm thấy.</value>
   </data>
   <data name="Field_Folder" xml:space="preserve">
-    <value>Dossier :</value>
+    <value>Thư mục:</value>
   </data>
   <data name="Field_Folder_Browse" xml:space="preserve">
-    <value>Parcourir</value>
+    <value>Duyệt</value>
   </data>
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
-    <value>Le dossier n'est pas spécifié.</value>
+    <value>Thư mục không được chỉ định.</value>
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
-    <value>Le dossier n'existe pas.</value>
+    <value>Thư mục không tồn tại.</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
-    <value>Protocole :</value>
+    <value>Giao thức:</value>
   </data>
   <data name="Field_Version" xml:space="preserve">
-    <value>Version :</value>
+    <value>Phiên bản:</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
-    <value>Suppression de "{0}"</value>
+    <value>Đang xóa "{0}"</value>
   </data>
   <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
-    <value>Script de vérification d'intégrité.ps1</value>
+    <value>Script kiểm tra tính toàn vẹn.ps1</value>
   </data>
   <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
-    <value>Enregistrement des scripts de vérification d'intégrité</value>
+    <value>Đang lưu các script kiểm tra tính toàn vẹn</value>
+  </data>
+  <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
+    <value>Xử lý các tệp cũ hơn:</value>
   </data>
   <data name="File_List_Saving" xml:space="preserve">
-    <value>Enregistrement des fichiers</value>
+    <value>Đang lưu các tệp</value>
   </data>
   <data name="File_Moving" xml:space="preserve">
-    <value>Déplacement de "{0}" vers "{1}"</value>
+    <value>Đang di chuyển "{0}" đến "{1}"</value>
   </data>
   <data name="File_Saving" xml:space="preserve">
-    <value>Enregistrement de "{0}"</value>
+    <value>Đang lưu "{0}"</value>
   </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
-    <value>Explicite</value>
+    <value>Công khai</value>
   </data>
   <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
-    <value>Implicite</value>
+    <value>Ngầm</value>
   </data>
   <data name="Ftps_Field_Encryption" xml:space="preserve">
-    <value>Chiffrement SSL/TTS :</value>
+    <value>Mã hóa SSL/TTS:</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
-    <value>Ajouter une icône de caractère à votre texte</value>
+    <value>Thêm biểu tượng ký tự vào văn bản của bạn</value>
   </data>
   <data name="ImportMediaTask_AllFiles" xml:space="preserve">
-    <value>Importer tous les fichiers</value>
+    <value>Nhập tất cả các tệp</value>
   </data>
   <data name="ImportMediaTask_Create" xml:space="preserve">
-    <value>Créer une tâche d'importation de médias</value>
+    <value>Nhiệm vụ nhập phương tiện</value>
   </data>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
-    <value>Modifier la tâche d'importation de médias "{0}"</value>
+    <value>Chỉnh sửa nhiệm vụ nhập phương tiện "{0}"</value>
   </data>
   <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
-    <value>Dossier de sortie :</value>
+    <value>Thư mục đầu ra:</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
-    <value>Transformations de nom de fichier :</value>
+    <value>Chuyển đổi tên tệp:</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
-    <value>Exemple : 
-Imaginez que vous ayez le fichier {0} (modifié le {1}). 
-Avec ce répertoire et cette chaîne de modèle, le fichier sera stocké sous : {2}</value>
+    <value>Ví dụ:
+Giả sử bạn có tệp {0} (đã sửa đổi lúc {1}).
+Với thư mục và chuỗi mẫu này, tệp sẽ được lưu trữ là:
+{2}</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
-    <value>Tokens pris en charge : 
-{DATE:Format} - Insère la date de modification du fichier dans le format spécifié. 
-Pour voir toutes les options, recherchez "C# DateTime format".</value>
+    <value>Các ký hiệu được hỗ trợ:
+{DATE:Format} - Chèn ngày sửa đổi tệp theo định dạng chỉ định.
+Để xem tất cả các tùy chọn, tìm kiếm "C# DateTime format".</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
-    <value>Nom de fichier de transformation vide.</value>
+    <value>Tên tệp chuyển đổi để trống.</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
-    <value>Chaîne de nom de fichier de transformation invalide.</value>
+    <value>Chuỗi tên tệp chuyển đổi không hợp lệ.</value>
   </data>
   <data name="ImportMediaTask_File" xml:space="preserve">
-    <value>Importer "{0}"</value>
+    <value>Nhập "{0}"</value>
   </data>
   <data name="ImportMediaTask_Help" xml:space="preserve">
-    <value>Importe des audios, photos, vidéos depuis la carte SD de la caméra, enregistreur ; photos et vidéos depuis votre téléphone via WI-FI grâce à l'application serveur FTP en utilisant des noms de fichiers modèles. 
+    <value>Nhập âm thanh, hình ảnh, video từ thẻ SD của máy ảnh, máy ghi âm; hình ảnh và video từ điện thoại của bạn qua WI-FI thông qua ứng dụng máy chủ FTP sử dụng tên tệp mẫu.
 
-Consultez le site web de l'application pour voir la documentation sur la configuration de la transmission de fichiers via WI-FI à l'aide de l'application serveur FTP sur le téléphone.</value>
+Xem trang web ứng dụng để biết tài liệu về cách thiết lập truyền tệp qua WI-FI thông qua ứng dụng máy chủ FTP trên điện thoại.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Importer la source de données</value>
+    <value>Nhập nguồn dữ liệu</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
-    <value>Ignorer les fichiers déjà importés</value>
+    <value>Bỏ qua các tệp đã nhập trước đó</value>
   </data>
   <data name="ImproveIt_Message" xml:space="preserve">
-    <value>Une erreur inattendue est survenue. 
+    <value>Đã xảy ra lỗi không mong muốn.
 
-Veuillez contacter les développeurs avec les informations enregistrées sur votre bureau dans "{0}" 
+Vui lòng liên hệ với các nhà phát triển với thông tin được lưu trên màn hình máy tính của bạn trong
+"{0}"
 
-L'application va maintenant se fermer.</value>
+Ứng dụng sẽ đóng lại ngay bây giờ.</value>
   </data>
   <data name="IncrementalBackup_Help" xml:space="preserve">
-    <value>La forme la plus basique de sauvegarde incrémentielle consiste à identifier, enregistrer et donc, préserver uniquement les fichiers qui ont changé depuis la dernière sauvegarde. 
+    <value>Dạng cơ bản nhất của sao lưu gia tăng bao gồm việc xác định, ghi lại và do đó, bảo tồn chỉ những tệp đã thay đổi kể từ bản sao lưu cuối cùng.
 
-Étant donné que les changements sont généralement faibles, les sauvegardes incrémentielles sont beaucoup plus petites et plus rapides que les sauvegardes complètes. 
+Vì các thay đổi thường là ít, sao lưu gia tăng nhỏ hơn và nhanh hơn so với sao lưu đầy đủ.
 
-Par exemple, après une sauvegarde complète le vendredi, une sauvegarde le lundi contiendra uniquement les fichiers qui ont changé depuis vendredi. Une sauvegarde le mardi contient uniquement les fichiers qui ont changé depuis lundi, et ainsi de suite. Si l'une des copies créées échoue, y compris la première (complète), la restauration sera incomplète.</value>
+Chẳng hạn, sau khi sao lưu đầy đủ vào thứ Sáu, một bản sao lưu vào thứ Hai sẽ chỉ chứa những tệp đã thay đổi kể từ thứ Sáu. Một bản sao lưu vào thứ Ba chỉ chứa những tệp đã thay đổi kể từ thứ Hai, và cứ như vậy.
+
+Nếu bất kỳ bản sao nào được tạo ra thất bại, bao gồm cả bản sao đầu tiên (đầy đủ), việc phục hồi sẽ không hoàn chỉnh.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
-    <value>Sauvegarde incrémentielle</value>
+    <value>Sao lưu gia tăng</value>
   </data>
   <data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
-    <value>Calculer la version incrémentée</value>
+    <value>Tính toán phiên bản gia tăng</value>
   </data>
   <data name="IncrementalBackup_Version_Save" xml:space="preserve">
-    <value>Enregistrer la version incrémentée</value>
+    <value>Đang lưu phiên bản gia tăng</value>
   </data>
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
-    <value>Créer une tâche de sauvegarde incrémentielle</value>
+    <value>Nhiệm vụ sao lưu gia tăng</value>
   </data>
   <data name="LeftMenu_Encryption" xml:space="preserve">
-    <value>Chiffrement</value>
+    <value>Mã hóa</value>
   </data>
   <data name="LeftMenu_What" xml:space="preserve">
-    <value>Quoi ?</value>
+    <value>Cái gì?</value>
   </data>
   <data name="LeftMenu_What_Hint" xml:space="preserve">
-    <value>Ici, vous pouvez ajouter des dossiers et des fichiers que vous devez traiter.</value>
+    <value>Tại đây bạn có thể thêm các thư mục và tệp bạn cần xử lý.</value>
   </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
-    <value>Aucun élément à traiter.</value>
+    <value>Không có mục nào để xử lý.</value>
   </data>
   <data name="LeftMenu_When" xml:space="preserve">
-    <value>Quand ?</value>
+    <value>Khi nào?</value>
   </data>
   <data name="LeftMenu_When_Help" xml:space="preserve">
-    <value>Ici, vous pouvez configurer un planificateur. Le planificateur peut vous aider à automatiser le lancement des tâches.</value>
+    <value>Tại đây bạn có thể thiết lập một lịch trình. Lịch trình có thể giúp bạn tự động hóa việc khởi động nhiệm vụ.</value>
   </data>
   <data name="LeftMenu_Where" xml:space="preserve">
-    <value>Où ?</value>
+    <value>Ở đâu?</value>
   </data>
   <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
-    <value>Glissez et déposez ici des fichiers et dossiers depuis l'Explorateur.</value>
+    <value>Kéo và thả tệp và thư mục từ Explorer vào đây.</value>
   </data>
   <data name="LeftMenu_Where_Hint" xml:space="preserve">
-    <value>À cet endroit, vous pouvez ajouter des emplacements où vous souhaiteriez que vos fichiers soient copiés.</value>
+    <value>Tại đây bạn có thể thêm các vị trí nơi bạn muốn các tệp của mình được sao chép.</value>
   </data>
   <data name="Local_State_Get" xml:space="preserve">
-    <value>Obtenir l'état local</value>
+    <value>Nhận trạng thái địa phương</value>
   </data>
   <data name="Local_State_Saving" xml:space="preserve">
-    <value>Écriture de l'état local</value>
+    <value>Đang ghi trạng thái địa phương</value>
   </data>
   <data name="LogFile_Marker_Errors" xml:space="preserve">
-    <value>Erreurs</value>
+    <value>Lỗi</value>
   </data>
   <data name="LogFile_Marker_Successful" xml:space="preserve">
-    <value>Réussi</value>
+    <value>Thành công</value>
   </data>
   <data name="LogFile_OpenLogs" xml:space="preserve">
-    <value>Journaux</value>
+    <value>Nhật ký</value>
   </data>
   <data name="Messages_Header_Error" xml:space="preserve">
-    <value>Erreur</value>
+    <value>Lỗi</value>
   </data>
   <data name="Messages_Header_Information" xml:space="preserve">
-    <value>Information</value>
+    <value>Thông tin</value>
   </data>
   <data name="Messages_Header_Question" xml:space="preserve">
-    <value>Question</value>
+    <value>Câu hỏi</value>
   </data>
   <data name="Name_Field" xml:space="preserve">
-    <value>Nom :</value>
+    <value>Tên:</value>
   </data>
   <data name="Name_Field_Validation" xml:space="preserve">
-    <value>Le nom est vide ou contient des caractères path non pris en charge.</value>
+    <value>Tên để trống hoặc chứa các ký tự đường dẫn không được hỗ trợ.</value>
   </data>
   <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
-    <value>Le nom '{0}' dépasse la limite de {1} caractères.</value>
+    <value>Độ dài tên '{0}' vượt quá giới hạn {1} ký tự.</value>
   </data>
   <data name="Name_Title" xml:space="preserve">
-    <value>Nom</value>
+    <value>Tên</value>
   </data>
   <data name="Password_Field" xml:space="preserve">
-    <value>Mot de passe :</value>
+    <value>Mật khẩu:</value>
   </data>
   <data name="Password_Field_Confirm" xml:space="preserve">
-    <value>Confirmer le mot de passe :</value>
+    <value>Xác nhận mật khẩu:</value>
   </data>
   <data name="Password_Field_Length" xml:space="preserve">
-    <value>Longueur :</value>
+    <value>Độ dài:</value>
   </data>
   <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
-    <value>Les mots de passe ne correspondent pas.</value>
+    <value>Mật khẩu không khớp.</value>
   </data>
   <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
-    <value>Le mot de passe n'est pas spécifié.</value>
+    <value>Mật khẩu chưa được chỉ định.</value>
   </data>
   <data name="Password_Generate" xml:space="preserve">
-    <value>Générer le mot de passe...</value>
+    <value>Tạo mật khẩu...</value>
   </data>
   <data name="Password_Generator_Header" xml:space="preserve">
-    <value>Générateur de mot de passe</value>
+    <value>Trình tạo mật khẩu</value>
   </data>
   <data name="Password_Help" xml:space="preserve">
-    <value>La longueur minimale recommandée pour le mot de passe est de 50 caractères ou plus.</value>
+    <value>Độ dài mật khẩu tối thiểu được khuyến nghị là 50 ký tự trở lên.</value>
   </data>
   <data name="Password_Use" xml:space="preserve">
-    <value>Utiliser</value>
+    <value>Sử dụng</value>
   </data>
   <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
-    <value>Impossible de localiser les fichiers "{0}" dans le répertoire. 
+    <value>Không thể tìm thấy tệp "{0}" trong thư mục.
 
-Indiquez un répertoire contenant ce fichier.</value>
+Vui lòng chỉ đến một thư mục chứa tệp này.</value>
   </data>
   <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
-    <value>Impossible de lire l'état.</value>
+    <value>Không thể đọc trạng thái.</value>
   </data>
   <data name="Server_Field_Address" xml:space="preserve">
-    <value>Nom du serveur :</value>
+    <value>Tên máy chủ:</value>
   </data>
   <data name="Server_Field_Address_Validation" xml:space="preserve">
-    <value>Le nom du serveur ne doit pas être spécifié.</value>
+    <value>Tên máy chủ không được chỉ định.</value>
   </data>
   <data name="Server_Field_Port" xml:space="preserve">
-    <value>Port :</value>
+    <value>Cổng:</value>
   </data>
   <data name="Server_Field_Port_Validation" xml:space="preserve">
-    <value>Le port est invalide.</value>
+    <value>Cổng không hợp lệ.</value>
   </data>
   <data name="SourceItem_AddFolders" xml:space="preserve">
-    <value>Ajouter des dossiers...</value>
+    <value>Thêm thư mục...</value>
   </data>
   <data name="SourceItem_OpenInExplorer" xml:space="preserve">
-    <value>Ouvrir dans l'explorateur...</value>
+    <value>Mở trong Explorer...</value>
   </data>
   <data name="SourceItem_State_Get" xml:space="preserve">
-    <value>Obtenez l'état de l'élément source "{0}"</value>
+    <value>Lấy trạng thái của mục nguồn "{0}"</value>
   </data>
   <data name="SourceItem_Validation_Empty" xml:space="preserve">
-    <value>Aucun élément à traiter.</value>
+    <value>Không có mục nào để xử lý.</value>
   </data>
   <data name="SourceItem_Validation_NotExists" xml:space="preserve">
-    <value>"{0}" n'existe pas.</value>
+    <value>"{0}" không tồn tại.</value>
   </data>
   <data name="State_File_Get" xml:space="preserve">
-    <value>Obtenez l'état du fichier "{0}"</value>
+    <value>Lấy trạng thái của tệp "{0}"</value>
   </data>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
-    <value>Obtenez l'état des éléments sources et des stockages</value>
+    <value>Lấy trạng thái của các mục nguồn và lưu trữ</value>
   </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
-    <value>Ajouter un modèle d'exclusion de fichier</value>
+    <value>Thêm mẫu loại trừ tệp</value>
   </data>
   <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
-    <value>Modifier le modèle d'exclusion de fichier</value>
+    <value>Sửa mẫu loại trừ tệp</value>
   </data>
   <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
-    <value>Globing de fichier dans .NET : Modèles</value>
+    <value>Mẫu globbing tệp trong .NET: Mẫu</value>
   </data>
   <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
-    <value>Ici, vous pouvez spécifier des modèles d'exclusion de fichier globing. 
-Il peut s'agir d'un nom de fichier ou de dossier ou d'un caractère générique. 
-Exemples : 
-d:\temp,
-d:\temp\file.txt,
-d:\temp\**\*.txt ou 
-bin.
-
-Consultez la description détaillée dans le lien suivant.</value>
+    <value>Tại đây bạn có thể chỉ định các mẫu loại trừ globbing tệp. 
+Nó có thể là tên tệp hoặc tên thư mục hoặc ký tự đại diện. 
+Ví dụ: 
+d:\temp, 
+d:\temp\file.txt, 
+d:\temp\**\*.txt hoặc 
+bin. 
+Xem mô tả chi tiết trong liên kết sau.</value>
   </data>
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
-    <value>Ignore le traitement des fichiers par le modèle d'exclusion.</value>
+    <value>Bỏ qua việc xử lý các tệp theo mẫu loại trừ.</value>
   </data>
   <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
-    <value>Modèle d'exclusion de fichier :</value>
+    <value>Mẫu loại trừ tệp:</value>
   </data>
   <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
-    <value>Le modèle d'exclusion de fichier est vide.</value>
+    <value>Mẫu loại trừ tệp trống.</value>
   </data>
   <data name="StorageItem_Remote_Marker" xml:space="preserve">
-    <value>À distance</value>
+    <value>Từ xa</value>
   </data>
   <data name="SynchronizationMode_Field" xml:space="preserve">
-    <value>Mode de synchronisation:</value>
+    <value>Chế độ đồng bộ hóa:</value>
   </data>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
-    <value>Lecture</value>
+    <value>Đọc</value>
   </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
-    <value>Bidirectionnel</value>
+    <value>Hai chiều</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
-    <value>Synchronisation</value>
+    <value>Đồng bộ hóa</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>La synchronisation bidirectionnelle des fichiers entre les appareils utilisant un stockage centralisé.</value>
+    <value>Đồng bộ hóa hai chiều của các tệp giữa các thiết bị sử dụng lưu trữ tập trung.</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
-    <value>Nouvelle</value>
+    <value>Mới</value>
   </data>
   <data name="Task_Create_Hint" xml:space="preserve">
-    <value>Crée une nouvelle tâche.</value>
+    <value>Tạo tác vụ mới.</value>
   </data>
   <data name="Task_Delete" xml:space="preserve">
-    <value>Supprimer</value>
+    <value>Xóa</value>
   </data>
   <data name="Task_Delete_Confirm" xml:space="preserve">
-    <value>Voulez-vous vraiment supprimer "{0}" ?</value>
+    <value>Bạn có thực sự muốn xóa "{0}" không?</value>
   </data>
   <data name="Task_Delete_Hint" xml:space="preserve">
-    <value>Supprime la tâche sélectionnée.</value>
+    <value>Xóa tác vụ đã chọn.</value>
   </data>
   <data name="Task_Edit" xml:space="preserve">
-    <value>Modifier</value>
+    <value>Sửa</value>
   </data>
   <data name="Task_Edit_Hint" xml:space="preserve">
-    <value>Modifie la tâche sélectionnée.</value>
+    <value>Sửa tác vụ đã chọn.</value>
   </data>
   <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
-    <value>Vous ne pouvez pas modifier ce type de tâche en CLI.</value>
+    <value>Bạn không thể sửa loại tác vụ này trong CLI.</value>
   </data>
   <data name="Task_Field_Choose" xml:space="preserve">
-    <value>Choisissez la tâche :</value>
+    <value>Chọn tác vụ:</value>
   </data>
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
-    <value>Nouvelle tâche</value>
+    <value>Tác vụ mới</value>
   </data>
   <data name="Task_LastExecution_State" xml:space="preserve">
-    <value>État</value>
+    <value>Trạng thái</value>
   </data>
   <data name="Task_Launch" xml:space="preserve">
-    <value>Lancer</value>
+    <value>Khởi động</value>
   </data>
   <data name="Task_Launch_Hint" xml:space="preserve">
-    <value>Lance la tâche sélectionnée.</value>
+    <value>Khởi động tác vụ đã chọn.</value>
   </data>
   <data name="Task_List" xml:space="preserve">
-    <value>Tâches</value>
+    <value>Các tác vụ</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
-    <value>Restaurer</value>
+    <value>Khôi phục</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
-    <value>Échoué (voir journal ouvert)</value>
+    <value>Thất bại (xem nhật ký đã mở)</value>
   </data>
   <data name="Task_Status_InProgress" xml:space="preserve">
-    <value>Tâche en cours d'exécution...</value>
+    <value>Tác vụ đang trong quá trình...</value>
   </data>
   <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
-    <value>Terminé partiellement. En raison du quota de stockage, certains fichiers ont été ignorés cette fois-ci. Restants {0} fichiers avec de {1} Go.</value>
+    <value>Hoàn thành một phần. Do hạn chế lưu trữ, một số tệp đã bị bỏ qua lần này. Còn lại {0} tệp với {1} GB.</value>
   </data>
   <data name="Task_Status_Succesfull" xml:space="preserve">
-    <value>Réussi</value>
+    <value>Thành công</value>
   </data>
   <data name="Task_Status_Unknown" xml:space="preserve">
-    <value>Inconnu</value>
+    <value>Không xác định</value>
   </data>
   <data name="Task_Validation_NotFound" xml:space="preserve">
-    <value>La tâche '{0}' n'a pas été trouvée.</value>
+    <value>Tác vụ '{0}' không được tìm thấy.</value>
   </data>
   <data name="Task_Validation_NotSupported" xml:space="preserve">
-    <value>Ce type de tâche n'est pas pris en charge.</value>
+    <value>Loại tác vụ này không được hỗ trợ.</value>
   </data>
   <data name="Theme_Title" xml:space="preserve">
-    <value>Thème</value>
+    <value>Chủ đề</value>
   </data>
   <data name="Theme_Value_Dark" xml:space="preserve">
-    <value>Sombre</value>
+    <value>Tối</value>
   </data>
   <data name="Theme_Value_Light" xml:space="preserve">
-    <value>Clair</value>
+    <value>Sáng</value>
   </data>
   <data name="Time_Field_Elapsed" xml:space="preserve">
-    <value>Écoulé :</value>
+    <value>Thời gian trôi qua:</value>
   </data>
   <data name="Time_Field_Hour" xml:space="preserve">
-    <value>Heure :</value>
+    <value>Giờ:</value>
   </data>
   <data name="Time_Field_Minute" xml:space="preserve">
-    <value>Minute :</value>
+    <value>Phút:</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
-    <value>Url :</value>
+    <value>Url:</value>
   </data>
   <data name="Url_Field_Validation" xml:space="preserve">
-    <value>Url non spécifié.</value>
+    <value>Url không được chỉ định.</value>
   </data>
   <data name="User_Field" xml:space="preserve">
-    <value>Utilisateur :</value>
+    <value>Người dùng:</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
-    <value>L'utilisateur n'est pas spécifié.</value>
+    <value>Người dùng không được chỉ định.</value>
   </data>
 </root>

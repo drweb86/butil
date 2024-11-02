@@ -511,12 +511,6 @@ Should any one of the copies created fail, including the first (full), restorati
   <data name="Password_Use" xml:space="preserve">
     <value>Use</value>
   </data>
-  <data name="RepositorySubfolder_Field" xml:space="preserve">
-    <value />
-  </data>
-  <data name="RepositorySubfolder_Help" xml:space="preserve">
-    <value />
-  </data>
   <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
     <value>Cannot locate files "{0}" in directory. 
 
@@ -660,9 +654,6 @@ See detailed description in the following link.</value>
   </data>
   <data name="Task_Status_Succesfull" xml:space="preserve">
     <value>Succesfull</value>
-  </data>
-  <data name="Task_Status_Successful" xml:space="preserve">
-    <value />
   </data>
   <data name="Task_Status_Unknown" xml:space="preserve">
     <value>Unknown</value>

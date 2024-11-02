@@ -118,575 +118,577 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
-    <value>Ne rien faire</value>
+    <value>Hiçbir şey yapma</value>
   </data>
   <data name="AfterTaskSelection_Field" xml:space="preserve">
-    <value>Après l'achèvement de la tâche :</value>
+    <value>Görev tamamlandıktan sonra:</value>
   </data>
   <data name="AfterTaskSelection_Help" xml:space="preserve">
-    <value>Si vous choisissez autre chose que 'ne rien faire', le 
-programme configurera le système d'exploitation pour vous 
-montrer un rapport lors de votre prochaine connexion au 
-système si des erreurs ou des avertissements sont enregistrés.</value>
+    <value>Eğer 'Hiçbir şey yapma' dışında bir şey seçerseniz, program, herhangi bir hata veya uyarı kaydedilirse bir sonraki sistem girişinizde size rapor göstermek için işletim sistemini yapılandıracaktır.</value>
   </data>
   <data name="AfterTaskSelection_LogOff" xml:space="preserve">
-    <value>Se déconnecter</value>
+    <value>Oturumu kapat</value>
   </data>
   <data name="AfterTaskSelection_Reboot" xml:space="preserve">
-    <value>Redémarrer</value>
+    <value>Yeniden başlat</value>
   </data>
   <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
-    <value>Éteindre</value>
+    <value>Kapat</value>
   </data>
   <data name="Application_NewVersion_Notification" xml:space="preserve">
-    <value>Nouvelle version de {0} est disponible.</value>
+    <value>Yeni {0} sürümü mevcut.</value>
   </data>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
-    <value>Supprimer la version</value>
+    <value>Sürümü sil</value>
   </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
-    <value>Changements</value>
+    <value>Değişiklikler</value>
   </data>
   <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
-    <value>Voulez-vous vraiment supprimer la version "{0}" ? 
+    <value>Gerçekten "{0}" sürümünü silmek istiyor musunuz?
 
-Les changements de version supprimés feront partie de la version "{1}".</value>
+Silinen sürümdeki değişiklikler "{1}" sürümünün bir parçası olacak.</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
-    <value>Fichiers</value>
+    <value>Dosyalar</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
-    <value>Journal : {0}</value>
+    <value>Günlük: {0}</value>
   </data>
   <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
-    <value>Journal pour sélectionné...</value>
+    <value>Seçilenler için günlük...</value>
   </data>
   <data name="BackupVersion_Select" xml:space="preserve">
-    <value>Ouvrir la version sélectionnée...</value>
+    <value>Seçilen sürümü aç...</value>
   </data>
   <data name="BackupVersion_Selector_Title" xml:space="preserve">
-    <value>SÉLECTIONNER LA VERSION</value>
+    <value>SÜRÜM SEÇİN</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(toutes les versions occupent sur le stockage {0})</value>
+    <value>(tüm sürümler depolamada {0} yer kaplar)</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
-    <value>VERSIONS</value>
+    <value>SÜRÜMLER</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Sélectionnez le fichier ou le dossier que vous voulez restaurer dans l'arborescence et cliquez sur "Restaurer".</value>
+    <value>Ağaçta geri yüklemek istediğiniz dosya veya klasörü seçin ve "Geri Yükle"ye tıklayın.</value>
   </data>
   <data name="Button_Cancel" xml:space="preserve">
-    <value>Annuler</value>
+    <value>İptal</value>
   </data>
   <data name="Button_Close" xml:space="preserve">
-    <value>Fermer</value>
+    <value>Kapat</value>
   </data>
   <data name="Button_Continue" xml:space="preserve">
-    <value>Continuer &gt;</value>
+    <value>Devam et &gt;</value>
   </data>
   <data name="Button_CopyToClipboard" xml:space="preserve">
-    <value>Copier</value>
+    <value>Kopyala</value>
   </data>
   <data name="Button_Download" xml:space="preserve">
-    <value>Télécharger</value>
+    <value>İndir</value>
   </data>
   <data name="Button_OK" xml:space="preserve">
-    <value>OK</value>
+    <value>Tamam</value>
   </data>
   <data name="Button_Remove" xml:space="preserve">
-    <value>Supprimer</value>
+    <value>Kaldır</value>
   </data>
   <data name="Button_Save" xml:space="preserve">
-    <value>Sauvegarder</value>
+    <value>Kaydet</value>
   </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
-    <value>Visitez {0} pour voir les arguments en ligne de commande.</value>
+    <value>Komut satırı argümanlarını görmek için {0} adresini ziyaret edin.</value>
   </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
-    <value>Arguments en ligne de commande non valides.</value>
+    <value>Geçersiz komut satırı argümanları.</value>
   </data>
   <data name="DataStorage_Data_Saving" xml:space="preserve">
-    <value>Écriture des données sur le stockage</value>
+    <value>Veriler depolamaya yazılıyor</value>
   </data>
   <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
-    <value>Script de connexion :</value>
+    <value>Bağlantı betiği:</value>
   </data>
   <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
-    <value>Script de déconnexion :</value>
+    <value>Bağlantı kesme betiği:</value>
   </data>
   <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
-    <value>Terminé avec des erreurs</value>
+    <value>Hatalarla tamamlandı</value>
   </data>
   <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
-    <value>Terminé avec succès</value>
+    <value>Başarıyla tamamlandı</value>
   </data>
   <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
-    <value>Limite d'upload, Go :</value>
+    <value>Yükleme limiti, GB:</value>
   </data>
   <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
-    <value>Limite la quantité de données envoyées pendant l'exécution d'une tâche vers le stockage. 0 - aucune limite. 
-Lorsque le quota est dépassé, les autres fichiers seront sautés et seront traités la prochaine fois. 
-Scénario d'utilisation : Vous copiez des données sur un serveur distant. 
-Il y a un problème : le fournisseur d'accès réduit la vitesse d'upload après plusieurs gigaoctets. Ce paramètre vous permet de gérer cela.</value>
+    <value>Bir görev yürütmesi sırasında depolamaya gönderilen veri miktarını sınırlar. 0 - sınırsız.
+Kota aşıldığında, diğer dosyalar atlanacak ve bir sonraki sefer işlenecek.
+Kullanım senaryosu: Verileri uzak sunucuya kopyalıyorsunuz. Bir sorun var: ISS birkaç gigabayttan sonra yükleme hızını düşürüyor. Bu ayar bununla başa çıkmanızı sağlar.</value>
   </data>
   <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
-    <value>Le quota doit être 0 (ne pas appliquer) ou une valeur supérieure à 0.</value>
+    <value>Kota 0 (uygulanmaz) veya 0'dan büyük bir değer olmalıdır.</value>
   </data>
   <data name="DataStorage_Maintenance" xml:space="preserve">
-    <value>Entretien du stockage des données</value>
+    <value>Veri depolama bakımı</value>
   </data>
   <data name="DataStorage_Script_Help" xml:space="preserve">
-    <value>Si le dossier devient disponible après avoir exécuté certaines commandes, spécifiez {0} scripts pour la connexion et la déconnexion.</value>
+    <value>Bir takım komutlar yürütüldükten sonra klasör kullanılabilir hale geliyorsa, bağlantı ve bağlantı kesme için {0} betikleri belirtin.</value>
   </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
-    <value>Obtenez l'état du stockage</value>
+    <value>Depolamanın durumunu al</value>
   </data>
   <data name="DataStorage_State_Saving" xml:space="preserve">
-    <value>Enregistrement de l'état du stockage</value>
+    <value>Depolama durumu yazılıyor</value>
   </data>
   <data name="DataStorage_Title" xml:space="preserve">
-    <value>Stockage</value>
+    <value>Depolama</value>
   </data>
   <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
-    <value>Le stockage n'est pas spécifié.</value>
+    <value>Depolama belirtilmedi.</value>
   </data>
   <data name="Days_Field_Choose" xml:space="preserve">
-    <value>Choisissez les jours de la semaine :</value>
+    <value>Haftanın günlerini seçin:</value>
   </data>
   <data name="Days_Friday" xml:space="preserve">
-    <value>Vendredi</value>
+    <value>Cuma</value>
   </data>
   <data name="Days_Monday" xml:space="preserve">
-    <value>Lundi</value>
+    <value>Pazartesi</value>
   </data>
   <data name="Days_Saturday" xml:space="preserve">
-    <value>Samedi</value>
+    <value>Cumartesi</value>
   </data>
   <data name="Days_Sunday" xml:space="preserve">
-    <value>Dimanche</value>
+    <value>Pazar</value>
   </data>
   <data name="Days_Thursday" xml:space="preserve">
-    <value>Jeudi</value>
+    <value>Perşembe</value>
   </data>
   <data name="Days_Tuesday" xml:space="preserve">
-    <value>Mardi</value>
+    <value>Salı</value>
   </data>
   <data name="Days_Wednesday" xml:space="preserve">
-    <value>Mercredi</value>
+    <value>Çarşamba</value>
   </data>
   <data name="DirectoryStorage" xml:space="preserve">
-    <value>Répertoire</value>
+    <value>Klasör</value>
   </data>
   <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
-    <value>Dossier :</value>
+    <value>Klasör:</value>
   </data>
   <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
-    <value>Le répertoire n'est pas spécifié.</value>
+    <value>Klasör belirtilmedi.</value>
   </data>
   <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
-    <value>Le répertoire "{0}" n'existe pas.</value>
+    <value>Klasör "{0}" mevcut değil.</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
-    <value>Appareil :</value>
+    <value>Aygıt:</value>
   </data>
   <data name="Field_Device_Validation_Empty" xml:space="preserve">
-    <value>Appareil non spécifié.</value>
+    <value>Aygıt belirtilmedi.</value>
   </data>
   <data name="Field_Device_Validation_NotFound" xml:space="preserve">
-    <value>Appareil non trouvé.</value>
+    <value>Aygıt bulunamadı.</value>
   </data>
   <data name="Field_Folder" xml:space="preserve">
-    <value>Dossier :</value>
+    <value>Klasör:</value>
   </data>
   <data name="Field_Folder_Browse" xml:space="preserve">
-    <value>Parcourir</value>
+    <value>Gözat</value>
   </data>
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
-    <value>Le dossier n'est pas spécifié.</value>
+    <value>Klasör belirtilmemiş.</value>
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
-    <value>Le dossier n'existe pas.</value>
+    <value>Klasör mevcut değil.</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
-    <value>Protocole :</value>
+    <value>Protokol:</value>
   </data>
   <data name="Field_Version" xml:space="preserve">
-    <value>Version :</value>
+    <value>Sürüm:</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
-    <value>Suppression de "{0}"</value>
+    <value>Siliniyor "{0}"</value>
   </data>
   <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
-    <value>Script de vérification d'intégrité.ps1</value>
+    <value>Bütünlük doğrulama scripti.ps1</value>
   </data>
   <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
-    <value>Enregistrement des scripts de vérification d'intégrité</value>
+    <value>Bütünlük doğrulama scriptleri kaydediliyor</value>
+  </data>
+  <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
+    <value>Şu tarihten daha eski dosyaları işle:</value>
   </data>
   <data name="File_List_Saving" xml:space="preserve">
-    <value>Enregistrement des fichiers</value>
+    <value>Dosyalar kaydediliyor</value>
   </data>
   <data name="File_Moving" xml:space="preserve">
-    <value>Déplacement de "{0}" vers "{1}"</value>
+    <value>"{0}" "{1}"'ye taşınıyor</value>
   </data>
   <data name="File_Saving" xml:space="preserve">
-    <value>Enregistrement de "{0}"</value>
+    <value>"{0}" kaydediliyor</value>
   </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
-    <value>Explicite</value>
+    <value>Açık</value>
   </data>
   <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
-    <value>Implicite</value>
+    <value>Kapalı</value>
   </data>
   <data name="Ftps_Field_Encryption" xml:space="preserve">
-    <value>Chiffrement SSL/TTS :</value>
+    <value>SSL/TTS şifreleme:</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
-    <value>Ajouter une icône de caractère à votre texte</value>
+    <value>Metnine karakter simgesi ekle</value>
   </data>
   <data name="ImportMediaTask_AllFiles" xml:space="preserve">
-    <value>Importer tous les fichiers</value>
+    <value>Tüm dosyaları içe aktar</value>
   </data>
   <data name="ImportMediaTask_Create" xml:space="preserve">
-    <value>Créer une tâche d'importation de médias</value>
+    <value>Medya içe aktarma görevi</value>
   </data>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
-    <value>Modifier la tâche d'importation de médias "{0}"</value>
+    <value>"{0}" medya içe aktarma görevini düzenle</value>
   </data>
   <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
-    <value>Dossier de sortie :</value>
+    <value>Çıkış klasörü:</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
-    <value>Transformations de nom de fichier :</value>
+    <value>Dosya adı dönüşümleri:</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
-    <value>Exemple : 
-Imaginez que vous ayez le fichier {0} (modifié le {1}). 
-Avec ce répertoire et cette chaîne de modèle, le fichier sera stocké sous : {2}</value>
+    <value>Örnek:
+{0} dosyanız olduğunu varsayın (tarihi {1}).
+Bu dizin ve şablon dizesi ile dosya şu şekilde saklanacaktır:
+{2}</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
-    <value>Tokens pris en charge : 
-{DATE:Format} - Insère la date de modification du fichier dans le format spécifié. 
-Pour voir toutes les options, recherchez "C# DateTime format".</value>
+    <value>Desteklenen simgeler:
+{DATE:Format} - Belirtilen formatta dosya değiştirme tarihini ekler.
+Tüm seçenekleri görmek için "C# DateTime format"ını Google'da arayın.</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
-    <value>Nom de fichier de transformation vide.</value>
+    <value>Dönüşüm dosya adı boş.</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
-    <value>Chaîne de nom de fichier de transformation invalide.</value>
+    <value>Geçersiz dönüşüm dosya adı dizesi.</value>
   </data>
   <data name="ImportMediaTask_File" xml:space="preserve">
-    <value>Importer "{0}"</value>
+    <value>"{0}" içe aktar</value>
   </data>
   <data name="ImportMediaTask_Help" xml:space="preserve">
-    <value>Importe des audios, photos, vidéos depuis la carte SD de la caméra, enregistreur ; photos et vidéos depuis votre téléphone via WI-FI grâce à l'application serveur FTP en utilisant des noms de fichiers modèles. 
+    <value>SD Kart'tan kamera, kayıt cihazı; telefonunuzdan WI-FI aracılığıyla FTP Sunucu uygulaması kullanarak şablon dosya adlarıyla ses, fotoğraf, video içe aktarır.
 
-Consultez le site web de l'application pour voir la documentation sur la configuration de la transmission de fichiers via WI-FI à l'aide de l'application serveur FTP sur le téléphone.</value>
+Dosya iletimi için telefon üzerindeki FTP Sunucu uygulamasıyla WI-FI üzerinden nasıl kurulum yapılacağı hakkında belge için uygulama web sitesini inceleyin.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Importer la source de données</value>
+    <value>Veri kaynağını içe aktar</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
-    <value>Ignorer les fichiers déjà importés</value>
+    <value>Daha önce içe aktarılan dosyaları atla</value>
   </data>
   <data name="ImproveIt_Message" xml:space="preserve">
-    <value>Une erreur inattendue est survenue. 
+    <value>Beklenmedik bir hata oluştu.
 
-Veuillez contacter les développeurs avec les informations enregistrées sur votre bureau dans "{0}" 
+Lütfen masaüstünüzde kaydedilen bilgileri geliştiricilere iletin
+"{0}"
 
-L'application va maintenant se fermer.</value>
+Uygulama şimdi kapanacak.</value>
   </data>
   <data name="IncrementalBackup_Help" xml:space="preserve">
-    <value>La forme la plus basique de sauvegarde incrémentielle consiste à identifier, enregistrer et donc, préserver uniquement les fichiers qui ont changé depuis la dernière sauvegarde. 
+    <value>Artımlı yedeklemenin en temel biçimi, son yedekten bu yana değişen dosyaları tanımlamak, kaydetmek ve böylece yalnızca bunları korumaktan oluşur.
 
-Étant donné que les changements sont généralement faibles, les sauvegardes incrémentielles sont beaucoup plus petites et plus rapides que les sauvegardes complètes. 
+Değişiklikler genellikle az olduğundan, artımlı yedeklemeler tam yedeklemelerden çok daha küçüktür ve daha hızlıdır.
 
-Par exemple, après une sauvegarde complète le vendredi, une sauvegarde le lundi contiendra uniquement les fichiers qui ont changé depuis vendredi. Une sauvegarde le mardi contient uniquement les fichiers qui ont changé depuis lundi, et ainsi de suite. Si l'une des copies créées échoue, y compris la première (complète), la restauration sera incomplète.</value>
+Örneğin, Cuma günü yapılan tam yedekten sonra, Pazartesi yedeği yalnızca Cuma'dan bu yana değişen dosyaları içerecektir. Salı yedeği yalnızca Pazartesi'den bu yana değişen dosyaları içerir, ve bu şekilde devam eder.
+
+Yapılan yedeklerden herhangi biri başarısız olursa, birincisi (tam yedek) de dahil olmak üzere, geri yükleme tamamlanamayacaktır.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
-    <value>Sauvegarde incrémentielle</value>
+    <value>Artımlı yedekleme</value>
   </data>
   <data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
-    <value>Calculer la version incrémentée</value>
+    <value>Artırılmış sürümü hesapla</value>
   </data>
   <data name="IncrementalBackup_Version_Save" xml:space="preserve">
-    <value>Enregistrer la version incrémentée</value>
+    <value>Artırılmış sürüm kaydediliyor</value>
   </data>
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
-    <value>Créer une tâche de sauvegarde incrémentielle</value>
+    <value>Artımlı yedekleme görevi</value>
   </data>
   <data name="LeftMenu_Encryption" xml:space="preserve">
-    <value>Chiffrement</value>
+    <value>Şifreleme</value>
   </data>
   <data name="LeftMenu_What" xml:space="preserve">
-    <value>Quoi ?</value>
+    <value>Ne?</value>
   </data>
   <data name="LeftMenu_What_Hint" xml:space="preserve">
-    <value>Ici, vous pouvez ajouter des dossiers et des fichiers que vous devez traiter.</value>
+    <value>Burada işlemek istediğiniz klasörleri ve dosyaları ekleyebilirsiniz.</value>
   </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
-    <value>Aucun élément à traiter.</value>
+    <value>İşlenecek öğe yok.</value>
   </data>
   <data name="LeftMenu_When" xml:space="preserve">
-    <value>Quand ?</value>
+    <value>Ne zaman?</value>
   </data>
   <data name="LeftMenu_When_Help" xml:space="preserve">
-    <value>Ici, vous pouvez configurer un planificateur. Le planificateur peut vous aider à automatiser le lancement des tâches.</value>
+    <value>Burada bir zamanlayıcı kurabilirsiniz. Zamanlayıcı, görev başlatmayı otomatikleştirmenize yardımcı olabilir.</value>
   </data>
   <data name="LeftMenu_Where" xml:space="preserve">
-    <value>Où ?</value>
+    <value>Nerede?</value>
   </data>
   <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
-    <value>Glissez et déposez ici des fichiers et dossiers depuis l'Explorateur.</value>
+    <value>Dosyaları ve klasörleri Buraya sürükleyip bırakın.</value>
   </data>
   <data name="LeftMenu_Where_Hint" xml:space="preserve">
-    <value>À cet endroit, vous pouvez ajouter des emplacements où vous souhaiteriez que vos fichiers soient copiés.</value>
+    <value>Dosyalarınızın kopyalanmasını istediğiniz yerleri buraya ekleyebilirsiniz.</value>
   </data>
   <data name="Local_State_Get" xml:space="preserve">
-    <value>Obtenir l'état local</value>
+    <value>Yerel durumu al</value>
   </data>
   <data name="Local_State_Saving" xml:space="preserve">
-    <value>Écriture de l'état local</value>
+    <value>Yerel durum yazılıyor</value>
   </data>
   <data name="LogFile_Marker_Errors" xml:space="preserve">
-    <value>Erreurs</value>
+    <value>Hatalar</value>
   </data>
   <data name="LogFile_Marker_Successful" xml:space="preserve">
-    <value>Réussi</value>
+    <value>Başarılı</value>
   </data>
   <data name="LogFile_OpenLogs" xml:space="preserve">
-    <value>Journaux</value>
+    <value>Günlükler</value>
   </data>
   <data name="Messages_Header_Error" xml:space="preserve">
-    <value>Erreur</value>
+    <value>Hata</value>
   </data>
   <data name="Messages_Header_Information" xml:space="preserve">
-    <value>Information</value>
+    <value>Bilgi</value>
   </data>
   <data name="Messages_Header_Question" xml:space="preserve">
-    <value>Question</value>
+    <value>Soru</value>
   </data>
   <data name="Name_Field" xml:space="preserve">
-    <value>Nom :</value>
+    <value>Ad:</value>
   </data>
   <data name="Name_Field_Validation" xml:space="preserve">
-    <value>Le nom est vide ou contient des caractères path non pris en charge.</value>
+    <value>Ad boş veya desteklenmeyen yol karakterlerini içeriyor.</value>
   </data>
   <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
-    <value>Le nom '{0}' dépasse la limite de {1} caractères.</value>
+    <value>'{0}' adı uzunluğu limitin {1} karakter aşmaktadır.</value>
   </data>
   <data name="Name_Title" xml:space="preserve">
-    <value>Nom</value>
+    <value>Ad</value>
   </data>
   <data name="Password_Field" xml:space="preserve">
-    <value>Mot de passe :</value>
+    <value>Şifre:</value>
   </data>
   <data name="Password_Field_Confirm" xml:space="preserve">
-    <value>Confirmer le mot de passe :</value>
+    <value>Şifreyi onaylayın:</value>
   </data>
   <data name="Password_Field_Length" xml:space="preserve">
-    <value>Longueur :</value>
+    <value>Uzunluk:</value>
   </data>
   <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
-    <value>Les mots de passe ne correspondent pas.</value>
+    <value>Şifreler eşleşmiyor.</value>
   </data>
   <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
-    <value>Le mot de passe n'est pas spécifié.</value>
+    <value>Şifre belirtilmemiş.</value>
   </data>
   <data name="Password_Generate" xml:space="preserve">
-    <value>Générer le mot de passe...</value>
+    <value>Şifre oluştur...</value>
   </data>
   <data name="Password_Generator_Header" xml:space="preserve">
-    <value>Générateur de mot de passe</value>
+    <value>Şifre oluşturucu</value>
   </data>
   <data name="Password_Help" xml:space="preserve">
-    <value>La longueur minimale recommandée pour le mot de passe est de 50 caractères ou plus.</value>
+    <value>Önerilen minimum şifre uzunluğu 50 karakter ve üzeridir.</value>
   </data>
   <data name="Password_Use" xml:space="preserve">
-    <value>Utiliser</value>
+    <value>Kullan</value>
   </data>
   <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
-    <value>Impossible de localiser les fichiers "{0}" dans le répertoire. 
+    <value>"{0}" dosyalarını dizinde bulamıyorum. 
 
-Indiquez un répertoire contenant ce fichier.</value>
+Bu dosyayı içeren bir dizine işaret edin.</value>
   </data>
   <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
-    <value>Impossible de lire l'état.</value>
+    <value>Durum okunamıyor.</value>
   </data>
   <data name="Server_Field_Address" xml:space="preserve">
-    <value>Nom du serveur :</value>
+    <value>Sunucu adı:</value>
   </data>
   <data name="Server_Field_Address_Validation" xml:space="preserve">
-    <value>Le nom du serveur ne doit pas être spécifié.</value>
+    <value>Sunucu adı belirtilmelidir.</value>
   </data>
   <data name="Server_Field_Port" xml:space="preserve">
-    <value>Port :</value>
+    <value>Port:</value>
   </data>
   <data name="Server_Field_Port_Validation" xml:space="preserve">
-    <value>Le port est invalide.</value>
+    <value>Port geçersiz.</value>
   </data>
   <data name="SourceItem_AddFolders" xml:space="preserve">
-    <value>Ajouter des dossiers...</value>
+    <value>Klasör ekle...</value>
   </data>
   <data name="SourceItem_OpenInExplorer" xml:space="preserve">
-    <value>Ouvrir dans l'explorateur...</value>
+    <value>Gezginde aç...</value>
   </data>
   <data name="SourceItem_State_Get" xml:space="preserve">
-    <value>Obtenez l'état de l'élément source "{0}"</value>
+    <value>Kaynak öğesi "{0}" durumunu al</value>
   </data>
   <data name="SourceItem_Validation_Empty" xml:space="preserve">
-    <value>Aucun élément à traiter.</value>
+    <value>İşlenecek öğe yok.</value>
   </data>
   <data name="SourceItem_Validation_NotExists" xml:space="preserve">
-    <value>"{0}" n'existe pas.</value>
+    <value>"{0}" mevcut değil.</value>
   </data>
   <data name="State_File_Get" xml:space="preserve">
-    <value>Obtenez l'état du fichier "{0}"</value>
+    <value>Dosya "{0}" durumunu al</value>
   </data>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
-    <value>Obtenez l'état des éléments sources et des stockages</value>
+    <value>Kaynak öğelerinin ve depolarının durumunu al</value>
   </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
-    <value>Ajouter un modèle d'exclusion de fichier</value>
+    <value>Dosya hariç tutma deseni ekle</value>
   </data>
   <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
-    <value>Modifier le modèle d'exclusion de fichier</value>
+    <value>Dosya hariç tutma desenini düzenle</value>
   </data>
   <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
-    <value>Globing de fichier dans .NET : Modèles</value>
+    <value>.NET'te dosya globbing: Desenler</value>
   </data>
   <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
-    <value>Ici, vous pouvez spécifier des modèles d'exclusion de fichier globing. 
-Il peut s'agir d'un nom de fichier ou de dossier ou d'un caractère générique. 
-Exemples : 
-d:\temp,
-d:\temp\file.txt,
-d:\temp\**\*.txt ou 
-bin.
-
-Consultez la description détaillée dans le lien suivant.</value>
+    <value>Burada dosya globbing hariç tutma desenlerini belirtebilirsiniz. 
+Bir dosya adı veya klasör adı ya da joker karakter olabilir. 
+Örnekler: 
+d:\temp, 
+d:\temp\file.txt, 
+d:\temp\**\*.txt veya 
+bin. 
+Aşağıdaki bağlantıda detaylı açıklama bulun.</value>
   </data>
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
-    <value>Ignore le traitement des fichiers par le modèle d'exclusion.</value>
+    <value>Dosyaların işlenmesini hariç tutma deseni ile atlar.</value>
   </data>
   <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
-    <value>Modèle d'exclusion de fichier :</value>
+    <value>Dosya hariç tutma deseni:</value>
   </data>
   <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
-    <value>Le modèle d'exclusion de fichier est vide.</value>
+    <value>Dosya hariç tutma deseni boş.</value>
   </data>
   <data name="StorageItem_Remote_Marker" xml:space="preserve">
-    <value>À distance</value>
+    <value>Uzak</value>
   </data>
   <data name="SynchronizationMode_Field" xml:space="preserve">
-    <value>Mode de synchronisation:</value>
+    <value>Senkranizasyon modu:</value>
   </data>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
-    <value>Lecture</value>
+    <value>Oku</value>
   </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
-    <value>Bidirectionnel</value>
+    <value>İki yönlü</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
-    <value>Synchronisation</value>
+    <value>Senkranizasyon</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>La synchronisation bidirectionnelle des fichiers entre les appareils utilisant un stockage centralisé.</value>
+    <value>Merkezi depolama kullanarak cihazlar arasında dosyaların iki yönlü senkronizasyonu.</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
-    <value>Nouvelle</value>
+    <value>Yeni</value>
   </data>
   <data name="Task_Create_Hint" xml:space="preserve">
-    <value>Crée une nouvelle tâche.</value>
+    <value>Yeni görev oluşturur.</value>
   </data>
   <data name="Task_Delete" xml:space="preserve">
-    <value>Supprimer</value>
+    <value>Sil</value>
   </data>
   <data name="Task_Delete_Confirm" xml:space="preserve">
-    <value>Voulez-vous vraiment supprimer "{0}" ?</value>
+    <value>"{0}" öğesini gerçekten silmek istiyor musunuz?</value>
   </data>
   <data name="Task_Delete_Hint" xml:space="preserve">
-    <value>Supprime la tâche sélectionnée.</value>
+    <value>Seçilen görevi siler.</value>
   </data>
   <data name="Task_Edit" xml:space="preserve">
-    <value>Modifier</value>
+    <value>Düzenle</value>
   </data>
   <data name="Task_Edit_Hint" xml:space="preserve">
-    <value>Modifie la tâche sélectionnée.</value>
+    <value>Seçilen görevi düzenler.</value>
   </data>
   <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
-    <value>Vous ne pouvez pas modifier ce type de tâche en CLI.</value>
+    <value>Bu tür bir görevi CLI'de düzenleyemezsiniz.</value>
   </data>
   <data name="Task_Field_Choose" xml:space="preserve">
-    <value>Choisissez la tâche :</value>
+    <value>Görevi seçin:</value>
   </data>
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
-    <value>Nouvelle tâche</value>
+    <value>Yeni görev</value>
   </data>
   <data name="Task_LastExecution_State" xml:space="preserve">
-    <value>État</value>
+    <value>Durum</value>
   </data>
   <data name="Task_Launch" xml:space="preserve">
-    <value>Lancer</value>
+    <value>Başlat</value>
   </data>
   <data name="Task_Launch_Hint" xml:space="preserve">
-    <value>Lance la tâche sélectionnée.</value>
+    <value>Seçilen görevi başlatır.</value>
   </data>
   <data name="Task_List" xml:space="preserve">
-    <value>Tâches</value>
+    <value>Görevler</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
-    <value>Restaurer</value>
+    <value>Geri yükle</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
-    <value>Échoué (voir journal ouvert)</value>
+    <value>Başarısız (açılan günlük dosyasına bak)</value>
   </data>
   <data name="Task_Status_InProgress" xml:space="preserve">
-    <value>Tâche en cours d'exécution...</value>
+    <value>Görev devam ediyor...</value>
   </data>
   <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
-    <value>Terminé partiellement. En raison du quota de stockage, certains fichiers ont été ignorés cette fois-ci. Restants {0} fichiers avec de {1} Go.</value>
+    <value>Kısmen tamamlandı. Depolama kotası nedeniyle bu sefer bazı dosyalar atlandı. Kalan {0} dosya {1} GB.</value>
   </data>
   <data name="Task_Status_Succesfull" xml:space="preserve">
-    <value>Réussi</value>
+    <value>Başarılı</value>
   </data>
   <data name="Task_Status_Unknown" xml:space="preserve">
-    <value>Inconnu</value>
+    <value>Bilinmeyen</value>
   </data>
   <data name="Task_Validation_NotFound" xml:space="preserve">
-    <value>La tâche '{0}' n'a pas été trouvée.</value>
+    <value>Görev '{0}' bulunamadı.</value>
   </data>
   <data name="Task_Validation_NotSupported" xml:space="preserve">
-    <value>Ce type de tâche n'est pas pris en charge.</value>
+    <value>Bu görev türü desteklenmiyor.</value>
   </data>
   <data name="Theme_Title" xml:space="preserve">
-    <value>Thème</value>
+    <value>Temalar</value>
   </data>
   <data name="Theme_Value_Dark" xml:space="preserve">
-    <value>Sombre</value>
+    <value>Koyu</value>
   </data>
   <data name="Theme_Value_Light" xml:space="preserve">
-    <value>Clair</value>
+    <value>Açık</value>
   </data>
   <data name="Time_Field_Elapsed" xml:space="preserve">
-    <value>Écoulé :</value>
+    <value>Geçen zaman:</value>
   </data>
   <data name="Time_Field_Hour" xml:space="preserve">
-    <value>Heure :</value>
+    <value>Saat:</value>
   </data>
   <data name="Time_Field_Minute" xml:space="preserve">
-    <value>Minute :</value>
+    <value>Dakika:</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
-    <value>Url :</value>
+    <value>Url:</value>
   </data>
   <data name="Url_Field_Validation" xml:space="preserve">
-    <value>Url non spécifié.</value>
+    <value>Url belirtilmemiş.</value>
   </data>
   <data name="User_Field" xml:space="preserve">
-    <value>Utilisateur :</value>
+    <value>Kullanıcı:</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
-    <value>L'utilisateur n'est pas spécifié.</value>
+    <value>Kullanıcı belirtilmemiş.</value>
   </data>
 </root>

@@ -119,455 +119,446 @@
   </resheader>
   <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
     <value>什么都不做</value>
-</data>
+  </data>
   <data name="AfterTaskSelection_Field" xml:space="preserve">
     <value>任务完成后:</value>
-</data>
+  </data>
   <data name="AfterTaskSelection_Help" xml:space="preserve">
     <value>如果您选择“什么都不做”以外的选项，
 程序会配置操作系统以在您下次登录时，如果有任何错误
 或警告被注册，将向您显示报告。</value>
-</data>
+  </data>
   <data name="AfterTaskSelection_LogOff" xml:space="preserve">
     <value>注销</value>
-</data>
+  </data>
   <data name="AfterTaskSelection_Reboot" xml:space="preserve">
     <value>重启</value>
-</data>
+  </data>
   <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
     <value>关机</value>
-</data>
+  </data>
   <data name="Application_NewVersion_Notification" xml:space="preserve">
     <value>新版本 {0} 可用。</value>
-</data>
+  </data>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>删除版本</value>
-</data>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>更改</value>
-</data>
+  </data>
   <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
     <value>您确定要删除版本“{0}”吗？
 
 删除的版本更改将成为版本“{1}”的一部分。</value>
-</data>
+  </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>文件</value>
-</data>
+  </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>日志: {0}</value>
-</data>
+  </data>
   <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
     <value>为选择项记录...</value>
-</data>
+  </data>
   <data name="BackupVersion_Select" xml:space="preserve">
     <value>打开所选版本...</value>
-</data>
+  </data>
   <data name="BackupVersion_Selector_Title" xml:space="preserve">
     <value>选择版本</value>
-</data>
+  </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
     <value>（所有版本占用存储空间 {0}）</value>
-</data>
+  </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>版本</value>
-</data>
+  </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
     <value>在树中选择您要还原的文件或文件夹，然后单击“还原”。</value>
-</data>
+  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>取消</value>
-</data>
+  </data>
   <data name="Button_Close" xml:space="preserve">
     <value>关闭</value>
-</data>
+  </data>
   <data name="Button_Continue" xml:space="preserve">
     <value>继续 &gt;</value>
-</data>
+  </data>
   <data name="Button_CopyToClipboard" xml:space="preserve">
     <value>复制</value>
-</data>
+  </data>
   <data name="Button_Download" xml:space="preserve">
     <value>下载</value>
-</data>
+  </data>
   <data name="Button_OK" xml:space="preserve">
     <value>确定</value>
-</data>
+  </data>
   <data name="Button_Remove" xml:space="preserve">
     <value>移除</value>
-</data>
+  </data>
   <data name="Button_Save" xml:space="preserve">
     <value>保存</value>
-</data>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>访问 {0} 查看命令行参数。</value>
-</data>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>无效的命令行参数。</value>
-</data>
+  </data>
   <data name="DataStorage_Data_Saving" xml:space="preserve">
-  <value>写入数据到存储</value>
-</data>
+    <value>写入数据到存储</value>
+  </data>
   <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
     <value>连接脚本:</value>
-</data>
+  </data>
   <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
     <value>断开连接脚本:</value>
-</data>
+  </data>
   <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
     <value>完成时有错误</value>
-</data>
+  </data>
   <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
     <value>成功完成</value>
-</data>
+  </data>
   <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
     <value>上传限制, GB:</value>
-</data>
+  </data>
   <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
     <value>限制在一次任务执行期间发送到存储的数据量。0 - 无限制。
 当配额被超出时，其他文件将被跳过并在下次处理。
 使用场景：您将数据复制到远程服务器。有一个问题：ISP在几个GB之后会降低上传速度。这个设置允许您处理这个问题。</value>
-</data>
+  </data>
   <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
     <value>配额应为0（不应用）或大于0的值。</value>
-</data>
+  </data>
   <data name="DataStorage_Maintenance" xml:space="preserve">
     <value>数据存储维护</value>
-</data>
+  </data>
   <data name="DataStorage_Script_Help" xml:space="preserve">
     <value>如果在执行某些命令后文件夹变得可用，请指定连接和断开连接的{0}脚本。</value>
-</data>
+  </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
     <value>获取存储状态</value>
-</data>
+  </data>
   <data name="DataStorage_State_Saving" xml:space="preserve">
-  <value>正在写入存储状态</value>
-</data>
+    <value>正在写入存储状态</value>
+  </data>
   <data name="DataStorage_Title" xml:space="preserve">
-  <value>存储</value>
-</data>
+    <value>存储</value>
+  </data>
   <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
     <value>未指定存储。</value>
-</data>
+  </data>
   <data name="Days_Field_Choose" xml:space="preserve">
     <value>选择星期几:</value>
-</data>
+  </data>
   <data name="Days_Friday" xml:space="preserve">
     <value>星期五</value>
-</data>
+  </data>
   <data name="Days_Monday" xml:space="preserve">
     <value>星期一</value>
-</data>
+  </data>
   <data name="Days_Saturday" xml:space="preserve">
     <value>星期六</value>
-</data>
+  </data>
   <data name="Days_Sunday" xml:space="preserve">
     <value>星期日</value>
-</data>
+  </data>
   <data name="Days_Thursday" xml:space="preserve">
     <value>星期四</value>
-</data>
+  </data>
   <data name="Days_Tuesday" xml:space="preserve">
     <value>星期二</value>
-</data>
+  </data>
   <data name="Days_Wednesday" xml:space="preserve">
     <value>星期三</value>
-</data>
+  </data>
   <data name="DirectoryStorage" xml:space="preserve">
     <value>目录</value>
-</data>
+  </data>
   <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
     <value>文件夹:</value>
-</data>
+  </data>
   <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
     <value>未指定目录。</value>
-</data>
+  </data>
   <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
     <value>目录“{0}”不存在。</value>
-</data>
+  </data>
   <data name="Field_Device" xml:space="preserve">
     <value>设备:</value>
-</data>
+  </data>
   <data name="Field_Device_Validation_Empty" xml:space="preserve">
     <value>未指定设备。</value>
-</data>
+  </data>
   <data name="Field_Device_Validation_NotFound" xml:space="preserve">
     <value>未找到设备。</value>
-</data>
+  </data>
   <data name="Field_Folder" xml:space="preserve">
     <value>文件夹:</value>
-</data>
+  </data>
   <data name="Field_Folder_Browse" xml:space="preserve">
     <value>浏览</value>
-</data>
+  </data>
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>未指定文件夹。</value>
-</data>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>文件夹不存在。</value>
-</data>
+  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>协议:</value>
-</data>
+  </data>
   <data name="Field_Version" xml:space="preserve">
     <value>版本:</value>
-</data>
+  </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>正在删除“{0}”</value>
-</data>
+  </data>
   <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
     <value>完整性验证脚本.ps1</value>
-</data>
+  </data>
   <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
     <value>保存完整性验证脚本</value>
-</data>
+  </data>
   <data name="File_List_Saving" xml:space="preserve">
     <value>保存文件列表</value>
-</data>
+  </data>
   <data name="File_Moving" xml:space="preserve">
     <value>正在移动“{0}”到“{1}”</value>
-</data>
+  </data>
   <data name="File_Saving" xml:space="preserve">
     <value>正在保存“{0}”</value>
-</data>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>显式</value>
-</data>
+  </data>
   <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
     <value>隐式</value>
-</data>
+  </data>
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TLS 加密:</value>
-</data>
+  </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>将字符图标添加到您的文本</value>
-</data>
+  </data>
   <data name="ImportMediaTask_AllFiles" xml:space="preserve">
     <value>导入所有文件</value>
-</data>
+  </data>
   <data name="ImportMediaTask_Create" xml:space="preserve">
     <value>创建媒体导入任务</value>
-</data>
+  </data>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
     <value>编辑“{0}”媒体导入任务</value>
-</data>
+  </data>
   <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
     <value>输出文件夹:</value>
-</data>
+  </data>
   <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
     <value>文件名转换:</value>
-</data>
+  </data>
   <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
     <value>例子:
 假设您有文件 {0}（修改于 {1}）。
 使用此目录和模板字符串文件将存储为:
 {2}</value>
-</data>
+  </data>
   <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
     <value>支持的标记:
 {DATE:Format} - 插入指定格式的文件修改日期。
 要查看所有选项，请搜索 "C# DateTime format"。</value>
-</data>
+  </data>
   <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
     <value>转换文件名为空。</value>
-</data>
+  </data>
   <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
     <value>无效的转换文件名字符串。</value>
-</data>
+  </data>
   <data name="ImportMediaTask_File" xml:space="preserve">
-  <value>导入“{0}”</value>
-</data>
+    <value>导入“{0}”</value>
+  </data>
   <data name="ImportMediaTask_Help" xml:space="preserve">
-  <value>从摄像机、录音机的SD卡导入音频、照片、视频；通过WI-FI通过FTP服务器应用程序从您的手机导入照片和视频，使用模板文件名。
+    <value>从摄像机、录音机的SD卡导入音频、照片、视频；通过WI-FI通过FTP服务器应用程序从您的手机导入照片和视频，使用模板文件名。
 
 参见应用程序网站了解如何设置通过WI-FI通过FTP服务器应用程序在手机上传输文件的文档。</value>
-</data>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-  <value>导入数据源</value>
-</data>
+    <value>导入数据源</value>
+  </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
-  <value>跳过已导入的文件</value>
-</data>
+    <value>跳过已导入的文件</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
-  <value>发生意外错误。
+    <value>发生意外错误。
 
 请联系开发人员，提供保存在桌面上的信息
 "{0}"
 
 应用程序将立即关闭。</value>
-</data>
+  </data>
   <data name="IncrementalBackup_Help" xml:space="preserve">
-  <value>增量备份的最基本形式是识别、记录并保存自上次备份以来更改的文件。
+    <value>增量备份的最基本形式是识别、记录并保存自上次备份以来更改的文件。
 
 由于更改通常较少，增量备份比完全备份要小得多且更快。
 
 例如，在周五进行完全备份之后，周一的备份将仅包含自周五以来更改的文件。周二的备份仅包含自周一以来更改的文件，依此类推。
 
 如果创建的任何一个备份失败，包括第一个（完全备份），则恢复将不完整。</value>
-</data>
+  </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
-  <value>增量备份</value>
-</data>
+    <value>增量备份</value>
+  </data>
   <data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
-  <value>计算增量版本</value>
-</data>
+    <value>计算增量版本</value>
+  </data>
   <data name="IncrementalBackup_Version_Save" xml:space="preserve">
-  <value>保存增量版本</value>
-</data>
+    <value>保存增量版本</value>
+  </data>
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
-  <value>创建增量备份任务</value>
-</data>
+    <value>创建增量备份任务</value>
+  </data>
   <data name="LeftMenu_Encryption" xml:space="preserve">
-  <value>加密</value>
-</data>
+    <value>加密</value>
+  </data>
   <data name="LeftMenu_What" xml:space="preserve">
-  <value>什么？</value>
-</data>
+    <value>什么？</value>
+  </data>
   <data name="LeftMenu_What_Hint" xml:space="preserve">
-  <value>您可以在这里添加需要处理的文件夹和文件。</value>
-</data>
+    <value>您可以在这里添加需要处理的文件夹和文件。</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
-  <value>没有要处理的项目。</value>
-</data>
+    <value>没有要处理的项目。</value>
+  </data>
   <data name="LeftMenu_When" xml:space="preserve">
-  <value>何时？</value>
-</data>
+    <value>何时？</value>
+  </data>
   <data name="LeftMenu_When_Help" xml:space="preserve">
-  <value>您可以在此设置调度程序。调度程序可以帮助您自动启动任务。</value>
-</data>
+    <value>您可以在此设置调度程序。调度程序可以帮助您自动启动任务。</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
-  <value>哪里？</value>
-</data>
+    <value>哪里？</value>
+  </data>
   <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
-  <value>将文件和文件夹从资源管理器拖放到这里。</value>
-</data>
+    <value>将文件和文件夹从资源管理器拖放到这里。</value>
+  </data>
   <data name="LeftMenu_Where_Hint" xml:space="preserve">
-  <value>在这个地方您可以添加您希望复制文件的位置。</value>
-</data>
+    <value>在这个地方您可以添加您希望复制文件的位置。</value>
+  </data>
   <data name="Local_State_Get" xml:space="preserve">
-  <value>获取本地状态</value>
-</data>
+    <value>获取本地状态</value>
+  </data>
   <data name="Local_State_Saving" xml:space="preserve">
-  <value>写入本地状态</value>
-</data>
+    <value>写入本地状态</value>
+  </data>
   <data name="LogFile_Marker_Errors" xml:space="preserve">
-  <value>错误</value>
-</data>
+    <value>错误</value>
+  </data>
   <data name="LogFile_Marker_Successful" xml:space="preserve">
-  <value>成功</value>
-</data>
+    <value>成功</value>
+  </data>
   <data name="LogFile_OpenLogs" xml:space="preserve">
-  <value>日志</value>
-</data>
+    <value>日志</value>
+  </data>
   <data name="Messages_Header_Error" xml:space="preserve">
-  <value>错误</value>
-</data>
+    <value>错误</value>
+  </data>
   <data name="Messages_Header_Information" xml:space="preserve">
-  <value>信息</value>
-</data>
+    <value>信息</value>
+  </data>
   <data name="Messages_Header_Question" xml:space="preserve">
-  <value>问题</value>
-</data>
+    <value>问题</value>
+  </data>
   <data name="Name_Field" xml:space="preserve">
-  <value>名称：</value>
-</data>
+    <value>名称：</value>
+  </data>
   <data name="Name_Field_Validation" xml:space="preserve">
-  <value>名称为空或包含不支持的路径字符。</value>
-</data>
+    <value>名称为空或包含不支持的路径字符。</value>
+  </data>
   <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
-  <value>名称“{0}”长度超过限制{1}字符。</value>
-</data>
+    <value>名称“{0}”长度超过限制{1}字符。</value>
+  </data>
   <data name="Name_Title" xml:space="preserve">
-  <value>名称</value>
-</data>
+    <value>名称</value>
+  </data>
   <data name="Password_Field" xml:space="preserve">
-  <value>密码：</value>
-</data>
+    <value>密码：</value>
+  </data>
   <data name="Password_Field_Confirm" xml:space="preserve">
-  <value>确认密码：</value>
-</data>
+    <value>确认密码：</value>
+  </data>
   <data name="Password_Field_Length" xml:space="preserve">
-  <value>长度：</value>
-</data>
+    <value>长度：</value>
+  </data>
   <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
-  <value>密码不匹配。</value>
-</data>
+    <value>密码不匹配。</value>
+  </data>
   <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
-  <value>未指定密码。</value>
-</data>
+    <value>未指定密码。</value>
+  </data>
   <data name="Password_Generate" xml:space="preserve">
-  <value>生成密码...</value>
-</data>
+    <value>生成密码...</value>
+  </data>
   <data name="Password_Generator_Header" xml:space="preserve">
-  <value>密码生成器</value>
-</data>
+    <value>密码生成器</value>
+  </data>
   <data name="Password_Help" xml:space="preserve">
-  <value>推荐的最小密码长度为50个字符或更多。</value>
-</data>
+    <value>推荐的最小密码长度为50个字符或更多。</value>
+  </data>
   <data name="Password_Use" xml:space="preserve">
-  <value>使用</value>
-</data>
-  <data name="RepositorySubfolder_Field" xml:space="preserve">
-  <value>存储库子文件夹（可选）:</value>
-</data>
-  <data name="RepositorySubfolder_Help" xml:space="preserve">
-  <value>如果您不希望设备上有存储库的所有内容，可以将文件同步到存储库的特定子文件夹。</value>
-</data>
+    <value>使用</value>
+  </data>
   <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
-  <value>在目录中找不到文件“{0}”。
+    <value>在目录中找不到文件“{0}”。
 
 指向包含此文件的目录。</value>
-</data>
+  </data>
   <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
-  <value>无法读取状态。</value>
-</data>
+    <value>无法读取状态。</value>
+  </data>
   <data name="Server_Field_Address" xml:space="preserve">
-  <value>服务器名称：</value>
-</data>
+    <value>服务器名称：</value>
+  </data>
   <data name="Server_Field_Address_Validation" xml:space="preserve">
-  <value>未指定服务器名称。</value>
-</data>
+    <value>未指定服务器名称。</value>
+  </data>
   <data name="Server_Field_Port" xml:space="preserve">
-  <value>端口：</value>
-</data>
+    <value>端口：</value>
+  </data>
   <data name="Server_Field_Port_Validation" xml:space="preserve">
-  <value>端口无效。</value>
-</data>
-  <data name="SourceItem_AddFiles" xml:space="preserve">
-  <value>添加文件...</value>
-</data>
+    <value>端口无效。</value>
+  </data>
   <data name="SourceItem_AddFolders" xml:space="preserve">
-  <value>添加文件夹...</value>
-</data>
+    <value>添加文件夹...</value>
+  </data>
   <data name="SourceItem_OpenInExplorer" xml:space="preserve">
-  <value>在资源管理器中打开...</value>
-</data>
+    <value>在资源管理器中打开...</value>
+  </data>
   <data name="SourceItem_State_Get" xml:space="preserve">
-  <value>获取源项目“{0}”的状态</value>
-</data>
+    <value>获取源项目“{0}”的状态</value>
+  </data>
   <data name="SourceItem_Validation_Empty" xml:space="preserve">
-  <value>没有要处理的项目。</value>
-</data>
+    <value>没有要处理的项目。</value>
+  </data>
   <data name="SourceItem_Validation_NotExists" xml:space="preserve">
-  <value>“{0}”不存在。</value>
-</data>
+    <value>“{0}”不存在。</value>
+  </data>
   <data name="State_File_Get" xml:space="preserve">
-  <value>获取文件“{0}”的状态</value>
-</data>
+    <value>获取文件“{0}”的状态</value>
+  </data>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
-  <value>获取源项和存储的状态</value>
-</data>
+    <value>获取源项和存储的状态</value>
+  </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
-  <value>添加文件排除模式</value>
-</data>
+    <value>添加文件排除模式</value>
+  </data>
   <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
-  <value>编辑文件排除模式</value>
-</data>
+    <value>编辑文件排除模式</value>
+  </data>
   <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
-  <value>DOT NET中的文件Globbing：模式</value>
-</data>
+    <value>DOT NET中的文件Globbing：模式</value>
+  </data>
   <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
-  <value>在这里您可以指定文件Globbing排除模式。
+    <value>在这里您可以指定文件Globbing排除模式。
 可以是文件名或文件夹名或通配符。
 示例：
 d:\temp，
@@ -575,128 +566,128 @@ d:\temp\file.txt，
 d:\temp\**\*.txt 或
 bin。
 请参见以下链接中的详细描述。</value>
-</data>
+  </data>
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
-  <value>通过排除模式跳过文件处理。</value>
-</data>
+    <value>通过排除模式跳过文件处理。</value>
+  </data>
   <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
-  <value>文件排除模式：</value>
-</data>
+    <value>文件排除模式：</value>
+  </data>
   <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
-  <value>文件排除模式为空。</value>
-</data>
+    <value>文件排除模式为空。</value>
+  </data>
   <data name="StorageItem_Remote_Marker" xml:space="preserve">
-  <value>远程</value>
-</data>
+    <value>远程</value>
+  </data>
   <data name="SynchronizationMode_Field" xml:space="preserve">
-  <value>同步模式:</value>
-</data>
+    <value>同步模式:</value>
+  </data>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
-  <value>读取</value>
-</data>
+    <value>读取</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
-  <value>双向</value>
-</data>
+    <value>双向</value>
+  </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
-  <value>同步</value>
-</data>
+    <value>同步</value>
+  </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-  <value>使用集中存储的设备之间的双向文件同步。</value>
-</data>
+    <value>使用集中存储的设备之间的双向文件同步。</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
-  <value>新建</value>
-</data>
+    <value>新建</value>
+  </data>
   <data name="Task_Create_Hint" xml:space="preserve">
-  <value>创建新任务。</value>
-</data>
+    <value>创建新任务。</value>
+  </data>
   <data name="Task_Delete" xml:space="preserve">
-  <value>删除</value>
-</data>
+    <value>删除</value>
+  </data>
   <data name="Task_Delete_Confirm" xml:space="preserve">
-  <value>您真的要删除“{0}”吗？</value>
-</data>
+    <value>您真的要删除“{0}”吗？</value>
+  </data>
   <data name="Task_Delete_Hint" xml:space="preserve">
-  <value>删除所选任务。</value>
-</data>
+    <value>删除所选任务。</value>
+  </data>
   <data name="Task_Edit" xml:space="preserve">
-  <value>编辑</value>
-</data>
+    <value>编辑</value>
+  </data>
   <data name="Task_Edit_Hint" xml:space="preserve">
-  <value>编辑所选任务。</value>
-</data>
+    <value>编辑所选任务。</value>
+  </data>
   <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
-  <value>您无法在CLI中编辑此类型的任务。</value>
-</data>
+    <value>您无法在CLI中编辑此类型的任务。</value>
+  </data>
   <data name="Task_Field_Choose" xml:space="preserve">
-  <value>选择任务：</value>
-</data>
+    <value>选择任务：</value>
+  </data>
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
-  <value>新任务</value>
-</data>
+    <value>新任务</value>
+  </data>
   <data name="Task_LastExecution_State" xml:space="preserve">
-  <value>状态</value>
-</data>
+    <value>状态</value>
+  </data>
   <data name="Task_Launch" xml:space="preserve">
-  <value>启动</value>
-</data>
+    <value>启动</value>
+  </data>
   <data name="Task_Launch_Hint" xml:space="preserve">
-  <value>启动所选任务。</value>
-</data>
+    <value>启动所选任务。</value>
+  </data>
   <data name="Task_List" xml:space="preserve">
-  <value>任务</value>
-</data>
+    <value>任务</value>
+  </data>
   <data name="Task_Restore" xml:space="preserve">
-  <value>恢复</value>
-</data>
+    <value>恢复</value>
+  </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
-  <value>失败（参见打开的日志）</value>
-</data>
+    <value>失败（参见打开的日志）</value>
+  </data>
   <data name="Task_Status_InProgress" xml:space="preserve">
-  <value>任务正在进行中...</value>
-</data>
+    <value>任务正在进行中...</value>
+  </data>
   <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
-  <value>部分完成。由于存储限额，这次跳过了一些文件。剩余{0}个文件，总大小为{1}GB。</value>
-</data>
+    <value>部分完成。由于存储限额，这次跳过了一些文件。剩余{0}个文件，总大小为{1}GB。</value>
+  </data>
   <data name="Task_Status_Succesfull" xml:space="preserve">
-  <value>成功</value>
-</data>
+    <value>成功</value>
+  </data>
   <data name="Task_Status_Unknown" xml:space="preserve">
-  <value>未知</value>
-</data>
+    <value>未知</value>
+  </data>
   <data name="Task_Validation_NotFound" xml:space="preserve">
-  <value>未找到任务“{0}”。</value>
-</data>
+    <value>未找到任务“{0}”。</value>
+  </data>
   <data name="Task_Validation_NotSupported" xml:space="preserve">
-  <value>不支持此任务类型。</value>
-</data>
+    <value>不支持此任务类型。</value>
+  </data>
   <data name="Theme_Title" xml:space="preserve">
-  <value>主题</value>
-</data>
+    <value>主题</value>
+  </data>
   <data name="Theme_Value_Dark" xml:space="preserve">
-  <value>暗色</value>
-</data>
+    <value>暗色</value>
+  </data>
   <data name="Theme_Value_Light" xml:space="preserve">
-  <value>亮色</value>
-</data>
+    <value>亮色</value>
+  </data>
   <data name="Time_Field_Elapsed" xml:space="preserve">
-  <value>已过时间:</value>
-</data>
+    <value>已过时间:</value>
+  </data>
   <data name="Time_Field_Hour" xml:space="preserve">
-  <value>小时:</value>
-</data>
+    <value>小时:</value>
+  </data>
   <data name="Time_Field_Minute" xml:space="preserve">
-  <value>分钟:</value>
-</data>
+    <value>分钟:</value>
+  </data>
   <data name="Url_Field" xml:space="preserve">
-  <value>网址:</value>
-</data>
+    <value>网址:</value>
+  </data>
   <data name="Url_Field_Validation" xml:space="preserve">
-  <value>未指定网址。</value>
-</data>
+    <value>未指定网址。</value>
+  </data>
   <data name="User_Field" xml:space="preserve">
-  <value>用户:</value>
-</data>
+    <value>用户:</value>
+  </data>
   <data name="User_Field_Validation" xml:space="preserve">
-  <value>未指定用户。</value>
-</data>
+    <value>未指定用户。</value>
+  </data>
 </root>

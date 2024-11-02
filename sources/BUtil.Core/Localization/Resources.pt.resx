@@ -242,8 +242,8 @@ Cenário de uso: Você copia dados para um servidor remoto. Há um problema: o I
     <value>Obter estado do armazenamento</value>
   </data>
   <data name="DataStorage_State_Saving" xml:space="preserve">
-  <value>Escrevendo estado do armazenamento</value>
-</data>
+    <value>Escrevendo estado do armazenamento</value>
+  </data>
   <data name="DataStorage_Title" xml:space="preserve">
     <value>Armazenamento</value>
   </data>
@@ -376,75 +376,75 @@ Para ver todas as opções, pesquise "C# DateTime format".</value>
     <value>String de nome de transformação de arquivo inválida.</value>
   </data>
   <data name="ImportMediaTask_File" xml:space="preserve">
-  <value>Importar "{0}"</value>
-</data>
+    <value>Importar "{0}"</value>
+  </data>
   <data name="ImportMediaTask_Help" xml:space="preserve">
-  <value>Importa áudios, fotos, vídeos do cartão SD da câmera, gravador; fotos e vídeos do seu telefone via WI-FI através do aplicativo Servidor FTP usando nomes de arquivos de modelo.
+    <value>Importa áudios, fotos, vídeos do cartão SD da câmera, gravador; fotos e vídeos do seu telefone via WI-FI através do aplicativo Servidor FTP usando nomes de arquivos de modelo.
 
 Consulte o site do aplicativo para documentação sobre como configurar a transmissão de arquivos via WI-FI através do aplicativo Servidor FTP no telefone.</value>
-</data>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-  <value>Importar fonte de dados</value>
-</data>
+    <value>Importar fonte de dados</value>
+  </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
-  <value>Pular arquivos já importados</value>
-</data>
+    <value>Pular arquivos já importados</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
-  <value>Ocorreu um erro inesperado.
+    <value>Ocorreu um erro inesperado.
 
 Por favor, contate os desenvolvedores com as informações salvas em sua área de trabalho em
 "{0}"
 
 O aplicativo será fechado agora.</value>
-</data>
+  </data>
   <data name="IncrementalBackup_Help" xml:space="preserve">
-  <value>A forma mais básica de backup incremental consiste em identificar, registrar e, assim, preservar apenas aqueles arquivos que mudaram desde o último backup.
+    <value>A forma mais básica de backup incremental consiste em identificar, registrar e, assim, preservar apenas aqueles arquivos que mudaram desde o último backup.
 
 Como as mudanças são tipicamente baixas, os backups incrementais são muito menores e mais rápidos do que os backups completos.
 
 Por exemplo, após um backup completo na sexta-feira, um backup na segunda-feira conterá apenas aqueles arquivos que mudaram desde sexta-feira. Um backup na terça-feira conterá apenas aqueles arquivos que mudaram desde segunda-feira, e assim por diante.
 
 Se qualquer uma das cópias criadas falhar, incluindo a primeira (completa), a restauração ficará incompleta.</value>
-</data>
+  </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
-  <value>Backup incremental</value>
-</data>
+    <value>Backup incremental</value>
+  </data>
   <data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
-  <value>Calcular versão incrementada</value>
-</data>
+    <value>Calcular versão incrementada</value>
+  </data>
   <data name="IncrementalBackup_Version_Save" xml:space="preserve">
-  <value>Salvando versão incrementada</value>
-</data>
+    <value>Salvando versão incrementada</value>
+  </data>
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
-  <value>Tarefa de backup incremental</value>
-</data>
+    <value>Tarefa de backup incremental</value>
+  </data>
   <data name="LeftMenu_Encryption" xml:space="preserve">
-  <value>Criptografia</value>
-</data>
+    <value>Criptografia</value>
+  </data>
   <data name="LeftMenu_What" xml:space="preserve">
-  <value>O quê?</value>
-</data>
+    <value>O quê?</value>
+  </data>
   <data name="LeftMenu_What_Hint" xml:space="preserve">
-  <value>Aqui você pode adicionar pastas e arquivos que precisam ser processados.</value>
-</data>
+    <value>Aqui você pode adicionar pastas e arquivos que precisam ser processados.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
-  <value>Nenhum item para processar.</value>
-</data>
+    <value>Nenhum item para processar.</value>
+  </data>
   <data name="LeftMenu_When" xml:space="preserve">
-  <value>Quando?</value>
-</data>
+    <value>Quando?</value>
+  </data>
   <data name="LeftMenu_When_Help" xml:space="preserve">
-  <value>Aqui você pode configurar um agendador. O agendador pode ajudar você a automatizar o lançamento de tarefas.</value>
-</data>
+    <value>Aqui você pode configurar um agendador. O agendador pode ajudar você a automatizar o lançamento de tarefas.</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
-  <value>Onde?</value>
-</data>
+    <value>Onde?</value>
+  </data>
   <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
-  <value>Arraste e solte aqui arquivos e pastas do Explorer.</value>
-</data>
+    <value>Arraste e solte aqui arquivos e pastas do Explorer.</value>
+  </data>
   <data name="LeftMenu_Where_Hint" xml:space="preserve">
-  <value>Neste local, você pode adicionar locais onde gostaria que seus arquivos fossem copiados.</value>
-</data>
+    <value>Neste local, você pode adicionar locais onde gostaria que seus arquivos fossem copiados.</value>
+  </data>
   <data name="Local_State_Get" xml:space="preserve">
     <value>Obter estado local</value>
   </data>
@@ -452,123 +452,114 @@ Se qualquer uma das cópias criadas falhar, incluindo a primeira (completa), a r
     <value>Gravando estado local</value>
   </data>
   <data name="LogFile_Marker_Errors" xml:space="preserve">
-  <value>Erros</value>
-</data>
-  <data name="LogFile_Marker_Successful" xml:space="preserve">
-  <value>Bem-sucedido</value>
-</data>
-  <data name="LogFile_OpenLogs" xml:space="preserve">
-  <value>Logs</value>
-</data>
-  <data name="Messages_Header_Error" xml:space="preserve">
-  <value>Erro</value>
-</data>
-  <data name="Messages_Header_Information" xml:space="preserve">
-  <value>Informação</value>
-</data>
-  <data name="Messages_Header_Question" xml:space="preserve">
-  <value>Pergunta</value>
-</data>
-  <data name="Name_Field" xml:space="preserve">
-  <value>Nome:</value>
-</data>
-  <data name="Name_Field_Validation" xml:space="preserve">
-  <value>O nome está vazio ou contém caracteres de caminho não suportados.</value>
-</data>
-  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
-  <value>A extensão do nome '{0}' excede o limite por {1} caracteres.</value>
-</data>
-  <data name="Name_Title" xml:space="preserve">
-  <value>Nome</value>
-</data>
-  <data name="Password_Field" xml:space="preserve">
-  <value>Senha:</value>
-</data>
-  <data name="Password_Field_Confirm" xml:space="preserve">
-  <value>Confirmar senha:</value>
-</data>
-  <data name="Password_Field_Length" xml:space="preserve">
-  <value>Comprimento:</value>
-</data>
-  <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
-  <value>As senhas não coincidem.</value>
-</data>
-  <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
-  <value>A senha não foi especificada.</value>
-</data>
-  <data name="Password_Generate" xml:space="preserve">
-  <value>Gerar senha...</value>
-</data>
-  <data name="Password_Generator_Header" xml:space="preserve">
-  <value>Gerador de senhas</value>
-</data>
-  <data name="Password_Help" xml:space="preserve">
-  <value>O comprimento mínimo recomendado para a senha é de 50 caracteres ou mais.</value>
-</data>
-  <data name="Password_Use" xml:space="preserve">
-  <value>Usar</value>
-</data>
-  <data name="RepositorySubfolder_Field" xml:space="preserve">
-    <value>Subpasta do repositório (opcional):</value>
+    <value>Erros</value>
   </data>
-  <data name="RepositorySubfolder_Help" xml:space="preserve">
-    <value>Você pode sincronizar a pasta para uma subpasta particular do repositório, se não quiser ter todo o conteúdo do repositório no dispositivo.</value>
+  <data name="LogFile_Marker_Successful" xml:space="preserve">
+    <value>Bem-sucedido</value>
+  </data>
+  <data name="LogFile_OpenLogs" xml:space="preserve">
+    <value>Logs</value>
+  </data>
+  <data name="Messages_Header_Error" xml:space="preserve">
+    <value>Erro</value>
+  </data>
+  <data name="Messages_Header_Information" xml:space="preserve">
+    <value>Informação</value>
+  </data>
+  <data name="Messages_Header_Question" xml:space="preserve">
+    <value>Pergunta</value>
+  </data>
+  <data name="Name_Field" xml:space="preserve">
+    <value>Nome:</value>
+  </data>
+  <data name="Name_Field_Validation" xml:space="preserve">
+    <value>O nome está vazio ou contém caracteres de caminho não suportados.</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>A extensão do nome '{0}' excede o limite por {1} caracteres.</value>
+  </data>
+  <data name="Name_Title" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="Password_Field" xml:space="preserve">
+    <value>Senha:</value>
+  </data>
+  <data name="Password_Field_Confirm" xml:space="preserve">
+    <value>Confirmar senha:</value>
+  </data>
+  <data name="Password_Field_Length" xml:space="preserve">
+    <value>Comprimento:</value>
+  </data>
+  <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
+    <value>As senhas não coincidem.</value>
+  </data>
+  <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
+    <value>A senha não foi especificada.</value>
+  </data>
+  <data name="Password_Generate" xml:space="preserve">
+    <value>Gerar senha...</value>
+  </data>
+  <data name="Password_Generator_Header" xml:space="preserve">
+    <value>Gerador de senhas</value>
+  </data>
+  <data name="Password_Help" xml:space="preserve">
+    <value>O comprimento mínimo recomendado para a senha é de 50 caracteres ou mais.</value>
+  </data>
+  <data name="Password_Use" xml:space="preserve">
+    <value>Usar</value>
   </data>
   <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
-  <value>Não é possível localizar os arquivos "{0}" no diretório.
+    <value>Não é possível localizar os arquivos "{0}" no diretório.
 
 Aponte para um diretório que contenha este arquivo.</value>
-</data>
+  </data>
   <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
-  <value>Não é possível ler o estado.</value>
-</data>
+    <value>Não é possível ler o estado.</value>
+  </data>
   <data name="Server_Field_Address" xml:space="preserve">
-  <value>Nome do servidor:</value>
-</data>
+    <value>Nome do servidor:</value>
+  </data>
   <data name="Server_Field_Address_Validation" xml:space="preserve">
-  <value>O nome do servidor não deve ser especificado.</value>
-</data>
+    <value>O nome do servidor não deve ser especificado.</value>
+  </data>
   <data name="Server_Field_Port" xml:space="preserve">
-  <value>Porta:</value>
-</data>
+    <value>Porta:</value>
+  </data>
   <data name="Server_Field_Port_Validation" xml:space="preserve">
-  <value>A porta é inválida.</value>
-</data>
-  <data name="SourceItem_AddFiles" xml:space="preserve">
-  <value>Adicionar arquivos...</value>
-</data>
+    <value>A porta é inválida.</value>
+  </data>
   <data name="SourceItem_AddFolders" xml:space="preserve">
-  <value>Adicionar pastas...</value>
-</data>
+    <value>Adicionar pastas...</value>
+  </data>
   <data name="SourceItem_OpenInExplorer" xml:space="preserve">
-  <value>Abrir no Explorer...</value>
-</data>
+    <value>Abrir no Explorer...</value>
+  </data>
   <data name="SourceItem_State_Get" xml:space="preserve">
-  <value>Obter estado do item de origem "{0}"</value>
-</data>
+    <value>Obter estado do item de origem "{0}"</value>
+  </data>
   <data name="SourceItem_Validation_Empty" xml:space="preserve">
-  <value>Nenhum item para processar.</value>
-</data>
+    <value>Nenhum item para processar.</value>
+  </data>
   <data name="SourceItem_Validation_NotExists" xml:space="preserve">
-  <value>"{0}" não existe.</value>
-</data>
+    <value>"{0}" não existe.</value>
+  </data>
   <data name="State_File_Get" xml:space="preserve">
-  <value>Obter estado do arquivo "{0}"</value>
-</data>
+    <value>Obter estado do arquivo "{0}"</value>
+  </data>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
-  <value>Obter estado dos itens de origem e armazenamentos</value>
-</data>
+    <value>Obter estado dos itens de origem e armazenamentos</value>
+  </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
-  <value>Adicionar padrão de exclusão de arquivo</value>
-</data>
+    <value>Adicionar padrão de exclusão de arquivo</value>
+  </data>
   <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
-  <value>Editar padrão de exclusão de arquivo</value>
-</data>
+    <value>Editar padrão de exclusão de arquivo</value>
+  </data>
   <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
-  <value>Geração de padrões de arquivos no .NET: Padrões</value>
-</data>
+    <value>Geração de padrões de arquivos no .NET: Padrões</value>
+  </data>
   <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
-  <value>Aqui você pode especificar padrões de exclusão de arquivos usando globbing.
+    <value>Aqui você pode especificar padrões de exclusão de arquivos usando globbing.
 Pode ser um nome de arquivo, nome de pasta ou curinga.
 Exemplos:
 d:\temp,
@@ -576,16 +567,16 @@ d:\temp\file.txt,
 d:\temp\**\*.txt ou
 bin.
 Veja a descrição detalhada no seguinte link.</value>
-</data>
+  </data>
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
-  <value>Ignora o processamento de arquivos pelo padrão de exclusão.</value>
-</data>
+    <value>Ignora o processamento de arquivos pelo padrão de exclusão.</value>
+  </data>
   <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
-  <value>Padrão de exclusão de arquivo:</value>
-</data>
+    <value>Padrão de exclusão de arquivo:</value>
+  </data>
   <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
-  <value>O padrão de exclusão de arquivo está vazio.</value>
-</data>
+    <value>O padrão de exclusão de arquivo está vazio.</value>
+  </data>
   <data name="StorageItem_Remote_Marker" xml:space="preserve">
     <value>Remoto</value>
   </data>
@@ -605,56 +596,56 @@ Veja a descrição detalhada no seguinte link.</value>
     <value>Sincronização bidirecional de arquivos entre dispositivos usando armazenamento centralizado.</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
-  <value>Novo</value>
-</data>
+    <value>Novo</value>
+  </data>
   <data name="Task_Create_Hint" xml:space="preserve">
-  <value>Cria nova tarefa.</value>
-</data>
+    <value>Cria nova tarefa.</value>
+  </data>
   <data name="Task_Delete" xml:space="preserve">
-  <value>Excluir</value>
-</data>
+    <value>Excluir</value>
+  </data>
   <data name="Task_Delete_Confirm" xml:space="preserve">
-  <value>Você realmente deseja excluir "{0}"?</value>
-</data>
+    <value>Você realmente deseja excluir "{0}"?</value>
+  </data>
   <data name="Task_Delete_Hint" xml:space="preserve">
-  <value>Exclui a tarefa selecionada.</value>
-</data>
+    <value>Exclui a tarefa selecionada.</value>
+  </data>
   <data name="Task_Edit" xml:space="preserve">
-  <value>Editar</value>
-</data>
+    <value>Editar</value>
+  </data>
   <data name="Task_Edit_Hint" xml:space="preserve">
-  <value>Edita a tarefa selecionada.</value>
-</data>
+    <value>Edita a tarefa selecionada.</value>
+  </data>
   <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
-  <value>Você não pode editar este tipo de tarefa no CLI.</value>
-</data>
+    <value>Você não pode editar este tipo de tarefa no CLI.</value>
+  </data>
   <data name="Task_Field_Choose" xml:space="preserve">
-  <value>Escolha a tarefa:</value>
-</data>
+    <value>Escolha a tarefa:</value>
+  </data>
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
-  <value>Nova tarefa</value>
-</data>
+    <value>Nova tarefa</value>
+  </data>
   <data name="Task_LastExecution_State" xml:space="preserve">
-  <value>Estado</value>
-</data>
+    <value>Estado</value>
+  </data>
   <data name="Task_Launch" xml:space="preserve">
-  <value>Lançar</value>
-</data>
+    <value>Lançar</value>
+  </data>
   <data name="Task_Launch_Hint" xml:space="preserve">
-  <value>Lança a tarefa selecionada.</value>
-</data>
+    <value>Lança a tarefa selecionada.</value>
+  </data>
   <data name="Task_List" xml:space="preserve">
-  <value>Tarefas</value>
-</data>
+    <value>Tarefas</value>
+  </data>
   <data name="Task_Restore" xml:space="preserve">
-  <value>Restaurar</value>
-</data>
+    <value>Restaurar</value>
+  </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
-  <value>Falhou (veja o log aberto)</value>
-</data>
+    <value>Falhou (veja o log aberto)</value>
+  </data>
   <data name="Task_Status_InProgress" xml:space="preserve">
-  <value>A tarefa está em andamento...</value>
-</data>
+    <value>A tarefa está em andamento...</value>
+  </data>
   <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
     <value>Concluído parcialmente. Devido à cota de armazenamento, alguns arquivos foram ignorados desta vez. Restam {0} arquivos com de {1} GB.</value>
   </data>

@@ -1,0 +1,699 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
+    <value>செய்வதில்லை</value>
+  </data>
+  <data name="AfterTaskSelection_Field" xml:space="preserve">
+    <value>பணி முடிவுக்கு பிறகு:</value>
+  </data>
+  <data name="AfterTaskSelection_Help" xml:space="preserve">
+    <value>'செய்வதில்லை' என்று தவிர ஏதாவது தேர்ந்தெடுக்கின், 
+திட்டம் நீங்கள் கணினியில் வரும் இடத்தில் எதாவது தவறுகள் 
+அல்லது எச்சரிக்கைகள் பதிவாகினால், உங்களுக்கான 
+அறிக்கையை காட்ட OS-ஐ அமைக்கும்.</value>
+  </data>
+  <data name="AfterTaskSelection_LogOff" xml:space="preserve">
+    <value>இருந்து வெளியேறு</value>
+  </data>
+  <data name="AfterTaskSelection_Reboot" xml:space="preserve">
+    <value>மீண்டும் ஆரம்பிக்க</value>
+  </data>
+  <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
+    <value>மின் அணைப்பு</value>
+  </data>
+  <data name="Application_NewVersion_Notification" xml:space="preserve">
+    <value>புதிய {0} பதிப்பு கிடைக்கிறது.</value>
+  </data>
+  <data name="BackupVersion_Button_Delete" xml:space="preserve">
+    <value>பதிப்பை நீக்கு</value>
+  </data>
+  <data name="BackupVersion_Changes_Title" xml:space="preserve">
+    <value>மாற்றங்கள்</value>
+  </data>
+  <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
+    <value>நீங்கள் உண்மையில் "{0}" பதிப்பை நீக்க விரும்புகிறீர்களா? 
+
+நீக்கப்பட்ட பதிப்பு மாற்றங்கள் "{1}" பதிப்பின் ஒரு பகுதி ஆகி விடும்.</value>
+  </data>
+  <data name="BackupVersion_Files_Title" xml:space="preserve">
+    <value>கோப்புகள்</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
+    <value>ஜர்னல்: {0}</value>
+  </data>
+  <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
+    <value>தேர்ந்தெடுக்கப்பட்ட ஜர்னல்...</value>
+  </data>
+  <data name="BackupVersion_Select" xml:space="preserve">
+    <value>தேர்ந்தெடுக்கப்பட்ட பதிப்பை திறவும்...</value>
+  </data>
+  <data name="BackupVersion_Selector_Title" xml:space="preserve">
+    <value>பதிப்பு தேர்ந்தெடுக்கவும்</value>
+  </data>
+  <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
+    <value>(எல்லா பதிப்புகள் சேமிப்பில் {0}占ிக்கின்றன)</value>
+  </data>
+  <data name="BackupVersion_Versions_Title" xml:space="preserve">
+    <value>பதிப்புகள்</value>
+  </data>
+  <data name="BackupVersion_Viewer_Help" xml:space="preserve">
+    <value>நீங்கள் மீட்டெடுக்க விரும்பும் கோப்பை அல்லது கோப்புறையை மரத்தில் தேர்ந்தெடுக்கவும் மற்றும் "மீட்டெடு" என்ற மனைவில் கிளிக் செய்யவும்.</value>
+  </data>
+  <data name="Button_Cancel" xml:space="preserve">
+    <value>ரத்து செய்</value>
+  </data>
+  <data name="Button_Close" xml:space="preserve">
+    <value>மூடு</value>
+  </data>
+  <data name="Button_Continue" xml:space="preserve">
+    <value>தொடர்க &gt;</value>
+  </data>
+  <data name="Button_CopyToClipboard" xml:space="preserve">
+    <value>நகலெடு</value>
+  </data>
+  <data name="Button_Download" xml:space="preserve">
+    <value>மட்டும் பதிவிறக்கு</value>
+  </data>
+  <data name="Button_OK" xml:space="preserve">
+    <value>சரி</value>
+  </data>
+  <data name="Button_Remove" xml:space="preserve">
+    <value>அகற்று</value>
+  </data>
+  <data name="Button_Save" xml:space="preserve">
+    <value>சேமி</value>
+  </data>
+  <data name="CommandLineArguments_Help" xml:space="preserve">
+    <value>கமாண்டு வரி கட்டளைகளை பார்க்க {0} சென்று பாருங்கள்.</value>
+  </data>
+  <data name="CommandLineArguments_Invalid" xml:space="preserve">
+    <value>செல்லுபடியான கமாண்டு வரி கட்டளைகள் அல்ல.</value>
+  </data>
+  <data name="DataStorage_Data_Saving" xml:space="preserve">
+    <value>தரவை சேமிப்புக்கு எழுதுதல்</value>
+  </data>
+  <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
+    <value>சேவைக்குழு வரிசை:</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
+    <value>இணக்கத்தை முடிக்கும் வரிசை:</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
+    <value>தவறுகளுடன் முடிவுற்றது</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
+    <value>செயல்திறனாக முடிந்தது</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
+    <value>பதிவேற்ற வரம்பு, GB:</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
+    <value>ஒரு பணியின் செயலாக்கத்தின் போது அனுப்பப்படும் தரவின் அளவை வரம்பு செய்யும். 0 - வரம்பு இல்லை. 
+வரம்பு மீறப்படும்போது, பிற கோப்புகள் தவிர்க்கப்படும் மற்றும் அடுத்த முறையில் செயலாக்கப்படும். 
+பயன்பாட்டு நிலை: நீங்கள் தொலைநகல் சேவையகத்திற்கு தரவுகளை நகலெடுக்கிறீர்கள். 
+ஒரு சிக்கல் உள்ளது: ISP சில பிளவுகளைப் பிறகு பதிவேற்ற வேகத்தை குறைக்கிறது. இந்த அமைப்பு அதை கையாள உதவுகிறது.</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
+    <value>வரம்பு 0 (செயலாக்க வேண்டாம்) அல்லது 0-க்கும் மேல் மதிப்பாக இருக்க வேண்டும்.</value>
+  </data>
+  <data name="DataStorage_Maintenance" xml:space="preserve">
+    <value>தரவுத்துறையின் பராமரிப்பு</value>
+  </data>
+  <data name="DataStorage_Script_Help" xml:space="preserve">
+    <value>ஒரு சில கட்டளைகளை செயல்படுத்திய பிறகு கோப்புறை கிடைக்குமானால், 
+இணக்கும் மற்றும் துணை துணை {0} செயல்களை குறிப்பிடவும்.</value>
+  </data>
+  <data name="DataStorage_State_Get" xml:space="preserve">
+    <value>சேமிப்பின் மாநிலத்தை பெறவும்</value>
+  </data>
+  <data name="DataStorage_State_Saving" xml:space="preserve">
+    <value>சேமிப்பு மாநிலத்தை எழுதுதல்</value>
+  </data>
+  <data name="DataStorage_Title" xml:space="preserve">
+    <value>சேமிப்பு</value>
+  </data>
+  <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
+    <value>சேமிப்பு குறிப்பிடப்படவில்லை.</value>
+  </data>
+  <data name="Days_Field_Choose" xml:space="preserve">
+    <value>வாரத்தின் நாட்களை தேர்ந்தெடுக்கவும்:</value>
+  </data>
+  <data name="Days_Friday" xml:space="preserve">
+    <value>வெள்ளிக்கிழமை</value>
+  </data>
+  <data name="Days_Monday" xml:space="preserve">
+    <value>திங்கட்கிழமை</value>
+  </data>
+  <data name="Days_Saturday" xml:space="preserve">
+    <value>சனிக்கிழமை</value>
+  </data>
+  <data name="Days_Sunday" xml:space="preserve">
+    <value>ஞாயிற்றுக்கிழமை</value>
+  </data>
+  <data name="Days_Thursday" xml:space="preserve">
+    <value>வியாழக்கிழமை</value>
+  </data>
+  <data name="Days_Tuesday" xml:space="preserve">
+    <value>செவ்வாய்க்கிழமை</value>
+  </data>
+  <data name="Days_Wednesday" xml:space="preserve">
+    <value>புதன்கிழமை</value>
+  </data>
+  <data name="DirectoryStorage" xml:space="preserve">
+    <value>கோப்புறை</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
+    <value>கோப்புறை:</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
+    <value>கோப்புறை குறிப்பிடப்படவில்லை.</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
+    <value>கோப்புறை "{0}" இல்லை.</value>
+  </data>
+  <data name="Field_Device" xml:space="preserve">
+    <value>மாதிரி:</value>
+  </data>
+  <data name="Field_Device_Validation_Empty" xml:space="preserve">
+    <value>மாதிரி குறிப்பிடப்படவில்லை.</value>
+  </data>
+  <data name="Field_Device_Validation_NotFound" xml:space="preserve">
+    <value>மாதிரி காணவில்லை.</value>
+  </data>
+  <data name="Field_Folder" xml:space="preserve">
+    <value>கோப்பகம்:</value>
+  </data>
+  <data name="Field_Folder_Browse" xml:space="preserve">
+    <value>என்னை பத்திக்குப் போ</value>
+  </data>
+  <data name="Field_Folder_Validation_Empty" xml:space="preserve">
+    <value>கோப்பகம் குறிப்பிடப்படவில்லை.</value>
+  </data>
+  <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
+    <value>கோப்பகம் இல்லை.</value>
+  </data>
+  <data name="Field_TransportProtocol" xml:space="preserve">
+    <value>முறையில்:</value>
+  </data>
+  <data name="Field_Version" xml:space="preserve">
+    <value>மாண்பில்:</value>
+  </data>
+  <data name="File_Deleting" xml:space="preserve">
+    <value>அழிக்கும் "{0}"</value>
+  </data>
+  <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
+    <value>அதிகார சரிபார்ப்பு ஸ்கிரிப்ட்.ps1</value>
+  </data>
+  <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
+    <value>அதிகார சரிபார்ப்பு ஸ்கிரிப்டுகளைச் சேமித்து கொண்டு இருக்கிறேன்</value>
+  </data>
+  <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
+    <value>செயலாக்க கோப்புகள் பழமையான:</value>
+  </data>
+  <data name="File_List_Saving" xml:space="preserve">
+    <value>கோப்புகளைச் சேமிக்கிறேன்</value>
+  </data>
+  <data name="File_Moving" xml:space="preserve">
+    <value>"{0}"-ஐ "{1}"க்கு நகர்த்துகிறேன்</value>
+  </data>
+  <data name="File_Saving" xml:space="preserve">
+    <value>"{0}"-ஐ சேமிக்கிறேன்</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
+    <value>கனமளிக்கப்பட்ட</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
+    <value>ஐயாது</value>
+  </data>
+  <data name="Ftps_Field_Encryption" xml:space="preserve">
+    <value>SSL/TTS குறியாக்கம்:</value>
+  </data>
+  <data name="Icons_Help_Link" xml:space="preserve">
+    <value>உங்கள் உரையில் எழுத்தாளர் அடையாளத்தைச் சேர்க்கவும்</value>
+  </data>
+  <data name="ImportMediaTask_AllFiles" xml:space="preserve">
+    <value>அனைத்து கோப்புகளை இறக்குமதி செய்யவும்</value>
+  </data>
+  <data name="ImportMediaTask_Create" xml:space="preserve">
+    <value>ஐம்போர்ப்பு ஊடகப் பணியை உருவாக்கவும்</value>
+  </data>
+  <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
+    <value>"{0}" ஊடக இறக்குமதி பணியைத் திருத்தவும்</value>
+  </data>
+  <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
+    <value>அவுட் கோப்பகம்:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
+    <value>கோப்பின் பெயர் மாற்றங்கள்:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
+    <value>உதாரணம்:
+நீங்கள் {0} என்ற கோப்பை ( {1} அன்று மாற்றப்பட்டது) வைத்துள்ளீர்கள் எனக் கற்பனை செய்க.
+இந்த அடைவு மற்றும் வார்ப்புரு சரம் மூலம் கோப்பு சேமிக்கப்படும்:
+{2}</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
+    <value>ஆதரித்த டோக்கன்கள்:
+{DATE:Format} - குறிப்பிட்ட வடிவத்தில் கோப்பு மாற்ற தேதியை நுழைக்கிறது.
+அனைத்து விருப்பங்களைப் பார்க்க "C# DateTime format" என்ற பெயரில் கூகிளில் தேடு.</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
+    <value>மாற்றுதல் கோப்புப் பெயர் காலியாக உள்ளது.</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
+    <value>தவறான மாற்றுதல் கோப்புப் பெயர் சரம்.</value>
+  </data>
+  <data name="ImportMediaTask_File" xml:space="preserve">
+    <value>"{0}"-ஐ இறக்குமதி செய்கிறேன்</value>
+  </data>
+  <data name="ImportMediaTask_Help" xml:space="preserve">
+    <value>ஆடியோ, புகைப்படங்கள், வீடியோக்களை SD கார்டில் உள்ள கேமரா, ரெக்கார்டர்; உங்கள் தொலைபேசியில் WI-FI மூலம் FTP சர்வர் செயலி மூலம் புகைப்படங்கள் மற்றும் வீடியோக்களை இறக்குமதி செய்கின்றது.
+
+தொலைபேசியில் FTP சர்வர் செயலி மூலம் கோப்பு அனுப்புவதற்கான ஆவணத்திற்காக செயலியின் இணையதளத்தைப் பார்க்கவும்.</value>
+  </data>
+  <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
+    <value>தரவிற் கொள்க</value>
+  </data>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
+    <value>ஏற்கனவே இறக்குமதி செய்யப்பட்ட கோப்புகளை தவிர்க்கவும்</value>
+  </data>
+  <data name="ImproveIt_Message" xml:space="preserve">
+    <value>எதிர்பாராத தவறு நிகழ்ந்தது.
+
+தயவுசெய்து உங்கள் டெஸ்க்டாப்பில் சேமிக்கப்பட்ட தகவலுடன் ontwikkelaars-ஐ தொடர்பு கொள்ளவும்
+"{0}"
+
+விண்ணப்பம் இப்போது மூடப்படும்.</value>
+  </data>
+  <data name="IncrementalBackup_Help" xml:space="preserve">
+    <value>Incremental backup-ஐ அடிப்படையான உருவாக்கம் என்பது, கடைசி காப்பீட்டிற்கு பிறகு மாறிய கோப்புகளை மட்டும் அடையாளம் காண்பதற்காக, பதிவுசெய்யவும், பராமரிக்கவும் ஆகும்.
+
+மாற்றங்கள் பொதுவாக குறைவாக இருப்பதால், increment backups முழு காப்பீடுகளுக்கேற்ப மிகச் சிறியது மற்றும் விரைவாக இருக்கும்.
+
+உதாரணமாக, வெள்ளிக்கிழமையில் முழு காப்பீடு பிறகு, ஒரு திங்கட்கிழமையில் காப்பீடு வெள்ளிக்கிழமை முதல் மாறிய கோப்புகளை மட்டுமே உள்ளடக்கியது. செவ்வாய்க்கிழமை காப்பீடு திங்கட்கிழமையிலிருந்து மாறிய கோப்புகளை மட்டுமே கொண்டுள்ளது, மற்றும் அதற்குப் பிறகு.
+
+உருவாக்கப்பட்ட எதாவது காப்பியால் தோல்வி அடைந்தால், முதலாவது (முழு) உட்பட, மீட்பு மாறுபாட்டாக இருக்கும்.</value>
+  </data>
+  <data name="IncrementalBackup_Title" xml:space="preserve">
+    <value>Incremental backup</value>
+  </data>
+  <data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
+    <value>கூட்டப்பட்ட பதிப்பு கணக்கிடுக</value>
+  </data>
+  <data name="IncrementalBackup_Version_Save" xml:space="preserve">
+    <value>கூட்டப்பட்ட பதிப்பைச் சேமிக்கிறேன்</value>
+  </data>
+  <data name="IncrementalBackupTask_Create" xml:space="preserve">
+    <value>Incremental backup பணி</value>
+  </data>
+  <data name="LeftMenu_Encryption" xml:space="preserve">
+    <value>குறியாக்கம்</value>
+  </data>
+  <data name="LeftMenu_What" xml:space="preserve">
+    <value>என்ன?</value>
+  </data>
+  <data name="LeftMenu_What_Hint" xml:space="preserve">
+    <value>இங்கே நீங்கள் செயலாக்குவதற்கான கோப்புகள் மற்றும் கோப்புகளைச் சேர்க்கலாம்.</value>
+  </data>
+  <data name="LeftMenu_What_Validation" xml:space="preserve">
+    <value>செயலாக்குவதற்கான பொருட்கள் இல்லை.</value>
+  </data>
+  <data name="LeftMenu_When" xml:space="preserve">
+    <value>எப்போது?</value>
+  </data>
+  <data name="LeftMenu_When_Help" xml:space="preserve">
+    <value>இங்கே நீங்கள் ஒரு திட்டக்கருவியை அமைக்கலாம். திட்டக்கருவி செயல்பாட்டை தானாகவே தொடங்க உதவுகிறது.</value>
+  </data>
+  <data name="LeftMenu_Where" xml:space="preserve">
+    <value>எங்கே?</value>
+  </data>
+  <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
+    <value>உள்ளக ஆராய்ச்சியில் இருந்து கோப்புகள் மற்றும் கோப்புகளை இங்கே எடுக்கவும்.</value>
+  </data>
+  <data name="LeftMenu_Where_Hint" xml:space="preserve">
+    <value>இங்கு நீங்கள் உங்கள் கோப்புகளை நகலெடுக்க விரும்பும் இடங்களைச் சேர்க்கலாம்.</value>
+  </data>
+  <data name="Local_State_Get" xml:space="preserve">
+    <value>உள்ளூரி மாநிலத்தைப் பெறுக</value>
+  </data>
+  <data name="Local_State_Saving" xml:space="preserve">
+    <value>உள்ளூரி மாநிலத்தை எழுதுகிறேன்</value>
+  </data>
+  <data name="LogFile_Marker_Errors" xml:space="preserve">
+    <value>தவறுகள்</value>
+  </data>
+  <data name="LogFile_Marker_Successful" xml:space="preserve">
+    <value>வெற்றிகரமான</value>
+  </data>
+  <data name="LogFile_OpenLogs" xml:space="preserve">
+    <value>தகவல்களை திறக்கவும்</value>
+  </data>
+  <data name="Messages_Header_Error" xml:space="preserve">
+    <value>தவறு</value>
+  </data>
+  <data name="Messages_Header_Information" xml:space="preserve">
+    <value>தகவல்</value>
+  </data>
+  <data name="Messages_Header_Question" xml:space="preserve">
+    <value>கேள்வி</value>
+  </data>
+  <data name="Name_Field" xml:space="preserve">
+    <value>பெயர்:</value>
+  </data>
+  <data name="Name_Field_Validation" xml:space="preserve">
+    <value>பெயர் காலியாக அல்லது ஆதரிக்கப்படாத பாதை எழுத்துக்களை உள்ளடக்கியது.</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>பெயர் '{0}' நீளம் வரம்பை {1} எழுத்துக்களால் மீறுகிறது.</value>
+  </data>
+  <data name="Name_Title" xml:space="preserve">
+    <value>பெயர்</value>
+  </data>
+  <data name="Password_Field" xml:space="preserve">
+    <value>கடவுச்சொல்:</value>
+  </data>
+  <data name="Password_Field_Confirm" xml:space="preserve">
+    <value>கடவுச்சொல்லை உறுதிப்படுத்தவும்:</value>
+  </data>
+  <data name="Password_Field_Length" xml:space="preserve">
+    <value>நீளம்:</value>
+  </data>
+  <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
+    <value>கடவுச்சொற்கள் பொருந்தவில்லை.</value>
+  </data>
+  <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
+    <value>கடவுச்சொல் குறிப்பிடப்படவில்லை.</value>
+  </data>
+  <data name="Password_Generate" xml:space="preserve">
+    <value>கடவுச்சொல் உருவாக்கவும்...</value>
+  </data>
+  <data name="Password_Generator_Header" xml:space="preserve">
+    <value>கடவுச்சொல் உருவாக்கி</value>
+  </data>
+  <data name="Password_Help" xml:space="preserve">
+    <value>பதிவு செய்யப்பட்ட குறைந்தபட்ச கடவுச்சொல் நீளம் 50 எழுத்துகள் மற்றும் அதற்கு மேலாக இருக்க வேண்டும்.</value>
+  </data>
+  <data name="Password_Use" xml:space="preserve">
+    <value>பயன்படுத்தவும்</value>
+  </data>
+  <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
+    <value>கோப்புகளை "{0}" அடைவில் கண்டுபிடிக்க முடியவில்லை. 
+
+இந்த கோப்பைக் கொண்ட அடைவிற்கு சுட்டுங்கள்.</value>
+  </data>
+  <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
+    <value>அரசியலைப் படிக்க முடியவில்லை.</value>
+  </data>
+  <data name="Server_Field_Address" xml:space="preserve">
+    <value>சேவையகம் பெயர்:</value>
+  </data>
+  <data name="Server_Field_Address_Validation" xml:space="preserve">
+    <value>சேவையகம் பெயர் குறிப்பிடப்படவில்லை.</value>
+  </data>
+  <data name="Server_Field_Port" xml:space="preserve">
+    <value>போர்ட்:</value>
+  </data>
+  <data name="Server_Field_Port_Validation" xml:space="preserve">
+    <value>போர்ட் செல்லுபடியாகவில்லை.</value>
+  </data>
+  <data name="SourceItem_AddFolders" xml:space="preserve">
+    <value>அடைவுகளைச் சேர்க்கவும்...</value>
+  </data>
+  <data name="SourceItem_OpenInExplorer" xml:space="preserve">
+    <value>எக்ஸ்பிளோரரில் திறக்கவும்...</value>
+  </data>
+  <data name="SourceItem_State_Get" xml:space="preserve">
+    <value>மூல உருப்படியின் மாநிலத்தை பெறுங்கள் "{0}"</value>
+  </data>
+  <data name="SourceItem_Validation_Empty" xml:space="preserve">
+    <value>செயலாக்குவதற்கு உருப்படிகள் இல்லை.</value>
+  </data>
+  <data name="SourceItem_Validation_NotExists" xml:space="preserve">
+    <value>"{0}" இல்லை.</value>
+  </data>
+  <data name="State_File_Get" xml:space="preserve">
+    <value>கோப்பு "{0}" இன் மாநிலத்தை பெறுங்கள்</value>
+  </data>
+  <data name="State_LoadFromEverywhere" xml:space="preserve">
+    <value>மூல உருப்படிகள் மற்றும் சேமிப்புகள் மாநிலத்தை பெறுங்கள்</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
+    <value>கோப்பு விலக்கு மாதிரியைச் சேர்க்கவும்</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
+    <value>கோப்பு விலக்கு மாதிரியைத் தொகுக்கவும்</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
+    <value>.NET இல் கோப்பு குளோபிங்: மாதிரிகள்</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
+    <value>இங்கே நீங்கள் கோப்பு குளோபிங் விலக்கு மாதிரிகளை குறிப்பிடலாம். 
+இது ஒரு கோப்பு பெயர் அல்லது அடைவு பெயர் அல்லது யுனிகோடு ஆக இருக்கலாம். 
+எடுத்துக்காட்டுகள்: 
+d:\temp, 
+d:\temp\file.txt, 
+d:\temp\**\*.txt அல்லது 
+bin. 
+பின்வரும் இணைப்பில் விரிவான விளக்கத்தைப் பார்க்கவும்.</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
+    <value>விலக்கு மாதிரியால் கோப்புகளை செயலாக்குவதைக் தவிர்க்கிறது.</value>
+  </data>
+  <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
+    <value>கோப்பு விலக்கு மாதிரி:</value>
+  </data>
+  <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
+    <value>கோப்பு விலக்கு மாதிரி காலியாக உள்ளது.</value>
+  </data>
+  <data name="StorageItem_Remote_Marker" xml:space="preserve">
+    <value>தூரத்தில்</value>
+  </data>
+  <data name="SynchronizationMode_Field" xml:space="preserve">
+    <value>ஒத்திசைவு முறையை:</value>
+  </data>
+  <data name="SynchronizationMode_Field_Read" xml:space="preserve">
+    <value>படிக்கவும்</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
+    <value>இரு வழி</value>
+  </data>
+  <data name="SynchronizationTask_Create" xml:space="preserve">
+    <value>ஒத்திசைவு</value>
+  </data>
+  <data name="SynchronizationTask_Help" xml:space="preserve">
+    <value>கென்ட்ரலீசிட் சேமிப்பைப் பயன்படுத்தி சாதனங்களுக்கு இடையே கோப்புகளின் இரு வழி ஒத்திசைவு.</value>
+  </data>
+  <data name="Task_Create" xml:space="preserve">
+    <value>புதிய</value>
+  </data>
+  <data name="Task_Create_Hint" xml:space="preserve">
+    <value>புதிய பணியை உருவாக்குகிறது.</value>
+  </data>
+  <data name="Task_Delete" xml:space="preserve">
+    <value>அழிக்கவும்</value>
+  </data>
+  <data name="Task_Delete_Confirm" xml:space="preserve">
+    <value>நீங்கள் உண்மையிலே "{0}" ஐ அழிக்க விரும்புகிறீர்களா?</value>
+  </data>
+  <data name="Task_Delete_Hint" xml:space="preserve">
+    <value>தேர்ந்தெடுக்கப்பட்ட பணியை அழிக்கிறது.</value>
+  </data>
+  <data name="Task_Edit" xml:space="preserve">
+    <value>தொகு</value>
+  </data>
+  <data name="Task_Edit_Hint" xml:space="preserve">
+    <value>தேர்ந்தெடுக்கப்பட்ட பணியைத் தொகுக்கிறது.</value>
+  </data>
+  <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
+    <value>இந்த வகை பணியை CLI இல் நீங்கள் தொகுக்க முடியாது.</value>
+  </data>
+  <data name="Task_Field_Choose" xml:space="preserve">
+    <value>பணியைத் தேர்ந்தெடுக்கவும்:</value>
+  </data>
+  <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
+    <value>புதிய வேலை</value>
+  </data>
+  <data name="Task_LastExecution_State" xml:space="preserve">
+    <value>அரசியல்</value>
+  </data>
+  <data name="Task_Launch" xml:space="preserve">
+    <value>வெளியீடு</value>
+  </data>
+  <data name="Task_Launch_Hint" xml:space="preserve">
+    <value>தேர்ந்தெடுக்கப்பட்ட பணியை வெளியிடுகிறது.</value>
+  </data>
+  <data name="Task_List" xml:space="preserve">
+    <value>பணிகள்</value>
+  </data>
+  <data name="Task_Restore" xml:space="preserve">
+    <value>மீட்டமை</value>
+  </data>
+  <data name="Task_Status_FailedSeeLog" xml:space="preserve">
+    <value>ஏற்கனவே தோல்வியுற்றது (தோன்றிய பதிவைப் பாருங்கள்)</value>
+  </data>
+  <data name="Task_Status_InProgress" xml:space="preserve">
+    <value>பணி நடப்பில் உள்ளது...</value>
+  </data>
+  <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
+    <value>பகுதியாக நிறைவுசெய்யப்பட்டது. சேமிப்பு காலக் கட்டுப்பாட்டினால் சில கோப்புகள் இந்நேரத்தில் தவிர்க்கப்பட்டது. மீதமுள்ள {0} கோப்புகள் {1} GB.</value>
+  </data>
+  <data name="Task_Status_Succesfull" xml:space="preserve">
+    <value>வெற்றிகரமாக</value>
+  </data>
+  <data name="Task_Status_Unknown" xml:space="preserve">
+    <value>அறியப்படாதது</value>
+  </data>
+  <data name="Task_Validation_NotFound" xml:space="preserve">
+    <value>பணி '{0}' கிடைக்கவில்லை.</value>
+  </data>
+  <data name="Task_Validation_NotSupported" xml:space="preserve">
+    <value>இந்த பணி வகை ஆதரிக்கப்படவில்லை.</value>
+  </data>
+  <data name="Theme_Title" xml:space="preserve">
+    <value>தீம்</value>
+  </data>
+  <data name="Theme_Value_Dark" xml:space="preserve">
+    <value>மழலையில்</value>
+  </data>
+  <data name="Theme_Value_Light" xml:space="preserve">
+    <value>ஒளியில்</value>
+  </data>
+  <data name="Time_Field_Elapsed" xml:space="preserve">
+    <value>கழிக்கப்பட்டது:</value>
+  </data>
+  <data name="Time_Field_Hour" xml:space="preserve">
+    <value>மணி:</value>
+  </data>
+  <data name="Time_Field_Minute" xml:space="preserve">
+    <value>நிமிடம்:</value>
+  </data>
+  <data name="Url_Field" xml:space="preserve">
+    <value>Url:</value>
+  </data>
+  <data name="Url_Field_Validation" xml:space="preserve">
+    <value>Url குறிப்பிடப்படவில்லை.</value>
+  </data>
+  <data name="User_Field" xml:space="preserve">
+    <value>பயனர்:</value>
+  </data>
+  <data name="User_Field_Validation" xml:space="preserve">
+    <value>பயனர் குறிப்பிடப்படவில்லை.</value>
+  </data>
+</root>

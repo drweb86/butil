@@ -512,12 +512,6 @@
   <data name="Password_Use" xml:space="preserve">
     <value>Использовать</value>
   </data>
-  <data name="RepositorySubfolder_Field" xml:space="preserve">
-    <value>Подкаталог репозитория (необязательно):</value>
-  </data>
-  <data name="RepositorySubfolder_Help" xml:space="preserve">
-    <value>Вы можете синхронизировать папку в подкаталог репозитория, если не хотите иметь все содержимое репозитория на устройстве.</value>
-  </data>
   <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
     <value>В указанном каталоге нет файлов "{0}". 
 
@@ -537,9 +531,6 @@
   </data>
   <data name="Server_Field_Port_Validation" xml:space="preserve">
     <value>Некорректный порт.</value>
-  </data>
-  <data name="SourceItem_AddFiles" xml:space="preserve">
-    <value>Добавить файлы...</value>
   </data>
   <data name="SourceItem_AddFolders" xml:space="preserve">
     <value>Добавить папки...</value>
