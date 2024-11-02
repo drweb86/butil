@@ -56,11 +56,9 @@ public static class RootTaskFactory
                 }
                 else
                 {
-                    if (!File.Exists(item.Target))
-                    {
-                        error = string.Format(Resources.SourceItem_Validation_NotExists, item.Target);
-                        return false;
-                    }
+                    // temporary
+                    error = $"Please edit task and remove source item {item.Target}. Its support is dropped. You can add folders only";
+                    return false;
                 }
             }
 
