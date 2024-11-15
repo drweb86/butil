@@ -12,7 +12,7 @@ echo
 echo Installing dependencies
 echo
 sudo apt-get update
-sudo apt-get install -y git dotnet-sdk-8.0 7zip
+sudo apt-get install -y git dotnet-sdk-9.0 7zip
 
 echo
 echo Cleaning installation directories
@@ -88,8 +88,8 @@ echo
 echo
 echo Application was installed too:
 echo
-echo Binaries: ${sourceCodeInstallationDirectory}
-echo Sources: ${binariesInstallationDirectory}
+echo Binaries: ${binariesInstallationDirectory}
+echo Sources: ${sourceCodeInstallationDirectory}
 echo
 echo Shortcut on desktop and for quick search are provisioned for UI tool.
 echo Console tool: ${binariesInstallationDirectory}/butilc

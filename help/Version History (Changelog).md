@@ -9,7 +9,8 @@
 
 ## Changes
 - Italian language was updated by https://github.com/bovirus .
-- AvaloniaUI was updated to 11.2.0
+- AvaloniaUI was updated to 11.2.1
+- Upgrade to .Net 9
 
 # 2024.10.25
 
