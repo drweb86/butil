@@ -1,5 +1,4 @@
 ﻿# 2024.11.27
-(unreleased)
 
 ## New Features
 - Added Turkish, Tamil, Yue Chinese, Vietnamese languages.
@@ -9,8 +8,8 @@
 
 ## Changes
 - Italian language was updated by https://github.com/bovirus .
-- AvaloniaUI was updated to 11.2.2
-- Upgrade to .Net 9
+- AvaloniaUI was updated to 11.2.2.
+- Upgrade to .Net 9.
 
 # 2024.10.25
 
