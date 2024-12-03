@@ -1,4 +1,10 @@
 ﻿# 2024.11.27
+(unreleased)
+
+## Bug Fixes
+- .Net 9 broken ConcurrentBag component was removed.
+
+# 2024.11.27
 
 ## New Features
 - Added Turkish, Tamil, Yue Chinese, Vietnamese languages.

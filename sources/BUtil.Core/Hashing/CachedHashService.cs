@@ -2,7 +2,6 @@
 using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
 using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,7 +13,8 @@ namespace BUtil.Core.Hashing;
 
 internal class CachedHashService() : ICachedHashService, IDisposable
 {
-    private readonly ConcurrentBag<CachedHash> _cachedHashes = [];
+    private readonly System.Threading.Lock _lock = new();
+    private readonly List<CachedHash> _cachedHashes = [];
     private bool _isLoaded = false;
 
     public string GetSha512(string file, bool putIntoCache)
@@ -31,34 +31,37 @@ internal class CachedHashService() : ICachedHashService, IDisposable
 
     private string GetCreateOrUpdateCachedHash(string file)
     {
-        var fileInfo = new FileInfo(file);
-        var cachedEntity = _cachedHashes.SingleOrDefault(x => x.File == fileInfo.FullName);
-        if (cachedEntity == null)
+        lock (_lock)
         {
-            cachedEntity = new CachedHash
+            var fileInfo = new FileInfo(file);
+            var cachedEntity = _cachedHashes.SingleOrDefault(x => x.File == fileInfo.FullName);
+            if (cachedEntity == null)
             {
-                File = fileInfo.FullName,
-            };
-            _cachedHashes.Add(cachedEntity);
-        }
-        else
-        {
-            if (cachedEntity.Size != fileInfo.Length ||
-                cachedEntity.LastWriteTimeUtc != fileInfo.LastWriteTimeUtc)
-            {
-                cachedEntity.Sha512 = string.Empty;
+                cachedEntity = new CachedHash
+                {
+                    File = fileInfo.FullName,
+                };
+                _cachedHashes.Add(cachedEntity);
             }
-        }
-        const int daysExpiration = 365;
-        cachedEntity.Expiration = DateTime.UtcNow.AddDays(daysExpiration);
-        cachedEntity.Size = fileInfo.Length;
-        cachedEntity.LastWriteTimeUtc = fileInfo.LastWriteTimeUtc;
-        if (string.IsNullOrWhiteSpace(cachedEntity.Sha512))
-        {
-            cachedEntity.Sha512 = GetSha512Internal(file);
-        }
+            else
+            {
+                if (cachedEntity.Size != fileInfo.Length ||
+                    cachedEntity.LastWriteTimeUtc != fileInfo.LastWriteTimeUtc)
+                {
+                    cachedEntity.Sha512 = string.Empty;
+                }
+            }
+            const int daysExpiration = 365;
+            cachedEntity.Expiration = DateTime.UtcNow.AddDays(daysExpiration);
+            cachedEntity.Size = fileInfo.Length;
+            cachedEntity.LastWriteTimeUtc = fileInfo.LastWriteTimeUtc;
+            if (string.IsNullOrWhiteSpace(cachedEntity.Sha512))
+            {
+                cachedEntity.Sha512 = GetSha512Internal(file);
+            }
 
-        return cachedEntity.Sha512;
+            return cachedEntity.Sha512;
+        }
     }
 
     private void EnsureLoaded()
@@ -66,7 +69,7 @@ internal class CachedHashService() : ICachedHashService, IDisposable
         if (_isLoaded)
             return;
 
-        lock (this)
+        lock (_lock)
         {
             if (!_isLoaded)
             {
@@ -122,22 +125,25 @@ internal class CachedHashService() : ICachedHashService, IDisposable
 
     private void Save()
     {
-        if (_cachedHashes == null)
-            return;
+        lock (this)
+        {
+            if (_cachedHashes == null)
+                return;
 
-        var file = GetFile();
-        var utcNow = DateTime.UtcNow;
+            var file = GetFile();
+            var utcNow = DateTime.UtcNow;
 
-        var storeItems = _cachedHashes
-            .ToList()
-            .Where(x => x.Expiration > utcNow)
-            .ToList();
+            var storeItems = _cachedHashes
+                .ToList()
+                .Where(x => x.Expiration > utcNow)
+                .ToList();
 
-        using var stream = File.Open(file, FileMode.Create);
-        using var writer = new Utf8JsonWriter(stream,new JsonWriterOptions { Indented = true } );
-        JsonSerializer.Serialize(writer, storeItems);
-        writer.Flush();
-        stream.Flush();
+            using var stream = File.Open(file, FileMode.Create);
+            using var writer = new Utf8JsonWriter(stream, new JsonWriterOptions { Indented = true });
+            JsonSerializer.Serialize(writer, storeItems);
+            writer.Flush();
+            stream.Flush();
+        }
     }
 
     private static string GetFile()
