@@ -4,8 +4,6 @@
 
 > Import photos from phone via WI-FI and more.
 
-<!-- [Download](https://drweb86.synology.me:88) -->
-
 ![Image Gallery](./help/Assets/Image%20Gallery.gif)
 
 ![English](https://img.shields.io/badge/lang-English-red.svg)

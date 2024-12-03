@@ -169,18 +169,11 @@ ForEach ($platform in $platforms)
 	}
 }
 
-Write-Output "Create latest.json"
-$latestJson = '{ "Version": "' + $version + '", "Changes": "' + $changes + '" }';
-Write-Output "Compacted changes are $changes"
-Set-Content -Path "..\Output\latest.json" -Value $latestJson
-if ($LastExitCode -ne 0)
-{
-	Write-Error "Fail." 
-	Exit 1
-}
-
-Write-Output "The following artefacts are produced. Copy them to \\nas\butil-website."
+Write-Output "The following artefacts are produced. Release them"
 Get-ChildItem "..\Output"
 
-Write-Output "A. Copy them to \\nas\butil-website."
-Write-Output "B. Release to win-get."
+Write-Output "The following artefacts are produced. Release to win-get."
+Get-ChildItem "..\Output" *.exe | Get-FileHash
+
+
+Write-Output "A. Release to win-get."
