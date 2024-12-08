@@ -4,6 +4,9 @@
 ## Bug Fixes
 - .Net 9 broken ConcurrentBag component was removed.
 
+## Changes
+- Some libraries were updated.
+
 # 2024.11.27
 
 ## New Features
