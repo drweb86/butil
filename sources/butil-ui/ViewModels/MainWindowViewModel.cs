@@ -9,6 +9,7 @@ using BUtil.Core.Settings;
 using butil_ui.Controls;
 using System;
 using System.Linq;
+using System.Xml.Linq;
 
 namespace butil_ui.ViewModels;
 
@@ -57,9 +58,7 @@ public partial class MainWindowViewModel : ViewModelBase
     public void RestoreCommand()
 #pragma warning restore CA1822 // Mark members as static
     {
-        PlatformSpecificExperience.Instance
-                .SupportManager
-                .OpenRestorationApp();
+        WindowManager.SwitchToRestorationView();
     }
 
 #pragma warning disable CA1822 // Mark members as static
@@ -158,10 +157,6 @@ public partial class MainWindowViewModel : ViewModelBase
             var taskName = args[1][(TasksAppArguments.RunTask.Length + 1)..];
             WindowManager.SwitchView(new LaunchTaskViewModel(taskName));
         }
-        else if (args.Length == 1 && args[0].Cmp(TasksAppArguments.Restore))
-        {
-            WindowManager.SwitchView(new RestoreViewModel(null, null));
-        }
         else if (args.Length == 1 && args[0].EndsWith(IncrementalBackupModelConstants.BrotliAes256V1StateFile))
         {
             var folderStorage = new FolderStorageSettingsV2 { DestinationFolder = System.IO.Path.GetDirectoryName(args[0]) ?? throw new Exception() };
@@ -171,23 +166,6 @@ public partial class MainWindowViewModel : ViewModelBase
         {
             var folderStorage = new FolderStorageSettingsV2 { DestinationFolder = System.IO.Path.GetDirectoryName(args[0]) ?? throw new Exception() };
             WindowManager.SwitchView(new RestoreViewModel(folderStorage, null));
-        }
-        else if (args.Length == 2 && args[0].Cmp(TasksAppArguments.Restore) && args[1].StartsWith(TasksAppArguments.RunTask))
-        {
-            var taskName = args[1][(TasksAppArguments.RunTask.Length + 1)..];
-            var task = new TaskV2StoreService().Load(taskName);
-            if (task == null || ( task.Model is not IncrementalBackupModelOptionsV2 && task.Model is not SynchronizationTaskModelOptionsV2)   )
-                WindowManager.SwitchView(new RestoreViewModel(null, null));
-            else if (task.Model is IncrementalBackupModelOptionsV2 v)
-            {
-                var incrementalOptions = v ?? throw new Exception();
-                WindowManager.SwitchView(new RestoreViewModel(incrementalOptions.To, incrementalOptions.Password));
-            }
-            else if (task.Model is SynchronizationTaskModelOptionsV2 synchronizationTaskViewModelOptions)
-            {
-                var options = synchronizationTaskViewModelOptions ?? throw new Exception();
-                WindowManager.SwitchView(new RestoreViewModel(options.To, options.Password));
-            }
         }
         else
         {

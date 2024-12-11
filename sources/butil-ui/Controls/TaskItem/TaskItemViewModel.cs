@@ -59,8 +59,7 @@ public class TaskItemViewModel(
 
     public void TaskRestoreCommand()
     {
-        PlatformSpecificExperience.Instance.SupportManager
-            .OpenRestorationApp(Name);
+        WindowManager.SwitchToRestorationView(Name);
     }
 
     public async Task TaskDeleteCommand()

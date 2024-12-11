@@ -3,8 +3,6 @@
 | Example                                                                                                                                                                | Description                                                              |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
 | Windows:<br />`butil-ui.Desktop.exe LaunchTask "Task=My task name"`<br />Ubuntu Store Snap:<br />`systemd-inhibit butil.ui LaunchTask "Task=My task name"  &`<br />Linux binaries package:<br />`systemd-inhibit dotnet ./butil-ui.Desktop.dll LaunchTask "Task=My task name"  &` | Launches specified task.                                                 |
-| Windows:<br />`butil-ui.Desktop.exe Restore`<br />Ubuntu Store Snap:<br />`systemd-inhibit butil.ui Restore  &`<br />Linux binaries package:<br />`systemd-inhibit dotnet ./butil-ui.Desktop.dll Restore  &`                                               | Restores from backup with selection of task or backup source on startup. |
-| Windows:<br />`butil-ui.Desktop.exe Restore "Task=My task name"`<br />Ubuntu Store Snap:<br />`systemd-inhibit butil.ui Restore "Task=My task name"  &`<br />Linux binaries package:<br />`systemd-inhibit dotnet ./butil-ui.Desktop.dll Restore "Task=My task name"  &`       | Runs restoration and prefills Storage/Passwords from specified task.     |
 
 # Console
 

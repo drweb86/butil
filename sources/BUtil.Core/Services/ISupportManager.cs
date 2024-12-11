@@ -11,8 +11,6 @@ public interface ISupportManager
 
     void LaunchTask(string taskName);
 
-    void OpenRestorationApp(string? taskName = null);
-
     void OpenHomePage();
 
     void OpenLatestRelease();

@@ -25,31 +25,6 @@ public class WindowsSupportManager : ISupportManager
         Process.Start(UIApp, $"{TasksAppArguments.LaunchTask} \"{TasksAppArguments.RunTask}={taskName}\"");
     }
 
-    public void OpenRestorationApp(string? taskName = null)
-    {
-        if (string.IsNullOrWhiteSpace(taskName))
-        {
-            Process.Start(UIApp, TasksAppArguments.Restore);
-            return;
-        }
-
-        var task = new TaskV2StoreService()
-                .Load(taskName);
-
-        if (task?.Model is IncrementalBackupModelOptionsV2)
-        {
-            Process.Start(UIApp, $"{TasksAppArguments.Restore} \"{TasksAppArguments.RunTask}={taskName}\"");
-        }
-        else if (task?.Model is SynchronizationTaskModelOptionsV2)
-        {
-            Process.Start(UIApp, $"{TasksAppArguments.Restore} \"{TasksAppArguments.RunTask}={taskName}\"");
-        }
-        else
-        {
-            Process.Start(UIApp, TasksAppArguments.Restore);
-        }
-    }
-
     public void OpenHomePage()
     {
         ProcessHelper.ShellExecute(ApplicationLinks.HomePage);

@@ -40,31 +40,6 @@ public class LinuxSupportManager : ISupportManager
         LaunchUiAppInternal($"{TasksAppArguments.LaunchTask} \"{TasksAppArguments.RunTask}={taskName}\"");
     }
 
-    public void OpenRestorationApp(string? taskName = null)
-    {
-        if (string.IsNullOrWhiteSpace(taskName))
-        {
-            LaunchUiAppInternal(TasksAppArguments.Restore);
-            return;
-        }
-
-        var task = new TaskV2StoreService()
-                .Load(taskName);
-
-        if (task?.Model is IncrementalBackupModelOptionsV2)
-        {
-            LaunchUiAppInternal($"{TasksAppArguments.Restore} \"{TasksAppArguments.RunTask}={taskName}\"");
-        }
-        else if (task?.Model is SynchronizationTaskModelOptionsV2)
-        {
-            LaunchUiAppInternal($"{TasksAppArguments.Restore} \"{TasksAppArguments.RunTask}={taskName}\"");
-        }
-        else
-        {
-            LaunchUiAppInternal(TasksAppArguments.Restore);
-        }
-    }
-
     public void OpenHomePage()
     {
         ProcessHelper.ShellExecute(ApplicationLinks.HomePage);

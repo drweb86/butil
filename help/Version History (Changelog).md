@@ -6,6 +6,8 @@
 
 ## Changes
 - Some libraries were updated.
+- Reduced logging for synchronization task.
+- Restoration is done without spawning new process (cmd line argument is removed).
 
 # 2024.11.27
 
