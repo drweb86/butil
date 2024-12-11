@@ -11,9 +11,8 @@ using System.Text.Json;
 
 namespace BUtil.Core.Hashing;
 
-internal class CachedHashService() : ICachedHashService, IDisposable
+internal class CachedHashService: ICachedHashService, IDisposable
 {
-    private readonly System.Threading.Lock _lock = new();
     private readonly List<CachedHash> _cachedHashes = [];
     private bool _isLoaded = false;
 
@@ -31,37 +30,34 @@ internal class CachedHashService() : ICachedHashService, IDisposable
 
     private string GetCreateOrUpdateCachedHash(string file)
     {
-        lock (_lock)
+        var fileInfo = new FileInfo(file);
+        var cachedEntity = _cachedHashes.SingleOrDefault(x => x.File == fileInfo.FullName);
+        if (cachedEntity == null)
         {
-            var fileInfo = new FileInfo(file);
-            var cachedEntity = _cachedHashes.SingleOrDefault(x => x.File == fileInfo.FullName);
-            if (cachedEntity == null)
+            cachedEntity = new CachedHash
             {
-                cachedEntity = new CachedHash
-                {
-                    File = fileInfo.FullName,
-                };
-                _cachedHashes.Add(cachedEntity);
-            }
-            else
-            {
-                if (cachedEntity.Size != fileInfo.Length ||
-                    cachedEntity.LastWriteTimeUtc != fileInfo.LastWriteTimeUtc)
-                {
-                    cachedEntity.Sha512 = string.Empty;
-                }
-            }
-            const int daysExpiration = 365;
-            cachedEntity.Expiration = DateTime.UtcNow.AddDays(daysExpiration);
-            cachedEntity.Size = fileInfo.Length;
-            cachedEntity.LastWriteTimeUtc = fileInfo.LastWriteTimeUtc;
-            if (string.IsNullOrWhiteSpace(cachedEntity.Sha512))
-            {
-                cachedEntity.Sha512 = GetSha512Internal(file);
-            }
-
-            return cachedEntity.Sha512;
+                File = fileInfo.FullName,
+            };
+            _cachedHashes.Add(cachedEntity);
         }
+        else
+        {
+            if (cachedEntity.Size != fileInfo.Length ||
+                cachedEntity.LastWriteTimeUtc != fileInfo.LastWriteTimeUtc)
+            {
+                cachedEntity.Sha512 = string.Empty;
+            }
+        }
+        const int daysExpiration = 365;
+        cachedEntity.Expiration = DateTime.UtcNow.AddDays(daysExpiration);
+        cachedEntity.Size = fileInfo.Length;
+        cachedEntity.LastWriteTimeUtc = fileInfo.LastWriteTimeUtc;
+        if (string.IsNullOrWhiteSpace(cachedEntity.Sha512))
+        {
+            cachedEntity.Sha512 = GetSha512Internal(file);
+        }
+
+        return cachedEntity.Sha512;
     }
 
     private void EnsureLoaded()
@@ -69,13 +65,10 @@ internal class CachedHashService() : ICachedHashService, IDisposable
         if (_isLoaded)
             return;
 
-        lock (_lock)
+        if (!_isLoaded)
         {
-            if (!_isLoaded)
-            {
-                Load();
-                _isLoaded = true;
-            }
+            Load();
+            _isLoaded = true;
         }
     }
 
