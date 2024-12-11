@@ -78,13 +78,6 @@ internal class SynchronizationAllStatesReadTask : SequentialBuTask
                     : [];
                 _model.LocalState = GetLocalState();
                 _model.ActualFiles = GetActualFiles();
-
-                LogDebug("Local state");
-                LogDebug(JsonSerializer.Serialize(_model.LocalState, _jsonSerializerOptions));
-                LogDebug("Actual files");
-                LogDebug(JsonSerializer.Serialize(_model.ActualFiles, _jsonSerializerOptions));
-                LogDebug("Remote state");
-                LogDebug(JsonSerializer.Serialize(_model.RemoteState, _jsonSerializerOptions));
             }
         }
         catch (Exception ex)
