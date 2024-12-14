@@ -26,6 +26,38 @@ Features includes:
 
 Be aware that Folder name should be similar to what you see in Explorer, e.g. "External Storage\DCIM" or something similar.
 
+## Import photos and videos from phone on Windows PC
+## Synchronize from and to phone using Windows PC
+## Backup phone data using Windows PC
+
+### Connect your device to Windows using Phone Link
+
+Details: https://www.microsoft.com/en-us/windows/sync-across-your-devices .
+
+Verify that you see your device files in Explorer.
+
+### Setup BUtil to import multimedia task in What? section from phone.
+
+a. Choose **Folder**
+
+b. Specify **DCIM** folder of your phone.
+
+c. Save task.
+
+### Each time you will need sync over wi-fi
+
+a. Open **Phone Link** at PC.
+
+b. Open Explorer and navigate to your phone.
+
+c. Click Disconnected in address bar of Explorer and then Connect.
+
+d. Launch import task.
+
+Be aware, this feature works unstably in Windows 11 as of 2024-12, so you might need to restart application since first time there will be access exceptions.
+
+Be aware that 
+
 ## Import photos and videos from phone via Wi-Fi via FTPS
 
 ![Import photos and videos from phone via Wi-Fi via FTPS](./Assets/Image%20-%20Import%20media%20task%20-%20Case%202.png)

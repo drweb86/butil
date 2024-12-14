@@ -9,6 +9,8 @@
 - Reduced logging for synchronization task.
 - Restoration is done without spawning new process (cmd line argument is removed).
 - Task execution is done without spawning new process (prepare for Android version).
+- Thanks to Microsoft it is possible using Windows PC to Import photos and videos from phone, Synchronize from and to phone using Windows PC, Backup phone data using Windows PC
+Related article 'Import media task' was updated with how to do it on example of import photos. No more needed to have dedicated FTPS application on the phone.
 
 ## Removed Features
 - It is not possible to open via drag-n-drop previous storage format index file in restoration mode.
