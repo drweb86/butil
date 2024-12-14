@@ -3,6 +3,7 @@ using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
 using butil_ui.ViewModels;
 using System;
+using System.Linq;
 
 namespace butil_ui;
 
@@ -13,6 +14,11 @@ internal static class WindowManager
     public static void SwitchView(ViewModelBase viewModel)
     {
         _switchView?.Invoke(viewModel);
+    }
+
+    public static void SwitchToLaunchTask(string taskName)
+    {
+        SwitchView(new LaunchTaskViewModel(taskName));
     }
 
     public static void SwitchToRestorationView(string? taskName = null)

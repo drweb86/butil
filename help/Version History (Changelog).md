@@ -8,6 +8,10 @@
 - Some libraries were updated.
 - Reduced logging for synchronization task.
 - Restoration is done without spawning new process (cmd line argument is removed).
+- Task execution is done without spawning new process (prepare for Android version).
+
+## Removed Features
+- It is not possible to open via drag-n-drop previous storage format index file in restoration mode.
 
 # 2024.11.27
 

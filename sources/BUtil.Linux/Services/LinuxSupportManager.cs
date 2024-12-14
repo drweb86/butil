@@ -1,8 +1,6 @@
-using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
-using BUtil.Core.Options;
 using BUtil.Core.Services;
 using System.Diagnostics;
 
@@ -33,11 +31,6 @@ public class LinuxSupportManager : ISupportManager
     public void LaunchTasksApp()
     {
         LaunchUiAppInternal();
-    }
-
-    public void LaunchTask(string taskName)
-    {
-        LaunchUiAppInternal($"{TasksAppArguments.LaunchTask} \"{TasksAppArguments.RunTask}={taskName}\"");
     }
 
     public void OpenHomePage()

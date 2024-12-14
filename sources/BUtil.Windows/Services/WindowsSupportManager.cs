@@ -20,11 +20,6 @@ public class WindowsSupportManager : ISupportManager
         Process.Start(UIApp);
     }
 
-    public void LaunchTask(string taskName)
-    {
-        Process.Start(UIApp, $"{TasksAppArguments.LaunchTask} \"{TasksAppArguments.RunTask}={taskName}\"");
-    }
-
     public void OpenHomePage()
     {
         ProcessHelper.ShellExecute(ApplicationLinks.HomePage);

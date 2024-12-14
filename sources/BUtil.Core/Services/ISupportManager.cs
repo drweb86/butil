@@ -9,8 +9,6 @@ public interface ISupportManager
 
     void LaunchTasksApp();
 
-    void LaunchTask(string taskName);
-
     void OpenHomePage();
 
     void OpenLatestRelease();

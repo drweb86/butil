@@ -38,8 +38,7 @@ public class TaskItemViewModel(
 
     public void TaskLaunchCommand()
     {
-        PlatformSpecificExperience.Instance.SupportManager
-            .LaunchTask(Name);
+        WindowManager.SwitchToLaunchTask(Name);
     }
 
     public void TaskEditCommand()

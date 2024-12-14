@@ -155,14 +155,9 @@ public partial class MainWindowViewModel : ViewModelBase
         if (args.Length == 2 && args[0].Cmp(TasksAppArguments.LaunchTask) && args[1].StartsWith(TasksAppArguments.RunTask))
         {
             var taskName = args[1][(TasksAppArguments.RunTask.Length + 1)..];
-            WindowManager.SwitchView(new LaunchTaskViewModel(taskName));
+            WindowManager.SwitchToRestorationView(taskName);
         }
         else if (args.Length == 1 && args[0].EndsWith(IncrementalBackupModelConstants.BrotliAes256V1StateFile))
-        {
-            var folderStorage = new FolderStorageSettingsV2 { DestinationFolder = System.IO.Path.GetDirectoryName(args[0]) ?? throw new Exception() };
-            WindowManager.SwitchView(new RestoreViewModel(folderStorage, null));
-        }
-        else if (args.Length == 1 && args[0].EndsWith(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile))
         {
             var folderStorage = new FolderStorageSettingsV2 { DestinationFolder = System.IO.Path.GetDirectoryName(args[0]) ?? throw new Exception() };
             WindowManager.SwitchView(new RestoreViewModel(folderStorage, null));
