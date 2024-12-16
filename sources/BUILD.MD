@@ -47,9 +47,8 @@ C:\Program Files (x86)\Inno Setup 6\Languages\Tamil.isl
 File: https://raw.githubusercontent.com/jrsoftware/issrc/refs/heads/main/Files/Languages/Unofficial/Vietnamese.isl
 To be put into
 C:\Program Files (x86)\Inno Setup 6\Languages\Vietnamese.isl
-- 7-zip x64 (must be installed in default directory).
-- .Net 8 SDK
-
+- .Net 9 SDK
+- 'https://github.com/drweb86/winget-pkgs' checkouted to '../winget-pkgs' folder
 
 ### Build.cmd
 
@@ -60,4 +59,3 @@ Update version in the ubuntu-install.sh script
 Launch build.cmd.
 
 It will create <root>\output folder with all compiled.
-Special note about Ubuntu-ARM64: since snapcraft require hardware to build for this platform, it won't be available.
