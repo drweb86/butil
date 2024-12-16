@@ -1,5 +1,4 @@
-﻿# 2024.12.14
-(unreleased)
+﻿# 2024.12.16
 
 ## Bug Fixes
 - .Net 9 broken ConcurrentBag component was removed. v.2024.11.27 was crashing.
