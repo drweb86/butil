@@ -1,0 +1,87 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:butil_ui.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="clr-namespace:butil_ui.Views"
+		xmlns:controls="clr-namespace:butil_ui.Controls"
+		xmlns:dialogHost="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="butil_ui.Views.AndroidView"
+		x:CompileBindings="True"
+		x:DataType="vm:MainWindowViewModel"
+		Background="{Binding HeaderBackground}">
+	<dialogHost:DialogHost CloseOnClickAway="True">
+		<dialogHost:DialogHost.DataTemplates>
+			<DataTemplate DataType="views:DialogViewModel">
+				<StackPanel Margin="8 8 8 8">
+					<TextBlock IsVisible="{Binding Header, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" TextAlignment="Center" Text="{Binding Header}" Margin="8 8 8 8" />
+					<TextBox MaxHeight="300"
+							 AcceptsReturn="True"
+							 TextWrapping="Wrap"
+							 Text="{Binding Message}"
+							 Margin="8 8 8 8"
+							 IsReadOnly="True"
+							 BorderThickness="0" />
+					<WrapPanel HorizontalAlignment="Right">
+						<Button Margin="8 8 8 8"
+								MinHeight="32"
+								MinWidth="140"
+								HorizontalContentAlignment="Center"
+								VerticalContentAlignment="Center"
+								Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHost:DialogHost}, Path=CloseDialogCommand}"
+								CommandParameter="{Binding Button1Arg}"
+								Content="{Binding Button1Text}"
+						/>
+						<Button Margin="8 8 8 8"
+								MinHeight="32"
+								MinWidth="140"
+								HorizontalContentAlignment="Center"
+								VerticalContentAlignment="Center"
+								IsVisible="{Binding Button2Visible}"
+								Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHost:DialogHost}, Path=CloseDialogCommand}"
+								CommandParameter="{Binding Button2Arg}"
+								Content="{Binding Button2Text}"
+						/>
+					</WrapPanel>
+				</StackPanel>
+			</DataTemplate>
+		</dialogHost:DialogHost.DataTemplates>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<StackPanel Grid.Row="0" Orientation="Horizontal">
+				<Menu>
+					<MenuItem Command="{Binding GoToWebsiteCommand}" IsVisible="{Binding CanExtendClientAreaToDecorationsHint}">
+						<MenuItem.Header>
+							<StackPanel Orientation="Horizontal">
+								<Image Width="16" Height="16" Source="/Assets/butil.ico" VerticalAlignment="Center" />
+								<TextBlock Text="{Binding CurrentPage.WindowTitle}" Margin="8 0 0 0" VerticalAlignment="Center" />
+							</StackPanel>
+						</MenuItem.Header>
+					</MenuItem>
+					<MenuItem FontWeight="Bold" Header="{Binding Task_Create}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}">
+						<MenuItem FontWeight="Normal" Header="{Binding IncrementalBackupTask_Create}" Command="{Binding IncrementalBackupTaskCreateCommand}"/>
+						<MenuItem FontWeight="Normal" Header="{Binding ImportMediaTask_Create}" Command="{Binding ImportMediaTaskCreateCommand}"/>
+						<MenuItem FontWeight="Normal" Header="{Binding SynchronizationTask_Create}" Command="{Binding SynchronizationTaskCreateCommand}" />
+					</MenuItem>
+					<MenuItem Header="{Binding Theme_Title}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}">
+						<MenuItem Header="{Binding Theme_Value_Dark}" Command="{Binding GoDarkSide}" />
+						<MenuItem Header="{Binding Theme_Value_Light}" Command="{Binding GoLightSide}" />
+					</MenuItem>
+					<MenuItem Command="{Binding OpenLogsCommand}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}" Header="{Binding LogFile_OpenLogs}" />
+					<MenuItem Command="{Binding RestoreCommand}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}" Header="{Binding Task_Restore}" />
+				</Menu>
+			</StackPanel>
+			<controls:UpdateCheckExpanderView
+				Grid.Row="1"
+				HorizontalAlignment="Stretch"
+				ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+			/>
+			<TransitioningContentControl Grid.Row="2" Content="{Binding CurrentPage}" Background="{Binding WindowBackground}" />
+		</Grid>
+	</dialogHost:DialogHost>
+</UserControl>

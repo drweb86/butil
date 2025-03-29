@@ -65,6 +65,14 @@ public class FolderStorage : StorageBase<FolderStorageSettingsV2>
 
     public override string? Test()
     {
+        /*if (!Directory.Exists(Settings.DestinationFolder))
+            return string.Format(Localization.Resources.DirectoryStorage_Field_Directory_Validation_NotFound, Settings.DestinationFolder);
+        if (!Path.IsPathFullyQualified(Settings.DestinationFolder))
+            return string.Format(Localization.Resources.DirectoryStorage_Field_Directory_Validation_NotFound, Settings.DestinationFolder);
+
+        return null;*/
+
+
         if (!Directory.Exists(Settings.DestinationFolder))
             return string.Format(Localization.Resources.DirectoryStorage_Field_Directory_Validation_NotFound, Settings.DestinationFolder);
         if (!Path.IsPathFullyQualified(Settings.DestinationFolder))

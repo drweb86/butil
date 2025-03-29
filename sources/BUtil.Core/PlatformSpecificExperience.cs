@@ -1,5 +1,6 @@
 ﻿using BUtil.Core.FileSystem;
 using System;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 
@@ -15,6 +16,10 @@ public static class PlatformSpecificExperience
         {
             assemblyFile = Files.WindowsExperience;
         }
+        else if (OperatingSystem.IsAndroid())
+        {
+            assemblyFile = Files.AndroidExperience;
+        }
         else if (OperatingSystem.IsLinux())
         {
             assemblyFile = Files.LinuxExperience;
@@ -22,6 +27,12 @@ public static class PlatformSpecificExperience
         else
         {
             throw new PlatformNotSupportedException();
+        }
+
+        if (!File.Exists(assemblyFile))
+        {
+            var allFiles = string.Join(",", Directory.GetFiles(Directories.BinariesDir));
+            throw new FileNotFoundException($"Cannot find platform experience library {assemblyFile}. Files in the directory are following: {allFiles}");
         }
 
         var assembly = Assembly.LoadFrom(assemblyFile);

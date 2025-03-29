@@ -24,5 +24,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\butil-ui\butil-ui.csproj" />
+    <ProjectReference Include="..\BUtil.Android\BUtil.Android.csproj" />
   </ItemGroup>
 </Project>

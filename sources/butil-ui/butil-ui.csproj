@@ -101,6 +101,9 @@
     <Compile Update="Controls\EditIncrementalBackupTask\EditIncrementalBackupTaskView.axaml.cs">
       <DependentUpon>EditIncrementalBackupTaskView.axaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\AndroidView.axaml.cs">
+      <DependentUpon>AndroidView.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\RestoreView.axaml.cs">
       <DependentUpon>RestoreView.axaml</DependentUpon>
     </Compile>
