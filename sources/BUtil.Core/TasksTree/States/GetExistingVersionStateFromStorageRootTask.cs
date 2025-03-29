@@ -36,7 +36,7 @@ public class GetExistingVersionStateFromStorageRootTask : SequentialBuTask
         {
             if (_getStateOfStorageTask.StorageState!.VersionStates.Count == 0)
             {
-                _commonServicesIoc.LastMinuteMessageService.AddLastMinuteLogMessage(string.Format(Resources.RestoreFrom_Field_Validation_NoStateFiles, string.Join(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile, IncrementalBackupModelConstants.BrotliAes256V1StateFile)));
+                _commonServicesIoc.LastMinuteMessageService.AddLastMinuteLogMessage(string.Format(Resources.RestoreFrom_Field_Validation_NoStateFiles, IncrementalBackupModelConstants.BrotliAes256V1StateFile));
                 IsSuccess = false;
             }
         }

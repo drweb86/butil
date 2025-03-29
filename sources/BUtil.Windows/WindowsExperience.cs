@@ -47,9 +47,4 @@ public class WindowsExperience : CrossPlatformExperience
     public override IUiService UiService => new WindowsUiService();
 
     public override IOsSleepPreventionService OsSleepPreventionService => new WindowsOsSleepPreventionService();
-
-    public override ILegacyObsoleteArchiver GetArchiver(ILog log)
-    {
-        return new SevenZipLegacyObsoleteArchiver(log);
-    }
 }

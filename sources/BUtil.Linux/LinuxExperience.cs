@@ -42,11 +42,6 @@ public class LinuxExperience : CrossPlatformExperience
 
     public override IOsSleepPreventionService OsSleepPreventionService => new LinuxOsSleepPreventionService();
 
-    public override ILegacyObsoleteArchiver GetArchiver(ILog log)
-    {
-        return new LinuxAptGetArchiver(log);
-    }
-
     public override IFolderService GetFolderService()
     {
         return new LinuxFolderService();

@@ -132,14 +132,6 @@ ForEach ($platform in $platforms)
 		Exit 1
 	}
 
-	Write-Output "Copy 7-zip"
-	Copy-Item -Path "$($platform.Windows7ZipBinaries)\*" -Destination "../Output/$($platform.CoreRuntimeWindows)/bin" -Recurse -Force -Verbose
-	if ($LastExitCode -ne 0)
-	{
-		Write-Error "Fail." 
-		Exit 1
-	}
-
 	Write-Output "Create Setup Script"
 	$innoSetupScriptFile="../Output/$($platform.CoreRuntimeWindows)/_InnoSetup $($platform.CoreRuntimeWindows).iss"
 

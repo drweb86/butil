@@ -12,7 +12,7 @@ echo
 echo Installing dependencies
 echo
 sudo apt-get update
-sudo apt-get install -y git dotnet-sdk-9.0 7zip
+sudo apt-get install -y git dotnet-sdk-9.0
 
 echo
 echo Cleaning installation directories

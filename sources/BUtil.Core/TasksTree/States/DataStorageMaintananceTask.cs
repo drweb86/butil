@@ -25,42 +25,6 @@ internal class DataStorageMaintananceTask(
     protected override void ExecuteInternal()
     {
         DeleteIncompletedStateVersions();
-        // TODO: empty versions?
-        // TODO: 300+ versions
-
-        UpgradeDataStorageFormat();
-
-    }
-
-    private void UpgradeDataStorageFormat()
-    {
-        LogDebug("Inspecting storage for outdated storage methods");
-
-        var outdatedStorageFiles = (_getStateOfStorageTask.StorageState ?? throw new Exception())
-                  .VersionStates
-                  .SelectMany(x => x.SourceItemChanges)
-                  .SelectMany(x =>
-                  {
-                      var storageFiles = new List<StorageFile>();
-                      storageFiles.AddRange(x.CreatedFiles);
-                      storageFiles.AddRange(x.UpdatedFiles);
-                      return storageFiles;
-                  })
-                  .Where(x => x.StorageMethod == StorageMethodNames.SevenZipEncrypted)
-                  .ToList();
-
-        if (!outdatedStorageFiles.Any())
-            return;
-
-        var task = new UpgradeStorageFormatTask(_services, Events, _getStateOfStorageTask.StorageState!, _incrementalBackupModelOptionsV2, outdatedStorageFiles);
-        
-        Events.DuringExecutionTasksAdded(Id, task.GetChildren());
-        Events.DuringExecutionTasksAdded(Id, [task]);
-
-        var storageTasksExecuter = new ParallelExecuter([task], 1);
-        storageTasksExecuter.Wait();
-        if (!task.IsSuccess)
-            throw new Exception("Upgrade storage failed!");
     }
 
     private void DeleteIncompletedStateVersions()
