@@ -69,7 +69,7 @@ internal class StorageUploadTask : SequentialBuTask
         foreach (var change in _options.Changes)
         {
             var writeTasks = change.CreatedUpdatedFiles
-                .Select(x => new StorageFile(x, StorageMethodNames.SevenZipEncrypted, SourceItemHelper.GetCompressedStorageRelativeFileName(_versionUtc)))
+                .Select(x => new StorageFile(x, StorageMethodNames.BrotliCompressedAes256Encrypted, SourceItemHelper.GetCompressedStorageRelativeFileName(_versionUtc)))
                 .GroupBy(x => x.FileState.ToDeduplicationString())
                 .Select(x => new WriteSourceFileToStorageTask(_services, Events,
                     PatchRemoteFileNames([.. x], change), _quota, change.SourceItem,

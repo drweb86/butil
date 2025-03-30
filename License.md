@@ -5,10 +5,6 @@ This software is licensed by any of the following licenses up to your choice
 - [The MIT License](https://opensource.org/licenses/MIT)
 - [GNU General Public License version 3](https://opensource.org/licenses/GPL-3.0)
 
-# Software includes 7-zip
-
-7-zip is licensed under LGPL .
-
 # Exception
 
 Source code and application cannot be accessed/used in any way in AI assisted software like

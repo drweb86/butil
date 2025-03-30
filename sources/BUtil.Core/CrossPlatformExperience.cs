@@ -10,7 +10,6 @@ public abstract class CrossPlatformExperience
 {
     public abstract ISessionService SessionService { get; }
     public abstract ISupportManager SupportManager { get; }
-    public abstract ILegacyObsoleteArchiver GetArchiver(ILog log);
     public abstract IFolderService GetFolderService();
 
     public virtual IMtpService? GetMtpService()

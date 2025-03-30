@@ -31,15 +31,14 @@ public class IncrementalBackupStateService(StorageSpecificServicesIoc services, 
             return state != null;
         }
 
+#pragma warning disable CS0612 // Type or member is obsolete
         if (_services.Storage.Exists(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile))
         {
-            _services.ApplicationStorageService.Download(new StorageFile { StorageRelativeFileName = IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile, StorageMethod = StorageMethodNames.SevenZipEncrypted, StoragePassword = password, FileState = new FileState() { FileName = IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile } }, destFile);
-            using var uncompressedFileStream = File.OpenRead(destFile);
-            state = JsonSerializer.Deserialize<IncrementalBackupState>(uncompressedFileStream);
-            return state != null;
+            throw new System.NotSupportedException($"Prevent data loss! Support for file {IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile} is dropped. Upgrade to the latest storage format using the version v.2024.12.16. Or recreate storage from scratch!");
         }
+#pragma warning restore CS0612 // Type or member is obsolete
 
-       
+
         state = new IncrementalBackupState();
         return true;
     }
@@ -47,15 +46,6 @@ public class IncrementalBackupStateService(StorageSpecificServicesIoc services, 
     public StorageFile? Write(string password, IncrementalBackupState state)
     {
         _log.WriteLine(LoggingEvent.Debug, $"Writing state");
-        if (_services.Storage.Exists(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile))
-        {
-            using var stubTempFolder = new TempFolder();
-            var stubFile = Path.Combine(stubTempFolder.Folder, "STUB");
-            File.WriteAllText(stubFile, "NOT SUPPORTED. STUB FILE TO PREVENT OLD VERSIONS FROM USAGE.");
-
-            _services.Storage.Delete(IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile);
-            _services.Storage.Upload(stubFile, IncrementalBackupModelConstants.StorageIncrementalEncryptedCompressedStateFile);
-        }
         if (_services.Storage.Exists(IncrementalBackupModelConstants.BrotliAes256V1StateFile))
             _services.Storage.Delete(IncrementalBackupModelConstants.BrotliAes256V1StateFile);
 

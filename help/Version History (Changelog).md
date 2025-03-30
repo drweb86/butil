@@ -1,4 +1,12 @@
-﻿# 2024.12.16
+﻿# 2025.03.30
+(unpublished)
+
+## Removed Features
+- 7-zip is dropped due to no possibility to use it in Android.
+- 7-zip encrypted files are no longer recognized. You need to use v2024.12.06 to migrate backups if you did not do it already.
+- 
+
+# 2024.12.16
 
 ## Bug Fixes
 - .Net 9 broken ConcurrentBag component was removed. v.2024.11.27 was crashing.

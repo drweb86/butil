@@ -76,9 +76,6 @@ public class ApplicationStorageService(ICachedHashService hashService, StorageSp
         
         switch (storageFile.StorageMethod)
         {
-            case StorageMethodNames.SevenZipEncrypted:
-                ExtractSevenZipEncrypted(storageFile, destinationFolder, destinationFileName);
-                break;
             case StorageMethodNames.Aes256Encrypted:
                 ExtractAes256Encrypted(storageFile, destinationFolder, destinationFileName);
                 break;
@@ -117,22 +114,6 @@ public class ApplicationStorageService(ICachedHashService hashService, StorageSp
         _services.CommonServices.EncryptionService.DecryptAes256File(downloadedFile, file, storageFile.StoragePassword);
 
         VerifyAndMoveFile(storageFile, file, destinationFileName);
-    }
-
-    private void ExtractSevenZipEncrypted(StorageFile storageFile, string destinationFolder, string destinationFileName)
-    {
-        using var tempFolder = new TempFolder();
-        var tempArchive = Path.Combine(tempFolder.Folder, "archive.7z");
-        using var tempFolderAtDestination = new TempFolder(destinationFolder);
-        var extractedFolder = Path.Combine(tempFolderAtDestination.Folder, "Extracted");
-        _services.Storage.Download(storageFile.StorageRelativeFileName, tempArchive);
-        var archiver = PlatformSpecificExperience.Instance.GetArchiver(_log);
-        // file can be renamed in real life.
-        if (!archiver.Extract(tempArchive, storageFile.StoragePassword, extractedFolder))
-            throw new InvalidDataException($"Extracting \"{storageFile.FileState.FileName}\" failed");
-        var sourceFile = Directory.GetFiles(extractedFolder).Single();
-        
-        VerifyAndMoveFile(storageFile, sourceFile, destinationFileName);
     }
 
     public bool Upload(StorageFile storageFile)
