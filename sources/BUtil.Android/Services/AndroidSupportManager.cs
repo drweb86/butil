@@ -6,12 +6,12 @@ using System.Diagnostics;
 
 namespace BUtil.Linux.Services;
 
-public class LinuxSupportManager : ISupportManager
+public class AndroidSupportManager : ISupportManager
 {
     private readonly string _workDir;
     private readonly string _uiApp;
 
-    public LinuxSupportManager()
+    public AndroidSupportManager()
     {
         _workDir = Directories.BinariesDir;
         _uiApp = "butil-ui.Desktop";
@@ -19,15 +19,8 @@ public class LinuxSupportManager : ISupportManager
 
     private void LaunchUiAppInternal(string? arguments = null)
     {
-        Process.Start(new ProcessStartInfo
-        {
-            FileName = "systemd-inhibit",
-            WorkingDirectory = _workDir,
-            Arguments = $"\"./{_uiApp}\""
-                + (arguments != null ? $" {arguments}" : ""),
-        });
+        // TODO:
     }
-
     public void LaunchTasksApp()
     {
         LaunchUiAppInternal();

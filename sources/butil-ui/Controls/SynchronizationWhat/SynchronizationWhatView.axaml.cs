@@ -24,7 +24,15 @@ public partial class SynchronizationWhatView : UserControl
     {
         var root = this.VisualRoot as TopLevel ?? throw new NullReferenceException("Invalid Owner");
         var dataContext = DataContext as SynchronizationWhatViewModel ?? throw new NullReferenceException();
-        var startLocation = await root.StorageProvider.TryGetFolderFromPathAsync(dataContext.Folder);
+        IStorageFolder startLocation = null;
+        try
+        {
+            startLocation = await root.StorageProvider.TryGetFolderFromPathAsync(dataContext.Folder);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Error: " + e.Message);
+        }
         var folders = await root.StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
         {
             Title = BUtil.Core.Localization.Resources.ImportMediaTask_Field_OutputFolder,

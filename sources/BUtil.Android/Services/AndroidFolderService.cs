@@ -13,19 +13,12 @@ internal class AndroidFolderService : IFolderService
 
     public void OpenFolderInShell(string folder)
     {
-        //Intent intent = context.getPackageManager().getLaunchIntentForPackage("com.sec.android.app.myfiles");
-        //Uri uri = Uri.parse(rootPath);
-        //if (intent != null)
-        //{
-        //    intent.setData(uri);
-        //    startActivity(intent);
-        //}
-
-        //Process.Start("xdg-open", $"\"{folder}\"");
+        // TODO:
     }
+
     public void OpenFileInShell(string file)
     {
-        //Process.Start("nautilus", $"--select \"{file}\"");
+        // TODO:
     }
 
     public string GetStorageItemExcludePatternHelp()

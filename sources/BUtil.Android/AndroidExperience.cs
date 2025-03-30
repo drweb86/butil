@@ -47,5 +47,5 @@ public class AndroidExperience : CrossPlatformExperience
         return new AndroidFolderService();
     }
 
-    public override ISupportManager SupportManager => new LinuxSupportManager();
+    public override ISupportManager SupportManager => new AndroidSupportManager();
 }
