@@ -42,11 +42,6 @@ public class AndroidExperience : CrossPlatformExperience
 
     public override IOsSleepPreventionService OsSleepPreventionService => new LinuxOsSleepPreventionService();
 
-    public override ILegacyObsoleteArchiver GetArchiver(ILog log)
-    {
-        return null;
-    }
-
     public override IFolderService GetFolderService()
     {
         return new AndroidFolderService();

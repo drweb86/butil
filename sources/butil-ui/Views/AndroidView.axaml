@@ -47,7 +47,7 @@
 				</StackPanel>
 			</DataTemplate>
 		</dialogHost:DialogHost.DataTemplates>
-		<Grid>
+		<Grid Margin="40 40 0 0">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="Auto" />
 				<RowDefinition Height="Auto" />
