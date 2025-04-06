@@ -15,15 +15,23 @@ public class AndroidSupportManager : ISupportManager
         Environment.Exit(0);
     }
 
+    #region Link
+    public bool CanOpenLink { get => false; }
     public void OpenHomePage()
     {
-        ProcessHelper.ShellExecute(ApplicationLinks.HomePage);
+        throw new NotSupportedException("Opening links in Android not supported.");
     }
 
     public void OpenLatestRelease()
     {
-        ProcessHelper.ShellExecute(ApplicationLinks.LatestRelease);
+        throw new NotSupportedException("Opening links in Android not supported.");
     }
+
+    public void OpenIcons()
+    {
+        throw new NotSupportedException("Opening links in Android not supported.");
+    }
+    #endregion
 
     public string ScriptEngineName => "Bash";
 

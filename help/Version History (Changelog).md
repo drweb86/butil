@@ -2,7 +2,9 @@
 (unpublished)
 
 ## New Features
-- Android: Theme changing (application will close, on restart colors are changed)
+- Android: Theme changing (application will close, on restart colors are changed).
+- Android: SMB/CIFS, MTP were hidden.
+- Android: Links are disabled, because Intent is not available.
 
 ## Changes
 - Some libraries were updated.

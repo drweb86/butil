@@ -1,4 +1,5 @@
-﻿using BUtil.Core.Localization;
+﻿using BUtil.Core;
+using BUtil.Core.Localization;
 using BUtil.Core.Misc;
 using CommunityToolkit.Mvvm.ComponentModel;
 
@@ -16,6 +17,8 @@ public class NameTaskViewModel(bool isExpanded, string help, string name) : Obse
     #endregion
 
     public bool IsExpanded { get; } = isExpanded;
+
+    public bool CanOpenLink { get; } = PlatformSpecificExperience.Instance.SupportManager.CanOpenLink;
 
     #region Name
 
@@ -44,7 +47,9 @@ public class NameTaskViewModel(bool isExpanded, string help, string name) : Obse
     public void OpenCharsPageCommand()
 #pragma warning restore CA1822 // Mark members as static
     {
-        ProcessHelper.ShellExecute(@"https://github.com/drweb86/butil/blob/master/help/Icons.md");
+        PlatformSpecificExperience.Instance
+            .SupportManager
+            .OpenIcons();
     }
 
     #endregion

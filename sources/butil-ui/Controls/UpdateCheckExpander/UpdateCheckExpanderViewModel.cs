@@ -78,7 +78,7 @@ internal class UpdateCheckExpanderViewModel : ObservableObject
 
     public static string UpdateLink => ApplicationLinks.LatestRelease;
     public static string Button_Download => Resources.Button_Download;
-
+    public bool CanOpenLink { get; } = PlatformSpecificExperience.Instance.SupportManager.CanOpenLink;
 #pragma warning disable CA1822 // Mark members as static
     public void OpenLatestReleaseCommand()
 #pragma warning restore CA1822 // Mark members as static

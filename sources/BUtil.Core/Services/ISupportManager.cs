@@ -12,4 +12,6 @@ public interface ISupportManager
     void OpenHomePage();
 
     void OpenLatestRelease();
+    void OpenIcons();
+    bool CanOpenLink { get; }
 }

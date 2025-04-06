@@ -30,6 +30,7 @@
 					Grid.Column="1" Grid.Row="1"
 					Margin="0,8,0,0"
 					VerticalAlignment="Center"
+					IsVisible="{Binding CanOpenLink}"
 					Command="{Binding OpenCharsPageCommand}"
 					Content="{Binding Icons_Help_Link}" />
 			<TextBlock Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="2" Text="{Binding Help}" TextWrapping="Wrap" Margin="0,8,0,0" />

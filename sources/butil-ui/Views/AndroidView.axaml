@@ -47,7 +47,7 @@
 				</StackPanel>
 			</DataTemplate>
 		</dialogHost:DialogHost.DataTemplates>
-		<Grid Margin="40 40 0 0">
+		<Grid Margin="0 32 0 0">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="Auto" />
 				<RowDefinition Height="Auto" />
@@ -55,7 +55,7 @@
 			</Grid.RowDefinitions>
 			<StackPanel Grid.Row="0" Orientation="Horizontal">
 				<Menu>
-					<MenuItem Command="{Binding GoToWebsiteCommand}" IsVisible="{Binding CanExtendClientAreaToDecorationsHint}">
+					<MenuItem Command="{Binding GoToWebsiteCommand}">
 						<MenuItem.Header>
 							<StackPanel Orientation="Horizontal">
 								<Image Width="16" Height="16" Source="/Assets/butil.ico" VerticalAlignment="Center" />
