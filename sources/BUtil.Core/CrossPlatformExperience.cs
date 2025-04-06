@@ -12,15 +12,16 @@ public abstract class CrossPlatformExperience
     public abstract ISupportManager SupportManager { get; }
     public abstract IFolderService GetFolderService();
 
-    public virtual IMtpService? GetMtpService()
-    {
-        return null;
-    }
+    #region SMB/CIFS
+    public abstract bool IsSmbCifsSupported { get; }
+    public abstract IStorage GetSmbCifsStorage(ILog log, SambaStorageSettingsV2 settings);
+    #endregion
 
-    public virtual IStorage? GetMtpStorage(ILog log, MtpStorageSettings storageSettings)
-    {
-        return null;
-    }
+    #region MTP
+    public abstract bool IsMtpSupported { get; }
+    public abstract IMtpService GetMtpService();
+    public abstract IStorage GetMtpStorage(ILog log, MtpStorageSettings storageSettings);
+    #endregion
 
     public virtual ITaskSchedulerService? GetTaskSchedulerService()
     {
@@ -36,5 +37,5 @@ public abstract class CrossPlatformExperience
 
     public abstract IOsSleepPreventionService OsSleepPreventionService { get; }
 
-    public abstract IStorage GetSmbStorage(ILog log, SambaStorageSettingsV2 settings);
+
 }

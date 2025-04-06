@@ -15,7 +15,7 @@ public class WindowsSupportManager : ISupportManager
     public static readonly string ConsoleBackupTool =
         Path.Combine(Directories.BinariesDir, "butilc.exe");
 
-    public void LaunchTasksApp()
+    public void LaunchTasksAppOrExit()
     {
         Process.Start(UIApp);
     }

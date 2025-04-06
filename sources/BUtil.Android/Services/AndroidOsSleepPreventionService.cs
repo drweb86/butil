@@ -2,7 +2,7 @@
 
 namespace BUtil.Linux.Services;
 
-internal class LinuxOsSleepPreventionService : IOsSleepPreventionService
+internal class AndroidOsSleepPreventionService : IOsSleepPreventionService
 {
     public void PreventSleep()
     {

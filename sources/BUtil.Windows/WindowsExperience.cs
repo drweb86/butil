@@ -10,10 +10,13 @@ namespace BUtil.Windows;
 
 public class WindowsExperience : CrossPlatformExperience
 {
-    public override IStorage GetSmbStorage(ILog log, SambaStorageSettingsV2 settings)
+    #region SMB/CIFS
+    public override bool IsSmbCifsSupported { get => true; }
+    public override IStorage GetSmbCifsStorage(ILog log, SambaStorageSettingsV2 settings)
     {
         return new WindowsSambaStorage(log, settings);
     }
+    #endregion
 
     public override ISessionService SessionService => new WindowsSessionService();
 
@@ -24,15 +27,17 @@ public class WindowsExperience : CrossPlatformExperience
         return new WindowsFolderService();
     }
 
-    public override IMtpService? GetMtpService()
+    #region MTP
+    public override bool IsMtpSupported { get => true; }
+    public override IMtpService GetMtpService()
     {
         return new MtpService();
     }
-
-    public override IStorage? GetMtpStorage(ILog log, MtpStorageSettings storageSettings)
+    public override IStorage GetMtpStorage(ILog log, MtpStorageSettings storageSettings)
     {
         return new MtpStorage(log, storageSettings);
     }
+    #endregion
 
     public override ITaskSchedulerService? GetTaskSchedulerService()
     {

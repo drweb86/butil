@@ -2,7 +2,7 @@
 
 namespace BUtil.Windows.Services;
 
-class LinuxUiService : IUiService
+class AndroidLinuxUiService : IUiService
 {
     public bool CanExtendClientAreaToDecorationsHint => false;
 

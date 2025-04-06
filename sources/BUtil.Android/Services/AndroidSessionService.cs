@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace BUtil.Linux.Services;
 
-public class LinuxSessionService : ISessionService
+public class AndroidSessionService : ISessionService
 {
     public void DoTask(PowerTask task)
     {

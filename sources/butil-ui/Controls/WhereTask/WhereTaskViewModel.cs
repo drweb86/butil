@@ -18,11 +18,13 @@ public class WhereTaskViewModel : ObservableObject
         Title = title;
         IconSource = LoadFromResource(new Uri("avares://butil-ui" + iconUrl));
         TransportSource.Add(DirectoryStorage);
-        TransportSource.Add(Smb);
+
+        if (PlatformSpecificExperience.Instance.IsSmbCifsSupported)
+            TransportSource.Add(Smb);
+
         TransportSource.Add(Ftps);
 
-        var mtp = PlatformSpecificExperience.Instance.GetMtpService();
-        if (mtp != null)
+        if (PlatformSpecificExperience.Instance.IsMtpSupported)
             TransportSource.Add(Mtp);
 
         if (storageSettings is FolderStorageSettingsV2 folderStorageSettings)
@@ -34,7 +36,8 @@ public class WhereTaskViewModel : ObservableObject
             FolderDisconnectionScript = folderStorageSettings.UnmountPowershellScript;
         }
 
-        if (storageSettings is SambaStorageSettingsV2 sambaStorageSettingsV2)
+        if (storageSettings is SambaStorageSettingsV2 sambaStorageSettingsV2
+            && PlatformSpecificExperience.Instance.IsSmbCifsSupported)
         {
             Transport = Smb;
             Quota = sambaStorageSettingsV2.SingleBackupQuotaGb;
@@ -56,13 +59,12 @@ public class WhereTaskViewModel : ObservableObject
             FtpsFolder = ftpsStorageSettingsV2.Folder;
         }
 
-        if (storageSettings is MtpStorageSettings mtpStorageSettings && mtp != null)
+        if (storageSettings is MtpStorageSettings mtpStorageSettings
+            && PlatformSpecificExperience.Instance.IsMtpSupported)
         {
-            var mtpService = PlatformSpecificExperience.Instance.GetMtpService();
-            if (mtpService != null)
-            {
-                MtpDevicesSource = mtpService.GetItems();
-            }
+            MtpDevicesSource = PlatformSpecificExperience.Instance
+                .GetMtpService()
+                .GetItems();
 
             Transport = Mtp;
             Quota = mtpStorageSettings.SingleBackupQuotaGb;
@@ -76,11 +78,12 @@ public class WhereTaskViewModel : ObservableObject
 
     public void UpdateListMtpDevices()
     {
-        var mtpService = PlatformSpecificExperience.Instance.GetMtpService();
-        if (mtpService != null)
-        {
-            MtpDevicesSource = mtpService.GetItems();
-        }
+        if (!PlatformSpecificExperience.Instance.IsMtpSupported)
+            return;
+
+        MtpDevicesSource = PlatformSpecificExperience.Instance
+            .GetMtpService()
+            .GetItems();
     }
 
     public async Task MountTaskLaunchCommand()

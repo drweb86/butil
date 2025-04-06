@@ -28,7 +28,7 @@ public class LinuxSupportManager : ISupportManager
         });
     }
 
-    public void LaunchTasksApp()
+    public void LaunchTasksAppOrExit()
     {
         LaunchUiAppInternal();
     }

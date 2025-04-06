@@ -30,7 +30,7 @@ public partial class MainWindowViewModel : ViewModelBase
         SettingsStoreService.Save(ThemeSetting.Name, ThemeSetting.DarkValue);
         PlatformSpecificExperience.Instance
                 .SupportManager
-                .LaunchTasksApp();
+                .LaunchTasksAppOrExit();
         Environment.Exit(0);
     }
 
@@ -41,7 +41,7 @@ public partial class MainWindowViewModel : ViewModelBase
         SettingsStoreService.Save(ThemeSetting.Name, ThemeSetting.LightValue);
         PlatformSpecificExperience.Instance
                 .SupportManager
-                .LaunchTasksApp();
+                .LaunchTasksAppOrExit();
         Environment.Exit(0);
     }
 

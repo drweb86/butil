@@ -11,22 +11,27 @@ namespace BUtil.Windows;
 
 public class LinuxExperience : CrossPlatformExperience
 {
-    public override IStorage GetSmbStorage(ILog log, SambaStorageSettingsV2 settings)
+    #region SMB/CIFS
+    public override bool IsSmbCifsSupported { get => true; }
+    public override IStorage GetSmbCifsStorage(ILog log, SambaStorageSettingsV2 settings)
     {
         return new LinuxSambaStorage(log, settings);
     }
+    #endregion
 
     public override ISessionService SessionService => new LinuxSessionService();
 
-    public override IMtpService? GetMtpService()
+    #region MTP
+    public override bool IsMtpSupported { get => false; }
+    public override IMtpService GetMtpService()
     {
-        return null;
+        throw new NotSupportedException("Linux does not support MTP protocol.");
     }
-
-    public override IStorage? GetMtpStorage(ILog log, MtpStorageSettings storageSettings)
+    public override IStorage GetMtpStorage(ILog log, MtpStorageSettings storageSettings)
     {
-        return null;
+        throw new NotSupportedException("Linux does not support MTP protocol.");
     }
+    #endregion
 
     public override ITaskSchedulerService? GetTaskSchedulerService()
     {

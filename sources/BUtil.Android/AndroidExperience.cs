@@ -11,22 +11,27 @@ namespace BUtil.Windows;
 
 public class AndroidExperience : CrossPlatformExperience
 {
-    public override IStorage GetSmbStorage(ILog log, SambaStorageSettingsV2 settings)
+    public override bool IsSmbCifsSupported { get => false; }
+    public override IStorage GetSmbCifsStorage(ILog log, SambaStorageSettingsV2 settings)
     {
-        return null;
+        throw new NotImplementedException("For this platform SMB/CIFS service is not implemented.");
     }
 
-    public override ISessionService SessionService => new LinuxSessionService();
+    public override ISessionService SessionService => new AndroidSessionService();
 
-    public override IMtpService? GetMtpService()
+    #region MTP
+    public override bool IsMtpSupported { get => false; }
+    public override IMtpService GetMtpService()
     {
-        return null;
+        throw new NotSupportedException("Android does not support MTP protocol.");
     }
 
-    public override IStorage? GetMtpStorage(ILog log, MtpStorageSettings storageSettings)
+    public override IStorage GetMtpStorage(ILog log, MtpStorageSettings storageSettings)
     {
-        return null;
+        throw new NotSupportedException("Android does not support MTP protocol.");
     }
+
+    #endregion
 
     public override ITaskSchedulerService? GetTaskSchedulerService()
     {
@@ -38,14 +43,14 @@ public class AndroidExperience : CrossPlatformExperience
         return null;
     }
 
-    public override IUiService UiService => new LinuxUiService();
+    public override IUiService UiService => new AndroidLinuxUiService();
 
-    public override IOsSleepPreventionService OsSleepPreventionService => new LinuxOsSleepPreventionService();
+    public override IOsSleepPreventionService OsSleepPreventionService => new AndroidOsSleepPreventionService();
 
     public override IFolderService GetFolderService()
     {
         return new AndroidFolderService();
     }
-
+    
     public override ISupportManager SupportManager => new AndroidSupportManager();
 }

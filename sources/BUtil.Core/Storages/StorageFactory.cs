@@ -12,14 +12,11 @@ public class StorageFactory
         if (storageSettings is FolderStorageSettingsV2 folder)
             return new FailoverStorageWrapper(log, new FolderStorage(log, folder), triesCount);
         else if (storageSettings is SambaStorageSettingsV2 samba)
-            return new FailoverStorageWrapper(log, PlatformSpecificExperience.Instance.GetSmbStorage(log, samba), triesCount);
+            return new FailoverStorageWrapper(log, PlatformSpecificExperience.Instance.GetSmbCifsStorage(log, samba), triesCount);
         else if (storageSettings is FtpsStorageSettingsV2 ftps)
             return new FailoverStorageWrapper(log, new FtpsStorage(log, ftps, autodetectConnectionSettings), triesCount);
         else if (storageSettings is MtpStorageSettings mtp)
-        {
-            var mtpStorage = PlatformSpecificExperience.Instance.GetMtpStorage(log, mtp) ?? throw new NotSupportedException("Your OS does not support MTP storage");
-            return new FailoverStorageWrapper(log, mtpStorage, triesCount);
-        }
+            return new FailoverStorageWrapper(log, PlatformSpecificExperience.Instance.GetMtpStorage(log, mtp), triesCount);
         throw new ArgumentOutOfRangeException(nameof(storageSettings));
     }
 

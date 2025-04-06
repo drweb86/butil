@@ -7,7 +7,7 @@ public interface ISupportManager
     string ScriptEngineName { get; }
     bool LaunchScript(ILog log, string script, string forbiddenForLogs);
 
-    void LaunchTasksApp();
+    void LaunchTasksAppOrExit();
 
     void OpenHomePage();
 

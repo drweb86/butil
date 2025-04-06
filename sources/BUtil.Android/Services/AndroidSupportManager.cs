@@ -8,22 +8,11 @@ namespace BUtil.Linux.Services;
 
 public class AndroidSupportManager : ISupportManager
 {
-    private readonly string _workDir;
-    private readonly string _uiApp;
-
-    public AndroidSupportManager()
+    public void LaunchTasksAppOrExit()
     {
-        _workDir = Directories.BinariesDir;
-        _uiApp = "butil-ui.Desktop";
-    }
-
-    private void LaunchUiAppInternal(string? arguments = null)
-    {
-        // TODO:
-    }
-    public void LaunchTasksApp()
-    {
-        LaunchUiAppInternal();
+        // we do nmot support it, so we exit.
+        // primarily use case will be reload app on theme change
+        Environment.Exit(0);
     }
 
     public void OpenHomePage()

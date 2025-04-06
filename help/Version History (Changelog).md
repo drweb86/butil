@@ -1,12 +1,15 @@
 ﻿# 2025.03.30
 (unpublished)
 
+## New Features
+- Android: Theme changing (application will close, on restart colors are changed)
+
 ## Changes
 - Some libraries were updated.
 
 ## Removed Features
 - 7-zip is dropped due to no possibility to use it in Android.
-- 7-zip encrypted files are no longer recognized. You need to use v2024.12.06 to migrate backups if you did not do it already.
+- 7-zip encrypted files are no longer recognized. You need to use v2024.12.06 to migrate backups or restore if you did not do it already. Version 2024.12.06 will be retained to the end of the year.
 
 # 2024.12.16
 
