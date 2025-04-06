@@ -54,15 +54,15 @@
 			<TextBox IsVisible="{Binding IsDirectoryTransport}" Grid.Row="2" Grid.Column="1" Margin="4 4 4 4" Watermark="P:\Storage\Backup1" VerticalAlignment="Center" Text="{Binding FolderFolder}" />
 			<Button IsVisible="{Binding IsDirectoryTransport}" Grid.Row="2" Grid.Column="2" Content="{Binding Field_Folder_Browse}" VerticalAlignment="Center" Click="BrowseCommand"/>
 
-			<TextBlock IsVisible="{Binding IsDirectoryTransport}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Text="{Binding DataStorage_Script_Help}" VerticalAlignment="Center" TextWrapping="Wrap" />
+			<TextBlock IsVisible="{Binding IsDirectoryScriptsVisible}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Text="{Binding DataStorage_Script_Help}" VerticalAlignment="Center" TextWrapping="Wrap" />
 			
-			<TextBlock IsVisible="{Binding IsDirectoryTransport}" Grid.Row="4" Grid.Column="0" Text="{Binding DataStorage_Field_ConnectScript}" VerticalAlignment="Center"/>
-			<TextBox IsVisible="{Binding IsDirectoryTransport}" AcceptsReturn="True" Grid.Row="4" Grid.Column="1" Margin="4 4 4 4" Watermark="net use X: \\myserver\myfolder myPassword /user:myUser" VerticalAlignment="Center" Text="{Binding FolderConnectionScript}" Height="150" />
-			<Button IsVisible="{Binding IsDirectoryTransport}" Grid.Row="4" Grid.Column="2" Content="{Binding Task_Launch}" VerticalAlignment="Center" Command="{Binding MountTaskLaunchCommand}"/>
+			<TextBlock IsVisible="{Binding IsDirectoryScriptsVisible}" Grid.Row="4" Grid.Column="0" Text="{Binding DataStorage_Field_ConnectScript}" VerticalAlignment="Center"/>
+			<TextBox IsVisible="{Binding IsDirectoryScriptsVisible}" AcceptsReturn="True" Grid.Row="4" Grid.Column="1" Margin="4 4 4 4" Watermark="net use X: \\myserver\myfolder myPassword /user:myUser" VerticalAlignment="Center" Text="{Binding FolderConnectionScript}" Height="150" />
+			<Button IsVisible="{Binding IsDirectoryScriptsVisible}" Grid.Row="4" Grid.Column="2" Content="{Binding Task_Launch}" VerticalAlignment="Center" Command="{Binding MountTaskLaunchCommand}"/>
 
-			<TextBlock IsVisible="{Binding IsDirectoryTransport}" Grid.Row="5" Grid.Column="0" Text="{Binding DataStorage_Field_DisconnectionScript}" VerticalAlignment="Center"/>
-			<TextBox IsVisible="{Binding IsDirectoryTransport}" AcceptsReturn="True" Grid.Row="5" Grid.Column="1" Margin="4 4 4 4" Watermark="net use X: /delete" VerticalAlignment="Center" Text="{Binding FolderDisconnectionScript}" Height="150" />
-			<Button IsVisible="{Binding IsDirectoryTransport}" Grid.Row="5" Grid.Column="2" Content="{Binding Task_Launch}" VerticalAlignment="Center" Command="{Binding UnmountTaskLaunchCommand}"/>
+			<TextBlock IsVisible="{Binding IsDirectoryScriptsVisible}" Grid.Row="5" Grid.Column="0" Text="{Binding DataStorage_Field_DisconnectionScript}" VerticalAlignment="Center"/>
+			<TextBox IsVisible="{Binding IsDirectoryScriptsVisible}" AcceptsReturn="True" Grid.Row="5" Grid.Column="1" Margin="4 4 4 4" Watermark="net use X: /delete" VerticalAlignment="Center" Text="{Binding FolderDisconnectionScript}" Height="150" />
+			<Button IsVisible="{Binding IsDirectoryScriptsVisible}" Grid.Row="5" Grid.Column="2" Content="{Binding Task_Launch}" VerticalAlignment="Center" Command="{Binding UnmountTaskLaunchCommand}"/>
 
 			<!-- SMB -->
 			<TextBlock IsVisible="{Binding IsSmbTransport}" Grid.Row="6" Grid.Column="0" Text="{Binding Url_Field}" VerticalAlignment="Center"/>

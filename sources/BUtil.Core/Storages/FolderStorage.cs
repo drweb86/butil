@@ -48,7 +48,8 @@ public class FolderStorage : StorageBase<FolderStorageSettingsV2>
         Log.WriteLine(LoggingEvent.Debug, $"Mount");
         if (!string.IsNullOrWhiteSpace(this.Settings.MountPowershellScript))
         {
-            if (!PlatformSpecificExperience.Instance.SupportManager.LaunchScript(Log, this.Settings.MountPowershellScript, "***"))
+            if (PlatformSpecificExperience.Instance.SupportManager.CanLaunchScripts &&
+                !PlatformSpecificExperience.Instance.SupportManager.LaunchScript(Log, this.Settings.MountPowershellScript, "***"))
                 throw new InvalidOperationException($"Cannot mount");
         }
     }
@@ -58,7 +59,8 @@ public class FolderStorage : StorageBase<FolderStorageSettingsV2>
         Log.WriteLine(LoggingEvent.Debug, $"Unmount");
         if (!string.IsNullOrWhiteSpace(this.Settings.UnmountPowershellScript))
         {
-            if (!PlatformSpecificExperience.Instance.SupportManager.LaunchScript(Log, this.Settings.UnmountPowershellScript, "***"))
+            if (PlatformSpecificExperience.Instance.SupportManager.CanLaunchScripts &&
+                !PlatformSpecificExperience.Instance.SupportManager.LaunchScript(Log, this.Settings.UnmountPowershellScript, "***"))
                 throw new InvalidOperationException($"Cannot unmount");
         }
     }

@@ -91,11 +91,14 @@ public class WhereTaskViewModel : ObservableObject
         if (string.IsNullOrWhiteSpace(FolderConnectionScript))
             return;
 
-        var memoryLog = new MemoryLog();
-        if (PlatformSpecificExperience.Instance.SupportManager.LaunchScript(memoryLog, this.FolderConnectionScript, "***"))
-            await Messages.ShowInformationBox(Resources.DataStorage_Field_DisconnectionScript_Ok);
-        else
-            await Messages.ShowErrorBox(Resources.DataStorage_Field_DisconnectionScript_Bad + Environment.NewLine + Environment.NewLine + memoryLog);
+        if (PlatformSpecificExperience.Instance.SupportManager.CanLaunchScripts)
+        {
+            var memoryLog = new MemoryLog();
+            if (PlatformSpecificExperience.Instance.SupportManager.LaunchScript(memoryLog, this.FolderConnectionScript, "***"))
+                await Messages.ShowInformationBox(Resources.DataStorage_Field_DisconnectionScript_Ok);
+            else
+                await Messages.ShowErrorBox(Resources.DataStorage_Field_DisconnectionScript_Bad + Environment.NewLine + Environment.NewLine + memoryLog);
+        }
     }
 
     public async Task UnmountTaskLaunchCommand()
@@ -103,11 +106,14 @@ public class WhereTaskViewModel : ObservableObject
         if (string.IsNullOrWhiteSpace(FolderDisconnectionScript))
             return;
 
-        var memoryLog = new MemoryLog();
-        if (PlatformSpecificExperience.Instance.SupportManager.LaunchScript(memoryLog, FolderDisconnectionScript, "***"))
-            await Messages.ShowInformationBox(Resources.DataStorage_Field_DisconnectionScript_Ok);
-        else
-            await Messages.ShowErrorBox(Resources.DataStorage_Field_DisconnectionScript_Bad + Environment.NewLine + Environment.NewLine + memoryLog);
+        if (PlatformSpecificExperience.Instance.SupportManager.CanLaunchScripts)
+        {
+            var memoryLog = new MemoryLog();
+            if (PlatformSpecificExperience.Instance.SupportManager.LaunchScript(memoryLog, FolderDisconnectionScript, "***"))
+                await Messages.ShowInformationBox(Resources.DataStorage_Field_DisconnectionScript_Ok);
+            else
+                await Messages.ShowErrorBox(Resources.DataStorage_Field_DisconnectionScript_Bad + Environment.NewLine + Environment.NewLine + memoryLog);
+        }
     }
 
     private static Bitmap LoadFromResource(Uri resourceUri)
@@ -170,6 +176,8 @@ public class WhereTaskViewModel : ObservableObject
     public static string Ftps => "FTPS";
     public static string Mtp => "MTP";
 
+    public bool CanLaunchScripts { get; } = PlatformSpecificExperience.Instance.SupportManager.CanLaunchScripts;
+
     public List<string> TransportSource { get; } = [];
 
 
@@ -215,6 +223,7 @@ public class WhereTaskViewModel : ObservableObject
             _transport = value;
             OnPropertyChanged(nameof(Transport));
             IsDirectoryTransport = value == DirectoryStorage;
+            IsDirectoryScriptsVisible = IsDirectoryTransport && CanLaunchScripts;
             IsMtpTransport = value == Mtp;
             IsSmbTransport = value == Smb;
             IsFtpsTransport = value == Ftps;
@@ -239,6 +248,27 @@ public class WhereTaskViewModel : ObservableObject
                 return;
             _isDirectoryTransport = value;
             OnPropertyChanged(nameof(IsDirectoryTransport));
+        }
+    }
+
+    #endregion
+
+    #region IsDirectoryScriptsVisible
+
+    private bool _isDirectoryScriptsVisible = false;
+
+    public bool IsDirectoryScriptsVisible
+    {
+        get
+        {
+            return _isDirectoryScriptsVisible;
+        }
+        set
+        {
+            if (value == _isDirectoryScriptsVisible)
+                return;
+            _isDirectoryScriptsVisible = value;
+            OnPropertyChanged(nameof(IsDirectoryScriptsVisible));
         }
     }
 

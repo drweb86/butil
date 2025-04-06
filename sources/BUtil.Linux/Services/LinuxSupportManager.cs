@@ -33,6 +33,8 @@ public class LinuxSupportManager : ISupportManager
         LaunchUiAppInternal();
     }
 
+    #region Link
+    public bool CanOpenLink { get => true; }
     public void OpenHomePage()
     {
         ProcessHelper.ShellExecute(ApplicationLinks.HomePage);
@@ -42,6 +44,14 @@ public class LinuxSupportManager : ISupportManager
     {
         ProcessHelper.ShellExecute(ApplicationLinks.LatestRelease);
     }
+
+    public void OpenIcons()
+    {
+        ProcessHelper.ShellExecute(ApplicationLinks.Icons);
+    }
+    #endregion
+
+    public bool CanLaunchScripts { get => true; }
 
     public string ScriptEngineName => "Bash";
 

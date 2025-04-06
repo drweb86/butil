@@ -15,65 +15,33 @@ public class AndroidSupportManager : ISupportManager
         Environment.Exit(0);
     }
 
+    #region Link
+    public bool CanOpenLink { get => false; }
     public void OpenHomePage()
     {
-        ProcessHelper.ShellExecute(ApplicationLinks.HomePage);
+        throw new NotSupportedException("Opening links in Android not supported.");
     }
 
     public void OpenLatestRelease()
     {
-        ProcessHelper.ShellExecute(ApplicationLinks.LatestRelease);
+        throw new NotSupportedException("Opening links in Android not supported.");
     }
 
-    public string ScriptEngineName => "Bash";
+    public void OpenIcons()
+    {
+        throw new NotSupportedException("Opening links in Android not supported.");
+    }
+    #endregion
+
+    #region Scripts
+    public bool CanLaunchScripts { get => false; }
+
+    public string ScriptEngineName => "N/A";
 
     public bool LaunchScript(ILog log, string script, string _)
     {
-        script = script.Replace("\r", string.Empty);
-
-        using var tempDir = new TempFolder();
-        var scriptFile = Path.Combine(tempDir.Folder, "script.sh");
-        File.WriteAllText(scriptFile, "#!/bin/bash" + Environment.NewLine + script);
-
-        log.WriteLine(LoggingEvent.Debug, $"Set permissions to script");
-
-        ProcessHelper.Execute("chmod", $"-v +x \"{scriptFile}\"",
-            null,
-            false,
-            ProcessPriorityClass.Idle,
-
-            out var stdOutput,
-            out var stdError,
-            out var returnCode);
-        var isSuccess = returnCode == 0;
-        if (!string.IsNullOrWhiteSpace(stdOutput))
-            log.LogProcessOutput(stdOutput, isSuccess);
-        if (!string.IsNullOrWhiteSpace(stdError))
-            log.LogProcessOutput(stdError, isSuccess);
-        if (!isSuccess)
-            log.WriteLine(LoggingEvent.Error, "Executing permissions failed.");
-
-        log.WriteLine(LoggingEvent.Debug, $"Executing script");
-
-        ProcessHelper.Execute("bash",
-            $"-c \"{scriptFile}\"",
-            null,
-            false,
-            ProcessPriorityClass.Idle,
-
-            out stdOutput,
-            out stdError,
-            out returnCode);
-
-        isSuccess = returnCode == 0;
-        if (!string.IsNullOrWhiteSpace(stdOutput))
-            log.LogProcessOutput(stdOutput, isSuccess);
-        if (!string.IsNullOrWhiteSpace(stdError))
-            log.LogProcessOutput(stdError, isSuccess);
-        if (isSuccess)
-            log.WriteLine(LoggingEvent.Debug, "Executing successfull.");
-        if (!isSuccess)
-            log.WriteLine(LoggingEvent.Error, "Executing failed.");
-        return isSuccess;
+        throw new PlatformNotSupportedException("Running shell commands in Android is not supported.");
     }
+
+    #endregion
 }

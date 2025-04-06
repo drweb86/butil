@@ -18,6 +18,7 @@
 				<Button
 					Margin="0 8 16 8"
 					VerticalAlignment="Center"
+					IsVisible="{Binding CanOpenLink}"
 					Command="{Binding OpenLatestReleaseCommand}"
 					Content="{Binding Button_Download}" />
 

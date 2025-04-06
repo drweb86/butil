@@ -68,10 +68,15 @@ public partial class MainWindowViewModel : ViewModelBase
         WindowManager.SwitchView(new EditIncrementalBackupTaskViewModel(string.Empty, true));
     }
 
+    public bool CanOpenLink { get; } = PlatformSpecificExperience.Instance.SupportManager.CanOpenLink;
+
 #pragma warning disable CA1822 // Mark members as static
     public void GoToWebsiteCommand()
 #pragma warning restore CA1822 // Mark members as static
     {
+        if (!PlatformSpecificExperience.Instance.SupportManager.CanOpenLink)
+            return;
+
         PlatformSpecificExperience.Instance
                 .SupportManager
                 .OpenHomePage();

@@ -20,6 +20,8 @@ public class WindowsSupportManager : ISupportManager
         Process.Start(UIApp);
     }
 
+    #region Link
+    public bool CanOpenLink { get => true; }
     public void OpenHomePage()
     {
         ProcessHelper.ShellExecute(ApplicationLinks.HomePage);
@@ -29,6 +31,15 @@ public class WindowsSupportManager : ISupportManager
     {
         ProcessHelper.ShellExecute(ApplicationLinks.LatestRelease);
     }
+
+    public void OpenIcons()
+    {
+        ProcessHelper.ShellExecute(ApplicationLinks.Icons);
+    }
+    #endregion
+
+    #region Scripts
+    public bool CanLaunchScripts { get => true; }
 
     public string ScriptEngineName => "Powershell";
 
@@ -61,4 +72,6 @@ public class WindowsSupportManager : ISupportManager
             log.WriteLine(LoggingEvent.Error, "Executing failed.");
         return isSuccess;
     }
+
+    #endregion
 }

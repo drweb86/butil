@@ -35,7 +35,7 @@ public class SourceItemV2ViewModel
     public string Target { get; set; }
 
     public bool IsFolder { get; set; }
-
+    public bool CanOpenLink { get; } = PlatformSpecificExperience.Instance.SupportManager.CanOpenLink;
 
     #region Commands
     public void SourceItemOpenInExplorerCommand()

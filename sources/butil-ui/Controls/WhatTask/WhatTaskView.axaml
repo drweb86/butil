@@ -47,6 +47,7 @@
 								Margin="2"
 								Padding="4"
 								ToolTip.Tip="{Binding SourceItem_OpenInExplorer}"
+								IsVisible="{Binding CanOpenLink}"
 								Command="{Binding SourceItemOpenInExplorerCommand}">
 								<Image
 									Width="12"
