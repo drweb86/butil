@@ -6,6 +6,17 @@ namespace BUtil.Windows.Services;
 
 internal class WindowsFolderService : IFolderService
 {
+    public IEnumerable<string> GetDefaultBackupFolders()
+    {
+        return [
+            Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
+            Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+            Environment.GetFolderPath(Environment.SpecialFolder.MyVideos),
+            Environment.GetFolderPath(Environment.SpecialFolder.MyMusic),
+            Environment.GetFolderPath(Environment.SpecialFolder.MyPictures),
+        ];
+    }
+
     public string GetDefaultSynchronizationFolder()
     {
         return Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);

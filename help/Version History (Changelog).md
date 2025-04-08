@@ -8,7 +8,6 @@
 - Android: Schell scripting is disabled since OS not support it.
 - Android: Open in Explorer is hidden for What.
 
-
 ## Changes
 - Some libraries were updated.
 

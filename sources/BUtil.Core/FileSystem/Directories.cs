@@ -1,6 +1,5 @@
 ﻿
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 
@@ -44,16 +43,5 @@ public static class Directories
         ImportStateFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BUtil Backup Tasks - States");
 #endif
         FileHelper.EnsureFolderCreated(ImportStateFolder);
-    }
-
-    public static IEnumerable<string> GetDefaultBackupFolders()
-    {
-        return [
-            Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
-            Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
-            Environment.GetFolderPath(Environment.SpecialFolder.MyVideos),
-            Environment.GetFolderPath(Environment.SpecialFolder.MyMusic),
-            Environment.GetFolderPath(Environment.SpecialFolder.MyPictures),
-        ];
     }
 }
