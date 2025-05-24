@@ -28,6 +28,7 @@ SetupIconFile=..\..\sources\butil-ui\Assets\butil.ico
 
 WizardStyle=modern
 
+ShowLanguageDialog=auto
 DisableWelcomePage=yes
 DefaultDirName={autopf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
