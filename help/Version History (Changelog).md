@@ -7,6 +7,7 @@
 ## Removed Features
 - 7-zip is dropped due to no possibility to use it in Android.
 - 7-zip encrypted files are no longer recognized. You need to use v2024.12.06 to migrate backups or restore if you did not do it already. Version 2024.12.06 will be retained to the end of the year.
+- MTP is dropped because of no usage.
 
 # 2024.12.16
 

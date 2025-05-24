@@ -27,18 +27,6 @@ public class WindowsExperience : CrossPlatformExperience
         return new WindowsFolderService();
     }
 
-    #region MTP
-    public override bool IsMtpSupported { get => true; }
-    public override IMtpService GetMtpService()
-    {
-        return new MtpService();
-    }
-    public override IStorage GetMtpStorage(ILog log, MtpStorageSettings storageSettings)
-    {
-        return new MtpStorage(log, storageSettings);
-    }
-    #endregion
-
     public override ITaskSchedulerService? GetTaskSchedulerService()
     {
         return new TaskSchedulerService();

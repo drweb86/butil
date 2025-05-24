@@ -17,12 +17,6 @@ public abstract class CrossPlatformExperience
     public abstract IStorage GetSmbCifsStorage(ILog log, SambaStorageSettingsV2 settings);
     #endregion
 
-    #region MTP
-    public abstract bool IsMtpSupported { get; }
-    public abstract IMtpService GetMtpService();
-    public abstract IStorage GetMtpStorage(ILog log, MtpStorageSettings storageSettings);
-    #endregion
-
     public virtual ITaskSchedulerService? GetTaskSchedulerService()
     {
         return null;

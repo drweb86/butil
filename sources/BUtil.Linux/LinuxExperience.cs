@@ -21,18 +21,6 @@ public class LinuxExperience : CrossPlatformExperience
 
     public override ISessionService SessionService => new LinuxSessionService();
 
-    #region MTP
-    public override bool IsMtpSupported { get => false; }
-    public override IMtpService GetMtpService()
-    {
-        throw new NotSupportedException("Linux does not support MTP protocol.");
-    }
-    public override IStorage GetMtpStorage(ILog log, MtpStorageSettings storageSettings)
-    {
-        throw new NotSupportedException("Linux does not support MTP protocol.");
-    }
-    #endregion
-
     public override ITaskSchedulerService? GetTaskSchedulerService()
     {
         return null;

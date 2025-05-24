@@ -24,9 +24,6 @@ public class WhereTaskViewModel : ObservableObject
 
         TransportSource.Add(Ftps);
 
-        if (PlatformSpecificExperience.Instance.IsMtpSupported)
-            TransportSource.Add(Mtp);
-
         if (storageSettings is FolderStorageSettingsV2 folderStorageSettings)
         {
             Transport = DirectoryStorage;
@@ -59,31 +56,8 @@ public class WhereTaskViewModel : ObservableObject
             FtpsFolder = ftpsStorageSettingsV2.Folder;
         }
 
-        if (storageSettings is MtpStorageSettings mtpStorageSettings
-            && PlatformSpecificExperience.Instance.IsMtpSupported)
-        {
-            MtpDevicesSource = PlatformSpecificExperience.Instance
-                .GetMtpService()
-                .GetItems();
-
-            Transport = Mtp;
-            Quota = mtpStorageSettings.SingleBackupQuotaGb;
-            MtpDevice = mtpStorageSettings.Device;
-            MtpFolder = mtpStorageSettings.Folder;
-        }
-
         FtpsEncryptionSource.Add(Ftps_Encryption_Option_Implicit);
         FtpsEncryptionSource.Add(Ftps_Encryption_Option_Explicit);
-    }
-
-    public void UpdateListMtpDevices()
-    {
-        if (!PlatformSpecificExperience.Instance.IsMtpSupported)
-            return;
-
-        MtpDevicesSource = PlatformSpecificExperience.Instance
-            .GetMtpService()
-            .GetItems();
     }
 
     public async Task MountTaskLaunchCommand()
@@ -158,15 +132,6 @@ public class WhereTaskViewModel : ObservableObject
                 Password = SmbPassword,
             };
         }
-        else if (Transport == Mtp)
-        {
-            return new MtpStorageSettings
-            {
-                SingleBackupQuotaGb = Quota,
-                Device = MtpDevice!,
-                Folder = MtpFolder!
-            };
-        }
         throw new System.ArgumentOutOfRangeException();
     }
     public string Title { get; }
@@ -174,8 +139,6 @@ public class WhereTaskViewModel : ObservableObject
     public static string DirectoryStorage => Resources.DirectoryStorage;
     public static string Smb => "SMB/CIFS";
     public static string Ftps => "FTPS";
-    public static string Mtp => "MTP";
-
     public bool CanLaunchScripts { get; } = PlatformSpecificExperience.Instance.SupportManager.CanLaunchScripts;
 
     public List<string> TransportSource { get; } = [];
@@ -224,7 +187,6 @@ public class WhereTaskViewModel : ObservableObject
             OnPropertyChanged(nameof(Transport));
             IsDirectoryTransport = value == DirectoryStorage;
             IsDirectoryScriptsVisible = IsDirectoryTransport && CanLaunchScripts;
-            IsMtpTransport = value == Mtp;
             IsSmbTransport = value == Smb;
             IsFtpsTransport = value == Ftps;
         }
@@ -311,27 +273,6 @@ public class WhereTaskViewModel : ObservableObject
                 return;
             _isSmbTransport = value;
             OnPropertyChanged(nameof(IsSmbTransport));
-        }
-    }
-
-    #endregion
-
-    #region IsMtpTransport
-
-    private bool _isMtpTransport = false;
-
-    public bool IsMtpTransport
-    {
-        get
-        {
-            return _isMtpTransport;
-        }
-        set
-        {
-            if (value == _isMtpTransport)
-                return;
-            _isMtpTransport = value;
-            OnPropertyChanged(nameof(IsMtpTransport));
         }
     }
 
@@ -609,68 +550,4 @@ public class WhereTaskViewModel : ObservableObject
     }
 
     #endregion
-
-    #region MtpDevice
-
-    private string? _mtpDevice;
-
-    public string? MtpDevice
-    {
-        get
-        {
-            return _mtpDevice;
-        }
-        set
-        {
-            if (value == _mtpDevice)
-                return;
-            _mtpDevice = value;
-            OnPropertyChanged(nameof(MtpDevice));
-        }
-    }
-
-    #endregion
-
-    #region MtpFolder
-
-    private string? _mtpFolder;
-
-    public string? MtpFolder
-    {
-        get
-        {
-            return _mtpFolder;
-        }
-        set
-        {
-            if (value == _mtpFolder)
-                return;
-            _mtpFolder = value;
-            OnPropertyChanged(nameof(MtpFolder));
-        }
-    }
-
-    #endregion
-
-    #region MtpDevicesSource
-
-    private IEnumerable<string> _mtpDevicesSource = [];
-
-    public IEnumerable<string> MtpDevicesSource
-    {
-        get
-        {
-            return _mtpDevicesSource;
-        }
-        set
-        {
-            if (value == _mtpDevicesSource)
-                return;
-            _mtpDevicesSource = value;
-            OnPropertyChanged(nameof(MtpDevicesSource));
-        }
-    }
-
-    #endregion
-
 }

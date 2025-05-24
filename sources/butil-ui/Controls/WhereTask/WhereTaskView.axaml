@@ -85,12 +85,6 @@
 			<TextBox IsVisible="{Binding IsFtpsTransport}" Grid.Row="13" Grid.Column="1" Margin="4 4 4 4" VerticalAlignment="Center" Text="{Binding FtpsPassword}"/>
 			<TextBlock IsVisible="{Binding IsFtpsTransport}" Grid.Row="14" Grid.Column="0" Text="{Binding Field_Folder}" VerticalAlignment="Center"/>
 			<TextBox IsVisible="{Binding IsFtpsTransport}" Grid.Row="14" Grid.Column="1" Margin="4 4 4 4" VerticalAlignment="Center" Text="{Binding FtpsFolder}"/>
-
-			<!-- MTP -->
-			<TextBlock IsVisible="{Binding IsMtpTransport}" Grid.Row="15" Grid.Column="0" Text="{Binding Field_Device}" VerticalAlignment="Center"/>
-			<ComboBox IsVisible="{Binding IsMtpTransport}" Grid.Row="15" Grid.Column="1" Margin="4 4 4 4" HorizontalAlignment="Stretch" VerticalAlignment="Center" SelectedValue="{Binding MtpDevice}" ItemsSource="{Binding MtpDevicesSource}" x:Name="MtpList"/>
-			<TextBlock IsVisible="{Binding IsMtpTransport}" Grid.Row="16" Grid.Column="0" Text="{Binding Field_Folder}" VerticalAlignment="Center"/>
-			<TextBox IsVisible="{Binding IsMtpTransport}" Grid.Row="16" Grid.Column="1" Margin="4 4 4 4" Watermark="Inernal Storage/DCIM" VerticalAlignment="Center" Text="{Binding MtpFolder}"/>
 		</Grid>
 	</Expander>
 </UserControl>

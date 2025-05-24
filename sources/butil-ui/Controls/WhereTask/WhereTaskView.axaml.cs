@@ -16,7 +16,6 @@ public partial class WhereTaskView : UserControl
 
         var viewModel = new Controls.WhereTaskViewModel(new FolderStorageSettingsV2(), BUtil.Core.Localization.Resources.LeftMenu_Where, "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png");
         this.DataContext = viewModel;
-        this.MtpList.DropDownOpened += UpdateListMtpDevices;
     }
 
     public void BrowseCommand(object? sender, RoutedEventArgs args)
@@ -40,11 +39,5 @@ public partial class WhereTaskView : UserControl
         {
             dataContext.FolderFolder = folders[0].TryGetLocalPath() ?? folders[0].Path.ToString();
         }
-    }
-
-    private void UpdateListMtpDevices(object? sender, System.EventArgs e)
-    {
-        var dataContext = DataContext as WhereTaskViewModel ?? throw new NullReferenceException();
-        dataContext.UpdateListMtpDevices();
     }
 }
