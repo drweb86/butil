@@ -1,12 +1,5 @@
-﻿# 2025.03.30
+﻿# 2025.05.24
 (unpublished)
-
-## New Features
-- Android: Theme changing (application will close, on restart theme is applied).
-- Android: SMB/CIFS, MTP were hidden.
-- Android: Links are disabled, because Intent is not available.
-- Android: Schell scripting is disabled since OS not support it.
-- Android: Open in Explorer is hidden for What.
 
 ## Changes
 - Some libraries were updated.

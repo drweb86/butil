@@ -22,12 +22,11 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FluentFTP" Version="52.1.0" />
-    <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="9.0.4" />
-    <PackageReference Include="MSTest.TestFramework" Version="3.8.3" />
+    <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="9.0.5" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Extensions.FileSystemGlobbing">
-      <HintPath>%userprofile%\.nuget\packages\microsoft.extensions.filesystemglobbing\9.0.4\lib\net9.0\Microsoft.Extensions.FileSystemGlobbing.dll</HintPath>
+      <HintPath>%userprofile%\.nuget\packages\microsoft.extensions.filesystemglobbing\9.0.5\lib\net9.0\Microsoft.Extensions.FileSystemGlobbing.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

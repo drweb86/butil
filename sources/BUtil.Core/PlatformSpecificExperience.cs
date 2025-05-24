@@ -16,10 +16,6 @@ public static class PlatformSpecificExperience
         {
             assemblyFile = Files.WindowsExperience;
         }
-        else if (OperatingSystem.IsAndroid())
-        {
-            assemblyFile = Files.AndroidExperience;
-        }
         else if (OperatingSystem.IsLinux())
         {
             assemblyFile = Files.LinuxExperience;

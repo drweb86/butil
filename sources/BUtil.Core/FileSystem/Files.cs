@@ -11,8 +11,6 @@ public static class Files
 #else
         Path.Combine(Directories.BinariesDir, "BUtil.Windows.dll");
 #endif
-    public static readonly string AndroidExperience =
-        Path.Combine(Directories.BinariesDir, "BUtil.Android.dll");
 
     public static readonly string LinuxExperience =
         Path.Combine(Directories.BinariesDir, "BUtil.Linux.dll");
