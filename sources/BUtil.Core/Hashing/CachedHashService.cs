@@ -106,7 +106,7 @@ internal class CachedHashService: ICachedHashService, IDisposable
             if (!File.Exists(file))
                 return;
 
-            using var stream = File.OpenRead(file);
+            using var stream = new FileStream(file, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
             var items = JsonSerializer.Deserialize<List<CachedHash>>(stream) ?? new List<CachedHash>();
             items.ForEach(_cachedHashes.Add);
         }

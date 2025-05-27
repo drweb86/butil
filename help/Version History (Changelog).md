@@ -1,6 +1,9 @@
 ﻿# 2025.05.24
 (unpublished)
 
+## Bug Fixes
+- Hashes cache simultaneous read was crashing application.
+
 ## Changes
 - Some libraries were updated.
 
