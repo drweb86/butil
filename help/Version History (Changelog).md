@@ -6,6 +6,7 @@
 
 ## Changes
 - Some libraries were updated.
+- After task execution Close button returns to main view.
 
 ## Removed Features
 - 7-zip is dropped due to no possibility to use it in Android.

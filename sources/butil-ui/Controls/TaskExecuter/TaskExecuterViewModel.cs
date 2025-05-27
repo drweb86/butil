@@ -339,6 +339,13 @@ public class TaskExecuterViewModel : ObservableObject
         _thread.Start();
     }
 
+#pragma warning disable CA1822 // Mark members as static
+    public void ButtonCloseCommand()
+#pragma warning restore CA1822 // Mark members as static
+    {
+        WindowManager.SwitchView(new TasksViewModel());
+    }
+
     #endregion
 
     private void UpdateListViewItem(Guid taskId, ProcessingStatus status)
