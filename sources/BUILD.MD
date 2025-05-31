@@ -12,11 +12,11 @@
 
 - InnoSetup 6.3.1 (must be installed in default directory);
 - Chinese simplified language
-File: https://github.com/kira-96/Inno-Setup-Chinese-Simplified-Translation/blob/main/ChineseSimplified.isl
+File: https://raw.githubusercontent.com/kira-96/Inno-Setup-Chinese-Simplified-Translation/refs/heads/main/ChineseSimplified.isl
 To be put into
 C:\Program Files (x86)\Inno Setup 6\Languages\ChineseSimplified.isl
 - Arabic language
-File: https://github.com/parmaja/innosetup/blob/master/languages/Arabic.isl
+File: https://github.com/parmaja/innosetup/raw/refs/heads/master/languages/Arabic.isl
 To be put into
 C:\Program Files (x86)\Inno Setup 6\Languages\Arabic.isl
 - Hindi language
