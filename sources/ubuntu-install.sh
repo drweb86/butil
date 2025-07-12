@@ -12,7 +12,7 @@ echo
 echo Installing dependencies
 echo
 sudo apt-get update
-sudo apt-get install -y git dotnet-sdk-9.0 7zip
+sudo apt-get install -y git dotnet-sdk-9.0
 
 echo
 echo Cleaning installation directories
@@ -54,7 +54,7 @@ Version=${version}
 Name=BUtil
 GenericName=Incremental backup, Synchronization, Import media
 Categories=Incremental backup;Synchronization;Import media
-Comment=BUtil creates incremental backups, incremental synchronization and imports multimedia on your PC with deduplication and FTPS, SMB/CIFS transports support for Windows and Linux.
+Comment=BUtil creates incremental backups, incremental synchronization and imports multimedia on your PC with deduplication and FTPS, SMB/CIFS, MTP transports support for Windows and Linux.
 Type=Application
 Terminal=false
 Exec=${binariesInstallationDirectory}/butil-ui.Desktop
