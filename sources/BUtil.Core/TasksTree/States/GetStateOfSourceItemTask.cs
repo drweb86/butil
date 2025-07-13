@@ -1,13 +1,11 @@
 ﻿
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
-using BUtil.Core.Logs;
 using BUtil.Core.Services;
 using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.States;
 using Microsoft.Extensions.FileSystemGlobbing;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -20,7 +18,7 @@ internal class GetStateOfSourceItemTask(TaskEvents events, SourceItemV2 sourceIt
     private readonly CommonServicesIoc _commonServicesIoc = commonServicesIoc;
     private static readonly string[] _includeGroups = ["**/*"];
 
-public SourceItemState? SourceItemState { get; private set; }
+    public SourceItemState? SourceItemState { get; private set; }
 
     public SourceItemV2 SourceItem { get; } = sourceItem;
 

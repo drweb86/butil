@@ -13,7 +13,7 @@ class Controller
     private string _taskName = string.Empty;
     private PowerTask _powerTask = PowerTask.None;
 
-    public Controller ParseCommandLineArguments(string[] args)
+    public Controller ParseCommandLineArguments(string[]? args)
     {
         const string _shutdown = "ShutDown";
         const string _logOff = "LogOff";

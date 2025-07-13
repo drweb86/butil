@@ -112,7 +112,7 @@ internal class CachedHashService: ICachedHashService, IDisposable
         }
         catch (System.Text.Json.JsonException)
         {
-            // eating exception
+            // eating
         }
     }
 
@@ -131,11 +131,18 @@ internal class CachedHashService: ICachedHashService, IDisposable
                 .Where(x => x.Expiration > utcNow)
                 .ToList();
 
-            using var stream = File.Open(file, FileMode.Create);
-            using var writer = new Utf8JsonWriter(stream, new JsonWriterOptions { Indented = true });
-            JsonSerializer.Serialize(writer, storeItems);
-            writer.Flush();
-            stream.Flush();
+            try
+            {
+                using var stream = File.Open(file, FileMode.Create);
+                using var writer = new Utf8JsonWriter(stream, new JsonWriterOptions { Indented = true });
+                JsonSerializer.Serialize(writer, storeItems);
+                writer.Flush();
+                stream.Flush();
+            }
+            catch (IOException)
+            {
+                // eating.
+            }
         }
     }
 

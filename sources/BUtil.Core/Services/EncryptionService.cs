@@ -1,23 +1,53 @@
-﻿using System;
+﻿using BUtil.Core.Misc;
+using System;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
 namespace BUtil.Core.Services;
 
-internal interface IEncryptionService
+public interface IEncryptionService
 {
     void EncryptAes256File(string inputFile, string outputFile, string password);
     void DecryptAes256File(string inputFile, string outputFile, string password);
+
+    string EncryptTextAes256Base64(string text, string password);
+    string DecryptTextAes256Base64(string text, string password);
+
+    void DecryptAes256(Stream inputStream, Stream outputStream, string password);
+    void EncryptAes256(Stream inputStream, Stream outputStream, string password);
+    byte[] EncryptAes256(byte[] data, string password);
+    byte[] DecryptAes256(byte[] data, string password);
 }
 
-internal class EncryptionService: IEncryptionService
+class EncryptionService: IEncryptionService
 {
+    public byte[] EncryptAes256(byte[] data, string password)
+    {
+        using var inputStream = new MemoryStream(data);
+        inputStream.Position = 0;
+        using var outputStream = new MemoryStream();
+        EncryptAes256(inputStream, outputStream, password);
+        return outputStream.ToArray();
+    }
+
+    public string EncryptTextAes256Base64(string text, string password)
+    {
+        using var inputStream = StringHelper.StringToMemoryStream(text);
+        using var outputStream = new MemoryStream();
+        EncryptAes256(inputStream, outputStream, password);
+        return StringHelper.MemoryStreamToBase64(outputStream);
+    }
+
     public void EncryptAes256File(string inputFile, string outputFile, string password)
     {
         using var inputStream = new FileStream(inputFile, FileMode.Open, FileAccess.Read);
         using var outputStream = new FileStream(outputFile, FileMode.Create, FileAccess.Write);
+        EncryptAes256(inputStream, outputStream, password);
+    }
 
+    public void EncryptAes256(Stream inputStream, Stream outputStream, string password)
+    {
         const int version = 1;
         const int keySize = 256;
         const int createKeyIterations = 1000;
@@ -42,11 +72,30 @@ internal class EncryptionService: IEncryptionService
 
         outputStream.Write(keySalt);
         outputStream.Write(iv);
-        using var cryptoStream = new CryptoStream(outputStream, aes.CreateEncryptor(), CryptoStreamMode.Write);
+        using var cryptoStream = new CryptoStream(outputStream, aes.CreateEncryptor(), CryptoStreamMode.Write, true);
         inputStream.CopyTo(cryptoStream);
+        cryptoStream.Flush();
     }
 
-    private void DecryptAes256Stream(Stream inputStream, Stream outputStream, string password)
+
+    public string DecryptTextAes256Base64(string text, string password)
+    {
+        var inputStream = StringHelper.MemoryStreamFromBase64(text);
+        var outputStream = new MemoryStream();
+        DecryptAes256(inputStream, outputStream, password);
+        return StringHelper.StringFromMemoryStream(outputStream);
+    }
+
+    public byte[] DecryptAes256(byte[] data, string password)
+    {
+        var inputStream = new MemoryStream(data);
+        inputStream.Position = 0;
+        var outputStream = new MemoryStream();
+        DecryptAes256(inputStream, outputStream, password);
+        return outputStream.ToArray();
+    }
+
+    public void DecryptAes256(Stream inputStream, Stream outputStream, string password)
     {
         using var binaryReader = new BinaryReader(inputStream, Encoding.ASCII, true);
         var version = binaryReader.ReadInt32();
@@ -68,15 +117,16 @@ internal class EncryptionService: IEncryptionService
         inputStream.ReadExactly(iv);
         aes.IV = iv;
 
-        using var cryptoStream = new CryptoStream(outputStream, aes.CreateDecryptor(), CryptoStreamMode.Write);
+        using var cryptoStream = new CryptoStream(outputStream, aes.CreateDecryptor(), CryptoStreamMode.Write, true);
         inputStream.CopyTo(cryptoStream);
+        cryptoStream.Flush();
     }
 
     public void DecryptAes256File(string inputFile, string outputFile, string password)
     {
         using var fsInput = new FileStream(inputFile, FileMode.Open, FileAccess.Read);
         using var fsOutput = new FileStream(outputFile, FileMode.Create, FileAccess.Write);
-        DecryptAes256Stream(fsInput, fsOutput, password);
+        DecryptAes256(fsInput, fsOutput, password);
     }
 
     private static byte[] CreateRandomBytes(int bytesLength)

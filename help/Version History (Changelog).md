@@ -4,6 +4,9 @@
 ## Changes
 - Some libraries were updated.
 
+## New Features
+- To console tool added possibility to organize with special commands folder transfer from one machine to another with overwriting existing files, sipping unmodified files and AES-256 encryption. The main idea is possibility for file exchange with VM without setupping FTP on Synology.
+
 # 2025.05.31
 
 ## Bug Fixes
