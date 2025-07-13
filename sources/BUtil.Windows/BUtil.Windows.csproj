@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="TaskScheduler" Version="2.12.1" />
+    <PackageReference Include="TaskScheduler" Version="2.12.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <CopyLibraryFiles Include="$(NuGetPackageRoot)taskscheduler\2.12.1\lib\net9.0-windows7.0\*.*" />
+    <CopyLibraryFiles Include="$(NuGetPackageRoot)taskscheduler\2.12.2\lib\net9.0-windows7.0\*.*" />
   </ItemGroup>
   <Target Name="CopyLibraries" AfterTargets="Build">
     <Copy SourceFiles="@(CopyLibraryFiles)" DestinationFolder="$(TargetDir)" />

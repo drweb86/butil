@@ -1,4 +1,10 @@
-﻿# 2025.05.31
+﻿# 2025.07.13
+(unpublished)
+
+## Changes
+- Some libraries were updated.
+
+# 2025.05.31
 
 ## Bug Fixes
 - Hashes cache simultaneous read was crashing application.
