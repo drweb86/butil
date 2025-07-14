@@ -4,6 +4,9 @@ using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.Core;
+using BUtil.Core.TasksTree.FileSender;
+using BUtil.Core.TasksTree.FileSender.Client;
+using BUtil.Core.TasksTree.FileSender.Server;
 using BUtil.Core.TasksTree.IncrementalModel;
 using BUtil.Core.TasksTree.MediaSyncBackupModel;
 using System;
@@ -22,6 +25,10 @@ public static class RootTaskFactory
             return new SynchronizationRootTask(log, events, task, onGetLastMinuteMessage);
         if (task.Model is ImportMediaTaskModelOptionsV2)
             return new ImportMediaRootTask(log, events, task, onGetLastMinuteMessage);
+        if (task.Model is FileSenderServerModelOptionsV2)
+            return new FileSenderServerRootTask(log, events, task, onGetLastMinuteMessage);
+        if (task.Model is FileSenderTransferModelOptionsV2)
+            return new FileSenderClientRootTask(log, events, task, onGetLastMinuteMessage);
         throw new ArgumentOutOfRangeException(nameof(task));
     }
 
@@ -129,6 +136,57 @@ public static class RootTaskFactory
             catch
             {
                 error = Resources.ImportMediaTask_Field_TransformFileName_Validation_Invalid;
+                return false;
+            }
+
+            return true;
+        }
+        else if (options is FileSenderServerModelOptionsV2 fileSenderServerOptions)
+        {
+            var storageError = StorageFactory.Test(log, new FolderStorageSettingsV2 { DestinationFolder = fileSenderServerOptions.Folder }, writeMode);
+            if (storageError != null)
+            {
+                error = storageError;
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(fileSenderServerOptions.Password))
+            {
+                error = Resources.Password_Field_Validation_NotSpecified;
+                return false;
+            }
+
+            if (fileSenderServerOptions.Port < 1)
+            {
+                error = Resources.Server_Field_Port_Validation;
+                return false;
+            }
+
+            return true;
+        }
+        else if (options is FileSenderTransferModelOptionsV2 fileSenderTransferOptions)
+        {
+            var storageError = StorageFactory.Test(log, new FolderStorageSettingsV2 { DestinationFolder = fileSenderTransferOptions.Folder }, writeMode);
+            if (storageError != null)
+            {
+                error = storageError;
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(fileSenderTransferOptions.Password))
+            {
+                error = Resources.Password_Field_Validation_NotSpecified;
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(fileSenderTransferOptions.ServerIp))
+            {
+                error = Resources.Server_Field_Address_Validation;
+                return false;
+            }
+            if (fileSenderTransferOptions.ServerPort < 1)
+            {
+                error = Resources.Server_Field_Port_Validation;
                 return false;
             }
 

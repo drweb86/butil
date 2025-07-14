@@ -21,7 +21,7 @@ Files are overwrited.
 
 First start server on machine that should receive the folder.
 ```
-butilc receive "my incoming folder" 999 "my password"
+butilc serve "my incoming folder" 999 "my password"
 ```
 Where 
 - "my incoming folder" is your folder for receiving files.

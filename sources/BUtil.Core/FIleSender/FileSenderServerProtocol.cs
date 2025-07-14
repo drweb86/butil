@@ -4,79 +4,67 @@ using BUtil.Core.State;
 using System;
 using System.IO;
 using System.Net.Sockets;
+using System.Security;
 using System.Text;
 using System.Text.Json;
 
 namespace BUtil.Core.FIleSender;
-public interface IFileSenderClientProtocol
+public interface IFileSenderServerProtocol
 {
-    void WriteCommandForServer(BinaryWriter writer, FileTransferProtocolServerCommand command);
-    FileTransferProtocolClientCommand ReadCommandForClient(NetworkStream stream);
-    void WriteFileHeader(BinaryWriter writer, FileState fileState);
-    void WriteFile(BinaryWriter writer, FileState fileState);
-    void WriteProtocolVersion(BinaryWriter writer);
+    FileTransferProtocolServerCommand ReadCommandForServer(BinaryReader reader);
+    void WriteCommandForClient(NetworkStream stream, FileTransferProtocolClientCommand command);
+    FileState ReadFileHeader(BinaryReader reader);
+    void ReadFile(BinaryReader reader, FileState fileState);
+    void ReadCheckProtocolVersion(BinaryReader reader);
 }
 
-internal class FileSenderProtocol: IFileSenderClientProtocol
+internal class FileSenderServerProtocol : IFileSenderServerProtocol
 {
     private const Int32 _version = 1;
-    private readonly FileSenderClientIoc _ioc;
+    private readonly FileSenderServerIoc _ioc;
     private readonly string _folder;
     private readonly string _password;
 
-    public FileSenderProtocol(FileSenderClientIoc ioc, string folder, string password)
+    public FileSenderServerProtocol(FileSenderServerIoc ioc, string folder, string password)
     {
         _ioc = ioc;
         _folder = folder;
         _password = password;
     }
 
-    public void WriteProtocolVersion(BinaryWriter writer)
+    public void ReadCheckProtocolVersion(BinaryReader reader)
     {
-        writer.Write(_version);
+        var protocolVersion = reader.ReadInt32();
+        if (_version != protocolVersion)
+            throw new NotSupportedException("Protocol versions of server and client part are mismatching. Install same version of software.");
     }
 
-    public void WriteCommandForServer(BinaryWriter writer, FileTransferProtocolServerCommand command)
+    public void WriteCommandForClient(NetworkStream stream, FileTransferProtocolClientCommand command)
     {
+        using var writer = new BinaryWriter(stream, Encoding.UTF8, true);
         writer.Write((Int32)command);
         writer.Flush();
         writer.BaseStream.Flush();
     }
 
-    public FileTransferProtocolClientCommand ReadCommandForClient(NetworkStream stream)
+    public FileTransferProtocolServerCommand ReadCommandForServer(BinaryReader reader)
     {
-        using var reader = new BinaryReader(stream, Encoding.UTF8, true);
-        return (FileTransferProtocolClientCommand)reader.ReadInt32();
+        return (FileTransferProtocolServerCommand)reader.ReadInt32();
     }
 
-    public void WriteFileHeader(BinaryWriter writer, FileState fileState)
+    public FileState ReadFileHeader(BinaryReader reader)
     {
-        string relativeFileName = SourceItemHelper.GetSourceItemRelativeFileName(_folder, fileState);
-        var fileStateClone = new FileState(fileState);
-        fileStateClone.FileName = relativeFileName;
-        var json = JsonSerializer.Serialize(fileStateClone);
-        using var inputStream = StringHelper.StringToMemoryStream(json);
+        long length = reader.ReadInt64();
+        using var inputStream = new MemoryStream(reader.ReadBytes((int)length));
         using var outputStream = new MemoryStream();
-        _ioc.Common.EncryptionService.EncryptAes256(inputStream, outputStream, _password);
-        writer.Write(outputStream.Length);
-        writer.Write(outputStream.ToArray());
-        writer.Flush();
-        writer.BaseStream.Flush();
-    }
-
-    public void WriteFile(BinaryWriter writer, FileState fileState)
-    {
-        using var tempFolder = new TempFolder();
-        var encryptedFile = Path.Combine(tempFolder.Folder, "file");
-        _ioc.Common.EncryptionService.EncryptAes256File(fileState.FileName, encryptedFile, _password);
-        long fileSize = new FileInfo(encryptedFile).Length;
-        using var inputStream = System.IO.File.OpenRead(encryptedFile);
-
-        writer.Write(fileSize);
-        writer.Flush();
-        writer.BaseStream.Flush();
-
-        inputStream.CopyTo(writer.BaseStream);
+        _ioc.Common.EncryptionService.DecryptAes256(inputStream, outputStream, _password);
+        outputStream.Position = 0;
+        var json = StringHelper.StringFromMemoryStream(outputStream);
+        var fileState = JsonSerializer.Deserialize<FileState>(json)!;
+        if (fileState.FileName.Contains("..") || Path.IsPathRooted(fileState.FileName))
+            throw new SecurityException("No relative dirs in state! No full paths in state.");
+        fileState.FileName = new FileInfo(Path.Combine(_folder, fileState.FileName)).FullName;
+        return fileState;
     }
 
     public void ReadFile(BinaryReader reader, FileState fileState)
