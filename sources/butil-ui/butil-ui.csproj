@@ -64,6 +64,9 @@
     <Compile Update="Controls\EditSynchronizationTask\EditSynchronizationTaskViewView.axaml.cs">
       <DependentUpon>EditSynchronizationTaskViewView.axaml</DependentUpon>
     </Compile>
+    <Compile Update="Controls\FolderAndPortSection\FolderAndPortSectionView.axaml.cs">
+      <DependentUpon>FolderAndPortSectionView.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Controls\SynchronizationWhat\SynchronizationWhatView.axaml.cs">
       <DependentUpon>SynchronizationWhatView.axaml</DependentUpon>
     </Compile>

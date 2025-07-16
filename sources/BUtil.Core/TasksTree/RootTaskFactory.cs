@@ -143,16 +143,16 @@ public static class RootTaskFactory
         }
         else if (options is FileSenderServerModelOptionsV2 fileSenderServerOptions)
         {
+            if (string.IsNullOrWhiteSpace(fileSenderServerOptions.Password))
+            {
+                error = Resources.Password_Field_Validation_NotSpecified;
+                return false;
+            }
+
             var storageError = StorageFactory.Test(log, new FolderStorageSettingsV2 { DestinationFolder = fileSenderServerOptions.Folder }, writeMode);
             if (storageError != null)
             {
                 error = storageError;
-                return false;
-            }
-
-            if (string.IsNullOrWhiteSpace(fileSenderServerOptions.Password))
-            {
-                error = Resources.Password_Field_Validation_NotSpecified;
                 return false;
             }
 
@@ -166,16 +166,16 @@ public static class RootTaskFactory
         }
         else if (options is FileSenderClientModelOptionsV2 fileSenderTransferOptions)
         {
+            if (string.IsNullOrWhiteSpace(fileSenderTransferOptions.Password))
+            {
+                error = Resources.Password_Field_Validation_NotSpecified;
+                return false;
+            }
+
             var storageError = StorageFactory.Test(log, new FolderStorageSettingsV2 { DestinationFolder = fileSenderTransferOptions.Folder }, writeMode);
             if (storageError != null)
             {
                 error = storageError;
-                return false;
-            }
-
-            if (string.IsNullOrWhiteSpace(fileSenderTransferOptions.Password))
-            {
-                error = Resources.Password_Field_Validation_NotSpecified;
                 return false;
             }
 

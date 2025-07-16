@@ -20,23 +20,24 @@ public class EditFileSenderServerTaskViewModel : ViewModelBase
         IsNew = isNew;
 
         var storeService = new TaskV2StoreService();
-        var task = isNew ? new TaskV2() : storeService.Load(taskName) ?? new TaskV2();
-        NameTaskViewModel = new NameTaskViewModel(isNew, Resources.IncrementalBackup_Help, task.Name);
-        var model = (IncrementalBackupModelOptionsV2)task.Model;
+        var task = isNew ? new TaskV2() { Model = new FileSenderServerModelOptionsV2 { Permissions = FileSenderServerPermissions.ReadWrite, Port = 999 } } : storeService.Load(taskName) ?? new TaskV2();
+        NameTaskViewModel = new NameTaskViewModel(isNew, "File Server allows File Server Client to do various operations with folder.", task.Name);
+        var model = (FileSenderServerModelOptionsV2)task.Model;
         EncryptionTaskViewModel = new EncryptionTaskViewModel(model.Password, isNew, !isNew);
 
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
         WhenTaskViewModel = new WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule?.GetSchedule(taskName) ?? new ScheduleInfo());
-        WhereTaskViewModel = new WhereTaskViewModel(model.To, Resources.LeftMenu_Where, "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png");
-        WhatTaskViewModel = new WhatTaskViewModel(model.Items, model.FileExcludePatterns);
+        FolderAndPortSectionViewModel = new FolderAndPortSectionViewModel(model.Folder, model.Port);
+        // WhatTaskViewModel = new WhatTaskViewModel(model.Items, model.FileExcludePatterns);
     }
 
     public bool IsNew { get; set; }
     public NameTaskViewModel NameTaskViewModel { get; }
     public EncryptionTaskViewModel EncryptionTaskViewModel { get; }
     public WhenTaskViewModel WhenTaskViewModel { get; }
-    public WhereTaskViewModel WhereTaskViewModel { get; }
-    public WhatTaskViewModel WhatTaskViewModel { get; }
+    
+    public FolderAndPortSectionViewModel FolderAndPortSectionViewModel { get; }
+    //public WhatTaskViewModel WhatTaskViewModel { get; }
 
     #region Commands
 
@@ -52,13 +53,11 @@ public class EditFileSenderServerTaskViewModel : ViewModelBase
         var newTask = new TaskV2
         {
             Name = NameTaskViewModel.Name,
-            Model = new IncrementalBackupModelOptionsV2
-            {
-                Password = EncryptionTaskViewModel.Password,
-                To = WhereTaskViewModel.GetStorageSettings(),
-                FileExcludePatterns = WhatTaskViewModel.GetListFileExcludePatterns(),
-                Items = WhatTaskViewModel.GetListSourceItemV2s(),
-            }
+            Model = new FileSenderServerModelOptionsV2(
+                FolderAndPortSectionViewModel.Folder,
+                FileSenderServerPermissions.ReadWrite,
+                EncryptionTaskViewModel.Password,
+                FolderAndPortSectionViewModel.Port)
         };
 
         if (!TaskV2Validator.TryValidate(newTask, true, out var error))
