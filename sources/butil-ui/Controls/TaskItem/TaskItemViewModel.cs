@@ -54,6 +54,10 @@ public class TaskItemViewModel(
             WindowManager.SwitchView(new EditSynchronizationTaskViewModel(task.Name, false));
         else if (task.Model is ImportMediaTaskModelOptionsV2)
             WindowManager.SwitchView(new EditMediaTaskViewModel(task.Name, false));
+        else if (task.Model is FileSenderServerModelOptionsV2)
+            WindowManager.SwitchView(new EditFileSenderServerTaskViewModel(task.Name, false));
+        else if (task.Model is FileSenderClientModelOptionsV2)
+            WindowManager.SwitchView(new EditFileSenderClientTaskViewModel(task.Name, false));
     }
 
     public void TaskRestoreCommand()

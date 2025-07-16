@@ -8,6 +8,7 @@ using System.Net.Sockets;
 using System.Net;
 using BUtil.Core.ConfigurationFileModels.V2;
 using System.Net.NetworkInformation;
+using System.Text;
 
 namespace BUtil.Core.TasksTree.FileSender;
 
@@ -37,7 +38,7 @@ internal class FileSenderServerStartTask : BuTaskV2
     {
         var ips = NetworkHelper.GetMyLocalIps(listener);
 
-        LogDebug("You can connect to server via following IPs:");
+        var helpMessage = new StringBuilder("You can connect to server via following IPs:\n");
         var priorityItems = new NetworkInterfaceType[] { NetworkInterfaceType.Wireless80211 };
         var itemsOrdered = ips
             .Where(x => x.Addresses.Any())
@@ -48,9 +49,12 @@ internal class FileSenderServerStartTask : BuTaskV2
 
         foreach (var item in itemsOrdered)
         {
-            LogDebug($"- {item.Name} ({item.Description}): {string.Join(',', item.Addresses.Select(FormatAddress))}");
+            helpMessage.AppendLine($"- {item.Name} ({item.Description}): {string.Join(',', item.Addresses.Select(FormatAddress))}");
         }
-        LogDebug("\n");
+        
+        var fakeTask = new FunctionBuTaskV2<bool>(_ioc.Common.Log, Events, helpMessage.ToString(), () => true);
+        Events.DuringExecutionTasksAdded(Id, [fakeTask]);
+        fakeTask.Execute();
     }
 
     private static string FormatAddress(IPAddress address)

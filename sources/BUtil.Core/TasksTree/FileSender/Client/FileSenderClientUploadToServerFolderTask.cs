@@ -11,10 +11,10 @@ namespace BUtil.Core.TasksTree.FileSender.Client;
 internal class FileSenderClientUploadToServerFolderTask : SequentialBuTaskV2
 {
     private readonly FileSenderClientIoc _ioc;
-    private readonly FileSenderTransferModelOptionsV2 _options;
+    private readonly FileSenderClientModelOptionsV2 _options;
     private readonly Func<SourceItemState> _getSourceItemState;
 
-    public FileSenderClientUploadToServerFolderTask(FileSenderClientIoc ioc, TaskEvents taskEvents, FileSenderTransferModelOptionsV2 options,
+    public FileSenderClientUploadToServerFolderTask(FileSenderClientIoc ioc, TaskEvents taskEvents, FileSenderClientModelOptionsV2 options,
         Func<SourceItemState> getSourceItemState)
         : base(ioc.Common.Log, taskEvents, "Upload folder to server")
     {

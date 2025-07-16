@@ -90,6 +90,20 @@ public partial class MainWindowViewModel : ViewModelBase
     }
 
 #pragma warning disable CA1822 // Mark members as static
+    public void FileSenderServerCreateCommand()
+#pragma warning restore CA1822 // Mark members as static
+    {
+        WindowManager.SwitchView(new EditFileSenderServerTaskViewModel(string.Empty, true));
+    }
+
+#pragma warning disable CA1822 // Mark members as static
+    public void FileSenderClientCreateCommand()
+#pragma warning restore CA1822 // Mark members as static
+    {
+        WindowManager.SwitchView(new EditFileSenderClientTaskViewModel(string.Empty, true));
+    }
+
+#pragma warning disable CA1822 // Mark members as static
     public void SynchronizationTaskCreateCommand()
 #pragma warning restore CA1822 // Mark members as static
     {
@@ -107,6 +121,10 @@ public partial class MainWindowViewModel : ViewModelBase
     public static string ImportMediaTask_Create => Resources.ImportMediaTask_Create;
     public static string IncrementalBackupTask_Create => Resources.IncrementalBackupTask_Create;
     public static string SynchronizationTask_Create => Resources.SynchronizationTask_Create;
+
+    public static string FileSenderServerTask_Create => "File Server";
+    public static string FileSenderClientTask_Create => "Upload Folder to File Server";
+
 
     #endregion
 

@@ -27,7 +27,7 @@ public static class RootTaskFactory
             return new ImportMediaRootTask(log, events, task, onGetLastMinuteMessage);
         if (task.Model is FileSenderServerModelOptionsV2)
             return new FileSenderServerRootTask(log, events, task, onGetLastMinuteMessage);
-        if (task.Model is FileSenderTransferModelOptionsV2)
+        if (task.Model is FileSenderClientModelOptionsV2)
             return new FileSenderClientRootTask(log, events, task, onGetLastMinuteMessage);
         throw new ArgumentOutOfRangeException(nameof(task));
     }
@@ -164,7 +164,7 @@ public static class RootTaskFactory
 
             return true;
         }
-        else if (options is FileSenderTransferModelOptionsV2 fileSenderTransferOptions)
+        else if (options is FileSenderClientModelOptionsV2 fileSenderTransferOptions)
         {
             var storageError = StorageFactory.Test(log, new FolderStorageSettingsV2 { DestinationFolder = fileSenderTransferOptions.Folder }, writeMode);
             if (storageError != null)

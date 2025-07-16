@@ -11,12 +11,12 @@ internal class FileSenderClientRootTask : SequentialBuTask
 {
     private readonly FileSenderClientIoc _ioc;
     private readonly GetStateOfSourceItemTask _getStateOfSourceItemTask;
-    private readonly FileSenderTransferModelOptionsV2 _options;
+    private readonly FileSenderClientModelOptionsV2 _options;
 
     public FileSenderClientRootTask(ILog log, TaskEvents taskEvents, TaskV2 backupTask, Action<string?> onGetLastMinuteMessage)
         : base(log, taskEvents, "File Sender Transfer", null)
     {
-        _options = (FileSenderTransferModelOptionsV2)backupTask.Model;
+        _options = (FileSenderClientModelOptionsV2)backupTask.Model;
         _ioc = new FileSenderClientIoc(log, _options.Folder, _options.Password, onGetLastMinuteMessage);
 
         var sourceItem = new SourceItemV2 { IsFolder = true, Target = _options.Folder };

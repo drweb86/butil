@@ -10,10 +10,10 @@ namespace BUtil.Core.TasksTree.FileSender.Client;
 internal class FileSenderClientConnectTask : BuTaskV2
 {
     private readonly FileSenderClientIoc _ioc;
-    private readonly FileSenderTransferModelOptionsV2 _options;
+    private readonly FileSenderClientModelOptionsV2 _options;
 
-    public FileSenderClientConnectTask(FileSenderClientIoc ioc, TaskEvents taskEvents, FileSenderTransferModelOptionsV2 options)
-        : base(ioc.Common.Log, taskEvents, "Connect to server")
+    public FileSenderClientConnectTask(FileSenderClientIoc ioc, TaskEvents taskEvents, FileSenderClientModelOptionsV2 options)
+        : base(ioc.Common.Log, taskEvents, $"Connect to server IP: {options.ServerIp}, port: {options.ServerPort}")
     {
         _ioc = ioc;
         _options = options;
