@@ -172,6 +172,12 @@ public static class RootTaskFactory
                 return false;
             }
 
+            if (string.IsNullOrWhiteSpace(fileSenderTransferOptions.ServerIp))
+            { 
+                error = Resources.Server_Field_Address_Validation;
+                return false;
+            }
+
             var storageError = StorageFactory.Test(log, new FolderStorageSettingsV2 { DestinationFolder = fileSenderTransferOptions.Folder }, writeMode);
             if (storageError != null)
             {

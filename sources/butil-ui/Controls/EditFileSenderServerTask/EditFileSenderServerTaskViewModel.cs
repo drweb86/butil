@@ -23,12 +23,11 @@ public class EditFileSenderServerTaskViewModel : ViewModelBase
         var task = isNew ? new TaskV2() { Model = new FileSenderServerModelOptionsV2 { Permissions = FileSenderServerPermissions.ReadWrite, Port = 999 } } : storeService.Load(taskName) ?? new TaskV2();
         NameTaskViewModel = new NameTaskViewModel(isNew, "File Server allows File Server Client to do various operations with folder.", task.Name);
         var model = (FileSenderServerModelOptionsV2)task.Model;
-        EncryptionTaskViewModel = new EncryptionTaskViewModel(model.Password, isNew, !isNew);
+        EncryptionTaskViewModel = new EncryptionTaskViewModel(model.Password, isNew, false);
 
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
         WhenTaskViewModel = new WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule?.GetSchedule(taskName) ?? new ScheduleInfo());
         FolderAndPortSectionViewModel = new FolderAndPortSectionViewModel(model.Folder, model.Port);
-        // WhatTaskViewModel = new WhatTaskViewModel(model.Items, model.FileExcludePatterns);
     }
 
     public bool IsNew { get; set; }
