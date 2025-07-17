@@ -20,9 +20,9 @@ public class EditFileSenderClientTaskViewModel : ViewModelBase
         IsNew = isNew;
 
         var storeService = new TaskV2StoreService();
-        var task = isNew ? new TaskV2() { Model = new FileSenderClientModelOptionsV2(string.Empty, FileSenderDirection.ToServer, "", 999, string.Empty) } : storeService.Load(taskName) ?? new TaskV2();
-        NameTaskViewModel = new NameTaskViewModel(isNew, "Uploads folder to File Server. Data transfer is protected with AES-256. If destination file already exists on server (and matches hash and size), file transfer is skipped. If file exists on server side and not exists on client side, file is not deleted on server side. If file exists on server side and on client side and different by content, file is overwrited on server.", task.Name);
-        var model = (FileSenderClientModelOptionsV2)task.Model;
+        var task = isNew ? new TaskV2() { Model = new BUtilClientModelOptionsV2(string.Empty, FileSenderDirection.ToServer, "", 999, string.Empty) } : storeService.Load(taskName) ?? new TaskV2();
+        NameTaskViewModel = new NameTaskViewModel(isNew, Resources.BUtilServerClientTask_Help, task.Name);
+        var model = (BUtilClientModelOptionsV2)task.Model;
         EncryptionTaskViewModel = new EncryptionTaskViewModel(model.Password, isNew, false);
 
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
@@ -53,7 +53,7 @@ public class EditFileSenderClientTaskViewModel : ViewModelBase
         var newTask = new TaskV2
         {
             Name = NameTaskViewModel.Name,
-            Model = new FileSenderClientModelOptionsV2(FolderSectionViewModel.Folder, FileSenderDirection.ToServer, WhereFileSenderTaskViewModel.IP!, WhereFileSenderTaskViewModel.Port, EncryptionTaskViewModel.Password)
+            Model = new BUtilClientModelOptionsV2(FolderSectionViewModel.Folder, FileSenderDirection.ToServer, WhereFileSenderTaskViewModel.IP!, WhereFileSenderTaskViewModel.Port, EncryptionTaskViewModel.Password)
         };
 
         if (!TaskV2Validator.TryValidate(newTask, true, out var error))

@@ -3,10 +3,9 @@ using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Storages;
+using BUtil.Core.TasksTree.BUtilServer.Client;
+using BUtil.Core.TasksTree.BUtilServer.Server;
 using BUtil.Core.TasksTree.Core;
-using BUtil.Core.TasksTree.FileSender;
-using BUtil.Core.TasksTree.FileSender.Client;
-using BUtil.Core.TasksTree.FileSender.Server;
 using BUtil.Core.TasksTree.IncrementalModel;
 using BUtil.Core.TasksTree.MediaSyncBackupModel;
 using System;
@@ -25,10 +24,10 @@ public static class RootTaskFactory
             return new SynchronizationRootTask(log, events, task, onGetLastMinuteMessage);
         if (task.Model is ImportMediaTaskModelOptionsV2)
             return new ImportMediaRootTask(log, events, task, onGetLastMinuteMessage);
-        if (task.Model is FileSenderServerModelOptionsV2)
-            return new FileSenderServerRootTask(log, events, task, onGetLastMinuteMessage);
-        if (task.Model is FileSenderClientModelOptionsV2)
-            return new FileSenderClientRootTask(log, events, task, onGetLastMinuteMessage);
+        if (task.Model is BUtilServerModelOptionsV2)
+            return new BUtilServerRootTask(log, events, task, onGetLastMinuteMessage);
+        if (task.Model is BUtilClientModelOptionsV2)
+            return new BUtilClientRootTask(log, events, task, onGetLastMinuteMessage);
         throw new ArgumentOutOfRangeException(nameof(task));
     }
 
@@ -141,7 +140,7 @@ public static class RootTaskFactory
 
             return true;
         }
-        else if (options is FileSenderServerModelOptionsV2 fileSenderServerOptions)
+        else if (options is BUtilServerModelOptionsV2 fileSenderServerOptions)
         {
             if (string.IsNullOrWhiteSpace(fileSenderServerOptions.Password))
             {
@@ -164,7 +163,7 @@ public static class RootTaskFactory
 
             return true;
         }
-        else if (options is FileSenderClientModelOptionsV2 fileSenderTransferOptions)
+        else if (options is BUtilClientModelOptionsV2 fileSenderTransferOptions)
         {
             if (string.IsNullOrWhiteSpace(fileSenderTransferOptions.Password))
             {

@@ -1,6 +1,7 @@
 ﻿using BUtil.Core.FileSystem;
 using BUtil.Core.Misc;
 using BUtil.Core.State;
+using BUtil.Core.TasksTree.BUtilServer.Server;
 using System;
 using System.IO;
 using System.Net.Sockets;
@@ -21,14 +22,12 @@ public interface IFileSenderServerProtocol
 internal class FileSenderServerProtocol : IFileSenderServerProtocol
 {
     private const Int32 _version = 1;
-    private readonly FileSenderServerIoc _ioc;
-    private readonly string _folder;
+    private readonly BUtilServerIoc _ioc;
     private readonly string _password;
 
-    public FileSenderServerProtocol(FileSenderServerIoc ioc, string folder, string password)
+    public FileSenderServerProtocol(BUtilServerIoc ioc, string password)
     {
         _ioc = ioc;
-        _folder = folder;
         _password = password;
     }
 
@@ -63,7 +62,6 @@ internal class FileSenderServerProtocol : IFileSenderServerProtocol
         var fileState = JsonSerializer.Deserialize<FileState>(json)!;
         if (fileState.FileName.Contains("..") || Path.IsPathRooted(fileState.FileName))
             throw new SecurityException("No relative dirs in state! No full paths in state.");
-        fileState.FileName = new FileInfo(Path.Combine(_folder, fileState.FileName)).FullName;
         return fileState;
     }
 

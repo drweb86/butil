@@ -1,12 +1,12 @@
 ﻿namespace BUtil.Core.ConfigurationFileModels.V2;
-public class FileSenderClientModelOptionsV2 : ITaskModelOptionsV2
+public class BUtilClientModelOptionsV2 : ITaskModelOptionsV2
 {
-    public FileSenderClientModelOptionsV2() // deserialization
+    public BUtilClientModelOptionsV2() // deserialization
     {
         
     }
 
-    public FileSenderClientModelOptionsV2(string folder, FileSenderDirection direction, string serverIp, int serverPort, string password)
+    public BUtilClientModelOptionsV2(string folder, FileSenderDirection direction, string serverIp, int serverPort, string password)
     {
         Folder = folder;
         Direction = direction;

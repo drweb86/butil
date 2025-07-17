@@ -1,13 +1,13 @@
 ﻿namespace BUtil.Core.ConfigurationFileModels.V2;
 
-public class FileSenderServerModelOptionsV2 : ITaskModelOptionsV2
+public class BUtilServerModelOptionsV2 : ITaskModelOptionsV2
 {
-    public FileSenderServerModelOptionsV2() // deserialization
+    public BUtilServerModelOptionsV2() // deserialization
     {
 
     }
 
-    public FileSenderServerModelOptionsV2(string folder, FileSenderServerPermissions permissions, string password, int port)
+    public BUtilServerModelOptionsV2(string folder, FileSenderServerPermissions permissions, string password, int port)
     {
         Folder = folder;
         Permissions = permissions;

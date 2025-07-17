@@ -694,4 +694,31 @@ See detailed description in the following link.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>User is not specified.</value>
   </data>
+  <data name="BUtilServerTask_Help" xml:space="preserve">
+    <value>File Server allows to do file operations with its folder with AES-256 P2P transport encryption.</value>
+  </data>
+  <data name="BUtilServerStartTask_Name" xml:space="preserve">
+    <value>Start server at {0} port</value>
+  </data>
+  <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
+    <value>Waiting for client connection...</value>
+  </data>
+  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
+    <value>Client "{0}"</value>
+  </data>
+  <data name="File_Uploading" xml:space="preserve">
+    <value>Uploading "{0}"</value>
+  </data>
+  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
+    <value>Connect to server with IP {0} and port {1}</value>
+  </data>
+  <data name="BUtilServerClientTask_Help" xml:space="preserve">
+    <value>Uploads folder to File Server with overwriting of existing files different by hash or size. Data transfer is protected with AES-256. If file exists on server and not exists locally, file is not deleted on server side.</value>
+  </data>
+  <data name="BUtilServerTask_Create" xml:space="preserve">
+    <value>File Server</value>
+  </data>
+  <data name="BUtilServerClientTask_Create" xml:space="preserve">
+    <value>Upload Folder to File Server</value>
+  </data>
 </root>

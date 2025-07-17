@@ -228,6 +228,78 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Connect to server with IP {0} and port {1}.
+        /// </summary>
+        public static string BUtilClientConnectTask_Title {
+            get {
+                return ResourceManager.GetString("BUtilClientConnectTask_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload Folder to File Server.
+        /// </summary>
+        public static string BUtilServerClientTask_Create {
+            get {
+                return ResourceManager.GetString("BUtilServerClientTask_Create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uploads folder to File Server with overwriting of existing files different by hash or size. Data transfer is protected with AES-256. If file exists on server and not exists locally, file is not deleted on server side..
+        /// </summary>
+        public static string BUtilServerClientTask_Help {
+            get {
+                return ResourceManager.GetString("BUtilServerClientTask_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Client &quot;{0}&quot;.
+        /// </summary>
+        public static string BUtilServerProcessClientTask_Title {
+            get {
+                return ResourceManager.GetString("BUtilServerProcessClientTask_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start server at {0} port.
+        /// </summary>
+        public static string BUtilServerStartTask_Name {
+            get {
+                return ResourceManager.GetString("BUtilServerStartTask_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File Server.
+        /// </summary>
+        public static string BUtilServerTask_Create {
+            get {
+                return ResourceManager.GetString("BUtilServerTask_Create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File Server allows to do file operations with its folder with AES-256 P2P transport encryption..
+        /// </summary>
+        public static string BUtilServerTask_Help {
+            get {
+                return ResourceManager.GetString("BUtilServerTask_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Waiting for client connection....
+        /// </summary>
+        public static string BUtilServerWaitForClientTask_Title {
+            get {
+                return ResourceManager.GetString("BUtilServerWaitForClientTask_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Button_Cancel {
@@ -694,6 +766,15 @@ namespace BUtil.Core.Localization {
         public static string File_Saving {
             get {
                 return ResourceManager.GetString("File_Saving", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uploading &quot;{0}&quot;.
+        /// </summary>
+        public static string File_Uploading {
+            get {
+                return ResourceManager.GetString("File_Uploading", resourceCulture);
             }
         }
         

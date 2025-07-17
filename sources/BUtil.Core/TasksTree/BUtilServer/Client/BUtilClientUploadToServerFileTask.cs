@@ -1,20 +1,21 @@
 ﻿using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
 using BUtil.Core.FIleSender;
+using BUtil.Core.Localization;
 using BUtil.Core.Misc;
 using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;
 
-namespace BUtil.Core.TasksTree.FileSender.Client;
+namespace BUtil.Core.TasksTree.BUtilServer.Client;
 
-internal class FileSenderClientUploadToServerFileTask : BuTaskV2
+internal class BUtilClientUploadToServerFileTask : BuTaskV2
 {
-    private readonly FileSenderClientIoc _ioc;
-    private readonly FileSenderClientModelOptionsV2 _options;
+    private readonly BUtilClientIoc _ioc;
+    private readonly BUtilClientModelOptionsV2 _options;
     private readonly FileState _fileState;
 
-    public FileSenderClientUploadToServerFileTask(FileSenderClientIoc ioc, TaskEvents taskEvents, FileSenderClientModelOptionsV2 options, FileState fileState)
-        : base(ioc.Common.Log, taskEvents, $"Upload {SourceItemHelper.GetSourceItemRelativeFileName(options.Folder, fileState)}")
+    public BUtilClientUploadToServerFileTask(BUtilClientIoc ioc, TaskEvents taskEvents, BUtilClientModelOptionsV2 options, FileState fileState)
+        : base(ioc.Common.Log, taskEvents, string.Format(Resources.File_Uploading, SourceItemHelper.GetSourceItemRelativeFileName(options.Folder, fileState)))
     {
         _ioc = ioc;
         _options = options;

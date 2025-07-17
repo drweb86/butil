@@ -20,9 +20,9 @@ public class EditFileSenderServerTaskViewModel : ViewModelBase
         IsNew = isNew;
 
         var storeService = new TaskV2StoreService();
-        var task = isNew ? new TaskV2() { Model = new FileSenderServerModelOptionsV2 { Permissions = FileSenderServerPermissions.ReadWrite, Port = 999 } } : storeService.Load(taskName) ?? new TaskV2();
-        NameTaskViewModel = new NameTaskViewModel(isNew, "File Server allows File Server Client to do various operations with folder.", task.Name);
-        var model = (FileSenderServerModelOptionsV2)task.Model;
+        var task = isNew ? new TaskV2() { Model = new BUtilServerModelOptionsV2 { Permissions = FileSenderServerPermissions.ReadWrite, Port = 999 } } : storeService.Load(taskName) ?? new TaskV2();
+        NameTaskViewModel = new NameTaskViewModel(isNew, Resources.BUtilServerTask_Help, task.Name);
+        var model = (BUtilServerModelOptionsV2)task.Model;
         EncryptionTaskViewModel = new EncryptionTaskViewModel(model.Password, isNew, false);
 
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
@@ -52,7 +52,7 @@ public class EditFileSenderServerTaskViewModel : ViewModelBase
         var newTask = new TaskV2
         {
             Name = NameTaskViewModel.Name,
-            Model = new FileSenderServerModelOptionsV2(
+            Model = new BUtilServerModelOptionsV2(
                 FolderAndPortSectionViewModel.Folder,
                 FileSenderServerPermissions.ReadWrite,
                 EncryptionTaskViewModel.Password,

@@ -1,6 +1,7 @@
 ﻿using BUtil.Core.FileSystem;
 using BUtil.Core.Misc;
 using BUtil.Core.State;
+using BUtil.Core.TasksTree.BUtilServer.Client;
 using System;
 using System.IO;
 using System.Net.Sockets;
@@ -20,11 +21,11 @@ public interface IFileSenderClientProtocol
 internal class FileSenderProtocol: IFileSenderClientProtocol
 {
     private const Int32 _version = 1;
-    private readonly FileSenderClientIoc _ioc;
+    private readonly BUtilClientIoc _ioc;
     private readonly string _folder;
     private readonly string _password;
 
-    public FileSenderProtocol(FileSenderClientIoc ioc, string folder, string password)
+    public FileSenderProtocol(BUtilClientIoc ioc, string folder, string password)
     {
         _ioc = ioc;
         _folder = folder;

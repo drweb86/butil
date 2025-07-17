@@ -122,8 +122,8 @@ public partial class MainWindowViewModel : ViewModelBase
     public static string IncrementalBackupTask_Create => Resources.IncrementalBackupTask_Create;
     public static string SynchronizationTask_Create => Resources.SynchronizationTask_Create;
 
-    public static string FileSenderServerTask_Create => "File Server";
-    public static string FileSenderClientTask_Create => "Upload Folder to File Server";
+    public static string FileSenderServerTask_Create => Resources.BUtilServerTask_Create;
+    public static string FileSenderClientTask_Create => Resources.BUtilServerClientTask_Create;
 
 
     #endregion

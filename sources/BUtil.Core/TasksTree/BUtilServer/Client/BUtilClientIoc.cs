@@ -1,15 +1,16 @@
-﻿using BUtil.Core.Logs;
+﻿using BUtil.Core.FIleSender;
+using BUtil.Core.Logs;
 using BUtil.Core.Services;
 using System;
 using System.IO;
 using System.Net.Sockets;
 
-namespace BUtil.Core.FIleSender;
+namespace BUtil.Core.TasksTree.BUtilServer.Client;
 
-public class FileSenderClientIoc
+public class BUtilClientIoc
 {
     public CommonServicesIoc Common { get; }
-    public FileSenderClientIoc(ILog log, string folder, string password, Action<string?> onGetLastMinuteMessage)
+    public BUtilClientIoc(ILog log, string folder, string password, Action<string?> onGetLastMinuteMessage)
     {
         Common = new CommonServicesIoc(log, onGetLastMinuteMessage);
         FileSenderClientProtocol = new FileSenderProtocol(this, folder, password);

@@ -1,19 +1,19 @@
 ﻿using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
-using BUtil.Core.FIleSender;
+using BUtil.Core.Localization;
 using BUtil.Core.TasksTree.Core;
 using System.IO;
 using System.Text;
 
-namespace BUtil.Core.TasksTree.FileSender.Client;
+namespace BUtil.Core.TasksTree.BUtilServer.Client;
 
-internal class FileSenderClientConnectTask : BuTaskV2
+internal class BUtilClientConnectTask : BuTaskV2
 {
-    private readonly FileSenderClientIoc _ioc;
-    private readonly FileSenderClientModelOptionsV2 _options;
+    private readonly BUtilClientIoc _ioc;
+    private readonly BUtilClientModelOptionsV2 _options;
 
-    public FileSenderClientConnectTask(FileSenderClientIoc ioc, TaskEvents taskEvents, FileSenderClientModelOptionsV2 options)
-        : base(ioc.Common.Log, taskEvents, $"Connect to server IP: {options.ServerIp}, port: {options.ServerPort}")
+    public BUtilClientConnectTask(BUtilClientIoc ioc, TaskEvents taskEvents, BUtilClientModelOptionsV2 options)
+        : base(ioc.Common.Log, taskEvents, string.Format(Resources.BUtilClientConnectTask_Title, options.ServerIp, options.ServerPort))
     {
         _ioc = ioc;
         _options = options;
