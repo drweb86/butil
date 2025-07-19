@@ -7,7 +7,7 @@ using System.Net.Sockets;
 using System.IO;
 using System.Text;
 using BUtil.Core.Localization;
-using System.Reflection.PortableExecutable;
+using BUtil.Core.Misc;
 
 namespace BUtil.Core.TasksTree.FileSender;
 
@@ -31,23 +31,44 @@ internal class BUtilServerProcessClientTask : BuTaskV2
         using (var stream = _client.GetStream())
         using (var reader = new BinaryReader(stream, Encoding.UTF8, true))
         { 
-            _ioc.FileSenderServerProtocol.ReadCheckProtocolVersion(reader);
+            _ioc.Common.BUtilServerProtocol.ReadCheckProtocolVersion(reader);
 
             while (true)
             {
                 LogDebug("Waiting for command");
-                var command = _ioc.FileSenderServerProtocol.ReadCommandForServer(reader);
+                FileTransferProtocolServerCommand command;
+                try
+                {
+                    command = _ioc.Common.BUtilServerProtocol.ReadCommandForServer(reader);
+                }
+                catch (System.Exception e)
+                {
+                    // disconnect
+                    LogError("Disconnect");
+                    _ioc.Common.Log.WriteLine(Logs.LoggingEvent.Debug, ExceptionHelper.ToString(e));
+                    return;
+                }
                 LogDebug($"Command is {command}");
                 if (command == FileTransferProtocolServerCommand.ReceiveFile)
                 {
-                    var remoteFileState = _ioc.FileSenderServerProtocol.ReadFileHeader(reader);
-                    var childTask = new BUtilServerSaveFileTask(_ioc, Events, stream, reader, _options, remoteFileState, _client.Client.RemoteEndPoint?.ToString() ?? string.Empty);
-                    Events.DuringExecutionTasksAdded(Id, new[] { childTask });
-                    childTask.Execute();
-                }
-                else if (command == FileTransferProtocolServerCommand.Disconnect)
-                {
-                    break;
+                    try
+                    {
+                        var remoteFileState = _ioc.Common.BUtilServerProtocol.ReadFileHeader(reader, _options.Password);
+                        var childTask = new BUtilServerSaveFileTask(_ioc, Events, stream, reader, _options, remoteFileState, _client.Client.RemoteEndPoint?.ToString() ?? string.Empty);
+                        Events.DuringExecutionTasksAdded(Id, new[] { childTask });
+                        childTask.Execute();
+                    }
+                    catch (System.Security.Cryptography.CryptographicException e)
+                    {
+                        LogError("Passwords do not match");
+                        _ioc.Common.Log.WriteLine(Logs.LoggingEvent.Error, ExceptionHelper.ToString(e));
+
+                        var fakeTaskForUi = new FunctionBuTaskV2<bool>(_ioc.Common.Log, Events, Title + ": Encryption failed (passwords on client and server do not match?)", () => true);
+                        Events.DuringExecutionTasksAdded(Id, new BuTask[] { fakeTaskForUi });
+                        fakeTaskForUi.Execute();
+
+                        break;
+                    }
                 }
             }
         }

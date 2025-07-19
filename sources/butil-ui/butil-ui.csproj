@@ -55,11 +55,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Controls\EditFileSenderClientTask\EditFileSenderClientTaskView.axaml.cs">
-      <DependentUpon>EditFileSenderClientTaskView.axaml</DependentUpon>
+    <Compile Update="Controls\EditBUtilServerClientTask\EditBUtilServerClientTaskView.axaml.cs">
+      <DependentUpon>EditBUtilServerClientTaskView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Controls\EditFileSenderServerTask\EditFileSenderServerTaskView.axaml.cs">
-      <DependentUpon>EditFileSenderServerTaskView.axaml</DependentUpon>
+    <Compile Update="Controls\EditBUtilServerTask\EditBUtilServerTaskView.axaml.cs">
+      <DependentUpon>EditBUtilServerTaskView.axaml</DependentUpon>
     </Compile>
     <Compile Update="Controls\EditSynchronizationTask\EditSynchronizationTaskViewView.axaml.cs">
       <DependentUpon>EditSynchronizationTaskViewView.axaml</DependentUpon>

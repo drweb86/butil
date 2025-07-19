@@ -1,4 +1,4 @@
-﻿using BUtil.Core.FIleSender;
+﻿using BUtil.Core.BUtilServer;
 using BUtil.Core.Logs;
 using BUtil.Core.Services;
 using System;
@@ -13,9 +13,7 @@ public class BUtilClientIoc
     public BUtilClientIoc(ILog log, string folder, string password, Action<string?> onGetLastMinuteMessage)
     {
         Common = new CommonServicesIoc(log, onGetLastMinuteMessage);
-        FileSenderClientProtocol = new FileSenderProtocol(this, folder, password);
     }
-    public IFileSenderClientProtocol FileSenderClientProtocol { get; }
     public TcpClient Client { get; set; } = null!;
     public TcpListener TcpListener { get; set; } = null!;
     public NetworkStream Stream { get; set; } = null!;

@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace butil_ui.Controls;
 
-public class EditFileSenderClientTaskViewModel : ViewModelBase
+public class EditBUtilServerTaskViewModel : ViewModelBase
 {
     private readonly string _taskName;
 
-    public EditFileSenderClientTaskViewModel(string taskName, bool isNew)
+    public EditBUtilServerTaskViewModel(string taskName, bool isNew)
     {
         _taskName = taskName;
 
@@ -20,24 +20,23 @@ public class EditFileSenderClientTaskViewModel : ViewModelBase
         IsNew = isNew;
 
         var storeService = new TaskV2StoreService();
-        var task = isNew ? new TaskV2() { Model = new BUtilClientModelOptionsV2(string.Empty, FileSenderDirection.ToServer, "", 999, string.Empty) } : storeService.Load(taskName) ?? new TaskV2();
-        NameTaskViewModel = new NameTaskViewModel(isNew, Resources.BUtilServerClientTask_Help, task.Name);
-        var model = (BUtilClientModelOptionsV2)task.Model;
+        var task = isNew ? new TaskV2() { Model = new BUtilServerModelOptionsV2 { Permissions = FileSenderServerPermissions.ReadWrite, Port = 999 } } : storeService.Load(taskName) ?? new TaskV2();
+        NameTaskViewModel = new NameTaskViewModel(isNew, Resources.BUtilServerTask_Help, task.Name);
+        var model = (BUtilServerModelOptionsV2)task.Model;
         EncryptionTaskViewModel = new EncryptionTaskViewModel(model.Password, isNew, false);
 
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
         WhenTaskViewModel = new WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule?.GetSchedule(taskName) ?? new ScheduleInfo());
-
-        FolderSectionViewModel = new FolderSectionViewModel(model.Folder);
-        WhereFileSenderTaskViewModel = new WhereFileSenderTaskViewModel(model.ServerIp, model.ServerPort, BUtil.Core.Localization.Resources.LeftMenu_Where, "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png");
+        FolderAndPortSectionViewModel = new FolderAndPortSectionViewModel(model.Folder, model.Port);
     }
 
     public bool IsNew { get; set; }
     public NameTaskViewModel NameTaskViewModel { get; }
     public EncryptionTaskViewModel EncryptionTaskViewModel { get; }
     public WhenTaskViewModel WhenTaskViewModel { get; }
-    public FolderSectionViewModel FolderSectionViewModel { get; }
-    public WhereFileSenderTaskViewModel WhereFileSenderTaskViewModel { get; }
+    
+    public FolderAndPortSectionViewModel FolderAndPortSectionViewModel { get; }
+    //public WhatTaskViewModel WhatTaskViewModel { get; }
 
     #region Commands
 
@@ -53,7 +52,11 @@ public class EditFileSenderClientTaskViewModel : ViewModelBase
         var newTask = new TaskV2
         {
             Name = NameTaskViewModel.Name,
-            Model = new BUtilClientModelOptionsV2(FolderSectionViewModel.Folder, FileSenderDirection.ToServer, WhereFileSenderTaskViewModel.IP!, WhereFileSenderTaskViewModel.Port, EncryptionTaskViewModel.Password)
+            Model = new BUtilServerModelOptionsV2(
+                FolderAndPortSectionViewModel.Folder,
+                FileSenderServerPermissions.ReadWrite,
+                EncryptionTaskViewModel.Password,
+                FolderAndPortSectionViewModel.Port)
         };
 
         if (!TaskV2Validator.TryValidate(newTask, true, out var error))

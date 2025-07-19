@@ -12,10 +12,8 @@ public class BUtilServerIoc
     public BUtilServerIoc(ILog log, string folder, string password, Action<string?> onGetLastMinuteMessage)
     {
         Common = new CommonServicesIoc(log, onGetLastMinuteMessage);
-        FileSenderServerProtocol = new FileSenderServerProtocol(this, password);
     }
 
-    public IFileSenderServerProtocol FileSenderServerProtocol { get; }
     public TcpListener TcpListener { get; set; } = null!;
     public void Dispose()
     {

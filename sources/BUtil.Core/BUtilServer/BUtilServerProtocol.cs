@@ -1,5 +1,7 @@
 ﻿using BUtil.Core.FileSystem;
+using BUtil.Core.Hashing;
 using BUtil.Core.Misc;
+using BUtil.Core.Services;
 using BUtil.Core.State;
 using BUtil.Core.TasksTree.BUtilServer.Server;
 using System;
@@ -10,25 +12,25 @@ using System.Text;
 using System.Text.Json;
 
 namespace BUtil.Core.FIleSender;
-public interface IFileSenderServerProtocol
+public interface IBUtilServerProtocol
 {
     FileTransferProtocolServerCommand ReadCommandForServer(BinaryReader reader);
     void WriteCommandForClient(NetworkStream stream, FileTransferProtocolClientCommand command);
-    FileState ReadFileHeader(BinaryReader reader);
-    void ReadFile(BinaryReader reader, FileState fileState);
+    FileState ReadFileHeader(BinaryReader reader, string password);
+    void ReadFile(BinaryReader reader, FileState fileState, string password);
     void ReadCheckProtocolVersion(BinaryReader reader);
 }
 
-internal class FileSenderServerProtocol : IFileSenderServerProtocol
+internal class BUtilServerProtocol : IBUtilServerProtocol
 {
     private const Int32 _version = 1;
-    private readonly BUtilServerIoc _ioc;
-    private readonly string _password;
+    private readonly ICachedHashService _cachedHashService;
+    private readonly IEncryptionService _encryptionService;
 
-    public FileSenderServerProtocol(BUtilServerIoc ioc, string password)
+    public BUtilServerProtocol(ICachedHashService cachedHashService, IEncryptionService encryptionService)
     {
-        _ioc = ioc;
-        _password = password;
+        _cachedHashService = cachedHashService;
+        _encryptionService = encryptionService;
     }
 
     public void ReadCheckProtocolVersion(BinaryReader reader)
@@ -51,12 +53,12 @@ internal class FileSenderServerProtocol : IFileSenderServerProtocol
         return (FileTransferProtocolServerCommand)reader.ReadInt32();
     }
 
-    public FileState ReadFileHeader(BinaryReader reader)
+    public FileState ReadFileHeader(BinaryReader reader, string password)
     {
         long length = reader.ReadInt64();
         using var inputStream = new MemoryStream(reader.ReadBytes((int)length));
         using var outputStream = new MemoryStream();
-        _ioc.Common.EncryptionService.DecryptAes256(inputStream, outputStream, _password);
+        _encryptionService.DecryptAes256(inputStream, outputStream, password);
         outputStream.Position = 0;
         var json = StringHelper.StringFromMemoryStream(outputStream);
         var fileState = JsonSerializer.Deserialize<FileState>(json)!;
@@ -65,7 +67,7 @@ internal class FileSenderServerProtocol : IFileSenderServerProtocol
         return fileState;
     }
 
-    public void ReadFile(BinaryReader reader, FileState fileState)
+    public void ReadFile(BinaryReader reader, FileState fileState, string password)
     {
         string parentDir = Path.GetDirectoryName(fileState.FileName)!;
         if (!Directory.Exists(parentDir))
@@ -93,8 +95,8 @@ internal class FileSenderServerProtocol : IFileSenderServerProtocol
             }
         }
 
-        _ioc.Common.EncryptionService.DecryptAes256File(encryptedFile, fileState.FileName, _password);
-        var sha512 = _ioc.Common.CachedHashService.GetSha512(fileState.FileName, false);
+        _encryptionService.DecryptAes256File(encryptedFile, fileState.FileName, password);
+        var sha512 = _cachedHashService.GetSha512(fileState.FileName, false);
         if (fileState.Sha512 != sha512)
         {
             System.IO.File.Delete(fileState.FileName);

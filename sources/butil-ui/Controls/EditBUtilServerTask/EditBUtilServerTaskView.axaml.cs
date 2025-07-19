@@ -2,9 +2,9 @@
 
 namespace butil_ui.Controls;
 
-public partial class EditFileSenderServerTaskView : UserControl
+public partial class EditBUtilServerTaskView : UserControl
 {
-    public EditFileSenderServerTaskView()
+    public EditBUtilServerTaskView()
     {
         InitializeComponent();
     }

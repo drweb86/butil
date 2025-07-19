@@ -23,7 +23,7 @@
 				<RowDefinition />
 			</Grid.RowDefinitions>
 			<TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Server_Field_Address}" VerticalAlignment="Center"/>
-			<TextBox Grid.Row="0" Grid.Column="1" Margin="4 4 4 4" Watermark="192.168.11.1" VerticalAlignment="Center" Text="{Binding IP}"/>
+			<TextBox Grid.Row="0" Grid.Column="1" Margin="4 4 4 4" Watermark="192.168.11.1" VerticalAlignment="Center" Text="{Binding Host}"/>
 			<TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Server_Field_Port}" VerticalAlignment="Center"/>
 			<NumericUpDown Grid.Row="1" Grid.Column="1" Minimum="0" Margin="4 4 4 4" VerticalAlignment="Center" Value="{Binding Port}"/>
 		</Grid>

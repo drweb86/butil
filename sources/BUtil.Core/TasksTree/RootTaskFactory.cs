@@ -171,7 +171,7 @@ public static class RootTaskFactory
                 return false;
             }
 
-            if (string.IsNullOrWhiteSpace(fileSenderTransferOptions.ServerIp))
+            if (string.IsNullOrWhiteSpace(fileSenderTransferOptions.ServerHost))
             { 
                 error = Resources.Server_Field_Address_Validation;
                 return false;
@@ -184,11 +184,6 @@ public static class RootTaskFactory
                 return false;
             }
 
-            if (string.IsNullOrWhiteSpace(fileSenderTransferOptions.ServerIp))
-            {
-                error = Resources.Server_Field_Address_Validation;
-                return false;
-            }
             if (fileSenderTransferOptions.ServerPort < 1)
             {
                 error = Resources.Server_Field_Port_Validation;

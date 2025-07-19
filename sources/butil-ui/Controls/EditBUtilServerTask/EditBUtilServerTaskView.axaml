@@ -6,8 +6,8 @@
     mc:Ignorable="d"
 	d:DesignWidth="800"
 	d:DesignHeight="450"
-    x:Class="butil_ui.Controls.EditFileSenderClientTaskView"
-	x:DataType="controls:EditFileSenderClientTaskViewModel"
+    x:Class="butil_ui.Controls.EditBUtilServerTaskView"
+	x:DataType="controls:EditBUtilServerTaskViewModel"
 	>
 	<UserControl.Styles>
 		<Style Selector="Expander">
@@ -28,10 +28,9 @@
 				ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 			<StackPanel>
 				<controls:NameTaskView Margin="24 24 24 8" DataContext="{Binding NameTaskViewModel}" />
-				<controls:FolderSectionView Margin="24 8 24 8" DataContext="{Binding FolderSectionViewModel}" />
-				<controls:WhenTaskView Margin="24 8 24 8" DataContext="{Binding WhenTaskViewModel}" IsVisible="{Binding IsWhenAvailable}" />
-				<controls:WhereFileSenderTaskView Margin="24 8 24 8" DataContext="{Binding WhereFileSenderTaskViewModel}"/>
+				<controls:FolderAndPortSectionView Margin="24 8 24 8" DataContext="{Binding FolderAndPortSectionViewModel}" />
 				<controls:EncryptionTaskView Margin="24 8 24 8" DataContext="{Binding EncryptionTaskViewModel}" />
+				<controls:WhenTaskView Margin="24 8 24 8" DataContext="{Binding WhenTaskViewModel}" IsVisible="{Binding IsWhenAvailable}" />
 			</StackPanel>
 		</ScrollViewer>
 

@@ -93,14 +93,14 @@ public partial class MainWindowViewModel : ViewModelBase
     public void FileSenderServerCreateCommand()
 #pragma warning restore CA1822 // Mark members as static
     {
-        WindowManager.SwitchView(new EditFileSenderServerTaskViewModel(string.Empty, true));
+        WindowManager.SwitchView(new EditBUtilServerTaskViewModel(string.Empty, true));
     }
 
 #pragma warning disable CA1822 // Mark members as static
     public void FileSenderClientCreateCommand()
 #pragma warning restore CA1822 // Mark members as static
     {
-        WindowManager.SwitchView(new EditFileSenderClientTaskViewModel(string.Empty, true));
+        WindowManager.SwitchView(new EditBUtilServerClientTaskViewModel(string.Empty, true));
     }
 
 #pragma warning disable CA1822 // Mark members as static

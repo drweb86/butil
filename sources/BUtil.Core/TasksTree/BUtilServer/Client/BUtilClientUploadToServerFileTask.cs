@@ -27,17 +27,17 @@ internal class BUtilClientUploadToServerFileTask : BuTaskV2
         string relativeFileName = SourceItemHelper.GetSourceItemRelativeFileName(_options.Folder, _fileState);
         LogDebug($"{relativeFileName}");
 
-        _ioc.FileSenderClientProtocol.WriteCommandForServer(_ioc.Writer, FileTransferProtocolServerCommand.ReceiveFile);
-        _ioc.FileSenderClientProtocol.WriteFileHeader(_ioc.Writer, _fileState);
+        _ioc.Common.BUtilServerClientProtocol.WriteCommandForServer(_ioc.Writer, FileTransferProtocolServerCommand.ReceiveFile);
+        _ioc.Common.BUtilServerClientProtocol.WriteFileHeader(_ioc.Writer, _fileState, _options.Folder, _options.Password);
 
-        var clientCommand = _ioc.FileSenderClientProtocol.ReadCommandForClient(_ioc.Stream);
+        var clientCommand = _ioc.Common.BUtilServerClientProtocol.ReadCommandForClient(_ioc.Stream);
         switch (clientCommand)
         {
             case FileTransferProtocolClientCommand.Cancel:
                 LogDebug("File transfer is skipped.");
                 break;
             case FileTransferProtocolClientCommand.Continue:
-                _ioc.FileSenderClientProtocol.WriteFile(_ioc.Writer, _fileState);
+                _ioc.Common.BUtilServerClientProtocol.WriteFile(_ioc.Writer, _fileState, _options.Password);
                 break;
 
         }

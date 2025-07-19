@@ -10,11 +10,11 @@ namespace butil_ui.Controls;
 
 public class WhereFileSenderTaskViewModel : ObservableObject
 {
-    public WhereFileSenderTaskViewModel(string ip, int port, string title, string iconUrl)
+    public WhereFileSenderTaskViewModel(string host, int port, string title, string iconUrl)
     {
         Title = title;
         IconSource = LoadFromResource(new Uri("avares://butil-ui" + iconUrl));
-        IP = ip;
+        Host = host;
         Port = port;
     }
 
@@ -29,26 +29,26 @@ public class WhereFileSenderTaskViewModel : ObservableObject
 
     #region Labels
     public static string LeftMenu_Where => Resources.LeftMenu_Where;
-    public static string Server_Field_Address => "IP";
+    public static string Server_Field_Address => Resources.Server_Field_Address;
     public static string Server_Field_Port => Resources.Server_Field_Port;
     #endregion
 
-    #region IP
+    #region Host
 
-    private string? _ip;
+    private string? _host;
 
-    public string? IP
+    public string? Host
     {
         get
         {
-            return _ip;
+            return _host;
         }
         set
         {
-            if (value == _ip)
+            if (value == _host)
                 return;
-            _ip = value;
-            OnPropertyChanged(nameof(IP));
+            _host = value;
+            OnPropertyChanged(nameof(Host));
         }
     }
 

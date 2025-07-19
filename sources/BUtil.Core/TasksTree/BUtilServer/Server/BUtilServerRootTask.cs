@@ -24,10 +24,11 @@ internal class BUtilServerRootTask : SequentialBuTask
 
         _ioc = new BUtilServerIoc(log, _options.Folder, _options.Password, onGetLastMinuteMessage);
 
+        var serverStartTask = new BUtilServerStartTask(_ioc, Events, _options);
         Children = new List<BuTask>
         {
-            new BUtilServerStartTask(_ioc, Events, _options),
-            new BUtilServerWaitForClientTask(_ioc, Events, _options),
+            serverStartTask,
+            new BUtilServerWaitForClientTask(_ioc, Events, _options, serverStartTask),
         };
     }
 

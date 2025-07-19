@@ -12,20 +12,33 @@ internal class BUtilClientUploadToServerFolderTask : SequentialBuTaskV2
     private readonly BUtilClientIoc _ioc;
     private readonly BUtilClientModelOptionsV2 _options;
     private readonly GetStateOfSourceItemTask _getStateOfSourceItemTask;
+    private readonly BUtilClientConnectTask _butilClientConnectTask;
 
     public BUtilClientUploadToServerFolderTask(BUtilClientIoc ioc, TaskEvents taskEvents, BUtilClientModelOptionsV2 options,
-        GetStateOfSourceItemTask getStateOfSourceItemTask)
+        GetStateOfSourceItemTask getStateOfSourceItemTask, BUtilClientConnectTask butilClientConnectTask)
         : base(ioc.Common.Log, taskEvents, string.Format(Resources.File_Uploading, options.Folder))
     {
         _ioc = ioc;
         _options = options;
         _getStateOfSourceItemTask = getStateOfSourceItemTask;
+        _butilClientConnectTask = butilClientConnectTask;
     }
 
     protected override void ExecuteInternal()
     {
-        if (_getStateOfSourceItemTask.IsSuccess)
-            throw new InvalidOperationException("State of folder is invalid.");
+        if (!_butilClientConnectTask.IsSuccess)
+        {
+            LogDebug("Failed to connect to server, skipping the task.");
+            IsSkipped = true;
+            return;
+        }
+
+        if (!_getStateOfSourceItemTask.IsSuccess)
+        {
+            LogDebug("Failed to get state of client folder, skipping the task.");
+            IsSkipped = true;
+            return;
+        }
 
         var sourceItemState = _getStateOfSourceItemTask.SourceItemState!;
         Children = sourceItemState.FileStates

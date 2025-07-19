@@ -1,6 +1,5 @@
 ﻿using BUtil.Core.Events;
 using BUtil.Core.FIleSender;
-using BUtil.Core.Misc;
 using BUtil.Core.TasksTree.Core;
 using System.IO;
 using BUtil.Core.State;
@@ -55,16 +54,16 @@ internal class BUtilServerSaveFileTask: BuTaskV2
             if (existingFileState != null && !existingFileState.CompareTo(remoteFileState, true, true))
             {
                 LogDebug("File exists, has same size, SHA-512 hash. Skipped.");
-                _ioc.FileSenderServerProtocol.WriteCommandForClient(_networkStream, FileTransferProtocolClientCommand.Cancel);
+                _ioc.Common.BUtilServerProtocol.WriteCommandForClient(_networkStream, FileTransferProtocolClientCommand.Cancel);
                 IsSkipped = true;
                 return;
             }
         }
 
         LogDebug("Receiving the file body...");
-        _ioc.FileSenderServerProtocol.WriteCommandForClient(_networkStream, FileTransferProtocolClientCommand.Continue);
+        _ioc.Common.BUtilServerProtocol.WriteCommandForClient(_networkStream, FileTransferProtocolClientCommand.Continue);
         var destinationFileState = new FileState(remoteFileState);
         destinationFileState.FileName = fileName;
-        _ioc.FileSenderServerProtocol.ReadFile(_reader, destinationFileState);
+        _ioc.Common.BUtilServerProtocol.ReadFile(_reader, destinationFileState, _options.Password);
     }
 }
