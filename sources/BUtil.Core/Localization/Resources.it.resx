@@ -702,4 +702,31 @@ Consulta il sito web dell'applicazione per la documentazione su come impostare l
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Non è stato specificato l'utente.</value>
   </data>
+  <data name="BUtilServerTask_Help" xml:space="preserve">
+    <value>Il file server consente di eseguire operazioni suifile con la sua cartella con crittografia con trasporto P2P AES-256.</value>
+  </data>
+  <data name="BUtilServerStartTask_Name" xml:space="preserve">
+    <value>Avvia il server sulla porta {0}</value>
+  </data>
+  <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
+    <value>In attesa della connessione client...</value>
+  </data>
+  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
+    <value>Client "{0}"</value>
+  </data>
+  <data name="File_Uploading" xml:space="preserve">
+    <value>Upload "{0}"</value>
+  </data>
+  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
+    <value>Connettiti al server con IP {0} e porta {1}</value>
+  </data>
+  <data name="BUtilServerClientTask_Help" xml:space="preserve">
+    <value>Upload cartella nel file server con sovrascrittura di file esistenti diversi per hash o dimensioni. Il trasferimento dati è protetto con AES-256. Se il file esiste nel server e non esiste a livello locale, il file non verrà eliminato nel server.</value>
+  </data>
+  <data name="BUtilServerTask_Create" xml:space="preserve">
+    <value>File server</value>
+  </data>
+  <data name="BUtilServerClientTask_Create" xml:space="preserve">
+    <value>Upload cartella nel file server</value>
+  </data>
 </root>
