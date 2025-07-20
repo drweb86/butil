@@ -30,7 +30,20 @@ internal class BUtilClientUploadToServerFileTask : BuTaskV2
         _ioc.Common.BUtilServerClientProtocol.WriteCommandForServer(_ioc.Writer, FileTransferProtocolServerCommand.ReceiveFile);
         _ioc.Common.BUtilServerClientProtocol.WriteFileHeader(_ioc.Writer, _fileState, _options.Folder, _options.Password);
 
-        var clientCommand = _ioc.Common.BUtilServerClientProtocol.ReadCommandForClient(_ioc.Stream);
+        FileTransferProtocolClientCommand clientCommand;
+        try
+        {
+            clientCommand = _ioc.Common.BUtilServerClientProtocol.ReadCommandForClient(_ioc.Stream);
+        }
+        catch (System.IO.EndOfStreamException e)
+        {
+            LogDebug("Passwords do not match on client and server.");
+            LogError(ExceptionHelper.ToString(e));
+            var fakeTaskForUi = new FunctionBuTaskV2<bool>(_ioc.Common.Log, Events, "Encryption failed (passwords on client and server do not match?)", () => true);
+            Events.DuringExecutionTasksAdded(Id, new BuTask[] { fakeTaskForUi });
+            fakeTaskForUi.Execute();
+            throw;
+        }
         switch (clientCommand)
         {
             case FileTransferProtocolClientCommand.Cancel:
