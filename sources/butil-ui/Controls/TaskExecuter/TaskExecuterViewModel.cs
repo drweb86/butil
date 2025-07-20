@@ -384,7 +384,8 @@ public class TaskExecuterViewModel : ObservableObject
             return;
 
         if (e.Status == ProcessingStatus.FinishedWithErrors ||
-            e.Status == ProcessingStatus.FinishedSuccesfully)
+            e.Status == ProcessingStatus.FinishedSuccesfully ||
+            e.Status == ProcessingStatus.Skipped)
             lock (_endedTasks)
             {
                 _endedTasks.Add(e.TaskId);
