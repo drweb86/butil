@@ -50,7 +50,7 @@ public class EditMediaTaskViewModel : ViewModelBase
     {
         var newTask = new TaskV2
         {
-            Name = NameTaskViewModel.Name,
+            Name = NameTaskViewModel.Name.TrimEnd(),
             Model = new ImportMediaTaskModelOptionsV2
             {
                 DestinationFolder = ImportMediaTaskWhereTaskViewModel.OutputFolder,

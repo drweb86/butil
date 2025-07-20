@@ -53,7 +53,7 @@ public class EditSynchronizationTaskViewModel : ViewModelBase
     {
         var newTask = new TaskV2
         {
-            Name = NameTaskViewModel.Name,
+            Name = NameTaskViewModel.Name.TrimEnd(),
             Model = new SynchronizationTaskModelOptionsV2
             {
                 Password = EncryptionTaskViewModel.Password,

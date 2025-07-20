@@ -52,7 +52,7 @@ public class EditBUtilServerClientTaskViewModel : ViewModelBase
     {
         var newTask = new TaskV2
         {
-            Name = NameTaskViewModel.Name,
+            Name = NameTaskViewModel.Name.TrimEnd(),
             Model = new BUtilClientModelOptionsV2(FolderSectionViewModel.Folder, FileSenderDirection.ToServer, WhereFileSenderTaskViewModel.Host!, WhereFileSenderTaskViewModel.Port, EncryptionTaskViewModel.Password)
         };
 

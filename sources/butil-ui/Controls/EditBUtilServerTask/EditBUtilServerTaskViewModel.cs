@@ -51,7 +51,7 @@ public class EditBUtilServerTaskViewModel : ViewModelBase
     {
         var newTask = new TaskV2
         {
-            Name = NameTaskViewModel.Name,
+            Name = NameTaskViewModel.Name.TrimEnd(),
             Model = new BUtilServerModelOptionsV2(
                 FolderAndPortSectionViewModel.Folder,
                 FileSenderServerPermissions.ReadWrite,

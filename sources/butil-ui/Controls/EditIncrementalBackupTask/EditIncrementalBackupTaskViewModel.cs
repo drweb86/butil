@@ -51,7 +51,7 @@ public class EditIncrementalBackupTaskViewModel : ViewModelBase
     {
         var newTask = new TaskV2
         {
-            Name = NameTaskViewModel.Name,
+            Name = NameTaskViewModel.Name.TrimEnd(),
             Model = new IncrementalBackupModelOptionsV2
             {
                 Password = EncryptionTaskViewModel.Password,

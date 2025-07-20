@@ -1,11 +1,16 @@
-﻿# 2025.07.13
+﻿# 2025.07.19
 (unpublished)
 
 ## Changes
 - Some libraries were updated.
+- Italian language was updated by https://github.com/bovirus .
+- Task name is trimmed on UI. It was possible to have tasks with spaces in the end, now UI will trim it.
 
 ## New Features
 - New tasks were added to copy folder across network without server with AES-256 protection, skipping unmodified files, overwriting modified files, not touching files at server that exists on client machine. Primary purpose is to have one way sync between local PC and VM with Ubuntu.
+
+## Bug Fixes
+- Command line for Linux was fixed.
 
 # 2025.05.31
 
