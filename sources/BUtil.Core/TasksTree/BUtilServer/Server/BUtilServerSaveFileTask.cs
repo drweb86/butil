@@ -51,7 +51,7 @@ internal class BUtilServerSaveFileTask: BuTaskV2
             var existingFileState = getStateOfFileTask.State!;
             LogDebug($"Existing state {existingFileState}");
 
-            if (existingFileState != null && !existingFileState.CompareTo(remoteFileState, true, true))
+            if (existingFileState != null && existingFileState.CompareTo(remoteFileState, true, true))
             {
                 LogDebug("File exists, has same size, SHA-512 hash. Skipped.");
                 _ioc.Common.BUtilServerProtocol.WriteCommandForClient(_networkStream, FileTransferProtocolClientCommand.Cancel);
