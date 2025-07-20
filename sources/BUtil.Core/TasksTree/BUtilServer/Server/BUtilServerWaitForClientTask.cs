@@ -36,7 +36,7 @@ internal class BUtilServerWaitForClientTask : BuTaskV2
 
             // for now only sequentiual
             var task = new BUtilServerProcessClientTask(_ioc, Events, client, _options);
-            Events.DuringExecutionTasksAdded(Id, new BuTask[] { task });
+            Events.DuringExecutionTasksAdded(null, new BuTask[] { task }); // null instead of Id because major task events rework is needed to handle properly.
             task.Execute();
         }
     }

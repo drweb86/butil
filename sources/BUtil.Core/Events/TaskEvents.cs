@@ -19,7 +19,7 @@ public class TaskEvents
         handler(this, new TaskProgressEventArgs(taskId, status));
     }
 
-    public void DuringExecutionTasksAdded(Guid taskId, IEnumerable<BuTask> tasks)
+    public void DuringExecutionTasksAdded(Guid? taskId, IEnumerable<BuTask> tasks)
     {
         if (!tasks.Any())
         {

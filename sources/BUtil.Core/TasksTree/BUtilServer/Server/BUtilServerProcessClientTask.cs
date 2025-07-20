@@ -66,7 +66,7 @@ internal class BUtilServerProcessClientTask : BuTaskV2
                     {
                         var remoteFileState = _ioc.Common.BUtilServerProtocol.ReadFileHeader(reader, _options.Password);
                         var childTask = new BUtilServerSaveFileTask(_ioc, Events, stream, reader, _options, remoteFileState, Title);
-                        Events.DuringExecutionTasksAdded(Id, new[] { childTask });
+                        Events.DuringExecutionTasksAdded(null, new[] { childTask });// null instead of Id because major task events rework is needed to handle properly.
                         childTask.Execute();
                     }
                     catch (System.Security.Cryptography.CryptographicException e)
