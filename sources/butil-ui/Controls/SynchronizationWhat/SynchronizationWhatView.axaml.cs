@@ -24,7 +24,7 @@ public partial class SynchronizationWhatView : UserControl
     {
         var root = this.VisualRoot as TopLevel ?? throw new NullReferenceException("Invalid Owner");
         var dataContext = DataContext as SynchronizationWhatViewModel ?? throw new NullReferenceException();
-        IStorageFolder startLocation = null;
+        IStorageFolder? startLocation = null;
         try
         {
             startLocation = await root.StorageProvider.TryGetFolderFromPathAsync(dataContext.Folder);
