@@ -8,6 +8,7 @@ using System.IO;
 using System.Text;
 using BUtil.Core.Localization;
 using BUtil.Core.Misc;
+using System.Net;
 
 namespace BUtil.Core.TasksTree.FileSender;
 
@@ -17,8 +18,18 @@ internal class BUtilServerProcessClientTask : BuTaskV2
     private readonly TcpClient _client;
     private readonly BUtilServerModelOptionsV2 _options;
 
+    private static string GetAddressFriendlyName(TcpClient client)
+    {
+        var ipEndpoint = client.Client.RemoteEndPoint as IPEndPoint;
+        if (ipEndpoint == null)
+        {
+            return "?";
+        }
+        return ipEndpoint.Address.ToString();
+    }
+
     public BUtilServerProcessClientTask(BUtilServerIoc ioc, TaskEvents events, TcpClient client, BUtilServerModelOptionsV2 options) :
-        base(ioc.Common.Log, events, string.Format(Resources.BUtilServerProcessClientTask_Title, client.Client.RemoteEndPoint?.ToString() ?? string.Empty))
+        base(ioc.Common.Log, events, string.Format(Resources.BUtilServerProcessClientTask_Title, GetAddressFriendlyName(client)))
     {
         _ioc = ioc;
         _client = client;
@@ -27,7 +38,7 @@ internal class BUtilServerProcessClientTask : BuTaskV2
 
     protected override void ExecuteInternal()
     {
-        LogDebug("Client connected.");
+        LogDebug($"Client connected: remote endpoint: {_client.Client.RemoteEndPoint?.ToString()}, local endpoint: {_client.Client.LocalEndPoint?.ToString()}");
         using (var stream = _client.GetStream())
         using (var reader = new BinaryReader(stream, Encoding.UTF8, true))
         { 
