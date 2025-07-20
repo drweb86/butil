@@ -25,7 +25,7 @@ internal class BUtilServerProcessClientTask : BuTaskV2
         {
             return "?";
         }
-        return ipEndpoint.Address.ToString();
+        return NetworkHelper.FormatAddress(ipEndpoint.Address);
     }
 
     public BUtilServerProcessClientTask(BUtilServerIoc ioc, TaskEvents events, TcpClient client, BUtilServerModelOptionsV2 options) :
@@ -65,7 +65,7 @@ internal class BUtilServerProcessClientTask : BuTaskV2
                     try
                     {
                         var remoteFileState = _ioc.Common.BUtilServerProtocol.ReadFileHeader(reader, _options.Password);
-                        var childTask = new BUtilServerSaveFileTask(_ioc, Events, stream, reader, _options, remoteFileState, _client.Client.RemoteEndPoint?.ToString() ?? string.Empty);
+                        var childTask = new BUtilServerSaveFileTask(_ioc, Events, stream, reader, _options, remoteFileState, Title);
                         Events.DuringExecutionTasksAdded(Id, new[] { childTask });
                         childTask.Execute();
                     }

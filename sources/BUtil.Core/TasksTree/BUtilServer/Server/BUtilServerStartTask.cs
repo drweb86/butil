@@ -53,8 +53,8 @@ internal class BUtilServerStartTask : BuTaskV2
 
         foreach (var item in itemsOrdered)
         {
-            helpMessage.AppendLine($"- {item.Name} ({item.Description}): {string.Join(',', item.Addresses.Select(FormatAddress))}");
-            fakeTasksForUi.Add(new FunctionBuTaskV2<bool>(_ioc.Common.Log, Events, $"- {item.Name} ({item.Description}): {string.Join(',', item.Addresses.Select(FormatAddress))}", () => true));
+            helpMessage.AppendLine($"- {item.Name} ({item.Description}): {string.Join(',', item.Addresses.Select(NetworkHelper.FormatAddress))}");
+            fakeTasksForUi.Add(new FunctionBuTaskV2<bool>(_ioc.Common.Log, Events, $"- {item.Name} ({item.Description}): {string.Join(',', item.Addresses.Select(NetworkHelper.FormatAddress))}", () => true));
         }
 
         LogDebug(helpMessage.ToString());
@@ -62,12 +62,4 @@ internal class BUtilServerStartTask : BuTaskV2
         Events.DuringExecutionTasksAdded(Id, fakeTasksForUi);
         fakeTasksForUi.ForEach(x => x.Execute());
     }
-
-    private static string FormatAddress(IPAddress address)
-    {
-        return address.AddressFamily == AddressFamily.InterNetworkV6
-            ? $"[{address}]"
-            : address.ToString();
-    }
-
 }

@@ -8,6 +8,13 @@ using System.Net;
 namespace BUtil.Core.Misc;
 internal static class NetworkHelper
 {
+    public static string FormatAddress(IPAddress address)
+    {
+        return address.AddressFamily == AddressFamily.InterNetworkV6
+            ? $"[{address}]"
+            : address.ToString();
+    }
+
     public static IEnumerable<NetworkInfo> GetMyLocalIps(TcpListener listener)
     {
         IPEndPoint localEndpoint = (IPEndPoint)listener.LocalEndpoint;
