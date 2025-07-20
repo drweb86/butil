@@ -34,6 +34,7 @@
 - **Incremental backup** with deduplication of files and **FTPS**, **SMB/CIFS** transports support;
 - **Synchronization** of files between devices using centralized storage and versioning support;
 - **Import media** - [Import audios, photos, videos from SD Card of camera, recorder; photos and videos from your phone via WI-FI through FTPS Server application using template file names or via MTP](./help/Import%20media%20task.md);
+- **P2P file transfer** with encryption between devices;
 - **Console** for automation [scheduling](./help/Command%20line.md);
 - **AES-256** encryption.
 
