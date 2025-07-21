@@ -722,4 +722,7 @@ bin.
   <data name="BUtilServerClientTask_Create" xml:space="preserve">
     <value>Выгрузка папки на файловый сервер</value>
   </data>
+  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
+    <value>Сервер неожиданно разорвал соединение (Совпадают ли пароли на клиенте и сервере?)</value>
+  </data>
 </root>

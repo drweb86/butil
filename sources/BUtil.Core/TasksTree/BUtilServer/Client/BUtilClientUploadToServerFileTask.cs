@@ -39,10 +39,10 @@ internal class BUtilClientUploadToServerFileTask : BuTaskV2
         {
             LogDebug("Passwords do not match on client and server.");
             LogError(ExceptionHelper.ToString(e));
-            var fakeTaskForUi = new FunctionBuTaskV2<bool>(_ioc.Common.Log, Events, "Encryption has failed (passwords on client and server do not match?)", () => true);
+            var fakeTaskForUi = new FunctionBuTaskV2<bool>(_ioc.Common.Log, Events, Resources.BUtilServer_Error_ConnectionAborted, () => true);
             Events.DuringExecutionTasksAdded(Id, new BuTask[] { fakeTaskForUi });
             fakeTaskForUi.Execute();
-            _ioc.Common.LastMinuteMessageService.AddLastMinuteLogMessage("Encryption has failed (passwords on client and server are different?)");
+            _ioc.Common.LastMinuteMessageService.AddLastMinuteLogMessage(Resources.BUtilServer_Error_ConnectionAborted);
             throw;
         }
         switch (clientCommand)

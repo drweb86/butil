@@ -237,6 +237,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string BUtilServer_Error_ConnectionAborted {
+            get {
+                return ResourceManager.GetString("BUtilServer_Error_ConnectionAborted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Upload Folder to File Server.
         /// </summary>
         public static string BUtilServerClientTask_Create {
