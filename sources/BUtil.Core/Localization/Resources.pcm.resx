@@ -691,4 +691,37 @@
   <data name="User_Field_Validation" xml:space="preserve">
     <value>User no dey specified.</value>
   </data>
+  <data name="BUtilServerTask_Help" xml:space="preserve">
+    <value>File Server dey allow make person do file work for inside im folder with AES-256 P2P transport encryption.</value>
+  </data>
+  <data name="BUtilServerStartTask_Name" xml:space="preserve">
+    <value>Start server for port {0}</value>
+  </data>
+  <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
+    <value>Dey wait for client connection...</value>
+  </data>
+  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
+    <value>Client "{0}"</value>
+  </data>
+  <data name="File_Uploading" xml:space="preserve">
+    <value>Dey upload "{0}"</value>
+  </data>
+  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
+    <value>Connect to server with IP {0} and port {1}</value>
+  </data>
+  <data name="BUtilServerClientTask_Help" xml:space="preserve">
+    <value>E dey upload folder go File Server and dey overwrite old files wey different by hash or size. Data transfer dey protected with AES-256. If file dey for server but no dey for local, dem no go delete am for server side.</value>
+  </data>
+  <data name="BUtilServerTask_Create" xml:space="preserve">
+    <value>File Server</value>
+  </data>
+  <data name="BUtilServerClientTask_Create" xml:space="preserve">
+    <value>Upload Folder go File Server</value>
+  </data>
+  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
+    <value>Connection to server don cut by imself (Client and Server password be d same?)</value>
+  </data>
+  <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
+    <value>Process files wey old pass:</value>
+  </data>
 </root>

@@ -690,4 +690,37 @@ bin。
   <data name="User_Field_Validation" xml:space="preserve">
     <value>未指定用户。</value>
   </data>
+<data name="BUtilServerTask_Help" xml:space="preserve">
+    <value>文件服务器允许使用AES-256 P2P传输加密对其文件夹进行文件操作。</value>
+  </data>
+  <data name="BUtilServerStartTask_Name" xml:space="preserve">
+    <value>在{0}端口启动服务器</value>
+  </data>
+  <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
+    <value>等待客户端连接...</value>
+  </data>
+  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
+    <value>客户端"{0}"</value>
+  </data>
+  <data name="File_Uploading" xml:space="preserve">
+    <value>正在上传"{0}"</value>
+  </data>
+  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
+    <value>连接到IP为{0} 端口为{1}的服务器</value>
+  </data>
+  <data name="BUtilServerClientTask_Help" xml:space="preserve">
+    <value>上传文件夹到文件服务器，覆盖哈希值或大小不同的现有文件。数据传输受AES-256保护。如果文件在服务器上存在但本地不存在，则不会在服务器端删除。</value>
+  </data>
+  <data name="BUtilServerTask_Create" xml:space="preserve">
+    <value>文件服务器</value>
+  </data>
+  <data name="BUtilServerClientTask_Create" xml:space="preserve">
+    <value>上传文件夹到文件服务器</value>
+  </data>
+  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
+    <value>服务器连接意外终止（客户端和服务器密码是否相同？）</value>
+  </data>
+  <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
+    <value>处理早于此时间的文件:</value>
+  </data>
 </root>

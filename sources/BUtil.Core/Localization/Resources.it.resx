@@ -729,4 +729,7 @@ Consulta il sito web dell'applicazione per la documentazione su come impostare l
   <data name="BUtilServerClientTask_Create" xml:space="preserve">
     <value>Upload cartella nel file server</value>
   </data>
+  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
+    <value>Connessione al server terminata inaspettatamente (Le password su Client e Server sono identiche?)</value>
+  </data>
 </root>

@@ -691,4 +691,34 @@ Aşağıdaki bağlantıda detaylı açıklama bulun.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Kullanıcı belirtilmemiş.</value>
   </data>
+  <data name="BUtilServerTask_Help" xml:space="preserve">
+    <value>Dosya Sunucusu, klasöründe AES-256 P2P taşıma şifrelemesi ile dosya işlemleri yapılmasına izin verir.</value>
+  </data>
+  <data name="BUtilServerStartTask_Name" xml:space="preserve">
+    <value>{0} portunda sunucuyu başlat</value>
+  </data>
+  <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
+    <value>İstemci bağlantısı bekleniyor...</value>
+  </data>
+  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
+    <value>İstemci "{0}"</value>
+  </data>
+  <data name="File_Uploading" xml:space="preserve">
+    <value>"{0}" yükleniyor</value>
+  </data>
+  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
+    <value>{0} IP ve {1} portu ile sunucuya bağlan</value>
+  </data>
+  <data name="BUtilServerClientTask_Help" xml:space="preserve">
+    <value>Klasörü, hash veya boyut farkı olan mevcut dosyaların üzerine yazarak Dosya Sunucusuna yükler. Veri aktarımı AES-256 ile korunur. Dosya sunucuda varsa ve yerelde yoksa, sunucu tarafında silinmez.</value>
+  </data>
+  <data name="BUtilServerTask_Create" xml:space="preserve">
+    <value>Dosya Sunucusu</value>
+  </data>
+  <data name="BUtilServerClientTask_Create" xml:space="preserve">
+    <value>Klasörü Dosya Sunucusuna Yükle</value>
+  </data>
+  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
+    <value>Sunucu bağlantısı beklenmedik şekilde sonlandırıldı (İstemci ve Sunucu şifreleri aynı mı?)</value>
+  </data>
 </root>

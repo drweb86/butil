@@ -692,4 +692,37 @@ bin.
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Користувача не вказано.</value>
   </data>
+  <data name="BUtilServerTask_Help" xml:space="preserve">
+    <value>Файловий сервер дозволяє виконувати операції з файлами у своїй теці з шифруванням передачі даних AES-256 P2P.</value>
+  </data>
+  <data name="BUtilServerStartTask_Name" xml:space="preserve">
+    <value>Запустити сервер на порту {0}</value>
+  </data>
+  <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
+    <value>Очікування підключення клієнта...</value>
+  </data>
+  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
+    <value>Клієнт "{0}"</value>
+  </data>
+  <data name="File_Uploading" xml:space="preserve">
+    <value>Завантаження "{0}"</value>
+  </data>
+  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
+    <value>Підключитися до сервера з IP {0} та портом {1}</value>
+  </data>
+  <data name="BUtilServerClientTask_Help" xml:space="preserve">
+    <value>Завантажує теку на Файловий сервер з перезаписом існуючих файлів, що відрізняються за хешем або розміром. Передавання даних захищено AES-256. Якщо файл є на сервері, але відсутній локально, на сервері він не видаляється.</value>
+  </data>
+  <data name="BUtilServerTask_Create" xml:space="preserve">
+    <value>Файловий сервер</value>
+  </data>
+  <data name="BUtilServerClientTask_Create" xml:space="preserve">
+    <value>Завантажити теку на Файловий сервер</value>
+  </data>
+  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
+    <value>З'єднання з сервером неочікувано перервано (Чи співпадають паролі на Клієнті та Сервері?)</value>
+  </data>
+  <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
+    <value>Обробляти файли старіші за:</value>
+  </data>
 </root>

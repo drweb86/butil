@@ -688,4 +688,37 @@
   <data name="User_Field_Validation" xml:space="preserve">
     <value>ব্যবহারকারী নির্দিষ্ট করা হয়নি।</value>
   </data>
+  <data name="BUtilServerTask_Help" xml:space="preserve">
+    <value>ফাইল সার্ভার AES-256 P2P ট্রান্সপোর্ট এনক্রিপশন সহ তার ফোল্ডারে ফাইল অপারেশন করতে দেয়।</value>
+  </data>
+  <data name="BUtilServerStartTask_Name" xml:space="preserve">
+    <value>{0} পোর্টে সার্ভার শুরু করুন</value>
+  </data>
+  <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
+    <value>ক্লায়েন্ট সংযোগের জন্য অপেক্ষা করা হচ্ছে...</value>
+  </data>
+  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
+    <value>ক্লায়েন্ট "{0}"</value>
+  </data>
+  <data name="File_Uploading" xml:space="preserve">
+    <value>"{0}" আপলোড করা হচ্ছে</value>
+  </data>
+  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
+    <value>IP {0} এবং পোর্ট {1} সহ সার্ভারের সাথে সংযোগ করুন</value>
+  </data>
+  <data name="BUtilServerClientTask_Help" xml:space="preserve">
+    <value>হ্যাশ বা আকারে ভিন্ন বিদ্যমান ফাইলগুলি ওভাররাইট করে ফাইল সার্ভারে ফোল্ডার আপলোড করে। ডেটা ট্রান্সফার AES-256 দ্বারা সুরক্ষিত। ফাইলটি সার্ভারে থাকলে এবং লোকালে না থাকলে, সার্ভার থেকে ফাইল ডিলিট হয় না।</value>
+  </data>
+  <data name="BUtilServerTask_Create" xml:space="preserve">
+    <value>ফাইল সার্ভার</value>
+  </data>
+  <data name="BUtilServerClientTask_Create" xml:space="preserve">
+    <value>ফাইল সার্ভারে ফোল্ডার আপলোড করুন</value>
+  </data>
+  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
+    <value>সার্ভারের সাথে সংযোগ অপ্রত্যাশিতভাবে শেষ হয়েছে (ক্লায়েন্ট এবং সার্ভারের পাসওয়ার্ড কি একই?)</value>
+  </data>
+  <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
+    <value>এর চেয়ে পুরোনো ফাইল প্রসেস করুন:</value>
+  </data>
 </root>
