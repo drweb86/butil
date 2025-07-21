@@ -720,7 +720,4 @@ bin。
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>伺服器連接意外終止（客戶端同伺服器密碼係咪一樣？）</value>
   </data>
-  <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
-    <value>處理早過呢個時間嘅檔案:</value>
-  </data>
 </root>
