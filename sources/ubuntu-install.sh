@@ -3,7 +3,7 @@
 # Fail on first error.
 set -e
 
-version=2025.05.31
+version=2025.07.21
 
 sourceCodeInstallationDirectory=/usr/local/src/butil
 binariesInstallationDirectory=/usr/local/butil
