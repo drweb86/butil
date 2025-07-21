@@ -176,6 +176,33 @@ Les changements de version supprimés feront partie de la version "{1}".</value>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
     <value>Sélectionnez le fichier ou le dossier que vous voulez restaurer dans l'arborescence et cliquez sur "Restaurer".</value>
   </data>
+  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
+    <value>Se connecter au serveur (IP {0}, port {1})</value>
+  </data>
+  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
+    <value>Connexion interrompue (Les mots de passe client/serveur sont-ils identiques ?)</value>
+  </data>
+  <data name="BUtilServerClientTask_Create" xml:space="preserve">
+    <value>Téléverser un dossier vers le serveur</value>
+  </data>
+  <data name="BUtilServerClientTask_Help" xml:space="preserve">
+    <value>Téléverse un dossier vers le serveur en écrasant les fichiers existants si le hash ou la taille diffère. Transfert sécurisé par AES-256. Si un fichier existe sur le serveur mais pas localement, il n'est pas supprimé.</value>
+  </data>
+  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
+    <value>Client "{0}"</value>
+  </data>
+  <data name="BUtilServerStartTask_Name" xml:space="preserve">
+    <value>Démarrer le serveur sur le port {0}</value>
+  </data>
+  <data name="BUtilServerTask_Create" xml:space="preserve">
+    <value>Serveur de fichiers</value>
+  </data>
+  <data name="BUtilServerTask_Help" xml:space="preserve">
+    <value>Le serveur de fichiers permet les opérations sur fichiers dans son dossier avec chiffrement de transport P2P AES-256.</value>
+  </data>
+  <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
+    <value>En attente de connexion client...</value>
+  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>Annuler</value>
   </data>
@@ -323,6 +350,9 @@ Il y a un problème : le fournisseur d'accès réduit la vitesse d'upload après
   <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
     <value>Enregistrement des scripts de vérification d'intégrité</value>
   </data>
+  <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
+    <value>Traiter les fichiers plus anciens que :</value>
+  </data>
   <data name="File_List_Saving" xml:space="preserve">
     <value>Enregistrement des fichiers</value>
   </data>
@@ -331,6 +361,9 @@ Il y a un problème : le fournisseur d'accès réduit la vitesse d'upload après
   </data>
   <data name="File_Saving" xml:space="preserve">
     <value>Enregistrement de "{0}"</value>
+  </data>
+  <data name="File_Uploading" xml:space="preserve">
+    <value>Téléversement de "{0}"</value>
   </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Explicite</value>
@@ -688,38 +721,5 @@ Consultez la description détaillée dans le lien suivant.</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>L'utilisateur n'est pas spécifié.</value>
-  </data>
-  <data name="BUtilServerTask_Help" xml:space="preserve">
-    <value>Le serveur de fichiers permet les opérations sur fichiers dans son dossier avec chiffrement de transport P2P AES-256.</value>
-  </data>
-  <data name="BUtilServerStartTask_Name" xml:space="preserve">
-    <value>Démarrer le serveur sur le port {0}</value>
-  </data>
-  <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
-    <value>En attente de connexion client...</value>
-  </data>
-  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
-    <value>Client "{0}"</value>
-  </data>
-  <data name="File_Uploading" xml:space="preserve">
-    <value>Téléversement de "{0}"</value>
-  </data>
-  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
-    <value>Se connecter au serveur (IP {0}, port {1})</value>
-  </data>
-  <data name="BUtilServerClientTask_Help" xml:space="preserve">
-    <value>Téléverse un dossier vers le serveur en écrasant les fichiers existants si le hash ou la taille diffère. Transfert sécurisé par AES-256. Si un fichier existe sur le serveur mais pas localement, il n'est pas supprimé.</value>
-  </data>
-  <data name="BUtilServerTask_Create" xml:space="preserve">
-    <value>Serveur de fichiers</value>
-  </data>
-  <data name="BUtilServerClientTask_Create" xml:space="preserve">
-    <value>Téléverser un dossier vers le serveur</value>
-  </data>
-  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
-    <value>Connexion interrompue (Les mots de passe client/serveur sont-ils identiques ?)</value>
-  </data>
-  <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
-    <value>Traiter les fichiers plus anciens que :</value>
   </data>
 </root>

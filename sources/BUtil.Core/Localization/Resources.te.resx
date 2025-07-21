@@ -174,6 +174,33 @@
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
     <value>మీరు పునరుద్ధరించాలనుకుంటున్న ఫైలు లేదా ఫోల్డర్‌ని చెట్టులో ఎంచుకోండి మరియు "పునరుద్ధరించండి" పై క్లిక్ చేయండి.</value>
   </data>
+  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
+    <value>IP {0} మరియు పోర్ట్ {1}తో సర్వర్‌కు కనెక్ట్ అవ్వండి</value>
+  </data>
+  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
+    <value>సర్వర్‌కు కనెక్షన్ ఊహించని విధంగా ముగించబడింది (క్లయింట్ మరియు సర్వర్‌లోని పాస్‌వర్డ్‌లు ఒకటేనా?)</value>
+  </data>
+  <data name="BUtilServerClientTask_Create" xml:space="preserve">
+    <value>ఫైల్ సర్వర్‌కు ఫోల్డర్‌ను అప్‌లోడ్ చేయండి</value>
+  </data>
+  <data name="BUtilServerClientTask_Help" xml:space="preserve">
+    <value>హాష్ లేదా పరిమాణంలో భిన్నమైన ఇప్పటికే ఉన్న ఫైళ్ళను ఓవర్‌రైట్ చేసి ఫైల్ సర్వర్‌కు ఫోల్డర్‌ను అప్‌లోడ్ చేస్తుంది. డేటా బదిలీ AES-256 ద్వారా రక్షించబడుతుంది. ఫైల్ సర్వర్‌లో ఉంటే మరియు స్థానికంగా లేకుంటే, సర్వర్ వైపు తొలగించబడదు.</value>
+  </data>
+  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
+    <value>క్లయింట్ "{0}"</value>
+  </data>
+  <data name="BUtilServerStartTask_Name" xml:space="preserve">
+    <value>{0} పోర్ట్‌లో సర్వర్‌ను ప్రారంభించండి</value>
+  </data>
+  <data name="BUtilServerTask_Create" xml:space="preserve">
+    <value>ఫైల్ సర్వర్</value>
+  </data>
+  <data name="BUtilServerTask_Help" xml:space="preserve">
+    <value>ఫైల్ సర్వర్ AES-256 P2P ట్రాన్స్‌పోర్ట్ ఎన్‌క్రిప్షన్‌తో దాని ఫోల్డర్‌లో ఫైల్ ఆపరేషన్లు చేయడానికి అనుమతిస్తుంది.</value>
+  </data>
+  <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
+    <value>క్లయింట్ కనెక్షన్ కోసం వేచి ఉంది...</value>
+  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>రద్దు చేయండి</value>
   </data>
@@ -320,6 +347,9 @@
   <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
     <value>అఖండతను పరిశీలించే స్క్రిప్ట్‌లను సేవ్ చేయడం</value>
   </data>
+  <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
+    <value>దీని కంటే పాత ఫైళ్ళను ప్రాసెస్ చేయండి:</value>
+  </data>
   <data name="File_List_Saving" xml:space="preserve">
     <value>ఫైల్స్ సేవ్ చేయడం</value>
   </data>
@@ -328,6 +358,9 @@
   </data>
   <data name="File_Saving" xml:space="preserve">
     <value>సేవ్ చేస్తున్న "{0}"</value>
+  </data>
+  <data name="File_Uploading" xml:space="preserve">
+    <value>"{0}" అప్‌లోడ్ చేయబడుతోంది</value>
   </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>ప్రత్యక్షంగా</value>
@@ -686,38 +719,5 @@
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>యూజర్ ఉదహరించவில்லை.</value>
-  </data>
-  <data name="BUtilServerTask_Help" xml:space="preserve">
-    <value>ఫైల్ సర్వర్ AES-256 P2P ట్రాన్స్‌పోర్ట్ ఎన్‌క్రిప్షన్‌తో దాని ఫోల్డర్‌లో ఫైల్ ఆపరేషన్లు చేయడానికి అనుమతిస్తుంది.</value>
-  </data>
-  <data name="BUtilServerStartTask_Name" xml:space="preserve">
-    <value>{0} పోర్ట్‌లో సర్వర్‌ను ప్రారంభించండి</value>
-  </data>
-  <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
-    <value>క్లయింట్ కనెక్షన్ కోసం వేచి ఉంది...</value>
-  </data>
-  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
-    <value>క్లయింట్ "{0}"</value>
-  </data>
-  <data name="File_Uploading" xml:space="preserve">
-    <value>"{0}" అప్‌లోడ్ చేయబడుతోంది</value>
-  </data>
-  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
-    <value>IP {0} మరియు పోర్ట్ {1}తో సర్వర్‌కు కనెక్ట్ అవ్వండి</value>
-  </data>
-  <data name="BUtilServerClientTask_Help" xml:space="preserve">
-    <value>హాష్ లేదా పరిమాణంలో భిన్నమైన ఇప్పటికే ఉన్న ఫైళ్ళను ఓవర్‌రైట్ చేసి ఫైల్ సర్వర్‌కు ఫోల్డర్‌ను అప్‌లోడ్ చేస్తుంది. డేటా బదిలీ AES-256 ద్వారా రక్షించబడుతుంది. ఫైల్ సర్వర్‌లో ఉంటే మరియు స్థానికంగా లేకుంటే, సర్వర్ వైపు తొలగించబడదు.</value>
-  </data>
-  <data name="BUtilServerTask_Create" xml:space="preserve">
-    <value>ఫైల్ సర్వర్</value>
-  </data>
-  <data name="BUtilServerClientTask_Create" xml:space="preserve">
-    <value>ఫైల్ సర్వర్‌కు ఫోల్డర్‌ను అప్‌లోడ్ చేయండి</value>
-  </data>
-  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
-    <value>సర్వర్‌కు కనెక్షన్ ఊహించని విధంగా ముగించబడింది (క్లయింట్ మరియు సర్వర్‌లోని పాస్‌వర్డ్‌లు ఒకటేనా?)</value>
-  </data>
-  <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
-    <value>దీని కంటే పాత ఫైళ్ళను ప్రాసెస్ చేయండి:</value>
   </data>
 </root>

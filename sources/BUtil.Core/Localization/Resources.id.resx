@@ -173,6 +173,33 @@
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
     <value>Pilih file atau folder yang ingin Anda pulihkan di pohon dan klik "Pulihkan".</value>
   </data>
+  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
+    <value>Hubungkan ke server dengan IP {0} dan port {1}</value>
+  </data>
+  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
+    <value>Koneksi ke server terputus secara tidak terduga (Apakah password di Klien dan Server sama?)</value>
+  </data>
+  <data name="BUtilServerClientTask_Create" xml:space="preserve">
+    <value>Unggah Folder ke File Server</value>
+  </data>
+  <data name="BUtilServerClientTask_Help" xml:space="preserve">
+    <value>Mengunggah folder ke File Server dengan menimpa file yang berbeda berdasarkan hash atau ukuran. Transfer data dilindungi dengan AES-256. Jika file ada di server tetapi tidak ada secara lokal, file tidak dihapus di sisi server.</value>
+  </data>
+  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
+    <value>Klien "{0}"</value>
+  </data>
+  <data name="BUtilServerStartTask_Name" xml:space="preserve">
+    <value>Mulai server di port {0}</value>
+  </data>
+  <data name="BUtilServerTask_Create" xml:space="preserve">
+    <value>File Server</value>
+  </data>
+  <data name="BUtilServerTask_Help" xml:space="preserve">
+    <value>File Server memungkinkan operasi file dengan foldernya menggunakan enkripsi transport P2P AES-256.</value>
+  </data>
+  <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
+    <value>Menunggu koneksi klien...</value>
+  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>Batal</value>
   </data>
@@ -319,6 +346,9 @@
   <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
     <value>Menyimpan script verifikasi integritas</value>
   </data>
+  <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
+    <value>Proses file yang lebih lama dari:</value>
+  </data>
   <data name="File_List_Saving" xml:space="preserve">
     <value>Menyimpan file</value>
   </data>
@@ -327,6 +357,9 @@
   </data>
   <data name="File_Saving" xml:space="preserve">
     <value>Menyimpan "{0}"</value>
+  </data>
+  <data name="File_Uploading" xml:space="preserve">
+    <value>Mengunggah "{0}"</value>
   </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Eksplisit</value>
@@ -687,38 +720,5 @@
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Pengguna tidak ditentukan.</value>
-  </data>
-  <data name="BUtilServerTask_Help" xml:space="preserve">
-    <value>File Server memungkinkan operasi file dengan foldernya menggunakan enkripsi transport P2P AES-256.</value>
-  </data>
-  <data name="BUtilServerStartTask_Name" xml:space="preserve">
-    <value>Mulai server di port {0}</value>
-  </data>
-  <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
-    <value>Menunggu koneksi klien...</value>
-  </data>
-  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
-    <value>Klien "{0}"</value>
-  </data>
-  <data name="File_Uploading" xml:space="preserve">
-    <value>Mengunggah "{0}"</value>
-  </data>
-  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
-    <value>Hubungkan ke server dengan IP {0} dan port {1}</value>
-  </data>
-  <data name="BUtilServerClientTask_Help" xml:space="preserve">
-    <value>Mengunggah folder ke File Server dengan menimpa file yang berbeda berdasarkan hash atau ukuran. Transfer data dilindungi dengan AES-256. Jika file ada di server tetapi tidak ada secara lokal, file tidak dihapus di sisi server.</value>
-  </data>
-  <data name="BUtilServerTask_Create" xml:space="preserve">
-    <value>File Server</value>
-  </data>
-  <data name="BUtilServerClientTask_Create" xml:space="preserve">
-    <value>Unggah Folder ke File Server</value>
-  </data>
-  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
-    <value>Koneksi ke server terputus secara tidak terduga (Apakah password di Klien dan Server sama?)</value>
-  </data>
-  <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
-    <value>Proses file yang lebih lama dari:</value>
   </data>
 </root>

@@ -173,6 +173,33 @@ Những thay đổi của phiên bản đã xóa sẽ trở thành một phần 
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
     <value>Chọn tập tin hoặc thư mục bạn muốn khôi phục trong cây và nhấp vào "Khôi phục".</value>
   </data>
+  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
+    <value>Kết nối đến máy chủ với IP {0} và cổng {1}</value>
+  </data>
+  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
+    <value>Kết nối đến máy chủ bị ngắt đột ngột (Mật khẩu trên Máy khách và Máy chủ có giống nhau không?)</value>
+  </data>
+  <data name="BUtilServerClientTask_Create" xml:space="preserve">
+    <value>Tải Thư mục lên Máy chủ</value>
+  </data>
+  <data name="BUtilServerClientTask_Help" xml:space="preserve">
+    <value>Tải thư mục lên Máy chủ tệp và ghi đè các tệp hiện có khác biệt về băm hoặc kích thước. Truyền dữ liệu được bảo vệ bằng AES-256. Nếu tệp tồn tại trên máy chủ nhưng không có cục bộ, nó sẽ không bị xóa.</value>
+  </data>
+  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
+    <value>Máy khách "{0}"</value>
+  </data>
+  <data name="BUtilServerStartTask_Name" xml:space="preserve">
+    <value>Khởi động máy chủ tại cổng {0}</value>
+  </data>
+  <data name="BUtilServerTask_Create" xml:space="preserve">
+    <value>Máy chủ tệp</value>
+  </data>
+  <data name="BUtilServerTask_Help" xml:space="preserve">
+    <value>Máy chủ tệp cho phép thực hiện các thao tác tệp trong thư mục của nó với mã hóa vận chuyển P2P AES-256.</value>
+  </data>
+  <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
+    <value>Đang chờ kết nối máy khách...</value>
+  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>Hủy</value>
   </data>
@@ -330,6 +357,9 @@ Kịch bản sử dụng: Bạn sao chép dữ liệu đến máy chủ từ xa.
   </data>
   <data name="File_Saving" xml:space="preserve">
     <value>Đang lưu "{0}"</value>
+  </data>
+  <data name="File_Uploading" xml:space="preserve">
+    <value>Đang tải lên "{0}"</value>
   </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Công khai</value>
@@ -690,35 +720,5 @@ Xem mô tả chi tiết trong liên kết sau.</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Người dùng không được chỉ định.</value>
-  </data>
-  <data name="BUtilServerTask_Help" xml:space="preserve">
-    <value>Máy chủ tệp cho phép thực hiện các thao tác tệp trong thư mục của nó với mã hóa vận chuyển P2P AES-256.</value>
-  </data>
-  <data name="BUtilServerStartTask_Name" xml:space="preserve">
-    <value>Khởi động máy chủ tại cổng {0}</value>
-  </data>
-  <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
-    <value>Đang chờ kết nối máy khách...</value>
-  </data>
-  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
-    <value>Máy khách "{0}"</value>
-  </data>
-  <data name="File_Uploading" xml:space="preserve">
-    <value>Đang tải lên "{0}"</value>
-  </data>
-  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
-    <value>Kết nối đến máy chủ với IP {0} và cổng {1}</value>
-  </data>
-  <data name="BUtilServerClientTask_Help" xml:space="preserve">
-    <value>Tải thư mục lên Máy chủ tệp và ghi đè các tệp hiện có khác biệt về băm hoặc kích thước. Truyền dữ liệu được bảo vệ bằng AES-256. Nếu tệp tồn tại trên máy chủ nhưng không có cục bộ, nó sẽ không bị xóa.</value>
-  </data>
-  <data name="BUtilServerTask_Create" xml:space="preserve">
-    <value>Máy chủ tệp</value>
-  </data>
-  <data name="BUtilServerClientTask_Create" xml:space="preserve">
-    <value>Tải Thư mục lên Máy chủ</value>
-  </data>
-  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
-    <value>Kết nối đến máy chủ bị ngắt đột ngột (Mật khẩu trên Máy khách và Máy chủ có giống nhau không?)</value>
   </data>
 </root>

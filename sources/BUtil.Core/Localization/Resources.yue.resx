@@ -173,6 +173,33 @@
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
     <value>請喺樹形結構中選擇你想恢復嘅文件或文件夾，然後點擊「恢復」。</value>
   </data>
+  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
+    <value>連接到IP {0}同埠{1}嘅伺服器</value>
+  </data>
+  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
+    <value>伺服器連接意外終止（客戶端同伺服器密碼係咪一樣？）</value>
+  </data>
+  <data name="BUtilServerClientTask_Create" xml:space="preserve">
+    <value>上傳文件夾到檔案伺服器</value>
+  </data>
+  <data name="BUtilServerClientTask_Help" xml:space="preserve">
+    <value>上傳文件夾到檔案伺服器，覆蓋哈希或大小唔同嘅現有文件。數據傳輸用AES-256保護。如果文件喺伺服器度存在但本地冇，伺服器唔會刪除。</value>
+  </data>
+  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
+    <value>客戶端"{0}"</value>
+  </data>
+  <data name="BUtilServerStartTask_Name" xml:space="preserve">
+    <value>喺{0}埠啟動伺服器</value>
+  </data>
+  <data name="BUtilServerTask_Create" xml:space="preserve">
+    <value>檔案伺服器</value>
+  </data>
+  <data name="BUtilServerTask_Help" xml:space="preserve">
+    <value>檔案伺服器允許用AES-256 P2P傳輸加密對其文件夾進行檔案操作。</value>
+  </data>
+  <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
+    <value>等待客戶端連接...</value>
+  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>取消</value>
   </data>
@@ -330,6 +357,9 @@
   </data>
   <data name="File_Saving" xml:space="preserve">
     <value>保存 "{0}"</value>
+  </data>
+  <data name="File_Uploading" xml:space="preserve">
+    <value>上傳緊"{0}"</value>
   </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>顯式</value>
@@ -689,35 +719,5 @@ bin。
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>用戶未指定。</value>
-  </data>
-  <data name="BUtilServerTask_Help" xml:space="preserve">
-    <value>檔案伺服器允許用AES-256 P2P傳輸加密對其文件夾進行檔案操作。</value>
-  </data>
-  <data name="BUtilServerStartTask_Name" xml:space="preserve">
-    <value>喺{0}埠啟動伺服器</value>
-  </data>
-  <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
-    <value>等待客戶端連接...</value>
-  </data>
-  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
-    <value>客戶端"{0}"</value>
-  </data>
-  <data name="File_Uploading" xml:space="preserve">
-    <value>上傳緊"{0}"</value>
-  </data>
-  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
-    <value>連接到IP {0}同埠{1}嘅伺服器</value>
-  </data>
-  <data name="BUtilServerClientTask_Help" xml:space="preserve">
-    <value>上傳文件夾到檔案伺服器，覆蓋哈希或大小唔同嘅現有文件。數據傳輸用AES-256保護。如果文件喺伺服器度存在但本地冇，伺服器唔會刪除。</value>
-  </data>
-  <data name="BUtilServerTask_Create" xml:space="preserve">
-    <value>檔案伺服器</value>
-  </data>
-  <data name="BUtilServerClientTask_Create" xml:space="preserve">
-    <value>上傳文件夾到檔案伺服器</value>
-  </data>
-  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
-    <value>伺服器連接意外終止（客戶端同伺服器密碼係咪一樣？）</value>
   </data>
 </root>

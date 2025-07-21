@@ -176,6 +176,33 @@
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
     <value>तुम्हाला पुनर्स्थापन करायची असलेली फाइल किंवा फोल्डर ट्रीमध्ये निवडा आणि "पुनर्स्थापन करा" वर क्लिक करा.</value>
   </data>
+  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
+    <value>IP {0} आणि पोर्ट {1} सह सर्व्हरशी कनेक्ट करा</value>
+  </data>
+  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
+    <value>सर्व्हरशी कनेक्शन अनपेक्षितपणे समाप्त झाले (क्लायंट आणि सर्व्हरवरील पासवर्ड समान आहेत का?)</value>
+  </data>
+  <data name="BUtilServerClientTask_Create" xml:space="preserve">
+    <value>फाइल सर्व्हरवर फोल्डर अपलोड करा</value>
+  </data>
+  <data name="BUtilServerClientTask_Help" xml:space="preserve">
+    <value>हॅश किंवा आकारानुसार भिन्न असलेल्या विद्यमान फायली ओव्हरराइट करून फाइल सर्व्हरवर फोल्डर अपलोड करते. डेटा ट्रान्सफर AES-256 ने संरक्षित आहे. फाइल सर्व्हरवर अस्तित्वात असल्यास आणि स्थानिक पातळीवर नसल्यास, सर्व्हर बाजूला फाइल डिलीट होत नाही.</value>
+  </data>
+  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
+    <value>क्लायंट "{0}"</value>
+  </data>
+  <data name="BUtilServerStartTask_Name" xml:space="preserve">
+    <value>{0} पोर्टवर सर्व्हर सुरू करा</value>
+  </data>
+  <data name="BUtilServerTask_Create" xml:space="preserve">
+    <value>फाइल सर्व्हर</value>
+  </data>
+  <data name="BUtilServerTask_Help" xml:space="preserve">
+    <value>फाइल सर्व्हर AES-256 P2P ट्रान्सपोर्ट एनक्रिप्शनसह त्याच्या फोल्डरमध्ये फाइल ऑपरेशन्स करण्याची परवानगी देतो.</value>
+  </data>
+  <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
+    <value>क्लायंट कनेक्शनची वाट पाहत आहे...</value>
+  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>रद्द करा</value>
   </data>
@@ -322,6 +349,9 @@
   <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
     <value>अखंडता पडताळणी स्क्रिप्ट सुरक्षित करणे</value>
   </data>
+  <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
+    <value>यापेक्षा जुनी फायली प्रक्रिया करा:</value>
+  </data>
   <data name="File_List_Saving" xml:space="preserve">
     <value>फाइल्स तयार करणे</value>
   </data>
@@ -330,6 +360,9 @@
   </data>
   <data name="File_Saving" xml:space="preserve">
     <value>संग्रहित करणे "{0}"</value>
+  </data>
+  <data name="File_Uploading" xml:space="preserve">
+    <value>"{0}" अपलोड करत आहे</value>
   </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>स्पष्ट</value>
@@ -690,38 +723,5 @@
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>वापरकर्ता निर्दिष्ट केलेला नाही.</value>
-  </data>
-  <data name="BUtilServerTask_Help" xml:space="preserve">
-    <value>फाइल सर्व्हर AES-256 P2P ट्रान्सपोर्ट एनक्रिप्शनसह त्याच्या फोल्डरमध्ये फाइल ऑपरेशन्स करण्याची परवानगी देतो.</value>
-  </data>
-  <data name="BUtilServerStartTask_Name" xml:space="preserve">
-    <value>{0} पोर्टवर सर्व्हर सुरू करा</value>
-  </data>
-  <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
-    <value>क्लायंट कनेक्शनची वाट पाहत आहे...</value>
-  </data>
-  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
-    <value>क्लायंट "{0}"</value>
-  </data>
-  <data name="File_Uploading" xml:space="preserve">
-    <value>"{0}" अपलोड करत आहे</value>
-  </data>
-  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
-    <value>IP {0} आणि पोर्ट {1} सह सर्व्हरशी कनेक्ट करा</value>
-  </data>
-  <data name="BUtilServerClientTask_Help" xml:space="preserve">
-    <value>हॅश किंवा आकारानुसार भिन्न असलेल्या विद्यमान फायली ओव्हरराइट करून फाइल सर्व्हरवर फोल्डर अपलोड करते. डेटा ट्रान्सफर AES-256 ने संरक्षित आहे. फाइल सर्व्हरवर अस्तित्वात असल्यास आणि स्थानिक पातळीवर नसल्यास, सर्व्हर बाजूला फाइल डिलीट होत नाही.</value>
-  </data>
-  <data name="BUtilServerTask_Create" xml:space="preserve">
-    <value>फाइल सर्व्हर</value>
-  </data>
-  <data name="BUtilServerClientTask_Create" xml:space="preserve">
-    <value>फाइल सर्व्हरवर फोल्डर अपलोड करा</value>
-  </data>
-  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
-    <value>सर्व्हरशी कनेक्शन अनपेक्षितपणे समाप्त झाले (क्लायंट आणि सर्व्हरवरील पासवर्ड समान आहेत का?)</value>
-  </data>
-  <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
-    <value>यापेक्षा जुनी फायली प्रक्रिया करा:</value>
   </data>
 </root>

@@ -176,6 +176,33 @@ As alterações da versão excluída se tornarão parte da versão "{1}".</value
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
     <value>Selecione o arquivo ou pasta que deseja restaurar na árvore e clique em "Restaurar".</value>
   </data>
+  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
+    <value>Conectar ao servidor com IP {0} e porta {1}</value>
+  </data>
+  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
+    <value>Conexão terminada inesperadamente (As senhas do cliente e servidor são iguais?)</value>
+  </data>
+  <data name="BUtilServerClientTask_Create" xml:space="preserve">
+    <value>Enviar Pasta para o Servidor</value>
+  </data>
+  <data name="BUtilServerClientTask_Help" xml:space="preserve">
+    <value>Envia pasta para o Servidor de Arquivos substituindo arquivos existentes com hash ou tamanho diferente. Transferência protegida por AES-256. Se o arquivo existe no servidor mas não localmente, não é excluído.</value>
+  </data>
+  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
+    <value>Cliente "{0}"</value>
+  </data>
+  <data name="BUtilServerStartTask_Name" xml:space="preserve">
+    <value>Iniciar servidor na porta {0}</value>
+  </data>
+  <data name="BUtilServerTask_Create" xml:space="preserve">
+    <value>Servidor de Arquivos</value>
+  </data>
+  <data name="BUtilServerTask_Help" xml:space="preserve">
+    <value>O servidor de arquivos permite operações de arquivo em sua pasta com criptografia de transporte P2P AES-256.</value>
+  </data>
+  <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
+    <value>Aguardando conexão do cliente...</value>
+  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>Cancelar</value>
   </data>
@@ -322,6 +349,9 @@ Cenário de uso: Você copia dados para um servidor remoto. Há um problema: o I
   <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
     <value>Salvando scripts de verificação de integridade</value>
   </data>
+  <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
+    <value>Processar arquivos mais antigos que:</value>
+  </data>
   <data name="File_List_Saving" xml:space="preserve">
     <value>Salvando arquivos</value>
   </data>
@@ -330,6 +360,9 @@ Cenário de uso: Você copia dados para um servidor remoto. Há um problema: o I
   </data>
   <data name="File_Saving" xml:space="preserve">
     <value>Salvando "{0}"</value>
+  </data>
+  <data name="File_Uploading" xml:space="preserve">
+    <value>Enviando "{0}"</value>
   </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Explícito</value>
@@ -690,38 +723,5 @@ Veja a descrição detalhada no seguinte link.</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Usuário não especificado.</value>
-  </data>
-  <data name="BUtilServerTask_Help" xml:space="preserve">
-    <value>O servidor de arquivos permite operações de arquivo em sua pasta com criptografia de transporte P2P AES-256.</value>
-  </data>
-  <data name="BUtilServerStartTask_Name" xml:space="preserve">
-    <value>Iniciar servidor na porta {0}</value>
-  </data>
-  <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
-    <value>Aguardando conexão do cliente...</value>
-  </data>
-  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
-    <value>Cliente "{0}"</value>
-  </data>
-  <data name="File_Uploading" xml:space="preserve">
-    <value>Enviando "{0}"</value>
-  </data>
-  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
-    <value>Conectar ao servidor com IP {0} e porta {1}</value>
-  </data>
-  <data name="BUtilServerClientTask_Help" xml:space="preserve">
-    <value>Envia pasta para o Servidor de Arquivos substituindo arquivos existentes com hash ou tamanho diferente. Transferência protegida por AES-256. Se o arquivo existe no servidor mas não localmente, não é excluído.</value>
-  </data>
-  <data name="BUtilServerTask_Create" xml:space="preserve">
-    <value>Servidor de Arquivos</value>
-  </data>
-  <data name="BUtilServerClientTask_Create" xml:space="preserve">
-    <value>Enviar Pasta para o Servidor</value>
-  </data>
-  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
-    <value>Conexão terminada inesperadamente (As senhas do cliente e servidor são iguais?)</value>
-  </data>
-  <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
-    <value>Processar arquivos mais antigos que:</value>
   </data>
 </root>

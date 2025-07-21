@@ -8,12 +8,24 @@ version={{APP_VERSION}}
 sourceCodeInstallationDirectory=/usr/local/src/butil
 binariesInstallationDirectory=/usr/local/butil
 
+if [ "$EUID" -eq 0 ]
+  then echo "Please do not run this script with sudo, root permissions"
+  exit
+fi
+
 echo
 echo Installing dependencies
 echo
+sudo add-apt-repository ppa:dotnet/backports
 sudo apt-get update
+echo
+echo Ubuntu 24.04 specific
+echo
 sudo apt-get install -y git dotnet-sdk-9.0
-
+sudo apt-get update
+echo
+echo End of Ubuntu 24.04 specific
+echo
 echo
 echo Cleaning installation directories
 echo
@@ -47,6 +59,7 @@ echo Prepare shortcut
 echo
 
 temporaryShortcut=/tmp/BUtil.desktop
+sudo rm -f ${temporaryShortcut}
 cat > ${temporaryShortcut} << EOL
 [Desktop Entry]
 Encoding=UTF-8
