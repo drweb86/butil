@@ -22,6 +22,7 @@ public class WhereTaskViewModel : ObservableObject
         if (PlatformSpecificExperience.Instance.IsSmbCifsSupported)
             TransportSource.Add(Smb);
 
+        TransportSource.Add(Sftp);
         TransportSource.Add(Ftps);
 
         if (storageSettings is FolderStorageSettingsV2 folderStorageSettings)
@@ -54,6 +55,17 @@ public class WhereTaskViewModel : ObservableObject
             FtpsUser = ftpsStorageSettingsV2.User;
             FtpsPassword = ftpsStorageSettingsV2.Password;
             FtpsFolder = ftpsStorageSettingsV2.Folder;
+        }
+
+        if (storageSettings is SftpStorageSettingsV2 sftpStorageSettingsV2)
+        {
+            Transport = Sftp;
+            Quota = sftpStorageSettingsV2.SingleBackupQuotaGb;
+            FtpsServer = sftpStorageSettingsV2.Host;
+            FtpsPort = sftpStorageSettingsV2.Port;
+            FtpsUser = sftpStorageSettingsV2.User;
+            FtpsPassword = sftpStorageSettingsV2.Password;
+            FtpsFolder = sftpStorageSettingsV2.Folder;
         }
 
         FtpsEncryptionSource.Add(Ftps_Encryption_Option_Implicit);
@@ -132,6 +144,19 @@ public class WhereTaskViewModel : ObservableObject
                 Password = SmbPassword,
             };
         }
+        else if (Transport == Sftp)
+        {
+            return new SftpStorageSettingsV2
+            {
+                SingleBackupQuotaGb = Quota,
+
+                Host = FtpsServer!,
+                Port = FtpsPort,
+                User = FtpsUser!,
+                Password = FtpsPassword!,
+                Folder = FtpsFolder,
+            };
+        }
         throw new System.ArgumentOutOfRangeException();
     }
     public string Title { get; }
@@ -139,6 +164,7 @@ public class WhereTaskViewModel : ObservableObject
     public static string DirectoryStorage => Resources.DirectoryStorage;
     public static string Smb => "SMB/CIFS";
     public static string Ftps => "FTPS";
+    public static string Sftp => "SFTP";
     public bool CanLaunchScripts { get; } = PlatformSpecificExperience.Instance.SupportManager.CanLaunchScripts;
 
     public List<string> TransportSource { get; } = [];
@@ -189,6 +215,7 @@ public class WhereTaskViewModel : ObservableObject
             IsDirectoryScriptsVisible = IsDirectoryTransport && CanLaunchScripts;
             IsSmbTransport = value == Smb;
             IsFtpsTransport = value == Ftps;
+            IsSftpTransport = value == Sftp;
         }
     }
 
@@ -252,6 +279,27 @@ public class WhereTaskViewModel : ObservableObject
                 return;
             _isFtpsTransport = value;
             OnPropertyChanged(nameof(IsFtpsTransport));
+        }
+    }
+
+    #endregion
+
+    #region IsSftpTransport
+
+    private bool _isSftpTransport = false;
+
+    public bool IsSftpTransport
+    {
+        get
+        {
+            return _isSftpTransport;
+        }
+        set
+        {
+            if (value == _isSftpTransport)
+                return;
+            _isSftpTransport = value;
+            OnPropertyChanged(nameof(IsSftpTransport));
         }
     }
 

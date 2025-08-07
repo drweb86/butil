@@ -1,6 +1,6 @@
 # Incremented Backup Format
 
-Incremented backup is compressed (encrypted or not encypted).
+Incremented backup is compressed encrypted.
 
 During incremented backup we do:
 - get state of files (file, its size and hash);
@@ -16,10 +16,6 @@ Structure of files in storage:
 - State file;
 - Verification script;
 - Folder with version;
-- Folder with version contains files with random guids instead of names in 7z format.
+- Folder with version contains files with random guids instead of names in .aes256 format.
 
-7z encryption of headers and content is used.
-
-State file is encrypted with specified password. Each stored file is encrypted with unique password stored in state file.
-
-Compression degrees are predefined for some formats. For other formats - ultra.
+State file is compressed with Brotli and encrypted with specified password. Each stored file is encrypted with unique password stored in state file.

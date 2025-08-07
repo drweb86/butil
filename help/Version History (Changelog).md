@@ -1,4 +1,14 @@
-﻿# 2025.07.21
+﻿# 2025.08.07
+(unreleased)
+
+## New Features
+- SFTP support.
+SFTP was added because its easy to setup its on cheap Ubuntu VPS servers that can be rented online.
+
+## Changes
+- Some libraries were updated.
+ 
+# 2025.07.21
 
 ## Changes
 - Some libraries were updated.

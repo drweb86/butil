@@ -15,6 +15,8 @@ public class StorageFactory
             return new FailoverStorageWrapper(log, PlatformSpecificExperience.Instance.GetSmbCifsStorage(log, samba), triesCount);
         else if (storageSettings is FtpsStorageSettingsV2 ftps)
             return new FailoverStorageWrapper(log, new FtpsStorage(log, ftps, autodetectConnectionSettings), triesCount);
+        else if (storageSettings is SftpStorageSettingsV2 sftp)
+            return new FailoverStorageWrapper(log, new SftpStorage(log, sftp, autodetectConnectionSettings), triesCount);
         throw new ArgumentOutOfRangeException(nameof(storageSettings));
     }
 
