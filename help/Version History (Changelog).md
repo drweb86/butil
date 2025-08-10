@@ -1,5 +1,4 @@
-﻿# 2025.08.07
-(unreleased)
+﻿# 2025.08.10
 
 ## New Features
 - SFTP support.
