@@ -737,4 +737,19 @@ bin.
   <data name="Field_File_Browse" xml:space="preserve">
     <value>Указать файл</value>
   </data>
+  <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
+    <value>Отпечаток SHA-256 не указан.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
+    <value>SFTP папка / не разрешена. Папка должна указывать на более специфическую папку.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
+    <value>SFTP папка должна начинаться с /.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
+    <value>SFTP папка не должна заканчиваться на /.</value>
+  </data>
+  <data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
+    <value>И пароль и файл-ключ не указаны.</value>
+  </data>
 </root>

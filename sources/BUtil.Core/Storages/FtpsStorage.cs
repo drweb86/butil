@@ -8,8 +8,6 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Net.Security;
-using System.Security;
-using System.Text.RegularExpressions;
 
 namespace BUtil.Core.Storages;
 
@@ -72,7 +70,7 @@ class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
             .Where(x => x.Type == FtpObjectType.Directory)
             .Select(x => x.FullName)
             .Select(LinuxFileHelper.NormalizeNotNullablePath)
-            .Select(x => remotePath == null ? x : x[remotePath.Length..])
+            .Select(x => _normalizedFolder == null ? x : x[_normalizedFolder.Length..])
             .Select(LinuxFileHelper.NormalizeNotNullablePath)
             .Where(x => mask == null || LinuxFileHelper.FitsMask(Path.GetFileName(x), mask))
             .ToArray();
@@ -206,7 +204,7 @@ class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
             .Where(x => x.Type == FtpObjectType.File)
             .Select(x => x.FullName)
             .Select(LinuxFileHelper.NormalizeNotNullablePath)
-            .Select(x => remoteFolder == null ? x : x[remoteFolder.Length..])
+            .Select(x => _normalizedFolder == null ? x : x[_normalizedFolder.Length..])
             .Select(LinuxFileHelper.NormalizeNotNullablePath)
             .ToArray();
     }

@@ -806,6 +806,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fingerprint SHA-256 is not specified..
+        /// </summary>
+        public static string FingerPrintSHA256_Field_Validation_Empty {
+            get {
+                return ResourceManager.GetString("FingerPrintSHA256_Field_Validation_Empty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Explicit.
         /// </summary>
         public static string Ftps_Encryption_Option_Explicit {
@@ -1371,6 +1380,42 @@ namespace BUtil.Core.Localization {
         public static string Server_Field_Port_Validation {
             get {
                 return ResourceManager.GetString("Server_Field_Port_Validation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Both password or key file are empty..
+        /// </summary>
+        public static string SFTP_Validation_PasswordAndKeyNotSpecified {
+            get {
+                return ResourceManager.GetString("SFTP_Validation_PasswordAndKeyNotSpecified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SFTP folder must not end on /..
+        /// </summary>
+        public static string SFTPFolder_Field_Validation_InvalidPostfix {
+            get {
+                return ResourceManager.GetString("SFTPFolder_Field_Validation_InvalidPostfix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SFTP folder must start with /..
+        /// </summary>
+        public static string SFTPFolder_Field_Validation_InvalidPrefix {
+            get {
+                return ResourceManager.GetString("SFTPFolder_Field_Validation_InvalidPrefix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SFTP folder / is not allowed. Folder must point to more specific folder..
+        /// </summary>
+        public static string SFTPFolder_Field_Validation_RootFolder {
+            get {
+                return ResourceManager.GetString("SFTPFolder_Field_Validation_RootFolder", resourceCulture);
             }
         }
         

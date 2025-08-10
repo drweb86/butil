@@ -28,17 +28,17 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
             throw new InvalidDataException(Localization.Resources.User_Field_Validation);
         if (string.IsNullOrWhiteSpace(Settings.Password) &&
             string.IsNullOrWhiteSpace(Settings.KeyFile))
-            throw new InvalidDataException("Password or key file or both should be felt");
+            throw new InvalidDataException(Localization.Resources.SFTP_Validation_PasswordAndKeyNotSpecified);
         if (!testingConnection && string.IsNullOrWhiteSpace(Settings.FingerPrintSHA256))
-            throw new InvalidDataException("Fingerprint SHA-256 is not specified");
+            throw new InvalidDataException(Localization.Resources.FingerPrintSHA256_Field_Validation_Empty);
         if (string.IsNullOrWhiteSpace(Settings.Folder))
-            throw new InvalidDataException("SFTP folder is not specified.");
+            throw new InvalidDataException(Localization.Resources.Field_Folder_Validation_Empty);
         if (Settings.Folder == "/")
-            throw new InvalidDataException("SFTP folder / is not allowed. Folder must point to more specific folder.");
+            throw new InvalidDataException(Localization.Resources.SFTPFolder_Field_Validation_RootFolder);
         if (!Settings.Folder.StartsWith("/"))
-            throw new InvalidDataException("SFTP folder must start with /.");
+            throw new InvalidDataException(Localization.Resources.SFTPFolder_Field_Validation_InvalidPrefix);
         if (Settings.Folder.EndsWith("/"))
-            throw new InvalidDataException("SFTP folder must not end on /.");
+            throw new InvalidDataException(Localization.Resources.SFTPFolder_Field_Validation_InvalidPostfix);
 
         _testingConnection = testingConnection;
 
@@ -225,7 +225,7 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
         return files
             .Select(x => x[Settings.Folder.Length..])
             .Select(LinuxFileHelper.NormalizeNotNullablePath)
-            .ToArray(); // TODO: relative paths.
+            .ToArray();
     }
 
     public override string[] GetFolders(string? relativeFolderName, string? mask = null)
