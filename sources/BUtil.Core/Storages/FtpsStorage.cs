@@ -1,5 +1,6 @@
 ﻿
 using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.FileSystem;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using FluentFTP;
@@ -30,7 +31,7 @@ class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
         if (string.IsNullOrWhiteSpace(Settings.Password))
             throw new InvalidDataException(BUtil.Core.Localization.Resources.Password_Field_Validation_NotSpecified);
 
-        _normalizedFolder = NormalizeNullablePath(Settings.Folder);
+        _normalizedFolder = LinuxFileHelper.NormalizeNullablePath(Settings.Folder);
 
         _client = Mount();
         _autodetectConnectionSettings = autodetectConnectionSettings;
@@ -70,17 +71,11 @@ class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
             .GetListing(remotePath, listOption)
             .Where(x => x.Type == FtpObjectType.Directory)
             .Select(x => x.FullName)
-            .Select(NormalizeNotNullablePath)
+            .Select(LinuxFileHelper.NormalizeNotNullablePath)
             .Select(x => remotePath == null ? x : x[remotePath.Length..])
-            .Select(NormalizeNotNullablePath)
-            .Where(x => mask == null || FitsMask(Path.GetFileName(x), mask))
+            .Select(LinuxFileHelper.NormalizeNotNullablePath)
+            .Where(x => mask == null || LinuxFileHelper.FitsMask(Path.GetFileName(x), mask))
             .ToArray();
-    }
-
-    private static bool FitsMask(string fileName, string fileMask)
-    {
-        Regex mask = new(fileMask.Replace(".", "[.]").Replace("*", ".*").Replace("?", "."));
-        return mask.IsMatch(fileName);
     }
 
     private FtpClient Mount()
@@ -179,24 +174,9 @@ class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
         }
     }
 
-    private static string? NormalizeNullablePath(string? path)
-    {
-        if (path == null)
-            return null;
-        return NormalizeNotNullablePath(path);
-    }
-
-    private static string NormalizeNotNullablePath(string path)
-    {
-        if (path.Contains(".."))
-            throw new SecurityException("[..] is not allowed in path.");
-
-        return path.Trim(['\\', '/']);
-    }
-
     private string? GetRemotePath(string? relativePath, bool allowNull)
     {
-        var normalizedRelativePath = NormalizeNullablePath(relativePath);
+        var normalizedRelativePath = LinuxFileHelper.NormalizeNullablePath(relativePath);
         if (!allowNull && string.IsNullOrWhiteSpace(normalizedRelativePath))
         {
             throw new ArgumentNullException(nameof(relativePath));
@@ -206,7 +186,7 @@ class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
 
     private string GetRemoteNotNullablePath(string relativePath)
     {
-        var normalizedRelativePath = NormalizeNullablePath(relativePath);
+        var normalizedRelativePath = LinuxFileHelper.NormalizeNullablePath(relativePath);
         if (string.IsNullOrWhiteSpace(normalizedRelativePath))
             throw new ArgumentNullException(nameof(relativePath));
         return string.IsNullOrWhiteSpace(this._normalizedFolder)
@@ -225,9 +205,9 @@ class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
             .GetListing(remoteFolder, listOption)
             .Where(x => x.Type == FtpObjectType.File)
             .Select(x => x.FullName)
-            .Select(NormalizeNotNullablePath)
+            .Select(LinuxFileHelper.NormalizeNotNullablePath)
             .Select(x => remoteFolder == null ? x : x[remoteFolder.Length..])
-            .Select(NormalizeNotNullablePath)
+            .Select(LinuxFileHelper.NormalizeNotNullablePath)
             .ToArray();
     }
 

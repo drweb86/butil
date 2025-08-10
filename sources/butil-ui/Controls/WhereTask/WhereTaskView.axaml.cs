@@ -23,6 +23,11 @@ public partial class WhereTaskView : UserControl
         _ = BrowseCommandInternal();
     }
 
+    public void KeyFileBrowseCommand(object? sender, RoutedEventArgs args)
+    {
+        _ = BrowseKeyFileCommandInternal();
+    }
+
     private async Task BrowseCommandInternal()
     {
         var root = this.VisualRoot as TopLevel ?? throw new NullReferenceException("Invalid Owner");
@@ -38,6 +43,24 @@ public partial class WhereTaskView : UserControl
         if (folders.Count == 1)
         {
             dataContext.FolderFolder = folders[0].TryGetLocalPath() ?? folders[0].Path.ToString();
+        }
+    }
+
+    private async Task BrowseKeyFileCommandInternal()
+    {
+        var root = this.VisualRoot as TopLevel ?? throw new NullReferenceException("Invalid Owner");
+        var dataContext = DataContext as WhereTaskViewModel ?? throw new NullReferenceException();
+        var startLocation = await root.StorageProvider.TryGetFolderFromPathAsync(dataContext.FolderFolder);
+        var files = await root.StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions()
+        {
+            Title = BUtil.Core.Localization.Resources.KeyFile_Field,
+            SuggestedStartLocation = startLocation,
+            AllowMultiple = false
+        });
+
+        if (files.Count == 1)
+        {
+            dataContext.SftpKeyFile = files[0].TryGetLocalPath() ?? files[0].Path.ToString();
         }
     }
 }

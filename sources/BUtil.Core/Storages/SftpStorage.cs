@@ -1,5 +1,6 @@
 ﻿
 using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.FileSystem;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using Renci.SshNet;
@@ -7,37 +8,46 @@ using Renci.SshNet.Sftp;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.IO.Enumeration;
-using System.Security;
-using System.Text.RegularExpressions;
+using System.Linq;
 
 namespace BUtil.Core.Storages;
 
 class SftpStorage : StorageBase<SftpStorageSettingsV2>
 {
+    public static readonly int DefaultPort = 22;
     private readonly string? _normalizedFolder;
     private readonly SftpClient _client;
-    private readonly bool _autodetectConnectionSettings;
 
-    internal SftpStorage(ILog log, SftpStorageSettingsV2 settings, bool autodetectConnectionSettings)
+    internal SftpStorage(ILog log, SftpStorageSettingsV2 settings, bool testingConnection)
         : base(log, settings)
     {
         if (string.IsNullOrWhiteSpace(Settings.Host))
-            throw new InvalidDataException(BUtil.Core.Localization.Resources.Server_Field_Address_Validation);
+            throw new InvalidDataException(Localization.Resources.Server_Field_Address_Validation);
         if (Settings.Port < 0) // 0 - default.
-            throw new InvalidDataException(BUtil.Core.Localization.Resources.Server_Field_Port_Validation);
+            throw new InvalidDataException(Localization.Resources.Server_Field_Port_Validation);
         if (string.IsNullOrWhiteSpace(Settings.User))
-            throw new InvalidDataException(BUtil.Core.Localization.Resources.User_Field_Validation);
-        if (string.IsNullOrWhiteSpace(Settings.Password))
-            throw new InvalidDataException(BUtil.Core.Localization.Resources.Password_Field_Validation_NotSpecified);
+            throw new InvalidDataException(Localization.Resources.User_Field_Validation);
+        if (string.IsNullOrWhiteSpace(Settings.Password) &&
+            string.IsNullOrWhiteSpace(Settings.KeyFile))
+            throw new InvalidDataException("Password or key file or both should be felt");
+        if (!testingConnection && string.IsNullOrWhiteSpace(Settings.FingerPrintSHA256))
+            throw new InvalidDataException("Fingerprint SHA-256 is not specified");
+        if (string.IsNullOrWhiteSpace(Settings.Folder))
+            throw new InvalidDataException("SFTP folder is not specified.");
+        if (Settings.Folder == "/")
+            throw new InvalidDataException("SFTP folder is not allowed.");
+        if (!Settings.Folder.StartsWith("/"))
+            throw new InvalidDataException("SFTP folder must start with /.");
 
-        _normalizedFolder = NormalizeNullablePath(Settings.Folder);
+        _normalizedFolder = Settings.Folder;
+        _testingConnection = testingConnection;
 
         _client = Mount();
-        _autodetectConnectionSettings = autodetectConnectionSettings;
+        
     }
 
     private readonly object _uploadLock = new();
+    private readonly bool _testingConnection;
 
     public override IStorageUploadResult Upload(string sourceFile, string relativeFileName)
     {
@@ -45,6 +55,12 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
         {
             if (Exists(relativeFileName))
                 Delete(relativeFileName);
+
+            var destinationDirectory = Path.GetDirectoryName(relativeFileName) ?? string.Empty;
+            if (destinationDirectory != string.Empty)
+            {
+                CreateDirectory(destinationDirectory);
+            }
 
             var remotePath = GetRemoteNotNullablePath(relativeFileName);
             using (FileStream fs = File.OpenRead(sourceFile))
@@ -66,16 +82,24 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
         _client.DeleteDirectory(remotePath);
     }
 
-    private static bool FitsMask(string fileName, string fileMask)
-    {
-        Regex mask = new(fileMask.Replace(".", "[.]").Replace("*", ".*").Replace("?", "."));
-        return mask.IsMatch(fileName);
-    }
 
     private SftpClient Mount()
     {
         Log.WriteLine(LoggingEvent.Debug, $"Mount");
-        var client = new SftpClient(Settings.Host, Settings.Port,  Settings.User, Settings.Password);
+
+        var authenticationMethods = new List<AuthenticationMethod>();
+        if (!string.IsNullOrWhiteSpace(Settings.Password))
+            authenticationMethods.Add(new PasswordAuthenticationMethod(Settings.User, Settings.Password));
+        if (!string.IsNullOrWhiteSpace(Settings.KeyFile))
+            authenticationMethods.Add(new PrivateKeyAuthenticationMethod(Settings.KeyFile));
+
+        var connectionInfo = new ConnectionInfo(
+            Settings.Host,
+            Settings.Port == 0 ? DefaultPort : Settings.Port,
+            Settings.User,
+            authenticationMethods.ToArray());
+
+        var client = new SftpClient(connectionInfo);
         client.HostKeyReceived += Client_HostKeyReceived;
         client.Connect();
         return client;
@@ -83,17 +107,17 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
 
     private void Client_HostKeyReceived(object? sender, Renci.SshNet.Common.HostKeyEventArgs e)
     {
-        if (_autodetectConnectionSettings)
+        if (_testingConnection && string.IsNullOrWhiteSpace(Settings.FingerPrintSHA256))
         {
-            Settings.TrustedFingerprint = e.FingerPrintSHA256;
+            Settings.FingerPrintSHA256 = e.FingerPrintSHA256;
         }
 
-        e.CanTrust = e.FingerPrintSHA256 == Settings.TrustedFingerprint;
-
+        e.CanTrust = e.FingerPrintSHA256.Cmp(Settings.FingerPrintSHA256);
+        
         if (!e.CanTrust)
         {
-            Log.WriteLine(LoggingEvent.Error, $"Received host fingerprint from SFTP server is  policy {e.FingerPrintSHA256}. Expected fingerprint is {Settings.TrustedFingerprint}. Connection will not be accepted. You're facing Man-in-the-middle attack.");
-            Log.WriteLine(LoggingEvent.Error, $"If you trust this changed fingerprint, open in BUtil this task in Edit mode and click Save. Application will record this fingerprint as trusted.");
+            Log.WriteLine(LoggingEvent.Error, $"Fingerprint from SFTP server is {e.FingerPrintSHA256}. Expected fingerprint is {Settings.FingerPrintSHA256}. Connection will not be accepted (wrong fingerprint or MITM attack?)");
+            Log.WriteLine(LoggingEvent.Error, $"If you trust this fingerprint, update connection settings.");
         }
     }
 
@@ -133,6 +157,13 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
         return _client.Exists(remotePath);
     }
 
+    private void CreateDirectory(string relativeFileName)
+    {
+        var remotePath = GetRemoteNotNullablePath(relativeFileName);
+        if (!_client.Exists(remotePath))
+            _client.CreateDirectory(remotePath);
+    }
+
     public override void Delete(string relativeFileName)
     {
         var remotePath = GetRemoteNotNullablePath(relativeFileName);
@@ -146,34 +177,17 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
         _client.DownloadFile(targetFileName, outputStream);
     }
 
-    private static string? NormalizeNullablePath(string? path)
-    {
-        if (path == null)
-            return null;
-        return NormalizeNotNullablePath(path);
-    }
-
-    private static string NormalizeNotNullablePath(string path)
-    {
-        if (path.Contains(".."))
-            throw new SecurityException("[..] is not allowed in path.");
-
-        return path.Trim(['\\', '/']);
-    }
-
     private string? GetRemotePath(string? relativePath, bool allowNull)
     {
-        var normalizedRelativePath = NormalizeNullablePath(relativePath);
+        var normalizedRelativePath = LinuxFileHelper.NormalizeNullablePath(relativePath);
         if (!allowNull && string.IsNullOrWhiteSpace(normalizedRelativePath))
-        {
             throw new ArgumentNullException(nameof(relativePath));
-        }
         return normalizedRelativePath == null ? _normalizedFolder : string.IsNullOrWhiteSpace(_normalizedFolder) ? normalizedRelativePath : Path.Combine(_normalizedFolder, normalizedRelativePath);
     }
 
     private string GetRemoteNotNullablePath(string relativePath)
     {
-        var normalizedRelativePath = NormalizeNullablePath(relativePath);
+        var normalizedRelativePath = LinuxFileHelper.NormalizeNullablePath(relativePath);
         if (string.IsNullOrWhiteSpace(normalizedRelativePath))
             throw new ArgumentNullException(nameof(relativePath));
         return string.IsNullOrWhiteSpace(this._normalizedFolder)
@@ -202,7 +216,11 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
         var files = new List<string>();
         var remoteFolder = GetRemotePath(relativeFolderName, true)!;
         GetFilesInternal(remoteFolder, files, option);
-        return files.ToArray(); // TODO: relative paths.
+        return files
+            .Select(LinuxFileHelper.NormalizeNotNullablePath)
+            .Select(x => remoteFolder == null ? x : x[remoteFolder.Length..])
+            .Select(LinuxFileHelper.NormalizeNotNullablePath)
+            .ToArray(); // TODO: relative paths.
     }
 
     public override string[] GetFolders(string? relativeFolderName, string? mask = null)
@@ -215,19 +233,14 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
             if (!sftpFile.IsDirectory)
                 continue;
 
-            if (!string.IsNullOrWhiteSpace(mask))
-            {
-                if (FileSystemName.MatchesSimpleExpression(mask, sftpFile.Name))
-                {
-                    directories.Add(sftpFile.FullName);
-                }
-            }
-            else 
-            {
-                directories.Add(sftpFile.FullName);
-            }
+            directories.Add(sftpFile.FullName);
         }
-        return directories.ToArray(); // RELLLALLTIVE PATH
+        return directories
+            .Select(LinuxFileHelper.NormalizeNotNullablePath)
+            .Select(x => remoteFolder == null ? x : x[remoteFolder.Length..])
+            .Select(LinuxFileHelper.NormalizeNotNullablePath)
+            .Where(x => mask == null || LinuxFileHelper.FitsMask(Path.GetFileName(x), mask))
+            .ToArray();
     }
 
     public override DateTime GetModifiedTime(string relativeFileName)

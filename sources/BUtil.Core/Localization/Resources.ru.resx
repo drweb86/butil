@@ -725,4 +725,16 @@ bin.
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Пользователь не указан.</value>
   </data>
+  <data name="KeyFile_Field" xml:space="preserve">
+    <value>Файл-ключ:</value>
+  </data>
+  <data name="FingerPrintSHA256_Field" xml:space="preserve">
+    <value>Отпечаток SHA-256:</value>
+  </data>
+  <data name="OptionalField_Hint" xml:space="preserve">
+    <value>(необязательный параметр)</value>
+  </data>
+  <data name="Field_File_Browse" xml:space="preserve">
+    <value>Указать файл</value>
+  </data>
 </root>

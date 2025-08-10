@@ -237,7 +237,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Connection to server was unexpectedly terminated (Are passwords on Client and Server are the same?).
         /// </summary>
         public static string BUtilServer_Error_ConnectionAborted {
             get {
@@ -662,6 +662,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Browse file.
+        /// </summary>
+        public static string Field_File_Browse {
+            get {
+                return ResourceManager.GetString("Field_File_Browse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Folder:.
         /// </summary>
         public static string Field_Folder {
@@ -784,6 +793,15 @@ namespace BUtil.Core.Localization {
         public static string File_Uploading {
             get {
                 return ResourceManager.GetString("File_Uploading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fingerprint SHA-256:.
+        /// </summary>
+        public static string FingerPrintSHA256_Field {
+            get {
+                return ResourceManager.GetString("FingerPrintSHA256_Field", resourceCulture);
             }
         }
         
@@ -1013,6 +1031,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Key file:.
+        /// </summary>
+        public static string KeyFile_Field {
+            get {
+                return ResourceManager.GetString("KeyFile_Field", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Encryption.
         /// </summary>
         public static string LeftMenu_Encryption {
@@ -1198,6 +1225,15 @@ namespace BUtil.Core.Localization {
         public static string Name_Title {
             get {
                 return ResourceManager.GetString("Name_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (optional).
+        /// </summary>
+        public static string OptionalField_Hint {
+            get {
+                return ResourceManager.GetString("OptionalField_Hint", resourceCulture);
             }
         }
         

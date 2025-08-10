@@ -44,6 +44,8 @@
 				<RowDefinition />
 				<RowDefinition />
 				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
 
 				<RowDefinition />
 				<RowDefinition />
@@ -99,10 +101,15 @@
 			<NumericUpDown IsVisible="{Binding IsSftpTransport}" Grid.Row="16" Grid.Column="1" Minimum="0" Margin="4 4 4 4" VerticalAlignment="Center" Value="{Binding FtpsPort}"/>
 			<TextBlock IsVisible="{Binding IsSftpTransport}" Grid.Row="17" Grid.Column="0" Text="{Binding User_Field}" VerticalAlignment="Center"/>
 			<TextBox IsVisible="{Binding IsSftpTransport}" Grid.Row="17" Grid.Column="1" Margin="4 4 4 4" VerticalAlignment="Center" Text="{Binding FtpsUser}"/>
-			<TextBlock IsVisible="{Binding IsSftpTransport}" Grid.Row="18" Grid.Column="0" Text="{Binding Password_Field}" VerticalAlignment="Center"/>
+			<TextBlock IsVisible="{Binding IsSftpTransport}" Grid.Row="18" Grid.Column="0" Text="{Binding Password_Field_Optional}" VerticalAlignment="Center"/>
 			<TextBox IsVisible="{Binding IsSftpTransport}" Grid.Row="18" Grid.Column="1" Margin="4 4 4 4" VerticalAlignment="Center" Text="{Binding FtpsPassword}"/>
-			<TextBlock IsVisible="{Binding IsSftpTransport}" Grid.Row="19" Grid.Column="0" Text="{Binding Field_Folder}" VerticalAlignment="Center"/>
-			<TextBox IsVisible="{Binding IsSftpTransport}" Grid.Row="19" Grid.Column="1" Margin="4 4 4 4" VerticalAlignment="Center" Text="{Binding FtpsFolder}"/>
+			<TextBlock IsVisible="{Binding IsSftpTransport}" Grid.Row="19" Grid.Column="0" Text="{Binding KeyFile_Field_Optional}" VerticalAlignment="Center"/>
+			<TextBox IsVisible="{Binding IsSftpTransport}" Grid.Row="19" Grid.Column="1" Margin="4 4 4 4" VerticalAlignment="Center" Text="{Binding SftpKeyFile}"/>
+			<Button IsVisible="{Binding IsSftpTransport}" Grid.Row="19" Grid.Column="3" Content="{Binding Field_File_Browse}" VerticalAlignment="Center" Click="KeyFileBrowseCommand"/>
+			<TextBlock IsVisible="{Binding IsSftpTransport}" Grid.Row="20" Grid.Column="0" Text="{Binding FingerPrintSHA256_Field}" VerticalAlignment="Center"/>
+			<TextBox IsVisible="{Binding IsSftpTransport}" Grid.Row="20" Grid.Column="1" Margin="4 4 4 4" VerticalAlignment="Center" Text="{Binding SftpFingerPrintSHA256}"/>
+			<TextBlock IsVisible="{Binding IsSftpTransport}" Grid.Row="21" Grid.Column="0" Text="{Binding Field_Folder}" VerticalAlignment="Center"/>
+			<TextBox IsVisible="{Binding IsSftpTransport}" Grid.Row="21" Grid.Column="1" Margin="4 4 4 4" VerticalAlignment="Center" Watermark="/home/sftpuser/ftpserver" Text="{Binding FtpsFolder}"/>
 		</Grid>
 	</Expander>
 </UserControl>

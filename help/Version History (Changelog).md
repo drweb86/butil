@@ -3,7 +3,7 @@
 
 ## New Features
 - SFTP support.
-SFTP was added because its easy to setup its on cheap Ubuntu VPS servers that can be rented online.
+SFTP was added because its easy to setup its on cheap Ubuntu VPS servers that can be rented online. Since credentials are stored unprotected, it is expected that you create single purpose user for each task.
 
 ## Changes
 - Some libraries were updated.

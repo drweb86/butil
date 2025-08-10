@@ -65,6 +65,8 @@ public class WhereTaskViewModel : ObservableObject
             FtpsPort = sftpStorageSettingsV2.Port;
             FtpsUser = sftpStorageSettingsV2.User;
             FtpsPassword = sftpStorageSettingsV2.Password;
+            SftpKeyFile = sftpStorageSettingsV2.KeyFile;
+            SftpFingerPrintSHA256 = sftpStorageSettingsV2.FingerPrintSHA256;
             FtpsFolder = sftpStorageSettingsV2.Folder;
         }
 
@@ -153,7 +155,9 @@ public class WhereTaskViewModel : ObservableObject
                 Host = FtpsServer!,
                 Port = FtpsPort,
                 User = FtpsUser!,
-                Password = FtpsPassword!,
+                Password = FtpsPassword,
+                KeyFile = SftpKeyFile,
+                FingerPrintSHA256 = SftpFingerPrintSHA256!,
                 Folder = FtpsFolder,
             };
         }
@@ -186,13 +190,18 @@ public class WhereTaskViewModel : ObservableObject
     public static string Url_Field => Resources.Url_Field;
     public static string User_Field => Resources.User_Field;
     public static string Password_Field => Resources.Password_Field;
+    public static string Password_Field_Optional => Resources.Password_Field + " " + Resources.OptionalField_Hint;
     public static string Server_Field_Address => Resources.Server_Field_Address;
     public static string Server_Field_Port => Resources.Server_Field_Port;
     public static string Ftps_Field_Encryption => Resources.Ftps_Field_Encryption;
     public static string Field_Device => Resources.Field_Device;
     public static string Field_Folder_Browse => Resources.Field_Folder_Browse;
+    public static string Field_File_Browse => Resources.Field_File_Browse;
     public static string Task_Launch => Resources.Task_Launch;
     public static string Field_TransportProtocol => Resources.Field_TransportProtocol;
+    public static string KeyFile_Field_Optional => Resources.KeyFile_Field + " " + Resources.OptionalField_Hint;
+    public static string FingerPrintSHA256_Field => Resources.FingerPrintSHA256_Field;
+    public static string OptionalField_Hint => Resources.OptionalField_Hint;
     #endregion
 
     #region Transport
@@ -573,6 +582,48 @@ public class WhereTaskViewModel : ObservableObject
                 return;
             _ftpsPassword = value;
             OnPropertyChanged(nameof(FtpsPassword));
+        }
+    }
+
+    #endregion
+
+    #region SftpKeyFile
+
+    private string? _sftpKeyFile;
+
+    public string? SftpKeyFile
+    {
+        get
+        {
+            return _sftpKeyFile;
+        }
+        set
+        {
+            if (value == _sftpKeyFile)
+                return;
+            _sftpKeyFile = value;
+            OnPropertyChanged(nameof(SftpKeyFile));
+        }
+    }
+
+    #endregion
+
+    #region SftpFingerPrintSHA256
+
+    private string? _sftpFingerPrintSHA256;
+
+    public string? SftpFingerPrintSHA256
+    {
+        get
+        {
+            return _sftpFingerPrintSHA256;
+        }
+        set
+        {
+            if (value == _sftpFingerPrintSHA256)
+                return;
+            _sftpFingerPrintSHA256 = value;
+            OnPropertyChanged(nameof(SftpFingerPrintSHA256));
         }
     }
 
