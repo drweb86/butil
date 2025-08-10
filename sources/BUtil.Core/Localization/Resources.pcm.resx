@@ -322,6 +322,9 @@
   <data name="Field_Device_Validation_NotFound" xml:space="preserve">
     <value>Device no dey found.</value>
   </data>
+  <data name="Field_File_Browse" xml:space="preserve">
+  <value>Browse File</value>
+</data>
   <data name="Field_Folder" xml:space="preserve">
     <value>Folder:</value>
   </data>
@@ -364,6 +367,12 @@
   <data name="File_Uploading" xml:space="preserve">
     <value>Dey upload "{0}"</value>
   </data>
+  <data name="FingerPrintSHA256_Field" xml:space="preserve">
+  <value>Fingaprint SHA-256:</value>
+</data>
+  <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
+  <value>Dem no put SHA-256 fingaprint.</value>
+</data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Explicit</value>
   </data>
@@ -451,6 +460,9 @@
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
     <value>Incremental backup task</value>
   </data>
+  <data name="KeyFile_Field" xml:space="preserve">
+  <value>Key File:</value>
+</data>
   <data name="LeftMenu_Encryption" xml:space="preserve">
     <value>Encryption</value>
   </data>
@@ -514,6 +526,9 @@
   <data name="Name_Title" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="OptionalField_Hint" xml:space="preserve">
+  <value>(na option)</value>
+</data>
   <data name="Password_Field" xml:space="preserve">
     <value>Password:</value>
   </data>
@@ -561,6 +576,18 @@
   <data name="Server_Field_Port_Validation" xml:space="preserve">
     <value>Port no valid.</value>
   </data>
+  <data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
+  <value>Password and key file dem two empty.</value>
+</data>
+  <data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
+  <value>SFTP folder no suppose end with /.</value>
+</data>
+  <data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
+  <value>SFTP folder must start with /.</value>
+</data>
+  <data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
+  <value>SFTP folder / no dey allowed. Folder must show for specific place.</value>
+</data>
   <data name="SourceItem_AddFolders" xml:space="preserve">
     <value>Add folders...</value>
   </data>
@@ -724,33 +751,4 @@
   <data name="User_Field_Validation" xml:space="preserve">
     <value>User no dey specified.</value>
   </data>
-
-<data name="KeyFile_Field" xml:space="preserve">
-  <value>Key File:</value>
-</data>
-<data name="FingerPrintSHA256_Field" xml:space="preserve">
-  <value>Fingaprint SHA-256:</value>
-</data>
-<data name="OptionalField_Hint" xml:space="preserve">
-  <value>(na option)</value>
-</data>
-<data name="Field_File_Browse" xml:space="preserve">
-  <value>Browse File</value>
-</data>
-<data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
-  <value>Dem no put SHA-256 fingaprint.</value>
-</data>
-<data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
-  <value>SFTP folder / no dey allowed. Folder must show for specific place.</value>
-</data>
-<data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
-  <value>SFTP folder must start with /.</value>
-</data>
-<data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
-  <value>SFTP folder no suppose end with /.</value>
-</data>
-<data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
-  <value>Password and key file dem two empty.</value>
-</data>
-
 </root>

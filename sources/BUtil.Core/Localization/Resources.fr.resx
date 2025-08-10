@@ -323,6 +323,9 @@ Il y a un problème : le fournisseur d'accès réduit la vitesse d'upload après
   <data name="Field_Device_Validation_NotFound" xml:space="preserve">
     <value>Appareil non trouvé.</value>
   </data>
+  <data name="Field_File_Browse" xml:space="preserve">
+  <value>Parcourir les fichiers</value>
+</data>
   <data name="Field_Folder" xml:space="preserve">
     <value>Dossier :</value>
   </data>
@@ -365,6 +368,12 @@ Il y a un problème : le fournisseur d'accès réduit la vitesse d'upload après
   <data name="File_Uploading" xml:space="preserve">
     <value>Téléversement de "{0}"</value>
   </data>
+  <data name="FingerPrintSHA256_Field" xml:space="preserve">
+  <value>Empreinte SHA-256 :</value>
+</data>
+  <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
+  <value>L'empreinte SHA-256 n'est pas spécifiée.</value>
+</data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Explicite</value>
   </data>
@@ -448,6 +457,9 @@ Par exemple, après une sauvegarde complète le vendredi, une sauvegarde le lund
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
     <value>Créer une tâche de sauvegarde incrémentielle</value>
   </data>
+  <data name="KeyFile_Field" xml:space="preserve">
+  <value>Fichier clé :</value>
+</data>
   <data name="LeftMenu_Encryption" xml:space="preserve">
     <value>Chiffrement</value>
   </data>
@@ -511,6 +523,9 @@ Par exemple, après une sauvegarde complète le vendredi, une sauvegarde le lund
   <data name="Name_Title" xml:space="preserve">
     <value>Nom</value>
   </data>
+  <data name="OptionalField_Hint" xml:space="preserve">
+  <value>(optionnel)</value>
+</data>
   <data name="Password_Field" xml:space="preserve">
     <value>Mot de passe :</value>
   </data>
@@ -558,6 +573,18 @@ Indiquez un répertoire contenant ce fichier.</value>
   <data name="Server_Field_Port_Validation" xml:space="preserve">
     <value>Le port est invalide.</value>
   </data>
+  <data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
+  <value>Le mot de passe et le fichier clé sont vides.</value>
+</data>
+  <data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
+  <value>Le dossier SFTP ne doit pas se terminer par /.</value>
+</data>
+  <data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
+  <value>Le dossier SFTP doit commencer par /.</value>
+</data>
+  <data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
+  <value>Le dossier SFTP / n'est pas autorisé. Le dossier doit pointer vers un emplacement plus spécifique.</value>
+</data>
   <data name="SourceItem_AddFolders" xml:space="preserve">
     <value>Ajouter des dossiers...</value>
   </data>
@@ -722,31 +749,4 @@ Consultez la description détaillée dans le lien suivant.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>L'utilisateur n'est pas spécifié.</value>
   </data>
-<data name="KeyFile_Field" xml:space="preserve">
-  <value>Fichier clé :</value>
-</data>
-<data name="FingerPrintSHA256_Field" xml:space="preserve">
-  <value>Empreinte SHA-256 :</value>
-</data>
-<data name="OptionalField_Hint" xml:space="preserve">
-  <value>(optionnel)</value>
-</data>
-<data name="Field_File_Browse" xml:space="preserve">
-  <value>Parcourir les fichiers</value>
-</data>
-<data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
-  <value>L'empreinte SHA-256 n'est pas spécifiée.</value>
-</data>
-<data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
-  <value>Le dossier SFTP / n'est pas autorisé. Le dossier doit pointer vers un emplacement plus spécifique.</value>
-</data>
-<data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
-  <value>Le dossier SFTP doit commencer par /.</value>
-</data>
-<data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
-  <value>Le dossier SFTP ne doit pas se terminer par /.</value>
-</data>
-<data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
-  <value>Le mot de passe et le fichier clé sont vides.</value>
-</data>
 </root>

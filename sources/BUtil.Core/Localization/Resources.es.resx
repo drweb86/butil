@@ -322,6 +322,9 @@ Escenario de uso: Copia datos a un servidor remoto. Hay un problema: el ISP redu
   <data name="Field_Device_Validation_NotFound" xml:space="preserve">
     <value>El dispositivo no se encuentra.</value>
   </data>
+  <data name="Field_File_Browse" xml:space="preserve">
+  <value>Examinar archivo</value>
+</data>
   <data name="Field_Folder" xml:space="preserve">
     <value>Carpeta:</value>
   </data>
@@ -364,6 +367,12 @@ Escenario de uso: Copia datos a un servidor remoto. Hay un problema: el ISP redu
   <data name="File_Uploading" xml:space="preserve">
     <value>Subiendo "{0}"</value>
   </data>
+  <data name="FingerPrintSHA256_Field" xml:space="preserve">
+  <value>Huella SHA-256:</value>
+</data>
+  <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
+  <value>No se especificó la huella SHA-256.</value>
+</data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Explícito</value>
   </data>
@@ -451,6 +460,9 @@ Si falla alguna de las copias creadas, incluida la primera (completa), la restau
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
     <value>Tarea de respaldo incremental</value>
   </data>
+  <data name="KeyFile_Field" xml:space="preserve">
+  <value>Archivo de clave:</value>
+</data>
   <data name="LeftMenu_Encryption" xml:space="preserve">
     <value>Encriptación</value>
   </data>
@@ -514,6 +526,9 @@ Si falla alguna de las copias creadas, incluida la primera (completa), la restau
   <data name="Name_Title" xml:space="preserve">
     <value>Nombre</value>
   </data>
+  <data name="OptionalField_Hint" xml:space="preserve">
+  <value>(opcional)</value>
+</data>
   <data name="Password_Field" xml:space="preserve">
     <value>Contraseña:</value>
   </data>
@@ -561,6 +576,18 @@ Señala un directorio que contenga este archivo.</value>
   <data name="Server_Field_Port_Validation" xml:space="preserve">
     <value>El puerto es inválido.</value>
   </data>
+  <data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
+  <value>La contraseña y el archivo de clave están vacíos.</value>
+</data>
+  <data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
+  <value>La carpeta SFTP no debe terminar con /.</value>
+</data>
+  <data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
+  <value>La carpeta SFTP debe comenzar con /.</value>
+</data>
+  <data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
+  <value>Carpeta SFTP / no permitida. La carpeta debe apuntar a una ubicación más específica.</value>
+</data>
   <data name="SourceItem_AddFolders" xml:space="preserve">
     <value>Agregar carpetas...</value>
   </data>
@@ -724,31 +751,4 @@ Consulta la descripción detallada en el siguiente enlace.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>No se especificó el usuario.</value>
   </data>
-<data name="KeyFile_Field" xml:space="preserve">
-  <value>Archivo de clave:</value>
-</data>
-<data name="FingerPrintSHA256_Field" xml:space="preserve">
-  <value>Huella SHA-256:</value>
-</data>
-<data name="OptionalField_Hint" xml:space="preserve">
-  <value>(opcional)</value>
-</data>
-<data name="Field_File_Browse" xml:space="preserve">
-  <value>Examinar archivo</value>
-</data>
-<data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
-  <value>No se especificó la huella SHA-256.</value>
-</data>
-<data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
-  <value>Carpeta SFTP / no permitida. La carpeta debe apuntar a una ubicación más específica.</value>
-</data>
-<data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
-  <value>La carpeta SFTP debe comenzar con /.</value>
-</data>
-<data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
-  <value>La carpeta SFTP no debe terminar con /.</value>
-</data>
-<data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
-  <value>La contraseña y el archivo de clave están vacíos.</value>
-</data>
 </root>
