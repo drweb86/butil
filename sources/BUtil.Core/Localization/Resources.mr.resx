@@ -724,4 +724,33 @@
   <data name="User_Field_Validation" xml:space="preserve">
     <value>वापरकर्ता निर्दिष्ट केलेला नाही.</value>
   </data>
+
+<data name="KeyFile_Field" xml:space="preserve">
+  <value>की फाइल:</value>
+</data>
+<data name="FingerPrintSHA256_Field" xml:space="preserve">
+  <value>फिंगरप्रिंट SHA-256:</value>
+</data>
+<data name="OptionalField_Hint" xml:space="preserve">
+  <value>(पर्यायी)</value>
+</data>
+<data name="Field_File_Browse" xml:space="preserve">
+  <value>फाइल ब्राउझ करा</value>
+</data>
+<data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
+  <value>फिंगरप्रिंट SHA-256 निर्दिष्ट नाही.</value>
+</data>
+<data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
+  <value>SFTP फोल्डर / परवानगी नाही. फोल्डर अधिक विशिष्ट स्थानावर असणे आवश्यक आहे.</value>
+</data>
+<data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
+  <value>SFTP फोल्डर / ने सुरू झाले पाहिजे.</value>
+</data>
+<data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
+  <value>SFTP फोल्डर / ने संपू नये.</value>
+</data>
+<data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
+  <value>पासवर्ड आणि की फाइल दोन्ही रिक्त आहेत.</value>
+</data>
+
 </root>

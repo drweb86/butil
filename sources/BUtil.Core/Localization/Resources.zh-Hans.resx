@@ -723,4 +723,33 @@ bin。
   <data name="User_Field_Validation" xml:space="preserve">
     <value>未指定用户。</value>
   </data>
+
+<data name="KeyFile_Field" xml:space="preserve">
+  <value>密钥文件：</value>
+</data>
+<data name="FingerPrintSHA256_Field" xml:space="preserve">
+  <value>指纹 SHA-256：</value>
+</data>
+<data name="OptionalField_Hint" xml:space="preserve">
+  <value>(可选)</value>
+</data>
+<data name="Field_File_Browse" xml:space="preserve">
+  <value>浏览文件</value>
+</data>
+<data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
+  <value>未指定指纹 SHA-256。</value>
+</data>
+<data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
+  <value>不允许使用 SFTP 文件夹 /。文件夹必须指向更具体的位置。</value>
+</data>
+<data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
+  <value>SFTP 文件夹必须以 / 开头。</value>
+</data>
+<data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
+  <value>SFTP 文件夹不能以 / 结尾。</value>
+</data>
+<data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
+  <value>密码和密钥文件均为空。</value>
+</data>
+
 </root>

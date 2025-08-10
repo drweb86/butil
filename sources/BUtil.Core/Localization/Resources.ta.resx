@@ -726,4 +726,33 @@ bin.
   <data name="User_Field_Validation" xml:space="preserve">
     <value>பயனர் குறிப்பிடப்படவில்லை.</value>
   </data>
+
+<data name="KeyFile_Field" xml:space="preserve">
+  <value>விசைக் கோப்பு:</value>
+</data>
+<data name="FingerPrintSHA256_Field" xml:space="preserve">
+  <value>கைரேகை SHA-256:</value>
+</data>
+<data name="OptionalField_Hint" xml:space="preserve">
+  <value>(விருப்பமானது)</value>
+</data>
+<data name="Field_File_Browse" xml:space="preserve">
+  <value>கோப்பைத் தேடு</value>
+</data>
+<data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
+  <value>கைரேகை SHA-256 குறிப்பிடப்படவில்லை.</value>
+</data>
+<data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
+  <value>SFTP அடைவு / அனுமதிக்கப்படாது. அடைவு மிகவும் குறிப்பிட்ட இடத்தைச் சுட்டிக்காட்ட வேண்டும்.</value>
+</data>
+<data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
+  <value>SFTP அடைவு / உடன் தொடங்க வேண்டும்.</value>
+</data>
+<data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
+  <value>SFTP அடைவு / உடன் முடிக்கக் கூடாது.</value>
+</data>
+<data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
+  <value>கடவுச்சொல் மற்றும் விசைக் கோப்பு இரண்டும் காலியாக உள்ளன.</value>
+</data>
+
 </root>

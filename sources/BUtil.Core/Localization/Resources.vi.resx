@@ -721,4 +721,33 @@ Xem mô tả chi tiết trong liên kết sau.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Người dùng không được chỉ định.</value>
   </data>
+
+<data name="KeyFile_Field" xml:space="preserve">
+  <value>Tệp khóa:</value>
+</data>
+<data name="FingerPrintSHA256_Field" xml:space="preserve">
+  <value>Dấu vân tay SHA-256:</value>
+</data>
+<data name="OptionalField_Hint" xml:space="preserve">
+  <value>(tùy chọn)</value>
+</data>
+<data name="Field_File_Browse" xml:space="preserve">
+  <value>Duyệt tệp</value>
+</data>
+<data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
+  <value>Chưa chỉ định dấu vân tay SHA-256.</value>
+</data>
+<data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
+  <value>Thư mục SFTP / không được phép. Thư mục phải trỏ đến vị trí cụ thể hơn.</value>
+</data>
+<data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
+  <value>Thư mục SFTP phải bắt đầu bằng /.</value>
+</data>
+<data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
+  <value>Thư mục SFTP không được kết thúc bằng /.</value>
+</data>
+<data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
+  <value>Mật khẩu và tệp khóa đều trống.</value>
+</data>
+
 </root>

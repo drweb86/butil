@@ -724,4 +724,33 @@ Veja a descrição detalhada no seguinte link.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Usuário não especificado.</value>
   </data>
+
+<data name="KeyFile_Field" xml:space="preserve">
+  <value>Arquivo chave:</value>
+</data>
+<data name="FingerPrintSHA256_Field" xml:space="preserve">
+  <value>Impressão digital SHA-256:</value>
+</data>
+<data name="OptionalField_Hint" xml:space="preserve">
+  <value>(opcional)</value>
+</data>
+<data name="Field_File_Browse" xml:space="preserve">
+  <value>Procurar arquivo</value>
+</data>
+<data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
+  <value>A impressão digital SHA-256 não foi especificada.</value>
+</data>
+<data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
+  <value>Pasta SFTP / não permitida. A pasta deve apontar para um local mais específico.</value>
+</data>
+<data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
+  <value>A pasta SFTP deve começar com /.</value>
+</data>
+<data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
+  <value>A pasta SFTP não deve terminar com /.</value>
+</data>
+<data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
+  <value>A senha e o arquivo chave estão vazios.</value>
+</data>
+
 </root>

@@ -732,4 +732,33 @@ Consulta il sito web dell'applicazione per la documentazione su come impostare l
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Non è stato specificato l'utente.</value>
   </data>
+
+<data name="KeyFile_Field" xml:space="preserve">
+  <value>File chiave:</value>
+</data>
+<data name="FingerPrintSHA256_Field" xml:space="preserve">
+  <value>Impronta SHA-256:</value>
+</data>
+<data name="OptionalField_Hint" xml:space="preserve">
+  <value>(opzionale)</value>
+</data>
+<data name="Field_File_Browse" xml:space="preserve">
+  <value>Sfoglia file</value>
+</data>
+<data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
+  <value>Impronta SHA-256 non specificata.</value>
+</data>
+<data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
+  <value>Cartella SFTP / non consentita. La cartella deve puntare a una posizione più specifica.</value>
+</data>
+<data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
+  <value>La cartella SFTP deve iniziare con /.</value>
+</data>
+<data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
+  <value>La cartella SFTP non deve terminare con /.</value>
+</data>
+<data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
+  <value>Password e file chiave sono entrambi vuoti.</value>
+</data>
+
 </root>

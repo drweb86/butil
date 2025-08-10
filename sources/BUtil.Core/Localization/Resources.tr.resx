@@ -721,4 +721,33 @@ Aşağıdaki bağlantıda detaylı açıklama bulun.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Kullanıcı belirtilmemiş.</value>
   </data>
+
+<data name="KeyFile_Field" xml:space="preserve">
+  <value>Anahtar dosyası:</value>
+</data>
+<data name="FingerPrintSHA256_Field" xml:space="preserve">
+  <value>Parmak izi SHA-256:</value>
+</data>
+<data name="OptionalField_Hint" xml:space="preserve">
+  <value>(isteğe bağlı)</value>
+</data>
+<data name="Field_File_Browse" xml:space="preserve">
+  <value>Dosya gözat</value>
+</data>
+<data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
+  <value>SHA-256 parmak izi belirtilmedi.</value>
+</data>
+<data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
+  <value>SFTP klasörü / izin verilmez. Klasör daha özel bir konumu göstermelidir.</value>
+</data>
+<data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
+  <value>SFTP klasörü / ile başlamalıdır.</value>
+</data>
+<data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
+  <value>SFTP klasörü / ile bitmemelidir.</value>
+</data>
+<data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
+  <value>Şifre ve anahtar dosyası boş.</value>
+</data>
+
 </root>

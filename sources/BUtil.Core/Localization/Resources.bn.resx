@@ -721,4 +721,31 @@
   <data name="User_Field_Validation" xml:space="preserve">
     <value>ব্যবহারকারী নির্দিষ্ট করা হয়নি।</value>
   </data>
+<data name="KeyFile_Field" xml:space="preserve">
+  <value>কী ফাইল:</value>
+</data>
+<data name="FingerPrintSHA256_Field" xml:space="preserve">
+  <value>ফিঙ্গারপ্রিন্ট SHA-256:</value>
+</data>
+<data name="OptionalField_Hint" xml:space="preserve">
+  <value>(ঐচ্ছিক)</value>
+</data>
+<data name="Field_File_Browse" xml:space="preserve">
+  <value>ফাইল ব্রাউজ করুন</value>
+</data>
+<data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
+  <value>ফিঙ্গারপ্রিন্ট SHA-256 উল্লেখ করা হয়নি।</value>
+</data>
+<data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
+  <value>SFTP ফোল্ডার / অনুমোদিত নয়। ফোল্ডারটি আরও নির্দিষ্ট অবস্থানে নির্দেশ করতে হবে।</value>
+</data>
+<data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
+  <value>SFTP ফোল্ডার অবশ্যই / দিয়ে শুরু করতে হবে।</value>
+</data>
+<data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
+  <value>SFTP ফোল্ডার / দিয়ে শেষ করা যাবে না।</value>
+</data>
+<data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
+  <value>পাসওয়ার্ড এবং কী ফাইল উভয়ই খালি।</value>
+</data>
 </root>

@@ -721,4 +721,34 @@
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Pengguna tidak ditentukan.</value>
   </data>
+
+
+<data name="KeyFile_Field" xml:space="preserve">
+  <value>Berkas kunci:</value>
+</data>
+<data name="FingerPrintSHA256_Field" xml:space="preserve">
+  <value>Sidik SHA-256:</value>
+</data>
+<data name="OptionalField_Hint" xml:space="preserve">
+  <value>(opsional)</value>
+</data>
+<data name="Field_File_Browse" xml:space="preserve">
+  <value>Jelajahi berkas</value>
+</data>
+<data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
+  <value>Sidik SHA-256 tidak ditentukan.</value>
+</data>
+<data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
+  <value>Folder SFTP / tidak diizinkan. Folder harus merujuk ke lokasi yang lebih spesifik.</value>
+</data>
+<data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
+  <value>Folder SFTP harus diawali dengan /.</value>
+</data>
+<data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
+  <value>Folder SFTP tidak boleh diakhiri dengan /.</value>
+</data>
+<data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
+  <value>Kata sandi dan berkas kunci keduanya kosong.</value>
+</data>
+
 </root>

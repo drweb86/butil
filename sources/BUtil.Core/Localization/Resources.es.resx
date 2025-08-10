@@ -724,4 +724,31 @@ Consulta la descripción detallada en el siguiente enlace.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>No se especificó el usuario.</value>
   </data>
+<data name="KeyFile_Field" xml:space="preserve">
+  <value>Archivo de clave:</value>
+</data>
+<data name="FingerPrintSHA256_Field" xml:space="preserve">
+  <value>Huella SHA-256:</value>
+</data>
+<data name="OptionalField_Hint" xml:space="preserve">
+  <value>(opcional)</value>
+</data>
+<data name="Field_File_Browse" xml:space="preserve">
+  <value>Examinar archivo</value>
+</data>
+<data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
+  <value>No se especificó la huella SHA-256.</value>
+</data>
+<data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
+  <value>Carpeta SFTP / no permitida. La carpeta debe apuntar a una ubicación más específica.</value>
+</data>
+<data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
+  <value>La carpeta SFTP debe comenzar con /.</value>
+</data>
+<data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
+  <value>La carpeta SFTP no debe terminar con /.</value>
+</data>
+<data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
+  <value>La contraseña y el archivo de clave están vacíos.</value>
+</data>
 </root>

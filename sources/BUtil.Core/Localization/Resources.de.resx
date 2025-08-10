@@ -724,4 +724,33 @@ Siehe detaillierte Beschreibung im folgenden Link.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Benutzer ist nicht angegeben.</value>
   </data>
+
+<data name="KeyFile_Field" xml:space="preserve">
+  <value>Schlüsseldatei:</value>
+</data>
+<data name="FingerPrintSHA256_Field" xml:space="preserve">
+  <value>Fingerabdruck SHA-256:</value>
+</data>
+<data name="OptionalField_Hint" xml:space="preserve">
+  <value>(optional)</value>
+</data>
+<data name="Field_File_Browse" xml:space="preserve">
+  <value>Datei durchsuchen</value>
+</data>
+<data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
+  <value>SHA-256-Fingerabdruck nicht angegeben.</value>
+</data>
+<data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
+  <value>SFTP-Ordner / ist nicht erlaubt. Ordner muss auf ein spezifischeres Verzeichnis verweisen.</value>
+</data>
+<data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
+  <value>SFTP-Ordner muss mit / beginnen.</value>
+</data>
+<data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
+  <value>SFTP-Ordner darf nicht mit / enden.</value>
+</data>
+<data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
+  <value>Passwort und Schlüsseldatei sind beide leer.</value>
+</data>
+
 </root>

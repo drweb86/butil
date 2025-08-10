@@ -724,4 +724,33 @@ bin.
   <data name="User_Field_Validation" xml:space="preserve">
     <value>उपयोगकर्ता निर्दिष्ट नहीं है।</value>
   </data>
+
+<data name="KeyFile_Field" xml:space="preserve">
+  <value>कुंजी फ़ाइल:</value>
+</data>
+<data name="FingerPrintSHA256_Field" xml:space="preserve">
+  <value>फिंगरप्रिंट SHA-256:</value>
+</data>
+<data name="OptionalField_Hint" xml:space="preserve">
+  <value>(वैकल्पिक)</value>
+</data>
+<data name="Field_File_Browse" xml:space="preserve">
+  <value>फ़ाइल ब्राउज़ करें</value>
+</data>
+<data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
+  <value>फिंगरप्रिंट SHA-256 निर्दिष्ट नहीं है।</value>
+</data>
+<data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
+  <value>SFTP फ़ोल्डर / की अनुमति नहीं है। फ़ोल्डर किसी विशिष्ट स्थान पर होना चाहिए।</value>
+</data>
+<data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
+  <value>SFTP फ़ोल्डर / से प्रारंभ होना चाहिए।</value>
+</data>
+<data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
+  <value>SFTP फ़ोल्डर / पर समाप्त नहीं होना चाहिए।</value>
+</data>
+<data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
+  <value>पासवर्ड और कुंजी फ़ाइल दोनों खाली हैं।</value>
+</data>
+
 </root>
