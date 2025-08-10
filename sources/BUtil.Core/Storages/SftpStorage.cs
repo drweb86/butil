@@ -15,7 +15,6 @@ namespace BUtil.Core.Storages;
 class SftpStorage : StorageBase<SftpStorageSettingsV2>
 {
     public static readonly int DefaultPort = 22;
-    private readonly string? _normalizedFolder;
     private readonly SftpClient _client;
 
     internal SftpStorage(ILog log, SftpStorageSettingsV2 settings, bool testingConnection)
@@ -35,11 +34,12 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
         if (string.IsNullOrWhiteSpace(Settings.Folder))
             throw new InvalidDataException("SFTP folder is not specified.");
         if (Settings.Folder == "/")
-            throw new InvalidDataException("SFTP folder is not allowed.");
+            throw new InvalidDataException("SFTP folder / is not allowed. Folder must point to more specific folder.");
         if (!Settings.Folder.StartsWith("/"))
             throw new InvalidDataException("SFTP folder must start with /.");
+        if (Settings.Folder.EndsWith("/"))
+            throw new InvalidDataException("SFTP folder must not end on /.");
 
-        _normalizedFolder = Settings.Folder;
         _testingConnection = testingConnection;
 
         _client = Mount();
@@ -58,9 +58,7 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
 
             var destinationDirectory = Path.GetDirectoryName(relativeFileName) ?? string.Empty;
             if (destinationDirectory != string.Empty)
-            {
                 CreateDirectory(destinationDirectory);
-            }
 
             var remotePath = GetRemoteNotNullablePath(relativeFileName);
             using (FileStream fs = File.OpenRead(sourceFile))
@@ -79,6 +77,11 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
     public override void DeleteFolder(string relativeFolderName)
     {
         var remotePath = GetRemoteNotNullablePath(relativeFolderName);
+
+        var files = GetFiles(relativeFolderName, SearchOption.AllDirectories);
+        foreach (var file in files)
+            Delete(file);
+
         _client.DeleteDirectory(remotePath);
     }
 
@@ -174,7 +177,7 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
     {
         var remotePath = GetRemoteNotNullablePath(relativeFileName);
         using var outputStream = File.OpenWrite(targetFileName);
-        _client.DownloadFile(targetFileName, outputStream);
+        _client.DownloadFile(remotePath, outputStream);
     }
 
     private string? GetRemotePath(string? relativePath, bool allowNull)
@@ -182,7 +185,7 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
         var normalizedRelativePath = LinuxFileHelper.NormalizeNullablePath(relativePath);
         if (!allowNull && string.IsNullOrWhiteSpace(normalizedRelativePath))
             throw new ArgumentNullException(nameof(relativePath));
-        return normalizedRelativePath == null ? _normalizedFolder : string.IsNullOrWhiteSpace(_normalizedFolder) ? normalizedRelativePath : Path.Combine(_normalizedFolder, normalizedRelativePath);
+        return normalizedRelativePath == null ? Settings.Folder : string.IsNullOrWhiteSpace(Settings.Folder) ? normalizedRelativePath : FileHelper.Combine('/', Settings.Folder, normalizedRelativePath);
     }
 
     private string GetRemoteNotNullablePath(string relativePath)
@@ -190,15 +193,18 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
         var normalizedRelativePath = LinuxFileHelper.NormalizeNullablePath(relativePath);
         if (string.IsNullOrWhiteSpace(normalizedRelativePath))
             throw new ArgumentNullException(nameof(relativePath));
-        return string.IsNullOrWhiteSpace(this._normalizedFolder)
-            ? normalizedRelativePath
-            : Path.Combine(this._normalizedFolder, normalizedRelativePath);
+        return FileHelper.Combine('/', Settings.Folder, normalizedRelativePath);
     }
 
     private void GetFilesInternal(string directory, List<string> files, System.IO.SearchOption option)
     {
         foreach (SftpFile sftpFile in _client.ListDirectory(directory))
         {
+            if (sftpFile.Name == "..")
+                continue;
+            if (sftpFile.Name == ".")
+                continue;
+
             if (sftpFile.IsDirectory)
             {
                 if (option == SearchOption.AllDirectories)
@@ -217,8 +223,7 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
         var remoteFolder = GetRemotePath(relativeFolderName, true)!;
         GetFilesInternal(remoteFolder, files, option);
         return files
-            .Select(LinuxFileHelper.NormalizeNotNullablePath)
-            .Select(x => remoteFolder == null ? x : x[remoteFolder.Length..])
+            .Select(x => x[Settings.Folder.Length..])
             .Select(LinuxFileHelper.NormalizeNotNullablePath)
             .ToArray(); // TODO: relative paths.
     }
@@ -232,12 +237,15 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
         {
             if (!sftpFile.IsDirectory)
                 continue;
+            if (sftpFile.Name == "..")
+                continue;
+            if (sftpFile.Name == ".")
+                continue;
 
             directories.Add(sftpFile.FullName);
         }
         return directories
-            .Select(LinuxFileHelper.NormalizeNotNullablePath)
-            .Select(x => remoteFolder == null ? x : x[remoteFolder.Length..])
+            .Select(x => x[Settings.Folder.Length..])
             .Select(LinuxFileHelper.NormalizeNotNullablePath)
             .Where(x => mask == null || LinuxFileHelper.FitsMask(Path.GetFileName(x), mask))
             .ToArray();
