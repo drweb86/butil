@@ -1,4 +1,10 @@
-﻿# 2025.08.10
+﻿# 2025.08.13
+(unreleased)
+
+## Removed Features
+- drop task auto-upgrade to format version 2.
+
+# 2025.08.10
 
 ## New Features
 - SFTP support.
