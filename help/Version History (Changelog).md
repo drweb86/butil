@@ -4,6 +4,9 @@
 ## Removed Features
 - drop task auto-upgrade to format version 2.
 
+## Changes
+- better stripping update information.
+
 # 2025.08.10
 
 ## New Features

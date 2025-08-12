@@ -1,13 +1,13 @@
 
 using BUtil.Core.FileSystem;
+using Org.BouncyCastle.Utilities;
 using System;
 using System.IO;
 using System.IO.Compression;
+using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace BUtil.Core.Misc;
@@ -42,7 +42,24 @@ public static class UpdateChecker
             if (release == null || !Version.TryParse(release.Version, out var version))
                 return noUpdate;
 
-            return new AppUpdateInfo(CopyrightInfo.Version < version, release.Version, release.Body
+            var body = release.Body
+                .Replace("\\r", "\r")
+                .Replace("\\n", "\n")
+                .Replace("#", "");
+
+            var bodyLines = body
+                .Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None)
+                .Where(line => !line.StartsWith("<") && !line.StartsWith("["))
+                .ToList();
+            // Remove leading empty lines
+            while (bodyLines.Count > 0 && string.IsNullOrWhiteSpace(bodyLines[0]))
+                bodyLines.RemoveAt(0);
+            // Remove trailing empty lines
+            while (bodyLines.Count > 0 && string.IsNullOrWhiteSpace(bodyLines[^1]))
+                bodyLines.RemoveAt(bodyLines.Count - 1);
+            body = string.Join(Environment.NewLine, bodyLines);
+
+            return new AppUpdateInfo(CopyrightInfo.Version < version, release.Version, body
                 .Replace("\\r", "\r")
                 .Replace("\\n", "\n")
                 .Replace("#", ""));
@@ -50,39 +67,6 @@ public static class UpdateChecker
         catch
         {
             return new AppUpdateInfo(false, null, null);
-        }
-    }
-
-    public static async Task<AppUpdateInfo> CheckForUpdateSynology()
-    {
-        try
-        {
-            using HttpClient client = new();
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
-            client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
-
-#if DEBUG
-            var path = Path.Combine(Directories.BinariesDir, @"..\..\..\..\web\latest.json");
-            using var releasesStream = File.OpenRead(path);
-#else
-            await using var releasesStream = await client.GetStreamAsync("https://drweb86.synology.me:88/latest.json");
-#endif
-
-            var release = await JsonSerializer.DeserializeAsync<AppRelease>(releasesStream);
-            var noUpdate = new AppUpdateInfo(false, null, null);
-
-            if (release == null || !Version.TryParse(release.Version, out var version))
-                return noUpdate;
-
-            return new AppUpdateInfo(CopyrightInfo.Version < version, release.Version, release.Changes
-                .Replace("\\r", "\r")
-                .Replace("\\n", "\n")
-                .Replace("#", ""));
-        }
-        catch 
-        { 
-            return new AppUpdateInfo(false, null, null); ;
         }
     }
 }
