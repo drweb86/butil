@@ -68,7 +68,9 @@ public class IncrementalBackupStateService(StorageSpecificServicesIoc services, 
         };
 
         var uploadResult = _services.Storage.Upload(aesFile, storageFile.StorageRelativeFileName);
+#pragma warning disable CS0618 // Type or member is obsolete
         storageFile.StorageFileName = uploadResult.StorageFileName;
+#pragma warning restore CS0618 // Type or member is obsolete
         storageFile.StorageFileNameSize = uploadResult.StorageFileNameSize;
         storageFile.StorageIntegrityMethodInfo = _hashService.GetSha512(aesFile, false);
 

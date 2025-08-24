@@ -158,7 +158,7 @@ public class WhereTaskViewModel : ObservableObject
                 Password = FtpsPassword,
                 KeyFile = SftpKeyFile,
                 FingerPrintSHA256 = SftpFingerPrintSHA256!,
-                Folder = FtpsFolder,
+                Folder = FtpsFolder!,
             };
         }
         throw new System.ArgumentOutOfRangeException();

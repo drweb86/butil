@@ -29,7 +29,7 @@ public class VersionViewItem
                 return storageFiles;
             })
             .Where(x => x.StorageRelativeFileName.StartsWith(versionFolder))
-            .GroupBy(x => x.StorageFileName)
+            .GroupBy(x => x.StorageRelativeFileName)
             .Select(x => x.First().StorageFileNameSize)
             .Sum();
     }

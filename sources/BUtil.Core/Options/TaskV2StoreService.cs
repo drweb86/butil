@@ -106,7 +106,7 @@ public class TaskV2StoreService
     public IEnumerable<string> GetNames()
     {
         return [.. Directory
-            .GetFiles(_folder, _extensionV2)
+            .GetFiles(_folder, "*" + _extensionV2)
             .Select(x => Path.GetFileName(x) ?? throw new InvalidDataException(x))
             .Select(x => x.Replace(_extensionV2, string.Empty))
             .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];

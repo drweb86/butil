@@ -1,11 +1,15 @@
 ﻿# 2025.08.13
 (unreleased)
 
+## New Features
+- hive can be moved to different storage by copy now.
+
 ## Removed Features
 - drop task auto-upgrade to format version 2.
 
 ## Changes
 - better stripping update information.
+- Some libraries were updated.
 
 # 2025.08.10
 

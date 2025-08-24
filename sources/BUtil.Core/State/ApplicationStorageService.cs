@@ -131,7 +131,9 @@ public class ApplicationStorageService(ICachedHashService hashService, StorageSp
         
         storageFile.StorageMethod = StorageMethodNames.Aes256Encrypted;
         storageFile.StorageFileNameSize = uploadResult.StorageFileNameSize;
+#pragma warning disable CS0618 // Type or member is obsolete
         storageFile.StorageFileName = uploadResult.StorageFileName;
+#pragma warning restore CS0618 // Type or member is obsolete
         storageFile.StorageIntegrityMethod = StorageIntegrityMethod.Sha512;
         storageFile.StorageIntegrityMethodInfo = _hashService.GetSha512(file, false);
         return true;

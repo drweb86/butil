@@ -291,7 +291,7 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
                 storageFiles.AddRange(x.CreatedFiles);
                 return storageFiles;
             })
-            .GroupBy(x => x.StorageFileName)
+            .GroupBy(x => x.StorageRelativeFileName)
             .Select(x => x.First().StorageFileNameSize)
             .Sum();
 

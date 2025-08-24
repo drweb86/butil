@@ -58,7 +58,7 @@ public class DeleteVersionUtil
             });
 
             // distinct
-            filesToMove = filesToMove.GroupBy(p => p.StorageFileName)
+            filesToMove = filesToMove.GroupBy(p => p.StorageRelativeFileName)
               .Select(g => g.First())
               .ToList();
 
@@ -112,7 +112,9 @@ public class DeleteVersionUtil
         destinationStorageFile.StorageIntegrityMethodInfo = sourceStorageFile.StorageIntegrityMethodInfo;
         destinationStorageFile.StorageFileNameSize = sourceStorageFile.StorageFileNameSize;
         destinationStorageFile.StoragePassword = sourceStorageFile.StoragePassword;
+#pragma warning disable CS0618 // Type or member is obsolete
         destinationStorageFile.StorageFileName = sourceStorageFile.StorageFileName.Replace(versionFolder, newVersionFolder);
+#pragma warning restore CS0618 // Type or member is obsolete
         destinationStorageFile.StorageRelativeFileName = patchedStorageRelativeFileName;
     }
 
