@@ -155,9 +155,9 @@ public static class RootTaskFactory
                 return false;
             }
 
-            if (fileSenderServerOptions.Port < 1)
+            if (fileSenderServerOptions.Port < PlatformSpecificExperience.Instance.MinimumListenerPort)
             {
-                error = Resources.Server_Field_Port_Validation;
+                error = Resources.Server_Field_Port_Validation + $"(Min port {PlatformSpecificExperience.Instance.MinimumListenerPort})";
                 return false;
             }
 

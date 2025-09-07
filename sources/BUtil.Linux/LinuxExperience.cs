@@ -19,6 +19,7 @@ public class LinuxExperience : CrossPlatformExperience
     }
     #endregion
 
+    public override int MinimumListenerPort => 1025;
     public override ISessionService SessionService => new LinuxSessionService();
 
     public override ITaskSchedulerService? GetTaskSchedulerService()

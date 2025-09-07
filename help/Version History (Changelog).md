@@ -1,4 +1,4 @@
-﻿# 2025.08.13
+﻿# 2025.09.07
 (unreleased)
 
 ## New Features
@@ -10,6 +10,7 @@
 ## Changes
 - better stripping update information.
 - Some libraries were updated.
+- For File Server port will be mandatory to be above 1024 for Ubuntu.
 
 # 2025.08.10
 

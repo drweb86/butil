@@ -8,6 +8,7 @@ namespace BUtil.Core;
 
 public abstract class CrossPlatformExperience
 {
+    public abstract int MinimumListenerPort { get; }
     public abstract ISessionService SessionService { get; }
     public abstract ISupportManager SupportManager { get; }
     public abstract IFolderService GetFolderService();

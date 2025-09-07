@@ -14,7 +14,7 @@ public partial class WhereFileSenderTaskView : UserControl
     {
         InitializeComponent();
 
-        var viewModel = new Controls.WhereFileSenderTaskViewModel(string.Empty, 999, BUtil.Core.Localization.Resources.LeftMenu_Where, "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png");
+        var viewModel = new Controls.WhereFileSenderTaskViewModel(string.Empty, 10999, BUtil.Core.Localization.Resources.LeftMenu_Where, "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png");
         this.DataContext = viewModel;
     }
 

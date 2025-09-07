@@ -18,6 +18,8 @@ public class WindowsExperience : CrossPlatformExperience
     }
     #endregion
 
+    public override int MinimumListenerPort => 1;
+
     public override ISessionService SessionService => new WindowsSessionService();
 
     public override ISupportManager SupportManager => new WindowsSupportManager();

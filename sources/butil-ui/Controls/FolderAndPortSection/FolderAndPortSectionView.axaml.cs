@@ -12,7 +12,7 @@ public partial class FolderAndPortSectionView : UserControl
     public FolderAndPortSectionView()
     {
         InitializeComponent();
-        this.DataContext = new FolderAndPortSectionViewModel("the folder", 999);
+        this.DataContext = new FolderAndPortSectionViewModel("the folder", 10999);
     }
 
     public void BrowseCommand(object? sender, RoutedEventArgs args)

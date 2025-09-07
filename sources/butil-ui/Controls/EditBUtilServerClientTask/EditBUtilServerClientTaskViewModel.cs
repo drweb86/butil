@@ -20,7 +20,7 @@ public class EditBUtilServerClientTaskViewModel : ViewModelBase
         IsNew = isNew;
 
         var storeService = new TaskV2StoreService();
-        var task = isNew ? new TaskV2() { Model = new BUtilClientModelOptionsV2(string.Empty, FileSenderDirection.ToServer, "", 999, string.Empty) } : storeService.Load(taskName) ?? new TaskV2();
+        var task = isNew ? new TaskV2() { Model = new BUtilClientModelOptionsV2(string.Empty, FileSenderDirection.ToServer, "", 10999, string.Empty) } : storeService.Load(taskName) ?? new TaskV2();
         NameTaskViewModel = new NameTaskViewModel(isNew, Resources.BUtilServerClientTask_Help, task.Name);
         var model = (BUtilClientModelOptionsV2)task.Model;
         EncryptionTaskViewModel = new EncryptionTaskViewModel(model.Password, isNew, false);
