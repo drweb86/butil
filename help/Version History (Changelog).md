@@ -1,5 +1,4 @@
-﻿# 2025.09.07
-(unreleased)
+﻿# 2025.10.13
 
 ## New Features
 - hive can be moved to different storage by copy now.
@@ -11,6 +10,11 @@
 - better stripping update information.
 - Some libraries were updated.
 - For File Server port will be mandatory to be above 1024 for Ubuntu.
+- import photos: task show destination file name.
+- SkiaSharp library 3.1 for Linux.
+
+## Bug Fixes
+- crashes of SD card could lead to creating empty photo files.
 
 # 2025.08.10
 

@@ -41,7 +41,7 @@ class ImportSingleFileTask : BuTaskV2
         _toStorage = toStorage;
         _transformFileName = transformFileName;
 
-        Title = string.Format(BUtil.Core.Localization.Resources.ImportMediaTask_File, Path.GetFileNameWithoutExtension(fromFile));
+        Title = string.Format(BUtil.Core.Localization.Resources.ImportMediaTask_File, Path.GetFileName(fromFile));
     }
 
     protected override void ExecuteInternal()
@@ -74,6 +74,8 @@ class ImportSingleFileTask : BuTaskV2
             IsSkipped = true;
             return;
         }
+
+        UpdateTitle(string.Format(BUtil.Core.Localization.Resources.ImportMediaTask_File, $"{Path.GetFileName(File)} => {actualFileName}"));
 
         var uploadedFileName = _toStorage.Upload(exchangeFile, actualFileName) ?? throw new IOException($"Failed to upload file {exchangeFile}");
         System.IO.File.SetCreationTime(uploadedFileName.StorageFileName, lastWriteTime);

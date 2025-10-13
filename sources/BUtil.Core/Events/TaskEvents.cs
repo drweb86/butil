@@ -11,12 +11,12 @@ public class TaskEvents
     public event EventHandler<TaskProgressEventArgs>? OnTaskProgress;
     public event EventHandler<DuringExecutionTasksAddedEventArgs>? OnDuringExecutionTasksAdded;
 
-    public void TaskProgessUpdate(Guid taskId, ProcessingStatus status)
+    public void TaskProgessUpdate(Guid taskId, ProcessingStatus? status, string? title)
     {
         var handler = OnTaskProgress;
         if (handler == null)
             return;
-        handler(this, new TaskProgressEventArgs(taskId, status));
+        handler(this, new TaskProgressEventArgs(taskId, status, title));
     }
 
     public void DuringExecutionTasksAdded(Guid? taskId, IEnumerable<BuTask> tasks)

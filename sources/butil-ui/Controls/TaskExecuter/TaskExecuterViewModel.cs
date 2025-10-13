@@ -348,14 +348,17 @@ public class TaskExecuterViewModel : ObservableObject
 
     #endregion
 
-    private void UpdateListViewItem(Guid taskId, ProcessingStatus status)
+    private void UpdateListViewItem(Guid taskId, ProcessingStatus? status, string? title)
     {
         if (status == ProcessingStatus.NotStarted)
             return;
 
         if (_itemsDict.TryGetValue(taskId, out var item))
         {
-            item.Status = status;
+            if (status != null)
+                item.Status = status.Value;
+            if (title != null)
+                item.Text = title;
         }
     }
 
@@ -391,7 +394,7 @@ public class TaskExecuterViewModel : ObservableObject
                 _endedTasks.Add(e.TaskId);
             }
 
-        ScheduleUpdate(() => UpdateListViewItem(e.TaskId, e.Status));
+        ScheduleUpdate(() => UpdateListViewItem(e.TaskId, e.Status, e.Title));
     }
 
     private void OnElapsedTimerTick(object? sender, EventArgs e)

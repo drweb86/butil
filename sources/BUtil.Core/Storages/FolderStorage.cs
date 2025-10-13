@@ -2,10 +2,12 @@
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Logs;
+using BUtil.Core.Misc;
 using System;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Security;
 
 namespace BUtil.Core.Storages;
@@ -67,14 +69,6 @@ public class FolderStorage : StorageBase<FolderStorageSettingsV2>
 
     public override string? Test()
     {
-        /*if (!Directory.Exists(Settings.DestinationFolder))
-            return string.Format(Localization.Resources.DirectoryStorage_Field_Directory_Validation_NotFound, Settings.DestinationFolder);
-        if (!Path.IsPathFullyQualified(Settings.DestinationFolder))
-            return string.Format(Localization.Resources.DirectoryStorage_Field_Directory_Validation_NotFound, Settings.DestinationFolder);
-
-        return null;*/
-
-
         if (!Directory.Exists(Settings.DestinationFolder))
             return string.Format(Localization.Resources.DirectoryStorage_Field_Directory_Validation_NotFound, Settings.DestinationFolder);
         if (!Path.IsPathFullyQualified(Settings.DestinationFolder))
@@ -127,19 +121,32 @@ public class FolderStorage : StorageBase<FolderStorageSettingsV2>
         Copy(file, targetFileName);
     }
 
-    public static void Copy(string inputFile, string outputFilePath)
+    public void Copy(string inputFile, string outputFilePath)
     {
         int bufferSize = 16 * 1024 * 1024;
 
-        using var inputFileStream = new FileStream(inputFile, FileMode.Open, FileAccess.Read, FileShare.ReadWrite, bufferSize);
-        using var outputFileStream = new FileStream(outputFilePath, FileMode.OpenOrCreate, FileAccess.Write, FileShare.None, bufferSize);
-        outputFileStream.SetLength(inputFileStream.Length);
-        int bytesRead = -1;
-        byte[] bytes = new byte[bufferSize];
-
-        while ((bytesRead = inputFileStream.Read(bytes, 0, bufferSize)) > 0)
+        try
         {
-            outputFileStream.Write(bytes, 0, bytesRead);
+            using var inputFileStream = new FileStream(inputFile, FileMode.Open, FileAccess.Read, FileShare.ReadWrite, bufferSize);
+            using var outputFileStream = new FileStream(outputFilePath, FileMode.OpenOrCreate, FileAccess.Write, FileShare.None, bufferSize);
+            outputFileStream.SetLength(inputFileStream.Length);
+            int bytesRead = -1;
+            byte[] bytes = new byte[bufferSize];
+
+            while ((bytesRead = inputFileStream.Read(bytes, 0, bufferSize)) > 0)
+            {
+                outputFileStream.Write(bytes, 0, bytesRead);
+            }
+        }
+        catch(IOException e)
+        {
+            Log.WriteLine(LoggingEvent.Error, ExceptionHelper.ToString(e));
+            try
+            { 
+                File.Delete(outputFilePath);
+            }
+            catch { }
+            throw;
         }
     }
 

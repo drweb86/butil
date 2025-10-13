@@ -21,8 +21,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="FluentFTP" Version="53.0.1" />
-    <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="9.0.8" />
+    <PackageReference Include="FluentFTP" Version="53.0.2" />
+    <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="9.0.9" />
     <PackageReference Include="SSH.NET" Version="2025.0.0" />
   </ItemGroup>
   <ItemGroup>
@@ -38,7 +38,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <CopyLibraryFiles Include="$(NuGetPackageRoot)ssh.net\2025.0.0\lib\net9.0\*.*;$(NuGetPackageRoot)microsoft.extensions.filesystemglobbing\9.0.9\lib\net9.0\*.*;$(NuGetPackageRoot)fluentftp\53.0.1\lib\net8.0\*.*" />
+    <CopyLibraryFiles Include="$(NuGetPackageRoot)ssh.net\2025.0.0\lib\net9.0\*.*;$(NuGetPackageRoot)microsoft.extensions.filesystemglobbing\9.0.9\lib\net9.0\*.*;$(NuGetPackageRoot)fluentftp\53.0.2\lib\net8.0\*.*" />
   </ItemGroup>
   <Target Name="CopyLibraries" AfterTargets="Build">
     <Copy SourceFiles="@(CopyLibraryFiles)" DestinationFolder="$(TargetDir)" />

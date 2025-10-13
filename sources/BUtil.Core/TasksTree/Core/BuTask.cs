@@ -42,7 +42,13 @@ public abstract class BuTask(ILog log, TaskEvents events, string title)
 
         if (status == ProcessingStatus.FinishedWithErrors)
             LogEvent(LoggingEvent.Error, LocalsHelper.ToString(status));
-        Events.TaskProgessUpdate(Id, status);
+        Events.TaskProgessUpdate(Id, status, null);
+    }
+
+    protected void UpdateTitle(string title)
+    {
+        Title = title;
+        Events.TaskProgessUpdate(Id, null, title);
     }
 
     protected void LogEvent(LoggingEvent logEvent, string message)

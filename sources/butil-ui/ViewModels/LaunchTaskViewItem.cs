@@ -8,7 +8,19 @@ namespace butil_ui.ViewModels;
 public class LaunchTaskViewItem(BuTask task, ProcessingStatus status) : ObservableObject
 {
     public Guid Tag { get; } = task.Id;
-    public string Text { get; } = task.Title;
+
+    #region Text
+
+    private string _text = task.Title;
+    public string Text
+    {
+        get => _text;
+        set => this.SetProperty(ref _text, value);
+    }
+
+    #endregion
+
+    #region Status
 
     private ProcessingStatus _status = status;
     public ProcessingStatus Status
@@ -16,4 +28,6 @@ public class LaunchTaskViewItem(BuTask task, ProcessingStatus status) : Observab
         get => _status;
         set => this.SetProperty(ref _status, value);
     }
+
+    #endregion
 }
