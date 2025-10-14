@@ -3,7 +3,7 @@
 # Fail on first error.
 set -e
 
-version={{APP_VERSION}}
+version=APP_VERSION_STRING
 
 sourceCodeInstallationDirectory=/usr/local/src/butil
 binariesInstallationDirectory=/usr/local/butil

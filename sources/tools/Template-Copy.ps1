@@ -29,7 +29,7 @@ function Copy-And-ReplaceTemplate {
     # Loop through each replacement and replace the placeholders with the corresponding values
     foreach ($key in $Replacements.Keys) {
         $value = $Replacements[$key]
-        $placeholder = "{{${key}}}"  # Assuming placeholders are in the format {{placeholder}}
+        $placeholder = "${key}"  # Assuming placeholders are in the format {{placeholder}}
         
         Write-Host "Replacing '$placeholder' with '$value'"
         $content = $content -replace [regex]::Escape($placeholder), $value

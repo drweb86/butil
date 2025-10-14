@@ -10,14 +10,6 @@ Write-Output "Version is $version"
 Write-Output "Changes are $changes"
 $ErrorActionPreference = "Stop"
 
-Write-Output "Checking if required repositories are checked out."
-$wingetForkFolder="../../winget-pkgs"
-if (-Not (Test-Path $wingetForkFolder))
-{
-	Write-Error "Checkout https://github.com/drweb86/winget-pkgs into folder $wingetForkFolder" 
-	Exit 1
-}
-
 Write-Output "Deleting everything untracked/non commited."
 pause
 Set-Location ..
@@ -169,41 +161,13 @@ ForEach ($platform in $platforms)
 	}
 }
 
-Write-Output "Prepare win-get release"
-$wingetReleaseFolder="$($wingetForkFolder)\manifests\s\SiarheiKuchuk\BUtil\$($version)"
-$wingetReleaseDateReplacement = $version -replace '\.', '-'
-$wingetReleaseHashArm64 = Get-FileHash -Path "..\Output\BUtil_v$($version)_win-arm64.exe" -Algorithm SHA256
-$wingetReleaseHashX64 = Get-FileHash -Path "..\Output\BUtil_v$($version)_win-x64.exe" -Algorithm SHA256
-
-if (Test-Path $wingetReleaseFolder)
-{
-	Remove-Item $wingetReleaseFolder -Confirm:$false -Recurse:$true
-	if ($LastExitCode -ne 0)
-	{
-		Write-Error "Fail." 
-		Exit 1
-	}
-}
-md "$($wingetReleaseFolder)"
-
-& ".\tools\Template-Copy.ps1"`
-	-TemplateFilePath "tools\winget-pkgs\SiarheiKuchuk.BUtil.installer.yaml" `
-    -DestinationFilePath "$wingetReleaseFolder\SiarheiKuchuk.BUtil.installer.yaml" `
-    -Replacements @{ 'APP_VERSION' = $version; 'RELEASE_DATE' = $wingetReleaseDateReplacement; 'ARM64_SHA256' = $wingetReleaseHashArm64.Hash; 'X64_SHA256' = $wingetReleaseHashX64.Hash }
-& ".\tools\Template-Copy.ps1"`
-	-TemplateFilePath "tools\winget-pkgs\SiarheiKuchuk.BUtil.locale.en-US.yaml" `
-    -DestinationFilePath "$wingetReleaseFolder\SiarheiKuchuk.BUtil.locale.en-US.yaml" `
-    -Replacements @{ 'APP_VERSION' = $version; 'RELEASE_DATE' = $wingetReleaseDateReplacement; 'ARM64_SHA256' = $wingetReleaseHashArm64.Hash; 'X64_SHA256' = $wingetReleaseHashX64.Hash }
-& ".\tools\Template-Copy.ps1"`
-	-TemplateFilePath "tools\winget-pkgs\SiarheiKuchuk.BUtil.yaml" `
-    -DestinationFilePath "$wingetReleaseFolder\SiarheiKuchuk.BUtil.yaml" `
-    -Replacements @{ 'APP_VERSION' = $version; 'RELEASE_DATE' = $wingetReleaseDateReplacement; 'ARM64_SHA256' = $wingetReleaseHashArm64.Hash; 'X64_SHA256' = $wingetReleaseHashX64.Hash }
+& "winget-pkgs.ps1"
 
 Write-Output "Prepare ubuntu"
 & ".\tools\Template-Copy.ps1"`
-	-TemplateFilePath "tools\ubuntu-install-template.sh" `
+    -TemplateFilePath "tools\ubuntu-install-template.sh" `
     -DestinationFilePath "ubuntu-install.sh" `
-    -Replacements @{ 'APP_VERSION' = $version }	
+    -Replacements @{ 'APP_VERSION_STRING' = $version }	
 
 Write-Output "The following artefacts are produced. Release them"
 Get-ChildItem "..\Output"
