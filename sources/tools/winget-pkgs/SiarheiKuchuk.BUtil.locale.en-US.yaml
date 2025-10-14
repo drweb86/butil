@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/microsoft/winget-cli/master/schemas/JSON/manifests/v1.10.0/manifest.defaultLocale.1.10.0.json
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.10.0.schema.json
 
 PackageIdentifier: SiarheiKuchuk.BUtil
 PackageVersion: APP_VERSION_STRING
@@ -45,7 +45,7 @@ Icons:
 - Icon:
   IconFileType: png
   IconResolution: "32x32"
-  IconSha256: "0D9AD21C5835B79338AEDC96DC02F55A03007EF0F290D1780427137833B71608"
+  IconSha256: 0D9AD21C5835B79338AEDC96DC02F55A03007EF0F290D1780427137833B71608
   IconUrl: https://raw.githubusercontent.com/drweb86/butil/refs/heads/master/help/Assets/Logotype.png
 
 ManifestType: defaultLocale
