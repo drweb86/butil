@@ -13,8 +13,8 @@ public class CommonServicesIoc : IDisposable
     public readonly ILastMinuteMessageService LastMinuteMessageService;
     public readonly ICachedHashService CachedHashService = new CachedHashService();
     public readonly ILog Log;
-    internal readonly IEncryptionService EncryptionService = new EncryptionService();
-    internal readonly ICompressionService CompressionService = new CompressionService();
+    public readonly IEncryptionService EncryptionService = new EncryptionService();
+    public readonly ICompressionService CompressionService = new CompressionService();
     internal readonly IBUtilServerClientProtocol BUtilServerClientProtocol;
     internal readonly IBUtilServerProtocol BUtilServerProtocol;
 

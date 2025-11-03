@@ -3,10 +3,12 @@ using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
+using BUtil.Core.Services;
 using BUtil.Core.TasksTree;
 using butilc;
 using System;
 using System.Globalization;
+using System.IO;
 
 class Controller
 {
@@ -21,6 +23,25 @@ class Controller
         const string _taskCommandLineArgument = "Task=";
 
         args ??= [];
+
+        // Technical commands
+
+        if (args.Length == 3 && args[0].Cmp("decrypt"))
+        {
+            var inputFile = args[1];
+            var password = args[2];
+
+            DecryptTechnicalCommand(inputFile, password);
+        }
+
+        if (args.Length == 2 && args[0].Cmp("decode-brotli"))
+        {
+            var inputFile = args[1];
+
+            DecodeBrotliTechnicalCommand(inputFile);
+        }
+
+        //
 
         foreach (string argument in args)
         {
@@ -63,6 +84,59 @@ class Controller
 
         return this;
     }
+
+    private static void DecodeBrotliTechnicalCommand(string inputFile)
+    {
+        var log = new ConsoleLog();
+
+        if (!File.Exists(inputFile))
+        {
+            log.WriteLine(LoggingEvent.Error, $"File {inputFile} does not exist.");
+            log.Close(false);
+            Environment.Exit(-1);
+        }
+
+        if (!inputFile.EndsWith(".brotli"))
+        {
+            log.WriteLine(LoggingEvent.Error, $"File {inputFile} name must end with .brotli.");
+            log.Close(false);
+            Environment.Exit(-1);
+        }
+
+        var outputFile = inputFile.Substring(0, inputFile.Length - ".brotli".Length); ;
+
+        using var ioc = new CommonServicesIoc(log, (s) => { });
+        ioc.CompressionService.DecompressBrotliFile(inputFile, outputFile);
+        log.Close(true);
+        Environment.Exit(0);
+    }
+
+    private static void DecryptTechnicalCommand(string inputFile, string password)
+    {
+        var log = new ConsoleLog();
+
+        if (!File.Exists(inputFile))
+        {
+            log.WriteLine(LoggingEvent.Error, $"File {inputFile} does not exist.");
+            log.Close(false);
+            Environment.Exit(-1);
+        }
+
+        if (!inputFile.EndsWith("." + SourceItemHelper.AES256V1Extension))
+        {
+            log.WriteLine(LoggingEvent.Error, $"File {inputFile} name must end with {"." + SourceItemHelper.AES256V1Extension}.");
+            log.Close(false);
+            Environment.Exit(-1);
+        }
+
+        var outputFile = inputFile.Substring(0, inputFile.Length - ("." + SourceItemHelper.AES256V1Extension).Length); ;
+
+        using var ioc = new CommonServicesIoc(log, (s) => { });
+        ioc.EncryptionService.DecryptAes256File(inputFile, outputFile, password);
+        log.Close(true);
+        Environment.Exit(0);
+    }
+
     private static bool ArgumentIs(string enteredArg, string expectedArg)
     {
         return string.Compare(enteredArg, expectedArg, true, CultureInfo.InvariantCulture) == 0;

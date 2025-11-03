@@ -3,7 +3,7 @@ using System.IO.Compression;
 
 namespace BUtil.Core.Services;
 
-internal interface ICompressionService
+public interface ICompressionService
 {
     void CompressBrotliFile(string inputFile, string outputFile);
     void DecompressBrotliFile(string inputFile, string outputFile);
