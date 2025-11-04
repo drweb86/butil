@@ -34,7 +34,7 @@ class Controller
             DecryptTechnicalCommand(inputFile, password);
         }
 
-        if (args.Length == 2 && args[0].Cmp("decode-brotli"))
+        if (args.Length == 2 && args[0].Cmp("decode"))
         {
             var inputFile = args[1];
 

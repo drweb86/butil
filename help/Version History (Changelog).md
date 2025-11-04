@@ -2,7 +2,7 @@
 (unpublished)
 
 ## New Features
-- Added technical commands: decrypt file.AES256V1 password; decode-brotli file.brotli
+- Added technical commands: decrypt file.AES256V1 password; decode file.brotli
 
 # 2025.10.13.1
 
