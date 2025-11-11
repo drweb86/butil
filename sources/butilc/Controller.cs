@@ -34,11 +34,26 @@ class Controller
             DecryptTechnicalCommand(inputFile, password);
         }
 
+        if (args.Length == 3 && args[0].Cmp("encrypt"))
+        {
+            var inputFile = args[1];
+            var password = args[2];
+
+            EncryptTechnicalCommand(inputFile, password);
+        }
+
         if (args.Length == 2 && args[0].Cmp("decode"))
         {
             var inputFile = args[1];
 
             DecodeBrotliTechnicalCommand(inputFile);
+        }
+
+        if (args.Length == 2 && args[0].Cmp("encode"))
+        {
+            var inputFile = args[1];
+
+            EncodeBrotliTechnicalCommand(inputFile);
         }
 
         //
@@ -111,6 +126,25 @@ class Controller
         Environment.Exit(0);
     }
 
+    private static void EncodeBrotliTechnicalCommand(string inputFile)
+    {
+        var log = new ConsoleLog();
+
+        if (!File.Exists(inputFile))
+        {
+            log.WriteLine(LoggingEvent.Error, $"File {inputFile} does not exist.");
+            log.Close(false);
+            Environment.Exit(-1);
+        }
+
+        var outputFile = inputFile + ".brotli";
+
+        using var ioc = new CommonServicesIoc(log, (s) => { });
+        ioc.CompressionService.CompressBrotliFile(inputFile, outputFile);
+        log.Close(true);
+        Environment.Exit(0);
+    }
+
     private static void DecryptTechnicalCommand(string inputFile, string password)
     {
         var log = new ConsoleLog();
@@ -133,6 +167,25 @@ class Controller
 
         using var ioc = new CommonServicesIoc(log, (s) => { });
         ioc.EncryptionService.DecryptAes256File(inputFile, outputFile, password);
+        log.Close(true);
+        Environment.Exit(0);
+    }
+
+    private static void EncryptTechnicalCommand(string inputFile, string password)
+    {
+        var log = new ConsoleLog();
+
+        if (!File.Exists(inputFile))
+        {
+            log.WriteLine(LoggingEvent.Error, $"File {inputFile} does not exist.");
+            log.Close(false);
+            Environment.Exit(-1);
+        }
+
+        var outputFile = inputFile + "." + SourceItemHelper.AES256V1Extension;
+
+        using var ioc = new CommonServicesIoc(log, (s) => { });
+        ioc.EncryptionService.EncryptAes256File(inputFile, outputFile, password);
         log.Close(true);
         Environment.Exit(0);
     }
