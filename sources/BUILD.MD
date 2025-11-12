@@ -1,7 +1,7 @@
 # Prerequisites
 
 - Windows 11x64 Professional;
-- Microsoft Visual Studio 2022;
+- Microsoft Visual Studio 2026;
 - AMD architecture
 
 # Packaging

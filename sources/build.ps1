@@ -32,30 +32,6 @@ if ($LastExitCode -ne 0)
 }
 Set-Location ../..
 
-$sevenZipVersion="7z2409"
-$sevenZipFolder=[System.IO.Path]::GetTempPath() + "$($sevenZipVersion)"
-
-Write-Output "Clear 7-zip folder..."
-if (Test-Path $sevenZipFolder)
-{
-	Remove-Item $sevenZipFolder -Confirm:$false -Recurse:$true
-	if ($LastExitCode -ne 0)
-	{
-		Write-Error "Fail." 
-		Exit 1
-	}
-}
-
-Write-Output "Downloading 7-zip..."
-$WebClient = New-Object System.Net.WebClient
-
-mkdir "$($sevenZipFolder)"
-$WebClient.DownloadFile("https://www.7-zip.org/a/$($sevenZipVersion)-x64.exe","$($sevenZipFolder)\x64.exe")
-$WebClient.DownloadFile("https://www.7-zip.org/a/$($sevenZipVersion)-arm64.exe","$($sevenZipFolder)\arm64.exe")
-
-& "c:\Program Files\7-Zip\7z.exe" x -y "$($sevenZipFolder)\x64.exe" -o"$($sevenZipFolder)\x64\7-zip"
-& "c:\Program Files\7-Zip\7z.exe" x -y "$($sevenZipFolder)\arm64.exe" -o"$($sevenZipFolder)\arm64\7-zip"
-
 Write-Output "Run tests..."
 & dotnet test
 if ($LastExitCode -ne 0)
@@ -86,21 +62,18 @@ if (Test-Path "..\Output")
 class BuildInfo {
     [string]$CoreRuntimeWindows
 	[string]$InnoArchitectureWindows
-	[string]$Windows7ZipBinaries
 
     BuildInfo(
 		[string]$CoreRuntimeWindows,
-		[string]$InnoArchitectureWindows,
-		[string]$Windows7ZipBinaries) {
+		[string]$InnoArchitectureWindows) {
         $this.CoreRuntimeWindows = $CoreRuntimeWindows
 		$this.InnoArchitectureWindows = $InnoArchitectureWindows
-		$this.Windows7ZipBinaries = $Windows7ZipBinaries
     }
 }
 
 $platforms = New-Object System.Collections.ArrayList
-[void]$platforms.Add([BuildInfo]::new("win-x64", "x64", "$($sevenZipFolder)\x64"))
-[void]$platforms.Add([BuildInfo]::new("win-arm64", "arm64", "$($sevenZipFolder)\arm64"))
+[void]$platforms.Add([BuildInfo]::new("win-x64", "x64"))
+[void]$platforms.Add([BuildInfo]::new("win-arm64", "arm64"))
 
 ForEach ($platform in $platforms)
 {

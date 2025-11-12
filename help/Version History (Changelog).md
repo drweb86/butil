@@ -4,6 +4,9 @@
 ## New Features
 - Added technical commands: decrypt file.AES256V1 password; decode file.brotli, encrypt file password, encode file
 
+## Changes
+- Upgrade Visual Studio 2026.
+
 # 2025.10.13.1
 
 ## New Features
