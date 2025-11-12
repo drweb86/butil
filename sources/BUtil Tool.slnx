@@ -25,7 +25,4 @@
     <BuildDependency Project="BUtil.Windows/BUtil.Windows.csproj" />
     <Build Solution="*|x86" Project="false" />
   </Project>
-  <Properties Name="ExtensibilityGlobals" Scope="PostLoad">
-    <Property Name="RESX_ShowErrorsInErrorList" Value="False" />
-  </Properties>
 </Solution>

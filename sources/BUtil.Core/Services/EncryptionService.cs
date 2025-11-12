@@ -142,7 +142,6 @@ class EncryptionService: IEncryptionService
             // Compatibility: https://learn.microsoft.com/en-us/dotnet/standard/security/cross-platform-cryptography#sha-3
             _ => throw new ArgumentOutOfRangeException(nameof(hashAlgorithm)),
         };
-        using var keyGenerator = new Rfc2898DeriveBytes(password, salt, iterations, algorithm);
-        return keyGenerator.GetBytes(salt.Length);
+        return Rfc2898DeriveBytes.Pbkdf2(password, salt, iterations, algorithm, salt.Length);
     }
 }

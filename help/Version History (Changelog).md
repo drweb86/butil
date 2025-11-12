@@ -1,4 +1,4 @@
-﻿# 2025.11.04
+﻿# 2025.11.12
 (unpublished)
 
 ## New Features
@@ -6,6 +6,7 @@
 
 ## Changes
 - Upgrade Visual Studio 2026.
+- Upgrade to .Net 10
 
 # 2025.10.13.1
 
