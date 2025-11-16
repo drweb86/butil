@@ -134,8 +134,7 @@ ForEach ($platform in $platforms)
 	}
 }
 
-ls
-& "winget-pkgs.ps1"
+& "$PSScriptRoot\winget-pkgs.ps1"
 
 Write-Output "Prepare ubuntu"
 & ".\tools\Template-Copy.ps1"`
