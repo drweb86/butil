@@ -9,7 +9,7 @@ public class SynchronizationDecisionServiceTests
     #region Two-Way Sync Decision Making
 
 
-    [TestMethod("Normal update: Create file (actual) (#001)")]
+    [TestMethod(DisplayName = "Normal update: Create file (actual) (#001)")]
     public void NormalUpdate_CreatedFile()
     {
         // Arrange
@@ -24,14 +24,14 @@ public class SynchronizationDecisionServiceTests
 
         // Assert
         var item = decisions.Single();
-        Assert.IsTrue(item.ExistsLocally == true);
-        Assert.IsTrue(item.ActualFileToLocalStateRelation == SynchronizationRelation.Created);
-        Assert.IsTrue(item.RemoteStateToLocalStateRelation == SynchronizationRelation.NotChanged);
-        Assert.IsTrue(item.ActualFileAction == SynchronizationDecision.DoNothing);
-        Assert.IsTrue(item.RemoteAction == SynchronizationDecision.Update);
+        Assert.IsTrue(item.ExistsLocally);
+        Assert.AreEqual(SynchronizationRelation.Created, item.ActualFileToLocalStateRelation);
+        Assert.AreEqual(SynchronizationRelation.NotChanged, item.RemoteStateToLocalStateRelation);
+        Assert.AreEqual(SynchronizationDecision.DoNothing, item.ActualFileAction);
+        Assert.AreEqual(SynchronizationDecision.Update, item.RemoteAction);
     }
 
-    [TestMethod("Normal update: No changes (#002)")]
+    [TestMethod(DisplayName = "Normal update: No changes (#002)")]
     public void NormalUpdate_NotChangedFile()
     {
         // Arrange
@@ -49,14 +49,14 @@ public class SynchronizationDecisionServiceTests
 
         // Assert
         var item = decisions.Single();
-        Assert.IsTrue(item.ExistsLocally == true);
-        Assert.IsTrue(item.ActualFileToLocalStateRelation == SynchronizationRelation.NotChanged);
-        Assert.IsTrue(item.RemoteStateToLocalStateRelation == SynchronizationRelation.NotChanged);
-        Assert.IsTrue(item.ActualFileAction == SynchronizationDecision.DoNothing);
-        Assert.IsTrue(item.RemoteAction == SynchronizationDecision.DoNothing);
+        Assert.IsTrue(item.ExistsLocally);
+        Assert.AreEqual(SynchronizationRelation.NotChanged, item.ActualFileToLocalStateRelation);
+        Assert.AreEqual(SynchronizationRelation.NotChanged, item.RemoteStateToLocalStateRelation);
+        Assert.AreEqual(SynchronizationDecision.DoNothing, item.ActualFileAction);
+        Assert.AreEqual(SynchronizationDecision.DoNothing, item.RemoteAction);
     }
 
-    [TestMethod("Normal update: Actual file: Exists (No changes comparing to state), Remote in Local: Changed (#003)")]
+    [TestMethod(DisplayName = "Normal update: Actual file: Exists (No changes comparing to state), Remote in Local: Changed (#003)")]
     public void NormalUpdate_AF_Exists_NoChanges_Remote_Created()
     {
         // Arrange
@@ -74,14 +74,14 @@ public class SynchronizationDecisionServiceTests
 
         // Assert
         var item = decisions.Single();
-        Assert.IsTrue(item.ExistsLocally == true);
-        Assert.IsTrue(item.ActualFileToLocalStateRelation == SynchronizationRelation.NotChanged);
-        Assert.IsTrue(item.RemoteStateToLocalStateRelation == SynchronizationRelation.Changed);
-        Assert.IsTrue(item.ActualFileAction == SynchronizationDecision.Update);
-        Assert.IsTrue(item.RemoteAction == SynchronizationDecision.DoNothing);
+        Assert.IsTrue(item.ExistsLocally);
+        Assert.AreEqual(SynchronizationRelation.NotChanged, item.ActualFileToLocalStateRelation);
+        Assert.AreEqual(SynchronizationRelation.Changed, item.RemoteStateToLocalStateRelation);
+        Assert.AreEqual(SynchronizationDecision.Update, item.ActualFileAction);
+        Assert.AreEqual(SynchronizationDecision.DoNothing, item.RemoteAction);
     }
 
-    [TestMethod("Normal update: Actual file: Exists (No changes comparing to state), Remote in Local: Deleted (#004)")]
+    [TestMethod(DisplayName = "Normal update: Actual file: Exists (No changes comparing to state), Remote in Local: Deleted (#004)")]
     public void NormalUpdate_AF_Exists_NoChanges_Remote_Deleted()
     {
         // Arrange
@@ -98,14 +98,14 @@ public class SynchronizationDecisionServiceTests
 
         // Assert
         var item = decisions.Single();
-        Assert.IsTrue(item.ExistsLocally == true);
-        Assert.IsTrue(item.ActualFileToLocalStateRelation == SynchronizationRelation.NotChanged);
-        Assert.IsTrue(item.RemoteStateToLocalStateRelation == SynchronizationRelation.Deleted);
-        Assert.IsTrue(item.ActualFileAction == SynchronizationDecision.Delete);
-        Assert.IsTrue(item.RemoteAction == SynchronizationDecision.DoNothing);
+        Assert.IsTrue(item.ExistsLocally);
+        Assert.AreEqual(SynchronizationRelation.NotChanged, item.ActualFileToLocalStateRelation);
+        Assert.AreEqual(SynchronizationRelation.Deleted, item.RemoteStateToLocalStateRelation);
+        Assert.AreEqual(SynchronizationDecision.Delete, item.ActualFileAction);
+        Assert.AreEqual(SynchronizationDecision.DoNothing, item.RemoteAction);
     }
 
-    [TestMethod("Normal update: Actual file: Created (comparing to state), Remote in Local: Created (#005) - CONFLICT RESOLUTION - Wins Remote")]
+    [TestMethod(DisplayName = "Normal update: Actual file: Created (comparing to state), Remote in Local: Created (#005) - CONFLICT RESOLUTION - Wins Remote")]
     public void NormalUpdate_AF_Created_Remote_Created_Wins_Remote()
     {
         // Arrange
@@ -122,14 +122,14 @@ public class SynchronizationDecisionServiceTests
 
         // Assert
         var item = decisions.Single();
-        Assert.IsTrue(item.ExistsLocally == true);
-        Assert.IsTrue(item.ActualFileToLocalStateRelation == SynchronizationRelation.Created);
-        Assert.IsTrue(item.RemoteStateToLocalStateRelation == SynchronizationRelation.Created);
-        Assert.IsTrue(item.ActualFileAction == SynchronizationDecision.Update);
-        Assert.IsTrue(item.RemoteAction == SynchronizationDecision.DoNothing);
+        Assert.IsTrue(item.ExistsLocally);
+        Assert.AreEqual(SynchronizationRelation.Created, item.ActualFileToLocalStateRelation);
+        Assert.AreEqual(SynchronizationRelation.Created, item.RemoteStateToLocalStateRelation);
+        Assert.AreEqual(SynchronizationDecision.Update, item.ActualFileAction);
+        Assert.AreEqual(SynchronizationDecision.DoNothing, item.RemoteAction);
     }
 
-    [TestMethod("Normal update: Actual file: Created (comparing to state), Remote in Local: Created (#005) - CONFLICT RESOLUTION - Wins Local")]
+    [TestMethod(DisplayName = "Normal update: Actual file: Created (comparing to state), Remote in Local: Created (#005) - CONFLICT RESOLUTION - Wins Local")]
     public void NormalUpdate_AF_Created_Remote_Created_Wins_Local()
     {
         // Arrange
@@ -146,14 +146,14 @@ public class SynchronizationDecisionServiceTests
 
         // Assert
         var item = decisions.Single();
-        Assert.IsTrue(item.ExistsLocally == true);
-        Assert.IsTrue(item.ActualFileToLocalStateRelation == SynchronizationRelation.Created);
-        Assert.IsTrue(item.RemoteStateToLocalStateRelation == SynchronizationRelation.Created);
-        Assert.IsTrue(item.ActualFileAction == SynchronizationDecision.DoNothing);
-        Assert.IsTrue(item.RemoteAction == SynchronizationDecision.Update);
+        Assert.IsTrue(item.ExistsLocally);
+        Assert.AreEqual(SynchronizationRelation.Created, item.ActualFileToLocalStateRelation);
+        Assert.AreEqual(SynchronizationRelation.Created, item.RemoteStateToLocalStateRelation);
+        Assert.AreEqual(SynchronizationDecision.DoNothing, item.ActualFileAction);
+        Assert.AreEqual(SynchronizationDecision.Update, item.RemoteAction);
     }
 
-    [TestMethod("Normal update: Actual file: Modified (comparing to state), Remote in Local: Unchanged (#006)")]
+    [TestMethod(DisplayName = "Normal update: Actual file: Modified (comparing to state), Remote in Local: Unchanged (#006)")]
     public void NormalUpdate_AF_Modified_Remote_Unchanged()
     {
         // Arrange
@@ -171,14 +171,14 @@ public class SynchronizationDecisionServiceTests
 
         // Assert
         var item = decisions.Single();
-        Assert.IsTrue(item.ExistsLocally == true);
-        Assert.IsTrue(item.ActualFileToLocalStateRelation == SynchronizationRelation.Changed);
-        Assert.IsTrue(item.RemoteStateToLocalStateRelation == SynchronizationRelation.NotChanged);
-        Assert.IsTrue(item.ActualFileAction == SynchronizationDecision.DoNothing);
-        Assert.IsTrue(item.RemoteAction == SynchronizationDecision.Update);
+        Assert.IsTrue(item.ExistsLocally);
+        Assert.AreEqual(SynchronizationRelation.Changed, item.ActualFileToLocalStateRelation);
+        Assert.AreEqual(SynchronizationRelation.NotChanged, item.RemoteStateToLocalStateRelation);
+        Assert.AreEqual(SynchronizationDecision.DoNothing, item.ActualFileAction);
+        Assert.AreEqual(SynchronizationDecision.Update, item.RemoteAction);
     }
 
-    [TestMethod("Normal update: Actual file: Modified (comparing to state), Remote in Local: Modified - CONFLICTS - Remote Wins (#007)")]
+    [TestMethod(DisplayName = "Normal update: Actual file: Modified (comparing to state), Remote in Local: Modified - CONFLICTS - Remote Wins (#007)")]
     public void NormalUpdate_AF_Modified_Remote_Modified_Remote_Wins()
     {
         // Arrange
@@ -196,14 +196,14 @@ public class SynchronizationDecisionServiceTests
 
         // Assert
         var item = decisions.Single();
-        Assert.IsTrue(item.ExistsLocally == true);
-        Assert.IsTrue(item.ActualFileToLocalStateRelation == SynchronizationRelation.Changed);
-        Assert.IsTrue(item.RemoteStateToLocalStateRelation == SynchronizationRelation.Changed);
-        Assert.IsTrue(item.ActualFileAction == SynchronizationDecision.Update);
-        Assert.IsTrue(item.RemoteAction == SynchronizationDecision.DoNothing);
+        Assert.IsTrue(item.ExistsLocally);
+        Assert.AreEqual(SynchronizationRelation.Changed, item.ActualFileToLocalStateRelation);
+        Assert.AreEqual(SynchronizationRelation.Changed, item.RemoteStateToLocalStateRelation);
+        Assert.AreEqual(SynchronizationDecision.Update, item.ActualFileAction);
+        Assert.AreEqual(SynchronizationDecision.DoNothing, item.RemoteAction);
     }
 
-    [TestMethod("Normal update: Actual file: Modified (comparing to state), Remote in Local: Modified - CONFLICTS - Local Wins (#007)")]
+    [TestMethod(DisplayName = "Normal update: Actual file: Modified (comparing to state), Remote in Local: Modified - CONFLICTS - Local Wins (#007)")]
     public void NormalUpdate_AF_Modified_Remote_Modified_Local_Wins()
     {
         // Arrange
@@ -221,14 +221,14 @@ public class SynchronizationDecisionServiceTests
 
         // Assert
         var item = decisions.Single();
-        Assert.IsTrue(item.ExistsLocally == true);
-        Assert.IsTrue(item.ActualFileToLocalStateRelation == SynchronizationRelation.Changed);
-        Assert.IsTrue(item.RemoteStateToLocalStateRelation == SynchronizationRelation.Changed);
-        Assert.IsTrue(item.ActualFileAction == SynchronizationDecision.DoNothing);
-        Assert.IsTrue(item.RemoteAction == SynchronizationDecision.Update);
+        Assert.IsTrue(item.ExistsLocally);
+        Assert.AreEqual(SynchronizationRelation.Changed, item.ActualFileToLocalStateRelation);
+        Assert.AreEqual(SynchronizationRelation.Changed, item.RemoteStateToLocalStateRelation);
+        Assert.AreEqual(SynchronizationDecision.DoNothing, item.ActualFileAction);
+        Assert.AreEqual(SynchronizationDecision.Update, item.RemoteAction);
     }
 
-    [TestMethod("Normal update: Actual file: Modified (comparing to state), Remote in Local: Deleted (#008)")]
+    [TestMethod(DisplayName = "Normal update: Actual file: Modified (comparing to state), Remote in Local: Deleted (#008)")]
     public void NormalUpdate_AF_Modified_Remote_Deleted()
     {
         // Arrange
@@ -245,14 +245,14 @@ public class SynchronizationDecisionServiceTests
 
         // Assert
         var item = decisions.Single();
-        Assert.IsTrue(item.ExistsLocally == true);
-        Assert.IsTrue(item.ActualFileToLocalStateRelation == SynchronizationRelation.Changed);
-        Assert.IsTrue(item.RemoteStateToLocalStateRelation == SynchronizationRelation.Deleted);
-        Assert.IsTrue(item.ActualFileAction == SynchronizationDecision.DoNothing);
-        Assert.IsTrue(item.RemoteAction == SynchronizationDecision.Update);
+        Assert.IsTrue(item.ExistsLocally);
+        Assert.AreEqual(SynchronizationRelation.Changed, item.ActualFileToLocalStateRelation);
+        Assert.AreEqual(SynchronizationRelation.Deleted, item.RemoteStateToLocalStateRelation);
+        Assert.AreEqual(SynchronizationDecision.DoNothing, item.ActualFileAction);
+        Assert.AreEqual(SynchronizationDecision.Update, item.RemoteAction);
     }
 
-    [TestMethod("Normal update: Actual file: Deleted (comparing to state), Remote in Local: Unchanged (#009)")]
+    [TestMethod(DisplayName = "Normal update: Actual file: Deleted (comparing to state), Remote in Local: Unchanged (#009)")]
     public void NormalUpdate_AF_Deleted_Remote_Unchanged()
     {
         // Arrange
@@ -269,14 +269,14 @@ public class SynchronizationDecisionServiceTests
 
         // Assert
         var item = decisions.Single();
-        Assert.IsTrue(item.ExistsLocally == false);
-        Assert.IsTrue(item.ActualFileToLocalStateRelation == SynchronizationRelation.Deleted);
-        Assert.IsTrue(item.RemoteStateToLocalStateRelation == SynchronizationRelation.NotChanged);
-        Assert.IsTrue(item.ActualFileAction == SynchronizationDecision.DoNothing);
-        Assert.IsTrue(item.RemoteAction == SynchronizationDecision.Delete);
+        Assert.IsFalse(item.ExistsLocally);
+        Assert.AreEqual(SynchronizationRelation.Deleted, item.ActualFileToLocalStateRelation);
+        Assert.AreEqual(SynchronizationRelation.NotChanged, item.RemoteStateToLocalStateRelation);
+        Assert.AreEqual(SynchronizationDecision.DoNothing, item.ActualFileAction);
+        Assert.AreEqual(SynchronizationDecision.Delete, item.RemoteAction);
     }
 
-    [TestMethod("Normal update: Actual file: Deleted (comparing to state), Remote in Local: Deleted (#011)")]
+    [TestMethod(DisplayName = "Normal update: Actual file: Deleted (comparing to state), Remote in Local: Deleted (#011)")]
     public void NormalUpdate_AF_Deleted_Remote_Deleted()
     {
         // Arrange
@@ -292,14 +292,14 @@ public class SynchronizationDecisionServiceTests
 
         // Assert
         var item = decisions.Single();
-        Assert.IsTrue(item.ExistsLocally == false);
-        Assert.IsTrue(item.ActualFileToLocalStateRelation == SynchronizationRelation.Deleted);
-        Assert.IsTrue(item.RemoteStateToLocalStateRelation == SynchronizationRelation.Deleted);
-        Assert.IsTrue(item.ActualFileAction == SynchronizationDecision.DoNothing);
-        Assert.IsTrue(item.RemoteAction == SynchronizationDecision.DoNothing);
+        Assert.IsFalse(item.ExistsLocally);
+        Assert.AreEqual(SynchronizationRelation.Deleted, item.ActualFileToLocalStateRelation);
+        Assert.AreEqual(SynchronizationRelation.Deleted, item.RemoteStateToLocalStateRelation);
+        Assert.AreEqual(SynchronizationDecision.DoNothing, item.ActualFileAction);
+        Assert.AreEqual(SynchronizationDecision.DoNothing, item.RemoteAction);
     }
 
-    [TestMethod("Normal update: Actual file: Deleted (comparing to state), Remote in Local: Changed (#010)")]
+    [TestMethod(DisplayName = "Normal update: Actual file: Deleted (comparing to state), Remote in Local: Changed (#010)")]
     public void NormalUpdate_AF_Deleted_Remote_Changed()
     {
         // Arrange
@@ -317,14 +317,14 @@ public class SynchronizationDecisionServiceTests
 
         // Assert
         var item = decisions.Single();
-        Assert.IsTrue(item.ExistsLocally == false);
-        Assert.IsTrue(item.ActualFileToLocalStateRelation == SynchronizationRelation.Deleted);
-        Assert.IsTrue(item.RemoteStateToLocalStateRelation == SynchronizationRelation.Changed);
-        Assert.IsTrue(item.ActualFileAction == SynchronizationDecision.Update);
-        Assert.IsTrue(item.RemoteAction == SynchronizationDecision.DoNothing);
+        Assert.IsFalse(item.ExistsLocally);
+        Assert.AreEqual(SynchronizationRelation.Deleted, item.ActualFileToLocalStateRelation);
+        Assert.AreEqual(SynchronizationRelation.Changed, item.RemoteStateToLocalStateRelation);
+        Assert.AreEqual(SynchronizationDecision.Update, item.ActualFileAction);
+        Assert.AreEqual(SynchronizationDecision.DoNothing, item.RemoteAction);
     }
 
-    [TestMethod("Subfolder matching")] // #012
+    [TestMethod(DisplayName = "Subfolder matching")] // #012
     public void Subfolder_Matching()
     {
         // Arrange
@@ -345,7 +345,7 @@ public class SynchronizationDecisionServiceTests
         var decisions = service.Decide(SynchronizationTaskModelMode.TwoWay, localState, actualFiles, remoteState);
 
         // Assert
-        Assert.IsTrue(decisions.Count() == 3);
+        Assert.AreEqual(3, decisions.Count());
         Assert.IsTrue(decisions.All(x => x.ActualFileAction == SynchronizationDecision.Update));
     }
 
