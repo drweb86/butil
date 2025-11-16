@@ -16,6 +16,8 @@ SetCompressor /FINAL /SOLID lzma
 !include "x64.nsh"
 !include "WinVer.nsh"
 !include "FileFunc.nsh"
+!include "nsDialogs.nsh"
+!include "LogicLib.nsh"
 
 !insertmacro GetParameters
 !insertmacro GetOptions
@@ -28,6 +30,9 @@ SetCompressor /FINAL /SOLID lzma
 ; Welcome page
 !define MUI_WELCOMEPAGE_TITLE_3LINES
 !insertmacro MUI_PAGE_WELCOME
+
+; Custom installation mode page
+Page custom InstallModePageCreate InstallModePageLeave
 
 ; Directory page
 !define MUI_PAGE_CUSTOMFUNCTION_PRE SkipDirectoryPage
@@ -77,11 +82,17 @@ VIAddVersionKey "FileVersion" "${PRODUCT_VERSION}"
 ; Architecture handling - Runtime detection
 Var InstallMode
 Var MultiUser
+Var InstallModeDialog
+Var InstallModeRadio1
+Var InstallModeRadio2
+Var InstallModeLabel
+Var CmdLineMode
 
 Function .onInit
   ; Initialize default to current user
   StrCpy $InstallMode "CurrentUser"
   StrCpy $MultiUser "0"
+  StrCpy $CmdLineMode "0"
 
   ; Parse command line arguments
   ; /ALLUSERS or /AllUsers = install for all users (requires admin)
@@ -91,24 +102,28 @@ Function .onInit
   ${IfNot} ${Errors}
     StrCpy $InstallMode "AllUsers"
     StrCpy $MultiUser "1"
+    StrCpy $CmdLineMode "1"
   ${EndIf}
   
   ${GetOptions} $0 "/AllUsers" $1
   ${IfNot} ${Errors}
     StrCpy $InstallMode "AllUsers"
     StrCpy $MultiUser "1"
+    StrCpy $CmdLineMode "1"
   ${EndIf}
   
   ${GetOptions} $0 "/CURRENTUSER" $1
   ${IfNot} ${Errors}
     StrCpy $InstallMode "CurrentUser"
     StrCpy $MultiUser "0"
+    StrCpy $CmdLineMode "1"
   ${EndIf}
   
   ${GetOptions} $0 "/CurrentUser" $1
   ${IfNot} ${Errors}
     StrCpy $InstallMode "CurrentUser"
     StrCpy $MultiUser "0"
+    StrCpy $CmdLineMode "1"
   ${EndIf}
   
   ; Check if admin rights are available when installing for all users
@@ -141,6 +156,88 @@ Function .onInit
     Abort
   ${EndIf}
 
+FunctionEnd
+
+
+; Custom page to select installation mode
+Function InstallModePageCreate
+  ; Skip this page if mode was specified on command line
+  ${If} $CmdLineMode == "1"
+    Abort
+  ${EndIf}
+  
+  !insertmacro MUI_HEADER_TEXT "Choose Installation Type" "Select who can use this application"
+  
+  nsDialogs::Create 1018
+  Pop $InstallModeDialog
+  
+  ${If} $InstallModeDialog == error
+    Abort
+  ${EndIf}
+  
+  ; Add label with description
+  ${NSD_CreateLabel} 0 0 100% 24u "Please choose whether you want to install ${PRODUCT_NAME} for yourself only or for all users of this computer."
+  Pop $InstallModeLabel
+  
+  ; Add radio button for current user (default)
+  ${NSD_CreateRadioButton} 10u 30u 100% 12u "Install for &current user only"
+  Pop $InstallModeRadio1
+  ${NSD_OnClick} $InstallModeRadio1 InstallModeRadio1Click
+  
+  ; Add description for current user option
+  ${NSD_CreateLabel} 20u 45u 95% 16u "Recommended. The application will only be available for your user account."
+  Pop $0
+  
+  ; Add radio button for all users
+  ${NSD_CreateRadioButton} 10u 65u 100% 12u "Install for &all users (requires administrator privileges)"
+  Pop $InstallModeRadio2
+  ${NSD_OnClick} $InstallModeRadio2 InstallModeRadio2Click
+  
+  ; Add description for all users option
+  ${NSD_CreateLabel} 20u 80u 95% 16u "The application will be available for all users on this computer."
+  Pop $0
+  
+  ; Set default selection based on current mode
+  ${If} $MultiUser == "1"
+    ${NSD_Check} $InstallModeRadio2
+  ${Else}
+    ${NSD_Check} $InstallModeRadio1
+  ${EndIf}
+  
+  nsDialogs::Show
+FunctionEnd
+
+Function InstallModeRadio1Click
+  Pop $0
+  StrCpy $InstallMode "CurrentUser"
+  StrCpy $MultiUser "0"
+FunctionEnd
+
+Function InstallModeRadio2Click
+  Pop $0
+  StrCpy $InstallMode "AllUsers"
+  StrCpy $MultiUser "1"
+FunctionEnd
+
+Function InstallModePageLeave
+  ; Check if admin rights are available when installing for all users
+  ${If} $MultiUser == "1"
+    UserInfo::GetAccountType
+    Pop $0
+    ${If} $0 != "admin"
+      MessageBox MB_OK|MB_ICONSTOP "Administrator privileges are required to install for all users.$\n$\nPlease either:$\n- Choose 'Install for current user only', or$\n- Run this installer as administrator"
+      Abort
+    ${EndIf}
+  ${EndIf}
+  
+  ; Set installation directory based on mode
+  ${If} $MultiUser == "1"
+    StrCpy $INSTDIR "$PROGRAMFILES64\${PRODUCT_NAME}"
+  ${Else}
+    StrCpy $INSTDIR "$LOCALAPPDATA\Programs\${PRODUCT_NAME}"
+  ${EndIf}
+  
+  DetailPrint "Installing for: $InstallMode"
 FunctionEnd
 
 ; Custom function to skip directory page (emulating DisableDirPage=yes)
