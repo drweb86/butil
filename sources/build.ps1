@@ -123,15 +123,12 @@ if ($LastExitCode -ne 0)
 	Exit 1
 }
 
-ForEach ($platform in $platforms)
+Write-Output "Clear binaries"
+Remove-Item "..\Output\publish" -Confirm:$false -Recurse:$true
+if ($LastExitCode -ne 0)
 {
-	Write-Output "Clear binaries"
-	Remove-Item "..\Output\$($platform.CoreRuntimeWindows)" -Confirm:$false -Recurse:$true
-	if ($LastExitCode -ne 0)
-	{
-		Write-Error "Fail." 
-		Exit 1
-	}
+	Write-Error "Fail." 
+	Exit 1
 }
 
 & "$PSScriptRoot\winget-pkgs.ps1"
