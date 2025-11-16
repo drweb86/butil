@@ -13,28 +13,40 @@ UpgradeBehavior: uninstallPrevious
 ProductCode: BUtil_is1
 ReleaseDate: 2001-01-01
 Installers:
-- InstallerUrl: https://github.com/drweb86/butil/releases/download/APP_VERSION_STRING/BUtil_vAPP_VERSION_STRING_win-arm64.exe
+- InstallerUrl: https://github.com/drweb86/butil/releases/download/APP_VERSION_STRING/BUtil_vAPP_VERSION_STRING.exe
+  Platform:
+    - Windows.Desktop
+  MinimumOSVersion: 10.0.26100.0
   Architecture: arm64
   InstallerSha256: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
   Scope: user
   InstallerSwitches:
     Custom: /CLOSEAPPLICATIONS /CURRENTUSER
-- InstallerUrl: https://github.com/drweb86/butil/releases/download/APP_VERSION_STRING/BUtil_vAPP_VERSION_STRING_win-arm64.exe
+- InstallerUrl: https://github.com/drweb86/butil/releases/download/APP_VERSION_STRING/BUtil_vAPP_VERSION_STRING.exe
+  Platform:
+    - Windows.Desktop
+  MinimumOSVersion: 10.0.26100.0
   Architecture: arm64
   InstallerSha256: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
   Scope: machine
   InstallerSwitches:
     Custom: /CLOSEAPPLICATIONS /ALLUSERS
   ElevationRequirement: elevationRequired
-- InstallerUrl: https://github.com/drweb86/butil/releases/download/APP_VERSION_STRING/BUtil_vAPP_VERSION_STRING_win-x64.exe
+- InstallerUrl: https://github.com/drweb86/butil/releases/download/APP_VERSION_STRING/BUtil_vAPP_VERSION_STRING.exe
+  Platform:
+    - Windows.Desktop
+  MinimumOSVersion: 10.0.26100.0
   Architecture: x64
-  InstallerSha256: bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+  InstallerSha256: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
   Scope: user
   InstallerSwitches:
     Custom: /CLOSEAPPLICATIONS /CURRENTUSER
-- InstallerUrl: https://github.com/drweb86/butil/releases/download/APP_VERSION_STRING/BUtil_vAPP_VERSION_STRING_win-x64.exe
+- InstallerUrl: https://github.com/drweb86/butil/releases/download/APP_VERSION_STRING/BUtil_vAPP_VERSION_STRING.exe
+  Platform:
+    - Windows.Desktop
+  MinimumOSVersion: 10.0.26100.0
   Architecture: x64
-  InstallerSha256: bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+  InstallerSha256: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
   Scope: machine
   InstallerSwitches:
     Custom: /CLOSEAPPLICATIONS /ALLUSERS

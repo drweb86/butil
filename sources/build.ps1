@@ -61,13 +61,13 @@ if (Test-Path "..\Output")
 
 class BuildInfo {
     [string]$CoreRuntimeWindows
-	[string]$InnoArchitectureWindows
+	[string]$CoreRuntimeFolderPrefix
 
     BuildInfo(
 		[string]$CoreRuntimeWindows,
-		[string]$InnoArchitectureWindows) {
+		[string]$CoreRuntimeFolderPrefix) {
         $this.CoreRuntimeWindows = $CoreRuntimeWindows
-		$this.InnoArchitectureWindows = $InnoArchitectureWindows
+		$this.CoreRuntimeFolderPrefix = $CoreRuntimeFolderPrefix
     }
 }
 
@@ -86,7 +86,7 @@ ForEach ($platform in $platforms)
 		"/p:AssemblyVersion=$version" `
 		"--runtime=$($platform.CoreRuntimeWindows)" `
 		/p:Configuration=Release `
-		"/p:PublishDir=../../Output/$($platform.CoreRuntimeWindows)/bin" `
+		"/p:PublishDir=../../Output/publish/$($platform.CoreRuntimeFolderPrefix)" `
 		/p:PublishReadyToRun=false `
 		/p:RunAnalyzersDuringBuild=False `
 		--self-contained true `
@@ -96,35 +96,35 @@ ForEach ($platform in $platforms)
 		Write-Error "Fail." 
 		Exit 1
 	}
+}
 
-	Write-Output "Create Setup Script"
-	$setupScriptFile="../Output/$($platform.CoreRuntimeWindows)/_nsis $($platform.CoreRuntimeWindows).nsi"
 
-	(Get-Content "setup.nsi").Replace("###ARCHITECTURE###", $platform.InnoArchitectureWindows).Replace("###CORERUNTIME###", $platform.CoreRuntimeWindows).Replace("###VERSION###", $version) | Set-Content $setupScriptFile
-	Write-Output "Setup..."
-	& "C:\Program Files (x86)\NSIS\Bin\makensis.exe" $setupScriptFile
-	if ($LastExitCode -ne 0)
-	{
-		Write-Error "Fail." 
-		Exit 1
-	}
+Write-Output "Prepare to pack binaries"
+Copy-Item "..\help\Readme.Binaries.md" "..\Output\publish\$($platform.CoreRuntimeFolderPrefix)\README.md"
+if ($LastExitCode -ne 0)
+{
+	Write-Error "Fail." 
+	Exit 1
+}
 
-	Write-Output "Prepare to pack binaries"
-	Copy-Item "..\help\Readme.Binaries.md" "..\Output\$($platform.CoreRuntimeWindows)\bin\README.md"
-	if ($LastExitCode -ne 0)
-	{
-		Write-Error "Fail." 
-		Exit 1
-	}
+Write-Output "Setup..."
+& "C:\Program Files (x86)\NSIS\Bin\makensis.exe" "setup.nsi" "/DPRODUCT_VERSION=$version"
+if ($LastExitCode -ne 0)
+{
+	Write-Error "Fail." 
+	Exit 1
+}
 
-	Write-Output "Pack binaries"
-	& "c:\Program Files\7-Zip\7z.exe" a -y "..\Output\BUtil_v$($version)_$($platform.CoreRuntimeWindows)-binaries.7z" "..\Output\$($platform.CoreRuntimeWindows)\bin\*" -mx9 -t7z -m0=lzma2 -ms=on -sccUTF-8 -ssw
-	if ($LastExitCode -ne 0)
-	{
-		Write-Error "Fail." 
-		Exit 1
-	}
+Write-Output "Pack binaries"
+& "c:\Program Files\7-Zip\7z.exe" a -y "..\Output\BUtil_v$($version)_win-binaries.7z" "..\Output\publish\*" -mx9 -t7z -m0=lzma2 -ms=on -sccUTF-8 -ssw
+if ($LastExitCode -ne 0)
+{
+	Write-Error "Fail." 
+	Exit 1
+}
 
+ForEach ($platform in $platforms)
+{
 	Write-Output "Clear binaries"
 	Remove-Item "..\Output\$($platform.CoreRuntimeWindows)" -Confirm:$false -Recurse:$true
 	if ($LastExitCode -ne 0)

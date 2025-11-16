@@ -3,7 +3,7 @@ SetCompressor /FINAL /SOLID lzma
 
 ; Defines
 !define PRODUCT_NAME "BUtil"
-!define PRODUCT_VERSION "###VERSION###"
+!define PRODUCT_VERSION "0.0.0"
 !define PRODUCT_PUBLISHER "Siarhei Kuchuk"
 !define PRODUCT_WEB_SITE "https://github.com/drweb86/butil"
 !define START_YEAR "2011"
@@ -16,7 +16,7 @@ SetCompressor /FINAL /SOLID lzma
 
 ; MUI Settings
 !define MUI_ABORTWARNING
-!define MUI_ICON "..\..\sources\butil-ui\Assets\butil.ico"
+!define MUI_ICON "butil-ui\Assets\butil.ico"
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
 
 ; Welcome page
@@ -53,7 +53,7 @@ Var StartMenuFolder
 
 ; Installer attributes
 Name "${PRODUCT_NAME} ${PRODUCT_VERSION}"
-OutFile "..\BUtil_v${PRODUCT_VERSION}_###CORERUNTIME###.exe"
+OutFile "..\BUtil_v${PRODUCT_VERSION}.exe"
 InstallDir "$PROGRAMFILES\${PRODUCT_NAME}"
 ShowInstDetails show
 ShowUnInstDetails show
@@ -70,24 +70,10 @@ VIAddVersionKey "FileVersion" "${PRODUCT_VERSION}"
 
 Function .onInit
 
-  !if "###CORERUNTIME###" == "win-arm64"
-    ${IfNot} ${IsNativeARM64}
-      MessageBox MB_OK "This installer is for Windows ARM64,$\nbut your Windows is X64.$\nPlease downlad and run X64 installer version."
-      Quit
-    ${EndIf}
-  !endif
-
-  !if "###CORERUNTIME###" == "win-x64"
-    ${If} ${IsNativeARM64}
-      MessageBox MB_OK "This installer is for Windows X64,$\nbut your Windows is ARM64.$\nPlease downlad and run ARM64 installer version."
-      Quit
-    ${EndIf}
-  !endif
-
   ; Additional check for Windows 11 specifically (build 26100+)
   ReadRegStr $0 HKLM "SOFTWARE\Microsoft\Windows NT\CurrentVersion" "CurrentBuildNumber"
   ${If} $0 < 26100
-    MessageBox MB_OK|MB_ICONSTOP "This application requires Windows 11 (build 26100) or later.$\nYour Windows version: build $0"
+    MessageBox MB_OK|MB_ICONSTOP "This application requires Windows 11 (build 26100) x64 or arm64 or later.$\nYour Windows version: build $0"
     Abort
   ${EndIf}
 
@@ -96,7 +82,7 @@ Function .onInit
     SetRegView 64
     StrCpy $INSTDIR "$PROGRAMFILES64\${PRODUCT_NAME}"
   ${Else}
-    MessageBox MB_OK|MB_ICONSTOP "This installer requires a 64-bit version of Windows."
+    MessageBox MB_OK|MB_ICONSTOP "This installer requires a x64 or arm64 version of Windows."
     Abort
   ${EndIf}
 
@@ -120,8 +106,12 @@ FunctionEnd
 Section "MainSection" SEC01
   SetOutPath "$INSTDIR\bin"
   SetOverwrite on
-  File /r "bin\*.*"
-  
+  ${If} ${IsNativeARM64}
+  File /r "..\output\publish\arm64\*.*"
+  ${Else}
+  File /r "..\output\publish\x64\*.*"
+  ${EndIf}
+
   ; Store installation folder
   WriteRegStr HKCU "Software\${PRODUCT_NAME}" "" $INSTDIR
   

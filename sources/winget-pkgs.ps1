@@ -21,8 +21,7 @@ if (-Not (Test-Path $wingetForkFolder))
 Write-Output "Prepare win-get release"
 $wingetReleaseFolder="$($wingetForkFolder)\manifests\s\SiarheiKuchuk\BUtil\$($version)"
 $wingetReleaseDateReplacement = $version -replace '\.', '-'
-$wingetReleaseHashArm64 = Get-FileHash -Path "..\Output\BUtil_v$($version)_win-arm64.exe" -Algorithm SHA256
-$wingetReleaseHashX64 = Get-FileHash -Path "..\Output\BUtil_v$($version)_win-x64.exe" -Algorithm SHA256
+$wingetReleaseHash = Get-FileHash -Path "..\Output\BUtil_v$($version).exe" -Algorithm SHA256
 
 if (Test-Path $wingetReleaseFolder)
 {
@@ -40,7 +39,7 @@ $currentYear = "{0:yyyy}" -f (Get-Date)
 & ".\tools\Template-Copy.ps1"`
     -TemplateFilePath "tools\winget-pkgs\SiarheiKuchuk.BUtil.installer.yaml" `
     -DestinationFilePath "$wingetReleaseFolder\SiarheiKuchuk.BUtil.installer.yaml" `
-    -Replacements @{ 'APP_VERSION_STRING' = $version; '2001-01-01' = $wingetReleaseDateReplacement; 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' = $wingetReleaseHashArm64.Hash; 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' = $wingetReleaseHashX64.Hash; }
+    -Replacements @{ 'APP_VERSION_STRING' = $version; '2001-01-01' = $wingetReleaseDateReplacement; 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' = $wingetReleaseHash.Hash; }
 & ".\tools\Template-Copy.ps1"`
     -TemplateFilePath "tools\winget-pkgs\SiarheiKuchuk.BUtil.locale.en-US.yaml" `
     -DestinationFilePath "$wingetReleaseFolder\SiarheiKuchuk.BUtil.locale.en-US.yaml" `
