@@ -134,6 +134,7 @@ ForEach ($platform in $platforms)
 	}
 }
 
+ls
 & "winget-pkgs.ps1"
 
 Write-Output "Prepare ubuntu"
