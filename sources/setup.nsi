@@ -1,5 +1,5 @@
-; NSIS Script for BUtil Installer
-; Converted from Inno Setup
+; Compression
+SetCompressor /FINAL /SOLID lzma
 
 ; Defines
 !define PRODUCT_NAME "BUtil"
@@ -67,9 +67,6 @@ VIAddVersionKey "CompanyName" "${PRODUCT_PUBLISHER}"
 VIAddVersionKey "LegalCopyright" "© ${START_YEAR}-${CURRENT_YEAR} ${PRODUCT_PUBLISHER}"
 VIAddVersionKey "FileDescription" "${PRODUCT_NAME} installer"
 VIAddVersionKey "FileVersion" "${PRODUCT_VERSION}"
-
-; Compression
-SetCompressor /FINAL /SOLID lzma
 
 ; Architecture handling
 !if "###ARCHITECTURE###" == "x64"
