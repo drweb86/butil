@@ -3,7 +3,9 @@ SetCompressor /FINAL /SOLID lzma
 
 ; Defines
 !define PRODUCT_NAME "BUtil"
-!define PRODUCT_VERSION "0.0.0"
+!ifndef PRODUCT_VERSION
+  !define PRODUCT_VERSION "0.0.0"
+!endif
 !define PRODUCT_PUBLISHER "Siarhei Kuchuk"
 !define PRODUCT_WEB_SITE "https://github.com/drweb86/butil"
 !define START_YEAR "2011"
