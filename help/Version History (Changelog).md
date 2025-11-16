@@ -1,5 +1,4 @@
 ﻿# 2025.11.16
-(unpublished)
 
 ## New Features
 - Added technical commands: decrypt file.AES256V1 password; decode file.brotli, encrypt file password, encode file
