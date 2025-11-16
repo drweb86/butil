@@ -9,6 +9,8 @@
 - Upgrade to .Net 10.
 - Inno Setup installer was phased out for license changes not allowing to potentially receive donations.
 - Minimum required Windows version is 24H2 build 26100.
+- Binaries for X64 and ARM64 are both in one archive, because previously it was harder to choose.
+- Setup file supports /CURRENTUSER /S and /ALLUSERS arguments. It will show by default selection screen for type of installation.
 
 # 2025.10.13.1
 
