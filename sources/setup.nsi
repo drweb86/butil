@@ -68,20 +68,22 @@ VIAddVersionKey "LegalCopyright" "© ${START_YEAR}-${CURRENT_YEAR} ${PRODUCT_PUB
 VIAddVersionKey "FileDescription" "${PRODUCT_NAME} installer"
 VIAddVersionKey "FileVersion" "${PRODUCT_VERSION}"
 
-; Architecture handling
-!if "###ARCHITECTURE###" == "x64"
-  !define ARCH_SUFFIX "64"
-!else
-  !define ARCH_SUFFIX ""
-!endif
-
 Function .onInit
-  ; Check Windows version (Windows 11 = 10.0.22000)
-  ${IfNot} ${AtLeastWin10}
-    MessageBox MB_OK|MB_ICONSTOP "This application requires Windows 11 or later."
-    Abort
-  ${EndIf}
-  
+
+  !if "###CORERUNTIME###" == "win-arm64"
+    ${IfNot} ${IsNativeARM64}
+      MessageBox MB_OK "This installer is for Windows ARM64,$\nbut your Windows is X64.$\nPlease downlad and run X64 installer version."
+      Quit
+    ${EndIf}
+  !endif
+
+  !if "###CORERUNTIME###" == "win-x64"
+    ${If} ${IsNativeARM64}
+      MessageBox MB_OK "This installer is for Windows X64,$\nbut your Windows is ARM64.$\nPlease downlad and run ARM64 installer version."
+      Quit
+    ${EndIf}
+  !endif
+
   ; Additional check for Windows 11 specifically (build 26100+)
   ReadRegStr $0 HKLM "SOFTWARE\Microsoft\Windows NT\CurrentVersion" "CurrentBuildNumber"
   ${If} $0 < 26100
@@ -90,7 +92,6 @@ Function .onInit
   ${EndIf}
 
   ; Check architecture if needed
-!if "###ARCHITECTURE###" == "x64"
   ${If} ${RunningX64}
     SetRegView 64
     StrCpy $INSTDIR "$PROGRAMFILES64\${PRODUCT_NAME}"
@@ -98,7 +99,7 @@ Function .onInit
     MessageBox MB_OK|MB_ICONSTOP "This installer requires a 64-bit version of Windows."
     Abort
   ${EndIf}
-!endif
+
 FunctionEnd
 
 ; Custom function to skip directory page (emulating DisableDirPage=yes)
