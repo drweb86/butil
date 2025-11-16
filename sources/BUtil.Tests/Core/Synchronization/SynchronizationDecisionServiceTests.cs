@@ -1,6 +1,6 @@
 ﻿using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Synchronization;
-
+[assembly: Parallelize]
 namespace BUtil.Tests.Core.Synchronization;
 
 [TestClass]
@@ -450,3 +450,4 @@ public class SynchronizationDecisionServiceTests
 
     #endregion
 }
+
