@@ -3,7 +3,7 @@
 # Fail on first error.
 set -e
 
-version=2025.10.13.1
+version=2025.11.16
 
 sourceCodeInstallationDirectory=/usr/local/src/butil
 binariesInstallationDirectory=/usr/local/butil
@@ -14,18 +14,13 @@ if [ "$EUID" -eq 0 ]
 fi
 
 echo
-echo Installing dependencies
+echo Install .Net 10
 echo
-sudo add-apt-repository ppa:dotnet/backports
-sudo apt-get update
+wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
+chmod +x ./dotnet-install.sh
+./dotnet-install.sh --channel 10.0
 echo
-echo Ubuntu 24.04 specific
-echo
-sudo apt-get install -y git dotnet-sdk-9.0
-sudo apt-get update
-echo
-echo End of Ubuntu 24.04 specific
-echo
+
 echo
 echo Cleaning installation directories
 echo
@@ -47,7 +42,7 @@ echo
 echo Building
 echo
 cd ./sources
-sudo dotnet publish /p:Version=${version} /p:AssemblyVersion=${version} -c Release --property:PublishDir=${binariesInstallationDirectory} --use-current-runtime --self-contained
+sudo /root/.dotnet/dotnet publish /p:Version=${version} /p:AssemblyVersion=${version} -c Release --property:PublishDir=${binariesInstallationDirectory} --use-current-runtime --self-contained
 
 echo
 echo Prepare PNG icon for Gnome, ico files are not handled
