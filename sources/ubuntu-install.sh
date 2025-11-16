@@ -3,7 +3,7 @@
 # Fail on first error.
 set -e
 
-version=2025.10.13.1
+version=2025.11.16
 
 sourceCodeInstallationDirectory=/usr/local/src/butil
 binariesInstallationDirectory=/usr/local/butil
@@ -21,7 +21,7 @@ sudo apt-get update
 echo
 echo Ubuntu 24.04 specific
 echo
-sudo apt-get install -y git dotnet-sdk-9.0
+sudo apt-get install -y git dotnet-sdk-10.0
 sudo apt-get update
 echo
 echo End of Ubuntu 24.04 specific

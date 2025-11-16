@@ -57,7 +57,7 @@ OutFile "..\BUtil_v${PRODUCT_VERSION}_###CORERUNTIME###.exe"
 InstallDir "$PROGRAMFILES\${PRODUCT_NAME}"
 ShowInstDetails show
 ShowUnInstDetails show
-RequestExecutionLevel user
+RequestExecutionLevel admin
 
 ; Version Information
 VIProductVersion "${PRODUCT_VERSION}.0"
