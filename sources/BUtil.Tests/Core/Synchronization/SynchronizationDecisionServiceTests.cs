@@ -1,6 +1,5 @@
 ﻿using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Synchronization;
-using System.IO.Enumeration;
 
 namespace BUtil.Tests.Core.Synchronization;
 
@@ -354,7 +353,7 @@ public class SynchronizationDecisionServiceTests
 
     #region Readonly Sync Decision Making
 
-    [TestMethod("Readonly updates")]
+    [TestMethod(DisplayName = "Readonly updates")]
     [DataRow(SynchronizationRelation.NotChanged, SynchronizationRelation.NotChanged, SynchronizationDecision.DoNothing)] // #1
     [DataRow(SynchronizationRelation.NotChanged, SynchronizationRelation.Created, SynchronizationDecision.Update)] // #2 ....
     [DataRow(SynchronizationRelation.NotChanged, SynchronizationRelation.Changed, SynchronizationDecision.Update)]
@@ -442,11 +441,11 @@ public class SynchronizationDecisionServiceTests
 
         // Assert
         var item = decisions.Single();
-        Assert.IsTrue(item.ExistsLocally == (actualFile != SynchronizationRelation.Deleted && !(actualFile == SynchronizationRelation.NotChanged && remoteFile ==  SynchronizationRelation.Created)));
-        Assert.IsTrue(item.ActualFileToLocalStateRelation == actualFile);
-        Assert.IsTrue(item.RemoteStateToLocalStateRelation == remoteFile);
-        Assert.IsTrue(item.ActualFileAction == actualFileAction);
-        Assert.IsTrue(item.RemoteAction == SynchronizationDecision.DoNothing);
+        Assert.AreEqual(actualFile != SynchronizationRelation.Deleted && !(actualFile == SynchronizationRelation.NotChanged && remoteFile == SynchronizationRelation.Created), item.ExistsLocally);
+        Assert.AreEqual(item.ActualFileToLocalStateRelation, actualFile);
+        Assert.AreEqual(remoteFile, item.RemoteStateToLocalStateRelation);
+        Assert.AreEqual(item.ActualFileAction, actualFileAction);
+        Assert.AreEqual(SynchronizationDecision.DoNothing, item.RemoteAction);
     }
 
     #endregion
