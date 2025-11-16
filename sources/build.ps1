@@ -108,7 +108,7 @@ if ($LastExitCode -ne 0)
 }
 
 Write-Output "Setup..."
-& "C:\Program Files (x86)\NSIS\Bin\makensis.exe" "setup.nsi" "/DPRODUCT_VERSION=$version"
+& "C:\Program Files (x86)\NSIS\Bin\makensis.exe" "/DPRODUCT_VERSION=$version" "setup.nsi"
 if ($LastExitCode -ne 0)
 {
 	Write-Error "Fail." 
