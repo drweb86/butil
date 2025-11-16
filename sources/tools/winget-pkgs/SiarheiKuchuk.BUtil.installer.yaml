@@ -21,7 +21,7 @@ Installers:
   InstallerSha256: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
   Scope: user
   InstallerSwitches:
-    Custom: /CLOSEAPPLICATIONS /CURRENTUSER
+    Custom: /CLOSEAPPLICATIONS /CURRENTUSER /S
 - InstallerUrl: https://github.com/drweb86/butil/releases/download/APP_VERSION_STRING/BUtil_vAPP_VERSION_STRING.exe
   Platform:
     - Windows.Desktop
@@ -30,7 +30,7 @@ Installers:
   InstallerSha256: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
   Scope: machine
   InstallerSwitches:
-    Custom: /CLOSEAPPLICATIONS /ALLUSERS
+    Custom: /CLOSEAPPLICATIONS /ALLUSERS /S
   ElevationRequirement: elevationRequired
 - InstallerUrl: https://github.com/drweb86/butil/releases/download/APP_VERSION_STRING/BUtil_vAPP_VERSION_STRING.exe
   Platform:
@@ -40,7 +40,7 @@ Installers:
   InstallerSha256: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
   Scope: user
   InstallerSwitches:
-    Custom: /CLOSEAPPLICATIONS /CURRENTUSER
+    Custom: /CLOSEAPPLICATIONS /CURRENTUSER /S
 - InstallerUrl: https://github.com/drweb86/butil/releases/download/APP_VERSION_STRING/BUtil_vAPP_VERSION_STRING.exe
   Platform:
     - Windows.Desktop
@@ -49,7 +49,7 @@ Installers:
   InstallerSha256: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
   Scope: machine
   InstallerSwitches:
-    Custom: /CLOSEAPPLICATIONS /ALLUSERS
+    Custom: /CLOSEAPPLICATIONS /ALLUSERS /S
   ElevationRequirement: elevationRequired
 ManifestType: installer
 ManifestVersion: 1.10.0

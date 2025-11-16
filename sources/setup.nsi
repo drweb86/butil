@@ -15,6 +15,10 @@ SetCompressor /FINAL /SOLID lzma
 !include "MUI2.nsh"
 !include "x64.nsh"
 !include "WinVer.nsh"
+!include "FileFunc.nsh"
+
+!insertmacro GetParameters
+!insertmacro GetOptions
 
 ; MUI Settings
 !define MUI_ABORTWARNING
@@ -59,7 +63,7 @@ OutFile "..\Output\BUtil_v${PRODUCT_VERSION}.exe"
 InstallDir "$PROGRAMFILES\${PRODUCT_NAME}"
 ShowInstDetails show
 ShowUnInstDetails show
-RequestExecutionLevel admin
+RequestExecutionLevel user
 
 ; Version Information
 VIProductVersion "${PRODUCT_VERSION}.0"
@@ -70,7 +74,52 @@ VIAddVersionKey "LegalCopyright" "© ${START_YEAR}-${CURRENT_YEAR} ${PRODUCT_PUB
 VIAddVersionKey "FileDescription" "${PRODUCT_NAME} installer"
 VIAddVersionKey "FileVersion" "${PRODUCT_VERSION}"
 
+; Architecture handling - Runtime detection
+Var InstallMode
+Var MultiUser
+
 Function .onInit
+  ; Initialize default to current user
+  StrCpy $InstallMode "CurrentUser"
+  StrCpy $MultiUser "0"
+
+  ; Parse command line arguments
+  ; /ALLUSERS or /AllUsers = install for all users (requires admin)
+  ; /CURRENTUSER or /CurrentUser = install for current user only (default)
+  ${GetParameters} $0
+  ${GetOptions} $0 "/ALLUSERS" $1
+  ${IfNot} ${Errors}
+    StrCpy $InstallMode "AllUsers"
+    StrCpy $MultiUser "1"
+  ${EndIf}
+  
+  ${GetOptions} $0 "/AllUsers" $1
+  ${IfNot} ${Errors}
+    StrCpy $InstallMode "AllUsers"
+    StrCpy $MultiUser "1"
+  ${EndIf}
+  
+  ${GetOptions} $0 "/CURRENTUSER" $1
+  ${IfNot} ${Errors}
+    StrCpy $InstallMode "CurrentUser"
+    StrCpy $MultiUser "0"
+  ${EndIf}
+  
+  ${GetOptions} $0 "/CurrentUser" $1
+  ${IfNot} ${Errors}
+    StrCpy $InstallMode "CurrentUser"
+    StrCpy $MultiUser "0"
+  ${EndIf}
+  
+  ; Check if admin rights are available when installing for all users
+  ${If} $MultiUser == "1"
+    UserInfo::GetAccountType
+    Pop $0
+    ${If} $0 != "admin"
+      MessageBox MB_OK|MB_ICONSTOP "Administrator privileges required to install for all users.$\nPlease run the installer as administrator or use /CURRENTUSER."
+      Abort
+    ${EndIf}
+  ${EndIf}
 
   ; Additional check for Windows 11 specifically (build 26100+)
   ReadRegStr $0 HKLM "SOFTWARE\Microsoft\Windows NT\CurrentVersion" "CurrentBuildNumber"
@@ -82,7 +131,11 @@ Function .onInit
   ; Check architecture if needed
   ${If} ${RunningX64}
     SetRegView 64
-    StrCpy $INSTDIR "$PROGRAMFILES64\${PRODUCT_NAME}"
+    ${If} $MultiUser == "1"
+      StrCpy $INSTDIR "$PROGRAMFILES64\${PRODUCT_NAME}"
+    ${Else}
+      StrCpy $INSTDIR "$LOCALAPPDATA\Programs\${PRODUCT_NAME}"
+    ${EndIf}
   ${Else}
     MessageBox MB_OK|MB_ICONSTOP "This installer requires a x64 or arm64 version of Windows."
     Abort
@@ -108,6 +161,13 @@ FunctionEnd
 Section "MainSection" SEC01
   SetOutPath "$INSTDIR\bin"
   SetOverwrite on
+  
+  ${If} $MultiUser == "1"
+    SetShellVarContext all  ; All Users
+  ${Else}
+    SetShellVarContext current  ; Current User only
+  ${EndIf}
+
   ${If} ${IsNativeARM64}
   File /r "..\output\publish\arm64\*.*"
   ${Else}
@@ -115,21 +175,33 @@ Section "MainSection" SEC01
   ${EndIf}
 
   ; Store installation folder
-  WriteRegStr HKCU "Software\${PRODUCT_NAME}" "" $INSTDIR
   
   ; Create uninstaller
   WriteUninstaller "$INSTDIR\uninst.exe"
   
   ; Add uninstall information to Add/Remove Programs
-  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}" "DisplayName" "${PRODUCT_NAME}"
-  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}" "UninstallString" "$INSTDIR\uninst.exe"
-  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}" "DisplayIcon" "$INSTDIR\bin\butil-ui.Desktop.exe"
-  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}" "DisplayVersion" "${PRODUCT_VERSION}"
-  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}" "Publisher" "${PRODUCT_PUBLISHER}"
-  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}" "URLInfoAbout" "${PRODUCT_WEB_SITE}"
-  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}" "HelpLink" "${PRODUCT_WEB_SITE}"
-  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}" "URLUpdateInfo" "${PRODUCT_WEB_SITE}"
-  
+  ${If} $MultiUser == "1"
+    WriteRegStr HKLM "Software\${PRODUCT_NAME}" "" $INSTDIR
+    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}" "DisplayName" "${PRODUCT_NAME}"
+    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}" "UninstallString" "$INSTDIR\uninst.exe"
+    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}" "DisplayIcon" "$INSTDIR\bin\butil-ui.Desktop.exe"
+    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}" "DisplayVersion" "${PRODUCT_VERSION}"
+    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}" "Publisher" "${PRODUCT_PUBLISHER}"
+    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}" "URLInfoAbout" "${PRODUCT_WEB_SITE}"
+    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}" "HelpLink" "${PRODUCT_WEB_SITE}"
+    WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}" "URLUpdateInfo" "${PRODUCT_WEB_SITE}"
+  ${Else}
+    WriteRegStr HKCU "Software\${PRODUCT_NAME}" "" $INSTDIR
+    WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}" "DisplayName" "${PRODUCT_NAME}"
+    WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}" "UninstallString" "$INSTDIR\uninst.exe"
+    WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}" "DisplayIcon" "$INSTDIR\bin\butil-ui.Desktop.exe"
+    WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}" "DisplayVersion" "${PRODUCT_VERSION}"
+    WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}" "Publisher" "${PRODUCT_PUBLISHER}"
+    WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}" "URLInfoAbout" "${PRODUCT_WEB_SITE}"
+    WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}" "HelpLink" "${PRODUCT_WEB_SITE}"
+    WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}" "URLUpdateInfo" "${PRODUCT_WEB_SITE}"
+  ${EndIf}
+
   ; Create shortcuts
   !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
     CreateDirectory "$SMPROGRAMS\$StartMenuFolder"
@@ -154,6 +226,8 @@ Section Uninstall
   RMDir "$INSTDIR"
   
   ; Remove registry keys
+  DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
+  DeleteRegKey HKLM "Software\${PRODUCT_NAME}"
   DeleteRegKey HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
   DeleteRegKey HKCU "Software\${PRODUCT_NAME}"
   
