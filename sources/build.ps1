@@ -100,7 +100,7 @@ ForEach ($platform in $platforms)
 
 
 Write-Output "Prepare to pack binaries"
-Copy-Item "..\help\Readme.Binaries.md" "..\Output\publish\$($platform.CoreRuntimeFolderPrefix)\README.md"
+Copy-Item "..\help\Readme.Binaries.md" "..\Output\publish\README.md"
 if ($LastExitCode -ne 0)
 {
 	Write-Error "Fail." 

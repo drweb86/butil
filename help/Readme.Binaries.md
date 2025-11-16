@@ -2,7 +2,7 @@
 
 ## Executables
 
-UI executable is **bin\butil-ui.Desktop.exe**.
+UI executable is **butil-ui.Desktop.exe**.
 
-Console executable is **bin\butilc.exe**.
+Console executable is **butilc.exe**.
 
