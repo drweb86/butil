@@ -69,7 +69,7 @@ VIAddVersionKey "FileDescription" "${PRODUCT_NAME} installer"
 VIAddVersionKey "FileVersion" "${PRODUCT_VERSION}"
 
 ; Compression
-SetCompressor /SOLID lzma
+SetCompressor /FINAL /SOLID lzma
 
 ; Architecture handling
 !if "###ARCHITECTURE###" == "x64"
