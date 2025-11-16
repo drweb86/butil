@@ -98,11 +98,11 @@ ForEach ($platform in $platforms)
 	}
 
 	Write-Output "Create Setup Script"
-	$innoSetupScriptFile="../Output/$($platform.CoreRuntimeWindows)/_InnoSetup $($platform.CoreRuntimeWindows).iss"
+	$setupScriptFile="../Output/$($platform.CoreRuntimeWindows)/_nsis $($platform.CoreRuntimeWindows).nsi"
 
-	(Get-Content "setup.iss").Replace("###ARCHITECTURE###", $platform.InnoArchitectureWindows).Replace("###CORERUNTIME###", $platform.CoreRuntimeWindows).Replace("###VERSION###", $version) | Set-Content $innoSetupScriptFile
+	(Get-Content "setup.nsi").Replace("###ARCHITECTURE###", $platform.InnoArchitectureWindows).Replace("###CORERUNTIME###", $platform.CoreRuntimeWindows).Replace("###VERSION###", $version) | Set-Content $setupScriptFile
 	Write-Output "Setup..."
-	& "c:\Program Files (x86)\Inno Setup 6\ISCC.exe" $innoSetupScriptFile
+	& "C:\Program Files (x86)\NSIS\Bin\makensis.exe" $setupScriptFile
 	if ($LastExitCode -ne 0)
 	{
 		Write-Error "Fail." 

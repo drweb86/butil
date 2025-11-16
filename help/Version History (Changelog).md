@@ -1,4 +1,4 @@
-﻿# 2025.11.12
+﻿# 2025.11.16
 (unpublished)
 
 ## New Features
@@ -6,7 +6,9 @@
 
 ## Changes
 - Upgrade Visual Studio 2026.
-- Upgrade to .Net 10
+- Upgrade to .Net 10.
+- Inno Setup installer was phased out for license changes not allowing to potentially receive donations.
+- Minimum required Windows version is 24H2 build 26100.
 
 # 2025.10.13.1
 

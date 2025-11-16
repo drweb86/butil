@@ -1,1 +1,2 @@
-﻿[assembly: System.Runtime.Versioning.SupportedOSPlatform("windows10.0")]
+﻿[assembly: System.Runtime.Versioning.UnsupportedOSPlatform("windows")]
+[assembly: System.Runtime.Versioning.SupportedOSPlatform("windows11.0")]

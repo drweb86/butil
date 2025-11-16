@@ -1,4 +1,4 @@
-# Windows 10 or 11 Binaries Readme
+# Windows 11 Binaries Readme
 
 ## Executables
 

@@ -4,7 +4,7 @@ PackageIdentifier: SiarheiKuchuk.BUtil
 PackageVersion: APP_VERSION_STRING
 Platform:
 - Windows.Desktop
-InstallerType: inno
+InstallerType: nullsoft
 InstallModes:
 - interactive
 - silent

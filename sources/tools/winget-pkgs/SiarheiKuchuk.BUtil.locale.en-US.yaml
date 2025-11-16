@@ -29,7 +29,7 @@ Description: |
   - Console for automation scheduling;
   - AES-256 encryption.
 
-  Platforms: Windows 10 or 11 x64, ARM64 or Ubuntu 24+.
+  Platforms: Windows 11 x64, ARM64 or Ubuntu 24+.
 Moniker: butil
 Tags:
 - backup
