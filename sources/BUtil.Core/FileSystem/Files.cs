@@ -7,7 +7,7 @@ public static class Files
 {
     public static readonly string WindowsExperience =
 #if DEBUG
-        Path.Combine(Directories.BinariesDir, @"..\..\..\..\BUtil.Windows\bin\windows\Debug\net10.0-windows7.0\BUtil.Windows.dll");
+        Path.Combine(Directories.BinariesDir, @"..\..\..\..\BUtil.Windows\bin\windows\Debug\net10.0-windows10.0.26100.0\BUtil.Windows.dll");
 #else
         Path.Combine(Directories.BinariesDir, "BUtil.Windows.dll");
 #endif
