@@ -192,7 +192,7 @@
     <value>喺{0}埠啟動伺服器</value>
   </data>
   <data name="BUtilServerTask_Create" xml:space="preserve">
-    <value>檔案伺服器</value>
+    <value>FTPS 檔案伺服器</value>
   </data>
   <data name="BUtilServerTask_Help" xml:space="preserve">
     <value>檔案伺服器允許用AES-256 P2P傳輸加密對其文件夾進行檔案操作。</value>

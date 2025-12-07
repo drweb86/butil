@@ -192,13 +192,10 @@ Deleted version changes will become part of version "{1}".</value>
     <value>Client "{0}"</value>
   </data>
   <data name="BUtilServerStartTask_Name" xml:space="preserve">
-    <value>Start server at {0} port</value>
+    <value>Start FTPS server</value>
   </data>
   <data name="BUtilServerTask_Create" xml:space="preserve">
-    <value>File Server</value>
-  </data>
-  <data name="BUtilServerTask_Help" xml:space="preserve">
-    <value>File Server allows to do file operations with its folder with AES-256 P2P transport encryption.</value>
+    <value>FTPS File Server</value>
   </data>
   <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
     <value>Waiting for client connection...</value>
@@ -750,5 +747,8 @@ See detailed description in the following link.</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>User is not specified.</value>
+  </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>Duration (minutes, 0 - infinite):</value>
   </data>
 </root>

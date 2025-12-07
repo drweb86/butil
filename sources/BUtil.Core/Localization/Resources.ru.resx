@@ -191,14 +191,8 @@
   <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
     <value>Клиент "{0}"</value>
   </data>
-  <data name="BUtilServerStartTask_Name" xml:space="preserve">
-    <value>Запуск сервера на порту {0}</value>
-  </data>
   <data name="BUtilServerTask_Create" xml:space="preserve">
-    <value>Файловый сервер</value>
-  </data>
-  <data name="BUtilServerTask_Help" xml:space="preserve">
-    <value>Файловый сервер позволяет делать файловые операции над своей папкой с использованием AES-256 P2P соединения по сети.</value>
+    <value>FTPS Файловый сервер</value>
   </data>
   <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
     <value>Ожидание подключения клиентов...</value>

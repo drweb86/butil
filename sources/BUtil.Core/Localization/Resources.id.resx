@@ -188,14 +188,8 @@
   <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
     <value>Klien "{0}"</value>
   </data>
-  <data name="BUtilServerStartTask_Name" xml:space="preserve">
-    <value>Mulai server di port {0}</value>
-  </data>
   <data name="BUtilServerTask_Create" xml:space="preserve">
-    <value>File Server</value>
-  </data>
-  <data name="BUtilServerTask_Help" xml:space="preserve">
-    <value>File Server memungkinkan operasi file dengan foldernya menggunakan enkripsi transport P2P AES-256.</value>
+    <value>FTPS Server</value>
   </data>
   <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
     <value>Menunggu koneksi klien...</value>
@@ -320,8 +314,8 @@
     <value>Perangkat tidak ditemukan.</value>
   </data>
   <data name="Field_File_Browse" xml:space="preserve">
-  <value>Jelajahi berkas</value>
-</data>
+    <value>Jelajahi berkas</value>
+  </data>
   <data name="Field_Folder" xml:space="preserve">
     <value>Folder:</value>
   </data>
@@ -365,11 +359,11 @@
     <value>Mengunggah "{0}"</value>
   </data>
   <data name="FingerPrintSHA256_Field" xml:space="preserve">
-  <value>Sidik SHA-256:</value>
-</data>
+    <value>Sidik SHA-256:</value>
+  </data>
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
-  <value>Sidik SHA-256 tidak ditentukan.</value>
-</data>
+    <value>Sidik SHA-256 tidak ditentukan.</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Eksplisit</value>
   </data>
@@ -458,8 +452,8 @@
     <value>Tugas pencadangan inkremental</value>
   </data>
   <data name="KeyFile_Field" xml:space="preserve">
-  <value>Berkas kunci:</value>
-</data>
+    <value>Berkas kunci:</value>
+  </data>
   <data name="LeftMenu_Encryption" xml:space="preserve">
     <value>Enkripsi</value>
   </data>
@@ -524,8 +518,8 @@
     <value>Nama</value>
   </data>
   <data name="OptionalField_Hint" xml:space="preserve">
-  <value>(opsional)</value>
-</data>
+    <value>(opsional)</value>
+  </data>
   <data name="Password_Field" xml:space="preserve">
     <value>Kata sandi:</value>
   </data>
@@ -574,17 +568,17 @@
     <value>Port tidak valid.</value>
   </data>
   <data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
-  <value>Kata sandi dan berkas kunci keduanya kosong.</value>
-</data>
+    <value>Kata sandi dan berkas kunci keduanya kosong.</value>
+  </data>
   <data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
-  <value>Folder SFTP tidak boleh diakhiri dengan /.</value>
-</data>
+    <value>Folder SFTP tidak boleh diakhiri dengan /.</value>
+  </data>
   <data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
-  <value>Folder SFTP harus diawali dengan /.</value>
-</data>
+    <value>Folder SFTP harus diawali dengan /.</value>
+  </data>
   <data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
-  <value>Folder SFTP / tidak diizinkan. Folder harus merujuk ke lokasi yang lebih spesifik.</value>
-</data>
+    <value>Folder SFTP / tidak diizinkan. Folder harus merujuk ke lokasi yang lebih spesifik.</value>
+  </data>
   <data name="SourceItem_AddFolders" xml:space="preserve">
     <value>Tambahkan folder...</value>
   </data>

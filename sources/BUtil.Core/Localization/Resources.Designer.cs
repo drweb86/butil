@@ -19,7 +19,7 @@ namespace BUtil.Core.Localization {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -273,7 +273,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Start server at {0} port.
+        ///   Looks up a localized string similar to Start FTPS server.
         /// </summary>
         public static string BUtilServerStartTask_Name {
             get {
@@ -282,20 +282,11 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to File Server.
+        ///   Looks up a localized string similar to FTPS File Server.
         /// </summary>
         public static string BUtilServerTask_Create {
             get {
                 return ResourceManager.GetString("BUtilServerTask_Create", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to File Server allows to do file operations with its folder with AES-256 P2P transport encryption..
-        /// </summary>
-        public static string BUtilServerTask_Help {
-            get {
-                return ResourceManager.GetString("BUtilServerTask_Help", resourceCulture);
             }
         }
         
@@ -631,6 +622,15 @@ namespace BUtil.Core.Localization {
         public static string DirectoryStorage_Field_Directory_Validation_NotFound {
             get {
                 return ResourceManager.GetString("DirectoryStorage_Field_Directory_Validation_NotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Duration (minutes, 0 - infinite):.
+        /// </summary>
+        public static string DurationMinutes_Field {
+            get {
+                return ResourceManager.GetString("DurationMinutes_Field", resourceCulture);
             }
         }
         

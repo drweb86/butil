@@ -8,12 +8,12 @@ using System.IO;
 
 namespace BUtil.Core.TasksTree.BUtilServer.Server;
 
-internal class BUtilServerRootTask : SequentialBuTask
+internal class FtpsServerRootTask : SequentialBuTask
 {
     private readonly BUtilServerIoc _ioc;
     private readonly BUtilServerModelOptionsV2 _options;
 
-    public BUtilServerRootTask(ILog log, TaskEvents taskEvents, TaskV2 backupTask, Action<string?> onGetLastMinuteMessage)
+    public FtpsServerRootTask(ILog log, TaskEvents taskEvents, TaskV2 backupTask, Action<string?> onGetLastMinuteMessage)
         : base(log, taskEvents, string.Empty, null)
     {
         _options = (BUtilServerModelOptionsV2)backupTask.Model;
@@ -22,13 +22,12 @@ internal class BUtilServerRootTask : SequentialBuTask
         LogDebug($"Server working directory: {_options.Folder} (will be created if not exists)");
         Directory.CreateDirectory(_options.Folder);
 
-        _ioc = new BUtilServerIoc(log, _options.Folder, _options.Password, onGetLastMinuteMessage);
+        _ioc = new BUtilServerIoc(log, onGetLastMinuteMessage);
 
-        var serverStartTask = new BUtilServerStartTask(_ioc, Events, _options);
         Children = new List<BuTask>
         {
-            serverStartTask,
-            new BUtilServerWaitForClientTask(_ioc, Events, _options, serverStartTask),
+            new FtpsServerStartTask(_ioc, Events, _options),
+            new FtpsServerTimeoutTask(_ioc, Events, _options.DurationMinutes),
         };
     }
 
@@ -37,6 +36,7 @@ internal class BUtilServerRootTask : SequentialBuTask
         UpdateStatus(ProcessingStatus.InProgress);
         base.Execute();
         UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
+        _ioc.Server?.Stop();
         _ioc.Dispose();
     }
 }

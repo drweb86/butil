@@ -4,6 +4,7 @@ using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
 using butil_ui.ViewModels;
+using System;
 using System.Threading.Tasks;
 
 namespace butil_ui.Controls;
@@ -20,19 +21,16 @@ public class EditBUtilServerTaskViewModel : ViewModelBase
         IsNew = isNew;
 
         var storeService = new TaskV2StoreService();
-        var task = isNew ? new TaskV2() { Model = new BUtilServerModelOptionsV2 { Permissions = FileSenderServerPermissions.ReadWrite, Port = 10999 } } : storeService.Load(taskName) ?? new TaskV2();
-        NameTaskViewModel = new NameTaskViewModel(isNew, Resources.BUtilServerTask_Help, task.Name);
+        var task = isNew ? new TaskV2() { Model = new BUtilServerModelOptionsV2 { Port = 10999, Folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) } } : storeService.Load(taskName) ?? new TaskV2();
+        NameTaskViewModel = new NameTaskViewModel(isNew, null!, task.Name);
         var model = (BUtilServerModelOptionsV2)task.Model;
-        EncryptionTaskViewModel = new EncryptionTaskViewModel(model.Password, isNew, false);
-
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
         WhenTaskViewModel = new WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule?.GetSchedule(taskName) ?? new ScheduleInfo());
-        FolderAndPortSectionViewModel = new FolderAndPortSectionViewModel(model.Folder, model.Port);
+        FolderAndPortSectionViewModel = new FolderAndPortSectionViewModel(model.ServerAddress, model.Port, model.Username, model.Password, model.Folder, model.DurationMinutes);
     }
 
     public bool IsNew { get; set; }
     public NameTaskViewModel NameTaskViewModel { get; }
-    public EncryptionTaskViewModel EncryptionTaskViewModel { get; }
     public WhenTaskViewModel WhenTaskViewModel { get; }
     
     public FolderAndPortSectionViewModel FolderAndPortSectionViewModel { get; }
@@ -53,10 +51,12 @@ public class EditBUtilServerTaskViewModel : ViewModelBase
         {
             Name = NameTaskViewModel.Name.TrimEnd(),
             Model = new BUtilServerModelOptionsV2(
+                FolderAndPortSectionViewModel.FtpsServer!,
+                FolderAndPortSectionViewModel.Port,
+                FolderAndPortSectionViewModel.FtpsUser!,
+                FolderAndPortSectionViewModel.FtpsPassword!,
                 FolderAndPortSectionViewModel.Folder,
-                FileSenderServerPermissions.ReadWrite,
-                EncryptionTaskViewModel.Password,
-                FolderAndPortSectionViewModel.Port)
+                FolderAndPortSectionViewModel.DurationMinutes)
         };
 
         if (!TaskV2Validator.TryValidate(newTask, true, out var error))

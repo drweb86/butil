@@ -29,7 +29,6 @@
 			<StackPanel>
 				<controls:NameTaskView Margin="24 24 24 8" DataContext="{Binding NameTaskViewModel}" />
 				<controls:FolderAndPortSectionView Margin="24 8 24 8" DataContext="{Binding FolderAndPortSectionViewModel}" />
-				<controls:EncryptionTaskView Margin="24 8 24 8" DataContext="{Binding EncryptionTaskViewModel}" />
 				<controls:WhenTaskView Margin="24 8 24 8" DataContext="{Binding WhenTaskViewModel}" IsVisible="{Binding IsWhenAvailable}" />
 			</StackPanel>
 		</ScrollViewer>

@@ -2,21 +2,36 @@
 
 public class BUtilServerModelOptionsV2 : ITaskModelOptionsV2
 {
+    public const string DefaultIp = "0.0.0.0";
+    public const long DefaultDuration = 30;
+    public const int DefaultPort = 10999;
+    public const string DefaultUsername = "user";
+
     public BUtilServerModelOptionsV2() // deserialization
     {
 
     }
 
-    public BUtilServerModelOptionsV2(string folder, FileSenderServerPermissions permissions, string password, int port)
+    public BUtilServerModelOptionsV2(
+        string serverAddress,
+        int port,
+        string username,
+        string password,
+        string folder,
+        long durationMinutes)
     {
-        Folder = folder;
-        Permissions = permissions;
-        Password = password;
+        ServerAddress = serverAddress;
         Port = port;
+        Folder = folder;
+        Username = username;
+        Password = password;
+        DurationMinutes = durationMinutes;
     }
 
+    public string? ServerAddress { get; set; } = DefaultIp;
+    public int Port { get; set; } = DefaultPort;
+    public string Username { get; set; } = DefaultUsername;
+    public string Password { get; set; } = null!;
     public string Folder { get; set; } = null!;
-    public FileSenderServerPermissions Permissions { get; set; }
-    public string Password { get; set; } = string.Empty;
-    public int Port { get; set; }
+    public long DurationMinutes { get; set; } = DefaultDuration;
 }

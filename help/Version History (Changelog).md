@@ -3,6 +3,7 @@
 
 ## Changes
 - Some libraries were updated.
+- BUtil Server now is FTPS Server.
 
 # 2025.11.16
 

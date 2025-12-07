@@ -1,8 +1,8 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Platform.Storage;
+using BUtil.Core.ConfigurationFileModels.V2;
 using System;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace butil_ui.Controls;
@@ -12,7 +12,7 @@ public partial class FolderAndPortSectionView : UserControl
     public FolderAndPortSectionView()
     {
         InitializeComponent();
-        this.DataContext = new FolderAndPortSectionViewModel("the folder", 10999);
+        this.DataContext = new FolderAndPortSectionViewModel(BUtilServerModelOptionsV2.DefaultIp, BUtilServerModelOptionsV2.DefaultPort, BUtilServerModelOptionsV2.DefaultUsername, "pass", "some folder", BUtilServerModelOptionsV2.DefaultDuration);
     }
 
     public void BrowseCommand(object? sender, RoutedEventArgs args)
