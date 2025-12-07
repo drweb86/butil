@@ -738,4 +738,16 @@ Consulta il sito web dell'applicazione per la documentazione su come impostare l
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Non è stato specificato l'utente.</value>
   </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>Durata (minuti, 0 - infinito):</value>
+  </data>
+  <data name="BUtilServerClientTask_Create" xml:space="preserve">
+    <value>Cartella upload</value>
+  </data>
+  <data name="BUtilServerStartTask_Name" xml:space="preserve">
+    <value>Avvia server FTPS</value>
+  </data>
+  <data name="BUtilServerTask_Create" xml:space="preserve">
+    <value>Server FTPS</value>
+  </data>
 </root>
