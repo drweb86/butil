@@ -20,24 +20,24 @@ public class EditBUtilServerClientTaskViewModel : ViewModelBase
         IsNew = isNew;
 
         var storeService = new TaskV2StoreService();
-        var task = isNew ? new TaskV2() { Model = new BUtilClientModelOptionsV2(string.Empty, FileSenderDirection.ToServer, "", 10999, string.Empty) } : storeService.Load(taskName) ?? new TaskV2();
-        NameTaskViewModel = new NameTaskViewModel(isNew, Resources.BUtilServerClientTask_Help, task.Name);
+        var task = isNew 
+            ?  new TaskV2() { Model = new BUtilClientModelOptionsV2(string.Empty, FileSenderDirection.ToServer, new FtpsStorageSettingsV2()) } 
+            : storeService.Load(taskName) ?? new TaskV2();
+        NameTaskViewModel = new NameTaskViewModel(isNew, null!, task.Name);
         var model = (BUtilClientModelOptionsV2)task.Model;
-        EncryptionTaskViewModel = new EncryptionTaskViewModel(model.Password, isNew, false);
 
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
         WhenTaskViewModel = new WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule?.GetSchedule(taskName) ?? new ScheduleInfo());
 
         FolderSectionViewModel = new FolderSectionViewModel(model.Folder);
-        WhereFileSenderTaskViewModel = new WhereFileSenderTaskViewModel(model.ServerHost, model.ServerPort, BUtil.Core.Localization.Resources.LeftMenu_Where, "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png");
+        WhereTaskViewModel = new WhereTaskViewModel(model.To, Resources.LeftMenu_Where, "/Assets/CrystalProject_EveraldoCoelho_SourceItems48x48.png");
     }
 
     public bool IsNew { get; set; }
     public NameTaskViewModel NameTaskViewModel { get; }
-    public EncryptionTaskViewModel EncryptionTaskViewModel { get; }
     public WhenTaskViewModel WhenTaskViewModel { get; }
     public FolderSectionViewModel FolderSectionViewModel { get; }
-    public WhereFileSenderTaskViewModel WhereFileSenderTaskViewModel { get; }
+    public WhereTaskViewModel WhereTaskViewModel { get; }
 
     #region Commands
 
@@ -53,7 +53,7 @@ public class EditBUtilServerClientTaskViewModel : ViewModelBase
         var newTask = new TaskV2
         {
             Name = NameTaskViewModel.Name.TrimEnd(),
-            Model = new BUtilClientModelOptionsV2(FolderSectionViewModel.Folder, FileSenderDirection.ToServer, WhereFileSenderTaskViewModel.Host!, WhereFileSenderTaskViewModel.Port, EncryptionTaskViewModel.Password)
+            Model = new BUtilClientModelOptionsV2(FolderSectionViewModel.Folder, FileSenderDirection.ToServer, WhereTaskViewModel.GetStorageSettings())
         };
 
         if (!TaskV2Validator.TryValidate(newTask, true, out var error))

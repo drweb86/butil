@@ -4,11 +4,11 @@ using FtpsServerLibrary;
 using System;
 
 namespace BUtil.Core.TasksTree.BUtilServer.Server;
-public class BUtilServerIoc
+public class FtpsServerIoc
 {
     public CommonServicesIoc Common {  get; set; }
 
-    public BUtilServerIoc(ILog log, Action<string?> onGetLastMinuteMessage)
+    public FtpsServerIoc(ILog log, Action<string?> onGetLastMinuteMessage)
     {
         Common = new CommonServicesIoc(log, onGetLastMinuteMessage);
     }

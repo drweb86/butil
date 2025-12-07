@@ -176,23 +176,8 @@
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
     <value>حدد الملف أو المجلد الذي تريد استعادته من الشجرة وانقر على "استعادة".</value>
   </data>
-  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
-    <value>الاتصال بالخادم عبر IP {0} والمنفذ {1}</value>
-  </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>تم إنهاء الاتصال بالخادم بشكل غير متوقع (هل كلمات المرور على العميل والخادم متطابقة؟)</value>
-  </data>
-  <data name="BUtilServerClientTask_Create" xml:space="preserve">
-    <value>رفع مجلد إلى خادم الملفات</value>
-  </data>
-  <data name="BUtilServerClientTask_Help" xml:space="preserve">
-    <value>يرفع المجلد إلى خادم الملفات مع استبدال الملفات الموجودة التي تختلف في التجزئة أو الحجم. نقل البيانات محمي بتشفير AES-256. إذا كان الملف موجودًا على الخادم وغير موجود محليًا، فلن يتم حذفه من جانب الخادم.</value>
-  </data>
-  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
-    <value>العميل "{0}"</value>
-  </data>
-  <data name="BUtilServerTask_Create" xml:space="preserve">
-    <value>FTPS خادم الملفات</value>
   </data>
   <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
     <value>في انتظار اتصال العميل...</value>

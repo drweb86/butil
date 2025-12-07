@@ -29,8 +29,7 @@
 			<StackPanel>
 				<controls:NameTaskView Margin="24 24 24 8" DataContext="{Binding NameTaskViewModel}" />
 				<controls:FolderSectionView Margin="24 8 24 8" DataContext="{Binding FolderSectionViewModel}" />
-				<controls:WhereFileSenderTaskView Margin="24 8 24 8" DataContext="{Binding WhereFileSenderTaskViewModel}"/>
-				<controls:EncryptionTaskView Margin="24 8 24 8" DataContext="{Binding EncryptionTaskViewModel}" />
+				<controls:WhereTaskView Margin="24 8 24 8" DataContext="{Binding WhereTaskViewModel}"/>
 				<controls:WhenTaskView Margin="24 8 24 8" DataContext="{Binding WhenTaskViewModel}" IsVisible="{Binding IsWhenAvailable}" />
 			</StackPanel>
 		</ScrollViewer>

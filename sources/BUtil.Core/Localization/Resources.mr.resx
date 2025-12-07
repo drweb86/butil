@@ -176,23 +176,8 @@
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
     <value>तुम्हाला पुनर्स्थापन करायची असलेली फाइल किंवा फोल्डर ट्रीमध्ये निवडा आणि "पुनर्स्थापन करा" वर क्लिक करा.</value>
   </data>
-  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
-    <value>IP {0} आणि पोर्ट {1} सह सर्व्हरशी कनेक्ट करा</value>
-  </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>सर्व्हरशी कनेक्शन अनपेक्षितपणे समाप्त झाले (क्लायंट आणि सर्व्हरवरील पासवर्ड समान आहेत का?)</value>
-  </data>
-  <data name="BUtilServerClientTask_Create" xml:space="preserve">
-    <value>फाइल सर्व्हरवर फोल्डर अपलोड करा</value>
-  </data>
-  <data name="BUtilServerClientTask_Help" xml:space="preserve">
-    <value>हॅश किंवा आकारानुसार भिन्न असलेल्या विद्यमान फायली ओव्हरराइट करून फाइल सर्व्हरवर फोल्डर अपलोड करते. डेटा ट्रान्सफर AES-256 ने संरक्षित आहे. फाइल सर्व्हरवर अस्तित्वात असल्यास आणि स्थानिक पातळीवर नसल्यास, सर्व्हर बाजूला फाइल डिलीट होत नाही.</value>
-  </data>
-  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
-    <value>क्लायंट "{0}"</value>
-  </data>
-  <data name="BUtilServerTask_Create" xml:space="preserve">
-    <value>FTPS फाइल सर्व्हर</value>
   </data>
   <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
     <value>क्लायंट कनेक्शनची वाट पाहत आहे...</value>

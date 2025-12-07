@@ -178,31 +178,21 @@ public static class RootTaskFactory
         }
         else if (options is BUtilClientModelOptionsV2 fileSenderTransferOptions)
         {
-            if (string.IsNullOrWhiteSpace(fileSenderTransferOptions.Password))
-            {
-                error = Resources.Password_Field_Validation_NotSpecified;
-                return false;
-            }
-
-            if (string.IsNullOrWhiteSpace(fileSenderTransferOptions.ServerHost))
-            { 
-                error = Resources.Server_Field_Address_Validation;
-                return false;
-            }
-
-            var storageError = StorageFactory.Test(log, new FolderStorageSettingsV2 { DestinationFolder = fileSenderTransferOptions.Folder }, writeMode);
+            var storageError = StorageFactory.Test(log, fileSenderTransferOptions.To, writeMode);
             if (storageError != null)
             {
                 error = storageError;
                 return false;
             }
 
-            if (fileSenderTransferOptions.ServerPort < 1)
+
+            var storageError2 = StorageFactory.Test(log, new FolderStorageSettingsV2 { DestinationFolder = fileSenderTransferOptions.Folder }, writeMode);
+            if (storageError2 != null)
             {
-                error = Resources.Server_Field_Port_Validation;
+                error = storageError2;
                 return false;
             }
-
+            
             return true;
         }
 

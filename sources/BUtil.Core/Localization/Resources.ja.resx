@@ -171,23 +171,8 @@
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
     <value>復元したいファイルまたはフォルダーをツリーで選択し、「復元」をクリックしてください。</value>
   </data>
-  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
-    <value>IP {0} とポート {1} でサーバーに接続</value>
-  </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>サーバーへの接続が予期せず終了しました（クライアントとサーバーのパスワードは同じですか？）</value>
-  </data>
-  <data name="BUtilServerClientTask_Create" xml:space="preserve">
-    <value>フォルダをファイルサーバーにアップロード</value>
-  </data>
-  <data name="BUtilServerClientTask_Help" xml:space="preserve">
-    <value>ハッシュまたはサイズが異なる既存ファイルを上書きしてフォルダをファイルサーバーにアップロードします。データ転送はAES-256で保護されます。サーバー上にファイルが存在し、ローカルに存在しない場合、サーバー側でファイルは削除されません。</value>
-  </data>
-  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
-    <value>クライアント「{0}」</value>
-  </data>
-  <data name="BUtilServerTask_Create" xml:space="preserve">
-    <value>FTPS ファイルサーバー</value>
   </data>
   <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
     <value>クライアント接続を待機中...</value>

@@ -6,18 +6,15 @@ public class BUtilClientModelOptionsV2 : ITaskModelOptionsV2
         
     }
 
-    public BUtilClientModelOptionsV2(string folder, FileSenderDirection direction, string serverHost, int serverPort, string password)
+    public BUtilClientModelOptionsV2(string folder, FileSenderDirection direction, IStorageSettingsV2 to)
     {
         Folder = folder;
         Direction = direction;
-        ServerHost = serverHost;
-        ServerPort = serverPort;
-        Password = password;
+        To = to;
     }
+
+    public IStorageSettingsV2 To { get; set; } = new FtpsStorageSettingsV2();
 
     public string Folder { get; set; } = null!;
     public FileSenderDirection Direction { get; set; }
-    public string ServerHost {  get; set; } = null!;
-    public int ServerPort { get; set; }
-    public string Password { get; set; } = string.Empty;
 }

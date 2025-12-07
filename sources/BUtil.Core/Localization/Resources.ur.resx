@@ -172,23 +172,8 @@
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
     <value>درخت میں وہ فائل یا فولڈر منتخب کریں جسے آپ بحال کرنا چاہتے ہیں اور "بحال کریں" پر کلک کریں۔</value>
   </data>
-  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
-    <value>IP {0} اور پورٹ {1} کے ساتھ سرور سے کنیکٹ کریں</value>
-  </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>سرور سے کنکشن غیر متوقع طور پر ختم ہو گیا (کیا کلائنٹ اور سرور کے پاس ورڈ ایک جیسے ہیں؟)</value>
-  </data>
-  <data name="BUtilServerClientTask_Create" xml:space="preserve">
-    <value>فائل سرور پر فولڈر اپ لوڈ کریں</value>
-  </data>
-  <data name="BUtilServerClientTask_Help" xml:space="preserve">
-    <value>ہیش یا سائز میں مختلف موجودہ فائلوں کو اوور رائٹ کرتے ہوئے فائل سرور پر فولڈر اپ لوڈ کرتا ہے۔ ڈیٹا ٹرانسفر AES-256 سے محفوظ ہے۔ اگر فائل سرور پر موجود ہے اور مقامی طور پر موجود نہیں ہے، تو سرور پر ڈیلیٹ نہیں ہوتی۔</value>
-  </data>
-  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
-    <value>کلائنٹ "{0}"</value>
-  </data>
-  <data name="BUtilServerTask_Create" xml:space="preserve">
-    <value>FTPS فائل سرور</value>
   </data>
   <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
     <value>کلائنٹ کنکشن کا انتظار کر رہا ہے...</value>

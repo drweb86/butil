@@ -92,9 +92,6 @@
       <SubType>Code</SubType>
       <DependentUpon>VersionsListView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Controls\WhereFileSenderTask\WhereFileSenderTaskView.axaml.cs">
-      <DependentUpon>WhereFileSenderTaskView.axaml</DependentUpon>
-    </Compile>
     <Compile Update="Controls\WhereTask\WhereTaskView.axaml.cs">
       <DependentUpon>WhereTaskView.axaml</DependentUpon>
     </Compile>

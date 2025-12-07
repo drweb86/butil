@@ -173,23 +173,8 @@
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
     <value>আপনার পুনরুদ্ধার করতে চান এমন ফাইল বা ফোল্ডারটি গাছের মধ্যে নির্বাচন করুন এবং "পুনরুদ্ধার" এ ক্লিক করুন।</value>
   </data>
-  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
-    <value>IP {0} এবং পোর্ট {1} সহ সার্ভারের সাথে সংযোগ করুন</value>
-  </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>সার্ভারের সাথে সংযোগ অপ্রত্যাশিতভাবে শেষ হয়েছে (ক্লায়েন্ট এবং সার্ভারের পাসওয়ার্ড কি একই?)</value>
-  </data>
-  <data name="BUtilServerClientTask_Create" xml:space="preserve">
-    <value>ফাইল সার্ভারে ফোল্ডার আপলোড করুন</value>
-  </data>
-  <data name="BUtilServerClientTask_Help" xml:space="preserve">
-    <value>হ্যাশ বা আকারে ভিন্ন বিদ্যমান ফাইলগুলি ওভাররাইট করে ফাইল সার্ভারে ফোল্ডার আপলোড করে। ডেটা ট্রান্সফার AES-256 দ্বারা সুরক্ষিত। ফাইলটি সার্ভারে থাকলে এবং লোকালে না থাকলে, সার্ভার থেকে ফাইল ডিলিট হয় না।</value>
-  </data>
-  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
-    <value>ক্লায়েন্ট "{0}"</value>
-  </data>
-  <data name="BUtilServerTask_Create" xml:space="preserve">
-    <value>FTPS ফাইল সার্ভার</value>
   </data>
   <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
     <value>ক্লায়েন্ট সংযোগের জন্য অপেক্ষা করা হচ্ছে...</value>

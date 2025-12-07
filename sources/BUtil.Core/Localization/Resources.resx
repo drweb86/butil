@@ -176,26 +176,17 @@ Deleted version changes will become part of version "{1}".</value>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
     <value>Select file or folder you want to restore in tree and click "Restore".</value>
   </data>
-  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
-    <value>Connect to server with IP {0} and port {1}</value>
-  </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Connection to server was unexpectedly terminated (Are passwords on Client and Server are the same?)</value>
   </data>
   <data name="BUtilServerClientTask_Create" xml:space="preserve">
-    <value>Upload Folder to File Server</value>
-  </data>
-  <data name="BUtilServerClientTask_Help" xml:space="preserve">
-    <value>Uploads folder to File Server with overwriting of existing files different by hash or size. Data transfer is protected with AES-256. If file exists on server and not exists locally, file is not deleted on server side.</value>
-  </data>
-  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
-    <value>Client "{0}"</value>
+    <value>Upload Folder</value>
   </data>
   <data name="BUtilServerStartTask_Name" xml:space="preserve">
     <value>Start FTPS server</value>
   </data>
   <data name="BUtilServerTask_Create" xml:space="preserve">
-    <value>FTPS File Server</value>
+    <value>FTPS Server</value>
   </data>
   <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
     <value>Waiting for client connection...</value>

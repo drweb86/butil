@@ -228,15 +228,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Connect to server with IP {0} and port {1}.
-        /// </summary>
-        public static string BUtilClientConnectTask_Title {
-            get {
-                return ResourceManager.GetString("BUtilClientConnectTask_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Connection to server was unexpectedly terminated (Are passwords on Client and Server are the same?).
         /// </summary>
         public static string BUtilServer_Error_ConnectionAborted {
@@ -246,29 +237,11 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upload Folder to File Server.
+        ///   Looks up a localized string similar to Upload Folder.
         /// </summary>
         public static string BUtilServerClientTask_Create {
             get {
                 return ResourceManager.GetString("BUtilServerClientTask_Create", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Uploads folder to File Server with overwriting of existing files different by hash or size. Data transfer is protected with AES-256. If file exists on server and not exists locally, file is not deleted on server side..
-        /// </summary>
-        public static string BUtilServerClientTask_Help {
-            get {
-                return ResourceManager.GetString("BUtilServerClientTask_Help", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Client &quot;{0}&quot;.
-        /// </summary>
-        public static string BUtilServerProcessClientTask_Title {
-            get {
-                return ResourceManager.GetString("BUtilServerProcessClientTask_Title", resourceCulture);
             }
         }
         
@@ -282,7 +255,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FTPS File Server.
+        ///   Looks up a localized string similar to FTPS Server.
         /// </summary>
         public static string BUtilServerTask_Create {
             get {

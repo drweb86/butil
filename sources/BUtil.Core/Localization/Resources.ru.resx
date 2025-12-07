@@ -176,23 +176,8 @@
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
     <value>Выберите файл или папку, которую вы хотите восстановить, и кликните "Восстановить".</value>
   </data>
-  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
-    <value>Подключение к серверу с IP {0} и портом {1}</value>
-  </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Сервер неожиданно разорвал соединение (Совпадают ли пароли на клиенте и сервере?)</value>
-  </data>
-  <data name="BUtilServerClientTask_Create" xml:space="preserve">
-    <value>Выгрузка папки на файловый сервер</value>
-  </data>
-  <data name="BUtilServerClientTask_Help" xml:space="preserve">
-    <value>Выгружает папку на файловый сервер с перезаписью существующих файлов (у которых отличается хэш или размер).  Передача данных шифруется AES-256. Если файл есть на сервере, а локально нет - то он не удаляется.</value>
-  </data>
-  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
-    <value>Клиент "{0}"</value>
-  </data>
-  <data name="BUtilServerTask_Create" xml:space="preserve">
-    <value>FTPS Файловый сервер</value>
   </data>
   <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
     <value>Ожидание подключения клиентов...</value>

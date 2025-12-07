@@ -10,7 +10,7 @@ internal class FtpsServerTimeoutTask : BuTaskV2
 {
     private readonly long _timeoutMinutes;
 
-    public FtpsServerTimeoutTask(BUtilServerIoc ioc, TaskEvents events, long timeoutMinutes) :
+    public FtpsServerTimeoutTask(FtpsServerIoc ioc, TaskEvents events, long timeoutMinutes) :
         base(ioc.Common.Log, events, Resources.BUtilServerWaitForClientTask_Title)
     {
         _timeoutMinutes = timeoutMinutes;

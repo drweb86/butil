@@ -1,6 +1,5 @@
 ﻿using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
-using BUtil.Core.FIleSender;
 using BUtil.Core.Localization;
 using BUtil.Core.Misc;
 using BUtil.Core.State;
@@ -27,33 +26,6 @@ internal class BUtilClientUploadToServerFileTask : BuTaskV2
         string relativeFileName = SourceItemHelper.GetSourceItemRelativeFileName(_options.Folder, _fileState);
         LogDebug($"{relativeFileName}");
 
-        _ioc.Common.BUtilServerClientProtocol.WriteCommandForServer(_ioc.Writer, FileTransferProtocolServerCommand.ReceiveFile);
-        _ioc.Common.BUtilServerClientProtocol.WriteFileHeader(_ioc.Writer, _fileState, _options.Folder, _options.Password);
-
-        FileTransferProtocolClientCommand clientCommand;
-        try
-        {
-            clientCommand = _ioc.Common.BUtilServerClientProtocol.ReadCommandForClient(_ioc.Stream);
-        }
-        catch (System.IO.EndOfStreamException e)
-        {
-            LogDebug("Passwords do not match on client and server.");
-            LogError(ExceptionHelper.ToString(e));
-            var fakeTaskForUi = new FunctionBuTaskV2<bool>(_ioc.Common.Log, Events, Resources.BUtilServer_Error_ConnectionAborted, () => true);
-            Events.DuringExecutionTasksAdded(Id, new BuTask[] { fakeTaskForUi });
-            fakeTaskForUi.Execute();
-            _ioc.Common.LastMinuteMessageService.AddLastMinuteLogMessage(Resources.BUtilServer_Error_ConnectionAborted);
-            throw;
-        }
-        switch (clientCommand)
-        {
-            case FileTransferProtocolClientCommand.Cancel:
-                LogDebug("File transfer is skipped.");
-                break;
-            case FileTransferProtocolClientCommand.Continue:
-                _ioc.Common.BUtilServerClientProtocol.WriteFile(_ioc.Writer, _fileState, _options.Password);
-                break;
-
-        }
+        _ioc.StorageSpecificServices.Storage.Upload(_fileState.FileName, relativeFileName);
     }
 }

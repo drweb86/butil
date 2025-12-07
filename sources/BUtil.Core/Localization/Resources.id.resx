@@ -173,23 +173,8 @@
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
     <value>Pilih file atau folder yang ingin Anda pulihkan di pohon dan klik "Pulihkan".</value>
   </data>
-  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
-    <value>Hubungkan ke server dengan IP {0} dan port {1}</value>
-  </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Koneksi ke server terputus secara tidak terduga (Apakah password di Klien dan Server sama?)</value>
-  </data>
-  <data name="BUtilServerClientTask_Create" xml:space="preserve">
-    <value>Unggah Folder ke File Server</value>
-  </data>
-  <data name="BUtilServerClientTask_Help" xml:space="preserve">
-    <value>Mengunggah folder ke File Server dengan menimpa file yang berbeda berdasarkan hash atau ukuran. Transfer data dilindungi dengan AES-256. Jika file ada di server tetapi tidak ada secara lokal, file tidak dihapus di sisi server.</value>
-  </data>
-  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
-    <value>Klien "{0}"</value>
-  </data>
-  <data name="BUtilServerTask_Create" xml:space="preserve">
-    <value>FTPS Server</value>
   </data>
   <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
     <value>Menunggu koneksi klien...</value>

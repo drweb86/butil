@@ -4,6 +4,7 @@
 ## Changes
 - Some libraries were updated.
 - BUtil Server now is FTPS Server.
+- BUtil upload folder now works with storages.
 
 # 2025.11.16
 

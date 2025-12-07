@@ -176,23 +176,8 @@ Les changements de version supprimés feront partie de la version "{1}".</value>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
     <value>Sélectionnez le fichier ou le dossier que vous voulez restaurer dans l'arborescence et cliquez sur "Restaurer".</value>
   </data>
-  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
-    <value>Se connecter au serveur (IP {0}, port {1})</value>
-  </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Connexion interrompue (Les mots de passe client/serveur sont-ils identiques ?)</value>
-  </data>
-  <data name="BUtilServerClientTask_Create" xml:space="preserve">
-    <value>Téléverser un dossier vers le serveur</value>
-  </data>
-  <data name="BUtilServerClientTask_Help" xml:space="preserve">
-    <value>Téléverse un dossier vers le serveur en écrasant les fichiers existants si le hash ou la taille diffère. Transfert sécurisé par AES-256. Si un fichier existe sur le serveur mais pas localement, il n'est pas supprimé.</value>
-  </data>
-  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
-    <value>Client "{0}"</value>
-  </data>
-  <data name="BUtilServerTask_Create" xml:space="preserve">
-    <value>FTPS Serveur de fichiers</value>
   </data>
   <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
     <value>En attente de connexion client...</value>

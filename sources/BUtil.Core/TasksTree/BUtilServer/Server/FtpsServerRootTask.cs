@@ -10,7 +10,7 @@ namespace BUtil.Core.TasksTree.BUtilServer.Server;
 
 internal class FtpsServerRootTask : SequentialBuTask
 {
-    private readonly BUtilServerIoc _ioc;
+    private readonly FtpsServerIoc _ioc;
     private readonly BUtilServerModelOptionsV2 _options;
 
     public FtpsServerRootTask(ILog log, TaskEvents taskEvents, TaskV2 backupTask, Action<string?> onGetLastMinuteMessage)
@@ -22,7 +22,7 @@ internal class FtpsServerRootTask : SequentialBuTask
         LogDebug($"Server working directory: {_options.Folder} (will be created if not exists)");
         Directory.CreateDirectory(_options.Folder);
 
-        _ioc = new BUtilServerIoc(log, onGetLastMinuteMessage);
+        _ioc = new FtpsServerIoc(log, onGetLastMinuteMessage);
 
         Children = new List<BuTask>
         {

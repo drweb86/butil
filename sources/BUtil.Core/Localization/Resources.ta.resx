@@ -176,23 +176,8 @@
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
     <value>நீங்கள் மீட்டெடுக்க விரும்பும் கோப்பை அல்லது கோப்புறையை மரத்தில் தேர்ந்தெடுக்கவும் மற்றும் "மீட்டெடு" என்ற மனைவில் கிளிக் செய்யவும்.</value>
   </data>
-  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
-    <value>IP {0} மற்றும் போர்ட் {1} உடன் சேவையகத்துடன் இணைக்க</value>
-  </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>சேவையகத்துடனான இணைப்பு எதிர்பாராத விதமாக முடிவுக்கு வந்தது (கிளையன் மற்றும் சேவையகத்தின் கடவுச்சொற்கள் ஒன்றேனா?)</value>
-  </data>
-  <data name="BUtilServerClientTask_Create" xml:space="preserve">
-    <value>கோப்புறையை கோப்பு சேவையகத்திற்கு பதிவேற்று</value>
-  </data>
-  <data name="BUtilServerClientTask_Help" xml:space="preserve">
-    <value>ஹாஷ் அல்லது அளவில் வேறுபட்டுள்ள இருக்கும் கோப்புகளை மேலெழுதி கோப்பு சேவையகத்திற்கு கோப்புறையை பதிவேற்றுகிறது. தரவு பரிமாற்றம் AES-256 மூலம் பாதுகாக்கப்படுகிறது. கோப்பு சேவையகத்தில் இருந்தால் மற்றும் உள்நாட்டில் இல்லையென்றால், சேவையகத்தில் அது நீக்கப்படாது.</value>
-  </data>
-  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
-    <value>கிளையன் "{0}"</value>
-  </data>
-  <data name="BUtilServerTask_Create" xml:space="preserve">
-    <value>FTPS கோப்பு சேவையகம்</value>
   </data>
   <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
     <value>கிளையன் இணைப்புக்காக காத்திருக்கிறது...</value>

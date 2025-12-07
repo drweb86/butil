@@ -174,23 +174,8 @@
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
     <value>మీరు పునరుద్ధరించాలనుకుంటున్న ఫైలు లేదా ఫోల్డర్‌ని చెట్టులో ఎంచుకోండి మరియు "పునరుద్ధరించండి" పై క్లిక్ చేయండి.</value>
   </data>
-  <data name="BUtilClientConnectTask_Title" xml:space="preserve">
-    <value>IP {0} మరియు పోర్ట్ {1}తో సర్వర్‌కు కనెక్ట్ అవ్వండి</value>
-  </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>సర్వర్‌కు కనెక్షన్ ఊహించని విధంగా ముగించబడింది (క్లయింట్ మరియు సర్వర్‌లోని పాస్‌వర్డ్‌లు ఒకటేనా?)</value>
-  </data>
-  <data name="BUtilServerClientTask_Create" xml:space="preserve">
-    <value>ఫైల్ సర్వర్‌కు ఫోల్డర్‌ను అప్‌లోడ్ చేయండి</value>
-  </data>
-  <data name="BUtilServerClientTask_Help" xml:space="preserve">
-    <value>హాష్ లేదా పరిమాణంలో భిన్నమైన ఇప్పటికే ఉన్న ఫైళ్ళను ఓవర్‌రైట్ చేసి ఫైల్ సర్వర్‌కు ఫోల్డర్‌ను అప్‌లోడ్ చేస్తుంది. డేటా బదిలీ AES-256 ద్వారా రక్షించబడుతుంది. ఫైల్ సర్వర్‌లో ఉంటే మరియు స్థానికంగా లేకుంటే, సర్వర్ వైపు తొలగించబడదు.</value>
-  </data>
-  <data name="BUtilServerProcessClientTask_Title" xml:space="preserve">
-    <value>క్లయింట్ "{0}"</value>
-  </data>
-  <data name="BUtilServerTask_Create" xml:space="preserve">
-    <value>FTPS ఫైల్ సర్వర్</value>
   </data>
   <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
     <value>క్లయింట్ కనెక్షన్ కోసం వేచి ఉంది...</value>

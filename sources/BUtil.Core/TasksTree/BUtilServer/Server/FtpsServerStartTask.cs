@@ -8,10 +8,10 @@ namespace BUtil.Core.TasksTree.BUtilServer.Server;
 
 internal class FtpsServerStartTask : BuTaskV2
 {
-    private readonly BUtilServerIoc _ioc;
+    private readonly FtpsServerIoc _ioc;
     private readonly BUtilServerModelOptionsV2 _options;
 
-    public FtpsServerStartTask(BUtilServerIoc ioc, TaskEvents events, BUtilServerModelOptionsV2 options) :
+    public FtpsServerStartTask(FtpsServerIoc ioc, TaskEvents events, BUtilServerModelOptionsV2 options) :
         base(ioc.Common.Log, events, Resources.BUtilServerStartTask_Name)
     {
         _ioc = ioc;

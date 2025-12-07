@@ -1,6 +1,4 @@
-﻿using BUtil.Core.BUtilServer;
-using BUtil.Core.FIleSender;
-using BUtil.Core.Hashing;
+﻿using BUtil.Core.Hashing;
 using BUtil.Core.Logs;
 using System;
 
@@ -15,16 +13,12 @@ public class CommonServicesIoc : IDisposable
     public readonly ILog Log;
     public readonly IEncryptionService EncryptionService = new EncryptionService();
     public readonly ICompressionService CompressionService = new CompressionService();
-    internal readonly IBUtilServerClientProtocol BUtilServerClientProtocol;
-    internal readonly IBUtilServerProtocol BUtilServerProtocol;
 
     public CommonServicesIoc(ILog log, Action<string?> onGetLastMinuteMessage)
     {
         Log = log;
         LastMinuteMessageService = new LastMinuteMessageService(log);
         _onGetLastMinuteMessage = onGetLastMinuteMessage;
-        BUtilServerClientProtocol = new BUtilServerClientProtocol(EncryptionService);
-        BUtilServerProtocol = new BUtilServerProtocol(CachedHashService, EncryptionService);
     }
 
 #pragma warning disable CA1816 // Dispose methods should call SuppressFinalize

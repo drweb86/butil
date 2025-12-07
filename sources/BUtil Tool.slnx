@@ -1,6 +1,8 @@
 <Solution>
   <Folder Name="/Solution Items/">
     <File Path="../help/Version History (Changelog).md" />
+    <File Path="../README.md" />
+    <File Path="BUILD.MD" />
     <File Path="ubuntu-install.sh" />
   </Folder>
   <Project Path="butil-ui.Desktop/butil-ui.Desktop.csproj">

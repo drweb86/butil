@@ -1,33 +1,22 @@
-﻿using BUtil.Core.BUtilServer;
+﻿using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Logs;
 using BUtil.Core.Services;
 using System;
-using System.IO;
-using System.Net.Sockets;
 
 namespace BUtil.Core.TasksTree.BUtilServer.Client;
 
 public class BUtilClientIoc
 {
     public CommonServicesIoc Common { get; }
-    public BUtilClientIoc(ILog log, string folder, string password, Action<string?> onGetLastMinuteMessage)
+    public StorageSpecificServicesIoc StorageSpecificServices { get; }
+    public BUtilClientIoc(ILog log, Action<string?> onGetLastMinuteMessage, IStorageSettingsV2 storageSettingsV2)
     {
         Common = new CommonServicesIoc(log, onGetLastMinuteMessage);
+        StorageSpecificServices = new StorageSpecificServicesIoc(Common, storageSettingsV2);
     }
-    public TcpClient Client { get; set; } = null!;
-    public TcpListener TcpListener { get; set; } = null!;
-    public NetworkStream Stream { get; set; } = null!;
-    public BinaryWriter Writer { get; set; } = null!;
-    public BinaryReader Reader { get; set; } = null!;
-
     public void Dispose()
     {
-        Writer?.Dispose();
-        Reader?.Dispose();
-        Stream?.Dispose();
-        Client.Dispose();
-
-        TcpListener?.Dispose();
+        StorageSpecificServices.Dispose();
         Common.Dispose();
     }
 }
