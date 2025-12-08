@@ -175,6 +175,18 @@
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>سرور سے کنکشن غیر متوقع طور پر ختم ہو گیا (کیا کلائنٹ اور سرور کے پاس ورڈ ایک جیسے ہیں؟)</value>
   </data>
+  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
+    <value>فولڈر اپ لوڈ کریں</value>
+  </data>
+  <data name="FtpsServerStartTask_Name" xml:space="preserve">
+    <value>FTPS سرور شروع کریں</value>
+  </data>
+  <data name="FtpsServerTask_Create" xml:space="preserve">
+    <value>لوکل ایریا نیٹ ورک میں FTPS کے ذریعے فولڈر شیئر کریں</value>
+  </data>
+  <data name="TimeoutTask_Title" xml:space="preserve">
+    <value>ٹائم آؤٹ کا انتظار ہو رہا ہے...</value>
+  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>منسوخ کریں</value>
   </data>
@@ -716,5 +728,14 @@
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>صارف کی وضاحت نہیں کی گئی۔</value>
+  </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>مدت (منٹ، 0 سے لے کر لامحدود):</value>
+  </data>
+  <data name="FtpsServerTask_Help" xml:space="preserve">
+    <value>آپ اپنے لوکل ایریا نیٹ ورک کے اندر کسی بھی فولڈر کو FTPS پروٹوکول (خود دستخط شدہ سرٹیفکیٹ کے ساتھ واضح خفیہ کاری) کے ذریعے پڑھنے-لکھنے کی رسائی کے لیے شیئر کر سکتے ہیں۔</value>
+  </data>
+  <data name="UploadFolderTask_Help" xml:space="preserve">
+    <value>پہلے سے موجود فائلوں کو اوور رائٹ کرتے ہوئے فولڈر کے مواد اپ لوڈ کر سکتے ہیں۔</value>
   </data>
 </root>

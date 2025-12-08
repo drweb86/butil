@@ -237,33 +237,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upload Folder.
-        /// </summary>
-        public static string BUtilServerClientTask_Create {
-            get {
-                return ResourceManager.GetString("BUtilServerClientTask_Create", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Start FTPS server.
-        /// </summary>
-        public static string BUtilServerStartTask_Name {
-            get {
-                return ResourceManager.GetString("BUtilServerStartTask_Name", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Share folder via FTPS in LAN.
-        /// </summary>
-        public static string BUtilServerTask_Create {
-            get {
-                return ResourceManager.GetString("BUtilServerTask_Create", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Button_Cancel {
@@ -802,6 +775,24 @@ namespace BUtil.Core.Localization {
         public static string Ftps_Field_Encryption {
             get {
                 return ResourceManager.GetString("Ftps_Field_Encryption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start FTPS server.
+        /// </summary>
+        public static string FtpsServerStartTask_Name {
+            get {
+                return ResourceManager.GetString("FtpsServerStartTask_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Share folder via FTPS in LAN.
+        /// </summary>
+        public static string FtpsServerTask_Create {
+            get {
+                return ResourceManager.GetString("FtpsServerTask_Create", resourceCulture);
             }
         }
         
@@ -1837,6 +1828,15 @@ namespace BUtil.Core.Localization {
         public static string TimeoutTask_Title {
             get {
                 return ResourceManager.GetString("TimeoutTask_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload Folder.
+        /// </summary>
+        public static string UploadFolderContentsTask_Create {
+            get {
+                return ResourceManager.GetString("UploadFolderContentsTask_Create", resourceCulture);
             }
         }
         

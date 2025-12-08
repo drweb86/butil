@@ -179,6 +179,18 @@ As alterações da versão excluída se tornarão parte da versão "{1}".</value
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Conexão terminada inesperadamente (As senhas do cliente e servidor são iguais?)</value>
   </data>
+  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
+    <value>Carregar Pasta</value>
+  </data>
+  <data name="FtpsServerStartTask_Name" xml:space="preserve">
+    <value>Iniciar servidor FTPS</value>
+  </data>
+  <data name="FtpsServerTask_Create" xml:space="preserve">
+    <value>Compartilhar pasta via FTPS na rede local</value>
+  </data>
+  <data name="TimeoutTask_Title" xml:space="preserve">
+    <value>À espera do tempo limite...</value>
+  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>Cancelar</value>
   </data>
@@ -726,5 +738,14 @@ Veja a descrição detalhada no seguinte link.</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Usuário não especificado.</value>
+  </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>Duração (minutos, 0 - infinito):</value>
+  </data>
+  <data name="FtpsServerTask_Help" xml:space="preserve">
+    <value>Pode partilhar qualquer pasta com acesso de leitura e escrita através do protocolo FTPS (encriptação explícita com certificado autoassinado) dentro da sua rede local.</value>
+  </data>
+  <data name="UploadFolderTask_Help" xml:space="preserve">
+    <value>Pode carregar o conteúdo da pasta substituindo os ficheiros já existentes.</value>
   </data>
 </root>

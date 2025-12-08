@@ -179,6 +179,18 @@ Die Änderungen der gelöschten Version werden Teil der Version "{1}".</value>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Verbindung zum Server wurde unerwartet beendet (Sind Client/Server-Passwörter identisch?)</value>
   </data>
+  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
+    <value>Ordner hochladen</value>
+  </data>
+  <data name="FtpsServerStartTask_Name" xml:space="preserve">
+    <value>FTPS-Server starten</value>
+  </data>
+  <data name="FtpsServerTask_Create" xml:space="preserve">
+    <value>Ordner per FTPS im LAN freigeben</value>
+  </data>
+  <data name="TimeoutTask_Title" xml:space="preserve">
+    <value>Warte auf Timeout...</value>
+  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>Abbrechen</value>
   </data>
@@ -726,5 +738,14 @@ Siehe detaillierte Beschreibung im folgenden Link.</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Benutzer ist nicht angegeben.</value>
+  </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>Dauer (Minuten, 0 bis unendlich):</value>
+  </data>
+  <data name="FtpsServerTask_Help" xml:space="preserve">
+    <value>Sie können jeden Ordner mit Lese- und Schreibzugriff über das FTPS-Protokoll (explizite Verschlüsselung mit selbstsigniertem Zertifikat) in Ihrem lokalen Netzwerk freigeben.</value>
+  </data>
+  <data name="UploadFolderTask_Help" xml:space="preserve">
+    <value>Sie können Ordnerinhalte hochladen und dabei bereits vorhandene Dateien überschreiben.</value>
   </data>
 </root>

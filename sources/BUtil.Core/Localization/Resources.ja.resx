@@ -174,6 +174,18 @@
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>サーバーへの接続が予期せず終了しました（クライアントとサーバーのパスワードは同じですか？）</value>
   </data>
+  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
+    <value>フォルダをアップロード</value>
+  </data>
+  <data name="FtpsServerStartTask_Name" xml:space="preserve">
+    <value>FTPSサーバーを開始</value>
+  </data>
+  <data name="FtpsServerTask_Create" xml:space="preserve">
+    <value>LAN内でFTPS経由でフォルダを共有</value>
+  </data>
+  <data name="TimeoutTask_Title" xml:space="preserve">
+    <value>タイムアウト待機中...</value>
+  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>キャンセル</value>
   </data>
@@ -713,5 +725,14 @@ bin.
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>ユーザーが指定されていません。</value>
+  </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>期間（分、0 ～ 無限）:</value>
+  </data>
+  <data name="FtpsServerTask_Help" xml:space="preserve">
+    <value>ローカルエリアネットワーク内で任意のフォルダをFTPSプロトコル（自己署名証明書による明示的な暗号化）で読み書きアクセス可能に共有できます。</value>
+  </data>
+  <data name="UploadFolderTask_Help" xml:space="preserve">
+    <value>既存のファイルを上書きしてフォルダの内容をアップロードできます。</value>
   </data>
 </root>

@@ -179,6 +179,18 @@ Los cambios de la versión eliminada se convertirán en parte de la versión "{1
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Conexión terminada inesperadamente (¿Las contraseñas en cliente/servidor coinciden?)</value>
   </data>
+  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
+    <value>Subir carpeta</value>
+  </data>
+  <data name="FtpsServerStartTask_Name" xml:space="preserve">
+    <value>Iniciar servidor FTPS</value>
+  </data>
+  <data name="FtpsServerTask_Create" xml:space="preserve">
+    <value>Compartir carpeta vía FTPS en la red local</value>
+  </data>
+  <data name="TimeoutTask_Title" xml:space="preserve">
+    <value>Esperando el tiempo de espera...</value>
+  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>Cancelar</value>
   </data>
@@ -726,5 +738,14 @@ Consulta la descripción detallada en el siguiente enlace.</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>No se especificó el usuario.</value>
+  </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>Duración (minutos, 0 - infinito):</value>
+  </data>
+  <data name="FtpsServerTask_Help" xml:space="preserve">
+    <value>Puede compartir cualquier carpeta con acceso de lectura y escritura a través del protocolo FTPS (cifrado explícito con certificado autofirmado) dentro de su red de área local.</value>
+  </data>
+  <data name="UploadFolderTask_Help" xml:space="preserve">
+    <value>Puede subir el contenido de la carpeta sobrescribiendo los archivos ya existentes.</value>
   </data>
 </root>

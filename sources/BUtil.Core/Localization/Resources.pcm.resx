@@ -179,6 +179,18 @@
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Connection to server don cut by imself (Client and Server password be d same?)</value>
   </data>
+  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
+    <value>Upload Folder</value>
+  </data>
+  <data name="FtpsServerStartTask_Name" xml:space="preserve">
+    <value>Start FTPS Server</value>
+  </data>
+  <data name="FtpsServerTask_Create" xml:space="preserve">
+    <value>Share folder for LAN with FTPS</value>
+  </data>
+  <data name="TimeoutTask_Title" xml:space="preserve">
+    <value>Dey wait for timeout...</value>
+  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
@@ -726,5 +738,14 @@
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>User no dey specified.</value>
+  </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>How long (minute, from 0 go forever):</value>
+  </data>
+  <data name="FtpsServerTask_Help" xml:space="preserve">
+    <value>You fit share any folder wey dey for read-write access by FTPS protocol (encryption wit self sign certificate) inside your LAN.</value>
+  </data>
+  <data name="UploadFolderTask_Help" xml:space="preserve">
+    <value>You fit upload wetin dey inside folder, e go overwrite files wey dey before.</value>
   </data>
 </root>

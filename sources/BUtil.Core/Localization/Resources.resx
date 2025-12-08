@@ -179,13 +179,13 @@ Deleted version changes will become part of version "{1}".</value>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Connection to server was unexpectedly terminated (Are passwords on Client and Server are the same?)</value>
   </data>
-  <data name="BUtilServerClientTask_Create" xml:space="preserve">
+  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
     <value>Upload Folder</value>
   </data>
-  <data name="BUtilServerStartTask_Name" xml:space="preserve">
+  <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Start FTPS server</value>
   </data>
-  <data name="BUtilServerTask_Create" xml:space="preserve">
+  <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Share folder via FTPS in LAN</value>
   </data>
   <data name="TimeoutTask_Title" xml:space="preserve">

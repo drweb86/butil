@@ -177,6 +177,18 @@
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>సర్వర్‌కు కనెక్షన్ ఊహించని విధంగా ముగించబడింది (క్లయింట్ మరియు సర్వర్‌లోని పాస్‌వర్డ్‌లు ఒకటేనా?)</value>
   </data>
+  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
+    <value>ఫోల్డర్‌ను అప్‌లోడ్ చేయండి</value>
+  </data>
+  <data name="FtpsServerStartTask_Name" xml:space="preserve">
+    <value>FTPS సర్వర్‌ను ప్రారంభించు</value>
+  </data>
+  <data name="FtpsServerTask_Create" xml:space="preserve">
+    <value>LANలో FTPS ద్వారా ఫోల్డర్‌ను షేర్ చేయండి</value>
+  </data>
+  <data name="TimeoutTask_Title" xml:space="preserve">
+    <value>టైమ్‌అవుట్ కోసం వేచి ఉంది...</value>
+  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>రద్దు చేయండి</value>
   </data>
@@ -722,5 +734,14 @@
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>యూజర్ ఉదహరించவில்லை.</value>
+  </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>సమయం (నిమిషాలు, 0 - అనంతం):</value>
+  </data>
+  <data name="FtpsServerTask_Help" xml:space="preserve">
+    <value>మీరు మీ లోకల్ ఏరియా నెట్‌వర్క్ లోపల ఏదైనా ఫోల్డర్‌ను FTPS ప్రోటోకాల్ (స్వీయ-సంతకం చేసిన సర్టిఫికేట్‌తో స్పష్టమైన ఎన్క్రిప్షన్) ద్వారా రీడ్-రైట్ యాక్సెస్ కోసం షేర్ చేయవచ్చు.</value>
+  </data>
+  <data name="UploadFolderTask_Help" xml:space="preserve">
+    <value>ఇప్పటికే ఉన్న ఫైళ్ళను తిరిగి రాస్తూ ఫోల్డర్ కంటెంట్‌ను అప్‌లోడ్ చేయవచ్చు.</value>
   </data>
 </root>

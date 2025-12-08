@@ -179,6 +179,18 @@
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>சேவையகத்துடனான இணைப்பு எதிர்பாராத விதமாக முடிவுக்கு வந்தது (கிளையன் மற்றும் சேவையகத்தின் கடவுச்சொற்கள் ஒன்றேனா?)</value>
   </data>
+  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
+    <value>கோப்புறையைப் பதிவேற்று</value>
+  </data>
+  <data name="FtpsServerStartTask_Name" xml:space="preserve">
+    <value>FTPS சர்வரைத் தொடங்கு</value>
+  </data>
+  <data name="FtpsServerTask_Create" xml:space="preserve">
+    <value>LAN-ல் FTPS மூலம் கோப்புறையைப் பகிரவும்</value>
+  </data>
+  <data name="TimeoutTask_Title" xml:space="preserve">
+    <value>காலாவதி நேரத்துக்காகக் காத்திருக்கிறது...</value>
+  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>ரத்து செய்</value>
   </data>
@@ -728,5 +740,14 @@ bin.
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>பயனர் குறிப்பிடப்படவில்லை.</value>
+  </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>கால அளவு (நிமிடங்கள், 0 - முடிவிலி):</value>
+  </data>
+  <data name="FtpsServerTask_Help" xml:space="preserve">
+    <value>உங்கள் உள்ளூர் பகுதி நெட்வொர்க்கில் எந்தக் கோப்புறையையும் FTPS நெறிமுறை (சுய-கையொப்பமிடப்பட்ட சான்றிதழுடன் வெளிப்படையான குறியாக்கம்) மூலம் படித்தல்-எழுதும் அணுகலுக்காகப் பகிரலாம்.</value>
+  </data>
+  <data name="UploadFolderTask_Help" xml:space="preserve">
+    <value>ஏற்கனவே இருக்கும் கோப்புகளை மேலெழுதி கோப்புறை உள்ளடக்கங்களை பதிவேற்றலாம்.</value>
   </data>
 </root>

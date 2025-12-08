@@ -179,6 +179,18 @@
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>सर्व्हरशी कनेक्शन अनपेक्षितपणे समाप्त झाले (क्लायंट आणि सर्व्हरवरील पासवर्ड समान आहेत का?)</value>
   </data>
+  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
+    <value>फोल्डर अपलोड करा</value>
+  </data>
+  <data name="FtpsServerStartTask_Name" xml:space="preserve">
+    <value>FTPS सर्व्हर सुरू करा</value>
+  </data>
+  <data name="FtpsServerTask_Create" xml:space="preserve">
+    <value>LAN मध्ये FTPS द्वारे फोल्डर शेअर करा</value>
+  </data>
+  <data name="TimeoutTask_Title" xml:space="preserve">
+    <value>टाइमआउटची वाट पाहत आहे...</value>
+  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>रद्द करा</value>
   </data>
@@ -726,5 +738,14 @@
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>वापरकर्ता निर्दिष्ट केलेला नाही.</value>
+  </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>कालावधी (मिनिटे, 0 - अनंत):</value>
+  </data>
+  <data name="FtpsServerTask_Help" xml:space="preserve">
+    <value>तुम्ही तुमच्या लोकल एरिया नेटवर्कमध्ये कोणताही फोल्डर FTPS प्रोटोकॉल (स्वत:स्वाक्षरीत प्रमाणपत्रासह स्पष्ट एनक्रिप्शन) द्वारे वाचन-लेखन प्रवेशासाठी शेअर करू शकता.</value>
+  </data>
+  <data name="UploadFolderTask_Help" xml:space="preserve">
+    <value>आधीपासून अस्तित्वात असलेल्या फाइल्सवर लिहून फोल्डरमधील मजकूर अपलोड करू शकता.</value>
   </data>
 </root>

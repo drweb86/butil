@@ -176,6 +176,18 @@
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>সার্ভারের সাথে সংযোগ অপ্রত্যাশিতভাবে শেষ হয়েছে (ক্লায়েন্ট এবং সার্ভারের পাসওয়ার্ড কি একই?)</value>
   </data>
+  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
+    <value>ফোল্ডার আপলোড করুন</value>
+  </data>
+  <data name="FtpsServerStartTask_Name" xml:space="preserve">
+    <value>FTPS সার্ভার শুরু করুন</value>
+  </data>
+  <data name="FtpsServerTask_Create" xml:space="preserve">
+    <value>ল্যানের মধ্যে FTPS প্রোটোকলের মাধ্যমে ফোল্ডার শেয়ার করুন</value>
+  </data>
+  <data name="TimeoutTask_Title" xml:space="preserve">
+    <value>টাইমআউটের জন্য অপেক্ষা করা হচ্ছে...</value>
+  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>বাতিল করুন</value>
   </data>
@@ -723,5 +735,14 @@
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>ব্যবহারকারী নির্দিষ্ট করা হয়নি।</value>
+  </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>সময় (মিনিট, ০ - অনন্ত):</value>
+  </data>
+  <data name="FtpsServerTask_Help" xml:space="preserve">
+    <value>আপনি আপনার লোকাল এরিয়া নেটওয়ার্কের মধ্যে যেকোনো ফোল্ডারকে FTPS প্রোটোকল (সেলফ-সাইনড সার্টিফিকেট সহ এক্সপ্লিসিট এনক্রিপশন) এর মাধ্যমে পঠন-লেখন অ্যাক্সেসের জন্য শেয়ার করতে পারেন।</value>
+  </data>
+  <data name="UploadFolderTask_Help" xml:space="preserve">
+    <value>আপনি পূর্বে বিদ্যমান ফাইলগুলি ওভাররাইট করে ফোল্ডারের বিষয়বস্তু আপলোড করতে পারেন।</value>
   </data>
 </root>

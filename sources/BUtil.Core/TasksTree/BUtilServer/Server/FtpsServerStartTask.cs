@@ -12,7 +12,7 @@ internal class FtpsServerStartTask : BuTaskV2
     private readonly BUtilServerModelOptionsV2 _options;
 
     public FtpsServerStartTask(FtpsServerIoc ioc, TaskEvents events, BUtilServerModelOptionsV2 options) :
-        base(ioc.Common.Log, events, Resources.BUtilServerStartTask_Name)
+        base(ioc.Common.Log, events, Resources.FtpsServerStartTask_Name)
     {
         _ioc = ioc;
         _options = options;

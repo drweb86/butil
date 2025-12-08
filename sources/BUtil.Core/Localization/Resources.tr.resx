@@ -176,6 +176,18 @@ Silinen sürümdeki değişiklikler "{1}" sürümünün bir parçası olacak.</v
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Sunucu bağlantısı beklenmedik şekilde sonlandırıldı (İstemci ve Sunucu şifreleri aynı mı?)</value>
   </data>
+  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
+    <value>Klasör Yükle</value>
+  </data>
+  <data name="FtpsServerStartTask_Name" xml:space="preserve">
+    <value>FTPS sunucusunu başlat</value>
+  </data>
+  <data name="FtpsServerTask_Create" xml:space="preserve">
+    <value>Yerel ağda FTPS üzerinden klasör paylaş</value>
+  </data>
+  <data name="TimeoutTask_Title" xml:space="preserve">
+    <value>Zaman aşımı bekleniyor...</value>
+  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>İptal</value>
   </data>
@@ -723,5 +735,14 @@ Aşağıdaki bağlantıda detaylı açıklama bulun.</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Kullanıcı belirtilmemiş.</value>
+  </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>Süre (dakika, 0 - sonsuz):</value>
+  </data>
+  <data name="FtpsServerTask_Help" xml:space="preserve">
+    <value>Yerel ağınız içinde herhangi bir klasörü FTPS protokolü (kendinden imzalı sertifikalı açık şifreleme) ile okuma-yazma erişimi için paylaşabilirsiniz.</value>
+  </data>
+  <data name="UploadFolderTask_Help" xml:space="preserve">
+    <value>Zaten var olan dosyaların üzerine yazarak klasör içeriğini yükleyebilirsiniz.</value>
   </data>
 </root>

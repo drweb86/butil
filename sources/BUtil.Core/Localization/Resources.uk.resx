@@ -179,6 +179,18 @@
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>З'єднання з сервером неочікувано перервано (Чи співпадають паролі на Клієнті та Сервері?)</value>
   </data>
+  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
+    <value>Завантажити теку</value>
+  </data>
+  <data name="FtpsServerStartTask_Name" xml:space="preserve">
+    <value>Запустити FTPS-сервер</value>
+  </data>
+  <data name="FtpsServerTask_Create" xml:space="preserve">
+    <value>Поширити папку через FTPS у локальній мережі</value>
+  </data>
+  <data name="TimeoutTask_Title" xml:space="preserve">
+    <value>Очікування тайм-ауту...</value>
+  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>Скасувати</value>
   </data>
@@ -727,5 +739,14 @@ bin.
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Користувача не вказано.</value>
+  </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>Тривалість (хвилини, 0 - нескінченність):</value>
+  </data>
+  <data name="FtpsServerTask_Help" xml:space="preserve">
+    <value>Ви можете надати спільний доступ до будь-якої теки для читання та запису через протокол FTPS (явне шифрування з самопідписаним сертифікатом) у вашій локальній мережі.</value>
+  </data>
+  <data name="UploadFolderTask_Help" xml:space="preserve">
+    <value>Ви можете завантажити вміст теки з перезаписом уже існуючих файлів.</value>
   </data>
 </root>

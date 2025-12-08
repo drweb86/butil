@@ -179,6 +179,18 @@ Les changements de version supprimés feront partie de la version "{1}".</value>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Connexion interrompue (Les mots de passe client/serveur sont-ils identiques ?)</value>
   </data>
+  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
+    <value>Téléverser le dossier</value>
+  </data>
+  <data name="FtpsServerStartTask_Name" xml:space="preserve">
+    <value>Démarrer le serveur FTPS</value>
+  </data>
+  <data name="FtpsServerTask_Create" xml:space="preserve">
+    <value>Partager un dossier via FTPS dans le réseau local</value>
+  </data>
+  <data name="TimeoutTask_Title" xml:space="preserve">
+    <value>En attente du délai d'expiration...</value>
+  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>Annuler</value>
   </data>
@@ -724,5 +736,14 @@ Consultez la description détaillée dans le lien suivant.</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>L'utilisateur n'est pas spécifié.</value>
+  </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>Durée (minutes, 0 - infini) :</value>
+  </data>
+  <data name="FtpsServerTask_Help" xml:space="preserve">
+    <value>Vous pouvez partager n'importe quel dossier en accès lecture-écriture via le protocole FTPS (chiffrement explicite avec certificat auto-signé) au sein de votre réseau local.</value>
+  </data>
+  <data name="UploadFolderTask_Help" xml:space="preserve">
+    <value>Vous pouvez téléverser le contenu du dossier en écrasant les fichiers déjà existants.</value>
   </data>
 </root>
