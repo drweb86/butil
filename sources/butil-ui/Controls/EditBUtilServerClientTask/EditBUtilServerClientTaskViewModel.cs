@@ -23,7 +23,7 @@ public class EditBUtilServerClientTaskViewModel : ViewModelBase
         var task = isNew 
             ?  new TaskV2() { Model = new BUtilClientModelOptionsV2(string.Empty, FileSenderDirection.ToServer, new FtpsStorageSettingsV2()) } 
             : storeService.Load(taskName) ?? new TaskV2();
-        NameTaskViewModel = new NameTaskViewModel(isNew, null!, task.Name);
+        NameTaskViewModel = new NameTaskViewModel(isNew, Resources.UploadFolderTask_Help, task.Name);
         var model = (BUtilClientModelOptionsV2)task.Model;
 
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();

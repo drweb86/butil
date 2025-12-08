@@ -27,7 +27,7 @@ public static class RootTaskFactory
         if (task.Model is BUtilServerModelOptionsV2)
             return new FtpsServerRootTask(log, events, task, onGetLastMinuteMessage);
         if (task.Model is BUtilClientModelOptionsV2)
-            return new BUtilClientRootTask(log, events, task, onGetLastMinuteMessage);
+            return new UploadFolderContentsRootTask(log, events, task, onGetLastMinuteMessage);
         throw new ArgumentOutOfRangeException(nameof(task));
     }
 
@@ -142,12 +142,6 @@ public static class RootTaskFactory
         }
         else if (options is BUtilServerModelOptionsV2 fileSenderServerOptions)
         {
-            if (string.IsNullOrWhiteSpace(fileSenderServerOptions.ServerAddress))
-            {
-                error = Resources.Server_Field_Address_Validation;
-                return false;
-            }
-
             if (string.IsNullOrWhiteSpace(fileSenderServerOptions.Username))
             {
                 error = Resources.User_Field_Validation;

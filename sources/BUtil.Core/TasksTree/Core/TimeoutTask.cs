@@ -1,17 +1,17 @@
 ﻿using BUtil.Core.Events;
 using BUtil.Core.Localization;
-using BUtil.Core.TasksTree.Core;
+using BUtil.Core.Services;
 using System;
 using System.Threading.Tasks;
 
-namespace BUtil.Core.TasksTree.BUtilServer.Server;
+namespace BUtil.Core.TasksTree.Core;
 
-internal class FtpsServerTimeoutTask : BuTaskV2
+internal class TimeoutTask : BuTaskV2
 {
     private readonly long _timeoutMinutes;
 
-    public FtpsServerTimeoutTask(FtpsServerIoc ioc, TaskEvents events, long timeoutMinutes) :
-        base(ioc.Common.Log, events, Resources.BUtilServerWaitForClientTask_Title)
+    public TimeoutTask(CommonServicesIoc ioc, TaskEvents events, long timeoutMinutes) :
+        base(ioc.Log, events, Resources.TimeoutTask_Title)
     {
         _timeoutMinutes = timeoutMinutes;
     }

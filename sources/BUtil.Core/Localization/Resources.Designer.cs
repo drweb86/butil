@@ -255,20 +255,11 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FTPS Server.
+        ///   Looks up a localized string similar to Share folder via FTPS in LAN.
         /// </summary>
         public static string BUtilServerTask_Create {
             get {
                 return ResourceManager.GetString("BUtilServerTask_Create", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Waiting for client connection....
-        /// </summary>
-        public static string BUtilServerWaitForClientTask_Title {
-            get {
-                return ResourceManager.GetString("BUtilServerWaitForClientTask_Title", resourceCulture);
             }
         }
         
@@ -811,6 +802,15 @@ namespace BUtil.Core.Localization {
         public static string Ftps_Field_Encryption {
             get {
                 return ResourceManager.GetString("Ftps_Field_Encryption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can share any folder for read-write access via FTPS protocol (explicit encryption with self-signed certificate) inside your local area network..
+        /// </summary>
+        public static string FtpsServerTask_Help {
+            get {
+                return ResourceManager.GetString("FtpsServerTask_Help", resourceCulture);
             }
         }
         
@@ -1828,6 +1828,24 @@ namespace BUtil.Core.Localization {
         public static string Time_Field_Minute {
             get {
                 return ResourceManager.GetString("Time_Field_Minute", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Waiting for timeout....
+        /// </summary>
+        public static string TimeoutTask_Title {
+            get {
+                return ResourceManager.GetString("TimeoutTask_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can upload folder contents with overwriting already existing files..
+        /// </summary>
+        public static string UploadFolderTask_Help {
+            get {
+                return ResourceManager.GetString("UploadFolderTask_Help", resourceCulture);
             }
         }
         

@@ -6,9 +6,8 @@ namespace butil_ui.Controls;
 
 public class FolderAndPortSectionViewModel : ObservableObject
 {
-    public FolderAndPortSectionViewModel(string? ftpServer, int port, string ftpsUser, string ftpsPassword, string folder, long durationMinutes)
+    public FolderAndPortSectionViewModel(int port, string ftpsUser, string ftpsPassword, string folder, long durationMinutes)
     {
-        FtpsServer = ftpServer;
         Port = port;
         FtpsUser = ftpsUser;
         FtpsPassword = ftpsPassword;
@@ -108,28 +107,6 @@ public class FolderAndPortSectionViewModel : ObservableObject
                 return;
             _ftpsPassword = value;
             OnPropertyChanged(nameof(FtpsPassword));
-        }
-    }
-
-    #endregion
-
-
-    #region FtpsServer
-
-    private string? _ftpsServer;
-
-    public string? FtpsServer
-    {
-        get
-        {
-            return _ftpsServer;
-        }
-        set
-        {
-            if (value == _ftpsServer)
-                return;
-            _ftpsServer = value;
-            OnPropertyChanged(nameof(FtpsServer));
         }
     }
 

@@ -179,9 +179,6 @@
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>З'єднання з сервером неочікувано перервано (Чи співпадають паролі на Клієнті та Сервері?)</value>
   </data>
-  <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
-    <value>Очікування підключення клієнта...</value>
-  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>Скасувати</value>
   </data>

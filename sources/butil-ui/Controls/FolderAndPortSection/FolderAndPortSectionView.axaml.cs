@@ -12,7 +12,7 @@ public partial class FolderAndPortSectionView : UserControl
     public FolderAndPortSectionView()
     {
         InitializeComponent();
-        this.DataContext = new FolderAndPortSectionViewModel(BUtilServerModelOptionsV2.DefaultIp, BUtilServerModelOptionsV2.DefaultPort, BUtilServerModelOptionsV2.DefaultUsername, "pass", "some folder", BUtilServerModelOptionsV2.DefaultDuration);
+        this.DataContext = new FolderAndPortSectionViewModel(BUtilServerModelOptionsV2.DefaultPort, BUtilServerModelOptionsV2.DefaultUsername, "pass", "some folder", BUtilServerModelOptionsV2.DefaultDuration);
     }
 
     public void BrowseCommand(object? sender, RoutedEventArgs args)

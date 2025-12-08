@@ -6,13 +6,13 @@ using System;
 
 namespace BUtil.Core.TasksTree.BUtilServer.Client;
 
-internal class BUtilClientRootTask : SequentialBuTask
+internal class UploadFolderContentsRootTask : SequentialBuTask
 {
     private readonly BUtilClientIoc _ioc;
     private readonly GetStateOfSourceItemTask _getStateOfSourceItemTask;
     private readonly BUtilClientModelOptionsV2 _options;
 
-    public BUtilClientRootTask(ILog log, TaskEvents taskEvents, TaskV2 backupTask, Action<string?> onGetLastMinuteMessage)
+    public UploadFolderContentsRootTask(ILog log, TaskEvents taskEvents, TaskV2 backupTask, Action<string?> onGetLastMinuteMessage)
         : base(log, taskEvents, string.Empty, null)
     {
         _options = (BUtilClientModelOptionsV2)backupTask.Model;

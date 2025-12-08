@@ -186,10 +186,10 @@ Deleted version changes will become part of version "{1}".</value>
     <value>Start FTPS server</value>
   </data>
   <data name="BUtilServerTask_Create" xml:space="preserve">
-    <value>FTPS Server</value>
+    <value>Share folder via FTPS in LAN</value>
   </data>
-  <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
-    <value>Waiting for client connection...</value>
+  <data name="TimeoutTask_Title" xml:space="preserve">
+    <value>Waiting for timeout...</value>
   </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>Cancel</value>
@@ -741,5 +741,11 @@ See detailed description in the following link.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
     <value>Duration (minutes, 0 - infinite):</value>
+  </data>
+  <data name="FtpsServerTask_Help" xml:space="preserve">
+    <value>You can share any folder for read-write access via FTPS protocol (explicit encryption with self-signed certificate) inside your local area network.</value>
+  </data>
+  <data name="UploadFolderTask_Help" xml:space="preserve">
+    <value>You can upload folder contents with overwriting already existing files.</value>
   </data>
 </root>

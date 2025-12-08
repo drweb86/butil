@@ -27,7 +27,7 @@ internal class FtpsServerStartTask : BuTaskV2
             {
                 ServerSettings = new FtpsServerLibrary.FtpsServerSettings
                 {
-                    Ip = string.IsNullOrWhiteSpace(_options.ServerAddress) ? BUtilServerModelOptionsV2.DefaultIp : _options.ServerAddress, // backward compatibility
+                    Ip = "0.0.0.0",
                     Port = _options.Port,
                     MaxConnections = 10,
                 },

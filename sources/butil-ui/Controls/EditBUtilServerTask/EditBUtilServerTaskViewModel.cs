@@ -21,12 +21,12 @@ public class EditBUtilServerTaskViewModel : ViewModelBase
         IsNew = isNew;
 
         var storeService = new TaskV2StoreService();
-        var task = isNew ? new TaskV2() { Model = new BUtilServerModelOptionsV2 { Port = 10999, Folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) } } : storeService.Load(taskName) ?? new TaskV2();
-        NameTaskViewModel = new NameTaskViewModel(isNew, null!, task.Name);
+        var task = isNew ? new TaskV2() { Model = new BUtilServerModelOptionsV2 { Folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) } } : storeService.Load(taskName) ?? new TaskV2();
+        NameTaskViewModel = new NameTaskViewModel(isNew, Resources.FtpsServerTask_Help, task.Name);
         var model = (BUtilServerModelOptionsV2)task.Model;
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
         WhenTaskViewModel = new WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule?.GetSchedule(taskName) ?? new ScheduleInfo());
-        FolderAndPortSectionViewModel = new FolderAndPortSectionViewModel(model.ServerAddress, model.Port, model.Username, model.Password, model.Folder, model.DurationMinutes);
+        FolderAndPortSectionViewModel = new FolderAndPortSectionViewModel(model.Port, model.Username, model.Password, model.Folder, model.DurationMinutes);
     }
 
     public bool IsNew { get; set; }
@@ -34,7 +34,6 @@ public class EditBUtilServerTaskViewModel : ViewModelBase
     public WhenTaskViewModel WhenTaskViewModel { get; }
     
     public FolderAndPortSectionViewModel FolderAndPortSectionViewModel { get; }
-    //public WhatTaskViewModel WhatTaskViewModel { get; }
 
     #region Commands
 
@@ -51,7 +50,6 @@ public class EditBUtilServerTaskViewModel : ViewModelBase
         {
             Name = NameTaskViewModel.Name.TrimEnd(),
             Model = new BUtilServerModelOptionsV2(
-                FolderAndPortSectionViewModel.FtpsServer!,
                 FolderAndPortSectionViewModel.Port,
                 FolderAndPortSectionViewModel.FtpsUser!,
                 FolderAndPortSectionViewModel.FtpsPassword!,

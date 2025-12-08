@@ -27,7 +27,7 @@ internal class FtpsServerRootTask : SequentialBuTask
         Children = new List<BuTask>
         {
             new FtpsServerStartTask(_ioc, Events, _options),
-            new FtpsServerTimeoutTask(_ioc, Events, _options.DurationMinutes),
+            new TimeoutTask(_ioc.Common, Events, _options.DurationMinutes),
         };
     }
 

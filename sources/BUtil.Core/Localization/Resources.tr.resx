@@ -176,9 +176,6 @@ Silinen sürümdeki değişiklikler "{1}" sürümünün bir parçası olacak.</v
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Sunucu bağlantısı beklenmedik şekilde sonlandırıldı (İstemci ve Sunucu şifreleri aynı mı?)</value>
   </data>
-  <data name="BUtilServerWaitForClientTask_Title" xml:space="preserve">
-    <value>İstemci bağlantısı bekleniyor...</value>
-  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>İptal</value>
   </data>

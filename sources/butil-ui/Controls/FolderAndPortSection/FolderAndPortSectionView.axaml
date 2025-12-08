@@ -25,44 +25,40 @@
 				<RowDefinition Height="Auto" />
 				<RowDefinition Height="Auto" />
 				<RowDefinition Height="Auto" />
-				<RowDefinition Height="Auto" />
 			</Grid.RowDefinitions>
 
-			<TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Server_Field_Address}" VerticalAlignment="Center"/>
-			<TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="4 4 4 4" Watermark="192.168.11.1" VerticalAlignment="Center" Text="{Binding FtpsServer}"/>
+			<TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Server_Field_Port}" VerticalAlignment="Center"/>
+			<NumericUpDown Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Minimum="0" Margin="4 4 4 4" VerticalAlignment="Center" Value="{Binding Port}"/>
 
-			<TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Server_Field_Port}" VerticalAlignment="Center"/>
-			<NumericUpDown Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Minimum="0" Margin="4 4 4 4" VerticalAlignment="Center" Value="{Binding Port}"/>
+			<TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding User_Field}" VerticalAlignment="Center"/>
+			<TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="4 4 4 4" VerticalAlignment="Center" Text="{Binding FtpsUser}"/>
 
-			<TextBlock Grid.Row="2" Grid.Column="0" Text="{Binding User_Field}" VerticalAlignment="Center"/>
-			<TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="4 4 4 4" VerticalAlignment="Center" Text="{Binding FtpsUser}"/>
-
-			<TextBlock Grid.Row="3" Grid.Column="0" Text="{Binding Password_Field}" VerticalAlignment="Center"/>
-			<TextBox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Margin="4 4 4 4" VerticalAlignment="Center" Text="{Binding FtpsPassword}"/>
+			<TextBlock Grid.Row="2" Grid.Column="0" Text="{Binding Password_Field}" VerticalAlignment="Center"/>
+			<TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="4 4 4 4" VerticalAlignment="Center" Text="{Binding FtpsPassword}"/>
 
 			<TextBlock
 				Grid.Column="0"
-				Grid.Row="4"
+				Grid.Row="3"
 				Text="{Binding Field_Folder}"
 				VerticalAlignment="Center"
 			/>
 			<TextBox
 				Grid.Column="1"
-				Grid.Row="4"
+				Grid.Row="3"
 				Text="{Binding Folder}"
 				VerticalAlignment="Center"
 				Margin="4 0 4 0"
 			/>
 			<Button
 				Grid.Column="2"
-				Grid.Row="4"
+				Grid.Row="3"
 				Content="{Binding Field_Folder_Browse}"
 				VerticalAlignment="Center"
 				Click="BrowseCommand"
 			/>
 
-			<TextBlock Grid.Row="5" Grid.Column="0" Text="{Binding DurationMinutes_Field}" VerticalAlignment="Center"/>
-			<NumericUpDown Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Margin="4 4 4 4" VerticalAlignment="Center" Value="{Binding DurationMinutes}"/>
+			<TextBlock Grid.Row="4" Grid.Column="0" Text="{Binding DurationMinutes_Field}" VerticalAlignment="Center"/>
+			<NumericUpDown Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Margin="4 4 4 4" VerticalAlignment="Center" Value="{Binding DurationMinutes}"/>
 
 		</Grid>
 	</Expander>
