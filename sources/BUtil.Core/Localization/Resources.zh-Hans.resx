@@ -178,18 +178,6 @@
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>服务器连接意外终止（客户端和服务器密码是否相同？）</value>
   </data>
-  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
-    <value>上传文件夹</value>
-  </data>
-  <data name="FtpsServerStartTask_Name" xml:space="preserve">
-    <value>启动 FTPS 服务器</value>
-  </data>
-  <data name="FtpsServerTask_Create" xml:space="preserve">
-    <value>通过 FTPS 在局域网内共享文件夹</value>
-  </data>
-  <data name="TimeoutTask_Title" xml:space="preserve">
-    <value>正在等待超时...</value>
-  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>取消</value>
   </data>
@@ -300,6 +288,9 @@
   <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
     <value>目录“{0}”不存在。</value>
   </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>持续时间（分钟，0 - 无限）:</value>
+  </data>
   <data name="Field_Device" xml:space="preserve">
     <value>设备:</value>
   </data>
@@ -368,6 +359,15 @@
   </data>
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TLS 加密:</value>
+  </data>
+  <data name="FtpsServerStartTask_Name" xml:space="preserve">
+    <value>启动 FTPS 服务器</value>
+  </data>
+  <data name="FtpsServerTask_Create" xml:space="preserve">
+    <value>通过 FTPS 在局域网内共享文件夹</value>
+  </data>
+  <data name="FtpsServerTask_Help" xml:space="preserve">
+    <value>您可以在您的局域网内，通过 FTPS 协议（使用自签名证书的显式加密）共享任何文件夹以供读写访问。</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>将字符图标添加到您的文本</value>
@@ -726,6 +726,15 @@ bin。
   <data name="Time_Field_Minute" xml:space="preserve">
     <value>分钟:</value>
   </data>
+  <data name="TimeoutTask_Title" xml:space="preserve">
+    <value>正在等待超时...</value>
+  </data>
+  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
+    <value>上传文件夹</value>
+  </data>
+  <data name="UploadFolderTask_Help" xml:space="preserve">
+    <value>您可以上传文件夹内容，并覆盖已经存在的文件。</value>
+  </data>
   <data name="Url_Field" xml:space="preserve">
     <value>网址:</value>
   </data>
@@ -737,14 +746,5 @@ bin。
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>未指定用户。</value>
-  </data>
-  <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>持续时间（分钟，0 - 无限）:</value>
-  </data>
-  <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>您可以在您的局域网内，通过 FTPS 协议（使用自签名证书的显式加密）共享任何文件夹以供读写访问。</value>
-  </data>
-  <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>您可以上传文件夹内容，并覆盖已经存在的文件。</value>
   </data>
 </root>

@@ -176,18 +176,6 @@
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Koneksi ke server terputus secara tidak terduga (Apakah password di Klien dan Server sama?)</value>
   </data>
-  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
-    <value>Unggah Folder</value>
-  </data>
-  <data name="FtpsServerStartTask_Name" xml:space="preserve">
-    <value>Mulai server FTPS</value>
-  </data>
-  <data name="FtpsServerTask_Create" xml:space="preserve">
-    <value>Bagikan folder via FTPS di LAN</value>
-  </data>
-  <data name="TimeoutTask_Title" xml:space="preserve">
-    <value>Menunggu waktu habis...</value>
-  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>Batal</value>
   </data>
@@ -298,6 +286,9 @@
   <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
     <value>Direktori "{0}" tidak ada.</value>
   </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>Durasi (menit, 0 - tak terhingga):</value>
+  </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Perangkat:</value>
   </data>
@@ -366,6 +357,15 @@
   </data>
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>Enkripsi SSL/TTS:</value>
+  </data>
+  <data name="FtpsServerStartTask_Name" xml:space="preserve">
+    <value>Mulai server FTPS</value>
+  </data>
+  <data name="FtpsServerTask_Create" xml:space="preserve">
+    <value>Bagikan folder via FTPS di LAN</value>
+  </data>
+  <data name="FtpsServerTask_Help" xml:space="preserve">
+    <value>Anda dapat membagikan folder apa pun untuk akses baca-tulis melalui protokol FTPS (enkripsi eksplisit dengan sertifikat tandatangan sendiri) di dalam jaringan area lokal Anda.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Tambahkan ikon karakter ke teks Anda</value>
@@ -724,6 +724,15 @@
   <data name="Time_Field_Minute" xml:space="preserve">
     <value>Menit:</value>
   </data>
+  <data name="TimeoutTask_Title" xml:space="preserve">
+    <value>Menunggu waktu habis...</value>
+  </data>
+  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
+    <value>Unggah Folder</value>
+  </data>
+  <data name="UploadFolderTask_Help" xml:space="preserve">
+    <value>Anda dapat mengunggah isi folder dengan menimpa file yang sudah ada.</value>
+  </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>
   </data>
@@ -735,14 +744,5 @@
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Pengguna tidak ditentukan.</value>
-  </data>
-  <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Durasi (menit, 0 - tak terhingga):</value>
-  </data>
-  <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Anda dapat membagikan folder apa pun untuk akses baca-tulis melalui protokol FTPS (enkripsi eksplisit dengan sertifikat tandatangan sendiri) di dalam jaringan area lokal Anda.</value>
-  </data>
-  <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Anda dapat mengunggah isi folder dengan menimpa file yang sudah ada.</value>
   </data>
 </root>

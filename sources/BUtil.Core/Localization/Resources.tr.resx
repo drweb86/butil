@@ -176,18 +176,6 @@ Silinen sürümdeki değişiklikler "{1}" sürümünün bir parçası olacak.</v
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Sunucu bağlantısı beklenmedik şekilde sonlandırıldı (İstemci ve Sunucu şifreleri aynı mı?)</value>
   </data>
-  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
-    <value>Klasör Yükle</value>
-  </data>
-  <data name="FtpsServerStartTask_Name" xml:space="preserve">
-    <value>FTPS sunucusunu başlat</value>
-  </data>
-  <data name="FtpsServerTask_Create" xml:space="preserve">
-    <value>Yerel ağda FTPS üzerinden klasör paylaş</value>
-  </data>
-  <data name="TimeoutTask_Title" xml:space="preserve">
-    <value>Zaman aşımı bekleniyor...</value>
-  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>İptal</value>
   </data>
@@ -298,6 +286,9 @@ Kullanım senaryosu: Verileri uzak sunucuya kopyalıyorsunuz. Bir sorun var: ISS
   <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
     <value>Klasör "{0}" mevcut değil.</value>
   </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>Süre (dakika, 0 - sonsuz):</value>
+  </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Aygıt:</value>
   </data>
@@ -366,6 +357,15 @@ Kullanım senaryosu: Verileri uzak sunucuya kopyalıyorsunuz. Bir sorun var: ISS
   </data>
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS şifreleme:</value>
+  </data>
+  <data name="FtpsServerStartTask_Name" xml:space="preserve">
+    <value>FTPS sunucusunu başlat</value>
+  </data>
+  <data name="FtpsServerTask_Create" xml:space="preserve">
+    <value>Yerel ağda FTPS üzerinden klasör paylaş</value>
+  </data>
+  <data name="FtpsServerTask_Help" xml:space="preserve">
+    <value>Yerel ağınız içinde herhangi bir klasörü FTPS protokolü (kendinden imzalı sertifikalı açık şifreleme) ile okuma-yazma erişimi için paylaşabilirsiniz.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Metnine karakter simgesi ekle</value>
@@ -724,6 +724,15 @@ Aşağıdaki bağlantıda detaylı açıklama bulun.</value>
   <data name="Time_Field_Minute" xml:space="preserve">
     <value>Dakika:</value>
   </data>
+  <data name="TimeoutTask_Title" xml:space="preserve">
+    <value>Zaman aşımı bekleniyor...</value>
+  </data>
+  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
+    <value>Klasör Yükle</value>
+  </data>
+  <data name="UploadFolderTask_Help" xml:space="preserve">
+    <value>Zaten var olan dosyaların üzerine yazarak klasör içeriğini yükleyebilirsiniz.</value>
+  </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>
   </data>
@@ -735,14 +744,5 @@ Aşağıdaki bağlantıda detaylı açıklama bulun.</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Kullanıcı belirtilmemiş.</value>
-  </data>
-  <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Süre (dakika, 0 - sonsuz):</value>
-  </data>
-  <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Yerel ağınız içinde herhangi bir klasörü FTPS protokolü (kendinden imzalı sertifikalı açık şifreleme) ile okuma-yazma erişimi için paylaşabilirsiniz.</value>
-  </data>
-  <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Zaten var olan dosyaların üzerine yazarak klasör içeriğini yükleyebilirsiniz.</value>
   </data>
 </root>

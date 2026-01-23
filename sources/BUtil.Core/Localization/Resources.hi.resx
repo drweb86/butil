@@ -179,18 +179,6 @@
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>सर्वर से कनेक्शन अप्रत्याशित रूप से समाप्त हो गया (क्या क्लाइंट और सर्वर पर पासवर्ड समान हैं?)</value>
   </data>
-  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
-    <value>फ़ोल्डर अपलोड करें</value>
-  </data>
-  <data name="FtpsServerStartTask_Name" xml:space="preserve">
-    <value>FTPS सर्वर प्रारंभ करें</value>
-  </data>
-  <data name="FtpsServerTask_Create" xml:space="preserve">
-    <value>लोकल एरिया नेटवर्क में FTPS प्रोटोकॉल के माध्यम से फ़ोल्डर साझा करें</value>
-  </data>
-  <data name="TimeoutTask_Title" xml:space="preserve">
-    <value>टाइमआउट की प्रतीक्षा की जा रही है...</value>
-  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>रद्द करें</value>
   </data>
@@ -301,6 +289,9 @@
   <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
     <value>निर्देशिका "{0}" मौजूद नहीं है।</value>
   </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>अवधि (मिनट, 0 - अनंत):</value>
+  </data>
   <data name="Field_Device" xml:space="preserve">
     <value>डिवाइस:</value>
   </data>
@@ -369,6 +360,15 @@
   </data>
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS एन्क्रिप्शन:</value>
+  </data>
+  <data name="FtpsServerStartTask_Name" xml:space="preserve">
+    <value>FTPS सर्वर प्रारंभ करें</value>
+  </data>
+  <data name="FtpsServerTask_Create" xml:space="preserve">
+    <value>लोकल एरिया नेटवर्क में FTPS प्रोटोकॉल के माध्यम से फ़ोल्डर साझा करें</value>
+  </data>
+  <data name="FtpsServerTask_Help" xml:space="preserve">
+    <value>आप अपने लोकल एरिया नेटवर्क के अंदर किसी भी फ़ोल्डर को FTPS प्रोटोकॉल (स्व-हस्ताक्षरित प्रमाणपत्र के साथ स्पष्ट एन्क्रिप्शन) के माध्यम से पढ़ने-लिखने की पहुंच के लिए साझा कर सकते हैं।</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>अपने पाठ में चरित्र आइकन जोड़ें</value>
@@ -727,6 +727,15 @@ bin.
   <data name="Time_Field_Minute" xml:space="preserve">
     <value>मिनट:</value>
   </data>
+  <data name="TimeoutTask_Title" xml:space="preserve">
+    <value>टाइमआउट की प्रतीक्षा की जा रही है...</value>
+  </data>
+  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
+    <value>फ़ोल्डर अपलोड करें</value>
+  </data>
+  <data name="UploadFolderTask_Help" xml:space="preserve">
+    <value>आप मौजूदा फ़ाइलों को ओवरराइट करते हुए फ़ोल्डर सामग्री अपलोड कर सकते हैं।</value>
+  </data>
   <data name="Url_Field" xml:space="preserve">
     <value>यूआरएल:</value>
   </data>
@@ -738,14 +747,5 @@ bin.
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>उपयोगकर्ता निर्दिष्ट नहीं है।</value>
-  </data>
-  <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>अवधि (मिनट, 0 - अनंत):</value>
-  </data>
-  <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>आप अपने लोकल एरिया नेटवर्क के अंदर किसी भी फ़ोल्डर को FTPS प्रोटोकॉल (स्व-हस्ताक्षरित प्रमाणपत्र के साथ स्पष्ट एन्क्रिप्शन) के माध्यम से पढ़ने-लिखने की पहुंच के लिए साझा कर सकते हैं।</value>
-  </data>
-  <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>आप मौजूदा फ़ाइलों को ओवरराइट करते हुए फ़ोल्डर सामग्री अपलोड कर सकते हैं।</value>
   </data>
 </root>

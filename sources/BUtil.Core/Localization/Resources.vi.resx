@@ -176,18 +176,6 @@ Những thay đổi của phiên bản đã xóa sẽ trở thành một phần 
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Kết nối đến máy chủ bị ngắt đột ngột (Mật khẩu trên Máy khách và Máy chủ có giống nhau không?)</value>
   </data>
-  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
-    <value>Tải lên Thư mục</value>
-  </data>
-  <data name="FtpsServerStartTask_Name" xml:space="preserve">
-    <value>Khởi động máy chủ FTPS</value>
-  </data>
-  <data name="FtpsServerTask_Create" xml:space="preserve">
-    <value>Chia sẻ thư mục qua FTPS trong mạng cục bộ</value>
-  </data>
-  <data name="TimeoutTask_Title" xml:space="preserve">
-    <value>Đang chờ hết thời gian chờ...</value>
-  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>Hủy</value>
   </data>
@@ -298,6 +286,9 @@ Kịch bản sử dụng: Bạn sao chép dữ liệu đến máy chủ từ xa.
   <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
     <value>Thư mục "{0}" không tồn tại.</value>
   </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>Thời lượng (phút, 0 - vô hạn):</value>
+  </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Thiết bị:</value>
   </data>
@@ -366,6 +357,15 @@ Kịch bản sử dụng: Bạn sao chép dữ liệu đến máy chủ từ xa.
   </data>
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>Mã hóa SSL/TTS:</value>
+  </data>
+  <data name="FtpsServerStartTask_Name" xml:space="preserve">
+    <value>Khởi động máy chủ FTPS</value>
+  </data>
+  <data name="FtpsServerTask_Create" xml:space="preserve">
+    <value>Chia sẻ thư mục qua FTPS trong mạng cục bộ</value>
+  </data>
+  <data name="FtpsServerTask_Help" xml:space="preserve">
+    <value>Bạn có thể chia sẻ bất kỳ thư mục nào để truy cập đọc-ghi qua giao thức FTPS (mã hóa rõ ràng với chứng chỉ tự ký) bên trong mạng cục bộ của bạn.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Thêm biểu tượng ký tự vào văn bản của bạn</value>
@@ -724,6 +724,15 @@ Xem mô tả chi tiết trong liên kết sau.</value>
   <data name="Time_Field_Minute" xml:space="preserve">
     <value>Phút:</value>
   </data>
+  <data name="TimeoutTask_Title" xml:space="preserve">
+    <value>Đang chờ hết thời gian chờ...</value>
+  </data>
+  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
+    <value>Tải lên Thư mục</value>
+  </data>
+  <data name="UploadFolderTask_Help" xml:space="preserve">
+    <value>Bạn có thể tải lên nội dung thư mục và ghi đè lên các tệp đã tồn tại.</value>
+  </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>
   </data>
@@ -735,14 +744,5 @@ Xem mô tả chi tiết trong liên kết sau.</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Người dùng không được chỉ định.</value>
-  </data>
-  <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Thời lượng (phút, 0 - vô hạn):</value>
-  </data>
-  <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Bạn có thể chia sẻ bất kỳ thư mục nào để truy cập đọc-ghi qua giao thức FTPS (mã hóa rõ ràng với chứng chỉ tự ký) bên trong mạng cục bộ của bạn.</value>
-  </data>
-  <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Bạn có thể tải lên nội dung thư mục và ghi đè lên các tệp đã tồn tại.</value>
   </data>
 </root>

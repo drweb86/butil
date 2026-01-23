@@ -179,18 +179,6 @@
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>تم إنهاء الاتصال بالخادم بشكل غير متوقع (هل كلمات المرور على العميل والخادم متطابقة؟)</value>
   </data>
-  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
-    <value>رفع المجلد</value>
-  </data>
-  <data name="FtpsServerStartTask_Name" xml:space="preserve">
-    <value>بدء خادم FTPS</value>
-  </data>
-  <data name="FtpsServerTask_Create" xml:space="preserve">
-    <value>مشاركة المجلد عبر FTPS في الشبكة المحلية</value>
-  </data>
-  <data name="TimeoutTask_Title" xml:space="preserve">
-    <value>في انتظار انتهاء المهلة...</value>
-  </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>إلغاء</value>
   </data>
@@ -301,6 +289,9 @@
   <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
     <value>الدليل "{0}" غير موجود.</value>
   </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>المدة (بالدقائق، من 0 إلى ما لا نهاية):</value>
+  </data>
   <data name="Field_Device" xml:space="preserve">
     <value>الجهاز:</value>
   </data>
@@ -369,6 +360,15 @@
   </data>
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>تشفير SSL/TLS:</value>
+  </data>
+  <data name="FtpsServerStartTask_Name" xml:space="preserve">
+    <value>بدء خادم FTPS</value>
+  </data>
+  <data name="FtpsServerTask_Create" xml:space="preserve">
+    <value>مشاركة المجلد عبر FTPS في الشبكة المحلية</value>
+  </data>
+  <data name="FtpsServerTask_Help" xml:space="preserve">
+    <value>يمكنك مشاركة أي مجلد للوصول للقراءة والكتابة عبر بروتوكول FTPS (التشفير الصريح بشهادة ذاتية التوقيع) داخل شبكتك المحلية.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>أضف أيقونة شخصية إلى نصك</value>
@@ -727,6 +727,15 @@ bin.
   <data name="Time_Field_Minute" xml:space="preserve">
     <value>دقيقة:</value>
   </data>
+  <data name="TimeoutTask_Title" xml:space="preserve">
+    <value>في انتظار انتهاء المهلة...</value>
+  </data>
+  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
+    <value>رفع المجلد</value>
+  </data>
+  <data name="UploadFolderTask_Help" xml:space="preserve">
+    <value>يمكنك رفع محتويات المجلد مع الكتابة فوق الملفات الموجودة مسبقًا.</value>
+  </data>
   <data name="Url_Field" xml:space="preserve">
     <value>الرابط:</value>
   </data>
@@ -738,14 +747,5 @@ bin.
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>لم يتم تحديد المستخدم.</value>
-  </data>
-  <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>المدة (بالدقائق، من 0 إلى ما لا نهاية):</value>
-  </data>
-  <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>يمكنك مشاركة أي مجلد للوصول للقراءة والكتابة عبر بروتوكول FTPS (التشفير الصريح بشهادة ذاتية التوقيع) داخل شبكتك المحلية.</value>
-  </data>
-  <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>يمكنك رفع محتويات المجلد مع الكتابة فوق الملفات الموجودة مسبقًا.</value>
   </data>
 </root>
