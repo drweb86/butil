@@ -5,6 +5,7 @@ namespace BUtil.Windows.Services;
 
 internal class ShowLogOnSystemLoginService : IShowLogOnSystemLoginService
 {
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>")]
     void IShowLogOnSystemLoginService.ShowLogOnSystemLoginService(string fileName)
     {
         var currentVersionKey = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion", true);

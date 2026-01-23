@@ -2,10 +2,12 @@
 using BUtil.Core.Options;
 using Microsoft.Win32.TaskScheduler;
 
+
 namespace BUtil.Windows.Services;
 
 public class TaskSchedulerService : ITaskSchedulerService
 {
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>")]
     public ScheduleInfo GetSchedule(string taskName)
     {
         var schedulerTaskName = GetScheduledTaskName(taskName);
@@ -43,6 +45,7 @@ public class TaskSchedulerService : ITaskSchedulerService
         return scheduledInfo;
     }
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>")]
     public void Schedule(string taskName, ScheduleInfo scheduleInfo)
     {
         Unschedule(taskName);
@@ -68,12 +71,14 @@ public class TaskSchedulerService : ITaskSchedulerService
             });
     }
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>")]
     public void Unschedule(string taskName)
     {
         var schedulerTaskName = GetScheduledTaskName(taskName);
         TaskService.Instance.RootFolder.DeleteTask(schedulerTaskName, false);
     }
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>")]
     private static DaysOfTheWeek GetDaysOfTheWeek(List<DayOfWeek> days)
     {
         DaysOfTheWeek result = 0;
