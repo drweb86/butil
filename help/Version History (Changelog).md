@@ -3,7 +3,7 @@
 
 ## Changes
 - Some libraries were updated.
-- BUtil Server now is FTPS Server.
+- BUtil Server now is FTPS Server. Both client and server using this functionality now must be of this version or above. Not backward compatible.
 - BUtil upload folder now works with storages.
 - Revert required Windows version to Windows 7, because win-get package verification was failing.
 - Ubuntu: simplification of installation script.
