@@ -133,12 +133,6 @@ if ($LastExitCode -ne 0)
 
 & "$PSScriptRoot\winget-pkgs.ps1"
 
-Write-Output "Prepare ubuntu"
-& ".\tools\Template-Copy.ps1"`
-    -TemplateFilePath "tools\ubuntu-install-template.sh" `
-    -DestinationFilePath "ubuntu-install.sh" `
-    -Replacements @{ 'APP_VERSION_STRING' = $version }	
-
 Write-Output "The following artefacts are produced. Release them"
 Get-ChildItem "..\Output"
 

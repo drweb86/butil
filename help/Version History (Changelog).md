@@ -6,6 +6,7 @@
 - BUtil Server now is FTPS Server.
 - BUtil upload folder now works with storages.
 - Revert required Windows version to Windows 7, because win-get package verification was failing.
+- Ubuntu: simplification of installation script.
 
 # 2025.11.16
 

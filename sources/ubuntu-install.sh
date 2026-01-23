@@ -3,7 +3,14 @@
 # Fail on first error.
 set -e
 
-version=2025.11.16
+# Default values
+LATEST_SOURCES=false
+for arg in "$@"; do
+    if [[ "$arg" == "--latest" ]]; then
+        echo "Using latest sources! Not sources related to version."
+        LATEST_SOURCES=true
+    fi
+done
 
 sourceCodeInstallationDirectory=/usr/local/src/butil
 binariesInstallationDirectory=/usr/local/butil
@@ -16,9 +23,10 @@ fi
 echo
 echo Install .Net 10
 echo
-wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
-chmod +x ./dotnet-install.sh
-./dotnet-install.sh --channel 10.0
+wget https://dot.net/v1/dotnet-install.sh -O /tmp/dotnet-install.sh
+chmod +x /tmp/dotnet-install.sh
+/tmp/dotnet-install.sh --channel 10.0
+sudo apt install dbus-x11
 echo
 
 echo
@@ -31,12 +39,24 @@ echo
 echo Get source code
 echo
 sudo git clone https://github.com/drweb86/butil.git ${sourceCodeInstallationDirectory}
+sudo git config --global --add safe.directory ${sourceCodeInstallationDirectory}
 cd ${sourceCodeInstallationDirectory}
+sudo git fetch --tags
+version=$(sudo git describe --tags --abbrev=0 2>/dev/null)
+echo "Latest tag: $version"
 
-echo
-echo Update to tag
-echo
-sudo git checkout tags/${version}
+if [ "$LATEST_SOURCES" = true ]; then
+	echo
+	echo Update to latest sources
+	echo
+	sudo git checkout main
+	sudo git pull origin main 2>/dev/null || echo "Note: Could not pull from remote, continuing with local copy"
+else
+	echo
+	echo Update to tag
+	echo
+	sudo git checkout tags/${version}
+fi
 
 echo
 echo Building
