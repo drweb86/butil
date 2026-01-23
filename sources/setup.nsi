@@ -136,13 +136,6 @@ Function .onInit
     ${EndIf}
   ${EndIf}
 
-  ; Additional check for Windows 11 specifically (build 26100+)
-  ReadRegStr $0 HKLM "SOFTWARE\Microsoft\Windows NT\CurrentVersion" "CurrentBuildNumber"
-  ${If} $0 < 26100
-    MessageBox MB_OK|MB_ICONSTOP "This application requires Windows 11 (build 26100) x64 or arm64 or later.$\nYour Windows version: build $0"
-    Abort
-  ${EndIf}
-
   ; Check architecture if needed
   ${If} ${RunningX64}
     SetRegView 64

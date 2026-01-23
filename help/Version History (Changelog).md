@@ -1,10 +1,11 @@
-﻿# 2025.12.6
+﻿# 2026.01.23
 (unpublished)
 
 ## Changes
 - Some libraries were updated.
 - BUtil Server now is FTPS Server.
 - BUtil upload folder now works with storages.
+- Revert required Windows version to Windows 7, because win-get package verification was failing.
 
 # 2025.11.16
 
