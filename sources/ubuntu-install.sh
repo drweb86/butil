@@ -49,8 +49,8 @@ if [ "$LATEST_SOURCES" = true ]; then
 	echo
 	echo Update to latest sources
 	echo
-	sudo git checkout main
-	sudo git pull origin main 2>/dev/null || echo "Note: Could not pull from remote, continuing with local copy"
+	sudo git checkout master
+	sudo git pull origin master 2>/dev/null || echo "Note: Could not pull from remote, continuing with local copy"
 else
 	echo
 	echo Update to tag
