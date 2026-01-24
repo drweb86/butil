@@ -40,10 +40,15 @@ $currentYear = "{0:yyyy}" -f (Get-Date)
     -TemplateFilePath "tools\winget-pkgs\SiarheiKuchuk.BUtil.installer.yaml" `
     -DestinationFilePath "$wingetReleaseFolder\SiarheiKuchuk.BUtil.installer.yaml" `
     -Replacements @{ 'APP_VERSION_STRING' = $version; '2001-01-01' = $wingetReleaseDateReplacement; 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' = $wingetReleaseHash.Hash; }
-& ".\tools\Template-Copy.ps1"`
-    -TemplateFilePath "tools\winget-pkgs\SiarheiKuchuk.BUtil.locale.en-US.yaml" `
-    -DestinationFilePath "$wingetReleaseFolder\SiarheiKuchuk.BUtil.locale.en-US.yaml" `
-    -Replacements @{ 'APP_VERSION_STRING' = $version; 'CURRENT_YEAR' = $currentYear }
+
+$localeFiles = Get-ChildItem -Path "tools\winget-pkgs\" -Filter "SiarheiKuchuk.BUtil.locale.*.yaml"
+foreach ($localeFile in $localeFiles) {
+    & ".\tools\Template-Copy.ps1" `
+        -TemplateFilePath $localeFile.FullName `
+        -DestinationFilePath "$wingetReleaseFolder\$($localeFile.Name)" `
+        -Replacements @{ 'APP_VERSION_STRING' = $version; 'CURRENT_YEAR' = $currentYear }
+}
+
 & ".\tools\Template-Copy.ps1"`
 	-TemplateFilePath "tools\winget-pkgs\SiarheiKuchuk.BUtil.yaml" `
     -DestinationFilePath "$wingetReleaseFolder\SiarheiKuchuk.BUtil.yaml" `
