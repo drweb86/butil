@@ -18,10 +18,7 @@ public abstract class CrossPlatformExperience
     public abstract IStorage GetSmbCifsStorage(ILog log, SambaStorageSettingsV2 settings);
     #endregion
 
-    public virtual ITaskSchedulerService? GetTaskSchedulerService()
-    {
-        return null;
-    }
+    public abstract ITaskSchedulerService GetTaskSchedulerService();
 
     public virtual IShowLogOnSystemLoginService? GetShowLogOnSystemLoginService()
     {

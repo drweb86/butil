@@ -27,7 +27,7 @@ public class EditBUtilServerClientTaskViewModel : ViewModelBase
         var model = (BUtilClientModelOptionsV2)task.Model;
 
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
-        WhenTaskViewModel = new WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule?.GetSchedule(taskName) ?? new ScheduleInfo());
+        WhenTaskViewModel = new WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule.GetSchedule(taskName) ?? new ScheduleInfo());
 
         FolderSectionViewModel = new FolderSectionViewModel(model.Folder);
         WhereTaskViewModel = new WhereTaskViewModel(model.To, Resources.LeftMenu_Where, "/Assets/CrystalProject_EveraldoCoelho_SourceItems48x48.png");
@@ -67,11 +67,11 @@ public class EditBUtilServerClientTaskViewModel : ViewModelBase
         if (!IsNew)
         {
             storeService.Delete(_taskName);
-            scheduler?.Unschedule(_taskName);
+            scheduler.Unschedule(_taskName);
             LogService.MoveLogs(_taskName, newTask.Name);
         }
         storeService.Save(newTask);
-        scheduler?.Schedule(newTask.Name, WhenTaskViewModel.GetScheduleInfo());
+        scheduler.Schedule(newTask.Name, WhenTaskViewModel.GetScheduleInfo());
 
         WindowManager.SwitchView(new TasksViewModel());
     }

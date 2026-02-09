@@ -18,7 +18,6 @@ public class WhenTaskViewModel : ObservableObject
         Sunday = scheduleInfo.Days.Contains(System.DayOfWeek.Sunday);
         Hours = scheduleInfo.Time.Hours;
         Minutes = scheduleInfo.Time.Minutes;
-        IsWhenAvailable = PlatformSpecificExperience.Instance.GetTaskSchedulerService() != null;
     }
 
     public ScheduleInfo GetScheduleInfo()
@@ -37,8 +36,6 @@ public class WhenTaskViewModel : ObservableObject
 
         return scheduleInfo;
     }
-
-    public bool IsWhenAvailable { get; }
 
     #region Labels
     public static string LeftMenu_When => Resources.LeftMenu_When;

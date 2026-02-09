@@ -1,4 +1,4 @@
-﻿using BUtil.Core;
+using BUtil.Core;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
@@ -22,9 +22,9 @@ public class LinuxExperience : CrossPlatformExperience
     public override int MinimumListenerPort => 1025;
     public override ISessionService SessionService => new LinuxSessionService();
 
-    public override ITaskSchedulerService? GetTaskSchedulerService()
+    public override ITaskSchedulerService GetTaskSchedulerService()
     {
-        return null;
+        return new LinuxTaskSchedulerService();
     }
 
     public override IShowLogOnSystemLoginService? GetShowLogOnSystemLoginService()

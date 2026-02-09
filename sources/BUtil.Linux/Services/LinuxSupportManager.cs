@@ -10,6 +10,7 @@ public class LinuxSupportManager : ISupportManager
 {
     private readonly string _workDir;
     private readonly string _uiApp;
+    public static readonly string ConsoleBackupTool = Path.Combine(Directories.BinariesDir, "butilc");
 
     public LinuxSupportManager()
     {

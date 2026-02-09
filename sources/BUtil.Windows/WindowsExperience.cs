@@ -29,7 +29,7 @@ public class WindowsExperience : CrossPlatformExperience
         return new WindowsFolderService();
     }
 
-    public override ITaskSchedulerService? GetTaskSchedulerService()
+    public override ITaskSchedulerService GetTaskSchedulerService()
     {
         return new TaskSchedulerService();
     }

@@ -25,7 +25,7 @@ public class EditBUtilServerTaskViewModel : ViewModelBase
         NameTaskViewModel = new NameTaskViewModel(isNew, Resources.FtpsServerTask_Help, task.Name);
         var model = (BUtilServerModelOptionsV2)task.Model;
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
-        WhenTaskViewModel = new WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule?.GetSchedule(taskName) ?? new ScheduleInfo());
+        WhenTaskViewModel = new WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule.GetSchedule(taskName) ?? new ScheduleInfo());
         FolderAndPortSectionViewModel = new FolderAndPortSectionViewModel(model.Port, model.Username, model.Password, model.Folder, model.DurationMinutes);
     }
 
@@ -68,11 +68,11 @@ public class EditBUtilServerTaskViewModel : ViewModelBase
         if (!IsNew)
         {
             storeService.Delete(_taskName);
-            scheduler?.Unschedule(_taskName);
+            scheduler.Unschedule(_taskName);
             LogService.MoveLogs(_taskName, newTask.Name);
         }
         storeService.Save(newTask);
-        scheduler?.Schedule(newTask.Name, WhenTaskViewModel.GetScheduleInfo());
+        scheduler.Schedule(newTask.Name, WhenTaskViewModel.GetScheduleInfo());
 
         WindowManager.SwitchView(new TasksViewModel());
     }

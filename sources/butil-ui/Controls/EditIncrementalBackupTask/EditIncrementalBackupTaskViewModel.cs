@@ -26,7 +26,7 @@ public class EditIncrementalBackupTaskViewModel : ViewModelBase
         EncryptionTaskViewModel = new EncryptionTaskViewModel(model.Password, isNew, !isNew);
 
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
-        WhenTaskViewModel = new WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule?.GetSchedule(taskName) ?? new ScheduleInfo());
+        WhenTaskViewModel = new WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule.GetSchedule(taskName) ?? new ScheduleInfo());
         WhereTaskViewModel = new WhereTaskViewModel(model.To, Resources.LeftMenu_Where, "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png");
         WhatTaskViewModel = new WhatTaskViewModel(model.Items, model.FileExcludePatterns);
     }
@@ -72,11 +72,11 @@ public class EditIncrementalBackupTaskViewModel : ViewModelBase
         if (!IsNew)
         {
             storeService.Delete(_taskName);
-            scheduler?.Unschedule(_taskName);
+            scheduler.Unschedule(_taskName);
             LogService.MoveLogs(_taskName, newTask.Name);
         }
         storeService.Save(newTask);
-        scheduler?.Schedule(newTask.Name, WhenTaskViewModel.GetScheduleInfo());
+        scheduler.Schedule(newTask.Name, WhenTaskViewModel.GetScheduleInfo());
 
         WindowManager.SwitchView(new TasksViewModel());
     }

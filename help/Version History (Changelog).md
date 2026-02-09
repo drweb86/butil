@@ -1,4 +1,10 @@
-﻿# 2026.01.23
+﻿# 2026.02.09
+(unreleased)
+
+## New Features
+- Ubuntu: scheduling cron support
+
+# 2026.01.23
 
 ## Changes
 - Some libraries were updated.

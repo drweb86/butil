@@ -28,7 +28,7 @@ public class EditSynchronizationTaskViewModel : ViewModelBase
         EncryptionTaskViewModel = new EncryptionTaskViewModel(model.Password, isNew, !isNew);
 
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
-        WhenTaskViewModel = new WhenTaskViewModel(isNew ? new ScheduleInfo() { Time = new System.TimeSpan(Constants.DefaultHours, Constants.DefaultMinutes, 0), Days = [System.DayOfWeek.Monday, System.DayOfWeek.Tuesday, System.DayOfWeek.Wednesday, System.DayOfWeek.Thursday, System.DayOfWeek.Friday, System.DayOfWeek.Saturday, System.DayOfWeek.Sunday] } : schedule?.GetSchedule(taskName) ?? new ScheduleInfo());
+        WhenTaskViewModel = new WhenTaskViewModel(isNew ? new ScheduleInfo() { Time = new System.TimeSpan(Constants.DefaultHours, Constants.DefaultMinutes, 0), Days = [System.DayOfWeek.Monday, System.DayOfWeek.Tuesday, System.DayOfWeek.Wednesday, System.DayOfWeek.Thursday, System.DayOfWeek.Friday, System.DayOfWeek.Saturday, System.DayOfWeek.Sunday] } : schedule.GetSchedule(taskName) ?? new ScheduleInfo());
         WhereTaskViewModel = new WhereTaskViewModel(model.To, Resources.LeftMenu_Where, "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png");
         What = new SynchronizationWhatViewModel(model.LocalFolder, model.SynchronizationMode);
     }
@@ -74,11 +74,11 @@ public class EditSynchronizationTaskViewModel : ViewModelBase
         if (!IsNew)
         {
             storeService.Delete(_taskName);
-            scheduler?.Unschedule(_taskName);
+            scheduler.Unschedule(_taskName);
             LogService.MoveLogs(_taskName, newTask.Name);
         }
         storeService.Save(newTask);
-        scheduler?.Schedule(newTask.Name, WhenTaskViewModel.GetScheduleInfo());
+        scheduler.Schedule(newTask.Name, WhenTaskViewModel.GetScheduleInfo());
 
         WindowManager.SwitchView(new TasksViewModel());
     }

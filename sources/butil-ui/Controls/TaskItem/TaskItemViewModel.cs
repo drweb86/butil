@@ -74,8 +74,7 @@ public class TaskItemViewModel(
             .Delete(Name);
         LogService.DeleteLogs(Name);
         ImportMediaFileService.DeleteState(Name);
-        PlatformSpecificExperience.Instance
-            .GetTaskSchedulerService()?.Unschedule(Name);
+        PlatformSpecificExperience.Instance.GetTaskSchedulerService().Unschedule(Name);
         _items.Remove(this);
     }
 
