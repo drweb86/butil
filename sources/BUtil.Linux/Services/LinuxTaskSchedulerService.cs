@@ -31,7 +31,7 @@ public class LinuxTaskSchedulerService : ITaskSchedulerService
         var minute = scheduleInfo.Time.Minutes;
         var hour = scheduleInfo.Time.Hours;
         var daysOfWeek = string.Join(",", scheduleInfo.Days.Select(d => (int)d));
-        var command = $"\"{LinuxSupportManager.ConsoleBackupTool}\" \"Task={taskName}\"";
+        var command = $"\"{LinuxSupportManager.ConsoleBackupTool}\" \"Task={taskName}\" >> /tmp/cron_butil_debug.log";
         var cronLine = $"{minute} {hour} * * {daysOfWeek} {command}";
         crontab += CronCommentPrefix + taskName + "\n" + cronLine + "\n";
 
