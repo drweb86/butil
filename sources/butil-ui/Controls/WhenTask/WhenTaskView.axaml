@@ -23,9 +23,9 @@
 			<CheckBox IsChecked="{Binding Saturday}" Content="{Binding Days_Saturday}" />
 			<CheckBox IsChecked="{Binding Sunday}" Content="{Binding Days_Sunday}" />
 			<TextBlock Text="{Binding Time_Field_Hour}" Margin="0 4 0 4" />
-			<NumericUpDown Minimum="0" Maximum="23" Value="{Binding Hours}" />
+			<NumericUpDown Minimum="0" Maximum="23" FormatString="N0" Value="{Binding Hours}" />
 			<TextBlock Text="{Binding Time_Field_Minute}" Margin="0 4 0 4" />
-			<NumericUpDown Minimum="0" Maximum="59" Value="{Binding Minutes}" />
+			<NumericUpDown Minimum="0" Maximum="59" FormatString="N0" Value="{Binding Minutes}" />
 		</StackPanel>
 	</Expander>
 </UserControl>

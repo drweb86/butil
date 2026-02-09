@@ -4,6 +4,9 @@
 ## New Features
 - Ubuntu: scheduling cron support
 
+## Bug Fixes
+- Scheduler: .0 is added on chaing date and time.
+
 # 2026.01.23
 
 ## Changes
