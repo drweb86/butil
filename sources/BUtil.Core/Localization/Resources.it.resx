@@ -243,6 +243,9 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
   <data name="DataStorage_Script_Help" xml:space="preserve">
     <value>Se la cartella diventa disponibile dopo l'esecuzione di alcuni comandi, specifica gli script {0} per la connessione e la disconnessione.</value>
   </data>
+  <data name="DataStorage_Scripts_Header" xml:space="preserve">
+    <value>Script (prima del montaggio / dopo lo smontaggio)</value>
+  </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
     <value>Ottieni stato archivio dati</value>
   </data>

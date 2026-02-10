@@ -238,6 +238,9 @@
   <data name="DataStorage_Script_Help" xml:space="preserve">
     <value>Jika folder tersedia setelah mengeksekusi beberapa perintah, tentukan {0} script untuk koneksi dan pemutusan.</value>
   </data>
+  <data name="DataStorage_Scripts_Header" xml:space="preserve">
+    <value>Script (sebelum mount / setelah unmount)</value>
+  </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
     <value>Dapatkan status penyimpanan</value>
   </data>

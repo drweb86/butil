@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -240,6 +240,9 @@ Usage scenario: You copy data to remote server. There's a problem: ISP drops upl
   </data>
   <data name="DataStorage_Script_Help" xml:space="preserve">
     <value>If folder becomes available after executing some commands, specify {0} scripts for connection and disconnection.</value>
+  </data>
+  <data name="DataStorage_Scripts_Header" xml:space="preserve">
+    <value>Scripts (before mount / after unmount)</value>
   </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
     <value>Get state of storage</value>

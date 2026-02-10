@@ -241,6 +241,9 @@
   <data name="DataStorage_Script_Help" xml:space="preserve">
     <value>Если папка становится доступной после выполнения комманд, укажите {0} скрипты для подключения и отключения хранилища.</value>
   </data>
+  <data name="DataStorage_Scripts_Header" xml:space="preserve">
+    <value>Скрипты (до подключения / после отключения)</value>
+  </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
     <value>Получение состояния хранилища</value>
   </data>

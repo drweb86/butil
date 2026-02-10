@@ -243,6 +243,9 @@
     <value>ஒரு சில கட்டளைகளை செயல்படுத்திய பிறகு கோப்புறை கிடைக்குமானால், 
 இணக்கும் மற்றும் துணை துணை {0} செயல்களை குறிப்பிடவும்.</value>
   </data>
+  <data name="DataStorage_Scripts_Header" xml:space="preserve">
+    <value>ஸ்கிரிப்ட்கள் (ஏற்றுவதற்கு முன் / இறக்குவதற்குப் பின்)</value>
+  </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
     <value>சேமிப்பின் மாநிலத்தை பெறவும்</value>
   </data>

@@ -4,6 +4,9 @@
 ## New Features
 - Ubuntu: scheduling cron support
 
+## Changes
+- Scripts for connect/disconnect are collapsed by default
+
 ## Bug Fixes
 - Scheduler: .0 is added on chaing date and time.
 

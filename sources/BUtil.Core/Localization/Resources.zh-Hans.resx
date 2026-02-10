@@ -240,6 +240,9 @@
   <data name="DataStorage_Script_Help" xml:space="preserve">
     <value>如果在执行某些命令后文件夹变得可用，请指定连接和断开连接的{0}脚本。</value>
   </data>
+  <data name="DataStorage_Scripts_Header" xml:space="preserve">
+    <value>脚本（挂载前 / 卸载后）</value>
+  </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
     <value>获取存储状态</value>
   </data>

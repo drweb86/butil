@@ -241,6 +241,9 @@
   <data name="DataStorage_Script_Help" xml:space="preserve">
     <value>यदि कुछ आदेशों को निष्पादित करने के बाद फ़ोल्डर उपलब्ध होता है, तो कनेक्शन और डिस्कनेक्शन के लिए {0} स्क्रिप्ट निर्दिष्ट करें।</value>
   </data>
+  <data name="DataStorage_Scripts_Header" xml:space="preserve">
+    <value>स्क्रिप्ट (माउंट से पहले / अनमाउंट के बाद)</value>
+  </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
     <value>स्टोरेज की स्थिति प्राप्त करें</value>
   </data>

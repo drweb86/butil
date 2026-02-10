@@ -262,6 +262,9 @@
   <data name="DataStorage_Script_Help" xml:space="preserve">
     <value>如果文件夾喺執行某些命令後變得可用，請指定 {0} 連接和斷開連接的腳本。</value>
   </data>
+  <data name="DataStorage_Scripts_Header" xml:space="preserve">
+    <value>腳本（掛載前 / 卸載後）</value>
+  </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
     <value>獲取存儲狀態</value>
   </data>

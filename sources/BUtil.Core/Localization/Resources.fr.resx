@@ -242,6 +242,9 @@ Il y a un problème : le fournisseur d'accès réduit la vitesse d'upload après
   <data name="DataStorage_Script_Help" xml:space="preserve">
     <value>Si le dossier devient disponible après avoir exécuté certaines commandes, spécifiez {0} scripts pour la connexion et la déconnexion.</value>
   </data>
+  <data name="DataStorage_Scripts_Header" xml:space="preserve">
+    <value>Scripts (avant montage / après démontage)</value>
+  </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
     <value>Obtenez l'état du stockage</value>
   </data>

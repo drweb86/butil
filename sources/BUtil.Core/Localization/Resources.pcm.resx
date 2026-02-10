@@ -241,6 +241,9 @@
   <data name="DataStorage_Script_Help" xml:space="preserve">
     <value>If folder dey available after you execute some commands, specify {0} scripts for connection and disconnection.</value>
   </data>
+  <data name="DataStorage_Scripts_Header" xml:space="preserve">
+    <value>Scripts (before mount / after unmount)</value>
+  </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
     <value>Get state of storage</value>
   </data>

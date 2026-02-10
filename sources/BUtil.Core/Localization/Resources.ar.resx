@@ -241,6 +241,9 @@
   <data name="DataStorage_Script_Help" xml:space="preserve">
     <value>إذا أصبح المجلد متاحًا بعد تنفيذ بعض الأوامر، حدد {0} نصوص لاتصال وقطع الاتصال.</value>
   </data>
+  <data name="DataStorage_Scripts_Header" xml:space="preserve">
+    <value>نصوص برمجية (قبل التحميل / بعد إلغاء التحميل)</value>
+  </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
     <value>احصل على حالة التخزين</value>
   </data>

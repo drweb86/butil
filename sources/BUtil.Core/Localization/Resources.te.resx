@@ -239,6 +239,9 @@
   <data name="DataStorage_Script_Help" xml:space="preserve">
     <value>ప్రాంప్ట్ చేసిన క్రమానికి కొన్ని ఆదేశాలు పూర్తి చేసిన తర్వాత ఫోల్డర్ ప్రచారంలో అయితే, పొందుకు ఒక్కొక్క స్క్రిప్ట్లు {0}తో ప్రచార మరియు డిస్కనెక్షన్ కోసం స్పెసిఫై చేయండి.</value>
   </data>
+  <data name="DataStorage_Scripts_Header" xml:space="preserve">
+    <value>స్క్రిప్ట్‌లు (మౌంట్ ముందు / అన్‌మౌంట్ తర్వాత)</value>
+  </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
     <value>నిల్వ రాష్ట్రాన్ని పొందు</value>
   </data>

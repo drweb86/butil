@@ -241,6 +241,9 @@ Anwendungsszenario: Sie kopieren Daten auf einen entfernten Server. Es gibt ein 
   <data name="DataStorage_Script_Help" xml:space="preserve">
     <value>Falls der Ordner nach dem Ausführen einiger Befehle verfügbar wird, geben Sie {0} Skripte für Verbindung und Trennung an.</value>
   </data>
+  <data name="DataStorage_Scripts_Header" xml:space="preserve">
+    <value>Skripte (vor dem Einhängen / nach dem Aushängen)</value>
+  </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
     <value>Zustand des Speichers ermitteln</value>
   </data>

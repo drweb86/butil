@@ -241,6 +241,9 @@ Escenario de uso: Copia datos a un servidor remoto. Hay un problema: el ISP redu
   <data name="DataStorage_Script_Help" xml:space="preserve">
     <value>Si la carpeta se vuelve disponible después de ejecutar algunos comandos, especifique scripts de conexión y desconexión {0}.</value>
   </data>
+  <data name="DataStorage_Scripts_Header" xml:space="preserve">
+    <value>Scripts (antes de montar / después de desmontar)</value>
+  </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
     <value>Obtener estado del almacenamiento</value>
   </data>

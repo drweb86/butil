@@ -238,6 +238,9 @@ Kịch bản sử dụng: Bạn sao chép dữ liệu đến máy chủ từ xa.
   <data name="DataStorage_Script_Help" xml:space="preserve">
     <value>Nếu thư mục trở nên khả dụng sau khi thực thi một số lệnh, hãy chỉ định {0} các script cho kết nối và ngắt kết nối.</value>
   </data>
+  <data name="DataStorage_Scripts_Header" xml:space="preserve">
+    <value>Script (trước khi gắn / sau khi gỡ)</value>
+  </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
     <value>Lấy trạng thái của bộ nhớ</value>
   </data>

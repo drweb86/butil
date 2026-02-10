@@ -236,6 +236,9 @@
   <data name="DataStorage_Script_Help" xml:space="preserve">
     <value>フォルダーが特定のコマンドを実行した後に利用可能になる場合、接続および切断のためのスクリプト {0} を指定してください。</value>
   </data>
+  <data name="DataStorage_Scripts_Header" xml:space="preserve">
+    <value>スクリプト（マウント前 / アンマウント後）</value>
+  </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
     <value>ストレージの状態を取得</value>
   </data>

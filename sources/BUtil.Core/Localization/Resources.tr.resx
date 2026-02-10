@@ -238,6 +238,9 @@ Kullanım senaryosu: Verileri uzak sunucuya kopyalıyorsunuz. Bir sorun var: ISS
   <data name="DataStorage_Script_Help" xml:space="preserve">
     <value>Bir takım komutlar yürütüldükten sonra klasör kullanılabilir hale geliyorsa, bağlantı ve bağlantı kesme için {0} betikleri belirtin.</value>
   </data>
+  <data name="DataStorage_Scripts_Header" xml:space="preserve">
+    <value>Betikler (bağlamadan önce / bağlantıyı kestikten sonra)</value>
+  </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
     <value>Depolamanın durumunu al</value>
   </data>

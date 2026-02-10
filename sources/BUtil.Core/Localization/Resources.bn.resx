@@ -238,6 +238,9 @@
   <data name="DataStorage_Script_Help" xml:space="preserve">
     <value>যদি কিছু কমান্ড কার্যকর করার পর ফোল্ডার উপলব্ধ হয়, তাহলে সংযোগ ও বিচ্ছিন্নতার জন্য {0} স্ক্রিপ্ট নির্দিষ্ট করুন।</value>
   </data>
+  <data name="DataStorage_Scripts_Header" xml:space="preserve">
+    <value>স্ক্রিপ্ট (মাউন্টের আগে / আনমাউন্টের পরে)</value>
+  </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
     <value>সংরক্ষণের অবস্থা পান</value>
   </data>

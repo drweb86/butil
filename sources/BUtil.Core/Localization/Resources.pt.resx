@@ -241,6 +241,9 @@ Cenário de uso: Você copia dados para um servidor remoto. Há um problema: o I
   <data name="DataStorage_Script_Help" xml:space="preserve">
     <value>Se a pasta se tornar disponível após a execução de alguns comandos, especifique {0} scripts para conexão e desconexão.</value>
   </data>
+  <data name="DataStorage_Scripts_Header" xml:space="preserve">
+    <value>Scripts (antes de montar / após desmontar)</value>
+  </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
     <value>Obter estado do armazenamento</value>
   </data>

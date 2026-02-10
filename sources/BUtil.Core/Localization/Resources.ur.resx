@@ -237,6 +237,9 @@
   <data name="DataStorage_Script_Help" xml:space="preserve">
     <value>اگر کچھ کمانڈز چلانے کے بعد فولڈر دستیاب ہو جاتا ہے تو کنکشن اور ڈسکنکشن کے لئے {0} اسکرپٹس کی وضاحت کریں۔</value>
   </data>
+  <data name="DataStorage_Scripts_Header" xml:space="preserve">
+    <value>اسکرپٹس (ماؤنٹ سے پہلے / ان ماؤنٹ کے بعد)</value>
+  </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
     <value>اسٹوریج کی حالت حاصل کریں</value>
   </data>

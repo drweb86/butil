@@ -1,4 +1,4 @@
-﻿using Avalonia.Media.Imaging;
+using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using BUtil.Core;
 using BUtil.Core.ConfigurationFileModels.V2;
@@ -183,6 +183,7 @@ public class WhereTaskViewModel : ObservableObject
     public static string DataStorage_Field_UploadQuota => Resources.DataStorage_Field_UploadQuota;
     public static string DataStorage_Field_UploadQuota_Help => Resources.DataStorage_Field_UploadQuota_Help;
     public static string DataStorage_Script_Help => string.Format(Resources.DataStorage_Script_Help, PlatformSpecificExperience.Instance.SupportManager.ScriptEngineName);
+    public static string DataStorage_Scripts_Header => Resources.DataStorage_Scripts_Header;
     public static string DataStorage_Field_ConnectScript => Resources.DataStorage_Field_ConnectScript;
     public static string DataStorage_Field_DisconnectionScript => Resources.DataStorage_Field_DisconnectionScript;
     public static string Field_Folder => Resources.Field_Folder;
