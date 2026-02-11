@@ -1,4 +1,4 @@
-﻿using BUtil.Core.FileSystem;
+using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
 using Microsoft.Win32.TaskScheduler;
 
@@ -66,7 +66,7 @@ public class TaskSchedulerService : ITaskSchedulerService
             new ExecAction
             {
                 WorkingDirectory = Directories.BinariesDir,
-                Arguments = $"\"Task={taskName}\"",
+                Arguments = $"\"Task={taskName}\" {SchedulerLaunchArguments.HideConsole}",
                 Path = $"\"{WindowsSupportManager.ConsoleBackupTool}\""
             });
     }

@@ -1,4 +1,4 @@
-﻿using BUtil.Core;
+using BUtil.Core;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
@@ -37,6 +37,11 @@ public class WindowsExperience : CrossPlatformExperience
     public override IShowLogOnSystemLoginService? GetShowLogOnSystemLoginService()
     {
         return new ShowLogOnSystemLoginService();
+    }
+
+    public override IConsoleWindowService? GetConsoleWindowService()
+    {
+        return new WindowsConsoleWindowService();
     }
 
     public override IUiService UiService => new WindowsUiService();

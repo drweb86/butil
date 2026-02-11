@@ -1,4 +1,4 @@
-﻿using BUtil.Core;
+using BUtil.Core;
 using BUtil.Core.Misc;
 using System;
 

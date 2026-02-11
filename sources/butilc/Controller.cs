@@ -14,6 +14,7 @@ class Controller
 {
     private string _taskName = string.Empty;
     private PowerTask _powerTask = PowerTask.None;
+    private bool _hideConsole;
 
     public Controller ParseCommandLineArguments(string[]? args)
     {
@@ -76,6 +77,10 @@ class Controller
             else if (ArgumentIs(argument, _reboot))
             {
                 _powerTask = PowerTask.Reboot;
+            }
+            else if (ArgumentIs(argument, SchedulerLaunchArguments.HideConsole))
+            {
+                _hideConsole = true;
             }
             else
             {
@@ -197,7 +202,12 @@ class Controller
 
     public void Launch()
     {
-        var log = new ChainLog(_taskName);
+        if (_hideConsole)
+        {
+            PlatformSpecificExperience.Instance.GetConsoleWindowService()?.Hide();
+        }
+
+        ILog log = _hideConsole ? new FileLog(_taskName) : new ChainLog(_taskName);
         string? lastMinuteMessage = null;
         bool isSuccess = false;
         log.Open();

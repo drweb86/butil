@@ -1,4 +1,4 @@
-﻿using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
 using BUtil.Core.Services;
@@ -21,6 +21,14 @@ public abstract class CrossPlatformExperience
     public abstract ITaskSchedulerService GetTaskSchedulerService();
 
     public virtual IShowLogOnSystemLoginService? GetShowLogOnSystemLoginService()
+    {
+        return null;
+    }
+
+    /// <summary>
+    /// Returns a service that can hide the console window. Non-Windows platforms return null (no-op).
+    /// </summary>
+    public virtual IConsoleWindowService? GetConsoleWindowService()
     {
         return null;
     }

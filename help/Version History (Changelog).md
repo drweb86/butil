@@ -3,6 +3,7 @@
 
 ## New Features
 - Ubuntu: scheduling cron support
+- Windows: scheduled window of console is hidden
 
 ## Changes
 - Scripts for connect/disconnect are collapsed by default
