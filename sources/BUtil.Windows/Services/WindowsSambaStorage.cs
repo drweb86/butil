@@ -1,4 +1,5 @@
-﻿using BUtil.Core.ConfigurationFileModels.V2;
+﻿using BUtil.Core;
+using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Storages;
@@ -69,6 +70,13 @@ class WindowsSambaStorage : StorageBase<SambaStorageSettingsV2>
     {
         Log.WriteLine(LoggingEvent.Debug, $"Mount");
 
+        if (!string.IsNullOrWhiteSpace(this.Settings.MountPowershellScript))
+        {
+            if (PlatformSpecificExperience.Instance.SupportManager.CanLaunchScripts &&
+                !PlatformSpecificExperience.Instance.SupportManager.LaunchScript(Log, this.Settings.MountPowershellScript, "***"))
+                throw new InvalidOperationException($"Cannot mount");
+        }
+
         if (string.IsNullOrWhiteSpace(Settings.User))
             return;
 
@@ -88,6 +96,13 @@ class WindowsSambaStorage : StorageBase<SambaStorageSettingsV2>
         var command = @$"net use ""{Settings.Url}"" /delete /y";
         if (!WindowsCmdProcessHelper.Execute(Log, command))
             throw new InvalidOperationException($"Cannot unmount");
+
+        if (!string.IsNullOrWhiteSpace(this.Settings.UnmountPowershellScript))
+        {
+            if (PlatformSpecificExperience.Instance.SupportManager.CanLaunchScripts &&
+                !PlatformSpecificExperience.Instance.SupportManager.LaunchScript(Log, this.Settings.UnmountPowershellScript, "***"))
+                throw new InvalidOperationException($"Cannot unmount");
+        }
     }
 
     public override string? Test()

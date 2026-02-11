@@ -12,4 +12,13 @@ public class FtpsStorageSettingsV2 : IStorageSettingsV2
     public string Password { get; set; } = string.Empty;
     public string TrustedCertificate { get; set; } = null!;
 
+    /// <summary>
+    /// Its not powershell anymore on Ubuntu. SHould be renamed.
+    /// </summary>
+    public string? MountPowershellScript { get; set; }
+    /// <summary>
+    /// Its not powershell anymore on Ubuntu. SHould be renamed.
+    /// </summary>
+    public string? UnmountPowershellScript { get; set; }
+
 }

@@ -28,17 +28,23 @@ public class WhereTaskViewModel : ObservableObject
         if (storageSettings is FolderStorageSettingsV2 folderStorageSettings)
         {
             Transport = DirectoryStorage;
+         
             Quota = folderStorageSettings.SingleBackupQuotaGb;
-            FolderFolder = folderStorageSettings.DestinationFolder;
             FolderConnectionScript = folderStorageSettings.MountPowershellScript;
             FolderDisconnectionScript = folderStorageSettings.UnmountPowershellScript;
+
+            FolderFolder = folderStorageSettings.DestinationFolder;
         }
 
         if (storageSettings is SambaStorageSettingsV2 sambaStorageSettingsV2
             && PlatformSpecificExperience.Instance.IsSmbCifsSupported)
         {
             Transport = Smb;
+            
             Quota = sambaStorageSettingsV2.SingleBackupQuotaGb;
+            FolderConnectionScript = sambaStorageSettingsV2.MountPowershellScript;
+            FolderDisconnectionScript = sambaStorageSettingsV2.UnmountPowershellScript;
+
             SmbUrl = sambaStorageSettingsV2.Url;
             SmbUser = sambaStorageSettingsV2.User;
             SmbPassword = sambaStorageSettingsV2.Password;
@@ -47,7 +53,11 @@ public class WhereTaskViewModel : ObservableObject
         if (storageSettings is FtpsStorageSettingsV2 ftpsStorageSettingsV2)
         {
             Transport = Ftps;
+            
             Quota = ftpsStorageSettingsV2.SingleBackupQuotaGb;
+            FolderConnectionScript = ftpsStorageSettingsV2.MountPowershellScript;
+            FolderDisconnectionScript = ftpsStorageSettingsV2.UnmountPowershellScript;
+
             FtpsServer = ftpsStorageSettingsV2.Host;
             FtpsEncryption = ftpsStorageSettingsV2.Encryption == FtpsStorageEncryptionV2.Explicit ?
                 Ftps_Encryption_Option_Explicit : Ftps_Encryption_Option_Implicit;
@@ -60,7 +70,11 @@ public class WhereTaskViewModel : ObservableObject
         if (storageSettings is SftpStorageSettingsV2 sftpStorageSettingsV2)
         {
             Transport = Sftp;
+
             Quota = sftpStorageSettingsV2.SingleBackupQuotaGb;
+            FolderConnectionScript = sftpStorageSettingsV2.MountPowershellScript;
+            FolderDisconnectionScript = sftpStorageSettingsV2.UnmountPowershellScript;
+
             FtpsServer = sftpStorageSettingsV2.Host;
             FtpsPort = sftpStorageSettingsV2.Port;
             FtpsUser = sftpStorageSettingsV2.User;
@@ -116,9 +130,10 @@ public class WhereTaskViewModel : ObservableObject
             return new FolderStorageSettingsV2
             {
                 SingleBackupQuotaGb = Quota,
-                DestinationFolder = FolderFolder,
                 MountPowershellScript = FolderConnectionScript,
                 UnmountPowershellScript = FolderDisconnectionScript,
+
+                DestinationFolder = FolderFolder,
             };
         }
         else if (Transport == Ftps)
@@ -126,6 +141,8 @@ public class WhereTaskViewModel : ObservableObject
             return new FtpsStorageSettingsV2
             {
                 SingleBackupQuotaGb = Quota,
+                MountPowershellScript = FolderConnectionScript,
+                UnmountPowershellScript = FolderDisconnectionScript,
 
                 Host = FtpsServer!,
                 Encryption = FtpsEncryption == Ftps_Encryption_Option_Explicit ?
@@ -141,6 +158,9 @@ public class WhereTaskViewModel : ObservableObject
             return new SambaStorageSettingsV2
             {
                 SingleBackupQuotaGb = Quota,
+                MountPowershellScript = FolderConnectionScript,
+                UnmountPowershellScript = FolderDisconnectionScript,
+
                 Url = SmbUrl!,
                 User = SmbUser,
                 Password = SmbPassword,
@@ -151,6 +171,8 @@ public class WhereTaskViewModel : ObservableObject
             return new SftpStorageSettingsV2
             {
                 SingleBackupQuotaGb = Quota,
+                MountPowershellScript = FolderConnectionScript,
+                UnmountPowershellScript = FolderDisconnectionScript,
 
                 Host = FtpsServer!,
                 Port = FtpsPort,
@@ -222,7 +244,7 @@ public class WhereTaskViewModel : ObservableObject
             _transport = value;
             OnPropertyChanged(nameof(Transport));
             IsDirectoryTransport = value == DirectoryStorage;
-            IsDirectoryScriptsVisible = IsDirectoryTransport && CanLaunchScripts;
+            IsScriptsVisible = CanLaunchScripts;
             IsSmbTransport = value == Smb;
             IsFtpsTransport = value == Ftps;
             IsSftpTransport = value == Sftp;
@@ -252,22 +274,23 @@ public class WhereTaskViewModel : ObservableObject
 
     #endregion
 
-    #region IsDirectoryScriptsVisible
+    #region IsScriptsVisible
 
-    private bool _isDirectoryScriptsVisible = false;
+    private bool _isScriptsVisible = false;
 
-    public bool IsDirectoryScriptsVisible
+    /// <summary>Scripts section is visible when CanLaunchScripts (for any storage type).</summary>
+    public bool IsScriptsVisible
     {
         get
         {
-            return _isDirectoryScriptsVisible;
+            return _isScriptsVisible;
         }
         set
         {
-            if (value == _isDirectoryScriptsVisible)
+            if (value == _isScriptsVisible)
                 return;
-            _isDirectoryScriptsVisible = value;
-            OnPropertyChanged(nameof(IsDirectoryScriptsVisible));
+            _isScriptsVisible = value;
+            OnPropertyChanged(nameof(IsScriptsVisible));
         }
     }
 

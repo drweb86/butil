@@ -49,6 +49,8 @@
 
 				<RowDefinition />
 				<RowDefinition />
+
+				<RowDefinition />
 			</Grid.RowDefinitions>
 
 			<TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Field_TransportProtocol}" VerticalAlignment="Center" />
@@ -61,23 +63,6 @@
 			<TextBlock IsVisible="{Binding IsDirectoryTransport}" Grid.Row="2" Grid.Column="0" Text="{Binding Field_Folder}" VerticalAlignment="Center" />
 			<TextBox IsVisible="{Binding IsDirectoryTransport}" Grid.Row="2" Grid.Column="1" Margin="4 4 4 4" Watermark="P:\Storage\Backup1" VerticalAlignment="Center" Text="{Binding FolderFolder}" />
 			<Button IsVisible="{Binding IsDirectoryTransport}" Grid.Row="2" Grid.Column="2" Content="{Binding Field_Folder_Browse}" VerticalAlignment="Center" Click="BrowseCommand"/>
-
-			<Expander IsVisible="{Binding IsDirectoryScriptsVisible}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="3" IsExpanded="False" HorizontalAlignment="Stretch">
-				<Expander.Header>
-					<TextBlock Text="{Binding DataStorage_Scripts_Header}" VerticalAlignment="Center" />
-				</Expander.Header>
-				<StackPanel Spacing="8">
-					<TextBlock Text="{Binding DataStorage_Script_Help}" VerticalAlignment="Center" TextWrapping="Wrap" />
-					<Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto,Auto">
-						<TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding DataStorage_Field_ConnectScript}" VerticalAlignment="Center" Margin="0 0 0 4"/>
-						<TextBox Grid.Row="0" Grid.Column="1" AcceptsReturn="True" Margin="4 0 4 4" Watermark="net use X: \\myserver\myfolder myPassword /user:myUser" Text="{Binding FolderConnectionScript}" Height="150" MinWidth="200"/>
-						<Button Grid.Row="0" Grid.Column="2" Content="{Binding Task_Launch}" VerticalAlignment="Center" Margin="0 0 0 4" Command="{Binding MountTaskLaunchCommand}"/>
-						<TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding DataStorage_Field_DisconnectionScript}" VerticalAlignment="Center" Margin="0 0 0 4"/>
-						<TextBox Grid.Row="1" Grid.Column="1" AcceptsReturn="True" Margin="4 0 4 4" Watermark="net use X: /delete" Text="{Binding FolderDisconnectionScript}" Height="150" MinWidth="200"/>
-						<Button Grid.Row="1" Grid.Column="2" Content="{Binding Task_Launch}" VerticalAlignment="Center" Margin="0 0 0 4" Command="{Binding UnmountTaskLaunchCommand}"/>
-					</Grid>
-				</StackPanel>
-			</Expander>
 
 			<!-- SMB -->
 			<TextBlock IsVisible="{Binding IsSmbTransport}" Grid.Row="6" Grid.Column="0" Text="{Binding Url_Field}" VerticalAlignment="Center"/>
@@ -117,6 +102,23 @@
 			<TextBox IsVisible="{Binding IsSftpTransport}" Grid.Row="20" Grid.Column="1" Margin="4 4 4 4" VerticalAlignment="Center" Text="{Binding SftpFingerPrintSHA256}"/>
 			<TextBlock IsVisible="{Binding IsSftpTransport}" Grid.Row="21" Grid.Column="0" Text="{Binding Field_Folder}" VerticalAlignment="Center"/>
 			<TextBox IsVisible="{Binding IsSftpTransport}" Grid.Row="21" Grid.Column="1" Margin="4 4 4 4" VerticalAlignment="Center" Watermark="/home/sftpuser/ftpserver" Text="{Binding FtpsFolder}"/>
+
+			<Expander IsVisible="{Binding IsScriptsVisible}" Grid.Row="22" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="3" IsExpanded="False" HorizontalAlignment="Stretch">
+				<Expander.Header>
+					<TextBlock Text="{Binding DataStorage_Scripts_Header}" VerticalAlignment="Center" />
+				</Expander.Header>
+				<StackPanel Spacing="8">
+					<TextBlock Text="{Binding DataStorage_Script_Help}" VerticalAlignment="Center" TextWrapping="Wrap" />
+					<Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto,Auto">
+						<TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding DataStorage_Field_ConnectScript}" VerticalAlignment="Center" Margin="0 0 0 4"/>
+						<TextBox Grid.Row="0" Grid.Column="1" AcceptsReturn="True" Margin="4 0 4 4" Watermark="net use X: \\myserver\myfolder myPassword /user:myUser" Text="{Binding FolderConnectionScript}" Height="150" MinWidth="200"/>
+						<Button Grid.Row="0" Grid.Column="2" Content="{Binding Task_Launch}" VerticalAlignment="Center" Margin="0 0 0 4" Command="{Binding MountTaskLaunchCommand}"/>
+						<TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding DataStorage_Field_DisconnectionScript}" VerticalAlignment="Center" Margin="0 0 0 4"/>
+						<TextBox Grid.Row="1" Grid.Column="1" AcceptsReturn="True" Margin="4 0 4 4" Watermark="net use X: /delete" Text="{Binding FolderDisconnectionScript}" Height="150" MinWidth="200"/>
+						<Button Grid.Row="1" Grid.Column="2" Content="{Binding Task_Launch}" VerticalAlignment="Center" Margin="0 0 0 4" Command="{Binding UnmountTaskLaunchCommand}"/>
+					</Grid>
+				</StackPanel>
+			</Expander>
 		</Grid>
 	</Expander>
 </UserControl>

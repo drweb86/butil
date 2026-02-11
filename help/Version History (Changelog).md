@@ -4,6 +4,10 @@
 ## New Features
 - Ubuntu: scheduling cron support
 - Windows: scheduled window of console is hidden
+- All storage types now support scripts launch before mount and after unmount.
+Main idea is to have support for WireGuard and OpenVPN command line tools,
+so user might setup connect to VPN, disconnect to VPN with routing via VPN
+for particular server only.
 
 ## Changes
 - Scripts for connect/disconnect are collapsed by default

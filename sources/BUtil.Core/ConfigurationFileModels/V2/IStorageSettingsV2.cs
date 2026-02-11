@@ -9,4 +9,13 @@ namespace BUtil.Core.ConfigurationFileModels.V2;
 public interface IStorageSettingsV2
 {
     long SingleBackupQuotaGb { get; }
+
+    /// <summary>
+    /// Its not powershell anymore on Ubuntu. SHould be renamed.
+    /// </summary>
+    string? MountPowershellScript { get; set; }
+    /// <summary>
+    /// Its not powershell anymore on Ubuntu. SHould be renamed.
+    /// </summary>
+    string? UnmountPowershellScript { get; set; }
 }

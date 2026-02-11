@@ -90,6 +90,13 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
     {
         Log.WriteLine(LoggingEvent.Debug, $"Mount");
 
+        if (!string.IsNullOrWhiteSpace(this.Settings.MountPowershellScript))
+        {
+            if (PlatformSpecificExperience.Instance.SupportManager.CanLaunchScripts &&
+                !PlatformSpecificExperience.Instance.SupportManager.LaunchScript(Log, this.Settings.MountPowershellScript, "***"))
+                throw new InvalidOperationException($"Cannot mount");
+        }
+
         var authenticationMethods = new List<AuthenticationMethod>();
         if (!string.IsNullOrWhiteSpace(Settings.Password))
             authenticationMethods.Add(new PasswordAuthenticationMethod(Settings.User, Settings.Password));
@@ -132,6 +139,13 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
             _client.Disconnect();
         }
         _client.Dispose();
+
+        if (!string.IsNullOrWhiteSpace(this.Settings.UnmountPowershellScript))
+        {
+            if (PlatformSpecificExperience.Instance.SupportManager.CanLaunchScripts &&
+                !PlatformSpecificExperience.Instance.SupportManager.LaunchScript(Log, this.Settings.UnmountPowershellScript, "***"))
+                throw new InvalidOperationException($"Cannot unmount");
+        }
     }
 
     public override string? Test()

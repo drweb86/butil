@@ -13,5 +13,12 @@ public class SftpStorageSettingsV2 : IStorageSettingsV2
     public string? Password { get; set; }
     public string? KeyFile { get; set; }
     public string FingerPrintSHA256 { get; set; } = string.Empty;
-
+    /// <summary>
+    /// Its not powershell anymore on Ubuntu. SHould be renamed.
+    /// </summary>
+    public string? MountPowershellScript { get; set; }
+    /// <summary>
+    /// Its not powershell anymore on Ubuntu. SHould be renamed.
+    /// </summary>
+    public string? UnmountPowershellScript { get; set; }
 }

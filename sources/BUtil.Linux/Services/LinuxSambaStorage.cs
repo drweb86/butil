@@ -1,4 +1,5 @@
-﻿using BUtil.Core.ConfigurationFileModels.V2;
+﻿using BUtil.Core;
+using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Storages;
@@ -15,6 +16,13 @@ class LinuxSambaStorage : StorageBase<SambaStorageSettingsV2>
         if (string.IsNullOrWhiteSpace(Settings.Url))
         {
             throw new InvalidDataException(BUtil.Core.Localization.Resources.Url_Field_Validation);
+        }
+
+        if (!string.IsNullOrWhiteSpace(this.Settings.MountPowershellScript))
+        {
+            if (PlatformSpecificExperience.Instance.SupportManager.CanLaunchScripts &&
+                !PlatformSpecificExperience.Instance.SupportManager.LaunchScript(Log, this.Settings.MountPowershellScript, "***"))
+                throw new InvalidOperationException($"Cannot mount");
         }
 
         ProcessHelper.Execute("id", "-u", null, false, System.Diagnostics.ProcessPriorityClass.Normal,
@@ -114,6 +122,13 @@ echo ""{userWithoutDomain}
     public override void Dispose()
     {
         _proxy.Dispose();
+
+        if (!string.IsNullOrWhiteSpace(this.Settings.UnmountPowershellScript))
+        {
+            if (PlatformSpecificExperience.Instance.SupportManager.CanLaunchScripts &&
+                !PlatformSpecificExperience.Instance.SupportManager.LaunchScript(Log, this.Settings.UnmountPowershellScript, "***"))
+                throw new InvalidOperationException($"Cannot unmount");
+        }
     }
 
     public override void Move(string fromRelativeFileName, string toRelativeFileName)

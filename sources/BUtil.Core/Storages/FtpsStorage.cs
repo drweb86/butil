@@ -79,6 +79,14 @@ class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
     private FtpClient Mount()
     {
         Log.WriteLine(LoggingEvent.Debug, $"Mount");
+
+        if (!string.IsNullOrWhiteSpace(this.Settings.MountPowershellScript))
+        {
+            if (PlatformSpecificExperience.Instance.SupportManager.CanLaunchScripts &&
+                !PlatformSpecificExperience.Instance.SupportManager.LaunchScript(Log, this.Settings.MountPowershellScript, "***"))
+                throw new InvalidOperationException($"Cannot mount");
+        }
+
         var client = new FtpClient(Settings.Host, Settings.User, Settings.Password, Settings.Port);
         client.Config.EncryptionMode = GetFtpEncryptionMode();
         client.Config.ValidateAnyCertificate = true;
@@ -128,6 +136,13 @@ class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
             _client.Disconnect();
         }
         _client.Dispose();
+
+        if (!string.IsNullOrWhiteSpace(this.Settings.UnmountPowershellScript))
+        {
+            if (PlatformSpecificExperience.Instance.SupportManager.CanLaunchScripts &&
+                !PlatformSpecificExperience.Instance.SupportManager.LaunchScript(Log, this.Settings.UnmountPowershellScript, "***"))
+                throw new InvalidOperationException($"Cannot unmount");
+        }
     }
 
     public override string? Test()
