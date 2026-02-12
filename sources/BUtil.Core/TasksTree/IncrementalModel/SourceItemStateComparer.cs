@@ -51,6 +51,14 @@ class SourceItemStateComparer
         return versionState;
     }
 
+    public static bool IsNotEmpty(VersionState versionState)
+    {
+        return versionState.SourceItemChanges.Any(x =>
+            x.CreatedFiles.Count != 0 ||
+            x.UpdatedFiles.Count != 0 ||
+            x.DeletedFiles.Count != 0);
+    }
+
     private static SourceItemChanges CompareSourceItemStates(SourceItemState a, SourceItemState b)
     {
         var createdFiles = b.FileStates.ToList();

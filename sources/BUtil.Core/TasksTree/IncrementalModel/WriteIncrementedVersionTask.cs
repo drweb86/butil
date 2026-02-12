@@ -23,10 +23,10 @@ internal class WriteIncrementedVersionTask : SequentialBuTask
     {
         var childTaks = new List<BuTask>();
 
-        var calculateIncrementedVersionForStorageTask = new CalculateIncrementedVersionForStorageTask(Log, Events, storageStateTask, getSourceItemStateTasks);
+        var calculateIncrementedVersionForStorageTask = new CalculateIncrementedStateTask(Log, Events, storageStateTask, getSourceItemStateTasks);
         childTaks.Add(calculateIncrementedVersionForStorageTask);
 
-        _writeSourceFilesToStorageTask = new WriteSourceFilesToStorageTask(services, events, calculateIncrementedVersionForStorageTask);
+        _writeSourceFilesToStorageTask = new WriteSourceFilesToStorageTask(services, events, calculateIncrementedVersionForStorageTask.GetSuccessResult);
         childTaks.Add(_writeSourceFilesToStorageTask);
 
         var writeStateToStorageTask = new WriteStateToStorageTask(
@@ -40,7 +40,7 @@ internal class WriteIncrementedVersionTask : SequentialBuTask
 #pragma warning disable CS8603 // Possible null reference return.
         childTaks.Add(new WriteIntegrityVerificationScriptsToStorageTask(services, events,
             () => calculateIncrementedVersionForStorageTask.VersionIsNeeded,
-            getState: () => calculateIncrementedVersionForStorageTask.IncrementalBackupState,
+            getState: () => calculateIncrementedVersionForStorageTask.UpdatedState,
             _writeSourceFilesToStorageTask,
             writeStateToStorageTask,
             () => writeStateToStorageTask.StateStorageFile));

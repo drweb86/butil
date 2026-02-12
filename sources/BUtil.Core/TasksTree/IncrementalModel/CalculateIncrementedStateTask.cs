@@ -1,0 +1,49 @@
+﻿
+using BUtil.Core.Events;
+using BUtil.Core.Logs;
+using BUtil.Core.Misc;
+using BUtil.Core.State;
+using BUtil.Core.TasksTree.Core;
+using BUtil.Core.TasksTree.IncrementalModel;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace BUtil.Core.TasksTree;
+
+internal class CalculateIncrementedStateTask(
+    ILog log,
+    TaskEvents events,
+    RemoteStateLoadTask remoteStateLoadTask,
+    IEnumerable<GetStateOfSourceItemTask> getSourceItemStateTasks) : BuTaskV2(log, events, BUtil.Core.Localization.Resources.IncrementalBackup_Version_Calculate)
+{
+    public (bool versionIsNeeded, IncrementalBackupState updatedState) GetSuccessResult()
+    {
+        this.EnsureSuccess();
+        return (VersionIsNeeded, UpdatedState.EnsureNotNull());
+    }
+
+    public bool VersionIsNeeded { get; private set; }
+    public IncrementalBackupState? UpdatedState { get; private set; }
+
+    protected override void ExecuteInternal()
+    {
+        var remoteState = remoteStateLoadTask
+            .EnsureSuccess()
+            .StorageState
+            .EnsureNotNull();
+        
+        var localStates = getSourceItemStateTasks
+            .Select(x => x.EnsureSuccess().SourceItemState.EnsureNotNull())
+            .ToList();
+
+        var newVersion = SourceItemStateComparer.Compare(remoteState.LastSourceItemStates, localStates);
+
+        remoteState.VersionStates.Add(newVersion);
+        remoteState.LastSourceItemStates = localStates
+            .Select(x => x.ShallowClone())
+            .ToList();
+
+        UpdatedState = remoteState;
+        VersionIsNeeded = SourceItemStateComparer.IsNotEmpty(newVersion);
+    }
+}

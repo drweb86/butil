@@ -11,13 +11,13 @@ namespace BUtil.Core.TasksTree.States;
 internal class WriteStateToStorageTask(
     StorageSpecificServicesIoc services,
     TaskEvents events,
-    CalculateIncrementedVersionForStorageTask getIncrementedVersionTask,
+    CalculateIncrementedStateTask getIncrementedVersionTask,
     WriteSourceFilesToStorageTask writeSourceFilesToStorageTask,
     IncrementalBackupModelOptionsV2 incrementalBackupModelOptions) : BuTaskV2(services.CommonServices.Log, events, Localization.Resources.DataStorage_State_Saving)
 {
     private readonly IncrementalBackupModelOptionsV2 _incrementalBackupModelOptions = incrementalBackupModelOptions;
     private readonly StorageSpecificServicesIoc _services = services;
-    private readonly CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask = getIncrementedVersionTask;
+    private readonly CalculateIncrementedStateTask _getIncrementedVersionTask = getIncrementedVersionTask;
     private readonly WriteSourceFilesToStorageTask _writeSourceFilesToStorageTask = writeSourceFilesToStorageTask;
 
     public StorageFile? StateStorageFile { get; private set; }
@@ -34,7 +34,7 @@ internal class WriteStateToStorageTask(
         if (!_writeSourceFilesToStorageTask.IsSuccess)
             throw new Exception("Writing source files to storage has failed. Skipping.");
 
-        StateStorageFile = _services.IncrementalBackupStateService.Write(_incrementalBackupModelOptions.Password, _getIncrementedVersionTask.IncrementalBackupState ?? throw new InvalidOperationException());
+        StateStorageFile = _services.IncrementalBackupStateService.Write(_incrementalBackupModelOptions.Password, _getIncrementedVersionTask.UpdatedState ?? throw new InvalidOperationException());
         if (StateStorageFile == null)
             throw new InvalidOperationException("Failed to upload state storage file.");
     }

@@ -12,16 +12,17 @@ namespace BUtil.Core.TasksTree.Storage;
 internal class WriteSourceFilesToStorageTask(
     StorageSpecificServicesIoc services,
     TaskEvents events,
-    CalculateIncrementedVersionForStorageTask getIncrementedVersionTask) : ParallelBuTask(services.CommonServices.Log, events, Localization.Resources.File_List_Saving)
+    Func<(bool versionIsNeeded, IncrementalBackupState updatedState)> getUpdatedState) : ParallelBuTask(services.CommonServices.Log, events, Localization.Resources.File_List_Saving)
 {
     private readonly StorageSpecificServicesIoc _services = services;
-    private readonly CalculateIncrementedVersionForStorageTask _getIncrementedVersionTask = getIncrementedVersionTask;
 
     public override void Execute()
     {
         UpdateStatus(ProcessingStatus.InProgress);
 
-        if (!_getIncrementedVersionTask.VersionIsNeeded)
+        var (versionIsNeeded, state) = getUpdatedState();
+
+        if (!versionIsNeeded)
         {
             LogDebug("Version is not needed.");
             IsSuccess = true;
@@ -31,10 +32,10 @@ internal class WriteSourceFilesToStorageTask(
         }
 
         List<WriteSourceFileToStorageTask> WriteFileTasks = [];
-        var versionStates = (_getIncrementedVersionTask.IncrementalBackupState ?? throw new Exception()).VersionStates;
-        var versionState = versionStates.Last();
+        var versions = state.VersionStates;
+        var newVersion = versions.Last();
         var singleBackupQuotaGb = new Quota(_services.StorageSettings.SingleBackupQuotaGb * 1024 * 1024 * 1024);
-        foreach (var sourceItemChange in versionState.SourceItemChanges)
+        foreach (var sourceItemChange in newVersion.SourceItemChanges)
         {
             var itemsToCopy = new List<StorageFile>();
             itemsToCopy.AddRange(sourceItemChange.UpdatedFiles);
@@ -45,10 +46,7 @@ internal class WriteSourceFilesToStorageTask(
             var copyTasks = itemsToCopy
                 .Select(x =>
                 {
-                    var sourceItemRelativeFileName = SourceItemHelper.GetSourceItemRelativeFileName(sourceItemDir, x.FileState);
-                    string storageRelativeFileName = GetStorageRelativeFileName(versionState);
-
-                    x.StorageRelativeFileName = storageRelativeFileName;
+                    x.StorageRelativeFileName = SourceItemHelper.GetCompressedStorageRelativeFileName(newVersion);
                     x.StorageMethod = StorageMethodNames.Aes256Encrypted;
                     return x;
                 })
@@ -59,7 +57,7 @@ internal class WriteSourceFilesToStorageTask(
                     [.. x],
                     singleBackupQuotaGb,
                     sourceItemChange.SourceItem,
-                    versionStates,
+                    versions,
                     x.ToList().First().FileState.FileName,
                     null,
                     true))
@@ -78,13 +76,13 @@ internal class WriteSourceFilesToStorageTask(
             .Select(x => x.FileState.FileName)
             .ToList();
 
-        foreach (var sourceItemChange in versionState.SourceItemChanges)
+        foreach (var sourceItemChange in newVersion.SourceItemChanges)
         {
             sourceItemChange.UpdatedFiles.RemoveAll(x => skippedFiles.Contains(x.FileState.FileName));
             sourceItemChange.CreatedFiles.RemoveAll(x => skippedFiles.Contains(x.FileState.FileName));
         }
 
-        foreach (var lastSourceItemState in _getIncrementedVersionTask.IncrementalBackupState.LastSourceItemStates)
+        foreach (var lastSourceItemState in state.LastSourceItemStates)
         {
             var updatedArray = lastSourceItemState.FileStates.Where(x => !skippedFiles.Contains(x.FileName)).ToList();
             lastSourceItemState.FileStates = updatedArray;
@@ -101,10 +99,5 @@ internal class WriteSourceFilesToStorageTask(
             var gigabyte = 1024 * 1024 * 1024;
             _services.CommonServices.LastMinuteMessageService.AddLastMinuteLogMessage(string.Format(BUtil.Core.Localization.Resources.Task_Status_PartialDueToQuota, skippedBecauseOfQuotaFiles.Count, skippedBecauseOfQuotaFiles.Sum(x => x.FileState.Size) / gigabyte));
         }
-    }
-
-    private static string GetStorageRelativeFileName(VersionState versionState)
-    {
-        return SourceItemHelper.GetCompressedStorageRelativeFileName(versionState);
     }
 }
