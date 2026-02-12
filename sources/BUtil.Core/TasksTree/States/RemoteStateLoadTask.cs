@@ -1,5 +1,6 @@
 ﻿
 using BUtil.Core.Events;
+using BUtil.Core.Misc;
 using BUtil.Core.Services;
 using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;
@@ -12,6 +13,12 @@ internal class RemoteStateLoadTask(StorageSpecificServicesIoc services, TaskEven
     private readonly string _password = password;
 
     public IncrementalBackupState? StorageState { get; private set; }
+    public IncrementalBackupState GetSuccessResult()
+    {
+        this.EnsureSuccess();
+
+        return StorageState.EnsureNotNull();
+    }
 
     protected override void ExecuteInternal()
     {

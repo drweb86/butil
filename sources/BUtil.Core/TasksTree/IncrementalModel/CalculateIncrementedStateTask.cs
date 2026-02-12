@@ -5,6 +5,7 @@ using BUtil.Core.Misc;
 using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.IncrementalModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -13,8 +14,8 @@ namespace BUtil.Core.TasksTree;
 internal class CalculateIncrementedStateTask(
     ILog log,
     TaskEvents events,
-    RemoteStateLoadTask remoteStateLoadTask,
-    IEnumerable<GetStateOfSourceItemTask> getSourceItemStateTasks) : BuTaskV2(log, events, BUtil.Core.Localization.Resources.IncrementalBackup_Version_Calculate)
+    Func<IncrementalBackupState> getRemoteState,
+    Func<IEnumerable<SourceItemState>> getLocalStates) : BuTaskV2(log, events, BUtil.Core.Localization.Resources.IncrementalBackup_Version_Calculate)
 {
     public (bool versionIsNeeded, IncrementalBackupState updatedState) GetSuccessResult()
     {
@@ -27,14 +28,9 @@ internal class CalculateIncrementedStateTask(
 
     protected override void ExecuteInternal()
     {
-        var remoteState = remoteStateLoadTask
-            .EnsureSuccess()
-            .StorageState
-            .EnsureNotNull();
+        var remoteState = getRemoteState();
         
-        var localStates = getSourceItemStateTasks
-            .Select(x => x.EnsureSuccess().SourceItemState.EnsureNotNull())
-            .ToList();
+        var localStates = getLocalStates();
 
         var newVersion = SourceItemStateComparer.Compare(remoteState.LastSourceItemStates, localStates);
 
