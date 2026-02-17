@@ -1,5 +1,4 @@
-﻿# 2026.02.09
-(unreleased)
+﻿# 2026.02.17
 
 ## New Features
 - Ubuntu: scheduling cron support
@@ -10,7 +9,8 @@ so user might setup connect to VPN, disconnect to VPN with routing via VPN
 for particular server only.
 
 ## Changes
-- Scripts for connect/disconnect are collapsed by default
+- Scripts for connect/disconnect are collapsed by default.
+- Some libraries were updated.
 
 ## Bug Fixes
 - Scheduler: .0 is added on chaing date and time.
