@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Reflection;
 
@@ -8,6 +8,8 @@ public class StorageHelper
 {
     public static void WriteTest(IStorage storage)
     {
+        ArgumentNullException.ThrowIfNull(storage);
+
         var folder = "BUtil check " + Guid.NewGuid().ToString();
         var file = Path.Combine(folder, Guid.NewGuid().ToString());
         storage.Upload(Assembly.GetExecutingAssembly().Location, file);

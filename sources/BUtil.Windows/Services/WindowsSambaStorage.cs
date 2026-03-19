@@ -1,10 +1,9 @@
-﻿using BUtil.Core;
+using BUtil.Core;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Storages;
 using BUtil.Windows.Utils;
-using System.Security;
 
 namespace BUtil.Windows.Services;
 
@@ -22,11 +21,13 @@ class WindowsSambaStorage : StorageBase<SambaStorageSettingsV2>
     }
 
     private readonly object _uploadLock = new();
+    private bool _isDisposed;
+
     public override IStorageUploadResult Upload(string sourceFile, string relativeFileName)
     {
         lock (_uploadLock) // because we're limited by upload speed and Samba has limit of 6 parallel uploads usually
         {
-            var destinationFile = Path.Combine(Settings.Url, relativeFileName);
+            var destinationFile = StoragePathSecurity.ResolveRelativePathInsideRoot(Settings.Url, relativeFileName, allowEmpty: false, nameof(relativeFileName));
             Log.WriteLine(LoggingEvent.Debug, $"Copying \"{sourceFile}\" to \"{destinationFile}\"");
 
             var destinationDirectory = Path.GetDirectoryName(destinationFile) ?? string.Empty;
@@ -45,9 +46,7 @@ class WindowsSambaStorage : StorageBase<SambaStorageSettingsV2>
 
     public override void DeleteFolder(string relativeFolderName)
     {
-        var fullPathName = string.IsNullOrWhiteSpace(relativeFolderName)
-            ? Settings.Url
-            : Path.Combine(Settings.Url, relativeFolderName);
+        var fullPathName = StoragePathSecurity.ResolveRelativePathInsideRoot(Settings.Url, relativeFolderName, allowEmpty: true, nameof(relativeFolderName));
 
         if (Directory.Exists(fullPathName))
             Directory.Delete(fullPathName, true);
@@ -55,12 +54,10 @@ class WindowsSambaStorage : StorageBase<SambaStorageSettingsV2>
 
     public override string[] GetFolders(string relativeFolderName, string? mask = null)
     {
-        var fullPathName = string.IsNullOrWhiteSpace(relativeFolderName)
-            ? Settings.Url
-            : Path.Combine(Settings.Url, relativeFolderName);
+        var fullPathName = StoragePathSecurity.ResolveRelativePathInsideRoot(Settings.Url, relativeFolderName, allowEmpty: true, nameof(relativeFolderName));
 
         return Directory
-            .GetDirectories(fullPathName, mask ?? "*.*")
+            .GetDirectories(fullPathName, mask ?? "*")
             .Select(x => x[fullPathName.Length..])
             .Select(x => x.Trim(['\\', '/']))
             .ToArray();
@@ -115,14 +112,14 @@ class WindowsSambaStorage : StorageBase<SambaStorageSettingsV2>
 
     public override bool Exists(string relativeFileName)
     {
-        var fullPathName = Path.Combine(Settings.Url, relativeFileName);
+        var fullPathName = StoragePathSecurity.ResolveRelativePathInsideRoot(Settings.Url, relativeFileName, allowEmpty: false, nameof(relativeFileName));
 
         return File.Exists(fullPathName);
     }
 
     public override void Delete(string relativeFileName)
     {
-        var fullPathName = Path.Combine(Settings.Url, relativeFileName);
+        var fullPathName = StoragePathSecurity.ResolveRelativePathInsideRoot(Settings.Url, relativeFileName, allowEmpty: false, nameof(relativeFileName));
 
         if (File.Exists(fullPathName))
             File.Delete(fullPathName);
@@ -132,7 +129,7 @@ class WindowsSambaStorage : StorageBase<SambaStorageSettingsV2>
     {
         lock (_uploadLock) // because we're limited by upload speed and Samba has limit of 6 parallel uploads usually
         {
-            var file = Path.Combine(Settings.Url, relativeFileName);
+            var file = StoragePathSecurity.ResolveRelativePathInsideRoot(Settings.Url, relativeFileName, allowEmpty: false, nameof(relativeFileName));
             Copy(file, targetFileName);
         }
     }
@@ -140,34 +137,46 @@ class WindowsSambaStorage : StorageBase<SambaStorageSettingsV2>
     public static void Copy(string inputFile, string outputFilePath)
     {
         int bufferSize = 16 * 1024 * 1024;
+        var temporaryFilePath = outputFilePath + ".tmp." + Guid.NewGuid().ToString("N");
 
-        using var inputFileStream = new FileStream(inputFile, FileMode.Open, FileAccess.Read, FileShare.ReadWrite, bufferSize);
-        using var outputFileStream = new FileStream(outputFilePath, FileMode.OpenOrCreate, FileAccess.Write, FileShare.None, bufferSize);
-        outputFileStream.SetLength(inputFileStream.Length);
-        int bytesRead = -1;
-        byte[] bytes = new byte[bufferSize];
-
-        while ((bytesRead = inputFileStream.Read(bytes, 0, bufferSize)) > 0)
+        try
         {
-            outputFileStream.Write(bytes, 0, bytesRead);
+            using var inputFileStream = new FileStream(inputFile, FileMode.Open, FileAccess.Read, FileShare.ReadWrite, bufferSize);
+            using var outputFileStream = new FileStream(temporaryFilePath, FileMode.Create, FileAccess.Write, FileShare.None, bufferSize);
+            outputFileStream.SetLength(inputFileStream.Length);
+            int bytesRead = -1;
+            byte[] bytes = new byte[bufferSize];
+
+            while ((bytesRead = inputFileStream.Read(bytes, 0, bufferSize)) > 0)
+            {
+                outputFileStream.Write(bytes, 0, bytesRead);
+            }
+
+            outputFileStream.Flush(true);
+
+            File.Move(temporaryFilePath, outputFilePath, true);
+        }
+        catch (IOException)
+        {
+            try
+            {
+                if (File.Exists(temporaryFilePath))
+                    File.Delete(temporaryFilePath);
+            }
+            catch
+            {
+                // ignored: this copy helper has no logger and should preserve original exception
+            }
+            throw;
         }
     }
 
     public override string[] GetFiles(string? relativeFolderName = null, SearchOption option = SearchOption.TopDirectoryOnly)
     {
-        // add security.
-        var actualFolder = relativeFolderName == null ?
-            Settings.Url :
-            Path.Combine(Settings.Url, relativeFolderName);
-
-        if (relativeFolderName != null)
-        {
-            if (relativeFolderName.Contains(".."))
-                throw new SecurityException(nameof(relativeFolderName));
-        }
+        var actualFolder = StoragePathSecurity.ResolveRelativePathInsideRoot(Settings.Url, relativeFolderName, allowEmpty: true, nameof(relativeFolderName));
 
         return Directory
-            .GetFiles(actualFolder, "*.*", option)
+            .GetFiles(actualFolder, "*", option)
             .Select(x => x[actualFolder.Length..])
             .Select(x => x.Trim(['\\', '/']))
             .ToArray();
@@ -175,19 +184,23 @@ class WindowsSambaStorage : StorageBase<SambaStorageSettingsV2>
 
     public override DateTime GetModifiedTime(string relativeFileName)
     {
-        var actualFile = Path.Combine(Settings.Url, relativeFileName);
+        var actualFile = StoragePathSecurity.ResolveRelativePathInsideRoot(Settings.Url, relativeFileName, allowEmpty: false, nameof(relativeFileName));
         return File.GetLastWriteTime(actualFile);
     }
 
     public override void Dispose()
     {
+        if (_isDisposed)
+            return;
+
         Unmount();
+        _isDisposed = true;
     }
 
     public override void Move(string fromRelativeFileName, string toRelativeFileName)
     {
-        var from = Path.Combine(Settings.Url, fromRelativeFileName);
-        var to = Path.Combine(Settings.Url, toRelativeFileName);
+        var from = StoragePathSecurity.ResolveRelativePathInsideRoot(Settings.Url, fromRelativeFileName, allowEmpty: false, nameof(fromRelativeFileName));
+        var to = StoragePathSecurity.ResolveRelativePathInsideRoot(Settings.Url, toRelativeFileName, allowEmpty: false, nameof(toRelativeFileName));
 
         var destinationDirectory = Path.GetDirectoryName(to) ?? string.Empty;
         if (!Directory.Exists(destinationDirectory))

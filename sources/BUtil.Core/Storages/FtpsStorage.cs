@@ -1,4 +1,4 @@
-﻿
+
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Logs;
@@ -44,7 +44,7 @@ class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
             var remotePath = GetRemoteNotNullablePath(relativeFileName);
             var status = _client.UploadFile(sourceFile, remotePath, FtpRemoteExists.Overwrite, true);
             if (status != FtpStatus.Success)
-                throw new Exception("Failed to upload.");
+                throw new IOException($"Failed to upload FTPS file \"{sourceFile}\" to \"{remotePath}\". Status: {status}");
 
             return new IStorageUploadResult
             {
@@ -183,7 +183,7 @@ class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
         var status = _client.DownloadFile(targetFileName, remotePath);
         if (status != FtpStatus.Success)
         {
-            throw new Exception();
+            throw new IOException($"Failed to download FTPS file \"{remotePath}\" to \"{targetFileName}\". Status: {status}");
         }
     }
 
@@ -194,7 +194,7 @@ class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
         {
             throw new ArgumentNullException(nameof(relativePath));
         }
-        return normalizedRelativePath == null ? _normalizedFolder : string.IsNullOrWhiteSpace(_normalizedFolder) ? normalizedRelativePath : Path.Combine(_normalizedFolder, normalizedRelativePath);
+        return normalizedRelativePath == null ? _normalizedFolder : string.IsNullOrWhiteSpace(_normalizedFolder) ? normalizedRelativePath : FileHelper.Combine('/', _normalizedFolder, normalizedRelativePath);
     }
 
     private string GetRemoteNotNullablePath(string relativePath)
@@ -204,7 +204,7 @@ class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
             throw new ArgumentNullException(nameof(relativePath));
         return string.IsNullOrWhiteSpace(this._normalizedFolder)
             ? normalizedRelativePath
-            : Path.Combine(this._normalizedFolder, normalizedRelativePath);
+            : FileHelper.Combine('/', this._normalizedFolder, normalizedRelativePath);
     }
 
     public override string[] GetFiles(string? relativeFolderName = null, SearchOption option = SearchOption.TopDirectoryOnly)
@@ -241,10 +241,10 @@ class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
         var toRemotePath = GetRemoteNotNullablePath(toRelativeFileName);
 
         var dir = Path.GetDirectoryName(toRemotePath);
-        if (!_client.DirectoryExists(dir))
+        if (!string.IsNullOrWhiteSpace(dir) && !_client.DirectoryExists(dir))
             _client.CreateDirectory(dir);
 
         if (!_client.MoveFile(fromRemotePath, toRemotePath))
-            throw new Exception();
+            throw new IOException($"Failed to move FTPS file from \"{fromRemotePath}\" to \"{toRemotePath}\".");
     }
 }

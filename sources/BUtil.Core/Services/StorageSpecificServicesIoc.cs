@@ -1,4 +1,4 @@
-﻿using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.State;
 using BUtil.Core.Storages;
 using System;
@@ -18,6 +18,7 @@ public class StorageSpecificServicesIoc : IDisposable
 
     private readonly Lazy<ApplicationStorageService> _incrementalBackupFileService;
     public ApplicationStorageService ApplicationStorageService { get { return _incrementalBackupFileService.Value; } }
+    private bool _isDisposed;
 
     public StorageSpecificServicesIoc(CommonServicesIoc commonServices, IStorageSettingsV2 storageSettings, bool autodetectConnectionSettings = false)
     {
@@ -32,7 +33,12 @@ public class StorageSpecificServicesIoc : IDisposable
     public void Dispose()
 #pragma warning restore CA1816 // Dispose methods should call SuppressFinalize
     {
+        if (_isDisposed)
+            return;
+
         if (_storage.IsValueCreated)
             _storage.Value.Dispose();
+
+        _isDisposed = true;
     }
 }

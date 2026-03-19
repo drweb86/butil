@@ -1,4 +1,4 @@
-﻿
+
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Logs;
@@ -77,12 +77,7 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
     public override void DeleteFolder(string relativeFolderName)
     {
         var remotePath = GetRemoteNotNullablePath(relativeFolderName);
-
-        var files = GetFiles(relativeFolderName, SearchOption.AllDirectories);
-        foreach (var file in files)
-            Delete(file);
-
-        _client.DeleteDirectory(remotePath);
+        DeleteDirectoryRecursive(remotePath);
     }
 
 
@@ -177,8 +172,7 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
     private void CreateDirectory(string relativeFileName)
     {
         var remotePath = GetRemoteNotNullablePath(relativeFileName);
-        if (!_client.Exists(remotePath))
-            _client.CreateDirectory(remotePath);
+        EnsureDirectoryExistsRecursive(remotePath);
     }
 
     public override void Delete(string relativeFileName)
@@ -190,8 +184,24 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
     public override void Download(string relativeFileName, string targetFileName)
     {
         var remotePath = GetRemoteNotNullablePath(relativeFileName);
-        using var outputStream = File.OpenWrite(targetFileName);
-        _client.DownloadFile(remotePath, outputStream);
+        var targetFolder = Path.GetDirectoryName(targetFileName);
+        if (!string.IsNullOrWhiteSpace(targetFolder))
+            Directory.CreateDirectory(targetFolder);
+
+        var temporaryFilePath = targetFileName + ".tmp." + Guid.NewGuid().ToString("N");
+        try
+        {
+            using var outputStream = new FileStream(temporaryFilePath, FileMode.Create, FileAccess.Write, FileShare.None);
+            _client.DownloadFile(remotePath, outputStream);
+            outputStream.Flush(true);
+            File.Move(temporaryFilePath, targetFileName, true);
+        }
+        catch
+        {
+            if (File.Exists(temporaryFilePath))
+                File.Delete(temporaryFilePath);
+            throw;
+        }
     }
 
     private string? GetRemotePath(string? relativePath, bool allowNull)
@@ -271,6 +281,44 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
         return _client.GetLastWriteTimeUtc(remotePath);
     }
 
+    private void EnsureDirectoryExistsRecursive(string remotePath)
+    {
+        if (_client.Exists(remotePath))
+            return;
+
+        var parts = remotePath
+            .Split('/', StringSplitOptions.RemoveEmptyEntries)
+            .ToArray();
+        var current = remotePath.StartsWith('/') ? "/" : string.Empty;
+
+        foreach (var part in parts)
+        {
+            current = current == "/" ? "/" + part : string.IsNullOrWhiteSpace(current) ? part : current + "/" + part;
+            if (!_client.Exists(current))
+                _client.CreateDirectory(current);
+        }
+    }
+
+    private void DeleteDirectoryRecursive(string remotePath)
+    {
+        foreach (var entry in _client.ListDirectory(remotePath))
+        {
+            if (entry.Name == "." || entry.Name == "..")
+                continue;
+
+            if (entry.IsDirectory)
+            {
+                DeleteDirectoryRecursive(entry.FullName);
+            }
+            else
+            {
+                _client.DeleteFile(entry.FullName);
+            }
+        }
+
+        _client.DeleteDirectory(remotePath);
+    }
+
     public override void Dispose()
     {
         Unmount();
@@ -281,8 +329,8 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
         var fromRemotePath = GetRemoteNotNullablePath(fromRelativeFileName);
         var toRemotePath = GetRemoteNotNullablePath(toRelativeFileName);
 
-        var dir = Path.GetDirectoryName(toRemotePath)!;
-        if (!_client.Exists(dir))
+        var dir = Path.GetDirectoryName(toRemotePath);
+        if (!string.IsNullOrWhiteSpace(dir) && !_client.Exists(dir))
             _client.CreateDirectory(dir);
 
         _client.RenameFile(fromRemotePath, toRemotePath);

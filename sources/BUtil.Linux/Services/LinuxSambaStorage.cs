@@ -1,4 +1,4 @@
-﻿using BUtil.Core;
+using BUtil.Core;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
@@ -35,10 +35,13 @@ class LinuxSambaStorage : StorageBase<SambaStorageSettingsV2>
         var uri = new Uri(Settings.Url);
         var host = uri.Host;
         var path = uri.AbsolutePath;
-        var share = path.Split('/', '\\', StringSplitOptions.RemoveEmptyEntries)[0];
+        var pathSegments = path.Split('/', '\\', StringSplitOptions.RemoveEmptyEntries);
+        if (pathSegments.Length == 0)
+            throw new InvalidDataException(BUtil.Core.Localization.Resources.Url_Field_Validation);
+        var share = pathSegments[0];
         var folderAtShare = string.Join(
             "/",
-            path.Split('/', '\\', StringSplitOptions.RemoveEmptyEntries)
+            pathSegments
                 .Skip(1)
                 .ToArray());
 

@@ -1,4 +1,4 @@
-﻿using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using System;
@@ -9,6 +9,9 @@ public class StorageFactory
 {
     public static IStorage Create(ILog log, IStorageSettingsV2 storageSettings, bool autodetectConnectionSettings, int? triesCount = null)
     {
+        if (storageSettings == null)
+            throw new ArgumentNullException(nameof(storageSettings));
+
         if (storageSettings is FolderStorageSettingsV2 folder)
             return new FailoverStorageWrapper(log, new FolderStorage(log, folder), triesCount);
         else if (storageSettings is SambaStorageSettingsV2 samba)

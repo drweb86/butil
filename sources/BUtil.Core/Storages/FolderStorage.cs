@@ -1,4 +1,4 @@
-﻿
+
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Logs;
@@ -8,7 +8,6 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
-using System.Security;
 
 namespace BUtil.Core.Storages;
 
@@ -24,11 +23,13 @@ public class FolderStorage : StorageBase<FolderStorageSettingsV2>
     }
 
     private readonly object _uploadLock = new();
+    private bool _isDisposed;
+
     public override IStorageUploadResult Upload(string sourceFile, string relativeFileName)
     {
         lock (_uploadLock) // because we're limited by upload speed and Samba has limit of 6 parallel uploads usually
         {
-            var destinationFile = Path.Combine(Settings.DestinationFolder, relativeFileName);
+            var destinationFile = StoragePathSecurity.ResolveRelativePathInsideRoot(Settings.DestinationFolder, relativeFileName, allowEmpty: false, nameof(relativeFileName));
 
             Log.WriteLine(LoggingEvent.Debug, $"Copying \"{sourceFile}\" to \"{destinationFile}\"");
 
@@ -79,14 +80,14 @@ public class FolderStorage : StorageBase<FolderStorageSettingsV2>
 
     public override bool Exists(string relativeFileName)
     {
-        var fullPathName = Path.Combine(Settings.DestinationFolder, relativeFileName);
+        var fullPathName = StoragePathSecurity.ResolveRelativePathInsideRoot(Settings.DestinationFolder, relativeFileName, allowEmpty: false, nameof(relativeFileName));
 
         return File.Exists(fullPathName);
     }
 
     public override void Delete(string relativeFileName)
     {
-        var fullPathName = Path.Combine(Settings.DestinationFolder, relativeFileName);
+        var fullPathName = StoragePathSecurity.ResolveRelativePathInsideRoot(Settings.DestinationFolder, relativeFileName, allowEmpty: false, nameof(relativeFileName));
 
         if (File.Exists(fullPathName))
             File.Delete(fullPathName);
@@ -94,9 +95,7 @@ public class FolderStorage : StorageBase<FolderStorageSettingsV2>
 
     public override void DeleteFolder(string relativeFolderName)
     {
-        var fullPathName = string.IsNullOrWhiteSpace(relativeFolderName)
-            ? Settings.DestinationFolder
-            : Path.Combine(Settings.DestinationFolder, relativeFolderName);
+        var fullPathName = StoragePathSecurity.ResolveRelativePathInsideRoot(Settings.DestinationFolder, relativeFolderName, allowEmpty: true, nameof(relativeFolderName));
 
         if (Directory.Exists(fullPathName))
             Directory.Delete(fullPathName, true);
@@ -104,12 +103,10 @@ public class FolderStorage : StorageBase<FolderStorageSettingsV2>
 
     public override string[] GetFolders(string relativeFolderName, string? mask = null)
     {
-        var fullPathName = string.IsNullOrWhiteSpace(relativeFolderName)
-            ? Settings.DestinationFolder
-            : Path.Combine(Settings.DestinationFolder, relativeFolderName);
+        var fullPathName = StoragePathSecurity.ResolveRelativePathInsideRoot(Settings.DestinationFolder, relativeFolderName, allowEmpty: true, nameof(relativeFolderName));
 
         return Directory
-            .GetDirectories(fullPathName, mask ?? "*.*")
+            .GetDirectories(fullPathName, mask ?? "*")
             .Select(x => x[fullPathName.Length..])
             .Select(x => x.Trim(['\\', '/']))
             .ToArray();
@@ -117,18 +114,19 @@ public class FolderStorage : StorageBase<FolderStorageSettingsV2>
 
     public override void Download(string relativeFileName, string targetFileName)
     {
-        var file = Path.Combine(Settings.DestinationFolder, relativeFileName);
+        var file = StoragePathSecurity.ResolveRelativePathInsideRoot(Settings.DestinationFolder, relativeFileName, allowEmpty: false, nameof(relativeFileName));
         Copy(file, targetFileName);
     }
 
     public void Copy(string inputFile, string outputFilePath)
     {
         int bufferSize = 16 * 1024 * 1024;
+        var temporaryFilePath = outputFilePath + ".tmp." + Guid.NewGuid().ToString("N");
 
         try
         {
             using var inputFileStream = new FileStream(inputFile, FileMode.Open, FileAccess.Read, FileShare.ReadWrite, bufferSize);
-            using var outputFileStream = new FileStream(outputFilePath, FileMode.OpenOrCreate, FileAccess.Write, FileShare.None, bufferSize);
+            using var outputFileStream = new FileStream(temporaryFilePath, FileMode.Create, FileAccess.Write, FileShare.None, bufferSize);
             outputFileStream.SetLength(inputFileStream.Length);
             int bytesRead = -1;
             byte[] bytes = new byte[bufferSize];
@@ -137,33 +135,33 @@ public class FolderStorage : StorageBase<FolderStorageSettingsV2>
             {
                 outputFileStream.Write(bytes, 0, bytesRead);
             }
+
+            outputFileStream.Flush(true);
+
+            File.Move(temporaryFilePath, outputFilePath, true);
         }
         catch(IOException e)
         {
             Log.WriteLine(LoggingEvent.Error, ExceptionHelper.ToString(e));
             try
-            { 
-                File.Delete(outputFilePath);
+            {
+                if (File.Exists(temporaryFilePath))
+                    File.Delete(temporaryFilePath);
             }
-            catch { }
+            catch (Exception cleanupError)
+            {
+                Log.WriteLine(LoggingEvent.Error, $"Failed to cleanup partially copied file \"{temporaryFilePath}\": {cleanupError}");
+            }
             throw;
         }
     }
 
     public override string[] GetFiles(string? relativeFolderName = null, SearchOption option = SearchOption.TopDirectoryOnly)
     {
-        if (relativeFolderName != null)
-        {
-            if (relativeFolderName.Contains(".."))
-                throw new SecurityException(nameof(relativeFolderName));
-        }
-
-        var actualFolder = relativeFolderName == null ?
-            Settings.DestinationFolder :
-            Path.Combine(Settings.DestinationFolder, relativeFolderName);
+        var actualFolder = StoragePathSecurity.ResolveRelativePathInsideRoot(Settings.DestinationFolder, relativeFolderName, allowEmpty: true, nameof(relativeFolderName));
 
         return Directory
-            .GetFiles(actualFolder, "*.*", option)
+            .GetFiles(actualFolder, "*", option)
             .Select(x => x[actualFolder.Length..])
             .Select(x => x.Trim(['\\', '/']))
             .ToArray();
@@ -171,7 +169,7 @@ public class FolderStorage : StorageBase<FolderStorageSettingsV2>
 
     public override DateTime GetModifiedTime(string relativeFileName)
     {
-        var actualFile = Path.Combine(Settings.DestinationFolder, relativeFileName);
+        var actualFile = StoragePathSecurity.ResolveRelativePathInsideRoot(Settings.DestinationFolder, relativeFileName, allowEmpty: false, nameof(relativeFileName));
 
         return File.GetLastWriteTime(actualFile);
     }
@@ -180,13 +178,17 @@ public class FolderStorage : StorageBase<FolderStorageSettingsV2>
     public override void Dispose()
 #pragma warning restore CA1816 // Dispose methods should call SuppressFinalize
     {
+        if (_isDisposed)
+            return;
+
         Unmount();
+        _isDisposed = true;
     }
 
     public override void Move(string fromRelativeFileName, string toRelativeFileName)
     {
-        var fromPath = Path.Combine(Settings.DestinationFolder, fromRelativeFileName);
-        var toPath = Path.Combine(Settings.DestinationFolder, toRelativeFileName);
+        var fromPath = StoragePathSecurity.ResolveRelativePathInsideRoot(Settings.DestinationFolder, fromRelativeFileName, allowEmpty: false, nameof(fromRelativeFileName));
+        var toPath = StoragePathSecurity.ResolveRelativePathInsideRoot(Settings.DestinationFolder, toRelativeFileName, allowEmpty: false, nameof(toRelativeFileName));
 
         var destinationDirectory = Path.GetDirectoryName(toPath) ?? string.Empty;
         FileHelper.EnsureFolderCreated(destinationDirectory);
