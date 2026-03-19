@@ -1,4 +1,4 @@
-﻿using Avalonia.Media;
+using Avalonia.Media;
 using Avalonia.Threading;
 using BUtil.Core;
 using BUtil.Core.Events;
@@ -54,7 +54,15 @@ public class TaskExecuterViewModel : ObservableObject
 
         _log = new FileLog(logName);
         _log.Open();
-        _threadTask = createTask(_log, taskEvents, OnPopulateLastMinuteMessage);
+        try
+        {
+            _threadTask = createTask(_log, taskEvents, OnPopulateLastMinuteMessage);
+        }
+        catch
+        {
+            _log.Close(false);
+            throw;
+        }
 
 
         _threadTask

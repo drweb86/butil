@@ -1,4 +1,4 @@
-﻿
+
 using BUtil.Core.Localization;
 using BUtil.Core.Misc;
 using System;
@@ -14,15 +14,32 @@ public class FileLog : LogBase
     private readonly string _taskName;
     private StreamWriter? _logFile;
     private readonly DateTime _dateTime;
+    private readonly object _sync = new();
 
     public string LogFilename => _fileName;
 
     ~FileLog()
     {
-        if (_logFile != null)
+        var logFile = DetachLogFile();
+        if (logFile == null)
+            return;
+
+        try
         {
-            WriteLine(LoggingEvent.Error, "Memory leak " + new Exception().StackTrace);
-            Close(false);
+            WriteInFile(logFile, "Memory leak " + new Exception().StackTrace);
+        }
+        catch
+        {
+            // Never throw from finalizer thread.
+        }
+
+        try
+        {
+            Close(logFile, false);
+        }
+        catch
+        {
+            // Never throw from finalizer thread.
         }
     }
 
@@ -58,7 +75,10 @@ public class FileLog : LogBase
             File.WriteAllText(
                 _fileName,
                 @$"{_dateTime.ToString("f", CultureInfo.CurrentUICulture)} {LocalsHelper.ToString(Events.ProcessingStatus.FinishedSuccesfully)}{LocalsHelper.ToString(Events.ProcessingStatus.FinishedWithErrors)}{LocalsHelper.ToString(Events.ProcessingStatus.Skipped)}" + Environment.NewLine);
-            _logFile = File.AppendText(_fileName);
+            lock (_sync)
+            {
+                _logFile = File.AppendText(_fileName);
+            }
         }
         catch (Exception e)
         {
@@ -66,25 +86,51 @@ public class FileLog : LogBase
         }
     }
 
-    private void WriteInFile(string message)
+    private static void WriteInFile(StreamWriter logFile, string message)
     {
-        if (_logFile == null)
-            return;
+        lock (logFile)
+            logFile.WriteLine(message);
+    }
 
-        lock (_logFile)
-            _logFile.WriteLine(message);
+    private StreamWriter? GetCurrentLogFile()
+    {
+        lock (_sync)
+            return _logFile;
+    }
+
+    private StreamWriter? DetachLogFile()
+    {
+        lock (_sync)
+        {
+            var current = _logFile;
+            _logFile = null;
+            return current;
+        }
+    }
+
+    private string GetCurrentFileName()
+    {
+        lock (_sync)
+            return _fileName;
+    }
+
+    private void SetCurrentFileName(string fileName)
+    {
+        lock (_sync)
+            _fileName = fileName;
     }
 
     public override void WriteLine(LoggingEvent loggingEvent, string message)
     {
-        if (_logFile == null)
+        var logFile = GetCurrentLogFile();
+        if (logFile == null)
             return;
 
         string output = GetFormattedMessage(loggingEvent, message);
-        WriteInFile(output);
+        WriteInFile(logFile, output);
         if (loggingEvent == LoggingEvent.Error)
-            lock (_logFile)
-                _logFile.Flush();
+            lock (logFile)
+                logFile.Flush();
     }
 
     private static string GetFormattedMessage(LoggingEvent loggingEvent, string message)
@@ -102,26 +148,38 @@ public class FileLog : LogBase
 
     public override void Close(bool isSuccess)
     {
-        if (_logFile != null)
+        var logFile = DetachLogFile();
+        if (logFile == null)
+            return;
+
+        Close(logFile, isSuccess);
+
+#pragma warning disable CA1816 // Dispose methods should call SuppressFinalize
+        GC.SuppressFinalize(this);
+#pragma warning restore CA1816 // Dispose methods should call SuppressFinalize
+    }
+
+    private void Close(StreamWriter logFile, bool isSuccess)
+    {
+        try
         {
             if (isSuccess)
             {
                 //No any error or warning registered during backup!
-                WriteInFile(Resources.Task_Status_Succesfull);
+                WriteInFile(logFile, Resources.Task_Status_Succesfull);
             }
 
-            _logFile.Flush();
-            _logFile.Close();
+            logFile.Flush();
+            logFile.Close();
 
+            var oldFileName = GetCurrentFileName();
             var fileNameUpdated = GetFileName(isSuccess);
-            File.Move(_fileName, fileNameUpdated);
-            _fileName = fileNameUpdated;
-
-            _logFile = null;
-
-#pragma warning disable CA1816 // Dispose methods should call SuppressFinalize
-            GC.SuppressFinalize(this);
-#pragma warning restore CA1816 // Dispose methods should call SuppressFinalize
+            File.Move(oldFileName, fileNameUpdated);
+            SetCurrentFileName(fileNameUpdated);
+        }
+        catch (Exception e)
+        {
+            throw new LogException(ExceptionHelper.ToString(e), e);
         }
     }
 }

@@ -2,7 +2,7 @@
 (unpublished)
 
 ## Changes
-- Audit, code coverage with AI for storages, caching.
+- Audit, code coverage with AI for storages, caching, logging.
 
 # 2026.02.17
 
