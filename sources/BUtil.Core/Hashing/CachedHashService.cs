@@ -1,29 +1,28 @@
-﻿
+
 using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
+using System.IO;
+using System.Globalization;
 using System.Security.Cryptography;
-using System.Text;
 using System.Text.Json;
 
 namespace BUtil.Core.Hashing;
 
-internal class CachedHashService: ICachedHashService, IDisposable
+internal class CachedHashService : ICachedHashService
 {
-    private readonly List<CachedHash> _cachedHashes = [];
+    private readonly object _gate = new();
+    private readonly Dictionary<string, CachedHash> _cachedHashes = new(GetPathComparer());
     private bool _isLoaded = false;
 
-    public string GetSha512(string file, bool putIntoCache)
+    public string GetSha512(string file, bool trySpeedupNextTime)
     {
-        if (!putIntoCache)
+        if (!trySpeedupNextTime)
         {
             return GetSha512Internal(file);
         }
-
-        EnsureLoaded();
 
         return GetCreateOrUpdateCachedHash(file);
     }
@@ -31,45 +30,72 @@ internal class CachedHashService: ICachedHashService, IDisposable
     private string GetCreateOrUpdateCachedHash(string file)
     {
         var fileInfo = new FileInfo(file);
-        var cachedEntity = _cachedHashes.SingleOrDefault(x => x.File == fileInfo.FullName);
-        if (cachedEntity == null)
+        var fullName = fileInfo.FullName;
+        var utcNow = DateTime.UtcNow;
+        const int daysExpiration = 365;
+        var expiration = utcNow.AddDays(daysExpiration);
+        var size = fileInfo.Length;
+        var lastWriteTimeUtc = fileInfo.LastWriteTimeUtc;
+
+        lock (_gate)
         {
-            cachedEntity = new CachedHash
+            EnsureLoadedLocked();
+
+            if (!_cachedHashes.TryGetValue(fullName, out var cachedEntity))
             {
-                File = fileInfo.FullName,
-            };
-            _cachedHashes.Add(cachedEntity);
-        }
-        else
-        {
-            if (cachedEntity.Size != fileInfo.Length ||
-                cachedEntity.LastWriteTimeUtc != fileInfo.LastWriteTimeUtc)
+                cachedEntity = new CachedHash
+                {
+                    File = fullName,
+                };
+                _cachedHashes[fullName] = cachedEntity;
+            }
+            else if (cachedEntity.Size != size || cachedEntity.LastWriteTimeUtc != lastWriteTimeUtc)
             {
                 cachedEntity.Sha512 = string.Empty;
             }
-        }
-        const int daysExpiration = 365;
-        cachedEntity.Expiration = DateTime.UtcNow.AddDays(daysExpiration);
-        cachedEntity.Size = fileInfo.Length;
-        cachedEntity.LastWriteTimeUtc = fileInfo.LastWriteTimeUtc;
-        if (string.IsNullOrWhiteSpace(cachedEntity.Sha512))
-        {
-            cachedEntity.Sha512 = GetSha512Internal(file);
+
+            cachedEntity.Expiration = expiration;
+            cachedEntity.Size = size;
+            cachedEntity.LastWriteTimeUtc = lastWriteTimeUtc;
+
+            if (!string.IsNullOrWhiteSpace(cachedEntity.Sha512))
+            {
+                return cachedEntity.Sha512;
+            }
         }
 
-        return cachedEntity.Sha512;
+        var calculatedHash = GetSha512Internal(file);
+
+        lock (_gate)
+        {
+            // Keep metadata and value in sync for the version of file we just hashed.
+            if (!_cachedHashes.TryGetValue(fullName, out var cachedEntity))
+            {
+                cachedEntity = new CachedHash
+                {
+                    File = fullName,
+                };
+                _cachedHashes[fullName] = cachedEntity;
+            }
+
+            cachedEntity.Expiration = expiration;
+            cachedEntity.Size = size;
+            cachedEntity.LastWriteTimeUtc = lastWriteTimeUtc;
+            cachedEntity.Sha512 = calculatedHash;
+        }
+
+        return calculatedHash;
     }
 
-    private void EnsureLoaded()
+    private void EnsureLoadedLocked()
     {
         if (_isLoaded)
-            return;
-
-        if (!_isLoaded)
         {
-            Load();
-            _isLoaded = true;
+            return;
         }
+
+        LoadLocked();
+        _isLoaded = true;
     }
 
     private static string GetSha512Internal(string file)
@@ -83,14 +109,7 @@ internal class CachedHashService: ICachedHashService, IDisposable
 
     private static string HashToString(byte[] hash)
     {
-        var sBuilder = new StringBuilder();
-
-        for (int i = 0; i < hash.Length; i++)
-        {
-            sBuilder.Append(hash[i].ToString("x2"));
-        }
-
-        return sBuilder.ToString();
+        return Convert.ToHexString(hash).ToLower(CultureInfo.InvariantCulture);
     }
 
     public void Dispose()
@@ -98,7 +117,7 @@ internal class CachedHashService: ICachedHashService, IDisposable
         Save();
     }
 
-    private void Load()
+    private void LoadLocked()
     {
         try
         {
@@ -106,11 +125,29 @@ internal class CachedHashService: ICachedHashService, IDisposable
             if (!File.Exists(file))
                 return;
 
-            using var stream = new FileStream(file, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-            var items = JsonSerializer.Deserialize<List<CachedHash>>(stream) ?? new List<CachedHash>();
-            items.ForEach(_cachedHashes.Add);
+            using var stream = new FileStream(file, FileMode.Open, FileAccess.Read, FileShare.Read);
+            var items = JsonSerializer.Deserialize<List<CachedHash>>(stream) ?? [];
+            foreach (var item in items)
+            {
+                if (string.IsNullOrWhiteSpace(item.File))
+                {
+                    continue;
+                }
+
+                var fullPath = Path.GetFullPath(item.File);
+                item.File = fullPath;
+                _cachedHashes[fullPath] = item;
+            }
         }
-        catch (System.Text.Json.JsonException)
+        catch (JsonException)
+        {
+            // eating
+        }
+        catch (IOException)
+        {
+            // eating
+        }
+        catch (UnauthorizedAccessException)
         {
             // eating
         }
@@ -118,36 +155,55 @@ internal class CachedHashService: ICachedHashService, IDisposable
 
     private void Save()
     {
-        lock (this)
+        List<CachedHash> storeItems;
+        var file = GetFile();
+        var utcNow = DateTime.UtcNow;
+
+        lock (_gate)
         {
-            if (_cachedHashes == null)
-                return;
-
-            var file = GetFile();
-            var utcNow = DateTime.UtcNow;
-
-            var storeItems = _cachedHashes
-                .ToList()
+            storeItems = _cachedHashes
+                .Values
                 .Where(x => x.Expiration > utcNow)
                 .ToList();
+        }
 
-            try
+        try
+        {
+            var tempFile = $"{file}.tmp";
+            using (var stream = new FileStream(tempFile, FileMode.Create, FileAccess.Write, FileShare.None))
             {
-                using var stream = File.Open(file, FileMode.Create);
                 using var writer = new Utf8JsonWriter(stream, new JsonWriterOptions { Indented = true });
                 JsonSerializer.Serialize(writer, storeItems);
                 writer.Flush();
-                stream.Flush();
+                stream.Flush(true);
             }
-            catch (IOException)
+
+            if (File.Exists(file))
             {
-                // eating.
+                File.Replace(tempFile, file, null, true);
             }
+            else
+            {
+                File.Move(tempFile, file);
+            }
+        }
+        catch (IOException)
+        {
+            // eating.
+        }
+        catch (UnauthorizedAccessException)
+        {
+            // eating.
         }
     }
 
     private static string GetFile()
     {
-        return Path.Combine(Directories.StateFolder, $"sha512-cache.json");
+        return Path.Combine(Directories.StateFolder, "sha512-cache.json");
+    }
+
+    private static StringComparer GetPathComparer()
+    {
+        return OperatingSystem.IsWindows() ? StringComparer.OrdinalIgnoreCase : StringComparer.Ordinal;
     }
 }
