@@ -1,15 +1,13 @@
-﻿
-using BUtil.Core.Events;
+﻿using BUtil.Core.Events;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;
-using BUtil.Core.TasksTree.IncrementalModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BUtil.Core.TasksTree;
+namespace BUtil.Core.TasksTree.IncrementalModel;
 
 internal class CalculateIncrementedStateTask(
     ILog log,
@@ -35,9 +33,7 @@ internal class CalculateIncrementedStateTask(
         var newVersion = SourceItemStateComparer.Compare(remoteState.LastSourceItemStates, localStates);
 
         remoteState.VersionStates.Add(newVersion);
-        remoteState.LastSourceItemStates = localStates
-            .Select(x => x.ShallowClone())
-            .ToList();
+        remoteState.LastSourceItemStates = [.. localStates.Select(x => x.ShallowClone())];
 
         UpdatedState = remoteState;
         VersionIsNeeded = SourceItemStateComparer.IsNotEmpty(newVersion);

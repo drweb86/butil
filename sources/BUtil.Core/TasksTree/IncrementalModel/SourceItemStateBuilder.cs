@@ -79,8 +79,6 @@ class SourceItemStateBuilder
                 break;
         }
 
-        return (result ?? [])
-            .Select(x => x.FileState)
-            .ToList();
+        return [.. (result ?? []).Select(x => x.FileState)];
     }
 }

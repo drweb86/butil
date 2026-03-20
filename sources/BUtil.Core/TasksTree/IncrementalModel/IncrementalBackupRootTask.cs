@@ -28,7 +28,7 @@ class IncrementalBackupRootTask : SequentialBuTask
         var readSatesTask = new GetStateOfSourceItemsAndStoragesTask(Events, modelOptions.Items, _commonServicesIoc, _storageService, modelOptions.FileExcludePatterns, ((IncrementalBackupModelOptionsV2)backupTask.Model).Password);
         tasks.Add(readSatesTask);
 
-        tasks.Add(new WriteIncrementedVersionTask(_storageService, Events, readSatesTask.RemoteStateLoadTask, readSatesTask.GetSourceItemStateTasks, (IncrementalBackupModelOptionsV2)backupTask.Model));
+        tasks.Add(new WriteIncrementedVersionTask(_storageService, Events, readSatesTask.RemoteStateLoadTask.GetSuccessResult, readSatesTask.GetSourceItemStateTasks, (IncrementalBackupModelOptionsV2)backupTask.Model));
 
         Children = tasks;
     }

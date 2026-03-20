@@ -6,10 +6,11 @@ using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;
 using BUtil.Core.TasksTree.States;
 using BUtil.Core.TasksTree.Storage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BUtil.Core.TasksTree;
+namespace BUtil.Core.TasksTree.IncrementalModel;
 
 internal class WriteIncrementedVersionTask : SequentialBuTask
 {
@@ -18,14 +19,14 @@ internal class WriteIncrementedVersionTask : SequentialBuTask
     public WriteIncrementedVersionTask(
         StorageSpecificServicesIoc services,
         TaskEvents events,
-        RemoteStateLoadTask storageStateTask,
+        Func<IncrementalBackupState> getRemoteState,
         IEnumerable<GetStateOfSourceItemTask> getSourceItemStateTasks,
         IncrementalBackupModelOptionsV2 incrementalBackupModelOptions) :
         base(services.CommonServices.Log, events, Localization.Resources.IncrementalBackup_Version_Save)
     {
         var childTaks = new List<BuTask>();
 
-        var calculateIncrementedVersionForStorageTask = new CalculateIncrementedStateTask(Log, Events, storageStateTask.GetSuccessResult, () => GetLocalStates(getSourceItemStateTasks));
+        var calculateIncrementedVersionForStorageTask = new CalculateIncrementedStateTask(Log, Events, getRemoteState, () => GetLocalStates(getSourceItemStateTasks));
         childTaks.Add(calculateIncrementedVersionForStorageTask);
 
         _writeSourceFilesToStorageTask = new WriteSourceFilesToStorageTask(services, events, calculateIncrementedVersionForStorageTask.GetSuccessResult);
@@ -51,11 +52,9 @@ internal class WriteIncrementedVersionTask : SequentialBuTask
         Children = childTaks;
     }
 
-    private IEnumerable<SourceItemState> GetLocalStates(IEnumerable<GetStateOfSourceItemTask> getStateOfSourceItemTasks)
+    private static IEnumerable<SourceItemState> GetLocalStates(IEnumerable<GetStateOfSourceItemTask> getStateOfSourceItemTasks)
     {
-        return getStateOfSourceItemTasks
-            .Select(x => x.EnsureSuccess().SourceItemState.EnsureNotNull())
-            .ToList();
+        return [.. getStateOfSourceItemTasks.Select(x => x.EnsureSuccess().SourceItemState.EnsureNotNull())];
     }
 
     public override void Execute()

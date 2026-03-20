@@ -45,7 +45,7 @@ internal class SynchronizationAllStatesReadTask : SequentialBuTask
 
         if (model.TaskOptions.SynchronizationMode == ConfigurationFileModels.V2.SynchronizationTaskModelMode.TwoWay)
         {
-            var deleteUnversionedFilesStorageTask = new DataStorageMaintananceTask(synchronizationServices.StorageSpecificServices, Events, _remoteStateLoadTask, new ConfigurationFileModels.V2.IncrementalBackupModelOptionsV2 { Password = model.TaskOptions.Password });
+            var deleteUnversionedFilesStorageTask = new DataStorageMaintananceTask(synchronizationServices.StorageSpecificServices, Events, _remoteStateLoadTask.GetSuccessResult, new ConfigurationFileModels.V2.IncrementalBackupModelOptionsV2 { Password = model.TaskOptions.Password });
             tasks.Add(deleteUnversionedFilesStorageTask);
         }
 
@@ -62,7 +62,7 @@ internal class SynchronizationAllStatesReadTask : SequentialBuTask
             if (IsSuccess)
             {
                 _model.RemoteState = GetRemoteState();
-                _model.RemoteStorageState = GetRemoteStorageState();
+                _model.RemoteStorageState = _remoteStateLoadTask.GetSuccessResult();
 
                 var lastVersion = _model.RemoteStorageState.VersionStates
                     .OrderByDescending(x => x.BackupDateUtc)
@@ -97,15 +97,14 @@ internal class SynchronizationAllStatesReadTask : SequentialBuTask
         var state = _setStateOfSourceItemTask.SourceItemState ?? throw new InvalidOperationException("Source item state is corrupted (null)!");
         return new SynchronizationState()
         {
-            FileSystemEntries = state.FileStates
-                .Select(x => new SynchronizationStateFile(state.SourceItem, x))
-                .ToList(),
+            FileSystemEntries = [.. state.FileStates.Select(x => new SynchronizationStateFile(state.SourceItem, x))],
         };
     }
 
     private SynchronizationState GetLocalState()
     {
-        if (_remoteStateLoadTask.StorageState == null || _remoteStateLoadTask.StorageState.VersionStates.Count == 0)
+        var storageState = _remoteStateLoadTask.GetSuccessResult();
+        if (storageState.VersionStates.Count == 0)
         {
             LogDebug("Remote version state is missing => treating local state as empty to avoid data loss!");
 
@@ -126,19 +125,9 @@ internal class SynchronizationAllStatesReadTask : SequentialBuTask
         return _synchronizationLocalStateLoadTask.SynchronizationState;
     }
 
-    private IncrementalBackupState GetRemoteStorageState()
-    {
-        if (!_remoteStateLoadTask.IsSuccess)
-        {
-            throw new InvalidOperationException("Remote state population has failed!");
-        }
-
-        return _remoteStateLoadTask.StorageState!;
-    }
-
     private SynchronizationState GetRemoteState()
     {
-        var remoteState = GetRemoteStorageState();
+        var remoteState = _remoteStateLoadTask.GetSuccessResult();
 
         if (remoteState == null)
         {
@@ -154,9 +143,7 @@ internal class SynchronizationAllStatesReadTask : SequentialBuTask
         }
         return new SynchronizationState()
         {
-            FileSystemEntries = state.FileStates
-                .Select(x => new SynchronizationStateFile(state.SourceItem, x))
-                .ToList(),
+            FileSystemEntries = [.. state.FileStates.Select(x => new SynchronizationStateFile(state.SourceItem, x))],
         };
     }
 }

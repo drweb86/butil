@@ -34,9 +34,7 @@ class SourceItemStateComparer
                     addedSourceItem.SourceItem,
                     [],
                     [],
-                    addedSourceItem.FileStates
-                        .Select(x => new StorageFile(x))
-                        .ToList()
+                    [.. addedSourceItem.FileStates.Select(x => new StorageFile(x))]
                     );
                 sourceItemChangesList.Add(sourceItemChanges);
             }
@@ -83,8 +81,8 @@ class SourceItemStateComparer
         }
 
         return new SourceItemChanges(a.SourceItem,
-            deletedFiles.Select(x => x.FileName).ToList(),
-            updatedFiles.Select(x => new StorageFile(x)).ToList(),
-            createdFiles.Select(x => new StorageFile(x)).ToList());
+            [.. deletedFiles.Select(x => x.FileName)],
+            [.. updatedFiles.Select(x => new StorageFile(x))],
+            [.. createdFiles.Select(x => new StorageFile(x))]);
     }
 }

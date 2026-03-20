@@ -13,8 +13,8 @@ public class DeleteVersionUtil
         SourceItemChanges sourceItemChange,
         List<string> storageRelativeFileNames)
     {
-        storageRelativeFileNames.AddRange(sourceItemChange.UpdatedFiles.Select(x => x.StorageRelativeFileName).ToList());
-        storageRelativeFileNames.AddRange(sourceItemChange.CreatedFiles.Select(x => x.StorageRelativeFileName).ToList());
+        storageRelativeFileNames.AddRange([.. sourceItemChange.UpdatedFiles.Select(x => x.StorageRelativeFileName)]);
+        storageRelativeFileNames.AddRange([.. sourceItemChange.CreatedFiles.Select(x => x.StorageRelativeFileName)]);
     }
 
     public static void DeleteVersion(IncrementalBackupState state, VersionState versionToDelete,
@@ -58,18 +58,15 @@ public class DeleteVersionUtil
             });
 
             // distinct
-            filesToMove = filesToMove.GroupBy(p => p.StorageRelativeFileName)
-              .Select(g => g.First())
-              .ToList();
+            filesToMove = [.. filesToMove.GroupBy(p => p.StorageRelativeFileName).Select(g => g.First())];
 
             // see only files located in version folder
             var moveDictionary = new Dictionary<string, Tuple<StorageFile, string>>();
             var versionFolder = SourceItemHelper.GetVersionFolder(versionToDelete.BackupDateUtc);
             var newVersionFolder = SourceItemHelper.GetVersionFolder(toVersion.BackupDateUtc);
-            filesToMove = filesToMove
+            filesToMove = [.. filesToMove
                 .Where(x => !storageRelativeFileNamesToDeleteList.Contains(x.StorageRelativeFileName))
-                .Where(x => x.StorageRelativeFileName.StartsWith(versionFolder))
-                .ToList();
+                .Where(x => x.StorageRelativeFileName.StartsWith(versionFolder))];
             foreach (var fileToMove in filesToMove)
             {
                 var newPath = fileToMove.StorageRelativeFileName.Replace(versionFolder, newVersionFolder);

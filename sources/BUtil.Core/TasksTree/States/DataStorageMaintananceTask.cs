@@ -13,12 +13,11 @@ namespace BUtil.Core.TasksTree.States;
 
 internal class DataStorageMaintananceTask(
     StorageSpecificServicesIoc services,
-    TaskEvents events, 
-    RemoteStateLoadTask getStateOfStorageTask,
+    TaskEvents events,
+    Func<IncrementalBackupState> getRemoteState,
     IncrementalBackupModelOptionsV2 incrementalBackupModelOptionsV2) : BuTaskV2(services.CommonServices.Log, events, Localization.Resources.DataStorage_Maintenance)
 {
     public StorageSpecificServicesIoc _services = services;
-    private readonly RemoteStateLoadTask _getStateOfStorageTask = getStateOfStorageTask;
     private readonly IncrementalBackupModelOptionsV2 _incrementalBackupModelOptionsV2 = incrementalBackupModelOptionsV2;
     public IStorageSettingsV2 StorageSettings { get; } = services.StorageSettings;
 
@@ -30,7 +29,8 @@ internal class DataStorageMaintananceTask(
     private void DeleteIncompletedStateVersions()
     {
         LogDebug("Delete incompleted state versions...");
-        var allowedFolders = (_getStateOfStorageTask.StorageState ?? throw new Exception())
+        var remoteState = getRemoteState();
+        var allowedFolders = remoteState
                   .VersionStates
                   .Select(x => SourceItemHelper.GetVersionFolder(x.BackupDateUtc));
 
