@@ -7,15 +7,15 @@ using BUtil.Core.Misc;
 using BUtil.Core.State;
 using BUtil.Core.Synchronization;
 using BUtil.Core.TasksTree.Core;
+using BUtil.Core.TasksTree.IncrementalModel;
 using BUtil.Core.TasksTree.Storage;
-using BUtil.Core.TasksTree.Synchronization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
 
-namespace BUtil.Core.TasksTree.IncrementalModel;
+namespace BUtil.Core.TasksTree.Synchronization;
 
 class SynchronizationRootTask : SequentialBuTask
 {
@@ -91,9 +91,7 @@ class SynchronizationRootTask : SequentialBuTask
         var state = task.SourceItemState ?? throw new InvalidOperationException("Source item state is corrupted (null)!");
         return new SynchronizationState()
         {
-            FileSystemEntries = state.FileStates
-                .Select(x => new SynchronizationStateFile(state.SourceItem, x))
-                .ToList(),
+            FileSystemEntries = [.. state.FileStates.Select(x => new SynchronizationStateFile(state.SourceItem, x))],
         };
     }
 
@@ -102,9 +100,7 @@ class SynchronizationRootTask : SequentialBuTask
         var state = _model.RemoteStorageState.LastSourceItemStates.Single(x => SynchronizationHelper.IsSynchronizationSourceItem(x.SourceItem));
         return new SynchronizationState()
         {
-            FileSystemEntries = state.FileStates
-                .Select(x => new SynchronizationStateFile(state.SourceItem, x))
-                .ToList(),
+            FileSystemEntries = [.. state.FileStates.Select(x => new SynchronizationStateFile(state.SourceItem, x))],
         };
     }
 
@@ -115,13 +111,12 @@ class SynchronizationRootTask : SequentialBuTask
 
         var syncedState = new SynchronizationState
         {
-            FileSystemEntries = synced
+            FileSystemEntries = [.. synced
                 .Where(x => x.ActualFileAction == SynchronizationDecision.DoNothing &&
                     x.RemoteAction == SynchronizationDecision.DoNothing &&
                     x.RemoteState != null && // because we cannot store in local state non-known to repository items
                     x.ExistsLocally)
-                .Select(x => x.ActualFile!)
-                .ToList()
+                .Select(x => x.ActualFile!)]
         };
 
         return syncedState;
@@ -162,13 +157,12 @@ class SynchronizationRootTask : SequentialBuTask
                 (
                     actualRemoteSourceItem,
                     deletedFiles,
-                    updateCreateItems
+                    [.. updateCreateItems
                         .Select(x => {
                             var actualFile = x.ActualFile!;
                             var fileStateFileName = FileHelper.Combine(_model.LocalSourceItem.Target, actualFile.RelativeFileName);
                             return new FileState(fileStateFileName, actualFile.ModifiedAtUtc, actualFile.Size, actualFile.Sha512);
-                        })
-                        .ToList(),
+                        })],
                     fileName => ConvertFileNameToStorageRelatedByRepositorySubfolderAndVirtualizedRemoteSourceItem(actualRemoteSourceItem, fileName)
                 )
             ]

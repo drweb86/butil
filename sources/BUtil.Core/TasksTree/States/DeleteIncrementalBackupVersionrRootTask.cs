@@ -41,8 +41,7 @@ public class DeleteIncrementalBackupVersionrRootTask : SequentialBuTask
         var saveStateTask = new SaveStateToStorageTask(_storageSpecificServicesIoc, Events, state, options.Password);
         tasks.Add(saveStateTask);
 
-        tasks.Add(new WriteIntegrityVerificationScriptsToStorageTask(_storageSpecificServicesIoc, Events, () => true,
-            () => state, saveStateTask, saveStateTask, () => saveStateTask.StateFile!));
+        tasks.Add(new WriteIntegrityVerificationScriptsToStorageTask(_storageSpecificServicesIoc, Events, () => (true, state), saveStateTask, saveStateTask, () => saveStateTask.StateFile!));
 
         Children = [.. tasks];
     }

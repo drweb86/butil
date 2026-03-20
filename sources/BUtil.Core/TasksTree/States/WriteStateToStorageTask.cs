@@ -3,29 +3,28 @@ using BUtil.Core.Events;
 using BUtil.Core.Services;
 using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;
-using BUtil.Core.TasksTree.IncrementalModel;
 using BUtil.Core.TasksTree.Storage;
 using System;
 
 namespace BUtil.Core.TasksTree.States;
 
-internal class WriteStateToStorageTask(
+class WriteStateToStorageTask(
     StorageSpecificServicesIoc services,
     TaskEvents events,
-    CalculateIncrementedStateTask getIncrementedVersionTask,
+    Func<(bool versionIsNeeded, IncrementalBackupState updatedState)> getIncrementedState,
     WriteSourceFilesToStorageTask writeSourceFilesToStorageTask,
     IncrementalBackupModelOptionsV2 incrementalBackupModelOptions) : BuTaskV2(services.CommonServices.Log, events, Localization.Resources.DataStorage_State_Saving)
 {
     private readonly IncrementalBackupModelOptionsV2 _incrementalBackupModelOptions = incrementalBackupModelOptions;
     private readonly StorageSpecificServicesIoc _services = services;
-    private readonly CalculateIncrementedStateTask _getIncrementedVersionTask = getIncrementedVersionTask;
     private readonly WriteSourceFilesToStorageTask _writeSourceFilesToStorageTask = writeSourceFilesToStorageTask;
 
     public StorageFile? StateStorageFile { get; private set; }
 
     protected override void ExecuteInternal()
     {
-        if (!_getIncrementedVersionTask.VersionIsNeeded)
+        var (versionIsNeeded, updatedState) = getIncrementedState();
+        if (!versionIsNeeded)
         {
             LogDebug("Version is not needed.");
             IsSkipped = true;
@@ -35,9 +34,7 @@ internal class WriteStateToStorageTask(
         if (!_writeSourceFilesToStorageTask.IsSuccess)
             throw new Exception("Writing source files to storage has failed. Skipping.");
 
-        StateStorageFile = _services.IncrementalBackupStateService.Write(_incrementalBackupModelOptions.Password, _getIncrementedVersionTask.UpdatedState ?? throw new InvalidOperationException());
-        if (StateStorageFile == null)
-            throw new InvalidOperationException("Failed to upload state storage file.");
+        StateStorageFile = _services.IncrementalBackupStateService.Write(_incrementalBackupModelOptions.Password, updatedState) ?? throw new InvalidOperationException("Failed to upload state storage file.");
     }
 }
 

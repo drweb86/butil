@@ -86,14 +86,13 @@ internal class StorageUploadTask : SequentialBuTask
 
     private static List<StorageFile> PatchRemoteFileNames(IEnumerable<StorageFile> storageFiles, StorageUploadTaskSourceItemChange change)
     {
-        return storageFiles
+        return [.. storageFiles
             .Select(x =>
             {
                 var storageFile = new StorageFile(x);
                 storageFile.FileState.FileName = change.ActualFileToRemoteFileConverter(x.FileState.FileName);
                 return storageFile;
-            })
-            .ToList();
+            })];
     }
 
     private void CreateSaveStateTasks(Dictionary<SourceItemV2, List<WriteSourceFileToStorageTask>> storageToWriteTasks, List<BuTask> tasks)
@@ -103,7 +102,7 @@ internal class StorageUploadTask : SequentialBuTask
         var saveStateToStorageTask = new SaveStateToStorageTask(_services, Events, () => isVersionNeeded.Value ? _options.State : null, _password);
 
         tasks.Add(saveStateToStorageTask);
-        tasks.Add(new WriteIntegrityVerificationScriptsToStorageTask(_services, Events, () => isVersionNeeded.Value, () => _options.State, new CompletedTask(Log, Events, true), saveStateToStorageTask, () => saveStateToStorageTask.StateFile!));
+        tasks.Add(new WriteIntegrityVerificationScriptsToStorageTask(_services, Events, () => (isVersionNeeded.Value, _options.State), new CompletedTask(Log, Events, true), saveStateToStorageTask, () => saveStateToStorageTask.StateFile!));
     }
 
     private bool IncrementState(Dictionary<SourceItemV2, List<WriteSourceFileToStorageTask>> storageToWriteTasks)

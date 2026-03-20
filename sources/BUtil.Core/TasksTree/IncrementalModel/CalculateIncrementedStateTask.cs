@@ -9,20 +9,20 @@ using System.Linq;
 
 namespace BUtil.Core.TasksTree.IncrementalModel;
 
-internal class CalculateIncrementedStateTask(
+class CalculateIncrementedStateTask(
     ILog log,
     TaskEvents events,
     Func<IncrementalBackupState> getRemoteState,
     Func<IEnumerable<SourceItemState>> getLocalStates) : BuTaskV2(log, events, BUtil.Core.Localization.Resources.IncrementalBackup_Version_Calculate)
 {
+    private bool _versionIsNeeded;
+    private IncrementalBackupState? _updatedState;
+
     public (bool versionIsNeeded, IncrementalBackupState updatedState) GetSuccessResult()
     {
         this.EnsureSuccess();
-        return (VersionIsNeeded, UpdatedState.EnsureNotNull());
+        return (_versionIsNeeded, _updatedState.EnsureNotNull());
     }
-
-    public bool VersionIsNeeded { get; private set; }
-    public IncrementalBackupState? UpdatedState { get; private set; }
 
     protected override void ExecuteInternal()
     {
@@ -35,7 +35,7 @@ internal class CalculateIncrementedStateTask(
         remoteState.VersionStates.Add(newVersion);
         remoteState.LastSourceItemStates = [.. localStates.Select(x => x.ShallowClone())];
 
-        UpdatedState = remoteState;
-        VersionIsNeeded = SourceItemStateComparer.IsNotEmpty(newVersion);
+        _updatedState = remoteState;
+        _versionIsNeeded = SourceItemStateComparer.IsNotEmpty(newVersion);
     }
 }

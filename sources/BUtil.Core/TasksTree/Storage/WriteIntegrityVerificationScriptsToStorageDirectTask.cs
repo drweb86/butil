@@ -10,38 +10,21 @@ using System.Linq;
 
 namespace BUtil.Core.TasksTree.Storage;
 
-internal class WriteIntegrityVerificationScriptsToStorageTask(StorageSpecificServicesIoc services, TaskEvents events,
-    Func<(bool versionIsNeeded, IncrementalBackupState updatedState)> getIncrementedState,
-    BuTask writeSourceFilesToStorageTask,
-    BuTask writeStateToStorageTask,
+internal class WriteIntegrityVerificationScriptsToStorageDirectTask(StorageSpecificServicesIoc services, TaskEvents events,
+    IncrementalBackupState incrementalBackupState,
     Func<StorageFile> getStateStorageFile) : BuTaskV2(services.CommonServices.Log, events, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Saving)
 {
     private readonly StorageSpecificServicesIoc _services = services;
-    private readonly BuTask _writeSourceFilesToStorageTask = writeSourceFilesToStorageTask;
-    private readonly BuTask _writeStateToStorageTask = writeStateToStorageTask;
+    private readonly IncrementalBackupState _incrementalBackupState = incrementalBackupState;
     private readonly Func<StorageFile> _getStateStorageFile = getStateStorageFile;
 
     protected override void ExecuteInternal()
     {
-        var (versionIsNeeded, updatedState) = getIncrementedState();
-        if (!versionIsNeeded)
-        {
-            LogDebug("Version is not needed.");
-            IsSkipped = true;
-            return;
-        }
-
-        if (!_writeSourceFilesToStorageTask.IsSuccess)
-            throw new Exception("Writing source files to storage has failed. Skipping.");
-
         var storage = _services.Storage;
-
-        if (!_writeStateToStorageTask.IsSuccess)
-            throw new Exception("Writing state was not successfull!");
 
         using var tempFolder = new TempFolder();
         var powershellFile = Path.Combine(tempFolder.Folder, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Ps1);
-        File.WriteAllText(powershellFile, GetPowershellScriptContent(updatedState));
+        File.WriteAllText(powershellFile, GetPowershellScriptContent(_incrementalBackupState));
         // TODO: check for null!
         var uploadedFile = storage.Upload(powershellFile, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Ps1) ?? throw new Exception("Cannot save integrity verification scripts!");
         File.Delete(powershellFile);

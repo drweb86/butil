@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace BUtil.Core.TasksTree.IncrementalModel;
 
-public class DeleteVersionUtil
+class DeleteVersionUtil
 {
     private static void AddUpdatedCreatedStorageFiles(
         SourceItemChanges sourceItemChange,

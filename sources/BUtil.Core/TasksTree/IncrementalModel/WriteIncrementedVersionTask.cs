@@ -12,7 +12,7 @@ using System.Linq;
 
 namespace BUtil.Core.TasksTree.IncrementalModel;
 
-internal class WriteIncrementedVersionTask : SequentialBuTask
+class WriteIncrementedVersionTask : SequentialBuTask
 {
     private readonly WriteSourceFilesToStorageTask _writeSourceFilesToStorageTask;
 
@@ -35,15 +35,14 @@ internal class WriteIncrementedVersionTask : SequentialBuTask
         var writeStateToStorageTask = new WriteStateToStorageTask(
             services,
             events,
-            calculateIncrementedVersionForStorageTask,
+            calculateIncrementedVersionForStorageTask.GetSuccessResult,
             _writeSourceFilesToStorageTask,
             incrementalBackupModelOptions);
 
         childTaks.Add(writeStateToStorageTask);
 #pragma warning disable CS8603 // Possible null reference return.
         childTaks.Add(new WriteIntegrityVerificationScriptsToStorageTask(services, events,
-            () => calculateIncrementedVersionForStorageTask.VersionIsNeeded,
-            getState: () => calculateIncrementedVersionForStorageTask.UpdatedState,
+            calculateIncrementedVersionForStorageTask.GetSuccessResult,
             _writeSourceFilesToStorageTask,
             writeStateToStorageTask,
             () => writeStateToStorageTask.StateStorageFile));

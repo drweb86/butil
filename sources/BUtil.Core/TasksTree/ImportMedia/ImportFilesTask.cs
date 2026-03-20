@@ -1,5 +1,4 @@
-﻿
-using BUtil.Core.ConfigurationFileModels.V2;
+﻿using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
 using BUtil.Core.Services;
 using BUtil.Core.State;
@@ -9,7 +8,7 @@ using System;
 using System.IO;
 using System.Linq;
 
-namespace BUtil.Core.TasksTree.MediaSyncBackupModel;
+namespace BUtil.Core.TasksTree.ImportMedia;
 
 class ImportFilesTask : SequentialBuTask
 {
