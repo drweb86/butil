@@ -10,7 +10,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 
-namespace BUtil.Core.TasksTree;
+namespace BUtil.Core.TasksTree.Storage;
 
 internal class WriteSourceFileToStorageTask : BuTaskV2
 {

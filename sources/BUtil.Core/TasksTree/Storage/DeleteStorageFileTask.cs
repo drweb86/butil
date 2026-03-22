@@ -10,11 +10,8 @@ internal class DeleteStorageFileTask(
     TaskEvents events,
     string relativeFileName) : BuTaskV2(services.CommonServices.Log, events, string.Format(Resources.File_Deleting, relativeFileName))
 {
-    private readonly StorageSpecificServicesIoc _services = services;
-    private readonly string _relativeFileName = relativeFileName;
-
     protected override void ExecuteInternal()
     {
-        _services.Storage.Delete(_relativeFileName);
+        services.Storage.Delete(relativeFileName);
     }
 }

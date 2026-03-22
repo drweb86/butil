@@ -14,8 +14,6 @@ namespace BUtil.Core.TasksTree.IncrementalModel;
 
 class WriteIncrementedVersionTask : SequentialBuTask
 {
-    private readonly WriteSourceFilesToStorageTask _writeSourceFilesToStorageTask;
-
     public WriteIncrementedVersionTask(
         StorageSpecificServicesIoc services,
         TaskEvents events,
@@ -29,21 +27,21 @@ class WriteIncrementedVersionTask : SequentialBuTask
         var calculateIncrementedVersionForStorageTask = new CalculateIncrementedStateTask(Log, Events, getRemoteState, () => GetLocalStates(getSourceItemStateTasks));
         childTaks.Add(calculateIncrementedVersionForStorageTask);
 
-        _writeSourceFilesToStorageTask = new WriteSourceFilesToStorageTask(services, events, calculateIncrementedVersionForStorageTask.GetSuccessResult);
-        childTaks.Add(_writeSourceFilesToStorageTask);
+        var writeSourceFilesToStorageTask = new WriteSourceFilesToStorageTask(services, events, calculateIncrementedVersionForStorageTask.GetSuccessResult);
+        childTaks.Add(writeSourceFilesToStorageTask);
 
         var writeStateToStorageTask = new WriteStateToStorageTask(
             services,
             events,
             calculateIncrementedVersionForStorageTask.GetSuccessResult,
-            _writeSourceFilesToStorageTask,
+            writeSourceFilesToStorageTask,
             incrementalBackupModelOptions);
 
         childTaks.Add(writeStateToStorageTask);
 #pragma warning disable CS8603 // Possible null reference return.
         childTaks.Add(new WriteIntegrityVerificationScriptsToStorageTask(services, events,
             calculateIncrementedVersionForStorageTask.GetSuccessResult,
-            _writeSourceFilesToStorageTask,
+            writeSourceFilesToStorageTask,
             writeStateToStorageTask,
             () => writeStateToStorageTask.StateStorageFile));
 #pragma warning restore CS8603 // Possible null reference return.

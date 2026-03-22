@@ -16,11 +16,6 @@ internal class WriteIntegrityVerificationScriptsToStorageTask(StorageSpecificSer
     BuTask writeStateToStorageTask,
     Func<StorageFile> getStateStorageFile) : BuTaskV2(services.CommonServices.Log, events, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Saving)
 {
-    private readonly StorageSpecificServicesIoc _services = services;
-    private readonly BuTask _writeSourceFilesToStorageTask = writeSourceFilesToStorageTask;
-    private readonly BuTask _writeStateToStorageTask = writeStateToStorageTask;
-    private readonly Func<StorageFile> _getStateStorageFile = getStateStorageFile;
-
     protected override void ExecuteInternal()
     {
         var (versionIsNeeded, updatedState) = getIncrementedState();
@@ -31,12 +26,12 @@ internal class WriteIntegrityVerificationScriptsToStorageTask(StorageSpecificSer
             return;
         }
 
-        if (!_writeSourceFilesToStorageTask.IsSuccess)
+        if (!writeSourceFilesToStorageTask.IsSuccess)
             throw new Exception("Writing source files to storage has failed. Skipping.");
 
-        var storage = _services.Storage;
+        var storage = services.Storage;
 
-        if (!_writeStateToStorageTask.IsSuccess)
+        if (!writeStateToStorageTask.IsSuccess)
             throw new Exception("Writing state was not successfull!");
 
         using var tempFolder = new TempFolder();
@@ -59,7 +54,7 @@ internal class WriteIntegrityVerificationScriptsToStorageTask(StorageSpecificSer
                 return items;
             })
             .ToList();
-        storageFiles.Add((_getStateStorageFile() ?? throw new Exception()));
+        storageFiles.Add((getStateStorageFile() ?? throw new Exception()));
 
         var lines = storageFiles
             .GroupBy(x => x.StorageRelativeFileName)

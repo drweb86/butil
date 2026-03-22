@@ -5,7 +5,6 @@ using BUtil.Core.Misc;
 using BUtil.Core.Services;
 using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;
-using System;
 
 namespace BUtil.Core.TasksTree.Storage;
 
@@ -19,13 +18,8 @@ public class WriteStorageFileToSourceFileTask(
         events,
         string.Format(Resources.File_Saving, SourceItemHelper.GetFriendlyFileName(sourceItem, storageFile.FileState.FileName)))
 {
-    private readonly StorageSpecificServicesIoc _storageSpecificServices = storageSpecificServices;
-    private readonly SourceItemV2 _sourceItem = sourceItem;
-    private readonly StorageFile _storageFile = storageFile;
-    private readonly string _destinationFolder = destinationFolder;
-
     protected override void ExecuteInternal()
     {
-        _storageSpecificServices.ApplicationStorageService.Download(_sourceItem, _storageFile, _destinationFolder);
+        storageSpecificServices.ApplicationStorageService.Download(sourceItem, storageFile, destinationFolder);
     }
 }

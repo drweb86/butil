@@ -24,11 +24,11 @@ internal class FtpsServerRootTask : SequentialBuTask
 
         _ioc = new FtpsServerIoc(log, onGetLastMinuteMessage);
 
-        Children = new List<BuTask>
-        {
+        Children =
+        [
             new FtpsServerStartTask(_ioc, Events, _options),
             new TimeoutTask(_ioc.Common, Events, _options.DurationMinutes),
-        };
+        ];
     }
 
     public override void Execute()

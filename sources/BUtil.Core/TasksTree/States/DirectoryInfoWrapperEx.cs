@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace BUtil.Core.TasksTree;
+namespace BUtil.Core.TasksTree.States;
 
 class DirectoryInfoWrapperEx(DirectoryInfo directoryInfo) : DirectoryInfoWrapper(directoryInfo)
 {

@@ -1,4 +1,4 @@
-﻿using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
@@ -27,17 +27,27 @@ public class WriteStorageFilesToSourceFileRootTask : ParallelBuTask
         _commonServicesIoc = new CommonServicesIoc(log, onGetLastMinuteMessage);
         _storageSpecificServicesIoc = new StorageSpecificServicesIoc(_commonServicesIoc, storageSettings, true);
 
-        Children = storageFiles
-            .Select(x => new WriteStorageFileToSourceFileTask(_storageSpecificServicesIoc, events, sourceItem, x, destinationFolder))
-            .ToArray();
+        Children = [.. storageFiles.Select(x => new WriteStorageFileToSourceFileTask(_storageSpecificServicesIoc, events, sourceItem, x, destinationFolder))];
     }
 
     public override void Execute()
     {
         UpdateStatus(ProcessingStatus.InProgress);
-        base.Execute();
-        UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
-        _commonServicesIoc.Dispose();
-        _storageSpecificServicesIoc.Dispose();
+        try
+        {
+            base.Execute();
+        }
+        finally
+        {
+            try
+            {
+                UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
+            }
+            finally
+            {
+                _storageSpecificServicesIoc.Dispose();
+                _commonServicesIoc.Dispose();
+            }
+        }
     }
 }

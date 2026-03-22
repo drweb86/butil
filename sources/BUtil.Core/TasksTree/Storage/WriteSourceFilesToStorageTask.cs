@@ -14,8 +14,6 @@ internal class WriteSourceFilesToStorageTask(
     TaskEvents events,
     Func<(bool versionIsNeeded, IncrementalBackupState updatedState)> getUpdatedState) : ParallelBuTask(services.CommonServices.Log, events, Localization.Resources.File_List_Saving)
 {
-    private readonly StorageSpecificServicesIoc _services = services;
-
     public override void Execute()
     {
         UpdateStatus(ProcessingStatus.InProgress);
@@ -34,7 +32,7 @@ internal class WriteSourceFilesToStorageTask(
         List<WriteSourceFileToStorageTask> WriteFileTasks = [];
         var versions = state.VersionStates;
         var newVersion = versions.Last();
-        var singleBackupQuotaGb = new Quota(_services.StorageSettings.SingleBackupQuotaGb * 1024 * 1024 * 1024);
+        var singleBackupQuotaGb = new Quota(services.StorageSettings.SingleBackupQuotaGb * 1024 * 1024 * 1024);
         foreach (var sourceItemChange in newVersion.SourceItemChanges)
         {
             var itemsToCopy = new List<StorageFile>();
@@ -52,7 +50,7 @@ internal class WriteSourceFilesToStorageTask(
                 })
                 .GroupBy(x => x.FileState.ToDeduplicationString())
                 .Select(x => new WriteSourceFileToStorageTask(
-                    _services,
+                    services,
                     Events,
                     [.. x],
                     singleBackupQuotaGb,
@@ -97,7 +95,7 @@ internal class WriteSourceFilesToStorageTask(
         if (skippedBecauseOfQuotaFiles.Count != 0)
         {
             var gigabyte = 1024 * 1024 * 1024;
-            _services.CommonServices.LastMinuteMessageService.AddLastMinuteLogMessage(string.Format(BUtil.Core.Localization.Resources.Task_Status_PartialDueToQuota, skippedBecauseOfQuotaFiles.Count, skippedBecauseOfQuotaFiles.Sum(x => x.FileState.Size) / gigabyte));
+            services.CommonServices.LastMinuteMessageService.AddLastMinuteLogMessage(string.Format(BUtil.Core.Localization.Resources.Task_Status_PartialDueToQuota, skippedBecauseOfQuotaFiles.Count, skippedBecauseOfQuotaFiles.Sum(x => x.FileState.Size) / gigabyte));
         }
     }
 }

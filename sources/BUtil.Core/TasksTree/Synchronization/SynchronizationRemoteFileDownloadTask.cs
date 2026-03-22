@@ -4,13 +4,12 @@ using BUtil.Core.Localization;
 using BUtil.Core.State;
 using BUtil.Core.Synchronization;
 using BUtil.Core.TasksTree.Core;
-using BUtil.Core.TasksTree.IncrementalModel;
 using System.IO;
 using System.Linq;
 
 namespace BUtil.Core.TasksTree.Synchronization;
 
-internal class SynchronizationRemoteFileDownloadTask : BuTaskV2
+class SynchronizationRemoteFileDownloadTask : BuTaskV2
 {
     private readonly SynchronizationServices _synchronizationServices;
     private readonly StorageFile _storageFile;

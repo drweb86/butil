@@ -1,23 +1,20 @@
 ﻿using BUtil.Core.ConfigurationFileModels.V2;
-using BUtil.Core.FileSystem;
 using BUtil.Core.State;
 using BUtil.Core.Synchronization;
-using BUtil.Core.TasksTree.Synchronization;
-using System;
 using System.Collections.Generic;
 
-namespace BUtil.Core.TasksTree.IncrementalModel;
+namespace BUtil.Core.TasksTree.Synchronization;
 
 class SynchronizationModel
 {
-    public IncrementalBackupState RemoteStorageState { get; internal set; } = null!;
-    public SynchronizationState RemoteState { get; internal set; } = null!;
-    public List<StorageFile> RemoteStorageFiles { get; internal set; } = null!;
-    public SourceItemV2 RemoteSourceItem { get; internal set; } = null!;
+    public IncrementalBackupState RemoteStorageState { get; set; } = null!;
+    public SynchronizationState RemoteState { get; set; } = null!;
+    public List<StorageFile> RemoteStorageFiles { get; set; } = null!;
+    public SourceItemV2 RemoteSourceItem { get; set; } = null!;
 
 
-    public SynchronizationState LocalState { get; internal set; } = null!;
-    public SynchronizationState ActualFiles { get; internal set; } = null!;
+    public SynchronizationState LocalState { get; set; } = null!;
+    public SynchronizationState ActualFiles { get; set; } = null!;
 
     public SynchronizationTaskModelOptionsV2 TaskOptions { get; }
 

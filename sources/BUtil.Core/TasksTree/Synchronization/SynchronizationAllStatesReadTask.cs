@@ -1,15 +1,12 @@
 ﻿using BUtil.Core.Events;
 using BUtil.Core.Localization;
 using BUtil.Core.Misc;
-using BUtil.Core.State;
 using BUtil.Core.Synchronization;
 using BUtil.Core.TasksTree.Core;
-using BUtil.Core.TasksTree.IncrementalModel;
 using BUtil.Core.TasksTree.States;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.Json;
 
 namespace BUtil.Core.TasksTree.Synchronization;
 
@@ -21,7 +18,6 @@ internal class SynchronizationAllStatesReadTask : SequentialBuTask
     private readonly SynchronizationLocalStateLoadTask _synchronizationLocalStateLoadTask;
     private readonly GetStateOfSourceItemTask _setStateOfSourceItemTask;
     private readonly RemoteStateLoadTask _remoteStateLoadTask;
-    private static readonly JsonSerializerOptions _jsonSerializerOptions = new() { WriteIndented = true };
 
     public SynchronizationAllStatesReadTask(
         SynchronizationServices synchronizationServices, 
@@ -45,7 +41,7 @@ internal class SynchronizationAllStatesReadTask : SequentialBuTask
 
         if (model.TaskOptions.SynchronizationMode == ConfigurationFileModels.V2.SynchronizationTaskModelMode.TwoWay)
         {
-            var deleteUnversionedFilesStorageTask = new DataStorageMaintananceTask(synchronizationServices.StorageSpecificServices, Events, _remoteStateLoadTask.GetSuccessResult, new ConfigurationFileModels.V2.IncrementalBackupModelOptionsV2 { Password = model.TaskOptions.Password });
+            var deleteUnversionedFilesStorageTask = new DataStorageMaintananceTask(synchronizationServices.StorageSpecificServices, Events, _remoteStateLoadTask.GetSuccessResult);
             tasks.Add(deleteUnversionedFilesStorageTask);
         }
 
@@ -111,18 +107,14 @@ internal class SynchronizationAllStatesReadTask : SequentialBuTask
             return new SynchronizationState();
         }
 
-        if (!_synchronizationLocalStateLoadTask.IsSuccess)
-        {
-            throw new InvalidOperationException("Local state population has failed!");
-        }
-
-        if (_synchronizationLocalStateLoadTask.SynchronizationState == null)
+        var synchronizationState = _synchronizationLocalStateLoadTask.GetSuccessResult();
+        if (synchronizationState == null)
         {
             LogDebug("Local state is missing!");
             return new SynchronizationState();
         }
 
-        return _synchronizationLocalStateLoadTask.SynchronizationState;
+        return synchronizationState;
     }
 
     private SynchronizationState GetRemoteState()

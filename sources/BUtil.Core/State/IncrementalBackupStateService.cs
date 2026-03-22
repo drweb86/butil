@@ -43,7 +43,7 @@ public class IncrementalBackupStateService(StorageSpecificServicesIoc services, 
         return true;
     }
 
-    public StorageFile? Write(string password, IncrementalBackupState state)
+    public StorageFile Write(string password, IncrementalBackupState state)
     {
         _log.WriteLine(LoggingEvent.Debug, $"Writing state");
         if (_services.Storage.Exists(IncrementalBackupModelConstants.BrotliAes256V1StateFile))

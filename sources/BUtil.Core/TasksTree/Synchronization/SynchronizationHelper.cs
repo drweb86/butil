@@ -3,7 +3,7 @@ using System;
 
 namespace BUtil.Core.TasksTree.Synchronization;
 
-internal static class SynchronizationHelper
+static class SynchronizationHelper
 {
     public static Guid SynchronizationSourceItemId = Guid.Empty;
 

@@ -39,7 +39,7 @@ internal class GetStateOfSourceItemsAndStoragesTask : ParallelBuTask
         RemoteStateLoadTask = getStorageStateTask;
         childTasks.Add(getStorageStateTask);
 
-        var deleteUnversionedFilesStorageTask = new DataStorageMaintananceTask(servicesIoc, Events, getStorageStateTask.GetSuccessResult, new IncrementalBackupModelOptionsV2 { Password = password });
+        var deleteUnversionedFilesStorageTask = new DataStorageMaintananceTask(servicesIoc, Events, getStorageStateTask.GetSuccessResult);
         DeleteUnversionedFilesStorageTask = deleteUnversionedFilesStorageTask;
         childTasks.Add(deleteUnversionedFilesStorageTask);
 

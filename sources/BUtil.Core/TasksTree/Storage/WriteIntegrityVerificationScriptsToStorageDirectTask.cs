@@ -14,17 +14,13 @@ internal class WriteIntegrityVerificationScriptsToStorageDirectTask(StorageSpeci
     IncrementalBackupState incrementalBackupState,
     Func<StorageFile> getStateStorageFile) : BuTaskV2(services.CommonServices.Log, events, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Saving)
 {
-    private readonly StorageSpecificServicesIoc _services = services;
-    private readonly IncrementalBackupState _incrementalBackupState = incrementalBackupState;
-    private readonly Func<StorageFile> _getStateStorageFile = getStateStorageFile;
-
     protected override void ExecuteInternal()
     {
-        var storage = _services.Storage;
+        var storage = services.Storage;
 
         using var tempFolder = new TempFolder();
         var powershellFile = Path.Combine(tempFolder.Folder, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Ps1);
-        File.WriteAllText(powershellFile, GetPowershellScriptContent(_incrementalBackupState));
+        File.WriteAllText(powershellFile, GetPowershellScriptContent(incrementalBackupState));
         // TODO: check for null!
         var uploadedFile = storage.Upload(powershellFile, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Ps1) ?? throw new Exception("Cannot save integrity verification scripts!");
         File.Delete(powershellFile);
@@ -42,7 +38,7 @@ internal class WriteIntegrityVerificationScriptsToStorageDirectTask(StorageSpeci
                 return items;
             })
             .ToList();
-        storageFiles.Add((_getStateStorageFile() ?? throw new Exception()));
+        storageFiles.Add((getStateStorageFile() ?? throw new Exception()));
 
         var lines = storageFiles
             .GroupBy(x => x.StorageRelativeFileName)

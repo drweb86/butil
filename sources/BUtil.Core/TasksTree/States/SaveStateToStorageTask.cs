@@ -54,9 +54,5 @@ internal class SaveStateToStorageTask : BuTaskV2
         }
 
         StateFile = _services.IncrementalBackupStateService.Write(_password, actualState);
-        if (StateFile == null)
-        {
-            throw new Exception("Failed to save state!");
-        }
     }
 }

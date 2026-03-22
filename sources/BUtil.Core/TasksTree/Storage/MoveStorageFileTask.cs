@@ -11,12 +11,8 @@ internal class MoveStorageFileTask(
     string fromRelativeFileName,
     string toRelativeFileName) : BuTaskV2(services.CommonServices.Log, events, string.Format(Resources.File_Moving, fromRelativeFileName, toRelativeFileName))
 {
-    private readonly StorageSpecificServicesIoc _services = services;
-    private readonly string _fromRelativeFileName = fromRelativeFileName;
-    private readonly string _toRelativeFileName = toRelativeFileName;
-
     protected override void ExecuteInternal()
     {
-        _services.Storage.Move(_fromRelativeFileName, _toRelativeFileName);
+        services.Storage.Move(fromRelativeFileName, toRelativeFileName);
     }
 }

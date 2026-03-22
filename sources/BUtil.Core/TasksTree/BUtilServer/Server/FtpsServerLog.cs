@@ -5,14 +5,9 @@ using System;
 
 namespace BUtil.Core.TasksTree.BUtilServer.Server;
 
-class FtpsServerLog : IFtpsServerLog
+class FtpsServerLog(ILog log) : IFtpsServerLog
 {
-    private readonly ILog _log;
-
-    public FtpsServerLog(ILog log)
-    {
-        _log = log;
-    }
+    private readonly ILog _log = log;
 
     public void Debug(string message)
     {

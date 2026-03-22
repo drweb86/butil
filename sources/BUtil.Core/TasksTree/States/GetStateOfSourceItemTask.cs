@@ -1,21 +1,17 @@
-﻿
-using BUtil.Core.ConfigurationFileModels.V2;
+﻿using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
 using BUtil.Core.Services;
 using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;
-using BUtil.Core.TasksTree.States;
 using Microsoft.Extensions.FileSystemGlobbing;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace BUtil.Core.TasksTree;
+namespace BUtil.Core.TasksTree.States;
 
 internal class GetStateOfSourceItemTask(TaskEvents events, SourceItemV2 sourceItem, IEnumerable<string> fileExcludePatterns, CommonServicesIoc commonServicesIoc) : SequentialBuTask(commonServicesIoc.Log, events, string.Format(BUtil.Core.Localization.Resources.SourceItem_State_Get, sourceItem.Target))
 {
-    private readonly IEnumerable<string> _fileExcludePatterns = fileExcludePatterns;
-    private readonly CommonServicesIoc _commonServicesIoc = commonServicesIoc;
     private static readonly string[] _includeGroups = ["**/*"];
 
     public SourceItemState? SourceItemState { get; private set; }
@@ -38,7 +34,7 @@ internal class GetStateOfSourceItemTask(TaskEvents events, SourceItemV2 sourceIt
         }
 
         var getFileStateTasks = files
-            .Select(file => new GetStateOfFileTask(Events, _commonServicesIoc, SourceItem, file))
+            .Select(file => new GetStateOfFileTask(Events, commonServicesIoc, SourceItem, file))
             .ToList();
         Children = getFileStateTasks;
         Events.DuringExecutionTasksAdded(Id, Children);
@@ -46,10 +42,9 @@ internal class GetStateOfSourceItemTask(TaskEvents events, SourceItemV2 sourceIt
         base.Execute();
 
         SourceItemState = new SourceItemState(SourceItem,
-            getFileStateTasks
+            [.. getFileStateTasks
             .Where(x => x.IsSuccess)
-            .Select(x => x.State!)
-            .ToList());
+            .Select(x => x.State!)]);
 
         UpdateStatus(IsSuccess ? ProcessingStatus.FinishedSuccesfully : ProcessingStatus.FinishedWithErrors);
     }
@@ -58,7 +53,7 @@ internal class GetStateOfSourceItemTask(TaskEvents events, SourceItemV2 sourceIt
     {
         Matcher matcher = new();
 
-        foreach (var excludeFilePattern in _fileExcludePatterns)
+        foreach (var excludeFilePattern in fileExcludePatterns)
         {
             var actualPattern = excludeFilePattern;
             if (excludeFilePattern.StartsWith(folder) && (folder.Length + 1) < excludeFilePattern.Length)
@@ -68,10 +63,9 @@ internal class GetStateOfSourceItemTask(TaskEvents events, SourceItemV2 sourceIt
 
         matcher.AddIncludePatterns(_includeGroups);
 
-        return matcher
+        return [.. matcher
             .Execute(new DirectoryInfoWrapperEx(new DirectoryInfo(folder)))
             .Files
-            .Select(x => new FileInfo(Path.Combine(folder, x.Path)).FullName)
-            .ToList();
+            .Select(x => new FileInfo(Path.Combine(folder, x.Path)).FullName)];
     }
 }

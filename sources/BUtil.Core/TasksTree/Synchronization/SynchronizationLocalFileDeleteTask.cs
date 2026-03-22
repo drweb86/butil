@@ -6,7 +6,7 @@ using BUtil.Core.TasksTree.Core;
 using System.IO;
 
 namespace BUtil.Core.TasksTree.Synchronization;
-internal class SynchronizationLocalFileDeleteTask(SynchronizationServices synchronizationServices, TaskEvents events,
+class SynchronizationLocalFileDeleteTask(SynchronizationServices synchronizationServices, TaskEvents events,
     string localFolder, string relativeFileName) : BuTaskV2(synchronizationServices.CommonServices.Log, events, string.Format(Resources.File_Deleting, relativeFileName))
 {
     private readonly string _localFolder = localFolder;

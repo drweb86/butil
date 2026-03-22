@@ -15,10 +15,6 @@ class WriteStateToStorageTask(
     WriteSourceFilesToStorageTask writeSourceFilesToStorageTask,
     IncrementalBackupModelOptionsV2 incrementalBackupModelOptions) : BuTaskV2(services.CommonServices.Log, events, Localization.Resources.DataStorage_State_Saving)
 {
-    private readonly IncrementalBackupModelOptionsV2 _incrementalBackupModelOptions = incrementalBackupModelOptions;
-    private readonly StorageSpecificServicesIoc _services = services;
-    private readonly WriteSourceFilesToStorageTask _writeSourceFilesToStorageTask = writeSourceFilesToStorageTask;
-
     public StorageFile? StateStorageFile { get; private set; }
 
     protected override void ExecuteInternal()
@@ -31,29 +27,9 @@ class WriteStateToStorageTask(
             return;
         }
 
-        if (!_writeSourceFilesToStorageTask.IsSuccess)
+        if (!writeSourceFilesToStorageTask.IsSuccess)
             throw new Exception("Writing source files to storage has failed. Skipping.");
 
-        StateStorageFile = _services.IncrementalBackupStateService.Write(_incrementalBackupModelOptions.Password, updatedState) ?? throw new InvalidOperationException("Failed to upload state storage file.");
-    }
-}
-
-
-internal class WriteStateToStorageDirectTask(
-    StorageSpecificServicesIoc services,
-    TaskEvents events,
-    IncrementalBackupState incrementalBackupState,
-    IncrementalBackupModelOptionsV2 incrementalBackupModelOptions) : BuTaskV2(services.CommonServices.Log, events, Localization.Resources.DataStorage_State_Saving)
-{
-    private readonly IncrementalBackupModelOptionsV2 _incrementalBackupModelOptions = incrementalBackupModelOptions;
-    private readonly StorageSpecificServicesIoc _services = services;
-    private readonly IncrementalBackupState _incrementalBackupState = incrementalBackupState;
-
-    public StorageFile? StateStorageFile { get; private set; }
-
-    protected override void ExecuteInternal()
-    {
-        StateStorageFile = _services.IncrementalBackupStateService.Write(_incrementalBackupModelOptions.Password, _incrementalBackupState) ?? 
-            throw new InvalidOperationException("Failed to upload state storage file.");
+        StateStorageFile = services.IncrementalBackupStateService.Write(incrementalBackupModelOptions.Password, updatedState);
     }
 }

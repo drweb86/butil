@@ -6,44 +6,34 @@ using System.Collections.Generic;
 
 namespace BUtil.Core.TasksTree.BUtilServer.Server;
 
-internal class FtpsServerStartTask : BuTaskV2
+internal class FtpsServerStartTask(FtpsServerIoc ioc, TaskEvents events, BUtilServerModelOptionsV2 options) : BuTaskV2(ioc.Common.Log, events, Resources.FtpsServerStartTask_Name)
 {
-    private readonly FtpsServerIoc _ioc;
-    private readonly BUtilServerModelOptionsV2 _options;
-
-    public FtpsServerStartTask(FtpsServerIoc ioc, TaskEvents events, BUtilServerModelOptionsV2 options) :
-        base(ioc.Common.Log, events, Resources.FtpsServerStartTask_Name)
-    {
-        _ioc = ioc;
-        _options = options;
-    }
-
     protected override void ExecuteInternal()
     {
         LogDebug("Starting the machinery.");
-        _ioc.Server = new FtpsServerLibrary.FtpsServer(
-            new FtpsServerLog(_ioc.Common.Log),
+        ioc.Server = new FtpsServerLibrary.FtpsServer(
+            new FtpsServerLog(ioc.Common.Log),
             new FtpsServerLibrary.FtpsServerConfiguration
             {
                 ServerSettings = new FtpsServerLibrary.FtpsServerSettings
                 {
                     Ip = "0.0.0.0",
-                    Port = _options.Port,
+                    Port = options.Port,
                     MaxConnections = 10,
                 },
-                Users = new List<FtpsServerLibrary.FtpsServerUserAccount>
-                {
+                Users =
+                [
                     new FtpsServerLibrary.FtpsServerUserAccount
                     {
-                        Login = string.IsNullOrWhiteSpace(_options.Username) ? BUtilServerModelOptionsV2.DefaultUsername: _options.Username, // backward compatibility
-                        Password = _options.Password,
-                        Folder = _options.Folder,
+                        Login = string.IsNullOrWhiteSpace(options.Username) ? BUtilServerModelOptionsV2.DefaultUsername: options.Username, // backward compatibility
+                        Password = options.Password,
+                        Folder = options.Folder,
                         Read = true,
                         Write = true
                     }
-                }
+                ]
             });
 
-        _ioc.Server.Start();
+        ioc.Server.Start();
     }
 }

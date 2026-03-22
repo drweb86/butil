@@ -4,14 +4,9 @@ using FtpsServerLibrary;
 using System;
 
 namespace BUtil.Core.TasksTree.BUtilServer.Server;
-public class FtpsServerIoc
+public class FtpsServerIoc(ILog log, Action<string?> onGetLastMinuteMessage)
 {
-    public CommonServicesIoc Common {  get; set; }
-
-    public FtpsServerIoc(ILog log, Action<string?> onGetLastMinuteMessage)
-    {
-        Common = new CommonServicesIoc(log, onGetLastMinuteMessage);
-    }
+    public CommonServicesIoc Common { get; set; } = new CommonServicesIoc(log, onGetLastMinuteMessage);
 
     public FtpsServer Server { get; set; } = null!;
     public void Dispose()
