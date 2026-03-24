@@ -112,13 +112,16 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
 
     private void Client_HostKeyReceived(object? sender, Renci.SshNet.Common.HostKeyEventArgs e)
     {
+        var isTrusted = e.FingerPrintSHA256.Cmp(Settings.FingerPrintSHA256);
+        e.CanTrust = isTrusted;
+
         if (_testingConnection && string.IsNullOrWhiteSpace(Settings.FingerPrintSHA256))
         {
             Settings.FingerPrintSHA256 = e.FingerPrintSHA256;
+            Log.WriteLine(LoggingEvent.Error, $"SFTP server fingerprint (SHA-256): {e.FingerPrintSHA256}");
+            Log.WriteLine(LoggingEvent.Error, "Fingerprint has been filled in the UI. Verify it out-of-band and click Save if trusted.");
         }
 
-        e.CanTrust = e.FingerPrintSHA256.Cmp(Settings.FingerPrintSHA256);
-        
         if (!e.CanTrust)
         {
             Log.WriteLine(LoggingEvent.Error, $"Fingerprint from SFTP server is {e.FingerPrintSHA256}. Expected fingerprint is {Settings.FingerPrintSHA256}. Connection will not be accepted (wrong fingerprint or MITM attack?)");

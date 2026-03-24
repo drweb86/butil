@@ -1,4 +1,4 @@
-﻿using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using System;
@@ -50,6 +50,8 @@ public class TaskV2StoreService
             {
                 var result = JsonSerializer.Deserialize<TaskV2>(json);
                 isNotSupported = result == null;
+                if (result != null)
+                    PlatformSpecificExperience.Instance.SecretService.UnprotectInPlace(result);
                 return result;
             }
             else
@@ -66,7 +68,8 @@ public class TaskV2StoreService
         Delete(task.Name);
 
         var fileName = GetFileNames(task.Name).Last().Value;
-        var json = JsonSerializer.Serialize(task, _jsonSerializerOptions);
+        var protectedTask = PlatformSpecificExperience.Instance.SecretService.CreateProtectedClone(task);
+        var json = JsonSerializer.Serialize(protectedTask, _jsonSerializerOptions);
         File.WriteAllText(fileName, json);
     }
 

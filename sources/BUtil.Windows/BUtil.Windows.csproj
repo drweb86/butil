@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="10.0.5" />
     <PackageReference Include="TaskScheduler" Version="2.12.2" />
   </ItemGroup>
 

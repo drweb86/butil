@@ -4,9 +4,13 @@ using BUtil.Core;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
+using BUtil.Core.Misc;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
 namespace butil_ui.Controls;
@@ -65,6 +69,7 @@ public class WhereTaskViewModel : ObservableObject
             FtpsUser = ftpsStorageSettingsV2.User;
             FtpsPassword = ftpsStorageSettingsV2.Password;
             FtpsFolder = ftpsStorageSettingsV2.Folder;
+            FtpsTrustedCertificate = ftpsStorageSettingsV2.TrustedCertificate;
         }
 
         if (storageSettings is SftpStorageSettingsV2 sftpStorageSettingsV2)
@@ -151,6 +156,7 @@ public class WhereTaskViewModel : ObservableObject
                 User = FtpsUser!,
                 Password = FtpsPassword!,
                 Folder = FtpsFolder,
+                TrustedCertificate = FtpsTrustedCertificate ?? string.Empty,
             };
         }
         else if (Transport == Smb)
@@ -224,8 +230,129 @@ public class WhereTaskViewModel : ObservableObject
     public static string Field_TransportProtocol => Resources.Field_TransportProtocol;
     public static string KeyFile_Field_Optional => Resources.KeyFile_Field + " " + Resources.OptionalField_Hint;
     public static string FingerPrintSHA256_Field => Resources.FingerPrintSHA256_Field;
+    public static string TrustedCertificate_Field => R("TrustedCertificate_Field", "Trusted certificate (hex):");
     public static string OptionalField_Hint => Resources.OptionalField_Hint;
     #endregion
+
+    private static string R(string key, string fallback)
+    {
+        return Resources.ResourceManager.GetString(key) ?? fallback;
+    }
+
+    private static string F(string key, string fallbackFormat, params object?[] args)
+    {
+        return string.Format(R(key, fallbackFormat), args);
+    }
+
+    public string? ApplyDetectedConnectionTrustAndBuildInfo(IStorageSettingsV2 storageSettings)
+    {
+        if (storageSettings is FtpsStorageSettingsV2 ftpsSettings
+            && !string.IsNullOrWhiteSpace(ftpsSettings.TrustedCertificate)
+            && !ftpsSettings.TrustedCertificate.Cmp(FtpsTrustedCertificate))
+        {
+            FtpsTrustedCertificate = ftpsSettings.TrustedCertificate;
+            return BuildFtpsTrustDetectedInfo(ftpsSettings);
+        }
+
+        if (storageSettings is SftpStorageSettingsV2 sftpSettings
+            && !string.IsNullOrWhiteSpace(sftpSettings.FingerPrintSHA256)
+            && !sftpSettings.FingerPrintSHA256.Cmp(SftpFingerPrintSHA256))
+        {
+            SftpFingerPrintSHA256 = sftpSettings.FingerPrintSHA256;
+            return BuildSftpTrustDetectedInfo(sftpSettings);
+        }
+
+        return null;
+    }
+
+    private static string BuildSftpTrustDetectedInfo(SftpStorageSettingsV2 settings)
+    {
+        return string.Join(Environment.NewLine, new[]
+        {
+            R("TrustDetected_Sftp_Title", "SFTP server trust information detected during test."),
+            R("TrustDetected_Sftp_Instruction", "Verify this fingerprint out-of-band, then click Save again to store it."),
+            string.Empty,
+            F("TrustDetected_Label_Host", "Host: {0}", settings.Host),
+            F("TrustDetected_Label_Port", "Port: {0}", settings.Port == 0 ? R("TrustDetected_Port_Default22", "default (22)") : settings.Port.ToString()),
+            F("TrustDetected_Label_User", "User: {0}", settings.User),
+            F("TrustDetected_Label_Folder", "Folder: {0}", settings.Folder),
+            F("TrustDetected_Label_FingerprintSha256", "Fingerprint (SHA-256): {0}", settings.FingerPrintSHA256),
+        });
+    }
+
+    private static string BuildFtpsTrustDetectedInfo(FtpsStorageSettingsV2 settings)
+    {
+        var lines = new List<string>
+        {
+            R("TrustDetected_Ftps_Title", "FTPS server certificate detected during test."),
+            R("TrustDetected_Ftps_Instruction", "Verify certificate identity out-of-band, then click Save again to store it."),
+            string.Empty,
+            F("TrustDetected_Label_Host", "Host: {0}", settings.Host),
+            F("TrustDetected_Label_Port", "Port: {0}", settings.Port == 0 ? R("TrustDetected_Port_Default", "default") : settings.Port.ToString()),
+            F("TrustDetected_Label_Encryption", "Encryption: {0}", settings.Encryption),
+            F("TrustDetected_Label_Folder", "Folder: {0}", settings.Folder),
+            F("TrustDetected_Label_CertificateRawHex", "Certificate (raw hex): {0}", settings.TrustedCertificate),
+        };
+
+        if (string.IsNullOrWhiteSpace(settings.TrustedCertificate))
+            return string.Join(Environment.NewLine, lines);
+
+        try
+        {
+            var certBytes = Convert.FromHexString(settings.TrustedCertificate);
+            using var cert = X509CertificateLoader.LoadCertificate(certBytes);
+            lines.Add(string.Empty);
+            lines.Add(R("TrustDetected_ParsedCertificate_Header", "Parsed certificate details:"));
+            lines.Add(F("TrustDetected_Label_Subject", "Subject: {0}", cert.Subject));
+            lines.Add(F("TrustDetected_Label_Issuer", "Issuer: {0}", cert.Issuer));
+            lines.Add(F("TrustDetected_Label_SerialNumber", "Serial number: {0}", cert.SerialNumber));
+            lines.Add(F("TrustDetected_Label_Thumbprint", "Thumbprint: {0}", cert.Thumbprint));
+            lines.Add(F("TrustDetected_Label_ValidFromUtc", "Valid from (UTC): {0}", cert.NotBefore.ToUniversalTime().ToString("O")));
+            lines.Add(F("TrustDetected_Label_ValidUntilUtc", "Valid until (UTC): {0}", cert.NotAfter.ToUniversalTime().ToString("O")));
+            lines.Add(F("TrustDetected_Label_SignatureAlgorithm", "Signature algorithm: {0}", cert.SignatureAlgorithm?.FriendlyName ?? cert.SignatureAlgorithm?.Value));
+            lines.Add(F("TrustDetected_Label_PublicKeyAlgorithm", "Public key algorithm: {0}", cert.PublicKey?.Oid?.FriendlyName ?? cert.PublicKey?.Oid?.Value));
+            lines.Add(F("TrustDetected_Label_PublicKeySize", "Public key size: {0}", GetPublicKeySizeText(cert)));
+
+            var dnsName = cert.GetNameInfo(X509NameType.DnsName, false);
+            if (!string.IsNullOrWhiteSpace(dnsName))
+                lines.Add(F("TrustDetected_Label_DnsName", "DNS name: {0}", dnsName));
+
+            var san = cert.Extensions
+                .OfType<X509Extension>()
+                .FirstOrDefault(x => x.Oid?.Value == "2.5.29.17")
+                ?.Format(true);
+            if (!string.IsNullOrWhiteSpace(san))
+                lines.Add(F("TrustDetected_Label_SubjectAlternativeNames", "Subject alternative names: {0}", san));
+        }
+        catch (Exception ex)
+        {
+            lines.Add(string.Empty);
+            lines.Add(F("TrustDetected_CertificateParseWarning", "Certificate parse warning: {0}", ex.Message));
+        }
+
+        return string.Join(Environment.NewLine, lines);
+    }
+
+    private static string GetPublicKeySizeText(X509Certificate2 cert)
+    {
+        using var rsa = cert.GetRSAPublicKey();
+        if (rsa != null)
+            return $"{rsa.KeySize} bits";
+
+        using var ecdsa = cert.GetECDsaPublicKey();
+        if (ecdsa != null)
+            return $"{ecdsa.KeySize} bits";
+
+        using var dsa = cert.GetDSAPublicKey();
+        if (dsa != null)
+            return $"{dsa.KeySize} bits";
+
+        using var ecdh = cert.GetECDiffieHellmanPublicKey();
+        if (ecdh != null)
+            return $"{ecdh.KeySize} bits";
+
+        return R("TrustDetected_PublicKeySize_Unknown", "unknown");
+    }
 
     #region Transport
 
@@ -669,6 +796,27 @@ public class WhereTaskViewModel : ObservableObject
                 return;
             _ftpsFolder = value;
             OnPropertyChanged(nameof(FtpsFolder));
+        }
+    }
+
+    #endregion
+
+    #region FtpsTrustedCertificate
+
+    private string? _ftpsTrustedCertificate;
+
+    public string? FtpsTrustedCertificate
+    {
+        get
+        {
+            return _ftpsTrustedCertificate;
+        }
+        set
+        {
+            if (value == _ftpsTrustedCertificate)
+                return;
+            _ftpsTrustedCertificate = value;
+            OnPropertyChanged(nameof(FtpsTrustedCertificate));
         }
     }
 

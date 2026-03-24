@@ -7,25 +7,13 @@ using BUtil.Core.TasksTree.Core;
 
 namespace BUtil.Core.TasksTree.BUtilServer.Client;
 
-internal class BUtilClientUploadToServerFileTask : BuTaskV2
+internal class BUtilClientUploadToServerFileTask(BUtilClientIoc ioc, TaskEvents taskEvents, BUtilClientModelOptionsV2 options, FileState fileState) : BuTaskV2(ioc.Common.Log, taskEvents, string.Format(Resources.File_Uploading, SourceItemHelper.GetSourceItemRelativeFileName(options.Folder, fileState)))
 {
-    private readonly BUtilClientIoc _ioc;
-    private readonly BUtilClientModelOptionsV2 _options;
-    private readonly FileState _fileState;
-
-    public BUtilClientUploadToServerFileTask(BUtilClientIoc ioc, TaskEvents taskEvents, BUtilClientModelOptionsV2 options, FileState fileState)
-        : base(ioc.Common.Log, taskEvents, string.Format(Resources.File_Uploading, SourceItemHelper.GetSourceItemRelativeFileName(options.Folder, fileState)))
-    {
-        _ioc = ioc;
-        _options = options;
-        _fileState = fileState;
-    }
-
     protected override void ExecuteInternal()
     {
-        string relativeFileName = SourceItemHelper.GetSourceItemRelativeFileName(_options.Folder, _fileState);
+        string relativeFileName = SourceItemHelper.GetSourceItemRelativeFileName(options.Folder, fileState);
         LogDebug($"{relativeFileName}");
 
-        _ioc.StorageSpecificServices.Storage.Upload(_fileState.FileName, relativeFileName);
+        ioc.StorageSpecificServices.Storage.Upload(fileState.FileName, relativeFileName);
     }
 }

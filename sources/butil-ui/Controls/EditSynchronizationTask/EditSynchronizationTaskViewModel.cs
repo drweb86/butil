@@ -1,4 +1,4 @@
-﻿using BUtil.Core;
+using BUtil.Core;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
@@ -65,6 +65,9 @@ public class EditSynchronizationTaskViewModel : ViewModelBase
 
         if (!TaskV2Validator.TryValidate(newTask, true, out var error))
         {
+            var detectedInfo = WhereTaskViewModel.ApplyDetectedConnectionTrustAndBuildInfo(((SynchronizationTaskModelOptionsV2)newTask.Model).To);
+            if (!string.IsNullOrWhiteSpace(detectedInfo))
+                await Messages.ShowInformationBox(detectedInfo);
             await Messages.ShowErrorBox(error);
             return;
         }

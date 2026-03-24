@@ -10,6 +10,8 @@ namespace BUtil.Windows;
 
 public class WindowsExperience : CrossPlatformExperience
 {
+    public override ISecretService SecretService => new WindowsSecretService();
+
     #region SMB/CIFS
     public override bool IsSmbCifsSupported { get => true; }
     public override IStorage GetSmbCifsStorage(ILog log, SambaStorageSettingsV2 settings)

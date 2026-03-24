@@ -3,7 +3,7 @@ using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Storages;
-using BUtil.Windows.Utils;
+using BUtil.Windows.Util;
 
 namespace BUtil.Windows.Services;
 
@@ -77,9 +77,13 @@ class WindowsSambaStorage : StorageBase<SambaStorageSettingsV2>
         if (string.IsNullOrWhiteSpace(Settings.User))
             return;
 
-        var command = @$"net use ""{Settings.Url}"" ""/user:{Settings.User}"" ""{Settings.Password}""";
-
-        if (!WindowsCmdProcessHelper.Execute(Log, command))
+        if (!WindowsCmdProcessHelper.ExecuteProcess(
+            Log,
+            "net.exe",
+            "use",
+            Settings.Url,
+            $"/user:{Settings.User}",
+            Settings.Password ?? string.Empty))
             throw new InvalidOperationException($"Cannot mount");
     }
 
@@ -90,8 +94,13 @@ class WindowsSambaStorage : StorageBase<SambaStorageSettingsV2>
         if (string.IsNullOrWhiteSpace(Settings.User))
             return;
 
-        var command = @$"net use ""{Settings.Url}"" /delete /y";
-        if (!WindowsCmdProcessHelper.Execute(Log, command))
+        if (!WindowsCmdProcessHelper.ExecuteProcess(
+            Log,
+            "net.exe",
+            "use",
+            Settings.Url,
+            "/delete",
+            "/y"))
             throw new InvalidOperationException($"Cannot unmount");
 
         if (!string.IsNullOrWhiteSpace(this.Settings.UnmountPowershellScript))

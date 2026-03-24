@@ -1,8 +1,15 @@
 ﻿# 2026.03.19
 (unpublished)
 
+## New Features
+- Hardening security of storing of task passwords.
+It will happen on any edit attempt of task. 
+Passwords will be stored in Windows using DPAPI. For Ubuntu - Secret Service API.
+You cannot copy task files between machines anymore.
+
 ## Changes
 - Audit, code coverage with AI for storages, caching, logging.
+- Tasks code was more simplified for being better supported.
 
 # 2026.02.17
 

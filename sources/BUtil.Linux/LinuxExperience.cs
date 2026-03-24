@@ -7,10 +7,12 @@ using BUtil.Core.Storages;
 using BUtil.Linux.Services;
 using BUtil.Windows.Services;
 
-namespace BUtil.Windows;
+namespace BUtil.Linux;
 
 public class LinuxExperience : CrossPlatformExperience
 {
+    public override ISecretService SecretService => new LinuxSecretService();
+
     #region SMB/CIFS
     public override bool IsSmbCifsSupported { get => true; }
     public override IStorage GetSmbCifsStorage(ILog log, SambaStorageSettingsV2 settings)

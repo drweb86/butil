@@ -1,4 +1,4 @@
-﻿using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
@@ -63,6 +63,9 @@ public class EditMediaTaskViewModel : ViewModelBase
 
         if (!TaskV2Validator.TryValidate(newTask, true, out var error))
         {
+            var detectedInfo = SourceTaskViewModel.ApplyDetectedConnectionTrustAndBuildInfo(((ImportMediaTaskModelOptionsV2)newTask.Model).From);
+            if (!string.IsNullOrWhiteSpace(detectedInfo))
+                await Messages.ShowInformationBox(detectedInfo);
             await Messages.ShowErrorBox(error);
             return;
         }

@@ -89,7 +89,6 @@ class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
 
         var client = new FtpClient(Settings.Host, Settings.User, Settings.Password, Settings.Port);
         client.Config.EncryptionMode = GetFtpEncryptionMode();
-        client.Config.ValidateAnyCertificate = true;
         client.ValidateCertificate += OnClientValidateCertificate;
         client.Connect();
         return client;
@@ -103,15 +102,20 @@ class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
             return;
         }
 
-        if (_autodetectConnectionSettings)
-        {
-            Settings.TrustedCertificate = e.Certificate.GetRawCertDataString();
-        }
-
-        if (e.Certificate.GetRawCertDataString() == Settings.TrustedCertificate)
+        var receivedCertificate = e.Certificate.GetRawCertDataString();
+        if (!string.IsNullOrWhiteSpace(Settings.TrustedCertificate) &&
+            receivedCertificate == Settings.TrustedCertificate)
         {
             e.Accept = true;
             return;
+        }
+
+        if (_autodetectConnectionSettings)
+        {
+            if (string.IsNullOrWhiteSpace(Settings.TrustedCertificate))
+                Settings.TrustedCertificate = receivedCertificate;
+            Log.WriteLine(LoggingEvent.Error, $"FTPS server certificate (raw hex): {receivedCertificate}");
+            Log.WriteLine(LoggingEvent.Error, "Certificate has been filled in the UI. Verify it out-of-band and click Save if trusted.");
         }
 
         Log.WriteLine(LoggingEvent.Error, $"Received certificate from FTPS server violates policy {e.PolicyErrors}. Connection will not be accepted. You're facing Man-in-the-middle attack.");
