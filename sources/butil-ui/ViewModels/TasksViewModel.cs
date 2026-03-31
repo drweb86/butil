@@ -1,6 +1,7 @@
-﻿using Avalonia.Media;
+using Avalonia.Media;
 using BUtil.Core;
 using BUtil.Core.Events;
+using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
@@ -63,7 +64,8 @@ public class TasksViewModel : ViewModelBase
 
     private void LoadTasks()
     {
-        var taskNames = new TaskV2StoreService().GetNames();
+        var store = new TaskV2StoreService(new LocalFileSystem());
+        var taskNames = store.GetNames();
         var lastLogs = new LogService().GetRecentLogs();
 
         foreach (var taskName in taskNames)
@@ -79,7 +81,8 @@ public class TasksViewModel : ViewModelBase
                 else
                     status = ProcessingStatus.InProgress;
             }
-            var listViewItem = new TaskItemViewModel(taskName, lastLaunchedAt, status, _items);
+
+            var listViewItem = new TaskItemViewModel(taskName, lastLaunchedAt, status, _items, lastLogFile?.File);
             Items.Add(listViewItem);
         }
     }

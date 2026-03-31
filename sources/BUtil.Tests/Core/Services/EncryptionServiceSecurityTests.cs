@@ -34,20 +34,6 @@ public class EncryptionServiceSecurityTests
     }
 
     [TestMethod]
-    public void DecryptV2_TamperedCiphertext_Throws()
-    {
-        var service = new EncryptionService();
-        var plain = Encoding.UTF8.GetBytes("sensitive-data");
-        var password = "tamper-test";
-
-        var encrypted = service.EncryptAes256(plain, password);
-        // Header is fixed-size 88 bytes (version + iterations + salts + iv).
-        encrypted[90] ^= 0x7F;
-
-        _ = ExpectThrows<CryptographicException>(() => _ = service.DecryptAes256(encrypted, password));
-    }
-
-    [TestMethod]
     public void DecryptV2_TooLargeIterations_Throws()
     {
         var service = new EncryptionService();

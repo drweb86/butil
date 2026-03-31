@@ -20,7 +20,7 @@ class WindowsSambaStorage : StorageBase<SambaStorageSettingsV2>
         Mount();
     }
 
-    private readonly object _uploadLock = new();
+    private readonly Lock _uploadLock = new();
     private bool _isDisposed;
 
     public override IStorageUploadResult Upload(string sourceFile, string relativeFileName)
@@ -56,11 +56,10 @@ class WindowsSambaStorage : StorageBase<SambaStorageSettingsV2>
     {
         var fullPathName = StoragePathSecurity.ResolveRelativePathInsideRoot(Settings.Url, relativeFolderName, allowEmpty: true, nameof(relativeFolderName));
 
-        return Directory
+        return [.. Directory
             .GetDirectories(fullPathName, mask ?? "*")
             .Select(x => x[fullPathName.Length..])
-            .Select(x => x.Trim(['\\', '/']))
-            .ToArray();
+            .Select(x => x.Trim(['\\', '/']))];
     }
 
     private void Mount()
@@ -162,6 +161,7 @@ class WindowsSambaStorage : StorageBase<SambaStorageSettingsV2>
             }
 
             outputFileStream.Flush(true);
+            outputFileStream.Close();
 
             File.Move(temporaryFilePath, outputFilePath, true);
         }
@@ -184,11 +184,10 @@ class WindowsSambaStorage : StorageBase<SambaStorageSettingsV2>
     {
         var actualFolder = StoragePathSecurity.ResolveRelativePathInsideRoot(Settings.Url, relativeFolderName, allowEmpty: true, nameof(relativeFolderName));
 
-        return Directory
+        return [.. Directory
             .GetFiles(actualFolder, "*", option)
             .Select(x => x[actualFolder.Length..])
-            .Select(x => x.Trim(['\\', '/']))
-            .ToArray();
+            .Select(x => x.Trim(['\\', '/']))];
     }
 
     public override DateTime GetModifiedTime(string relativeFileName)

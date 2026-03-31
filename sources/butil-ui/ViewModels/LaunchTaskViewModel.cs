@@ -1,5 +1,6 @@
 ﻿using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
+using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
@@ -121,7 +122,7 @@ public class LaunchTaskViewModel : ViewModelBase
 
     public void Initialize()
     {
-        _task = new TaskV2StoreService().Load(_taskName, out var isNotFound, out var isNotSupported);
+        _task = new TaskV2StoreService(new LocalFileSystem()).Load(_taskName, out var isNotFound, out var isNotSupported);
         if (isNotFound)
         {
             TaskExecuterViewModel = new TaskExecuterViewModel(string.Format(Resources.Task_Validation_NotFound, _taskName));

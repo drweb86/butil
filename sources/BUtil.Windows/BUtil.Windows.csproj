@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <CopyLibraryFiles Include="$(NuGetPackageRoot)taskscheduler\2.12.2\lib\net9.0-windows7.0\*.*" />
+    <CopyLibraryFiles Include="$(NuGetPackageRoot)taskscheduler\2.12.2\lib\net9.0-windows7.0\*.*;$(NuGetPackageRoot)system.security.cryptography.protecteddata\10.0.5\lib\net10.0\*.*" />
   </ItemGroup>
   <Target Name="CopyLibraries" AfterTargets="Build">
     <Copy SourceFiles="@(CopyLibraryFiles)" DestinationFolder="$(TargetDir)" />

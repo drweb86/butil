@@ -3,11 +3,13 @@ using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
+using Org.BouncyCastle.Utilities.Zlib;
 using System;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Threading;
 
 namespace BUtil.Core.Storages;
 
@@ -22,7 +24,7 @@ public class FolderStorage : StorageBase<FolderStorageSettingsV2>
         Mount();
     }
 
-    private readonly object _uploadLock = new();
+    private readonly Lock _uploadLock = new();
     private bool _isDisposed;
 
     public override IStorageUploadResult Upload(string sourceFile, string relativeFileName)
@@ -105,11 +107,10 @@ public class FolderStorage : StorageBase<FolderStorageSettingsV2>
     {
         var fullPathName = StoragePathSecurity.ResolveRelativePathInsideRoot(Settings.DestinationFolder, relativeFolderName, allowEmpty: true, nameof(relativeFolderName));
 
-        return Directory
+        return [.. Directory
             .GetDirectories(fullPathName, mask ?? "*")
             .Select(x => x[fullPathName.Length..])
-            .Select(x => x.Trim(['\\', '/']))
-            .ToArray();
+            .Select(x => x.Trim(['\\', '/']))];
     }
 
     public override void Download(string relativeFileName, string targetFileName)
@@ -137,6 +138,7 @@ public class FolderStorage : StorageBase<FolderStorageSettingsV2>
             }
 
             outputFileStream.Flush(true);
+            outputFileStream.Close();
 
             File.Move(temporaryFilePath, outputFilePath, true);
         }
@@ -160,11 +162,10 @@ public class FolderStorage : StorageBase<FolderStorageSettingsV2>
     {
         var actualFolder = StoragePathSecurity.ResolveRelativePathInsideRoot(Settings.DestinationFolder, relativeFolderName, allowEmpty: true, nameof(relativeFolderName));
 
-        return Directory
+        return [.. Directory
             .GetFiles(actualFolder, "*", option)
             .Select(x => x[actualFolder.Length..])
-            .Select(x => x.Trim(['\\', '/']))
-            .ToArray();
+            .Select(x => x.Trim(['\\', '/']))];
     }
 
     public override DateTime GetModifiedTime(string relativeFileName)

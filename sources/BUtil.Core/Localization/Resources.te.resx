@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -683,6 +683,9 @@
   </data>
   <data name="Task_List" xml:space="preserve">
     <value>పనులు</value>
+  </data>
+  <data name="Task_OpenLog" xml:space="preserve">
+    <value>చివరి లాగ్ తెరవండి</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>పునరుద్ధరించు</value>

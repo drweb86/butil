@@ -1,4 +1,5 @@
-﻿using BUtil.Core.Logs;
+﻿using BUtil.Core.FileSystem;
+using BUtil.Core.Logs;
 using BUtil.Core.Options;
 using BUtil.Core.TasksTree;
 using System;
@@ -10,7 +11,7 @@ public static class TaskV2Validator
 {
     public static bool TryValidate(TaskV2 task, bool writeMode, [NotNullWhen(false)] out string? error)
     {
-        if (!new TaskV2StoreService().TryValidate(task.Name, out error))
+        if (!new TaskV2StoreService(new LocalFileSystem()).TryValidate(task.Name, out error))
         {
             return false;
         }

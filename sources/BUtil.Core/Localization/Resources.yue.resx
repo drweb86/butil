@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -707,6 +707,9 @@ bin。
   </data>
   <data name="Task_List" xml:space="preserve">
     <value>任務</value>
+  </data>
+  <data name="Task_OpenLog" xml:space="preserve">
+    <value>開啟最近日誌</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>恢復</value>

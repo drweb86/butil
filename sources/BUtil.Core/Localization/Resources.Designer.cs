@@ -1706,6 +1706,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Open last log.
+        /// </summary>
+        public static string Task_OpenLog {
+            get {
+                return ResourceManager.GetString("Task_OpenLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Restore.
         /// </summary>
         public static string Task_Restore {

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -689,6 +689,9 @@ bin.
   </data>
   <data name="Task_List" xml:space="preserve">
     <value>பணிகள்</value>
+  </data>
+  <data name="Task_OpenLog" xml:space="preserve">
+    <value>கடைசி பதிவை திறக்கவும்</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>மீட்டமை</value>

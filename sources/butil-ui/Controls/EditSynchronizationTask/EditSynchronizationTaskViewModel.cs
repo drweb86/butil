@@ -1,5 +1,6 @@
 using BUtil.Core;
 using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
@@ -20,7 +21,7 @@ public class EditSynchronizationTaskViewModel : ViewModelBase
         WindowTitle = isNew ? Resources.Task_Field_Name_NewDefaultValue : taskName;
         IsNew = isNew;
 
-        var storeService = new TaskV2StoreService();
+        var storeService = new TaskV2StoreService(new LocalFileSystem());
         var newTask = new TaskV2() { Model = new SynchronizationTaskModelOptionsV2() };
         var task = isNew ? newTask : storeService.Load(taskName) ?? newTask;
         NameTaskViewModel = new NameTaskViewModel(isNew, Resources.SynchronizationTask_Help, task.Name);
@@ -72,7 +73,7 @@ public class EditSynchronizationTaskViewModel : ViewModelBase
             return;
         }
 
-        var storeService = new TaskV2StoreService();
+        var storeService = new TaskV2StoreService(new LocalFileSystem());
         var scheduler = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
         if (!IsNew)
         {

@@ -1,9 +1,11 @@
-﻿using Avalonia.Media;
+using Avalonia.Media;
 using BUtil.Core;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
+using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
+using BUtil.Core.Misc;
 using BUtil.Core.Options;
 using BUtil.Core.State;
 using butil_ui.ViewModels;
@@ -17,9 +19,11 @@ public class TaskItemViewModel(
     string name,
     string lastLaunchedAt,
     ProcessingStatus status,
-    ObservableCollection<TaskItemViewModel> items) : ObservableObject
+    ObservableCollection<TaskItemViewModel> items,
+    string? logFilePath) : ObservableObject
 {
     private readonly ObservableCollection<TaskItemViewModel> _items = items;
+    private readonly string? _logFilePath = logFilePath;
 
     public string Name { get; } = name;
     public string LastLaunchedAt { get; } = lastLaunchedAt;
@@ -29,10 +33,13 @@ public class TaskItemViewModel(
     public SolidColorBrush SuccessForegroundColorBrush { get; } = ColorPalette.GetBrush(SemanticColor.Success);
     public SolidColorBrush ForegroundWindowFontAccented { get; } = ColorPalette.GetBrush(SemanticColor.ForegroundWindowFontAccented);
 
+    public bool HasLog => _logFilePath != null;
+
     public static string Task_Delete => Resources.Task_Delete;
     public static string Task_Launch => Resources.Task_Launch;
     public static string Task_Edit => Resources.Task_Edit;
     public static string Task_Restore => Resources.Task_Restore;
+    public static string Task_OpenLog => Resources.Task_OpenLog;
 
     #region Commands
 
@@ -41,9 +48,15 @@ public class TaskItemViewModel(
         WindowManager.SwitchToLaunchTask(Name);
     }
 
+    public void OpenLogCommand()
+    {
+        if (_logFilePath != null)
+            ProcessHelper.ShellExecute(_logFilePath);
+    }
+
     public void TaskEditCommand()
     {
-        var task = new TaskV2StoreService()
+        var task = new TaskV2StoreService(new LocalFileSystem())
             .Load(this.Name);
         if (task == null)
             return;
@@ -70,7 +83,7 @@ public class TaskItemViewModel(
         if (!await Messages.ShowYesNoDialog(string.Format(Resources.Task_Delete_Confirm, Name)))
             return;
 
-        new TaskV2StoreService()
+        new TaskV2StoreService(new LocalFileSystem())
             .Delete(Name);
         LogService.DeleteLogs(Name);
         ImportMediaFileService.DeleteState(Name);

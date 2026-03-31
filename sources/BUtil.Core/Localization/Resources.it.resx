@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -693,6 +693,9 @@ Consulta il sito web dell'applicazione per la documentazione su come impostare l
   </data>
   <data name="Task_List" xml:space="preserve">
     <value>Attività</value>
+  </data>
+  <data name="Task_OpenLog" xml:space="preserve">
+    <value>Apri l'ultimo registro</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Ripristina</value>

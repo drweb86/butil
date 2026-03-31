@@ -1,11 +1,13 @@
-﻿# 2026.03.19
+﻿# 2026.03.31
 (unpublished)
 
 ## New Features
 - Hardening security of storing of task passwords.
-It will happen on any edit attempt of task. 
 Passwords will be stored in Windows using DPAPI. For Ubuntu - Secret Service API.
 You cannot copy task files between machines anymore.
+Protection migration will happen on read of any task or reading list of tasks.
+Migration code will be there until 2026-10.
+- Card now has possibility to open last log.
 
 ## Changes
 - Audit, code coverage with AI for storages, caching, logging.

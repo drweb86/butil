@@ -25,13 +25,12 @@ public class LogService
 
     public IEnumerable<LogFileInfo> GetRecentLogs()
     {
-        return Directory
+        return [.. Directory
             .GetFiles(Directories.LogsFolder, GetMask("*"))
             .OrderByDescending(x => x)
             .Select(ParseFileName)
             .GroupBy(x => x.TaskName.ToLowerInvariant())
-            .Select(x => x.First())
-            .ToList();
+            .Select(x => x.First())];
     }
 
     public static void MoveLogs(string oldTaskName, string newTaskName)
@@ -85,6 +84,6 @@ public class LogService
 
         var isError = fileName.EndsWith($"({Localization.Resources.LogFile_Marker_Errors}).txt");
         var isSuccess = fileName.EndsWith($"({Localization.Resources.LogFile_Marker_Successful}).txt");
-        return new LogFileInfo { TaskName = taskName, CreatedAt = createdAt, IsSuccess = isSuccess ? true : (isError ? false : null) };
+        return new LogFileInfo(taskName, createdAt, isSuccess ? true : (isError ? false : null), logFileName);
     }
 }

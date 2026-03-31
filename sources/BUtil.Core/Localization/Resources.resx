@@ -688,6 +688,9 @@ See detailed description in the following link.</value>
   <data name="Task_List" xml:space="preserve">
     <value>Tasks</value>
   </data>
+  <data name="Task_OpenLog" xml:space="preserve">
+    <value>Open last log</value>
+  </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Restore</value>
   </data>

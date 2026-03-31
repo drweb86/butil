@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -687,6 +687,9 @@ Consulta la descripción detallada en el siguiente enlace.</value>
   </data>
   <data name="Task_List" xml:space="preserve">
     <value>Tareas</value>
+  </data>
+  <data name="Task_OpenLog" xml:space="preserve">
+    <value>Abrir el último registro</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Restaurar</value>

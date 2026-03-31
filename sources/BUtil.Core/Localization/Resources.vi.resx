@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -684,6 +684,9 @@ Xem mô tả chi tiết trong liên kết sau.</value>
   </data>
   <data name="Task_List" xml:space="preserve">
     <value>Các tác vụ</value>
+  </data>
+  <data name="Task_OpenLog" xml:space="preserve">
+    <value>Mở nhật ký gần nhất</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Khôi phục</value>

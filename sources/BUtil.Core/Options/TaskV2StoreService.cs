@@ -13,17 +13,21 @@ namespace BUtil.Core.Options;
 public class TaskV2StoreService
 {
     private readonly string _folder;
+    private readonly ILocalFileSystem _fileSystem;
     private const string _extensionV2 = ".v2.json";
+    private const string _extensionV3 = ".v3.json";
+
     private static readonly JsonSerializerOptions _jsonSerializerOptions = new() { WriteIndented = true };
 
-    public TaskV2StoreService()
+    public TaskV2StoreService(ILocalFileSystem fileSystem)
     {
+        _fileSystem = fileSystem;
 #if DEBUG
         _folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BUtil Backup Tasks - DEBUG");
 #else
         _folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BUtil Backup Tasks");
 #endif
-        FileHelper.EnsureFolderCreated(_folder);
+        _fileSystem.EnsureFolderCreated(_folder);
     }
 
     public TaskV2? Load(string name)
@@ -33,51 +37,40 @@ public class TaskV2StoreService
 
     public TaskV2? Load(string name, out bool isNotFound, out bool isNotSupported)
     {
+        MigrateAllToV3();
+
         isNotFound = true;
         isNotSupported = false;
 
-        foreach (var pair in GetFileNames(name))
-        {
-            if (!File.Exists(pair.Value))
-                continue;
+        var fileName = GetFileName(name);
+        if (!_fileSystem.FileExists(fileName))
+            return null;
 
-            isNotFound = false;
-            isNotSupported = true;
+        isNotFound = false;
 
-            var json = File.ReadAllText(pair.Value);
-
-            if (pair.Key == 2)
-            {
-                var result = JsonSerializer.Deserialize<TaskV2>(json);
-                isNotSupported = result == null;
-                if (result != null)
-                    PlatformSpecificExperience.Instance.SecretService.UnprotectInPlace(result);
-                return result;
-            }
-            else
-            {
-                return null;
-            }
-        }
-
-        return null;
+        var json = _fileSystem.ReadAllText(fileName);
+        var result = JsonSerializer.Deserialize<TaskV2>(json);
+        isNotSupported = result == null;
+        if (result != null)
+            PlatformSpecificExperience.Instance.SecretService.UnprotectInPlace(result);
+        return result;
     }
 
     public void Save(TaskV2 task)
     {
         Delete(task.Name);
 
-        var fileName = GetFileNames(task.Name).Last().Value;
+        var fileName = GetFileName(task.Name);
         var protectedTask = PlatformSpecificExperience.Instance.SecretService.CreateProtectedClone(task);
         var json = JsonSerializer.Serialize(protectedTask, _jsonSerializerOptions);
-        File.WriteAllText(fileName, json);
+        _fileSystem.WriteAllText(fileName, json);
     }
 
     public void Delete(string name)
     {
-        foreach (var pair in GetFileNames(name))
-            if (File.Exists(pair.Value))
-                File.Delete(pair.Value);
+        var fileName = GetFileName(name);
+        if (_fileSystem.FileExists(fileName))
+            _fileSystem.DeleteFile(fileName);
     }
 
     public bool TryValidate(string name, [NotNullWhen(false)] out string? error)
@@ -88,7 +81,7 @@ public class TaskV2StoreService
             return false;
         }
 
-        var actualFileName = GetFileNames(name).Last().Value;
+        var actualFileName = GetFileName(name);
         if (actualFileName.Length > 255)
         {
             error = string.Format(Resources.Name_Field_Validation_ExceedsLimit, name, actualFileName.Length - 255);
@@ -97,6 +90,53 @@ public class TaskV2StoreService
 
         error = null;
         return true;
+    }
+
+    internal void MigrateAllToV3()
+    {
+        var v2Files = _fileSystem.GetFiles(_folder, "*" + _extensionV2);
+
+        foreach (var v2File in v2Files)
+        {
+            var fileName = Path.GetFileName(v2File);
+            var name = fileName[..^_extensionV2.Length];
+
+            var v3Path = Path.Combine(_folder, $"{name}{_extensionV3}");
+            if (_fileSystem.FileExists(v3Path))
+            {
+                _fileSystem.DeleteFile(v2File);
+                continue;
+            }
+
+            try
+            {
+                var json = _fileSystem.ReadAllText(v2File);
+                _fileSystem.DeleteFile(v2File);
+
+                var task = JsonSerializer.Deserialize<TaskV2>(json);
+
+                if (task == null || !MigrateToV3IsSupportedModel(task))
+                    continue;
+
+                PlatformSpecificExperience.Instance.SecretService.UnprotectInPlace(task);
+                var protectedTask = PlatformSpecificExperience.Instance.SecretService.CreateProtectedClone(task);
+                var v3Json = JsonSerializer.Serialize(protectedTask, _jsonSerializerOptions);
+                _fileSystem.WriteAllText(v3Path, v3Json);
+            }
+            catch
+            {
+                // Skip files that cannot be read or migrated
+            }
+        }
+    }
+
+    private static bool MigrateToV3IsSupportedModel(TaskV2 task)
+    {
+        return task.Model is IncrementalBackupModelOptionsV2
+            || task.Model is SynchronizationTaskModelOptionsV2
+            || task.Model is ImportMediaTaskModelOptionsV2
+            || task.Model is BUtilServerModelOptionsV2
+            || task.Model is BUtilClientModelOptionsV2;
     }
 
     private static bool ContainsIllegalChars(string text)
@@ -108,21 +148,20 @@ public class TaskV2StoreService
 
     public IEnumerable<string> GetNames()
     {
-        return [.. Directory
-            .GetFiles(_folder, "*" + _extensionV2)
+        MigrateAllToV3();
+
+        return [.. _fileSystem
+            .GetFiles(_folder, "*" + _extensionV3)
             .Select(x => Path.GetFileName(x) ?? throw new InvalidDataException(x))
-            .Select(x => x.Replace(_extensionV2, string.Empty))
+            .Select(x => x.Replace(_extensionV3, string.Empty))
             .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)];
     }
 
-    private Dictionary<int, string> GetFileNames(string name)
+    private string GetFileName(string name)
     {
         if (name.Contains("..") || name.Contains('/') || name.Contains('\\'))
             throw new ArgumentException("No .. / and \\");
 
-        return new Dictionary<int, string>
-        {
-            { 2, Path.Combine(_folder, $"{name}{_extensionV2}") },
-        };
+        return Path.Combine(_folder, $"{name}{_extensionV3}");
     }
 }

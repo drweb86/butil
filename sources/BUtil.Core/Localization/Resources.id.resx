@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -684,6 +684,9 @@
   </data>
   <data name="Task_List" xml:space="preserve">
     <value>Tugas</value>
+  </data>
+  <data name="Task_OpenLog" xml:space="preserve">
+    <value>Buka log terakhir</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Pulihkan</value>

@@ -1,4 +1,5 @@
 using BUtil.Core;
+using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
@@ -123,7 +124,7 @@ class Controller
             Environment.Exit(-1);
         }
 
-        var outputFile = inputFile.Substring(0, inputFile.Length - ".brotli".Length); ;
+        var outputFile = inputFile[..^".brotli".Length]; ;
 
         using var ioc = new CommonServicesIoc(log, (s) => { });
         ioc.CompressionService.DecompressBrotliFile(inputFile, outputFile);
@@ -168,7 +169,7 @@ class Controller
             Environment.Exit(-1);
         }
 
-        var outputFile = inputFile.Substring(0, inputFile.Length - ("." + SourceItemHelper.AES256V1Extension).Length); ;
+        var outputFile = inputFile[..^("." + SourceItemHelper.AES256V1Extension).Length]; ;
 
         using var ioc = new CommonServicesIoc(log, (s) => { });
         ioc.EncryptionService.DecryptAes256File(inputFile, outputFile, password);
@@ -213,7 +214,7 @@ class Controller
         log.Open();
         try
         {
-            var backupTaskStoreService = new TaskV2StoreService();
+            var backupTaskStoreService = new TaskV2StoreService(new LocalFileSystem());
             var task = backupTaskStoreService.Load(_taskName, out var isNotFound, out var isNotSupported)!;
             if (isNotFound)
             {

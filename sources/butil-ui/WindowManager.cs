@@ -29,7 +29,7 @@ internal static class WindowManager
             return;
         }
 
-        var task = new TaskV2StoreService()
+        var task = new TaskV2StoreService(new LocalFileSystem())
                 .Load(taskName);
 
         if (task == null || (task.Model is not IncrementalBackupModelOptionsV2 && task.Model is not SynchronizationTaskModelOptionsV2))

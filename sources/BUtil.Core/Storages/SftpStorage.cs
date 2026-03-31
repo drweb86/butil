@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
 
 namespace BUtil.Core.Storages;
 
@@ -46,7 +47,7 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
         
     }
 
-    private readonly object _uploadLock = new();
+    private readonly Lock _uploadLock = new();
     private readonly bool _testingConnection;
 
     public override IStorageUploadResult Upload(string sourceFile, string relativeFileName)
@@ -102,7 +103,7 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
             Settings.Host,
             Settings.Port == 0 ? DefaultPort : Settings.Port,
             Settings.User,
-            authenticationMethods.ToArray());
+            [.. authenticationMethods]);
 
         var client = new SftpClient(connectionInfo);
         client.HostKeyReceived += Client_HostKeyReceived;
@@ -197,6 +198,7 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
             using var outputStream = new FileStream(temporaryFilePath, FileMode.Create, FileAccess.Write, FileShare.None);
             _client.DownloadFile(remotePath, outputStream);
             outputStream.Flush(true);
+            outputStream.Close();
             File.Move(temporaryFilePath, targetFileName, true);
         }
         catch
@@ -249,10 +251,9 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
         var files = new List<string>();
         var remoteFolder = GetRemotePath(relativeFolderName, true)!;
         GetFilesInternal(remoteFolder, files, option);
-        return files
+        return [.. files
             .Select(x => x[Settings.Folder.Length..])
-            .Select(LinuxFileHelper.NormalizeNotNullablePath)
-            .ToArray();
+            .Select(LinuxFileHelper.NormalizeNotNullablePath)];
     }
 
     public override string[] GetFolders(string? relativeFolderName, string? mask = null)
@@ -271,11 +272,10 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
 
             directories.Add(sftpFile.FullName);
         }
-        return directories
+        return [.. directories
             .Select(x => x[Settings.Folder.Length..])
             .Select(LinuxFileHelper.NormalizeNotNullablePath)
-            .Where(x => mask == null || LinuxFileHelper.FitsMask(Path.GetFileName(x), mask))
-            .ToArray();
+            .Where(x => mask == null || LinuxFileHelper.FitsMask(Path.GetFileName(x), mask))];
     }
 
     public override DateTime GetModifiedTime(string relativeFileName)

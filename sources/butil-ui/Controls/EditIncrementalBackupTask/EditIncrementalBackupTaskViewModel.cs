@@ -1,5 +1,6 @@
 using BUtil.Core;
 using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
@@ -19,7 +20,7 @@ public class EditIncrementalBackupTaskViewModel : ViewModelBase
         WindowTitle = isNew ? Resources.Task_Field_Name_NewDefaultValue : taskName;
         IsNew = isNew;
 
-        var storeService = new TaskV2StoreService();
+        var storeService = new TaskV2StoreService(new LocalFileSystem());
         var task = isNew ? new TaskV2() : storeService.Load(taskName) ?? new TaskV2();
         NameTaskViewModel = new NameTaskViewModel(isNew, Resources.IncrementalBackup_Help, task.Name);
         var model = (IncrementalBackupModelOptionsV2)task.Model;
@@ -70,7 +71,7 @@ public class EditIncrementalBackupTaskViewModel : ViewModelBase
             return;
         }
 
-        var storeService = new TaskV2StoreService();
+        var storeService = new TaskV2StoreService(new LocalFileSystem());
         var scheduler = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
         if (!IsNew)
         {

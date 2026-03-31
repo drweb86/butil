@@ -8,12 +8,13 @@ using System.IO;
 using System.Globalization;
 using System.Security.Cryptography;
 using System.Text.Json;
+using System.Threading;
 
 namespace BUtil.Core.Hashing;
 
 internal class CachedHashService : ICachedHashService
 {
-    private readonly object _gate = new();
+    private readonly Lock _gate = new();
     private readonly Dictionary<string, CachedHash> _cachedHashes = new(GetPathComparer());
     private bool _isLoaded = false;
 
@@ -161,10 +162,9 @@ internal class CachedHashService : ICachedHashService
 
         lock (_gate)
         {
-            storeItems = _cachedHashes
+            storeItems = [.. _cachedHashes
                 .Values
-                .Where(x => x.Expiration > utcNow)
-                .ToList();
+                .Where(x => x.Expiration > utcNow)];
         }
 
         try

@@ -32,6 +32,7 @@
 			MaxWidth="{Binding $parent.Bounds.Width}">
 			<Grid ColumnDefinitions="*,Auto">
 				<TextBlock Grid.Column="0"
+					Margin="12 0 0 0"
 					Text="{Binding Path=Name}"
 					Foreground="{Binding ForegroundWindowFontAccented}"
 					TextWrapping="Wrap"
@@ -52,20 +53,26 @@
 							</MenuItem.Icon>
 						</MenuItem>
 
-						<MenuItem Header="{Binding Task_Delete}" Command="{Binding TaskDeleteCommand}">
-							<MenuItem.Icon>
-								<Image Width="16" Height="16" Source="/Assets/www.wefunction.com_FunctionFreeIconSet_cross_48.png" />
-							</MenuItem.Icon>
-						</MenuItem>
+					<MenuItem Header="{Binding Task_Delete}" Command="{Binding TaskDeleteCommand}">
+						<MenuItem.Icon>
+							<Image Width="16" Height="16" Source="/Assets/www.wefunction.com_FunctionFreeIconSet_cross_48.png" />
+						</MenuItem.Icon>
 					</MenuItem>
-				</Menu>
+
+					<MenuItem Header="{Binding Task_OpenLog}" Command="{Binding OpenLogCommand}" IsEnabled="{Binding HasLog}" />
+				</MenuItem>
+			</Menu>
 			</Grid>
-			<TextBlock
-				Text="{Binding Path=LastLaunchedAt}"
-				Foreground="{Binding Path=Foreground}"
-				TextWrapping="Wrap"
-				Margin="0 4 0 4"
-			/>
+
+			<HyperlinkButton
+				Command="{Binding OpenLogCommand}"
+				ToolTip.Tip="{Binding Task_OpenLog}">
+				<TextBlock
+					Text="{Binding Path=LastLaunchedAt}"
+					Foreground="{Binding Path=Foreground}"
+					TextWrapping="Wrap"
+				/>
+			</HyperlinkButton>
 
 			<Button
 				Background="Transparent"
@@ -80,7 +87,5 @@
 				Content="{Binding Task_Launch}">
 			</Button>
 		</StackPanel>
-
-
 	</Grid>
 </UserControl>
