@@ -1,4 +1,4 @@
-﻿using BUtil.Core;
+using BUtil.Core;
 using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace butil_ui.ViewModels;
@@ -6,6 +6,23 @@ namespace butil_ui.ViewModels;
 public class ViewModelBase : ObservableObject
 {
     public bool IsFullMenuVisible { get; set; }
+
+    #region SearchText
+
+    private string _searchText = string.Empty;
+    public string SearchText
+    {
+        get => _searchText;
+        set
+        {
+            if (value == _searchText)
+                return;
+            _searchText = value;
+            OnPropertyChanged(nameof(SearchText));
+        }
+    }
+
+    #endregion
 
     #region WindowTitle
 

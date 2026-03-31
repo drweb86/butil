@@ -6,7 +6,10 @@ using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
 using butil_ui.Controls;
+using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 
 namespace butil_ui.ViewModels;
@@ -21,12 +24,22 @@ public class TasksViewModel : ViewModelBase
         WindowTitle = "BUtil - V" + CopyrightInfo.Version.ToString(3);
         HeaderBackground = ColorPalette.GetBrush(SemanticColor.HeaderBackground);
         ForegroundWindowFontAccented = ColorPalette.GetBrush(SemanticColor.ForegroundWindowFontAccented);
+
+        PropertyChanged += OnSelfPropertyChanged;
+    }
+
+    private void OnSelfPropertyChanged(object? sender, PropertyChangedEventArgs e)
+    {
+        if (e.PropertyName == nameof(SearchText))
+            ApplyFilter();
     }
     public SolidColorBrush HeaderBackground { get; }
     public SolidColorBrush ForegroundWindowFontAccented { get; }
     public SolidColorBrush ProgressGenericForeground { get; }
 
     #region Items
+
+    private readonly List<TaskItemViewModel> _allItems = [];
 
     private ObservableCollection<TaskItemViewModel> _items = [];
     public ObservableCollection<TaskItemViewModel> Items
@@ -42,6 +55,18 @@ public class TasksViewModel : ViewModelBase
             _items = value;
             OnPropertyChanged(nameof(Items));
         }
+    }
+
+    private void ApplyFilter()
+    {
+        var filter = SearchText?.Trim() ?? string.Empty;
+        var filtered = string.IsNullOrEmpty(filter)
+            ? _allItems
+            : _allItems.Where(x => x.Name.Contains(filter, StringComparison.OrdinalIgnoreCase)).ToList();
+
+        _items.Clear();
+        foreach (var item in filtered)
+            _items.Add(item);
     }
 
     #endregion
@@ -83,8 +108,10 @@ public class TasksViewModel : ViewModelBase
             }
 
             var listViewItem = new TaskItemViewModel(taskName, lastLaunchedAt, status, _items, lastLogFile?.File);
-            Items.Add(listViewItem);
+            _allItems.Add(listViewItem);
         }
+
+        ApplyFilter();
     }
 
 }

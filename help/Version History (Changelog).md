@@ -8,6 +8,7 @@ You cannot copy task files between machines anymore.
 Protection migration will happen on read of any task or reading list of tasks.
 Migration code will be there until 2026-10.
 - Card now has possibility to open last log.
+- Filter cards by title on main menu.
 
 ## Changes
 - Audit, code coverage with AI for storages, caching, logging.
