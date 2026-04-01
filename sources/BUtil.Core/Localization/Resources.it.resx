@@ -695,7 +695,7 @@ Consulta il sito web dell'applicazione per la documentazione su come impostare l
     <value>Attività</value>
   </data>
   <data name="Task_OpenLog" xml:space="preserve">
-    <value>Apri l'ultimo registro</value>
+    <value>Apri ultimo registro</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Ripristina</value>
