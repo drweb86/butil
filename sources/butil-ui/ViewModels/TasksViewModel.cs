@@ -39,10 +39,10 @@ public class TasksViewModel : ViewModelBase
 
     #region Items
 
-    private readonly List<TaskItemViewModel> _allItems = [];
+    private readonly List<TaskCardViewModel> _allItems = [];
 
-    private ObservableCollection<TaskItemViewModel> _items = [];
-    public ObservableCollection<TaskItemViewModel> Items
+    private ObservableCollection<TaskCardViewModel> _items = [];
+    public ObservableCollection<TaskCardViewModel> Items
     {
         get
         {
@@ -96,7 +96,6 @@ public class TasksViewModel : ViewModelBase
         foreach (var taskName in taskNames)
         {
             var lastLogFile = lastLogs.FirstOrDefault(x => x.TaskName.Cmp(taskName));
-            string lastLaunchedAt = lastLogFile != null ? lastLogFile.CreatedAt.ToString() : string.Empty;
 
             var status = ProcessingStatus.NotStarted;
             if (lastLogFile != null)
@@ -107,7 +106,7 @@ public class TasksViewModel : ViewModelBase
                     status = ProcessingStatus.InProgress;
             }
 
-            var listViewItem = new TaskItemViewModel(taskName, lastLaunchedAt, status, _items, lastLogFile?.File);
+            var listViewItem = new TaskCardViewModel(taskName, lastLogFile?.CreatedAt, status, _items, lastLogFile?.File);
             _allItems.Add(listViewItem);
         }
 

@@ -10,23 +10,25 @@ using BUtil.Core.Options;
 using BUtil.Core.State;
 using butil_ui.ViewModels;
 using CommunityToolkit.Mvvm.ComponentModel;
+using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
 namespace butil_ui.Controls;
 
-public class TaskItemViewModel(
+public class TaskCardViewModel(
     string name,
-    string lastLaunchedAt,
+    DateTime? lastLaunchedAt,
     ProcessingStatus status,
-    ObservableCollection<TaskItemViewModel> items,
+    ObservableCollection<TaskCardViewModel> items,
     string? logFilePath) : ObservableObject
 {
-    private readonly ObservableCollection<TaskItemViewModel> _items = items;
+    private readonly ObservableCollection<TaskCardViewModel> _items = items;
     private readonly string? _logFilePath = logFilePath;
 
     public string Name { get; } = name;
-    public string LastLaunchedAt { get; } = lastLaunchedAt;
+    public string OpenLogTooltip { get; } = Resources.Task_OpenLog + (lastLaunchedAt.HasValue ? ("\n" + lastLaunchedAt) : string.Empty);
+    public string? LastLaunchedAt { get; } = lastLaunchedAt.HasValue ? lastLaunchedAt.Value.ToShortDateString() : null;
     public SolidColorBrush Foreground { get; } = ColorPalette.GetProcessingStatusBrush(status);
     public SolidColorBrush Background { get; } = ColorPalette.GetBrush(SemanticColor.WindowFrontBackground);
 

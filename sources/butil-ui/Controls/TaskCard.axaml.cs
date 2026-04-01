@@ -2,9 +2,9 @@ using Avalonia.Controls;
 
 namespace butil_ui.Controls;
 
-public partial class TaskItemView : UserControl
+public partial class TaskCard : UserControl
 {
-    public TaskItemView()
+    public TaskCard()
     {
         InitializeComponent();
     }

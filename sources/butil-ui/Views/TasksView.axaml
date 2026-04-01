@@ -37,7 +37,7 @@
 				</ItemsRepeater.Layout>
 				<ItemsRepeater.ItemTemplate>
 					<DataTemplate>
-						<controls:TaskItemView />
+						<controls:TaskCard />
 					</DataTemplate>
 				</ItemsRepeater.ItemTemplate>
 			</ItemsRepeater>

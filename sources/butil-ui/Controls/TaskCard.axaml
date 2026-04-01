@@ -4,8 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:cvm="clr-namespace:butil_ui.Controls"
              mc:Ignorable="d"
-             x:Class="butil_ui.Controls.TaskItemView"
-			 x:DataType="cvm:TaskItemViewModel"
+             x:Class="butil_ui.Controls.TaskCard"
+			 x:DataType="cvm:TaskCardViewModel"
 			 CornerRadius="8"
 			 BorderThickness="1"
 			 Margin="8"
@@ -66,7 +66,7 @@
 
 			<HyperlinkButton
 				Command="{Binding OpenLogCommand}"
-				ToolTip.Tip="{Binding Task_OpenLog}">
+				ToolTip.Tip="{Binding Path=OpenLogTooltip}">
 				<TextBlock
 					Text="{Binding Path=LastLaunchedAt}"
 					Foreground="{Binding Path=Foreground}"

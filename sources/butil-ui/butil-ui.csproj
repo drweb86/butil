@@ -76,8 +76,8 @@
     <Compile Update="Controls\TaskExecuter\TaskExecuterView.axaml.cs">
       <DependentUpon>TaskExecuterView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Controls\TaskItem\TaskItemView.axaml.cs">
-      <DependentUpon>TaskItemView.axaml</DependentUpon>
+    <Compile Update="Controls\TaskCard.axaml.cs">
+      <DependentUpon>TaskCard.axaml</DependentUpon>
     </Compile>
     <Compile Update="Controls\NameTask\NameTaskView.axaml.cs">
       <DependentUpon>NameTaskView.axaml</DependentUpon>
