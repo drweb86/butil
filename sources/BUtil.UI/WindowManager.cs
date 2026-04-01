@@ -1,12 +1,10 @@
 ﻿using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.FileSystem;
-using BUtil.Core.Options;
 using BUtil.Core.Services;
-using butil_ui.ViewModels;
+using BUtil.UI.Controls;
 using System;
-using System.Linq;
 
-namespace butil_ui;
+namespace BUtil.UI;
 
 internal static class WindowManager
 {

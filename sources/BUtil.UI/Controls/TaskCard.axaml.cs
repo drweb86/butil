@@ -1,6 +1,6 @@
 using Avalonia.Controls;
 
-namespace butil_ui.Controls;
+namespace BUtil.UI.Controls;
 
 public partial class TaskCard : UserControl
 {

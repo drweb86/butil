@@ -6,16 +6,14 @@ using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
-using BUtil.Core.Options;
 using BUtil.Core.Services;
 using BUtil.Core.State;
-using butil_ui.ViewModels;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
-namespace butil_ui.Controls;
+namespace BUtil.UI.Controls;
 
 public class TaskCardViewModel(
     string name,

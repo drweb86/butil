@@ -1,0 +1,31 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:cvm="clr-namespace:BUtil.UI.Controls"
+             mc:Ignorable="d"
+             x:Class="BUtil.UI.Controls.WhenTaskView"
+			 x:DataType="cvm:WhenTaskViewModel">
+	<Expander HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
+		<Expander.Header>
+			<StackPanel Orientation="Horizontal">
+				<Image Width="16" Height="16" Source="/Assets/CrystalClear_EveraldoCoelho_Schedule48x48.png" VerticalAlignment="Center" />
+				<TextBlock Text="{Binding LeftMenu_When}" Margin="8 0 0 0" VerticalAlignment="Center" />
+			</StackPanel>
+		</Expander.Header>
+		<StackPanel>
+			<TextBlock Text="{Binding Days_Field_Choose}" />
+			<CheckBox IsChecked="{Binding Monday}" Content="{Binding Days_Monday}" />
+			<CheckBox IsChecked="{Binding Tuesday}" Content="{Binding Days_Tuesday}" />
+			<CheckBox IsChecked="{Binding Wednesday}" Content="{Binding Days_Wednesday}" />
+			<CheckBox IsChecked="{Binding Thursday}" Content="{Binding Days_Thursday}" />
+			<CheckBox IsChecked="{Binding Friday}" Content="{Binding Days_Friday}" />
+			<CheckBox IsChecked="{Binding Saturday}" Content="{Binding Days_Saturday}" />
+			<CheckBox IsChecked="{Binding Sunday}" Content="{Binding Days_Sunday}" />
+			<TextBlock Text="{Binding Time_Field_Hour}" Margin="0 4 0 4" />
+			<NumericUpDown Minimum="0" Maximum="23" FormatString="N0" Value="{Binding Hours}" />
+			<TextBlock Text="{Binding Time_Field_Minute}" Margin="0 4 0 4" />
+			<NumericUpDown Minimum="0" Maximum="59" FormatString="N0" Value="{Binding Minutes}" />
+		</StackPanel>
+	</Expander>
+</UserControl>

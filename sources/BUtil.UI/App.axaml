@@ -1,7 +1,7 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="butil_ui.App"
-             xmlns:local="using:BasicViewLocatorSample"
+             x:Class="BUtil.UI.App"
+             xmlns:local="using:BUtil.UI"
 			 xmlns:dialogHostAvalonia="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia">
     <Application.DataTemplates>
         <local:ViewLocator/>

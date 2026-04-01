@@ -1,5 +1,4 @@
-﻿
-namespace butil_ui;
+﻿namespace BUtil.UI;
 
 internal static class ApplicationSettings
 {

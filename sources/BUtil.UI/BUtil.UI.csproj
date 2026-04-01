@@ -49,74 +49,74 @@
   </ItemGroup>
 
   <ItemGroup>
-    <AvaloniaXaml Update="Controls\VersionsList\VersionsListView.axaml">
+    <AvaloniaXaml Update="Controls\VersionsListView.axaml">
       <SubType>Designer</SubType>
     </AvaloniaXaml>
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Controls\EditBUtilServerClientTask\EditBUtilServerClientTaskView.axaml.cs">
+    <Compile Update="Controls\EditBUtilServerClientTaskView.axaml.cs">
       <DependentUpon>EditBUtilServerClientTaskView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Controls\EditBUtilServerTask\EditBUtilServerTaskView.axaml.cs">
+    <Compile Update="Controls\EditBUtilServerTaskView.axaml.cs">
       <DependentUpon>EditBUtilServerTaskView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Controls\EditSynchronizationTask\EditSynchronizationTaskViewView.axaml.cs">
+    <Compile Update="Controls\EditSynchronizationTaskViewView.axaml.cs">
       <DependentUpon>EditSynchronizationTaskViewView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Controls\FolderAndPortSection\FolderAndPortSectionView.axaml.cs">
+    <Compile Update="Controls\FolderAndPortSectionView.axaml.cs">
       <DependentUpon>FolderAndPortSectionView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Controls\SynchronizationWhat\SynchronizationWhatView.axaml.cs">
+    <Compile Update="Controls\SynchronizationWhatView.axaml.cs">
       <DependentUpon>SynchronizationWhatView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Controls\FolderSection\FolderSectionView.axaml.cs">
+    <Compile Update="Controls\FolderSectionView.axaml.cs">
       <DependentUpon>FolderSectionView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Controls\TaskExecuter\TaskExecuterView.axaml.cs">
+    <Compile Update="Controls\TaskExecuterView.axaml.cs">
       <DependentUpon>TaskExecuterView.axaml</DependentUpon>
     </Compile>
     <Compile Update="Controls\TaskCard.axaml.cs">
       <DependentUpon>TaskCard.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Controls\NameTask\NameTaskView.axaml.cs">
+    <Compile Update="Controls\NameTaskView.axaml.cs">
       <DependentUpon>NameTaskView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Controls\WhenTask\WhenTaskView.axaml.cs">
+    <Compile Update="Controls\WhenTaskView.axaml.cs">
       <DependentUpon>WhenTaskView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Controls\ImportMediaTaskWhereTask\ImportMediaTaskWhereTaskView.axaml.cs">
+    <Compile Update="Controls\ImportMediaTaskWhereTaskView.axaml.cs">
       <DependentUpon>ImportMediaTaskWhereTaskView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Controls\VersionsList\VersionsListView.axaml.cs">
+    <Compile Update="Controls\VersionsListView.axaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>VersionsListView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Controls\WhereTask\WhereTaskView.axaml.cs">
+    <Compile Update="Controls\WhereTaskView.axaml.cs">
       <DependentUpon>WhereTaskView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Controls\EncryptionTask\EncryptionTaskView.axaml.cs">
+    <Compile Update="Controls\EncryptionTaskView.axaml.cs">
       <DependentUpon>EncryptionTaskView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Controls\WhatTask\WhatTaskView.axaml.cs">
+    <Compile Update="Controls\WhatTaskView.axaml.cs">
       <DependentUpon>WhatTaskView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Controls\UpdateCheckExpander\UpdateCheckExpanderView.axaml.cs">
+    <Compile Update="Controls\UpdateCheckExpanderView.axaml.cs">
       <DependentUpon>UpdateCheckExpanderView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Controls\EditMediaTask\EditMediaTaskView.axaml.cs">
+    <Compile Update="Controls\EditMediaTaskView.axaml.cs">
       <DependentUpon>EditMediaTaskView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Controls\EditIncrementalBackupTask\EditIncrementalBackupTaskView.axaml.cs">
+    <Compile Update="Controls\EditIncrementalBackupTaskView.axaml.cs">
       <DependentUpon>EditIncrementalBackupTaskView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\RestoreView.axaml.cs">
+    <Compile Update="Controls\RestoreView.axaml.cs">
       <DependentUpon>RestoreView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\TasksView.axaml.cs">
+    <Compile Update="Controls\TasksView.axaml.cs">
       <DependentUpon>TasksView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\LaunchTaskView.axaml.cs">
+    <Compile Update="Controls\LaunchTaskView.axaml.cs">
       <DependentUpon>LaunchTaskView.axaml</DependentUpon>
     </Compile>
   </ItemGroup>

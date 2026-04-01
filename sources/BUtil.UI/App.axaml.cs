@@ -5,10 +5,9 @@ using Avalonia.Markup.Xaml;
 using Avalonia.Styling;
 using BUtil.Core.Options;
 using BUtil.Core.Settings;
-using butil_ui.ViewModels;
-using butil_ui.Views;
+using BUtil.UI.Controls;
 
-namespace butil_ui;
+namespace BUtil.UI;
 
 public partial class App : Application
 {

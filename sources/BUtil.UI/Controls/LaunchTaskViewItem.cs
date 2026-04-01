@@ -1,0 +1,33 @@
+﻿using BUtil.Core.Events;
+using BUtil.Core.TasksTree.Core;
+using CommunityToolkit.Mvvm.ComponentModel;
+using System;
+
+namespace BUtil.UI.Controls;
+
+public class LaunchTaskViewItem(BuTask task, ProcessingStatus status) : ObservableObject
+{
+    public Guid Tag { get; } = task.Id;
+
+    #region Text
+
+    private string _text = task.Title;
+    public string Text
+    {
+        get => _text;
+        set => this.SetProperty(ref _text, value);
+    }
+
+    #endregion
+
+    #region Status
+
+    private ProcessingStatus _status = status;
+    public ProcessingStatus Status
+    {
+        get => _status;
+        set => this.SetProperty(ref _status, value);
+    }
+
+    #endregion
+}

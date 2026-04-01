@@ -1,9 +1,9 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using butil_ui.ViewModels;
+using BUtil.UI.Controls;
 using System;
 
-namespace BasicViewLocatorSample;
+namespace BUtil.UI;
 
 public class ViewLocator : IDataTemplate
 {

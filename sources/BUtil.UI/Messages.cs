@@ -1,9 +1,9 @@
 ﻿using BUtil.Core.Localization;
-using butil_ui.Views;
+using BUtil.UI.Controls;
 using DialogHostAvalonia;
 using System.Threading.Tasks;
 
-namespace butil_ui;
+namespace BUtil.UI;
 
 public static class Messages
 {

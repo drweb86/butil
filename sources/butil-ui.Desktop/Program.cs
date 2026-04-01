@@ -4,7 +4,7 @@ using BUtil.Core.Misc;
 using System;
 using System.Threading.Tasks;
 
-namespace butil_ui.Desktop;
+namespace BUtil.UI.Desktop;
 
 class Program
 {
