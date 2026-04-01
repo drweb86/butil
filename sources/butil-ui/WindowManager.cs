@@ -1,6 +1,7 @@
 ﻿using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
+using BUtil.Core.Services;
 using butil_ui.ViewModels;
 using System;
 using System.Linq;
@@ -29,7 +30,7 @@ internal static class WindowManager
             return;
         }
 
-        var task = new TaskV2StoreService(new LocalFileSystem())
+        var task = new TaskStore(new LocalFileSystem())
                 .Load(taskName);
 
         if (task == null || (task.Model is not IncrementalBackupModelOptionsV2 && task.Model is not SynchronizationTaskModelOptionsV2))

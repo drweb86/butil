@@ -4,6 +4,7 @@ using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
+using BUtil.Core.Services;
 using butil_ui.ViewModels;
 using System;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ public class EditBUtilServerTaskViewModel : ViewModelBase
         WindowTitle = isNew ? Resources.Task_Field_Name_NewDefaultValue : taskName;
         IsNew = isNew;
 
-        var storeService = new TaskV2StoreService(new LocalFileSystem());
+        var storeService = new TaskStore(new LocalFileSystem());
         var task = isNew ? new TaskV2() { Model = new BUtilServerModelOptionsV2 { Folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) } } : storeService.Load(taskName) ?? new TaskV2();
         NameTaskViewModel = new NameTaskViewModel(isNew, Resources.FtpsServerTask_Help, task.Name);
         var model = (BUtilServerModelOptionsV2)task.Model;
@@ -64,7 +65,7 @@ public class EditBUtilServerTaskViewModel : ViewModelBase
             return;
         }
 
-        var storeService = new TaskV2StoreService(new LocalFileSystem());
+        var storeService = new TaskStore(new LocalFileSystem());
         var scheduler = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
         if (!IsNew)
         {

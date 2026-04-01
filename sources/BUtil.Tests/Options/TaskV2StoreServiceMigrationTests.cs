@@ -1,6 +1,7 @@
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
+using BUtil.Core.Services;
 using System.IO;
 using System.Text.Json;
 
@@ -22,7 +23,7 @@ public class TaskV2StoreServiceMigrationTests
     {
         var fs = new InMemoryFileSystem();
 
-        new TaskV2StoreService(fs).Save(MakeTask("save-baseline", "save-password"));
+        new TaskStore(fs).Save(MakeTask("save-baseline", "save-password"));
 
         Assert.IsTrue(fs.Files.ContainsKey("save-baseline" + ExtV3));
     }
@@ -36,7 +37,7 @@ public class TaskV2StoreServiceMigrationTests
         var name = "incremental-task";
         SaveThenRenameToV2(fs, name, "my-password");
 
-        new TaskV2StoreService(fs).MigrateAllToV3();
+        new TaskStore(fs).MigrateAllToV3();
 
         Assert.IsTrue(fs.Files.ContainsKey(name + ExtV3), "V3 file should be created");
         Assert.IsFalse(fs.Files.ContainsKey(name + ExtV2), "V2 file should be deleted");
@@ -49,7 +50,7 @@ public class TaskV2StoreServiceMigrationTests
         var name = "broken-task";
         fs.Files[name + ExtV2] = "not-valid-json";
 
-        new TaskV2StoreService(fs).MigrateAllToV3();
+        new TaskStore(fs).MigrateAllToV3();
 
         // The service reads and deletes V2 before deserializing; a parse failure
         // leaves V2 deleted and V3 absent.
@@ -64,7 +65,7 @@ public class TaskV2StoreServiceMigrationTests
         var name = "unsupported-task";
         fs.Files[name + ExtV2] = $$"""{"Model":null,"Name":"{{name}}"}""";
 
-        new TaskV2StoreService(fs).MigrateAllToV3();
+        new TaskStore(fs).MigrateAllToV3();
 
         // Same as invalid JSON: V2 is deleted before the model check, V3 is not written.
         Assert.IsFalse(fs.Files.ContainsKey(name + ExtV2), "V2 file should be deleted");
@@ -81,7 +82,7 @@ public class TaskV2StoreServiceMigrationTests
         // Simulate a V3 already present alongside the V2
         fs.Files[name + ExtV3] = fs.Files[name + ExtV2];
 
-        new TaskV2StoreService(fs).MigrateAllToV3();
+        new TaskStore(fs).MigrateAllToV3();
 
         Assert.IsTrue(fs.Files.ContainsKey(name + ExtV3), "V3 file should still exist");
         Assert.IsFalse(fs.Files.ContainsKey(name + ExtV2), "V2 file should be deleted");
@@ -94,7 +95,7 @@ public class TaskV2StoreServiceMigrationTests
         var name = "idempotent-task";
         SaveThenRenameToV2(fs, name, "password");
 
-        var store = new TaskV2StoreService(fs);
+        var store = new TaskStore(fs);
         store.MigrateAllToV3();
         store.MigrateAllToV3(); // second run should be a no-op
 
@@ -113,13 +114,13 @@ public class TaskV2StoreServiceMigrationTests
         SaveThenRenameToV2(fs, "task-a", "pass");
 
         // task-b: only a V3 file
-        new TaskV2StoreService(fs).Save(MakeTask("task-b", "pass"));
+        new TaskStore(fs).Save(MakeTask("task-b", "pass"));
 
         // task-c: both V2 and V3 coexist (V3 wins, V2 gets cleaned up)
-        new TaskV2StoreService(fs).Save(MakeTask("task-c", "pass"));
+        new TaskStore(fs).Save(MakeTask("task-c", "pass"));
         fs.Files["task-c" + ExtV2] = fs.Files["task-c" + ExtV3]; // plant a V2 alongside V3
 
-        var names = new TaskV2StoreService(fs).GetNames().ToList();
+        var names = new TaskStore(fs).GetNames().ToList();
 
         CollectionAssert.Contains(names, "task-a");
         CollectionAssert.Contains(names, "task-b");
@@ -136,7 +137,7 @@ public class TaskV2StoreServiceMigrationTests
         var name = "load-v2-task";
         SaveThenRenameToV2(fs, name, "plain-password");
 
-        var loaded = new TaskV2StoreService(fs).Load(name, out var isNotFound, out var isNotSupported);
+        var loaded = new TaskStore(fs).Load(name, out var isNotFound, out var isNotSupported);
 
         Assert.IsFalse(isNotFound);
         Assert.IsFalse(isNotSupported);
@@ -151,7 +152,7 @@ public class TaskV2StoreServiceMigrationTests
         var name = "load-v3-task";
         SaveThenRenameToV2(fs, name, "plain-password");
 
-        var store = new TaskV2StoreService(fs);
+        var store = new TaskStore(fs);
         store.MigrateAllToV3();
 
         var loaded = store.Load(name, out var isNotFound, out var isNotSupported);
@@ -169,7 +170,7 @@ public class TaskV2StoreServiceMigrationTests
         var name = "password-round-trip";
         SaveThenRenameToV2(fs, name, "secret123");
 
-        var store = new TaskV2StoreService(fs);
+        var store = new TaskStore(fs);
         store.MigrateAllToV3();
 
         var loaded = store.Load(name, out _, out _);
@@ -187,9 +188,9 @@ public class TaskV2StoreServiceMigrationTests
         var name = "prefer-v3";
 
         SaveThenRenameToV2(fs, name, "v2-password");
-        new TaskV2StoreService(fs).Save(MakeTask(name, "v3-password"));
+        new TaskStore(fs).Save(MakeTask(name, "v3-password"));
 
-        var loaded = new TaskV2StoreService(fs).Load(name, out _, out _);
+        var loaded = new TaskStore(fs).Load(name, out _, out _);
 
         Assert.IsNotNull(loaded);
         Assert.AreEqual(name, loaded.Name);
@@ -217,7 +218,7 @@ public class TaskV2StoreServiceMigrationTests
     /// </summary>
     private static void SaveThenRenameToV2(InMemoryFileSystem fs, string name, string password)
     {
-        new TaskV2StoreService(fs).Save(MakeTask(name, password));
+        new TaskStore(fs).Save(MakeTask(name, password));
         fs.Files[name + ExtV2] = fs.Files[name + ExtV3];
         fs.Files.Remove(name + ExtV3);
     }

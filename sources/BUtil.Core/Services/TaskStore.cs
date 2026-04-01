@@ -8,9 +8,20 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 
-namespace BUtil.Core.Options;
+namespace BUtil.Core.Services;
 
-public class TaskV2StoreService
+public interface ITaskStore
+{
+    TaskV2? Load(string name);
+    TaskV2? Load(string name, out bool isNotFound, out bool isNotSupported);
+    void Save(TaskV2 task);
+    string? Duplicate(string name);
+    void Delete(string name);
+    bool TryValidate(string name, [NotNullWhen(false)] out string? error);
+    IEnumerable<string> GetNames();
+}
+
+public class TaskStore: ITaskStore
 {
     private readonly string _folder;
     private readonly ILocalFileSystem _fileSystem;
@@ -19,7 +30,7 @@ public class TaskV2StoreService
 
     private static readonly JsonSerializerOptions _jsonSerializerOptions = new() { WriteIndented = true };
 
-    public TaskV2StoreService(ILocalFileSystem fileSystem)
+    public TaskStore(ILocalFileSystem fileSystem)
     {
         _fileSystem = fileSystem;
 #if DEBUG

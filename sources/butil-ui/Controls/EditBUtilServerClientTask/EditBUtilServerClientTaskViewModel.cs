@@ -4,6 +4,7 @@ using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
+using BUtil.Core.Services;
 using butil_ui.ViewModels;
 using System.Threading.Tasks;
 
@@ -20,7 +21,7 @@ public class EditBUtilServerClientTaskViewModel : ViewModelBase
         WindowTitle = isNew ? Resources.Task_Field_Name_NewDefaultValue : taskName;
         IsNew = isNew;
 
-        var storeService = new TaskV2StoreService(new LocalFileSystem());
+        var storeService = new TaskStore(new LocalFileSystem());
         var task = isNew 
             ?  new TaskV2() { Model = new BUtilClientModelOptionsV2(string.Empty, FileSenderDirection.ToServer, new FtpsStorageSettingsV2()) } 
             : storeService.Load(taskName) ?? new TaskV2();
@@ -66,7 +67,7 @@ public class EditBUtilServerClientTaskViewModel : ViewModelBase
             return;
         }
 
-        var storeService = new TaskV2StoreService(new LocalFileSystem());
+        var storeService = new TaskStore(new LocalFileSystem());
         var scheduler = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
         if (!IsNew)
         {

@@ -5,6 +5,7 @@ using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
+using BUtil.Core.Services;
 using butil_ui.Controls;
 using System;
 using System.Collections.Generic;
@@ -96,7 +97,7 @@ public class TasksViewModel : ViewModelBase
 
     private void LoadTasks()
     {
-        var store = new TaskV2StoreService(new LocalFileSystem());
+        var store = new TaskStore(new LocalFileSystem());
         var taskNames = store.GetNames();
         var lastLogs = new LogService().GetRecentLogs();
 

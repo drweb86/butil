@@ -7,6 +7,7 @@ using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
+using BUtil.Core.Services;
 using BUtil.Core.State;
 using butil_ui.ViewModels;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -61,7 +62,7 @@ public class TaskCardViewModel(
 
     public void TaskEditCommand()
     {
-        var task = new TaskV2StoreService(new LocalFileSystem())
+        var task = new TaskStore(new LocalFileSystem())
             .Load(this.Name);
         if (task == null)
             return;
@@ -85,7 +86,7 @@ public class TaskCardViewModel(
 
     public void TaskDuplicateCommand()
     {
-        var duplicated = new TaskV2StoreService(new LocalFileSystem()).Duplicate(Name);
+        var duplicated = new TaskStore(new LocalFileSystem()).Duplicate(Name);
         if (duplicated != null)
             _reloadTasks?.Invoke();
     }
@@ -95,7 +96,7 @@ public class TaskCardViewModel(
         if (!await Messages.ShowYesNoDialog(string.Format(Resources.Task_Delete_Confirm, Name)))
             return;
 
-        new TaskV2StoreService(new LocalFileSystem())
+        new TaskStore(new LocalFileSystem())
             .Delete(Name);
         LogService.DeleteLogs(Name);
         ImportMediaFileService.DeleteState(Name);

@@ -5,6 +5,7 @@ using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
+using BUtil.Core.Services;
 using BUtil.Core.TasksTree;
 using butil_ui.Controls;
 using System;
@@ -122,7 +123,7 @@ public class LaunchTaskViewModel : ViewModelBase
 
     public void Initialize()
     {
-        _task = new TaskV2StoreService(new LocalFileSystem()).Load(_taskName, out var isNotFound, out var isNotSupported);
+        _task = new TaskStore(new LocalFileSystem()).Load(_taskName, out var isNotFound, out var isNotSupported);
         if (isNotFound)
         {
             TaskExecuterViewModel = new TaskExecuterViewModel(string.Format(Resources.Task_Validation_NotFound, _taskName));

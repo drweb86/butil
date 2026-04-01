@@ -4,6 +4,7 @@ using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
+using BUtil.Core.Services;
 using BUtil.Core.State;
 using butil_ui.ViewModels;
 using System;
@@ -20,7 +21,7 @@ public class EditMediaTaskViewModel : ViewModelBase
         IsNew = isNew;
         NameTaskViewModel = new NameTaskViewModel(isNew, Resources.ImportMediaTask_Help, isNew ? Resources.Task_Field_Name_NewDefaultValue : taskName);
 
-        var storeService = new TaskV2StoreService(new LocalFileSystem());
+        var storeService = new TaskStore(new LocalFileSystem());
         var task = isNew ? new TaskV2() { Model = new ImportMediaTaskModelOptionsV2() } : storeService.Load(taskName) ?? new TaskV2() { Model = new ImportMediaTaskModelOptionsV2() };
         var model = (ImportMediaTaskModelOptionsV2)task.Model;
 
@@ -71,7 +72,7 @@ public class EditMediaTaskViewModel : ViewModelBase
             return;
         }
 
-        var storeService = new TaskV2StoreService(new LocalFileSystem());
+        var storeService = new TaskStore(new LocalFileSystem());
         if (!IsNew)
         {
             storeService.Delete(_taskName);

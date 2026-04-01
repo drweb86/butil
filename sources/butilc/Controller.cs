@@ -214,7 +214,7 @@ class Controller
         log.Open();
         try
         {
-            var backupTaskStoreService = new TaskV2StoreService(new LocalFileSystem());
+            var backupTaskStoreService = new TaskStore(new LocalFileSystem());
             var task = backupTaskStoreService.Load(_taskName, out var isNotFound, out var isNotSupported)!;
             if (isNotFound)
             {
