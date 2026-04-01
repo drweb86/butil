@@ -66,7 +66,7 @@
 				<RowDefinition Height="Auto" />
 				<RowDefinition Height="*" />
 			</Grid.RowDefinitions>
-		<StackPanel Grid.Row="0" Orientation="Horizontal">
+		<StackPanel Grid.Row="0" Orientation="Horizontal" Margin="4 4 0 0">
 			<Menu>
 				<MenuItem Command="{Binding GoToWebsiteCommand}" IsVisible="{Binding CanExtendClientAreaToDecorationsHint}">
 					<MenuItem.Header>
@@ -97,7 +97,7 @@
 				Watermark="🔍"
 				MinWidth="160"
 				VerticalAlignment="Center"
-				Margin="8 8 0 0"
+				Margin="4 4 0 0"
 				VerticalContentAlignment="Center" />
 		</StackPanel>
 			<controls:UpdateCheckExpanderView

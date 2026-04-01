@@ -21,10 +21,12 @@ public class TaskCardViewModel(
     DateTime? lastLaunchedAt,
     ProcessingStatus status,
     ObservableCollection<TaskCardViewModel> items,
-    string? logFilePath) : ObservableObject
+    string? logFilePath,
+    Action? reloadTasks = null) : ObservableObject
 {
     private readonly ObservableCollection<TaskCardViewModel> _items = items;
     private readonly string? _logFilePath = logFilePath;
+    private readonly Action? _reloadTasks = reloadTasks;
 
     public string Name { get; } = name;
     public string OpenLogTooltip { get; } = Resources.Task_OpenLog + (lastLaunchedAt.HasValue ? ("\n" + lastLaunchedAt) : string.Empty);
@@ -38,6 +40,7 @@ public class TaskCardViewModel(
     public bool HasLog => _logFilePath != null;
 
     public static string Task_Delete => Resources.Task_Delete;
+    public static string Task_Duplicate => Resources.Task_Duplicate;
     public static string Task_Launch => Resources.Task_Launch;
     public static string Task_Edit => Resources.Task_Edit;
     public static string Task_Restore => Resources.Task_Restore;
@@ -78,6 +81,13 @@ public class TaskCardViewModel(
     public void TaskRestoreCommand()
     {
         WindowManager.SwitchToRestorationView(Name);
+    }
+
+    public void TaskDuplicateCommand()
+    {
+        var duplicated = new TaskV2StoreService(new LocalFileSystem()).Duplicate(Name);
+        if (duplicated != null)
+            _reloadTasks?.Invoke();
     }
 
     public async Task TaskDeleteCommand()

@@ -659,6 +659,9 @@ Consultez la description détaillée dans le lien suivant.</value>
   <data name="Task_Delete_Hint" xml:space="preserve">
     <value>Supprime la tâche sélectionnée.</value>
   </data>
+  <data name="Task_Duplicate" xml:space="preserve">
+    <value>Dupliquer</value>
+  </data>
   <data name="Task_Edit" xml:space="preserve">
     <value>Modifier</value>
   </data>

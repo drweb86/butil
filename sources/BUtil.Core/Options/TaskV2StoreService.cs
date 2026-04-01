@@ -66,6 +66,28 @@ public class TaskV2StoreService
         _fileSystem.WriteAllText(fileName, json);
     }
 
+    public string? Duplicate(string name)
+    {
+        var task = Load(name);
+        if (task == null)
+            return null;
+
+        var existingNames = new HashSet<string>(GetNames(), StringComparer.OrdinalIgnoreCase);
+
+        var counter = 1;
+        string newName;
+        do
+        {
+            newName = $"{name} ({counter})";
+            counter++;
+        }
+        while (existingNames.Contains(newName));
+
+        task.Name = newName;
+        Save(task);
+        return newName;
+    }
+
     public void Delete(string name)
     {
         var fileName = GetFileName(name);

@@ -658,6 +658,9 @@
   <data name="Task_Delete_Hint" xml:space="preserve">
     <value>নির্বাচিত কাজটি মুছে দিন।</value>
   </data>
+  <data name="Task_Duplicate" xml:space="preserve">
+    <value>নকল তৈরি করুন</value>
+  </data>
   <data name="Task_Edit" xml:space="preserve">
     <value>সম্পাদনা করুন</value>
   </data>

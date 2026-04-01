@@ -661,6 +661,9 @@ Siehe detaillierte Beschreibung im folgenden Link.</value>
   <data name="Task_Delete_Hint" xml:space="preserve">
     <value>Die ausgewählte Aufgabe wird gelöscht.</value>
   </data>
+  <data name="Task_Duplicate" xml:space="preserve">
+    <value>Duplizieren</value>
+  </data>
   <data name="Task_Edit" xml:space="preserve">
     <value>Bearbeiten</value>
   </data>

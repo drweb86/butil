@@ -661,6 +661,9 @@
   <data name="Task_Delete_Hint" xml:space="preserve">
     <value>निवडलेले कार्य हटवितो.</value>
   </data>
+  <data name="Task_Duplicate" xml:space="preserve">
+    <value>प्रतिलिपी बनवा</value>
+  </data>
   <data name="Task_Edit" xml:space="preserve">
     <value>संपादित करा</value>
   </data>

@@ -87,6 +87,13 @@ public class TasksViewModel : ViewModelBase
         LoadTasks();
     }
 
+    public void ReloadTasks()
+    {
+        _allItems.Clear();
+        _items.Clear();
+        LoadTasks();
+    }
+
     private void LoadTasks()
     {
         var store = new TaskV2StoreService(new LocalFileSystem());
@@ -106,7 +113,7 @@ public class TasksViewModel : ViewModelBase
                     status = ProcessingStatus.InProgress;
             }
 
-            var listViewItem = new TaskCardViewModel(taskName, lastLogFile?.CreatedAt, status, _items, lastLogFile?.File);
+            var listViewItem = new TaskCardViewModel(taskName, lastLogFile?.CreatedAt, status, _items, lastLogFile?.File, ReloadTasks);
             _allItems.Add(listViewItem);
         }
 

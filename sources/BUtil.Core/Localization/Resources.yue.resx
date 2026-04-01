@@ -681,6 +681,9 @@ bin。
   <data name="Task_Delete_Hint" xml:space="preserve">
     <value>刪除選定的任務。</value>
   </data>
+  <data name="Task_Duplicate" xml:space="preserve">
+    <value>複製</value>
+  </data>
   <data name="Task_Edit" xml:space="preserve">
     <value>編輯</value>
   </data>

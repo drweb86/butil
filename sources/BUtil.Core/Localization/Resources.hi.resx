@@ -661,6 +661,9 @@ bin.
   <data name="Task_Delete_Hint" xml:space="preserve">
     <value>चयनित कार्य को हटाता है।</value>
   </data>
+  <data name="Task_Duplicate" xml:space="preserve">
+    <value>डुप्लिकेट बनाएं</value>
+  </data>
   <data name="Task_Edit" xml:space="preserve">
     <value>संपादित करें</value>
   </data>

@@ -660,6 +660,9 @@ bin。
   <data name="Task_Delete_Hint" xml:space="preserve">
     <value>删除所选任务。</value>
   </data>
+  <data name="Task_Duplicate" xml:space="preserve">
+    <value>复制</value>
+  </data>
   <data name="Task_Edit" xml:space="preserve">
     <value>编辑</value>
   </data>

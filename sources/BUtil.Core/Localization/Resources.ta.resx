@@ -663,6 +663,9 @@ bin.
   <data name="Task_Delete_Hint" xml:space="preserve">
     <value>தேர்ந்தெடுக்கப்பட்ட பணியை அழிக்கிறது.</value>
   </data>
+  <data name="Task_Duplicate" xml:space="preserve">
+    <value>நகல் எடு</value>
+  </data>
   <data name="Task_Edit" xml:space="preserve">
     <value>தொகு</value>
   </data>

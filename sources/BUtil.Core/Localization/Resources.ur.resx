@@ -651,6 +651,9 @@
   <data name="Task_Delete_Hint" xml:space="preserve">
     <value>منتخب شدہ ٹاسک کو حذف کرتا ہے۔</value>
   </data>
+  <data name="Task_Duplicate" xml:space="preserve">
+    <value>نقل بنائیں</value>
+  </data>
   <data name="Task_Edit" xml:space="preserve">
     <value>ترمیم کریں</value>
   </data>

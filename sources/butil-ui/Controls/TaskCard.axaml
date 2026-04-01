@@ -41,13 +41,19 @@
 				/>
 				<Menu Grid.Column="1" VerticalAlignment="Top">
 					<MenuItem Header="⁝">
-						<MenuItem Header="{Binding Task_Edit}" Command="{Binding TaskEditCommand}">
-							<MenuItem.Icon>
-								<Image Width="16" Height="16" Source="/Assets/CrystalClear_EveraldoCoelho_OtherOptions48x48.png" />
-							</MenuItem.Icon>
-						</MenuItem>
+					<MenuItem Header="{Binding Task_Edit}" Command="{Binding TaskEditCommand}">
+						<MenuItem.Icon>
+							<Image Width="16" Height="16" Source="/Assets/CrystalClear_EveraldoCoelho_OtherOptions48x48.png" />
+						</MenuItem.Icon>
+					</MenuItem>
 
-						<MenuItem Header="{Binding Task_Restore}" Command="{Binding TaskRestoreCommand}">
+					<MenuItem Header="{Binding Task_Duplicate}" Command="{Binding TaskDuplicateCommand}">
+						<MenuItem.Icon>
+							<Image Width="16" Height="16" Source="/Assets/CrystalClear_FileNew.png" />
+						</MenuItem.Icon>
+					</MenuItem>
+
+					<MenuItem Header="{Binding Task_Restore}" Command="{Binding TaskRestoreCommand}">
 							<MenuItem.Icon>
 								<Image Width="16" Height="16" Source="/Assets/CrystalClear_EveraldoCoelho_Refresh48x48.png" />
 							</MenuItem.Icon>

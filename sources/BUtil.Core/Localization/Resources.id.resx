@@ -658,6 +658,9 @@
   <data name="Task_Delete_Hint" xml:space="preserve">
     <value>Menghapus tugas yang dipilih.</value>
   </data>
+  <data name="Task_Duplicate" xml:space="preserve">
+    <value>Duplikat</value>
+  </data>
   <data name="Task_Edit" xml:space="preserve">
     <value>Edit</value>
   </data>

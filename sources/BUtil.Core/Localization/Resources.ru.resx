@@ -662,6 +662,9 @@ bin.
   <data name="Task_Delete_Hint" xml:space="preserve">
     <value>Удаляет выбранную задачу.</value>
   </data>
+  <data name="Task_Duplicate" xml:space="preserve">
+    <value>Дублировать</value>
+  </data>
   <data name="Task_Edit" xml:space="preserve">
     <value>Изменить</value>
   </data>

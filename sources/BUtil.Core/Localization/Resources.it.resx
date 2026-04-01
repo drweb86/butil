@@ -667,6 +667,9 @@ Consulta il sito web dell'applicazione per la documentazione su come impostare l
   <data name="Task_Delete_Hint" xml:space="preserve">
     <value>Elimina attività selezionata.</value>
   </data>
+  <data name="Task_Duplicate" xml:space="preserve">
+    <value>Duplica</value>
+  </data>
   <data name="Task_Edit" xml:space="preserve">
     <value>Modifica</value>
   </data>

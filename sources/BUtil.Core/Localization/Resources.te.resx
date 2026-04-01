@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -656,6 +656,9 @@
   </data>
   <data name="Task_Delete_Hint" xml:space="preserve">
     <value>ఎంచుకున్న పనిని తొలగిస్తుంది.</value>
+  </data>
+  <data name="Task_Duplicate" xml:space="preserve">
+    <value>నకలు తయారు చేయి</value>
   </data>
   <data name="Task_Edit" xml:space="preserve">
     <value>సవరణ</value>

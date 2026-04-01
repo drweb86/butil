@@ -661,6 +661,9 @@ bin.
   <data name="Task_Delete_Hint" xml:space="preserve">
     <value>يحذف المهمة المحددة.</value>
   </data>
+  <data name="Task_Duplicate" xml:space="preserve">
+    <value>تكرار</value>
+  </data>
   <data name="Task_Edit" xml:space="preserve">
     <value>تحرير</value>
   </data>
