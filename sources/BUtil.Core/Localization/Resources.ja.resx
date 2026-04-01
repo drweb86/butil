@@ -741,4 +741,88 @@ bin.
   <data name="User_Field_Validation" xml:space="preserve">
     <value>ユーザーが指定されていません。</value>
   </data>
+  <data name="TrustedCertificate_Field" xml:space="preserve">
+    <value>信頼された証明書 (hex):</value>
+  </data>
+  <data name="TrustDetected_Sftp_Title" xml:space="preserve">
+    <value>テスト中にSFTPサーバーの信頼情報が検出されました。</value>
+  </data>
+  <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
+    <value>このフィンガープリントを帯域外で確認してから、保存ボタンをもう一度クリックして保存してください。</value>
+  </data>
+  <data name="TrustDetected_Ftps_Title" xml:space="preserve">
+    <value>テスト中にFTPSサーバー証明書が検出されました。</value>
+  </data>
+  <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
+    <value>証明書のIDを帯域外で確認してから、保存ボタンをもう一度クリックして保存してください。</value>
+  </data>
+  <data name="TrustDetected_Label_Host" xml:space="preserve">
+    <value>ホスト: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Port" xml:space="preserve">
+    <value>ポート: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_User" xml:space="preserve">
+    <value>ユーザー: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Folder" xml:space="preserve">
+    <value>フォルダー: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
+    <value>フィンガープリント (SHA-256): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Encryption" xml:space="preserve">
+    <value>暗号化: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
+    <value>証明書 (生のhex): {0}</value>
+  </data>
+  <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
+    <value>解析された証明書の詳細:</value>
+  </data>
+  <data name="TrustDetected_Label_Subject" xml:space="preserve">
+    <value>サブジェクト: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Issuer" xml:space="preserve">
+    <value>発行者: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
+    <value>シリアル番号: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
+    <value>サムプリント: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
+    <value>有効開始 (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
+    <value>有効期限 (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
+    <value>署名アルゴリズム: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
+    <value>公開鍵アルゴリズム: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
+    <value>公開鍵サイズ: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_DnsName" xml:space="preserve">
+    <value>DNS名: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
+    <value>サブジェクト代替名: {0}</value>
+  </data>
+  <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
+    <value>証明書解析警告: {0}</value>
+  </data>
+  <data name="TrustDetected_Port_Default22" xml:space="preserve">
+    <value>デフォルト (22)</value>
+  </data>
+  <data name="TrustDetected_Port_Default" xml:space="preserve">
+    <value>デフォルト</value>
+  </data>
+  <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
+    <value>不明</value>
+  </data>
 </root>

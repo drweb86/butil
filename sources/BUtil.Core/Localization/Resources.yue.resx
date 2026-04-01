@@ -774,4 +774,88 @@ bin。
   <data name="User_Field_Validation" xml:space="preserve">
     <value>用戶未指定。</value>
   </data>
+  <data name="TrustedCertificate_Field" xml:space="preserve">
+    <value>受信任證書（hex）：</value>
+  </data>
+  <data name="TrustDetected_Sftp_Title" xml:space="preserve">
+    <value>測試期間檢測到SFTP伺服器信任資訊。</value>
+  </data>
+  <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
+    <value>請透過帶外方式驗證此指紋，然後再次點擊「儲存」以儲存。</value>
+  </data>
+  <data name="TrustDetected_Ftps_Title" xml:space="preserve">
+    <value>測試期間檢測到FTPS伺服器憑證。</value>
+  </data>
+  <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
+    <value>請透過帶外方式驗證憑證身分，然後再次點擊「儲存」以儲存。</value>
+  </data>
+  <data name="TrustDetected_Label_Host" xml:space="preserve">
+    <value>主機：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_Port" xml:space="preserve">
+    <value>端口：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_User" xml:space="preserve">
+    <value>用戶：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_Folder" xml:space="preserve">
+    <value>資料夾：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
+    <value>指紋（SHA-256）：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_Encryption" xml:space="preserve">
+    <value>加密：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
+    <value>憑證（原始hex）：{0}</value>
+  </data>
+  <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
+    <value>解析的憑證詳情：</value>
+  </data>
+  <data name="TrustDetected_Label_Subject" xml:space="preserve">
+    <value>主體：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_Issuer" xml:space="preserve">
+    <value>頒發者：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
+    <value>序號：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
+    <value>指紋摘要：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
+    <value>有效期自（UTC）：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
+    <value>有效期至（UTC）：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
+    <value>簽章演算法：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
+    <value>公開金鑰演算法：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
+    <value>公開金鑰大小：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_DnsName" xml:space="preserve">
+    <value>DNS名稱：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
+    <value>主體替代名稱：{0}</value>
+  </data>
+  <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
+    <value>憑證解析警告：{0}</value>
+  </data>
+  <data name="TrustDetected_Port_Default22" xml:space="preserve">
+    <value>預設（22）</value>
+  </data>
+  <data name="TrustDetected_Port_Default" xml:space="preserve">
+    <value>預設</value>
+  </data>
+  <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
+    <value>未知</value>
+  </data>
 </root>

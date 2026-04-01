@@ -754,4 +754,88 @@ bin.
   <data name="User_Field_Validation" xml:space="preserve">
     <value>उपयोगकर्ता निर्दिष्ट नहीं है।</value>
   </data>
+  <data name="TrustedCertificate_Field" xml:space="preserve">
+    <value>विश्वसनीय प्रमाणपत्र (hex):</value>
+  </data>
+  <data name="TrustDetected_Sftp_Title" xml:space="preserve">
+    <value>परीक्षण के दौरान SFTP सर्वर ट्रस्ट जानकारी का पता चला।</value>
+  </data>
+  <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
+    <value>इस फिंगरप्रिंट को आउट-ऑफ-बैंड सत्यापित करें, फिर इसे स्टोर करने के लिए सहेजें पर फिर से क्लिक करें।</value>
+  </data>
+  <data name="TrustDetected_Ftps_Title" xml:space="preserve">
+    <value>परीक्षण के दौरान FTPS सर्वर प्रमाणपत्र का पता चला।</value>
+  </data>
+  <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
+    <value>प्रमाणपत्र की पहचान आउट-ऑफ-बैंड सत्यापित करें, फिर इसे स्टोर करने के लिए सहेजें पर फिर से क्लिक करें।</value>
+  </data>
+  <data name="TrustDetected_Label_Host" xml:space="preserve">
+    <value>होस्ट: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Port" xml:space="preserve">
+    <value>पोर्ट: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_User" xml:space="preserve">
+    <value>उपयोगकर्ता: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Folder" xml:space="preserve">
+    <value>फ़ोल्डर: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
+    <value>फिंगरप्रिंट (SHA-256): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Encryption" xml:space="preserve">
+    <value>एन्क्रिप्शन: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
+    <value>प्रमाणपत्र (raw hex): {0}</value>
+  </data>
+  <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
+    <value>पार्स किए गए प्रमाणपत्र का विवरण:</value>
+  </data>
+  <data name="TrustDetected_Label_Subject" xml:space="preserve">
+    <value>विषय: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Issuer" xml:space="preserve">
+    <value>जारीकर्ता: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
+    <value>क्रम संख्या: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
+    <value>थंबप्रिंट: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
+    <value>से मान्य (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
+    <value>तक मान्य (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
+    <value>हस्ताक्षर एल्गोरिदम: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
+    <value>सार्वजनिक कुंजी एल्गोरिदम: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
+    <value>सार्वजनिक कुंजी आकार: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_DnsName" xml:space="preserve">
+    <value>DNS नाम: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
+    <value>वैकल्पिक विषय नाम: {0}</value>
+  </data>
+  <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
+    <value>प्रमाणपत्र पार्स चेतावनी: {0}</value>
+  </data>
+  <data name="TrustDetected_Port_Default22" xml:space="preserve">
+    <value>डिफ़ॉल्ट (22)</value>
+  </data>
+  <data name="TrustDetected_Port_Default" xml:space="preserve">
+    <value>डिफ़ॉल्ट</value>
+  </data>
+  <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
+    <value>अज्ञात</value>
+  </data>
 </root>

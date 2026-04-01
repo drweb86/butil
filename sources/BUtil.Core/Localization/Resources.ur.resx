@@ -744,4 +744,88 @@
   <data name="User_Field_Validation" xml:space="preserve">
     <value>صارف کی وضاحت نہیں کی گئی۔</value>
   </data>
+  <data name="TrustedCertificate_Field" xml:space="preserve">
+    <value>قابل اعتماد سرٹیفکیٹ (hex):</value>
+  </data>
+  <data name="TrustDetected_Sftp_Title" xml:space="preserve">
+    <value>ٹیسٹ کے دوران SFTP سرور ٹرسٹ معلومات دریافت ہوئی۔</value>
+  </data>
+  <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
+    <value>اس فنگرپرنٹ کو آؤٹ-آف-بینڈ تصدیق کریں، پھر اسے ذخیرہ کرنے کے لیے دوبارہ محفوظ کریں پر کلک کریں۔</value>
+  </data>
+  <data name="TrustDetected_Ftps_Title" xml:space="preserve">
+    <value>ٹیسٹ کے دوران FTPS سرور سرٹیفکیٹ دریافت ہوا۔</value>
+  </data>
+  <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
+    <value>سرٹیفکیٹ کی شناخت آؤٹ-آف-بینڈ تصدیق کریں، پھر اسے ذخیرہ کرنے کے لیے دوبارہ محفوظ کریں پر کلک کریں۔</value>
+  </data>
+  <data name="TrustDetected_Label_Host" xml:space="preserve">
+    <value>ہوسٹ: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Port" xml:space="preserve">
+    <value>پورٹ: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_User" xml:space="preserve">
+    <value>صارف: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Folder" xml:space="preserve">
+    <value>فولڈر: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
+    <value>فنگرپرنٹ (SHA-256): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Encryption" xml:space="preserve">
+    <value>خفیہ کاری: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
+    <value>سرٹیفکیٹ (raw hex): {0}</value>
+  </data>
+  <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
+    <value>تجزیہ شدہ سرٹیفکیٹ کی تفصیلات:</value>
+  </data>
+  <data name="TrustDetected_Label_Subject" xml:space="preserve">
+    <value>موضوع: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Issuer" xml:space="preserve">
+    <value>جاری کنندہ: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
+    <value>سیریل نمبر: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
+    <value>تھمبپرنٹ: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
+    <value>سے درست (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
+    <value>تک درست (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
+    <value>دستخط الگورتھم: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
+    <value>پبلک کی الگورتھم: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
+    <value>پبلک کی سائز: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_DnsName" xml:space="preserve">
+    <value>DNS نام: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
+    <value>متبادل موضوع نام: {0}</value>
+  </data>
+  <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
+    <value>سرٹیفکیٹ پارس وارننگ: {0}</value>
+  </data>
+  <data name="TrustDetected_Port_Default22" xml:space="preserve">
+    <value>ڈیفالٹ (22)</value>
+  </data>
+  <data name="TrustDetected_Port_Default" xml:space="preserve">
+    <value>ڈیفالٹ</value>
+  </data>
+  <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
+    <value>نامعلوم</value>
+  </data>
 </root>

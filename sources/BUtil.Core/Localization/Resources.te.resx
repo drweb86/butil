@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -749,5 +749,89 @@
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>యూజర్ ఉదహరించவில்லை.</value>
+  </data>
+  <data name="TrustedCertificate_Field" xml:space="preserve">
+    <value>విశ్వసనీయ సర్టిఫికేట్ (hex):</value>
+  </data>
+  <data name="TrustDetected_Sftp_Title" xml:space="preserve">
+    <value>పరీక్ష సమయంలో SFTP సర్వర్ విశ్వాస సమాచారం గుర్తించబడింది.</value>
+  </data>
+  <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
+    <value>ఈ వేలిముద్రను బ్యాండ్ వెలుపల ధృవీకరించండి, తర్వాత దాన్ని నిల్వ చేయడానికి మళ్ళీ సేవ్ క్లిక్ చేయండి.</value>
+  </data>
+  <data name="TrustDetected_Ftps_Title" xml:space="preserve">
+    <value>పరీక్ష సమయంలో FTPS సర్వర్ సర్టిఫికేట్ గుర్తించబడింది.</value>
+  </data>
+  <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
+    <value>సర్టిఫికేట్ గుర్తింపును బ్యాండ్ వెలుపల ధృవీకరించండి, తర్వాత దాన్ని నిల్వ చేయడానికి మళ్ళీ సేవ్ క్లిక్ చేయండి.</value>
+  </data>
+  <data name="TrustDetected_Label_Host" xml:space="preserve">
+    <value>హోస్ట్: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Port" xml:space="preserve">
+    <value>పోర్ట్: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_User" xml:space="preserve">
+    <value>వినియోగదారు: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Folder" xml:space="preserve">
+    <value>ఫోల్డర్: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
+    <value>వేలిముద్ర (SHA-256): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Encryption" xml:space="preserve">
+    <value>గుప్తీకరణ: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
+    <value>సర్టిఫికేట్ (raw hex): {0}</value>
+  </data>
+  <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
+    <value>విశ్లేషించిన సర్టిఫికేట్ వివరాలు:</value>
+  </data>
+  <data name="TrustDetected_Label_Subject" xml:space="preserve">
+    <value>విషయం: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Issuer" xml:space="preserve">
+    <value>జారీచేసినవారు: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
+    <value>క్రమ సంఖ్య: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
+    <value>థంబ్‌ప్రింట్: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
+    <value>నుండి చెల్లుబాటు (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
+    <value>వరకు చెల్లుబాటు (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
+    <value>సంతకం అల్గోరిథం: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
+    <value>పబ్లిక్ కీ అల్గోరిథం: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
+    <value>పబ్లిక్ కీ పరిమాణం: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_DnsName" xml:space="preserve">
+    <value>DNS పేరు: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
+    <value>ప్రత్యామ్నాయ విషయ పేర్లు: {0}</value>
+  </data>
+  <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
+    <value>సర్టిఫికేట్ పార్స్ హెచ్చరిక: {0}</value>
+  </data>
+  <data name="TrustDetected_Port_Default22" xml:space="preserve">
+    <value>డిఫాల్ట్ (22)</value>
+  </data>
+  <data name="TrustDetected_Port_Default" xml:space="preserve">
+    <value>డిఫాల్ట్</value>
+  </data>
+  <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
+    <value>తెలియదు</value>
   </data>
 </root>

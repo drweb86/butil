@@ -30,9 +30,9 @@ class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
             throw new InvalidDataException(BUtil.Core.Localization.Resources.Password_Field_Validation_NotSpecified);
 
         _normalizedFolder = LinuxFileHelper.NormalizeNullablePath(Settings.Folder);
+        _autodetectConnectionSettings = autodetectConnectionSettings;
 
         _client = Mount();
-        _autodetectConnectionSettings = autodetectConnectionSettings;
     }
 
     private readonly object _uploadLock = new();

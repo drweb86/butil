@@ -23,7 +23,8 @@
 		CloseOnClickAway="True" 
 		MinHeight="{Binding $parent.Height}"
 		Height="{Binding $parent.Height}"
-		MaxHeight="{Binding $parent.Height}">
+		MaxHeight="{Binding $parent.Height}"
+		IsMultipleDialogsEnabled="True">
 		<dialogHost:DialogHost.DataTemplates>
 			<DataTemplate DataType="views:DialogViewModel">
 				<StackPanel Margin="8 8 8 8">
@@ -96,7 +97,7 @@
 				Watermark="🔍"
 				MinWidth="160"
 				VerticalAlignment="Center"
-				Margin="8 3 0 3"
+				Margin="8 8 0 0"
 				VerticalContentAlignment="Center" />
 		</StackPanel>
 			<controls:UpdateCheckExpanderView
