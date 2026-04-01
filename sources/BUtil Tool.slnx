@@ -9,7 +9,7 @@
     <BuildDependency Project="BUtil.Linux/BUtil.Linux.csproj" />
     <BuildDependency Project="BUtil.Windows/BUtil.Windows.csproj" />
   </Project>
-  <Project Path="butil-ui/butil-ui.csproj">
+  <Project Path="BUtil.UI/BUtil.UI.csproj">
     <BuildDependency Project="BUtil.Windows/BUtil.Windows.csproj" />
   </Project>
   <Project Path="BUtil.Core/BUtil.Core.csproj" />

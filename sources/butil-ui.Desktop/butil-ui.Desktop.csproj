@@ -16,6 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\butil-ui\butil-ui.csproj" />
+    <ProjectReference Include="..\BUtil.UI\BUtil.UI.csproj" />
   </ItemGroup>
 </Project>
