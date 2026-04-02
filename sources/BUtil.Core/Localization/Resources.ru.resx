@@ -368,7 +368,7 @@
     <value>Запустить FTPS-сервер</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
-    <value>Поделиться папкой по FTPS в локальной сети</value>
+    <value>Поделиться папкой по сети (FTPS-сервер)</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Вы можете предоставить общий доступ к любой папке с правами на чтение и запись по протоколу FTPS (явное шифрование с самоподписанным сертификатом) в вашей локальной сети.</value>
@@ -741,7 +741,7 @@ bin.
     <value>Ожидание таймаута...</value>
   </data>
   <data name="UploadFolderContentsTask_Create" xml:space="preserve">
-    <value>Загрузить папку</value>
+    <value>Загрузить папку на сервер</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Вы можете загрузить содержимое папки с перезаписью уже существующих файлов.</value>

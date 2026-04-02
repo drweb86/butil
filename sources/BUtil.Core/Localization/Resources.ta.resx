@@ -370,7 +370,7 @@
     <value>FTPS சர்வரைத் தொடங்கு</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
-    <value>LAN-ல் FTPS மூலம் கோப்புறையைப் பகிரவும்</value>
+    <value>நெட்வொர்க்கில் கோப்புறையை பகிரவும் (FTPS சர்வர்)</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>உங்கள் உள்ளூர் பகுதி நெட்வொர்க்கில் எந்தக் கோப்புறையையும் FTPS நெறிமுறை (சுய-கையொப்பமிடப்பட்ட சான்றிதழுடன் வெளிப்படையான குறியாக்கம்) மூலம் படித்தல்-எழுதும் அணுகலுக்காகப் பகிரலாம்.</value>
@@ -742,7 +742,7 @@ bin.
     <value>காலாவதி நேரத்துக்காகக் காத்திருக்கிறது...</value>
   </data>
   <data name="UploadFolderContentsTask_Create" xml:space="preserve">
-    <value>கோப்புறையைப் பதிவேற்று</value>
+    <value>கோப்புறையை சேவையகத்தில் பதிவேற்றவும்</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>ஏற்கனவே இருக்கும் கோப்புகளை மேலெழுதி கோப்புறை உள்ளடக்கங்களை பதிவேற்றலாம்.</value>

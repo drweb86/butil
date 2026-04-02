@@ -20,7 +20,7 @@ public class TasksViewModel : ViewModelBase
         IsFullMenuVisible = true;
         ProgressGenericForeground = ColorPalette.GetBrush(SemanticColor.Normal);
 
-        WindowTitle = "BUtil - V" + CopyrightInfo.Version.ToString(3);
+        WindowTitle = "BUtil";
         HeaderBackground = ColorPalette.GetBrush(SemanticColor.HeaderBackground);
         ForegroundWindowFontAccented = ColorPalette.GetBrush(SemanticColor.ForegroundWindowFontAccented);
 

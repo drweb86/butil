@@ -370,7 +370,7 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
     <value>Avvia server FTPS</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
-    <value>Condividi cartella via FTPS nella rete locale</value>
+    <value>Condividi cartella in rete (Server FTPS)</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Puoi condividere qualsiasi cartella per l'accesso in lettura-scrittura tramite il protocollo FTPS (crittografia esplicita con certificato autofirmato) all'interno della tua rete locale.</value>
@@ -748,7 +748,7 @@ Consulta il sito web dell'applicazione per la documentazione su come impostare l
     <value>In attesa del timeout...</value>
   </data>
   <data name="UploadFolderContentsTask_Create" xml:space="preserve">
-    <value>Carica cartella</value>
+    <value>Carica cartella sul server</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Puoi caricare il contenuto della cartella sovrascrivendo i file già esistenti.</value>

@@ -368,7 +368,7 @@ Escenario de uso: Copia datos a un servidor remoto. Hay un problema: el ISP redu
     <value>Iniciar servidor FTPS</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
-    <value>Compartir carpeta vía FTPS en la red local</value>
+    <value>Compartir carpeta en la red (servidor FTPS)</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Puede compartir cualquier carpeta con acceso de lectura y escritura a través del protocolo FTPS (cifrado explícito con certificado autofirmado) dentro de su red de área local.</value>
@@ -740,7 +740,7 @@ Consulta la descripción detallada en el siguiente enlace.</value>
     <value>Esperando el tiempo de espera...</value>
   </data>
   <data name="UploadFolderContentsTask_Create" xml:space="preserve">
-    <value>Subir carpeta</value>
+    <value>Subir carpeta al servidor</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Puede subir el contenido de la carpeta sobrescribiendo los archivos ya existentes.</value>

@@ -368,7 +368,7 @@
     <value>Start FTPS Server</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
-    <value>Share folder for LAN with FTPS</value>
+    <value>Share folder for network (FTPS Server)</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>You fit share any folder wey dey for read-write access by FTPS protocol (encryption wit self sign certificate) inside your LAN.</value>
@@ -740,7 +740,7 @@
     <value>Dey wait for timeout...</value>
   </data>
   <data name="UploadFolderContentsTask_Create" xml:space="preserve">
-    <value>Upload Folder</value>
+    <value>Upload folder go server</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>You fit upload wetin dey inside folder, e go overwrite files wey dey before.</value>

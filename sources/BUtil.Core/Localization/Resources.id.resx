@@ -365,7 +365,7 @@
     <value>Mulai server FTPS</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
-    <value>Bagikan folder via FTPS di LAN</value>
+    <value>Bagikan folder melalui jaringan (Server FTPS)</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Anda dapat membagikan folder apa pun untuk akses baca-tulis melalui protokol FTPS (enkripsi eksplisit dengan sertifikat tandatangan sendiri) di dalam jaringan area lokal Anda.</value>
@@ -737,7 +737,7 @@
     <value>Menunggu waktu habis...</value>
   </data>
   <data name="UploadFolderContentsTask_Create" xml:space="preserve">
-    <value>Unggah Folder</value>
+    <value>Unggah folder ke server</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Anda dapat mengunggah isi folder dengan menimpa file yang sudah ada.</value>

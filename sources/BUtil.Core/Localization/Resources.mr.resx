@@ -368,7 +368,7 @@
     <value>FTPS सर्व्हर सुरू करा</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
-    <value>LAN मध्ये FTPS द्वारे फोल्डर शेअर करा</value>
+    <value>नेटवर्कवर फोल्डर शेअर करा (FTPS सर्व्हर)</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>तुम्ही तुमच्या लोकल एरिया नेटवर्कमध्ये कोणताही फोल्डर FTPS प्रोटोकॉल (स्वत:स्वाक्षरीत प्रमाणपत्रासह स्पष्ट एनक्रिप्शन) द्वारे वाचन-लेखन प्रवेशासाठी शेअर करू शकता.</value>
@@ -740,7 +740,7 @@
     <value>टाइमआउटची वाट पाहत आहे...</value>
   </data>
   <data name="UploadFolderContentsTask_Create" xml:space="preserve">
-    <value>फोल्डर अपलोड करा</value>
+    <value>फोल्डर सर्व्हरवर अपलोड करा</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>आधीपासून अस्तित्वात असलेल्या फाइल्सवर लिहून फोल्डरमधील मजकूर अपलोड करू शकता.</value>

@@ -19,6 +19,8 @@ public partial class MainWindowViewModel : ViewModelBase
 
     public static string Theme_Value_Light => Resources.Theme_Value_Light;
 
+    public static string AppVersionAndSiteLink => "BUtil - V" + CopyrightInfo.Version.ToString(3);
+
     #region Commands
 
 #pragma warning disable CA1822 // Mark members as static

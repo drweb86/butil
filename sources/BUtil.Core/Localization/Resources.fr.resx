@@ -369,7 +369,7 @@ Il y a un problème : le fournisseur d'accès réduit la vitesse d'upload après
     <value>Démarrer le serveur FTPS</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
-    <value>Partager un dossier via FTPS dans le réseau local</value>
+    <value>Partager le dossier sur le réseau (serveur FTPS)</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Vous pouvez partager n'importe quel dossier en accès lecture-écriture via le protocole FTPS (chiffrement explicite avec certificat auto-signé) au sein de votre réseau local.</value>
@@ -738,7 +738,7 @@ Consultez la description détaillée dans le lien suivant.</value>
     <value>En attente du délai d'expiration...</value>
   </data>
   <data name="UploadFolderContentsTask_Create" xml:space="preserve">
-    <value>Téléverser le dossier</value>
+    <value>Téléverser le dossier vers le serveur</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Vous pouvez téléverser le contenu du dossier en écrasant les fichiers déjà existants.</value>

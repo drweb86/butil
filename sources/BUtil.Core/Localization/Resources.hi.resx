@@ -368,7 +368,7 @@
     <value>FTPS सर्वर प्रारंभ करें</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
-    <value>लोकल एरिया नेटवर्क में FTPS प्रोटोकॉल के माध्यम से फ़ोल्डर साझा करें</value>
+    <value>नेटवर्क पर फ़ोल्डर साझा करें (FTPS सर्वर)</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>आप अपने लोकल एरिया नेटवर्क के अंदर किसी भी फ़ोल्डर को FTPS प्रोटोकॉल (स्व-हस्ताक्षरित प्रमाणपत्र के साथ स्पष्ट एन्क्रिप्शन) के माध्यम से पढ़ने-लिखने की पहुंच के लिए साझा कर सकते हैं।</value>
@@ -740,7 +740,7 @@ bin.
     <value>टाइमआउट की प्रतीक्षा की जा रही है...</value>
   </data>
   <data name="UploadFolderContentsTask_Create" xml:space="preserve">
-    <value>फ़ोल्डर अपलोड करें</value>
+    <value>फ़ोल्डर को सर्वर पर अपलोड करें</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>आप मौजूदा फ़ाइलों को ओवरराइट करते हुए फ़ोल्डर सामग्री अपलोड कर सकते हैं।</value>

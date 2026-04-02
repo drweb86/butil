@@ -365,7 +365,7 @@ Kịch bản sử dụng: Bạn sao chép dữ liệu đến máy chủ từ xa.
     <value>Khởi động máy chủ FTPS</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
-    <value>Chia sẻ thư mục qua FTPS trong mạng cục bộ</value>
+    <value>Chia sẻ thư mục qua mạng (Máy chủ FTPS)</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Bạn có thể chia sẻ bất kỳ thư mục nào để truy cập đọc-ghi qua giao thức FTPS (mã hóa rõ ràng với chứng chỉ tự ký) bên trong mạng cục bộ của bạn.</value>
@@ -737,7 +737,7 @@ Xem mô tả chi tiết trong liên kết sau.</value>
     <value>Đang chờ hết thời gian chờ...</value>
   </data>
   <data name="UploadFolderContentsTask_Create" xml:space="preserve">
-    <value>Tải lên Thư mục</value>
+    <value>Tải thư mục lên máy chủ</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Bạn có thể tải lên nội dung thư mục và ghi đè lên các tệp đã tồn tại.</value>

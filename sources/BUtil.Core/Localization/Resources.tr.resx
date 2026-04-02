@@ -365,7 +365,7 @@ Kullanım senaryosu: Verileri uzak sunucuya kopyalıyorsunuz. Bir sorun var: ISS
     <value>FTPS sunucusunu başlat</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
-    <value>Yerel ağda FTPS üzerinden klasör paylaş</value>
+    <value>Ağ üzerinden klasörü paylaş (FTPS Sunucusu)</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Yerel ağınız içinde herhangi bir klasörü FTPS protokolü (kendinden imzalı sertifikalı açık şifreleme) ile okuma-yazma erişimi için paylaşabilirsiniz.</value>
@@ -737,7 +737,7 @@ Aşağıdaki bağlantıda detaylı açıklama bulun.</value>
     <value>Zaman aşımı bekleniyor...</value>
   </data>
   <data name="UploadFolderContentsTask_Create" xml:space="preserve">
-    <value>Klasör Yükle</value>
+    <value>Klasörü sunucuya yükle</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Zaten var olan dosyaların üzerine yazarak klasör içeriğini yükleyebilirsiniz.</value>

@@ -364,7 +364,7 @@
     <value>FTPS سرور شروع کریں</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
-    <value>لوکل ایریا نیٹ ورک میں FTPS کے ذریعے فولڈر شیئر کریں</value>
+    <value>نیٹ ورک پر فولڈر شیئر کریں (FTPS سرور)</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>آپ اپنے لوکل ایریا نیٹ ورک کے اندر کسی بھی فولڈر کو FTPS پروٹوکول (خود دستخط شدہ سرٹیفکیٹ کے ساتھ واضح خفیہ کاری) کے ذریعے پڑھنے-لکھنے کی رسائی کے لیے شیئر کر سکتے ہیں۔</value>
@@ -730,7 +730,7 @@
     <value>ٹائم آؤٹ کا انتظار ہو رہا ہے...</value>
   </data>
   <data name="UploadFolderContentsTask_Create" xml:space="preserve">
-    <value>فولڈر اپ لوڈ کریں</value>
+    <value>فولڈر کو سرور پر اپلوڈ کریں</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>پہلے سے موجود فائلوں کو اوور رائٹ کرتے ہوئے فولڈر کے مواد اپ لوڈ کر سکتے ہیں۔</value>

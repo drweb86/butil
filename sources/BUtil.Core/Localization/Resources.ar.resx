@@ -368,7 +368,7 @@
     <value>بدء خادم FTPS</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
-    <value>مشاركة المجلد عبر FTPS في الشبكة المحلية</value>
+    <value>مشاركة المجلد عبر الشبكة (خادم FTPS)</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>يمكنك مشاركة أي مجلد للوصول للقراءة والكتابة عبر بروتوكول FTPS (التشفير الصريح بشهادة ذاتية التوقيع) داخل شبكتك المحلية.</value>
@@ -740,7 +740,7 @@ bin.
     <value>في انتظار انتهاء المهلة...</value>
   </data>
   <data name="UploadFolderContentsTask_Create" xml:space="preserve">
-    <value>رفع المجلد</value>
+    <value>رفع المجلد إلى الخادم</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>يمكنك رفع محتويات المجلد مع الكتابة فوق الملفات الموجودة مسبقًا.</value>

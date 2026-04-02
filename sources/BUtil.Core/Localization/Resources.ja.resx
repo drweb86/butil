@@ -363,7 +363,7 @@
     <value>FTPSサーバーを開始</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
-    <value>LAN内でFTPS経由でフォルダを共有</value>
+    <value>ネットワーク上でフォルダを共有（FTPSサーバー）</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>ローカルエリアネットワーク内で任意のフォルダをFTPSプロトコル（自己署名証明書による明示的な暗号化）で読み書きアクセス可能に共有できます。</value>
@@ -724,7 +724,7 @@ bin.
     <value>タイムアウト待機中...</value>
   </data>
   <data name="UploadFolderContentsTask_Create" xml:space="preserve">
-    <value>フォルダをアップロード</value>
+    <value>フォルダをサーバーにアップロード</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>既存のファイルを上書きしてフォルダの内容をアップロードできます。</value>

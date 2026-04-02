@@ -367,7 +367,7 @@
     <value>启动 FTPS 服务器</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
-    <value>通过 FTPS 在局域网内共享文件夹</value>
+    <value>通过网络共享文件夹（FTPS服务器）</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>您可以在您的局域网内，通过 FTPS 协议（使用自签名证书的显式加密）共享任何文件夹以供读写访问。</value>
@@ -739,7 +739,7 @@ bin。
     <value>正在等待超时...</value>
   </data>
   <data name="UploadFolderContentsTask_Create" xml:space="preserve">
-    <value>上传文件夹</value>
+    <value>上传文件夹到服务器</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>您可以上传文件夹内容，并覆盖已经存在的文件。</value>

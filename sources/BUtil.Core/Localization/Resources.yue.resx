@@ -389,7 +389,7 @@
     <value>啟動 FTPS 伺服器</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
-    <value>透過 FTPS 在區域網絡內分享文件夾</value>
+    <value>通過網絡分享資料夾（FTPS 伺服器）</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>你可以透過 FTPS 協議（使用自簽署證書的顯式加密），喺你嘅區域網絡內分享任何文件夾以供讀寫存取。</value>
@@ -760,7 +760,7 @@ bin。
     <value>正在等候逾時...</value>
   </data>
   <data name="UploadFolderContentsTask_Create" xml:space="preserve">
-    <value>上傳文件夾</value>
+    <value>上傳資料夾到伺服器</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>你可以上傳文件夾內容，並覆蓋已經存在嘅檔案。</value>

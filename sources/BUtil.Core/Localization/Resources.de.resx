@@ -368,7 +368,7 @@ Anwendungsszenario: Sie kopieren Daten auf einen entfernten Server. Es gibt ein 
     <value>FTPS-Server starten</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
-    <value>Ordner per FTPS im LAN freigeben</value>
+    <value>Ordner über Netzwerk teilen (FTPS-Server)</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Sie können jeden Ordner mit Lese- und Schreibzugriff über das FTPS-Protokoll (explizite Verschlüsselung mit selbstsigniertem Zertifikat) in Ihrem lokalen Netzwerk freigeben.</value>
@@ -740,7 +740,7 @@ Siehe detaillierte Beschreibung im folgenden Link.</value>
     <value>Warte auf Timeout...</value>
   </data>
   <data name="UploadFolderContentsTask_Create" xml:space="preserve">
-    <value>Ordner hochladen</value>
+    <value>Ordner auf Server hochladen</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Sie können Ordnerinhalte hochladen und dabei bereits vorhandene Dateien überschreiben.</value>
