@@ -68,13 +68,19 @@
 			</Grid.RowDefinitions>
 		<StackPanel Grid.Row="0" Orientation="Horizontal" Margin="4 4 0 0">
 			<Menu>
-				<MenuItem Command="{Binding GoToWebsiteCommand}" IsVisible="{Binding CanExtendClientAreaToDecorationsHint}">
+				<MenuItem>
 					<MenuItem.Header>
 						<StackPanel Orientation="Horizontal">
 							<Image Width="16" Height="16" Source="/Assets/butil.ico" VerticalAlignment="Center" />
-							<TextBlock Text="{Binding CurrentPage.WindowTitle}" Margin="8 0 0 0" VerticalAlignment="Center" />
+							<TextBlock Text="BUtil" Margin="8 0 0 0" VerticalAlignment="Center" />
 						</StackPanel>
 					</MenuItem.Header>
+					<MenuItem Header="{Binding CurrentPage.WindowTitle}" Command="{Binding GoToWebsiteCommand}" />
+					<MenuItem Header="{Binding Theme_Title}">
+						<MenuItem Header="{Binding Theme_Value_Dark}" Command="{Binding GoDarkSide}" />
+						<MenuItem Header="{Binding Theme_Value_Light}" Command="{Binding GoLightSide}" />
+					</MenuItem>
+					<MenuItem Command="{Binding OpenLogsCommand}" Header="{Binding LogFile_OpenLogs}" />
 				</MenuItem>
 				<MenuItem FontWeight="Bold" Header="{Binding Task_Create}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}">
 					<MenuItem FontWeight="Normal" Header="{Binding IncrementalBackupTask_Create}" Command="{Binding IncrementalBackupTaskCreateCommand}"/>
@@ -84,11 +90,6 @@
 					<MenuItem FontWeight="Normal" Header="{Binding FileSenderServerTask_Create}" Command="{Binding FileSenderServerCreateCommand}"/>
 					<MenuItem FontWeight="Normal" Header="{Binding FileSenderClientTask_Create}" Command="{Binding FileSenderClientCreateCommand}" />
 				</MenuItem>
-				<MenuItem Header="{Binding Theme_Title}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}">
-					<MenuItem Header="{Binding Theme_Value_Dark}" Command="{Binding GoDarkSide}" />
-					<MenuItem Header="{Binding Theme_Value_Light}" Command="{Binding GoLightSide}" />
-				</MenuItem>
-				<MenuItem Command="{Binding OpenLogsCommand}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}" Header="{Binding LogFile_OpenLogs}" />
 				<MenuItem Command="{Binding RestoreCommand}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}" Header="{Binding Task_Restore}" />
 			</Menu>
 			<TextBox
