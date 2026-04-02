@@ -24,7 +24,7 @@ SetCompressor /FINAL /SOLID lzma
 
 ; MUI Settings
 !define MUI_ABORTWARNING
-!define MUI_ICON "butil-ui\Assets\butil.ico"
+!define MUI_ICON "BUtil.UI\Assets\butil.ico"
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
 
 ; Welcome page

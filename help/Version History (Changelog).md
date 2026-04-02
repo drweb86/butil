@@ -15,6 +15,7 @@ Migration code will be there until 2026-10.
 - Audit, code coverage with AI for storages, caching, logging.
 - Tasks code was more simplified for being better supported.
 - Italian language was updated by https://github.com/bovirus .
+- Some libraries were updated.
 
 # 2026.02.17
 
