@@ -1,4 +1,5 @@
-﻿using BUtil.Core.ConfigurationFileModels.V2;
+﻿using BUtil.Core;
+using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
@@ -92,6 +93,7 @@ public class LaunchTaskViewModel : ViewModelBase
     public void StopTaskCommand()
 #pragma warning restore CA1822 // Mark members as static
     {
+        PlatformSpecificExperience.Instance.SupportManager.LaunchTasksAppOrExit();
         Environment.Exit(-1);
     }
 

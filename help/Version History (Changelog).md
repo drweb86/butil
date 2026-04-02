@@ -17,6 +17,9 @@ Migration code will be there until 2026-10.
 - Italian language was updated by https://github.com/bovirus .
 - Some libraries were updated.
 
+## Bug Fixes
+- On Cancel of running task user was not transitioned back to list of tasks.
+
 # 2026.02.17
 
 ## New Features
