@@ -1,8 +1,8 @@
-﻿using Avalonia.Controls;
+using Avalonia.Controls;
 
 namespace BUtil.UI.Controls;
 
-public partial class TasksView : UserControl
+public partial class TasksView : UserControl, IViewLocatorAware<TasksViewModel>
 {
     public TasksView()
     {

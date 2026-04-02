@@ -1,12 +1,18 @@
-﻿using Avalonia.Controls;
+using Avalonia.Controls;
 using Avalonia.Controls.Templates;
 using BUtil.UI.Controls;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 
 namespace BUtil.UI;
 
 public class ViewLocator : IDataTemplate
 {
+    private static readonly Assembly _uiAssembly = typeof(ViewLocator).Assembly;
+    private static readonly Dictionary<Type, Type?> _cache = [];
+
     public Control Build(object? data)
     {
         if (data is null)
@@ -14,16 +20,23 @@ public class ViewLocator : IDataTemplate
             return new TextBlock { Text = "data was null" };
         }
 
-        var name = data.GetType().FullName!.Replace("ViewModel", "View");
-        var type = Type.GetType(name);
+        var viewModelType = data.GetType();
 
-        if (type != null)
+        if (!_cache.TryGetValue(viewModelType, out var viewType))
         {
-            return (Control)Activator.CreateInstance(type)!;
+            var targetInterface = typeof(IViewLocatorAware<>).MakeGenericType(viewModelType);
+            viewType = _uiAssembly.GetTypes()
+                .FirstOrDefault(t => !t.IsAbstract && targetInterface.IsAssignableFrom(t));
+            _cache[viewModelType] = viewType;
+        }
+
+        if (viewType != null)
+        {
+            return (Control)Activator.CreateInstance(viewType)!;
         }
         else
         {
-            return new TextBlock { Text = "Not Found: " + name };
+            return new TextBlock { Text = "Not Found: IViewLocatorAware<" + viewModelType.Name + ">" };
         }
     }
 

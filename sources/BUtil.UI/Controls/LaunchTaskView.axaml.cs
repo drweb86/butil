@@ -2,7 +2,7 @@
 
 namespace BUtil.UI.Controls;
 
-public partial class LaunchTaskView : UserControl
+public partial class LaunchTaskView : UserControl, IViewLocatorAware<LaunchTaskViewModel>
 {
     public LaunchTaskView()
     {

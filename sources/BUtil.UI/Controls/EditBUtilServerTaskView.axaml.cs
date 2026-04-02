@@ -1,8 +1,8 @@
-﻿using Avalonia.Controls;
+using Avalonia.Controls;
 
 namespace BUtil.UI.Controls;
 
-public partial class EditBUtilServerTaskView : UserControl
+public partial class EditBUtilServerTaskView : UserControl, IViewLocatorAware<EditBUtilServerTaskViewModel>
 {
     public EditBUtilServerTaskView()
     {

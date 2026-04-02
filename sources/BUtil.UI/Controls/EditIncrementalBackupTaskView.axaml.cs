@@ -1,8 +1,8 @@
-﻿using Avalonia.Controls;
+using Avalonia.Controls;
 
 namespace BUtil.UI.Controls;
 
-public partial class EditIncrementalBackupTaskView : UserControl
+public partial class EditIncrementalBackupTaskView : UserControl, IViewLocatorAware<EditIncrementalBackupTaskViewModel>
 {
     public EditIncrementalBackupTaskView()
     {

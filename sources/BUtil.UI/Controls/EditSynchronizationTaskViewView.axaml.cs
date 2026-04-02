@@ -1,8 +1,8 @@
-﻿using Avalonia.Controls;
+using Avalonia.Controls;
 
 namespace BUtil.UI.Controls;
 
-public partial class EditSynchronizationTaskView : UserControl
+public partial class EditSynchronizationTaskView : UserControl, IViewLocatorAware<EditSynchronizationTaskViewModel>
 {
     public EditSynchronizationTaskView()
     {
