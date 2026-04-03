@@ -681,6 +681,12 @@ bin.
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
     <value>புதிய வேலை</value>
   </data>
+  <data name="Task_WindowTitle_Creating" xml:space="preserve">
+    <value>உருவாக்குகிறது</value>
+  </data>
+  <data name="Task_WindowTitle_Editing" xml:space="preserve">
+    <value>திருத்துகிறது</value>
+  </data>
   <data name="Task_LastExecution_State" xml:space="preserve">
     <value>அரசியல்</value>
   </data>

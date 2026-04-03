@@ -17,14 +17,15 @@ public class EditSynchronizationTaskViewModel : ViewModelBase
     public EditSynchronizationTaskViewModel(string taskName, bool isNew)
     {
         _taskName = taskName;
-
-        WindowTitle = isNew ? Resources.Task_Field_Name_NewDefaultValue : taskName;
         IsNew = isNew;
 
         var storeService = new TaskStore(new LocalFileSystem());
         var newTask = new TaskV2() { Model = new SynchronizationTaskModelOptionsV2() };
+        if (isNew)
+            newTask.Name = taskName;
         var task = isNew ? newTask : storeService.Load(taskName) ?? newTask;
         NameTaskViewModel = new NameTaskViewModel(isNew, Resources.SynchronizationTask_Help, task.Name);
+        SetWindowTitleForEdit(taskName, isNew);
         var model = (SynchronizationTaskModelOptionsV2)task.Model;
         EncryptionTaskViewModel = new EncryptionTaskViewModel(model.Password, isNew, !isNew);
 

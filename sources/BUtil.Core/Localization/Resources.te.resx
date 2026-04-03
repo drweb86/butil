@@ -675,6 +675,12 @@
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
     <value>కొత్త పని</value>
   </data>
+  <data name="Task_WindowTitle_Creating" xml:space="preserve">
+    <value>సృష్టిస్తోంది</value>
+  </data>
+  <data name="Task_WindowTitle_Editing" xml:space="preserve">
+    <value>సవరిస్తోంది</value>
+  </data>
   <data name="Task_LastExecution_State" xml:space="preserve">
     <value>స్థితి</value>
   </data>

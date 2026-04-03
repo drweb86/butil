@@ -678,6 +678,12 @@ bin。
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
     <value>新任务</value>
   </data>
+  <data name="Task_WindowTitle_Creating" xml:space="preserve">
+    <value>正在创建</value>
+  </data>
+  <data name="Task_WindowTitle_Editing" xml:space="preserve">
+    <value>正在编辑</value>
+  </data>
   <data name="Task_LastExecution_State" xml:space="preserve">
     <value>状态</value>
   </data>

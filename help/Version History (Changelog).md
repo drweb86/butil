@@ -16,6 +16,8 @@ Migration code will be there until 2026-10.
 - Tasks code was more simplified for being better supported.
 - Italian language was updated by https://github.com/bovirus .
 - Some libraries were updated.
+- Add cat to tasks view.
+- Better window titles for editing and creating of task.
 
 ## Bug Fixes
 - On Cancel of running task user was not transitioned back to list of tasks.

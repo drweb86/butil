@@ -679,6 +679,12 @@
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
     <value>नवीन कार्य</value>
   </data>
+  <data name="Task_WindowTitle_Creating" xml:space="preserve">
+    <value>तयार करत आहे</value>
+  </data>
+  <data name="Task_WindowTitle_Editing" xml:space="preserve">
+    <value>संपादन</value>
+  </data>
   <data name="Task_LastExecution_State" xml:space="preserve">
     <value>स्थिती</value>
   </data>

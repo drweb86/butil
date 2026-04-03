@@ -676,6 +676,12 @@ Xem mô tả chi tiết trong liên kết sau.</value>
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
     <value>Tác vụ mới</value>
   </data>
+  <data name="Task_WindowTitle_Creating" xml:space="preserve">
+    <value>Đang tạo</value>
+  </data>
+  <data name="Task_WindowTitle_Editing" xml:space="preserve">
+    <value>Đang chỉnh sửa</value>
+  </data>
   <data name="Task_LastExecution_State" xml:space="preserve">
     <value>Trạng thái</value>
   </data>

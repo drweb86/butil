@@ -1,4 +1,6 @@
+using System.ComponentModel;
 using BUtil.Core;
+using BUtil.Core.Localization;
 using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace BUtil.UI.Controls;
@@ -41,6 +43,12 @@ public class ViewModelBase : ObservableObject
             _windowTitle = value;
             this.OnPropertyChanged(nameof(WindowTitle));
         }
+    }
+
+    protected void SetWindowTitleForEdit(string name, bool isNew)
+    {
+        var suffix = isNew ? Resources.Task_WindowTitle_Creating : Resources.Task_WindowTitle_Editing;
+        WindowTitle = $"{name} - {suffix}";
     }
 
     #endregion

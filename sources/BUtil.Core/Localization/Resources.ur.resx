@@ -669,6 +669,12 @@
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
     <value>نیا کام</value>
   </data>
+  <data name="Task_WindowTitle_Creating" xml:space="preserve">
+    <value>تخلیق</value>
+  </data>
+  <data name="Task_WindowTitle_Editing" xml:space="preserve">
+    <value>ترمیم</value>
+  </data>
   <data name="Task_LastExecution_State" xml:space="preserve">
     <value>حالت</value>
   </data>

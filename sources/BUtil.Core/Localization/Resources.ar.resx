@@ -679,6 +679,12 @@ bin.
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
     <value>مهمة جديدة</value>
   </data>
+  <data name="Task_WindowTitle_Creating" xml:space="preserve">
+    <value>إنشاء</value>
+  </data>
+  <data name="Task_WindowTitle_Editing" xml:space="preserve">
+    <value>تحرير</value>
+  </data>
   <data name="Task_LastExecution_State" xml:space="preserve">
     <value>الحالة</value>
   </data>

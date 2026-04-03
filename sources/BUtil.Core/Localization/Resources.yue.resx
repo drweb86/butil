@@ -699,6 +699,12 @@ bin。
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
     <value>新任務</value>
   </data>
+  <data name="Task_WindowTitle_Creating" xml:space="preserve">
+    <value>建立</value>
+  </data>
+  <data name="Task_WindowTitle_Editing" xml:space="preserve">
+    <value>編輯</value>
+  </data>
   <data name="Task_LastExecution_State" xml:space="preserve">
     <value>狀態</value>
   </data>

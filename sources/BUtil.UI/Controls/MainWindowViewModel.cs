@@ -65,7 +65,7 @@ public partial class MainWindowViewModel : ViewModelBase
     public void IncrementalBackupTaskCreateCommand()
 #pragma warning restore CA1822 // Mark members as static
     {
-        WindowManager.SwitchView(new EditIncrementalBackupTaskViewModel(string.Empty, true));
+        WindowManager.SwitchView(new EditIncrementalBackupTaskViewModel(Resources.IncrementalBackupTask_Create, true));
     }
 
     public bool CanOpenLink { get; } = PlatformSpecificExperience.Instance.SupportManager.CanOpenLink;
@@ -93,21 +93,21 @@ public partial class MainWindowViewModel : ViewModelBase
     public void FileSenderServerCreateCommand()
 #pragma warning restore CA1822 // Mark members as static
     {
-        WindowManager.SwitchView(new EditBUtilServerTaskViewModel(string.Empty, true));
+        WindowManager.SwitchView(new EditBUtilServerTaskViewModel(Resources.FtpsServerTask_Create, true));
     }
 
 #pragma warning disable CA1822 // Mark members as static
     public void FileSenderClientCreateCommand()
 #pragma warning restore CA1822 // Mark members as static
     {
-        WindowManager.SwitchView(new EditBUtilServerClientTaskViewModel(string.Empty, true));
+        WindowManager.SwitchView(new EditBUtilServerClientTaskViewModel(Resources.UploadFolderContentsTask_Create, true));
     }
 
 #pragma warning disable CA1822 // Mark members as static
     public void SynchronizationTaskCreateCommand()
 #pragma warning restore CA1822 // Mark members as static
     {
-        WindowManager.SwitchView(new EditSynchronizationTaskViewModel(string.Empty, true));
+        WindowManager.SwitchView(new EditSynchronizationTaskViewModel(Resources.SynchronizationTask_Create, true));
     }
 
     #endregion

@@ -15,12 +15,14 @@ public class EditMediaTaskViewModel : ViewModelBase
     public EditMediaTaskViewModel(string taskName, bool isNew)
     {
         _taskName = taskName;
-        WindowTitle = isNew ? Resources.Task_Field_Name_NewDefaultValue : taskName;
         IsNew = isNew;
-        NameTaskViewModel = new NameTaskViewModel(isNew, Resources.ImportMediaTask_Help, isNew ? Resources.Task_Field_Name_NewDefaultValue : taskName);
 
         var storeService = new TaskStore(new LocalFileSystem());
-        var task = isNew ? new TaskV2() { Model = new ImportMediaTaskModelOptionsV2() } : storeService.Load(taskName) ?? new TaskV2() { Model = new ImportMediaTaskModelOptionsV2() };
+        var task = isNew
+            ? new TaskV2 { Name = taskName, Model = new ImportMediaTaskModelOptionsV2() }
+            : storeService.Load(taskName) ?? new TaskV2() { Model = new ImportMediaTaskModelOptionsV2() };
+        NameTaskViewModel = new NameTaskViewModel(isNew, Resources.ImportMediaTask_Help, task.Name);
+        SetWindowTitleForEdit(taskName, isNew);
         var model = (ImportMediaTaskModelOptionsV2)task.Model;
 
         ImportMediaTaskWhereTaskViewModel = new ImportMediaTaskWhereTaskViewModel(model.DestinationFolder, model.SkipAlreadyImportedFiles, model.TransformFileName, model.FileLastWriteTimeMin);

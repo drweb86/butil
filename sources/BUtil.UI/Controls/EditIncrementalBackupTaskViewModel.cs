@@ -17,13 +17,12 @@ public class EditIncrementalBackupTaskViewModel : ViewModelBase
     public EditIncrementalBackupTaskViewModel(string taskName, bool isNew)
     {
         _taskName = taskName;
-
-        WindowTitle = isNew ? Resources.Task_Field_Name_NewDefaultValue : taskName;
         IsNew = isNew;
 
         var storeService = new TaskStore(new LocalFileSystem());
-        var task = isNew ? new TaskV2() : storeService.Load(taskName) ?? new TaskV2();
+        var task = isNew ? new TaskV2 { Name = taskName } : storeService.Load(taskName) ?? new TaskV2();
         NameTaskViewModel = new NameTaskViewModel(isNew, Resources.IncrementalBackup_Help, task.Name);
+        SetWindowTitleForEdit(taskName, isNew);
         var model = (IncrementalBackupModelOptionsV2)task.Model;
         EncryptionTaskViewModel = new EncryptionTaskViewModel(model.Password, isNew, !isNew);
 

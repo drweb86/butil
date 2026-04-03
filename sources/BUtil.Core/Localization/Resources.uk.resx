@@ -680,6 +680,12 @@ bin.
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
     <value>Нове завдання</value>
   </data>
+  <data name="Task_WindowTitle_Creating" xml:space="preserve">
+    <value>Створення</value>
+  </data>
+  <data name="Task_WindowTitle_Editing" xml:space="preserve">
+    <value>Редагування</value>
+  </data>
   <data name="Task_LastExecution_State" xml:space="preserve">
     <value>Стан</value>
   </data>

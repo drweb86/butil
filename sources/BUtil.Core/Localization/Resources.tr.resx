@@ -676,6 +676,12 @@ Aşağıdaki bağlantıda detaylı açıklama bulun.</value>
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
     <value>Yeni görev</value>
   </data>
+  <data name="Task_WindowTitle_Creating" xml:space="preserve">
+    <value>Oluşturuluyor</value>
+  </data>
+  <data name="Task_WindowTitle_Editing" xml:space="preserve">
+    <value>Düzenleniyor</value>
+  </data>
   <data name="Task_LastExecution_State" xml:space="preserve">
     <value>Durum</value>
   </data>

@@ -1679,6 +1679,24 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Creating.
+        /// </summary>
+        public static string Task_WindowTitle_Creating {
+            get {
+                return ResourceManager.GetString("Task_WindowTitle_Creating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Editing.
+        /// </summary>
+        public static string Task_WindowTitle_Editing {
+            get {
+                return ResourceManager.GetString("Task_WindowTitle_Editing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to State.
         /// </summary>
         public static string Task_LastExecution_State {

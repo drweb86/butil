@@ -679,6 +679,12 @@
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
     <value>New task</value>
   </data>
+  <data name="Task_WindowTitle_Creating" xml:space="preserve">
+    <value>Creating</value>
+  </data>
+  <data name="Task_WindowTitle_Editing" xml:space="preserve">
+    <value>Editing</value>
+  </data>
   <data name="Task_LastExecution_State" xml:space="preserve">
     <value>State</value>
   </data>

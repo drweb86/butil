@@ -17,13 +17,14 @@ public class EditBUtilServerTaskViewModel : ViewModelBase
     public EditBUtilServerTaskViewModel(string taskName, bool isNew)
     {
         _taskName = taskName;
-
-        WindowTitle = isNew ? Resources.Task_Field_Name_NewDefaultValue : taskName;
         IsNew = isNew;
 
         var storeService = new TaskStore(new LocalFileSystem());
-        var task = isNew ? new TaskV2() { Model = new BUtilServerModelOptionsV2 { Folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) } } : storeService.Load(taskName) ?? new TaskV2();
+        var task = isNew
+            ? new TaskV2 { Name = taskName, Model = new BUtilServerModelOptionsV2 { Folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) } }
+            : storeService.Load(taskName) ?? new TaskV2();
         NameTaskViewModel = new NameTaskViewModel(isNew, Resources.FtpsServerTask_Help, task.Name);
+        SetWindowTitleForEdit(taskName, isNew);
         var model = (BUtilServerModelOptionsV2)task.Model;
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
         WhenTaskViewModel = new WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule.GetSchedule(taskName) ?? new ScheduleInfo());

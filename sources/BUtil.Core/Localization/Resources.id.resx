@@ -676,6 +676,12 @@
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
     <value>Tugas baru</value>
   </data>
+  <data name="Task_WindowTitle_Creating" xml:space="preserve">
+    <value>Membuat</value>
+  </data>
+  <data name="Task_WindowTitle_Editing" xml:space="preserve">
+    <value>Mengedit</value>
+  </data>
   <data name="Task_LastExecution_State" xml:space="preserve">
     <value>Status</value>
   </data>
