@@ -19,6 +19,7 @@ Migration code will be there until 2026-10.
 
 ## Bug Fixes
 - On Cancel of running task user was not transitioned back to list of tasks.
+- Play, Fix stop button colors and shapes.
 
 # 2026.02.17
 
