@@ -27,7 +27,7 @@ public partial class MainWindowViewModel : ViewModelBase
     public void GoDarkSide()
 #pragma warning restore CA1822 // Mark members as static
     {
-        SettingsStoreService.Save(ThemeSetting.Name, ThemeSetting.DarkValue);
+        new SettingsStoreService(new LocalFileSystem()).Save(ThemeSetting.Name, ThemeSetting.DarkValue);
         PlatformSpecificExperience.Instance
                 .SupportManager
                 .LaunchTasksAppOrExit();
@@ -38,7 +38,7 @@ public partial class MainWindowViewModel : ViewModelBase
     public void GoLightSide()
 #pragma warning restore CA1822 // Mark members as static
     {
-        SettingsStoreService.Save(ThemeSetting.Name, ThemeSetting.LightValue);
+        new SettingsStoreService(new LocalFileSystem()).Save(ThemeSetting.Name, ThemeSetting.LightValue);
         PlatformSpecificExperience.Instance
                 .SupportManager
                 .LaunchTasksAppOrExit();
@@ -167,8 +167,8 @@ public partial class MainWindowViewModel : ViewModelBase
 
     public MainWindowViewModel()
     {
-        var settingsService = new SettingsStoreService();
-        ApplicationSettings.Theme = SettingsStoreService.Load(ThemeSetting.Name, ThemeSetting.DefaultValue);
+        var settingsService = new SettingsStoreService(new LocalFileSystem());
+        ApplicationSettings.Theme = settingsService.Load(ThemeSetting.Name, ThemeSetting.DefaultValue);
         WindowBackground = ColorPalette.GetBrush(SemanticColor.WindowBackground);
         HeaderBackground = ColorPalette.GetBrush(SemanticColor.HeaderBackground);
 

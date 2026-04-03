@@ -3,6 +3,7 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
 using Avalonia.Styling;
+using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
 using BUtil.Core.Settings;
 using BUtil.UI.Controls;
@@ -13,8 +14,8 @@ public partial class App : Application
 {
     public override void Initialize()
     {
-        var settingsService = new SettingsStoreService();
-        var theme = SettingsStoreService.Load(ThemeSetting.Name, ThemeSetting.DefaultValue);
+        var settingsService = new SettingsStoreService(new LocalFileSystem());
+        var theme = settingsService.Load(ThemeSetting.Name, ThemeSetting.DefaultValue);
         if (theme == ThemeSetting.DarkValue)
         {
             this.RequestedThemeVariant = ThemeVariant.Dark;

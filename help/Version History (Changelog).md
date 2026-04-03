@@ -10,6 +10,7 @@ Migration code will be there until 2026-10.
 - Card now has possibility to open last log.
 - Filter cards by title on main menu.
 - Duplicate of task card added (mainly for testing).
+- Progress details is collapsed by default. Expander state is stored between app restarts.
 
 ## Changes
 - Audit, code coverage with AI for storages, caching, logging.

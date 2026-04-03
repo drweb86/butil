@@ -5,6 +5,9 @@ using BUtil.Core.Events;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
+using BUtil.Core.FileSystem;
+using BUtil.Core.Options;
+using BUtil.Core.Settings;
 using BUtil.Core.TasksTree.Core;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System;
@@ -75,6 +78,11 @@ public class TaskExecuterViewModel : ObservableObject
             });
 
         _onTaskComplete = onTaskComplete;
+
+        var settingsStore = new SettingsStoreService(new LocalFileSystem());
+        var expanderState = settingsStore.Load(TaskExecuterExpanderSetting.Name, TaskExecuterExpanderSetting.DefaultValue);
+        _isCollapsed = expanderState != TaskExecuterExpanderSetting.ExpandedValue;
+        OnPropertyChanged(nameof(IsCollapsed));
     }
 
     private string? _lastMinuteMessage;
@@ -85,7 +93,7 @@ public class TaskExecuterViewModel : ObservableObject
 
     #region IsCollapsed
 
-    private bool _isCollapsed = false;
+    private bool _isCollapsed = true;
     public bool IsCollapsed
     {
         get
@@ -98,6 +106,9 @@ public class TaskExecuterViewModel : ObservableObject
                 return;
             _isCollapsed = value;
             OnPropertyChanged(nameof(IsCollapsed));
+            new SettingsStoreService(new LocalFileSystem()).Save(
+                TaskExecuterExpanderSetting.Name,
+                value ? TaskExecuterExpanderSetting.CollapsedValue : TaskExecuterExpanderSetting.ExpandedValue);
         }
     }
 

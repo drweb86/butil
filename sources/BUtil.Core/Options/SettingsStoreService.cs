@@ -6,26 +6,29 @@ namespace BUtil.Core.Options;
 
 public class SettingsStoreService
 {
-    public SettingsStoreService()
+    private readonly ILocalFileSystem _fileSystem;
+
+    public SettingsStoreService(ILocalFileSystem fileSystem)
     {
-        FileHelper.EnsureFolderCreated(Directories.SettingsDir);
+        _fileSystem = fileSystem;
+        _fileSystem.EnsureFolderCreated(Directories.SettingsDir);
     }
 
-    public static string Load(string name, string defaultValue)
+    public string Load(string name, string defaultValue)
     {
         var file = GetFileName(name);
-        if (File.Exists(file))
-            return File.ReadAllText(file);
+        if (_fileSystem.FileExists(file))
+            return _fileSystem.ReadAllText(file);
 
         return defaultValue;
     }
 
-    public static void Save(string name, string value)
+    public void Save(string name, string value)
     {
         var file = GetFileName(name);
-        if (File.Exists(file))
-            File.Delete(file);
-        File.WriteAllText(file, value);
+        if (_fileSystem.FileExists(file))
+            _fileSystem.DeleteFile(file);
+        _fileSystem.WriteAllText(file, value);
     }
 
     private static string GetFileName(string name)
