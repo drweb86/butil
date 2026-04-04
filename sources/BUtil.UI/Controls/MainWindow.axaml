@@ -101,7 +101,7 @@
 			<TextBox
 				IsVisible="{Binding CurrentPage.IsFullMenuVisible}"
 				Text="{Binding CurrentPage.SearchText}"
-				Watermark="🔍"
+				Watermark="{Binding SearchTextBoxWatermark}"
 				MinWidth="160"
 				VerticalAlignment="Center"
 				Margin="4 4 0 0"

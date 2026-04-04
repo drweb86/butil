@@ -8,6 +8,9 @@
              d:DesignHeight="450"
              x:Class="BUtil.UI.Controls.TechnicalFileToolView"
              x:DataType="controls:TechnicalFileToolViewModel">
+	<UserControl.Resources>
+		<StreamGeometry x:Key="play_regular">M 3,2 C 3,2 3,0.5 5,1.8 L 21,10.5 C 23,11.5 23,12.5 21,13.5 L 5,22.2 C 3,23.5 3,22 3,22 Z</StreamGeometry>
+	</UserControl.Resources>
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="*" />
@@ -52,8 +55,30 @@
 		</ScrollViewer>
 
 		<StackPanel Grid.Row="1" Margin="24 8 24 24" Orientation="Horizontal" HorizontalAlignment="Right">
-			<Button MinWidth="120" Padding="0 8 0 8" VerticalAlignment="Center" Content="{Binding TechnicalTool_Run}" HorizontalContentAlignment="Center" Margin="8 0 8 0" Command="{Binding RunCommand}" />
-			<Button MinWidth="120" Padding="0 8 0 8" VerticalAlignment="Center" Content="{Binding TechnicalTool_Close}" HorizontalContentAlignment="Center" Command="{Binding CloseCommand}" />
+			<Button Margin="4"
+					Padding="16"
+					VerticalAlignment="Center"
+					ToolTip.Tip="{Binding TechnicalTool_Run}"
+					HorizontalContentAlignment="Center" 
+					Command="{Binding RunCommand}">
+				<Path
+					Data="{StaticResource play_regular}"
+					Fill="#94F591"
+					Width="32"
+					Height="32"
+					Stretch="Uniform"
+				/>
+			</Button>
+			<Button MinWidth="120"
+					Margin="4"
+					Padding="16" 
+					MinHeight="66"
+					VerticalAlignment="Center"
+					Content="{Binding TechnicalTool_Close}"
+					HorizontalContentAlignment="Center"
+					VerticalContentAlignment="Center"
+					Command="{Binding CloseCommand}"
+			/>
 		</StackPanel>
 	</Grid>
 </UserControl>

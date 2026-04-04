@@ -502,6 +502,9 @@ Wenn eine der erstellten Kopien ausfällt, einschließlich der ersten (vollstän
   <data name="Logs_Menu" xml:space="preserve">
     <value>Protokolle</value>
   </data>
+  <data name="MainWindow_SearchWatermark" xml:space="preserve">
+    <value>Suchen</value>
+  </data>
   <data name="Messages_Header_Error" xml:space="preserve">
     <value>Fehler</value>
   </data>

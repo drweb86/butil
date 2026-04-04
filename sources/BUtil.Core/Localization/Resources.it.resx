@@ -508,6 +508,9 @@ Consulta il sito web dell'applicazione per la documentazione su come impostare l
   <data name="Logs_Menu" xml:space="preserve">
     <value>Registri</value>
   </data>
+  <data name="MainWindow_SearchWatermark" xml:space="preserve">
+    <value>Cerca</value>
+  </data>
   <data name="Messages_Header_Error" xml:space="preserve">
     <value>Errore</value>
   </data>

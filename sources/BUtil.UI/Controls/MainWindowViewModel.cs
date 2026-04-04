@@ -159,6 +159,9 @@ public partial class MainWindowViewModel : ViewModelBase
     public static string FileSenderServerTask_Create => Resources.FtpsServerTask_Create;
     public static string FileSenderClientTask_Create => Resources.UploadFolderContentsTask_Create;
 
+    /// <summary>Emoji watermark on Windows (good font coverage); localized text elsewhere (e.g. Linux without color emoji fonts).</summary>
+    public static string SearchTextBoxWatermark =>
+        OperatingSystem.IsWindows() ? "\uD83D\uDD0D" : Resources.MainWindow_SearchWatermark;
 
     #endregion
 

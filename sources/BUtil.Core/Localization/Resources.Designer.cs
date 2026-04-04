@@ -1166,6 +1166,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Search.
+        /// </summary>
+        public static string MainWindow_SearchWatermark {
+            get {
+                return ResourceManager.GetString("MainWindow_SearchWatermark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         public static string Messages_Header_Error {

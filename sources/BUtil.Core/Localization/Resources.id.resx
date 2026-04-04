@@ -499,6 +499,9 @@
   <data name="Logs_Menu" xml:space="preserve">
     <value>Log</value>
   </data>
+  <data name="MainWindow_SearchWatermark" xml:space="preserve">
+    <value>Cari</value>
+  </data>
   <data name="Messages_Header_Error" xml:space="preserve">
     <value>Kesalahan</value>
   </data>

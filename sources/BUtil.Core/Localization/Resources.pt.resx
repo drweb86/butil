@@ -502,6 +502,9 @@ Se qualquer uma das cópias criadas falhar, incluindo a primeira (completa), a r
   <data name="Logs_Menu" xml:space="preserve">
     <value>Registos</value>
   </data>
+  <data name="MainWindow_SearchWatermark" xml:space="preserve">
+    <value>Pesquisar</value>
+  </data>
   <data name="Messages_Header_Error" xml:space="preserve">
     <value>Erro</value>
   </data>

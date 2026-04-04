@@ -499,6 +499,9 @@
   <data name="Logs_Menu" xml:space="preserve">
     <value>লগ</value>
   </data>
+  <data name="MainWindow_SearchWatermark" xml:space="preserve">
+    <value>খুঁজুন</value>
+  </data>
   <data name="Messages_Header_Error" xml:space="preserve">
     <value>ত্রুটি</value>
   </data>

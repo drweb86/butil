@@ -499,6 +499,9 @@ Yapılan yedeklerden herhangi biri başarısız olursa, birincisi (tam yedek) de
   <data name="Logs_Menu" xml:space="preserve">
     <value>Günlükler</value>
   </data>
+  <data name="MainWindow_SearchWatermark" xml:space="preserve">
+    <value>Ara</value>
+  </data>
   <data name="Messages_Header_Error" xml:space="preserve">
     <value>Hata</value>
   </data>

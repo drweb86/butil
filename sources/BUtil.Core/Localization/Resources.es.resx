@@ -502,6 +502,9 @@ Si falla alguna de las copias creadas, incluida la primera (completa), la restau
   <data name="Logs_Menu" xml:space="preserve">
     <value>Registros</value>
   </data>
+  <data name="MainWindow_SearchWatermark" xml:space="preserve">
+    <value>Buscar</value>
+  </data>
   <data name="Messages_Header_Error" xml:space="preserve">
     <value>Error</value>
   </data>

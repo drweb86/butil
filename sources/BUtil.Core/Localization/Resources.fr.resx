@@ -499,6 +499,9 @@ Par exemple, après une sauvegarde complète le vendredi, une sauvegarde le lund
   <data name="Logs_Menu" xml:space="preserve">
     <value>Journaux</value>
   </data>
+  <data name="MainWindow_SearchWatermark" xml:space="preserve">
+    <value>Rechercher</value>
+  </data>
   <data name="Messages_Header_Error" xml:space="preserve">
     <value>Erreur</value>
   </data>

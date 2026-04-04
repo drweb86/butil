@@ -502,6 +502,9 @@
   <data name="Logs_Menu" xml:space="preserve">
     <value>नोंदी</value>
   </data>
+  <data name="MainWindow_SearchWatermark" xml:space="preserve">
+    <value>शोध</value>
+  </data>
   <data name="Messages_Header_Error" xml:space="preserve">
     <value>त्रुटी</value>
   </data>

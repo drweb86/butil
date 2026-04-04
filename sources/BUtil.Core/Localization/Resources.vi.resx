@@ -499,6 +499,9 @@ Nếu bất kỳ bản sao nào được tạo ra thất bại, bao gồm cả b
   <data name="Logs_Menu" xml:space="preserve">
     <value>Nhật ký</value>
   </data>
+  <data name="MainWindow_SearchWatermark" xml:space="preserve">
+    <value>Tìm kiếm</value>
+  </data>
   <data name="Messages_Header_Error" xml:space="preserve">
     <value>Lỗi</value>
   </data>
