@@ -2,7 +2,8 @@
 
 ## New Features
 - Hardening security of storing of task passwords.
-Passwords will be stored in Windows using DPAPI. For Ubuntu - Secret Service API.
+Passwords will be stored in Windows using DPAPI.
+For Ubuntu - Secret Service API unfortunetly does not support Cron and scheduling, so it will be a machine-derived key.
 You cannot copy task files between machines anymore.
 Protection migration will happen on read of any task or reading list of tasks.
 Migration code will be there until 2026-10-01.
