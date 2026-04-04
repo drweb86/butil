@@ -1,4 +1,5 @@
 using BUtil.Core.Options;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -44,11 +45,32 @@ internal sealed class LinuxSecretService : SecretServiceBase
 
         static LibSecretInterop()
         {
+            EnsureDbusSessionBus();
+
             var glib = NativeLibrary.Load(_glibLibraryName);
             GStrHashPtr = NativeLibrary.GetExport(glib, "g_str_hash");
             GStrEqualPtr = NativeLibrary.GetExport(glib, "g_str_equal");
             GFreePtr = NativeLibrary.GetExport(glib, "g_free");
         }
+
+        private static void EnsureDbusSessionBus()
+        {
+            const string dbusEnvVar = "DBUS_SESSION_BUS_ADDRESS";
+            if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable(dbusEnvVar)))
+                return;
+
+            // For headless environments (cron, systemd services), connect to the user's D-Bus session
+            // On systemd-based systems, this is typically at /run/user/<uid>/bus
+            var uid = getuid();
+            var busPath = $"/run/user/{uid}/bus";
+            if (File.Exists(busPath))
+            {
+                Environment.SetEnvironmentVariable(dbusEnvVar, $"unix:path={busPath}");
+            }
+        }
+
+        [DllImport("libc", CallingConvention = CallingConvention.Cdecl)]
+        private static extern uint getuid();
 
         public static void StoreSecret(string id, string value)
         {
