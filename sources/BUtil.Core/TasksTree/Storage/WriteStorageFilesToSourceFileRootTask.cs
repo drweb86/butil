@@ -11,7 +11,7 @@ using System.Linq;
 
 namespace BUtil.Core.TasksTree.Storage;
 
-public class WriteStorageFilesToSourceFileRootTask : ParallelBuTask
+public class WriteStorageFilesToSourceFileRootTask : SequentialBuTask
 {
     private readonly CommonServicesIoc _commonServicesIoc;
     private readonly StorageSpecificServicesIoc _storageSpecificServicesIoc;
