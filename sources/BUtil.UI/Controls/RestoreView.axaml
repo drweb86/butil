@@ -22,7 +22,6 @@
 		<Grid.RowDefinitions>
 			<RowDefinition Height="*" />
 			<RowDefinition Height="Auto"/>
-			
 		</Grid.RowDefinitions>
 		<ScrollViewer
 				ScrollViewer.VerticalScrollBarVisibility="Visible"
@@ -39,10 +38,10 @@
 			HorizontalAlignment="Stretch"
 			Grid.Row="1"
 			Margin="24 8 24 0"
-			IsVisible="{Binding IsSetupVisible}"
 			ColumnDefinitions="*, Auto, Auto">
 			<Button Grid.Column="1"
 				VerticalAlignment="Center"
+				IsVisible="{Binding IsSetupVisible}"
 				Margin="4"
 				Padding="16"
 				MinWidth="40"

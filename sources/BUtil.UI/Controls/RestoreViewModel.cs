@@ -71,7 +71,7 @@ public class RestoreViewModel : ViewModelBase
     public void CloseCommand()
 #pragma warning restore CA1822 // Mark members as static
     {
-        Environment.Exit(0);
+        WindowManager.SwitchView(new TasksViewModel());
     }
 
     public async Task ContinueCommand()

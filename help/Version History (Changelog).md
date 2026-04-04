@@ -25,6 +25,7 @@ Migration code will be there until 2026-10-01.
 - On Cancel of running task user was not transitioned back to list of tasks.
 - Play, Fix stop button colors and shapes.
 - Restoration became sequential because Synology FTPS crashes on 2 simultenous connections.
+- Restoration window Close button was hidden.
 
 # 2026.02.17
 
