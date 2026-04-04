@@ -27,6 +27,7 @@ Migration code will be there until 2026-10-01.
 - Play, Fix stop button colors and shapes.
 - Restoration became sequential because Synology FTPS crashes on 2 simultenous connections.
 - Restoration window Close button was hidden.
+- Restoration window - Files view should be by default expanded.
 
 # 2026.02.17
 
