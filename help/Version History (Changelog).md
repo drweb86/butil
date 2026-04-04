@@ -1,5 +1,4 @@
 ﻿# 2026.04.04
-(unpublished)
 
 ## New Features
 - Hardening security of storing of task passwords.
