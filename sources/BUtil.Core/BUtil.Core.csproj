@@ -21,6 +21,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <InternalsVisibleTo Include="BUtil.Tests" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="FluentFTP" Version="54.1.0" />
     <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="10.0.5" />
     <PackageReference Include="Siarhei_Kuchuk.FtpsServerLibrary" Version="2025.12.25" />

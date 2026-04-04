@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -488,6 +488,9 @@
   <data name="Local_State_Saving" xml:space="preserve">
     <value>Сохранение локального состояния</value>
   </data>
+  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
+    <value>Открыть папку журналов</value>
+  </data>
   <data name="LogFile_Marker_Errors" xml:space="preserve">
     <value>Ошибки</value>
   </data>
@@ -496,6 +499,9 @@
   </data>
   <data name="LogFile_OpenLogs" xml:space="preserve">
     <value>Логи</value>
+  </data>
+  <data name="Logs_Menu" xml:space="preserve">
+    <value>Журналы</value>
   </data>
   <data name="Messages_Header_Error" xml:space="preserve">
     <value>Ошибка</value>
@@ -520,6 +526,9 @@
   </data>
   <data name="OptionalField_Hint" xml:space="preserve">
     <value>(необязательный параметр)</value>
+  </data>
+  <data name="Other_Menu_Title" xml:space="preserve">
+    <value>Другое</value>
   </data>
   <data name="Password_Field" xml:space="preserve">
     <value>Пароль:</value>
@@ -607,6 +616,9 @@
   <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
     <value>Изменить маску исключения файлов</value>
   </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>Исключение файлов</value>
+  </data>
   <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
     <value>Форматы шаблонов подстановки имен файлов</value>
   </data>
@@ -622,9 +634,6 @@ bin.
   </data>
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
     <value>Исключает файлы из обработки по маске.</value>
-  </data>
-  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
-    <value>Исключение файлов</value>
   </data>
   <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
     <value>Маска исключения файлов:</value>
@@ -683,12 +692,6 @@ bin.
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
     <value>Новая задача</value>
   </data>
-  <data name="Task_WindowTitle_Creating" xml:space="preserve">
-    <value>Создание</value>
-  </data>
-  <data name="Task_WindowTitle_Editing" xml:space="preserve">
-    <value>Редактирование</value>
-  </data>
   <data name="Task_LastExecution_State" xml:space="preserve">
     <value>Состояние</value>
   </data>
@@ -728,6 +731,75 @@ bin.
   <data name="Task_Validation_NotSupported" xml:space="preserve">
     <value>Эта задача не поддерживается.</value>
   </data>
+  <data name="Task_WindowTitle_Creating" xml:space="preserve">
+    <value>Создание</value>
+  </data>
+  <data name="Task_WindowTitle_Editing" xml:space="preserve">
+    <value>Редактирование</value>
+  </data>
+  <data name="TechnicalTool_Close" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="TechnicalTool_Completed" xml:space="preserve">
+    <value>Операция успешно завершена.</value>
+  </data>
+  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
+    <value>Сжать Brotli</value>
+  </data>
+  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
+    <value>Распаковать Brotli</value>
+  </data>
+  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
+    <value>Расшифровать AES-256</value>
+  </data>
+  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
+    <value>Зашифровать AES-256</value>
+  </data>
+  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
+    <value>Файл не существует:</value>
+  </data>
+  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
+    <value>Введите пароль.</value>
+  </data>
+  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
+    <value>Укажите пути к исходному и выходному файлам.</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
+    <value>Зашифровано AES-256 (*.{0})</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
+    <value>Все файлы</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
+    <value>Сжато Brotli (*.brotli)</value>
+  </data>
+  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
+    <value>Сжать Brotli…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
+    <value>Распаковать Brotli…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
+    <value>Расшифровать AES-256…</value>
+  </data>
+  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
+    <value>Зашифровать AES-256…</value>
+  </data>
+  <data name="TechnicalTool_OutputFile" xml:space="preserve">
+    <value>Выходной файл:</value>
+  </data>
+  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
+    <value>Выберите выходной файл</value>
+  </data>
+  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
+    <value>Выберите исходный файл</value>
+  </data>
+  <data name="TechnicalTool_Run" xml:space="preserve">
+    <value>Выполнить</value>
+  </data>
+  <data name="TechnicalTool_SourceFile" xml:space="preserve">
+    <value>Исходный файл:</value>
+  </data>
   <data name="Theme_Title" xml:space="preserve">
     <value>Тема</value>
   </data>
@@ -749,6 +821,90 @@ bin.
   <data name="TimeoutTask_Title" xml:space="preserve">
     <value>Ожидание таймаута...</value>
   </data>
+  <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
+    <value>Предупреждение об ошибке разбора сертификата: {0}</value>
+  </data>
+  <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
+    <value>Проверьте подлинность сертификата вне канала, затем нажмите «Сохранить» ещё раз.</value>
+  </data>
+  <data name="TrustDetected_Ftps_Title" xml:space="preserve">
+    <value>Сертификат FTPS-сервера обнаружен во время теста.</value>
+  </data>
+  <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
+    <value>Сертификат (необработанный hex): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_DnsName" xml:space="preserve">
+    <value>DNS-имя: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Encryption" xml:space="preserve">
+    <value>Шифрование: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
+    <value>Отпечаток (SHA-256): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Folder" xml:space="preserve">
+    <value>Папка: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Host" xml:space="preserve">
+    <value>Хост: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Issuer" xml:space="preserve">
+    <value>Издатель: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Port" xml:space="preserve">
+    <value>Порт: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
+    <value>Алгоритм открытого ключа: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
+    <value>Размер открытого ключа: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
+    <value>Серийный номер: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
+    <value>Алгоритм подписи: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Subject" xml:space="preserve">
+    <value>Субъект: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
+    <value>Альтернативные имена субъекта: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
+    <value>Отпечаток: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_User" xml:space="preserve">
+    <value>Пользователь: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
+    <value>Действителен с (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
+    <value>Действителен до (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
+    <value>Разобранные данные сертификата:</value>
+  </data>
+  <data name="TrustDetected_Port_Default" xml:space="preserve">
+    <value>по умолчанию</value>
+  </data>
+  <data name="TrustDetected_Port_Default22" xml:space="preserve">
+    <value>по умолчанию (22)</value>
+  </data>
+  <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
+    <value>неизвестно</value>
+  </data>
+  <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
+    <value>Проверьте этот отпечаток вне канала, затем нажмите «Сохранить» ещё раз.</value>
+  </data>
+  <data name="TrustDetected_Sftp_Title" xml:space="preserve">
+    <value>Информация о доверии к SFTP-серверу обнаружена во время теста.</value>
+  </data>
+  <data name="TrustedCertificate_Field" xml:space="preserve">
+    <value>Доверенный сертификат (hex):</value>
+  </data>
   <data name="UploadFolderContentsTask_Create" xml:space="preserve">
     <value>Загрузить папку на сервер</value>
   </data>
@@ -767,161 +923,4 @@ bin.
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Пользователь не указан.</value>
   </data>
-  <data name="TrustedCertificate_Field" xml:space="preserve">
-    <value>Доверенный сертификат (hex):</value>
-  </data>
-  <data name="TrustDetected_Sftp_Title" xml:space="preserve">
-    <value>Информация о доверии к SFTP-серверу обнаружена во время теста.</value>
-  </data>
-  <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
-    <value>Проверьте этот отпечаток вне канала, затем нажмите «Сохранить» ещё раз.</value>
-  </data>
-  <data name="TrustDetected_Ftps_Title" xml:space="preserve">
-    <value>Сертификат FTPS-сервера обнаружен во время теста.</value>
-  </data>
-  <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
-    <value>Проверьте подлинность сертификата вне канала, затем нажмите «Сохранить» ещё раз.</value>
-  </data>
-  <data name="TrustDetected_Label_Host" xml:space="preserve">
-    <value>Хост: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Port" xml:space="preserve">
-    <value>Порт: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_User" xml:space="preserve">
-    <value>Пользователь: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Folder" xml:space="preserve">
-    <value>Папка: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
-    <value>Отпечаток (SHA-256): {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Encryption" xml:space="preserve">
-    <value>Шифрование: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
-    <value>Сертификат (необработанный hex): {0}</value>
-  </data>
-  <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
-    <value>Разобранные данные сертификата:</value>
-  </data>
-  <data name="TrustDetected_Label_Subject" xml:space="preserve">
-    <value>Субъект: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Issuer" xml:space="preserve">
-    <value>Издатель: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
-    <value>Серийный номер: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
-    <value>Отпечаток: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
-    <value>Действителен с (UTC): {0}</value>
-  </data>
-  <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
-    <value>Действителен до (UTC): {0}</value>
-  </data>
-  <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
-    <value>Алгоритм подписи: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
-    <value>Алгоритм открытого ключа: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
-    <value>Размер открытого ключа: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_DnsName" xml:space="preserve">
-    <value>DNS-имя: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
-    <value>Альтернативные имена субъекта: {0}</value>
-  </data>
-  <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
-    <value>Предупреждение об ошибке разбора сертификата: {0}</value>
-  </data>
-  <data name="TrustDetected_Port_Default22" xml:space="preserve">
-    <value>по умолчанию (22)</value>
-  </data>
-  <data name="TrustDetected_Port_Default" xml:space="preserve">
-    <value>по умолчанию</value>
-  </data>
-  <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
-    <value>неизвестно</value>
-  </data>
-  <data name="Logs_Menu" xml:space="preserve">
-    <value>Журналы</value>
-  </data>
-  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
-    <value>Открыть папку журналов</value>
-  </data>
-  <data name="Other_Menu_Title" xml:space="preserve">
-    <value>Другое</value>
-  </data>
-  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
-    <value>Расшифровать AES-256…</value>
-  </data>
-  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
-    <value>Зашифровать AES-256…</value>
-  </data>
-  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
-    <value>Распаковать Brotli…</value>
-  </data>
-  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
-    <value>Сжать Brotli…</value>
-  </data>
-  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
-    <value>Расшифровать AES-256</value>
-  </data>
-  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
-    <value>Зашифровать AES-256</value>
-  </data>
-  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
-    <value>Распаковать Brotli</value>
-  </data>
-  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
-    <value>Сжать Brotli</value>
-  </data>
-  <data name="TechnicalTool_SourceFile" xml:space="preserve">
-    <value>Исходный файл:</value>
-  </data>
-  <data name="TechnicalTool_OutputFile" xml:space="preserve">
-    <value>Выходной файл:</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>Выполнить</value>
-  </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>Закрыть</value>
-  </data>
-  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
-    <value>Зашифровано AES-256 (*.{0})</value>
-  </data>
-  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
-    <value>Сжато Brotli (*.brotli)</value>
-  </data>
-  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
-    <value>Все файлы</value>
-  </data>
-  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
-    <value>Выберите исходный файл</value>
-  </data>
-  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
-    <value>Выберите выходной файл</value>
-  </data>
-  <data name="TechnicalTool_Completed" xml:space="preserve">
-    <value>Операция успешно завершена.</value>
-  </data>
-  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
-    <value>Файл не существует:</value>
-  </data>
-  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
-    <value>Введите пароль.</value>
-  </data>
-  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
-    <value>Укажите пути к исходному и выходному файлам.</value>
-  </data>
-
 </root>

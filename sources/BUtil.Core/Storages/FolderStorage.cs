@@ -127,18 +127,19 @@ public class FolderStorage : StorageBase<FolderStorageSettingsV2>
         try
         {
             using var inputFileStream = new FileStream(inputFile, FileMode.Open, FileAccess.Read, FileShare.ReadWrite, bufferSize);
-            using var outputFileStream = new FileStream(temporaryFilePath, FileMode.Create, FileAccess.Write, FileShare.None, bufferSize);
-            outputFileStream.SetLength(inputFileStream.Length);
-            int bytesRead = -1;
-            byte[] bytes = new byte[bufferSize];
-
-            while ((bytesRead = inputFileStream.Read(bytes, 0, bufferSize)) > 0)
+            using (var outputFileStream = new FileStream(temporaryFilePath, FileMode.Create, FileAccess.Write, FileShare.None, bufferSize))
             {
-                outputFileStream.Write(bytes, 0, bytesRead);
-            }
+                outputFileStream.SetLength(inputFileStream.Length);
+                int bytesRead = -1;
+                byte[] bytes = new byte[bufferSize];
 
-            outputFileStream.Flush(true);
-            outputFileStream.Close();
+                while ((bytesRead = inputFileStream.Read(bytes, 0, bufferSize)) > 0)
+                {
+                    outputFileStream.Write(bytes, 0, bytesRead);
+                }
+
+                outputFileStream.Flush(true);
+            }
 
             File.Move(temporaryFilePath, outputFilePath, true);
         }

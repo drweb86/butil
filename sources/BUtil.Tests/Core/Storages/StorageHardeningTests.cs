@@ -264,7 +264,7 @@ public class StorageHardeningTests
                 DestinationFolder = destinationRoot,
             });
 
-            _ = ExpectThrows<IOException>(() => storage.Copy(sourceFile, destinationFile));
+            _ = ExpectThrows<UnauthorizedAccessException>(() => storage.Copy(sourceFile, destinationFile));
         }
         finally
         {

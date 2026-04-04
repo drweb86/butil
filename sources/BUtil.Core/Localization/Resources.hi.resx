@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -487,6 +487,9 @@
   <data name="Local_State_Saving" xml:space="preserve">
     <value>स्थानीय स्थिति लिखना</value>
   </data>
+  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
+    <value>लॉग फ़ोल्डर खोलें</value>
+  </data>
   <data name="LogFile_Marker_Errors" xml:space="preserve">
     <value>त्रुटियाँ</value>
   </data>
@@ -495,6 +498,9 @@
   </data>
   <data name="LogFile_OpenLogs" xml:space="preserve">
     <value>लॉग्स</value>
+  </data>
+  <data name="Logs_Menu" xml:space="preserve">
+    <value>लॉग</value>
   </data>
   <data name="Messages_Header_Error" xml:space="preserve">
     <value>त्रुटि</value>
@@ -519,6 +525,9 @@
   </data>
   <data name="OptionalField_Hint" xml:space="preserve">
     <value>(वैकल्पिक)</value>
+  </data>
+  <data name="Other_Menu_Title" xml:space="preserve">
+    <value>अन्य</value>
   </data>
   <data name="Password_Field" xml:space="preserve">
     <value>पासवर्ड:</value>
@@ -606,6 +615,9 @@
   <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
     <value>फ़ाइल छूट पैटर्न संपादित करें</value>
   </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>फ़ाइलें छोड़ें</value>
+  </data>
   <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
     <value>.NET में फ़ाइल ग्लोबिंग: पैटर्न्स</value>
   </data>
@@ -621,9 +633,6 @@ bin.
   </data>
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
     <value>छूट पैटर्न द्वारा फ़ाइलों की प्रोसेसिंग को छोड़ देता है।</value>
-  </data>
-  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
-    <value>फ़ाइलें छोड़ें</value>
   </data>
   <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
     <value>फ़ाइल छूट पैटर्न:</value>
@@ -682,12 +691,6 @@ bin.
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
     <value>नया कार्य</value>
   </data>
-  <data name="Task_WindowTitle_Creating" xml:space="preserve">
-    <value>बनाना</value>
-  </data>
-  <data name="Task_WindowTitle_Editing" xml:space="preserve">
-    <value>संपादन</value>
-  </data>
   <data name="Task_LastExecution_State" xml:space="preserve">
     <value>स्थिति</value>
   </data>
@@ -727,6 +730,75 @@ bin.
   <data name="Task_Validation_NotSupported" xml:space="preserve">
     <value>इस कार्य प्रकार का समर्थन नहीं किया गया है।</value>
   </data>
+  <data name="Task_WindowTitle_Creating" xml:space="preserve">
+    <value>बनाना</value>
+  </data>
+  <data name="Task_WindowTitle_Editing" xml:space="preserve">
+    <value>संपादन</value>
+  </data>
+  <data name="TechnicalTool_Close" xml:space="preserve">
+    <value>बंद करें</value>
+  </data>
+  <data name="TechnicalTool_Completed" xml:space="preserve">
+    <value>ऑपरेशन सफलतापूर्वक पूरा हुआ।</value>
+  </data>
+  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
+    <value>Brotli कंप्रेस करें</value>
+  </data>
+  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
+    <value>Brotli डिकंप्रेस करें</value>
+  </data>
+  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
+    <value>AES-256 डिक्रिप्ट करें</value>
+  </data>
+  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
+    <value>AES-256 एन्क्रिप्ट करें</value>
+  </data>
+  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
+    <value>फ़ाइल मौजूद नहीं है:</value>
+  </data>
+  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
+    <value>पासवर्ड दर्ज करें।</value>
+  </data>
+  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
+    <value>स्रोत और आउटपुट फ़ाइल के पथ निर्दिष्ट करें।</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
+    <value>AES-256 एन्क्रिप्टेड (*.{0})</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
+    <value>सभी फ़ाइलें</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
+    <value>Brotli संपीड़ित (*.brotli)</value>
+  </data>
+  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
+    <value>Brotli कंप्रेस करें…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
+    <value>Brotli डिकंप्रेस करें…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
+    <value>AES-256 डिक्रिप्ट करें…</value>
+  </data>
+  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
+    <value>AES-256 एन्क्रिप्ट करें…</value>
+  </data>
+  <data name="TechnicalTool_OutputFile" xml:space="preserve">
+    <value>आउटपुट फ़ाइल:</value>
+  </data>
+  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
+    <value>आउटपुट फ़ाइल चुनें</value>
+  </data>
+  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
+    <value>स्रोत फ़ाइल चुनें</value>
+  </data>
+  <data name="TechnicalTool_Run" xml:space="preserve">
+    <value>चलाएँ</value>
+  </data>
+  <data name="TechnicalTool_SourceFile" xml:space="preserve">
+    <value>स्रोत फ़ाइल:</value>
+  </data>
   <data name="Theme_Title" xml:space="preserve">
     <value>थीम</value>
   </data>
@@ -748,6 +820,90 @@ bin.
   <data name="TimeoutTask_Title" xml:space="preserve">
     <value>टाइमआउट की प्रतीक्षा की जा रही है...</value>
   </data>
+  <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
+    <value>प्रमाणपत्र पार्स चेतावनी: {0}</value>
+  </data>
+  <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
+    <value>प्रमाणपत्र की पहचान आउट-ऑफ-बैंड सत्यापित करें, फिर इसे स्टोर करने के लिए सहेजें पर फिर से क्लिक करें।</value>
+  </data>
+  <data name="TrustDetected_Ftps_Title" xml:space="preserve">
+    <value>परीक्षण के दौरान FTPS सर्वर प्रमाणपत्र का पता चला।</value>
+  </data>
+  <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
+    <value>प्रमाणपत्र (raw hex): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_DnsName" xml:space="preserve">
+    <value>DNS नाम: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Encryption" xml:space="preserve">
+    <value>एन्क्रिप्शन: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
+    <value>फिंगरप्रिंट (SHA-256): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Folder" xml:space="preserve">
+    <value>फ़ोल्डर: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Host" xml:space="preserve">
+    <value>होस्ट: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Issuer" xml:space="preserve">
+    <value>जारीकर्ता: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Port" xml:space="preserve">
+    <value>पोर्ट: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
+    <value>सार्वजनिक कुंजी एल्गोरिदम: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
+    <value>सार्वजनिक कुंजी आकार: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
+    <value>क्रम संख्या: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
+    <value>हस्ताक्षर एल्गोरिदम: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Subject" xml:space="preserve">
+    <value>विषय: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
+    <value>वैकल्पिक विषय नाम: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
+    <value>थंबप्रिंट: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_User" xml:space="preserve">
+    <value>उपयोगकर्ता: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
+    <value>से मान्य (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
+    <value>तक मान्य (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
+    <value>पार्स किए गए प्रमाणपत्र का विवरण:</value>
+  </data>
+  <data name="TrustDetected_Port_Default" xml:space="preserve">
+    <value>डिफ़ॉल्ट</value>
+  </data>
+  <data name="TrustDetected_Port_Default22" xml:space="preserve">
+    <value>डिफ़ॉल्ट (22)</value>
+  </data>
+  <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
+    <value>अज्ञात</value>
+  </data>
+  <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
+    <value>इस फिंगरप्रिंट को आउट-ऑफ-बैंड सत्यापित करें, फिर इसे स्टोर करने के लिए सहेजें पर फिर से क्लिक करें।</value>
+  </data>
+  <data name="TrustDetected_Sftp_Title" xml:space="preserve">
+    <value>परीक्षण के दौरान SFTP सर्वर ट्रस्ट जानकारी का पता चला।</value>
+  </data>
+  <data name="TrustedCertificate_Field" xml:space="preserve">
+    <value>विश्वसनीय प्रमाणपत्र (hex):</value>
+  </data>
   <data name="UploadFolderContentsTask_Create" xml:space="preserve">
     <value>फ़ोल्डर को सर्वर पर अपलोड करें</value>
   </data>
@@ -766,161 +922,4 @@ bin.
   <data name="User_Field_Validation" xml:space="preserve">
     <value>उपयोगकर्ता निर्दिष्ट नहीं है।</value>
   </data>
-  <data name="TrustedCertificate_Field" xml:space="preserve">
-    <value>विश्वसनीय प्रमाणपत्र (hex):</value>
-  </data>
-  <data name="TrustDetected_Sftp_Title" xml:space="preserve">
-    <value>परीक्षण के दौरान SFTP सर्वर ट्रस्ट जानकारी का पता चला।</value>
-  </data>
-  <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
-    <value>इस फिंगरप्रिंट को आउट-ऑफ-बैंड सत्यापित करें, फिर इसे स्टोर करने के लिए सहेजें पर फिर से क्लिक करें।</value>
-  </data>
-  <data name="TrustDetected_Ftps_Title" xml:space="preserve">
-    <value>परीक्षण के दौरान FTPS सर्वर प्रमाणपत्र का पता चला।</value>
-  </data>
-  <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
-    <value>प्रमाणपत्र की पहचान आउट-ऑफ-बैंड सत्यापित करें, फिर इसे स्टोर करने के लिए सहेजें पर फिर से क्लिक करें।</value>
-  </data>
-  <data name="TrustDetected_Label_Host" xml:space="preserve">
-    <value>होस्ट: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Port" xml:space="preserve">
-    <value>पोर्ट: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_User" xml:space="preserve">
-    <value>उपयोगकर्ता: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Folder" xml:space="preserve">
-    <value>फ़ोल्डर: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
-    <value>फिंगरप्रिंट (SHA-256): {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Encryption" xml:space="preserve">
-    <value>एन्क्रिप्शन: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
-    <value>प्रमाणपत्र (raw hex): {0}</value>
-  </data>
-  <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
-    <value>पार्स किए गए प्रमाणपत्र का विवरण:</value>
-  </data>
-  <data name="TrustDetected_Label_Subject" xml:space="preserve">
-    <value>विषय: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Issuer" xml:space="preserve">
-    <value>जारीकर्ता: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
-    <value>क्रम संख्या: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
-    <value>थंबप्रिंट: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
-    <value>से मान्य (UTC): {0}</value>
-  </data>
-  <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
-    <value>तक मान्य (UTC): {0}</value>
-  </data>
-  <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
-    <value>हस्ताक्षर एल्गोरिदम: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
-    <value>सार्वजनिक कुंजी एल्गोरिदम: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
-    <value>सार्वजनिक कुंजी आकार: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_DnsName" xml:space="preserve">
-    <value>DNS नाम: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
-    <value>वैकल्पिक विषय नाम: {0}</value>
-  </data>
-  <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
-    <value>प्रमाणपत्र पार्स चेतावनी: {0}</value>
-  </data>
-  <data name="TrustDetected_Port_Default22" xml:space="preserve">
-    <value>डिफ़ॉल्ट (22)</value>
-  </data>
-  <data name="TrustDetected_Port_Default" xml:space="preserve">
-    <value>डिफ़ॉल्ट</value>
-  </data>
-  <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
-    <value>अज्ञात</value>
-  </data>
-  <data name="Logs_Menu" xml:space="preserve">
-    <value>लॉग</value>
-  </data>
-  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
-    <value>लॉग फ़ोल्डर खोलें</value>
-  </data>
-  <data name="Other_Menu_Title" xml:space="preserve">
-    <value>अन्य</value>
-  </data>
-  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
-    <value>AES-256 डिक्रिप्ट करें…</value>
-  </data>
-  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
-    <value>AES-256 एन्क्रिप्ट करें…</value>
-  </data>
-  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
-    <value>Brotli डिकंप्रेस करें…</value>
-  </data>
-  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
-    <value>Brotli कंप्रेस करें…</value>
-  </data>
-  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
-    <value>AES-256 डिक्रिप्ट करें</value>
-  </data>
-  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
-    <value>AES-256 एन्क्रिप्ट करें</value>
-  </data>
-  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
-    <value>Brotli डिकंप्रेस करें</value>
-  </data>
-  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
-    <value>Brotli कंप्रेस करें</value>
-  </data>
-  <data name="TechnicalTool_SourceFile" xml:space="preserve">
-    <value>स्रोत फ़ाइल:</value>
-  </data>
-  <data name="TechnicalTool_OutputFile" xml:space="preserve">
-    <value>आउटपुट फ़ाइल:</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>चलाएँ</value>
-  </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>बंद करें</value>
-  </data>
-  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
-    <value>AES-256 एन्क्रिप्टेड (*.{0})</value>
-  </data>
-  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
-    <value>Brotli संपीड़ित (*.brotli)</value>
-  </data>
-  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
-    <value>सभी फ़ाइलें</value>
-  </data>
-  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
-    <value>स्रोत फ़ाइल चुनें</value>
-  </data>
-  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
-    <value>आउटपुट फ़ाइल चुनें</value>
-  </data>
-  <data name="TechnicalTool_Completed" xml:space="preserve">
-    <value>ऑपरेशन सफलतापूर्वक पूरा हुआ।</value>
-  </data>
-  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
-    <value>फ़ाइल मौजूद नहीं है:</value>
-  </data>
-  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
-    <value>पासवर्ड दर्ज करें।</value>
-  </data>
-  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
-    <value>स्रोत और आउटपुट फ़ाइल के पथ निर्दिष्ट करें।</value>
-  </data>
-
 </root>

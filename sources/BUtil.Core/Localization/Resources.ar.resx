@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -487,6 +487,9 @@
   <data name="Local_State_Saving" xml:space="preserve">
     <value>كتابة الحالة المحلية</value>
   </data>
+  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
+    <value>فتح مجلد السجلات</value>
+  </data>
   <data name="LogFile_Marker_Errors" xml:space="preserve">
     <value>الأخطاء</value>
   </data>
@@ -494,6 +497,9 @@
     <value>نجاح</value>
   </data>
   <data name="LogFile_OpenLogs" xml:space="preserve">
+    <value>السجلات</value>
+  </data>
+  <data name="Logs_Menu" xml:space="preserve">
     <value>السجلات</value>
   </data>
   <data name="Messages_Header_Error" xml:space="preserve">
@@ -519,6 +525,9 @@
   </data>
   <data name="OptionalField_Hint" xml:space="preserve">
     <value>(اختياري)</value>
+  </data>
+  <data name="Other_Menu_Title" xml:space="preserve">
+    <value>أخرى</value>
   </data>
   <data name="Password_Field" xml:space="preserve">
     <value>كلمة المرور:</value>
@@ -606,6 +615,9 @@
   <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
     <value>تحرير نمط استثناء ملف</value>
   </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>استثناء الملفات</value>
+  </data>
   <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
     <value>مطابقة الملفات في .NET: الأنماط</value>
   </data>
@@ -621,9 +633,6 @@ bin.
   </data>
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
     <value>يتخطى معالجة الملفات بواسطة نمط الاستثناء.</value>
-  </data>
-  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
-    <value>استثناء الملفات</value>
   </data>
   <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
     <value>نمط استثناء الملف:</value>
@@ -682,12 +691,6 @@ bin.
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
     <value>مهمة جديدة</value>
   </data>
-  <data name="Task_WindowTitle_Creating" xml:space="preserve">
-    <value>إنشاء</value>
-  </data>
-  <data name="Task_WindowTitle_Editing" xml:space="preserve">
-    <value>تحرير</value>
-  </data>
   <data name="Task_LastExecution_State" xml:space="preserve">
     <value>الحالة</value>
   </data>
@@ -727,6 +730,75 @@ bin.
   <data name="Task_Validation_NotSupported" xml:space="preserve">
     <value>نوع هذه المهمة غير مدعوم.</value>
   </data>
+  <data name="Task_WindowTitle_Creating" xml:space="preserve">
+    <value>إنشاء</value>
+  </data>
+  <data name="Task_WindowTitle_Editing" xml:space="preserve">
+    <value>تحرير</value>
+  </data>
+  <data name="TechnicalTool_Close" xml:space="preserve">
+    <value>إغلاق</value>
+  </data>
+  <data name="TechnicalTool_Completed" xml:space="preserve">
+    <value>اكتملت العملية بنجاح.</value>
+  </data>
+  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
+    <value>ضغط Brotli</value>
+  </data>
+  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
+    <value>فك ضغط Brotli</value>
+  </data>
+  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
+    <value>فك تشفير AES-256</value>
+  </data>
+  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
+    <value>تشفير AES-256</value>
+  </data>
+  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
+    <value>الملف غير موجود:</value>
+  </data>
+  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
+    <value>أدخل كلمة مرور.</value>
+  </data>
+  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
+    <value>حدد مسارات ملف المصدر وملف الإخراج.</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
+    <value>مشفّر AES-256 (*.{0})</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
+    <value>كل الملفات</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
+    <value>مضغوط Brotli (*.brotli)</value>
+  </data>
+  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
+    <value>ضغط Brotli…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
+    <value>فك ضغط Brotli…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
+    <value>فك تشفير AES-256…</value>
+  </data>
+  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
+    <value>تشفير AES-256…</value>
+  </data>
+  <data name="TechnicalTool_OutputFile" xml:space="preserve">
+    <value>ملف الإخراج:</value>
+  </data>
+  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
+    <value>اختر ملف الإخراج</value>
+  </data>
+  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
+    <value>اختر ملف المصدر</value>
+  </data>
+  <data name="TechnicalTool_Run" xml:space="preserve">
+    <value>تشغيل</value>
+  </data>
+  <data name="TechnicalTool_SourceFile" xml:space="preserve">
+    <value>ملف المصدر:</value>
+  </data>
   <data name="Theme_Title" xml:space="preserve">
     <value>السمة</value>
   </data>
@@ -748,6 +820,90 @@ bin.
   <data name="TimeoutTask_Title" xml:space="preserve">
     <value>في انتظار انتهاء المهلة...</value>
   </data>
+  <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
+    <value>تحذير تحليل الشهادة: {0}</value>
+  </data>
+  <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
+    <value>تحقق من هوية الشهادة خارج النطاق، ثم انقر على حفظ مرة أخرى لتخزينها.</value>
+  </data>
+  <data name="TrustDetected_Ftps_Title" xml:space="preserve">
+    <value>تم اكتشاف شهادة خادم FTPS أثناء الاختبار.</value>
+  </data>
+  <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
+    <value>الشهادة (hex الخام): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_DnsName" xml:space="preserve">
+    <value>اسم DNS: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Encryption" xml:space="preserve">
+    <value>التشفير: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
+    <value>البصمة (SHA-256): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Folder" xml:space="preserve">
+    <value>المجلد: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Host" xml:space="preserve">
+    <value>المضيف: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Issuer" xml:space="preserve">
+    <value>المُصدر: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Port" xml:space="preserve">
+    <value>المنفذ: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
+    <value>خوارزمية المفتاح العام: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
+    <value>حجم المفتاح العام: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
+    <value>الرقم التسلسلي: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
+    <value>خوارزمية التوقيع: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Subject" xml:space="preserve">
+    <value>الموضوع: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
+    <value>أسماء بديلة للموضوع: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
+    <value>البصمة الرقمية: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_User" xml:space="preserve">
+    <value>المستخدم: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
+    <value>صالح من (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
+    <value>صالح حتى (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
+    <value>تفاصيل الشهادة المحللة:</value>
+  </data>
+  <data name="TrustDetected_Port_Default" xml:space="preserve">
+    <value>افتراضي</value>
+  </data>
+  <data name="TrustDetected_Port_Default22" xml:space="preserve">
+    <value>افتراضي (22)</value>
+  </data>
+  <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
+    <value>غير معروف</value>
+  </data>
+  <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
+    <value>تحقق من هذه البصمة خارج النطاق، ثم انقر على حفظ مرة أخرى لتخزينها.</value>
+  </data>
+  <data name="TrustDetected_Sftp_Title" xml:space="preserve">
+    <value>تم اكتشاف معلومات ثقة خادم SFTP أثناء الاختبار.</value>
+  </data>
+  <data name="TrustedCertificate_Field" xml:space="preserve">
+    <value>الشهادة الموثوقة (hex):</value>
+  </data>
   <data name="UploadFolderContentsTask_Create" xml:space="preserve">
     <value>رفع المجلد إلى الخادم</value>
   </data>
@@ -766,161 +922,4 @@ bin.
   <data name="User_Field_Validation" xml:space="preserve">
     <value>لم يتم تحديد المستخدم.</value>
   </data>
-  <data name="TrustedCertificate_Field" xml:space="preserve">
-    <value>الشهادة الموثوقة (hex):</value>
-  </data>
-  <data name="TrustDetected_Sftp_Title" xml:space="preserve">
-    <value>تم اكتشاف معلومات ثقة خادم SFTP أثناء الاختبار.</value>
-  </data>
-  <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
-    <value>تحقق من هذه البصمة خارج النطاق، ثم انقر على حفظ مرة أخرى لتخزينها.</value>
-  </data>
-  <data name="TrustDetected_Ftps_Title" xml:space="preserve">
-    <value>تم اكتشاف شهادة خادم FTPS أثناء الاختبار.</value>
-  </data>
-  <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
-    <value>تحقق من هوية الشهادة خارج النطاق، ثم انقر على حفظ مرة أخرى لتخزينها.</value>
-  </data>
-  <data name="TrustDetected_Label_Host" xml:space="preserve">
-    <value>المضيف: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Port" xml:space="preserve">
-    <value>المنفذ: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_User" xml:space="preserve">
-    <value>المستخدم: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Folder" xml:space="preserve">
-    <value>المجلد: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
-    <value>البصمة (SHA-256): {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Encryption" xml:space="preserve">
-    <value>التشفير: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
-    <value>الشهادة (hex الخام): {0}</value>
-  </data>
-  <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
-    <value>تفاصيل الشهادة المحللة:</value>
-  </data>
-  <data name="TrustDetected_Label_Subject" xml:space="preserve">
-    <value>الموضوع: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Issuer" xml:space="preserve">
-    <value>المُصدر: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
-    <value>الرقم التسلسلي: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
-    <value>البصمة الرقمية: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
-    <value>صالح من (UTC): {0}</value>
-  </data>
-  <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
-    <value>صالح حتى (UTC): {0}</value>
-  </data>
-  <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
-    <value>خوارزمية التوقيع: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
-    <value>خوارزمية المفتاح العام: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
-    <value>حجم المفتاح العام: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_DnsName" xml:space="preserve">
-    <value>اسم DNS: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
-    <value>أسماء بديلة للموضوع: {0}</value>
-  </data>
-  <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
-    <value>تحذير تحليل الشهادة: {0}</value>
-  </data>
-  <data name="TrustDetected_Port_Default22" xml:space="preserve">
-    <value>افتراضي (22)</value>
-  </data>
-  <data name="TrustDetected_Port_Default" xml:space="preserve">
-    <value>افتراضي</value>
-  </data>
-  <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
-    <value>غير معروف</value>
-  </data>
-  <data name="Logs_Menu" xml:space="preserve">
-    <value>السجلات</value>
-  </data>
-  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
-    <value>فتح مجلد السجلات</value>
-  </data>
-  <data name="Other_Menu_Title" xml:space="preserve">
-    <value>أخرى</value>
-  </data>
-  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
-    <value>فك تشفير AES-256…</value>
-  </data>
-  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
-    <value>تشفير AES-256…</value>
-  </data>
-  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
-    <value>فك ضغط Brotli…</value>
-  </data>
-  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
-    <value>ضغط Brotli…</value>
-  </data>
-  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
-    <value>فك تشفير AES-256</value>
-  </data>
-  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
-    <value>تشفير AES-256</value>
-  </data>
-  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
-    <value>فك ضغط Brotli</value>
-  </data>
-  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
-    <value>ضغط Brotli</value>
-  </data>
-  <data name="TechnicalTool_SourceFile" xml:space="preserve">
-    <value>ملف المصدر:</value>
-  </data>
-  <data name="TechnicalTool_OutputFile" xml:space="preserve">
-    <value>ملف الإخراج:</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>تشغيل</value>
-  </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>إغلاق</value>
-  </data>
-  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
-    <value>مشفّر AES-256 (*.{0})</value>
-  </data>
-  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
-    <value>مضغوط Brotli (*.brotli)</value>
-  </data>
-  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
-    <value>كل الملفات</value>
-  </data>
-  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
-    <value>اختر ملف المصدر</value>
-  </data>
-  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
-    <value>اختر ملف الإخراج</value>
-  </data>
-  <data name="TechnicalTool_Completed" xml:space="preserve">
-    <value>اكتملت العملية بنجاح.</value>
-  </data>
-  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
-    <value>الملف غير موجود:</value>
-  </data>
-  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
-    <value>أدخل كلمة مرور.</value>
-  </data>
-  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
-    <value>حدد مسارات ملف المصدر وملف الإخراج.</value>
-  </data>
-
 </root>

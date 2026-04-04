@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -487,6 +487,9 @@ Should any one of the copies created fail, including the first (full), restorati
   <data name="Local_State_Saving" xml:space="preserve">
     <value>Writing local state</value>
   </data>
+  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
+    <value>Open logs folder</value>
+  </data>
   <data name="LogFile_Marker_Errors" xml:space="preserve">
     <value>Errors</value>
   </data>
@@ -494,6 +497,9 @@ Should any one of the copies created fail, including the first (full), restorati
     <value>Successful</value>
   </data>
   <data name="LogFile_OpenLogs" xml:space="preserve">
+    <value>Logs</value>
+  </data>
+  <data name="Logs_Menu" xml:space="preserve">
     <value>Logs</value>
   </data>
   <data name="Messages_Header_Error" xml:space="preserve">
@@ -519,6 +525,9 @@ Should any one of the copies created fail, including the first (full), restorati
   </data>
   <data name="OptionalField_Hint" xml:space="preserve">
     <value>(optional)</value>
+  </data>
+  <data name="Other_Menu_Title" xml:space="preserve">
+    <value>Other</value>
   </data>
   <data name="Password_Field" xml:space="preserve">
     <value>Password:</value>
@@ -606,6 +615,9 @@ Point to a directory containing this file.</value>
   <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
     <value>Edit file exclude pattern</value>
   </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>Exclude files</value>
+  </data>
   <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
     <value>File globbing in .NET: Patterns</value>
   </data>
@@ -621,9 +633,6 @@ See detailed description in the following link.</value>
   </data>
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
     <value>Skips processing of files by exclude pattern.</value>
-  </data>
-  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
-    <value>Exclude files</value>
   </data>
   <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
     <value>File exclude pattern:</value>
@@ -682,12 +691,6 @@ See detailed description in the following link.</value>
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
     <value>New task</value>
   </data>
-  <data name="Task_WindowTitle_Creating" xml:space="preserve">
-    <value>Creating</value>
-  </data>
-  <data name="Task_WindowTitle_Editing" xml:space="preserve">
-    <value>Editing</value>
-  </data>
   <data name="Task_LastExecution_State" xml:space="preserve">
     <value>State</value>
   </data>
@@ -727,6 +730,75 @@ See detailed description in the following link.</value>
   <data name="Task_Validation_NotSupported" xml:space="preserve">
     <value>This task type is not supported.</value>
   </data>
+  <data name="Task_WindowTitle_Creating" xml:space="preserve">
+    <value>Creating</value>
+  </data>
+  <data name="Task_WindowTitle_Editing" xml:space="preserve">
+    <value>Editing</value>
+  </data>
+  <data name="TechnicalTool_Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="TechnicalTool_Completed" xml:space="preserve">
+    <value>Operation completed successfully.</value>
+  </data>
+  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
+    <value>Compress Brotli</value>
+  </data>
+  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
+    <value>Decompress Brotli</value>
+  </data>
+  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
+    <value>Decrypt AES-256</value>
+  </data>
+  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
+    <value>Encrypt AES-256</value>
+  </data>
+  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
+    <value>The file does not exist:</value>
+  </data>
+  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
+    <value>Enter a password.</value>
+  </data>
+  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
+    <value>Specify both source and output file paths.</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
+    <value>AES-256 encrypted (*.{0})</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
+    <value>All files</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
+    <value>Brotli compressed (*.brotli)</value>
+  </data>
+  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
+    <value>Compress Brotli…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
+    <value>Decompress Brotli…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
+    <value>Decrypt AES-256…</value>
+  </data>
+  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
+    <value>Encrypt AES-256…</value>
+  </data>
+  <data name="TechnicalTool_OutputFile" xml:space="preserve">
+    <value>Output file:</value>
+  </data>
+  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
+    <value>Select output file</value>
+  </data>
+  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
+    <value>Select source file</value>
+  </data>
+  <data name="TechnicalTool_Run" xml:space="preserve">
+    <value>Run</value>
+  </data>
+  <data name="TechnicalTool_SourceFile" xml:space="preserve">
+    <value>Source file:</value>
+  </data>
   <data name="Theme_Title" xml:space="preserve">
     <value>Theme</value>
   </data>
@@ -748,6 +820,90 @@ See detailed description in the following link.</value>
   <data name="TimeoutTask_Title" xml:space="preserve">
     <value>Waiting for timeout...</value>
   </data>
+  <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
+    <value>Certificate parse warning: {0}</value>
+  </data>
+  <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
+    <value>Verify certificate identity out-of-band, then click Save again to store it.</value>
+  </data>
+  <data name="TrustDetected_Ftps_Title" xml:space="preserve">
+    <value>FTPS server certificate detected during test.</value>
+  </data>
+  <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
+    <value>Certificate (raw hex): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_DnsName" xml:space="preserve">
+    <value>DNS name: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Encryption" xml:space="preserve">
+    <value>Encryption: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
+    <value>Fingerprint (SHA-256): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Folder" xml:space="preserve">
+    <value>Folder: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Host" xml:space="preserve">
+    <value>Host: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Issuer" xml:space="preserve">
+    <value>Issuer: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Port" xml:space="preserve">
+    <value>Port: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
+    <value>Public key algorithm: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
+    <value>Public key size: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
+    <value>Serial number: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
+    <value>Signature algorithm: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Subject" xml:space="preserve">
+    <value>Subject: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
+    <value>Subject alternative names: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
+    <value>Thumbprint: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_User" xml:space="preserve">
+    <value>User: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
+    <value>Valid from (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
+    <value>Valid until (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
+    <value>Parsed certificate details:</value>
+  </data>
+  <data name="TrustDetected_Port_Default" xml:space="preserve">
+    <value>default</value>
+  </data>
+  <data name="TrustDetected_Port_Default22" xml:space="preserve">
+    <value>default (22)</value>
+  </data>
+  <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
+    <value>unknown</value>
+  </data>
+  <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
+    <value>Verify this fingerprint out-of-band, then click Save again to store it.</value>
+  </data>
+  <data name="TrustDetected_Sftp_Title" xml:space="preserve">
+    <value>SFTP server trust information detected during test.</value>
+  </data>
+  <data name="TrustedCertificate_Field" xml:space="preserve">
+    <value>Trusted certificate (hex):</value>
+  </data>
   <data name="UploadFolderContentsTask_Create" xml:space="preserve">
     <value>Upload folder to server</value>
   </data>
@@ -765,161 +921,5 @@ See detailed description in the following link.</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>User is not specified.</value>
-  </data>
-  <data name="TrustedCertificate_Field" xml:space="preserve">
-    <value>Trusted certificate (hex):</value>
-  </data>
-  <data name="TrustDetected_Sftp_Title" xml:space="preserve">
-    <value>SFTP server trust information detected during test.</value>
-  </data>
-  <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
-    <value>Verify this fingerprint out-of-band, then click Save again to store it.</value>
-  </data>
-  <data name="TrustDetected_Ftps_Title" xml:space="preserve">
-    <value>FTPS server certificate detected during test.</value>
-  </data>
-  <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
-    <value>Verify certificate identity out-of-band, then click Save again to store it.</value>
-  </data>
-  <data name="TrustDetected_Label_Host" xml:space="preserve">
-    <value>Host: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Port" xml:space="preserve">
-    <value>Port: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_User" xml:space="preserve">
-    <value>User: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Folder" xml:space="preserve">
-    <value>Folder: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
-    <value>Fingerprint (SHA-256): {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Encryption" xml:space="preserve">
-    <value>Encryption: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
-    <value>Certificate (raw hex): {0}</value>
-  </data>
-  <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
-    <value>Parsed certificate details:</value>
-  </data>
-  <data name="TrustDetected_Label_Subject" xml:space="preserve">
-    <value>Subject: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Issuer" xml:space="preserve">
-    <value>Issuer: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
-    <value>Serial number: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
-    <value>Thumbprint: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
-    <value>Valid from (UTC): {0}</value>
-  </data>
-  <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
-    <value>Valid until (UTC): {0}</value>
-  </data>
-  <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
-    <value>Signature algorithm: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
-    <value>Public key algorithm: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
-    <value>Public key size: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_DnsName" xml:space="preserve">
-    <value>DNS name: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
-    <value>Subject alternative names: {0}</value>
-  </data>
-  <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
-    <value>Certificate parse warning: {0}</value>
-  </data>
-  <data name="TrustDetected_Port_Default22" xml:space="preserve">
-    <value>default (22)</value>
-  </data>
-  <data name="TrustDetected_Port_Default" xml:space="preserve">
-    <value>default</value>
-  </data>
-  <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
-    <value>unknown</value>
-  </data>
-  <data name="Logs_Menu" xml:space="preserve">
-    <value>Logs</value>
-  </data>
-  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
-    <value>Open logs folder</value>
-  </data>
-  <data name="Other_Menu_Title" xml:space="preserve">
-    <value>Other</value>
-  </data>
-  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
-    <value>Decrypt AES-256…</value>
-  </data>
-  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
-    <value>Encrypt AES-256…</value>
-  </data>
-  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
-    <value>Decompress Brotli…</value>
-  </data>
-  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
-    <value>Compress Brotli…</value>
-  </data>
-  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
-    <value>Decrypt AES-256</value>
-  </data>
-  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
-    <value>Encrypt AES-256</value>
-  </data>
-  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
-    <value>Decompress Brotli</value>
-  </data>
-  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
-    <value>Compress Brotli</value>
-  </data>
-  <data name="TechnicalTool_SourceFile" xml:space="preserve">
-    <value>Source file:</value>
-  </data>
-  <data name="TechnicalTool_OutputFile" xml:space="preserve">
-    <value>Output file:</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>Run</value>
-  </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>Close</value>
-  </data>
-  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
-    <value>AES-256 encrypted (*.{0})</value>
-  </data>
-  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
-    <value>Brotli compressed (*.brotli)</value>
-  </data>
-  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
-    <value>All files</value>
-  </data>
-  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
-    <value>Select source file</value>
-  </data>
-  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
-    <value>Select output file</value>
-  </data>
-  <data name="TechnicalTool_Completed" xml:space="preserve">
-    <value>Operation completed successfully.</value>
-  </data>
-  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
-    <value>The file does not exist:</value>
-  </data>
-  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
-    <value>Enter a password.</value>
-  </data>
-  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
-    <value>Specify both source and output file paths.</value>
   </data>
 </root>

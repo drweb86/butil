@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -483,6 +483,9 @@
   <data name="Local_State_Saving" xml:space="preserve">
     <value>స్థానిక స్థితిని రాస్తోంది</value>
   </data>
+  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
+    <value>లాగ్ ఫోల్డర్ తెరవండి</value>
+  </data>
   <data name="LogFile_Marker_Errors" xml:space="preserve">
     <value>లోపాలు</value>
   </data>
@@ -491,6 +494,9 @@
   </data>
   <data name="LogFile_OpenLogs" xml:space="preserve">
     <value>లాగ్స్</value>
+  </data>
+  <data name="Logs_Menu" xml:space="preserve">
+    <value>లాగ్‌లు</value>
   </data>
   <data name="Messages_Header_Error" xml:space="preserve">
     <value>లోపం</value>
@@ -515,6 +521,9 @@
   </data>
   <data name="OptionalField_Hint" xml:space="preserve">
     <value>(ఐచ్ఛికం)</value>
+  </data>
+  <data name="Other_Menu_Title" xml:space="preserve">
+    <value>ఇతరాలు</value>
   </data>
   <data name="Password_Field" xml:space="preserve">
     <value>పాస్వర్డ్:</value>
@@ -602,6 +611,9 @@
   <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
     <value>ఫైల్స్‌ను వదిలి పెట్టండి</value>
   </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>ఫైల్‌లను మినహాయించు</value>
+  </data>
   <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
     <value>.NETలో ఫైల్ గ్లోబింగ్: నమూనాలు</value>
   </data>
@@ -617,9 +629,6 @@
   </data>
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
     <value>ఫైల్స్‌ పొందుపరచటంలో విస్మరించు వెతక్కు ప్రామాణికత.</value>
-  </data>
-  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
-    <value>ఫైల్‌లను మినహాయించు</value>
   </data>
   <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
     <value>ఫైల్ వదిలి పెట్టు నియమావళి:</value>
@@ -678,12 +687,6 @@
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
     <value>కొత్త పని</value>
   </data>
-  <data name="Task_WindowTitle_Creating" xml:space="preserve">
-    <value>సృష్టిస్తోంది</value>
-  </data>
-  <data name="Task_WindowTitle_Editing" xml:space="preserve">
-    <value>సవరిస్తోంది</value>
-  </data>
   <data name="Task_LastExecution_State" xml:space="preserve">
     <value>స్థితి</value>
   </data>
@@ -723,6 +726,75 @@
   <data name="Task_Validation_NotSupported" xml:space="preserve">
     <value>ఈ విధమైన పనిని మద్దతు ఇవ్వడం లేదు.</value>
   </data>
+  <data name="Task_WindowTitle_Creating" xml:space="preserve">
+    <value>సృష్టిస్తోంది</value>
+  </data>
+  <data name="Task_WindowTitle_Editing" xml:space="preserve">
+    <value>సవరిస్తోంది</value>
+  </data>
+  <data name="TechnicalTool_Close" xml:space="preserve">
+    <value>మూసివేయి</value>
+  </data>
+  <data name="TechnicalTool_Completed" xml:space="preserve">
+    <value>ఆపరేషన్ విజయవంతంగా పూర్తయింది.</value>
+  </data>
+  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
+    <value>Brotli కంప్రెస్</value>
+  </data>
+  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
+    <value>Brotli డీకంప్రెస్</value>
+  </data>
+  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
+    <value>AES-256 డిక్రిప్ట్</value>
+  </data>
+  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
+    <value>AES-256 ఎన్‌క్రిప్ట్</value>
+  </data>
+  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
+    <value>ఫైల్ లేదు:</value>
+  </data>
+  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
+    <value>పాస్‌వర్డ్ నమోదు చేయండి.</value>
+  </data>
+  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
+    <value>మూల మరియు అవుట్‌పుట్ ఫైల్ మార్గాలను పేర్కొనండి.</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
+    <value>AES-256 ఎన్‌క్రిప్టెడ్ (*.{0})</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
+    <value>అన్ని ఫైళ్లు</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
+    <value>Brotli కంప్రెస్డ్ (*.brotli)</value>
+  </data>
+  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
+    <value>Brotli కంప్రెస్…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
+    <value>Brotli డీకంప్రెస్…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
+    <value>AES-256 డిక్రిప్ట్…</value>
+  </data>
+  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
+    <value>AES-256 ఎన్‌క్రిప్ట్…</value>
+  </data>
+  <data name="TechnicalTool_OutputFile" xml:space="preserve">
+    <value>అవుట్‌పుట్ ఫైల్:</value>
+  </data>
+  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
+    <value>అవుట్‌పుట్ ఫైల్ ఎంచుకోండి</value>
+  </data>
+  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
+    <value>మూల ఫైల్ ఎంచుకోండి</value>
+  </data>
+  <data name="TechnicalTool_Run" xml:space="preserve">
+    <value>రన్</value>
+  </data>
+  <data name="TechnicalTool_SourceFile" xml:space="preserve">
+    <value>మూల ఫైల్:</value>
+  </data>
   <data name="Theme_Title" xml:space="preserve">
     <value>థీమ్</value>
   </data>
@@ -744,6 +816,90 @@
   <data name="TimeoutTask_Title" xml:space="preserve">
     <value>టైమ్‌అవుట్ కోసం వేచి ఉంది...</value>
   </data>
+  <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
+    <value>సర్టిఫికేట్ పార్స్ హెచ్చరిక: {0}</value>
+  </data>
+  <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
+    <value>సర్టిఫికేట్ గుర్తింపును బ్యాండ్ వెలుపల ధృవీకరించండి, తర్వాత దాన్ని నిల్వ చేయడానికి మళ్ళీ సేవ్ క్లిక్ చేయండి.</value>
+  </data>
+  <data name="TrustDetected_Ftps_Title" xml:space="preserve">
+    <value>పరీక్ష సమయంలో FTPS సర్వర్ సర్టిఫికేట్ గుర్తించబడింది.</value>
+  </data>
+  <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
+    <value>సర్టిఫికేట్ (raw hex): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_DnsName" xml:space="preserve">
+    <value>DNS పేరు: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Encryption" xml:space="preserve">
+    <value>గుప్తీకరణ: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
+    <value>వేలిముద్ర (SHA-256): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Folder" xml:space="preserve">
+    <value>ఫోల్డర్: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Host" xml:space="preserve">
+    <value>హోస్ట్: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Issuer" xml:space="preserve">
+    <value>జారీచేసినవారు: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Port" xml:space="preserve">
+    <value>పోర్ట్: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
+    <value>పబ్లిక్ కీ అల్గోరిథం: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
+    <value>పబ్లిక్ కీ పరిమాణం: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
+    <value>క్రమ సంఖ్య: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
+    <value>సంతకం అల్గోరిథం: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Subject" xml:space="preserve">
+    <value>విషయం: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
+    <value>ప్రత్యామ్నాయ విషయ పేర్లు: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
+    <value>థంబ్‌ప్రింట్: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_User" xml:space="preserve">
+    <value>వినియోగదారు: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
+    <value>నుండి చెల్లుబాటు (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
+    <value>వరకు చెల్లుబాటు (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
+    <value>విశ్లేషించిన సర్టిఫికేట్ వివరాలు:</value>
+  </data>
+  <data name="TrustDetected_Port_Default" xml:space="preserve">
+    <value>డిఫాల్ట్</value>
+  </data>
+  <data name="TrustDetected_Port_Default22" xml:space="preserve">
+    <value>డిఫాల్ట్ (22)</value>
+  </data>
+  <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
+    <value>తెలియదు</value>
+  </data>
+  <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
+    <value>ఈ వేలిముద్రను బ్యాండ్ వెలుపల ధృవీకరించండి, తర్వాత దాన్ని నిల్వ చేయడానికి మళ్ళీ సేవ్ క్లిక్ చేయండి.</value>
+  </data>
+  <data name="TrustDetected_Sftp_Title" xml:space="preserve">
+    <value>పరీక్ష సమయంలో SFTP సర్వర్ విశ్వాస సమాచారం గుర్తించబడింది.</value>
+  </data>
+  <data name="TrustedCertificate_Field" xml:space="preserve">
+    <value>విశ్వసనీయ సర్టిఫికేట్ (hex):</value>
+  </data>
   <data name="UploadFolderContentsTask_Create" xml:space="preserve">
     <value>ఫోల్డర్‌ను సర్వర్‌కు అప్‌లోడ్ చేయండి</value>
   </data>
@@ -762,161 +918,4 @@
   <data name="User_Field_Validation" xml:space="preserve">
     <value>యూజర్ ఉదహరించவில்லை.</value>
   </data>
-  <data name="TrustedCertificate_Field" xml:space="preserve">
-    <value>విశ్వసనీయ సర్టిఫికేట్ (hex):</value>
-  </data>
-  <data name="TrustDetected_Sftp_Title" xml:space="preserve">
-    <value>పరీక్ష సమయంలో SFTP సర్వర్ విశ్వాస సమాచారం గుర్తించబడింది.</value>
-  </data>
-  <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
-    <value>ఈ వేలిముద్రను బ్యాండ్ వెలుపల ధృవీకరించండి, తర్వాత దాన్ని నిల్వ చేయడానికి మళ్ళీ సేవ్ క్లిక్ చేయండి.</value>
-  </data>
-  <data name="TrustDetected_Ftps_Title" xml:space="preserve">
-    <value>పరీక్ష సమయంలో FTPS సర్వర్ సర్టిఫికేట్ గుర్తించబడింది.</value>
-  </data>
-  <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
-    <value>సర్టిఫికేట్ గుర్తింపును బ్యాండ్ వెలుపల ధృవీకరించండి, తర్వాత దాన్ని నిల్వ చేయడానికి మళ్ళీ సేవ్ క్లిక్ చేయండి.</value>
-  </data>
-  <data name="TrustDetected_Label_Host" xml:space="preserve">
-    <value>హోస్ట్: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Port" xml:space="preserve">
-    <value>పోర్ట్: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_User" xml:space="preserve">
-    <value>వినియోగదారు: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Folder" xml:space="preserve">
-    <value>ఫోల్డర్: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
-    <value>వేలిముద్ర (SHA-256): {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Encryption" xml:space="preserve">
-    <value>గుప్తీకరణ: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
-    <value>సర్టిఫికేట్ (raw hex): {0}</value>
-  </data>
-  <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
-    <value>విశ్లేషించిన సర్టిఫికేట్ వివరాలు:</value>
-  </data>
-  <data name="TrustDetected_Label_Subject" xml:space="preserve">
-    <value>విషయం: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Issuer" xml:space="preserve">
-    <value>జారీచేసినవారు: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
-    <value>క్రమ సంఖ్య: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
-    <value>థంబ్‌ప్రింట్: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
-    <value>నుండి చెల్లుబాటు (UTC): {0}</value>
-  </data>
-  <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
-    <value>వరకు చెల్లుబాటు (UTC): {0}</value>
-  </data>
-  <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
-    <value>సంతకం అల్గోరిథం: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
-    <value>పబ్లిక్ కీ అల్గోరిథం: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
-    <value>పబ్లిక్ కీ పరిమాణం: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_DnsName" xml:space="preserve">
-    <value>DNS పేరు: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
-    <value>ప్రత్యామ్నాయ విషయ పేర్లు: {0}</value>
-  </data>
-  <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
-    <value>సర్టిఫికేట్ పార్స్ హెచ్చరిక: {0}</value>
-  </data>
-  <data name="TrustDetected_Port_Default22" xml:space="preserve">
-    <value>డిఫాల్ట్ (22)</value>
-  </data>
-  <data name="TrustDetected_Port_Default" xml:space="preserve">
-    <value>డిఫాల్ట్</value>
-  </data>
-  <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
-    <value>తెలియదు</value>
-  </data>
-  <data name="Logs_Menu" xml:space="preserve">
-    <value>లాగ్‌లు</value>
-  </data>
-  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
-    <value>లాగ్ ఫోల్డర్ తెరవండి</value>
-  </data>
-  <data name="Other_Menu_Title" xml:space="preserve">
-    <value>ఇతరాలు</value>
-  </data>
-  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
-    <value>AES-256 డిక్రిప్ట్…</value>
-  </data>
-  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
-    <value>AES-256 ఎన్‌క్రిప్ట్…</value>
-  </data>
-  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
-    <value>Brotli డీకంప్రెస్…</value>
-  </data>
-  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
-    <value>Brotli కంప్రెస్…</value>
-  </data>
-  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
-    <value>AES-256 డిక్రిప్ట్</value>
-  </data>
-  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
-    <value>AES-256 ఎన్‌క్రిప్ట్</value>
-  </data>
-  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
-    <value>Brotli డీకంప్రెస్</value>
-  </data>
-  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
-    <value>Brotli కంప్రెస్</value>
-  </data>
-  <data name="TechnicalTool_SourceFile" xml:space="preserve">
-    <value>మూల ఫైల్:</value>
-  </data>
-  <data name="TechnicalTool_OutputFile" xml:space="preserve">
-    <value>అవుట్‌పుట్ ఫైల్:</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>రన్</value>
-  </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>మూసివేయి</value>
-  </data>
-  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
-    <value>AES-256 ఎన్‌క్రిప్టెడ్ (*.{0})</value>
-  </data>
-  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
-    <value>Brotli కంప్రెస్డ్ (*.brotli)</value>
-  </data>
-  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
-    <value>అన్ని ఫైళ్లు</value>
-  </data>
-  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
-    <value>మూల ఫైల్ ఎంచుకోండి</value>
-  </data>
-  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
-    <value>అవుట్‌పుట్ ఫైల్ ఎంచుకోండి</value>
-  </data>
-  <data name="TechnicalTool_Completed" xml:space="preserve">
-    <value>ఆపరేషన్ విజయవంతంగా పూర్తయింది.</value>
-  </data>
-  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
-    <value>ఫైల్ లేదు:</value>
-  </data>
-  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
-    <value>పాస్‌వర్డ్ నమోదు చేయండి.</value>
-  </data>
-  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
-    <value>మూల మరియు అవుట్‌పుట్ ఫైల్ మార్గాలను పేర్కొనండి.</value>
-  </data>
-
 </root>

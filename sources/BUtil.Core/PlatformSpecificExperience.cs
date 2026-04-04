@@ -8,8 +8,23 @@ namespace BUtil.Core;
 
 public static class PlatformSpecificExperience
 {
-    public readonly static CrossPlatformExperience Instance;
-    static PlatformSpecificExperience()
+    private static CrossPlatformExperience? _instanceForTests;
+    private static CrossPlatformExperience? _loadedInstance;
+
+    public static CrossPlatformExperience Instance =>
+        _instanceForTests ?? (_loadedInstance ??= LoadFromPlatformAssembly());
+
+    /// <summary>
+    /// Replaces the platform-specific implementation (e.g. in unit tests that do not reference BUtil.Windows).
+    /// Pass <c>null</c> to restore default loading from the platform assembly.
+    /// </summary>
+    internal static void SetInstanceForTests(CrossPlatformExperience? instance)
+    {
+        _instanceForTests = instance;
+        _loadedInstance = null;
+    }
+
+    private static CrossPlatformExperience LoadFromPlatformAssembly()
     {
         string assemblyFile = Files.WindowsExperience;
         if (OperatingSystem.IsWindows())
@@ -37,6 +52,6 @@ public static class PlatformSpecificExperience
             .Where(x => x.BaseType == typeof(CrossPlatformExperience))
             .SingleOrDefault() ?? throw new Exception("Could not locate single type derrived from CrossPlatformExperience");
         var instance = Activator.CreateInstance(experienceType) ?? throw new Exception("Instance is null");
-        Instance = (CrossPlatformExperience)instance;
+        return (CrossPlatformExperience)instance;
     }
 }

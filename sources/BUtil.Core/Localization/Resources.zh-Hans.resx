@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -486,6 +486,9 @@
   <data name="Local_State_Saving" xml:space="preserve">
     <value>写入本地状态</value>
   </data>
+  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
+    <value>打开日志文件夹</value>
+  </data>
   <data name="LogFile_Marker_Errors" xml:space="preserve">
     <value>错误</value>
   </data>
@@ -493,6 +496,9 @@
     <value>成功</value>
   </data>
   <data name="LogFile_OpenLogs" xml:space="preserve">
+    <value>日志</value>
+  </data>
+  <data name="Logs_Menu" xml:space="preserve">
     <value>日志</value>
   </data>
   <data name="Messages_Header_Error" xml:space="preserve">
@@ -518,6 +524,9 @@
   </data>
   <data name="OptionalField_Hint" xml:space="preserve">
     <value>(可选)</value>
+  </data>
+  <data name="Other_Menu_Title" xml:space="preserve">
+    <value>其他</value>
   </data>
   <data name="Password_Field" xml:space="preserve">
     <value>密码：</value>
@@ -605,6 +614,9 @@
   <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
     <value>编辑文件排除模式</value>
   </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>排除文件</value>
+  </data>
   <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
     <value>DOT NET中的文件Globbing：模式</value>
   </data>
@@ -620,9 +632,6 @@ bin。
   </data>
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
     <value>通过排除模式跳过文件处理。</value>
-  </data>
-  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
-    <value>排除文件</value>
   </data>
   <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
     <value>文件排除模式：</value>
@@ -681,12 +690,6 @@ bin。
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
     <value>新任务</value>
   </data>
-  <data name="Task_WindowTitle_Creating" xml:space="preserve">
-    <value>正在创建</value>
-  </data>
-  <data name="Task_WindowTitle_Editing" xml:space="preserve">
-    <value>正在编辑</value>
-  </data>
   <data name="Task_LastExecution_State" xml:space="preserve">
     <value>状态</value>
   </data>
@@ -726,6 +729,75 @@ bin。
   <data name="Task_Validation_NotSupported" xml:space="preserve">
     <value>不支持此任务类型。</value>
   </data>
+  <data name="Task_WindowTitle_Creating" xml:space="preserve">
+    <value>正在创建</value>
+  </data>
+  <data name="Task_WindowTitle_Editing" xml:space="preserve">
+    <value>正在编辑</value>
+  </data>
+  <data name="TechnicalTool_Close" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="TechnicalTool_Completed" xml:space="preserve">
+    <value>操作已成功完成。</value>
+  </data>
+  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
+    <value>压缩 Brotli</value>
+  </data>
+  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
+    <value>解压 Brotli</value>
+  </data>
+  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
+    <value>解密 AES-256</value>
+  </data>
+  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
+    <value>加密 AES-256</value>
+  </data>
+  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
+    <value>文件不存在：</value>
+  </data>
+  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
+    <value>请输入密码。</value>
+  </data>
+  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
+    <value>请指定源文件和输出文件的路径。</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
+    <value>AES-256 加密 (*.{0})</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
+    <value>所有文件</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
+    <value>Brotli 压缩 (*.brotli)</value>
+  </data>
+  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
+    <value>压缩 Brotli…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
+    <value>解压 Brotli…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
+    <value>解密 AES-256…</value>
+  </data>
+  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
+    <value>加密 AES-256…</value>
+  </data>
+  <data name="TechnicalTool_OutputFile" xml:space="preserve">
+    <value>输出文件：</value>
+  </data>
+  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
+    <value>选择输出文件</value>
+  </data>
+  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
+    <value>选择源文件</value>
+  </data>
+  <data name="TechnicalTool_Run" xml:space="preserve">
+    <value>运行</value>
+  </data>
+  <data name="TechnicalTool_SourceFile" xml:space="preserve">
+    <value>源文件：</value>
+  </data>
   <data name="Theme_Title" xml:space="preserve">
     <value>主题</value>
   </data>
@@ -747,6 +819,90 @@ bin。
   <data name="TimeoutTask_Title" xml:space="preserve">
     <value>正在等待超时...</value>
   </data>
+  <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
+    <value>证书解析警告：{0}</value>
+  </data>
+  <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
+    <value>请通过带外方式验证证书身份，然后再次点击"保存"以存储。</value>
+  </data>
+  <data name="TrustDetected_Ftps_Title" xml:space="preserve">
+    <value>测试期间检测到 FTPS 服务器证书。</value>
+  </data>
+  <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
+    <value>证书（原始hex）：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_DnsName" xml:space="preserve">
+    <value>DNS 名称：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_Encryption" xml:space="preserve">
+    <value>加密：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
+    <value>指纹（SHA-256）：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_Folder" xml:space="preserve">
+    <value>文件夹：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_Host" xml:space="preserve">
+    <value>主机：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_Issuer" xml:space="preserve">
+    <value>颁发者：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_Port" xml:space="preserve">
+    <value>端口：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
+    <value>公钥算法：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
+    <value>公钥大小：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
+    <value>序列号：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
+    <value>签名算法：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_Subject" xml:space="preserve">
+    <value>主题：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
+    <value>主题备用名称：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
+    <value>指纹：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_User" xml:space="preserve">
+    <value>用户：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
+    <value>有效期从（UTC）：{0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
+    <value>有效期至（UTC）：{0}</value>
+  </data>
+  <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
+    <value>已解析的证书详细信息：</value>
+  </data>
+  <data name="TrustDetected_Port_Default" xml:space="preserve">
+    <value>默认</value>
+  </data>
+  <data name="TrustDetected_Port_Default22" xml:space="preserve">
+    <value>默认（22）</value>
+  </data>
+  <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
+    <value>未知</value>
+  </data>
+  <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
+    <value>请通过带外方式验证此指纹，然后再次点击"保存"以存储。</value>
+  </data>
+  <data name="TrustDetected_Sftp_Title" xml:space="preserve">
+    <value>测试期间检测到 SFTP 服务器信任信息。</value>
+  </data>
+  <data name="TrustedCertificate_Field" xml:space="preserve">
+    <value>受信任证书（hex）：</value>
+  </data>
   <data name="UploadFolderContentsTask_Create" xml:space="preserve">
     <value>上传文件夹到服务器</value>
   </data>
@@ -765,161 +921,4 @@ bin。
   <data name="User_Field_Validation" xml:space="preserve">
     <value>未指定用户。</value>
   </data>
-  <data name="TrustedCertificate_Field" xml:space="preserve">
-    <value>受信任证书（hex）：</value>
-  </data>
-  <data name="TrustDetected_Sftp_Title" xml:space="preserve">
-    <value>测试期间检测到 SFTP 服务器信任信息。</value>
-  </data>
-  <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
-    <value>请通过带外方式验证此指纹，然后再次点击"保存"以存储。</value>
-  </data>
-  <data name="TrustDetected_Ftps_Title" xml:space="preserve">
-    <value>测试期间检测到 FTPS 服务器证书。</value>
-  </data>
-  <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
-    <value>请通过带外方式验证证书身份，然后再次点击"保存"以存储。</value>
-  </data>
-  <data name="TrustDetected_Label_Host" xml:space="preserve">
-    <value>主机：{0}</value>
-  </data>
-  <data name="TrustDetected_Label_Port" xml:space="preserve">
-    <value>端口：{0}</value>
-  </data>
-  <data name="TrustDetected_Label_User" xml:space="preserve">
-    <value>用户：{0}</value>
-  </data>
-  <data name="TrustDetected_Label_Folder" xml:space="preserve">
-    <value>文件夹：{0}</value>
-  </data>
-  <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
-    <value>指纹（SHA-256）：{0}</value>
-  </data>
-  <data name="TrustDetected_Label_Encryption" xml:space="preserve">
-    <value>加密：{0}</value>
-  </data>
-  <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
-    <value>证书（原始hex）：{0}</value>
-  </data>
-  <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
-    <value>已解析的证书详细信息：</value>
-  </data>
-  <data name="TrustDetected_Label_Subject" xml:space="preserve">
-    <value>主题：{0}</value>
-  </data>
-  <data name="TrustDetected_Label_Issuer" xml:space="preserve">
-    <value>颁发者：{0}</value>
-  </data>
-  <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
-    <value>序列号：{0}</value>
-  </data>
-  <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
-    <value>指纹：{0}</value>
-  </data>
-  <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
-    <value>有效期从（UTC）：{0}</value>
-  </data>
-  <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
-    <value>有效期至（UTC）：{0}</value>
-  </data>
-  <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
-    <value>签名算法：{0}</value>
-  </data>
-  <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
-    <value>公钥算法：{0}</value>
-  </data>
-  <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
-    <value>公钥大小：{0}</value>
-  </data>
-  <data name="TrustDetected_Label_DnsName" xml:space="preserve">
-    <value>DNS 名称：{0}</value>
-  </data>
-  <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
-    <value>主题备用名称：{0}</value>
-  </data>
-  <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
-    <value>证书解析警告：{0}</value>
-  </data>
-  <data name="TrustDetected_Port_Default22" xml:space="preserve">
-    <value>默认（22）</value>
-  </data>
-  <data name="TrustDetected_Port_Default" xml:space="preserve">
-    <value>默认</value>
-  </data>
-  <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
-    <value>未知</value>
-  </data>
-  <data name="Logs_Menu" xml:space="preserve">
-    <value>日志</value>
-  </data>
-  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
-    <value>打开日志文件夹</value>
-  </data>
-  <data name="Other_Menu_Title" xml:space="preserve">
-    <value>其他</value>
-  </data>
-  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
-    <value>解密 AES-256…</value>
-  </data>
-  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
-    <value>加密 AES-256…</value>
-  </data>
-  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
-    <value>解压 Brotli…</value>
-  </data>
-  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
-    <value>压缩 Brotli…</value>
-  </data>
-  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
-    <value>解密 AES-256</value>
-  </data>
-  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
-    <value>加密 AES-256</value>
-  </data>
-  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
-    <value>解压 Brotli</value>
-  </data>
-  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
-    <value>压缩 Brotli</value>
-  </data>
-  <data name="TechnicalTool_SourceFile" xml:space="preserve">
-    <value>源文件：</value>
-  </data>
-  <data name="TechnicalTool_OutputFile" xml:space="preserve">
-    <value>输出文件：</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>运行</value>
-  </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>关闭</value>
-  </data>
-  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
-    <value>AES-256 加密 (*.{0})</value>
-  </data>
-  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
-    <value>Brotli 压缩 (*.brotli)</value>
-  </data>
-  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
-    <value>所有文件</value>
-  </data>
-  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
-    <value>选择源文件</value>
-  </data>
-  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
-    <value>选择输出文件</value>
-  </data>
-  <data name="TechnicalTool_Completed" xml:space="preserve">
-    <value>操作已成功完成。</value>
-  </data>
-  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
-    <value>文件不存在：</value>
-  </data>
-  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
-    <value>请输入密码。</value>
-  </data>
-  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
-    <value>请指定源文件和输出文件的路径。</value>
-  </data>
-
 </root>

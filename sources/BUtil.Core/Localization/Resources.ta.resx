@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -489,6 +489,9 @@
   <data name="Local_State_Saving" xml:space="preserve">
     <value>உள்ளூரி மாநிலத்தை எழுதுகிறேன்</value>
   </data>
+  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
+    <value>பதிவுகள் கோப்புறையைத் திற</value>
+  </data>
   <data name="LogFile_Marker_Errors" xml:space="preserve">
     <value>தவறுகள்</value>
   </data>
@@ -497,6 +500,9 @@
   </data>
   <data name="LogFile_OpenLogs" xml:space="preserve">
     <value>தகவல்களை திறக்கவும்</value>
+  </data>
+  <data name="Logs_Menu" xml:space="preserve">
+    <value>பதிவுகள்</value>
   </data>
   <data name="Messages_Header_Error" xml:space="preserve">
     <value>தவறு</value>
@@ -521,6 +527,9 @@
   </data>
   <data name="OptionalField_Hint" xml:space="preserve">
     <value>(விருப்பமானது)</value>
+  </data>
+  <data name="Other_Menu_Title" xml:space="preserve">
+    <value>மற்றவை</value>
   </data>
   <data name="Password_Field" xml:space="preserve">
     <value>கடவுச்சொல்:</value>
@@ -608,6 +617,9 @@
   <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
     <value>கோப்பு விலக்கு மாதிரியைத் தொகுக்கவும்</value>
   </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>கோப்புகளை விலக்கு</value>
+  </data>
   <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
     <value>.NET இல் கோப்பு குளோபிங்: மாதிரிகள்</value>
   </data>
@@ -623,9 +635,6 @@ bin.
   </data>
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
     <value>விலக்கு மாதிரியால் கோப்புகளை செயலாக்குவதைக் தவிர்க்கிறது.</value>
-  </data>
-  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
-    <value>கோப்புகளை விலக்கு</value>
   </data>
   <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
     <value>கோப்பு விலக்கு மாதிரி:</value>
@@ -684,12 +693,6 @@ bin.
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
     <value>புதிய வேலை</value>
   </data>
-  <data name="Task_WindowTitle_Creating" xml:space="preserve">
-    <value>உருவாக்குகிறது</value>
-  </data>
-  <data name="Task_WindowTitle_Editing" xml:space="preserve">
-    <value>திருத்துகிறது</value>
-  </data>
   <data name="Task_LastExecution_State" xml:space="preserve">
     <value>அரசியல்</value>
   </data>
@@ -729,6 +732,75 @@ bin.
   <data name="Task_Validation_NotSupported" xml:space="preserve">
     <value>இந்த பணி வகை ஆதரிக்கப்படவில்லை.</value>
   </data>
+  <data name="Task_WindowTitle_Creating" xml:space="preserve">
+    <value>உருவாக்குகிறது</value>
+  </data>
+  <data name="Task_WindowTitle_Editing" xml:space="preserve">
+    <value>திருத்துகிறது</value>
+  </data>
+  <data name="TechnicalTool_Close" xml:space="preserve">
+    <value>மூடு</value>
+  </data>
+  <data name="TechnicalTool_Completed" xml:space="preserve">
+    <value>செயல்பாடு வெற்றிகரமாக முடிந்தது.</value>
+  </data>
+  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
+    <value>Brotli சுருக்கம்</value>
+  </data>
+  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
+    <value>Brotli நீக்குச் சுருக்கம்</value>
+  </data>
+  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
+    <value>AES-256 மறைகுறியாக்கு</value>
+  </data>
+  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
+    <value>AES-256 குறியாக்கு</value>
+  </data>
+  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
+    <value>கோப்பு இல்லை:</value>
+  </data>
+  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
+    <value>கடவுச்சொல்லை உள்ளிடவும்.</value>
+  </data>
+  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
+    <value>மூல மற்றும் வெளியீட்டுக் கோப்பு பாதைகளைக் குறிப்பிடவும்.</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
+    <value>AES-256 குறியாக்கப்பட்டது (*.{0})</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
+    <value>அனைத்துக் கோப்புகள்</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
+    <value>Brotli சுருக்கப்பட்டது (*.brotli)</value>
+  </data>
+  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
+    <value>Brotli சுருக்கம்…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
+    <value>Brotli நீக்குச் சுருக்கம்…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
+    <value>AES-256 மறைகுறியாக்கு…</value>
+  </data>
+  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
+    <value>AES-256 குறியாக்கு…</value>
+  </data>
+  <data name="TechnicalTool_OutputFile" xml:space="preserve">
+    <value>வெளியீட்டுக் கோப்பு:</value>
+  </data>
+  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
+    <value>வெளியீட்டுக் கோப்பைத் தேர்ந்தெடு</value>
+  </data>
+  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
+    <value>மூலக் கோப்பைத் தேர்ந்தெடு</value>
+  </data>
+  <data name="TechnicalTool_Run" xml:space="preserve">
+    <value>இயக்கு</value>
+  </data>
+  <data name="TechnicalTool_SourceFile" xml:space="preserve">
+    <value>மூலக் கோப்பு:</value>
+  </data>
   <data name="Theme_Title" xml:space="preserve">
     <value>தீம்</value>
   </data>
@@ -750,6 +822,90 @@ bin.
   <data name="TimeoutTask_Title" xml:space="preserve">
     <value>காலாவதி நேரத்துக்காகக் காத்திருக்கிறது...</value>
   </data>
+  <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
+    <value>சான்றிதழ் பாகுபாடு எச்சரிக்கை: {0}</value>
+  </data>
+  <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
+    <value>சான்றிதழ் அடையாளத்தை வெளியே சரிபாருங்கள், பின்னர் அதை சேமிக்க மீண்டும் சேமி என்பதை கிளிக் செய்யுங்கள்.</value>
+  </data>
+  <data name="TrustDetected_Ftps_Title" xml:space="preserve">
+    <value>சோதனையின் போது FTPS சர்வர் சான்றிதழ் கண்டறியப்பட்டது.</value>
+  </data>
+  <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
+    <value>சான்றிதழ் (raw hex): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_DnsName" xml:space="preserve">
+    <value>DNS பெயர்: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Encryption" xml:space="preserve">
+    <value>குறியாக்கம்: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
+    <value>கைரேகை (SHA-256): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Folder" xml:space="preserve">
+    <value>கோப்புறை: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Host" xml:space="preserve">
+    <value>ஹோஸ்ட்: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Issuer" xml:space="preserve">
+    <value>வழங்குநர்: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Port" xml:space="preserve">
+    <value>போர்ட்: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
+    <value>பொது விசை வழிமுறை: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
+    <value>பொது விசை அளவு: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
+    <value>வரிசை எண்: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
+    <value>கையொப்ப வழிமுறை: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Subject" xml:space="preserve">
+    <value>விஷயம்: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
+    <value>விஷயத்தின் மாற்று பெயர்கள்: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
+    <value>தம்ப்பிரிண்ட்: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_User" xml:space="preserve">
+    <value>பயனர்: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
+    <value>இருந்து செல்லுபடியாகும் (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
+    <value>வரை செல்லுபடியாகும் (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
+    <value>பாகுபடுத்தப்பட்ட சான்றிதழ் விவரங்கள்:</value>
+  </data>
+  <data name="TrustDetected_Port_Default" xml:space="preserve">
+    <value>இயல்பு</value>
+  </data>
+  <data name="TrustDetected_Port_Default22" xml:space="preserve">
+    <value>இயல்பு (22)</value>
+  </data>
+  <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
+    <value>தெரியாத</value>
+  </data>
+  <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
+    <value>இந்த கைரேகையை வெளியே சரிபாருங்கள், பின்னர் அதை சேமிக்க மீண்டும் சேமி என்பதை கிளிக் செய்யுங்கள்.</value>
+  </data>
+  <data name="TrustDetected_Sftp_Title" xml:space="preserve">
+    <value>சோதனையின் போது SFTP சர்வர் நம்பகத்தன்மை தகவல் கண்டறியப்பட்டது.</value>
+  </data>
+  <data name="TrustedCertificate_Field" xml:space="preserve">
+    <value>நம்பகமான சான்றிதழ் (hex):</value>
+  </data>
   <data name="UploadFolderContentsTask_Create" xml:space="preserve">
     <value>கோப்புறையை சேவையகத்தில் பதிவேற்றவும்</value>
   </data>
@@ -768,161 +924,4 @@ bin.
   <data name="User_Field_Validation" xml:space="preserve">
     <value>பயனர் குறிப்பிடப்படவில்லை.</value>
   </data>
-  <data name="TrustedCertificate_Field" xml:space="preserve">
-    <value>நம்பகமான சான்றிதழ் (hex):</value>
-  </data>
-  <data name="TrustDetected_Sftp_Title" xml:space="preserve">
-    <value>சோதனையின் போது SFTP சர்வர் நம்பகத்தன்மை தகவல் கண்டறியப்பட்டது.</value>
-  </data>
-  <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
-    <value>இந்த கைரேகையை வெளியே சரிபாருங்கள், பின்னர் அதை சேமிக்க மீண்டும் சேமி என்பதை கிளிக் செய்யுங்கள்.</value>
-  </data>
-  <data name="TrustDetected_Ftps_Title" xml:space="preserve">
-    <value>சோதனையின் போது FTPS சர்வர் சான்றிதழ் கண்டறியப்பட்டது.</value>
-  </data>
-  <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
-    <value>சான்றிதழ் அடையாளத்தை வெளியே சரிபாருங்கள், பின்னர் அதை சேமிக்க மீண்டும் சேமி என்பதை கிளிக் செய்யுங்கள்.</value>
-  </data>
-  <data name="TrustDetected_Label_Host" xml:space="preserve">
-    <value>ஹோஸ்ட்: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Port" xml:space="preserve">
-    <value>போர்ட்: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_User" xml:space="preserve">
-    <value>பயனர்: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Folder" xml:space="preserve">
-    <value>கோப்புறை: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
-    <value>கைரேகை (SHA-256): {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Encryption" xml:space="preserve">
-    <value>குறியாக்கம்: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
-    <value>சான்றிதழ் (raw hex): {0}</value>
-  </data>
-  <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
-    <value>பாகுபடுத்தப்பட்ட சான்றிதழ் விவரங்கள்:</value>
-  </data>
-  <data name="TrustDetected_Label_Subject" xml:space="preserve">
-    <value>விஷயம்: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Issuer" xml:space="preserve">
-    <value>வழங்குநர்: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
-    <value>வரிசை எண்: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
-    <value>தம்ப்பிரிண்ட்: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
-    <value>இருந்து செல்லுபடியாகும் (UTC): {0}</value>
-  </data>
-  <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
-    <value>வரை செல்லுபடியாகும் (UTC): {0}</value>
-  </data>
-  <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
-    <value>கையொப்ப வழிமுறை: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
-    <value>பொது விசை வழிமுறை: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
-    <value>பொது விசை அளவு: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_DnsName" xml:space="preserve">
-    <value>DNS பெயர்: {0}</value>
-  </data>
-  <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
-    <value>விஷயத்தின் மாற்று பெயர்கள்: {0}</value>
-  </data>
-  <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
-    <value>சான்றிதழ் பாகுபாடு எச்சரிக்கை: {0}</value>
-  </data>
-  <data name="TrustDetected_Port_Default22" xml:space="preserve">
-    <value>இயல்பு (22)</value>
-  </data>
-  <data name="TrustDetected_Port_Default" xml:space="preserve">
-    <value>இயல்பு</value>
-  </data>
-  <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
-    <value>தெரியாத</value>
-  </data>
-  <data name="Logs_Menu" xml:space="preserve">
-    <value>பதிவுகள்</value>
-  </data>
-  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
-    <value>பதிவுகள் கோப்புறையைத் திற</value>
-  </data>
-  <data name="Other_Menu_Title" xml:space="preserve">
-    <value>மற்றவை</value>
-  </data>
-  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
-    <value>AES-256 மறைகுறியாக்கு…</value>
-  </data>
-  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
-    <value>AES-256 குறியாக்கு…</value>
-  </data>
-  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
-    <value>Brotli நீக்குச் சுருக்கம்…</value>
-  </data>
-  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
-    <value>Brotli சுருக்கம்…</value>
-  </data>
-  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
-    <value>AES-256 மறைகுறியாக்கு</value>
-  </data>
-  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
-    <value>AES-256 குறியாக்கு</value>
-  </data>
-  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
-    <value>Brotli நீக்குச் சுருக்கம்</value>
-  </data>
-  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
-    <value>Brotli சுருக்கம்</value>
-  </data>
-  <data name="TechnicalTool_SourceFile" xml:space="preserve">
-    <value>மூலக் கோப்பு:</value>
-  </data>
-  <data name="TechnicalTool_OutputFile" xml:space="preserve">
-    <value>வெளியீட்டுக் கோப்பு:</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>இயக்கு</value>
-  </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>மூடு</value>
-  </data>
-  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
-    <value>AES-256 குறியாக்கப்பட்டது (*.{0})</value>
-  </data>
-  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
-    <value>Brotli சுருக்கப்பட்டது (*.brotli)</value>
-  </data>
-  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
-    <value>அனைத்துக் கோப்புகள்</value>
-  </data>
-  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
-    <value>மூலக் கோப்பைத் தேர்ந்தெடு</value>
-  </data>
-  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
-    <value>வெளியீட்டுக் கோப்பைத் தேர்ந்தெடு</value>
-  </data>
-  <data name="TechnicalTool_Completed" xml:space="preserve">
-    <value>செயல்பாடு வெற்றிகரமாக முடிந்தது.</value>
-  </data>
-  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
-    <value>கோப்பு இல்லை:</value>
-  </data>
-  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
-    <value>கடவுச்சொல்லை உள்ளிடவும்.</value>
-  </data>
-  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
-    <value>மூல மற்றும் வெளியீட்டுக் கோப்பு பாதைகளைக் குறிப்பிடவும்.</value>
-  </data>
-
 </root>
