@@ -55,17 +55,25 @@ internal sealed class LinuxSecretService : SecretServiceBase
 
         private static void EnsureDbusSessionBus()
         {
-            const string dbusEnvVar = "DBUS_SESSION_BUS_ADDRESS";
-            if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable(dbusEnvVar)))
-                return;
+            // For headless environments (cron, systemd services), set up the environment
+            // to connect to the user's existing desktop session
 
-            // For headless environments (cron, systemd services), connect to the user's D-Bus session
-            // On systemd-based systems, this is typically at /run/user/<uid>/bus
-            var uid = getuid();
-            var busPath = $"/run/user/{uid}/bus";
-            if (File.Exists(busPath))
+            // DISPLAY is needed for D-Bus/gnome-keyring to find the session
+            if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("DISPLAY")))
             {
-                Environment.SetEnvironmentVariable(dbusEnvVar, $"unix:path={busPath}");
+                Environment.SetEnvironmentVariable("DISPLAY", ":0");
+            }
+
+            // Connect to the user's D-Bus session bus
+            const string dbusEnvVar = "DBUS_SESSION_BUS_ADDRESS";
+            if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable(dbusEnvVar)))
+            {
+                var uid = getuid();
+                var busPath = $"/run/user/{uid}/bus";
+                if (File.Exists(busPath))
+                {
+                    Environment.SetEnvironmentVariable(dbusEnvVar, $"unix:path={busPath}");
+                }
             }
         }
 
