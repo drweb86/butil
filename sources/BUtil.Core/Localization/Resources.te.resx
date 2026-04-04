@@ -618,6 +618,9 @@
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
     <value>ఫైల్స్‌ పొందుపరచటంలో విస్మరించు వెతక్కు ప్రామాణికత.</value>
   </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>ఫైల్‌లను మినహాయించు</value>
+  </data>
   <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
     <value>ఫైల్ వదిలి పెట్టు నియమావళి:</value>
   </data>

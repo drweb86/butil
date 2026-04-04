@@ -1535,6 +1535,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Exclude files.
+        /// </summary>
+        public static string StorageItem_ExcludePattern_ExpanderHeader {
+            get {
+                return ResourceManager.GetString("StorageItem_ExcludePattern_ExpanderHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to File exclude pattern:.
         /// </summary>
         public static string StorageItem_Field_ExcludePattern {

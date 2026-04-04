@@ -25,6 +25,7 @@ public class WhatTaskViewModel : ObservableObject
     public static string StorageItem_ExcludePattern_Help => PlatformSpecificExperience.Instance.GetFolderService().GetStorageItemExcludePatternHelp();
     public static string LeftMenu_What => Resources.LeftMenu_What;
     public static string SourceItem_AddFolders => Resources.SourceItem_AddFolders;
+    public static string StorageItem_ExcludePattern_ExpanderHeader => Resources.StorageItem_ExcludePattern_ExpanderHeader;
     public static string StorageItem_Field_ExcludePattern => Resources.StorageItem_Field_ExcludePattern;
     public static string StorageItem_ExcludePattern_GlobbingNetPatterns => Resources.StorageItem_ExcludePattern_GlobbingNetPatterns;
     #endregion

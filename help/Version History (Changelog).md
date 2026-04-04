@@ -1,4 +1,4 @@
-﻿# 2026.03.31
+﻿# 2026.04.04
 (unpublished)
 
 ## New Features
@@ -20,6 +20,7 @@ Migration code will be there until 2026-10-01.
 - Some libraries were updated.
 - Add cat to tasks view.
 - Better window titles for editing and creating of task.
+- Exclusion of files in incremental backup task is collapsed by default.
 
 ## Bug Fixes
 - On Cancel of running task user was not transitioned back to list of tasks.

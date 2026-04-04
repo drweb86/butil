@@ -622,6 +622,9 @@ Veja a descrição detalhada no seguinte link.</value>
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
     <value>Ignora o processamento de arquivos pelo padrão de exclusão.</value>
   </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>Excluir arquivos</value>
+  </data>
   <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
     <value>Padrão de exclusão de arquivo:</value>
   </data>

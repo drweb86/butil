@@ -622,6 +622,9 @@ Siehe detaillierte Beschreibung im folgenden Link.</value>
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
     <value>Überspringt die Verarbeitung von Dateien nach Ausnahmemuster.</value>
   </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>Dateien ausschließen</value>
+  </data>
   <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
     <value>Dateiausnahmemuster:</value>
   </data>

@@ -619,6 +619,9 @@ Xem mô tả chi tiết trong liên kết sau.</value>
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
     <value>Bỏ qua việc xử lý các tệp theo mẫu loại trừ.</value>
   </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>Loại trừ tệp</value>
+  </data>
   <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
     <value>Mẫu loại trừ tệp:</value>
   </data>

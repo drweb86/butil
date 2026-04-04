@@ -622,6 +622,9 @@ bin.
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
     <value>छूट पैटर्न द्वारा फ़ाइलों की प्रोसेसिंग को छोड़ देता है।</value>
   </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>फ़ाइलें छोड़ें</value>
+  </data>
   <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
     <value>फ़ाइल छूट पैटर्न:</value>
   </data>

@@ -621,6 +621,9 @@ bin。
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
     <value>通过排除模式跳过文件处理。</value>
   </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>排除文件</value>
+  </data>
   <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
     <value>文件排除模式：</value>
   </data>

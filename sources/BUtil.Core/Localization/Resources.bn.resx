@@ -619,6 +619,9 @@
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
     <value>ফাইল বাদ দেওয়া প্যাটার্ন দ্বারা প্রক্রিয়াকরণ এড়ান।</value>
   </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>ফাইল বাদ দিন</value>
+  </data>
   <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
     <value>ফাইল বাদ দেওয়ার প্যাটার্ন:</value>
   </data>

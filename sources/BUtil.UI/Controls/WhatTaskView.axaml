@@ -17,11 +17,7 @@
 			<WrapPanel Orientation="Horizontal" Margin="0 8 0 8">
 				<Button Margin="4 4 4 4" Content="{Binding SourceItem_AddFolders}" Click="BrowseFoldersCommand" />
 			</WrapPanel>
-			<TextBlock
-				Text="{Binding LeftMenu_What}"
-				Margin="0 8 0 8"
-				VerticalAlignment="Center" />
-			<ListBox Margin="0 8 0 8" MinHeight="50" ItemsSource="{Binding Items}">
+			<ListBox Margin="0 8 0 8" MinHeight="50" ItemsSource="{Binding Items}" IsVisible="{Binding !!Items.Count}">
 				<ListBox.ItemTemplate>
 					<DataTemplate x:DataType="cvm:SourceItemV2ViewModel">
 						<Grid>
@@ -74,10 +70,17 @@
 					</DataTemplate>
 				</ListBox.ItemTemplate>
 			</ListBox>
-			<TextBlock Margin="0 8 0 8" Text="{Binding StorageItem_Field_ExcludePattern}" TextWrapping="Wrap" VerticalAlignment="Center" />
-			<TextBox Margin="0 8 0 8" AcceptsReturn="True" Text="{Binding FileExcludePatterns}" VerticalAlignment="Center" MinHeight="150" />
-			<TextBlock Margin="0 8 0 8" Text="{Binding StorageItem_ExcludePattern_Help}" TextWrapping="Wrap" VerticalAlignment="Center" />
-			<Button Margin="0 8 0 8" Content="{Binding StorageItem_ExcludePattern_GlobbingNetPatterns}" VerticalAlignment="Center" Command="{Binding GlobbingHelpCommand}" />
+			<Expander Margin="0 8 0 8" HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+				<Expander.Header>
+					<TextBlock Text="{Binding StorageItem_ExcludePattern_ExpanderHeader}" VerticalAlignment="Center" />
+				</Expander.Header>
+				<StackPanel Spacing="8">
+					<TextBlock Text="{Binding StorageItem_Field_ExcludePattern}" TextWrapping="Wrap" VerticalAlignment="Center" />
+					<TextBox AcceptsReturn="True" Text="{Binding FileExcludePatterns}" VerticalAlignment="Center" MinHeight="150" />
+					<TextBlock Text="{Binding StorageItem_ExcludePattern_Help}" TextWrapping="Wrap" VerticalAlignment="Center" />
+					<Button Content="{Binding StorageItem_ExcludePattern_GlobbingNetPatterns}" VerticalAlignment="Center" Command="{Binding GlobbingHelpCommand}" />
+				</StackPanel>
+			</Expander>
 		</StackPanel>
 	</Expander>
 </UserControl>

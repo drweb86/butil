@@ -619,6 +619,9 @@
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
     <value>Melewati pemrosesan file berdasarkan pola pengecualian.</value>
   </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>Kecualikan file</value>
+  </data>
   <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
     <value>Pola pengecualian file:</value>
   </data>

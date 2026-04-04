@@ -609,6 +609,9 @@ bin.
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
     <value>除外パターンによりファイルの処理をスキップします。</value>
   </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>ファイルを除外</value>
+  </data>
   <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
     <value>ファイル除外パターン:</value>
   </data>

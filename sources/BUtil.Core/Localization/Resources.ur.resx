@@ -612,6 +612,9 @@
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
     <value>خارج کے پیٹرن کے ذریعہ فائلوں کی پروسیسنگ کو چھوڑ دیتا ہے۔</value>
   </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>فائلوں کو خارج کریں</value>
+  </data>
   <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
     <value>فائل خارج کرنے کا پیٹرن:</value>
   </data>

@@ -622,6 +622,9 @@
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
     <value>वगळण्याच्या पॅटर्नद्वारे फाइल्सच्या प्रक्रियेस वगळते.</value>
   </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>फाइल वगळा</value>
+  </data>
   <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
     <value>फाइल वगळण्याचे पॅटर्न:</value>
   </data>

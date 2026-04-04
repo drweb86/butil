@@ -619,6 +619,9 @@ Aşağıdaki bağlantıda detaylı açıklama bulun.</value>
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
     <value>Dosyaların işlenmesini hariç tutma deseni ile atlar.</value>
   </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>Dosyaları hariç tut</value>
+  </data>
   <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
     <value>Dosya hariç tutma deseni:</value>
   </data>

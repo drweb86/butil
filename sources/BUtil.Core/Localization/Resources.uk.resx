@@ -623,6 +623,9 @@ bin.
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
     <value>Виключити файли з обробки за маскою.</value>
   </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>Виключення файлів</value>
+  </data>
   <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
     <value>Маска виключення файлів:</value>
   </data>

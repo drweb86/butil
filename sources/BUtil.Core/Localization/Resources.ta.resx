@@ -624,6 +624,9 @@ bin.
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
     <value>விலக்கு மாதிரியால் கோப்புகளை செயலாக்குவதைக் தவிர்க்கிறது.</value>
   </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>கோப்புகளை விலக்கு</value>
+  </data>
   <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
     <value>கோப்பு விலக்கு மாதிரி:</value>
   </data>

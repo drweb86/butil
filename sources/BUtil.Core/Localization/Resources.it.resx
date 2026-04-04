@@ -628,6 +628,9 @@ Consulta il sito web dell'applicazione per la documentazione su come impostare l
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
     <value>Salta elaborazione file in base alla maschera di esclusione.</value>
   </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>Escludi file</value>
+  </data>
   <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
     <value>Maschera esclusione file:</value>
   </data>
