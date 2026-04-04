@@ -31,15 +31,29 @@ internal sealed class LinuxSecretService : SecretServiceBase
     private static class LibSecretInterop
     {
         private const string _libraryName = "libsecret-1.so.0";
+        private const string _glibLibraryName = "libglib-2.0.so.0";
         private const string _schemaName = "org.butil.task-secrets";
         private const string _schemaAttribute = "id";
         private const string _labelPrefix = "BUtil Task Secret";
 
         private static readonly SecretSchema _schema = CreateSchema();
 
+        private static readonly IntPtr GStrHashPtr;
+        private static readonly IntPtr GStrEqualPtr;
+        private static readonly IntPtr GFreePtr;
+
+        static LibSecretInterop()
+        {
+            var glib = NativeLibrary.Load(_glibLibraryName);
+            GStrHashPtr = NativeLibrary.GetExport(glib, "g_str_hash");
+            GStrEqualPtr = NativeLibrary.GetExport(glib, "g_str_equal");
+            GFreePtr = NativeLibrary.GetExport(glib, "g_free");
+        }
+
         public static void StoreSecret(string id, string value)
         {
-            var ok = secret_password_store_sync(in _schema, null, $"{_labelPrefix} ({id})", value, IntPtr.Zero, out var error, __arglist(_schemaAttribute, id, IntPtr.Zero));
+            using var attrs = CreateAttributesHashTable(id);
+            var ok = secret_password_storev_sync(in _schema, null, $"{_labelPrefix} ({id})", value, IntPtr.Zero, out var error, attrs.Handle);
             if (!ok)
                 ThrowLibSecretError("Failed to store secret in libsecret.", error);
             FreeError(error);
@@ -47,7 +61,8 @@ internal sealed class LinuxSecretService : SecretServiceBase
 
         public static string? LookupSecret(string id)
         {
-            var passwordPtr = secret_password_lookup_sync(in _schema, IntPtr.Zero, out var error, __arglist(_schemaAttribute, id, IntPtr.Zero));
+            using var attrs = CreateAttributesHashTable(id);
+            var passwordPtr = secret_password_lookupv_sync(in _schema, IntPtr.Zero, out var error, attrs.Handle);
             if (error != IntPtr.Zero)
                 ThrowLibSecretError("Failed to lookup secret in libsecret.", error);
 
@@ -63,6 +78,43 @@ internal sealed class LinuxSecretService : SecretServiceBase
                 secret_password_free(passwordPtr);
             }
         }
+
+        private static GHashTableHandle CreateAttributesHashTable(string id)
+        {
+            var attrs = g_hash_table_new_full(GStrHashPtr, GStrEqualPtr, GFreePtr, GFreePtr);
+            if (attrs == IntPtr.Zero)
+                throw new InvalidOperationException("Failed to allocate GHashTable for libsecret attributes.");
+
+            g_hash_table_insert(attrs, g_strdup(_schemaAttribute), g_strdup(id));
+            return new GHashTableHandle(attrs);
+        }
+
+        private readonly struct GHashTableHandle : IDisposable
+        {
+            private readonly IntPtr _handle;
+
+            public GHashTableHandle(IntPtr handle) => _handle = handle;
+
+            public IntPtr Handle => _handle;
+
+            public void Dispose()
+            {
+                if (_handle != IntPtr.Zero)
+                    g_hash_table_unref(_handle);
+            }
+        }
+
+        [DllImport(_glibLibraryName, CallingConvention = CallingConvention.Cdecl)]
+        private static extern IntPtr g_hash_table_new_full(IntPtr hashFunc, IntPtr equalFunc, IntPtr keyDestroyFunc, IntPtr valueDestroyFunc);
+
+        [DllImport(_glibLibraryName, CallingConvention = CallingConvention.Cdecl)]
+        private static extern void g_hash_table_insert(IntPtr hashTable, IntPtr key, IntPtr value);
+
+        [DllImport(_glibLibraryName, CallingConvention = CallingConvention.Cdecl)]
+        private static extern void g_hash_table_unref(IntPtr hashTable);
+
+        [DllImport(_glibLibraryName, CallingConvention = CallingConvention.Cdecl)]
+        private static extern IntPtr g_strdup([MarshalAs(UnmanagedType.LPUTF8Str)] string str);
 
         private static SecretSchema CreateSchema()
         {
@@ -158,7 +210,7 @@ internal sealed class LinuxSecretService : SecretServiceBase
 
         [DllImport(_libraryName, CallingConvention = CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.I1)]
-        private static extern bool secret_password_store_sync(
+        private static extern bool secret_password_storev_sync(
             in SecretSchema schema,
 #pragma warning disable CA2101 // Specify marshaling for P/Invoke string arguments
             [MarshalAs(UnmanagedType.LPUTF8Str)] string? collection,
@@ -167,14 +219,14 @@ internal sealed class LinuxSecretService : SecretServiceBase
 #pragma warning restore CA2101 // Specify marshaling for P/Invoke string arguments
             IntPtr cancellable,
             out IntPtr error,
-            __arglist);
+            IntPtr attributes);
 
         [DllImport(_libraryName, CallingConvention = CallingConvention.Cdecl)]
-        private static extern IntPtr secret_password_lookup_sync(
+        private static extern IntPtr secret_password_lookupv_sync(
             in SecretSchema schema,
             IntPtr cancellable,
             out IntPtr error,
-            __arglist);
+            IntPtr attributes);
 
         [DllImport(_libraryName, CallingConvention = CallingConvention.Cdecl)]
 #pragma warning disable SYSLIB1054 // Use 'LibraryImportAttribute' instead of 'DllImportAttribute' to generate P/Invoke marshalling code at compile time
