@@ -160,6 +160,7 @@ internal sealed class LinuxSecretService : SecretServiceBase
                 g_error_free(errorPtr);
         }
 
+        // Must match libsecret's SecretSchema (secret-schema.h): gint reserved, then gpointer reserved1..7.
         [StructLayout(LayoutKind.Sequential)]
         private struct SecretSchema
         {
@@ -172,13 +173,14 @@ internal sealed class LinuxSecretService : SecretServiceBase
             public SecretSchemaAttribute[] attributes;
 
             public int reserved;
-            public int reserved1;
-            public int reserved2;
-            public int reserved3;
-            public int reserved4;
-            public int reserved5;
-            public int reserved6;
-            public int reserved7;
+
+            public IntPtr reserved1;
+            public IntPtr reserved2;
+            public IntPtr reserved3;
+            public IntPtr reserved4;
+            public IntPtr reserved5;
+            public IntPtr reserved6;
+            public IntPtr reserved7;
         }
 
         [StructLayout(LayoutKind.Sequential)]
