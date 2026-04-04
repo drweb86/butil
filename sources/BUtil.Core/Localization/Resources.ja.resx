@@ -831,4 +831,77 @@ bin.
   <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
     <value>不明</value>
   </data>
+  <data name="Logs_Menu" xml:space="preserve">
+    <value>ログ</value>
+  </data>
+  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
+    <value>ログフォルダーを開く</value>
+  </data>
+  <data name="Other_Menu_Title" xml:space="preserve">
+    <value>その他</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
+    <value>AES-256 を復号…</value>
+  </data>
+  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
+    <value>AES-256 で暗号化…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
+    <value>Brotli を展開…</value>
+  </data>
+  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
+    <value>Brotli で圧縮…</value>
+  </data>
+  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
+    <value>AES-256 を復号</value>
+  </data>
+  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
+    <value>AES-256 で暗号化</value>
+  </data>
+  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
+    <value>Brotli を展開</value>
+  </data>
+  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
+    <value>Brotli で圧縮</value>
+  </data>
+  <data name="TechnicalTool_SourceFile" xml:space="preserve">
+    <value>元のファイル:</value>
+  </data>
+  <data name="TechnicalTool_OutputFile" xml:space="preserve">
+    <value>出力ファイル:</value>
+  </data>
+  <data name="TechnicalTool_Run" xml:space="preserve">
+    <value>実行</value>
+  </data>
+  <data name="TechnicalTool_Close" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
+    <value>AES-256 暗号化 (*.{0})</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
+    <value>Brotli 圧縮 (*.brotli)</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
+    <value>すべてのファイル</value>
+  </data>
+  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
+    <value>元のファイルを選択</value>
+  </data>
+  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
+    <value>出力ファイルを選択</value>
+  </data>
+  <data name="TechnicalTool_Completed" xml:space="preserve">
+    <value>操作が正常に完了しました。</value>
+  </data>
+  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
+    <value>ファイルが存在しません:</value>
+  </data>
+  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
+    <value>パスワードを入力してください。</value>
+  </data>
+  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
+    <value>元のファイルと出力ファイルのパスを指定してください。</value>
+  </data>
+
 </root>

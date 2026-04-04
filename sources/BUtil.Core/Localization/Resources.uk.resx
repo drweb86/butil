@@ -848,4 +848,77 @@ bin.
   <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
     <value>невідомо</value>
   </data>
+  <data name="Logs_Menu" xml:space="preserve">
+    <value>Журнали</value>
+  </data>
+  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
+    <value>Відкрити папку журналів</value>
+  </data>
+  <data name="Other_Menu_Title" xml:space="preserve">
+    <value>Інше</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
+    <value>Розшифрувати AES-256…</value>
+  </data>
+  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
+    <value>Зашифрувати AES-256…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
+    <value>Розпакувати Brotli…</value>
+  </data>
+  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
+    <value>Стиснути Brotli…</value>
+  </data>
+  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
+    <value>Розшифрувати AES-256</value>
+  </data>
+  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
+    <value>Зашифрувати AES-256</value>
+  </data>
+  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
+    <value>Розпакувати Brotli</value>
+  </data>
+  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
+    <value>Стиснути Brotli</value>
+  </data>
+  <data name="TechnicalTool_SourceFile" xml:space="preserve">
+    <value>Вхідний файл:</value>
+  </data>
+  <data name="TechnicalTool_OutputFile" xml:space="preserve">
+    <value>Вихідний файл:</value>
+  </data>
+  <data name="TechnicalTool_Run" xml:space="preserve">
+    <value>Виконати</value>
+  </data>
+  <data name="TechnicalTool_Close" xml:space="preserve">
+    <value>Закрити</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
+    <value>Зашифровано AES-256 (*.{0})</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
+    <value>Стиснуто Brotli (*.brotli)</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
+    <value>Усі файли</value>
+  </data>
+  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
+    <value>Виберіть вхідний файл</value>
+  </data>
+  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
+    <value>Виберіть вихідний файл</value>
+  </data>
+  <data name="TechnicalTool_Completed" xml:space="preserve">
+    <value>Операцію успішно завершено.</value>
+  </data>
+  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
+    <value>Файл не існує:</value>
+  </data>
+  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
+    <value>Введіть пароль.</value>
+  </data>
+  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
+    <value>Вкажіть шляхи до вхідного та вихідного файлів.</value>
+  </data>
+
 </root>

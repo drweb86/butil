@@ -847,4 +847,77 @@
   <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
     <value>अज्ञात</value>
   </data>
+  <data name="Logs_Menu" xml:space="preserve">
+    <value>नोंदी</value>
+  </data>
+  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
+    <value>नोंदी फोल्डर उघडा</value>
+  </data>
+  <data name="Other_Menu_Title" xml:space="preserve">
+    <value>इतर</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
+    <value>AES-256 डिक्रिप्ट करा…</value>
+  </data>
+  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
+    <value>AES-256 एन्क्रिप्ट करा…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
+    <value>Brotli डिकंप्रेस करा…</value>
+  </data>
+  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
+    <value>Brotli कंप्रेस करा…</value>
+  </data>
+  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
+    <value>AES-256 डिक्रिप्ट करा</value>
+  </data>
+  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
+    <value>AES-256 एन्क्रिप्ट करा</value>
+  </data>
+  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
+    <value>Brotli डिकंप्रेस करा</value>
+  </data>
+  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
+    <value>Brotli कंप्रेस करा</value>
+  </data>
+  <data name="TechnicalTool_SourceFile" xml:space="preserve">
+    <value>स्त्रोत फाइल:</value>
+  </data>
+  <data name="TechnicalTool_OutputFile" xml:space="preserve">
+    <value>आउटपुट फाइल:</value>
+  </data>
+  <data name="TechnicalTool_Run" xml:space="preserve">
+    <value>चालवा</value>
+  </data>
+  <data name="TechnicalTool_Close" xml:space="preserve">
+    <value>बंद करा</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
+    <value>AES-256 एन्क्रिप्टेड (*.{0})</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
+    <value>Brotli संपीडित (*.brotli)</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
+    <value>सर्व फाइल्स</value>
+  </data>
+  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
+    <value>स्त्रोत फाइल निवडा</value>
+  </data>
+  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
+    <value>आउटपुट फाइल निवडा</value>
+  </data>
+  <data name="TechnicalTool_Completed" xml:space="preserve">
+    <value>ऑपरेशन यशस्वीरित्या पूर्ण झाले.</value>
+  </data>
+  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
+    <value>फाइल अस्तित्वात नाही:</value>
+  </data>
+  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
+    <value>पासवर्ड प्रविष्ट करा.</value>
+  </data>
+  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
+    <value>स्त्रोत आणि आउटपुट फाइलचे मार्ग निर्दिष्ट करा.</value>
+  </data>
+
 </root>

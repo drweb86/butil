@@ -855,4 +855,77 @@ Consulta il sito web dell'applicazione per la documentazione su come impostare l
   <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
     <value>sconosciuta</value>
   </data>
+  <data name="Logs_Menu" xml:space="preserve">
+    <value>Registri</value>
+  </data>
+  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
+    <value>Apri cartella dei registri</value>
+  </data>
+  <data name="Other_Menu_Title" xml:space="preserve">
+    <value>Altro</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
+    <value>Decifra AES-256…</value>
+  </data>
+  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
+    <value>Cifra AES-256…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
+    <value>Decomprimi Brotli…</value>
+  </data>
+  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
+    <value>Comprimi Brotli…</value>
+  </data>
+  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
+    <value>Decifra AES-256</value>
+  </data>
+  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
+    <value>Cifra AES-256</value>
+  </data>
+  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
+    <value>Decomprimi Brotli</value>
+  </data>
+  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
+    <value>Comprimi Brotli</value>
+  </data>
+  <data name="TechnicalTool_SourceFile" xml:space="preserve">
+    <value>File di origine:</value>
+  </data>
+  <data name="TechnicalTool_OutputFile" xml:space="preserve">
+    <value>File di output:</value>
+  </data>
+  <data name="TechnicalTool_Run" xml:space="preserve">
+    <value>Esegui</value>
+  </data>
+  <data name="TechnicalTool_Close" xml:space="preserve">
+    <value>Chiudi</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
+    <value>Cifrato AES-256 (*.{0})</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
+    <value>Compresso Brotli (*.brotli)</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
+    <value>Tutti i file</value>
+  </data>
+  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
+    <value>Seleziona file di origine</value>
+  </data>
+  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
+    <value>Seleziona file di output</value>
+  </data>
+  <data name="TechnicalTool_Completed" xml:space="preserve">
+    <value>Operazione completata correttamente.</value>
+  </data>
+  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
+    <value>Il file non esiste:</value>
+  </data>
+  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
+    <value>Inserire una password.</value>
+  </data>
+  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
+    <value>Specificare i percorsi del file di origine e di output.</value>
+  </data>
+
 </root>

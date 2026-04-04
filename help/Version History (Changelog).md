@@ -6,11 +6,12 @@
 Passwords will be stored in Windows using DPAPI. For Ubuntu - Secret Service API.
 You cannot copy task files between machines anymore.
 Protection migration will happen on read of any task or reading list of tasks.
-Migration code will be there until 2026-10.
+Migration code will be there until 2026-10-01.
 - Card now has possibility to open last log.
 - Filter cards by title on main menu.
 - Duplicate of task card added (mainly for testing).
 - Progress details is collapsed by default. Expander state is stored between app restarts.
+- Possibility to Compress / Decompress, Encrypt / Decrypt is in BUtil \ Other menu (mainly for testing, verification of state and backup files).
 
 ## Changes
 - Audit, code coverage with AI for storages, caching, logging.

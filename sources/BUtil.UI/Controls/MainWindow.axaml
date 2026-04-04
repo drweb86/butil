@@ -80,7 +80,13 @@
 						<MenuItem Header="{Binding Theme_Value_Dark}" Command="{Binding GoDarkSide}" />
 						<MenuItem Header="{Binding Theme_Value_Light}" Command="{Binding GoLightSide}" />
 					</MenuItem>
-					<MenuItem Command="{Binding OpenLogsCommand}" Header="{Binding LogFile_OpenLogs}" />
+					<MenuItem Header="{Binding Other_Menu_Title}">
+						<MenuItem Command="{Binding OpenLogsCommand}" Header="{Binding LogFile_BrowseLogsFolder}" />
+						<MenuItem Header="{Binding TechnicalTool_Menu_DecryptAes256}" Command="{Binding TechnicalToolDecryptAes256Command}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}"/>
+						<MenuItem Header="{Binding TechnicalTool_Menu_EncryptAes256}" Command="{Binding TechnicalToolEncryptAes256Command}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}"/>
+						<MenuItem Header="{Binding TechnicalTool_Menu_DecompressBrotli}" Command="{Binding TechnicalToolDecompressBrotliCommand}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}"/>
+						<MenuItem Header="{Binding TechnicalTool_Menu_CompressBrotli}" Command="{Binding TechnicalToolCompressBrotliCommand}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}"/>
+					</MenuItem>
 				</MenuItem>
 				<MenuItem FontWeight="Bold" Header="{Binding Task_Create}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}">
 					<MenuItem FontWeight="Normal" Header="{Binding IncrementalBackupTask_Create}" Command="{Binding IncrementalBackupTaskCreateCommand}"/>

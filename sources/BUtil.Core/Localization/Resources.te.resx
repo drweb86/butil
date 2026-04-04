@@ -843,4 +843,77 @@
   <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
     <value>తెలియదు</value>
   </data>
+  <data name="Logs_Menu" xml:space="preserve">
+    <value>లాగ్‌లు</value>
+  </data>
+  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
+    <value>లాగ్ ఫోల్డర్ తెరవండి</value>
+  </data>
+  <data name="Other_Menu_Title" xml:space="preserve">
+    <value>ఇతరాలు</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
+    <value>AES-256 డిక్రిప్ట్…</value>
+  </data>
+  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
+    <value>AES-256 ఎన్‌క్రిప్ట్…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
+    <value>Brotli డీకంప్రెస్…</value>
+  </data>
+  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
+    <value>Brotli కంప్రెస్…</value>
+  </data>
+  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
+    <value>AES-256 డిక్రిప్ట్</value>
+  </data>
+  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
+    <value>AES-256 ఎన్‌క్రిప్ట్</value>
+  </data>
+  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
+    <value>Brotli డీకంప్రెస్</value>
+  </data>
+  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
+    <value>Brotli కంప్రెస్</value>
+  </data>
+  <data name="TechnicalTool_SourceFile" xml:space="preserve">
+    <value>మూల ఫైల్:</value>
+  </data>
+  <data name="TechnicalTool_OutputFile" xml:space="preserve">
+    <value>అవుట్‌పుట్ ఫైల్:</value>
+  </data>
+  <data name="TechnicalTool_Run" xml:space="preserve">
+    <value>రన్</value>
+  </data>
+  <data name="TechnicalTool_Close" xml:space="preserve">
+    <value>మూసివేయి</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
+    <value>AES-256 ఎన్‌క్రిప్టెడ్ (*.{0})</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
+    <value>Brotli కంప్రెస్డ్ (*.brotli)</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
+    <value>అన్ని ఫైళ్లు</value>
+  </data>
+  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
+    <value>మూల ఫైల్ ఎంచుకోండి</value>
+  </data>
+  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
+    <value>అవుట్‌పుట్ ఫైల్ ఎంచుకోండి</value>
+  </data>
+  <data name="TechnicalTool_Completed" xml:space="preserve">
+    <value>ఆపరేషన్ విజయవంతంగా పూర్తయింది.</value>
+  </data>
+  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
+    <value>ఫైల్ లేదు:</value>
+  </data>
+  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
+    <value>పాస్‌వర్డ్ నమోదు చేయండి.</value>
+  </data>
+  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
+    <value>మూల మరియు అవుట్‌పుట్ ఫైల్ మార్గాలను పేర్కొనండి.</value>
+  </data>
+
 </root>

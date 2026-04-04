@@ -119,5 +119,8 @@
     <Compile Update="Controls\LaunchTaskView.axaml.cs">
       <DependentUpon>LaunchTaskView.axaml</DependentUpon>
     </Compile>
+    <Compile Update="Controls\TechnicalFileToolView.axaml.cs">
+      <DependentUpon>TechnicalFileToolView.axaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

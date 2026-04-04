@@ -844,4 +844,77 @@ Xem mô tả chi tiết trong liên kết sau.</value>
   <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
     <value>không xác định</value>
   </data>
+  <data name="Logs_Menu" xml:space="preserve">
+    <value>Nhật ký</value>
+  </data>
+  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
+    <value>Mở thư mục nhật ký</value>
+  </data>
+  <data name="Other_Menu_Title" xml:space="preserve">
+    <value>Khác</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
+    <value>Giải mã AES-256…</value>
+  </data>
+  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
+    <value>Mã hóa AES-256…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
+    <value>Giải nén Brotli…</value>
+  </data>
+  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
+    <value>Nén Brotli…</value>
+  </data>
+  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
+    <value>Giải mã AES-256</value>
+  </data>
+  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
+    <value>Mã hóa AES-256</value>
+  </data>
+  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
+    <value>Giải nén Brotli</value>
+  </data>
+  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
+    <value>Nén Brotli</value>
+  </data>
+  <data name="TechnicalTool_SourceFile" xml:space="preserve">
+    <value>Tệp nguồn:</value>
+  </data>
+  <data name="TechnicalTool_OutputFile" xml:space="preserve">
+    <value>Tệp đầu ra:</value>
+  </data>
+  <data name="TechnicalTool_Run" xml:space="preserve">
+    <value>Chạy</value>
+  </data>
+  <data name="TechnicalTool_Close" xml:space="preserve">
+    <value>Đóng</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
+    <value>Đã mã hóa AES-256 (*.{0})</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
+    <value>Đã nén Brotli (*.brotli)</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
+    <value>Tất cả tệp</value>
+  </data>
+  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
+    <value>Chọn tệp nguồn</value>
+  </data>
+  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
+    <value>Chọn tệp đầu ra</value>
+  </data>
+  <data name="TechnicalTool_Completed" xml:space="preserve">
+    <value>Thao tác hoàn tất thành công.</value>
+  </data>
+  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
+    <value>Tệp không tồn tại:</value>
+  </data>
+  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
+    <value>Nhập mật khẩu.</value>
+  </data>
+  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
+    <value>Hãy chỉ định đường dẫn tệp nguồn và tệp đầu ra.</value>
+  </data>
+
 </root>

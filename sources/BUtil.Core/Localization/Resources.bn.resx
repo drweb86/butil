@@ -844,4 +844,77 @@
   <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
     <value>অজানা</value>
   </data>
+  <data name="Logs_Menu" xml:space="preserve">
+    <value>লগ</value>
+  </data>
+  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
+    <value>লগ ফোল্ডার খুলুন</value>
+  </data>
+  <data name="Other_Menu_Title" xml:space="preserve">
+    <value>অন্যান্য</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
+    <value>AES-256 ডিক্রিপ্ট…</value>
+  </data>
+  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
+    <value>AES-256 এনক্রিপ্ট…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
+    <value>Brotli ডিকম্প্রেস…</value>
+  </data>
+  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
+    <value>Brotli কম্প্রেস…</value>
+  </data>
+  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
+    <value>AES-256 ডিক্রিপ্ট</value>
+  </data>
+  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
+    <value>AES-256 এনক্রিপ্ট</value>
+  </data>
+  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
+    <value>Brotli ডিকম্প্রেস</value>
+  </data>
+  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
+    <value>Brotli কম্প্রেস</value>
+  </data>
+  <data name="TechnicalTool_SourceFile" xml:space="preserve">
+    <value>উৎস ফাইল:</value>
+  </data>
+  <data name="TechnicalTool_OutputFile" xml:space="preserve">
+    <value>আউটপুট ফাইল:</value>
+  </data>
+  <data name="TechnicalTool_Run" xml:space="preserve">
+    <value>চালান</value>
+  </data>
+  <data name="TechnicalTool_Close" xml:space="preserve">
+    <value>বন্ধ করুন</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
+    <value>AES-256 এনক্রিপ্টেড (*.{0})</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
+    <value>Brotli কম্প্রেসড (*.brotli)</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
+    <value>সমস্ত ফাইল</value>
+  </data>
+  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
+    <value>উৎস ফাইল নির্বাচন করুন</value>
+  </data>
+  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
+    <value>আউটপুট ফাইল নির্বাচন করুন</value>
+  </data>
+  <data name="TechnicalTool_Completed" xml:space="preserve">
+    <value>অপারেশন সফলভাবে সম্পন্ন হয়েছে।</value>
+  </data>
+  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
+    <value>ফাইলটি বিদ্যমান নয়:</value>
+  </data>
+  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
+    <value>একটি পাসওয়ার্ড লিখুন।</value>
+  </data>
+  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
+    <value>উৎস ও আউটপুট ফাইলের পথ নির্দিষ্ট করুন।</value>
+  </data>
+
 </root>

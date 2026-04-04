@@ -55,6 +55,34 @@ public partial class MainWindowViewModel : ViewModelBase
     }
 
 #pragma warning disable CA1822 // Mark members as static
+    public void TechnicalToolDecryptAes256Command()
+#pragma warning restore CA1822 // Mark members as static
+    {
+        WindowManager.SwitchView(new TechnicalFileToolViewModel(TechnicalFileToolKind.DecryptAes256));
+    }
+
+#pragma warning disable CA1822 // Mark members as static
+    public void TechnicalToolEncryptAes256Command()
+#pragma warning restore CA1822 // Mark members as static
+    {
+        WindowManager.SwitchView(new TechnicalFileToolViewModel(TechnicalFileToolKind.EncryptAes256));
+    }
+
+#pragma warning disable CA1822 // Mark members as static
+    public void TechnicalToolDecompressBrotliCommand()
+#pragma warning restore CA1822 // Mark members as static
+    {
+        WindowManager.SwitchView(new TechnicalFileToolViewModel(TechnicalFileToolKind.DecompressBrotli));
+    }
+
+#pragma warning disable CA1822 // Mark members as static
+    public void TechnicalToolCompressBrotliCommand()
+#pragma warning restore CA1822 // Mark members as static
+    {
+        WindowManager.SwitchView(new TechnicalFileToolViewModel(TechnicalFileToolKind.CompressBrotli));
+    }
+
+#pragma warning disable CA1822 // Mark members as static
     public void RestoreCommand()
 #pragma warning restore CA1822 // Mark members as static
     {
@@ -115,7 +143,13 @@ public partial class MainWindowViewModel : ViewModelBase
     #region Labels
     public static string Theme_Title => Resources.Theme_Title;
     public static string Task_Restore => Resources.Task_Restore;
-    public static string LogFile_OpenLogs => Resources.LogFile_OpenLogs;
+    public static string Logs_Menu => Resources.Logs_Menu;
+    public static string LogFile_BrowseLogsFolder => Resources.LogFile_BrowseLogsFolder;
+    public static string Other_Menu_Title => Resources.Other_Menu_Title;
+    public static string TechnicalTool_Menu_DecryptAes256 => Resources.TechnicalTool_Menu_DecryptAes256;
+    public static string TechnicalTool_Menu_EncryptAes256 => Resources.TechnicalTool_Menu_EncryptAes256;
+    public static string TechnicalTool_Menu_DecompressBrotli => Resources.TechnicalTool_Menu_DecompressBrotli;
+    public static string TechnicalTool_Menu_CompressBrotli => Resources.TechnicalTool_Menu_CompressBrotli;
     public static string Task_Launch_Hint => Resources.Task_Launch_Hint;
     public static string Task_Create => Resources.Task_Create;
     public static string ImportMediaTask_Create => Resources.ImportMediaTask_Create;
