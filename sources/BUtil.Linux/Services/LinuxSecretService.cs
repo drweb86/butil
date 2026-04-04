@@ -53,7 +53,7 @@ internal sealed class LinuxSecretService : SecretServiceBase
         public static void StoreSecret(string id, string value)
         {
             using var attrs = CreateAttributesHashTable(id);
-            var ok = secret_password_storev_sync(in _schema, null, $"{_labelPrefix} ({id})", value, IntPtr.Zero, out var error, attrs.Handle);
+            var ok = secret_password_storev_sync(in _schema, attrs.Handle, null, $"{_labelPrefix} ({id})", value, IntPtr.Zero, out var error);
             if (!ok)
                 ThrowLibSecretError("Failed to store secret in libsecret.", error);
             FreeError(error);
@@ -62,7 +62,7 @@ internal sealed class LinuxSecretService : SecretServiceBase
         public static string? LookupSecret(string id)
         {
             using var attrs = CreateAttributesHashTable(id);
-            var passwordPtr = secret_password_lookupv_sync(in _schema, IntPtr.Zero, out var error, attrs.Handle);
+            var passwordPtr = secret_password_lookupv_sync(in _schema, attrs.Handle, IntPtr.Zero, out var error);
             if (error != IntPtr.Zero)
                 ThrowLibSecretError("Failed to lookup secret in libsecret.", error);
 
@@ -214,21 +214,21 @@ internal sealed class LinuxSecretService : SecretServiceBase
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool secret_password_storev_sync(
             in SecretSchema schema,
+            IntPtr attributes,
 #pragma warning disable CA2101 // Specify marshaling for P/Invoke string arguments
             [MarshalAs(UnmanagedType.LPUTF8Str)] string? collection,
             [MarshalAs(UnmanagedType.LPUTF8Str)] string label,
             [MarshalAs(UnmanagedType.LPUTF8Str)] string password,
 #pragma warning restore CA2101 // Specify marshaling for P/Invoke string arguments
             IntPtr cancellable,
-            out IntPtr error,
-            IntPtr attributes);
+            out IntPtr error);
 
         [DllImport(_libraryName, CallingConvention = CallingConvention.Cdecl)]
         private static extern IntPtr secret_password_lookupv_sync(
             in SecretSchema schema,
+            IntPtr attributes,
             IntPtr cancellable,
-            out IntPtr error,
-            IntPtr attributes);
+            out IntPtr error);
 
         [DllImport(_libraryName, CallingConvention = CallingConvention.Cdecl)]
 #pragma warning disable SYSLIB1054 // Use 'LibraryImportAttribute' instead of 'DllImportAttribute' to generate P/Invoke marshalling code at compile time
