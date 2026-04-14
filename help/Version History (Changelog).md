@@ -1,4 +1,10 @@
-﻿# 2026.04.04
+﻿# 2026.04.14
+(unpublished)
+
+## Changes
+- Upgrade Avalonia to v12.
+
+# 2026.04.04
 
 ## New Features
 - Hardening security of storing of task passwords.
