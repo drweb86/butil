@@ -1,0 +1,116 @@
+name: Publish Deb Packages
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-deb:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Build deb packages
+        working-directory: sources
+        run: |
+          chmod +x build-deb.sh
+          ./build-deb.sh
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: deb-packages
+          path: Output/*.deb
+
+      - name: Upload debs to GitHub Release
+        if: github.event_name == 'release'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          for deb in Output/*.deb; do
+            gh release upload "${{ github.event.release.tag_name }}" "$deb" --clobber
+          done
+
+  update-apt-repo:
+    needs: build-deb
+    if: github.event_name == 'release'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download deb artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: deb-packages
+          path: debs
+
+      - name: Import GPG key
+        run: |
+          echo "${{ secrets.DEB_GPG_PRIVATE_KEY }}" | gpg --batch --import
+          GPG_KEY_ID=$(gpg --list-secret-keys --keyid-format long 2>/dev/null \
+            | grep "^sec" | head -1 | awk '{print $2}' | cut -d'/' -f2)
+          echo "GPG_KEY_ID=$GPG_KEY_ID" >> "$GITHUB_ENV"
+
+      - name: Checkout gh-pages branch
+        run: |
+          git clone --single-branch --branch gh-pages \
+            "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" \
+            apt-repo 2>/dev/null || {
+            mkdir apt-repo && cd apt-repo
+            git init -b gh-pages
+            git remote add origin \
+              "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+          }
+
+      - name: Update APT repository
+        run: |
+          cd apt-repo
+
+          mkdir -p pool/main
+          mkdir -p dists/stable/main/binary-amd64
+          mkdir -p dists/stable/main/binary-arm64
+
+          rm -f pool/main/*.deb
+          cp ../debs/*.deb pool/main/
+
+          gpg --armor --export "$GPG_KEY_ID" > gpg-key.pub
+
+          for arch in amd64 arm64; do
+            dpkg-scanpackages --arch "$arch" pool/ > "dists/stable/main/binary-${arch}/Packages"
+            gzip -k -f "dists/stable/main/binary-${arch}/Packages"
+          done
+
+          cd dists/stable
+          apt-ftparchive \
+            -o APT::FTPArchive::Release::Origin="BUtil" \
+            -o APT::FTPArchive::Release::Label="BUtil" \
+            -o APT::FTPArchive::Release::Suite="stable" \
+            -o APT::FTPArchive::Release::Codename="stable" \
+            -o APT::FTPArchive::Release::Architectures="amd64 arm64" \
+            -o APT::FTPArchive::Release::Components="main" \
+            -o APT::FTPArchive::Release::Description="BUtil APT Repository" \
+            release . > Release
+
+          gpg --batch --yes --default-key "$GPG_KEY_ID" -abs -o Release.gpg Release
+          gpg --batch --yes --default-key "$GPG_KEY_ID" --clearsign -o InRelease Release
+          cd ../..
+
+      - name: Push to gh-pages
+        run: |
+          cd apt-repo
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --staged --quiet || git commit -m "Update APT repo for ${{ github.event.release.tag_name }}"
+          git push origin gh-pages
