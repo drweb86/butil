@@ -11,7 +11,7 @@ OUTPUT_DIR="$REPO_ROOT/Output"
 
 cd "$SCRIPT_DIR"
 
-version=$(head -1 "$REPO_ROOT/help/Version History (Changelog).md" | sed 's/^# //')
+version=$(head -1 "$REPO_ROOT/help/Version History (Changelog).md" | sed 's/^\xEF\xBB\xBF//' | sed 's/^# //')
 echo "Building BUtil v$version deb packages"
 echo ""
 

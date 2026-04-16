@@ -1,8 +1,10 @@
-﻿# 2026.04.14
-(unpublished)
+﻿# 2026.04.16
 
 ## Changes
 - Upgrade Avalonia to v12.
+
+## New Features
+- [Ubuntu] deb packages.
 
 # 2026.04.04
 
