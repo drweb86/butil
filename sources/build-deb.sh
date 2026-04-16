@@ -104,6 +104,15 @@ chmod +x /usr/lib/butil/butilc
 if command -v update-desktop-database > /dev/null 2>&1; then
     update-desktop-database -q /usr/share/applications || true
 fi
+if [ -n "$SUDO_USER" ]; then
+    DESKTOP_DIR=$(su - "$SUDO_USER" -c 'xdg-user-dir DESKTOP' 2>/dev/null) || true
+    if [ -n "$DESKTOP_DIR" ] && [ -d "$DESKTOP_DIR" ]; then
+        cp /usr/share/applications/butil.desktop "$DESKTOP_DIR/BUtil.desktop"
+        chown "$SUDO_USER":"$SUDO_USER" "$DESKTOP_DIR/BUtil.desktop"
+        chmod 755 "$DESKTOP_DIR/BUtil.desktop"
+        su - "$SUDO_USER" -c "gio set '$DESKTOP_DIR/BUtil.desktop' metadata::trusted true" 2>/dev/null || true
+    fi
+fi
 POSTINST
     chmod 755 "$pkg_root/DEBIAN/postinst"
 
@@ -112,6 +121,12 @@ POSTINST
 set -e
 if command -v update-desktop-database > /dev/null 2>&1; then
     update-desktop-database -q /usr/share/applications || true
+fi
+if [ -n "$SUDO_USER" ]; then
+    DESKTOP_DIR=$(su - "$SUDO_USER" -c 'xdg-user-dir DESKTOP' 2>/dev/null) || true
+    if [ -n "$DESKTOP_DIR" ]; then
+        rm -f "$DESKTOP_DIR/BUtil.desktop"
+    fi
 fi
 POSTRM
     chmod 755 "$pkg_root/DEBIAN/postrm"

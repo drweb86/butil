@@ -1,10 +1,13 @@
 ﻿# 2026.04.16.2
+(unpublished)
 
 ## Changes
 - Upgrade Avalonia to v12.
 
 ## New Features
-- [Ubuntu] deb packages.
+- [Ubuntu] deb packages and repository are created.
+If you have it installed via script, please uninstall.
+And then install back via Method 1. Apt-get.
 
 # 2026.04.04
 
