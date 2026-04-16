@@ -1,140 +1,116 @@
-#!/bin/bash
+name: Publish Deb Packages
 
-# Builds BUtil .deb packages for amd64 and arm64.
-# Run from the sources/ directory on Ubuntu with .NET 10 SDK installed.
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
 
-set -e
+permissions:
+  contents: write
 
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
-OUTPUT_DIR="$REPO_ROOT/Output"
+jobs:
+  build-deb:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-cd "$SCRIPT_DIR"
+      - name: Setup .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
 
-version=$(head -1 "$REPO_ROOT/help/Version History (Changelog).md" | sed 's/^\xEF\xBB\xBF//' | sed 's/^# //')
-echo "Building BUtil v$version deb packages"
-echo ""
+      - name: Build deb packages
+        working-directory: sources
+        run: |
+          chmod +x build-deb.sh
+          ./build-deb.sh
 
-rm -rf "$OUTPUT_DIR"
-mkdir -p "$OUTPUT_DIR"
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: deb-packages
+          path: Output/*.deb
 
-declare -A ARCH_MAP
-ARCH_MAP["linux-x64"]="amd64"
-ARCH_MAP["linux-arm64"]="arm64"
+      - name: Upload debs to GitHub Release
+        if: github.event_name == 'release'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          for deb in Output/*.deb; do
+            gh release upload "${{ github.event.release.tag_name }}" "$deb" --clobber
+          done
 
-for rid in "${!ARCH_MAP[@]}"; do
-    deb_arch="${ARCH_MAP[$rid]}"
-    publish_dir="$OUTPUT_DIR/staging/$deb_arch/publish"
-    pkg_root="$OUTPUT_DIR/staging/$deb_arch/pkg"
-    deb_file="$OUTPUT_DIR/butil_${version}_${deb_arch}.deb"
+  update-apt-repo:
+    needs: build-deb
+    if: github.event_name == 'release'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download deb artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: deb-packages
+          path: debs
 
-    echo "========================================="
-    echo "  Building $rid ($deb_arch)"
-    echo "========================================="
-    echo ""
+      - name: Import GPG key
+        run: |
+          echo "${{ secrets.DEB_GPG_PRIVATE_KEY }}" | gpg --batch --import
+          GPG_KEY_ID=$(gpg --list-secret-keys --keyid-format long 2>/dev/null \
+            | grep "^sec" | head -1 | awk '{print $2}' | cut -d'/' -f2)
+          echo "GPG_KEY_ID=$GPG_KEY_ID" >> "$GITHUB_ENV"
 
-    rm -rf "$OUTPUT_DIR/staging/$deb_arch"
+      - name: Checkout gh-pages branch
+        run: |
+          git clone --single-branch --branch gh-pages \
+            "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" \
+            apt-repo 2>/dev/null || {
+            mkdir apt-repo && cd apt-repo
+            git init -b gh-pages
+            git remote add origin \
+              "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+          }
 
-    echo "Publishing..."
-    dotnet publish \
-        "/p:InformationalVersion=$version" \
-        "/p:VersionPrefix=$version" \
-        "/p:Version=$version" \
-        "/p:AssemblyVersion=$version" \
-        "--runtime=$rid" \
-        -c Release \
-        "/p:PublishDir=$publish_dir" \
-        /p:PublishReadyToRun=false \
-        /p:RunAnalyzersDuringBuild=False \
-        --self-contained true \
-        --property WarningLevel=0
+      - name: Update APT repository
+        run: |
+          cd apt-repo
 
-    echo "Creating package structure..."
-    mkdir -p "$pkg_root/DEBIAN"
-    mkdir -p "$pkg_root/usr/lib/butil"
-    mkdir -p "$pkg_root/usr/bin"
-    mkdir -p "$pkg_root/usr/share/applications"
-    mkdir -p "$pkg_root/usr/share/pixmaps"
+          mkdir -p pool/main
+          mkdir -p dists/stable/main/binary-amd64
+          mkdir -p dists/stable/main/binary-arm64
 
-    cp -a "$publish_dir/"* "$pkg_root/usr/lib/butil/"
+          rm -f pool/main/*.deb
+          cp ../debs/*.deb pool/main/
 
-    ln -sf ../lib/butil/butil-ui.Desktop "$pkg_root/usr/bin/butil-ui"
-    ln -sf ../lib/butil/butilc "$pkg_root/usr/bin/butilc"
+          gpg --armor --export "$GPG_KEY_ID" > gpg-key.pub
 
-    cp "$REPO_ROOT/help/Assets/Icon 120x120.png" "$pkg_root/usr/share/pixmaps/butil.png"
+          for arch in amd64 arm64; do
+            dpkg-scanpackages --arch "$arch" pool/ > "dists/stable/main/binary-${arch}/Packages"
+            gzip -k -f "dists/stable/main/binary-${arch}/Packages"
+          done
 
-    cat > "$pkg_root/usr/share/applications/butil.desktop" << 'DESKTOP'
-[Desktop Entry]
-Version=1.0
-Name=BUtil
-GenericName=Backup and Synchronization
-Comment=Incremental backup, synchronization, and media import with deduplication
-Categories=Utility;Archiving;FileTools;
-Type=Application
-Terminal=false
-Exec=butil-ui
-Icon=butil
-StartupWMClass=butil-ui.Desktop
-DESKTOP
+          cd dists/stable
+          apt-ftparchive \
+            -o APT::FTPArchive::Release::Origin="BUtil" \
+            -o APT::FTPArchive::Release::Label="BUtil" \
+            -o APT::FTPArchive::Release::Suite="stable" \
+            -o APT::FTPArchive::Release::Codename="stable" \
+            -o APT::FTPArchive::Release::Architectures="amd64 arm64" \
+            -o APT::FTPArchive::Release::Components="main" \
+            -o APT::FTPArchive::Release::Description="BUtil APT Repository" \
+            release . > Release
 
-    installed_size=$(du -sk "$pkg_root" | cut -f1)
+          gpg --batch --yes --default-key "$GPG_KEY_ID" -abs -o Release.gpg Release
+          gpg --batch --yes --default-key "$GPG_KEY_ID" --clearsign -o InRelease Release
+          cd ../..
 
-    cat > "$pkg_root/DEBIAN/control" << CONTROL
-Package: butil
-Version: $version
-Section: utils
-Priority: optional
-Architecture: $deb_arch
-Installed-Size: $installed_size
-Depends: libc6, libgcc-s1, libstdc++6, libx11-6, libfontconfig1, dbus-x11, cron
-Maintainer: Siarhei Kuchuk <https://github.com/drweb86>
-Homepage: https://github.com/drweb86/butil
-Description: Incremental backup, synchronization, and media import tool
- BUtil creates incremental backups, synchronization, and imports
- multimedia with deduplication and FTPS, SFTP, SMB/CIFS support.
- .
- Features: AES-256 encryption, scheduling via console tool, graphical UI.
-CONTROL
-
-    cat > "$pkg_root/DEBIAN/postinst" << 'POSTINST'
-#!/bin/bash
-set -e
-chmod +x /usr/lib/butil/butil-ui.Desktop
-chmod +x /usr/lib/butil/butilc
-if command -v update-desktop-database > /dev/null 2>&1; then
-    update-desktop-database -q /usr/share/applications || true
-fi
-POSTINST
-    chmod 755 "$pkg_root/DEBIAN/postinst"
-
-    cat > "$pkg_root/DEBIAN/postrm" << 'POSTRM'
-#!/bin/bash
-set -e
-if command -v update-desktop-database > /dev/null 2>&1; then
-    update-desktop-database -q /usr/share/applications || true
-fi
-POSTRM
-    chmod 755 "$pkg_root/DEBIAN/postrm"
-
-    echo "Setting permissions..."
-    find "$pkg_root/usr" -type d -exec chmod 755 {} \;
-    find "$pkg_root/usr/lib/butil" -type f -exec chmod 644 {} \;
-    chmod 755 "$pkg_root/usr/lib/butil/butil-ui.Desktop"
-    chmod 755 "$pkg_root/usr/lib/butil/butilc"
-    find "$pkg_root/usr/lib/butil" \( -name "*.so" -o -name "*.so.*" \) -exec chmod 755 {} \;
-    chmod 644 "$pkg_root/usr/share/applications/butil.desktop"
-    chmod 644 "$pkg_root/usr/share/pixmaps/butil.png"
-
-    echo "Building .deb..."
-    dpkg-deb --build --root-owner-group "$pkg_root" "$deb_file"
-
-    echo "Created: $deb_file"
-    echo ""
-done
-
-rm -rf "$OUTPUT_DIR/staging"
-
-echo "========================================="
-echo "  Build complete"
-echo "========================================="
-ls -lh "$OUTPUT_DIR"/*.deb
+      - name: Push to gh-pages
+        run: |
+          cd apt-repo
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --staged --quiet || git commit -m "Update APT repo for ${{ github.event.release.tag_name }}"
+          git push origin gh-pages
