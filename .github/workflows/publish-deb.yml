@@ -64,7 +64,7 @@ jobs:
         id: version
         shell: pwsh
         run: |
-          $version = (Get-Content "help\Version History (Changelog).md" -First 1).Substring(2)
+          $version = (Get-Content "CHANGELOG.md" -First 1).Substring(2)
           echo "version=$version" >> $env:GITHUB_OUTPUT
           echo "Version: $version"
 
