@@ -1,4 +1,4 @@
-﻿# 2026.04.16.3
+﻿# 2026.04.16.4
 (unpublished)
 
 ## Changes
@@ -7,6 +7,7 @@
 ## New Features
 - [Ubuntu] deb packages and repository are created.
 If you have it installed via script, you have now Apt-get way.
+- Increase security of supply chain. Windows Setup and binaries are created at server via Github Actions.
 
 # 2026.04.04
 
