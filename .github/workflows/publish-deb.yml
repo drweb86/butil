@@ -1,4 +1,4 @@
-name: Publish Deb Packages
+name: Build and Publish
 
 on:
   release:
@@ -27,7 +27,7 @@ jobs:
           chmod +x build-deb.sh
           ./build-deb.sh
 
-      - name: Upload build artifacts
+      - name: Upload deb artifacts
         uses: actions/upload-artifact@v4
         with:
           name: deb-packages
@@ -41,6 +41,103 @@ jobs:
           for deb in Output/*.deb; do
             gh release upload "${{ github.event.release.tag_name }}" "$deb" --clobber
           done
+
+  build-windows:
+    runs-on: windows-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      installer_hash: ${{ steps.hash.outputs.hash }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Get version
+        id: version
+        shell: pwsh
+        run: |
+          $version = (Get-Content "help\Version History (Changelog).md" -First 1).Substring(2)
+          echo "version=$version" >> $env:GITHUB_OUTPUT
+          echo "Version: $version"
+
+      - name: Publish win-x64
+        shell: pwsh
+        working-directory: sources
+        run: |
+          $v = "${{ steps.version.outputs.version }}"
+          dotnet publish "/p:InformationalVersion=$v" "/p:VersionPrefix=$v" "/p:Version=$v" "/p:AssemblyVersion=$v" `
+            "--runtime=win-x64" -c Release "/p:PublishDir=../../Output/publish/x64" `
+            /p:PublishReadyToRun=false /p:RunAnalyzersDuringBuild=False --self-contained true --property WarningLevel=0
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+
+      - name: Publish win-arm64
+        shell: pwsh
+        working-directory: sources
+        run: |
+          $v = "${{ steps.version.outputs.version }}"
+          dotnet publish "/p:InformationalVersion=$v" "/p:VersionPrefix=$v" "/p:Version=$v" "/p:AssemblyVersion=$v" `
+            "--runtime=win-arm64" -c Release "/p:PublishDir=../../Output/publish/arm64" `
+            /p:PublishReadyToRun=false /p:RunAnalyzersDuringBuild=False --self-contained true --property WarningLevel=0
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+
+      - name: Prepare binaries README
+        shell: pwsh
+        run: Copy-Item "help\Readme.Binaries.md" "Output\publish\README.md"
+
+      - name: Install NSIS
+        shell: pwsh
+        run: choco install nsis -y
+
+      - name: Build NSIS installer
+        shell: pwsh
+        working-directory: sources
+        run: |
+          $v = "${{ steps.version.outputs.version }}"
+          & "C:\Program Files (x86)\NSIS\Bin\makensis.exe" "/DPRODUCT_VERSION=$v" "setup.nsi"
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+
+      - name: Compute installer SHA256
+        id: hash
+        shell: pwsh
+        run: |
+          $v = "${{ steps.version.outputs.version }}"
+          $hash = (Get-FileHash -Path "Output\BUtil_v$v.exe" -Algorithm SHA256).Hash
+          echo "hash=$hash" >> $env:GITHUB_OUTPUT
+          echo "Installer SHA256: $hash"
+
+      - name: Pack 7z archive
+        shell: pwsh
+        run: |
+          $v = "${{ steps.version.outputs.version }}"
+          & "C:\Program Files\7-Zip\7z.exe" a -y "Output\BUtil_v${v}_win-binaries.7z" "Output\publish\*" -mx9 -t7z -m0=lzma2 -ms=on -sccUTF-8 -ssw
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+
+      - name: Clean publish staging
+        shell: pwsh
+        run: Remove-Item "Output\publish" -Recurse -Force
+
+      - name: Upload Windows artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-packages
+          path: |
+            Output/*.exe
+            Output/*.7z
+
+      - name: Upload Windows artifacts to GitHub Release
+        if: github.event_name == 'release'
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          $v = "${{ steps.version.outputs.version }}"
+          gh release upload "${{ github.event.release.tag_name }}" "Output\BUtil_v$v.exe" --clobber
+          gh release upload "${{ github.event.release.tag_name }}" "Output\BUtil_v${v}_win-binaries.7z" --clobber
 
   update-apt-repo:
     needs: build-deb
@@ -116,3 +213,59 @@ jobs:
           git add -A
           git diff --staged --quiet || git commit -m "Update APT repo for ${{ github.event.release.tag_name }}"
           git push origin gh-pages
+
+  update-winget:
+    needs: build-windows
+    if: github.event_name == 'release'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: sources/tools/winget-pkgs
+
+      - name: Create winget-pkgs branch
+        run: |
+          version="${{ needs.build-windows.outputs.version }}"
+          hash="${{ needs.build-windows.outputs.installer_hash }}"
+          release_date=$(echo "$version" | tr '.' '-')
+          current_year=$(date +%Y)
+
+          echo "Version: $version"
+          echo "Hash: $hash"
+          echo "Release date: $release_date"
+
+          git clone --depth 1 \
+            "https://x-access-token:${{ secrets.WINGET_FORK_PAT }}@github.com/drweb86/winget-pkgs.git" \
+            winget-fork
+          cd winget-fork
+          git checkout -b "butil-${version}"
+
+          manifest_dir="manifests/s/SiarheiKuchuk/BUtil/${version}"
+          mkdir -p "$manifest_dir"
+
+          sed -e "s/APP_VERSION_STRING/$version/g" \
+              -e "s/2001-01-01/$release_date/g" \
+              -e "s/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/$hash/g" \
+              ../sources/tools/winget-pkgs/SiarheiKuchuk.BUtil.installer.yaml \
+              > "$manifest_dir/SiarheiKuchuk.BUtil.installer.yaml"
+
+          sed -e "s/APP_VERSION_STRING/$version/g" \
+              ../sources/tools/winget-pkgs/SiarheiKuchuk.BUtil.yaml \
+              > "$manifest_dir/SiarheiKuchuk.BUtil.yaml"
+
+          for locale_file in ../sources/tools/winget-pkgs/SiarheiKuchuk.BUtil.locale.*.yaml; do
+            filename=$(basename "$locale_file")
+            sed -e "s/APP_VERSION_STRING/$version/g" \
+                -e "s/CURRENT_YEAR/$current_year/g" \
+                "$locale_file" > "$manifest_dir/$filename"
+          done
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "BUtil $version"
+          git push -u origin "butil-${version}"
+
+          echo ""
+          echo "Branch 'butil-${version}' pushed to drweb86/winget-pkgs"
+          echo "Create PR at: https://github.com/microsoft/winget-pkgs/compare/master...drweb86:winget-pkgs:butil-${version}"
