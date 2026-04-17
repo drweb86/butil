@@ -44,4 +44,4 @@
 
 ## [Documentation](https://github.com/drweb86/butil/tree/master/help)
 
-- [Version history](./help/Version%20History%20(Changelog).md)
+- [Changelog](./CHANGELOG.md)
