@@ -1,5 +1,6 @@
 ; Compression
 SetCompressor /FINAL /SOLID lzma
+SetCompressorDictSize 64
 
 ; Defines
 !define PRODUCT_NAME "BUtil"
