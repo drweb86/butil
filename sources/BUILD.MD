@@ -2,39 +2,6 @@
 
 - Windows 11x64 Professional;
 - Microsoft Visual Studio 2026;
-- AMD architecture
-
-# Packaging
-
-## Windows
-
-### Prerequisites
-
-- NSIS 3.11 (must be installed in default directory);
-
-### Build.cmd
-
-Update version (it should match the version name and tag of release!) in Version History file. 
-
-Update version in the ubuntu-install.sh script
-
-Launch build.cmd.
-
-It will create <root>\output folder with all compiled.
-
-## Ubuntu (.deb packages)
-
-### Manual (on Ubuntu)
-
-Prerequisites: .NET 10 SDK, `dpkg-deb` (standard on Ubuntu).
-
-```
-cd sources
-chmod +x build-deb.sh
-./build-deb.sh
-```
-
-Output `.deb` files appear in the `Output/` directory at the repository root.
 
 # Automated Release (GitHub Actions)
 
@@ -94,8 +61,13 @@ git checkout master
 
 ## Release process
 
-1. Update version in `help/Version History (Changelog).md`
+1. Update version in `CHANGELOG.md`
 2. Commit and push to `master`
-3. Create a GitHub Release (tag matching the version, e.g. `2026.04.14`)
+3. Create a GitHub Release (tag matching the version, e.g. `2026.04.14`, title matching the version)
+
+Take changes from changelog.
+
+Prepend Ubuntu references from previous release.
+
 4. The workflow automatically builds and uploads all artifacts
 5. For WinGet: create a PR from the auto-generated `butil-VERSION` branch in `drweb86/winget-pkgs` to `microsoft/winget-pkgs`
