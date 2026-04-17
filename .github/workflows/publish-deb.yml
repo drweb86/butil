@@ -8,6 +8,9 @@ on:
 permissions:
   contents: write
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   build-deb:
     runs-on: ubuntu-latest
@@ -114,8 +117,10 @@ jobs:
         shell: pwsh
         run: |
           $v = "${{ steps.version.outputs.version }}"
-          & "C:\Program Files\7-Zip\7z.exe" a -y "Output\BUtil_v${v}_win-binaries.7z" "Output\publish\*" -mx9 -t7z -m0=lzma2 -ms=on -sccUTF-8 -ssw
+          Push-Location "Output\publish"
+          & "C:\Program Files\7-Zip\7z.exe" a -y "..\BUtil_v${v}_win-binaries.7z" * -mx9 -t7z -m0=lzma2 -ms=on -sccUTF-8 -ssw
           if ($LASTEXITCODE -ne 0) { exit 1 }
+          Pop-Location
 
       - name: Clean publish staging
         shell: pwsh
