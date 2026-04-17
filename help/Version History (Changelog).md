@@ -6,8 +6,7 @@
 
 ## New Features
 - [Ubuntu] deb packages and repository are created.
-If you have it installed via script, please uninstall.
-And then install back via Method 1. Apt-get.
+If you have it installed via script, you have now Apt-get way.
 
 # 2026.04.04
 
