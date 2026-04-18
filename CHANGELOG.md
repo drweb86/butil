@@ -1,5 +1,4 @@
-﻿# 2026.04.16.5
-(unpublished)
+﻿# 2026.04.19
 
 ## Changes
 - Upgrade Avalonia to v12.
