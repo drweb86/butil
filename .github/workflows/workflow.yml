@@ -166,30 +166,17 @@ jobs:
           echo "allow-loopback-pinentry" >> ~/.gnupg/gpg-agent.conf
           gpgconf --kill gpg-agent
 
-      - name: Checkout gh-pages branch
+      - name: Build APT repository
         run: |
-          git clone --single-branch --branch gh-pages \
-            "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" \
-            apt-repo 2>/dev/null || {
-            mkdir apt-repo && cd apt-repo
-            git init -b gh-pages
-            git remote add origin \
-              "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
-          }
+          mkdir -p apt-repo/pool/main
+          mkdir -p apt-repo/dists/stable/main/binary-amd64
+          mkdir -p apt-repo/dists/stable/main/binary-arm64
 
-      - name: Update APT repository
-        run: |
+          cp debs/*.deb apt-repo/pool/main/
+
+          gpg --armor --export "$GPG_KEY_ID" > apt-repo/gpg-key.pub
+
           cd apt-repo
-
-          mkdir -p pool/main
-          mkdir -p dists/stable/main/binary-amd64
-          mkdir -p dists/stable/main/binary-arm64
-
-          rm -f pool/main/*.deb
-          cp ../debs/*.deb pool/main/
-
-          gpg --armor --export "$GPG_KEY_ID" > gpg-key.pub
-
           for arch in amd64 arm64; do
             dpkg-scanpackages --arch "$arch" pool/ > "dists/stable/main/binary-${arch}/Packages"
             gzip -k -f "dists/stable/main/binary-${arch}/Packages"
@@ -210,14 +197,16 @@ jobs:
           gpg --batch --yes --pinentry-mode loopback --passphrase "${{ secrets.DEB_GPG_PASSPHRASE }}" --default-key "$GPG_KEY_ID" --clearsign -o InRelease Release
           cd ../..
 
-      - name: Push to gh-pages
+      - name: Force-push to gh-pages
         run: |
           cd apt-repo
+          git init -b gh-pages
+          git remote add origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
-          git diff --staged --quiet || git commit -m "Update APT repo for ${{ github.event.release.tag_name }}"
-          git push origin gh-pages
+          git commit -m "APT repo for ${{ github.event.release.tag_name }}"
+          git push --force origin gh-pages
 
   update-winget:
     needs: build-windows
