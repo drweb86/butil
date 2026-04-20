@@ -1,6 +1,6 @@
 # Prerequisites
 
-- Windows 11x64 Professional;
+- Windows 11 x64 Professional;
 - Microsoft Visual Studio 2026;
 
 # Automated Release (GitHub Actions)
