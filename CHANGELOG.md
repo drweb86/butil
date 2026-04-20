@@ -1,4 +1,10 @@
-﻿# 2026.04.20
+﻿# 2026.04.21
+(unpublished)
+
+## Changes
+- Removed Avalonia.Diagnostics as F12 crashed app.
+
+# 2026.04.20
 
 ## Changes
 - Upgrade Avalonia to v12.
