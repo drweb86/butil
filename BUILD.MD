@@ -70,4 +70,4 @@ Take changes from changelog.
 Prepend Ubuntu references from previous release.
 
 4. The workflow automatically builds and uploads all artifacts
-5. For WinGet: create a PR from the auto-generated `butil-VERSION` branch in `drweb86/winget-pkgs` to `microsoft/winget-pkgs`
+5. For WinGet: create a PR from the auto-generated `app-VERSION` branch in `drweb86/winget-pkgs` to `microsoft/winget-pkgs`
