@@ -92,6 +92,11 @@ jobs:
         shell: pwsh
         run: Copy-Item "help\Readme.Binaries.md" "Output\publish\README.md"
 
+      - name: Generate NSIS language file
+        shell: pwsh
+        working-directory: sources/tools/ResxSorter
+        run: dotnet run
+
       - name: Install NSIS
         shell: pwsh
         run: choco install nsis -y
