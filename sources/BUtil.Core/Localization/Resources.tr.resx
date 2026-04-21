@@ -448,6 +448,47 @@ Yapılan yedeklerden herhangi biri başarısız olursa, birincisi (tam yedek) de
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
     <value>Artımlı yedekleme görevi</value>
   </data>
+  <data name="Installer_AdminRequired" xml:space="preserve">
+    <value>Tüm kullanıcılar için yüklemek için yönetici ayrıcalıkları gereklidir.
+Lütfen yükleyiciyi yönetici olarak çalıştırın veya /CURRENTUSER kullanın.</value>
+  </data>
+  <data name="Installer_AdminRequiredDetailed" xml:space="preserve">
+    <value>Tüm kullanıcılar için yüklemek için yönetici ayrıcalıkları gereklidir.
+
+Lütfen şunlardan birini yapın:
+- 'Yalnızca geçerli kullanıcı için yükle' seçeneğini seçin veya
+- Bu yükleyiciyi yönetici olarak çalıştırın</value>
+  </data>
+  <data name="Installer_AllUsersDescription" xml:space="preserve">
+    <value>Uygulama bu bilgisayardaki tüm kullanıcılar için kullanılabilir olacaktır.</value>
+  </data>
+  <data name="Installer_AllUsersOption" xml:space="preserve">
+    <value>&amp;Tüm kullanıcılar için yükle (yönetici ayrıcalıkları gerektirir)</value>
+  </data>
+  <data name="Installer_ArchRequired" xml:space="preserve">
+    <value>Bu yükleyici, Windows'un x64 veya arm64 sürümünü gerektirir.</value>
+  </data>
+  <data name="Installer_CurrentUserDescription" xml:space="preserve">
+    <value>Önerilir. Uygulama yalnızca sizin kullanıcı hesabınız için kullanılabilir olacaktır.</value>
+  </data>
+  <data name="Installer_CurrentUserOption" xml:space="preserve">
+    <value>Yalnızca &amp;geçerli kullanıcı için yükle</value>
+  </data>
+  <data name="Installer_InstallingFor" xml:space="preserve">
+    <value>Şunun için yükleniyor:</value>
+  </data>
+  <data name="Installer_InstallModeDescription" xml:space="preserve">
+    <value>BUtil'i yalnızca kendiniz için mi yoksa bu bilgisayarın tüm kullanıcıları için mi yüklemek istediğinizi seçin.</value>
+  </data>
+  <data name="Installer_InstallModeSubtitle" xml:space="preserve">
+    <value>Bu uygulamayı kimin kullanabileceğini seçin</value>
+  </data>
+  <data name="Installer_InstallModeTitle" xml:space="preserve">
+    <value>Yükleme Türünü Seçin</value>
+  </data>
+  <data name="Installer_LaunchApp" xml:space="preserve">
+    <value>Uygulamayı Başlat</value>
+  </data>
   <data name="KeyFile_Field" xml:space="preserve">
     <value>Anahtar dosyası:</value>
   </data>

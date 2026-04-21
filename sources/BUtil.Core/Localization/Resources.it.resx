@@ -456,6 +456,47 @@ Consulta il sito web dell'applicazione per la documentazione su come impostare l
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
     <value>Attività backup incrementale</value>
   </data>
+  <data name="Installer_AdminRequired" xml:space="preserve">
+    <value>Sono necessari i privilegi di amministratore per installare per tutti gli utenti.
+Eseguire il programma di installazione come amministratore oppure utilizzare /CURRENTUSER.</value>
+  </data>
+  <data name="Installer_AdminRequiredDetailed" xml:space="preserve">
+    <value>Sono necessari i privilegi di amministratore per installare per tutti gli utenti.
+
+Scegliere una delle seguenti opzioni:
+- Selezionare 'Installa solo per l'utente corrente', oppure
+- Eseguire il programma di installazione come amministratore</value>
+  </data>
+  <data name="Installer_AllUsersDescription" xml:space="preserve">
+    <value>L'applicazione sarà disponibile per tutti gli utenti di questo computer.</value>
+  </data>
+  <data name="Installer_AllUsersOption" xml:space="preserve">
+    <value>Installa per &amp;tutti gli utenti (richiede privilegi di amministratore)</value>
+  </data>
+  <data name="Installer_ArchRequired" xml:space="preserve">
+    <value>Questo programma di installazione richiede una versione x64 o arm64 di Windows.</value>
+  </data>
+  <data name="Installer_CurrentUserDescription" xml:space="preserve">
+    <value>Consigliato. L'applicazione sarà disponibile solo per il proprio account utente.</value>
+  </data>
+  <data name="Installer_CurrentUserOption" xml:space="preserve">
+    <value>Installa solo per l'&amp;utente corrente</value>
+  </data>
+  <data name="Installer_InstallingFor" xml:space="preserve">
+    <value>Installazione per:</value>
+  </data>
+  <data name="Installer_InstallModeDescription" xml:space="preserve">
+    <value>Scegliere se installare BUtil solo per sé o per tutti gli utenti di questo computer.</value>
+  </data>
+  <data name="Installer_InstallModeSubtitle" xml:space="preserve">
+    <value>Selezionare chi può utilizzare questa applicazione</value>
+  </data>
+  <data name="Installer_InstallModeTitle" xml:space="preserve">
+    <value>Scegli il tipo di installazione</value>
+  </data>
+  <data name="Installer_LaunchApp" xml:space="preserve">
+    <value>Avvia applicazione</value>
+  </data>
   <data name="KeyFile_Field" xml:space="preserve">
     <value>File chiave:</value>
   </data>

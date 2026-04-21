@@ -451,6 +451,47 @@
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
     <value>इंक्रीमेंटल बैकअप कार्य</value>
   </data>
+  <data name="Installer_AdminRequired" xml:space="preserve">
+    <value>सभी उपयोगकर्ताओं के लिए इंस्टॉल करने हेतु व्यवस्थापक विशेषाधिकार आवश्यक हैं।
+कृपया इंस्टॉलर को व्यवस्थापक के रूप में चलाएँ या /CURRENTUSER का उपयोग करें।</value>
+  </data>
+  <data name="Installer_AdminRequiredDetailed" xml:space="preserve">
+    <value>सभी उपयोगकर्ताओं के लिए इंस्टॉल करने हेतु व्यवस्थापक विशेषाधिकार आवश्यक हैं।
+
+कृपया:
+- 'केवल वर्तमान उपयोगकर्ता के लिए इंस्टॉल करें' चुनें, या
+- इस इंस्टॉलर को व्यवस्थापक के रूप में चलाएँ</value>
+  </data>
+  <data name="Installer_AllUsersDescription" xml:space="preserve">
+    <value>यह एप्लिकेशन इस कंप्यूटर के सभी उपयोगकर्ताओं के लिए उपलब्ध होगा।</value>
+  </data>
+  <data name="Installer_AllUsersOption" xml:space="preserve">
+    <value>&amp;सभी उपयोगकर्ताओं के लिए इंस्टॉल करें (व्यवस्थापक विशेषाधिकार आवश्यक)</value>
+  </data>
+  <data name="Installer_ArchRequired" xml:space="preserve">
+    <value>इस इंस्टॉलर के लिए Windows का x64 या arm64 संस्करण आवश्यक है।</value>
+  </data>
+  <data name="Installer_CurrentUserDescription" xml:space="preserve">
+    <value>अनुशंसित। एप्लिकेशन केवल आपके उपयोगकर्ता खाते के लिए उपलब्ध होगा।</value>
+  </data>
+  <data name="Installer_CurrentUserOption" xml:space="preserve">
+    <value>केवल &amp;वर्तमान उपयोगकर्ता के लिए इंस्टॉल करें</value>
+  </data>
+  <data name="Installer_InstallingFor" xml:space="preserve">
+    <value>इंस्टॉल हो रहा है:</value>
+  </data>
+  <data name="Installer_InstallModeDescription" xml:space="preserve">
+    <value>कृपया चुनें कि आप BUtil को केवल अपने लिए इंस्टॉल करना चाहते हैं या इस कंप्यूटर के सभी उपयोगकर्ताओं के लिए।</value>
+  </data>
+  <data name="Installer_InstallModeSubtitle" xml:space="preserve">
+    <value>चुनें कि इस एप्लिकेशन का उपयोग कौन कर सकता है</value>
+  </data>
+  <data name="Installer_InstallModeTitle" xml:space="preserve">
+    <value>इंस्टॉलेशन प्रकार चुनें</value>
+  </data>
+  <data name="Installer_LaunchApp" xml:space="preserve">
+    <value>ऐप लॉन्च करें</value>
+  </data>
   <data name="KeyFile_Field" xml:space="preserve">
     <value>कुंजी फ़ाइल:</value>
   </data>

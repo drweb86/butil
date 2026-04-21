@@ -447,6 +447,47 @@
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
     <value>ఇంక్రిమెంటల్ బ్యాకప్ పనేలు</value>
   </data>
+  <data name="Installer_AdminRequired" xml:space="preserve">
+    <value>అన్ని వినియోగదారులకు ఇన్‌స్టాల్ చేయడానికి అడ్మినిస్ట్రేటర్ అధికారాలు అవసరం.
+దయచేసి ఇన్‌స్టాలర్‌ను అడ్మినిస్ట్రేటర్‌గా రన్ చేయండి లేదా /CURRENTUSER ఉపయోగించండి.</value>
+  </data>
+  <data name="Installer_AdminRequiredDetailed" xml:space="preserve">
+    <value>అన్ని వినియోగదారులకు ఇన్‌స్టాల్ చేయడానికి అడ్మినిస్ట్రేటర్ అధికారాలు అవసరం.
+
+దయచేసి:
+- 'ప్రస్తుత వినియోగదారుకు మాత్రమే ఇన్‌స్టాల్ చేయండి' ఎంచుకోండి, లేదా
+- ఈ ఇన్‌స్టాలర్‌ను అడ్మినిస్ట్రేటర్‌గా రన్ చేయండి</value>
+  </data>
+  <data name="Installer_AllUsersDescription" xml:space="preserve">
+    <value>ఈ కంప్యూటర్‌లోని అన్ని వినియోగదారులకు అప్లికేషన్ అందుబాటులో ఉంటుంది.</value>
+  </data>
+  <data name="Installer_AllUsersOption" xml:space="preserve">
+    <value>&amp;అన్ని వినియోగదారులకు ఇన్‌స్టాల్ చేయండి (అడ్మినిస్ట్రేటర్ అధికారాలు అవసరం)</value>
+  </data>
+  <data name="Installer_ArchRequired" xml:space="preserve">
+    <value>ఈ ఇన్‌స్టాలర్‌కు Windows యొక్క x64 లేదా arm64 వెర్షన్ అవసరం.</value>
+  </data>
+  <data name="Installer_CurrentUserDescription" xml:space="preserve">
+    <value>సిఫార్సు చేయబడింది. అప్లికేషన్ మీ వినియోగదారు ఖాతాకు మాత్రమే అందుబాటులో ఉంటుంది.</value>
+  </data>
+  <data name="Installer_CurrentUserOption" xml:space="preserve">
+    <value>&amp;ప్రస్తుత వినియోగదారుకు మాత్రమే ఇన్‌స్టాల్ చేయండి</value>
+  </data>
+  <data name="Installer_InstallingFor" xml:space="preserve">
+    <value>ఇన్‌స్టాల్ చేస్తోంది:</value>
+  </data>
+  <data name="Installer_InstallModeDescription" xml:space="preserve">
+    <value>BUtil ను మీ కోసం మాత్రమే ఇన్‌స్టాల్ చేయాలా లేదా ఈ కంప్యూటర్ యొక్క అన్ని వినియోగదారులకు ఇన్‌స్టాల్ చేయాలా అనేది ఎంచుకోండి.</value>
+  </data>
+  <data name="Installer_InstallModeSubtitle" xml:space="preserve">
+    <value>ఈ అప్లికేషన్‌ను ఎవరు ఉపయోగించగలరో ఎంచుకోండి</value>
+  </data>
+  <data name="Installer_InstallModeTitle" xml:space="preserve">
+    <value>ఇన్‌స్టాలేషన్ రకాన్ని ఎంచుకోండి</value>
+  </data>
+  <data name="Installer_LaunchApp" xml:space="preserve">
+    <value>యాప్‌ను ప్రారంభించు</value>
+  </data>
   <data name="KeyFile_Field" xml:space="preserve">
     <value>కీ ఫైల్:</value>
   </data>

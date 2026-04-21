@@ -442,6 +442,47 @@
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
     <value>انکریمنٹل بیک اپ ٹاسک</value>
   </data>
+  <data name="Installer_AdminRequired" xml:space="preserve">
+    <value>تمام صارفین کے لیے انسٹال کرنے کے لیے ایڈمنسٹریٹر مراعات درکار ہیں۔
+براہ کرم انسٹالر کو ایڈمنسٹریٹر کے طور پر چلائیں یا /CURRENTUSER استعمال کریں۔</value>
+  </data>
+  <data name="Installer_AdminRequiredDetailed" xml:space="preserve">
+    <value>تمام صارفین کے لیے انسٹال کرنے کے لیے ایڈمنسٹریٹر مراعات درکار ہیں۔
+
+براہ کرم:
+- 'صرف موجودہ صارف کے لیے انسٹال کریں' منتخب کریں، یا
+- اس انسٹالر کو ایڈمنسٹریٹر کے طور پر چلائیں</value>
+  </data>
+  <data name="Installer_AllUsersDescription" xml:space="preserve">
+    <value>ایپلیکیشن اس کمپیوٹر کے تمام صارفین کے لیے دستیاب ہوگی۔</value>
+  </data>
+  <data name="Installer_AllUsersOption" xml:space="preserve">
+    <value>&amp;تمام صارفین کے لیے انسٹال کریں (ایڈمنسٹریٹر مراعات درکار ہیں)</value>
+  </data>
+  <data name="Installer_ArchRequired" xml:space="preserve">
+    <value>اس انسٹالر کو Windows کے x64 یا arm64 ورژن کی ضرورت ہے۔</value>
+  </data>
+  <data name="Installer_CurrentUserDescription" xml:space="preserve">
+    <value>تجویز کردہ۔ ایپلیکیشن صرف آپ کے صارف اکاؤنٹ کے لیے دستیاب ہوگی۔</value>
+  </data>
+  <data name="Installer_CurrentUserOption" xml:space="preserve">
+    <value>صرف &amp;موجودہ صارف کے لیے انسٹال کریں</value>
+  </data>
+  <data name="Installer_InstallingFor" xml:space="preserve">
+    <value>انسٹال ہو رہا ہے:</value>
+  </data>
+  <data name="Installer_InstallModeDescription" xml:space="preserve">
+    <value>براہ کرم منتخب کریں کہ آپ BUtil صرف اپنے لیے انسٹال کرنا چاہتے ہیں یا اس کمپیوٹر کے تمام صارفین کے لیے۔</value>
+  </data>
+  <data name="Installer_InstallModeSubtitle" xml:space="preserve">
+    <value>منتخب کریں کہ یہ ایپلیکیشن کون استعمال کر سکتا ہے</value>
+  </data>
+  <data name="Installer_InstallModeTitle" xml:space="preserve">
+    <value>انسٹالیشن کی قسم منتخب کریں</value>
+  </data>
+  <data name="Installer_LaunchApp" xml:space="preserve">
+    <value>ایپ شروع کریں</value>
+  </data>
   <data name="KeyFile_Field" xml:space="preserve">
     <value>کلیدی فائل:</value>
   </data>

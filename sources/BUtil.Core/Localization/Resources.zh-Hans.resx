@@ -450,6 +450,47 @@
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
     <value>创建增量备份任务</value>
   </data>
+  <data name="Installer_AdminRequired" xml:space="preserve">
+    <value>为所有用户安装需要管理员权限。
+请以管理员身份运行安装程序或使用 /CURRENTUSER。</value>
+  </data>
+  <data name="Installer_AdminRequiredDetailed" xml:space="preserve">
+    <value>为所有用户安装需要管理员权限。
+
+请执行以下操作之一：
+- 选择"仅为当前用户安装"，或
+- 以管理员身份运行此安装程序</value>
+  </data>
+  <data name="Installer_AllUsersDescription" xml:space="preserve">
+    <value>该应用程序将对此计算机上的所有用户可用。</value>
+  </data>
+  <data name="Installer_AllUsersOption" xml:space="preserve">
+    <value>为所有用户安装（需要管理员权限）(&amp;A)</value>
+  </data>
+  <data name="Installer_ArchRequired" xml:space="preserve">
+    <value>此安装程序需要 x64 或 arm64 版本的 Windows。</value>
+  </data>
+  <data name="Installer_CurrentUserDescription" xml:space="preserve">
+    <value>推荐。该应用程序仅对您的用户帐户可用。</value>
+  </data>
+  <data name="Installer_CurrentUserOption" xml:space="preserve">
+    <value>仅为当前用户安装(&amp;C)</value>
+  </data>
+  <data name="Installer_InstallingFor" xml:space="preserve">
+    <value>正在安装：</value>
+  </data>
+  <data name="Installer_InstallModeDescription" xml:space="preserve">
+    <value>请选择您是仅为自己安装 BUtil 还是为此计算机的所有用户安装。</value>
+  </data>
+  <data name="Installer_InstallModeSubtitle" xml:space="preserve">
+    <value>选择谁可以使用此应用程序</value>
+  </data>
+  <data name="Installer_InstallModeTitle" xml:space="preserve">
+    <value>选择安装类型</value>
+  </data>
+  <data name="Installer_LaunchApp" xml:space="preserve">
+    <value>启动应用程序</value>
+  </data>
   <data name="KeyFile_Field" xml:space="preserve">
     <value>密钥文件：</value>
   </data>

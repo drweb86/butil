@@ -439,6 +439,47 @@
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
     <value>増分バックアップタスク</value>
   </data>
+  <data name="Installer_AdminRequired" xml:space="preserve">
+    <value>すべてのユーザー向けにインストールするには管理者権限が必要です。
+管理者としてインストーラーを実行するか、/CURRENTUSER を使用してください。</value>
+  </data>
+  <data name="Installer_AdminRequiredDetailed" xml:space="preserve">
+    <value>すべてのユーザー向けにインストールするには管理者権限が必要です。
+
+次のいずれかを選択してください:
+- 「現在のユーザーのみにインストール」を選択する
+- このインストーラーを管理者として実行する</value>
+  </data>
+  <data name="Installer_AllUsersDescription" xml:space="preserve">
+    <value>このコンピューターのすべてのユーザーがアプリケーションを使用できます。</value>
+  </data>
+  <data name="Installer_AllUsersOption" xml:space="preserve">
+    <value>すべてのユーザー向けにインストール（管理者権限が必要）(&amp;A)</value>
+  </data>
+  <data name="Installer_ArchRequired" xml:space="preserve">
+    <value>このインストーラーには x64 または arm64 バージョンの Windows が必要です。</value>
+  </data>
+  <data name="Installer_CurrentUserDescription" xml:space="preserve">
+    <value>推奨。アプリケーションは現在のユーザーアカウントでのみ使用できます。</value>
+  </data>
+  <data name="Installer_CurrentUserOption" xml:space="preserve">
+    <value>現在のユーザーのみにインストール(&amp;C)</value>
+  </data>
+  <data name="Installer_InstallingFor" xml:space="preserve">
+    <value>インストール対象:</value>
+  </data>
+  <data name="Installer_InstallModeDescription" xml:space="preserve">
+    <value>BUtil を自分だけにインストールするか、このコンピューターのすべてのユーザー向けにインストールするかを選択してください。</value>
+  </data>
+  <data name="Installer_InstallModeSubtitle" xml:space="preserve">
+    <value>このアプリケーションを使用できるユーザーを選択</value>
+  </data>
+  <data name="Installer_InstallModeTitle" xml:space="preserve">
+    <value>インストールの種類を選択</value>
+  </data>
+  <data name="Installer_LaunchApp" xml:space="preserve">
+    <value>アプリを起動</value>
+  </data>
   <data name="KeyFile_Field" xml:space="preserve">
     <value>キーファイル:</value>
   </data>

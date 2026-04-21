@@ -451,6 +451,47 @@ Should any one of the copies created fail, including the first (full), restorati
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
     <value>Incremental backup task</value>
   </data>
+  <data name="Installer_AdminRequired" xml:space="preserve">
+    <value>Administrator privileges required to install for all users.
+Please run the installer as administrator or use /CURRENTUSER.</value>
+  </data>
+  <data name="Installer_AdminRequiredDetailed" xml:space="preserve">
+    <value>Administrator privileges are required to install for all users.
+
+Please either:
+- Choose 'Install for current user only', or
+- Run this installer as administrator</value>
+  </data>
+  <data name="Installer_AllUsersDescription" xml:space="preserve">
+    <value>The application will be available for all users on this computer.</value>
+  </data>
+  <data name="Installer_AllUsersOption" xml:space="preserve">
+    <value>Install for &amp;all users (requires administrator privileges)</value>
+  </data>
+  <data name="Installer_ArchRequired" xml:space="preserve">
+    <value>This installer requires a x64 or arm64 version of Windows.</value>
+  </data>
+  <data name="Installer_CurrentUserDescription" xml:space="preserve">
+    <value>Recommended. The application will only be available for your user account.</value>
+  </data>
+  <data name="Installer_CurrentUserOption" xml:space="preserve">
+    <value>Install for &amp;current user only</value>
+  </data>
+  <data name="Installer_InstallingFor" xml:space="preserve">
+    <value>Installing for:</value>
+  </data>
+  <data name="Installer_InstallModeDescription" xml:space="preserve">
+    <value>Please choose whether you want to install BUtil for yourself only or for all users of this computer.</value>
+  </data>
+  <data name="Installer_InstallModeSubtitle" xml:space="preserve">
+    <value>Select who can use this application</value>
+  </data>
+  <data name="Installer_InstallModeTitle" xml:space="preserve">
+    <value>Choose Installation Type</value>
+  </data>
+  <data name="Installer_LaunchApp" xml:space="preserve">
+    <value>Launch App</value>
+  </data>
   <data name="KeyFile_Field" xml:space="preserve">
     <value>Key file:</value>
   </data>

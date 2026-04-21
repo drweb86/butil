@@ -453,6 +453,47 @@
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
     <value>Incremental backup பணி</value>
   </data>
+  <data name="Installer_AdminRequired" xml:space="preserve">
+    <value>அனைத்து பயனர்களுக்கும் நிறுவ நிர்வாகி அதிகாரங்கள் தேவை.
+தயவுசெய்து நிறுவியை நிர்வாகியாக இயக்கவும் அல்லது /CURRENTUSER பயன்படுத்தவும்.</value>
+  </data>
+  <data name="Installer_AdminRequiredDetailed" xml:space="preserve">
+    <value>அனைத்து பயனர்களுக்கும் நிறுவ நிர்வாகி அதிகாரங்கள் தேவை.
+
+தயவுசெய்து:
+- 'தற்போதைய பயனருக்கு மட்டும் நிறுவு' என்பதைத் தேர்ந்தெடுக்கவும், அல்லது
+- இந்த நிறுவியை நிர்வாகியாக இயக்கவும்</value>
+  </data>
+  <data name="Installer_AllUsersDescription" xml:space="preserve">
+    <value>இந்த கணினியில் உள்ள அனைத்து பயனர்களுக்கும் பயன்பாடு கிடைக்கும்.</value>
+  </data>
+  <data name="Installer_AllUsersOption" xml:space="preserve">
+    <value>&amp;அனைத்து பயனர்களுக்கும் நிறுவு (நிர்வாகி அதிகாரங்கள் தேவை)</value>
+  </data>
+  <data name="Installer_ArchRequired" xml:space="preserve">
+    <value>இந்த நிறுவிக்கு Windows இன் x64 அல்லது arm64 பதிப்பு தேவை.</value>
+  </data>
+  <data name="Installer_CurrentUserDescription" xml:space="preserve">
+    <value>பரிந்துரைக்கப்படுகிறது. பயன்பாடு உங்கள் பயனர் கணக்கிற்கு மட்டும் கிடைக்கும்.</value>
+  </data>
+  <data name="Installer_CurrentUserOption" xml:space="preserve">
+    <value>&amp;தற்போதைய பயனருக்கு மட்டும் நிறுவு</value>
+  </data>
+  <data name="Installer_InstallingFor" xml:space="preserve">
+    <value>நிறுவுவது:</value>
+  </data>
+  <data name="Installer_InstallModeDescription" xml:space="preserve">
+    <value>BUtil ஐ உங்களுக்கு மட்டும் நிறுவ வேண்டுமா அல்லது இந்த கணினியின் அனைத்து பயனர்களுக்கும் நிறுவ வேண்டுமா என்பதைத் தேர்ந்தெடுக்கவும்.</value>
+  </data>
+  <data name="Installer_InstallModeSubtitle" xml:space="preserve">
+    <value>இந்த பயன்பாட்டை யார் பயன்படுத்தலாம் என்பதைத் தேர்ந்தெடுக்கவும்</value>
+  </data>
+  <data name="Installer_InstallModeTitle" xml:space="preserve">
+    <value>நிறுவல் வகையைத் தேர்ந்தெடுக்கவும்</value>
+  </data>
+  <data name="Installer_LaunchApp" xml:space="preserve">
+    <value>பயன்பாட்டைத் தொடங்கு</value>
+  </data>
   <data name="KeyFile_Field" xml:space="preserve">
     <value>விசைக் கோப்பு:</value>
   </data>

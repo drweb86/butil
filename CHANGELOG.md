@@ -4,6 +4,9 @@
 ## Changes
 - Removed Avalonia.Diagnostics as F12 crashed app.
 
+## New Features
+- Setup is localized.
+
 # 2026.04.20
 
 ## Changes

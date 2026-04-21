@@ -452,6 +452,47 @@
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
     <value>Инкрементное резервное копирование</value>
   </data>
+  <data name="Installer_AdminRequired" xml:space="preserve">
+    <value>Для установки для всех пользователей требуются права администратора.
+Запустите установщик от имени администратора или используйте /CURRENTUSER.</value>
+  </data>
+  <data name="Installer_AdminRequiredDetailed" xml:space="preserve">
+    <value>Для установки для всех пользователей требуются права администратора.
+
+Пожалуйста, выберите один из вариантов:
+- Выберите «Установить только для текущего пользователя», или
+- Запустите этот установщик от имени администратора</value>
+  </data>
+  <data name="Installer_AllUsersDescription" xml:space="preserve">
+    <value>Приложение будет доступно для всех пользователей этого компьютера.</value>
+  </data>
+  <data name="Installer_AllUsersOption" xml:space="preserve">
+    <value>Установить для &amp;всех пользователей (требуются права администратора)</value>
+  </data>
+  <data name="Installer_ArchRequired" xml:space="preserve">
+    <value>Для этого установщика требуется версия Windows x64 или arm64.</value>
+  </data>
+  <data name="Installer_CurrentUserDescription" xml:space="preserve">
+    <value>Рекомендуется. Приложение будет доступно только для вашей учётной записи.</value>
+  </data>
+  <data name="Installer_CurrentUserOption" xml:space="preserve">
+    <value>Установить только для &amp;текущего пользователя</value>
+  </data>
+  <data name="Installer_InstallingFor" xml:space="preserve">
+    <value>Установка для:</value>
+  </data>
+  <data name="Installer_InstallModeDescription" xml:space="preserve">
+    <value>Выберите, установить BUtil только для себя или для всех пользователей этого компьютера.</value>
+  </data>
+  <data name="Installer_InstallModeSubtitle" xml:space="preserve">
+    <value>Выберите, кто сможет использовать это приложение</value>
+  </data>
+  <data name="Installer_InstallModeTitle" xml:space="preserve">
+    <value>Выберите тип установки</value>
+  </data>
+  <data name="Installer_LaunchApp" xml:space="preserve">
+    <value>Запустить приложение</value>
+  </data>
   <data name="KeyFile_Field" xml:space="preserve">
     <value>Файл-ключ:</value>
   </data>

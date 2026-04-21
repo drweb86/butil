@@ -448,6 +448,47 @@ Nếu bất kỳ bản sao nào được tạo ra thất bại, bao gồm cả b
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
     <value>Nhiệm vụ sao lưu gia tăng</value>
   </data>
+  <data name="Installer_AdminRequired" xml:space="preserve">
+    <value>Cần quyền quản trị viên để cài đặt cho tất cả người dùng.
+Vui lòng chạy trình cài đặt với quyền quản trị viên hoặc sử dụng /CURRENTUSER.</value>
+  </data>
+  <data name="Installer_AdminRequiredDetailed" xml:space="preserve">
+    <value>Cần quyền quản trị viên để cài đặt cho tất cả người dùng.
+
+Vui lòng:
+- Chọn 'Chỉ cài đặt cho người dùng hiện tại', hoặc
+- Chạy trình cài đặt này với quyền quản trị viên</value>
+  </data>
+  <data name="Installer_AllUsersDescription" xml:space="preserve">
+    <value>Ứng dụng sẽ khả dụng cho tất cả người dùng trên máy tính này.</value>
+  </data>
+  <data name="Installer_AllUsersOption" xml:space="preserve">
+    <value>Cài đặt cho &amp;tất cả người dùng (yêu cầu quyền quản trị viên)</value>
+  </data>
+  <data name="Installer_ArchRequired" xml:space="preserve">
+    <value>Trình cài đặt này yêu cầu phiên bản Windows x64 hoặc arm64.</value>
+  </data>
+  <data name="Installer_CurrentUserDescription" xml:space="preserve">
+    <value>Được khuyến nghị. Ứng dụng sẽ chỉ khả dụng cho tài khoản người dùng của bạn.</value>
+  </data>
+  <data name="Installer_CurrentUserOption" xml:space="preserve">
+    <value>Chỉ cài đặt cho người dùng &amp;hiện tại</value>
+  </data>
+  <data name="Installer_InstallingFor" xml:space="preserve">
+    <value>Đang cài đặt cho:</value>
+  </data>
+  <data name="Installer_InstallModeDescription" xml:space="preserve">
+    <value>Vui lòng chọn bạn muốn cài đặt BUtil chỉ cho mình hay cho tất cả người dùng của máy tính này.</value>
+  </data>
+  <data name="Installer_InstallModeSubtitle" xml:space="preserve">
+    <value>Chọn ai có thể sử dụng ứng dụng này</value>
+  </data>
+  <data name="Installer_InstallModeTitle" xml:space="preserve">
+    <value>Chọn kiểu cài đặt</value>
+  </data>
+  <data name="Installer_LaunchApp" xml:space="preserve">
+    <value>Khởi chạy ứng dụng</value>
+  </data>
   <data name="KeyFile_Field" xml:space="preserve">
     <value>Tệp khóa:</value>
   </data>

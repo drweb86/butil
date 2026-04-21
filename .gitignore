@@ -9,3 +9,4 @@ sources/backend/dist/
 sources/frontend/node_modules/
 *.snap
 snap/snapcraft.yaml
+sources/setup-languages.nsh

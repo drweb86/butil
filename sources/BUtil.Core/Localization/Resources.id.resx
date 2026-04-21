@@ -448,6 +448,47 @@
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
     <value>Tugas pencadangan inkremental</value>
   </data>
+  <data name="Installer_AdminRequired" xml:space="preserve">
+    <value>Hak istimewa administrator diperlukan untuk menginstal bagi semua pengguna.
+Silakan jalankan penginstal sebagai administrator atau gunakan /CURRENTUSER.</value>
+  </data>
+  <data name="Installer_AdminRequiredDetailed" xml:space="preserve">
+    <value>Hak istimewa administrator diperlukan untuk menginstal bagi semua pengguna.
+
+Silakan:
+- Pilih 'Instal untuk pengguna saat ini saja', atau
+- Jalankan penginstal ini sebagai administrator</value>
+  </data>
+  <data name="Installer_AllUsersDescription" xml:space="preserve">
+    <value>Aplikasi akan tersedia untuk semua pengguna di komputer ini.</value>
+  </data>
+  <data name="Installer_AllUsersOption" xml:space="preserve">
+    <value>Instal untuk &amp;semua pengguna (memerlukan hak istimewa administrator)</value>
+  </data>
+  <data name="Installer_ArchRequired" xml:space="preserve">
+    <value>Penginstal ini memerlukan Windows versi x64 atau arm64.</value>
+  </data>
+  <data name="Installer_CurrentUserDescription" xml:space="preserve">
+    <value>Disarankan. Aplikasi hanya akan tersedia untuk akun pengguna Anda.</value>
+  </data>
+  <data name="Installer_CurrentUserOption" xml:space="preserve">
+    <value>Instal untuk pengguna saat ini sa&amp;ja</value>
+  </data>
+  <data name="Installer_InstallingFor" xml:space="preserve">
+    <value>Menginstal untuk:</value>
+  </data>
+  <data name="Installer_InstallModeDescription" xml:space="preserve">
+    <value>Silakan pilih apakah Anda ingin menginstal BUtil hanya untuk diri sendiri atau untuk semua pengguna komputer ini.</value>
+  </data>
+  <data name="Installer_InstallModeSubtitle" xml:space="preserve">
+    <value>Pilih siapa yang dapat menggunakan aplikasi ini</value>
+  </data>
+  <data name="Installer_InstallModeTitle" xml:space="preserve">
+    <value>Pilih Jenis Instalasi</value>
+  </data>
+  <data name="Installer_LaunchApp" xml:space="preserve">
+    <value>Jalankan Aplikasi</value>
+  </data>
   <data name="KeyFile_Field" xml:space="preserve">
     <value>Berkas kunci:</value>
   </data>

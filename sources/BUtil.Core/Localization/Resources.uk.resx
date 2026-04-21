@@ -452,6 +452,47 @@
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
     <value>Інкрементне резервне копіювання</value>
   </data>
+  <data name="Installer_AdminRequired" xml:space="preserve">
+    <value>Для встановлення для всіх користувачів потрібні права адміністратора.
+Будь ласка, запустіть інсталятор від імені адміністратора або використовуйте /CURRENTUSER.</value>
+  </data>
+  <data name="Installer_AdminRequiredDetailed" xml:space="preserve">
+    <value>Для встановлення для всіх користувачів потрібні права адміністратора.
+
+Будь ласка:
+- Виберіть «Встановити лише для поточного користувача», або
+- Запустіть цей інсталятор від імені адміністратора</value>
+  </data>
+  <data name="Installer_AllUsersDescription" xml:space="preserve">
+    <value>Програма буде доступна для всіх користувачів цього комп'ютера.</value>
+  </data>
+  <data name="Installer_AllUsersOption" xml:space="preserve">
+    <value>Встановити для &amp;всіх користувачів (потрібні права адміністратора)</value>
+  </data>
+  <data name="Installer_ArchRequired" xml:space="preserve">
+    <value>Цей інсталятор потребує x64 або arm64 версії Windows.</value>
+  </data>
+  <data name="Installer_CurrentUserDescription" xml:space="preserve">
+    <value>Рекомендовано. Програма буде доступна лише для вашого облікового запису.</value>
+  </data>
+  <data name="Installer_CurrentUserOption" xml:space="preserve">
+    <value>Встановити лише для &amp;поточного користувача</value>
+  </data>
+  <data name="Installer_InstallingFor" xml:space="preserve">
+    <value>Встановлення для:</value>
+  </data>
+  <data name="Installer_InstallModeDescription" xml:space="preserve">
+    <value>Виберіть, чи хочете ви встановити BUtil лише для себе або для всіх користувачів цього комп'ютера.</value>
+  </data>
+  <data name="Installer_InstallModeSubtitle" xml:space="preserve">
+    <value>Виберіть, хто зможе використовувати цю програму</value>
+  </data>
+  <data name="Installer_InstallModeTitle" xml:space="preserve">
+    <value>Виберіть тип встановлення</value>
+  </data>
+  <data name="Installer_LaunchApp" xml:space="preserve">
+    <value>Запустити програму</value>
+  </data>
   <data name="KeyFile_Field" xml:space="preserve">
     <value>Файл ключа:</value>
   </data>

@@ -451,6 +451,47 @@
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
     <value>इन्क्रमेंटल बॅकअप कार्य</value>
   </data>
+  <data name="Installer_AdminRequired" xml:space="preserve">
+    <value>सर्व वापरकर्त्यांसाठी स्थापित करण्यासाठी प्रशासक विशेषाधिकार आवश्यक आहेत.
+कृपया स्थापक प्रशासक म्हणून चालवा किंवा /CURRENTUSER वापरा.</value>
+  </data>
+  <data name="Installer_AdminRequiredDetailed" xml:space="preserve">
+    <value>सर्व वापरकर्त्यांसाठी स्थापित करण्यासाठी प्रशासक विशेषाधिकार आवश्यक आहेत.
+
+कृपया यापैकी एक निवडा:
+- 'फक्त सध्याच्या वापरकर्त्यासाठी स्थापित करा' निवडा, किंवा
+- हा स्थापक प्रशासक म्हणून चालवा</value>
+  </data>
+  <data name="Installer_AllUsersDescription" xml:space="preserve">
+    <value>अनुप्रयोग या संगणकावरील सर्व वापरकर्त्यांसाठी उपलब्ध असेल.</value>
+  </data>
+  <data name="Installer_AllUsersOption" xml:space="preserve">
+    <value>&amp;सर्व वापरकर्त्यांसाठी स्थापित करा (प्रशासक विशेषाधिकार आवश्यक)</value>
+  </data>
+  <data name="Installer_ArchRequired" xml:space="preserve">
+    <value>या स्थापकासाठी Windows ची x64 किंवा arm64 आवृत्ती आवश्यक आहे.</value>
+  </data>
+  <data name="Installer_CurrentUserDescription" xml:space="preserve">
+    <value>शिफारस केलेले. अनुप्रयोग फक्त तुमच्या वापरकर्ता खात्यासाठी उपलब्ध असेल.</value>
+  </data>
+  <data name="Installer_CurrentUserOption" xml:space="preserve">
+    <value>फक्त &amp;सध्याच्या वापरकर्त्यासाठी स्थापित करा</value>
+  </data>
+  <data name="Installer_InstallingFor" xml:space="preserve">
+    <value>यासाठी स्थापित करत आहे:</value>
+  </data>
+  <data name="Installer_InstallModeDescription" xml:space="preserve">
+    <value>कृपया BUtil फक्त स्वतःसाठी स्थापित करायचे की या संगणकाच्या सर्व वापरकर्त्यांसाठी ते निवडा.</value>
+  </data>
+  <data name="Installer_InstallModeSubtitle" xml:space="preserve">
+    <value>हा अनुप्रयोग कोण वापरू शकतो ते निवडा</value>
+  </data>
+  <data name="Installer_InstallModeTitle" xml:space="preserve">
+    <value>स्थापनेचा प्रकार निवडा</value>
+  </data>
+  <data name="Installer_LaunchApp" xml:space="preserve">
+    <value>अनुप्रयोग सुरू करा</value>
+  </data>
   <data name="KeyFile_Field" xml:space="preserve">
     <value>की फाइल:</value>
   </data>

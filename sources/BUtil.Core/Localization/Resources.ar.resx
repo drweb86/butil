@@ -451,6 +451,47 @@
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
     <value>مهمة النسخ الاحتياطي التدريجي</value>
   </data>
+  <data name="Installer_AdminRequired" xml:space="preserve">
+    <value>يلزم وجود صلاحيات المسؤول للتثبيت لجميع المستخدمين.
+يرجى تشغيل المثبت كمسؤول أو استخدام /CURRENTUSER.</value>
+  </data>
+  <data name="Installer_AdminRequiredDetailed" xml:space="preserve">
+    <value>يلزم وجود صلاحيات المسؤول للتثبيت لجميع المستخدمين.
+
+يرجى إما:
+- اختيار 'التثبيت للمستخدم الحالي فقط'، أو
+- تشغيل هذا المثبت كمسؤول</value>
+  </data>
+  <data name="Installer_AllUsersDescription" xml:space="preserve">
+    <value>سيكون التطبيق متاحاً لجميع المستخدمين على هذا الكمبيوتر.</value>
+  </data>
+  <data name="Installer_AllUsersOption" xml:space="preserve">
+    <value>التثبيت ل&amp;جميع المستخدمين (يتطلب صلاحيات المسؤول)</value>
+  </data>
+  <data name="Installer_ArchRequired" xml:space="preserve">
+    <value>يتطلب هذا المثبت إصداراً من Windows بمعمارية x64 أو arm64.</value>
+  </data>
+  <data name="Installer_CurrentUserDescription" xml:space="preserve">
+    <value>مستحسن. سيكون التطبيق متاحاً لحساب المستخدم الخاص بك فقط.</value>
+  </data>
+  <data name="Installer_CurrentUserOption" xml:space="preserve">
+    <value>التثبيت للمستخدم ال&amp;حالي فقط</value>
+  </data>
+  <data name="Installer_InstallingFor" xml:space="preserve">
+    <value>جارٍ التثبيت لـ:</value>
+  </data>
+  <data name="Installer_InstallModeDescription" xml:space="preserve">
+    <value>يرجى اختيار ما إذا كنت تريد تثبيت BUtil لنفسك فقط أو لجميع مستخدمي هذا الكمبيوتر.</value>
+  </data>
+  <data name="Installer_InstallModeSubtitle" xml:space="preserve">
+    <value>حدد من يمكنه استخدام هذا التطبيق</value>
+  </data>
+  <data name="Installer_InstallModeTitle" xml:space="preserve">
+    <value>اختيار نوع التثبيت</value>
+  </data>
+  <data name="Installer_LaunchApp" xml:space="preserve">
+    <value>تشغيل التطبيق</value>
+  </data>
   <data name="KeyFile_Field" xml:space="preserve">
     <value>ملف المفتاح:</value>
   </data>

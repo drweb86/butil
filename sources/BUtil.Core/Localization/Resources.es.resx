@@ -451,6 +451,47 @@ Si falla alguna de las copias creadas, incluida la primera (completa), la restau
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
     <value>Tarea de respaldo incremental</value>
   </data>
+  <data name="Installer_AdminRequired" xml:space="preserve">
+    <value>Se requieren privilegios de administrador para instalar para todos los usuarios.
+Por favor, ejecute el instalador como administrador o use /CURRENTUSER.</value>
+  </data>
+  <data name="Installer_AdminRequiredDetailed" xml:space="preserve">
+    <value>Se requieren privilegios de administrador para instalar para todos los usuarios.
+
+Por favor:
+- Elija «Instalar solo para el usuario actual», o
+- Ejecute este instalador como administrador</value>
+  </data>
+  <data name="Installer_AllUsersDescription" xml:space="preserve">
+    <value>La aplicación estará disponible para todos los usuarios de este equipo.</value>
+  </data>
+  <data name="Installer_AllUsersOption" xml:space="preserve">
+    <value>Instalar para &amp;todos los usuarios (requiere privilegios de administrador)</value>
+  </data>
+  <data name="Installer_ArchRequired" xml:space="preserve">
+    <value>Este instalador requiere una versión x64 o arm64 de Windows.</value>
+  </data>
+  <data name="Installer_CurrentUserDescription" xml:space="preserve">
+    <value>Recomendado. La aplicación solo estará disponible para su cuenta de usuario.</value>
+  </data>
+  <data name="Installer_CurrentUserOption" xml:space="preserve">
+    <value>Instalar solo para el usuario &amp;actual</value>
+  </data>
+  <data name="Installer_InstallingFor" xml:space="preserve">
+    <value>Instalando para:</value>
+  </data>
+  <data name="Installer_InstallModeDescription" xml:space="preserve">
+    <value>Elija si desea instalar BUtil solo para usted o para todos los usuarios de este equipo.</value>
+  </data>
+  <data name="Installer_InstallModeSubtitle" xml:space="preserve">
+    <value>Seleccione quién puede usar esta aplicación</value>
+  </data>
+  <data name="Installer_InstallModeTitle" xml:space="preserve">
+    <value>Elegir tipo de instalación</value>
+  </data>
+  <data name="Installer_LaunchApp" xml:space="preserve">
+    <value>Iniciar aplicación</value>
+  </data>
   <data name="KeyFile_Field" xml:space="preserve">
     <value>Archivo de clave:</value>
   </data>

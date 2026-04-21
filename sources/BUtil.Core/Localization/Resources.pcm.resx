@@ -451,6 +451,47 @@
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
     <value>Incremental backup task</value>
   </data>
+  <data name="Installer_AdminRequired" xml:space="preserve">
+    <value>You need administrator power to install for all users.
+Abeg run di installer as administrator or use /CURRENTUSER.</value>
+  </data>
+  <data name="Installer_AdminRequiredDetailed" xml:space="preserve">
+    <value>You need administrator power to install for all users.
+
+Abeg do one of dese:
+- Choose 'Install for only di current user', or
+- Run dis installer as administrator</value>
+  </data>
+  <data name="Installer_AllUsersDescription" xml:space="preserve">
+    <value>Di application go dey available for all users wey dey dis computer.</value>
+  </data>
+  <data name="Installer_AllUsersOption" xml:space="preserve">
+    <value>Install for &amp;all users (e need administrator power)</value>
+  </data>
+  <data name="Installer_ArchRequired" xml:space="preserve">
+    <value>Dis installer need x64 or arm64 version of Windows.</value>
+  </data>
+  <data name="Installer_CurrentUserDescription" xml:space="preserve">
+    <value>We recommend dis one. Di application go only dey available for your user account.</value>
+  </data>
+  <data name="Installer_CurrentUserOption" xml:space="preserve">
+    <value>Install for &amp;current user only</value>
+  </data>
+  <data name="Installer_InstallingFor" xml:space="preserve">
+    <value>Dey install for:</value>
+  </data>
+  <data name="Installer_InstallModeDescription" xml:space="preserve">
+    <value>Abeg choose whether you wan install BUtil for only yourself or for all users wey dey dis computer.</value>
+  </data>
+  <data name="Installer_InstallModeSubtitle" xml:space="preserve">
+    <value>Choose who fit use dis application</value>
+  </data>
+  <data name="Installer_InstallModeTitle" xml:space="preserve">
+    <value>Choose Installation Type</value>
+  </data>
+  <data name="Installer_LaunchApp" xml:space="preserve">
+    <value>Open App</value>
+  </data>
   <data name="KeyFile_Field" xml:space="preserve">
     <value>Key File:</value>
   </data>
