@@ -966,4 +966,23 @@ Veja a descrição detalhada no seguinte link.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Usuário não especificado.</value>
   </data>
+  <data name="Winget_Description" xml:space="preserve">
+    <value>Faça backup/sincronize seus dados no Windows, Linux.
+Importe fotos do telefone via WI-FI e muito mais.
+
+Idiomas suportados: inglês, árabe, bengali, chinês, francês, alemão, hindi, indonésio, italiano, japonês, marati, pidgin nigeriano, português, russo, espanhol, tâmil, télugo, turco, ucraniano, urdu, vietnamita, cantonês
+
+Recursos:
+- Backup incremental com deduplicação de arquivos e suporte a transportes SFTP, FTPS, SMB/CIFS;
+- Sincronização de arquivos entre dispositivos usando armazenamento centralizado e suporte a versionamento;
+- Importação de mídia - Importe áudios, fotos, vídeos do cartão SD da câmera, gravador; fotos e vídeos do seu telefone via WI-FI através do aplicativo FTPS Server usando nomes de arquivos modelo ou via MTP;
+- Transferência de arquivos P2P com criptografia entre dispositivos;
+- Console para agendamento de automação;
+- Criptografia AES-256.
+
+Plataformas: Windows 11 x64, ARM64 ou Ubuntu 24+.</value>
+  </data>
+  <data name="Winget_ShortDescription" xml:space="preserve">
+    <value>BUtil cria backups incrementais, sincronização incremental e importa multimídia no seu PC com deduplicação e suporte a transportes FTPS, SFTP, SMB/CIFS para Windows e Linux.</value>
+  </data>
 </root>

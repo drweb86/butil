@@ -41,6 +41,7 @@ namespace Codice.SortResX
             }
 
             NsisLanguageGenerator.Generate(sourceDir);
+            WingetLocaleGenerator.Generate(sourceDir);
         }
     }
 
@@ -133,25 +134,6 @@ namespace Codice.SortResX
 
     public static class NsisLanguageGenerator
     {
-        private static readonly Dictionary<string, string> ResxToNsisLanguage = new()
-        {
-            { "", "English" },
-            { "ar", "Arabic" },
-            { "de", "German" },
-            { "es", "Spanish" },
-            { "fr", "French" },
-            { "hi", "Hindi" },
-            { "id", "Indonesian" },
-            { "it", "Italian" },
-            { "ja", "Japanese" },
-            { "pt", "PortugueseBR" },
-            { "ru", "Russian" },
-            { "tr", "Turkish" },
-            { "uk", "Ukrainian" },
-            { "vi", "Vietnamese" },
-            { "zh-Hans", "SimpChinese" },
-        };
-
         public static void Generate(string sourceDir)
         {
             var localizationDir = Path.Combine(sourceDir, "BUtil.Core", "Localization");
@@ -160,32 +142,36 @@ namespace Codice.SortResX
             var allResx = Directory.GetFiles(localizationDir, "*.resx")
                 .OrderBy(x => x.Length);
 
-            var languageData = new Dictionary<string, Dictionary<string, string>>();
+            var languageData = new Dictionary<string, (string NsisLanguage, Dictionary<string, string> Entries)>();
 
             foreach (var resxPath in allResx)
             {
-                var culture = ExtractCulture(resxPath);
-                if (!ResxToNsisLanguage.ContainsKey(culture))
-                    continue;
-
                 var doc = new XmlDocument();
                 doc.Load(resxPath);
 
+                string? nsisLanguage = null;
                 var entries = new Dictionary<string, string>();
+
                 foreach (XmlNode node in doc.SelectNodes("//data")!)
                 {
                     var name = node.Attributes?["name"]?.Value;
-                    if (name != null && name.StartsWith("Installer_"))
+                    if (name == "_Technical_NsisLanguage")
+                        nsisLanguage = node.SelectSingleNode("value")?.InnerText;
+                    else if (name != null && name.StartsWith("Installer_"))
                     {
                         var value = node.SelectSingleNode("value")?.InnerText ?? "";
                         entries[name] = value;
                     }
                 }
 
-                languageData[culture] = entries;
+                if (nsisLanguage == null)
+                    continue;
+
+                var culture = ExtractCulture(resxPath);
+                languageData[culture] = (nsisLanguage, entries);
             }
 
-            if (!languageData.TryGetValue("", out var mainEntries) || mainEntries.Count == 0)
+            if (!languageData.TryGetValue("", out var mainData) || mainData.Entries.Count == 0)
             {
                 Console.WriteLine("No Installer_ keys found in main resources, skipping NSH generation.");
                 return;
@@ -196,24 +182,22 @@ namespace Codice.SortResX
             writer.WriteLine();
 
             writer.WriteLine($"!insertmacro MUI_LANGUAGE \"English\"");
-            foreach (var kvp in ResxToNsisLanguage.Where(x => x.Key != "").OrderBy(x => x.Value))
+            foreach (var kvp in languageData.Where(x => x.Key != "").OrderBy(x => x.Value.NsisLanguage))
             {
-                if (languageData.ContainsKey(kvp.Key))
-                    writer.WriteLine($"!insertmacro MUI_LANGUAGE \"{kvp.Value}\"");
+                writer.WriteLine($"!insertmacro MUI_LANGUAGE \"{kvp.Value.NsisLanguage}\"");
             }
             writer.WriteLine();
 
-            foreach (var key in mainEntries.Keys.OrderBy(x => x))
+            foreach (var key in mainData.Entries.Keys.OrderBy(x => x))
             {
-                foreach (var kvp in ResxToNsisLanguage.OrderBy(x => x.Value == "English" ? "" : x.Value))
+                foreach (var kvp in languageData.OrderBy(x => x.Value.NsisLanguage == "English" ? "" : x.Value.NsisLanguage))
                 {
                     string? value = null;
-                    if (languageData.TryGetValue(kvp.Key, out var entries))
-                        entries.TryGetValue(key, out value);
-                    value ??= mainEntries[key];
+                    kvp.Value.Entries.TryGetValue(key, out value);
+                    value ??= mainData.Entries[key];
 
                     var escapedValue = EscapeForNsis(value);
-                    writer.WriteLine($"LangString {key} ${{LANG_{kvp.Value.ToUpperInvariant()}}} \"{escapedValue}\"");
+                    writer.WriteLine($"LangString {key} ${{LANG_{kvp.Value.NsisLanguage.ToUpperInvariant()}}} \"{escapedValue}\"");
                 }
                 writer.WriteLine();
             }
@@ -245,6 +229,98 @@ namespace Codice.SortResX
                 }
             }
             return sb.ToString();
+        }
+    }
+
+    public static class WingetLocaleGenerator
+    {
+        public static void Generate(string sourceDir)
+        {
+            var localizationDir = Path.Combine(sourceDir, "BUtil.Core", "Localization");
+            var wingetPkgsDir = Path.Combine(sourceDir, "tools", "winget-pkgs");
+
+            var allResx = Directory.GetFiles(localizationDir, "*.resx")
+                .OrderBy(x => x.Length);
+
+            foreach (var resxPath in allResx)
+            {
+                var doc = new XmlDocument();
+                doc.Load(resxPath);
+
+                string? wingetLocale = null;
+                string? shortDescription = null;
+                string? description = null;
+
+                foreach (XmlNode node in doc.SelectNodes("//data")!)
+                {
+                    var name = node.Attributes?["name"]?.Value;
+                    if (name == "_Technical_WingetLocale")
+                        wingetLocale = node.SelectSingleNode("value")?.InnerText;
+                    else if (name == "Winget_ShortDescription")
+                        shortDescription = node.SelectSingleNode("value")?.InnerText;
+                    else if (name == "Winget_Description")
+                        description = node.SelectSingleNode("value")?.InnerText;
+                }
+
+                if (wingetLocale == null)
+                    continue;
+
+                if (shortDescription == null || description == null)
+                {
+                    Console.WriteLine($"Missing Winget_ keys in {resxPath}, skipping locale generation.");
+                    continue;
+                }
+
+                var culture = ExtractCulture(resxPath);
+                var isDefaultLocale = culture == "";
+                var schemaType = isDefaultLocale ? "defaultLocale" : "locale";
+                var manifestType = isDefaultLocale ? "defaultLocale" : "locale";
+                var outputFileName = $"SiarheiKuchuk.BUtil.locale.{wingetLocale}.yaml";
+                var outputPath = Path.Combine(wingetPkgsDir, outputFileName);
+
+                using var writer = new StreamWriter(outputPath, false, new UTF8Encoding(false));
+                writer.WriteLine($"# yaml-language-server: $schema=https://aka.ms/winget-manifest.{schemaType}.1.10.0.schema.json");
+                writer.WriteLine();
+                writer.WriteLine("PackageIdentifier: SiarheiKuchuk.BUtil");
+                writer.WriteLine("PackageVersion: APP_VERSION_STRING");
+                writer.WriteLine($"PackageLocale: {wingetLocale}");
+                writer.WriteLine("Publisher: Siarhei Kuchuk");
+                writer.WriteLine("PublisherUrl: https://github.com/drweb86");
+                writer.WriteLine("PublisherSupportUrl: https://github.com/drweb86/butil/issues");
+                writer.WriteLine("PrivacyUrl: https://raw.githubusercontent.com/drweb86/butil/refs/heads/master/Privacy%20Policy.md");
+                writer.WriteLine("Author: Siarhei Kuchuk");
+                writer.WriteLine("PackageName: BUtil");
+                writer.WriteLine("PackageUrl: https://github.com/drweb86/butil");
+                writer.WriteLine("License: MIT, GPL, MSPL");
+                writer.WriteLine("LicenseUrl: https://raw.githubusercontent.com/drweb86/butil/refs/heads/master/License.md");
+                writer.WriteLine("Copyright: 2011-CURRENT_YEAR Siarhei Kuchuk");
+                writer.WriteLine("CopyrightUrl: https://raw.githubusercontent.com/drweb86/butil/refs/heads/master/License.md");
+                writer.WriteLine($"ShortDescription: {shortDescription}");
+                writer.WriteLine("Description: |");
+                foreach (var line in description.Split('\n'))
+                {
+                    var trimmedLine = line.TrimEnd('\r');
+                    writer.WriteLine($"  {trimmedLine}");
+                }
+                writer.WriteLine("Moniker: butil");
+                writer.WriteLine("Tags:");
+                writer.WriteLine("- backup");
+                writer.WriteLine("- sync");
+                writer.WriteLine("- synchronization");
+                writer.WriteLine("- p2p");
+                writer.WriteLine("ReleaseNotesUrl: https://raw.githubusercontent.com/drweb86/butil/refs/heads/master/CHANGELOG.md");
+                writer.WriteLine($"ManifestType: {manifestType}");
+                writer.WriteLine("ManifestVersion: 1.10.0");
+
+                Console.WriteLine($"Generated {outputPath}");
+            }
+        }
+
+        private static string ExtractCulture(string resxPath)
+        {
+            var fileName = Path.GetFileNameWithoutExtension(resxPath);
+            var dotIndex = fileName.IndexOf('.');
+            return dotIndex >= 0 ? fileName[(dotIndex + 1)..] : "";
         }
     }
 }

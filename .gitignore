@@ -10,3 +10,4 @@ sources/frontend/node_modules/
 *.snap
 snap/snapcraft.yaml
 sources/setup-languages.nsh
+sources/tools/winget-pkgs/SiarheiKuchuk.BUtil.locale.*.yaml

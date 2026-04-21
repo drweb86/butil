@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="_Technical_NsisLanguage" xml:space="preserve">
+    <value>Spanish</value>
+  </data>
+  <data name="_Technical_WingetLocale" xml:space="preserve">
+    <value>es-ES</value>
+  </data>
   <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
     <value>No hacer nada</value>
   </data>
@@ -965,5 +971,24 @@ Consulta la descripción detallada en el siguiente enlace.</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>No se especificó el usuario.</value>
+  </data>
+  <data name="Winget_Description" xml:space="preserve">
+    <value>Haga copias de seguridad/sincronice sus datos en Windows, Linux.
+Importe fotos desde el teléfono a través de WI-FI y más.
+
+Idiomas compatibles: inglés, árabe, bengalí, chino, francés, alemán, hindi, indonesio, italiano, japonés, maratí, pidgin nigeriano, portugués, ruso, español, tamil, telugu, turco, ucraniano, urdu, vietnamita, cantonés
+
+Características:
+- Copia de seguridad incremental con deduplicación de archivos y soporte de transportes SFTP, FTPS, SMB/CIFS;
+- Sincronización de archivos entre dispositivos utilizando almacenamiento centralizado y soporte de versionado;
+- Importación de medios - Importe audios, fotos, videos desde la tarjeta SD de la cámara, grabadora; fotos y videos desde su teléfono a través de WI-FI mediante la aplicación FTPS Server usando nombres de archivos de plantilla o mediante MTP;
+- Transferencia de archivos P2P con cifrado entre dispositivos;
+- Consola para programación de automatización;
+- Cifrado AES-256.
+
+Plataformas: Windows 11 x64, ARM64 o Ubuntu 24+.</value>
+  </data>
+  <data name="Winget_ShortDescription" xml:space="preserve">
+    <value>BUtil crea copias de seguridad incrementales, sincronización incremental e importa multimedia en su PC con deduplicación y soporte de transportes FTPS, SFTP, SMB/CIFS para Windows y Linux.</value>
   </data>
 </root>

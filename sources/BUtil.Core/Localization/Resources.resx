@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="_Technical_NsisLanguage" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="_Technical_WingetLocale" xml:space="preserve">
+    <value>en-US</value>
+  </data>
   <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
     <value>Do nothing</value>
   </data>
@@ -965,5 +971,24 @@ See detailed description in the following link.</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>User is not specified.</value>
+  </data>
+  <data name="Winget_Description" xml:space="preserve">
+    <value>Backup/synchronize your data Windows, Linux.
+Import photos from phone via WI-FI and more.
+
+Supports languages: English, Arabic, Bengal, Chinese, French, German, Hindi, Indonesian, Italian, Japanese, Marathi, Nigerian Pidgin, Portuguese, Russian, Spanish, Tamil, Telugu, Turkish, Ukrainian, Urdu, Vietnamese, Yue Chinese
+
+Features:
+- Incremental backup with deduplication of files and SFTP, FTPS, SMB/CIFS transports support;
+- Synchronization of files between devices using centralized storage and versioning support;
+- Import media - Import audios, photos, videos from SD Card of camera, recorder; photos and videos from your phone via WI-FI through FTPS Server application using template file names or via MTP;
+- P2P file transfer with encryption between devices;
+- Console for automation scheduling;
+- AES-256 encryption.
+
+Platforms: Windows 11 x64, ARM64 or Ubuntu 24+.</value>
+  </data>
+  <data name="Winget_ShortDescription" xml:space="preserve">
+    <value>BUtil creates incremental backups, incremental synchronization and imports multimedia on your PC with deduplication and FTPS, SFTP, SMB/CIFS transports support for Windows and Linux.</value>
   </data>
 </root>

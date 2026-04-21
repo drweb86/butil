@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="_Technical_NsisLanguage" xml:space="preserve">
+    <value>French</value>
+  </data>
+  <data name="_Technical_WingetLocale" xml:space="preserve">
+    <value>fr-FR</value>
+  </data>
   <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
     <value>Ne rien faire</value>
   </data>
@@ -963,5 +969,24 @@ Consultez la description détaillée dans le lien suivant.</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>L'utilisateur n'est pas spécifié.</value>
+  </data>
+  <data name="Winget_Description" xml:space="preserve">
+    <value>Sauvegardez/synchronisez vos données sous Windows, Linux.
+Importez des photos depuis votre téléphone via WI-FI et plus encore.
+
+Langues prises en charge : anglais, arabe, bengali, chinois, français, allemand, hindi, indonésien, italien, japonais, marathi, pidgin nigérian, portugais, russe, espagnol, tamoul, télougou, turc, ukrainien, ourdou, vietnamien, cantonais
+
+Fonctionnalités :
+- Sauvegarde incrémentielle avec déduplication des fichiers et prise en charge des transports SFTP, FTPS, SMB/CIFS ;
+- Synchronisation des fichiers entre appareils utilisant un stockage centralisé et prise en charge du versionnage ;
+- Importation de médias - Importez des fichiers audio, photos, vidéos depuis la carte SD de l'appareil photo, de l'enregistreur ; photos et vidéos depuis votre téléphone via WI-FI grâce à l'application FTPS Server en utilisant des noms de fichiers modèles ou via MTP ;
+- Transfert de fichiers P2P avec chiffrement entre appareils ;
+- Console pour la planification de l'automatisation ;
+- Chiffrement AES-256.
+
+Plateformes : Windows 11 x64, ARM64 ou Ubuntu 24+.</value>
+  </data>
+  <data name="Winget_ShortDescription" xml:space="preserve">
+    <value>BUtil crée des sauvegardes incrémentielles, une synchronisation incrémentielle et importe des fichiers multimédias sur votre PC avec déduplication et prise en charge des transports FTPS, SFTP, SMB/CIFS pour Windows et Linux.</value>
   </data>
 </root>

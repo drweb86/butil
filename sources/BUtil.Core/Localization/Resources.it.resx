@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="_Technical_NsisLanguage" xml:space="preserve">
+    <value>Italian</value>
+  </data>
+  <data name="_Technical_WingetLocale" xml:space="preserve">
+    <value>it-IT</value>
+  </data>
   <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
     <value>Non fare nulla</value>
   </data>
@@ -973,5 +979,24 @@ Scegliere una delle seguenti opzioni:
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Non è stato specificato l'utente.</value>
+  </data>
+  <data name="Winget_Description" xml:space="preserve">
+    <value>Backup/sincronizza i tuoi dati su Windows, Linux.
+Importa foto dal telefono tramite WI-FI e altro ancora.
+
+Lingue supportate: inglese, arabo, bengalese, cinese, francese, tedesco, hindi, indonesiano, italiano, giapponese, marathi, pidgin nigeriano, portoghese, russo, spagnolo, tamil, telugu, turco, ucraino, urdu, vietnamita, cantonese
+
+Funzionalità:
+- Backup incrementale con deduplicazione dei file e supporto trasporti SFTP, FTPS, SMB/CIFS;
+- Sincronizzazione dei file tra dispositivi utilizzando archiviazione centralizzata e supporto versioning;
+- Importazione media - Importa audio, foto, video dalla scheda SD di fotocamera, registratore; foto e video dal tuo telefono tramite WI-FI attraverso l'applicazione FTPS Server usando nomi file modello o tramite MTP;
+- Trasferimento file P2P con crittografia tra dispositivi;
+- Console per la pianificazione dell'automazione;
+- Crittografia AES-256.
+
+Piattaforme: Windows 11 x64, ARM64 o Ubuntu 24+.</value>
+  </data>
+  <data name="Winget_ShortDescription" xml:space="preserve">
+    <value>BUtil crea backup incrementali, sincronizzazione incrementale e importa contenuti multimediali sul tuo PC con deduplicazione e supporto trasporti FTPS, SFTP, SMB/CIFS per Windows e Linux.</value>
   </data>
 </root>
