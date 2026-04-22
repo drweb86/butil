@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="_Technical_NsisLanguage" xml:space="preserve">
+    <value>Russian</value>
+  </data>
+  <data name="_Technical_WingetLocale" xml:space="preserve">
+    <value>ru-RU</value>
+  </data>
   <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
     <value>Ничего не делать</value>
   </data>

@@ -1,6 +1,37 @@
 ﻿using System.Text;
 using System.Xml;
 
+// =============================================================================
+// TECHNICAL KEYS IN RESX FILES (DO NOT TRANSLATE)
+// =============================================================================
+// This tool reads special "_Technical_*" keys from .resx files to generate
+// language-specific output files. These keys should NOT be translated - they
+// contain technical identifiers used by external systems.
+//
+// Available technical keys:
+//
+// 1. _Technical_WingetLocale
+//    - Purpose: Winget package manager locale identifier
+//    - Example values: "en-US", "de-DE", "zh-CN", "pt-BR"
+//    - Used by: WingetLocaleGenerator to create locale.*.yaml files
+//    - Required for: All languages that should have winget locale files
+//
+// 2. _Technical_NsisLanguage
+//    - Purpose: NSIS installer language name (must match NSIS built-in names)
+//    - Example values: "English", "German", "SimpChinese", "PortugueseBR"
+//    - Used by: NsisLanguageGenerator to create setup-languages.nsh
+//    - Required for: Only languages supported by NSIS installer
+//    - Reference: https://nsis.sourceforge.io/docs/Chapter5.html#langsinst
+//
+// Adding a new language:
+//   1. Create Resources.{culture}.resx file
+//   2. Add _Technical_WingetLocale with the appropriate locale code
+//   3. Add _Technical_NsisLanguage ONLY if NSIS supports that language
+//   4. Add Winget_ShortDescription and Winget_Description translations
+//   5. Add Installer_* translations if NSIS language is supported
+//   6. Run ResxSorter to generate output files
+// =============================================================================
+
 namespace Codice.SortResX
 {
     class Program

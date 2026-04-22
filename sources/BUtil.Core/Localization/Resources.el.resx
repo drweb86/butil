@@ -1,0 +1,994 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="_Technical_NsisLanguage" xml:space="preserve">
+    <value>Greek</value>
+  </data>
+  <data name="_Technical_WingetLocale" xml:space="preserve">
+    <value>el-GR</value>
+  </data>
+  <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
+    <value>Καμία ενέργεια</value>
+  </data>
+  <data name="AfterTaskSelection_Field" xml:space="preserve">
+    <value>Μετά την ολοκλήρωση εργασίας:</value>
+  </data>
+  <data name="AfterTaskSelection_Help" xml:space="preserve">
+    <value>Εάν επιλέξετε κάτι διαφορετικό από 'καμία ενέργεια',
+το πρόγραμμα θα ρυθμίσει το λειτουργικό σύστημα ώστε να σας εμφανίσει αναφορά
+κατά την επόμενη σύνδεσή σας στο σύστημα εάν καταγραφούν
+σφάλματα ή προειδοποιήσεις.</value>
+  </data>
+  <data name="AfterTaskSelection_LogOff" xml:space="preserve">
+    <value>Αποσύνδεση</value>
+  </data>
+  <data name="AfterTaskSelection_Reboot" xml:space="preserve">
+    <value>Επανεκκίνηση</value>
+  </data>
+  <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
+    <value>Τερματισμός</value>
+  </data>
+  <data name="Application_NewVersion_Notification" xml:space="preserve">
+    <value>Νέα έκδοση {0} είναι διαθέσιμη.</value>
+  </data>
+  <data name="BackupVersion_Button_Delete" xml:space="preserve">
+    <value>Διαγραφή έκδοσης</value>
+  </data>
+  <data name="BackupVersion_Changes_Title" xml:space="preserve">
+    <value>Αλλαγές</value>
+  </data>
+  <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
+    <value>Θέλετε πραγματικά να διαγράψετε την έκδοση "{0}";
+
+Οι αλλαγές της διαγραμμένης έκδοσης θα γίνουν μέρος της έκδοσης "{1}".</value>
+  </data>
+  <data name="BackupVersion_Files_Title" xml:space="preserve">
+    <value>Αρχεία</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
+    <value>Ημερολόγιο: {0}</value>
+  </data>
+  <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
+    <value>Ημερολόγιο για επιλεγμένο...</value>
+  </data>
+  <data name="BackupVersion_Select" xml:space="preserve">
+    <value>Άνοιγμα επιλεγμένης έκδοσης...</value>
+  </data>
+  <data name="BackupVersion_Selector_Title" xml:space="preserve">
+    <value>ΕΠΙΛΟΓΗ ΕΚΔΟΣΗΣ</value>
+  </data>
+  <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
+    <value>(όλες οι εκδόσεις καταλαμβάνουν στον αποθηκευτικό χώρο {0})</value>
+  </data>
+  <data name="BackupVersion_Versions_Title" xml:space="preserve">
+    <value>ΕΚΔΟΣΕΙΣ</value>
+  </data>
+  <data name="BackupVersion_Viewer_Help" xml:space="preserve">
+    <value>Επιλέξτε αρχείο ή φάκελο που θέλετε να επαναφέρετε στο δέντρο και κάντε κλικ στο "Επαναφορά".</value>
+  </data>
+  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
+    <value>Η σύνδεση με τον διακομιστή διακόπηκε απροσδόκητα (Είναι οι κωδικοί πρόσβασης σε Πελάτη και Διακομιστή ίδιοι;)</value>
+  </data>
+  <data name="Button_Cancel" xml:space="preserve">
+    <value>Ακύρωση</value>
+  </data>
+  <data name="Button_Close" xml:space="preserve">
+    <value>Κλείσιμο</value>
+  </data>
+  <data name="Button_Continue" xml:space="preserve">
+    <value>Συνέχεια &gt;</value>
+  </data>
+  <data name="Button_CopyToClipboard" xml:space="preserve">
+    <value>Αντιγραφή</value>
+  </data>
+  <data name="Button_Download" xml:space="preserve">
+    <value>Λήψη</value>
+  </data>
+  <data name="Button_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Button_Remove" xml:space="preserve">
+    <value>Αφαίρεση</value>
+  </data>
+  <data name="Button_Save" xml:space="preserve">
+    <value>Αποθήκευση</value>
+  </data>
+  <data name="CommandLineArguments_Help" xml:space="preserve">
+    <value>Επισκεφτείτε {0} για να δείτε τα ορίσματα γραμμής εντολών.</value>
+  </data>
+  <data name="CommandLineArguments_Invalid" xml:space="preserve">
+    <value>Μη έγκυρα ορίσματα γραμμής εντολών.</value>
+  </data>
+  <data name="DataStorage_Data_Saving" xml:space="preserve">
+    <value>Εγγραφή δεδομένων στον αποθηκευτικό χώρο</value>
+  </data>
+  <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
+    <value>Σενάριο σύνδεσης:</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
+    <value>Σενάριο αποσύνδεσης:</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
+    <value>Ολοκληρώθηκε με σφάλματα</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
+    <value>Ολοκληρώθηκε επιτυχώς</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
+    <value>Όριο μεταφόρτωσης, GB:</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
+    <value>Περιορίζει τον όγκο δεδομένων που αποστέλλονται κατά τη διάρκεια μιας εκτέλεσης εργασίας στον αποθηκευτικό χώρο. 0 - χωρίς όριο.
+Όταν το όριο ξεπεραστεί, τα υπόλοιπα αρχεία θα παραλειφθούν και θα επεξεργαστούν την επόμενη φορά.
+Σενάριο χρήσης: Αντιγράφετε δεδομένα σε απομακρυσμένο διακομιστή. Υπάρχει πρόβλημα: ο πάροχος μειώνει την ταχύτητα μεταφόρτωσης μετά από αρκετά gigabyte. Αυτή η ρύθμιση σας επιτρέπει να το διαχειριστείτε.</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
+    <value>Το όριο πρέπει να είναι 0 (χωρίς εφαρμογή) ή τιμή μεγαλύτερη από 0.</value>
+  </data>
+  <data name="DataStorage_Maintenance" xml:space="preserve">
+    <value>Συντήρηση αποθηκευτικού χώρου</value>
+  </data>
+  <data name="DataStorage_Script_Help" xml:space="preserve">
+    <value>Εάν ο φάκελος γίνει διαθέσιμος μετά την εκτέλεση ορισμένων εντολών, καθορίστε σενάρια {0} για σύνδεση και αποσύνδεση.</value>
+  </data>
+  <data name="DataStorage_Scripts_Header" xml:space="preserve">
+    <value>Σενάρια (πριν την προσάρτηση / μετά την αποπροσάρτηση)</value>
+  </data>
+  <data name="DataStorage_State_Get" xml:space="preserve">
+    <value>Λήψη κατάστασης αποθηκευτικού χώρου</value>
+  </data>
+  <data name="DataStorage_State_Saving" xml:space="preserve">
+    <value>Εγγραφή κατάστασης αποθηκευτικού χώρου</value>
+  </data>
+  <data name="DataStorage_Title" xml:space="preserve">
+    <value>Αποθηκευτικός χώρος</value>
+  </data>
+  <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
+    <value>Ο αποθηκευτικός χώρος δεν έχει καθοριστεί.</value>
+  </data>
+  <data name="Days_Field_Choose" xml:space="preserve">
+    <value>Επιλέξτε ημέρες της εβδομάδας:</value>
+  </data>
+  <data name="Days_Friday" xml:space="preserve">
+    <value>Παρασκευή</value>
+  </data>
+  <data name="Days_Monday" xml:space="preserve">
+    <value>Δευτέρα</value>
+  </data>
+  <data name="Days_Saturday" xml:space="preserve">
+    <value>Σάββατο</value>
+  </data>
+  <data name="Days_Sunday" xml:space="preserve">
+    <value>Κυριακή</value>
+  </data>
+  <data name="Days_Thursday" xml:space="preserve">
+    <value>Πέμπτη</value>
+  </data>
+  <data name="Days_Tuesday" xml:space="preserve">
+    <value>Τρίτη</value>
+  </data>
+  <data name="Days_Wednesday" xml:space="preserve">
+    <value>Τετάρτη</value>
+  </data>
+  <data name="DirectoryStorage" xml:space="preserve">
+    <value>Κατάλογος</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
+    <value>Φάκελος:</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
+    <value>Ο κατάλογος δεν έχει καθοριστεί.</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
+    <value>Ο κατάλογος "{0}" δεν υπάρχει.</value>
+  </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>Διάρκεια (λεπτά, 0 - άπειρο):</value>
+  </data>
+  <data name="Field_Device" xml:space="preserve">
+    <value>Συσκευή:</value>
+  </data>
+  <data name="Field_Device_Validation_Empty" xml:space="preserve">
+    <value>Η συσκευή δεν έχει καθοριστεί.</value>
+  </data>
+  <data name="Field_Device_Validation_NotFound" xml:space="preserve">
+    <value>Η συσκευή δεν βρέθηκε.</value>
+  </data>
+  <data name="Field_File_Browse" xml:space="preserve">
+    <value>Αναζήτηση αρχείου</value>
+  </data>
+  <data name="Field_Folder" xml:space="preserve">
+    <value>Φάκελος:</value>
+  </data>
+  <data name="Field_Folder_Browse" xml:space="preserve">
+    <value>Αναζήτηση</value>
+  </data>
+  <data name="Field_Folder_Validation_Empty" xml:space="preserve">
+    <value>Ο φάκελος δεν έχει καθοριστεί.</value>
+  </data>
+  <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
+    <value>Ο φάκελος δεν υπάρχει.</value>
+  </data>
+  <data name="Field_TransportProtocol" xml:space="preserve">
+    <value>Πρωτόκολλο:</value>
+  </data>
+  <data name="Field_Version" xml:space="preserve">
+    <value>Έκδοση:</value>
+  </data>
+  <data name="File_Deleting" xml:space="preserve">
+    <value>Διαγραφή "{0}"</value>
+  </data>
+  <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
+    <value>Σενάριο επαλήθευσης ακεραιότητας.ps1</value>
+  </data>
+  <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
+    <value>Αποθήκευση σεναρίων επαλήθευσης ακεραιότητας</value>
+  </data>
+  <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
+    <value>Επεξεργασία αρχείων παλαιότερων από:</value>
+  </data>
+  <data name="File_List_Saving" xml:space="preserve">
+    <value>Αποθήκευση αρχείων</value>
+  </data>
+  <data name="File_Moving" xml:space="preserve">
+    <value>Μετακίνηση "{0}" σε "{1}"</value>
+  </data>
+  <data name="File_Saving" xml:space="preserve">
+    <value>Αποθήκευση "{0}"</value>
+  </data>
+  <data name="File_Uploading" xml:space="preserve">
+    <value>Μεταφόρτωση "{0}"</value>
+  </data>
+  <data name="FingerPrintSHA256_Field" xml:space="preserve">
+    <value>Αποτύπωμα SHA-256:</value>
+  </data>
+  <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
+    <value>Το αποτύπωμα SHA-256 δεν έχει καθοριστεί.</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
+    <value>Ρητή</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
+    <value>Σιωπηρή</value>
+  </data>
+  <data name="Ftps_Field_Encryption" xml:space="preserve">
+    <value>Κρυπτογράφηση SSL/TTS:</value>
+  </data>
+  <data name="FtpsServerStartTask_Name" xml:space="preserve">
+    <value>Εκκίνηση διακομιστή FTPS</value>
+  </data>
+  <data name="FtpsServerTask_Create" xml:space="preserve">
+    <value>Κοινή χρήση φακέλου μέσω δικτύου (Διακομιστής FTPS)</value>
+  </data>
+  <data name="FtpsServerTask_Help" xml:space="preserve">
+    <value>Μπορείτε να μοιραστείτε οποιονδήποτε φάκελο για πρόσβαση ανάγνωσης-εγγραφής μέσω πρωτοκόλλου FTPS (ρητή κρυπτογράφηση με αυτο-υπογεγραμμένο πιστοποιητικό) μέσα στο τοπικό σας δίκτυο.</value>
+  </data>
+  <data name="Icons_Help_Link" xml:space="preserve">
+    <value>Προσθέστε εικονίδιο χαρακτήρα στο κείμενό σας</value>
+  </data>
+  <data name="ImportMediaTask_AllFiles" xml:space="preserve">
+    <value>Εισαγωγή όλων των αρχείων</value>
+  </data>
+  <data name="ImportMediaTask_Create" xml:space="preserve">
+    <value>Εργασία εισαγωγής πολυμέσων</value>
+  </data>
+  <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
+    <value>Επεξεργασία εργασίας εισαγωγής πολυμέσων "{0}"</value>
+  </data>
+  <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
+    <value>Φάκελος εξόδου:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
+    <value>Μετασχηματισμοί ονόματος αρχείου:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
+    <value>Παράδειγμα:
+Φανταστείτε ότι έχετε το αρχείο {0} (τροποποιημένο στις {1}).
+Με αυτόν τον κατάλογο και τη συμβολοσειρά προτύπου, το αρχείο θα αποθηκευτεί ως:
+{2}</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
+    <value>Υποστηριζόμενα διακριτικά:
+{DATE:Format} - Εισάγει την ημερομηνία τροποποίησης αρχείου στην καθορισμένη μορφή.
+Για να δείτε όλες τις επιλογές αναζητήστε "C# DateTime format".</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
+    <value>Το μετασχηματισμένο όνομα αρχείου είναι κενό.</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
+    <value>Μη έγκυρη συμβολοσειρά μετασχηματισμού ονόματος αρχείου.</value>
+  </data>
+  <data name="ImportMediaTask_File" xml:space="preserve">
+    <value>Εισαγωγή "{0}"</value>
+  </data>
+  <data name="ImportMediaTask_Help" xml:space="preserve">
+    <value>Εισάγει ήχους, φωτογραφίες, βίντεο από κάρτα SD κάμερας, εγγραφέα· φωτογραφίες και βίντεο από το τηλέφωνό σας μέσω WI-FI μέσω εφαρμογής FTP Server χρησιμοποιώντας ονόματα αρχείων προτύπου.
+
+Δείτε τον ιστότοπο της εφαρμογής για τεκμηρίωση σχετικά με τη ρύθμιση μεταφοράς αρχείων μέσω WI-FI μέσω εφαρμογής FTP Server στο τηλέφωνο.</value>
+  </data>
+  <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
+    <value>Εισαγωγή πηγής δεδομένων</value>
+  </data>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
+    <value>Παράλειψη ήδη εισαγμένων αρχείων</value>
+  </data>
+  <data name="ImproveIt_Message" xml:space="preserve">
+    <value>Παρουσιάστηκε απροσδόκητο σφάλμα.
+
+Παρακαλώ επικοινωνήστε με τους προγραμματιστές με τις πληροφορίες που αποθηκεύτηκαν στην επιφάνεια εργασίας σας στο
+"{0}"
+
+Η εφαρμογή θα κλείσει τώρα.</value>
+  </data>
+  <data name="IncrementalBackup_Help" xml:space="preserve">
+    <value>Η πιο βασική μορφή σταδιακού αντιγράφου ασφαλείας συνίσταται στον εντοπισμό, την καταγραφή και τη διατήρηση μόνο εκείνων των αρχείων που έχουν αλλάξει από το τελευταίο αντίγραφο ασφαλείας.
+
+Δεδομένου ότι οι αλλαγές είναι συνήθως μικρές, τα σταδιακά αντίγραφα ασφαλείας είναι πολύ μικρότερα και ταχύτερα από τα πλήρη αντίγραφα.
+
+Για παράδειγμα, μετά από ένα πλήρες αντίγραφο ασφαλείας την Παρασκευή, ένα αντίγραφο τη Δευτέρα θα περιέχει μόνο τα αρχεία που άλλαξαν από την Παρασκευή. Ένα αντίγραφο την Τρίτη περιέχει μόνο τα αρχεία που άλλαξαν από τη Δευτέρα, κ.ο.κ.
+
+Εάν οποιοδήποτε από τα δημιουργημένα αντίγραφα αποτύχει, συμπεριλαμβανομένου του πρώτου (πλήρους), η επαναφορά θα είναι ατελής.</value>
+  </data>
+  <data name="IncrementalBackup_Title" xml:space="preserve">
+    <value>Σταδιακό αντίγραφο ασφαλείας</value>
+  </data>
+  <data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
+    <value>Υπολογισμός σταδιακής έκδοσης</value>
+  </data>
+  <data name="IncrementalBackup_Version_Save" xml:space="preserve">
+    <value>Αποθήκευση σταδιακής έκδοσης</value>
+  </data>
+  <data name="IncrementalBackupTask_Create" xml:space="preserve">
+    <value>Εργασία σταδιακού αντιγράφου ασφαλείας</value>
+  </data>
+  <data name="Installer_AdminRequired" xml:space="preserve">
+    <value>Απαιτούνται δικαιώματα διαχειριστή για εγκατάσταση για όλους τους χρήστες.
+Εκτελέστε το πρόγραμμα εγκατάστασης ως διαχειριστής ή χρησιμοποιήστε /CURRENTUSER.</value>
+  </data>
+  <data name="Installer_AdminRequiredDetailed" xml:space="preserve">
+    <value>Απαιτούνται δικαιώματα διαχειριστή για εγκατάσταση για όλους τους χρήστες.
+
+Παρακαλώ είτε:
+- Επιλέξτε 'Εγκατάσταση μόνο για τον τρέχοντα χρήστη', ή
+- Εκτελέστε αυτό το πρόγραμμα εγκατάστασης ως διαχειριστής</value>
+  </data>
+  <data name="Installer_AllUsersDescription" xml:space="preserve">
+    <value>Η εφαρμογή θα είναι διαθέσιμη για όλους τους χρήστες σε αυτόν τον υπολογιστή.</value>
+  </data>
+  <data name="Installer_AllUsersOption" xml:space="preserve">
+    <value>Εγκατάσταση για ό&amp;λους τους χρήστες (απαιτεί δικαιώματα διαχειριστή)</value>
+  </data>
+  <data name="Installer_ArchRequired" xml:space="preserve">
+    <value>Αυτό το πρόγραμμα εγκατάστασης απαιτεί έκδοση x64 ή arm64 των Windows.</value>
+  </data>
+  <data name="Installer_CurrentUserDescription" xml:space="preserve">
+    <value>Συνιστάται. Η εφαρμογή θα είναι διαθέσιμη μόνο για τον λογαριασμό χρήστη σας.</value>
+  </data>
+  <data name="Installer_CurrentUserOption" xml:space="preserve">
+    <value>Εγκατάσταση μόνο για τον &amp;τρέχοντα χρήστη</value>
+  </data>
+  <data name="Installer_InstallingFor" xml:space="preserve">
+    <value>Εγκατάσταση για:</value>
+  </data>
+  <data name="Installer_InstallModeDescription" xml:space="preserve">
+    <value>Επιλέξτε εάν θέλετε να εγκαταστήσετε το BUtil μόνο για εσάς ή για όλους τους χρήστες αυτού του υπολογιστή.</value>
+  </data>
+  <data name="Installer_InstallModeSubtitle" xml:space="preserve">
+    <value>Επιλέξτε ποιος μπορεί να χρησιμοποιήσει αυτήν την εφαρμογή</value>
+  </data>
+  <data name="Installer_InstallModeTitle" xml:space="preserve">
+    <value>Επιλογή τύπου εγκατάστασης</value>
+  </data>
+  <data name="Installer_LaunchApp" xml:space="preserve">
+    <value>Εκκίνηση εφαρμογής</value>
+  </data>
+  <data name="KeyFile_Field" xml:space="preserve">
+    <value>Αρχείο κλειδιού:</value>
+  </data>
+  <data name="LeftMenu_Encryption" xml:space="preserve">
+    <value>Κρυπτογράφηση</value>
+  </data>
+  <data name="LeftMenu_What" xml:space="preserve">
+    <value>Τι;</value>
+  </data>
+  <data name="LeftMenu_What_Hint" xml:space="preserve">
+    <value>Εδώ μπορείτε να προσθέσετε φακέλους και αρχεία που χρειάζεται να επεξεργαστείτε.</value>
+  </data>
+  <data name="LeftMenu_What_Validation" xml:space="preserve">
+    <value>Δεν υπάρχουν στοιχεία προς επεξεργασία.</value>
+  </data>
+  <data name="LeftMenu_When" xml:space="preserve">
+    <value>Πότε;</value>
+  </data>
+  <data name="LeftMenu_When_Help" xml:space="preserve">
+    <value>Εδώ μπορείτε να ρυθμίσετε έναν προγραμματιστή. Ο προγραμματιστής μπορεί να σας βοηθήσει να αυτοματοποιήσετε την εκκίνηση εργασίας.</value>
+  </data>
+  <data name="LeftMenu_Where" xml:space="preserve">
+    <value>Πού;</value>
+  </data>
+  <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
+    <value>Σύρετε και αποθέστε εδώ αρχεία και φακέλους από τον Εξερευνητή.</value>
+  </data>
+  <data name="LeftMenu_Where_Hint" xml:space="preserve">
+    <value>Σε αυτό το σημείο μπορείτε να προσθέσετε τοποθεσίες όπου θέλετε να αντιγραφούν τα αρχεία σας.</value>
+  </data>
+  <data name="Local_State_Get" xml:space="preserve">
+    <value>Λήψη τοπικής κατάστασης</value>
+  </data>
+  <data name="Local_State_Saving" xml:space="preserve">
+    <value>Εγγραφή τοπικής κατάστασης</value>
+  </data>
+  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
+    <value>Άνοιγμα φακέλου αρχείων καταγραφής</value>
+  </data>
+  <data name="LogFile_Marker_Errors" xml:space="preserve">
+    <value>Σφάλματα</value>
+  </data>
+  <data name="LogFile_Marker_Successful" xml:space="preserve">
+    <value>Επιτυχία</value>
+  </data>
+  <data name="LogFile_OpenLogs" xml:space="preserve">
+    <value>Αρχεία καταγραφής</value>
+  </data>
+  <data name="Logs_Menu" xml:space="preserve">
+    <value>Αρχεία καταγραφής</value>
+  </data>
+  <data name="MainWindow_SearchWatermark" xml:space="preserve">
+    <value>Αναζήτηση</value>
+  </data>
+  <data name="Messages_Header_Error" xml:space="preserve">
+    <value>Σφάλμα</value>
+  </data>
+  <data name="Messages_Header_Information" xml:space="preserve">
+    <value>Πληροφορίες</value>
+  </data>
+  <data name="Messages_Header_Question" xml:space="preserve">
+    <value>Ερώτηση</value>
+  </data>
+  <data name="Name_Field" xml:space="preserve">
+    <value>Όνομα:</value>
+  </data>
+  <data name="Name_Field_Validation" xml:space="preserve">
+    <value>Το όνομα είναι κενό ή περιέχει μη υποστηριζόμενους χαρακτήρες διαδρομής.</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>Το μήκος του ονόματος '{0}' υπερβαίνει το όριο κατά {1} χαρακτήρες.</value>
+  </data>
+  <data name="Name_Title" xml:space="preserve">
+    <value>Όνομα</value>
+  </data>
+  <data name="OptionalField_Hint" xml:space="preserve">
+    <value>(προαιρετικό)</value>
+  </data>
+  <data name="Other_Menu_Title" xml:space="preserve">
+    <value>Άλλα</value>
+  </data>
+  <data name="Password_Field" xml:space="preserve">
+    <value>Κωδικός πρόσβασης:</value>
+  </data>
+  <data name="Password_Field_Confirm" xml:space="preserve">
+    <value>Επιβεβαίωση κωδικού πρόσβασης:</value>
+  </data>
+  <data name="Password_Field_Length" xml:space="preserve">
+    <value>Μήκος:</value>
+  </data>
+  <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
+    <value>Οι κωδικοί πρόσβασης δεν ταιριάζουν.</value>
+  </data>
+  <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
+    <value>Ο κωδικός πρόσβασης δεν έχει καθοριστεί.</value>
+  </data>
+  <data name="Password_Generate" xml:space="preserve">
+    <value>Δημιουργία κωδικού πρόσβασης...</value>
+  </data>
+  <data name="Password_Generator_Header" xml:space="preserve">
+    <value>Δημιουργός κωδικών πρόσβασης</value>
+  </data>
+  <data name="Password_Help" xml:space="preserve">
+    <value>Το συνιστώμενο ελάχιστο μήκος κωδικού πρόσβασης είναι 50 χαρακτήρες και άνω.</value>
+  </data>
+  <data name="Password_Use" xml:space="preserve">
+    <value>Χρήση</value>
+  </data>
+  <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
+    <value>Δεν είναι δυνατός ο εντοπισμός αρχείων "{0}" στον κατάλογο. 
+
+Υποδείξτε έναν κατάλογο που περιέχει αυτό το αρχείο.</value>
+  </data>
+  <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
+    <value>Δεν είναι δυνατή η ανάγνωση της κατάστασης.</value>
+  </data>
+  <data name="Server_Field_Address" xml:space="preserve">
+    <value>Όνομα διακομιστή:</value>
+  </data>
+  <data name="Server_Field_Address_Validation" xml:space="preserve">
+    <value>Το όνομα διακομιστή δεν έχει καθοριστεί.</value>
+  </data>
+  <data name="Server_Field_Port" xml:space="preserve">
+    <value>Θύρα:</value>
+  </data>
+  <data name="Server_Field_Port_Validation" xml:space="preserve">
+    <value>Η θύρα δεν είναι έγκυρη.</value>
+  </data>
+  <data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
+    <value>Τόσο ο κωδικός πρόσβασης όσο και το αρχείο κλειδιού είναι κενά.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
+    <value>Ο φάκελος SFTP δεν πρέπει να τελειώνει με /.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
+    <value>Ο φάκελος SFTP πρέπει να ξεκινά με /.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
+    <value>Ο φάκελος SFTP / δεν επιτρέπεται. Ο φάκελος πρέπει να δείχνει σε πιο συγκεκριμένο φάκελο.</value>
+  </data>
+  <data name="SourceItem_AddFolders" xml:space="preserve">
+    <value>Προσθήκη φακέλων...</value>
+  </data>
+  <data name="SourceItem_OpenInExplorer" xml:space="preserve">
+    <value>Άνοιγμα στον Εξερευνητή...</value>
+  </data>
+  <data name="SourceItem_State_Get" xml:space="preserve">
+    <value>Λήψη κατάστασης στοιχείου πηγής "{0}"</value>
+  </data>
+  <data name="SourceItem_Validation_Empty" xml:space="preserve">
+    <value>Δεν υπάρχουν στοιχεία προς επεξεργασία.</value>
+  </data>
+  <data name="SourceItem_Validation_NotExists" xml:space="preserve">
+    <value>Το "{0}" δεν υπάρχει.</value>
+  </data>
+  <data name="State_File_Get" xml:space="preserve">
+    <value>Λήψη κατάστασης αρχείου "{0}"</value>
+  </data>
+  <data name="State_LoadFromEverywhere" xml:space="preserve">
+    <value>Λήψη κατάστασης στοιχείων πηγής και αποθηκευτικών χώρων</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
+    <value>Προσθήκη μοτίβου εξαίρεσης αρχείων</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
+    <value>Επεξεργασία μοτίβου εξαίρεσης αρχείων</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>Εξαίρεση αρχείων</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
+    <value>Globbing αρχείων στο .NET: Μοτίβα</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
+    <value>Εδώ μπορείτε να καθορίσετε μοτίβα εξαίρεσης globbing αρχείων. 
+Μπορεί να είναι όνομα αρχείου ή όνομα φακέλου ή μπαλαντέρ. 
+Παραδείγματα: 
+d:\temp, 
+d:\temp\file.txt, 
+d:\temp\**\*.txt ή 
+bin. 
+Δείτε αναλυτική περιγραφή στον παρακάτω σύνδεσμο.</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
+    <value>Παραλείπει την επεξεργασία αρχείων βάσει μοτίβου εξαίρεσης.</value>
+  </data>
+  <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
+    <value>Μοτίβο εξαίρεσης αρχείων:</value>
+  </data>
+  <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
+    <value>Το μοτίβο εξαίρεσης αρχείων είναι κενό.</value>
+  </data>
+  <data name="StorageItem_Remote_Marker" xml:space="preserve">
+    <value>Απομακρυσμένο</value>
+  </data>
+  <data name="SynchronizationMode_Field" xml:space="preserve">
+    <value>Λειτουργία συγχρονισμού:</value>
+  </data>
+  <data name="SynchronizationMode_Field_Read" xml:space="preserve">
+    <value>Ανάγνωση</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
+    <value>Αμφίδρομος</value>
+  </data>
+  <data name="SynchronizationTask_Create" xml:space="preserve">
+    <value>Συγχρονισμός</value>
+  </data>
+  <data name="SynchronizationTask_Help" xml:space="preserve">
+    <value>Αμφίδρομος συγχρονισμός αρχείων μεταξύ συσκευών χρησιμοποιώντας κεντρικό αποθηκευτικό χώρο.</value>
+  </data>
+  <data name="Task_Create" xml:space="preserve">
+    <value>Νέα</value>
+  </data>
+  <data name="Task_Create_Hint" xml:space="preserve">
+    <value>Δημιουργεί νέα εργασία.</value>
+  </data>
+  <data name="Task_Delete" xml:space="preserve">
+    <value>Διαγραφή</value>
+  </data>
+  <data name="Task_Delete_Confirm" xml:space="preserve">
+    <value>Θέλετε πραγματικά να διαγράψετε "{0}";</value>
+  </data>
+  <data name="Task_Delete_Hint" xml:space="preserve">
+    <value>Διαγράφει την επιλεγμένη εργασία.</value>
+  </data>
+  <data name="Task_Duplicate" xml:space="preserve">
+    <value>Αντίγραφο</value>
+  </data>
+  <data name="Task_Edit" xml:space="preserve">
+    <value>Επεξεργασία</value>
+  </data>
+  <data name="Task_Edit_Hint" xml:space="preserve">
+    <value>Επεξεργάζεται την επιλεγμένη εργασία.</value>
+  </data>
+  <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
+    <value>Δεν μπορείτε να επεξεργαστείτε αυτόν τον τύπο εργασίας στο CLI.</value>
+  </data>
+  <data name="Task_Field_Choose" xml:space="preserve">
+    <value>Επιλέξτε εργασία:</value>
+  </data>
+  <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
+    <value>Νέα εργασία</value>
+  </data>
+  <data name="Task_LastExecution_State" xml:space="preserve">
+    <value>Κατάσταση</value>
+  </data>
+  <data name="Task_Launch" xml:space="preserve">
+    <value>Εκκίνηση</value>
+  </data>
+  <data name="Task_Launch_Hint" xml:space="preserve">
+    <value>Εκκινεί την επιλεγμένη εργασία.</value>
+  </data>
+  <data name="Task_List" xml:space="preserve">
+    <value>Εργασίες</value>
+  </data>
+  <data name="Task_OpenLog" xml:space="preserve">
+    <value>Άνοιγμα τελευταίου αρχείου καταγραφής</value>
+  </data>
+  <data name="Task_Restore" xml:space="preserve">
+    <value>Επαναφορά</value>
+  </data>
+  <data name="Task_Status_FailedSeeLog" xml:space="preserve">
+    <value>Απέτυχε (δείτε το ανοιγμένο αρχείο καταγραφής)</value>
+  </data>
+  <data name="Task_Status_InProgress" xml:space="preserve">
+    <value>Η εργασία βρίσκεται σε εξέλιξη...</value>
+  </data>
+  <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
+    <value>Ολοκληρώθηκε μερικώς. Λόγω ορίου αποθηκευτικού χώρου ορισμένα αρχεία παραλείφθηκαν αυτή τη φορά. Απομένουν {0} αρχεία με {1} GB.</value>
+  </data>
+  <data name="Task_Status_Succesfull" xml:space="preserve">
+    <value>Επιτυχής</value>
+  </data>
+  <data name="Task_Status_Unknown" xml:space="preserve">
+    <value>Άγνωστο</value>
+  </data>
+  <data name="Task_Validation_NotFound" xml:space="preserve">
+    <value>Η εργασία '{0}' δεν βρέθηκε.</value>
+  </data>
+  <data name="Task_Validation_NotSupported" xml:space="preserve">
+    <value>Αυτός ο τύπος εργασίας δεν υποστηρίζεται.</value>
+  </data>
+  <data name="Task_WindowTitle_Creating" xml:space="preserve">
+    <value>Δημιουργία</value>
+  </data>
+  <data name="Task_WindowTitle_Editing" xml:space="preserve">
+    <value>Επεξεργασία</value>
+  </data>
+  <data name="TechnicalTool_Close" xml:space="preserve">
+    <value>Κλείσιμο</value>
+  </data>
+  <data name="TechnicalTool_Completed" xml:space="preserve">
+    <value>Η λειτουργία ολοκληρώθηκε επιτυχώς.</value>
+  </data>
+  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
+    <value>Συμπίεση Brotli</value>
+  </data>
+  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
+    <value>Αποσυμπίεση Brotli</value>
+  </data>
+  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
+    <value>Αποκρυπτογράφηση AES-256</value>
+  </data>
+  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
+    <value>Κρυπτογράφηση AES-256</value>
+  </data>
+  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
+    <value>Το αρχείο δεν υπάρχει:</value>
+  </data>
+  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
+    <value>Εισαγάγετε κωδικό πρόσβασης.</value>
+  </data>
+  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
+    <value>Καθορίστε τις διαδρομές αρχείου πηγής και εξόδου.</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
+    <value>Κρυπτογραφημένο AES-256 (*.{0})</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
+    <value>Όλα τα αρχεία</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
+    <value>Συμπιεσμένο Brotli (*.brotli)</value>
+  </data>
+  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
+    <value>Συμπίεση Brotli…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
+    <value>Αποσυμπίεση Brotli…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
+    <value>Αποκρυπτογράφηση AES-256…</value>
+  </data>
+  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
+    <value>Κρυπτογράφηση AES-256…</value>
+  </data>
+  <data name="TechnicalTool_OutputFile" xml:space="preserve">
+    <value>Αρχείο εξόδου:</value>
+  </data>
+  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
+    <value>Επιλογή αρχείου εξόδου</value>
+  </data>
+  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
+    <value>Επιλογή αρχείου πηγής</value>
+  </data>
+  <data name="TechnicalTool_Run" xml:space="preserve">
+    <value>Εκτέλεση</value>
+  </data>
+  <data name="TechnicalTool_SourceFile" xml:space="preserve">
+    <value>Αρχείο πηγής:</value>
+  </data>
+  <data name="Theme_Title" xml:space="preserve">
+    <value>Θέμα</value>
+  </data>
+  <data name="Theme_Value_Dark" xml:space="preserve">
+    <value>Σκοτεινό</value>
+  </data>
+  <data name="Theme_Value_Light" xml:space="preserve">
+    <value>Φωτεινό</value>
+  </data>
+  <data name="Time_Field_Elapsed" xml:space="preserve">
+    <value>Χρόνος που πέρασε:</value>
+  </data>
+  <data name="Time_Field_Hour" xml:space="preserve">
+    <value>Ώρα:</value>
+  </data>
+  <data name="Time_Field_Minute" xml:space="preserve">
+    <value>Λεπτό:</value>
+  </data>
+  <data name="TimeoutTask_Title" xml:space="preserve">
+    <value>Αναμονή για χρονικό όριο...</value>
+  </data>
+  <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
+    <value>Προειδοποίηση ανάλυσης πιστοποιητικού: {0}</value>
+  </data>
+  <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
+    <value>Επαληθεύστε την ταυτότητα του πιστοποιητικού εκτός ζώνης και κάντε ξανά κλικ στο Αποθήκευση για αποθήκευση.</value>
+  </data>
+  <data name="TrustDetected_Ftps_Title" xml:space="preserve">
+    <value>Εντοπίστηκε πιστοποιητικό διακομιστή FTPS κατά τη δοκιμή.</value>
+  </data>
+  <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
+    <value>Πιστοποιητικό (ακατέργαστο hex): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_DnsName" xml:space="preserve">
+    <value>Όνομα DNS: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Encryption" xml:space="preserve">
+    <value>Κρυπτογράφηση: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
+    <value>Αποτύπωμα (SHA-256): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Folder" xml:space="preserve">
+    <value>Φάκελος: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Host" xml:space="preserve">
+    <value>Κεντρικός υπολογιστής: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Issuer" xml:space="preserve">
+    <value>Εκδότης: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Port" xml:space="preserve">
+    <value>Θύρα: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
+    <value>Αλγόριθμος δημόσιου κλειδιού: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
+    <value>Μέγεθος δημόσιου κλειδιού: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
+    <value>Σειριακός αριθμός: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
+    <value>Αλγόριθμος υπογραφής: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Subject" xml:space="preserve">
+    <value>Θέμα: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
+    <value>Εναλλακτικά ονόματα θέματος: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
+    <value>Αποτύπωμα: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_User" xml:space="preserve">
+    <value>Χρήστης: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
+    <value>Ισχύει από (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
+    <value>Ισχύει έως (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
+    <value>Λεπτομέρειες αναλυμένου πιστοποιητικού:</value>
+  </data>
+  <data name="TrustDetected_Port_Default" xml:space="preserve">
+    <value>προεπιλογή</value>
+  </data>
+  <data name="TrustDetected_Port_Default22" xml:space="preserve">
+    <value>προεπιλογή (22)</value>
+  </data>
+  <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
+    <value>άγνωστο</value>
+  </data>
+  <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
+    <value>Επαληθεύστε αυτό το αποτύπωμα εκτός ζώνης και κάντε ξανά κλικ στο Αποθήκευση για αποθήκευση.</value>
+  </data>
+  <data name="TrustDetected_Sftp_Title" xml:space="preserve">
+    <value>Εντοπίστηκαν πληροφορίες εμπιστοσύνης διακομιστή SFTP κατά τη δοκιμή.</value>
+  </data>
+  <data name="TrustedCertificate_Field" xml:space="preserve">
+    <value>Αξιόπιστο πιστοποιητικό (hex):</value>
+  </data>
+  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
+    <value>Μεταφόρτωση φακέλου στον διακομιστή</value>
+  </data>
+  <data name="UploadFolderTask_Help" xml:space="preserve">
+    <value>Μπορείτε να μεταφορτώσετε τα περιεχόμενα φακέλου αντικαθιστώντας τα ήδη υπάρχοντα αρχεία.</value>
+  </data>
+  <data name="Url_Field" xml:space="preserve">
+    <value>Url:</value>
+  </data>
+  <data name="Url_Field_Validation" xml:space="preserve">
+    <value>Το Url δεν έχει καθοριστεί.</value>
+  </data>
+  <data name="User_Field" xml:space="preserve">
+    <value>Χρήστης:</value>
+  </data>
+  <data name="User_Field_Validation" xml:space="preserve">
+    <value>Ο χρήστης δεν έχει καθοριστεί.</value>
+  </data>
+  <data name="Winget_Description" xml:space="preserve">
+    <value>Δημιουργία αντιγράφων ασφαλείας/συγχρονισμός των δεδομένων σας σε Windows, Linux.
+Εισαγωγή φωτογραφιών από τηλέφωνο μέσω WI-FI και πολλά άλλα.
+
+Υποστηριζόμενες γλώσσες: Αγγλικά, Αραβικά, Βεγγαλικά, Κινεζικά, Γαλλικά, Γερμανικά, Χίντι, Ινδονησιακά, Ιταλικά, Ιαπωνικά, Μαράθι, Νιγηριανό Πίτζιν, Πορτογαλικά, Ρωσικά, Ισπανικά, Ταμίλ, Τελούγκου, Τουρκικά, Ουκρανικά, Ουρντού, Βιετναμέζικα, Καντονέζικα
+
+Χαρακτηριστικά:
+- Σταδιακό αντίγραφο ασφαλείας με αποδιπλασιασμό αρχείων και υποστήριξη μεταφορών SFTP, FTPS, SMB/CIFS·
+- Συγχρονισμός αρχείων μεταξύ συσκευών με χρήση κεντρικού αποθηκευτικού χώρου και υποστήριξη εκδόσεων·
+- Εισαγωγή πολυμέσων - Εισαγωγή ήχων, φωτογραφιών, βίντεο από κάρτα SD κάμερας, εγγραφέα· φωτογραφίες και βίντεο από το τηλέφωνό σας μέσω WI-FI μέσω εφαρμογής FTPS Server με ονόματα αρχείων προτύπου ή μέσω MTP·
+- P2P μεταφορά αρχείων με κρυπτογράφηση μεταξύ συσκευών·
+- Κονσόλα για αυτοματοποίηση προγραμματισμού·
+- Κρυπτογράφηση AES-256.
+
+Πλατφόρμες: Windows 11 x64, ARM64 ή Ubuntu 24+.</value>
+  </data>
+  <data name="Winget_ShortDescription" xml:space="preserve">
+    <value>Το BUtil δημιουργεί σταδιακά αντίγραφα ασφαλείας, σταδιακό συγχρονισμό και εισάγει πολυμέσα στον υπολογιστή σας με αποδιπλασιασμό και υποστήριξη μεταφορών FTPS, SFTP, SMB/CIFS για Windows και Linux.</value>
+  </data>
+</root>

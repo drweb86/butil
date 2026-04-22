@@ -6,6 +6,7 @@
 
 ## New Features
 - Setup is localized.
+- Added Czech, Danish, Dutch, Farsi, Finnish, Greek, Hebrew, Hungarian, Korean, Polish, Romanian, Swedish, Thai, Traditional Chinese languages.
 
 # 2026.04.20
 

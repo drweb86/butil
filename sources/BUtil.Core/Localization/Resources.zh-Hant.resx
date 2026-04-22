@@ -117,865 +117,878 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="_Technical_NsisLanguage" xml:space="preserve">
+    <value>TradChinese</value>
+  </data>
   <data name="_Technical_WingetLocale" xml:space="preserve">
-    <value>ur-PK</value>
+    <value>zh-TW</value>
   </data>
   <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
-    <value>کچھ نہ کریں</value>
+    <value>不執行任何動作</value>
   </data>
   <data name="AfterTaskSelection_Field" xml:space="preserve">
-    <value>کام مکمل ہونے کے بعد:</value>
+    <value>工作完成後：</value>
   </data>
   <data name="AfterTaskSelection_Help" xml:space="preserve">
-    <value>اگر آپ 'کچھ نہ کریں' کے علاوہ کچھ منتخب کرتے ہیں تو پروگرام آپ کے اگلے لاگ ان پر آپ کو رپورٹ دکھانے کے لئے OS کو ترتیب دے گا اگر کوئی غلطیاں یا انتباہات درج ہوں گے۔</value>
+    <value>如果您選擇「不執行任何動作」以外的選項，
+程式將會設定作業系統，在您下次登入系統時
+顯示報告，如果有任何錯誤
+或警告被記錄的話。</value>
   </data>
   <data name="AfterTaskSelection_LogOff" xml:space="preserve">
-    <value>لاگ آف کریں</value>
+    <value>登出</value>
   </data>
   <data name="AfterTaskSelection_Reboot" xml:space="preserve">
-    <value>ریبوٹ کریں</value>
+    <value>重新啟動</value>
   </data>
   <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
-    <value>بند کریں</value>
+    <value>關機</value>
   </data>
   <data name="Application_NewVersion_Notification" xml:space="preserve">
-    <value>نئی {0} ورژن دستیاب ہے۔</value>
+    <value>新的 {0} 版本已可用。</value>
   </data>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
-    <value>ورژن حذف کریں</value>
+    <value>刪除版本</value>
   </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
-    <value>تبدیلیاں</value>
+    <value>變更</value>
   </data>
   <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
-    <value>کیا آپ واقعی ورژن "{0}" حذف کرنا چاہتے ہیں؟
-  حذف شدہ ورژن کی تبدیلیاں ورژن "{1}" کا حصہ بن جائیں گی۔</value>
+    <value>您確定要刪除版本「{0}」嗎？
+
+已刪除版本的變更將成為版本「{1}」的一部分。</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
-    <value>فائلیں</value>
+    <value>檔案</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
-    <value>جرنل: {0}</value>
+    <value>日誌：{0}</value>
   </data>
   <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
-    <value>منتخب شدہ کے لئے جرنل...</value>
+    <value>已選取項目的日誌...</value>
   </data>
   <data name="BackupVersion_Select" xml:space="preserve">
-    <value>منتخب ورژن کھولیں...</value>
+    <value>開啟選取的版本...</value>
   </data>
   <data name="BackupVersion_Selector_Title" xml:space="preserve">
-    <value>ورژن منتخب کریں</value>
+    <value>選擇版本</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(تمام ورژن اسٹوریج پر {0} جگہ گھیرتے ہیں)</value>
+    <value>（所有版本在儲存空間上佔用 {0}）</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
-    <value>ورژن</value>
+    <value>版本</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>درخت میں وہ فائل یا فولڈر منتخب کریں جسے آپ بحال کرنا چاہتے ہیں اور "بحال کریں" پر کلک کریں۔</value>
+    <value>在樹狀結構中選擇您要還原的檔案或資料夾，然後按一下「還原」。</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
-    <value>سرور سے کنکشن غیر متوقع طور پر ختم ہو گیا (کیا کلائنٹ اور سرور کے پاس ورڈ ایک جیسے ہیں؟)</value>
+    <value>與伺服器的連線意外中斷（用戶端和伺服器的密碼是否相同？）</value>
   </data>
   <data name="Button_Cancel" xml:space="preserve">
-    <value>منسوخ کریں</value>
+    <value>取消</value>
   </data>
   <data name="Button_Close" xml:space="preserve">
-    <value>بند کریں</value>
+    <value>關閉</value>
   </data>
   <data name="Button_Continue" xml:space="preserve">
-    <value>جاری رکھیں &gt;</value>
+    <value>繼續 &gt;</value>
   </data>
   <data name="Button_CopyToClipboard" xml:space="preserve">
-    <value>کاپی کریں</value>
+    <value>複製</value>
   </data>
   <data name="Button_Download" xml:space="preserve">
-    <value>ڈاؤن لوڈ کریں</value>
+    <value>下載</value>
   </data>
   <data name="Button_OK" xml:space="preserve">
-    <value>ٹھیک ہے</value>
+    <value>確定</value>
   </data>
   <data name="Button_Remove" xml:space="preserve">
-    <value>ہٹا دیں</value>
+    <value>移除</value>
   </data>
   <data name="Button_Save" xml:space="preserve">
-    <value>محفوظ کریں</value>
+    <value>儲存</value>
   </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
-    <value>کمانڈ لائن دلائل دیکھنے کے لئے {0} پر جائیں۔</value>
+    <value>請造訪 {0} 以查看命令列引數。</value>
   </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
-    <value>غلط کمانڈ لائن دلائل۔</value>
+    <value>無效的命令列引數。</value>
   </data>
   <data name="DataStorage_Data_Saving" xml:space="preserve">
-    <value>ڈےٹا محفوظ کرنا</value>
+    <value>正在將資料寫入儲存空間</value>
   </data>
   <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
-    <value>کنکشن اسکرپٹ:</value>
+    <value>連線指令碼：</value>
   </data>
   <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
-    <value>ڈسکنکشن اسکرپٹ:</value>
+    <value>中斷連線指令碼：</value>
   </data>
   <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
-    <value>غلطیوں کے ساتھ مکمل</value>
+    <value>完成但有錯誤</value>
   </data>
   <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
-    <value>کامیابی کے ساتھ مکمل</value>
+    <value>成功完成</value>
   </data>
   <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
-    <value>اپ لوڈ حد، جی بی:</value>
+    <value>上傳限制，GB：</value>
   </data>
   <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
-    <value>ایک ٹاسک کے ایکزیکیوٹ کے دوران بھیجی جانے والی ڈیٹا کی مقدار کی حد۔ 0 - کوئی حد نہیں۔
-  جب کوٹہ کی حد سے تجاوز کیا جاتا ہے، دیگر فائلوں کو چھوڑ دیا جائے گا اور اگلی بار پروسیس کیا جائے گا۔
-  استعمال کا منظر: آپ دور دراز کے سرور پر ڈیٹا کاپی کرتے ہیں۔ ایک مسئلہ ہے: آئی ایس پی اپ لوڈ کی رفتار کو چند گیگا بائٹس کے بعد کم کرتا ہے۔ یہ سیٹنگ اس کے ساتھ نمٹنے کی اجازت دیتی ہے۔ </value>
+    <value>限制在一次工作執行期間傳送到儲存空間的資料量。0 - 無限制。
+當超過配額時，其他檔案將被略過，並在下次處理。
+使用情境：您將資料複製到遠端伺服器。有個問題：ISP 在數個 GB 後會降低上傳速度。此設定可讓您處理這種情況。</value>
   </data>
   <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
-    <value>کوٹہ 0 (لاگو نہ کریں) یا 0 سے اوپر کی قیمت ہونی چاہیے۔</value>
+    <value>配額應為 0（不套用）或大於 0 的值。</value>
   </data>
   <data name="DataStorage_Maintenance" xml:space="preserve">
-    <value>ڈیٹا اسٹوریج کی دیکھ بھال</value>
+    <value>資料儲存維護</value>
   </data>
   <data name="DataStorage_Script_Help" xml:space="preserve">
-    <value>اگر کچھ کمانڈز چلانے کے بعد فولڈر دستیاب ہو جاتا ہے تو کنکشن اور ڈسکنکشن کے لئے {0} اسکرپٹس کی وضاحت کریں۔</value>
+    <value>如果資料夾在執行某些命令後才可用，請指定 {0} 連線和中斷連線指令碼。</value>
   </data>
   <data name="DataStorage_Scripts_Header" xml:space="preserve">
-    <value>اسکرپٹس (ماؤنٹ سے پہلے / ان ماؤنٹ کے بعد)</value>
+    <value>指令碼（掛載前 / 卸載後）</value>
   </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
-    <value>اسٹوریج کی حالت حاصل کریں</value>
+    <value>取得儲存空間狀態</value>
   </data>
   <data name="DataStorage_State_Saving" xml:space="preserve">
-    <value>اسٹوریج کی حالت لکھنا</value>
+    <value>正在寫入儲存空間狀態</value>
   </data>
   <data name="DataStorage_Title" xml:space="preserve">
-    <value>اسٹوریج</value>
+    <value>儲存空間</value>
   </data>
   <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
-    <value>اسٹوریج کی وضاحت نہیں کی گئی۔</value>
+    <value>未指定儲存空間。</value>
   </data>
   <data name="Days_Field_Choose" xml:space="preserve">
-    <value>ہفتے کے دن منتخب کریں:</value>
+    <value>選擇星期幾：</value>
   </data>
   <data name="Days_Friday" xml:space="preserve">
-    <value>جمعہ</value>
+    <value>星期五</value>
   </data>
   <data name="Days_Monday" xml:space="preserve">
-    <value>پیر</value>
+    <value>星期一</value>
   </data>
   <data name="Days_Saturday" xml:space="preserve">
-    <value>ہفتہ</value>
+    <value>星期六</value>
   </data>
   <data name="Days_Sunday" xml:space="preserve">
-    <value>اتوار</value>
+    <value>星期日</value>
   </data>
   <data name="Days_Thursday" xml:space="preserve">
-    <value>جمعرات</value>
+    <value>星期四</value>
   </data>
   <data name="Days_Tuesday" xml:space="preserve">
-    <value>منگل</value>
+    <value>星期二</value>
   </data>
   <data name="Days_Wednesday" xml:space="preserve">
-    <value>بدھ</value>
+    <value>星期三</value>
   </data>
   <data name="DirectoryStorage" xml:space="preserve">
-    <value>ڈائریکٹری</value>
+    <value>目錄</value>
   </data>
   <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
-    <value>فولڈر:</value>
+    <value>資料夾：</value>
   </data>
   <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
-    <value>ڈائریکٹری کی وضاحت نہیں کی گئی۔</value>
+    <value>未指定目錄。</value>
   </data>
   <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
-    <value>ڈائریکٹری "{0}" موجود نہیں۔</value>
+    <value>目錄「{0}」不存在。</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>مدت (منٹ، 0 سے لے کر لامحدود):</value>
+    <value>持續時間（分鐘，0 - 無限）：</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
-    <value>آلہ:</value>
+    <value>裝置：</value>
   </data>
   <data name="Field_Device_Validation_Empty" xml:space="preserve">
-    <value>آلہ کی وضاحت نہیں کی گئی۔</value>
+    <value>未指定裝置。</value>
   </data>
   <data name="Field_Device_Validation_NotFound" xml:space="preserve">
-    <value>آلہ نہیں ملا۔</value>
+    <value>找不到裝置。</value>
   </data>
   <data name="Field_File_Browse" xml:space="preserve">
-    <value>فائل براؤز کریں</value>
+    <value>瀏覽檔案</value>
   </data>
   <data name="Field_Folder" xml:space="preserve">
-    <value>فولڈر:</value>
+    <value>資料夾：</value>
   </data>
   <data name="Field_Folder_Browse" xml:space="preserve">
-    <value>براؤز کریں</value>
+    <value>瀏覽</value>
   </data>
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
-    <value>فولڈر کی وضاحت نہیں کی گئی۔</value>
+    <value>未指定資料夾。</value>
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
-    <value>فولڈر موجود نہیں۔</value>
+    <value>資料夾不存在。</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
-    <value>پروٹوکول:</value>
+    <value>通訊協定：</value>
   </data>
   <data name="Field_Version" xml:space="preserve">
-    <value>ورژن:</value>
+    <value>版本：</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
-    <value>حذف کرنا "{0}"</value>
+    <value>正在刪除「{0}」</value>
   </data>
   <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
-    <value>انضباط کی تصدیق کا اسکرپٹ.ps1</value>
+    <value>完整性驗證指令碼.ps1</value>
   </data>
   <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
-    <value>انضباط کی تصدیق کے اسکرپٹس کو محفوظ کرنا</value>
+    <value>正在儲存完整性驗證指令碼</value>
   </data>
   <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
-    <value>اس سے پرانی فائلوں کو پروسیس کریں:</value>
+    <value>處理早於以下時間的檔案：</value>
   </data>
   <data name="File_List_Saving" xml:space="preserve">
-    <value>فائلیں محفوظ کرنا</value>
+    <value>正在儲存檔案</value>
   </data>
   <data name="File_Moving" xml:space="preserve">
-    <value>منتقل کرنا "{0}" سے "{1}"</value>
+    <value>正在將「{0}」移動到「{1}」</value>
   </data>
   <data name="File_Saving" xml:space="preserve">
-    <value>محفوظ کرنا "{0}"</value>
+    <value>正在儲存「{0}」</value>
   </data>
   <data name="File_Uploading" xml:space="preserve">
-    <value>"{0}" اپ لوڈ ہو رہا ہے</value>
+    <value>正在上傳「{0}」</value>
   </data>
   <data name="FingerPrintSHA256_Field" xml:space="preserve">
-    <value>فنگر پرنٹ SHA-256:</value>
+    <value>指紋 SHA-256：</value>
   </data>
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
-    <value>فنگر پرنٹ SHA-256 مخصوص نہیں ہے۔</value>
+    <value>未指定 SHA-256 指紋。</value>
   </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
-    <value>صریح</value>
+    <value>顯式</value>
   </data>
   <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
-    <value>نامیاتی</value>
+    <value>隱式</value>
   </data>
   <data name="Ftps_Field_Encryption" xml:space="preserve">
-    <value>SSL/TTS انکرپشن:</value>
+    <value>SSL/TTS 加密：</value>
   </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
-    <value>FTPS سرور شروع کریں</value>
+    <value>啟動 FTPS 伺服器</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
-    <value>نیٹ ورک پر فولڈر شیئر کریں (FTPS سرور)</value>
+    <value>透過網路分享資料夾（FTPS 伺服器）</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>آپ اپنے لوکل ایریا نیٹ ورک کے اندر کسی بھی فولڈر کو FTPS پروٹوکول (خود دستخط شدہ سرٹیفکیٹ کے ساتھ واضح خفیہ کاری) کے ذریعے پڑھنے-لکھنے کی رسائی کے لیے شیئر کر سکتے ہیں۔</value>
+    <value>您可以透過 FTPS 通訊協定（使用自簽憑證的顯式加密）在您的區域網路中分享任何資料夾，提供讀寫存取權限。</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
-    <value>اپنے متن میں کردار کا آئیکن شامل کریں</value>
+    <value>在您的文字中加入字元圖示</value>
   </data>
   <data name="ImportMediaTask_AllFiles" xml:space="preserve">
-    <value>تمام فائلیں درآمد کریں</value>
+    <value>匯入所有檔案</value>
   </data>
   <data name="ImportMediaTask_Create" xml:space="preserve">
-    <value>میڈیا ٹاسک درآمد کریں</value>
+    <value>匯入媒體工作</value>
   </data>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
-    <value>ایڈیٹ کریں "{0}" میڈیا درآمد ٹاسک</value>
+    <value>編輯「{0}」媒體匯入工作</value>
   </data>
   <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
-    <value>آؤٹ پٹ فولڈر:</value>
+    <value>輸出資料夾：</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
-    <value>فائل نام کی تبدیلی:</value>
+    <value>檔案名稱轉換：</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
-    <value>مثال:
-  تصور کریں کہ آپ کے پاس فائل {0} ہے (جو {1} پر ترمیم کی گئی)۔
-  اس ڈائریکٹری اور سانچے کے ساتھ فائل محفوظ کی جائے گی:
-  {2}</value>
+    <value>範例：
+假設您有檔案 {0}（修改於 {1}）。
+使用此目錄和範本字串，檔案將儲存為：
+{2}</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
-    <value>تائید شدہ ٹوکن:
-  {DATE:Format} - مخصوص شکل میں فائل کی ترمیم کی تاریخ داخل کرتا ہے۔
-  تمام اختیارات دیکھنے کے لئے "C# DateTime format" گوگل کریں۔</value>
+    <value>支援的代碼：
+{DATE:Format} - 以指定的格式插入檔案修改日期。
+若要查看所有選項，請搜尋「C# DateTime format」。</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
-    <value>تبدیل شدہ فائل کا نام خالی ہے۔</value>
+    <value>轉換檔案名稱為空。</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
-    <value>غلط تبدیل شدہ فائل کا نام کا سٹرنگ۔</value>
+    <value>無效的轉換檔案名稱字串。</value>
   </data>
   <data name="ImportMediaTask_File" xml:space="preserve">
-    <value>درآمد کریں "{0}"</value>
+    <value>匯入「{0}」</value>
   </data>
   <data name="ImportMediaTask_Help" xml:space="preserve">
-    <value>SD کارڈ سے آڈیوز، تصاویر، ویڈیوز درآمد کرتا ہے؛ کیمرا، ریکارڈر؛ آپ کے فون سے WI-FI کے ذریعے FTP سرور ایپلیکیشن کے ذریعے تصاویر اور ویڈیوز۔
+    <value>從相機、錄音機的 SD 卡匯入音訊、照片、影片；透過 WI-FI 使用 FTP Server 應用程式，以範本檔案名稱從手機匯入照片和影片。
 
-  فائل کی ترسیل کے طریقے کے لئے ایپلیکیشن کی ویب سائٹ پر دستاویزات دیکھیں۔</value>
+請參閱應用程式網站以了解如何在手機上透過 FTP Server 應用程式設定 WI-FI 檔案傳輸。</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>درآمد ڈیٹا کا ماخذ</value>
+    <value>匯入資料來源</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
-    <value>پہلے سے درآمد شدہ فائلوں کو چھوڑ دیں</value>
+    <value>略過已匯入的檔案</value>
   </data>
   <data name="ImproveIt_Message" xml:space="preserve">
-    <value>ایک غیر متوقع غلطی پیش آئی۔
-  برائے مہربانی اپنے ڈیسک ٹاپ پر محفوظ معلومات کے ساتھ ڈویلپرز سے رابطہ کریں
-  "{0}"
-  ایپلیکیشن اب بند ہو جائے گی۔</value>
+    <value>發生意外錯誤。
+
+請聯繫開發人員，並提供儲存在您桌面上的資訊
+「{0}」
+
+應用程式現在將關閉。</value>
   </data>
   <data name="IncrementalBackup_Help" xml:space="preserve">
-    <value>انکریمنٹل بیک اپ کی سب سے بنیادی شکل میں صرف ان فائلوں کی شناخت، ریکارڈنگ اور حفاظت شامل ہے جو آخری بیک اپ کے بعد تبدیل ہو گئی ہیں۔ 
-  چونکہ تبدیلیاں عام طور پر کم ہوتی ہیں، انکریمنٹل بیک اپ مکمل بیک اپ کے مقابلے میں بہت چھوٹے اور تیز ہوتے ہیں۔ 
-  مثال کے طور پر، جمعہ کو مکمل بیک اپ کے بعد، پیر کا بیک اپ صرف وہ فائلیں شامل کرے گا جو جمعہ کے بعد بدلی ہیں۔ منگل کا بیک اپ صرف وہی فائلیں شامل کرے گا جو پیر کے بعد بدلی ہیں، اور اسی طرح آگے۔ 
-  اگر بنائی گئی کسی بھی کاپی میں ناکام ہوجائیں، بشمول پہلی (مکمل)، بحالی مکمل نہیں ہوگی۔</value>
+    <value>增量備份最基本的形式是識別、記錄並因此僅保存自上次備份以來已變更的檔案。
+
+由於變更通常很少，增量備份比完整備份更小且更快。
+
+例如，在星期五進行完整備份後，星期一的備份將僅包含自星期五以來已變更的檔案。星期二的備份僅包含自星期一以來已變更的檔案，依此類推。
+
+如果建立的任何一份副本失敗，包括第一份（完整備份），還原將不完整。</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
-    <value>انکریمنٹل بیک اپ</value>
+    <value>增量備份</value>
   </data>
   <data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
-    <value>انکریمنٹڈ ورژن کا حساب لگائیں</value>
+    <value>計算增量版本</value>
   </data>
   <data name="IncrementalBackup_Version_Save" xml:space="preserve">
-    <value>انکریمنٹڈ ورژن کو محفوظ کرنا</value>
+    <value>正在儲存增量版本</value>
   </data>
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
-    <value>انکریمنٹل بیک اپ ٹاسک</value>
+    <value>增量備份工作</value>
   </data>
   <data name="Installer_AdminRequired" xml:space="preserve">
-    <value>تمام صارفین کے لیے انسٹال کرنے کے لیے ایڈمنسٹریٹر مراعات درکار ہیں۔
-براہ کرم انسٹالر کو ایڈمنسٹریٹر کے طور پر چلائیں یا /CURRENTUSER استعمال کریں۔</value>
+    <value>安裝給所有使用者需要系統管理員權限。
+請以系統管理員身分執行安裝程式或使用 /CURRENTUSER。</value>
   </data>
   <data name="Installer_AdminRequiredDetailed" xml:space="preserve">
-    <value>تمام صارفین کے لیے انسٹال کرنے کے لیے ایڈمنسٹریٹر مراعات درکار ہیں۔
+    <value>安裝給所有使用者需要系統管理員權限。
 
-براہ کرم:
-- 'صرف موجودہ صارف کے لیے انسٹال کریں' منتخب کریں، یا
-- اس انسٹالر کو ایڈمنسٹریٹر کے طور پر چلائیں</value>
+請選擇：
+- 選擇「僅為目前使用者安裝」，或
+- 以系統管理員身分執行此安裝程式</value>
   </data>
   <data name="Installer_AllUsersDescription" xml:space="preserve">
-    <value>ایپلیکیشن اس کمپیوٹر کے تمام صارفین کے لیے دستیاب ہوگی۔</value>
+    <value>此應用程式將可供此電腦上的所有使用者使用。</value>
   </data>
   <data name="Installer_AllUsersOption" xml:space="preserve">
-    <value>&amp;تمام صارفین کے لیے انسٹال کریں (ایڈمنسٹریٹر مراعات درکار ہیں)</value>
+    <value>為所有使用者安裝（需要系統管理員權限）(&amp;A)</value>
   </data>
   <data name="Installer_ArchRequired" xml:space="preserve">
-    <value>اس انسٹالر کو Windows کے x64 یا arm64 ورژن کی ضرورت ہے۔</value>
+    <value>此安裝程式需要 x64 或 arm64 版本的 Windows。</value>
   </data>
   <data name="Installer_CurrentUserDescription" xml:space="preserve">
-    <value>تجویز کردہ۔ ایپلیکیشن صرف آپ کے صارف اکاؤنٹ کے لیے دستیاب ہوگی۔</value>
+    <value>建議。此應用程式僅供您的使用者帳戶使用。</value>
   </data>
   <data name="Installer_CurrentUserOption" xml:space="preserve">
-    <value>صرف &amp;موجودہ صارف کے لیے انسٹال کریں</value>
+    <value>僅為目前使用者安裝 (&amp;C)</value>
   </data>
   <data name="Installer_InstallingFor" xml:space="preserve">
-    <value>انسٹال ہو رہا ہے:</value>
+    <value>正在安裝給：</value>
   </data>
   <data name="Installer_InstallModeDescription" xml:space="preserve">
-    <value>براہ کرم منتخب کریں کہ آپ BUtil صرف اپنے لیے انسٹال کرنا چاہتے ہیں یا اس کمپیوٹر کے تمام صارفین کے لیے۔</value>
+    <value>請選擇您要僅為自己安裝 BUtil，還是為此電腦上的所有使用者安裝。</value>
   </data>
   <data name="Installer_InstallModeSubtitle" xml:space="preserve">
-    <value>منتخب کریں کہ یہ ایپلیکیشن کون استعمال کر سکتا ہے</value>
+    <value>選擇誰可以使用此應用程式</value>
   </data>
   <data name="Installer_InstallModeTitle" xml:space="preserve">
-    <value>انسٹالیشن کی قسم منتخب کریں</value>
+    <value>選擇安裝類型</value>
   </data>
   <data name="Installer_LaunchApp" xml:space="preserve">
-    <value>ایپ شروع کریں</value>
+    <value>啟動應用程式</value>
   </data>
   <data name="KeyFile_Field" xml:space="preserve">
-    <value>کلیدی فائل:</value>
+    <value>金鑰檔案：</value>
   </data>
   <data name="LeftMenu_Encryption" xml:space="preserve">
-    <value>انکرپشن</value>
+    <value>加密</value>
   </data>
   <data name="LeftMenu_What" xml:space="preserve">
-    <value>کیا؟</value>
+    <value>什麼？</value>
   </data>
   <data name="LeftMenu_What_Hint" xml:space="preserve">
-    <value>یہاں آپ ان فولڈرز اور فائلوں کو شامل کرسکتے ہیں جنہیں آپ پروسیس کرنا چاہتے ہیں۔</value>
+    <value>您可以在這裡新增需要處理的資料夾和檔案。</value>
   </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
-    <value>پروسیس کرنے کے لیے کوئی آئٹمز نہیں۔</value>
+    <value>沒有要處理的項目。</value>
   </data>
   <data name="LeftMenu_When" xml:space="preserve">
-    <value>کب؟</value>
+    <value>何時？</value>
   </data>
   <data name="LeftMenu_When_Help" xml:space="preserve">
-    <value>یہاں آپ شیڈولر ترتیب دے سکتے ہیں۔ شیڈولر آپ کو ٹاسک کے آغاز کو خودکار کرنے میں مدد دے سکتا ہے۔</value>
+    <value>您可以在這裡設定排程器。排程器可以幫助您自動啟動工作。</value>
   </data>
   <data name="LeftMenu_Where" xml:space="preserve">
-    <value>کہاں؟</value>
+    <value>哪裡？</value>
   </data>
   <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
-    <value>ایکسپلورر سے یہاں فائلیں اور فولڈرز کو گھسیٹیں اور چھوڑیں۔</value>
+    <value>從檔案總管拖放檔案和資料夾到這裡。</value>
   </data>
   <data name="LeftMenu_Where_Hint" xml:space="preserve">
-    <value>اس جگہ آپ ان مقامات کو شامل کرسکتے ہیں جہاں آپ چاہتے ہیں کہ آپ کی فائلوں کو کاپی کیا جائے۔</value>
+    <value>您可以在此處新增您希望檔案被複製到的位置。</value>
   </data>
   <data name="Local_State_Get" xml:space="preserve">
-    <value>مقامی حالت حاصل کریں</value>
+    <value>取得本機狀態</value>
   </data>
   <data name="Local_State_Saving" xml:space="preserve">
-    <value>مقامی حالت لکھنا</value>
+    <value>正在寫入本機狀態</value>
   </data>
   <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
-    <value>لاگز فولڈر کھولیں</value>
+    <value>開啟記錄檔資料夾</value>
   </data>
   <data name="LogFile_Marker_Errors" xml:space="preserve">
-    <value>غلطیاں</value>
+    <value>錯誤</value>
   </data>
   <data name="LogFile_Marker_Successful" xml:space="preserve">
-    <value>کامیاب</value>
+    <value>成功</value>
   </data>
   <data name="LogFile_OpenLogs" xml:space="preserve">
-    <value>لاگ</value>
+    <value>記錄檔</value>
   </data>
   <data name="Logs_Menu" xml:space="preserve">
-    <value>لاگز</value>
+    <value>記錄檔</value>
   </data>
   <data name="MainWindow_SearchWatermark" xml:space="preserve">
-    <value>تلاش</value>
+    <value>搜尋</value>
   </data>
   <data name="Messages_Header_Error" xml:space="preserve">
-    <value>غلطی</value>
+    <value>錯誤</value>
   </data>
   <data name="Messages_Header_Information" xml:space="preserve">
-    <value>اطلاعات</value>
+    <value>資訊</value>
   </data>
   <data name="Messages_Header_Question" xml:space="preserve">
-    <value>سوال</value>
+    <value>問題</value>
   </data>
   <data name="Name_Field" xml:space="preserve">
-    <value>نام:</value>
+    <value>名稱：</value>
   </data>
   <data name="Name_Field_Validation" xml:space="preserve">
-    <value>نام خالی ہے یا غیر حمایت یافتہ راستے کے کردار پر مشتمل ہے۔</value>
+    <value>名稱為空或包含不支援的路徑字元。</value>
   </data>
   <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
-    <value>نام '{0}' کی لمبائی حد سے تجاوز کر گئی ہے {1} کرداروں سے۔</value>
+    <value>名稱 '{0}' 的長度超過限制 {1} 個字元。</value>
   </data>
   <data name="Name_Title" xml:space="preserve">
-    <value>نام</value>
+    <value>名稱</value>
   </data>
   <data name="OptionalField_Hint" xml:space="preserve">
-    <value>(اختیاری)</value>
+    <value>（選填）</value>
   </data>
   <data name="Other_Menu_Title" xml:space="preserve">
-    <value>دیگر</value>
+    <value>其他</value>
   </data>
   <data name="Password_Field" xml:space="preserve">
-    <value>پاس ورڈ:</value>
+    <value>密碼：</value>
   </data>
   <data name="Password_Field_Confirm" xml:space="preserve">
-    <value>پاس ورڈ کی تصدیق کریں:</value>
+    <value>確認密碼：</value>
   </data>
   <data name="Password_Field_Length" xml:space="preserve">
-    <value>لمبائی:</value>
+    <value>長度：</value>
   </data>
   <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
-    <value>پاس ورڈ میل نہیں کھاتے۔</value>
+    <value>密碼不相符。</value>
   </data>
   <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
-    <value>پاس ورڈ کی وضاحت نہیں کی گئی۔</value>
+    <value>未指定密碼。</value>
   </data>
   <data name="Password_Generate" xml:space="preserve">
-    <value>پاس ورڈ جنریٹ کریں...</value>
+    <value>產生密碼...</value>
   </data>
   <data name="Password_Generator_Header" xml:space="preserve">
-    <value>پاس ورڈ جنریٹر</value>
+    <value>密碼產生器</value>
   </data>
   <data name="Password_Help" xml:space="preserve">
-    <value>مجوزہ کم از کم پاس ورڈ کی لمبائی 50 کردار اور اس سے زیادہ ہے۔</value>
+    <value>建議最低密碼長度為 50 個字元以上。</value>
   </data>
   <data name="Password_Use" xml:space="preserve">
-    <value>استعمال کریں</value>
+    <value>使用</value>
   </data>
   <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
-    <value>فائلیں "{0}" ڈائریکٹری میں نہیں مل سکیں۔
-  اس فائل والی ڈائریکٹری کی طرف اشارہ کریں۔</value>
+    <value>無法在目錄中找到檔案「{0}」。 
+
+請指向包含此檔案的目錄。</value>
   </data>
   <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
-    <value>حالت کو پڑھا نہیں جا سکا۔</value>
+    <value>無法讀取狀態。</value>
   </data>
   <data name="Server_Field_Address" xml:space="preserve">
-    <value>سرور کا نام:</value>
+    <value>伺服器名稱：</value>
   </data>
   <data name="Server_Field_Address_Validation" xml:space="preserve">
-    <value>سرور کا نام واضح نہیں کیا جانا چاہیے۔</value>
+    <value>未指定伺服器名稱。</value>
   </data>
   <data name="Server_Field_Port" xml:space="preserve">
-    <value>پورٹ:</value>
+    <value>連接埠：</value>
   </data>
   <data name="Server_Field_Port_Validation" xml:space="preserve">
-    <value>پورٹ غلط ہے۔</value>
+    <value>連接埠無效。</value>
   </data>
   <data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
-    <value>پاس ورڈ اور کلیدی فائل دونوں خالی ہیں۔</value>
+    <value>密碼和金鑰檔案都是空的。</value>
   </data>
   <data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
-    <value>SFTP فولڈر کو / پر ختم نہیں ہونا چاہیے۔</value>
+    <value>SFTP 資料夾不可以 / 結尾。</value>
   </data>
   <data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
-    <value>SFTP فولڈر / سے شروع ہونا چاہیے۔</value>
+    <value>SFTP 資料夾必須以 / 開頭。</value>
   </data>
   <data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
-    <value>SFTP فولڈر / کی اجازت نہیں ہے۔ فولڈر کو کسی مخصوص جگہ کی جانب اشارہ کرنا چاہیے۔</value>
+    <value>不允許使用 SFTP 資料夾 /。資料夾必須指向更具體的資料夾。</value>
   </data>
   <data name="SourceItem_AddFolders" xml:space="preserve">
-    <value>فولڈرز شامل کریں...</value>
+    <value>新增資料夾...</value>
   </data>
   <data name="SourceItem_OpenInExplorer" xml:space="preserve">
-    <value>ایکسپلورر میں کھولیں...</value>
+    <value>在檔案總管中開啟...</value>
   </data>
   <data name="SourceItem_State_Get" xml:space="preserve">
-    <value>ماخذ آئٹم "{0}" کی حالت حاصل کریں</value>
+    <value>取得來源項目「{0}」的狀態</value>
   </data>
   <data name="SourceItem_Validation_Empty" xml:space="preserve">
-    <value>پروسیس کرنے کے لئے کوئی آئٹمز نہیں۔</value>
+    <value>沒有要處理的項目。</value>
   </data>
   <data name="SourceItem_Validation_NotExists" xml:space="preserve">
-    <value>"{0}" موجود نہیں۔</value>
+    <value>「{0}」不存在。</value>
   </data>
   <data name="State_File_Get" xml:space="preserve">
-    <value>فائل "{0}" کی حالت حاصل کریں</value>
+    <value>取得檔案「{0}」的狀態</value>
   </data>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
-    <value>ماخذ آئٹمز اور اسٹوریج کی حالت حاصل کریں</value>
+    <value>取得來源項目和儲存空間的狀態</value>
   </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
-    <value>فائل خارج کرنے کا پیٹرن شامل کریں</value>
+    <value>新增檔案排除模式</value>
   </data>
   <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
-    <value>فائل خارج کرنے کے پیٹرن میں ترمیم کریں</value>
+    <value>編輯檔案排除模式</value>
   </data>
   <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
-    <value>فائلوں کو خارج کریں</value>
+    <value>排除檔案</value>
   </data>
   <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
-    <value>.NET میں فائل گلوبنگ: پیٹرن</value>
+    <value>.NET 中的 File globbing：模式</value>
   </data>
   <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
-    <value>یہاں آپ فائل گلوبنگ خارج کرنے کے پیٹرن کی وضاحت کرسکتے ہیں۔
-  یہ ایک فائل کا نام یا فولڈر کا نام یا وائلڈکارڈ ہوسکتا ہے۔
-  مثال:
-  d:\temp،
-  d:\temp\file.txt،
-  d:\temp\**\*.txt یا
-  bin۔
-  تفصیلی وضاحت کے لئے مندرجہ ذیل لنک دیکھیں۔</value>
+    <value>您可以在這裡指定 file globbing 排除模式。 
+可以是檔案名稱、資料夾名稱或萬用字元。 
+範例： 
+d:\temp, 
+d:\temp\file.txt, 
+d:\temp\**\*.txt 或 
+bin。 
+請參閱以下連結中的詳細說明。</value>
   </data>
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
-    <value>خارج کے پیٹرن کے ذریعہ فائلوں کی پروسیسنگ کو چھوڑ دیتا ہے۔</value>
+    <value>依排除模式略過檔案處理。</value>
   </data>
   <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
-    <value>فائل خارج کرنے کا پیٹرن:</value>
+    <value>檔案排除模式：</value>
   </data>
   <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
-    <value>فائل خارج کرنے کا پیٹرن خالی ہے۔</value>
+    <value>檔案排除模式為空。</value>
   </data>
   <data name="StorageItem_Remote_Marker" xml:space="preserve">
-    <value>دور دراز</value>
+    <value>遠端</value>
   </data>
   <data name="SynchronizationMode_Field" xml:space="preserve">
-    <value>ہم وقت سازی کا طریقہ:</value>
+    <value>同步模式：</value>
   </data>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
-    <value>پڑھیں</value>
+    <value>讀取</value>
   </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
-    <value>دونوں طرف</value>
+    <value>雙向</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
-    <value>ہم وقت سازی</value>
+    <value>同步</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>مختلف ڈیوائسز کے درمیان فائلوں کی دونوں طرف کی ہم وقت سازی کرتے ہوئے مرکزی اسٹوریج کا استعمال کرتے ہیں۔</value>
+    <value>使用集中式儲存空間在裝置之間進行雙向檔案同步。</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
-    <value>نیا</value>
+    <value>新增</value>
   </data>
   <data name="Task_Create_Hint" xml:space="preserve">
-    <value>نیا کام تخلیق کرتا ہے۔</value>
+    <value>建立新工作。</value>
   </data>
   <data name="Task_Delete" xml:space="preserve">
-    <value>حذف کریں</value>
+    <value>刪除</value>
   </data>
   <data name="Task_Delete_Confirm" xml:space="preserve">
-    <value>کیا آپ واقعی "{0}" حذف کرنا چاہتے ہیں؟</value>
+    <value>您確定要刪除「{0}」嗎？</value>
   </data>
   <data name="Task_Delete_Hint" xml:space="preserve">
-    <value>منتخب شدہ ٹاسک کو حذف کرتا ہے۔</value>
+    <value>刪除選取的工作。</value>
   </data>
   <data name="Task_Duplicate" xml:space="preserve">
-    <value>نقل بنائیں</value>
+    <value>複製</value>
   </data>
   <data name="Task_Edit" xml:space="preserve">
-    <value>ترمیم کریں</value>
+    <value>編輯</value>
   </data>
   <data name="Task_Edit_Hint" xml:space="preserve">
-    <value>منتخب ٹاسک میں ترمیم کریں۔</value>
+    <value>編輯選取的工作。</value>
   </data>
   <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
-    <value>آپ اس قسم کے کام کو CLI میں ترمیم نہیں کرسکتے۔</value>
+    <value>您無法在 CLI 中編輯此類型的工作。</value>
   </data>
   <data name="Task_Field_Choose" xml:space="preserve">
-    <value>کام منتخب کریں:</value>
+    <value>選擇工作：</value>
   </data>
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
-    <value>نیا کام</value>
+    <value>新工作</value>
   </data>
   <data name="Task_LastExecution_State" xml:space="preserve">
-    <value>حالت</value>
+    <value>狀態</value>
   </data>
   <data name="Task_Launch" xml:space="preserve">
-    <value>چلائیں</value>
+    <value>啟動</value>
   </data>
   <data name="Task_Launch_Hint" xml:space="preserve">
-    <value>منتخب کام کو چلاتا ہے۔</value>
+    <value>啟動選取的工作。</value>
   </data>
   <data name="Task_List" xml:space="preserve">
-    <value>کام</value>
+    <value>工作</value>
   </data>
   <data name="Task_OpenLog" xml:space="preserve">
-    <value>آخری لاگ کھولیں</value>
+    <value>開啟最新記錄</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
-    <value>بحال کریں</value>
+    <value>還原</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
-    <value>ناکام (کھلے لاگ میں دیکھیں)</value>
+    <value>失敗（請查看已開啟的記錄）</value>
   </data>
   <data name="Task_Status_InProgress" xml:space="preserve">
-    <value>کام جاری ہے...</value>
+    <value>工作正在進行中...</value>
   </data>
   <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
-    <value>جزوی طور پر مکمل۔ اسٹوریج کوٹہ کی وجہ سے بعض فائلیں اس بار چھوڑ دی گئی تھیں۔ باقی {0} فائلیں {1} جی بی ہیں۔</value>
+    <value>部分完成。由於儲存配額，某些檔案本次被略過。剩餘 {0} 個檔案，共 {1} GB。</value>
   </data>
   <data name="Task_Status_Succesfull" xml:space="preserve">
-    <value>کامیاب</value>
+    <value>成功</value>
   </data>
   <data name="Task_Status_Unknown" xml:space="preserve">
-    <value>نامعلوم</value>
+    <value>未知</value>
   </data>
   <data name="Task_Validation_NotFound" xml:space="preserve">
-    <value>کام '{0}' نہیں ملا۔</value>
+    <value>找不到工作 '{0}'。</value>
   </data>
   <data name="Task_Validation_NotSupported" xml:space="preserve">
-    <value>یہ کام کی قسم حمایت یافتہ نہیں ہے۔</value>
+    <value>不支援此工作類型。</value>
   </data>
   <data name="Task_WindowTitle_Creating" xml:space="preserve">
-    <value>تخلیق</value>
+    <value>建立中</value>
   </data>
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
-    <value>ترمیم</value>
+    <value>編輯中</value>
   </data>
   <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>بند کریں</value>
+    <value>關閉</value>
   </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
-    <value>آپریشن کامیابی سے مکمل ہوا۔</value>
+    <value>作業已成功完成。</value>
   </data>
   <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
-    <value>Brotli کمپریس</value>
+    <value>壓縮 Brotli</value>
   </data>
   <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
-    <value>Brotli ڈیکمپریس</value>
+    <value>解壓縮 Brotli</value>
   </data>
   <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
-    <value>AES-256 ڈکرپٹ</value>
+    <value>解密 AES-256</value>
   </data>
   <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
-    <value>AES-256 انکرپٹ</value>
+    <value>加密 AES-256</value>
   </data>
   <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
-    <value>فائل موجود نہیں:</value>
+    <value>檔案不存在：</value>
   </data>
   <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
-    <value>پاس ورڈ درج کریں۔</value>
+    <value>請輸入密碼。</value>
   </data>
   <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
-    <value>ماخذ اور آؤٹ پٹ فائل کے راستے بتائیں۔</value>
+    <value>請指定來源檔案和輸出檔案的路徑。</value>
   </data>
   <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
-    <value>AES-256 انکرپٹڈ (*.{0})</value>
+    <value>AES-256 加密 (*.{0})</value>
   </data>
   <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
-    <value>تمام فائلیں</value>
+    <value>所有檔案</value>
   </data>
   <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
-    <value>Brotli کمپریسڈ (*.brotli)</value>
+    <value>Brotli 壓縮 (*.brotli)</value>
   </data>
   <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
-    <value>Brotli کمپریس…</value>
+    <value>壓縮 Brotli…</value>
   </data>
   <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
-    <value>Brotli ڈیکمپریس…</value>
+    <value>解壓縮 Brotli…</value>
   </data>
   <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
-    <value>AES-256 ڈکرپٹ…</value>
+    <value>解密 AES-256…</value>
   </data>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
-    <value>AES-256 انکرپٹ…</value>
+    <value>加密 AES-256…</value>
   </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
-    <value>آؤٹ پٹ فائل:</value>
+    <value>輸出檔案：</value>
   </data>
   <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
-    <value>آؤٹ پٹ فائل منتخب کریں</value>
+    <value>選擇輸出檔案</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
-    <value>ماخذ فائل منتخب کریں</value>
+    <value>選擇來源檔案</value>
   </data>
   <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>چلائیں</value>
+    <value>執行</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
-    <value>ماخذ فائل:</value>
+    <value>來源檔案：</value>
   </data>
   <data name="Theme_Title" xml:space="preserve">
-    <value>موضوع</value>
+    <value>佈景主題</value>
   </data>
   <data name="Theme_Value_Dark" xml:space="preserve">
-    <value>تاریک</value>
+    <value>深色</value>
   </data>
   <data name="Theme_Value_Light" xml:space="preserve">
-    <value>ہلکا</value>
+    <value>淺色</value>
   </data>
   <data name="Time_Field_Elapsed" xml:space="preserve">
-    <value>وقت گزرا:</value>
+    <value>已過時間：</value>
   </data>
   <data name="Time_Field_Hour" xml:space="preserve">
-    <value>گھنٹہ:</value>
+    <value>小時：</value>
   </data>
   <data name="Time_Field_Minute" xml:space="preserve">
-    <value>منٹ:</value>
+    <value>分鐘：</value>
   </data>
   <data name="TimeoutTask_Title" xml:space="preserve">
-    <value>ٹائم آؤٹ کا انتظار ہو رہا ہے...</value>
+    <value>正在等待逾時...</value>
   </data>
   <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
-    <value>سرٹیفکیٹ پارس وارننگ: {0}</value>
+    <value>憑證解析警告：{0}</value>
   </data>
   <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
-    <value>سرٹیفکیٹ کی شناخت آؤٹ-آف-بینڈ تصدیق کریں، پھر اسے ذخیرہ کرنے کے لیے دوبارہ محفوظ کریں پر کلک کریں۔</value>
+    <value>請透過頻外方式驗證憑證身分，然後再次按一下儲存以進行存放。</value>
   </data>
   <data name="TrustDetected_Ftps_Title" xml:space="preserve">
-    <value>ٹیسٹ کے دوران FTPS سرور سرٹیفکیٹ دریافت ہوا۔</value>
+    <value>測試期間偵測到 FTPS 伺服器憑證。</value>
   </data>
   <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
-    <value>سرٹیفکیٹ (raw hex): {0}</value>
+    <value>憑證（原始 hex）：{0}</value>
   </data>
   <data name="TrustDetected_Label_DnsName" xml:space="preserve">
-    <value>DNS نام: {0}</value>
+    <value>DNS 名稱：{0}</value>
   </data>
   <data name="TrustDetected_Label_Encryption" xml:space="preserve">
-    <value>خفیہ کاری: {0}</value>
+    <value>加密：{0}</value>
   </data>
   <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
-    <value>فنگرپرنٹ (SHA-256): {0}</value>
+    <value>指紋 (SHA-256)：{0}</value>
   </data>
   <data name="TrustDetected_Label_Folder" xml:space="preserve">
-    <value>فولڈر: {0}</value>
+    <value>資料夾：{0}</value>
   </data>
   <data name="TrustDetected_Label_Host" xml:space="preserve">
-    <value>ہوسٹ: {0}</value>
+    <value>主機：{0}</value>
   </data>
   <data name="TrustDetected_Label_Issuer" xml:space="preserve">
-    <value>جاری کنندہ: {0}</value>
+    <value>簽發者：{0}</value>
   </data>
   <data name="TrustDetected_Label_Port" xml:space="preserve">
-    <value>پورٹ: {0}</value>
+    <value>連接埠：{0}</value>
   </data>
   <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
-    <value>پبلک کی الگورتھم: {0}</value>
+    <value>公開金鑰演算法：{0}</value>
   </data>
   <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
-    <value>پبلک کی سائز: {0}</value>
+    <value>公開金鑰大小：{0}</value>
   </data>
   <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
-    <value>سیریل نمبر: {0}</value>
+    <value>序號：{0}</value>
   </data>
   <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
-    <value>دستخط الگورتھم: {0}</value>
+    <value>簽章演算法：{0}</value>
   </data>
   <data name="TrustDetected_Label_Subject" xml:space="preserve">
-    <value>موضوع: {0}</value>
+    <value>主體：{0}</value>
   </data>
   <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
-    <value>متبادل موضوع نام: {0}</value>
+    <value>主體替代名稱：{0}</value>
   </data>
   <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
-    <value>تھمبپرنٹ: {0}</value>
+    <value>指紋：{0}</value>
   </data>
   <data name="TrustDetected_Label_User" xml:space="preserve">
-    <value>صارف: {0}</value>
+    <value>使用者：{0}</value>
   </data>
   <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
-    <value>سے درست (UTC): {0}</value>
+    <value>有效期自 (UTC)：{0}</value>
   </data>
   <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
-    <value>تک درست (UTC): {0}</value>
+    <value>有效期至 (UTC)：{0}</value>
   </data>
   <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
-    <value>تجزیہ شدہ سرٹیفکیٹ کی تفصیلات:</value>
+    <value>已解析的憑證詳細資料：</value>
   </data>
   <data name="TrustDetected_Port_Default" xml:space="preserve">
-    <value>ڈیفالٹ</value>
+    <value>預設</value>
   </data>
   <data name="TrustDetected_Port_Default22" xml:space="preserve">
-    <value>ڈیفالٹ (22)</value>
+    <value>預設 (22)</value>
   </data>
   <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
-    <value>نامعلوم</value>
+    <value>未知</value>
   </data>
   <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
-    <value>اس فنگرپرنٹ کو آؤٹ-آف-بینڈ تصدیق کریں، پھر اسے ذخیرہ کرنے کے لیے دوبارہ محفوظ کریں پر کلک کریں۔</value>
+    <value>請透過頻外方式驗證此指紋，然後再次按一下儲存以進行存放。</value>
   </data>
   <data name="TrustDetected_Sftp_Title" xml:space="preserve">
-    <value>ٹیسٹ کے دوران SFTP سرور ٹرسٹ معلومات دریافت ہوئی۔</value>
+    <value>測試期間偵測到 SFTP 伺服器信任資訊。</value>
   </data>
   <data name="TrustedCertificate_Field" xml:space="preserve">
-    <value>قابل اعتماد سرٹیفکیٹ (hex):</value>
+    <value>信任的憑證 (hex)：</value>
   </data>
   <data name="UploadFolderContentsTask_Create" xml:space="preserve">
-    <value>فولڈر کو سرور پر اپلوڈ کریں</value>
+    <value>上傳資料夾到伺服器</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>پہلے سے موجود فائلوں کو اوور رائٹ کرتے ہوئے فولڈر کے مواد اپ لوڈ کر سکتے ہیں۔</value>
+    <value>您可以上傳資料夾內容並覆寫已存在的檔案。</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
-    <value>یو آر ایل:</value>
+    <value>Url：</value>
   </data>
   <data name="Url_Field_Validation" xml:space="preserve">
-    <value>یو آر ایل کی وضاحت نہیں کی گئی۔</value>
+    <value>未指定 Url。</value>
   </data>
   <data name="User_Field" xml:space="preserve">
-    <value>صارف:</value>
+    <value>使用者：</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
-    <value>صارف کی وضاحت نہیں کی گئی۔</value>
+    <value>未指定使用者。</value>
   </data>
   <data name="Winget_Description" xml:space="preserve">
-    <value>Windows، Linux پر اپنے ڈیٹا کا بیک اپ/سنکرونائز کریں۔
-WI-FI کے ذریعے فون سے تصاویر امپورٹ کریں اور بہت کچھ۔
+    <value>在 Windows、Linux 上備份/同步您的資料。
+透過 WI-FI 從手機匯入照片等。
 
-معاون زبانیں: انگریزی، عربی، بنگالی، چینی، فرانسیسی، جرمن، ہندی، انڈونیشین، اطالوی، جاپانی، مراٹھی، نائیجیرین پجن، پرتگالی، روسی، ہسپانوی، تامل، تیلگو، ترکی، یوکرینی، اردو، ویتنامی، کینٹونیز
+支援語言：英語、阿拉伯語、孟加拉語、中文、法語、德語、印地語、印尼語、義大利語、日語、馬拉地語、奈及利亞皮欽語、葡萄牙語、俄語、西班牙語、泰米爾語、泰盧固語、土耳其語、烏克蘭語、烏爾都語、越南語、粵語
 
-خصوصیات:
-- فائل ڈیڈپلیکیشن اور SFTP، FTPS، SMB/CIFS ٹرانسپورٹ سپورٹ کے ساتھ انکریمینٹل بیک اپ؛
-- مرکزی سٹوریج اور ورژننگ سپورٹ کا استعمال کرتے ہوئے ڈیوائسز کے درمیان فائل سنکرونائزیشن؛
-- میڈیا امپورٹ - کیمرے، ریکارڈر کے SD کارڈ سے آڈیوز، تصاویر، ویڈیوز امپورٹ کریں؛ ٹیمپلیٹ فائل ناموں کا استعمال کرتے ہوئے FTPS سرور ایپلیکیشن کے ذریعے WI-FI کے ذریعے یا MTP کے ذریعے اپنے فون سے تصاویر اور ویڈیوز؛
-- ڈیوائسز کے درمیان انکرپشن کے ساتھ P2P فائل ٹرانسفر؛
-- آٹومیشن شیڈولنگ کے لیے کنسول؛
-- AES-256 انکرپشن۔
+功能：
+- 增量備份，支援檔案去重複和 SFTP、FTPS、SMB/CIFS 傳輸；
+- 使用集中式儲存空間在裝置之間同步檔案，並支援版本控制；
+- 匯入媒體 - 從相機、錄音機的 SD 卡匯入音訊、照片、影片；透過 WI-FI 使用 FTPS Server 應用程式以範本檔案名稱從手機匯入照片和影片，或透過 MTP；
+- 裝置之間的 P2P 加密檔案傳輸；
+- 自動化排程主控台；
+- AES-256 加密。
 
-پلیٹ فارمز: Windows 11 x64، ARM64 یا Ubuntu 24+۔</value>
+平台：Windows 11 x64、ARM64 或 Ubuntu 24+。</value>
   </data>
   <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil آپ کے PC پر ڈیڈپلیکیشن اور Windows اور Linux کے لیے FTPS، SFTP، SMB/CIFS ٹرانسپورٹ سپورٹ کے ساتھ انکریمینٹل بیک اپ، انکریمینٹل سنکرونائزیشن اور ملٹی میڈیا امپورٹ بناتا ہے۔</value>
+    <value>BUtil 建立增量備份、增量同步並在您的電腦上匯入多媒體，支援去重複和 FTPS、SFTP、SMB/CIFS 傳輸，適用於 Windows 和 Linux。</value>
   </data>
 </root>

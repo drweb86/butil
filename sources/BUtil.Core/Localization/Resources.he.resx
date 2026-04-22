@@ -117,865 +117,878 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="_Technical_NsisLanguage" xml:space="preserve">
+    <value>Hebrew</value>
+  </data>
   <data name="_Technical_WingetLocale" xml:space="preserve">
-    <value>ur-PK</value>
+    <value>he-IL</value>
   </data>
   <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
-    <value>کچھ نہ کریں</value>
+    <value>אל תעשה דבר</value>
   </data>
   <data name="AfterTaskSelection_Field" xml:space="preserve">
-    <value>کام مکمل ہونے کے بعد:</value>
+    <value>לאחר השלמת המשימה:</value>
   </data>
   <data name="AfterTaskSelection_Help" xml:space="preserve">
-    <value>اگر آپ 'کچھ نہ کریں' کے علاوہ کچھ منتخب کرتے ہیں تو پروگرام آپ کے اگلے لاگ ان پر آپ کو رپورٹ دکھانے کے لئے OS کو ترتیب دے گا اگر کوئی غلطیاں یا انتباہات درج ہوں گے۔</value>
+    <value>אם תבחר משהו שונה מ'אל תעשה דבר',
+התוכנית תגדיר את מערכת ההפעלה להציג לך דוח
+בכניסה הבאה שלך למערכת אם יירשמו
+שגיאות או אזהרות.</value>
   </data>
   <data name="AfterTaskSelection_LogOff" xml:space="preserve">
-    <value>لاگ آف کریں</value>
+    <value>התנתק</value>
   </data>
   <data name="AfterTaskSelection_Reboot" xml:space="preserve">
-    <value>ریبوٹ کریں</value>
+    <value>הפעל מחדש</value>
   </data>
   <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
-    <value>بند کریں</value>
+    <value>כיבוי</value>
   </data>
   <data name="Application_NewVersion_Notification" xml:space="preserve">
-    <value>نئی {0} ورژن دستیاب ہے۔</value>
+    <value>גרסה חדשה של {0} זמינה.</value>
   </data>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
-    <value>ورژن حذف کریں</value>
+    <value>מחק גרסה</value>
   </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
-    <value>تبدیلیاں</value>
+    <value>שינויים</value>
   </data>
   <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
-    <value>کیا آپ واقعی ورژن "{0}" حذف کرنا چاہتے ہیں؟
-  حذف شدہ ورژن کی تبدیلیاں ورژن "{1}" کا حصہ بن جائیں گی۔</value>
+    <value>האם אתה באמת רוצה למחוק את הגרסה "{0}"?
+
+שינויי הגרסה שנמחקה יהפכו לחלק מהגרסה "{1}".</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
-    <value>فائلیں</value>
+    <value>קבצים</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
-    <value>جرنل: {0}</value>
+    <value>יומן: {0}</value>
   </data>
   <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
-    <value>منتخب شدہ کے لئے جرنل...</value>
+    <value>יומן עבור הנבחר...</value>
   </data>
   <data name="BackupVersion_Select" xml:space="preserve">
-    <value>منتخب ورژن کھولیں...</value>
+    <value>פתח גרסה נבחרת...</value>
   </data>
   <data name="BackupVersion_Selector_Title" xml:space="preserve">
-    <value>ورژن منتخب کریں</value>
+    <value>בחר גרסה</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(تمام ورژن اسٹوریج پر {0} جگہ گھیرتے ہیں)</value>
+    <value>(כל הגרסאות תופסות באחסון {0})</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
-    <value>ورژن</value>
+    <value>גרסאות</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>درخت میں وہ فائل یا فولڈر منتخب کریں جسے آپ بحال کرنا چاہتے ہیں اور "بحال کریں" پر کلک کریں۔</value>
+    <value>בחר קובץ או תיקייה שברצונך לשחזר בעץ ולחץ על "שחזר".</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
-    <value>سرور سے کنکشن غیر متوقع طور پر ختم ہو گیا (کیا کلائنٹ اور سرور کے پاس ورڈ ایک جیسے ہیں؟)</value>
+    <value>החיבור לשרת נותק באופן בלתי צפוי (האם הסיסמאות בלקוח ובשרת זהות?)</value>
   </data>
   <data name="Button_Cancel" xml:space="preserve">
-    <value>منسوخ کریں</value>
+    <value>ביטול</value>
   </data>
   <data name="Button_Close" xml:space="preserve">
-    <value>بند کریں</value>
+    <value>סגור</value>
   </data>
   <data name="Button_Continue" xml:space="preserve">
-    <value>جاری رکھیں &gt;</value>
+    <value>המשך &gt;</value>
   </data>
   <data name="Button_CopyToClipboard" xml:space="preserve">
-    <value>کاپی کریں</value>
+    <value>העתק</value>
   </data>
   <data name="Button_Download" xml:space="preserve">
-    <value>ڈاؤن لوڈ کریں</value>
+    <value>הורד</value>
   </data>
   <data name="Button_OK" xml:space="preserve">
-    <value>ٹھیک ہے</value>
+    <value>OK</value>
   </data>
   <data name="Button_Remove" xml:space="preserve">
-    <value>ہٹا دیں</value>
+    <value>הסר</value>
   </data>
   <data name="Button_Save" xml:space="preserve">
-    <value>محفوظ کریں</value>
+    <value>שמור</value>
   </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
-    <value>کمانڈ لائن دلائل دیکھنے کے لئے {0} پر جائیں۔</value>
+    <value>בקר ב-{0} כדי לראות את ארגומנטי שורת הפקודה.</value>
   </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
-    <value>غلط کمانڈ لائن دلائل۔</value>
+    <value>ארגומנטי שורת פקודה לא חוקיים.</value>
   </data>
   <data name="DataStorage_Data_Saving" xml:space="preserve">
-    <value>ڈےٹا محفوظ کرنا</value>
+    <value>כותב נתונים לאחסון</value>
   </data>
   <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
-    <value>کنکشن اسکرپٹ:</value>
+    <value>סקריפט חיבור:</value>
   </data>
   <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
-    <value>ڈسکنکشن اسکرپٹ:</value>
+    <value>סקריפט ניתוק:</value>
   </data>
   <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
-    <value>غلطیوں کے ساتھ مکمل</value>
+    <value>הסתיים עם שגיאות</value>
   </data>
   <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
-    <value>کامیابی کے ساتھ مکمل</value>
+    <value>הסתיים בהצלחה</value>
   </data>
   <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
-    <value>اپ لوڈ حد، جی بی:</value>
+    <value>מגבלת העלאה, GB:</value>
   </data>
   <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
-    <value>ایک ٹاسک کے ایکزیکیوٹ کے دوران بھیجی جانے والی ڈیٹا کی مقدار کی حد۔ 0 - کوئی حد نہیں۔
-  جب کوٹہ کی حد سے تجاوز کیا جاتا ہے، دیگر فائلوں کو چھوڑ دیا جائے گا اور اگلی بار پروسیس کیا جائے گا۔
-  استعمال کا منظر: آپ دور دراز کے سرور پر ڈیٹا کاپی کرتے ہیں۔ ایک مسئلہ ہے: آئی ایس پی اپ لوڈ کی رفتار کو چند گیگا بائٹس کے بعد کم کرتا ہے۔ یہ سیٹنگ اس کے ساتھ نمٹنے کی اجازت دیتی ہے۔ </value>
+    <value>מגביל את כמות הנתונים הנשלחים במהלך ביצוע משימה אחת לאחסון. 0 - ללא מגבלה.
+כאשר המכסה חורגת, קבצים אחרים ידולגו ויעובדו בפעם הבאה.
+תרחיש שימוש: אתה מעתיק נתונים לשרת מרוחק. יש בעיה: ספק האינטרנט מוריד את מהירות ההעלאה לאחר מספר ג'יגה-בייט. הגדרה זו מאפשרת לך להתמודד עם זה.</value>
   </data>
   <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
-    <value>کوٹہ 0 (لاگو نہ کریں) یا 0 سے اوپر کی قیمت ہونی چاہیے۔</value>
+    <value>המכסה צריכה להיות 0 (לא מוחל) או ערך מעל 0.</value>
   </data>
   <data name="DataStorage_Maintenance" xml:space="preserve">
-    <value>ڈیٹا اسٹوریج کی دیکھ بھال</value>
+    <value>תחזוקת אחסון נתונים</value>
   </data>
   <data name="DataStorage_Script_Help" xml:space="preserve">
-    <value>اگر کچھ کمانڈز چلانے کے بعد فولڈر دستیاب ہو جاتا ہے تو کنکشن اور ڈسکنکشن کے لئے {0} اسکرپٹس کی وضاحت کریں۔</value>
+    <value>אם התיקייה הופכת זמינה לאחר הרצת פקודות מסוימות, ציין סקריפטים {0} לחיבור וניתוק.</value>
   </data>
   <data name="DataStorage_Scripts_Header" xml:space="preserve">
-    <value>اسکرپٹس (ماؤنٹ سے پہلے / ان ماؤنٹ کے بعد)</value>
+    <value>סקריפטים (לפני עגינה / אחרי ניתוק)</value>
   </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
-    <value>اسٹوریج کی حالت حاصل کریں</value>
+    <value>קבל מצב אחסון</value>
   </data>
   <data name="DataStorage_State_Saving" xml:space="preserve">
-    <value>اسٹوریج کی حالت لکھنا</value>
+    <value>כותב מצב אחסון</value>
   </data>
   <data name="DataStorage_Title" xml:space="preserve">
-    <value>اسٹوریج</value>
+    <value>אחסון</value>
   </data>
   <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
-    <value>اسٹوریج کی وضاحت نہیں کی گئی۔</value>
+    <value>האחסון לא צוין.</value>
   </data>
   <data name="Days_Field_Choose" xml:space="preserve">
-    <value>ہفتے کے دن منتخب کریں:</value>
+    <value>בחר ימים בשבוע:</value>
   </data>
   <data name="Days_Friday" xml:space="preserve">
-    <value>جمعہ</value>
+    <value>יום שישי</value>
   </data>
   <data name="Days_Monday" xml:space="preserve">
-    <value>پیر</value>
+    <value>יום שני</value>
   </data>
   <data name="Days_Saturday" xml:space="preserve">
-    <value>ہفتہ</value>
+    <value>יום שבת</value>
   </data>
   <data name="Days_Sunday" xml:space="preserve">
-    <value>اتوار</value>
+    <value>יום ראשון</value>
   </data>
   <data name="Days_Thursday" xml:space="preserve">
-    <value>جمعرات</value>
+    <value>יום חמישי</value>
   </data>
   <data name="Days_Tuesday" xml:space="preserve">
-    <value>منگل</value>
+    <value>יום שלישי</value>
   </data>
   <data name="Days_Wednesday" xml:space="preserve">
-    <value>بدھ</value>
+    <value>יום רביעי</value>
   </data>
   <data name="DirectoryStorage" xml:space="preserve">
-    <value>ڈائریکٹری</value>
+    <value>ספרייה</value>
   </data>
   <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
-    <value>فولڈر:</value>
+    <value>תיקייה:</value>
   </data>
   <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
-    <value>ڈائریکٹری کی وضاحت نہیں کی گئی۔</value>
+    <value>הספרייה לא צוינה.</value>
   </data>
   <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
-    <value>ڈائریکٹری "{0}" موجود نہیں۔</value>
+    <value>הספרייה "{0}" לא קיימת.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>مدت (منٹ، 0 سے لے کر لامحدود):</value>
+    <value>משך (דקות, 0 - אינסופי):</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
-    <value>آلہ:</value>
+    <value>התקן:</value>
   </data>
   <data name="Field_Device_Validation_Empty" xml:space="preserve">
-    <value>آلہ کی وضاحت نہیں کی گئی۔</value>
+    <value>ההתקן לא צוין.</value>
   </data>
   <data name="Field_Device_Validation_NotFound" xml:space="preserve">
-    <value>آلہ نہیں ملا۔</value>
+    <value>ההתקן לא נמצא.</value>
   </data>
   <data name="Field_File_Browse" xml:space="preserve">
-    <value>فائل براؤز کریں</value>
+    <value>עיין בקובץ</value>
   </data>
   <data name="Field_Folder" xml:space="preserve">
-    <value>فولڈر:</value>
+    <value>תיקייה:</value>
   </data>
   <data name="Field_Folder_Browse" xml:space="preserve">
-    <value>براؤز کریں</value>
+    <value>עיין</value>
   </data>
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
-    <value>فولڈر کی وضاحت نہیں کی گئی۔</value>
+    <value>התיקייה לא צוינה.</value>
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
-    <value>فولڈر موجود نہیں۔</value>
+    <value>התיקייה לא קיימת.</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
-    <value>پروٹوکول:</value>
+    <value>פרוטוקול:</value>
   </data>
   <data name="Field_Version" xml:space="preserve">
-    <value>ورژن:</value>
+    <value>גרסה:</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
-    <value>حذف کرنا "{0}"</value>
+    <value>מוחק "{0}"</value>
   </data>
   <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
-    <value>انضباط کی تصدیق کا اسکرپٹ.ps1</value>
+    <value>סקריפט אימות שלמות.ps1</value>
   </data>
   <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
-    <value>انضباط کی تصدیق کے اسکرپٹس کو محفوظ کرنا</value>
+    <value>שומר סקריפטים לאימות שלמות</value>
   </data>
   <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
-    <value>اس سے پرانی فائلوں کو پروسیس کریں:</value>
+    <value>עבד קבצים ישנים מ:</value>
   </data>
   <data name="File_List_Saving" xml:space="preserve">
-    <value>فائلیں محفوظ کرنا</value>
+    <value>שומר קבצים</value>
   </data>
   <data name="File_Moving" xml:space="preserve">
-    <value>منتقل کرنا "{0}" سے "{1}"</value>
+    <value>מעביר "{0}" אל "{1}"</value>
   </data>
   <data name="File_Saving" xml:space="preserve">
-    <value>محفوظ کرنا "{0}"</value>
+    <value>שומר "{0}"</value>
   </data>
   <data name="File_Uploading" xml:space="preserve">
-    <value>"{0}" اپ لوڈ ہو رہا ہے</value>
+    <value>מעלה "{0}"</value>
   </data>
   <data name="FingerPrintSHA256_Field" xml:space="preserve">
-    <value>فنگر پرنٹ SHA-256:</value>
+    <value>טביעת אצבע SHA-256:</value>
   </data>
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
-    <value>فنگر پرنٹ SHA-256 مخصوص نہیں ہے۔</value>
+    <value>טביעת אצבע SHA-256 לא צוינה.</value>
   </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
-    <value>صریح</value>
+    <value>מפורש</value>
   </data>
   <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
-    <value>نامیاتی</value>
+    <value>משתמע</value>
   </data>
   <data name="Ftps_Field_Encryption" xml:space="preserve">
-    <value>SSL/TTS انکرپشن:</value>
+    <value>הצפנת SSL/TTS:</value>
   </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
-    <value>FTPS سرور شروع کریں</value>
+    <value>הפעל שרת FTPS</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
-    <value>نیٹ ورک پر فولڈر شیئر کریں (FTPS سرور)</value>
+    <value>שתף תיקייה ברשת (שרת FTPS)</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>آپ اپنے لوکل ایریا نیٹ ورک کے اندر کسی بھی فولڈر کو FTPS پروٹوکول (خود دستخط شدہ سرٹیفکیٹ کے ساتھ واضح خفیہ کاری) کے ذریعے پڑھنے-لکھنے کی رسائی کے لیے شیئر کر سکتے ہیں۔</value>
+    <value>באפשרותך לשתף כל תיקייה עם גישת קריאה-כתיבה באמצעות פרוטוקול FTPS (הצפנה מפורשת עם אישור חתום עצמית) בתוך הרשת המקומית שלך.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
-    <value>اپنے متن میں کردار کا آئیکن شامل کریں</value>
+    <value>הוסף סמל תו לטקסט שלך</value>
   </data>
   <data name="ImportMediaTask_AllFiles" xml:space="preserve">
-    <value>تمام فائلیں درآمد کریں</value>
+    <value>ייבא את כל הקבצים</value>
   </data>
   <data name="ImportMediaTask_Create" xml:space="preserve">
-    <value>میڈیا ٹاسک درآمد کریں</value>
+    <value>משימת ייבוא מדיה</value>
   </data>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
-    <value>ایڈیٹ کریں "{0}" میڈیا درآمد ٹاسک</value>
+    <value>ערוך משימת ייבוא מדיה "{0}"</value>
   </data>
   <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
-    <value>آؤٹ پٹ فولڈر:</value>
+    <value>תיקיית פלט:</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
-    <value>فائل نام کی تبدیلی:</value>
+    <value>המרות שם קובץ:</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
-    <value>مثال:
-  تصور کریں کہ آپ کے پاس فائل {0} ہے (جو {1} پر ترمیم کی گئی)۔
-  اس ڈائریکٹری اور سانچے کے ساتھ فائل محفوظ کی جائے گی:
-  {2}</value>
+    <value>דוגמה:
+דמיין שיש לך את הקובץ {0} (שונה ב-{1}).
+עם ספרייה זו ומחרוזת התבנית, הקובץ יישמר בשם:
+{2}</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
-    <value>تائید شدہ ٹوکن:
-  {DATE:Format} - مخصوص شکل میں فائل کی ترمیم کی تاریخ داخل کرتا ہے۔
-  تمام اختیارات دیکھنے کے لئے "C# DateTime format" گوگل کریں۔</value>
+    <value>אסימונים נתמכים:
+{DATE:Format} - מוסיף את תאריך שינוי הקובץ בפורמט שצוין.
+כדי לראות את כל האפשרויות חפש "C# DateTime format".</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
-    <value>تبدیل شدہ فائل کا نام خالی ہے۔</value>
+    <value>שם הקובץ המומר ריק.</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
-    <value>غلط تبدیل شدہ فائل کا نام کا سٹرنگ۔</value>
+    <value>מחרוזת המרת שם קובץ לא חוקית.</value>
   </data>
   <data name="ImportMediaTask_File" xml:space="preserve">
-    <value>درآمد کریں "{0}"</value>
+    <value>מייבא "{0}"</value>
   </data>
   <data name="ImportMediaTask_Help" xml:space="preserve">
-    <value>SD کارڈ سے آڈیوز، تصاویر، ویڈیوز درآمد کرتا ہے؛ کیمرا، ریکارڈر؛ آپ کے فون سے WI-FI کے ذریعے FTP سرور ایپلیکیشن کے ذریعے تصاویر اور ویڈیوز۔
+    <value>מייבא שמע, תמונות, סרטונים מכרטיס SD של מצלמה, מקליט; תמונות וסרטונים מהטלפון שלך דרך WI-FI באמצעות אפליקציית FTP Server עם שמות קבצי תבנית.
 
-  فائل کی ترسیل کے طریقے کے لئے ایپلیکیشن کی ویب سائٹ پر دستاویزات دیکھیں۔</value>
+ראה את אתר האפליקציה לתיעוד כיצד להגדיר העברת קבצים דרך WI-FI באמצעות אפליקציית FTP Server בטלפון.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>درآمد ڈیٹا کا ماخذ</value>
+    <value>ייבא מקור נתונים</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
-    <value>پہلے سے درآمد شدہ فائلوں کو چھوڑ دیں</value>
+    <value>דלג על קבצים שכבר יובאו</value>
   </data>
   <data name="ImproveIt_Message" xml:space="preserve">
-    <value>ایک غیر متوقع غلطی پیش آئی۔
-  برائے مہربانی اپنے ڈیسک ٹاپ پر محفوظ معلومات کے ساتھ ڈویلپرز سے رابطہ کریں
-  "{0}"
-  ایپلیکیشن اب بند ہو جائے گی۔</value>
+    <value>אירעה שגיאה בלתי צפויה.
+
+אנא צור קשר עם המפתחים עם המידע שנשמר בשולחן העבודה שלך ב-
+"{0}"
+
+האפליקציה תיסגר כעת.</value>
   </data>
   <data name="IncrementalBackup_Help" xml:space="preserve">
-    <value>انکریمنٹل بیک اپ کی سب سے بنیادی شکل میں صرف ان فائلوں کی شناخت، ریکارڈنگ اور حفاظت شامل ہے جو آخری بیک اپ کے بعد تبدیل ہو گئی ہیں۔ 
-  چونکہ تبدیلیاں عام طور پر کم ہوتی ہیں، انکریمنٹل بیک اپ مکمل بیک اپ کے مقابلے میں بہت چھوٹے اور تیز ہوتے ہیں۔ 
-  مثال کے طور پر، جمعہ کو مکمل بیک اپ کے بعد، پیر کا بیک اپ صرف وہ فائلیں شامل کرے گا جو جمعہ کے بعد بدلی ہیں۔ منگل کا بیک اپ صرف وہی فائلیں شامل کرے گا جو پیر کے بعد بدلی ہیں، اور اسی طرح آگے۔ 
-  اگر بنائی گئی کسی بھی کاپی میں ناکام ہوجائیں، بشمول پہلی (مکمل)، بحالی مکمل نہیں ہوگی۔</value>
+    <value>הצורה הבסיסית ביותר של גיבוי מצטבר מורכבת מזיהוי, רישום ושימור רק אותם קבצים שהשתנו מאז הגיבוי האחרון.
+
+מכיוון ששינויים הם בדרך כלל קטנים, גיבויים מצטברים קטנים ומהירים בהרבה מגיבויים מלאים.
+
+לדוגמה, לאחר גיבוי מלא ביום שישי, גיבוי ביום שני יכיל רק את הקבצים שהשתנו מאז יום שישי. גיבוי ביום שלישי מכיל רק את הקבצים שהשתנו מאז יום שני, וכן הלאה.
+
+אם אחד מהעותקים שנוצרו ייכשל, כולל הראשון (המלא), השחזור יהיה חלקי.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
-    <value>انکریمنٹل بیک اپ</value>
+    <value>גיבוי מצטבר</value>
   </data>
   <data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
-    <value>انکریمنٹڈ ورژن کا حساب لگائیں</value>
+    <value>חשב גרסה מצטברת</value>
   </data>
   <data name="IncrementalBackup_Version_Save" xml:space="preserve">
-    <value>انکریمنٹڈ ورژن کو محفوظ کرنا</value>
+    <value>שמור גרסה מצטברת</value>
   </data>
   <data name="IncrementalBackupTask_Create" xml:space="preserve">
-    <value>انکریمنٹل بیک اپ ٹاسک</value>
+    <value>משימת גיבוי מצטבר</value>
   </data>
   <data name="Installer_AdminRequired" xml:space="preserve">
-    <value>تمام صارفین کے لیے انسٹال کرنے کے لیے ایڈمنسٹریٹر مراعات درکار ہیں۔
-براہ کرم انسٹالر کو ایڈمنسٹریٹر کے طور پر چلائیں یا /CURRENTUSER استعمال کریں۔</value>
+    <value>נדרשות הרשאות מנהל להתקנה עבור כל המשתמשים.
+הפעל את תוכנית ההתקנה כמנהל או השתמש ב-/CURRENTUSER.</value>
   </data>
   <data name="Installer_AdminRequiredDetailed" xml:space="preserve">
-    <value>تمام صارفین کے لیے انسٹال کرنے کے لیے ایڈمنسٹریٹر مراعات درکار ہیں۔
+    <value>נדרשות הרשאות מנהל להתקנה עבור כל המשתמשים.
 
-براہ کرم:
-- 'صرف موجودہ صارف کے لیے انسٹال کریں' منتخب کریں، یا
-- اس انسٹالر کو ایڈمنسٹریٹر کے طور پر چلائیں</value>
+אנא בחר אחת מהאפשרויות:
+- בחר 'התקן עבור המשתמש הנוכחי בלבד', או
+- הפעל תוכנית התקנה זו כמנהל</value>
   </data>
   <data name="Installer_AllUsersDescription" xml:space="preserve">
-    <value>ایپلیکیشن اس کمپیوٹر کے تمام صارفین کے لیے دستیاب ہوگی۔</value>
+    <value>האפליקציה תהיה זמינה לכל המשתמשים במחשב זה.</value>
   </data>
   <data name="Installer_AllUsersOption" xml:space="preserve">
-    <value>&amp;تمام صارفین کے لیے انسٹال کریں (ایڈمنسٹریٹر مراعات درکار ہیں)</value>
+    <value>התקן עבור &amp;כל המשתמשים (דורש הרשאות מנהל)</value>
   </data>
   <data name="Installer_ArchRequired" xml:space="preserve">
-    <value>اس انسٹالر کو Windows کے x64 یا arm64 ورژن کی ضرورت ہے۔</value>
+    <value>תוכנית התקנה זו דורשת גרסת x64 או arm64 של Windows.</value>
   </data>
   <data name="Installer_CurrentUserDescription" xml:space="preserve">
-    <value>تجویز کردہ۔ ایپلیکیشن صرف آپ کے صارف اکاؤنٹ کے لیے دستیاب ہوگی۔</value>
+    <value>מומלץ. האפליקציה תהיה זמינה רק עבור חשבון המשתמש שלך.</value>
   </data>
   <data name="Installer_CurrentUserOption" xml:space="preserve">
-    <value>صرف &amp;موجودہ صارف کے لیے انسٹال کریں</value>
+    <value>התקן עבור המשתמש ה&amp;נוכחי בלבד</value>
   </data>
   <data name="Installer_InstallingFor" xml:space="preserve">
-    <value>انسٹال ہو رہا ہے:</value>
+    <value>מתקין עבור:</value>
   </data>
   <data name="Installer_InstallModeDescription" xml:space="preserve">
-    <value>براہ کرم منتخب کریں کہ آپ BUtil صرف اپنے لیے انسٹال کرنا چاہتے ہیں یا اس کمپیوٹر کے تمام صارفین کے لیے۔</value>
+    <value>בחר אם ברצונך להתקין את BUtil עבורך בלבד או עבור כל משתמשי מחשב זה.</value>
   </data>
   <data name="Installer_InstallModeSubtitle" xml:space="preserve">
-    <value>منتخب کریں کہ یہ ایپلیکیشن کون استعمال کر سکتا ہے</value>
+    <value>בחר מי יכול להשתמש באפליקציה זו</value>
   </data>
   <data name="Installer_InstallModeTitle" xml:space="preserve">
-    <value>انسٹالیشن کی قسم منتخب کریں</value>
+    <value>בחר סוג התקנה</value>
   </data>
   <data name="Installer_LaunchApp" xml:space="preserve">
-    <value>ایپ شروع کریں</value>
+    <value>הפעל אפליקציה</value>
   </data>
   <data name="KeyFile_Field" xml:space="preserve">
-    <value>کلیدی فائل:</value>
+    <value>קובץ מפתח:</value>
   </data>
   <data name="LeftMenu_Encryption" xml:space="preserve">
-    <value>انکرپشن</value>
+    <value>הצפנה</value>
   </data>
   <data name="LeftMenu_What" xml:space="preserve">
-    <value>کیا؟</value>
+    <value>מה?</value>
   </data>
   <data name="LeftMenu_What_Hint" xml:space="preserve">
-    <value>یہاں آپ ان فولڈرز اور فائلوں کو شامل کرسکتے ہیں جنہیں آپ پروسیس کرنا چاہتے ہیں۔</value>
+    <value>כאן תוכל להוסיף תיקיות וקבצים שצריך לעבד.</value>
   </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
-    <value>پروسیس کرنے کے لیے کوئی آئٹمز نہیں۔</value>
+    <value>אין פריטים לעיבוד.</value>
   </data>
   <data name="LeftMenu_When" xml:space="preserve">
-    <value>کب؟</value>
+    <value>מתי?</value>
   </data>
   <data name="LeftMenu_When_Help" xml:space="preserve">
-    <value>یہاں آپ شیڈولر ترتیب دے سکتے ہیں۔ شیڈولر آپ کو ٹاسک کے آغاز کو خودکار کرنے میں مدد دے سکتا ہے۔</value>
+    <value>כאן תוכל להגדיר מתזמן. המתזמן יכול לעזור לך להפוך את הפעלת המשימה לאוטומטית.</value>
   </data>
   <data name="LeftMenu_Where" xml:space="preserve">
-    <value>کہاں؟</value>
+    <value>לאן?</value>
   </data>
   <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
-    <value>ایکسپلورر سے یہاں فائلیں اور فولڈرز کو گھسیٹیں اور چھوڑیں۔</value>
+    <value>גרור ושחרר לכאן קבצים ותיקיות מסייר הקבצים.</value>
   </data>
   <data name="LeftMenu_Where_Hint" xml:space="preserve">
-    <value>اس جگہ آپ ان مقامات کو شامل کرسکتے ہیں جہاں آپ چاہتے ہیں کہ آپ کی فائلوں کو کاپی کیا جائے۔</value>
+    <value>כאן תוכל להוסיף מיקומים שאליהם תרצה שהקבצים שלך יועתקו.</value>
   </data>
   <data name="Local_State_Get" xml:space="preserve">
-    <value>مقامی حالت حاصل کریں</value>
+    <value>קבל מצב מקומי</value>
   </data>
   <data name="Local_State_Saving" xml:space="preserve">
-    <value>مقامی حالت لکھنا</value>
+    <value>כותב מצב מקומי</value>
   </data>
   <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
-    <value>لاگز فولڈر کھولیں</value>
+    <value>פתח תיקיית יומנים</value>
   </data>
   <data name="LogFile_Marker_Errors" xml:space="preserve">
-    <value>غلطیاں</value>
+    <value>שגיאות</value>
   </data>
   <data name="LogFile_Marker_Successful" xml:space="preserve">
-    <value>کامیاب</value>
+    <value>הצלחה</value>
   </data>
   <data name="LogFile_OpenLogs" xml:space="preserve">
-    <value>لاگ</value>
+    <value>יומנים</value>
   </data>
   <data name="Logs_Menu" xml:space="preserve">
-    <value>لاگز</value>
+    <value>יומנים</value>
   </data>
   <data name="MainWindow_SearchWatermark" xml:space="preserve">
-    <value>تلاش</value>
+    <value>חיפוש</value>
   </data>
   <data name="Messages_Header_Error" xml:space="preserve">
-    <value>غلطی</value>
+    <value>שגיאה</value>
   </data>
   <data name="Messages_Header_Information" xml:space="preserve">
-    <value>اطلاعات</value>
+    <value>מידע</value>
   </data>
   <data name="Messages_Header_Question" xml:space="preserve">
-    <value>سوال</value>
+    <value>שאלה</value>
   </data>
   <data name="Name_Field" xml:space="preserve">
-    <value>نام:</value>
+    <value>שם:</value>
   </data>
   <data name="Name_Field_Validation" xml:space="preserve">
-    <value>نام خالی ہے یا غیر حمایت یافتہ راستے کے کردار پر مشتمل ہے۔</value>
+    <value>השם ריק או מכיל תווי נתיב לא נתמכים.</value>
   </data>
   <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
-    <value>نام '{0}' کی لمبائی حد سے تجاوز کر گئی ہے {1} کرداروں سے۔</value>
+    <value>אורך השם '{0}' חורג מהמגבלה ב-{1} תווים.</value>
   </data>
   <data name="Name_Title" xml:space="preserve">
-    <value>نام</value>
+    <value>שם</value>
   </data>
   <data name="OptionalField_Hint" xml:space="preserve">
-    <value>(اختیاری)</value>
+    <value>(אופציונלי)</value>
   </data>
   <data name="Other_Menu_Title" xml:space="preserve">
-    <value>دیگر</value>
+    <value>אחר</value>
   </data>
   <data name="Password_Field" xml:space="preserve">
-    <value>پاس ورڈ:</value>
+    <value>סיסמה:</value>
   </data>
   <data name="Password_Field_Confirm" xml:space="preserve">
-    <value>پاس ورڈ کی تصدیق کریں:</value>
+    <value>אשר סיסמה:</value>
   </data>
   <data name="Password_Field_Length" xml:space="preserve">
-    <value>لمبائی:</value>
+    <value>אורך:</value>
   </data>
   <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
-    <value>پاس ورڈ میل نہیں کھاتے۔</value>
+    <value>הסיסמאות אינן תואמות.</value>
   </data>
   <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
-    <value>پاس ورڈ کی وضاحت نہیں کی گئی۔</value>
+    <value>הסיסמה לא צוינה.</value>
   </data>
   <data name="Password_Generate" xml:space="preserve">
-    <value>پاس ورڈ جنریٹ کریں...</value>
+    <value>צור סיסמה...</value>
   </data>
   <data name="Password_Generator_Header" xml:space="preserve">
-    <value>پاس ورڈ جنریٹر</value>
+    <value>מחולל סיסמאות</value>
   </data>
   <data name="Password_Help" xml:space="preserve">
-    <value>مجوزہ کم از کم پاس ورڈ کی لمبائی 50 کردار اور اس سے زیادہ ہے۔</value>
+    <value>אורך סיסמה מינימלי מומלץ הוא 50 תווים ומעלה.</value>
   </data>
   <data name="Password_Use" xml:space="preserve">
-    <value>استعمال کریں</value>
+    <value>השתמש</value>
   </data>
   <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
-    <value>فائلیں "{0}" ڈائریکٹری میں نہیں مل سکیں۔
-  اس فائل والی ڈائریکٹری کی طرف اشارہ کریں۔</value>
+    <value>לא ניתן לאתר קבצים "{0}" בספרייה. 
+
+הפנה לספרייה המכילה קובץ זה.</value>
   </data>
   <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
-    <value>حالت کو پڑھا نہیں جا سکا۔</value>
+    <value>לא ניתן לקרוא את המצב.</value>
   </data>
   <data name="Server_Field_Address" xml:space="preserve">
-    <value>سرور کا نام:</value>
+    <value>שם שרת:</value>
   </data>
   <data name="Server_Field_Address_Validation" xml:space="preserve">
-    <value>سرور کا نام واضح نہیں کیا جانا چاہیے۔</value>
+    <value>שם השרת לא צוין.</value>
   </data>
   <data name="Server_Field_Port" xml:space="preserve">
-    <value>پورٹ:</value>
+    <value>פורט:</value>
   </data>
   <data name="Server_Field_Port_Validation" xml:space="preserve">
-    <value>پورٹ غلط ہے۔</value>
+    <value>הפורט אינו חוקי.</value>
   </data>
   <data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
-    <value>پاس ورڈ اور کلیدی فائل دونوں خالی ہیں۔</value>
+    <value>גם הסיסמה וגם קובץ המפתח ריקים.</value>
   </data>
   <data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
-    <value>SFTP فولڈر کو / پر ختم نہیں ہونا چاہیے۔</value>
+    <value>תיקיית SFTP לא צריכה להסתיים ב-/.</value>
   </data>
   <data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
-    <value>SFTP فولڈر / سے شروع ہونا چاہیے۔</value>
+    <value>תיקיית SFTP חייבת להתחיל ב-/.</value>
   </data>
   <data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
-    <value>SFTP فولڈر / کی اجازت نہیں ہے۔ فولڈر کو کسی مخصوص جگہ کی جانب اشارہ کرنا چاہیے۔</value>
+    <value>תיקיית SFTP / אינה מותרת. התיקייה חייבת להצביע על תיקייה ספציפית יותר.</value>
   </data>
   <data name="SourceItem_AddFolders" xml:space="preserve">
-    <value>فولڈرز شامل کریں...</value>
+    <value>הוסף תיקיות...</value>
   </data>
   <data name="SourceItem_OpenInExplorer" xml:space="preserve">
-    <value>ایکسپلورر میں کھولیں...</value>
+    <value>פתח בסייר הקבצים...</value>
   </data>
   <data name="SourceItem_State_Get" xml:space="preserve">
-    <value>ماخذ آئٹم "{0}" کی حالت حاصل کریں</value>
+    <value>קבל מצב פריט מקור "{0}"</value>
   </data>
   <data name="SourceItem_Validation_Empty" xml:space="preserve">
-    <value>پروسیس کرنے کے لئے کوئی آئٹمز نہیں۔</value>
+    <value>אין פריטים לעיבוד.</value>
   </data>
   <data name="SourceItem_Validation_NotExists" xml:space="preserve">
-    <value>"{0}" موجود نہیں۔</value>
+    <value>"{0}" לא קיים.</value>
   </data>
   <data name="State_File_Get" xml:space="preserve">
-    <value>فائل "{0}" کی حالت حاصل کریں</value>
+    <value>קבל מצב קובץ "{0}"</value>
   </data>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
-    <value>ماخذ آئٹمز اور اسٹوریج کی حالت حاصل کریں</value>
+    <value>קבל מצב פריטי מקור ואחסון</value>
   </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
-    <value>فائل خارج کرنے کا پیٹرن شامل کریں</value>
+    <value>הוסף דפוס אי-הכללת קבצים</value>
   </data>
   <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
-    <value>فائل خارج کرنے کے پیٹرن میں ترمیم کریں</value>
+    <value>ערוך דפוס אי-הכללת קבצים</value>
   </data>
   <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
-    <value>فائلوں کو خارج کریں</value>
+    <value>החרג קבצים</value>
   </data>
   <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
-    <value>.NET میں فائل گلوبنگ: پیٹرن</value>
+    <value>Globbing קבצים ב-.NET: דפוסים</value>
   </data>
   <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
-    <value>یہاں آپ فائل گلوبنگ خارج کرنے کے پیٹرن کی وضاحت کرسکتے ہیں۔
-  یہ ایک فائل کا نام یا فولڈر کا نام یا وائلڈکارڈ ہوسکتا ہے۔
-  مثال:
-  d:\temp،
-  d:\temp\file.txt،
-  d:\temp\**\*.txt یا
-  bin۔
-  تفصیلی وضاحت کے لئے مندرجہ ذیل لنک دیکھیں۔</value>
+    <value>כאן תוכל לציין דפוסי אי-הכללה של globbing קבצים. 
+זה יכול להיות שם קובץ או שם תיקייה או תו כללי. 
+דוגמאות: 
+d:\temp, 
+d:\temp\file.txt, 
+d:\temp\**\*.txt או 
+bin. 
+ראה תיאור מפורט בקישור הבא.</value>
   </data>
   <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
-    <value>خارج کے پیٹرن کے ذریعہ فائلوں کی پروسیسنگ کو چھوڑ دیتا ہے۔</value>
+    <value>מדלג על עיבוד קבצים לפי דפוס אי-הכללה.</value>
   </data>
   <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
-    <value>فائل خارج کرنے کا پیٹرن:</value>
+    <value>דפוס אי-הכללת קבצים:</value>
   </data>
   <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
-    <value>فائل خارج کرنے کا پیٹرن خالی ہے۔</value>
+    <value>דפוס אי-הכללת קבצים ריק.</value>
   </data>
   <data name="StorageItem_Remote_Marker" xml:space="preserve">
-    <value>دور دراز</value>
+    <value>מרוחק</value>
   </data>
   <data name="SynchronizationMode_Field" xml:space="preserve">
-    <value>ہم وقت سازی کا طریقہ:</value>
+    <value>מצב סנכרון:</value>
   </data>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
-    <value>پڑھیں</value>
+    <value>קריאה</value>
   </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
-    <value>دونوں طرف</value>
+    <value>דו-כיווני</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
-    <value>ہم وقت سازی</value>
+    <value>סנכרון</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>مختلف ڈیوائسز کے درمیان فائلوں کی دونوں طرف کی ہم وقت سازی کرتے ہوئے مرکزی اسٹوریج کا استعمال کرتے ہیں۔</value>
+    <value>סנכרון דו-כיווני של קבצים בין התקנים באמצעות אחסון מרכזי.</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
-    <value>نیا</value>
+    <value>חדש</value>
   </data>
   <data name="Task_Create_Hint" xml:space="preserve">
-    <value>نیا کام تخلیق کرتا ہے۔</value>
+    <value>יוצר משימה חדשה.</value>
   </data>
   <data name="Task_Delete" xml:space="preserve">
-    <value>حذف کریں</value>
+    <value>מחק</value>
   </data>
   <data name="Task_Delete_Confirm" xml:space="preserve">
-    <value>کیا آپ واقعی "{0}" حذف کرنا چاہتے ہیں؟</value>
+    <value>האם אתה באמת רוצה למחוק את "{0}"?</value>
   </data>
   <data name="Task_Delete_Hint" xml:space="preserve">
-    <value>منتخب شدہ ٹاسک کو حذف کرتا ہے۔</value>
+    <value>מוחק את המשימה הנבחרת.</value>
   </data>
   <data name="Task_Duplicate" xml:space="preserve">
-    <value>نقل بنائیں</value>
+    <value>שכפל</value>
   </data>
   <data name="Task_Edit" xml:space="preserve">
-    <value>ترمیم کریں</value>
+    <value>ערוך</value>
   </data>
   <data name="Task_Edit_Hint" xml:space="preserve">
-    <value>منتخب ٹاسک میں ترمیم کریں۔</value>
+    <value>עורך את המשימה הנבחרת.</value>
   </data>
   <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
-    <value>آپ اس قسم کے کام کو CLI میں ترمیم نہیں کرسکتے۔</value>
+    <value>לא ניתן לערוך סוג משימה זה ב-CLI.</value>
   </data>
   <data name="Task_Field_Choose" xml:space="preserve">
-    <value>کام منتخب کریں:</value>
+    <value>בחר משימה:</value>
   </data>
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
-    <value>نیا کام</value>
+    <value>משימה חדשה</value>
   </data>
   <data name="Task_LastExecution_State" xml:space="preserve">
-    <value>حالت</value>
+    <value>מצב</value>
   </data>
   <data name="Task_Launch" xml:space="preserve">
-    <value>چلائیں</value>
+    <value>הפעל</value>
   </data>
   <data name="Task_Launch_Hint" xml:space="preserve">
-    <value>منتخب کام کو چلاتا ہے۔</value>
+    <value>מפעיל את המשימה הנבחרת.</value>
   </data>
   <data name="Task_List" xml:space="preserve">
-    <value>کام</value>
+    <value>משימות</value>
   </data>
   <data name="Task_OpenLog" xml:space="preserve">
-    <value>آخری لاگ کھولیں</value>
+    <value>פתח יומן אחרון</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
-    <value>بحال کریں</value>
+    <value>שחזר</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
-    <value>ناکام (کھلے لاگ میں دیکھیں)</value>
+    <value>נכשל (ראה יומן פתוח)</value>
   </data>
   <data name="Task_Status_InProgress" xml:space="preserve">
-    <value>کام جاری ہے...</value>
+    <value>המשימה בתהליך...</value>
   </data>
   <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
-    <value>جزوی طور پر مکمل۔ اسٹوریج کوٹہ کی وجہ سے بعض فائلیں اس بار چھوڑ دی گئی تھیں۔ باقی {0} فائلیں {1} جی بی ہیں۔</value>
+    <value>הושלם חלקית. בשל מכסת אחסון, חלק מהקבצים דולגו הפעם. נותרו {0} קבצים בנפח {1} GB.</value>
   </data>
   <data name="Task_Status_Succesfull" xml:space="preserve">
-    <value>کامیاب</value>
+    <value>הצלחה</value>
   </data>
   <data name="Task_Status_Unknown" xml:space="preserve">
-    <value>نامعلوم</value>
+    <value>לא ידוע</value>
   </data>
   <data name="Task_Validation_NotFound" xml:space="preserve">
-    <value>کام '{0}' نہیں ملا۔</value>
+    <value>המשימה '{0}' לא נמצאה.</value>
   </data>
   <data name="Task_Validation_NotSupported" xml:space="preserve">
-    <value>یہ کام کی قسم حمایت یافتہ نہیں ہے۔</value>
+    <value>סוג משימה זה אינו נתמך.</value>
   </data>
   <data name="Task_WindowTitle_Creating" xml:space="preserve">
-    <value>تخلیق</value>
+    <value>יוצר</value>
   </data>
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
-    <value>ترمیم</value>
+    <value>עורך</value>
   </data>
   <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>بند کریں</value>
+    <value>סגור</value>
   </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
-    <value>آپریشن کامیابی سے مکمل ہوا۔</value>
+    <value>הפעולה הושלמה בהצלחה.</value>
   </data>
   <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
-    <value>Brotli کمپریس</value>
+    <value>דחוס Brotli</value>
   </data>
   <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
-    <value>Brotli ڈیکمپریس</value>
+    <value>פרוס Brotli</value>
   </data>
   <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
-    <value>AES-256 ڈکرپٹ</value>
+    <value>פענח AES-256</value>
   </data>
   <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
-    <value>AES-256 انکرپٹ</value>
+    <value>הצפן AES-256</value>
   </data>
   <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
-    <value>فائل موجود نہیں:</value>
+    <value>הקובץ אינו קיים:</value>
   </data>
   <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
-    <value>پاس ورڈ درج کریں۔</value>
+    <value>הזן סיסמה.</value>
   </data>
   <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
-    <value>ماخذ اور آؤٹ پٹ فائل کے راستے بتائیں۔</value>
+    <value>ציין את נתיבי קובץ המקור וקובץ הפלט.</value>
   </data>
   <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
-    <value>AES-256 انکرپٹڈ (*.{0})</value>
+    <value>מוצפן AES-256 (*.{0})</value>
   </data>
   <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
-    <value>تمام فائلیں</value>
+    <value>כל הקבצים</value>
   </data>
   <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
-    <value>Brotli کمپریسڈ (*.brotli)</value>
+    <value>דחוס Brotli (*.brotli)</value>
   </data>
   <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
-    <value>Brotli کمپریس…</value>
+    <value>דחוס Brotli…</value>
   </data>
   <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
-    <value>Brotli ڈیکمپریس…</value>
+    <value>פרוס Brotli…</value>
   </data>
   <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
-    <value>AES-256 ڈکرپٹ…</value>
+    <value>פענח AES-256…</value>
   </data>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
-    <value>AES-256 انکرپٹ…</value>
+    <value>הצפן AES-256…</value>
   </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
-    <value>آؤٹ پٹ فائل:</value>
+    <value>קובץ פלט:</value>
   </data>
   <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
-    <value>آؤٹ پٹ فائل منتخب کریں</value>
+    <value>בחר קובץ פלט</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
-    <value>ماخذ فائل منتخب کریں</value>
+    <value>בחר קובץ מקור</value>
   </data>
   <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>چلائیں</value>
+    <value>הפעל</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
-    <value>ماخذ فائل:</value>
+    <value>קובץ מקור:</value>
   </data>
   <data name="Theme_Title" xml:space="preserve">
-    <value>موضوع</value>
+    <value>ערכת נושא</value>
   </data>
   <data name="Theme_Value_Dark" xml:space="preserve">
-    <value>تاریک</value>
+    <value>כהה</value>
   </data>
   <data name="Theme_Value_Light" xml:space="preserve">
-    <value>ہلکا</value>
+    <value>בהיר</value>
   </data>
   <data name="Time_Field_Elapsed" xml:space="preserve">
-    <value>وقت گزرا:</value>
+    <value>חלף:</value>
   </data>
   <data name="Time_Field_Hour" xml:space="preserve">
-    <value>گھنٹہ:</value>
+    <value>שעה:</value>
   </data>
   <data name="Time_Field_Minute" xml:space="preserve">
-    <value>منٹ:</value>
+    <value>דקה:</value>
   </data>
   <data name="TimeoutTask_Title" xml:space="preserve">
-    <value>ٹائم آؤٹ کا انتظار ہو رہا ہے...</value>
+    <value>ממתין לזמן קצוב...</value>
   </data>
   <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
-    <value>سرٹیفکیٹ پارس وارننگ: {0}</value>
+    <value>אזהרת ניתוח אישור: {0}</value>
   </data>
   <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
-    <value>سرٹیفکیٹ کی شناخت آؤٹ-آف-بینڈ تصدیق کریں، پھر اسے ذخیرہ کرنے کے لیے دوبارہ محفوظ کریں پر کلک کریں۔</value>
+    <value>אמת את זהות האישור מחוץ לערוץ, ואז לחץ שוב על שמור כדי לאחסן אותו.</value>
   </data>
   <data name="TrustDetected_Ftps_Title" xml:space="preserve">
-    <value>ٹیسٹ کے دوران FTPS سرور سرٹیفکیٹ دریافت ہوا۔</value>
+    <value>אישור שרת FTPS זוהה במהלך הבדיקה.</value>
   </data>
   <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
-    <value>سرٹیفکیٹ (raw hex): {0}</value>
+    <value>אישור (hex גולמי): {0}</value>
   </data>
   <data name="TrustDetected_Label_DnsName" xml:space="preserve">
-    <value>DNS نام: {0}</value>
+    <value>שם DNS: {0}</value>
   </data>
   <data name="TrustDetected_Label_Encryption" xml:space="preserve">
-    <value>خفیہ کاری: {0}</value>
+    <value>הצפנה: {0}</value>
   </data>
   <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
-    <value>فنگرپرنٹ (SHA-256): {0}</value>
+    <value>טביעת אצבע (SHA-256): {0}</value>
   </data>
   <data name="TrustDetected_Label_Folder" xml:space="preserve">
-    <value>فولڈر: {0}</value>
+    <value>תיקייה: {0}</value>
   </data>
   <data name="TrustDetected_Label_Host" xml:space="preserve">
-    <value>ہوسٹ: {0}</value>
+    <value>מארח: {0}</value>
   </data>
   <data name="TrustDetected_Label_Issuer" xml:space="preserve">
-    <value>جاری کنندہ: {0}</value>
+    <value>מנפיק: {0}</value>
   </data>
   <data name="TrustDetected_Label_Port" xml:space="preserve">
-    <value>پورٹ: {0}</value>
+    <value>פורט: {0}</value>
   </data>
   <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
-    <value>پبلک کی الگورتھم: {0}</value>
+    <value>אלגוריתם מפתח ציבורי: {0}</value>
   </data>
   <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
-    <value>پبلک کی سائز: {0}</value>
+    <value>גודל מפתח ציבורי: {0}</value>
   </data>
   <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
-    <value>سیریل نمبر: {0}</value>
+    <value>מספר סידורי: {0}</value>
   </data>
   <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
-    <value>دستخط الگورتھم: {0}</value>
+    <value>אלגוריתם חתימה: {0}</value>
   </data>
   <data name="TrustDetected_Label_Subject" xml:space="preserve">
-    <value>موضوع: {0}</value>
+    <value>נושא: {0}</value>
   </data>
   <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
-    <value>متبادل موضوع نام: {0}</value>
+    <value>שמות חלופיים לנושא: {0}</value>
   </data>
   <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
-    <value>تھمبپرنٹ: {0}</value>
+    <value>טביעת אצבע: {0}</value>
   </data>
   <data name="TrustDetected_Label_User" xml:space="preserve">
-    <value>صارف: {0}</value>
+    <value>משתמש: {0}</value>
   </data>
   <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
-    <value>سے درست (UTC): {0}</value>
+    <value>בתוקף מ-(UTC): {0}</value>
   </data>
   <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
-    <value>تک درست (UTC): {0}</value>
+    <value>בתוקף עד (UTC): {0}</value>
   </data>
   <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
-    <value>تجزیہ شدہ سرٹیفکیٹ کی تفصیلات:</value>
+    <value>פרטי אישור מנותח:</value>
   </data>
   <data name="TrustDetected_Port_Default" xml:space="preserve">
-    <value>ڈیفالٹ</value>
+    <value>ברירת מחדל</value>
   </data>
   <data name="TrustDetected_Port_Default22" xml:space="preserve">
-    <value>ڈیفالٹ (22)</value>
+    <value>ברירת מחדל (22)</value>
   </data>
   <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
-    <value>نامعلوم</value>
+    <value>לא ידוע</value>
   </data>
   <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
-    <value>اس فنگرپرنٹ کو آؤٹ-آف-بینڈ تصدیق کریں، پھر اسے ذخیرہ کرنے کے لیے دوبارہ محفوظ کریں پر کلک کریں۔</value>
+    <value>אמת טביעת אצבע זו מחוץ לערוץ, ואז לחץ שוב על שמור כדי לאחסן אותה.</value>
   </data>
   <data name="TrustDetected_Sftp_Title" xml:space="preserve">
-    <value>ٹیسٹ کے دوران SFTP سرور ٹرسٹ معلومات دریافت ہوئی۔</value>
+    <value>מידע אמון שרת SFTP זוהה במהלך הבדיקה.</value>
   </data>
   <data name="TrustedCertificate_Field" xml:space="preserve">
-    <value>قابل اعتماد سرٹیفکیٹ (hex):</value>
+    <value>אישור מהימן (hex):</value>
   </data>
   <data name="UploadFolderContentsTask_Create" xml:space="preserve">
-    <value>فولڈر کو سرور پر اپلوڈ کریں</value>
+    <value>העלה תיקייה לשרת</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>پہلے سے موجود فائلوں کو اوور رائٹ کرتے ہوئے فولڈر کے مواد اپ لوڈ کر سکتے ہیں۔</value>
+    <value>באפשרותך להעלות תוכן תיקייה תוך דריסת קבצים קיימים.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
-    <value>یو آر ایل:</value>
+    <value>Url:</value>
   </data>
   <data name="Url_Field_Validation" xml:space="preserve">
-    <value>یو آر ایل کی وضاحت نہیں کی گئی۔</value>
+    <value>Url לא צוין.</value>
   </data>
   <data name="User_Field" xml:space="preserve">
-    <value>صارف:</value>
+    <value>משתמש:</value>
   </data>
   <data name="User_Field_Validation" xml:space="preserve">
-    <value>صارف کی وضاحت نہیں کی گئی۔</value>
+    <value>המשתמש לא צוין.</value>
   </data>
   <data name="Winget_Description" xml:space="preserve">
-    <value>Windows، Linux پر اپنے ڈیٹا کا بیک اپ/سنکرونائز کریں۔
-WI-FI کے ذریعے فون سے تصاویر امپورٹ کریں اور بہت کچھ۔
+    <value>גבה/סנכרן את הנתונים שלך ב-Windows, Linux.
+ייבא תמונות מהטלפון דרך WI-FI ועוד.
 
-معاون زبانیں: انگریزی، عربی، بنگالی، چینی، فرانسیسی، جرمن، ہندی، انڈونیشین، اطالوی، جاپانی، مراٹھی، نائیجیرین پجن، پرتگالی، روسی، ہسپانوی، تامل، تیلگو، ترکی، یوکرینی، اردو، ویتنامی، کینٹونیز
+שפות נתמכות: אנגלית, ערבית, בנגלית, סינית, צרפתית, גרמנית, הינדי, אינדונזית, איטלקית, יפנית, מראטהי, פידג'ין ניגרי, פורטוגזית, רוסית, ספרדית, טמילית, טלוגו, טורקית, אוקראינית, אורדו, וייטנאמית, קנטונזית
 
-خصوصیات:
-- فائل ڈیڈپلیکیشن اور SFTP، FTPS، SMB/CIFS ٹرانسپورٹ سپورٹ کے ساتھ انکریمینٹل بیک اپ؛
-- مرکزی سٹوریج اور ورژننگ سپورٹ کا استعمال کرتے ہوئے ڈیوائسز کے درمیان فائل سنکرونائزیشن؛
-- میڈیا امپورٹ - کیمرے، ریکارڈر کے SD کارڈ سے آڈیوز، تصاویر، ویڈیوز امپورٹ کریں؛ ٹیمپلیٹ فائل ناموں کا استعمال کرتے ہوئے FTPS سرور ایپلیکیشن کے ذریعے WI-FI کے ذریعے یا MTP کے ذریعے اپنے فون سے تصاویر اور ویڈیوز؛
-- ڈیوائسز کے درمیان انکرپشن کے ساتھ P2P فائل ٹرانسفر؛
-- آٹومیشن شیڈولنگ کے لیے کنسول؛
-- AES-256 انکرپشن۔
+תכונות:
+- גיבוי מצטבר עם ביטול כפילויות קבצים ותמיכה בהעברות SFTP, FTPS, SMB/CIFS;
+- סנכרון קבצים בין התקנים באמצעות אחסון מרכזי ותמיכה בגרסאות;
+- ייבוא מדיה - ייבוא שמע, תמונות, סרטונים מכרטיס SD של מצלמה, מקליט; תמונות וסרטונים מהטלפון שלך דרך WI-FI באמצעות אפליקציית FTPS Server עם שמות קבצי תבנית או דרך MTP;
+- העברת קבצים P2P עם הצפנה בין התקנים;
+- קונסולה לתזמון אוטומציה;
+- הצפנת AES-256.
 
-پلیٹ فارمز: Windows 11 x64، ARM64 یا Ubuntu 24+۔</value>
+פלטפורמות: Windows 11 x64, ARM64 או Ubuntu 24+.</value>
   </data>
   <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil آپ کے PC پر ڈیڈپلیکیشن اور Windows اور Linux کے لیے FTPS، SFTP، SMB/CIFS ٹرانسپورٹ سپورٹ کے ساتھ انکریمینٹل بیک اپ، انکریمینٹل سنکرونائزیشن اور ملٹی میڈیا امپورٹ بناتا ہے۔</value>
+    <value>BUtil יוצר גיבויים מצטברים, סנכרון מצטבר ומייבא מולטימדיה למחשב שלך עם ביטול כפילויות ותמיכה בהעברות FTPS, SFTP, SMB/CIFS עבור Windows ו-Linux.</value>
   </data>
 </root>
