@@ -1,0 +1,994 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="_Technical_NsisLanguage" xml:space="preserve">
+    <value>Georgian</value>
+  </data>
+  <data name="_Technical_WingetLocale" xml:space="preserve">
+    <value>ka-GE</value>
+  </data>
+  <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
+    <value>არაფერი</value>
+  </data>
+  <data name="AfterTaskSelection_Field" xml:space="preserve">
+    <value>დავალების დასრულების შემდეგ:</value>
+  </data>
+  <data name="AfterTaskSelection_Help" xml:space="preserve">
+    <value>თუ აირჩევთ „არაფრის" გარდა რამეს,
+პროგრამა დააკონფიგურირებს ოპერაციულ სისტემას, რათა გაჩვენოთ ანგარიში
+სისტემაში მომდევნო შესვლისას, თუ რაიმე შეცდომები
+ან გაფრთხილებები დაფიქსირდება.</value>
+  </data>
+  <data name="AfterTaskSelection_LogOff" xml:space="preserve">
+    <value>გასვლა</value>
+  </data>
+  <data name="AfterTaskSelection_Reboot" xml:space="preserve">
+    <value>გადატვირთვა</value>
+  </data>
+  <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
+    <value>გამორთვა</value>
+  </data>
+  <data name="Application_NewVersion_Notification" xml:space="preserve">
+    <value>ხელმისაწვდომია ახალი {0} ვერსია.</value>
+  </data>
+  <data name="BackupVersion_Button_Delete" xml:space="preserve">
+    <value>ვერსიის წაშლა</value>
+  </data>
+  <data name="BackupVersion_Changes_Title" xml:space="preserve">
+    <value>ცვლილებები</value>
+  </data>
+  <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
+    <value>ნამდვილად გსურთ ვერსიის „{0}" წაშლა?
+
+წაშლილი ვერსიის ცვლილებები გახდება ვერსიის „{1}" ნაწილი.</value>
+  </data>
+  <data name="BackupVersion_Files_Title" xml:space="preserve">
+    <value>ფაილები</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
+    <value>ჟურნალი: {0}</value>
+  </data>
+  <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
+    <value>ჟურნალი არჩეულისთვის...</value>
+  </data>
+  <data name="BackupVersion_Select" xml:space="preserve">
+    <value>არჩეული ვერსიის გახსნა...</value>
+  </data>
+  <data name="BackupVersion_Selector_Title" xml:space="preserve">
+    <value>ᲕᲔᲠᲡᲘᲘᲡ ᲐᲠᲩᲔᲕᲐ</value>
+  </data>
+  <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
+    <value>(ყველა ვერსია საცავში იკავებს {0})</value>
+  </data>
+  <data name="BackupVersion_Versions_Title" xml:space="preserve">
+    <value>ᲕᲔᲠᲡᲘᲔᲑᲘ</value>
+  </data>
+  <data name="BackupVersion_Viewer_Help" xml:space="preserve">
+    <value>აირჩიეთ ფაილი ან საქაღალდე, რომლის აღდგენაც გსურთ ხეში და დააჭირეთ „აღდგენას".</value>
+  </data>
+  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
+    <value>სერვერთან კავშირი მოულოდნელად შეწყდა (კლიენტისა და სერვერის პაროლები ერთნაირია?)</value>
+  </data>
+  <data name="Button_Cancel" xml:space="preserve">
+    <value>გაუქმება</value>
+  </data>
+  <data name="Button_Close" xml:space="preserve">
+    <value>დახურვა</value>
+  </data>
+  <data name="Button_Continue" xml:space="preserve">
+    <value>გაგრძელება &gt;</value>
+  </data>
+  <data name="Button_CopyToClipboard" xml:space="preserve">
+    <value>კოპირება</value>
+  </data>
+  <data name="Button_Download" xml:space="preserve">
+    <value>ჩამოტვირთვა</value>
+  </data>
+  <data name="Button_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Button_Remove" xml:space="preserve">
+    <value>წაშლა</value>
+  </data>
+  <data name="Button_Save" xml:space="preserve">
+    <value>შენახვა</value>
+  </data>
+  <data name="CommandLineArguments_Help" xml:space="preserve">
+    <value>ეწვიეთ {0} ბრძანების ხაზის არგუმენტების სანახავად.</value>
+  </data>
+  <data name="CommandLineArguments_Invalid" xml:space="preserve">
+    <value>არასწორი ბრძანების ხაზის არგუმენტები.</value>
+  </data>
+  <data name="DataStorage_Data_Saving" xml:space="preserve">
+    <value>მონაცემების ჩაწერა საცავში</value>
+  </data>
+  <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
+    <value>დაკავშირების სკრიპტი:</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
+    <value>გათიშვის სკრიპტი:</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
+    <value>დასრულდა შეცდომებით</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
+    <value>წარმატებით დასრულდა</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
+    <value>ატვირთვის ლიმიტი, GB:</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
+    <value>ზღუდავს ერთი დავალების შესრულებისას საცავში გაგზავნილი მონაცემების რაოდენობას. 0 - ლიმიტის გარეშე.
+როდესაც კვოტა გადაჭარბებულია, სხვა ფაილები გამოტოვებულ იქნება და შემდეგ ჯერზე დამუშავდება.
+გამოყენების სცენარი: თქვენ კოპირებთ მონაცემებს დისტანციურ სერვერზე. პრობლემაა: ISP ამცირებს ატვირთვის სიჩქარეს რამდენიმე გიგაბაიტის შემდეგ. ეს პარამეტრი საშუალებას გაძლევთ გაუმკლავდეთ ამას.</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
+    <value>კვოტა უნდა იყოს 0 (არ გამოიყენოს) ან 0-ზე მეტი მნიშვნელობა.</value>
+  </data>
+  <data name="DataStorage_Maintenance" xml:space="preserve">
+    <value>მონაცემთა საცავის მოვლა</value>
+  </data>
+  <data name="DataStorage_Script_Help" xml:space="preserve">
+    <value>თუ საქაღალდე ხელმისაწვდომი ხდება ზოგიერთი ბრძანების შესრულების შემდეგ, მიუთითეთ {0} სკრიპტები დაკავშირებისა და გათიშვისთვის.</value>
+  </data>
+  <data name="DataStorage_Scripts_Header" xml:space="preserve">
+    <value>სკრიპტები (მიერთებამდე / გათიშვის შემდეგ)</value>
+  </data>
+  <data name="DataStorage_State_Get" xml:space="preserve">
+    <value>საცავის მდგომარეობის მიღება</value>
+  </data>
+  <data name="DataStorage_State_Saving" xml:space="preserve">
+    <value>საცავის მდგომარეობის ჩაწერა</value>
+  </data>
+  <data name="DataStorage_Title" xml:space="preserve">
+    <value>საცავი</value>
+  </data>
+  <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
+    <value>საცავი მითითებული არ არის.</value>
+  </data>
+  <data name="Days_Field_Choose" xml:space="preserve">
+    <value>აირჩიეთ კვირის დღეები:</value>
+  </data>
+  <data name="Days_Friday" xml:space="preserve">
+    <value>პარასკევი</value>
+  </data>
+  <data name="Days_Monday" xml:space="preserve">
+    <value>ორშაბათი</value>
+  </data>
+  <data name="Days_Saturday" xml:space="preserve">
+    <value>შაბათი</value>
+  </data>
+  <data name="Days_Sunday" xml:space="preserve">
+    <value>კვირა</value>
+  </data>
+  <data name="Days_Thursday" xml:space="preserve">
+    <value>ხუთშაბათი</value>
+  </data>
+  <data name="Days_Tuesday" xml:space="preserve">
+    <value>სამშაბათი</value>
+  </data>
+  <data name="Days_Wednesday" xml:space="preserve">
+    <value>ოთხშაბათი</value>
+  </data>
+  <data name="DirectoryStorage" xml:space="preserve">
+    <value>დირექტორია</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
+    <value>საქაღალდე:</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
+    <value>დირექტორია მითითებული არ არის.</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
+    <value>დირექტორია „{0}" არ არსებობს.</value>
+  </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>ხანგრძლივობა (წუთები, 0 - უსასრულო):</value>
+  </data>
+  <data name="Field_Device" xml:space="preserve">
+    <value>მოწყობილობა:</value>
+  </data>
+  <data name="Field_Device_Validation_Empty" xml:space="preserve">
+    <value>მოწყობილობა მითითებული არ არის.</value>
+  </data>
+  <data name="Field_Device_Validation_NotFound" xml:space="preserve">
+    <value>მოწყობილობა ვერ მოიძებნა.</value>
+  </data>
+  <data name="Field_File_Browse" xml:space="preserve">
+    <value>ფაილის დათვალიერება</value>
+  </data>
+  <data name="Field_Folder" xml:space="preserve">
+    <value>საქაღალდე:</value>
+  </data>
+  <data name="Field_Folder_Browse" xml:space="preserve">
+    <value>დათვალიერება</value>
+  </data>
+  <data name="Field_Folder_Validation_Empty" xml:space="preserve">
+    <value>საქაღალდე მითითებული არ არის.</value>
+  </data>
+  <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
+    <value>საქაღალდე არ არსებობს.</value>
+  </data>
+  <data name="Field_TransportProtocol" xml:space="preserve">
+    <value>პროტოკოლი:</value>
+  </data>
+  <data name="Field_Version" xml:space="preserve">
+    <value>ვერსია:</value>
+  </data>
+  <data name="File_Deleting" xml:space="preserve">
+    <value>„{0}"-ის წაშლა</value>
+  </data>
+  <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
+    <value>მთლიანობის შემოწმების სკრიპტი.ps1</value>
+  </data>
+  <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
+    <value>მთლიანობის შემოწმების სკრიპტების შენახვა</value>
+  </data>
+  <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
+    <value>უფრო ძველი ფაილების დამუშავება:</value>
+  </data>
+  <data name="File_List_Saving" xml:space="preserve">
+    <value>ფაილების შენახვა</value>
+  </data>
+  <data name="File_Moving" xml:space="preserve">
+    <value>„{0}"-ის გადატანა „{1}"-ში</value>
+  </data>
+  <data name="File_Saving" xml:space="preserve">
+    <value>„{0}"-ის შენახვა</value>
+  </data>
+  <data name="File_Uploading" xml:space="preserve">
+    <value>„{0}"-ის ატვირთვა</value>
+  </data>
+  <data name="FingerPrintSHA256_Field" xml:space="preserve">
+    <value>თითის ანაბეჭდი SHA-256:</value>
+  </data>
+  <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
+    <value>SHA-256 თითის ანაბეჭდი მითითებული არ არის.</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
+    <value>აშკარა</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
+    <value>ნაგულისხმევი</value>
+  </data>
+  <data name="Ftps_Field_Encryption" xml:space="preserve">
+    <value>SSL/TTS დაშიფვრა:</value>
+  </data>
+  <data name="FtpsServerStartTask_Name" xml:space="preserve">
+    <value>FTPS სერვერის გაშვება</value>
+  </data>
+  <data name="FtpsServerTask_Create" xml:space="preserve">
+    <value>საქაღალდის გაზიარება ქსელით (FTPS სერვერი)</value>
+  </data>
+  <data name="FtpsServerTask_Help" xml:space="preserve">
+    <value>შეგიძლიათ გააზიაროთ ნებისმიერი საქაღალდე წაკითხვა-ჩაწერის წვდომით FTPS პროტოკოლით (აშკარა დაშიფვრა თვით-ხელმოწერილი სერტიფიკატით) თქვენს ლოკალურ ქსელში.</value>
+  </data>
+  <data name="Icons_Help_Link" xml:space="preserve">
+    <value>დაამატეთ სიმბოლოს ხატულა თქვენს ტექსტში</value>
+  </data>
+  <data name="ImportMediaTask_AllFiles" xml:space="preserve">
+    <value>ყველა ფაილის იმპორტი</value>
+  </data>
+  <data name="ImportMediaTask_Create" xml:space="preserve">
+    <value>მედიის იმპორტის დავალება</value>
+  </data>
+  <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
+    <value>„{0}" მედიის იმპორტის დავალების რედაქტირება</value>
+  </data>
+  <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
+    <value>გამომავალი საქაღალდე:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
+    <value>ფაილის სახელის ტრანსფორმაციები:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
+    <value>მაგალითი:
+წარმოიდგინეთ, რომ გაქვთ ფაილი {0} (შეცვლილი {1}).
+ამ დირექტორიით და შაბლონის სტრიქონით ფაილი შეინახება როგორც:
+{2}</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
+    <value>მხარდაჭერილი ტოკენები:
+{DATE:Format} - ჩასვავს ფაილის შეცვლის თარიღს მითითებულ ფორმატში.
+ყველა ვარიანტის სანახავად მოძებნეთ „C# DateTime format".</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
+    <value>ტრანსფორმირებული ფაილის სახელი ცარიელია.</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
+    <value>არასწორი ტრანსფორმირებული ფაილის სახელის სტრიქონი.</value>
+  </data>
+  <data name="ImportMediaTask_File" xml:space="preserve">
+    <value>„{0}"-ის იმპორტი</value>
+  </data>
+  <data name="ImportMediaTask_Help" xml:space="preserve">
+    <value>იმპორტირებს აუდიოებს, ფოტოებს, ვიდეოებს კამერის, ჩამწერის SD ბარათიდან; ფოტოებს და ვიდეოებს თქვენი ტელეფონიდან WI-FI-ით FTP სერვერის აპლიკაციის საშუალებით შაბლონური ფაილის სახელებით.
+
+იხილეთ აპლიკაციის ვებ-გვერდი დოკუმენტაციისთვის, თუ როგორ დააყენოთ ფაილის გადაცემა WI-FI-ით FTP სერვერის აპლიკაციით ტელეფონზე.</value>
+  </data>
+  <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
+    <value>მონაცემთა წყაროს იმპორტი</value>
+  </data>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
+    <value>უკვე იმპორტირებული ფაილების გამოტოვება</value>
+  </data>
+  <data name="ImproveIt_Message" xml:space="preserve">
+    <value>მოულოდნელი შეცდომა მოხდა.
+
+გთხოვთ, დაუკავშირდეთ დეველოპერებს თქვენს სამუშაო მაგიდაზე შენახული ინფორმაციით
+„{0}"
+
+აპლიკაცია ახლა დაიხურება.</value>
+  </data>
+  <data name="IncrementalBackup_Help" xml:space="preserve">
+    <value>ინკრემენტული სარეზერვო ასლის ყველაზე ძირითადი ფორმა მოიცავს მხოლოდ იმ ფაილების იდენტიფიცირებას, ჩაწერას და შენარჩუნებას, რომლებიც შეიცვალა ბოლო სარეზერვო ასლის შემდეგ.
+
+რადგან ცვლილებები ჩვეულებრივ მცირეა, ინკრემენტული სარეზერვო ასლები გაცილებით პატარა და სწრაფია, ვიდრე სრული სარეზერვო ასლები.
+
+მაგალითად, პარასკევს სრული სარეზერვო ასლის შემდეგ, ორშაბათის სარეზერვო ასლი შეიცავს მხოლოდ იმ ფაილებს, რომლებიც შეიცვალა პარასკევიდან. სამშაბათის სარეზერვო ასლი შეიცავს მხოლოდ იმ ფაილებს, რომლებიც შეიცვალა ორშაბათიდან, და ა.შ. 
+
+თუ რომელიმე შექმნილი ასლი ვერ მოხერხდება, პირველის (სრულის) ჩათვლით, აღდგენა იქნება არასრული.</value>
+  </data>
+  <data name="IncrementalBackup_Title" xml:space="preserve">
+    <value>ინკრემენტული სარეზერვო ასლი</value>
+  </data>
+  <data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
+    <value>ინკრემენტული ვერსიის გამოთვლა</value>
+  </data>
+  <data name="IncrementalBackup_Version_Save" xml:space="preserve">
+    <value>ინკრემენტული ვერსიის შენახვა</value>
+  </data>
+  <data name="IncrementalBackupTask_Create" xml:space="preserve">
+    <value>ინკრემენტული სარეზერვო ასლის დავალება</value>
+  </data>
+  <data name="Installer_AdminRequired" xml:space="preserve">
+    <value>ყველა მომხმარებლისთვის დაყენებას ადმინისტრატორის უფლებები სჭირდება.
+გთხოვთ, გაუშვათ ინსტალატორი ადმინისტრატორის სახელით ან გამოიყენეთ /CURRENTUSER.</value>
+  </data>
+  <data name="Installer_AdminRequiredDetailed" xml:space="preserve">
+    <value>ყველა მომხმარებლისთვის დაყენებას ადმინისტრატორის უფლებები სჭირდება.
+
+გთხოვთ, აირჩიეთ ერთ-ერთი:
+- „მხოლოდ მიმდინარე მომხმარებლისთვის დაყენება", ან
+- გაუშვით ეს ინსტალატორი ადმინისტრატორის სახელით</value>
+  </data>
+  <data name="Installer_AllUsersDescription" xml:space="preserve">
+    <value>აპლიკაცია ხელმისაწვდომი იქნება ამ კომპიუტერის ყველა მომხმარებლისთვის.</value>
+  </data>
+  <data name="Installer_AllUsersOption" xml:space="preserve">
+    <value>ყველა მომხმარებლისთვის დაყენება (საჭიროა ადმინისტრატორის უფლებები) (&amp;A)</value>
+  </data>
+  <data name="Installer_ArchRequired" xml:space="preserve">
+    <value>ამ ინსტალატორს სჭირდება Windows-ის x64 ან arm64 ვერსია.</value>
+  </data>
+  <data name="Installer_CurrentUserDescription" xml:space="preserve">
+    <value>რეკომენდებული. აპლიკაცია ხელმისაწვდომი იქნება მხოლოდ თქვენი მომხმარებლის ანგარიშისთვის.</value>
+  </data>
+  <data name="Installer_CurrentUserOption" xml:space="preserve">
+    <value>მხოლოდ მიმდინარე მომხმარებლისთვის დაყენება (&amp;C)</value>
+  </data>
+  <data name="Installer_InstallingFor" xml:space="preserve">
+    <value>დაყენება:</value>
+  </data>
+  <data name="Installer_InstallModeDescription" xml:space="preserve">
+    <value>გთხოვთ, აირჩიეთ, გსურთ BUtil-ის დაყენება მხოლოდ თქვენთვის თუ ამ კომპიუტერის ყველა მომხმარებლისთვის.</value>
+  </data>
+  <data name="Installer_InstallModeSubtitle" xml:space="preserve">
+    <value>აირჩიეთ, ვის შეუძლია ამ აპლიკაციის გამოყენება</value>
+  </data>
+  <data name="Installer_InstallModeTitle" xml:space="preserve">
+    <value>აირჩიეთ ინსტალაციის ტიპი</value>
+  </data>
+  <data name="Installer_LaunchApp" xml:space="preserve">
+    <value>აპლიკაციის გაშვება</value>
+  </data>
+  <data name="KeyFile_Field" xml:space="preserve">
+    <value>გასაღების ფაილი:</value>
+  </data>
+  <data name="LeftMenu_Encryption" xml:space="preserve">
+    <value>დაშიფვრა</value>
+  </data>
+  <data name="LeftMenu_What" xml:space="preserve">
+    <value>რა?</value>
+  </data>
+  <data name="LeftMenu_What_Hint" xml:space="preserve">
+    <value>აქ შეგიძლიათ დაამატოთ საქაღალდეები და ფაილები, რომლებიც უნდა დამუშავდეს.</value>
+  </data>
+  <data name="LeftMenu_What_Validation" xml:space="preserve">
+    <value>დასამუშავებელი ელემენტები არ არის.</value>
+  </data>
+  <data name="LeftMenu_When" xml:space="preserve">
+    <value>როდის?</value>
+  </data>
+  <data name="LeftMenu_When_Help" xml:space="preserve">
+    <value>აქ შეგიძლიათ დააყენოთ განრიგი. განრიგი დაგეხმარებათ დავალების ავტომატურად გაშვებაში.</value>
+  </data>
+  <data name="LeftMenu_Where" xml:space="preserve">
+    <value>სად?</value>
+  </data>
+  <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
+    <value>გადაიტანეთ და ჩააგდეთ აქ ფაილები და საქაღალდეები Explorer-იდან.</value>
+  </data>
+  <data name="LeftMenu_Where_Hint" xml:space="preserve">
+    <value>ამ ადგილას შეგიძლიათ დაამატოთ მდებარეობები, სადაც გსურთ თქვენი ფაილების კოპირება.</value>
+  </data>
+  <data name="Local_State_Get" xml:space="preserve">
+    <value>ლოკალური მდგომარეობის მიღება</value>
+  </data>
+  <data name="Local_State_Saving" xml:space="preserve">
+    <value>ლოკალური მდგომარეობის ჩაწერა</value>
+  </data>
+  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
+    <value>ჟურნალების საქაღალდის გახსნა</value>
+  </data>
+  <data name="LogFile_Marker_Errors" xml:space="preserve">
+    <value>შეცდომები</value>
+  </data>
+  <data name="LogFile_Marker_Successful" xml:space="preserve">
+    <value>წარმატებული</value>
+  </data>
+  <data name="LogFile_OpenLogs" xml:space="preserve">
+    <value>ჟურნალები</value>
+  </data>
+  <data name="Logs_Menu" xml:space="preserve">
+    <value>ჟურნალები</value>
+  </data>
+  <data name="MainWindow_SearchWatermark" xml:space="preserve">
+    <value>ძიება</value>
+  </data>
+  <data name="Messages_Header_Error" xml:space="preserve">
+    <value>შეცდომა</value>
+  </data>
+  <data name="Messages_Header_Information" xml:space="preserve">
+    <value>ინფორმაცია</value>
+  </data>
+  <data name="Messages_Header_Question" xml:space="preserve">
+    <value>კითხვა</value>
+  </data>
+  <data name="Name_Field" xml:space="preserve">
+    <value>სახელი:</value>
+  </data>
+  <data name="Name_Field_Validation" xml:space="preserve">
+    <value>სახელი ცარიელია ან შეიცავს მხარდაუჭერელ გზის სიმბოლოებს.</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>სახელის '{0}' სიგრძე აჭარბებს ლიმიტს {1} სიმბოლოთი.</value>
+  </data>
+  <data name="Name_Title" xml:space="preserve">
+    <value>სახელი</value>
+  </data>
+  <data name="OptionalField_Hint" xml:space="preserve">
+    <value>(არასავალდებულო)</value>
+  </data>
+  <data name="Other_Menu_Title" xml:space="preserve">
+    <value>სხვა</value>
+  </data>
+  <data name="Password_Field" xml:space="preserve">
+    <value>პაროლი:</value>
+  </data>
+  <data name="Password_Field_Confirm" xml:space="preserve">
+    <value>პაროლის დადასტურება:</value>
+  </data>
+  <data name="Password_Field_Length" xml:space="preserve">
+    <value>სიგრძე:</value>
+  </data>
+  <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
+    <value>პაროლები არ ემთხვევა.</value>
+  </data>
+  <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
+    <value>პაროლი მითითებული არ არის.</value>
+  </data>
+  <data name="Password_Generate" xml:space="preserve">
+    <value>პაროლის გენერირება...</value>
+  </data>
+  <data name="Password_Generator_Header" xml:space="preserve">
+    <value>პაროლის გენერატორი</value>
+  </data>
+  <data name="Password_Help" xml:space="preserve">
+    <value>რეკომენდებული მინიმალური პაროლის სიგრძეა 50 სიმბოლო ან მეტი.</value>
+  </data>
+  <data name="Password_Use" xml:space="preserve">
+    <value>გამოყენება</value>
+  </data>
+  <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
+    <value>ფაილები „{0}" დირექტორიაში ვერ მოიძებნა. 
+
+მიუთითეთ დირექტორია, რომელიც შეიცავს ამ ფაილს.</value>
+  </data>
+  <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
+    <value>მდგომარეობის წაკითხვა შეუძლებელია.</value>
+  </data>
+  <data name="Server_Field_Address" xml:space="preserve">
+    <value>სერვერის სახელი:</value>
+  </data>
+  <data name="Server_Field_Address_Validation" xml:space="preserve">
+    <value>სერვერის სახელი მითითებული არ არის.</value>
+  </data>
+  <data name="Server_Field_Port" xml:space="preserve">
+    <value>პორტი:</value>
+  </data>
+  <data name="Server_Field_Port_Validation" xml:space="preserve">
+    <value>პორტი არასწორია.</value>
+  </data>
+  <data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
+    <value>პაროლიც და გასაღების ფაილიც ცარიელია.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
+    <value>SFTP საქაღალდე არ უნდა მთავრდებოდეს /-ით.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
+    <value>SFTP საქაღალდე უნდა იწყებოდეს /-ით.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
+    <value>SFTP საქაღალდე / დაუშვებელია. საქაღალდე უნდა მიუთითებდეს უფრო კონკრეტულ საქაღალდეზე.</value>
+  </data>
+  <data name="SourceItem_AddFolders" xml:space="preserve">
+    <value>საქაღალდეების დამატება...</value>
+  </data>
+  <data name="SourceItem_OpenInExplorer" xml:space="preserve">
+    <value>Explorer-ში გახსნა...</value>
+  </data>
+  <data name="SourceItem_State_Get" xml:space="preserve">
+    <value>წყაროს ელემენტის „{0}" მდგომარეობის მიღება</value>
+  </data>
+  <data name="SourceItem_Validation_Empty" xml:space="preserve">
+    <value>დასამუშავებელი ელემენტები არ არის.</value>
+  </data>
+  <data name="SourceItem_Validation_NotExists" xml:space="preserve">
+    <value>„{0}" არ არსებობს.</value>
+  </data>
+  <data name="State_File_Get" xml:space="preserve">
+    <value>ფაილის „{0}" მდგომარეობის მიღება</value>
+  </data>
+  <data name="State_LoadFromEverywhere" xml:space="preserve">
+    <value>წყაროს ელემენტებისა და საცავების მდგომარეობის მიღება</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
+    <value>ფაილის გამორიცხვის ნიმუშის დამატება</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
+    <value>ფაილის გამორიცხვის ნიმუშის რედაქტირება</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>ფაილების გამორიცხვა</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
+    <value>ფაილის გლობინგი .NET-ში: ნიმუშები</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
+    <value>აქ შეგიძლიათ მიუთითოთ ფაილის გლობინგის გამორიცხვის ნიმუშები. 
+ეს შეიძლება იყოს ფაილის სახელი ან საქაღალდის სახელი ან ბარათი. 
+მაგალითები: 
+d:\temp, 
+d:\temp\file.txt, 
+d:\temp\**\*.txt ან 
+bin. 
+იხილეთ დეტალური აღწერა შემდეგ ბმულში.</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
+    <value>გამოტოვებს ფაილების დამუშავებას გამორიცხვის ნიმუშით.</value>
+  </data>
+  <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
+    <value>ფაილის გამორიცხვის ნიმუში:</value>
+  </data>
+  <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
+    <value>ფაილის გამორიცხვის ნიმუში ცარიელია.</value>
+  </data>
+  <data name="StorageItem_Remote_Marker" xml:space="preserve">
+    <value>დისტანციური</value>
+  </data>
+  <data name="SynchronizationMode_Field" xml:space="preserve">
+    <value>სინქრონიზაციის რეჟიმი:</value>
+  </data>
+  <data name="SynchronizationMode_Field_Read" xml:space="preserve">
+    <value>წაკითხვა</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
+    <value>ორმხრივი</value>
+  </data>
+  <data name="SynchronizationTask_Create" xml:space="preserve">
+    <value>სინქრონიზაცია</value>
+  </data>
+  <data name="SynchronizationTask_Help" xml:space="preserve">
+    <value>ფაილების ორმხრივი სინქრონიზაცია მოწყობილობებს შორის ცენტრალიზებული საცავის გამოყენებით.</value>
+  </data>
+  <data name="Task_Create" xml:space="preserve">
+    <value>ახალი</value>
+  </data>
+  <data name="Task_Create_Hint" xml:space="preserve">
+    <value>ქმნის ახალ დავალებას.</value>
+  </data>
+  <data name="Task_Delete" xml:space="preserve">
+    <value>წაშლა</value>
+  </data>
+  <data name="Task_Delete_Confirm" xml:space="preserve">
+    <value>ნამდვილად გსურთ „{0}"-ის წაშლა?</value>
+  </data>
+  <data name="Task_Delete_Hint" xml:space="preserve">
+    <value>არჩეული დავალება წაიშლება.</value>
+  </data>
+  <data name="Task_Duplicate" xml:space="preserve">
+    <value>დუბლიკატი</value>
+  </data>
+  <data name="Task_Edit" xml:space="preserve">
+    <value>რედაქტირება</value>
+  </data>
+  <data name="Task_Edit_Hint" xml:space="preserve">
+    <value>არჩეული დავალება დარედაქტირდება.</value>
+  </data>
+  <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
+    <value>ამ ტიპის დავალების რედაქტირება CLI-ში შეუძლებელია.</value>
+  </data>
+  <data name="Task_Field_Choose" xml:space="preserve">
+    <value>აირჩიეთ დავალება:</value>
+  </data>
+  <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
+    <value>ახალი დავალება</value>
+  </data>
+  <data name="Task_LastExecution_State" xml:space="preserve">
+    <value>მდგომარეობა</value>
+  </data>
+  <data name="Task_Launch" xml:space="preserve">
+    <value>გაშვება</value>
+  </data>
+  <data name="Task_Launch_Hint" xml:space="preserve">
+    <value>არჩეული დავალება გაეშვება.</value>
+  </data>
+  <data name="Task_List" xml:space="preserve">
+    <value>დავალებები</value>
+  </data>
+  <data name="Task_OpenLog" xml:space="preserve">
+    <value>ბოლო ჟურნალის გახსნა</value>
+  </data>
+  <data name="Task_Restore" xml:space="preserve">
+    <value>აღდგენა</value>
+  </data>
+  <data name="Task_Status_FailedSeeLog" xml:space="preserve">
+    <value>ვერ მოხერხდა (იხილეთ გახსნილი ჟურნალი)</value>
+  </data>
+  <data name="Task_Status_InProgress" xml:space="preserve">
+    <value>დავალება მიმდინარეობს...</value>
+  </data>
+  <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
+    <value>ნაწილობრივ დასრულდა. საცავის კვოტის გამო ზოგიერთი ფაილი ამჯერად გამოტოვებულ იქნა. დარჩენილია {0} ფაილი {1} GB მოცულობით.</value>
+  </data>
+  <data name="Task_Status_Succesfull" xml:space="preserve">
+    <value>წარმატებული</value>
+  </data>
+  <data name="Task_Status_Unknown" xml:space="preserve">
+    <value>უცნობი</value>
+  </data>
+  <data name="Task_Validation_NotFound" xml:space="preserve">
+    <value>დავალება '{0}' ვერ მოიძებნა.</value>
+  </data>
+  <data name="Task_Validation_NotSupported" xml:space="preserve">
+    <value>ამ ტიპის დავალება მხარდაუჭერელია.</value>
+  </data>
+  <data name="Task_WindowTitle_Creating" xml:space="preserve">
+    <value>შექმნა</value>
+  </data>
+  <data name="Task_WindowTitle_Editing" xml:space="preserve">
+    <value>რედაქტირება</value>
+  </data>
+  <data name="TechnicalTool_Close" xml:space="preserve">
+    <value>დახურვა</value>
+  </data>
+  <data name="TechnicalTool_Completed" xml:space="preserve">
+    <value>ოპერაცია წარმატებით დასრულდა.</value>
+  </data>
+  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
+    <value>Brotli შეკუმშვა</value>
+  </data>
+  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
+    <value>Brotli გახსნა</value>
+  </data>
+  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
+    <value>AES-256 გაშიფვრა</value>
+  </data>
+  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
+    <value>AES-256 დაშიფვრა</value>
+  </data>
+  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
+    <value>ფაილი არ არსებობს:</value>
+  </data>
+  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
+    <value>შეიყვანეთ პაროლი.</value>
+  </data>
+  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
+    <value>მიუთითეთ წყაროს და გამომავალი ფაილის გზები.</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
+    <value>AES-256 დაშიფრული (*.{0})</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
+    <value>ყველა ფაილი</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
+    <value>Brotli შეკუმშული (*.brotli)</value>
+  </data>
+  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
+    <value>Brotli შეკუმშვა…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
+    <value>Brotli გახსნა…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
+    <value>AES-256 გაშიფვრა…</value>
+  </data>
+  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
+    <value>AES-256 დაშიფვრა…</value>
+  </data>
+  <data name="TechnicalTool_OutputFile" xml:space="preserve">
+    <value>გამომავალი ფაილი:</value>
+  </data>
+  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
+    <value>გამომავალი ფაილის არჩევა</value>
+  </data>
+  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
+    <value>წყაროს ფაილის არჩევა</value>
+  </data>
+  <data name="TechnicalTool_Run" xml:space="preserve">
+    <value>გაშვება</value>
+  </data>
+  <data name="TechnicalTool_SourceFile" xml:space="preserve">
+    <value>წყაროს ფაილი:</value>
+  </data>
+  <data name="Theme_Title" xml:space="preserve">
+    <value>თემა</value>
+  </data>
+  <data name="Theme_Value_Dark" xml:space="preserve">
+    <value>მუქი</value>
+  </data>
+  <data name="Theme_Value_Light" xml:space="preserve">
+    <value>ნათელი</value>
+  </data>
+  <data name="Time_Field_Elapsed" xml:space="preserve">
+    <value>გასული:</value>
+  </data>
+  <data name="Time_Field_Hour" xml:space="preserve">
+    <value>საათი:</value>
+  </data>
+  <data name="Time_Field_Minute" xml:space="preserve">
+    <value>წუთი:</value>
+  </data>
+  <data name="TimeoutTask_Title" xml:space="preserve">
+    <value>ვადის მოლოდინი...</value>
+  </data>
+  <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
+    <value>სერტიფიკატის ანალიზის გაფრთხილება: {0}</value>
+  </data>
+  <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
+    <value>შეამოწმეთ სერტიფიკატის იდენტობა გარე არხით, შემდეგ კვლავ დააჭირეთ შენახვას.</value>
+  </data>
+  <data name="TrustDetected_Ftps_Title" xml:space="preserve">
+    <value>FTPS სერვერის სერტიფიკატი აღმოჩენილია ტესტის დროს.</value>
+  </data>
+  <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
+    <value>სერტიფიკატი (ნედლი hex): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_DnsName" xml:space="preserve">
+    <value>DNS სახელი: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Encryption" xml:space="preserve">
+    <value>დაშიფვრა: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
+    <value>თითის ანაბეჭდი (SHA-256): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Folder" xml:space="preserve">
+    <value>საქაღალდე: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Host" xml:space="preserve">
+    <value>ჰოსტი: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Issuer" xml:space="preserve">
+    <value>გამომშვები: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Port" xml:space="preserve">
+    <value>პორტი: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
+    <value>საჯარო გასაღების ალგორითმი: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
+    <value>საჯარო გასაღების ზომა: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
+    <value>სერიული ნომერი: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
+    <value>ხელმოწერის ალგორითმი: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Subject" xml:space="preserve">
+    <value>სუბიექტი: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
+    <value>სუბიექტის ალტერნატიული სახელები: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
+    <value>თითის ანაბეჭდი: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_User" xml:space="preserve">
+    <value>მომხმარებელი: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
+    <value>ძალაშია (UTC)-დან: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
+    <value>ძალაშია (UTC)-მდე: {0}</value>
+  </data>
+  <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
+    <value>გაანალიზებული სერტიფიკატის დეტალები:</value>
+  </data>
+  <data name="TrustDetected_Port_Default" xml:space="preserve">
+    <value>ნაგულისხმევი</value>
+  </data>
+  <data name="TrustDetected_Port_Default22" xml:space="preserve">
+    <value>ნაგულისხმევი (22)</value>
+  </data>
+  <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
+    <value>უცნობი</value>
+  </data>
+  <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
+    <value>შეამოწმეთ ეს თითის ანაბეჭდი გარე არხით, შემდეგ კვლავ დააჭირეთ შენახვას.</value>
+  </data>
+  <data name="TrustDetected_Sftp_Title" xml:space="preserve">
+    <value>SFTP სერვერის ნდობის ინფორმაცია აღმოჩენილია ტესტის დროს.</value>
+  </data>
+  <data name="TrustedCertificate_Field" xml:space="preserve">
+    <value>სანდო სერტიფიკატი (hex):</value>
+  </data>
+  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
+    <value>საქაღალდის ატვირთვა სერვერზე</value>
+  </data>
+  <data name="UploadFolderTask_Help" xml:space="preserve">
+    <value>შეგიძლიათ ატვირთოთ საქაღალდის შიგთავსი უკვე არსებული ფაილების გადაწერით.</value>
+  </data>
+  <data name="Url_Field" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="Url_Field_Validation" xml:space="preserve">
+    <value>URL მითითებული არ არის.</value>
+  </data>
+  <data name="User_Field" xml:space="preserve">
+    <value>მომხმარებელი:</value>
+  </data>
+  <data name="User_Field_Validation" xml:space="preserve">
+    <value>მომხმარებელი მითითებული არ არის.</value>
+  </data>
+  <data name="Winget_Description" xml:space="preserve">
+    <value>თქვენი მონაცემების სარეზერვო ასლის შექმნა/სინქრონიზაცია Windows, Linux-ზე.
+ფოტოების იმპორტი ტელეფონიდან WI-FI-ით და სხვა.
+
+მხარდაჭერილი ენები: ინგლისური, არაბული, ბენგალური, ჩინური, ფრანგული, გერმანული, ჰინდი, ინდონეზიური, იტალიური, იაპონური, მარათჰი, ნიგერიული პიჯინი, პორტუგალიური, რუსული, ესპანური, ტამილური, ტელუგუ, თურქული, უკრაინული, ურდუ, ვიეტნამური, კანტონური ჩინური
+
+ფუნქციები:
+- ინკრემენტული სარეზერვო ასლი ფაილების დუბლირების აღმოფხვრით და SFTP, FTPS, SMB/CIFS ტრანსპორტის მხარდაჭერით;
+- ფაილების სინქრონიზაცია მოწყობილობებს შორის ცენტრალიზებული საცავითა და ვერსიონირების მხარდაჭერით;
+- მედიის იმპორტი - აუდიოების, ფოტოების, ვიდეოების იმპორტი კამერის, ჩამწერის SD ბარათიდან; ფოტოები და ვიდეოები თქვენი ტელეფონიდან WI-FI-ით FTPS სერვერის აპლიკაციით შაბლონური ფაილის სახელებით ან MTP-ით;
+- P2P ფაილის გადაცემა დაშიფვრით მოწყობილობებს შორის;
+- კონსოლი ავტომატიზაციის განრიგისთვის;
+- AES-256 დაშიფვრა.
+
+პლატფორმები: Windows 11 x64, ARM64 ან Ubuntu 24+.</value>
+  </data>
+  <data name="Winget_ShortDescription" xml:space="preserve">
+    <value>BUtil ქმნის ინკრემენტულ სარეზერვო ასლებს, ინკრემენტულ სინქრონიზაციას და იმპორტირებს მულტიმედიას თქვენს კომპიუტერზე დუბლირების აღმოფხვრითა და FTPS, SFTP, SMB/CIFS ტრანსპორტის მხარდაჭერით Windows-ისა და Linux-ისთვის.</value>
+  </data>
+</root>

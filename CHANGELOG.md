@@ -7,6 +7,7 @@
 ## New Features
 - Setup is localized.
 - Added Czech, Danish, Dutch, Farsi, Finnish, Greek, Hebrew, Hungarian, Korean, Polish, Romanian, Swedish, Thai, Traditional Chinese languages.
+- Added Albanian, Armenian, Belarusian, Bosnian, Bulgarian, Croatian, Estonian, Georgian, Icelandic, Kurdish, Lithuanian, Latvian, Macedonian, Malay, Mongolian, Norwegian (Bokmål and Nynorsk), Serbian (Cyrillic and Latin), Slovak, Slovenian, Uzbek languages.
 
 # 2026.04.20
 

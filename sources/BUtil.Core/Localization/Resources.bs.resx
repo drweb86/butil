@@ -1,0 +1,994 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="_Technical_NsisLanguage" xml:space="preserve">
+    <value>Bosnian</value>
+  </data>
+  <data name="_Technical_WingetLocale" xml:space="preserve">
+    <value>bs-BA</value>
+  </data>
+  <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
+    <value>Ne radi ništa</value>
+  </data>
+  <data name="AfterTaskSelection_Field" xml:space="preserve">
+    <value>Nakon završetka zadatka:</value>
+  </data>
+  <data name="AfterTaskSelection_Help" xml:space="preserve">
+    <value>Ako odaberete nešto drugo osim 'ne radi ništa',
+program će konfigurisati OS da vam prikaže izvještaj
+pri sljedećoj prijavi ako budu registrovane
+greške ili upozorenja.</value>
+  </data>
+  <data name="AfterTaskSelection_LogOff" xml:space="preserve">
+    <value>Odjavi se</value>
+  </data>
+  <data name="AfterTaskSelection_Reboot" xml:space="preserve">
+    <value>Restartuj</value>
+  </data>
+  <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
+    <value>Isključi</value>
+  </data>
+  <data name="Application_NewVersion_Notification" xml:space="preserve">
+    <value>Dostupna je nova {0} verzija.</value>
+  </data>
+  <data name="BackupVersion_Button_Delete" xml:space="preserve">
+    <value>Obriši verziju</value>
+  </data>
+  <data name="BackupVersion_Changes_Title" xml:space="preserve">
+    <value>Promjene</value>
+  </data>
+  <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
+    <value>Da li zaista želite obrisati verziju "{0}"?
+
+Promjene obrisane verzije postat će dio verzije "{1}".</value>
+  </data>
+  <data name="BackupVersion_Files_Title" xml:space="preserve">
+    <value>Datoteke</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
+    <value>Dnevnik: {0}</value>
+  </data>
+  <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
+    <value>Dnevnik za odabrano...</value>
+  </data>
+  <data name="BackupVersion_Select" xml:space="preserve">
+    <value>Otvori odabranu verziju...</value>
+  </data>
+  <data name="BackupVersion_Selector_Title" xml:space="preserve">
+    <value>ODABERI VERZIJU</value>
+  </data>
+  <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
+    <value>(sve verzije zauzimaju {0} na pohrani)</value>
+  </data>
+  <data name="BackupVersion_Versions_Title" xml:space="preserve">
+    <value>VERZIJE</value>
+  </data>
+  <data name="BackupVersion_Viewer_Help" xml:space="preserve">
+    <value>Odaberite datoteku ili folder koji želite vratiti u stablu i kliknite "Vrati".</value>
+  </data>
+  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
+    <value>Veza sa serverom je neočekivano prekinuta (Da li su lozinke na klijentu i serveru iste?)</value>
+  </data>
+  <data name="Button_Cancel" xml:space="preserve">
+    <value>Otkaži</value>
+  </data>
+  <data name="Button_Close" xml:space="preserve">
+    <value>Zatvori</value>
+  </data>
+  <data name="Button_Continue" xml:space="preserve">
+    <value>Nastavi &gt;</value>
+  </data>
+  <data name="Button_CopyToClipboard" xml:space="preserve">
+    <value>Kopiraj</value>
+  </data>
+  <data name="Button_Download" xml:space="preserve">
+    <value>Preuzmi</value>
+  </data>
+  <data name="Button_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Button_Remove" xml:space="preserve">
+    <value>Ukloni</value>
+  </data>
+  <data name="Button_Save" xml:space="preserve">
+    <value>Sačuvaj</value>
+  </data>
+  <data name="CommandLineArguments_Help" xml:space="preserve">
+    <value>Posjetite {0} da vidite argumente komandne linije.</value>
+  </data>
+  <data name="CommandLineArguments_Invalid" xml:space="preserve">
+    <value>Nevažeći argumenti komandne linije.</value>
+  </data>
+  <data name="DataStorage_Data_Saving" xml:space="preserve">
+    <value>Zapisivanje podataka u pohranu</value>
+  </data>
+  <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
+    <value>Skripta za povezivanje:</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
+    <value>Skripta za odspajanje:</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
+    <value>Završeno s greškama</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
+    <value>Uspješno završeno</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
+    <value>Ograničenje prijenosa, GB:</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
+    <value>Ograničava količinu podataka koji se šalju na pohranu tokom jednog izvršavanja zadatka. 0 - bez ograničenja.
+Kada se kvota prekorači, ostale datoteke će biti preskočene i obrađene sljedeći put.
+Scenarij korištenja: Kopirate podatke na udaljeni server. Postoji problem: ISP smanjuje brzinu prijenosa nakon nekoliko gigabajta. Ova postavka vam omogućava da se nosite s tim.</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
+    <value>Kvota treba biti 0 (ne primjenjuj) ili vrijednost iznad 0.</value>
+  </data>
+  <data name="DataStorage_Maintenance" xml:space="preserve">
+    <value>Održavanje pohrane podataka</value>
+  </data>
+  <data name="DataStorage_Script_Help" xml:space="preserve">
+    <value>Ako folder postane dostupan nakon izvršavanja nekih komandi, navedite {0} skripte za povezivanje i odspajanje.</value>
+  </data>
+  <data name="DataStorage_Scripts_Header" xml:space="preserve">
+    <value>Skripte (prije montiranja / nakon demontiranja)</value>
+  </data>
+  <data name="DataStorage_State_Get" xml:space="preserve">
+    <value>Dobijanje stanja pohrane</value>
+  </data>
+  <data name="DataStorage_State_Saving" xml:space="preserve">
+    <value>Zapisivanje stanja pohrane</value>
+  </data>
+  <data name="DataStorage_Title" xml:space="preserve">
+    <value>Pohrana</value>
+  </data>
+  <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
+    <value>Pohrana nije navedena.</value>
+  </data>
+  <data name="Days_Field_Choose" xml:space="preserve">
+    <value>Odaberite dane u sedmici:</value>
+  </data>
+  <data name="Days_Friday" xml:space="preserve">
+    <value>Petak</value>
+  </data>
+  <data name="Days_Monday" xml:space="preserve">
+    <value>Ponedjeljak</value>
+  </data>
+  <data name="Days_Saturday" xml:space="preserve">
+    <value>Subota</value>
+  </data>
+  <data name="Days_Sunday" xml:space="preserve">
+    <value>Nedjelja</value>
+  </data>
+  <data name="Days_Thursday" xml:space="preserve">
+    <value>Četvrtak</value>
+  </data>
+  <data name="Days_Tuesday" xml:space="preserve">
+    <value>Utorak</value>
+  </data>
+  <data name="Days_Wednesday" xml:space="preserve">
+    <value>Srijeda</value>
+  </data>
+  <data name="DirectoryStorage" xml:space="preserve">
+    <value>Direktorij</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
+    <value>Folder:</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
+    <value>Direktorij nije naveden.</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
+    <value>Direktorij "{0}" ne postoji.</value>
+  </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>Trajanje (minute, 0 - beskonačno):</value>
+  </data>
+  <data name="Field_Device" xml:space="preserve">
+    <value>Uređaj:</value>
+  </data>
+  <data name="Field_Device_Validation_Empty" xml:space="preserve">
+    <value>Uređaj nije naveden.</value>
+  </data>
+  <data name="Field_Device_Validation_NotFound" xml:space="preserve">
+    <value>Uređaj nije pronađen.</value>
+  </data>
+  <data name="Field_File_Browse" xml:space="preserve">
+    <value>Pregledaj datoteku</value>
+  </data>
+  <data name="Field_Folder" xml:space="preserve">
+    <value>Folder:</value>
+  </data>
+  <data name="Field_Folder_Browse" xml:space="preserve">
+    <value>Pregledaj</value>
+  </data>
+  <data name="Field_Folder_Validation_Empty" xml:space="preserve">
+    <value>Folder nije naveden.</value>
+  </data>
+  <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
+    <value>Folder ne postoji.</value>
+  </data>
+  <data name="Field_TransportProtocol" xml:space="preserve">
+    <value>Protokol:</value>
+  </data>
+  <data name="Field_Version" xml:space="preserve">
+    <value>Verzija:</value>
+  </data>
+  <data name="File_Deleting" xml:space="preserve">
+    <value>Brisanje "{0}"</value>
+  </data>
+  <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
+    <value>Skripta za verifikaciju integriteta.ps1</value>
+  </data>
+  <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
+    <value>Čuvanje skripti za verifikaciju integriteta</value>
+  </data>
+  <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
+    <value>Obradi datoteke starije od:</value>
+  </data>
+  <data name="File_List_Saving" xml:space="preserve">
+    <value>Čuvanje datoteka</value>
+  </data>
+  <data name="File_Moving" xml:space="preserve">
+    <value>Premještanje "{0}" u "{1}"</value>
+  </data>
+  <data name="File_Saving" xml:space="preserve">
+    <value>Čuvanje "{0}"</value>
+  </data>
+  <data name="File_Uploading" xml:space="preserve">
+    <value>Prijenos "{0}"</value>
+  </data>
+  <data name="FingerPrintSHA256_Field" xml:space="preserve">
+    <value>Otisak SHA-256:</value>
+  </data>
+  <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
+    <value>Otisak SHA-256 nije naveden.</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
+    <value>Eksplicitno</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
+    <value>Implicitno</value>
+  </data>
+  <data name="Ftps_Field_Encryption" xml:space="preserve">
+    <value>SSL/TTS enkripcija:</value>
+  </data>
+  <data name="FtpsServerStartTask_Name" xml:space="preserve">
+    <value>Pokreni FTPS server</value>
+  </data>
+  <data name="FtpsServerTask_Create" xml:space="preserve">
+    <value>Dijeli folder preko mreže (FTPS server)</value>
+  </data>
+  <data name="FtpsServerTask_Help" xml:space="preserve">
+    <value>Možete dijeliti bilo koji folder s pristupom za čitanje i pisanje putem FTPS protokola (eksplicitna enkripcija sa samopotpisanim certifikatom) unutar vaše lokalne mreže.</value>
+  </data>
+  <data name="Icons_Help_Link" xml:space="preserve">
+    <value>Dodajte ikonu znaka u vaš tekst</value>
+  </data>
+  <data name="ImportMediaTask_AllFiles" xml:space="preserve">
+    <value>Uvezi sve datoteke</value>
+  </data>
+  <data name="ImportMediaTask_Create" xml:space="preserve">
+    <value>Zadatak uvoza medija</value>
+  </data>
+  <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
+    <value>Uredi zadatak uvoza medija "{0}"</value>
+  </data>
+  <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
+    <value>Izlazni folder:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
+    <value>Transformacije naziva datoteke:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
+    <value>Primjer:
+Zamislite da imate datoteku {0} (izmijenjenu {1}).
+S ovim direktorijem i nizom šablona, datoteka će biti sačuvana kao:
+{2}</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
+    <value>Podržani tokeni:
+{DATE:Format} - Umeće datum izmjene datoteke u navedenom formatu.
+Da vidite sve opcije, pretražite "C# DateTime format".</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
+    <value>Transformisani naziv datoteke je prazan.</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
+    <value>Nevažeća niska transformisanog naziva datoteke.</value>
+  </data>
+  <data name="ImportMediaTask_File" xml:space="preserve">
+    <value>Uvoz "{0}"</value>
+  </data>
+  <data name="ImportMediaTask_Help" xml:space="preserve">
+    <value>Uvozi audio, fotografije, video zapise sa SD kartice kamere, snimača; fotografije i video zapise s vašeg telefona putem WI-FI kroz FTP Server aplikaciju koristeći nazive datoteka šablona.
+
+Pogledajte web stranicu aplikacije za dokumentaciju o tome kako postaviti prijenos datoteka putem WI-FI kroz FTP Server aplikaciju na telefonu.</value>
+  </data>
+  <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
+    <value>Uvezi izvor podataka</value>
+  </data>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
+    <value>Preskoči već uvezene datoteke</value>
+  </data>
+  <data name="ImproveIt_Message" xml:space="preserve">
+    <value>Došlo je do neočekivane greške.
+
+Molimo kontaktirajte programere s informacijama sačuvanim na vašoj radnoj površini u
+"{0}"
+
+Aplikacija će se sada zatvoriti.</value>
+  </data>
+  <data name="IncrementalBackup_Help" xml:space="preserve">
+    <value>Najosnovniji oblik inkrementalne sigurnosne kopije sastoji se od identificiranja, evidentiranja i time očuvanja samo onih datoteka koje su se promijenile od posljednje sigurnosne kopije.
+
+Budući da su promjene obično male, inkrementalne sigurnosne kopije su mnogo manje i brže od potpunih sigurnosnih kopija.
+
+Na primjer, nakon potpune sigurnosne kopije u petak, sigurnosna kopija u ponedjeljak sadržavat će samo datoteke koje su se promijenile od petka. Sigurnosna kopija u utorak sadrži samo datoteke koje su se promijenile od ponedjeljka, i tako dalje.
+
+Ako bilo koja od kreiranih kopija ne uspije, uključujući prvu (potpunu), vraćanje će biti nepotpuno.</value>
+  </data>
+  <data name="IncrementalBackup_Title" xml:space="preserve">
+    <value>Inkrementalna sigurnosna kopija</value>
+  </data>
+  <data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
+    <value>Izračunavanje inkrementalne verzije</value>
+  </data>
+  <data name="IncrementalBackup_Version_Save" xml:space="preserve">
+    <value>Čuvanje inkrementalne verzije</value>
+  </data>
+  <data name="IncrementalBackupTask_Create" xml:space="preserve">
+    <value>Zadatak inkrementalne sigurnosne kopije</value>
+  </data>
+  <data name="Installer_AdminRequired" xml:space="preserve">
+    <value>Potrebne su administratorske privilegije za instalaciju za sve korisnike.
+Molimo pokrenite instalaciju kao administrator ili koristite /CURRENTUSER.</value>
+  </data>
+  <data name="Installer_AdminRequiredDetailed" xml:space="preserve">
+    <value>Potrebne su administratorske privilegije za instalaciju za sve korisnike.
+
+Molimo uradite jedno od sljedećeg:
+- Odaberite 'Instaliraj samo za trenutnog korisnika', ili
+- Pokrenite ovaj instalacijski program kao administrator</value>
+  </data>
+  <data name="Installer_AllUsersDescription" xml:space="preserve">
+    <value>Aplikacija će biti dostupna za sve korisnike na ovom računaru.</value>
+  </data>
+  <data name="Installer_AllUsersOption" xml:space="preserve">
+    <value>Instaliraj za &amp;sve korisnike (zahtijeva administratorske privilegije)</value>
+  </data>
+  <data name="Installer_ArchRequired" xml:space="preserve">
+    <value>Ovaj instalacijski program zahtijeva x64 ili ARM64 verziju Windows-a.</value>
+  </data>
+  <data name="Installer_CurrentUserDescription" xml:space="preserve">
+    <value>Preporučeno. Aplikacija će biti dostupna samo za vaš korisnički račun.</value>
+  </data>
+  <data name="Installer_CurrentUserOption" xml:space="preserve">
+    <value>Instaliraj samo za &amp;trenutnog korisnika</value>
+  </data>
+  <data name="Installer_InstallingFor" xml:space="preserve">
+    <value>Instalacija za:</value>
+  </data>
+  <data name="Installer_InstallModeDescription" xml:space="preserve">
+    <value>Molimo odaberite da li želite instalirati BUtil samo za sebe ili za sve korisnike ovog računara.</value>
+  </data>
+  <data name="Installer_InstallModeSubtitle" xml:space="preserve">
+    <value>Odaberite ko može koristiti ovu aplikaciju</value>
+  </data>
+  <data name="Installer_InstallModeTitle" xml:space="preserve">
+    <value>Odaberite tip instalacije</value>
+  </data>
+  <data name="Installer_LaunchApp" xml:space="preserve">
+    <value>Pokreni aplikaciju</value>
+  </data>
+  <data name="KeyFile_Field" xml:space="preserve">
+    <value>Datoteka ključa:</value>
+  </data>
+  <data name="LeftMenu_Encryption" xml:space="preserve">
+    <value>Enkripcija</value>
+  </data>
+  <data name="LeftMenu_What" xml:space="preserve">
+    <value>Šta?</value>
+  </data>
+  <data name="LeftMenu_What_Hint" xml:space="preserve">
+    <value>Ovdje možete dodati foldere i datoteke koje trebate obraditi.</value>
+  </data>
+  <data name="LeftMenu_What_Validation" xml:space="preserve">
+    <value>Nema stavki za obradu.</value>
+  </data>
+  <data name="LeftMenu_When" xml:space="preserve">
+    <value>Kada?</value>
+  </data>
+  <data name="LeftMenu_When_Help" xml:space="preserve">
+    <value>Ovdje možete postaviti raspored. Planer vam može pomoći da automatizirate pokretanje zadataka.</value>
+  </data>
+  <data name="LeftMenu_Where" xml:space="preserve">
+    <value>Gdje?</value>
+  </data>
+  <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
+    <value>Prevucite i ispustite datoteke i foldere iz Explorer-a ovdje.</value>
+  </data>
+  <data name="LeftMenu_Where_Hint" xml:space="preserve">
+    <value>Ovdje možete dodati lokacije na koje želite da se vaše datoteke kopiraju.</value>
+  </data>
+  <data name="Local_State_Get" xml:space="preserve">
+    <value>Dobijanje lokalnog stanja</value>
+  </data>
+  <data name="Local_State_Saving" xml:space="preserve">
+    <value>Zapisivanje lokalnog stanja</value>
+  </data>
+  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
+    <value>Otvori folder dnevnika</value>
+  </data>
+  <data name="LogFile_Marker_Errors" xml:space="preserve">
+    <value>Greške</value>
+  </data>
+  <data name="LogFile_Marker_Successful" xml:space="preserve">
+    <value>Uspješno</value>
+  </data>
+  <data name="LogFile_OpenLogs" xml:space="preserve">
+    <value>Dnevnici</value>
+  </data>
+  <data name="Logs_Menu" xml:space="preserve">
+    <value>Dnevnici</value>
+  </data>
+  <data name="MainWindow_SearchWatermark" xml:space="preserve">
+    <value>Pretraži</value>
+  </data>
+  <data name="Messages_Header_Error" xml:space="preserve">
+    <value>Greška</value>
+  </data>
+  <data name="Messages_Header_Information" xml:space="preserve">
+    <value>Informacija</value>
+  </data>
+  <data name="Messages_Header_Question" xml:space="preserve">
+    <value>Pitanje</value>
+  </data>
+  <data name="Name_Field" xml:space="preserve">
+    <value>Naziv:</value>
+  </data>
+  <data name="Name_Field_Validation" xml:space="preserve">
+    <value>Naziv je prazan ili sadrži nepodržane znakove putanje.</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>Dužina naziva '{0}' prelazi ograničenje za {1} znakova.</value>
+  </data>
+  <data name="Name_Title" xml:space="preserve">
+    <value>Naziv</value>
+  </data>
+  <data name="OptionalField_Hint" xml:space="preserve">
+    <value>(opcionalno)</value>
+  </data>
+  <data name="Other_Menu_Title" xml:space="preserve">
+    <value>Ostalo</value>
+  </data>
+  <data name="Password_Field" xml:space="preserve">
+    <value>Lozinka:</value>
+  </data>
+  <data name="Password_Field_Confirm" xml:space="preserve">
+    <value>Potvrdi lozinku:</value>
+  </data>
+  <data name="Password_Field_Length" xml:space="preserve">
+    <value>Dužina:</value>
+  </data>
+  <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
+    <value>Lozinke se ne podudaraju.</value>
+  </data>
+  <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
+    <value>Lozinka nije navedena.</value>
+  </data>
+  <data name="Password_Generate" xml:space="preserve">
+    <value>Generiši lozinku...</value>
+  </data>
+  <data name="Password_Generator_Header" xml:space="preserve">
+    <value>Generator lozinki</value>
+  </data>
+  <data name="Password_Help" xml:space="preserve">
+    <value>Preporučena minimalna dužina lozinke je 50 znakova ili više.</value>
+  </data>
+  <data name="Password_Use" xml:space="preserve">
+    <value>Koristi</value>
+  </data>
+  <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
+    <value>Ne mogu pronaći datoteke "{0}" u direktoriju. 
+
+Pokažite na direktorij koji sadrži ovu datoteku.</value>
+  </data>
+  <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
+    <value>Ne mogu pročitati stanje.</value>
+  </data>
+  <data name="Server_Field_Address" xml:space="preserve">
+    <value>Naziv servera:</value>
+  </data>
+  <data name="Server_Field_Address_Validation" xml:space="preserve">
+    <value>Naziv servera nije naveden.</value>
+  </data>
+  <data name="Server_Field_Port" xml:space="preserve">
+    <value>Port:</value>
+  </data>
+  <data name="Server_Field_Port_Validation" xml:space="preserve">
+    <value>Port je nevažeći.</value>
+  </data>
+  <data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
+    <value>I lozinka i datoteka ključa su prazne.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
+    <value>SFTP folder ne smije završavati sa /.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
+    <value>SFTP folder mora počinjati sa /.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
+    <value>SFTP folder / nije dozvoljen. Folder mora pokazivati na specifičniji folder.</value>
+  </data>
+  <data name="SourceItem_AddFolders" xml:space="preserve">
+    <value>Dodaj foldere...</value>
+  </data>
+  <data name="SourceItem_OpenInExplorer" xml:space="preserve">
+    <value>Otvori u Explorer-u...</value>
+  </data>
+  <data name="SourceItem_State_Get" xml:space="preserve">
+    <value>Dobijanje stanja izvornog elementa "{0}"</value>
+  </data>
+  <data name="SourceItem_Validation_Empty" xml:space="preserve">
+    <value>Nema stavki za obradu.</value>
+  </data>
+  <data name="SourceItem_Validation_NotExists" xml:space="preserve">
+    <value>"{0}" ne postoji.</value>
+  </data>
+  <data name="State_File_Get" xml:space="preserve">
+    <value>Dobijanje stanja datoteke "{0}"</value>
+  </data>
+  <data name="State_LoadFromEverywhere" xml:space="preserve">
+    <value>Dobijanje stanja izvornih elemenata i pohrana</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
+    <value>Dodaj obrazac za isključivanje datoteka</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
+    <value>Uredi obrazac za isključivanje datoteka</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>Isključi datoteke</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
+    <value>Globbing datoteka u .NET: Obrasci</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
+    <value>Ovdje možete navesti obrasce za isključivanje pomoću globbinga datoteka. 
+To može biti naziv datoteke ili naziv foldera ili zamjenski znak. 
+Primjeri: 
+d:\temp, 
+d:\temp\file.txt, 
+d:\temp\**\*.txt ili 
+bin. 
+Pogledajte detaljan opis na sljedećem linku.</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
+    <value>Preskače obradu datoteka prema obrascu za isključivanje.</value>
+  </data>
+  <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
+    <value>Obrazac za isključivanje datoteka:</value>
+  </data>
+  <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
+    <value>Obrazac za isključivanje datoteka je prazan.</value>
+  </data>
+  <data name="StorageItem_Remote_Marker" xml:space="preserve">
+    <value>Udaljeno</value>
+  </data>
+  <data name="SynchronizationMode_Field" xml:space="preserve">
+    <value>Način sinhronizacije:</value>
+  </data>
+  <data name="SynchronizationMode_Field_Read" xml:space="preserve">
+    <value>Čitanje</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
+    <value>Dvosmjerno</value>
+  </data>
+  <data name="SynchronizationTask_Create" xml:space="preserve">
+    <value>Sinhronizacija</value>
+  </data>
+  <data name="SynchronizationTask_Help" xml:space="preserve">
+    <value>Dvosmjerna sinhronizacija datoteka između uređaja koristeći centraliziranu pohranu.</value>
+  </data>
+  <data name="Task_Create" xml:space="preserve">
+    <value>Novi</value>
+  </data>
+  <data name="Task_Create_Hint" xml:space="preserve">
+    <value>Kreira novi zadatak.</value>
+  </data>
+  <data name="Task_Delete" xml:space="preserve">
+    <value>Obriši</value>
+  </data>
+  <data name="Task_Delete_Confirm" xml:space="preserve">
+    <value>Da li zaista želite obrisati "{0}"?</value>
+  </data>
+  <data name="Task_Delete_Hint" xml:space="preserve">
+    <value>Briše odabrani zadatak.</value>
+  </data>
+  <data name="Task_Duplicate" xml:space="preserve">
+    <value>Dupliraj</value>
+  </data>
+  <data name="Task_Edit" xml:space="preserve">
+    <value>Uredi</value>
+  </data>
+  <data name="Task_Edit_Hint" xml:space="preserve">
+    <value>Uređuje odabrani zadatak.</value>
+  </data>
+  <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
+    <value>Ne možete uređivati ovaj tip zadatka u CLI.</value>
+  </data>
+  <data name="Task_Field_Choose" xml:space="preserve">
+    <value>Odaberite zadatak:</value>
+  </data>
+  <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
+    <value>Novi zadatak</value>
+  </data>
+  <data name="Task_LastExecution_State" xml:space="preserve">
+    <value>Stanje</value>
+  </data>
+  <data name="Task_Launch" xml:space="preserve">
+    <value>Pokreni</value>
+  </data>
+  <data name="Task_Launch_Hint" xml:space="preserve">
+    <value>Pokreće odabrani zadatak.</value>
+  </data>
+  <data name="Task_List" xml:space="preserve">
+    <value>Zadaci</value>
+  </data>
+  <data name="Task_OpenLog" xml:space="preserve">
+    <value>Otvori posljednji dnevnik</value>
+  </data>
+  <data name="Task_Restore" xml:space="preserve">
+    <value>Vrati</value>
+  </data>
+  <data name="Task_Status_FailedSeeLog" xml:space="preserve">
+    <value>Neuspješno (pogledajte otvoreni dnevnik)</value>
+  </data>
+  <data name="Task_Status_InProgress" xml:space="preserve">
+    <value>Zadatak je u toku...</value>
+  </data>
+  <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
+    <value>Djelomično završeno. Zbog kvote pohrane, neke datoteke su preskočene ovaj put. Preostalo {0} datoteka od {1} GB.</value>
+  </data>
+  <data name="Task_Status_Succesfull" xml:space="preserve">
+    <value>Uspješno</value>
+  </data>
+  <data name="Task_Status_Unknown" xml:space="preserve">
+    <value>Nepoznato</value>
+  </data>
+  <data name="Task_Validation_NotFound" xml:space="preserve">
+    <value>Zadatak '{0}' nije pronađen.</value>
+  </data>
+  <data name="Task_Validation_NotSupported" xml:space="preserve">
+    <value>Ovaj tip zadatka nije podržan.</value>
+  </data>
+  <data name="Task_WindowTitle_Creating" xml:space="preserve">
+    <value>Kreiranje</value>
+  </data>
+  <data name="Task_WindowTitle_Editing" xml:space="preserve">
+    <value>Uređivanje</value>
+  </data>
+  <data name="TechnicalTool_Close" xml:space="preserve">
+    <value>Zatvori</value>
+  </data>
+  <data name="TechnicalTool_Completed" xml:space="preserve">
+    <value>Operacija je uspješno završena.</value>
+  </data>
+  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
+    <value>Kompresuj Brotli</value>
+  </data>
+  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
+    <value>Dekompresuj Brotli</value>
+  </data>
+  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
+    <value>Dešifruj AES-256</value>
+  </data>
+  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
+    <value>Šifruj AES-256</value>
+  </data>
+  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
+    <value>Datoteka ne postoji:</value>
+  </data>
+  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
+    <value>Unesite lozinku.</value>
+  </data>
+  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
+    <value>Navedite putanje izvorne i izlazne datoteke.</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
+    <value>AES-256 šifrovano (*.{0})</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
+    <value>Sve datoteke</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
+    <value>Brotli kompresovano (*.brotli)</value>
+  </data>
+  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
+    <value>Kompresuj Brotli…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
+    <value>Dekompresuj Brotli…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
+    <value>Dešifruj AES-256…</value>
+  </data>
+  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
+    <value>Šifruj AES-256…</value>
+  </data>
+  <data name="TechnicalTool_OutputFile" xml:space="preserve">
+    <value>Izlazna datoteka:</value>
+  </data>
+  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
+    <value>Odaberite izlaznu datoteku</value>
+  </data>
+  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
+    <value>Odaberite izvornu datoteku</value>
+  </data>
+  <data name="TechnicalTool_Run" xml:space="preserve">
+    <value>Pokreni</value>
+  </data>
+  <data name="TechnicalTool_SourceFile" xml:space="preserve">
+    <value>Izvorna datoteka:</value>
+  </data>
+  <data name="Theme_Title" xml:space="preserve">
+    <value>Tema</value>
+  </data>
+  <data name="Theme_Value_Dark" xml:space="preserve">
+    <value>Tamna</value>
+  </data>
+  <data name="Theme_Value_Light" xml:space="preserve">
+    <value>Svijetla</value>
+  </data>
+  <data name="Time_Field_Elapsed" xml:space="preserve">
+    <value>Proteklo:</value>
+  </data>
+  <data name="Time_Field_Hour" xml:space="preserve">
+    <value>Sat:</value>
+  </data>
+  <data name="Time_Field_Minute" xml:space="preserve">
+    <value>Minuta:</value>
+  </data>
+  <data name="TimeoutTask_Title" xml:space="preserve">
+    <value>Čekanje na istek vremena...</value>
+  </data>
+  <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
+    <value>Upozorenje pri analizi certifikata: {0}</value>
+  </data>
+  <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
+    <value>Provjerite identitet certifikata izvan kanala, zatim kliknite Sačuvaj ponovo da ga sačuvate.</value>
+  </data>
+  <data name="TrustDetected_Ftps_Title" xml:space="preserve">
+    <value>Certifikat FTPS servera otkriven tokom testiranja.</value>
+  </data>
+  <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
+    <value>Certifikat (sirovi hex): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_DnsName" xml:space="preserve">
+    <value>DNS naziv: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Encryption" xml:space="preserve">
+    <value>Enkripcija: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
+    <value>Otisak (SHA-256): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Folder" xml:space="preserve">
+    <value>Folder: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Host" xml:space="preserve">
+    <value>Domaćin: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Issuer" xml:space="preserve">
+    <value>Izdavač: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Port" xml:space="preserve">
+    <value>Port: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
+    <value>Algoritam javnog ključa: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
+    <value>Veličina javnog ključa: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
+    <value>Serijski broj: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
+    <value>Algoritam potpisa: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Subject" xml:space="preserve">
+    <value>Subjekt: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
+    <value>Alternativni nazivi subjekta: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
+    <value>Otisak: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_User" xml:space="preserve">
+    <value>Korisnik: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
+    <value>Važi od (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
+    <value>Važi do (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
+    <value>Analizirani detalji certifikata:</value>
+  </data>
+  <data name="TrustDetected_Port_Default" xml:space="preserve">
+    <value>zadano</value>
+  </data>
+  <data name="TrustDetected_Port_Default22" xml:space="preserve">
+    <value>zadano (22)</value>
+  </data>
+  <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
+    <value>nepoznato</value>
+  </data>
+  <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
+    <value>Provjerite ovaj otisak izvan kanala, zatim kliknite Sačuvaj ponovo da ga sačuvate.</value>
+  </data>
+  <data name="TrustDetected_Sftp_Title" xml:space="preserve">
+    <value>Informacije o povjerenju SFTP servera otkrivene tokom testiranja.</value>
+  </data>
+  <data name="TrustedCertificate_Field" xml:space="preserve">
+    <value>Pouzdani certifikat (hex):</value>
+  </data>
+  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
+    <value>Prenesi folder na server</value>
+  </data>
+  <data name="UploadFolderTask_Help" xml:space="preserve">
+    <value>Možete prenijeti sadržaj foldera uz prepisivanje već postojećih datoteka.</value>
+  </data>
+  <data name="Url_Field" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="Url_Field_Validation" xml:space="preserve">
+    <value>URL nije naveden.</value>
+  </data>
+  <data name="User_Field" xml:space="preserve">
+    <value>Korisnik:</value>
+  </data>
+  <data name="User_Field_Validation" xml:space="preserve">
+    <value>Korisnik nije naveden.</value>
+  </data>
+  <data name="Winget_Description" xml:space="preserve">
+    <value>Napravite sigurnosnu kopiju/sinhronizujte svoje podatke na Windows, Linux.
+Uvezite fotografije s telefona putem WI-FI i više.
+
+Podržani jezici: engleski, arapski, bengalski, kineski, francuski, njemački, hindi, indonezijski, italijanski, japanski, marati, nigerijski pidžin, portugalski, ruski, španski, tamilski, telugu, turski, ukrajinski, urdu, vijetnamski, kantonski kineski
+
+Funkcije:
+- Inkrementalna sigurnosna kopija s deduplikacijom datoteka i podrškom za SFTP, FTPS, SMB/CIFS transport;
+- Sinhronizacija datoteka između uređaja koristeći centraliziranu pohranu i podršku za verzioniranje;
+- Uvoz medija - Uvezite audio, fotografije, video zapise sa SD kartice kamere, snimača; fotografije i video zapise s vašeg telefona putem WI-FI kroz FTPS Server aplikaciju koristeći nazive datoteka šablona ili putem MTP;
+- P2P prijenos datoteka s enkripcijom između uređaja;
+- Konzola za zakazivanje automatizacije;
+- AES-256 enkripcija.
+
+Platforme: Windows 11 x64, ARM64 ili Ubuntu 24+.</value>
+  </data>
+  <data name="Winget_ShortDescription" xml:space="preserve">
+    <value>BUtil kreira inkrementalne sigurnosne kopije, inkrementalnu sinhronizaciju i uvozi multimediju na vašem računaru s deduplikacijom i podrškom za FTPS, SFTP, SMB/CIFS transport za Windows i Linux.</value>
+  </data>
+</root>

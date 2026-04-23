@@ -1,0 +1,994 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="_Technical_NsisLanguage" xml:space="preserve">
+    <value>Belarusian</value>
+  </data>
+  <data name="_Technical_WingetLocale" xml:space="preserve">
+    <value>be-BY</value>
+  </data>
+  <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
+    <value>Нічога не рабіць</value>
+  </data>
+  <data name="AfterTaskSelection_Field" xml:space="preserve">
+    <value>Пасля завяршэння задачы:</value>
+  </data>
+  <data name="AfterTaskSelection_Help" xml:space="preserve">
+    <value>Калі вы абярэце нешта іншае за 'нічога не рабіць',
+праграма наладзіць АС паказаць вам справаздачу
+пры наступным уваходзе ў сістэму, калі будуць
+зарэгістраваны памылкі або папярэджанні.</value>
+  </data>
+  <data name="AfterTaskSelection_LogOff" xml:space="preserve">
+    <value>Выйсці</value>
+  </data>
+  <data name="AfterTaskSelection_Reboot" xml:space="preserve">
+    <value>Перазагрузка</value>
+  </data>
+  <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
+    <value>Выключыць</value>
+  </data>
+  <data name="Application_NewVersion_Notification" xml:space="preserve">
+    <value>Даступная новая версія {0}.</value>
+  </data>
+  <data name="BackupVersion_Button_Delete" xml:space="preserve">
+    <value>Выдаліць версію</value>
+  </data>
+  <data name="BackupVersion_Changes_Title" xml:space="preserve">
+    <value>Змены</value>
+  </data>
+  <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
+    <value>Вы сапраўды жадаеце выдаліць версію "{0}"?
+
+Змены выдаленай версіі стануць часткай версіі "{1}".</value>
+  </data>
+  <data name="BackupVersion_Files_Title" xml:space="preserve">
+    <value>Файлы</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
+    <value>Журнал: {0}</value>
+  </data>
+  <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
+    <value>Журнал для абранага...</value>
+  </data>
+  <data name="BackupVersion_Select" xml:space="preserve">
+    <value>Адкрыць абраную версію...</value>
+  </data>
+  <data name="BackupVersion_Selector_Title" xml:space="preserve">
+    <value>АБРАЦЬ ВЕРСІЮ</value>
+  </data>
+  <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
+    <value>(усе версіі займаюць у сховішчы {0})</value>
+  </data>
+  <data name="BackupVersion_Versions_Title" xml:space="preserve">
+    <value>ВЕРСІІ</value>
+  </data>
+  <data name="BackupVersion_Viewer_Help" xml:space="preserve">
+    <value>Абярыце файл або папку, якую вы жадаеце аднавіць у дрэве, і націсніце "Аднавіць".</value>
+  </data>
+  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
+    <value>Злучэнне з серверам нечакана спынена (Ці аднолькавыя паролі на кліенце і серверы?)</value>
+  </data>
+  <data name="Button_Cancel" xml:space="preserve">
+    <value>Адмяніць</value>
+  </data>
+  <data name="Button_Close" xml:space="preserve">
+    <value>Закрыць</value>
+  </data>
+  <data name="Button_Continue" xml:space="preserve">
+    <value>Працягнуць &gt;</value>
+  </data>
+  <data name="Button_CopyToClipboard" xml:space="preserve">
+    <value>Капіяваць</value>
+  </data>
+  <data name="Button_Download" xml:space="preserve">
+    <value>Спампаваць</value>
+  </data>
+  <data name="Button_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Button_Remove" xml:space="preserve">
+    <value>Выдаліць</value>
+  </data>
+  <data name="Button_Save" xml:space="preserve">
+    <value>Захаваць</value>
+  </data>
+  <data name="CommandLineArguments_Help" xml:space="preserve">
+    <value>Наведайце {0}, каб убачыць аргументы каманднага радка.</value>
+  </data>
+  <data name="CommandLineArguments_Invalid" xml:space="preserve">
+    <value>Няправільныя аргументы каманднага радка.</value>
+  </data>
+  <data name="DataStorage_Data_Saving" xml:space="preserve">
+    <value>Запіс даных у сховішча</value>
+  </data>
+  <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
+    <value>Скрыпт падлучэння:</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
+    <value>Скрыпт адлучэння:</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
+    <value>Завершана з памылкамі</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
+    <value>Завершана паспяхова</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
+    <value>Ліміт загрузкі, GB:</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
+    <value>Абмяжоўвае аб'ём даных, якія адпраўляюцца ў сховішча падчас выканання адной задачы. 0 - без ліміту.
+Пры перавышэнні квоты іншыя файлы будуць прапушчаны і апрацаваны наступным разам.
+Сцэнарый выкарыстання: Вы капіюеце даныя на аддалены сервер. Ёсць праблема: правайдар зніжае хуткасць загрузкі пасля некалькіх гігабайт. Гэта налада дазваляе вам справіцца з гэтым.</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
+    <value>Квота павінна быць 0 (не прымяняць) або значэнне вышэй за 0.</value>
+  </data>
+  <data name="DataStorage_Maintenance" xml:space="preserve">
+    <value>Абслугоўванне сховішча даных</value>
+  </data>
+  <data name="DataStorage_Script_Help" xml:space="preserve">
+    <value>Калі папка становіцца даступнай пасля выканання некаторых каманд, укажыце {0} скрыпты для падлучэння і адлучэння.</value>
+  </data>
+  <data name="DataStorage_Scripts_Header" xml:space="preserve">
+    <value>Скрыпты (перад мантаваннем / пасля дэмантавання)</value>
+  </data>
+  <data name="DataStorage_State_Get" xml:space="preserve">
+    <value>Атрыманне стану сховішча</value>
+  </data>
+  <data name="DataStorage_State_Saving" xml:space="preserve">
+    <value>Запіс стану сховішча</value>
+  </data>
+  <data name="DataStorage_Title" xml:space="preserve">
+    <value>Сховішча</value>
+  </data>
+  <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
+    <value>Сховішча не ўказана.</value>
+  </data>
+  <data name="Days_Field_Choose" xml:space="preserve">
+    <value>Абярыце дні тыдня:</value>
+  </data>
+  <data name="Days_Friday" xml:space="preserve">
+    <value>Пятніца</value>
+  </data>
+  <data name="Days_Monday" xml:space="preserve">
+    <value>Панядзелак</value>
+  </data>
+  <data name="Days_Saturday" xml:space="preserve">
+    <value>Субота</value>
+  </data>
+  <data name="Days_Sunday" xml:space="preserve">
+    <value>Нядзеля</value>
+  </data>
+  <data name="Days_Thursday" xml:space="preserve">
+    <value>Чацвер</value>
+  </data>
+  <data name="Days_Tuesday" xml:space="preserve">
+    <value>Аўторак</value>
+  </data>
+  <data name="Days_Wednesday" xml:space="preserve">
+    <value>Серада</value>
+  </data>
+  <data name="DirectoryStorage" xml:space="preserve">
+    <value>Дырэкторыя</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
+    <value>Папка:</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
+    <value>Дырэкторыя не ўказана.</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
+    <value>Дырэкторыя "{0}" не існуе.</value>
+  </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>Працягласць (хвіліны, 0 - бясконца):</value>
+  </data>
+  <data name="Field_Device" xml:space="preserve">
+    <value>Прылада:</value>
+  </data>
+  <data name="Field_Device_Validation_Empty" xml:space="preserve">
+    <value>Прылада не ўказана.</value>
+  </data>
+  <data name="Field_Device_Validation_NotFound" xml:space="preserve">
+    <value>Прылада не знойдзена.</value>
+  </data>
+  <data name="Field_File_Browse" xml:space="preserve">
+    <value>Агляд файла</value>
+  </data>
+  <data name="Field_Folder" xml:space="preserve">
+    <value>Папка:</value>
+  </data>
+  <data name="Field_Folder_Browse" xml:space="preserve">
+    <value>Агляд</value>
+  </data>
+  <data name="Field_Folder_Validation_Empty" xml:space="preserve">
+    <value>Папка не ўказана.</value>
+  </data>
+  <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
+    <value>Папка не існуе.</value>
+  </data>
+  <data name="Field_TransportProtocol" xml:space="preserve">
+    <value>Пратакол:</value>
+  </data>
+  <data name="Field_Version" xml:space="preserve">
+    <value>Версія:</value>
+  </data>
+  <data name="File_Deleting" xml:space="preserve">
+    <value>Выдаленне "{0}"</value>
+  </data>
+  <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
+    <value>Скрыпт праверкі цэласнасці.ps1</value>
+  </data>
+  <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
+    <value>Захаванне скрыптоў праверкі цэласнасці</value>
+  </data>
+  <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
+    <value>Апрацоўваць файлы старэйшыя за:</value>
+  </data>
+  <data name="File_List_Saving" xml:space="preserve">
+    <value>Захаванне файлаў</value>
+  </data>
+  <data name="File_Moving" xml:space="preserve">
+    <value>Перамяшчэнне "{0}" у "{1}"</value>
+  </data>
+  <data name="File_Saving" xml:space="preserve">
+    <value>Захаванне "{0}"</value>
+  </data>
+  <data name="File_Uploading" xml:space="preserve">
+    <value>Загрузка "{0}"</value>
+  </data>
+  <data name="FingerPrintSHA256_Field" xml:space="preserve">
+    <value>Адбітак SHA-256:</value>
+  </data>
+  <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
+    <value>Адбітак SHA-256 не ўказаны.</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
+    <value>Яўны</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
+    <value>Няяўны</value>
+  </data>
+  <data name="Ftps_Field_Encryption" xml:space="preserve">
+    <value>SSL/TTS шыфраванне:</value>
+  </data>
+  <data name="FtpsServerStartTask_Name" xml:space="preserve">
+    <value>Запусціць FTPS сервер</value>
+  </data>
+  <data name="FtpsServerTask_Create" xml:space="preserve">
+    <value>Абагуліць папку па сетцы (FTPS сервер)</value>
+  </data>
+  <data name="FtpsServerTask_Help" xml:space="preserve">
+    <value>Вы можаце абагуліць любую папку для чытання і запісу праз пратакол FTPS (яўнае шыфраванне з самападпісаным сертыфікатам) у вашай лакальнай сетцы.</value>
+  </data>
+  <data name="Icons_Help_Link" xml:space="preserve">
+    <value>Дадайце сімвальны значок да вашага тэксту</value>
+  </data>
+  <data name="ImportMediaTask_AllFiles" xml:space="preserve">
+    <value>Імпарт усіх файлаў</value>
+  </data>
+  <data name="ImportMediaTask_Create" xml:space="preserve">
+    <value>Задача імпарту медыя</value>
+  </data>
+  <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
+    <value>Рэдагаваць задачу імпарту медыя "{0}"</value>
+  </data>
+  <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
+    <value>Папка вываду:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
+    <value>Пераўтварэнні імя файла:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
+    <value>Прыклад:
+Уявіце, што ў вас ёсць файл {0} (зменены {1}).
+З гэтай дырэкторыяй і шаблонным радком файл будзе захаваны як:
+{2}</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
+    <value>Падтрымліваемыя токены:
+{DATE:Format} - Устаўляе дату мадыфікацыі файла ў зададзеным фармаце.
+Каб убачыць усе варыянты, пашукайце "C# DateTime format".</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
+    <value>Пераўтворанае імя файла пустое.</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
+    <value>Няправільны радок пераўтворанага імя файла.</value>
+  </data>
+  <data name="ImportMediaTask_File" xml:space="preserve">
+    <value>Імпарт "{0}"</value>
+  </data>
+  <data name="ImportMediaTask_Help" xml:space="preserve">
+    <value>Імпартуе аўдыя, фота, відэа з SD-карты камеры, рэкордэра; фота і відэа з вашага тэлефона праз WI-FI праз праграму FTP-сервера з выкарыстаннем шаблонных імён файлаў.
+
+Глядзіце вэб-сайт праграмы для дакументацыі па наладжванні перадачы файлаў праз WI-FI праз праграму FTP-сервера на тэлефоне.</value>
+  </data>
+  <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
+    <value>Імпарт крыніцы даных</value>
+  </data>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
+    <value>Прапусціць ужо імпартаваныя файлы</value>
+  </data>
+  <data name="ImproveIt_Message" xml:space="preserve">
+    <value>Адбылася нечаканая памылка.
+
+Калі ласка, звярніцеся да распрацоўшчыкаў з інфармацыяй, захаванай на вашым працоўным стале ў
+"{0}"
+
+Праграма зараз закрыецца.</value>
+  </data>
+  <data name="IncrementalBackup_Help" xml:space="preserve">
+    <value>Самая базавая форма інкрэментальнага рэзервовага капіявання складаецца з ідэнтыфікацыі, запісу і захавання толькі тых файлаў, якія змяніліся з моманту апошняга рэзервовага капіявання.
+
+Паколькі змены звычайна невялікія, інкрэментальныя рэзервовыя копіі значна меншыя і хутчэйшыя за поўныя.
+
+Напрыклад, пасля поўнага рэзервовага капіявання ў пятніцу, копія ў панядзелак будзе змяшчаць толькі тыя файлы, якія змяніліся з пятніцы. Копія ва аўторак змяшчае толькі файлы, змененыя з панядзелка, і г.д. 
+
+Калі любая з створаных копій пашкодзіцца, уключаючы першую (поўную), аднаўленне будзе няпоўным.</value>
+  </data>
+  <data name="IncrementalBackup_Title" xml:space="preserve">
+    <value>Інкрэментальнае рэзервовае капіяванне</value>
+  </data>
+  <data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
+    <value>Разлік інкрэментальнай версіі</value>
+  </data>
+  <data name="IncrementalBackup_Version_Save" xml:space="preserve">
+    <value>Захаванне інкрэментальнай версіі</value>
+  </data>
+  <data name="IncrementalBackupTask_Create" xml:space="preserve">
+    <value>Задача інкрэментальнага рэзервовага капіявання</value>
+  </data>
+  <data name="Installer_AdminRequired" xml:space="preserve">
+    <value>Для ўсталёўкі для ўсіх карыстальнікаў патрабуюцца правы адміністратара.
+Калі ласка, запусціце ўсталёўшчык ад імя адміністратара або выкарыстоўвайце /CURRENTUSER.</value>
+  </data>
+  <data name="Installer_AdminRequiredDetailed" xml:space="preserve">
+    <value>Для ўсталёўкі для ўсіх карыстальнікаў патрабуюцца правы адміністратара.
+
+Калі ласка:
+- Абярыце 'Усталяваць толькі для бягучага карыстальніка', або
+- Запусціце гэты ўсталёўшчык ад імя адміністратара</value>
+  </data>
+  <data name="Installer_AllUsersDescription" xml:space="preserve">
+    <value>Праграма будзе даступная для ўсіх карыстальнікаў гэтага камп'ютара.</value>
+  </data>
+  <data name="Installer_AllUsersOption" xml:space="preserve">
+    <value>Усталяваць для (&amp;A) ўсіх карыстальнікаў (патрабуюцца правы адміністратара)</value>
+  </data>
+  <data name="Installer_ArchRequired" xml:space="preserve">
+    <value>Гэты ўсталёўшчык патрабуе версію Windows x64 або ARM64.</value>
+  </data>
+  <data name="Installer_CurrentUserDescription" xml:space="preserve">
+    <value>Рэкамендуецца. Праграма будзе даступная толькі для вашага ўліковага запісу.</value>
+  </data>
+  <data name="Installer_CurrentUserOption" xml:space="preserve">
+    <value>Усталяваць толькі для бягучага (&amp;C) карыстальніка</value>
+  </data>
+  <data name="Installer_InstallingFor" xml:space="preserve">
+    <value>Усталёўка для:</value>
+  </data>
+  <data name="Installer_InstallModeDescription" xml:space="preserve">
+    <value>Калі ласка, абярыце, ці жадаеце вы ўсталяваць BUtil толькі для сябе або для ўсіх карыстальнікаў гэтага камп'ютара.</value>
+  </data>
+  <data name="Installer_InstallModeSubtitle" xml:space="preserve">
+    <value>Абярыце, хто можа выкарыстоўваць гэту праграму</value>
+  </data>
+  <data name="Installer_InstallModeTitle" xml:space="preserve">
+    <value>Абярыце тып усталёўкі</value>
+  </data>
+  <data name="Installer_LaunchApp" xml:space="preserve">
+    <value>Запусціць праграму</value>
+  </data>
+  <data name="KeyFile_Field" xml:space="preserve">
+    <value>Файл ключа:</value>
+  </data>
+  <data name="LeftMenu_Encryption" xml:space="preserve">
+    <value>Шыфраванне</value>
+  </data>
+  <data name="LeftMenu_What" xml:space="preserve">
+    <value>Што?</value>
+  </data>
+  <data name="LeftMenu_What_Hint" xml:space="preserve">
+    <value>Тут вы можаце дадаць папкі і файлы, якія трэба апрацаваць.</value>
+  </data>
+  <data name="LeftMenu_What_Validation" xml:space="preserve">
+    <value>Няма элементаў для апрацоўкі.</value>
+  </data>
+  <data name="LeftMenu_When" xml:space="preserve">
+    <value>Калі?</value>
+  </data>
+  <data name="LeftMenu_When_Help" xml:space="preserve">
+    <value>Тут вы можаце наладзіць расклад. Планіроўшчык можа дапамагчы аўтаматызаваць запуск задачы.</value>
+  </data>
+  <data name="LeftMenu_Where" xml:space="preserve">
+    <value>Дзе?</value>
+  </data>
+  <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
+    <value>Перацягніце і апусціце сюды файлы і папкі з Explorer.</value>
+  </data>
+  <data name="LeftMenu_Where_Hint" xml:space="preserve">
+    <value>Тут вы можаце дадаць месцы, куды вы жадаеце капіяваць вашы файлы.</value>
+  </data>
+  <data name="Local_State_Get" xml:space="preserve">
+    <value>Атрыманне лакальнага стану</value>
+  </data>
+  <data name="Local_State_Saving" xml:space="preserve">
+    <value>Запіс лакальнага стану</value>
+  </data>
+  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
+    <value>Адкрыць папку журналаў</value>
+  </data>
+  <data name="LogFile_Marker_Errors" xml:space="preserve">
+    <value>Памылкі</value>
+  </data>
+  <data name="LogFile_Marker_Successful" xml:space="preserve">
+    <value>Паспяхова</value>
+  </data>
+  <data name="LogFile_OpenLogs" xml:space="preserve">
+    <value>Журналы</value>
+  </data>
+  <data name="Logs_Menu" xml:space="preserve">
+    <value>Журналы</value>
+  </data>
+  <data name="MainWindow_SearchWatermark" xml:space="preserve">
+    <value>Пошук</value>
+  </data>
+  <data name="Messages_Header_Error" xml:space="preserve">
+    <value>Памылка</value>
+  </data>
+  <data name="Messages_Header_Information" xml:space="preserve">
+    <value>Інфармацыя</value>
+  </data>
+  <data name="Messages_Header_Question" xml:space="preserve">
+    <value>Пытанне</value>
+  </data>
+  <data name="Name_Field" xml:space="preserve">
+    <value>Імя:</value>
+  </data>
+  <data name="Name_Field_Validation" xml:space="preserve">
+    <value>Імя пустое або змяшчае непадтрымліваемыя сімвалы шляху.</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>Даўжыня імя '{0}' перавышае ліміт на {1} сімвалаў.</value>
+  </data>
+  <data name="Name_Title" xml:space="preserve">
+    <value>Імя</value>
+  </data>
+  <data name="OptionalField_Hint" xml:space="preserve">
+    <value>(неабавязкова)</value>
+  </data>
+  <data name="Other_Menu_Title" xml:space="preserve">
+    <value>Іншае</value>
+  </data>
+  <data name="Password_Field" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="Password_Field_Confirm" xml:space="preserve">
+    <value>Пацвердзіць пароль:</value>
+  </data>
+  <data name="Password_Field_Length" xml:space="preserve">
+    <value>Даўжыня:</value>
+  </data>
+  <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
+    <value>Паролі не супадаюць.</value>
+  </data>
+  <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
+    <value>Пароль не ўказаны.</value>
+  </data>
+  <data name="Password_Generate" xml:space="preserve">
+    <value>Згенераваць пароль...</value>
+  </data>
+  <data name="Password_Generator_Header" xml:space="preserve">
+    <value>Генератар пароляў</value>
+  </data>
+  <data name="Password_Help" xml:space="preserve">
+    <value>Рэкамендаваная мінімальная даўжыня пароля — 50 сімвалаў і больш.</value>
+  </data>
+  <data name="Password_Use" xml:space="preserve">
+    <value>Выкарыстаць</value>
+  </data>
+  <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
+    <value>Файлы "{0}" у дырэкторыі не знойдзены. 
+
+Укажыце дырэкторыю, якая змяшчае гэты файл.</value>
+  </data>
+  <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
+    <value>Немагчыма прачытаць стан.</value>
+  </data>
+  <data name="Server_Field_Address" xml:space="preserve">
+    <value>Імя сервера:</value>
+  </data>
+  <data name="Server_Field_Address_Validation" xml:space="preserve">
+    <value>Імя сервера не ўказана.</value>
+  </data>
+  <data name="Server_Field_Port" xml:space="preserve">
+    <value>Порт:</value>
+  </data>
+  <data name="Server_Field_Port_Validation" xml:space="preserve">
+    <value>Порт няправільны.</value>
+  </data>
+  <data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
+    <value>Пароль і файл ключа абодва пустыя.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
+    <value>SFTP папка не павінна заканчвацца на /.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
+    <value>SFTP папка павінна пачынацца з /.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
+    <value>SFTP папка / не дазволена. Папка павінна ўказваць на больш канкрэтную папку.</value>
+  </data>
+  <data name="SourceItem_AddFolders" xml:space="preserve">
+    <value>Дадаць папкі...</value>
+  </data>
+  <data name="SourceItem_OpenInExplorer" xml:space="preserve">
+    <value>Адкрыць у Explorer...</value>
+  </data>
+  <data name="SourceItem_State_Get" xml:space="preserve">
+    <value>Атрыманне стану элемента крыніцы "{0}"</value>
+  </data>
+  <data name="SourceItem_Validation_Empty" xml:space="preserve">
+    <value>Няма элементаў для апрацоўкі.</value>
+  </data>
+  <data name="SourceItem_Validation_NotExists" xml:space="preserve">
+    <value>"{0}" не існуе.</value>
+  </data>
+  <data name="State_File_Get" xml:space="preserve">
+    <value>Атрыманне стану файла "{0}"</value>
+  </data>
+  <data name="State_LoadFromEverywhere" xml:space="preserve">
+    <value>Атрыманне стану элементаў крыніцы і сховішчаў</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
+    <value>Дадаць шаблон выключэння файлаў</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
+    <value>Рэдагаваць шаблон выключэння файлаў</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>Выключыць файлы</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
+    <value>Глобінг файлаў у .NET: Шаблоны</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
+    <value>Тут вы можаце ўказаць шаблоны выключэння глобінга файлаў. 
+Гэта можа быць імя файла або імя папкі або падстаноўны знак. 
+Прыклады: 
+d:\temp, 
+d:\temp\file.txt, 
+d:\temp\**\*.txt або 
+bin. 
+Глядзіце падрабязнае апісанне па наступнай спасылцы.</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
+    <value>Прапускае апрацоўку файлаў па шаблоне выключэння.</value>
+  </data>
+  <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
+    <value>Шаблон выключэння файлаў:</value>
+  </data>
+  <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
+    <value>Шаблон выключэння файлаў пусты.</value>
+  </data>
+  <data name="StorageItem_Remote_Marker" xml:space="preserve">
+    <value>Аддалены</value>
+  </data>
+  <data name="SynchronizationMode_Field" xml:space="preserve">
+    <value>Рэжым сінхранізацыі:</value>
+  </data>
+  <data name="SynchronizationMode_Field_Read" xml:space="preserve">
+    <value>Чытанне</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
+    <value>Двухбаковы</value>
+  </data>
+  <data name="SynchronizationTask_Create" xml:space="preserve">
+    <value>Сінхранізацыя</value>
+  </data>
+  <data name="SynchronizationTask_Help" xml:space="preserve">
+    <value>Двухбаковая сінхранізацыя файлаў паміж прыладамі з выкарыстаннем цэнтралізаванага сховішча.</value>
+  </data>
+  <data name="Task_Create" xml:space="preserve">
+    <value>Новая</value>
+  </data>
+  <data name="Task_Create_Hint" xml:space="preserve">
+    <value>Стварае новую задачу.</value>
+  </data>
+  <data name="Task_Delete" xml:space="preserve">
+    <value>Выдаліць</value>
+  </data>
+  <data name="Task_Delete_Confirm" xml:space="preserve">
+    <value>Вы сапраўды жадаеце выдаліць "{0}"?</value>
+  </data>
+  <data name="Task_Delete_Hint" xml:space="preserve">
+    <value>Выдаляе абраную задачу.</value>
+  </data>
+  <data name="Task_Duplicate" xml:space="preserve">
+    <value>Дубліраваць</value>
+  </data>
+  <data name="Task_Edit" xml:space="preserve">
+    <value>Рэдагаваць</value>
+  </data>
+  <data name="Task_Edit_Hint" xml:space="preserve">
+    <value>Рэдагуе абраную задачу.</value>
+  </data>
+  <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
+    <value>Вы не можаце рэдагаваць гэты тып задачы ў CLI.</value>
+  </data>
+  <data name="Task_Field_Choose" xml:space="preserve">
+    <value>Абярыце задачу:</value>
+  </data>
+  <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
+    <value>Новая задача</value>
+  </data>
+  <data name="Task_LastExecution_State" xml:space="preserve">
+    <value>Стан</value>
+  </data>
+  <data name="Task_Launch" xml:space="preserve">
+    <value>Запусціць</value>
+  </data>
+  <data name="Task_Launch_Hint" xml:space="preserve">
+    <value>Запускае абраную задачу.</value>
+  </data>
+  <data name="Task_List" xml:space="preserve">
+    <value>Задачы</value>
+  </data>
+  <data name="Task_OpenLog" xml:space="preserve">
+    <value>Адкрыць апошні журнал</value>
+  </data>
+  <data name="Task_Restore" xml:space="preserve">
+    <value>Аднавіць</value>
+  </data>
+  <data name="Task_Status_FailedSeeLog" xml:space="preserve">
+    <value>Не атрымалася (глядзіце адкрыты журнал)</value>
+  </data>
+  <data name="Task_Status_InProgress" xml:space="preserve">
+    <value>Задача выконваецца...</value>
+  </data>
+  <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
+    <value>Часткова завершана. З-за квоты сховішча некаторыя файлы былі прапушчаны на гэты раз. Засталося {0} файлаў з {1} GB.</value>
+  </data>
+  <data name="Task_Status_Succesfull" xml:space="preserve">
+    <value>Паспяхова</value>
+  </data>
+  <data name="Task_Status_Unknown" xml:space="preserve">
+    <value>Невядома</value>
+  </data>
+  <data name="Task_Validation_NotFound" xml:space="preserve">
+    <value>Задача '{0}' не знойдзена.</value>
+  </data>
+  <data name="Task_Validation_NotSupported" xml:space="preserve">
+    <value>Гэты тып задачы не падтрымліваецца.</value>
+  </data>
+  <data name="Task_WindowTitle_Creating" xml:space="preserve">
+    <value>Стварэнне</value>
+  </data>
+  <data name="Task_WindowTitle_Editing" xml:space="preserve">
+    <value>Рэдагаванне</value>
+  </data>
+  <data name="TechnicalTool_Close" xml:space="preserve">
+    <value>Закрыць</value>
+  </data>
+  <data name="TechnicalTool_Completed" xml:space="preserve">
+    <value>Аперацыя паспяхова завершана.</value>
+  </data>
+  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
+    <value>Сціснуць Brotli</value>
+  </data>
+  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
+    <value>Распакаваць Brotli</value>
+  </data>
+  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
+    <value>Расшыфраваць AES-256</value>
+  </data>
+  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
+    <value>Зашыфраваць AES-256</value>
+  </data>
+  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
+    <value>Файл не існуе:</value>
+  </data>
+  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
+    <value>Увядзіце пароль.</value>
+  </data>
+  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
+    <value>Укажыце шляхі да зыходнага і выхаднога файлаў.</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
+    <value>AES-256 зашыфраваны (*.{0})</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
+    <value>Усе файлы</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
+    <value>Brotli сціснуты (*.brotli)</value>
+  </data>
+  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
+    <value>Сціснуць Brotli…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
+    <value>Распакаваць Brotli…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
+    <value>Расшыфраваць AES-256…</value>
+  </data>
+  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
+    <value>Зашыфраваць AES-256…</value>
+  </data>
+  <data name="TechnicalTool_OutputFile" xml:space="preserve">
+    <value>Выхадны файл:</value>
+  </data>
+  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
+    <value>Абраць выхадны файл</value>
+  </data>
+  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
+    <value>Абраць зыходны файл</value>
+  </data>
+  <data name="TechnicalTool_Run" xml:space="preserve">
+    <value>Запусціць</value>
+  </data>
+  <data name="TechnicalTool_SourceFile" xml:space="preserve">
+    <value>Зыходны файл:</value>
+  </data>
+  <data name="Theme_Title" xml:space="preserve">
+    <value>Тэма</value>
+  </data>
+  <data name="Theme_Value_Dark" xml:space="preserve">
+    <value>Цёмная</value>
+  </data>
+  <data name="Theme_Value_Light" xml:space="preserve">
+    <value>Светлая</value>
+  </data>
+  <data name="Time_Field_Elapsed" xml:space="preserve">
+    <value>Прайшло:</value>
+  </data>
+  <data name="Time_Field_Hour" xml:space="preserve">
+    <value>Гадзіна:</value>
+  </data>
+  <data name="Time_Field_Minute" xml:space="preserve">
+    <value>Хвіліна:</value>
+  </data>
+  <data name="TimeoutTask_Title" xml:space="preserve">
+    <value>Чаканне таймаўту...</value>
+  </data>
+  <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
+    <value>Папярэджанне разбору сертыфіката: {0}</value>
+  </data>
+  <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
+    <value>Праверце ідэнтычнасць сертыфіката па іншым канале, потым зноў націсніце Захаваць.</value>
+  </data>
+  <data name="TrustDetected_Ftps_Title" xml:space="preserve">
+    <value>Сертыфікат FTPS сервера выяўлены падчас тэсту.</value>
+  </data>
+  <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
+    <value>Сертыфікат (сыры hex): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_DnsName" xml:space="preserve">
+    <value>DNS імя: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Encryption" xml:space="preserve">
+    <value>Шыфраванне: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
+    <value>Адбітак (SHA-256): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Folder" xml:space="preserve">
+    <value>Папка: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Host" xml:space="preserve">
+    <value>Хост: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Issuer" xml:space="preserve">
+    <value>Выдавец: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Port" xml:space="preserve">
+    <value>Порт: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
+    <value>Алгарытм адкрытага ключа: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
+    <value>Памер адкрытага ключа: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
+    <value>Серыйны нумар: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
+    <value>Алгарытм подпісу: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Subject" xml:space="preserve">
+    <value>Суб'ект: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
+    <value>Альтэрнатыўныя імёны суб'екта: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
+    <value>Адбітак: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_User" xml:space="preserve">
+    <value>Карыстальнік: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
+    <value>Сапраўдны з (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
+    <value>Сапраўдны да (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
+    <value>Разабраныя дэталі сертыфіката:</value>
+  </data>
+  <data name="TrustDetected_Port_Default" xml:space="preserve">
+    <value>па змаўчанні</value>
+  </data>
+  <data name="TrustDetected_Port_Default22" xml:space="preserve">
+    <value>па змаўчанні (22)</value>
+  </data>
+  <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
+    <value>невядома</value>
+  </data>
+  <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
+    <value>Праверце гэты адбітак па іншым канале, потым зноў націсніце Захаваць.</value>
+  </data>
+  <data name="TrustDetected_Sftp_Title" xml:space="preserve">
+    <value>Інфармацыя даверу да SFTP сервера выяўлена падчас тэсту.</value>
+  </data>
+  <data name="TrustedCertificate_Field" xml:space="preserve">
+    <value>Давераны сертыфікат (hex):</value>
+  </data>
+  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
+    <value>Загрузіць папку на сервер</value>
+  </data>
+  <data name="UploadFolderTask_Help" xml:space="preserve">
+    <value>Вы можаце загрузіць змесціва папкі з перазапісам ужо існуючых файлаў.</value>
+  </data>
+  <data name="Url_Field" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="Url_Field_Validation" xml:space="preserve">
+    <value>URL не ўказаны.</value>
+  </data>
+  <data name="User_Field" xml:space="preserve">
+    <value>Карыстальнік:</value>
+  </data>
+  <data name="User_Field_Validation" xml:space="preserve">
+    <value>Карыстальнік не ўказаны.</value>
+  </data>
+  <data name="Winget_Description" xml:space="preserve">
+    <value>Рэзервовае капіяванне/сінхранізацыя вашых даных у Windows, Linux.
+Імпарт фота з тэлефона праз WI-FI і іншае.
+
+Падтрымліваемыя мовы: англійская, арабская, бенгальская, кітайская, французская, нямецкая, хіндзі, інданезійская, італьянская, японская, маратхі, нігерыйскі піджын, партугальская, руская, іспанская, тамільская, тэлугу, турэцкая, украінская, урду, в'етнамская, кантонская
+
+Функцыі:
+- Інкрэментальнае рэзервовае капіяванне з дэдуплікацыяй файлаў і падтрымкай транспарту SFTP, FTPS, SMB/CIFS;
+- Сінхранізацыя файлаў паміж прыладамі з выкарыстаннем цэнтралізаванага сховішча і падтрымкай версій;
+- Імпарт медыя - імпарт аўдыя, фота, відэа з SD-карты камеры, рэкордэра; фота і відэа з тэлефона праз WI-FI праз праграму FTPS-сервера з шаблоннымі імёнамі файлаў або праз MTP;
+- P2P перадача файлаў з шыфраваннем паміж прыладамі;
+- Кансоль для планавання аўтаматызацыі;
+- AES-256 шыфраванне.
+
+Платформы: Windows 11 x64, ARM64 або Ubuntu 24+.</value>
+  </data>
+  <data name="Winget_ShortDescription" xml:space="preserve">
+    <value>BUtil стварае інкрэментальныя рэзервовыя копіі, інкрэментальную сінхранізацыю і імпартуе мультымедыя на вашым ПК з дэдуплікацыяй і падтрымкай транспарту FTPS, SFTP, SMB/CIFS для Windows і Linux.</value>
+  </data>
+</root>

@@ -1,0 +1,995 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="_Technical_NsisLanguage" xml:space="preserve">
+    <value>Uzbek</value>
+  </data>
+  <data name="_Technical_WingetLocale" xml:space="preserve">
+    <value>uz-UZ</value>
+  </data>
+  <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
+    <value>Hech narsa qilmaslik</value>
+  </data>
+  <data name="AfterTaskSelection_Field" xml:space="preserve">
+    <value>Vazifa tugagandan keyin:</value>
+  </data>
+  <data name="AfterTaskSelection_Help" xml:space="preserve">
+    <value>Agar siz 'hech narsa qilmaslik'dan boshqa narsani tanlasangiz,
+dastur tizimni sozlaydi va keyingi kirishingizda
+xatolar yoki ogohlantirishlar ro'yxatga olingan bo'lsa
+hisobot ko'rsatiladi.</value>
+  </data>
+  <data name="AfterTaskSelection_LogOff" xml:space="preserve">
+    <value>Chiqish</value>
+  </data>
+  <data name="AfterTaskSelection_Reboot" xml:space="preserve">
+    <value>Qayta ishga tushirish</value>
+  </data>
+  <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
+    <value>O'chirish</value>
+  </data>
+  <data name="Application_NewVersion_Notification" xml:space="preserve">
+    <value>Yangi {0} versiya mavjud.</value>
+  </data>
+  <data name="BackupVersion_Button_Delete" xml:space="preserve">
+    <value>Versiyani o'chirish</value>
+  </data>
+  <data name="BackupVersion_Changes_Title" xml:space="preserve">
+    <value>O'zgarishlar</value>
+  </data>
+  <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
+    <value>Siz haqiqatan ham "{0}" versiyasini o'chirmoqchimisiz?
+
+O'chirilgan versiya o'zgarishlari "{1}" versiyasining qismi bo'ladi.</value>
+  </data>
+  <data name="BackupVersion_Files_Title" xml:space="preserve">
+    <value>Fayllar</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
+    <value>Jurnal: {0}</value>
+  </data>
+  <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
+    <value>Tanlangan uchun jurnal...</value>
+  </data>
+  <data name="BackupVersion_Select" xml:space="preserve">
+    <value>Tanlangan versiyani ochish...</value>
+  </data>
+  <data name="BackupVersion_Selector_Title" xml:space="preserve">
+    <value>VERSIYANI TANLANG</value>
+  </data>
+  <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
+    <value>(barcha versiyalar xotirada {0} egallaydi)</value>
+  </data>
+  <data name="BackupVersion_Versions_Title" xml:space="preserve">
+    <value>VERSIYALAR</value>
+  </data>
+  <data name="BackupVersion_Viewer_Help" xml:space="preserve">
+    <value>Daraxtdan tiklash kerak bo'lgan fayl yoki papkani tanlang va "Tiklash" tugmasini bosing.</value>
+  </data>
+  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
+    <value>Serverga ulanish kutilmaganda uzildi (Client va Serverning parollari bir xilmi?)</value>
+  </data>
+  <data name="Button_Cancel" xml:space="preserve">
+    <value>Bekor qilish</value>
+  </data>
+  <data name="Button_Close" xml:space="preserve">
+    <value>Yopish</value>
+  </data>
+  <data name="Button_Continue" xml:space="preserve">
+    <value>Davom etish &gt;</value>
+  </data>
+  <data name="Button_CopyToClipboard" xml:space="preserve">
+    <value>Nusxalash</value>
+  </data>
+  <data name="Button_Download" xml:space="preserve">
+    <value>Yuklab olish</value>
+  </data>
+  <data name="Button_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Button_Remove" xml:space="preserve">
+    <value>Olib tashlash</value>
+  </data>
+  <data name="Button_Save" xml:space="preserve">
+    <value>Saqlash</value>
+  </data>
+  <data name="CommandLineArguments_Help" xml:space="preserve">
+    <value>Buyruq qatori argumentlarini ko'rish uchun {0} ga tashrif buyuring.</value>
+  </data>
+  <data name="CommandLineArguments_Invalid" xml:space="preserve">
+    <value>Buyruq qatori argumentlari noto'g'ri.</value>
+  </data>
+  <data name="DataStorage_Data_Saving" xml:space="preserve">
+    <value>Ma'lumotlarni xotiraga yozish</value>
+  </data>
+  <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
+    <value>Ulanish skripti:</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
+    <value>Uzilish skripti:</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
+    <value>Xatolar bilan tugadi</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
+    <value>Muvaffaqiyatli tugadi</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
+    <value>Yuklash chegarasi, GB:</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
+    <value>Bitta vazifa bajarilishi davomida xotiraga yuboriladigan ma'lumotlar miqdorini cheklaydi. 0 - cheklovsiz.
+Kvota oshirilganda boshqa fayllar o'tkazib yuboriladi va keyingi safar qayta ishlanadi.
+Foydalanish stsenariysi: Siz masofaviy serverga ma'lumotlarni nusxalaysiz. Muammo bor: ISP bir necha gigabaytdan keyin yuklash tezligini kamaytiradi. Ushbu sozlama buni hal qilish imkonini beradi.</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
+    <value>Kvota 0 (qo'llamaslik) yoki 0 dan katta qiymat bo'lishi kerak.</value>
+  </data>
+  <data name="DataStorage_Maintenance" xml:space="preserve">
+    <value>Ma'lumotlar xotirasi texnik xizmati</value>
+  </data>
+  <data name="DataStorage_Script_Help" xml:space="preserve">
+    <value>Agar papka ba'zi buyruqlarni bajarilgandan keyin mavjud bo'lsa, ulanish va uzilish uchun {0} skriptlarini ko'rsating.</value>
+  </data>
+  <data name="DataStorage_Scripts_Header" xml:space="preserve">
+    <value>Skriptlar (ulashdan oldin / uzilgandan keyin)</value>
+  </data>
+  <data name="DataStorage_State_Get" xml:space="preserve">
+    <value>Xotira holatini olish</value>
+  </data>
+  <data name="DataStorage_State_Saving" xml:space="preserve">
+    <value>Xotira holatini yozish</value>
+  </data>
+  <data name="DataStorage_Title" xml:space="preserve">
+    <value>Xotira</value>
+  </data>
+  <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
+    <value>Xotira ko'rsatilmagan.</value>
+  </data>
+  <data name="Days_Field_Choose" xml:space="preserve">
+    <value>Hafta kunlarini tanlang:</value>
+  </data>
+  <data name="Days_Friday" xml:space="preserve">
+    <value>Juma</value>
+  </data>
+  <data name="Days_Monday" xml:space="preserve">
+    <value>Dushanba</value>
+  </data>
+  <data name="Days_Saturday" xml:space="preserve">
+    <value>Shanba</value>
+  </data>
+  <data name="Days_Sunday" xml:space="preserve">
+    <value>Yakshanba</value>
+  </data>
+  <data name="Days_Thursday" xml:space="preserve">
+    <value>Payshanba</value>
+  </data>
+  <data name="Days_Tuesday" xml:space="preserve">
+    <value>Seshanba</value>
+  </data>
+  <data name="Days_Wednesday" xml:space="preserve">
+    <value>Chorshanba</value>
+  </data>
+  <data name="DirectoryStorage" xml:space="preserve">
+    <value>Katalog</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
+    <value>Papka:</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
+    <value>Katalog ko'rsatilmagan.</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
+    <value>"{0}" katalogi mavjud emas.</value>
+  </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>Davomiylik (daqiqa, 0 - cheksiz):</value>
+  </data>
+  <data name="Field_Device" xml:space="preserve">
+    <value>Qurilma:</value>
+  </data>
+  <data name="Field_Device_Validation_Empty" xml:space="preserve">
+    <value>Qurilma ko'rsatilmagan.</value>
+  </data>
+  <data name="Field_Device_Validation_NotFound" xml:space="preserve">
+    <value>Qurilma topilmadi.</value>
+  </data>
+  <data name="Field_File_Browse" xml:space="preserve">
+    <value>Faylni ko'rish</value>
+  </data>
+  <data name="Field_Folder" xml:space="preserve">
+    <value>Papka:</value>
+  </data>
+  <data name="Field_Folder_Browse" xml:space="preserve">
+    <value>Ko'rish</value>
+  </data>
+  <data name="Field_Folder_Validation_Empty" xml:space="preserve">
+    <value>Papka ko'rsatilmagan.</value>
+  </data>
+  <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
+    <value>Papka mavjud emas.</value>
+  </data>
+  <data name="Field_TransportProtocol" xml:space="preserve">
+    <value>Protokol:</value>
+  </data>
+  <data name="Field_Version" xml:space="preserve">
+    <value>Versiya:</value>
+  </data>
+  <data name="File_Deleting" xml:space="preserve">
+    <value>"{0}" o'chirilmoqda</value>
+  </data>
+  <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
+    <value>Yaxlitlikni tekshirish skripti.ps1</value>
+  </data>
+  <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
+    <value>Yaxlitlikni tekshirish skriptlarini saqlash</value>
+  </data>
+  <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
+    <value>Bundan eski fayllarni qayta ishlash:</value>
+  </data>
+  <data name="File_List_Saving" xml:space="preserve">
+    <value>Fayllarni saqlash</value>
+  </data>
+  <data name="File_Moving" xml:space="preserve">
+    <value>"{0}" ni "{1}" ga ko'chirish</value>
+  </data>
+  <data name="File_Saving" xml:space="preserve">
+    <value>"{0}" saqlanmoqda</value>
+  </data>
+  <data name="File_Uploading" xml:space="preserve">
+    <value>"{0}" yuklanmoqda</value>
+  </data>
+  <data name="FingerPrintSHA256_Field" xml:space="preserve">
+    <value>SHA-256 barmoq izi:</value>
+  </data>
+  <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
+    <value>SHA-256 barmoq izi ko'rsatilmagan.</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
+    <value>Aniq</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
+    <value>Yashirin</value>
+  </data>
+  <data name="Ftps_Field_Encryption" xml:space="preserve">
+    <value>SSL/TTS shifrlash:</value>
+  </data>
+  <data name="FtpsServerStartTask_Name" xml:space="preserve">
+    <value>FTPS serverni ishga tushirish</value>
+  </data>
+  <data name="FtpsServerTask_Create" xml:space="preserve">
+    <value>Papkani tarmoq orqali ulashish (FTPS server)</value>
+  </data>
+  <data name="FtpsServerTask_Help" xml:space="preserve">
+    <value>Siz istalgan papkani FTPS protokoli orqali (o'z-o'zini imzolagan sertifikat bilan aniq shifrlash) mahalliy tarmoqda o'qish-yozish huquqi bilan ulashishingiz mumkin.</value>
+  </data>
+  <data name="Icons_Help_Link" xml:space="preserve">
+    <value>Matningizga belgi qo'shing</value>
+  </data>
+  <data name="ImportMediaTask_AllFiles" xml:space="preserve">
+    <value>Barcha fayllarni import qilish</value>
+  </data>
+  <data name="ImportMediaTask_Create" xml:space="preserve">
+    <value>Media import vazifasi</value>
+  </data>
+  <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
+    <value>"{0}" media import vazifasini tahrirlash</value>
+  </data>
+  <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
+    <value>Chiqish papkasi:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
+    <value>Fayl nomi o'zgartirishlari:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
+    <value>Misol:
+Tasavvur qiling sizda {0} fayl bor ({1} da o'zgartirilgan).
+Ushbu katalog va shablon qatori bilan fayl quyidagicha saqlanadi:
+{2}</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
+    <value>Qo'llab-quvvatlanadigan tokenlar:
+{DATE:Format} - Ko'rsatilgan formatda fayl o'zgartirish sanasini kiritadi.
+Barcha variantlarni ko'rish uchun "C# DateTime format" ni qidiring.</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
+    <value>O'zgartirilgan fayl nomi bo'sh.</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
+    <value>Fayl nomi o'zgartirish qatori noto'g'ri.</value>
+  </data>
+  <data name="ImportMediaTask_File" xml:space="preserve">
+    <value>"{0}" import qilinmoqda</value>
+  </data>
+  <data name="ImportMediaTask_Help" xml:space="preserve">
+    <value>Kamera, yozuv qurilmasining SD kartasidan audio, rasm, videolarni import qiladi; telefoningizdan WI-FI orqali FTP Server ilovasi yordamida shablon fayl nomlari bilan rasm va videolarni import qiladi.
+
+Telefondagi FTP Server ilovasi orqali WI-FI bo'yicha fayl uzatishni sozlash bo'yicha ma'lumot uchun ilova veb-saytiga qarang.</value>
+  </data>
+  <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
+    <value>Ma'lumot manbayini import qilish</value>
+  </data>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
+    <value>Allaqachon import qilingan fayllarni o'tkazib yuborish</value>
+  </data>
+  <data name="ImproveIt_Message" xml:space="preserve">
+    <value>Kutilmagan xatolik yuz berdi.
+
+Iltimos, ish stolingizda saqlangan ma'lumotlar bilan
+"{0}"
+dasturchilar bilan bog'laning.
+
+Ilova hozir yopiladi.</value>
+  </data>
+  <data name="IncrementalBackup_Help" xml:space="preserve">
+    <value>Bosqichma-bosqich zaxiralashning eng oddiy shakli oxirgi zaxiradan beri o'zgargan fayllarni aniqlash, qayd qilish va shu tariqa saqlashdan iborat.
+
+O'zgarishlar odatda kam bo'lgani uchun bosqichma-bosqich zaxiralar to'liq zaxiralardan ancha kichik va tezroq bo'ladi.
+
+Masalan, juma kungi to'liq zaxiradan keyin dushanba kuni zaxirasi faqat jumadan beri o'zgargan fayllarni o'z ichiga oladi. Seshanba kuni zaxirasi faqat dushanbadan beri o'zgargan fayllarni o'z ichiga oladi va hokazo.
+
+Agar yaratilgan nusxalardan birortasi, jumladan birinchisi (to'liq) ishlamay qolsa, tiklash to'liq bo'lmaydi.</value>
+  </data>
+  <data name="IncrementalBackup_Title" xml:space="preserve">
+    <value>Bosqichma-bosqich zaxiralash</value>
+  </data>
+  <data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
+    <value>Bosqichma-bosqich versiyani hisoblash</value>
+  </data>
+  <data name="IncrementalBackup_Version_Save" xml:space="preserve">
+    <value>Bosqichma-bosqich versiyani saqlash</value>
+  </data>
+  <data name="IncrementalBackupTask_Create" xml:space="preserve">
+    <value>Bosqichma-bosqich zaxiralash vazifasi</value>
+  </data>
+  <data name="Installer_AdminRequired" xml:space="preserve">
+    <value>Barcha foydalanuvchilar uchun o'rnatish uchun administrator huquqlari talab qilinadi.
+Iltimos, o'rnatuvchini administrator sifatida ishga tushiring yoki /CURRENTUSER dan foydalaning.</value>
+  </data>
+  <data name="Installer_AdminRequiredDetailed" xml:space="preserve">
+    <value>Barcha foydalanuvchilar uchun o'rnatish uchun administrator huquqlari talab qilinadi.
+
+Iltimos:
+- 'Faqat joriy foydalanuvchi uchun o'rnatish' ni tanlang, yoki
+- Ushbu o'rnatuvchini administrator sifatida ishga tushiring</value>
+  </data>
+  <data name="Installer_AllUsersDescription" xml:space="preserve">
+    <value>Ilova ushbu kompyuterning barcha foydalanuvchilari uchun mavjud bo'ladi.</value>
+  </data>
+  <data name="Installer_AllUsersOption" xml:space="preserve">
+    <value>&amp;Barcha foydalanuvchilar uchun o'rnatish (administrator huquqlari talab qilinadi)</value>
+  </data>
+  <data name="Installer_ArchRequired" xml:space="preserve">
+    <value>Ushbu o'rnatuvchi Windows ning x64 yoki arm64 versiyasini talab qiladi.</value>
+  </data>
+  <data name="Installer_CurrentUserDescription" xml:space="preserve">
+    <value>Tavsiya etiladi. Ilova faqat sizning foydalanuvchi hisobingiz uchun mavjud bo'ladi.</value>
+  </data>
+  <data name="Installer_CurrentUserOption" xml:space="preserve">
+    <value>Faqat &amp;joriy foydalanuvchi uchun o'rnatish</value>
+  </data>
+  <data name="Installer_InstallingFor" xml:space="preserve">
+    <value>O'rnatilmoqda:</value>
+  </data>
+  <data name="Installer_InstallModeDescription" xml:space="preserve">
+    <value>Iltimos, BUtil ni faqat o'zingiz uchun yoki ushbu kompyuterning barcha foydalanuvchilari uchun o'rnatishni tanlang.</value>
+  </data>
+  <data name="Installer_InstallModeSubtitle" xml:space="preserve">
+    <value>Ushbu ilovadan kim foydalanishi mumkinligini tanlang</value>
+  </data>
+  <data name="Installer_InstallModeTitle" xml:space="preserve">
+    <value>O'rnatish turini tanlang</value>
+  </data>
+  <data name="Installer_LaunchApp" xml:space="preserve">
+    <value>Ilovani ishga tushirish</value>
+  </data>
+  <data name="KeyFile_Field" xml:space="preserve">
+    <value>Kalit fayl:</value>
+  </data>
+  <data name="LeftMenu_Encryption" xml:space="preserve">
+    <value>Shifrlash</value>
+  </data>
+  <data name="LeftMenu_What" xml:space="preserve">
+    <value>Nima?</value>
+  </data>
+  <data name="LeftMenu_What_Hint" xml:space="preserve">
+    <value>Bu yerda siz qayta ishlash kerak bo'lgan papka va fayllarni qo'shishingiz mumkin.</value>
+  </data>
+  <data name="LeftMenu_What_Validation" xml:space="preserve">
+    <value>Qayta ishlash uchun elementlar yo'q.</value>
+  </data>
+  <data name="LeftMenu_When" xml:space="preserve">
+    <value>Qachon?</value>
+  </data>
+  <data name="LeftMenu_When_Help" xml:space="preserve">
+    <value>Bu yerda siz jadval sozlashingiz mumkin. Jadval vazifani avtomatik ishga tushirishga yordam beradi.</value>
+  </data>
+  <data name="LeftMenu_Where" xml:space="preserve">
+    <value>Qayerga?</value>
+  </data>
+  <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
+    <value>Explorer dan fayllar va papkalarni bu yerga suring va tashlang.</value>
+  </data>
+  <data name="LeftMenu_Where_Hint" xml:space="preserve">
+    <value>Bu yerda fayllaringiz nusxalanadigan joylarni qo'shishingiz mumkin.</value>
+  </data>
+  <data name="Local_State_Get" xml:space="preserve">
+    <value>Mahalliy holatni olish</value>
+  </data>
+  <data name="Local_State_Saving" xml:space="preserve">
+    <value>Mahalliy holatni yozish</value>
+  </data>
+  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
+    <value>Loglar papkasini ochish</value>
+  </data>
+  <data name="LogFile_Marker_Errors" xml:space="preserve">
+    <value>Xatolar</value>
+  </data>
+  <data name="LogFile_Marker_Successful" xml:space="preserve">
+    <value>Muvaffaqiyatli</value>
+  </data>
+  <data name="LogFile_OpenLogs" xml:space="preserve">
+    <value>Loglar</value>
+  </data>
+  <data name="Logs_Menu" xml:space="preserve">
+    <value>Loglar</value>
+  </data>
+  <data name="MainWindow_SearchWatermark" xml:space="preserve">
+    <value>Qidirish</value>
+  </data>
+  <data name="Messages_Header_Error" xml:space="preserve">
+    <value>Xato</value>
+  </data>
+  <data name="Messages_Header_Information" xml:space="preserve">
+    <value>Ma'lumot</value>
+  </data>
+  <data name="Messages_Header_Question" xml:space="preserve">
+    <value>Savol</value>
+  </data>
+  <data name="Name_Field" xml:space="preserve">
+    <value>Nom:</value>
+  </data>
+  <data name="Name_Field_Validation" xml:space="preserve">
+    <value>Nom bo'sh yoki qo'llab-quvvatlanmaydigan yo'l belgilarini o'z ichiga oladi.</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>'{0}' nomi uzunligi chegaradan {1} belgi oshib ketdi.</value>
+  </data>
+  <data name="Name_Title" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="OptionalField_Hint" xml:space="preserve">
+    <value>(ixtiyoriy)</value>
+  </data>
+  <data name="Other_Menu_Title" xml:space="preserve">
+    <value>Boshqa</value>
+  </data>
+  <data name="Password_Field" xml:space="preserve">
+    <value>Parol:</value>
+  </data>
+  <data name="Password_Field_Confirm" xml:space="preserve">
+    <value>Parolni tasdiqlang:</value>
+  </data>
+  <data name="Password_Field_Length" xml:space="preserve">
+    <value>Uzunlik:</value>
+  </data>
+  <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
+    <value>Parollar mos kelmaydi.</value>
+  </data>
+  <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
+    <value>Parol ko'rsatilmagan.</value>
+  </data>
+  <data name="Password_Generate" xml:space="preserve">
+    <value>Parol yaratish...</value>
+  </data>
+  <data name="Password_Generator_Header" xml:space="preserve">
+    <value>Parol generatori</value>
+  </data>
+  <data name="Password_Help" xml:space="preserve">
+    <value>Tavsiya etilgan minimal parol uzunligi 50 belgi va undan ko'p.</value>
+  </data>
+  <data name="Password_Use" xml:space="preserve">
+    <value>Foydalanish</value>
+  </data>
+  <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
+    <value>Katalogda "{0}" fayllar topilmadi. 
+
+Ushbu faylni o'z ichiga olgan katalogni ko'rsating.</value>
+  </data>
+  <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
+    <value>Holatni o'qib bo'lmaydi.</value>
+  </data>
+  <data name="Server_Field_Address" xml:space="preserve">
+    <value>Server nomi:</value>
+  </data>
+  <data name="Server_Field_Address_Validation" xml:space="preserve">
+    <value>Server nomi ko'rsatilmagan.</value>
+  </data>
+  <data name="Server_Field_Port" xml:space="preserve">
+    <value>Port:</value>
+  </data>
+  <data name="Server_Field_Port_Validation" xml:space="preserve">
+    <value>Port noto'g'ri.</value>
+  </data>
+  <data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
+    <value>Parol va kalit fayl ikkalasi ham bo'sh.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
+    <value>SFTP papkasi / bilan tugamasligi kerak.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
+    <value>SFTP papkasi / bilan boshlanishi kerak.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
+    <value>SFTP papkasi / ruxsat etilmaydi. Papka aniqroq papkaga ishora qilishi kerak.</value>
+  </data>
+  <data name="SourceItem_AddFolders" xml:space="preserve">
+    <value>Papkalar qo'shish...</value>
+  </data>
+  <data name="SourceItem_OpenInExplorer" xml:space="preserve">
+    <value>Explorer da ochish...</value>
+  </data>
+  <data name="SourceItem_State_Get" xml:space="preserve">
+    <value>"{0}" manba elementi holatini olish</value>
+  </data>
+  <data name="SourceItem_Validation_Empty" xml:space="preserve">
+    <value>Qayta ishlash uchun elementlar yo'q.</value>
+  </data>
+  <data name="SourceItem_Validation_NotExists" xml:space="preserve">
+    <value>"{0}" mavjud emas.</value>
+  </data>
+  <data name="State_File_Get" xml:space="preserve">
+    <value>"{0}" fayl holatini olish</value>
+  </data>
+  <data name="State_LoadFromEverywhere" xml:space="preserve">
+    <value>Manba elementlari va xotiralar holatini olish</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
+    <value>Fayl istisno shablonini qo'shish</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
+    <value>Fayl istisno shablonini tahrirlash</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>Fayllarni istisno qilish</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
+    <value>.NET da fayl globbing: Shablonlar</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
+    <value>Bu yerda fayl globbing istisno shablonlarini ko'rsatishingiz mumkin. 
+Bu fayl nomi yoki papka nomi yoki joker belgi bo'lishi mumkin. 
+Misollar: 
+d:\temp, 
+d:\temp\file.txt, 
+d:\temp\**\*.txt yoki 
+bin. 
+Batafsil tavsifni quyidagi havoladan ko'ring.</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
+    <value>Istisno shabloni bo'yicha fayllarni qayta ishlashni o'tkazib yuboradi.</value>
+  </data>
+  <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
+    <value>Fayl istisno shabloni:</value>
+  </data>
+  <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
+    <value>Fayl istisno shabloni bo'sh.</value>
+  </data>
+  <data name="StorageItem_Remote_Marker" xml:space="preserve">
+    <value>Masofaviy</value>
+  </data>
+  <data name="SynchronizationMode_Field" xml:space="preserve">
+    <value>Sinxronizatsiya rejimi:</value>
+  </data>
+  <data name="SynchronizationMode_Field_Read" xml:space="preserve">
+    <value>O'qish</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
+    <value>Ikki tomonlama</value>
+  </data>
+  <data name="SynchronizationTask_Create" xml:space="preserve">
+    <value>Sinxronizatsiya</value>
+  </data>
+  <data name="SynchronizationTask_Help" xml:space="preserve">
+    <value>Markazlashtirilgan xotira yordamida qurilmalar o'rtasida fayllarning ikki tomonlama sinxronizatsiyasi.</value>
+  </data>
+  <data name="Task_Create" xml:space="preserve">
+    <value>Yangi</value>
+  </data>
+  <data name="Task_Create_Hint" xml:space="preserve">
+    <value>Yangi vazifa yaratadi.</value>
+  </data>
+  <data name="Task_Delete" xml:space="preserve">
+    <value>O'chirish</value>
+  </data>
+  <data name="Task_Delete_Confirm" xml:space="preserve">
+    <value>Siz haqiqatan ham "{0}" ni o'chirmoqchimisiz?</value>
+  </data>
+  <data name="Task_Delete_Hint" xml:space="preserve">
+    <value>Tanlangan vazifani o'chiradi.</value>
+  </data>
+  <data name="Task_Duplicate" xml:space="preserve">
+    <value>Nusxalash</value>
+  </data>
+  <data name="Task_Edit" xml:space="preserve">
+    <value>Tahrirlash</value>
+  </data>
+  <data name="Task_Edit_Hint" xml:space="preserve">
+    <value>Tanlangan vazifani tahrirlaydi.</value>
+  </data>
+  <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
+    <value>Siz CLI da ushbu turdagi vazifani tahrirlay olmaysiz.</value>
+  </data>
+  <data name="Task_Field_Choose" xml:space="preserve">
+    <value>Vazifani tanlang:</value>
+  </data>
+  <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
+    <value>Yangi vazifa</value>
+  </data>
+  <data name="Task_LastExecution_State" xml:space="preserve">
+    <value>Holat</value>
+  </data>
+  <data name="Task_Launch" xml:space="preserve">
+    <value>Ishga tushirish</value>
+  </data>
+  <data name="Task_Launch_Hint" xml:space="preserve">
+    <value>Tanlangan vazifani ishga tushiradi.</value>
+  </data>
+  <data name="Task_List" xml:space="preserve">
+    <value>Vazifalar</value>
+  </data>
+  <data name="Task_OpenLog" xml:space="preserve">
+    <value>Oxirgi logni ochish</value>
+  </data>
+  <data name="Task_Restore" xml:space="preserve">
+    <value>Tiklash</value>
+  </data>
+  <data name="Task_Status_FailedSeeLog" xml:space="preserve">
+    <value>Muvaffaqiyatsiz (ochilgan logni ko'ring)</value>
+  </data>
+  <data name="Task_Status_InProgress" xml:space="preserve">
+    <value>Vazifa bajarilmoqda...</value>
+  </data>
+  <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
+    <value>Qisman tugadi. Xotira kvotasi tufayli ba'zi fayllar bu safar o'tkazib yuborildi. Qolgan {0} fayl {1} GB.</value>
+  </data>
+  <data name="Task_Status_Succesfull" xml:space="preserve">
+    <value>Muvaffaqiyatli</value>
+  </data>
+  <data name="Task_Status_Unknown" xml:space="preserve">
+    <value>Noma'lum</value>
+  </data>
+  <data name="Task_Validation_NotFound" xml:space="preserve">
+    <value>'{0}' vazifasi topilmadi.</value>
+  </data>
+  <data name="Task_Validation_NotSupported" xml:space="preserve">
+    <value>Bu vazifa turi qo'llab-quvvatlanmaydi.</value>
+  </data>
+  <data name="Task_WindowTitle_Creating" xml:space="preserve">
+    <value>Yaratish</value>
+  </data>
+  <data name="Task_WindowTitle_Editing" xml:space="preserve">
+    <value>Tahrirlash</value>
+  </data>
+  <data name="TechnicalTool_Close" xml:space="preserve">
+    <value>Yopish</value>
+  </data>
+  <data name="TechnicalTool_Completed" xml:space="preserve">
+    <value>Amal muvaffaqiyatli bajarildi.</value>
+  </data>
+  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
+    <value>Brotli siqish</value>
+  </data>
+  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
+    <value>Brotli ochish</value>
+  </data>
+  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
+    <value>AES-256 shifrni ochish</value>
+  </data>
+  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
+    <value>AES-256 shifrlash</value>
+  </data>
+  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
+    <value>Fayl mavjud emas:</value>
+  </data>
+  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
+    <value>Parolni kiriting.</value>
+  </data>
+  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
+    <value>Manba va chiqish fayl yo'llarini ko'rsating.</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
+    <value>AES-256 shifrlangan (*.{0})</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
+    <value>Barcha fayllar</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
+    <value>Brotli siqilgan (*.brotli)</value>
+  </data>
+  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
+    <value>Brotli siqish…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
+    <value>Brotli ochish…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
+    <value>AES-256 shifrni ochish…</value>
+  </data>
+  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
+    <value>AES-256 shifrlash…</value>
+  </data>
+  <data name="TechnicalTool_OutputFile" xml:space="preserve">
+    <value>Chiqish fayli:</value>
+  </data>
+  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
+    <value>Chiqish faylini tanlang</value>
+  </data>
+  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
+    <value>Manba faylini tanlang</value>
+  </data>
+  <data name="TechnicalTool_Run" xml:space="preserve">
+    <value>Ishga tushirish</value>
+  </data>
+  <data name="TechnicalTool_SourceFile" xml:space="preserve">
+    <value>Manba fayli:</value>
+  </data>
+  <data name="Theme_Title" xml:space="preserve">
+    <value>Mavzu</value>
+  </data>
+  <data name="Theme_Value_Dark" xml:space="preserve">
+    <value>Qorong'i</value>
+  </data>
+  <data name="Theme_Value_Light" xml:space="preserve">
+    <value>Yorug'</value>
+  </data>
+  <data name="Time_Field_Elapsed" xml:space="preserve">
+    <value>O'tgan:</value>
+  </data>
+  <data name="Time_Field_Hour" xml:space="preserve">
+    <value>Soat:</value>
+  </data>
+  <data name="Time_Field_Minute" xml:space="preserve">
+    <value>Daqiqa:</value>
+  </data>
+  <data name="TimeoutTask_Title" xml:space="preserve">
+    <value>Vaqt kutilmoqda...</value>
+  </data>
+  <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
+    <value>Sertifikatni tahlil qilish ogohlantirilshi: {0}</value>
+  </data>
+  <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
+    <value>Sertifikat identifikatsiyasini tashqi kanal orqali tekshiring, so'ngra Saqlash tugmasini qayta bosing.</value>
+  </data>
+  <data name="TrustDetected_Ftps_Title" xml:space="preserve">
+    <value>Test davomida FTPS server sertifikati aniqlandi.</value>
+  </data>
+  <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
+    <value>Sertifikat (xom hex): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_DnsName" xml:space="preserve">
+    <value>DNS nomi: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Encryption" xml:space="preserve">
+    <value>Shifrlash: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
+    <value>Barmoq izi (SHA-256): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Folder" xml:space="preserve">
+    <value>Papka: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Host" xml:space="preserve">
+    <value>Xost: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Issuer" xml:space="preserve">
+    <value>Beruvchi: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Port" xml:space="preserve">
+    <value>Port: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
+    <value>Ommaviy kalit algoritmi: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
+    <value>Ommaviy kalit hajmi: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
+    <value>Seriya raqami: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
+    <value>Imzo algoritmi: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Subject" xml:space="preserve">
+    <value>Mavzu: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
+    <value>Mavzu muqobil nomlari: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
+    <value>Barmoq izi: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_User" xml:space="preserve">
+    <value>Foydalanuvchi: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
+    <value>Amal qilish boshlanishi (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
+    <value>Amal qilish tugashi (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
+    <value>Tahlil qilingan sertifikat tafsilotlari:</value>
+  </data>
+  <data name="TrustDetected_Port_Default" xml:space="preserve">
+    <value>standart</value>
+  </data>
+  <data name="TrustDetected_Port_Default22" xml:space="preserve">
+    <value>standart (22)</value>
+  </data>
+  <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
+    <value>noma'lum</value>
+  </data>
+  <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
+    <value>Ushbu barmoq izini tashqi kanal orqali tekshiring, so'ngra Saqlash tugmasini qayta bosing.</value>
+  </data>
+  <data name="TrustDetected_Sftp_Title" xml:space="preserve">
+    <value>Test davomida SFTP server ishonch ma'lumoti aniqlandi.</value>
+  </data>
+  <data name="TrustedCertificate_Field" xml:space="preserve">
+    <value>Ishonchli sertifikat (hex):</value>
+  </data>
+  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
+    <value>Papkani serverga yuklash</value>
+  </data>
+  <data name="UploadFolderTask_Help" xml:space="preserve">
+    <value>Siz papka tarkibini mavjud fayllarni qayta yozish orqali yuklashingiz mumkin.</value>
+  </data>
+  <data name="Url_Field" xml:space="preserve">
+    <value>Url:</value>
+  </data>
+  <data name="Url_Field_Validation" xml:space="preserve">
+    <value>Url ko'rsatilmagan.</value>
+  </data>
+  <data name="User_Field" xml:space="preserve">
+    <value>Foydalanuvchi:</value>
+  </data>
+  <data name="User_Field_Validation" xml:space="preserve">
+    <value>Foydalanuvchi ko'rsatilmagan.</value>
+  </data>
+  <data name="Winget_Description" xml:space="preserve">
+    <value>Windows, Linux da ma'lumotlaringizni zaxiralash/sinxronlashtirish.
+Telefondan WI-FI orqali rasmlarni import qilish va boshqalar.
+
+Qo'llab-quvvatlanadigan tillar: Ingliz, Arab, Bengal, Xitoy, Fransuz, Nemis, Hindi, Indonez, Italyan, Yapon, Marati, Nigeriya Pidjin, Portugaliya, Rus, Ispan, Tamil, Telugu, Turk, Ukrain, Urdu, Vyetnam, Yue Xitoy
+
+Xususiyatlar:
+- Fayl deduplikatsiyasi va SFTP, FTPS, SMB/CIFS transport qo'llab-quvvatlashi bilan bosqichma-bosqich zaxiralash;
+- Markazlashtirilgan xotira va versiya qo'llab-quvvatlashi bilan qurilmalar o'rtasida fayllarni sinxronlashtirish;
+- Media import - Kamera, yozuv qurilmasining SD kartasidan audio, rasm, videolarni import qilish; telefondan WI-FI orqali FTPS Server ilovasi yordamida shablon fayl nomlari yoki MTP orqali rasm va videolarni import qilish;
+- Qurilmalar o'rtasida shifrlash bilan P2P fayl uzatish;
+- Avtomatlashtirish jadvallari uchun konsol;
+- AES-256 shifrlash.
+
+Platformalar: Windows 11 x64, ARM64 yoki Ubuntu 24+.</value>
+  </data>
+  <data name="Winget_ShortDescription" xml:space="preserve">
+    <value>BUtil Windows va Linux uchun FTPS, SFTP, SMB/CIFS transport qo'llab-quvvatlashi va deduplikatsiya bilan bosqichma-bosqich zaxiralar, bosqichma-bosqich sinxronizatsiya yaratadi va multimediani kompyuteringizga import qiladi.</value>
+  </data>
+</root>

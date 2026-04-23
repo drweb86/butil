@@ -1,0 +1,994 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="_Technical_NsisLanguage" xml:space="preserve">
+    <value>Macedonian</value>
+  </data>
+  <data name="_Technical_WingetLocale" xml:space="preserve">
+    <value>mk-MK</value>
+  </data>
+  <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
+    <value>Не прави ништо</value>
+  </data>
+  <data name="AfterTaskSelection_Field" xml:space="preserve">
+    <value>По завршување на задачата:</value>
+  </data>
+  <data name="AfterTaskSelection_Help" xml:space="preserve">
+    <value>Ако изберете нешто друго освен „не прави ништо",
+програмата ќе го конфигурира оперативниот систем да ви прикаже извештај
+при следното ваше најавување ако се регистрирани
+грешки или предупредувања.</value>
+  </data>
+  <data name="AfterTaskSelection_LogOff" xml:space="preserve">
+    <value>Одјави се</value>
+  </data>
+  <data name="AfterTaskSelection_Reboot" xml:space="preserve">
+    <value>Рестартирај</value>
+  </data>
+  <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
+    <value>Исклучи</value>
+  </data>
+  <data name="Application_NewVersion_Notification" xml:space="preserve">
+    <value>Достапна е нова {0} верзија.</value>
+  </data>
+  <data name="BackupVersion_Button_Delete" xml:space="preserve">
+    <value>Избриши верзија</value>
+  </data>
+  <data name="BackupVersion_Changes_Title" xml:space="preserve">
+    <value>Промени</value>
+  </data>
+  <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
+    <value>Дали навистина сакате да ја избришете верзијата „{0}"?
+
+Промените на избришаната верзија ќе станат дел од верзијата „{1}".</value>
+  </data>
+  <data name="BackupVersion_Files_Title" xml:space="preserve">
+    <value>Датотеки</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
+    <value>Дневник: {0}</value>
+  </data>
+  <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
+    <value>Дневник за избраното...</value>
+  </data>
+  <data name="BackupVersion_Select" xml:space="preserve">
+    <value>Отвори избрана верзија...</value>
+  </data>
+  <data name="BackupVersion_Selector_Title" xml:space="preserve">
+    <value>ИЗБЕРЕТЕ ВЕРЗИЈА</value>
+  </data>
+  <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
+    <value>(сите верзии зафаќаат {0} на складиштето)</value>
+  </data>
+  <data name="BackupVersion_Versions_Title" xml:space="preserve">
+    <value>ВЕРЗИИ</value>
+  </data>
+  <data name="BackupVersion_Viewer_Help" xml:space="preserve">
+    <value>Изберете ја датотеката или папката што сакате да ја вратите во стеблото и кликнете „Врати".</value>
+  </data>
+  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
+    <value>Врската со серверот неочекувано се прекина (Дали лозинките на клиентот и серверот се исти?)</value>
+  </data>
+  <data name="Button_Cancel" xml:space="preserve">
+    <value>Откажи</value>
+  </data>
+  <data name="Button_Close" xml:space="preserve">
+    <value>Затвори</value>
+  </data>
+  <data name="Button_Continue" xml:space="preserve">
+    <value>Продолжи &gt;</value>
+  </data>
+  <data name="Button_CopyToClipboard" xml:space="preserve">
+    <value>Копирај</value>
+  </data>
+  <data name="Button_Download" xml:space="preserve">
+    <value>Преземи</value>
+  </data>
+  <data name="Button_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Button_Remove" xml:space="preserve">
+    <value>Отстрани</value>
+  </data>
+  <data name="Button_Save" xml:space="preserve">
+    <value>Зачувај</value>
+  </data>
+  <data name="CommandLineArguments_Help" xml:space="preserve">
+    <value>Посетете {0} за да ги видите аргументите на командната линија.</value>
+  </data>
+  <data name="CommandLineArguments_Invalid" xml:space="preserve">
+    <value>Невалидни аргументи на командната линија.</value>
+  </data>
+  <data name="DataStorage_Data_Saving" xml:space="preserve">
+    <value>Запишување податоци во складиштето</value>
+  </data>
+  <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
+    <value>Скрипта за поврзување:</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
+    <value>Скрипта за исклучување:</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
+    <value>Завршено со грешки</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
+    <value>Успешно завршено</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
+    <value>Ограничување за прикачување, GB:</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
+    <value>Го ограничува количеството податоци испратени до складиштето за време на едно извршување задача. 0 - без ограничување.
+Кога квотата е надмината, другите датотеки ќе бидат прескокнати и ќе се обработат следниот пат.
+Сценарио на употреба: Копирате податоци на далечински сервер. Има проблем: ISP ја намалува брзината на прикачување по неколку гигабајти. Ова поставување ви овозможува да се справите со тоа.</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
+    <value>Квотата треба да биде 0 (не применувај) или вредност над 0.</value>
+  </data>
+  <data name="DataStorage_Maintenance" xml:space="preserve">
+    <value>Одржување на складиште за податоци</value>
+  </data>
+  <data name="DataStorage_Script_Help" xml:space="preserve">
+    <value>Ако папката стане достапна по извршување на некои команди, наведете {0} скрипти за поврзување и исклучување.</value>
+  </data>
+  <data name="DataStorage_Scripts_Header" xml:space="preserve">
+    <value>Скрипти (пред монтирање / по демонтирање)</value>
+  </data>
+  <data name="DataStorage_State_Get" xml:space="preserve">
+    <value>Добивање состојба на складиштето</value>
+  </data>
+  <data name="DataStorage_State_Saving" xml:space="preserve">
+    <value>Запишување состојба на складиштето</value>
+  </data>
+  <data name="DataStorage_Title" xml:space="preserve">
+    <value>Складиште</value>
+  </data>
+  <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
+    <value>Складиштето не е наведено.</value>
+  </data>
+  <data name="Days_Field_Choose" xml:space="preserve">
+    <value>Изберете денови од неделата:</value>
+  </data>
+  <data name="Days_Friday" xml:space="preserve">
+    <value>Петок</value>
+  </data>
+  <data name="Days_Monday" xml:space="preserve">
+    <value>Понеделник</value>
+  </data>
+  <data name="Days_Saturday" xml:space="preserve">
+    <value>Сабота</value>
+  </data>
+  <data name="Days_Sunday" xml:space="preserve">
+    <value>Недела</value>
+  </data>
+  <data name="Days_Thursday" xml:space="preserve">
+    <value>Четврток</value>
+  </data>
+  <data name="Days_Tuesday" xml:space="preserve">
+    <value>Вторник</value>
+  </data>
+  <data name="Days_Wednesday" xml:space="preserve">
+    <value>Среда</value>
+  </data>
+  <data name="DirectoryStorage" xml:space="preserve">
+    <value>Директориум</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
+    <value>Папка:</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
+    <value>Директориумот не е наведен.</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
+    <value>Директориумот „{0}" не постои.</value>
+  </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>Времетраење (минути, 0 - бесконечно):</value>
+  </data>
+  <data name="Field_Device" xml:space="preserve">
+    <value>Уред:</value>
+  </data>
+  <data name="Field_Device_Validation_Empty" xml:space="preserve">
+    <value>Уредот не е наведен.</value>
+  </data>
+  <data name="Field_Device_Validation_NotFound" xml:space="preserve">
+    <value>Уредот не е пронајден.</value>
+  </data>
+  <data name="Field_File_Browse" xml:space="preserve">
+    <value>Прелистај датотека</value>
+  </data>
+  <data name="Field_Folder" xml:space="preserve">
+    <value>Папка:</value>
+  </data>
+  <data name="Field_Folder_Browse" xml:space="preserve">
+    <value>Прелистај</value>
+  </data>
+  <data name="Field_Folder_Validation_Empty" xml:space="preserve">
+    <value>Папката не е наведена.</value>
+  </data>
+  <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
+    <value>Папката не постои.</value>
+  </data>
+  <data name="Field_TransportProtocol" xml:space="preserve">
+    <value>Протокол:</value>
+  </data>
+  <data name="Field_Version" xml:space="preserve">
+    <value>Верзија:</value>
+  </data>
+  <data name="File_Deleting" xml:space="preserve">
+    <value>Бришење на „{0}"</value>
+  </data>
+  <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
+    <value>Скрипта за верификација на интегритет.ps1</value>
+  </data>
+  <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
+    <value>Зачувување скрипти за верификација на интегритет</value>
+  </data>
+  <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
+    <value>Обработи датотеки постари од:</value>
+  </data>
+  <data name="File_List_Saving" xml:space="preserve">
+    <value>Зачувување датотеки</value>
+  </data>
+  <data name="File_Moving" xml:space="preserve">
+    <value>Преместување на „{0}" во „{1}"</value>
+  </data>
+  <data name="File_Saving" xml:space="preserve">
+    <value>Зачувување на „{0}"</value>
+  </data>
+  <data name="File_Uploading" xml:space="preserve">
+    <value>Прикачување на „{0}"</value>
+  </data>
+  <data name="FingerPrintSHA256_Field" xml:space="preserve">
+    <value>Отпечаток SHA-256:</value>
+  </data>
+  <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
+    <value>Отпечатокот SHA-256 не е наведен.</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
+    <value>Експлицитно</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
+    <value>Имплицитно</value>
+  </data>
+  <data name="Ftps_Field_Encryption" xml:space="preserve">
+    <value>SSL/TTS шифрирање:</value>
+  </data>
+  <data name="FtpsServerStartTask_Name" xml:space="preserve">
+    <value>Стартувај FTPS-сервер</value>
+  </data>
+  <data name="FtpsServerTask_Create" xml:space="preserve">
+    <value>Сподели папка преку мрежа (FTPS-сервер)</value>
+  </data>
+  <data name="FtpsServerTask_Help" xml:space="preserve">
+    <value>Можете да споделите која било папка со пристап за читање и запишување преку FTPS-протокол (експлицитно шифрирање со самопотпишан сертификат) во вашата локална мрежа.</value>
+  </data>
+  <data name="Icons_Help_Link" xml:space="preserve">
+    <value>Додадете знаковна икона во вашиот текст</value>
+  </data>
+  <data name="ImportMediaTask_AllFiles" xml:space="preserve">
+    <value>Увези ги сите датотеки</value>
+  </data>
+  <data name="ImportMediaTask_Create" xml:space="preserve">
+    <value>Задача за увоз на медиуми</value>
+  </data>
+  <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
+    <value>Уреди задача за увоз на медиуми „{0}"</value>
+  </data>
+  <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
+    <value>Излезна папка:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
+    <value>Трансформации на име на датотека:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
+    <value>Пример:
+Замислете дека имате датотека {0} (изменета на {1}).
+Со овој директориум и шаблонска низа, датотеката ќе се зачува како:
+{2}</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
+    <value>Поддржани токени:
+{DATE:Format} - Го внесува датумот на измена на датотеката во наведениот формат.
+За да ги видите сите опции, пребарајте „C# DateTime format".</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
+    <value>Трансформираното име на датотека е празно.</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
+    <value>Невалидна низа за трансформирано име на датотека.</value>
+  </data>
+  <data name="ImportMediaTask_File" xml:space="preserve">
+    <value>Увезување на „{0}"</value>
+  </data>
+  <data name="ImportMediaTask_Help" xml:space="preserve">
+    <value>Увезува аудио, фотографии, видеа од SD-картичка на камера, рекордер; фотографии и видеа од вашиот телефон преку WI-FI преку апликација FTP-сервер користејќи шаблонски имиња на датотеки.
+
+Видете ја веб-страницата на апликацијата за документација како да поставите пренос на датотеки преку WI-FI преку апликација FTP-сервер на телефонот.</value>
+  </data>
+  <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
+    <value>Увези извор на податоци</value>
+  </data>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
+    <value>Прескокни веќе увезени датотеки</value>
+  </data>
+  <data name="ImproveIt_Message" xml:space="preserve">
+    <value>Настана неочекувана грешка.
+
+Ве молиме контактирајте ги развивачите со информациите зачувани на вашата работна површина во
+„{0}"
+
+Апликацијата сега ќе се затвори.</value>
+  </data>
+  <data name="IncrementalBackup_Help" xml:space="preserve">
+    <value>Најосновната форма на инкременталното резервно копирање се состои од идентификување, евидентирање и со тоа зачувување само на оние датотеки кои се промениле од последното резервно копирање.
+
+Бидејќи промените обично се мали, инкременталните резервни копии се многу помали и побрзи од целосните резервни копии.
+
+На пример, по целосно резервно копирање во петок, резервно копирање во понеделник ќе содржи само датотеки променети од петок. Резервно копирање во вторник содржи само датотеки променети од понеделник итн.
+
+Ако која било од создадените копии не успее, вклучувајќи ја првата (целосната), враќањето ќе биде нецелосно.</value>
+  </data>
+  <data name="IncrementalBackup_Title" xml:space="preserve">
+    <value>Инкрементално резервно копирање</value>
+  </data>
+  <data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
+    <value>Пресметување на инкрементирана верзија</value>
+  </data>
+  <data name="IncrementalBackup_Version_Save" xml:space="preserve">
+    <value>Зачувување на инкрементирана верзија</value>
+  </data>
+  <data name="IncrementalBackupTask_Create" xml:space="preserve">
+    <value>Задача за инкрементално резервно копирање</value>
+  </data>
+  <data name="Installer_AdminRequired" xml:space="preserve">
+    <value>Потребни се администраторски привилегии за инсталирање за сите корисници.
+Ве молиме стартувајте го инсталерот како администратор или користете /CURRENTUSER.</value>
+  </data>
+  <data name="Installer_AdminRequiredDetailed" xml:space="preserve">
+    <value>Потребни се администраторски привилегии за инсталирање за сите корисници.
+
+Ве молиме направете едно од следново:
+- Изберете „Инсталирај само за тековниот корисник" или
+- Стартувајте го овој инсталер како администратор</value>
+  </data>
+  <data name="Installer_AllUsersDescription" xml:space="preserve">
+    <value>Апликацијата ќе биде достапна за сите корисници на овој компјутер.</value>
+  </data>
+  <data name="Installer_AllUsersOption" xml:space="preserve">
+    <value>Инсталирај за &amp;сите корисници (потребни администраторски привилегии)</value>
+  </data>
+  <data name="Installer_ArchRequired" xml:space="preserve">
+    <value>Овој инсталер бара x64 или ARM64 верзија на Windows.</value>
+  </data>
+  <data name="Installer_CurrentUserDescription" xml:space="preserve">
+    <value>Препорачано. Апликацијата ќе биде достапна само за вашата корисничка сметка.</value>
+  </data>
+  <data name="Installer_CurrentUserOption" xml:space="preserve">
+    <value>Инсталирај само за &amp;тековниот корисник</value>
+  </data>
+  <data name="Installer_InstallingFor" xml:space="preserve">
+    <value>Инсталирање за:</value>
+  </data>
+  <data name="Installer_InstallModeDescription" xml:space="preserve">
+    <value>Ве молиме изберете дали сакате да го инсталирате BUtil само за себе или за сите корисници на овој компјутер.</value>
+  </data>
+  <data name="Installer_InstallModeSubtitle" xml:space="preserve">
+    <value>Изберете кој може да ја користи оваа апликација</value>
+  </data>
+  <data name="Installer_InstallModeTitle" xml:space="preserve">
+    <value>Изберете тип на инсталација</value>
+  </data>
+  <data name="Installer_LaunchApp" xml:space="preserve">
+    <value>Стартувај апликација</value>
+  </data>
+  <data name="KeyFile_Field" xml:space="preserve">
+    <value>Датотека со клуч:</value>
+  </data>
+  <data name="LeftMenu_Encryption" xml:space="preserve">
+    <value>Шифрирање</value>
+  </data>
+  <data name="LeftMenu_What" xml:space="preserve">
+    <value>Што?</value>
+  </data>
+  <data name="LeftMenu_What_Hint" xml:space="preserve">
+    <value>Тука можете да додадете папки и датотеки што треба да се обработат.</value>
+  </data>
+  <data name="LeftMenu_What_Validation" xml:space="preserve">
+    <value>Нема елементи за обработка.</value>
+  </data>
+  <data name="LeftMenu_When" xml:space="preserve">
+    <value>Кога?</value>
+  </data>
+  <data name="LeftMenu_When_Help" xml:space="preserve">
+    <value>Тука можете да поставите распоред. Распоредувачот може да ви помогне да го автоматизирате стартувањето на задачата.</value>
+  </data>
+  <data name="LeftMenu_Where" xml:space="preserve">
+    <value>Каде?</value>
+  </data>
+  <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
+    <value>Повлечете и пуштете датотеки и папки од Explorer тука.</value>
+  </data>
+  <data name="LeftMenu_Where_Hint" xml:space="preserve">
+    <value>Тука можете да додадете локации каде сакате вашите датотеки да се копираат.</value>
+  </data>
+  <data name="Local_State_Get" xml:space="preserve">
+    <value>Добивање локална состојба</value>
+  </data>
+  <data name="Local_State_Saving" xml:space="preserve">
+    <value>Запишување локална состојба</value>
+  </data>
+  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
+    <value>Отвори папка со дневници</value>
+  </data>
+  <data name="LogFile_Marker_Errors" xml:space="preserve">
+    <value>Грешки</value>
+  </data>
+  <data name="LogFile_Marker_Successful" xml:space="preserve">
+    <value>Успешно</value>
+  </data>
+  <data name="LogFile_OpenLogs" xml:space="preserve">
+    <value>Дневници</value>
+  </data>
+  <data name="Logs_Menu" xml:space="preserve">
+    <value>Дневници</value>
+  </data>
+  <data name="MainWindow_SearchWatermark" xml:space="preserve">
+    <value>Пребарај</value>
+  </data>
+  <data name="Messages_Header_Error" xml:space="preserve">
+    <value>Грешка</value>
+  </data>
+  <data name="Messages_Header_Information" xml:space="preserve">
+    <value>Информација</value>
+  </data>
+  <data name="Messages_Header_Question" xml:space="preserve">
+    <value>Прашање</value>
+  </data>
+  <data name="Name_Field" xml:space="preserve">
+    <value>Име:</value>
+  </data>
+  <data name="Name_Field_Validation" xml:space="preserve">
+    <value>Името е празно или содржи неподдржани знаци за патека.</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>Должината на името '{0}' го надминува ограничувањето за {1} знаци.</value>
+  </data>
+  <data name="Name_Title" xml:space="preserve">
+    <value>Име</value>
+  </data>
+  <data name="OptionalField_Hint" xml:space="preserve">
+    <value>(изборно)</value>
+  </data>
+  <data name="Other_Menu_Title" xml:space="preserve">
+    <value>Друго</value>
+  </data>
+  <data name="Password_Field" xml:space="preserve">
+    <value>Лозинка:</value>
+  </data>
+  <data name="Password_Field_Confirm" xml:space="preserve">
+    <value>Потврди лозинка:</value>
+  </data>
+  <data name="Password_Field_Length" xml:space="preserve">
+    <value>Должина:</value>
+  </data>
+  <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
+    <value>Лозинките не се совпаѓаат.</value>
+  </data>
+  <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
+    <value>Лозинката не е наведена.</value>
+  </data>
+  <data name="Password_Generate" xml:space="preserve">
+    <value>Генерирај лозинка...</value>
+  </data>
+  <data name="Password_Generator_Header" xml:space="preserve">
+    <value>Генератор на лозинки</value>
+  </data>
+  <data name="Password_Help" xml:space="preserve">
+    <value>Препорачана минимална должина на лозинката е 50 знаци или повеќе.</value>
+  </data>
+  <data name="Password_Use" xml:space="preserve">
+    <value>Употреби</value>
+  </data>
+  <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
+    <value>Не можат да се пронајдат датотеките „{0}" во директориумот. 
+
+Покажете кон директориум кој ја содржи оваа датотека.</value>
+  </data>
+  <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
+    <value>Не може да се прочита состојбата.</value>
+  </data>
+  <data name="Server_Field_Address" xml:space="preserve">
+    <value>Име на серверот:</value>
+  </data>
+  <data name="Server_Field_Address_Validation" xml:space="preserve">
+    <value>Името на серверот не е наведено.</value>
+  </data>
+  <data name="Server_Field_Port" xml:space="preserve">
+    <value>Порта:</value>
+  </data>
+  <data name="Server_Field_Port_Validation" xml:space="preserve">
+    <value>Портата е невалидна.</value>
+  </data>
+  <data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
+    <value>И лозинката и датотеката со клуч се празни.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
+    <value>SFTP папката не смее да завршува со /.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
+    <value>SFTP папката мора да почнува со /.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
+    <value>SFTP папката / не е дозволена. Папката мора да покажува кон поконкретна папка.</value>
+  </data>
+  <data name="SourceItem_AddFolders" xml:space="preserve">
+    <value>Додади папки...</value>
+  </data>
+  <data name="SourceItem_OpenInExplorer" xml:space="preserve">
+    <value>Отвори во Explorer...</value>
+  </data>
+  <data name="SourceItem_State_Get" xml:space="preserve">
+    <value>Добивање состојба на изворниот елемент „{0}"</value>
+  </data>
+  <data name="SourceItem_Validation_Empty" xml:space="preserve">
+    <value>Нема елементи за обработка.</value>
+  </data>
+  <data name="SourceItem_Validation_NotExists" xml:space="preserve">
+    <value>„{0}" не постои.</value>
+  </data>
+  <data name="State_File_Get" xml:space="preserve">
+    <value>Добивање состојба на датотеката „{0}"</value>
+  </data>
+  <data name="State_LoadFromEverywhere" xml:space="preserve">
+    <value>Добивање состојба на изворните елементи и складиштата</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
+    <value>Додади шаблон за исклучување датотеки</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
+    <value>Уреди шаблон за исклучување датотеки</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>Исклучи датотеки</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
+    <value>Глобирање датотеки во .NET: Шаблони</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
+    <value>Тука можете да наведете шаблони за исклучување со глобирање на датотеки. 
+Може да биде име на датотека или име на папка или знак за замена. 
+Примери: 
+d:\temp, 
+d:\temp\file.txt, 
+d:\temp\**\*.txt или 
+bin. 
+Видете детален опис на следниот линк.</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
+    <value>Прескокнува обработка на датотеки според шаблонот за исклучување.</value>
+  </data>
+  <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
+    <value>Шаблон за исклучување датотеки:</value>
+  </data>
+  <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
+    <value>Шаблонот за исклучување датотеки е празен.</value>
+  </data>
+  <data name="StorageItem_Remote_Marker" xml:space="preserve">
+    <value>Далечински</value>
+  </data>
+  <data name="SynchronizationMode_Field" xml:space="preserve">
+    <value>Режим на синхронизација:</value>
+  </data>
+  <data name="SynchronizationMode_Field_Read" xml:space="preserve">
+    <value>Читање</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
+    <value>Двонасочно</value>
+  </data>
+  <data name="SynchronizationTask_Create" xml:space="preserve">
+    <value>Синхронизација</value>
+  </data>
+  <data name="SynchronizationTask_Help" xml:space="preserve">
+    <value>Двонасочна синхронизација на датотеки помеѓу уреди со централизирано складиште.</value>
+  </data>
+  <data name="Task_Create" xml:space="preserve">
+    <value>Нова</value>
+  </data>
+  <data name="Task_Create_Hint" xml:space="preserve">
+    <value>Создава нова задача.</value>
+  </data>
+  <data name="Task_Delete" xml:space="preserve">
+    <value>Избриши</value>
+  </data>
+  <data name="Task_Delete_Confirm" xml:space="preserve">
+    <value>Дали навистина сакате да го избришете „{0}"?</value>
+  </data>
+  <data name="Task_Delete_Hint" xml:space="preserve">
+    <value>Ја брише избраната задача.</value>
+  </data>
+  <data name="Task_Duplicate" xml:space="preserve">
+    <value>Дуплирај</value>
+  </data>
+  <data name="Task_Edit" xml:space="preserve">
+    <value>Уреди</value>
+  </data>
+  <data name="Task_Edit_Hint" xml:space="preserve">
+    <value>Ја уредува избраната задача.</value>
+  </data>
+  <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
+    <value>Не можете да го уредите овој тип задача во CLI.</value>
+  </data>
+  <data name="Task_Field_Choose" xml:space="preserve">
+    <value>Изберете задача:</value>
+  </data>
+  <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
+    <value>Нова задача</value>
+  </data>
+  <data name="Task_LastExecution_State" xml:space="preserve">
+    <value>Состојба</value>
+  </data>
+  <data name="Task_Launch" xml:space="preserve">
+    <value>Стартувај</value>
+  </data>
+  <data name="Task_Launch_Hint" xml:space="preserve">
+    <value>Ја стартува избраната задача.</value>
+  </data>
+  <data name="Task_List" xml:space="preserve">
+    <value>Задачи</value>
+  </data>
+  <data name="Task_OpenLog" xml:space="preserve">
+    <value>Отвори последен дневник</value>
+  </data>
+  <data name="Task_Restore" xml:space="preserve">
+    <value>Врати</value>
+  </data>
+  <data name="Task_Status_FailedSeeLog" xml:space="preserve">
+    <value>Неуспешно (видете отворен дневник)</value>
+  </data>
+  <data name="Task_Status_InProgress" xml:space="preserve">
+    <value>Задачата е во тек...</value>
+  </data>
+  <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
+    <value>Делумно завршено. Поради квотата на складиштето, некои датотеки беа прескокнати овој пат. Преостануваат {0} датотеки со {1} GB.</value>
+  </data>
+  <data name="Task_Status_Succesfull" xml:space="preserve">
+    <value>Успешно</value>
+  </data>
+  <data name="Task_Status_Unknown" xml:space="preserve">
+    <value>Непознато</value>
+  </data>
+  <data name="Task_Validation_NotFound" xml:space="preserve">
+    <value>Задачата '{0}' не е пронајдена.</value>
+  </data>
+  <data name="Task_Validation_NotSupported" xml:space="preserve">
+    <value>Овој тип задача не е поддржан.</value>
+  </data>
+  <data name="Task_WindowTitle_Creating" xml:space="preserve">
+    <value>Создавање</value>
+  </data>
+  <data name="Task_WindowTitle_Editing" xml:space="preserve">
+    <value>Уредување</value>
+  </data>
+  <data name="TechnicalTool_Close" xml:space="preserve">
+    <value>Затвори</value>
+  </data>
+  <data name="TechnicalTool_Completed" xml:space="preserve">
+    <value>Операцијата заврши успешно.</value>
+  </data>
+  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
+    <value>Компресирај Brotli</value>
+  </data>
+  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
+    <value>Декомпресирај Brotli</value>
+  </data>
+  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
+    <value>Дешифрирај AES-256</value>
+  </data>
+  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
+    <value>Шифрирај AES-256</value>
+  </data>
+  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
+    <value>Датотеката не постои:</value>
+  </data>
+  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
+    <value>Внесете лозинка.</value>
+  </data>
+  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
+    <value>Наведете ги патеките на изворната и излезната датотека.</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
+    <value>AES-256 шифрирано (*.{0})</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
+    <value>Сите датотеки</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
+    <value>Brotli компресирано (*.brotli)</value>
+  </data>
+  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
+    <value>Компресирај Brotli…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
+    <value>Декомпресирај Brotli…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
+    <value>Дешифрирај AES-256…</value>
+  </data>
+  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
+    <value>Шифрирај AES-256…</value>
+  </data>
+  <data name="TechnicalTool_OutputFile" xml:space="preserve">
+    <value>Излезна датотека:</value>
+  </data>
+  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
+    <value>Изберете излезна датотека</value>
+  </data>
+  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
+    <value>Изберете изворна датотека</value>
+  </data>
+  <data name="TechnicalTool_Run" xml:space="preserve">
+    <value>Изврши</value>
+  </data>
+  <data name="TechnicalTool_SourceFile" xml:space="preserve">
+    <value>Изворна датотека:</value>
+  </data>
+  <data name="Theme_Title" xml:space="preserve">
+    <value>Тема</value>
+  </data>
+  <data name="Theme_Value_Dark" xml:space="preserve">
+    <value>Темна</value>
+  </data>
+  <data name="Theme_Value_Light" xml:space="preserve">
+    <value>Светла</value>
+  </data>
+  <data name="Time_Field_Elapsed" xml:space="preserve">
+    <value>Поминато:</value>
+  </data>
+  <data name="Time_Field_Hour" xml:space="preserve">
+    <value>Час:</value>
+  </data>
+  <data name="Time_Field_Minute" xml:space="preserve">
+    <value>Минута:</value>
+  </data>
+  <data name="TimeoutTask_Title" xml:space="preserve">
+    <value>Чекање на истек на време...</value>
+  </data>
+  <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
+    <value>Предупредување за анализа на сертификат: {0}</value>
+  </data>
+  <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
+    <value>Потврдете го идентитетот на сертификатот надвор од каналот, потоа кликнете Зачувај повторно за да го зачувате.</value>
+  </data>
+  <data name="TrustDetected_Ftps_Title" xml:space="preserve">
+    <value>Сертификат на FTPS-серверот е детектиран за време на тестирањето.</value>
+  </data>
+  <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
+    <value>Сертификат (суров hex): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_DnsName" xml:space="preserve">
+    <value>DNS-име: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Encryption" xml:space="preserve">
+    <value>Шифрирање: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
+    <value>Отпечаток (SHA-256): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Folder" xml:space="preserve">
+    <value>Папка: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Host" xml:space="preserve">
+    <value>Домаќин: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Issuer" xml:space="preserve">
+    <value>Издавач: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Port" xml:space="preserve">
+    <value>Порта: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
+    <value>Алгоритам за јавен клуч: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
+    <value>Големина на јавен клуч: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
+    <value>Сериски број: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
+    <value>Алгоритам за потпис: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Subject" xml:space="preserve">
+    <value>Субјект: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
+    <value>Алтернативни имиња на субјектот: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
+    <value>Отпечаток: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_User" xml:space="preserve">
+    <value>Корисник: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
+    <value>Важи од (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
+    <value>Важи до (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
+    <value>Анализирани детали на сертификатот:</value>
+  </data>
+  <data name="TrustDetected_Port_Default" xml:space="preserve">
+    <value>стандардно</value>
+  </data>
+  <data name="TrustDetected_Port_Default22" xml:space="preserve">
+    <value>стандардно (22)</value>
+  </data>
+  <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
+    <value>непознато</value>
+  </data>
+  <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
+    <value>Потврдете го овој отпечаток надвор од каналот, потоа кликнете Зачувај повторно за да го зачувате.</value>
+  </data>
+  <data name="TrustDetected_Sftp_Title" xml:space="preserve">
+    <value>Информации за доверба на SFTP-серверот детектирани за време на тестирањето.</value>
+  </data>
+  <data name="TrustedCertificate_Field" xml:space="preserve">
+    <value>Доверлив сертификат (hex):</value>
+  </data>
+  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
+    <value>Прикачи папка на сервер</value>
+  </data>
+  <data name="UploadFolderTask_Help" xml:space="preserve">
+    <value>Можете да ја прикачите содржината на папката со препишување на веќе постоечките датотеки.</value>
+  </data>
+  <data name="Url_Field" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="Url_Field_Validation" xml:space="preserve">
+    <value>URL не е наведен.</value>
+  </data>
+  <data name="User_Field" xml:space="preserve">
+    <value>Корисник:</value>
+  </data>
+  <data name="User_Field_Validation" xml:space="preserve">
+    <value>Корисникот не е наведен.</value>
+  </data>
+  <data name="Winget_Description" xml:space="preserve">
+    <value>Направете резервна копија/синхронизирајте ги вашите податоци на Windows, Linux.
+Увезете фотографии од телефонот преку WI-FI и повеќе.
+
+Поддржани јазици: англиски, арапски, бенгалски, кинески, француски, германски, хинди, индонезиски, италијански, јапонски, маратхи, нигериски пиџин, португалски, руски, шпански, тамилски, телугу, турски, украински, урду, виетнамски, кантонски кинески
+
+Функции:
+- Инкрементално резервно копирање со дедупликација на датотеки и поддршка за SFTP, FTPS, SMB/CIFS транспорт;
+- Синхронизација на датотеки помеѓу уреди со централизирано складиште и поддршка за верзионирање;
+- Увоз на медиуми - Увезете аудио, фотографии, видеа од SD-картичка на камера, рекордер; фотографии и видеа од вашиот телефон преку WI-FI преку апликација FTPS-сервер со шаблонски имиња на датотеки или преку MTP;
+- P2P пренос на датотеки со шифрирање помеѓу уреди;
+- Конзола за планирање автоматизација;
+- AES-256 шифрирање.
+
+Платформи: Windows 11 x64, ARM64 или Ubuntu 24+.</value>
+  </data>
+  <data name="Winget_ShortDescription" xml:space="preserve">
+    <value>BUtil создава инкрементални резервни копии, инкрементална синхронизација и увезува мултимедија на вашиот компјутер со дедупликација и поддршка за FTPS, SFTP, SMB/CIFS транспорт за Windows и Linux.</value>
+  </data>
+</root>

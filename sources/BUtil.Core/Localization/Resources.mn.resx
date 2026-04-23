@@ -1,0 +1,995 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="_Technical_NsisLanguage" xml:space="preserve">
+    <value>Mongolian</value>
+  </data>
+  <data name="_Technical_WingetLocale" xml:space="preserve">
+    <value>mn-MN</value>
+  </data>
+  <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
+    <value>Юу ч хийхгүй</value>
+  </data>
+  <data name="AfterTaskSelection_Field" xml:space="preserve">
+    <value>Даалгавар дууссаны дараа:</value>
+  </data>
+  <data name="AfterTaskSelection_Help" xml:space="preserve">
+    <value>Хэрвээ та 'юу ч хийхгүй'-ээс өөр зүйл сонговол
+програм нь системийг тохируулж танд дараагийн
+нэвтрэлтэд алдаа эсвэл сэрэмжлүүлэг
+бүртгэгдсэн тохиолдолд тайлан харуулна.</value>
+  </data>
+  <data name="AfterTaskSelection_LogOff" xml:space="preserve">
+    <value>Гарах</value>
+  </data>
+  <data name="AfterTaskSelection_Reboot" xml:space="preserve">
+    <value>Дахин ачаалах</value>
+  </data>
+  <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
+    <value>Унтраах</value>
+  </data>
+  <data name="Application_NewVersion_Notification" xml:space="preserve">
+    <value>Шинэ {0} хувилбар бэлэн боллоо.</value>
+  </data>
+  <data name="BackupVersion_Button_Delete" xml:space="preserve">
+    <value>Хувилбарыг устгах</value>
+  </data>
+  <data name="BackupVersion_Changes_Title" xml:space="preserve">
+    <value>Өөрчлөлтүүд</value>
+  </data>
+  <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
+    <value>Та "{0}" хувилбарыг устгахыг үнэхээр хүсэж байна уу?
+
+Устгагдсан хувилбарын өөрчлөлтүүд "{1}" хувилбарын хэсэг болно.</value>
+  </data>
+  <data name="BackupVersion_Files_Title" xml:space="preserve">
+    <value>Файлууд</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
+    <value>Тэмдэглэл: {0}</value>
+  </data>
+  <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
+    <value>Сонгосны тэмдэглэл...</value>
+  </data>
+  <data name="BackupVersion_Select" xml:space="preserve">
+    <value>Сонгосон хувилбарыг нээх...</value>
+  </data>
+  <data name="BackupVersion_Selector_Title" xml:space="preserve">
+    <value>ХУВИЛБАР СОНГОХ</value>
+  </data>
+  <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
+    <value>(бүх хувилбарууд санах ойд {0} эзэлдэг)</value>
+  </data>
+  <data name="BackupVersion_Versions_Title" xml:space="preserve">
+    <value>ХУВИЛБАРУУД</value>
+  </data>
+  <data name="BackupVersion_Viewer_Help" xml:space="preserve">
+    <value>Модноос сэргээхийг хүссэн файл эсвэл хавтсаа сонгоод "Сэргээх" дарна уу.</value>
+  </data>
+  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
+    <value>Серверт холбогдох нь гэнэт тасарлаа (Client болон Server-ийн нууц үг ижил үү?)</value>
+  </data>
+  <data name="Button_Cancel" xml:space="preserve">
+    <value>Цуцлах</value>
+  </data>
+  <data name="Button_Close" xml:space="preserve">
+    <value>Хаах</value>
+  </data>
+  <data name="Button_Continue" xml:space="preserve">
+    <value>Үргэлжлүүлэх &gt;</value>
+  </data>
+  <data name="Button_CopyToClipboard" xml:space="preserve">
+    <value>Хуулах</value>
+  </data>
+  <data name="Button_Download" xml:space="preserve">
+    <value>Татах</value>
+  </data>
+  <data name="Button_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Button_Remove" xml:space="preserve">
+    <value>Хасах</value>
+  </data>
+  <data name="Button_Save" xml:space="preserve">
+    <value>Хадгалах</value>
+  </data>
+  <data name="CommandLineArguments_Help" xml:space="preserve">
+    <value>Тушаалын мөрийн аргументуудыг харахын тулд {0} руу зочилно уу.</value>
+  </data>
+  <data name="CommandLineArguments_Invalid" xml:space="preserve">
+    <value>Тушаалын мөрийн аргументууд буруу байна.</value>
+  </data>
+  <data name="DataStorage_Data_Saving" xml:space="preserve">
+    <value>Санах ойд өгөгдөл бичиж байна</value>
+  </data>
+  <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
+    <value>Холболтын скрипт:</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
+    <value>Салгах скрипт:</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
+    <value>Алдаатай дууслаа</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
+    <value>Амжилттай дууслаа</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
+    <value>Байршуулах хязгаар, ГБ:</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
+    <value>Нэг даалгаврын гүйцэтгэлийн үед санах ойд илгээх өгөгдлийн хэмжээг хязгаарладаг. 0 - хязгааргүй.
+Квот хэтэрсэн үед бусад файлуудыг алгасаж дараагийн удаа боловсруулна.
+Хэрэглээний хувилбар: Та алсын серверт өгөгдөл хуулж байна. Асуудал байна: ISP хэдэн гигабайтын дараа байршуулах хурдыг бууруулдаг. Энэ тохиргоо нь үүнийг шийдвэрлэх боломжийг олгоно.</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
+    <value>Квот 0 (хэрэглэхгүй) эсвэл 0-ээс их утга байх ёстой.</value>
+  </data>
+  <data name="DataStorage_Maintenance" xml:space="preserve">
+    <value>Өгөгдлийн сангийн засвар үйлчилгээ</value>
+  </data>
+  <data name="DataStorage_Script_Help" xml:space="preserve">
+    <value>Хэрэв хавтас зарим тушаалуудыг ажиллуулсны дараа боломжтой болвол холболт болон салгахад зориулсан {0} скриптүүдийг заана уу.</value>
+  </data>
+  <data name="DataStorage_Scripts_Header" xml:space="preserve">
+    <value>Скриптүүд (холбохын өмнө / салгасны дараа)</value>
+  </data>
+  <data name="DataStorage_State_Get" xml:space="preserve">
+    <value>Санах ойн төлөвийг авах</value>
+  </data>
+  <data name="DataStorage_State_Saving" xml:space="preserve">
+    <value>Санах ойн төлөвийг бичиж байна</value>
+  </data>
+  <data name="DataStorage_Title" xml:space="preserve">
+    <value>Санах ой</value>
+  </data>
+  <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
+    <value>Санах ой заагдаагүй байна.</value>
+  </data>
+  <data name="Days_Field_Choose" xml:space="preserve">
+    <value>Долоо хоногийн өдрүүдийг сонгоно уу:</value>
+  </data>
+  <data name="Days_Friday" xml:space="preserve">
+    <value>Баасан</value>
+  </data>
+  <data name="Days_Monday" xml:space="preserve">
+    <value>Даваа</value>
+  </data>
+  <data name="Days_Saturday" xml:space="preserve">
+    <value>Бямба</value>
+  </data>
+  <data name="Days_Sunday" xml:space="preserve">
+    <value>Ням</value>
+  </data>
+  <data name="Days_Thursday" xml:space="preserve">
+    <value>Пүрэв</value>
+  </data>
+  <data name="Days_Tuesday" xml:space="preserve">
+    <value>Мягмар</value>
+  </data>
+  <data name="Days_Wednesday" xml:space="preserve">
+    <value>Лхагва</value>
+  </data>
+  <data name="DirectoryStorage" xml:space="preserve">
+    <value>Лавлах</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
+    <value>Хавтас:</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
+    <value>Лавлах заагдаагүй байна.</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
+    <value>"{0}" лавлах олдсонгүй.</value>
+  </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>Хугацаа (минут, 0 - хязгааргүй):</value>
+  </data>
+  <data name="Field_Device" xml:space="preserve">
+    <value>Төхөөрөмж:</value>
+  </data>
+  <data name="Field_Device_Validation_Empty" xml:space="preserve">
+    <value>Төхөөрөмж заагдаагүй байна.</value>
+  </data>
+  <data name="Field_Device_Validation_NotFound" xml:space="preserve">
+    <value>Төхөөрөмж олдсонгүй.</value>
+  </data>
+  <data name="Field_File_Browse" xml:space="preserve">
+    <value>Файл сонгох</value>
+  </data>
+  <data name="Field_Folder" xml:space="preserve">
+    <value>Хавтас:</value>
+  </data>
+  <data name="Field_Folder_Browse" xml:space="preserve">
+    <value>Хайх</value>
+  </data>
+  <data name="Field_Folder_Validation_Empty" xml:space="preserve">
+    <value>Хавтас заагдаагүй байна.</value>
+  </data>
+  <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
+    <value>Хавтас олдсонгүй.</value>
+  </data>
+  <data name="Field_TransportProtocol" xml:space="preserve">
+    <value>Протокол:</value>
+  </data>
+  <data name="Field_Version" xml:space="preserve">
+    <value>Хувилбар:</value>
+  </data>
+  <data name="File_Deleting" xml:space="preserve">
+    <value>"{0}" устгаж байна</value>
+  </data>
+  <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
+    <value>Бурэн бус байдлыг шалгах скрипт.ps1</value>
+  </data>
+  <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
+    <value>Бүрэн бүтэн байдлыг шалгах скриптүүдийг хадгалж байна</value>
+  </data>
+  <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
+    <value>Үүнээс хуучин файлуудыг боловсруулах:</value>
+  </data>
+  <data name="File_List_Saving" xml:space="preserve">
+    <value>Файлуудыг хадгалж байна</value>
+  </data>
+  <data name="File_Moving" xml:space="preserve">
+    <value>"{0}"-г "{1}" руу зөөж байна</value>
+  </data>
+  <data name="File_Saving" xml:space="preserve">
+    <value>"{0}" хадгалж байна</value>
+  </data>
+  <data name="File_Uploading" xml:space="preserve">
+    <value>"{0}" байршуулж байна</value>
+  </data>
+  <data name="FingerPrintSHA256_Field" xml:space="preserve">
+    <value>SHA-256 хурууны хээ:</value>
+  </data>
+  <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
+    <value>SHA-256 хурууны хээ заагдаагүй байна.</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
+    <value>Тодорхой</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
+    <value>Далд</value>
+  </data>
+  <data name="Ftps_Field_Encryption" xml:space="preserve">
+    <value>SSL/TTS шифрлэлт:</value>
+  </data>
+  <data name="FtpsServerStartTask_Name" xml:space="preserve">
+    <value>FTPS серверийг эхлүүлэх</value>
+  </data>
+  <data name="FtpsServerTask_Create" xml:space="preserve">
+    <value>Хавтсыг сүлжээгээр хуваалцах (FTPS сервер)</value>
+  </data>
+  <data name="FtpsServerTask_Help" xml:space="preserve">
+    <value>Та ямар ч хавтсыг FTPS протоколоор (өөрийн гарын үсгийн гэрчилгээтэй тодорхой шифрлэлт) дотоод сүлжээнд унших-бичих хандалтаар хуваалцаж болно.</value>
+  </data>
+  <data name="Icons_Help_Link" xml:space="preserve">
+    <value>Текстдээ тэмдэгт нэмэх</value>
+  </data>
+  <data name="ImportMediaTask_AllFiles" xml:space="preserve">
+    <value>Бүх файлуудыг импортлох</value>
+  </data>
+  <data name="ImportMediaTask_Create" xml:space="preserve">
+    <value>Медиа импортлох даалгавар</value>
+  </data>
+  <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
+    <value>"{0}" медиа импортын даалгаврыг засварлах</value>
+  </data>
+  <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
+    <value>Гаралтын хавтас:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
+    <value>Файлын нэрний хувиргалт:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
+    <value>Жишээ:
+Та {0} файлтай гэж төсөөлөөрэй ({1}-д өөрчлөгдсөн).
+Энэ лавлах болон загвар мөрөөр файл дараах байдлаар хадгалагдана:
+{2}</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
+    <value>Дэмжигдсэн токенууд:
+{DATE:Format} - Заасан форматаар файлын өөрчлөлтийн огноог оруулна.
+Бүх сонголтуудыг харахын тулд "C# DateTime format" гэж хайна уу.</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
+    <value>Хувиргасан файлын нэр хоосон байна.</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
+    <value>Файлын нэрний хувиргалтын мөр буруу байна.</value>
+  </data>
+  <data name="ImportMediaTask_File" xml:space="preserve">
+    <value>"{0}" импортлож байна</value>
+  </data>
+  <data name="ImportMediaTask_Help" xml:space="preserve">
+    <value>Камерын SD картнаас аудио, зураг, видеог импортлоно; утаснаасаа WI-FI-аар FTP серверийн программаар загвар файлын нэрийг ашиглан зураг, видеог импортлоно.
+
+Утсан дээрх FTP серверийн программаар WI-FI-аар файл дамжуулах тохиргоог програмын вэбсайтаас харна уу.</value>
+  </data>
+  <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
+    <value>Өгөгдлийн эх үүсвэрийг импортлох</value>
+  </data>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
+    <value>Аль хэдийн импортлогдсон файлуудыг алгасах</value>
+  </data>
+  <data name="ImproveIt_Message" xml:space="preserve">
+    <value>Тодорхойгүй алдаа гарлаа.
+
+Таны ширээний компьютерт хадгалагдсан мэдээллийг
+"{0}"
+хөгжүүлэгчидтэй холбогдоно уу.
+
+Програм одоо хаагдана.</value>
+  </data>
+  <data name="IncrementalBackup_Help" xml:space="preserve">
+    <value>Нэмэгдэл нөөцлөлтийн хамгийн энгийн хэлбэр нь сүүлийн нөөцлөлтөөс хойш өөрчлөгдсөн файлуудыг олох, бүртгэх, хадгалахаас бүрдэнэ.
+
+Өөрчлөлт ихэвчлэн бага байдаг тул нэмэгдэл нөөцлөлт нь бүрэн нөөцлөлтөөс хамаагүй жижиг бөгөөд хурдан байдаг.
+
+Жишээ нь, Баасан гарагийн бүрэн нөөцлөлтийн дараа Даваа гарагийн нөөцлөлт нь зөвхөн Баасан гарагаас хойш өөрчлөгдсөн файлуудыг агуулна. Мягмар гарагийн нөөцлөлт нь зөвхөн Даваа гарагаас хойш өөрчлөгдсөн файлуудыг агуулна гэх мэт.
+
+Хэрэв үүсгэгдсэн хуулбаруудын аль нэг нь, түүний дотор эхний (бүрэн) хуулбар амжилтгүй болвол, сэргээлт дутуу болно.</value>
+  </data>
+  <data name="IncrementalBackup_Title" xml:space="preserve">
+    <value>Нэмэгдэл нөөцлөлт</value>
+  </data>
+  <data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
+    <value>Нэмэгдэл хувилбарыг тооцоолох</value>
+  </data>
+  <data name="IncrementalBackup_Version_Save" xml:space="preserve">
+    <value>Нэмэгдэл хувилбарыг хадгалж байна</value>
+  </data>
+  <data name="IncrementalBackupTask_Create" xml:space="preserve">
+    <value>Нэмэгдэл нөөцлөлтийн даалгавар</value>
+  </data>
+  <data name="Installer_AdminRequired" xml:space="preserve">
+    <value>Бүх хэрэглэгчдэд суулгахад администраторын эрх шаардлагатай.
+Суулгагчийг администратороор ажиллуулна уу эсвэл /CURRENTUSER ашиглана уу.</value>
+  </data>
+  <data name="Installer_AdminRequiredDetailed" xml:space="preserve">
+    <value>Бүх хэрэглэгчдэд суулгахад администраторын эрх шаардлагатай.
+
+Дараахаас сонгоно уу:
+- 'Зөвхөн одоогийн хэрэглэгчид суулгах' эсвэл
+- Энэ суулгагчийг администратороор ажиллуулах</value>
+  </data>
+  <data name="Installer_AllUsersDescription" xml:space="preserve">
+    <value>Програм энэ компьютерийн бүх хэрэглэгчдэд боломжтой болно.</value>
+  </data>
+  <data name="Installer_AllUsersOption" xml:space="preserve">
+    <value>&amp;Бүх хэрэглэгчдэд суулгах (администраторын эрх шаардлагатай)</value>
+  </data>
+  <data name="Installer_ArchRequired" xml:space="preserve">
+    <value>Энэ суулгагч нь Windows-ийн x64 эсвэл arm64 хувилбарыг шаарддаг.</value>
+  </data>
+  <data name="Installer_CurrentUserDescription" xml:space="preserve">
+    <value>Санал болгож байна. Програм зөвхөн таны хэрэглэгчийн бүртгэлд боломжтой болно.</value>
+  </data>
+  <data name="Installer_CurrentUserOption" xml:space="preserve">
+    <value>Зөвхөн одоогийн &amp;хэрэглэгчид суулгах</value>
+  </data>
+  <data name="Installer_InstallingFor" xml:space="preserve">
+    <value>Суулгаж байна:</value>
+  </data>
+  <data name="Installer_InstallModeDescription" xml:space="preserve">
+    <value>BUtil-г зөвхөн өөртөө эсвэл энэ компьютерийн бүх хэрэглэгчдэд суулгах эсэхээ сонгоно уу.</value>
+  </data>
+  <data name="Installer_InstallModeSubtitle" xml:space="preserve">
+    <value>Энэ програмыг хэн ашиглах боломжтойг сонгоно уу</value>
+  </data>
+  <data name="Installer_InstallModeTitle" xml:space="preserve">
+    <value>Суулгалтын төрлийг сонгох</value>
+  </data>
+  <data name="Installer_LaunchApp" xml:space="preserve">
+    <value>Програмыг ажиллуулах</value>
+  </data>
+  <data name="KeyFile_Field" xml:space="preserve">
+    <value>Түлхүүр файл:</value>
+  </data>
+  <data name="LeftMenu_Encryption" xml:space="preserve">
+    <value>Шифрлэлт</value>
+  </data>
+  <data name="LeftMenu_What" xml:space="preserve">
+    <value>Юу?</value>
+  </data>
+  <data name="LeftMenu_What_Hint" xml:space="preserve">
+    <value>Эндээс та боловсруулах шаардлагатай хавтас, файлуудыг нэмж болно.</value>
+  </data>
+  <data name="LeftMenu_What_Validation" xml:space="preserve">
+    <value>Боловсруулах зүйл байхгүй.</value>
+  </data>
+  <data name="LeftMenu_When" xml:space="preserve">
+    <value>Хэзээ?</value>
+  </data>
+  <data name="LeftMenu_When_Help" xml:space="preserve">
+    <value>Эндээс та хуваарь тохируулж болно. Хуваарь нь даалгаврын эхлэлтийг автоматжуулахад тусална.</value>
+  </data>
+  <data name="LeftMenu_Where" xml:space="preserve">
+    <value>Хаана?</value>
+  </data>
+  <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
+    <value>Explorer-ээс файл, хавтсуудыг энд чирж тавина уу.</value>
+  </data>
+  <data name="LeftMenu_Where_Hint" xml:space="preserve">
+    <value>Энд та файлуудаа хуулахыг хүссэн байршлуудыг нэмж болно.</value>
+  </data>
+  <data name="Local_State_Get" xml:space="preserve">
+    <value>Локал төлөвийг авах</value>
+  </data>
+  <data name="Local_State_Saving" xml:space="preserve">
+    <value>Локал төлөвийг бичиж байна</value>
+  </data>
+  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
+    <value>Лог хавтсыг нээх</value>
+  </data>
+  <data name="LogFile_Marker_Errors" xml:space="preserve">
+    <value>Алдаанууд</value>
+  </data>
+  <data name="LogFile_Marker_Successful" xml:space="preserve">
+    <value>Амжилттай</value>
+  </data>
+  <data name="LogFile_OpenLogs" xml:space="preserve">
+    <value>Логууд</value>
+  </data>
+  <data name="Logs_Menu" xml:space="preserve">
+    <value>Логууд</value>
+  </data>
+  <data name="MainWindow_SearchWatermark" xml:space="preserve">
+    <value>Хайх</value>
+  </data>
+  <data name="Messages_Header_Error" xml:space="preserve">
+    <value>Алдаа</value>
+  </data>
+  <data name="Messages_Header_Information" xml:space="preserve">
+    <value>Мэдээлэл</value>
+  </data>
+  <data name="Messages_Header_Question" xml:space="preserve">
+    <value>Асуулт</value>
+  </data>
+  <data name="Name_Field" xml:space="preserve">
+    <value>Нэр:</value>
+  </data>
+  <data name="Name_Field_Validation" xml:space="preserve">
+    <value>Нэр хоосон эсвэл дэмжигддэггүй замын тэмдэгтүүд агуулж байна.</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>'{0}' нэрний урт нь хязгаараас {1} тэмдэгтээр хэтэрсэн байна.</value>
+  </data>
+  <data name="Name_Title" xml:space="preserve">
+    <value>Нэр</value>
+  </data>
+  <data name="OptionalField_Hint" xml:space="preserve">
+    <value>(заавал биш)</value>
+  </data>
+  <data name="Other_Menu_Title" xml:space="preserve">
+    <value>Бусад</value>
+  </data>
+  <data name="Password_Field" xml:space="preserve">
+    <value>Нууц үг:</value>
+  </data>
+  <data name="Password_Field_Confirm" xml:space="preserve">
+    <value>Нууц үг баталгаажуулах:</value>
+  </data>
+  <data name="Password_Field_Length" xml:space="preserve">
+    <value>Урт:</value>
+  </data>
+  <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
+    <value>Нууц үгүүд таарахгүй байна.</value>
+  </data>
+  <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
+    <value>Нууц үг заагдаагүй байна.</value>
+  </data>
+  <data name="Password_Generate" xml:space="preserve">
+    <value>Нууц үг үүсгэх...</value>
+  </data>
+  <data name="Password_Generator_Header" xml:space="preserve">
+    <value>Нууц үг үүсгэгч</value>
+  </data>
+  <data name="Password_Help" xml:space="preserve">
+    <value>Нууц үгний зөвлөмжит хамгийн бага урт нь 50 тэмдэгт ба түүнээс дээш.</value>
+  </data>
+  <data name="Password_Use" xml:space="preserve">
+    <value>Ашиглах</value>
+  </data>
+  <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
+    <value>Лавлахаас "{0}" файлууд олдсонгүй. 
+
+Энэ файлыг агуулсан лавлахыг заана уу.</value>
+  </data>
+  <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
+    <value>Төлөвийг уншиж чадахгүй байна.</value>
+  </data>
+  <data name="Server_Field_Address" xml:space="preserve">
+    <value>Серверийн нэр:</value>
+  </data>
+  <data name="Server_Field_Address_Validation" xml:space="preserve">
+    <value>Серверийн нэр заагдаагүй байна.</value>
+  </data>
+  <data name="Server_Field_Port" xml:space="preserve">
+    <value>Порт:</value>
+  </data>
+  <data name="Server_Field_Port_Validation" xml:space="preserve">
+    <value>Порт буруу байна.</value>
+  </data>
+  <data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
+    <value>Нууц үг болон түлхүүр файл хоёулаа хоосон байна.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
+    <value>SFTP хавтас / тэмдэгтээр төгсөж болохгүй.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
+    <value>SFTP хавтас / тэмдэгтээр эхлэх ёстой.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
+    <value>SFTP хавтас / зөвшөөрөгдөхгүй. Хавтас нь илүү тодорхой хавтас руу заах ёстой.</value>
+  </data>
+  <data name="SourceItem_AddFolders" xml:space="preserve">
+    <value>Хавтас нэмэх...</value>
+  </data>
+  <data name="SourceItem_OpenInExplorer" xml:space="preserve">
+    <value>Explorer-д нээх...</value>
+  </data>
+  <data name="SourceItem_State_Get" xml:space="preserve">
+    <value>"{0}" эх элементийн төлөвийг авах</value>
+  </data>
+  <data name="SourceItem_Validation_Empty" xml:space="preserve">
+    <value>Боловсруулах зүйл байхгүй.</value>
+  </data>
+  <data name="SourceItem_Validation_NotExists" xml:space="preserve">
+    <value>"{0}" олдсонгүй.</value>
+  </data>
+  <data name="State_File_Get" xml:space="preserve">
+    <value>"{0}" файлын төлөвийг авах</value>
+  </data>
+  <data name="State_LoadFromEverywhere" xml:space="preserve">
+    <value>Эх элементүүд болон санах ойн төлөвийг авах</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
+    <value>Файл хасах загвар нэмэх</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
+    <value>Файл хасах загвар засварлах</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>Файлуудыг хасах</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
+    <value>.NET дэх файлын глоббинг: Загварууд</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
+    <value>Эндээс файлын глоббинг хасах загваруудыг заана уу. 
+Энэ нь файлын нэр, хавтасны нэр эсвэл тусгай тэмдэгт байж болно. 
+Жишээнүүд: 
+d:\temp, 
+d:\temp\file.txt, 
+d:\temp\**\*.txt эсвэл 
+bin. 
+Дэлгэрэнгүй тайлбарыг дараах линкээс харна уу.</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
+    <value>Хасах загвараар файлуудыг боловсруулахыг алгасна.</value>
+  </data>
+  <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
+    <value>Файл хасах загвар:</value>
+  </data>
+  <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
+    <value>Файл хасах загвар хоосон байна.</value>
+  </data>
+  <data name="StorageItem_Remote_Marker" xml:space="preserve">
+    <value>Алсын</value>
+  </data>
+  <data name="SynchronizationMode_Field" xml:space="preserve">
+    <value>Синхрончлолын горим:</value>
+  </data>
+  <data name="SynchronizationMode_Field_Read" xml:space="preserve">
+    <value>Унших</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
+    <value>Хоёр чиглэлтэй</value>
+  </data>
+  <data name="SynchronizationTask_Create" xml:space="preserve">
+    <value>Синхрончлол</value>
+  </data>
+  <data name="SynchronizationTask_Help" xml:space="preserve">
+    <value>Төвлөрсөн санах ой ашиглан төхөөрөмжүүдийн хооронд файлуудын хоёр чиглэлтэй синхрончлол.</value>
+  </data>
+  <data name="Task_Create" xml:space="preserve">
+    <value>Шинэ</value>
+  </data>
+  <data name="Task_Create_Hint" xml:space="preserve">
+    <value>Шинэ даалгавар үүсгэнэ.</value>
+  </data>
+  <data name="Task_Delete" xml:space="preserve">
+    <value>Устгах</value>
+  </data>
+  <data name="Task_Delete_Confirm" xml:space="preserve">
+    <value>Та "{0}"-г устгахыг үнэхээр хүсэж байна уу?</value>
+  </data>
+  <data name="Task_Delete_Hint" xml:space="preserve">
+    <value>Сонгосон даалгаврыг устгана.</value>
+  </data>
+  <data name="Task_Duplicate" xml:space="preserve">
+    <value>Хуулбарлах</value>
+  </data>
+  <data name="Task_Edit" xml:space="preserve">
+    <value>Засварлах</value>
+  </data>
+  <data name="Task_Edit_Hint" xml:space="preserve">
+    <value>Сонгосон даалгаврыг засварлана.</value>
+  </data>
+  <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
+    <value>Та CLI-д энэ төрлийн даалгаврыг засварлах боломжгүй.</value>
+  </data>
+  <data name="Task_Field_Choose" xml:space="preserve">
+    <value>Даалгавар сонгоно уу:</value>
+  </data>
+  <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
+    <value>Шинэ даалгавар</value>
+  </data>
+  <data name="Task_LastExecution_State" xml:space="preserve">
+    <value>Төлөв</value>
+  </data>
+  <data name="Task_Launch" xml:space="preserve">
+    <value>Эхлүүлэх</value>
+  </data>
+  <data name="Task_Launch_Hint" xml:space="preserve">
+    <value>Сонгосон даалгаврыг эхлүүлнэ.</value>
+  </data>
+  <data name="Task_List" xml:space="preserve">
+    <value>Даалгаврууд</value>
+  </data>
+  <data name="Task_OpenLog" xml:space="preserve">
+    <value>Сүүлийн логийг нээх</value>
+  </data>
+  <data name="Task_Restore" xml:space="preserve">
+    <value>Сэргээх</value>
+  </data>
+  <data name="Task_Status_FailedSeeLog" xml:space="preserve">
+    <value>Амжилтгүй (нээгдсэн логийг харна уу)</value>
+  </data>
+  <data name="Task_Status_InProgress" xml:space="preserve">
+    <value>Даалгавар гүйцэтгэгдэж байна...</value>
+  </data>
+  <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
+    <value>Хэсэгчилсэн дууссан. Санах ойн квотын улмаас зарим файлууд энэ удаа алгасагдсан. Үлдсэн {0} файл {1} ГБ.</value>
+  </data>
+  <data name="Task_Status_Succesfull" xml:space="preserve">
+    <value>Амжилттай</value>
+  </data>
+  <data name="Task_Status_Unknown" xml:space="preserve">
+    <value>Тодорхойгүй</value>
+  </data>
+  <data name="Task_Validation_NotFound" xml:space="preserve">
+    <value>'{0}' даалгавар олдсонгүй.</value>
+  </data>
+  <data name="Task_Validation_NotSupported" xml:space="preserve">
+    <value>Энэ төрлийн даалгавар дэмжигддэггүй.</value>
+  </data>
+  <data name="Task_WindowTitle_Creating" xml:space="preserve">
+    <value>Үүсгэж байна</value>
+  </data>
+  <data name="Task_WindowTitle_Editing" xml:space="preserve">
+    <value>Засварлаж байна</value>
+  </data>
+  <data name="TechnicalTool_Close" xml:space="preserve">
+    <value>Хаах</value>
+  </data>
+  <data name="TechnicalTool_Completed" xml:space="preserve">
+    <value>Үйлдэл амжилттай дууслаа.</value>
+  </data>
+  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
+    <value>Brotli шахах</value>
+  </data>
+  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
+    <value>Brotli задлах</value>
+  </data>
+  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
+    <value>AES-256 шифр тайлах</value>
+  </data>
+  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
+    <value>AES-256 шифрлэх</value>
+  </data>
+  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
+    <value>Файл олдсонгүй:</value>
+  </data>
+  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
+    <value>Нууц үг оруулна уу.</value>
+  </data>
+  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
+    <value>Эх болон гаралтын файлын замыг зааж өгнө үү.</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
+    <value>AES-256 шифрлэгдсэн (*.{0})</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
+    <value>Бүх файлууд</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
+    <value>Brotli шахагдсан (*.brotli)</value>
+  </data>
+  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
+    <value>Brotli шахах…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
+    <value>Brotli задлах…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
+    <value>AES-256 шифр тайлах…</value>
+  </data>
+  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
+    <value>AES-256 шифрлэх…</value>
+  </data>
+  <data name="TechnicalTool_OutputFile" xml:space="preserve">
+    <value>Гаралтын файл:</value>
+  </data>
+  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
+    <value>Гаралтын файл сонгох</value>
+  </data>
+  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
+    <value>Эх файл сонгох</value>
+  </data>
+  <data name="TechnicalTool_Run" xml:space="preserve">
+    <value>Ажиллуулах</value>
+  </data>
+  <data name="TechnicalTool_SourceFile" xml:space="preserve">
+    <value>Эх файл:</value>
+  </data>
+  <data name="Theme_Title" xml:space="preserve">
+    <value>Загвар</value>
+  </data>
+  <data name="Theme_Value_Dark" xml:space="preserve">
+    <value>Харанхуй</value>
+  </data>
+  <data name="Theme_Value_Light" xml:space="preserve">
+    <value>Гэрэлтэй</value>
+  </data>
+  <data name="Time_Field_Elapsed" xml:space="preserve">
+    <value>Өнгөрсөн:</value>
+  </data>
+  <data name="Time_Field_Hour" xml:space="preserve">
+    <value>Цаг:</value>
+  </data>
+  <data name="Time_Field_Minute" xml:space="preserve">
+    <value>Минут:</value>
+  </data>
+  <data name="TimeoutTask_Title" xml:space="preserve">
+    <value>Хугацаа хүлээж байна...</value>
+  </data>
+  <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
+    <value>Гэрчилгээ задлах сэрэмжлүүлэг: {0}</value>
+  </data>
+  <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
+    <value>Гэрчилгээний таниулгыг гадны сувгаар шалгаж, дараа нь Хадгалах дарна уу.</value>
+  </data>
+  <data name="TrustDetected_Ftps_Title" xml:space="preserve">
+    <value>Тест хийх явцад FTPS серверийн гэрчилгээ илэрлээ.</value>
+  </data>
+  <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
+    <value>Гэрчилгээ (түүхий hex): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_DnsName" xml:space="preserve">
+    <value>DNS нэр: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Encryption" xml:space="preserve">
+    <value>Шифрлэлт: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
+    <value>Хурууны хээ (SHA-256): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Folder" xml:space="preserve">
+    <value>Хавтас: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Host" xml:space="preserve">
+    <value>Хост: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Issuer" xml:space="preserve">
+    <value>Олгогч: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Port" xml:space="preserve">
+    <value>Порт: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
+    <value>Нийтийн түлхүүрийн алгоритм: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
+    <value>Нийтийн түлхүүрийн хэмжээ: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
+    <value>Цуваа дугаар: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
+    <value>Гарын үсгийн алгоритм: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Subject" xml:space="preserve">
+    <value>Субъект: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
+    <value>Субъектийн өөр нэрс: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
+    <value>Хурууны хээ: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_User" xml:space="preserve">
+    <value>Хэрэглэгч: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
+    <value>Хүчинтэй эхлэх (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
+    <value>Хүчинтэй дуусах (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
+    <value>Задлагдсан гэрчилгээний дэлгэрэнгүй:</value>
+  </data>
+  <data name="TrustDetected_Port_Default" xml:space="preserve">
+    <value>өгөгдмөл</value>
+  </data>
+  <data name="TrustDetected_Port_Default22" xml:space="preserve">
+    <value>өгөгдмөл (22)</value>
+  </data>
+  <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
+    <value>тодорхойгүй</value>
+  </data>
+  <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
+    <value>Энэ хурууны хээг гадны сувгаар шалгаж, дараа нь Хадгалах дарна уу.</value>
+  </data>
+  <data name="TrustDetected_Sftp_Title" xml:space="preserve">
+    <value>Тест хийх явцад SFTP серверийн итгэлцлийн мэдээлэл илэрлээ.</value>
+  </data>
+  <data name="TrustedCertificate_Field" xml:space="preserve">
+    <value>Итгэмжлэгдсэн гэрчилгээ (hex):</value>
+  </data>
+  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
+    <value>Хавтсыг серверт байршуулах</value>
+  </data>
+  <data name="UploadFolderTask_Help" xml:space="preserve">
+    <value>Та хавтасны агуулгыг одоо байгаа файлуудыг дарж бичих замаар байршуулж болно.</value>
+  </data>
+  <data name="Url_Field" xml:space="preserve">
+    <value>Url:</value>
+  </data>
+  <data name="Url_Field_Validation" xml:space="preserve">
+    <value>Url заагдаагүй байна.</value>
+  </data>
+  <data name="User_Field" xml:space="preserve">
+    <value>Хэрэглэгч:</value>
+  </data>
+  <data name="User_Field_Validation" xml:space="preserve">
+    <value>Хэрэглэгч заагдаагүй байна.</value>
+  </data>
+  <data name="Winget_Description" xml:space="preserve">
+    <value>Windows, Linux дээр өгөгдлөө нөөцлөх/синхрончлох.
+Утаснаас WI-FI-аар зураг импортлох болон бусад.
+
+Дэмжигдсэн хэлүүд: Англи, Араб, Бенгал, Хятад, Франц, Герман, Хинди, Индонези, Итали, Япон, Маратхи, Нигерийн Пиджин, Португал, Орос, Испани, Тамил, Телугу, Турк, Украйн, Урду, Вьетнам, Юэ Хятад
+
+Онцлогууд:
+- Файлын давхардлыг арилгах болон SFTP, FTPS, SMB/CIFS дамжуулалтын дэмжлэгтэй нэмэгдэл нөөцлөлт;
+- Төвлөрсөн санах ой болон хувилбарын дэмжлэгтэй төхөөрөмжүүдийн хооронд файл синхрончлох;
+- Медиа импорт - Камерын SD картнаас аудио, зураг, видео импортлох; утаснаасаа WI-FI-аар FTPS серверийн програмаар загвар файлын нэр эсвэл MTP ашиглан зураг, видео импортлох;
+- Төхөөрөмжүүдийн хооронд шифрлэлттэй P2P файл дамжуулалт;
+- Автоматжуулсан хуваарь тохируулах консол;
+- AES-256 шифрлэлт.
+
+Платформ: Windows 11 x64, ARM64 эсвэл Ubuntu 24+.</value>
+  </data>
+  <data name="Winget_ShortDescription" xml:space="preserve">
+    <value>BUtil нь Windows болон Linux-д зориулсан FTPS, SFTP, SMB/CIFS дамжуулалтын дэмжлэг болон давхардлыг арилгах бүхий нэмэгдэл нөөцлөлт, нэмэгдэл синхрончлол үүсгэж, мультимедиа импортлодог.</value>
+  </data>
+</root>
