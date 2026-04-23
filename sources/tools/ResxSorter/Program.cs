@@ -326,7 +326,7 @@ namespace Codice.SortResX
                 writer.WriteLine("LicenseUrl: https://raw.githubusercontent.com/drweb86/butil/refs/heads/master/License.md");
                 writer.WriteLine("Copyright: 2011-CURRENT_YEAR Siarhei Kuchuk");
                 writer.WriteLine("CopyrightUrl: https://raw.githubusercontent.com/drweb86/butil/refs/heads/master/License.md");
-                writer.WriteLine($"ShortDescription: {shortDescription}");
+                writer.WriteLine($"ShortDescription: {YamlDoubleQuoted(shortDescription)}");
                 writer.WriteLine("Description: |");
                 foreach (var line in description.Split('\n'))
                 {
@@ -352,6 +352,27 @@ namespace Codice.SortResX
             var fileName = Path.GetFileNameWithoutExtension(resxPath);
             var dotIndex = fileName.IndexOf('.');
             return dotIndex >= 0 ? fileName[(dotIndex + 1)..] : "";
+        }
+
+        // Double-quoted: plain YAML scalars fail on embedded ':' (e.g. trailing ':' in translations).
+        private static string YamlDoubleQuoted(string value)
+        {
+            var sb = new StringBuilder(value.Length + 2);
+            sb.Append('"');
+            foreach (var ch in value)
+            {
+                switch (ch)
+                {
+                    case '\\': sb.Append("\\\\"); break;
+                    case '"': sb.Append("\\\""); break;
+                    case '\n': sb.Append("\\n"); break;
+                    case '\r': break;
+                    case '\t': sb.Append("\\t"); break;
+                    default: sb.Append(ch); break;
+                }
+            }
+            sb.Append('"');
+            return sb.ToString();
         }
     }
 }
