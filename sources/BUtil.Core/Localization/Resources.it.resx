@@ -470,8 +470,8 @@ Eseguire il programma di installazione come amministratore oppure utilizzare /CU
     <value>Sono necessari i privilegi di amministratore per installare per tutti gli utenti.
 
 Scegliere una delle seguenti opzioni:
-- Selezionare 'Installa solo per l'utente corrente', oppure
-- Eseguire il programma di installazione come amministratore</value>
+- Selezionare 'Installa solo per utente attuale', o
+- Esegui il programma di installazione come amministratore</value>
   </data>
   <data name="Installer_AllUsersDescription" xml:space="preserve">
     <value>L'applicazione sarà disponibile per tutti gli utenti di questo computer.</value>
@@ -486,7 +486,7 @@ Scegliere una delle seguenti opzioni:
     <value>Consigliato. L'applicazione sarà disponibile solo per il proprio account utente.</value>
   </data>
   <data name="Installer_CurrentUserOption" xml:space="preserve">
-    <value>Installa solo per l'&amp;utente corrente</value>
+    <value>Installa solo per utente attuale</value>
   </data>
   <data name="Installer_InstallingFor" xml:space="preserve">
     <value>Installazione per:</value>
@@ -706,7 +706,7 @@ Scegliere una delle seguenti opzioni:
     <value>Lettura</value>
   </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
-    <value>Bidiriezionale</value>
+    <value>Bidirezionale</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Sincronizzazione</value>
