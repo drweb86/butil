@@ -1,0 +1,994 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="_Technical_NsisLanguage" xml:space="preserve">
+    <value>Basque</value>
+  </data>
+  <data name="_Technical_WingetLocale" xml:space="preserve">
+    <value>eu-ES</value>
+  </data>
+  <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
+    <value>Ez egin ezer</value>
+  </data>
+  <data name="AfterTaskSelection_Field" xml:space="preserve">
+    <value>Zereginak amaitu ondoren:</value>
+  </data>
+  <data name="AfterTaskSelection_Help" xml:space="preserve">
+    <value>"Ezer egin" ez den beste zerbait aukeratzen baduzu 
+programak OS konfiguratuko du txostena erakusteko
+hurrengoan, sisteman saioa hasten duzunean akatsak izanez gero 
+edo abisuak erregistratuko dira.</value>
+  </data>
+  <data name="AfterTaskSelection_LogOff" xml:space="preserve">
+    <value>Amaitu saioa</value>
+  </data>
+  <data name="AfterTaskSelection_Reboot" xml:space="preserve">
+    <value>Berrabiarazi</value>
+  </data>
+  <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
+    <value>Itzali</value>
+  </data>
+  <data name="Application_NewVersion_Notification" xml:space="preserve">
+    <value>{0} bertsio berria dago eskuragarri.</value>
+  </data>
+  <data name="BackupVersion_Button_Delete" xml:space="preserve">
+    <value>Delete version</value>
+  </data>
+  <data name="BackupVersion_Changes_Title" xml:space="preserve">
+    <value>Aldaketak</value>
+  </data>
+  <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
+    <value>Benetan "{0}" bertsioa ezabatu nahi duzu?
+
+Ezabatutako bertsio-aldaketak "{1}" bertsioaren zati bihurtuko dira.</value>
+  </data>
+  <data name="BackupVersion_Files_Title" xml:space="preserve">
+    <value>Fitxategiak</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
+    <value>Aldizkaria: {0}</value>
+  </data>
+  <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
+    <value>Hautatutako aldizkaria...</value>
+  </data>
+  <data name="BackupVersion_Select" xml:space="preserve">
+    <value>Ireki hautatutako bertsioa...</value>
+  </data>
+  <data name="BackupVersion_Selector_Title" xml:space="preserve">
+    <value>HAUTATU BERTSIOA</value>
+  </data>
+  <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
+    <value>(Bertsio guztiek {0} biltegian hartzen dute)</value>
+  </data>
+  <data name="BackupVersion_Versions_Title" xml:space="preserve">
+    <value>BERTSIOAK</value>
+  </data>
+  <data name="BackupVersion_Viewer_Help" xml:space="preserve">
+    <value>Hautatu zuhaitzean leheneratu nahi duzun fitxategia edo karpeta eta egin klik "Berreskuratu".</value>
+  </data>
+  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
+    <value>Zerbitzariarekiko konexioa ustekabean amaitu zen (Bezeroaren eta zerbitzariaren pasahitzak berdinak al dira?)</value>
+  </data>
+  <data name="Button_Cancel" xml:space="preserve">
+    <value>Utzi</value>
+  </data>
+  <data name="Button_Close" xml:space="preserve">
+    <value>Itxi</value>
+  </data>
+  <data name="Button_Continue" xml:space="preserve">
+    <value>Jarraitu &gt;</value>
+  </data>
+  <data name="Button_CopyToClipboard" xml:space="preserve">
+    <value>Kopiatu</value>
+  </data>
+  <data name="Button_Download" xml:space="preserve">
+    <value>Deskargatu</value>
+  </data>
+  <data name="Button_OK" xml:space="preserve">
+    <value>Ados</value>
+  </data>
+  <data name="Button_Remove" xml:space="preserve">
+    <value>Kendu</value>
+  </data>
+  <data name="Button_Save" xml:space="preserve">
+    <value>Gorde</value>
+  </data>
+  <data name="CommandLineArguments_Help" xml:space="preserve">
+    <value>Joan {0} komando-lerroko argumentuak ikusteko.</value>
+  </data>
+  <data name="CommandLineArguments_Invalid" xml:space="preserve">
+    <value>Komando-lerroko argumentu baliogabeak.</value>
+  </data>
+  <data name="DataStorage_Data_Saving" xml:space="preserve">
+    <value>Datuak biltegian idaztea</value>
+  </data>
+  <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
+    <value>Konexio-gidoia:</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
+    <value>Deskonexio-gidoia:</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
+    <value>Akatsekin amaitu da</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
+    <value>Arrakastaz amaitu da</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
+    <value>Kargatzeko muga, GB:</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
+    <value>Zeregin baten exekuzioan zehar bidaltzen den datu kopurua biltegiratzera mugatzen du. 0 - mugarik gabe.
+Kuota gainditzen denean, beste fitxategi batzuk saltatu egingo dira eta hurrengoan prozesatu egingo dira.
+Erabilera eszenatokia: datuak urruneko zerbitzarian kopiatzen dituzu. Arazo bat dago: ISP-k kargatzeko abiadura jaisten du hainbat gigabyteren ondoren. Ezarpen honek kudeatzeko aukera ematen dizu.</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
+    <value>Kuota 0 izan behar da (ez da aplikatzen) edo 0tik gorako balioa.</value>
+  </data>
+  <data name="DataStorage_Maintenance" xml:space="preserve">
+    <value>Datuak biltegiratzeko mantentzea</value>
+  </data>
+  <data name="DataStorage_Script_Help" xml:space="preserve">
+    <value>Komando batzuk exekutatu ondoren karpeta erabilgarri badago, zehaztu {0} scriptak konexiorako eta deskonexiorako.</value>
+  </data>
+  <data name="DataStorage_Scripts_Header" xml:space="preserve">
+    <value>Scriptak (muntatu aurretik / desmuntatu ondoren)</value>
+  </data>
+  <data name="DataStorage_State_Get" xml:space="preserve">
+    <value>Lortu biltegiratze egoera</value>
+  </data>
+  <data name="DataStorage_State_Saving" xml:space="preserve">
+    <value>Biltegiratze egoera idazten</value>
+  </data>
+  <data name="DataStorage_Title" xml:space="preserve">
+    <value>Biltegiratzea</value>
+  </data>
+  <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
+    <value>Biltegiratzea ez dago zehaztuta.</value>
+  </data>
+  <data name="Days_Field_Choose" xml:space="preserve">
+    <value>Aukeratu asteko egunak:</value>
+  </data>
+  <data name="Days_Friday" xml:space="preserve">
+    <value>ostirala</value>
+  </data>
+  <data name="Days_Monday" xml:space="preserve">
+    <value>astelehena</value>
+  </data>
+  <data name="Days_Saturday" xml:space="preserve">
+    <value>Larunbata</value>
+  </data>
+  <data name="Days_Sunday" xml:space="preserve">
+    <value>Igandea</value>
+  </data>
+  <data name="Days_Thursday" xml:space="preserve">
+    <value>osteguna</value>
+  </data>
+  <data name="Days_Tuesday" xml:space="preserve">
+    <value>asteartea</value>
+  </data>
+  <data name="Days_Wednesday" xml:space="preserve">
+    <value>asteazkena</value>
+  </data>
+  <data name="DirectoryStorage" xml:space="preserve">
+    <value>Direktorioa</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
+    <value>Karpeta:</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
+    <value>Direktorioa ez dago zehaztuta.</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
+    <value>"{0}" direktorioa ez dago.</value>
+  </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>Iraupena (minutuak, 0 - infinitua):</value>
+  </data>
+  <data name="Field_Device" xml:space="preserve">
+    <value>Gailua:</value>
+  </data>
+  <data name="Field_Device_Validation_Empty" xml:space="preserve">
+    <value>Gailua ez dago zehaztuta.</value>
+  </data>
+  <data name="Field_Device_Validation_NotFound" xml:space="preserve">
+    <value>Ez da gailua aurkitu.</value>
+  </data>
+  <data name="Field_File_Browse" xml:space="preserve">
+    <value>Arakatu fitxategia</value>
+  </data>
+  <data name="Field_Folder" xml:space="preserve">
+    <value>Karpeta:</value>
+  </data>
+  <data name="Field_Folder_Browse" xml:space="preserve">
+    <value>Arakatu</value>
+  </data>
+  <data name="Field_Folder_Validation_Empty" xml:space="preserve">
+    <value>Karpeta ez dago zehaztuta.</value>
+  </data>
+  <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
+    <value>Karpeta ez da existitzen.</value>
+  </data>
+  <data name="Field_TransportProtocol" xml:space="preserve">
+    <value>Protokoloa:</value>
+  </data>
+  <data name="Field_Version" xml:space="preserve">
+    <value>Bertsioa:</value>
+  </data>
+  <data name="File_Deleting" xml:space="preserve">
+    <value>"{0}" ezabatzen</value>
+  </data>
+  <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
+    <value>Integrity verification script.ps1</value>
+  </data>
+  <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
+    <value>Osotasuna egiaztatzeko scriptak gordetzen</value>
+  </data>
+  <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
+    <value>Prozesatu fitxategi zaharragoak:</value>
+  </data>
+  <data name="File_List_Saving" xml:space="preserve">
+    <value>Fitxategiak gordetzen</value>
+  </data>
+  <data name="File_Moving" xml:space="preserve">
+    <value>"{0}" "{1}"ra eramaten</value>
+  </data>
+  <data name="File_Saving" xml:space="preserve">
+    <value>"{0}" gordetzen</value>
+  </data>
+  <data name="File_Uploading" xml:space="preserve">
+    <value>"{0}" kargatzen</value>
+  </data>
+  <data name="FingerPrintSHA256_Field" xml:space="preserve">
+    <value>SHA-256 hatz-marka:</value>
+  </data>
+  <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
+    <value>SHA-256 hatz-marka ez dago zehaztuta.</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
+    <value>Esplizitua</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
+    <value>Inplizitua</value>
+  </data>
+  <data name="Ftps_Field_Encryption" xml:space="preserve">
+    <value>SSL/TTS enkriptatzea:</value>
+  </data>
+  <data name="FtpsServerStartTask_Name" xml:space="preserve">
+    <value>Hasi FTPS zerbitzaria</value>
+  </data>
+  <data name="FtpsServerTask_Create" xml:space="preserve">
+    <value>Partekatu karpeta sarean (FTPS zerbitzaria)</value>
+  </data>
+  <data name="FtpsServerTask_Help" xml:space="preserve">
+    <value>Irakurketa-idazketarako edozein karpeta parteka dezakezu FTPS protokoloaren bidez (zifratze esplizitua norberak sinatutako ziurtagiriarekin) zure sare lokalaren barruan.</value>
+  </data>
+  <data name="Icons_Help_Link" xml:space="preserve">
+    <value>Gehitu karaktere ikonoa zure testuari</value>
+  </data>
+  <data name="ImportMediaTask_AllFiles" xml:space="preserve">
+    <value>Inportatu fitxategi guztiak</value>
+  </data>
+  <data name="ImportMediaTask_Create" xml:space="preserve">
+    <value>Inportatu multimedia zeregina</value>
+  </data>
+  <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
+    <value>Editatu "{0}" multimedia inportatzeko zeregina</value>
+  </data>
+  <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
+    <value>Irteera karpeta:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
+    <value>Fitxategi-izenen eraldaketak:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
+    <value>Adibidea:
+Imajinatu {0} fitxategia duzula ({1} helbidean aldatua).
+Direktorio honekin eta txantiloiaren kate fitxategia honela gordeko da:
+{2}</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
+    <value>Onartutako tokenak:
+{DATA:Formatua} - Fitxategia aldatzeko data zehaztutako formatuan txertatzen du.
+Aukera guztiak ikusteko google "C# DateTime formatua".</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
+    <value>Eraldatu fitxategiaren izena hutsik dago.</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
+    <value>Transformazio fitxategi-izen kate baliogabea.</value>
+  </data>
+  <data name="ImportMediaTask_File" xml:space="preserve">
+    <value>Inportatu "{0}"</value>
+  </data>
+  <data name="ImportMediaTask_Help" xml:space="preserve">
+    <value>Audioak, argazkiak, bideoak inportatzen ditu kameraren SD txarteletik, grabagailutik; Zure telefonoko argazkiak eta bideoak WI-FI bidez FTP zerbitzariaren aplikazioaren bidez txantiloi-fitxategien izenak erabiliz.
+
+Ikusi aplikazioaren webgunea telefonoko FTP Zerbitzariaren aplikazioaren bidez WI-FI bidez fitxategien transmisioa nola konfiguratu behar den dokumentatzeko.</value>
+  </data>
+  <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
+    <value>Inportatu datu-iturria</value>
+  </data>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
+    <value>Saltatu dagoeneko inportatutako fitxategiak</value>
+  </data>
+  <data name="ImproveIt_Message" xml:space="preserve">
+    <value>Ustekabeko errore bat gertatu da.
+
+Mesedez, jarri harremanetan garatzaileekin zure mahaigainean gordetako informazioarekin
+"{0}"
+
+Aplikazioa itxiko da orain.</value>
+  </data>
+  <data name="IncrementalBackup_Help" xml:space="preserve">
+    <value>Babeskopia inkrementalaren forma oinarrizkoena identifikatzean, grabatzean eta, beraz, azken segurtasun-kopia egin zenetik aldatu diren fitxategiak soilik gordetzean datza.
+
+Aldaketak normalean baxuak direnez, segurtasun-kopia inkrementalak askoz txikiagoak eta azkarragoak dira babeskopia osoak baino.
+
+Esate baterako, ostiraleko babeskopia osoa egin ondoren, asteleheneko babeskopiak ostiralaz geroztik aldatutako fitxategiak soilik izango ditu. Astearteko babeskopiak astelehenaz geroztik aldatu diren fitxategiak bakarrik ditu, eta abar. 
+
+Sortutako kopiaren batek huts egiten badu, lehenengoa barne (osoa), zaharberritzea osatu gabe egongo da.</value>
+  </data>
+  <data name="IncrementalBackup_Title" xml:space="preserve">
+    <value>Babeskopia gehigarria</value>
+  </data>
+  <data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
+    <value>Kalkulatu gehitutako bertsioa</value>
+  </data>
+  <data name="IncrementalBackup_Version_Save" xml:space="preserve">
+    <value>Gehitutako bertsioa gordetzen</value>
+  </data>
+  <data name="IncrementalBackupTask_Create" xml:space="preserve">
+    <value>Babeskopia-zeregin gehigarria</value>
+  </data>
+  <data name="Installer_AdminRequired" xml:space="preserve">
+    <value>Erabiltzaile guztientzat instalatzeko administratzaile-pribilegioak behar dira.
+Mesedez, exekutatu instalatzailea administratzaile gisa edo erabili /CURRENTUSER.</value>
+  </data>
+  <data name="Installer_AdminRequiredDetailed" xml:space="preserve">
+    <value>Erabiltzaile guztientzat instalatzeko administratzaile-pribilegioak behar dira.
+
+Mesedez, bai:
+- Aukeratu 'Instalatu uneko erabiltzailearentzat soilik', edo
+- Exekutatu instalatzaile hau administratzaile gisa</value>
+  </data>
+  <data name="Installer_AllUsersDescription" xml:space="preserve">
+    <value>Aplikazioa ordenagailu honetan erabiltzaile guztientzat erabilgarri egongo da.</value>
+  </data>
+  <data name="Installer_AllUsersOption" xml:space="preserve">
+    <value>Instalatu &amp;erabiltzaile guztientzat (administratzaile-pribilegioak behar ditu)</value>
+  </data>
+  <data name="Installer_ArchRequired" xml:space="preserve">
+    <value>Instalatzaile honek Windows-en x64 edo arm64 bertsioa behar du.</value>
+  </data>
+  <data name="Installer_CurrentUserDescription" xml:space="preserve">
+    <value>Gomendagarria. Aplikazioa zure erabiltzaile-kontuan bakarrik egongo da erabilgarri.</value>
+  </data>
+  <data name="Installer_CurrentUserOption" xml:space="preserve">
+    <value>Instalatu &amp;uneko erabiltzailearentzat soilik</value>
+  </data>
+  <data name="Installer_InstallingFor" xml:space="preserve">
+    <value>Instalazioa:</value>
+  </data>
+  <data name="Installer_InstallModeDescription" xml:space="preserve">
+    <value>Mesedez, aukeratu BUtil zuretzako bakarrik edo ordenagailu honen erabiltzaile guztientzat instalatu nahi duzun.</value>
+  </data>
+  <data name="Installer_InstallModeSubtitle" xml:space="preserve">
+    <value>Hautatu nork erabil dezakeen aplikazio hau</value>
+  </data>
+  <data name="Installer_InstallModeTitle" xml:space="preserve">
+    <value>Aukeratu Instalazio mota</value>
+  </data>
+  <data name="Installer_LaunchApp" xml:space="preserve">
+    <value>Abiarazi aplikazioa</value>
+  </data>
+  <data name="KeyFile_Field" xml:space="preserve">
+    <value>Gako fitxategia:</value>
+  </data>
+  <data name="LeftMenu_Encryption" xml:space="preserve">
+    <value>Enkriptatzea</value>
+  </data>
+  <data name="LeftMenu_What" xml:space="preserve">
+    <value>Zer?</value>
+  </data>
+  <data name="LeftMenu_What_Hint" xml:space="preserve">
+    <value>Hemen prozesatu behar dituzun karpetak eta fitxategiak gehi ditzakezu.</value>
+  </data>
+  <data name="LeftMenu_What_Validation" xml:space="preserve">
+    <value>Ez dago prozesatu beharreko elementurik.</value>
+  </data>
+  <data name="LeftMenu_When" xml:space="preserve">
+    <value>Noiz?</value>
+  </data>
+  <data name="LeftMenu_When_Help" xml:space="preserve">
+    <value>Hemen programatzaile bat konfigura dezakezu. Shceduler-ek zereginen abiarazte automatizatzen lagun zaitzake.</value>
+  </data>
+  <data name="LeftMenu_Where" xml:space="preserve">
+    <value>Non?</value>
+  </data>
+  <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
+    <value>Arrastatu eta jaregin hemen fitxategiak eta karpetak Explorer-etik.</value>
+  </data>
+  <data name="LeftMenu_Where_Hint" xml:space="preserve">
+    <value>Leku honetan zure fitxategiak kopiatu nahi dituzun kokapenak gehi ditzakezu.</value>
+  </data>
+  <data name="Local_State_Get" xml:space="preserve">
+    <value>Lortu tokiko estatua</value>
+  </data>
+  <data name="Local_State_Saving" xml:space="preserve">
+    <value>Tokiko estatua idaztea</value>
+  </data>
+  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
+    <value>Ireki erregistroen karpeta</value>
+  </data>
+  <data name="LogFile_Marker_Errors" xml:space="preserve">
+    <value>Errors</value>
+  </data>
+  <data name="LogFile_Marker_Successful" xml:space="preserve">
+    <value>Successful</value>
+  </data>
+  <data name="LogFile_OpenLogs" xml:space="preserve">
+    <value>Erregistroak</value>
+  </data>
+  <data name="Logs_Menu" xml:space="preserve">
+    <value>Erregistroak</value>
+  </data>
+  <data name="MainWindow_SearchWatermark" xml:space="preserve">
+    <value>Bilatu</value>
+  </data>
+  <data name="Messages_Header_Error" xml:space="preserve">
+    <value>Errorea</value>
+  </data>
+  <data name="Messages_Header_Information" xml:space="preserve">
+    <value>Informazioa</value>
+  </data>
+  <data name="Messages_Header_Question" xml:space="preserve">
+    <value>Galdera</value>
+  </data>
+  <data name="Name_Field" xml:space="preserve">
+    <value>Izena:</value>
+  </data>
+  <data name="Name_Field_Validation" xml:space="preserve">
+    <value>Izena hutsik dago edo ez ditu onartzen bide-karaktereak.</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>'{0}' izenaren luzerak {1} karakterez gainditzen du muga.</value>
+  </data>
+  <data name="Name_Title" xml:space="preserve">
+    <value>Izena</value>
+  </data>
+  <data name="OptionalField_Hint" xml:space="preserve">
+    <value>(aukerakoa)</value>
+  </data>
+  <data name="Other_Menu_Title" xml:space="preserve">
+    <value>Bestela</value>
+  </data>
+  <data name="Password_Field" xml:space="preserve">
+    <value>Pasahitza:</value>
+  </data>
+  <data name="Password_Field_Confirm" xml:space="preserve">
+    <value>Berretsi pasahitza:</value>
+  </data>
+  <data name="Password_Field_Length" xml:space="preserve">
+    <value>Luzera:</value>
+  </data>
+  <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
+    <value>Pasahitzak ez datoz bat.</value>
+  </data>
+  <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
+    <value>Pasahitza ez dago zehaztuta.</value>
+  </data>
+  <data name="Password_Generate" xml:space="preserve">
+    <value>Sortu pasahitza...</value>
+  </data>
+  <data name="Password_Generator_Header" xml:space="preserve">
+    <value>Pasahitz-sortzailea</value>
+  </data>
+  <data name="Password_Help" xml:space="preserve">
+    <value>Gomendatutako pasahitzaren gutxieneko luzera 50 karaktere edo gehiagokoa da.</value>
+  </data>
+  <data name="Password_Use" xml:space="preserve">
+    <value>Erabili</value>
+  </data>
+  <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
+    <value>Ezin dira "{0}" fitxategiak direktorioan aurkitu. 
+
+Seinalatu fitxategi hau duen direktorio batera.</value>
+  </data>
+  <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
+    <value>Ezin da egoera irakurri.</value>
+  </data>
+  <data name="Server_Field_Address" xml:space="preserve">
+    <value>Zerbitzariaren izena:</value>
+  </data>
+  <data name="Server_Field_Address_Validation" xml:space="preserve">
+    <value>Zerbitzariaren izena ez da zehaztu.</value>
+  </data>
+  <data name="Server_Field_Port" xml:space="preserve">
+    <value>Portua:</value>
+  </data>
+  <data name="Server_Field_Port_Validation" xml:space="preserve">
+    <value>Portua baliogabea da.</value>
+  </data>
+  <data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
+    <value>Pasahitza edo gako fitxategia hutsik daude.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
+    <value>SFTP karpeta ez da /-n amaitu behar.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
+    <value>SFTP karpeta /-rekin hasi behar da.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
+    <value>SFTP karpeta / ez dago onartzen. Karpetak karpeta zehatzago batera apuntatu behar du.</value>
+  </data>
+  <data name="SourceItem_AddFolders" xml:space="preserve">
+    <value>Gehitu karpetak...</value>
+  </data>
+  <data name="SourceItem_OpenInExplorer" xml:space="preserve">
+    <value>Ireki arakatzailean...</value>
+  </data>
+  <data name="SourceItem_State_Get" xml:space="preserve">
+    <value>Lortu "{0}" iturburu-elementuaren egoera</value>
+  </data>
+  <data name="SourceItem_Validation_Empty" xml:space="preserve">
+    <value>Ez dago prozesatu beharreko elementurik.</value>
+  </data>
+  <data name="SourceItem_Validation_NotExists" xml:space="preserve">
+    <value>"{0}" ez da existitzen.</value>
+  </data>
+  <data name="State_File_Get" xml:space="preserve">
+    <value>Lortu "{0}" fitxategiaren egoera</value>
+  </data>
+  <data name="State_LoadFromEverywhere" xml:space="preserve">
+    <value>Lortu iturri-elementuen eta biltegien egoera</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
+    <value>Gehitu fitxategia baztertzeko eredua</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
+    <value>Editatu fitxategia baztertzeko eredua</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>Baztertu fitxategiak</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
+    <value>Fitxategien bilketa .NET-en: ereduak</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
+    <value>Here you can specify file globbing exclude patterns. 
+It can be a file name or folder name or wildcard. 
+Examples: 
+d:\temp, 
+d:\temp\file.txt, 
+d:\temp\**\*.txt or 
+bin. 
+See detailed description in the following link.</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
+    <value>Fitxategiak prozesatzea saltatzen du bazterketa ereduaren arabera.</value>
+  </data>
+  <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
+    <value>Fitxategiak baztertzeko eredua:</value>
+  </data>
+  <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
+    <value>Fitxategiak baztertzeko eredua hutsik dago.</value>
+  </data>
+  <data name="StorageItem_Remote_Marker" xml:space="preserve">
+    <value>Urrunekoa</value>
+  </data>
+  <data name="SynchronizationMode_Field" xml:space="preserve">
+    <value>Sinkronizazio modua:</value>
+  </data>
+  <data name="SynchronizationMode_Field_Read" xml:space="preserve">
+    <value>Irakurri</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
+    <value>Bi norabidekoa</value>
+  </data>
+  <data name="SynchronizationTask_Create" xml:space="preserve">
+    <value>Sinkronizazioa</value>
+  </data>
+  <data name="SynchronizationTask_Help" xml:space="preserve">
+    <value>Biltegiratze zentralizatua erabiliz gailuen arteko fitxategien bi norabideko sinkronizazioa.</value>
+  </data>
+  <data name="Task_Create" xml:space="preserve">
+    <value>Berria</value>
+  </data>
+  <data name="Task_Create_Hint" xml:space="preserve">
+    <value>Zeregin berria sortzen du.</value>
+  </data>
+  <data name="Task_Delete" xml:space="preserve">
+    <value>Ezabatu</value>
+  </data>
+  <data name="Task_Delete_Confirm" xml:space="preserve">
+    <value>Benetan nahi duzu "{0}" ezabatu?</value>
+  </data>
+  <data name="Task_Delete_Hint" xml:space="preserve">
+    <value>Hautatutako zeregina ezabatzen du.</value>
+  </data>
+  <data name="Task_Duplicate" xml:space="preserve">
+    <value>Bikoiztu</value>
+  </data>
+  <data name="Task_Edit" xml:space="preserve">
+    <value>Editatu</value>
+  </data>
+  <data name="Task_Edit_Hint" xml:space="preserve">
+    <value>Hautatutako zeregina editatzen du.</value>
+  </data>
+  <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
+    <value>Ezin duzu editatu zeregin mota hau CLIn.</value>
+  </data>
+  <data name="Task_Field_Choose" xml:space="preserve">
+    <value>Aukeratu zeregina:</value>
+  </data>
+  <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
+    <value>Zeregin berria</value>
+  </data>
+  <data name="Task_LastExecution_State" xml:space="preserve">
+    <value>Estatua</value>
+  </data>
+  <data name="Task_Launch" xml:space="preserve">
+    <value>Abiarazi</value>
+  </data>
+  <data name="Task_Launch_Hint" xml:space="preserve">
+    <value>Hautatutako zeregina abiarazten du.</value>
+  </data>
+  <data name="Task_List" xml:space="preserve">
+    <value>Zereginak</value>
+  </data>
+  <data name="Task_OpenLog" xml:space="preserve">
+    <value>Ireki azken erregistroa</value>
+  </data>
+  <data name="Task_Restore" xml:space="preserve">
+    <value>Berreskuratu</value>
+  </data>
+  <data name="Task_Status_FailedSeeLog" xml:space="preserve">
+    <value>Huts egin du (ikusi irekitako erregistroa)</value>
+  </data>
+  <data name="Task_Status_InProgress" xml:space="preserve">
+    <value>Zeregin aurrera doa...</value>
+  </data>
+  <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
+    <value>Partzialki osatuta. Biltegiratze-kuota dela eta fitxategi batzuk saltatu dira oraingoan. {1} GB-ko gainerako {0} fitxategiak.</value>
+  </data>
+  <data name="Task_Status_Succesfull" xml:space="preserve">
+    <value>Arrakastatsua</value>
+  </data>
+  <data name="Task_Status_Unknown" xml:space="preserve">
+    <value>Ezezaguna</value>
+  </data>
+  <data name="Task_Validation_NotFound" xml:space="preserve">
+    <value>"{0}" ataza ez da aurkitu.</value>
+  </data>
+  <data name="Task_Validation_NotSupported" xml:space="preserve">
+    <value>Zeregin mota hau ez da onartzen.</value>
+  </data>
+  <data name="Task_WindowTitle_Creating" xml:space="preserve">
+    <value>Sortzen</value>
+  </data>
+  <data name="Task_WindowTitle_Editing" xml:space="preserve">
+    <value>Edizioa</value>
+  </data>
+  <data name="TechnicalTool_Close" xml:space="preserve">
+    <value>Itxi</value>
+  </data>
+  <data name="TechnicalTool_Completed" xml:space="preserve">
+    <value>Eragiketa behar bezala burutu da.</value>
+  </data>
+  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
+    <value>Konprimitu Brotli</value>
+  </data>
+  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
+    <value>Deskonprimitu Brotli</value>
+  </data>
+  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
+    <value>Deszifratu AES-256</value>
+  </data>
+  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
+    <value>Enkriptatzea AES-256</value>
+  </data>
+  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
+    <value>Fitxategia ez da existitzen:</value>
+  </data>
+  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
+    <value>Sartu pasahitz bat.</value>
+  </data>
+  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
+    <value>Zehaztu iturburuko eta irteerako fitxategien bideak.</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
+    <value>AES-256 enkriptatutakoa (*.{0})</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
+    <value>Fitxategi guztiak</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
+    <value>Brotli konprimitua (*.brotli)</value>
+  </data>
+  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
+    <value>Konprimitu Brotli...</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
+    <value>Deskonprimitu Brotli...</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
+    <value>Deszifratu AES-256...</value>
+  </data>
+  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
+    <value>Enkriptatu AES-256…</value>
+  </data>
+  <data name="TechnicalTool_OutputFile" xml:space="preserve">
+    <value>Irteera fitxategia:</value>
+  </data>
+  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
+    <value>Hautatu irteerako fitxategia</value>
+  </data>
+  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
+    <value>Hautatu iturburu-fitxategia</value>
+  </data>
+  <data name="TechnicalTool_Run" xml:space="preserve">
+    <value>Korrika</value>
+  </data>
+  <data name="TechnicalTool_SourceFile" xml:space="preserve">
+    <value>Iturburu fitxategia:</value>
+  </data>
+  <data name="Theme_Title" xml:space="preserve">
+    <value>Gaia</value>
+  </data>
+  <data name="Theme_Value_Dark" xml:space="preserve">
+    <value>Iluna</value>
+  </data>
+  <data name="Theme_Value_Light" xml:space="preserve">
+    <value>Argia</value>
+  </data>
+  <data name="Time_Field_Elapsed" xml:space="preserve">
+    <value>Iragandakoa:</value>
+  </data>
+  <data name="Time_Field_Hour" xml:space="preserve">
+    <value>Ordua:</value>
+  </data>
+  <data name="Time_Field_Minute" xml:space="preserve">
+    <value>Minutua:</value>
+  </data>
+  <data name="TimeoutTask_Title" xml:space="preserve">
+    <value>Denbora-mugaren zain...</value>
+  </data>
+  <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
+    <value>Ziurtagiriaren analisiaren abisua: {0}</value>
+  </data>
+  <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
+    <value>Egiaztatu ziurtagiriaren identitatea bandaz kanpo, eta sakatu berriro Gorde gordetzeko.</value>
+  </data>
+  <data name="TrustDetected_Ftps_Title" xml:space="preserve">
+    <value>FTPS zerbitzariaren ziurtagiria proban hauteman da.</value>
+  </data>
+  <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
+    <value>Ziurtagiria (hex. gordina): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_DnsName" xml:space="preserve">
+    <value>DNS izena: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Encryption" xml:space="preserve">
+    <value>Enkriptatzea: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
+    <value>Hatz-marka (SHA-256): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Folder" xml:space="preserve">
+    <value>Karpeta: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Host" xml:space="preserve">
+    <value>Ostalaria: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Issuer" xml:space="preserve">
+    <value>Jaulkitzailea: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Port" xml:space="preserve">
+    <value>Portua: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
+    <value>Gako publikoaren algoritmoa: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
+    <value>Gako publikoaren tamaina: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
+    <value>Serie-zenbakia: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
+    <value>Sinadura algoritmoa: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Subject" xml:space="preserve">
+    <value>Gaia: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
+    <value>Gaiaren ordezko izenak: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
+    <value>Mini-marka: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_User" xml:space="preserve">
+    <value>Erabiltzailea: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
+    <value>Baliozkoa (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
+    <value>Baliozkoa (UTC) arte: {0}</value>
+  </data>
+  <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
+    <value>Analizatutako ziurtagiriaren xehetasunak:</value>
+  </data>
+  <data name="TrustDetected_Port_Default" xml:space="preserve">
+    <value>lehenetsia</value>
+  </data>
+  <data name="TrustDetected_Port_Default22" xml:space="preserve">
+    <value>lehenetsia (22)</value>
+  </data>
+  <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
+    <value>ezezaguna</value>
+  </data>
+  <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
+    <value>Egiaztatu hatz-marka hau bandaz kanpo, eta sakatu Gorde berriro gordetzeko.</value>
+  </data>
+  <data name="TrustDetected_Sftp_Title" xml:space="preserve">
+    <value>SFTP zerbitzariaren konfiantzazko informazioa proban detektatu da.</value>
+  </data>
+  <data name="TrustedCertificate_Field" xml:space="preserve">
+    <value>Ziurtagiri fidagarria (hex):</value>
+  </data>
+  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
+    <value>Karpeta zerbitzarira igo</value>
+  </data>
+  <data name="UploadFolderTask_Help" xml:space="preserve">
+    <value>Karpeten edukia karga dezakezu lehendik dauden fitxategiak gainidatziz.</value>
+  </data>
+  <data name="Url_Field" xml:space="preserve">
+    <value>Url:</value>
+  </data>
+  <data name="Url_Field_Validation" xml:space="preserve">
+    <value>Url ez dago zehaztuta.</value>
+  </data>
+  <data name="User_Field" xml:space="preserve">
+    <value>Erabiltzailea:</value>
+  </data>
+  <data name="User_Field_Validation" xml:space="preserve">
+    <value>Erabiltzailea ez dago zehaztuta.</value>
+  </data>
+  <data name="Winget_Description" xml:space="preserve">
+    <value>Egin babeskopiak/sinkronizatu zure datuak Windows, Linux.
+Inportatu argazkiak telefonotik WI-FI bidez eta gehiago.
+
+Hizkuntzak onartzen ditu: ingelesa, arabiera, bengala, txinera, frantsesa, alemana, hindia, indonesiera, italiera, japoniera, marathi, nigeriar pidgin, portugesa, errusiera, gaztelania, tamil, telugu, turkiera, ukrainera, urdu, vietnamera, yu txinera.
+
+Ezaugarriak:
+- Babeskopia gehigarria fitxategien desduplicazioarekin eta SFTP, FTPS, SMB/CIFS garraioen laguntzarekin;
+- Gailuen arteko fitxategiak sinkronizatzea biltegiratze zentralizatua eta bertsioen euskarria erabiliz;
+- Inportatu multimedia - Inportatu audioak, argazkiak, bideoak kameraren SD txarteletik, grabagailutik; Zure telefonoko argazkiak eta bideoak WI-FI bidez FTPS Server aplikazioaren bidez txantiloi-fitxategien izenak erabiliz edo MTP bidez;
+- P2P fitxategien transferentzia gailuen arteko enkriptatzearekin;
+- Automatizazioaren programaziorako kontsola;
+- AES-256 enkriptatzea.
+
+Plataformak: Windows 11 x64, ARM64 edo Ubuntu 24+.</value>
+  </data>
+  <data name="Winget_ShortDescription" xml:space="preserve">
+    <value>BUtil-ek segurtasun-kopia gehigarriak, sinkronizazio inkrementala eta multimedia inportatzen ditu zure ordenagailuan desduplicazioarekin eta Windows eta Linuxerako FTPS, SFTP, SMB/CIFS garraiatzeko laguntzarekin.</value>
+  </data>
+</root>

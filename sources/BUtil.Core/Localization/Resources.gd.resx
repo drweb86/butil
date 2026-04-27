@@ -1,0 +1,994 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="_Technical_NsisLanguage" xml:space="preserve">
+    <value>ScotsGaelic</value>
+  </data>
+  <data name="_Technical_WingetLocale" xml:space="preserve">
+    <value>gd-GB</value>
+  </data>
+  <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
+    <value>Na dèan dad</value>
+  </data>
+  <data name="AfterTaskSelection_Field" xml:space="preserve">
+    <value>Às deidh an obair a chrìochnachadh:</value>
+  </data>
+  <data name="AfterTaskSelection_Help" xml:space="preserve">
+    <value>Ma thaghas tu rudeigin a bharrachd air ‘na dèan dad’ 
+rèitichidh am prògram OS gus an aithisg a shealltainn dhut
+air an ath logadh a-steach don t-siostam ma tha mearachdan sam bith ann 
+no thèid rabhaidhean a chlàradh.</value>
+  </data>
+  <data name="AfterTaskSelection_LogOff" xml:space="preserve">
+    <value>Log a-mach dheth</value>
+  </data>
+  <data name="AfterTaskSelection_Reboot" xml:space="preserve">
+    <value>Ath-thòisich</value>
+  </data>
+  <data name="AfterTaskSelection_ShutdownPc" xml:space="preserve">
+    <value>Dùin sìos</value>
+  </data>
+  <data name="Application_NewVersion_Notification" xml:space="preserve">
+    <value>Tha tionndadh ùr {0} ri fhaighinn.</value>
+  </data>
+  <data name="BackupVersion_Button_Delete" xml:space="preserve">
+    <value>Delete version</value>
+  </data>
+  <data name="BackupVersion_Changes_Title" xml:space="preserve">
+    <value>Atharrachaidhean</value>
+  </data>
+  <data name="BackupVersion_Delete_Confirm" xml:space="preserve">
+    <value>A bheil thu dha-rìribh ag iarraidh tionndadh "{0}" a sguabadh às?
+
+Bidh atharraichean tionndaidh a chaidh a sguabadh às mar phàirt de dhreach "{1}".</value>
+  </data>
+  <data name="BackupVersion_Files_Title" xml:space="preserve">
+    <value>Faidhlichean</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
+    <value>Leabhar-latha: {0}</value>
+  </data>
+  <data name="BackupVersion_FileVersions_Open" xml:space="preserve">
+    <value>Leabhar-latha airson taghadh...</value>
+  </data>
+  <data name="BackupVersion_Select" xml:space="preserve">
+    <value>Fosgail an tionndadh taghte...</value>
+  </data>
+  <data name="BackupVersion_Selector_Title" xml:space="preserve">
+    <value>ROINN ROGHAINN</value>
+  </data>
+  <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
+    <value>(tha a h-uile tionndadh ann an stòradh {0})</value>
+  </data>
+  <data name="BackupVersion_Versions_Title" xml:space="preserve">
+    <value>LAOIDHEAN</value>
+  </data>
+  <data name="BackupVersion_Viewer_Help" xml:space="preserve">
+    <value>Tagh am faidhle no am pasgan a tha thu airson a thoirt air ais ann an craobh agus briog air "ath".</value>
+  </data>
+  <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
+    <value>Chaidh ceangal ris an fhrithealaiche a thoirt gu crìch gun dùil (A bheil na faclan-faire air Client and Server mar an ceudna?)</value>
+  </data>
+  <data name="Button_Cancel" xml:space="preserve">
+    <value>Sguir dheth</value>
+  </data>
+  <data name="Button_Close" xml:space="preserve">
+    <value>Dùin</value>
+  </data>
+  <data name="Button_Continue" xml:space="preserve">
+    <value>Lean air adhart &gt;</value>
+  </data>
+  <data name="Button_CopyToClipboard" xml:space="preserve">
+    <value>Dèan lethbhreac</value>
+  </data>
+  <data name="Button_Download" xml:space="preserve">
+    <value>Luchdaich sìos</value>
+  </data>
+  <data name="Button_OK" xml:space="preserve">
+    <value>ceart gu leòr</value>
+  </data>
+  <data name="Button_Remove" xml:space="preserve">
+    <value>Thoir air falbh</value>
+  </data>
+  <data name="Button_Save" xml:space="preserve">
+    <value>Sàbhail</value>
+  </data>
+  <data name="CommandLineArguments_Help" xml:space="preserve">
+    <value>Tadhail air {0} gus argamaidean loidhne-àithne fhaicinn.</value>
+  </data>
+  <data name="CommandLineArguments_Invalid" xml:space="preserve">
+    <value>Argamaidean loidhne-àithne mì-dhligheach.</value>
+  </data>
+  <data name="DataStorage_Data_Saving" xml:space="preserve">
+    <value>A 'sgrìobhadh dàta gu stòradh</value>
+  </data>
+  <data name="DataStorage_Field_ConnectScript" xml:space="preserve">
+    <value>Sgriobt ceangail:</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript" xml:space="preserve">
+    <value>Sgriobt dì-cheangail:</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript_Bad" xml:space="preserve">
+    <value>Crìochnaichte le mearachdan</value>
+  </data>
+  <data name="DataStorage_Field_DisconnectionScript_Ok" xml:space="preserve">
+    <value>Crìochnaichte gu soirbheachail</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota" xml:space="preserve">
+    <value>Crìochan luchdachadh suas, GB:</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
+    <value>A 'cuingealachadh na tha de dhàta air a chur nuair a thèid aon ghnìomh a choileanadh gu stòradh. 0 - gun chrìoch.
+Nuair a thèid an cuota thairis air, thèid faidhlichean eile a sheachnadh agus thèid an làimhseachadh an ath thuras.
+Suidheachadh cleachdaidh: Bidh thu a’ dèanamh lethbhreac den dàta gu frithealaiche iomallach. Tha duilgheadas ann: bidh ISP a’ tuiteam astar luchdachadh suas às deidh grunn gigabytes. Leigidh an suidheachadh seo leat a làimhseachadh.</value>
+  </data>
+  <data name="DataStorage_Field_UploadQuota_Validation" xml:space="preserve">
+    <value>Bu chòir cuota a bhith 0 (na bi a’ buntainn) no luach os cionn 0.</value>
+  </data>
+  <data name="DataStorage_Maintenance" xml:space="preserve">
+    <value>Cumail suas stòradh dàta</value>
+  </data>
+  <data name="DataStorage_Script_Help" xml:space="preserve">
+    <value>Ma bhios pasgan ri fhaighinn às deidh dhut cuid de dh’ àitheantan a chur an gnìomh, sònraich {0} sgriobtaichean airson ceangal is dì-cheangal.</value>
+  </data>
+  <data name="DataStorage_Scripts_Header" xml:space="preserve">
+    <value>Sgriobtaichean (mus cuir iad suas / às deidh an dì-mhunnt)</value>
+  </data>
+  <data name="DataStorage_State_Get" xml:space="preserve">
+    <value>Faigh staid stòraidh</value>
+  </data>
+  <data name="DataStorage_State_Saving" xml:space="preserve">
+    <value>A 'sgrìobhadh staid stòraidh</value>
+  </data>
+  <data name="DataStorage_Title" xml:space="preserve">
+    <value>Stòradh</value>
+  </data>
+  <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
+    <value>Chan eil stòradh air a shònrachadh.</value>
+  </data>
+  <data name="Days_Field_Choose" xml:space="preserve">
+    <value>Tagh làithean na seachdain:</value>
+  </data>
+  <data name="Days_Friday" xml:space="preserve">
+    <value>Dihaoine</value>
+  </data>
+  <data name="Days_Monday" xml:space="preserve">
+    <value>Diluain</value>
+  </data>
+  <data name="Days_Saturday" xml:space="preserve">
+    <value>Disathairne</value>
+  </data>
+  <data name="Days_Sunday" xml:space="preserve">
+    <value>Didòmhnaich</value>
+  </data>
+  <data name="Days_Thursday" xml:space="preserve">
+    <value>Diardaoin</value>
+  </data>
+  <data name="Days_Tuesday" xml:space="preserve">
+    <value>Dimàirt</value>
+  </data>
+  <data name="Days_Wednesday" xml:space="preserve">
+    <value>Diciadain</value>
+  </data>
+  <data name="DirectoryStorage" xml:space="preserve">
+    <value>Eòlaire</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory" xml:space="preserve">
+    <value>Pasgan:</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory_Validation_Empty" xml:space="preserve">
+    <value>Chan eil eòlaire air a shònrachadh.</value>
+  </data>
+  <data name="DirectoryStorage_Field_Directory_Validation_NotFound" xml:space="preserve">
+    <value>Chan eil eòlaire "{0}" ann.</value>
+  </data>
+  <data name="DurationMinutes_Field" xml:space="preserve">
+    <value>Ùine (mionaidean, 0 - gun chrìoch):</value>
+  </data>
+  <data name="Field_Device" xml:space="preserve">
+    <value>Inneal:</value>
+  </data>
+  <data name="Field_Device_Validation_Empty" xml:space="preserve">
+    <value>Chan eil an inneal air a shònrachadh.</value>
+  </data>
+  <data name="Field_Device_Validation_NotFound" xml:space="preserve">
+    <value>Chan eil an inneal air a lorg.</value>
+  </data>
+  <data name="Field_File_Browse" xml:space="preserve">
+    <value>Dèan brobhsadh air faidhle</value>
+  </data>
+  <data name="Field_Folder" xml:space="preserve">
+    <value>Pasgan:</value>
+  </data>
+  <data name="Field_Folder_Browse" xml:space="preserve">
+    <value>Dèan brobhsadh</value>
+  </data>
+  <data name="Field_Folder_Validation_Empty" xml:space="preserve">
+    <value>Chan eil am pasgan air a shònrachadh.</value>
+  </data>
+  <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
+    <value>Chan eil pasgan ann.</value>
+  </data>
+  <data name="Field_TransportProtocol" xml:space="preserve">
+    <value>Pròtacal:</value>
+  </data>
+  <data name="Field_Version" xml:space="preserve">
+    <value>Tionndadh:</value>
+  </data>
+  <data name="File_Deleting" xml:space="preserve">
+    <value>A' sguabadh às "{0}"</value>
+  </data>
+  <data name="File_IntegrityVerificationScript_Ps1" xml:space="preserve">
+    <value>Integrity verification script.ps1</value>
+  </data>
+  <data name="File_IntegrityVerificationScript_Saving" xml:space="preserve">
+    <value>Sgriobtaichean dearbhaidh iomlanachd a shàbhaladh</value>
+  </data>
+  <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
+    <value>Pròiseas faidhlichean nas sine an uairsin:</value>
+  </data>
+  <data name="File_List_Saving" xml:space="preserve">
+    <value>A 'sàbhaladh faidhlichean</value>
+  </data>
+  <data name="File_Moving" xml:space="preserve">
+    <value>A' gluasad "{0}" gu "{1}"</value>
+  </data>
+  <data name="File_Saving" xml:space="preserve">
+    <value>A' sàbhaladh "{0}"</value>
+  </data>
+  <data name="File_Uploading" xml:space="preserve">
+    <value>A' luchdadh suas "{0}"</value>
+  </data>
+  <data name="FingerPrintSHA256_Field" xml:space="preserve">
+    <value>Meòir-lorg SHA-256:</value>
+  </data>
+  <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
+    <value>Chan eil lorgan-meòir SHA-256 air a shònrachadh.</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
+    <value>Gu follaiseach</value>
+  </data>
+  <data name="Ftps_Encryption_Option_Implicit" xml:space="preserve">
+    <value>In-ghabhalach</value>
+  </data>
+  <data name="Ftps_Field_Encryption" xml:space="preserve">
+    <value>Crioptachadh SSL/TTS:</value>
+  </data>
+  <data name="FtpsServerStartTask_Name" xml:space="preserve">
+    <value>Tòisich am frithealaiche FTPS</value>
+  </data>
+  <data name="FtpsServerTask_Create" xml:space="preserve">
+    <value>Roinn pasgan thairis air lìonra (Frithealaiche FTPS)</value>
+  </data>
+  <data name="FtpsServerTask_Help" xml:space="preserve">
+    <value>Faodaidh tu pasgan sam bith airson ruigsinneachd leughadh-sgrìobhaidh a cho-roinn tro phròtacal FTPS (crioptachadh soilleir le teisteanas fèin-shoidhnichte) taobh a-staigh lìonra na sgìre ionadail agad.</value>
+  </data>
+  <data name="Icons_Help_Link" xml:space="preserve">
+    <value>Cuir ìomhaigh caractar ris an teacsa agad</value>
+  </data>
+  <data name="ImportMediaTask_AllFiles" xml:space="preserve">
+    <value>Cuir a-steach a h-uile faidhle</value>
+  </data>
+  <data name="ImportMediaTask_Create" xml:space="preserve">
+    <value>Cuir a-steach gnìomh meadhanan</value>
+  </data>
+  <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
+    <value>Deasaich gnìomh in-mhalairt mheadhanan "{0}".</value>
+  </data>
+  <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
+    <value>Pasgan toraidh:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
+    <value>Atharraichean ainm faidhle:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
+    <value>Eisimpleir:
+Smaoinich gu bheil faidhle {0} agad (atharraichte aig {1}).
+Leis an eòlaire seo agus thèid faidhle sreang teamplaid a stòradh mar:
+{2}</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Help" xml:space="preserve">
+    <value>Comharran le taic:
+{DATE: Format} - Cuir a-steach ceann-latha atharrachaidh an fhaidhle san fhòrmat ainmichte.
+Gus a h-uile roghainn fhaicinn google "C# DateTime cruth".</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Empty" xml:space="preserve">
+    <value>Tha cruth-atharrachadh ainm an fhaidhle falamh.</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Validation_Invalid" xml:space="preserve">
+    <value>Cruth-atharrachadh sreang ainm faidhle mì-dhligheach.</value>
+  </data>
+  <data name="ImportMediaTask_File" xml:space="preserve">
+    <value>Ion-phortaich "{0}"</value>
+  </data>
+  <data name="ImportMediaTask_Help" xml:space="preserve">
+    <value>Cuir a-steach clàran-fuaim, dealbhan, bhideothan bho chairt SD den chamara, inneal clàraidh; dealbhan agus bhideothan bhon fhòn agad tro WI-FI tro thagradh FTP Server a’ cleachdadh ainmean faidhle teamplaid.
+
+Faic làrach-lìn an tagraidh airson sgrìobhainnean mar a shuidhicheas tu tar-chuir faidhle tro WI-FI tro thagradh FTP Server air a’ fòn.</value>
+  </data>
+  <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
+    <value>Cuir a-steach stòr dàta</value>
+  </data>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
+    <value>Thoir leum air faidhlichean a chaidh a thoirt a-steach mu thràth</value>
+  </data>
+  <data name="ImproveIt_Message" xml:space="preserve">
+    <value>Thachair mearachd ris nach robh dùil.
+
+Feuch an cuir thu fios chun luchd-leasachaidh le fiosrachadh a chaidh a shàbhaladh air an deasg agad ann
+"{0}"
+
+Bidh an tagradh a-nis a’ dùnadh.</value>
+  </data>
+  <data name="IncrementalBackup_Help" xml:space="preserve">
+    <value>Is e an dòigh as bunaitiche de chùl-taic mean air mhean a bhith a’ comharrachadh, a’ clàradh agus mar sin, a’ glèidheadh ​​dìreach na faidhlichean sin a tha air atharrachadh bhon chùl-taic mu dheireadh.
+
+Leis gu bheil atharrachaidhean mar as trice ìosal, tha cùl-taic mean air mhean mòran nas lugha agus nas luaithe na cùl-taic slàn.
+
+Mar eisimpleir, às deidh làn chùl-taic Dihaoine, cha bhith ann an cùl-taic Diluain ach na faidhlichean sin a dh’ atharraich bho Dhihaoine. Chan eil ann an cùl-taic Dimàirt ach na faidhlichean sin a dh'atharraich bho Diluain, agus mar sin air adhart. 
+
+Ma dh’ fhailicheas gin de na lethbhric a chaidh a chruthachadh, a’ gabhail a-steach a’ chiad (làn), bidh ath-nuadhachadh neo-chrìochnach.</value>
+  </data>
+  <data name="IncrementalBackup_Title" xml:space="preserve">
+    <value>Cùl-taic mean air mhean</value>
+  </data>
+  <data name="IncrementalBackup_Version_Calculate" xml:space="preserve">
+    <value>Obraich a-mach tionndadh àrdaichte</value>
+  </data>
+  <data name="IncrementalBackup_Version_Save" xml:space="preserve">
+    <value>A’ sàbhaladh dreach àrdaichte</value>
+  </data>
+  <data name="IncrementalBackupTask_Create" xml:space="preserve">
+    <value>Gnìomh cùl-taic mean air mhean</value>
+  </data>
+  <data name="Installer_AdminRequired" xml:space="preserve">
+    <value>Tha feum air sochairean rianaire airson a stàladh airson a h-uile neach-cleachdaidh.
+Feuch an ruith thu an stàlaichear mar rianadair no cleachd /CURRENTUSER.</value>
+  </data>
+  <data name="Installer_AdminRequiredDetailed" xml:space="preserve">
+    <value>Tha feum air sochairean rianaire airson an stàladh airson a h-uile neach-cleachdaidh.
+
+Feuch an dàrna cuid:
+- Tagh 'Stàlaich airson neach-cleachdaidh gnàthach a-mhàin', no
+- Ruith an stàlaichear seo mar rianadair</value>
+  </data>
+  <data name="Installer_AllUsersDescription" xml:space="preserve">
+    <value>Bidh an aplacaid ri fhaighinn airson a h-uile neach-cleachdaidh air a’ choimpiutair seo.</value>
+  </data>
+  <data name="Installer_AllUsersOption" xml:space="preserve">
+    <value>Stàlaich airson &amp;a h-uile cleachdaiche (feumar sochairean rianaire)</value>
+  </data>
+  <data name="Installer_ArchRequired" xml:space="preserve">
+    <value>Feumaidh an stàlaichear seo tionndadh x64 no arm64 de Windows.</value>
+  </data>
+  <data name="Installer_CurrentUserDescription" xml:space="preserve">
+    <value>Air a mholadh. Cha bhi an aplacaid ri fhaighinn ach airson do chunntas cleachdaiche.</value>
+  </data>
+  <data name="Installer_CurrentUserOption" xml:space="preserve">
+    <value>Stàlaich airson &amp;cleachdaiche làithreach a-mhàin</value>
+  </data>
+  <data name="Installer_InstallingFor" xml:space="preserve">
+    <value>Stàladh airson:</value>
+  </data>
+  <data name="Installer_InstallModeDescription" xml:space="preserve">
+    <value>Feuch an tagh thu a bheil thu airson BUtil a stàladh dhut fhèin a-mhàin no airson luchd-cleachdaidh a’ choimpiutair seo.</value>
+  </data>
+  <data name="Installer_InstallModeSubtitle" xml:space="preserve">
+    <value>Tagh cò as urrainn an aplacaid seo a chleachdadh</value>
+  </data>
+  <data name="Installer_InstallModeTitle" xml:space="preserve">
+    <value>Tagh an seòrsa stàlaidh</value>
+  </data>
+  <data name="Installer_LaunchApp" xml:space="preserve">
+    <value>Cuir air bhog App</value>
+  </data>
+  <data name="KeyFile_Field" xml:space="preserve">
+    <value>Prìomh fhaidhle:</value>
+  </data>
+  <data name="LeftMenu_Encryption" xml:space="preserve">
+    <value>Crioptachadh</value>
+  </data>
+  <data name="LeftMenu_What" xml:space="preserve">
+    <value>Dè?</value>
+  </data>
+  <data name="LeftMenu_What_Hint" xml:space="preserve">
+    <value>An seo faodaidh tu pasganan agus faidhlichean a dh'fheumas tu a phròiseasadh a chur ris.</value>
+  </data>
+  <data name="LeftMenu_What_Validation" xml:space="preserve">
+    <value>Gun stuthan ri phròiseasadh.</value>
+  </data>
+  <data name="LeftMenu_When" xml:space="preserve">
+    <value>Cuin?</value>
+  </data>
+  <data name="LeftMenu_When_Help" xml:space="preserve">
+    <value>An seo faodaidh tu clàr-ama a stèidheachadh. Faodaidh Shceduler do chuideachadh le bhith a’ cur air bhog gnìomh gu fèin-ghluasadach.</value>
+  </data>
+  <data name="LeftMenu_Where" xml:space="preserve">
+    <value>Càite?</value>
+  </data>
+  <data name="LeftMenu_Where_Help_DragDrop" xml:space="preserve">
+    <value>Slaod agus leig às an seo faidhlichean agus pasganan bho Explorer.</value>
+  </data>
+  <data name="LeftMenu_Where_Hint" xml:space="preserve">
+    <value>Anns an àite seo faodaidh tu àiteachan a chuir ris far am bu mhath leat na faidhlichean agad a chopaigeadh.</value>
+  </data>
+  <data name="Local_State_Get" xml:space="preserve">
+    <value>Faigh stàite ionadail</value>
+  </data>
+  <data name="Local_State_Saving" xml:space="preserve">
+    <value>A 'sgrìobhadh stàite ionadail</value>
+  </data>
+  <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
+    <value>Fosgail am pasgan logaichean</value>
+  </data>
+  <data name="LogFile_Marker_Errors" xml:space="preserve">
+    <value>Errors</value>
+  </data>
+  <data name="LogFile_Marker_Successful" xml:space="preserve">
+    <value>Successful</value>
+  </data>
+  <data name="LogFile_OpenLogs" xml:space="preserve">
+    <value>Logaichean</value>
+  </data>
+  <data name="Logs_Menu" xml:space="preserve">
+    <value>Logaichean</value>
+  </data>
+  <data name="MainWindow_SearchWatermark" xml:space="preserve">
+    <value>Rannsaich</value>
+  </data>
+  <data name="Messages_Header_Error" xml:space="preserve">
+    <value>Mearachd</value>
+  </data>
+  <data name="Messages_Header_Information" xml:space="preserve">
+    <value>Fiosrachadh</value>
+  </data>
+  <data name="Messages_Header_Question" xml:space="preserve">
+    <value>Ceist</value>
+  </data>
+  <data name="Name_Field" xml:space="preserve">
+    <value>Ainm:</value>
+  </data>
+  <data name="Name_Field_Validation" xml:space="preserve">
+    <value>Tha an t-ainm falamh no tha caractaran slighe nach eil taic ann.</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>Tha an fhad ainm '{0}' nas àirde na a' chrìoch le {1} chars.</value>
+  </data>
+  <data name="Name_Title" xml:space="preserve">
+    <value>Ainm</value>
+  </data>
+  <data name="OptionalField_Hint" xml:space="preserve">
+    <value>(roghainneil)</value>
+  </data>
+  <data name="Other_Menu_Title" xml:space="preserve">
+    <value>Eile</value>
+  </data>
+  <data name="Password_Field" xml:space="preserve">
+    <value>Facal-faire:</value>
+  </data>
+  <data name="Password_Field_Confirm" xml:space="preserve">
+    <value>Dearbh am facal-faire:</value>
+  </data>
+  <data name="Password_Field_Length" xml:space="preserve">
+    <value>Fad:</value>
+  </data>
+  <data name="Password_Field_Validation_NotMatch" xml:space="preserve">
+    <value>Chan eil faclan-faire co-ionnan.</value>
+  </data>
+  <data name="Password_Field_Validation_NotSpecified" xml:space="preserve">
+    <value>Chan eil facal-faire air a shònrachadh.</value>
+  </data>
+  <data name="Password_Generate" xml:space="preserve">
+    <value>Cruthaich facal-faire...</value>
+  </data>
+  <data name="Password_Generator_Header" xml:space="preserve">
+    <value>Gineadair facal-faire</value>
+  </data>
+  <data name="Password_Help" xml:space="preserve">
+    <value>Is e an fhad facal-faire as ìsle a thathar a’ moladh 50 caractar agus barrachd.</value>
+  </data>
+  <data name="Password_Use" xml:space="preserve">
+    <value>Cleachd</value>
+  </data>
+  <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
+    <value>Chan urrainn dhuinn na faidhlichean "{0}" a lorg san eòlaire. 
+
+Comharraich eòlaire anns a bheil am faidhle seo.</value>
+  </data>
+  <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
+    <value>Chan urrainn staid a leughadh.</value>
+  </data>
+  <data name="Server_Field_Address" xml:space="preserve">
+    <value>Ainm an fhrithealaiche:</value>
+  </data>
+  <data name="Server_Field_Address_Validation" xml:space="preserve">
+    <value>Chan eil ainm an fhrithealaiche air a shònrachadh.</value>
+  </data>
+  <data name="Server_Field_Port" xml:space="preserve">
+    <value>Port:</value>
+  </data>
+  <data name="Server_Field_Port_Validation" xml:space="preserve">
+    <value>Tha port mì-dhligheach.</value>
+  </data>
+  <data name="SFTP_Validation_PasswordAndKeyNotSpecified" xml:space="preserve">
+    <value>Tha an dà fhacal-fhaire no prìomh fhaidhle falamh.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_InvalidPostfix" xml:space="preserve">
+    <value>Chan fhaod pasgan SFTP crìochnachadh air /.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_InvalidPrefix" xml:space="preserve">
+    <value>Feumaidh pasgan SFTP tòiseachadh le /.</value>
+  </data>
+  <data name="SFTPFolder_Field_Validation_RootFolder" xml:space="preserve">
+    <value>Pasgan SFTP / chan eil e ceadaichte. Feumaidh am pasgan comharrachadh gu pasgan nas mionaidiche.</value>
+  </data>
+  <data name="SourceItem_AddFolders" xml:space="preserve">
+    <value>Cuir pasganan ris...</value>
+  </data>
+  <data name="SourceItem_OpenInExplorer" xml:space="preserve">
+    <value>Fosgail ann an Explorer...</value>
+  </data>
+  <data name="SourceItem_State_Get" xml:space="preserve">
+    <value>Faigh staid an nì tùsail "{0}"</value>
+  </data>
+  <data name="SourceItem_Validation_Empty" xml:space="preserve">
+    <value>Gun stuthan ri phròiseasadh.</value>
+  </data>
+  <data name="SourceItem_Validation_NotExists" xml:space="preserve">
+    <value>Chan eil "{0}" ann.</value>
+  </data>
+  <data name="State_File_Get" xml:space="preserve">
+    <value>Faigh staid an fhaidhle "{0}"</value>
+  </data>
+  <data name="State_LoadFromEverywhere" xml:space="preserve">
+    <value>Faigh staid stuthan stòr agus stòradh</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
+    <value>Cuir faidhle às-dùnadh pàtran</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Edit" xml:space="preserve">
+    <value>Deasaich am faidhle às aonais pàtran</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_ExpanderHeader" xml:space="preserve">
+    <value>Na cuir a-mach faidhlichean</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_GlobbingNetPatterns" xml:space="preserve">
+    <value>Gluasad faidhle ann an .NET: Pàtranan</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Help" xml:space="preserve">
+    <value>Here you can specify file globbing exclude patterns. 
+It can be a file name or folder name or wildcard. 
+Examples: 
+d:\temp, 
+d:\temp\file.txt, 
+d:\temp\**\*.txt or 
+bin. 
+See detailed description in the following link.</value>
+  </data>
+  <data name="StorageItem_ExcludePattern_Hint" xml:space="preserve">
+    <value>A’ sgioblachadh giollachd fhaidhlichean le pàtran às-dùnadh.</value>
+  </data>
+  <data name="StorageItem_Field_ExcludePattern" xml:space="preserve">
+    <value>Pàtran às-dùnadh faidhle:</value>
+  </data>
+  <data name="StorageItem_Field_ExcludePattern_Validation" xml:space="preserve">
+    <value>Tha pàtran às-dùnadh faidhle falamh.</value>
+  </data>
+  <data name="StorageItem_Remote_Marker" xml:space="preserve">
+    <value>iomallach</value>
+  </data>
+  <data name="SynchronizationMode_Field" xml:space="preserve">
+    <value>Modh sioncronaidh:</value>
+  </data>
+  <data name="SynchronizationMode_Field_Read" xml:space="preserve">
+    <value>Leugh</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
+    <value>Dà-shlighe</value>
+  </data>
+  <data name="SynchronizationTask_Create" xml:space="preserve">
+    <value>Sioncronadh</value>
+  </data>
+  <data name="SynchronizationTask_Help" xml:space="preserve">
+    <value>Sioncronadh faidhlichean dà-shligheach eadar innealan a’ cleachdadh stòradh meadhanaichte.</value>
+  </data>
+  <data name="Task_Create" xml:space="preserve">
+    <value>Ùr</value>
+  </data>
+  <data name="Task_Create_Hint" xml:space="preserve">
+    <value>A 'cruthachadh obair ùr.</value>
+  </data>
+  <data name="Task_Delete" xml:space="preserve">
+    <value>Sguab às</value>
+  </data>
+  <data name="Task_Delete_Confirm" xml:space="preserve">
+    <value>A bheil thu dha-rìribh ag iarraidh "{0}" a sguabadh às?</value>
+  </data>
+  <data name="Task_Delete_Hint" xml:space="preserve">
+    <value>Sguab às an obair taghte.</value>
+  </data>
+  <data name="Task_Duplicate" xml:space="preserve">
+    <value>Dùblachadh</value>
+  </data>
+  <data name="Task_Edit" xml:space="preserve">
+    <value>Deasaich</value>
+  </data>
+  <data name="Task_Edit_Hint" xml:space="preserve">
+    <value>Deasaich an obair taghte.</value>
+  </data>
+  <data name="Task_Edit_Validation_NoCLI" xml:space="preserve">
+    <value>Chan urrainn dhut an seòrsa gnìomh seo a dheasachadh ann an CLI.</value>
+  </data>
+  <data name="Task_Field_Choose" xml:space="preserve">
+    <value>Tagh an obair:</value>
+  </data>
+  <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
+    <value>Obair ùr</value>
+  </data>
+  <data name="Task_LastExecution_State" xml:space="preserve">
+    <value>Stàite</value>
+  </data>
+  <data name="Task_Launch" xml:space="preserve">
+    <value>Cur air bhog</value>
+  </data>
+  <data name="Task_Launch_Hint" xml:space="preserve">
+    <value>A’ cur air bhog gnìomh taghte.</value>
+  </data>
+  <data name="Task_List" xml:space="preserve">
+    <value>Gnìomhan</value>
+  </data>
+  <data name="Task_OpenLog" xml:space="preserve">
+    <value>Fosgail an log mu dheireadh</value>
+  </data>
+  <data name="Task_Restore" xml:space="preserve">
+    <value>Ath-bheothaich</value>
+  </data>
+  <data name="Task_Status_FailedSeeLog" xml:space="preserve">
+    <value>Dh'fhàillig (faic an loga fosgailte)</value>
+  </data>
+  <data name="Task_Status_InProgress" xml:space="preserve">
+    <value>Tha an obair a' dol air adhart...</value>
+  </data>
+  <data name="Task_Status_PartialDueToQuota" xml:space="preserve">
+    <value>Air a chrìochnachadh gu ìre. Air sgàth cuota stòraidh chaidh cuid de na faidhlichean a leum an turas seo. {0} faidhle air fhàgail le de {1} GB.</value>
+  </data>
+  <data name="Task_Status_Succesfull" xml:space="preserve">
+    <value>Soirbheachail</value>
+  </data>
+  <data name="Task_Status_Unknown" xml:space="preserve">
+    <value>Neo-aithnichte</value>
+  </data>
+  <data name="Task_Validation_NotFound" xml:space="preserve">
+    <value>Cha deach gnìomh '{0}' a lorg.</value>
+  </data>
+  <data name="Task_Validation_NotSupported" xml:space="preserve">
+    <value>Chan eil taic ris an t-seòrsa gnìomh seo.</value>
+  </data>
+  <data name="Task_WindowTitle_Creating" xml:space="preserve">
+    <value>Cruthachadh</value>
+  </data>
+  <data name="Task_WindowTitle_Editing" xml:space="preserve">
+    <value>Deasachadh</value>
+  </data>
+  <data name="TechnicalTool_Close" xml:space="preserve">
+    <value>Dùin</value>
+  </data>
+  <data name="TechnicalTool_Completed" xml:space="preserve">
+    <value>Gnìomh air a chrìochnachadh gu soirbheachail.</value>
+  </data>
+  <data name="TechnicalTool_CompressBrotli_Title" xml:space="preserve">
+    <value>Compress Brotli</value>
+  </data>
+  <data name="TechnicalTool_DecompressBrotli_Title" xml:space="preserve">
+    <value>Decompress Brotli</value>
+  </data>
+  <data name="TechnicalTool_DecryptAes256_Title" xml:space="preserve">
+    <value>Cuir dheth AES-256</value>
+  </data>
+  <data name="TechnicalTool_EncryptAes256_Title" xml:space="preserve">
+    <value>Cuir a-steach AES-256</value>
+  </data>
+  <data name="TechnicalTool_Error_FileNotFound" xml:space="preserve">
+    <value>Chan eil am faidhle ann:</value>
+  </data>
+  <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
+    <value>Cuir a-steach facal-faire.</value>
+  </data>
+  <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
+    <value>Sònraich an dà chuid slighean faidhle stòr is toraidh.</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
+    <value>AES-256 crioptaichte (*.{0})</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_All" xml:space="preserve">
+    <value>A h-uile faidhlichean</value>
+  </data>
+  <data name="TechnicalTool_FileFilter_Brotli" xml:space="preserve">
+    <value>Brotli teannaichte (*.brotli)</value>
+  </data>
+  <data name="TechnicalTool_Menu_CompressBrotli" xml:space="preserve">
+    <value>Dèan teannachadh air Brotli…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecompressBrotli" xml:space="preserve">
+    <value>Dèan dì-dhùmhlachadh Brotli…</value>
+  </data>
+  <data name="TechnicalTool_Menu_DecryptAes256" xml:space="preserve">
+    <value>Dèan dì-chrioptachadh AES-256…</value>
+  </data>
+  <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
+    <value>Cuir a-steach AES-256…</value>
+  </data>
+  <data name="TechnicalTool_OutputFile" xml:space="preserve">
+    <value>Faidhle toraidh:</value>
+  </data>
+  <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
+    <value>Tagh toradh faidhle</value>
+  </data>
+  <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
+    <value>Tagh am faidhle stòr</value>
+  </data>
+  <data name="TechnicalTool_Run" xml:space="preserve">
+    <value>Ruith</value>
+  </data>
+  <data name="TechnicalTool_SourceFile" xml:space="preserve">
+    <value>Stòr faidhle:</value>
+  </data>
+  <data name="Theme_Title" xml:space="preserve">
+    <value>Cuspair</value>
+  </data>
+  <data name="Theme_Value_Dark" xml:space="preserve">
+    <value>Dorch</value>
+  </data>
+  <data name="Theme_Value_Light" xml:space="preserve">
+    <value>Solas</value>
+  </data>
+  <data name="Time_Field_Elapsed" xml:space="preserve">
+    <value>Air a dhol seachad:</value>
+  </data>
+  <data name="Time_Field_Hour" xml:space="preserve">
+    <value>Uair:</value>
+  </data>
+  <data name="Time_Field_Minute" xml:space="preserve">
+    <value>Mionaid:</value>
+  </data>
+  <data name="TimeoutTask_Title" xml:space="preserve">
+    <value>A' feitheamh airson ùine-ama...</value>
+  </data>
+  <data name="TrustDetected_CertificateParseWarning" xml:space="preserve">
+    <value>Rabhadh parsaidh teisteanais: {0}</value>
+  </data>
+  <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
+    <value>Dearbhaich dearbh-aithne teisteanais taobh a-muigh a’ chòmhlan, agus an uairsin cliog air Sàbhail a-rithist gus a stòradh.</value>
+  </data>
+  <data name="TrustDetected_Ftps_Title" xml:space="preserve">
+    <value>Teisteanas frithealaiche FTPS air a lorg rè deuchainn.</value>
+  </data>
+  <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
+    <value>Teisteanas (heicseag amh): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_DnsName" xml:space="preserve">
+    <value>Ainm DNS: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Encryption" xml:space="preserve">
+    <value>Crioptachadh: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
+    <value>Meòir-lorg (SHA-256): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Folder" xml:space="preserve">
+    <value>Pasgan: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Host" xml:space="preserve">
+    <value>Neach-aoigheachd: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Issuer" xml:space="preserve">
+    <value>Neach-sgaoilidh: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Port" xml:space="preserve">
+    <value>Port: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeyAlgorithm" xml:space="preserve">
+    <value>Algorithm iuchair phoblach: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_PublicKeySize" xml:space="preserve">
+    <value>Meud na h-iuchrach phoblach: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SerialNumber" xml:space="preserve">
+    <value>Àireamh sreathach: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SignatureAlgorithm" xml:space="preserve">
+    <value>Algorithm ainm-sgrìobhte: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Subject" xml:space="preserve">
+    <value>Cuspair: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_SubjectAlternativeNames" xml:space="preserve">
+    <value>Ainmean cuspaireil eile: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_Thumbprint" xml:space="preserve">
+    <value>Mion-dhealbh: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_User" xml:space="preserve">
+    <value>Cleachdaiche: {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidFromUtc" xml:space="preserve">
+    <value>Dligheach o (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_Label_ValidUntilUtc" xml:space="preserve">
+    <value>Dligheach gu (UTC): {0}</value>
+  </data>
+  <data name="TrustDetected_ParsedCertificate_Header" xml:space="preserve">
+    <value>Mion-fhiosrachadh an teisteanais air a pharsadh:</value>
+  </data>
+  <data name="TrustDetected_Port_Default" xml:space="preserve">
+    <value>bunaiteach</value>
+  </data>
+  <data name="TrustDetected_Port_Default22" xml:space="preserve">
+    <value>bunaiteach (22)</value>
+  </data>
+  <data name="TrustDetected_PublicKeySize_Unknown" xml:space="preserve">
+    <value>neo-aithnichte</value>
+  </data>
+  <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
+    <value>Dearbhaich an lorgan-meòir seo a-mach às a’ chòmhlan, agus an uairsin cliog air Sàbhail a-rithist gus a stòradh.</value>
+  </data>
+  <data name="TrustDetected_Sftp_Title" xml:space="preserve">
+    <value>Fiosrachadh earbsa frithealaiche SFTP a chaidh a lorg rè deuchainn.</value>
+  </data>
+  <data name="TrustedCertificate_Field" xml:space="preserve">
+    <value>Teisteanas earbsach (hex):</value>
+  </data>
+  <data name="UploadFolderContentsTask_Create" xml:space="preserve">
+    <value>Luchdaich suas pasgan gu frithealaiche</value>
+  </data>
+  <data name="UploadFolderTask_Help" xml:space="preserve">
+    <value>Faodaidh tu susbaint pasgan a luchdachadh suas le ath-sgrìobhadh air faidhlichean a tha ann mu thràth.</value>
+  </data>
+  <data name="Url_Field" xml:space="preserve">
+    <value>Url:</value>
+  </data>
+  <data name="Url_Field_Validation" xml:space="preserve">
+    <value>Chan eil an URL air a shònrachadh.</value>
+  </data>
+  <data name="User_Field" xml:space="preserve">
+    <value>Cleachdaiche:</value>
+  </data>
+  <data name="User_Field_Validation" xml:space="preserve">
+    <value>Chan eil an cleachdaiche air a shònrachadh.</value>
+  </data>
+  <data name="Winget_Description" xml:space="preserve">
+    <value>Dèan cùl-taic / sioncronaich an dàta agad Windows, Linux.
+Cuir a-steach dealbhan bhon fhòn tro WI-FI agus barrachd.
+
+A’ toirt taic do chànanan: Beurla, Arabais, Bengal, Sìnis, Fraingis, Gearmailtis, Hindi, Indonesia, Eadailtis, Seapanais, Marathi, Nigerian Pidgin, Portuguese, Ruisis, Spàinntis, Tamil, Telugu, Turcais, Ucràinis, Urdu, Bhietnam, Yue Sìneach
+
+Feartan:
+- Cùl-taic mean air mhean le dùblachadh fhaidhlichean agus taic còmhdhail SFTP, FTPS, SMB / CIFS;
+- Sioncronadh fhaidhlichean eadar innealan a’ cleachdadh stòradh meadhanaichte agus taic dreach;
+- Cuir a-steach meadhanan - Cuir a-steach clàran-fuaim, dealbhan, bhideothan bho chairt SD camara, inneal clàraidh; dealbhan agus bhideothan bhon fhòn agad tro WI-FI tro thagradh FTPS Server a’ cleachdadh ainmean faidhle teamplaid no tro MTP;
+- Gluasad faidhle P2P le crioptachadh eadar innealan;
+- Console airson clàradh fèin-ghluasad;
+- crioptachadh AES-256.
+
+Àrd-ùrlaran: Windows 11 x64, ARM64 no Ubuntu 24+.</value>
+  </data>
+  <data name="Winget_ShortDescription" xml:space="preserve">
+    <value>Bidh BUtil a’ cruthachadh cùl-taic mean air mhean, sioncronadh mean air mhean agus a’ toirt a-steach ioma-mheadhan air do PC le deduplication agus FTPS, SFTP, SMB / CIFS a’ giùlan taic airson Windows agus Linux.</value>
+  </data>
+</root>

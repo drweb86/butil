@@ -1,4 +1,14 @@
-﻿# 2026.04.23
+﻿# 2026.04.27
+(unpublished)
+
+## New Features
+- Added Afrikaans, Asturian, Basque, Breton, Catalan, Corsican, Efik, Esperanto, European Portuguese, Galician, Irish, Luxembourgish, Pashto, Scottish Gaelic, Spanish (Latin America), Tatar, Welsh languages.
+Localization of application to all possible languages is completed.
+
+## Changes
+- Italian language was updated by https://github.com/bovirus .
+
+# 2026.04.23
 
 ## Changes
 - Removed Avalonia.Diagnostics as F12 crashed app.
