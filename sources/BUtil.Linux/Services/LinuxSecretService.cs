@@ -54,7 +54,9 @@ internal sealed class LinuxSecretService : SecretServiceBase
         var salt = Encoding.UTF8.GetBytes("BUtil.Linux.SecretService.v1");
 
         // Derive a 256-bit key using PBKDF2
+#pragma warning disable SYSLIB0060 // Type or member is obsolete
         using var pbkdf2 = new Rfc2898DeriveBytes(machineId, salt, 100000, HashAlgorithmName.SHA256);
+#pragma warning restore SYSLIB0060 // Type or member is obsolete
         return pbkdf2.GetBytes(32);
     }
 

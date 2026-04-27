@@ -7,6 +7,7 @@ Localization of application to all possible languages is completed.
 
 ## Changes
 - Italian language was updated by https://github.com/bovirus .
+- Some libraries were updated.
 
 # 2026.04.23
 
