@@ -21,7 +21,7 @@ public partial class SynchronizationWhatView : UserControl
 
     private async Task BrowseCommandInternal()
     {
-        var root = this.VisualRoot as TopLevel ?? throw new NullReferenceException("Invalid Owner");
+        var root = TopLevel.GetTopLevel(this) ?? throw new NullReferenceException("Invalid Owner");
         var dataContext = DataContext as SynchronizationWhatViewModel ?? throw new NullReferenceException();
         IStorageFolder? startLocation = null;
         try

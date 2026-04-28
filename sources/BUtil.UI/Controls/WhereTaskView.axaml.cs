@@ -29,7 +29,7 @@ public partial class WhereTaskView : UserControl
 
     private async Task BrowseCommandInternal()
     {
-        var root = this.VisualRoot as TopLevel ?? throw new NullReferenceException("Invalid Owner");
+        var root = TopLevel.GetTopLevel(this) ?? throw new NullReferenceException("Invalid Owner");
         var dataContext = DataContext as WhereTaskViewModel ?? throw new NullReferenceException();
         var startLocation = await root.StorageProvider.TryGetFolderFromPathAsync(dataContext.FolderFolder);
         var folders = await root.StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
@@ -47,7 +47,7 @@ public partial class WhereTaskView : UserControl
 
     private async Task BrowseKeyFileCommandInternal()
     {
-        var root = this.VisualRoot as TopLevel ?? throw new NullReferenceException("Invalid Owner");
+        var root = TopLevel.GetTopLevel(this) ?? throw new NullReferenceException("Invalid Owner");
         var dataContext = DataContext as WhereTaskViewModel ?? throw new NullReferenceException();
         var startLocation = await root.StorageProvider.TryGetFolderFromPathAsync(dataContext.FolderFolder);
         var files = await root.StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions()

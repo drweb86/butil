@@ -28,7 +28,7 @@ public partial class TechnicalFileToolView : UserControl, IViewLocatorAware<Tech
 
     private async Task BrowseSourceAsync()
     {
-        var root = this.VisualRoot as TopLevel ?? throw new InvalidOperationException();
+        var root = TopLevel.GetTopLevel(this) ?? throw new InvalidOperationException();
         var vm = DataContext as TechnicalFileToolViewModel ?? throw new InvalidOperationException();
         var folder = Path.GetDirectoryName(vm.InputPath);
         var start = !string.IsNullOrEmpty(folder)
@@ -49,7 +49,7 @@ public partial class TechnicalFileToolView : UserControl, IViewLocatorAware<Tech
 
     private async Task BrowseOutputAsync()
     {
-        var root = this.VisualRoot as TopLevel ?? throw new InvalidOperationException();
+        var root = TopLevel.GetTopLevel(this) ?? throw new InvalidOperationException();
         var vm = DataContext as TechnicalFileToolViewModel ?? throw new InvalidOperationException();
         var folder = Path.GetDirectoryName(vm.OutputPath);
         if (string.IsNullOrEmpty(folder))

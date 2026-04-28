@@ -21,7 +21,7 @@ public partial class ImportMediaTaskWhereTaskView : UserControl
 
     private async Task BrowseCommandInternal()
     {
-        var root = this.VisualRoot as TopLevel ?? throw new NullReferenceException("Invalid Owner");
+        var root = TopLevel.GetTopLevel(this) ?? throw new NullReferenceException("Invalid Owner");
         var dataContext = DataContext as ImportMediaTaskWhereTaskViewModel ?? throw new NullReferenceException();
         var startLocation = await root.StorageProvider.TryGetFolderFromPathAsync(dataContext.OutputFolder);
         var folders = await root.StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()

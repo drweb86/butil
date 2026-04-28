@@ -21,7 +21,7 @@ public partial class VersionsListView : UserControl
 
     private async Task BrowseCommandInternal()
     {
-        var root = this.VisualRoot as TopLevel ?? throw new NullReferenceException("Invalid Owner");
+        var root = TopLevel.GetTopLevel(this) ?? throw new NullReferenceException("Invalid Owner");
         var dataContext = DataContext as VersionsListViewModel ?? throw new NullReferenceException();
         var startLocation = await root.StorageProvider.TryGetFolderFromPathAsync(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments));
         var folders = await root.StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()

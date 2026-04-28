@@ -21,7 +21,7 @@ public partial class FolderSectionView : UserControl
 
     private async Task BrowseCommandInternal()
     {
-        var root = this.VisualRoot as TopLevel ?? throw new NullReferenceException("Invalid Owner");
+        var root = TopLevel.GetTopLevel(this) ?? throw new NullReferenceException("Invalid Owner");
         var dataContext = DataContext as FolderSectionViewModel ?? throw new NullReferenceException();
         var startLocation = await root.StorageProvider.TryGetFolderFromPathAsync(dataContext.Folder);
         var folders = await root.StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()

@@ -1,6 +1,8 @@
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Platform.Storage;
+using Avalonia.VisualTree;
 using BUtil.Core.ConfigurationFileModels.V2;
 using System;
 using System.Threading.Tasks;
@@ -22,7 +24,7 @@ public partial class FolderAndPortSectionView : UserControl
 
     private async Task BrowseCommandInternal()
     {
-        var root = this.VisualRoot as TopLevel ?? throw new NullReferenceException("Invalid Owner");
+        var root = TopLevel.GetTopLevel(this) ?? throw new NullReferenceException("Invalid Owner");
         var dataContext = DataContext as FolderAndPortSectionViewModel ?? throw new NullReferenceException();
         var startLocation = await root.StorageProvider.TryGetFolderFromPathAsync(dataContext.Folder);
         var folders = await root.StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
