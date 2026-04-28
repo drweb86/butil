@@ -2,19 +2,18 @@
   <Folder Name="/Solution Items/">
     <File Path="../CHANGELOG.md" />
     <File Path="../README.md" />
-    <File Path="BUILD.MD" />
     <File Path="ubuntu-install.sh" />
   </Folder>
   <Project Path="butil-ui.Desktop/butil-ui.Desktop.csproj">
     <BuildDependency Project="BUtil.Linux/BUtil.Linux.csproj" />
     <BuildDependency Project="BUtil.Windows/BUtil.Windows.csproj" />
   </Project>
-  <Project Path="BUtil.UI/BUtil.UI.csproj">
-    <BuildDependency Project="BUtil.Windows/BUtil.Windows.csproj" />
-  </Project>
   <Project Path="BUtil.Core/BUtil.Core.csproj" />
   <Project Path="BUtil.Linux/BUtil.Linux.csproj" />
   <Project Path="BUtil.Tests/BUtil.Tests.csproj" />
+  <Project Path="BUtil.UI/BUtil.UI.csproj">
+    <BuildDependency Project="BUtil.Windows/BUtil.Windows.csproj" />
+  </Project>
   <Project Path="BUtil.Windows/BUtil.Windows.csproj" />
   <Project Path="butilc/butilc.csproj">
     <BuildDependency Project="BUtil.Windows/BUtil.Windows.csproj" />

@@ -1,5 +1,4 @@
-﻿# 2026.04.27
-(unpublished)
+﻿# 2026.04.28
 
 ## New Features
 - Added Afrikaans, Asturian, Basque, Breton, Catalan, Corsican, Efik, Esperanto, European Portuguese, Galician, Irish, Luxembourgish, Pashto, Scottish Gaelic, Spanish (Latin America), Tatar, Welsh languages.
