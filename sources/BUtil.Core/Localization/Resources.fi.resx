@@ -976,8 +976,6 @@ Katso yksityiskohtainen kuvaus seuraavasta linkistä.</value>
     <value>Varmuuskopioi/synkronoi tietosi Windowsissa, Linuxissa.
 Tuo valokuvia puhelimesta WI-FI:n kautta ja paljon muuta.
 
-Tuetut kielet: englanti, arabia, bengali, kiina, ranska, saksa, hindi, indonesia, italia, japani, marathi, nigerialais-pidgin, portugali, venäjä, espanja, tamili, telugu, turkki, ukraina, urdu, vietnam, kantoninkiina
-
 Ominaisuudet:
 - Inkrementaalinen varmuuskopiointi tiedostojen deduplikoinnilla ja SFTP-, FTPS-, SMB/CIFS-siirtotuella;
 - Tiedostojen synkronointi laitteiden välillä keskitettyä tallennustilaa ja versionhallintaa käyttäen;

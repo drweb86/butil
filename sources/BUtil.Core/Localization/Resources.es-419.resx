@@ -121,7 +121,7 @@
     <value>SpanishInternational</value>
   </data>
   <data name="_Technical_WingetLocale" xml:space="preserve">
-    <value>es-419</value>
+    <value></value>
   </data>
   <data name="AfterTaskSelection_DoNothing" xml:space="preserve">
     <value>no hacer nada</value>
@@ -975,8 +975,6 @@ See detailed description in the following link.</value>
   <data name="Winget_Description" xml:space="preserve">
     <value>Haga una copia de seguridad/sincronice sus datos Windows, Linux.
 Importe fotos desde el teléfono a través de WI-FI y más.
-
-Idiomas admitidos: inglés, árabe, bengalí, chino, francés, alemán, hindi, indonesio, italiano, japonés, marathi, pidgin nigeriano, portugués, ruso, español, tamil, telugu, turco, ucraniano, urdu, vietnamita, chino yue
 
 Características:
 - Copia de seguridad incremental con deduplicación de archivos y soporte para transportes SFTP, FTPS, SMB/CIFS;

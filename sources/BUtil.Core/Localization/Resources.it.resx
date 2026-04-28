@@ -984,8 +984,6 @@ Scegliere una delle seguenti opzioni:
     <value>Backup/sincronizza i tuoi dati su Windows, Linux.
 Importa foto dal telefono tramite WI-FI e altro ancora.
 
-Lingue supportate: inglese, arabo, bengalese, cinese, francese, tedesco, hindi, indonesiano, italiano, giapponese, marathi, pidgin nigeriano, portoghese, russo, spagnolo, tamil, telugu, turco, ucraino, urdu, vietnamita, cantonese
-
 Funzionalità:
 - Backup incrementale con deduplicazione dei file e supporto trasporti SFTP, FTPS, SMB/CIFS;
 - Sincronizzazione dei file tra dispositivi utilizzando archiviazione centralizzata e supporto versioning;

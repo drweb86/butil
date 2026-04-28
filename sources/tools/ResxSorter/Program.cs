@@ -293,7 +293,7 @@ namespace Codice.SortResX
                         description = node.SelectSingleNode("value")?.InnerText;
                 }
 
-                if (wingetLocale == null)
+                if (string.IsNullOrWhiteSpace(wingetLocale))
                     continue;
 
                 if (shortDescription == null || description == null)
@@ -333,7 +333,8 @@ namespace Codice.SortResX
                     var trimmedLine = line.TrimEnd('\r');
                     writer.WriteLine($"  {trimmedLine}");
                 }
-                writer.WriteLine("Moniker: butil");
+                if (isDefaultLocale)
+                    writer.WriteLine("Moniker: butil");
                 writer.WriteLine("Tags:");
                 writer.WriteLine("- backup");
                 writer.WriteLine("- sync");

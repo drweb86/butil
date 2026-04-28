@@ -973,8 +973,6 @@ Silakan:
     <value>Cadangkan/sinkronkan data Anda di Windows, Linux.
 Impor foto dari ponsel melalui WI-FI dan lainnya.
 
-Bahasa yang didukung: Inggris, Arab, Bengali, Cina, Prancis, Jerman, Hindi, Indonesia, Italia, Jepang, Marathi, Pidgin Nigeria, Portugis, Rusia, Spanyol, Tamil, Telugu, Turki, Ukraina, Urdu, Vietnam, Kanton
-
 Fitur:
 - Cadangan inkremental dengan deduplikasi file dan dukungan transport SFTP, FTPS, SMB/CIFS;
 - Sinkronisasi file antar perangkat menggunakan penyimpanan terpusat dan dukungan versioning;

@@ -976,8 +976,6 @@ Vaadake üksikasjalikku kirjeldust järgmisel lingil.</value>
     <value>Varundage/sünkroniseerige oma andmeid Windows-is, Linux-is.
 Importige fotosid telefonist WI-FI kaudu ja palju muud.
 
-Toetatud keeled: inglise, araabia, bengali, hiina, prantsuse, saksa, hindi, indoneesia, itaalia, jaapani, marathi, nigeeria pidžin, portugali, vene, hispaania, tamili, telugu, türgi, ukraina, urdu, vietnami, kantoni hiina
-
 Funktsioonid:
 - Inkrementaalne varundamine failide deduplikeerimisega ning SFTP, FTPS, SMB/CIFS transpordi toega;
 - Failide sünkroniseerimine seadmete vahel tsentraliseeritud hoidla ja versioonimise toega;

@@ -976,8 +976,6 @@ Se detaljert beskrivelse i følgende lenke.</value>
     <value>Sikkerhetskopier/synkroniser dataene dine på Windows, Linux.
 Importer bilder fra telefon via WI-FI og mer.
 
-Støttede språk: engelsk, arabisk, bengali, kinesisk, fransk, tysk, hindi, indonesisk, italiensk, japansk, marathi, nigeriansk pidgin, portugisisk, russisk, spansk, tamil, telugu, tyrkisk, ukrainsk, urdu, vietnamesisk, kantonesisk
-
 Funksjoner:
 - Inkrementell sikkerhetskopiering med deduplisering av filer og SFTP-, FTPS-, SMB/CIFS-transportstøtte;
 - Synkronisering av filer mellom enheter med sentralisert lagring og versjonsstøtte;
