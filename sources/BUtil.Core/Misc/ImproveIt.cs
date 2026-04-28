@@ -42,6 +42,15 @@ public static class ImproveIt
                 builder.AppendLine(inner.StackTrace);
                 builder.AppendLine(inner.Source);
             }
+            if (exception is AggregateException aggregateException)
+            {
+                foreach (var innerException in aggregateException.InnerExceptions)
+                {
+                    builder.AppendLine(innerException.Message);
+                    builder.AppendLine(innerException.StackTrace);
+                    builder.AppendLine(innerException.Source);
+                }
+            }
 
             File.AppendAllText(Files.BugReportFile, builder.ToString());
 

@@ -2,6 +2,7 @@
 using Avalonia.Threading;
 using BUtil.Core.Misc;
 using System;
+using System.ComponentModel;
 using System.Threading.Tasks;
 
 namespace BUtil.UI.Desktop;
@@ -41,6 +42,7 @@ class Program
     private static void TaskScheduler_UnobservedTaskException(object? sender, UnobservedTaskExceptionEventArgs e)
     {
         ImproveIt.ProcessUnhandledException(e.Exception);
+        e.SetObserved();
     }
 
     // Avalonia configuration, don't remove; also used by visual designer.

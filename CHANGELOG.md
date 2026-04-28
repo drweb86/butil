@@ -3,6 +3,7 @@
 
 ## Bug Fixes
 - [Ubuntu] Folder picker opening crashed the application.
+- [Ubuntu] Attempt to clarify constant crashes nature.
 
 # 2026.04.28
 
