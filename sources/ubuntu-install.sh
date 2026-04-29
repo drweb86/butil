@@ -26,7 +26,7 @@ echo
 wget https://dot.net/v1/dotnet-install.sh -O /tmp/dotnet-install.sh
 chmod +x /tmp/dotnet-install.sh
 /tmp/dotnet-install.sh --channel 10.0
-sudo apt install dbus-x11 cron
+sudo apt install dbus-x11 cron unzip
 echo
 
 echo
@@ -38,15 +38,18 @@ sudo rm -rf ${binariesInstallationDirectory}
 echo
 echo Get source code
 echo
-version=$(git ls-remote --tags --sort='version:refname' https://github.com/drweb86/butil.git | grep -v '{}' | tail -1 | sed 's/.*refs\/tags\///')
-echo "Latest tag: $version"
+version=$(wget -qO- https://api.github.com/repos/drweb86/butil/releases/latest | grep '"tag_name"' | cut -d'"' -f4)
+echo "Latest release: $version"
 
 if [ "$LATEST_SOURCES" = true ]; then
-	sudo git clone --depth=1 https://github.com/drweb86/butil.git ${sourceCodeInstallationDirectory}
+	wget -O /tmp/butil-src.zip https://github.com/drweb86/butil/archive/refs/heads/master.zip
 else
-	sudo git clone --depth=1 --branch ${version} https://github.com/drweb86/butil.git ${sourceCodeInstallationDirectory}
+	wget -O /tmp/butil-src.zip https://github.com/drweb86/butil/archive/refs/tags/${version}.zip
 fi
-sudo git config --global --add safe.directory ${sourceCodeInstallationDirectory}
+sudo unzip -q /tmp/butil-src.zip -d /tmp/butil-src-extracted
+sudo mv /tmp/butil-src-extracted/butil-* ${sourceCodeInstallationDirectory}
+rm -f /tmp/butil-src.zip
+sudo rm -rf /tmp/butil-src-extracted
 cd ${sourceCodeInstallationDirectory}
 
 echo
