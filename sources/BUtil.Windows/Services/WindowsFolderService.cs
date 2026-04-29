@@ -22,6 +22,13 @@ internal class WindowsFolderService : IFolderService
         return Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
     }
 
+    public string GetDefaultMediaImportFolder()
+    {
+        return System.IO.Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.MyPictures),
+            "Camera Roll");
+    }
+
     public void OpenFolderInShell(string folder)
     {
         Process.Start("explorer.exe", $"\"{folder}\"");

@@ -1,174 +1,189 @@
-Imports audios, photos, videos from SD Card of camera, recorder; photos and videos from your phone via WI-FI through FTPS Server application using template file names.
+# Import media
 
-Features includes:
-- Deduplication of files;
-- Templated file names.
+Imports audios, photos and videos from an SD card of a camera or recorder, from a phone connected by Wi-Fi (over an FTPS server app) or by Media Transfer Protocol, and from any folder reachable from the host. While copying files, BUtil renames each file according to a configurable date-based template so that all imported media end up in a clean, predictable folder layout (year / month / day / ...).
+
+Features:
+
+- Deduplication: a file is copied to the destination only if no file with the same content (last-write-time + size + SHA-512) already exists in the destination folder or any of its subfolders.
+- Configurable date-based file-name template (year, month, day, ...).
+- Optional **Skip already imported files** memory, so re-running the task on the same source does not even re-read files it has already imported.
+- Optional **Process files newer than** date filter, so only files modified after a given date are imported.
+- Source can be a local **Folder**, an **SMB/CIFS** share, an **SFTP** server or an **FTPS** server, including FTPS servers running on a phone over Wi-Fi.
 
 # Scenarios
 
-## Import photos and videos to PC from Camera, Import Audio from Recorder SD Card
+## Import photos and videos to PC from a camera, or audio from a recorder via SD card
 
 ![Import photos and videos to PC from Camera, Import Audio from Recorder SD Card](./Assets/Image%20-%20Import%20media%20task%20-%20Case%201.png)
 
-1. Plug SD card into card reader.
+1. Plug the SD card into a card reader.
+2. Launch the task.
+3. The task copies all files from the SD card (the configured source folder) to the destination folder. While copying it reads each file's last-write-time and uses it to build the destination path according to the **File name transformations** template.
 
-2. Launch job.
+## Import photos and videos from a camera, or audio from a recorder via Media Transfer Protocol (MTP)
 
-3. Job will copy all files from SD card (specified folder) to destination folder. During copying of files, it will take last write time and converts it to path of saved file at destination directory.
+1. Plug the device into the PC.
+2. Launch the task.
+3. The task copies all files from the device to the destination folder, naming each output file from the source file's last-write-time and the configured template.
 
-## Import photos and videos to PC from Camera, Import Audio from Recorder via Media Transfer Protocol
+Be aware that on Windows the source **Folder** name should match what File Explorer shows for the device, e.g. `External Storage\DCIM` or similar.
 
-1. Plug in device.
+## Import photos and videos from a phone via Phone Link on Windows
 
-2. Launch job.
-
-3. Job will copy all files from device to destination folder. During copying of files, it will take last write time and converts it to path of saved file at destination directory.
-
-Be aware that Folder name should be similar to what you see in Explorer, e.g. "External Storage\DCIM" or something similar.
-
-## Import photos and videos from phone on Windows PC
-## Synchronize from and to phone using Windows PC
-## Backup phone data using Windows PC
-
-### Connect your device to Windows using Phone Link
+### 1. Connect your device to Windows using Phone Link
 
 Details: https://www.microsoft.com/en-us/windows/sync-across-your-devices .
 
-Verify that you see your device files in Explorer.
+Verify that you can see your phone's files in File Explorer.
 
-### Setup BUtil to import multimedia task in What? section from phone.
+### 2. Set up the Import Media task
 
-a. Choose **Folder**
+In the **Where?** section (the source):
 
-b. Specify **DCIM** folder of your phone.
+a. Choose **Folder**.
 
-c. Save task.
+b. Specify the **DCIM** folder of your phone as it appears in Explorer.
 
-### Each time you will need sync over wi-fi
+c. Save the task.
 
-a. Open **Phone Link** at PC.
+### 3. Each time you want to sync over Wi-Fi
 
-b. Open Explorer and navigate to your phone.
+a. Open **Phone Link** on the PC.
 
-c. Click Disconnected in address bar of Explorer and then Connect.
+b. Open File Explorer and navigate to your phone.
 
-d. Launch import task.
+c. Click the disconnected indicator in the address bar of Explorer and reconnect.
 
-Be aware, this feature works unstably in Windows 11 as of 2024-12, so you might need to restart application since first time there will be access exceptions.
+d. Launch the import task.
 
-Be aware that 
+Be aware: this Microsoft feature has historically been unstable on Windows 11; you may need to restart the application the first time because of access exceptions.
 
-## Import photos and videos from phone via Wi-Fi via FTPS
+## Import photos and videos from a phone via Wi-Fi via FTPS
 
 ![Import photos and videos from phone via Wi-Fi via FTPS](./Assets/Image%20-%20Import%20media%20task%20-%20Case%202.png)
 
-### Setup import photos and videos from phone via Wi-Fi via FTPS
+This is the recommended cross-platform way (Windows and Linux) to bring photos and videos off a phone without cables.
 
-Setup will be demonstrated on application **FTPS Server**. It can be done in similar way for other apps.
+### Set up the FTPS server on the phone
 
-#### Install **FTPS Server** application on your phone.
+The example below uses the Android **FTP Server** (free) app. Other FTPS server apps work the same way.
+
+#### Install the **FTP Server** application on the phone
 
 https://play.google.com/store/apps/details?id=net.xnano.android.ftpserver&hl=en_US
 
-#### Open application
+#### Open the application
 
-Its window will look like this
+The main screen looks like this:
 
 ![FTP Server application](./Assets/Image%20-%20FTP%20Server%20-%20After%20Install.png)
 
-#### Change encryption mode to **FTPS Implicit** or **FTPS Explicit** as it is shown on a picture below.
+#### Switch encryption to **FTPS Implicit** or **FTPS Explicit**
 
-In example we will go next with FTPS Implicit.
+The example below uses **FTPS Implicit**.
 
 ![FTP Server - Change encryption mode](./Assets/Image%20-%20FTP%20Server%20-%20Change%20encryption%20mode.png)
 
-#### Add FTPS user with readonly access to DCIM
+#### Add an FTPS user with read-only access to DCIM
 
-a. Tap Users, click Add
+a. Tap **Users**, then **Add**.
 
 ![FTP Server - Add User 1](./Assets/Image%20-%20FTP%20Server%20-%20Add%20User%201.png)
 
-b. Create user.
+b. Create the user. The example below uses user **sync** with password **123**.
 
-In example we will go next with user sync with password 123 .
+![FTP Server - Add User 2](./Assets/Image%20-%20FTP%20Server%20-%20Add%20User%202.png)
 
-![FTP Server - Add User 2.png](./Assets/Image%20-%20FTP%20Server%20-%20Add%20User%202.png)
-
-a. Specify anything for as **Full Name**.
+a. Specify anything as **Full Name**.
 
 b. Specify **sync** as **Username** (1).
 
 c. Specify **123** as **Password** (2).
 
-d. Delete all paths in **Path** section.
+d. Delete all paths under **Path**.
 
-e. Click **Add new path** (3) and select **DCIM** folder.
+e. Click **Add new path** (3) and select the **DCIM** folder.
 
-You will see in **Path** section you should see single folder **/storage/emulated/0/DCIM** (4) .
+The **Path** section should now show a single folder, e.g. **/storage/emulated/0/DCIM** (4).
 
-f. Disable **Writable** (5).
+f. Disable **Writable** (5) - the import task only needs read access on the phone.
 
-g. Confirm new user creation.
+g. Confirm the new user.
 
-#### Make sure your phone is connected to WI-FI, the same one as your PC.
+#### Make sure the phone is on the same Wi-Fi network as the PC
 
-#### Launch FTPS Server.
+#### Start the FTPS server
 
-a. Click Home
+a. Tap **Home**.
 
-b. Click Start.
+b. Tap **Start**.
 
-You will see IP and Port addresses.
+The screen will show the IP address and port.
 
-![FTP Server - IP and Port.png](./Assets/Image%20-%20FTP%20Server%20-%20IP%20and%20Port.png)
+![FTP Server - IP and Port](./Assets/Image%20-%20FTP%20Server%20-%20IP%20and%20Port.png)
 
-In example above we will go next with server 172.16.92.15 and 2121 port.
+The example below uses server `172.16.92.15` on port `2121`.
 
-#### Setup BUtil to import multimedia task in What? section from this FTPS server.
+### Set up the BUtil Import Media task pointed at the FTPS server
 
-a. Choose **FTPS**
+In the **Where?** section (the source):
 
-b. Specify **Server**: 172.16.92.15
+a. Choose **FTPS**.
 
-c. Specify **Encryption SSL/TLS**: Implicit
+b. **Server**: `172.16.92.15`
 
-d. Specify **Port**: 2121
+c. **Encryption SSL/TLS**: `Implicit`
 
-e. Specify **User**: sync
+d. **Port**: `2121`
 
-f. Specify **Password**: 123
+e. **User**: `sync`
 
-#### Save task.
+f. **Password**: `123`
 
-#### On mobile phone tap **Stop** server.
+g. The first time you save, BUtil will detect the server's certificate and present its details. Verify the certificate identity out-of-band, then click **Save** again to store the trusted fingerprint.
 
-### Each time you will need sync over wi-fi
+#### Save the task
 
-a. Open **FTP Server** at phone and tap **Start**;
+#### On the phone, tap **Stop** to stop the FTPS server until next time
 
-b. Launch import task;
+### Each time you want to sync over Wi-Fi
 
-c. Open **FTP Server** at phone and tap **Stop**.
+a. Open **FTP Server** on the phone and tap **Start**.
 
-### Use case import photos and videos from phone via Wi-Fi via FTPS
+b. Launch the import task in BUtil.
 
-1. Open phone and start FTP Server application.
-
-2. Launch import media task.
-
-3. Job will copy all files from phone FTPS to destination folder. During moving of files, it will take last write time and converts it to path of saved file at destination directory.
+c. Open **FTP Server** on the phone and tap **Stop**.
 
 # Settings
 
+Settings are configured in the **Where?** section of the import-media task editor.
+
+## Output folder
+
+The folder on the local machine where imported files end up. Subfolders inside it are created according to the **File name transformations** template. The default value is platform-specific (typically `Pictures\Camera Roll` on Windows and `~/Pictures` on Linux).
+
 ## Skip already imported files
 
-When this setting is on, application will track imported file names. During next import, already imported files (by name) will be skipped.
-When this setting is off, application will always try to copy all files from external media.
+When this setting is **on**, the application records imported file names. On the next run, files with names already imported are skipped without being read. This is the fast path - useful when the source is a phone over Wi-Fi or an SD card with thousands of files.
 
-When file is retrieved, application will save to destination folder only in case it is missing in it (by last write time and SHA512 are compared) or its subfolders disregarding this setting (deduplication does not depend if this setting is on or off).
+When this setting is **off**, the application always reads every source file and decides whether to copy it based on deduplication.
 
-# Ideas behind implementation
+In both cases, when a file does pass the skip check, BUtil writes it to the destination only if no file with the same content (last-write-time and SHA-512) already exists in the destination folder or any of its subfolders. Deduplication is independent of this setting.
 
-## Why application copies files, not moves it?
+## Process files newer than
 
-It is done to reduce risk of accidental removal of files when user inputted invalid data or application have issue. Copying is safer.
+Optional date filter. When set, only source files whose last-write-time is **on or after** the configured date are imported. Older files are skipped. Useful for incremental imports - for example, to import only the photos taken since your last vacation.
+
+## File name transformations
+
+A template that converts each source file's last-write-time into a destination path relative to the **Output folder**. Use the **◄** / **►** buttons to cycle through prepared examples (year/month/day, year-month-day, etc.). The current template is shown live with a sample output below the field.
+
+Supported tokens:
+
+- `{DATE:Format}` - inserts the file's modification date in the given .NET date format (for example `{DATE:yyyy}`, `{DATE:yyyy-MM-dd}`, `{DATE:HH-mm-ss}`).
+
+# Ideas behind the implementation
+
+## Why does the task copy files instead of moving them?
+
+To reduce the risk of accidentally removing files when the user enters wrong settings or the application has a bug. Copying is safer; the source is never modified.

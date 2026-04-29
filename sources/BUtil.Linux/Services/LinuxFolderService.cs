@@ -22,6 +22,11 @@ internal class LinuxFolderService : IFolderService
         return Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
     }
 
+    public string GetDefaultMediaImportFolder()
+    {
+        return Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+    }
+
     public void OpenFolderInShell(string folder)
     {
         Process.Start("xdg-open", $"\"{folder}\"");

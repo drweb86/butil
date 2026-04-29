@@ -1,9 +1,15 @@
 ﻿# 2026.04.29
-(unreleased)
 
 ## Bug Fixes
 - [Ubuntu] Folder picker opening crashed the application.
 - [Ubuntu] Attempt to clarify constant crashes nature.
+- [Ubuntu] Default Import Media destination folder pointed to a non-existing `Pictures/Camera Roll` folder.
+- Restoration view: Close button width was too small.
+
+## Documentation
+- Added high-level [Synchronization guide](./help/Synchronization.md) describing how it works, what to configure on the server side, conflict resolution, version history / restore from any earlier version, and a recommended second-device setup procedure (start in Read mode, then switch to Two-way).
+- Refreshed [Scheduler (Automation)](./help/Scheduler%20%28Automation%29.md) for the current application: console binary is now `butilc(.exe)`, exact command lines for Windows Task Scheduler and Linux cron, supported switches (`Task=`, `HideConsole`, `Shutdown`, `LogOff`, `Reboot`).
+- Refreshed [Import media](./help/Import%20media%20task.md) description: deduplication, **Skip already imported files**, **Process files newer than** filter, file-name transformation templates, FTPS-from-phone walkthrough updated to current UI.
 
 # 2026.04.28
 

@@ -51,7 +51,6 @@ class Program
             exception.InnerExceptions.Any(x => x.Message is not null && x.Message.Contains("org.freedesktop.DBus.Error.ServiceUnknown")))
         {
             e.SetObserved();
-            Console.Beep();
             return;
         }
 

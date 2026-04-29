@@ -90,6 +90,8 @@ internal sealed class FakeCrossPlatformExperience : CrossPlatformExperience
 
         public string GetDefaultSynchronizationFolder() => string.Empty;
 
+        public string GetDefaultMediaImportFolder() => string.Empty;
+
         public string GetStorageItemExcludePatternHelp() => string.Empty;
 
         public void OpenFileInShell(string file)
