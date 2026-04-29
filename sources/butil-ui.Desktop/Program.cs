@@ -3,6 +3,7 @@ using Avalonia.Threading;
 using BUtil.Core.Misc;
 using System;
 using System.ComponentModel;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace BUtil.UI.Desktop;
@@ -41,8 +42,20 @@ class Program
 
     private static void TaskScheduler_UnobservedTaskException(object? sender, UnobservedTaskExceptionEventArgs e)
     {
-        ImproveIt.ProcessUnhandledException(e.Exception);
-        e.SetObserved();
+        var exception = e.Exception;
+
+        // Avalonia crashes at Ubuntu.
+        if ((exception.Message is not null && 
+            exception.Message.Contains("org.freedesktop.DBus.Error.ServiceUnknown")) ||
+            
+            exception.InnerExceptions.Any(x => x.Message is not null && x.Message.Contains("org.freedesktop.DBus.Error.ServiceUnknown")))
+        {
+            e.SetObserved();
+            Console.Beep();
+            return;
+        }
+
+        ImproveIt.ProcessUnhandledException(exception);
     }
 
     // Avalonia configuration, don't remove; also used by visual designer.
