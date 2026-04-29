@@ -38,25 +38,16 @@ sudo rm -rf ${binariesInstallationDirectory}
 echo
 echo Get source code
 echo
-sudo git clone https://github.com/drweb86/butil.git ${sourceCodeInstallationDirectory}
-sudo git config --global --add safe.directory ${sourceCodeInstallationDirectory}
-cd ${sourceCodeInstallationDirectory}
-sudo git fetch --tags
-version=$(sudo git describe --tags --abbrev=0 2>/dev/null)
+version=$(git ls-remote --tags --sort='version:refname' https://github.com/drweb86/butil.git | grep -v '{}' | tail -1 | sed 's/.*refs\/tags\///')
 echo "Latest tag: $version"
 
 if [ "$LATEST_SOURCES" = true ]; then
-	echo
-	echo Update to latest sources
-	echo
-	sudo git checkout master
-	sudo git pull origin master 2>/dev/null || echo "Note: Could not pull from remote, continuing with local copy"
+	sudo git clone --depth=1 https://github.com/drweb86/butil.git ${sourceCodeInstallationDirectory}
 else
-	echo
-	echo Update to tag
-	echo
-	sudo git checkout tags/${version}
+	sudo git clone --depth=1 --branch ${version} https://github.com/drweb86/butil.git ${sourceCodeInstallationDirectory}
 fi
+sudo git config --global --add safe.directory ${sourceCodeInstallationDirectory}
+cd ${sourceCodeInstallationDirectory}
 
 echo
 echo Building
