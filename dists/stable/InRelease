@@ -1,0 +1,51 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Architectures: amd64 arm64
+Codename: stable
+Components: main
+Date: Wed, 29 Apr 2026 19:48:23 +0000
+Description: BUtil APT Repository
+Label: BUtil
+Origin: BUtil
+Suite: stable
+MD5Sum:
+ 03181b8b8e7e58aaeb9f3a58ab11daed              174 Release
+ 6e50072b0e642c784d43858155c33e4d              794 main/binary-amd64/Packages
+ 5b325b337ca5ab32fb4dbb84dc57a85b              539 main/binary-amd64/Packages.gz
+ ebbe1cda3de272e99fe4d83a44a3e637              794 main/binary-arm64/Packages
+ 2c7475feecf7460674b5454216936cce              541 main/binary-arm64/Packages.gz
+SHA1:
+ 2886f58d9f882fa3d4e3c4fdb76bfe321ca85349              174 Release
+ 18b0885edbf5bb36ea7ce9ffc7713b28ee57c66f              794 main/binary-amd64/Packages
+ 74fd53df4848cc153b6f155d6277db49398ecb34              539 main/binary-amd64/Packages.gz
+ e6d6dc53912da658cedb29e2256d94ece3ebed8e              794 main/binary-arm64/Packages
+ c3ed3d7b81af521b5970ffda389f9c5691fc3f90              541 main/binary-arm64/Packages.gz
+SHA256:
+ 67e59229881f80e7710711bb760222fba8923241b893c83619571c63087b689b              174 Release
+ 5c97343706197ada1586008859dbf9b1d16f91cb91bc71605f57543b28f3dadf              794 main/binary-amd64/Packages
+ dce3b66be3f09ebadb79233bce6499f6411e13b1f4c4e27ff0fc807688df85dd              539 main/binary-amd64/Packages.gz
+ 2e1609115c0a680b20cc6cb548e3948262e84ceef4441bcf55e220c6457753d7              794 main/binary-arm64/Packages
+ ec7376df7867dd3e360ae958c503eeababdce7426f00322be5d98b70c0d69df4              541 main/binary-arm64/Packages.gz
+SHA512:
+ 14d48ed1c35a4279c0cb0e4af63f48ed3d16af3d2ecbc9a8d7a32cb442889a6dbce572f83565bd2fd40b3e153ea3a3851c9ac99c3fc4e34647bf981f006bcfca              174 Release
+ a9fbba05d12997c090e0ff544cfb48285402d85366aaafe1d9f1669a146b8643536a9cba347f9b80bd21e4d45b902f15f614f8cbbc56e5659ba2fd00448d128e              794 main/binary-amd64/Packages
+ 2dc5211e6bb80334ffffbdc053f8b9c8711db90cf6a8f2bcb604e7d29c705f208e4d0ed06a03eddcbca55d82ea50cfd15ddcfed38c418f015b92a0b213cbd587              539 main/binary-amd64/Packages.gz
+ d7e50c71c7099e4d82b8507dcca948dd62a0f2fe953c57c4981fc8b3dbe1c642027bcdacc0cce0a831fc653d97e307ded2ca30a403bc8d062454a489c53a680f              794 main/binary-arm64/Packages
+ 6a73151c79a2c2cd7f0aaee7bfc23b569057a9385415967961f7572fa2210466defb8c368ba6c06726de0b3b13abc24fbf81f18e0cabf05cb863655ce8fdff37              541 main/binary-arm64/Packages.gz
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEE327DYqOKv7n60hK2FDKdU16DZukFAmnyYIgACgkQFDKdU16D
+ZunquA//cip8UjVNT3evHnD6LO8WlADkxnVYLf6An0jjPKZocKCafm/uEevHNWtG
+uYoT2zYIku21tAJcXz8ga93SM6ffV/V0omwjgJIBk+VaFX0/B0fc7zn9JOW5qEer
+6BBUgx3r/Dl7ClI2eHVow1+XWmRS940Bpp7jzHJcUvsDNOpGeexs3GSlfiFWxdcU
+yIKhkB0QbE/4yI7yJmKh1/ENLD+C8ftt2GlJoH/3oG1KYham0+kQ5mUDP5ide1FS
+1l36AcenHShZaZj0NsXnG9FpuxeIPCXO8GuBkX9vlHx2PWUShjFoZrLATQRjC4Aj
+LpHlYNFVTq0saTLX+Dgle+SkR114d/rm1kHp3QvAP4EzZp8LMAKGQk8Z7Uxah1j6
+cfYrEDBWvD39kGwWzms9RKOk8PDCcz7jVA88d2nLcjjZaud+hfXj8d7/qfAq0/ut
+C01+xR0niENZFEUd5MMU96Sb7P4Exxl2fejcmK1WzJa9bGS1EsXmaFTuXVdc4E8r
+i8iuVrJVsUrmAxhgzjHopmuZfqupupt9nmtOX6h/eggNGvStseb15SxBGUs0o3lw
+Khu3sd2d0BLPskhGEuAe3rYpnz64N4glpTEOyA8Nd8pt1r3ewqffMnlvrL1Qpz0G
+u6cGgd7CKUyfnjAsu1WnYKW82j93N3ofXEQ/7RN1Mo9ioJM6YbE=
+=DQ6S
+-----END PGP SIGNATURE-----
