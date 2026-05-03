@@ -25,7 +25,7 @@ jobs:
           dotnet-version: '10.0.x'
 
       - name: Build deb packages
-        working-directory: scripts
+        working-directory: sources
         run: |
           chmod +x build-deb.sh
           ./build-deb.sh
@@ -68,17 +68,12 @@ jobs:
           echo "version=$version" >> $env:GITHUB_OUTPUT
           echo "Version: $version"
 
-      - name: Select cat icon and generate NSIS language file
-        shell: pwsh
-        working-directory: sources/tools/ResxSorter
-        run: dotnet run
-
       - name: Publish win-x64
         shell: pwsh
         working-directory: sources
         run: |
           $v = "${{ steps.version.outputs.version }}"
-          dotnet publish ScreenshotAnnotator.sln "/p:InformationalVersion=$v" "/p:VersionPrefix=$v" "/p:Version=$v" "/p:AssemblyVersion=$v" `
+          dotnet publish "/p:InformationalVersion=$v" "/p:VersionPrefix=$v" "/p:Version=$v" "/p:AssemblyVersion=$v" `
             "--runtime=win-x64" -c Release "/p:PublishDir=../../Output/publish/x64" `
             /p:PublishReadyToRun=false /p:RunAnalyzersDuringBuild=False --self-contained true --property WarningLevel=0
           if ($LASTEXITCODE -ne 0) { exit 1 }
@@ -88,10 +83,19 @@ jobs:
         working-directory: sources
         run: |
           $v = "${{ steps.version.outputs.version }}"
-          dotnet publish ScreenshotAnnotator.sln "/p:InformationalVersion=$v" "/p:VersionPrefix=$v" "/p:Version=$v" "/p:AssemblyVersion=$v" `
+          dotnet publish "/p:InformationalVersion=$v" "/p:VersionPrefix=$v" "/p:Version=$v" "/p:AssemblyVersion=$v" `
             "--runtime=win-arm64" -c Release "/p:PublishDir=../../Output/publish/arm64" `
             /p:PublishReadyToRun=false /p:RunAnalyzersDuringBuild=False --self-contained true --property WarningLevel=0
           if ($LASTEXITCODE -ne 0) { exit 1 }
+
+      - name: Prepare binaries README
+        shell: pwsh
+        run: Copy-Item "help\Readme.Binaries.md" "Output\publish\README.md"
+
+      - name: Generate NSIS language file
+        shell: pwsh
+        working-directory: sources/tools/ResxSorter
+        run: dotnet run
 
       - name: Install NSIS
         shell: pwsh
@@ -99,7 +103,7 @@ jobs:
 
       - name: Build NSIS installer
         shell: pwsh
-        working-directory: scripts
+        working-directory: sources
         run: |
           $v = "${{ steps.version.outputs.version }}"
           & "C:\Program Files (x86)\NSIS\Bin\makensis.exe" "/DPRODUCT_VERSION=$v" "setup.nsi"
@@ -110,7 +114,7 @@ jobs:
         shell: pwsh
         run: |
           $v = "${{ steps.version.outputs.version }}"
-          $hash = (Get-FileHash -Path "Output\ScreenshotAnnotator_v$v.exe" -Algorithm SHA256).Hash
+          $hash = (Get-FileHash -Path "Output\BUtil_v$v.exe" -Algorithm SHA256).Hash
           echo "hash=$hash" >> $env:GITHUB_OUTPUT
           echo "Installer SHA256: $hash"
 
@@ -119,7 +123,7 @@ jobs:
         run: |
           $v = "${{ steps.version.outputs.version }}"
           Push-Location "Output\publish"
-          & "C:\Program Files\7-Zip\7z.exe" a -y "..\ScreenshotAnnotator_v${v}_win-binaries.7z" * -mx9 -t7z -m0=lzma2 -ms=on -sccUTF-8 -ssw
+          & "C:\Program Files\7-Zip\7z.exe" a -y "..\BUtil_v${v}_win-binaries.7z" * -mx9 -t7z -m0=lzma2 -ms=on -sccUTF-8 -ssw
           if ($LASTEXITCODE -ne 0) { exit 1 }
           Pop-Location
 
@@ -142,8 +146,8 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           $v = "${{ steps.version.outputs.version }}"
-          gh release upload "${{ github.event.release.tag_name }}" "Output\ScreenshotAnnotator_v$v.exe" --clobber
-          gh release upload "${{ github.event.release.tag_name }}" "Output\ScreenshotAnnotator_v${v}_win-binaries.7z" --clobber
+          gh release upload "${{ github.event.release.tag_name }}" "Output\BUtil_v$v.exe" --clobber
+          gh release upload "${{ github.event.release.tag_name }}" "Output\BUtil_v${v}_win-binaries.7z" --clobber
 
   update-apt-repo:
     needs: build-deb
@@ -185,13 +189,13 @@ jobs:
 
           cd dists/stable
           apt-ftparchive \
-            -o APT::FTPArchive::Release::Origin="ScreenshotAnnotator" \
-            -o APT::FTPArchive::Release::Label="ScreenshotAnnotator" \
+            -o APT::FTPArchive::Release::Origin="BUtil" \
+            -o APT::FTPArchive::Release::Label="BUtil" \
             -o APT::FTPArchive::Release::Suite="stable" \
             -o APT::FTPArchive::Release::Codename="stable" \
             -o APT::FTPArchive::Release::Architectures="amd64 arm64" \
             -o APT::FTPArchive::Release::Components="main" \
-            -o APT::FTPArchive::Release::Description="Screenshot Annotator APT Repository" \
+            -o APT::FTPArchive::Release::Description="BUtil APT Repository" \
             release . > Release
 
           gpg --batch --yes --pinentry-mode loopback --passphrase "${{ secrets.DEB_GPG_PASSPHRASE }}" --default-key "$GPG_KEY_ID" -abs -o Release.gpg Release
@@ -219,7 +223,7 @@ jobs:
           sparse-checkout: |
             sources/tools/winget-pkgs
             sources/tools/ResxSorter
-            sources/ScreenshotAnnotator/Resources
+            sources/BUtil.Core/Localization
 
       - name: Setup .NET 10
         uses: actions/setup-dotnet@v4
@@ -245,22 +249,22 @@ jobs:
             "https://x-access-token:${{ secrets.WINGET_FORK_PAT }}@github.com/drweb86/winget-pkgs.git" \
             winget-fork
           cd winget-fork
-          git checkout -b "screenshot-annotator-${version}"
+          git checkout -b "butil-${version}"
 
-          manifest_dir="manifests/s/SiarheiKuchuk/ScreenshotAnnotator/${version}"
+          manifest_dir="manifests/s/SiarheiKuchuk/BUtil/${version}"
           mkdir -p "$manifest_dir"
 
           sed -e "s/APP_VERSION_STRING/$version/g" \
               -e "s/2001-01-01/$release_date/g" \
               -e "s/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/$hash/g" \
-              ../sources/tools/winget-pkgs/SiarheiKuchuk.ScreenshotAnnotator.installer.yaml \
-              > "$manifest_dir/SiarheiKuchuk.ScreenshotAnnotator.installer.yaml"
+              ../sources/tools/winget-pkgs/SiarheiKuchuk.BUtil.installer.yaml \
+              > "$manifest_dir/SiarheiKuchuk.BUtil.installer.yaml"
 
           sed -e "s/APP_VERSION_STRING/$version/g" \
-              ../sources/tools/winget-pkgs/SiarheiKuchuk.ScreenshotAnnotator.yaml \
-              > "$manifest_dir/SiarheiKuchuk.ScreenshotAnnotator.yaml"
+              ../sources/tools/winget-pkgs/SiarheiKuchuk.BUtil.yaml \
+              > "$manifest_dir/SiarheiKuchuk.BUtil.yaml"
 
-          for locale_file in ../sources/tools/winget-pkgs/SiarheiKuchuk.ScreenshotAnnotator.locale.*.yaml; do
+          for locale_file in ../sources/tools/winget-pkgs/SiarheiKuchuk.BUtil.locale.*.yaml; do
             filename=$(basename "$locale_file")
             sed -e "s/APP_VERSION_STRING/$version/g" \
                 -e "s/CURRENT_YEAR/$current_year/g" \
@@ -270,9 +274,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "Screenshot Annotator $version"
-          git push -u origin "screenshot-annotator-${version}"
+          git commit -m "BUtil $version"
+          git push -u origin "butil-${version}"
 
           echo ""
-          echo "Branch 'screenshot-annotator-${version}' pushed to drweb86/winget-pkgs"
-          echo "Create PR at: https://github.com/microsoft/winget-pkgs/compare/master...drweb86:winget-pkgs:screenshot-annotator-${version}"
+          echo "Branch 'butil-${version}' pushed to drweb86/winget-pkgs"
+          echo "Create PR at: https://github.com/microsoft/winget-pkgs/compare/master...drweb86:winget-pkgs:butil-${version}"
