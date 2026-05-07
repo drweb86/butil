@@ -16,6 +16,7 @@
   <Project Path="BUtil.UI/BUtil.UI.csproj">
     <BuildDependency Project="BUtil.Windows/BUtil.Windows.csproj" />
   </Project>
+  <Project Path="BUtil.UI.Storages/BUtil.UI.Storages.csproj" />
   <Project Path="BUtil.Windows/BUtil.Windows.csproj" />
   <Project Path="butilc/butilc.csproj">
     <BuildDependency Project="BUtil.Windows/BUtil.Windows.csproj" />

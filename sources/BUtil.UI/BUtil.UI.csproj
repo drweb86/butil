@@ -45,6 +45,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BUtil.Core\BUtil.Core.csproj" />
+    <ProjectReference Include="..\BUtil.UI.Storages\BUtil.UI.Storages.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -91,10 +92,7 @@
       <SubType>Code</SubType>
       <DependentUpon>VersionsListView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Controls\WhereTaskView.axaml.cs">
-      <DependentUpon>WhereTaskView.axaml</DependentUpon>
-    </Compile>
-    <Compile Update="Controls\EncryptionTaskView.axaml.cs">
+<Compile Update="Controls\EncryptionTaskView.axaml.cs">
       <DependentUpon>EncryptionTaskView.axaml</DependentUpon>
     </Compile>
     <Compile Update="Controls\WhatTaskView.axaml.cs">
