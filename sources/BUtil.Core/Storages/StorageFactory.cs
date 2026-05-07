@@ -12,15 +12,8 @@ public class StorageFactory
         if (storageSettings == null)
             throw new ArgumentNullException(nameof(storageSettings));
 
-        if (storageSettings is FolderStorageSettingsV2 folder)
-            return new FailoverStorageWrapper(log, new FolderStorage(log, folder), triesCount);
-        else if (storageSettings is SambaStorageSettingsV2 samba)
-            return new FailoverStorageWrapper(log, PlatformSpecificExperience.Instance.GetSmbCifsStorage(log, samba), triesCount);
-        else if (storageSettings is FtpsStorageSettingsV2 ftps)
-            return new FailoverStorageWrapper(log, new FtpsStorage(log, ftps, autodetectConnectionSettings), triesCount);
-        else if (storageSettings is SftpStorageSettingsV2 sftp)
-            return new FailoverStorageWrapper(log, new SftpStorage(log, sftp, autodetectConnectionSettings), triesCount);
-        throw new ArgumentOutOfRangeException(nameof(storageSettings));
+        var inner = StorageProviderRegistry.CreateStorage(log, storageSettings, autodetectConnectionSettings);
+        return new FailoverStorageWrapper(log, inner, triesCount);
     }
 
     public static string? Test(ILog log, IStorageSettingsV2 storageSettings, bool writeMode)

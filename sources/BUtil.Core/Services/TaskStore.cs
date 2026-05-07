@@ -1,6 +1,7 @@
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
+using BUtil.Core.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -28,7 +29,7 @@ public class TaskStore: ITaskStore
     private const string _extensionV2 = ".v2.json";
     private const string _extensionV3 = ".v3.json";
 
-    private static readonly JsonSerializerOptions _jsonSerializerOptions = new() { WriteIndented = true };
+    private static readonly JsonSerializerOptions _jsonSerializerOptions = JsonOptions.TaskSerialization;
 
     public TaskStore(ILocalFileSystem fileSystem)
     {
@@ -60,7 +61,7 @@ public class TaskStore: ITaskStore
         isNotFound = false;
 
         var json = _fileSystem.ReadAllText(fileName);
-        var result = JsonSerializer.Deserialize<TaskV2>(json);
+        var result = JsonSerializer.Deserialize<TaskV2>(json, _jsonSerializerOptions);
         isNotSupported = result == null;
         if (result != null)
             PlatformSpecificExperience.Instance.SecretService.UnprotectInPlace(result);
@@ -146,7 +147,7 @@ public class TaskStore: ITaskStore
                 var json = _fileSystem.ReadAllText(v2File);
                 _fileSystem.DeleteFile(v2File);
 
-                var task = JsonSerializer.Deserialize<TaskV2>(json);
+                var task = JsonSerializer.Deserialize<TaskV2>(json, _jsonSerializerOptions);
 
                 if (task == null || !MigrateToV3IsSupportedModel(task))
                     continue;

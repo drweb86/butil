@@ -1,4 +1,5 @@
 using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.Serialization;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -24,8 +25,8 @@ public abstract class SecretServiceBase : ISecretService
 
     public TaskV2 CreateProtectedClone(TaskV2 task)
     {
-        var serialized = JsonSerializer.Serialize(task);
-        var clone = JsonSerializer.Deserialize<TaskV2>(serialized) ?? throw new InvalidDataException("Unable to clone task.");
+        var serialized = JsonSerializer.Serialize(task, JsonOptions.TaskSerialization);
+        var clone = JsonSerializer.Deserialize<TaskV2>(serialized, JsonOptions.TaskSerialization) ?? throw new InvalidDataException("Unable to clone task.");
         TransformInPlace(clone, ProtectString);
         return clone;
     }

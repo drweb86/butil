@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(dotnet build *)"
+      "Bash(dotnet build *)",
+      "Bash(git -C /f/sources/butil status --short)",
+      "Bash(xargs grep *)",
+      "Bash(xargs cat *)"
     ]
   }
 }
