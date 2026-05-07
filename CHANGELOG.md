@@ -1,4 +1,10 @@
-﻿# 2026.04.29
+﻿# 2026.05.07
+(unpublished)
+
+## Changes
+- Preparation for support of more storage types.
+
+# 2026.04.29
 
 ## Bug Fixes
 - [Ubuntu] Folder picker opening crashed the application.
