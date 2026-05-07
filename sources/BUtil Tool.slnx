@@ -9,6 +9,8 @@
     <BuildDependency Project="BUtil.Windows/BUtil.Windows.csproj" />
   </Project>
   <Project Path="BUtil.Core/BUtil.Core.csproj" />
+  <Project Path="BUtil.Core.Localization/BUtil.Core.Localization.csproj" />
+  <Project Path="BUtil.Interop/BUtil.Interop.csproj" />
   <Project Path="BUtil.Linux/BUtil.Linux.csproj" />
   <Project Path="BUtil.Tests/BUtil.Tests.csproj" />
   <Project Path="BUtil.UI/BUtil.UI.csproj">

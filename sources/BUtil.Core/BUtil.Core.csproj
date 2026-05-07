@@ -14,13 +14,6 @@
     <None Remove="TasksTree\Apps\**" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Localization\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <InternalsVisibleTo Include="BUtil.Tests" />
   </ItemGroup>
   <ItemGroup>
@@ -36,10 +29,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Update="Localization\Resources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <ProjectReference Include="../BUtil.Core.Localization/BUtil.Core.Localization.csproj" />
+    <ProjectReference Include="../BUtil.Interop/BUtil.Interop.csproj" />
   </ItemGroup>
   <ItemGroup>
     <CopyLibraryFiles Include="$(NuGetPackageRoot)ssh.net\2025.1.0\lib\net9.0\*.*;$(NuGetPackageRoot)microsoft.extensions.filesystemglobbing\10.0.7\lib\net10.0\*.*;$(NuGetPackageRoot)fluentftp\54.1.1\lib\net9.0\*.*;$(NuGetPackageRoot)\siarhei_kuchuk.ftpsserverlibrary\2026.4.20\lib\net10.0\*.*" />

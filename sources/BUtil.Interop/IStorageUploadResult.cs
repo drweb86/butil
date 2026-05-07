@@ -1,4 +1,4 @@
-﻿
+
 namespace BUtil.Core.Storages;
 
 public class IStorageUploadResult

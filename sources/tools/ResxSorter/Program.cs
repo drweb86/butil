@@ -43,7 +43,7 @@ namespace Codice.SortResX
             var sourceDir = Directory.GetCurrentDirectory();
             while (Path.GetFileName(sourceDir) != "sources")
                 sourceDir = Directory.GetParent(sourceDir)!.FullName;
-            var localizationDir = Path.Combine(sourceDir, "BUtil.Core", "Localization");
+            var localizationDir = Path.Combine(sourceDir, "BUtil.Core.Localization");
 
             var dictionary = new Dictionary<string, int>();
             var allResx = Directory
@@ -167,7 +167,7 @@ namespace Codice.SortResX
     {
         public static void Generate(string sourceDir)
         {
-            var localizationDir = Path.Combine(sourceDir, "BUtil.Core", "Localization");
+            var localizationDir = Path.Combine(sourceDir, "BUtil.Core.Localization");
             var outputPath = Path.Combine(sourceDir, "setup-languages.nsh");
 
             var allResx = Directory.GetFiles(localizationDir, "*.resx")
@@ -267,7 +267,7 @@ namespace Codice.SortResX
     {
         public static void Generate(string sourceDir)
         {
-            var localizationDir = Path.Combine(sourceDir, "BUtil.Core", "Localization");
+            var localizationDir = Path.Combine(sourceDir, "BUtil.Core.Localization");
             var wingetPkgsDir = Path.Combine(sourceDir, "tools", "winget-pkgs");
 
             var allResx = Directory.GetFiles(localizationDir, "*.resx")
