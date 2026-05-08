@@ -22,7 +22,9 @@ class WebDavStorage : StorageBase<WebDavStorageSettingsV2>
     {
         if (string.IsNullOrWhiteSpace(Settings.Host))
             throw new InvalidDataException("Host is not specified.");
-        if (string.IsNullOrWhiteSpace(Settings.User))
+
+        var isOAuth = Settings.Preset == "YandexDisk";
+        if (!isOAuth && string.IsNullOrWhiteSpace(Settings.User))
             throw new InvalidDataException("User is not specified.");
 
         var scheme = Settings.UseHttps ? "https" : "http";
@@ -37,8 +39,13 @@ class WebDavStorage : StorageBase<WebDavStorageSettingsV2>
         _basePath = "/" + Settings.BasePath.Trim('/');
 
         var httpClient = new HttpClient { BaseAddress = new Uri($"{scheme}://{Settings.Host}{portPart}") };
-        var credentials = Convert.ToBase64String(Encoding.UTF8.GetBytes($"{Settings.User}:{Settings.Password}"));
-        httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", credentials);
+        if (isOAuth)
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("OAuth", Settings.Password);
+        else
+        {
+            var credentials = Convert.ToBase64String(Encoding.UTF8.GetBytes($"{Settings.User}:{Settings.Password}"));
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", credentials);
+        }
 
         _client = new WebDavClient(httpClient);
     }

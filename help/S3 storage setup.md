@@ -86,6 +86,46 @@ BUtil supports any S3-compatible object storage. One protocol covers a large eco
 
 ---
 
+### Linode / Akamai Object Storage
+
+Linode Object Storage (now part of Akamai Cloud) is an S3-compatible service available across multiple global regions.
+
+Service URL pattern: `https://<cluster>.linodeobjects.com`
+Common clusters: `us-east-1`, `eu-central-1`, `ap-south-1`, `us-southeast-1`, `us-ord-1`, `fr-par-1`
+Example: `https://eu-central-1.linodeobjects.com`
+
+1. Log into [Akamai Cloud Manager](https://cloud.linode.com/) and go to **Object Storage → Buckets**. Create a bucket and note its cluster/region.
+2. Go to **Object Storage → Access Keys** and create a new key pair (limit it to the specific bucket for safety).
+3. In BUtil:
+   - **Provider**: Linode / Akamai Object Storage
+   - **Service URL**: `https://<cluster>.linodeobjects.com`
+   - **Region**: the cluster name (e.g. `eu-central-1`)
+   - **Access Key / Secret Key**: from step 2
+   - **Bucket**: your bucket name
+
+---
+
+### Scaleway Object Storage
+
+Scaleway is a French cloud provider with data centres in Paris, Amsterdam, and Warsaw — a popular S3 option in Europe.
+
+Service URL pattern: `https://s3.<region>.scw.cloud`
+Available regions: `fr-par` (Paris), `nl-ams` (Amsterdam), `pl-waw` (Warsaw)
+Example: `https://s3.fr-par.scw.cloud`
+
+1. Log into the [Scaleway Console](https://console.scaleway.com/) and open **Object Storage**. Create a bucket in the region of your choice.
+2. Go to **IAM → API Keys** and create a new key pair, or use an existing one with *ObjectStorageFullAccess*.
+3. In BUtil:
+   - **Provider**: Scaleway Object Storage
+   - **Service URL**: `https://s3.<region>.scw.cloud`
+   - **Region**: e.g. `fr-par`
+   - **Access Key / Secret Key**: from step 2
+   - **Bucket**: your bucket name
+
+> **GDPR note:** All three Scaleway regions are inside the EU, making Scaleway a straightforward choice for storing personal data of EU residents without additional transfer safeguards.
+
+---
+
 ### Google Cloud Storage
 
 Google Cloud Storage supports the S3-compatible XML API using HMAC keys — no separate plugin needed.
@@ -108,6 +148,8 @@ Google Cloud Storage supports the S3-compatible XML API using HMAC keys — no s
 ---
 
 ## Russia
+
+> **FZ-152 (Personal Data) note:** Russian law requires personal data of Russian citizens to be stored on servers physically located in Russia. All providers in this section operate data centres in Russia. To remain compliant, verify that the bucket region maps to a Russian location (all default regions listed below do).
 
 ### Yandex Object Storage
 
@@ -165,6 +207,8 @@ Google Cloud Storage supports the S3-compatible XML API using HMAC keys — no s
 ---
 
 ## China
+
+> **PIPL (Personal Information Protection Law) note:** Chinese law requires personal information of Chinese residents to be stored within China and prohibits cross-border transfer without a legal basis (consent, necessity assessment, or a standard contract). All providers in this section offer mainland China regions. To stay compliant, choose a region physically inside mainland China (e.g. `cn-east-1`, `ap-beijing`, `cn-north-4`) and do not enable cross-region replication to overseas endpoints.
 
 For Chinese providers, the Service URL contains the region code. Enter it manually after choosing your provider and region.
 

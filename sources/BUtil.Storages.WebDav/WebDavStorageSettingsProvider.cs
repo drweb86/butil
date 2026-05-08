@@ -64,11 +64,12 @@ public class WebDavStorageSettingsProvider : IStorageSettingsProvider
             Key = "user",
             Label = Resources.User_Field,
             Type = StorageFieldType.Text,
+            IsOptional = true,
         },
         new StorageFieldDescriptor
         {
             Key = "password",
-            Label = Resources.Password_Field,
+            Label = "Password / OAuth Token",
             Type = StorageFieldType.Password,
         },
     ];

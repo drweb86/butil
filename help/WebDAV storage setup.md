@@ -17,20 +17,27 @@ WebDAV is a widely supported protocol for remote file access. It is the transpor
 
 ## Yandex Disk
 
-Yandex Disk exposes a WebDAV endpoint at `webdav.yandex.ru`. BUtil has a built-in **Yandex Disk** preset — select it and you only need to enter your credentials.
+Yandex Disk exposes a WebDAV endpoint at `webdav.yandex.ru`. BUtil has a built-in **Yandex Disk** preset that uses `Authorization: OAuth <token>` — the correct authentication scheme for Yandex WebDAV.
 
-> **Important:** Yandex blocks regular account passwords for WebDAV. You must create an **app password**:
-> 1. Go to [Yandex ID → Security → App passwords](https://id.yandex.ru/security/app-passwords).
-> 2. Click **Create app password**, give it a name (e.g. "BUtil"), and copy the generated password.
+### Getting an OAuth token
 
-In BUtil:
+1. Register an application (or use an existing one) at [Yandex OAuth](https://oauth.yandex.ru/). The app needs the **cloud_api:disk.app_folder** or **cloud_api:disk.read + cloud_api:disk.write** scope.
+2. Obtain a token via the authorization code flow or, for personal use, request one directly:
+   ```
+   https://oauth.yandex.ru/authorize?response_type=token&client_id=<your-client-id>
+   ```
+   Yandex will redirect back with `#access_token=<token>` in the URL fragment — copy that value.
+3. Tokens are long-lived but can be revoked at [Yandex ID → Security → Connected apps](https://id.yandex.ru/security/connected-apps).
+
+> **Note:** Regular account passwords and Yandex app passwords are not accepted for WebDAV with OAuth auth. You must obtain an OAuth token as described above.
+
+### BUtil settings
+
 - **Preset**: Yandex Disk
 - **Host**: auto-filled as `webdav.yandex.ru`
-- **User**: your Yandex login (the part before `@yandex.ru`, or the full email)
-- **Password**: the **app password** from the step above (not your account password)
-- **Base Path**: leave empty to use the entire Disk root, or enter a subfolder path (e.g. `/Backups`)
-
-> **Tip:** Two-factor authentication is enforced for app passwords — enabling 2FA on your Yandex account does not break WebDAV as long as you use an app password.
+- **User**: leave blank (not used for OAuth authentication)
+- **Password / OAuth Token**: paste the OAuth token obtained above
+- **Base Path**: leave empty for the entire Disk root, or enter a subfolder (e.g. `/Backups`)
 
 ---
 

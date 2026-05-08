@@ -40,10 +40,13 @@ class S3Storage : StorageBase<S3StorageSettingsV2>
         }
         else
         {
+            // Alibaba OSS and Tencent COS use virtual-hosted style by default;
+            // all other S3-compatible endpoints work with path-style.
+            var forcePathStyle = Settings.Provider is not ("AlibabaCloudOSS" or "TencentCloudCOS");
             var config = new AmazonS3Config
             {
                 ServiceURL = Settings.ServiceUrl,
-                ForcePathStyle = true,
+                ForcePathStyle = forcePathStyle,
             };
             if (!string.IsNullOrWhiteSpace(Settings.Region))
                 config.AuthenticationRegion = Settings.Region;

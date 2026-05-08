@@ -27,6 +27,8 @@ public class S3StorageSettingsProvider : IStorageSettingsProvider
                 ("Wasabi",             "Wasabi"),
                 ("CloudflareR2",       "Cloudflare R2"),
                 ("DigitalOceanSpaces", "DigitalOcean Spaces"),
+                ("LinodeObjectStorage","Linode / Akamai Object Storage"),
+                ("ScalewayObjectStorage","Scaleway Object Storage"),
                 ("GoogleCloudStorage", "Google Cloud Storage"),
                 ("YandexObjectStorage","Yandex Object Storage (RU)"),
                 ("VKCloudStorage",     "VK Cloud Object Storage (RU)"),
