@@ -16,10 +16,23 @@ public class WebDavStorageSettingsProvider : IStorageSettingsProvider
     [
         new StorageFieldDescriptor
         {
+            Key = "preset",
+            Label = "Preset",
+            Type = StorageFieldType.Enum,
+            DefaultValue = "Custom",
+            Options =
+            [
+                ("Custom",     "Generic / Custom"),
+                ("YandexDisk", "Yandex Disk"),
+            ],
+        },
+        new StorageFieldDescriptor
+        {
             Key = "host",
             Label = Resources.Server_Field_Address,
             Type = StorageFieldType.Text,
             Placeholder = "nextcloud.example.com",
+            IsOptional = true,
         },
         new StorageFieldDescriptor
         {
@@ -66,25 +79,39 @@ public class WebDavStorageSettingsProvider : IStorageSettingsProvider
         IReadOnlyDictionary<string, string?> fieldValues,
         long quota,
         string? mountScript,
-        string? unmountScript) =>
-        new WebDavStorageSettingsV2
+        string? unmountScript)
+    {
+        var preset = fieldValues.GetValueOrDefault("preset") ?? "Custom";
+        var host = preset switch
+        {
+            "YandexDisk" => "webdav.yandex.ru",
+            _ => fieldValues.GetValueOrDefault("host") ?? string.Empty,
+        };
+        var useHttps = preset == "Custom"
+            ? fieldValues.GetValueOrDefault("useHttps") != "No"
+            : true;
+
+        return new WebDavStorageSettingsV2
         {
             SingleBackupQuotaGb = quota,
             MountPowershellScript = mountScript,
             UnmountPowershellScript = unmountScript,
-            Host = fieldValues.GetValueOrDefault("host") ?? string.Empty,
-            UseHttps = fieldValues.GetValueOrDefault("useHttps") != "No",
+            Preset = preset,
+            Host = host,
+            UseHttps = useHttps,
             Port = int.TryParse(fieldValues.GetValueOrDefault("port"), out var port) ? port : 0,
             BasePath = fieldValues.GetValueOrDefault("basePath") ?? string.Empty,
             User = fieldValues.GetValueOrDefault("user") ?? string.Empty,
             Password = fieldValues.GetValueOrDefault("password") ?? string.Empty,
         };
+    }
 
     public IReadOnlyDictionary<string, string?> ExtractValues(IStorageSettingsV2 settings)
     {
         var s = (WebDavStorageSettingsV2)settings;
         return new Dictionary<string, string?>
         {
+            ["preset"] = s.Preset,
             ["host"] = s.Host,
             ["useHttps"] = s.UseHttps ? "Yes" : "No",
             ["port"] = s.Port.ToString(),

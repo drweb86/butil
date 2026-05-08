@@ -86,6 +86,190 @@ BUtil supports any S3-compatible object storage. One protocol covers a large eco
 
 ---
 
+### Google Cloud Storage
+
+Google Cloud Storage supports the S3-compatible XML API using HMAC keys — no separate plugin needed.
+
+1. In the [Google Cloud Console](https://console.cloud.google.com/) open **Cloud Storage** and create a bucket.
+2. Go to **Settings → Interoperability** in Cloud Storage.
+3. Under **Service account HMAC keys**, create a new key for the service account that has *Storage Object Admin* on the bucket.
+4. Copy the **Access Key** and **Secret**.
+5. In BUtil:
+   - **Provider**: Google Cloud Storage
+   - **Service URL**: auto-filled as `https://storage.googleapis.com`
+   - **Region**: your bucket's region (e.g. `europe-west1`). Optional — GCS accepts requests without it.
+   - **Access Key / Secret Key**: from step 4
+   - **Bucket**: your bucket name
+
+> **Tip:** HMAC keys are created per service account. Grant only *Storage Object Admin* on the specific bucket to limit permissions.
+
+---
+
+---
+
+## Russia
+
+### Yandex Object Storage
+
+1. Log into [Yandex Cloud Console](https://console.yandex.cloud/) and create a **bucket** under **Object Storage**. Note the bucket name and region (default: `ru-central1`).
+2. Go to **Service Accounts**, create an account with the `storage.editor` role on the bucket (or `storage.uploader` for write-only).
+3. Under the service account, create **static access keys** — copy the **Key ID** and **Secret Key**.
+4. In BUtil:
+   - **Provider**: Yandex Object Storage (RU)
+   - **Service URL**: auto-filled as `https://storage.yandexcloud.net`
+   - **Region**: auto-filled as `ru-central1` (change only if your bucket is in another zone)
+   - **Access Key / Secret Key**: from step 3
+   - **Bucket**: your bucket name
+
+> **Tip:** Yandex Object Storage supports S3 Lifecycle rules — configure automatic deletion of old backups directly in the bucket settings.
+
+---
+
+### VK Cloud Object Storage
+
+1. Log into [VK Cloud](https://mcs.mail.ru/) and open **Object Storage**.
+2. Create a bucket (set *Private*).
+3. Go to **Access Keys** in the Object Storage section and generate a new key pair.
+4. In BUtil:
+   - **Provider**: VK Cloud Object Storage (RU)
+   - **Service URL**: auto-filled as `https://hb.ru-msk.vkcloud-storage.ru`
+   - **Access Key / Secret Key**: from step 3
+   - **Bucket**: your bucket name
+
+---
+
+### Cloud.ru Object Storage (SberCloud)
+
+1. Log into [Cloud.ru Console](https://console.cloud.ru/) and open **Object Storage Service (OBS)**.
+2. Create a bucket in the `ru-moscow-1` region.
+3. Go to **My Credentials → Access Keys** and create a new access key pair.
+4. In BUtil:
+   - **Provider**: Cloud.ru Object Storage (RU)
+   - **Service URL**: auto-filled as `https://obs.ru-moscow-1.hc.sbercloud.ru`
+   - **Access Key / Secret Key**: from step 3
+   - **Bucket**: your bucket name
+
+---
+
+### Selectel Object Storage
+
+1. Log into the [Selectel Control Panel](https://my.selectel.ru/) and open **Cloud Storage**.
+2. Create a container (set *Private*).
+3. Go to **Profile → API access** and generate S3 credentials (key ID and secret).
+4. In BUtil:
+   - **Provider**: Selectel Object Storage (RU)
+   - **Service URL**: auto-filled as `https://s3.storage.selcloud.ru`
+   - **Access Key / Secret Key**: from step 3
+   - **Bucket**: your container name
+
+---
+
+## China
+
+For Chinese providers, the Service URL contains the region code. Enter it manually after choosing your provider and region.
+
+### Alibaba Cloud OSS
+
+Service URL pattern: `https://oss-cn-<region>.aliyuncs.com`
+Common regions: `shanghai`, `beijing`, `hangzhou`, `shenzhen`
+Example: `https://oss-cn-shanghai.aliyuncs.com`
+
+1. Log into [Alibaba Cloud Console](https://www.aliyun.com/) and create an **OSS bucket** in the desired region.
+2. Go to **RAM Console → Users**, create a user with `AliyunOSSFullAccess` on the bucket, and create an **AccessKey** for that user.
+3. In BUtil:
+   - **Provider**: Alibaba Cloud OSS (CN)
+   - **Service URL**: `https://oss-cn-<region>.aliyuncs.com`
+   - **Region**: e.g. `cn-shanghai`
+   - **Access Key / Secret Key**: from step 2
+   - **Bucket**: your bucket name
+
+---
+
+### Tencent Cloud COS
+
+Service URL pattern: `https://cos.<region>.myqcloud.com`
+Common regions: `ap-beijing`, `ap-shanghai`, `ap-guangzhou`, `ap-chengdu`
+Example: `https://cos.ap-beijing.myqcloud.com`
+
+1. Log into [Tencent Cloud Console](https://www.tencentcloud.com/) and create a **COS bucket** (set *Private*).
+2. Go to **CAM → API Keys** and create a new key pair.
+3. In BUtil:
+   - **Provider**: Tencent Cloud COS (CN)
+   - **Service URL**: `https://cos.<region>.myqcloud.com`
+   - **Region**: e.g. `ap-beijing`
+   - **Access Key / Secret Key**: from step 2
+   - **Bucket**: your bucket name
+
+---
+
+### Huawei Cloud OBS
+
+Service URL pattern: `https://obs.<region>.myhuaweicloud.com`
+Common regions: `cn-north-4` (Beijing), `cn-east-3` (Shanghai), `cn-south-1` (Guangzhou)
+Example: `https://obs.cn-north-4.myhuaweicloud.com`
+
+1. Log into [Huawei Cloud Console](https://www.huaweicloud.com/) and create an **OBS bucket**.
+2. Go to **IAM → My Credentials → Access Keys** and create a new access key pair.
+3. In BUtil:
+   - **Provider**: Huawei Cloud OBS (CN)
+   - **Service URL**: `https://obs.<region>.myhuaweicloud.com`
+   - **Region**: e.g. `cn-north-4`
+   - **Access Key / Secret Key**: from step 2
+   - **Bucket**: your bucket name
+
+---
+
+### Baidu Cloud BOS
+
+Service URL pattern: `https://s3.<region>.bcebos.com`
+Common regions: `bj` (Beijing), `gz` (Guangzhou), `su` (Suzhou)
+Example: `https://s3.bj.bcebos.com`
+
+1. Log into [Baidu Cloud Console](https://cloud.baidu.com/) and create a **BOS bucket**.
+2. Go to **Security → Access Key** and create an access key pair.
+3. In BUtil:
+   - **Provider**: Baidu Cloud BOS (CN)
+   - **Service URL**: `https://s3.<region>.bcebos.com`
+   - **Region**: e.g. `bj`
+   - **Access Key / Secret Key**: from step 2
+   - **Bucket**: your bucket name
+
+---
+
+### Qiniu Cloud Kodo
+
+Service URL pattern: `https://s3-<region>.qiniucs.com`
+Common regions: `cn-east-1` (Shanghai), `cn-north-1` (Beijing), `cn-south-1` (Guangdong)
+Example: `https://s3-cn-east-1.qiniucs.com`
+
+1. Log into [Qiniu Cloud Console](https://portal.qiniu.com/) and create a **Kodo bucket** (set *Private*).
+2. Go to **Keys** in the personal center and copy your **AK** (Access Key) and **SK** (Secret Key).
+3. In BUtil:
+   - **Provider**: Qiniu Cloud Kodo (CN)
+   - **Service URL**: `https://s3-<region>.qiniucs.com`
+   - **Region**: e.g. `cn-east-1`
+   - **Access Key / Secret Key**: AK and SK from step 2
+   - **Bucket**: your bucket name
+
+---
+
+### Volcano Engine TOS — ByteDance
+
+Service URL pattern: `https://tos-s3-<region>.volces.com`
+Common regions: `cn-beijing`, `cn-shanghai`, `cn-guangzhou`
+Example: `https://tos-s3-cn-beijing.volces.com`
+
+1. Log into [Volcano Engine Console](https://www.volcengine.com/) and open **TOS (Tinder Object Storage)**. Create a bucket.
+2. Go to **IAM → Access Key** and create a new access key pair.
+3. In BUtil:
+   - **Provider**: Volcano Engine TOS (CN)
+   - **Service URL**: `https://tos-s3-<region>.volces.com`
+   - **Region**: e.g. `cn-beijing`
+   - **Access Key / Secret Key**: from step 2
+   - **Bucket**: your bucket name
+
+---
+
 ### MinIO (Self-hosted) or Other S3-Compatible
 
 1. Create a bucket and an access key in your MinIO console (or equivalent).

@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BUtil.Core\BUtil.Core.csproj" />
+    <ProjectReference Include="..\BUtil.Storages.AzureBlob\BUtil.Storages.AzureBlob.csproj" />
     <ProjectReference Include="..\BUtil.Storages.Ftps\BUtil.Storages.Ftps.csproj" />
     <ProjectReference Include="..\BUtil.Storages.Nfs\BUtil.Storages.Nfs.csproj" />
     <ProjectReference Include="..\BUtil.Storages.S3\BUtil.Storages.S3.csproj" />

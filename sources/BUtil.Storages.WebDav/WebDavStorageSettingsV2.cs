@@ -5,6 +5,7 @@ namespace BUtil.Storages.WebDav;
 public class WebDavStorageSettingsV2 : IStorageSettingsV2
 {
     public long SingleBackupQuotaGb { get; set; }
+    public string Preset { get; set; } = "Custom";
     public string Host { get; set; } = string.Empty;
     public int Port { get; set; }
     public bool UseHttps { get; set; } = true;

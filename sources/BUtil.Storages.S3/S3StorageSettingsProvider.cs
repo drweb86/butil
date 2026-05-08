@@ -27,6 +27,17 @@ public class S3StorageSettingsProvider : IStorageSettingsProvider
                 ("Wasabi",             "Wasabi"),
                 ("CloudflareR2",       "Cloudflare R2"),
                 ("DigitalOceanSpaces", "DigitalOcean Spaces"),
+                ("GoogleCloudStorage", "Google Cloud Storage"),
+                ("YandexObjectStorage","Yandex Object Storage (RU)"),
+                ("VKCloudStorage",     "VK Cloud Object Storage (RU)"),
+                ("CloudRuStorage",     "Cloud.ru Object Storage (RU)"),
+                ("SelectelStorage",    "Selectel Object Storage (RU)"),
+                ("AlibabaCloudOSS",   "Alibaba Cloud OSS (CN)"),
+                ("TencentCloudCOS",   "Tencent Cloud COS (CN)"),
+                ("HuaweiCloudOBS",    "Huawei Cloud OBS (CN)"),
+                ("BaiduCloudBOS",     "Baidu Cloud BOS (CN)"),
+                ("QiniuCloudKodo",    "Qiniu Cloud Kodo (CN)"),
+                ("VolcanoEngineTOS",  "Volcano Engine TOS (CN)"),
                 ("Custom",             "MinIO / Custom"),
             ],
         },
@@ -91,7 +102,22 @@ public class S3StorageSettingsProvider : IStorageSettingsProvider
         {
             serviceUrl = provider switch
             {
-                "Wasabi" => "https://s3.wasabisys.com",
+                "Wasabi"              => "https://s3.wasabisys.com",
+                "GoogleCloudStorage"  => "https://storage.googleapis.com",
+                "YandexObjectStorage" => "https://storage.yandexcloud.net",
+                "VKCloudStorage"      => "https://hb.ru-msk.vkcloud-storage.ru",
+                "CloudRuStorage"      => "https://obs.ru-moscow-1.hc.sbercloud.ru",
+                "SelectelStorage"     => "https://s3.storage.selcloud.ru",
+                _ => string.Empty,
+            };
+        }
+
+        var region = fieldValues.GetValueOrDefault("region") ?? string.Empty;
+        if (string.IsNullOrWhiteSpace(region))
+        {
+            region = provider switch
+            {
+                "YandexObjectStorage" => "ru-central1",
                 _ => string.Empty,
             };
         }
@@ -103,7 +129,7 @@ public class S3StorageSettingsProvider : IStorageSettingsProvider
             UnmountPowershellScript = unmountScript,
             Provider = provider,
             ServiceUrl = serviceUrl,
-            Region = fieldValues.GetValueOrDefault("region") ?? string.Empty,
+            Region = region,
             AccessKey = fieldValues.GetValueOrDefault("accessKey") ?? string.Empty,
             SecretKey = fieldValues.GetValueOrDefault("secretKey") ?? string.Empty,
             BucketName = fieldValues.GetValueOrDefault("bucket") ?? string.Empty,

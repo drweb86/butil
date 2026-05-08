@@ -2,6 +2,7 @@ using BUtil.Core;
 using BUtil.Core.Options;
 using BUtil.Core.Services;
 using BUtil.Core.Storages;
+using BUtil.Storages.AzureBlob;
 using BUtil.Storages.Ftps;
 using BUtil.Storages.Nfs;
 using BUtil.Storages.S3;
@@ -46,6 +47,7 @@ public class LinuxExperience : CrossPlatformExperience
         FtpsStoragePlugin.Register();
         WebDavStoragePlugin.Register();
         S3StoragePlugin.Register();
+        AzureBlobStoragePlugin.Register();
         StorageProviderRegistry.Register(
             new SambaStorageSettingsProvider(),
             typeof(SambaStorageSettingsV2),

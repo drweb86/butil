@@ -5,6 +5,11 @@
 - Added **[WebDAV](./help/WebDAV%20storage%20setup.md)** storage type — works with Nextcloud, ownCloud, Synology DSM, Seafile, and any standard WebDAV server.
 - Added **[S3-compatible](./help/S3%20storage%20setup.md)** storage type — supports AWS S3, Backblaze B2, Wasabi, Cloudflare R2, DigitalOcean Spaces, MinIO, and any S3-compatible endpoint. Provider presets simplify setup for the most common services.
 - Added **[NFS](./help/NFS%20storage%20setup.md)** storage type — mounts an NFS share and uses it as a local folder. Supported on Linux and on Windows when the NFS Client optional feature is installed.
+- Added **[Azure Blob Storage](./help/Azure%20Blob%20Storage%20setup.md)** storage type — stores backups in an Azure Blob container using Shared Key authentication.
+- Added **Google Cloud Storage** preset to the S3-compatible storage type — uses GCS's S3-compatible XML API with HMAC keys.
+- Added S3 presets for Russian providers: **Yandex Object Storage**, **VK Cloud Object Storage**, **Cloud.ru Object Storage**, **Selectel Object Storage** — service URLs and regions auto-filled.
+- Added S3 presets for Chinese providers: **Alibaba Cloud OSS**, **Tencent Cloud COS**, **Huawei Cloud OBS**, **Baidu Cloud BOS**, **Qiniu Cloud Kodo**, **Volcano Engine TOS**.
+- Added **Yandex Disk** preset to the WebDAV storage type — host auto-filled, only credentials required.
 
 # 2026.05.07
 

@@ -15,6 +15,25 @@ WebDAV is a widely supported protocol for remote file access. It is the transpor
 
 ---
 
+## Yandex Disk
+
+Yandex Disk exposes a WebDAV endpoint at `webdav.yandex.ru`. BUtil has a built-in **Yandex Disk** preset — select it and you only need to enter your credentials.
+
+> **Important:** Yandex blocks regular account passwords for WebDAV. You must create an **app password**:
+> 1. Go to [Yandex ID → Security → App passwords](https://id.yandex.ru/security/app-passwords).
+> 2. Click **Create app password**, give it a name (e.g. "BUtil"), and copy the generated password.
+
+In BUtil:
+- **Preset**: Yandex Disk
+- **Host**: auto-filled as `webdav.yandex.ru`
+- **User**: your Yandex login (the part before `@yandex.ru`, or the full email)
+- **Password**: the **app password** from the step above (not your account password)
+- **Base Path**: leave empty to use the entire Disk root, or enter a subfolder path (e.g. `/Backups`)
+
+> **Tip:** Two-factor authentication is enforced for app passwords — enabling 2FA on your Yandex account does not break WebDAV as long as you use an app password.
+
+---
+
 ## Nextcloud / ownCloud
 
 1. Open Nextcloud and create a dedicated folder for backups, e.g. `Backups`.
