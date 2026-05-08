@@ -7,7 +7,7 @@ namespace BUtil.UI.Controls.StorageFields;
 
 public class EnumFieldViewModel : StorageFieldViewModel
 {
-    private readonly IReadOnlyList<(string Value, string DisplayLabel)> _options;
+    private readonly IReadOnlyList<StorageEnumOption> _options;
     private string _selectedDisplay;
 
     public EnumFieldViewModel(StorageFieldDescriptor descriptor) : base(descriptor)
@@ -17,7 +17,8 @@ public class EnumFieldViewModel : StorageFieldViewModel
 
         var defaultVal = descriptor.DefaultValue as string;
         var match = _options.FirstOrDefault(o => o.Value == defaultVal);
-        _selectedDisplay = match.DisplayLabel ?? (_options.Count > 0 ? _options[0].DisplayLabel : string.Empty);
+        _selectedDisplay = match?.DisplayLabel ?? (_options.Count > 0 ? _options[0].DisplayLabel : string.Empty);
+        RefreshChoiceHelp();
     }
 
     public ObservableCollection<string> DisplayOptions { get; }
@@ -30,19 +31,33 @@ public class EnumFieldViewModel : StorageFieldViewModel
             if (value == _selectedDisplay) return;
             _selectedDisplay = value;
             OnPropertyChanged(nameof(SelectedDisplay));
+            RefreshChoiceHelp();
         }
     }
 
-    // Returns the serialized Value key, not the display label
+    public string? ChoiceHelp { get; private set; }
+
+    public bool HasChoiceHelp => !string.IsNullOrWhiteSpace(ChoiceHelp);
+
+    private void RefreshChoiceHelp()
+    {
+        var match = _options.FirstOrDefault(o => o.DisplayLabel == _selectedDisplay);
+        var help = match?.Help;
+        if (ChoiceHelp == help) return;
+        ChoiceHelp = help;
+        OnPropertyChanged(nameof(ChoiceHelp));
+        OnPropertyChanged(nameof(HasChoiceHelp));
+    }
+
     public override string? GetValue()
     {
         var match = _options.FirstOrDefault(o => o.DisplayLabel == _selectedDisplay);
-        return match.Value ?? (_options.Count > 0 ? _options[0].Value : null);
+        return match?.Value ?? (_options.Count > 0 ? _options[0].Value : null);
     }
 
     public override void SetValue(string? value)
     {
         var match = _options.FirstOrDefault(o => o.Value == value);
-        SelectedDisplay = match.DisplayLabel ?? (_options.Count > 0 ? _options[0].DisplayLabel : string.Empty);
+        SelectedDisplay = match?.DisplayLabel ?? (_options.Count > 0 ? _options[0].DisplayLabel : string.Empty);
     }
 }

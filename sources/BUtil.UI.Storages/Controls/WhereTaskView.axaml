@@ -41,63 +41,82 @@
 			</DockPanel>
 
 			<!-- Per-storage-type fields — rendered from provider metadata, no XAML changes needed for new types -->
-			<ItemsControl ItemsSource="{Binding Fields}">
+				<ItemsControl ItemsSource="{Binding Fields}">
 				<ItemsControl.DataTemplates>
 
 					<DataTemplate x:DataType="sfvm:TextFieldViewModel">
-						<DockPanel Margin="0 2">
-							<TextBlock DockPanel.Dock="Left" MinWidth="160" Text="{Binding DisplayLabel}" VerticalAlignment="Center" Margin="0 0 4 0" />
-							<TextBox Margin="4 0" VerticalAlignment="Center"
-							         PlaceholderText="{Binding Descriptor.Placeholder}"
-							         Text="{Binding Value}" />
-						</DockPanel>
+						<Panel IsVisible="{Binding IsFieldVisible}">
+							<DockPanel Margin="0 2">
+								<TextBlock DockPanel.Dock="Left" MinWidth="160" Text="{Binding DisplayLabel}" VerticalAlignment="Center" Margin="0 0 4 0" />
+								<TextBox Margin="4 0" VerticalAlignment="Center"
+								         PlaceholderText="{Binding Descriptor.Placeholder}"
+								         Text="{Binding Value}" />
+							</DockPanel>
+						</Panel>
 					</DataTemplate>
 
 					<DataTemplate x:DataType="sfvm:PasswordFieldViewModel">
-						<DockPanel Margin="0 2">
-							<TextBlock DockPanel.Dock="Left" MinWidth="160" Text="{Binding DisplayLabel}" VerticalAlignment="Center" Margin="0 0 4 0" />
-							<TextBox Margin="4 0" VerticalAlignment="Center" PasswordChar="*"
-							         Text="{Binding Value}" />
-						</DockPanel>
+						<Panel IsVisible="{Binding IsFieldVisible}">
+							<DockPanel Margin="0 2">
+								<TextBlock DockPanel.Dock="Left" MinWidth="160" Text="{Binding DisplayLabel}" VerticalAlignment="Center" Margin="0 0 4 0" />
+								<TextBox Margin="4 0" VerticalAlignment="Center" PasswordChar="*"
+								         Text="{Binding Value}" />
+							</DockPanel>
+						</Panel>
 					</DataTemplate>
 
 					<DataTemplate x:DataType="sfvm:IntegerFieldViewModel">
-						<DockPanel Margin="0 2">
-							<TextBlock DockPanel.Dock="Left" MinWidth="160" Text="{Binding DisplayLabel}" VerticalAlignment="Center" Margin="0 0 4 0" />
-							<NumericUpDown Margin="4 0" VerticalAlignment="Center"
-							               Minimum="{Binding Minimum}"
-							               Maximum="{Binding Maximum}"
-							               Value="{Binding Value}" />
-						</DockPanel>
+						<Panel IsVisible="{Binding IsFieldVisible}">
+							<DockPanel Margin="0 2">
+								<TextBlock DockPanel.Dock="Left" MinWidth="160" Text="{Binding DisplayLabel}" VerticalAlignment="Center" Margin="0 0 4 0" />
+								<NumericUpDown Margin="4 0" VerticalAlignment="Center"
+								               Minimum="{Binding Minimum}"
+								               Maximum="{Binding Maximum}"
+								               Value="{Binding Value}" />
+							</DockPanel>
+						</Panel>
 					</DataTemplate>
 
 					<DataTemplate x:DataType="sfvm:FolderFieldViewModel">
-						<DockPanel Margin="0 2">
-							<TextBlock DockPanel.Dock="Left" MinWidth="160" Text="{Binding DisplayLabel}" VerticalAlignment="Center" Margin="0 0 4 0" />
-							<Button DockPanel.Dock="Right" Content="{Binding BrowseLabel}" VerticalAlignment="Center" Margin="4 0 0 0" Click="FieldBrowseFolderCommand" />
-							<TextBox Margin="4 0" VerticalAlignment="Center"
-							         PlaceholderText="{Binding Descriptor.Placeholder}"
-							         Text="{Binding Value}" />
-						</DockPanel>
+						<Panel IsVisible="{Binding IsFieldVisible}">
+							<DockPanel Margin="0 2">
+								<TextBlock DockPanel.Dock="Left" MinWidth="160" Text="{Binding DisplayLabel}" VerticalAlignment="Center" Margin="0 0 4 0" />
+								<Button DockPanel.Dock="Right" Content="{Binding BrowseLabel}" VerticalAlignment="Center" Margin="4 0 0 0" Click="FieldBrowseFolderCommand" />
+								<TextBox Margin="4 0" VerticalAlignment="Center"
+								         PlaceholderText="{Binding Descriptor.Placeholder}"
+								         Text="{Binding Value}" />
+							</DockPanel>
+						</Panel>
 					</DataTemplate>
 
 					<DataTemplate x:DataType="sfvm:FileFieldViewModel">
-						<DockPanel Margin="0 2">
-							<TextBlock DockPanel.Dock="Left" MinWidth="160" Text="{Binding DisplayLabel}" VerticalAlignment="Center" Margin="0 0 4 0" />
-							<Button DockPanel.Dock="Right" Content="{Binding BrowseLabel}" VerticalAlignment="Center" Margin="4 0 0 0" Click="FieldBrowseFileCommand" />
-							<TextBox Margin="4 0" VerticalAlignment="Center"
-							         PlaceholderText="{Binding Descriptor.Placeholder}"
-							         Text="{Binding Value}" />
-						</DockPanel>
+						<Panel IsVisible="{Binding IsFieldVisible}">
+							<DockPanel Margin="0 2">
+								<TextBlock DockPanel.Dock="Left" MinWidth="160" Text="{Binding DisplayLabel}" VerticalAlignment="Center" Margin="0 0 4 0" />
+								<Button DockPanel.Dock="Right" Content="{Binding BrowseLabel}" VerticalAlignment="Center" Margin="4 0 0 0" Click="FieldBrowseFileCommand" />
+								<TextBox Margin="4 0" VerticalAlignment="Center"
+								         PlaceholderText="{Binding Descriptor.Placeholder}"
+								         Text="{Binding Value}" />
+							</DockPanel>
+						</Panel>
 					</DataTemplate>
 
 					<DataTemplate x:DataType="sfvm:EnumFieldViewModel">
-						<DockPanel Margin="0 2">
-							<TextBlock DockPanel.Dock="Left" MinWidth="160" Text="{Binding DisplayLabel}" VerticalAlignment="Center" Margin="0 0 4 0" />
-							<ComboBox HorizontalAlignment="Stretch" Margin="4 0" VerticalAlignment="Center"
-							          ItemsSource="{Binding DisplayOptions}"
-							          SelectedItem="{Binding SelectedDisplay}" />
-						</DockPanel>
+						<Panel IsVisible="{Binding IsFieldVisible}">
+							<StackPanel Spacing="2">
+								<DockPanel Margin="0 2">
+									<TextBlock DockPanel.Dock="Left" MinWidth="160" Text="{Binding DisplayLabel}" VerticalAlignment="Center" Margin="0 0 4 0" />
+									<ComboBox HorizontalAlignment="Stretch" Margin="4 0" VerticalAlignment="Center"
+									          ItemsSource="{Binding DisplayOptions}"
+									          SelectedItem="{Binding SelectedDisplay}" />
+								</DockPanel>
+								<TextBlock Margin="164 0 4 0"
+								           Text="{Binding ChoiceHelp}"
+								           TextWrapping="Wrap"
+								           Opacity="0.85"
+								           IsVisible="{Binding HasChoiceHelp}" />
+							</StackPanel>
+						</Panel>
 					</DataTemplate>
 
 				</ItemsControl.DataTemplates>

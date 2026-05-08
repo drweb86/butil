@@ -38,8 +38,8 @@ public class FtpsStorageSettingsProvider : IStorageSettingsProvider
             DefaultValue = "Explicit",
             Options =
             [
-                ("Explicit", Resources.Ftps_Encryption_Option_Explicit),
-                ("Implicit", Resources.Ftps_Encryption_Option_Implicit),
+                new("Explicit", Resources.Ftps_Encryption_Option_Explicit),
+                new("Implicit", Resources.Ftps_Encryption_Option_Implicit),
             ],
         },
         new StorageFieldDescriptor

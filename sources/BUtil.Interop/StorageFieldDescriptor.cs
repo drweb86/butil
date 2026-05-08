@@ -12,6 +12,15 @@ public sealed class StorageFieldDescriptor
     public object? DefaultValue { get; init; }
     public long? Min { get; init; }
     public long? Max { get; init; }
-    // For Enum type: value is the serialized key, DisplayLabel is shown in the combobox
-    public IReadOnlyList<(string Value, string DisplayLabel)>? Options { get; init; }
+
+    /// <summary>
+    /// For <see cref="StorageFieldType.Enum"/>: choices; <see cref="StorageEnumOption.Value"/> is persisted.
+    /// </summary>
+    public IReadOnlyList<StorageEnumOption>? Options { get; init; }
+
+    /// <summary>
+    /// For <see cref="StorageFieldType.Enum"/>: optional layout rules when the current serialized value matches <see cref="EnumSelectionUiRule.WhenValue"/>.
+    /// Rules from multiple enum fields are applied in field order; later patches override earlier ones for the same target key.
+    /// </summary>
+    public IReadOnlyList<EnumSelectionUiRule>? EnumSelectionUiRules { get; init; }
 }

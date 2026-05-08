@@ -22,8 +22,31 @@ public class WebDavStorageSettingsProvider : IStorageSettingsProvider
             DefaultValue = "Custom",
             Options =
             [
-                ("Custom",     "Generic / Custom"),
-                ("YandexDisk", "Yandex Disk"),
+                new("Custom", "Generic / Custom",
+                    "Generic WebDAV server (Nextcloud, ownCloud, Synology DSM, Seafile, Apache, etc.)\n\n" +
+                    "1. Enter the server Address, choose HTTPS (recommended), and set the port (0 = default: 80 for HTTP, 443 for HTTPS).\n" +
+                    "2. Enter the base path for the WebDAV endpoint.\n" +
+                    "   Nextcloud example:  /remote.php/dav/files/<username>/Backups\n" +
+                    "   Synology DSM:       /\n" +
+                    "3. Enter your username and password (or an app-specific password if your server requires it)."),
+                new("YandexDisk", "Yandex Disk",
+                    "Yandex Disk via WebDAV.\n\n" +
+                    "1. Go to id.yandex.com → Security → App passwords → Create app password for 'WebDAV access'.\n" +
+                    "   Copy the generated password — it is shown only once.\n" +
+                    "2. Enter your Yandex login as the User.\n" +
+                    "3. Enter the app password (not your Yandex account password) as the Password.\n" +
+                    "   Server address, HTTPS, and port are configured automatically."),
+            ],
+            EnumSelectionUiRules =
+            [
+                // Yandex Disk: host, protocol, and port are all fixed — hide them
+                new EnumSelectionUiRule("YandexDisk",
+                [
+                    new EnumUiPatch("host", Hidden: true),
+                    new EnumUiPatch("useHttps", Hidden: true),
+                    new EnumUiPatch("port", Hidden: true),
+                    new EnumUiPatch("basePath", Hidden: true),
+                ]),
             ],
         },
         new StorageFieldDescriptor
@@ -40,7 +63,7 @@ public class WebDavStorageSettingsProvider : IStorageSettingsProvider
             Label = Resources.Storage_Field_Https,
             Type = StorageFieldType.Enum,
             DefaultValue = "Yes",
-            Options = [("Yes", "Yes"), ("No", "No")],
+            Options = [new("Yes", "Yes"), new("No", "No")],
         },
         new StorageFieldDescriptor
         {

@@ -11,6 +11,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -41,9 +42,12 @@ public class WhereTaskViewModel : ObservableObject
 
     private void RebuildFields()
     {
+        DetachEnumUiRuleHandlers();
         Fields.Clear();
         foreach (var descriptor in _selectedProvider.Fields)
             Fields.Add(StorageFieldViewModelFactory.Create(descriptor));
+        AttachEnumUiRuleHandlers();
+        ApplyEnumUiRules();
     }
 
     private void PopulateFields(IReadOnlyDictionary<string, string?> values)
@@ -53,6 +57,7 @@ public class WhereTaskViewModel : ObservableObject
             if (values.TryGetValue(field.Descriptor.Key, out var value))
                 field.SetValue(value);
         }
+        ApplyEnumUiRules();
     }
 
     public IStorageSettingsV2 GetStorageSettings()
@@ -100,6 +105,89 @@ public class WhereTaskViewModel : ObservableObject
     public bool CanLaunchScripts { get; } = PlatformSpecificExperience.Instance.SupportManager.CanLaunchScripts;
     public ObservableCollection<IStorageSettingsProvider> Providers { get; }
     public ObservableCollection<StorageFieldViewModel> Fields { get; } = [];
+
+    private readonly List<(EnumFieldViewModel Vm, PropertyChangedEventHandler Handler)> _enumUiHandlers = [];
+
+    private void AttachEnumUiRuleHandlers()
+    {
+        foreach (var enumVm in Fields.OfType<EnumFieldViewModel>())
+        {
+            PropertyChangedEventHandler handler = (_, e) =>
+            {
+                if (e.PropertyName == nameof(EnumFieldViewModel.SelectedDisplay))
+                    ApplyEnumUiRules();
+            };
+            enumVm.PropertyChanged += handler;
+            _enumUiHandlers.Add((enumVm, handler));
+        }
+    }
+
+    private void DetachEnumUiRuleHandlers()
+    {
+        foreach (var (vm, handler) in _enumUiHandlers)
+            vm.PropertyChanged -= handler;
+        _enumUiHandlers.Clear();
+    }
+
+    private void SilencingEnumHandlers(Action action)
+    {
+        foreach (var (vm, handler) in _enumUiHandlers)
+            vm.PropertyChanged -= handler;
+        try
+        {
+            action();
+        }
+        finally
+        {
+            foreach (var (vm, handler) in _enumUiHandlers)
+                vm.PropertyChanged += handler;
+        }
+    }
+
+    private void ApplyEnumUiRules()
+    {
+        SilencingEnumHandlers(() =>
+        {
+            const int maxPasses = 24;
+            for (var pass = 0; pass < maxPasses; pass++)
+            {
+                var byKey = Fields.ToDictionary(f => f.Descriptor.Key);
+
+                foreach (var vm in Fields)
+                    vm.ResetUiCustomization();
+
+                var wroteValue = false;
+                foreach (var field in Fields)
+                {
+                    if (field is not EnumFieldViewModel enumVm) continue;
+                    var rules = enumVm.Descriptor.EnumSelectionUiRules;
+                    if (rules == null || rules.Count == 0) continue;
+
+                    var current = enumVm.GetValue();
+                    if (current == null) continue;
+
+                    var rule = rules.FirstOrDefault(r => r.WhenValue == current);
+                    if (rule == null) continue;
+
+                    foreach (var patch in rule.Patches)
+                    {
+                        if (!byKey.TryGetValue(patch.TargetFieldKey, out var target)) continue;
+
+                        target.ApplyUiPatch(patch.LabelOverride, patch.Hidden);
+
+                        if (patch.ValueWhenSelected == null) continue;
+
+                        var before = target.GetValue();
+                        target.SetValue(patch.ValueWhenSelected);
+                        if (before != target.GetValue())
+                            wroteValue = true;
+                    }
+                }
+
+                if (!wroteValue) break;
+            }
+        });
+    }
 
     #region SelectedProvider
 
