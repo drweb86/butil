@@ -37,21 +37,21 @@ public class NfsStorageSettingsProvider : IStorageSettingsProvider
         new StorageFieldDescriptor
         {
             Key = "sharePath",
-            Label = "Share Path",
+            Label = Resources.Nfs_Field_SharePath,
             Type = StorageFieldType.Text,
             Placeholder = "/export/backups",
         },
         new StorageFieldDescriptor
         {
             Key = "mountPoint",
-            Label = "Mount Point",
+            Label = Resources.Nfs_Field_MountPoint,
             Type = StorageFieldType.Text,
             Placeholder = "/mnt/nfs-backup",
         },
         new StorageFieldDescriptor
         {
             Key = "mountOptions",
-            Label = "Mount Options",
+            Label = Resources.Nfs_Field_MountOptions,
             Type = StorageFieldType.Text,
             Placeholder = "vers=4,rw",
             IsOptional = true,
@@ -70,21 +70,21 @@ public class NfsStorageSettingsProvider : IStorageSettingsProvider
         new StorageFieldDescriptor
         {
             Key = "sharePath",
-            Label = "Share Path",
+            Label = Resources.Nfs_Field_SharePath,
             Type = StorageFieldType.Text,
             Placeholder = "/export/backups",
         },
         new StorageFieldDescriptor
         {
             Key = "mountPoint",
-            Label = "Drive Letter",
+            Label = Resources.Nfs_Field_DriveLetter,
             Type = StorageFieldType.Text,
             Placeholder = "Z:",
         },
         new StorageFieldDescriptor
         {
             Key = "mountOptions",
-            Label = "Mount Options",
+            Label = Resources.Nfs_Field_MountOptions,
             Type = StorageFieldType.Text,
             Placeholder = "anon",
             IsOptional = true,

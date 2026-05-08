@@ -17,7 +17,7 @@ public class WebDavStorageSettingsProvider : IStorageSettingsProvider
         new StorageFieldDescriptor
         {
             Key = "preset",
-            Label = "Preset",
+            Label = Resources.Storage_Field_Preset,
             Type = StorageFieldType.Enum,
             DefaultValue = "Custom",
             Options =
@@ -37,7 +37,7 @@ public class WebDavStorageSettingsProvider : IStorageSettingsProvider
         new StorageFieldDescriptor
         {
             Key = "useHttps",
-            Label = "HTTPS",
+            Label = Resources.Storage_Field_Https,
             Type = StorageFieldType.Enum,
             DefaultValue = "Yes",
             Options = [("Yes", "Yes"), ("No", "No")],
@@ -54,7 +54,7 @@ public class WebDavStorageSettingsProvider : IStorageSettingsProvider
         new StorageFieldDescriptor
         {
             Key = "basePath",
-            Label = "Base Path",
+            Label = Resources.Storage_Field_BasePath,
             Type = StorageFieldType.Text,
             Placeholder = "/remote.php/dav/files/user/Backups",
             IsOptional = true,
@@ -69,7 +69,7 @@ public class WebDavStorageSettingsProvider : IStorageSettingsProvider
         new StorageFieldDescriptor
         {
             Key = "password",
-            Label = "Password / OAuth Token",
+            Label = Resources.Storage_Field_PasswordOrToken,
             Type = StorageFieldType.Password,
         },
     ];

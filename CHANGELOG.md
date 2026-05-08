@@ -12,8 +12,6 @@
 - Added S3 presets for Chinese providers: **Alibaba Cloud OSS**, **Tencent Cloud COS**, **Huawei Cloud OBS**, **Baidu Cloud BOS**, **Qiniu Cloud Kodo**, **Volcano Engine TOS**.
 - Added **Yandex Disk** preset to the WebDAV storage type — host auto-filled, only credentials required.
 
-# 2026.05.07
-
 ## Changes
 - Preparation for support of more storage types.
 

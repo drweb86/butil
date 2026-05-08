@@ -1,4 +1,5 @@
 using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.Localization;
 using BUtil.Core.Storages;
 using System.Collections.Generic;
 
@@ -16,27 +17,27 @@ public class AzureBlobStorageSettingsProvider : IStorageSettingsProvider
         new StorageFieldDescriptor
         {
             Key = "accountName",
-            Label = "Account Name",
+            Label = Resources.Storage_Field_AccountName,
             Type = StorageFieldType.Text,
             Placeholder = "mystorageaccount",
         },
         new StorageFieldDescriptor
         {
             Key = "accountKey",
-            Label = "Account Key",
+            Label = Resources.Storage_Field_AccountKey,
             Type = StorageFieldType.Password,
         },
         new StorageFieldDescriptor
         {
             Key = "container",
-            Label = "Container",
+            Label = Resources.Storage_Field_Container,
             Type = StorageFieldType.Text,
             Placeholder = "backups",
         },
         new StorageFieldDescriptor
         {
             Key = "pathPrefix",
-            Label = "Path Prefix",
+            Label = Resources.Storage_Field_PathPrefix,
             Type = StorageFieldType.Text,
             Placeholder = "my-pc",
             IsOptional = true,

@@ -574,6 +574,18 @@ Iltimos:
   <data name="Name_Title" xml:space="preserve">
     <value>Nom</value>
   </data>
+  <data name="Nfs_Field_DriveLetter" xml:space="preserve">
+    <value>Disk harfi:</value>
+  </data>
+  <data name="Nfs_Field_MountOptions" xml:space="preserve">
+    <value>Ulash parametrlari:</value>
+  </data>
+  <data name="Nfs_Field_MountPoint" xml:space="preserve">
+    <value>Ulash nuqtasi:</value>
+  </data>
+  <data name="Nfs_Field_SharePath" xml:space="preserve">
+    <value>Ulashish yo'li:</value>
+  </data>
   <data name="OptionalField_Hint" xml:space="preserve">
     <value>(ixtiyoriy)</value>
   </data>
@@ -659,6 +671,48 @@ Ushbu faylni o'z ichiga olgan katalogni ko'rsating.</value>
   </data>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
     <value>Manba elementlari va xotiralar holatini olish</value>
+  </data>
+  <data name="Storage_Field_AccessKey" xml:space="preserve">
+    <value>Kirish kaliti:</value>
+  </data>
+  <data name="Storage_Field_AccountKey" xml:space="preserve">
+    <value>Hisob kaliti:</value>
+  </data>
+  <data name="Storage_Field_AccountName" xml:space="preserve">
+    <value>Hisob nomi:</value>
+  </data>
+  <data name="Storage_Field_BasePath" xml:space="preserve">
+    <value>Asosiy yo'l:</value>
+  </data>
+  <data name="Storage_Field_Bucket" xml:space="preserve">
+    <value>Kovak:</value>
+  </data>
+  <data name="Storage_Field_Container" xml:space="preserve">
+    <value>Konteyner:</value>
+  </data>
+  <data name="Storage_Field_Https" xml:space="preserve">
+    <value>HTTPS:</value>
+  </data>
+  <data name="Storage_Field_PasswordOrToken" xml:space="preserve">
+    <value>Parol / OAuth tokeni:</value>
+  </data>
+  <data name="Storage_Field_PathPrefix" xml:space="preserve">
+    <value>Yo'l prefiksi:</value>
+  </data>
+  <data name="Storage_Field_Preset" xml:space="preserve">
+    <value>Oldindan belgilangan:</value>
+  </data>
+  <data name="Storage_Field_Provider" xml:space="preserve">
+    <value>Provayder:</value>
+  </data>
+  <data name="Storage_Field_Region" xml:space="preserve">
+    <value>Mintaqa:</value>
+  </data>
+  <data name="Storage_Field_SecretKey" xml:space="preserve">
+    <value>Maxfiy kalit:</value>
+  </data>
+  <data name="Storage_Field_ServiceUrl" xml:space="preserve">
+    <value>Xizmat URL:</value>
   </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
     <value>Fayl istisno shablonini qo'shish</value>

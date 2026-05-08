@@ -573,6 +573,18 @@ Ju lutem bëni njërën nga këto:
   <data name="Name_Title" xml:space="preserve">
     <value>Emri</value>
   </data>
+  <data name="Nfs_Field_DriveLetter" xml:space="preserve">
+    <value>Shkronja e diskut:</value>
+  </data>
+  <data name="Nfs_Field_MountOptions" xml:space="preserve">
+    <value>Opsionet e montimit:</value>
+  </data>
+  <data name="Nfs_Field_MountPoint" xml:space="preserve">
+    <value>Pika e montimit:</value>
+  </data>
+  <data name="Nfs_Field_SharePath" xml:space="preserve">
+    <value>Shtegu i ndarjes:</value>
+  </data>
   <data name="OptionalField_Hint" xml:space="preserve">
     <value>(opsionale)</value>
   </data>
@@ -658,6 +670,48 @@ Tregoni një drejtori që përmban këtë skedar.</value>
   </data>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
     <value>Marrja e gjendjes së elementeve burim dhe ruajtjeve</value>
+  </data>
+  <data name="Storage_Field_AccessKey" xml:space="preserve">
+    <value>Çelësi i aksesit:</value>
+  </data>
+  <data name="Storage_Field_AccountKey" xml:space="preserve">
+    <value>Çelësi i llogarisë:</value>
+  </data>
+  <data name="Storage_Field_AccountName" xml:space="preserve">
+    <value>Emri i llogarisë:</value>
+  </data>
+  <data name="Storage_Field_BasePath" xml:space="preserve">
+    <value>Shtegu bazë:</value>
+  </data>
+  <data name="Storage_Field_Bucket" xml:space="preserve">
+    <value>Bucket:</value>
+  </data>
+  <data name="Storage_Field_Container" xml:space="preserve">
+    <value>Kontejner:</value>
+  </data>
+  <data name="Storage_Field_Https" xml:space="preserve">
+    <value>HTTPS:</value>
+  </data>
+  <data name="Storage_Field_PasswordOrToken" xml:space="preserve">
+    <value>Fjalëkalim / Token OAuth:</value>
+  </data>
+  <data name="Storage_Field_PathPrefix" xml:space="preserve">
+    <value>Prefiksi i shteut:</value>
+  </data>
+  <data name="Storage_Field_Preset" xml:space="preserve">
+    <value>I paracaktuar:</value>
+  </data>
+  <data name="Storage_Field_Provider" xml:space="preserve">
+    <value>Ofrues:</value>
+  </data>
+  <data name="Storage_Field_Region" xml:space="preserve">
+    <value>Rajon:</value>
+  </data>
+  <data name="Storage_Field_SecretKey" xml:space="preserve">
+    <value>Çelësi sekret:</value>
+  </data>
+  <data name="Storage_Field_ServiceUrl" xml:space="preserve">
+    <value>URL e shërbimit:</value>
   </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
     <value>Shto model përjashtimi skedarësh</value>

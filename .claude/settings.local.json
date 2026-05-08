@@ -9,7 +9,8 @@
       "WebSearch",
       "Bash(cd /tmp)",
       "Bash(cat)",
-      "Bash(powershell -Command ' *)"
+      "Bash(powershell -Command ' *)",
+      "Bash(python add_translations.py)"
     ]
   }
 }

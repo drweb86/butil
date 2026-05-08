@@ -573,6 +573,18 @@ Por favor:
   <data name="Name_Title" xml:space="preserve">
     <value>Nome</value>
   </data>
+  <data name="Nfs_Field_DriveLetter" xml:space="preserve">
+    <value>Letra da unidade:</value>
+  </data>
+  <data name="Nfs_Field_MountOptions" xml:space="preserve">
+    <value>Opcións de montaxe:</value>
+  </data>
+  <data name="Nfs_Field_MountPoint" xml:space="preserve">
+    <value>Punto de montaxe:</value>
+  </data>
+  <data name="Nfs_Field_SharePath" xml:space="preserve">
+    <value>Ruta do recurso compartido:</value>
+  </data>
   <data name="OptionalField_Hint" xml:space="preserve">
     <value>(opcional)</value>
   </data>
@@ -658,6 +670,48 @@ Apunte a un directorio que contén este ficheiro.</value>
   </data>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
     <value>Obtén o estado dos elementos de orixe e dos almacenamentos</value>
+  </data>
+  <data name="Storage_Field_AccessKey" xml:space="preserve">
+    <value>Chave de acceso:</value>
+  </data>
+  <data name="Storage_Field_AccountKey" xml:space="preserve">
+    <value>Chave da conta:</value>
+  </data>
+  <data name="Storage_Field_AccountName" xml:space="preserve">
+    <value>Nome da conta:</value>
+  </data>
+  <data name="Storage_Field_BasePath" xml:space="preserve">
+    <value>Ruta base:</value>
+  </data>
+  <data name="Storage_Field_Bucket" xml:space="preserve">
+    <value>Depósito:</value>
+  </data>
+  <data name="Storage_Field_Container" xml:space="preserve">
+    <value>Contedor:</value>
+  </data>
+  <data name="Storage_Field_Https" xml:space="preserve">
+    <value>HTTPS:</value>
+  </data>
+  <data name="Storage_Field_PasswordOrToken" xml:space="preserve">
+    <value>Contrasinal / Token OAuth:</value>
+  </data>
+  <data name="Storage_Field_PathPrefix" xml:space="preserve">
+    <value>Prefixo de ruta:</value>
+  </data>
+  <data name="Storage_Field_Preset" xml:space="preserve">
+    <value>Configuración predefinida:</value>
+  </data>
+  <data name="Storage_Field_Provider" xml:space="preserve">
+    <value>Provedor:</value>
+  </data>
+  <data name="Storage_Field_Region" xml:space="preserve">
+    <value>Rexión:</value>
+  </data>
+  <data name="Storage_Field_SecretKey" xml:space="preserve">
+    <value>Chave secreta:</value>
+  </data>
+  <data name="Storage_Field_ServiceUrl" xml:space="preserve">
+    <value>URL do servizo:</value>
   </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
     <value>Engadir un patrón de exclusión de ficheiros</value>

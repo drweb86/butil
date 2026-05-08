@@ -574,6 +574,18 @@ Ji kerema xwe:
   <data name="Name_Title" xml:space="preserve">
     <value>Nav</value>
   </data>
+  <data name="Nfs_Field_DriveLetter" xml:space="preserve">
+    <value>Tîpa Ajotinê:</value>
+  </data>
+  <data name="Nfs_Field_MountOptions" xml:space="preserve">
+    <value>Vebijarkên Siwarkirinê:</value>
+  </data>
+  <data name="Nfs_Field_MountPoint" xml:space="preserve">
+    <value>Xala Siwarkirinê:</value>
+  </data>
+  <data name="Nfs_Field_SharePath" xml:space="preserve">
+    <value>Riya Parvekirinê:</value>
+  </data>
   <data name="OptionalField_Hint" xml:space="preserve">
     <value>(vebijarkî)</value>
   </data>
@@ -659,6 +671,48 @@ Peldankek ku vê pelê dihewîne nîşan bidin.</value>
   </data>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
     <value>Rewşa hêmanên çavkaniyê û hilanînan bistînin</value>
+  </data>
+  <data name="Storage_Field_AccessKey" xml:space="preserve">
+    <value>Mifteya Gihîştinê:</value>
+  </data>
+  <data name="Storage_Field_AccountKey" xml:space="preserve">
+    <value>Mifteya Hesabê:</value>
+  </data>
+  <data name="Storage_Field_AccountName" xml:space="preserve">
+    <value>Navê Hesabê:</value>
+  </data>
+  <data name="Storage_Field_BasePath" xml:space="preserve">
+    <value>Riya Bingehîn:</value>
+  </data>
+  <data name="Storage_Field_Bucket" xml:space="preserve">
+    <value>Setek:</value>
+  </data>
+  <data name="Storage_Field_Container" xml:space="preserve">
+    <value>Konteyner:</value>
+  </data>
+  <data name="Storage_Field_Https" xml:space="preserve">
+    <value>HTTPS:</value>
+  </data>
+  <data name="Storage_Field_PasswordOrToken" xml:space="preserve">
+    <value>Şîfre / Nîşaneya OAuth:</value>
+  </data>
+  <data name="Storage_Field_PathPrefix" xml:space="preserve">
+    <value>Pêşgira Riyê:</value>
+  </data>
+  <data name="Storage_Field_Preset" xml:space="preserve">
+    <value>Pêşvehatî:</value>
+  </data>
+  <data name="Storage_Field_Provider" xml:space="preserve">
+    <value>Pêşkêşker:</value>
+  </data>
+  <data name="Storage_Field_Region" xml:space="preserve">
+    <value>Herêm:</value>
+  </data>
+  <data name="Storage_Field_SecretKey" xml:space="preserve">
+    <value>Mifteya Veşartî:</value>
+  </data>
+  <data name="Storage_Field_ServiceUrl" xml:space="preserve">
+    <value>URL Karûbarê:</value>
   </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
     <value>Şêweya derxistina pelê zêde bike</value>

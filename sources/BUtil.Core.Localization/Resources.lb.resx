@@ -573,6 +573,18 @@ Weg entweder:
   <data name="Name_Title" xml:space="preserve">
     <value>Numm</value>
   </data>
+  <data name="Nfs_Field_DriveLetter" xml:space="preserve">
+    <value>Laufwierksbuschstawen:</value>
+  </data>
+  <data name="Nfs_Field_MountOptions" xml:space="preserve">
+    <value>Mount-Optiounen:</value>
+  </data>
+  <data name="Nfs_Field_MountPoint" xml:space="preserve">
+    <value>Ainhängpunkt:</value>
+  </data>
+  <data name="Nfs_Field_SharePath" xml:space="preserve">
+    <value>Freegaab-Pad:</value>
+  </data>
   <data name="OptionalField_Hint" xml:space="preserve">
     <value>(optional)</value>
   </data>
@@ -658,6 +670,48 @@ Point to a directory containing this file.</value>
   </data>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
     <value>Kritt den Zoustand vun de Quellartikelen a Späicheren</value>
+  </data>
+  <data name="Storage_Field_AccessKey" xml:space="preserve">
+    <value>Zougangsschlëssel:</value>
+  </data>
+  <data name="Storage_Field_AccountKey" xml:space="preserve">
+    <value>Kontoschlëssel:</value>
+  </data>
+  <data name="Storage_Field_AccountName" xml:space="preserve">
+    <value>Kontonum:</value>
+  </data>
+  <data name="Storage_Field_BasePath" xml:space="preserve">
+    <value>Basis-Pad:</value>
+  </data>
+  <data name="Storage_Field_Bucket" xml:space="preserve">
+    <value>Bucket:</value>
+  </data>
+  <data name="Storage_Field_Container" xml:space="preserve">
+    <value>Container:</value>
+  </data>
+  <data name="Storage_Field_Https" xml:space="preserve">
+    <value>HTTPS:</value>
+  </data>
+  <data name="Storage_Field_PasswordOrToken" xml:space="preserve">
+    <value>Passwuert / OAuth-Token:</value>
+  </data>
+  <data name="Storage_Field_PathPrefix" xml:space="preserve">
+    <value>Pad-Prefix:</value>
+  </data>
+  <data name="Storage_Field_Preset" xml:space="preserve">
+    <value>Viraspstellung:</value>
+  </data>
+  <data name="Storage_Field_Provider" xml:space="preserve">
+    <value>Ubidder:</value>
+  </data>
+  <data name="Storage_Field_Region" xml:space="preserve">
+    <value>Regioun:</value>
+  </data>
+  <data name="Storage_Field_SecretKey" xml:space="preserve">
+    <value>Geheimschlëssel:</value>
+  </data>
+  <data name="Storage_Field_ServiceUrl" xml:space="preserve">
+    <value>Service-URL:</value>
   </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
     <value>Füügt Datei ausschléisst Muster</value>

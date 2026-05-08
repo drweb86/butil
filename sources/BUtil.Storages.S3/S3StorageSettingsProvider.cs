@@ -17,7 +17,7 @@ public class S3StorageSettingsProvider : IStorageSettingsProvider
         new StorageFieldDescriptor
         {
             Key = "provider",
-            Label = "Provider",
+            Label = Resources.Storage_Field_Provider,
             Type = StorageFieldType.Enum,
             DefaultValue = "Custom",
             Options =
@@ -46,7 +46,7 @@ public class S3StorageSettingsProvider : IStorageSettingsProvider
         new StorageFieldDescriptor
         {
             Key = "serviceUrl",
-            Label = "Service URL",
+            Label = Resources.Storage_Field_ServiceUrl,
             Type = StorageFieldType.Text,
             // Leave empty for AWS S3 (uses region) or Wasabi (auto-filled).
             // Examples: https://s3.us-west-004.backblazeb2.com  |  https://<id>.r2.cloudflarestorage.com
@@ -56,7 +56,7 @@ public class S3StorageSettingsProvider : IStorageSettingsProvider
         new StorageFieldDescriptor
         {
             Key = "region",
-            Label = "Region",
+            Label = Resources.Storage_Field_Region,
             Type = StorageFieldType.Text,
             Placeholder = "us-east-1",
             IsOptional = true,
@@ -64,25 +64,25 @@ public class S3StorageSettingsProvider : IStorageSettingsProvider
         new StorageFieldDescriptor
         {
             Key = "accessKey",
-            Label = "Access Key",
+            Label = Resources.Storage_Field_AccessKey,
             Type = StorageFieldType.Text,
         },
         new StorageFieldDescriptor
         {
             Key = "secretKey",
-            Label = "Secret Key",
+            Label = Resources.Storage_Field_SecretKey,
             Type = StorageFieldType.Password,
         },
         new StorageFieldDescriptor
         {
             Key = "bucket",
-            Label = "Bucket",
+            Label = Resources.Storage_Field_Bucket,
             Type = StorageFieldType.Text,
         },
         new StorageFieldDescriptor
         {
             Key = "pathPrefix",
-            Label = "Path Prefix",
+            Label = Resources.Storage_Field_PathPrefix,
             Type = StorageFieldType.Text,
             Placeholder = "backups/my-pc",
             IsOptional = true,

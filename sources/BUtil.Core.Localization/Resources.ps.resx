@@ -573,6 +573,18 @@
   <data name="Name_Title" xml:space="preserve">
     <value>نوم</value>
   </data>
+  <data name="Nfs_Field_DriveLetter" xml:space="preserve">
+    <value>د ډرايو توری:</value>
+  </data>
+  <data name="Nfs_Field_MountOptions" xml:space="preserve">
+    <value>د نصبولو اختیارونه:</value>
+  </data>
+  <data name="Nfs_Field_MountPoint" xml:space="preserve">
+    <value>د نصبولو ټکی:</value>
+  </data>
+  <data name="Nfs_Field_SharePath" xml:space="preserve">
+    <value>د شريکولو لار:</value>
+  </data>
   <data name="OptionalField_Hint" xml:space="preserve">
     <value>(اختیاری)</value>
   </data>
@@ -658,6 +670,48 @@
   </data>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
     <value>د سرچینې توکو او ذخیره کولو حالت ترلاسه کړئ</value>
+  </data>
+  <data name="Storage_Field_AccessKey" xml:space="preserve">
+    <value>د لاسرسي کیلي:</value>
+  </data>
+  <data name="Storage_Field_AccountKey" xml:space="preserve">
+    <value>د حساب کیلي:</value>
+  </data>
+  <data name="Storage_Field_AccountName" xml:space="preserve">
+    <value>د حساب نوم:</value>
+  </data>
+  <data name="Storage_Field_BasePath" xml:space="preserve">
+    <value>بنسټیزه لار:</value>
+  </data>
+  <data name="Storage_Field_Bucket" xml:space="preserve">
+    <value>دول:</value>
+  </data>
+  <data name="Storage_Field_Container" xml:space="preserve">
+    <value>کانټینر:</value>
+  </data>
+  <data name="Storage_Field_Https" xml:space="preserve">
+    <value>HTTPS:</value>
+  </data>
+  <data name="Storage_Field_PasswordOrToken" xml:space="preserve">
+    <value>پټنوم / OAuth ټوکن:</value>
+  </data>
+  <data name="Storage_Field_PathPrefix" xml:space="preserve">
+    <value>د لارې مخپاڼه:</value>
+  </data>
+  <data name="Storage_Field_Preset" xml:space="preserve">
+    <value>مخکې تنظیم شوی:</value>
+  </data>
+  <data name="Storage_Field_Provider" xml:space="preserve">
+    <value>چمتو کوونکی:</value>
+  </data>
+  <data name="Storage_Field_Region" xml:space="preserve">
+    <value>سیمه:</value>
+  </data>
+  <data name="Storage_Field_SecretKey" xml:space="preserve">
+    <value>پټه کیلي:</value>
+  </data>
+  <data name="Storage_Field_ServiceUrl" xml:space="preserve">
+    <value>د خدمت URL:</value>
   </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
     <value>د فایل خارج کولو نمونه اضافه کړئ</value>

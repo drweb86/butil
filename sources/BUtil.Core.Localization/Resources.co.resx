@@ -573,6 +573,18 @@ Per piacè sia:
   <data name="Name_Title" xml:space="preserve">
     <value>Nome</value>
   </data>
+  <data name="Nfs_Field_DriveLetter" xml:space="preserve">
+    <value>Lettera di l'unità:</value>
+  </data>
+  <data name="Nfs_Field_MountOptions" xml:space="preserve">
+    <value>Opzione di montatura:</value>
+  </data>
+  <data name="Nfs_Field_MountPoint" xml:space="preserve">
+    <value>Puntu di montatura:</value>
+  </data>
+  <data name="Nfs_Field_SharePath" xml:space="preserve">
+    <value>Percorsu di spartera:</value>
+  </data>
   <data name="OptionalField_Hint" xml:space="preserve">
     <value>(opcional)</value>
   </data>
@@ -658,6 +670,48 @@ Puntate à un cartulare chì cuntene stu schedariu.</value>
   </data>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
     <value>Ottene u statu di l'articuli fonte è i magazzini</value>
+  </data>
+  <data name="Storage_Field_AccessKey" xml:space="preserve">
+    <value>Chjave d'accessu:</value>
+  </data>
+  <data name="Storage_Field_AccountKey" xml:space="preserve">
+    <value>Chjave di u contu:</value>
+  </data>
+  <data name="Storage_Field_AccountName" xml:space="preserve">
+    <value>Nome di u contu:</value>
+  </data>
+  <data name="Storage_Field_BasePath" xml:space="preserve">
+    <value>Percorsu di basa:</value>
+  </data>
+  <data name="Storage_Field_Bucket" xml:space="preserve">
+    <value>Sechjone:</value>
+  </data>
+  <data name="Storage_Field_Container" xml:space="preserve">
+    <value>Cuntenedore:</value>
+  </data>
+  <data name="Storage_Field_Https" xml:space="preserve">
+    <value>HTTPS:</value>
+  </data>
+  <data name="Storage_Field_PasswordOrToken" xml:space="preserve">
+    <value>Parolla d'ordine / Token OAuth:</value>
+  </data>
+  <data name="Storage_Field_PathPrefix" xml:space="preserve">
+    <value>Prefissu di percorsu:</value>
+  </data>
+  <data name="Storage_Field_Preset" xml:space="preserve">
+    <value>Precunfiguratu:</value>
+  </data>
+  <data name="Storage_Field_Provider" xml:space="preserve">
+    <value>Furnibore:</value>
+  </data>
+  <data name="Storage_Field_Region" xml:space="preserve">
+    <value>Regione:</value>
+  </data>
+  <data name="Storage_Field_SecretKey" xml:space="preserve">
+    <value>Chjave secreta:</value>
+  </data>
+  <data name="Storage_Field_ServiceUrl" xml:space="preserve">
+    <value>URL di u serviziu:</value>
   </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
     <value>Aghjunghjite u mudellu d'esclusione di u schedariu</value>

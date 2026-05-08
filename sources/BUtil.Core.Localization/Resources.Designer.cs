@@ -1236,7 +1236,43 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("Name_Title", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Drive Letter:.
+        /// </summary>
+        public static string Nfs_Field_DriveLetter {
+            get {
+                return ResourceManager.GetString("Nfs_Field_DriveLetter", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Mount Options:.
+        /// </summary>
+        public static string Nfs_Field_MountOptions {
+            get {
+                return ResourceManager.GetString("Nfs_Field_MountOptions", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Mount Point:.
+        /// </summary>
+        public static string Nfs_Field_MountPoint {
+            get {
+                return ResourceManager.GetString("Nfs_Field_MountPoint", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Share Path:.
+        /// </summary>
+        public static string Nfs_Field_SharePath {
+            get {
+                return ResourceManager.GetString("Nfs_Field_SharePath", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to (optional).
         /// </summary>
@@ -1490,7 +1526,133 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("State_LoadFromEverywhere", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Access Key:.
+        /// </summary>
+        public static string Storage_Field_AccessKey {
+            get {
+                return ResourceManager.GetString("Storage_Field_AccessKey", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Account Key:.
+        /// </summary>
+        public static string Storage_Field_AccountKey {
+            get {
+                return ResourceManager.GetString("Storage_Field_AccountKey", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Account Name:.
+        /// </summary>
+        public static string Storage_Field_AccountName {
+            get {
+                return ResourceManager.GetString("Storage_Field_AccountName", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Base Path:.
+        /// </summary>
+        public static string Storage_Field_BasePath {
+            get {
+                return ResourceManager.GetString("Storage_Field_BasePath", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Bucket:.
+        /// </summary>
+        public static string Storage_Field_Bucket {
+            get {
+                return ResourceManager.GetString("Storage_Field_Bucket", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Container:.
+        /// </summary>
+        public static string Storage_Field_Container {
+            get {
+                return ResourceManager.GetString("Storage_Field_Container", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to HTTPS:.
+        /// </summary>
+        public static string Storage_Field_Https {
+            get {
+                return ResourceManager.GetString("Storage_Field_Https", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Password / OAuth Token:.
+        /// </summary>
+        public static string Storage_Field_PasswordOrToken {
+            get {
+                return ResourceManager.GetString("Storage_Field_PasswordOrToken", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Path Prefix:.
+        /// </summary>
+        public static string Storage_Field_PathPrefix {
+            get {
+                return ResourceManager.GetString("Storage_Field_PathPrefix", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Preset:.
+        /// </summary>
+        public static string Storage_Field_Preset {
+            get {
+                return ResourceManager.GetString("Storage_Field_Preset", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Provider:.
+        /// </summary>
+        public static string Storage_Field_Provider {
+            get {
+                return ResourceManager.GetString("Storage_Field_Provider", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Region:.
+        /// </summary>
+        public static string Storage_Field_Region {
+            get {
+                return ResourceManager.GetString("Storage_Field_Region", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Secret Key:.
+        /// </summary>
+        public static string Storage_Field_SecretKey {
+            get {
+                return ResourceManager.GetString("Storage_Field_SecretKey", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Service URL:.
+        /// </summary>
+        public static string Storage_Field_ServiceUrl {
+            get {
+                return ResourceManager.GetString("Storage_Field_ServiceUrl", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Add file exclude pattern.
         /// </summary>

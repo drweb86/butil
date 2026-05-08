@@ -573,6 +573,18 @@ Mesedez, bai:
   <data name="Name_Title" xml:space="preserve">
     <value>Izena</value>
   </data>
+  <data name="Nfs_Field_DriveLetter" xml:space="preserve">
+    <value>Unitatearen letra:</value>
+  </data>
+  <data name="Nfs_Field_MountOptions" xml:space="preserve">
+    <value>Muntaketa-aukerak:</value>
+  </data>
+  <data name="Nfs_Field_MountPoint" xml:space="preserve">
+    <value>Muntaketa-puntua:</value>
+  </data>
+  <data name="Nfs_Field_SharePath" xml:space="preserve">
+    <value>Partekatzeko bidea:</value>
+  </data>
   <data name="OptionalField_Hint" xml:space="preserve">
     <value>(aukerakoa)</value>
   </data>
@@ -658,6 +670,48 @@ Seinalatu fitxategi hau duen direktorio batera.</value>
   </data>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
     <value>Lortu iturri-elementuen eta biltegien egoera</value>
+  </data>
+  <data name="Storage_Field_AccessKey" xml:space="preserve">
+    <value>Sarbide-gakoa:</value>
+  </data>
+  <data name="Storage_Field_AccountKey" xml:space="preserve">
+    <value>Kontuaren gakoa:</value>
+  </data>
+  <data name="Storage_Field_AccountName" xml:space="preserve">
+    <value>Kontuaren izena:</value>
+  </data>
+  <data name="Storage_Field_BasePath" xml:space="preserve">
+    <value>Oinarrizko bidea:</value>
+  </data>
+  <data name="Storage_Field_Bucket" xml:space="preserve">
+    <value>Ontzia:</value>
+  </data>
+  <data name="Storage_Field_Container" xml:space="preserve">
+    <value>Edukiontzia:</value>
+  </data>
+  <data name="Storage_Field_Https" xml:space="preserve">
+    <value>HTTPS:</value>
+  </data>
+  <data name="Storage_Field_PasswordOrToken" xml:space="preserve">
+    <value>Pasahitza / OAuth tokena:</value>
+  </data>
+  <data name="Storage_Field_PathPrefix" xml:space="preserve">
+    <value>Bide-aurrizkia:</value>
+  </data>
+  <data name="Storage_Field_Preset" xml:space="preserve">
+    <value>Aurrezehaztua:</value>
+  </data>
+  <data name="Storage_Field_Provider" xml:space="preserve">
+    <value>Hornitzailea:</value>
+  </data>
+  <data name="Storage_Field_Region" xml:space="preserve">
+    <value>Eskualdea:</value>
+  </data>
+  <data name="Storage_Field_SecretKey" xml:space="preserve">
+    <value>Gako sekretua:</value>
+  </data>
+  <data name="Storage_Field_ServiceUrl" xml:space="preserve">
+    <value>Zerbitzuaren URL:</value>
   </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
     <value>Gehitu fitxategia baztertzeko eredua</value>

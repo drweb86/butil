@@ -574,6 +574,18 @@
   <data name="Name_Title" xml:space="preserve">
     <value>نام</value>
   </data>
+  <data name="Nfs_Field_DriveLetter" xml:space="preserve">
+    <value>حرف درایو:</value>
+  </data>
+  <data name="Nfs_Field_MountOptions" xml:space="preserve">
+    <value>گزینه‌های نصب:</value>
+  </data>
+  <data name="Nfs_Field_MountPoint" xml:space="preserve">
+    <value>نقطه نصب:</value>
+  </data>
+  <data name="Nfs_Field_SharePath" xml:space="preserve">
+    <value>مسیر اشتراک:</value>
+  </data>
   <data name="OptionalField_Hint" xml:space="preserve">
     <value>(اختیاری)</value>
   </data>
@@ -659,6 +671,48 @@
   </data>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
     <value>دریافت وضعیت موارد منبع و فضاهای ذخیره‌سازی</value>
+  </data>
+  <data name="Storage_Field_AccessKey" xml:space="preserve">
+    <value>کلید دسترسی:</value>
+  </data>
+  <data name="Storage_Field_AccountKey" xml:space="preserve">
+    <value>کلید حساب:</value>
+  </data>
+  <data name="Storage_Field_AccountName" xml:space="preserve">
+    <value>نام حساب:</value>
+  </data>
+  <data name="Storage_Field_BasePath" xml:space="preserve">
+    <value>مسیر پایه:</value>
+  </data>
+  <data name="Storage_Field_Bucket" xml:space="preserve">
+    <value>سطل:</value>
+  </data>
+  <data name="Storage_Field_Container" xml:space="preserve">
+    <value>کانتینر:</value>
+  </data>
+  <data name="Storage_Field_Https" xml:space="preserve">
+    <value>HTTPS:</value>
+  </data>
+  <data name="Storage_Field_PasswordOrToken" xml:space="preserve">
+    <value>رمز عبور / توکن OAuth:</value>
+  </data>
+  <data name="Storage_Field_PathPrefix" xml:space="preserve">
+    <value>پیشوند مسیر:</value>
+  </data>
+  <data name="Storage_Field_Preset" xml:space="preserve">
+    <value>پیش‌تنظیم:</value>
+  </data>
+  <data name="Storage_Field_Provider" xml:space="preserve">
+    <value>ارائه‌دهنده:</value>
+  </data>
+  <data name="Storage_Field_Region" xml:space="preserve">
+    <value>منطقه:</value>
+  </data>
+  <data name="Storage_Field_SecretKey" xml:space="preserve">
+    <value>کلید مخفی:</value>
+  </data>
+  <data name="Storage_Field_ServiceUrl" xml:space="preserve">
+    <value>URL سرویس:</value>
   </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
     <value>افزودن الگوی استثنای فایل</value>

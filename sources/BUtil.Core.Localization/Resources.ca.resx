@@ -573,6 +573,18 @@ Si us plau:
   <data name="Name_Title" xml:space="preserve">
     <value>Nom</value>
   </data>
+  <data name="Nfs_Field_DriveLetter" xml:space="preserve">
+    <value>Lletra de la unitat:</value>
+  </data>
+  <data name="Nfs_Field_MountOptions" xml:space="preserve">
+    <value>Opcions de muntatge:</value>
+  </data>
+  <data name="Nfs_Field_MountPoint" xml:space="preserve">
+    <value>Punt de muntatge:</value>
+  </data>
+  <data name="Nfs_Field_SharePath" xml:space="preserve">
+    <value>Camí del recurs compartit:</value>
+  </data>
   <data name="OptionalField_Hint" xml:space="preserve">
     <value>(opcional)</value>
   </data>
@@ -658,6 +670,48 @@ Apunteu a un directori que conté aquest fitxer.</value>
   </data>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
     <value>Obteniu l'estat dels elements d'origen i dels emmagatzematges</value>
+  </data>
+  <data name="Storage_Field_AccessKey" xml:space="preserve">
+    <value>Clau d'accés:</value>
+  </data>
+  <data name="Storage_Field_AccountKey" xml:space="preserve">
+    <value>Clau del compte:</value>
+  </data>
+  <data name="Storage_Field_AccountName" xml:space="preserve">
+    <value>Nom del compte:</value>
+  </data>
+  <data name="Storage_Field_BasePath" xml:space="preserve">
+    <value>Camí base:</value>
+  </data>
+  <data name="Storage_Field_Bucket" xml:space="preserve">
+    <value>Cub:</value>
+  </data>
+  <data name="Storage_Field_Container" xml:space="preserve">
+    <value>Contenidor:</value>
+  </data>
+  <data name="Storage_Field_Https" xml:space="preserve">
+    <value>HTTPS:</value>
+  </data>
+  <data name="Storage_Field_PasswordOrToken" xml:space="preserve">
+    <value>Contrasenya / Token OAuth:</value>
+  </data>
+  <data name="Storage_Field_PathPrefix" xml:space="preserve">
+    <value>Prefix de camí:</value>
+  </data>
+  <data name="Storage_Field_Preset" xml:space="preserve">
+    <value>Configuració prèvia:</value>
+  </data>
+  <data name="Storage_Field_Provider" xml:space="preserve">
+    <value>Proveïdor:</value>
+  </data>
+  <data name="Storage_Field_Region" xml:space="preserve">
+    <value>Regió:</value>
+  </data>
+  <data name="Storage_Field_SecretKey" xml:space="preserve">
+    <value>Clau secreta:</value>
+  </data>
+  <data name="Storage_Field_ServiceUrl" xml:space="preserve">
+    <value>URL del servei:</value>
   </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
     <value>Afegeix un patró d'exclusió de fitxers</value>

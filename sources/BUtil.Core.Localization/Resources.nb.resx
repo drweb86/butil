@@ -573,6 +573,18 @@ Vennligst gjør ett av følgende:
   <data name="Name_Title" xml:space="preserve">
     <value>Navn</value>
   </data>
+  <data name="Nfs_Field_DriveLetter" xml:space="preserve">
+    <value>Stasjonsbokstav:</value>
+  </data>
+  <data name="Nfs_Field_MountOptions" xml:space="preserve">
+    <value>Monteringsalternativer:</value>
+  </data>
+  <data name="Nfs_Field_MountPoint" xml:space="preserve">
+    <value>Monteringspunkt:</value>
+  </data>
+  <data name="Nfs_Field_SharePath" xml:space="preserve">
+    <value>Delingssti:</value>
+  </data>
   <data name="OptionalField_Hint" xml:space="preserve">
     <value>(valgfritt)</value>
   </data>
@@ -658,6 +670,48 @@ Pek til en katalog som inneholder denne filen.</value>
   </data>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
     <value>Hent tilstand for kildeelementer og lagringer</value>
+  </data>
+  <data name="Storage_Field_AccessKey" xml:space="preserve">
+    <value>Tilgangsnøkkel:</value>
+  </data>
+  <data name="Storage_Field_AccountKey" xml:space="preserve">
+    <value>Kontonøkkel:</value>
+  </data>
+  <data name="Storage_Field_AccountName" xml:space="preserve">
+    <value>Kontonavn:</value>
+  </data>
+  <data name="Storage_Field_BasePath" xml:space="preserve">
+    <value>Basisti:</value>
+  </data>
+  <data name="Storage_Field_Bucket" xml:space="preserve">
+    <value>Bucket:</value>
+  </data>
+  <data name="Storage_Field_Container" xml:space="preserve">
+    <value>Container:</value>
+  </data>
+  <data name="Storage_Field_Https" xml:space="preserve">
+    <value>HTTPS:</value>
+  </data>
+  <data name="Storage_Field_PasswordOrToken" xml:space="preserve">
+    <value>Passord / OAuth-token:</value>
+  </data>
+  <data name="Storage_Field_PathPrefix" xml:space="preserve">
+    <value>Stiprefiks:</value>
+  </data>
+  <data name="Storage_Field_Preset" xml:space="preserve">
+    <value>Forhåndsinnstilling:</value>
+  </data>
+  <data name="Storage_Field_Provider" xml:space="preserve">
+    <value>Leverandør:</value>
+  </data>
+  <data name="Storage_Field_Region" xml:space="preserve">
+    <value>Region:</value>
+  </data>
+  <data name="Storage_Field_SecretKey" xml:space="preserve">
+    <value>Hemmelig nøkkel:</value>
+  </data>
+  <data name="Storage_Field_ServiceUrl" xml:space="preserve">
+    <value>Tjeneste-URL:</value>
   </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
     <value>Legg til filekskluderingsmønster</value>

@@ -570,6 +570,18 @@ Vui lòng:
   <data name="Name_Title" xml:space="preserve">
     <value>Tên</value>
   </data>
+  <data name="Nfs_Field_DriveLetter" xml:space="preserve">
+    <value>Ký tự ổ đĩa:</value>
+  </data>
+  <data name="Nfs_Field_MountOptions" xml:space="preserve">
+    <value>Tùy chọn gắn kết:</value>
+  </data>
+  <data name="Nfs_Field_MountPoint" xml:space="preserve">
+    <value>Điểm gắn kết:</value>
+  </data>
+  <data name="Nfs_Field_SharePath" xml:space="preserve">
+    <value>Đường dẫn chia sẻ:</value>
+  </data>
   <data name="OptionalField_Hint" xml:space="preserve">
     <value>(tùy chọn)</value>
   </data>
@@ -655,6 +667,48 @@ Vui lòng chỉ đến một thư mục chứa tệp này.</value>
   </data>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
     <value>Lấy trạng thái của các mục nguồn và lưu trữ</value>
+  </data>
+  <data name="Storage_Field_AccessKey" xml:space="preserve">
+    <value>Khóa truy cập:</value>
+  </data>
+  <data name="Storage_Field_AccountKey" xml:space="preserve">
+    <value>Khóa tài khoản:</value>
+  </data>
+  <data name="Storage_Field_AccountName" xml:space="preserve">
+    <value>Tên tài khoản:</value>
+  </data>
+  <data name="Storage_Field_BasePath" xml:space="preserve">
+    <value>Đường dẫn cơ sở:</value>
+  </data>
+  <data name="Storage_Field_Bucket" xml:space="preserve">
+    <value>Nhóm:</value>
+  </data>
+  <data name="Storage_Field_Container" xml:space="preserve">
+    <value>Vùng chứa:</value>
+  </data>
+  <data name="Storage_Field_Https" xml:space="preserve">
+    <value>HTTPS:</value>
+  </data>
+  <data name="Storage_Field_PasswordOrToken" xml:space="preserve">
+    <value>Mật khẩu / Token OAuth:</value>
+  </data>
+  <data name="Storage_Field_PathPrefix" xml:space="preserve">
+    <value>Tiền tố đường dẫn:</value>
+  </data>
+  <data name="Storage_Field_Preset" xml:space="preserve">
+    <value>Cài đặt sẵn:</value>
+  </data>
+  <data name="Storage_Field_Provider" xml:space="preserve">
+    <value>Nhà cung cấp:</value>
+  </data>
+  <data name="Storage_Field_Region" xml:space="preserve">
+    <value>Vùng:</value>
+  </data>
+  <data name="Storage_Field_SecretKey" xml:space="preserve">
+    <value>Khóa bí mật:</value>
+  </data>
+  <data name="Storage_Field_ServiceUrl" xml:space="preserve">
+    <value>URL dịch vụ:</value>
   </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
     <value>Thêm mẫu loại trừ tệp</value>

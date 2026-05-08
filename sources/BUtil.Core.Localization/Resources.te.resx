@@ -566,6 +566,18 @@
   <data name="Name_Title" xml:space="preserve">
     <value>పేరు</value>
   </data>
+  <data name="Nfs_Field_DriveLetter" xml:space="preserve">
+    <value>డ్రైవ్ అక్షరం:</value>
+  </data>
+  <data name="Nfs_Field_MountOptions" xml:space="preserve">
+    <value>మౌంట్ ఎంపికలు:</value>
+  </data>
+  <data name="Nfs_Field_MountPoint" xml:space="preserve">
+    <value>మౌంట్ పాయింట్:</value>
+  </data>
+  <data name="Nfs_Field_SharePath" xml:space="preserve">
+    <value>షేర్ మార్గం:</value>
+  </data>
   <data name="OptionalField_Hint" xml:space="preserve">
     <value>(ఐచ్ఛికం)</value>
   </data>
@@ -651,6 +663,48 @@
   </data>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
     <value>స్రోత అంశాలు మరియు నిల్వలకు స్థితిని పొందండి</value>
+  </data>
+  <data name="Storage_Field_AccessKey" xml:space="preserve">
+    <value>యాక్సెస్ కీ:</value>
+  </data>
+  <data name="Storage_Field_AccountKey" xml:space="preserve">
+    <value>ఖాతా కీ:</value>
+  </data>
+  <data name="Storage_Field_AccountName" xml:space="preserve">
+    <value>ఖాతా పేరు:</value>
+  </data>
+  <data name="Storage_Field_BasePath" xml:space="preserve">
+    <value>బేస్ మార్గం:</value>
+  </data>
+  <data name="Storage_Field_Bucket" xml:space="preserve">
+    <value>బకెట్:</value>
+  </data>
+  <data name="Storage_Field_Container" xml:space="preserve">
+    <value>కంటైనర్:</value>
+  </data>
+  <data name="Storage_Field_Https" xml:space="preserve">
+    <value>HTTPS:</value>
+  </data>
+  <data name="Storage_Field_PasswordOrToken" xml:space="preserve">
+    <value>పాస్‌వర్డ్ / OAuth టోకెన్:</value>
+  </data>
+  <data name="Storage_Field_PathPrefix" xml:space="preserve">
+    <value>మార్గం ఉపసర్గ:</value>
+  </data>
+  <data name="Storage_Field_Preset" xml:space="preserve">
+    <value>ముందే నిర్వచించిన:</value>
+  </data>
+  <data name="Storage_Field_Provider" xml:space="preserve">
+    <value>ప్రొవైడర్:</value>
+  </data>
+  <data name="Storage_Field_Region" xml:space="preserve">
+    <value>ప్రాంతం:</value>
+  </data>
+  <data name="Storage_Field_SecretKey" xml:space="preserve">
+    <value>రహస్య కీ:</value>
+  </data>
+  <data name="Storage_Field_ServiceUrl" xml:space="preserve">
+    <value>సేవా URL:</value>
   </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
     <value>ఫైల్స్‌ను వదిలి పెట్టండి</value>

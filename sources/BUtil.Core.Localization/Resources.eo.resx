@@ -573,6 +573,18 @@ Bonvolu ĉu:
   <data name="Name_Title" xml:space="preserve">
     <value>Nomo</value>
   </data>
+  <data name="Nfs_Field_DriveLetter" xml:space="preserve">
+    <value>Diska litero:</value>
+  </data>
+  <data name="Nfs_Field_MountOptions" xml:space="preserve">
+    <value>Surmontig-eblecoj:</value>
+  </data>
+  <data name="Nfs_Field_MountPoint" xml:space="preserve">
+    <value>Surmontig-punkto:</value>
+  </data>
+  <data name="Nfs_Field_SharePath" xml:space="preserve">
+    <value>Vojo de dividado:</value>
+  </data>
   <data name="OptionalField_Hint" xml:space="preserve">
     <value>(laŭvola)</value>
   </data>
@@ -658,6 +670,48 @@ Montru al dosierujo enhavanta ĉi tiun dosieron.</value>
   </data>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
     <value>Akiru staton de fontaĵoj kaj stokaĵojn</value>
+  </data>
+  <data name="Storage_Field_AccessKey" xml:space="preserve">
+    <value>Alira ŝlosilo:</value>
+  </data>
+  <data name="Storage_Field_AccountKey" xml:space="preserve">
+    <value>Konta ŝlosilo:</value>
+  </data>
+  <data name="Storage_Field_AccountName" xml:space="preserve">
+    <value>Konta nomo:</value>
+  </data>
+  <data name="Storage_Field_BasePath" xml:space="preserve">
+    <value>Baza vojo:</value>
+  </data>
+  <data name="Storage_Field_Bucket" xml:space="preserve">
+    <value>Sitelo:</value>
+  </data>
+  <data name="Storage_Field_Container" xml:space="preserve">
+    <value>Ujo:</value>
+  </data>
+  <data name="Storage_Field_Https" xml:space="preserve">
+    <value>HTTPS:</value>
+  </data>
+  <data name="Storage_Field_PasswordOrToken" xml:space="preserve">
+    <value>Pasvorto / OAuth ĵetono:</value>
+  </data>
+  <data name="Storage_Field_PathPrefix" xml:space="preserve">
+    <value>Voja antaŭaĵo:</value>
+  </data>
+  <data name="Storage_Field_Preset" xml:space="preserve">
+    <value>Antaŭagordita:</value>
+  </data>
+  <data name="Storage_Field_Provider" xml:space="preserve">
+    <value>Provizanto:</value>
+  </data>
+  <data name="Storage_Field_Region" xml:space="preserve">
+    <value>Regiono:</value>
+  </data>
+  <data name="Storage_Field_SecretKey" xml:space="preserve">
+    <value>Sekreta ŝlosilo:</value>
+  </data>
+  <data name="Storage_Field_ServiceUrl" xml:space="preserve">
+    <value>Servo-URL:</value>
   </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
     <value>Aldonu dosieron ekskludi ŝablonon</value>

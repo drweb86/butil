@@ -570,6 +570,18 @@
   <data name="Name_Title" xml:space="preserve">
     <value>नाव</value>
   </data>
+  <data name="Nfs_Field_DriveLetter" xml:space="preserve">
+    <value>ड्राइव्ह अक्षर:</value>
+  </data>
+  <data name="Nfs_Field_MountOptions" xml:space="preserve">
+    <value>माउंट पर्याय:</value>
+  </data>
+  <data name="Nfs_Field_MountPoint" xml:space="preserve">
+    <value>माउंट बिंदू:</value>
+  </data>
+  <data name="Nfs_Field_SharePath" xml:space="preserve">
+    <value>शेअर मार्ग:</value>
+  </data>
   <data name="OptionalField_Hint" xml:space="preserve">
     <value>(पर्यायी)</value>
   </data>
@@ -655,6 +667,48 @@
   </data>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
     <value>स्रोत आयटम आणि संग्रहांची स्थिती मिळवा</value>
+  </data>
+  <data name="Storage_Field_AccessKey" xml:space="preserve">
+    <value>प्रवेश की:</value>
+  </data>
+  <data name="Storage_Field_AccountKey" xml:space="preserve">
+    <value>खाते की:</value>
+  </data>
+  <data name="Storage_Field_AccountName" xml:space="preserve">
+    <value>खाते नाव:</value>
+  </data>
+  <data name="Storage_Field_BasePath" xml:space="preserve">
+    <value>आधार मार्ग:</value>
+  </data>
+  <data name="Storage_Field_Bucket" xml:space="preserve">
+    <value>बकेट:</value>
+  </data>
+  <data name="Storage_Field_Container" xml:space="preserve">
+    <value>कंटेनर:</value>
+  </data>
+  <data name="Storage_Field_Https" xml:space="preserve">
+    <value>HTTPS:</value>
+  </data>
+  <data name="Storage_Field_PasswordOrToken" xml:space="preserve">
+    <value>पासवर्ड / OAuth टोकन:</value>
+  </data>
+  <data name="Storage_Field_PathPrefix" xml:space="preserve">
+    <value>मार्ग उपसर्ग:</value>
+  </data>
+  <data name="Storage_Field_Preset" xml:space="preserve">
+    <value>पूर्वनिर्धारित:</value>
+  </data>
+  <data name="Storage_Field_Provider" xml:space="preserve">
+    <value>प्रदाता:</value>
+  </data>
+  <data name="Storage_Field_Region" xml:space="preserve">
+    <value>प्रदेश:</value>
+  </data>
+  <data name="Storage_Field_SecretKey" xml:space="preserve">
+    <value>गुप्त की:</value>
+  </data>
+  <data name="Storage_Field_ServiceUrl" xml:space="preserve">
+    <value>सेवा URL:</value>
   </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
     <value>फाईल वगळण्याचे पॅटर्न जोडा</value>

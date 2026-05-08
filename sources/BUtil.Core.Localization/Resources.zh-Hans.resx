@@ -572,6 +572,18 @@
   <data name="Name_Title" xml:space="preserve">
     <value>名称</value>
   </data>
+  <data name="Nfs_Field_DriveLetter" xml:space="preserve">
+    <value>盘符:</value>
+  </data>
+  <data name="Nfs_Field_MountOptions" xml:space="preserve">
+    <value>挂载选项:</value>
+  </data>
+  <data name="Nfs_Field_MountPoint" xml:space="preserve">
+    <value>挂载点:</value>
+  </data>
+  <data name="Nfs_Field_SharePath" xml:space="preserve">
+    <value>共享路径:</value>
+  </data>
   <data name="OptionalField_Hint" xml:space="preserve">
     <value>(可选)</value>
   </data>
@@ -657,6 +669,48 @@
   </data>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
     <value>获取源项和存储的状态</value>
+  </data>
+  <data name="Storage_Field_AccessKey" xml:space="preserve">
+    <value>访问密钥:</value>
+  </data>
+  <data name="Storage_Field_AccountKey" xml:space="preserve">
+    <value>账户密钥:</value>
+  </data>
+  <data name="Storage_Field_AccountName" xml:space="preserve">
+    <value>账户名称:</value>
+  </data>
+  <data name="Storage_Field_BasePath" xml:space="preserve">
+    <value>基础路径:</value>
+  </data>
+  <data name="Storage_Field_Bucket" xml:space="preserve">
+    <value>存储桶:</value>
+  </data>
+  <data name="Storage_Field_Container" xml:space="preserve">
+    <value>容器:</value>
+  </data>
+  <data name="Storage_Field_Https" xml:space="preserve">
+    <value>HTTPS:</value>
+  </data>
+  <data name="Storage_Field_PasswordOrToken" xml:space="preserve">
+    <value>密码 / OAuth 令牌:</value>
+  </data>
+  <data name="Storage_Field_PathPrefix" xml:space="preserve">
+    <value>路径前缀:</value>
+  </data>
+  <data name="Storage_Field_Preset" xml:space="preserve">
+    <value>预设:</value>
+  </data>
+  <data name="Storage_Field_Provider" xml:space="preserve">
+    <value>提供商:</value>
+  </data>
+  <data name="Storage_Field_Region" xml:space="preserve">
+    <value>区域:</value>
+  </data>
+  <data name="Storage_Field_SecretKey" xml:space="preserve">
+    <value>密钥:</value>
+  </data>
+  <data name="Storage_Field_ServiceUrl" xml:space="preserve">
+    <value>服务 URL:</value>
   </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
     <value>添加文件排除模式</value>

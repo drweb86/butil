@@ -573,6 +573,18 @@
   <data name="Name_Title" xml:space="preserve">
     <value>Імя</value>
   </data>
+  <data name="Nfs_Field_DriveLetter" xml:space="preserve">
+    <value>Літара дыска:</value>
+  </data>
+  <data name="Nfs_Field_MountOptions" xml:space="preserve">
+    <value>Параметры мантавання:</value>
+  </data>
+  <data name="Nfs_Field_MountPoint" xml:space="preserve">
+    <value>Кропка мантавання:</value>
+  </data>
+  <data name="Nfs_Field_SharePath" xml:space="preserve">
+    <value>Шлях сеткавага рэсурсу:</value>
+  </data>
   <data name="OptionalField_Hint" xml:space="preserve">
     <value>(неабавязкова)</value>
   </data>
@@ -658,6 +670,48 @@
   </data>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
     <value>Атрыманне стану элементаў крыніцы і сховішчаў</value>
+  </data>
+  <data name="Storage_Field_AccessKey" xml:space="preserve">
+    <value>Ключ доступу:</value>
+  </data>
+  <data name="Storage_Field_AccountKey" xml:space="preserve">
+    <value>Ключ уліковага запісу:</value>
+  </data>
+  <data name="Storage_Field_AccountName" xml:space="preserve">
+    <value>Імя ўліковага запісу:</value>
+  </data>
+  <data name="Storage_Field_BasePath" xml:space="preserve">
+    <value>Базавы шлях:</value>
+  </data>
+  <data name="Storage_Field_Bucket" xml:space="preserve">
+    <value>Бакет:</value>
+  </data>
+  <data name="Storage_Field_Container" xml:space="preserve">
+    <value>Кантэйнер:</value>
+  </data>
+  <data name="Storage_Field_Https" xml:space="preserve">
+    <value>HTTPS:</value>
+  </data>
+  <data name="Storage_Field_PasswordOrToken" xml:space="preserve">
+    <value>Пароль / OAuth-токен:</value>
+  </data>
+  <data name="Storage_Field_PathPrefix" xml:space="preserve">
+    <value>Прэфікс шляху:</value>
+  </data>
+  <data name="Storage_Field_Preset" xml:space="preserve">
+    <value>Перадустаноўка:</value>
+  </data>
+  <data name="Storage_Field_Provider" xml:space="preserve">
+    <value>Правайдар:</value>
+  </data>
+  <data name="Storage_Field_Region" xml:space="preserve">
+    <value>Рэгіён:</value>
+  </data>
+  <data name="Storage_Field_SecretKey" xml:space="preserve">
+    <value>Сакрэтны ключ:</value>
+  </data>
+  <data name="Storage_Field_ServiceUrl" xml:space="preserve">
+    <value>URL сэрвісу:</value>
   </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
     <value>Дадаць шаблон выключэння файлаў</value>

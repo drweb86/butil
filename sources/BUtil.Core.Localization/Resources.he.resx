@@ -573,6 +573,18 @@
   <data name="Name_Title" xml:space="preserve">
     <value>שם</value>
   </data>
+  <data name="Nfs_Field_DriveLetter" xml:space="preserve">
+    <value>אות כונן:</value>
+  </data>
+  <data name="Nfs_Field_MountOptions" xml:space="preserve">
+    <value>אפשרויות עיגון:</value>
+  </data>
+  <data name="Nfs_Field_MountPoint" xml:space="preserve">
+    <value>נקודת עיגון:</value>
+  </data>
+  <data name="Nfs_Field_SharePath" xml:space="preserve">
+    <value>נתיב שיתוף:</value>
+  </data>
   <data name="OptionalField_Hint" xml:space="preserve">
     <value>(אופציונלי)</value>
   </data>
@@ -658,6 +670,48 @@
   </data>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
     <value>קבל מצב פריטי מקור ואחסון</value>
+  </data>
+  <data name="Storage_Field_AccessKey" xml:space="preserve">
+    <value>מפתח גישה:</value>
+  </data>
+  <data name="Storage_Field_AccountKey" xml:space="preserve">
+    <value>מפתח חשבון:</value>
+  </data>
+  <data name="Storage_Field_AccountName" xml:space="preserve">
+    <value>שם חשבון:</value>
+  </data>
+  <data name="Storage_Field_BasePath" xml:space="preserve">
+    <value>נתיב בסיס:</value>
+  </data>
+  <data name="Storage_Field_Bucket" xml:space="preserve">
+    <value>דלי:</value>
+  </data>
+  <data name="Storage_Field_Container" xml:space="preserve">
+    <value>מכל:</value>
+  </data>
+  <data name="Storage_Field_Https" xml:space="preserve">
+    <value>HTTPS:</value>
+  </data>
+  <data name="Storage_Field_PasswordOrToken" xml:space="preserve">
+    <value>סיסמה / אסימון OAuth:</value>
+  </data>
+  <data name="Storage_Field_PathPrefix" xml:space="preserve">
+    <value>קידומת נתיב:</value>
+  </data>
+  <data name="Storage_Field_Preset" xml:space="preserve">
+    <value>הגדרה מוקדמת:</value>
+  </data>
+  <data name="Storage_Field_Provider" xml:space="preserve">
+    <value>ספק:</value>
+  </data>
+  <data name="Storage_Field_Region" xml:space="preserve">
+    <value>אזור:</value>
+  </data>
+  <data name="Storage_Field_SecretKey" xml:space="preserve">
+    <value>מפתח סודי:</value>
+  </data>
+  <data name="Storage_Field_ServiceUrl" xml:space="preserve">
+    <value>כתובת URL של השירות:</value>
   </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
     <value>הוסף דפוס אי-הכללת קבצים</value>

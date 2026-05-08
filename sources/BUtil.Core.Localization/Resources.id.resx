@@ -570,6 +570,18 @@ Silakan:
   <data name="Name_Title" xml:space="preserve">
     <value>Nama</value>
   </data>
+  <data name="Nfs_Field_DriveLetter" xml:space="preserve">
+    <value>Huruf Drive:</value>
+  </data>
+  <data name="Nfs_Field_MountOptions" xml:space="preserve">
+    <value>Opsi Pemasangan:</value>
+  </data>
+  <data name="Nfs_Field_MountPoint" xml:space="preserve">
+    <value>Titik Pemasangan:</value>
+  </data>
+  <data name="Nfs_Field_SharePath" xml:space="preserve">
+    <value>Jalur Berbagi:</value>
+  </data>
   <data name="OptionalField_Hint" xml:space="preserve">
     <value>(opsional)</value>
   </data>
@@ -655,6 +667,48 @@ Silakan:
   </data>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
     <value>Dapatkan status item sumber dan penyimpanan</value>
+  </data>
+  <data name="Storage_Field_AccessKey" xml:space="preserve">
+    <value>Kunci Akses:</value>
+  </data>
+  <data name="Storage_Field_AccountKey" xml:space="preserve">
+    <value>Kunci Akun:</value>
+  </data>
+  <data name="Storage_Field_AccountName" xml:space="preserve">
+    <value>Nama Akun:</value>
+  </data>
+  <data name="Storage_Field_BasePath" xml:space="preserve">
+    <value>Jalur Dasar:</value>
+  </data>
+  <data name="Storage_Field_Bucket" xml:space="preserve">
+    <value>Bucket:</value>
+  </data>
+  <data name="Storage_Field_Container" xml:space="preserve">
+    <value>Container:</value>
+  </data>
+  <data name="Storage_Field_Https" xml:space="preserve">
+    <value>HTTPS:</value>
+  </data>
+  <data name="Storage_Field_PasswordOrToken" xml:space="preserve">
+    <value>Kata Sandi / Token OAuth:</value>
+  </data>
+  <data name="Storage_Field_PathPrefix" xml:space="preserve">
+    <value>Awalan Jalur:</value>
+  </data>
+  <data name="Storage_Field_Preset" xml:space="preserve">
+    <value>Preset:</value>
+  </data>
+  <data name="Storage_Field_Provider" xml:space="preserve">
+    <value>Penyedia:</value>
+  </data>
+  <data name="Storage_Field_Region" xml:space="preserve">
+    <value>Wilayah:</value>
+  </data>
+  <data name="Storage_Field_SecretKey" xml:space="preserve">
+    <value>Kunci Rahasia:</value>
+  </data>
+  <data name="Storage_Field_ServiceUrl" xml:space="preserve">
+    <value>URL Layanan:</value>
   </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
     <value>Tambahkan pola pengecualian file</value>

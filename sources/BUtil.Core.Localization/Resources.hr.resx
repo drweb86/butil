@@ -573,6 +573,18 @@ Molimo odaberite jednu od opcija:
   <data name="Name_Title" xml:space="preserve">
     <value>Naziv</value>
   </data>
+  <data name="Nfs_Field_DriveLetter" xml:space="preserve">
+    <value>Slovo pogona:</value>
+  </data>
+  <data name="Nfs_Field_MountOptions" xml:space="preserve">
+    <value>Mogućnosti montiranja:</value>
+  </data>
+  <data name="Nfs_Field_MountPoint" xml:space="preserve">
+    <value>Točka montiranja:</value>
+  </data>
+  <data name="Nfs_Field_SharePath" xml:space="preserve">
+    <value>Put dijeljenja:</value>
+  </data>
   <data name="OptionalField_Hint" xml:space="preserve">
     <value>(neobavezno)</value>
   </data>
@@ -658,6 +670,48 @@ Pokažite na direktorij koji sadrži ovu datoteku.</value>
   </data>
   <data name="State_LoadFromEverywhere" xml:space="preserve">
     <value>Dohvaćanje stanja izvornih elemenata i pohrana</value>
+  </data>
+  <data name="Storage_Field_AccessKey" xml:space="preserve">
+    <value>Pristupni ključ:</value>
+  </data>
+  <data name="Storage_Field_AccountKey" xml:space="preserve">
+    <value>Ključ računa:</value>
+  </data>
+  <data name="Storage_Field_AccountName" xml:space="preserve">
+    <value>Naziv računa:</value>
+  </data>
+  <data name="Storage_Field_BasePath" xml:space="preserve">
+    <value>Osnovni put:</value>
+  </data>
+  <data name="Storage_Field_Bucket" xml:space="preserve">
+    <value>Bucket:</value>
+  </data>
+  <data name="Storage_Field_Container" xml:space="preserve">
+    <value>Kontejner:</value>
+  </data>
+  <data name="Storage_Field_Https" xml:space="preserve">
+    <value>HTTPS:</value>
+  </data>
+  <data name="Storage_Field_PasswordOrToken" xml:space="preserve">
+    <value>Lozinka / OAuth token:</value>
+  </data>
+  <data name="Storage_Field_PathPrefix" xml:space="preserve">
+    <value>Prefiks puta:</value>
+  </data>
+  <data name="Storage_Field_Preset" xml:space="preserve">
+    <value>Predefinirana postavka:</value>
+  </data>
+  <data name="Storage_Field_Provider" xml:space="preserve">
+    <value>Pružatelj usluge:</value>
+  </data>
+  <data name="Storage_Field_Region" xml:space="preserve">
+    <value>Regija:</value>
+  </data>
+  <data name="Storage_Field_SecretKey" xml:space="preserve">
+    <value>Tajni ključ:</value>
+  </data>
+  <data name="Storage_Field_ServiceUrl" xml:space="preserve">
+    <value>URL usluge:</value>
   </data>
   <data name="StorageItem_ExcludePattern_Add" xml:space="preserve">
     <value>Dodaj uzorak za isključivanje datoteka</value>
