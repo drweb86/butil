@@ -3,8 +3,11 @@ using BUtil.Core.Options;
 using BUtil.Core.Services;
 using BUtil.Core.Storages;
 using BUtil.Storages.Ftps;
+using BUtil.Storages.Nfs;
+using BUtil.Storages.S3;
 using BUtil.Storages.Samba;
 using BUtil.Storages.Sftp;
+using BUtil.Storages.WebDav;
 using BUtil.Windows.Services;
 
 namespace BUtil.Windows;
@@ -47,9 +50,15 @@ public class WindowsExperience : CrossPlatformExperience
     {
         SftpStoragePlugin.Register();
         FtpsStoragePlugin.Register();
+        WebDavStoragePlugin.Register();
+        S3StoragePlugin.Register();
         StorageProviderRegistry.Register(
             new SambaStorageSettingsProvider(),
             typeof(SambaStorageSettingsV2),
             (log, s, _) => new WindowsSambaStorage(log, (SambaStorageSettingsV2)s));
+        StorageProviderRegistry.Register(
+            new NfsStorageSettingsProvider(),
+            typeof(NfsStorageSettingsV2),
+            (log, s, _) => new WindowsNfsStorage(log, (NfsStorageSettingsV2)s));
     }
 }

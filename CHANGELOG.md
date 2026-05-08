@@ -1,5 +1,12 @@
-﻿# 2026.05.07
+﻿# 2026.05.08
 (unpublished)
+
+## New Features
+- Added **[WebDAV](./help/WebDAV%20storage%20setup.md)** storage type — works with Nextcloud, ownCloud, Synology DSM, Seafile, and any standard WebDAV server.
+- Added **[S3-compatible](./help/S3%20storage%20setup.md)** storage type — supports AWS S3, Backblaze B2, Wasabi, Cloudflare R2, DigitalOcean Spaces, MinIO, and any S3-compatible endpoint. Provider presets simplify setup for the most common services.
+- Added **[NFS](./help/NFS%20storage%20setup.md)** storage type — mounts an NFS share and uses it as a local folder. Supported on Linux and on Windows when the NFS Client optional feature is installed.
+
+# 2026.05.07
 
 ## Changes
 - Preparation for support of more storage types.

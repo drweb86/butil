@@ -4,7 +4,12 @@
       "Bash(dotnet build *)",
       "Bash(git -C /f/sources/butil status --short)",
       "Bash(xargs grep *)",
-      "Bash(xargs cat *)"
+      "Bash(xargs cat *)",
+      "Bash(grep -v \"^$\")",
+      "WebSearch",
+      "Bash(cd /tmp)",
+      "Bash(cat)",
+      "Bash(powershell -Command ' *)"
     ]
   }
 }

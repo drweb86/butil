@@ -10,8 +10,11 @@
   </Folder>
   <Folder Name="/Storages/">
     <Project Path="BUtil.Storages.Ftps/BUtil.Storages.Ftps.csproj" />
+    <Project Path="BUtil.Storages.Nfs/BUtil.Storages.Nfs.csproj" />
+    <Project Path="BUtil.Storages.S3/BUtil.Storages.S3.csproj" />
     <Project Path="BUtil.Storages.Samba/BUtil.Storages.Samba.csproj" />
     <Project Path="BUtil.Storages.Sftp/BUtil.Storages.Sftp.csproj" />
+    <Project Path="BUtil.Storages.WebDav/BUtil.Storages.WebDav.csproj" />
   </Folder>
   <Folder Name="/UI/">
     <Project Path="BUtil.UI.Storages/BUtil.UI.Storages.csproj" />

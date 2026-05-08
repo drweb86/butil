@@ -19,7 +19,10 @@
   <ItemGroup>
     <ProjectReference Include="..\BUtil.Core\BUtil.Core.csproj" />
     <ProjectReference Include="..\BUtil.Storages.Ftps\BUtil.Storages.Ftps.csproj" />
+    <ProjectReference Include="..\BUtil.Storages.Nfs\BUtil.Storages.Nfs.csproj" />
+    <ProjectReference Include="..\BUtil.Storages.S3\BUtil.Storages.S3.csproj" />
     <ProjectReference Include="..\BUtil.Storages.Samba\BUtil.Storages.Samba.csproj" />
     <ProjectReference Include="..\BUtil.Storages.Sftp\BUtil.Storages.Sftp.csproj" />
+    <ProjectReference Include="..\BUtil.Storages.WebDav\BUtil.Storages.WebDav.csproj" />
   </ItemGroup>
 </Project>

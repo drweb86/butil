@@ -24,7 +24,7 @@ Urdu, Uzbek, Vietnamese, Welsh, Yue Chinese, English
 
 ## Features
 
-- **Incremental backup** with deduplication of files and **SFTP**, **FTPS**, **SMB/CIFS** transports support;
+- **Incremental backup** with deduplication of files and **SFTP**, **FTPS**, **SMB/CIFS**, **[WebDAV](./help/WebDAV%20storage%20setup.md)** (Nextcloud, ownCloud, Synology, …), **[S3-compatible](./help/S3%20storage%20setup.md)** (AWS S3, Backblaze B2, Wasabi, Cloudflare R2, DigitalOcean Spaces, MinIO, …), **[NFS](./help/NFS%20storage%20setup.md)** transports support;
 - **[Synchronization](./help/Synchronization.md)** of files between devices using centralized storage and versioning support;
 - **Import media** - [Import audios, photos, videos from SD Card of camera, recorder; photos and videos from your phone via WI-FI through FTPS Server application using template file names or via MTP](./help/Import%20media%20task.md);
 - **P2P file transfer** via FTPS Server;
