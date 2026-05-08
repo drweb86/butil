@@ -1,11 +1,12 @@
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Localization;
+using BUtil.Core.Storages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 
-namespace BUtil.Core.Storages;
+namespace BUtil.Storages.Ftps;
 
 public class FtpsStorageSettingsProvider : IStorageSettingsProvider
 {

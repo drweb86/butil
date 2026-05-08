@@ -1,8 +1,9 @@
-﻿using Avalonia;
+using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
 using Avalonia.Styling;
+using BUtil.Core;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
 using BUtil.Core.Settings;
@@ -29,6 +30,9 @@ public partial class App : Application
 
     public override void OnFrameworkInitializationCompleted()
     {
+        // Accessing Instance triggers platform experience initialization, which registers all storages.
+        _ = PlatformSpecificExperience.Instance;
+
         // Line below is needed to remove Avalonia data validation.
         // Without this line you will get duplicate validations from both Avalonia and CT
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)

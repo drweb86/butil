@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace BUtil.Core.FileSystem;
 
-internal static class LinuxFileHelper
+public static class LinuxFileHelper
 {
     public static string? NormalizeNullablePath(string? path)
     {

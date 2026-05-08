@@ -1,15 +1,18 @@
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Localization;
+using BUtil.Core.Storages;
+using System;
 using System.Collections.Generic;
 
-namespace BUtil.Core.Storages;
+namespace BUtil.Storages.Samba;
 
 public class SambaStorageSettingsProvider : IStorageSettingsProvider
 {
     public string StorageId => "Samba";
     public string DisplayName => "SMB/CIFS";
     public int Order => 1;
-    public bool IsSupported => PlatformSpecificExperience.Instance.IsSmbCifsSupported;
+
+    public bool IsSupported => OperatingSystem.IsWindows() || OperatingSystem.IsLinux();
 
     public IReadOnlyList<StorageFieldDescriptor> Fields { get; } =
     [

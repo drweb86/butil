@@ -1,15 +1,16 @@
-
+using BUtil.Core;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
+using BUtil.Core.Storages;
 using FluentFTP;
 using System;
 using System.IO;
 using System.Linq;
 using System.Net.Security;
 
-namespace BUtil.Core.Storages;
+namespace BUtil.Storages.Ftps;
 
 class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
 {
@@ -153,7 +154,7 @@ class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
     {
         if (!string.IsNullOrWhiteSpace(Settings.Folder) && !_client.DirectoryExists(Settings.Folder))
         {
-            return Localization.Resources.Field_Folder_Validation_NotExist;
+            return BUtil.Core.Localization.Resources.Field_Folder_Validation_NotExist;
         }
         else
         {

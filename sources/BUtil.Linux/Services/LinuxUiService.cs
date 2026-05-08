@@ -1,6 +1,6 @@
 ﻿using BUtil.Core.Services;
 
-namespace BUtil.Windows.Services;
+namespace BUtil.Linux.Services;
 
 class LinuxUiService : IUiService
 {

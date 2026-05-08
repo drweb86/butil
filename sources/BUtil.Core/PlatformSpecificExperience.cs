@@ -1,4 +1,5 @@
 ﻿using BUtil.Core.FileSystem;
+using BUtil.Core.Storages;
 using System;
 using System.IO;
 using System.Linq;
@@ -46,12 +47,22 @@ public static class PlatformSpecificExperience
             throw new FileNotFoundException($"Cannot find platform experience library {assemblyFile}. Files in the directory are following: {allFiles}");
         }
 
+        var assemblyDir = Path.GetDirectoryName(Path.GetFullPath(assemblyFile))!;
+        AppDomain.CurrentDomain.AssemblyResolve += (_, e) =>
+        {
+            var dllName = new AssemblyName(e.Name!).Name + ".dll";
+            var candidate = Path.Combine(assemblyDir, dllName);
+            return File.Exists(candidate) ? Assembly.LoadFrom(candidate) : null;
+        };
+
         var assembly = Assembly.LoadFrom(assemblyFile);
         var experienceType = assembly
             .GetTypes()
             .Where(x => x.BaseType == typeof(CrossPlatformExperience))
             .SingleOrDefault() ?? throw new Exception("Could not locate single type derrived from CrossPlatformExperience");
-        var instance = Activator.CreateInstance(experienceType) ?? throw new Exception("Instance is null");
-        return (CrossPlatformExperience)instance;
+        var instance = (CrossPlatformExperience)(Activator.CreateInstance(experienceType) ?? throw new Exception("Instance is null"));
+        instance.RegisterPlatformStorages();
+        StoragePluginLoader.LoadFromPluginFolder();
+        return instance;
     }
 }

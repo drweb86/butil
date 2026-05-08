@@ -1,8 +1,6 @@
-using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Logs;
 using BUtil.Core.Options;
 using BUtil.Core.Services;
-using BUtil.Core.Storages;
 
 namespace BUtil.Core;
 
@@ -14,10 +12,11 @@ public abstract class CrossPlatformExperience
     public abstract ISupportManager SupportManager { get; }
     public abstract IFolderService GetFolderService();
 
-    #region SMB/CIFS
-    public abstract bool IsSmbCifsSupported { get; }
-    public abstract IStorage GetSmbCifsStorage(ILog log, SambaStorageSettingsV2 settings);
-    #endregion
+    /// <summary>
+    /// Registers platform-specific storage plugins (e.g. SMB/CIFS) with StorageProviderRegistry.
+    /// Called once at application startup.
+    /// </summary>
+    public abstract void RegisterPlatformStorages();
 
     public abstract ITaskSchedulerService GetTaskSchedulerService();
 
@@ -37,6 +36,4 @@ public abstract class CrossPlatformExperience
     public abstract IUiService UiService { get; }
 
     public abstract IOsSleepPreventionService OsSleepPreventionService { get; }
-
-
 }

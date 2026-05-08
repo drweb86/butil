@@ -1,8 +1,8 @@
-
-using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
+using BUtil.Core.Storages;
 using Renci.SshNet;
 using Renci.SshNet.Sftp;
 using System;
@@ -11,7 +11,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 
-namespace BUtil.Core.Storages;
+namespace BUtil.Storages.Sftp;
 
 class SftpStorage : StorageBase<SftpStorageSettingsV2>
 {
@@ -22,29 +22,28 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
         : base(log, settings)
     {
         if (string.IsNullOrWhiteSpace(Settings.Host))
-            throw new InvalidDataException(Localization.Resources.Server_Field_Address_Validation);
+            throw new InvalidDataException(BUtil.Core.Localization.Resources.Server_Field_Address_Validation);
         if (Settings.Port < 0) // 0 - default.
-            throw new InvalidDataException(Localization.Resources.Server_Field_Port_Validation);
+            throw new InvalidDataException(BUtil.Core.Localization.Resources.Server_Field_Port_Validation);
         if (string.IsNullOrWhiteSpace(Settings.User))
-            throw new InvalidDataException(Localization.Resources.User_Field_Validation);
+            throw new InvalidDataException(BUtil.Core.Localization.Resources.User_Field_Validation);
         if (string.IsNullOrWhiteSpace(Settings.Password) &&
             string.IsNullOrWhiteSpace(Settings.KeyFile))
-            throw new InvalidDataException(Localization.Resources.SFTP_Validation_PasswordAndKeyNotSpecified);
+            throw new InvalidDataException(BUtil.Core.Localization.Resources.SFTP_Validation_PasswordAndKeyNotSpecified);
         if (!testingConnection && string.IsNullOrWhiteSpace(Settings.FingerPrintSHA256))
-            throw new InvalidDataException(Localization.Resources.FingerPrintSHA256_Field_Validation_Empty);
+            throw new InvalidDataException(BUtil.Core.Localization.Resources.FingerPrintSHA256_Field_Validation_Empty);
         if (string.IsNullOrWhiteSpace(Settings.Folder))
-            throw new InvalidDataException(Localization.Resources.Field_Folder_Validation_Empty);
+            throw new InvalidDataException(BUtil.Core.Localization.Resources.Field_Folder_Validation_Empty);
         if (Settings.Folder == "/")
-            throw new InvalidDataException(Localization.Resources.SFTPFolder_Field_Validation_RootFolder);
+            throw new InvalidDataException(BUtil.Core.Localization.Resources.SFTPFolder_Field_Validation_RootFolder);
         if (!Settings.Folder.StartsWith("/"))
-            throw new InvalidDataException(Localization.Resources.SFTPFolder_Field_Validation_InvalidPrefix);
+            throw new InvalidDataException(BUtil.Core.Localization.Resources.SFTPFolder_Field_Validation_InvalidPrefix);
         if (Settings.Folder.EndsWith("/"))
-            throw new InvalidDataException(Localization.Resources.SFTPFolder_Field_Validation_InvalidPostfix);
+            throw new InvalidDataException(BUtil.Core.Localization.Resources.SFTPFolder_Field_Validation_InvalidPostfix);
 
         _testingConnection = testingConnection;
 
         _client = Mount();
-        
     }
 
     private readonly Lock _uploadLock = new();
@@ -151,7 +150,7 @@ class SftpStorage : StorageBase<SftpStorageSettingsV2>
     {
         if (!string.IsNullOrWhiteSpace(Settings.Folder) && !_client.Exists(Settings.Folder))
         {
-            return Localization.Resources.Field_Folder_Validation_NotExist;
+            return BUtil.Core.Localization.Resources.Field_Folder_Validation_NotExist;
         }
         else
         {

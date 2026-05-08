@@ -3,6 +3,8 @@ using BUtil.Core.Misc;
 using System;
 
 Console.OutputEncoding = System.Text.Encoding.UTF8;
+
+// First access to Instance triggers platform experience initialization (registers all storages).
 PlatformSpecificExperience.Instance.OsSleepPreventionService.PreventSleep();
 
 Console.WriteLine(CopyrightInfo.Copyright);

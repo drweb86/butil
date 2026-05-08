@@ -1,4 +1,6 @@
-namespace BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.ConfigurationFileModels.V2;
+
+namespace BUtil.Storages.Samba;
 
 public class SambaStorageSettingsV2 : IStorageSettingsV2
 {
@@ -6,13 +8,6 @@ public class SambaStorageSettingsV2 : IStorageSettingsV2
     public string Url { get; set; } = string.Empty;
     public string? User { get; set; }
     public string? Password { get; set; }
-
-    /// <summary>
-    /// Its not powershell anymore on Ubuntu. SHould be renamed.
-    /// </summary>
     public string? MountPowershellScript { get; set; }
-    /// <summary>
-    /// Its not powershell anymore on Ubuntu. SHould be renamed.
-    /// </summary>
     public string? UnmountPowershellScript { get; set; }
 }

@@ -1,25 +1,17 @@
 using BUtil.Core;
-using BUtil.Core.ConfigurationFileModels.V2;
-using BUtil.Core.Logs;
 using BUtil.Core.Options;
 using BUtil.Core.Services;
 using BUtil.Core.Storages;
+using BUtil.Storages.Ftps;
+using BUtil.Storages.Samba;
+using BUtil.Storages.Sftp;
 using BUtil.Linux.Services;
-using BUtil.Windows.Services;
 
 namespace BUtil.Linux;
 
 public class LinuxExperience : CrossPlatformExperience
 {
     public override ISecretService SecretService => new LinuxSecretService();
-
-    #region SMB/CIFS
-    public override bool IsSmbCifsSupported { get => true; }
-    public override IStorage GetSmbCifsStorage(ILog log, SambaStorageSettingsV2 settings)
-    {
-        return new LinuxSambaStorage(log, settings);
-    }
-    #endregion
 
     public override int MinimumListenerPort => 1025;
     public override ISessionService SessionService => new LinuxSessionService();
@@ -44,4 +36,14 @@ public class LinuxExperience : CrossPlatformExperience
     }
 
     public override ISupportManager SupportManager => new LinuxSupportManager();
+
+    public override void RegisterPlatformStorages()
+    {
+        SftpStoragePlugin.Register();
+        FtpsStoragePlugin.Register();
+        StorageProviderRegistry.Register(
+            new SambaStorageSettingsProvider(),
+            typeof(SambaStorageSettingsV2),
+            (log, s, _) => new LinuxSambaStorage(log, (SambaStorageSettingsV2)s));
+    }
 }

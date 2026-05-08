@@ -20,14 +20,12 @@ public static class StorageProviderRegistry
     {
         if (_defaultsRegistered) return;
         _defaultsRegistered = true;
+        // FolderStorage is the only built-in storage that stays in BUtil.Core.
+        // All other storages (SFTP, FTPS, SMB/CIFS) are registered from their
+        // own libraries at application startup via SftpStoragePlugin.Register(),
+        // FtpsStoragePlugin.Register(), and CrossPlatformExperience.RegisterPlatformStorages().
         Register(new FolderStorageSettingsProvider(), typeof(FolderStorageSettingsV2),
             (log, s, _) => new FolderStorage(log, (FolderStorageSettingsV2)s));
-        Register(new SambaStorageSettingsProvider(), typeof(SambaStorageSettingsV2),
-            (log, s, _) => PlatformSpecificExperience.Instance.GetSmbCifsStorage(log, (SambaStorageSettingsV2)s));
-        Register(new SftpStorageSettingsProvider(), typeof(SftpStorageSettingsV2),
-            (log, s, autodetect) => new SftpStorage(log, (SftpStorageSettingsV2)s, autodetect));
-        Register(new FtpsStorageSettingsProvider(), typeof(FtpsStorageSettingsV2),
-            (log, s, autodetect) => new FtpsStorage(log, (FtpsStorageSettingsV2)s, autodetect));
     }
 
     /// <summary>

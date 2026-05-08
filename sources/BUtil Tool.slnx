@@ -12,6 +12,9 @@
   <Project Path="BUtil.Core.Localization/BUtil.Core.Localization.csproj" />
   <Project Path="BUtil.Interop/BUtil.Interop.csproj" />
   <Project Path="BUtil.Linux/BUtil.Linux.csproj" />
+  <Project Path="BUtil.Storages.Ftps/BUtil.Storages.Ftps.csproj" />
+  <Project Path="BUtil.Storages.Samba/BUtil.Storages.Samba.csproj" />
+  <Project Path="BUtil.Storages.Sftp/BUtil.Storages.Sftp.csproj" />
   <Project Path="BUtil.Tests/BUtil.Tests.csproj" />
   <Project Path="BUtil.UI/BUtil.UI.csproj">
     <BuildDependency Project="BUtil.Windows/BUtil.Windows.csproj" />

@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace BUtil.Core.FileSystem;
 
-internal static class FileHelper
+public static class FileHelper
 {
     public static void EnsureFolderCreatedForFile(string file)
     {

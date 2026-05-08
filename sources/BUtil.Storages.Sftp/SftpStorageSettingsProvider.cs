@@ -1,9 +1,10 @@
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Localization;
+using BUtil.Core.Storages;
 using System;
 using System.Collections.Generic;
 
-namespace BUtil.Core.Storages;
+namespace BUtil.Storages.Sftp;
 
 public class SftpStorageSettingsProvider : IStorageSettingsProvider
 {

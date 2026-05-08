@@ -1,10 +1,8 @@
 using BUtil.Core;
-using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
 using BUtil.Core.Services;
-using BUtil.Core.Storages;
 using System.IO;
 
 namespace BUtil.Tests.Platform;
@@ -30,10 +28,7 @@ internal sealed class FakeCrossPlatformExperience : CrossPlatformExperience
 
     public override IFolderService GetFolderService() => FakeFolderService.Instance;
 
-    public override bool IsSmbCifsSupported => false;
-
-    public override IStorage GetSmbCifsStorage(ILog log, SambaStorageSettingsV2 settings) =>
-        throw new NotSupportedException("Tests do not provide SMB storage.");
+    public override void RegisterPlatformStorages() { /* SMB/CIFS not supported in tests */ }
 
     public override ITaskSchedulerService GetTaskSchedulerService() => FakeTaskSchedulerService.Instance;
 
