@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace BUtil.Core.TasksTree.IncrementalModel;
 
-class SourceItemStateBuilder
+public class SourceItemStateBuilder
 {
     public static List<SourceItemState> Build(IEnumerable<VersionState> versions, VersionState selectedVersion)
     {

@@ -30,6 +30,8 @@ internal sealed class FakeCrossPlatformExperience : CrossPlatformExperience
 
     public override void RegisterPlatformStorages() { /* SMB/CIFS not supported in tests */ }
 
+    public override void RegisterPlatformTasks() { /* tasks run via direct project references in tests */ }
+
     public override ITaskSchedulerService GetTaskSchedulerService() => FakeTaskSchedulerService.Instance;
 
     public override IUiService UiService { get; } = new FakeUiService();

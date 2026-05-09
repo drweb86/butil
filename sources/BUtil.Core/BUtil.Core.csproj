@@ -15,12 +15,15 @@
   </ItemGroup>
   <ItemGroup>
     <InternalsVisibleTo Include="BUtil.Tests" />
+    <InternalsVisibleTo Include="BUtil.Tasks.IncrementalBackup" />
+    <InternalsVisibleTo Include="BUtil.Tasks.Synchronization" />
+    <InternalsVisibleTo Include="BUtil.Tasks.ImportMedia" />
+    <InternalsVisibleTo Include="BUtil.Tasks.BUtilServer" />
+    <InternalsVisibleTo Include="BUtil.Tasks.BUtilClient" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="FluentFTP" Version="54.1.1" />
+    <PackageReference Include="BouncyCastle.Cryptography" Version="2.5.1" />
     <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="10.0.7" />
-    <PackageReference Include="Siarhei_Kuchuk.FtpsServerLibrary" Version="2026.4.20" />
-    <PackageReference Include="SSH.NET" Version="2025.1.0" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Extensions.FileSystemGlobbing">
@@ -33,7 +36,7 @@
     <ProjectReference Include="../BUtil.Interop/BUtil.Interop.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <CopyLibraryFiles Include="$(NuGetPackageRoot)ssh.net\2025.1.0\lib\net9.0\*.*;$(NuGetPackageRoot)microsoft.extensions.filesystemglobbing\10.0.7\lib\net10.0\*.*;$(NuGetPackageRoot)fluentftp\54.1.1\lib\net9.0\*.*;$(NuGetPackageRoot)\siarhei_kuchuk.ftpsserverlibrary\2026.4.20\lib\net10.0\*.*" />
+    <CopyLibraryFiles Include="$(NuGetPackageRoot)microsoft.extensions.filesystemglobbing\10.0.7\lib\net10.0\*.*" />
   </ItemGroup>
   <Target Name="CopyLibraries" AfterTargets="Build">
     <Copy SourceFiles="@(CopyLibraryFiles)" DestinationFolder="$(TargetDir)" />

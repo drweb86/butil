@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace BUtil.Core.TasksTree.IncrementalModel;
 
-class SourceItemStateComparer
+public class SourceItemStateComparer
 {
     public static VersionState Compare(IEnumerable<SourceItemState> a, IEnumerable<SourceItemState> b)
     {

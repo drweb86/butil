@@ -65,6 +65,8 @@ public static class PlatformSpecificExperience
         var instance = (CrossPlatformExperience)(Activator.CreateInstance(experienceType) ?? throw new Exception("Instance is null"));
         instance.RegisterPlatformStorages();
         StoragePluginLoader.LoadFromPluginFolder();
+        instance.RegisterPlatformTasks();
+        TaskPluginLoader.LoadFromPluginFolder();
         return instance;
     }
 }

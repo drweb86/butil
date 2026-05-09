@@ -15,7 +15,7 @@
 ## Changes
 - **Custom storage SDK:** Third-party backends can compile against **`BUtil.Interop` only**. `StorageProviderRegistry`, `IStoragePlugin`, logging (`ILog`, `LoggingEvent`), and registry wiring live in **`BUtil.Interop`**; `BUtil.Core` bootstraps the built-in folder provider. See [Custom storage plugin](./help/Custom%20storage%20plugin.md).
 - Custom storage plugins load from **`plugins/storages`** next to the application binaries and under **`BUtil`** / **`BUtil-Development`** in application data (`plugins/storages` under the same folder as Settings and Logs; replaces `BUtil Backup Plugins`). See [Custom storage plugin](./help/Custom%20storage%20plugin.md).
-- Preparation for support of more storage types.
+- Preparation for support of more storage types and multiple tasks.
 - Italian language was updated by https://github.com/bovirus .
 
 # 2026.04.29

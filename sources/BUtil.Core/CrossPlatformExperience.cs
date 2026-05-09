@@ -17,6 +17,12 @@ public abstract class CrossPlatformExperience
     /// </summary>
     public abstract void RegisterPlatformStorages();
 
+    /// <summary>
+    /// Registers all built-in task plugins with TaskProviderRegistry.
+    /// Called once at application startup.
+    /// </summary>
+    public abstract void RegisterPlatformTasks();
+
     public abstract ITaskSchedulerService GetTaskSchedulerService();
 
     public virtual IShowLogOnSystemLoginService? GetShowLogOnSystemLoginService()

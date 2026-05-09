@@ -9,6 +9,11 @@ using BUtil.Storages.S3;
 using BUtil.Storages.Samba;
 using BUtil.Storages.Sftp;
 using BUtil.Storages.WebDav;
+using BUtil.Tasks.BUtilClient;
+using BUtil.Tasks.BUtilServer;
+using BUtil.Tasks.ImportMedia;
+using BUtil.Tasks.IncrementalBackup;
+using BUtil.Tasks.Synchronization;
 using BUtil.Linux.Services;
 
 namespace BUtil.Linux;
@@ -56,5 +61,14 @@ public class LinuxExperience : CrossPlatformExperience
             new NfsStorageSettingsProvider(),
             typeof(NfsStorageSettingsV2),
             (log, s, _) => new LinuxNfsStorage(log, (NfsStorageSettingsV2)s));
+    }
+
+    public override void RegisterPlatformTasks()
+    {
+        IncrementalBackupTaskPlugin.Register();
+        SynchronizationTaskPlugin.Register();
+        ImportMediaTaskPlugin.Register();
+        BUtilServerTaskPlugin.Register();
+        BUtilClientTaskPlugin.Register();
     }
 }

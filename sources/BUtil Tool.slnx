@@ -17,6 +17,13 @@
     <Project Path="BUtil.Storages.Sftp/BUtil.Storages.Sftp.csproj" />
     <Project Path="BUtil.Storages.WebDav/BUtil.Storages.WebDav.csproj" />
   </Folder>
+  <Folder Name="/Tasks/">
+    <Project Path="BUtil.Tasks.IncrementalBackup/BUtil.Tasks.IncrementalBackup.csproj" />
+    <Project Path="BUtil.Tasks.Synchronization/BUtil.Tasks.Synchronization.csproj" />
+    <Project Path="BUtil.Tasks.ImportMedia/BUtil.Tasks.ImportMedia.csproj" />
+    <Project Path="BUtil.Tasks.BUtilServer/BUtil.Tasks.BUtilServer.csproj" />
+    <Project Path="BUtil.Tasks.BUtilClient/BUtil.Tasks.BUtilClient.csproj" />
+  </Folder>
   <Folder Name="/UI/">
     <Project Path="BUtil.UI.Storages/BUtil.UI.Storages.csproj" />
     <Project Path="BUtil.UI/BUtil.UI.csproj">

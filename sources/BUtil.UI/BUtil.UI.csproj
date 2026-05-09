@@ -41,10 +41,13 @@
 
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
     <PackageReference Include="DialogHost.Avalonia" Version="0.12.1" />
+    <PackageReference Include="FluentFTP" Version="54.1.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\BUtil.Core\BUtil.Core.csproj" />
+    <ProjectReference Include="..\BUtil.Tasks.ImportMedia\BUtil.Tasks.ImportMedia.csproj" />
+    <ProjectReference Include="..\BUtil.Tasks.IncrementalBackup\BUtil.Tasks.IncrementalBackup.csproj" />
     <ProjectReference Include="..\BUtil.UI.Storages\BUtil.UI.Storages.csproj" />
   </ItemGroup>
 
