@@ -1,6 +1,6 @@
 # Custom Storage Plugin
 
-BUtil supports a plugin architecture for storage backends. You can implement your own storage type and make it available to BUtil by placing a compiled plugin assembly in the designated plugin folder.
+BUtil supports a plugin architecture for storage backends. You can implement your own storage type and make it available to BUtil by placing a compiled plugin assembly in one of the designated plugin folders.
 
 ## How Storage Plugins Work
 
@@ -11,7 +11,7 @@ Each storage plugin is a .NET class library that:
 3. Implements `IStorage` — the runtime client that performs upload, download, list, and delete operations.
 4. Provides a static `Register()` method that calls `StorageProviderRegistry.Register(...)` to wire everything together.
 
-At startup BUtil scans the plugin folder, loads assemblies, and calls the `Register()` method of any class named `*StoragePlugin` that is discovered.
+At startup BUtil scans the plugin folders, loads assemblies, and calls `Register()` on every public concrete class that implements `IStoragePlugin`.
 
 ## Quick Start: Copy an Existing Plugin
 
@@ -82,10 +82,12 @@ public interface IStorage
 
 ### Registration
 
+Plugins loaded from the plugin folders must be instance types implementing `IStoragePlugin` with an instance method `Register()`. Built-in storages shipped with BUtil often use static `Register()` helpers called directly from startup code instead.
+
 ```csharp
-public static class MyStoragePlugin
+public class MyStoragePlugin : IStoragePlugin
 {
-    public static void Register()
+    public void Register()
     {
         StorageProviderRegistry.Register(
             new MyStorageSettingsProvider(),
@@ -97,12 +99,17 @@ public static class MyStoragePlugin
 
 ## Plugin Discovery
 
-Place your compiled `.dll` (and any dependency DLLs) in the BUtil plugins folder:
+Place your compiled `.dll` (and any dependency DLLs) in **either** of these optional locations:
 
-- **Windows:** `%LOCALAPPDATA%\BUtil\Plugins\`
-- **Linux:** `~/.local/share/BUtil/Plugins/`
+1. **Portable (next to the application)** — `plugins/storages` under the same directory as the main application binaries (the folder that contains `BUtil.Core.dll` and the platform experience library). Use this for USB / self-contained installs so plugins travel with the executable.
+2. **Per-user (BUtil application data)** — `plugins/storages` under the same root BUtil uses for settings and logs:
+   - **Release:** `%AppData%\BUtil\plugins\storages\` on Windows (typically `…\Roaming\BUtil\plugins\storages\`)
+   - **Debug builds** use `BUtil-Development` instead of `BUtil` (`%AppData%\BUtil-Development\plugins\storages\`).
+   - **Linux / macOS:** `<Application Data>/BUtil/plugins/storages/` — the same `BUtil` profile root Settings and Logs use (see .NET `Environment.SpecialFolder.ApplicationData` mapping on your OS).
 
-BUtil scans all `.dll` files in that folder at startup, looks for a public static class whose name ends with `StoragePlugin`, and calls its `Register()` method via reflection. No configuration file is needed.
+BUtil loads plugins from the **portable folder first**, then from the **user folder**. If the same storage type were registered twice, the earlier registration wins. You normally use different plugins or only one location. No configuration file is required beyond dropping the DLLs in place.
+
+BUtil scans all `.dll` files in each folder that exists at startup and calls `Register()` on each discovered `IStoragePlugin` implementation.
 
 > **Note:** The plugin API may evolve between BUtil versions. Pin your plugin to the BUtil SDK version you compiled against. The `StorageId` string must remain stable across plugin versions because it is persisted in task configuration files as the JSON `"$type"` discriminator.
 
@@ -176,9 +183,9 @@ public class MyStorageSettingsProvider : IStorageSettingsProvider
 // MyStoragePlugin.cs
 using BUtil.Core.Storages;
 
-public static class MyStoragePlugin
+public class MyStoragePlugin : IStoragePlugin
 {
-    public static void Register()
+    public void Register()
     {
         StorageProviderRegistry.Register(
             new MyStorageSettingsProvider(),

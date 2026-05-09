@@ -1,3 +1,4 @@
+using BUtil.Core.FileSystem;
 using BUtil.Core.Logs;
 using System;
 using System.IO;
@@ -7,40 +8,47 @@ using System.Reflection;
 namespace BUtil.Core.Storages;
 
 /// <summary>
-/// Loads storage plugins from the user plugin folder at runtime.
-/// The folder is a sibling to the tasks folder:
-///   %AppData%\BUtil Backup Plugins\   (or %AppData%\BUtil Backup Plugins - DEBUG\ in debug builds)
-///
-/// Drop a plugin DLL (plus its dependencies) into that folder.
-/// Any public class implementing IStoragePlugin will be instantiated and Register() called.
+/// Loads storage plugins at runtime from two optional locations, both ending in <c>plugins/storages</c>:
+/// <list type="bullet">
+/// <item><description>Next to the application binaries (portable installs): <c>…/plugins/storages/</c></description></item>
+/// <item><description>Under the BUtil application data folder (see <see cref="Directories.UserDataFolder"/>): <c>…/BUtil/plugins/storages/</c> (debug builds use <c>BUtil-Development</c>)</description></item>
+/// </list>
+/// Drop a plugin DLL (plus its dependencies) into either folder.
+/// Any public class implementing <see cref="IStoragePlugin"/> will be instantiated and <c>Register()</c> called.
+/// The application folder is scanned first, then the user folder; the first registration wins if the same storage type is registered twice.
 /// </summary>
 public static class StoragePluginLoader
 {
-    private static readonly string _pluginFolder;
+    private static string PluginStorageFolderUnder(string root) =>
+        Path.Combine(root, "plugins", "storages");
 
-    static StoragePluginLoader()
-    {
-        var appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-#if DEBUG
-        _pluginFolder = Path.Combine(appData, "BUtil Backup Plugins - DEBUG");
-#else
-        _pluginFolder = Path.Combine(appData, "BUtil Backup Plugins");
-#endif
-    }
+    private static readonly string _userPluginFolder = PluginStorageFolderUnder(Directories.UserDataFolder);
 
-    /// <summary>Returns the folder users should place plugin DLLs into.</summary>
-    public static string PluginFolder => _pluginFolder;
+    /// <summary>Folder under <see cref="Directories.UserDataFolder"/> where plugin DLLs can be placed.</summary>
+    public static string PluginFolder => _userPluginFolder;
 
     /// <summary>
-    /// Scans PluginFolder for DLLs, loads each one, and calls Register() on every
-    /// IStoragePlugin implementation found. Errors per-DLL are logged and skipped.
+    /// Folder next to the application binaries for plugin DLLs (optional). Useful for portable deployments on a USB drive or self-contained directory.
+    /// </summary>
+    public static string ApplicationPluginFolder => PluginStorageFolderUnder(Directories.BinariesDir);
+
+    /// <summary>
+    /// Scans <see cref="ApplicationPluginFolder"/> then <see cref="PluginFolder"/> for DLLs, loads each assembly,
+    /// and calls <c>Register()</c> on every <see cref="IStoragePlugin"/> implementation found.
+    /// Errors per DLL are logged and skipped.
     /// </summary>
     public static void LoadFromPluginFolder(ILog? log = null)
     {
-        if (!Directory.Exists(_pluginFolder))
+        LoadDllsFromDirectory(ApplicationPluginFolder, log);
+        LoadDllsFromDirectory(_userPluginFolder, log);
+    }
+
+    private static void LoadDllsFromDirectory(string directory, ILog? log)
+    {
+        if (!Directory.Exists(directory))
             return;
 
-        foreach (var dllPath in Directory.GetFiles(_pluginFolder, "*.dll"))
+        foreach (var dllPath in Directory.GetFiles(directory, "*.dll"))
         {
             try
             {

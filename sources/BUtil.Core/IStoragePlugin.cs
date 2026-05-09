@@ -2,7 +2,10 @@ namespace BUtil.Core.Storages;
 
 /// <summary>
 /// Implement this interface in a plugin assembly and place the DLL (plus any dependencies)
-/// in the user plugin folder. StoragePluginLoader discovers and calls Register() at startup.
+/// in the portable plugin folder next to the application binaries and/or in the user plugin folder
+/// (<see cref="StoragePluginLoader.ApplicationPluginFolder"/> and
+/// <see cref="StoragePluginLoader.PluginFolder"/>). StoragePluginLoader discovers and calls
+/// <see cref="Register"/> at startup.
 ///
 /// Minimal plugin example:
 ///   public class MyPlugin : IStoragePlugin
