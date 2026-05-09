@@ -964,6 +964,267 @@ Aşağıdaki bağlantıda detaylı açıklama bulun.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Kullanıcı belirtilmemiş.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — Alibaba&apos;dan S3 uyumlu nesne depolama.
+
+1. OSS Konsolunda (https://oss.console.aliyun.com/) bir paket oluşturun. Bölgesine dikkat edin (ör. oss-cn-hangzhou).
+2. RAM Konsolunda → Kullanıcılar → bir kullanıcı oluşturun → AliyunOSSFullAccess&apos;i ekleyin → bir Erişim Anahtarı oluşturun.
+   AccessKey ID&apos;yi (= Erişim Anahtarı) ve AccessKey Sırrını (= Gizli Anahtar) kopyalayın.
+3. Hizmet URL&apos;si: https://oss-&lt;BÖLGE&gt;.aliyuncs.com (ör. https://oss-cn-hangzhou.aliyuncs.com).
+4. Bölge: ör. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — Amazon&apos;un orijinal nesne depolaması.
+
+1. S3 Konsolunu (https://s3.console.aws.amazon.com/) açın ve bir paket oluşturun. Bölgesine dikkat edin (ör. us-east-1).
+2. IAM&apos;yi açın → Kullanıcılar → bir kullanıcı oluşturun → AmazonS3FullAccess politikasını ekleyin.
+3. Güvenlik kimlik bilgileri altında bir Erişim anahtarı oluşturun; Anahtar Kimliğini ve Sırrı kopyalayın.
+4. Doldurun: Kova, Erişim Anahtarı, Gizli Anahtar ve Bölge.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — Baidu&apos;dan S3 uyumlu nesne depolama.
+
+1. BOS Konsolunda (https://console.bce.baidu.com/bos/) bir paket oluşturun. Bölgesine dikkat edin (ör. bj, gz, su).
+2. Güvenlik → Erişim Anahtarları&apos;na gidin — Erişim Anahtarı Kimliğinizi ve Gizli Erişim Anahtarınızı kopyalayın.
+3. Hizmet URL&apos;si: https://s3.&lt;BÖLGE&gt;.bcebos.com (ör. https://s3.bj.bcebos.com).
+4. Bölge: ör. bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — uygun fiyatlı S3 uyumlu depolama.
+
+1. Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Kovalar&apos;da bir paket oluşturun.
+2. Uygulama Anahtarları → Yeni Uygulama Anahtarı Ekle&apos;ye gidin, onu pakete dahil edin.
+   KeyID&apos;yi (= Erişim Anahtarı) ve applicationKey&apos;i (= Gizli Anahtar) kopyalayın.
+3. Hizmet URL&apos;si: paketinizin paket ayrıntılarında gösterilen uç noktası, ör. https://s3.us-west-004.backblazeb2.com
+4. Bölge: &apos;s3&apos; arasındaki segment. ve &apos;.backblazeb2.com&apos;, ör. us-west-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — sıfır çıkışlı S3 uyumlu depolama.
+
+1. Cloudflare Dashboard&apos;da (https://dash.cloudflare.com/) → R2 → bir paket oluşturun.
+2. R2 → R2 API Belirteçlerini Yönet → Nesne Okuma ve Yazma ile API Belirteci Oluştur seçeneğine gidin.
+   Erişim Anahtarı Kimliğini ve Gizli Erişim Anahtarını kopyalayın.
+3. Hizmet URL&apos;si: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Hesap Kimliğiniz R2 genel bakış sayfasında gösterilir.
+4. Doldurun: Paket, Erişim Anahtarı, Gizli Anahtar ve Hizmet URL&apos;si. Bölge otomatik olarak &apos;otomatik&apos; olarak ayarlanır.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Nesne Depolama — S3 uyumlu OBS depolama.
+
+1. Cloud.ru Konsolunda (https://cloud.ru/) → Nesne Depolama Hizmeti (OBS) → bir paket oluşturun.
+2. Kimlik Bilgilerim → Erişim Anahtarları → Erişim Anahtarı Ekle&apos;ye gidin.
+   Erişim Anahtarını ve Gizli Erişim Anahtarını kopyalayın.
+3. Doldurun: Kova, Erişim Anahtarı, Gizli Anahtar ve Bölge (örn. ru-moscow-1).
+   Hizmet URL&apos;si otomatik olarak doldurulur.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO veya herhangi bir S3 uyumlu sunucu.
+
+1. MinIO (veya diğer S3 uyumlu) sunucunuzu başlatın.
+2. MinIO Konsolu veya &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos; aracılığıyla bir paket oluşturun.
+3. MinIO Konsolu → Erişim Anahtarları&apos;nda bir erişim anahtarı oluşturun (üretimde kök kimlik bilgilerinden kaçının).
+4. Hizmet URL&apos;si: sunucu uç noktanız, ör. http://192.168.1.10:9000 veya https://minio.example.com.
+5. Bölge: herhangi bir değer (örn. us-east-1) — veya sunucu bunu uygulamıyorsa boş bırakın.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — S3 uyumlu nesne depolama.
+
+1. Alanlar&apos;da (https://cloud.digitalocean.com/spaces) bir Alan oluşturun. Bölgesini not edin (örn. nyc3).
+2. API → Spaces Keys → Yeni Anahtar Oluştur&apos;a gidin. Anahtarı (= Erişim Anahtarı) ve Sırrı kopyalayın.
+3. Hizmet URL&apos;si: https://&lt;BÖLGE&gt;.digitaloceanspaces.com (ör. https://nyc3.digitaloceanspaces.com).
+4. Bölge: aynı kısa kod, ör. nyc3.nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Bulut Depolama — S3 birlikte çalışabilirlik API&apos;si aracılığıyla.
+
+1. Google Cloud Console&apos;da (https://console.cloud.google.com/storage) bir paket oluşturun.
+2. Bulut Depolama → Ayarlar → Birlikte Çalışabilirlik → bir hizmet hesabı için HMAC anahtarı oluşturun seçeneğine gidin.
+   Erişim Anahtarını ve Sırrı kopyalayın.
+3. Doldurun: Kova, Erişim Anahtarı (HMAC anahtarı), Gizli Anahtar (HMAC sırrı).
+   Hizmet URL&apos;si ve bölgesi otomatik olarak ayarlanır.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — Huawei&apos;den S3 uyumlu nesne depolama.
+
+1. OBS Konsolunda (https://console.huaweicloud.com/obs/) bir paket oluşturun. Bölgesine dikkat edin (örneğin cn-kuzey-4).
+2. Kimlik Bilgilerim → Erişim Anahtarları → Erişim Anahtarı Oluştur&apos;a gidin.
+   AK (= Erişim Anahtarı) ve SK&apos;yi (= Gizli Anahtar) kopyalayın.
+3. Hizmet URL&apos;si: https://obs.&lt;BÖLGE&gt;.myhuaweicloud.com (ör. https://obs.cn-north-4.myhuaweicloud.com).
+4. Bölge: ör. cn-kuzey-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Nesne Depolama — S3 uyumlu depolama.
+
+1. Linode Bulut Yöneticisi&apos;nde (https://cloud.linode.com/object-storage/buckets) bir paket oluşturun. Kümesine dikkat edin.
+2. Nesne Depolama → Erişim Anahtarları → Paket kapsamına alınmış bir Erişim Anahtarı Oluştur seçeneğine gidin.
+   Erişim Anahtarını ve Gizli Anahtarı kopyalayın.
+3. Hizmet URL&apos;si: https://&lt;CLUSTER&gt;.linodeobjects.com (ör. https://us-east-1.linodeobjects.com).
+4. Bölge: aynı küme kodu, ör. abd-doğu-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — Qiniu&apos;dan S3 uyumlu depolama.
+
+1. Qiniu Portalında (https://portal.qiniu.com/kodo/bucket) bir paket oluşturun. Bölgesine dikkat edin.
+2. Kişisel Merkez → Anahtar Yönetimi&apos;ne gidin — Erişim Anahtarınızı ve Gizli Anahtarınızı kopyalayın.
+3. Bölgeye göre hizmet URL&apos;si:
+   Doğu Çin: https://s3-cn-east-1.qiniucs.com
+   Kuzey Çin: https://s3-cn-north-1.qiniucs.com
+   Güney Çin: https://s3-cn-south-1.qiniucs.com
+   Kuzey Amerika: https://s3-us-north-1.qiniucs.com
+4. Bölge: eşleştirme kodu, ör. cn-doğu-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Nesne Depolaması — Avrupa S3 uyumlu depolama.
+
+1. Scaleway Konsolunda (https://console.scaleway.com/object-storage/buckets) bir paket oluşturun. Bölgesini not edin (örneğin fr-par).
+2. IAM → API Anahtarları → Nesne Depolama yazma izinleriyle API Anahtarı Oluştur seçeneğine gidin.
+   Erişim Anahtarını ve Gizli Anahtarı kopyalayın.
+3. Hizmet URL&apos;si: https://s3.&lt;BÖLGE&gt;.scw.cloud (ör. https://s3.fr-par.scw.cloud).
+4. Bölge: ör. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Nesne Depolama — S3 uyumlu Rus depolama alanı.
+
+1. Selectel Panelinde (https://my.selectel.ru/) → Bulut Depolama → bir kapsayıcı (= kova) oluşturun.
+2. Kullanıcılar ve Roller altında, depolama erişimi olan bir hizmet kullanıcısı oluşturun → S3 Anahtarları → bir anahtar çifti oluşturun.
+   Erişim Anahtarını ve Gizli Anahtarı kopyalayın.
+3. Doldurun: Kova, Erişim Anahtarı, Gizli Anahtar.
+   Hizmet URL&apos;si otomatik olarak doldurulur.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — Tencent&apos;ten S3 uyumlu nesne depolama.
+
+1. COS Konsolunda (https://console.cloud.tencent.com/cos) bir paket oluşturun. Uygulama Kimliğini ve Bölgeyi (örneğin ap-peijing) not edin.
+2. Erişim Yönetimi → API Anahtarları → Anahtar Oluştur&apos;da.
+   SecretId (= Erişim Anahtarı) ve SecretKey&apos;i (= Secret Key) kopyalayın.
+3. Hizmet URL&apos;si: https://cos.&lt;BÖLGE&gt;.myqcloud.com (ör. https://cos.ap-beijing.myqcloud.com).
+4. Paket adı formatı: &lt;name&gt;-&lt;AppId&gt; (örn. mybucket-1250000000). Bölge: ör. ap-pekin.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — VK Cloud&apos;dan S3 uyumlu depolama.
+
+1. VK Cloud Portal&apos;da (https://msk.cloud.vk.com/) → Bulut Depolama → bir paket oluşturun.
+2. Hesabınızın altında → Erişim Anahtarları → yeni bir anahtar çifti oluşturun.
+   Erişim Anahtarını ve Gizli Anahtarı kopyalayın.
+3. Doldurun: Paket, Erişim Anahtarı, Gizli Anahtar ve gerekirse Bölge (örn. ru-msk).
+   Hizmet URL&apos;si otomatik olarak doldurulur.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — S3 uyumlu depolama.
+
+1. Volcano Engine Konsolunda (https://console.volcengine.com/tos) bir paket oluşturun. Bölgesine dikkat edin (örneğin Cn-Pekin).
+2. IAM → Erişim Anahtarları → anahtar oluştur seçeneğine gidin.
+   Erişim Anahtarı Kimliğini ve Gizli Erişim Anahtarını kopyalayın.
+3. Hizmet URL&apos;si: https://tos-s3-&lt;BÖLGE&gt;.volces.com (ör. https://tos-s3-cn-beijing.volces.com).
+4. Bölge: ör. cn-pekin.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi — çıkış ücreti olmayan sıcak bulut depolama.
+
+1. Wasabi Konsolunda (https://console.wasabisys.com/) → Kovalar → Kova Oluştur. Bir bölge seçin.
+2. Erişim Anahtarları → Yeni Erişim Anahtarı Oluştur seçeneğine gidin. Erişim Anahtarını ve Gizli Anahtarı kopyalayın.
+3. Doldurun: Kova, Erişim Anahtarı, Gizli Anahtar ve Bölge (ör. us-east-1, eu-central-1).
+   Hizmet URL&apos;si otomatik olarak doldurulur.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Nesne Depolaması — S3 uyumlu Rus bulut depolaması.
+
+1. Yandex Bulut Konsolunda (https://console.yandex.cloud/) → Nesne Depolama → bir paket oluşturun.
+2. Hizmet Hesapları&apos;na gidin → Storage.editor rolüyle bir hesap oluşturun → Statik erişim anahtarı oluşturun.
+   Anahtar Kimliğini (= Erişim Anahtarı) ve Gizli anahtarı kopyalayın.
+3. Doldurun: Kova, Erişim Anahtarı, Gizli Anahtar.
+   Hizmet URL&apos;si ve bölgesi otomatik olarak ayarlanır.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box — WebDAV desteğiyle kurumsal bulut depolama.
+
+1. app.box.com adresinde oturum açın. Box WebDAV&apos;ın yalnızca ücretli planlarda kullanılabildiğini unutmayın.
+2. Kullanıcı olarak Box hesabı e-postanızı girin.
+3. Parola olarak Kutu parolanızı girin.
+   SSO kullanıyorsanız Hesap Ayarlarında ayrı bir WebDAV şifresi ayarlamanız gerekebilir.
+   Sunucu adresi, HTTPS, bağlantı noktası ve temel yol otomatik olarak yapılandırılır.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>Genel WebDAV sunucusu (Nextcloud, ownCloud, Synology DSM, Seafile, Apache, vb.)
+
+1. Sunucu Adresini girin, HTTPS&apos;yi (önerilen) seçin ve bağlantı noktasını ayarlayın (0 = varsayılan: HTTP için 80, HTTPS için 443).
+2. WebDAV uç noktasının temel yolunu girin.
+   Sonraki bulut örneği: /remote.php/dav/files/&lt;kullanıcı adı&gt;/Backups
+   Synology DSM: /
+3. Kullanıcı adınızı ve şifrenizi (veya sunucunuz gerektiriyorsa uygulamaya özel şifrenizi) girin.</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive — Güçlü gizlilik odaklı Alman bulut depolama alanı.
+
+1. hidrive.ionos.com → Ayarlar → Uygulamalar ve bağlı hizmetler → WebDAV&apos;da oturum açın.
+   Veya WebDAV&apos;a mevcut kimlik bilgilerinizle doğrudan erişin.
+2. Kullanıcı olarak HiDrive kullanıcı adınızı girin.
+3. Parola olarak HiDrive parolanızı girin.
+   Sunucu adresi, HTTPS, bağlantı noktası ve temel yol otomatik olarak yapılandırılır.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) — yerel WebDAV desteğine sahip popüler Çin bulut depolama alanı.
+
+1. jianguoyun.com → Hesap Bilgileri → Güvenlik → Üçüncü Taraf Uygulama Yönetimi → Uygulama Ekle adresinden giriş yapın.
+   Oluşturulan uygulama şifresini kopyalayın; yalnızca bir kez gösterilir.
+2. Kullanıcı olarak Jianguoyun e-posta adresinizi girin.
+3. Oluşturulan uygulama şifresini Şifre olarak girin.
+   Sunucu adresi, HTTPS, bağlantı noktası ve temel yol otomatik olarak yapılandırılır.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr — Slovenya (AB) merkezli gizlilik dostu bulut depolama alanı.
+
+1. app.koofr.eu → Tercihler → Şifre → Uygulama şifreleri → Şifre ekle seçeneğine gidin.
+2. Kullanıcı olarak Koofr hesabı e-postanızı girin.
+3. Oluşturulan uygulama şifresini Şifre olarak girin.
+   Sunucu adresi, HTTPS, bağlantı noktası ve temel yol otomatik olarak yapılandırılır.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>WebDAV aracılığıyla Mail.ru Bulutu.
+
+1. account.mail.ru → Güvenlik → Uygulama şifreleri → Uygulama şifresi oluştur seçeneğine gidin.
+   Tür olarak &apos;Posta&apos; veya &apos;Tümü&apos; seçeneğini seçin ve oluşturulan şifreyi kopyalayın.
+2. Kullanıcı olarak Mail.ru e-posta adresinizi girin.
+3. Parola olarak uygulama parolasını girin.
+   Sunucu adresi, HTTPS, bağlantı noktası ve temel yol otomatik olarak yapılandırılır.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud — kendi kendine barındırılan popüler dosya senkronizasyonu ve paylaşımı.
+
+1. Nextcloud sunucu adresinizi girin (ör. nextcloud.example.com).
+2. Temel yol önceden doldurulmuştur: /remote.php/dav/files/&lt;kullanıcı adı&gt;/
+   &lt;kullanıcı adı&gt; kısmını gerçek Nextcloud kullanıcı adınızla değiştirin.
+3. Nextcloud kullanıcı adınızı ve şifrenizi (veya
+   Ayarlar → Güvenlik → Cihazlar ve oturumlar → Uygulama şifreleri).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud — kendi kendine barındırılan dosya senkronizasyonu ve paylaşımı.
+
+1. ownCloud sunucu adresinizi girin (örn. owncloud.example.com).
+2. Temel yol önceden doldurulmuştur: /remote.php/dav/files/&lt;kullanıcı adı&gt;/
+   &lt;kullanıcı adı&gt; kısmını gerçek ownCloud kullanıcı adınızla değiştirin.
+3. ownCloud kullanıcı adınızı ve şifrenizi (veya 2FA etkinse bir uygulama şifresini) girin.</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud — AB ve ABD veri merkezleriyle bulut depolama.
+
+1. my.pcloud.com → Ayarlar → Güvenlik → Uygulama Şifreleri → Oluştur adresinde oturum açın.
+   Uygulama şifresini kopyalayın; yalnızca bir kez gösterilir.
+2. Kullanıcı olarak pCloud hesabı e-postanızı girin.
+3. Parola olarak uygulama parolasını girin.
+   AB veri merkezi için: ewebdav.pcloud.com otomatik olarak kullanılır.
+   ABD veri merkezi için: ana bilgisayarı webdav.pcloud.com olarak değiştirin.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>WebDAV aracılığıyla Yandex Disk.
+
+1. id.yandex.com → Güvenlik → Uygulama şifreleri → &apos;WebDAV erişimi&apos; için uygulama şifresi oluştur seçeneğine gidin.
+   Oluşturulan şifreyi kopyalayın; yalnızca bir kez gösterilir.
+2. Kullanıcı olarak Yandex giriş bilgilerinizi girin.
+3. Şifre olarak uygulama şifresini (Yandex hesabınızın şifresini değil) girin.
+   Sunucu adresi, HTTPS ve bağlantı noktası otomatik olarak yapılandırılır.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Windows, Linux'ta verilerinizi yedekleyin/senkronize edin.
 WI-FI üzerinden telefondan fotoğraf aktarın ve daha fazlası.

@@ -967,6 +967,267 @@ bin.
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Naudotojas nenurodytas.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>„Alibaba Cloud OSS“ – su S3 suderinama objektų saugykla iš „Alibaba“.
+
+1. OSS konsolėje (https://oss.console.aliyun.com/) sukurkite segmentą. Atkreipkite dėmesį į jo regioną (pvz., oss-cn-hangzhou).
+2. RAM konsolėje → Vartotojai → sukurkite vartotoją → pridėkite AliyunOSSFullAccess → sukurkite AccessKey.
+   Nukopijuokite AccessKey ID (= Prieigos raktas) ir AccessKey Secret (= slaptasis raktas).
+3. Paslaugos URL: https://oss-&lt;REGION&gt;.aliyuncs.com (pvz., https://oss-cn-hangzhou.aliyuncs.com).
+4. Regionas: pvz. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 – originali „Amazon“ objektų saugykla.
+
+1. Atidarykite S3 konsolę (https://s3.console.aws.amazon.com/) ir sukurkite segmentą. Atkreipkite dėmesį į jo regioną (pvz., us-rytai-1).
+2. Atidarykite IAM → Vartotojai → sukurkite vartotoją → pridėkite AmazonS3FullAccess politiką.
+3. Dalyje Saugos kredencialai sukurkite prieigos raktą – nukopijuokite Key ID ir Secret.
+4. Įveskite: segmentas, prieigos raktas, slaptasis raktas ir regionas.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>„Baidu Cloud BOS“ – su S3 suderinama „Baidu“ objektų saugykla.
+
+1. „BOS Console“ (https://console.bce.baidu.com/bos/) sukurkite segmentą. Atkreipkite dėmesį į jo regioną (pvz., bj, gz, su).
+2. Eikite į Sauga → Prieigos raktai — nukopijuokite savo prieigos rakto ID ir slaptąjį prieigos raktą.
+3. Paslaugos URL: https://s3.&lt;REGION&gt;.bcebos.com (pvz., https://s3.bj.bcebos.com).
+4. Regionas: pvz. bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 – prieinama su S3 suderinama saugykla.
+
+1. „Backblaze“ (https://www.backblaze.com/) → B2 Cloud Storage → Buckets sukurkite segmentą.
+2. Eikite į App Keys → Add a New Application Key, įtraukite jį į segmentą.
+   Nukopijuokite rakto ID (= prieigos raktą) ir programos raktą (= slaptąjį raktą).
+3. Paslaugos URL: segmento galutinis taškas, rodomas išsamioje segmento dalyje, pvz., https://s3.us-west-004.backblazeb2.com
+4. Regionas: segmentas tarp „s3“. ir „.backblazeb2.com“, pvz., mus-vakarai-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>„Cloudflare R2“ – su S3 suderinama saugykla be išėjimo.
+
+1. Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → sukurkite segmentą.
+2. Eikite į R2 → Tvarkyti R2 API prieigos raktus → Sukurti API prieigos raktą su objekto skaitymu ir rašymu.
+   Nukopijuokite prieigos rakto ID ir slaptą prieigos raktą.
+3. Paslaugos URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Jūsų paskyros ID rodomas R2 apžvalgos puslapyje.
+4. Įveskite: segmentas, prieigos raktas, slaptasis raktas ir paslaugos URL. Regionas automatiškai nustatomas kaip „automatinis“.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) objektų saugykla – su S3 suderinama OBS saugykla.
+
+1. Cloud.ru konsolėje (https://cloud.ru/) → Object Storage Service (OBS) → sukurkite kibirą.
+2. Eikite į Mano kredencialai → Prieigos raktai → Pridėti prieigos raktą.
+   Nukopijuokite prieigos raktą ir slaptą prieigos raktą.
+3. Įveskite: segmentas, prieigos raktas, slaptasis raktas ir regionas (pvz., ru-moscow-1).
+   Paslaugos URL užpildomas automatiškai.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO arba bet koks su S3 suderinamas serveris.
+
+1. Paleiskite savo MinIO (arba kitą su S3 suderinamą) serverį.
+2. Sukurkite segmentą naudodami „MinIO Console“ arba „mc mb &lt;alias&gt;/&lt;bucket&gt;“.
+3. Sukurkite prieigos raktą „MinIO Console“ → Prieigos raktai (gamyboje venkite šakninių kredencialų).
+4. Paslaugos URL: jūsų serverio galutinis taškas, pvz. http://192.168.1.10:9000 arba https://minio.example.com.
+5. Regionas: bet kokia reikšmė (pvz., us-east-1) arba palikite tuščią, jei serveris to neįgyvendina.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces – su S3 suderinama objektų saugykla.
+
+1. „Spaces“ (https://cloud.digitalocean.com/spaces) sukurkite erdvę. Atkreipkite dėmesį į jo regioną (pvz., nyc3).
+2. Eikite į API → Spaces Keys → Generate New Key. Nukopijuokite raktą (= prieigos raktą) ir paslaptį.
+3. Paslaugos URL: https://&lt;REGION&gt;.digitaloceanspaces.com (pvz., https://nyc3.digitaloceanspaces.com).
+4. Regionas: tas pats trumpasis kodas, pvz. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>„Google Cloud Storage“ – per S3 sąveikos API.
+
+1. „Google Cloud Console“ (https://console.cloud.google.com/storage) sukurkite segmentą.
+2. Eikite į Cloud Storage → Settings → Interoperability → sukurkite HMAC raktą paslaugos paskyrai.
+   Nukopijuokite prieigos raktą ir paslaptį.
+3. Užpildykite: segmentas, prieigos raktas (HMAC raktas), slaptasis raktas (HMAC slaptasis raktas).
+   Paslaugos URL ir regionas nustatomi automatiškai.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>„Huawei Cloud OBS“ – su S3 suderinama „Huawei“ objektų saugykla.
+
+1. OBS konsolėje (https://console.huaweicloud.com/obs/) sukurkite segmentą. Atkreipkite dėmesį į jo regioną (pvz., cn-north-4).
+2. Eikite į Mano kredencialai → Prieigos raktai → Sukurti prieigos raktą.
+   Nukopijuokite AK (= prieigos raktą) ir SK (= slaptąjį raktą).
+3. Paslaugos URL: https://obs.&lt;REGION&gt;.myhuaweicloud.com (pvz., https://obs.cn-north-4.myhuaweicloud.com).
+4. Regionas: pvz. cn-šiaurė-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Object Storage – su S3 suderinama saugykla.
+
+1. „Linode Cloud Manager“ (https://cloud.linode.com/object-storage/buckets) sukurkite kibirą. Atkreipkite dėmesį į jo grupę.
+2. Eikite į Objektų saugykla → Prieigos raktai → Sukurti prieigos raktą, priskirtą segmentui.
+   Nukopijuokite prieigos raktą ir slaptąjį raktą.
+3. Paslaugos URL: https://&lt;CLUSTER&gt;.linodeobjects.com (pvz., https://us-east-1.linodeobjects.com).
+4. Regionas: tas pats klasterio kodas, pvz. mus-rytai-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>„Qiniu Cloud Kodo“ – su S3 suderinama „Qiniu“ saugykla.
+
+1. Qiniu portale (https://portal.qiniu.com/kodo/bucket) susikurkite kibirą. Atkreipkite dėmesį į jo regioną.
+2. Eikite į Personal Center → Key Management — nukopijuokite savo AccessKey ir SecretKey.
+3. Paslaugos URL pagal regioną:
+   Rytų Kinija: https://s3-cn-east-1.qiniucs.com
+   Šiaurės Kinija: https://s3-cn-north-1.qiniucs.com
+   Pietų Kinija: https://s3-cn-south-1.qiniucs.com
+   Šiaurės Amerika: https://s3-us-north-1.qiniucs.com
+4. Regionas: atitinkantis kodas, pvz. cn-east-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage – su Europos S3 suderinama saugykla.
+
+1. Scaleway Console (https://console.scaleway.com/object-storage/buckets) sukurkite segmentą. Atkreipkite dėmesį į jo regioną (pvz., fr-par).
+2. Eikite į IAM → API raktai → Sukurti API raktą su objektų saugyklos rašymo teisėmis.
+   Nukopijuokite prieigos raktą ir slaptąjį raktą.
+3. Paslaugos URL: https://s3.&lt;REGION&gt;.scw.cloud (pvz., https://s3.fr-par.scw.cloud).
+4. Regionas: pvz. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage – su S3 suderinama rusiška saugykla.
+
+1. Skydelyje Selectel (https://my.selectel.ru/) → Cloud Storage → sukurkite konteinerį (= kibirą).
+2. Dalyje Vartotojai ir vaidmenys sukurkite paslaugos vartotoją, turintį prieigą prie saugyklos → S3 raktai → sukurkite raktų porą.
+   Nukopijuokite prieigos raktą ir slaptąjį raktą.
+3. Įveskite: segmentas, prieigos raktas, slaptasis raktas.
+   Paslaugos URL užpildomas automatiškai.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS – su S3 suderinama objektų saugykla iš Tencent.
+
+1. COS konsolėje (https://console.cloud.tencent.com/cos) sukurkite segmentą. Atkreipkite dėmesį į AppId ir regioną (pvz., ap-peijing).
+2. Prieigos valdymas → API raktai → Sukurti raktą.
+   Nukopijuokite SecretId (= prieigos raktas) ir SecretKey (= slaptasis raktas).
+3. Paslaugos URL: https://cos.&lt;REGION&gt;.myqcloud.com (pvz., https://cos.ap-beijing.myqcloud.com).
+4. Segmento pavadinimo formatas: &lt;vardas&gt;-&lt;AppId&gt; (pvz., mybucket-1250000000). Regionas: pvz. ap-pekinas.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage – su S3 suderinama saugykla iš VK Cloud.
+
+1. VK debesų portale (https://msk.cloud.vk.com/) → Cloud Storage → sukurkite kibirą.
+2. Savo paskyroje → Prieigos raktai → sukurkite naują raktų porą.
+   Nukopijuokite prieigos raktą ir slaptąjį raktą.
+3. Jei reikia, įveskite: segmentas, prieigos raktas, slaptasis raktas ir regionas (pvz., ru-msk).
+   Paslaugos URL užpildomas automatiškai.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS („ByteDance“) – su S3 suderinama saugykla.
+
+1. Volcano Engine Console (https://console.volcengine.com/tos) sukurkite kibirą. Atkreipkite dėmesį į jo regioną (pvz., cn-peijing).
+2. Eikite į IAM → Prieigos raktai → sukurkite raktą.
+   Nukopijuokite prieigos rakto ID ir slaptą prieigos raktą.
+3. Paslaugos URL: https://tos-s3-&lt;REGION&gt;.volces.com (pvz., https://tos-s3-cn-beijing.volces.com).
+4. Regionas: pvz. cn-pekinas.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi – karštų debesų saugykla be išėjimo mokesčių.
+
+1. „Wasabi Console“ (https://console.wasabisys.com/) → Buckets → Create Bucket. Pasirinkite regioną.
+2. Eikite į Prieigos raktai → Sukurti naują prieigos raktą. Nukopijuokite prieigos raktą ir slaptąjį raktą.
+3. Įveskite: segmentas, prieigos raktas, slaptasis raktas ir regionas (pvz., us-east-1, eu-central-1).
+   Paslaugos URL užpildomas automatiškai.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>„Yandex Object Storage“ – su S3 suderinama Rusijos debesų saugykla.
+
+1. „Yandex Cloud Console“ (https://console.yandex.cloud/) → Objektų saugykla → sukurkite kibirą.
+2. Eikite į Paslaugų paskyros → sukurkite ją naudodami storage.editor vaidmenį → sukurkite statinės prieigos raktą.
+   Nukopijuokite rakto ID (= prieigos raktą) ir slaptąjį raktą.
+3. Įveskite: segmentas, prieigos raktas, slaptasis raktas.
+   Paslaugos URL ir regionas nustatomi automatiškai.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box – įmonės debesies saugykla su WebDAV palaikymu.
+
+1. Prisijunkite adresu app.box.com. Atminkite, kad „Box WebDAV“ galima tik mokamiems planams.
+2. Įveskite savo „Box“ paskyros el. pašto adresą kaip naudotoją.
+3. Įveskite savo dėžutės slaptažodį kaip slaptažodį.
+   Jei naudojate SSO, paskyros nustatymuose gali reikėti nustatyti atskirą WebDAV slaptažodį.
+   Serverio adresas, HTTPS, prievadas ir bazinis kelias sukonfigūruojami automatiškai.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>Bendrasis WebDAV serveris („Nextcloud“, „ownCloud“, „Synology DSM“, „Seafile“, „Apache“ ir kt.)
+
+1. Įveskite serverio adresą, pasirinkite HTTPS (rekomenduojama) ir nustatykite prievadą (0 = numatytasis: 80 HTTP, 443 HTTPS).
+2. Įveskite pagrindinį WebDAV galinio taško kelią.
+   Nextcloud pavyzdys: /remote.php/dav/files/&lt;vartotojo vardas&gt;/Atsarginės kopijos
+   Synology DSM: /
+3. Įveskite vartotojo vardą ir slaptažodį (arba konkrečios programos slaptažodį, jei to reikalauja jūsų serveris).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive – vokiška saugykla debesyje, daugiausia dėmesio skiriant privatumui.
+
+1. Prisijunkite adresu hidrive.ionos.com → Nustatymai → Programos ir prijungtos paslaugos → WebDAV.
+   Arba tiesiogiai pasiekite WebDAV naudodami esamus kredencialus.
+2. Įveskite savo HiDrive vartotojo vardą kaip vartotoją.
+3. Įveskite savo HiDrive slaptažodį kaip slaptažodį.
+   Serverio adresas, HTTPS, prievadas ir bazinis kelias sukonfigūruojami automatiškai.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) – populiari Kinijos debesų saugykla su vietiniu WebDAV palaikymu.
+
+1. Prisijunkite adresu jinguoyun.com → Paskyros informacija → Sauga → Trečiosios šalies programų valdymas → Pridėti programą.
+   Nukopijuokite sugeneruotą programėlės slaptažodį – jis rodomas tik vieną kartą.
+2. Įveskite savo Jianguoyun el. pašto adresą kaip naudotoją.
+3. Įveskite sugeneruotą programos slaptažodį kaip slaptažodį.
+   Serverio adresas, HTTPS, prievadas ir bazinis kelias sukonfigūruojami automatiškai.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr – privatumui palanki debesies saugykla, esanti Slovėnijoje (ES).
+
+1. Eikite į app.koofr.eu → Parinktys → Slaptažodis → Programų slaptažodžiai → Pridėti slaptažodį.
+2. Įveskite savo Koofr paskyros el. pašto adresą kaip naudotojas.
+3. Įveskite sugeneruotą programos slaptažodį kaip slaptažodį.
+   Serverio adresas, HTTPS, prievadas ir bazinis kelias sukonfigūruojami automatiškai.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Mail.ru debesis per WebDAV.
+
+1. Eikite į account.mail.ru → Sauga → Programų slaptažodžiai → Sukurti programos slaptažodį.
+   Kaip tipą pasirinkite „Paštas“ arba „Visi“, tada nukopijuokite sugeneruotą slaptažodį.
+2. Įveskite savo Mail.ru el. pašto adresą kaip naudotoją.
+3. Įveskite programos slaptažodį kaip slaptažodį.
+   Serverio adresas, HTTPS, prievadas ir bazinis kelias sukonfigūruojami automatiškai.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud – populiarus savarankiškai priglobtas failų sinchronizavimas ir bendrinimas.
+
+1. Įveskite savo Nextcloud serverio adresą (pvz., nextcloud.example.com).
+2. Bazinis kelias yra iš anksto užpildytas: /remote.php/dav/files/&lt;vartotojo vardas&gt;/
+   Pakeiskite &lt;naudotojo vardą&gt; tikruoju Nextcloud vartotojo vardu.
+3. Įveskite Nextcloud vartotojo vardą ir slaptažodį (arba programos slaptažodį iš
+   Nustatymai → Sauga → Įrenginiai ir seansai → Programų slaptažodžiai).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud – savarankiškai priglobtas failų sinchronizavimas ir bendrinimas.
+
+1. Įveskite savo debesies serverio adresą (pvz., owncloud.example.com).
+2. Bazinis kelias yra iš anksto užpildytas: /remote.php/dav/files/&lt;vartotojo vardas&gt;/
+   Pakeiskite &lt;naudotojo vardą&gt; tikruoju „ownCloud“ naudotojo vardu.
+3. Įveskite savo „ownCloud“ naudotojo vardą ir slaptažodį (arba programos slaptažodį, jei įjungtas 2FA).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud – debesies saugykla su ES ir JAV duomenų centrais.
+
+1. Prisijunkite adresu my.pcloud.com → Nustatymai → Sauga → Programų slaptažodžiai → Kurti.
+   Nukopijuokite programos slaptažodį – jis rodomas tik vieną kartą.
+2. Įveskite savo „pCloud“ paskyros el. pašto adresą kaip naudotoją.
+3. Įveskite programos slaptažodį kaip slaptažodį.
+   ES duomenų centrui: ewebdav.pcloud.com naudojamas automatiškai.
+   JAV duomenų centrui: pakeiskite pagrindinį kompiuterį į webdav.pcloud.com.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>„Yandex Disk“ per „WebDAV“.
+
+1. Eikite į id.yandex.com → Sauga → Programų slaptažodžiai → Sukurkite programos slaptažodį „WebDAV prieigai“.
+   Nukopijuokite sugeneruotą slaptažodį – jis rodomas tik vieną kartą.
+2. Įveskite savo „Yandex“ prisijungimo vardą kaip naudotoją.
+3. Įveskite programos slaptažodį (ne „Yandex“ paskyros slaptažodį) kaip slaptažodį.
+   Serverio adresas, HTTPS ir prievadas sukonfigūruojami automatiškai.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Kurkite atsargines kopijas/sinchronizuokite savo duomenis sistemoje Windows, Linux.
 Importuokite nuotraukas iš telefono per WI-FI ir daugiau.

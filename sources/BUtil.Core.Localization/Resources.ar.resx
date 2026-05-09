@@ -967,6 +967,267 @@ bin.
   <data name="User_Field_Validation" xml:space="preserve">
     <value>لم يتم تحديد المستخدم.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — تخزين الكائنات المتوافق مع S3 من Alibaba.
+
+1. في وحدة تحكم OSS (https://oss.console.aliyun.com/)، قم بإنشاء مجموعة. لاحظ منطقتها (على سبيل المثال oss-cn-hangzhou).
+2. في وحدة تحكم ذاكرة الوصول العشوائي (RAM) → المستخدمون → إنشاء مستخدم → إرفاق AliyunOSSFullAccess → إنشاء مفتاح الوصول.
+   انسخ معرف AccessKey (= مفتاح الوصول) وAccessKey Secret (= المفتاح السري).
+3. عنوان URL للخدمة: https://oss-&lt;REGION&gt;.aliyuncs.com (على سبيل المثال https://oss-cn-hangzhou.aliyuncs.com).
+4. المنطقة: على سبيل المثال. oss-cn-هانغتشو.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — مخزن الكائنات الأصلي من Amazon.
+
+1. افتح وحدة تحكم S3 (https://s3.console.aws.amazon.com/) وقم بإنشاء مجموعة. لاحظ منطقتها (على سبيل المثال us-east-1).
+2. افتح IAM → المستخدمون → قم بإنشاء مستخدم → قم بإرفاق سياسة AmazonS3FullAccess.
+3. ضمن بيانات اعتماد الأمان، قم بإنشاء مفتاح وصول - انسخ معرف المفتاح والسر.
+4. املأ: الجرافة، ومفتاح الوصول، والمفتاح السري، والمنطقة.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — تخزين الكائنات المتوافق مع S3 من Baidu.
+
+1. في وحدة تحكم BOS (https://console.bce.baidu.com/bos/)، قم بإنشاء مجموعة. لاحظ منطقتها (على سبيل المثال bj، gz، su).
+2. انتقل إلى الأمان → مفاتيح الوصول - انسخ معرف مفتاح الوصول ومفتاح الوصول السري.
+3. عنوان URL للخدمة: https://s3.&lt;REGION&gt;.bcebos.com (على سبيل المثال https://s3.bj.bcebos.com).
+4. المنطقة: على سبيل المثال. بج.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — وحدة تخزين متوافقة مع S3 وبأسعار معقولة.
+
+1. في Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → الجرافات، أنشئ دلوًا.
+2. انتقل إلى مفاتيح التطبيق → إضافة مفتاح تطبيق جديد، وقم بتوسيع نطاقه إلى المجموعة.
+   انسخ معرف المفتاح (= مفتاح الوصول) ومفتاح التطبيق (= المفتاح السري).
+3. عنوان URL للخدمة: نقطة النهاية لحاويتك الموضحة في تفاصيل الحاوية، على سبيل المثال. https://s3.us-west-004.backblazeb2.com
+4. المنطقة: الجزء الواقع بين &apos;s3&apos;. و&apos;.backblazeb2.com&apos;، على سبيل المثال. لنا الغرب 004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — وحدة تخزين متوافقة مع S3 بدون خروج.
+
+1. في لوحة تحكم Cloudflare (https://dash.cloudflare.com/) → R2 → قم بإنشاء مجموعة.
+2. انتقل إلى R2 → إدارة الرموز المميزة لـ R2 API → إنشاء رمز API المميز باستخدام كائن القراءة والكتابة.
+   انسخ معرف مفتاح الوصول ومفتاح الوصول السري.
+3. عنوان URL للخدمة: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestore.com
+   يظهر معرف حسابك في صفحة نظرة عامة على R2.
+4. املأ: الحاوية، ومفتاح الوصول، والمفتاح السري، وعنوان URL للخدمة. يتم ضبط المنطقة على &quot;تلقائي&quot; تلقائيًا.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>تخزين الكائنات Cloud.ru (SberCloud) — تخزين OBS متوافق مع S3.
+
+1. في Cloud.ru Console (https://cloud.ru/) → خدمة تخزين الكائنات (OBS) → قم بإنشاء مجموعة.
+2. انتقل إلى بيانات الاعتماد الخاصة بي → مفاتيح الوصول → إضافة مفتاح وصول.
+   انسخ مفتاح الوصول ومفتاح الوصول السري.
+3. املأ: الجرافة ومفتاح الوصول والمفتاح السري والمنطقة (على سبيل المثال ru-moscow-1).
+   يتم ملء عنوان URL للخدمة تلقائيًا.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MiniIO أو أي خادم متوافق مع S3.
+
+1. ابدأ تشغيل خادم MinIO (أو أي خادم آخر متوافق مع S3).
+2. قم بإنشاء مجموعة عبر وحدة تحكم MiniIO أو &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;.
+3. قم بإنشاء مفتاح وصول في وحدة تحكم MiniIO → مفاتيح الوصول (تجنب بيانات اعتماد الجذر في الإنتاج).
+4. عنوان URL للخدمة: نقطة نهاية الخادم الخاص بك، على سبيل المثال. http://192.168.1.10:9000 أو https://minio.example.com.
+5. المنطقة: أي قيمة (على سبيل المثال us-east-1) — أو اتركها فارغة إذا لم يفرضها الخادم.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — تخزين الكائنات المتوافق مع S3.
+
+1. في Spaces (https://cloud.digitalocean.com/spaces)، أنشئ مساحة. لاحظ منطقتها (على سبيل المثال nyc3).
+2. انتقل إلى واجهة برمجة التطبيقات → مفاتيح المسافات → إنشاء مفتاح جديد. انسخ المفتاح (= مفتاح الوصول) والسر.
+3. عنوان URL للخدمة: https://&lt;REGION&gt;.digitaloceanspaces.com (على سبيل المثال https://nyc3.digitaloceanspaces.com).
+4. المنطقة: نفس الرمز القصير، على سبيل المثال. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage - عبر واجهة برمجة التطبيقات لقابلية التشغيل البيني S3.
+
+1. في Google Cloud Console (https://console.cloud.google.com/storage)، قم بإنشاء مجموعة.
+2. انتقل إلى التخزين السحابي → الإعدادات → إمكانية التشغيل التفاعلي → إنشاء مفتاح HMAC لحساب الخدمة.
+   انسخ مفتاح الوصول والسر.
+3. املأ: الجرافة، مفتاح الوصول (مفتاح HMAC)، المفتاح السري (سر HMAC).
+   يتم تعيين عنوان URL للخدمة والمنطقة تلقائيًا.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — تخزين الكائنات المتوافق مع S3 من Huawei.
+
+1. في وحدة تحكم OBS (https://console.huaweicloud.com/obs/)، قم بإنشاء مجموعة. لاحظ منطقتها (على سبيل المثال cn-north-4).
+2. انتقل إلى بيانات الاعتماد الخاصة بي → مفاتيح الوصول → إنشاء مفتاح وصول.
+   انسخ AK (= مفتاح الوصول) وSK (= المفتاح السري).
+3. عنوان URL للخدمة: https://obs.&lt;REGION&gt;.myhuaweicloud.com (على سبيل المثال https://obs.cn-north-4.myhuaweicloud.com).
+4. المنطقة: على سبيل المثال. CN-الشمال-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>تخزين كائنات Linode (Akamai) — تخزين متوافق مع S3.
+
+1. في Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets)، قم بإنشاء مجموعة. لاحظ مجموعتها.
+2. انتقل إلى تخزين الكائنات → مفاتيح الوصول → إنشاء مفتاح وصول محدد النطاق للحاوية.
+   انسخ مفتاح الوصول والمفتاح السري.
+3. عنوان URL للخدمة: https://&lt;CLUSTER&gt;.linodeobjects.com (على سبيل المثال https://us-east-1.linodeobjects.com).
+4. المنطقة: نفس رمز المجموعة، على سبيل المثال. لنا-الشرق-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — وحدة تخزين متوافقة مع S3 من Qiniu.
+
+1. في بوابة Qiniu (https://portal.qiniu.com/kodo/bucket)، أنشئ دلوًا. لاحظ منطقتها.
+2. انتقل إلى المركز الشخصي → إدارة المفاتيح - انسخ مفتاح الوصول والمفتاح السري.
+3. عنوان URL للخدمة حسب المنطقة:
+   شرق الصين: https://s3-cn-east-1.qiniucs.com
+   شمال الصين: https://s3-cn-north-1.qiniucs.com
+   جنوب الصين: https://s3-cn-south-1.qiniucs.com
+   أمريكا الشمالية: https://s3-us-north-1.qiniucs.com
+4. المنطقة: رمز المطابقة، على سبيل المثال. CN-شرق-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>تخزين كائنات Scaleway - تخزين متوافق مع S3 الأوروبي.
+
+1. في Scaleway Console (https://console.scaleway.com/object-storage/buckets)، قم بإنشاء مجموعة. لاحظ منطقتها (على سبيل المثال fr-par).
+2. انتقل إلى IAM → مفاتيح API → إنشاء مفتاح API مع أذونات الكتابة لتخزين الكائنات.
+   انسخ مفتاح الوصول والمفتاح السري.
+3. عنوان URL للخدمة: https://s3.&lt;REGION&gt;.scw.cloud (على سبيل المثال https://s3.fr-par.scw.cloud).
+4. المنطقة: على سبيل المثال. fr-par، nl-ams، pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage - وحدة تخزين روسية متوافقة مع S3.
+
+1. في لوحة التحديد (https://my.selectel.ru/) → التخزين السحابي → قم بإنشاء حاوية (= دلو).
+2. ضمن المستخدمون والأدوار، قم بإنشاء مستخدم خدمة يتمتع بإمكانية الوصول إلى التخزين ← مفاتيح S3 ← إنشاء زوج مفاتيح.
+   انسخ مفتاح الوصول والمفتاح السري.
+3. املأ: الجرافة، مفتاح الوصول، المفتاح السري.
+   يتم ملء عنوان URL للخدمة تلقائيًا.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — تخزين كائنات متوافق مع S3 من Tencent.
+
+1. في وحدة تحكم COS (https://console.cloud.tencent.com/cos)، قم بإنشاء مجموعة. لاحظ معرف التطبيق والمنطقة (على سبيل المثال، ap-beijing).
+2. في إدارة الوصول → مفاتيح API → إنشاء مفتاح.
+   انسخ SecretId (= مفتاح الوصول) وSecretKey (= المفتاح السري).
+3. عنوان URL للخدمة: https://cos.&lt;REGION&gt;.myqcloud.com (على سبيل المثال https://cos.ap-beijing.myqcloud.com).
+4. تنسيق اسم الحاوية: &lt;name&gt;-&lt;AppId&gt; (على سبيل المثال، mybucket-1250000000). المنطقة: على سبيل المثال. ap-beijing.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — تخزين متوافق مع S3 من VK Cloud.
+
+1. في VK Cloud Portal (https://msk.cloud.vk.com/) → التخزين السحابي → قم بإنشاء مجموعة.
+2. ضمن حسابك ← مفاتيح الوصول ← قم بإنشاء زوج مفاتيح جديد.
+   انسخ مفتاح الوصول والمفتاح السري.
+3. املأ: الجرافة ومفتاح الوصول والمفتاح السري والمنطقة إذا لزم الأمر (على سبيل المثال ru-msk).
+   يتم ملء عنوان URL للخدمة تلقائيًا.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — تخزين متوافق مع S3.
+
+1. في Volcano Engine Console (https://console.volcengine.com/tos)، قم بإنشاء دلو. لاحظ منطقتها (على سبيل المثال CN-beijing).
+2. انتقل إلى IAM → مفاتيح الوصول → إنشاء مفتاح.
+   انسخ معرف مفتاح الوصول ومفتاح الوصول السري.
+3. عنوان URL للخدمة: https://tos-s3-&lt;REGION&gt;.volces.com (على سبيل المثال https://tos-s3-cn-beijing.volces.com).
+4. المنطقة: على سبيل المثال. CN-بكين.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi – تخزين سحابي ساخن بدون رسوم خروج.
+
+1. في Wasabi Console (https://console.wasabisys.com/) → الجرافات → إنشاء الجرافة. اختر المنطقة.
+2. انتقل إلى مفاتيح الوصول → إنشاء مفتاح وصول جديد. انسخ مفتاح الوصول والمفتاح السري.
+3. املأ: الحاوية، ومفتاح الوصول، والمفتاح السري، والمنطقة (على سبيل المثال، us-east-1، eu-central-1).
+   يتم ملء عنوان URL للخدمة تلقائيًا.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage — تخزين سحابي روسي متوافق مع S3.
+
+1. في Yandex Cloud Console (https://console.yandex.cloud/) → تخزين الكائنات → قم بإنشاء مجموعة.
+2. انتقل إلى حسابات الخدمة ← أنشئ حسابًا باستخدام دور محرر التخزين ← أنشئ مفتاح وصول ثابت.
+   انسخ معرف المفتاح (= مفتاح الوصول) والمفتاح السري.
+3. املأ: الجرافة، مفتاح الوصول، المفتاح السري.
+   يتم تعيين عنوان URL للخدمة والمنطقة تلقائيًا.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box — تخزين سحابي للمؤسسات مع دعم WebDAV.
+
+1. قم بتسجيل الدخول إلى app.box.com. لاحظ أن Box WebDAV متاح فقط للخطط المدفوعة.
+2. أدخل البريد الإلكتروني لحساب Box الخاص بك كمستخدم.
+3. أدخل كلمة مرور Box الخاصة بك ككلمة المرور.
+   إذا كنت تستخدم تسجيل الدخول الموحد (SSO)، فقد تحتاج إلى تعيين كلمة مرور WebDAV منفصلة في إعدادات الحساب.
+   يتم تكوين عنوان الخادم وHTTPS والمنفذ والمسار الأساسي تلقائيًا.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>خادم WebDAV العام (Nextcloud، ownCloud، Synology DSM، Seafile، Apache، وما إلى ذلك)
+
+1. أدخل عنوان الخادم، واختر HTTPS (مستحسن)، وقم بتعيين المنفذ (0 = الافتراضي: 80 لـ HTTP، 443 لـ HTTPS).
+2. أدخل المسار الأساسي لنقطة نهاية WebDAV.
+   مثال السحابة التالية: /remote.php/dav/files/&lt;username&gt;/Backups
+   سينولوجي دي إس إم: /
+3. أدخل اسم المستخدم وكلمة المرور (أو كلمة المرور الخاصة بالتطبيق إذا كان الخادم الخاص بك يتطلب ذلك).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive — تخزين سحابي ألماني مع تركيز قوي على الخصوصية.
+
+1. قم بتسجيل الدخول على hidrive.ionos.com → الإعدادات → التطبيقات والخدمات المتصلة → WebDAV.
+   أو قم بالوصول إلى WebDAV باستخدام بيانات الاعتماد الموجودة لديك مباشرةً.
+2. أدخل اسم مستخدم HiDrive الخاص بك كمستخدم.
+3. أدخل كلمة مرور HiDrive ككلمة المرور.
+   يتم تكوين عنوان الخادم وHTTPS والمنفذ والمسار الأساسي تلقائيًا.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) — تخزين سحابي صيني مشهور مع دعم WebDAV الأصلي.
+
+1. قم بتسجيل الدخول إلى jianguoyun.com → معلومات الحساب → الأمان → إدارة تطبيقات الطرف الثالث → إضافة تطبيق.
+   انسخ كلمة مرور التطبيق التي تم إنشاؤها - يتم عرضها مرة واحدة فقط.
+2. أدخل عنوان بريدك الإلكتروني في Jianguoyun كمستخدم.
+3. أدخل كلمة مرور التطبيق التي تم إنشاؤها ككلمة المرور.
+   يتم تكوين عنوان الخادم وHTTPS والمنفذ والمسار الأساسي تلقائيًا.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr — تخزين سحابي صديق للخصوصية ومقره في سلوفينيا (الاتحاد الأوروبي).
+
+1. انتقل إلى app.koofr.eu → التفضيلات → كلمة المرور → كلمات مرور التطبيقات → إضافة كلمة مرور.
+2. أدخل البريد الإلكتروني لحساب Koofr الخاص بك كمستخدم.
+3. أدخل كلمة مرور التطبيق التي تم إنشاؤها ككلمة المرور.
+   يتم تكوين عنوان الخادم وHTTPS والمنفذ والمسار الأساسي تلقائيًا.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Mail.ru Cloud عبر WebDAV.
+
+1. انتقل إلى account.mail.ru → الأمان → كلمات مرور التطبيقات → إنشاء كلمة مرور التطبيق.
+   حدد &quot;البريد&quot; أو &quot;الكل&quot; كنوع، ثم انسخ كلمة المرور التي تم إنشاؤها.
+2. أدخل عنوان بريدك الإلكتروني على Mail.ru كمستخدم.
+3. أدخل كلمة مرور التطبيق ككلمة المرور.
+   يتم تكوين عنوان الخادم وHTTPS والمنفذ والمسار الأساسي تلقائيًا.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud — مزامنة ومشاركة الملفات المشهورة ذاتية الاستضافة.
+
+1. أدخل عنوان خادم Nextcloud الخاص بك (على سبيل المثال، nextcloud.example.com).
+2. المسار الأساسي معبأ مسبقًا: /remote.php/dav/files/&lt;username&gt;/
+   استبدل &lt;اسم المستخدم&gt; باسم مستخدم Nextcloud الفعلي الخاص بك.
+3. أدخل اسم المستخدم وكلمة المرور الخاصين بـ Nextcloud (أو كلمة مرور التطبيق من
+   الإعدادات ← الأمان ← الأجهزة والجلسات ← كلمات مرور التطبيقات).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud - مزامنة ومشاركة الملفات المستضافة ذاتيًا.
+
+1. أدخل عنوان خادم ownCloud الخاص بك (مثل owncloud.example.com).
+2. المسار الأساسي معبأ مسبقًا: /remote.php/dav/files/&lt;username&gt;/
+   استبدل &lt;username&gt; باسم مستخدم ownCloud الفعلي الخاص بك.
+3. أدخل اسم المستخدم وكلمة المرور الخاصة بـ ownCloud (أو كلمة مرور التطبيق في حالة تمكين المصادقة الثنائية).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud — تخزين سحابي مع مراكز بيانات الاتحاد الأوروبي والولايات المتحدة.
+
+1. قم بتسجيل الدخول إلى my.pcloud.com → الإعدادات → الأمان → كلمات مرور التطبيقات → إنشاء.
+   انسخ كلمة مرور التطبيق — يتم عرضها مرة واحدة فقط.
+2. أدخل البريد الإلكتروني لحساب pCloud الخاص بك كمستخدم.
+3. أدخل كلمة مرور التطبيق ككلمة المرور.
+   بالنسبة لمركز بيانات الاتحاد الأوروبي: يتم استخدام ewebdav.pcloud.com تلقائيًا.
+   بالنسبة لمركز البيانات الأمريكي: قم بتغيير المضيف إلى webdav.pcloud.com.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>قرص ياندكس عبر WebDAV.
+
+1. انتقل إلى id.yandex.com → الأمان → كلمات مرور التطبيقات → إنشاء كلمة مرور التطبيق لـ &quot;الوصول إلى WebDAV&quot;.
+   انسخ كلمة المرور التي تم إنشاؤها - يتم عرضها مرة واحدة فقط.
+2. أدخل تسجيل دخول Yandex الخاص بك كمستخدم.
+3. أدخل كلمة مرور التطبيق (وليس كلمة مرور حساب Yandex الخاص بك) ككلمة المرور.
+   يتم تكوين عنوان الخادم وHTTPS والمنفذ تلقائيًا.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>نسخ احتياطي/مزامنة بياناتك على Windows وLinux.
 استيراد الصور من الهاتف عبر WI-FI والمزيد.

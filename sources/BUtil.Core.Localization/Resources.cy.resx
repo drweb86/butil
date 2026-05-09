@@ -967,6 +967,267 @@ See detailed description in the following link.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Nid yw defnyddiwr wedi'i nodi.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS - Storfa gwrthrychau sy&apos;n gydnaws â S3 o Alibaba.
+
+1. Yn OSS Consol ( https://oss.console.aliyun.com/ ), creu bwced. Sylwch ar ei ranbarth (e.e. oss-cn-hangzhou).
+2. Yn RAM Consol → Defnyddwyr → creu defnyddiwr → atodwch AliyunOSSFullAccess → creu AccessKey.
+   Copïwch yr ID AccessKey (= Allwedd Mynediad) ac AccessKey Secret (= Allwedd Ddirgel).
+3. URL gwasanaeth: https://oss-&lt;REGION&gt;.aliyuncs.com (e.e. https://oss-cn-hangzhou.aliyuncs.com).
+4. Rhanbarth: e.e. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 - Storio gwrthrychau gwreiddiol Amazon.
+
+1. Agorwch y Consol S3 ( https://s3.console.aws.amazon.com/ ) a chreu bwced. Sylwch ar ei ranbarth (e.e. us-east-1).
+2. Agor IAM → Defnyddwyr → creu defnyddiwr → atodwch y polisi AmazonS3FullAccess.
+3. O dan gymwysterau Diogelwch, crëwch allwedd Mynediad — copïwch yr ID Allwedd a&apos;r Cyfrinach.
+4. Llenwch: Bwced, Allwedd Mynediad, Allwedd Ddirgel, a Rhanbarth.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS - Storfa gwrthrychau sy&apos;n gydnaws â S3 o Baidu.
+
+1. Yn BOS Console ( https://console.bce.baidu.com/bos/ ), creu bwced. Sylwch ar ei ranbarth (e.e. bj, gz, su).
+2. Ewch i Ddiogelwch → Allweddi Mynediad — copïwch eich ID Allwedd Mynediad a&apos;ch Allwedd Mynediad Cyfrinachol.
+3. URL gwasanaeth: https://s3.&lt;REGION&gt;.bcebos.com (e.e. https://s3.bj.bcebos.com).
+4. Rhanbarth: e.e. bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 - storfa fforddiadwy sy&apos;n gydnaws â S3.
+
+1. Yn Backblaze ( https://www.backblaze.com/ ) → B2 Cloud Storage → Bwcedi, creu bwced.
+2. Ewch i Allweddi App → Ychwanegu Allwedd Cais Newydd, cwmpaswch ef i&apos;r bwced.
+   Copïwch yr allwedd ID (= Allwedd Mynediad) a applicationKey (= Allwedd Ddirgel).
+3. URL gwasanaeth: dangosir diweddbwynt eich bwced ym manylion bwced, e.e. https://s3.us-west-004.backblazeb2.com
+4. Rhanbarth: y segment rhwng &apos;s3.&apos; a &apos;.backblazeb2.com&apos;, e.e. us-gorllewin-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 - storfa sy&apos;n gydnaws â S3 heb fynd allan.
+
+1. Yn Cloudflare Dashboard ( https://dash.cloudflare.com/ ) → R2 → creu bwced.
+2. Ewch i R2 → Rheoli Tocynnau API R2 → Creu Tocyn API gyda Gwrthrych Darllen ac Ysgrifennu.
+   Copïwch yr ID Allwedd Mynediad a&apos;r Allwedd Mynediad Cyfrinachol.
+3. URL gwasanaeth: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Dangosir eich ID Cyfrif ar dudalen trosolwg R2.
+4. Llenwch: Bwced, Allwedd Mynediad, Allwedd Ddirgel, ac URL Gwasanaeth. Rhanbarth wedi&apos;i osod i &apos;auto&apos; yn awtomatig.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Storio Gwrthrych - storfa OBS sy&apos;n gydnaws â S3.
+
+1. Yn Cloud.ru Console ( https://cloud.ru/ ) → Gwasanaeth Storio Gwrthrych (OBS) → creu bwced.
+2. Ewch i Fy Nghymwysterau → Allweddi Mynediad → Ychwanegu Allwedd Mynediad.
+   Copïwch yr Allwedd Mynediad a&apos;r Allwedd Mynediad Cyfrinachol.
+3. Llenwch: Bwced, Allwedd Mynediad, Allwedd Ddirgel, a Rhanbarth (e.e. ru-moscow-1).
+   Mae URL gwasanaeth yn cael ei lenwi&apos;n awtomatig.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO neu unrhyw weinydd sy&apos;n gydnaws â S3.
+
+1. Dechreuwch eich gweinydd MinIO (neu weinydd arall sy&apos;n gydnaws â S3).
+2. Creu bwced trwy&apos;r Consol MinIO neu &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;.
+3. Creu allwedd mynediad yn Consol MinIO → Allweddi Mynediad (osgoi tystlythyrau gwraidd wrth gynhyrchu).
+4. URL gwasanaeth: diweddbwynt eich gweinydd, e.e. http://192.168.1.10:9000 neu https://minio.example.com.
+5. Rhanbarth: unrhyw werth (e.e. us-east-1) — neu ei adael yn wag os nad yw&apos;r gweinydd yn ei orfodi.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>Gofodau DigitalOcean - Storfa gwrthrychau sy&apos;n gydnaws â S3.
+
+1. In Spaces ( https://cloud.digitalocean.com/spaces ), creu Gofod. Sylwch ar ei ranbarth (e.e. nyc3).
+2. Ewch i API → Spaces Keys → Cynhyrchu Allwedd Newydd. Copïwch yr Allwedd (= Allwedd Mynediad) a Chyfrinach.
+3. URL y gwasanaeth: https://&lt;REGION&gt;.digitaloceanspaces.com (e.e. https://nyc3.digitaloceanspaces.com).
+4. Rhanbarth: yr un cod byr, e.e. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage - trwy&apos;r API rhyngweithredu S3.
+
+1. Yn Google Cloud Console ( https://console.cloud.google.com/storage ), creu bwced.
+2. Ewch i Cloud Storage → Gosodiadau → Rhyngweithredu → creu allwedd HMAC ar gyfer cyfrif gwasanaeth.
+   Copïwch yr Allwedd Mynediad a&apos;r Gyfrinach.
+3. Llenwch: Bwced, Allwedd Mynediad (allwedd HMAC), Allwedd Ddirgel (HMAC cyfrinach).
+   Mae URL gwasanaeth a rhanbarth yn cael eu gosod yn awtomatig.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS - Storio gwrthrychau sy&apos;n gydnaws â S3 gan Huawei.
+
+1. Yn OBS Console ( https://console.huaweicloud.com/obs/ ), creu bwced. Sylwch ar ei ranbarth (e.e. cn-gogledd-4).
+2. Ewch i Fy Nghymwysterau → Allweddi Mynediad → Creu Allwedd Mynediad.
+   Copïwch yr AK (= Allwedd Mynediad) a SK (= Allwedd Ddirgel).
+3. URL gwasanaeth: https://obs.&lt;REGION&gt;.myhuaweicloud.com (e.e. https://obs.cn-north-4.myhuaweicloud.com).
+4. Rhanbarth: e.e. cn-gogledd-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Storio Gwrthrych - Storfa sy&apos;n gydnaws â S3.
+
+1. Yn Linode Cloud Manager ( https://cloud.linode.com/object-storage/buckets ), creu bwced. Sylwch ar ei glwstwr.
+2. Ewch i Gwrthrych Storio → Allweddi Mynediad → Creu Allwedd Mynediad wedi&apos;i gwmpasu i&apos;r bwced.
+   Copïwch yr Allwedd Mynediad a&apos;r Allwedd Ddirgel.
+3. URL gwasanaeth: https://&lt;CLUSTER&gt;.linodeobjects.com (e.e. https://us-east-1.linodeobjects.com).
+4. Rhanbarth: yr un cod clwstwr, e.e. us-dwyrain- 1 .</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo - storfa gydnaws S3 o Qiniu.
+
+1. Yn Qiniu Portal ( https://portal.qiniu.com/kodo/bucket ), creu bwced. Sylwch ar ei ardal.
+2. Ewch i&apos;r Ganolfan Bersonol → Rheolaeth Allweddol — copïwch eich AccessKey a SecretKey.
+3. URL gwasanaeth yn ôl rhanbarth:
+   Dwyrain Tsieina: https://s3-cn-east-1.qiniucs.com
+   Gogledd Tsieina: https://s3-cn-north-1.qiniucs.com
+   De Tsieina: https://s3-cn-south-1.qiniucs.com
+   Gogledd America: https://s3-us-north-1.qiniucs.com
+4. Rhanbarth: cod paru, e.e. cn- dwyrain- 1 .</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Storio Gwrthrych Graddfa - Storfa Ewropeaidd sy&apos;n gydnaws â S3.
+
+1. Yn Scaleway Console ( https://console.scaleway.com/object-storage/buckets ), creu bwced. Sylwch ar ei ranbarth (e.e. fr-par).
+2. Ewch i IAM → Allweddi API → Cynhyrchu Allwedd API gyda chaniatâd ysgrifennu Gwrthrych Storio.
+   Copïwch yr Allwedd Mynediad a&apos;r Allwedd Ddirgel.
+3. URL gwasanaeth: https://s3.&lt;REGION&gt;.scw.cloud (e.e. https://s3.fr-par.scw.cloud).
+4. Rhanbarth: e.e. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Storio Gwrthrych Selectel - storfa Rwsia sy&apos;n gydnaws â S3.
+
+1. Yn Panel Selectel ( https://my.selectel.ru/ ) → Cloud Storage → creu cynhwysydd (= bwced).
+2. O dan Defnyddwyr a Rolau, creu defnyddiwr gwasanaeth gyda mynediad storio → Allweddi S3 → creu pâr allweddol.
+   Copïwch yr Allwedd Mynediad a&apos;r Allwedd Ddirgel.
+3. Llenwch: Bwced, Allwedd Mynediad, Allwedd Ddirgel.
+   Mae URL gwasanaeth yn cael ei lenwi&apos;n awtomatig.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS - Storfa gwrthrychau sy&apos;n gydnaws â S3 o Tencent.
+
+1. Yn Consol COS ( https://console.cloud.tencent.com/cos ), creu bwced. Sylwch ar yr AppId a&apos;r Rhanbarth (e.e. ap-beijing).
+2. Mewn Rheoli Mynediad → Allweddi API → Creu Allwedd.
+   Copïwch y SecretId (= Allwedd Mynediad) a SecretKey (= Allwedd Ddirgel).
+3. URL y gwasanaeth: https://cos.&lt;REGION&gt;.myqcloud.com (e.e. https://cos.ap-beijing.myqcloud.com).
+4. Fformat enw bwced: &lt;enw&gt;-&lt;AppId&gt; (e.e. mybucket-1250000000). Rhanbarth: e.e. ap- beijing.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>Storio Gwrthrychau Cwmwl VK - Storfa sy&apos;n gydnaws â S3 o VK Cloud.
+
+1. Yn VK Cloud Portal ( https://msk.cloud.vk.com/ ) → Cloud Storage → creu bwced.
+2. O dan eich cyfrif → Allweddi Mynediad → creu pâr allweddi newydd.
+   Copïwch yr Allwedd Mynediad a&apos;r Allwedd Ddirgel.
+3. Llenwch: Bwced, Allwedd Mynediad, Allwedd Ddirgel, a Rhanbarth os oes angen (e.e. ru-msk).
+   Mae URL gwasanaeth yn cael ei lenwi&apos;n awtomatig.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Injan Llosgfynydd TOS (ByteDance) - Storfa sy&apos;n gydnaws â S3.
+
+1. Yn Volcano Engine Consol ( https://console.volcengine.com/tos ), creu bwced. Sylwch ar ei ranbarth (e.e. cn-beijing).
+2. Ewch i IAM → Allweddi Mynediad → creu allwedd.
+   Copïwch yr ID Allwedd Mynediad a&apos;r Allwedd Mynediad Cyfrinachol.
+3. URL gwasanaeth: https://tos-s3-&lt;REGION&gt;.volces.com (e.e. https://tos-s3-cn-beijing.volces.com).
+4. Rhanbarth: e.e. cn- beijing.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi - storfa cwmwl poeth heb unrhyw ffioedd allanfa.
+
+1. Yn Wasabi Console ( https://console.wasabisys.com/ ) → Bwcedi → Creu Bwced. Dewiswch ranbarth.
+2. Ewch i Allweddi Mynediad → Creu Allwedd Mynediad Newydd. Copïwch yr Allwedd Mynediad a&apos;r Allwedd Ddirgel.
+3. Llenwch: Bwced, Allwedd Mynediad, Allwedd Ddirgel, a Rhanbarth (e.e. us-east-1, eu-central-1).
+   Mae URL gwasanaeth yn cael ei lenwi&apos;n awtomatig.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage - Storfa cwmwl Rwsia sy&apos;n gydnaws â S3.
+
+1. Yn Yandex Cloud Console ( https://console.yandex.cloud/ ) → Gwrthrych Storio → creu bwced.
+2. Ewch i Gyfrifon Gwasanaeth → creu un gyda&apos;r rôl storage.editor → creu allwedd mynediad Statig.
+   Copïwch yr ID Allwedd (= Allwedd Mynediad) a&apos;r allwedd Cyfrinachol.
+3. Llenwch: Bwced, Allwedd Mynediad, Allwedd Ddirgel.
+   Mae URL gwasanaeth a rhanbarth yn cael eu gosod yn awtomatig.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Blwch - storfa cwmwl menter gyda chefnogaeth WebDAV.
+
+1. Mewngofnodwch yn app.box.com. Sylwch fod Box WebDAV ar gael ar gyfer cynlluniau taledig yn unig.
+2. Rhowch e-bost eich cyfrif Blwch fel y Defnyddiwr.
+3. Rhowch eich cyfrinair Box fel y Cyfrinair.
+   Os ydych yn defnyddio SSO, efallai y bydd angen i chi osod cyfrinair WebDAV ar wahân yn y Gosodiadau Cyfrif.
+   Mae cyfeiriad gweinydd, HTTPS, porthladd, a llwybr sylfaen yn cael eu ffurfweddu&apos;n awtomatig.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>Gweinydd WebDAV generig (Nextcloud, ownCloud, Synology DSM, Seafile, Apache, ac ati)
+
+1. Rhowch y Cyfeiriad gweinyddwr, dewiswch HTTPS (argymhellir), a gosodwch y porthladd (0 = rhagosodedig: 80 ar gyfer HTTP, 443 ar gyfer HTTPS).
+2. Rhowch y llwybr sylfaen ar gyfer diweddbwynt WebDAV.
+   Enghraifft Nextcloud: /remote.php/dav/files/&lt;username&gt;/Backups
+   Synology DSM: /
+3. Rhowch eich enw defnyddiwr a chyfrinair (neu gyfrinair app-benodol os yw eich gweinydd yn ei gwneud yn ofynnol).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive - Storfa cwmwl Almaeneg gyda ffocws preifatrwydd cryf.
+
+1. Mewngofnodi yn hidrive.ionos.com → Gosodiadau → Apiau a gwasanaethau cysylltiedig → WebDAV.
+   Neu ewch i WebDAV gyda&apos;ch tystlythyrau presennol yn uniongyrchol.
+2. Rhowch eich enw defnyddiwr HiDrive fel y Defnyddiwr.
+3. Rhowch eich cyfrinair HiDrive fel y Cyfrinair.
+   Mae cyfeiriad gweinydd, HTTPS, porthladd, a llwybr sylfaen yn cael eu ffurfweddu&apos;n awtomatig.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) - storfa cwmwl Tsieineaidd poblogaidd gyda chefnogaeth WebDAV brodorol.
+
+1. Mewngofnodi yn jianguoyun.com → Gwybodaeth Cyfrif → Diogelwch → Rheoli Apiau Trydydd Parti → Ychwanegu Cais.
+   Copïwch y cyfrinair app a gynhyrchir - dim ond unwaith y caiff ei ddangos.
+2. Rhowch eich cyfeiriad e-bost Jianguoyun fel y Defnyddiwr.
+3. Rhowch y cyfrinair app a gynhyrchir fel y Cyfrinair.
+   Mae cyfeiriad gweinydd, HTTPS, porthladd, a llwybr sylfaen yn cael eu ffurfweddu&apos;n awtomatig.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr - storfa cwmwl sy&apos;n gyfeillgar i breifatrwydd wedi&apos;i lleoli yn Slofenia (UE).
+
+1. Ewch i app.koofr.eu → Dewisiadau → Cyfrinair → Cyfrineiriau ap → Ychwanegu cyfrinair.
+2. Rhowch e-bost eich cyfrif Koofr fel y Defnyddiwr.
+3. Rhowch y cyfrinair app a gynhyrchir fel y Cyfrinair.
+   Mae cyfeiriad gweinydd, HTTPS, porthladd, a llwybr sylfaen yn cael eu ffurfweddu&apos;n awtomatig.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Cwmwl Mail.ru trwy WebDAV.
+
+1. Ewch i account.mail.ru → Diogelwch → App cyfrineiriau → Creu cyfrinair app.
+   Dewiswch &apos;Mail&apos; neu &apos;Pawb&apos; fel y math, yna copïwch y cyfrinair a gynhyrchir.
+2. Rhowch eich cyfeiriad e-bost Mail.ru fel y Defnyddiwr.
+3. Rhowch y cyfrinair app fel y Cyfrinair.
+   Mae cyfeiriad gweinydd, HTTPS, porthladd, a llwybr sylfaen yn cael eu ffurfweddu&apos;n awtomatig.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud - cysoni a rhannu ffeiliau hunangynhaliol poblogaidd.
+
+1. Rhowch eich cyfeiriad gweinydd Nextcloud (e.e. nextcloud.example.com).
+2. Mae&apos;r llwybr sylfaen wedi&apos;i lenwi ymlaen llaw: /remote.php/dav/files/&lt;username&gt;/
+   Amnewid &lt;enw defnyddiwr&gt; gyda&apos;ch enw defnyddiwr Nextcloud go iawn.
+3. Rhowch eich enw defnyddiwr a chyfrinair Nextcloud (neu gyfrinair app o
+   Gosodiadau → Diogelwch → Dyfeisiau a sesiynau → Cyfrineiriau ap).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud - cysoni a rhannu ffeiliau hunangynhaliol.
+
+1. Rhowch eich cyfeiriad gweinydd ownCloud (e.e. owncloud.example.com).
+2. Mae&apos;r llwybr sylfaen wedi&apos;i lenwi ymlaen llaw: /remote.php/dav/files/&lt;username&gt;/
+   Amnewid &lt;enw defnyddiwr&gt; gyda&apos;ch enw defnyddiwr ownCloud go iawn.
+3. Rhowch eich enw defnyddiwr a&apos;ch cyfrinair ownCloud (neu gyfrinair app os yw 2FA wedi&apos;i alluogi).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud - storfa cwmwl gyda chanolfannau data&apos;r UE a&apos;r UD.
+
+1. Mewngofnodi ar my.pcloud.com → Gosodiadau → Diogelwch → Cyfrineiriau App → Creu.
+   Copïwch gyfrinair yr app - dim ond unwaith y caiff ei ddangos.
+2. Rhowch e-bost eich cyfrif pCloud fel y Defnyddiwr.
+3. Rhowch y cyfrinair app fel y Cyfrinair.
+   Ar gyfer canolfan ddata&apos;r UE: defnyddir ewebdav.pcloud.com yn awtomatig.
+   Ar gyfer canolfan ddata UDA: newidiwch y gwesteiwr i webdav.pcloud.com.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>Disg Yandex trwy WebDAV.
+
+1. Ewch i id.yandex.com → Diogelwch → Cyfrineiriau app → Creu cyfrinair app ar gyfer &apos;Mynediad WebDAV&apos;.
+   Copïwch y cyfrinair a gynhyrchir - dim ond unwaith y caiff ei ddangos.
+2. Rhowch eich mewngofnodi Yandex fel y Defnyddiwr.
+3. Rhowch y cyfrinair app (nid eich cyfrinair cyfrif Yandex) fel y Cyfrinair.
+   Mae cyfeiriad gweinydd, HTTPS, a phorth yn cael eu ffurfweddu&apos;n awtomatig.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Gwneud copi wrth gefn / cydamseru'ch data Windows, Linux.
 Mewnforio lluniau o'r ffôn trwy WI-FI a mwy.

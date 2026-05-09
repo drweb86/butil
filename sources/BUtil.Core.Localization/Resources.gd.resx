@@ -967,6 +967,267 @@ See detailed description in the following link.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Chan eil an cleachdaiche air a shònrachadh.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS - Stòradh stuth a tha co-chosmhail ri S3 bho Alibaba.
+
+1. Ann an OSS Console ( https://oss.console.aliyun.com/ ), cruthaich bucaid. Thoir an aire don sgìre aige (me oss-cn-hangzhou).
+2. Ann an RAM Console → Cleachdaichean → cruthaich cleachdaiche → ceangail AliyunOSSFullAccess → cruthaich AccessKey.
+   Dèan lethbhreac den ID AccessKey (= Iuchair Ruigsinneachd) agus AccessKey Secret (= Iuchair Dhìomhair).
+3. Seirbheis URL: https://oss-&lt;REGION&gt;.aliyuncs.com (m.e. https://oss-cn-hangzhou.aliyuncs.com).
+4. Roinn: m.e. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 - Stòradh stuth tùsail Amazon.
+
+1. Fosgail an S3 Console ( https://s3.console.aws.amazon.com/ ) agus bucaid a chruthachadh. Thoir an aire don sgìre aige (m.e. us-ear-1).
+2. Fosgail IAM → Cleachdaichean → cruthaich cleachdaiche → ceangail poileasaidh AmazonS3FullAccess.
+3. Fo theisteanasan Tèarainteachd, cruthaich iuchair Ruigsinneachd - dèan lethbhreac dhen ID Prìomh agus Dìomhair.
+4. Lìon a-steach: Bucaid, iuchair inntrigidh, iuchair dhìomhair, agus roinn.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS - Stòradh stuth a tha co-chosmhail ri S3 bho Baidu.
+
+1. Ann an BOS Console ( https://console.bce.baidu.com/bos/ ), cruthaich bucaid. Thoir fa-near don sgìre aige (me bj, gz, su).
+2. Rach gu Tèarainteachd → Iuchraichean Ruigsinneachd - dèan lethbhreac den ID iuchair Ruigsinneachd agus an iuchair Ruigsinneachd Dhìomhair agad.
+3. URL seirbheis: https://s3.&lt;REGION&gt;.bcebos.com (m.e. https://s3.bj.bcebos.com).
+4. Roinn: m.e. bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 - stòradh aig prìs ruigsinneach a tha co-chosmhail ri S3.
+
+1. Ann an Backblaze ( https://www.backblaze.com/ ) → B2 Cloud Storage → Bucaid, cruthaich bucaid.
+2. Rach gu App Keys → Cuir iuchair tagraidh ùr ris, leudaich e chun bhucaid.
+   Dèan lethbhreac den keyID (= iuchair inntrigidh) agus applicationKey (= iuchair dhìomhair).
+3. URL na seirbheis: tha ceann-uidhe do bhucaid air a shealltainn ann am mion-fhiosrachadh bucaid, m.e. https://s3.us-west-004.backblazeb2.com
+4. Roinn: an earrann eadar &apos;s3.&apos; agus ‘.backblazeb2.com’, m.e. us-iar-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 - stòradh co-chosmhail ri S3 gun fhiosta.
+
+1. Ann an deas-bhòrd Cloudflare (https://dash.cloudflare.com/) → R2 → cruthaich bucaid.
+2. Rach gu R2 → Stiùirich R2 API Tokens → Cruthaich API Token le Object Read &amp; Write.
+   Dèan lethbhreac den ID Key Access agus Secret Access Key.
+3. URL seirbheis: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Tha ID a’ chunntais agad ri fhaicinn air duilleag ath-shealladh R2.
+4. Lìon a-steach: Bucaid, iuchair inntrigidh, iuchair dhìomhair, agus URL seirbheis. Tha roinn air a shuidheachadh gu &apos;auto&apos; gu fèin-obrachail.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Stòradh Rud - Stòradh OBS a tha co-chosmhail ri S3.
+
+1. Ann an Cloud.ru Console ( https://cloud.ru/ ) → Object Storage Service (OBS) → cruthaich bucaid.
+2. Rach gu Na Teisteanasan agam → Iuchraichean Ruigsinneachd → Cuir iuchair Ruigsinneachd ris.
+   Dèan lethbhreac den iuchair Ruigsinneachd agus an iuchair Ruigsinneachd Dhìomhair.
+3. Lìon a-steach: Bucaid, iuchair inntrigidh, iuchair dhìomhair, agus roinn (m.e. ru-moscow-1).
+   Tha URL seirbheis air a lìonadh a-steach gu fèin-ghluasadach.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO no frithealaiche sam bith a tha co-chosmhail ri S3.
+
+1. Tòisich do fhrithealaiche MinIO (no eile a tha co-chosmhail ri S3).
+2. Cruthaich bucaid tron ​​MinIO Console no &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;.
+3. Cruthaich iuchair ruigsinneachd ann an MinIO Console → Iuchraichean Ruigsinneachd (seachain teisteanasan bunaiteach ann an riochdachadh).
+4. URL seirbheis: puing crìochnachaidh an fhrithealaiche agad, m.e. http://192.168.1.10:9000 no https://minio.example.com.
+5. Roinn: luach sam bith (m.e. us-east-1) - no fàg falamh mura cuir am frithealaiche an gnìomh e.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>Àiteachan DigitalOcean - Stòradh stuth a tha co-chosmhail ri S3.
+
+1. Ann an Spaces (https://cloud.digitalocean.com/spaces), cruthaich Space. Thoir an aire don sgìre aige (m.e. nyc3).
+2. Rach gu API → Spaces Keys → Generate New Key. Dèan lethbhreac den iuchair (= iuchair inntrigidh) agus dìomhair.
+3. Seirbheis URL: https://&lt;REGION&gt;.digitaloceanspaces.com (m.e. https://nyc3.digitaloceanspaces.com).
+4. Roinn: an aon chòd goirid, m.e. nead 3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage - tro API eadar-obrachaidh S3.
+
+1. Ann an Google Cloud Console ( https://console.cloud.google.com/storage ), cruthaich bucaid.
+2. Rach gu Cloud Storage → Settings → Interoperability → cruthaich iuchair HMAC airson cunntas seirbheis.
+   Dèan lethbhreac den iuchair Ruigsinneachd agus an Dìomhaireachd.
+3. Lìon a-steach: Bucaid, Key Access (HMAC key), Secret Key (HMAC dìomhair).
+   Tha URL seirbheis agus sgìre air an suidheachadh gu fèin-ghluasadach.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS - Stòradh stuthan co-chosmhail ri S3 bho Huawei.
+
+1. Ann an OBS Console ( https://console.huaweicloud.com/obs/ ), cruthaich bucaid. Thoir an aire don sgìre aige (m.e. cn-tuath-4).
+2. Rach gu Na Teisteanasan agam → Iuchraichean Ruigsinneachd → Cruthaich iuchair Ruigsinneachd.
+   Dèan lethbhreac den AK (= iuchair inntrigidh) agus SK (= iuchair dhìomhair).
+3. URL seirbheis: https://obs.&lt;REGION&gt;.myhuaweicloud.com (m.e. https://obs.cn-north-4.myhuaweicloud.com).
+4. Roinn: m.e. cn-tuath-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Stòradh Rud - Stòradh co-chosmhail ri S3.
+
+1. Ann an Linode Cloud Manaidsear (https://cloud.linode.com/object-storage/buckets), cruthaich bucaid. Thoir fa-near a bhuidheann.
+2. Rach gu Stòradh Rud → Iuchraichean Ruigsinneachd → Cruthaich iuchair ruigsinneachd air a chuairteachadh chun bhucaid.
+   Dèan lethbhreac den iuchair inntrigidh agus an iuchair dhìomhair.
+3. Seirbheis URL: https://&lt;CLUSTER&gt;.linodeobjects.com (m.e. https://us-east-1.linodeobjects.com).
+4. Roinn: an aon chòd brabhsair, m.e. us-ear-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo - Stòradh co-chosmhail ri S3 bho Qiniu.
+
+1. Ann an Qiniu Portal (https://portal.qiniu.com/kodo/bucket), cruthaich bucaid. Beachdaich air an sgìre aige.
+2. Rach gu Ionad Pearsanta → Prìomh Stiùireadh - dèan lethbhreac den AccessKey agus SecretKey agad.
+3. URL seirbheis a rèir sgìre:
+   Sìona an Ear: https://s3-cn-east-1.qiniucs.com
+   Sìona a Tuath: https://s3-cn-north-1.qiniucs.com
+   Sìona a Deas: https://s3-cn-south-1.qiniucs.com
+   Ameireaga a Tuath: https://s3-us-north-1.qiniucs.com
+4. Roinn: còd maidsidh, m.e. cn-ear-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Stòradh Rud Sgèile - Stòradh Eòrpach a tha co-chosmhail ri S3.
+
+1. Ann an Scaleway Console ( https://console.scaleway.com/object-storage/buckets ), cruthaich bucaid. Thoir an aire don sgìre aige (m.e. fr-par).
+2. Rach gu IAM → Iuchraichean API → Cruthaich iuchair API le ceadan sgrìobhaidh Object Storage.
+   Dèan lethbhreac den iuchair inntrigidh agus an iuchair dhìomhair.
+3. URL seirbheis: https://s3.&lt;REGION&gt;.scw.cloud (m.e. https://s3.fr-par.scw.cloud).
+4. Roinn: m.e. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Stòradh Rud Selectel - stòradh Ruiseanach a tha co-chosmhail ri S3.
+
+1. Ann an Selectel Pannal (https://my.selectel.ru/) → Cloud Storage → a chruthachadh container (= bucaid).
+2. Fo Cleachdaichean &amp; Dreuchdan, neach-cleachdaidh seirbheis a chruthachadh le ruigsinneachd stòraidh → S3 Keys → cruthaich prìomh paidhir.
+   Dèan lethbhreac den iuchair inntrigidh agus an iuchair dhìomhair.
+3. Lìon a-steach: Bucaid, iuchair inntrigidh, iuchair dhìomhair.
+   Tha URL seirbheis air a lìonadh a-steach gu fèin-ghluasadach.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS - Stòradh stuth a tha co-chosmhail ri S3 bho Tencent.
+
+1. Ann an COS Console ( https://console.cloud.tencent.com/cos ), cruthaich bucaid. Thoir fa-near an AppId agus an Roinn (me ap-beijing).
+2. Ann an Stiùireadh Ruigsinneachd → iuchraichean API → Cruthaich iuchair.
+   Dèan lethbhreac den SecretId (= Iuchair Ruigsinneachd) agus SecretKey (= Iuchair Dhìomhair).
+3. URL seirbheis: https://cos.&lt;REGION&gt;.myqcloud.com (m.e. https://cos.ap-beijing.myqcloud.com).
+4. Cruth ainm bucaid: &lt;ainm&gt; -&lt;AppId&gt; (m. e. mybucket-1250000000). Roinn: m.e. ap-beijing.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>Stòradh Rud Cloud VK - Stòradh co-chosmhail ri S3 bho VK Cloud.
+
+1. Ann an VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → cruthaich bucaid.
+2. Fon chunntas agad → Keys Cothrom → cruthaich paidhir iuchair ùr.
+   Dèan lethbhreac den iuchair inntrigidh agus an iuchair dhìomhair.
+3. Lìon a-steach: Bucaid, Iuchair Ruigsinneachd, Iuchair Dhìomhair, agus Roinn ma bhios feum air (m.e. ru-msk).
+   Tha URL seirbheis air a lìonadh a-steach gu fèin-ghluasadach.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Einnsean bholcàno TOS (ByteDance) - stòradh co-chosmhail ri S3.
+
+1. Ann an Volcano Engine Console (https://console.volcengine.com/tos), a chruthachadh bucaid. Thoir an aire don sgìre aige (m.e. cn-beijing).
+2. Rach gu IAM → Iuchraichean Ruigsinneachd → cruthaich iuchair.
+   Dèan lethbhreac den ID Key Access agus Secret Access Key.
+3. Seirbheis URL: https://tos-s3-&lt;REGION&gt;.volces.com (m.e. https://tos-s3-cn-beijing.volces.com).
+4. Roinn: m.e. cn-beijing.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi - stòradh neòil teth gun chosgaisean fàgail.
+
+1. Ann an Wasabi Console (https://console.wasabisys.com/) → Bucaid → Cruthaich Bucaid. Tagh sgìre.
+2. Rach gu Iuchraichean Ruigsinneachd → Cruthaich iuchair inntrigidh ùr. Dèan lethbhreac den iuchair inntrigidh agus an iuchair dhìomhair.
+3. Lìon a-steach: Bucaid, Iuchair Ruigsinneachd, Iuchair Dhìomhair, agus Roinn (m.e. us-ear-1, eu-central-1).
+   Tha URL seirbheis air a lìonadh a-steach gu fèin-ghluasadach.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Stòradh Rudan Yandex - Stòradh sgòthan Ruiseanach a tha co-chosmhail ri S3.
+
+1. Ann an Yandex Cloud Console (https://console.yandex.cloud/) → Object Storage → cruthaich bucaid.
+2. Rach gu Cunntasan Seirbheis → cruthaich fear leis an dreuchd storage.editor → cruthaich iuchair ruigsinneachd Static.
+   Dèan lethbhreac den ID iuchrach (= iuchair Ruigsinneachd) agus an iuchair dhìomhair.
+3. Lìon a-steach: Bucaid, iuchair inntrigidh, iuchair dhìomhair.
+   Tha URL seirbheis agus sgìre air an suidheachadh gu fèin-ghluasadach.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Bogsa - stòradh neòil iomairt le taic WebDAV.
+
+1. Log a-steach aig app.box.com. Thoir an aire nach eil Box WebDAV ri fhaighinn ach airson planaichean pàighte.
+2. Cuir a-steach post-d agad cunntas Box mar an Cleachdaiche.
+3. Cuir a-steach am facal-faire Bogsa agad mar am Facal-faire.
+   Ma chleachdas tu SSO, is dòcha gum feum thu facal-faire WebDAV air leth a shuidheachadh ann an Roghainnean Cunntais.
+   Tha seòladh frithealaiche, HTTPS, port, agus slighe bunaiteach air an rèiteachadh gu fèin-ghluasadach.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>Frithealaiche coitcheann WebDAV (Nextcloud, ownCloud, Synology DSM, Seafile, Apache, msaa)
+
+1. Cuir a-steach Seòladh an fhrithealaiche, tagh HTTPS (air a mholadh), agus suidhich am port (0 = default: 80 airson HTTP, 443 airson HTTPS).
+2. Cuir a-steach an t-slighe bunaiteach airson crìoch WebDAV.
+   Eisimpleir Nextcloud: /remote.php/dav/files/&lt;username&gt;/Backups
+   Synology DSM: /
+3. Cuir a-steach d’ ainm-cleachdaidh agus facal-faire (no facal-faire sònraichte airson app ma tha feum aig an t-seirbheisiche agad air).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive - Stòradh sgòthan Gearmailteach le fòcas làidir air prìobhaideachd.
+
+1. Log a-steach aig hidrive.ionos.com → Settings → Apps &amp; seirbheisean ceangailte → WebDAV.
+   No faigh cothrom air WebDAV leis na teisteanasan a th’ agad mu thràth gu dìreach.
+2. Cuir a-steach do HiDrive ainm-cleachdaidh mar an Cleachdaiche.
+3. Cuir a-steach am facal-faire HiDrive agad mar am facal-faire.
+   Tha seòladh frithealaiche, HTTPS, port, agus slighe bunaiteach air an rèiteachadh gu fèin-ghluasadach.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) - stòradh neòil Sìneach mòr-chòrdte le taic dùthchasach WebDAV.
+
+1. Log a-steach aig jianguoyun.com → Fiosrachadh cunntais → Tèarainteachd → Stiùireadh App Treas Pàrtaidh → Cuir Iarrtas ris.
+   Dèan lethbhreac den fhacal-fhaire app a chaidh a chruthachadh - chan eil e air a shealltainn ach aon turas.
+2. Cuir a-steach do Jianguoyun seòladh puist-d mar an Cleachdaiche.
+3. Cuir a-steach am facal-faire a ghineadh app mar am Facal-faire.
+   Tha seòladh frithealaiche, HTTPS, port, agus slighe bunaiteach air an rèiteachadh gu fèin-ghluasadach.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr - stòradh neòil a tha càirdeil do dhìomhaireachd stèidhichte ann an Sloibhinia (AE).
+
+1. Rach gu app.koofr.eu → Preferences → Password → App faclan-faire → Cuir facal-faire.
+2. Cuir a-steach post-d agad cunntas Koofr mar an Cleachdaiche.
+3. Cuir a-steach am facal-faire a ghineadh app mar am Facal-faire.
+   Tha seòladh frithealaiche, HTTPS, port, agus slighe bunaiteach air an rèiteachadh gu fèin-ghluasadach.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Mail.ru Cloud tro WebDAV.
+
+1. Rach gu account.mail.ru → Tèarainteachd → App faclan-faire → Cruthaich facal-faire app.
+   Tagh &apos;Mail&apos; no &apos;All&apos; mar an seòrsa, agus an uairsin dèan lethbhreac den fhacal-fhaire a chaidh a chruthachadh.
+2. Cuir a-steach do sheòladh puist-d Mail.ru mar an Cleachdaiche.
+3. Cuir a-steach am facal-faire app mar am Facal-faire.
+   Tha seòladh frithealaiche, HTTPS, port, agus slighe bunaiteach air an rèiteachadh gu fèin-ghluasadach.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud - sioncranachadh faidhle fèin-aoigheachd mòr-chòrdte agus roinneadh.
+
+1. Cuir a-steach do sheòladh frithealaiche Nextcloud (m.e. nextcloud.example.com).
+2. Tha an t-slighe bhunaiteach air a lìonadh ro-làimh: /remote.php/dav/files/&lt;username&gt;/
+   Cuir an dearbh ainm-cleachdaidh Nextcloud agad an àite &lt;ainm-cleachdaidh&gt;.
+3. Cuir a-steach do Nextcloud ainm-cleachdaidh agus facal-faire (no facal-faire app bho
+   Roghainnean → Tèarainteachd → Innealan &amp; seiseanan → Faclan-faire app).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud - sioncranachadh faidhle fèin-aoigheachd agus roinneadh.
+
+1. Cuir a-steach do sheòladh frithealaiche ownCloud (m.e. owncloud.example.com).
+2. Tha an t-slighe bhunaiteach air a lìonadh ro-làimh: /remote.php/dav/files/&lt;username&gt;/
+   Cuir an dearbh ainm-cleachdaidh ownCloud agad an àite &lt;ainm-cleachdaidh&gt;.
+3. Cuir a-steach d’ ainm-cleachdaidh agus facal-faire ownCloud (no facal-faire app ma tha 2FA air a chomasachadh).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud - stòradh neòil le ionadan dàta an EU agus na SA.
+
+1. Log a-steach aig my.pcloud.com → Settings → Tèarainteachd → App Passwords → Cruthaich.
+   Dèan lethbhreac den fhacal-fhaire app - chan eil e air a shealltainn ach aon turas.
+2. Cuir a-steach post-d agad cunntas pCloud mar an Cleachdaiche.
+3. Cuir a-steach am facal-faire app mar am Facal-faire.
+   Airson ionad dàta an EU: ewebdav.pcloud.com air a chleachdadh gu fèin-ghluasadach.
+   Airson ionad dàta na SA: atharraich an òstair gu webdav.pcloud.com.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>Yandex diosc tro WebDAV.
+
+1. Rach gu id.yandex.com → Tèarainteachd → App faclan-faire → Cruthaich app facal-faire airson &apos;WebDAV ruigsinneachd&apos;.
+   Dèan lethbhreac den fhacal-fhaire a chaidh a chruthachadh - chan eil e air a shealltainn ach aon turas.
+2. Cuir a-steach do Yandex logadh a-steach mar an Cleachdaiche.
+3. Cuir a-steach am facal-faire app (chan eil am facal-faire cunntas Yandex agad) mar am facal-faire.
+   Tha seòladh frithealaiche, HTTPS, agus port air an rèiteachadh gu fèin-ghluasadach.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Dèan cùl-taic / sioncronaich an dàta agad Windows, Linux.
 Cuir a-steach dealbhan bhon fhòn tro WI-FI agus barrachd.

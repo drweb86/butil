@@ -960,6 +960,267 @@
   <data name="User_Field_Validation" xml:space="preserve">
     <value>యూజర్ ఉదహరించவில்லை.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — అలీబాబా నుండి S3-అనుకూల వస్తువు నిల్వ.
+
+1. OSS కన్సోల్‌లో (https://oss.console.aliyun.com/), బకెట్‌ను సృష్టించండి. దాని ప్రాంతాన్ని గమనించండి (ఉదా. oss-cn-hangzhou).
+2. RAM కన్సోల్‌లో → వినియోగదారులు → వినియోగదారుని సృష్టించండి → AliyunOSSFullAccessని అటాచ్ చేయండి → AccessKeyని సృష్టించండి.
+   AccessKey ID (= యాక్సెస్ కీ) మరియు AccessKey సీక్రెట్ (= సీక్రెట్ కీ)ని కాపీ చేయండి.
+3. సేవా URL: https://oss-&lt;REGION&gt;.aliyuncs.com (ఉదా. https://oss-cn-hangzhou.aliyuncs.com).
+4. ప్రాంతం: ఉదా. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — Amazon యొక్క అసలైన వస్తువు నిల్వ.
+
+1. S3 కన్సోల్ (https://s3.console.aws.amazon.com/) తెరిచి, బకెట్‌ను సృష్టించండి. దాని ప్రాంతాన్ని గమనించండి (ఉదా. యుఎస్-ఈస్ట్-1).
+2. IAMను తెరవండి → వినియోగదారులు → వినియోగదారుని సృష్టించండి → AmazonS3FullAccess విధానాన్ని అటాచ్ చేయండి.
+3. భద్రతా ఆధారాల క్రింద, యాక్సెస్ కీని సృష్టించండి - కీ ID మరియు రహస్యాన్ని కాపీ చేయండి.
+4. పూరించండి: బకెట్, యాక్సెస్ కీ, సీక్రెట్ కీ మరియు ప్రాంతం.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu క్లౌడ్ BOS — Baidu నుండి S3-అనుకూల వస్తువు నిల్వ.
+
+1. BOS కన్సోల్‌లో (https://console.bce.baidu.com/bos/), బకెట్‌ను సృష్టించండి. దాని ప్రాంతాన్ని గమనించండి (ఉదా. bj, gz, su).
+2. సెక్యూరిటీ → యాక్సెస్ కీలకు వెళ్లండి — మీ యాక్సెస్ కీ ID మరియు సీక్రెట్ యాక్సెస్ కీని కాపీ చేయండి.
+3. సేవా URL: https://s3.&lt;REGION&gt;.bcebos.com (ఉదా. https://s3.bj.bcebos.com).
+4. ప్రాంతం: ఉదా. bj</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>బ్యాక్‌బ్లేజ్ B2 — సరసమైన S3-అనుకూల నిల్వ.
+
+1. బ్యాక్‌బ్లేజ్ (https://www.backblaze.com/) → B2 క్లౌడ్ స్టోరేజ్ → బకెట్‌లలో, బకెట్‌ను సృష్టించండి.
+2. యాప్ కీలకు వెళ్లండి → కొత్త అప్లికేషన్ కీని జోడించండి, దాన్ని బకెట్‌కు స్కోప్ చేయండి.
+   కీఐడి (= యాక్సెస్ కీ) మరియు అప్లికేషన్ కీ (= సీక్రెట్ కీ)ని కాపీ చేయండి.
+3. సేవా URL: బకెట్ వివరాలలో చూపబడిన మీ బకెట్ ముగింపు స్థానం, ఉదా. https://s3.us-west-004.backblazeb2.com
+4. ప్రాంతం: &apos;s3.&apos; మధ్య ఉన్న విభాగం. మరియు &apos;.backblazeb2.com&apos;, ఉదా. us-west-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — జీరో-ఎగ్రెస్ S3-అనుకూల నిల్వ.
+
+1. క్లౌడ్‌ఫ్లేర్ డాష్‌బోర్డ్‌లో (https://dash.cloudflare.com/) → R2 → బకెట్‌ను సృష్టించండి.
+2. R2కి వెళ్లండి → R2 API టోకెన్‌లను నిర్వహించండి → ఆబ్జెక్ట్ రీడ్ &amp; రైట్‌తో API టోకెన్‌ని సృష్టించండి.
+   యాక్సెస్ కీ ID మరియు సీక్రెట్ యాక్సెస్ కీని కాపీ చేయండి.
+3. సేవా URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   మీ ఖాతా ID R2 ఓవర్‌వ్యూ పేజీలో చూపబడింది.
+4. పూరించండి: బకెట్, యాక్సెస్ కీ, సీక్రెట్ కీ మరియు సర్వీస్ URL. ప్రాంతం స్వయంచాలకంగా &apos;ఆటో&apos;కి సెట్ చేయబడింది.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) ఆబ్జెక్ట్ స్టోరేజ్ — S3-అనుకూల OBS నిల్వ.
+
+1. Cloud.ru కన్సోల్‌లో (https://cloud.ru/) → ఆబ్జెక్ట్ స్టోరేజ్ సర్వీస్ (OBS) → బకెట్‌ను సృష్టించండి.
+2. నా ఆధారాలు → యాక్సెస్ కీలు → యాక్సెస్ కీని జోడించండి.
+   యాక్సెస్ కీ మరియు సీక్రెట్ యాక్సెస్ కీని కాపీ చేయండి.
+3. పూరించండి: బకెట్, యాక్సెస్ కీ, సీక్రెట్ కీ మరియు ప్రాంతం (ఉదా. రు-మాస్కో-1).
+   సేవా URL స్వయంచాలకంగా పూరించబడుతుంది.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO లేదా ఏదైనా S3-అనుకూల సర్వర్.
+
+1. మీ MinIO (లేదా ఇతర S3-అనుకూలమైన) సర్వర్‌ను ప్రారంభించండి.
+2. MinIO కన్సోల్ లేదా &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos; ద్వారా బకెట్‌ను సృష్టించండి.
+3. MinIO కన్సోల్ → యాక్సెస్ కీలలో యాక్సెస్ కీని సృష్టించండి (ఉత్పత్తిలో రూట్ ఆధారాలను నివారించండి).
+4. సేవా URL: మీ సర్వర్ ముగింపు స్థానం, ఉదా. http://192.168.1.10:9000 లేదా https://minio.example.com.
+5. ప్రాంతం: ఏదైనా విలువ (ఉదా. యుఎస్-ఈస్ట్-1) — లేదా సర్వర్ దానిని అమలు చేయకపోతే ఖాళీగా వదిలివేయండి.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — S3-అనుకూల వస్తువు నిల్వ.
+
+1. Spacesలో (https://cloud.digitalocean.com/spaces), స్పేస్‌ని సృష్టించండి. దాని ప్రాంతాన్ని గమనించండి (ఉదా. nyc3).
+2. API → Spaces Keys → Generate New Keyకి వెళ్లండి. కీ (= యాక్సెస్ కీ) మరియు రహస్యాన్ని కాపీ చేయండి.
+3. సేవా URL: https://&lt;REGION&gt;.digitaloceanspaces.com (ఉదా. https://nyc3.digitaloceanspaces.com).
+4. ప్రాంతం: అదే చిన్న కోడ్, ఉదా. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google క్లౌడ్ స్టోరేజ్ — S3 ఇంటర్‌ఆపరబిలిటీ API ద్వారా.
+
+1. Google క్లౌడ్ కన్సోల్‌లో (https://console.cloud.google.com/storage), బకెట్‌ను సృష్టించండి.
+2. క్లౌడ్ స్టోరేజీకి వెళ్లండి → సెట్టింగ్‌లు → ఇంటర్‌ఆపరేబిలిటీ → సేవా ఖాతా కోసం HMAC కీని సృష్టించండి.
+   యాక్సెస్ కీ మరియు రహస్యాన్ని కాపీ చేయండి.
+3. పూరించండి: బకెట్, యాక్సెస్ కీ (HMAC కీ), సీక్రెట్ కీ (HMAC రహస్యం).
+   సేవా URL మరియు ప్రాంతం స్వయంచాలకంగా సెట్ చేయబడతాయి.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei క్లౌడ్ OBS — Huawei నుండి S3-అనుకూల వస్తువు నిల్వ.
+
+1. OBS కన్సోల్‌లో (https://console.huaweicloud.com/obs/), బకెట్‌ను సృష్టించండి. దాని ప్రాంతాన్ని గమనించండి (ఉదా. cn-north-4).
+2. నా ఆధారాలకు వెళ్లండి → యాక్సెస్ కీలు → యాక్సెస్ కీని సృష్టించండి.
+   AK (= యాక్సెస్ కీ) మరియు SK (= సీక్రెట్ కీ)ని కాపీ చేయండి.
+3. సేవా URL: https://obs.&lt;REGION&gt;.myhuaweicloud.com (ఉదా. https://obs.cn-north-4.myhuaweicloud.com).
+4. ప్రాంతం: ఉదా. cn-north-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>లినోడ్ (అకామై) ఆబ్జెక్ట్ స్టోరేజ్ — S3-అనుకూల నిల్వ.
+
+1. లినోడ్ క్లౌడ్ మేనేజర్‌లో (https://cloud.linode.com/object-storage/buckets), బకెట్‌ను సృష్టించండి. దాని క్లస్టర్‌ను గమనించండి.
+2. ఆబ్జెక్ట్ స్టోరేజీకి వెళ్లండి → యాక్సెస్ కీలు → బకెట్‌కు స్కోప్ చేయబడిన యాక్సెస్ కీని సృష్టించండి.
+   యాక్సెస్ కీ మరియు సీక్రెట్ కీని కాపీ చేయండి.
+3. సేవా URL: https://&lt;CLUSTER&gt;.linodeobjects.com (ఉదా. https://us-east-1.linodeobjects.com).
+4. ప్రాంతం: అదే క్లస్టర్ కోడ్, ఉదా. us-east-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu క్లౌడ్ కోడో — Qiniu నుండి S3-అనుకూల నిల్వ.
+
+1. Qiniu పోర్టల్‌లో (https://portal.qiniu.com/kodo/bucket), బకెట్‌ను సృష్టించండి. దాని ప్రాంతాన్ని గమనించండి.
+2. వ్యక్తిగత కేంద్రం → కీ నిర్వహణకు వెళ్లండి — మీ AccessKey మరియు SecretKeyని కాపీ చేయండి.
+3. ప్రాంతం వారీగా సర్వీస్ URL:
+   తూర్పు చైనా: https://s3-cn-east-1.qiniucs.com
+   ఉత్తర చైనా: https://s3-cn-north-1.qiniucs.com
+   దక్షిణ చైనా: https://s3-cn-south-1.qiniucs.com
+   ఉత్తర అమెరికా: https://s3-us-north-1.qiniucs.com
+4. ప్రాంతం: సరిపోలే కోడ్, ఉదా. cn-తూర్పు-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>స్కేల్‌వే ఆబ్జెక్ట్ స్టోరేజ్ — యూరోపియన్ S3-అనుకూల నిల్వ.
+
+1. స్కేల్‌వే కన్సోల్‌లో (https://console.scaleway.com/object-storage/buckets), బకెట్‌ను సృష్టించండి. దాని ప్రాంతాన్ని గమనించండి (ఉదా. fr-par).
+2. IAM → API కీలు → ఆబ్జెక్ట్ స్టోరేజ్ రైట్ అనుమతులతో API కీని రూపొందించండి.
+   యాక్సెస్ కీ మరియు సీక్రెట్ కీని కాపీ చేయండి.
+3. సేవా URL: https://s3.&lt;REGION&gt;.scw.cloud (ఉదా. https://s3.fr-par.scw.cloud).
+4. ప్రాంతం: ఉదా. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel ఆబ్జెక్ట్ స్టోరేజ్ — S3-అనుకూల రష్యన్ నిల్వ.
+
+1. సెలెక్టెల్ ప్యానెల్‌లో (https://my.selectel.ru/) → క్లౌడ్ నిల్వ → కంటైనర్‌ను సృష్టించండి (= బకెట్).
+2. వినియోగదారులు &amp; పాత్రల క్రింద, స్టోరేజ్ యాక్సెస్‌తో సేవా వినియోగదారుని సృష్టించండి → S3 కీలు → కీ జతని సృష్టించండి.
+   యాక్సెస్ కీ మరియు సీక్రెట్ కీని కాపీ చేయండి.
+3. పూరించండి: బకెట్, యాక్సెస్ కీ, సీక్రెట్ కీ.
+   సేవా URL స్వయంచాలకంగా పూరించబడుతుంది.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>టెన్సెంట్ క్లౌడ్ COS — టెన్సెంట్ నుండి S3-అనుకూల వస్తువు నిల్వ.
+
+1. COS కన్సోల్‌లో (https://console.cloud.tencent.com/cos), బకెట్‌ను సృష్టించండి. AppId మరియు ప్రాంతాన్ని గమనించండి (ఉదా. ap-beijing).
+2. యాక్సెస్ మేనేజ్‌మెంట్‌లో → API కీలు → కీని సృష్టించండి.
+   SecretId (= యాక్సెస్ కీ) మరియు SecretKey (= సీక్రెట్ కీ)ని కాపీ చేయండి.
+3. సేవా URL: https://cos.&lt;REGION&gt;.myqcloud.com (ఉదా. https://cos.ap-beijing.myqcloud.com).
+4. బకెట్ పేరు ఫార్మాట్: &lt;name&gt;-&lt;AppId&gt; (ఉదా. mybucket-1250000000). ప్రాంతం: ఉదా. ap-బీజింగ్.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK క్లౌడ్ ఆబ్జెక్ట్ స్టోరేజ్ — VK క్లౌడ్ నుండి S3-అనుకూల నిల్వ.
+
+1. VK క్లౌడ్ పోర్టల్‌లో (https://msk.cloud.vk.com/) → క్లౌడ్ నిల్వ → బకెట్‌ను సృష్టించండి.
+2. మీ ఖాతా కింద → యాక్సెస్ కీలు → కొత్త కీ జతని సృష్టించండి.
+   యాక్సెస్ కీ మరియు సీక్రెట్ కీని కాపీ చేయండి.
+3. పూరించండి: బకెట్, యాక్సెస్ కీ, సీక్రెట్ కీ మరియు అవసరమైతే ప్రాంతం (ఉదా. ru-msk).
+   సేవా URL స్వయంచాలకంగా పూరించబడుతుంది.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>అగ్నిపర్వత ఇంజిన్ TOS (బైట్‌డాన్స్) — S3-అనుకూల నిల్వ.
+
+1. అగ్నిపర్వతం ఇంజిన్ కన్సోల్‌లో (https://console.volcengine.com/tos), బకెట్‌ను సృష్టించండి. దాని ప్రాంతాన్ని గమనించండి (ఉదా. cn-beijing).
+2. IAM → యాక్సెస్ కీలు →కి వెళ్లండి ఒక కీని సృష్టించండి.
+   యాక్సెస్ కీ ID మరియు సీక్రెట్ యాక్సెస్ కీని కాపీ చేయండి.
+3. సేవా URL: https://tos-s3-&lt;REGION&gt;.volces.com (ఉదా. https://tos-s3-cn-beijing.volces.com).
+4. ప్రాంతం: ఉదా. cn-beijing.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi — ఎటువంటి ఎగ్రెస్ రుసుము లేకుండా హాట్ క్లౌడ్ నిల్వ.
+
+1. Wasabi కన్సోల్‌లో (https://console.wasabisys.com/) → బకెట్‌లు → బకెట్‌ని సృష్టించండి. ఒక ప్రాంతాన్ని ఎంచుకోండి.
+2. యాక్సెస్ కీలకు వెళ్లండి → కొత్త యాక్సెస్ కీని సృష్టించండి. యాక్సెస్ కీ మరియు సీక్రెట్ కీని కాపీ చేయండి.
+3. పూరించండి: బకెట్, యాక్సెస్ కీ, సీక్రెట్ కీ మరియు ప్రాంతం (ఉదా. us-east-1, eu-central-1).
+   సేవా URL స్వయంచాలకంగా పూరించబడుతుంది.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex ఆబ్జెక్ట్ స్టోరేజ్ — S3-అనుకూల రష్యన్ క్లౌడ్ నిల్వ.
+
+1. Yandex క్లౌడ్ కన్సోల్‌లో (https://console.yandex.cloud/) → ఆబ్జెక్ట్ స్టోరేజ్ → బకెట్‌ను సృష్టించండి.
+2. సర్వీస్ ఖాతాలకు వెళ్లండి → store.editor రోల్‌తో ఒకదాన్ని సృష్టించండి → స్టాటిక్ యాక్సెస్ కీని సృష్టించండి.
+   కీ ID (= యాక్సెస్ కీ) మరియు సీక్రెట్ కీని కాపీ చేయండి.
+3. పూరించండి: బకెట్, యాక్సెస్ కీ, సీక్రెట్ కీ.
+   సేవా URL మరియు ప్రాంతం స్వయంచాలకంగా సెట్ చేయబడతాయి.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>బాక్స్ — WebDAV మద్దతుతో ఎంటర్‌ప్రైజ్ క్లౌడ్ నిల్వ.
+
+1. app.box.comలో లాగిన్ చేయండి. Box WebDAV చెల్లింపు ప్లాన్‌లకు మాత్రమే అందుబాటులో ఉంటుందని గమనించండి.
+2. మీ బాక్స్ ఖాతా ఇమెయిల్‌ను వినియోగదారుగా నమోదు చేయండి.
+3. మీ బాక్స్ పాస్‌వర్డ్‌ను పాస్‌వర్డ్‌గా నమోదు చేయండి.
+   మీరు SSOని ఉపయోగిస్తుంటే, మీరు ఖాతా సెట్టింగ్‌లలో ప్రత్యేక WebDAV పాస్‌వర్డ్‌ను సెట్ చేయాల్సి రావచ్చు.
+   సర్వర్ చిరునామా, HTTPS, పోర్ట్ మరియు బేస్ పాత్ స్వయంచాలకంగా కాన్ఫిగర్ చేయబడతాయి.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>సాధారణ WebDAV సర్వర్ (Nextcloud, ownCloud, Synology DSM, Seafile, Apache, మొదలైనవి)
+
+1. సర్వర్ చిరునామాను నమోదు చేయండి, HTTPS (సిఫార్సు చేయబడింది) ఎంచుకోండి మరియు పోర్ట్‌ను సెట్ చేయండి (0 = డిఫాల్ట్: HTTP కోసం 80, HTTPS కోసం 443).
+2. WebDAV ముగింపు పాయింట్ కోసం బేస్ పాత్‌ను నమోదు చేయండి.
+   Nextcloud ఉదాహరణ: /remote.php/dav/files/&lt;username&gt;/Backups
+   సినాలజీ DSM: /
+3. మీ వినియోగదారు పేరు మరియు పాస్‌వర్డ్‌ను నమోదు చేయండి (లేదా మీ సర్వర్‌కు అవసరమైతే యాప్-నిర్దిష్ట పాస్‌వర్డ్).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive — బలమైన గోప్యతా దృష్టితో జర్మన్ క్లౌడ్ నిల్వ.
+
+1. hidrive.ionos.com → సెట్టింగ్‌లు → యాప్‌లు &amp; కనెక్ట్ చేయబడిన సేవలు → WebDAVలో లాగిన్ చేయండి.
+   లేదా మీ ఇప్పటికే ఉన్న ఆధారాలతో నేరుగా WebDAVని యాక్సెస్ చేయండి.
+2. మీ HiDrive వినియోగదారు పేరును వినియోగదారుగా నమోదు చేయండి.
+3. మీ HiDrive పాస్‌వర్డ్‌ను పాస్‌వర్డ్‌గా నమోదు చేయండి.
+   సర్వర్ చిరునామా, HTTPS, పోర్ట్ మరియు బేస్ పాత్ స్వయంచాలకంగా కాన్ఫిగర్ చేయబడతాయి.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) — స్థానిక WebDAV మద్దతుతో ప్రసిద్ధ చైనీస్ క్లౌడ్ నిల్వ.
+
+1. jianguoyun.comలో లాగిన్ చేయండి → ఖాతా సమాచారం → భద్రత → థర్డ్-పార్టీ యాప్ మేనేజ్‌మెంట్ → అప్లికేషన్‌ను జోడించండి.
+   రూపొందించబడిన అనువర్తన పాస్‌వర్డ్‌ను కాపీ చేయండి - ఇది ఒక్కసారి మాత్రమే చూపబడుతుంది.
+2. మీ Jianguoyun ఇమెయిల్ చిరునామాను వినియోగదారుగా నమోదు చేయండి.
+3. రూపొందించిన యాప్ పాస్‌వర్డ్‌ను పాస్‌వర్డ్‌గా నమోదు చేయండి.
+   సర్వర్ చిరునామా, HTTPS, పోర్ట్ మరియు బేస్ పాత్ స్వయంచాలకంగా కాన్ఫిగర్ చేయబడతాయి.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>కూఫర్ — స్లోవేనియా (EU)లో ఉన్న గోప్యత అనుకూలమైన క్లౌడ్ నిల్వ.
+
+1. app.koofr.eu → ప్రాధాన్యతలు → పాస్‌వర్డ్ → యాప్ పాస్‌వర్డ్‌లు → పాస్‌వర్డ్‌ని జోడించండి.
+2. మీ Koofr ఖాతా ఇమెయిల్‌ను వినియోగదారుగా నమోదు చేయండి.
+3. రూపొందించిన యాప్ పాస్‌వర్డ్‌ను పాస్‌వర్డ్‌గా నమోదు చేయండి.
+   సర్వర్ చిరునామా, HTTPS, పోర్ట్ మరియు బేస్ పాత్ స్వయంచాలకంగా కాన్ఫిగర్ చేయబడతాయి.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>WebDAV ద్వారా Mail.ru క్లౌడ్.
+
+1. account.mail.ruకి వెళ్లండి → సెక్యూరిటీ → యాప్ పాస్‌వర్డ్‌లు → యాప్ పాస్‌వర్డ్‌ని సృష్టించండి.
+   రకంగా &apos;మెయిల్&apos; లేదా &apos;అన్నీ&apos; ఎంచుకోండి, ఆపై రూపొందించిన పాస్‌వర్డ్‌ను కాపీ చేయండి.
+2. మీ Mail.ru ఇమెయిల్ చిరునామాను వినియోగదారుగా నమోదు చేయండి.
+3. యాప్ పాస్‌వర్డ్‌ను పాస్‌వర్డ్‌గా నమోదు చేయండి.
+   సర్వర్ చిరునామా, HTTPS, పోర్ట్ మరియు బేస్ పాత్ స్వయంచాలకంగా కాన్ఫిగర్ చేయబడతాయి.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud — ప్రముఖ స్వీయ-హోస్ట్ ఫైల్ సమకాలీకరణ మరియు భాగస్వామ్యం.
+
+1. మీ Nextcloud సర్వర్ చిరునామాను నమోదు చేయండి (ఉదా. nextcloud.example.com).
+2. బేస్ పాత్ ముందే పూరించబడింది: /remote.php/dav/files/&lt;username&gt;/
+   &lt;username&gt;ని మీ అసలు Nextcloud వినియోగదారు పేరుతో భర్తీ చేయండి.
+3. మీ Nextcloud వినియోగదారు పేరు మరియు పాస్‌వర్డ్ (లేదా దీని నుండి అనువర్తన పాస్‌వర్డ్‌ను నమోదు చేయండి
+   సెట్టింగ్‌లు → భద్రత → పరికరాలు &amp; సెషన్‌లు → యాప్ పాస్‌వర్డ్‌లు).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>సొంత క్లౌడ్ — స్వీయ-హోస్ట్ చేసిన ఫైల్ సమకాలీకరణ మరియు భాగస్వామ్యం.
+
+1. మీ స్వంత క్లౌడ్ సర్వర్ చిరునామాను నమోదు చేయండి (ఉదా. owncloud.example.com).
+2. బేస్ పాత్ ముందే పూరించబడింది: /remote.php/dav/files/&lt;username&gt;/
+   &lt;username&gt;ని మీ అసలు స్వంత క్లౌడ్ వినియోగదారు పేరుతో భర్తీ చేయండి.
+3. మీ స్వంత క్లౌడ్ వినియోగదారు పేరు మరియు పాస్‌వర్డ్ (లేదా 2FA ప్రారంభించబడితే అనువర్తన పాస్‌వర్డ్) నమోదు చేయండి.</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud — EU మరియు US డేటా సెంటర్‌లతో క్లౌడ్ నిల్వ.
+
+1. my.pcloud.com → సెట్టింగ్‌లు → సెక్యూరిటీ → యాప్ పాస్‌వర్డ్‌లు → సృష్టించడానికి లాగిన్ చేయండి.
+   యాప్ పాస్‌వర్డ్‌ను కాపీ చేయండి - ఇది ఒక్కసారి మాత్రమే చూపబడుతుంది.
+2. మీ pCloud ఖాతా ఇమెయిల్‌ను వినియోగదారుగా నమోదు చేయండి.
+3. యాప్ పాస్‌వర్డ్‌ను పాస్‌వర్డ్‌గా నమోదు చేయండి.
+   EU డేటా సెంటర్ కోసం: ewebdav.pcloud.com స్వయంచాలకంగా ఉపయోగించబడుతుంది.
+   US డేటా సెంటర్ కోసం: హోస్ట్‌ను webdav.pcloud.comకి మార్చండి.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>WebDAV ద్వారా Yandex డిస్క్.
+
+1. id.yandex.comకి వెళ్లండి → సెక్యూరిటీ → యాప్ పాస్‌వర్డ్‌లు → &apos;WebDAV యాక్సెస్&apos; కోసం యాప్ పాస్‌వర్డ్‌ను సృష్టించండి.
+   సృష్టించబడిన పాస్‌వర్డ్‌ను కాపీ చేయండి - ఇది ఒక్కసారి మాత్రమే చూపబడుతుంది.
+2. మీ Yandex లాగిన్‌ని వినియోగదారుగా నమోదు చేయండి.
+3. అనువర్తన పాస్‌వర్డ్‌ను (మీ Yandex ఖాతా పాస్‌వర్డ్ కాదు) పాస్‌వర్డ్‌గా నమోదు చేయండి.
+   సర్వర్ చిరునామా, HTTPS మరియు పోర్ట్ స్వయంచాలకంగా కాన్ఫిగర్ చేయబడతాయి.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Windows, Linuxలో మీ డేటాను బ్యాకప్/సింక్రొనైజ్ చేయండి.
 WI-FI ద్వారా ఫోన్ నుండి ఫోటోలను దిగుమతి చేసుకోండి మరియు మరిన్ని.

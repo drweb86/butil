@@ -967,6 +967,267 @@ Vaadake üksikasjalikku kirjeldust järgmisel lingil.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Kasutaja pole määratud.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS – Alibaba S3-ühilduv objektide salvestusruum.
+
+1. Looge OSS-konsoolis (https://oss.console.aliyun.com/) ämber. Pange tähele selle piirkonda (nt oss-cn-hangzhou).
+2. RAM-konsool → Kasutajad → loo kasutaja → lisa AliyunOSSFullAccess → loo AccessKey.
+   Kopeerige AccessKey ID (= pääsuvõti) ja AccessKey saladus (= salajane võti).
+3. Teenuse URL: https://oss-&lt;REGION&gt;.aliyuncs.com (nt https://oss-cn-hangzhou.aliyuncs.com).
+4. Piirkond: nt. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 – Amazoni algne objektide salvestusruum.
+
+1. Avage S3 konsool (https://s3.console.aws.amazon.com/) ja looge ämber. Pange tähele selle piirkonda (nt us-ida-1).
+2. Avage IAM → Kasutajad → looge kasutaja → lisage AmazonS3FullAccessi poliitika.
+3. Jaotises Turvamandaadid looge juurdepääsuvõti – kopeerige võtme ID ja saladus.
+4. Täitke: ämber, juurdepääsuvõti, salajane võti ja piirkond.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS – Baidu S3-ühilduv objektide salvestusruum.
+
+1. Looge BOS-konsoolis (https://console.bce.baidu.com/bos/) ämber. Pange tähele selle piirkonda (nt bj, gz, su).
+2. Avage Turvalisus → Pääsuvõtmed — kopeerige oma pääsuvõtme ID ja salajane pääsuvõti.
+3. Teenuse URL: https://s3.&lt;REGION&gt;.bcebos.com (nt https://s3.bj.bcebos.com).
+4. Piirkond: nt. bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 – taskukohane S3-ühilduv salvestusruum.
+
+1. Looge rakenduses Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets ämber.
+2. Avage Rakenduse võtmed → Lisage uus rakenduse võti, määrake see ämbrisse.
+   Kopeerige võtme ID (= juurdepääsuvõti) ja rakenduse võti (= salajane võti).
+3. Teenuse URL: teie salve lõpp-punkt, mis kuvatakse ämbri üksikasjades, nt. https://s3.us-west-004.backblazeb2.com
+4. Piirkond: segment &apos;s3&apos; vahel. ja &apos;.backblazeb2.com&apos;, nt. us-west-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 – nullväljapääsuga S3-ühilduv salvestusruum.
+
+1. Cloudflare&apos;i armatuurlaual (https://dash.cloudflare.com/) → R2 → looge ämber.
+2. Avage R2 → Halda R2 API-märke → Loo API-luba koos objekti lugemise ja kirjutamisega.
+   Kopeerige juurdepääsuvõtme ID ja salajane juurdepääsuvõti.
+3. Teenuse URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Teie konto ID kuvatakse R2 ülevaatelehel.
+4. Täitke: ämber, juurdepääsuvõti, salajane võti ja teenuse URL. Piirkond seatakse automaatselt olekusse &quot;automaatne&quot;.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) objektide salvestusruum — S3-ga ühilduv OBS-mälu.
+
+1. Cloud.ru konsoolis (https://cloud.ru/) → Object Storage Service (OBS) → looge ämber.
+2. Avage Minu mandaat → Pääsuvõtmed → Lisa pääsuvõti.
+   Kopeerige juurdepääsuvõti ja salajane juurdepääsuvõti.
+3. Täitke: ämber, juurdepääsuvõti, salajane võti ja piirkond (nt ru-moscow-1).
+   Teenuse URL täidetakse automaatselt.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO või mis tahes S3-ga ühilduv server.
+
+1. Käivitage oma MinIO (või muu S3-ga ühilduv) server.
+2. Looge ämber MinIO konsooli või &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos; kaudu.
+3. Looge pääsuvõti menüüs MinIO Console → Access Keys (vältige tootmises juurmandaate).
+4. Teenuse URL: teie serveri lõpp-punkt, nt. http://192.168.1.10:9000 või https://minio.example.com.
+5. Piirkond: mis tahes väärtus (nt us-east-1) — või jätke tühjaks, kui server seda ei jõusta.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces – S3-ühilduv objektide salvestusruum.
+
+1. Looge jaotises Spaces (https://cloud.digitalocean.com/spaces) ruum. Pange tähele selle piirkonda (nt nyc3).
+2. Avage API → Spaces Keys → Generate New Key. Kopeerige võti (= juurdepääsuvõti) ja saladus.
+3. Teenuse URL: https://&lt;REGION&gt;.digitaloceanspaces.com (nt https://nyc3.digitaloceanspaces.com).
+4. Piirkond: sama lühikood, nt. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage – S3 koostalitlusvõime API kaudu.
+
+1. Looge Google Cloud Console&apos;is (https://console.cloud.google.com/storage) ämber.
+2. Avage Cloud Storage → Settings → Interoperability → looge teenusekonto jaoks HMAC-võti.
+   Kopeerige juurdepääsuvõti ja saladus.
+3. Täitke: ämber, juurdepääsuvõti (HMAC-võti), salajane võti (HMAC-saladus).
+   Teenuse URL ja piirkond määratakse automaatselt.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — Huawei S3-ühilduv objektide salvestusruum.
+
+1. Looge OBS-konsoolis (https://console.huaweicloud.com/obs/) ämber. Pange tähele selle piirkonda (nt cn-north-4).
+2. Avage Minu mandaat → Pääsuvõtmed → Loo pääsuvõti.
+   Kopeerige AK (= juurdepääsuvõti) ja SK (= salajane võti).
+3. Teenuse URL: https://obs.&lt;REGION&gt;.myhuaweicloud.com (nt https://obs.cn-north-4.myhuaweicloud.com).
+4. Piirkond: nt. cn-north-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Object Storage — S3-ga ühilduv salvestusruum.
+
+1. Looge Linode Cloud Manageris (https://cloud.linode.com/object-storage/buckets) ämber. Pange tähele selle klastrit.
+2. Avage Objektide salvestusruum → Pääsuvõtmed → Loo ämbriga hõlmatud pääsuvõti.
+   Kopeerige juurdepääsuvõti ja salajane võti.
+3. Teenuse URL: https://&lt;CLUSTER&gt;.linodeobjects.com (nt https://us-east-1.linodeobjects.com).
+4. Piirkond: sama klastri kood, nt. us-ida-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — S3-ga ühilduv Qiniu salvestusruum.
+
+1. Looge Qiniu portaalis (https://portal.qiniu.com/kodo/bucket) ämber. Pange tähele selle piirkonda.
+2. Avage Personal Center → Key Management — kopeerige oma AccessKey ja SecretKey.
+3. Teenuse URL piirkonna järgi:
+   Ida-Hiina: https://s3-cn-east-1.qiniucs.com
+   Põhja-Hiina: https://s3-cn-north-1.qiniucs.com
+   Lõuna-Hiina: https://s3-cn-south-1.qiniucs.com
+   Põhja-Ameerika: https://s3-us-north-1.qiniucs.com
+4. Piirkond: sobiv kood, nt. cn-ida-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage – Euroopa S3-ühilduv salvestusruum.
+
+1. Looge Scaleway konsoolis (https://console.scaleway.com/object-storage/buckets) ämber. Pange tähele selle piirkonda (nt fr-par).
+2. Avage IAM → API võtmed → Loo API võti objektisalvestuse kirjutamisõigustega.
+   Kopeerige juurdepääsuvõti ja salajane võti.
+3. Teenuse URL: https://s3.&lt;REGION&gt;.scw.cloud (nt https://s3.fr-par.scw.cloud).
+4. Piirkond: nt. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — S3-ga ühilduv vene salvestusruum.
+
+1. In Selectel Panel (https://my.selectel.ru/) → Cloud Storage → looge konteiner (= ämber).
+2. Jaotises Kasutajad ja rollid looge salvestusruumi juurdepääsuga teenusekasutaja → S3 võtmed → looge võtmepaar.
+   Kopeerige juurdepääsuvõti ja salajane võti.
+3. Täitke: ämber, juurdepääsuvõti, salajane võti.
+   Teenuse URL täidetakse automaatselt.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS – S3-ühilduv objektide salvestusruum Tencentilt.
+
+1. Looge COS-konsoolis (https://console.cloud.tencent.com/cos) ämber. Pange tähele AppId ja piirkond (nt ap-peijing).
+2. In Access Management → API Keys → Create Key.
+   Kopeerige SecretId (= juurdepääsuvõti) ja SecretKey (= salajane võti).
+3. Teenuse URL: https://cos.&lt;REGION&gt;.myqcloud.com (nt https://cos.ap-beijing.myqcloud.com).
+4. Salve nimevorming: &lt;nimi&gt;-&lt;AppId&gt; (nt mybucket-1250000000). Piirkond: nt. ap-peking.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — S3-ga ühilduv salvestusruum VK Cloudist.
+
+1. VK pilveportaalis (https://msk.cloud.vk.com/) → Cloud Storage → looge ämber.
+2. Oma konto all → Pääsuvõtmed → looge uus võtmepaar.
+   Kopeerige juurdepääsuvõti ja salajane võti.
+3. Vajadusel täitke: ämber, juurdepääsuvõti, salajane võti ja piirkond (nt ru-msk).
+   Teenuse URL täidetakse automaatselt.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) – S3-ga ühilduv salvestusruum.
+
+1. Looge rakenduses Volcano Engine Console (https://console.volcengine.com/tos) ämber. Pange tähele selle piirkonda (nt cn-beijing).
+2. Avage IAM → Access Keys → looge võti.
+   Kopeerige juurdepääsuvõtme ID ja salajane juurdepääsuvõti.
+3. Teenuse URL: https://tos-s3-&lt;REGION&gt;.volces.com (nt https://tos-s3-cn-beijing.volces.com).
+4. Piirkond: nt. cn-peking.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi – kuuma pilvesalvestus ilma väljapääsutasudeta.
+
+1. Wasabi konsoolis (https://console.wasabisys.com/) → Ämbrid → Loo ämber. Valige piirkond.
+2. Avage Pääsuvõtmed → Loo uus pääsuvõti. Kopeerige juurdepääsuvõti ja salajane võti.
+3. Täitke: ämber, juurdepääsuvõti, salajane võti ja piirkond (nt us-east-1, eu-central-1).
+   Teenuse URL täidetakse automaatselt.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage — S3-ga ühilduv Venemaa pilvesalvestus.
+
+1. Yandexi pilvekonsoolis (https://console.yandex.cloud/) → Object Storage → looge ämber.
+2. Avage Teenuskontod → looge see rolliga storage.editor → looge staatiline juurdepääsuvõti.
+   Kopeerige võtme ID (= juurdepääsuvõti) ja salajane võti.
+3. Täitke: ämber, juurdepääsuvõti, salajane võti.
+   Teenuse URL ja piirkond määratakse automaatselt.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box – ettevõtte pilvesalvestus koos WebDAV-toega.
+
+1. Logige sisse aadressil app.box.com. Pange tähele, et Box WebDAV on saadaval ainult tasuliste plaanide jaoks.
+2. Sisestage kasutajaks oma Boxi konto meiliaadress.
+3. Sisestage parooliks oma Box parool.
+   Kui kasutate SSO-d, peate võib-olla määrama konto seadetes eraldi WebDAV-i parooli.
+   Serveri aadress, HTTPS, port ja baastee konfigureeritakse automaatselt.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>Üldine WebDAV-server (Nextcloud, ownCloud, Synology DSM, Seafile, Apache jne)
+
+1. Sisestage serveri aadress, valige HTTPS (soovitatav) ja määrake port (0 = vaikeväärtus: 80 HTTP jaoks, 443 HTTPS jaoks).
+2. Sisestage WebDAV-i lõpp-punkti baastee.
+   Nextcloudi näide: /remote.php/dav/files/&lt;kasutajanimi&gt;/Varukoopiad
+   Synology DSM: /
+3. Sisestage oma kasutajanimi ja parool (või rakendusepõhine parool, kui teie server seda nõuab).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive – Saksamaa pilvesalvestus, mis keskendub tugevale privaatsusele.
+
+1. Logige sisse aadressil hidrive.ionos.com → Seaded → Rakendused ja ühendatud teenused → WebDAV.
+   Või pääsege WebDAV-ile otse oma olemasolevate mandaatidega juurde.
+2. Sisestage kasutajaks oma HiDrive&apos;i kasutajanimi.
+3. Sisestage parooliks oma HiDrive&apos;i parool.
+   Serveri aadress, HTTPS, port ja baastee konfigureeritakse automaatselt.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) – populaarne Hiina pilvesalvestusruum koos natiivse WebDAV-toega.
+
+1. Logige sisse aadressil jinguoyun.com → Kontoteave → Turvalisus → Kolmanda osapoole rakenduste haldus → Lisa rakendus.
+   Kopeerige loodud rakenduse parool – seda kuvatakse ainult üks kord.
+2. Sisestage kasutajaks oma Jianguoyuni e-posti aadress.
+3. Sisestage loodud rakenduse parool parooliks.
+   Serveri aadress, HTTPS, port ja baastee konfigureeritakse automaatselt.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr – privaatsussõbralik pilvesalvestus, mis asub Sloveenias (EL).
+
+1. Avage app.koofr.eu → Eelistused → Parool → Rakenduste paroolid → Lisa parool.
+2. Sisestage kasutajaks oma Koofri konto e-posti aadress.
+3. Sisestage loodud rakenduse parool parooliks.
+   Serveri aadress, HTTPS, port ja baastee konfigureeritakse automaatselt.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Mail.ru pilv WebDAV-i kaudu.
+
+1. Avage account.mail.ru → Turvalisus → Rakenduste paroolid → Loo rakenduse parool.
+   Valige tüübiks &quot;Mail&quot; või &quot;Kõik&quot;, seejärel kopeerige loodud parool.
+2. Sisestage kasutajaks oma Mail.ru e-posti aadress.
+3. Sisestage paroolina rakenduse parool.
+   Serveri aadress, HTTPS, port ja baastee konfigureeritakse automaatselt.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud – populaarne isehostitav failide sünkroonimine ja jagamine.
+
+1. Sisestage oma Nextcloudi serveri aadress (nt nextcloud.example.com).
+2. Põhitee on eeltäidetud: /remote.php/dav/files/&lt;kasutajanimi&gt;/
+   Asendage &lt;kasutajanimi&gt; oma tegeliku Nextcloudi kasutajanimega.
+3. Sisestage oma Nextcloudi kasutajanimi ja parool (või rakenduse parool
+   Seaded → Turvalisus → Seadmed ja seansid → Rakenduste paroolid).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud – isehostitud failide sünkroonimine ja jagamine.
+
+1. Sisestage oma ownCloud serveri aadress (nt owncloud.example.com).
+2. Põhitee on eeltäidetud: /remote.php/dav/files/&lt;kasutajanimi&gt;/
+   Asendage &lt;kasutajanimi&gt; oma tegeliku ownCloudi kasutajanimega.
+3. Sisestage oma omaCloudi kasutajanimi ja parool (või rakenduse parool, kui 2FA on lubatud).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud — pilvesalvestus EL ja USA andmekeskustega.
+
+1. Logige sisse aadressil my.pcloud.com → Seaded → Turvalisus → Rakenduste paroolid → Loo.
+   Kopeerige rakenduse parool – seda kuvatakse ainult üks kord.
+2. Sisestage kasutajaks oma pCloudi konto meiliaadress.
+3. Sisestage paroolina rakenduse parool.
+   EL-i andmekeskuse jaoks: ewebdav.pcloud.com kasutatakse automaatselt.
+   USA andmekeskuse jaoks: muutke hostiks webdav.pcloud.com.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>Yandexi ketas WebDAV-i kaudu.
+
+1. Avage id.yandex.com → Turvalisus → Rakenduste paroolid → Looge rakenduse parool WebDAV-i juurdepääsu jaoks.
+   Kopeerige loodud parool - seda näidatakse ainult üks kord.
+2. Sisestage oma Yandexi kasutajanimi.
+3. Sisestage parooliks rakenduse parool (mitte oma Yandexi konto parool).
+   Serveri aadress, HTTPS ja port konfigureeritakse automaatselt.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Varundage/sünkroniseerige oma andmeid Windows-is, Linux-is.
 Importige fotosid telefonist WI-FI kaudu ja palju muud.

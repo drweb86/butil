@@ -967,6 +967,267 @@ Szczegółowy opis znajdziesz pod poniższym linkiem.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Użytkownik nie został określony.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — pamięć obiektowa kompatybilna z S3 firmy Alibaba.
+
+1. W konsoli OSS (https://oss.console.aliyun.com/) utwórz wiadro. Zwróć uwagę na jego region (np. oss-cn-hangzhou).
+2. W konsoli RAM → Użytkownicy → utwórz użytkownika → dołącz AliyunOSSFullAccess → utwórz klucz dostępu.
+   Skopiuj identyfikator AccessKey (= klucz dostępu) i sekret klucza dostępu (= tajny klucz).
+3. Adres URL usługi: https://oss-&lt;REGION&gt;.aliyuncs.com (np. https://oss-cn-hangzhou.aliyuncs.com).
+4. Region: np. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — oryginalna pamięć obiektów Amazon.
+
+1. Otwórz konsolę S3 (https://s3.console.aws.amazon.com/) i utwórz wiadro. Zwróć uwagę na jego region (np. us-east-1).
+2. Otwórz IAM → Użytkownicy → utwórz użytkownika → dołącz politykę AmazonS3FullAccess.
+3. W obszarze Poświadczenia zabezpieczeń utwórz klucz dostępu — skopiuj identyfikator klucza i sekret.
+4. Wypełnij: Wiadro, Klucz dostępu, Tajny klucz i Region.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — pamięć obiektowa kompatybilna z S3 firmy Baidu.
+
+1. W konsoli BOS (https://console.bce.baidu.com/bos/) utwórz wiadro. Zanotuj jego region (np. bj, gz, su).
+2. Przejdź do Bezpieczeństwo → Klucze dostępu — skopiuj swój identyfikator klucza dostępu i tajny klucz dostępu.
+3. Adres URL usługi: https://s3.&lt;REGION&gt;.bcebos.com (np. https://s3.bj.bcebos.com).
+4. Region: np. bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — niedroga pamięć masowa kompatybilna z S3.
+
+1. W Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets utwórz wiadro.
+2. Przejdź do Klucze aplikacji → Dodaj nowy klucz aplikacji i przenieś go do segmentu.
+   Skopiuj keyID (= klucz dostępu) i applicationKey (= tajny klucz).
+3. Adres URL usługi: punkt końcowy Twojego zasobnika pokazany w szczegółach zasobnika, np. https://s3.us-west-004.backblazeb2.com
+4. Region: segment pomiędzy „s3”. i „.backblazeb2.com”, np. us-zachód-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — pamięć masowa zgodna z funkcją Zero-Egress S3.
+
+1. W Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → utwórz wiadro.
+2. Przejdź do R2 → Zarządzaj tokenami API R2 → Utwórz token API z obiektem Odczyt i zapis.
+   Skopiuj identyfikator klucza dostępu i tajny klucz dostępu.
+3. Adres URL usługi: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Twój identyfikator konta jest wyświetlany na stronie przeglądu R2.
+4. Wypełnij: Wiadro, Klucz dostępu, Tajny klucz i Adres URL usługi. Region jest automatycznie ustawiany na „auto”.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Object Storage — pamięć OBS zgodna z S3.
+
+1. W konsoli Cloud.ru (https://cloud.ru/) → Object Storage Service (OBS) → utwórz wiadro.
+2. Przejdź do Moje dane uwierzytelniające → Klucze dostępu → Dodaj klucz dostępu.
+   Skopiuj klucz dostępu i tajny klucz dostępu.
+3. Wypełnij: Wiadro, Klucz dostępu, Tajny klucz i Region (np. ru-moscow-1).
+   Adres URL usługi jest wypełniany automatycznie.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO lub dowolny serwer zgodny z S3.
+
+1. Uruchom serwer MinIO (lub inny kompatybilny z S3).
+2. Utwórz wiadro za pomocą konsoli MinIO lub „mc mb &lt;alias&gt;/&lt;wiadro&gt;”.
+3. Utwórz klucz dostępu w konsoli MinIO → Klucze dostępu (unikaj poświadczeń roota w środowisku produkcyjnym).
+4. Adres URL usługi: punkt końcowy Twojego serwera, np.: http://192.168.1.10:9000 lub https://minio.example.com.
+5. Region: dowolna wartość (np. us-east-1) — lub pozostaw pustą, jeśli serwer jej nie wymusza.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — przechowywanie obiektów zgodne z S3.
+
+1. W Spaces (https://cloud.digitalocean.com/spaces) utwórz Space. Zanotuj jego region (np. nyc3).
+2. Przejdź do API → Spacje Klucze → Wygeneruj nowy klucz. Skopiuj klucz (= klucz dostępu) i sekret.
+3. Adres URL usługi: https://&lt;REGION&gt;.digitaloceanspaces.com (np. https://nyc3.digitaloceanspaces.com).
+4. Region: ten sam krótki kod, np.: nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — za pośrednictwem interfejsu API interoperacyjności S3.
+
+1. W Google Cloud Console (https://console.cloud.google.com/storage) utwórz wiadro.
+2. Przejdź do Cloud Storage → Ustawienia → Interoperacyjność → utwórz klucz HMAC dla konta usługi.
+   Skopiuj klucz dostępu i sekret.
+3. Wypełnij: Wiadro, Klucz dostępu (klucz HMAC), Tajny klucz (tajemnica HMAC).
+   Adres URL usługi i region są ustawiane automatycznie.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — pamięć obiektowa kompatybilna z S3 firmy Huawei.
+
+1. W konsoli OBS (https://console.huaweicloud.com/obs/) utwórz wiadro. Zwróć uwagę na jego region (np. cn-północ-4).
+2. Przejdź do Moje dane uwierzytelniające → Klucze dostępu → Utwórz klucz dostępu.
+   Skopiuj AK (= klucz dostępu) i SK (= tajny klucz).
+3. Adres URL usługi: https://obs.&lt;REGION&gt;.myhuaweicloud.com (np. https://obs.cn-north-4.myhuaweicloud.com).
+4. Region: np. cn-północ-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Obiektowa pamięć masowa Linode (Akamai) — pamięć zgodna z S3.
+
+1. W Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets) utwórz wiadro. Zwróć uwagę na jego klaster.
+2. Przejdź do Magazyn obiektów → Klucze dostępu → Utwórz klucz dostępu o zasięgu obejmującym segment.
+   Skopiuj klucz dostępu i tajny klucz.
+3. Adres URL usługi: https://&lt;CLUSTER&gt;.linodeobjects.com (np. https://us-east-1.linodeobjects.com).
+4. Region: ten sam kod klastra, np. us-wschód-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — pamięć masowa kompatybilna z S3 firmy Qiniu.
+
+1. W portalu Qiniu (https://portal.qiniu.com/kodo/bucket) utwórz wiadro. Zwróć uwagę na jego region.
+2. Przejdź do Personal Center → Zarządzanie kluczami — skopiuj klucz dostępu i klucz tajny.
+3. Adres URL usługi według regionu:
+   Chiny Wschodnie: https://s3-cn-east-1.qiniucs.com
+   Północne Chiny: https://s3-cn-north-1.qiniucs.com
+   Chiny południowe: https://s3-cn-south-1.qiniucs.com
+   Ameryka Północna: https://s3-us-north-1.qiniucs.com
+4. Region: pasujący kod, np.: cn-wschód-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — pamięć masowa zgodna z europejskim standardem S3.
+
+1. W konsoli Scaleway (https://console.scaleway.com/object-storage/buckets) utwórz segment. Zanotuj jego region (np. fr-par).
+2. Przejdź do IAM → Klucze API → Wygeneruj klucz API z uprawnieniami do zapisu w Object Storage.
+   Skopiuj klucz dostępu i tajny klucz.
+3. Adres URL usługi: https://s3.&lt;REGION&gt;.scw.cloud (np. https://s3.fr-par.scw.cloud).
+4. Region: np. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — rosyjska pamięć masowa zgodna z S3.
+
+1. W panelu Selectel (https://my.selectel.ru/) → Cloud Storage → utwórz kontener (= wiadro).
+2. W obszarze Użytkownicy i role utwórz użytkownika usługi z dostępem do pamięci → Klucze S3 → utwórz parę kluczy.
+   Skopiuj klucz dostępu i tajny klucz.
+3. Wypełnij: Wiadro, Klucz dostępu, Tajny klucz.
+   Adres URL usługi jest wypełniany automatycznie.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — pamięć obiektowa kompatybilna z S3 firmy Tencent.
+
+1. W konsoli COS (https://console.cloud.tencent.com/cos) utwórz wiadro. Zanotuj identyfikator aplikacji i region (np. ap-pekin).
+2. W obszarze Zarządzanie dostępem → Klucze API → Utwórz klucz.
+   Skopiuj SecretId (= klucz dostępu) i SecretKey (= tajny klucz).
+3. Adres URL usługi: https://cos.&lt;REGION&gt;.myqcloud.com (np. https://cos.ap-beijing.myqcloud.com).
+4. Format nazwy segmentu: &lt;nazwa&gt;-&lt;AppId&gt; (np. mybucket-1250000000). Region: np. ap-Pekin.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — pamięć masowa kompatybilna z S3 firmy VK Cloud.
+
+1. W portalu VK Cloud (https://msk.cloud.vk.com/) → Cloud Storage → utwórz wiadro.
+2. W ramach swojego konta → Klucze dostępu → utwórz nową parę kluczy.
+   Skopiuj klucz dostępu i tajny klucz.
+3. Wypełnij: Wiadro, Klucz dostępu, Tajny klucz i Region, jeśli jest to wymagane (np. ru-msk).
+   Adres URL usługi jest wypełniany automatycznie.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Warunki korzystania z Volcano Engine (ByteDance) — pamięć masowa kompatybilna z S3.
+
+1. W konsoli Volcano Engine (https://console.volcengine.com/tos) utwórz wiadro. Zwróć uwagę na jego region (np. Cn-Pekin).
+2. Przejdź do IAM → Klucze dostępu → utwórz klucz.
+   Skopiuj identyfikator klucza dostępu i tajny klucz dostępu.
+3. Adres URL usługi: https://tos-s3-&lt;REGION&gt;.volces.com (np. https://tos-s3-cn-beijing.volces.com).
+4. Region: np. cn-Pekin.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi — magazynowanie w gorącej chmurze bez opłat za wyjście.
+
+1. W konsoli Wasabi (https://console.wasabisys.com/) → Wiadra → Utwórz wiadro. Wybierz region.
+2. Przejdź do Klucze dostępu → Utwórz nowy klucz dostępu. Skopiuj klucz dostępu i tajny klucz.
+3. Wypełnij: segment, klucz dostępu, tajny klucz i region (np. us-east-1, eu-central-1).
+   Adres URL usługi jest wypełniany automatycznie.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage — rosyjska pamięć masowa w chmurze zgodna z S3.
+
+1. W konsoli Yandex Cloud (https://console.yandex.cloud/) → Magazyn obiektów → utwórz wiadro.
+2. Przejdź do Konta usług → utwórz je z rolą Storage.editor → utwórz statyczny klucz dostępu.
+   Skopiuj identyfikator klucza (= klucz dostępu) i tajny klucz.
+3. Wypełnij: Wiadro, Klucz dostępu, Tajny klucz.
+   Adres URL usługi i region są ustawiane automatycznie.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box — korporacyjna pamięć masowa w chmurze z obsługą WebDAV.
+
+1. Zaloguj się na app.box.com. Pamiętaj, że Box WebDAV jest dostępny tylko w przypadku planów płatnych.
+2. Jako Użytkownik wprowadź adres e-mail swojego konta Box.
+3. Wpisz hasło do skrzynki jako hasło.
+   Jeśli korzystasz z funkcji SSO, konieczne może być ustawienie osobnego hasła WebDAV w Ustawieniach konta.
+   Adres serwera, HTTPS, port i ścieżka podstawowa są konfigurowane automatycznie.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>Ogólny serwer WebDAV (Nextcloud, ownCloud, Synology DSM, Seafile, Apache itp.)
+
+1. Wprowadź adres serwera, wybierz HTTPS (zalecane) i ustaw port (0 = domyślnie: 80 dla HTTP, 443 dla HTTPS).
+2. Wprowadź ścieżkę podstawową punktu końcowego WebDAV.
+   Przykład następnej chmury: /remote.php/dav/files/&lt;nazwa użytkownika&gt;/Backups
+   Synology DSM: /
+3. Wprowadź swoją nazwę użytkownika i hasło (lub hasło aplikacji, jeśli wymaga tego serwer).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive — niemiecka pamięć masowa w chmurze kładąca duży nacisk na prywatność.
+
+1. Zaloguj się na hidrive.ionos.com → Ustawienia → Aplikacje i usługi połączone → WebDAV.
+   Możesz też uzyskać bezpośredni dostęp do protokołu WebDAV przy użyciu istniejących danych uwierzytelniających.
+2. Wpisz swoją nazwę użytkownika HiDrive jako Użytkownik.
+3. Wpisz swoje hasło HiDrive jako hasło.
+   Adres serwera, HTTPS, port i ścieżka podstawowa są konfigurowane automatycznie.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) — popularna chińska pamięć masowa w chmurze z natywną obsługą WebDAV.
+
+1. Zaloguj się na jianguoyun.com → Informacje o koncie → Bezpieczeństwo → Zarządzanie aplikacjami innych firm → Dodaj aplikację.
+   Skopiuj wygenerowane hasło do aplikacji — wyświetli się tylko raz.
+2. Wpisz swój adres e-mail Jianguoyun jako Użytkownik.
+3. Wpisz wygenerowane hasło aplikacji jako Hasło.
+   Adres serwera, HTTPS, port i ścieżka podstawowa są konfigurowane automatycznie.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr — przyjazna prywatności pamięć masowa w chmurze z siedzibą w Słowenii (UE).
+
+1. Przejdź do app.koofr.eu → Preferencje → Hasło → Hasła do aplikacji → Dodaj hasło.
+2. Wpisz adres e-mail swojego konta Koofr jako Użytkownik.
+3. Wpisz wygenerowane hasło aplikacji jako Hasło.
+   Adres serwera, HTTPS, port i ścieżka podstawowa są konfigurowane automatycznie.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Chmura Mail.ru przez WebDAV.
+
+1. Przejdź do account.mail.ru → Bezpieczeństwo → Hasła do aplikacji → Utwórz hasło do aplikacji.
+   Wybierz typ „Poczta” lub „Wszystkie”, a następnie skopiuj wygenerowane hasło.
+2. Wpisz swój adres e-mail Mail.ru jako Użytkownik.
+3. Wpisz hasło aplikacji jako Hasło.
+   Adres serwera, HTTPS, port i ścieżka podstawowa są konfigurowane automatycznie.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud — popularna synchronizacja i udostępnianie plików na własnym serwerze.
+
+1. Wpisz adres swojego serwera Nextcloud (np. nextcloud.example.com).
+2. Ścieżka podstawowa jest wstępnie wypełniona: /remote.php/dav/files/&lt;nazwa użytkownika&gt;/
+   Zastąp &lt;username&gt; swoją rzeczywistą nazwą użytkownika Nextcloud.
+3. Wprowadź swoją nazwę użytkownika i hasło Nextcloud (lub hasło do aplikacji z
+   Ustawienia → Bezpieczeństwo → Urządzenia i sesje → Hasła aplikacji).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud — synchronizacja i udostępnianie plików na własnym serwerze.
+
+1. Wpisz adres swojego serwera ownCloud (np. owncloud.example.com).
+2. Ścieżka podstawowa jest wstępnie wypełniona: /remote.php/dav/files/&lt;nazwa użytkownika&gt;/
+   Zastąp &lt;username&gt; swoją rzeczywistą nazwą użytkownika ownCloud.
+3. Wprowadź nazwę użytkownika i hasło do własnej usługi Cloud (lub hasło do aplikacji, jeśli włączona jest funkcja 2FA).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud — przechowywanie w chmurze z centrami danych w UE i USA.
+
+1. Zaloguj się na my.pcloud.com → Ustawienia → Bezpieczeństwo → Hasła aplikacji → Utwórz.
+   Skopiuj hasło do aplikacji — wyświetli się tylko raz.
+2. Wpisz adres e-mail swojego konta pCloud jako Użytkownik.
+3. Wpisz hasło aplikacji jako Hasło.
+   W przypadku centrum danych w UE: ewebdav.pcloud.com jest używana automatycznie.
+   W przypadku centrum danych w USA: zmień hosta na webdav.pcloud.com.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>Dysk Yandex przez WebDAV.
+
+1. Przejdź do id.yandex.com → Bezpieczeństwo → Hasła aplikacji → Utwórz hasło aplikacji dla „Dostępu WebDAV”.
+   Skopiuj wygenerowane hasło — wyświetli się tylko raz.
+2. Wpisz swój login Yandex jako Użytkownik.
+3. Wpisz hasło do aplikacji (nie hasło do konta Yandex) jako hasło.
+   Adres serwera, HTTPS i port są konfigurowane automatycznie.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Twórz kopie zapasowe/synchronizuj dane w systemach Windows, Linux.
 Importuj zdjęcia z telefonu przez WI-FI i wiele więcej.

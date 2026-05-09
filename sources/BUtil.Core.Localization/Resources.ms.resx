@@ -967,6 +967,267 @@ Lihat penerangan terperinci di pautan berikut.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Pengguna tidak dinyatakan.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — Storan objek serasi S3 daripada Alibaba.
+
+1. Dalam OSS Console (https://oss.console.aliyun.com/), buat baldi. Perhatikan kawasannya (cth. oss-cn-hangzhou).
+2. Dalam Konsol RAM → Pengguna → buat pengguna → lampirkan AliyunOSSFullAccess → buat AccessKey.
+   Salin ID AccessKey (= Kunci Akses) dan Rahsia AccessKey (= Kunci Rahsia).
+3. URL Perkhidmatan: https://oss-&lt;REGION&gt;.aliyuncs.com (cth. https://oss-cn-hangzhou.aliyuncs.com).
+4. Wilayah: cth. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — Storan objek asal Amazon.
+
+1. Buka S3 Console (https://s3.console.aws.amazon.com/) dan buat baldi. Perhatikan kawasannya (cth. us-east-1).
+2. Buka IAM → Pengguna → buat pengguna → lampirkan dasar AmazonS3FullAccess.
+3. Di bawah Bukti kelayakan Keselamatan, buat kunci Akses — salin ID Kunci dan Rahsia.
+4. Isikan: Baldi, Kunci Akses, Kunci Rahsia dan Wilayah.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — Storan objek serasi S3 daripada Baidu.
+
+1. Dalam BOS Console (https://console.bce.baidu.com/bos/), buat baldi. Perhatikan kawasannya (cth. bj, gz, su).
+2. Pergi ke Keselamatan → Kekunci Akses — salin ID Kunci Akses dan Kunci Akses Rahsia anda.
+3. URL Perkhidmatan: https://s3.&lt;REGION&gt;.bcebos.com (cth. https://s3.bj.bcebos.com).
+4. Wilayah: cth. bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — storan serasi S3 mampu milik.
+
+1. Dalam Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Baldi, buat baldi.
+2. Pergi ke Kekunci Apl → Tambah Kunci Aplikasi Baharu, skopkannya ke baldi.
+   Salin ID kunci (= Kunci Akses) dan Kunci Aplikasi (= Kunci Rahsia).
+3. URL Perkhidmatan: titik akhir baldi anda ditunjukkan dalam butiran baldi, mis. https://s3.us-west-004.backblazeb2.com
+4. Wilayah: segmen antara &apos;s3.&apos; dan &apos;.backblazeb2.com&apos;, mis. kami-barat-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — storan serasi S3 keluar sifar.
+
+1. Dalam Papan Pemuka Cloudflare (https://dash.cloudflare.com/) → R2 → buat baldi.
+2. Pergi ke R2 → Urus Token API R2 → Cipta Token API dengan Objek Baca &amp; Tulis.
+   Salin ID Kunci Akses dan Kunci Akses Rahsia.
+3. URL Perkhidmatan: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   ID Akaun anda ditunjukkan pada halaman gambaran keseluruhan R2.
+4. Isikan: Baldi, Kunci Akses, Kunci Rahsia dan URL Perkhidmatan. Rantau ditetapkan kepada &apos;auto&apos; secara automatik.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Storan Objek — Storan OBS serasi S3.
+
+1. Dalam Cloud.ru Console (https://cloud.ru/) → Object Storage Service (OBS) → buat baldi.
+2. Pergi ke Kredensial Saya → Kekunci Akses → Tambah Kekunci Akses.
+   Salin Kunci Akses dan Kunci Akses Rahsia.
+3. Isikan: Baldi, Kunci Akses, Kunci Rahsia dan Wilayah (cth. ru-moscow-1).
+   URL Perkhidmatan diisi secara automatik.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MiniIO atau mana-mana pelayan serasi S3.
+
+1. Mulakan pelayan MiniIO anda (atau serasi S3 lain).
+2. Buat baldi melalui MiniIO Console atau &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;.
+3. Cipta kunci akses dalam MiniIO Console → Kekunci Akses (elakkan bukti kelayakan akar dalam pengeluaran).
+4. URL Perkhidmatan: titik akhir pelayan anda, mis. http://192.168.1.10:9000 atau https://minio.example.com.
+5. Rantau: sebarang nilai (cth. us-east-1) — atau biarkan kosong jika pelayan tidak menguatkuasakannya.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — storan objek serasi S3.
+
+1. Dalam Spaces (https://cloud.digitalocean.com/spaces), cipta Ruang. Perhatikan kawasannya (cth. nyc3).
+2. Pergi ke API → Spaces Keys → Generate New Key. Salin Kekunci (= Kunci Akses) dan Rahsia.
+3. URL Perkhidmatan: https://&lt;REGION&gt;.digitaloceanspaces.com (cth. https://nyc3.digitaloceanspaces.com).
+4. Wilayah: kod pendek yang sama, cth. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Storan Awan Google — melalui API kebolehoperasian S3.
+
+1. Dalam Google Cloud Console (https://console.cloud.google.com/storage), buat baldi.
+2. Pergi ke Storan Awan → Tetapan → Saling kendali → buat kunci HMAC untuk akaun perkhidmatan.
+   Salin Kunci Akses dan Rahsia.
+3. Isikan: Baldi, Kunci Akses (kunci HMAC), Kunci Rahsia (rahsia HMAC).
+   URL dan wilayah perkhidmatan ditetapkan secara automatik.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — Storan objek serasi S3 daripada Huawei.
+
+1. Dalam OBS Console (https://console.huaweicloud.com/obs/), buat baldi. Perhatikan kawasannya (cth. cn-north-4).
+2. Pergi ke Kredensial Saya → Kekunci Akses → Cipta Kunci Akses.
+   Salin AK (= Kunci Akses) dan SK (= Kunci Rahsia).
+3. URL Perkhidmatan: https://obs.&lt;REGION&gt;.myhuaweicloud.com (cth. https://obs.cn-north-4.myhuaweicloud.com).
+4. Wilayah: cth. cn-utara-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Penyimpanan Objek Linode (Akamai) — Storan serasi S3.
+
+1. Dalam Pengurus Awan Linode (https://cloud.linode.com/object-storage/buckets), buat baldi. Perhatikan kelompoknya.
+2. Pergi ke Penyimpanan Objek → Kekunci Akses → Cipta Kunci Akses berskop ke baldi.
+   Salin Kunci Akses dan Kunci Rahsia.
+3. URL Perkhidmatan: https://&lt;CLUSTER&gt;.linodeobjects.com (cth. https://us-east-1.linodeobjects.com).
+4. Rantau: kod kelompok yang sama, mis. kami-timur-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — Storan serasi S3 daripada Qiniu.
+
+1. Dalam Portal Qiniu (https://portal.qiniu.com/kodo/bucket), buat baldi. Perhatikan kawasannya.
+2. Pergi ke Pusat Peribadi → Pengurusan Kunci — salin AccessKey dan SecretKey anda.
+3. URL Perkhidmatan mengikut wilayah:
+   China Timur: https://s3-cn-east-1.qiniucs.com
+   China Utara: https://s3-cn-north-1.qiniucs.com
+   China Selatan: https://s3-cn-south-1.qiniucs.com
+   Amerika Utara: https://s3-us-north-1.qiniucs.com
+4. Rantau: kod yang sepadan, cth. cn-timur-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Storan Objek Scaleway — Storan serasi Eropah S3.
+
+1. Dalam Scaleway Console (https://console.scaleway.com/object-storage/buckets), buat baldi. Perhatikan kawasannya (cth. fr-par).
+2. Pergi ke IAM → Kunci API → Jana Kunci API dengan kebenaran menulis Storan Objek.
+   Salin Kunci Akses dan Kunci Rahsia.
+3. URL Perkhidmatan: https://s3.&lt;REGION&gt;.scw.cloud (cth. https://s3.fr-par.scw.cloud).
+4. Wilayah: cth. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Storan Objek Selectel — Storan Rusia yang serasi dengan S3.
+
+1. Dalam Panel Pilih (https://my.selectel.ru/) → Cloud Storage → buat bekas (= baldi).
+2. Di bawah Pengguna &amp; Peranan, cipta pengguna perkhidmatan dengan akses storan → Kekunci S3 → buat pasangan kunci.
+   Salin Kunci Akses dan Kunci Rahsia.
+3. Isikan: Baldi, Kunci Akses, Kunci Rahsia.
+   URL Perkhidmatan diisi secara automatik.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — Storan objek serasi S3 daripada Tencent.
+
+1. Dalam COS Console (https://console.cloud.tencent.com/cos), buat baldi. Perhatikan AppId dan Wilayah (cth. ap-beijing).
+2. Dalam Pengurusan Akses → Kunci API → Buat Kunci.
+   Salin SecretId (= Kunci Akses) dan SecretKey (= Kunci Rahsia).
+3. URL Perkhidmatan: https://cos.&lt;REGION&gt;.myqcloud.com (cth. https://cos.ap-beijing.myqcloud.com).
+4. Format nama baldi: &lt;nama&gt;-&lt;AppId&gt; (cth. mybucket-1250000000). Wilayah: cth. ap-beijing.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>Storan Objek Awan VK — Storan serasi S3 daripada Awan VK.
+
+1. Dalam Portal Awan VK (https://msk.cloud.vk.com/) → Storan Awan → buat baldi.
+2. Di bawah akaun anda → Kekunci Akses → buat pasangan kunci baharu.
+   Salin Kunci Akses dan Kunci Rahsia.
+3. Isikan: Baldi, Kunci Akses, Kunci Rahsia dan Wilayah jika diperlukan (cth. ru-msk).
+   URL Perkhidmatan diisi secara automatik.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — Storan serasi S3.
+
+1. Dalam Volcano Engine Console (https://console.volcengine.com/tos), buat baldi. Perhatikan kawasannya (cth. cn-beijing).
+2. Pergi ke IAM → Kekunci Akses → buat kunci.
+   Salin ID Kunci Akses dan Kunci Akses Rahsia.
+3. URL Perkhidmatan: https://tos-s3-&lt;REGION&gt;.volces.com (cth. https://tos-s3-cn-beijing.volces.com).
+4. Wilayah: cth. cn-beijing.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi — storan awan panas tanpa bayaran keluar.
+
+1. Dalam Wasabi Console (https://console.wasabisys.com/) → Baldi → Cipta Baldi. Pilih wilayah.
+2. Pergi ke Kekunci Akses → Cipta Kunci Akses Baharu. Salin Kunci Akses dan Kunci Rahsia.
+3. Isikan: Baldi, Kunci Akses, Kunci Rahsia dan Wilayah (cth. us-east-1, eu-central-1).
+   URL Perkhidmatan diisi secara automatik.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Penyimpanan Objek Yandex — storan awan Rusia yang serasi dengan S3.
+
+1. Dalam Konsol Awan Yandex (https://console.yandex.cloud/) → Storan Objek → buat baldi.
+2. Pergi ke Akaun Perkhidmatan → buat satu dengan peranan storan.editor → buat kunci akses Statik.
+   Salin ID Kunci (= Kunci Akses) dan kunci Rahsia.
+3. Isikan: Baldi, Kunci Akses, Kunci Rahsia.
+   URL dan wilayah perkhidmatan ditetapkan secara automatik.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box — storan awan perusahaan dengan sokongan WebDAV.
+
+1. Log masuk di app.box.com. Ambil perhatian bahawa Box WebDAV hanya tersedia untuk pelan berbayar.
+2. Masukkan e-mel akaun Box anda sebagai Pengguna.
+3. Masukkan kata laluan Kotak anda sebagai Kata Laluan.
+   Jika anda menggunakan SSO, anda mungkin perlu menetapkan kata laluan WebDAV yang berasingan dalam Tetapan Akaun.
+   Alamat pelayan, HTTPS, port dan laluan asas dikonfigurasikan secara automatik.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>Pelayan WebDAV generik (Nextcloud, ownCloud, Synology DSM, Seafile, Apache, dll.)
+
+1. Masukkan Alamat pelayan, pilih HTTPS (disyorkan), dan tetapkan port (0 = lalai: 80 untuk HTTP, 443 untuk HTTPS).
+2. Masukkan laluan asas untuk titik akhir WebDAV.
+   Contoh nextcloud: /remote.php/dav/files/&lt;nama pengguna&gt;/Backups
+   Synology DSM: /
+3. Masukkan nama pengguna dan kata laluan anda (atau kata laluan khusus apl jika pelayan anda memerlukannya).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive — Storan awan Jerman dengan fokus privasi yang kukuh.
+
+1. Log masuk di hidrive.ionos.com → Tetapan → Apl &amp; perkhidmatan bersambung → WebDAV.
+   Atau akses WebDAV dengan kelayakan sedia ada anda secara langsung.
+2. Masukkan nama pengguna HiDrive anda sebagai Pengguna.
+3. Masukkan kata laluan HiDrive anda sebagai Kata Laluan.
+   Alamat pelayan, HTTPS, port dan laluan asas dikonfigurasikan secara automatik.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) — storan awan Cina yang popular dengan sokongan WebDAV asli.
+
+1. Log masuk di jianguoyun.com → Maklumat Akaun → Keselamatan → Pengurusan Apl Pihak Ketiga → Tambah Aplikasi.
+   Salin kata laluan apl yang dijana — ia ditunjukkan sekali sahaja.
+2. Masukkan alamat e-mel Jianguoyun anda sebagai Pengguna.
+3. Masukkan kata laluan apl yang dijana sebagai Kata Laluan.
+   Alamat pelayan, HTTPS, port dan laluan asas dikonfigurasikan secara automatik.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr — storan awan mesra privasi yang berpangkalan di Slovenia (EU).
+
+1. Pergi ke app.koofr.eu → Keutamaan → Kata laluan → Kata laluan apl → Tambah kata laluan.
+2. Masukkan e-mel akaun Koofr anda sebagai Pengguna.
+3. Masukkan kata laluan apl yang dijana sebagai Kata Laluan.
+   Alamat pelayan, HTTPS, port dan laluan asas dikonfigurasikan secara automatik.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Mail.ru Cloud melalui WebDAV.
+
+1. Pergi ke account.mail.ru → Keselamatan → Kata laluan apl → Buat kata laluan apl.
+   Pilih &apos;Mel&apos; atau &apos;Semua&apos; sebagai jenis, kemudian salin kata laluan yang dijana.
+2. Masukkan alamat e-mel Mail.ru anda sebagai Pengguna.
+3. Masukkan kata laluan apl sebagai Kata Laluan.
+   Alamat pelayan, HTTPS, port dan laluan asas dikonfigurasikan secara automatik.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud — penyegerakan dan perkongsian fail hos sendiri yang popular.
+
+1. Masukkan alamat pelayan Nextcloud anda (cth. nextcloud.example.com).
+2. Laluan asas telah diisi terlebih dahulu: /remote.php/dav/files/&lt;username&gt;/
+   Gantikan &lt;nama pengguna&gt; dengan nama pengguna Nextcloud anda yang sebenar.
+3. Masukkan nama pengguna dan kata laluan Nextcloud anda (atau kata laluan aplikasi daripada
+   Tetapan → Keselamatan → Peranti &amp; sesi → Kata laluan apl).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud — penyegerakan dan perkongsian fail yang dihoskan sendiri.
+
+1. Masukkan alamat pelayan ownCloud anda (cth. owncloud.example.com).
+2. Laluan asas telah diisi terlebih dahulu: /remote.php/dav/files/&lt;username&gt;/
+   Gantikan &lt;username&gt; dengan nama pengguna ownCloud anda yang sebenar.
+3. Masukkan nama pengguna dan kata laluan Cloud anda sendiri (atau kata laluan aplikasi jika 2FA didayakan).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud — storan awan dengan pusat data EU dan AS.
+
+1. Log masuk di my.pcloud.com → Tetapan → Keselamatan → Kata Laluan Apl → Cipta.
+   Salin kata laluan apl — ia ditunjukkan sekali sahaja.
+2. Masukkan e-mel akaun pCloud anda sebagai Pengguna.
+3. Masukkan kata laluan apl sebagai Kata Laluan.
+   Untuk pusat data EU: ewebdav.pcloud.com digunakan secara automatik.
+   Untuk pusat data AS: tukar hos kepada webdav.pcloud.com.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>Cakera Yandex melalui WebDAV.
+
+1. Pergi ke id.yandex.com → Keselamatan → Kata laluan apl → Buat kata laluan apl untuk &apos;akses WebDAV&apos;.
+   Salin kata laluan yang dijana — ia ditunjukkan sekali sahaja.
+2. Masukkan log masuk Yandex anda sebagai Pengguna.
+3. Masukkan kata laluan apl (bukan kata laluan akaun Yandex anda) sebagai Kata Laluan.
+   Alamat pelayan, HTTPS dan port dikonfigurasikan secara automatik.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Sandaran/segerakkan data anda pada Windows, Linux.
 Import foto dari telefon melalui WI-FI dan banyak lagi.

@@ -968,6 +968,267 @@ Batafsil tavsifni quyidagi havoladan ko'ring.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Foydalanuvchi ko'rsatilmagan.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS - Alibaba&apos;dan S3-mos ob&apos;ektlarni saqlash.
+
+1. OSS konsolida (https://oss.console.aliyun.com/) chelak yarating. Uning hududiga e&apos;tibor bering (masalan, oss-cn-hangzhou).
+2. RAM konsolida → Foydalanuvchilar → foydalanuvchi yarating → AliyunOSSFullAccess ilovasini biriktiring → AccessKey yarating.
+   AccessKey ID (= Kirish kaliti) va AccessKey Secret (= Maxfiy kalit)dan nusxa oling.
+3. Xizmat URL manzili: https://oss-&lt;REGION&gt;.aliyuncs.com (masalan, https://oss-cn-hangzhou.aliyuncs.com).
+4. Hudud: masalan. oss-cn-xanchjou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 - Amazonning asl ob&apos;ekt ombori.
+
+1. S3 konsolini oching (https://s3.console.aws.amazon.com/) va chelak yarating. Uning hududiga e&apos;tibor bering (masalan, us-sharq-1).
+2. IAM ni oching → Foydalanuvchilar → foydalanuvchi yarating → AmazonS3FullAccess siyosatini biriktiring.
+3. Xavfsizlik hisob ma&apos;lumotlari ostida Kirish kalitini yarating — Kalit ID va Sirni nusxalash.
+4. To&apos;ldiring: Paqir, kirish kaliti, maxfiy kalit va mintaqa.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS - Baidu&apos;dan S3-mos ob&apos;ektlarni saqlash.
+
+1. BOS konsolida (https://console.bce.baidu.com/bos/) chelak yarating. Uning hududiga e&apos;tibor bering (masalan, bj, gz, su).
+2. Xavfsizlik → Kirish kalitlari bo&apos;limiga o&apos;ting — Kirish kaliti identifikatori va maxfiy kirish kalitini nusxalang.
+3. Xizmat URL manzili: https://s3.&lt;REGION&gt;.bcebos.com (masalan, https://s3.bj.bcebos.com).
+4. Hudud: masalan. bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 - arzon S3-mos saqlash.
+
+1. Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets-da chelak yarating.
+2. Ilova tugmachalari → Yangi dastur kalitini qo‘shish bo‘limiga o‘ting, uni chelakka o‘tkazing.
+   KeyID (= Kirish kaliti) va applicationKey (= Maxfiy kalit) dan nusxa oling.
+3. Xizmat URL manzili: chelakingizning oxirgi nuqtasi chelak tafsilotlarida ko&apos;rsatilgan, masalan. https://s3.us-west-004.backblazeb2.com
+4. Hudud: &apos;s3&apos; orasidagi segment. va &apos;.backblazeb2.com&apos;, masalan. biz-g&apos;arbiy-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 - nol chiqishsiz S3-mos saqlash.
+
+1. Cloudflare asboblar panelida (https://dash.cloudflare.com/) → R2 → chelak yarating.
+2. R2 → R2 API tokenlarini boshqarish → Ob&apos;ektni o&apos;qish va yozish bilan API tokenini yaratishga o&apos;ting.
+   Kirish kaliti identifikatori va maxfiy kirish kalitidan nusxa oling.
+3. Xizmat URL manzili: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Hisobingiz identifikatori R2 umumiy ko&apos;rinish sahifasida ko&apos;rsatilgan.
+4. To&apos;ldiring: Paqir, Kirish kaliti, Maxfiy kalit va Xizmat URL manzili. Hudud avtomatik ravishda &quot;avtomatik&quot; ga o&apos;rnatiladi.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Ob&apos;ektni saqlash - S3-mos OBS xotirasi.
+
+1. Cloud.ru konsolida (https://cloud.ru/) → Ob&apos;ektni saqlash xizmati (OBS) → chelak yarating.
+2. Mening hisob ma’lumotlarim → Kirish kalitlari → Kirish kalitini qo‘shish bo‘limiga o‘ting.
+   Kirish kaliti va maxfiy kirish kalitidan nusxa oling.
+3. To&apos;ldiring: Paqir, kirish kaliti, maxfiy kalit va mintaqa (masalan, ru-moscow-1).
+   Xizmat URL manzili avtomatik ravishda to&apos;ldiriladi.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MiniIO yoki har qanday S3-mos server.
+
+1. MiniIO (yoki boshqa S3-mos keladigan) serveringizni ishga tushiring.
+2. MiniIO Console yoki &apos;mc mb &lt;taxallus&gt;/&lt;paqir&gt;&apos; orqali chelak yarating.
+3. MiniIO Console → Kirish kalitlarida kirish kalitini yarating (ishlab chiqarishda ildiz hisob ma&apos;lumotlaridan saqlaning).
+4. Xizmat URL manzili: serveringizning oxirgi nuqtasi, masalan. http://192.168.1.10:9000 yoki https://minio.example.com.
+5. Hudud: har qanday qiymat (masalan, us-east-1) — yoki server buni amalga oshirmasa, boʻsh qoldiring.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces - S3-mos ob&apos;ektlarni saqlash.
+
+1. Bo&apos;shliqlarda (https://cloud.digitalocean.com/spaces) bo&apos;sh joy yarating. Uning hududiga e&apos;tibor bering (masalan, nyc3).
+2. API → Spaces Keys → Generate New Key ga o‘ting. Kalit (= Kirish kaliti) va sirni nusxalash.
+3. Xizmat URL manzili: https://&lt;REGION&gt;.digitaloceanspaces.com (masalan, https://nyc3.digitaloceanspaces.com).
+4. Hudud: bir xil qisqa kod, masalan. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — S3 oʻzaro ishlash API orqali.
+
+1. Google Cloud Console (https://console.cloud.google.com/storage) da chelak yarating.
+2. Bulutli saqlash → Sozlamalar → O‘zaro ishlash → xizmat hisobi uchun HMAC kalitini yarating.
+   Kirish kaliti va sirini nusxalash.
+3. To&apos;ldiring: Paqir, Kirish kaliti (HMAC kaliti), Maxfiy kalit (HMAC maxfiy).
+   Xizmat URL manzili va hududi avtomatik ravishda o&apos;rnatiladi.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — Huawei’dan S3-mos ob’yekt xotirasi.
+
+1. OBS konsolida (https://console.huaweicloud.com/obs/) chelak yarating. Uning hududiga e&apos;tibor bering (masalan, cn-shimoliy-4).
+2. Mening hisob ma’lumotlarim → Kirish kalitlari → Kirish kalitini yaratish bo‘limiga o‘ting.
+   AK (= Kirish kaliti) va SK (= Maxfiy kalit) dan nusxa oling.
+3. Xizmat URL manzili: https://obs.&lt;REGION&gt;.myhuaweicloud.com (masalan, https://obs.cn-north-4.myhuaweicloud.com).
+4. Hudud: masalan. cn-shimoliy-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Ob&apos;ektni saqlash - S3-mos keladigan saqlash.
+
+1. Linode Cloud Manager-da (https://cloud.linode.com/object-storage/buckets) chelak yarating. Uning klasteriga e&apos;tibor bering.
+2. Ob&apos;ektlarni saqlash → Kirish kalitlari → Chelakka tegishli kirish kalitini yaratishga o&apos;ting.
+   Kirish kaliti va maxfiy kalitdan nusxa oling.
+3. Xizmat URL manzili: https://&lt;CLUSTER&gt;.linodeobjects.com (masalan, https://us-east-1.linodeobjects.com).
+4. Hudud: bir xil klaster kodi, masalan. biz-sharq-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo - Qiniu&apos;dan S3-mos saqlash.
+
+1. Qiniu Portalida (https://portal.qiniu.com/kodo/bucket) chelak yarating. Uning hududiga e&apos;tibor bering.
+2. Shaxsiy markaz → Kalitlarni boshqarish bo‘limiga o‘ting — AccessKey va SecretKey-dan nusxa oling.
+3. Mintaqalar boʻyicha xizmat URL manzili:
+   Sharqiy Xitoy: https://s3-cn-east-1.qiniucs.com
+   Shimoliy Xitoy: https://s3-cn-north-1.qiniucs.com
+   Janubiy Xitoy: https://s3-cn-south-1.qiniucs.com
+   Shimoliy Amerika: https://s3-us-north-1.qiniucs.com
+4. Hudud: mos keladigan kod, masalan. cn-sharq-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — Yevropa S3-mos keladigan xotira.
+
+1. Scaleway Console (https://console.scaleway.com/object-storage/buckets) da chelak yarating. Uning hududiga e&apos;tibor bering (masalan, fr-par).
+2. IAM → API kalitlari → Object Storage yozish ruxsatlari bilan API kalitini yaratish ga o‘ting.
+   Kirish kaliti va maxfiy kalitdan nusxa oling.
+3. Xizmat URL manzili: https://s3.&lt;REGION&gt;.scw.cloud (masalan, https://s3.fr-par.scw.cloud).
+4. Hudud: masalan. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — S3-mos ruscha xotira.
+
+1. Selectel Panelda (https://my.selectel.ru/) → Cloud Storage → konteyner yarating (= chelak).
+2. “Foydalanuvchilar va rollar” ostida saqlashga ruxsati bo‘lgan xizmat foydalanuvchisini yarating → S3 kalitlari → kalitlar juftligini yarating.
+   Kirish kaliti va maxfiy kalitdan nusxa oling.
+3. To‘ldiring: Paqir, Kirish kaliti, Maxfiy kalit.
+   Xizmat URL manzili avtomatik ravishda to&apos;ldiriladi.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS - Tencent&apos;dan S3-mos ob&apos;ektlarni saqlash.
+
+1. COS konsolida (https://console.cloud.tencent.com/cos) chelak yarating. AppId va mintaqaga e&apos;tibor bering (masalan, ap-beijing).
+2. Kirish boshqaruvi → API kalitlari → Kalit yaratishda.
+   SecretId (= Kirish kaliti) va SecretKey (= Maxfiy kalit) dan nusxa oling.
+3. Xizmat URL manzili: https://cos.&lt;REGION&gt;.myqcloud.com (masalan, https://cos.ap-beijing.myqcloud.com).
+4. Paqir nomi formati: &lt;name&gt;-&lt;AppId&gt; (masalan, mybucket-1250000000). Mintaqa: masalan. ap-pekin.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — VK Cloud-dan S3-mos keladigan saqlash.
+
+1. VK Cloud Portalda (https://msk.cloud.vk.com/) → Cloud Storage → chelak yarating.
+2. Hisob qaydnomangiz ostida → Kirish kalitlari → yangi kalitlar juftligini yarating.
+   Kirish kaliti va maxfiy kalitdan nusxa oling.
+3. To&apos;ldiring: Paqir, Kirish kaliti, Maxfiy kalit va agar kerak bo&apos;lsa, mintaqa (masalan, ru-msk).
+   Xizmat URL manzili avtomatik ravishda to&apos;ldiriladi.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) - S3-mos saqlash.
+
+1. Volcano Engine konsolida (https://console.volcengine.com/tos) chelak yarating. Uning mintaqasiga e&apos;tibor bering (masalan, cn-beijing).
+2. IAM → Kirish kalitlari → kalit yaratish ga o‘ting.
+   Kirish kaliti identifikatori va maxfiy kirish kalitidan nusxa oling.
+3. Xizmat URL manzili: https://tos-s3-&lt;REGION&gt;.volces.com (masalan, https://tos-s3-cn-beijing.volces.com).
+4. Hudud: masalan. cn-pekin.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Vasabi - chiqish to&apos;lovlarisiz issiq bulutli saqlash.
+
+1. Wasabi konsolida (https://console.wasabisys.com/) → Paqirlar → Paqir yaratish. Mintaqani tanlang.
+2. Kirish kalitlari → Yangi kirish kalitini yaratish bo‘limiga o‘ting. Kirish kaliti va maxfiy kalitdan nusxa oling.
+3. To‘ldiring: Paqir, kirish kaliti, maxfiy kalit va mintaqa (masalan, us-east-1, eu-central-1).
+   Xizmat URL manzili avtomatik ravishda to&apos;ldiriladi.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage - S3-mos rus bulutli xotirasi.
+
+1. Yandex Cloud Console&apos;da (https://console.yandex.cloud/) → Ob&apos;ektni saqlash → chelak yarating.
+2. Xizmat qaydnomalariga o‘ting → storage.editor roli bilan hisob yaratish → Statik kirish kalitini yarating.
+   Kalit identifikatorini (= Kirish kaliti) va maxfiy kalitdan nusxa oling.
+3. To‘ldiring: Paqir, Kirish kaliti, Maxfiy kalit.
+   Xizmat URL manzili va hududi avtomatik ravishda o&apos;rnatiladi.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box - WebDAV qo&apos;llab-quvvatlashi bilan korporativ bulutli saqlash.
+
+1. app.box.com saytiga kiring. Box WebDAV faqat pullik rejalar uchun mavjud ekanligini unutmang.
+2. Foydalanuvchi sifatida Box hisob qaydnomangizni kiriting.
+3. Parol sifatida Box parolingizni kiriting.
+   Agar siz SSO dan foydalansangiz, Hisob sozlamalarida alohida WebDAV parolini oʻrnatishingiz kerak boʻlishi mumkin.
+   Server manzili, HTTPS, port va asosiy yo&apos;l avtomatik ravishda sozlanadi.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>Umumiy WebDAV serveri (Nextcloud, ownCloud, Synology DSM, Seafile, Apache va boshqalar)
+
+1. Server manzilini kiriting, HTTPS ni tanlang (tavsiya etiladi) va portni o&apos;rnating (0 = standart: HTTP uchun 80, HTTPS uchun 443).
+2. WebDAV so&apos;nggi nuqtasi uchun asosiy yo&apos;lni kiriting.
+   Keyingi bulut misoli: /remote.php/dav/files/&lt;username&gt;/Backups
+   Synology DSM: /
+3. Foydalanuvchi nomingiz va parolingizni kiriting (yoki serveringiz talab qilsa, ilova uchun maxsus parol).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive - kuchli maxfiylikka qaratilgan nemis bulutli xotirasi.
+
+1. Hidrive.ionos.com → Sozlamalar → Ilovalar va ulangan xizmatlar → WebDAV sahifasiga kiring.
+   Yoki to‘g‘ridan-to‘g‘ri mavjud hisob ma’lumotlaringiz bilan WebDAV’ga kiring.
+2. Foydalanuvchi sifatida HiDrive foydalanuvchi nomingizni kiriting.
+3. Parol sifatida HiDrive parolingizni kiriting.
+   Server manzili, HTTPS, port va asosiy yo&apos;l avtomatik ravishda sozlanadi.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (kànghuoyun) — mahalliy WebDAV-ni qoʻllab-quvvatlaydigan mashhur Xitoy bulutli xotirasi.
+
+1. Jianguoyun.com saytiga kiring → Hisob ma’lumotlari → Xavfsizlik → Uchinchi tomon ilovalarini boshqarish → Ilova qo‘shish.
+   Yaratilgan ilova parolidan nusxa oling - u faqat bir marta ko&apos;rsatiladi.
+2. Jianguoyun elektron pochta manzilingizni Foydalanuvchi sifatida kiriting.
+3. Yaratilgan ilova parolini Parol sifatida kiriting.
+   Server manzili, HTTPS, port va asosiy yo&apos;l avtomatik ravishda sozlanadi.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr - Sloveniyada (Yevropa Ittifoqi) joylashgan maxfiylik uchun qulay bulutli saqlash.
+
+1. app.koofr.eu → Parametrlar → Parol → Ilova parollari → Parol qo‘shish ga o‘ting.
+2. Foydalanuvchi sifatida Koofr hisob qaydnomangiz elektron pochta manzilini kiriting.
+3. Yaratilgan ilova parolini Parol sifatida kiriting.
+   Server manzili, HTTPS, port va asosiy yo&apos;l avtomatik ravishda sozlanadi.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>WebDAV orqali Mail.ru Cloud.
+
+1. account.mail.ru → Xavfsizlik → Ilova parollari → Ilova parolini yaratish ga o‘ting.
+   Tur sifatida &quot;Pochta&quot; yoki &quot;Hammasi&quot; ni tanlang, so&apos;ngra yaratilgan parolni nusxalang.
+2. Mail.ru elektron pochta manzilingizni Foydalanuvchi sifatida kiriting.
+3. Parol sifatida ilova parolini kiriting.
+   Server manzili, HTTPS, port va asosiy yo&apos;l avtomatik ravishda sozlanadi.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud - mashhur o&apos;z-o&apos;zidan joylashtirilgan fayllarni sinxronlashtirish va almashish.
+
+1. Nextcloud server manzilingizni kiriting (masalan, nextcloud.example.com).
+2. Asosiy yo&apos;l oldindan to&apos;ldirilgan: /remote.php/dav/files/&lt;username&gt;/
+   &lt;username&gt; ni haqiqiy Nextcloud foydalanuvchi nomingiz bilan almashtiring.
+3. Nextcloud foydalanuvchi nomi va parolini kiriting (yoki ilova parolini
+   Parametrlar → Xavfsizlik → Qurilmalar va seanslar → Ilova parollari).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud - o&apos;z-o&apos;zidan joylashtirilgan fayllarni sinxronlashtirish va almashish.
+
+1. O‘z bulut serveringiz manzilini kiriting (masalan, owncloud.example.com).
+2. Asosiy yo&apos;l oldindan to&apos;ldirilgan: /remote.php/dav/files/&lt;username&gt;/
+   &lt;foydalanuvchi nomi&gt; ni haqiqiy ownCloud foydalanuvchi nomingiz bilan almashtiring.
+3. O‘zCloud foydalanuvchi nomingiz va parolingizni kiriting (yoki 2FA yoqilgan bo‘lsa ilova parolini).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud - Evropa Ittifoqi va AQSh ma&apos;lumotlar markazlari bilan bulutli saqlash.
+
+1. my.pcloud.com saytiga kiring → Sozlamalar → Xavfsizlik → Ilova parollari → Yaratish.
+   Ilova parolidan nusxa oling - u faqat bir marta ko&apos;rsatiladi.
+2. Foydalanuvchi sifatida pCloud hisob qaydnomangiz elektron pochta manzilini kiriting.
+3. Parol sifatida ilova parolini kiriting.
+   Evropa Ittifoqi ma&apos;lumotlar markazi uchun: ewebdav.pcloud.com avtomatik ravishda ishlatiladi.
+   AQSh maʼlumotlar markazi uchun: hostni webdav.pcloud.com ga oʻzgartiring.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>Yandex Disk WebDAV orqali.
+
+1. id.yandex.com → Xavfsizlik → Ilova parollari → &quot;WebDAV kirish&quot; uchun ilova parolini yarating.
+   Yaratilgan parolni nusxalash - u faqat bir marta ko&apos;rsatiladi.
+2. Foydalanuvchi sifatida Yandex loginingizni kiriting.
+3. Parol sifatida ilova parolini (Yandex hisob qaydnomangiz parolini emas) kiriting.
+   Server manzili, HTTPS va port avtomatik ravishda sozlanadi.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Windows, Linux da ma'lumotlaringizni zaxiralash/sinxronlashtirish.
 Telefondan WI-FI orqali rasmlarni import qilish va boshqalar.

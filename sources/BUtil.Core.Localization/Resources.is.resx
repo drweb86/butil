@@ -967,6 +967,267 @@ Sjá nákvæma lýsingu á eftirfarandi tengli.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Notandi er ekki tilgreindur.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Fjarvistarsönnun Cloud OSS — S3-samhæft hlutgeymsla frá Alibaba.
+
+1. Í OSS Console (https://oss.console.aliyun.com/), búðu til fötu. Athugaðu svæði þess (t.d. oss-cn-hangzhou).
+2. Í RAM Console → Notendur → búðu til notanda → hengja AliyunOSSFullAccess → búðu til AccessKey.
+   Afritaðu AccessKey ID (= Access Key) og AccessKey Secret (= Secret Key).
+3. Þjónustuslóð: https://oss-&lt;REGION&gt;.aliyuncs.com (t.d. https://oss-cn-hangzhou.aliyuncs.com).
+4. Svæði: t.d. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — Upprunaleg hlutageymsla Amazon.
+
+1. Opnaðu S3 stjórnborðið (https://s3.console.aws.amazon.com/) og búðu til fötu. Athugaðu svæði þess (t.d. us-east-1).
+2. Opnaðu IAM → Notendur → búðu til notanda → hengdu við AmazonS3FullAccess stefnuna.
+3. Undir Öryggisskilríki, búðu til aðgangslykil — afritaðu lykilauðkenni og leyndarmál.
+4. Fylltu út: Bucket, Access Key, Secret Key og Region.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — S3-samhæft hlutgeymsla frá Baidu.
+
+1. Búðu til fötu í BOS Console (https://console.bce.baidu.com/bos/). Athugaðu svæði þess (t.d. bj, gz, su).
+2. Farðu í Öryggi → Aðgangslyklar — afritaðu auðkenni aðgangslykilsins og leynilega aðgangslykilsins.
+3. Þjónustuslóð: https://s3.&lt;REGION&gt;.bcebos.com (t.d. https://s3.bj.bcebos.com).
+4. Svæði: t.d. bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — hagkvæm S3-samhæf geymsla.
+
+1. Í Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets, búðu til fötu.
+2. Farðu í forritalykla → Bæta við nýjum forritalykli, settu hann í fötuna.
+   Afritaðu lykilauðkenni (= aðgangslykill) og forritslykill (= leynilykill).
+3. Þjónustuslóð: endapunktur fötu þinnar sýndur í upplýsingum um fötu, t.d. https://s3.us-west-004.backblazeb2.com
+4. Svæði: hluti á milli &apos;s3.&apos; og &apos;.backblazeb2.com&apos;, t.d. okkur-vestur-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — S3-samhæf geymsla með núllútgangi.
+
+1. Í Cloudflare mælaborðinu (https://dash.cloudflare.com/) → R2 → búðu til fötu.
+2. Farðu í R2 → Stjórna R2 API táknum → Búa til API tákn með Lesa og skrifa hlut.
+   Afritaðu auðkenni aðgangslykils og leynilega aðgangslykil.
+3. Þjónustuslóð: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Reikningsauðkenni þitt er sýnt á R2 yfirlitssíðunni.
+4. Fylltu út: Bucket, Access Key, Secret Key og Service URL. Svæði er sjálfkrafa stillt á &apos;sjálfvirkt&apos;.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Object Storage — S3-samhæfð OBS geymsla.
+
+1. Í Cloud.ru Console (https://cloud.ru/) → Object Storage Service (OBS) → búðu til fötu.
+2. Farðu í Skilríkin mín → Aðgangslyklar → Bæta við aðgangslykli.
+   Afritaðu aðgangslykilinn og leynilega aðgangslykilinn.
+3. Fylltu út: Bucket, Access Key, Secret Key og Region (t.d. ru-moscow-1).
+   Þjónustuslóð er fyllt út sjálfkrafa.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO eða hvaða S3-samhæfðan netþjón sem er.
+
+1. Ræstu MinIO (eða annan S3-samhæfðan) netþjóninn þinn.
+2. Búðu til fötu í gegnum MinIO stjórnborðið eða &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;.
+3. Búðu til aðgangslykil í MinIO Console → Aðgangslyklar (forðastu rótarskilríki í framleiðslu).
+4. Þjónustuslóð: endapunktur þjónsins þíns, t.d. http://192.168.1.10:9000 eða https://minio.example.com.
+5. Svæði: hvaða gildi sem er (t.d. us-east-1) — eða skildu eftir autt ef þjónninn framfylgir því ekki.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — S3-samhæft hlutgeymsla.
+
+1. Búðu til svæði í Spaces (https://cloud.digitalocean.com/spaces). Athugaðu svæði þess (t.d. nyc3).
+2. Farðu í API → Spaces Keys → Búa til nýjan lykil. Afritaðu lykilinn (= aðgangslykill) og leyndarmál.
+3. Þjónustuslóð: https://&lt;REGION&gt;.digitaloceanspaces.com (t.d. https://nyc3.digitaloceanspaces.com).
+4. Svæði: sami stuttkóði, t.d. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — í gegnum S3 samvirkni API.
+
+1. Búðu til fötu í Google Cloud Console (https://console.cloud.google.com/storage).
+2. Farðu í Cloud Storage → Stillingar → Samvirkni → búðu til HMAC lykil fyrir þjónustureikning.
+   Afritaðu aðgangslykilinn og leyndarmálið.
+3. Fylltu út: Bucket, Access Key (HMAC key), Secret Key (HMAC secret).
+   Þjónustuvefslóð og svæði eru stillt sjálfkrafa.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — S3-samhæft hlutgeymsla frá Huawei.
+
+1. Í OBS Console (https://console.huaweicloud.com/obs/), búðu til fötu. Athugaðu svæði þess (t.d. cn-norður-4).
+2. Farðu í Skilríkin mín → Aðgangslyklar → Búa til aðgangslykil.
+   Afritaðu AK (= Access Key) og SK (= Secret Key).
+3. Þjónustuslóð: https://obs.&lt;REGION&gt;.myhuaweicloud.com (t.d. https://obs.cn-north-4.myhuaweicloud.com).
+4. Svæði: t.d. cn-norður-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Object Storage — S3-samhæf geymsla.
+
+1. Í Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets), búðu til fötu. Taktu eftir þyrpingunni hennar.
+2. Farðu í Hlutageymslu → Aðgangslyklar → Búðu til aðgangslykil sem nær til fötunnar.
+   Afritaðu aðgangslykil og leynilykil.
+3. Þjónustuslóð: https://&lt;CLUSTER&gt;.linodeobjects.com (t.d. https://us-east-1.linodeobjects.com).
+4. Svæði: sami klasakóði, t.d. okkur-austur-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo - S3-samhæf geymsla frá Qiniu.
+
+1. Í Qiniu Portal (https://portal.qiniu.com/kodo/bucket), búðu til fötu. Athugaðu svæði þess.
+2. Farðu í Persónulega miðstöð → Lyklastjórnun — afritaðu aðgangslykilinn þinn og leynilykil.
+3. Þjónustuslóð eftir svæðum:
+   Austur-Kína: https://s3-cn-east-1.qiniucs.com
+   Norður-Kína: https://s3-cn-north-1.qiniucs.com
+   Suður-Kína: https://s3-cn-south-1.qiniucs.com
+   Norður Ameríka: https://s3-us-north-1.qiniucs.com
+4. Svæði: samsvarandi kóði, t.d. cn-east-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — Evrópsk S3-samhæf geymsla.
+
+1. Í Scaleway Console (https://console.scaleway.com/object-storage/buckets), búðu til fötu. Athugaðu svæði þess (t.d. fr-par).
+2. Farðu í IAM → API lyklar → Búa til API lykil með skrifheimildum Object Storage.
+   Afritaðu aðgangslykil og leynilykil.
+3. Þjónustuslóð: https://s3.&lt;REGION&gt;.scw.cloud (t.d. https://s3.fr-par.scw.cloud).
+4. Svæði: t.d. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — S3-samhæfð rússnesk geymsla.
+
+1. Í Selectel Panel (https://my.selectel.ru/) → Cloud Storage → búðu til gám (= fötu).
+2. Undir Notendur og hlutverk skaltu búa til þjónustunotanda með geymsluaðgang → S3 lyklar → búa til lyklapar.
+   Afritaðu aðgangslykil og leynilykil.
+3. Fylltu út: Bucket, Access Key, Secret Key.
+   Þjónustuslóð er fyllt út sjálfkrafa.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — S3-samhæft hlutgeymsla frá Tencent.
+
+1. Í COS Console (https://console.cloud.tencent.com/cos), búðu til fötu. Athugaðu AppId og Region (t.d. ap-beijing).
+2. Í Access Management → API Keys → Create Key.
+   Afritaðu SecretId (= Aðgangslykill) og SecretKey (= Secret Key).
+3. Þjónustuslóð: https://cos.&lt;REGION&gt;.myqcloud.com (t.d. https://cos.ap-beijing.myqcloud.com).
+4. Snið fyrir heiti fötu: &lt;nafn&gt;-&lt;AppId&gt; (t.d. mybucket-1250000000). Svæði: t.d. ap-beijing.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — S3-samhæf geymsla frá VK Cloud.
+
+1. Í VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → búðu til fötu.
+2. Undir reikningnum þínum → Aðgangslyklar → búðu til nýtt lyklapar.
+   Afritaðu aðgangslykil og leynilykil.
+3. Fylltu út: Bucket, Access Key, Secret Key, og Region ef þess er krafist (t.d. ru-msk).
+   Þjónustuslóð er fyllt út sjálfkrafa.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — S3-samhæf geymsla.
+
+1. Búðu til fötu í Volcano Engine Console (https://console.volcengine.com/tos). Athugaðu svæði þess (t.d. cn-beijing).
+2. Farðu í IAM → Aðgangslyklar → búðu til lykil.
+   Afritaðu auðkenni aðgangslykils og leynilega aðgangslykil.
+3. Þjónustuslóð: https://tos-s3-&lt;REGION&gt;.volces.com (t.d. https://tos-s3-cn-beijing.volces.com).
+4. Svæði: t.d. cn-beijing.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi - heit skýgeymsla án útgöngugjalda.
+
+1. Í Wasabi Console (https://console.wasabisys.com/) → Buckets → Create Bucket. Veldu svæði.
+2. Farðu í Aðgangslyklar → Búa til nýjan aðgangslykil. Afritaðu aðgangslykil og leynilykil.
+3. Fylltu út: Bucket, Access Key, Secret Key og Region (t.d. us-east-1, eu-central-1).
+   Þjónustuslóð er fyllt út sjálfkrafa.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage — S3-samhæf rússnesk skýgeymsla.
+
+1. Í Yandex Cloud Console (https://console.yandex.cloud/) → Object Storage → búðu til fötu.
+2. Farðu í Þjónustureikningar → búðu til einn með storage.editor hlutverkinu → búðu til Static aðgangslykil.
+   Afritaðu lykilauðkenni (= aðgangslykill) og leynilykil.
+3. Fylltu út: Bucket, Access Key, Secret Key.
+   Þjónustuvefslóð og svæði eru stillt sjálfkrafa.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box — skýjageymsla fyrirtækja með WebDAV stuðningi.
+
+1. Skráðu þig inn á app.box.com. Athugaðu að Box WebDAV er aðeins fáanlegt fyrir greiddar áætlanir.
+2. Sláðu inn Box reikningsnetfangið þitt sem notandi.
+3. Sláðu inn lykilorð fyrir Box sem lykilorð.
+   Ef þú notar SSO gætirðu þurft að stilla sérstakt WebDAV lykilorð í reikningsstillingum.
+   Netfang netþjóns, HTTPS, gátt og grunnslóð eru stillt sjálfkrafa.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>Almennur WebDAV netþjónn (Nextcloud, ownCloud, Synology DSM, Seafile, Apache osfrv.)
+
+1. Sláðu inn heimilisfang netþjónsins, veldu HTTPS (mælt með) og stilltu gáttina (0 = sjálfgefið: 80 fyrir HTTP, 443 fyrir HTTPS).
+2. Sláðu inn grunnslóð fyrir WebDAV endapunkt.
+   Nextcloud dæmi: /remote.php/dav/files/&lt;notandanafn&gt;/Backups
+   Synology DSM: /
+3. Sláðu inn notandanafn og lykilorð (eða app-sérstakt lykilorð ef þjónninn þinn krefst þess).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive — Þýsk skýgeymsla með sterkri áherslu á persónuvernd.
+
+1. Skráðu þig inn á hidrive.ionos.com → Stillingar → Forrit og tengd þjónusta → WebDAV.
+   Eða opnaðu WebDAV með núverandi skilríkjum þínum beint.
+2. Sláðu inn HiDrive notendanafnið þitt sem notandann.
+3. Sláðu inn HiDrive lykilorðið þitt sem lykilorð.
+   Netfang netþjóns, HTTPS, gátt og grunnslóð eru stillt sjálfkrafa.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) — vinsæl kínversk skýgeymsla með innfæddum WebDAV stuðningi.
+
+1. Skráðu þig inn á jianguoyun.com → Reikningsupplýsingar → Öryggi → Forritastjórnun þriðja aðila → Bæta við forriti.
+   Afritaðu lykilorð appsins sem búið er til - það er aðeins sýnt einu sinni.
+2. Sláðu inn Jianguoyun netfangið þitt sem notandann.
+3. Sláðu inn búið til app lykilorð sem lykilorð.
+   Netfang netþjóns, HTTPS, gátt og grunnslóð eru stillt sjálfkrafa.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr — persónuverndarvæn skýgeymsla með aðsetur í Slóveníu (ESB).
+
+1. Farðu á app.koofr.eu → Preferences → Password → App passwords → Add password.
+2. Sláðu inn Koofr reikningsnetfangið þitt sem notandann.
+3. Sláðu inn búið til app lykilorð sem lykilorð.
+   Netfang netþjóns, HTTPS, gátt og grunnslóð eru stillt sjálfkrafa.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Mail.ru Cloud í gegnum WebDAV.
+
+1. Farðu á account.mail.ru → Öryggi → Lykilorð forrita → Búðu til lykilorð fyrir forrit.
+   Veldu &apos;Póstur&apos; eða &apos;Allt&apos; sem gerð og afritaðu síðan lykilorðið sem búið var til.
+2. Sláðu inn Mail.ru netfangið þitt sem notandi.
+3. Sláðu inn lykilorð appsins sem lykilorð.
+   Netfang netþjóns, HTTPS, gátt og grunnslóð eru stillt sjálfkrafa.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud — vinsæl sjálfhýst skráarsamstilling og samnýting.
+
+1. Sláðu inn Nextcloud netþjóninn þinn (t.d. nextcloud.example.com).
+2. Grunnslóðin er forútfyllt: /remote.php/dav/files/&lt;notandanafn&gt;/
+   Skiptu um &lt;notendanafn&gt; með raunverulegu Nextcloud notendanafninu þínu.
+3. Sláðu inn Nextcloud notendanafnið þitt og lykilorð (eða app lykilorð frá
+   Stillingar → Öryggi → Tæki og lotur → Lykilorð forrita).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud - samstilling og samnýting skráa sem hýst er sjálf.
+
+1. Sláðu inn veffang þitt eigiðCloud netþjóns (t.d. owncloud.example.com).
+2. Grunnslóðin er forútfyllt: /remote.php/dav/files/&lt;notandanafn&gt;/
+   Skiptu um &lt;notendanafn&gt; með raunverulegu notandanafni þínu eiginCloud.
+3. Sláðu inn þitt eigiðCloud notendanafn og lykilorð (eða app lykilorð ef 2FA er virkt).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud — skýjageymsla með gagnaverum í ESB og Bandaríkjunum.
+
+1. Skráðu þig inn á my.pcloud.com → Stillingar → Öryggi → Lykilorð forrita → Búa til.
+   Afritaðu lykilorð forritsins - það sést aðeins einu sinni.
+2. Sláðu inn pCloud reikningsnetfangið þitt sem notandann.
+3. Sláðu inn lykilorð appsins sem lykilorð.
+   Fyrir gagnaver ESB: ewebdav.pcloud.com er notað sjálfkrafa.
+   Fyrir bandarískt gagnaver: breyttu hýsingaraðilanum í webdav.pcloud.com.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>Yandex diskur í gegnum WebDAV.
+
+1. Farðu á id.yandex.com → Öryggi → Lykilorð forrita → Búðu til lykilorð fyrir forrit fyrir &apos;WebDAV aðgang&apos;.
+   Afritaðu lykilorðið sem búið var til - það er aðeins sýnt einu sinni.
+2. Sláðu inn Yandex innskráningu þína sem notandi.
+3. Sláðu inn lykilorð appsins (ekki lykilorð Yandex reikningsins) sem lykilorð.
+   Netfang netþjóns, HTTPS og gátt eru stillt sjálfkrafa.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Öryggisafritaðu/samstilltu gögnin þín á Windows, Linux.
 Flyttu inn myndir af síma í gegnum WI-FI og fleira.

@@ -967,6 +967,267 @@ Veja a descrição detalhada no seguinte link.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Usuário não especificado.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — armazenamento de objetos compatível com S3 da Alibaba.
+
+1. No console OSS (https://oss.console.aliyun.com/), crie um bucket. Observe sua região (por exemplo, oss-cn-hangzhou).
+2. No Console RAM → Usuários → crie um usuário → anexe AliyunOSSFullAccess → crie uma AccessKey.
+   Copie o AccessKey ID (= chave de acesso) e o segredo do AccessKey (= chave secreta).
+3. URL do serviço: https://oss-&lt;REGION&gt;.aliyuncs.com (por exemplo, https://oss-cn-hangzhou.aliyuncs.com).
+4. Região: por ex. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — armazenamento de objetos original da Amazon.
+
+1. Abra o console S3 (https://s3.console.aws.amazon.com/) e crie um bucket. Observe sua região (por exemplo, us-east-1).
+2. Abra IAM → Usuários → crie um usuário → anexe a política AmazonS3FullAccess.
+3. Em Credenciais de segurança, crie uma chave de acesso – copie o ID da chave e o segredo.
+4. Preencha: Bucket, Chave de Acesso, Chave Secreta e Região.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — armazenamento de objetos compatível com S3 do Baidu.
+
+1. No console BOS (https://console.bce.baidu.com/bos/), crie um bucket. Observe sua região (por exemplo, bj, gz, su).
+2. Vá para Segurança → Chaves de acesso – copie seu ID de chave de acesso e chave de acesso secreta.
+3. URL do serviço: https://s3.&lt;REGION&gt;.bcebos.com (por exemplo, https://s3.bj.bcebos.com).
+4. Região: por ex. bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 – armazenamento compatível com S3 acessível.
+
+1. Em Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets, crie um bucket.
+2. Vá para Chaves de aplicativo → Adicionar uma nova chave de aplicativo e coloque-a no intervalo.
+   Copie o keyID (= chave de acesso) e applicationKey (= chave secreta).
+3. URL do serviço: o endpoint do seu bucket mostrado nos detalhes do bucket, por exemplo. https://s3.us-west-004.backblazeb2.com
+4. Região: o segmento entre &apos;s3.&apos; e &apos;.backblazeb2.com&apos;, por ex. us-west-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — armazenamento compatível com S3 com saída zero.
+
+1. No Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → crie um bucket.
+2. Vá para R2 → Gerenciar tokens de API R2 → Criar token de API com leitura e gravação de objeto.
+   Copie o ID da chave de acesso e a chave de acesso secreta.
+3. URL do serviço: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   O ID da sua conta é mostrado na página de visão geral do R2.
+4. Preencha: Bucket, Chave de Acesso, Chave Secreta e URL do Serviço. A região é definida como &apos;automática&apos; automaticamente.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Object Storage – armazenamento OBS compatível com S3.
+
+1. No console Cloud.ru (https://cloud.ru/) → Object Storage Service (OBS) → crie um bucket.
+2. Vá para Minhas credenciais → Chaves de acesso → Adicionar chave de acesso.
+   Copie a chave de acesso e a chave de acesso secreta.
+3. Preencha: Bucket, Chave de acesso, Chave secreta e Região (por exemplo, ru-moscow-1).
+   O URL do serviço é preenchido automaticamente.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO ou qualquer servidor compatível com S3.
+
+1. Inicie seu servidor MinIO (ou outro compatível com S3).
+2. Crie um bucket por meio do console MinIO ou &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;.
+3. Crie uma chave de acesso em MinIO Console → Chaves de acesso (evite credenciais root na produção).
+4. URL do serviço: o endpoint do seu servidor, por exemplo. http://192.168.1.10:9000 ou https://minio.example.com.
+5. Região: qualquer valor (por exemplo, us-east-1) — ou deixe em branco se o servidor não o aplicar.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — armazenamento de objetos compatível com S3.
+
+1. No Spaces (https://cloud.digitalocean.com/spaces), crie um Espaço. Observe sua região (por exemplo, nyc3).
+2. Vá para API → Chaves de Espaços → Gerar Nova Chave. Copie a chave (= chave de acesso) e o segredo.
+3. URL do serviço: https://&lt;REGION&gt;.digitaloceanspaces.com (por exemplo, https://nyc3.digitaloceanspaces.com).
+4. Região: mesmo código curto, por ex. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — por meio da API de interoperabilidade S3.
+
+1. No Console do Google Cloud (https://console.cloud.google.com/storage), crie um bucket.
+2. Vá para Cloud Storage → Configurações → Interoperabilidade → crie uma chave HMAC para uma conta de serviço.
+   Copie a chave de acesso e o segredo.
+3. Preencha: Bucket, Chave de Acesso (chave HMAC), Chave Secreta (segredo HMAC).
+   O URL e a região do serviço são definidos automaticamente.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS – armazenamento de objetos compatível com S3 da Huawei.
+
+1. No console OBS (https://console.huaweicloud.com/obs/), crie um intervalo. Observe sua região (por exemplo, cn-norte-4).
+2. Vá para Minhas credenciais → Chaves de acesso → Criar chave de acesso.
+   Copie o AK (= Chave de Acesso) e SK (= Chave Secreta).
+3. URL do serviço: https://obs.&lt;REGION&gt;.myhuaweicloud.com (por exemplo, https://obs.cn-north-4.myhuaweicloud.com).
+4. Região: por ex. cn-norte-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Object Storage — armazenamento compatível com S3.
+
+1. No Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets), crie um balde. Observe seu cluster.
+2. Vá para Object Storage → Chaves de acesso → Criar uma chave de acesso com escopo para o bucket.
+   Copie a chave de acesso e a chave secreta.
+3. URL do serviço: https://&lt;CLUSTER&gt;.linodeobjects.com (por exemplo, https://us-east-1.linodeobjects.com).
+4. Região: mesmo código de cluster, por ex. nós-leste-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — armazenamento compatível com S3 da Qiniu.
+
+1. No Portal Qiniu (https://portal.qiniu.com/kodo/bucket), crie um bucket. Observe sua região.
+2. Vá para Centro Pessoal → Gerenciamento de Chaves — copie seu AccessKey e SecretKey.
+3. URL do serviço por região:
+   Leste da China: https://s3-cn-east-1.qiniucs.com
+   Norte da China: https://s3-cn-north-1.qiniucs.com
+   Sul da China: https://s3-cn-south-1.qiniucs.com
+   América do Norte: https://s3-us-north-1.qiniucs.com
+4. Região: código correspondente, por ex. cn-leste-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — armazenamento europeu compatível com S3.
+
+1. No Scaleway Console (https://console.scaleway.com/object-storage/buckets), crie um bucket. Observe sua região (por exemplo, fr-par).
+2. Acesse IAM → Chaves de API → Gerar chave de API com permissões de gravação do Object Storage.
+   Copie a chave de acesso e a chave secreta.
+3. URL do serviço: https://s3.&lt;REGION&gt;.scw.cloud (por exemplo, https://s3.fr-par.scw.cloud).
+4. Região: por ex. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — armazenamento russo compatível com S3.
+
+1. No painel Selectel (https://my.selectel.ru/) → Cloud Storage → crie um contêiner (= bucket).
+2. Em Usuários e funções, crie um usuário de serviço com acesso ao armazenamento → Chaves S3 → crie um par de chaves.
+   Copie a chave de acesso e a chave secreta.
+3. Preencha: Bucket, Chave de Acesso, Chave Secreta.
+   O URL do serviço é preenchido automaticamente.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS – armazenamento de objetos compatível com S3 da Tencent.
+
+1. No COS Console (https://console.cloud.tencent.com/cos), crie um bucket. Observe o AppId e a região (por exemplo, ap-beijing).
+2. Em Gerenciamento de acesso → Chaves API → Criar chave.
+   Copie o SecretId (= chave de acesso) e SecretKey (= chave secreta).
+3. URL do serviço: https://cos.&lt;REGION&gt;.myqcloud.com (por exemplo, https://cos.ap-beijing.myqcloud.com).
+4. Formato do nome do bucket: &lt;nome&gt;-&lt;AppId&gt; (por exemplo, mybucket-1250000000). Região: por ex. ap-Pequim.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage – armazenamento compatível com S3 da VK Cloud.
+
+1. No VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → crie um bucket.
+2. Em sua conta → Chaves de acesso → crie um novo par de chaves.
+   Copie a chave de acesso e a chave secreta.
+3. Preencha: Bucket, Access Key, Secret Key e Region, se necessário (por exemplo, ru-msk).
+   O URL do serviço é preenchido automaticamente.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — armazenamento compatível com S3.
+
+1. No Volcano Engine Console (https://console.volcengine.com/tos), crie um bucket. Observe sua região (por exemplo, cn-beijing).
+2. Vá para IAM → Chaves de acesso → crie uma chave.
+   Copie o ID da chave de acesso e a chave de acesso secreta.
+3. URL do serviço: https://tos-s3-&lt;REGION&gt;.volces.com (por exemplo, https://tos-s3-cn-beijing.volces.com).
+4. Região: por ex. cn-Pequim.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi — armazenamento em nuvem quente sem taxas de saída.
+
+1. No console Wasabi (https://console.wasabisys.com/) → Baldes → Criar balde. Escolha uma região.
+2. Vá para Chaves de acesso → Criar nova chave de acesso. Copie a chave de acesso e a chave secreta.
+3. Preencha: Bucket, Chave de Acesso, Chave Secreta e Região (por exemplo, us-east-1, eu-central-1).
+   O URL do serviço é preenchido automaticamente.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage – armazenamento em nuvem russo compatível com S3.
+
+1. No Yandex Cloud Console (https://console.yandex.cloud/) → Object Storage → crie um bucket.
+2. Vá para Contas de serviço → crie uma com a função storage.editor → crie uma chave de acesso estático.
+   Copie o ID da chave (= chave de acesso) e a chave secreta.
+3. Preencha: Bucket, Chave de Acesso, Chave Secreta.
+   O URL e a região do serviço são definidos automaticamente.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box — armazenamento empresarial em nuvem com suporte WebDAV.
+
+1. Faça login em app.box.com. Observe que o Box WebDAV está disponível apenas para planos pagos.
+2. Insira o e-mail da sua conta Box como Usuário.
+3. Digite sua senha do Box como senha.
+   Se você usa SSO, pode ser necessário definir uma senha WebDAV separada nas Configurações da conta.
+   Endereço do servidor, HTTPS, porta e caminho base são configurados automaticamente.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>Servidor WebDAV genérico (Nextcloud, ownCloud, Synology DSM, Seafile, Apache, etc.)
+
+1. Insira o endereço do servidor, escolha HTTPS (recomendado) e defina a porta (0 = padrão: 80 para HTTP, 443 para HTTPS).
+2. Insira o caminho base para o terminal WebDAV.
+   Exemplo de Nextcloud: /remote.php/dav/files/&lt;username&gt;/Backups
+   Sinologia DSM: /
+3. Digite seu nome de usuário e senha (ou uma senha específica do aplicativo, se o seu servidor exigir).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive — armazenamento em nuvem alemão com forte foco na privacidade.
+
+1. Faça login em hidrive.ionos.com → Configurações → Aplicativos e serviços conectados → WebDAV.
+   Ou acesse o WebDAV diretamente com suas credenciais existentes.
+2. Digite seu nome de usuário HiDrive como Usuário.
+3. Digite sua senha HiDrive como senha.
+   Endereço do servidor, HTTPS, porta e caminho base são configurados automaticamente.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) — popular armazenamento em nuvem chinês com suporte nativo a WebDAV.
+
+1. Faça login em jianguoyun.com → Informações da conta → Segurança → Gerenciamento de aplicativos de terceiros → Adicionar aplicativo.
+   Copie a senha do aplicativo gerada – ela é mostrada apenas uma vez.
+2. Digite seu endereço de e-mail Jianguoyun como usuário.
+3. Insira a senha do aplicativo gerada como Senha.
+   Endereço do servidor, HTTPS, porta e caminho base são configurados automaticamente.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr — armazenamento em nuvem compatível com a privacidade, baseado na Eslovênia (UE).
+
+1. Vá para app.koofr.eu → Preferências → Senha → Senhas de aplicativos → Adicionar senha.
+2. Insira o e-mail da sua conta Koofr como Usuário.
+3. Insira a senha do aplicativo gerada como Senha.
+   Endereço do servidor, HTTPS, porta e caminho base são configurados automaticamente.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Mail.ru Cloud via WebDAV.
+
+1. Vá para account.mail.ru → Segurança → Senhas de aplicativo → Criar senha de aplicativo.
+   Selecione &apos;Mail&apos; ou &apos;All&apos; como tipo e copie a senha gerada.
+2. Digite seu endereço de e-mail Mail.ru como Usuário.
+3. Digite a senha do aplicativo como Senha.
+   Endereço do servidor, HTTPS, porta e caminho base são configurados automaticamente.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud – popular sincronização e compartilhamento de arquivos auto-hospedados.
+
+1. Insira o endereço do seu servidor Nextcloud (por exemplo, nextcloud.example.com).
+2. O caminho base é pré-preenchido: /remote.php/dav/files/&lt;username&gt;/
+   Substitua &lt;username&gt; pelo seu nome de usuário real do Nextcloud.
+3. Digite seu nome de usuário e senha Nextcloud (ou uma senha de aplicativo de
+   Configurações → Segurança → Dispositivos e sessões → Senhas de aplicativos).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud – sincronização e compartilhamento de arquivos auto-hospedados.
+
+1. Insira o endereço do seu servidor ownCloud (por exemplo, owncloud.example.com).
+2. O caminho base é pré-preenchido: /remote.php/dav/files/&lt;username&gt;/
+   Substitua &lt;username&gt; pelo seu nome de usuário ownCloud real.
+3. Digite seu nome de usuário e senha do ownCloud (ou uma senha de aplicativo se 2FA estiver habilitado).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud — armazenamento em nuvem com data centers da UE e dos EUA.
+
+1. Faça login em my.pcloud.com → Configurações → Segurança → Senhas de aplicativos → Criar.
+   Copie a senha do aplicativo – ela é mostrada apenas uma vez.
+2. Insira o e-mail da sua conta pCloud como Usuário.
+3. Digite a senha do aplicativo como Senha.
+   Para data center da UE: ewebdav.pcloud.com é usado automaticamente.
+   Para data center dos EUA: altere o host para webdav.pcloud.com.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>Disco Yandex via WebDAV.
+
+1. Vá para id.yandex.com → Segurança → Senhas de aplicativo → Criar senha de aplicativo para ‘acesso WebDAV’.
+   Copie a senha gerada — ela é mostrada apenas uma vez.
+2. Insira seu login Yandex como usuário.
+3. Digite a senha do aplicativo (não a senha da sua conta Yandex) como a senha.
+   Endereço do servidor, HTTPS e porta são configurados automaticamente.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Faça backup/sincronize seus dados no Windows, Linux.
 Importe fotos do telefone via WI-FI e muito mais.

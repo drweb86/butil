@@ -964,6 +964,267 @@
   <data name="User_Field_Validation" xml:space="preserve">
     <value>वापरकर्ता निर्दिष्ट केलेला नाही.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — Alibaba कडून S3-सुसंगत ऑब्जेक्ट स्टोरेज.
+
+1. OSS कन्सोलमध्ये (https://oss.console.aliyun.com/), एक बादली तयार करा. त्याचा प्रदेश लक्षात घ्या (उदा. oss-cn-hangzhou).
+2. RAM कन्सोलमध्ये → वापरकर्ते → एक वापरकर्ता तयार करा → AliyunOSSFullAccess संलग्न करा → एक AccessKey तयार करा.
+   AccessKey ID (= Access Key) आणि AccessKey Secret (= Secret Key) कॉपी करा.
+3. सेवा URL: https://oss-&lt;REGION&gt;.aliyuncs.com (उदा. https://oss-cn-hangzhou.aliyuncs.com).
+4. प्रदेश: उदा. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — Amazon चे मूळ ऑब्जेक्ट स्टोरेज.
+
+1. S3 कन्सोल उघडा (https://s3.console.aws.amazon.com/) आणि एक बादली तयार करा. त्याचा प्रदेश लक्षात घ्या (उदा. us-east-1).
+2. IAM उघडा → वापरकर्ते → वापरकर्ता तयार करा → AmazonS3FullAccess धोरण संलग्न करा.
+3. सुरक्षा क्रेडेन्शियल्स अंतर्गत, प्रवेश की तयार करा — की आयडी आणि गुप्त कॉपी करा.
+4. भरा: बादली, प्रवेश की, गुप्त की आणि प्रदेश.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — Baidu कडून S3-सुसंगत ऑब्जेक्ट स्टोरेज.
+
+1. BOS कन्सोलमध्ये (https://console.bce.baidu.com/bos/), एक बादली तयार करा. त्याचा प्रदेश लक्षात घ्या (उदा. bj, gz, su).
+2. सिक्युरिटी → ऍक्सेस की वर जा — तुमची ऍक्सेस की आयडी आणि सिक्रेट ऍक्सेस की कॉपी करा.
+3. सेवा URL: https://s3.&lt;REGION&gt;.bcebos.com (उदा. https://s3.bj.bcebos.com).
+4. प्रदेश: उदा. bj</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — परवडणारे S3-सुसंगत स्टोरेज.
+
+1. Backblaze (https://www.backblaze.com/) → B2 क्लाउड स्टोरेज → बकेट्समध्ये, एक बादली तयार करा.
+2. ऍप की वर जा → नवीन ऍप्लिकेशन की जोडा, ती बाल्टीमध्ये वाढवा.
+   keyID (= प्रवेश की) आणि applicationKey (= गुप्त की) कॉपी करा.
+3. सेवा URL: तुमच्या बादलीचा शेवटचा बिंदू बकेट तपशीलांमध्ये दर्शविला आहे, उदा. https://s3.us-west-004.backblazeb2.com
+4. प्रदेश: &apos;s3&apos; मधील विभाग. आणि &apos;.backblazeb2.com&apos;, उदा. us-west-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — शून्य-एग्रेस S3-सुसंगत स्टोरेज.
+
+1. क्लाउडफ्लेअर डॅशबोर्डमध्ये (https://dash.cloudflare.com/) → R2 → एक बादली तयार करा.
+2. R2 वर जा → R2 API टोकन व्यवस्थापित करा → ऑब्जेक्ट Read &amp; Write सह API टोकन तयार करा.
+   ऍक्सेस की आयडी आणि सिक्रेट ऍक्सेस की कॉपी करा.
+3. सेवा URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   तुमचा खाते आयडी R2 विहंगावलोकन पृष्ठावर दर्शविला आहे.
+4. भरा: बादली, प्रवेश की, गुप्त की आणि सेवा URL. प्रदेश आपोआप &apos;ऑटो&apos; वर सेट केला आहे.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) ऑब्जेक्ट स्टोरेज — S3-सुसंगत OBS स्टोरेज.
+
+1. Cloud.ru कन्सोलमध्ये (https://cloud.ru/) → ऑब्जेक्ट स्टोरेज सर्व्हिस (OBS) → एक बादली तयार करा.
+2. माझी क्रेडेन्शियल्स → ऍक्सेस की → ऍड ऍक्सेस की वर जा.
+   ऍक्सेस की आणि सिक्रेट ऍक्सेस की कॉपी करा.
+3. भरा: बादली, प्रवेश की, गुप्त की आणि प्रदेश (उदा. ru-moscow-1).
+   सेवा URL स्वयंचलितपणे भरली जाते.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO किंवा कोणताही S3-सुसंगत सर्व्हर.
+
+1. तुमचा MinIO (किंवा इतर S3-सुसंगत) सर्व्हर सुरू करा.
+2. MinIO कन्सोल किंवा &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos; द्वारे बकेट तयार करा.
+3. MinIO कन्सोल → ऍक्सेस की (उत्पादनात रूट क्रेडेन्शियल्स टाळा) मध्ये प्रवेश की तयार करा.
+4. सेवा URL: तुमचा सर्व्हर एंडपॉइंट, उदा. http://192.168.1.10:9000 किंवा https://minio.example.com.
+5. प्रदेश: कोणतेही मूल्य (उदा. us-east-1) — किंवा सर्व्हरने त्याची अंमलबजावणी न केल्यास रिक्त सोडा.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — S3-सुसंगत ऑब्जेक्ट स्टोरेज.
+
+1. स्पेसमध्ये (https://cloud.digitalocean.com/spaces), एक जागा तयार करा. त्याचा प्रदेश लक्षात घ्या (उदा. nyc3).
+2. API → Spaces Keys → Generate New Key वर जा. की (= प्रवेश की) आणि गुप्त कॉपी करा.
+3. सेवा URL: https://&lt;REGION&gt;.digitaloceanspaces.com (उदा. https://nyc3.digitaloceanspaces.com).
+4. प्रदेश: समान शॉर्ट कोड, उदा. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — S3 इंटरऑपरेबिलिटी API द्वारे.
+
+1. Google क्लाउड कन्सोलमध्ये (https://console.cloud.google.com/storage), एक बकेट तयार करा.
+2. क्लाउड स्टोरेज → सेटिंग्ज → इंटरऑपरेबिलिटी → सेवा खात्यासाठी HMAC की तयार करा वर जा.
+   प्रवेश की आणि गुप्त कॉपी करा.
+3. भरा: बादली, प्रवेश की (HMAC की), गुप्त की (HMAC गुप्त).
+   सेवा URL आणि प्रदेश स्वयंचलितपणे सेट केले जातात.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — Huawei कडून S3-सुसंगत ऑब्जेक्ट स्टोरेज.
+
+1. OBS कन्सोलमध्ये (https://console.huaweicloud.com/obs/), एक बादली तयार करा. त्याचा प्रदेश लक्षात घ्या (उदा. cn-north-4).
+2. माझी क्रेडेन्शियल्स → ऍक्सेस की → ऍक्सेस की तयार करा वर जा.
+   AK (= प्रवेश की) आणि SK (= गुप्त की) कॉपी करा.
+3. सेवा URL: https://obs.&lt;REGION&gt;.myhuaweicloud.com (उदा. https://obs.cn-north-4.myhuaweicloud.com).
+4. प्रदेश: उदा. cn-उत्तर-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>लिनोड (अकामाई) ऑब्जेक्ट स्टोरेज — S3-सुसंगत स्टोरेज.
+
+1. लिनोड क्लाउड मॅनेजरमध्ये (https://cloud.linode.com/object-storage/buckets), एक बादली तयार करा. त्याचे क्लस्टर लक्षात घ्या.
+2. ऑब्जेक्ट स्टोरेज → ऍक्सेस की → बकेटमध्ये स्कोप असलेली ऍक्सेस की तयार करा.
+   ऍक्सेस की आणि सिक्रेट की कॉपी करा.
+3. सेवा URL: https://&lt;CLUSTER&gt;.linodeobjects.com (उदा. https://us-east-1.linodeobjects.com).
+4. प्रदेश: समान क्लस्टर कोड, उदा. us-east-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — Qiniu कडून S3-सुसंगत स्टोरेज.
+
+1. Qiniu पोर्टलमध्ये (https://portal.qiniu.com/kodo/bucket), एक बादली तयार करा. त्याचा प्रदेश लक्षात घ्या.
+2. वैयक्तिक केंद्र → की व्यवस्थापन वर जा — तुमची AccessKey आणि SecretKey कॉपी करा.
+3. प्रदेशानुसार सेवा URL:
+   पूर्व चीन: https://s3-cn-east-1.qiniucs.com
+   उत्तर चीन: https://s3-cn-north-1.qiniucs.com
+   दक्षिण चीन: https://s3-cn-south-1.qiniucs.com
+   उत्तर अमेरिका: https://s3-us-north-1.qiniucs.com
+4. प्रदेश: जुळणारा कोड, उदा. cn-east-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>स्केलवे ऑब्जेक्ट स्टोरेज — युरोपियन S3-सुसंगत स्टोरेज.
+
+1. स्केलवे कन्सोलमध्ये (https://console.scaleway.com/object-storage/buckets), एक बादली तयार करा. त्याचा प्रदेश लक्षात घ्या (उदा. fr-par).
+2. IAM → API की → ऑब्जेक्ट स्टोरेज लेखन परवानग्यांसह API की व्युत्पन्न करा.
+   ऍक्सेस की आणि सिक्रेट की कॉपी करा.
+3. सेवा URL: https://s3.&lt;REGION&gt;.scw.cloud (उदा. https://s3.fr-par.scw.cloud).
+4. प्रदेश: उदा. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>सिलेक्टेल ऑब्जेक्ट स्टोरेज — S3-सुसंगत रशियन स्टोरेज.
+
+1. सिलेक्टल पॅनेलमध्ये (https://my.selectel.ru/) → क्लाउड स्टोरेज → एक कंटेनर तयार करा (= बादली).
+2. वापरकर्ते आणि भूमिका अंतर्गत, स्टोरेज प्रवेशासह सेवा वापरकर्ता तयार करा → S3 की → एक की जोडी तयार करा.
+   ऍक्सेस की आणि सिक्रेट की कॉपी करा.
+3. भरा: बादली, प्रवेश की, गुप्त की.
+   सेवा URL स्वयंचलितपणे भरली जाते.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — Tencent कडून S3-सुसंगत ऑब्जेक्ट स्टोरेज.
+
+1. COS कन्सोलमध्ये (https://console.cloud.tencent.com/cos), एक बादली तयार करा. AppId आणि प्रदेश (उदा. ap-beijing) लक्षात घ्या.
+2. प्रवेश व्यवस्थापन → API की → Create Key मध्ये.
+   SecretId (= Access Key) आणि SecretKey (= Secret Key) कॉपी करा.
+3. सेवा URL: https://cos.&lt;REGION&gt;.myqcloud.com (उदा. https://cos.ap-beijing.myqcloud.com).
+4. बकेट नावाचे स्वरूप: &lt;name&gt;-&lt;AppId&gt; (उदा. mybucket-1250000000). प्रदेश: उदा. एपी-बीजिंग.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>व्हीके क्लाउड ऑब्जेक्ट स्टोरेज — व्हीके क्लाउडवरून S3-सुसंगत स्टोरेज.
+
+1. VK क्लाउड पोर्टलमध्ये (https://msk.cloud.vk.com/) → क्लाउड स्टोरेज → एक बादली तयार करा.
+2. तुमच्या खात्याखाली → प्रवेश की → नवीन की जोडी तयार करा.
+   ऍक्सेस की आणि सिक्रेट की कॉपी करा.
+3. भरा: बकेट, ऍक्सेस की, सीक्रेट की आणि आवश्यक असल्यास प्रदेश (उदा. ru-msk).
+   सेवा URL स्वयंचलितपणे भरली जाते.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — S3-सुसंगत स्टोरेज.
+
+1. Volcano Engine Console (https://console.volcengine.com/tos) मध्ये, एक बादली तयार करा. त्याचा प्रदेश लक्षात घ्या (उदा. cn-beijing).
+2. IAM → ऍक्सेस की → एक की तयार करा वर जा.
+   ऍक्सेस की आयडी आणि सिक्रेट ऍक्सेस की कॉपी करा.
+3. सेवा URL: https://tos-s3-&lt;REGION&gt;.volces.com (उदा. https://tos-s3-cn-beijing.volces.com).
+4. प्रदेश: उदा. cn-बीजिंग.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>वसाबी - कोणतेही निर्गमन शुल्क नसलेले हॉट क्लाउड स्टोरेज.
+
+1. वसाबी कन्सोलमध्ये (https://console.wasabisys.com/) → बकेट्स → बकेट तयार करा. एक प्रदेश निवडा.
+2. ऍक्सेस की वर जा → नवीन ऍक्सेस की तयार करा. ऍक्सेस की आणि सिक्रेट की कॉपी करा.
+3. भरा: बादली, प्रवेश की, गुप्त की आणि प्रदेश (उदा. us-east-1, eu-central-1).
+   सेवा URL स्वयंचलितपणे भरली जाते.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>यांडेक्स ऑब्जेक्ट स्टोरेज - S3-सुसंगत रशियन क्लाउड स्टोरेज.
+
+1. Yandex Cloud Console मध्ये (https://console.yandex.cloud/) → ऑब्जेक्ट स्टोरेज → एक बादली तयार करा.
+2. सेवा खाती वर जा → store.editor भूमिकेसह एक तयार करा → एक स्थिर प्रवेश की तयार करा.
+   की आयडी (= प्रवेश की) आणि गुप्त की कॉपी करा.
+3. भरा: बादली, प्रवेश की, गुप्त की.
+   सेवा URL आणि प्रदेश स्वयंचलितपणे सेट केले जातात.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>बॉक्स — WebDAV समर्थनासह एंटरप्राइझ क्लाउड स्टोरेज.
+
+1. app.box.com वर लॉग इन करा. लक्षात घ्या की Box WebDAV फक्त सशुल्क योजनांसाठी उपलब्ध आहे.
+2. वापरकर्ता म्हणून तुमचा बॉक्स खाते ईमेल प्रविष्ट करा.
+3. तुमचा बॉक्स पासवर्ड पासवर्ड म्हणून एंटर करा.
+   तुम्ही SSO वापरत असल्यास, तुम्हाला खाते सेटिंग्जमध्ये वेगळा WebDAV पासवर्ड सेट करावा लागेल.
+   सर्व्हर पत्ता, HTTPS, पोर्ट आणि बेस पथ स्वयंचलितपणे कॉन्फिगर केले जातात.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>जेनेरिक WebDAV सर्व्हर (Nextcloud, ownCloud, Synology DSM, Sefile, Apache, इ.)
+
+1. सर्व्हरचा पत्ता प्रविष्ट करा, HTTPS निवडा (शिफारस केलेले), आणि पोर्ट सेट करा (0 = डीफॉल्ट: HTTP साठी 80, HTTPS साठी 443).
+2. WebDAV एंडपॉइंटसाठी बेस पाथ एंटर करा.
+   नेक्स्टक्लाउड उदाहरण: /remote.php/dav/files/&lt;username&gt;/Backups
+   Synology DSM: /
+3. तुमचे वापरकर्तानाव आणि पासवर्ड (किंवा तुमच्या सर्व्हरला आवश्यक असल्यास ॲप-विशिष्ट पासवर्ड) एंटर करा.</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive — मजबूत गोपनीयता फोकससह जर्मन क्लाउड स्टोरेज.
+
+1. hidrive.ionos.com वर लॉग इन करा → सेटिंग्ज → ॲप्स आणि कनेक्ट केलेल्या सेवा → WebDAV.
+   किंवा तुमच्या विद्यमान क्रेडेन्शियल्ससह थेट WebDAV मध्ये प्रवेश करा.
+2. वापरकर्ता म्हणून तुमचे HiDrive वापरकर्तानाव एंटर करा.
+3. तुमचा HiDrive पासवर्ड पासवर्ड म्हणून एंटर करा.
+   सर्व्हर पत्ता, HTTPS, पोर्ट आणि बेस पथ स्वयंचलितपणे कॉन्फिगर केले जातात.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) — मूळ WebDAV समर्थनासह लोकप्रिय चीनी क्लाउड स्टोरेज.
+
+1. jianguoyun.com वर लॉग इन करा → खाते माहिती → सुरक्षा → तृतीय-पक्ष ॲप व्यवस्थापन → ॲप्लिकेशन जोडा.
+   व्युत्पन्न केलेला ॲप पासवर्ड कॉपी करा — तो फक्त एकदाच दाखवला जातो.
+2. वापरकर्ता म्हणून तुमचा Jianguoyun ईमेल पत्ता प्रविष्ट करा.
+3. व्युत्पन्न केलेला ॲप पासवर्ड पासवर्ड म्हणून एंटर करा.
+   सर्व्हर पत्ता, HTTPS, पोर्ट आणि बेस पथ स्वयंचलितपणे कॉन्फिगर केले जातात.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr — स्लोव्हेनिया (EU) मध्ये आधारित गोपनीयता-अनुकूल क्लाउड स्टोरेज.
+
+1. app.koofr.eu → प्राधान्ये → पासवर्ड → ॲप पासवर्ड → पासवर्ड जोडा वर जा.
+2. वापरकर्ता म्हणून तुमचा Koofr खाते ईमेल प्रविष्ट करा.
+3. व्युत्पन्न केलेला ॲप पासवर्ड पासवर्ड म्हणून एंटर करा.
+   सर्व्हर पत्ता, HTTPS, पोर्ट आणि बेस पथ स्वयंचलितपणे कॉन्फिगर केले जातात.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>WebDAV द्वारे Mail.ru क्लाउड.
+
+1. account.mail.ru वर जा → सुरक्षा → ॲप पासवर्ड → ॲप पासवर्ड तयार करा.
+   प्रकार म्हणून &apos;मेल&apos; किंवा &apos;सर्व&apos; निवडा, त्यानंतर व्युत्पन्न केलेला पासवर्ड कॉपी करा.
+2. वापरकर्ता म्हणून तुमचा Mail.ru ईमेल पत्ता प्रविष्ट करा.
+3. पासवर्ड म्हणून ॲप पासवर्ड एंटर करा.
+   सर्व्हर पत्ता, HTTPS, पोर्ट आणि बेस पथ स्वयंचलितपणे कॉन्फिगर केले जातात.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>नेक्स्टक्लाउड - लोकप्रिय सेल्फ-होस्टेड फाइल सिंक आणि शेअर.
+
+1. तुमचा Nextcloud सर्व्हर पत्ता प्रविष्ट करा (उदा. nextcloud.example.com).
+2. मूळ मार्ग पूर्व-भरलेला आहे: /remote.php/dav/files/&lt;username&gt;/
+   &lt;username&gt; ला तुमच्या वास्तविक Nextcloud वापरकर्तानावाने बदला.
+3. तुमचे नेक्स्टक्लाउड वापरकर्तानाव आणि पासवर्ड (किंवा ॲप पासवर्ड) एंटर करा
+   सेटिंग्ज → सुरक्षा → डिव्हाइस आणि सत्र → ॲप पासवर्ड).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud — सेल्फ-होस्टेड फाइल सिंक आणि शेअर करा.
+
+1. तुमचा स्वतःचा क्लाउड सर्व्हर पत्ता प्रविष्ट करा (उदा. owncloud.example.com).
+2. मूळ मार्ग पूर्व-भरलेला आहे: /remote.php/dav/files/&lt;username&gt;/
+   &lt;username&gt; ला तुमच्या स्वतःच्या स्वतःच्या क्लाउड वापरकर्तानावाने बदला.
+3. तुमचे स्वतःचे क्लाउड वापरकर्तानाव आणि पासवर्ड (किंवा 2FA सक्षम असल्यास ॲप पासवर्ड) एंटर करा.</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud — EU आणि US डेटा केंद्रांसह क्लाउड स्टोरेज.
+
+1. my.pcloud.com वर लॉग इन करा → सेटिंग्ज → सुरक्षा → ॲप पासवर्ड → तयार करा.
+   ॲप पासवर्ड कॉपी करा — तो फक्त एकदाच दाखवला जातो.
+2. वापरकर्ता म्हणून तुमचा pCloud खाते ईमेल प्रविष्ट करा.
+3. पासवर्ड म्हणून ॲप पासवर्ड एंटर करा.
+   EU डेटा सेंटरसाठी: ewebdav.pcloud.com स्वयंचलितपणे वापरले जाते.
+   यूएस डेटा सेंटरसाठी: webdav.pcloud.com वर होस्ट बदला.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>WebDAV द्वारे Yandex डिस्क.
+
+1. id.yandex.com वर जा → सुरक्षा → ॲप पासवर्ड → वेबडीएव्ही प्रवेशासाठी ॲप पासवर्ड तयार करा.
+   व्युत्पन्न केलेला पासवर्ड कॉपी करा — तो फक्त एकदाच दाखवला जातो.
+2. वापरकर्ता म्हणून तुमचे Yandex लॉगिन एंटर करा.
+3. पासवर्ड म्हणून ॲप पासवर्ड (तुमचा Yandex खाते पासवर्ड नाही) एंटर करा.
+   सर्व्हर पत्ता, HTTPS आणि पोर्ट स्वयंचलितपणे कॉन्फिगर केले जातात.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Windows, Linux वर तुमचा डेटा बॅकअप/सिंक्रोनाइझ करा.
 WI-FI द्वारे फोनवरून फोटो इम्पोर्ट करा आणि बरेच काही.

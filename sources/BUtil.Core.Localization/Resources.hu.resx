@@ -967,6 +967,267 @@ A részletes leírást az alábbi linken találja.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>A felhasználó nincs megadva.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — S3-kompatibilis objektumtárolás az Alibabától.
+
+1. Az OSS Console-ban (https://oss.console.aliyun.com/) hozzon létre egy tárolót. Jegyezze fel a régióját (pl. oss-cn-hangzhou).
+2. A RAM-konzol → Felhasználók → felhasználó létrehozása → AliyunOSSFullAccess csatolása → AccessKey létrehozása.
+   Másolja ki az AccessKey ID-t (= hozzáférési kulcs) és az AccessKey titkos kulcsát (= titkos kulcs).
+3. A szolgáltatás URL-je: https://oss-&lt;REGION&gt;.aliyuncs.com (pl. https://oss-cn-hangzhou.aliyuncs.com).
+4. Régió: pl. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 – Az Amazon eredeti objektumtárolója.
+
+1. Nyissa meg az S3 konzolt (https://s3.console.aws.amazon.com/), és hozzon létre egy tárolót. Jegyezze fel a régióját (pl. us-east-1).
+2. Nyissa meg az IAM → Felhasználók → hozzon létre egy felhasználót → csatolja az AmazonS3FullAccess házirendet.
+3. A Biztonsági hitelesítő adatok alatt hozzon létre egy hozzáférési kulcsot – másolja ki a kulcsazonosítót és a titkos kulcsot.
+4. Töltse ki a következőket: Bucket, Access Key, Secret Key és Region.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — S3-kompatibilis objektumtárolás a Baidu-tól.
+
+1. A BOS Console-ban (https://console.bce.baidu.com/bos/) hozzon létre egy tárolót. Jegyezze fel a régióját (pl. bj, gz, su).
+2. Válassza a Biztonság → Hozzáférési kulcsok menüpontot — másolja ki a hozzáférési kulcs azonosítóját és a titkos hozzáférési kulcsot.
+3. A szolgáltatás URL-je: https://s3.&lt;RÉGIÓ&gt;.bcebos.com (pl. https://s3.bj.bcebos.com).
+4. Régió: pl. bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 – megfizethető S3-kompatibilis tároló.
+
+1. A Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets menüpontban hozzon létre egy tárolót.
+2. Válassza az Alkalmazáskulcsok → Új alkalmazáskulcs hozzáadása menüpontot, és helyezze a gyűjtőhelyre.
+   Másolja ki a kulcsazonosítót (= hozzáférési kulcs) és az alkalmazáskulcsot (= titkos kulcsot).
+3. Szolgáltatás URL-címe: a csoport végpontja, amely a gyűjtőkör részleteiben látható, pl. https://s3.us-west-004.backblazeb2.com
+4. Régió: az „s3” közötti szegmens. és „.backblazeb2.com”, pl. us-west-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 – nulla kilépési S3-kompatibilis tárhely.
+
+1. A Cloudflare Dashboardban (https://dash.cloudflare.com/) → R2 → hozzon létre egy tárolót.
+2. Lépjen az R2 → R2 API tokenek kezelése → API token létrehozása objektum olvasással és írással menüpontra.
+   Másolja ki a hozzáférési kulcs azonosítóját és a titkos hozzáférési kulcsot.
+3. A szolgáltatás URL-je: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Fiókazonosítója az R2 áttekintő oldalán látható.
+4. Töltse ki a következőket: Bucket, Access Key, Secret Key és Service URL. A régió automatikusan &quot;auto&quot;-ra van állítva.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Object Storage – S3-kompatibilis OBS-tárhely.
+
+1. A Cloud.ru konzolban (https://cloud.ru/) → Object Storage Service (OBS) → hozzon létre egy tárolót.
+2. Válassza a Saját hitelesítő adatok → Hozzáférési kulcsok → Hozzáférési kulcs hozzáadása menüpontot.
+   Másolja ki a hozzáférési kulcsot és a titkos hozzáférési kulcsot.
+3. Töltse ki: Bucket, Access Key, Secret Key és Region (pl. ru-moscow-1).
+   A szolgáltatás URL-je automatikusan kitöltődik.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO vagy bármilyen S3-kompatibilis szerver.
+
+1. Indítsa el a MinIO (vagy más S3-kompatibilis) szervert.
+2. Hozzon létre egy tárolót a MinIO Console vagy az „mc mb &lt;alias&gt;/&lt;bucket&gt;” segítségével.
+3. Hozzon létre egy hozzáférési kulcsot a MinIO Console → Hozzáférési kulcsok menüpontban (kerülje a gyökér hitelesítési adatokat az éles környezetben).
+4. Szolgáltatás URL-je: a szerver végpontja, pl. http://192.168.1.10:9000 vagy https://minio.example.com.
+5. Régió: bármilyen érték (pl. us-east-1) – vagy hagyja üresen, ha a szerver nem kényszeríti ki.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces – S3-kompatibilis objektumtároló.
+
+1. A Spacesben (https://cloud.digitalocean.com/spaces) hozzon létre egy teret. Jegyezze fel a régióját (pl. nyc3).
+2. Válassza az API → Spaces Keys → Generate New Key menüpontot. Másolja ki a kulcsot (= hozzáférési kulcsot) és a titkos kódot.
+3. A szolgáltatás URL-je: https://&lt;REGION&gt;.digitaloceanspaces.com (pl. https://nyc3.digitaloceanspaces.com).
+4. Régió: ugyanaz a rövid kód, pl. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage – az S3 interoperabilitási API-n keresztül.
+
+1. A Google Cloud Console-ban (https://console.cloud.google.com/storage) hozzon létre egy tárolót.
+2. Lépjen a Cloud Storage → Beállítások → Együttműködés → HMAC-kulcs létrehozása szolgáltatásfiókhoz menüpontra.
+   Másolja ki a hozzáférési kulcsot és a titkos kódot.
+3. Töltse ki: Bucket, Access Key (HMAC kulcs), Secret Key (HMAC titkos).
+   A szolgáltatás URL-címe és régiója automatikusan beállításra kerül.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — S3-kompatibilis objektumtárolás a Huawei-től.
+
+1. Az OBS Console-ban (https://console.huaweicloud.com/obs/) hozzon létre egy tárolót. Jegyezze fel a régióját (pl. cn-észak-4).
+2. Válassza a Saját hitelesítő adatok → Hozzáférési kulcsok → Hozzáférési kulcs létrehozása menüpontot.
+   Másolja ki az AK-t (= hozzáférési kulcs) és az SK-t (= titkos kulcs).
+3. A szolgáltatás URL-je: https://obs.&lt;REGION&gt;.myhuaweicloud.com (pl. https://obs.cn-north-4.myhuaweicloud.com).
+4. Régió: pl. cn-észak-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Object Storage — S3-kompatibilis tároló.
+
+1. A Linode Cloud Managerben (https://cloud.linode.com/object-storage/buckets) hozzon létre egy tárolót. Jegyezze fel a klaszterét.
+2. Lépjen az Objektumtárolás → Hozzáférési kulcsok → Hozzon létre hozzáférési kulcsot a gyűjtőkörhöz.
+   Másolja ki a hozzáférési kulcsot és a titkos kulcsot.
+3. A szolgáltatás URL-je: https://&lt;CLUSTER&gt;.linodeobjects.com (pl. https://us-east-1.linodeobjects.com).
+4. Régió: azonos klaszterkód, pl. us-kelet-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — S3-kompatibilis tárhely a Qiniutól.
+
+1. A Qiniu Portalban (https://portal.qiniu.com/kodo/bucket) hozzon létre egy tárolót. Jegyezze fel a régióját.
+2. Lépjen a Személyes központ → Kulcskezelés menüpontra – másolja ki a hozzáférési kulcsot és a titkos kulcsot.
+3. Szolgáltatás URL-je régiónként:
+   Kelet-Kína: https://s3-cn-east-1.qiniucs.com
+   Észak-Kína: https://s3-cn-north-1.qiniucs.com
+   Dél-Kína: https://s3-cn-south-1.qiniucs.com
+   Észak-Amerika: https://s3-us-north-1.qiniucs.com
+4. Régió: egyező kód, pl. cn-kelet-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage – európai S3-kompatibilis tároló.
+
+1. A Scaleway Console-ban (https://console.scaleway.com/object-storage/buckets) hozzon létre egy tárolót. Jegyezze fel a régióját (pl. fr-par).
+2. Lépjen az IAM → API-kulcsok → API-kulcs generálása objektumtároló írási jogosultságokkal menüpontra.
+   Másolja ki a hozzáférési kulcsot és a titkos kulcsot.
+3. A szolgáltatás URL-je: https://s3.&lt;RÉGIÓ&gt;.scw.cloud (pl. https://s3.fr-par.scw.cloud).
+4. Régió: pl. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — S3-kompatibilis orosz tárhely.
+
+1. A Selectel Panelben (https://my.selectel.ru/) → Cloud Storage → hozzon létre egy tárolót (= vödör).
+2. A Felhasználók és szerepkörök alatt hozzon létre egy tárhely-hozzáféréssel rendelkező szolgáltatásfelhasználót → S3 kulcsok → hozzon létre egy kulcspárt.
+   Másolja ki a hozzáférési kulcsot és a titkos kulcsot.
+3. Töltse ki: Bucket, Access Key, Secret Key.
+   A szolgáltatás URL-je automatikusan kitöltődik.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS – S3-kompatibilis objektumtárolás a Tencenttől.
+
+1. A COS-konzolban (https://console.cloud.tencent.com/cos) hozzon létre egy tárolót. Vegye figyelembe az AppId-t és a régiót (pl. ap-peking).
+2. Az Access Management → API Keys → Create Key menüpontban.
+   Másolja ki a SecretId-t (= hozzáférési kulcs) és a SecretKey-t (= titkos kulcsot).
+3. A szolgáltatás URL-je: https://cos.&lt;REGION&gt;.myqcloud.com (pl. https://cos.ap-beijing.myqcloud.com).
+4. Csoportnév formátuma: &lt;név&gt;-&lt;AppId&gt; (pl. mybucket-1250000000). Régió: pl. ap-peking.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — S3-kompatibilis tárhely a VK Cloudból.
+
+1. A VK Cloud Portalban (https://msk.cloud.vk.com/) → Cloud Storage → hozzon létre egy tárolót.
+2. A fiókjában → Hozzáférési kulcsok → hozzon létre egy új kulcspárt.
+   Másolja ki a hozzáférési kulcsot és a titkos kulcsot.
+3. Töltse ki: Bucket, Access Key, Secret Key és Region, ha szükséges (pl. ru-msk).
+   A szolgáltatás URL-je automatikusan kitöltődik.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) – S3-kompatibilis tároló.
+
+1. A Volcano Engine Console-ban (https://console.volcengine.com/tos) hozzon létre egy tárolót. Jegyezze fel a régióját (pl. cn-peking).
+2. Válassza az IAM → Hozzáférési kulcsok → hozzon létre egy kulcsot.
+   Másolja ki a hozzáférési kulcs azonosítóját és a titkos hozzáférési kulcsot.
+3. A szolgáltatás URL-je: https://tos-s3-&lt;REGION&gt;.volces.com (pl. https://tos-s3-cn-beijing.volces.com).
+4. Régió: pl. cn-peking.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi – forró felhőalapú tárolás kilépési díjak nélkül.
+
+1. A Wasabi Console-ban (https://console.wasabisys.com/) → Buckets → Bucket létrehozása. Válasszon régiót.
+2. Válassza a Hozzáférési kulcsok → Új hozzáférési kulcs létrehozása menüpontot. Másolja ki a hozzáférési kulcsot és a titkos kulcsot.
+3. Töltse ki: Bucket, Access Key, Secret Key és Region (pl. us-east-1, eu-central-1).
+   A szolgáltatás URL-je automatikusan kitöltődik.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage — S3-kompatibilis orosz felhőtárhely.
+
+1. A Yandex Cloud Console-ban (https://console.yandex.cloud/) → Object Storage → hozzon létre egy tárolót.
+2. Lépjen a Szolgáltatásfiókok menüpontra → hozzon létre egyet a storage.editor szerepkörrel → hozzon létre egy statikus hozzáférési kulcsot.
+   Másolja ki a kulcsazonosítót (= hozzáférési kulcs) és a titkos kulcsot.
+3. Töltse ki: Bucket, Access Key, Secret Key.
+   A szolgáltatás URL-címe és régiója automatikusan beállításra kerül.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box – vállalati felhőtárhely WebDAV támogatással.
+
+1. Jelentkezzen be az app.box.com oldalon. Vegye figyelembe, hogy a Box WebDAV csak fizetős csomagokhoz érhető el.
+2. Felhasználóként adja meg Box-fiókjának e-mail-címét.
+3. Jelszóként adja meg a fiók jelszavát.
+   Ha SSO-t használ, előfordulhat, hogy külön WebDAV-jelszót kell beállítania a Fiókbeállításokban.
+   A szerver címe, HTTPS, portja és alapútvonala automatikusan konfigurálva van.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>Általános WebDAV szerver (Nextcloud, ownCloud, Synology DSM, Seafile, Apache stb.)
+
+1. Adja meg a szerver címét, válassza a HTTPS-t (ajánlott), és állítsa be a portot (0 = alapértelmezett: 80 HTTP, 443 HTTPS esetén).
+2. Adja meg a WebDAV-végpont alapútvonalát.
+   Nextcloud példa: /remote.php/dav/files/&lt;felhasználónév&gt;/Biztonsági mentések
+   Synology DSM: /
+3. Adja meg felhasználónevét és jelszavát (vagy egy alkalmazásfüggő jelszavát, ha a szerver megköveteli).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive – német felhőalapú tárhely erős adatvédelemmel.
+
+1. Jelentkezzen be a hidrive.ionos.com → Beállítások → Alkalmazások és csatlakoztatott szolgáltatások → WebDAV oldalon.
+   Vagy közvetlenül elérheti a WebDAV-t meglévő hitelesítő adataival.
+2. Felhasználóként adja meg HiDrive felhasználónevét.
+3. Jelszóként adja meg HiDrive jelszavát.
+   A szerver címe, HTTPS, portja és alapútvonala automatikusan konfigurálva van.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) – népszerű kínai felhőtárhely natív WebDAV-támogatással.
+
+1. Jelentkezzen be a jinguoyun.com → Fiókadatok → Biztonság → Harmadik féltől származó alkalmazások kezelése → Alkalmazás hozzáadása oldalon.
+   Másolja ki a generált alkalmazásjelszót – csak egyszer jelenik meg.
+2. Felhasználóként adja meg Jianguoyun e-mail címét.
+3. Jelszóként adja meg a generált alkalmazásjelszót.
+   A szerver címe, HTTPS, portja és alapútvonala automatikusan konfigurálva van.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr – adatvédelem-barát felhőtárhely Szlovéniában (EU).
+
+1. Nyissa meg az app.koofr.eu → Beállítások → Jelszó → Alkalmazásjelszavak → Jelszó hozzáadása lehetőséget.
+2. Felhasználóként adja meg Koofr fiókjának e-mail-címét.
+3. Jelszóként adja meg a generált alkalmazásjelszót.
+   A szerver címe, HTTPS, portja és alapútvonala automatikusan konfigurálva van.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Mail.ru Cloud a WebDAV-on keresztül.
+
+1. Nyissa meg az account.mail.ru → Biztonság → Alkalmazásjelszavak → Alkalmazásjelszó létrehozása lehetőséget.
+   Válassza ki a &quot;Mail&quot; vagy az &quot;All&quot; típust, majd másolja ki a generált jelszót.
+2. Felhasználóként adja meg Mail.ru e-mail címét.
+3. Jelszóként adja meg az alkalmazás jelszavát.
+   A szerver címe, HTTPS, portja és alapútvonala automatikusan konfigurálva van.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud – népszerű önállóan tárolt fájlszinkronizálás és -megosztás.
+
+1. Adja meg Nextcloud-kiszolgálójának címét (pl. nextcloud.example.com).
+2. Az alap elérési út előre ki van töltve: /remote.php/dav/files/&lt;felhasználónév&gt;/
+   Cserélje le a &lt;felhasználónév&gt; elemet a tényleges Nextcloud felhasználónévvel.
+3. Adja meg Nextcloud felhasználónevét és jelszavát (vagy egy alkalmazás jelszavát a következőtől:
+   Beállítások → Biztonság → Eszközök és munkamenetek → Alkalmazásjelszavak).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud – saját üzemeltetésű fájlszinkronizálás és -megosztás.
+
+1. Adja meg a ownCloud szerver címét (pl. owncloud.example.com).
+2. Az alap elérési út előre ki van töltve: /remote.php/dav/files/&lt;felhasználónév&gt;/
+   Cserélje ki a &lt;felhasználónév&gt; elemet a tényleges ownCloud felhasználónevére.
+3. Adja meg a ownCloud felhasználónevét és jelszavát (vagy egy alkalmazásjelszót, ha a 2FA engedélyezve van).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud – felhőalapú tárolás uniós és amerikai adatközpontokkal.
+
+1. Jelentkezzen be: my.pcloud.com → Beállítások → Biztonság → Alkalmazásjelszavak → Létrehozás.
+   Másolja ki az alkalmazás jelszavát – csak egyszer jelenik meg.
+2. Felhasználóként adja meg pCloud-fiókjának e-mail-címét.
+3. Jelszóként adja meg az alkalmazás jelszavát.
+   EU adatközpont esetén: az ewebdav.pcloud.com automatikusan használatos.
+   Amerikai adatközpont esetén: módosítsa a gazdagépet a webdav.pcloud.com címre.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>Yandex Disk a WebDAV-on keresztül.
+
+1. Nyissa meg az id.yandex.com → Biztonság → Alkalmazásjelszavak → Alkalmazásjelszó létrehozása lehetőséget a „WebDAV-hozzáféréshez”.
+   Másolja ki a generált jelszót – csak egyszer jelenik meg.
+2. Felhasználóként adja meg Yandex bejelentkezési adatait.
+3. Jelszóként adja meg az alkalmazás jelszavát (ne a Yandex-fiókja jelszavát).
+   A szerver címe, HTTPS és portja automatikusan konfigurálva van.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Biztonsági mentés/szinkronizálás Windows, Linux rendszeren.
 Fényképek importálása telefonról WI-FI-n keresztül és még sok más.

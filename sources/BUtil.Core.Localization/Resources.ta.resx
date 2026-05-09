@@ -966,6 +966,267 @@ bin.
   <data name="User_Field_Validation" xml:space="preserve">
     <value>பயனர் குறிப்பிடப்படவில்லை.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>அலிபாபா கிளவுட் ஓஎஸ்எஸ் — அலிபாபாவிடமிருந்து எஸ்3-இணக்கமான பொருள் சேமிப்பு.
+
+1. OSS கன்சோலில் (https://oss.console.aliyun.com/), ஒரு பக்கெட்டை உருவாக்கவும். அதன் பகுதியைக் கவனியுங்கள் (எ.கா. oss-cn-hangzhou).
+2. RAM கன்சோலில் → பயனர்கள் → ஒரு பயனரை உருவாக்கவும் → AliyunOSSFullAccess ஐ இணைக்கவும் → AccessKey ஐ உருவாக்கவும்.
+   AccessKey ID (= Access Key) மற்றும் AccessKey சீக்ரெட் (= ரகசிய விசை) ஆகியவற்றை நகலெடுக்கவும்.
+3. சேவை URL: https://oss-&lt;REGION&gt;.aliyuncs.com (எ.கா. https://oss-cn-hangzhou.aliyuncs.com).
+4. பகுதி: எ.கா. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 - அமேசானின் அசல் பொருள் சேமிப்பு.
+
+1. S3 கன்சோலைத் (https://s3.console.aws.amazon.com/) திறந்து ஒரு பக்கெட்டை உருவாக்கவும். அதன் பகுதியைக் கவனியுங்கள் (எ.கா. us-கிழக்கு-1).
+2. IAM ஐத் திறக்கவும் → பயனர்கள் → ஒரு பயனரை உருவாக்கவும் → AmazonS3FullAccess கொள்கையை இணைக்கவும்.
+3. பாதுகாப்புச் சான்றுகளின் கீழ், அணுகல் விசையை உருவாக்கவும் - முக்கிய ஐடி மற்றும் ரகசியத்தை நகலெடுக்கவும்.
+4. நிரப்பவும்: பக்கெட், அணுகல் விசை, இரகசிய விசை மற்றும் பிராந்தியம்.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — Baidu இலிருந்து S3-இணக்கமான பொருள் சேமிப்பு.
+
+1. BOS கன்சோலில் (https://console.bce.baidu.com/bos/), ஒரு பக்கெட்டை உருவாக்கவும். அதன் பகுதியைக் கவனியுங்கள் (எ.கா. bj, gz, su).
+2. பாதுகாப்பு → அணுகல் விசைகளுக்குச் செல்லவும் - உங்கள் அணுகல் விசை ஐடி மற்றும் ரகசிய அணுகல் விசையை நகலெடுக்கவும்.
+3. சேவை URL: https://s3.&lt;REGION&gt;.bcebos.com (எ.கா. https://s3.bj.bcebos.com).
+4. பகுதி: எ.கா. பிஜே</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — மலிவு விலை S3-இணக்கமான சேமிப்பு.
+
+1. Backblaze இல் (https://www.backblaze.com/) → B2 Cloud Storage → Buckets, ஒரு பக்கெட்டை உருவாக்கவும்.
+2. பயன்பாட்டு விசைகளுக்குச் செல்லவும் → ஒரு புதிய பயன்பாட்டு விசையைச் சேர்க்கவும், அதை வாளியில் ஸ்கோப் செய்யவும்.
+   கீஐடி (= அணுகல் விசை) மற்றும் பயன்பாட்டு விசை (= ரகசிய விசை) ஆகியவற்றை நகலெடுக்கவும்.
+3. சேவை URL: உங்கள் பக்கெட்டின் இறுதிப்புள்ளி பக்கெட் விவரங்களில் காட்டப்பட்டுள்ளது, எ.கா. https://s3.us-west-004.backblazeb2.com
+4. பகுதி: &apos;s3.&apos; இடையே உள்ள பிரிவு. மற்றும் &apos;.backblazeb2.com&apos;, எ.கா. us-west-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — zero-egress S3-compatible storage.
+
+1. Cloudflare டாஷ்போர்டில் (https://dash.cloudflare.com/) → R2 → ஒரு பக்கெட்டை உருவாக்கவும்.
+2. R2 க்குச் செல்லவும் → R2 API டோக்கன்களை நிர்வகிக்கவும் → API டோக்கனை உருவாக்கவும் ஆப்ஜெக்ட் ரீட் &amp; ரைட் உடன்.
+   அணுகல் விசை ஐடி மற்றும் ரகசிய அணுகல் விசையை நகலெடுக்கவும்.
+3. சேவை URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   உங்கள் கணக்கு ஐடி R2 மேலோட்டப் பக்கத்தில் காட்டப்பட்டுள்ளது.
+4. நிரப்பவும்: பக்கெட், அணுகல் விசை, இரகசிய விசை மற்றும் சேவை URL. பகுதி தானாகவே &apos;தானாக&apos; அமைக்கப்படும்.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) பொருள் சேமிப்பு - S3-இணக்கமான OBS சேமிப்பு.
+
+1. Cloud.ru கன்சோலில் (https://cloud.ru/) → ஆப்ஜெக்ட் ஸ்டோரேஜ் சர்வீஸ் (OBS) → ஒரு பக்கெட்டை உருவாக்கவும்.
+2. எனது நற்சான்றிதழ்கள் → அணுகல் விசைகள் → அணுகல் விசையைச் சேர் என்பதற்குச் செல்லவும்.
+   அணுகல் விசை மற்றும் ரகசிய அணுகல் விசையை நகலெடுக்கவும்.
+3. நிரப்பவும்: பக்கெட், அணுகல் திறவுகோல், இரகசிய விசை மற்றும் பிராந்தியம் (எ.கா. ru-moscow-1).
+   சேவை URL தானாகவே நிரப்பப்படும்.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO அல்லது ஏதேனும் S3-இணக்கமான சர்வர்.
+
+1. உங்கள் MinIO (அல்லது மற்ற S3-இணக்கமான) சேவையகத்தைத் தொடங்கவும்.
+2. MinIO கன்சோல் அல்லது &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos; வழியாக ஒரு பக்கெட்டை உருவாக்கவும்.
+3. MinIO Console → Access Keys இல் அணுகல் விசையை உருவாக்கவும் (உற்பத்தியில் ரூட் சான்றுகளைத் தவிர்க்கவும்).
+4. சேவை URL: உங்கள் சர்வர் எண்ட்பாயிண்ட், எ.கா. http://192.168.1.10:9000 அல்லது https://minio.example.com.
+5. பிராந்தியம்: ஏதேனும் மதிப்பு (எ.கா. us-east-1) — அல்லது சர்வர் அதைச் செயல்படுத்தவில்லை என்றால் காலியாக விடவும்.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — S3-இணக்கமான பொருள் சேமிப்பு.
+
+1. Spaces இல் (https://cloud.digitalocean.com/spaces), ஒரு இடத்தை உருவாக்கவும். அதன் பகுதியைக் கவனியுங்கள் (எ.கா. nyc3).
+2. API → Spaces Keys → Generate New Key என்பதற்குச் செல்லவும். விசை (= அணுகல் விசை) மற்றும் ரகசியத்தை நகலெடுக்கவும்.
+3. சேவை URL: https://&lt;REGION&gt;.digitaloceanspaces.com (எ.கா. https://nyc3.digitaloceanspaces.com).
+4. பகுதி: அதே குறுகிய குறியீடு, எ.கா. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>கூகுள் கிளவுட் ஸ்டோரேஜ் — S3 இன்டர்ஆபரபிலிட்டி API வழியாக.
+
+1. Google Cloud Console இல் (https://console.cloud.google.com/storage), ஒரு பக்கெட்டை உருவாக்கவும்.
+2. Cloud Storage → Settings → Interoperability → ஒரு சேவை கணக்கிற்கு HMAC கீயை உருவாக்கவும்.
+   அணுகல் விசை மற்றும் ரகசியத்தை நகலெடுக்கவும்.
+3. நிரப்பவும்: பக்கெட், அணுகல் விசை (HMAC விசை), ரகசிய விசை (HMAC ரகசியம்).
+   சேவை URL மற்றும் பகுதி தானாகவே அமைக்கப்படும்.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — Huawei இலிருந்து S3-இணக்கமான பொருள் சேமிப்பு.
+
+1. OBS கன்சோலில் (https://console.huaweicloud.com/obs/), ஒரு பக்கெட்டை உருவாக்கவும். அதன் பகுதியைக் கவனியுங்கள் (எ.கா. cn-North-4).
+2. எனது நற்சான்றிதழ்கள் → அணுகல் விசைகள் → அணுகல் விசையை உருவாக்கு என்பதற்குச் செல்லவும்.
+   AK (= அணுகல் விசை) மற்றும் SK (= இரகசிய விசை) ஆகியவற்றை நகலெடுக்கவும்.
+3. சேவை URL: https://obs.&lt;REGION&gt;.myhuaweicloud.com (எ.கா. https://obs.cn-north-4.myhuaweicloud.com).
+4. பகுதி: எ.கா. cn-North-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>லினோட் (அகாமாய்) பொருள் சேமிப்பு - S3-இணக்கமான சேமிப்பு.
+
+1. லினோட் கிளவுட் மேனேஜரில் (https://cloud.linode.com/object-storage/buckets), ஒரு பக்கெட்டை உருவாக்கவும். அதன் தொகுப்பைக் கவனியுங்கள்.
+2. ஆப்ஜெக்ட் ஸ்டோரேஜ் → அணுகல் விசைகள் → பக்கத்திற்கு அணுகல் விசையை உருவாக்கவும்.
+   அணுகல் விசை மற்றும் ரகசிய விசையை நகலெடுக்கவும்.
+3. சேவை URL: https://&lt;CLUSTER&gt;.linodeobjects.com (எ.கா. https://us-east-1.linodeobjects.com).
+4. பகுதி: அதே கிளஸ்டர் குறியீடு, எ.கா. us-east-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>கினியு கிளவுட் கோடோ — கினியுவிலிருந்து எஸ்3-இணக்கமான சேமிப்பு.
+
+1. கினியு போர்ட்டலில் (https://portal.qiniu.com/kodo/bucket), ஒரு வாளியை உருவாக்கவும். அதன் பகுதியைக் கவனியுங்கள்.
+2. தனிப்பட்ட மையம் → முக்கிய மேலாண்மைக்குச் செல்லவும் - உங்கள் AccessKey மற்றும் SecretKey ஐ நகலெடுக்கவும்.
+3. பிராந்தியத்தின் அடிப்படையில் சேவை URL:
+   கிழக்கு சீனா: https://s3-cn-east-1.qiniucs.com
+   வட சீனா: https://s3-cn-north-1.qiniucs.com
+   தென் சீனா: https://s3-cn-south-1.qiniucs.com
+   வட அமெரிக்கா: https://s3-us-north-1.qiniucs.com
+4. பகுதி: பொருந்தும் குறியீடு, எ.கா. cn-east-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>ஸ்கேல்வே ஆப்ஜெக்ட் ஸ்டோரேஜ் — ஐரோப்பிய S3-இணக்கமான சேமிப்பு.
+
+1. ஸ்கேல்வே கன்சோலில் (https://console.scaleway.com/object-storage/buckets), ஒரு பக்கெட்டை உருவாக்கவும். அதன் பகுதியைக் கவனியுங்கள் (எ.கா. fr-par).
+2. IAM → API விசைகள் → API விசையை ஆப்ஜெக்ட் ஸ்டோரேஜ் எழுதும் அனுமதிகளுடன் உருவாக்கவும்.
+   அணுகல் விசை மற்றும் ரகசிய விசையை நகலெடுக்கவும்.
+3. சேவை URL: https://s3.&lt;REGION&gt;.scw.cloud (எ.கா. https://s3.fr-par.scw.cloud).
+4. பகுதி: எ.கா. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel ஆப்ஜெக்ட் ஸ்டோரேஜ் — S3-இணக்கமான ரஷ்ய சேமிப்பு.
+
+1. Selectel Panel இல் (https://my.selectel.ru/) → Cloud Storage → ஒரு கொள்கலனை உருவாக்கவும் (= பக்கெட்).
+2. பயனர்கள் &amp; பாத்திரங்களின் கீழ், சேமிப்பக அணுகலுடன் சேவை பயனரை உருவாக்கவும் → S3 விசைகள் → ஒரு முக்கிய ஜோடியை உருவாக்கவும்.
+   அணுகல் விசை மற்றும் ரகசிய விசையை நகலெடுக்கவும்.
+3. நிரப்பவும்: பக்கெட், அணுகல் விசை, ரகசிய விசை.
+   சேவை URL தானாகவே நிரப்பப்படும்.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>டென்சென்ட் கிளவுட் COS — டென்சென்ட்டிலிருந்து S3-இணக்கமான பொருள் சேமிப்பு.
+
+1. COS கன்சோலில் (https://console.cloud.tencent.com/cos), ஒரு பக்கெட்டை உருவாக்கவும். AppId மற்றும் பிராந்தியத்தைக் கவனியுங்கள் (எ.கா. ap-beijing).
+2. அணுகல் மேலாண்மையில் → API விசைகள் → விசையை உருவாக்கவும்.
+   SecretId (= Access Key) மற்றும் SecretKey (= இரகசிய விசை) ஆகியவற்றை நகலெடுக்கவும்.
+3. சேவை URL: https://cos.&lt;REGION&gt;.myqcloud.com (எ.கா. https://cos.ap-beijing.myqcloud.com).
+4. பக்கெட் பெயர் வடிவம்: &lt;name&gt;-&lt;AppId&gt; (எ.கா. mybucket-1250000000). பிராந்தியம்: எ.கா. ap-beijing.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK கிளவுட் ஆப்ஜெக்ட் ஸ்டோரேஜ் — VK Cloud இலிருந்து S3-இணக்கமான சேமிப்பு.
+
+1. VK கிளவுட் போர்ட்டலில் (https://msk.cloud.vk.com/) → கிளவுட் ஸ்டோரேஜ் → ஒரு வாளியை உருவாக்கவும்.
+2. உங்கள் கணக்கின் கீழ் → அணுகல் விசைகள் → புதிய விசை ஜோடியை உருவாக்கவும்.
+   அணுகல் விசை மற்றும் ரகசிய விசையை நகலெடுக்கவும்.
+3. நிரப்பவும்: பக்கெட், அணுகல் திறவுகோல், இரகசிய விசை மற்றும் தேவைப்பட்டால் பிராந்தியம் (எ.கா. ru-msk).
+   சேவை URL தானாகவே நிரப்பப்படும்.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>எரிமலை எஞ்சின் TOS (ByteDance) — S3-இணக்கமான சேமிப்பு.
+
+1. எரிமலை எஞ்சின் கன்சோலில் (https://console.volcengine.com/tos), ஒரு வாளியை உருவாக்கவும். அதன் பகுதியைக் கவனியுங்கள் (எ.கா. cn-beijing).
+2. IAM → அணுகல் விசைகள் → விசையை உருவாக்கவும்.
+   அணுகல் விசை ஐடி மற்றும் ரகசிய அணுகல் விசையை நகலெடுக்கவும்.
+3. சேவை URL: https://tos-s3-&lt;REGION&gt;.volces.com (எ.கா. https://tos-s3-cn-beijing.volces.com).
+4. பகுதி: எ.கா. cn-beijing.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>வசாபி - வெளியேறும் கட்டணம் இல்லாத சூடான கிளவுட் சேமிப்பு.
+
+1. வசாபி கன்சோலில் (https://console.wasabisys.com/) → பக்கெட்டுகள் → பக்கெட்டை உருவாக்கவும். ஒரு பகுதியைத் தேர்ந்தெடுக்கவும்.
+2. அணுகல் விசைகளுக்குச் செல்லவும் → புதிய அணுகல் விசையை உருவாக்கவும். அணுகல் விசை மற்றும் ரகசிய விசையை நகலெடுக்கவும்.
+3. நிரப்பவும்: பக்கெட், அணுகல் திறவுகோல், இரகசிய விசை மற்றும் பிராந்தியம் (எ.கா. us-east-1, eu-central-1).
+   சேவை URL தானாகவே நிரப்பப்படும்.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>யாண்டெக்ஸ் ஆப்ஜெக்ட் ஸ்டோரேஜ் — S3-இணக்கமான ரஷ்ய கிளவுட் ஸ்டோரேஜ்.
+
+1. Yandex Cloud Console இல் (https://console.yandex.cloud/) → பொருள் சேமிப்பு → ஒரு வாளியை உருவாக்கவும்.
+2. சேவை கணக்குகளுக்குச் செல்லவும் → store.editor பாத்திரத்துடன் ஒன்றை உருவாக்கவும் → நிலையான அணுகல் விசையை உருவாக்கவும்.
+   முக்கிய ஐடி (= அணுகல் விசை) மற்றும் ரகசிய விசையை நகலெடுக்கவும்.
+3. நிரப்பவும்: பக்கெட், அணுகல் விசை, ரகசிய விசை.
+   சேவை URL மற்றும் பகுதி தானாகவே அமைக்கப்படும்.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>பெட்டி — WebDAV ஆதரவுடன் நிறுவன கிளவுட் சேமிப்பு.
+
+1. app.box.com இல் உள்நுழையவும். Box WebDAV கட்டண திட்டங்களுக்கு மட்டுமே கிடைக்கும் என்பதை நினைவில் கொள்ளவும்.
+2. உங்கள் Box கணக்கு மின்னஞ்சலை பயனராக உள்ளிடவும்.
+3. உங்கள் பெட்டி கடவுச்சொல்லை கடவுச்சொல்லாக உள்ளிடவும்.
+   நீங்கள் SSO ஐப் பயன்படுத்தினால், கணக்கு அமைப்புகளில் தனி WebDAV கடவுச்சொல்லை அமைக்க வேண்டியிருக்கும்.
+   சேவையக முகவரி, HTTPS, போர்ட் மற்றும் அடிப்படை பாதை தானாக கட்டமைக்கப்படும்.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>பொதுவான WebDAV சேவையகம் (Nextcloud, ownCloud, Synology DSM, Seafile, Apache போன்றவை)
+
+1. சேவையக முகவரியை உள்ளிட்டு, HTTPS (பரிந்துரைக்கப்பட்டது) என்பதைத் தேர்ந்தெடுத்து, போர்ட்டை அமைக்கவும் (0 = இயல்புநிலை: HTTPக்கு 80, HTTPSக்கு 443).
+2. WebDAV இறுதிப்புள்ளிக்கான அடிப்படை பாதையை உள்ளிடவும்.
+   Nextcloud உதாரணம்: /remote.php/dav/files/&lt;username&gt;/Backups
+   சினாலஜி டிஎஸ்எம்: /
+3. உங்கள் பயனர்பெயர் மற்றும் கடவுச்சொல்லை உள்ளிடவும் (அல்லது உங்கள் சேவையகம் தேவைப்பட்டால், பயன்பாட்டு-குறிப்பிட்ட கடவுச்சொல்).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive — வலுவான தனியுரிமைக் கவனம் கொண்ட ஜெர்மன் கிளவுட் சேமிப்பு.
+
+1. hidrive.ionos.com இல் உள்நுழைக → அமைப்புகள் → பயன்பாடுகள் &amp; இணைக்கப்பட்ட சேவைகள் → WebDAV.
+   அல்லது உங்கள் தற்போதைய நற்சான்றிதழ்களுடன் நேரடியாக WebDAV ஐ அணுகவும்.
+2. உங்கள் HiDrive பயனர்பெயரை பயனராக உள்ளிடவும்.
+3. உங்கள் HiDrive கடவுச்சொல்லை கடவுச்சொல்லாக உள்ளிடவும்.
+   சேவையக முகவரி, HTTPS, போர்ட் மற்றும் அடிப்படை பாதை தானாக கட்டமைக்கப்படும்.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) — சொந்த WebDAV ஆதரவுடன் பிரபலமான சீன கிளவுட் ஸ்டோரேஜ்.
+
+1. jianguoyun.com இல் உள்நுழைக → கணக்குத் தகவல் → பாதுகாப்பு → மூன்றாம் தரப்பு பயன்பாட்டு மேலாண்மை → விண்ணப்பத்தைச் சேர்க்கவும்.
+   உருவாக்கப்பட்ட பயன்பாட்டு கடவுச்சொல்லை நகலெடுக்கவும் - இது ஒரு முறை மட்டுமே காட்டப்படும்.
+2. உங்கள் Jianguoyun மின்னஞ்சல் முகவரியை பயனராக உள்ளிடவும்.
+3. உருவாக்கப்பட்ட பயன்பாட்டு கடவுச்சொல்லை கடவுச்சொல்லாக உள்ளிடவும்.
+   சேவையக முகவரி, HTTPS, போர்ட் மற்றும் அடிப்படை பாதை தானாக கட்டமைக்கப்படும்.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>கூஃப்ர் — ஸ்லோவேனியா (EU) அடிப்படையிலான தனியுரிமை நட்பு கிளவுட் சேமிப்பு.
+
+1. app.koofr.eu → விருப்பத்தேர்வுகள் → கடவுச்சொல் → ஆப்ஸ் கடவுச்சொற்கள் → கடவுச்சொல்லைச் சேர்க்கவும்.
+2. உங்கள் கூஃப்ர் கணக்கு மின்னஞ்சலை பயனராக உள்ளிடவும்.
+3. உருவாக்கப்பட்ட பயன்பாட்டு கடவுச்சொல்லை கடவுச்சொல்லாக உள்ளிடவும்.
+   சேவையக முகவரி, HTTPS, போர்ட் மற்றும் அடிப்படை பாதை தானாக கட்டமைக்கப்படும்.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>WebDAV வழியாக Mail.ru கிளவுட்.
+
+1. account.mail.ru → பாதுகாப்பு → பயன்பாட்டு கடவுச்சொற்கள் → பயன்பாட்டு கடவுச்சொல்லை உருவாக்கவும்.
+   வகையாக &apos;அஞ்சல்&apos; அல்லது &apos;அனைத்தும்&apos; என்பதைத் தேர்ந்தெடுத்து, உருவாக்கப்பட்ட கடவுச்சொல்லை நகலெடுக்கவும்.
+2. உங்கள் Mail.ru மின்னஞ்சல் முகவரியை பயனராக உள்ளிடவும்.
+3. பயன்பாட்டு கடவுச்சொல்லை கடவுச்சொல்லாக உள்ளிடவும்.
+   சேவையக முகவரி, HTTPS, போர்ட் மற்றும் அடிப்படை பாதை தானாக கட்டமைக்கப்படும்.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud — பிரபலமான சுய-ஹோஸ்ட் செய்யப்பட்ட கோப்பு ஒத்திசைவு மற்றும் பகிர்வு.
+
+1. உங்கள் Nextcloud சேவையக முகவரியை உள்ளிடவும் (எ.கா. nextcloud.example.com).
+2. அடிப்படை பாதை முன்பே நிரப்பப்பட்டுள்ளது: /remote.php/dav/files/&lt;username&gt;/
+   உங்கள் உண்மையான Nextcloud பயனர்பெயருடன் &lt;username&gt; ஐ மாற்றவும்.
+3. உங்கள் Nextcloud பயனர்பெயர் மற்றும் கடவுச்சொல்லை உள்ளிடவும் (அல்லது ஒரு பயன்பாட்டு கடவுச்சொல்
+   அமைப்புகள் → பாதுகாப்பு → சாதனங்கள் &amp; அமர்வுகள் → பயன்பாட்டு கடவுச்சொற்கள்).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>சொந்த கிளவுட் - சுய-ஹோஸ்ட் செய்யப்பட்ட கோப்பு ஒத்திசைவு மற்றும் பகிர்வு.
+
+1. உங்கள் சொந்த கிளவுட் சேவையக முகவரியை உள்ளிடவும் (எ.கா. owncloud.example.com).
+2. அடிப்படை பாதை முன்பே நிரப்பப்பட்டுள்ளது: /remote.php/dav/files/&lt;username&gt;/
+   உங்கள் உண்மையான சொந்த கிளவுட் பயனர்பெயருடன் &lt;username&gt; ஐ மாற்றவும்.
+3. உங்கள் சொந்த கிளவுட் பயனர்பெயர் மற்றும் கடவுச்சொல்லை உள்ளிடவும் (அல்லது 2FA இயக்கப்பட்டிருந்தால் பயன்பாட்டு கடவுச்சொல்).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud — ஐரோப்பிய ஒன்றியம் மற்றும் அமெரிக்க தரவு மையங்களுடன் கிளவுட் சேமிப்பு.
+
+1. my.pcloud.com இல் உள்நுழையவும் → அமைப்புகள் → பாதுகாப்பு → பயன்பாட்டு கடவுச்சொற்கள் → உருவாக்கவும்.
+   பயன்பாட்டு கடவுச்சொல்லை நகலெடுக்கவும் - இது ஒரு முறை மட்டுமே காட்டப்படும்.
+2. உங்கள் pCloud கணக்கு மின்னஞ்சலை பயனராக உள்ளிடவும்.
+3. பயன்பாட்டு கடவுச்சொல்லை கடவுச்சொல்லாக உள்ளிடவும்.
+   EU தரவு மையத்திற்கு: ewebdav.pcloud.com தானாகவே பயன்படுத்தப்படும்.
+   அமெரிக்க தரவு மையத்திற்கு: ஹோஸ்டை webdav.pcloud.com என மாற்றவும்.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>WebDAV வழியாக யாண்டெக்ஸ் வட்டு.
+
+1. id.yandex.com க்குச் செல்லவும் → பாதுகாப்பு → பயன்பாட்டு கடவுச்சொற்கள் → &apos;WebDAV அணுகலுக்கு&apos; பயன்பாட்டு கடவுச்சொல்லை உருவாக்கவும்.
+   உருவாக்கப்பட்ட கடவுச்சொல்லை நகலெடுக்கவும் - இது ஒரு முறை மட்டுமே காட்டப்படும்.
+2. உங்கள் Yandex உள்நுழைவை பயனராக உள்ளிடவும்.
+3. பயன்பாட்டு கடவுச்சொல்லை (உங்கள் Yandex கணக்கு கடவுச்சொல் அல்ல) கடவுச்சொல்லாக உள்ளிடவும்.
+   சேவையக முகவரி, HTTPS மற்றும் போர்ட் ஆகியவை தானாக கட்டமைக்கப்படும்.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Windows, Linux இல் உங்கள் தரவை காப்புப்பிரதி/ஒத்திசைக்கவும்.
 WI-FI வழியாக தொலைபேசியிலிருந்து புகைப்படங்களை இறக்குமதி செய்யவும் மற்றும் பல.

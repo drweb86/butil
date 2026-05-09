@@ -967,6 +967,267 @@ bin.
   <data name="User_Field_Validation" xml:space="preserve">
     <value>მომხმარებელი მითითებული არ არის.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — S3-თან თავსებადი ობიექტების შენახვა Alibaba-სგან.
+
+1. OSS Console-ში (https://oss.console.aliyun.com/) შექმენით bucket. გაითვალისწინეთ მისი რეგიონი (მაგ. oss-cn-hangzhou).
+2. RAM Console-ში → მომხმარებლები → შექმენით მომხმარებელი → მიამაგრეთ AliyunOSSFullAccess → შექმენით AccessKey.
+   დააკოპირეთ AccessKey ID (= Access Key) და AccessKey Secret (= საიდუმლო გასაღები).
+3. სერვისის URL: https://oss-&lt;REGION&gt;.aliyuncs.com (მაგ. https://oss-cn-hangzhou.aliyuncs.com).
+4. რეგიონი: მაგ. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — ამაზონის ორიგინალური ობიექტების საცავი.
+
+1. გახსენით S3 Console (https://s3.console.aws.amazon.com/) და შექმენით bucket. გაითვალისწინეთ მისი რეგიონი (მაგ. us-east-1).
+2. გახსენით IAM → მომხმარებლები → შექმენით მომხმარებელი → მიამაგრეთ AmazonS3FullAccess პოლიტიკა.
+3. უსაფრთხოების რწმუნებათა სიგელების ქვეშ შექმენით წვდომის გასაღები — დააკოპირეთ გასაღების ID და საიდუმლო.
+4. შეავსეთ: Bucket, Access Key, Secret Key და Region.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — S3-თან თავსებადი ობიექტების შენახვა Baidu-სგან.
+
+1. BOS Console-ში (https://console.bce.baidu.com/bos/) შექმენით თაიგული. გაითვალისწინეთ მისი რეგიონი (მაგ. bj, gz, su).
+2. გადადით უსაფრთხოებაზე → წვდომის გასაღებები — დააკოპირეთ თქვენი წვდომის გასაღების ID და საიდუმლო წვდომის გასაღები.
+3. სერვისის URL: https://s3.&lt;REGION&gt;.bcebos.com (მაგ. https://s3.bj.bcebos.com).
+4. რეგიონი: მაგ. ბჟ.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — ხელმისაწვდომი S3-თან თავსებადი საცავი.
+
+1. Backblaze-ში (https://www.backblaze.com/) → B2 Cloud Storage → Buckets, შექმენით bucket.
+2. გადადით აპის კლავიშებზე → დაამატეთ ახალი აპლიკაციის გასაღები, გადაიტანეთ იგი თაიგულში.
+   დააკოპირეთ keyID (= Access Key) და applicationKey (= საიდუმლო გასაღები).
+3. სერვისის URL: თქვენი თაიგულის ბოლო წერტილი ნაჩვენებია თაიგულის დეტალებში, მაგ. https://s3.us-west-004.backblazeb2.com
+4. რეგიონი: სეგმენტი &apos;s3&apos;-ს შორის. და &apos;.backblazeb2.com&apos;, მაგ. us-west-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — ნულოვანი ამოღების S3-თან თავსებადი საცავი.
+
+1. Cloudflare Dashboard-ში (https://dash.cloudflare.com/) → R2 → შექმენით bucket.
+2. გადადით R2 → Manage R2 API Tokens → Create API Token with Object Read &amp; Write.
+   დააკოპირეთ წვდომის გასაღების ID და საიდუმლო წვდომის გასაღები.
+3. სერვისის URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   თქვენი ანგარიშის ID ნაჩვენებია R2 მიმოხილვის გვერდზე.
+4. შეავსეთ: Bucket, Access Key, Secret Key და Service URL. რეგიონი ავტომატურად დაყენებულია „ავტო“.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) ობიექტების საცავი — S3-თან თავსებადი OBS საცავი.
+
+1. Cloud.ru კონსოლში (https://cloud.ru/) → ობიექტების შენახვის სერვისი (OBS) → შექმენით თაიგული.
+2. გადადით ჩემს რწმუნებულებში → წვდომის კლავიშები → წვდომის გასაღების დამატება.
+   დააკოპირეთ წვდომის გასაღები და საიდუმლო წვდომის გასაღები.
+3. შეავსეთ: Bucket, Access Key, Secret Key და Region (მაგ. ru-moscow-1).
+   სერვისის URL ივსება ავტომატურად.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO ან ნებისმიერი S3-თან თავსებადი სერვერი.
+
+1. გაუშვით თქვენი MinIO (ან სხვა S3-თან თავსებადი) სერვერი.
+2. შექმენით bucket MinIO Console-ის ან &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos; მეშვეობით.
+3. შექმენით წვდომის გასაღები MinIO Console-ში → Access Keys (მოერიდეთ root სერთიფიკატებს წარმოებაში).
+4. სერვისის URL: თქვენი სერვერის საბოლოო წერტილი, მაგ. http://192.168.1.10:9000 ან https://minio.example.com.
+5. რეგიონი: ნებისმიერი მნიშვნელობა (მაგ. us-east-1) - ან დატოვეთ ცარიელი, თუ სერვერი არ ახორციელებს მას.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — S3-თან თავსებადი ობიექტების საცავი.
+
+1. Spaces-ში (https://cloud.digitalocean.com/spaces) შექმენით Space. გაითვალისწინეთ მისი რეგიონი (მაგ. nyc3).
+2. გადადით API → Spaces Keys → Generate New Key. დააკოპირეთ გასაღები (= წვდომის გასაღები) და საიდუმლო.
+3. სერვისის URL: https://&lt;REGION&gt;.digitaloceanspaces.com (მაგ. https://nyc3.digitaloceanspaces.com).
+4. რეგიონი: იგივე მოკლე კოდი, მაგ. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — S3 თავსებადობის API-ის მეშვეობით.
+
+1. Google Cloud Console-ში (https://console.cloud.google.com/storage) შექმენით თაიგული.
+2. გადადით Cloud Storage → Settings → Interoperability → შექმენით HMAC გასაღები სერვისის ანგარიშისთვის.
+   დააკოპირეთ წვდომის გასაღები და საიდუმლო.
+3. შეავსეთ: Bucket, Access Key (HMAC key), Secret Key (HMAC secret).
+   სერვისის URL და რეგიონი ავტომატურად დაყენებულია.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — S3-თან თავსებადი ობიექტების საცავი Huawei-სგან.
+
+1. OBS Console-ში (https://console.huaweicloud.com/obs/) შექმენით თაიგული. გაითვალისწინეთ მისი რეგიონი (მაგ. cn-north-4).
+2. გადადით &quot;ჩემი რწმუნებათა სიგელები&quot; → &quot;წვდომის კლავიშები&quot; → &quot;წვდომის გასაღების შექმნა&quot;.
+   დააკოპირეთ AK (= წვდომის გასაღები) და SK (= საიდუმლო გასაღები).
+3. სერვისის URL: https://obs.&lt;REGION&gt;.myhuaweicloud.com (მაგ. https://obs.cn-north-4.myhuaweicloud.com).
+4. რეგიონი: მაგ. cn-ჩრდილოეთი-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) ობიექტების საცავი — S3-თან თავსებადი საცავი.
+
+1. Linode Cloud Manager-ში (https://cloud.linode.com/object-storage/buckets) შექმენით თაიგული. გაითვალისწინეთ მისი კლასტერი.
+2. გადადით ობიექტის შენახვაზე → წვდომის ღილაკებზე → შექმენით წვდომის გასაღები, რომელიც მოთავსებულია თაიგულზე.
+   დააკოპირეთ წვდომის გასაღები და საიდუმლო გასაღები.
+3. სერვისის URL: https://&lt;CLUSTER&gt;.linodeobjects.com (მაგ. https://us-east-1.linodeobjects.com).
+4. რეგიონი: იგივე კლასტერული კოდი, მაგ. us-აღმოსავლეთი-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — S3-თან თავსებადი საცავი Qiniu-დან.
+
+1. Qiniu პორტალში (https://portal.qiniu.com/kodo/bucket) შექმენით ვედრო. გაითვალისწინეთ მისი რეგიონი.
+2. გადადით პერსონალურ ცენტრში → გასაღების მენეჯმენტი — დააკოპირეთ თქვენი AccessKey და SecretKey.
+3. სერვისის URL რეგიონის მიხედვით:
+   აღმოსავლეთ ჩინეთი: https://s3-cn-east-1.qiniucs.com
+   ჩრდილოეთ ჩინეთი: https://s3-cn-north-1.qiniucs.com
+   სამხრეთ ჩინეთი: https://s3-cn-south-1.qiniucs.com
+   ჩრდილოეთ ამერიკა: https://s3-us-north-1.qiniucs.com
+4. რეგიონი: შესაბამისი კოდი, მაგ. cn-აღმოსავლეთი-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — ევროპული S3-თან თავსებადი საცავი.
+
+1. Scaleway Console-ში (https://console.scaleway.com/object-storage/buckets) შექმენით თაიგული. გაითვალისწინეთ მისი რეგიონი (მაგ. fr-par).
+2. გადადით IAM → API Keys → Generate API Key with Object Storage ჩაწერის ნებართვით.
+   დააკოპირეთ წვდომის გასაღები და საიდუმლო გასაღები.
+3. სერვისის URL: https://s3.&lt;REGION&gt;.scw.cloud (მაგ. https://s3.fr-par.scw.cloud).
+4. რეგიონი: მაგ. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — S3-თან თავსებადი რუსული საცავი.
+
+1. Selectel პანელში (https://my.selectel.ru/) → Cloud Storage → შექმენით კონტეინერი (= bucket).
+2. &quot;მომხმარებლები და როლები&quot; განყოფილებაში შექმენით სერვისის მომხმარებელი შენახვის წვდომით → S3 კლავიშები → შექმენით გასაღების წყვილი.
+   დააკოპირეთ წვდომის გასაღები და საიდუმლო გასაღები.
+3. შეავსეთ: Bucket, Access Key, Secret Key.
+   სერვისის URL ივსება ავტომატურად.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — S3-თან თავსებადი ობიექტების შენახვა Tencent-ისგან.
+
+1. COS Console-ში (https://console.cloud.tencent.com/cos) შექმენით თაიგული. გაითვალისწინეთ AppId და რეგიონი (მაგ. ap-beijing).
+2. წვდომის მენეჯმენტში → API Keys → Create Key.
+   დააკოპირეთ SecretId (= Access Key) და SecretKey (= საიდუმლო გასაღები).
+3. სერვისის URL: https://cos.&lt;REGION&gt;.myqcloud.com (მაგ. https://cos.ap-beijing.myqcloud.com).
+4. Bucket-ის სახელის ფორმატი: &lt;name&gt;-&lt;AppId&gt; (მაგ. mybucket-1250000000). რეგიონი: მაგ. აპ-პეკინი.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — S3-თან თავსებადი საცავი VK Cloud-დან.
+
+1. VK Cloud Portal-ში (https://msk.cloud.vk.com/) → Cloud Storage → შექმენით bucket.
+2. თქვენი ანგარიშის ქვეშ → წვდომის კლავიშები → შექმენით ახალი გასაღების წყვილი.
+   დააკოპირეთ წვდომის გასაღები და საიდუმლო გასაღები.
+3. შეავსეთ: Bucket, Access Key, Secret Key და რეგიონი საჭიროების შემთხვევაში (მაგ. ru-msk).
+   სერვისის URL ივსება ავტომატურად.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — S3-თან თავსებადი საცავი.
+
+1. Volcano Engine Console-ში (https://console.volcengine.com/tos) შექმენით თაიგული. გაითვალისწინეთ მისი რეგიონი (მაგ. cn-პეკინი).
+2. გადადით IAM → Access Keys → შექმენით გასაღები.
+   დააკოპირეთ წვდომის გასაღების ID და საიდუმლო წვდომის გასაღები.
+3. სერვისის URL: https://tos-s3-&lt;REGION&gt;.volces.com (მაგ. https://tos-s3-cn-beijing.volces.com).
+4. რეგიონი: მაგ. cn-პეკინი.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi - ცხელი ღრუბლოვანი საცავი გასვლის საფასურის გარეშე.
+
+1. Wasabi Console-ში (https://console.wasabisys.com/) → Buckets → Create Bucket. აირჩიეთ რეგიონი.
+2. გადადით წვდომის კლავიშებზე → შექმენით ახალი წვდომის გასაღები. დააკოპირეთ წვდომის გასაღები და საიდუმლო გასაღები.
+3. შეავსეთ: Bucket, Access Key, Secret Key და Region (მაგ. us-east-1, eu-central-1).
+   სერვისის URL ივსება ავტომატურად.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage — S3-თან თავსებადი რუსული ღრუბლოვანი საცავი.
+
+1. Yandex Cloud Console-ში (https://console.yandex.cloud/) → Object Storage → bucket-ის შექმნა.
+2. გადადით სერვისის ანგარიშებზე → შექმენით ერთი storage.editor როლით → შექმენით სტატიკური წვდომის გასაღები.
+   დააკოპირეთ გასაღების ID (= წვდომის გასაღები) და საიდუმლო გასაღები.
+3. შეავსეთ: Bucket, Access Key, Secret Key.
+   სერვისის URL და რეგიონი ავტომატურად დაყენებულია.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box — საწარმოს ღრუბლოვანი საცავი WebDAV მხარდაჭერით.
+
+1. შედით app.box.com-ზე. გაითვალისწინეთ, რომ Box WebDAV ხელმისაწვდომია მხოლოდ ფასიანი გეგმებისთვის.
+2. შეიყვანეთ თქვენი Box ანგარიშის ელფოსტა, როგორც მომხმარებელი.
+3. შეიყვანეთ თქვენი Box პაროლი, როგორც პაროლი.
+   თუ იყენებთ SSO, შეიძლება დაგჭირდეთ ცალკე WebDAV პაროლის დაყენება ანგარიშის პარამეტრებში.
+   სერვერის მისამართი, HTTPS, პორტი და ბაზის გზა ავტომატურად კონფიგურირებულია.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>ზოგადი WebDAV სერვერი (Nextcloud, ownCloud, Synology DSM, Seafile, Apache და ა.შ.)
+
+1. შეიყვანეთ სერვერის მისამართი, აირჩიეთ HTTPS (რეკომენდებულია) და დააყენეთ პორტი (0 = ნაგულისხმევი: 80 HTTP-სთვის, 443 HTTPS-ისთვის).
+2. შეიყვანეთ WebDAV ბოლო წერტილის საბაზისო გზა.
+   შემდეგი ღრუბლის მაგალითი: /remote.php/dav/files/&lt;username&gt;/სარეზერვო ასლები
+   სინოლოგია DSM: /
+3. შეიყვანეთ თქვენი მომხმარებლის სახელი და პაროლი (ან აპის სპეციფიკური პაროლი, თუ ამას თქვენი სერვერი მოითხოვს).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive - გერმანული ღრუბლოვანი საცავი ძლიერი კონფიდენციალურობის ფოკუსით.
+
+1. შედით საიტზე hidrive.ionos.com → პარამეტრები → აპები და დაკავშირებული სერვისები → WebDAV.
+   ან პირდაპირ შედით WebDAV-ზე თქვენი არსებული რწმუნებით.
+2. შეიყვანეთ თქვენი HiDrive მომხმარებლის სახელი, როგორც მომხმარებელი.
+3. შეიყვანეთ თქვენი HiDrive პაროლი, როგორც პაროლი.
+   სერვერის მისამართი, HTTPS, პორტი და ბაზის გზა ავტომატურად კონფიგურირებულია.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) - პოპულარული ჩინური ღრუბლოვანი საცავი მშობლიური WebDAV მხარდაჭერით.
+
+1. შედით jianguoyun.com-ზე → ანგარიშის ინფორმაცია → უსაფრთხოება → მესამე მხარის აპლიკაციის მენეჯმენტი → აპლიკაციის დამატება.
+   დააკოპირეთ გენერირებული აპის პაროლი - ის ნაჩვენებია მხოლოდ ერთხელ.
+2. შეიყვანეთ თქვენი Jianguoyun ელექტრონული ფოსტის მისამართი, როგორც მომხმარებელი.
+3. შეიყვანეთ გენერირებული აპის პაროლი, როგორც პაროლი.
+   სერვერის მისამართი, HTTPS, პორტი და ბაზის გზა ავტომატურად კონფიგურირებულია.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr — კონფიდენციალურობისთვის მოსახერხებელი ღრუბლოვანი საცავი, რომელიც დაფუძნებულია სლოვენიაში (ევროკავშირი).
+
+1. გადადით app.koofr.eu → პრეფერენციები → პაროლი → აპის პაროლები → პაროლის დამატება.
+2. შეიყვანეთ თქვენი Koofr ანგარიშის ელფოსტა, როგორც მომხმარებელი.
+3. შეიყვანეთ გენერირებული აპის პაროლი, როგორც პაროლი.
+   სერვერის მისამართი, HTTPS, პორტი და ბაზის გზა ავტომატურად კონფიგურირებულია.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Mail.ru Cloud WebDAV-ის საშუალებით.
+
+1. გადადით account.mail.ru → უსაფრთხოება → აპის პაროლები → შექმენით აპის პაროლი.
+   აირჩიეთ &quot;ფოსტა&quot; ან &quot;ყველა&quot;, როგორც ტიპი, შემდეგ დააკოპირეთ გენერირებული პაროლი.
+2. შეიყვანეთ თქვენი Mail.ru ელექტრონული ფოსტის მისამართი, როგორც მომხმარებელი.
+3. შეიყვანეთ აპის პაროლი, როგორც პაროლი.
+   სერვერის მისამართი, HTTPS, პორტი და ბაზის გზა ავტომატურად კონფიგურირებულია.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud — პოპულარული თვითმმართველი ფაილების სინქრონიზაცია და გაზიარება.
+
+1. შეიყვანეთ თქვენი Nextcloud სერვერის მისამართი (მაგ. nextcloud.example.com).
+2. საბაზისო გზა წინასწარ შევსებულია: /remote.php/dav/files/&lt;username&gt;/
+   შეცვალეთ &lt;username&gt; თქვენი რეალური Nextcloud მომხმარებლის სახელით.
+3. შეიყვანეთ თქვენი Nextcloud მომხმარებლის სახელი და პაროლი (ან აპის პაროლი
+   პარამეტრები → უსაფრთხოება → მოწყობილობები და სესიები → აპის პაროლები).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud — საკუთარი ჰოსტინგის ფაილების სინქრონიზაცია და გაზიარება.
+
+1. შეიყვანეთ თქვენი საკუთარიCloud სერვერის მისამართი (მაგ. owncloud.example.com).
+2. საბაზისო გზა წინასწარ შევსებულია: /remote.php/dav/files/&lt;username&gt;/
+   შეცვალეთ &lt;username&gt; თქვენი ნამდვილი ownCloud მომხმარებლის სახელით.
+3. შეიყვანეთ თქვენი საკუთარიCloud მომხმარებლის სახელი და პაროლი (ან აპის პაროლი, თუ 2FA ჩართულია).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud — ღრუბლოვანი საცავი ევროკავშირისა და აშშ-ის მონაცემთა ცენტრებით.
+
+1. შედით my.pcloud.com → პარამეტრები → უსაფრთხოება → აპის პაროლები → შექმნა.
+   დააკოპირეთ აპის პაროლი - ის ნაჩვენებია მხოლოდ ერთხელ.
+2. შეიყვანეთ თქვენი pCloud ანგარიშის ელფოსტა, როგორც მომხმარებელი.
+3. შეიყვანეთ აპის პაროლი, როგორც პაროლი.
+   ევროკავშირის მონაცემთა ცენტრისთვის: ewebdav.pcloud.com გამოიყენება ავტომატურად.
+   აშშ მონაცემთა ცენტრისთვის: შეცვალეთ ჰოსტი webdav.pcloud.com-ზე.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>Yandex დისკი WebDAV-ის საშუალებით.
+
+1. გადადით id.yandex.com → უსაფრთხოება → აპის პაროლები → შექმენით აპის პაროლი „WebDAV წვდომისთვის“.
+   დააკოპირეთ გენერირებული პაროლი - ის ნაჩვენებია მხოლოდ ერთხელ.
+2. შეიყვანეთ თქვენი Yandex შესვლა, როგორც მომხმარებელი.
+3. პაროლად შეიყვანეთ აპის პაროლი (არა თქვენი Yandex ანგარიშის პაროლი).
+   სერვერის მისამართი, HTTPS და პორტი ავტომატურად კონფიგურირებულია.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>თქვენი მონაცემების სარეზერვო ასლის შექმნა/სინქრონიზაცია Windows, Linux-ზე.
 ფოტოების იმპორტი ტელეფონიდან WI-FI-ით და სხვა.

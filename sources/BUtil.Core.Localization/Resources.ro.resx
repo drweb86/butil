@@ -967,6 +967,267 @@ Consultați descrierea detaliată în următorul link.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Utilizatorul nu este specificat.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — Stocare de obiecte compatibile cu S3 de la Alibaba.
+
+1. În Consola OSS (https://oss.console.aliyun.com/), creați o găleată. Observați regiunea sa (de exemplu, oss-cn-hangzhou).
+2. În Consola RAM → Utilizatori → creați un utilizator → atașați AliyunOSSFullAccess → creați o cheie de acces.
+   Copiați ID-ul cheii de acces (= cheia de acces) și secretul cheii de acces (= cheia secretă).
+3. Adresa URL a serviciului: https://oss-&lt;REGION&gt;.aliyuncs.com (de exemplu, https://oss-cn-hangzhou.aliyuncs.com).
+4. Regiunea: de ex. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — stocarea originală a obiectelor Amazon.
+
+1. Deschideți Consola S3 (https://s3.console.aws.amazon.com/) și creați o găleată. Observați regiunea sa (de exemplu, us-east-1).
+2. Deschideți IAM → Utilizatori → creați un utilizator → atașați politica AmazonS3FullAccess.
+3. Sub Acreditări de securitate, creați o cheie de acces — copiați ID-ul și Secretul cheii.
+4. Completați: găleată, cheie de acces, cheie secretă și regiune.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — Stocare de obiecte compatibile cu S3 de la Baidu.
+
+1. În Consola BOS (https://console.bce.baidu.com/bos/), creați o găleată. Observați regiunea sa (de exemplu, bj, gz, su).
+2. Accesați Securitate → Chei de acces — copiați ID-ul cheii de acces și Cheia de acces secretă.
+3. Adresa URL a serviciului: https://s3.&lt;REGION&gt;.bcebos.com (de exemplu, https://s3.bj.bcebos.com).
+4. Regiunea: de ex. bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — stocare accesibilă compatibilă cu S3.
+
+1. În Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets, creați o găleată.
+2. Accesați Chei de aplicație → Adăugați o cheie de aplicație nouă, stabiliți-o în găleată.
+   Copiați ID-ul cheii (= cheia de acces) și cheia aplicației (= cheia secretă).
+3. Adresa URL a serviciului: punctul final al compartimentului dvs. afișat în detaliile compartimentului, de ex. https://s3.us-west-004.backblazeb2.com
+4. Regiune: segmentul dintre „s3”. și „.backblazeb2.com”, de ex. us-west-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — stocare compatibilă cu S3 fără ieșiri.
+
+1. În Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → creați o găleată.
+2. Accesați R2 → Gestionare jetoane API R2 → Creare jetoane API cu obiect Citire și scriere.
+   Copiați ID-ul cheii de acces și cheia de acces secretă.
+3. Adresa URL a serviciului: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   ID-ul contului dvs. este afișat pe pagina de prezentare generală a R2.
+4. Completați: Bucket, Access Key, Secret Key și Service URL. Regiunea este setată automat la „auto”.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Stocarea obiectelor Cloud.ru (SberCloud) — Stocare OBS compatibilă cu S3.
+
+1. În Consola Cloud.ru (https://cloud.ru/) → Serviciul de stocare a obiectelor (OBS) → creați o găleată.
+2. Accesați Acreditările mele → Chei de acces → Adăugați cheie de acces.
+   Copiați cheia de acces și cheia de acces secretă.
+3. Completați: găleată, cheie de acces, cheie secretă și regiune (de exemplu, ru-moscow-1).
+   Adresa URL a serviciului este completată automat.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO sau orice server compatibil S3.
+
+1. Porniți serverul dvs. MinIO (sau alt compatibil S3).
+2. Creați o găleată prin Consola MinIO sau „mc mb &lt;alias&gt;/&lt;bucket&gt;”.
+3. Creați o cheie de acces în Consola MinIO → Chei de acces (evitați acreditările root în producție).
+4. Adresa URL a serviciului: punctul final al serverului, de ex. http://192.168.1.10:9000 sau https://minio.example.com.
+5. Regiune: orice valoare (de exemplu, us-east-1) — sau lăsați necompletat dacă serverul nu o aplică.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — Stocare de obiecte compatibile cu S3.
+
+1. În Spaces (https://cloud.digitalocean.com/spaces), creați un Space. Observați regiunea sa (de exemplu, nyc3).
+2. Accesați API → Spaces Keys → Generate New Key. Copiați cheia (= cheia de acces) și secretul.
+3. Adresa URL a serviciului: https://&lt;REGION&gt;.digitaloceanspaces.com (de exemplu, https://nyc3.digitaloceanspaces.com).
+4. Regiune: același cod scurt, de ex. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — prin API-ul de interoperabilitate S3.
+
+1. În Google Cloud Console (https://console.cloud.google.com/storage), creați o găleată.
+2. Accesați Cloud Storage → Setări → Interoperabilitate → creați o cheie HMAC pentru un cont de serviciu.
+   Copiați cheia de acces și secretul.
+3. Completați: Bucket, Access Key (cheie HMAC), Cheie secretă (secret HMAC).
+   Adresa URL a serviciului și regiunea sunt setate automat.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — Stocare de obiecte compatibile cu S3 de la Huawei.
+
+1. În Consola OBS (https://console.huaweicloud.com/obs/), creați o găleată. Observați regiunea sa (de exemplu, cn-nord-4).
+2. Accesați Acreditările mele → Chei de acces → Creare cheie de acces.
+   Copiați AK (= cheie de acces) și SK (= cheie secretă).
+3. Adresa URL a serviciului: https://obs.&lt;REGION&gt;.myhuaweicloud.com (de exemplu, https://obs.cn-north-4.myhuaweicloud.com).
+4. Regiunea: de ex. cn-nord-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Object Storage — Stocare compatibilă cu S3.
+
+1. În Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets), creați o găleată. Observați clusterul său.
+2. Accesați Stocare obiecte → Chei de acces → Creați o cheie de acces întinsă în găleată.
+   Copiați cheia de acces și cheia secretă.
+3. Adresa URL a serviciului: https://&lt;CLUSTER&gt;.linodeobjects.com (de exemplu, https://us-east-1.linodeobjects.com).
+4. Regiune: același cod de cluster, de ex. noi-est-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — Stocare compatibilă cu S3 de la Qiniu.
+
+1. În Qiniu Portal (https://portal.qiniu.com/kodo/bucket), creați o găleată. Observați regiunea sa.
+2. Accesați Centrul personal → Gestionare chei — copiați cheia de acces și cheia secretă.
+3. Adresa URL a serviciului în funcție de regiune:
+   China de Est: https://s3-cn-east-1.qiniucs.com
+   China de Nord: https://s3-cn-north-1.qiniucs.com
+   China de Sud: https://s3-cn-south-1.qiniucs.com
+   America de Nord: https://s3-us-north-1.qiniucs.com
+4. Regiune: cod de potrivire, de ex. cn-est-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — Stocare europeană compatibilă cu S3.
+
+1. În Scaleway Console (https://console.scaleway.com/object-storage/buckets), creați o găleată. Observați regiunea sa (de exemplu, fr-par).
+2. Accesați IAM → Chei API → Generare cheie API cu permisiuni de scriere pentru stocarea obiectelor.
+   Copiați cheia de acces și cheia secretă.
+3. Adresa URL a serviciului: https://s3.&lt;REGION&gt;.scw.cloud (de ex. https://s3.fr-par.scw.cloud).
+4. Regiunea: de ex. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — stocare rusă compatibilă cu S3.
+
+1. În Selectel Panel (https://my.selectel.ru/) → Cloud Storage → creați un container (= găleată).
+2. Sub Utilizatori și roluri, creați un utilizator de serviciu cu acces la stocare → Chei S3 → creați o pereche de chei.
+   Copiați cheia de acces și cheia secretă.
+3. Completați: Bucket, Access Key, Secret Key.
+   Adresa URL a serviciului este completată automat.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — Stocare de obiecte compatibile cu S3 de la Tencent.
+
+1. În COS Console (https://console.cloud.tencent.com/cos), creați o găleată. Notați AppId și Regiunea (de exemplu, ap-beijing).
+2. În Gestionare acces → Chei API → Creare cheie.
+   Copiați SecretId (= cheie de acces) și SecretKey (= cheie secretă).
+3. Adresa URL a serviciului: https://cos.&lt;REGION&gt;.myqcloud.com (de exemplu, https://cos.ap-beijing.myqcloud.com).
+4. Formatul numelui compartimentului: &lt;name&gt;-&lt;AppId&gt; (de exemplu, mybucket-1250000000). Regiune: de ex. ap-beijing.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — Stocare compatibilă cu S3 de la VK Cloud.
+
+1. În VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → creați o găleată.
+2. În contul dvs. → Chei de acces → creați o nouă pereche de chei.
+   Copiați cheia de acces și cheia secretă.
+3. Completați: găleată, cheie de acces, cheie secretă și regiune dacă este necesar (de exemplu, ru-msk).
+   Adresa URL a serviciului este completată automat.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — Stocare compatibilă cu S3.
+
+1. În Volcano Engine Console (https://console.volcengine.com/tos), creați o găleată. Observați regiunea sa (de exemplu, cn-beijing).
+2. Accesați IAM → Chei de acces → creați o cheie.
+   Copiați ID-ul cheii de acces și cheia de acces secretă.
+3. Adresa URL a serviciului: https://tos-s3-&lt;REGION&gt;.volces.com (de ex. https://tos-s3-cn-beijing.volces.com).
+4. Regiunea: de ex. cn-beijing.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi — stocare în cloud fierbinte, fără taxe de ieșire.
+
+1. În Consola Wasabi (https://console.wasabisys.com/) → Buckets → Create Bucket. Alegeți o regiune.
+2. Accesați Chei de acces → Creare cheie de acces nouă. Copiați cheia de acces și cheia secretă.
+3. Completați: găleată, cheie de acces, cheie secretă și regiune (de exemplu, us-east-1, eu-central-1).
+   Adresa URL a serviciului este completată automat.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage — stocare cloud rusă compatibilă cu S3.
+
+1. În Yandex Cloud Console (https://console.yandex.cloud/) → Object Storage → creați o găleată.
+2. Accesați Conturi de servicii → creați unul cu rolul storage.editor → creați o cheie de acces statică.
+   Copiați ID-ul cheii (= cheia de acces) și cheia secretă.
+3. Completați: Bucket, Access Key, Secret Key.
+   Adresa URL a serviciului și regiunea sunt setate automat.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box — stocare în cloud pentru întreprinderi cu suport WebDAV.
+
+1. Conectați-vă la app.box.com. Rețineți că Box WebDAV este disponibil numai pentru planurile plătite.
+2. Introduceți e-mailul contului Box ca utilizator.
+3. Introduceți parola Box ca parolă.
+   Dacă utilizați SSO, poate fi necesar să setați o parolă WebDAV separată în Setările contului.
+   Adresa serverului, HTTPS, portul și calea de bază sunt configurate automat.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>Server WebDAV generic (Nextcloud, ownCloud, Synology DSM, Seafile, Apache etc.)
+
+1. Introduceți adresa serverului, alegeți HTTPS (recomandat) și setați portul (0 = implicit: 80 pentru HTTP, 443 pentru HTTPS).
+2. Introduceți calea de bază pentru punctul final WebDAV.
+   Exemplu Nextcloud: /remote.php/dav/files/&lt;nume utilizator&gt;/Backups
+   Synology DSM: /
+3. Introduceți numele dvs. de utilizator și parola (sau o parolă specifică aplicației dacă serverul dvs. solicită acest lucru).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive — Stocare germană în cloud cu un accent puternic asupra confidențialității.
+
+1. Conectați-vă la hidrive.ionos.com → Setări → Aplicații și servicii conectate → WebDAV.
+   Sau accesați WebDAV direct cu acreditările existente.
+2. Introduceți numele de utilizator HiDrive ca Utilizator.
+3. Introduceți parola HiDrive ca parolă.
+   Adresa serverului, HTTPS, portul și calea de bază sunt configurate automat.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) — stocare în cloud populară din China cu suport nativ WebDAV.
+
+1. Conectați-vă la jianguoyun.com → Informații cont → Securitate → Gestionare aplicații terță parte → Adăugați aplicație.
+   Copiați parola aplicației generată - este afișată o singură dată.
+2. Introduceți adresa de e-mail Jianguoyun ca utilizator.
+3. Introduceți parola aplicației generată ca parolă.
+   Adresa serverului, HTTPS, portul și calea de bază sunt configurate automat.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr — stocare în cloud care respectă confidențialitatea, cu sediul în Slovenia (UE).
+
+1. Accesați app.koofr.eu → Preferințe → Parolă → Parole aplicației → Adăugați parola.
+2. Introduceți e-mailul contului dvs. Koofr ca Utilizator.
+3. Introduceți parola aplicației generată ca parolă.
+   Adresa serverului, HTTPS, portul și calea de bază sunt configurate automat.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Mail.ru Cloud prin WebDAV.
+
+1. Accesați account.mail.ru → Securitate → Parole aplicației → Creați parola aplicației.
+   Selectați „Mail” sau „Toate” ca tip, apoi copiați parola generată.
+2. Introduceți adresa dvs. de e-mail Mail.ru ca Utilizator.
+3. Introduceți parola aplicației ca parolă.
+   Adresa serverului, HTTPS, portul și calea de bază sunt configurate automat.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud — populare sincronizare și partajare a fișierelor auto-găzduite.
+
+1. Introduceți adresa serverului dvs. Nextcloud (de exemplu, nextcloud.example.com).
+2. Calea de bază este pre-completată: /remote.php/dav/files/&lt;nume utilizator&gt;/
+   Înlocuiți &lt;username&gt; cu numele dvs. de utilizator real Nextcloud.
+3. Introduceți numele de utilizator și parola Nextcloud (sau o parolă a aplicației de la
+   Setări → Securitate → Dispozitive și sesiuni → Parole pentru aplicații).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud — sincronizare și partajare a fișierelor găzduite automat.
+
+1. Introduceți adresa serverului dvs. ownCloud (de exemplu, owncloud.example.com).
+2. Calea de bază este pre-completată: /remote.php/dav/files/&lt;nume utilizator&gt;/
+   Înlocuiți &lt;username&gt; cu numele dvs. de utilizator real ownCloud.
+3. Introduceți numele de utilizator și parola ownCloud (sau o parolă pentru aplicație dacă 2FA este activat).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud — stocare în cloud cu centre de date din UE și SUA.
+
+1. Conectați-vă la my.pcloud.com → Setări → Securitate → Parole aplicații → Creare.
+   Copiați parola aplicației - este afișată o singură dată.
+2. Introduceți e-mailul contului dumneavoastră pCloud ca Utilizator.
+3. Introduceți parola aplicației ca parolă.
+   Pentru centrul de date din UE: ewebdav.pcloud.com este utilizat automat.
+   Pentru centrul de date din SUA: schimbați gazda la webdav.pcloud.com.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>Yandex Disk prin WebDAV.
+
+1. Accesați id.yandex.com → Securitate → Parole aplicații → Creați parola aplicației pentru „acces WebDAV”.
+   Copiați parola generată - este afișată o singură dată.
+2. Introduceți datele de conectare Yandex ca utilizator.
+3. Introduceți parola aplicației (nu parola contului Yandex) ca parolă.
+   Adresa serverului, HTTPS și portul sunt configurate automat.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Backup/sincronizare date pe Windows, Linux.
 Import fotografii de pe telefon prin WI-FI și altele.

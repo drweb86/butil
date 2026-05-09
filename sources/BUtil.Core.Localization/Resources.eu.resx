@@ -967,6 +967,267 @@ See detailed description in the following link.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Erabiltzailea ez dago zehaztuta.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS - S3-rekin bateragarria den objektuen biltegiratzea Alibabatik.
+
+1. OSS kontsolan (https://oss.console.aliyun.com/), sortu ontzi bat. Kontuan izan bere eskualdea (adibidez, oss-cn-hangzhou).
+2. RAM kontsolan → Erabiltzaileak → sortu erabiltzailea → erantsi AliyunOSSFullAccess → sortu Sarbide-gako bat.
+   Kopiatu AccessKey ID (= Sarbide gakoa) eta AccessKey Sekretua (= Gako sekretua).
+3. Zerbitzuaren URLa: https://oss-&lt;REGION&gt;.aliyuncs.com (adibidez, https://oss-cn-hangzhou.aliyuncs.com).
+4. Eskualdea: adibidez. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 - Amazon-en jatorrizko objektuen biltegia.
+
+1. Ireki S3 kontsola (https://s3.console.aws.amazon.com/) eta sortu ontzi bat. Kontuan izan bere eskualdea (adibidez, us-east-1).
+2. Ireki IAM → Erabiltzaileak → sortu erabiltzailea → erantsi AmazonS3FullAccess politika.
+3. Segurtasun kredentzialak atalean, sortu Sarbide-gako bat — kopiatu Gako IDa eta Sekretua.
+4. Bete: kuboa, sarbide-gakoa, gako sekretua eta eskualdea.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — Baidu-ren S3-rekin bateragarria den objektuen biltegiratzea.
+
+1. BOS kontsolan (https://console.bce.baidu.com/bos/), sortu ontzi bat. Kontuan izan bere eskualdea (adibidez, bj, gz, su).
+2. Joan Segurtasuna → Sarbide-giltzak — kopiatu Sarbide-gakoaren IDa eta Sarbide-gako sekretua.
+3. Zerbitzuaren URLa: https://s3.&lt;ESKUALDIA&gt;.bcebos.com (adibidez, https://s3.bj.bcebos.com).
+4. Eskualdea: adibidez. bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 - S3-rekin bateragarria den biltegiratze merkea.
+
+1. Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets atalean, sortu ontzi bat.
+2. Joan Aplikazio-gakoak → Gehitu aplikazio-gako berri bat, ezarri ontzira.
+   Kopiatu gako IDa (= Sarbide-gakoa) eta applicationKey (= Gako sekretua).
+3. Zerbitzuaren URLa: zure ontziaren amaiera-puntua ontziaren xehetasunetan agertzen da, adibidez. https://s3.us-west-004.backblazeb2.com
+4. Eskualdea: &apos;s3&apos; arteko segmentua. eta &apos;.backblazeb2.com&apos;, adibidez. us-mendebaldea-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 - zero irteera S3-rekin bateragarria den biltegiratzea.
+
+1. Cloudflare Dashboard-en (https://dash.cloudflare.com/) → R2 → sortu ontzi bat.
+2. Joan R2 → Kudeatu R2 API-tokenak → Sortu API-tokena objektu irakurri eta idatziarekin.
+   Kopiatu Sarbide-gakoaren IDa eta Sarbide-gako sekretua.
+3. Zerbitzuaren URLa: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Zure kontuaren IDa R2 ikuspegi orokorraren orrian agertzen da.
+4. Bete: kuboa, sarbide-gakoa, gako sekretua eta zerbitzuaren URLa. Eskualdea &quot;automatiko&quot; moduan ezarri da automatikoki.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Object Storage — S3-rekin bateragarria den OBS biltegiratzea.
+
+1. Cloud.ru kontsolan (https://cloud.ru/) → Object Storage Service (OBS) → sortu ontzi bat.
+2. Joan Nire kredentzialak → Sarbide-gakoak &gt; Gehitu sarbide-gakoa.
+   Kopiatu Sarbide-gakoa eta Sarbide sekretua.
+3. Bete: kuboa, sarbide-gakoa, gako sekretua eta eskualdea (adibidez, ru-moscow-1).
+   Zerbitzuaren URLa automatikoki betetzen da.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO edo S3-rekin bateragarria den edozein zerbitzari.
+
+1. Hasi zure MinIO (edo S3-rekin bateragarria den beste) zerbitzaria.
+2. Sortu ontzi bat MinIO kontsola edo &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos; bidez.
+3. Sortu sarbide-gako bat MinIO kontsolan → Sarbide-gakoak (saihestu erroko kredentzialak ekoizpenean).
+4. Zerbitzuaren URLa: zure zerbitzariaren amaiera-puntua, adibidez. http://192.168.1.10:9000 edo https://minio.example.com.
+5. Eskualdea: edozein balio (adibidez, us-east-1) — edo utzi hutsik zerbitzariak ez badu betetzen.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — S3-rekin bateragarriak diren objektuen biltegiratzea.
+
+1. Espazioetan (https://cloud.digitalocean.com/spaces), sortu Espazio bat. Kontuan izan bere eskualdea (adibidez, nyc3).
+2. Joan API → Spaces Keys → Sortu gako berria. Kopiatu gakoa (= Sarbide-gakoa) eta sekretua.
+3. Zerbitzuaren URLa: https://&lt;ESKUALDIA&gt;.digitaloceanspaces.com (adibidez, https://nyc3.digitaloceanspaces.com).
+4. Eskualdea: kode labur bera, adibidez. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — S3 elkarreragingarritasun APIaren bidez.
+
+1. Google Cloud Consolen (https://console.cloud.google.com/storage), sortu ontzi bat.
+2. Joan Hodeiko biltegiratzea → Ezarpenak → Elkarreragingarritasuna → sortu zerbitzu-kontu baterako HMAC gako bat.
+   Kopiatu Sarbide-gakoa eta sekretua.
+3. Bete: Bucket, Sarbide gakoa (HMAC gakoa), Sekretua gakoa (HMAC sekretua).
+   Zerbitzuaren URLa eta eskualdea automatikoki ezartzen dira.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — S3-rekin bateragarria den objektuen biltegiratzea Huawei-ren eskutik.
+
+1. OBS kontsolan (https://console.huaweicloud.com/obs/), sortu ontzi bat. Kontuan izan bere eskualdea (adibidez, cn-north-4).
+2. Joan Nire kredentzialak → Sarbide-gakoak &gt; Sortu sarbide-gakoa.
+   Kopiatu AK (= Sarbide-gakoa) eta SK (= Gako sekretua).
+3. Zerbitzuaren URLa: https://obs.&lt;REGION&gt;.myhuaweicloud.com (adibidez, https://obs.cn-north-4.myhuaweicloud.com).
+4. Eskualdea: adibidez. cn-ipar-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Object Storage — S3-rekin bateragarria den biltegiratzea.
+
+1. Linode Cloud Manager-en (https://cloud.linode.com/object-storage/buckets), sortu ontzi bat. Kontuan izan bere multzoa.
+2. Joan Objektuen biltegiratzea → Sarbide-gakoak → Sortu sarbide-gako bat ontziari lotuta.
+   Kopiatu Sarbide-gakoa eta sekretua.
+3. Zerbitzuaren URLa: https://&lt;CLUSTER&gt;.linodeobjects.com (adibidez, https://us-east-1.linodeobjects.com).
+4. Eskualdea: cluster kodea bera, adibidez. gu-ekialde-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo - Qiniu-ren S3-rekin bateragarria den biltegiratzea.
+
+1. Qiniu Portalean (https://portal.qiniu.com/kodo/bucket), sortu ontzi bat. Kontuan izan bere eskualdea.
+2. Joan Zentro pertsonala → Gakoen kudeaketa — kopiatu Sarbide-gako eta gako sekretua.
+3. Zerbitzuaren URLa eskualdeka:
+   Ekialdeko Txina: https://s3-cn-east-1.qiniucs.com
+   Ipar Txina: https://s3-cn-north-1.qiniucs.com
+   Hego Txina: https://s3-cn-south-1.qiniucs.com
+   Ipar Amerika: https://s3-us-north-1.qiniucs.com
+4. Eskualdea: bat datorren kodea, adibidez. cn-ekialde-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — Europako S3-rekin bateragarria den biltegiratzea.
+
+1. Scaleway Consolen (https://console.scaleway.com/object-storage/buckets), sortu ontzi bat. Kontuan izan bere eskualdea (adibidez, fr-par).
+2. Joan IAM → API gakoak → Sortu API gakoa Object Storage idazteko baimenekin.
+   Kopiatu Sarbide-gakoa eta sekretua.
+3. Zerbitzuaren URLa: https://s3.&lt;ESKUALDIA&gt;.scw.cloud (adibidez, https://s3.fr-par.scw.cloud).
+4. Eskualdea: adibidez. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — S3-rekin bateragarria den Errusiako biltegiratzea.
+
+1. Selectel Panelean (https://my.selectel.ru/) → Hodeiko biltegia → sortu edukiontzi bat (= ontzi).
+2. Erabiltzaileak eta rolak atalean, sortu biltegiratze sarbidea duen zerbitzu-erabiltzailea → S3 gakoak → sortu gako-pare bat.
+   Kopiatu Sarbide-gakoa eta sekretua.
+3. Bete: kuboa, sarbide-gakoa, gako sekretua.
+   Zerbitzuaren URLa automatikoki betetzen da.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS - S3-rekin bateragarria den objektuen biltegiratzea Tencent-en.
+
+1. COS kontsolan (https://console.cloud.tencent.com/cos), sortu ontzi bat. Kontuan izan AppId-a eta Eskualdea (adibidez, ap-beijing).
+2. Sarbideen kudeaketa → API gakoak → Sortu gakoa atalean.
+   Kopiatu SecretId (= Sarbide-gakoa) eta SecretKey (= Gako sekretua).
+3. Zerbitzuaren URLa: https://cos.&lt;REGION&gt;.myqcloud.com (adibidez, https://cos.ap-beijing.myqcloud.com).
+4. Kuboaren izenaren formatua: &lt;izena&gt;-&lt;AppId&gt; (adibidez, mybucket-1250000000). Eskualdea: adibidez. ap-beijing.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — VK Cloud-en S3-rekin bateragarria den biltegiratzea.
+
+1. VK Cloud Portalean (https://msk.cloud.vk.com/) → Hodeiko biltegiratzea → sortu ontzi bat.
+2. Zure kontuan → Sarbide-gakoak → sortu gako-pare berri bat.
+   Kopiatu Sarbide-gakoa eta sekretua.
+3. Bete: ontzi, sarbide-gakoa, gako sekretua eta eskualdea behar izanez gero (adibidez, ru-msk).
+   Zerbitzuaren URLa automatikoki betetzen da.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) - S3-rekin bateragarria den biltegiratzea.
+
+1. Volcano Engine Consolen (https://console.volcengine.com/tos), sortu ontzi bat. Kontuan izan bere eskualdea (adibidez, cn-beijing).
+2. Joan IAM → Sarbide-gakoak → sortu gako bat.
+   Kopiatu Sarbide-gakoaren IDa eta Sarbide-gako sekretua.
+3. Zerbitzuaren URLa: https://tos-s3-&lt;REGION&gt;.volces.com (adibidez, https://tos-s3-cn-beijing.volces.com).
+4. Eskualdea: adibidez. cn-beijing.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi - hodeiko biltegiratze beroa, irteera kuotarik gabe.
+
+1. Wasabi kontsolan (https://console.wasabisys.com/) → Buckets → Sortu Bucket. Aukeratu eskualde bat.
+2. Joan Sarbide-gakoak → Sortu Sarbide-gako berria. Kopiatu Sarbide-gakoa eta sekretua.
+3. Bete: kuboa, sarbide-gakoa, gako sekretua eta eskualdea (adibidez, us-east-1, eu-central-1).
+   Zerbitzuaren URLa automatikoki betetzen da.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage - S3-rekin bateragarria Errusiako hodeiko biltegiratzea.
+
+1. Yandex Cloud Consolen (https://console.yandex.cloud/) → Objektuen biltegiratzea → sortu ontzi bat.
+2. Joan Zerbitzu-kontuak atalera → sortu storage.editor rolarekin → sortu Sarbide estatikoko gako bat.
+   Kopiatu gako IDa (= Sarbide-gakoa) eta gako sekretua.
+3. Bete: kuboa, sarbide-gakoa, gako sekretua.
+   Zerbitzuaren URLa eta eskualdea automatikoki ezartzen dira.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box — enpresa hodeiko biltegiratzea WebDAV laguntzarekin.
+
+1. Hasi saioa app.box.com helbidean. Kontuan izan Box WebDAV ordainpeko planetarako soilik dagoela erabilgarri.
+2. Sartu zure Box kontuko helbide elektronikoa Erabiltzaile gisa.
+3. Sartu zure Box pasahitza pasahitz gisa.
+   SSO erabiltzen baduzu, baliteke WebDAV pasahitz bereizi bat ezarri behar izatea Kontuaren ezarpenetan.
+   Zerbitzariaren helbidea, HTTPS, ataka eta oinarrizko bidea automatikoki konfiguratzen dira.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>WebDAV zerbitzari orokorra (Nextcloud, ownCloud, Synology DSM, Seafile, Apache, etab.)
+
+1. Sartu zerbitzariaren helbidea, aukeratu HTTPS (gomendatua) eta ezarri ataka (0 = lehenetsia: 80 HTTPrako, 443 HTTPSrako).
+2. Sartu WebDAV amaiera-puntuaren oinarrizko bidea.
+   Nextcloud adibidea: /remote.php/dav/files/&lt;erabiltzaile-izena&gt;/Backups
+   Synology DSM: /
+3. Sartu zure erabiltzaile-izena eta pasahitza (edo aplikazioaren pasahitz espezifikoa zure zerbitzariak hala eskatzen badu).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive — Hodeiko biltegiratze alemaniarra pribatutasun-foku sendoarekin.
+
+1. Hasi saioa hidrive.ionos.com helbidean → Ezarpenak → Aplikazioak eta konektatutako zerbitzuak → WebDAV.
+   Edo sartu zuzenean WebDAV lehendik dituzun kredentzialak erabiliz.
+2. Sartu zure HiDrive erabiltzaile-izena Erabiltzaile gisa.
+3. Sartu HiDrive pasahitza pasahitz gisa.
+   Zerbitzariaren helbidea, HTTPS, ataka eta oinarrizko bidea automatikoki konfiguratzen dira.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) - Txinako hodeiko biltegiratze ezaguna, jatorrizko WebDAV laguntzarekin.
+
+1. Hasi saioa jianguoyun.com helbidean → Kontuaren informazioa → Segurtasuna → Hirugarrenen aplikazioen kudeaketa → Gehitu aplikazioa.
+   Kopiatu sortutako aplikazioaren pasahitza — behin bakarrik erakusten da.
+2. Sartu zure Jianguoyun helbide elektronikoa Erabiltzaile gisa.
+3. Sartu sortutako aplikazioaren pasahitza Pasahitz gisa.
+   Zerbitzariaren helbidea, HTTPS, ataka eta oinarrizko bidea automatikoki konfiguratzen dira.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr — pribatutasuna errespetatzen duen hodeiko biltegiratzea Eslovenia (EB) oinarrituta.
+
+1. Joan app.koofr.eu → Hobespenak → Pasahitza → Aplikazioen pasahitzak → Gehitu pasahitza.
+2. Sartu zure Koofr kontuko posta elektronikoa Erabiltzaile gisa.
+3. Sartu sortutako aplikazioaren pasahitza Pasahitz gisa.
+   Zerbitzariaren helbidea, HTTPS, ataka eta oinarrizko bidea automatikoki konfiguratzen dira.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Mail.ru Cloud WebDAV bidez.
+
+1. Joan account.mail.ru → Segurtasuna → Aplikazioen pasahitzak → Sortu aplikazioaren pasahitza.
+   Hautatu &apos;Posta&apos; edo &apos;Guztiak&apos; mota gisa, eta kopiatu sortutako pasahitza.
+2. Sartu zure Mail.ru helbide elektronikoa Erabiltzaile gisa.
+3. Sartu aplikazioaren pasahitza Pasahitz gisa.
+   Zerbitzariaren helbidea, HTTPS, ataka eta oinarrizko bidea automatikoki konfiguratzen dira.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud — auto-ostatatutako fitxategiak sinkronizatzea eta partekatzea.
+
+1. Sartu zure Nextcloud zerbitzariaren helbidea (adibidez, nextcloud.example.com).
+2. Oinarrizko bidea aurrez beteta dago: /remote.php/dav/files/&lt;erabiltzaile-izena&gt;/
+   Ordeztu &lt;erabiltzaile-izena&gt; zure benetako Nextcloud erabiltzaile-izenarekin.
+3. Sartu zure Nextcloud erabiltzaile-izena eta pasahitza (edo aplikazioaren pasahitza
+   Ezarpenak &gt; Segurtasuna &gt; Gailuak eta saioak &gt; Aplikazioen pasahitzak).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud — auto-ostatutako fitxategiak sinkronizatu eta partekatu.
+
+1. Sartu zure ownCloud zerbitzariaren helbidea (adibidez, owncloud.example.com).
+2. Oinarrizko bidea aurrez beteta dago: /remote.php/dav/files/&lt;erabiltzaile-izena&gt;/
+   Ordeztu &lt;erabiltzaile-izena&gt; zure benetako ownCloud erabiltzaile-izenarekin.
+3. Sartu zure ownCloud erabiltzaile-izena eta pasahitza (edo aplikazioaren pasahitza 2FA gaituta badago).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud — hodeiko biltegiratzea EBko eta AEBetako datu-zentroekin.
+
+1. Hasi saioa my.pcloud.com helbidean → Ezarpenak → Segurtasuna → Aplikazioen pasahitzak → Sortu.
+   Kopiatu aplikazioaren pasahitza — behin bakarrik agertzen da.
+2. Sartu zure pCloud kontuko posta elektronikoa Erabiltzaile gisa.
+3. Sartu aplikazioaren pasahitza Pasahitz gisa.
+   EBko datu-zentrorako: ewebdav.pcloud.com automatikoki erabiltzen da.
+   AEBetako datu-zentrorako: aldatu ostalaria webdav.pcloud.com helbidera.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>Yandex Disk WebDAV bidez.
+
+1. Joan id.yandex.com → Segurtasuna → Aplikazioen pasahitzak → Sortu aplikazioaren pasahitza &apos;WebDAV sarbidea&apos;-rako.
+   Kopiatu sortutako pasahitza — behin bakarrik erakusten da.
+2. Sartu zure Yandex-en saioa Erabiltzaile gisa.
+3. Sartu aplikazioaren pasahitza (ez zure Yandex kontuaren pasahitza) Pasahitz gisa.
+   Zerbitzariaren helbidea, HTTPS eta ataka automatikoki konfiguratzen dira.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Egin babeskopiak/sinkronizatu zure datuak Windows, Linux.
 Inportatu argazkiak telefonotik WI-FI bidez eta gehiago.

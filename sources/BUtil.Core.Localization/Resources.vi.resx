@@ -964,6 +964,267 @@ Xem mô tả chi tiết trong liên kết sau.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Người dùng không được chỉ định.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — Bộ lưu trữ đối tượng tương thích với S3 của Alibaba.
+
+1. Trong Bảng điều khiển OSS (https://oss.console.aliyun.com/), hãy tạo một nhóm. Lưu ý khu vực của nó (ví dụ: oss-cn-hangzhou).
+2. Trong Bảng điều khiển RAM → Người dùng → tạo người dùng → đính kèm AliyunOSSFullAccess → tạo AccessKey.
+   Sao chép ID AccessKey (= Access Key) và AccessKey Secret (= Secret Key).
+3. URL dịch vụ: https://oss-&lt;REGION&gt;.aliyuncs.com (ví dụ: https://oss-cn-hangzhou.aliyuncs.com).
+4. Khu vực: ví dụ: oss-cn-hàng Châu.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — Bộ lưu trữ đối tượng ban đầu của Amazon.
+
+1. Mở Bảng điều khiển S3 (https://s3.console.aws.amazon.com/) và tạo một nhóm. Lưu ý khu vực của nó (ví dụ: us-east-1).
+2. Mở IAM → Người dùng → tạo người dùng → đính kèm chính sách AmazonS3FullAccess.
+3. Trong Thông tin xác thực bảo mật, tạo khóa Truy cập — sao chép ID khóa và Bí mật.
+4. Điền vào: Bucket, Access Key, Secret Key và Region.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — Bộ lưu trữ đối tượng tương thích với S3 từ Baidu.
+
+1. Trong Bảng điều khiển BOS (https://console.bce.baidu.com/bos/), tạo một nhóm. Lưu ý khu vực của nó (ví dụ bj, gz, su).
+2. Đi tới Bảo mật → Khóa truy cập — sao chép ID khóa truy cập và Khóa truy cập bí mật của bạn.
+3. URL dịch vụ: https://s3.&lt;REGION&gt;.bcebos.com (ví dụ: https://s3.bj.bcebos.com).
+4. Khu vực: ví dụ: bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — bộ lưu trữ tương thích với S3 với giá cả phải chăng.
+
+1. Trong Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Bucket, tạo một nhóm.
+2. Đi tới Khóa ứng dụng → Thêm khóa ứng dụng mới, đưa nó vào nhóm.
+   Sao chép keyID (= Access Key) và applicationKey (= Secret Key).
+3. URL dịch vụ: điểm cuối của vùng lưu trữ được hiển thị trong thông tin chi tiết về vùng lưu trữ, ví dụ: https://s3.us-west-004.backblazeb2.com
+4. Vùng: đoạn giữa &apos;s3.&apos; và &apos;.backblazeb2.com&apos;, ví dụ: chúng tôi-tây-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — bộ lưu trữ tương thích với S3 không đầu ra.
+
+1. Trong Bảng điều khiển Cloudflare (https://dash.cloudflare.com/) → R2 → tạo nhóm.
+2. Đi tới R2 → Quản lý mã thông báo API R2 → Tạo mã thông báo API với tính năng đọc và ghi đối tượng.
+   Sao chép ID khóa truy cập và Khóa truy cập bí mật.
+3. URL dịch vụ: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   ID tài khoản của bạn được hiển thị trên trang tổng quan về R2.
+4. Điền vào: Bucket, Access Key, Secret Key và Service URL. Vùng được đặt thành &apos;tự động&apos; tự động.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Object Storage — Bộ lưu trữ OBS tương thích với S3.
+
+1. Trong Bảng điều khiển Cloud.ru (https://cloud.ru/) → Dịch vụ lưu trữ đối tượng (OBS) → tạo một nhóm.
+2. Đi tới Thông tin xác thực của tôi → Khóa truy cập → Thêm khóa truy cập.
+   Sao chép Khóa truy cập và Khóa truy cập bí mật.
+3. Điền vào: Bucket, Access Key, Secret Key và Region (ví dụ: ru-moscow-1).
+   URL dịch vụ được điền tự động.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO hoặc bất kỳ máy chủ nào tương thích với S3.
+
+1. Khởi động máy chủ MinIO (hoặc tương thích với S3 khác) của bạn.
+2. Tạo nhóm thông qua Bảng điều khiển MinIO hoặc &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;.
+3. Tạo khóa truy cập trong Bảng điều khiển MinIO → Khóa truy cập (tránh thông tin xác thực gốc trong quá trình sản xuất).
+4. URL dịch vụ: điểm cuối máy chủ của bạn, ví dụ: http://192.168.1.10:9000 hoặc https://minio.example.com.
+5. Khu vực: bất kỳ giá trị nào (ví dụ: us-east-1) — hoặc để trống nếu máy chủ không thực thi giá trị đó.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — Bộ lưu trữ đối tượng tương thích với S3.
+
+1. Trong Không gian (https://cloud.digitalocean.com/spaces), hãy tạo Không gian. Lưu ý khu vực của nó (ví dụ: nyc3).
+2. Đi tới API → Phím cách → Tạo khóa mới. Sao chép Key (= Access Key) và Secret.
+3. URL dịch vụ: https://&lt;REGION&gt;.digitaloceanspaces.com (ví dụ: https://nyc3.digitaloceanspaces.com).
+4. Khu vực: cùng một mã ngắn, ví dụ: nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — thông qua API khả năng tương tác S3.
+
+1. Trong Google Cloud Console (https://console.cloud.google.com/storage), hãy tạo một nhóm.
+2. Đi tới Cloud Storage → Cài đặt → Khả năng tương tác → tạo khóa HMAC cho tài khoản dịch vụ.
+   Sao chép Access Key và Secret.
+3. Điền vào: Bucket, Access Key (HMAC key), Secret Key (HMAC secret).
+   URL dịch vụ và khu vực được đặt tự động.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — Bộ lưu trữ đối tượng tương thích với S3 của Huawei.
+
+1. Trong Bảng điều khiển OBS (https://console.huaweicloud.com/obs/), hãy tạo một nhóm. Lưu ý khu vực của nó (ví dụ: cn-north-4).
+2. Đi tới Thông tin xác thực của tôi → Khóa truy cập → Tạo khóa truy cập.
+   Sao chép AK (= Access Key) và SK (= Secret Key).
+3. URL dịch vụ: https://obs.&lt;REGION&gt;.myhuaweicloud.com (ví dụ: https://obs.cn-north-4.myhuaweicloud.com).
+4. Khu vực: ví dụ: cn-bắc-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Bộ lưu trữ đối tượng Linode (Akamai) — Bộ lưu trữ tương thích với S3.
+
+1. Trong Trình quản lý đám mây Linode (https://cloud.linode.com/object-storage/buckets), hãy tạo một nhóm. Lưu ý cụm của nó.
+2. Đi tới Bộ lưu trữ đối tượng → Khóa truy cập → Tạo Khóa truy cập nằm trong phạm vi nhóm.
+   Sao chép Access Key và Secret Key.
+3. URL dịch vụ: https://&lt;CLUSTER&gt;.linodeobjects.com (ví dụ: https://us-east-1.linodeobjects.com).
+4. Vùng: cùng mã cụm, ví dụ: chúng tôi-đông-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — Bộ lưu trữ tương thích S3 từ Qiniu.
+
+1. Trong Cổng thông tin Qiniu (https://portal.qiniu.com/kodo/bucket), tạo một nhóm. Lưu ý khu vực của nó.
+2. Đi tới Trung tâm cá nhân → Quản lý khóa — sao chép AccessKey và SecretKey của bạn.
+3. URL dịch vụ theo khu vực:
+   Đông Trung Quốc: https://s3-cn-east-1.qiniucs.com
+   Bắc Trung Quốc: https://s3-cn-north-1.qiniucs.com
+   Nam Trung Quốc: https://s3-cn-south-1.qiniucs.com
+   Bắc Mỹ: https://s3-us-north-1.qiniucs.com
+4. Khu vực: mã phù hợp, ví dụ: cn-đông-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Bộ lưu trữ đối tượng Scalway — Bộ lưu trữ tương thích với S3 của Châu Âu.
+
+1. Trong Bảng điều khiển Scalway (https://console.scaleway.com/object-storage/buckets), hãy tạo một nhóm. Lưu ý khu vực của nó (ví dụ: fr-par).
+2. Đi tới IAM → Khóa API → Tạo khóa API với quyền ghi trong Bộ lưu trữ đối tượng.
+   Sao chép Access Key và Secret Key.
+3. URL dịch vụ: https://s3.&lt;REGION&gt;.scw.cloud (ví dụ: https://s3.fr-par.scw.cloud).
+4. Khu vực: ví dụ: fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Bộ lưu trữ đối tượng Selectel — Bộ lưu trữ Nga tương thích với S3.
+
+1. Trong Bảng chọn (https://my.selectel.ru/) → Cloud Storage → tạo vùng chứa (= thùng).
+2. Trong Người dùng &amp; Vai trò, tạo người dùng dịch vụ có quyền truy cập bộ nhớ → Khóa S3 → tạo một cặp khóa.
+   Sao chép Access Key và Secret Key.
+3. Điền vào: Bucket, Access Key, Secret Key.
+   URL dịch vụ được điền tự động.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — Bộ lưu trữ đối tượng tương thích với S3 của Tencent.
+
+1. Trong Bảng điều khiển COS (https://console.cloud.tencent.com/cos), hãy tạo một nhóm. Lưu ý AppId và Vùng (ví dụ: ap-beijing).
+2. Trong Quản lý quyền truy cập → Khóa API → Tạo khóa.
+   Sao chép SecretId (= Access Key) và SecretKey (= Secret Key).
+3. URL dịch vụ: https://cos.&lt;REGION&gt;.myqcloud.com (ví dụ: https://cos.ap-beijing.myqcloud.com).
+4. Định dạng tên nhóm: &lt;name&gt;-&lt;AppId&gt; (ví dụ: mybucket-1250000000). Khu vực: ví dụ: ap-bắc kinh.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — Bộ lưu trữ tương thích S3 từ VK Cloud.
+
+1. Trong Cổng thông tin đám mây VK (https://msk.cloud.vk.com/) → Cloud Storage → tạo nhóm.
+2. Trong tài khoản của bạn → Khóa truy cập → tạo cặp khóa mới.
+   Sao chép Access Key và Secret Key.
+3. Điền vào: Bucket, Access Key, Secret Key và Region nếu được yêu cầu (ví dụ: ru-msk).
+   URL dịch vụ được điền tự động.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — Bộ lưu trữ tương thích với S3.
+
+1. Trong Volcano Engine Console (https://console.volcengine.com/tos), tạo một nhóm. Lưu ý khu vực của nó (ví dụ: cn-beijing).
+2. Đi tới IAM → Khóa truy cập → tạo khóa.
+   Sao chép ID khóa truy cập và Khóa truy cập bí mật.
+3. URL dịch vụ: https://tos-s3-&lt;REGION&gt;.volces.com (ví dụ: https://tos-s3-cn-beijing.volces.com).
+4. Khu vực: ví dụ: cn-bắc kinh.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi — lưu trữ đám mây nóng không tính phí đầu ra.
+
+1. Trong Bảng điều khiển Wasabi (https://console.wasabisys.com/) → Nhóm → Tạo nhóm. Chọn một khu vực.
+2. Đi tới Khóa truy cập → Tạo khóa truy cập mới. Sao chép Access Key và Secret Key.
+3. Điền vào: Bucket, Access Key, Secret Key và Region (ví dụ: us-east-1, eu-central-1).
+   URL dịch vụ được điền tự động.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Bộ lưu trữ đối tượng Yandex — Bộ lưu trữ đám mây Nga tương thích với S3.
+
+1. Trong Bảng điều khiển đám mây Yandex (https://console.yandex.cloud/) → Lưu trữ đối tượng → tạo nhóm.
+2. Đi tới Tài khoản dịch vụ → tạo một tài khoản có vai trò storage.editor → tạo khóa truy cập tĩnh.
+   Sao chép Key ID (= Access Key) và Secret key.
+3. Điền vào: Bucket, Access Key, Secret Key.
+   URL dịch vụ và khu vực được đặt tự động.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box — bộ lưu trữ đám mây dành cho doanh nghiệp có hỗ trợ WebDAV.
+
+1. Đăng nhập tại app.box.com. Lưu ý rằng Box WebDAV chỉ khả dụng cho các gói trả phí.
+2. Nhập email tài khoản Box của bạn làm Người dùng.
+3. Nhập mật khẩu Box của bạn làm Mật khẩu.
+   Nếu sử dụng SSO, bạn có thể cần đặt mật khẩu WebDAV riêng trong Cài đặt tài khoản.
+   Địa chỉ máy chủ, HTTPS, cổng và đường dẫn cơ sở được cấu hình tự động.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>Máy chủ WebDAV chung (Nextcloud, ownCloud, Synology DSM, Seafile, Apache, v.v.)
+
+1. Nhập Địa chỉ máy chủ, chọn HTTPS (được khuyến nghị) và đặt cổng (0 = mặc định: 80 cho HTTP, 443 cho HTTPS).
+2. Nhập đường dẫn cơ sở cho điểm cuối WebDAV.
+   Ví dụ về Nextcloud: /remote.php/dav/files/&lt;username&gt;/Backups
+   Synology DSM: /
+3. Nhập tên người dùng và mật khẩu của bạn (hoặc mật khẩu dành riêng cho ứng dụng nếu máy chủ của bạn yêu cầu).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive — Bộ lưu trữ đám mây của Đức tập trung mạnh mẽ vào quyền riêng tư.
+
+1. Đăng nhập tại hidrive.ionos.com → Cài đặt → Ứng dụng và dịch vụ được kết nối → WebDAV.
+   Hoặc truy cập trực tiếp vào WebDAV bằng thông tin xác thực hiện có của bạn.
+2. Nhập tên người dùng HiDrive của bạn làm Người dùng.
+3. Nhập mật khẩu HiDrive của bạn làm Mật khẩu.
+   Địa chỉ máy chủ, HTTPS, cổng và đường dẫn cơ sở được cấu hình tự động.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) — bộ lưu trữ đám mây phổ biến của Trung Quốc có hỗ trợ WebDAV gốc.
+
+1. Đăng nhập tại jianguoyun.com → Thông tin tài khoản → Bảo mật → Quản lý ứng dụng của bên thứ ba → Thêm ứng dụng.
+   Sao chép mật khẩu ứng dụng đã tạo - mật khẩu này chỉ được hiển thị một lần.
+2. Nhập địa chỉ email Jianguoyun của bạn làm Người dùng.
+3. Nhập mật khẩu ứng dụng đã tạo làm Mật khẩu.
+   Địa chỉ máy chủ, HTTPS, cổng và đường dẫn cơ sở được cấu hình tự động.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr — bộ lưu trữ đám mây thân thiện với quyền riêng tư có trụ sở tại Slovenia (EU).
+
+1. Truy cập app.koofr.eu → Tùy chọn → Mật khẩu → Mật khẩu ứng dụng → Thêm mật khẩu.
+2. Nhập email tài khoản Koofr của bạn với tư cách là Người dùng.
+3. Nhập mật khẩu ứng dụng đã tạo làm Mật khẩu.
+   Địa chỉ máy chủ, HTTPS, cổng và đường dẫn cơ sở được cấu hình tự động.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Đám mây Mail.ru qua WebDAV.
+
+1. Truy cập account.mail.ru → Bảo mật → Mật khẩu ứng dụng → Tạo mật khẩu ứng dụng.
+   Chọn loại &apos;Thư&apos; hoặc &apos;Tất cả&apos;, sau đó sao chép mật khẩu đã tạo.
+2. Nhập địa chỉ email Mail.ru của bạn làm Người dùng.
+3. Nhập mật khẩu ứng dụng làm Mật khẩu.
+   Địa chỉ máy chủ, HTTPS, cổng và đường dẫn cơ sở được cấu hình tự động.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud — đồng bộ và chia sẻ tệp tự lưu trữ phổ biến.
+
+1. Nhập địa chỉ máy chủ Nextcloud của bạn (ví dụ: nextcloud.example.com).
+2. Đường dẫn cơ sở được điền sẵn: /remote.php/dav/files/&lt;username&gt;/
+   Thay thế &lt;username&gt; bằng tên người dùng Nextcloud thực tế của bạn.
+3. Nhập tên người dùng và mật khẩu Nextcloud của bạn (hoặc mật khẩu ứng dụng từ
+   Cài đặt → Bảo mật → Thiết bị &amp; phiên → Mật khẩu ứng dụng).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud - đồng bộ hóa và chia sẻ tệp tự lưu trữ.
+
+1. Nhập địa chỉ máy chủ ownCloud của bạn (ví dụ: owncloud.example.com).
+2. Đường dẫn cơ sở được điền sẵn: /remote.php/dav/files/&lt;username&gt;/
+   Thay thế &lt;username&gt; bằng tên người dùng ownCloud thực tế của bạn.
+3. Nhập tên người dùng và mật khẩu ownCloud của bạn (hoặc mật khẩu ứng dụng nếu 2FA được bật).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud — lưu trữ đám mây với các trung tâm dữ liệu của EU và Hoa Kỳ.
+
+1. Đăng nhập tại my.pcloud.com → Cài đặt → Bảo mật → Mật khẩu ứng dụng → Tạo.
+   Sao chép mật khẩu ứng dụng - nó chỉ được hiển thị một lần.
+2. Nhập email tài khoản pCloud của bạn làm Người dùng.
+3. Nhập mật khẩu ứng dụng làm Mật khẩu.
+   Đối với trung tâm dữ liệu EU: ewebdav.pcloud.com được sử dụng tự động.
+   Đối với trung tâm dữ liệu của Hoa Kỳ: thay đổi máy chủ thành webdav.pcloud.com.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>Đĩa Yandex thông qua WebDAV.
+
+1. Truy cập id.yandex.com → Bảo mật → Mật khẩu ứng dụng → Tạo mật khẩu ứng dụng để &apos;truy cập WebDAV&apos;.
+   Sao chép mật khẩu đã tạo - nó chỉ được hiển thị một lần.
+2. Nhập thông tin đăng nhập Yandex của bạn với tư cách là Người dùng.
+3. Nhập mật khẩu ứng dụng (không phải mật khẩu tài khoản Yandex của bạn) làm Mật khẩu.
+   Địa chỉ máy chủ, HTTPS và cổng được cấu hình tự động.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Sao lưu/đồng bộ hóa dữ liệu của bạn trên Windows, Linux.
 Nhập ảnh từ điện thoại qua WI-FI và nhiều hơn nữa.

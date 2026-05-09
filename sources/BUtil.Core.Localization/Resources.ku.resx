@@ -968,6 +968,267 @@ Ji bo danasîna berfireh lînka jêrîn bibînin.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Bikarhêner nehatiye diyarkirin.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS - hilanîna tiştên ku bi S3-ê ve girêdayî ye ji Alibaba.
+
+1. Di OSS Console (https://oss.console.aliyun.com/) de, kelekek çêbikin. Bala xwe bidin herêma wê (mînak oss-cn-hangzhou).
+2. Li RAM Console → Bikarhêner → bikarhênerek biafirînin → AliyunOSSFullAccess pêve bikin → AccessKey biafirînin.
+   Nasnameya AccessKey (= Bişkojka Gihîştinê) û AccessKey Secret (= Mifteya Veşartî) kopî bikin.
+3. URLa karûbarê: https://oss-&lt;REGION&gt;.aliyuncs.com (mînak: https://oss-cn-hangzhou.aliyuncs.com).
+4. Herêm: mînak. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 - Hilberîna tiştên orjînal ên Amazon.
+
+1. Konsola S3 (https://s3.console.aws.amazon.com/) vekin û kelekek çêbikin. Bala xwe bidin herêma wê (mînak em-rojhilat-1).
+2. IAM → Bikarhêner → bikarhênerek biafirînin → polîtîkaya AmazonS3FullAccess vekin.
+3. Di bin pêbaweriyên Ewlekariyê de, mifteyek Gihîştinê biafirînin - Nasnameya Key û Veşartinê kopî bikin.
+4. Dagirtin: Bucket, Key Access, Key Veşar, û Herêm.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS - hilanîna tiştên lihevhatî bi S3 ji Baidu.
+
+1. Di BOS Console de (https://console.bce.baidu.com/bos/), kelekek çêbikin. Bala xwe bidin herêma wê (mînak bj, gz, su).
+2. Biçe Ewlekariyê → Bişkojkên Gihîştinê - Nasnameya Kilîta Gihîştinê û Mifteya Têketinê ya Veşartî kopî bikin.
+3. URLa karûbarê: https://s3.&lt;REGION&gt;.bcebos.com (mînak https://s3.bj.bcebos.com).
+4. Herêm: mînak. bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 - hilanîna S3-lihevhatî ya erzan.
+
+1. Li Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets, kelekek çêbikin.
+2. Herin Bişkojkên Serlêdanê → Mifteyek Serlêdanê Nû Zêde bikin, wê bixin nav kekê.
+   Nasnameya mifteyê (= Mifteya Gihîştinê) û applicationKey (= Mifteya Veşartî) kopî bikin.
+3. URL-ya karûbarê: xala dawiya kepçeya we di hûrguliyên kelê de tê xuyang kirin, mînak. https://s3.us-west-004.backblazeb2.com
+4. Herêm: beşa navbera &apos;s3.&apos; û &apos;.backblazeb2.com&apos;, mînak. us-rojava-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 - hilanîna S3-lihevhatî ya sifir-derketinê.
+
+1. Li Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → kelekek çêbikin.
+2. Biçe R2 → Rêvekirina Nîşaneyên API-ya R2 → Token API-ê bi Xwendin û Nivîsandina Tiştê Biafirîne.
+   Nasnameya Bişkojka Têketinê û Mifteya Têketinê ya Veşartî kopî bikin.
+3. URLa karûbarê: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Nasnameya Hesabê we li ser rûpela pêşandana R2 tê xuyang kirin.
+4. Dagirtin: Bucket, Key Access, Key Veşartî, û URL Service. Herêm bixweber wek &apos;oto&apos; hatiye danîn.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Storage Object - S3-lihevhatî hilanîna OBS.
+
+1. Li Cloud.ru Console (https://cloud.ru/) → Xizmeta hilanînê ya tiştan (OBS) → kelekek çêbikin.
+2. Herin pêbaweriyên min → Bişkojkên gihîştinê → Bişkojka gihîştinê zêde bikin.
+   Mifteya Têketinê û Mifteya Veşartî kopî bikin.
+3. Dagirin: Bucket, Key Access, Key Veşar, û Herêm (mînak ru-moscow-1).
+   URL-ya karûbarê bixweber tê dagirtin.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO an serverek S3-lihevhatî.
+
+1. Pêşkêşkara xwe ya MinIO (an jî S3-lihevhatî) dest pê bikin.
+2. Bi rêya MinIO Console an jî &apos;mc mb &lt;navnav&gt;/&lt;bucket&gt;&apos; kepek çêkin.
+3. Di MinIO Konsola → Bişkojkên gihîştinê de mifteyek gihîştinê biafirînin (di hilberînê de ji pêbaweriyên root dûr bixin).
+4. URL-ya karûbarê: xala dawiya servera we, mînak. http://192.168.1.10:9000 an https://minio.example.com.
+5. Herêm: her nirxek (mînak. us-rojhilat-1) - an jî vala bihêle ger server wê bicîh neke.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces - hilanîna tiştên ku bi S3-ê re têkildar in.
+
+1. Li Cihanan (https://cloud.digitalocean.com/spaces), Cihek biafirînin. Bala xwe bidin herêma wê (mînak nyc3).
+2. Biçe API → Bişkojkên Cihan → Mifteya Nû Biafirîne. Miftê (= Kilîta Gihîştinê) û Veşartî kopî bikin.
+3. URLa karûbarê: https://&lt;REGION&gt;.digitaloceanspaces.com (mînak. https://nyc3.digitaloceanspaces.com).
+4. Herêm: heman koda kurt, wek nimûne. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage - bi navgîniya API-ya hevgirtî ya S3.
+
+1. Li Google Cloud Console (https://console.cloud.google.com/storage), kelekek çêbikin.
+2. Biçe Cloud Storage → Settings → Veberhevî → ji bo hesabek karûbarê mifteyek HMAC biafirîne.
+   Mifteya gihîştinê û veşartî kopî bikin.
+3. Dagirtin: Bucket, Key Access (HMAC key), Veşartî (HMAC veşartî).
+   URL-ya karûbarê û herêm bixweber têne danîn.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS - hilanîna tiştên S3-lihevhatî ji Huawei.
+
+1. Li OBS Console (https://console.huaweicloud.com/obs/), kelekek çêbikin. Bala xwe bidin herêma wê (mînak cn-bakur-4).
+2. Herin pêbaweriyên min → Bişkojkên gihîştinê → Mifteya gihîştinê biafirînin.
+   AK (= Bişkojka Gihîştinê) û SK (= Mifteya Veşartî) kopî bikin.
+3. URLa karûbarê: https://obs.&lt;REGION&gt;.myhuaweicloud.com (mînak. https://obs.cn-north-4.myhuaweicloud.com).
+4. Herêm: mînak. cn-bakur-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Storage Object - hilanîna S3-lihevhatî.
+
+1. Li Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets), kelekek çêbikin. Bala xwe bidin koma wê.
+2. Biçe Storage Object → Bişkojkên Gihîştinê → Bişkojka Gihîştinê ya ku berbi kepçeyê ve girêdayî ye biafirîne.
+   Mifteya Têketinê û Mifteya Veşartî kopî bikin.
+3. URLa karûbarê: https://&lt;CLUSTER&gt;.linodeobjects.com (mînak https://us-east-1.linodeobjects.com).
+4. Herêm: heman koda komê, mînak. us-rojhilat-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo - hilanîna S3-lihevhatî ji Qiniu.
+
+1. Di Qiniu Portal (https://portal.qiniu.com/kodo/bucket) de, kelekek çêbikin. Bala xwe bidin herêma wê.
+2. Herin Navenda Kesane → Birêvebiriya Key — AccessKey û SecretKey xwe kopî bikin.
+3. URL karûbarê li gorî herêmê:
+   Rojhilatê Çînê: https://s3-cn-east-1.qiniucs.com
+   Bakurê Çînê: https://s3-cn-north-1.qiniucs.com
+   Başûrê Çînê: https://s3-cn-south-1.qiniucs.com
+   Amerîkaya Bakur: https://s3-us-north-1.qiniucs.com
+4. Herêm: koda hevberdanê, mînak. cn-rojhilat-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage - Hilberîna S3-ya Ewropî ya lihevhatî.
+
+1. Li Scaleway Console (https://console.scaleway.com/object-storage/buckets), kelekek çêbikin. Bala xwe bidin herêma wê (mînak fr-par).
+2. Biçe IAM → Bişkojkên API → Bi destûrnameyên nivîsandinê yên Object Storage Bişkojka API-ê biafirîne.
+   Mifteya Têketinê û Mifteya Veşartî kopî bikin.
+3. URLa karûbarê: https://s3.&lt;REGION&gt;.scw.cloud (mînak https://s3.fr-par.scw.cloud).
+4. Herêm: mînak. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Hilbijartina Tiştên Hilbijêre - Hilbera Rûsî ya bi S3-hevhatî.
+
+1. Di Panela Hilbijartinê de (https://my.selectel.ru/) → Cloud Storage → konteynirek (= kelek) biafirînin.
+2. Di bin Bikarhêner &amp; Rol de, bikarhênerek karûbarê bi gihîştina hilanînê → Bişkojkên S3 → cotek mifteyê biafirînin.
+   Mifteya Têketinê û Mifteya Veşartî kopî bikin.
+3. Dagirtin: Sûk, Mifteya Gihîştinê, Mifteya Veşartî.
+   URL-ya karûbarê bixweber tê dagirtin.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS - hilanîna tiştên S3-lihevhatî ji Tencent.
+
+1. Di COS Console de (https://console.cloud.tencent.com/cos), kelekek çêbikin. Bala xwe bidin AppId û Herêmê (mînak ap-beijing).
+2. Di Rêvebiriya Gihîştinê de → Bişkojkên API → Key Biafirîne.
+   SecretId (= Kilîta Gihîştinê) û SecretKey (= Mifteya Veşartî) kopî bikin.
+3. URLa karûbarê: https://cos.&lt;REGION&gt;.myqcloud.com (mînak https://cos.ap-beijing.myqcloud.com).
+4. Forma navê kepçeyê: &lt;nav&gt;-&lt;AppId&gt; (mînak mybucket-1250000000). Herêm: mînak. ap-beijing.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage - hilanîna S3-lihevhatî ji VK Cloud.
+
+1. Li VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → kelekek çêbikin.
+2. Di binê hesabê xwe de → Bişkojkên Gihîştinê → cotek mifteya nû biafirînin.
+   Mifteya Têketinê û Mifteya Veşartî kopî bikin.
+3. Dagirtin: Kulîlk, Mifteya Gihîştinê, Mifteya Veşartî, û Ger hewce bike Herêm (mînak ru-msk).
+   URL-ya karûbarê bixweber tê dagirtin.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) - hilanîna S3-lihevhatî.
+
+1. Di Konsola Engine Volcano de (https://console.volcengine.com/tos), kelekek çêbikin. Bala xwe bidin herêma wê (mînak cn-Pekin).
+2. Biçe IAM → Bişkojkên Gihîştinê → mifteyek biafirîne.
+   Nasnameya Bişkojka Têketinê û Mifteya Têketinê ya Veşartî kopî bikin.
+3. URLa karûbarê: https://tos-s3-&lt;REGION&gt;.volces.com (mînak: https://tos-s3-cn-beijing.volces.com).
+4. Herêm: mînak. cn-pekin.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi - hilanîna ewrê germ bêyî xercên derketinê.
+
+1. Di Konsola Wasabi de (https://console.wasabisys.com/) → Kepçe → Kepçe biafirîne. Herêmek hilbijêrin.
+2. Herin Bişkojkên Gihîştinê → Mifteya Gihîştinê ya Nû Biafirînin. Mifteya Têketinê û Mifteya Veşartî kopî bikin.
+3. Dagirtin: Kulîlk, Mifteya Gihîştinê, Mifteya Veşartî, û Herêm (mînak: us-rojhilat-1, eu-navend-1).
+   URL-ya karûbarê bixweber tê dagirtin.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage - S3-lihevhatî hilanîna ewrê rûsî.
+
+1. Li Yandex Cloud Console (https://console.yandex.cloud/) → Objekt Storage → kelekek çêbikin.
+2. Biçe Hesabên Xizmetê → bi rola hilanînê.edîtorê yekê biafirîne → mifteyek gihîştina statîk biafirîne.
+   Nasnameya Mifteyê (= Mifteya Gihîştinê) û Mifteya Veşartî kopî bikin.
+3. Dagirtin: Sûk, Mifteya Gihîştinê, Mifteya Veşartî.
+   URL-ya karûbarê û herêm bixweber têne danîn.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box - hilanîna cloudê ya pargîdanî bi piştgiriya WebDAV.
+
+1. Têkeve app.box.com. Têbînî ku Box WebDAV tenê ji bo plansaziyên drav heye.
+2. Wekî Bikarhêner e-nameya hesabê xweya Box binivîse.
+3. Şîfreya Box-a xwe wekî Şîfre binivîse.
+   Ger hûn SSO bikar bînin, dibe ku hûn hewce ne ku şîfreyek WebDAV-ê ya cihêreng di Mîhengên Hesabê de saz bikin.
+   Navnîşana serverê, HTTPS, port, û riya bingehîn bixweber têne mîheng kirin.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>Pêşkêşkara WebDAV ya giştî (Nextcloud, xweCloud, Synology DSM, Seafile, Apache, hwd.)
+
+1. Navnîşana serverê binivîse, HTTPS hilbijêrin (pêşniyar kirin), û portê saz bikin (0 = xwerû: 80 ji bo HTTP, 443 ji bo HTTPS).
+2. Ji bo xala dawî ya WebDAV riya bingehîn têkevin.
+   Nimûneya Nextcloud: /remote.php/dav/files/&lt;navê bikarhêner&gt;/Backups
+   Synology DSM: /
+3. Navê bikarhêner û şîfreya xwe binivîsin (an şîfreyek taybetî ya sepanê ger servera we hewce bike).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive - hilanîna ewr a Almanî bi baldariya nepenîtiyê ya bihêz.
+
+1. Têkeve hidrive.ionos.com → Mîheng → Serlêdan û karûbarên girêdayî → WebDAV.
+   An jî rasterast bi pêbaweriyên xwe yên heyî ve bigihîjin WebDAV.
+2. Navê bikarhênerê HiDrive xwe wekî Bikarhêner binivîse.
+3. Şîfreya HiDrive ya xwe wekî Şîfre binivîse.
+   Navnîşana serverê, HTTPS, port, û riya bingehîn bixweber têne mîheng kirin.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) - hilanîna cloudê ya çînî ya populer bi piştgiriya WebDAV ya xwecihî.
+
+1. Têkeve jianguoyun.com → Agahdariya Hesabê → Ewlekarî → Rêvebiriya Serlêdana Sêyemîn → Serlêdanê zêde bike.
+   Şîfreya sepanê ya çêkirî kopî bikin - ew tenê carekê tê xuyang kirin.
+2. Navnîşana e-nameya xwe ya Jianguoyun wekî Bikarhêner binivîse.
+3. Şîfreya sepanê ya hatî çêkirin wekî Şîfre binivîse.
+   Navnîşana serverê, HTTPS, port, û riya bingehîn bixweber têne mîheng kirin.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr - hilanîna ewr-heval a nepenîtiyê ku li Slovenya (YE) ye.
+
+1. Biçe app.koofr.eu → Vebijêrk → Şîfre → Şîfreyên sepanê → Şîfre lê zêde bike.
+2. Wekî Bikarhêner e-nameya hesabê xwe yê Koofr binivîse.
+3. Şîfreya sepanê ya hatî çêkirin wekî Şîfre binivîse.
+   Navnîşana serverê, HTTPS, port, û riya bingehîn bixweber têne mîheng kirin.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Mail.ru Cloud bi rêya WebDAV.
+
+1. Biçe account.mail.ru → Ewlekarî → Şîfreyên sepanê → Şîfreya sepanê biafirîne.
+   &quot;Mail&quot; an &quot;Hemû&quot; wekî celeb hilbijêrin, paşê şîfreya çêkirî kopî bikin.
+2. Navnîşana e-nameya xwe ya Mail.ru wekî Bikarhêner binivîse.
+3. Şîfreya sepanê wekî Şîfre binivîse.
+   Navnîşana serverê, HTTPS, port, û riya bingehîn bixweber têne mîheng kirin.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud - senkronîzekirin û parvekirina pelê xwe-mêvandar a populer.
+
+1. Navnîşana servera Nextcloud-a xwe binivîse (mînak: nextcloud.example.com).
+2. Riya bingehîn ji berê ve tê dagirtin: /remote.php/dav/files/&lt;navê bikarhêner&gt;/
+   &lt;navê bikarhêner&gt; bi navê bikarhênerê xweya Nextcloud ya rastîn veguherînin.
+3. Navê bikarhêner û şîfreya xwe ya Nextcloud (an şîfreyek serîlêdanê ji
+   Mîheng → Ewlekarî → Amûr û danişîn → Şîfreyên sepanê).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud - senkronîzekirin û parvekirina pelê xwe-mêvandar.
+
+1. Navnîşana servera xweyaCloud binivîse (mînak. owncloud.example.com).
+2. Riya bingehîn ji berê ve tê dagirtin: /remote.php/dav/files/&lt;navê bikarhêner&gt;/
+   Li şûna &lt;navê bikarhêner&gt; navê bikarhênerê xweya xweya Cloud ya rastîn biguherînin.
+3. Navê bikarhêner û şîfreya xwe ya Cloud (an şîfreyek sepanê heke 2FA çalak be) binivîsin.</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud - hilanîna ewr bi navendên daneyên YE û Dewletên Yekbûyî re.
+
+1. Têkeve my.pcloud.com → Mîheng → Ewlekarî → Şîfreyên Appê → Biafirîne.
+   Şîfreya sepanê kopî bikin - ew tenê carekê tê xuyang kirin.
+2. Wekî Bikarhêner e-nameya hesabê pCloud-ê xwe binivîse.
+3. Şîfreya sepanê wekî Şîfre binivîse.
+   Ji bo navenda daneya YE: ewebdav.pcloud.com bixweber tê bikar anîn.
+   Ji bo navenda daneya Dewletên Yekbûyî: mêvandar biguherînin webdav.pcloud.com.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>Yandex Disk bi rêya WebDAV.
+
+1. Biçe id.yandex.com → Ewlekarî → Şîfreyên sepanê → Ji bo &apos;gihandina WebDAV&apos; şîfreya sepanê biafirîne.
+   Şîfreya çêkirî kopî bikin - ew tenê carekê tê xuyang kirin.
+2. Têketina Yandex-a xwe wekî Bikarhêner binivîse.
+3. Şîfreya sepanê (ne şîfreya hesabê Yandex-a xwe) wekî Şîfre binivîse.
+   Navnîşana serverê, HTTPS, û port bixweber têne mîheng kirin.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Daneyên xwe li Windows, Linux hilînin/hevdem bikin.
 Wêneyan ji telefonê bi WI-FI û zêdetir hawird bikin.

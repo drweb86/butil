@@ -964,6 +964,267 @@ Silakan:
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Pengguna tidak ditentukan.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — penyimpanan objek yang kompatibel dengan S3 dari Alibaba.
+
+1. Di Konsol OSS (https://oss.console.aliyun.com/), buat sebuah bucket. Catat wilayahnya (misalnya oss-cn-hangzhou).
+2. Di Konsol RAM → Pengguna → buat pengguna → lampirkan AliyunOSSFullAccess → buat AccessKey.
+   Copy AccessKey ID (= Access Key) dan AccessKey Secret (= Secret Key).
+3. URL Layanan: https://oss-&lt;REGION&gt;.aliyuncs.com (misalnya https://oss-cn-hangzhou.aliyuncs.com).
+4. Wilayah: mis. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — Penyimpanan objek asli Amazon.
+
+1. Buka Konsol S3 (https://s3.console.aws.amazon.com/) dan buat bucket. Catat wilayahnya (misalnya us-east-1).
+2. Buka IAM → Pengguna → buat pengguna → lampirkan kebijakan AmazonS3FullAccess.
+3. Di bawah Kredensial keamanan, buat Kunci akses — salin ID Kunci dan Rahasia.
+4. Isikan: Bucket, Access Key, Secret Key, dan Region.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — Penyimpanan objek yang kompatibel dengan S3 dari Baidu.
+
+1. Di Konsol BOS (https://console.bce.baidu.com/bos/), buat bucket. Catat wilayahnya (misalnya bj, gz, su).
+2. Buka Keamanan → Kunci Akses — salin ID Kunci Akses dan Kunci Akses Rahasia Anda.
+3. URL Layanan: https://s3.&lt;REGION&gt;.bcebos.com (misalnya https://s3.bj.bcebos.com).
+4. Wilayah: mis. bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — penyimpanan terjangkau yang kompatibel dengan S3.
+
+1. Di Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Bucket, buat bucket.
+2. Buka Kunci Aplikasi → Tambahkan Kunci Aplikasi Baru, masukkan ke dalam bucket.
+   Salin keyID (= Access Key) dan applicationKey (= Secret Key).
+3. URL Layanan: titik akhir bucket Anda ditampilkan dalam detail bucket, misalnya. https://s3.us-west-004.backblazeb2.com
+4. Wilayah: segmen antara &apos;s3.&apos; dan &apos;.backblazeb2.com&apos;, mis. kami-barat-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — penyimpanan yang kompatibel dengan zero-egress S3.
+
+1. Di Dasbor Cloudflare (https://dash.cloudflare.com/) → R2 → buat ember.
+2. Buka R2 → Kelola Token API R2 → Buat Token API dengan Objek Baca &amp; Tulis.
+   Salin Access Key ID dan Secret Access Key.
+3. URL Layanan: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   ID Akun Anda ditampilkan di halaman ikhtisar R2.
+4. Isikan: Bucket, Access Key, Secret Key, dan Service URL. Wilayah diatur ke &apos;otomatis&apos; secara otomatis.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Penyimpanan Objek Cloud.ru (SberCloud) — Penyimpanan OBS yang kompatibel dengan S3.
+
+1. Di Konsol Cloud.ru (https://cloud.ru/) → Object Storage Service (OBS) → buat bucket.
+2. Buka Kredensial Saya → Kunci Akses → Tambahkan Kunci Akses.
+   Salin Kunci Akses dan Kunci Akses Rahasia.
+3. Isi: Bucket, Access Key, Secret Key, dan Region (misal ru-moscow-1).
+   URL layanan diisi secara otomatis.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO atau server apa pun yang kompatibel dengan S3.
+
+1. Mulai server MinIO Anda (atau server lain yang kompatibel dengan S3).
+2. Buat bucket melalui Konsol MinIO atau &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;.
+3. Buat kunci akses di Konsol MinIO → Kunci Akses (hindari kredensial root dalam produksi).
+4. URL Layanan: titik akhir server Anda, mis. http://192.168.1.10:9000 atau https://minio.example.com.
+5. Wilayah: nilai apa pun (misalnya us-east-1) — atau biarkan kosong jika server tidak menerapkannya.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — penyimpanan objek yang kompatibel dengan S3.
+
+1. Di Spaces (https://cloud.digitalocean.com/spaces), buat Space. Catat wilayahnya (misalnya nyc3).
+2. Buka API → Tombol Spasi → Hasilkan Kunci Baru. Salin Kunci (= Kunci Akses) dan Rahasia.
+3. URL Layanan: https://&lt;REGION&gt;.digitaloceanspaces.com (misalnya https://nyc3.digitaloceanspaces.com).
+4. Wilayah: kode pendek yang sama, mis. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — melalui API interoperabilitas S3.
+
+1. Di Google Cloud Console (https://console.cloud.google.com/storage), buat keranjang.
+2. Buka Cloud Storage → Pengaturan → Interoperabilitas → buat kunci HMAC untuk akun layanan.
+   Salin Kunci Akses dan Rahasia.
+3. Isikan : Bucket, Access Key (HMAC key), Secret Key (HMAC secret).
+   URL layanan dan wilayah ditetapkan secara otomatis.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — Penyimpanan objek yang kompatibel dengan S3 dari Huawei.
+
+1. Di Konsol OBS (https://console.huaweicloud.com/obs/), buat bucket. Catat wilayahnya (misalnya cn-north-4).
+2. Buka Kredensial Saya → Kunci Akses → Buat Kunci Akses.
+   Copy AK (= Access Key) dan SK (= Secret Key).
+3. URL Layanan: https://obs.&lt;REGION&gt;.myhuaweicloud.com (mis. https://obs.cn-north-4.myhuaweicloud.com).
+4. Wilayah: mis. cn-utara-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Penyimpanan Objek Linode (Akamai) — Penyimpanan yang kompatibel dengan S3.
+
+1. Di Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets), buat bucket. Perhatikan clusternya.
+2. Buka Object Storage → Access Keys → Buat Access Key yang tercakup dalam bucket.
+   Salin Kunci Akses dan Kunci Rahasia.
+3. URL Layanan: https://&lt;CLUSTER&gt;.linodeobjects.com (mis. https://us-east-1.linodeobjects.com).
+4. Wilayah: kode cluster yang sama, mis. kami-timur-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — Penyimpanan yang kompatibel dengan S3 dari Qiniu.
+
+1. Di Portal Qiniu (https://portal.qiniu.com/kodo/bucket), buat ember. Perhatikan wilayahnya.
+2. Buka Pusat Pribadi → Manajemen Kunci — salin AccessKey dan SecretKey Anda.
+3. URL Layanan berdasarkan wilayah:
+   Tiongkok Timur: https://s3-cn-east-1.qiniucs.com
+   Tiongkok Utara: https://s3-cn-north-1.qiniucs.com
+   Cina Selatan: https://s3-cn-south-1.qiniucs.com
+   Amerika Utara: https://s3-us-north-1.qiniucs.com
+4. Wilayah: kode yang cocok, mis. cn-timur-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — Penyimpanan yang kompatibel dengan S3 Eropa.
+
+1. Di Scaleway Console (https://console.scaleway.com/object-storage/buckets), buat bucket. Catat wilayahnya (misalnya fr-par).
+2. Buka IAM → Kunci API → Hasilkan Kunci API dengan izin menulis Object Storage.
+   Salin Kunci Akses dan Kunci Rahasia.
+3. URL Layanan: https://s3.&lt;REGION&gt;.scw.cloud (misalnya https://s3.fr-par.scw.cloud).
+4. Wilayah: mis. fr-par, nl-ams, tolong-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — Penyimpanan Rusia yang kompatibel dengan S3.
+
+1. Di Panel Selectel (https://my.selectel.ru/) → Cloud Storage → buat container (= bucket).
+2. Di bawah Pengguna &amp; Peran, buat pengguna layanan dengan akses penyimpanan → Kunci S3 → buat pasangan kunci.
+   Salin Kunci Akses dan Kunci Rahasia.
+3. Isikan : Bucket, Access Key, Secret Key.
+   URL layanan diisi secara otomatis.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — Penyimpanan objek yang kompatibel dengan S3 dari Tencent.
+
+1. Di Konsol COS (https://console.cloud.tencent.com/cos), buat bucket. Catat AppId dan Wilayah (misalnya ap-beijing).
+2. Dalam Manajemen Akses → Kunci API → Buat Kunci.
+   Salin SecretId (= Access Key) dan SecretKey (= Secret Key).
+3. URL Layanan: https://cos.&lt;REGION&gt;.myqcloud.com (mis. https://cos.ap-beijing.myqcloud.com).
+4. Format nama bucket: &lt;name&gt;-&lt;AppId&gt; (misalnya mybucket-1250000000). Wilayah: mis. ap-beijing.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — Penyimpanan yang kompatibel dengan S3 dari VK Cloud.
+
+1. Di VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → buat ember.
+2. Pada akun Anda → Tombol Akses → buat pasangan kunci baru.
+   Salin Kunci Akses dan Kunci Rahasia.
+3. Isi: Bucket, Access Key, Secret Key, dan Region jika diperlukan (misal ru-msk).
+   URL layanan diisi secara otomatis.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — Penyimpanan yang kompatibel dengan S3.
+
+1. Di Volcano Engine Console (https://console.volcengine.com/tos), buat ember. Catat wilayahnya (misalnya cn-beijing).
+2. Buka IAM → Access Keys → buat kunci.
+   Salin Access Key ID dan Secret Access Key.
+3. URL Layanan: https://tos-s3-&lt;REGION&gt;.volces.com (misalnya https://tos-s3-cn-beijing.volces.com).
+4. Wilayah: mis. cn-beijing.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi — penyimpanan cloud panas tanpa biaya keluar.
+
+1. Di Konsol Wasabi (https://console.wasabisys.com/) → Bucket → Buat Bucket. Pilih wilayah.
+2. Buka Kunci Akses → Buat Kunci Akses Baru. Salin Kunci Akses dan Kunci Rahasia.
+3. Isikan: Bucket, Access Key, Secret Key, dan Region (misalnya us-east-1, eu-central-1).
+   URL layanan diisi secara otomatis.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Penyimpanan Objek Yandex — Penyimpanan cloud Rusia yang kompatibel dengan S3.
+
+1. Di Yandex Cloud Console (https://console.yandex.cloud/) → Penyimpanan Objek → buat keranjang.
+2. Buka Akun Layanan → buat akun dengan peran penyimpanan.editor → buat kunci akses Statis.
+   Salin ID Kunci (= Kunci Akses) dan Kunci Rahasia.
+3. Isikan : Bucket, Access Key, Secret Key.
+   URL layanan dan wilayah ditetapkan secara otomatis.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box — penyimpanan cloud perusahaan dengan dukungan WebDAV.
+
+1. Masuk di app.box.com. Perhatikan bahwa Box WebDAV hanya tersedia untuk paket berbayar.
+2. Masukkan email akun Box Anda sebagai Pengguna.
+3. Masukkan kata sandi Kotak Anda sebagai Kata Sandi.
+   Jika Anda menggunakan SSO, Anda mungkin perlu mengatur kata sandi WebDAV terpisah di Pengaturan Akun.
+   Alamat server, HTTPS, port, dan jalur dasar dikonfigurasi secara otomatis.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>Server WebDAV Generik (Nextcloud, ownCloud, Synology DSM, Seafile, Apache, dll.)
+
+1. Masukkan Alamat server, pilih HTTPS (disarankan), dan atur port (0 = default: 80 untuk HTTP, 443 untuk HTTPS).
+2. Masukkan jalur dasar untuk titik akhir WebDAV.
+   Contoh Nextcloud: /remote.php/dav/files/&lt;nama pengguna&gt;/Backups
+   Sinologi DSM: /
+3. Masukkan nama pengguna dan kata sandi Anda (atau kata sandi khusus aplikasi jika server Anda memerlukannya).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive — Penyimpanan cloud Jerman dengan fokus privasi yang kuat.
+
+1. Masuk di hidrive.ionos.com → Pengaturan → Aplikasi &amp; layanan terhubung → WebDAV.
+   Atau akses WebDAV dengan kredensial Anda yang ada secara langsung.
+2. Masukkan nama pengguna HiDrive Anda sebagai Pengguna.
+3. Masukkan kata sandi HiDrive Anda sebagai Kata Sandi.
+   Alamat server, HTTPS, port, dan jalur dasar dikonfigurasi secara otomatis.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) — penyimpanan cloud populer Tiongkok dengan dukungan WebDAV asli.
+
+1. Masuk di jianguoyun.com → Info Akun → Keamanan → Manajemen Aplikasi Pihak Ketiga → Tambah Aplikasi.
+   Salin kata sandi aplikasi yang dibuat — kata sandi tersebut hanya ditampilkan sekali.
+2. Masukkan alamat email Jianguoyun Anda sebagai Pengguna.
+3. Masukkan kata sandi aplikasi yang dihasilkan sebagai Kata Sandi.
+   Alamat server, HTTPS, port, dan jalur dasar dikonfigurasi secara otomatis.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr — penyimpanan cloud ramah privasi yang berbasis di Slovenia (UE).
+
+1. Buka app.koofr.eu → Preferensi → Kata Sandi → Kata sandi aplikasi → Tambahkan kata sandi.
+2. Masukkan email akun Koofr Anda sebagai Pengguna.
+3. Masukkan kata sandi aplikasi yang dihasilkan sebagai Kata Sandi.
+   Alamat server, HTTPS, port, dan jalur dasar dikonfigurasi secara otomatis.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Mail.ru Cloud melalui WebDAV.
+
+1. Buka account.mail.ru → Keamanan → Kata sandi aplikasi → Buat kata sandi aplikasi.
+   Pilih &apos;Mail&apos; atau &apos;All&apos; sebagai jenisnya, lalu salin kata sandi yang dibuat.
+2. Masukkan alamat email Mail.ru Anda sebagai Pengguna.
+3. Masukkan kata sandi aplikasi sebagai Kata Sandi.
+   Alamat server, HTTPS, port, dan jalur dasar dikonfigurasi secara otomatis.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud — sinkronisasi dan berbagi file yang dihosting sendiri dan populer.
+
+1. Masukkan alamat server Nextcloud Anda (misalnya nextcloud.example.com).
+2. Jalur dasar sudah diisi sebelumnya: /remote.php/dav/files/&lt;nama pengguna&gt;/
+   Ganti &lt;username&gt; dengan nama pengguna Nextcloud Anda yang sebenarnya.
+3. Masukkan nama pengguna dan kata sandi Nextcloud Anda (atau kata sandi aplikasi dari
+   Pengaturan → Keamanan → Perangkat &amp; sesi → Kata sandi aplikasi).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud — sinkronisasi dan berbagi file yang dihosting sendiri.
+
+1. Masukkan alamat server ownCloud Anda (misalnya owncloud.example.com).
+2. Jalur dasar sudah diisi sebelumnya: /remote.php/dav/files/&lt;nama pengguna&gt;/
+   Ganti &lt;username&gt; dengan nama pengguna ownCloud Anda yang sebenarnya.
+3. Masukkan nama pengguna dan kata sandi Cloud Anda sendiri (atau kata sandi aplikasi jika 2FA diaktifkan).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud — penyimpanan cloud dengan pusat data UE dan AS.
+
+1. Masuk di my.pcloud.com → Pengaturan → Keamanan → Kata Sandi Aplikasi → Buat.
+   Salin kata sandi aplikasi — kata sandi tersebut hanya ditampilkan sekali.
+2. Masukkan email akun pCloud Anda sebagai Pengguna.
+3. Masukkan kata sandi aplikasi sebagai Kata Sandi.
+   Untuk pusat data UE: ewebdav.pcloud.com digunakan secara otomatis.
+   Untuk pusat data AS: ubah host menjadi webdav.pcloud.com.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>Disk Yandex melalui WebDAV.
+
+1. Buka id.yandex.com → Keamanan → Kata sandi aplikasi → Buat kata sandi aplikasi untuk &apos;akses WebDAV&apos;.
+   Salin kata sandi yang dibuat — kata sandi hanya ditampilkan sekali.
+2. Masukkan login Yandex Anda sebagai Pengguna.
+3. Masukkan kata sandi aplikasi (bukan kata sandi akun Yandex Anda) sebagai Kata Sandi.
+   Alamat server, HTTPS, dan port dikonfigurasi secara otomatis.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Cadangkan/sinkronkan data Anda di Windows, Linux.
 Impor foto dari ponsel melalui WI-FI dan lainnya.

@@ -967,6 +967,267 @@ Pozrite si podrobný popis na nasledujúcom odkaze.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Používateľ nie je zadaný.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — úložisko objektov kompatibilné s S3 od spoločnosti Alibaba.
+
+1. V konzole OSS (https://oss.console.aliyun.com/) vytvorte vedro. Všimnite si jeho oblasť (napr. oss-cn-hangzhou).
+2. V konzole RAM → Používatelia → vytvoriť používateľa → pripojiť AliyunOSSFullAccess → vytvoriť prístupový kľúč.
+   Skopírujte AccessKey ID (= prístupový kľúč) a AccessKey Secret (= tajný kľúč).
+3. Adresa URL služby: https://oss-&lt;REGION&gt;.aliyuncs.com (napr. https://oss-cn-hangzhou.aliyuncs.com).
+4. Región: napr. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 – pôvodné úložisko objektov Amazonu.
+
+1. Otvorte konzolu S3 (https://s3.console.aws.amazon.com/) a vytvorte vedro. Všimnite si jeho región (napr. us-východ-1).
+2. Otvorte IAM → Používatelia → vytvorte používateľa → pripojte politiku AmazonS3FullAccess.
+3. V časti Bezpečnostné poverenia vytvorte prístupový kľúč — skopírujte ID kľúča a tajný kľúč.
+4. Vyplňte: Vedro, Prístupový kľúč, Tajný kľúč a Oblasť.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — S3-kompatibilné úložisko objektov od Baidu.
+
+1. V konzole BOS (https://console.bce.baidu.com/bos/) vytvorte vedro. Všimnite si jeho oblasť (napr. bj, gz, su).
+2. Prejdite na Zabezpečenie → Prístupové kľúče — skopírujte svoje ID prístupového kľúča a tajný prístupový kľúč.
+3. URL služby: https://s3.&lt;REGION&gt;.bcebos.com (napr. https://s3.bj.bcebos.com).
+4. Región: napr. bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — cenovo dostupné úložisko kompatibilné s S3.
+
+1. V Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets vytvorte vedro.
+2. Prejdite na Kľúče aplikácie → Pridať nový aplikačný kľúč, zadajte ho do skupiny.
+   Skopírujte keyID (= prístupový kľúč) a applicationKey (= tajný kľúč).
+3. Adresa URL služby: koncový bod vášho segmentu zobrazený v detailoch segmentu, napr. https://s3.us-west-004.backblazeb2.com
+4. Región: segment medzi „s3.“ a &apos;.backblazeb2.com&apos;, napr. nás-západ-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — úložisko kompatibilné s nulovým výstupom S3.
+
+1. V Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → vytvorte vedro.
+2. Prejdite na R2 → Spravovať tokeny R2 API → Vytvoriť token API s čítaním a zápisom objektu.
+   Skopírujte ID prístupového kľúča a tajný prístupový kľúč.
+3. URL služby: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   ID vášho účtu sa zobrazuje na stránke prehľadu R2.
+4. Vyplňte: Bucket, Access Key, Secret Key a Service URL. Región je automaticky nastavený na „auto“.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Object Storage — úložisko OBS kompatibilné s S3.
+
+1. V konzole Cloud.ru (https://cloud.ru/) → Služba ukladania objektov (OBS) → vytvorte vedro.
+2. Prejdite na Moje poverenia → Prístupové kľúče → Pridať prístupový kľúč.
+   Skopírujte prístupový kľúč a tajný prístupový kľúč.
+3. Vyplňte: Bucket, Access Key, Secret Key a Region (napr. ru-moscow-1).
+   Adresa URL služby sa vyplní automaticky.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO alebo akýkoľvek server kompatibilný s S3.
+
+1. Spustite váš server MinIO (alebo iný kompatibilný s S3).
+2. Vytvorte bucket cez MinIO Console alebo &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;.
+3. Vytvorte prístupový kľúč v MinIO Console → Prístupové kľúče (vyhnite sa prihlasovacím údajom root v produkcii).
+4. Adresa URL služby: koncový bod vášho servera, napr. http://192.168.1.10:9000 alebo https://minio.example.com.
+5. Oblasť: ľubovoľná hodnota (napr. us-východ-1) — alebo ponechajte prázdne, ak ju server nevynúti.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — úložisko objektov kompatibilné s S3.
+
+1. V aplikácii Spaces (https://cloud.digitalocean.com/spaces) vytvorte priestor. Všimnite si jeho oblasť (napr. nyc3).
+2. Prejdite do API → Spaces Keys → Generate New Key. Skopírujte kľúč (= prístupový kľúč) a tajný.
+3. Adresa URL služby: https://&lt;REGION&gt;.digitaloceanspaces.com (napr. https://nyc3.digitaloceanspaces.com).
+4. Región: rovnaký krátky kód, napr. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — prostredníctvom rozhrania S3 interoperability API.
+
+1. V konzole Google Cloud Console (https://console.cloud.google.com/storage) vytvorte vedro.
+2. Prejdite do Cloud Storage → Nastavenia → Interoperabilita → vytvorte kľúč HMAC pre účet služby.
+   Skopírujte prístupový kľúč a tajný kód.
+3. Vyplňte: Bucket, Access Key (HMAC key), Secret Key (HMAC secret).
+   Adresa URL služby a región sa nastavia automaticky.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — úložisko objektov kompatibilné s S3 od spoločnosti Huawei.
+
+1. V konzole OBS (https://console.huaweicloud.com/obs/) vytvorte vedro. Všimnite si jeho oblasť (napr. cn-sever-4).
+2. Prejdite na Moje poverenia → Prístupové kľúče → Vytvoriť prístupový kľúč.
+   Skopírujte AK (= prístupový kľúč) a SK (= tajný kľúč).
+3. URL služby: https://obs.&lt;REGION&gt;.myhuaweicloud.com (napr. https://obs.cn-north-4.myhuaweicloud.com).
+4. Región: napr. cn-sever-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Object Storage — úložisko kompatibilné s S3.
+
+1. V Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets) vytvorte vedro. Všimnite si jeho zhluk.
+2. Prejdite na Úložisko objektov → Prístupové kľúče → Vytvoriť prístupový kľúč s rozsahom pre daný segment.
+   Skopírujte prístupový kľúč a tajný kľúč.
+3. URL služby: https://&lt;CLUSTER&gt;.linodeobjects.com (napr. https://us-east-1.linodeobjects.com).
+4. Región: rovnaký kód klastra, napr. us-východ-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — úložisko kompatibilné s S3 od spoločnosti Qiniu.
+
+1. V portáli Qiniu (https://portal.qiniu.com/kodo/bucket) vytvorte vedro. Všimnite si jeho región.
+2. Choďte do Personal Center → Key Management — skopírujte svoj AccessKey a SecretKey.
+3. Adresa URL služby podľa regiónu:
+   Východná Čína: https://s3-cn-east-1.qiniics.com
+   Severná Čína: https://s3-cn-north-1.qiniuss.com
+   Južná Čína: https://s3-cn-south-1.qiniuss.com
+   Severná Amerika: https://s3-us-north-1.qiniuss.com
+4. Región: zodpovedajúci kód, napr. cn-východ-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — európske úložisko kompatibilné s S3.
+
+1. V konzole Scaleway (https://console.scaleway.com/object-storage/buckets) vytvorte vedro. Všimnite si jeho oblasť (napr. fr-par).
+2. Prejdite do IAM → API Keys → Generate API Key with Object Storage oprávneniami na zápis.
+   Skopírujte prístupový kľúč a tajný kľúč.
+3. URL služby: https://s3.&lt;REGION&gt;.scw.cloud (napr. https://s3.fr-par.scw.cloud).
+4. Región: napr. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — ruské úložisko kompatibilné s S3.
+
+1. V paneli Selectel (https://my.selectel.ru/) → Cloud Storage → vytvorte kontajner (= vedro).
+2. V časti Používatelia a roly vytvorte používateľa služby s prístupom k úložisku → Kľúče S3 → vytvorte pár kľúčov.
+   Skopírujte prístupový kľúč a tajný kľúč.
+3. Vyplňte: Vedro, Prístupový kľúč, Tajný kľúč.
+   Adresa URL služby sa vyplní automaticky.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — úložisko objektov kompatibilné s S3 od spoločnosti Tencent.
+
+1. V konzole COS (https://console.cloud.tencent.com/cos) vytvorte vedro. Všimnite si AppId a Region (napr. ap-peking).
+2. V Access Management → API Keys → Create Key.
+   Skopírujte SecretId (= prístupový kľúč) a SecretKey (= tajný kľúč).
+3. URL služby: https://cos.&lt;REGION&gt;.myqcloud.com (napr. https://cos.ap-beijing.myqcloud.com).
+4. Formát názvu segmentu: &lt;name&gt;-&lt;AppId&gt; (napr. mybucket-1250000000). Región: napr. ap-peking.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — úložisko kompatibilné s S3 od VK Cloud.
+
+1. V portáli VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → vytvorte vedro.
+2. V rámci svojho účtu → Prístupové kľúče → vytvorte nový pár kľúčov.
+   Skopírujte prístupový kľúč a tajný kľúč.
+3. V prípade potreby vyplňte: Vedro, Prístupový kľúč, Tajný kľúč a Oblasť (napr. ru-msk).
+   Adresa URL služby sa vyplní automaticky.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — úložisko kompatibilné s S3.
+
+1. V konzole Volcano Engine Console (https://console.volcengine.com/tos) vytvorte vedro. Všimnite si jeho región (napr. cn-peking).
+2. Prejdite do IAM → Prístupové kľúče → vytvorte kľúč.
+   Skopírujte ID prístupového kľúča a tajný prístupový kľúč.
+3. Adresa URL služby: https://tos-s3-&lt;REGION&gt;.volces.com (napr. https://tos-s3-cn-beijing.volces.com).
+4. Región: napr. cn-peking.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi — hot cloudové úložisko bez poplatkov za výstup.
+
+1. Vo Wasabi Console (https://console.wasabisys.com/) → Buckets → Create Bucket. Vyberte región.
+2. Prejdite na Prístupové kľúče → Vytvoriť nový prístupový kľúč. Skopírujte prístupový kľúč a tajný kľúč.
+3. Vyplňte: Bucket, Access Key, Secret Key a Region (napr. us-východ-1, eu-central-1).
+   Adresa URL služby sa vyplní automaticky.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage — ruské cloudové úložisko kompatibilné s S3.
+
+1. V Yandex Cloud Console (https://console.yandex.cloud/) → Ukladanie objektov → vytvorte vedro.
+2. Prejdite na Servisné účty → vytvorte si účet s rolou storage.editor → vytvorte statický prístupový kľúč.
+   Skopírujte ID kľúča (= prístupový kľúč) a tajný kľúč.
+3. Vyplňte: Vedro, Prístupový kľúč, Tajný kľúč.
+   Adresa URL služby a región sa nastavia automaticky.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box — podnikové cloudové úložisko s podporou WebDAV.
+
+1. Prihláste sa na app.box.com. Upozorňujeme, že Box WebDAV je k dispozícii iba pre platené programy.
+2. Zadajte e-mail svojho účtu Box ako Používateľ.
+3. Ako heslo zadajte svoje heslo schránky.
+   Ak používate SSO, možno budete musieť nastaviť samostatné heslo WebDAV v nastaveniach účtu.
+   Adresa servera, HTTPS, port a základná cesta sa konfigurujú automaticky.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>Generický server WebDAV (Nextcloud, ownCloud, Synology DSM, Seafile, Apache atď.)
+
+1. Zadajte adresu servera, vyberte HTTPS (odporúča sa) a nastavte port (0 = predvolené: 80 pre HTTP, 443 pre HTTPS).
+2. Zadajte základnú cestu pre koncový bod WebDAV.
+   Príklad Nextcloud: /remote.php/dav/files/&lt;používateľské meno&gt;/Backups
+   Synology DSM: /
+3. Zadajte svoje používateľské meno a heslo (alebo heslo pre konkrétnu aplikáciu, ak to vyžaduje váš server).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive — nemecké cloudové úložisko so silným zameraním na súkromie.
+
+1. Prihláste sa na hidrive.ionos.com → Nastavenia → Aplikácie a pripojené služby → WebDAV.
+   Alebo pristupujte priamo k WebDAV pomocou svojich existujúcich poverení.
+2. Zadajte svoje používateľské meno HiDrive ako Používateľ.
+3. Ako heslo zadajte svoje heslo HiDrive.
+   Adresa servera, HTTPS, port a základná cesta sa konfigurujú automaticky.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) — populárne čínske cloudové úložisko s natívnou podporou WebDAV.
+
+1. Prihláste sa na jianguoyun.com → Informácie o účte → Zabezpečenie → Správa aplikácií tretích strán → Pridať aplikáciu.
+   Skopírujte vygenerované heslo aplikácie – zobrazí sa iba raz.
+2. Zadajte svoju e-mailovú adresu Jianguoyun ako Používateľ.
+3. Zadajte vygenerované heslo aplikácie ako heslo.
+   Adresa servera, HTTPS, port a základná cesta sa konfigurujú automaticky.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr — cloudové úložisko šetrné k súkromiu so sídlom v Slovinsku (EÚ).
+
+1. Prejdite na app.koofr.eu → Predvoľby → Heslo → Heslá aplikácií → Pridať heslo.
+2. Zadajte e-mail svojho účtu Koofr ako Používateľ.
+3. Zadajte vygenerované heslo aplikácie ako heslo.
+   Adresa servera, HTTPS, port a základná cesta sa konfigurujú automaticky.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Cloud Mail.ru cez WebDAV.
+
+1. Prejdite na account.mail.ru → Zabezpečenie → Heslá aplikácií → Vytvoriť heslo aplikácie.
+   Ako typ vyberte „Pošta“ alebo „Všetko“ a potom skopírujte vygenerované heslo.
+2. Ako Používateľ zadajte svoju e-mailovú adresu Mail.ru.
+3. Zadajte heslo aplikácie ako heslo.
+   Adresa servera, HTTPS, port a základná cesta sa konfigurujú automaticky.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud — populárna synchronizácia a zdieľanie súborov s vlastným hosťovaním.
+
+1. Zadajte adresu servera Nextcloud (napr. nextcloud.example.com).
+2. Základná cesta je predvyplnená: /remote.php/dav/files/&lt;používateľské meno&gt;/
+   Nahraďte &lt;používateľské meno&gt; svojím skutočným používateľským menom Nextcloud.
+3. Zadajte svoje používateľské meno a heslo Nextcloud (alebo heslo aplikácie z
+   Nastavenia → Zabezpečenie → Zariadenia a relácie → Heslá aplikácií).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud — vlastná synchronizácia a zdieľanie súborov.
+
+1. Zadajte adresu svojho servera ownCloud (napr. owncloud.example.com).
+2. Základná cesta je predvyplnená: /remote.php/dav/files/&lt;používateľské meno&gt;/
+   Nahraďte &lt;používateľské meno&gt; svojím skutočným užívateľským menom ownCloud.
+3. Zadajte svoje vlastné používateľské meno a heslo pre cloud (alebo heslo aplikácie, ak je povolená funkcia 2FA).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud — cloudové úložisko s dátovými centrami EÚ a USA.
+
+1. Prihláste sa na my.pcloud.com → Nastavenia → Zabezpečenie → Heslá aplikácií → Vytvoriť.
+   Skopírujte heslo aplikácie – zobrazí sa iba raz.
+2. Zadajte e-mail svojho účtu pCloud ako Používateľ.
+3. Zadajte heslo aplikácie ako heslo.
+   Pre dátové centrum EÚ: ewebdav.pcloud.com sa používa automaticky.
+   Pre dátové centrum v USA: zmeňte hostiteľa na webdav.pcloud.com.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>Disk Yandex cez WebDAV.
+
+1. Prejdite na stránku id.yandex.com → Zabezpečenie → Heslá aplikácií → Vytvoriť heslo aplikácie pre &apos;WebDAV prístup&apos;.
+   Skopírujte vygenerované heslo – zobrazí sa iba raz.
+2. Zadajte svoje prihlasovacie meno Yandex ako Používateľ.
+3. Ako heslo zadajte heslo aplikácie (nie heslo účtu Yandex).
+   Adresa servera, HTTPS a port sa nakonfigurujú automaticky.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Zálohujte/synchronizujte svoje dáta v systéme Windows, Linux.
 Importujte fotografie z telefónu cez WI-FI a ďalšie.

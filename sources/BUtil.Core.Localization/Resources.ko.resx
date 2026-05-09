@@ -968,6 +968,267 @@ bin.
   <data name="User_Field_Validation" xml:space="preserve">
     <value>사용자가 지정되지 않았습니다.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — Alibaba의 S3 호환 개체 스토리지입니다.
+
+1. OSS 콘솔(https://oss.console.aliyun.com/)에서 버킷을 생성합니다. 해당 지역(예: oss-cn-hangzhou)을 기록해 둡니다.
+2. RAM 콘솔 → 사용자 → 사용자 생성 → AliyunOSSFullAccess 연결 → AccessKey 생성.
+   AccessKey ID(=액세스 키)와 AccessKey Secret(=비밀 키)을 복사합니다.
+3. 서비스 URL: https://oss-&lt;REGION&gt;.aliyuncs.com (예: https://oss-cn-hangzhou.aliyuncs.com).
+4. 지역: 예: oss-cn-항저우.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — Amazon의 원래 객체 스토리지입니다.
+
+1. S3 콘솔(https://s3.console.aws.amazon.com/)을 열고 버킷을 생성합니다. 해당 지역(예: us-east-1)을 기록해 둡니다.
+2. IAM 열기 → 사용자 → 사용자 생성 → AmazonS3FullAccess 정책 연결.
+3. 보안 자격 증명에서 액세스 키를 생성하고 키 ID와 비밀을 복사합니다.
+4. 버킷, 액세스 키, 비밀 키, 지역을 입력합니다.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — Baidu의 S3 호환 객체 스토리지입니다.
+
+1. BOS 콘솔(https://console.bce.baidu.com/bos/)에서 버킷을 생성합니다. 해당 지역(예: bj, gz, su)을 기록해 둡니다.
+2. 보안 → 액세스 키로 이동하여 액세스 키 ID와 비밀 액세스 키를 복사하세요.
+3. 서비스 URL: https://s3.&lt;REGION&gt;.bcebos.com (예: https://s3.bj.bcebos.com).
+4. 지역: 예: bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — 저렴한 S3 호환 스토리지.
+
+1. Backblaze(https://www.backblaze.com/) → B2 Cloud Storage → Buckets에서 버킷을 생성합니다.
+2. 앱 키 → 새 애플리케이션 키 추가로 이동하여 범위를 버킷으로 지정합니다.
+   keyID(=액세스 키)와 applicationKey(=비밀 키)를 복사합니다.
+3. 서비스 URL: 버킷 세부정보에 표시되는 버킷의 엔드포인트입니다. 예: https://s3.us-west-004.backblazeb2.com
+4. 지역: &apos;s3&apos; 사이의 세그먼트. 및 &apos;.backblazeb2.com&apos;, 예: 우리-서부-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — 제로 이그레스 S3 호환 스토리지.
+
+1. Cloudflare Dashboard(https://dash.cloudflare.com/) → R2 → 버킷을 생성합니다.
+2. R2 → R2 API 토큰 관리 → 객체 읽기 및 쓰기로 API 토큰 생성으로 이동합니다.
+   액세스 키 ID와 비밀 액세스 키를 복사합니다.
+3. 서비스 URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   귀하의 계정 ID는 R2 개요 페이지에 표시됩니다.
+4. 입력: 버킷, 액세스 키, 비밀 키, 서비스 URL. 지역은 자동으로 &apos;자동&apos;으로 설정됩니다.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru(SberCloud) 객체 스토리지 — S3 호환 OBS 스토리지.
+
+1. Cloud.ru 콘솔(https://cloud.ru/) → Object Storage Service(OBS) → 버킷을 생성합니다.
+2. 내 자격 증명 → 액세스 키 → 액세스 키 추가로 이동합니다.
+   액세스 키와 비밀 액세스 키를 복사합니다.
+3. 버킷, 액세스 키, 비밀 키 및 지역(예: ru-moscow-1)을 입력합니다.
+   서비스 URL은 자동으로 채워집니다.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO 또는 모든 S3 호환 서버.
+
+1. MinIO(또는 기타 S3 호환) 서버를 시작합니다.
+2. MinIO 콘솔 또는 &apos;mc mb &lt;별칭&gt;/&lt;버킷&gt;&apos;을 통해 버킷을 생성합니다.
+3. MinIO 콘솔 → 액세스 키에서 액세스 키를 생성합니다(프로덕션에서는 루트 자격 증명을 피하십시오).
+4. 서비스 URL: 서버 엔드포인트, 예: http://192.168.1.10:9000 또는 https://minio.example.com.
+5. 지역: 모든 값(예: us-east-1) — 또는 서버가 이를 시행하지 않는 경우 비워 둡니다.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — S3 호환 객체 스토리지.
+
+1. Spaces(https://cloud.digitalocean.com/spaces)에서 Space를 생성합니다. 해당 지역(예: nyc3)을 기록해 둡니다.
+2. API → Spaces Keys → 새 키 생성으로 이동합니다. 키(=액세스 키)와 비밀을 복사합니다.
+3. 서비스 URL: https://&lt;REGION&gt;.digitaloceanspaces.com(예: https://nyc3.digitaloceanspaces.com).
+4. 지역: 동일한 단축 코드(예: nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — S3 상호 운용성 API를 통해.
+
+1. Google Cloud Console(https://console.cloud.google.com/storage)에서 버킷을 생성합니다.
+2. Cloud Storage → 설정 → 상호 운용성 → 서비스 계정에 대한 HMAC 키 생성으로 이동합니다.
+   액세스 키와 비밀을 복사합니다.
+3. 입력: 버킷, 액세스 키(HMAC 키), 비밀 키(HMAC 비밀)
+   서비스 URL과 지역은 자동으로 설정됩니다.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — Huawei의 S3 호환 개체 스토리지입니다.
+
+1. OBS 콘솔(https://console.huaweicloud.com/obs/)에서 버킷을 생성합니다. 해당 지역(예: cn-north-4)을 기록해 둡니다.
+2. 내 자격 증명 → 액세스 키 → 액세스 키 생성으로 이동합니다.
+   AK(= 액세스 키) 및 SK(= 비밀 키)를 복사합니다.
+3. 서비스 URL: https://obs.&lt;REGION&gt;.myhuaweicloud.com (예: https://obs.cn-north-4.myhuaweicloud.com).
+4. 지역: 예: CN-북쪽-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode(Akamai) 개체 스토리지 — S3 호환 스토리지.
+
+1. Linode Cloud Manager(https://cloud.linode.com/object-storage/buckets)에서 버킷을 생성합니다. 해당 클러스터를 참고하세요.
+2. Object Storage → Access Keys → 버킷 범위의 액세스 키 생성으로 이동합니다.
+   액세스 키와 비밀 키를 복사합니다.
+3. 서비스 URL: https://&lt;CLUSTER&gt;.linodeobjects.com(예: https://us-east-1.linodeobjects.com).
+4. 지역: 동일한 클러스터 코드, 예: us-east-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — Qiniu의 S3 호환 스토리지입니다.
+
+1. Qiniu 포털(https://portal.qiniu.com/kodo/bucket)에서 버킷을 생성합니다. 해당 지역을 기록해 두십시오.
+2. 개인 센터 → 키 관리로 이동하여 AccessKey 및 SecretKey를 복사합니다.
+3. 지역별 서비스 URL:
+   중국 동부: https://s3-cn-east-1.qiniucs.com
+   중국 북부: https://s3-cn-north-1.qiniucs.com
+   중국 남부: https://s3-cn-south-1.qiniucs.com
+   북미: https://s3-us-north-1.qiniucs.com
+4. 지역: 일치 코드, 예: cn-동쪽-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway 개체 스토리지 — 유럽 S3 호환 스토리지입니다.
+
+1. Scaleway 콘솔(https://console.scaleway.com/object-storage/buckets)에서 버킷을 생성합니다. 해당 지역(예: fr-par)을 기록해 둡니다.
+2. IAM → API 키 → Object Storage 쓰기 권한으로 API 키 생성으로 이동합니다.
+   액세스 키와 비밀 키를 복사합니다.
+3. 서비스 URL: https://s3.&lt;REGION&gt;.scw.cloud (예: https://s3.fr-par.scw.cloud).
+4. 지역: 예: fr-파, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — S3 호환 러시아어 스토리지.
+
+1. 선택 패널(https://my.selectel.ru/) → Cloud Storage → 컨테이너(=버킷)를 생성합니다.
+2. 사용자 및 역할에서 스토리지 액세스 권한이 있는 서비스 사용자를 생성하고 → S3 키 → 키 쌍을 생성합니다.
+   액세스 키와 비밀 키를 복사합니다.
+3. 입력: 버킷, 액세스 키, 비밀 키.
+   서비스 URL은 자동으로 채워집니다.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — Tencent의 S3 호환 객체 스토리지입니다.
+
+1. COS 콘솔(https://console.cloud.tencent.com/cos)에서 버킷을 생성합니다. AppId 및 지역(예: ap-beijing)을 기록해 둡니다.
+2. 접근 관리 → API 키 → 키 생성에서
+   SecretId(= 액세스 키) 및 SecretKey(= 비밀 키)를 복사합니다.
+3. 서비스 URL: https://cos.&lt;REGION&gt;.myqcloud.com (예: https://cos.ap-beijing.myqcloud.com).
+4. 버킷 이름 형식: &lt;name&gt;-&lt;AppId&gt;(예: mybucket-1250000000). 지역: 예: ap-베이징.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — VK Cloud의 S3 호환 스토리지입니다.
+
+1. VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → 버킷을 생성합니다.
+2. 귀하의 계정 → 액세스 키 → 새 키 쌍을 생성하십시오.
+   액세스 키와 비밀 키를 복사합니다.
+3. 필요한 경우 버킷, 액세스 키, 비밀 키 및 지역을 입력합니다(예: ru-msk).
+   서비스 URL은 자동으로 채워집니다.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS(ByteDance) — S3 호환 스토리지.
+
+1. 볼케이노 엔진 콘솔(https://console.volcengine.com/tos)에서 버킷을 생성합니다. 해당 지역(예: cn-beijing)을 기록해 둡니다.
+2. IAM → 액세스 키 → 키 생성으로 이동합니다.
+   액세스 키 ID와 비밀 액세스 키를 복사합니다.
+3. 서비스 URL: https://tos-s3-&lt;REGION&gt;.volces.com (예: https://tos-s3-cn-beijing.volces.com).
+4. 지역: 예: cn-beijing.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi — 송신 비용이 없는 핫 클라우드 스토리지입니다.
+
+1. 와사비 콘솔(https://console.wasabisys.com/) → 버킷 → 버킷 생성 Choose a region.
+2. 액세스 키 → 새 액세스 키 생성으로 이동합니다. 액세스 키와 비밀 키를 복사합니다.
+3. 버킷, 액세스 키, 비밀 키 및 지역(예: us-east-1, eu-central-1)을 입력합니다.
+   서비스 URL은 자동으로 채워집니다.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage — S3 호환 러시아 클라우드 스토리지.
+
+1. Yandex Cloud Console(https://console.yandex.cloud/) → Object Storage → 버킷을 생성합니다.
+2. 서비스 계정으로 이동 → Storage.editor 역할로 계정 생성 → 정적 액세스 키를 생성합니다.
+   키 ID(=액세스 키)와 비밀 키를 복사합니다.
+3. 입력: 버킷, 액세스 키, 비밀 키.
+   서비스 URL과 지역은 자동으로 설정됩니다.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box — WebDAV를 지원하는 엔터프라이즈 클라우드 스토리지입니다.
+
+1. app.box.com에 로그인하세요. Box WebDAV는 유료 플랜에서만 사용할 수 있습니다.
+2. 사용자로 Box 계정 이메일을 입력하세요.
+3. 비밀번호에 Box 비밀번호를 입력하세요.
+   SSO를 사용하는 경우 계정 설정에서 별도의 WebDAV 비밀번호를 설정해야 할 수도 있습니다.
+   서버 주소, HTTPS, 포트, 기본 경로는 자동으로 구성됩니다.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>일반 WebDAV 서버(Nextcloud, ownCloud, Synology DSM, Seafile, Apache 등)
+
+1. 서버 주소를 입력하고 HTTPS(권장)를 선택한 후 포트를 설정합니다(0 = 기본값: HTTP의 경우 80, HTTPS의 경우 443).
+2. WebDAV 끝점의 기본 경로를 입력합니다.
+   Nextcloud 예: /remote.php/dav/files/&lt;사용자 이름&gt;/Backups
+   시놀로지 DSM: /
+3. 사용자 이름과 비밀번호(또는 서버에서 요구하는 경우 앱 비밀번호)를 입력하세요.</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive — 개인 정보 보호에 중점을 둔 독일 클라우드 스토리지입니다.
+
+1. hidrive.ionos.com → 설정 → 앱 및 연결된 서비스 → WebDAV에 로그인합니다.
+   또는 기존 자격 증명을 사용하여 WebDAV에 직접 액세스하세요.
+2. 사용자로 HiDrive 사용자 이름을 입력합니다.
+3. 비밀번호로 HiDrive 비밀번호를 입력하세요.
+   서버 주소, HTTPS, 포트, 기본 경로는 자동으로 구성됩니다.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun(坚果云) — 기본 WebDAV를 지원하는 인기 있는 중국 클라우드 스토리지입니다.
+
+1. jianguoyun.com → 계정 정보 → 보안 → 타사 앱 관리 → 애플리케이션 추가에 로그인합니다.
+   생성된 앱 비밀번호를 복사하세요. 한 번만 표시됩니다.
+2. 사용자로 Jianguoyun 이메일 주소를 입력하세요.
+3. 생성된 앱 비밀번호를 비밀번호로 입력하세요.
+   서버 주소, HTTPS, 포트, 기본 경로는 자동으로 구성됩니다.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr — 슬로베니아(EU)에 기반을 둔 개인 정보 보호 클라우드 스토리지입니다.
+
+1. app.koofr.eu → 환경설정 → 비밀번호 → 앱 비밀번호 → 비밀번호 추가로 이동하세요.
+2. 사용자로 Koofr 계정 이메일을 입력하세요.
+3. 생성된 앱 비밀번호를 비밀번호로 입력하세요.
+   서버 주소, HTTPS, 포트, 기본 경로는 자동으로 구성됩니다.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>WebDAV를 통한 Mail.ru 클라우드.
+
+1. account.mail.ru → 보안 → 앱 비밀번호 → 앱 비밀번호 생성으로 이동합니다.
+   유형을 &apos;메일&apos; 또는 &apos;모두&apos;로 선택한 후 생성된 비밀번호를 복사하세요.
+2. 사용자로 Mail.ru 이메일 주소를 입력하세요.
+3. 비밀번호에 앱 비밀번호를 입력하세요.
+   서버 주소, HTTPS, 포트, 기본 경로는 자동으로 구성됩니다.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud — 인기 있는 자체 호스팅 파일 동기화 및 공유.
+
+1. Nextcloud 서버 주소(예: nextcloud.example.com)를 입력하세요.
+2. 기본 경로는 미리 채워져 있습니다: /remote.php/dav/files/&lt;username&gt;/
+   &lt;username&gt;을 실제 Nextcloud 사용자 이름으로 바꾸세요.
+3. Nextcloud 사용자 이름과 비밀번호(또는 다음의 앱 비밀번호를 입력하세요.
+   설정 → 보안 → 장치 및 세션 → 앱 비밀번호).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud — 자체 호스팅 파일 동기화 및 공유.
+
+1. ownCloud 서버 주소(예: owncloud.example.com)를 입력하세요.
+2. 기본 경로는 미리 채워져 있습니다: /remote.php/dav/files/&lt;username&gt;/
+   &lt;username&gt;을 실제 ownCloud 사용자 이름으로 바꾸세요.
+3. ownCloud 사용자 이름과 비밀번호(또는 2FA가 활성화된 경우 앱 비밀번호)를 입력하세요.</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud — EU 및 미국 데이터 센터를 갖춘 클라우드 스토리지.
+
+1. my.pcloud.com → 설정 → 보안 → 앱 비밀번호 → 생성에 로그인하세요.
+   앱 비밀번호를 복사하세요. 한 번만 표시됩니다.
+2. 사용자로 pCloud 계정 이메일을 입력하세요.
+3. 비밀번호에 앱 비밀번호를 입력하세요.
+   EU 데이터 센터의 경우: ewebdav.pcloud.com이 자동으로 사용됩니다.
+   미국 데이터 센터의 경우: 호스트를 webdav.pcloud.com으로 변경합니다.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>WebDAV를 통한 Yandex 디스크.
+
+1. id.yandex.com → 보안 → 앱 비밀번호 → &apos;WebDAV 접속&apos;을 위한 앱 비밀번호 생성으로 이동하세요.
+   생성된 비밀번호를 복사하세요. 한 번만 표시됩니다.
+2. 사용자로 Yandex 로그인을 입력하세요.
+3. 비밀번호로 앱 비밀번호(Yandex 계정 비밀번호 아님)를 입력하세요.
+   서버 주소, HTTPS 및 포트는 자동으로 구성됩니다.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Windows, Linux에서 데이터를 백업/동기화하세요.
 WI-FI를 통해 휴대폰에서 사진을 가져오는 등 다양한 기능을 제공합니다.

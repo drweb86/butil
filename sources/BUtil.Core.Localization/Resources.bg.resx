@@ -967,6 +967,267 @@ bin.
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Потребителят не е указан.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — S3-съвместимо съхранение на обекти от Alibaba.
+
+1. В OSS Console (https://oss.console.aliyun.com/) създайте кофа. Обърнете внимание на неговия регион (напр. oss-cn-hangzhou).
+2. В RAM Console → Потребители → създайте потребител → прикачете AliyunOSSFullAccess → създайте AccessKey.
+   Копирайте AccessKey ID (= Ключ за достъп) и AccessKey Secret (= Таен ключ).
+3. URL адрес на услугата: https://oss-&lt;REGION&gt;.aliyuncs.com (напр. https://oss-cn-hangzhou.aliyuncs.com).
+4. Регион: напр. oss-cn-хангжу.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — оригиналното хранилище на обекти на Amazon.
+
+1. Отворете конзолата S3 (https://s3.console.aws.amazon.com/) и създайте кофа. Обърнете внимание на неговия регион (напр. us-east-1).
+2. Отворете IAM → Потребители → създайте потребител → прикачете правилото AmazonS3FullAccess.
+3. Под идентификационните данни за сигурност създайте ключ за достъп — копирайте ИД на ключа и тайната.
+4. Попълнете: Bucket, Access Key, Secret Key и Region.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — S3-съвместимо хранилище на обекти от Baidu.
+
+1. В BOS Console (https://console.bce.baidu.com/bos/) създайте кофа. Отбележете неговия регион (напр. bj, gz, su).
+2. Отидете на Сигурност → Ключове за достъп — копирайте вашия ID на ключа за достъп и секретния ключ за достъп.
+3. URL адрес на услугата: https://s3.&lt;REGION&gt;.bcebos.com (напр. https://s3.bj.bcebos.com).
+4. Регион: напр. bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — достъпно S3-съвместимо хранилище.
+
+1. В Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets създайте кофа.
+2. Отидете на App Keys → Add a New Application Key, обхванете го в кофата.
+   Копирайте keyID (= ключ за достъп) и applicationKey (= таен ключ).
+3. URL адрес на услугата: крайната точка на вашата кофа, показана в подробности за кофата, напр. https://s3.us-west-004.backblazeb2.com
+4. Регион: сегментът между &apos;s3.&apos; и &apos;.backblazeb2.com&apos;, напр. us-west-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — S3-съвместимо хранилище с нулев изход.
+
+1. В таблото за управление на Cloudflare (https://dash.cloudflare.com/) → R2 → създайте кофа.
+2. Отидете на R2 → Управление на R2 API токени → Създаване на API токен с четене и запис на обект.
+   Копирайте ID на ключа за достъп и секретния ключ за достъп.
+3. URL адрес на услугата: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Идентификационният номер на вашия акаунт е показан на страницата за преглед на R2.
+4. Попълнете: Bucket, Access Key, Secret Key и Service URL. Регионът автоматично се задава на „автоматично“.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Object Storage — OBS съхранение, съвместимо със S3.
+
+1. В Cloud.ru Console (https://cloud.ru/) → Object Storage Service (OBS) → създайте кофа.
+2. Отидете на Моите идентификационни данни → Ключове за достъп → Добавяне на ключ за достъп.
+   Копирайте ключа за достъп и секретния ключ за достъп.
+3. Попълнете: Bucket, Access Key, Secret Key и Region (напр. ru-moscow-1).
+   URL адресът на услугата се попълва автоматично.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO или всеки S3-съвместим сървър.
+
+1. Стартирайте вашия MinIO (или друг S3-съвместим) сървър.
+2. Създайте кофа чрез конзолата MinIO или &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;.
+3. Създайте ключ за достъп в MinIO Console → Ключове за достъп (избягвайте root идентификационни данни в производството).
+4. URL адрес на услугата: вашата крайна точка на сървъра, напр. http://192.168.1.10:9000 или https://minio.example.com.
+5. Регион: всяка стойност (напр. us-east-1) — или оставете празно, ако сървърът не я прилага.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — S3-съвместимо съхранение на обекти.
+
+1. В Spaces (https://cloud.digitalocean.com/spaces), създайте Space. Обърнете внимание на неговия регион (напр. nyc3).
+2. Отидете на API → Ключове за интервали → Генериране на нов ключ. Копирайте ключа (= ключ за достъп) и секрета.
+3. URL адрес на услугата: https://&lt;REGION&gt;.digitaloceanspaces.com (напр. https://nyc3.digitaloceanspaces.com).
+4. Регион: същият кратък код, напр. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — чрез S3 API за оперативна съвместимост.
+
+1. В Google Cloud Console (https://console.cloud.google.com/storage) създайте кофа.
+2. Отидете на Cloud Storage → Settings → Interoperability → създайте HMAC ключ за акаунт за услуга.
+   Копирайте ключа за достъп и секрета.
+3. Попълнете: Bucket, Access Key (HMAC key), Secret Key (HMAC secret).
+   URL адресът и регионът на услугата се задават автоматично.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — S3-съвместимо хранилище на обекти от Huawei.
+
+1. В OBS Console (https://console.huaweicloud.com/obs/) създайте кофа. Отбележете неговия регион (напр. cn-north-4).
+2. Отидете на Моите идентификационни данни → Ключове за достъп → Създаване на ключ за достъп.
+   Копирайте AK (= ключ за достъп) и SK (= таен ключ).
+3. URL адрес на услугата: https://obs.&lt;REGION&gt;.myhuaweicloud.com (напр. https://obs.cn-north-4.myhuaweicloud.com).
+4. Регион: напр. cn-север-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Object Storage — S3-съвместимо хранилище.
+
+1. В Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets), създайте кофа. Обърнете внимание на неговия клъстер.
+2. Отидете на Object Storage → Ключове за достъп → Създаване на ключ за достъп, обхванат от кофата.
+   Копирайте ключа за достъп и секретния ключ.
+3. URL адрес на услугата: https://&lt;CLUSTER&gt;.linodeobjects.com (напр. https://us-east-1.linodeobjects.com).
+4. Регион: същият код на клъстера, напр. нас-изток-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — S3-съвместимо хранилище от Qiniu.
+
+1. В портала Qiniu (https://portal.qiniu.com/kodo/bucket) създайте кофа. Обърнете внимание на неговия регион.
+2. Отидете на Personal Center → Key Management — копирайте вашия AccessKey и SecretKey.
+3. URL адрес на услугата по регион:
+   Източен Китай: https://s3-cn-east-1.qiniucs.com
+   Северен Китай: https://s3-cn-north-1.qiniucs.com
+   Южен Китай: https://s3-cn-south-1.qiniucs.com
+   Северна Америка: https://s3-us-north-1.qiniucs.com
+4. Регион: съвпадащ код, напр. cn-изток-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — европейско S3-съвместимо хранилище.
+
+1. В Scaleway Console (https://console.scaleway.com/object-storage/buckets), създайте кофа. Отбележете неговия регион (напр. fr-par).
+2. Отидете на IAM → API ключове → Генериране на API ключ с разрешения за запис на Object Storage.
+   Копирайте ключа за достъп и секретния ключ.
+3. URL адрес на услугата: https://s3.&lt;REGION&gt;.scw.cloud (напр. https://s3.fr-par.scw.cloud).
+4. Регион: напр. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — S3-съвместимо руско хранилище.
+
+1. В панела Selectel (https://my.selectel.ru/) → Cloud Storage → създайте контейнер (= кофа).
+2. Под Потребители и роли създайте потребител на услуга с достъп до хранилище → S3 ключове → създайте двойка ключове.
+   Копирайте ключа за достъп и секретния ключ.
+3. Попълнете: Bucket, Access Key, Secret Key.
+   URL адресът на услугата се попълва автоматично.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — S3-съвместимо съхранение на обекти от Tencent.
+
+1. В COS Console (https://console.cloud.tencent.com/cos) създайте кофа. Обърнете внимание на AppId и Region (напр. ap-beijing).
+2. В Access Management → API Keys → Create Key.
+   Копирайте SecretId (= Ключ за достъп) и SecretKey (= Таен ключ).
+3. URL адрес на услугата: https://cos.&lt;REGION&gt;.myqcloud.com (напр. https://cos.ap-beijing.myqcloud.com).
+4. Формат на името на кофата: &lt;име&gt;-&lt;AppId&gt; (напр. mybucket-1250000000). Регион: напр. ап-Пекин.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — S3-съвместимо хранилище от VK Cloud.
+
+1. Във VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → създайте кофа.
+2. Под вашия акаунт → Ключове за достъп → създайте нова двойка ключове.
+   Копирайте ключа за достъп и секретния ключ.
+3. Попълнете: Bucket, Access Key, Secret Key и Region, ако е необходимо (напр. ru-msk).
+   URL адресът на услугата се попълва автоматично.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — съхранение, съвместимо с S3.
+
+1. Във Volcano Engine Console (https://console.volcengine.com/tos) създайте кофа. Отбележете неговия регион (напр. cn-beijing).
+2. Отидете на IAM → Ключове за достъп → създайте ключ.
+   Копирайте ID на ключа за достъп и секретния ключ за достъп.
+3. URL адрес на услугата: https://tos-s3-&lt;REGION&gt;.volces.com (напр. https://tos-s3-cn-beijing.volces.com).
+4. Регион: напр. cn-пекин.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi — хранилище в горещ облак без изходни такси.
+
+1. В Wasabi Console (https://console.wasabisys.com/) → Кофи → Създаване на кофа. Изберете регион.
+2. Отидете на Ключове за достъп → Създаване на нов ключ за достъп. Копирайте ключа за достъп и секретния ключ.
+3. Попълнете: Bucket, Access Key, Secret Key и Region (напр. us-east-1, eu-central-1).
+   URL адресът на услугата се попълва автоматично.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage — S3-съвместимо руско облачно хранилище.
+
+1. В Yandex Cloud Console (https://console.yandex.cloud/) → Object Storage → създайте кофа.
+2. Отидете на Сервизни акаунти → създайте такъв с ролята на storage.editor → създайте статичен ключ за достъп.
+   Копирайте ИД на ключа (= ключ за достъп) и секретния ключ.
+3. Попълнете: Bucket, Access Key, Secret Key.
+   URL адресът и регионът на услугата се задават автоматично.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box — корпоративно облачно хранилище с поддръжка на WebDAV.
+
+1. Влезте в app.box.com. Имайте предвид, че Box WebDAV е наличен само за платени планове.
+2. Въведете имейл адреса на вашия Box акаунт като потребител.
+3. Въведете вашата парола за кутия като парола.
+   Ако използвате SSO, може да се наложи да зададете отделна WebDAV парола в настройките на акаунта.
+   Адресът на сървъра, HTTPS, портът и основният път се конфигурират автоматично.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>Общ WebDAV сървър (Nextcloud, ownCloud, Synology DSM, Seafile, Apache и др.)
+
+1. Въведете адреса на сървъра, изберете HTTPS (препоръчително) и задайте порта (0 = по подразбиране: 80 за HTTP, 443 за HTTPS).
+2. Въведете основния път за WebDAV крайната точка.
+   Пример за Nextcloud: /remote.php/dav/files/&lt;потребителско име&gt;/Резервни копия
+   Synology DSM: /
+3. Въведете вашето потребителско име и парола (или парола за конкретно приложение, ако вашият сървър го изисква).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive — немско облачно хранилище със силен фокус върху поверителността.
+
+1. Влезте в hidrive.ionos.com → Настройки → Приложения и свързани услуги → WebDAV.
+   Или влезте директно в WebDAV със съществуващите си идентификационни данни.
+2. Въведете вашето потребителско име за HiDrive като потребител.
+3. Въведете вашата парола за HiDrive като парола.
+   Адресът на сървъра, HTTPS, портът и основният път се конфигурират автоматично.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) — популярно китайско облачно хранилище с вградена поддръжка на WebDAV.
+
+1. Влезте в jianguoyun.com → Информация за акаунта → Сигурност → Управление на приложения на трети страни → Добавяне на приложение.
+   Копирайте генерираната парола за приложение — тя се показва само веднъж.
+2. Въведете вашия имейл адрес Jianguoyun като потребител.
+3. Въведете генерираната парола за приложение като парола.
+   Адресът на сървъра, HTTPS, портът и основният път се конфигурират автоматично.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr — съобразено с поверителността облачно хранилище, базирано в Словения (ЕС).
+
+1. Отидете на app.koofr.eu → Предпочитания → Парола → Пароли за приложение → Добавяне на парола.
+2. Въведете имейла на акаунта си в Koofr като потребител.
+3. Въведете генерираната парола за приложение като парола.
+   Адресът на сървъра, HTTPS, портът и основният път се конфигурират автоматично.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Mail.ru Cloud чрез WebDAV.
+
+1. Отидете на account.mail.ru → Сигурност → Пароли за приложение → Създайте парола за приложение.
+   Изберете „Поща“ или „Всички“ като тип, след което копирайте генерираната парола.
+2. Въведете своя имейл адрес в Mail.ru като потребител.
+3. Въведете паролата за приложение като парола.
+   Адресът на сървъра, HTTPS, портът и основният път се конфигурират автоматично.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud — популярно самостоятелно хоствано синхронизиране и споделяне на файлове.
+
+1. Въведете адреса на сървъра на Nextcloud (напр. nextcloud.example.com).
+2. Основният път е предварително попълнен: /remote.php/dav/files/&lt;потребителско име&gt;/
+   Заменете &lt;потребителско име&gt; с вашето действително потребителско име в Nextcloud.
+3. Въведете вашето потребителско име и парола за Nextcloud (или парола за приложение от
+   Настройки → Сигурност → Устройства и сесии → Пароли за приложения).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud — самостоятелно хоствано синхронизиране и споделяне на файлове.
+
+1. Въведете адреса на сървъра на ownCloud (напр. owncloud.example.com).
+2. Основният път е предварително попълнен: /remote.php/dav/files/&lt;потребителско име&gt;/
+   Заменете &lt;потребителско име&gt; с вашето действително потребителско име за ownCloud.
+3. Въведете потребителското си име и парола за ownCloud (или парола за приложение, ако 2FA е активиран).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud — облачно хранилище с центрове за данни в ЕС и САЩ.
+
+1. Влезте в my.pcloud.com → Настройки → Сигурност → Пароли за приложения → Създаване.
+   Копирайте паролата за приложение — тя се показва само веднъж.
+2. Въведете имейл адреса на акаунта си в pCloud като потребител.
+3. Въведете паролата за приложение като парола.
+   За център за данни в ЕС: ewebdav.pcloud.com се използва автоматично.
+   За център за данни в САЩ: сменете хоста на webdav.pcloud.com.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>Yandex Disk чрез WebDAV.
+
+1. Отидете на id.yandex.com → Сигурност → Пароли за приложение → Създайте парола за приложение за „Достъп до WebDAV“.
+   Копирайте генерираната парола — тя се показва само веднъж.
+2. Въведете данните за вход в Yandex като потребител.
+3. Въведете паролата за приложение (не паролата за вашия акаунт в Yandex) като парола.
+   Адресът на сървъра, HTTPS и портът се конфигурират автоматично.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Архивирайте/синхронизирайте вашите данни под Windows, Linux.
 Импортирайте снимки от телефон чрез WI-FI и още.

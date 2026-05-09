@@ -967,6 +967,267 @@ bin.
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Օգտագործողը նշված չէ:</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — S3-ի հետ համատեղելի օբյեկտների պահեստավորում Alibaba-ից:
+
+1. OSS Console-ում (https://oss.console.aliyun.com/) ստեղծեք դույլ: Նշեք դրա տարածաշրջանը (օրինակ՝ oss-cn-hangzhou):
+2. RAM Console-ում → Users → ստեղծել օգտվող → կցել AliyunOSSFullAccess → ստեղծել AccessKey:
+   Պատճենեք AccessKey ID-ն (= Access Key) և AccessKey Secret (= Գաղտնի բանալին):
+3. Ծառայության URL՝ https://oss-&lt;REGION&gt;.aliyuncs.com (օրինակ՝ https://oss-cn-hangzhou.aliyuncs.com):
+4. Տարածաշրջան՝ օրինակ. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — Amazon-ի բնօրինակ օբյեկտների պահեստավորում:
+
+1. Բացեք S3 Console-ը (https://s3.console.aws.amazon.com/) և ստեղծեք դույլ: Նշեք նրա տարածաշրջանը (օրինակ՝ us-east-1):
+2. Բացեք IAM → Users → ստեղծել օգտվող → կցեք AmazonS3FullAccess քաղաքականությունը:
+3. Անվտանգության հավատարմագրերի ներքո ստեղծեք Մուտքի բանալի. պատճենեք Բանալին ID-ն և Գաղտնիքը:
+4. Լրացրեք՝ դույլ, մուտքի բանալի, գաղտնի բանալի և տարածաշրջան:</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — S3-ի հետ համատեղելի օբյեկտների պահեստավորում Baidu-ից:
+
+1. BOS Console-ում (https://console.bce.baidu.com/bos/) ստեղծեք դույլ: Նշեք դրա տարածաշրջանը (օրինակ՝ bj, gz, su):
+2. Գնացեք Անվտանգություն → Մուտքի բանալիներ — պատճենեք ձեր մուտքի բանալին և գաղտնի մուտքի բանալին:
+3. Ծառայության URL՝ https://s3.&lt;REGION&gt;.bcebos.com (օրինակ՝ https://s3.bj.bcebos.com):
+4. Տարածաշրջան՝ օրինակ. բջ.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — մատչելի S3-ի հետ համատեղելի պահեստ:
+
+1. Backblaze-ում (https://www.backblaze.com/) → B2 Cloud Storage → Buckets, ստեղծեք դույլ:
+2. Գնացեք «Հավելվածի բանալիներ» → «Ավելացրեք նոր հավելվածի բանալի», ընդգրկեք այն դույլի մեջ:
+   Պատճենել keyID-ը (= Access Key) և applicationKey (= Գաղտնի բանալին):
+3. Ծառայության URL. ձեր դույլի վերջնակետը ցուցադրված է դույլի մանրամասներում, օրինակ. https://s3.us-west-004.backblazeb2.com
+4. Տարածաշրջան. հատված «s3»-ի միջև: և «.backblazeb2.com», օրինակ. us-west-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 - զրոյական ելք S3-ի հետ համատեղելի պահեստ:
+
+1. Cloudflare Dashboard-ում (https://dash.cloudflare.com/) → R2 → ստեղծել դույլ։
+2. Գնացեք R2 → Կառավարեք R2 API Tokens → Ստեղծեք API Token օբյեկտի կարդալու և գրելու միջոցով:
+   Պատճենեք մուտքի բանալու ID-ն և գաղտնի մուտքի բանալին:
+3. Ծառայության URL՝ https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Ձեր հաշվի ID-ն ցուցադրվում է R2-ի ակնարկ էջում:
+4. Լրացրեք՝ դույլ, մուտքի բանալի, գաղտնի բանալի և ծառայության URL: Տարածաշրջանը ավտոմատ կերպով դրված է «ավտոմատ»:</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Object Storage — S3-ի հետ համատեղելի OBS պահեստավորում:
+
+1. Cloud.ru Console-ում (https://cloud.ru/) → Օբյեկտների պահպանման ծառայություն (OBS) → ստեղծել դույլ։
+2. Գնացեք Իմ հավատարմագրերը → Մուտքի բանալիներ → Ավելացնել մուտքի բանալի:
+   Պատճենեք մուտքի բանալին և գաղտնի մուտքի բանալին:
+3. Լրացրեք՝ դույլ, մուտքի բանալի, գաղտնի բանալի և տարածաշրջան (օրինակ՝ ru-moscow-1):
+   Ծառայության URL-ը լրացվում է ավտոմատ կերպով:</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO կամ S3-ի հետ համատեղելի ցանկացած սերվեր:
+
+1. Գործարկեք ձեր MinIO (կամ S3-ի հետ համատեղելի այլ) սերվերը:
+2. Ստեղծեք դույլ MinIO Console-ի կամ &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos; միջոցով:
+3. Ստեղծեք մուտքի բանալի MinIO Console-ում → Access Keys (արտադրության մեջ խուսափեք արմատային հավատարմագրերից):
+4. Ծառայության URL՝ ձեր սերվերի վերջնակետը, օրինակ. http://192.168.1.10:9000 կամ https://minio.example.com:
+5. Տարածաշրջան՝ ցանկացած արժեք (օրինակ՝ us-east-1) – կամ թողեք դատարկ, եթե սերվերը այն չի պարտադրում:</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces - S3-ի հետ համատեղելի օբյեկտների պահեստավորում:
+
+1. Spaces-ում (https://cloud.digitalocean.com/spaces) ստեղծեք Space: Նշեք դրա տարածաշրջանը (օրինակ՝ nyc3):
+2. Գնացեք API → Spaces Keys → Ստեղծեք նոր բանալի: Պատճենել բանալին (= Մուտքի բանալին) և Գաղտնիքը:
+3. Ծառայության URL՝ https://&lt;REGION&gt;.digitaloceanspaces.com (օրինակ՝ https://nyc3.digitaloceanspaces.com):
+4. Տարածաշրջան. նույն կարճ կոդը, օրինակ. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — S3 փոխգործունակության API-ի միջոցով:
+
+1. Google Cloud Console-ում (https://console.cloud.google.com/storage) ստեղծեք դույլ:
+2. Գնացեք Ամպային պահեստ → Կարգավորումներ → Փոխգործունակություն → ստեղծեք HMAC բանալի ծառայության հաշվի համար:
+   Պատճենեք մուտքի բանալին և գաղտնիքը:
+3. Լրացրեք՝ դույլ, մուտքի բանալի (HMAC բանալի), գաղտնի բանալի (HMAC գաղտնի):
+   Ծառայության URL-ը և տարածաշրջանը սահմանվում են ավտոմատ կերպով:</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — S3-ի հետ համատեղելի օբյեկտների պահեստավորում Huawei-ից:
+
+1. OBS Console-ում (https://console.huaweicloud.com/obs/) ստեղծեք դույլ: Նշեք դրա տարածաշրջանը (օրինակ՝ cn-north-4):
+2. Գնացեք Իմ հավատարմագրերը → Մուտքի բանալիներ → Ստեղծեք մուտքի բանալի:
+   Պատճենեք AK (= Access Key) և SK (= Գաղտնի բանալին):
+3. Ծառայության URL՝ https://obs.&lt;REGION&gt;.myhuaweicloud.com (օրինակ՝ https://obs.cn-north-4.myhuaweicloud.com):
+4. Տարածաշրջան՝ օրինակ. cn-հյուսիս-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) օբյեկտների պահեստավորում — S3-ի հետ համատեղելի պահեստ:
+
+1. Linode Cloud Manager-ում (https://cloud.linode.com/object-storage/buckets) ստեղծեք դույլ: Նշեք նրա կլաստերը:
+2. Գնացեք Օբյեկտների պահեստավորում → Մուտքի ստեղներ → Ստեղծեք մուտքի բանալի, որը նախատեսված է դեպի դույլ:
+   Պատճենեք մուտքի բանալին և գաղտնի բանալին:
+3. Ծառայության URL՝ https://&lt;CLUSTER&gt;.linodeobjects.com (օրինակ՝ https://us-east-1.linodeobjects.com):
+4. Տարածաշրջան՝ նույն կլաստերի կոդը, օրինակ. մեզ-արևելք-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — S3-ի հետ համատեղելի պահեստավորում Qiniu-ից:
+
+1. Qiniu Portal-ում (https://portal.qiniu.com/kodo/bucket) ստեղծեք դույլ: Նշեք նրա տարածաշրջանը:
+2. Գնացեք Անձնական կենտրոն → Բանալիների կառավարում — պատճենեք ձեր AccessKey և SecretKey:
+3. Ծառայության URL ըստ տարածաշրջանի.
+   Արևելյան Չինաստան՝ https://s3-cn-east-1.qiniucs.com
+   Հյուսիսային Չինաստան՝ https://s3-cn-north-1.qiniucs.com
+   Հարավային Չինաստան՝ https://s3-cn-south-1.qiniucs.com
+   Հյուսիսային Ամերիկա՝ https://s3-us-north-1.qiniucs.com
+4. Տարածաշրջան՝ համապատասխան ծածկագիր, օրինակ. cn-արևելք-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — Եվրոպական S3-ի հետ համատեղելի պահեստ:
+
+1. Scaleway Console-ում (https://console.scaleway.com/object-storage/buckets) ստեղծեք դույլ: Նշեք դրա տարածաշրջանը (օրինակ՝ fr-par):
+2. Գնացեք IAM → API ստեղներ → Ստեղծեք API բանալի՝ Object Storage գրելու թույլտվություններով:
+   Պատճենեք մուտքի բանալին և գաղտնի բանալին:
+3. Ծառայության URL՝ https://s3.&lt;REGION&gt;.scw.cloud (օրինակ՝ https://s3.fr-par.scw.cloud):
+4. Տարածաշրջան՝ օրինակ. ֆր-պար, նլ-ամս, փլ-վավ.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — S3-ի հետ համատեղելի ռուսերեն պահեստ:
+
+1. Selectel Panel-ում (https://my.selectel.ru/) → Cloud Storage → ստեղծել կոնտեյներ (= դույլ):
+2. «Օգտագործողներ և դերեր» բաժնում ստեղծեք ծառայության օգտատեր՝ պահեստավորման հասանելիությամբ → S3 ստեղներ → ստեղծել բանալիների զույգ:
+   Պատճենեք մուտքի բանալին և գաղտնի բանալին:
+3. Լրացրեք՝ դույլ, մուտքի բանալի, գաղտնի բանալի:
+   Ծառայության URL-ը լրացվում է ավտոմատ կերպով:</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — S3-ի հետ համատեղելի օբյեկտների պահեստավորում Tencent-ից:
+
+1. COS Console-ում (https://console.cloud.tencent.com/cos) ստեղծեք դույլ: Նշեք AppId-ը և Տարածաշրջանը (օրինակ՝ ap-beijing):
+2. Մուտքի կառավարում → API ստեղներ → Ստեղծել բանալի:
+   Պատճենեք SecretId (= Access Key) և SecretKey (= Գաղտնի բանալին):
+3. Ծառայության URL՝ https://cos.&lt;REGION&gt;.myqcloud.com (օրինակ՝ https://cos.ap-beijing.myqcloud.com):
+4. Դույլի անվան ձևաչափ՝ &lt;name&gt;-&lt;AppId&gt; (օրինակ՝ mybucket-1250000000): Տարածաշրջան. օրինակ. ապ-պեկին.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — S3-ի հետ համատեղելի պահեստավորում VK Cloud-ից:
+
+1. VK Cloud Portal-ում (https://msk.cloud.vk.com/) → Cloud Storage → ստեղծել դույլ:
+2. Ձեր հաշվի տակ → Մուտքի բանալիներ → ստեղծել նոր բանալիների զույգ:
+   Պատճենեք մուտքի բանալին և գաղտնի բանալին:
+3. Լրացրեք՝ դույլ, մուտքի բանալի, գաղտնի բանալի և անհրաժեշտության դեպքում տարածաշրջան (օրինակ՝ ru-msk):
+   Ծառայության URL-ը լրացվում է ավտոմատ կերպով:</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — S3-ի հետ համատեղելի պահեստ:
+
+1. Volcano Engine Console-ում (https://console.volcengine.com/tos) ստեղծեք դույլ: Նշեք նրա տարածաշրջանը (օրինակ՝ cn-Պեկին):
+2. Գնալ դեպի IAM → Մուտքի բանալիներ → ստեղծել բանալի:
+   Պատճենեք մուտքի բանալու ID-ն և գաղտնի մուտքի բանալին:
+3. Ծառայության URL՝ https://tos-s3-&lt;REGION&gt;.volces.com (օրինակ՝ https://tos-s3-cn-beijing.volces.com):
+4. Տարածաշրջան՝ օրինակ. cn-պեկին.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi — տաք ամպային պահեստավորում՝ առանց ելքի վճարների:
+
+1. Wasabi Console-ում (https://console.wasabisys.com/) → Buckets → Create Bucket: Ընտրեք տարածաշրջան:
+2. Գնացեք Մուտքի բանալիներ → Ստեղծեք նոր մուտքի բանալի: Պատճենեք մուտքի բանալին և գաղտնի բանալին:
+3. Լրացրեք՝ դույլ, մուտքի բանալի, գաղտնի բանալի և տարածաշրջան (օրինակ՝ us-east-1, eu-central-1):
+   Ծառայության URL-ը լրացվում է ավտոմատ կերպով:</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage — S3-ի հետ համատեղելի ռուսական ամպային պահեստ:
+
+1. Yandex Cloud Console-ում (https://console.yandex.cloud/) → Object Storage → ստեղծել դույլ:
+2. Գնացեք ծառայության հաշիվներ → ստեղծեք մեկը՝ storage.editor դերով → ստեղծեք Ստատիկ մուտքի բանալի:
+   Պատճենեք Բանալի ID-ն (= Մուտքի բանալի) և Գաղտնի բանալին:
+3. Լրացրեք՝ դույլ, մուտքի բանալի, գաղտնի բանալի:
+   Ծառայության URL-ը և տարածաշրջանը սահմանվում են ավտոմատ կերպով:</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box — ձեռնարկության ամպային պահեստավորում WebDAV աջակցությամբ:
+
+1. Մուտք գործեք app.box.com կայքում: Նկատի ունեցեք, որ Box WebDAV-ը հասանելի է միայն վճարովի պլանների համար:
+2. Մուտքագրեք ձեր Box հաշվի էլ.փոստը որպես Օգտագործող:
+3. Մուտքագրեք ձեր Box գաղտնաբառը որպես Գաղտնաբառ:
+   Եթե ​​դուք օգտագործում եք SSO, ապա ձեզ հարկավոր է առանձին WebDAV գաղտնաբառ սահմանել Հաշվի կարգավորումներում:
+   Սերվերի հասցեն, HTTPS-ը, նավահանգիստը և բազային ուղին ինքնաբերաբար կազմաձևվում են:</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>Ընդհանուր WebDAV սերվեր (Nextcloud, ownCloud, Synology DSM, Seafile, Apache և այլն)
+
+1. Մուտքագրեք սերվերի հասցեն, ընտրեք HTTPS (խորհուրդ է տրվում) և սահմանեք պորտը (0 = լռելյայն՝ 80 HTTP-ի համար, 443՝ HTTPS-ի համար):
+2. Մուտքագրեք WebDAV վերջնակետի հիմնական ուղին:
+   Հաջորդ ամպի օրինակ՝ /remote.php/dav/files/&lt;username&gt;/Backups
+   Synology DSM: /
+3. Մուտքագրեք ձեր օգտանունը և գաղտնաբառը (կամ հավելվածին հատուկ գաղտնաբառը, եթե ձեր սերվերը դա պահանջում է):</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive — Գերմանական ամպային պահեստավորում՝ ուժեղ գաղտնիության ուշադրության կենտրոնում:
+
+1. Մուտք գործեք hidrive.ionos.com → Կարգավորումներ → Հավելվածներ և միացված ծառայություններ → WebDAV:
+   Կամ ուղղակիորեն մուտք գործեք WebDAV ձեր առկա հավատարմագրերով:
+2. Մուտքագրեք ձեր HiDrive օգտվողի անունը որպես Օգտագործող:
+3. Մուտքագրեք ձեր HiDrive գաղտնաբառը որպես գաղտնաբառ:
+   Սերվերի հասցեն, HTTPS-ը, նավահանգիստը և բազային ուղին ինքնաբերաբար կազմաձևվում են:</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) - հայտնի չինական ամպային պահեստավորում՝ հայրենի WebDAV աջակցությամբ:
+
+1. Մուտք գործեք jianguoyun.com → Հաշվի տեղեկություններ → Անվտանգություն → Երրորդ կողմի հավելվածների կառավարում → Ավելացնել հավելված:
+   Պատճենեք ստեղծված հավելվածի գաղտնաբառը — այն ցուցադրվում է միայն մեկ անգամ:
+2. Մուտքագրեք ձեր Jianguoyun էլփոստի հասցեն որպես Օգտագործող:
+3. Մուտքագրեք ստեղծված հավելվածի գաղտնաբառը որպես Գաղտնաբառ:
+   Սերվերի հասցեն, HTTPS-ը, նավահանգիստը և բազային ուղին ինքնաբերաբար կազմաձևվում են:</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr — գաղտնիության համար հարմար ամպային պահեստավորում, որը հիմնված է Սլովենիայում (ԵՄ):
+
+1. Գնացեք app.koofr.eu → Նախապատվություններ → Գաղտնաբառ → Հավելվածի գաղտնաբառեր → Ավելացնել գաղտնաբառ:
+2. Մուտքագրեք ձեր Koofr հաշվի էլ.փոստը որպես Օգտագործող:
+3. Մուտքագրեք ստեղծված հավելվածի գաղտնաբառը որպես Գաղտնաբառ:
+   Սերվերի հասցեն, HTTPS-ը, նավահանգիստը և բազային ուղին ինքնաբերաբար կազմաձևվում են:</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Mail.ru Cloud-ը WebDAV-ի միջոցով:
+
+1. Գնացեք account.mail.ru → Անվտանգություն → Հավելվածի գաղտնաբառեր → Ստեղծեք հավելվածի գաղտնաբառը։
+   Որպես տեսակ ընտրեք «Փոստ» կամ «Բոլորը», ապա պատճենեք ստեղծված գաղտնաբառը:
+2. Մուտքագրեք ձեր Mail.ru էլ.փոստի հասցեն որպես Օգտատեր:
+3. Մուտքագրեք հավելվածի գաղտնաբառը որպես գաղտնաբառ:
+   Սերվերի հասցեն, HTTPS-ը, նավահանգիստը և բազային ուղին ինքնաբերաբար կազմաձևվում են:</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud – հանրաճանաչ ինքնակառավարվող ֆայլերի համաժամացում և համօգտագործում:
+
+1. Մուտքագրեք ձեր Nextcloud սերվերի հասցեն (օրինակ՝ nextcloud.example.com):
+2. Հիմնական ուղին նախապես լրացված է՝ /remote.php/dav/files/&lt;username&gt;/
+   Փոխարինեք &lt;username&gt;-ը ձեր իրական Nextcloud օգտանունով:
+3. Մուտքագրեք ձեր Nextcloud օգտանունը և գաղտնաբառը (կամ հավելվածի գաղտնաբառը՝
+   Կարգավորումներ → Անվտանգություն → Սարքեր և աշխատաշրջաններ → Հավելվածի գաղտնաբառեր):</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud — ինքնակառավարվող ֆայլերի համաժամացում և համօգտագործում:
+
+1. Մուտքագրեք ձեր սեփականCloud սերվերի հասցեն (օրինակ՝ owncloud.example.com):
+2. Հիմնական ուղին նախապես լրացված է՝ /remote.php/dav/files/&lt;username&gt;/
+   Փոխարինեք &lt;username&gt;-ը ձեր իրական սեփականCloud օգտանունով:
+3. Մուտքագրեք ձեր սեփականCloud օգտանունը և գաղտնաբառը (կամ հավելվածի գաղտնաբառը, եթե 2FA-ն միացված է):</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud - ամպային պահեստավորում ԵՄ և ԱՄՆ տվյալների կենտրոնների հետ:
+
+1. Մուտք գործեք my.pcloud.com → Կարգավորումներ → Անվտանգություն → Հավելվածի գաղտնաբառեր → Ստեղծել:
+   Պատճենեք հավելվածի գաղտնաբառը. այն ցուցադրվում է միայն մեկ անգամ:
+2. Մուտքագրեք ձեր pCloud հաշվի էլ.փոստը որպես Օգտատեր:
+3. Մուտքագրեք հավելվածի գաղտնաբառը որպես գաղտնաբառ:
+   ԵՄ տվյալների կենտրոնի համար ewebdav.pcloud.com-ն օգտագործվում է ավտոմատ կերպով:
+   ԱՄՆ տվյալների կենտրոնի համար՝ փոխեք հյուրընկալողը webdav.pcloud.com:</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>Yandex սկավառակ WebDAV-ի միջոցով:
+
+1. Գնացեք id.yandex.com → Անվտանգություն → Հավելվածի գաղտնաբառեր → Ստեղծեք հավելվածի գաղտնաբառը «WebDAV մուտքի համար»:
+   Պատճենեք ստեղծված գաղտնաբառը — այն ցուցադրվում է միայն մեկ անգամ:
+2. Մուտքագրեք ձեր Yandex մուտքը որպես Օգտագործող:
+3. Մուտքագրեք հավելվածի գաղտնաբառը (ոչ ձեր Yandex հաշվի գաղտնաբառը) որպես Գաղտնաբառ:
+   Սերվերի հասցեն, HTTPS-ը և նավահանգիստը կարգավորվում են ավտոմատ կերպով:</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Կրկնօրինակեք/համաժամացրեք ձեր տվյալները Windows, Linux:
 Ներմուծեք լուսանկարներ հեռախոսից WI-FI-ի միջոցով և ավելին:

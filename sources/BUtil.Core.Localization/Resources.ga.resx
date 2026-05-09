@@ -967,6 +967,267 @@ See detailed description in the following link.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Níl an t-úsáideoir sonraithe.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS - Stóráil réad S3-comhoiriúnach ó Alibaba.
+
+1. I OSS Console ( https://oss.console.aliyun.com/ ), cruthaigh buicéad. Tabhair faoi deara a réigiún (m.sh. oss-cn-hangzhou).
+2. I RAM Console → Úsáideoirí → cruthaigh úsáideoir → ceangail AliyunOSSFullAccess → cruthaigh AccessKey.
+   Cóipeáil an ID AccessKey (= Eochair Rochtana) agus Rúnda AccessKey (= Eochair Rúnda).
+3. URL na Seirbhíse: https://oss-&lt;REGION&gt;.aliyuncs.com (m.sh. https://oss-cn-hangzhou.aliyuncs.com).
+4. Réigiún: e.g. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 - Stóráil réad bunaidh Amazon.
+
+1. Oscail an Console S3 ( https://s3.console.aws.amazon.com/ ) agus cruthaigh buicéad. Tabhair faoi deara a réigiún (m.sh. us-oir-1).
+2. Oscail IAM → Úsáideoirí → cruthaigh úsáideoir → ceangail polasaí AmazonS3FullAccess.
+3. Faoin dintiúir Slándála, cruthaigh eochair Rochtana - cóipeáil an Aitheantas Eochrach agus an Rúnda.
+4. Líon isteach: Buicéad, Eochair Rochtana, Eochair Rúnda, agus Réigiún.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS - Stóráil réad S3-comhoiriúnach ó Baidu.
+
+1. I BOS Console ( https://console.bce.baidu.com/bos/ ), cruthaigh buicéad. Tabhair faoi deara a réigiún (m.sh. bj, gz, su).
+2. Téigh go Slándáil → Eochracha Rochtana - cóipeáil d&apos;Aitheantas Eochair Rochtana agus d&apos;Eochair Rochtana Rúnda.
+3. URL na Seirbhíse: https://s3.&lt;REGION&gt;.bcebos.com (m.sh. https://s3.bj.bcebos.com).
+4. Réigiún: e.g. bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 - stóráil inacmhainne S3-comhoiriúnach.
+
+1. In Backblaze ( https://www.backblaze.com/ ) → B2 Cloud Storage → Buicéid, cruthaigh buicéad.
+2. Téigh go dtí Eochracha Aipe → Cuir Eochair Feidhmchláir Nua leis, scóip é go dtí an buicéad.
+   Cóipeáil an eochair ID (= Eochair Rochtana) agus applicationKey (= Eochair Rúnda).
+3. URL na seirbhíse: críochphointe do bhuicéad léirithe i sonraí buicéad, m.sh. https://s3.us-west-004.backblazeb2.com
+4. Réigiún: an mhír idir &apos;s3.&apos; agus ‘.backblazeb2.com’, e.g. us-iarthar-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 - stóráil nach bhfuil aon dul as náid S3-comhoiriúnach.
+
+1. I Painéal Cloudflare (https://dash.cloudflare.com/) → R2 → cruthaigh buicéad.
+2. Téigh go R2 → Bainistigh R2 API Tokens → Cruthaigh API Chomhartha le Object Read &amp; Write.
+   Cóipeáil Aitheantas na hEochair Rochtana agus an Eochair Rochtana Rúnda.
+3. URL na seirbhíse: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Taispeántar ID do Chuntais ar an leathanach forbhreathnú R2.
+4. Líon isteach: Buicéad, Eochair Rochtana, Eochair Rúnda, agus URL Seirbhíse. Tá an réigiún socraithe go &apos;uathoibríoch&apos;.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Stóráil Réad - Stóráil OBS S3-comhoiriúnach.
+
+1. I Cloud.ru Console ( https://cloud.ru/ ) → Seirbhís Stórála Réad (OBS) → cruthaigh buicéad.
+2. Téigh go dtí Mo Dhintiúir → Eochracha Rochtana → Cuir Eochair Rochtana leis.
+   Cóipeáil an Eochair Rochtana agus an Eochair Rochtana Rúnda.
+3. Líon isteach: Buicéad, Eochair Rochtana, Eochair Rúnda, agus Réigiún (m.sh. ru-moscow-1).
+   Líontar URL na seirbhíse isteach go huathoibríoch.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO nó aon fhreastalaí S3-comhoiriúnach.
+
+1. Tosaigh do fhreastalaí MinIO (nó freastalaí S3-comhoiriúnach eile).
+2. Cruthaigh buicéad tríd an MinIO Console nó &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;.
+3. Cruthaigh eochair rochtana i MinIO Console → Eochracha Rochtana (seachain dintiúir fréimhe i dtáirgeadh).
+4. URL na seirbhíse: críochphointe do fhreastalaí, m.sh. http://192.168.1.10:9000 nó https://minio.example.com.
+5. Réigiún: luach ar bith (m.sh. us-east-1) — nó fág folamh mura gcuireann an freastalaí i bhfeidhm é.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>Spásanna DigitalOcean — Stóráil réad S3-comhoiriúnach.
+
+1. I Spásanna ( https://cloud.digitalocean.com/spaces ), cruthaigh Spás. Tabhair faoi deara a réigiún (m.sh. nyc3).
+2. Téigh go dtí API → Eochracha Spáis → Gin Eochair Nua. Cóipeáil an Eochair (= Eochair Rochtana) agus Rúnda.
+3. URL na Seirbhíse: https://&lt;REGION&gt;.digitaloceanspaces.com (m.sh. https://nyc3.digitaloceanspaces.com).
+4. Réigiún: cód gearr céanna, e.g. eag3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage - tríd an API idir-inoibritheachta S3.
+
+1. I Google Cloud Console ( https://console.cloud.google.com/storage ), cruthaigh buicéad.
+2. Téigh go Cloud Storage → Socruithe → Idir-inoibritheacht → cruthaigh eochair HMAC le haghaidh cuntas seirbhíse.
+   Cóipeáil an Eochair Rochtana agus an Rúnda.
+3. Líon isteach: Buicéad, Eochair Rochtana (eochair HMAC), Eochair Rúnda (rún HMAC).
+   Socraítear URL na seirbhíse agus an réigiún go huathoibríoch.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS - Stóráil réad S3-comhoiriúnach ó Huawei.
+
+1. I OBS Console ( https://console.huaweicloud.com/obs/ ), cruthaigh buicéad. Tabhair faoi deara a réigiún (m.sh. cn-thuaidh-4).
+2. Téigh go dtí Mo Dhintiúir → Eochracha Rochtana → Cruthaigh Eochair Rochtana.
+   Cóipeáil an AK (= Eochair Rochtana) agus SK (= Eochair Rúnda).
+3. URL na Seirbhíse: https://obs.&lt;REGION&gt;.myhuaweicloud.com (m.sh. https://obs.cn-north-4.myhuaweicloud.com).
+4. Réigiún: e.g. cn-thuaidh-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Stóráil Réad - Stóráil S3-comhoiriúnach.
+
+1. I Linode Cloud Manager ( https://cloud.linode.com/object-storage/buckets ), cruthaigh buicéad. Tabhair faoi deara a bhraisle.
+2. Téigh go Stóráil Rudaí → Eochracha Rochtana → Cruthaigh Eochair Rochtana scóipithe go dtí an buicéad.
+   Cóipeáil an Eochair Rochtana agus an Eochair Rúnda.
+3. URL na Seirbhíse: https://&lt;CLUSTER&gt;.linodeobjects.com (m.sh. https://us-east-1.linodeobjects.com).
+4. Réigiún: cód braisle céanna, e.g. us-oirthear-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo - Stóráil S3-comhoiriúnach ó Qiniu.
+
+1. I Tairseach Qiniu (https://portal.qiniu.com/kodo/bucket), cruthaigh buicéad. Tabhair faoi deara a réigiún.
+2. Téigh go dtí an Lárionad Pearsanta → Bainistíocht Eochracha — cóipeáil do AccessKey agus SecretKey.
+3. URL seirbhíse de réir réigiúin:
+   An tSín Thoir: https://s3-cn-east-1.qiniucs.com
+   An tSín Thuaidh: https://s3-cn-north-1.qiniucs.com
+   An tSín Theas: https://s3-cn-south-1.qiniucs.com
+   Meiriceá Thuaidh: https://s3-us-north-1.qiniucs.com
+4. Réigiún: cód meaitseála, e.g. cn- oirthear-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Stóráil Réada ar an Scála — Stóráil Eorpach S3-comhoiriúnach.
+
+1. I Console Scaleway ( https://console.scaleway.com/object-storage/buckets ), cruthaigh buicéad. Tabhair faoi deara a réigiún (m.sh. fr-par).
+2. Téigh go IAM → Eochracha API → Gin Eochair API le ceadanna scríobh Object Storage.
+   Cóipeáil an Eochair Rochtana agus an Eochair Rúnda.
+3. URL na seirbhíse: https://s3.&lt;REGION&gt;.scw.cloud (m.sh. https://s3.fr-par.scw.cloud).
+4. Réigiún: e.g. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Stóráil Réada Selectel - stóráil Rúise S3-comhoiriúnach.
+
+1. I Painéal Selectel ( https://my.selectel.ru/ ) → Cloud Storage → cruthaigh coimeádán (= buicéad).
+2. Faoi Úsáideoirí &amp; Róil, cruthaigh úsáideoir seirbhíse le rochtain stórála → Eochracha S3 → cruthaigh péire eochair.
+   Cóipeáil an Eochair Rochtana agus an Eochair Rúnda.
+3. Líon isteach: Buicéad, Eochair Rochtana, Eochair Rúnda.
+   Líontar URL na seirbhíse isteach go huathoibríoch.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS - Stóráil réad S3-comhoiriúnach ó Tencent.
+
+1. I COS Console ( https://console.cloud.tencent.com/cos ), cruthaigh buicéad. Tabhair faoi deara an AppId agus an Réigiún (m.sh. ap-beijing).
+2. I mBainistíocht Rochtana → Eochracha API → Cruthaigh Eochair.
+   Cóipeáil an SecretId (= Eochair Rochtana) agus SecretKey (= Eochair Rúnda).
+3. URL na Seirbhíse: https://cos.&lt;REGION&gt;.myqcloud.com (m.sh. https://cos.ap-beijing.myqcloud.com).
+4. Formáid ainm an bhuicéid: &lt;ainm&gt;-&lt;AppId&gt; (m.sh. mybucket-1250000000). Réigiún: e.g. ap-beijing.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>Stóráil Cuspóir VK Cloud - Stóráil S3-comhoiriúnach ó VK Cloud.
+
+1. I VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → cruthaigh buicéad.
+2. Faoi do chuntas → Eochracha Rochtana → cruthaigh péire nua eochair.
+   Cóipeáil an Eochair Rochtana agus an Eochair Rúnda.
+3. Líon isteach: Buicéad, Eochair Rochtana, Eochair Rúnda, agus Réigiún más gá (m.sh. ru-msk).
+   Líontar URL na seirbhíse isteach go huathoibríoch.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Inneall Bolcán TOS (ByteDance) - stóráil S3-comhoiriúnach.
+
+1. I Consól Inneall Bolcán ( https://console.volcengine.com/tos ), cruthaigh buicéad. Tabhair faoi deara a réigiún (m.sh. cn-beijing).
+2. Téigh go IAM → Eochracha Rochtana → cruthaigh eochair.
+   Cóipeáil Aitheantas na hEochair Rochtana agus an Eochair Rochtana Rúnda.
+3. URL na Seirbhíse: https://tos-s3-&lt;REGION&gt;.volces.com (m.sh. https://tos-s3-cn-beijing.volces.com).
+4. Réigiún: e.g. cn-beijing.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi - stóráil scamall te gan aon táillí as bealach.
+
+1. I Console Wasabi ( https://console.wasabisys.com/ ) → Buicéid → Cruthaigh Buicéad. Roghnaigh réigiún.
+2. Téigh go dtí Eochracha Rochtana → Cruthaigh Eochair Rochtana Nua. Cóipeáil an Eochair Rochtana agus an Eochair Rúnda.
+3. Líon isteach: Buicéad, Eochair Rochtana, Eochair Rúnda, agus Réigiún (m.sh. us-east-1, eu-central-1).
+   Líontar URL na seirbhíse isteach go huathoibríoch.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage - S3-comhoiriúnach do stóráil scamall na Rúise.
+
+1. I Yandex Cloud Console ( https://console.yandex.cloud/ ) → Stóráil Object → cruthaigh buicéad.
+2. Téigh go Cuntais Seirbhíse → cruthaigh ceann leis an ról storage.editor → cruthaigh eochair rochtana Statach.
+   Cóipeáil an ID Eochair (= Eochair Rochtana) agus an eochair Rúnda.
+3. Líon isteach: Buicéad, Eochair Rochtana, Eochair Rúnda.
+   Socraítear URL na seirbhíse agus an réigiún go huathoibríoch.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Bosca - stóráil scamall fiontair le tacaíocht WebDAV.
+
+1. Logáil isteach ag app.box.com. Tabhair faoi deara nach bhfuil Box WebDAV ar fáil ach le haghaidh pleananna íoctha.
+2. Cuir isteach do r-phost cuntas Bosca mar an Úsáideoir.
+3. Cuir isteach do phasfhocal Bosca mar an Pasfhocal.
+   Má úsáideann tú SSO, seans go mbeidh ort pasfhocal WebDAV ar leith a shocrú i Socruithe Cuntais.
+   Tá seoladh freastalaí, HTTPS, port, agus bunchonair cumraithe go huathoibríoch.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>Freastalaí cineálach WebDAV (Nextcloud, ownCloud, Synology DSM, Seafile, Apache, etc.)
+
+1. Cuir isteach Seoladh an fhreastalaí, roghnaigh HTTPS (molta), agus socraigh an port (0 = réamhshocraithe: 80 le haghaidh HTTP, 443 le haghaidh HTTPS).
+2. Cuir isteach an bunchosán don chríochphointe WebDAV.
+   Sampla Nextcloud: /remote.php/dav/files/&lt;username&gt;/Backups
+   Synology DSM: /
+3. Cuir isteach d&apos;ainm úsáideora agus do phasfhocal (nó pasfhocal a bhaineann go sonrach leis an aip má éilíonn do fhreastalaí é).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive - Stóráil scamall Gearmánach le fócas láidir príobháideachta.
+
+1. Logáil isteach ag hidrive.ionos.com → Socruithe → Aipeanna &amp; seirbhísí ceangailte → WebDAV.
+   Nó faigh rochtain dhíreach ar WebDAV le do dhintiúir reatha.
+2. Cuir isteach d&apos;ainm úsáideora HiDrive mar an Úsáideoir.
+3. Cuir isteach do phasfhocal HiDrive mar an Pasfhocal.
+   Tá seoladh freastalaí, HTTPS, port, agus bunchonair cumraithe go huathoibríoch.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) — stóráil scamall móréilimh na Síne le tacaíocht dúchais WebDAV.
+
+1. Logáil isteach ag jianguoyun.com → Eolas Cuntais → Slándáil → Bainistiú Aipeanna Tríú Páirtí → Cuir Feidhmchlár leis.
+   Cóipeáil an pasfhocal app a ghintear - tá sé léirithe ach uair amháin.
+2. Cuir isteach do sheoladh ríomhphoist Jianguoyun mar an Úsáideoir.
+3. Cuir isteach an focal faire app a ghintear mar an Pasfhocal.
+   Tá seoladh freastalaí, HTTPS, port, agus bunchonair cumraithe go huathoibríoch.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr — stóráil néil phríobháideachta atá bunaithe sa tSlóivéin (AE).
+
+1. Téigh go app.koofr.eu → Roghanna → Pasfhocal → Pasfhocail aipe → Cuir pasfhocal leis.
+2. Cuir isteach do r-phost cuntas Koofr mar an Úsáideoir.
+3. Cuir isteach an focal faire app a ghintear mar an Pasfhocal.
+   Tá seoladh freastalaí, HTTPS, port, agus bunchonair cumraithe go huathoibríoch.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Mail.ru Cloud trí WebDAV.
+
+1. Téigh go dtí account.mail.ru → Slándáil → Pasfhocail App → Cruthaigh pasfhocal app.
+   Roghnaigh &apos;Mail&apos; nó &apos;All&apos; mar an cineál, ansin cóipeáil an focal faire a ghintear.
+2. Cuir isteach do sheoladh ríomhphoist Mail.ru mar an Úsáideoir.
+3. Cuir isteach an focal faire app mar an Pasfhocal.
+   Tá seoladh freastalaí, HTTPS, port, agus bunchonair cumraithe go huathoibríoch.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud - comhshioncronú agus comhroinnt comhad féin-óstaithe coitianta.
+
+1. Cuir isteach do sheoladh freastalaí Nextcloud (m.sh. nextcloud.example.com).
+2. Tá an bunchosán réamhlíonta: /remote.php/dav/files/&lt;username&gt;/
+   Cuir d&apos;ainm úsáideora iarbhír Nextcloud in ionad &lt;ainm úsáideora&gt;.
+3. Cuir isteach d&apos;ainm úsáideora agus do phasfhocal Nextcloud (nó pasfhocal app ó
+   Socruithe → Slándáil → Gléasanna &amp; seisiúin → Pasfhocail aipe).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud - sioncronú agus comhroinnt comhad féin-óstáilte.
+
+1. Cuir isteach do sheoladh freastalaí ownCloud (m.sh. owncloud.example.com).
+2. Tá an bunchosán réamhlíonta: /remote.php/dav/files/&lt;username&gt;/
+   Cuir d&apos;ainm úsáideora ownCloud iarbhír in ionad &lt;ainm úsáideora&gt;.
+3. Cuir isteach d&apos;ainm úsáideora agus do phasfhocal ownCloud (nó pasfhocal app má tá 2FA cumasaithe).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud — stóráil néil le lárionaid sonraí AE agus SAM.
+
+1. Logáil isteach ar my.pcloud.com → Socruithe → Slándáil → Pasfhocail Aipe → Cruthaigh.
+   Cóipeáil an focal faire app - tá sé léirithe ach uair amháin.
+2. Cuir isteach do r-phost cuntas pCloud mar an Úsáideoir.
+3. Cuir isteach an focal faire app mar an Pasfhocal.
+   Maidir le lárionad sonraí an AE: úsáidtear ewebdav.pcloud.com go huathoibríoch.
+   Le haghaidh ionad sonraí SAM: athraigh an t-óstach go webdav.pcloud.com.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>Íosluchtaigh Yandex diosca trí WebDAV.
+
+1. Téigh go id.yandex.com → Slándáil → Pasfhocail app → Cruthaigh pasfhocal app le haghaidh &apos;WebDAV access&apos;.
+   Cóipeáil an focal faire a ghintear - ní thaispeántar é ach uair amháin.
+2. Cuir isteach do logáil isteach Yandex mar an Úsáideoir.
+3. Cuir isteach an focal faire app (ní do phasfhocal cuntas Yandex) mar an Pasfhocal.
+   Tá seoladh freastalaí, HTTPS, agus port cumraithe go huathoibríoch.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Cúltaca / sioncronaigh do shonraí Windows, Linux.
 Iompórtáil grianghraif ón bhfón trí WI-FI agus níos mó.

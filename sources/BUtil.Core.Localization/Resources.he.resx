@@ -967,6 +967,267 @@ bin.
   <data name="User_Field_Validation" xml:space="preserve">
     <value>המשתמש לא צוין.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS - אחסון אובייקטים תואם S3 מ- Alibaba.
+
+1. ב-OSS Console (https://oss.console.aliyun.com/), צור דלי. שימו לב לאזור שלו (למשל oss-cn-hangzhou).
+2. במסוף RAM → משתמשים → צור משתמש → צרף AliyunOSSFullAccess → צור AccessKey.
+   העתק את מזהה AccessKey (= מפתח גישה) ו-AccessKey Secret (= מפתח סודי).
+3. כתובת אתר של שירות: https://oss-&lt;REGION&gt;.aliyuncs.com (למשל https://oss-cn-hangzhou.aliyuncs.com).
+4. אזור: למשל. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 - אחסון האובייקטים המקורי של אמזון.
+
+1. פתח את מסוף S3 (https://s3.console.aws.amazon.com/) וצור דלי. שימו לב לאזור שלו (למשל us-east-1).
+2. פתח את IAM → משתמשים → צור משתמש → צרף את מדיניות AmazonS3FullAccess.
+3. תחת אישורי אבטחה, צור מפתח גישה - העתק את מזהה המפתח והסוד.
+4. מלאו: דלי, מפתח גישה, מפתח סודי ואזור.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS - אחסון אובייקטים תואם S3 מבית Baidu.
+
+1. ב-BOS Console (https://console.bce.baidu.com/bos/), צור דלי. שימו לב לאזור שלו (למשל bj, gz, su).
+2. עבור אל אבטחה ← מפתחות גישה — העתק את מזהה מפתח הגישה ומפתח הגישה הסודי שלך.
+3. כתובת אתר של שירות: https://s3.&lt;REGION&gt;.bcebos.com (למשל https://s3.bj.bcebos.com).
+4. אזור: למשל. bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 - אחסון תואם S3 במחיר סביר.
+
+1. ב-Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets, צור דלי.
+2. עבור אל מפתחות אפליקציה ← הוסף מפתח יישום חדש, תחום אותו לדלי.
+   העתק את מזהה המפתח (= מפתח גישה) ומפתח האפליקציה (= מפתח סודי).
+3. כתובת אתר של שירות: נקודת הקצה של הדלי שלך מוצגת בפרטי הדלי, למשל. https://s3.us-west-004.backblazeb2.com
+4. אזור: הקטע בין &apos;s3&apos;. ו-&apos;.backblazeb2.com&apos;, למשל. us-west-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 - אחסון תואם S3 עם אפס יציאה.
+
+1. ב-Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → ליצור דלי.
+2. עבור אל R2 → נהל אסימוני API של R2 → צור אסימון API עם קריאה וכתיבה של אובייקט.
+   העתק את מזהה מפתח הגישה ומפתח הגישה הסודי.
+3. כתובת אתר של שירות: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   מזהה החשבון שלך מוצג בדף הסקירה הכללית של R2.
+4. מלאו: דלי, מפתח גישה, מפתח סודי ו-URL שירות. האזור מוגדר ל&apos;אוטומטי&apos; באופן אוטומטי.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) אחסון אובייקטים - אחסון OBS תואם S3.
+
+1. ב-Cloud.ru Console (https://cloud.ru/) ← שירות אחסון אובייקטים (OBS) ← צור דלי.
+2. עבור אל האישורים שלי ← מקשי גישה ← הוסף מפתח גישה.
+   העתק את מפתח הגישה ומפתח הגישה הסודי.
+3. מלאו: דלי, מפתח גישה, מפתח סודי ואזור (למשל ru-moscow-1).
+   כתובת האתר של השירות ממולאת באופן אוטומטי.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO או כל שרת תואם S3.
+
+1. הפעל את ה-MinIO שלך (או שרת אחר תואם S3).
+2. צור דלי דרך מסוף MinIO או &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;.
+3. צור מפתח גישה ב-MinIO Console → Access Keys (הימנע מאישורי בסיס בייצור).
+4. כתובת אתר של שירות: נקודת הקצה של השרת שלך, למשל. http://192.168.1.10:9000 או https://minio.example.com.
+5. אזור: כל ערך (למשל us-east-1) - או השאר ריק אם השרת לא אוכף אותו.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces - אחסון אובייקטים תואם S3.
+
+1. ב-Spaces (https://cloud.digitalocean.com/spaces), צור שטח. שימו לב לאזור שלו (למשל nyc3).
+2. עבור אל API ← מפתחות רווחים ← צור מפתח חדש. העתק את המפתח (= מפתח גישה) ואת הסוד.
+3. כתובת אתר של שירות: https://&lt;REGION&gt;.digitaloceanspaces.com (לדוגמה, https://nyc3.digitaloceanspaces.com).
+4. אזור: אותו קוד קצר, למשל. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage - באמצעות ממשק ה-API של יכולת פעולה הדדית של S3.
+
+1. ב-Google Cloud Console (https://console.cloud.google.com/storage), צור דלי.
+2. עבור אל אחסון בענן ← הגדרות ← יכולת פעולה הדדית ← צור מפתח HMAC עבור חשבון שירות.
+   העתק את מפתח הגישה והסוד.
+3. מלאו: דלי, מפתח גישה (מפתח HMAC), מפתח סודי (סוד HMAC).
+   כתובת האתר והאזור של השירות נקבעים באופן אוטומטי.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS - אחסון אובייקטים תואם S3 מבית Huawei.
+
+1. ב-OBS Console (https://console.huaweicloud.com/obs/), צור דלי. שימו לב לאזור שלו (למשל cn-north-4).
+2. עבור אל האישורים שלי ← מקשי גישה ← צור מפתח גישה.
+   העתק את ה-AK (= מפתח גישה) ואת SK (= מפתח סודי).
+3. כתובת אתר של שירות: https://obs.&lt;REGION&gt;.myhuaweicloud.com (למשל https://obs.cn-north-4.myhuaweicloud.com).
+4. אזור: למשל. cn-north-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Object Storage - אחסון תואם S3.
+
+1. ב-Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets), צור דלי. שימו לב לאשכול שלו.
+2. עבור אל אחסון אובייקטים ← מקשי גישה ← צור מפתח גישה בהיקף של הדלי.
+   העתק את מפתח הגישה והמפתח הסודי.
+3. כתובת אתר של שירות: https://&lt;CLUSTER&gt;.linodeobjects.com (למשל https://us-east-1.linodeobjects.com).
+4. אזור: אותו קוד אשכול, למשל. us-east-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo - אחסון תואם S3 מבית Qiniu.
+
+1. ב-Qiniu Portal (https://portal.qiniu.com/kodo/bucket), צור דלי. שימו לב לאזור שלו.
+2. עבור אל מרכז אישי ← ניהול מפתחות - העתק את ה-AccessKey ואת SecretKey שלך.
+3. כתובת אתר של שירות לפי אזור:
+   מזרח סין: https://s3-cn-east-1.qiniucs.com
+   צפון סין: https://s3-cn-north-1.qiniucs.com
+   דרום סין: https://s3-cn-south-1.qiniucs.com
+   צפון אמריקה: https://s3-us-north-1.qiniucs.com
+4. אזור: קוד תואם, למשל. cn-east-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — אחסון תואם S3 באירופה.
+
+1. ב-Scaleway Console (https://console.scaleway.com/object-storage/buckets), צור דלי. שימו לב לאזור שלו (למשל fr-par).
+2. עבור אל IAM ← מפתחות API ← צור מפתח API עם הרשאות כתיבה של אחסון אובייקטים.
+   העתק את מפתח הגישה והמפתח הסודי.
+3. כתובת אתר של שירות: https://s3.&lt;REGION&gt;.scw.cloud (לדוגמה, https://s3.fr-par.scw.cloud).
+4. אזור: למשל. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage - אחסון רוסי תואם S3.
+
+1. בלוח Selectel (https://my.selectel.ru/) ← Cloud Storage ← צור מיכל (= דלי).
+2. תחת משתמשים ותפקידים, צור משתמש שירות עם גישה לאחסון ← S3 Keys ← צור זוג מפתחות.
+   העתק את מפתח הגישה והמפתח הסודי.
+3. מלאו: דלי, מפתח גישה, מפתח סודי.
+   כתובת האתר של השירות ממולאת באופן אוטומטי.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS - אחסון אובייקטים תואם S3 מבית Tencent.
+
+1. ב-COS Console (https://console.cloud.tencent.com/cos), צור דלי. שימו לב ל-AppId ולאזור (למשל ap-beijing).
+2. בניהול גישה ← מפתחות API ← צור מפתח.
+   העתק את SecretId (= מפתח גישה) ואת SecretKey (= מפתח סודי).
+3. כתובת אתר של שירות: https://cos.&lt;REGION&gt;.myqcloud.com (למשל https://cos.ap-beijing.myqcloud.com).
+4. פורמט שם הדלי: &lt;name&gt;-&lt;AppId&gt; (לדוגמה, mybucket-1250000000). אזור: למשל. אפ-בייג&apos;ינג.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage - אחסון תואם S3 מבית VK Cloud.
+
+1. ב-VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → צור דלי.
+2. תחת החשבון שלך ← מפתחות גישה ← צור זוג מפתחות חדש.
+   העתק את מפתח הגישה והמפתח הסודי.
+3. מלאו: דלי, מפתח גישה, מפתח סודי ואזור אם נדרש (למשל ru-msk).
+   כתובת האתר של השירות ממולאת באופן אוטומטי.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) - אחסון תואם S3.
+
+1. ב-Volcano Engine Console (https://console.volcengine.com/tos), צור דלי. שימו לב לאזור שלו (למשל cn-beijing).
+2. עבור אל IAM ← מפתחות גישה ← צור מפתח.
+   העתק את מזהה מפתח הגישה ומפתח הגישה הסודי.
+3. כתובת אתר של שירות: https://tos-s3-&lt;REGION&gt;.volces.com (למשל https://tos-s3-cn-beijing.volces.com).
+4. אזור: למשל. cn-בייג&apos;ינג.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi - אחסון ענן חם ללא עמלות יציאה.
+
+1. ב-Wasabi Console (https://console.wasabisys.com/) → Buckets → Create Bucket. בחר אזור.
+2. עבור אל מקשי גישה ← צור מפתח גישה חדש. העתק את מפתח הגישה והמפתח הסודי.
+3. מלאו: דלי, מפתח גישה, מפתח סודי ואזור (למשל us-east-1, eu-central-1).
+   כתובת האתר של השירות ממולאת באופן אוטומטי.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>אחסון אובייקטים של Yandex - אחסון ענן רוסי תואם S3.
+
+1. ב-Yandex Cloud Console (https://console.yandex.cloud/) ← אחסון אובייקטים ← צור דלי.
+2. עבור אל חשבונות שירות ← צור אחד עם תפקיד האחסון.עורך ← צור מפתח גישה סטטי.
+   העתק את מזהה המפתח (= מפתח גישה) ואת המפתח הסודי.
+3. מלאו: דלי, מפתח גישה, מפתח סודי.
+   כתובת האתר והאזור של השירות נקבעים באופן אוטומטי.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box — אחסון ענן ארגוני עם תמיכה ב-WebDAV.
+
+1. היכנס ב-app.box.com. שימו לב ש-Box WebDAV זמין רק עבור תוכניות בתשלום.
+2. הזן את הדוא&quot;ל של חשבון Box שלך בתור המשתמש.
+3. הזן את סיסמת התיבה שלך כסיסמה.
+   אם אתה משתמש ב-SSO, ייתכן שיהיה עליך להגדיר סיסמת WebDAV נפרדת בהגדרות חשבון.
+   כתובת שרת, HTTPS, יציאה ונתיב בסיס מוגדרים באופן אוטומטי.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>שרת WebDAV גנרי (Nextcloud, ownCloud, Synology DSM, Seafile, Apache וכו&apos;)
+
+1. הזן את כתובת השרת, בחר HTTPS (מומלץ), והגדר את היציאה (0 = ברירת מחדל: 80 עבור HTTP, 443 עבור HTTPS).
+2. הזן את נתיב הבסיס עבור נקודת הקצה של WebDAV.
+   דוגמה של Nextcloud: /remote.php/dav/files/&lt;שם משתמש&gt;/Backups
+   Synology DSM: /
+3. הזן את שם המשתמש והסיסמה שלך (או סיסמה ספציפית לאפליקציה אם השרת שלך דורש זאת).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive - אחסון ענן גרמני עם מיקוד חזק לפרטיות.
+
+1. היכנס ב-hidrive.ionos.com ← הגדרות ← אפליקציות ושירותים מחוברים ← WebDAV.
+   או גש ישירות ל-WebDAV עם האישורים הקיימים שלך.
+2. הזן את שם המשתמש שלך ב-HiDrive בתור המשתמש.
+3. הזן את סיסמת ה-HiDrive שלך ​​כסיסמה.
+   כתובת שרת, HTTPS, יציאה ונתיב בסיס מוגדרים באופן אוטומטי.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) - אחסון ענן סיני פופולרי עם תמיכה מקורית ב-WebDAV.
+
+1. היכנס ב-jianguoyun.com → פרטי חשבון → אבטחה → ניהול אפליקציות של צד שלישי → הוסף אפליקציה.
+   העתק את סיסמת האפליקציה שנוצרה - היא מוצגת פעם אחת בלבד.
+2. הזן את כתובת הדוא&quot;ל שלך Jianguoyun בתור המשתמש.
+3. הזן את סיסמת האפליקציה שנוצרה בתור הסיסמה.
+   כתובת שרת, HTTPS, יציאה ונתיב בסיס מוגדרים באופן אוטומטי.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr - אחסון ענן ידידותי לפרטיות המבוסס בסלובניה (האיחוד האירופי).
+
+1. עבור אל app.koofr.eu ← העדפות ← סיסמה ← סיסמאות לאפליקציות ← הוסף סיסמה.
+2. הזן את הדוא&quot;ל של חשבון Koofr שלך בתור המשתמש.
+3. הזן את סיסמת האפליקציה שנוצרה בתור הסיסמה.
+   כתובת שרת, HTTPS, יציאה ונתיב בסיס מוגדרים באופן אוטומטי.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Mail.ru Cloud באמצעות WebDAV.
+
+1. עבור אל account.mail.ru ← אבטחה ← סיסמאות לאפליקציה ← צור סיסמה לאפליקציה.
+   בחר &apos;דואר&apos; או &apos;הכל&apos; כסוג, ולאחר מכן העתק את הסיסמה שנוצרה.
+2. הזן את כתובת הדוא&quot;ל שלך ב-Mail.ru בתור המשתמש.
+3. הזן את סיסמת האפליקציה בתור הסיסמה.
+   כתובת שרת, HTTPS, יציאה ונתיב בסיס מוגדרים באופן אוטומטי.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud - סנכרון ושיתוף קבצים פופולריים באירוח עצמי.
+
+1. הזן את כתובת שרת Nextcloud שלך (למשל, nextcloud.example.com).
+2. נתיב הבסיס מולא מראש: /remote.php/dav/files/&lt;שם משתמש&gt;/
+   החלף את &lt;שם משתמש&gt; בשם המשתמש האמיתי שלך ב-Nextcloud.
+3. הזן את שם המשתמש והסיסמה שלך ב-Nextcloud (או סיסמת אפליקציה מ
+   הגדרות ← אבטחה ← מכשירים והפעלות ← סיסמאות אפליקציות).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud - סנכרון ושיתוף קבצים באירוח עצמי.
+
+1. הזן את כתובת שרת ownCloud שלך (למשל owncloud.example.com).
+2. נתיב הבסיס מולא מראש: /remote.php/dav/files/&lt;שם משתמש&gt;/
+   החלף את &lt;username&gt; בשם המשתמש האמיתי שלך ב- ownCloud.
+3. הזן את שם המשתמש והסיסמה שלך ב-Cloud (או סיסמת אפליקציה אם 2FA מופעלת).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud - אחסון בענן עם מרכזי נתונים של האיחוד האירופי וארה&quot;ב.
+
+1. היכנס ב-my.pcloud.com ← הגדרות ← אבטחה ← סיסמאות לאפליקציות ← צור.
+   העתק את סיסמת האפליקציה - היא מוצגת פעם אחת בלבד.
+2. הזן את הדוא&quot;ל של חשבון pCloud שלך בתור המשתמש.
+3. הזן את סיסמת האפליקציה בתור הסיסמה.
+   עבור מרכז הנתונים של האיחוד האירופי: ewebdav.pcloud.com משמש באופן אוטומטי.
+   עבור מרכז הנתונים בארה&quot;ב: שנה את המארח ל-webdav.pcloud.com.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>דיסק Yandex באמצעות WebDAV.
+
+1. עבור אל id.yandex.com ← אבטחה ← סיסמאות לאפליקציות ← צור סיסמת אפליקציה עבור &apos;גישה ל-WebDAV&apos;.
+   העתק את הסיסמה שנוצרה - היא מוצגת פעם אחת בלבד.
+2. הזן את פרטי הכניסה שלך ל-Yandex בתור המשתמש.
+3. הזן את סיסמת האפליקציה (לא את סיסמת חשבון Yandex שלך) כסיסמה.
+   כתובת שרת, HTTPS ויציאה מוגדרים באופן אוטומטי.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>גבה/סנכרן את הנתונים שלך ב-Windows, Linux.
 ייבא תמונות מהטלפון דרך WI-FI ועוד.

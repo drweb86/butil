@@ -967,6 +967,267 @@ bin.
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Корисникот не е наведен.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — складирање на објекти компатибилно со S3 од Alibaba.
+
+1. Во конзолата за OSS (https://oss.console.aliyun.com/), креирајте кофа. Забележете го неговиот регион (на пр. oss-cn-hangzhou).
+2. Во RAM конзолата → Корисници → креирајте корисник → прикачете AliyunOSSFullAccess → креирајте AccessKey.
+   Копирајте ги ID на AccessKey (= Пристапен клуч) и AccessKey Secret (= Таен клуч).
+3. УРЛ на услугата: https://oss-&lt;REGION&gt;.aliyuncs.com (на пр. https://oss-cn-hangzhou.aliyuncs.com).
+4. Регион: на пр. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 - оригинално складирање на предмети на Амазон.
+
+1. Отворете ја конзолата S3 (https://s3.console.aws.amazon.com/) и креирајте кофа. Забележете го неговиот регион (на пр. нас-исток-1).
+2. Отворете IAM → Корисници → креирајте корисник → прикачете ја политиката на AmazonS3FullAccess.
+3. Под Безбедносни ингеренции, креирајте клуч за пристап - копирајте го ID на клучот и Тајната.
+4. Пополнете: Кофа, клуч за пристап, таен клуч и регион.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — складирање на објекти компатибилно со S3 од Baidu.
+
+1. Во конзолата BOS (https://console.bce.baidu.com/bos/), креирајте кофа. Забележете го неговиот регион (на пр. bj, gz, su).
+2. Одете во Безбедност → Пристапни клучеви — копирајте го вашиот ID на клучот за пристап и тајниот клуч за пристап.
+3. УРЛ на услугата: https://s3.&lt;REGION&gt;.bcebos.com (на пр. https://s3.bj.bcebos.com).
+4. Регион: на пр. бј.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — достапно складирање компатибилно со S3.
+
+1. Во Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets, креирајте кофа.
+2. Одете во Копчиња за апликации → Додајте нов клуч за апликација, префрлете го во корпата.
+   Копирајте го ID на клучот (= Пристапен клуч) и applicationKey (= Таен клуч).
+3. УРЛ на услугата: крајната точка на вашата корпа е прикажана во деталите за корпата, на пр. https://s3.us-west-004.backblazeb2.com
+4. Регион: сегментот помеѓу „s3“. и „.backblazeb2.com“, на пр. нас-запад-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — складирање компатибилно со S3 со нула излез.
+
+1. Во Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → креирајте кофа.
+2. Одете во R2 → Управувајте со R2 API токени → Креирај API токен со Object Read &amp; Write.
+   Копирајте го ID на клучот за пристап и тајниот клуч за пристап.
+3. УРЛ на услугата: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   ИД на вашата сметка се прикажува на страницата за преглед на R2.
+4. Пополнете: Кофа, пристапен клуч, Таен клуч и УРЛ на услугата. Регионот е автоматски поставен на „автоматски“.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Складирање на објекти — складирање на OBS компатибилно со S3.
+
+1. Во Cloud.ru конзолата (https://cloud.ru/) → Услуга за складирање на објекти (OBS) → креирајте кофа.
+2. Одете во Мои акредитиви → Копчиња за пристап → Додај клуч за пристап.
+   Копирајте го клучот за пристап и тајниот клуч за пристап.
+3. Пополнете: Кофа, клуч за пристап, таен клуч и регион (на пр. ru-moscow-1).
+   УРЛ на услугата се пополнува автоматски.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO или кој било сервер компатибилен со S3.
+
+1. Стартувајте го вашиот MinIO (или друг S3-компатибилен) сервер.
+2. Направете кофа преку MinIO конзолата или &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;.
+3. Креирајте клуч за пристап во MinIO конзолата → Пристапни клучеви (избегнувајте root ингеренции во производството).
+4. УРЛ на услугата: крајната точка на вашиот сервер, на пр. http://192.168.1.10:9000 или https://minio.example.com.
+5. Регион: која било вредност (на пр. us-east-1) - или оставете празно ако серверот не ја наметне.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — складирање на објекти компатибилно со S3.
+
+1. Во Spaces (https://cloud.digitalocean.com/spaces), креирајте простор. Забележете го неговиот регион (на пр. nyc3).
+2. Одете во API → Spaces Keys → Generate New Key. Копирајте го клучот (= Пристапен клуч) и Тајната.
+3. УРЛ на услугата: https://&lt;REGION&gt;.digitaloceanspaces.com (на пр. https://nyc3.digitaloceanspaces.com).
+4. Регион: истиот краток код, на пр. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — преку API за интероперабилност на S3.
+
+1. Во Google Cloud Console (https://console.cloud.google.com/storage), креирајте кофа.
+2. Одете во Складирање во облак → Поставки → Интероперабилност → креирајте клуч HMAC за сметка за услуга.
+   Копирајте го клучот за пристап и тајната.
+3. Пополнете: Кофа, Пристапен клуч (клуч HMAC), Таен клуч (тајна HMAC).
+   УРЛ на услугата и регионот се поставуваат автоматски.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — складирање на објекти компатибилно со S3 од Huawei.
+
+1. Во OBS конзолата (https://console.huaweicloud.com/obs/), креирајте кофа. Забележете го неговиот регион (на пр. cn-север-4).
+2. Одете во Мои акредитиви → Копчиња за пристап → Креирај клуч за пристап.
+   Копирајте ги AK (= Пристапен клуч) и SK (= Таен клуч).
+3. УРЛ на услугата: https://obs.&lt;REGION&gt;.myhuaweicloud.com (на пр. https://obs.cn-north-4.myhuaweicloud.com).
+4. Регион: на пр. cn-север-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Складирање на објекти Linode (Akamai) — складирање компатибилно со S3.
+
+1. Во Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets), креирајте кофа. Забележете го неговиот кластер.
+2. Одете во Складирање на објекти → Копчиња за пристап → Креирај клуч за пристап со опсег до корпата.
+   Копирајте го клучот за пристап и тајниот клуч.
+3. УРЛ на услугата: https://&lt;CLUSTER&gt;.linodeobjects.com (на пр. https://us-east-1.linodeobjects.com).
+4. Регион: ист код на кластерот, на пр. нас-исток-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — складирање компатибилно со S3 од Qiniu.
+
+1. Во порталот Qiniu (https://portal.qiniu.com/kodo/bucket), креирајте кофа. Забележете го неговиот регион.
+2. Одете во Личен центар → Управување со клучеви — копирајте ги вашите AccessKey и SecretKey.
+3. УРЛ на услугата по регион:
+   Источна Кина: https://s3-cn-east-1.qiniucs.com
+   Северна Кина: https://s3-cn-north-1.qiniucs.com
+   Јужна Кина: https://s3-cn-south-1.qiniucs.com
+   Северна Америка: https://s3-us-north-1.qiniucs.com
+4. Регион: соодветен код, на пр. cn-исток-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — Европско складирање компатибилно со S3.
+
+1. Во Scaleway Console (https://console.scaleway.com/object-storage/buckets), креирајте кофа. Забележете го неговиот регион (на пр. fr-par).
+2. Одете во IAM → API Keys → Generate API Key with Object Storage дозволи за пишување.
+   Копирајте го клучот за пристап и тајниот клуч.
+3. УРЛ на услугата: https://s3.&lt;REGION&gt;.scw.cloud (на пр. https://s3.fr-par.scw.cloud).
+4. Регион: на пр. фр-пар, нл-амс, пл-вав.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — Руско складирање компатибилно со S3.
+
+1. Во Selectel Panel (https://my.selectel.ru/) → Cloud Storage → креирајте контејнер (= кофа).
+2. Под Корисници и улоги, креирајте корисник на услуга со пристап до складирање → копчиња S3 → креирајте пар клучеви.
+   Копирајте го клучот за пристап и тајниот клуч.
+3. Пополнете: Кофа, Пристапен клуч, Таен клуч.
+   УРЛ на услугата се пополнува автоматски.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — складирање на објекти компатибилно со S3 од Tencent.
+
+1. Во COS конзолата (https://console.cloud.tencent.com/cos), креирајте кофа. Забележете ги AppId и регионот (на пр. ap-peijing).
+2. Во Управување со пристап → API клучеви → Креирај клуч.
+   Копирајте ги SecretId (= Клучот за пристап) и SecretKey (= Таен клуч).
+3. УРЛ на услугата: https://cos.&lt;REGION&gt;.myqcloud.com (на пр. https://cos.ap-beijing.myqcloud.com).
+4. Формат на името на кофата: &lt;име&gt;-&lt;AppId&gt; (на пр. mybucket-1250000000). Регион: на пр. ап-пекинг.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — складирање компатибилно со S3 од VK Cloud.
+
+1. Во VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → креирајте кофа.
+2. Под вашата сметка → Копчиња за пристап → креирајте нов пар клучеви.
+   Копирајте го клучот за пристап и тајниот клуч.
+3. Пополнете: Кофа, клуч за пристап, таен клуч и регион доколку е потребно (на пр. ru-msk).
+   УРЛ на услугата се пополнува автоматски.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — складирање компатибилно со S3.
+
+1. Во Volcano Engine Console (https://console.volcengine.com/tos), креирајте кофа. Забележете го неговиот регион (на пр. cn-пекинг).
+2. Одете во IAM → Пристапни копчиња → креирајте клуч.
+   Копирајте го ID на клучот за пристап и тајниот клуч за пристап.
+3. УРЛ на услугата: https://tos-s3-&lt;REGION&gt;.volces.com (на пр. https://tos-s3-cn-beijing.volces.com).
+4. Регион: на пр. cn-пекинг.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Васаби — складирање на топол облак без такси за излез.
+
+1. Во Wasabi Console (https://console.wasabisys.com/) → Buckets → Create Bucket. Изберете регион.
+2. Одете во Копчиња за пристап → Креирај нов клуч за пристап. Копирајте го клучот за пристап и тајниот клуч.
+3. Пополнете: Кофа, клуч за пристап, таен клуч и регион (на пр. us-east-1, eu-central-1).
+   УРЛ на услугата се пополнува автоматски.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage — Руско складирање облак компатибилно со S3.
+
+1. Во Yandex Cloud Console (https://console.yandex.cloud/) → Складирање на објекти → креирајте кофа.
+2. Одете во Сметки за услуги → создадете една со улогата на складирање.уредник → креирајте Статички клуч за пристап.
+   Копирајте го ID на клучот (= Пристапен клуч) и Тајниот клуч.
+3. Пополнете: Кофа, Пристапен клуч, Таен клуч.
+   УРЛ на услугата и регионот се поставуваат автоматски.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box — претпријатие за складирање облак со поддршка за WebDAV.
+
+1. Најавете се на app.box.com. Имајте предвид дека Box WebDAV е достапен само за платени планови.
+2. Внесете ја е-поштата на вашата сметка на Box како корисник.
+3. Внесете ја вашата лозинка за Box како лозинка.
+   Ако користите SSO, можеби ќе треба да поставите посебна лозинка за WebDAV во Поставки за сметка.
+   Адресата на серверот, HTTPS, портата и основната патека се конфигурираат автоматски.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>Генерички WebDAV сервер (Nextcloud, ownCloud, Synology DSM, Seafile, Apache, итн.)
+
+1. Внесете ја адресата на серверот, изберете HTTPS (препорачано) и поставете ја портата (0 = стандардно: 80 за HTTP, 443 за HTTPS).
+2. Внесете ја основната патека за крајната точка WebDAV.
+   Пример за следен облак: /remote.php/dav/files/&lt;username&gt;/Backups
+   Synology DSM: /
+3. Внесете го вашето корисничко име и лозинка (или лозинка специфична за апликација ако тоа го бара вашиот сервер).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive — германски облак складирање со силен фокус на приватноста.
+
+1. Најавете се на hidrive.ionos.com → Поставки → Апликации и поврзани услуги → WebDAV.
+   Или директно пристапете до WebDAV со вашите постоечки ингеренции.
+2. Внесете го вашето корисничко име HiDrive како корисник.
+3. Внесете ја вашата лозинка за HiDrive како лозинка.
+   Адресата на серверот, HTTPS, портата и основната патека се конфигурираат автоматски.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) — популарно кинеско складирање облак со мајчин WebDAV поддршка.
+
+1. Најавете се на jianguoyun.com → Информации за сметката → Безбедност → Управување со апликации од трета страна → Додадете апликација.
+   Копирајте ја генерираната лозинка на апликацијата - таа се прикажува само еднаш.
+2. Внесете ја вашата е-пошта Jianguoyun како корисник.
+3. Внесете ја генерираната лозинка за апликацијата како лозинка.
+   Адресата на серверот, HTTPS, портата и основната патека се конфигурираат автоматски.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr — складирање облак погодно за приватност со седиште во Словенија (ЕУ).
+
+1. Одете на app.koofr.eu → Преференци → Лозинка → Лозинки за апликации → Додај лозинка.
+2. Внесете ја е-поштата на вашата сметка на Koofr како корисник.
+3. Внесете ја генерираната лозинка за апликацијата како лозинка.
+   Адресата на серверот, HTTPS, портата и основната патека се конфигурираат автоматски.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Mail.ru Cloud преку WebDAV.
+
+1. Одете на account.mail.ru → Безбедност → Лозинки за апликации → Креирај лозинка за апликација.
+   Изберете „Пошта“ или „Сите“ како тип, а потоа копирајте ја генерираната лозинка.
+2. Внесете ја вашата е-пошта Mail.ru како корисник.
+3. Внесете ја лозинката за апликацијата како лозинка.
+   Адресата на серверот, HTTPS, портата и основната патека се конфигурираат автоматски.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud — популарна синхронизација и споделување на датотеки со самодомаќин.
+
+1. Внесете ја вашата адреса на серверот Nextcloud (на пр. nextcloud.example.com).
+2. Основната патека е претходно пополнета: /remote.php/dav/files/&lt;username&gt;/
+   Заменете го &lt;корисничко име&gt; со вашето вистинско корисничко име на Nextcloud.
+3. Внесете го вашето корисничко име и лозинка на Nextcloud (или лозинка за апликација од
+   Поставки → Безбедност → Уреди и сесии → Лозинки за апликации).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud — синхронизирање и споделување на датотеки со самодомаќин.
+
+1. Внесете ја вашата сопствена адреса на серверот Cloud (на пр. owncloud.example.com).
+2. Основната патека е претходно пополнета: /remote.php/dav/files/&lt;username&gt;/
+   Заменете го &lt;корисничко име&gt; со вашето вистинско корисничко име на сопствен Cloud.
+3. Внесете го вашето сопствено корисничко име и лозинка за Cloud (или лозинка за апликација ако е овозможено 2FA).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud — облак складирање со центри за податоци на ЕУ и САД.
+
+1. Најавете се на my.pcloud.com → Поставки → Безбедност → Лозинки за апликации → Креирај.
+   Копирајте ја лозинката на апликацијата - таа се прикажува само еднаш.
+2. Внесете ја е-поштата на вашата сметка на pCloud како корисник.
+3. Внесете ја лозинката за апликацијата како лозинка.
+   За центарот за податоци на ЕУ: ewebdav.pcloud.com се користи автоматски.
+   За американскиот центар за податоци: сменете го домаќинот во webdav.pcloud.com.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>Yandex Disk преку WebDAV.
+
+1. Одете на id.yandex.com → Безбедност → Лозинки за апликации → Создајте лозинка за апликација за „пристап до WebDAV“.
+   Копирајте ја генерираната лозинка - таа се прикажува само еднаш.
+2. Внесете го вашето најавување на Yandex како корисник.
+3. Внесете ја лозинката за апликацијата (не лозинката за вашата сметка на Yandex) како лозинка.
+   Адресата на серверот, HTTPS и портата се конфигурираат автоматски.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Направете резервна копија/синхронизирајте ги вашите податоци на Windows, Linux.
 Увезете фотографии од телефонот преку WI-FI и повеќе.

@@ -967,6 +967,267 @@ Zie gedetailleerde beschrijving via de volgende link.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Gebruiker is niet opgegeven.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — S3-compatibele objectopslag van Alibaba.
+
+1. Maak in OSS Console (https://oss.console.aliyun.com/) een bucket. Noteer de regio (bijvoorbeeld oss-cn-hangzhou).
+2. In RAM Console → Gebruikers → maak een gebruiker → voeg AliyunOSSFullAccess toe → maak een AccessKey.
+   Kopieer de AccessKey ID (= Toegangssleutel) en AccessKey Secret (= Geheime sleutel).
+3. Service-URL: https://oss-&lt;REGIO&gt;.aliyuncs.com (bijvoorbeeld https://oss-cn-hangzhou.aliyuncs.com).
+4. Regio: b.v. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3: de originele objectopslag van Amazon.
+
+1. Open de S3-console (https://s3.console.aws.amazon.com/) en maak een bucket. Noteer de regio (bijvoorbeeld us-east-1).
+2. Open IAM → Gebruikers → maak een gebruiker → voeg het AmazonS3FullAccess-beleid toe.
+3. Maak onder Beveiligingsreferenties een toegangssleutel: kopieer de sleutel-ID en het geheim.
+4. Vul in: Bucket, Access Key, Secret Key en Regio.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS - S3-compatibele objectopslag van Baidu.
+
+1. Maak in BOS Console (https://console.bce.baidu.com/bos/) een bucket. Noteer de regio (bijvoorbeeld bj, gz, su).
+2. Ga naar Beveiliging → Toegangssleutels — kopieer uw toegangssleutel-ID en geheime toegangssleutel.
+3. Service-URL: https://s3.&lt;REGIO&gt;.bcebos.com (bijvoorbeeld https://s3.bj.bcebos.com).
+4. Regio: b.v. bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — betaalbare S3-compatibele opslag.
+
+1. Maak in Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets een bucket.
+2. Ga naar App-sleutels → Een nieuwe applicatiesleutel toevoegen, plaats deze in de bucket.
+   Kopieer de keyID (= Access Key) en applicationKey (= Geheime sleutel).
+3. Service-URL: het eindpunt van uw bucket, weergegeven in de bucketdetails, b.v. https://s3.us-west-004.backblazeb2.com
+4. Regio: het segment tussen &apos;s3.&apos; en &apos;.backblazeb2.com&apos;, b.v. us-west-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — zero-egress S3-compatibele opslag.
+
+1. In Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → maak een bucket.
+2. Ga naar R2 → R2 API-tokens beheren → API-token maken met object lezen en schrijven.
+   Kopieer de toegangssleutel-ID en de geheime toegangssleutel.
+3. Service-URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Uw account-ID wordt weergegeven op de R2-overzichtspagina.
+4. Vul in: Bucket, Toegangssleutel, Geheime Sleutel en Service-URL. Regio wordt automatisch ingesteld op &apos;auto&apos;.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Object Storage - S3-compatibele OBS-opslag.
+
+1. In Cloud.ru Console (https://cloud.ru/) → Object Storage Service (OBS) → maak een bucket.
+2. Ga naar Mijn referenties → Toegangssleutels → Toegangssleutel toevoegen.
+   Kopieer de toegangssleutel en de geheime toegangssleutel.
+3. Vul in: Bucket, Access Key, Secret Key en Regio (bijvoorbeeld ru-moscow-1).
+   Service-URL wordt automatisch ingevuld.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO of een S3-compatibele server.
+
+1. Start uw MinIO (of andere S3-compatibele) server.
+2. Maak een bucket aan via de MinIO Console of &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;.
+3. Maak een toegangssleutel in MinIO Console → Toegangssleutels (vermijd rootreferenties in productie).
+4. Service-URL: uw servereindpunt, b.v. http://192.168.1.10:9000 of https://minio.example.com.
+5. Regio: elke waarde (bijvoorbeeld us-east-1) — of laat leeg als de server deze niet afdwingt.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — S3-compatibele objectopslag.
+
+1. Maak in Spaces (https://cloud.digitalocean.com/spaces) een Space. Noteer de regio (bijvoorbeeld nyc3).
+2. Ga naar API → Ruimtesleutels → Nieuwe sleutel genereren. Kopieer de sleutel (= toegangssleutel) en het geheim.
+3. Service-URL: https://&lt;REGIO&gt;.digitaloceanspaces.com (bijvoorbeeld https://nyc3.digitaloceanspaces.com).
+4. Regio: dezelfde shortcode, b.v. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — via de S3-interoperabiliteits-API.
+
+1. Maak in Google Cloud Console (https://console.cloud.google.com/storage) een bucket.
+2. Ga naar Cloud Storage → Instellingen → Interoperabiliteit → maak een HMAC-sleutel aan voor een serviceaccount.
+   Kopieer de toegangssleutel en het geheim.
+3. Vul in: Bucket, Access Key (HMAC-sleutel), Secret Key (HMAC-geheim).
+   Service-URL en regio worden automatisch ingesteld.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — S3-compatibele objectopslag van Huawei.
+
+1. Maak in OBS Console (https://console.huaweicloud.com/obs/) een bucket. Noteer de regio (bijvoorbeeld cn-noord-4).
+2. Ga naar Mijn referenties → Toegangssleutels → Toegangssleutel maken.
+   Kopieer de AK (= Toegangssleutel) en SK (= Geheime Sleutel).
+3. Service-URL: https://obs.&lt;REGIO&gt;.myhuaweicloud.com (bijvoorbeeld https://obs.cn-north-4.myhuaweicloud.com).
+4. Regio: b.v. cn-noord-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Objectopslag - S3-compatibele opslag.
+
+1. Maak in Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets) een bucket. Let op het cluster.
+2. Ga naar Objectopslag → Toegangssleutels → Maak een toegangssleutel voor de bucket.
+   Kopieer de toegangssleutel en de geheime sleutel.
+3. Service-URL: https://&lt;CLUSTER&gt;.linodeobjects.com (bijvoorbeeld https://us-east-1.linodeobjects.com).
+4. Regio: dezelfde clustercode, b.v. us-oost-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — S3-compatibele opslag van Qiniu.
+
+1. Maak in Qiniu Portal (https://portal.qiniu.com/kodo/bucket) een bucket. Let op de regio.
+2. Ga naar Persoonlijk centrum → Sleutelbeheer – kopieer uw AccessKey en SecretKey.
+3. Service-URL per regio:
+   Oost-China: https://s3-cn-east-1.qiniucs.com
+   Noord-China: https://s3-cn-north-1.qiniucs.com
+   Zuid-China: https://s3-cn-south-1.qiniucs.com
+   Noord-Amerika: https://s3-us-north-1.qiniucs.com
+4. Regio: matchingcode, b.v. cn-oost-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — Europese S3-compatibele opslag.
+
+1. Maak in Scaleway Console (https://console.scaleway.com/object-storage/buckets) een bucket. Noteer de regio (bijvoorbeeld fr-par).
+2. Ga naar IAM → API-sleutels → API-sleutel genereren met schrijfrechten voor objectopslag.
+   Kopieer de toegangssleutel en de geheime sleutel.
+3. Service-URL: https://s3.&lt;REGIO&gt;.scw.cloud (bijvoorbeeld https://s3.fr-par.scw.cloud).
+4. Regio: b.v. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage - S3-compatibele Russische opslag.
+
+1. In Selectel Panel (https://my.selectel.ru/) → Cloud Storage → maak een container (= bucket).
+2. Maak onder Gebruikers en rollen een servicegebruiker met opslagtoegang → S3-sleutels → maak een sleutelpaar.
+   Kopieer de toegangssleutel en de geheime sleutel.
+3. Vul in: Emmer, Toegangssleutel, Geheime sleutel.
+   Service-URL wordt automatisch ingevuld.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — S3-compatibele objectopslag van Tencent.
+
+1. Maak in COS Console (https://console.cloud.tencent.com/cos) een bucket. Noteer de AppId en Regio (bijvoorbeeld ap-beijing).
+2. In Toegangsbeheer → API-sleutels → Sleutel maken.
+   Kopieer de SecretId (= Toegangssleutel) en SecretKey (= Geheime Sleutel).
+3. Service-URL: https://cos.&lt;REGIO&gt;.myqcloud.com (bijvoorbeeld https://cos.ap-beijing.myqcloud.com).
+4. Indeling van de bucketnaam: &lt;naam&gt;-&lt;AppId&gt; (bijvoorbeeld mijnbucket-1250000000). Regio: bijv. ap-Peking.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — S3-compatibele opslag van VK Cloud.
+
+1. In VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → maak een bucket.
+2. Onder uw account → Toegangssleutels → maak een nieuw sleutelpaar aan.
+   Kopieer de toegangssleutel en de geheime sleutel.
+3. Vul indien nodig het volgende in: Bucket, Access Key, Secret Key en Region (bijvoorbeeld ru-msk).
+   Service-URL wordt automatisch ingevuld.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) - S3-compatibele opslag.
+
+1. Maak in Volcano Engine Console (https://console.volcengine.com/tos) een bucket. Let op de regio (bijvoorbeeld cn-beijing).
+2. Ga naar IAM → Toegangssleutels → maak een sleutel aan.
+   Kopieer de toegangssleutel-ID en de geheime toegangssleutel.
+3. Service-URL: https://tos-s3-&lt;REGIO&gt;.volces.com (bijvoorbeeld https://tos-s3-cn-beijing.volces.com).
+4. Regio: b.v. cn-Peking.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi – hot cloud-opslag zonder uitgaande kosten.
+
+1. In Wasabi Console (https://console.wasabisys.com/) → Buckets → Bucket maken. Kies een regio.
+2. Ga naar Toegangssleutels → Nieuwe toegangssleutel maken. Kopieer de toegangssleutel en de geheime sleutel.
+3. Vul in: Bucket, Access Key, Secret Key en Regio (bijvoorbeeld us-east-1, eu-central-1).
+   Service-URL wordt automatisch ingevuld.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage - S3-compatibele Russische cloudopslag.
+
+1. In Yandex Cloud Console (https://console.yandex.cloud/) → Objectopslag → maak een bucket.
+2. Ga naar Serviceaccounts → maak er een met de rol storage.editor → maak een statische toegangssleutel.
+   Kopieer de Key ID (= Access Key) en de geheime sleutel.
+3. Vul in: Emmer, Toegangssleutel, Geheime sleutel.
+   Service-URL en regio worden automatisch ingesteld.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box — zakelijke cloudopslag met WebDAV-ondersteuning.
+
+1. Log in op app.box.com. Houd er rekening mee dat Box WebDAV alleen beschikbaar is voor betaalde abonnementen.
+2. Voer het e-mailadres van uw Box-account in als Gebruiker.
+3. Voer uw Box-wachtwoord in als Wachtwoord.
+   Als u SSO gebruikt, moet u mogelijk een afzonderlijk WebDAV-wachtwoord instellen in Accountinstellingen.
+   Serveradres, HTTPS, poort en basispad worden automatisch geconfigureerd.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>Generieke WebDAV-server (Nextcloud, ownCloud, Synology DSM, Seafile, Apache, enz.)
+
+1. Voer het serveradres in, kies HTTPS (aanbevolen) en stel de poort in (0 = standaard: 80 voor HTTP, 443 voor HTTPS).
+2. Voer het basispad voor het WebDAV-eindpunt in.
+   Voorbeeld van Nextcloud: /remote.php/dav/files/&lt;gebruikersnaam&gt;/Backups
+   Synology DSM: /
+3. Voer uw gebruikersnaam en wachtwoord in (of een app-specifiek wachtwoord als uw server dit vereist).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive – Duitse cloudopslag met sterke focus op privacy.
+
+1. Log in op hidrive.ionos.com → Instellingen → Apps en verbonden diensten → WebDAV.
+   Of krijg rechtstreeks toegang tot WebDAV met uw bestaande inloggegevens.
+2. Voer uw HiDrive-gebruikersnaam in als Gebruiker.
+3. Voer uw HiDrive-wachtwoord in als Wachtwoord.
+   Serveradres, HTTPS, poort en basispad worden automatisch geconfigureerd.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) - populaire Chinese cloudopslag met native WebDAV-ondersteuning.
+
+1. Log in op jianguoyun.com → Accountinfo → Beveiliging → App-beheer van derden → Applicatie toevoegen.
+   Kopieer het gegenereerde app-wachtwoord; het wordt slechts één keer weergegeven.
+2. Voer uw Jianguoyun-e-mailadres in als Gebruiker.
+3. Voer het gegenereerde app-wachtwoord in als Wachtwoord.
+   Serveradres, HTTPS, poort en basispad worden automatisch geconfigureerd.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr – privacyvriendelijke cloudopslag gevestigd in Slovenië (EU).
+
+1. Ga naar app.koofr.eu → Voorkeuren → Wachtwoord → App-wachtwoorden → Wachtwoord toevoegen.
+2. Voer het e-mailadres van uw Koofr-account in als Gebruiker.
+3. Voer het gegenereerde app-wachtwoord in als Wachtwoord.
+   Serveradres, HTTPS, poort en basispad worden automatisch geconfigureerd.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Mail.ru Cloud via WebDAV.
+
+1. Ga naar account.mail.ru → Beveiliging → App-wachtwoorden → App-wachtwoord maken.
+   Selecteer &apos;Mail&apos; of &apos;All&apos; als type en kopieer vervolgens het gegenereerde wachtwoord.
+2. Voer uw Mail.ru-e-mailadres in als Gebruiker.
+3. Voer het app-wachtwoord in als Wachtwoord.
+   Serveradres, HTTPS, poort en basispad worden automatisch geconfigureerd.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud – populaire zelfgehoste bestandssynchronisatie en -deling.
+
+1. Voer uw Nextcloud-serveradres in (bijvoorbeeld nextcloud.example.com).
+2. Het basispad is vooraf ingevuld: /remote.php/dav/files/&lt;gebruikersnaam&gt;/
+   Vervang &lt;gebruikersnaam&gt; door uw daadwerkelijke Nextcloud-gebruikersnaam.
+3. Voer uw Nextcloud-gebruikersnaam en wachtwoord in (of een app-wachtwoord van
+   Instellingen → Beveiliging → Apparaten en sessies → App-wachtwoorden).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud – zelfgehoste bestandssynchronisatie en -deling.
+
+1. Voer uw ownCloud-serveradres in (bijvoorbeeld owncloud.example.com).
+2. Het basispad is vooraf ingevuld: /remote.php/dav/files/&lt;gebruikersnaam&gt;/
+   Vervang &lt;gebruikersnaam&gt; door uw werkelijke ownCloud-gebruikersnaam.
+3. Voer uw ownCloud-gebruikersnaam en wachtwoord in (of een app-wachtwoord als 2FA is ingeschakeld).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud – cloudopslag met datacenters in de EU en de VS.
+
+1. Log in op my.pcloud.com → Instellingen → Beveiliging → App-wachtwoorden → Aanmaken.
+   Kopieer het app-wachtwoord: het wordt slechts één keer weergegeven.
+2. Voer het e-mailadres van uw pCloud-account in als Gebruiker.
+3. Voer het app-wachtwoord in als Wachtwoord.
+   Voor EU-datacenters wordt automatisch ewebdav.pcloud.com gebruikt.
+   Voor Amerikaanse datacenters: wijzig de host in webdav.pcloud.com.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>Yandex-schijf via WebDAV.
+
+1. Ga naar id.yandex.com → Beveiliging → App-wachtwoorden → Maak een app-wachtwoord voor &apos;WebDAV-toegang&apos;.
+   Kopieer het gegenereerde wachtwoord; het wordt slechts één keer weergegeven.
+2. Voer uw Yandex-login in als Gebruiker.
+3. Voer het app-wachtwoord in (niet het wachtwoord van uw Yandex-account) als wachtwoord.
+   Serveradres, HTTPS en poort worden automatisch geconfigureerd.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Maak back-ups/synchroniseer uw gegevens op Windows, Linux.
 Importeer foto's van uw telefoon via WI-FI en meer.

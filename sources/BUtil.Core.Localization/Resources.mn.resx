@@ -968,6 +968,267 @@ bin.
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Хэрэглэгч заагдаагүй байна.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — Alibaba-аас S3-тэй нийцтэй объект хадгалах сан.
+
+1. OSS Console (https://oss.console.aliyun.com/) дээр хувин үүсгэ. Түүний бүс нутгийг анхаарна уу (жишээ нь oss-cn-hangzhou).
+2. RAM Console-д → Хэрэглэгчид → хэрэглэгч үүсгэх → AliyunOSSFullAccess-г хавсаргах → AccessKey үүсгэх.
+   AccessKey ID (= Хандалтын Түлхүүр) болон AccessKey Нууц (= Нууц Түлхүүрийг) хуулна уу.
+3. Үйлчилгээний URL: https://oss-&lt;REGION&gt;.aliyuncs.com (жишээ нь: https://oss-cn-hangzhou.aliyuncs.com).
+4. Бүс нутаг: ж.нь. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — Амазоны анхны объект хадгалах сан.
+
+1. S3 консолыг (https://s3.console.aws.amazon.com/) нээж, хувин үүсгэ. Түүний бүс нутгийг тэмдэглэ (жишээ нь us-east-1).
+2. IAM-г нээ → Хэрэглэгчид → хэрэглэгч үүсгэх → AmazonS3FullAccess бодлогыг хавсаргана уу.
+3. Хамгаалалтын итгэмжлэл дор Хандалтын түлхүүр үүсгэнэ үү — Түлхүүр ID болон Нууцыг хуулна.
+4. Бөглөх: хувин, хандалтын түлхүүр, нууц түлхүүр, бүс.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — Baidu-ийн S3-тэй нийцтэй объект хадгалах сан.
+
+1. BOS консол дээр (https://console.bce.baidu.com/bos/) хувин үүсгэ. Түүний бүсийг (жишээ нь bj, gz, su) тэмдэглэ.
+2. Аюулгүй байдал → Хандалтын түлхүүр рүү очно уу — Хандалтын түлхүүрийн ID болон нууц хандалтын түлхүүрээ хуулна уу.
+3. Үйлчилгээний URL: https://s3.&lt;REGION&gt;.bcebos.com (жишээ нь: https://s3.bj.bcebos.com).
+4. Бүс нутаг: ж.нь. bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 - боломжийн үнээр S3-тэй нийцтэй хадгалах сан.
+
+1. Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets дотор хувин үүсгэ.
+2. App Keys → Шинэ Програмын Түлхүүр нэмэх хэсэгт очиж, үүнийг хувин руу шилжүүлнэ үү.
+   Түлхүүр ID (= Хандалтын түлхүүр) болон applicationKey (= Нууц түлхүүр) -ийг хуулна уу.
+3. Үйлчилгээний URL: таны хувингийн төгсгөлийн цэгийг хувингийн дэлгэрэнгүй хэсэгт харуулсан, ж.нь. https://s3.us-west-004.backblazeb2.com
+4. Бүс: &apos;s3&apos;-ын хоорондох сегмент. болон &apos;.backblazeb2.com&apos;, жишээ нь. АНУ-баруун-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 - S3-тэй нийцтэй хадгалах сан.
+
+1. Cloudflare хяналтын самбарт (https://dash.cloudflare.com/) → R2 → хувин үүсгэ.
+2. R2 → Manage R2 API Tokens → Create API Token with Object Read &amp; Write руу очно уу.
+   Хандалтын түлхүүрийн ID болон нууц хандалтын түлхүүрийг хуулна уу.
+3. Үйлчилгээний URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Таны дансны ID-г R2 тойм хуудсан дээр харуулав.
+4. Бөглөх: хувин, хандалтын түлхүүр, нууц түлхүүр, үйлчилгээний URL. Бүсийг автоматаар &quot;автомат&quot; болгож тохируулсан.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Object Storage — S3-тэй нийцтэй OBS хадгалах сан.
+
+1. Cloud.ru консол дээр (https://cloud.ru/) → Object Storage Service (OBS) → хувин үүсгэ.
+2. My Credentials → Access Keys → Access Key нэмэх хэсэгт очно уу.
+   Хандалтын түлхүүр болон нууц хандалтын түлхүүрийг хуулна уу.
+3. Бөглөх: хувин, нэвтрэх түлхүүр, нууц түлхүүр, бүс (жишээ нь, ru-moscow-1).
+   Үйлчилгээний URL автоматаар бөглөгдөнө.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MiniIO эсвэл S3-тэй нийцтэй сервер.
+
+1. MinIO (эсвэл бусад S3-тэй нийцтэй) серверээ эхлүүлнэ үү.
+2. MiniIO Console эсвэл &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;-ээр дамжуулан хувин үүсгэнэ үү.
+3. MiniIO Console → Access Keys-д хандалтын түлхүүр үүсгэнэ үү (үйлдвэрлэлийн үндсэн итгэмжлэлээс зайлсхийх).
+4. Үйлчилгээний URL: таны серверийн эцсийн цэг, жишээ нь. http://192.168.1.10:9000 эсвэл https://minio.example.com.
+5. Бүс: дурын утга (жишээ нь us-east-1) — эсвэл сервер үүнийг хэрэгжүүлэхгүй бол хоосон үлдээнэ үү.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces - S3-тэй нийцтэй объект хадгалах.
+
+1. Spaces (https://cloud.digitalocean.com/spaces) дээр Space үүсгэ. Түүний бүс нутгийг анхаарна уу (жишээ нь nyc3).
+2. API → Spaces Keys → Generate New Key руу очно уу. Түлхүүр (= Хандалтын түлхүүр) болон Нууцыг хуулна уу.
+3. Үйлчилгээний URL: https://&lt;REGION&gt;.digitaloceanspaces.com (жишээ нь: https://nyc3.digitaloceanspaces.com).
+4. Бүс нутаг: ижил богино код, жишээ нь. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — S3 хамтран ажиллах API-ээр дамжуулан.
+
+1. Google Cloud Console (https://console.cloud.google.com/storage) дээр хувин үүсгэнэ үү.
+2. Cloud Storage → Settings → Interoperability → үйлчилгээний дансанд HMAC түлхүүр үүсгэнэ үү.
+   Хандалтын түлхүүр болон нууцыг хуулна уу.
+3. Бөглөх: Хувин, Хандалтын түлхүүр (HMAC түлхүүр), Нууц түлхүүр (HMAC нууц).
+   Үйлчилгээний URL болон бүсийг автоматаар тохируулна.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — Huawei-ээс S3-тэй нийцтэй объект хадгалах сан.
+
+1. OBS консол дээр (https://console.huaweicloud.com/obs/) хувин үүсгэ. Түүний бүс нутгийг анхаарна уу (жишээ нь cn-north-4).
+2. My Credentials → Access Keys → Access Key үүсгэх хэсэгт очно уу.
+   AK (= Хандалтын түлхүүр) болон SK (= Нууц түлхүүр) -ийг хуулна уу.
+3. Үйлчилгээний URL: https://obs.&lt;REGION&gt;.myhuaweicloud.com (жишээ нь: https://obs.cn-north-4.myhuaweicloud.com).
+4. Бүс нутаг: ж.нь. cn-хойд-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Object Storage — S3-тэй нийцтэй хадгалах сан.
+
+1. Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets) дээр хувин үүсгэ. Түүний кластерийг тэмдэглэ.
+2. Объект хадгалах → Хандалтын товчлуурууд → Хандалтын түлхүүрийг хувин руу чиглүүлэх хэсэгт очно уу.
+   Хандалтын түлхүүр болон нууц түлхүүрийг хуулна уу.
+3. Үйлчилгээний URL: https://&lt;CLUSTER&gt;.linodeobjects.com (жишээ нь: https://us-east-1.linodeobjects.com).
+4. Бүс нутаг: ижил кластер код, жишээ нь. АНУ-зүүн-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — Qiniu-ийн S3-тэй нийцтэй хадгалах сан.
+
+1. Qiniu Portal (https://portal.qiniu.com/kodo/bucket) дээр хувин үүсгэ. Түүний бүс нутгийг тэмдэглэ.
+2. Хувийн төв → Түлхүүрийн менежмент рүү очно уу — AccessKey болон SecretKey-ээ хуулна уу.
+3. Үйлчилгээний URL бүсээр:
+   Зүүн Хятад: https://s3-cn-east-1.qiniucs.com
+   Хойд Хятад: https://s3-cn-north-1.qiniucs.com
+   Өмнөд Хятад: https://s3-cn-south-1.qiniucs.com
+   Хойд Америк: https://s3-us-north-1.qiniucs.com
+4. Бүс нутаг: тохирох код, жишээ нь. cn-зүүн-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — Европын S3-тэй нийцтэй хадгалах сан.
+
+1. Scaleway консол дээр (https://console.scaleway.com/object-storage/buckets) хувин үүсгэ. Бүс нутгийг нь анхаарна уу (жишээ нь: fr-par).
+2. IAM → API Түлхүүрүүд → Object Storage бичих зөвшөөрөлтэй API Түлхүүрийг үүсгэнэ үү.
+   Хандалтын түлхүүр болон нууц түлхүүрийг хуулна уу.
+3. Үйлчилгээний URL: https://s3.&lt;REGION&gt;.scw.cloud (жишээ нь: https://s3.fr-par.scw.cloud).
+4. Бүс нутаг: ж.нь. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage - S3-тэй нийцтэй орос хадгалах сан.
+
+1. Selectel самбар дээр (https://my.selectel.ru/) → Cloud Storage → сав (= хувин) үүсгэ.
+2. Хэрэглэгчид ба үүрэг хэсэгт хадгалах хандалттай үйлчилгээний хэрэглэгч үүсгэнэ үү → S3 түлхүүр → түлхүүрийн хослол үүсгэнэ үү.
+   Хандалтын түлхүүр болон нууц түлхүүрийг хуулна уу.
+3. Бөглөх: хувин, нэвтрэх түлхүүр, нууц түлхүүр.
+   Үйлчилгээний URL автоматаар бөглөгдөнө.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — Tencent-ийн S3-тэй нийцтэй объект хадгалах сан.
+
+1. COS Console (https://console.cloud.tencent.com/cos) дээр хувин үүсгэ. AppId болон бүс нутгийг анхаарна уу (жишээ нь, ap-beijing).
+2. Хандалтын менежмент → API түлхүүрүүд → Түлхүүр үүсгэх.
+   SecretId (= Нэвтрэх Түлхүүр) болон SecretKey (= Нууц Түлхүүрийг) хуулна уу.
+3. Үйлчилгээний URL: https://cos.&lt;REGION&gt;.myqcloud.com (жишээ нь: https://cos.ap-beijing.myqcloud.com).
+4. Шанаганы нэрийн формат: &lt;name&gt;-&lt;AppId&gt; (жишээ нь mybucket-1250000000). Бүс нутаг: ж.нь. ап-бээжин.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — VK Cloud-аас S3-тэй нийцтэй хадгалах сан.
+
+1. VK Cloud Portal-д (https://msk.cloud.vk.com/) → Cloud Storage → хувин үүсгэ.
+2. Бүртгэлийнхээ доор → Хандалтын түлхүүр → шинэ түлхүүрийн хослол үүсгэ.
+   Хандалтын түлхүүр болон нууц түлхүүрийг хуулна уу.
+3. Бөглөх: хувин, нэвтрэх түлхүүр, нууц түлхүүр, шаардлагатай бол бүс (жишээ нь, ru-msk).
+   Үйлчилгээний URL автоматаар бөглөгдөнө.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Галт уулын хөдөлгүүрийн TOS (ByteDance) - S3-тэй нийцтэй хадгалах сан.
+
+1. Галт уулын хөдөлгүүрийн консол (https://console.volcengine.com/tos) дээр хувин үүсгэ. Түүний бүс нутгийг анхаарна уу (жишээ нь, cn-beijing).
+2. IAM → Access Keys → түлхүүр үүсгэнэ үү.
+   Хандалтын түлхүүрийн ID болон нууц хандалтын түлхүүрийг хуулна уу.
+3. Үйлчилгээний URL: https://tos-s3-&lt;REGION&gt;.volces.com (жишээ нь: https://tos-s3-cn-beijing.volces.com).
+4. Бүс нутаг: ж.нь. cn-beijing.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Васаби - гарах хураамжгүй халуун үүл хадгалах.
+
+1. Wasabi консол дээр (https://console.wasabisys.com/) → Buckets → Create Bucket. Бүс нутгаа сонгоно уу.
+2. Хандалтын түлхүүр → Шинэ хандалтын түлхүүр үүсгэх хэсэгт очно уу. Хандалтын түлхүүр болон нууц түлхүүрийг хуулна уу.
+3. Бөглөх: Хувин, Хандалтын түлхүүр, Нууц түлхүүр, бүс (жишээ нь us-east-1, eu-central-1).
+   Үйлчилгээний URL автоматаар бөглөгдөнө.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage - S3-тэй нийцтэй Оросын үүл хадгалах сан.
+
+1. Yandex Cloud Console-д (https://console.yandex.cloud/) → Объект хадгалах → хувин үүсгэ.
+2. Үйлчилгээний данс руу очно уу → storage.editor үүрэг бүхий нэгийг үүсгэ → Статик хандалтын түлхүүр үүсгэнэ үү.
+   Түлхүүр ID (= Хандалтын түлхүүр) болон Нууц түлхүүрийг хуулна уу.
+3. Бөглөх: хувин, нэвтрэх түлхүүр, нууц түлхүүр.
+   Үйлчилгээний URL болон бүсийг автоматаар тохируулна.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Шигтгээ — WebDAV дэмжлэгтэй байгууллагын үүл хадгалах сан.
+
+1. app.box.com хаягаар нэвтэрнэ үү. Box WebDAV нь зөвхөн төлбөртэй төлөвлөгөөнд ашиглах боломжтой гэдгийг анхаарна уу.
+2. Хэрэглэгчийн нэрээр Box дансны имэйлээ оруулна уу.
+3. Нууц үг болгон Box нууц үгээ оруулна уу.
+   Хэрэв та SSO ашигладаг бол Бүртгэлийн тохиргоо хэсэгт тусдаа WebDAV нууц үг тохируулах шаардлагатай байж магадгүй.
+   Серверийн хаяг, HTTPS, порт, үндсэн зам автоматаар тохируулагдана.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>Ерөнхий WebDAV сервер (Nextcloud, ownCloud, Synology DSM, Seafile, Apache гэх мэт)
+
+1. Серверийн хаягийг оруулаад HTTPS (санал болгосон) сонгоод портыг тохируулна уу (0 = анхдагч: HTTP-д 80, HTTPS-д 443).
+2. WebDAV төгсгөлийн цэгийн үндсэн замыг оруулна уу.
+   Nextcloud жишээ: /remote.php/dav/files/&lt;хэрэглэгчийн нэр&gt;/Нөөцлөлт
+   Synology DSM: /
+3. Хэрэглэгчийн нэр болон нууц үгээ (эсвэл таны сервер шаардлагатай бол програмын тусгай нууц үг) оруулна уу.</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive - Хувийн нууцлалыг хадгалахад чиглэсэн Германы үүлэн сан.
+
+1. hidrive.ionos.com → Тохиргоо → Апп, холбогдсон үйлчилгээ → WebDAV хаягаар нэвтэрнэ үү.
+   Эсвэл одоо байгаа итгэмжлэлээрээ WebDAV-д шууд хандаарай.
+2. Хэрэглэгчийн хувьд HiDrive хэрэглэгчийн нэрээ оруулна уу.
+3. HiDrive нууц үгээ нууц үг болгон оруулна уу.
+   Серверийн хаяг, HTTPS, порт, үндсэн зам автоматаар тохируулагдана.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Жиангуоюн (坚果云) — эх WebDAV дэмжлэгтэй Хятадын алдартай үүл хадгалах сан.
+
+1. jianguoyun.com → Бүртгэлийн мэдээлэл → Аюулгүй байдал → Гуравдагч этгээдийн програмын удирдлага → Програм нэмнэ үү.
+   Үүсгэсэн програмын нууц үгийг хуулна уу - энэ нь зөвхөн нэг удаа харагдана.
+2. Хэрэглэгчийн хувьд Jianguoyun имэйл хаягаа оруулна уу.
+3. Үүсгэсэн програмын нууц үгийг Нууц үг болгон оруулна уу.
+   Серверийн хаяг, HTTPS, порт, үндсэн зам автоматаар тохируулагдана.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr — Словени (ЕХ)-д суурилсан нууцлалд ээлтэй үүлэн сан.
+
+1. App.koofr.eu → Тохиргоо → Нууц үг → Апп нууц үг → Нууц үг нэмнэ үү.
+2. Koofr бүртгэлийн имэйлээ Хэрэглэгчээр оруулна уу.
+3. Үүсгэсэн програмын нууц үгийг Нууц үг болгон оруулна уу.
+   Серверийн хаяг, HTTPS, порт, үндсэн зам автоматаар тохируулагдана.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>WebDAV-ээр дамжуулан Mail.ru Cloud.
+
+1. account.mail.ru → Аюулгүй байдал → Апп нууц үг → Програмын нууц үг үүсгэх хэсэгт очно уу.
+   &quot;Мэйл&quot; эсвэл &quot;Бүгд&quot; гэсэн төрлийг сонгоод үүсгэсэн нууц үгээ хуулна уу.
+2. Хэрэглэгчийн хувьд Mail.ru цахим шуудангийн хаягаа оруулна уу.
+3. Програмын нууц үгийг Нууц үг болгон оруулна уу.
+   Серверийн хаяг, HTTPS, порт, үндсэн зам автоматаар тохируулагдана.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud - алдартай өөрөө байршуулсан файлыг синк хийх, хуваалцах.
+
+1. Nextcloud серверийн хаягаа оруулна уу (жишээ нь: nextcloud.example.com).
+2. Үндсэн замыг урьдчилан бөглөсөн байна: /remote.php/dav/files/&lt;хэрэглэгчийн нэр&gt;/
+   &lt;хэрэглэгчийн нэр&gt;-г өөрийн жинхэнэ Nextcloud хэрэглэгчийн нэрээр солино уу.
+3. Nextcloud хэрэглэгчийн нэр болон нууц үгээ (эсвэл програмын нууц үгээ) оруулна уу
+   Тохиргоо → Аюулгүй байдал → Төхөөрөмж ба сесс → Апп нууц үг).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud - өөрөө байршуулсан файлыг синк хийх, хуваалцах.
+
+1. Өөрийн Cloud серверийн хаягийг оруулна уу (жишээ нь, owncloud.example.com).
+2. Үндсэн замыг урьдчилан бөглөсөн байна: /remote.php/dav/files/&lt;хэрэглэгчийн нэр&gt;/
+   &lt;хэрэглэгчийн нэр&gt;-г өөрийн жинхэнэ өөрийн Cloud хэрэглэгчийн нэрээр солино уу.
+3. Өөрийн Cloud хэрэглэгчийн нэр болон нууц үгээ (эсвэл 2FA идэвхжсэн бол програмын нууц үг) оруулна уу.</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud - ЕХ болон АНУ-ын мэдээллийн төвүүдтэй үүлэн хадгалах сан.
+
+1. my.pcloud.com → Тохиргоо → Аюулгүй байдал → Апп нууц үг → Үүсгэх хэсэгт нэвтэрнэ үү.
+   Програмын нууц үгийг хуулах - энэ нь зөвхөн нэг удаа харагдана.
+2. Хэрэглэгчийн нэрээр pCloud бүртгэлийн имэйлээ оруулна уу.
+3. Програмын нууц үгийг Нууц үг болгон оруулна уу.
+   ЕХ-ны мэдээллийн төвийн хувьд: ewebdav.pcloud.com автоматаар ашиглагддаг.
+   АНУ-ын дата төвийн хувьд: хостыг webdav.pcloud.com болгож өөрчил.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>WebDAV-ээр дамжуулан Yandex диск.
+
+1. id.yandex.com → Аюулгүй байдал → Апп нууц үг → &quot;WebDAV хандалт&quot;-д зориулсан програмын нууц үгийг үүсгэнэ үү.
+   Үүсгэсэн нууц үгээ хуулна уу - энэ нь зөвхөн нэг удаа харагдана.
+2. Хэрэглэгчийн нэрээр Yandex-д нэвтрэх нэрээ оруулна уу.
+3. Нууц үг болгон програмын нууц үгийг (таны Yandex дансны нууц үг биш) оруулна уу.
+   Серверийн хаяг, HTTPS болон портыг автоматаар тохируулдаг.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Windows, Linux дээр өгөгдлөө нөөцлөх/синхрончлох.
 Утаснаас WI-FI-аар зураг импортлох болон бусад.

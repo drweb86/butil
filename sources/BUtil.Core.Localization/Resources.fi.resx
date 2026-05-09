@@ -967,6 +967,267 @@ Katso yksityiskohtainen kuvaus seuraavasta linkistä.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Käyttäjää ei ole määritetty.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — S3-yhteensopiva objektitallennus Alibabalta.
+
+1. Luo ämpäri OSS-konsolissa (https://oss.console.aliyun.com/). Huomaa sen alue (esim. oss-cn-hangzhou).
+2. Kohdassa RAM-konsoli → Käyttäjät → luo käyttäjä → liitä AliyunOSSFullAccess → luo AccessKey.
+   Kopioi AccessKey ID (= Access Key) ja AccessKey Secret (= Secret Key).
+3. Palvelun URL-osoite: https://oss-&lt;ALUE&gt;.aliyuncs.com (esim. https://oss-cn-hangzhou.aliyuncs.com).
+4. Alue: esim. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 – Amazonin alkuperäinen objektitallennus.
+
+1. Avaa S3-konsoli (https://s3.console.aws.amazon.com/) ja luo lokero. Huomaa sen alue (esim. us-itä-1).
+2. Avaa IAM → Käyttäjät → luo käyttäjä → liitä AmazonS3FullAccess-käytäntö.
+3. Luo Suojaustunnukset-kohdassa pääsyavain – kopioi avaimen tunnus ja salaisuus.
+4. Täytä: Säiliö, pääsyavain, salainen avain ja alue.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — S3-yhteensopiva objektitallennus Baidulta.
+
+1. Luo ryhmä BOS-konsolissa (https://console.bce.baidu.com/bos/). Huomaa sen alue (esim. bj, gz, su).
+2. Siirry kohtaan Suojaus → Pääsyavaimet — kopioi pääsyavaimen tunnuksesi ja salainen käyttöavain.
+3. Palvelun URL-osoite: https://s3.&lt;ALUE&gt;.bcebos.com (esim. https://s3.bj.bcebos.com).
+4. Alue: esim. bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 – edullinen S3-yhteensopiva tallennustila.
+
+1. Luo kauha kohdassa Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets.
+2. Siirry kohtaan Sovellusavaimet → Lisää uusi sovellusavain, siirrä se ämpäriin.
+   Kopioi avaintunnus (= pääsyavain) ja sovellusavain (= salainen avain).
+3. Palvelun URL-osoite: Säilön päätepiste, joka näkyy ryhmän tiedoissa, esim. https://s3.us-west-004.backblazeb2.com
+4. Alue: segmentti välillä &quot;s3.&quot; ja &quot;.backblazeb2.com&quot;, esim. us-länsi-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — nollapoiston S3-yhteensopiva tallennustila.
+
+1. Cloudflare Dashboardissa (https://dash.cloudflare.com/) → R2 → luo ämpäri.
+2. Siirry kohtaan R2 → Hallitse R2 API-tunnuksia → Luo API-tunnus objektin lukemalla ja kirjoittamalla.
+   Kopioi pääsyavaimen tunnus ja salainen käyttöavain.
+3. Palvelun URL-osoite: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Tilitunnuksesi näkyy R2:n yleiskatsaussivulla.
+4. Täytä: Säiliö, pääsyavain, salainen avain ja palvelun URL-osoite. Alue asetetaan automaattisesti tilaan &quot;auto&quot;.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Object Storage — S3-yhteensopiva OBS-tallennus.
+
+1. Cloud.ru-konsolissa (https://cloud.ru/) → Object Storage Service (OBS) → luo ämpäri.
+2. Siirry kohtaan My Credentials → Access Keys → Add Access Key.
+   Kopioi pääsyavain ja salainen pääsyavain.
+3. Täytä: Bucket, Access Key, Secret Key ja Region (esim. ru-moscow-1).
+   Palvelun URL-osoite täytetään automaattisesti.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO tai mikä tahansa S3-yhteensopiva palvelin.
+
+1. Käynnistä MinIO (tai muu S3-yhteensopiva) palvelin.
+2. Luo ryhmä MinIO-konsolin tai &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos; kautta.
+3. Luo pääsyavain kohdassa MinIO Console → Access Keys (vältä juurivaltuuksia tuotannossa).
+4. Palvelun URL-osoite: palvelimesi päätepiste, esim. http://192.168.1.10:9000 tai https://minio.example.com.
+5. Alue: mikä tahansa arvo (esim. us-east-1) – tai jätä tyhjäksi, jos palvelin ei pakota sitä.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — S3-yhteensopiva objektin tallennus.
+
+1. Luo välilyönti Spacesissa (https://cloud.digitalocean.com/spaces). Huomaa sen alue (esim. nyc3).
+2. Siirry kohtaan API → Spaces Keys → Generate New Key. Kopioi avain (= pääsyavain) ja salainen.
+3. Palvelun URL-osoite: https://&lt;ALUE&gt;.digitaloceanspaces.com (esim. https://nyc3.digitaloceanspaces.com).
+4. Alue: sama lyhytkoodi, esim. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage – S3-yhteentoimivuussovellusliittymän kautta.
+
+1. Luo ryhmä Google Cloud Consolessa (https://console.cloud.google.com/storage).
+2. Siirry kohtaan Cloud Storage → Settings → Interoperability → luo HMAC-avain palvelutilille.
+   Kopioi pääsyavain ja salaisuus.
+3. Täytä: Säiliö, pääsyavain (HMAC-avain), salainen avain (HMAC-salaisuus).
+   Palvelun URL-osoite ja alue asetetaan automaattisesti.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — S3-yhteensopiva objektitallennus Huaweilta.
+
+1. Luo ryhmä OBS-konsolissa (https://console.huaweicloud.com/obs/). Huomaa sen alue (esim. cn-north-4).
+2. Siirry kohtaan My Credentials → Access Keys → Create Access Key.
+   Kopioi AK (= pääsyavain) ja SK (= salainen avain).
+3. Palvelun URL-osoite: https://obs.&lt;ALUE&gt;.myhuaweicloud.com (esim. https://obs.cn-north-4.myhuaweicloud.com).
+4. Alue: esim. cn-north-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Object Storage — S3-yhteensopiva tallennustila.
+
+1. Luo ämpäri Linode Cloud Managerissa (https://cloud.linode.com/object-storage/buckets). Huomaa sen klusteri.
+2. Siirry kohtaan Object Storage → Access Keys → Create an Access Key, jonka laajuus on ämpäri.
+   Kopioi pääsyavain ja salainen avain.
+3. Palvelun URL-osoite: https://&lt;CLUSTER&gt;.linodeobjects.com (esim. https://us-east-1.linodeobjects.com).
+4. Alue: sama klusterikoodi, esim. us-itä-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — S3-yhteensopiva tallennustila Qiniulta.
+
+1. Luo ämpäri Qiniu Portalissa (https://portal.qiniu.com/kodo/bucket). Huomaa sen alue.
+2. Siirry kohtaan Personal Center → Key Management — kopioi AccessKey ja SecretKey.
+3. Palvelun URL-osoite alueen mukaan:
+   Itä-Kiina: https://s3-cn-east-1.qiniucs.com
+   Pohjois-Kiina: https://s3-cn-north-1.qiniucs.com
+   Etelä-Kiina: https://s3-cn-south-1.qiniucs.com
+   Pohjois-Amerikka: https://s3-us-north-1.qiniucs.com
+4. Alue: vastaava koodi, esim. cn-itä-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — eurooppalainen S3-yhteensopiva tallennustila.
+
+1. Luo ryhmä Scaleway-konsolissa (https://console.scaleway.com/object-storage/buckets). Huomaa sen alue (esim. fr-par).
+2. Siirry kohtaan IAM → API Keys → Generate API Key with Object Storage kirjoitusoikeudet.
+   Kopioi pääsyavain ja salainen avain.
+3. Palvelun URL-osoite: https://s3.&lt;ALUE&gt;.scw.cloud (esim. https://s3.fr-par.scw.cloud).
+4. Alue: esim. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — S3-yhteensopiva venäläinen tallennustila.
+
+1. Valitse Selectel Panel (https://my.selectel.ru/) → Cloud Storage → luo säilö (= ämpäri).
+2. Luo Käyttäjät ja roolit -kohdassa palvelun käyttäjä, jolla on tallennustila → S3-avaimet → luo avainpari.
+   Kopioi pääsyavain ja salainen avain.
+3. Täytä: ämpäri, pääsyavain, salainen avain.
+   Palvelun URL-osoite täytetään automaattisesti.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — S3-yhteensopiva objektitallennus Tencentiltä.
+
+1. Luo ryhmä COS-konsolissa (https://console.cloud.tencent.com/cos). Huomaa AppId ja alue (esim. ap-beijing).
+2. Kohdassa Access Management → API Keys → Create Key.
+   Kopioi SecretId (= pääsyavain) ja SecretKey (= salainen avain).
+3. Palvelun URL-osoite: https://cos.&lt;REGION&gt;.myqcloud.com (esim. https://cos.ap-beijing.myqcloud.com).
+4. Ryhmän nimen muoto: &lt;nimi&gt;-&lt;AppId&gt; (esim. mybucket-1250000000). Alue: esim. ap-peking.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — S3-yhteensopiva tallennustila VK Cloudista.
+
+1. VK Cloud Portalissa (https://msk.cloud.vk.com/) → Cloud Storage → luo ämpäri.
+2. Luo uusi avainpari valitsemalla tilisi → Käyttöavaimet →.
+   Kopioi pääsyavain ja salainen avain.
+3. Täytä: Bucket, Access Key, Secret Key ja Region tarvittaessa (esim. ru-msk).
+   Palvelun URL-osoite täytetään automaattisesti.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — S3-yhteensopiva tallennustila.
+
+1. Luo ämpäri Volcano Engine Consolessa (https://console.volcengine.com/tos). Huomaa sen alue (esim. cn-beijing).
+2. Siirry kohtaan IAM → Access Keys → luo avain.
+   Kopioi pääsyavaimen tunnus ja salainen käyttöavain.
+3. Palvelun URL-osoite: https://tos-s3-&lt;ALUE&gt;.volces.com (esim. https://tos-s3-cn-beijing.volces.com).
+4. Alue: esim. cn-peking.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi – kuuma pilvitallennus ilman poistumismaksuja.
+
+1. Wasabi Consolessa (https://console.wasabisys.com/) → Buckets → Create Bucket. Valitse alue.
+2. Siirry kohtaan Käyttöavain → Luo uusi käyttöavain. Kopioi pääsyavain ja salainen avain.
+3. Täytä: Säiliö, pääsyavain, salainen avain ja alue (esim. us-east-1, eu-central-1).
+   Palvelun URL-osoite täytetään automaattisesti.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage — S3-yhteensopiva venäläinen pilvitallennus.
+
+1. Yandex Cloud Consolessa (https://console.yandex.cloud/) → Object Storage → luo kauha.
+2. Siirry kohtaan Palvelutilit → luo tili storage.editorin roolilla → luo staattinen käyttöavain.
+   Kopioi avaintunnus (= pääsyavain) ja salainen avain.
+3. Täytä: ämpäri, pääsyavain, salainen avain.
+   Palvelun URL-osoite ja alue asetetaan automaattisesti.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box – yrityksen pilvitallennustila WebDAV-tuella.
+
+1. Kirjaudu sisään osoitteessa app.box.com. Huomaa, että Box WebDAV on saatavilla vain maksullisille suunnitelmille.
+2. Kirjoita Box-tilisi sähköpostiosoite Käyttäjäksi.
+3. Kirjoita laatikon salasana salasanaksi.
+   Jos käytät kertakirjautumista, sinun on ehkä asetettava erillinen WebDAV-salasana Tilin asetuksissa.
+   Palvelimen osoite, HTTPS, portti ja peruspolku määritetään automaattisesti.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>Yleinen WebDAV-palvelin (Nextcloud, ownCloud, Synology DSM, Seafile, Apache jne.)
+
+1. Anna palvelimen osoite, valitse HTTPS (suositus) ja aseta portti (0 = oletus: 80 HTTP:lle, 443 HTTPS:lle).
+2. Anna WebDAV-päätepisteen peruspolku.
+   Nextcloud-esimerkki: /remote.php/dav/files/&lt;käyttäjänimi&gt;/Varmuuskopiot
+   Synology DSM: /
+3. Anna käyttäjätunnuksesi ja salasanasi (tai sovelluskohtainen salasana, jos palvelimesi vaatii sitä).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive — saksalainen pilvitallennus, jossa vahva yksityisyys.
+
+1. Kirjaudu sisään osoitteessa hidrive.ionos.com → Asetukset → Sovellukset ja yhdistetyt palvelut → WebDAV.
+   Tai käytä WebDAV:ia suoraan olemassa olevilla tunnistetiedoillasi.
+2. Kirjoita HiDrive-käyttäjänimesi Käyttäjäksi.
+3. Kirjoita HiDrive-salasanasi salasanaksi.
+   Palvelimen osoite, HTTPS, portti ja peruspolku määritetään automaattisesti.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) – suosittu kiinalainen pilvitallennustila, jossa on natiivi WebDAV-tuki.
+
+1. Kirjaudu sisään osoitteessa jinguoyun.com → Tilitiedot → Suojaus → Kolmannen osapuolen sovellusten hallinta → Lisää sovellus.
+   Kopioi luotu sovelluksen salasana – se näytetään vain kerran.
+2. Kirjoita Jianguoyun-sähköpostiosoitteesi Käyttäjäksi.
+3. Kirjoita luotu sovelluksen salasana salasanaksi.
+   Palvelimen osoite, HTTPS, portti ja peruspolku määritetään automaattisesti.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr – tietosuojaystävällinen pilvitallennus, joka sijaitsee Sloveniassa (EU).
+
+1. Siirry osoitteeseen app.koofr.eu → Asetukset → Salasana → Sovellusten salasanat → Lisää salasana.
+2. Kirjoita Koofr-tilisi sähköpostiosoite Käyttäjäksi.
+3. Kirjoita luotu sovelluksen salasana salasanaksi.
+   Palvelimen osoite, HTTPS, portti ja peruspolku määritetään automaattisesti.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Mail.ru Cloud WebDAV:n kautta.
+
+1. Siirry osoitteeseen account.mail.ru → Suojaus → Sovellussalasanat → Luo sovelluksen salasana.
+   Valitse tyypiksi &quot;Posti&quot; tai &quot;Kaikki&quot; ja kopioi sitten luotu salasana.
+2. Kirjoita Mail.ru-sähköpostiosoitteesi Käyttäjäksi.
+3. Kirjoita sovelluksen salasana salasanaksi.
+   Palvelimen osoite, HTTPS, portti ja peruspolku määritetään automaattisesti.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud – suosittu itseisännöity tiedostojen synkronointi ja jakaminen.
+
+1. Kirjoita Nextcloud-palvelimesi osoite (esim. nextcloud.example.com).
+2. Peruspolku on esitäytetty: /remote.php/dav/files/&lt;käyttäjänimi&gt;/
+   Korvaa &lt;käyttäjänimi&gt; todellisella Nextcloud-käyttäjänimelläsi.
+3. Kirjoita Nextcloud-käyttäjänimesi ja salasanasi (tai sovelluksen salasana osoitteesta
+   Asetukset → Suojaus → Laitteet ja istunnot → Sovellusten salasanat).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud – itseisännöity tiedostojen synkronointi ja jakaminen.
+
+1. Kirjoita ownCloud-palvelimesi osoite (esim. owncloud.example.com).
+2. Peruspolku on esitäytetty: /remote.php/dav/files/&lt;käyttäjänimi&gt;/
+   Korvaa &lt;käyttäjänimi&gt; todellisella ownCloud-käyttäjänimelläsi.
+3. Anna ownCloud-käyttäjänimesi ja salasanasi (tai sovelluksen salasana, jos 2FA on käytössä).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud – pilvitallennus EU:n ja Yhdysvaltojen datakeskuksilla.
+
+1. Kirjaudu sisään osoitteessa my.pcloud.com → Asetukset → Suojaus → Sovellussalasanat → Luo.
+   Kopioi sovelluksen salasana - se näytetään vain kerran.
+2. Kirjoita pCloud-tilisi sähköpostiosoite Käyttäjäksi.
+3. Kirjoita sovelluksen salasana salasanaksi.
+   EU-palvelinkeskuksessa: ewebdav.pcloud.com käytetään automaattisesti.
+   Yhdysvaltain palvelinkeskus: vaihda isäntänä webdav.pcloud.com.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>Yandex Disk WebDAV:n kautta.
+
+1. Siirry osoitteeseen id.yandex.com → Suojaus → Sovellusten salasanat → Luo sovelluksen salasana &apos;WebDAV-käyttöä varten&apos;.
+   Kopioi luotu salasana - se näytetään vain kerran.
+2. Anna Yandex-kirjautumistunnuksesi Käyttäjäksi.
+3. Kirjoita sovelluksen salasana (ei Yandex-tilisi salasana) salasanaksi.
+   Palvelimen osoite, HTTPS ja portti määritetään automaattisesti.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Varmuuskopioi/synkronoi tietosi Windowsissa, Linuxissa.
 Tuo valokuvia puhelimesta WI-FI:n kautta ja paljon muuta.

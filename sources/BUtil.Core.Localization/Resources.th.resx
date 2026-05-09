@@ -967,6 +967,267 @@ bin
   <data name="User_Field_Validation" xml:space="preserve">
     <value>ไม่ได้ระบุผู้ใช้</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — พื้นที่จัดเก็บอ็อบเจ็กต์ที่รองรับ S3 จาก Alibaba
+
+1. ใน OSS Console (https://oss.console.aliyun.com/) ให้สร้างบัคเก็ต สังเกตภูมิภาค (เช่น oss-cn-hangzhou)
+2. ในคอนโซล RAM → ผู้ใช้ → สร้างผู้ใช้ → แนบ AliyunOSSFullAccess → สร้าง AccessKey
+   คัดลอก AccessKey ID (= รหัสการเข้าถึง) และรหัสลับของ AccessKey (= รหัสลับ)
+3. URL บริการ: https://oss-&lt;REGION&gt;.aliyuncs.com (เช่น https://oss-cn-hangzhou.aliyuncs.com)
+4. ภูมิภาค: เช่น oss-cn-หางโจว</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — พื้นที่จัดเก็บอ็อบเจ็กต์ดั้งเดิมของ Amazon
+
+1. เปิด S3 Console (https://s3.console.aws.amazon.com/) และสร้างบัคเก็ต สังเกตภูมิภาค (เช่น us-east-1)
+2. เปิด IAM → ผู้ใช้ → สร้างผู้ใช้ → แนบนโยบาย AmazonS3FullAccess
+3. ภายใต้ข้อมูลรับรองความปลอดภัย ให้สร้างคีย์การเข้าถึง — คัดลอกรหัสคีย์และความลับ
+4. กรอก: Bucket, Access Key, Secret Key และ Region</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — พื้นที่จัดเก็บอ็อบเจ็กต์ที่เข้ากันได้กับ S3 จาก Baidu
+
+1. ใน BOS Console (https://console.bce.baidu.com/bos/) ให้สร้างบัคเก็ต สังเกตภูมิภาค (เช่น bj, gz, su)
+2. ไปที่ความปลอดภัย → คีย์การเข้าถึง — คัดลอก ID คีย์การเข้าถึงและคีย์การเข้าถึงข้อมูลลับของคุณ
+3. URL บริการ: https://s3.&lt;REGION&gt;.bcebos.com (เช่น https://s3.bj.bcebos.com)
+4. ภูมิภาค: เช่น บีเจ</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — พื้นที่จัดเก็บข้อมูลที่เข้ากันได้กับ S3 ราคาไม่แพง
+
+1. ใน Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets สร้างบัคเก็ต
+2. ไปที่คีย์แอป → เพิ่มคีย์แอปพลิเคชันใหม่ กำหนดขอบเขตไว้ที่บัคเก็ต
+   คัดลอก keyID (= รหัสการเข้าถึง) และ applicationKey (= รหัสลับ)
+3. URL บริการ: ตำแหน่งข้อมูลบัคเก็ตของคุณแสดงในรายละเอียดบัคเก็ต เช่น https://s3.us-west-004.backblazeb2.com
+4. ภูมิภาค: ส่วนระหว่าง &apos;s3&apos; และ &apos;.backblazeb2.com&apos; เช่น us-west-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — พื้นที่จัดเก็บข้อมูลที่เข้ากันได้กับ S3 แบบไม่มีทางออก
+
+1. ใน Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → สร้างบัคเก็ต
+2. ไปที่ R2 → จัดการโทเค็น R2 API → สร้างโทเค็น API ด้วยการอ่านและเขียนวัตถุ
+   คัดลอกรหัสการเข้าถึงและรหัสการเข้าถึงข้อมูลลับ
+3. URL บริการ: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   รหัสบัญชีของคุณจะแสดงอยู่ในหน้าภาพรวม R2
+4. กรอก: Bucket, Access Key, Secret Key และ Service URL ภูมิภาคถูกตั้งค่าเป็น &apos;อัตโนมัติ&apos; โดยอัตโนมัติ</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Object Storage — พื้นที่จัดเก็บ OBS ที่รองรับ S3
+
+1. ในคอนโซล Cloud.ru (https://cloud.ru/) → Object Storage Service (OBS) → สร้างที่เก็บข้อมูล
+2. ไปที่ข้อมูลประจำตัวของฉัน → คีย์การเข้าถึง → เพิ่มคีย์การเข้าถึง
+   คัดลอกคีย์การเข้าถึงและคีย์การเข้าถึงข้อมูลลับ
+3. กรอก: Bucket, Access Key, Secret Key และ Region (เช่น ru-moscow-1)
+   URL บริการจะถูกกรอกโดยอัตโนมัติ</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MiniIO หรือเซิร์ฟเวอร์ที่รองรับ S3
+
+1. เริ่มเซิร์ฟเวอร์ MiniIO ของคุณ (หรือเซิร์ฟเวอร์ที่รองรับ S3 อื่นๆ)
+2. สร้างบัคเก็ตผ่านคอนโซล MiniIO หรือ &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;
+3. สร้างคีย์การเข้าถึงในคอนโซล MiniIO → คีย์การเข้าถึง (หลีกเลี่ยงข้อมูลรับรองรูทในการผลิต)
+4. URL บริการ: จุดสิ้นสุดเซิร์ฟเวอร์ของคุณ เช่น http://192.168.1.10:9000 หรือ https://minio.example.com
+5. ภูมิภาค: ค่าใดๆ (เช่น us-east-1) — หรือเว้นว่างไว้หากเซิร์ฟเวอร์ไม่บังคับใช้</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — พื้นที่จัดเก็บอ็อบเจ็กต์ที่รองรับ S3
+
+1. ใน Spaces (https://cloud.digitalocean.com/spaces) ให้สร้าง Space สังเกตภูมิภาค (เช่น NYC3)
+2. ไปที่ API → Spaces Keys → สร้างคีย์ใหม่ คัดลอกคีย์ (= คีย์การเข้าถึง) และความลับ
+3. URL บริการ: https://&lt;REGION&gt;.digitaloceanspaces.com (เช่น https://nyc3.digitaloceanspaces.com)
+4. ภูมิภาค: รหัสสั้นเดียวกัน เช่น เอ็นซี3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — ผ่าน S3 interoperability API
+
+1. ใน Google Cloud Console (https://console.cloud.google.com/storage) ให้สร้างที่เก็บข้อมูล
+2. ไปที่ Cloud Storage → การตั้งค่า → การทำงานร่วมกัน → สร้างคีย์ HMAC สำหรับบัญชีบริการ
+   คัดลอกรหัสการเข้าถึงและความลับ
+3. กรอก: บัคเก็ต, คีย์การเข้าถึง (คีย์ HMAC), คีย์ลับ (ความลับ HMAC)
+   URL บริการและภูมิภาคได้รับการตั้งค่าโดยอัตโนมัติ</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — พื้นที่จัดเก็บอ็อบเจ็กต์ที่รองรับ S3 จาก Huawei
+
+1. ใน OBS Console (https://console.huaweicloud.com/obs/) ให้สร้างบัคเก็ต สังเกตภูมิภาค (เช่น cn-north-4)
+2. ไปที่ข้อมูลประจำตัวของฉัน → คีย์การเข้าถึง → สร้างคีย์การเข้าถึง
+   คัดลอก AK (= รหัสการเข้าถึง) และ SK (= รหัสลับ)
+3. URL บริการ: https://obs.&lt;REGION&gt;.myhuaweicloud.com (เช่น https://obs.cn-north-4.myhuaweicloud.com)
+4. ภูมิภาค: เช่น cn-เหนือ-4</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>พื้นที่เก็บข้อมูลอ็อบเจ็กต์ Linode (Akamai) — พื้นที่จัดเก็บข้อมูลที่รองรับ S3
+
+1. ใน Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets) ให้สร้างบัคเก็ต สังเกตคลัสเตอร์ของมัน
+2. ไปที่ Object Storage → คีย์การเข้าถึง → สร้างคีย์การเข้าถึงที่กำหนดขอบเขตไว้ที่บัคเก็ต
+   คัดลอกคีย์การเข้าถึงและคีย์ลับ
+3. URL บริการ: https://&lt;CLUSTER&gt;.linodeobjects.com (เช่น https://us-east-1.linodeobjects.com)
+4. ภูมิภาค: รหัสคลัสเตอร์เดียวกัน เช่น เรา-ตะวันออก-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — พื้นที่จัดเก็บข้อมูลที่รองรับ S3 จาก Qiniu
+
+1. ใน Qiniu Portal (https://portal.qiniu.com/kodo/bucket) ให้สร้างบัคเก็ต สังเกตภูมิภาคของมัน
+2. ไปที่ศูนย์ส่วนบุคคล → การจัดการคีย์ — คัดลอก AccessKey และ SecretKey ของคุณ
+3. URL การบริการตามภูมิภาค:
+   จีนตะวันออก: https://s3-cn-east-1.qiniucs.com
+   จีนตอนเหนือ: https://s3-cn-north-1.qiniucs.com
+   จีนตอนใต้: https://s3-cn-south-1.qiniucs.com
+   อเมริกาเหนือ: https://s3-us-north-1.qiniucs.com
+4. ภูมิภาค: รหัสที่ตรงกัน เช่น cn-ตะวันออก-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — พื้นที่จัดเก็บข้อมูลที่เข้ากันได้กับ S3 ของยุโรป
+
+1. ใน Scaleway Console (https://console.scaleway.com/object-storage/buckets) ให้สร้างบัคเก็ต สังเกตภูมิภาค (เช่น fr-par)
+2. ไปที่ IAM → คีย์ API → สร้างคีย์ API พร้อมสิทธิ์ในการเขียน Object Storage
+   คัดลอกคีย์การเข้าถึงและคีย์ลับ
+3. URL บริการ: https://s3.&lt;REGION&gt;.scw.cloud (เช่น https://s3.fr-par.scw.cloud)
+4. ภูมิภาค: เช่น fr-par, nl-ams, pl-waw</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — ที่เก็บข้อมูลภาษารัสเซียที่รองรับ S3
+
+1. ใน Selectel Panel (https://my.selectel.ru/) → Cloud Storage → สร้างคอนเทนเนอร์ (= ที่ฝากข้อมูล)
+2. ภายใต้ผู้ใช้และบทบาท สร้างผู้ใช้บริการที่มีสิทธิ์เข้าถึงพื้นที่เก็บข้อมูล → คีย์ S3 → สร้างคู่คีย์
+   คัดลอกคีย์การเข้าถึงและคีย์ลับ
+3. กรอก: Bucket, Access Key, Secret Key
+   URL บริการจะถูกกรอกโดยอัตโนมัติ</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — พื้นที่จัดเก็บอ็อบเจ็กต์ที่เข้ากันได้กับ S3 จาก Tencent
+
+1. ใน COS Console (https://console.cloud.tencent.com/cos) ให้สร้างบัคเก็ต สังเกต AppId และภูมิภาค (เช่น ap-beijing)
+2. ในการจัดการการเข้าถึง → คีย์ API → สร้างคีย์
+   คัดลอก SecretId (= รหัสการเข้าถึง) และ SecretKey (= รหัสลับ)
+3. URL บริการ: https://cos.&lt;REGION&gt;.myqcloud.com (เช่น https://cos.ap-beijing.myqcloud.com)
+4. รูปแบบชื่อบัคเก็ต: &lt;name&gt;-&lt;AppId&gt; (เช่น mybucket-1250000000) ภูมิภาค: เช่น เอพี-ปักกิ่ง</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — พื้นที่เก็บข้อมูลที่รองรับ S3 จาก VK Cloud
+
+1. ใน VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → สร้างที่เก็บข้อมูล
+2. ใต้บัญชีของคุณ → คีย์การเข้าถึง → สร้างคู่คีย์ใหม่
+   คัดลอกคีย์การเข้าถึงและคีย์ลับ
+3. กรอก: Bucket, Access Key, Secret Key และ Region หากจำเป็น (เช่น ru-msk)
+   URL บริการจะถูกกรอกโดยอัตโนมัติ</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — พื้นที่จัดเก็บข้อมูลที่เข้ากันได้กับ S3
+
+1. ใน Volcano Engine Console (https://console.volcengine.com/tos) ให้สร้างบัคเก็ต สังเกตภูมิภาค (เช่น cn-beijing)
+2. ไปที่ IAM → คีย์การเข้าถึง → สร้างคีย์
+   คัดลอกรหัสการเข้าถึงและรหัสการเข้าถึงข้อมูลลับ
+3. URL บริการ: https://tos-s3-&lt;REGION&gt;.volces.com (เช่น https://tos-s3-cn-beijing.volces.com)
+4. ภูมิภาค: เช่น cn-ปักกิ่ง</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi — พื้นที่เก็บข้อมูลบนคลาวด์ร้อนโดยไม่มีค่าธรรมเนียมการส่งออก
+
+1. ในคอนโซล Wasabi (https://console.wasabisys.com/) → บัคเก็ต → สร้างบัคเก็ต เลือกภูมิภาค
+2. ไปที่คีย์การเข้าถึง → สร้างคีย์การเข้าถึงใหม่ คัดลอกคีย์การเข้าถึงและคีย์ลับ
+3. กรอก: Bucket, Access Key, Secret Key และ Region (เช่น us-east-1, eu-central-1)
+   URL บริการจะถูกกรอกโดยอัตโนมัติ</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage — พื้นที่เก็บข้อมูลบนคลาวด์ของรัสเซียที่รองรับ S3
+
+1. ใน Yandex Cloud Console (https://console.yandex.cloud/) → Object Storage → สร้างที่เก็บข้อมูล
+2. ไปที่บัญชีบริการ → สร้างบัญชีด้วยบทบาท storage.editor → สร้างคีย์การเข้าถึงแบบคงที่
+   คัดลอกรหัสคีย์ (= รหัสการเข้าถึง) และรหัสลับ
+3. กรอก: Bucket, Access Key, Secret Key
+   URL บริการและภูมิภาคได้รับการตั้งค่าโดยอัตโนมัติ</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box — ที่เก็บข้อมูลบนคลาวด์ระดับองค์กรพร้อมรองรับ WebDAV
+
+1. เข้าสู่ระบบที่ app.box.com โปรดทราบว่า Box WebDAV ใช้ได้กับแผนแบบชำระเงินเท่านั้น
+2. กรอกอีเมลบัญชี Box ของคุณเป็นผู้ใช้
+3. ป้อนรหัสผ่านกล่องของคุณเป็นรหัสผ่าน
+   หากคุณใช้ SSO คุณอาจต้องตั้งรหัสผ่าน WebDAV แยกต่างหากในการตั้งค่าบัญชี
+   ที่อยู่เซิร์ฟเวอร์, HTTPS, พอร์ต และพาธพื้นฐานได้รับการกำหนดค่าโดยอัตโนมัติ</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>เซิร์ฟเวอร์ WebDAV ทั่วไป (Nextcloud, ownCloud, Synology DSM, Seafile, Apache ฯลฯ)
+
+1. ป้อนที่อยู่เซิร์ฟเวอร์ เลือก HTTPS (แนะนำ) และตั้งค่าพอร์ต (0 = ค่าเริ่มต้น: 80 สำหรับ HTTP, 443 สำหรับ HTTPS)
+2. ป้อนเส้นทางฐานสำหรับตำแหน่งข้อมูล WebDAV
+   ตัวอย่าง Nextcloud: /remote.php/dav/files/&lt;ชื่อผู้ใช้&gt;/Backups
+   ซินโนโลยี DSM: /
+3. ป้อนชื่อผู้ใช้และรหัสผ่านของคุณ (หรือรหัสผ่านเฉพาะแอปหากเซิร์ฟเวอร์ของคุณต้องการ)</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive — พื้นที่เก็บข้อมูลบนคลาวด์สัญชาติเยอรมันที่เน้นความเป็นส่วนตัวเป็นหลัก
+
+1. เข้าสู่ระบบที่ hidrive.ionos.com → การตั้งค่า → แอพและบริการที่เชื่อมต่อ → WebDAV
+   หรือเข้าถึง WebDAV ด้วยข้อมูลประจำตัวที่มีอยู่ของคุณโดยตรง
+2. ป้อนชื่อผู้ใช้ HiDrive ของคุณเป็นผู้ใช้
+3. ป้อนรหัสผ่าน HiDrive ของคุณเป็นรหัสผ่าน
+   ที่อยู่เซิร์ฟเวอร์, HTTPS, พอร์ต และพาธพื้นฐานได้รับการกำหนดค่าโดยอัตโนมัติ</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) — พื้นที่เก็บข้อมูลบนคลาวด์ของจีนยอดนิยมพร้อมการรองรับ WebDAV ดั้งเดิม
+
+1. เข้าสู่ระบบที่ jianguoyun.com → ข้อมูลบัญชี → ความปลอดภัย → การจัดการแอปบุคคลที่สาม → เพิ่มแอปพลิเคชัน
+   คัดลอกรหัสผ่านสำหรับแอปที่สร้างขึ้น — ซึ่งจะแสดงเพียงครั้งเดียว
+2. ป้อนที่อยู่อีเมล Jianguoyun ของคุณในฐานะผู้ใช้
+3. ป้อนรหัสผ่านสำหรับแอปที่สร้างขึ้นเป็นรหัสผ่าน
+   ที่อยู่เซิร์ฟเวอร์, HTTPS, พอร์ต และพาธพื้นฐานได้รับการกำหนดค่าโดยอัตโนมัติ</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr — พื้นที่เก็บข้อมูลบนคลาวด์ที่เป็นมิตรกับความเป็นส่วนตัวซึ่งตั้งอยู่ในสโลวีเนีย (EU)
+
+1. ไปที่ app.koofr.eu → การตั้งค่า → รหัสผ่าน → รหัสผ่านสำหรับแอป → เพิ่มรหัสผ่าน
+2. กรอกอีเมลบัญชี Koofr ของคุณในฐานะผู้ใช้
+3. ป้อนรหัสผ่านสำหรับแอปที่สร้างขึ้นเป็นรหัสผ่าน
+   ที่อยู่เซิร์ฟเวอร์, HTTPS, พอร์ต และพาธพื้นฐานได้รับการกำหนดค่าโดยอัตโนมัติ</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Mail.ru Cloud ผ่าน WebDAV
+
+1. ไปที่ account.mail.ru → ความปลอดภัย → รหัสผ่านสำหรับแอป → สร้างรหัสผ่านสำหรับแอป
+   เลือกประเภท &apos;Mail&apos; หรือ &apos;All&apos; จากนั้นคัดลอกรหัสผ่านที่สร้างขึ้น
+2. ป้อนที่อยู่อีเมล Mail.ru ของคุณในฐานะผู้ใช้
+3. ป้อนรหัสผ่านสำหรับแอปเป็นรหัสผ่าน
+   ที่อยู่เซิร์ฟเวอร์, HTTPS, พอร์ต และพาธพื้นฐานได้รับการกำหนดค่าโดยอัตโนมัติ</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud — การซิงค์และแชร์ไฟล์ยอดนิยมที่โฮสต์เอง
+
+1. ป้อนที่อยู่เซิร์ฟเวอร์ Nextcloud ของคุณ (เช่น nextcloud.example.com)
+2. เส้นทางฐานถูกกรอกไว้ล่วงหน้า: /remote.php/dav/files/&lt;username&gt;/
+   แทนที่ &lt;ชื่อผู้ใช้&gt; ด้วยชื่อผู้ใช้ Nextcloud จริงของคุณ
+3. ป้อนชื่อผู้ใช้และรหัสผ่าน Nextcloud ของคุณ (หรือรหัสผ่านสำหรับแอปจาก
+   การตั้งค่า → ความปลอดภัย → อุปกรณ์และเซสชัน → รหัสผ่านสำหรับแอป)</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud — ซิงค์และแชร์ไฟล์ที่โฮสต์ด้วยตนเอง
+
+1. ป้อนที่อยู่เซิร์ฟเวอร์ ownCloud ของคุณ (เช่น owncloud.example.com)
+2. เส้นทางฐานถูกกรอกไว้ล่วงหน้า: /remote.php/dav/files/&lt;username&gt;/
+   แทนที่ &lt;ชื่อผู้ใช้&gt; ด้วยชื่อผู้ใช้ ownCloud จริงของคุณ
+3. ป้อนชื่อผู้ใช้และรหัสผ่าน ownCloud ของคุณ (หรือรหัสผ่านสำหรับแอปหากเปิดใช้งาน 2FA)</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud — พื้นที่เก็บข้อมูลบนคลาวด์พร้อมศูนย์ข้อมูลของสหภาพยุโรปและสหรัฐอเมริกา
+
+1. เข้าสู่ระบบที่ my.pcloud.com → การตั้งค่า → ความปลอดภัย → รหัสผ่านสำหรับแอป → สร้าง
+   คัดลอกรหัสผ่านสำหรับแอป — มันจะแสดงเพียงครั้งเดียวเท่านั้น
+2. ป้อนอีเมลบัญชี pCloud ของคุณในฐานะผู้ใช้
+3. ป้อนรหัสผ่านสำหรับแอปเป็นรหัสผ่าน
+   สำหรับศูนย์ข้อมูลของสหภาพยุโรป: ewebdav.pcloud.com จะถูกใช้โดยอัตโนมัติ
+   สำหรับศูนย์ข้อมูลของสหรัฐอเมริกา: เปลี่ยนโฮสต์เป็น webdav.pcloud.com</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>Yandex Disk ผ่าน WebDAV
+
+1. ไปที่ id.yandex.com → ความปลอดภัย → รหัสผ่านสำหรับแอป → สร้างรหัสผ่านสำหรับแอปสำหรับ &apos;การเข้าถึง WebDAV&apos;
+   คัดลอกรหัสผ่านที่สร้างขึ้น — มันจะแสดงเพียงครั้งเดียวเท่านั้น
+2. ป้อนข้อมูลเข้าสู่ระบบ Yandex ของคุณในฐานะผู้ใช้
+3. ป้อนรหัสผ่านสำหรับแอป (ไม่ใช่รหัสผ่านบัญชี Yandex ของคุณ) เป็นรหัสผ่าน
+   ที่อยู่เซิร์ฟเวอร์, HTTPS และพอร์ตได้รับการกำหนดค่าโดยอัตโนมัติ</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>สำรอง/ซิงโครไนซ์ข้อมูลของคุณบน Windows, Linux
 นำเข้าภาพถ่ายจากโทรศัพท์ผ่าน WI-FI และอื่นๆ

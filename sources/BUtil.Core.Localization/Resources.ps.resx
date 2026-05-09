@@ -967,6 +967,267 @@ See detailed description in the following link.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>کارن ندی مشخص شوی.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>د علی بابا کلاوډ OSS - د علی بابا څخه د S3 سره مطابقت لرونکي څیز ذخیره.
+
+1. په OSS کنسول (https://oss.console.aliyun.com/) کې، یو بالټ جوړ کړئ. د دې سیمې یادونه وکړئ (د مثال په توګه oss-cn-hangzhou).
+2. په RAM کنسول کې → کاروونکي → یو کارن جوړ کړئ → AliyunOSSFullAccess ضمیمه کړئ → یو AccessKey جوړ کړئ.
+   د AccessKey ID (= Access Key) او AccessKey راز (= پټ کیلي) کاپي کړئ.
+3. د خدماتو URL: https://oss-&lt;REGION&gt;.aliyuncs.com (د مثال په توګه https://oss-cn-hangzhou.aliyuncs.com).
+4. سیمه: د مثال په توګه oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 - د ایمیزون اصلي څیز ذخیره کول.
+
+1. د S3 کنسول خلاص کړئ (https://s3.console.aws.amazon.com/) او یو بالټ جوړ کړئ. د دې سیمې یادونه وکړئ (د مثال په توګه us-east-1).
+2. IAM خلاص کړئ → کاروونکي → یو کارن جوړ کړئ → د AmazonS3FullAccess پالیسي ضمیمه کړئ.
+3. د امنیتي سندونو لاندې، د لاسرسي کیلي رامینځته کړئ - د کیلي ID او راز کاپي کړئ.
+4. ډک کړئ: بالټ، د لاسرسي کیلي، پټ کیلي، او سیمه.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS - د Baidu څخه د S3 سره مطابقت لرونکی څیز ذخیره.
+
+1. په BOS کنسول (https://console.bce.baidu.com/bos/) کې، یو بالټ جوړ کړئ. د هغې سیمې یادونه وکړئ (د بیلګې په توګه bj، gz، su).
+2. امنیت → د لاسرسي کیلي ته لاړ شئ — خپل د لاسرسي کیلي ID او پټ لاسرسي کیلي کاپي کړئ.
+3. د خدماتو URL: https://s3.&lt;REGION&gt;.bcebos.com (د مثال په توګه https://s3.bj.bcebos.com).
+4. سیمه: د مثال په توګه bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>بیک بلیز B2 - د ارزانه S3 سره مطابقت لرونکی ذخیره.
+
+1. په Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets، یو بالټ جوړ کړئ.
+2. د اپلیکیشن کیلي ته لاړشئ
+   د keyID (= د لاسرسي کیلي) او د غوښتنلیک کیلي (= پټ کیلي) کاپي کړئ.
+3. د خدماتو URL: ستاسو د بالټ پای ټکی د بالټ توضیحاتو کې ښودل شوی، د بیلګې په توګه. https://s3.us-west-004.backblazeb2.com
+4. سیمه: د &apos;s3&apos; تر منځ برخه. او &apos;.backblazeb2.com&apos;، د مثال په توګه us-west-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 - صفر-ایګریس S3 - مطابقت لرونکی ذخیره.
+
+1. په Cloudflare ډشبورډ کې (https://dash.cloudflare.com/) → R2 → یو بالټ جوړ کړئ.
+2. R2 ته لاړشئ → د R2 API ټوکن اداره کړئ → د آبجیکٹ لوستلو او لیکلو سره API ټوکن جوړ کړئ.
+   د لاسرسي کیلي ID او پټ لاسرسي کیلي کاپي کړئ.
+3. د خدماتو URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   ستاسو د حساب ID د R2 کتنې پاڼې کې ښودل شوی.
+4. ډک کړئ: بالټ، د لاسرسي کیلي، پټ کیلي، او د خدماتو URL. سیمه په اوتومات ډول &apos;آټو&apos; ته ټاکل شوې.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) د آبجیکٹ ذخیره - د S3 سره مطابقت لرونکی OBS ذخیره.
+
+1. په Cloud.ru کنسول کې (https://cloud.ru/) → د آبجیکٹ ذخیره کولو خدمت (OBS) → یو بالټ جوړ کړئ.
+2. زما سندونو ته لاړ شئ ← د لاسرسي کیلي → د لاسرسي کیلي اضافه کړئ.
+   د لاسرسي کیلي او پټ لاسرسي کیلي کاپي کړئ.
+3. ډک کړئ: بالټ، د لاسرسي کیلي، پټ کیلي، او سیمه (د مثال په توګه ru-moscow-1).
+   د خدماتو URL په اوتومات ډول ډک شوی.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO یا کوم S3 سره مطابقت لرونکی سرور.
+
+1. خپل MinIO (یا بل S3-مطابق) سرور پیل کړئ.
+2. د MinIO کنسول یا &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos; له لارې بالټ جوړ کړئ.
+3. په MinIO کنسول کې د لاسرسي کیلي رامینځته کړئ → د لاسرسي کیلي (په تولید کې د روټ اسنادو څخه ډډه وکړئ).
+4. د خدمت URL: ستاسو د سرور پای ټکی، د بیلګې په توګه. http://192.168.1.10:9000 یا https://minio.example.com.
+5. سیمه: هر ارزښت (د مثال په توګه us-east-1) - یا خالي پریږدئ که چیرې سرور دا پلي نه کړي.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>ډیجیټل اوشین ځایونه - د S3 سره مطابقت لرونکي څیز ذخیره کول.
+
+1. په فضا کې (https://cloud.digitalocean.com/spaces)، یو ځای جوړ کړئ. د هغې سیمې ته پام وکړئ (د مثال په توګه nyc3).
+2. API → Spaces Keys → Generate New Key ته لاړ شئ. کیلي کاپي کړئ (= د لاسرسي کیلي) او راز.
+3. د خدماتو URL: https://&lt;REGION&gt;.digitaloceanspaces.com (د مثال په توګه https://nyc3.digitaloceanspaces.com).
+4. سیمه: ورته لنډ کوډ، د بیلګې په توګه nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>د ګوګل کلاوډ ذخیره - د S3 انٹرآپریبلیت API له لارې.
+
+1. د ګوګل کلاوډ کنسول (https://console.cloud.google.com/storage) کې، یو بالټ جوړ کړئ.
+2. د کلاوډ ذخیره کولو ته لاړشئ → ترتیبات → د کار کولو وړتیا → د خدماتو حساب لپاره د HMAC کیلي رامینځته کړئ.
+   د لاسرسي کیلي او راز کاپي کړئ.
+3. ډک کړئ: بالټ، د لاسرسي کیلي (HMAC کیلي)، پټ کیلي (HMAC پټ).
+   د خدماتو URL او سیمه په اوتومات ډول تنظیم شوي.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>د Huawei کلاوډ OBS - د Huawei څخه د S3 سره مطابقت لرونکي څیز ذخیره.
+
+1. په OBS کنسول (https://console.huaweicloud.com/obs/) کې، یو بالټ جوړ کړئ. د هغې سیمې یادونه وکړئ (د مثال په توګه cn-شمال-4).
+2. زما سندونو ته لاړ شئ ← د لاسرسي کیلي → د لاسرسي کیلي رامینځته کړئ.
+   د AK (= د لاسرسي کیلي) او SK (= پټ کیلي) کاپي کړئ.
+3. د خدماتو URL: https://obs.&lt;REGION&gt;.myhuaweicloud.com (د مثال په توګه https://obs.cn-north-4.myhuaweicloud.com).
+4. سیمه: د مثال په توګه cn-sorth-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>لینوډ (اکامی) د آبجیکٹ ذخیره - د S3 سره مطابقت لرونکی ذخیره.
+
+1. د لینوډ کلاوډ مدیر (https://cloud.linode.com/object-storage/buckets) کې، یو بالټ جوړ کړئ. د هغې کلستر په پام کې ونیسئ.
+2. د آبجیکٹ ذخیره کولو ته لاړشئ → د لاسرسي کیلي → د لاسرسي کیلي جوړ کړئ چې بالټ ته غزیدلی.
+   د لاسرسي کیلي او پټ کیلي کاپي کړئ.
+3. د خدماتو URL: https://&lt;CLUSTER&gt;.linodeobjects.com (د مثال په توګه https://us-east-1.linodeobjects.com).
+4. سیمه: ورته کلستر کوډ، د بیلګې په توګه. us-east-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo - د Qiniu څخه د S3 سره مطابقت لرونکی ذخیره.
+
+1. په Qiniu Portal (https://portal.qiniu.com/kodo/bucket) کې، یو بالټ جوړ کړئ. د هغې سیمې ته پام وکړئ.
+2. شخصي مرکز ته لاړ شئ → کیلي مدیریت — خپل AccessKey او SecretKey کاپي کړئ.
+3. د سیمې له مخې د خدماتو URL:
+   ختیځ چین: https://s3-cn-east-1.qiniucs.com
+   شمالي چین: https://s3-cn-north-1.qiniucs.com
+   جنوبي چین: https://s3-cn-south-1.qiniucs.com
+   شمالي امریکا: https://s3-us-north-1.qiniucs.com
+4. سیمه: د سمون کوډ، د بیلګې په توګه cn-east-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway آبجیکٹ ذخیره - د اروپا S3 سره مطابقت لرونکی ذخیره.
+
+1. په Scaleway Console (https://console.scaleway.com/object-storage/buckets) کې، یو بالټ جوړ کړئ. د هغې سیمې یادونه وکړئ (د مثال په توګه fr-par).
+2. IAM ته لاړ شئ → API کیز → د آبجیکٹ ذخیره کولو لیکلو اجازې سره د API کیلي رامینځته کړئ.
+   د لاسرسي کیلي او پټ کیلي کاپي کړئ.
+3. د خدماتو URL: https://s3.&lt;REGION&gt;.scw.cloud (د مثال په توګه https://s3.fr-par.scw.cloud).
+4. سیمه: د مثال په توګه fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>سلیکٹیل آبجیکٹ ذخیره - د S3 سره مطابقت لرونکی روسی ذخیره.
+
+1. په سلیکٹیل پینل کې (https://my.selectel.ru/) → کلاوډ ذخیره → یو کانټینر جوړ کړئ (= بالټ).
+2. د کاروونکو او رولونو لاندې، د ذخیره کولو لاسرسي سره د خدماتو کاروونکي جوړ کړئ → S3 کلیدونه → یو کلیدي جوړه جوړه کړئ.
+   د لاسرسي کیلي او پټ کیلي کاپي کړئ.
+3. ډک کړئ: بالټ، د لاسرسي کیلي، پټ کیلي.
+   د خدماتو URL په اوتومات ډول ډک شوی.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>د Tencent کلاوډ COS - د Tencent څخه د S3 سره مطابقت لرونکی څیز ذخیره.
+
+1. په COS کنسول کې (https://console.cloud.tencent.com/cos)، یو بالټ جوړ کړئ. AppId او سیمه یاد کړئ (د مثال په توګه ap-beijing).
+2. د لاسرسي مدیریت کې → API کلیدونه ← کیلي جوړول.
+   SecretId (= Access Key) او SecretKey (= پټ کیلي) کاپي کړئ.
+3. د خدماتو URL: https://cos.&lt;REGION&gt;.myqcloud.com (د مثال په توګه https://cos.ap-beijing.myqcloud.com).
+4. د بالټ نوم بڼه: &lt;name&gt;-&lt;AppId&gt; (د مثال په توګه mybucket-1250000000). سیمه: د مثال په توګه AP-بیجینګ.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>د VK کلاوډ آبجیکٹ ذخیره - د VK کلاوډ څخه د S3 سره مطابقت لرونکی ذخیره.
+
+1. په VK کلاوډ پورټل کې (https://msk.cloud.vk.com/) → کلاوډ ذخیره → یو بالټ جوړ کړئ.
+2. ستاسو د حساب لاندې ← کیلي ته لاسرسی → یوه نوې کیلي جوړه جوړه کړئ.
+   د لاسرسي کیلي او پټ کیلي کاپي کړئ.
+3. ډک کړئ: بالټ، د لاسرسي کیلي، پټ کیلي، او سیمه که اړتیا وي (د مثال په توګه ru-msk).
+   د خدماتو URL په اوتومات ډول ډک شوی.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>د Volcano Engine TOS (ByteDance) - د S3 سره مطابقت لرونکی ذخیره.
+
+1. د Volcano Engine Console (https://console.volcengine.com/tos) کې، یو بالټ جوړ کړئ. د دې سیمې یادونه وکړئ (د مثال په توګه cn-beijing).
+2. IAM ته لاړ شئ ← د لاسرسي کیلي → یو کیلي رامینځته کړئ.
+   د لاسرسي کیلي ID او پټ لاسرسي کیلي کاپي کړئ.
+3. د خدماتو URL: https://tos-s3-&lt;REGION&gt;.volces.com (د مثال په توګه https://tos-s3-cn-beijing.volces.com).
+4. سیمه: د مثال په توګه cn-beijing.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>واسبي - د ګرم بادل ذخیره پرته د وتلو فیس پرته.
+
+1. په واسبي کنسول کې (https://console.wasabisys.com/) → بالټونه → د بالټ جوړول. یوه سیمه غوره کړئ.
+2. د لاسرسي کیلي ته لاړ شئ ← د نوي لاسرسي کیلي رامینځته کړئ. د لاسرسي کیلي او پټ کیلي کاپي کړئ.
+3. ډک کړئ: بالټ، د لاسرسي کیلي، پټ کیلي، او سیمه (د مثال په توګه us-east-1، eu-central-1).
+   د خدماتو URL په اوتومات ډول ډک شوی.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>د Yandex آبجیکٹ ذخیره - د S3 سره مطابقت لرونکی روسی کلاوډ ذخیره.
+
+1. په Yandex کلاوډ کنسول کې (https://console.yandex.cloud/) → د آبجیکٹ ذخیره → یو بالټ جوړ کړئ.
+2. د خدماتو حسابونو ته لاړ شئ → د ذخیره کولو مدیر رول سره یو جوړ کړئ → د جامد لاسرسي کیلي رامینځته کړئ.
+   د کلیدي ID (= د لاسرسي کیلي) او پټ کیلي کاپي کړئ.
+3. ډک کړئ: بالټ، د لاسرسي کیلي، پټ کیلي.
+   د خدماتو URL او سیمه په اوتومات ډول تنظیم شوي.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>بکس - د WebDAV ملاتړ سره د سوداګرۍ کلاوډ ذخیره.
+
+1. په app.box.com کې ننوتل. په یاد ولرئ چې بکس WebDAV یوازې د تادیه شوي پلانونو لپاره شتون لري.
+2. د کارونکي په توګه خپل د بکس حساب بریښنالیک دننه کړئ.
+3. خپل بکس پاسورډ د پاسورډ په توګه دننه کړئ.
+   که تاسو SSO کاروئ، تاسو اړتیا لرئ د حساب په ترتیباتو کې د WebDAV جلا پټنوم ترتیب کړئ.
+   د سرور پته، HTTPS، پورټ، او بیس لاره په اوتومات ډول تنظیم شوي.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>عمومي WebDAV سرور (Nextcloud، ownCloud، Synology DSM، Seafile، Apache، او نور)
+
+1. د سرور پته دننه کړئ، HTTPS غوره کړئ (وړاندیز شوی)، او پورټ ترتیب کړئ (0 = ډیفالټ: 80 د HTTP لپاره، 443 د HTTPS لپاره).
+2. د WebDAV پای ټکي لپاره اساس لاره دننه کړئ.
+   د راتلونکی کلاډ مثال: /remote.php/dav/files/&lt;username&gt;/Backups
+   Synology DSM: /
+3. خپل کارن-نوم او پټنوم دننه کړئ (یا د اپلیکیشن ځانګړي پاسورډ که ستاسو سرور ورته اړتیا ولري).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive - د قوي محرمیت تمرکز سره د آلمان کلاوډ ذخیره.
+
+1. په hidrive.ionos.com کې ننوتل → ترتیبات → ایپس او تړل شوي خدمتونه → WebDAV.
+   یا WebDAV ته د خپلو موجوده اسنادو سره مستقیم لاسرسی ومومئ.
+2. خپل د HiDrive کارن نوم د کارونکي په توګه دننه کړئ.
+3. خپل HiDrive پټنوم د پاسورډ په توګه دننه کړئ.
+   د سرور پته، HTTPS، پورټ، او بیس لاره په اوتومات ډول تنظیم شوي.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>جیانګیوون (坚果云) - د اصلي WebDAV ملاتړ سره مشهور چینایي کلاوډ ذخیره.
+
+1. په jianguoyun.com کې ننوتل → د حساب معلومات → امنیت → د دریمې ډلې اپلیکیشن مدیریت → غوښتنلیک اضافه کړئ.
+   د تولید شوي اپلیکیشن پاسورډ کاپي کړئ - دا یوازې یو ځل ښودل شوی.
+2. د کارونکي په توګه خپل Jianguoyun بریښنالیک آدرس دننه کړئ.
+3. د جوړ شوي اپلیکیشن پاسورډ د پاسورډ په توګه دننه کړئ.
+   د سرور پته، HTTPS، پورټ، او بیس لاره په اوتومات ډول تنظیم شوي.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr - د محرمیت دوستانه بادل ذخیره چې په سلووینیا (EU) کې موقعیت لري.
+
+1. app.koofr.eu ته لاړشئ
+2. د کارونکي په توګه خپل د Koofr حساب بریښنالیک دننه کړئ.
+3. د جوړ شوي اپلیکیشن پاسورډ د پاسورډ په توګه دننه کړئ.
+   د سرور پته، HTTPS، پورټ، او بیس لاره په اوتومات ډول تنظیم شوي.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Mail.ru کلاوډ د WebDAV له لارې.
+
+1. account.mail.ru ته لاړ شئ ← امنیت → اپلیکیشن پاسورډونه → د اپلیکیشن پاسورډ جوړ کړئ.
+   د ډول په توګه &apos;میل&apos; یا &apos;ټول&apos; وټاکئ، بیا تولید شوی پاسورډ کاپي کړئ.
+2. د کارونکي په توګه خپل د Mail.ru بریښنالیک آدرس دننه کړئ.
+3. د اپلیکیشن پاسورډ د پاسورډ په توګه دننه کړئ.
+   د سرور پته، HTTPS، پورټ، او بیس لاره په اوتومات ډول تنظیم شوي.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud - مشهور د ځان کوربه شوي فایل ترکیب او شریکول.
+
+1. خپل د Nextcloud سرور پته دننه کړئ (د بیلګې په توګه nextcloud.example.com).
+2. اساس لاره له مخکې ډکه ده: /remote.php/dav/files/&lt;username&gt;/
+   &lt;username&gt; د خپل اصلي Nextcloud کارن نوم سره بدل کړئ.
+3. خپل Nextcloud کارن نوم او پټنوم دننه کړئ (یا د اپلیکیشن پاسورډ
+   ترتیبات ← امنیت → وسایل او ناستې → د اپلیکیشن پاسورډونه).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud - د ځان کوربه شوي فایل همغږي او شریکول.
+
+1. د خپل کلاډ سرور پته دننه کړئ (د بیلګې په توګه owncloud.example.com).
+2. اساس لاره له مخکې ډکه ده: /remote.php/dav/files/&lt;username&gt;/
+   &lt;username&gt; د خپل اصلي خپل کلاډ کارن نوم سره بدل کړئ.
+3. خپل د کلاوډ کارن نوم او پټنوم دننه کړئ (یا د اپلیکیشن پاسورډ که چیرې 2FA فعال وي).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud - د EU او متحده ایالاتو ډیټا مرکزونو سره کلاوډ ذخیره.
+
+1. په my.pcloud.com کې ننوتل → ترتیبات → امنیت → اپلیکیشن پاسورډونه → جوړ کړئ.
+   د اپلیکیشن پاسورډ کاپي کړئ - دا یوازې یو ځل ښودل شوی.
+2. د کارونکي په توګه خپل د pCloud حساب بریښنالیک دننه کړئ.
+3. د اپلیکیشن پاسورډ د پاسورډ په توګه دننه کړئ.
+   د EU ډیټا مرکز لپاره: ewebdav.pcloud.com په اتوماتيک ډول کارول کیږي.
+   د متحده ایالاتو د معلوماتو مرکز لپاره: کوربه webdav.pcloud.com ته بدل کړئ.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>د WebDAV له لارې Yandex ډیسک.
+
+1. id.yandex.com ته لاړشئ → امنیت → اپلیکیشن پاسورډونه → د ویب ډی اے وی لاسرسي لپاره د اپلیکیشن پاسورډ جوړ کړئ.
+   تولید شوی پاسورډ کاپي کړئ - دا یوازې یو ځل ښودل شوی.
+2. د کارن په توګه خپل Yandex ننوتئ.
+3. د اپلیکیشن پاسورډ دننه کړئ (نه ستاسو د Yandex حساب پټنوم) د پاسورډ په توګه.
+   د سرور پته، HTTPS، او پورټ په اوتومات ډول تنظیم شوي.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>ستاسو د معلوماتو بیک اپ / همغږي کول وینډوز، لینکس.
 له تلیفون څخه عکسونه د WI-FI له لارې وارد کړئ او نور ډیر څه.

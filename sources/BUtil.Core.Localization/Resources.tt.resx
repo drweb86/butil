@@ -967,6 +967,267 @@ See detailed description in the following link.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Кулланучы күрсәтелмәгән.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS - Алибабадан S3 туры килә торган объект саклау.
+
+1. ОСС консолында (https://oss.console.aliyun.com/), чиләк ясагыз. Аның төбәгенә игътибар итегез (мәсәлән, oss-cn-hangzhou).
+2.
+   AccessKey ID (= керү ачкычы) һәм AccessKey серен күчерегез (= Серле ачкыч).
+3. Хезмәт күрсәтү URL: https: // oss- &lt;REGION&gt; .aliyuncs.com (мәс. Https://oss-cn-hangzhou.aliyuncs.com).
+4. Төбәк: мәс. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 - Амазонканың оригиналь объект саклау.
+
+1. S3 консолын ачыгыз (https://s3.console.aws.amazon.com/) һәм чиләк ясагыз. Аның төбәгенә игътибар итегез (мәсәлән, без-көнчыгыш-1).
+2. Ачык IAM → Кулланучылар → кулланучы булдыру → AmazonS3FullAccess политикасын беркетегез.
+3. Куркынычсызлык таныклыгы астында, керү ачкычын булдырыгыз - Ачкыч ID һәм Серне күчерегез.
+4. Тотырыгыз: Чиләк, керү ачкычы, яшерен ачкыч, һәм регион.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS - Байдудан S3 туры килә торган объект саклау.
+
+1. BOS консолында (https://console.bce.baidu.com/bos/), чиләк ясагыз. Аның төбәгенә игътибар итегез (мәс. Bj, gz, su).
+2. Куркынычсызлыкка керегез → Ачкыч ачкычлары - сезнең керү ачкычын һәм яшерен керү ачкычын күчерегез.
+3. Хезмәт күрсәтү URL: https: // s3. &lt;REGION&gt; .bcebos.com (мәс. Https://s3.bj.bcebos.com).
+4. Төбәк: мәс. bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 - арзан S3 яраклы саклагыч.
+
+1. Арткы утта (https://www.backblaze.com/) → B2 болыт саклау → Чиләкләр, чиләк ясагыз.
+2. Кушымта ачкычларына керегез New Яңа кушымта ачкычын өстәгез, аны чиләккә кертегез.
+   KeyID (= керү ачкычы) һәм applicationKey (= Серле ачкыч) күчерегез.
+3. Хезмәт күрсәтү URL: чиләкнең соңгы ноктасы чиләк детальләрендә күрсәтелгән, мәс. https://s3.us-west-004.backblazeb2.com
+4. Төбәк: &apos;s3&apos; арасындагы сегмент. һәм &apos;.backblazeb2.com&apos;, мәс. us-west-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 - S3-ноль-егрес саклагыч.
+
+1. Cloudflare Тактасында (https://dash.cloudflare.com/) → R2 → чиләк ясагыз.
+2.
+   Рөхсәт ачкычы ID һәм яшерен керү ачкычын күчерегез.
+3. Хезмәт күрсәтү URL: https: // &lt;ACCOUNT_ID&gt; .r2.cloudflarestorage.com
+   Сезнең Хисап IDегез R2 күзәтү битендә күрсәтелә.
+4. Тотырыгыз: Чиләк, керү ачкычы, яшерен ачкыч, һәм хезмәт URL. Регион автоматик рәвештә &quot;автомат&quot; итеп куелган.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) объект саклау - S3 ярашлы OBS саклау.
+
+1. Cloud.ru консолында (https://cloud.ru/) → Объектны саклау хезмәте (OBS) → чиләк ясагыз.
+2. Минем таныклыкларыма керегез → Керү ачкычлары Access Керү ачкычын өстәгез.
+   Рөхсәт ачкычын һәм яшерен керү ачкычын күчерегез.
+3. Тотырыгыз: Чиләк, керү ачкычы, яшерен ачкыч, һәм регион (мәс. Ру-мәскәү-1).
+   Сервис URL автоматик рәвештә тутырыла.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO яки теләсә нинди S3 ярашлы сервер.
+
+1. MinIO (яки башка S3 ярашлы) серверны эшләтеп җибәрегез.
+2. MinIO консолы яки &apos;mc mb &lt;alias&gt; / &lt;bucket&gt;&apos; аша чиләк ясагыз.
+3. MinIO консолында керү ачкычын ясагыз → Керү ачкычлары (җитештерүдә төп таныклыклардан сакланыгыз).
+4. Хезмәт күрсәтү URL: сезнең серверның соңгы ноктасы, мәс. http://192.168.1.10:9000 яки https://minio.example.com.
+5. Төбәк: теләсә нинди кыйммәт (мәсәлән, без-көнчыгыш-1) - яки сервер аны үтәмәсә буш калдырыгыз.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces - S3 туры килә торган объект саклау.
+
+1. Бәйлекләрдә (https://cloud.digitalocean.com/spaces), Космос булдырыгыз. Аның төбәгенә игътибар итегез (мәс. Nyc3).
+2. API → Бәйлекләр ачкычларына керегез New Яңа ачкыч ясагыз. Ачкычны күчерегез (= Керү ачкычы) һәм Сер.
+3. Хезмәт күрсәтү URL: https: // &lt;REGION&gt; .digitaloceanspaces.com (мәс. Https://nyc3.digitaloceanspaces.com).
+4. Төбәк: шул ук кыска код, мәс. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage - S3 үзара бәйләнешле API аша.
+
+1. Google Cloud Console (https://console.cloud.google.com/storage) чиләк ясагыз.
+2. Болыт Саклагычына керегез → Көйләүләр → Эшчәнлек → хезмәт счеты өчен HMAC ачкычы ясагыз.
+   Рөхсәт ачкычын һәм серен күчерегез.
+3. Тотырыгыз: Чиләк, керү ачкычы (HMAC ачкычы), яшерен ачкыч (HMAC сере).
+   Сервис URL һәм регион автоматик рәвештә куела.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS - Huawei&apos;тан S3 туры килә торган объект саклау.
+
+1. OBS консолында (https://console.huaweicloud.com/obs/), чиләк ясагыз. Аның төбәгенә игътибар итегез (мәс. Cn-төньяк-4).
+2. Минем таныклыкларыма керегез → Керү ачкычлары Access Керү ачкычы ясагыз.
+   AK (= керү ачкычы) һәм SK (= Серле ачкыч) күчерегез.
+3. Хезмәт күрсәтү URL: https: // об. &lt;REGION&gt; .myhuaweicloud.com (мәс. Https://obs.cn-north-4.myhuaweicloud.com).
+4. Төбәк: мәс. cn-төньяк-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Линод (Акамай) объект саклау - S3 ярашлы саклагыч.
+
+1. Линод болыт менеджерында (https://cloud.linode.com/object-storage/buckets) чиләк ясагыз. Аның кластерына игътибар итегез.
+2. Объект саклагычына керегез → Керү ачкычлары → Чиләккә кертелгән керү ачкычын ясагыз.
+   Рөхсәт ачкычын һәм яшерен ачкычны күчерегез.
+3. Хезмәт күрсәтү URL: https: // &lt;CLUSTER&gt; .linodeobjects.com (мәс. Https://us-east-1.linodeobjects.com).
+4. Төбәк: шул ук кластер коды, мәс. us-көнчыгыш-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo - iniинюдан S3 ярашлы саклагыч.
+
+1. Киниу порталында (https://portal.qiniu.com/kodo/bucket), чиләк ясагыз. Аның төбәгенә игътибар итегез.
+2. Персональ үзәккә керегез → Төп идарә - AccessKey һәм SecretKey&apos;ны күчерегез.
+3. Регион буенча хезмәт URL:
+   Көнчыгыш Китай: https://s3-cn-east-1.qiniucs.com
+   Төньяк Кытай: https://s3-cn-north-1.qiniucs.com
+   Көньяк Китай: https://s3-cn-south-1.qiniucs.com
+   Төньяк Америка: https://s3-us-north-1.qiniucs.com
+4. Төбәк: туры килгән код, мәс. cn-көнчыгыш-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway объект саклау - Европа S3 яраклы саклагыч.
+
+1. Scaleway консолында (https://console.scaleway.com/object-storage/buckets) чиләк ясагыз. Аның төбәгенә игътибар итегез (мәс.
+2. IAM → API ачкычларына керегез Object Объект Саклагыч язу рөхсәте белән API ачкыч ясагыз.
+   Рөхсәт ачкычын һәм яшерен ачкычны күчерегез.
+3. Хезмәт күрсәтү URL: https: // s3. &lt;REGION&gt; .scw.cloud (мәс. Https://s3.fr-par.scw.cloud).
+4. Төбәк: мәс. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage - S3 ярашлы Россия саклавы.
+
+1. Селектель панелендә (https://my.selectel.ru/) → Болыт Саклагыч a контейнер ясагыз (= чиләк).
+2. Кулланучылар һәм рольләр астында, саклауга керү мөмкинлеге булган сервис кулланучысын булдырыгыз → S3 ачкычлары key төп пар булдырыгыз.
+   Рөхсәт ачкычын һәм яшерен ачкычны күчерегез.
+3. Тотыр: Чиләк, керү ачкычы, яшерен ачкыч.
+   Сервис URL автоматик рәвештә тутырыла.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS - S3 белән туры килә торган объект саклау.
+
+1. COS консолында (https://console.cloud.tencent.com/cos), чиләк ясагыз. AppId һәм Регионга игътибар итегез (мәсәлән, ап-пекин).
+2. Рөхсәт белән идарә итүдә → API ачкычлары Key Ачкыч ясау.
+   SecretId (= керү ачкычы) һәм SecretKey (= Серле ачкыч) күчерегез.
+3. Хезмәт күрсәтү URL: https: // cos. &lt;REGION&gt; .myqcloud.com (мәс. Https://cos.ap-beijing.myqcloud.com).
+4. Чиләк исеме форматы: &lt;name&gt; - &lt;AppId&gt; (мәсәлән, mybucket-1250000000). Төбәк: мәс. ап-пекин.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK болыт объектларын саклау - VK болытыннан S3 ярашлы саклагыч.
+
+1. ВК болыт порталында (https://msk.cloud.vk.com/) → Болыт Саклау → чиләк ясагыз.
+2. Сезнең счетыгыз астында → Керү ачкычлары → яңа ачкыч парын булдырыгыз.
+   Рөхсәт ачкычын һәм яшерен ачкычны күчерегез.
+3. Тотырыгыз: Чиләк, керү ачкычы, яшерен ачкыч, һәм кирәк булса регион (мәс. Ru-msk).
+   Сервис URL автоматик рәвештә тутырыла.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Вулкан двигателе TOS (ByteDance) - S3 ярашлы саклагыч.
+
+1. Вулкан двигатель консолында (https://console.volcengine.com/tos), чиләк ясагыз. Аның төбәгенә игътибар итегез (мәс. Cn-beijing).
+2. IAM-ка керегез → Ачкычларга керү → ачкыч ясагыз.
+   Рөхсәт ачкычы ID һәм яшерен керү ачкычын күчерегез.
+3. Хезмәт күрсәтү URL: https: // tos-s3- &lt;REGION&gt; .volces.com (мәс. Https://tos-s3-cn-beijing.volces.com).
+4. Төбәк: мәс. cn-beijing.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Васаби - кайнар болыт саклау.
+
+1. Васаби консолында (https://console.wasabisys.com/) → Чиләкләр → Чиләк ясагыз. Төбәкне сайлагыз.
+2. Рөхсәт ачкычларына керегез New Яңа керү ачкычы ясагыз. Рөхсәт ачкычын һәм яшерен ачкычны күчерегез.
+3. Тотырыгыз: Чиләк, керү ачкычы, яшерен ачкыч, һәм регион (мәс. Без-көнчыгыш-1, эу-үзәк-1).
+   Сервис URL автоматик рәвештә тутырыла.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Яндекс объект саклау - S3 туры килгән Россия болыт саклау.
+
+1. Яндекс болыт консолында (https://console.yandex.cloud/) → Объектны саклау → чиләк ясагыз.
+2.
+   Ачкыч ID (= керү ачкычы) һәм Серле ачкычны күчерегез.
+3. Тотыр: Чиләк, керү ачкычы, яшерен ачкыч.
+   Сервис URL һәм регион автоматик рәвештә куела.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Сандык - WebDAV ярдәме белән предприятия болыт саклау.
+
+1. App.box.com сайтына керегез. Игътибар итегез, WebDAV тартмасы түләүле планнар өчен генә бар.
+2. Кулланучының сандыгы электрон почтасын кертегез.
+3. Серсүз итеп сандык серсүзен кертегез.
+   Әгәр сез SSO куллансагыз, сезгә Хисап көйләүләрендә аерым WebDAV серсүзен куярга кирәк булыр.
+   Сервер адресы, HTTPS, порт һәм төп юл автоматик рәвештә конфигурацияләнгән.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>Генераль WebDAV серверы (Nextcloud, ownCloud, Synology DSM, Диңгез диңгезе, Apache һ.б.)
+
+1. Серверның адресын кертегез, HTTPS сайлагыз (тәкъдим ителә), һәм портны куегыз (0 = килешү: HTTP өчен 80, HTTPS өчен 443).
+2. WebDAV ахыргы ноктасы өчен төп юлны кертегез.
+   Nextcloud мисалы: /remote.php/dav/files/&lt;username&gt;/Backups
+   Синология DSM: /
+3. Кулланучының исемен һәм серсүзен кертегез (яки серверыгыз кирәк булса, кушымтага хас серсүз).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive - көчле хосусыйлык фокусы булган немец болыт саклау.
+
+1. Hidrive.ionos.com сайтына керегез → көйләүләр → кушымталар һәм тоташтырылган хезмәтләр → WebDAV.
+   Яисә булган таныклыкларыгыз белән турыдан-туры WebDAV-ка керегез.
+2. HiDrive кулланучы исемен кулланучы буларак кертегез.
+3. HiDrive серсүзегезне Серсүз итеп кертегез.
+   Сервер адресы, HTTPS, порт һәм төп юл автоматик рәвештә конфигурацияләнгән.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Angзянгуун (坚果云) - туган WebDAV ярдәме белән популяр Кытай болыт саклау.
+
+1. Jianguoyun.com сайтына керегез → Хисап турында мәгълүмат → Куркынычсызлык → Өченче як кушымталары белән идарә итү Application Кушымта өстәү.
+   Генерацияләнгән кушымта серсүзен күчерегез - ул бер генә тапкыр күрсәтелә.
+2. Кулланучының Jiзянгуойн электрон почта адресын кертегез.
+3. Ясалган кушымта серсүзен Серсүз итеп кертегез.
+   Сервер адресы, HTTPS, порт һәм төп юл автоматик рәвештә конфигурацияләнгән.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr - Словениядә (ЕС) урнашкан хосусыйлык өчен болыт саклау.
+
+1. App.koofr.eu сайтына керегез → Сайлаулар → Серсүз → Кушымта серсүзләре → Серсүз өстәгез.
+2. Кулланучының Koofr хисап язмасын кертегез.
+3. Ясалган кушымта серсүзен Серсүз итеп кертегез.
+   Сервер адресы, HTTPS, порт һәм төп юл автоматик рәвештә конфигурацияләнгән.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>WebDAV аша Mail.ru болыт.
+
+1. Account.mail.ru сайтына керегез → Куркынычсызлык → Кушымта серсүзләре app Кушымта серсүзен ясагыз.
+   &quot;Почта&quot; яки &quot;Барысы&quot; ны төр итеп сайлагыз, аннары ясалган серсүзне күчерегез.
+2. Кулланучының Mail.ru электрон почта адресын кертегез.
+3. Кушымта серсүзен Серсүз итеп кертегез.
+   Сервер адресы, HTTPS, порт һәм төп юл автоматик рәвештә конфигурацияләнгән.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud - популяр файлларны синхронлаштыру һәм бүлешү.
+
+1. Nextcloud сервер адресын кертегез (мәсәлән, nextcloud.example.com).
+2. Төп юл алдан тутырылган: /remote.php/dav/files/&lt;username&gt;/
+   &lt;Кулланучының исемен Nextcloud кулланучы исеме белән алыштырыгыз.
+3. Nextcloud кулланучы исемен һәм серсүзне кертегез (яки кушымта серсүзен
+   Көйләүләр → Куркынычсызлык → Приборлар һәм сессияләр → Кушымта серсүзләре).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud - файлны синхронлаштыру һәм бүлешү.
+
+1.Cloud сервер адресын кертегез (мәсәлән, owncloud.example.com).
+2. Төп юл алдан тутырылган: /remote.php/dav/files/&lt;username&gt;/
+   &lt;Кулланучының исемен&gt; үзегезнең үзегезнең Cloud кулланучы исеме белән алыштырыгыз.
+3. CзегезнеңCloud кулланучы исемен һәм серсүзне кертегез (яки 2FA кушылган очракта кушымта серсүзен).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud - ЕС һәм АКШ мәгълүмат үзәкләре белән болыт саклау.
+
+1. My.pcloud.com сайтына керегез → көйләүләр → Куркынычсызлык → кушымталар серсүзләре → ясау.
+   Кушымта серсүзен күчерегез - ул бер генә тапкыр күрсәтелә.
+2. Кулланучының pCloud хисап язмасын кертегез.
+3. Кушымта серсүзен Серсүз итеп кертегез.
+   ЕС мәгълүмат үзәге өчен: ewebdav.pcloud.com автоматик рәвештә кулланыла.
+   АКШ мәгълүмат үзәге өчен: хостны webdav.pcloud.com итеп үзгәртегез.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>WebDAV аша Яндекс диск.
+
+1. Id.yandex.com сайтына керегез → Куркынычсызлык → Кушымта серсүзләре Web &apos;WebDAV керү&apos; өчен кушымта серсүзен ясагыз.
+   Генерацияләнгән серсүзне күчерегез - ул бер генә тапкыр күрсәтелә.
+2. Кулланучының Яндекс логинын кертегез.
+3. Кушымта серсүзен кертегез (сезнең Яндекс серсүзе түгел).
+   Сервер адресы, HTTPS һәм порт автоматик рәвештә конфигурацияләнгән.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Windows, Linux мәгълүматыгызны резервлау / синхронизацияләү.
 WI-FI һәм башкалар аша телефоннан фотолар кертү.

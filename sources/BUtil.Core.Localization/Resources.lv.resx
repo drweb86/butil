@@ -967,6 +967,267 @@ Skatiet detalizētu aprakstu šajā saitē.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Lietotājs nav norādīts.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — ar S3 saderīga objektu krātuve no Alibaba.
+
+1. OSS konsolē (https://oss.console.aliyun.com/) izveidojiet segmentu. Ņemiet vērā tā reģionu (piemēram, oss-cn-hangzhou).
+2. Sadaļā RAM konsole → Lietotāji → izveidot lietotāju → pievienot AliyunOSSFullAccess → izveidot AccessKey.
+   Nokopējiet AccessKey ID (= piekļuves atslēgu) un AccessKey Secret (= slepeno atslēgu).
+3. Pakalpojuma URL: https://oss-&lt;REGION&gt;.aliyuncs.com (piemēram, https://oss-cn-hangzhou.aliyuncs.com).
+4. Reģions: piem. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — Amazon sākotnējā objektu krātuve.
+
+1. Atveriet S3 konsoli (https://s3.console.aws.amazon.com/) un izveidojiet segmentu. Atzīmējiet tā reģionu (piemēram, asv-austrumi-1).
+2. Atveriet IAM → Lietotāji → izveidojiet lietotāju → pievienojiet AmazonS3FullAccess politiku.
+3. Sadaļā Drošības akreditācijas dati izveidojiet piekļuves atslēgu — nokopējiet atslēgas ID un noslēpumu.
+4. Aizpildiet: segments, piekļuves atslēga, slepenā atslēga un reģions.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — ar S3 saderīga objektu krātuve no Baidu.
+
+1. Pakalpojumā BOS Console (https://console.bce.baidu.com/bos/) izveidojiet segmentu. Atzīmējiet tā reģionu (piemēram, bj, gz, su).
+2. Dodieties uz Drošība → Piekļuves atslēgas — nokopējiet savu piekļuves atslēgas ID un slepeno piekļuves atslēgu.
+3. Pakalpojuma URL: https://s3.&lt;REĢIONS&gt;.bcebos.com (piem., https://s3.bj.bcebos.com).
+4. Reģions: piem. bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — ar S3 saderīga krātuve par pieņemamu cenu.
+
+1. Pakalpojumā Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets izveidojiet segmentu.
+2. Atveriet sadaļu App Keys → Add a New Application Key, iekļaujiet to spainī.
+   Kopējiet atslēgas ID (= piekļuves atslēgu) un lietojumprogrammas atslēgu (= slepeno atslēgu).
+3. Pakalpojuma URL: jūsu segmenta galapunkts, kas tiek parādīts segmenta detaļās, piemēram, https://s3.us-west-004.backblazeb2.com
+4. Reģions: segments starp “s3”. un &apos;.backblazeb2.com&apos;, piem., asv-rietumi-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — ar S3 saderīga nulles izejas krātuve.
+
+1. Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → izveidojiet spaini.
+2. Dodieties uz R2 → Pārvaldīt R2 API pilnvaras → Izveidot API pilnvaru ar objektu lasīšanu un rakstīšanu.
+   Kopējiet piekļuves atslēgas ID un slepeno piekļuves atslēgu.
+3. Pakalpojuma URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Jūsu konta ID ir redzams R2 pārskata lapā.
+4. Aizpildiet: segments, piekļuves atslēga, slepenā atslēga un pakalpojuma URL. Reģions tiek automātiski iestatīts uz “auto”.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) objektu krātuve — ar S3 saderīga OBS krātuve.
+
+1. Cloud.ru konsolē (https://cloud.ru/) → Object Storage Service (OBS) → izveidojiet spaini.
+2. Dodieties uz Mani akreditācijas dati → Piekļuves atslēgas → Pievienot piekļuves atslēgu.
+   Kopējiet piekļuves atslēgu un slepeno piekļuves atslēgu.
+3. Aizpildiet: segments, piekļuves atslēga, slepenā atslēga un reģions (piem., ru-moscow-1).
+   Pakalpojuma URL tiek aizpildīts automātiski.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO vai jebkurš ar S3 saderīgs serveris.
+
+1. Startējiet savu MinIO (vai citu ar S3 saderīgu) serveri.
+2. Izveidojiet segmentu, izmantojot MinIO konsoli vai “mc mb &lt;alias&gt;/&lt;bucket&gt;”.
+3. Izveidojiet piekļuves atslēgu sadaļā MinIO Console → Access Keys (izvairieties no saknes akreditācijas datiem ražošanā).
+4. Pakalpojuma URL: jūsu servera galapunkts, piem. http://192.168.1.10:9000 vai https://minio.example.com.
+5. Reģions: jebkura vērtība (piemēram, us-east-1) — vai atstājiet tukšu, ja serveris to neizpilda.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — ar S3 saderīga objektu krātuve.
+
+1. Vietnē Spaces (https://cloud.digitalocean.com/spaces) izveidojiet vietu. Ņemiet vērā tā reģionu (piemēram, nyc3).
+2. Dodieties uz API → Spaces Keys → Ģenerēt jaunu atslēgu. Kopējiet atslēgu (= piekļuves atslēgu) un noslēpumu.
+3. Pakalpojuma URL: https://&lt;REGION&gt;.digitaloceanspaces.com (piemēram, https://nyc3.digitaloceanspaces.com).
+4. Reģions: tas pats īsais kods, piem. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — izmantojot S3 sadarbspējas API.
+
+1. Pakalpojumā Google Cloud Console (https://console.cloud.google.com/storage) izveidojiet segmentu.
+2. Atveriet sadaļu Mākoņkrātuve → Iestatījumi → Sadarbspēja → izveidojiet HMAC atslēgu pakalpojuma kontam.
+   Kopējiet piekļuves atslēgu un noslēpumu.
+3. Aizpildiet: kauss, piekļuves atslēga (HMAC atslēga), slepenā atslēga (HMAC noslēpums).
+   Pakalpojuma URL un reģions tiek iestatīti automātiski.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — ar S3 saderīga objektu krātuve no Huawei.
+
+1. OBS konsolē (https://console.huaweicloud.com/obs/) izveidojiet segmentu. Ņemiet vērā tā reģionu (piemēram, cn-north-4).
+2. Dodieties uz Mani akreditācijas dati → Piekļuves atslēgas → Izveidot piekļuves atslēgu.
+   Nokopējiet AK (= piekļuves atslēgu) un SK (= slepeno atslēgu).
+3. Pakalpojuma URL: https://obs.&lt;REĢIONS&gt;.myhuaweicloud.com (piemēram, https://obs.cn-north-4.myhuaweicloud.com).
+4. Reģions: piem. cn-ziemeļu-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Object Storage — ar S3 saderīga krātuve.
+
+1. Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets) izveidojiet spaini. Ņemiet vērā tā kopu.
+2. Dodieties uz Objektu krātuve → Piekļuves atslēgas → Izveidot piekļuves atslēgu, kas ietverta segmentā.
+   Kopējiet piekļuves atslēgu un slepeno atslēgu.
+3. Pakalpojuma URL: https://&lt;CLUSTER&gt;.linodeobjects.com (piem., https://us-east-1.linodeobjects.com).
+4. Reģions: tas pats klastera kods, piem. asv-austrumi-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — ar S3 saderīga krātuve no Qiniu.
+
+1. Portālā Qiniu (https://portal.qiniu.com/kodo/bucket) izveidojiet spaini. Ievērojiet tā reģionu.
+2. Dodieties uz Personal Center → Key Management — kopējiet savu AccessKey un SecretKey.
+3. Pakalpojuma URL pēc reģiona:
+   Austrumķīna: https://s3-cn-east-1.qiniucs.com
+   Ziemeļķīna: https://s3-cn-north-1.qiniucs.com
+   Dienvidķīna: https://s3-cn-south-1.qiniucs.com
+   Ziemeļamerika: https://s3-us-north-1.qiniucs.com
+4. Reģions: atbilstošs kods, piem. cn-austrumu-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — ar Eiropas S3 saderīga krātuve.
+
+1. Pakalpojumā Scaleway Console (https://console.scaleway.com/object-storage/buckets) izveidojiet segmentu. Ņemiet vērā tā reģionu (piemēram, fr-par).
+2. Dodieties uz IAM → API atslēgas → Ģenerēt API atslēgu ar objektu krātuves rakstīšanas atļaujām.
+   Kopējiet piekļuves atslēgu un slepeno atslēgu.
+3. Pakalpojuma URL: https://s3.&lt;REĢIONS&gt;.scw.cloud (piemēram, https://s3.fr-par.scw.cloud).
+4. Reģions: piem. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — ar S3 saderīga krievu krātuve.
+
+1. Panelī Selectel Panel (https://my.selectel.ru/) → Cloud Storage → izveidojiet konteineru (= spaini).
+2. Sadaļā Lietotāji un lomas izveidojiet pakalpojuma lietotāju ar piekļuvi krātuvei → S3 atslēgas → izveidojiet atslēgu pāri.
+   Kopējiet piekļuves atslēgu un slepeno atslēgu.
+3. Aizpildiet: kauss, piekļuves atslēga, slepenā atslēga.
+   Pakalpojuma URL tiek aizpildīts automātiski.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — ar S3 saderīga objektu krātuve no Tencent.
+
+1. Pakalpojumā COS Console (https://console.cloud.tencent.com/cos) izveidojiet segmentu. Ņemiet vērā AppId un reģionu (piemēram, ap-pekina).
+2. Sadaļā Piekļuves pārvaldība → API atslēgas → Izveidot atslēgu.
+   Kopējiet SecretId (= piekļuves atslēga) un SecretKey (= slepenā atslēga).
+3. Pakalpojuma URL: https://cos.&lt;REGION&gt;.myqcloud.com (piem., https://cos.ap-beijing.myqcloud.com).
+4. Segmenta nosaukuma formāts: &lt;name&gt;-&lt;AppId&gt; (piem., mybucket-1250000000). Reģions: piem. ap-pekina.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — ar S3 saderīga krātuve no VK Cloud.
+
+1. VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → izveidojiet spaini.
+2. Savā kontā → Piekļuves atslēgas → izveidojiet jaunu atslēgu pāri.
+   Kopējiet piekļuves atslēgu un slepeno atslēgu.
+3. Ja nepieciešams, aizpildiet: segments, piekļuves atslēga, slepenā atslēga un reģions (piem., ru-msk).
+   Pakalpojuma URL tiek aizpildīts automātiski.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — ar S3 saderīga krātuve.
+
+1. Volcano Engine Console (https://console.volcengine.com/tos) izveidojiet spaini. Ņemiet vērā tā reģionu (piemēram, cn-peijing).
+2. Dodieties uz IAM → Piekļuves atslēgas → izveidojiet atslēgu.
+   Kopējiet piekļuves atslēgas ID un slepeno piekļuves atslēgu.
+3. Pakalpojuma URL: https://tos-s3-&lt;REGION&gt;.volces.com (piemēram, https://tos-s3-cn-beijing.volces.com).
+4. Reģions: piem. cn-pekina.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi — karstā mākoņa krātuve bez izejas maksas.
+
+1. Pakalpojumā Wasabi Console (https://console.wasabisys.com/) → Kopas → Izveidot kopu. Izvēlieties reģionu.
+2. Dodieties uz Piekļuves atslēgas → Izveidot jaunu piekļuves atslēgu. Kopējiet piekļuves atslēgu un slepeno atslēgu.
+3. Aizpildiet: segments, piekļuves atslēga, slepenā atslēga un reģions (piem., us-east-1, eu-central-1).
+   Pakalpojuma URL tiek aizpildīts automātiski.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex objektu krātuve — ar S3 saderīga Krievijas mākoņkrātuve.
+
+1. Yandex Cloud Console (https://console.yandex.cloud/) → Object Storage → izveidojiet spaini.
+2. Dodieties uz Pakalpojumu konti → izveidojiet to ar Storage.editor lomu → izveidojiet statiskās piekļuves atslēgu.
+   Kopējiet atslēgas ID (= piekļuves atslēgu) un slepeno atslēgu.
+3. Aizpildiet: kauss, piekļuves atslēga, slepenā atslēga.
+   Pakalpojuma URL un reģions tiek iestatīti automātiski.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box — uzņēmuma mākoņkrātuve ar WebDAV atbalstu.
+
+1. Piesakieties vietnē app.box.com. Ņemiet vērā, ka Box WebDAV ir pieejams tikai maksas plāniem.
+2. Ievadiet sava Box konta e-pasta adresi kā Lietotājs.
+3. Ievadiet savu Box paroli kā Paroli.
+   Ja izmantojat SSO, iespējams, konta iestatījumos būs jāiestata atsevišķa WebDAV parole.
+   Servera adrese, HTTPS, ports un bāzes ceļš tiek konfigurēti automātiski.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>Vispārējs WebDAV serveris (Nextcloud, ownCloud, Synology DSM, Seafile, Apache utt.)
+
+1. Ievadiet servera adresi, izvēlieties HTTPS (ieteicams) un iestatiet portu (0 = noklusējuma: 80 HTTP, 443 HTTPS).
+2. Ievadiet WebDAV galapunkta bāzes ceļu.
+   Nextcloud piemērs: /remote.php/dav/files/&lt;lietotājvārds&gt;/Backups
+   Synology DSM: /
+3. Ievadiet savu lietotājvārdu un paroli (vai lietotnes paroli, ja to pieprasa jūsu serveris).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive — vācu mākoņkrātuve ar lielu privātumu.
+
+1. Piesakieties vietnē hidrive.ionos.com → Iestatījumi → Lietojumprogrammas un saistītie pakalpojumi → WebDAV.
+   Vai tieši piekļūstiet WebDAV ar saviem esošajiem akreditācijas datiem.
+2. Ievadiet savu HiDrive lietotājvārdu kā Lietotāju.
+3. Ievadiet savu HiDrive paroli kā Paroli.
+   Servera adrese, HTTPS, ports un bāzes ceļš tiek konfigurēti automātiski.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) — populāra ķīniešu mākoņkrātuve ar vietējo WebDAV atbalstu.
+
+1. Piesakieties vietnē jinguoyun.com → Informācija par kontu → Drošība → Trešās puses lietotņu pārvaldība → Pievienot lietojumprogrammu.
+   Kopējiet ģenerēto lietotnes paroli — tā tiek rādīta tikai vienu reizi.
+2. Ievadiet savu Jianguoyun e-pasta adresi kā Lietotāju.
+3. Ievadiet ģenerēto lietotnes paroli kā paroli.
+   Servera adrese, HTTPS, ports un bāzes ceļš tiek konfigurēti automātiski.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr — privātumam draudzīga mākoņkrātuve, kas atrodas Slovēnijā (ES).
+
+1. Dodieties uz app.koofr.eu → Iestatījumi → Parole → Lietojumprogrammu paroles → Pievienot paroli.
+2. Ievadiet sava Koofr konta e-pasta adresi kā Lietotājs.
+3. Ievadiet ģenerēto lietotnes paroli kā paroli.
+   Servera adrese, HTTPS, ports un bāzes ceļš tiek konfigurēti automātiski.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Mail.ru mākonis, izmantojot WebDAV.
+
+1. Dodieties uz account.mail.ru → Drošība → Lietojumprogrammu paroles → Izveidot lietotnes paroli.
+   Kā veidu atlasiet “Pasts” vai “Visi”, pēc tam nokopējiet ģenerēto paroli.
+2. Ievadiet savu Mail.ru e-pasta adresi kā Lietotāju.
+3. Ievadiet lietotnes paroli kā paroli.
+   Servera adrese, HTTPS, ports un bāzes ceļš tiek konfigurēti automātiski.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud — populāra pašapkalpošanās failu sinhronizācija un kopīgošana.
+
+1. Ievadiet savu Nextcloud servera adresi (piem., nextcloud.example.com).
+2. Bāzes ceļš ir iepriekš aizpildīts: /remote.php/dav/files/&lt;lietotājvārds&gt;/
+   Aizstājiet &lt;lietotājvārds&gt; ar savu faktisko Nextcloud lietotājvārdu.
+3. Ievadiet savu Nextcloud lietotājvārdu un paroli (vai lietotnes paroli no
+   Iestatījumi → Drošība → Ierīces un sesijas → Programmu paroles).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud — pašu viesota failu sinhronizācija un kopīgošana.
+
+1. Ievadiet savu ownCloud servera adresi (piem., owncloud.example.com).
+2. Bāzes ceļš ir iepriekš aizpildīts: /remote.php/dav/files/&lt;lietotājvārds&gt;/
+   Aizstājiet &lt;lietotājvārds&gt; ar savu faktisko ownCloud lietotājvārdu.
+3. Ievadiet savu ownCloud lietotājvārdu un paroli (vai lietotnes paroli, ja ir iespējota 2FA).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud — mākoņkrātuve ar ES un ASV datu centriem.
+
+1. Piesakieties vietnē my.pcloud.com → Iestatījumi → Drošība → Lietotņu paroles → Izveidot.
+   Kopējiet lietotnes paroli — tā tiek rādīta tikai vienu reizi.
+2. Ievadiet sava pCloud konta e-pasta adresi kā Lietotājs.
+3. Ievadiet lietotnes paroli kā paroli.
+   ES datu centram: ewebdav.pcloud.com tiek izmantots automātiski.
+   ASV datu centram: mainiet resursdatoru uz webdav.pcloud.com.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>Yandex disks, izmantojot WebDAV.
+
+1. Dodieties uz id.yandex.com → Drošība → Lietojumprogrammu paroles → Izveidojiet lietotnes paroli WebDAV piekļuvei.
+   Kopējiet ģenerēto paroli — tā tiek parādīta tikai vienu reizi.
+2. Ievadiet savu Yandex pieteikumvārdu kā Lietotājs.
+3. Ievadiet lietotnes paroli (nevis sava Yandex konta paroli) kā Paroli.
+   Servera adrese, HTTPS un ports tiek konfigurēti automātiski.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Dublējiet/sinhronizējiet savus datus sistēmā Windows, Linux.
 Importējiet fotogrāfijas no tālruņa, izmantojot WI-FI, un vēl vairāk.

@@ -967,6 +967,267 @@ bin.
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Ο χρήστης δεν έχει καθοριστεί.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — Αποθήκευση αντικειμένων συμβατή με S3 από την Alibaba.
+
+1. Στην Κονσόλα OSS (https://oss.console.aliyun.com/), δημιουργήστε έναν κάδο. Σημειώστε την περιοχή του (π.χ. oss-cn-hangzhou).
+2. Στην Κονσόλα RAM → Χρήστες → δημιουργία χρήστη → επισυνάψτε το AliyunOSSFullAccess → δημιουργήστε ένα AccessKey.
+   Αντιγράψτε το αναγνωριστικό AccessKey (= Κλειδί πρόσβασης) και το AccessKey Secret (= Μυστικό κλειδί).
+3. URL υπηρεσίας: https://oss-&lt;REGION&gt;.aliyuncs.com (π.χ. https://oss-cn-hangzhou.aliyuncs.com).
+4. Περιοχή: π.χ. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — Η αρχική αποθήκευση αντικειμένων της Amazon.
+
+1. Ανοίξτε την Κονσόλα S3 (https://s3.console.aws.amazon.com/) και δημιουργήστε έναν κάδο. Σημειώστε την περιοχή του (π.χ. us-east-1).
+2. Ανοίξτε το IAM → Χρήστες → δημιουργήστε έναν χρήστη → επισυνάψτε την πολιτική AmazonS3FullAccess.
+3. Στην περιοχή Διαπιστευτήρια ασφαλείας, δημιουργήστε ένα κλειδί πρόσβασης — αντιγράψτε το αναγνωριστικό κλειδιού και το μυστικό.
+4. Συμπληρώστε: Bucket, Access Key, Secret Key και Region.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — Αποθήκευση αντικειμένων συμβατή με S3 από την Baidu.
+
+1. Στην Κονσόλα BOS (https://console.bce.baidu.com/bos/), δημιουργήστε έναν κάδο. Σημειώστε την περιοχή του (π.χ. bj, gz, su).
+2. Μεταβείτε στην ενότητα Ασφάλεια → Κλειδιά πρόσβασης — αντιγράψτε το αναγνωριστικό του κλειδιού πρόσβασης και το μυστικό κλειδί πρόσβασης.
+3. URL υπηρεσίας: https://s3.&lt;REGION&gt;.bcebos.com (π.χ. https://s3.bj.bcebos.com).
+4. Περιοχή: π.χ. bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — προσιτή αποθήκευση συμβατή με S3.
+
+1. Στο Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets, δημιουργήστε έναν κάδο.
+2. Μεταβείτε στα πλήκτρα εφαρμογής → Προσθήκη νέου κλειδιού εφαρμογής, τοποθετήστε το στον κάδο.
+   Αντιγράψτε το αναγνωριστικό κλειδιού (= Κλειδί πρόσβασης) και το applicationKey (= Μυστικό κλειδί).
+3. URL υπηρεσίας: το τελικό σημείο του κάδου σας εμφανίζεται στις λεπτομέρειες του κάδου, π.χ. https://s3.us-west-004.backblazeb2.com
+4. Περιοχή: το τμήμα μεταξύ &apos;s3.&apos; και &quot;.backblazeb2.com&quot;, π.χ. us-west-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — αποθήκευση μηδενικής εξόδου συμβατή με S3.
+
+1. Στον πίνακα ελέγχου Cloudflare (https://dash.cloudflare.com/) → R2 → δημιουργήστε έναν κάδο.
+2. Μεταβείτε στο R2 → Manage R2 API Tokens → Create API Token with Object Read &amp; Write.
+   Αντιγράψτε το αναγνωριστικό κλειδιού πρόσβασης και το μυστικό κλειδί πρόσβασης.
+3. URL υπηρεσίας: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Το αναγνωριστικό του λογαριασμού σας εμφανίζεται στη σελίδα επισκόπησης R2.
+4. Συμπληρώστε: Bucket, Access Key, Secret Key και Service URL. Η περιοχή έχει ρυθμιστεί αυτόματα σε &quot;αυτόματη&quot;.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Αποθήκευση αντικειμένων — Αποθηκευτικός χώρος OBS συμβατός με S3.
+
+1. Στην Κονσόλα Cloud.ru (https://cloud.ru/) → Υπηρεσία αποθήκευσης αντικειμένων (OBS) → δημιουργήστε έναν κάδο.
+2. Μεταβείτε στην ενότητα Τα διαπιστευτήριά μου → Πλήκτρα πρόσβασης → Προσθήκη κλειδιού πρόσβασης.
+   Αντιγράψτε το κλειδί πρόσβασης και το μυστικό κλειδί πρόσβασης.
+3. Συμπληρώστε: Bucket, Access Key, Secret Key και Region (π.χ. ru-moscow-1).
+   Η διεύθυνση URL της υπηρεσίας συμπληρώνεται αυτόματα.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO ή οποιοσδήποτε διακομιστής συμβατός με S3.
+
+1. Ξεκινήστε τον διακομιστή MinIO (ή άλλο συμβατό με S3).
+2. Δημιουργήστε έναν κάδο μέσω της Κονσόλας MinIO ή του &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;.
+3. Δημιουργήστε ένα κλειδί πρόσβασης στο MinIO Console → Access Keys (αποφύγετε τα διαπιστευτήρια root στην παραγωγή).
+4. URL υπηρεσίας: το τελικό σημείο του διακομιστή σας, π.χ. http://192.168.1.10:9000 ή https://minio.example.com.
+5. Περιοχή: οποιαδήποτε τιμή (π.χ. us-east-1) — ή αφήστε κενή εάν ο διακομιστής δεν την επιβάλει.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — Αποθήκευση αντικειμένων συμβατή με S3.
+
+1. Στο Spaces (https://cloud.digitalocean.com/space), δημιουργήστε ένα Space. Σημειώστε την περιοχή του (π.χ. nyc3).
+2. Μεταβείτε στο API → Πλήκτρα διαστημάτων → Δημιουργία νέου κλειδιού. Αντιγράψτε το κλειδί (= κλειδί πρόσβασης) και το μυστικό.
+3. URL υπηρεσίας: https://&lt;REGION&gt;.digitaloceanspaces.com (π.χ. https://nyc3.digitaloceanspaces.com).
+4. Περιοχή: ίδιος σύντομος κωδικός, π.χ. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — μέσω του API διαλειτουργικότητας S3.
+
+1. Στο Google Cloud Console (https://console.cloud.google.com/storage), δημιουργήστε έναν κάδο.
+2. Μεταβείτε στο Cloud Storage → Settings → Interoperability → δημιουργήστε ένα κλειδί HMAC για έναν λογαριασμό υπηρεσίας.
+   Αντιγράψτε το κλειδί πρόσβασης και το μυστικό.
+3. Συμπληρώστε: Bucket, Access Key (κλειδί HMAC), Secret Key (HMAC secret).
+   Το URL υπηρεσίας και η περιοχή ορίζονται αυτόματα.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — Αποθήκευση αντικειμένων συμβατή με S3 από την Huawei.
+
+1. Στην Κονσόλα OBS (https://console.huaweicloud.com/obs/), δημιουργήστε έναν κάδο. Σημειώστε την περιοχή του (π.χ. cn-north-4).
+2. Μεταβείτε στο My Credentials → Access Keys → Create Access Key.
+   Αντιγράψτε το AK (= Κλειδί πρόσβασης) και το SK (= Μυστικό κλειδί).
+3. URL υπηρεσίας: https://obs.&lt;REGION&gt;.myhuaweicloud.com (π.χ. https://obs.cn-north-4.myhuaweicloud.com).
+4. Περιοχή: π.χ. cn-north-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Αποθήκευση αντικειμένων Linode (Akamai) — Αποθηκευτικός χώρος συμβατός με S3.
+
+1. Στο Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets), δημιουργήστε έναν κάδο. Σημειώστε το σύμπλεγμα του.
+2. Μεταβείτε στην Αποθήκευση αντικειμένων → Πλήκτρα πρόσβασης → Δημιουργήστε ένα κλειδί πρόσβασης με εμβέλεια στον κάδο.
+   Αντιγράψτε το κλειδί πρόσβασης και το μυστικό κλειδί.
+3. URL υπηρεσίας: https://&lt;CLUSTER&gt;.linodeobjects.com (π.χ. https://us-east-1.linodeobjects.com).
+4. Περιοχή: ίδιος κωδικός συμπλέγματος, π.χ. ΗΠΑ-ανατολή-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — Αποθηκευτικός χώρος συμβατός με S3 από την Qiniu.
+
+1. Στο Qiniu Portal (https://portal.qiniu.com/kodo/bucket), δημιουργήστε έναν κάδο. Σημειώστε την περιοχή του.
+2. Μεταβείτε στο Personal Center → Key Management — αντιγράψτε το AccessKey και το SecretKey.
+3. URL υπηρεσίας ανά περιοχή:
+   Ανατολική Κίνα: https://s3-cn-east-1.qiniucs.com
+   Βόρεια Κίνα: https://s3-cn-north-1.qiniucs.com
+   Νότια Κίνα: https://s3-cn-south-1.qiniucs.com
+   Βόρεια Αμερική: https://s3-us-north-1.qiniucs.com
+4. Περιοχή: αντίστοιχος κωδικός, π.χ. cn-east-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — Ευρωπαϊκός χώρος αποθήκευσης συμβατός με S3.
+
+1. Στην Κονσόλα Scaleway (https://console.scaleway.com/object-storage/buckets), δημιουργήστε έναν κάδο. Σημειώστε την περιοχή του (π.χ. fr-par).
+2. Μεταβείτε στο IAM → API Keys → Generate API Key with Object Storage δικαιώματα εγγραφής.
+   Αντιγράψτε το κλειδί πρόσβασης και το μυστικό κλειδί.
+3. URL υπηρεσίας: https://s3.&lt;REGION&gt;.scw.cloud (π.χ. https://s3.fr-par.scw.cloud).
+4. Περιοχή: π.χ. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — Ρωσική αποθήκευση συμβατή με S3.
+
+1. Στο Selectel Panel (https://my.selectel.ru/) → Cloud Storage → δημιουργήστε ένα κοντέινερ (= κουβά).
+2. Στην περιοχή Χρήστες &amp; Ρόλοι, δημιουργήστε έναν χρήστη υπηρεσίας με πρόσβαση αποθήκευσης → Πλήκτρα S3 → δημιουργήστε ένα ζεύγος κλειδιών.
+   Αντιγράψτε το κλειδί πρόσβασης και το μυστικό κλειδί.
+3. Συμπληρώστε: Bucket, Access Key, Secret Key.
+   Η διεύθυνση URL της υπηρεσίας συμπληρώνεται αυτόματα.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — Αποθήκευση αντικειμένων συμβατή με S3 από την Tencent.
+
+1. Στην Κονσόλα COS (https://console.cloud.tencent.com/cos), δημιουργήστε έναν κάδο. Σημειώστε το AppId και την περιοχή (π.χ. ap-beijing).
+2. Στο Access Management → API Keys → Create Key.
+   Αντιγράψτε το SecretId (= Κλειδί πρόσβασης) και το SecretKey (= Μυστικό κλειδί).
+3. URL υπηρεσίας: https://cos.&lt;REGION&gt;.myqcloud.com (π.χ. https://cos.ap-beijing.myqcloud.com).
+4. Μορφή ονόματος κάδου: &lt;όνομα&gt;-&lt;AppId&gt; (π.χ. mybucket-1250000000). Περιοχή: π.χ. απ-Πεκίνο.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — Αποθηκευτικός χώρος συμβατός με S3 από το VK Cloud.
+
+1. Στο VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → δημιουργήστε έναν κάδο.
+2. Κάτω από τον λογαριασμό σας → Πλήκτρα πρόσβασης → δημιουργήστε ένα νέο ζεύγος κλειδιών.
+   Αντιγράψτε το κλειδί πρόσβασης και το μυστικό κλειδί.
+3. Συμπληρώστε: Bucket, Access Key, Secret Key και Region εάν απαιτείται (π.χ. ru-msk).
+   Η διεύθυνση URL της υπηρεσίας συμπληρώνεται αυτόματα.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — Αποθηκευτικός χώρος συμβατός με S3.
+
+1. Στην κονσόλα κινητήρα Volcano (https://console.volcengine.com/tos), δημιουργήστε έναν κάδο. Σημειώστε την περιοχή της (π.χ. cn-Πεκίνο).
+2. Μεταβείτε στο IAM → Πλήκτρα πρόσβασης → δημιουργήστε ένα κλειδί.
+   Αντιγράψτε το αναγνωριστικό κλειδιού πρόσβασης και το μυστικό κλειδί πρόσβασης.
+3. URL υπηρεσίας: https://tos-s3-&lt;REGION&gt;.volces.com (π.χ. https://tos-s3-cn-beijing.volces.com).
+4. Περιοχή: π.χ. cn-Πεκίνο.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi — αποθήκευση ζεστού νέφους χωρίς τέλη εξόδου.
+
+1. Στην Κονσόλα Wasabi (https://console.wasabisys.com/) → Κάδοι → Δημιουργία κάδου. Επιλέξτε μια περιοχή.
+2. Μεταβείτε στα Κλειδιά πρόσβασης → Δημιουργία νέου κλειδιού πρόσβασης. Αντιγράψτε το κλειδί πρόσβασης και το μυστικό κλειδί.
+3. Συμπληρώστε: Bucket, Access Key, Secret Key και Region (π.χ. us-east-1, eu-central-1).
+   Η διεύθυνση URL της υπηρεσίας συμπληρώνεται αυτόματα.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage — Ρωσική αποθήκευση cloud συμβατή με S3.
+
+1. Στο Yandex Cloud Console (https://console.yandex.cloud/) → Αποθήκευση αντικειμένων → δημιουργήστε έναν κάδο.
+2. Μεταβείτε στους Λογαριασμούς υπηρεσίας → δημιουργήστε έναν με τον ρόλο αποθήκευσης.επεξεργαστής → δημιουργήστε ένα Στατικό κλειδί πρόσβασης.
+   Αντιγράψτε το αναγνωριστικό κλειδιού (= κλειδί πρόσβασης) και το μυστικό κλειδί.
+3. Συμπληρώστε: Bucket, Access Key, Secret Key.
+   Το URL υπηρεσίας και η περιοχή ορίζονται αυτόματα.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box — αποθήκευση cloud για επιχειρήσεις με υποστήριξη WebDAV.
+
+1. Συνδεθείτε στο app.box.com. Σημειώστε ότι το Box WebDAV είναι διαθέσιμο μόνο για προγράμματα επί πληρωμή.
+2. Εισαγάγετε το email του λογαριασμού σας στο Box ως Χρήστη.
+3. Εισαγάγετε τον κωδικό πρόσβασης Box ως κωδικό πρόσβασης.
+   Εάν χρησιμοποιείτε SSO, ίσως χρειαστεί να ορίσετε έναν ξεχωριστό κωδικό πρόσβασης WebDAV στις Ρυθμίσεις λογαριασμού.
+   Η διεύθυνση διακομιστή, το HTTPS, η θύρα και η διαδρομή βάσης διαμορφώνονται αυτόματα.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>Γενικός διακομιστής WebDAV (Nextcloud, ownCloud, Synology DSM, Seafile, Apache, κ.λπ.)
+
+1. Εισαγάγετε τη διεύθυνση διακομιστή, επιλέξτε HTTPS (συνιστάται) και ορίστε τη θύρα (0 = προεπιλογή: 80 για HTTP, 443 για HTTPS).
+2. Εισαγάγετε τη διαδρομή βάσης για το τελικό σημείο WebDAV.
+   Παράδειγμα Nextcloud: /remote.php/dav/files/&lt;όνομα χρήστη&gt;/Αντίγραφα ασφαλείας
+   Synology DSM: /
+3. Εισαγάγετε το όνομα χρήστη και τον κωδικό πρόσβασής σας (ή έναν κωδικό πρόσβασης για συγκεκριμένη εφαρμογή, εάν το απαιτεί ο διακομιστής σας).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive — Γερμανικός χώρος αποθήκευσης cloud με ισχυρή εστίαση στο απόρρητο.
+
+1. Συνδεθείτε στη διεύθυνση hidrive.ionos.com → Ρυθμίσεις → Εφαρμογές και συνδεδεμένες υπηρεσίες → WebDAV.
+   Ή αποκτήστε απευθείας πρόσβαση στο WebDAV με τα υπάρχοντα διαπιστευτήριά σας.
+2. Εισαγάγετε το όνομα χρήστη HiDrive ως χρήστη.
+3. Εισαγάγετε τον κωδικό πρόσβασης HiDrive ως κωδικό πρόσβασης.
+   Η διεύθυνση διακομιστή, το HTTPS, η θύρα και η διαδρομή βάσης διαμορφώνονται αυτόματα.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) — δημοφιλής κινεζική αποθήκευση cloud με εγγενή υποστήριξη WebDAV.
+
+1. Συνδεθείτε στο jianguoyun.com → Πληροφορίες λογαριασμού → Ασφάλεια → Διαχείριση εφαρμογών τρίτων → Προσθήκη εφαρμογής.
+   Αντιγράψτε τον κωδικό πρόσβασης της εφαρμογής που δημιουργήθηκε — εμφανίζεται μόνο μία φορά.
+2. Εισαγάγετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου Jianguoyun ως Χρήστη.
+3. Εισαγάγετε τον κωδικό πρόσβασης της εφαρμογής που δημιουργήθηκε ως κωδικό πρόσβασης.
+   Η διεύθυνση διακομιστή, το HTTPS, η θύρα και η διαδρομή βάσης διαμορφώνονται αυτόματα.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr — αποθήκευση cloud φιλική προς το απόρρητο με έδρα τη Σλοβενία ​​(ΕΕ).
+
+1. Μεταβείτε στο app.koofr.eu → Προτιμήσεις → Κωδικός πρόσβασης → Κωδικοί εφαρμογής → Προσθήκη κωδικού πρόσβασης.
+2. Εισαγάγετε το email του λογαριασμού σας στο Koofr ως Χρήστη.
+3. Εισαγάγετε τον κωδικό πρόσβασης της εφαρμογής που δημιουργήθηκε ως κωδικό πρόσβασης.
+   Η διεύθυνση διακομιστή, το HTTPS, η θύρα και η διαδρομή βάσης διαμορφώνονται αυτόματα.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Mail.ru Cloud μέσω WebDAV.
+
+1. Μεταβείτε στο account.mail.ru → Ασφάλεια → Κωδικοί πρόσβασης εφαρμογών → Δημιουργία κωδικού πρόσβασης εφαρμογής.
+   Επιλέξτε «Mail» ή «Όλα» ως τύπο και, στη συνέχεια, αντιγράψτε τον κωδικό πρόσβασης που δημιουργήθηκε.
+2. Εισαγάγετε τη διεύθυνση email σας στο Mail.ru ως Χρήστη.
+3. Εισαγάγετε τον κωδικό πρόσβασης της εφαρμογής ως κωδικό πρόσβασης.
+   Η διεύθυνση διακομιστή, το HTTPS, η θύρα και η διαδρομή βάσης διαμορφώνονται αυτόματα.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud — δημοφιλής αυτο-φιλοξενούμενος συγχρονισμός και κοινή χρήση αρχείων.
+
+1. Εισαγάγετε τη διεύθυνση διακομιστή Nextcloud (π.χ. nextcloud.example.com).
+2. Η διαδρομή βάσης είναι προγεμισμένη: /remote.php/dav/files/&lt;όνομα χρήστη&gt;/
+   Αντικαταστήστε το &lt;username&gt; με το πραγματικό σας όνομα χρήστη Nextcloud.
+3. Εισαγάγετε το όνομα χρήστη και τον κωδικό πρόσβασής σας στο Nextcloud (ή έναν κωδικό πρόσβασης εφαρμογής από
+   Ρυθμίσεις → Ασφάλεια → Συσκευές και περίοδοι λειτουργίας → Κωδικοί εφαρμογών).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud — αυτο-φιλοξενούμενος συγχρονισμός και κοινή χρήση αρχείων.
+
+1. Εισαγάγετε τη δική σας διεύθυνση διακομιστή Cloud (π.χ. owncloud.example.com).
+2. Η διαδρομή βάσης είναι προγεμισμένη: /remote.php/dav/files/&lt;όνομα χρήστη&gt;/
+   Αντικαταστήστε το &lt;όνομα χρήστη&gt; με το πραγματικό σας όνομα χρήστη στο δικό σας Cloud.
+3. Εισαγάγετε το δικό σας όνομα χρήστη και κωδικό πρόσβασης στο Cloud (ή έναν κωδικό πρόσβασης εφαρμογής εάν είναι ενεργοποιημένο το 2FA).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud — αποθήκευση cloud με κέντρα δεδομένων ΕΕ και ΗΠΑ.
+
+1. Συνδεθείτε στο my.pcloud.com → Ρυθμίσεις → Ασφάλεια → Κωδικοί εφαρμογής → Δημιουργία.
+   Αντιγράψτε τον κωδικό πρόσβασης της εφαρμογής — εμφανίζεται μόνο μία φορά.
+2. Εισαγάγετε το email του λογαριασμού σας στο pCloud ως Χρήστη.
+3. Εισαγάγετε τον κωδικό πρόσβασης της εφαρμογής ως κωδικό πρόσβασης.
+   Για το κέντρο δεδομένων ΕΕ: το ewebdav.pcloud.com χρησιμοποιείται αυτόματα.
+   Για το κέντρο δεδομένων των ΗΠΑ: αλλάξτε τον κεντρικό υπολογιστή σε webdav.pcloud.com.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>Δίσκος Yandex μέσω WebDAV.
+
+1. Μεταβείτε στο id.yandex.com → Ασφάλεια → Κωδικοί εφαρμογών → Δημιουργία κωδικού πρόσβασης εφαρμογής για «πρόσβαση στο WebDAV».
+   Αντιγράψτε τον κωδικό πρόσβασης που δημιουργήθηκε — εμφανίζεται μόνο μία φορά.
+2. Εισαγάγετε τα στοιχεία σύνδεσής σας στο Yandex ως Χρήστη.
+3. Εισαγάγετε τον κωδικό πρόσβασης της εφαρμογής (όχι τον κωδικό πρόσβασης του λογαριασμού σας Yandex) ως κωδικό πρόσβασης.
+   Η διεύθυνση διακομιστή, το HTTPS και η θύρα διαμορφώνονται αυτόματα.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Δημιουργία αντιγράφων ασφαλείας/συγχρονισμός των δεδομένων σας σε Windows, Linux.
 Εισαγωγή φωτογραφιών από τηλέφωνο μέσω WI-FI και πολλά άλλα.

@@ -967,6 +967,267 @@ See detailed description in the following link.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Benotzer gëtt net uginn.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS - S3-kompatibel Objektlagerung vun Alibaba.
+
+1. An OSS Console (https://oss.console.aliyun.com/), erstellt en Eemer. Notéiert seng Regioun (zB oss-cn-hangzhou).
+2. An RAM Console → Benotzer → e Benotzer erstellen → AliyunOSSFullAccess befestegt → en AccessKey erstellen.
+   Kopéiert d&apos;AccessKey ID (= Access Key) an AccessKey Secret (= Secret Key).
+3. Service URL: https://oss-&lt;REGION&gt;.aliyuncs.com (zB https://oss-cn-hangzhou.aliyuncs.com).
+4. Regioun: z.B. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 - Amazon&apos;s original Objektlagerung.
+
+1. Öffnen d&apos;S3 Konsol (https://s3.console.aws.amazon.com/) a kreéiert en Eemer. Notéiert seng Regioun (zB US-Osten-1).
+2. Open IAM → Benotzer → e Benotzer erstellen → befestegt d&apos;AmazonS3FullAccess Politik.
+3. Ënner Sécherheet Umeldungsinformatioune, schafen eng Zougang Schlëssel - kopéiert de Schlëssel ID an Secret.
+4. Fëllt aus: Eemer, Zougang Schlëssel, Secret Key, a Regioun.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS - S3-kompatibel Objektlagerung vu Baidu.
+
+1. An BOS Console (https://console.bce.baidu.com/bos/), erstellt en Eemer. Notéiert seng Regioun (zB bj, gz, su).
+2. Gitt op Sécherheet → Access Keys - kopéiert Är Access Key ID a Secret Access Key.
+3. Service URL: https://s3.&lt;REGION&gt;.bcebos.com (zB https://s3.bj.bcebos.com).
+4. Regioun: z.B. bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 - bezuelbar S3-kompatibel Späichere.
+
+1. An Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets, erstellt en Eemer.
+2. Gitt op App Keys → Füügt en neien Applikatiounsschlëssel, scope et an den Eemer.
+   Kopéiert de KeyID (= Access Key) an ApplicationKey (= Secret Key).
+3. Service URL: Är Eemer Ennpunkt ugewisen an Eemer Detailer, e.g. https://s3.us-west-004.backblazeb2.com
+4. Regioun: de Segment tëscht &apos;s3.&apos; an &apos;.backblazeb2.com&apos;, z.B. us-west-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 - null-egress S3-kompatibel Stockage.
+
+1. Am Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → en Eemer erstellen.
+2. Gitt op R2 → Manage R2 API Tokens → Create API Token with Object Read &amp; Write.
+   Kopéiert den Access Key ID a Secret Access Key.
+3. Service URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Äre Kont ID gëtt op der R2 Iwwersiichtssäit gewisen.
+4. Fëllt aus: Eemer, Zougang Schlëssel, Secret Key, an Service URL. Regioun gëtt automatesch op &apos;auto&apos; gesat.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Objektlagerung - S3-kompatibel OBS Späichere.
+
+1. An der Cloud.ru Konsole (https://cloud.ru/) → Object Storage Service (OBS) → en Eemer erstellen.
+2. Gitt op Meng Umeldungsinformatiounen → Access Keys → Add Access Key.
+   Kopéiert den Access Key a Secret Access Key.
+3. Fëllt aus: Eemer, Zougang Schlëssel, Secret Key, a Regioun (zB Ru-Moskau-1).
+   Service URL gëtt automatesch ausgefëllt.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO oder all S3-kompatibel Server.
+
+1. Start Är MinIO (oder aner S3-kompatibel) Server.
+2. Erstellt en Eemer iwwer d&apos;MinIO Konsole oder &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;.
+3. Erstellt en Zougangsschlëssel an MinIO Console → Access Keys (vermeit Root-Umeldungsinformatiounen an der Produktioun).
+4. Service URL: Äre Server Endpunkt, z.B. http://192.168.1.10:9000 oder https://minio.example.com.
+5. Regioun: all Wäert (zB us-east-1) - oder loosst eidel wann de Server et net ëmsetzen.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces - S3-kompatibel Objektlagerung.
+
+1. A Spaces (https://cloud.digitalocean.com/spaces), erstellt e Space. Notéiert seng Regioun (zB nyc3).
+2. Gitt op API → Spaces Keys → Neie Schlëssel generéieren. Kopéiert de Schlëssel (= Access Key) a Secret.
+3. Service URL: https://&lt;REGION&gt;.digitaloceanspaces.com (zB https://nyc3.digitaloceanspaces.com).
+4. Regioun: selwecht kuerz Code, f.eks. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage - iwwer d&apos;S3 Interoperabilitéit API.
+
+1. An der Google Cloud Console (https://console.cloud.google.com/storage), erstellt en Eemer.
+2. Gitt op Cloud Storage → Astellungen → Interoperabilitéit → erstellt en HMAC Schlëssel fir e Servicekonto.
+   Kopéiert den Zougangsschlëssel a Geheimnis.
+3. Fëllt an: Eemer, Zougang Key (HMAC Schlëssel), Secret Key (HMAC geheime).
+   Service URL a Regioun ginn automatesch gesat.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS - S3-kompatibel Objektlagerung vun Huawei.
+
+1. An OBS Console (https://console.huaweicloud.com/obs/), erstellt en Eemer. Notéiert seng Regioun (zB cn-Nord-4).
+2. Gitt op Meng Umeldungsinformatiounen → Access Keys → Access Key erstellen.
+   Kopéiert den AK (= Access Key) an SK (= Secret Key).
+3. Service URL: https://obs.&lt;REGION&gt;.myhuaweicloud.com (zB https://obs.cn-north-4.myhuaweicloud.com).
+4. Regioun: z.B. cn-nord-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Objektlagerung - S3-kompatibel Lagerung.
+
+1. Am Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets), erstellt en Eemer. Notéiert säi Cluster.
+2. Gitt op Object Storage → Access Keys → Erstellt en Access Key scoped to the bucket.
+   Kopéiert den Access Key a Secret Key.
+3. Service URL: https://&lt;CLUSTER&gt;.linodeobjects.com (zB https://us-east-1.linodeobjects.com).
+4. Regioun: selwechte Stärekoup Code, f.eks. eis-Osten-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo - S3-kompatibel Späichere vu Qiniu.
+
+1. Am Qiniu Portal (https://portal.qiniu.com/kodo/bucket), erstellt en Eemer. Notéiert seng Regioun.
+2. Gitt op Personal Center → Key Management - kopéiert Ären AccessKey a SecretKey.
+3. Service URL no Regioun:
+   Ostchina: https://s3-cn-east-1.qiniucs.com
+   Nordchina: https://s3-cn-north-1.qiniucs.com
+   Südchina: https://s3-cn-south-1.qiniucs.com
+   Nordamerika: https://s3-us-north-1.qiniucs.com
+4. Regioun: passende Code, f.eks. cn-ost-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage - europäesch S3-kompatibel Späichere.
+
+1. An der Scaleway Console (https://console.scaleway.com/object-storage/buckets), erstellt en Eemer. Notéiert seng Regioun (zB fr-par).
+2. Gitt op IAM → API Keys → Generéiere API Key mat Object Storage Schreifrechter.
+   Kopéiert den Access Key a Secret Key.
+3. Service URL: https://s3.&lt;REGION&gt;.scw.cloud (zB https://s3.fr-par.scw.cloud).
+4. Regioun: z.B. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage - S3-kompatibel russesch Späichere.
+
+1. Am Selectel Panel (https://my.selectel.ru/) → Cloud Storage → e Container erstellen (= Eemer).
+2. Ënner Benotzer &amp; Rollen, erstellt e Service Benotzer mat Späicherzougang → S3 Keys → erstellt e Schlësselpaar.
+   Kopéiert den Access Key a Secret Key.
+3. Fëllt an: Eemer, Zougang Key, Secret Key.
+   Service URL gëtt automatesch ausgefëllt.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS - S3-kompatibel Objektlagerung vun Tencent.
+
+1. An COS Console (https://console.cloud.tencent.com/cos), erstellt en Eemer. Notéiert den AppId a Regioun (zB Ap-Beijing).
+2. An Access Management → API Keys → Schlëssel erstellen.
+   Kopéiert de SecretId (= Access Key) a SecretKey (= Secret Key).
+3. Service URL: https://cos.&lt;REGION&gt;.myqcloud.com (zB https://cos.ap-beijing.myqcloud.com).
+4. Bucket Numm Format: &lt;name&gt; -&lt;AppId&gt; (zB mybucket-1250000000). Regioun: z.B. ap-Beijing.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage - S3-kompatibel Späichere vu VK Cloud.
+
+1. Am VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → en Eemer erstellen.
+2. Ënner Ärem Kont → Access Keys → en neit Schlësselpaar erstellen.
+   Kopéiert den Access Key a Secret Key.
+3. Fëllt aus: Eemer, Access Key, Secret Key, a Regioun wann néideg (zB ru-msk).
+   Service URL gëtt automatesch ausgefëllt.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Vulkanmotor TOS (ByteDance) - S3-kompatibel Stockage.
+
+1. An Volcano Engine Console (https://console.volcengine.com/tos), schafen eng Eemer. Notéiert seng Regioun (zB cn-Beijing).
+2. Gitt op IAM → Access Keys → e Schlëssel erstellen.
+   Kopéiert den Access Key ID a Secret Access Key.
+3. Service URL: https://tos-s3-&lt;REGION&gt;.volces.com (zB https://tos-s3-cn-beijing.volces.com).
+4. Regioun: z.B. cn-Beijing.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi - Hot Cloud Storage ouni Ausgangsgebühren.
+
+1. An Wasabi Console (https://console.wasabisys.com/) → Eemere → Emmer erstellen. Wielt eng Regioun.
+2. Gitt op Access Keys → Neien Access Key erstellen. Kopéiert den Access Key a Secret Key.
+3. Fëllt aus: Eemer, Access Key, Secret Key, a Regioun (zB us-east-1, eu-central-1).
+   Service URL gëtt automatesch ausgefëllt.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage - S3-kompatibel russesch Cloud Storage.
+
+1. An der Yandex Cloud Console (https://console.yandex.cloud/) → Object Storage → en Eemer erstellen.
+2. Gitt op Servicekonten → erstellt een mat der Storage.editor Roll → e statesche Zougangsschlëssel erstellen.
+   Kopéiert de Schlëssel ID (= Access Key) an de Secret Key.
+3. Fëllt an: Eemer, Zougang Key, Secret Key.
+   Service URL a Regioun ginn automatesch gesat.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box - Enterprise Cloud Storage mat WebDAV Support.
+
+1. Aloggen op app.box.com. Notéiert datt Box WebDAV nëmme fir bezuelte Pläng verfügbar ass.
+2. Gitt Är Box Kont E-Mail als Benotzer.
+3. Gitt Är Box Passwuert als Passwuert.
+   Wann Dir SSO benotzt, musst Dir eventuell e separat WebDAV Passwuert a Kont Astellunge setzen.
+   Serveradress, HTTPS, Port a Basiswee ginn automatesch konfiguréiert.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>Generic WebDAV Server (Nextcloud, ownCloud, Synology DSM, Seafile, Apache, etc.)
+
+1. Gitt d&apos;Server Adress, wielt HTTPS (recommandéiert), a setzt den Hafen (0 = Standard: 80 fir HTTP, 443 fir HTTPS).
+2. Gitt de Basiswee fir de WebDAV Endpunkt.
+   Nextcloud Beispill: /remote.php/dav/files/&lt;username&gt;/Backups
+   Synology DSM: /
+3. Gitt Äre Benotzernumm a Passwuert (oder en app-spezifesche Passwuert wann Äre Server et verlaangt).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive - Däitsch Cloud Storage mat staarke Privatsphärfokus.
+
+1. Mellt Iech un op hidrive.ionos.com → Astellungen → Apps &amp; verbonne Servicer → WebDAV.
+   Oder Zougang zu WebDAV mat Ären existente Umeldungsinformatiounen direkt.
+2. Gitt Ären HiDrive Benotzernumm als Benotzer.
+3. Gitt Äert HiDrive Passwuert als Passwuert.
+   Serveradress, HTTPS, Port a Basiswee ginn automatesch konfiguréiert.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) — popular Chinese cloud storage with native WebDAV support.
+
+1. Log in at jianguoyun.com → Account Info → Security → Third-Party App Management → Add Application.
+   Copy the generated app password — it is shown only once.
+2. Enter your Jianguoyun email address as the User.
+3. Enter the generated app password as the Password.
+   Serveradress, HTTPS, Port a Basiswee ginn automatesch konfiguréiert.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr - Privatsphär-frëndlech Cloud Storage baséiert a Slowenien (EU).
+
+1. Gitt op app.koofr.eu → Preferences → Passwuert → App Passwuert → Passwuert derbäi.
+2. Gitt Är Koofr Kont E-Mail als Benotzer.
+3. Gitt d&apos;generéiert App Passwuert als Passwuert.
+   Serveradress, HTTPS, Port a Basiswee ginn automatesch konfiguréiert.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Mail.ru Cloud via WebDAV.
+
+1. Gitt op account.mail.ru → Sécherheet → App Passwuert → App Passwuert erstellen.
+   Wielt &apos;Mail&apos; oder &apos;All&apos; als Typ, kopéiert dann dat generéiert Passwuert.
+2. Enter your Mail.ru email address as the User.
+3. Enter the app password as the Password.
+   Serveradress, HTTPS, Port a Basiswee ginn automatesch konfiguréiert.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud - populär selwer gehoste Dateisynchroniséierung an deelen.
+
+1. Gitt Är Nextcloud Server Adress (zB nextcloud.example.com).
+2. De Basiswee ass virausgefëllt: /remote.php/dav/files/&lt;username&gt;/
+   Ersetzt &lt;Benotzernumm&gt; mat Ärem aktuellen Nextcloud Benotzernumm.
+3. Gitt Ären Nextcloud Benotzernumm a Passwuert (oder en App Passwuert vun
+   Astellungen → Sécherheet → Apparater &amp; Sessiounen → App Passwuert).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud - selwer gehoste Dateisynchroniséierung an deelen.
+
+1. Gitt Är ownCloud Server Adress (zB owncloud.example.com).
+2. De Basiswee ass virausgefëllt: /remote.php/dav/files/&lt;username&gt;/
+   Ersetzt &lt;Benotzernumm&gt; mat Ärem aktuellen ownCloud Benotzernumm.
+3. Gitt Ären ownCloud Benotzernumm a Passwuert (oder en App Passwuert wann 2FA aktivéiert ass).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud — cloud storage with EU and US data centers.
+
+1. Log in at my.pcloud.com → Settings → Security → App Passwords → Create.
+   Kopéiert d&apos;App Passwuert - et gëtt nëmmen eemol gewisen.
+2. Gitt Är pCloud Kont E-Mail als Benotzer.
+3. Gitt d&apos;App Passwuert als Passwuert.
+   For EU data center: ewebdav.pcloud.com is used automatically.
+   For US data center: change the host to webdav.pcloud.com.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>Yandex Disk iwwer WebDAV.
+
+1. Gitt op id.yandex.com → Sécherheet → App Passwuert → Erstellt App Passwuert fir &apos;WebDAV Zougang&apos;.
+   Kopéiert dat generéiert Passwuert - et gëtt nëmmen eemol gewisen.
+2. Gitt Är Yandex Login als Benotzer.
+3. Gitt d&apos;App Passwuert (net Äert Yandex Kont Passwuert) als Passwuert.
+   Serveradress, HTTPS a Port ginn automatesch konfiguréiert.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Backup / Synchroniséiert Är Donnéeën Windows, Linux.
 Import Fotoen vum Telefon iwwer WI-FI a méi.

@@ -967,6 +967,267 @@ Sjå detaljert skildring i følgjande lenkje.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Brukar er ikkje oppgjeve.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — S3-kompatibel objektlagring fra Alibaba.
+
+1. Lag en bøtte i OSS-konsollen (https://oss.console.aliyun.com/). Legg merke til regionen (f.eks. oss-cn-hangzhou).
+2. I RAM-konsollen → Brukere → opprett en bruker → legg ved AliyunOSSFullAccess → opprett en tilgangsnøkkel.
+   Kopier AccessKey ID (= Access Key) og AccessKey Secret (= Secret Key).
+3. Tjeneste-URL: https://oss-&lt;REGION&gt;.aliyuncs.com (f.eks. https://oss-cn-hangzhou.aliyuncs.com).
+4. Region: f.eks. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — Amazons originale objektlagring.
+
+1. Åpne S3-konsollen (https://s3.console.aws.amazon.com/) og lag en bøtte. Legg merke til regionen (f.eks. us-east-1).
+2. Åpne IAM → Brukere → opprett en bruker → legg ved AmazonS3FullAccess-policyen.
+3. Under Sikkerhetslegitimasjon, opprett en tilgangsnøkkel — kopier nøkkel-ID og hemmelig.
+4. Fyll ut: Bøtte, tilgangsnøkkel, hemmelig nøkkel og region.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — S3-kompatibel objektlagring fra Baidu.
+
+1. Lag en bøtte i BOS Console (https://console.bce.baidu.com/bos/). Legg merke til regionen (f.eks. bj, gz, su).
+2. Gå til Sikkerhet → Tilgangsnøkler — kopier din tilgangsnøkkel-ID og hemmelige tilgangsnøkkel.
+3. Tjeneste-URL: https://s3.&lt;REGION&gt;.bcebos.com (f.eks. https://s3.bj.bcebos.com).
+4. Region: f.eks. bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — rimelig S3-kompatibel lagring.
+
+1. Lag en bøtte i Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets.
+2. Gå til App-nøkler → Legg til en ny applikasjonsnøkkel, vis den i bøtten.
+   Kopier nøkkel-ID (= tilgangsnøkkel) og applikasjonsnøkkel (= hemmelig nøkkel).
+3. Tjeneste-URL: endepunktet til bøtten din vises i bøttedetaljer, f.eks. https://s3.us-west-004.backblazeb2.com
+4. Region: segmentet mellom &apos;s3.&apos; og &apos;.backblazeb2.com&apos;, f.eks. us-vest-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — S3-kompatibel lagring med null utgang.
+
+1. I Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → lag en bøtte.
+2. Gå til R2 → Administrer R2 API-tokens → Opprett API-token med objektlesing og skriving.
+   Kopier tilgangsnøkkel-ID og hemmelig tilgangsnøkkel.
+3. Tjeneste-URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Konto-ID-en din vises på R2-oversiktssiden.
+4. Fyll ut: Bucket, Access Key, Secret Key og Service URL. Region settes automatisk til &apos;auto&apos;.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Object Storage — S3-kompatibel OBS-lagring.
+
+1. I Cloud.ru-konsollen (https://cloud.ru/) → Object Storage Service (OBS) → lag en bøtte.
+2. Gå til Min påloggingsinformasjon → Tilgangsnøkler → Legg til tilgangsnøkkel.
+   Kopier tilgangsnøkkelen og hemmelig tilgangsnøkkel.
+3. Fyll ut: bøtte, tilgangsnøkkel, hemmelig nøkkel og region (f.eks. ru-moscow-1).
+   Tjeneste URL fylles ut automatisk.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO eller en hvilken som helst S3-kompatibel server.
+
+1. Start MinIO (eller annen S3-kompatibel) server.
+2. Lag en bøtte via MinIO-konsollen eller &apos;mc mb &lt;alias&gt;/&lt;bøtte&gt;&apos;.
+3. Opprett en tilgangsnøkkel i MinIO-konsollen → Tilgangsnøkler (unngå rotlegitimasjon i produksjonen).
+4. Tjeneste-URL: serverendepunktet ditt, f.eks. http://192.168.1.10:9000 eller https://minio.example.com.
+5. Region: en hvilken som helst verdi (f.eks. us-east-1) – eller la den stå tom hvis serveren ikke håndhever den.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — S3-kompatibel objektlagring.
+
+1. Opprett et mellomrom i Spaces (https://cloud.digitalocean.com/spaces). Legg merke til regionen (f.eks. nyc3).
+2. Gå til API → Mellomromsnøkler → Generer ny nøkkel. Kopier nøkkelen (= tilgangsnøkkel) og hemmelig.
+3. Tjeneste-URL: https://&lt;REGION&gt;.digitaloceanspaces.com (f.eks. https://nyc3.digitaloceanspaces.com).
+4. Region: samme kortkode, f.eks. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage – via S3 interoperability API.
+
+1. Lag en bøtte i Google Cloud Console (https://console.cloud.google.com/storage).
+2. Gå til Cloud Storage → Innstillinger → Interoperabilitet → opprett en HMAC-nøkkel for en tjenestekonto.
+   Kopier tilgangsnøkkelen og hemmeligheten.
+3. Fyll ut: Bucket, Access Key (HMAC key), Secret Key (HMAC secret).
+   Tjeneste-URL og region angis automatisk.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — S3-kompatibel objektlagring fra Huawei.
+
+1. Lag en bøtte i OBS-konsollen (https://console.huaweicloud.com/obs/). Legg merke til regionen (f.eks. cn-nord-4).
+2. Gå til Min påloggingsinformasjon → Tilgangsnøkler → Opprett tilgangsnøkkel.
+   Kopier AK (= Access Key) og SK (= Secret Key).
+3. Tjeneste-URL: https://obs.&lt;REGION&gt;.myhuaweicloud.com (f.eks. https://obs.cn-north-4.myhuaweicloud.com).
+4. Region: f.eks. cn-nord-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Objektlagring — S3-kompatibel lagring.
+
+1. Lag en bøtte i Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets). Legg merke til klyngen.
+2. Gå til Objektlagring → Tilgangsnøkler → Opprett en tilgangsnøkkel med rekkevidde til bøtten.
+   Kopier tilgangsnøkkelen og hemmelig nøkkel.
+3. Tjeneste-URL: https://&lt;CLUSTER&gt;.linodeobjects.com (f.eks. https://us-east-1.linodeobjects.com).
+4. Region: samme klyngekode, f.eks. us-øst-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — S3-kompatibel lagring fra Qiniu.
+
+1. Lag en bøtte i Qiniu-portalen (https://portal.qiniu.com/kodo/bucket). Legg merke til regionen.
+2. Gå til Personlig senter → Nøkkelhåndtering — kopier din AccessKey og SecretKey.
+3. Tjenestenettadresse etter region:
+   Øst-Kina: https://s3-cn-east-1.qiniucs.com
+   Nord-Kina: https://s3-cn-north-1.qiniucs.com
+   Sør-Kina: https://s3-cn-south-1.qiniucs.com
+   Nord-Amerika: https://s3-us-north-1.qiniucs.com
+4. Region: samsvarende kode, f.eks. cn-east-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — Europeisk S3-kompatibel lagring.
+
+1. Lag en bøtte i Scaleway-konsollen (https://console.scaleway.com/object-storage/buckets). Legg merke til regionen (f.eks. fr-par).
+2. Gå til IAM → API-nøkler → Generer API-nøkkel med skrivetillatelser for objektlagring.
+   Kopier tilgangsnøkkelen og hemmelig nøkkel.
+3. Tjeneste-URL: https://s3.&lt;REGION&gt;.scw.cloud (f.eks. https://s3.fr-par.scw.cloud).
+4. Region: f.eks. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — S3-kompatibel russisk lagring.
+
+1. I Selectel Panel (https://my.selectel.ru/) → Cloud Storage → lag en beholder (= bøtte).
+2. Under Brukere og roller, opprett en tjenestebruker med lagringstilgang → S3-nøkler → opprett et nøkkelpar.
+   Kopier tilgangsnøkkelen og hemmelig nøkkel.
+3. Fyll ut: Bøtte, tilgangsnøkkel, hemmelig nøkkel.
+   Tjeneste URL fylles ut automatisk.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — S3-kompatibel objektlagring fra Tencent.
+
+1. Lag en bøtte i COS-konsollen (https://console.cloud.tencent.com/cos). Legg merke til AppId og Region (f.eks. ap-beijing).
+2. I Access Management → API Keys → Create Key.
+   Kopier SecretId (= Access Key) og SecretKey (= Secret Key).
+3. Tjeneste-URL: https://cos.&lt;REGION&gt;.myqcloud.com (f.eks. https://cos.ap-beijing.myqcloud.com).
+4. Bøttenavnformat: &lt;navn&gt;-&lt;AppId&gt; (f.eks. mybucket-1250000000). Region: f.eks. ap-beijing.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — S3-kompatibel lagring fra VK Cloud.
+
+1. I VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → lag en bøtte.
+2. Under kontoen din → Tilgangsnøkler → opprett et nytt nøkkelpar.
+   Kopier tilgangsnøkkelen og hemmelig nøkkel.
+3. Fyll ut: Bøtte, tilgangsnøkkel, hemmelig nøkkel og region om nødvendig (f.eks. ru-msk).
+   Tjeneste URL fylles ut automatisk.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — S3-kompatibel lagring.
+
+1. Lag en bøtte i Volcano Engine Console (https://console.volcengine.com/tos). Legg merke til regionen (f.eks. cn-beijing).
+2. Gå til IAM → Tilgangsnøkler → opprett en nøkkel.
+   Kopier tilgangsnøkkel-ID og hemmelig tilgangsnøkkel.
+3. Tjeneste-URL: https://tos-s3-&lt;REGION&gt;.volces.com (f.eks. https://tos-s3-cn-beijing.volces.com).
+4. Region: f.eks. cn-beijing.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi – hot cloud-lagring uten utgangsgebyrer.
+
+1. I Wasabi-konsollen (https://console.wasabisys.com/) → Bøtter → Lag bøtte. Velg en region.
+2. Gå til tilgangsnøkler → Opprett ny tilgangsnøkkel. Kopier tilgangsnøkkelen og hemmelig nøkkel.
+3. Fyll ut: bøtte, tilgangsnøkkel, hemmelig nøkkel og region (f.eks. us-east-1, eu-central-1).
+   Tjeneste URL fylles ut automatisk.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage — S3-kompatibel russisk skylagring.
+
+1. I Yandex Cloud Console (https://console.yandex.cloud/) → Objektlagring → lag en bøtte.
+2. Gå til Tjenestekontoer → opprett en med rollen storage.editor → opprett en statisk tilgangsnøkkel.
+   Kopier nøkkel-ID (= tilgangsnøkkel) og hemmelig nøkkel.
+3. Fyll ut: Bøtte, tilgangsnøkkel, hemmelig nøkkel.
+   Tjeneste-URL og region angis automatisk.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box — enterprise cloud storage med WebDAV-støtte.
+
+1. Logg inn på app.box.com. Merk at Box WebDAV kun er tilgjengelig for betalte planer.
+2. Skriv inn e-postadressen for din Box-konto som bruker.
+3. Skriv inn bokspassordet som passord.
+   Hvis du bruker SSO, må du kanskje angi et eget WebDAV-passord i kontoinnstillinger.
+   Serveradresse, HTTPS, port og basisbane konfigureres automatisk.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>Generisk WebDAV-server (Nextcloud, ownCloud, Synology DSM, Seafile, Apache, etc.)
+
+1. Angi serveradressen, velg HTTPS (anbefalt), og angi porten (0 = standard: 80 for HTTP, 443 for HTTPS).
+2. Angi basisbanen for WebDAV-endepunktet.
+   Nextcloud-eksempel: /remote.php/dav/files/&lt;brukernavn&gt;/Backups
+   Synology DSM: /
+3. Skriv inn brukernavnet og passordet ditt (eller et appspesifikt passord hvis serveren din krever det).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive — Tysk skylagring med sterkt fokus på personvern.
+
+1. Logg inn på hidrive.ionos.com → Innstillinger → Apper og tilkoblede tjenester → WebDAV.
+   Eller få tilgang til WebDAV med din eksisterende legitimasjon direkte.
+2. Skriv inn ditt HiDrive-brukernavn som bruker.
+3. Skriv inn HiDrive-passordet ditt som passord.
+   Serveradresse, HTTPS, port og basisbane konfigureres automatisk.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) — populær kinesisk skylagring med innebygd WebDAV-støtte.
+
+1. Logg på jianguoyun.com → Kontoinformasjon → Sikkerhet → Tredjeparts appadministrasjon → Legg til applikasjon.
+   Kopier det genererte apppassordet – det vises bare én gang.
+2. Skriv inn din Jianguoyun-e-postadresse som bruker.
+3. Skriv inn det genererte app-passordet som passord.
+   Serveradresse, HTTPS, port og basisbane konfigureres automatisk.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr — personvernvennlig skylagring basert i Slovenia (EU).
+
+1. Gå til app.koofr.eu → Innstillinger → Passord → App-passord → Legg til passord.
+2. Skriv inn e-postadressen for Koofr-kontoen din som bruker.
+3. Skriv inn det genererte app-passordet som passord.
+   Serveradresse, HTTPS, port og basisbane konfigureres automatisk.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Mail.ru Cloud via WebDAV.
+
+1. Gå til account.mail.ru → Sikkerhet → App-passord → Opprett app-passord.
+   Velg &quot;Mail&quot; eller &quot;All&quot; som type, og kopier deretter det genererte passordet.
+2. Skriv inn Mail.ru-e-postadressen din som bruker.
+3. Skriv inn app-passordet som passord.
+   Serveradresse, HTTPS, port og basisbane konfigureres automatisk.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud – populær selvvertsbasert filsynkronisering og deling.
+
+1. Skriv inn Nextcloud-serveradressen din (f.eks. nextcloud.example.com).
+2. Grunnbanen er forhåndsutfylt: /remote.php/dav/files/&lt;brukernavn&gt;/
+   Erstatt &lt;brukernavn&gt; med ditt faktiske Nextcloud-brukernavn.
+3. Skriv inn ditt Nextcloud-brukernavn og passord (eller et app-passord fra
+   Innstillinger → Sikkerhet → Enheter og økter → App-passord).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud – selvvertsbasert filsynkronisering og deling.
+
+1. Skriv inn din ownCloud-serveradresse (f.eks. owncloud.example.com).
+2. Grunnbanen er forhåndsutfylt: /remote.php/dav/files/&lt;brukernavn&gt;/
+   Erstatt &lt;brukernavn&gt; med ditt faktiske ownCloud-brukernavn.
+3. Skriv inn ditt egetCloud-brukernavn og passord (eller et app-passord hvis 2FA er aktivert).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud — skylagring med datasentre i EU og USA.
+
+1. Logg på my.pcloud.com → Innstillinger → Sikkerhet → App-passord → Opprett.
+   Kopier app-passordet – det vises bare én gang.
+2. Skriv inn e-postadressen for pCloud-kontoen din som bruker.
+3. Skriv inn app-passordet som passord.
+   For EU-datasenter: ewebdav.pcloud.com brukes automatisk.
+   For amerikanske datasenter: endre verten til webdav.pcloud.com.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>Yandex Disk via WebDAV.
+
+1. Gå til id.yandex.com → Sikkerhet → App-passord → Opprett app-passord for &apos;WebDAV-tilgang&apos;.
+   Kopier det genererte passordet – det vises bare én gang.
+2. Skriv inn din Yandex-pålogging som bruker.
+3. Skriv inn app-passordet (ikke passordet for Yandex-kontoen din) som passord.
+   Serveradresse, HTTPS og port konfigureres automatisk.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Sikkerheitskopier/synkroniser dataa dine på Windows, Linux.
 Importer bilete frå telefon via WI-FI og meir.

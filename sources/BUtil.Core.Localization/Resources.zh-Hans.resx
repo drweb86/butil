@@ -966,6 +966,267 @@ bin。
   <data name="User_Field_Validation" xml:space="preserve">
     <value>未指定用户。</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>阿里云 OSS — 来自阿里巴巴的 S3 兼容对象存储。
+
+1. 在OSS控制台（https://oss.console.aliyun.com/）创建一个Bucket。记下它的区域（例如 oss-cn-hangzhou）。
+2、RAM控制台→用户→创建用户→附加AliyunOSSFullAccess→创建AccessKey。
+   复制 AccessKey ID（= 访问密钥）和 AccessKey Secret（= 秘密密钥）。
+3. 服务地址：https://oss-&lt;REGION&gt;.aliyuncs.com（例如：https://oss-cn-hangzhou.aliyuncs.com）。
+4. 地区：例如oss-cn-杭州。</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — 亚马逊最初的对象存储。
+
+1. 打开 S3 控制台 (https://s3.console.aws.amazon.com/) 并创建存储桶。记下其区域（例如 us-east-1）。
+2. 打开 IAM → 用户 → 创建用户 → 附加 AmazonS3FullAccess 策略。
+3. 在安全凭证下，创建访问密钥 - 复制密钥 ID 和密钥。
+4. 填写：Bucket、Access Key、Secret Key、Region。</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>百度云 BOS — 百度的 S3 兼容对象存储。
+
+1. 在BOS控制台（https://console.bce.baidu.com/bos/）中，创建一个存储桶。记下其所在地区（例如 bj、gz、su）。
+2. 转到安全 → 访问密钥 — 复制您的访问密钥 ID 和秘密访问密钥。
+3. 服务 URL：https://s3.&lt;REGION&gt;.bcebos.com（例如 https://s3.bj.bcebos.com）。
+4. 地区：例如bj。</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — 经济实惠的 S3 兼容存储。
+
+1. 在 Backblaze (https://www.backblaze.com/) → B2 云存储 → 存储桶中，创建存储桶。
+2. 转到应用程序密钥 → 添加新的应用程序密钥，将其范围限定到存储桶。
+   复制 keyID（= 访问密钥）和 applicationKey（= 秘密密钥）。
+3. 服务 URL：存储桶详细信息中显示的存储桶端点，例如https://s3.us-west-004.backblazeb2.com
+4. Region：&apos;s3&apos;之间的段。和“.backblazeb2.com”，例如美国西部-004。</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — 零出口 S3 兼容存储。
+
+1. 在 Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → 创建一个存储桶。
+2. 转到 R2 → 管理 R2 API 令牌 → 使用对象读取和写入创建 API 令牌。
+   复制访问密钥 ID 和秘密访问密钥。
+3. 服务网址：https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   您的帐户 ID 显示在 R2 概述页面上。
+4. 填写：Bucket、Access Key、Secret Key、Service URL。区域自动设置为“自动”。</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) 对象存储 — 兼容 S3 的 OBS 存储。
+
+1. 在Cloud.ru控制台（https://cloud.ru/）→对象存储服务（OBS）→创建存储桶。
+2. 转至我的凭证 → 访问密钥 → 添加访问密钥。
+   复制访问密钥和秘密访问密钥。
+3. 填写：Bucket、Access Key、Secret Key 和 Region（例如 ru-moscow-1）。
+   服务 URL 会自动填写。</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO 或任何 S3 兼容服务器。
+
+1. 启动 MinIO（或其他 S3 兼容）服务器。
+2. 通过 MinIO 控制台或“mc mb &lt;alias&gt;/&lt;bucket&gt;”创建存储桶。
+3. 在 MinIO Console → Access Keys 中创建访问密钥（避免在生产中使用 root 凭据）。
+4. 服务 URL：您的服务器端点，例如http://192.168.1.10:9000 或 https://minio.example.com。
+5. 区域：任何值（例如 us-east-1），或者如果服务器不强制执行，则保留为空。</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — S3 兼容的对象存储。
+
+1. 在空间 (https://cloud.digitalocean.com/spaces) 中，创建一个空间。记下其区域（例如 nyc3）。
+2. 转到 API → 空间密钥 → 生成新密钥。复制密钥（= 访问密钥）和秘密。
+3. 服务 URL：https://&lt;REGION&gt;.digitaloceanspaces.com（例如 https://nyc3.digitaloceanspaces.com）。
+4. 地区：相同的短代码，例如纽约3。</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — 通过 S3 互操作性 API。
+
+1. 在 Google Cloud Console (https://console.cloud.google.com/storage) 中，创建一个存储桶。
+2. 转到云存储 → 设置 → 互操作性 → 为服务帐户创建 HMAC 密钥。
+   复制访问密钥和秘密。
+3. 填写：Bucket、Access Key（HMAC 密钥）、Secret Key（HMAC 密钥）。
+   服务 URL 和区域是自动设置的。</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>华为云 OBS — 华为的 S3 兼容对象存储。
+
+1. 在OBS控制台（https://console.huaweicloud.com/obs/）中创建存储桶。记下其区域（例如 cn-north-4）。
+2. 转至我的凭证 → 访问密钥 → 创建访问密钥。
+   复制 AK（= 访问密钥）和 SK（= 秘密密钥）。
+3. 服务地址：https://obs.&lt;REGION&gt;.myhuaweicloud.com（例如：https://obs.cn-north-4.myhuaweicloud.com）。
+4. 地区：例如cn-north-4。</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) 对象存储 — S3 兼容存储。
+
+1. 在 Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets) 中，创建一个存储桶。注意它的簇。
+2. 转至对象存储 → 访问密钥 → 创建范围仅限于存储桶的访问密钥。
+   复制访问密钥和秘密密钥。
+3. 服务 URL：https://&lt;CLUSTER&gt;.linodeobjects.com（例如 https://us-east-1.linodeobjects.com）。
+4. 区域：相同的集群代码，例如美国东部1。</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>七牛云 Kodo — 七牛的 S3 兼容存储。
+
+1. 在七牛门户（https://portal.qiniu.com/kodo/bucket）中创建一个桶。注意它的区域。
+2. 进入个人中心→密钥管理——复制您的AccessKey和SecretKey。
+3. 按地区划分的服务 URL：
+   华东地区：https://s3-cn-east-1.qiniucs.com
+   华北地区：https://s3-cn-north-1.qiniucs.com
+   华南地区：https://s3-cn-south-1.qiniucs.com
+   北美：https://s3-us-north-1.qiniucs.com
+4. 地区：匹配代码，例如cn-east-1。</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway 对象存储 — 欧洲 S3 兼容存储。
+
+1. 在 Scaleway 控制台 (https://console.scaleway.com/object-storage/buckets) 中，创建一个存储桶。记下其区域（例如 fr-par）。
+2. 转到 IAM → API 密钥 → 生成具有对象存储写入权限的 API 密钥。
+   复制访问密钥和秘密密钥。
+3. 服务 URL：https://s3.&lt;REGION&gt;.scw.cloud（例如 https://s3.fr-par.scw.cloud）。
+4. 地区：例如fr-par、nl-ams、pl-waw。</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel 对象存储 — 与 S3 兼容的俄罗斯存储。
+
+1. 在 Selectel 面板 (https://my.selectel.ru/) → 云存储 → 创建一个容器（= 存储桶）。
+2. 在用户和角色下，创建具有存储访问权限的服务用户 → S3 密钥 → 创建密钥对。
+   复制访问密钥和秘密密钥。
+3. 填写：Bucket、Access Key、Secret Key。
+   服务 URL 会自动填写。</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>腾讯云 COS — 来自腾讯的 S3 兼容对象存储。
+
+1. 在 COS 控制台（https://console.cloud.tencent.com/cos）中创建存储桶。记下 AppId 和区域（例如 ap-beijing）。
+2. 在访问管理 → API 密钥 → 创建密钥中。
+   复制 SecretId（= 访问密钥）和 SecretKey（= 秘密密钥）。
+3. 服务 URL：https://cos.&lt;REGION&gt;.myqcloud.com（例如 https://cos.ap-beijing.myqcloud.com）。
+4. 存储桶名称格式：&lt;名称&gt;-&lt;AppId&gt;（例如 mybucket-1250000000）。地区：例如美联社-北京。</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud 对象存储 — 来自 VK Cloud 的 S3 兼容存储。
+
+1. 在VK云门户（https://msk.cloud.vk.com/）→云存储→创建桶。
+2. 在您的帐户下 → 访问密钥 → 创建一个新的密钥对。
+   复制访问密钥和秘密密钥。
+3. 填写：Bucket、Access Key、Secret Key 和 Region（如果需要）（例如 ru-msk）。
+   服务 URL 会自动填写。</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — S3 兼容存储。
+
+1. 在 Volcano Engine 控制台 (https://console.volcengine.com/tos) 中，创建一个存储桶。记下其所在区域（例如 cn-beijing）。
+2. 转到 IAM → 访问密钥 → 创建密钥。
+   复制访问密钥 ID 和秘密访问密钥。
+3. 服务网址：https://tos-s3-&lt;REGION&gt;.volces.com（例如：https://tos-s3-cn-beijing.volces.com）。
+4. 地区：例如cn-北京。</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi — 热云存储，无出口费用。
+
+1. 在 Wasabi 控制台 (https://console.wasabisys.com/) → 存储桶 → 创建存储桶。选择一个区域。
+2. 转到访问密钥 → 创建新的访问密钥。复制访问密钥和秘密密钥。
+3. 填写：Bucket、Access Key、Secret Key 和 Region（例如 us-east-1、eu-central-1）。
+   服务 URL 会自动填写。</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex 对象存储 — 与 S3 兼容的俄罗斯云存储。
+
+1. 在 Yandex Cloud Console (https://console.yandex.cloud/) → 对象存储 → 创建存储桶。
+2. 转到服务帐户 → 创建一个具有 storage.editor 角色的帐户 → 创建一个静态访问密钥。
+   复制密钥 ID（= 访问密钥）和秘密密钥。
+3. 填写：Bucket、Access Key、Secret Key。
+   服务 URL 和区域是自动设置的。</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box — 支持 WebDAV 的企业云存储。
+
+1. 登录app.box.com。请注意，Box WebDAV 仅适用于付费计划。
+2. 输入您的 Box 帐户电子邮件作为用户。
+3. 输入您的 Box 密码作为密码。
+   如果您使用 SSO，则可能需要在帐户设置中设置单独的 WebDAV 密码。
+   服务器地址、HTTPS、端口和基本路径是自动配置的。</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>通用 WebDAV 服务器（Nextcloud、ownCloud、Synology DSM、Seafile、Apache 等）
+
+1. 输入服务器地址，选择 HTTPS（推荐），然后设置端口（0 = 默认值：HTTP 为 80，HTTPS 为 443）。
+2. 输入 WebDAV 端点的基本路径。
+   Nextcloud 示例：/remote.php/dav/files/&lt;用户名&gt;/Backups
+   群晖 DSM: /
+3. 输入您的用户名和密码（如果您的服务器需要，则输入应用程序专用密码）。</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive — 德国云存储，非常注重隐私。
+
+1. 登录 hidrive.ionos.com → 设置 → 应用程序和连接的服务 → WebDAV。
+   或者直接使用您现有的凭据访问 WebDAV。
+2. 输入您的 HiDrive 用户名作为用户。
+3. 输入您的 HiDrive 密码作为密码。
+   服务器地址、HTTPS、端口和基本路径是自动配置的。</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) — 流行的中国云存储，具有原生 WebDAV 支持。
+
+1.登录jianuoyun.com→账户信息→安全→第三方应用管理→添加应用。
+   复制生成的应用程序密码 - 它仅显示一次。
+2. 输入您的建国云电子邮件地址作为用户。
+3. 输入生成的应用程序密码作为密码。
+   服务器地址、HTTPS、端口和基本路径是自动配置的。</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr — 位于斯洛文尼亚（欧盟）的隐私友好型云存储。
+
+1. 前往 app.koofr.eu → 首选项 → 密码 → 应用密码 → 添加密码。
+2. 输入您的 Koofr 帐户电子邮件作为用户。
+3. 输入生成的应用程序密码作为密码。
+   服务器地址、HTTPS、端口和基本路径是自动配置的。</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Mail.ru 通过 WebDAV 的云。
+
+1. 转到 account.mail.ru → 安全 → 应用程序密码 → 创建应用程序密码。
+   选择“邮件”或“全部”作为类型，然后复制生成的密码。
+2. 输入您的 Mail.ru 电子邮件地址作为用户。
+3. 输入应用程序密码作为密码。
+   服务器地址、HTTPS、端口和基本路径是自动配置的。</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud — 流行的自托管文件同步和共享。
+
+1. 输入您的 Nextcloud 服务器地址（例如 nextcloud.example.com）。
+2. 预先填写基本路径：/remote.php/dav/files/&lt;username&gt;/
+   将 &lt;username&gt; 替换为您的实际 Nextcloud 用户名。
+3. 输入您的 Nextcloud 用户名和密码（或来自
+   设置 → 安全 → 设备和会话 → 应用程序密码）。</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud — 自托管文件同步和共享。
+
+1. 输入您的ownCloud服务器地址（例如owncloud.example.com）。
+2. 预先填写基本路径：/remote.php/dav/files/&lt;username&gt;/
+   将 &lt;username&gt; 替换为您实际的 ownCloud 用户名。
+3. 输入您的 ownCloud 用户名和密码（如果启用了 2FA，则输入应用程序密码）。</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud — 具有欧盟和美国数据中心的云存储。
+
+1. 登录 my.pcloud.com → 设置 → 安全 → 应用程序密码 → 创建。
+   复制应用程序密码 - 它仅显示一次。
+2. 输入您的 pCloud 帐户电子邮件作为用户。
+3. 输入应用程序密码作为密码。
+   对于欧盟数据中心：自动使用 ewebdav.pcloud.com。
+   对于美国数据中心：将主机更改为 webdav.pcloud.com。</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>通过 WebDAV 的 Yandex 磁盘。
+
+1. 转至 id.yandex.com → 安全 → 应用程序密码 → 创建“WebDAV 访问”的应用程序密码。
+   复制生成的密码 - 它仅显示一次。
+2. 输入您的 Yandex 登录信息作为用户。
+3. 输入应用程序密码（不是您的 Yandex 帐户密码）作为密码。
+   服务器地址、HTTPS 和端口是自动配置的。</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>在 Windows、Linux 上备份/同步您的数据。
 通过 WI-FI 从手机导入照片等。

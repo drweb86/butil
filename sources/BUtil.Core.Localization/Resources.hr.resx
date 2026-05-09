@@ -967,6 +967,267 @@ Pogledajte detaljni opis na sljedećoj poveznici.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Korisnik nije naveden.</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — S3-kompatibilna pohrana objekata iz Alibabe.
+
+1. U OSS konzoli (https://oss.console.aliyun.com/), stvorite kantu. Zabilježite njegovu regiju (npr. oss-cn-hangzhou).
+2. U RAM konzoli → Korisnici → kreirajte korisnika → priložite AliyunOSSFullAccess → kreirajte AccessKey.
+   Kopirajte AccessKey ID (= Pristupni ključ) i AccessKey Secret (= Tajni ključ).
+3. URL usluge: https://oss-&lt;REGION&gt;.aliyuncs.com (npr. https://oss-cn-hangzhou.aliyuncs.com).
+4. Regija: npr. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — Amazonova originalna pohrana objekata.
+
+1. Otvorite S3 konzolu (https://s3.console.aws.amazon.com/) i izradite kantu. Zabilježite njegovu regiju (npr. us-east-1).
+2. Otvorite IAM → Korisnici → kreirajte korisnika → priložite pravilo AmazonS3FullAccess.
+3. U odjeljku Sigurnosne vjerodajnice stvorite pristupni ključ — kopirajte ID ključa i tajnu.
+4. Ispunite: Bucket, Access Key, Secret Key i Region.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — Baiduova pohrana objekata kompatibilna sa S3.
+
+1. U BOS konzoli (https://console.bce.baidu.com/bos/) izradite kantu. Zabilježite njegovu regiju (npr. bj, gz, su).
+2. Idite na Sigurnost → Pristupni ključevi — kopirajte svoj ID pristupnog ključa i tajni pristupni ključ.
+3. URL usluge: https://s3.&lt;REGION&gt;.bcebos.com (npr. https://s3.bj.bcebos.com).
+4. Regija: npr. bj.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — pristupačna pohrana kompatibilna sa S3.
+
+1. U Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets, stvorite kantu.
+2. Idite na App Keys → Add a New Application Key, proširite ga na spremnik.
+   Kopirajte keyID (= pristupni ključ) i applicationKey (= tajni ključ).
+3. URL usluge: krajnja točka vašeg spremnika prikazana u detaljima spremnika, npr. https://s3.us-west-004.backblazeb2.com
+4. Regija: segment između &apos;s3.&apos; i &apos;.backblazeb2.com&apos;, npr. us-west-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — zero-egress S3-kompatibilna pohrana.
+
+1. U nadzornoj ploči Cloudflare (https://dash.cloudflare.com/) → R2 → stvorite kantu.
+2. Idite na R2 → Upravljanje R2 API tokenima → Stvorite API token s objektom Read &amp; Write.
+   Kopirajte ID pristupnog ključa i tajni pristupni ključ.
+3. URL usluge: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Vaš ID računa prikazan je na stranici pregleda R2.
+4. Ispunite: Bucket, Access Key, Secret Key i Service URL. Regija je automatski postavljena na &apos;auto&apos;.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Object Storage — OBS pohrana kompatibilna sa S3.
+
+1. U Cloud.ru konzoli (https://cloud.ru/) → Object Storage Service (OBS) → kreirajte kantu.
+2. Idite na Moje vjerodajnice → Pristupne tipke → Dodaj pristupni ključ.
+   Kopirajte pristupni ključ i tajni pristupni ključ.
+3. Ispunite: Bucket, Access Key, Secret Key i Region (npr. ru-moscow-1).
+   URL usluge popunjava se automatski.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO ili bilo koji poslužitelj kompatibilan sa S3.
+
+1. Pokrenite svoj MinIO (ili drugi S3-kompatibilan) poslužitelj.
+2. Stvorite kantu putem MinIO konzole ili &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;.
+3. Kreirajte pristupni ključ u MinIO konzoli → Pristupni ključevi (izbjegavajte root vjerodajnice u proizvodnji).
+4. URL usluge: vaša krajnja točka poslužitelja, npr. http://192.168.1.10:9000 ili https://minio.example.com.
+5. Regija: bilo koja vrijednost (npr. us-east-1) — ili ostavite prazno ako je poslužitelj ne provodi.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — S3-kompatibilna pohrana objekata.
+
+1. U prostorima (https://cloud.digitalocean.com/spaces), stvorite prostor. Zabilježite njegovu regiju (npr. nyc3).
+2. Idite na API → Razmaknice → Generiraj novi ključ. Kopirajte ključ (= pristupni ključ) i tajnu.
+3. URL usluge: https://&lt;REGION&gt;.digitaloceanspaces.com (npr. https://nyc3.digitaloceanspaces.com).
+4. Regija: isti kratki kod, npr. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — putem S3 interoperability API-ja.
+
+1. Na Google Cloud konzoli (https://console.cloud.google.com/storage) izradite kantu.
+2. Idite na Cloud Storage → Postavke → Interoperabilnost → kreirajte HMAC ključ za račun usluge.
+   Kopirajte pristupni ključ i tajnu.
+3. Ispunite: Bucket, Access Key (HMAC key), Secret Key (HMAC secret).
+   URL usluge i regija postavljaju se automatski.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — Huaweijevo skladištenje objekata kompatibilno sa S3.
+
+1. U OBS konzoli (https://console.huaweicloud.com/obs/) izradite kantu. Zabilježite njegovu regiju (npr. cn-sjever-4).
+2. Idite na Moje vjerodajnice → Pristupni ključevi → Stvori pristupni ključ.
+   Kopirajte AK (= pristupni ključ) i SK (= tajni ključ).
+3. URL usluge: https://obs.&lt;REGION&gt;.myhuaweicloud.com (npr. https://obs.cn-north-4.myhuaweicloud.com).
+4. Regija: npr. cn-sjever-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Object Storage — S3-kompatibilna pohrana.
+
+1. U Linode Cloud Manageru (https://cloud.linode.com/object-storage/buckets), izradite kantu. Zabilježite njegovu skupinu.
+2. Idite na Object Storage → Pristupni ključevi → Stvorite pristupni ključ s opsegom spremnika.
+   Kopirajte pristupni ključ i tajni ključ.
+3. URL usluge: https://&lt;CLUSTER&gt;.linodeobjects.com (npr. https://us-east-1.linodeobjects.com).
+4. Regija: isti kod klastera, npr. nas-istok-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — pohrana kompatibilna sa S3 iz Qiniua.
+
+1. Na portalu Qiniu (https://portal.qiniu.com/kodo/bucket), stvorite kantu. Zabilježite njegovu regiju.
+2. Idite na Personal Center → Key Management — kopirajte svoj AccessKey i SecretKey.
+3. URL usluge prema regiji:
+   Istočna Kina: https://s3-cn-east-1.qiniucs.com
+   Sjeverna Kina: https://s3-cn-north-1.qiniucs.com
+   Južna Kina: https://s3-cn-south-1.qiniucs.com
+   Sjeverna Amerika: https://s3-us-north-1.qiniucs.com
+4. Regija: odgovarajući kod, npr. cn-istok-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — europska pohrana kompatibilna sa S3.
+
+1. U konzoli Scaleway (https://console.scaleway.com/object-storage/buckets), izradite kantu. Zabilježite njegovu regiju (npr. fr-par).
+2. Idite na IAM → API ključevi → Generiraj API ključ s dozvolama pisanja za pohranu objekata.
+   Kopirajte pristupni ključ i tajni ključ.
+3. URL usluge: https://s3.&lt;REGION&gt;.scw.cloud (npr. https://s3.fr-par.scw.cloud).
+4. Regija: npr. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — ruska pohrana kompatibilna sa S3.
+
+1. U Selectel ploči (https://my.selectel.ru/) → Cloud Storage → stvorite spremnik (= kantu).
+2. Pod Korisnici i uloge kreirajte korisnika usluge s pristupom pohrani → S3 ključevi → stvorite par ključeva.
+   Kopirajte pristupni ključ i tajni ključ.
+3. Ispunite: Bucket, Access Key, Secret Key.
+   URL usluge popunjava se automatski.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — Tencentova pohrana objekata kompatibilna sa S3.
+
+1. U COS konzoli (https://console.cloud.tencent.com/cos), izradite kantu. Zabilježite AppId i regiju (npr. ap-beijing).
+2. U Upravljanje pristupom → API ključevi → Stvori ključ.
+   Kopirajte SecretId (= pristupni ključ) i SecretKey (= tajni ključ).
+3. URL usluge: https://cos.&lt;REGION&gt;.myqcloud.com (npr. https://cos.ap-beijing.myqcloud.com).
+4. Format naziva spremnika: &lt;name&gt;-&lt;AppId&gt; (npr. mybucket-1250000000). Regija: npr. ap-peking.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — S3-kompatibilna pohrana iz VK Clouda.
+
+1. U VK Cloud Portalu (https://msk.cloud.vk.com/) → Cloud Storage → stvorite kantu.
+2. Pod svojim računom → Pristupni ključevi → kreirajte novi par ključeva.
+   Kopirajte pristupni ključ i tajni ključ.
+3. Ispunite: Bucket, Access Key, Secret Key i Regija ako je potrebno (npr. ru-msk).
+   URL usluge popunjava se automatski.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — pohrana kompatibilna sa S3.
+
+1. U Volcano Engine Console (https://console.volcengine.com/tos), stvorite kantu. Zabilježite njegovu regiju (npr. cn-beijing).
+2. Idite na IAM → Pristupne tipke → kreirajte ključ.
+   Kopirajte ID pristupnog ključa i tajni pristupni ključ.
+3. URL usluge: https://tos-s3-&lt;REGION&gt;.volces.com (npr. https://tos-s3-cn-beijing.volces.com).
+4. Regija: npr. cn-peking.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi — vruća pohrana u oblaku bez izlaznih naknada.
+
+1. U Wasabi konzoli (https://console.wasabisys.com/) → Kante → Stvori kantu. Odaberite regiju.
+2. Idite na Pristupne tipke → Stvori novi pristupni ključ. Kopirajte pristupni ključ i tajni ključ.
+3. Ispunite: Bucket, Access Key, Secret Key i Region (npr. us-east-1, eu-central-1).
+   URL usluge popunjava se automatski.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage — ruska pohrana u oblaku kompatibilna sa S3.
+
+1. U Yandex Cloud Console (https://console.yandex.cloud/) → Object Storage → stvorite kantu.
+2. Idite na Servisne račune → kreirajte jedan s ulogom storage.editor → kreirajte statički pristupni ključ.
+   Kopirajte ID ključa (= pristupni ključ) i tajni ključ.
+3. Ispunite: Bucket, Access Key, Secret Key.
+   URL usluge i regija postavljaju se automatski.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>Box — pohrana u oblaku poduzeća s podrškom za WebDAV.
+
+1. Prijavite se na app.box.com. Imajte na umu da je Box WebDAV dostupan samo za plaćene planove.
+2. Unesite svoju e-poštu Box računa kao Korisnik.
+3. Unesite svoju lozinku za Box kao lozinku.
+   Ako koristite SSO, možda ćete morati postaviti zasebnu WebDAV lozinku u postavkama računa.
+   Adresa poslužitelja, HTTPS, port i osnovni put konfiguriraju se automatski.</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>Generički WebDAV poslužitelj (Nextcloud, ownCloud, Synology DSM, Seafile, Apache itd.)
+
+1. Unesite adresu poslužitelja, odaberite HTTPS (preporučeno) i postavite port (0 = zadano: 80 za HTTP, 443 za HTTPS).
+2. Unesite osnovni put za WebDAV krajnju točku.
+   Primjer Nextclouda: /remote.php/dav/files/&lt;korisničko ime&gt;/Sigurnosne kopije
+   Synology DSM: /
+3. Unesite svoje korisničko ime i lozinku (ili lozinku za aplikaciju ako to vaš poslužitelj zahtijeva).</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS HiDrive — Njemačka pohrana u oblaku s jakim fokusom na privatnost.
+
+1. Prijavite se na hidrive.ionos.com → Postavke → Aplikacije i povezane usluge → WebDAV.
+   Ili izravno pristupite WebDAV-u s postojećim vjerodajnicama.
+2. Unesite svoje HiDrive korisničko ime kao Korisnik.
+3. Unesite svoju lozinku za HiDrive kao lozinku.
+   Adresa poslužitelja, HTTPS, port i osnovni put konfiguriraju se automatski.</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>Jianguoyun (坚果云) — popularna kineska pohrana u oblaku s izvornom podrškom za WebDAV.
+
+1. Prijavite se na jianguoyun.com → Podaci o računu → Sigurnost → Upravljanje aplikacijama trećih strana → Dodaj aplikaciju.
+   Kopirajte generiranu lozinku aplikacije — prikazuje se samo jednom.
+2. Unesite svoju Jianguoyun adresu e-pošte kao korisnika.
+3. Unesite generiranu lozinku aplikacije kao lozinku.
+   Adresa poslužitelja, HTTPS, port i osnovni put konfiguriraju se automatski.</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr — pohrana u oblaku prilagođena privatnosti sa sjedištem u Sloveniji (EU).
+
+1. Idite na app.koofr.eu → Preferences → Password → App passwords → Add password.
+2. Unesite e-poštu svog Koofr računa kao korisnik.
+3. Unesite generiranu lozinku aplikacije kao lozinku.
+   Adresa poslužitelja, HTTPS, port i osnovni put konfiguriraju se automatski.</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>Mail.ru Cloud putem WebDAV-a.
+
+1. Idite na account.mail.ru → Sigurnost → Lozinke aplikacije → Stvorite lozinku aplikacije.
+   Odaberite &apos;Mail&apos; ili &apos;All&apos; kao vrstu, zatim kopirajte generiranu lozinku.
+2. Unesite svoju e-mail adresu Mail.ru kao Korisnik.
+3. Unesite lozinku aplikacije kao lozinku.
+   Adresa poslužitelja, HTTPS, port i osnovni put konfiguriraju se automatski.</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>Nextcloud — popularna sinkronizacija i dijeljenje datoteka s vlastitim hostom.
+
+1. Unesite adresu poslužitelja Nextcloud (npr. nextcloud.example.com).
+2. Osnovni put je unaprijed ispunjen: /remote.php/dav/files/&lt;korisničko ime&gt;/
+   Zamijenite &lt;username&gt; svojim stvarnim Nextcloud korisničkim imenom.
+3. Unesite svoje korisničko ime i lozinku za Nextcloud (ili lozinku aplikacije iz
+   Postavke → Sigurnost → Uređaji i sesije → Zaporke aplikacije).</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud — sinkronizacija i dijeljenje datoteka s vlastitim hostom.
+
+1. Unesite adresu poslužitelja ownCloud (npr. owncloud.example.com).
+2. Osnovni put je unaprijed ispunjen: /remote.php/dav/files/&lt;korisničko ime&gt;/
+   Zamijenite &lt;username&gt; svojim stvarnim ownCloud korisničkim imenom.
+3. Unesite svoje korisničko ime i lozinku za ownCloud (ili lozinku aplikacije ako je 2FA omogućen).</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud — pohrana u oblaku s podatkovnim centrima u EU i SAD.
+
+1. Prijavite se na my.pcloud.com → Postavke → Sigurnost → Zaporke aplikacije → Stvori.
+   Kopirajte lozinku aplikacije — prikazuje se samo jednom.
+2. Unesite e-poštu svog pCloud računa kao korisnika.
+3. Unesite lozinku aplikacije kao lozinku.
+   Za EU podatkovni centar: ewebdav.pcloud.com koristi se automatski.
+   Za američki podatkovni centar: promijenite host u webdav.pcloud.com.</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>Yandex Disk putem WebDAV-a.
+
+1. Idite na id.yandex.com → Sigurnost → Lozinke aplikacije → Stvorite lozinku aplikacije za &apos;WebDAV pristup&apos;.
+   Kopirajte generiranu lozinku — prikazuje se samo jednom.
+2. Unesite svoju prijavu na Yandex kao korisnik.
+3. Unesite lozinku aplikacije (ne lozinku vašeg Yandex računa) kao lozinku.
+   Adresa poslužitelja, HTTPS i port konfiguriraju se automatski.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Sigurnosno kopirajte/sinkronizirajte svoje podatke na sustavu Windows, Linux.
 Uvezite fotografije s telefona putem WI-FI i još mnogo toga.

@@ -961,6 +961,267 @@
   <data name="User_Field_Validation" xml:space="preserve">
     <value>ব্যবহারকারী নির্দিষ্ট করা হয়নি।</value>
   </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba ক্লাউড OSS — Alibaba থেকে S3-সামঞ্জস্যপূর্ণ অবজেক্ট স্টোরেজ।
+
+1. OSS কনসোলে (https://oss.console.aliyun.com/), একটি বালতি তৈরি করুন। এর অঞ্চলটি লক্ষ্য করুন (যেমন oss-cn-hangzhou)।
+2. RAM কনসোলে → ব্যবহারকারী → একটি ব্যবহারকারী তৈরি করুন → AliyunOSSFullAccess সংযুক্ত করুন → একটি AccessKey তৈরি করুন।
+   AccessKey ID (= Access Key) এবং AccessKey Secret (= Secret Key) কপি করুন।
+3. পরিষেবা URL: https://oss-&lt;REGION&gt;.aliyuncs.com (যেমন https://oss-cn-hangzhou.aliyuncs.com)।
+4. অঞ্চল: যেমন oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — Amazon এর আসল অবজেক্ট স্টোরেজ।
+
+1. S3 কনসোল খুলুন (https://s3.console.aws.amazon.com/) এবং একটি বালতি তৈরি করুন। এর অঞ্চলটি লক্ষ্য করুন (যেমন us-east-1)।
+2. IAM খুলুন → ব্যবহারকারী → একটি ব্যবহারকারী তৈরি করুন → AmazonS3FullAccess নীতি সংযুক্ত করুন।
+3. নিরাপত্তা শংসাপত্রের অধীনে, একটি অ্যাক্সেস কী তৈরি করুন — কী আইডি এবং গোপনীয়তা অনুলিপি করুন।
+4. পূরণ করুন: বালতি, অ্যাক্সেস কী, গোপন কী এবং অঞ্চল৷</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — Baidu থেকে S3-সামঞ্জস্যপূর্ণ অবজেক্ট স্টোরেজ।
+
+1. BOS কনসোলে (https://console.bce.baidu.com/bos/), একটি বালতি তৈরি করুন। এর অঞ্চলটি লক্ষ্য করুন (যেমন bj, gz, su)।
+2. সিকিউরিটি → অ্যাক্সেস কী-তে যান - আপনার অ্যাক্সেস কী আইডি এবং গোপন অ্যাক্সেস কী কপি করুন।
+3. পরিষেবা URL: https://s3.&lt;REGION&gt;.bcebos.com (যেমন https://s3.bj.bcebos.com)।
+4. অঞ্চল: যেমন বিজে</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — সাশ্রয়ী মূল্যের S3-সামঞ্জস্যপূর্ণ স্টোরেজ।
+
+1. ব্যাকব্লেজে (https://www.backblaze.com/) → B2 ক্লাউড স্টোরেজ → বালতি, একটি বালতি তৈরি করুন।
+2. অ্যাপ কীগুলিতে যান → একটি নতুন অ্যাপ্লিকেশন কী যুক্ত করুন, এটিকে বালতিতে স্কোপ করুন৷
+   KeyID (= Access Key) এবং applicationKey (= গোপন কী) কপি করুন।
+3. পরিষেবা URL: আপনার বালতির শেষ বিন্দু বালতির বিবরণে দেখানো হয়েছে, যেমন https://s3.us-west-004.backblazeb2.com
+4. অঞ্চল: &apos;s3&apos;-এর মধ্যে সেগমেন্ট। এবং &apos;.backblazeb2.com&apos;, যেমন us-west-004.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>ক্লাউডফ্লেয়ার R2 — জিরো-ইগ্রেস S3-সামঞ্জস্যপূর্ণ স্টোরেজ।
+
+1. ক্লাউডফ্লেয়ার ড্যাশবোর্ডে (https://dash.cloudflare.com/) → R2 → একটি বালতি তৈরি করুন।
+2. R2 এ যান → R2 API টোকেন পরিচালনা করুন → অবজেক্ট রিড এবং রাইটের মাধ্যমে API টোকেন তৈরি করুন।
+   অ্যাক্সেস কী আইডি এবং গোপন অ্যাক্সেস কী অনুলিপি করুন।
+3. পরিষেবা URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com৷
+   আপনার অ্যাকাউন্ট আইডি R2 ওভারভিউ পৃষ্ঠায় দেখানো হয়েছে।
+4. পূরণ করুন: বালতি, অ্যাক্সেস কী, গোপন কী, এবং পরিষেবা URL৷ অঞ্চল স্বয়ংক্রিয়ভাবে &apos;স্বয়ংক্রিয়&apos; সেট করা হয়েছে৷</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) অবজেক্ট স্টোরেজ — S3-সামঞ্জস্যপূর্ণ OBS স্টোরেজ।
+
+1. Cloud.ru কনসোলে (https://cloud.ru/) → অবজেক্ট স্টোরেজ সার্ভিস (OBS) → একটি বালতি তৈরি করুন।
+2. আমার শংসাপত্র → অ্যাক্সেস কী → অ্যাক্সেস কী যোগ করুন এ যান৷
+   অ্যাক্সেস কী এবং গোপন অ্যাক্সেস কী অনুলিপি করুন।
+3. পূরণ করুন: বালতি, অ্যাক্সেস কী, গোপন কী, এবং অঞ্চল (যেমন ru-moscow-1)।
+   পরিষেবা URL স্বয়ংক্রিয়ভাবে পূরণ করা হয়.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO বা যেকোনো S3-সামঞ্জস্যপূর্ণ সার্ভার।
+
+1. আপনার MinIO (বা অন্যান্য S3-সামঞ্জস্যপূর্ণ) সার্ভার শুরু করুন।
+2. MinIO কনসোল বা &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos; এর মাধ্যমে একটি বালতি তৈরি করুন৷
+3. MinIO কনসোলে একটি অ্যাক্সেস কী তৈরি করুন → অ্যাক্সেস কী (উৎপাদনে রুট শংসাপত্র এড়িয়ে চলুন)।
+4. পরিষেবা URL: আপনার সার্ভারের শেষ পয়েন্ট, যেমন http://192.168.1.10:9000 বা https://minio.example.com।
+5. অঞ্চল: যেকোন মান (যেমন us-east-1) — অথবা যদি সার্ভার এটি প্রয়োগ না করে তাহলে খালি ছেড়ে দিন।</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — S3-সামঞ্জস্যপূর্ণ অবজেক্ট স্টোরেজ।
+
+1. স্পেসে (https://cloud.digitalocean.com/spaces), একটি স্পেস তৈরি করুন। এর অঞ্চলটি নোট করুন (যেমন nyc3)।
+2. API → Spaces Keys → Generate New Key-এ যান। কী (= অ্যাক্সেস কী) এবং গোপনীয়তা অনুলিপি করুন।
+3. পরিষেবা URL: https://&lt;REGION&gt;.digitaloceanspaces.com (যেমন https://nyc3.digitaloceanspaces.com)।
+4. অঞ্চল: একই শর্ট কোড, যেমন nyc3।</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google ক্লাউড স্টোরেজ — S3 ইন্টারঅপারেবিলিটি API এর মাধ্যমে।
+
+1. Google ক্লাউড কনসোলে (https://console.cloud.google.com/storage), একটি বালতি তৈরি করুন৷
+2. ক্লাউড স্টোরেজ → সেটিংস → ইন্টারঅপারেবিলিটি → একটি পরিষেবা অ্যাকাউন্টের জন্য একটি HMAC কী তৈরি করুন এ যান৷
+   অ্যাক্সেস কী এবং গোপনীয়তা অনুলিপি করুন।
+3. পূরণ করুন: বালতি, অ্যাক্সেস কী (HMAC কী), গোপন কী (HMAC গোপন)।
+   পরিষেবা URL এবং অঞ্চল স্বয়ংক্রিয়ভাবে সেট করা হয়.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — Huawei থেকে S3-সামঞ্জস্যপূর্ণ অবজেক্ট স্টোরেজ।
+
+1. OBS কনসোলে (https://console.huaweicloud.com/obs/), একটি বালতি তৈরি করুন। এর অঞ্চলটি লক্ষ্য করুন (যেমন cn-উত্তর-4)।
+2. আমার শংসাপত্র → অ্যাক্সেস কী → অ্যাক্সেস কী তৈরি করুন এ যান৷
+   AK (= অ্যাক্সেস কী) এবং SK (= গোপন কী) অনুলিপি করুন।
+3. পরিষেবা URL: https://obs.&lt;REGION&gt;.myhuaweicloud.com (যেমন https://obs.cn-north-4.myhuaweicloud.com)।
+4. অঞ্চল: যেমন cn-উত্তর-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>লিনোড (আকামাই) অবজেক্ট স্টোরেজ — S3-সামঞ্জস্যপূর্ণ স্টোরেজ।
+
+1. লিনোড ক্লাউড ম্যানেজারে (https://cloud.linode.com/object-storage/buckets), একটি বালতি তৈরি করুন। এর ক্লাস্টার নোট করুন।
+2. অবজেক্ট স্টোরেজ → অ্যাক্সেস কী → বালতিতে স্কোপযুক্ত একটি অ্যাক্সেস কী তৈরি করুন।
+   অ্যাক্সেস কী এবং সিক্রেট কী কপি করুন।
+3. পরিষেবা URL: https://&lt;CLUSTER&gt;.linodeobjects.com (যেমন https://us-east-1.linodeobjects.com)।
+4. অঞ্চল: একই ক্লাস্টার কোড, যেমন us-east-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>কিনিউ ক্লাউড কোডো — কিনিউ থেকে S3-সামঞ্জস্যপূর্ণ স্টোরেজ।
+
+1. কিনিউ পোর্টালে (https://portal.qiniu.com/kodo/bucket), একটি বালতি তৈরি করুন। এর অঞ্চলটি লক্ষ্য করুন।
+2. ব্যক্তিগত কেন্দ্রে যান → কী ব্যবস্থাপনা — আপনার অ্যাক্সেসকি এবং সিক্রেটকি কপি করুন।
+3. অঞ্চল অনুসারে পরিষেবা URL:
+   পূর্ব চীন: https://s3-cn-east-1.qiniucs.com
+   উত্তর চীন: https://s3-cn-north-1.qiniucs.com
+   দক্ষিণ চীন: https://s3-cn-south-1.qiniucs.com
+   উত্তর আমেরিকা: https://s3-us-north-1.qiniucs.com
+4. অঞ্চল: মিলে যাওয়া কোড, যেমন cn-east-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>স্কেলওয়ে অবজেক্ট স্টোরেজ — ইউরোপীয় S3-সামঞ্জস্যপূর্ণ স্টোরেজ।
+
+1. স্কেলওয়ে কনসোলে (https://console.scaleway.com/object-storage/buckets), একটি বালতি তৈরি করুন। এর অঞ্চলটি লক্ষ্য করুন (যেমন fr-par)।
+2. আইএএম → এপিআই কী → অবজেক্ট স্টোরেজ লেখার অনুমতি সহ API কী তৈরি করুন।
+   অ্যাক্সেস কী এবং সিক্রেট কী কপি করুন।
+3. পরিষেবা URL: https://s3.&lt;REGION&gt;.scw.cloud (যেমন https://s3.fr-par.scw.cloud)।
+4. অঞ্চল: যেমন fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>সিলেক্টেল অবজেক্ট স্টোরেজ — S3-সামঞ্জস্যপূর্ণ রাশিয়ান স্টোরেজ।
+
+1. সিলেক্টেল প্যানেলে (https://my.selectel.ru/) → ক্লাউড স্টোরেজ → একটি ধারক তৈরি করুন (= বালতি)।
+2. ব্যবহারকারী এবং ভূমিকার অধীনে, স্টোরেজ অ্যাক্সেস সহ একটি পরিষেবা ব্যবহারকারী তৈরি করুন → S3 কী → একটি কী জোড়া তৈরি করুন৷
+   অ্যাক্সেস কী এবং সিক্রেট কী কপি করুন।
+3. পূরণ করুন: বালতি, অ্যাক্সেস কী, গোপন কী।
+   পরিষেবা URL স্বয়ংক্রিয়ভাবে পূরণ করা হয়.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — Tencent থেকে S3-সামঞ্জস্যপূর্ণ অবজেক্ট স্টোরেজ।
+
+1. COS কনসোলে (https://console.cloud.tencent.com/cos), একটি বালতি তৈরি করুন। AppId এবং অঞ্চল নোট করুন (যেমন ap-beijing)।
+2. অ্যাক্সেস ম্যানেজমেন্ট → API কী → কী তৈরি করুন।
+   SecretId (= Access Key) এবং SecretKey (= Secret Key) কপি করুন।
+3. পরিষেবা URL: https://cos.&lt;REGION&gt;.myqcloud.com (যেমন https://cos.ap-beijing.myqcloud.com)।
+4. বাকেট নামের বিন্যাস: &lt;name&gt;-&lt;AppId&gt; (যেমন mybucket-1250000000)। অঞ্চল: যেমন এপি-বেইজিং।</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK ক্লাউড অবজেক্ট স্টোরেজ — VK ক্লাউড থেকে S3-সামঞ্জস্যপূর্ণ স্টোরেজ।
+
+1. ভিকে ক্লাউড পোর্টালে (https://msk.cloud.vk.com/) → ক্লাউড স্টোরেজ → একটি বালতি তৈরি করুন।
+2. আপনার অ্যাকাউন্টের অধীনে → অ্যাক্সেস কী → একটি নতুন কী জোড়া তৈরি করুন৷
+   অ্যাক্সেস কী এবং সিক্রেট কী কপি করুন।
+3. পূরণ করুন: বালতি, অ্যাক্সেস কী, গোপন কী, এবং প্রয়োজন হলে অঞ্চল (যেমন ru-msk)।
+   পরিষেবা URL স্বয়ংক্রিয়ভাবে পূরণ করা হয়.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>আগ্নেয়গিরি ইঞ্জিন TOS (ByteDance) — S3-সামঞ্জস্যপূর্ণ স্টোরেজ।
+
+1. ভলকানো ইঞ্জিন কনসোলে (https://console.volcengine.com/tos), একটি বালতি তৈরি করুন। এর অঞ্চলটি লক্ষ্য করুন (যেমন cn-বেইজিং)।
+2. IAM → অ্যাক্সেস কী → একটি কী তৈরি করুন এ যান৷
+   অ্যাক্সেস কী আইডি এবং গোপন অ্যাক্সেস কী অনুলিপি করুন।
+3. পরিষেবা URL: https://tos-s3-&lt;REGION&gt;.volces.com (যেমন https://tos-s3-cn-beijing.volces.com)।
+4. অঞ্চল: যেমন cn-বেইজিং।</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>ওয়াসাবি — গরম ক্লাউড স্টোরেজ কোন প্রস্থান ফি ছাড়া।
+
+1. ওয়াসাবি কনসোলে (https://console.wasabisys.com/) → বালতি → বালতি তৈরি করুন। একটি অঞ্চল চয়ন করুন।
+2. অ্যাক্সেস কীগুলিতে যান → নতুন অ্যাক্সেস কী তৈরি করুন৷ অ্যাক্সেস কী এবং সিক্রেট কী কপি করুন।
+3. পূরণ করুন: বালতি, অ্যাক্সেস কী, সিক্রেট কী এবং অঞ্চল (যেমন us-east-1, eu-central-1)।
+   পরিষেবা URL স্বয়ংক্রিয়ভাবে পূরণ করা হয়.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>ইয়ানডেক্স অবজেক্ট স্টোরেজ — S3-সামঞ্জস্যপূর্ণ রাশিয়ান ক্লাউড স্টোরেজ।
+
+1. ইয়ানডেক্স ক্লাউড কনসোলে (https://console.yandex.cloud/) → অবজেক্ট স্টোরেজ → একটি বালতি তৈরি করুন।
+2. পরিষেবা অ্যাকাউন্টে যান → store.editor ভূমিকা সহ একটি তৈরি করুন → একটি স্ট্যাটিক অ্যাক্সেস কী তৈরি করুন৷
+   কী আইডি (= অ্যাক্সেস কী) এবং গোপন কী অনুলিপি করুন।
+3. পূরণ করুন: বালতি, অ্যাক্সেস কী, গোপন কী।
+   পরিষেবা URL এবং অঞ্চল স্বয়ংক্রিয়ভাবে সেট করা হয়.</value>
+  </data>
+  <data name="WebDav_Preset_Box_Help" xml:space="preserve">
+    <value>বক্স — WebDAV সমর্থন সহ এন্টারপ্রাইজ ক্লাউড স্টোরেজ।
+
+1. app.box.com এ লগ ইন করুন। মনে রাখবেন যে Box WebDAV শুধুমাত্র অর্থপ্রদানের পরিকল্পনার জন্য উপলব্ধ।
+2. ব্যবহারকারী হিসাবে আপনার বক্স অ্যাকাউন্ট ইমেল লিখুন।
+3. পাসওয়ার্ড হিসাবে আপনার বক্স পাসওয়ার্ড লিখুন।
+   আপনি যদি SSO ব্যবহার করেন, তাহলে আপনাকে অ্যাকাউন্ট সেটিংসে একটি পৃথক WebDAV পাসওয়ার্ড সেট করতে হতে পারে৷
+   সার্ভার ঠিকানা, HTTPS, পোর্ট এবং বেস পাথ স্বয়ংক্রিয়ভাবে কনফিগার করা হয়।</value>
+  </data>
+  <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
+    <value>জেনেরিক WebDAV সার্ভার (Nextcloud, ownCloud, Synology DSM, Seafile, Apache, ইত্যাদি)
+
+1. সার্ভারের ঠিকানা লিখুন, HTTPS (প্রস্তাবিত) চয়ন করুন এবং পোর্ট সেট করুন (0 = ডিফল্ট: HTTP এর জন্য 80, HTTPS এর জন্য 443)।
+2. WebDAV এন্ডপয়েন্টের জন্য বেস পাথ লিখুন।
+   পরবর্তী ক্লাউড উদাহরণ: /remote.php/dav/files/&lt;username&gt;/Backups
+   Synology DSM: /
+3. আপনার ব্যবহারকারীর নাম এবং পাসওয়ার্ড লিখুন (বা আপনার সার্ভারের প্রয়োজন হলে একটি অ্যাপ-নির্দিষ্ট পাসওয়ার্ড)।</value>
+  </data>
+  <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
+    <value>IONOS হাইড্রাইভ — শক্তিশালী গোপনীয়তা ফোকাস সহ জার্মান ক্লাউড স্টোরেজ।
+
+1. hidrive.ionos.com → সেটিংস → অ্যাপস এবং সংযুক্ত পরিষেবা → WebDAV-এ লগ ইন করুন৷
+   অথবা সরাসরি আপনার বিদ্যমান শংসাপত্র সহ WebDAV অ্যাক্সেস করুন।
+2. ব্যবহারকারী হিসাবে আপনার হাইড্রাইভ ব্যবহারকারীর নাম লিখুন।
+3. পাসওয়ার্ড হিসাবে আপনার হাইড্রাইভ পাসওয়ার্ড লিখুন।
+   সার্ভার ঠিকানা, HTTPS, পোর্ট এবং বেস পাথ স্বয়ংক্রিয়ভাবে কনফিগার করা হয়।</value>
+  </data>
+  <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
+    <value>জিয়াংগুয়ুন (坚果云) — স্থানীয় WebDAV সমর্থন সহ জনপ্রিয় চীনা ক্লাউড স্টোরেজ।
+
+1. jianguoyun.com এ লগ ইন করুন → অ্যাকাউন্ট তথ্য → নিরাপত্তা → তৃতীয় পক্ষের অ্যাপ পরিচালনা → অ্যাপ্লিকেশন যোগ করুন৷
+   জেনারেট করা অ্যাপ পাসওয়ার্ড কপি করুন — এটি শুধুমাত্র একবার দেখানো হয়।
+2. ব্যবহারকারী হিসাবে আপনার Jianguoyun ইমেল ঠিকানা লিখুন।
+3. পাসওয়ার্ড হিসাবে জেনারেট করা অ্যাপ পাসওয়ার্ড লিখুন।
+   সার্ভার ঠিকানা, HTTPS, পোর্ট এবং বেস পাথ স্বয়ংক্রিয়ভাবে কনফিগার করা হয়।</value>
+  </data>
+  <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
+    <value>Koofr — স্লোভেনিয়া (EU) ভিত্তিক গোপনীয়তা-বান্ধব ক্লাউড স্টোরেজ।
+
+1. app.koofr.eu → পছন্দ → পাসওয়ার্ড → অ্যাপ পাসওয়ার্ড → পাসওয়ার্ড যোগ করুন এ যান।
+2. ব্যবহারকারী হিসাবে আপনার Koofr অ্যাকাউন্ট ইমেল লিখুন।
+3. পাসওয়ার্ড হিসাবে জেনারেট করা অ্যাপ পাসওয়ার্ড লিখুন।
+   সার্ভার ঠিকানা, HTTPS, পোর্ট এবং বেস পাথ স্বয়ংক্রিয়ভাবে কনফিগার করা হয়।</value>
+  </data>
+  <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
+    <value>WebDAV এর মাধ্যমে Mail.ru ক্লাউড।
+
+1. account.mail.ru এ যান → নিরাপত্তা → অ্যাপ পাসওয়ার্ড → অ্যাপ পাসওয়ার্ড তৈরি করুন।
+   টাইপ হিসাবে &apos;মেইল&apos; বা &apos;সমস্ত&apos; নির্বাচন করুন, তারপর জেনারেট করা পাসওয়ার্ডটি অনুলিপি করুন।
+2. ব্যবহারকারী হিসাবে আপনার Mail.ru ইমেল ঠিকানা লিখুন।
+3. পাসওয়ার্ড হিসাবে অ্যাপ পাসওয়ার্ড লিখুন।
+   সার্ভার ঠিকানা, HTTPS, পোর্ট এবং বেস পাথ স্বয়ংক্রিয়ভাবে কনফিগার করা হয়।</value>
+  </data>
+  <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
+    <value>নেক্সটক্লাউড - জনপ্রিয় স্ব-হোস্টেড ফাইল সিঙ্ক এবং শেয়ার করুন।
+
+1. আপনার Nextcloud সার্ভার ঠিকানা লিখুন (যেমন nextcloud.example.com)।
+2. বেস পাথ আগে থেকে পূর্ণ: /remote.php/dav/files/&lt;username&gt;/
+   আপনার প্রকৃত নেক্সটক্লাউড ব্যবহারকারীর নাম দিয়ে &lt;username&gt; প্রতিস্থাপন করুন।
+3. আপনার নেক্সটক্লাউড ব্যবহারকারীর নাম এবং পাসওয়ার্ড লিখুন (বা এর থেকে একটি অ্যাপ পাসওয়ার্ড
+   সেটিংস → নিরাপত্তা → ডিভাইস এবং সেশন → অ্যাপ পাসওয়ার্ড)।</value>
+  </data>
+  <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
+    <value>ownCloud — স্ব-হোস্টেড ফাইল সিঙ্ক এবং শেয়ার করুন।
+
+1. আপনার নিজস্ব ক্লাউড সার্ভার ঠিকানা লিখুন (যেমন, owncloud.example.com)।
+2. বেস পাথ আগে থেকে পূর্ণ: /remote.php/dav/files/&lt;username&gt;/
+   আপনার প্রকৃত নিজস্ব ক্লাউড ব্যবহারকারীর নাম দিয়ে &lt;username&gt; প্রতিস্থাপন করুন।
+3. আপনার নিজের ক্লাউড ব্যবহারকারীর নাম এবং পাসওয়ার্ড লিখুন (বা 2FA সক্ষম থাকলে একটি অ্যাপ পাসওয়ার্ড)।</value>
+  </data>
+  <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
+    <value>pCloud — EU এবং US ডেটা সেন্টারের সাথে ক্লাউড স্টোরেজ।
+
+1. my.pcloud.com এ লগ ইন করুন → সেটিংস → নিরাপত্তা → অ্যাপ পাসওয়ার্ড → তৈরি করুন।
+   অ্যাপ পাসওয়ার্ড কপি করুন — এটি শুধুমাত্র একবার দেখানো হয়।
+2. ব্যবহারকারী হিসাবে আপনার pCloud অ্যাকাউন্ট ইমেল লিখুন.
+3. পাসওয়ার্ড হিসাবে অ্যাপ পাসওয়ার্ড লিখুন।
+   EU ডেটা সেন্টারের জন্য: ewebdav.pcloud.com স্বয়ংক্রিয়ভাবে ব্যবহৃত হয়।
+   US ডেটা সেন্টারের জন্য: webdav.pcloud.com-এ হোস্ট পরিবর্তন করুন।</value>
+  </data>
+  <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
+    <value>WebDAV এর মাধ্যমে ইয়ানডেক্স ডিস্ক।
+
+1. id.yandex.com-এ যান → নিরাপত্তা → অ্যাপ পাসওয়ার্ড → &apos;WebDAV অ্যাক্সেস&apos;-এর জন্য অ্যাপ পাসওয়ার্ড তৈরি করুন।
+   জেনারেট করা পাসওয়ার্ড কপি করুন — এটি শুধুমাত্র একবার দেখানো হয়।
+2. ব্যবহারকারী হিসাবে আপনার Yandex লগইন লিখুন।
+3. পাসওয়ার্ড হিসেবে অ্যাপ পাসওয়ার্ড (আপনার Yandex অ্যাকাউন্টের পাসওয়ার্ড নয়) লিখুন।
+   সার্ভার ঠিকানা, HTTPS, এবং পোর্ট স্বয়ংক্রিয়ভাবে কনফিগার করা হয়.</value>
+  </data>
+
   <data name="Winget_Description" xml:space="preserve">
     <value>Windows, Linux-এ আপনার ডেটা ব্যাকআপ/সিঙ্ক্রোনাইজ করুন।
 WI-FI এর মাধ্যমে ফোন থেকে ফটো ইমপোর্ট করুন এবং আরও অনেক কিছু।
