@@ -31,7 +31,7 @@ public class EditSynchronizationTaskViewModel : ViewModelBase
 
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
         WhenTaskViewModel = new WhenTaskViewModel(isNew ? new ScheduleInfo() { Time = new System.TimeSpan(Constants.DefaultHours, Constants.DefaultMinutes, 0), Days = [System.DayOfWeek.Monday, System.DayOfWeek.Tuesday, System.DayOfWeek.Wednesday, System.DayOfWeek.Thursday, System.DayOfWeek.Friday, System.DayOfWeek.Saturday, System.DayOfWeek.Sunday] } : schedule.GetSchedule(taskName) ?? new ScheduleInfo());
-        WhereTaskViewModel = new WhereTaskViewModel(model.To, Resources.LeftMenu_Where, "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png");
+        StorageViewModel = new StorageViewModel(model.To, Resources.LeftMenu_Where, "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png");
         What = new SynchronizationWhatViewModel(model.LocalFolder, model.SynchronizationMode);
     }
 
@@ -39,7 +39,7 @@ public class EditSynchronizationTaskViewModel : ViewModelBase
     public NameTaskViewModel NameTaskViewModel { get; }
     public EncryptionTaskViewModel EncryptionTaskViewModel { get; }
     public WhenTaskViewModel WhenTaskViewModel { get; }
-    public WhereTaskViewModel WhereTaskViewModel { get; }
+    public StorageViewModel StorageViewModel { get; }
     public SynchronizationWhatViewModel What { get; }
 
     #region Commands
@@ -59,7 +59,7 @@ public class EditSynchronizationTaskViewModel : ViewModelBase
             Model = new SynchronizationTaskModelOptionsV2
             {
                 Password = EncryptionTaskViewModel.Password,
-                To = WhereTaskViewModel.GetStorageSettings(),
+                To = StorageViewModel.GetStorageSettings(),
                 LocalFolder = What.Folder,
                 SynchronizationMode = What.SynchronizationMode
             }
@@ -67,7 +67,7 @@ public class EditSynchronizationTaskViewModel : ViewModelBase
 
         if (!TaskV2Validator.TryValidate(newTask, true, out var error))
         {
-            var detectedInfo = WhereTaskViewModel.ApplyDetectedConnectionTrustAndBuildInfo(((SynchronizationTaskModelOptionsV2)newTask.Model).To);
+            var detectedInfo = StorageViewModel.ApplyDetectedConnectionTrustAndBuildInfo(((SynchronizationTaskModelOptionsV2)newTask.Model).To);
             if (!string.IsNullOrWhiteSpace(detectedInfo))
                 await Messages.ShowInformationBox(detectedInfo);
             await Messages.ShowErrorBox(error);

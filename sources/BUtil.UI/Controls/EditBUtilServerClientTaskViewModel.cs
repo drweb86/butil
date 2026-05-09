@@ -20,7 +20,7 @@ public class EditBUtilServerClientTaskViewModel : ViewModelBase
 
         var storeService = new TaskStore(new LocalFileSystem());
         var task = isNew
-            ? new TaskV2 { Name = taskName, Model = new BUtilClientModelOptionsV2(string.Empty, FileSenderDirection.ToServer, new FtpsStorageSettingsV2()) }
+            ? new TaskV2 { Name = taskName, Model = new BUtilClientModelOptionsV2(string.Empty, FileSenderDirection.ToServer, new FolderStorageSettingsV2()) }
             : storeService.Load(taskName) ?? new TaskV2();
         NameTaskViewModel = new NameTaskViewModel(isNew, Resources.UploadFolderTask_Help, task.Name);
         SetWindowTitleForEdit(taskName, isNew);
@@ -30,14 +30,14 @@ public class EditBUtilServerClientTaskViewModel : ViewModelBase
         WhenTaskViewModel = new WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule.GetSchedule(taskName) ?? new ScheduleInfo());
 
         FolderSectionViewModel = new FolderSectionViewModel(model.Folder);
-        WhereTaskViewModel = new WhereTaskViewModel(model.To, Resources.LeftMenu_Where, "/Assets/CrystalProject_EveraldoCoelho_SourceItems48x48.png");
+        StorageViewModel = new StorageViewModel(model.To, Resources.LeftMenu_Where, "/Assets/CrystalProject_EveraldoCoelho_SourceItems48x48.png");
     }
 
     public bool IsNew { get; set; }
     public NameTaskViewModel NameTaskViewModel { get; }
     public WhenTaskViewModel WhenTaskViewModel { get; }
     public FolderSectionViewModel FolderSectionViewModel { get; }
-    public WhereTaskViewModel WhereTaskViewModel { get; }
+    public StorageViewModel StorageViewModel { get; }
 
     #region Commands
 
@@ -53,12 +53,12 @@ public class EditBUtilServerClientTaskViewModel : ViewModelBase
         var newTask = new TaskV2
         {
             Name = NameTaskViewModel.Name.TrimEnd(),
-            Model = new BUtilClientModelOptionsV2(FolderSectionViewModel.Folder, FileSenderDirection.ToServer, WhereTaskViewModel.GetStorageSettings())
+            Model = new BUtilClientModelOptionsV2(FolderSectionViewModel.Folder, FileSenderDirection.ToServer, StorageViewModel.GetStorageSettings())
         };
 
         if (!TaskV2Validator.TryValidate(newTask, true, out var error))
         {
-            var detectedInfo = WhereTaskViewModel.ApplyDetectedConnectionTrustAndBuildInfo(((BUtilClientModelOptionsV2)newTask.Model).To);
+            var detectedInfo = StorageViewModel.ApplyDetectedConnectionTrustAndBuildInfo(((BUtilClientModelOptionsV2)newTask.Model).To);
             if (!string.IsNullOrWhiteSpace(detectedInfo))
                 await Messages.ShowInformationBox(detectedInfo);
             await Messages.ShowErrorBox(error);

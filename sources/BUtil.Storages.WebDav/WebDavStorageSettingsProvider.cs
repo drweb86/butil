@@ -22,23 +22,73 @@ public class WebDavStorageSettingsProvider : IStorageSettingsProvider
             DefaultValue = "Custom",
             Options =
             [
-                new("Custom", "Generic / Custom",
-                    "Generic WebDAV server (Nextcloud, ownCloud, Synology DSM, Seafile, Apache, etc.)\n\n" +
-                    "1. Enter the server Address, choose HTTPS (recommended), and set the port (0 = default: 80 for HTTP, 443 for HTTPS).\n" +
-                    "2. Enter the base path for the WebDAV endpoint.\n" +
-                    "   Nextcloud example:  /remote.php/dav/files/<username>/Backups\n" +
-                    "   Synology DSM:       /\n" +
-                    "3. Enter your username and password (or an app-specific password if your server requires it)."),
-                new("YandexDisk", "Yandex Disk",
-                    "Yandex Disk via WebDAV.\n\n" +
-                    "1. Go to id.yandex.com → Security → App passwords → Create app password for 'WebDAV access'.\n" +
-                    "   Copy the generated password — it is shown only once.\n" +
-                    "2. Enter your Yandex login as the User.\n" +
-                    "3. Enter the app password (not your Yandex account password) as the Password.\n" +
-                    "   Server address, HTTPS, and port are configured automatically."),
+                new("Custom", "Generic / Custom", Resources.WebDav_Preset_Custom_Help),
+                new("Nextcloud", "Nextcloud", Resources.WebDav_Preset_Nextcloud_Help),
+                new("ownCloud", "ownCloud", Resources.WebDav_Preset_ownCloud_Help),
+                new("Koofr", "Koofr (EU)", Resources.WebDav_Preset_Koofr_Help),
+                new("pCloud", "pCloud (EU/US)", Resources.WebDav_Preset_pCloud_Help),
+                new("IONOSHiDrive", "IONOS HiDrive (DE)", Resources.WebDav_Preset_IONOSHiDrive_Help),
+                new("Box", "Box (US)", Resources.WebDav_Preset_Box_Help),
+                new("YandexDisk", "Yandex Disk (RU)", Resources.WebDav_Preset_YandexDisk_Help),
+                new("MailRuCloud", "Mail.ru Cloud (RU)", Resources.WebDav_Preset_MailRuCloud_Help),
+                new("Jianguoyun", "Jianguoyun / Nutstore (CN)", Resources.WebDav_Preset_Jianguoyun_Help),
             ],
             EnumSelectionUiRules =
             [
+                // Nextcloud: host and credentials are user-supplied; pre-fill the base path
+                new EnumSelectionUiRule("Nextcloud",
+                [
+                    new EnumUiPatch("host", PlaceholderOverride: "nextcloud.example.com"),
+                    new EnumUiPatch("basePath", PlaceholderOverride: "/remote.php/dav/files/<username>/"),
+                    new EnumUiPatch("user", PlaceholderOverride: "your-nextcloud-username"),
+                    new EnumUiPatch("password", LabelOverride: "Password / App Password"),
+                ]),
+                // ownCloud: same structure as Nextcloud
+                new EnumSelectionUiRule("ownCloud",
+                [
+                    new EnumUiPatch("host", PlaceholderOverride: "owncloud.example.com"),
+                    new EnumUiPatch("basePath", PlaceholderOverride: "/remote.php/dav/files/<username>/"),
+                    new EnumUiPatch("user", PlaceholderOverride: "your-owncloud-username"),
+                    new EnumUiPatch("password", LabelOverride: "Password / App Password"),
+                ]),
+                // Koofr: all server details are fixed
+                new EnumSelectionUiRule("Koofr",
+                [
+                    new EnumUiPatch("host", Hidden: true),
+                    new EnumUiPatch("useHttps", Hidden: true),
+                    new EnumUiPatch("port", Hidden: true),
+                    new EnumUiPatch("basePath", Hidden: true),
+                    new EnumUiPatch("user", PlaceholderOverride: "your@email.com"),
+                    new EnumUiPatch("password", LabelOverride: "App Password"),
+                ]),
+                // pCloud EU: server details fixed for EU DC
+                new EnumSelectionUiRule("pCloud",
+                [
+                    new EnumUiPatch("host", Hidden: true),
+                    new EnumUiPatch("useHttps", Hidden: true),
+                    new EnumUiPatch("port", Hidden: true),
+                    new EnumUiPatch("basePath", Hidden: true),
+                    new EnumUiPatch("user", PlaceholderOverride: "your@email.com"),
+                    new EnumUiPatch("password", LabelOverride: "App Password"),
+                ]),
+                // IONOS HiDrive: all server details fixed
+                new EnumSelectionUiRule("IONOSHiDrive",
+                [
+                    new EnumUiPatch("host", Hidden: true),
+                    new EnumUiPatch("useHttps", Hidden: true),
+                    new EnumUiPatch("port", Hidden: true),
+                    new EnumUiPatch("basePath", Hidden: true),
+                    new EnumUiPatch("user", PlaceholderOverride: "your-hidrive-username"),
+                ]),
+                // Box: all server details fixed
+                new EnumSelectionUiRule("Box",
+                [
+                    new EnumUiPatch("host", Hidden: true),
+                    new EnumUiPatch("useHttps", Hidden: true),
+                    new EnumUiPatch("port", Hidden: true),
+                    new EnumUiPatch("basePath", Hidden: true),
+                    new EnumUiPatch("user", PlaceholderOverride: "your@email.com"),
+                ]),
                 // Yandex Disk: host, protocol, and port are all fixed — hide them
                 new EnumSelectionUiRule("YandexDisk",
                 [
@@ -46,6 +96,28 @@ public class WebDavStorageSettingsProvider : IStorageSettingsProvider
                     new EnumUiPatch("useHttps", Hidden: true),
                     new EnumUiPatch("port", Hidden: true),
                     new EnumUiPatch("basePath", Hidden: true),
+                    new EnumUiPatch("user", PlaceholderOverride: "your-yandex-login"),
+                    new EnumUiPatch("password", LabelOverride: "App Password"),
+                ]),
+                // Mail.ru Cloud: all server details fixed
+                new EnumSelectionUiRule("MailRuCloud",
+                [
+                    new EnumUiPatch("host", Hidden: true),
+                    new EnumUiPatch("useHttps", Hidden: true),
+                    new EnumUiPatch("port", Hidden: true),
+                    new EnumUiPatch("basePath", Hidden: true),
+                    new EnumUiPatch("user", PlaceholderOverride: "your@mail.ru"),
+                    new EnumUiPatch("password", LabelOverride: "App Password"),
+                ]),
+                // Jianguoyun: all server details fixed
+                new EnumSelectionUiRule("Jianguoyun",
+                [
+                    new EnumUiPatch("host", Hidden: true),
+                    new EnumUiPatch("useHttps", Hidden: true),
+                    new EnumUiPatch("port", Hidden: true),
+                    new EnumUiPatch("basePath", Hidden: true),
+                    new EnumUiPatch("user", PlaceholderOverride: "your@email.com"),
+                    new EnumUiPatch("password", LabelOverride: "App Password"),
                 ]),
             ],
         },
@@ -108,10 +180,23 @@ public class WebDavStorageSettingsProvider : IStorageSettingsProvider
         var preset = fieldValues.GetValueOrDefault("preset") ?? "Custom";
         var host = preset switch
         {
-            "YandexDisk" => "webdav.yandex.ru",
+            "Koofr"        => "app.koofr.eu",
+            "pCloud"       => "ewebdav.pcloud.com",
+            "IONOSHiDrive" => "webdav.hidrive.ionos.com",
+            "Box"          => "dav.box.com",
+            "YandexDisk"   => "webdav.yandex.ru",
+            "MailRuCloud"  => "webdav.cloud.mail.ru",
+            "Jianguoyun"   => "dav.jianguoyun.com",
             _ => fieldValues.GetValueOrDefault("host") ?? string.Empty,
         };
-        var useHttps = preset == "Custom"
+        var basePath = preset switch
+        {
+            "Box"         => "/dav",
+            "MailRuCloud" => "/dav",
+            "Jianguoyun"  => "/dav/",
+            _ => fieldValues.GetValueOrDefault("basePath") ?? string.Empty,
+        };
+        var useHttps = preset is "Custom" or "Nextcloud" or "ownCloud"
             ? fieldValues.GetValueOrDefault("useHttps") != "No"
             : true;
 
@@ -124,7 +209,7 @@ public class WebDavStorageSettingsProvider : IStorageSettingsProvider
             Host = host,
             UseHttps = useHttps,
             Port = int.TryParse(fieldValues.GetValueOrDefault("port"), out var port) ? port : 0,
-            BasePath = fieldValues.GetValueOrDefault("basePath") ?? string.Empty,
+            BasePath = basePath,
             User = fieldValues.GetValueOrDefault("user") ?? string.Empty,
             Password = fieldValues.GetValueOrDefault("password") ?? string.Empty,
         };

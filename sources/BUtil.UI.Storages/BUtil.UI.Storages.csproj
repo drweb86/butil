@@ -10,8 +10,8 @@
     <DebugType>None</DebugType>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Update="Controls\WhereTaskView.axaml.cs">
-      <DependentUpon>WhereTaskView.axaml</DependentUpon>
+    <Compile Update="Controls\StorageView.axaml.cs">
+      <DependentUpon>StorageView.axaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

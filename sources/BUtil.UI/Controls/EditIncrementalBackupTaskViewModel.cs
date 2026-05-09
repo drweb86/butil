@@ -28,7 +28,7 @@ public class EditIncrementalBackupTaskViewModel : ViewModelBase
 
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
         WhenTaskViewModel = new WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule.GetSchedule(taskName) ?? new ScheduleInfo());
-        WhereTaskViewModel = new WhereTaskViewModel(model.To, Resources.LeftMenu_Where, "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png");
+        StorageViewModel = new StorageViewModel(model.To, Resources.LeftMenu_Where, "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png");
         WhatTaskViewModel = new WhatTaskViewModel(model.Items, model.FileExcludePatterns);
     }
 
@@ -36,7 +36,7 @@ public class EditIncrementalBackupTaskViewModel : ViewModelBase
     public NameTaskViewModel NameTaskViewModel { get; }
     public EncryptionTaskViewModel EncryptionTaskViewModel { get; }
     public WhenTaskViewModel WhenTaskViewModel { get; }
-    public WhereTaskViewModel WhereTaskViewModel { get; }
+    public StorageViewModel StorageViewModel { get; }
     public WhatTaskViewModel WhatTaskViewModel { get; }
 
     #region Commands
@@ -56,7 +56,7 @@ public class EditIncrementalBackupTaskViewModel : ViewModelBase
             Model = new IncrementalBackupModelOptionsV2
             {
                 Password = EncryptionTaskViewModel.Password,
-                To = WhereTaskViewModel.GetStorageSettings(),
+                To = StorageViewModel.GetStorageSettings(),
                 FileExcludePatterns = WhatTaskViewModel.GetListFileExcludePatterns(),
                 Items = WhatTaskViewModel.GetListSourceItemV2s(),
             }
@@ -64,7 +64,7 @@ public class EditIncrementalBackupTaskViewModel : ViewModelBase
 
         if (!TaskV2Validator.TryValidate(newTask, true, out var error))
         {
-            var detectedInfo = WhereTaskViewModel.ApplyDetectedConnectionTrustAndBuildInfo(((IncrementalBackupModelOptionsV2)newTask.Model).To);
+            var detectedInfo = StorageViewModel.ApplyDetectedConnectionTrustAndBuildInfo(((IncrementalBackupModelOptionsV2)newTask.Model).To);
             if (!string.IsNullOrWhiteSpace(detectedInfo))
                 await Messages.ShowInformationBox(detectedInfo);
             await Messages.ShowErrorBox(error);

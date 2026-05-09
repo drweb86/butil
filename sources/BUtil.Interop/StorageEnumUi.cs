@@ -18,7 +18,9 @@ public sealed record EnumUiPatch(
     /// <summary>When set, shows or hides the target row.</summary>
     bool? Hidden = null,
     /// <summary>When set, written into the target field&apos;s stored value while this enum value is active.</summary>
-    string? ValueWhenSelected = null);
+    string? ValueWhenSelected = null,
+    /// <summary>When set, replaces the target field&apos;s placeholder text until the enum selection changes.</summary>
+    string? PlaceholderOverride = null);
 
 /// <summary>
 /// Describes UI behavior for one serialized enum value on the field that declares <see cref="StorageFieldDescriptor.EnumSelectionUiRules"/>.

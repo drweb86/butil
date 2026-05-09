@@ -1,4 +1,6 @@
-namespace BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.ConfigurationFileModels.V2;
+
+namespace BUtil.Storages.Ftps;
 
 public class FtpsStorageSettingsV2 : IStorageSettingsV2
 {

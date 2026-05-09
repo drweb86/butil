@@ -20,7 +20,7 @@ public abstract class SecretServiceBase : ISecretService
 {
     private const string _prefix = "enc::";
 #pragma warning disable IDE0028 // Simplify collection initialization
-    private static readonly HashSet<string> _secretPropertyNames = new(StringComparer.Ordinal) { "Password" };
+    private static readonly HashSet<string> _secretPropertyNames = new(StringComparer.Ordinal) { "Password", "SecretKey" };
 #pragma warning restore IDE0028 // Simplify collection initialization
 
     public TaskV2 CreateProtectedClone(TaskV2 task)

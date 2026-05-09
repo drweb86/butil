@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace BUtil.UI.Controls;
 
-public partial class WhereTaskView : UserControl
+public partial class StorageView : UserControl
 {
-    public WhereTaskView()
+    public StorageView()
     {
         InitializeComponent();
-        DataContext = new WhereTaskViewModel(
+        DataContext = new StorageViewModel(
             new FolderStorageSettingsV2(),
             BUtil.Core.Localization.Resources.LeftMenu_Where,
             "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png");
@@ -32,10 +32,10 @@ public partial class WhereTaskView : UserControl
     }
 
     public void MountScriptLaunchCommand(object? sender, RoutedEventArgs args) =>
-        _ = ((WhereTaskViewModel)DataContext!).MountTaskLaunchCommand();
+        _ = ((StorageViewModel)DataContext!).MountTaskLaunchCommand();
 
     public void UnmountScriptLaunchCommand(object? sender, RoutedEventArgs args) =>
-        _ = ((WhereTaskViewModel)DataContext!).UnmountTaskLaunchCommand();
+        _ = ((StorageViewModel)DataContext!).UnmountTaskLaunchCommand();
 
     private async Task BrowseFolderAsync(FolderFieldViewModel vm)
     {

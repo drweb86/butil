@@ -13,7 +13,7 @@ public class BUtilClientModelOptionsV2 : ITaskModelOptionsV2
         To = to;
     }
 
-    public IStorageSettingsV2 To { get; set; } = new FtpsStorageSettingsV2();
+    public IStorageSettingsV2 To { get; set; } = new FolderStorageSettingsV2();
 
     public string Folder { get; set; } = null!;
     public FileSenderDirection Direction { get; set; }

@@ -13,7 +13,7 @@ public class RestoreViewModel : ViewModelBase
     {
         WindowTitle = Resources.Task_Restore;
 
-        WhereTaskViewModel = new WhereTaskViewModel(storageSettingsV2 ?? new FolderStorageSettingsV2(), Resources.Task_Restore, "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png");
+        StorageViewModel = new StorageViewModel(storageSettingsV2 ?? new FolderStorageSettingsV2(), Resources.Task_Restore, "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png");
         EncryptionTaskViewModel = new EncryptionTaskViewModel(password ?? string.Empty, false);
         VersionsListViewModel = new VersionsListViewModel(this);
     }
@@ -60,7 +60,7 @@ public class RestoreViewModel : ViewModelBase
 
     #endregion
 
-    public WhereTaskViewModel WhereTaskViewModel { get; }
+    public StorageViewModel StorageViewModel { get; }
     public EncryptionTaskViewModel EncryptionTaskViewModel { get; }
 
     public VersionsListViewModel VersionsListViewModel { get; }
@@ -76,7 +76,7 @@ public class RestoreViewModel : ViewModelBase
 
     public async Task ContinueCommand()
     {
-        var storageOptions = WhereTaskViewModel.GetStorageSettings();
+        var storageOptions = StorageViewModel.GetStorageSettings();
         if (storageOptions == null)
         {
             return;

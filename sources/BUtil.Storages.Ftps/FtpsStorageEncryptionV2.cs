@@ -1,4 +1,4 @@
-namespace BUtil.Core.ConfigurationFileModels.V2;
+namespace BUtil.Storages.Ftps;
 
 public enum FtpsStorageEncryptionV2
 {

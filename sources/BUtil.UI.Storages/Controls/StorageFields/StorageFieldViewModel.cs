@@ -8,6 +8,7 @@ public abstract class StorageFieldViewModel(StorageFieldDescriptor descriptor) :
 {
     private string? _uiLabelOverride;
     private bool _uiHidden;
+    private string? _uiPlaceholderOverride;
 
     public StorageFieldDescriptor Descriptor { get; } = descriptor;
 
@@ -22,6 +23,8 @@ public abstract class StorageFieldViewModel(StorageFieldDescriptor descriptor) :
         }
     }
 
+    public string? DisplayPlaceholder => _uiPlaceholderOverride ?? Descriptor.Placeholder;
+
     /// <summary>
     /// When false, the entire row (including per-option help for enums) is hidden.
     /// </summary>
@@ -29,15 +32,17 @@ public abstract class StorageFieldViewModel(StorageFieldDescriptor descriptor) :
 
     internal void ResetUiCustomization()
     {
-        var changed = _uiLabelOverride != null || _uiHidden;
+        var changed = _uiLabelOverride != null || _uiHidden || _uiPlaceholderOverride != null;
         _uiLabelOverride = null;
         _uiHidden = false;
+        _uiPlaceholderOverride = null;
         if (!changed) return;
         OnPropertyChanged(nameof(DisplayLabel));
         OnPropertyChanged(nameof(IsFieldVisible));
+        OnPropertyChanged(nameof(DisplayPlaceholder));
     }
 
-    internal void ApplyUiPatch(string? labelOverride, bool? hidden)
+    internal void ApplyUiPatch(string? labelOverride, bool? hidden, string? placeholderOverride = null)
     {
         if (labelOverride != null && _uiLabelOverride != labelOverride)
         {
@@ -49,6 +54,12 @@ public abstract class StorageFieldViewModel(StorageFieldDescriptor descriptor) :
         {
             _uiHidden = hidden.Value;
             OnPropertyChanged(nameof(IsFieldVisible));
+        }
+
+        if (placeholderOverride != null && _uiPlaceholderOverride != placeholderOverride)
+        {
+            _uiPlaceholderOverride = placeholderOverride;
+            OnPropertyChanged(nameof(DisplayPlaceholder));
         }
     }
 

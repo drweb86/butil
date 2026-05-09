@@ -26,12 +26,12 @@ public class EditMediaTaskViewModel : ViewModelBase
         var model = (ImportMediaTaskModelOptionsV2)task.Model;
 
         ImportMediaTaskWhereTaskViewModel = new ImportMediaTaskWhereTaskViewModel(model.DestinationFolder, model.SkipAlreadyImportedFiles, model.TransformFileName, model.FileLastWriteTimeMin);
-        SourceTaskViewModel = new WhereTaskViewModel(model.From, Resources.LeftMenu_What, "/Assets/CrystalProject_EveraldoCoelho_SourceItems48x48.png");
+        SourceTaskViewModel = new StorageViewModel(model.From, Resources.LeftMenu_What, "/Assets/CrystalProject_EveraldoCoelho_SourceItems48x48.png");
     }
 
     public ImportMediaTaskWhereTaskViewModel ImportMediaTaskWhereTaskViewModel { get; }
     public NameTaskViewModel NameTaskViewModel { get; }
-    public WhereTaskViewModel SourceTaskViewModel { get; }
+    public StorageViewModel SourceTaskViewModel { get; }
     public bool IsNew { get; set; }
 
     #region Labels

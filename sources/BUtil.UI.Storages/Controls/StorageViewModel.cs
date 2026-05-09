@@ -17,9 +17,9 @@ using System.Threading.Tasks;
 
 namespace BUtil.UI.Controls;
 
-public class WhereTaskViewModel : ObservableObject
+public class StorageViewModel : ObservableObject
 {
-    public WhereTaskViewModel(IStorageSettingsV2 storageSettings, string title, string iconUrl)
+    public StorageViewModel(IStorageSettingsV2 storageSettings, string title, string iconUrl)
     {
         Title = title;
         IconSource = LoadFromResource(new Uri("avares://BUtil.UI" + iconUrl));
@@ -173,7 +173,7 @@ public class WhereTaskViewModel : ObservableObject
                     {
                         if (!byKey.TryGetValue(patch.TargetFieldKey, out var target)) continue;
 
-                        target.ApplyUiPatch(patch.LabelOverride, patch.Hidden);
+                        target.ApplyUiPatch(patch.LabelOverride, patch.Hidden, patch.PlaceholderOverride);
 
                         if (patch.ValueWhenSelected == null) continue;
 

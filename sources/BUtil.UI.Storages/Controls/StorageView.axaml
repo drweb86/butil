@@ -5,8 +5,8 @@
              xmlns:cvm="clr-namespace:BUtil.UI.Controls"
              xmlns:sfvm="clr-namespace:BUtil.UI.Controls.StorageFields"
              mc:Ignorable="d"
-             x:Class="BUtil.UI.Controls.WhereTaskView"
-             x:DataType="cvm:WhereTaskViewModel">
+             x:Class="BUtil.UI.Controls.StorageView"
+             x:DataType="cvm:StorageViewModel">
 	<Expander HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
 		<Expander.Header>
 			<StackPanel Orientation="Horizontal">
@@ -30,16 +30,6 @@
 				</ComboBox>
 			</DockPanel>
 
-			<!-- Quota (common to all storage types) -->
-			<DockPanel>
-				<TextBlock DockPanel.Dock="Left" MinWidth="160"
-				           Text="{Binding DataStorage_Field_UploadQuota}"
-				           ToolTip.Tip="{Binding DataStorage_Field_UploadQuota_Help}"
-				           TextDecorations="Underline"
-				           VerticalAlignment="Center" Margin="0 0 4 0" />
-				<NumericUpDown Minimum="0" Margin="4 2" VerticalAlignment="Center" Value="{Binding Quota}" />
-			</DockPanel>
-
 			<!-- Per-storage-type fields — rendered from provider metadata, no XAML changes needed for new types -->
 				<ItemsControl ItemsSource="{Binding Fields}">
 				<ItemsControl.DataTemplates>
@@ -49,7 +39,7 @@
 							<DockPanel Margin="0 2">
 								<TextBlock DockPanel.Dock="Left" MinWidth="160" Text="{Binding DisplayLabel}" VerticalAlignment="Center" Margin="0 0 4 0" />
 								<TextBox Margin="4 0" VerticalAlignment="Center"
-								         PlaceholderText="{Binding Descriptor.Placeholder}"
+								         PlaceholderText="{Binding DisplayPlaceholder}"
 								         Text="{Binding Value}" />
 							</DockPanel>
 						</Panel>
@@ -83,7 +73,7 @@
 								<TextBlock DockPanel.Dock="Left" MinWidth="160" Text="{Binding DisplayLabel}" VerticalAlignment="Center" Margin="0 0 4 0" />
 								<Button DockPanel.Dock="Right" Content="{Binding BrowseLabel}" VerticalAlignment="Center" Margin="4 0 0 0" Click="FieldBrowseFolderCommand" />
 								<TextBox Margin="4 0" VerticalAlignment="Center"
-								         PlaceholderText="{Binding Descriptor.Placeholder}"
+								         PlaceholderText="{Binding DisplayPlaceholder}"
 								         Text="{Binding Value}" />
 							</DockPanel>
 						</Panel>
@@ -95,7 +85,7 @@
 								<TextBlock DockPanel.Dock="Left" MinWidth="160" Text="{Binding DisplayLabel}" VerticalAlignment="Center" Margin="0 0 4 0" />
 								<Button DockPanel.Dock="Right" Content="{Binding BrowseLabel}" VerticalAlignment="Center" Margin="4 0 0 0" Click="FieldBrowseFileCommand" />
 								<TextBox Margin="4 0" VerticalAlignment="Center"
-								         PlaceholderText="{Binding Descriptor.Placeholder}"
+								         PlaceholderText="{Binding DisplayPlaceholder}"
 								         Text="{Binding Value}" />
 							</DockPanel>
 						</Panel>
@@ -121,6 +111,16 @@
 
 				</ItemsControl.DataTemplates>
 			</ItemsControl>
+
+			<!-- Quota (common to all storage types) — placed after storage-specific fields -->
+			<DockPanel>
+				<TextBlock DockPanel.Dock="Left" MinWidth="160"
+				           Text="{Binding DataStorage_Field_UploadQuota}"
+				           ToolTip.Tip="{Binding DataStorage_Field_UploadQuota_Help}"
+				           TextDecorations="Underline"
+				           VerticalAlignment="Center" Margin="0 0 4 0" />
+				<NumericUpDown Minimum="0" Margin="4 2" VerticalAlignment="Center" Value="{Binding Quota}" />
+			</DockPanel>
 
 			<!-- Mount/unmount scripts (shown only when platform supports script execution) -->
 			<Expander IsVisible="{Binding CanLaunchScripts}" IsExpanded="False" HorizontalAlignment="Stretch">

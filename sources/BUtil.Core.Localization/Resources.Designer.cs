@@ -1527,6 +1527,94 @@ namespace BUtil.Core.Localization {
             }
         }
 
+        public static string S3_Provider_AlibabaCloudOSS_Help {
+            get { return ResourceManager.GetString("S3_Provider_AlibabaCloudOSS_Help", resourceCulture); }
+        }
+        public static string S3_Provider_AWSS3_Help {
+            get { return ResourceManager.GetString("S3_Provider_AWSS3_Help", resourceCulture); }
+        }
+        public static string S3_Provider_BaiduCloudBOS_Help {
+            get { return ResourceManager.GetString("S3_Provider_BaiduCloudBOS_Help", resourceCulture); }
+        }
+        public static string S3_Provider_BackblazeB2_Help {
+            get { return ResourceManager.GetString("S3_Provider_BackblazeB2_Help", resourceCulture); }
+        }
+        public static string S3_Provider_CloudflareR2_Help {
+            get { return ResourceManager.GetString("S3_Provider_CloudflareR2_Help", resourceCulture); }
+        }
+        public static string S3_Provider_CloudRuStorage_Help {
+            get { return ResourceManager.GetString("S3_Provider_CloudRuStorage_Help", resourceCulture); }
+        }
+        public static string S3_Provider_Custom_Help {
+            get { return ResourceManager.GetString("S3_Provider_Custom_Help", resourceCulture); }
+        }
+        public static string S3_Provider_DigitalOceanSpaces_Help {
+            get { return ResourceManager.GetString("S3_Provider_DigitalOceanSpaces_Help", resourceCulture); }
+        }
+        public static string S3_Provider_GoogleCloudStorage_Help {
+            get { return ResourceManager.GetString("S3_Provider_GoogleCloudStorage_Help", resourceCulture); }
+        }
+        public static string S3_Provider_HuaweiCloudOBS_Help {
+            get { return ResourceManager.GetString("S3_Provider_HuaweiCloudOBS_Help", resourceCulture); }
+        }
+        public static string S3_Provider_LinodeObjectStorage_Help {
+            get { return ResourceManager.GetString("S3_Provider_LinodeObjectStorage_Help", resourceCulture); }
+        }
+        public static string S3_Provider_QiniuCloudKodo_Help {
+            get { return ResourceManager.GetString("S3_Provider_QiniuCloudKodo_Help", resourceCulture); }
+        }
+        public static string S3_Provider_ScalewayObjectStorage_Help {
+            get { return ResourceManager.GetString("S3_Provider_ScalewayObjectStorage_Help", resourceCulture); }
+        }
+        public static string S3_Provider_SelectelStorage_Help {
+            get { return ResourceManager.GetString("S3_Provider_SelectelStorage_Help", resourceCulture); }
+        }
+        public static string S3_Provider_TencentCloudCOS_Help {
+            get { return ResourceManager.GetString("S3_Provider_TencentCloudCOS_Help", resourceCulture); }
+        }
+        public static string S3_Provider_VKCloudStorage_Help {
+            get { return ResourceManager.GetString("S3_Provider_VKCloudStorage_Help", resourceCulture); }
+        }
+        public static string S3_Provider_VolcanoEngineTOS_Help {
+            get { return ResourceManager.GetString("S3_Provider_VolcanoEngineTOS_Help", resourceCulture); }
+        }
+        public static string S3_Provider_Wasabi_Help {
+            get { return ResourceManager.GetString("S3_Provider_Wasabi_Help", resourceCulture); }
+        }
+        public static string S3_Provider_YandexObjectStorage_Help {
+            get { return ResourceManager.GetString("S3_Provider_YandexObjectStorage_Help", resourceCulture); }
+        }
+        public static string WebDav_Preset_Box_Help {
+            get { return ResourceManager.GetString("WebDav_Preset_Box_Help", resourceCulture); }
+        }
+        public static string WebDav_Preset_Custom_Help {
+            get { return ResourceManager.GetString("WebDav_Preset_Custom_Help", resourceCulture); }
+        }
+        public static string WebDav_Preset_IONOSHiDrive_Help {
+            get { return ResourceManager.GetString("WebDav_Preset_IONOSHiDrive_Help", resourceCulture); }
+        }
+        public static string WebDav_Preset_Jianguoyun_Help {
+            get { return ResourceManager.GetString("WebDav_Preset_Jianguoyun_Help", resourceCulture); }
+        }
+        public static string WebDav_Preset_Koofr_Help {
+            get { return ResourceManager.GetString("WebDav_Preset_Koofr_Help", resourceCulture); }
+        }
+        public static string WebDav_Preset_MailRuCloud_Help {
+            get { return ResourceManager.GetString("WebDav_Preset_MailRuCloud_Help", resourceCulture); }
+        }
+        public static string WebDav_Preset_Nextcloud_Help {
+            get { return ResourceManager.GetString("WebDav_Preset_Nextcloud_Help", resourceCulture); }
+        }
+        public static string WebDav_Preset_ownCloud_Help {
+            get { return ResourceManager.GetString("WebDav_Preset_ownCloud_Help", resourceCulture); }
+        }
+        public static string WebDav_Preset_pCloud_Help {
+            get { return ResourceManager.GetString("WebDav_Preset_pCloud_Help", resourceCulture); }
+        }
+        public static string WebDav_Preset_YandexDisk_Help {
+            get { return ResourceManager.GetString("WebDav_Preset_YandexDisk_Help", resourceCulture); }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Access Key:.
         /// </summary>
