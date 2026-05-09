@@ -1,5 +1,5 @@
-﻿using BUtil.Core.ConfigurationFileModels.V2;
-using BUtil.Core.Logs;
+using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Interop.Logs;
 using BUtil.Core.Services;
 using System;
 

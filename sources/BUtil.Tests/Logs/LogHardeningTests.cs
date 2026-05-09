@@ -1,4 +1,5 @@
 using BUtil.Core.Logs;
+using BUtil.Interop.Logs;
 using System.Reflection;
 
 namespace BUtil.Tests.Logs;

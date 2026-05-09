@@ -4,6 +4,7 @@ using BUtil.Core.Events;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
+using BUtil.Interop.Logs;
 using BUtil.Core.Services;
 using System;
 using System.Collections.Generic;

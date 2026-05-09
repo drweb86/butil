@@ -1,6 +1,7 @@
 
 using BUtil.Core.Localization;
 using BUtil.Core.Misc;
+using BUtil.Interop.Logs;
 using System;
 using System.Globalization;
 using System.IO;

@@ -8,8 +8,8 @@ Each storage plugin is a .NET class library that:
 
 1. Implements `IStorageSettingsV2` — a serializable settings class that holds connection parameters.
 2. Implements `IStorageSettingsProvider` — describes the UI fields and handles serialization/deserialization of settings.
-3. Implements `IStorage` — the runtime client that performs upload, download, list, and delete operations.
-4. Provides a static `Register()` method that calls `StorageProviderRegistry.Register(...)` to wire everything together.
+3. Implements `IStorage` — the runtime client exposed to the backup engine (`Upload`, `Download`, listings, deletes, `Test()`, etc.).
+4. Exposes `IStoragePlugin` — a concrete class with an instance method `Register()` that calls `StorageProviderRegistry.Register(...)` to wire the provider and factory together.
 
 At startup BUtil scans the plugin folders, loads assemblies, and calls `Register()` on every public concrete class that implements `IStoragePlugin`.
 
@@ -70,32 +70,28 @@ Field types (`StorageFieldType`): `Text`, `Password`, `Integer`, `Folder`, `File
 ### `IStorage`
 
 ```csharp
-public interface IStorage
+public interface IStorage : IDisposable
 {
-    IStorageUploadResult Upload(ILog log, string localFile, string remotePath);
-    void Download(ILog log, string remotePath, string localFile);
-    IEnumerable<string> List(ILog log, string remoteFolder);
-    void Delete(ILog log, string remotePath);
-    void Test(ILog log);   // throws on failure — used by the connection test button
+    IStorageUploadResult Upload(string sourceFile, string relativeFileName);
+    void Delete(string relativeFileName);
+    void Move(string fromRelativeFileName, string toRelativeFileName);
+    void Download(string relativeFileName, string targetFileName);
+    bool Exists(string relativeFileName);
+    void DeleteFolder(string relativeFolderName);
+    string[] GetFolders(string relativeFolderName, string? mask = null);
+    string[] GetFiles(string? relativeFolderName = null, SearchOption option = SearchOption.TopDirectoryOnly);
+    DateTime GetModifiedTime(string relativeFileName);
+    string? Test();
 }
 ```
 
-### Registration
+The host constructs your implementation via the factory delegate passed to `StorageProviderRegistry.Register`. That factory receives `ILog` from `BUtil.Interop.Logs` (and settings plus an “autodetect” flag) so your client can emit diagnostics consistent with built-in storages.
 
-Plugins loaded from the plugin folders must be instance types implementing `IStoragePlugin` with an instance method `Register()`. Built-in storages shipped with BUtil often use static `Register()` helpers called directly from startup code instead.
+### Registration (`IStoragePlugin`)
 
-```csharp
-public class MyStoragePlugin : IStoragePlugin
-{
-    public void Register()
-    {
-        StorageProviderRegistry.Register(
-            new MyStorageSettingsProvider(),
-            typeof(MyStorageSettingsV2),
-            (log, settings, autodetect) => new MyStorage(log, (MyStorageSettingsV2)settings, autodetect));
-    }
-}
-```
+Plugins dropped into the folders use a **concrete type** implementing `IStoragePlugin`; the host resolves `IStoragePlugin` from the **`BUtil.Interop`** assembly only.
+
+Built-in storages in this repository ship as separate projects and typically use **static** `Register()` helpers called from platform startup—they are **not** loaded via `IStoragePlugin`.
 
 ## Plugin Discovery
 
@@ -113,14 +109,19 @@ BUtil scans all `.dll` files in each folder that exists at startup and calls `Re
 
 > **Note:** The plugin API may evolve between BUtil versions. Pin your plugin to the BUtil SDK version you compiled against. The `StorageId` string must remain stable across plugin versions because it is persisted in task configuration files as the JSON `"$type"` discriminator.
 
-## Dependency on BUtil SDK
+## Dependency on BUtil.Interop
 
-Add a NuGet reference (or project reference when building from source) to:
+Implementations should reference **`BUtil.Interop` only**. That assembly contains everything needed for authoring a storage backend:
 
-- `BUtil.Interop` — contains the `IStorage*` interfaces and `StorageFieldDescriptor`
-- `BUtil.Core` — contains `StorageProviderRegistry`, `StorageFieldType`, and base classes
+- `IStorageSettingsV2` (under `BUtil.Core.ConfigurationFileModels.V2` for historical layout), `FolderStorageSettingsV2` sample model
+- `IStorageSettingsProvider`, `StorageFieldDescriptor`, `StorageFieldType`, related enum/UI helpers (`StorageEnum*` types)
+- `IStorage`, `IStorageUploadResult`
+- **`ILog` and `LoggingEvent`** in **`BUtil.Interop.Logs`**
+- `StorageProviderRegistry`, `IStoragePlugin`
 
-If building from source, these projects are located in the `sources/` directory of the repository.
+Nothing from **`BUtil.Core`** is required in your plugin project. If building from source, add a project reference to **`sources/BUtil.Interop/BUtil.Interop.csproj`**.
+
+**Repository note:** Existing first-party backends under `sources/BUtil.Storages.*` reference `BUtil.Core` because they share infrastructure with the hosting app—they are starting points only; trim them down to **`BUtil.Interop`** for a standalone drop-in DLL.
 
 ## Example: Minimal Plugin Skeleton
 
@@ -180,6 +181,38 @@ public class MyStorageSettingsProvider : IStorageSettingsProvider
 ```
 
 ```csharp
+// MyStorage.cs — implement IStorage for your backend; hold settings and optionally ILog from the factory
+using BUtil.Core.Storages;
+using BUtil.Interop.Logs;
+using System;
+using System.IO;
+
+public sealed class MyStorage(ILog log, MyStorageSettingsV2 settings, bool testingConnection) : IStorage
+{
+    private readonly MyStorageSettingsV2 Settings = settings;
+
+    public void Dispose() { /* close connections */ }
+
+    public IStorageUploadResult Upload(string sourceFile, string relativeFileName) =>
+        throw new NotImplementedException();
+
+    public void Delete(string relativeFileName) => throw new NotImplementedException();
+    public void Move(string fromRelativeFileName, string toRelativeFileName) => throw new NotImplementedException();
+    public void Download(string relativeFileName, string targetFileName) => throw new NotImplementedException();
+    public bool Exists(string relativeFileName) => throw new NotImplementedException();
+    public void DeleteFolder(string relativeFolderName) => throw new NotImplementedException();
+    public string[] GetFolders(string relativeFolderName, string? mask = null) => throw new NotImplementedException();
+    public string[] GetFiles(string? relativeFolderName = null, SearchOption option = SearchOption.TopDirectoryOnly) => throw new NotImplementedException();
+    public DateTime GetModifiedTime(string relativeFileName) => throw new NotImplementedException();
+    public string? Test()
+    {
+        log.WriteLine(LoggingEvent.Debug, "MyStorage.Test");
+        return null; /* or validation error message */
+    }
+}
+```
+
+```csharp
 // MyStoragePlugin.cs
 using BUtil.Core.Storages;
 
@@ -190,7 +223,7 @@ public class MyStoragePlugin : IStoragePlugin
         StorageProviderRegistry.Register(
             new MyStorageSettingsProvider(),
             typeof(MyStorageSettingsV2),
-            (log, s, _) => new MyStorage(log, (MyStorageSettingsV2)s));
+            (log, s, detect) => new MyStorage(log, (MyStorageSettingsV2)s, detect));
     }
 }
 ```

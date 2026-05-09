@@ -1,5 +1,6 @@
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Logs;
+using BUtil.Interop.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Storages;
 using System.Security;

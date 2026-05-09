@@ -1,4 +1,4 @@
-﻿using BUtil.Core.Logs;
+using BUtil.Interop.Logs;
 using BUtil.Core.Services;
 using FtpsServerLibrary;
 using System;

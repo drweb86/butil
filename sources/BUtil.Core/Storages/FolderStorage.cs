@@ -1,7 +1,7 @@
 
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.FileSystem;
-using BUtil.Core.Logs;
+using BUtil.Interop.Logs;
 using BUtil.Core.Misc;
 using Org.BouncyCastle.Utilities.Zlib;
 using System;

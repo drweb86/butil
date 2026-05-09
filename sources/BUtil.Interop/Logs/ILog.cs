@@ -1,4 +1,4 @@
-﻿namespace BUtil.Core.Logs;
+namespace BUtil.Interop.Logs;
 
 public interface ILog
 {

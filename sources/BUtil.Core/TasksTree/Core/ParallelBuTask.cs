@@ -1,6 +1,6 @@
-﻿
+
 using BUtil.Core.Events;
-using BUtil.Core.Logs;
+using BUtil.Interop.Logs;
 using System;
 using System.Collections.Generic;
 using System.Linq;

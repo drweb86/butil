@@ -1,7 +1,7 @@
-﻿using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
 using BUtil.Core.Localization;
-using BUtil.Core.Logs;
+using BUtil.Interop.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Services;
 using BUtil.Core.State;

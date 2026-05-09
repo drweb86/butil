@@ -1,3 +1,4 @@
+using BUtil.Interop.Logs;
 using System.Text;
 
 namespace BUtil.Core.Logs;

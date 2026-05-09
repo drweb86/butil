@@ -1,5 +1,5 @@
 using BUtil.Core.FileSystem;
-using BUtil.Core.Logs;
+using BUtil.Interop.Logs;
 using BUtil.Core.Storages;
 using System;
 using System.Collections.Generic;

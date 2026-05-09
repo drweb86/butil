@@ -1,6 +1,6 @@
-﻿using BUtil.Core.Events;
+using BUtil.Core.Events;
 using BUtil.Core.FileSystem;
-using BUtil.Core.Logs;
+using BUtil.Interop.Logs;
 using BUtil.Core.Services;
 using BUtil.Core.State;
 using BUtil.Core.Storages;

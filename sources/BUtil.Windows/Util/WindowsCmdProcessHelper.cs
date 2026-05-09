@@ -1,4 +1,4 @@
-using BUtil.Core.Logs;
+using BUtil.Interop.Logs;
 using BUtil.Core.Misc;
 using System.Diagnostics;
 using System.Text;

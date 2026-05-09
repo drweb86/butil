@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUtil.Interop.Logs;
+using System;
 using System.Linq;
 
 namespace BUtil.Core.Logs;

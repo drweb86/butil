@@ -1,6 +1,6 @@
 using BUtil.Core;
 using BUtil.Core.Localization;
-using BUtil.Core.Logs;
+using BUtil.Interop.Logs;
 using BUtil.Core.Storages;
 using BUtil.Storages.Samba;
 using BUtil.Windows.Util;

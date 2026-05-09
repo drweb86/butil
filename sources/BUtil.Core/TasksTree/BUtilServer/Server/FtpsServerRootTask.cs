@@ -1,6 +1,6 @@
-﻿using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
-using BUtil.Core.Logs;
+using BUtil.Interop.Logs;
 using BUtil.Core.TasksTree.Core;
 using System;
 using System.Collections.Generic;

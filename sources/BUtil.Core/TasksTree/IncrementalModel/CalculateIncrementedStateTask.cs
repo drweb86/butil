@@ -1,5 +1,5 @@
-﻿using BUtil.Core.Events;
-using BUtil.Core.Logs;
+using BUtil.Core.Events;
+using BUtil.Interop.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.State;
 using BUtil.Core.TasksTree.Core;

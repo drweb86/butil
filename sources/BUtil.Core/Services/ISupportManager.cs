@@ -1,4 +1,4 @@
-﻿using BUtil.Core.Logs;
+using BUtil.Interop.Logs;
 
 namespace BUtil.Core.Services;
 

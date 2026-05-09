@@ -2,7 +2,7 @@ using Azure.Storage;
 using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
 using BUtil.Core.FileSystem;
-using BUtil.Core.Logs;
+using BUtil.Interop.Logs;
 using BUtil.Core.Storages;
 using System;
 using System.Collections.Generic;

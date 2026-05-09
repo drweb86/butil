@@ -13,6 +13,7 @@
 - Added **Yandex Disk** preset to the WebDAV storage type — host auto-filled, only credentials required.
 
 ## Changes
+- **Custom storage SDK:** Third-party backends can compile against **`BUtil.Interop` only**. `StorageProviderRegistry`, `IStoragePlugin`, logging (`ILog`, `LoggingEvent`), and registry wiring live in **`BUtil.Interop`**; `BUtil.Core` bootstraps the built-in folder provider. See [Custom storage plugin](./help/Custom%20storage%20plugin.md).
 - Custom storage plugins load from **`plugins/storages`** next to the application binaries and under **`BUtil`** / **`BUtil-Development`** in application data (`plugins/storages` under the same folder as Settings and Logs; replaces `BUtil Backup Plugins`). See [Custom storage plugin](./help/Custom%20storage%20plugin.md).
 - Preparation for support of more storage types.
 - Italian language was updated by https://github.com/bovirus .

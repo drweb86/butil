@@ -1,5 +1,5 @@
-﻿using BUtil.Core.Hashing;
-using BUtil.Core.Logs;
+using BUtil.Core.Hashing;
+using BUtil.Interop.Logs;
 using System;
 
 namespace BUtil.Core.Services;

@@ -2,7 +2,7 @@ using Amazon;
 using Amazon.S3;
 using Amazon.S3.Model;
 using BUtil.Core.FileSystem;
-using BUtil.Core.Logs;
+using BUtil.Interop.Logs;
 using BUtil.Core.Storages;
 using System;
 using System.Collections.Generic;
