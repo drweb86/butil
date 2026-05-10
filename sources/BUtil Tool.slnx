@@ -19,10 +19,15 @@
   </Folder>
   <Folder Name="/Tasks/">
     <Project Path="BUtil.Tasks.IncrementalBackup/BUtil.Tasks.IncrementalBackup.csproj" />
+    <Project Path="BUtil.Tasks.IncrementalBackup.UI/BUtil.Tasks.IncrementalBackup.UI.csproj" />
     <Project Path="BUtil.Tasks.Synchronization/BUtil.Tasks.Synchronization.csproj" />
+    <Project Path="BUtil.Tasks.Synchronization.UI/BUtil.Tasks.Synchronization.UI.csproj" />
     <Project Path="BUtil.Tasks.ImportMedia/BUtil.Tasks.ImportMedia.csproj" />
+    <Project Path="BUtil.Tasks.ImportMedia.UI/BUtil.Tasks.ImportMedia.UI.csproj" />
     <Project Path="BUtil.Tasks.BUtilServer/BUtil.Tasks.BUtilServer.csproj" />
+    <Project Path="BUtil.Tasks.BUtilServer.UI/BUtil.Tasks.BUtilServer.UI.csproj" />
     <Project Path="BUtil.Tasks.BUtilClient/BUtil.Tasks.BUtilClient.csproj" />
+    <Project Path="BUtil.Tasks.BUtilClient.UI/BUtil.Tasks.BUtilClient.UI.csproj" />
   </Folder>
   <Folder Name="/UI/">
     <Project Path="BUtil.UI.Common/BUtil.UI.Common.csproj" />

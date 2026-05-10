@@ -46,11 +46,14 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BUtil.Core\BUtil.Core.csproj" />
-    <ProjectReference Include="..\BUtil.Tasks.ImportMedia\BUtil.Tasks.ImportMedia.csproj" />
-    <ProjectReference Include="..\BUtil.Tasks.IncrementalBackup\BUtil.Tasks.IncrementalBackup.csproj" />
     <ProjectReference Include="..\BUtil.UI.Common\BUtil.UI.Common.csproj" />
     <ProjectReference Include="..\BUtil.UI.Storages\BUtil.UI.Storages.csproj" />
     <ProjectReference Include="..\BUtil.UI.Tasks\BUtil.UI.Tasks.csproj" />
+    <ProjectReference Include="..\BUtil.Tasks.IncrementalBackup.UI\BUtil.Tasks.IncrementalBackup.UI.csproj" />
+    <ProjectReference Include="..\BUtil.Tasks.Synchronization.UI\BUtil.Tasks.Synchronization.UI.csproj" />
+    <ProjectReference Include="..\BUtil.Tasks.ImportMedia.UI\BUtil.Tasks.ImportMedia.UI.csproj" />
+    <ProjectReference Include="..\BUtil.Tasks.BUtilServer.UI\BUtil.Tasks.BUtilServer.UI.csproj" />
+    <ProjectReference Include="..\BUtil.Tasks.BUtilClient.UI\BUtil.Tasks.BUtilClient.UI.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -60,54 +63,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Controls\EditBUtilServerClientTaskView.axaml.cs">
-      <DependentUpon>EditBUtilServerClientTaskView.axaml</DependentUpon>
-    </Compile>
-    <Compile Update="Controls\EditBUtilServerTaskView.axaml.cs">
-      <DependentUpon>EditBUtilServerTaskView.axaml</DependentUpon>
-    </Compile>
-    <Compile Update="Controls\EditSynchronizationTaskViewView.axaml.cs">
-      <DependentUpon>EditSynchronizationTaskViewView.axaml</DependentUpon>
-    </Compile>
-    <Compile Update="Controls\FolderAndPortSectionView.axaml.cs">
-      <DependentUpon>FolderAndPortSectionView.axaml</DependentUpon>
-    </Compile>
-    <Compile Update="Controls\SynchronizationWhatView.axaml.cs">
-      <DependentUpon>SynchronizationWhatView.axaml</DependentUpon>
-    </Compile>
-    <Compile Update="Controls\FolderSectionView.axaml.cs">
-      <DependentUpon>FolderSectionView.axaml</DependentUpon>
-    </Compile>
     <Compile Update="Controls\TaskExecuterView.axaml.cs">
       <DependentUpon>TaskExecuterView.axaml</DependentUpon>
     </Compile>
     <Compile Update="Controls\TaskCard.axaml.cs">
       <DependentUpon>TaskCard.axaml</DependentUpon>
     </Compile>
-<Compile Update="Controls\WhenTaskView.axaml.cs">
-      <DependentUpon>WhenTaskView.axaml</DependentUpon>
-    </Compile>
-    <Compile Update="Controls\ImportMediaTaskWhereTaskView.axaml.cs">
-      <DependentUpon>ImportMediaTaskWhereTaskView.axaml</DependentUpon>
-    </Compile>
     <Compile Update="Controls\VersionsListView.axaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>VersionsListView.axaml</DependentUpon>
     </Compile>
-<Compile Update="Controls\EncryptionTaskView.axaml.cs">
-      <DependentUpon>EncryptionTaskView.axaml</DependentUpon>
-    </Compile>
-    <Compile Update="Controls\WhatTaskView.axaml.cs">
-      <DependentUpon>WhatTaskView.axaml</DependentUpon>
-    </Compile>
     <Compile Update="Controls\UpdateCheckExpanderView.axaml.cs">
       <DependentUpon>UpdateCheckExpanderView.axaml</DependentUpon>
-    </Compile>
-    <Compile Update="Controls\EditMediaTaskView.axaml.cs">
-      <DependentUpon>EditMediaTaskView.axaml</DependentUpon>
-    </Compile>
-    <Compile Update="Controls\EditIncrementalBackupTaskView.axaml.cs">
-      <DependentUpon>EditIncrementalBackupTaskView.axaml</DependentUpon>
     </Compile>
     <Compile Update="Controls\RestoreView.axaml.cs">
       <DependentUpon>RestoreView.axaml</DependentUpon>

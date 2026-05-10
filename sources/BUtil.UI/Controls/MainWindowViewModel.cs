@@ -93,7 +93,7 @@ public partial class MainWindowViewModel : ViewModelBase
     public void IncrementalBackupTaskCreateCommand()
 #pragma warning restore CA1822 // Mark members as static
     {
-        WindowManager.SwitchView(new EditIncrementalBackupTaskViewModel(Resources.IncrementalBackupTask_Create, true));
+        WindowManager.SwitchView(TaskUIProviderRegistry.CreateNew(typeof(IncrementalBackupModelOptionsV2))!);
     }
 
     public bool CanOpenLink { get; } = PlatformSpecificExperience.Instance.SupportManager.CanOpenLink;
@@ -114,28 +114,28 @@ public partial class MainWindowViewModel : ViewModelBase
     public void ImportMediaTaskCreateCommand()
 #pragma warning restore CA1822 // Mark members as static
     {
-        WindowManager.SwitchView(new EditMediaTaskViewModel(string.Empty, true));
+        WindowManager.SwitchView(TaskUIProviderRegistry.CreateNew(typeof(ImportMediaTaskModelOptionsV2))!);
     }
 
 #pragma warning disable CA1822 // Mark members as static
     public void FileSenderServerCreateCommand()
 #pragma warning restore CA1822 // Mark members as static
     {
-        WindowManager.SwitchView(new EditBUtilServerTaskViewModel(Resources.FtpsServerTask_Create, true));
+        WindowManager.SwitchView(TaskUIProviderRegistry.CreateNew(typeof(BUtilServerModelOptionsV2))!);
     }
 
 #pragma warning disable CA1822 // Mark members as static
     public void FileSenderClientCreateCommand()
 #pragma warning restore CA1822 // Mark members as static
     {
-        WindowManager.SwitchView(new EditBUtilServerClientTaskViewModel(Resources.UploadFolderContentsTask_Create, true));
+        WindowManager.SwitchView(TaskUIProviderRegistry.CreateNew(typeof(BUtilClientModelOptionsV2))!);
     }
 
 #pragma warning disable CA1822 // Mark members as static
     public void SynchronizationTaskCreateCommand()
 #pragma warning restore CA1822 // Mark members as static
     {
-        WindowManager.SwitchView(new EditSynchronizationTaskViewModel(Resources.SynchronizationTask_Create, true));
+        WindowManager.SwitchView(TaskUIProviderRegistry.CreateNew(typeof(SynchronizationTaskModelOptionsV2))!);
     }
 
     #endregion

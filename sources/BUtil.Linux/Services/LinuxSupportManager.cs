@@ -36,6 +36,7 @@ public class LinuxSupportManager : ISupportManager
 
     #region Link
     public bool CanOpenLink { get => true; }
+    public bool SupportsSmileIcons => false;
     public void OpenHomePage()
     {
         ProcessHelper.ShellExecute(ApplicationLinks.HomePage);

@@ -15,10 +15,29 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="../BUtil.Core/BUtil.Core.csproj" />
+    <ProjectReference Include="../BUtil.UI.Common/BUtil.UI.Common.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Controls\TaskIdentityView.axaml.cs">
       <DependentUpon>TaskIdentityView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\EncryptionTaskView.axaml.cs">
+      <DependentUpon>EncryptionTaskView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\WhenTaskView.axaml.cs">
+      <DependentUpon>WhenTaskView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\WhatTaskView.axaml.cs">
+      <DependentUpon>WhatTaskView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\SynchronizationWhatView.axaml.cs">
+      <DependentUpon>SynchronizationWhatView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\FolderAndPortSectionView.axaml.cs">
+      <DependentUpon>FolderAndPortSectionView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\FolderSectionView.axaml.cs">
+      <DependentUpon>FolderSectionView.axaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>

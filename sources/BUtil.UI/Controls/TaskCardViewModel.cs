@@ -1,6 +1,5 @@
 using Avalonia.Media;
 using BUtil.Core;
-using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Events;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
@@ -66,16 +65,9 @@ public class TaskCardViewModel(
         if (task == null)
             return;
 
-        if (task.Model is IncrementalBackupModelOptionsV2)
-            WindowManager.SwitchView(new EditIncrementalBackupTaskViewModel(task.Name, false));
-        else if (task.Model is SynchronizationTaskModelOptionsV2)
-            WindowManager.SwitchView(new EditSynchronizationTaskViewModel(task.Name, false));
-        else if (task.Model is ImportMediaTaskModelOptionsV2)
-            WindowManager.SwitchView(new EditMediaTaskViewModel(task.Name, false));
-        else if (task.Model is BUtilServerModelOptionsV2)
-            WindowManager.SwitchView(new EditBUtilServerTaskViewModel(task.Name, false));
-        else if (task.Model is BUtilClientModelOptionsV2)
-            WindowManager.SwitchView(new EditBUtilServerClientTaskViewModel(task.Name, false));
+        var viewModel = TaskUIProviderRegistry.CreateEdit(task.Model.GetType(), task.Name);
+        if (viewModel != null)
+            WindowManager.SwitchView(viewModel);
     }
 
     public void TaskRestoreCommand()

@@ -18,7 +18,7 @@ public class TaskIdentityViewModel(bool isExpanded, ITaskModelOptionsV2 model, s
 
     public bool IsExpanded { get; } = isExpanded;
 
-    public bool CanOpenLink { get; } = PlatformSpecificExperience.Instance.SupportManager.CanOpenLink;
+    public bool CanOpenLink { get; } = PlatformSpecificExperience.Instance.SupportManager.CanOpenLink && PlatformSpecificExperience.Instance.SupportManager.SupportsSmileIcons;
 
     #region Name
 

@@ -59,6 +59,7 @@ internal sealed class FakeCrossPlatformExperience : CrossPlatformExperience
         public bool CanLaunchScripts => false;
 
         public bool CanOpenLink => false;
+        public bool SupportsSmileIcons => false;
 
         public bool LaunchScript(ILog log, string script, string forbiddenForLogs) => false;
 
