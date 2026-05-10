@@ -6,6 +6,8 @@ using BUtil.Core.Logs;
 using BUtil.Interop.Logs;
 using BUtil.Core.Options;
 using BUtil.Core.Services;
+using BUtil.UI;
+using BUtil.UI.Tasks.Controls;
 using System;
 using System.Threading.Tasks;
 
@@ -24,7 +26,7 @@ public class EditBUtilServerTaskViewModel : ViewModelBase
         var task = isNew
             ? new TaskV2 { Name = taskName, Model = new BUtilServerModelOptionsV2 { Folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) } }
             : storeService.Load(taskName) ?? new TaskV2();
-        NameTaskViewModel = new NameTaskViewModel(isNew, Resources.FtpsServerTask_Help, task.Name);
+        TaskIdentityViewModel = new TaskIdentityViewModel(isNew, task.Model, task.Name);
         SetWindowTitleForEdit(taskName, isNew);
         var model = (BUtilServerModelOptionsV2)task.Model;
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
@@ -33,7 +35,7 @@ public class EditBUtilServerTaskViewModel : ViewModelBase
     }
 
     public bool IsNew { get; set; }
-    public NameTaskViewModel NameTaskViewModel { get; }
+    public TaskIdentityViewModel TaskIdentityViewModel { get; }
     public WhenTaskViewModel WhenTaskViewModel { get; }
     
     public FolderAndPortSectionViewModel FolderAndPortSectionViewModel { get; }
@@ -51,7 +53,7 @@ public class EditBUtilServerTaskViewModel : ViewModelBase
     {
         var newTask = new TaskV2
         {
-            Name = NameTaskViewModel.Name.TrimEnd(),
+            Name = TaskIdentityViewModel.Name.TrimEnd(),
             Model = new BUtilServerModelOptionsV2(
                 FolderAndPortSectionViewModel.Port,
                 FolderAndPortSectionViewModel.FtpsUser!,

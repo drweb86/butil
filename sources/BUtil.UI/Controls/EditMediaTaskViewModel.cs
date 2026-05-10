@@ -6,6 +6,8 @@ using BUtil.Interop.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Services;
 using BUtil.Core.State;
+using BUtil.UI;
+using BUtil.UI.Tasks.Controls;
 using System;
 using System.Threading.Tasks;
 
@@ -22,7 +24,7 @@ public class EditMediaTaskViewModel : ViewModelBase
         var task = isNew
             ? new TaskV2 { Name = taskName, Model = new ImportMediaTaskModelOptionsV2() }
             : storeService.Load(taskName) ?? new TaskV2() { Model = new ImportMediaTaskModelOptionsV2() };
-        NameTaskViewModel = new NameTaskViewModel(isNew, Resources.ImportMediaTask_Help, task.Name);
+        TaskIdentityViewModel = new TaskIdentityViewModel(isNew, task.Model, task.Name);
         SetWindowTitleForEdit(taskName, isNew);
         var model = (ImportMediaTaskModelOptionsV2)task.Model;
 
@@ -31,7 +33,7 @@ public class EditMediaTaskViewModel : ViewModelBase
     }
 
     public ImportMediaTaskWhereTaskViewModel ImportMediaTaskWhereTaskViewModel { get; }
-    public NameTaskViewModel NameTaskViewModel { get; }
+    public TaskIdentityViewModel TaskIdentityViewModel { get; }
     public StorageViewModel SourceTaskViewModel { get; }
     public bool IsNew { get; set; }
 
@@ -53,7 +55,7 @@ public class EditMediaTaskViewModel : ViewModelBase
     {
         var newTask = new TaskV2
         {
-            Name = NameTaskViewModel.Name.TrimEnd(),
+            Name = TaskIdentityViewModel.Name.TrimEnd(),
             Model = new ImportMediaTaskModelOptionsV2
             {
                 DestinationFolder = ImportMediaTaskWhereTaskViewModel.OutputFolder,

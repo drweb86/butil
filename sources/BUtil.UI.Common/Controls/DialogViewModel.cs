@@ -1,4 +1,4 @@
-﻿using BUtil.Core.Localization;
+using BUtil.Core.Localization;
 
 namespace BUtil.UI.Controls;
 

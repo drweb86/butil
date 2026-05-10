@@ -48,7 +48,9 @@
     <ProjectReference Include="..\BUtil.Core\BUtil.Core.csproj" />
     <ProjectReference Include="..\BUtil.Tasks.ImportMedia\BUtil.Tasks.ImportMedia.csproj" />
     <ProjectReference Include="..\BUtil.Tasks.IncrementalBackup\BUtil.Tasks.IncrementalBackup.csproj" />
+    <ProjectReference Include="..\BUtil.UI.Common\BUtil.UI.Common.csproj" />
     <ProjectReference Include="..\BUtil.UI.Storages\BUtil.UI.Storages.csproj" />
+    <ProjectReference Include="..\BUtil.UI.Tasks\BUtil.UI.Tasks.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -82,10 +84,7 @@
     <Compile Update="Controls\TaskCard.axaml.cs">
       <DependentUpon>TaskCard.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Controls\NameTaskView.axaml.cs">
-      <DependentUpon>NameTaskView.axaml</DependentUpon>
-    </Compile>
-    <Compile Update="Controls\WhenTaskView.axaml.cs">
+<Compile Update="Controls\WhenTaskView.axaml.cs">
       <DependentUpon>WhenTaskView.axaml</DependentUpon>
     </Compile>
     <Compile Update="Controls\ImportMediaTaskWhereTaskView.axaml.cs">

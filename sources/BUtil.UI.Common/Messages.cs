@@ -1,4 +1,4 @@
-﻿using BUtil.Core.Localization;
+using BUtil.Core.Localization;
 using BUtil.UI.Controls;
 using DialogHostAvalonia;
 using System.Threading.Tasks;

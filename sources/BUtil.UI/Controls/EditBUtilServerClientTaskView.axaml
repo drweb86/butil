@@ -3,6 +3,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:BUtil.UI.Controls"
+    xmlns:tasks="clr-namespace:BUtil.UI.Tasks.Controls;assembly=BUtil.UI.Tasks"
     mc:Ignorable="d"
 	d:DesignWidth="800"
 	d:DesignHeight="450"
@@ -27,7 +28,7 @@
 				ScrollViewer.VerticalScrollBarVisibility="Visible"
 				ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 			<StackPanel>
-				<controls:NameTaskView Margin="24 24 24 8" DataContext="{Binding NameTaskViewModel}" />
+				<tasks:TaskIdentityView Margin="24 24 24 8" DataContext="{Binding TaskIdentityViewModel}" />
 				<controls:FolderSectionView Margin="24 8 24 8" DataContext="{Binding FolderSectionViewModel}" />
 				<controls:StorageView Margin="24 8 24 8" DataContext="{Binding StorageViewModel}"/>
 				<controls:WhenTaskView Margin="24 8 24 8" DataContext="{Binding WhenTaskViewModel}" />

@@ -6,6 +6,8 @@ using BUtil.Core.Logs;
 using BUtil.Interop.Logs;
 using BUtil.Core.Options;
 using BUtil.Core.Services;
+using BUtil.UI;
+using BUtil.UI.Tasks.Controls;
 using System.Threading.Tasks;
 
 namespace BUtil.UI.Controls;
@@ -25,7 +27,7 @@ public class EditSynchronizationTaskViewModel : ViewModelBase
         if (isNew)
             newTask.Name = taskName;
         var task = isNew ? newTask : storeService.Load(taskName) ?? newTask;
-        NameTaskViewModel = new NameTaskViewModel(isNew, Resources.SynchronizationTask_Help, task.Name);
+        TaskIdentityViewModel = new TaskIdentityViewModel(isNew, task.Model, task.Name);
         SetWindowTitleForEdit(taskName, isNew);
         var model = (SynchronizationTaskModelOptionsV2)task.Model;
         EncryptionTaskViewModel = new EncryptionTaskViewModel(model.Password, isNew, !isNew);
@@ -37,7 +39,7 @@ public class EditSynchronizationTaskViewModel : ViewModelBase
     }
 
     public bool IsNew { get; set; }
-    public NameTaskViewModel NameTaskViewModel { get; }
+    public TaskIdentityViewModel TaskIdentityViewModel { get; }
     public EncryptionTaskViewModel EncryptionTaskViewModel { get; }
     public WhenTaskViewModel WhenTaskViewModel { get; }
     public StorageViewModel StorageViewModel { get; }
@@ -56,7 +58,7 @@ public class EditSynchronizationTaskViewModel : ViewModelBase
     {
         var newTask = new TaskV2
         {
-            Name = NameTaskViewModel.Name.TrimEnd(),
+            Name = TaskIdentityViewModel.Name.TrimEnd(),
             Model = new SynchronizationTaskModelOptionsV2
             {
                 Password = EncryptionTaskViewModel.Password,

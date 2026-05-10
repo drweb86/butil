@@ -10,16 +10,10 @@
     <DebugType>None</DebugType>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Update="Controls\StorageView.axaml.cs">
-      <DependentUpon>StorageView.axaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Avalonia" Version="12.0.2" />
-    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
+    <PackageReference Include="DialogHost.Avalonia" Version="0.12.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="../BUtil.Core/BUtil.Core.csproj" />
-    <ProjectReference Include="../BUtil.UI.Common/BUtil.UI.Common.csproj" />
   </ItemGroup>
 </Project>

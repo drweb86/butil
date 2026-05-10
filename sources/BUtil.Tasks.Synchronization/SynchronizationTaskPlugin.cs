@@ -7,6 +7,11 @@ using System.IO;
 
 namespace BUtil.Tasks.Synchronization;
 
+file sealed class SynchronizationSettingsProvider : ITaskSettingsProvider
+{
+    public string Information => Resources.SynchronizationTask_Help;
+}
+
 public static class SynchronizationTaskPlugin
 {
     public static void Register()
@@ -22,6 +27,7 @@ public static class SynchronizationTaskPlugin
                     return string.Format(Resources.SourceItem_Validation_NotExists, options.LocalFolder);
 
                 return StorageFactory.Test(log, options.To, writeMode && options.SynchronizationMode == SynchronizationTaskModelMode.TwoWay);
-            });
+            },
+            new SynchronizationSettingsProvider());
     }
 }

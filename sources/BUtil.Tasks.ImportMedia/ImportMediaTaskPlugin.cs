@@ -10,6 +10,11 @@ using System.IO;
 
 namespace BUtil.Tasks.ImportMedia;
 
+file sealed class ImportMediaSettingsProvider : ITaskSettingsProvider
+{
+    public string Information => Resources.ImportMediaTask_Help;
+}
+
 public static class ImportMediaTaskPlugin
 {
     public static void Register()
@@ -42,6 +47,7 @@ public static class ImportMediaTaskPlugin
                 }
 
                 return null;
-            });
+            },
+            new ImportMediaSettingsProvider());
     }
 }

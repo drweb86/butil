@@ -18,7 +18,8 @@ public static class TaskProviderRegistry
     private sealed record ProviderEntry(
         Type ModelType,
         Func<ILog, TaskV2, TaskEvents, Action<string?>, BuTask> Factory,
-        Func<ILog, ITaskModelOptionsV2, bool, string?> Verifier);
+        Func<ILog, ITaskModelOptionsV2, bool, string?> Verifier,
+        ITaskSettingsProvider? SettingsProvider);
 
     private static readonly List<ProviderEntry> Entries = [];
     private static readonly object EntriesLock = new();
@@ -28,11 +29,12 @@ public static class TaskProviderRegistry
     /// </summary>
     public static void Register<TModel>(
         Func<ILog, TaskV2, TaskEvents, Action<string?>, BuTask> factory,
-        Func<ILog, TModel, bool, string?> verifier)
+        Func<ILog, TModel, bool, string?> verifier,
+        ITaskSettingsProvider? settingsProvider = null)
         where TModel : class, ITaskModelOptionsV2
     {
         lock (EntriesLock)
-            Entries.Add(new ProviderEntry(typeof(TModel), factory, (log, opts, write) => verifier(log, (TModel)opts, write)));
+            Entries.Add(new ProviderEntry(typeof(TModel), factory, (log, opts, write) => verifier(log, (TModel)opts, write), settingsProvider));
     }
 
     /// <summary>
@@ -59,6 +61,18 @@ public static class TaskProviderRegistry
                 ?? throw new ArgumentOutOfRangeException(nameof(options), $"No task provider registered for model type '{options.GetType().Name}'.");
             error = entry.Verifier(log, options, writeMode);
             return error == null;
+        }
+    }
+
+    /// <summary>
+    /// Returns the information/help text registered for the given model type, or an empty string if none.
+    /// </summary>
+    public static string GetInformation(Type modelType)
+    {
+        lock (EntriesLock)
+        {
+            var entry = Entries.FirstOrDefault(e => modelType == e.ModelType);
+            return entry?.SettingsProvider?.Information ?? string.Empty;
         }
     }
 }

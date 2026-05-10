@@ -1,19 +1,19 @@
-﻿using BUtil.Core;
+using BUtil.Core;
+using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Localization;
 using BUtil.Core.Misc;
+using BUtil.Core.TasksTree;
 using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace BUtil.UI.Controls;
+namespace BUtil.UI.Tasks.Controls;
 
-public class NameTaskViewModel(bool isExpanded, string help, string name) : ObservableObject
+public class TaskIdentityViewModel(bool isExpanded, ITaskModelOptionsV2 model, string name) : ObservableObject
 {
-
     #region Labels
     public static string Name_Title => Resources.Name_Title;
     public static string Name_Field => Resources.Name_Field;
     public static string Icons_Help_Link => Resources.Icons_Help_Link;
-    public string Help { get; } = help;
-
+    public string Help { get; } = TaskProviderRegistry.GetInformation(model.GetType());
     #endregion
 
     public bool IsExpanded { get; } = isExpanded;
@@ -26,10 +26,7 @@ public class NameTaskViewModel(bool isExpanded, string help, string name) : Obse
 
     public string Name
     {
-        get
-        {
-            return _name;
-        }
+        get => _name;
         set
         {
             if (value == _name)

@@ -1,9 +1,15 @@
 using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.Localization;
 using BUtil.Core.Storages;
 using BUtil.Core.TasksTree;
 using BUtil.Core.TasksTree.BUtilServer.Client;
 
 namespace BUtil.Tasks.BUtilClient;
+
+file sealed class BUtilClientSettingsProvider : ITaskSettingsProvider
+{
+    public string Information => Resources.UploadFolderTask_Help;
+}
 
 public static class BUtilClientTaskPlugin
 {
@@ -18,6 +24,7 @@ public static class BUtilClientTaskPlugin
                     return storageError;
 
                 return StorageFactory.Test(log, new FolderStorageSettingsV2 { DestinationFolder = options.Folder }, writeMode);
-            });
+            },
+            new BUtilClientSettingsProvider());
     }
 }

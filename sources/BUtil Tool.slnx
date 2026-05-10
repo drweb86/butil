@@ -25,7 +25,9 @@
     <Project Path="BUtil.Tasks.BUtilClient/BUtil.Tasks.BUtilClient.csproj" />
   </Folder>
   <Folder Name="/UI/">
+    <Project Path="BUtil.UI.Common/BUtil.UI.Common.csproj" />
     <Project Path="BUtil.UI.Storages/BUtil.UI.Storages.csproj" />
+    <Project Path="BUtil.UI.Tasks/BUtil.UI.Tasks.csproj" />
     <Project Path="BUtil.UI/BUtil.UI.csproj">
       <BuildDependency Project="BUtil.Windows/BUtil.Windows.csproj" />
     </Project>

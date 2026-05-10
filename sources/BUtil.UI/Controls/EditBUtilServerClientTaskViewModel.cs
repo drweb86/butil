@@ -6,6 +6,8 @@ using BUtil.Core.Logs;
 using BUtil.Interop.Logs;
 using BUtil.Core.Options;
 using BUtil.Core.Services;
+using BUtil.UI;
+using BUtil.UI.Tasks.Controls;
 using System.Threading.Tasks;
 
 namespace BUtil.UI.Controls;
@@ -23,7 +25,7 @@ public class EditBUtilServerClientTaskViewModel : ViewModelBase
         var task = isNew
             ? new TaskV2 { Name = taskName, Model = new BUtilClientModelOptionsV2(string.Empty, FileSenderDirection.ToServer, new FolderStorageSettingsV2()) }
             : storeService.Load(taskName) ?? new TaskV2();
-        NameTaskViewModel = new NameTaskViewModel(isNew, Resources.UploadFolderTask_Help, task.Name);
+        TaskIdentityViewModel = new TaskIdentityViewModel(isNew, task.Model, task.Name);
         SetWindowTitleForEdit(taskName, isNew);
         var model = (BUtilClientModelOptionsV2)task.Model;
 
@@ -35,7 +37,7 @@ public class EditBUtilServerClientTaskViewModel : ViewModelBase
     }
 
     public bool IsNew { get; set; }
-    public NameTaskViewModel NameTaskViewModel { get; }
+    public TaskIdentityViewModel TaskIdentityViewModel { get; }
     public WhenTaskViewModel WhenTaskViewModel { get; }
     public FolderSectionViewModel FolderSectionViewModel { get; }
     public StorageViewModel StorageViewModel { get; }
@@ -53,7 +55,7 @@ public class EditBUtilServerClientTaskViewModel : ViewModelBase
     {
         var newTask = new TaskV2
         {
-            Name = NameTaskViewModel.Name.TrimEnd(),
+            Name = TaskIdentityViewModel.Name.TrimEnd(),
             Model = new BUtilClientModelOptionsV2(FolderSectionViewModel.Folder, FileSenderDirection.ToServer, StorageViewModel.GetStorageSettings())
         };
 

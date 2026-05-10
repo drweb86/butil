@@ -7,6 +7,11 @@ using BUtil.Core.TasksTree.BUtilServer.Server;
 
 namespace BUtil.Tasks.BUtilServer;
 
+file sealed class BUtilServerSettingsProvider : ITaskSettingsProvider
+{
+    public string Information => Resources.FtpsServerTask_Help;
+}
+
 public static class BUtilServerTaskPlugin
 {
     public static void Register()
@@ -29,6 +34,7 @@ public static class BUtilServerTaskPlugin
                     return Resources.Server_Field_Port_Validation + $"(Min port {PlatformSpecificExperience.Instance.MinimumListenerPort})";
 
                 return null;
-            });
+            },
+            new BUtilServerSettingsProvider());
     }
 }

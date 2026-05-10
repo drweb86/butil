@@ -7,6 +7,11 @@ using System.IO;
 
 namespace BUtil.Tasks.IncrementalBackup;
 
+file sealed class IncrementalBackupSettingsProvider : ITaskSettingsProvider
+{
+    public string Information => Resources.IncrementalBackup_Help;
+}
+
 public static class IncrementalBackupTaskPlugin
 {
     public static void Register()
@@ -35,6 +40,7 @@ public static class IncrementalBackupTaskPlugin
                 }
 
                 return StorageFactory.Test(log, options.To, writeMode);
-            });
+            },
+            new IncrementalBackupSettingsProvider());
     }
 }
