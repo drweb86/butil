@@ -94,6 +94,8 @@ public class NfsStorageSettingsProvider : IStorageSettingsProvider
     public IReadOnlyList<StorageFieldDescriptor> Fields =>
         OperatingSystem.IsWindows() ? WindowsFields : LinuxFields;
 
+    public IReadOnlyList<string> ProtectedFieldKeys { get; } = [];
+
     public bool CanHandle(IStorageSettingsV2 settings) => settings is NfsStorageSettingsV2;
 
     public IStorageSettingsV2 CreateSettings(

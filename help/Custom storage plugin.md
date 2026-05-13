@@ -53,6 +53,7 @@ public interface IStorageSettingsProvider
     int Order { get; }                 // position in the dropdown list
     bool IsSupported { get; }          // false to hide the provider on unsupported platforms
     IReadOnlyList<StorageFieldDescriptor> Fields { get; }
+    IReadOnlyList<string> ProtectedFieldKeys { get; }
     bool CanHandle(IStorageSettingsV2 settings);
     IStorageSettingsV2 CreateSettings(IReadOnlyDictionary<string, string?> fieldValues,
                                       long quota, string? mountScript, string? unmountScript);
@@ -64,6 +65,7 @@ public interface IStorageSettingsProvider
 ```
 
 `Fields` drives the UI entirely — no XAML changes are needed for new storage types.
+`ProtectedFieldKeys` lists field keys whose corresponding string settings properties should be encrypted in saved task JSON.
 
 Field types (`StorageFieldType`): `Text`, `Password`, `Integer`, `Folder`, `File`, `Enum`.
 
@@ -156,6 +158,8 @@ public class MyStorageSettingsProvider : IStorageSettingsProvider
         new StorageFieldDescriptor { Key = "endpoint", Label = "Endpoint URL", Type = StorageFieldType.Text },
         new StorageFieldDescriptor { Key = "apiKey",   Label = "API Key",      Type = StorageFieldType.Password },
     ];
+
+    public IReadOnlyList<string> ProtectedFieldKeys { get; } = ["apiKey"];
 
     public bool CanHandle(IStorageSettingsV2 s) => s is MyStorageSettingsV2;
 

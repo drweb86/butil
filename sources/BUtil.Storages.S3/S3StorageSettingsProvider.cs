@@ -261,6 +261,8 @@ public class S3StorageSettingsProvider : IStorageSettingsProvider
         },
     ];
 
+    public IReadOnlyList<string> ProtectedFieldKeys { get; } = ["secretKey"];
+
     public bool CanHandle(IStorageSettingsV2 settings) => settings is S3StorageSettingsV2;
 
     public IStorageSettingsV2 CreateSettings(

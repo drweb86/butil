@@ -10,6 +10,7 @@ public interface IStorageSettingsProvider
     int Order { get; }
     bool IsSupported { get; }
     IReadOnlyList<StorageFieldDescriptor> Fields { get; }
+    IReadOnlyList<string> ProtectedFieldKeys { get; }
 
     bool CanHandle(IStorageSettingsV2 settings);
 

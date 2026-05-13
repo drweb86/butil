@@ -169,6 +169,8 @@ public class WebDavStorageSettingsProvider : IStorageSettingsProvider
         },
     ];
 
+    public IReadOnlyList<string> ProtectedFieldKeys { get; } = ["password"];
+
     public bool CanHandle(IStorageSettingsV2 settings) => settings is WebDavStorageSettingsV2;
 
     public IStorageSettingsV2 CreateSettings(

@@ -44,6 +44,8 @@ public class AzureBlobStorageSettingsProvider : IStorageSettingsProvider
         },
     ];
 
+    public IReadOnlyList<string> ProtectedFieldKeys { get; } = ["accountKey"];
+
     public bool CanHandle(IStorageSettingsV2 settings) => settings is AzureBlobStorageSettingsV2;
 
     public IStorageSettingsV2 CreateSettings(

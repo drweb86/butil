@@ -23,6 +23,8 @@ public class FolderStorageSettingsProvider : IStorageSettingsProvider
         },
     ];
 
+    public IReadOnlyList<string> ProtectedFieldKeys { get; } = [];
+
     public bool CanHandle(IStorageSettingsV2 settings) => settings is FolderStorageSettingsV2;
 
     public IStorageSettingsV2 CreateSettings(

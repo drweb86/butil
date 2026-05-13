@@ -72,6 +72,8 @@ public class SftpStorageSettingsProvider : IStorageSettingsProvider
         },
     ];
 
+    public IReadOnlyList<string> ProtectedFieldKeys { get; } = ["password"];
+
     public bool CanHandle(IStorageSettingsV2 settings) => settings is SftpStorageSettingsV2;
 
     public IStorageSettingsV2 CreateSettings(

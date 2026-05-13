@@ -1,9 +1,11 @@
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Serialization;
+using BUtil.Core.Storages;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Text.Json;
@@ -20,7 +22,7 @@ public abstract class SecretServiceBase : ISecretService
 {
     private const string _prefix = "enc::";
 #pragma warning disable IDE0028 // Simplify collection initialization
-    private static readonly HashSet<string> _secretPropertyNames = new(StringComparer.Ordinal) { "Password", "SecretKey" };
+    private static readonly HashSet<string> _taskSecretPropertyNames = new(StringComparer.Ordinal) { "Password" };
 #pragma warning restore IDE0028 // Simplify collection initialization
 
     public TaskV2 CreateProtectedClone(TaskV2 task)
@@ -39,26 +41,30 @@ public abstract class SecretServiceBase : ISecretService
     private static void TransformInPlace(object root, Func<string, string> transform)
     {
         var visited = new HashSet<object>(ReferenceEqualityComparer.Instance);
-        TransformObject(root, transform, visited);
+        _ = TransformObject(root, transform, visited);
     }
 
-    private static void TransformObject(object? current, Func<string, string> transform, HashSet<object> visited)
+    private static object? TransformObject(object? current, Func<string, string> transform, HashSet<object> visited)
     {
         if (current == null)
-            return;
+            return null;
 
         var type = current.GetType();
-        if (type == typeof(string) || type.IsPrimitive || type.IsEnum)
-            return;
+        if (type == typeof(string) || type.IsValueType)
+            return current;
 
         if (!visited.Add(current))
-            return;
+            return current;
+
+        if (current is IStorageSettingsV2 storageSettings &&
+            TransformStorageSettings(storageSettings, transform))
+            return current;
 
         if (current is IEnumerable enumerable and not IDictionary)
         {
             foreach (var item in enumerable)
                 TransformObject(item, transform, visited);
-            return;
+            return current;
         }
 
         var properties = type.GetProperties(BindingFlags.Public | BindingFlags.Instance);
@@ -69,7 +75,7 @@ public abstract class SecretServiceBase : ISecretService
 
             if (property.PropertyType == typeof(string) &&
                 property.CanWrite &&
-                _secretPropertyNames.Contains(property.Name))
+                _taskSecretPropertyNames.Contains(property.Name))
             {
                 if (property.GetValue(current) is string value)
                     property.SetValue(current, transform(value));
@@ -80,8 +86,42 @@ public abstract class SecretServiceBase : ISecretService
                 continue;
 
             var nested = property.GetValue(current);
-            TransformObject(nested, transform, visited);
+            var transformed = TransformObject(nested, transform, visited);
+            if (property.CanWrite && !ReferenceEquals(nested, transformed))
+                property.SetValue(current, transformed);
         }
+
+        return current;
+    }
+
+    private static bool TransformStorageSettings(IStorageSettingsV2 settings, Func<string, string> transform)
+    {
+        var provider = StorageProviderRegistry.FindForSettings(settings);
+        if (provider == null)
+            return false;
+
+        var protectedPropertyNames = provider.ProtectedFieldKeys
+            .Where(name => !string.IsNullOrWhiteSpace(name))
+            .Distinct(StringComparer.OrdinalIgnoreCase);
+
+        var properties = settings.GetType()
+            .GetProperties(BindingFlags.Public | BindingFlags.Instance)
+            .Where(property =>
+                property.PropertyType == typeof(string) &&
+                property.CanRead &&
+                property.CanWrite)
+            .ToDictionary(property => property.Name, StringComparer.OrdinalIgnoreCase);
+
+        foreach (var propertyName in protectedPropertyNames)
+        {
+            if (!properties.TryGetValue(propertyName, out var property))
+                continue;
+
+            if (property.GetValue(settings) is string value)
+                property.SetValue(settings, transform(value));
+        }
+
+        return true;
     }
 
     private string ProtectString(string value)

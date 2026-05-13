@@ -79,6 +79,8 @@ public class FtpsStorageSettingsProvider : IStorageSettingsProvider
         },
     ];
 
+    public IReadOnlyList<string> ProtectedFieldKeys { get; } = ["password"];
+
     public bool CanHandle(IStorageSettingsV2 settings) => settings is FtpsStorageSettingsV2;
 
     public IStorageSettingsV2 CreateSettings(

@@ -39,6 +39,8 @@ public class SambaStorageSettingsProvider : IStorageSettingsProvider
         },
     ];
 
+    public IReadOnlyList<string> ProtectedFieldKeys { get; } = ["password"];
+
     public bool CanHandle(IStorageSettingsV2 settings) => settings is SambaStorageSettingsV2;
 
     public IStorageSettingsV2 CreateSettings(
