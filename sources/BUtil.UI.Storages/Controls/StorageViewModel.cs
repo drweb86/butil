@@ -18,6 +18,18 @@ using System.Threading.Tasks;
 
 namespace BUtil.UI.Controls;
 
+public sealed class StorageProviderItem
+{
+    internal StorageProviderItem(StorageProviderRegistry.ProviderEntry entry)
+    {
+        Entry = entry;
+    }
+
+    public string DisplayName => Entry.DisplayName;
+
+    internal StorageProviderRegistry.ProviderEntry Entry { get; }
+}
+
 public class StorageViewModel : ObservableObject
 {
     public StorageViewModel(IStorageSettingsV2 storageSettings, string title, string iconUrl)
@@ -25,10 +37,11 @@ public class StorageViewModel : ObservableObject
         Title = title;
         IconSource = LoadFromResource(new Uri("avares://BUtil.UI" + iconUrl));
 
-        Providers = new ObservableCollection<IStorageSettingsProvider>(
-            StorageProviderRegistry.GetSupported());
+        Providers = new ObservableCollection<StorageProviderItem>(
+            StorageProviderRegistry.GetProviders().Select(entry => new StorageProviderItem(entry)));
 
-        var provider = StorageProviderRegistry.FindForSettings(storageSettings)
+        var selectedEntry = StorageProviderRegistry.FindForSettings(storageSettings);
+        var provider = Providers.FirstOrDefault(provider => provider.Entry == selectedEntry)
             ?? Providers.FirstOrDefault()
             ?? throw new InvalidOperationException("No storage providers registered.");
 
@@ -38,14 +51,14 @@ public class StorageViewModel : ObservableObject
 
         _selectedProvider = provider;
         RebuildFields();
-        PopulateFields(provider.ExtractValues(storageSettings));
+        PopulateFields(provider.Entry.Provider.GetFieldValues(storageSettings));
     }
 
     private void RebuildFields()
     {
         DetachEnumUiRuleHandlers();
         Fields.Clear();
-        foreach (var descriptor in _selectedProvider.Fields)
+        foreach (var descriptor in _selectedProvider.Entry.Provider.Fields)
             Fields.Add(StorageFieldViewModelFactory.Create(descriptor));
         AttachEnumUiRuleHandlers();
         ApplyEnumUiRules();
@@ -64,13 +77,13 @@ public class StorageViewModel : ObservableObject
     public IStorageSettingsV2 GetStorageSettings()
     {
         var fieldValues = Fields.ToDictionary(f => f.Descriptor.Key, f => f.GetValue());
-        return _selectedProvider.CreateSettings(fieldValues, Quota, MountScript, UnmountScript);
+        return _selectedProvider.Entry.Provider.GetSettings(fieldValues, Quota, MountScript, UnmountScript);
     }
 
     public string? ApplyDetectedConnectionTrustAndBuildInfo(IStorageSettingsV2 testedSettings)
     {
         var currentValues = Fields.ToDictionary(f => f.Descriptor.Key, f => f.GetValue());
-        var message = _selectedProvider.TryApplyDetectedTrust(testedSettings, currentValues, out var updated);
+        var message = _selectedProvider.Entry.Provider.TryApplyDetectedTrust(testedSettings, currentValues, out var updated);
         if (updated != null)
             PopulateFields(updated);
         return message;
@@ -104,7 +117,7 @@ public class StorageViewModel : ObservableObject
     public string Title { get; }
     public Bitmap? IconSource { get; }
     public bool CanLaunchScripts { get; } = PlatformSpecificExperience.Instance.SupportManager.CanLaunchScripts;
-    public ObservableCollection<IStorageSettingsProvider> Providers { get; }
+    public ObservableCollection<StorageProviderItem> Providers { get; }
     public ObservableCollection<StorageFieldViewModel> Fields { get; } = [];
 
     private readonly List<(EnumFieldViewModel Vm, PropertyChangedEventHandler Handler)> _enumUiHandlers = [];
@@ -192,9 +205,9 @@ public class StorageViewModel : ObservableObject
 
     #region SelectedProvider
 
-    private IStorageSettingsProvider _selectedProvider;
+    private StorageProviderItem _selectedProvider;
 
-    public IStorageSettingsProvider SelectedProvider
+    public StorageProviderItem SelectedProvider
     {
         get => _selectedProvider;
         set

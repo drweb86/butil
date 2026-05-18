@@ -11,6 +11,8 @@ public static class FtpsStoragePlugin
     public static void Register()
     {
         StorageProviderRegistry.Register(
+            "Ftps",
+            "FTPS",
             new FtpsStorageSettingsProvider(),
             typeof(FtpsStorageSettingsV2),
             (log, s, autodetect) => new FtpsStorage(log, (FtpsStorageSettingsV2)s, autodetect));

@@ -10,7 +10,11 @@
       "Bash(cd /tmp)",
       "Bash(cat)",
       "Bash(powershell -Command ' *)",
-      "Bash(python add_translations.py)"
+      "Bash(python add_translations.py)",
+      "Bash(python3 -)",
+      "Bash(git -C /f/sources/butil log --oneline --all -20)",
+      "Bash(dotnet test *)",
+      "Bash(xargs wc *)"
     ]
   }
 }

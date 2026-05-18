@@ -8,17 +8,6 @@ namespace BUtil.Storages.Sftp;
 
 public class SftpStorageSettingsProvider : IStorageSettingsProvider
 {
-    public string StorageId => "Sftp";
-    public string DisplayName => "SFTP";
-    public int Order => 2;
-    public bool IsSupported => true;
-
-    private static string R(string key, string fallback) =>
-        Resources.ResourceManager.GetString(key) ?? fallback;
-
-    private static string F(string key, string fallbackFormat, params object?[] args) =>
-        string.Format(R(key, fallbackFormat), args);
-
     public IReadOnlyList<StorageFieldDescriptor> Fields { get; } =
     [
         new StorageFieldDescriptor
@@ -72,11 +61,10 @@ public class SftpStorageSettingsProvider : IStorageSettingsProvider
         },
     ];
 
-    public IReadOnlyList<string> ProtectedFieldKeys { get; } = ["password"];
+    public IReadOnlyList<string> SecretSettingsProperties { get; } = ["password"];
 
-    public bool CanHandle(IStorageSettingsV2 settings) => settings is SftpStorageSettingsV2;
 
-    public IStorageSettingsV2 CreateSettings(
+    public IStorageSettingsV2 GetSettings(
         IReadOnlyDictionary<string, string?> fieldValues,
         long quota,
         string? mountScript,
@@ -95,7 +83,7 @@ public class SftpStorageSettingsProvider : IStorageSettingsProvider
             Folder = fieldValues.GetValueOrDefault("folder") ?? string.Empty,
         };
 
-    public IReadOnlyDictionary<string, string?> ExtractValues(IStorageSettingsV2 settings)
+    public IReadOnlyDictionary<string, string?> GetFieldValues(IStorageSettingsV2 settings)
     {
         var s = (SftpStorageSettingsV2)settings;
         return new Dictionary<string, string?>
@@ -129,13 +117,13 @@ public class SftpStorageSettingsProvider : IStorageSettingsProvider
     private static string BuildFingerprintInfo(SftpStorageSettingsV2 s) =>
         string.Join(Environment.NewLine,
         [
-            R("TrustDetected_Sftp_Title", "SFTP server trust information detected during test."),
-            R("TrustDetected_Sftp_Instruction", "Verify this fingerprint out-of-band, then click Save again to store it."),
+            Resources.TrustDetected_Sftp_Title,
+            Resources.TrustDetected_Sftp_Instruction,
             string.Empty,
-            F("TrustDetected_Label_Host", "Host: {0}", s.Host),
-            F("TrustDetected_Label_Port", "Port: {0}", s.Port == 0 ? R("TrustDetected_Port_Default22", "default (22)") : s.Port.ToString()),
-            F("TrustDetected_Label_User", "User: {0}", s.User),
-            F("TrustDetected_Label_Folder", "Folder: {0}", s.Folder),
-            F("TrustDetected_Label_FingerprintSha256", "Fingerprint (SHA-256): {0}", s.FingerPrintSHA256),
+            string.Format(Resources.TrustDetected_Label_Host, s.Host),
+            string.Format(Resources.TrustDetected_Label_Port, s.Port == 0 ? Resources.TrustDetected_Port_Default22 : s.Port.ToString()),
+            string.Format(Resources.TrustDetected_Label_User, s.User),
+            string.Format(Resources.TrustDetected_Label_Folder, s.Folder),
+            string.Format(Resources.TrustDetected_Label_FingerprintSha256, s.FingerPrintSHA256),
         ]);
 }

@@ -3,28 +3,11 @@ using BUtil.Core.Localization;
 using BUtil.Core.Storages;
 using System;
 using System.Collections.Generic;
-using System.IO;
 
 namespace BUtil.Storages.Nfs;
 
 public class NfsStorageSettingsProvider : IStorageSettingsProvider
 {
-    public string StorageId => "Nfs";
-    public string DisplayName => "NFS";
-    public int Order => 7;
-
-    public bool IsSupported
-    {
-        get
-        {
-            if (OperatingSystem.IsLinux()) return true;
-            if (OperatingSystem.IsWindows())
-                return File.Exists(Path.Combine(
-                    Environment.GetFolderPath(Environment.SpecialFolder.System), "mount.exe"));
-            return false;
-        }
-    }
-
     private static readonly IReadOnlyList<StorageFieldDescriptor> LinuxFields =
     [
         new StorageFieldDescriptor
@@ -94,11 +77,10 @@ public class NfsStorageSettingsProvider : IStorageSettingsProvider
     public IReadOnlyList<StorageFieldDescriptor> Fields =>
         OperatingSystem.IsWindows() ? WindowsFields : LinuxFields;
 
-    public IReadOnlyList<string> ProtectedFieldKeys { get; } = [];
+    public IReadOnlyList<string> SecretSettingsProperties { get; } = [];
 
-    public bool CanHandle(IStorageSettingsV2 settings) => settings is NfsStorageSettingsV2;
 
-    public IStorageSettingsV2 CreateSettings(
+    public IStorageSettingsV2 GetSettings(
         IReadOnlyDictionary<string, string?> fieldValues,
         long quota,
         string? mountScript,
@@ -114,7 +96,7 @@ public class NfsStorageSettingsProvider : IStorageSettingsProvider
             MountOptions = fieldValues.GetValueOrDefault("mountOptions"),
         };
 
-    public IReadOnlyDictionary<string, string?> ExtractValues(IStorageSettingsV2 settings)
+    public IReadOnlyDictionary<string, string?> GetFieldValues(IStorageSettingsV2 settings)
     {
         var s = (NfsStorageSettingsV2)settings;
         return new Dictionary<string, string?>

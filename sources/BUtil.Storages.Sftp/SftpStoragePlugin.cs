@@ -11,6 +11,8 @@ public static class SftpStoragePlugin
     public static void Register()
     {
         StorageProviderRegistry.Register(
+            "Sftp",
+            "SFTP",
             new SftpStorageSettingsProvider(),
             typeof(SftpStorageSettingsV2),
             (log, s, autodetect) => new SftpStorage(log, (SftpStorageSettingsV2)s, autodetect));

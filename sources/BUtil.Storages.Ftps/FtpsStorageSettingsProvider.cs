@@ -10,17 +10,6 @@ namespace BUtil.Storages.Ftps;
 
 public class FtpsStorageSettingsProvider : IStorageSettingsProvider
 {
-    public string StorageId => "Ftps";
-    public string DisplayName => "FTPS";
-    public int Order => 3;
-    public bool IsSupported => true;
-
-    private static string R(string key, string fallback) =>
-        Resources.ResourceManager.GetString(key) ?? fallback;
-
-    private static string F(string key, string fallbackFormat, params object?[] args) =>
-        string.Format(R(key, fallbackFormat), args);
-
     public IReadOnlyList<StorageFieldDescriptor> Fields { get; } =
     [
         new StorageFieldDescriptor
@@ -79,11 +68,10 @@ public class FtpsStorageSettingsProvider : IStorageSettingsProvider
         },
     ];
 
-    public IReadOnlyList<string> ProtectedFieldKeys { get; } = ["password"];
+    public IReadOnlyList<string> SecretSettingsProperties { get; } = ["password"];
 
-    public bool CanHandle(IStorageSettingsV2 settings) => settings is FtpsStorageSettingsV2;
 
-    public IStorageSettingsV2 CreateSettings(
+    public IStorageSettingsV2 GetSettings(
         IReadOnlyDictionary<string, string?> fieldValues,
         long quota,
         string? mountScript,
@@ -104,7 +92,7 @@ public class FtpsStorageSettingsProvider : IStorageSettingsProvider
             TrustedCertificate = fieldValues.GetValueOrDefault("certificate") ?? string.Empty,
         };
 
-    public IReadOnlyDictionary<string, string?> ExtractValues(IStorageSettingsV2 settings)
+    public IReadOnlyDictionary<string, string?> GetFieldValues(IStorageSettingsV2 settings)
     {
         var s = (FtpsStorageSettingsV2)settings;
         return new Dictionary<string, string?>
@@ -139,14 +127,14 @@ public class FtpsStorageSettingsProvider : IStorageSettingsProvider
     {
         var lines = new List<string>
         {
-            R("TrustDetected_Ftps_Title", "FTPS server certificate detected during test."),
-            R("TrustDetected_Ftps_Instruction", "Verify certificate identity out-of-band, then click Save again to store it."),
+            Resources.TrustDetected_Ftps_Title,
+            Resources.TrustDetected_Ftps_Instruction,
             string.Empty,
-            F("TrustDetected_Label_Host", "Host: {0}", s.Host),
-            F("TrustDetected_Label_Port", "Port: {0}", s.Port == 0 ? R("TrustDetected_Port_Default", "default") : s.Port.ToString()),
-            F("TrustDetected_Label_Encryption", "Encryption: {0}", s.Encryption),
-            F("TrustDetected_Label_Folder", "Folder: {0}", s.Folder),
-            F("TrustDetected_Label_CertificateRawHex", "Certificate (raw hex): {0}", s.TrustedCertificate),
+            string.Format(Resources.TrustDetected_Label_Host, s.Host),
+            string.Format(Resources.TrustDetected_Label_Port, s.Port == 0 ? Resources.TrustDetected_Port_Default : s.Port.ToString()),
+            string.Format(Resources.TrustDetected_Label_Encryption, s.Encryption),
+            string.Format(Resources.TrustDetected_Label_Folder, s.Folder),
+            string.Format(Resources.TrustDetected_Label_CertificateRawHex, s.TrustedCertificate),
         };
 
         if (!string.IsNullOrWhiteSpace(s.TrustedCertificate))
@@ -156,32 +144,32 @@ public class FtpsStorageSettingsProvider : IStorageSettingsProvider
                 var certBytes = Convert.FromHexString(s.TrustedCertificate);
                 using var cert = X509CertificateLoader.LoadCertificate(certBytes);
                 lines.Add(string.Empty);
-                lines.Add(R("TrustDetected_ParsedCertificate_Header", "Parsed certificate details:"));
-                lines.Add(F("TrustDetected_Label_Subject", "Subject: {0}", cert.Subject));
-                lines.Add(F("TrustDetected_Label_Issuer", "Issuer: {0}", cert.Issuer));
-                lines.Add(F("TrustDetected_Label_SerialNumber", "Serial number: {0}", cert.SerialNumber));
-                lines.Add(F("TrustDetected_Label_Thumbprint", "Thumbprint: {0}", cert.Thumbprint));
-                lines.Add(F("TrustDetected_Label_ValidFromUtc", "Valid from (UTC): {0}", cert.NotBefore.ToUniversalTime().ToString("O")));
-                lines.Add(F("TrustDetected_Label_ValidUntilUtc", "Valid until (UTC): {0}", cert.NotAfter.ToUniversalTime().ToString("O")));
-                lines.Add(F("TrustDetected_Label_SignatureAlgorithm", "Signature algorithm: {0}", cert.SignatureAlgorithm?.FriendlyName ?? cert.SignatureAlgorithm?.Value));
-                lines.Add(F("TrustDetected_Label_PublicKeyAlgorithm", "Public key algorithm: {0}", cert.PublicKey?.Oid?.FriendlyName ?? cert.PublicKey?.Oid?.Value));
-                lines.Add(F("TrustDetected_Label_PublicKeySize", "Public key size: {0}", GetPublicKeySizeText(cert)));
+                lines.Add(Resources.TrustDetected_ParsedCertificate_Header);
+                lines.Add(string.Format(Resources.TrustDetected_Label_Subject, cert.Subject));
+                lines.Add(string.Format(Resources.TrustDetected_Label_Issuer, cert.Issuer));
+                lines.Add(string.Format(Resources.TrustDetected_Label_SerialNumber, cert.SerialNumber));
+                lines.Add(string.Format(Resources.TrustDetected_Label_Thumbprint, cert.Thumbprint));
+                lines.Add(string.Format(Resources.TrustDetected_Label_ValidFromUtc, cert.NotBefore.ToUniversalTime().ToString("O")));
+                lines.Add(string.Format(Resources.TrustDetected_Label_ValidUntilUtc, cert.NotAfter.ToUniversalTime().ToString("O")));
+                lines.Add(string.Format(Resources.TrustDetected_Label_SignatureAlgorithm, cert.SignatureAlgorithm?.FriendlyName ?? cert.SignatureAlgorithm?.Value));
+                lines.Add(string.Format(Resources.TrustDetected_Label_PublicKeyAlgorithm, cert.PublicKey?.Oid?.FriendlyName ?? cert.PublicKey?.Oid?.Value));
+                lines.Add(string.Format(Resources.TrustDetected_Label_PublicKeySize, GetPublicKeySizeText(cert)));
 
                 var dnsName = cert.GetNameInfo(X509NameType.DnsName, false);
                 if (!string.IsNullOrWhiteSpace(dnsName))
-                    lines.Add(F("TrustDetected_Label_DnsName", "DNS name: {0}", dnsName));
+                    lines.Add(string.Format(Resources.TrustDetected_Label_DnsName, dnsName));
 
                 var san = cert.Extensions
                     .OfType<X509Extension>()
                     .FirstOrDefault(x => x.Oid?.Value == "2.5.29.17")
                     ?.Format(true);
                 if (!string.IsNullOrWhiteSpace(san))
-                    lines.Add(F("TrustDetected_Label_SubjectAlternativeNames", "Subject alternative names: {0}", san));
+                    lines.Add(string.Format(Resources.TrustDetected_Label_SubjectAlternativeNames, san));
             }
             catch (Exception ex)
             {
                 lines.Add(string.Empty);
-                lines.Add(F("TrustDetected_CertificateParseWarning", "Certificate parse warning: {0}", ex.Message));
+                lines.Add(string.Format(Resources.TrustDetected_CertificateParseWarning, ex.Message));
             }
         }
 
@@ -198,6 +186,6 @@ public class FtpsStorageSettingsProvider : IStorageSettingsProvider
         if (dsa != null) return $"{dsa.KeySize} bits";
         using var ecdh = cert.GetECDiffieHellmanPublicKey();
         if (ecdh != null) return $"{ecdh.KeySize} bits";
-        return R("TrustDetected_PublicKeySize_Unknown", "unknown");
+        return Resources.TrustDetected_PublicKeySize_Unknown;
     }
 }

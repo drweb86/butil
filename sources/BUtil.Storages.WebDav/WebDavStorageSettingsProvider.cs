@@ -7,11 +7,6 @@ namespace BUtil.Storages.WebDav;
 
 public class WebDavStorageSettingsProvider : IStorageSettingsProvider
 {
-    public string StorageId => "WebDav";
-    public string DisplayName => "WebDAV";
-    public int Order => 5;
-    public bool IsSupported => true;
-
     public IReadOnlyList<StorageFieldDescriptor> Fields { get; } =
     [
         new StorageFieldDescriptor
@@ -169,11 +164,10 @@ public class WebDavStorageSettingsProvider : IStorageSettingsProvider
         },
     ];
 
-    public IReadOnlyList<string> ProtectedFieldKeys { get; } = ["password"];
+    public IReadOnlyList<string> SecretSettingsProperties { get; } = ["password"];
 
-    public bool CanHandle(IStorageSettingsV2 settings) => settings is WebDavStorageSettingsV2;
 
-    public IStorageSettingsV2 CreateSettings(
+    public IStorageSettingsV2 GetSettings(
         IReadOnlyDictionary<string, string?> fieldValues,
         long quota,
         string? mountScript,
@@ -217,7 +211,7 @@ public class WebDavStorageSettingsProvider : IStorageSettingsProvider
         };
     }
 
-    public IReadOnlyDictionary<string, string?> ExtractValues(IStorageSettingsV2 settings)
+    public IReadOnlyDictionary<string, string?> GetFieldValues(IStorageSettingsV2 settings)
     {
         var s = (WebDavStorageSettingsV2)settings;
         return new Dictionary<string, string?>

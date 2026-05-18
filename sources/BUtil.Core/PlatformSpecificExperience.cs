@@ -27,8 +27,6 @@ public static class PlatformSpecificExperience
 
     private static CrossPlatformExperience LoadFromPlatformAssembly()
     {
-        StorageHostBootstrap.EnsureWired();
-
         string assemblyFile = Files.WindowsExperience;
         if (OperatingSystem.IsWindows())
         {

@@ -1,4 +1,6 @@
 using BUtil.Core;
+using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.Localization;
 using BUtil.Core.Options;
 using BUtil.Core.Services;
 using BUtil.Core.Storages;
@@ -54,16 +56,26 @@ public class WindowsExperience : CrossPlatformExperience
 
     public override void RegisterPlatformStorages()
     {
+        StorageProviderRegistry.Register(
+            "Folder",
+            Resources.DirectoryStorage,
+            new FolderStorageSettingsProvider(),
+            typeof(FolderStorageSettingsV2),
+            (log, s, _) => new FolderStorage(log, (FolderStorageSettingsV2)s));
         SftpStoragePlugin.Register();
         FtpsStoragePlugin.Register();
         WebDavStoragePlugin.Register();
         S3StoragePlugin.Register();
         AzureBlobStoragePlugin.Register();
         StorageProviderRegistry.Register(
+            "Samba",
+            "SMB/CIFS",
             new SambaStorageSettingsProvider(),
             typeof(SambaStorageSettingsV2),
             (log, s, _) => new WindowsSambaStorage(log, (SambaStorageSettingsV2)s));
         StorageProviderRegistry.Register(
+            "Nfs",
+            "NFS",
             new NfsStorageSettingsProvider(),
             typeof(NfsStorageSettingsV2),
             (log, s, _) => new WindowsNfsStorage(log, (NfsStorageSettingsV2)s));

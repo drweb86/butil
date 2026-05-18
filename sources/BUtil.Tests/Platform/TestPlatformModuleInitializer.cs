@@ -1,5 +1,4 @@
 using BUtil.Core;
-using BUtil.Core.Storages;
 using System.Runtime.CompilerServices;
 
 namespace BUtil.Tests.Platform;
@@ -13,7 +12,6 @@ internal static class TestPlatformModuleInitializer
     [ModuleInitializer]
     internal static void Initialize()
     {
-        StorageHostBootstrap.EnsureWired();
         PlatformSpecificExperience.SetInstanceForTests(FakeCrossPlatformExperience.Instance);
     }
 }

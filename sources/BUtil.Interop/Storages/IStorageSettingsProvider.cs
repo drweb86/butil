@@ -5,22 +5,16 @@ namespace BUtil.Core.Storages;
 
 public interface IStorageSettingsProvider
 {
-    string StorageId { get; }
-    string DisplayName { get; }
-    int Order { get; }
-    bool IsSupported { get; }
     IReadOnlyList<StorageFieldDescriptor> Fields { get; }
-    IReadOnlyList<string> ProtectedFieldKeys { get; }
+    IReadOnlyList<string> SecretSettingsProperties { get; }
 
-    bool CanHandle(IStorageSettingsV2 settings);
-
-    IStorageSettingsV2 CreateSettings(
+    IStorageSettingsV2 GetSettings(
         IReadOnlyDictionary<string, string?> fieldValues,
         long quota,
         string? mountScript,
         string? unmountScript);
 
-    IReadOnlyDictionary<string, string?> ExtractValues(IStorageSettingsV2 settings);
+    IReadOnlyDictionary<string, string?> GetFieldValues(IStorageSettingsV2 settings);
 
     // Returns an info message if trust was newly auto-detected, null otherwise.
     // updatedValues contains the fields to update in the form (e.g. certificate/fingerprint).

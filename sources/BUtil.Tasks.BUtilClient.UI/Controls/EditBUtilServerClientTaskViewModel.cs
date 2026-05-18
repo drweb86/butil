@@ -63,7 +63,10 @@ public class EditBUtilServerClientTaskViewModel : BUtil.UI.Controls.ViewModelBas
         {
             var detectedInfo = StorageViewModel.ApplyDetectedConnectionTrustAndBuildInfo(((BUtilClientModelOptionsV2)newTask.Model).To);
             if (!string.IsNullOrWhiteSpace(detectedInfo))
+            {
                 await Messages.ShowInformationBox(detectedInfo);
+                return;
+            }
             await Messages.ShowErrorBox(error);
             return;
         }

@@ -6,11 +6,6 @@ namespace BUtil.Core.Storages;
 
 public class FolderStorageSettingsProvider : IStorageSettingsProvider
 {
-    public string StorageId => "Folder";
-    public string DisplayName => Resources.DirectoryStorage;
-    public int Order => 0;
-    public bool IsSupported => true;
-
     public IReadOnlyList<StorageFieldDescriptor> Fields { get; } =
     [
         new StorageFieldDescriptor
@@ -23,11 +18,10 @@ public class FolderStorageSettingsProvider : IStorageSettingsProvider
         },
     ];
 
-    public IReadOnlyList<string> ProtectedFieldKeys { get; } = [];
+    public IReadOnlyList<string> SecretSettingsProperties { get; } = [];
 
-    public bool CanHandle(IStorageSettingsV2 settings) => settings is FolderStorageSettingsV2;
 
-    public IStorageSettingsV2 CreateSettings(
+    public IStorageSettingsV2 GetSettings(
         IReadOnlyDictionary<string, string?> fieldValues,
         long quota,
         string? mountScript,
@@ -40,7 +34,7 @@ public class FolderStorageSettingsProvider : IStorageSettingsProvider
             DestinationFolder = fieldValues.GetValueOrDefault("folder") ?? string.Empty,
         };
 
-    public IReadOnlyDictionary<string, string?> ExtractValues(IStorageSettingsV2 settings)
+    public IReadOnlyDictionary<string, string?> GetFieldValues(IStorageSettingsV2 settings)
     {
         var s = (FolderStorageSettingsV2)settings;
         return new Dictionary<string, string?> { ["folder"] = s.DestinationFolder };

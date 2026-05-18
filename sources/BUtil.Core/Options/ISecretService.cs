@@ -100,7 +100,7 @@ public abstract class SecretServiceBase : ISecretService
         if (provider == null)
             return false;
 
-        var protectedPropertyNames = provider.ProtectedFieldKeys
+        var protectedPropertyNames = provider.Provider.SecretSettingsProperties
             .Where(name => !string.IsNullOrWhiteSpace(name))
             .Distinct(StringComparer.OrdinalIgnoreCase);
 

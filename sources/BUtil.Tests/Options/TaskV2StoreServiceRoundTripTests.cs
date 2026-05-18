@@ -28,6 +28,12 @@ public class TaskV2StoreServiceRoundTripTests
         if (Interlocked.Exchange(ref _storagesRegistered, 1) != 0)
             return;
 
+        StorageProviderRegistry.Register(
+            "Folder",
+            "Folder",
+            new FolderStorageSettingsProvider(),
+            typeof(FolderStorageSettingsV2),
+            (_, _, _) => throw new NotSupportedException());
         SftpStoragePlugin.Register();
         FtpsStoragePlugin.Register();
         WebDavStoragePlugin.Register();
@@ -35,10 +41,14 @@ public class TaskV2StoreServiceRoundTripTests
         AzureBlobStoragePlugin.Register();
 
         StorageProviderRegistry.Register(
+            "Samba",
+            "SMB/CIFS",
             new SambaStorageSettingsProvider(),
             typeof(SambaStorageSettingsV2),
             (_, _, _) => throw new NotSupportedException());
         StorageProviderRegistry.Register(
+            "Nfs",
+            "NFS",
             new NfsStorageSettingsProvider(),
             typeof(NfsStorageSettingsV2),
             (_, _, _) => throw new NotSupportedException());

@@ -7,11 +7,6 @@ namespace BUtil.Storages.S3;
 
 public class S3StorageSettingsProvider : IStorageSettingsProvider
 {
-    public string StorageId => "S3";
-    public string DisplayName => "S3";
-    public int Order => 6;
-    public bool IsSupported => true;
-
     public IReadOnlyList<StorageFieldDescriptor> Fields { get; } =
     [
         new StorageFieldDescriptor
@@ -261,11 +256,10 @@ public class S3StorageSettingsProvider : IStorageSettingsProvider
         },
     ];
 
-    public IReadOnlyList<string> ProtectedFieldKeys { get; } = ["secretKey"];
+    public IReadOnlyList<string> SecretSettingsProperties { get; } = ["secretKey"];
 
-    public bool CanHandle(IStorageSettingsV2 settings) => settings is S3StorageSettingsV2;
 
-    public IStorageSettingsV2 CreateSettings(
+    public IStorageSettingsV2 GetSettings(
         IReadOnlyDictionary<string, string?> fieldValues,
         long quota,
         string? mountScript,
@@ -313,7 +307,7 @@ public class S3StorageSettingsProvider : IStorageSettingsProvider
         };
     }
 
-    public IReadOnlyDictionary<string, string?> ExtractValues(IStorageSettingsV2 settings)
+    public IReadOnlyDictionary<string, string?> GetFieldValues(IStorageSettingsV2 settings)
     {
         var s = (S3StorageSettingsV2)settings;
         return new Dictionary<string, string?>

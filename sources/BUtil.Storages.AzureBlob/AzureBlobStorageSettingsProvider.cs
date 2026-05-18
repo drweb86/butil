@@ -7,11 +7,6 @@ namespace BUtil.Storages.AzureBlob;
 
 public class AzureBlobStorageSettingsProvider : IStorageSettingsProvider
 {
-    public string StorageId => "AzureBlob";
-    public string DisplayName => "Azure Blob";
-    public int Order => 8;
-    public bool IsSupported => true;
-
     public IReadOnlyList<StorageFieldDescriptor> Fields { get; } =
     [
         new StorageFieldDescriptor
@@ -44,11 +39,10 @@ public class AzureBlobStorageSettingsProvider : IStorageSettingsProvider
         },
     ];
 
-    public IReadOnlyList<string> ProtectedFieldKeys { get; } = ["accountKey"];
+    public IReadOnlyList<string> SecretSettingsProperties { get; } = ["accountKey"];
 
-    public bool CanHandle(IStorageSettingsV2 settings) => settings is AzureBlobStorageSettingsV2;
 
-    public IStorageSettingsV2 CreateSettings(
+    public IStorageSettingsV2 GetSettings(
         IReadOnlyDictionary<string, string?> fieldValues,
         long quota,
         string? mountScript,
@@ -64,7 +58,7 @@ public class AzureBlobStorageSettingsProvider : IStorageSettingsProvider
             PathPrefix = fieldValues.GetValueOrDefault("pathPrefix") ?? string.Empty,
         };
 
-    public IReadOnlyDictionary<string, string?> ExtractValues(IStorageSettingsV2 settings)
+    public IReadOnlyDictionary<string, string?> GetFieldValues(IStorageSettingsV2 settings)
     {
         var s = (AzureBlobStorageSettingsV2)settings;
         return new Dictionary<string, string?>

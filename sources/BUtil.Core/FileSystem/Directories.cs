@@ -2,7 +2,6 @@
 using System;
 using System.IO;
 using System.Reflection;
-using BUtil.Core.Storages;
 
 namespace BUtil.Core.FileSystem;
 
@@ -34,8 +33,6 @@ public static class Directories
 
     static Directories()
     {
-        StorageHostBootstrap.EnsureWired();
-
         FileHelper.EnsureFolderCreated(_userDataFolder);
         LogsFolder = Path.Combine(Directories.UserDataFolder, "Logs", "v3");
         FileHelper.EnsureFolderCreated(LogsFolder);

@@ -70,7 +70,10 @@ public class EditMediaTaskViewModel : BUtil.UI.Controls.ViewModelBase
         {
             var detectedInfo = SourceTaskViewModel.ApplyDetectedConnectionTrustAndBuildInfo(((ImportMediaTaskModelOptionsV2)newTask.Model).From);
             if (!string.IsNullOrWhiteSpace(detectedInfo))
+            {
                 await Messages.ShowInformationBox(detectedInfo);
+                return;
+            }
             await Messages.ShowErrorBox(error);
             return;
         }

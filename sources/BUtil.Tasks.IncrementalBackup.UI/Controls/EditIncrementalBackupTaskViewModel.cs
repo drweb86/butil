@@ -68,7 +68,10 @@ public class EditIncrementalBackupTaskViewModel : BUtil.UI.Controls.ViewModelBas
         {
             var detectedInfo = StorageViewModel.ApplyDetectedConnectionTrustAndBuildInfo(((IncrementalBackupModelOptionsV2)newTask.Model).To);
             if (!string.IsNullOrWhiteSpace(detectedInfo))
+            {
                 await Messages.ShowInformationBox(detectedInfo);
+                return;
+            }
             await Messages.ShowErrorBox(error);
             return;
         }

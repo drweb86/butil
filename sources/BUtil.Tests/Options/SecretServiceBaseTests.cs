@@ -23,6 +23,8 @@ public class SecretServiceBaseTests
             return;
 
         StorageProviderRegistry.Register(
+            "SecretServiceBaseTest",
+            "Secret Service Base Test",
             new TestStorageSettingsProvider(),
             typeof(TestStorageSettings),
             (_, _, _) => throw new NotSupportedException());
@@ -53,7 +55,7 @@ public class SecretServiceBaseTests
     }
 
     [TestMethod]
-    public void CreateProtectedClone_StorageProviderProtectedFieldKeys_ProtectsMultipleFields()
+    public void CreateProtectedClone_StorageProviderSecretSettingsProperties_ProtectsMultipleFields()
     {
         var task = CreateTaskWithTestStorage();
 
@@ -166,10 +168,6 @@ public class SecretServiceBaseTests
 
     private sealed class TestStorageSettingsProvider : IStorageSettingsProvider
     {
-        public string StorageId => "SecretServiceBaseTest";
-        public string DisplayName => "Secret Service Base Test";
-        public int Order => 999;
-        public bool IsSupported => true;
         public IReadOnlyList<StorageFieldDescriptor> Fields { get; } =
         [
             new StorageFieldDescriptor { Key = "secretOne", Label = "Secret One", Type = StorageFieldType.Password },
@@ -178,11 +176,10 @@ public class SecretServiceBaseTests
             new StorageFieldDescriptor { Key = "publicValue", Label = "Public Value", Type = StorageFieldType.Text },
         ];
 
-        public IReadOnlyList<string> ProtectedFieldKeys { get; } = ["secretOne", "secretTwo"];
+        public IReadOnlyList<string> SecretSettingsProperties { get; } = ["secretOne", "secretTwo"];
 
-        public bool CanHandle(IStorageSettingsV2 settings) => settings is TestStorageSettings;
 
-        public IStorageSettingsV2 CreateSettings(
+        public IStorageSettingsV2 GetSettings(
             IReadOnlyDictionary<string, string?> fieldValues,
             long quota,
             string? mountScript,
@@ -198,7 +195,7 @@ public class SecretServiceBaseTests
                 PublicValue = fieldValues.GetValueOrDefault("publicValue") ?? string.Empty,
             };
 
-        public IReadOnlyDictionary<string, string?> ExtractValues(IStorageSettingsV2 settings)
+        public IReadOnlyDictionary<string, string?> GetFieldValues(IStorageSettingsV2 settings)
         {
             var testSettings = (TestStorageSettings)settings;
             return new Dictionary<string, string?>

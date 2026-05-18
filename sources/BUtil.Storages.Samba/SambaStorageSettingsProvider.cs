@@ -8,12 +8,6 @@ namespace BUtil.Storages.Samba;
 
 public class SambaStorageSettingsProvider : IStorageSettingsProvider
 {
-    public string StorageId => "Samba";
-    public string DisplayName => "SMB/CIFS";
-    public int Order => 1;
-
-    public bool IsSupported => OperatingSystem.IsWindows() || OperatingSystem.IsLinux();
-
     public IReadOnlyList<StorageFieldDescriptor> Fields { get; } =
     [
         new StorageFieldDescriptor
@@ -39,11 +33,10 @@ public class SambaStorageSettingsProvider : IStorageSettingsProvider
         },
     ];
 
-    public IReadOnlyList<string> ProtectedFieldKeys { get; } = ["password"];
+    public IReadOnlyList<string> SecretSettingsProperties { get; } = ["password"];
 
-    public bool CanHandle(IStorageSettingsV2 settings) => settings is SambaStorageSettingsV2;
 
-    public IStorageSettingsV2 CreateSettings(
+    public IStorageSettingsV2 GetSettings(
         IReadOnlyDictionary<string, string?> fieldValues,
         long quota,
         string? mountScript,
@@ -58,7 +51,7 @@ public class SambaStorageSettingsProvider : IStorageSettingsProvider
             Password = fieldValues.GetValueOrDefault("password"),
         };
 
-    public IReadOnlyDictionary<string, string?> ExtractValues(IStorageSettingsV2 settings)
+    public IReadOnlyDictionary<string, string?> GetFieldValues(IStorageSettingsV2 settings)
     {
         var s = (SambaStorageSettingsV2)settings;
         return new Dictionary<string, string?>

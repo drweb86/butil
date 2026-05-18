@@ -25,18 +25,18 @@ public sealed class StorageJsonConverter : JsonConverter<IStorageSettingsV2>
         if (!doc.RootElement.TryGetProperty(TypePropertyName, out var typeElement))
             throw new JsonException($"Missing '{TypePropertyName}' property on storage settings object.");
 
-        var discriminator = typeElement.GetString()
+        var jsonType = typeElement.GetString()
             ?? throw new JsonException($"'{TypePropertyName}' property is null in storage settings.");
 
-        var targetType = StorageProviderRegistry.GetSettingsType(discriminator)
-            ?? throw new JsonException($"Unknown storage type discriminator: '{discriminator}'. Register the provider before deserializing.");
+        var targetType = StorageProviderRegistry.FindSettingsType(jsonType)
+            ?? throw new JsonException($"Unknown storage type discriminator: '{jsonType}'. Register the provider before deserializing.");
 
         return (IStorageSettingsV2?)doc.RootElement.Deserialize(targetType, _innerOptions);
     }
 
     public override void Write(Utf8JsonWriter writer, IStorageSettingsV2 value, JsonSerializerOptions options)
     {
-        var discriminator = StorageProviderRegistry.GetDiscriminator(value.GetType())
+        var jsonType = StorageProviderRegistry.FindJsonType(value.GetType())
             ?? throw new JsonException($"No discriminator registered for settings type '{value.GetType().Name}'. Register the provider before serializing.");
 
         // Serialize the concrete type without this converter to avoid infinite recursion,
@@ -45,7 +45,7 @@ public sealed class StorageJsonConverter : JsonConverter<IStorageSettingsV2>
         using var doc = JsonDocument.Parse(rawJson);
 
         writer.WriteStartObject();
-        writer.WriteString(TypePropertyName, discriminator);
+        writer.WriteString(TypePropertyName, jsonType);
         foreach (var property in doc.RootElement.EnumerateObject())
             property.WriteTo(writer);
         writer.WriteEndObject();
