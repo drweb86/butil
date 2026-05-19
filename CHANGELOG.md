@@ -11,6 +11,7 @@
 - Added S3 presets for Russian providers: **Yandex Object Storage**, **VK Cloud Object Storage**, **Cloud.ru Object Storage**, **Selectel Object Storage** — service URLs and regions auto-filled.
 - Added S3 presets for Chinese providers: **Alibaba Cloud OSS**, **Tencent Cloud COS**, **Huawei Cloud OBS**, **Baidu Cloud BOS**, **Qiniu Cloud Kodo**, **Volcano Engine TOS**.
 - Added **Yandex Disk** preset to the WebDAV storage type — host auto-filled, only credentials required.
+- Extensibility model: it is possible to have user created tasks (and configuration UIs), storages.
 
 ## Changes
 - **Custom storage SDK:** Third-party backends can compile against **`BUtil.Interop` only**. `StorageProviderRegistry`, `IStoragePlugin`, logging (`ILog`, `LoggingEvent`), and registry wiring live in **`BUtil.Interop`**; `BUtil.Core` bootstraps the built-in folder provider. See [Custom storage plugin](./help/Custom%20storage%20plugin.md).
