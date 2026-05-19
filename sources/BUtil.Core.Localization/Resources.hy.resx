@@ -511,6 +511,9 @@
   <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
     <value>«{0}» անվան երկարությունը գերազանցում է սահմանաչափը {1} նիշով:</value>
   </data>
+  <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
+    <value>Այս անունով առաջադրանք արդեն գոյություն ունի։</value>
+  </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Անուն</value>
   </data>

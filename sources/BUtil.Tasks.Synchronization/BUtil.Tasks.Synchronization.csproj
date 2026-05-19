@@ -2,9 +2,15 @@
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <OutputType>Library</OutputType>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
+    <InternalsVisibleTo Include="BUtil.Tests" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="../BUtil.Core/BUtil.Core.csproj" />
+    <ProjectReference Include="../BUtil.Tasks.Common/BUtil.Tasks.Common.csproj" />
   </ItemGroup>
 </Project>

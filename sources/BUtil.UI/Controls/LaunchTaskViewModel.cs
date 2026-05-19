@@ -1,13 +1,13 @@
 using BUtil.Core;
 using BUtil.Core.ConfigurationFileModels.V2;
-using BUtil.Core.Events;
+using BUtil.Interop.Tasks.Events;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Interop.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Services;
-using BUtil.Core.TasksTree;
+using BUtil.Interop.Tasks;
 using System;
 
 namespace BUtil.UI.Controls;
@@ -141,7 +141,7 @@ public class LaunchTaskViewModel : ViewModelBase
 
         var fileLog = new FileLog(_task.Name);
         fileLog.Open();
-        if (!RootTaskFactory.TryVerify(fileLog, _task.Model, false, out var error))
+        if (!TaskProviderRegistry.TryVerify(fileLog, _task.Model, false, out var error))
         {
             fileLog.Close(false);
             TaskExecuterViewModel = new TaskExecuterViewModel(error);
@@ -153,7 +153,7 @@ public class LaunchTaskViewModel : ViewModelBase
         TaskExecuterViewModel = new TaskExecuterViewModel(
             _taskEvents,
             _task.Name,
-            (log, taskEvents, onGetLastMinuteMessage) => RootTaskFactory.Create(log, _task, taskEvents, onGetLastMinuteMessage),
+            (log, taskEvents, onGetLastMinuteMessage) => TaskProviderRegistry.Create(log, _task, taskEvents, onGetLastMinuteMessage),
             OnTaskCompleted);
     }
 

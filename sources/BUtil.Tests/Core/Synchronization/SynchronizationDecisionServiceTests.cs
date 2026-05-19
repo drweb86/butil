@@ -1,5 +1,5 @@
-﻿using BUtil.Core.ConfigurationFileModels.V2;
-using BUtil.Core.Synchronization;
+using BUtil.Tasks.Synchronization;
+using BUtil.Tasks.Synchronization.Synchronization;
 [assembly: Parallelize]
 namespace BUtil.Tests.Core.Synchronization;
 

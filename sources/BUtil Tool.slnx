@@ -18,6 +18,7 @@
     <Project Path="BUtil.Storages.WebDav/BUtil.Storages.WebDav.csproj" />
   </Folder>
   <Folder Name="/Tasks/">
+    <Project Path="BUtil.Tasks.Common/BUtil.Tasks.Common.csproj" />
     <Project Path="BUtil.Tasks.IncrementalBackup/BUtil.Tasks.IncrementalBackup.csproj" />
     <Project Path="BUtil.Tasks.IncrementalBackup.UI/BUtil.Tasks.IncrementalBackup.UI.csproj" />
     <Project Path="BUtil.Tasks.Synchronization/BUtil.Tasks.Synchronization.csproj" />

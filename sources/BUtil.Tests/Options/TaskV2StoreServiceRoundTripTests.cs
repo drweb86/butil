@@ -1,4 +1,13 @@
+using BUtil.Interop.Tasks;
 using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Tasks.BUtilClient;
+using BUtil.Tasks.BUtilServer;
+using BUtil.Tasks.ImportMedia;
+using BUtil.Tasks.IncrementalBackup;
+using BUtil.Tasks.BUtilClient;
+using BUtil.Tasks.BUtilServer;
+using BUtil.Tasks.ImportMedia;
+using BUtil.Tasks.Synchronization;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Serialization;
 using BUtil.Core.Services;
@@ -52,6 +61,12 @@ public class TaskV2StoreServiceRoundTripTests
             new NfsStorageSettingsProvider(),
             typeof(NfsStorageSettingsV2),
             (_, _, _) => throw new NotSupportedException());
+
+        IncrementalBackupTaskPlugin.Register();
+        SynchronizationTaskPlugin.Register();
+        ImportMediaTaskPlugin.Register();
+        BUtilServerTaskPlugin.Register();
+        BUtilClientTaskPlugin.Register();
     }
 
     public static IEnumerable<object[]> TaskOptionsCases()

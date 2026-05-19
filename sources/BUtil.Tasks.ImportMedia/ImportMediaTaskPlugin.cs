@@ -2,26 +2,22 @@ using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Storages;
-using BUtil.Core.TasksTree;
 using BUtil.Core.TasksTree.ImportMedia;
 using BUtil.Core.TasksTree.MediaSyncBackupModel;
-using System;
+using BUtil.Interop.Tasks;
 using System.IO;
 
 namespace BUtil.Tasks.ImportMedia;
-
-file sealed class ImportMediaSettingsProvider : ITaskSettingsProvider
-{
-    public string Information => Resources.ImportMediaTask_Help;
-}
 
 public static class ImportMediaTaskPlugin
 {
     public static void Register()
     {
         TaskProviderRegistry.Register<ImportMediaTaskModelOptionsV2>(
-            (log, task, events, onMsg) => new ImportMediaRootTask(log, events, task, onMsg),
-            (log, options, writeMode) =>
+            jsonType: "ImportMedia",
+            information: Resources.ImportMediaTask_Help,
+            factory: (log, task, events, onMsg) => new ImportMediaRootTask(log, events, task, onMsg),
+            verifier: (log, options, writeMode) =>
             {
                 var destError = StorageFactory.Test(log, new FolderStorageSettingsV2 { DestinationFolder = options.DestinationFolder }, writeMode);
                 if (destError != null)
@@ -47,7 +43,6 @@ public static class ImportMediaTaskPlugin
                 }
 
                 return null;
-            },
-            new ImportMediaSettingsProvider());
+            });
     }
 }

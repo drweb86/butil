@@ -1,3 +1,4 @@
+using BUtil.Interop.Tasks;
 using BUtil.Core.Storages;
 using System.Text.Json;
 
@@ -12,6 +13,6 @@ public static class JsonOptions
     public static readonly JsonSerializerOptions TaskSerialization = new()
     {
         WriteIndented = true,
-        Converters = { new StorageJsonConverter() },
+        Converters = { new StorageJsonConverter(), new TaskJsonConverter() },
     };
 }

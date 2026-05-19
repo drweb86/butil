@@ -1227,7 +1227,16 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("Name_Field_Validation_ExceedsLimit", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to A task with this name already exists..
+        /// </summary>
+        public static string Name_Field_Validation_Duplicate {
+            get {
+                return ResourceManager.GetString("Name_Field_Validation_Duplicate", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>

@@ -1,7 +1,7 @@
-﻿using BUtil.Core.ConfigurationFileModels.V2;
-using BUtil.Core.Events;
+using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Interop.Tasks.Events;
 using BUtil.Core.Localization;
-using BUtil.Core.TasksTree.States;
+using BUtil.Tasks.Common.States;
 using System;
 using System.Threading.Tasks;
 

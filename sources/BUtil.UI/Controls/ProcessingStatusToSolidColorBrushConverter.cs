@@ -1,6 +1,6 @@
-﻿using Avalonia.Data;
+using Avalonia.Data;
 using Avalonia.Data.Converters;
-using BUtil.Core.Events;
+using BUtil.Interop.Tasks.Events;
 using System;
 using System.Globalization;
 

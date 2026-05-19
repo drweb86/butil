@@ -1,8 +1,8 @@
-﻿using BUtil.Core.Events;
+using BUtil.Interop.Tasks.Events;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
-using BUtil.Core.Synchronization;
-using BUtil.Core.TasksTree.Core;
+using BUtil.Tasks.Synchronization.Synchronization;
+using BUtil.Interop.Tasks.Core;
 using System.IO;
 
 namespace BUtil.Core.TasksTree.Synchronization;

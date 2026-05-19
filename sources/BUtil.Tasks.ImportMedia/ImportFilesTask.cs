@@ -1,10 +1,12 @@
-﻿using BUtil.Core.ConfigurationFileModels.V2;
-using BUtil.Core.Events;
+using BUtil.Interop.Tasks;
+using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Tasks.ImportMedia;
+using BUtil.Interop.Tasks.Events;
 using BUtil.Core.Services;
 using BUtil.Core.State;
 using BUtil.Core.Storages;
-using BUtil.Core.TasksTree.Core;
-using BUtil.Core.TasksTree.States;
+using BUtil.Interop.Tasks.Core;
+using BUtil.Tasks.Common.States;
 using System;
 using System.IO;
 using System.Linq;

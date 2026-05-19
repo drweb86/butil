@@ -511,6 +511,9 @@
   <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
     <value>სახელის '{0}' სიგრძე აჭარბებს ლიმიტს {1} სიმბოლოთი.</value>
   </data>
+  <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
+    <value>ამ სახელით დავალება უკვე არსებობს.</value>
+  </data>
   <data name="Name_Title" xml:space="preserve">
     <value>სახელი</value>
   </data>

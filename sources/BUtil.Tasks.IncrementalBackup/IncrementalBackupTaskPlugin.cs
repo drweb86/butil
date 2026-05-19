@@ -1,24 +1,19 @@
-using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Localization;
 using BUtil.Core.Storages;
-using BUtil.Core.TasksTree;
+using BUtil.Interop.Tasks;
 using BUtil.Core.TasksTree.IncrementalModel;
-using System.IO;
 
 namespace BUtil.Tasks.IncrementalBackup;
-
-file sealed class IncrementalBackupSettingsProvider : ITaskSettingsProvider
-{
-    public string Information => Resources.IncrementalBackup_Help;
-}
 
 public static class IncrementalBackupTaskPlugin
 {
     public static void Register()
     {
         TaskProviderRegistry.Register<IncrementalBackupModelOptionsV2>(
-            (log, task, events, onMsg) => new IncrementalBackupRootTask(log, events, task, onMsg),
-            (log, options, writeMode) =>
+            jsonType: "Incremental",
+            information: Resources.IncrementalBackup_Help,
+            factory: (log, task, events, onMsg) => new IncrementalBackupRootTask(log, events, task, onMsg),
+            verifier: (log, options, writeMode) =>
             {
                 if (string.IsNullOrWhiteSpace(options.Password))
                     return Resources.Password_Field_Validation_NotSpecified;
@@ -40,7 +35,6 @@ public static class IncrementalBackupTaskPlugin
                 }
 
                 return StorageFactory.Test(log, options.To, writeMode);
-            },
-            new IncrementalBackupSettingsProvider());
+            });
     }
 }

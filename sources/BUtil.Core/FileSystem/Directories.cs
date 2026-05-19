@@ -17,6 +17,10 @@ public static class Directories
     private static readonly string _userDataFolder = Path.Combine(_applicationDataFolder, "BUtil");
 #endif
     private static readonly string _settingsDir = Path.Combine(_userDataFolder, "Settings", "v1");
+    private static readonly string _userTaskPlugins = PluginTaskFolderUnder(_userDataFolder);
+
+    private static string PluginTaskFolderUnder(string root) =>
+        Path.Combine(root, "plugins", "tasks");
 
     public static readonly string TempFolder = System.IO.Path.GetTempPath();
 
@@ -24,6 +28,8 @@ public static class Directories
     public static string StateFolder => Path.Combine(_userDataFolder, "States");
 
     public static string BinariesDir => _binariesDir;
+    public static string UserTaskPlugins => _userTaskPlugins;
+    public static string ApplicationTaskPlugins => PluginTaskFolderUnder(_binariesDir);
 
     public static string SettingsDir => _settingsDir;
 

@@ -511,6 +511,9 @@
   <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
     <value>طول الاسم '{0}' يتجاوز الحد بـ {1} حرف.</value>
   </data>
+  <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
+    <value>توجد مهمة بهذا الاسم بالفعل.</value>
+  </data>
   <data name="Name_Title" xml:space="preserve">
     <value>اسم</value>
   </data>

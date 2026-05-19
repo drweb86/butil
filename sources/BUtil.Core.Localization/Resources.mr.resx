@@ -508,6 +508,9 @@
   <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
     <value>नाव '{0}' लांबी मर्यादेपेक्षा {1} अक्षरे वाढवित आहे.</value>
   </data>
+  <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
+    <value>या नावाचे कार्य आधीच अस्तित्वात आहे.</value>
+  </data>
   <data name="Name_Title" xml:space="preserve">
     <value>नाव</value>
   </data>

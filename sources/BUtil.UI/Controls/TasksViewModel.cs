@@ -1,6 +1,6 @@
 using Avalonia.Media;
 using BUtil.Core;
-using BUtil.Core.Events;
+using BUtil.Interop.Tasks.Events;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;

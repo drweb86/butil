@@ -1,4 +1,4 @@
-using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Interop.Tasks;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Serialization;
@@ -18,7 +18,7 @@ public interface ITaskStore
     void Save(TaskV2 task);
     string? Duplicate(string name);
     void Delete(string name);
-    bool TryValidate(string name, [NotNullWhen(false)] out string? error);
+    bool TryValidate(string name, string? originalTaskName, [NotNullWhen(false)] out string? error);
     IEnumerable<string> GetNames();
 }
 
@@ -107,7 +107,7 @@ public class TaskStore: ITaskStore
             _fileSystem.DeleteFile(fileName);
     }
 
-    public bool TryValidate(string name, [NotNullWhen(false)] out string? error)
+    public bool TryValidate(string name, string? originalTaskName, [NotNullWhen(false)] out string? error)
     {
         if (string.IsNullOrWhiteSpace(name) || ContainsIllegalChars(name))
         {
@@ -122,8 +122,22 @@ public class TaskStore: ITaskStore
             return false;
         }
 
+        if (IsNameTaken(name, originalTaskName))
+        {
+            error = Resources.Name_Field_Validation_Duplicate;
+            return false;
+        }
+
         error = null;
         return true;
+    }
+
+    private bool IsNameTaken(string name, string? originalTaskName)
+    {
+        if (originalTaskName != null && string.Equals(name, originalTaskName, StringComparison.OrdinalIgnoreCase))
+            return false;
+
+        return GetNames().Any(existing => string.Equals(existing, name, StringComparison.OrdinalIgnoreCase));
     }
 
     internal void MigrateAllToV3()
@@ -165,13 +179,7 @@ public class TaskStore: ITaskStore
     }
 
     private static bool MigrateToV3IsSupportedModel(TaskV2 task)
-    {
-        return task.Model is IncrementalBackupModelOptionsV2
-            || task.Model is SynchronizationTaskModelOptionsV2
-            || task.Model is ImportMediaTaskModelOptionsV2
-            || task.Model is BUtilServerModelOptionsV2
-            || task.Model is BUtilClientModelOptionsV2;
-    }
+        => TaskProviderRegistry.FindJsonType(task.Model.GetType()) != null;
 
     private static bool ContainsIllegalChars(string text)
     {

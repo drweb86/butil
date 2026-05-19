@@ -511,6 +511,9 @@ Ver venleg og gjer eitt av følgjande:
   <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
     <value>Lengda på namnet '{0}' overstig grensa med {1} teikn.</value>
   </data>
+  <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
+    <value>Ei oppgåve med dette namnet finst allereie.</value>
+  </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Namn</value>
   </data>

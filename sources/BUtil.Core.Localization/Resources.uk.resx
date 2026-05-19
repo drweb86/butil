@@ -512,6 +512,9 @@
   <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
     <value>Довжину назви '{0}' перевищено на {1} шт. символів.</value>
   </data>
+  <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
+    <value>Завдання з такою назвою вже існує.</value>
+  </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Ім'я</value>
   </data>

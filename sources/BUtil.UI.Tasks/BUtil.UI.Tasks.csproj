@@ -15,6 +15,8 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="../BUtil.Core/BUtil.Core.csproj" />
+    <ProjectReference Include="../BUtil.Tasks.Synchronization/BUtil.Tasks.Synchronization.csproj" />
+    <ProjectReference Include="../BUtil.Tasks.BUtilServer/BUtil.Tasks.BUtilServer.csproj" />
     <ProjectReference Include="../BUtil.UI.Common/BUtil.UI.Common.csproj" />
   </ItemGroup>
   <ItemGroup>

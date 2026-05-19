@@ -2,10 +2,15 @@
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <OutputType>Library</OutputType>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
     <InternalsVisibleTo Include="BUtil.Core" />
+    <InternalsVisibleTo Include="BUtil.UI" />
+    <InternalsVisibleTo Include="BUtil.UI.Tasks" />
     <InternalsVisibleTo Include="BUtil.UI.Storages" />
+    <InternalsVisibleTo Include="butilc" />
   </ItemGroup>
 </Project>

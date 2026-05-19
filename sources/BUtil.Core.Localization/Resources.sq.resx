@@ -511,6 +511,9 @@ Ju lutem bëni njërën nga këto:
   <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
     <value>Gjatësia e emrit '{0}' tejkalon kufirin me {1} karaktere.</value>
   </data>
+  <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
+    <value>Një detyrë me këtë emër ekziston tashmë.</value>
+  </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Emri</value>
   </data>

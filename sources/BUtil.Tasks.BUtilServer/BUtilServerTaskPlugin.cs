@@ -2,23 +2,20 @@ using BUtil.Core;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Localization;
 using BUtil.Core.Storages;
-using BUtil.Core.TasksTree;
 using BUtil.Core.TasksTree.BUtilServer.Server;
+using BUtil.Interop.Tasks;
 
 namespace BUtil.Tasks.BUtilServer;
-
-file sealed class BUtilServerSettingsProvider : ITaskSettingsProvider
-{
-    public string Information => Resources.FtpsServerTask_Help;
-}
 
 public static class BUtilServerTaskPlugin
 {
     public static void Register()
     {
         TaskProviderRegistry.Register<BUtilServerModelOptionsV2>(
-            (log, task, events, onMsg) => new FtpsServerRootTask(log, events, task, onMsg),
-            (log, options, writeMode) =>
+            jsonType: "BUtilServer",
+            information: Resources.FtpsServerTask_Help,
+            factory: (log, task, events, onMsg) => new FtpsServerRootTask(log, events, task, onMsg),
+            verifier: (log, options, writeMode) =>
             {
                 if (string.IsNullOrWhiteSpace(options.Username))
                     return Resources.User_Field_Validation;
@@ -34,7 +31,6 @@ public static class BUtilServerTaskPlugin
                     return Resources.Server_Field_Port_Validation + $"(Min port {PlatformSpecificExperience.Instance.MinimumListenerPort})";
 
                 return null;
-            },
-            new BUtilServerSettingsProvider());
+            });
     }
 }

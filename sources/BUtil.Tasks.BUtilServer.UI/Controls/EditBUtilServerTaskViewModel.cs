@@ -1,5 +1,7 @@
-using BUtil.Core;
 using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Interop.Tasks;
+using BUtil.Core;
+using BUtil.Tasks.BUtilServer;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
@@ -25,7 +27,7 @@ public class EditBUtilServerTaskViewModel : BUtil.UI.Controls.ViewModelBase
         var storeService = new TaskStore(new LocalFileSystem());
         var task = isNew
             ? new TaskV2 { Name = taskName, Model = new BUtilServerModelOptionsV2 { Folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) } }
-            : storeService.Load(taskName) ?? new TaskV2();
+            : storeService.Load(taskName) ?? new TaskV2 { Name = taskName, Model = new BUtilServerModelOptionsV2 { Folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) } };
         TaskIdentityViewModel = new TaskIdentityViewModel(isNew, task.Model, task.Name);
         SetWindowTitleForEdit(taskName, isNew);
         var model = (BUtilServerModelOptionsV2)task.Model;
@@ -61,7 +63,7 @@ public class EditBUtilServerTaskViewModel : BUtil.UI.Controls.ViewModelBase
                 FolderAndPortSectionViewModel.DurationMinutes)
         };
 
-        if (!TaskV2Validator.TryValidate(newTask, true, out var error))
+        if (!TaskV2Validator.TryValidate(newTask, true, IsNew ? null : _taskName, out var error))
         {
             await Messages.ShowErrorBox(error);
             return;

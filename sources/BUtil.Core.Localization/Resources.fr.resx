@@ -508,6 +508,9 @@ Veuillez :
   <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
     <value>Le nom '{0}' dépasse la limite de {1} caractères.</value>
   </data>
+  <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
+    <value>Une tâche portant ce nom existe déjà.</value>
+  </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Nom</value>
   </data>

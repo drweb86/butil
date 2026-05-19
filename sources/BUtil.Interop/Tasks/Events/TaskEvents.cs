@@ -1,0 +1,28 @@
+using BUtil.Interop.Tasks.Core;
+
+namespace BUtil.Interop.Tasks.Events;
+
+public class TaskEvents
+{
+    public event EventHandler<TaskProgressEventArgs>? OnTaskProgress;
+    public event EventHandler<DuringExecutionTasksAddedEventArgs>? OnDuringExecutionTasksAdded;
+
+    public void TaskProgessUpdate(Guid taskId, ProcessingStatus? status, string? title)
+    {
+        var handler = OnTaskProgress;
+        if (handler == null)
+            return;
+        handler(this, new TaskProgressEventArgs(taskId, status, title));
+    }
+
+    public void DuringExecutionTasksAdded(Guid? taskId, IEnumerable<BuTask> tasks)
+    {
+        if (!tasks.Any())
+            return;
+
+        var handler = OnDuringExecutionTasksAdded;
+        if (handler == null)
+            return;
+        handler(this, new DuringExecutionTasksAddedEventArgs(taskId, tasks));
+    }
+}

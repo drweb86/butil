@@ -511,6 +511,9 @@
   <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
     <value>Дължината на името '{0}' надвишава лимита с {1} символа.</value>
   </data>
+  <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
+    <value>Задача с това име вече съществува.</value>
+  </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Име</value>
   </data>

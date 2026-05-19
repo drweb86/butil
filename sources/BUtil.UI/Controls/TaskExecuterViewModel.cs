@@ -1,7 +1,7 @@
 using Avalonia.Media;
 using Avalonia.Threading;
 using BUtil.Core;
-using BUtil.Core.Events;
+using BUtil.Interop.Tasks.Events;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Interop.Logs;
@@ -9,7 +9,7 @@ using BUtil.Core.Misc;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
 using BUtil.Core.Settings;
-using BUtil.Core.TasksTree.Core;
+using BUtil.Interop.Tasks.Core;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.Concurrent;

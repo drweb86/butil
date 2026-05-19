@@ -511,6 +511,9 @@
   <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
     <value>د نوم '{0}' اوږدوالی د {1} حروفونو له حد څخه زیات دی.</value>
   </data>
+  <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
+    <value>د دې نوم سره دنده لا دمخه شتون لري.</value>
+  </data>
   <data name="Name_Title" xml:space="preserve">
     <value>نوم</value>
   </data>

@@ -1,5 +1,7 @@
-using BUtil.Core;
 using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Interop.Tasks;
+using BUtil.Tasks.Synchronization;
+using BUtil.Core;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
@@ -67,7 +69,7 @@ public class EditSynchronizationTaskViewModel : BUtil.UI.Controls.ViewModelBase
             }
         };
 
-        if (!TaskV2Validator.TryValidate(newTask, true, out var error))
+        if (!TaskV2Validator.TryValidate(newTask, true, IsNew ? null : _taskName, out var error))
         {
             var detectedInfo = StorageViewModel.ApplyDetectedConnectionTrustAndBuildInfo(((SynchronizationTaskModelOptionsV2)newTask.Model).To);
             if (!string.IsNullOrWhiteSpace(detectedInfo))

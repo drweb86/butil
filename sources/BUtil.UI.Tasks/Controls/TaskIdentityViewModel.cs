@@ -2,7 +2,7 @@ using BUtil.Core;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Localization;
 using BUtil.Core.Misc;
-using BUtil.Core.TasksTree;
+using BUtil.Interop.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace BUtil.UI.Tasks.Controls;

@@ -6,7 +6,7 @@ using BUtil.Interop.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
 using BUtil.Core.Services;
-using BUtil.Core.TasksTree;
+using BUtil.Interop.Tasks;
 using butilc;
 using System;
 using System.Globalization;
@@ -228,7 +228,7 @@ class Controller
                 Environment.Exit(-1);
             }
 
-            var actualTask = RootTaskFactory.Create(log, task, new BUtil.Core.Events.TaskEvents(), x => lastMinuteMessage = x);
+            var actualTask = TaskProviderRegistry.Create(log, task, new BUtil.Interop.Tasks.Events.TaskEvents(), x => lastMinuteMessage = x);
             actualTask.Execute();
             isSuccess = actualTask.IsSuccess;
             if (lastMinuteMessage != null)

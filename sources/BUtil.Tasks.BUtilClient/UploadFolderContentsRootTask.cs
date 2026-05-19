@@ -1,8 +1,9 @@
-using BUtil.Core.ConfigurationFileModels.V2;
-using BUtil.Core.Events;
+using BUtil.Interop.Tasks;
+using BUtil.Tasks.BUtilClient;
+using BUtil.Interop.Tasks.Events;
 using BUtil.Interop.Logs;
-using BUtil.Core.TasksTree.Core;
-using BUtil.Core.TasksTree.States;
+using BUtil.Interop.Tasks.Core;
+using BUtil.Tasks.Common.States;
 using System;
 
 namespace BUtil.Core.TasksTree.BUtilServer.Client;

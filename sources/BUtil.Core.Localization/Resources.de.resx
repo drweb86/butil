@@ -511,6 +511,9 @@ Bitte wählen Sie eine der folgenden Optionen:
   <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
     <value>Die Länge des Namens '{0}' überschreitet die Begrenzung um {1} Zeichen.</value>
   </data>
+  <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
+    <value>Eine Aufgabe mit diesem Namen existiert bereits.</value>
+  </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Name</value>
   </data>

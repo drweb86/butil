@@ -511,6 +511,9 @@ Vinsamlegast annaðhvort:
   <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
     <value>Lengd nafns '{0}' fer yfir mörk um {1} stafi.</value>
   </data>
+  <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
+    <value>Verk með þessu heiti er þegar til.</value>
+  </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Heiti</value>
   </data>

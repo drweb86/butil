@@ -511,6 +511,9 @@ Le do thoil ceachtar:
   <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
     <value>Sáraíonn fad an ainm '{0}' an teorainn le {1} charachtair.</value>
   </data>
+  <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
+    <value>Tá tasc leis an ainm seo ann cheana.</value>
+  </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Ainm</value>
   </data>

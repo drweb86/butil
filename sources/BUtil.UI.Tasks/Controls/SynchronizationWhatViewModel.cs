@@ -1,4 +1,4 @@
-using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Tasks.Synchronization;
 using BUtil.Core.Localization;
 using CommunityToolkit.Mvvm.ComponentModel;
 

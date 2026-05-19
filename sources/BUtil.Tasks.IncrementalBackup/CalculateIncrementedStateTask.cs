@@ -1,8 +1,8 @@
-using BUtil.Core.Events;
+using BUtil.Interop.Tasks.Events;
 using BUtil.Interop.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.State;
-using BUtil.Core.TasksTree.Core;
+using BUtil.Interop.Tasks.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;

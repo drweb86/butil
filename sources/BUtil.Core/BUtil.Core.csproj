@@ -15,11 +15,10 @@
   </ItemGroup>
   <ItemGroup>
     <InternalsVisibleTo Include="BUtil.Tests" />
-    <InternalsVisibleTo Include="BUtil.Tasks.IncrementalBackup" />
-    <InternalsVisibleTo Include="BUtil.Tasks.Synchronization" />
-    <InternalsVisibleTo Include="BUtil.Tasks.ImportMedia" />
+    <InternalsVisibleTo Include="BUtil.Tasks.Common" />
     <InternalsVisibleTo Include="BUtil.Tasks.BUtilServer" />
-    <InternalsVisibleTo Include="BUtil.Tasks.BUtilClient" />
+    <InternalsVisibleTo Include="BUtil.Tasks.Synchronization" />
+    <InternalsVisibleTo Include="BUtil.Tasks.IncrementalBackup" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="BouncyCastle.Cryptography" Version="2.5.1" />

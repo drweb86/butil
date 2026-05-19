@@ -2,6 +2,7 @@
 using BUtil.Core.Localization;
 using BUtil.Core.Misc;
 using BUtil.Interop.Logs;
+using BUtil.Interop.Tasks.Events;
 using System;
 using System.Globalization;
 using System.IO;
@@ -75,7 +76,7 @@ public class FileLog : LogBase
         {
             File.WriteAllText(
                 _fileName,
-                @$"{_dateTime.ToString("f", CultureInfo.CurrentUICulture)} {LocalsHelper.ToString(Events.ProcessingStatus.FinishedSuccesfully)}{LocalsHelper.ToString(Events.ProcessingStatus.FinishedWithErrors)}{LocalsHelper.ToString(Events.ProcessingStatus.Skipped)}" + Environment.NewLine);
+                @$"{_dateTime.ToString("f", CultureInfo.CurrentUICulture)} {ProcessingStatusFormatter.ToSymbol(ProcessingStatus.FinishedSuccesfully)}{ProcessingStatusFormatter.ToSymbol(ProcessingStatus.FinishedWithErrors)}{ProcessingStatusFormatter.ToSymbol(ProcessingStatus.Skipped)}" + Environment.NewLine);
             lock (_sync)
             {
                 _logFile = File.AppendText(_fileName);

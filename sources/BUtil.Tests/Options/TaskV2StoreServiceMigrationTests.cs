@@ -1,9 +1,13 @@
+using BUtil.Interop.Tasks;
 using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Tasks.IncrementalBackup;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
 using BUtil.Core.Services;
+using BUtil.Core.Storages;
 using System.IO;
 using System.Text.Json;
+using System.Threading;
 
 namespace BUtil.Tests.Options;
 
@@ -12,6 +16,21 @@ public class TaskV2StoreServiceMigrationTests
 {
     private const string ExtV2 = ".v2.json";
     private const string ExtV3 = ".v3.json";
+    private static int _tasksRegistered;
+
+    [ClassInitialize]
+    public static void Initialize(TestContext _)
+    {
+        if (Interlocked.Exchange(ref _tasksRegistered, 1) != 0)
+            return;
+        StorageProviderRegistry.Register(
+            "Folder",
+            "Folder",
+            new FolderStorageSettingsProvider(),
+            typeof(FolderStorageSettingsV2),
+            (_, _, _) => throw new NotSupportedException());
+        IncrementalBackupTaskPlugin.Register();
+    }
 
     // ── Diagnostics ──────────────────────────────────────────────────────────
 

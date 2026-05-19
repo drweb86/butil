@@ -1,4 +1,6 @@
 using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Interop.Tasks;
+using BUtil.Tasks.ImportMedia;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
@@ -66,7 +68,7 @@ public class EditMediaTaskViewModel : BUtil.UI.Controls.ViewModelBase
             }
         };
 
-        if (!TaskV2Validator.TryValidate(newTask, true, out var error))
+        if (!TaskV2Validator.TryValidate(newTask, true, IsNew ? null : _taskName, out var error))
         {
             var detectedInfo = SourceTaskViewModel.ApplyDetectedConnectionTrustAndBuildInfo(((ImportMediaTaskModelOptionsV2)newTask.Model).From);
             if (!string.IsNullOrWhiteSpace(detectedInfo))

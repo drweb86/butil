@@ -1,5 +1,7 @@
-using BUtil.Core;
 using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Interop.Tasks;
+using BUtil.Tasks.IncrementalBackup;
+using BUtil.Core;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
@@ -22,7 +24,9 @@ public class EditIncrementalBackupTaskViewModel : BUtil.UI.Controls.ViewModelBas
         IsNew = isNew;
 
         var storeService = new TaskStore(new LocalFileSystem());
-        var task = isNew ? new TaskV2 { Name = taskName } : storeService.Load(taskName) ?? new TaskV2();
+        var task = isNew
+            ? new TaskV2 { Name = taskName, Model = new IncrementalBackupModelOptionsV2() }
+            : storeService.Load(taskName) ?? new TaskV2 { Name = taskName, Model = new IncrementalBackupModelOptionsV2() };
         TaskIdentityViewModel = new TaskIdentityViewModel(isNew, task.Model, task.Name);
         SetWindowTitleForEdit(taskName, isNew);
         var model = (IncrementalBackupModelOptionsV2)task.Model;
@@ -64,7 +68,7 @@ public class EditIncrementalBackupTaskViewModel : BUtil.UI.Controls.ViewModelBas
             }
         };
 
-        if (!TaskV2Validator.TryValidate(newTask, true, out var error))
+        if (!TaskV2Validator.TryValidate(newTask, true, IsNew ? null : _taskName, out var error))
         {
             var detectedInfo = StorageViewModel.ApplyDetectedConnectionTrustAndBuildInfo(((IncrementalBackupModelOptionsV2)newTask.Model).To);
             if (!string.IsNullOrWhiteSpace(detectedInfo))

@@ -511,6 +511,9 @@ Por favor, escolha uma das opções:
   <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
     <value>A extensão do nome '{0}' excede o limite por {1} caracteres.</value>
   </data>
+  <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
+    <value>Já existe uma tarefa com este nome.</value>
+  </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Nome</value>
   </data>

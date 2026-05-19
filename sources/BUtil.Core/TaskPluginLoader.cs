@@ -1,5 +1,6 @@
 using BUtil.Core.FileSystem;
-using BUtil.Core.TasksTree;
+using BUtil.Core.Logs;
+using BUtil.Interop.Tasks;
 using BUtil.Interop.Logs;
 using System;
 using System.IO;
@@ -19,22 +20,17 @@ namespace BUtil.Core;
 /// </summary>
 public static class TaskPluginLoader
 {
-    private static string PluginTaskFolderUnder(string root) =>
-        Path.Combine(root, "plugins", "tasks");
+    public static void LoadFromPluginFolder() => LoadFromPluginFolder(new StubLog());
 
-    private static readonly string _userPluginFolder = PluginTaskFolderUnder(Directories.UserDataFolder);
-
-    public static string PluginFolder => _userPluginFolder;
-
-    public static string ApplicationPluginFolder => PluginTaskFolderUnder(Directories.BinariesDir);
-
-    public static void LoadFromPluginFolder(ILog? log = null)
+    public static void LoadFromPluginFolder(ILog log)
     {
-        LoadDllsFromDirectory(ApplicationPluginFolder, log);
-        LoadDllsFromDirectory(_userPluginFolder, log);
+        ArgumentNullException.ThrowIfNull(log);
+
+        LoadDllsFromDirectory(Directories.ApplicationTaskPlugins, log);
+        LoadDllsFromDirectory(Directories.UserTaskPlugins, log);
     }
 
-    private static void LoadDllsFromDirectory(string directory, ILog? log)
+    private static void LoadDllsFromDirectory(string directory, ILog log)
     {
         if (!Directory.Exists(directory))
             return;
@@ -48,27 +44,27 @@ public static class TaskPluginLoader
             }
             catch (Exception ex)
             {
-                log?.WriteLine(LoggingEvent.Error, $"[TaskPluginLoader] Failed to load '{Path.GetFileName(dllPath)}': {ex.Message}");
+                log.WriteLine(LoggingEvent.Error, $"[TaskPluginLoader] Failed to load '{Path.GetFileName(dllPath)}': {ex.Message}");
             }
         }
     }
 
-    private static void LoadFromAssembly(Assembly assembly, ILog? log)
+    private static void LoadFromAssembly(Assembly assembly, ILog log)
     {
         var pluginTypes = assembly.GetExportedTypes()
-            .Where(t => typeof(ITaskPlugin).IsAssignableFrom(t) && !t.IsAbstract && t.IsClass);
+            .Where(t => typeof(BUtil.Interop.Tasks.ITaskPlugin).IsAssignableFrom(t) && !t.IsAbstract && t.IsClass);
 
         foreach (var type in pluginTypes)
         {
             try
             {
-                var plugin = (ITaskPlugin)Activator.CreateInstance(type)!;
+                var plugin = (BUtil.Interop.Tasks.ITaskPlugin)Activator.CreateInstance(type)!;
                 plugin.Register();
-                log?.WriteLine(LoggingEvent.Debug, $"[TaskPluginLoader] Registered plugin: {type.FullName}");
+                log.WriteLine(LoggingEvent.Debug, $"[TaskPluginLoader] Registered plugin: {type.FullName}");
             }
             catch (Exception ex)
             {
-                log?.WriteLine(LoggingEvent.Error, $"[TaskPluginLoader] Failed to register '{type.FullName}': {ex.Message}");
+                log.WriteLine(LoggingEvent.Error, $"[TaskPluginLoader] Failed to register '{type.FullName}': {ex.Message}");
             }
         }
     }

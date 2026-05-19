@@ -1,6 +1,7 @@
-﻿using BUtil.Core.Events;
-using BUtil.Core.Localization;
+﻿using BUtil.Core.Localization;
 using BUtil.Core.Services;
+using BUtil.Interop.Tasks.Core;
+using BUtil.Interop.Tasks.Events;
 using System;
 using System.Threading.Tasks;
 

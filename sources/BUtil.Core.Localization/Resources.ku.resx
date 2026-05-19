@@ -512,6 +512,9 @@ Ji kerema xwe:
   <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
     <value>Dirêjahiya navê '{0}' ji sînor bi {1} tîpan derbas dibe.</value>
   </data>
+  <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
+    <value>Erke bi vî navî jixwe heye.</value>
+  </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Nav</value>
   </data>

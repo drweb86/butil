@@ -1,5 +1,5 @@
-﻿using BUtil.Core.Events;
-using BUtil.Core.TasksTree.Core;
+using BUtil.Interop.Tasks.Events;
+using BUtil.Interop.Tasks.Core;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 

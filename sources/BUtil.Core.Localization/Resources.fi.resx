@@ -511,6 +511,9 @@ Ole hyvä ja joko:
   <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
     <value>Nimen '{0}' pituus ylittää rajan {1} merkillä.</value>
   </data>
+  <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
+    <value>Tämän niminen tehtävä on jo olemassa.</value>
+  </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Nimi</value>
   </data>

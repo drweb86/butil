@@ -511,6 +511,9 @@
   <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
     <value>नाम '{0}' की लंबाई {1} चरित्रों से अधिक है।</value>
   </data>
+  <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
+    <value>इस नाम का कार्य पहले से मौजूद है।</value>
+  </data>
   <data name="Name_Title" xml:space="preserve">
     <value>नाम</value>
   </data>

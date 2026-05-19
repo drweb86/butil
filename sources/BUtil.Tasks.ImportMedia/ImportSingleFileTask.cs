@@ -1,10 +1,10 @@
-using BUtil.Core.Events;
+using BUtil.Interop.Tasks.Events;
 using BUtil.Core.FileSystem;
 using BUtil.Interop.Logs;
 using BUtil.Core.Services;
 using BUtil.Core.State;
 using BUtil.Core.Storages;
-using BUtil.Core.TasksTree.Core;
+using BUtil.Interop.Tasks.Core;
 using BUtil.Core.TasksTree.MediaSyncBackupModel;
 using System;
 using System.IO;

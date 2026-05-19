@@ -1,5 +1,7 @@
 using BUtil.Core;
 using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Tasks.BUtilClient;
+using BUtil.Interop.Tasks;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
@@ -24,7 +26,7 @@ public class EditBUtilServerClientTaskViewModel : BUtil.UI.Controls.ViewModelBas
         var storeService = new TaskStore(new LocalFileSystem());
         var task = isNew
             ? new TaskV2 { Name = taskName, Model = new BUtilClientModelOptionsV2(string.Empty, FileSenderDirection.ToServer, new FolderStorageSettingsV2()) }
-            : storeService.Load(taskName) ?? new TaskV2();
+            : storeService.Load(taskName) ?? new TaskV2 { Name = taskName, Model = new BUtilClientModelOptionsV2(string.Empty, FileSenderDirection.ToServer, new FolderStorageSettingsV2()) };
         TaskIdentityViewModel = new TaskIdentityViewModel(isNew, task.Model, task.Name);
         SetWindowTitleForEdit(taskName, isNew);
         var model = (BUtilClientModelOptionsV2)task.Model;
@@ -59,7 +61,7 @@ public class EditBUtilServerClientTaskViewModel : BUtil.UI.Controls.ViewModelBas
             Model = new BUtilClientModelOptionsV2(FolderSectionViewModel.Folder, FileSenderDirection.ToServer, StorageViewModel.GetStorageSettings())
         };
 
-        if (!TaskV2Validator.TryValidate(newTask, true, out var error))
+        if (!TaskV2Validator.TryValidate(newTask, true, IsNew ? null : _taskName, out var error))
         {
             var detectedInfo = StorageViewModel.ApplyDetectedConnectionTrustAndBuildInfo(((BUtilClientModelOptionsV2)newTask.Model).To);
             if (!string.IsNullOrWhiteSpace(detectedInfo))

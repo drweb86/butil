@@ -1,9 +1,10 @@
-﻿using BUtil.Core.Events;
+using BUtil.Interop.Tasks.Events;
+using BUtil.Tasks.Synchronization;
 using BUtil.Core.Localization;
 using BUtil.Core.Misc;
-using BUtil.Core.Synchronization;
-using BUtil.Core.TasksTree.Core;
-using BUtil.Core.TasksTree.States;
+using BUtil.Tasks.Synchronization.Synchronization;
+using BUtil.Interop.Tasks.Core;
+using BUtil.Tasks.Common.States;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,7 +40,7 @@ internal class SynchronizationAllStatesReadTask : SequentialBuTask
         _remoteStateLoadTask = new RemoteStateLoadTask(synchronizationServices.StorageSpecificServices, Events, model.TaskOptions.Password);
         tasks.Add(_remoteStateLoadTask);
 
-        if (model.TaskOptions.SynchronizationMode == ConfigurationFileModels.V2.SynchronizationTaskModelMode.TwoWay)
+        if (model.TaskOptions.SynchronizationMode == SynchronizationTaskModelMode.TwoWay)
         {
             var deleteUnversionedFilesStorageTask = new DataStorageMaintananceTask(synchronizationServices.StorageSpecificServices, Events, _remoteStateLoadTask.GetSuccessResult);
             tasks.Add(deleteUnversionedFilesStorageTask);

@@ -510,6 +510,9 @@
   <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
     <value>பெயர் '{0}' நீளம் வரம்பை {1} எழுத்துக்களால் மீறுகிறது.</value>
   </data>
+  <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
+    <value>இந்த பெயருடன் ஒரு பணி ஏற்கனவே உள்ளது.</value>
+  </data>
   <data name="Name_Title" xml:space="preserve">
     <value>பெயர்</value>
   </data>

@@ -511,6 +511,9 @@ Weg entweder:
   <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
     <value>Numm '{0}' Längt iwwerschreift d'Limite ëm {1} Zeechen.</value>
   </data>
+  <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
+    <value>Eng Aufgab mat dësem Numm existéiert schonn.</value>
+  </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Numm</value>
   </data>
