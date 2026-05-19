@@ -1,4 +1,4 @@
-namespace BUtil.Interop.UI.Tasks;
+namespace BUtil.Interop.Tasks.UI;
 
 public static class TaskUIProviderRegistry
 {
@@ -35,19 +35,25 @@ public static class TaskUIProviderRegistry
         }
     }
 
-    public static object? CreateNew(Type modelType)
+    internal static object? CreateNew(Type modelType)
     {
         lock (_lock)
             return _entries.TryGetValue(modelType, out var e) ? e.CreateNewFactory() : null;
     }
 
-    public static object? CreateEdit(Type modelType, string taskName)
+    internal static object? CreateEdit(Type modelType, string taskName)
     {
         lock (_lock)
             return _entries.TryGetValue(modelType, out var e) ? e.EditFactory(taskName) : null;
     }
 
-    public static IReadOnlyList<TaskUICreateMenuRegistration> GetCreateMenuRegistrations()
+    internal static string GetCreateHeader(Type modelType)
+    {
+        lock (_lock)
+            return _entries.TryGetValue(modelType, out var e) ? e.CreateHeader : string.Empty;
+    }
+
+    internal static IReadOnlyList<TaskUICreateMenuRegistration> GetCreateMenuRegistrations()
     {
         lock (_lock)
         {

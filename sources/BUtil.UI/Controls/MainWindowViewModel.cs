@@ -1,4 +1,5 @@
-﻿using Avalonia.Media;
+﻿using Avalonia.Controls;
+using Avalonia.Media;
 using BUtil.Core;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.FileSystem;
@@ -6,10 +7,11 @@ using BUtil.Core.Localization;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
 using BUtil.Core.Settings;
-using BUtil.Interop.UI.Tasks;
+using BUtil.Interop.Tasks.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Input;
 
 namespace BUtil.UI.Controls;
 
@@ -128,7 +130,7 @@ public partial class MainWindowViewModel : ViewModelBase
 
     public SolidColorBrush WindowBackground { get; }
     public SolidColorBrush HeaderBackground { get; }
-    public IReadOnlyList<object> TaskCreateMenuItems { get; } = CreateTaskCreateMenuItems();
+    public IReadOnlyList<Control> TaskCreateMenuItems { get; } = CreateTaskCreateMenuItems();
 
     private string _title = string.Empty;
     public string Title
@@ -190,19 +192,39 @@ public partial class MainWindowViewModel : ViewModelBase
         }
     }
 
-    private static IReadOnlyList<object> CreateTaskCreateMenuItems()
+    private static IReadOnlyList<Control> CreateTaskCreateMenuItems()
     {
-        var result = new List<object>();
+        var result = new List<Control>();
 
         foreach (var group in TaskUIProviderRegistry.GetCreateMenuRegistrations().GroupBy(e => e.Group))
         {
             if (result.Count > 0)
-                result.Add(new TaskCreateMenuSeparatorViewModel());
+                result.Add(new Separator());
 
             foreach (var entry in group)
-                result.Add(new TaskCreateMenuItemViewModel(entry.ModelType, entry.Header));
+            {
+                result.Add(new MenuItem
+                {
+                    Header = entry.Header,
+                    Command = new DelegateCommand(() => WindowManager.SwitchToCreateTaskView(entry.ModelType)),
+                    FontWeight = FontWeight.Normal,
+                });
+            }
         }
 
         return result;
+    }
+
+    private sealed class DelegateCommand(Action execute) : ICommand
+    {
+        public event EventHandler? CanExecuteChanged
+        {
+            add { }
+            remove { }
+        }
+
+        public bool CanExecute(object? parameter) => true;
+
+        public void Execute(object? parameter) => execute();
     }
 }

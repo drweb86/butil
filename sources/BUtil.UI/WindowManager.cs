@@ -1,4 +1,5 @@
 ﻿using BUtil.Interop.Tasks;
+using BUtil.Interop.Tasks.UI;
 using BUtil.Tasks.IncrementalBackup;
 using BUtil.Tasks.Synchronization;
 using BUtil.Core.FileSystem;
@@ -17,10 +18,18 @@ internal static class WindowManager
         _switchView?.Invoke(viewModel);
     }
 
-    public static void SwitchTaskUIView(object viewModel)
+    public static void SwitchToCreateTaskView(Type modelType)
     {
-        if (viewModel is ViewModelBase bUtilViewModel)
-            SwitchView(bUtilViewModel);
+        var content = TaskUIProviderRegistry.CreateNew(modelType);
+        if (content != null)
+            SwitchView(new TaskUIViewModel(content, TaskUIProviderRegistry.GetCreateHeader(modelType), isNew: true));
+    }
+
+    public static void SwitchToEditTaskView(Type modelType, string taskName)
+    {
+        var content = TaskUIProviderRegistry.CreateEdit(modelType, taskName);
+        if (content != null)
+            SwitchView(new TaskUIViewModel(content, taskName, isNew: false));
     }
 
     public static void SwitchToLaunchTask(string taskName)

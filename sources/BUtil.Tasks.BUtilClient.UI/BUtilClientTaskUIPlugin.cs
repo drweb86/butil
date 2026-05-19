@@ -1,6 +1,6 @@
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Localization;
-using BUtil.Interop.UI.Tasks;
+using BUtil.Interop.Tasks.UI;
 using BUtil.Tasks.BUtilClient.UI.Controls;
 
 namespace BUtil.Tasks.BUtilClient.UI;

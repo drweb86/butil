@@ -1,4 +1,4 @@
-namespace BUtil.Interop.UI.Tasks;
+namespace BUtil.Interop.Tasks.UI;
 
 /// <summary>
 /// Plugin entry point for external task UI assemblies.

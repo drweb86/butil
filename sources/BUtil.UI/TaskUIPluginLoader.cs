@@ -1,6 +1,7 @@
 using BUtil.Core.FileSystem;
+using BUtil.Core.Logs;
 using BUtil.Interop.Logs;
-using BUtil.Interop.UI.Tasks;
+using BUtil.Interop.Tasks.UI;
 using System;
 using System.IO;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace BUtil.UI;
 /// </summary>
 public static class TaskUIPluginLoader
 {
-    public static void LoadAll() => LoadAll(new TaskUIPluginLoaderLog());
+    public static void LoadAll() => LoadAll(new MemoryLog());
 
     public static void LoadAll(ILog log)
     {
@@ -63,22 +64,4 @@ public static class TaskUIPluginLoader
         }
     }
 
-    private sealed class TaskUIPluginLoaderLog : ILog
-    {
-        public void LogProcessOutput(string consoleOutput, bool finishedSuccessfully)
-        {
-        }
-
-        public void Open()
-        {
-        }
-
-        public void Close(bool isSuccess)
-        {
-        }
-
-        public void WriteLine(LoggingEvent type, string message)
-        {
-        }
-    }
 }
