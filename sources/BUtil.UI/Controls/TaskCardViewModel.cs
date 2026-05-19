@@ -8,6 +8,7 @@ using BUtil.Interop.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Services;
 using BUtil.Core.State;
+using BUtil.Interop.UI.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.ObjectModel;
@@ -67,7 +68,7 @@ public class TaskCardViewModel(
 
         var viewModel = TaskUIProviderRegistry.CreateEdit(task.Model.GetType(), task.Name);
         if (viewModel != null)
-            WindowManager.SwitchView(viewModel);
+            WindowManager.SwitchTaskUIView(viewModel);
     }
 
     public void TaskRestoreCommand()

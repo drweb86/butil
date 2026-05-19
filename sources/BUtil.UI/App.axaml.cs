@@ -7,11 +7,6 @@ using BUtil.Core;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
 using BUtil.Core.Settings;
-using BUtil.Tasks.BUtilClient.UI;
-using BUtil.Tasks.BUtilServer.UI;
-using BUtil.Tasks.ImportMedia.UI;
-using BUtil.Tasks.IncrementalBackup.UI;
-using BUtil.Tasks.Synchronization.UI;
 using BUtil.UI.Controls;
 
 namespace BUtil.UI;
@@ -39,11 +34,7 @@ public partial class App : Application
         _ = PlatformSpecificExperience.Instance;
 
         TaskUINavigation.ReturnToTasksListAction = () => WindowManager.SwitchView(new TasksViewModel());
-        IncrementalBackupTaskUIPlugin.Register();
-        SynchronizationTaskUIPlugin.Register();
-        ImportMediaTaskUIPlugin.Register();
-        BUtilServerTaskUIPlugin.Register();
-        BUtilClientTaskUIPlugin.Register();
+        TaskUIPluginLoader.LoadAll();
 
         // Line below is needed to remove Avalonia data validation.
         // Without this line you will get duplicate validations from both Avalonia and CT

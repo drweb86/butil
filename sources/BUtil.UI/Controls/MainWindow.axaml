@@ -93,13 +93,15 @@
 						<MenuItem Header="{Binding TechnicalTool_Menu_CompressBrotli}" Command="{Binding TechnicalToolCompressBrotliCommand}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}"/>
 					</MenuItem>
 				</MenuItem>
-				<MenuItem FontWeight="Bold" Header="{Binding Task_Create}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}">
-					<MenuItem FontWeight="Normal" Header="{Binding IncrementalBackupTask_Create}" Command="{Binding IncrementalBackupTaskCreateCommand}"/>
-					<MenuItem FontWeight="Normal" Header="{Binding ImportMediaTask_Create}" Command="{Binding ImportMediaTaskCreateCommand}"/>
-					<MenuItem FontWeight="Normal" Header="{Binding SynchronizationTask_Create}" Command="{Binding SynchronizationTaskCreateCommand}" />
-					<Separator />
-					<MenuItem FontWeight="Normal" Header="{Binding FileSenderServerTask_Create}" Command="{Binding FileSenderServerCreateCommand}"/>
-					<MenuItem FontWeight="Normal" Header="{Binding FileSenderClientTask_Create}" Command="{Binding FileSenderClientCreateCommand}" />
+				<MenuItem FontWeight="Bold" Header="{Binding Task_Create}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}" ItemsSource="{Binding TaskCreateMenuItems}">
+					<MenuItem.DataTemplates>
+						<DataTemplate DataType="controls:TaskCreateMenuItemViewModel" x:DataType="controls:TaskCreateMenuItemViewModel">
+							<MenuItem FontWeight="Normal" Header="{Binding Header}" Command="{Binding CreateCommand}" />
+						</DataTemplate>
+						<DataTemplate DataType="controls:TaskCreateMenuSeparatorViewModel" x:DataType="controls:TaskCreateMenuSeparatorViewModel">
+							<Separator />
+						</DataTemplate>
+					</MenuItem.DataTemplates>
 				</MenuItem>
 				<MenuItem Command="{Binding RestoreCommand}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}" Header="{Binding Task_Restore}" />
 			</Menu>

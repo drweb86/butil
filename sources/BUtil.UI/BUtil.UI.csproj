@@ -56,9 +56,6 @@
     <ProjectReference Include="..\BUtil.Tasks.BUtilClient.UI\BUtil.Tasks.BUtilClient.UI.csproj" />
     <ProjectReference Include="..\BUtil.Tasks.IncrementalBackup\BUtil.Tasks.IncrementalBackup.csproj" />
     <ProjectReference Include="..\BUtil.Tasks.Synchronization\BUtil.Tasks.Synchronization.csproj" />
-    <ProjectReference Include="..\BUtil.Tasks.ImportMedia\BUtil.Tasks.ImportMedia.csproj" />
-    <ProjectReference Include="..\BUtil.Tasks.BUtilServer\BUtil.Tasks.BUtilServer.csproj" />
-    <ProjectReference Include="..\BUtil.Tasks.BUtilClient\BUtil.Tasks.BUtilClient.csproj" />
   </ItemGroup>
 
   <ItemGroup>

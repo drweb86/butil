@@ -1,15 +1,19 @@
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Localization;
+using BUtil.Interop.UI.Tasks;
 using BUtil.Tasks.BUtilServer.UI.Controls;
 
 namespace BUtil.Tasks.BUtilServer.UI;
 
-public static class BUtilServerTaskUIPlugin
+public sealed class BUtilServerTaskUIPlugin : ITaskUIPlugin
 {
-    public static void Register()
+    public void Register()
     {
-        BUtil.UI.TaskUIProviderRegistry.Register<BUtilServerModelOptionsV2>(
+        TaskUIProviderRegistry.Register<BUtilServerModelOptionsV2>(
             createNewFactory: () => new EditBUtilServerTaskViewModel(Resources.FtpsServerTask_Create, true),
-            editFactory: name => new EditBUtilServerTaskViewModel(name, false));
+            editFactory: name => new EditBUtilServerTaskViewModel(name, false),
+            createHeader: Resources.FtpsServerTask_Create,
+            group: "transfer",
+            preferredOrder: 100);
     }
 }

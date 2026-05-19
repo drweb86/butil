@@ -18,9 +18,13 @@ public static class Directories
 #endif
     private static readonly string _settingsDir = Path.Combine(_userDataFolder, "Settings", "v1");
     private static readonly string _userTaskPlugins = PluginTaskFolderUnder(_userDataFolder);
+    private static readonly string _userTaskUiPlugins = PluginTaskUiFolderUnder(_userDataFolder);
 
     private static string PluginTaskFolderUnder(string root) =>
         Path.Combine(root, "plugins", "tasks");
+
+    private static string PluginTaskUiFolderUnder(string root) =>
+        Path.Combine(root, "plugins", "task-uis");
 
     public static readonly string TempFolder = System.IO.Path.GetTempPath();
 
@@ -30,6 +34,8 @@ public static class Directories
     public static string BinariesDir => _binariesDir;
     public static string UserTaskPlugins => _userTaskPlugins;
     public static string ApplicationTaskPlugins => PluginTaskFolderUnder(_binariesDir);
+    public static string UserTaskUiPlugins => _userTaskUiPlugins;
+    public static string ApplicationTaskUiPlugins => PluginTaskUiFolderUnder(_binariesDir);
 
     public static string SettingsDir => _settingsDir;
 

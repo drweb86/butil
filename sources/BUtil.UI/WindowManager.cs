@@ -17,6 +17,12 @@ internal static class WindowManager
         _switchView?.Invoke(viewModel);
     }
 
+    public static void SwitchTaskUIView(object viewModel)
+    {
+        if (viewModel is ViewModelBase bUtilViewModel)
+            SwitchView(bUtilViewModel);
+    }
+
     public static void SwitchToLaunchTask(string taskName)
     {
         SwitchView(new LaunchTaskViewModel(taskName));

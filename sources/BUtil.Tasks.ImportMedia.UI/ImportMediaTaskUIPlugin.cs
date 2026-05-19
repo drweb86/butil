@@ -1,14 +1,19 @@
 using BUtil.Core.ConfigurationFileModels.V2;
+using BUtil.Core.Localization;
+using BUtil.Interop.UI.Tasks;
 using BUtil.Tasks.ImportMedia.UI.Controls;
 
 namespace BUtil.Tasks.ImportMedia.UI;
 
-public static class ImportMediaTaskUIPlugin
+public sealed class ImportMediaTaskUIPlugin : ITaskUIPlugin
 {
-    public static void Register()
+    public void Register()
     {
-        BUtil.UI.TaskUIProviderRegistry.Register<ImportMediaTaskModelOptionsV2>(
+        TaskUIProviderRegistry.Register<ImportMediaTaskModelOptionsV2>(
             createNewFactory: () => new EditMediaTaskViewModel(string.Empty, true),
-            editFactory: name => new EditMediaTaskViewModel(name, false));
+            editFactory: name => new EditMediaTaskViewModel(name, false),
+            createHeader: Resources.ImportMediaTask_Create,
+            group: "local",
+            preferredOrder: 200);
     }
 }
