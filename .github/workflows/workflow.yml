@@ -219,11 +219,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          sparse-checkout: |
-            sources/tools/winget-pkgs
-            sources/tools/ResxSorter
-            sources/BUtil.Core.Localization
 
       - name: Setup .NET 10
         uses: actions/setup-dotnet@v4
