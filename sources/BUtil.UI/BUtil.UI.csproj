@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <LangVersion>latest</LangVersion>
@@ -56,6 +56,7 @@
     <ProjectReference Include="..\BUtil.Tasks.BUtilClient.UI\BUtil.Tasks.BUtilClient.UI.csproj" />
     <ProjectReference Include="..\BUtil.Tasks.IncrementalBackup\BUtil.Tasks.IncrementalBackup.csproj" />
     <ProjectReference Include="..\BUtil.Tasks.Synchronization\BUtil.Tasks.Synchronization.csproj" />
+    <ProjectReference Include="..\BUtil.Tasks.Common\BUtil.Tasks.Common.csproj" />
   </ItemGroup>
 
   <ItemGroup>

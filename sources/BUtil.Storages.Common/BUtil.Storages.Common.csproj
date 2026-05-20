@@ -2,8 +2,6 @@
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <OutputType>Library</OutputType>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
@@ -12,7 +10,10 @@
     <InternalsVisibleTo Include="BUtil.UI.Tasks" />
     <InternalsVisibleTo Include="BUtil.UI.Storages" />
     <InternalsVisibleTo Include="butilc" />
-    <InternalsVisibleTo Include="BUtil.Storages.Common" />
-    <InternalsVisibleTo Include="BUtil.Tasks.Common" />
+    <InternalsVisibleTo Include="BUtil.Tests" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUtil.Core.Localization\BUtil.Core.Localization.csproj" />
+    <ProjectReference Include="..\BUtil.Interop\BUtil.Interop.csproj" />
   </ItemGroup>
 </Project>

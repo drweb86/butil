@@ -6,7 +6,7 @@ using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
-using BUtil.Core.Settings;
+using BUtil.UI.Common.Settings;
 using BUtil.Interop.Tasks.UI;
 using System;
 using System.Collections.Generic;

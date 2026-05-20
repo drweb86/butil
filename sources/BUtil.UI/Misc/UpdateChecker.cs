@@ -1,6 +1,5 @@
-
-using BUtil.Core.FileSystem;
-using Org.BouncyCastle.Utilities;
+using BUtil.Core;
+using BUtil.Core.Misc;
 using System;
 using System.IO;
 using System.IO.Compression;
@@ -10,7 +9,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace BUtil.Core.Misc;
+namespace BUtil.UI.Misc;
 
 public static class UpdateChecker
 {

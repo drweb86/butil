@@ -1,4 +1,4 @@
-using Avalonia;
+﻿using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
@@ -6,7 +6,7 @@ using Avalonia.Styling;
 using BUtil.Core;
 using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
-using BUtil.Core.Settings;
+using BUtil.UI.Common.Settings;
 using BUtil.UI.Controls;
 
 namespace BUtil.UI;

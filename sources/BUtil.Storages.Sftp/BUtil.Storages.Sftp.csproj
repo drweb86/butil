@@ -9,6 +9,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="../BUtil.Core/BUtil.Core.csproj" />
+    <ProjectReference Include="..\BUtil.Storages.Common\BUtil.Storages.Common.csproj" />
   </ItemGroup>
   <ItemGroup>
     <CopyLibraryFiles Include="$(NuGetPackageRoot)ssh.net\2025.1.0\lib\net9.0\*.*" />

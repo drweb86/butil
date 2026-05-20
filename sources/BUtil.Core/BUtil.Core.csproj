@@ -21,23 +21,8 @@
     <InternalsVisibleTo Include="BUtil.Tasks.IncrementalBackup" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="BouncyCastle.Cryptography" Version="2.5.1" />
-    <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="10.0.7" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.Extensions.FileSystemGlobbing">
-      <HintPath>%userprofile%\.nuget\packages\microsoft.extensions.filesystemglobbing\10.0.7\lib\net10.0\Microsoft.Extensions.FileSystemGlobbing.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="../BUtil.Core.Localization/BUtil.Core.Localization.csproj" />
     <ProjectReference Include="../BUtil.Interop/BUtil.Interop.csproj" />
+    <ProjectReference Include="../BUtil.Storages.Common/BUtil.Storages.Common.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <CopyLibraryFiles Include="$(NuGetPackageRoot)microsoft.extensions.filesystemglobbing\10.0.7\lib\net10.0\*.*" />
-  </ItemGroup>
-  <Target Name="CopyLibraries" AfterTargets="Build">
-    <Copy SourceFiles="@(CopyLibraryFiles)" DestinationFolder="$(TargetDir)" />
-  </Target>
 </Project>

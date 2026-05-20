@@ -1,4 +1,4 @@
-namespace BUtil.Core.Settings;
+namespace BUtil.UI.Common.Settings;
 
 public static class TaskExecuterExpanderSetting
 {

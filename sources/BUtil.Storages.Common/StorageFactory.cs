@@ -1,6 +1,5 @@
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Interop.Logs;
-using BUtil.Core.Misc;
 using System;
 
 namespace BUtil.Core.Storages;
@@ -38,7 +37,7 @@ public class StorageFactory
         }
         catch (Exception ex)
         {
-            return ExceptionHelper.ToString(ex);
+            return ex.ToString();
         }
     }
 }

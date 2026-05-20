@@ -13,7 +13,11 @@
     <InternalsVisibleTo Include="BUtil.Tests" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="10.0.7" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\BUtil.Core\BUtil.Core.csproj" />
     <ProjectReference Include="..\BUtil.Interop\BUtil.Interop.csproj" />
+    <ProjectReference Include="..\BUtil.Storages.Common\BUtil.Storages.Common.csproj" />
   </ItemGroup>
 </Project>

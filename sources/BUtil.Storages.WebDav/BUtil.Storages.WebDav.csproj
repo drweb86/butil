@@ -9,5 +9,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="../BUtil.Core/BUtil.Core.csproj" />
+    <ProjectReference Include="..\BUtil.Storages.Common\BUtil.Storages.Common.csproj" />
   </ItemGroup>
 </Project>

@@ -10,7 +10,9 @@
   </Folder>
   <Folder Name="/Storages/">
     <Project Path="BUtil.Storages.AzureBlob/BUtil.Storages.AzureBlob.csproj" />
+    <Project Path="BUtil.Storages.Common/BUtil.Storages.Common.csproj" />
     <Project Path="BUtil.Storages.Ftps/BUtil.Storages.Ftps.csproj" />
+    <Project Path="BUtil.Storages.Folder/BUtil.Storages.Folder.csproj" />
     <Project Path="BUtil.Storages.Nfs/BUtil.Storages.Nfs.csproj" />
     <Project Path="BUtil.Storages.S3/BUtil.Storages.S3.csproj" />
     <Project Path="BUtil.Storages.Samba/BUtil.Storages.Samba.csproj" />

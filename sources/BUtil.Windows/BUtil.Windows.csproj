@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
 	  <TargetFramework>net10.0-windows</TargetFramework>
@@ -27,6 +27,8 @@
     <ProjectReference Include="..\BUtil.Tasks.ImportMedia\BUtil.Tasks.ImportMedia.csproj" />
     <ProjectReference Include="..\BUtil.Tasks.BUtilServer\BUtil.Tasks.BUtilServer.csproj" />
     <ProjectReference Include="..\BUtil.Tasks.BUtilClient\BUtil.Tasks.BUtilClient.csproj" />
+    <ProjectReference Include="..\BUtil.Storages.Common\BUtil.Storages.Common.csproj" />
+    <ProjectReference Include="..\BUtil.Storages.Folder\BUtil.Storages.Folder.csproj" />
   </ItemGroup>
 
   <ItemGroup>

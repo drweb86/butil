@@ -9,6 +9,9 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="../BUtil.Core/BUtil.Core.csproj" />
+    <ProjectReference Include="../BUtil.Tasks.Common/BUtil.Tasks.Common.csproj" />
+    <ProjectReference Include="..\BUtil.Storages.Common\BUtil.Storages.Common.csproj" />
+    <ProjectReference Include="..\BUtil.Storages.Folder\BUtil.Storages.Folder.csproj" />
   </ItemGroup>
   <ItemGroup>
     <CopyLibraryFiles Include="$(NuGetPackageRoot)siarhei_kuchuk.ftpsserverlibrary\2026.4.20\lib\net10.0\*.*" />

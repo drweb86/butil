@@ -16,6 +16,7 @@
     <ProjectReference Include="../BUtil.Tasks.BUtilServer/BUtil.Tasks.BUtilServer.csproj" />
     <ProjectReference Include="../BUtil.UI.Common/BUtil.UI.Common.csproj" />
     <ProjectReference Include="../BUtil.UI.Tasks/BUtil.UI.Tasks.csproj" />
+    <ProjectReference Include="..\BUtil.Tasks.Common\BUtil.Tasks.Common.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Controls\EditBUtilServerTaskView.axaml.cs">

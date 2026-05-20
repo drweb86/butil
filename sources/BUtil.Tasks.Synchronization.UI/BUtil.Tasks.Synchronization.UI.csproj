@@ -17,6 +17,7 @@
     <ProjectReference Include="../BUtil.UI.Common/BUtil.UI.Common.csproj" />
     <ProjectReference Include="../BUtil.UI.Tasks/BUtil.UI.Tasks.csproj" />
     <ProjectReference Include="../BUtil.UI.Storages/BUtil.UI.Storages.csproj" />
+    <ProjectReference Include="..\BUtil.Tasks.Common\BUtil.Tasks.Common.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Controls\EditSynchronizationTaskView.axaml.cs">

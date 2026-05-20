@@ -21,5 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="../BUtil.Core/BUtil.Core.csproj" />
     <ProjectReference Include="../BUtil.UI.Common/BUtil.UI.Common.csproj" />
+    <ProjectReference Include="..\BUtil.Interop\BUtil.Interop.csproj" />
+    <ProjectReference Include="..\BUtil.Storages.Common\BUtil.Storages.Common.csproj" />
   </ItemGroup>
 </Project>

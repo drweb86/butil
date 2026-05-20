@@ -18,6 +18,7 @@
     <ProjectReference Include="../BUtil.Tasks.Synchronization/BUtil.Tasks.Synchronization.csproj" />
     <ProjectReference Include="../BUtil.Tasks.BUtilServer/BUtil.Tasks.BUtilServer.csproj" />
     <ProjectReference Include="../BUtil.UI.Common/BUtil.UI.Common.csproj" />
+    <ProjectReference Include="..\BUtil.Tasks.Common\BUtil.Tasks.Common.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Controls\TaskIdentityView.axaml.cs">
