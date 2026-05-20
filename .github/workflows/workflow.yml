@@ -223,7 +223,7 @@ jobs:
           sparse-checkout: |
             sources/tools/winget-pkgs
             sources/tools/ResxSorter
-            sources/BUtil.Core/Localization
+            sources/BUtil.Core.Localization
 
       - name: Setup .NET 10
         uses: actions/setup-dotnet@v4
