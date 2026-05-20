@@ -1,0 +1,5 @@
+<Project>
+  <PropertyGroup>
+    <CopyLocalLockFileAssemblies Condition="'$(OutputType)' != 'Exe' and '$(OutputType)' != 'WinExe'">true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+</Project>

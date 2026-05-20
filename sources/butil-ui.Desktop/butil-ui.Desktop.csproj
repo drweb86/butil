@@ -18,4 +18,24 @@
   <ItemGroup>
     <ProjectReference Include="..\BUtil.UI\BUtil.UI.csproj" />
   </ItemGroup>
+
+  <Target Name="BuildAndCopyWindowsExperience" AfterTargets="Build" Condition="$([MSBuild]::IsOSPlatform('Windows'))">
+    <MSBuild Projects="..\BUtil.Windows\BUtil.Windows.csproj" Targets="Build" Properties="Configuration=$(Configuration)" />
+    <ItemGroup>
+      <WindowsExperienceFiles Include="..\BUtil.Windows\bin\windows\$(Configuration)\net10.0-windows\*.dll" />
+      <WindowsExperienceFiles Include="..\BUtil.Windows\bin\windows\$(Configuration)\net10.0-windows\*.pdb" />
+      <WindowsExperienceFiles Include="..\BUtil.Windows\bin\windows\$(Configuration)\net10.0-windows\*.deps.json" />
+    </ItemGroup>
+    <Copy SourceFiles="@(WindowsExperienceFiles)" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+
+  <Target Name="BuildAndCopyLinuxExperience" AfterTargets="Build" Condition="$([MSBuild]::IsOSPlatform('Linux'))">
+    <MSBuild Projects="..\BUtil.Linux\BUtil.Linux.csproj" Targets="Build" Properties="Configuration=$(Configuration)" />
+    <ItemGroup>
+      <LinuxExperienceFiles Include="..\BUtil.Linux\bin\linux\$(Configuration)\net10.0\*.dll" />
+      <LinuxExperienceFiles Include="..\BUtil.Linux\bin\linux\$(Configuration)\net10.0\*.pdb" />
+      <LinuxExperienceFiles Include="..\BUtil.Linux\bin\linux\$(Configuration)\net10.0\*.deps.json" />
+    </ItemGroup>
+    <Copy SourceFiles="@(LinuxExperienceFiles)" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
 </Project>

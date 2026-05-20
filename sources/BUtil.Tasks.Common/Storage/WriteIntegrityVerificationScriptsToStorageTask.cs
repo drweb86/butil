@@ -5,7 +5,6 @@ using BUtil.Core.State;
 using BUtil.Interop.Tasks.Core;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 
 namespace BUtil.Tasks.Common.Storage;
@@ -35,11 +34,11 @@ internal class WriteIntegrityVerificationScriptsToStorageTask(StorageSpecificSer
             throw new Exception("Writing state was not successfull!");
 
         using var tempFolder = new TempFolder();
-        var powershellFile = Path.Combine(tempFolder.Folder, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Ps1);
-        File.WriteAllText(powershellFile, GetPowershellScriptContent(updatedState));
-        // TODO: check for null!
-        var uploadedFile = storage.Upload(powershellFile, BUtil.Core.Localization.Resources.File_IntegrityVerificationScript_Ps1) ?? throw new Exception("Cannot save integrity verification scripts!");
-        File.Delete(powershellFile);
+        IntegrityVerificationScriptWriter.WriteAndUploadPowershellScript(
+            storage,
+            tempFolder.Folder,
+            GetPowershellScriptContent(updatedState),
+            LogDebug);
     }
 
     private string GetPowershellScriptContent(IncrementalBackupState state)

@@ -8,10 +8,6 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
-  <Target Name="CopyLibraries" AfterTargets="Build">
-    <Copy SourceFiles="@(CopyLibraryFiles)" DestinationFolder="$(TargetDir)" />
-  </Target>
-
   <ItemGroup>
     <PackageReference Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="3.119.2" />
   </ItemGroup>

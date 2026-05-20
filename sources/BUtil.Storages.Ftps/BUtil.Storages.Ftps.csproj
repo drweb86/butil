@@ -11,10 +11,4 @@
     <ProjectReference Include="../BUtil.Core/BUtil.Core.csproj" />
     <ProjectReference Include="..\BUtil.Storages.Common\BUtil.Storages.Common.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <CopyLibraryFiles Include="$(NuGetPackageRoot)fluentftp\54.1.1\lib\net9.0\*.*" />
-  </ItemGroup>
-  <Target Name="CopyLibraries" AfterTargets="Build">
-    <Copy SourceFiles="@(CopyLibraryFiles)" DestinationFolder="$(TargetDir)" />
-  </Target>
 </Project>
