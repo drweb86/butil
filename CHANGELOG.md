@@ -1,5 +1,4 @@
-﻿# 2026.05.09
-(unpublished)
+﻿# 2026.05.20
 
 ## New Features
 - Added **[WebDAV](./help/WebDAV%20storage%20setup.md)** storage type — works with Nextcloud, ownCloud, Synology DSM, Seafile, and any standard WebDAV server.
