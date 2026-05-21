@@ -1246,6 +1246,6 @@ Xususiyatlar:
 Platformalar: Windows 11 x64, ARM64 yoki Ubuntu 24+.</value>
   </data>
   <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil Windows va Linux uchun WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS transport qo'llab-quvvatlashi va deduplikatsiya bilan bosqichma-bosqich zaxiralar, bosqichma-bosqich sinxronizatsiya yaratadi va multimediani kompyuteringizga import qiladi.</value>
+    <value>BUtil Windows va Linux uchun WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS transport qo'llab-quvvatlashi va deduplikatsiya bilan bosqichma-bosqich zaxiralar, sinxronizatsiya yaratadi va multimediani kompyuteringizga import qiladi.</value>
   </data>
 </root>

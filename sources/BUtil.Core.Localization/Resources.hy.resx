@@ -1245,6 +1245,6 @@ bin.
 Պլատֆորմներ՝ Windows 11 x64, ARM64 կամ Ubuntu 24+:</value>
   </data>
   <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil-ը ստեղծում է հավելյալ կրկնօրինակումներ, աստիճանաբար համաժամացում և ներմուծում է մուլտիմեդիա ձեր համակարգչի վրա կրկնօրինակման միջոցով և WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS-ն ապահովում է Windows-ի և Linux-ի համար նախատեսված աջակցություն:</value>
+    <value>BUtil-ը ստեղծում է հավելյալ կրկնօրինակումներ, աստիճանաբար համաժամացում և ներմուծում է մուլտիմեդիա ձեր համակարգչի վրա WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS-ն ապահովում է Windows-ի և Linux-ի համար նախատեսված աջակցություն:</value>
   </data>
 </root>

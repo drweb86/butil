@@ -302,6 +302,9 @@ namespace Codice.SortResX
                     continue;
                 }
 
+                if (shortDescription.Length > 256)
+                    throw new Exception($"Winget_ShortDescription in {Path.GetFileNameWithoutExtension(resxPath)} exceeds 256 chars ({shortDescription.Length}): {shortDescription}");
+
                 var culture = ExtractCulture(resxPath);
                 var isDefaultLocale = culture == "";
                 var schemaType = isDefaultLocale ? "defaultLocale" : "locale";

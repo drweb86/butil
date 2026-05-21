@@ -1243,6 +1243,6 @@ Fonctionnalités :
 Plateformes : Windows 11 x64, ARM64 ou Ubuntu 24+.</value>
   </data>
   <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil crée des sauvegardes incrémentielles, une synchronisation incrémentielle et importe des fichiers multimédias sur votre PC avec déduplication et prise en charge des transports WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS pour Windows et Linux.</value>
+    <value>BUtil crée des sauvegardes incrémentielles, une synchronisation et importe des multimédias sur votre PC avec déduplication et prise en charge des transports WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS pour Windows et Linux.</value>
   </data>
 </root>
