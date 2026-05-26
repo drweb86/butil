@@ -26,12 +26,14 @@ public class TaskExecuterViewModel : ObservableObject
     private readonly System.Timers.Timer _timer = new(1000);
     private readonly HashSet<Guid> _endedTasks = [];
     private readonly Action<bool> _onTaskComplete = null!;
+    private readonly Action _onClose;
     private readonly FileLog? _log;
     private readonly BuTask _threadTask = null!;
     private Thread? _thread;
 
-    public TaskExecuterViewModel(string error)
+    public TaskExecuterViewModel(string error, Action? onClose = null)
     {
+        _onClose = onClose ?? ReturnToTasksList;
         ProgressGenericTitle = error;
         _progressGenericForeground = ColorPalette.GetBrush(SemanticColor.Error);
         CanClose = true;
@@ -43,8 +45,10 @@ public class TaskExecuterViewModel : ObservableObject
         TaskEvents taskEvents,
         string logName,
         Func<ILog, TaskEvents, Action<string?>, BuTask> createTask,
-        Action<bool> onTaskComplete)
+        Action<bool> onTaskComplete,
+        Action? onClose = null)
     {
+        _onClose = onClose ?? ReturnToTasksList;
         _progressGenericForeground = ColorPalette.GetBrush(SemanticColor.Normal);
 
         taskEvents.OnTaskProgress += OnTaskProgress;
@@ -358,11 +362,9 @@ public class TaskExecuterViewModel : ObservableObject
         _thread.Start();
     }
 
-#pragma warning disable CA1822 // Mark members as static
     public void ButtonCloseCommand()
-#pragma warning restore CA1822 // Mark members as static
     {
-        WindowManager.SwitchView(new TasksViewModel());
+        _onClose();
     }
 
     #endregion
@@ -380,6 +382,9 @@ public class TaskExecuterViewModel : ObservableObject
                 item.Text = title;
         }
     }
+
+    private static void ReturnToTasksList() =>
+        WindowManager.SwitchView(new TasksViewModel());
 
     private void OnDuringExecutionTasksAddedInternal(object? sender, DuringExecutionTasksAddedEventArgs e)
     {

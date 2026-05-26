@@ -3,19 +3,28 @@ using BUtil.Interop.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Services;
 using System.Diagnostics;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace BUtil.Linux.Services;
 
 public class LinuxSupportManager : ISupportManager
 {
+    public const string ApplicationName = "BUtil";
+    private const string UiAppName = "butil-ui.Desktop";
+
     private readonly string _workDir;
-    private readonly string _uiApp;
     public static readonly string ConsoleBackupTool = Path.Combine(Directories.BinariesDir, "butilc");
+    internal static readonly string UIApp = Path.Combine(Directories.BinariesDir, UiAppName);
+    internal static readonly string ApplicationsFolder = Path.Combine(
+        Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
+        ".local",
+        "share",
+        "applications");
 
     public LinuxSupportManager()
     {
         _workDir = Directories.BinariesDir;
-        _uiApp = "butil-ui.Desktop";
     }
 
     private void LaunchUiAppInternal(string? arguments = null)
@@ -24,9 +33,31 @@ public class LinuxSupportManager : ISupportManager
         {
             FileName = "systemd-inhibit",
             WorkingDirectory = _workDir,
-            Arguments = $"\"./{_uiApp}\""
+            Arguments = $"\"./{UiAppName}\""
                 + (arguments != null ? $" {arguments}" : ""),
         });
+    }
+
+    internal static string GetTaskShortcutPath(string taskName) =>
+        Path.Combine(ApplicationsFolder, $"butil-task-{GetTaskHash(Files.GetTaskShortcutName(ApplicationName, taskName))}.desktop");
+
+    internal static string CreateTaskDesktopEntry(string taskName)
+    {
+        var arguments = string.Join(" ",
+            QuoteForDesktopExec(UIApp),
+            TasksAppArguments.LaunchTask,
+            QuoteForDesktopExec($"{TasksAppArguments.RunTask}={taskName}"));
+
+        return $"""
+            [Desktop Entry]
+            Type=Application
+            Name={EscapeDesktopValue(Files.GetTaskShortcutName(ApplicationName, taskName))}
+            Exec=systemd-inhibit {arguments}
+            Path={EscapeDesktopValue(Directories.BinariesDir)}
+            Terminal=false
+            Categories=Utility;
+            StartupNotify=true
+            """;
     }
 
     public void LaunchTasksAppOrExit()
@@ -106,4 +137,23 @@ public class LinuxSupportManager : ISupportManager
             log.WriteLine(LoggingEvent.Error, "Executing failed.");
         return isSuccess;
     }
+
+    private static string GetTaskHash(string taskName)
+    {
+        var hash = SHA256.HashData(Encoding.UTF8.GetBytes(taskName));
+        return Convert.ToHexString(hash)[..16].ToLowerInvariant();
+    }
+
+    private static string EscapeDesktopValue(string value) =>
+        value
+            .Replace("\\", "\\\\")
+            .Replace("\r", " ")
+            .Replace("\n", " ");
+
+    private static string QuoteForDesktopExec(string value) =>
+        "\"" + value
+            .Replace("\\", "\\\\")
+            .Replace("\"", "\\\"")
+            .Replace("%", "%%")
+            .Replace("$", "\\$") + "\"";
 }

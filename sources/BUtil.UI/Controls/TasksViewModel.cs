@@ -84,6 +84,7 @@ public class TasksViewModel : ViewModelBase
 
     public void Initialize()
     {
+        new MigrationService(new LocalFileSystem()).RunAll();
         LoadTasks();
     }
 
@@ -119,5 +120,4 @@ public class TasksViewModel : ViewModelBase
 
         ApplyFilter();
     }
-
 }

@@ -179,7 +179,7 @@ public partial class MainWindowViewModel : ViewModelBase
         if (args.Length == 2 && args[0].Cmp(TasksAppArguments.LaunchTask) && args[1].StartsWith(TasksAppArguments.RunTask))
         {
             var taskName = args[1][(TasksAppArguments.RunTask.Length + 1)..];
-            WindowManager.SwitchToRestorationView(taskName);
+            WindowManager.SwitchToLaunchTask(taskName, closeApplicationOnClose: true);
         }
         else if (args.Length == 1 && args[0].EndsWith(IncrementalBackupModelConstants.BrotliAes256V1StateFile))
         {

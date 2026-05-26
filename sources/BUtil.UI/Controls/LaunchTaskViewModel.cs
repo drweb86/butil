@@ -14,9 +14,10 @@ namespace BUtil.UI.Controls;
 
 public class LaunchTaskViewModel : ViewModelBase
 {
-    public LaunchTaskViewModel(string taskName)
+    public LaunchTaskViewModel(string taskName, bool closeApplicationOnClose = false)
     {
         _taskName = taskName;
+        _closeApplicationOnClose = closeApplicationOnClose;
         WindowTitle = taskName;
     }
 
@@ -83,11 +84,9 @@ public class LaunchTaskViewModel : ViewModelBase
 
     #region Commands
 
-#pragma warning disable CA1822 // Mark members as static
     public void CloseCommand()
-#pragma warning restore CA1822 // Mark members as static
     {
-        WindowManager.SwitchView(new TasksViewModel());
+        OnClose();
     }
 
 #pragma warning disable CA1822 // Mark members as static
@@ -120,6 +119,7 @@ public class LaunchTaskViewModel : ViewModelBase
 
     private readonly TaskEvents _taskEvents = new();
     private readonly string _taskName;
+    private readonly bool _closeApplicationOnClose;
     private TaskV2? _task;
 
     public void Initialize()
@@ -127,12 +127,12 @@ public class LaunchTaskViewModel : ViewModelBase
         _task = new TaskStore(new LocalFileSystem()).Load(_taskName, out var isNotFound, out var isNotSupported);
         if (isNotFound)
         {
-            TaskExecuterViewModel = new TaskExecuterViewModel(string.Format(Resources.Task_Validation_NotFound, _taskName));
+            TaskExecuterViewModel = new TaskExecuterViewModel(string.Format(Resources.Task_Validation_NotFound, _taskName), OnClose);
             return;
         }
         if (isNotSupported)
         {
-            TaskExecuterViewModel = new TaskExecuterViewModel(Resources.Task_Validation_NotSupported);
+            TaskExecuterViewModel = new TaskExecuterViewModel(Resources.Task_Validation_NotSupported, OnClose);
             return;
         }
 
@@ -144,7 +144,7 @@ public class LaunchTaskViewModel : ViewModelBase
         if (!TaskProviderRegistry.TryVerify(fileLog, _task.Model, false, out var error))
         {
             fileLog.Close(false);
-            TaskExecuterViewModel = new TaskExecuterViewModel(error);
+            TaskExecuterViewModel = new TaskExecuterViewModel(error, OnClose);
             return;
         }
         fileLog.Close(true);
@@ -154,7 +154,8 @@ public class LaunchTaskViewModel : ViewModelBase
             _taskEvents,
             _task.Name,
             (log, taskEvents, onGetLastMinuteMessage) => TaskProviderRegistry.Create(log, _task, taskEvents, onGetLastMinuteMessage),
-            OnTaskCompleted);
+            OnTaskCompleted,
+            OnClose);
     }
 
 
@@ -174,5 +175,13 @@ public class LaunchTaskViewModel : ViewModelBase
         {
             Environment.Exit(isOk ? 0 : -1);
         }
+    }
+
+    private void OnClose()
+    {
+        if (_closeApplicationOnClose)
+            Environment.Exit(0);
+
+        WindowManager.SwitchView(new TasksViewModel());
     }
 }

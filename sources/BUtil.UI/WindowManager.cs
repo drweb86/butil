@@ -32,9 +32,9 @@ internal static class WindowManager
             SwitchView(new TaskUIViewModel(content, taskName, isNew: false));
     }
 
-    public static void SwitchToLaunchTask(string taskName)
+    public static void SwitchToLaunchTask(string taskName, bool closeApplicationOnClose = false)
     {
-        SwitchView(new LaunchTaskViewModel(taskName));
+        SwitchView(new LaunchTaskViewModel(taskName, closeApplicationOnClose));
     }
 
     public static void SwitchToRestorationView(string? taskName = null)

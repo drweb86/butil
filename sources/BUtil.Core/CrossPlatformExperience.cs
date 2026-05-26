@@ -25,6 +25,8 @@ public abstract class CrossPlatformExperience
 
     public abstract ITaskSchedulerService GetTaskSchedulerService();
 
+    public abstract ITaskShortcutService GetTaskShortcutService();
+
     public virtual IShowLogOnSystemLoginService? GetShowLogOnSystemLoginService()
     {
         return null;

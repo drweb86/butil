@@ -76,6 +76,7 @@ public class TaskStore: ITaskStore
         var protectedTask = PlatformSpecificExperience.Instance.SecretService.CreateProtectedClone(task);
         var json = JsonSerializer.Serialize(protectedTask, _jsonSerializerOptions);
         _fileSystem.WriteAllText(fileName, json);
+        PlatformSpecificExperience.Instance.GetTaskShortcutService().CreateOrUpdate(task.Name);
     }
 
     public string? Duplicate(string name)
@@ -105,6 +106,7 @@ public class TaskStore: ITaskStore
         var fileName = GetFileName(name);
         if (_fileSystem.FileExists(fileName))
             _fileSystem.DeleteFile(fileName);
+        PlatformSpecificExperience.Instance.GetTaskShortcutService().Delete(name);
     }
 
     public bool TryValidate(string name, string? originalTaskName, [NotNullWhen(false)] out string? error)

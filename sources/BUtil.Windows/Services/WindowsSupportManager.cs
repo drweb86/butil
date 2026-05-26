@@ -10,10 +10,25 @@ namespace BUtil.Windows.Services;
 
 public class WindowsSupportManager : ISupportManager
 {
+    public const string ApplicationName = "BUtil";
+
     public static readonly string UIApp =
         Path.Combine(Directories.BinariesDir, "butil-ui.Desktop.exe");
     public static readonly string ConsoleBackupTool =
         Path.Combine(Directories.BinariesDir, "butilc.exe");
+    internal static readonly string TaskShortcutsFolder = Path.Combine(
+        Environment.GetFolderPath(Environment.SpecialFolder.Programs),
+        ApplicationName);
+
+    internal static string GetTaskShortcutPath(string taskName) =>
+        Path.Combine(TaskShortcutsFolder, $"{Files.GetSafeFileName(Files.GetTaskShortcutName(ApplicationName, taskName))}.lnk");
+
+    internal static string GetTaskShortcutArguments(string taskName) =>
+        $"{TasksAppArguments.LaunchTask} {QuoteArgument($"{TasksAppArguments.RunTask}={taskName}")}";
+
+    internal static string GetTaskShortcutWorkingDirectory() => Directories.BinariesDir;
+
+    internal static string GetTaskShortcutIconPath() => UIApp;
 
     public void LaunchTasksAppOrExit()
     {
@@ -75,4 +90,7 @@ public class WindowsSupportManager : ISupportManager
     }
 
     #endregion
+
+    private static string QuoteArgument(string value) =>
+        "\"" + value.Replace("\"", "\\\"") + "\"";
 }

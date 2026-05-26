@@ -34,6 +34,8 @@ internal sealed class FakeCrossPlatformExperience : CrossPlatformExperience
 
     public override ITaskSchedulerService GetTaskSchedulerService() => FakeTaskSchedulerService.Instance;
 
+    public override ITaskShortcutService GetTaskShortcutService() => StubTaskShortcutService.Instance;
+
     public override IUiService UiService { get; } = new FakeUiService();
 
     public override IOsSleepPreventionService OsSleepPreventionService { get; } = new FakeOsSleepPreventionService();

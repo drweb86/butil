@@ -40,6 +40,11 @@ public class WindowsExperience : CrossPlatformExperience
         return new TaskSchedulerService();
     }
 
+    public override ITaskShortcutService GetTaskShortcutService()
+    {
+        return new WindowsTaskShortcutService();
+    }
+
     public override IShowLogOnSystemLoginService? GetShowLogOnSystemLoginService()
     {
         return new ShowLogOnSystemLoginService();

@@ -32,6 +32,11 @@ public class LinuxExperience : CrossPlatformExperience
         return new LinuxTaskSchedulerService();
     }
 
+    public override ITaskShortcutService GetTaskShortcutService()
+    {
+        return new LinuxTaskShortcutService();
+    }
+
     public override IShowLogOnSystemLoginService? GetShowLogOnSystemLoginService()
     {
         return null;
