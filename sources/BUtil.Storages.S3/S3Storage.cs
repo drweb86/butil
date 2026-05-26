@@ -205,7 +205,7 @@ class S3Storage : StorageBase<S3StorageSettingsV2>
             BucketName = Settings.BucketName,
             Key = GetKey(relativeFileName),
         }, CancellationToken.None).GetAwaiter().GetResult();
-        return meta.LastModified.ToUniversalTime();
+        return meta.LastModified?.ToUniversalTime() ?? DateTime.MinValue;
     }
 
     public override string[] GetFiles(string? relativeFolderName = null, SearchOption option = SearchOption.TopDirectoryOnly)
