@@ -1,8 +1,7 @@
 {
   "profiles": {
     "butilc": {
-      "commandName": "Project",
-      "commandLineArgs": "receive f:\\sources\\butil\\sources\\butilc\\bin\\Debug\\net9.0\\OUTPUT 999 \"password 123\""
+      "commandName": "Project"
     }
   }
 }

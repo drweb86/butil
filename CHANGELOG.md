@@ -1,4 +1,10 @@
-﻿# 2026.05.21
+﻿# 2026.05.26
+(unpublished)
+
+## New Features
+- Console: When application is launched without parameters, its possible to use execute tasks interactively.
+
+# 2026.05.21
 
 ## New Features
 - Added **[WebDAV](./help/WebDAV%20storage%20setup.md)** storage type — works with Nextcloud, ownCloud, Synology DSM, Seafile, and any standard WebDAV server.

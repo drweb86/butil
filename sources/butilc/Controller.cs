@@ -27,6 +27,12 @@ class Controller
 
         args ??= [];
 
+        if (args.Length == 0)
+        {
+            _taskName = InteractiveConsoleMode.Run();
+            return this;
+        }
+
         // Technical commands
 
         if (args.Length == 3 && args[0].Cmp("decrypt"))
@@ -113,14 +119,14 @@ class Controller
 
         if (!File.Exists(inputFile))
         {
-            log.WriteLine(LoggingEvent.Error, $"File {inputFile} does not exist.");
+            log.WriteLine(LoggingEvent.Error, Resources.TechnicalTool_Error_FileNotFound + Environment.NewLine + inputFile);
             log.Close(false);
             Environment.Exit(-1);
         }
 
         if (!inputFile.EndsWith(".brotli"))
         {
-            log.WriteLine(LoggingEvent.Error, $"File {inputFile} name must end with .brotli.");
+            log.WriteLine(LoggingEvent.Error, Resources.TechnicalTool_FileFilter_Brotli);
             log.Close(false);
             Environment.Exit(-1);
         }
@@ -139,7 +145,7 @@ class Controller
 
         if (!File.Exists(inputFile))
         {
-            log.WriteLine(LoggingEvent.Error, $"File {inputFile} does not exist.");
+            log.WriteLine(LoggingEvent.Error, Resources.TechnicalTool_Error_FileNotFound + Environment.NewLine + inputFile);
             log.Close(false);
             Environment.Exit(-1);
         }
@@ -158,14 +164,14 @@ class Controller
 
         if (!File.Exists(inputFile))
         {
-            log.WriteLine(LoggingEvent.Error, $"File {inputFile} does not exist.");
+            log.WriteLine(LoggingEvent.Error, Resources.TechnicalTool_Error_FileNotFound + Environment.NewLine + inputFile);
             log.Close(false);
             Environment.Exit(-1);
         }
 
         if (!inputFile.EndsWith("." + SourceItemHelper.AES256V1Extension))
         {
-            log.WriteLine(LoggingEvent.Error, $"File {inputFile} name must end with {"." + SourceItemHelper.AES256V1Extension}.");
+            log.WriteLine(LoggingEvent.Error, string.Format(Resources.TechnicalTool_FileFilter_Aes256V1, SourceItemHelper.AES256V1Extension));
             log.Close(false);
             Environment.Exit(-1);
         }
@@ -184,7 +190,7 @@ class Controller
 
         if (!File.Exists(inputFile))
         {
-            log.WriteLine(LoggingEvent.Error, $"File {inputFile} does not exist.");
+            log.WriteLine(LoggingEvent.Error, Resources.TechnicalTool_Error_FileNotFound + Environment.NewLine + inputFile);
             log.Close(false);
             Environment.Exit(-1);
         }
