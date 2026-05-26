@@ -460,6 +460,9 @@
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Այստեղ դուք կարող եք կարգավորել ժամանակացույցը: Shceduler-ը կարող է օգնել ձեզ ավտոմատացնել առաջադրանքների մեկնարկը:</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Գործարկել մուտքի ժամանակ</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Որտեղ?</value>
   </data>

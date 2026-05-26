@@ -460,6 +460,9 @@
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Тука можете да поставите распоред. Распоредувачот може да ви помогне да го автоматизирате стартувањето на задачата.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Стартувај при најава</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Каде?</value>
   </data>

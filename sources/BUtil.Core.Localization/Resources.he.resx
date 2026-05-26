@@ -460,6 +460,9 @@
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>כאן תוכל להגדיר מתזמן. המתזמן יכול לעזור לך להפוך את הפעלת המשימה לאוטומטית.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>הפעלה בהתחברות</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>לאן?</value>
   </data>

@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -465,6 +465,9 @@ Scegliere una delle seguenti opzioni:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Qui puoi impostare una pianificazione. 
 	La pianificazione può aiutarti ad automatizzare l'avvio delle attività.</value>
+  </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Esegui all'accesso</value>
   </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Dove?</value>

@@ -457,6 +457,9 @@
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>येथे तुम्ही एक शिडी सेट करू शकता. शिडी तुम्हाला कार्य प्रारंभ करण्यास स्वायत्त करण्यात मदत करू शकते.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>लॉगिनवर चालवा</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>कुठे?</value>
   </data>

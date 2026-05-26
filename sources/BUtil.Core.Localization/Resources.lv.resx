@@ -460,6 +460,9 @@ Lūdzu, izvēlieties vienu no opcijām:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Šeit varat iestatīt plānotāju. Plānotājs var palīdzēt automatizēt uzdevumu palaišanu.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Palaist pie pieslēgšanās</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Kur?</value>
   </data>

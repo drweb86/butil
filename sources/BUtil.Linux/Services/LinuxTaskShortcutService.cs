@@ -8,10 +8,10 @@ public sealed class LinuxTaskShortcutService : ITaskShortcutService
     {
         try
         {
-            Directory.CreateDirectory(LinuxSupportManager.ApplicationsFolder);
+            Directory.CreateDirectory(SupportManager.ApplicationsFolder);
 
-            var shortcutPath = LinuxSupportManager.GetTaskShortcutPath(taskName);
-            File.WriteAllText(shortcutPath, LinuxSupportManager.CreateTaskDesktopEntry(taskName));
+            var shortcutPath = SupportManager.GetTaskShortcutPath(taskName);
+            File.WriteAllText(shortcutPath, SupportManager.CreateTaskDesktopEntry(taskName));
         }
         catch
         {
@@ -23,7 +23,7 @@ public sealed class LinuxTaskShortcutService : ITaskShortcutService
     {
         try
         {
-            var shortcutPath = LinuxSupportManager.GetTaskShortcutPath(taskName);
+            var shortcutPath = SupportManager.GetTaskShortcutPath(taskName);
             if (File.Exists(shortcutPath))
                 File.Delete(shortcutPath);
         }

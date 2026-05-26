@@ -460,6 +460,9 @@ Os gwelwch yn dda naill ai:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Yma gallwch chi sefydlu trefnydd. Gall Shceduler eich helpu i awtomeiddio lansio tasg.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Rhedeg wrth fewngofnodi</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Ble?</value>
   </data>

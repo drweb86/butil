@@ -460,6 +460,9 @@ Le do thoil ceachtar:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Anseo is féidir leat sceidealóir a shocrú. Is féidir le Shceduler cabhrú leat seoladh tasc a uathoibriú.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Rith ag logáil isteach</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Cá háit?</value>
   </data>

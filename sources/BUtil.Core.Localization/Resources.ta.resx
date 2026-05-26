@@ -459,6 +459,9 @@
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>இங்கே நீங்கள் ஒரு திட்டக்கருவியை அமைக்கலாம். திட்டக்கருவி செயல்பாட்டை தானாகவே தொடங்க உதவுகிறது.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>உள்நுழைவில் இயக்கு</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>எங்கே?</value>
   </data>

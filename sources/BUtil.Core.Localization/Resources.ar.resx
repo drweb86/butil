@@ -460,6 +460,9 @@
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>هنا يمكنك إعداد مجدول. يمكن للمجدول مساعدتك في إطلاق المهام تلقائياً.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>التشغيل عند تسجيل الدخول</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>أين؟</value>
   </data>

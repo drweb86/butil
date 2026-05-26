@@ -460,6 +460,9 @@ Vänligen välj:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Här kan du ställa in en schemaläggare. Schemaläggaren kan hjälpa dig att automatisera uppgiftskörning.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Kör vid inloggning</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Var?</value>
   </data>

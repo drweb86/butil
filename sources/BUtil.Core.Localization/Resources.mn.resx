@@ -461,6 +461,9 @@
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Эндээс та хуваарь тохируулж болно. Хуваарь нь даалгаврын эхлэлтийг автоматжуулахад тусална.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Нэвтрэхэд ажиллуулах</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Хаана?</value>
   </data>

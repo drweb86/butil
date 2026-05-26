@@ -519,6 +519,9 @@ Please either:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Here you can set up a scheduler. Shceduler can help you to automate task launch.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Run at Login</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Where?</value>
   </data>

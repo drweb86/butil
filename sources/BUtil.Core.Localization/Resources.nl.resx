@@ -460,6 +460,9 @@ Kies een van de volgende opties:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Hier kunt u een planner instellen. De planner kan u helpen bij het automatiseren van het starten van taken.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Uitvoeren bij aanmelden</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Waar?</value>
   </data>

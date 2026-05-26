@@ -8,7 +8,7 @@ using System.Text;
 
 namespace BUtil.Linux.Services;
 
-public class LinuxSupportManager : ISupportManager
+public class SupportManager : ISupportManager
 {
     public const string ApplicationName = "BUtil";
     private const string UiAppName = "butil-ui.Desktop";
@@ -21,8 +21,12 @@ public class LinuxSupportManager : ISupportManager
         ".local",
         "share",
         "applications");
+    internal static readonly string AutostartFolder = Path.Combine(
+        Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
+        ".config",
+        "autostart");
 
-    public LinuxSupportManager()
+    public SupportManager()
     {
         _workDir = Directories.BinariesDir;
     }
@@ -36,6 +40,29 @@ public class LinuxSupportManager : ISupportManager
             Arguments = $"\"./{UiAppName}\""
                 + (arguments != null ? $" {arguments}" : ""),
         });
+    }
+
+    internal static string GetScheduledTaskConsoleCommand(string taskName) =>
+        $"\"{ConsoleBackupTool}\" \"Task={taskName}\"";
+
+    internal static string GetLoginAutostartPath(string taskName) =>
+        Path.Combine(AutostartFolder, $"butil-login-{Files.GetSafeFileName(taskName)}.desktop");
+
+    internal static string CreateLoginAutostartEntry(string taskName)
+    {
+        var command = string.Join(" ",
+            QuoteForDesktopExec(ConsoleBackupTool),
+            QuoteForDesktopExec($"Task={taskName}"));
+
+        return $"""
+            [Desktop Entry]
+            Type=Application
+            Name={EscapeDesktopValue($"BUtil - {taskName}")}
+            Exec={command}
+            Path={EscapeDesktopValue(Directories.BinariesDir)}
+            Terminal=false
+            X-GNOME-Autostart-enabled=true
+            """;
     }
 
     internal static string GetTaskShortcutPath(string taskName) =>

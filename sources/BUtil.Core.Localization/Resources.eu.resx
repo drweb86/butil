@@ -460,6 +460,9 @@ Mesedez, bai:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Hemen programatzaile bat konfigura dezakezu. Shceduler-ek zereginen abiarazte automatizatzen lagun zaitzake.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Exekutatu saioa hastean</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Non?</value>
   </data>

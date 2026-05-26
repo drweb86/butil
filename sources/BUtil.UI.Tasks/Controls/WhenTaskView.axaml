@@ -26,6 +26,7 @@
 			<NumericUpDown Minimum="0" Maximum="23" FormatString="N0" Value="{Binding Hours}" />
 			<TextBlock Text="{Binding Time_Field_Minute}" Margin="0 4 0 4" />
 			<NumericUpDown Minimum="0" Maximum="59" FormatString="N0" Value="{Binding Minutes}" />
+			<CheckBox IsChecked="{Binding RunAtLogin}" Content="{Binding RunAtLogin_Label}" Margin="0 8 0 0" />
 		</StackPanel>
 	</Expander>
 </UserControl>

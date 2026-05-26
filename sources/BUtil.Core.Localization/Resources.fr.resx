@@ -457,6 +457,9 @@ Veuillez :
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Ici, vous pouvez configurer un planificateur. Le planificateur peut vous aider à automatiser le lancement des tâches.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Exécuter à la connexion</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Où ?</value>
   </data>

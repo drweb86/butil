@@ -460,6 +460,9 @@
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>यहाँ आप एक शेड्यूलर सेट कर सकते हैं। शेड्यूलर आपको कार्य का लॉन्च स्वचालित करने में मदद कर सकता है।</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>लॉगिन पर चलाएँ</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>कहाँ?</value>
   </data>

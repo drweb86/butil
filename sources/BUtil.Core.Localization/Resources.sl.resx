@@ -460,6 +460,9 @@ Prosimo, izberite eno od možnosti:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Tukaj lahko nastavite razporejevalnik. Razporejevalnik vam lahko pomaga avtomatizirati zagon opravil.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Zaženi ob prijavi</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Kam?</value>
   </data>

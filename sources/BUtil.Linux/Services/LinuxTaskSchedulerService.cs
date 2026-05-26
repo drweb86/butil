@@ -1,5 +1,4 @@
 using System.Text.RegularExpressions;
-using BUtil.Core.FileSystem;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
 
@@ -8,18 +7,18 @@ namespace BUtil.Linux.Services;
 public class LinuxTaskSchedulerService : ITaskSchedulerService
 {
     private const string CronCommentPrefix = "# BUtil Schedule: ";
-    private static readonly string BinariesDir = Directories.BinariesDir;
 
     public ScheduleInfo GetSchedule(string taskName)
     {
         var crontab = GetCurrentCrontab();
         var schedule = ParseScheduleFromCrontab(crontab, taskName);
+        schedule.RunAtLogin = File.Exists(SupportManager.GetLoginAutostartPath(taskName));
         return schedule;
     }
 
     public void Schedule(string taskName, ScheduleInfo scheduleInfo)
     {
-        if (scheduleInfo.Days.Count == 0)
+        if (scheduleInfo.Days.Count == 0 && !scheduleInfo.RunAtLogin)
         {
             Unschedule(taskName);
             return;
@@ -28,14 +27,18 @@ public class LinuxTaskSchedulerService : ITaskSchedulerService
         var crontab = GetCurrentCrontab();
         crontab = RemoveTaskFromCrontab(crontab, taskName);
 
-        var minute = scheduleInfo.Time.Minutes;
-        var hour = scheduleInfo.Time.Hours;
-        var daysOfWeek = string.Join(",", scheduleInfo.Days.Select(d => (int)d));
-        var command = $"\"{LinuxSupportManager.ConsoleBackupTool}\" \"Task={taskName}\"";
-        var cronLine = $"{minute} {hour} * * {daysOfWeek} {command}";
-        crontab += CronCommentPrefix + taskName + "\n" + cronLine + "\n";
+        if (scheduleInfo.Days.Count > 0)
+        {
+            var minute = scheduleInfo.Time.Minutes;
+            var hour = scheduleInfo.Time.Hours;
+            var daysOfWeek = string.Join(",", scheduleInfo.Days.Select(d => (int)d));
+            var command = SupportManager.GetScheduledTaskConsoleCommand(taskName);
+            var cronLine = $"{minute} {hour} * * {daysOfWeek} {command}";
+            crontab += CronCommentPrefix + taskName + "\n" + cronLine + "\n";
+        }
 
         SetCrontab(crontab);
+        SetLoginAutostart(taskName, scheduleInfo.RunAtLogin);
     }
 
     public void Unschedule(string taskName)
@@ -43,6 +46,7 @@ public class LinuxTaskSchedulerService : ITaskSchedulerService
         var crontab = GetCurrentCrontab();
         crontab = RemoveTaskFromCrontab(crontab, taskName);
         SetCrontab(crontab);
+        SetLoginAutostart(taskName, false);
     }
 
     private static string GetCurrentCrontab()
@@ -106,7 +110,7 @@ public class LinuxTaskSchedulerService : ITaskSchedulerService
         if (string.IsNullOrWhiteSpace(line) || line.StartsWith('#'))
             return false;
         return line.Contains($"Task={taskName}\"", StringComparison.Ordinal) ||
-               (line.Contains(LinuxSupportManager.ConsoleBackupTool, StringComparison.Ordinal) && line.Contains($"Task={taskName}", StringComparison.Ordinal));
+               (line.Contains(SupportManager.ConsoleBackupTool, StringComparison.Ordinal) && line.Contains($"Task={taskName}", StringComparison.Ordinal));
     }
 
     private static ScheduleInfo ParseScheduleFromCrontab(string crontab, string taskName)
@@ -160,5 +164,19 @@ public class LinuxTaskSchedulerService : ITaskSchedulerService
                 schedule.Days.Add((DayOfWeek)d);
         }
         return true;
+    }
+
+    private static void SetLoginAutostart(string taskName, bool enabled)
+    {
+        var autostartPath = SupportManager.GetLoginAutostartPath(taskName);
+        if (!enabled)
+        {
+            if (File.Exists(autostartPath))
+                File.Delete(autostartPath);
+            return;
+        }
+
+        Directory.CreateDirectory(SupportManager.AutostartFolder);
+        File.WriteAllText(autostartPath, SupportManager.CreateLoginAutostartEntry(taskName));
     }
 }

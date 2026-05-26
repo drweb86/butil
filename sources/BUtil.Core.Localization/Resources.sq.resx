@@ -460,6 +460,9 @@ Ju lutem bëni njërën nga këto:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Këtu mund të konfiguroni një planifikues. Planifikuesi mund t'ju ndihmojë të automatizoni nisjen e detyrave.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Ekzekuto në hyrje</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Ku?</value>
   </data>

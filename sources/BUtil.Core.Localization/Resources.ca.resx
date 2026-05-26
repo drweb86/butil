@@ -460,6 +460,9 @@ Si us plau:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Aquí podeu configurar un programador. Shceduler us pot ajudar a automatitzar el llançament de tasques.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Executar en iniciar sessió</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>On?</value>
   </data>

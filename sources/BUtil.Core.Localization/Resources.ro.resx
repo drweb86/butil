@@ -460,6 +460,9 @@ Vă rugăm să:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Aici puteți configura un planificator. Planificatorul vă poate ajuta să automatizați lansarea sarcinii.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Rulează la autentificare</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Unde?</value>
   </data>

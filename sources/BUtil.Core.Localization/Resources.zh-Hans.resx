@@ -459,6 +459,9 @@
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>您可以在此设置调度程序。调度程序可以帮助您自动启动任务。</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>登录时运行</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>哪里？</value>
   </data>

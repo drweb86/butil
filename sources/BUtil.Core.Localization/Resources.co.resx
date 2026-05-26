@@ -460,6 +460,9 @@ Per piacè sia:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Quì pudete stabilisce un pianificatore. Shceduler pò aiutà à automatizà u lanciu di u travagliu.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Eseguì à a cunnessione</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Induve ?</value>
   </data>

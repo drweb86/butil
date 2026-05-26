@@ -18,6 +18,7 @@ public class WhenTaskViewModel : ObservableObject
         Sunday = scheduleInfo.Days.Contains(System.DayOfWeek.Sunday);
         Hours = scheduleInfo.Time.Hours;
         Minutes = scheduleInfo.Time.Minutes;
+        RunAtLogin = scheduleInfo.RunAtLogin;
     }
 
     public ScheduleInfo GetScheduleInfo()
@@ -33,6 +34,7 @@ public class WhenTaskViewModel : ObservableObject
         if (Sunday) scheduleInfo.Days.Add(System.DayOfWeek.Sunday);
 
         scheduleInfo.Time = new System.TimeSpan(Hours, Minutes, 0);
+        scheduleInfo.RunAtLogin = RunAtLogin;
 
         return scheduleInfo;
     }
@@ -50,6 +52,7 @@ public class WhenTaskViewModel : ObservableObject
     public static string Days_Friday => Resources.Days_Friday;
     public static string Days_Saturday => Resources.Days_Saturday;
     public static string Days_Sunday => Resources.Days_Sunday;
+    public static string RunAtLogin_Label => Resources.RunAtLogin_Label;
 
     #endregion
 
@@ -133,6 +136,13 @@ public class WhenTaskViewModel : ObservableObject
 
     private bool _sunday;
     public bool Sunday { get => _sunday; set { if (value == _sunday) return; _sunday = value; OnPropertyChanged(nameof(Sunday)); } }
+
+    #endregion
+
+    #region RunAtLogin
+
+    private bool _runAtLogin;
+    public bool RunAtLogin { get => _runAtLogin; set { if (value == _runAtLogin) return; _runAtLogin = value; OnPropertyChanged(nameof(RunAtLogin)); } }
 
     #endregion
 }

@@ -15,4 +15,6 @@ public class ScheduleInfo
     public List<DayOfWeek> Days { get; set; }
 
     public TimeSpan Time { get; set; }
+
+    public bool RunAtLogin { get; set; }
 }

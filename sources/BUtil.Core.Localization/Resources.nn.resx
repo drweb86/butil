@@ -460,6 +460,9 @@ Ver venleg og gjer eitt av følgjande:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Her kan du setje opp ein tidsplan. Tidsplanleggjaren kan hjelpe deg med å automatisere oppgåvestart.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Køyr ved innlogging</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Kvar?</value>
   </data>

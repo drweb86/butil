@@ -457,6 +457,9 @@ Silakan:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Di sini Anda dapat mengatur penjadwalan. Penjadwalan dapat membantu Anda mengotomatiskan peluncuran tugas.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Jalankan saat login</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Di mana?</value>
   </data>

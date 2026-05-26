@@ -460,6 +460,9 @@ Ole hyvä ja joko:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Täällä voit asettaa ajastimen. Ajastin voi auttaa sinua automatisoimaan tehtävän käynnistyksen.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Suorita kirjautuessa</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Minne?</value>
   </data>

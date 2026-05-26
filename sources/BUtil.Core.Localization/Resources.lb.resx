@@ -460,6 +460,9 @@ Weg entweder:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Hei kënnt Dir e Scheduler astellen. Shceduler kann Iech hëllefen d'Taskstart ze automatiséieren.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Beim Login ausféieren</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Wou?</value>
   </data>

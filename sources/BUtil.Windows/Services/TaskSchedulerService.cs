@@ -14,33 +14,39 @@ public class TaskSchedulerService : ITaskSchedulerService
         var scheduledTask = TaskService.Instance.FindTask(schedulerTaskName, false);
         if (scheduledTask == null)
             return new ScheduleInfo();
-        var weeklyTrigger = (WeeklyTrigger)scheduledTask.Definition.Triggers[0];
+        var scheduledInfo = new ScheduleInfo();
 
-        var scheduledInfo = new ScheduleInfo
+        foreach (var trigger in scheduledTask.Definition.Triggers)
         {
-            Time = new TimeSpan(weeklyTrigger.StartBoundary.Hour, weeklyTrigger.StartBoundary.Minute, 0)
-        };
-        if ((weeklyTrigger.DaysOfWeek & DaysOfTheWeek.Monday) == DaysOfTheWeek.Monday)
-            scheduledInfo.Days.Add(DayOfWeek.Monday);
+            if (trigger is LogonTrigger)
+                scheduledInfo.RunAtLogin = true;
 
-        if ((weeklyTrigger.DaysOfWeek & DaysOfTheWeek.Tuesday) == DaysOfTheWeek.Tuesday)
-            scheduledInfo.Days.Add(DayOfWeek.Tuesday);
+            if (trigger is not WeeklyTrigger weeklyTrigger)
+                continue;
 
-        if ((weeklyTrigger.DaysOfWeek & DaysOfTheWeek.Wednesday) == DaysOfTheWeek.Wednesday)
-            scheduledInfo.Days.Add(DayOfWeek.Wednesday);
+            scheduledInfo.Time = new TimeSpan(weeklyTrigger.StartBoundary.Hour, weeklyTrigger.StartBoundary.Minute, 0);
 
-        if ((weeklyTrigger.DaysOfWeek & DaysOfTheWeek.Thursday) == DaysOfTheWeek.Thursday)
-            scheduledInfo.Days.Add(DayOfWeek.Thursday);
+            if ((weeklyTrigger.DaysOfWeek & DaysOfTheWeek.Monday) == DaysOfTheWeek.Monday)
+                scheduledInfo.Days.Add(DayOfWeek.Monday);
 
-        if ((weeklyTrigger.DaysOfWeek & DaysOfTheWeek.Friday) == DaysOfTheWeek.Friday)
-            scheduledInfo.Days.Add(DayOfWeek.Friday);
+            if ((weeklyTrigger.DaysOfWeek & DaysOfTheWeek.Tuesday) == DaysOfTheWeek.Tuesday)
+                scheduledInfo.Days.Add(DayOfWeek.Tuesday);
 
-        if ((weeklyTrigger.DaysOfWeek & DaysOfTheWeek.Saturday) == DaysOfTheWeek.Saturday)
-            scheduledInfo.Days.Add(DayOfWeek.Saturday);
+            if ((weeklyTrigger.DaysOfWeek & DaysOfTheWeek.Wednesday) == DaysOfTheWeek.Wednesday)
+                scheduledInfo.Days.Add(DayOfWeek.Wednesday);
 
-        if ((weeklyTrigger.DaysOfWeek & DaysOfTheWeek.Sunday) == DaysOfTheWeek.Sunday)
-            scheduledInfo.Days.Add(DayOfWeek.Sunday);
+            if ((weeklyTrigger.DaysOfWeek & DaysOfTheWeek.Thursday) == DaysOfTheWeek.Thursday)
+                scheduledInfo.Days.Add(DayOfWeek.Thursday);
 
+            if ((weeklyTrigger.DaysOfWeek & DaysOfTheWeek.Friday) == DaysOfTheWeek.Friday)
+                scheduledInfo.Days.Add(DayOfWeek.Friday);
+
+            if ((weeklyTrigger.DaysOfWeek & DaysOfTheWeek.Saturday) == DaysOfTheWeek.Saturday)
+                scheduledInfo.Days.Add(DayOfWeek.Saturday);
+
+            if ((weeklyTrigger.DaysOfWeek & DaysOfTheWeek.Sunday) == DaysOfTheWeek.Sunday)
+                scheduledInfo.Days.Add(DayOfWeek.Sunday);
+        }
 
         return scheduledInfo;
     }
@@ -50,25 +56,33 @@ public class TaskSchedulerService : ITaskSchedulerService
     {
         Unschedule(taskName);
 
-        if (scheduleInfo.Days.Count == 0)
+        if (scheduleInfo.Days.Count == 0 && !scheduleInfo.RunAtLogin)
             return;
 
         var schedulerTaskName = GetScheduledTaskName(taskName);
 
-        TaskService.Instance.AddTask(
-            schedulerTaskName,
-            new WeeklyTrigger
+        var taskDefinition = TaskService.Instance.NewTask();
+        if (scheduleInfo.Days.Count > 0)
+        {
+            taskDefinition.Triggers.Add(new WeeklyTrigger
             {
                 DaysOfWeek = GetDaysOfTheWeek(scheduleInfo.Days),
                 StartBoundary = DateTime.Today + scheduleInfo.Time,
                 WeeksInterval = 1,
-            },
-            new ExecAction
-            {
-                WorkingDirectory = Directories.BinariesDir,
-                Arguments = $"\"Task={taskName}\" {SchedulerLaunchArguments.HideConsole}",
-                Path = $"\"{WindowsSupportManager.ConsoleBackupTool}\""
             });
+        }
+
+        if (scheduleInfo.RunAtLogin)
+            taskDefinition.Triggers.Add(new LogonTrigger());
+
+        taskDefinition.Actions.Add(new ExecAction
+        {
+            WorkingDirectory = Directories.BinariesDir,
+            Arguments = $"\"Task={taskName}\" {SchedulerLaunchArguments.HideConsole}",
+            Path = $"\"{WindowsSupportManager.ConsoleBackupTool}\""
+        });
+
+        TaskService.Instance.RootFolder.RegisterTaskDefinition(schedulerTaskName, taskDefinition);
     }
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>")]

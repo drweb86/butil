@@ -457,6 +457,9 @@ Vui lòng:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Tại đây bạn có thể thiết lập một lịch trình. Lịch trình có thể giúp bạn tự động hóa việc khởi động nhiệm vụ.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Chạy khi đăng nhập</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Ở đâu?</value>
   </data>

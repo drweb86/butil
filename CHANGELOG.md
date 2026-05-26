@@ -4,6 +4,7 @@
 ## New Features
 - Console: When application is launched without parameters, its possible to use execute tasks interactively.
 - UI: Shortcuts for tasks are created and maintained, so you can use start tasks for Linux and Windows via Start \ Search to launch them instead of application doing it directly.
+- Scheduler: now it is possible to schedule task execution at Login to system.
 
 # 2026.05.21
 

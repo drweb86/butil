@@ -460,6 +460,9 @@ Bitte wählen Sie eine der folgenden Optionen:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Hier können Sie einen Zeitplan einrichten. Ein Zeitplaner kann Ihnen helfen, die Aufgabe automatisch zu starten.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Bei Anmeldung ausführen</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Wo?</value>
   </data>

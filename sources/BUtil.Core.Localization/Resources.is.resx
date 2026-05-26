@@ -460,6 +460,9 @@ Vinsamlegast annaðhvort:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Hér getur þú sett upp tímaáætlun. Tímaáætlun getur hjálpað þér að sjálfvirknivæða keyrslu verkefna.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Keyra við innskráningu</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Hvar?</value>
   </data>

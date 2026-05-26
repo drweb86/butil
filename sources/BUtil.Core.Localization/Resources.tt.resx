@@ -460,6 +460,9 @@ Changesзгәрешләр гадәттә түбән булганлыктан, а
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Монда сез график урнаштыра аласыз. Shceduler сезгә эшне башлап җибәрүне автоматлаштырырга булыша ала.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Керү вакытында эшләт</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Кайда?</value>
   </data>

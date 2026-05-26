@@ -460,6 +460,9 @@ Molimo izaberite jednu od opcija:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Ovde možete podesiti planer. Planer vam može pomoći da automatizujete pokretanje zadataka.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Pokreni pri prijavi</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Gde?</value>
   </data>

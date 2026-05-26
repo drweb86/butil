@@ -461,6 +461,9 @@ Ji kerema xwe:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Li vir hûn dikarin plansaziyekê saz bikin. Plansaz dikare ji we re bibe alîkar ku destpêkirina peywirê otomatîk bikin.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Demê têketinê bide destpêkirin</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Li ku?</value>
   </data>

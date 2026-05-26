@@ -461,6 +461,9 @@ Iltimos:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Bu yerda siz jadval sozlashingiz mumkin. Jadval vazifani avtomatik ishga tushirishga yordam beradi.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Kirishda ishga tushirish</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Qayerga?</value>
   </data>

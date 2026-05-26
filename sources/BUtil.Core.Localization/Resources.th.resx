@@ -460,6 +460,9 @@
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>ที่นี่คุณสามารถตั้งค่าตัวกำหนดเวลา ตัวกำหนดเวลาสามารถช่วยให้คุณเริ่มงานโดยอัตโนมัติ</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>เรียกใช้เมื่อเข้าสู่ระบบ</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>ที่ไหน?</value>
   </data>

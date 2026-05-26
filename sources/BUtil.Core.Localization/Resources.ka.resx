@@ -460,6 +460,9 @@
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>აქ შეგიძლიათ დააყენოთ განრიგი. განრიგი დაგეხმარებათ დავალების ავტომატურად გაშვებაში.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>გაშვება შესვლისას</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>სად?</value>
   </data>

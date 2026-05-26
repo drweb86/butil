@@ -460,6 +460,9 @@ Por favor, escolha uma das opções:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Aqui você pode configurar um agendador. O agendador pode ajudar você a automatizar o lançamento de tarefas.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Executar ao iniciar sessão</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Onde?</value>
   </data>

@@ -460,6 +460,9 @@ Vælg venligst:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Her kan du opsætte en planlægger. Planlæggeren kan hjælpe dig med at automatisere opgavestart.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Kør ved login</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Hvor?</value>
   </data>

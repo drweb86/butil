@@ -460,6 +460,9 @@ Sila lakukan salah satu:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Di sini anda boleh menyediakan penjadual. Penjadual boleh membantu anda mengautomasi pelancaran tugasan.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Jalankan semasa log masuk</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Di mana?</value>
   </data>

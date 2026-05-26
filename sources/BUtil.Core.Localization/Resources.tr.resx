@@ -457,6 +457,9 @@ Lütfen şunlardan birini yapın:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Burada bir zamanlayıcı kurabilirsiniz. Zamanlayıcı, görev başlatmayı otomatikleştirmenize yardımcı olabilir.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Oturum açılışında çalıştır</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Nerede?</value>
   </data>

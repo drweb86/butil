@@ -448,6 +448,9 @@
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>ここでスケジューラーを設定できます。スケジューラはタスクの起動を自動化するのに役立ちます。</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>ログイン時に実行</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>どこですか？</value>
   </data>

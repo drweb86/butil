@@ -460,6 +460,9 @@ Prašome pasirinkti vieną iš variantų:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Čia galite nustatyti planavimo priemonę. Planavimo priemonė gali padėti automatizuoti užduočių paleidimą.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Paleisti prisijungus</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Kur?</value>
   </data>

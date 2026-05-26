@@ -460,6 +460,9 @@ Proszę:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Tutaj możesz skonfigurować harmonogram. Harmonogram może pomóc w automatyzacji uruchamiania zadań.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Uruchamiaj przy logowaniu</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Gdzie?</value>
   </data>

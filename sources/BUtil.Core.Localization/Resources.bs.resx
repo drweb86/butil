@@ -460,6 +460,9 @@ Molimo uradite jedno od sljedećeg:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Ovdje možete postaviti raspored. Planer vam može pomoći da automatizirate pokretanje zadataka.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Pokreni pri prijavi</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Gdje?</value>
   </data>

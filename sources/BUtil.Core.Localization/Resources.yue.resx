@@ -477,6 +477,9 @@
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>在這裡您可以設置計劃程序。計劃程序可以幫助您自動啟動任務。</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>登入時執行</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>哪裡？</value>
   </data>

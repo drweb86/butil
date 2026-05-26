@@ -460,6 +460,9 @@ Prosím vyberte jednu z možností:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Tu môžete nastaviť plánovač. Plánovač vám môže pomôcť automatizovať spúšťanie úloh.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Spustiť pri prihlásení</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Kam?</value>
   </data>

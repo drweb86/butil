@@ -460,6 +460,9 @@ Feuch an dàrna cuid:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>An seo faodaidh tu clàr-ama a stèidheachadh. Faodaidh Shceduler do chuideachadh le bhith a’ cur air bhog gnìomh gu fèin-ghluasadach.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Ruith aig clàradh a-steach</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Càite?</value>
   </data>

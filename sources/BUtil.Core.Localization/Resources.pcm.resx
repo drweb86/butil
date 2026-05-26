@@ -457,6 +457,9 @@ Abeg do one of dese:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Here you fit set up scheduler. Scheduler fit help you automate task launch.</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Run at login</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Where?</value>
   </data>

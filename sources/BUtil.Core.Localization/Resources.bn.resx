@@ -454,6 +454,9 @@
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>এখানে আপনি একটি সময়সূচী সেট আপ করতে পারেন। সময়সূচী আপনাকে কাজের সূচনার স্বয়ংক্রিয় করতে সাহায্য করতে পারে।</value>
   </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>লগইনে চালান</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>কোথায়?</value>
   </data>

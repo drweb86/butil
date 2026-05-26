@@ -1074,6 +1074,15 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("LeftMenu_When_Help", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Run at Login.
+        /// </summary>
+        public static string RunAtLogin_Label {
+            get {
+                return ResourceManager.GetString("RunAtLogin_Label", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to Where?.

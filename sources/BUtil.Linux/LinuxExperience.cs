@@ -51,7 +51,7 @@ public class LinuxExperience : CrossPlatformExperience
         return new LinuxFolderService();
     }
 
-    public override ISupportManager SupportManager => new LinuxSupportManager();
+    public override ISupportManager SupportManager => new SupportManager();
 
     public override void RegisterPlatformStorages()
     {
