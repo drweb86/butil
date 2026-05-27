@@ -17,4 +17,10 @@
   <ItemGroup>
     <ProjectReference Include="../BUtil.Core/BUtil.Core.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Controls\ViewDecoration.axaml.cs">
+      <DependentUpon>ViewDecoration.axaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>

@@ -3,6 +3,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:BUtil.UI.Controls"
+    xmlns:decor="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Common"
     xmlns:tasks="clr-namespace:BUtil.UI.Tasks.Controls;assembly=BUtil.UI.Tasks"
     xmlns:vm="clr-namespace:BUtil.Tasks.ImportMedia.UI.Controls;assembly=BUtil.Tasks.ImportMedia.UI"
     mc:Ignorable="d"
@@ -25,6 +26,7 @@
 			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
 
+		<decor:ViewDecoration Grid.Row="0" Kind="ImportMedia" />
 		<ScrollViewer Grid.Row="0"
 				ScrollViewer.VerticalScrollBarVisibility="Visible"
 				ScrollViewer.HorizontalScrollBarVisibility="Disabled">

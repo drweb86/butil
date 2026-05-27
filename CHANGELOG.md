@@ -8,6 +8,7 @@
 
 ## Changes
 - Some libraries were updated.
+- Icons were added to configuration pages.
 
 # 2026.05.21
 

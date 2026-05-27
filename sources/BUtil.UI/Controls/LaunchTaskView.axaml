@@ -9,6 +9,7 @@
     x:Class="BUtil.UI.Controls.LaunchTaskView"
 	x:DataType="vm:LaunchTaskViewModel"
     xmlns:cvm="clr-namespace:BUtil.UI.Controls"
+    xmlns:decor="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Common"
 	Loaded="OnLoaded"
 	Padding="24">
 	<UserControl.Resources>
@@ -21,6 +22,7 @@
 			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
 
+		<decor:ViewDecoration Grid.Row="0" Kind="LaunchTask" />
 		<cvm:TaskExecuterView Grid.Row="0" DataContext="{Binding TaskExecuterViewModel}" />
 
 		<WrapPanel HorizontalAlignment="Right" Grid.Row="1" Margin="0 8 0 0">

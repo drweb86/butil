@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:controls="clr-namespace:BUtil.UI.Controls"
+             xmlns:decor="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Common"
              mc:Ignorable="d"
              d:DesignWidth="800"
              d:DesignHeight="450"
@@ -17,6 +18,7 @@
 			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
 
+		<decor:ViewDecoration Grid.Row="0" Kind="TechnicalTool" />
 		<ScrollViewer Grid.Row="0"
 				ScrollViewer.VerticalScrollBarVisibility="Visible"
 				ScrollViewer.HorizontalScrollBarVisibility="Disabled">

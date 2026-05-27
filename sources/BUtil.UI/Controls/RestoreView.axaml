@@ -4,6 +4,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="clr-namespace:BUtil.UI.Controls"
 	xmlns:controls="using:BUtil.UI.Controls"
+	xmlns:decor="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Common"
     xmlns:v="clr-namespace:BUtil.UI.Controls"
     mc:Ignorable="d"
 	d:DesignWidth="800"
@@ -23,7 +24,9 @@
 			<RowDefinition Height="*" />
 			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
+		<decor:ViewDecoration Grid.Row="0" Kind="Restore" />
 		<ScrollViewer
+				Grid.Row="0"
 				ScrollViewer.VerticalScrollBarVisibility="Visible"
 				ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 			<StackPanel Orientation="Vertical">
