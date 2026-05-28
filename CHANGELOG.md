@@ -1,5 +1,4 @@
-﻿# 2026.05.26
-(unpublished)
+﻿# 2026.05.28
 
 ## New Features
 - Console: When application is launched without parameters, its possible to use execute tasks interactively.
