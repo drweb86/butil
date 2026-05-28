@@ -31,6 +31,26 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
     public static string Task_Restore => Resources.Task_Restore;
     public static string BackupVersion_Viewer_Help => Resources.BackupVersion_Viewer_Help;
     public static string BackupVersion_Button_Delete => Resources.BackupVersion_Button_Delete;
+    public static string SearchTextBoxWatermark => MainWindowViewModel.SearchTextBoxWatermark;
+
+    #endregion
+
+    #region SearchText
+
+    private string _searchText = string.Empty;
+
+    public string SearchText
+    {
+        get => _searchText;
+        set
+        {
+            if (value == _searchText)
+                return;
+            _searchText = value;
+            OnPropertyChanged(nameof(SearchText));
+            ApplyFilter();
+        }
+    }
 
     #endregion
 
@@ -244,6 +264,8 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
 
     #region Files
 
+    private List<FileTreeNode> _allNodes = [];
+
     private ObservableCollection<FileTreeNode> _nodes = [];
 
     public ObservableCollection<FileTreeNode> Nodes
@@ -304,6 +326,11 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
         if (version == null || _state == null)
             return;
 
+        if (_searchText != string.Empty)
+        {
+            _searchText = string.Empty;
+            OnPropertyChanged(nameof(SearchText));
+        }
         IsDeleteBackupVersionEnabled = Versions != null && Versions[0] != version;
 
         SelectedFileIsVisible = false;
@@ -379,14 +406,14 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
 
     private void RefreshTreeView(List<Tuple<SourceItemV2, List<StorageFile>>> treeViewFiles)
     {
-        var newNodes = new ObservableCollection<FileTreeNode>();
+        _allNodes = [];
 
         foreach (var treeViewFileTuple in treeViewFiles)
         {
             var sourceItem = treeViewFileTuple.Item1;
 
             var sourceItemNode = new FileTreeNode(sourceItem, null, null);
-            newNodes.Add(sourceItemNode);
+            _allNodes.Add(sourceItemNode);
 
             var storageFiles = treeViewFileTuple.Item2;
             foreach (var storageFile in storageFiles)
@@ -395,11 +422,75 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
             }
         }
 
-        Nodes = newNodes;
-        // TODO:
-        //if (Nodes.Count == 1)
-        //    Nodes[0].Expand();
+        ApplyFilter();
     }
+
+    private const int AutoExpandMaxFileResults = 15;
+
+    private void ApplyFilter()
+    {
+        var filter = SearchText?.Trim() ?? string.Empty;
+        if (string.IsNullOrEmpty(filter))
+        {
+            SetExpansion(_allNodes, expanded: false);
+            Nodes = new ObservableCollection<FileTreeNode>(_allNodes);
+            return;
+        }
+
+        var filtered = _allNodes
+            .Select(node => FilterNode(node, filter))
+            .Where(node => node != null)
+            .Cast<FileTreeNode>()
+            .ToList();
+
+        var fileCount = CountFileNodes(filtered);
+        SetExpansion(filtered, expanded: fileCount <= AutoExpandMaxFileResults);
+
+        Nodes = new ObservableCollection<FileTreeNode>(filtered);
+    }
+
+    private static int CountFileNodes(IEnumerable<FileTreeNode> nodes)
+    {
+        var count = 0;
+        foreach (var node in nodes)
+        {
+            if (node.StorageFile != null)
+                count++;
+            count += CountFileNodes(node.Nodes);
+        }
+        return count;
+    }
+
+    private static void SetExpansion(IEnumerable<FileTreeNode> nodes, bool expanded)
+    {
+        foreach (var node in nodes)
+        {
+            if (node.Nodes.Count > 0)
+                node.IsExpanded = expanded;
+            SetExpansion(node.Nodes, expanded);
+        }
+    }
+
+    private static FileTreeNode? FilterNode(FileTreeNode source, string filter)
+    {
+        var filteredChildren = source.Nodes
+            .Select(child => FilterNode(child, filter))
+            .Where(child => child != null)
+            .Cast<FileTreeNode>()
+            .ToList();
+
+        if (!NodeMatches(source, filter) && filteredChildren.Count == 0)
+            return null;
+
+        var clone = new FileTreeNode(source.SourceItem, source.VirtualFolder, source.StorageFile);
+        foreach (var child in filteredChildren)
+            clone.Nodes.Add(child);
+        return clone;
+    }
+
+    private static bool NodeMatches(FileTreeNode node, string filter) =>
+        node.Target.Contains(filter, StringComparison.OrdinalIgnoreCase) ||
+        (node.StorageFile?.FileState.FileName.Contains(filter, StringComparison.OrdinalIgnoreCase) ?? false);
 
     private static void AddLeaf(string relativePath, StorageFile storageFile, FileTreeNode sourceItemNode, SourceItemV2 sourceItem)
     {

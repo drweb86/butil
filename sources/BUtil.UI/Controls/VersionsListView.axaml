@@ -23,6 +23,13 @@
 				<WrapPanel Orientation="Horizontal" Margin="0 8 0 8">
 					<Image Width="16" Height="16" Source="/Assets/CrystalProject_EveraldoCoelho_SourceItems48x48.png" VerticalAlignment="Center" />
 					<TextBlock TextDecorations="Underline" ToolTip.Tip="{Binding BackupVersion_Viewer_Help}" Margin="8 0 8 0" Text="{Binding BackupVersion_Files_Title}" VerticalAlignment="Center" />
+					<TextBox
+						Text="{Binding SearchText}"
+						PlaceholderText="{Binding SearchTextBoxWatermark}"
+						MinWidth="160"
+						VerticalAlignment="Center"
+						Margin="8 0 0 0"
+						VerticalContentAlignment="Center" />
 				</WrapPanel>
 			</Expander.Header>
 			<TreeView
@@ -31,6 +38,11 @@
 				SelectionMode="Single"
 				SelectedItem="{Binding SelectedNode}"
 				HorizontalAlignment="Stretch">
+				<TreeView.Styles>
+					<Style Selector="TreeViewItem" x:DataType="cvm:FileTreeNode">
+						<Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
+					</Style>
+				</TreeView.Styles>
 				<TreeView.ItemTemplate>
 					<TreeDataTemplate ItemsSource="{Binding Nodes}">
 						<StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">

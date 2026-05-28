@@ -56,5 +56,23 @@ public class FileTreeNode : ObservableObject
 
     #endregion
 
+    #region IsExpanded
+
+    private bool _isExpanded;
+
+    public bool IsExpanded
+    {
+        get => _isExpanded;
+        set
+        {
+            if (value == _isExpanded)
+                return;
+            _isExpanded = value;
+            OnPropertyChanged(nameof(IsExpanded));
+        }
+    }
+
+    #endregion
+
     public ObservableCollection<FileTreeNode> Nodes { get; } = [];
 }
