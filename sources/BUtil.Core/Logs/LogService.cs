@@ -11,10 +11,15 @@ public class LogService
 {
     private const string _dateMask = "yyyy-MM-dd HH-mm-ss";
 
+    public static string GetTaskLogsFolder(string taskName) =>
+        Path.Combine(Directories.LogsFolder, Files.GetSafeFileName(taskName));
+
     public static string GetFileName(string taskName, DateTime _dateTime, bool? isSuccess)
     {
         var postfix = isSuccess.HasValue ? (isSuccess.Value ? BUtil.Core.Localization.Resources.LogFile_Marker_Successful : BUtil.Core.Localization.Resources.LogFile_Marker_Errors) : BUtil.Core.Localization.Resources.Task_Status_Unknown;
-        return Path.Combine(Directories.LogsFolder,
+        var folder = GetTaskLogsFolder(taskName);
+        FileHelper.EnsureFolderCreated(folder);
+        return Path.Combine(folder,
             $"{_dateTime.ToString(_dateMask, CultureInfo.CurrentUICulture)} {taskName} ({postfix}).txt");
     }
 
@@ -25,8 +30,7 @@ public class LogService
 
     public IEnumerable<LogFileInfo> GetRecentLogs()
     {
-        return [.. Directory
-            .GetFiles(Directories.LogsFolder, GetMask("*"))
+        return [.. EnumerateLogFiles()
             .OrderByDescending(x => x)
             .Select(ParseFileName)
             .GroupBy(x => x.TaskName.ToLowerInvariant())
@@ -38,37 +42,89 @@ public class LogService
         if (oldTaskName.Cmp(newTaskName))
             return;
 
-        Directory
-            .GetFiles(Directories.LogsFolder, GetMask("*"))
-            .OrderByDescending(x => x)
-            .Select(ParseFileName)
-            .Where(x => x.TaskName.Cmp(oldTaskName))
-            .ToList()
-            .ForEach(x => MoveLog(x, newTaskName));
+        var oldFolder = GetTaskLogsFolder(oldTaskName);
+        if (Directory.Exists(oldFolder))
+        {
+            foreach (var path in Directory.GetFiles(oldFolder, GetMask("*")).ToList())
+                MoveLog(ParseFileName(path), newTaskName);
 
+            if (Directory.Exists(oldFolder) && !Directory.EnumerateFileSystemEntries(oldFolder).Any())
+                Directory.Delete(oldFolder);
+        }
+
+        foreach (var path in EnumerateFlatLogFiles(oldTaskName).ToList())
+            MoveLog(ParseFileName(path), newTaskName);
     }
 
     public static void DeleteLogs(string taskName)
     {
-        Directory
-            .GetFiles(Directories.LogsFolder, GetMask("*"))
-            .OrderByDescending(x => x)
-            .Select(ParseFileName)
-            .Where(x => x.TaskName.Cmp(taskName))
-            .ToList()
-            .ForEach(DeleteLog);
+        var taskFolder = GetTaskLogsFolder(taskName);
+        if (Directory.Exists(taskFolder))
+            Directory.Delete(taskFolder, recursive: true);
+
+        foreach (var path in EnumerateFlatLogFiles(taskName).ToList())
+            File.Delete(path);
     }
 
-    private static void DeleteLog(LogFileInfo logFileInfo)
+    /// <summary>Moves flat log files from <paramref name="flatLogsFolder"/> into per-task subfolders under <see cref="Directories.LogsFolder"/>.</summary>
+    public static void MigrateFlatLogsToTaskFolders(string flatLogsFolder)
     {
-        var file = GetFileName(logFileInfo.TaskName, logFileInfo.CreatedAt, logFileInfo.IsSuccess);
-        File.Delete(file);
+        if (!Directory.Exists(flatLogsFolder))
+            return;
+
+        foreach (var path in Directory.GetFiles(flatLogsFolder, GetMask("*")))
+        {
+            var info = ParseFileName(path);
+            var destination = GetFileName(info.TaskName, info.CreatedAt, info.IsSuccess);
+            if (path.Cmp(destination))
+                continue;
+
+            FileHelper.EnsureFolderCreatedForFile(destination);
+            if (File.Exists(destination))
+                File.Delete(destination);
+            File.Move(path, destination);
+        }
+    }
+
+    private static IEnumerable<string> EnumerateLogFiles()
+    {
+        if (!Directory.Exists(Directories.LogsFolder))
+            yield break;
+
+        foreach (var file in Directory.GetFiles(Directories.LogsFolder, GetMask("*")))
+            yield return file;
+
+        foreach (var taskFolder in Directory.EnumerateDirectories(Directories.LogsFolder))
+        foreach (var file in Directory.GetFiles(taskFolder, GetMask("*")))
+            yield return file;
+    }
+
+    private static IEnumerable<string> EnumerateFlatLogFiles(string taskName)
+    {
+        if (!Directory.Exists(Directories.LogsFolder))
+            yield break;
+
+        foreach (var file in Directory.GetFiles(Directories.LogsFolder, GetMask("*")))
+        {
+            var info = ParseFileName(file);
+            if (info.TaskName.Cmp(taskName))
+                yield return file;
+        }
     }
 
     private static void MoveLog(LogFileInfo logFileInfo, string newTaskName)
     {
-        var oldFile = GetFileName(logFileInfo.TaskName, logFileInfo.CreatedAt, logFileInfo.IsSuccess);
+        var oldFile = logFileInfo.File;
+        if (!File.Exists(oldFile))
+            oldFile = GetFileName(logFileInfo.TaskName, logFileInfo.CreatedAt, logFileInfo.IsSuccess);
+
         var newFile = GetFileName(newTaskName, logFileInfo.CreatedAt, logFileInfo.IsSuccess);
+        if (oldFile.Cmp(newFile))
+            return;
+
+        FileHelper.EnsureFolderCreatedForFile(newFile);
+        if (File.Exists(newFile))
+            File.Delete(newFile);
         File.Move(oldFile, newFile);
     }
 

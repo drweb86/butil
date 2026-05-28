@@ -1,4 +1,5 @@
 using BUtil.Core.FileSystem;
+using BUtil.Core.Logs;
 using System;
 using System.IO;
 
@@ -10,6 +11,7 @@ public sealed class MigrationService(ILocalFileSystem fileSystem)
 
     public void RunAll()
     {
+        RunOnce("MoveLogsToTempTaskFolders", MoveLogsToTempTaskFolders);
         RunOnce("CreateTaskShortcuts", CreateTaskShortcuts);
     }
 
@@ -30,5 +32,10 @@ public sealed class MigrationService(ILocalFileSystem fileSystem)
         var taskShortcutService = PlatformSpecificExperience.Instance.GetTaskShortcutService();
         foreach (var taskName in new TaskStore(fileSystem).GetNames())
             taskShortcutService.CreateOrUpdate(taskName);
+    }
+
+    private static void MoveLogsToTempTaskFolders()
+    {
+        LogService.MigrateFlatLogsToTaskFolders(Directories.LegacyLogsFolder);
     }
 }

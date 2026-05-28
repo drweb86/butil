@@ -9,6 +9,7 @@
 ## Changes
 - Some libraries were updated.
 - Icons were added to configuration pages.
+- Logs are moved to %temp%\BUtil\logs, to subfolders.
 
 # 2026.05.21
 

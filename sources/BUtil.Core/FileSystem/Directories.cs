@@ -41,12 +41,21 @@ public static class Directories
 
     public static string LogsFolder { get; }
 
+    /// <summary>Previous logs location under application data (pre temp/task-folder layout).</summary>
+    public static string LegacyLogsFolder { get; }
+
     public static string ImportStateFolder { get; }
 
     static Directories()
     {
         FileHelper.EnsureFolderCreated(_userDataFolder);
-        LogsFolder = Path.Combine(Directories.UserDataFolder, "Logs", "v3");
+        LegacyLogsFolder = Path.Combine(_userDataFolder, "Logs", "v3");
+#if DEBUG
+        var logsAppFolder = "BUtil-Development";
+#else
+        var logsAppFolder = "BUtil";
+#endif
+        LogsFolder = Path.Combine(TempFolder, logsAppFolder, "logs");
         FileHelper.EnsureFolderCreated(LogsFolder);
         FileHelper.EnsureFolderCreated(StateFolder);
 #if DEBUG
