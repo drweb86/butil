@@ -143,6 +143,7 @@ public class LaunchTaskViewModel : ViewModelBase
         fileLog.Open();
         if (!TaskProviderRegistry.TryVerify(fileLog, _task.Model, false, out var error))
         {
+            fileLog.WriteLine(LoggingEvent.Error, error);
             fileLog.Close(false);
             TaskExecuterViewModel = new TaskExecuterViewModel(error, OnClose);
             return;

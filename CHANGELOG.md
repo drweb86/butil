@@ -9,6 +9,7 @@
 - Renames for artifacts.
 - Some libraries were updated.
 - Logs are moved to %localappdata%\BUtil\logs\v4. It appeared that Windows cleans temp folder within 10 days.
+- Storage verification error goes into log.
 
 ## Bug Fixes
 - FTPS Self-signed certificate acceptance did not work for edit mode for expired certificate.
