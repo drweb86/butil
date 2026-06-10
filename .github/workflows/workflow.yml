@@ -114,7 +114,7 @@ jobs:
         shell: pwsh
         run: |
           $v = "${{ steps.version.outputs.version }}"
-          $hash = (Get-FileHash -Path "Output\BUtil_v$v.exe" -Algorithm SHA256).Hash
+          $hash = (Get-FileHash -Path "Output\butil_${v}_windows_setup.exe" -Algorithm SHA256).Hash
           echo "hash=$hash" >> $env:GITHUB_OUTPUT
           echo "Installer SHA256: $hash"
 
@@ -123,7 +123,7 @@ jobs:
         run: |
           $v = "${{ steps.version.outputs.version }}"
           Push-Location "Output\publish"
-          & "C:\Program Files\7-Zip\7z.exe" a -y "..\BUtil_v${v}_win-binaries.7z" * -mx9 -t7z -m0=lzma2 -ms=on -sccUTF-8 -ssw
+          & "C:\Program Files\7-Zip\7z.exe" a -y "..\butil_${v}_windows_archive.7z" * -mx9 -t7z -m0=lzma2 -ms=on -sccUTF-8 -ssw
           if ($LASTEXITCODE -ne 0) { exit 1 }
           Pop-Location
 
@@ -146,8 +146,8 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           $v = "${{ steps.version.outputs.version }}"
-          gh release upload "${{ github.event.release.tag_name }}" "Output\BUtil_v$v.exe" --clobber
-          gh release upload "${{ github.event.release.tag_name }}" "Output\BUtil_v${v}_win-binaries.7z" --clobber
+          gh release upload "${{ github.event.release.tag_name }}" "Output\butil_${v}_windows_setup.exe" --clobber
+          gh release upload "${{ github.event.release.tag_name }}" "Output\butil_${v}_windows_archive.7z" --clobber
 
   update-apt-repo:
     needs: build-deb
