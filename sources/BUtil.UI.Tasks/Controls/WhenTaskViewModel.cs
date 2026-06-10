@@ -7,8 +7,9 @@ namespace BUtil.UI.Controls;
 
 public class WhenTaskViewModel : ObservableObject
 {
-    public WhenTaskViewModel(ScheduleInfo scheduleInfo)
+    public WhenTaskViewModel(ScheduleInfo scheduleInfo, bool isExpanded = false)
     {
+        IsExpanded = isExpanded;
         Monday = scheduleInfo.Days.Contains(System.DayOfWeek.Monday);
         Tuesday = scheduleInfo.Days.Contains(System.DayOfWeek.Tuesday);
         Wednesday = scheduleInfo.Days.Contains(System.DayOfWeek.Wednesday);
@@ -20,6 +21,8 @@ public class WhenTaskViewModel : ObservableObject
         Minutes = scheduleInfo.Time.Minutes;
         RunAtLogin = scheduleInfo.RunAtLogin;
     }
+
+    public bool IsExpanded { get; }
 
     public ScheduleInfo GetScheduleInfo()
     {

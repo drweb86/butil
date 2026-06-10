@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="BUtil.UI.Controls.WhatTaskView"
 			 x:DataType="cvm:WhatTaskViewModel">
-	<Expander HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
+	<Expander HorizontalAlignment="Stretch" IsExpanded="{Binding IsExpanded}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
 		<Expander.Header>
 			<StackPanel Orientation="Horizontal">
 				<Image Width="16" Height="16" Source="avares://BUtil.UI/Assets/CrystalProject_EveraldoCoelho_SourceItems48x48.png" VerticalAlignment="Center" />
@@ -70,7 +70,7 @@
 					</DataTemplate>
 				</ListBox.ItemTemplate>
 			</ListBox>
-			<Expander Margin="0 8 0 8" HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+			<Expander Margin="0 8 0 8" HorizontalAlignment="Stretch" IsExpanded="{Binding IsExpanded}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 				<Expander.Header>
 					<TextBlock Text="{Binding StorageItem_ExcludePattern_ExpanderHeader}" VerticalAlignment="Center" />
 				</Expander.Header>

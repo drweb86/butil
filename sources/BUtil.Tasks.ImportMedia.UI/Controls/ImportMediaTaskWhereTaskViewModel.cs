@@ -13,9 +13,11 @@ public class ImportMediaTaskWhereTaskViewModel : ObservableObject
         string outputFolder,
         bool skipAlreadyImportedFiles,
         string transformFileName,
-        DateTime? fileLastWriteTimeMin
+        DateTime? fileLastWriteTimeMin,
+        bool isExpanded = false
         )
     {
+        IsExpanded = isExpanded;
         OutputFolder = outputFolder;
         SkipAlreadyImportedFiles = skipAlreadyImportedFiles;
         TransformFileName = transformFileName;
@@ -31,6 +33,8 @@ public class ImportMediaTaskWhereTaskViewModel : ObservableObject
         ];
         _fileLastWriteTimeMin = fileLastWriteTimeMin;
     }
+
+    public bool IsExpanded { get; }
 
     private readonly string[] _transformFileNames;
 

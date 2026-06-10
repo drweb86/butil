@@ -1,4 +1,15 @@
-﻿# 2026.05.28
+﻿# 2026.06.10
+(unpublished)
+
+## New Features
+- UI: Start screen.
+
+## Changes
+- During create mode, tasks are expanded.
+- Renames for artifacts.
+- Some libraries were updated.
+
+# 2026.05.28
 
 ## New Features
 - Console: When application is launched without parameters, its possible to use execute tasks interactively.

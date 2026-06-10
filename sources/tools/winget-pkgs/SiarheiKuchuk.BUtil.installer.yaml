@@ -13,7 +13,7 @@ UpgradeBehavior: uninstallPrevious
 ProductCode: BUtil_is1
 ReleaseDate: 2001-01-01
 Installers:
-- InstallerUrl: https://github.com/drweb86/butil/releases/download/APP_VERSION_STRING/BUtil_vAPP_VERSION_STRING.exe
+- InstallerUrl: https://github.com/drweb86/butil/releases/download/APP_VERSION_STRING/butil_APP_VERSION_STRING_windows_setup.exe
   Platform:
     - Windows.Desktop
   Architecture: arm64
@@ -21,7 +21,7 @@ Installers:
   Scope: user
   InstallerSwitches:
     Custom: /CLOSEAPPLICATIONS /CURRENTUSER /S
-- InstallerUrl: https://github.com/drweb86/butil/releases/download/APP_VERSION_STRING/BUtil_vAPP_VERSION_STRING.exe
+- InstallerUrl: https://github.com/drweb86/butil/releases/download/APP_VERSION_STRING/butil_APP_VERSION_STRING_windows_setup.exe
   Platform:
     - Windows.Desktop
   Architecture: arm64
@@ -30,7 +30,7 @@ Installers:
   InstallerSwitches:
     Custom: /CLOSEAPPLICATIONS /ALLUSERS /S
   ElevationRequirement: elevationRequired
-- InstallerUrl: https://github.com/drweb86/butil/releases/download/APP_VERSION_STRING/BUtil_vAPP_VERSION_STRING.exe
+- InstallerUrl: https://github.com/drweb86/butil/releases/download/APP_VERSION_STRING/butil_APP_VERSION_STRING_windows_setup.exe
   Platform:
     - Windows.Desktop
   Architecture: x64
@@ -38,7 +38,7 @@ Installers:
   Scope: user
   InstallerSwitches:
     Custom: /CLOSEAPPLICATIONS /CURRENTUSER /S
-- InstallerUrl: https://github.com/drweb86/butil/releases/download/APP_VERSION_STRING/BUtil_vAPP_VERSION_STRING.exe
+- InstallerUrl: https://github.com/drweb86/butil/releases/download/APP_VERSION_STRING/butil_APP_VERSION_STRING_windows_setup.exe
   Platform:
     - Windows.Desktop
   Architecture: x64

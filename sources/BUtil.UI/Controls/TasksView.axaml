@@ -28,6 +28,7 @@
 
 		<ScrollViewer
 			Grid.Row="0"
+			IsVisible="{Binding !IsStartScreenVisible}"
 			ScrollViewer.VerticalScrollBarVisibility="Visible"
 			ScrollViewer.HorizontalScrollBarVisibility="Disabled"
 			>
@@ -42,5 +43,26 @@
 				</ItemsRepeater.ItemTemplate>
 			</ItemsRepeater>
 		</ScrollViewer>
+
+		<StackPanel
+			Grid.Row="0"
+			IsVisible="{Binding IsStartScreenVisible}"
+			HorizontalAlignment="Center"
+			VerticalAlignment="Center"
+			Spacing="12">
+			<TextBlock Text="{Binding Task_Create}" />
+			<ItemsControl ItemsSource="{Binding TaskCreateStartActions}">
+				<ItemsControl.ItemTemplate>
+					<DataTemplate x:DataType="vm:TaskStartActionViewModel">
+						<HyperlinkButton Command="{Binding Command}">
+							<TextBlock Text="{Binding Header}" />
+						</HyperlinkButton>
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ItemsControl>
+			<HyperlinkButton Command="{Binding RestoreStartAction.Command}">
+				<TextBlock Text="{Binding RestoreStartAction.Header}" />
+			</HyperlinkButton>
+		</StackPanel>
 	</Grid>
 </UserControl>

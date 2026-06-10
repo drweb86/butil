@@ -31,12 +31,12 @@ public class EditSynchronizationTaskViewModel : BUtil.UI.Controls.ViewModelBase
         TaskIdentityViewModel = new TaskIdentityViewModel(isNew, task.Model, task.Name);
         SetWindowTitleForEdit(taskName, isNew);
         var model = (SynchronizationTaskModelOptionsV2)task.Model;
-        EncryptionTaskViewModel = new BUtil.UI.Controls.EncryptionTaskViewModel(model.Password, isNew, !isNew);
+        EncryptionTaskViewModel = new BUtil.UI.Controls.EncryptionTaskViewModel(model.Password, isNew, !isNew, isNew);
 
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
-        WhenTaskViewModel = new BUtil.UI.Controls.WhenTaskViewModel(isNew ? new ScheduleInfo() { Time = new System.TimeSpan(Constants.DefaultHours, Constants.DefaultMinutes, 0), Days = [System.DayOfWeek.Monday, System.DayOfWeek.Tuesday, System.DayOfWeek.Wednesday, System.DayOfWeek.Thursday, System.DayOfWeek.Friday, System.DayOfWeek.Saturday, System.DayOfWeek.Sunday] } : schedule.GetSchedule(taskName) ?? new ScheduleInfo());
-        StorageViewModel = new BUtil.UI.Controls.StorageViewModel(model.To, Resources.LeftMenu_Where, "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png");
-        What = new BUtil.UI.Controls.SynchronizationWhatViewModel(model.LocalFolder, model.SynchronizationMode);
+        WhenTaskViewModel = new BUtil.UI.Controls.WhenTaskViewModel(isNew ? new ScheduleInfo() { Time = new System.TimeSpan(Constants.DefaultHours, Constants.DefaultMinutes, 0), Days = [System.DayOfWeek.Monday, System.DayOfWeek.Tuesday, System.DayOfWeek.Wednesday, System.DayOfWeek.Thursday, System.DayOfWeek.Friday, System.DayOfWeek.Saturday, System.DayOfWeek.Sunday] } : schedule.GetSchedule(taskName) ?? new ScheduleInfo(), isNew);
+        StorageViewModel = new BUtil.UI.Controls.StorageViewModel(model.To, Resources.LeftMenu_Where, "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png", isNew);
+        What = new BUtil.UI.Controls.SynchronizationWhatViewModel(model.LocalFolder, model.SynchronizationMode, isNew);
     }
 
     public bool IsNew { get; set; }

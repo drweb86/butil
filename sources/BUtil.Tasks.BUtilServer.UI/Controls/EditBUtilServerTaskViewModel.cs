@@ -32,8 +32,8 @@ public class EditBUtilServerTaskViewModel : BUtil.UI.Controls.ViewModelBase
         SetWindowTitleForEdit(taskName, isNew);
         var model = (BUtilServerModelOptionsV2)task.Model;
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
-        WhenTaskViewModel = new BUtil.UI.Controls.WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule.GetSchedule(taskName) ?? new ScheduleInfo());
-        FolderAndPortSectionViewModel = new BUtil.UI.Controls.FolderAndPortSectionViewModel(model.Port, model.Username, model.Password, model.Folder, model.DurationMinutes);
+        WhenTaskViewModel = new BUtil.UI.Controls.WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule.GetSchedule(taskName) ?? new ScheduleInfo(), isNew);
+        FolderAndPortSectionViewModel = new BUtil.UI.Controls.FolderAndPortSectionViewModel(model.Port, model.Username, model.Password, model.Folder, model.DurationMinutes, isNew);
     }
 
     public bool IsNew { get; set; }

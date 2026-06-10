@@ -32,10 +32,10 @@ public class EditBUtilServerClientTaskViewModel : BUtil.UI.Controls.ViewModelBas
         var model = (BUtilClientModelOptionsV2)task.Model;
 
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
-        WhenTaskViewModel = new BUtil.UI.Controls.WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule.GetSchedule(taskName) ?? new ScheduleInfo());
+        WhenTaskViewModel = new BUtil.UI.Controls.WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule.GetSchedule(taskName) ?? new ScheduleInfo(), isNew);
 
-        FolderSectionViewModel = new BUtil.UI.Controls.FolderSectionViewModel(model.Folder);
-        StorageViewModel = new BUtil.UI.Controls.StorageViewModel(model.To, Resources.LeftMenu_Where, "/Assets/CrystalProject_EveraldoCoelho_SourceItems48x48.png");
+        FolderSectionViewModel = new BUtil.UI.Controls.FolderSectionViewModel(model.Folder, isNew);
+        StorageViewModel = new BUtil.UI.Controls.StorageViewModel(model.To, Resources.LeftMenu_Where, "/Assets/CrystalProject_EveraldoCoelho_SourceItems48x48.png", isNew);
     }
 
     public bool IsNew { get; set; }

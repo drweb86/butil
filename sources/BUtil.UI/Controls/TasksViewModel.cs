@@ -5,14 +5,22 @@ using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Logs;
 using BUtil.Interop.Logs;
+using BUtil.Interop.Tasks.UI;
 using BUtil.Core.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Windows.Input;
 
 namespace BUtil.UI.Controls;
+
+public sealed class TaskStartActionViewModel(string header, ICommand command)
+{
+    public string Header { get; } = header;
+    public ICommand Command { get; } = command;
+}
 
 public class TasksViewModel : ViewModelBase
 {
@@ -54,8 +62,11 @@ public class TasksViewModel : ViewModelBase
                 return;
             _items = value;
             OnPropertyChanged(nameof(Items));
+            OnPropertyChanged(nameof(IsStartScreenVisible));
         }
     }
+
+    public bool IsStartScreenVisible => Items.Count == 0;
 
     private void ApplyFilter()
     {
@@ -67,6 +78,8 @@ public class TasksViewModel : ViewModelBase
         _items.Clear();
         foreach (var item in filtered)
             _items.Add(item);
+
+        OnPropertyChanged(nameof(IsStartScreenVisible));
     }
 
     #endregion
@@ -79,8 +92,15 @@ public class TasksViewModel : ViewModelBase
     #region Labels
     public static string Task_LastExecution_State => Resources.Task_LastExecution_State;
     public static string Task_Launch_Hint => Resources.Task_Launch_Hint;
+    public static string Task_Create => Resources.Task_Create;
+    public static string Task_Restore => Resources.Task_Restore;
 
     #endregion
+
+    public IReadOnlyList<TaskStartActionViewModel> TaskCreateStartActions { get; } = CreateTaskCreateStartActions();
+    public TaskStartActionViewModel RestoreStartAction { get; } = new(
+        Resources.Task_Restore,
+        new DelegateCommand(() => WindowManager.SwitchToRestorationView()));
 
     public void Initialize()
     {
@@ -119,5 +139,27 @@ public class TasksViewModel : ViewModelBase
         }
 
         ApplyFilter();
+    }
+
+    private static IReadOnlyList<TaskStartActionViewModel> CreateTaskCreateStartActions()
+    {
+        return TaskUIProviderRegistry.GetCreateMenuRegistrations()
+            .Select(e => new TaskStartActionViewModel(
+                e.Header,
+                new DelegateCommand(() => WindowManager.SwitchToCreateTaskView(e.ModelType))))
+            .ToList();
+    }
+
+    private sealed class DelegateCommand(Action execute) : ICommand
+    {
+        public event EventHandler? CanExecuteChanged
+        {
+            add { }
+            remove { }
+        }
+
+        public bool CanExecute(object? parameter) => true;
+
+        public void Execute(object? parameter) => execute();
     }
 }

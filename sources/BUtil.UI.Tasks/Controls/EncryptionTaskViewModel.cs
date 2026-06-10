@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 
 namespace BUtil.UI.Controls;
 
-public class EncryptionTaskViewModel(string password, bool isPasswordCreateMode = true, bool isReadonly = false) : ObservableObject
+public class EncryptionTaskViewModel(string password, bool isPasswordCreateMode = true, bool isReadonly = false, bool isExpanded = false) : ObservableObject
 {
     public void PasswordGenerateCommand()
     {
@@ -71,6 +71,7 @@ public class EncryptionTaskViewModel(string password, bool isPasswordCreateMode 
 
     public bool IsPasswordCreateMode { get; } = isPasswordCreateMode;
     public bool IsReadonly { get; } = isReadonly;
+    public bool IsExpanded { get; } = isExpanded;
 
     #endregion
 }

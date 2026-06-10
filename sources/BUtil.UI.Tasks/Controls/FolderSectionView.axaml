@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="BUtil.UI.Controls.FolderSectionView"
 			 x:DataType="cvm:FolderSectionViewModel">
-	<Expander HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
+	<Expander HorizontalAlignment="Stretch" IsExpanded="{Binding IsExpanded}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
 		<Expander.Header>
 			<StackPanel Orientation="Horizontal">
 				<Image Width="16" Height="16" Source="avares://BUtil.UI/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png" VerticalAlignment="Center" />

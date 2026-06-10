@@ -73,7 +73,7 @@ Var StartMenuFolder
 
 ; Installer attributes
 Name "${PRODUCT_NAME} ${PRODUCT_VERSION}"
-OutFile "..\Output\BUtil_v${PRODUCT_VERSION}.exe"
+OutFile "..\Output\butil_${PRODUCT_VERSION}_windows_setup.exe"
 InstallDir "$PROGRAMFILES\${PRODUCT_NAME}"
 ShowInstDetails show
 ShowUnInstDetails show

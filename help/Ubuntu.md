@@ -41,14 +41,14 @@ User configuration in `~/.config/BUtil` is preserved after uninstall. Remove it 
 Download the `.deb` file for your architecture from the [latest release](https://github.com/drweb86/butil/releases/latest) and install:
 
 ```
-sudo dpkg -i butil_*_amd64.deb
+sudo dpkg -i butil_*_linux_amd64.deb
 sudo apt-get install -f
 ```
 
 For ARM64:
 
 ```
-sudo dpkg -i butil_*_arm64.deb
+sudo dpkg -i butil_*_linux_arm64.deb
 sudo apt-get install -f
 ```
 

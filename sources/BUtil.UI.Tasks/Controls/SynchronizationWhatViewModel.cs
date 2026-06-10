@@ -8,11 +8,15 @@ public class SynchronizationWhatViewModel : ObservableObject
 {
     public SynchronizationWhatViewModel(
         string folder,
-        SynchronizationTaskModelMode synchronizationMode)
+        SynchronizationTaskModelMode synchronizationMode,
+        bool isExpanded = false)
     {
+        IsExpanded = isExpanded;
         Folder = folder;
         SynchronizationMode = synchronizationMode;
     }
+
+    public bool IsExpanded { get; }
 
     #region Labels
     public static string LeftMenu_What => Resources.LeftMenu_What;

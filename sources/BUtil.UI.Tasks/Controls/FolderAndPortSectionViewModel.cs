@@ -6,14 +6,17 @@ namespace BUtil.UI.Controls;
 
 public class FolderAndPortSectionViewModel : ObservableObject
 {
-    public FolderAndPortSectionViewModel(int port, string ftpsUser, string ftpsPassword, string folder, long durationMinutes)
+    public FolderAndPortSectionViewModel(int port, string ftpsUser, string ftpsPassword, string folder, long durationMinutes, bool isExpanded = false)
     {
+        IsExpanded = isExpanded;
         Port = port;
         FtpsUser = ftpsUser;
         FtpsPassword = ftpsPassword;
         Folder = folder;
         DurationMinutes = durationMinutes;
     }
+
+    public bool IsExpanded { get; }
 
     #region Labels
     public static string LeftMenu_What => Resources.LeftMenu_What;

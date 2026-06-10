@@ -5,10 +5,13 @@ namespace BUtil.UI.Controls;
 
 public class FolderSectionViewModel : ObservableObject
 {
-    public FolderSectionViewModel(string folder)
+    public FolderSectionViewModel(string folder, bool isExpanded = false)
     {
+        IsExpanded = isExpanded;
         Folder = folder;
     }
+
+    public bool IsExpanded { get; }
 
     #region Labels
     public static string LeftMenu_What => Resources.LeftMenu_What;

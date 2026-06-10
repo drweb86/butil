@@ -17,11 +17,15 @@ public class WhatTaskViewModel : ObservableObject
 
     public WhatTaskViewModel(
         List<SourceItemV2> items,
-        List<string> fileExcludePatterns)
+        List<string> fileExcludePatterns,
+        bool isExpanded = false)
     {
+        IsExpanded = isExpanded;
         items.ForEach(x => _items.Add(new SourceItemV2ViewModel(x.Id, x.Target, x.IsFolder, _items)));
         FileExcludePatterns = string.Join(Environment.NewLine, fileExcludePatterns);
     }
+
+    public bool IsExpanded { get; }
 
     public void AddFolder(string path)
     {

@@ -32,8 +32,9 @@ public sealed class StorageProviderItem
 
 public class StorageViewModel : ObservableObject
 {
-    public StorageViewModel(IStorageSettingsV2 storageSettings, string title, string iconUrl)
+    public StorageViewModel(IStorageSettingsV2 storageSettings, string title, string iconUrl, bool isExpanded = false)
     {
+        IsExpanded = isExpanded;
         Title = title;
         IconSource = LoadFromResource(new Uri("avares://BUtil.UI" + iconUrl));
 
@@ -116,6 +117,7 @@ public class StorageViewModel : ObservableObject
 
     public string Title { get; }
     public Bitmap? IconSource { get; }
+    public bool IsExpanded { get; }
     public bool CanLaunchScripts { get; } = PlatformSpecificExperience.Instance.SupportManager.CanLaunchScripts;
     public ObservableCollection<StorageProviderItem> Providers { get; }
     public ObservableCollection<StorageFieldViewModel> Fields { get; } = [];
