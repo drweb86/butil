@@ -113,8 +113,7 @@ class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
 
         if (_autodetectConnectionSettings)
         {
-            if (string.IsNullOrWhiteSpace(Settings.TrustedCertificate))
-                Settings.TrustedCertificate = receivedCertificate;
+            Settings.TrustedCertificate = receivedCertificate;
             Log.WriteLine(LoggingEvent.Error, $"FTPS server certificate (raw hex): {receivedCertificate}");
             Log.WriteLine(LoggingEvent.Error, "Certificate has been filled in the UI. Verify it out-of-band and click Save if trusted.");
         }
