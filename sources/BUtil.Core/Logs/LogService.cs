@@ -86,6 +86,31 @@ public class LogService
         }
     }
 
+    /// <summary>Moves logs from a previous root while preserving task subfolders and other relative paths.</summary>
+    public static void MigrateLogsRoot(string sourceLogsRoot)
+    {
+        if (!Directory.Exists(sourceLogsRoot))
+            return;
+
+        var sourceRoot = Path.GetFullPath(sourceLogsRoot);
+        var destinationRoot = Path.GetFullPath(Directories.LogsFolder);
+        if (sourceRoot.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar).Cmp(
+                destinationRoot.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar)))
+            return;
+
+        foreach (var path in Directory.GetFiles(sourceRoot, "*", SearchOption.AllDirectories))
+        {
+            var relativePath = Path.GetRelativePath(sourceRoot, path);
+            var destination = Path.Combine(destinationRoot, relativePath);
+            FileHelper.EnsureFolderCreatedForFile(destination);
+            if (File.Exists(destination))
+                File.Delete(destination);
+            File.Move(path, destination);
+        }
+
+        DeleteEmptyDirectories(sourceRoot);
+    }
+
     private static IEnumerable<string> EnumerateLogFiles()
     {
         if (!Directory.Exists(Directories.LogsFolder))
@@ -126,6 +151,19 @@ public class LogService
         if (File.Exists(newFile))
             File.Delete(newFile);
         File.Move(oldFile, newFile);
+    }
+
+    private static void DeleteEmptyDirectories(string root)
+    {
+        foreach (var directory in Directory.GetDirectories(root, "*", SearchOption.AllDirectories)
+                     .OrderByDescending(x => x.Length))
+        {
+            if (!Directory.EnumerateFileSystemEntries(directory).Any())
+                Directory.Delete(directory);
+        }
+
+        if (Directory.Exists(root) && !Directory.EnumerateFileSystemEntries(root).Any())
+            Directory.Delete(root);
     }
 
     private static LogFileInfo ParseFileName(string logFileName)

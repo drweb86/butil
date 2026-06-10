@@ -70,6 +70,39 @@ public class LogServiceFolderTests
     }
 
     [TestMethod]
+    public void MigrateLogsRoot_PreservesSubfolders()
+    {
+        var sourceRoot = Path.Combine(Path.GetTempPath(), "butil-log-root-migrate-" + Guid.NewGuid().ToString("N"));
+        var taskFolder = "task_" + Guid.NewGuid().ToString("N");
+        var fileName = "migrated-log.txt";
+        var sourceFile = Path.Combine(sourceRoot, taskFolder, fileName);
+        Directory.CreateDirectory(Path.GetDirectoryName(sourceFile)!);
+        File.WriteAllText(sourceFile, "log");
+
+        var destinationFile = Path.Combine(Directories.LogsFolder, taskFolder, fileName);
+        try
+        {
+            if (File.Exists(destinationFile))
+                File.Delete(destinationFile);
+
+            LogService.MigrateLogsRoot(sourceRoot);
+
+            Assert.IsFalse(File.Exists(sourceFile));
+            Assert.IsTrue(File.Exists(destinationFile));
+            Assert.AreEqual("log", File.ReadAllText(destinationFile));
+        }
+        finally
+        {
+            if (Directory.Exists(sourceRoot))
+                Directory.Delete(sourceRoot, recursive: true);
+
+            var destinationTaskFolder = Path.Combine(Directories.LogsFolder, taskFolder);
+            if (Directory.Exists(destinationTaskFolder))
+                Directory.Delete(destinationTaskFolder, recursive: true);
+        }
+    }
+
+    [TestMethod]
     public void GetRecentLogs_FindsLogsInTaskSubfolders()
     {
         var taskName = "recent-logs-" + Guid.NewGuid().ToString("N");

@@ -8,6 +8,10 @@
 - During create mode, tasks are expanded.
 - Renames for artifacts.
 - Some libraries were updated.
+- Logs are moved to %localappdata%\BUtil\logs\v4. It appeared that Windows cleans temp folder within 10 days.
+
+## Bug Fixes
+- FTPS Self-signed certificate acceptance did not work for edit mode for expired certificate.
 
 # 2026.05.28
 

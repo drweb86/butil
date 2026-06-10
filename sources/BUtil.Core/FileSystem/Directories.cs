@@ -10,6 +10,7 @@ public static class Directories
     private static readonly string _assembly = Assembly.GetExecutingAssembly().Location;
     private static readonly string _binariesDir = Path.GetDirectoryName(_assembly) ?? throw new DirectoryNotFoundException("binaries");
     private static readonly string _applicationDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+    private static readonly string _localApplicationDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
 
 #if DEBUG
     private static readonly string _userDataFolder = Path.Combine(_applicationDataFolder, "BUtil-Development");
@@ -41,6 +42,9 @@ public static class Directories
 
     public static string LogsFolder { get; }
 
+    /// <summary>Previous logs location under temp folder.</summary>
+    public static string TempLogsFolder { get; }
+
     /// <summary>Previous logs location under application data (pre temp/task-folder layout).</summary>
     public static string LegacyLogsFolder { get; }
 
@@ -55,7 +59,8 @@ public static class Directories
 #else
         var logsAppFolder = "BUtil";
 #endif
-        LogsFolder = Path.Combine(TempFolder, logsAppFolder, "logs");
+        TempLogsFolder = Path.Combine(TempFolder, logsAppFolder, "logs");
+        LogsFolder = Path.Combine(_localApplicationDataFolder, logsAppFolder, "logs", "v4");
         FileHelper.EnsureFolderCreated(LogsFolder);
         FileHelper.EnsureFolderCreated(StateFolder);
 #if DEBUG
