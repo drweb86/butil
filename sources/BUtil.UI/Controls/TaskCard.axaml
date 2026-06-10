@@ -27,16 +27,23 @@
 			VerticalAlignment="Stretch"
 			HorizontalAlignment="Stretch"
 			MaxWidth="{Binding $parent.Bounds.Width}">
-			<Grid ColumnDefinitions="*,Auto">
-				<TextBlock Grid.Column="0"
-					Margin="12 0 0 0"
-					Text="{Binding Path=Name}"
-					Foreground="{Binding ForegroundWindowFontAccented}"
-					TextWrapping="Wrap"
-					FontSize="16"
+			<Grid ColumnDefinitions="*,Auto" Margin="0 0 0 8">
+				<Button
+					Grid.Column="0"
+					Margin="12 3 0 0"
+					Padding="0"
+					Background="Transparent"
+					BorderThickness="0"
+					HorizontalAlignment="Left"
 					VerticalAlignment="Center"
-				/>
-				<Menu Grid.Column="1" VerticalAlignment="Top">
+					Command="{Binding TaskEditCommand}"
+					ToolTip.Tip="{Binding Task_Edit}">
+					<TextBlock
+						Text="{Binding Path=Name}"
+						Foreground="{Binding ForegroundWindowFontAccented}"
+						TextWrapping="Wrap" />
+				</Button>
+				<Menu Grid.Column="1" VerticalAlignment="Center" Margin="0 0 0 0">
 					<MenuItem Header="⁝">
 					<MenuItem Header="{Binding Task_Edit}" Command="{Binding TaskEditCommand}">
 						<MenuItem.Icon>
@@ -69,6 +76,7 @@
 
 			<HyperlinkButton
 				Command="{Binding OpenLogCommand}"
+				IsVisible="{Binding HasLog}"
 				ToolTip.Tip="{Binding Path=OpenLogTooltip}">
 				<TextBlock
 					Text="{Binding Path=LastLaunchedAt}"
@@ -76,7 +84,7 @@
 					TextWrapping="Wrap"
 				/>
 			</HyperlinkButton>
-
+			
 			<Button
 				Background="Transparent"
 				BorderBrush="{Binding Foreground}"

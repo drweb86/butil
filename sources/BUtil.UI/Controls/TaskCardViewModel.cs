@@ -11,6 +11,7 @@ using BUtil.Core.State;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace BUtil.UI.Controls;
@@ -24,7 +25,7 @@ public class TaskCardViewModel(
     Action? reloadTasks = null) : ObservableObject
 {
     private readonly ObservableCollection<TaskCardViewModel> _items = items;
-    private readonly string? _logFilePath = logFilePath;
+    private readonly string? _logFilePath = File.Exists(logFilePath) ? logFilePath : null;
     private readonly Action? _reloadTasks = reloadTasks;
 
     public string Name { get; } = name;
