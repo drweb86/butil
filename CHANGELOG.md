@@ -3,9 +3,11 @@
 
 ## New Features
 - UI: Start screen.
+- Import media: optional deletion of successfully copied source media files.
 
 ## Changes
 - During create mode, tasks are expanded.
+- Scheduler options are grouped into separate panels for timed schedules and launch-at-login.
 - Renames for artifacts.
 - Some libraries were updated.
 - Logs are moved to %localappdata%\BUtil\logs\v4. It appeared that Windows cleans temp folder within 10 days.

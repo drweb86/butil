@@ -369,6 +369,9 @@
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Παράλειψη ήδη εισαγμένων αρχείων</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Διαγραφή αντιγραμμένων δεδομένων από το μέσο προέλευσης</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Παρουσιάστηκε απροσδόκητο σφάλμα.
 

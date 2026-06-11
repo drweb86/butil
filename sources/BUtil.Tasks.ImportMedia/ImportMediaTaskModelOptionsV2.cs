@@ -11,6 +11,7 @@ public class ImportMediaTaskModelOptionsV2 : ITaskModelOptionsV2
     public IStorageSettingsV2 From { get; set; } = new FolderStorageSettingsV2();
     public string DestinationFolder { get; set; } = PlatformSpecificExperience.Instance.GetFolderService().GetDefaultMediaImportFolder();
     public bool SkipAlreadyImportedFiles { get; set; } = true;
+    public bool DeleteCopiedDataOnSourceMedia { get; set; }
 
     public DateTime? FileLastWriteTimeMin { get; set; }
 }

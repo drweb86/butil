@@ -369,6 +369,9 @@ Szczegóły konfiguracji transmisji plików przez WI-FI za pomocą aplikacji ser
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Pomiń już zaimportowane pliki</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Usuń skopiowane dane z nośnika źródłowego</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Wystąpił nieoczekiwany błąd.
 

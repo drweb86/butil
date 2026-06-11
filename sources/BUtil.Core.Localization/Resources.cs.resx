@@ -369,6 +369,9 @@ Podrobnosti o nastavení přenosu souborů přes WI-FI prostřednictvím aplikac
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Přeskočit již importované soubory</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Odstranit zkopírovaná data ze zdrojového média</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Došlo k neočekávané chybě.
 

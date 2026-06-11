@@ -939,6 +939,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete copied data on source media.
+        /// </summary>
+        public static string ImportMediaTask_DeleteCopiedDataOnSourceMedia {
+            get {
+                return ResourceManager.GetString("ImportMediaTask_DeleteCopiedDataOnSourceMedia", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Skip already imported files.
         /// </summary>
         public static string ImportMediaTask_SkipAlreadyImportedFiles {

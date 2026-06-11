@@ -12,6 +12,7 @@ public class ImportMediaTaskWhereTaskViewModel : ObservableObject
     public ImportMediaTaskWhereTaskViewModel(
         string outputFolder,
         bool skipAlreadyImportedFiles,
+        bool deleteCopiedDataOnSourceMedia,
         string transformFileName,
         DateTime? fileLastWriteTimeMin,
         bool isExpanded = false
@@ -20,6 +21,7 @@ public class ImportMediaTaskWhereTaskViewModel : ObservableObject
         IsExpanded = isExpanded;
         OutputFolder = outputFolder;
         SkipAlreadyImportedFiles = skipAlreadyImportedFiles;
+        DeleteCopiedDataOnSourceMedia = deleteCopiedDataOnSourceMedia;
         TransformFileName = transformFileName;
         _transformFileNames =
         [
@@ -45,6 +47,7 @@ public class ImportMediaTaskWhereTaskViewModel : ObservableObject
     public static string ImportMediaTask_Field_OutputFolder => Resources.ImportMediaTask_Field_OutputFolder;
     public static string Field_Folder_Browse => Resources.Field_Folder_Browse;
     public static string ImportMediaTask_SkipAlreadyImportedFiles => Resources.ImportMediaTask_SkipAlreadyImportedFiles;
+    public static string ImportMediaTask_DeleteCopiedDataOnSourceMedia => Resources.ImportMediaTask_DeleteCopiedDataOnSourceMedia;
     public static string ImportMediaTask_Field_TransformFileName_Example => Resources.ImportMediaTask_Field_TransformFileName_Example;
     public static string ImportMediaTask_Field_TransformFileName => Resources.ImportMediaTask_Field_TransformFileName;
     public static string ImportMediaTask_Field_TransformFileName_Help => Resources.ImportMediaTask_Field_TransformFileName_Help;
@@ -132,6 +135,23 @@ public class ImportMediaTaskWhereTaskViewModel : ObservableObject
             if (value == _skipAlreadyImportedFiles) return;
             _skipAlreadyImportedFiles = value;
             OnPropertyChanged(nameof(SkipAlreadyImportedFiles));
+        }
+    }
+
+    #endregion
+
+    #region DeleteCopiedDataOnSourceMedia
+
+    private bool _deleteCopiedDataOnSourceMedia;
+
+    public bool DeleteCopiedDataOnSourceMedia
+    {
+        get { return _deleteCopiedDataOnSourceMedia; }
+        set
+        {
+            if (value == _deleteCopiedDataOnSourceMedia) return;
+            _deleteCopiedDataOnSourceMedia = value;
+            OnPropertyChanged(nameof(DeleteCopiedDataOnSourceMedia));
         }
     }
 

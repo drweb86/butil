@@ -369,6 +369,9 @@
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>تخطي الملفات التي تم استيرادها بالفعل</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>حذف البيانات المنسوخة من وسيط المصدر</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>حدث خطأ غير متوقع.
 

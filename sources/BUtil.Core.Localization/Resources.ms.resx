@@ -369,6 +369,9 @@ Lihat laman web aplikasi untuk dokumentasi tentang cara menyediakan pemindahan f
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Langkau fail yang telah diimport</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Padam data yang disalin daripada media sumber</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Ralat tidak dijangka berlaku.
 

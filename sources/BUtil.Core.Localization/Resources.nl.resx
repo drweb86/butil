@@ -369,6 +369,9 @@ Zie de website van de toepassing voor documentatie over het instellen van bestan
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Reeds geïmporteerde bestanden overslaan</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Gekopieerde gegevens van bronmedium verwijderen</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Er is een onverwachte fout opgetreden.
 

@@ -33,7 +33,10 @@
 			<TextBox Grid.Column="1" Grid.Row="0" Text="{Binding OutputFolder}" VerticalAlignment="Center" Margin="4 0 4 0" />
 			<Button Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="0" Content="{Binding Field_Folder_Browse}" VerticalAlignment="Center" Click="BrowseCommand" />
 
-			<CheckBox IsChecked="{Binding SkipAlreadyImportedFiles}" Grid.ColumnSpan="4" Grid.Column="0" Grid.Row="1" Content="{Binding ImportMediaTask_SkipAlreadyImportedFiles}" />
+			<StackPanel Grid.ColumnSpan="4" Grid.Column="0" Grid.Row="1">
+				<CheckBox IsChecked="{Binding SkipAlreadyImportedFiles}" Content="{Binding ImportMediaTask_SkipAlreadyImportedFiles}" />
+				<CheckBox IsChecked="{Binding DeleteCopiedDataOnSourceMedia}" Content="{Binding ImportMediaTask_DeleteCopiedDataOnSourceMedia}" />
+			</StackPanel>
 
 			<TextBlock Grid.Column="0" Grid.Row="2" Text="{Binding File_LastWriteTime_Min_Field}" VerticalAlignment="Center" />
 			<DatePicker Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="2" Margin="4 4 4 4" SelectedDate="{Binding FileLastWriteTimeMin}"/>

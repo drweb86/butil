@@ -363,6 +363,9 @@
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>আগে আমদানি করা ফাইল উপেক্ষা করুন</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>উৎস মিডিয়া থেকে কপি করা ডেটা মুছুন</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>একটি অপ্রত্যাশিত ত্রুটি ঘটেছে।
 

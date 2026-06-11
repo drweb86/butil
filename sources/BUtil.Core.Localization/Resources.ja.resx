@@ -363,6 +363,9 @@
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>既にインポートされたファイルをスキップ</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>コピー済みデータをソースメディアから削除</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>予期しないエラーが発生しました。
 デスクトップに保存されている情報を開発者に連絡してください。

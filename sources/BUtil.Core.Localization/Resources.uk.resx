@@ -369,6 +369,9 @@
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Пропускати раніше імпортовані файли</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Видалити скопійовані дані з вихідного носія</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>У програмі виникла непередбачена помилка
 

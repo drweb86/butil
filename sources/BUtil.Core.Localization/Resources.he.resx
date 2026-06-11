@@ -369,6 +369,9 @@
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>דלג על קבצים שכבר יובאו</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>מחק נתונים שהועתקו ממדיית המקור</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>אירעה שגיאה בלתי צפויה.
 

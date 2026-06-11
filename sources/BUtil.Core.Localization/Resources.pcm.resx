@@ -366,6 +366,9 @@
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Skip files wey don already import</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Delete copied data from source media</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>One unexpected error occur.
     

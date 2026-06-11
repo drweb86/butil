@@ -369,6 +369,9 @@ Weitere Informationen zur Einrichtung der Dateiübertragung über WI-FI durch di
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Bereits importierte Dateien überspringen</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Kopierte Daten auf dem Quellmedium löschen</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Ein unerwarteter Fehler ist aufgetreten.
 

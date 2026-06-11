@@ -23,7 +23,7 @@ public static class ImportMediaTaskPlugin
                 if (destError != null)
                     return destError;
 
-                var sourceError = StorageFactory.Test(log, options.From, false);
+                var sourceError = StorageFactory.Test(log, options.From, writeMode && options.DeleteCopiedDataOnSourceMedia);
                 if (sourceError != null)
                     return sourceError;
 

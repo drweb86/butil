@@ -369,6 +369,9 @@ Pozrite si webovú stránku aplikácie pre dokumentáciu, ako nastaviť prenos s
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Preskočiť už importované súbory</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Odstrániť skopírované údaje zo zdrojového média</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Vyskytla sa neočakávaná chyba.
 

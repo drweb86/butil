@@ -366,6 +366,9 @@ Xem trang web ứng dụng để biết tài liệu về cách thiết lập tru
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Bỏ qua các tệp đã nhập trước đó</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Xóa dữ liệu đã sao chép khỏi phương tiện nguồn</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Đã xảy ra lỗi không mong muốn.
 

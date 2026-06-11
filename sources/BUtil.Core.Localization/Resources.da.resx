@@ -369,6 +369,9 @@ Se applikationens hjemmeside for dokumentation om opsætning af filoverførsel v
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Spring allerede importerede filer over</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Slet kopierede data på kildemediet</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Der opstod en uventet fejl.
 

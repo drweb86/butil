@@ -369,6 +369,9 @@ Skatiet lietotnes tīmekļa vietni dokumentācijai par failu pārsūtīšanas ie
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Izlaist jau importētus failus</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Dzēst nokopētos datus no avota datu nesēja</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Radās negaidīta kļūda.
 

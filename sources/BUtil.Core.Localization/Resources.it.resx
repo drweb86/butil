@@ -371,6 +371,9 @@ Consulta il sito web dell'applicazione per la documentazione su come impostare l
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Salta file già importati</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Elimina i dati copiati dal supporto di origine</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Si è verificato un errore imprevisto
 

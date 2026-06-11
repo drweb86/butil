@@ -369,6 +369,9 @@ Consultați site-ul web al aplicației pentru documentația despre cum să confi
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Omite fișierele deja importate</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Șterge datele copiate de pe mediul sursă</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>A apărut o eroare neașteptată.
 

@@ -369,6 +369,9 @@
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Прескочи већ увезене датотеке</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Избриши копиране податке са изворног медија</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Дошло је до неочекиване грешке.
 

@@ -369,6 +369,9 @@ Féach láithreán gréasáin an fheidhmchláir le haghaidh doiciméadú ar cona
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Léim ar chomhaid a iompórtáladh cheana</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Scrios sonraí cóipeáilte ón meán foinse</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Tharla earráid gan choinne.
 

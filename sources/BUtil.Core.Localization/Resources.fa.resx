@@ -369,6 +369,9 @@
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>رد کردن فایل‌های قبلاً وارد شده</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>حذف داده‌های کپی‌شده از رسانه مبدأ</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>خطای غیرمنتظره‌ای رخ داد.
 

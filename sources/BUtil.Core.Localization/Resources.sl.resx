@@ -369,6 +369,9 @@ Glejte spletno stran aplikacije za dokumentacijo o nastavitvi prenosa datotek pr
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Preskoči že uvožene datoteke</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Izbriši kopirane podatke z izvornega medija</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Prišlo je do nepričakovane napake.
 

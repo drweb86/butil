@@ -369,6 +369,9 @@ Vidu aplikaĵon retejon por dokumentado kiel agordi dosiertranssendon per WI-FI 
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Saltu jam importitajn dosierojn</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Forigi kopiitajn datumojn de la fonta datumportilo</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Neatendita eraro okazis.
 

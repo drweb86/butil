@@ -369,6 +369,9 @@ Consulteu el lloc web de l'aplicació per obtenir informació sobre com configur
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Omet els fitxers ja importats</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Suprimeix les dades copiades del suport d&apos;origen</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>S'ha produït un error inesperat.
 

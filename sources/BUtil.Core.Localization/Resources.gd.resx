@@ -369,6 +369,9 @@ Faic làrach-lìn an tagraidh airson sgrìobhainnean mar a shuidhicheas tu tar-c
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Thoir leum air faidhlichean a chaidh a thoirt a-steach mu thràth</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Sguab às dàta a chaidh a chopaigeadh bhon mheadhan thùsail</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Thachair mearachd ris nach robh dùil.
 

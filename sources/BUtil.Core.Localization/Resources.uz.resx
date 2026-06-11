@@ -369,6 +369,9 @@ Telefondagi FTP Server ilovasi orqali WI-FI bo'yicha fayl uzatishni sozlash bo'y
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Allaqachon import qilingan fayllarni o'tkazib yuborish</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Nusxalangan ma&apos;lumotlarni manba mediadan o&apos;chirish</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Kutilmagan xatolik yuz berdi.
 

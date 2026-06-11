@@ -369,6 +369,9 @@
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>უკვე იმპორტირებული ფაილების გამოტოვება</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>კოპირებული მონაცემების წაშლა საწყისი მედიიდან</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>მოულოდნელი შეცდომა მოხდა.
 

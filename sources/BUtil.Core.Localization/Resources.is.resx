@@ -369,6 +369,9 @@ Sjá vefsíðu forritsins fyrir leiðbeiningar um hvernig á að setja upp skrá
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Sleppa þegar innfluttum skrám</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Eyða afrituðum gögnum af upprunamiðli</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Óvænt villa kom upp.
 

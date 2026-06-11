@@ -369,6 +369,9 @@ Vaadake rakenduse veebisaidilt juhiseid, kuidas seadistada failiedastust WI-FI k
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Jäta juba imporditud failid vahele</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Kustuta kopeeritud andmed lähtekandjalt</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Ilmnes ootamatu viga.
 

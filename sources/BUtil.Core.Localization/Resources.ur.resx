@@ -362,6 +362,9 @@
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>پہلے سے درآمد شدہ فائلوں کو چھوڑ دیں</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>ماخذ میڈیا سے کاپی شدہ ڈیٹا حذف کریں</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>ایک غیر متوقع غلطی پیش آئی۔
   برائے مہربانی اپنے ڈیسک ٹاپ پر محفوظ معلومات کے ساتھ ڈویلپرز سے رابطہ کریں

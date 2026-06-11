@@ -366,6 +366,9 @@
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Lewati file yang sudah diimpor</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Hapus data yang disalin dari media sumber</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Terjadi kesalahan yang tidak terduga.
     

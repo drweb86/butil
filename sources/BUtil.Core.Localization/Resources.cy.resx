@@ -369,6 +369,9 @@ Gweler gwefan y cais am ddogfennaeth sut i osod trosglwyddiad ffeil trwy WI-FI t
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Hepgor ffeiliau sydd eisoes wedi'u mewnforio</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Dileu data a gopïwyd o&apos;r cyfrwng ffynhonnell</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Digwyddodd gwall annisgwyl.
 

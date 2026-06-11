@@ -369,6 +369,9 @@ Consulta el sitio web de la aplicación para obtener documentación sobre cómo 
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Omitir archivos ya importados</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Eliminar los datos copiados del medio de origen</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Ocurrió un error inesperado.
 

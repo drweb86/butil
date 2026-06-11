@@ -369,6 +369,9 @@
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Аль хэдийн импортлогдсон файлуудыг алгасах</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Эх медиа дээрх хуулсан өгөгдлийг устгах</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Тодорхойгүй алдаа гарлаа.
 

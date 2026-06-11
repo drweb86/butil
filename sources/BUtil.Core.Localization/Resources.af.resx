@@ -369,6 +369,9 @@ Sien toepassingswebwerf vir dokumentasie hoe om lêerversending via WI-FI deur F
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Slaan reeds ingevoerde lêers oor</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Verwyder gekopieerde data op bronmedia</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>'n Onverwagte fout het voorgekom.
 

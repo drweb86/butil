@@ -369,6 +369,9 @@
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Բաց թողնել արդեն ներմուծված ֆայլերը</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Ջնջել պատճենված տվյալները աղբյուր կրիչից</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Տեղի ունեցավ անսպասելի սխալ:
 

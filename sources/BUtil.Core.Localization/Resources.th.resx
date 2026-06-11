@@ -369,6 +369,9 @@
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>ข้ามไฟล์ที่นำเข้าแล้ว</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>ลบข้อมูลที่คัดลอกแล้วออกจากสื่อต้นทาง</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>เกิดข้อผิดพลาดที่ไม่คาดคิด
 

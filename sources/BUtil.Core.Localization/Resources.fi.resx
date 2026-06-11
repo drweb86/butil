@@ -369,6 +369,9 @@ Katso sovelluksen verkkosivustolta ohjeet tiedostonsiirron määrittämiseen WI-
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Ohita jo tuodut tiedostot</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Poista kopioidut tiedot lähdemedialta</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Odottamaton virhe tapahtui.
 

@@ -369,6 +369,9 @@ Ji bo agahdariya li ser çawaniya sazkirina veguheztina pelan bi WI-FI bi serlê
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Pelên ku berê hatine hawirdkirin derbas bike</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Daneyên hatine kopîkirin ji medyaya çavkaniyê jê bibe</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Çewtiyek nediyar çêbû.
 

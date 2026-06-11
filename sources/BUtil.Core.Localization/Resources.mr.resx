@@ -366,6 +366,9 @@
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>आधीच आयात केलेल्या फाइल्स वगळा</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>स्रोत माध्यमावरील कॉपी केलेला डेटा हटवा</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>अनपेक्षित त्रुटी आली आहे.
     

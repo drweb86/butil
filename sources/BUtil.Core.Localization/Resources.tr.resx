@@ -366,6 +366,9 @@ Dosya iletimi için telefon üzerindeki FTP Sunucu uygulamasıyla WI-FI üzerind
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Daha önce içe aktarılan dosyaları atla</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Kopyalanan verileri kaynak medyadan sil</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Beklenmedik bir hata oluştu.
 

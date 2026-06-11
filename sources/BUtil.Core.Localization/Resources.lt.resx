@@ -369,6 +369,9 @@ Norėdami pamatyti visas parinktis, ieškokite „C# DateTime format".</value>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Praleisti jau importuotus failus</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Ištrinti nukopijuotus duomenis iš šaltinio laikmenos</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Įvyko netikėta klaida.
 

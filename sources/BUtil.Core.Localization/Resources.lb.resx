@@ -369,6 +369,9 @@ Kuckt d'Applikatioun Websäit fir Dokumentatioun wéi d'Dateiiwwerdroung iwwer W
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Iwwersprangen scho importéiert Dateien</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Kopéiert Daten vum Quellmedium läschen</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>En onerwaarte Feeler ass geschitt.
 

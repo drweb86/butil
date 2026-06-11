@@ -364,6 +364,9 @@
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>ఇప్పటికే దిగుమతి చేసుకున్న ఫైల్స్‌ను సంక్రమించండి</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>మూల మీడియా నుండి కాపీ చేసిన డేటాను తొలగించు</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>ఒక అప్రత్యాశిత లోపం జరగడం జరిగింది.
     

@@ -368,6 +368,9 @@
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>ஏற்கனவே இறக்குமதி செய்யப்பட்ட கோப்புகளை தவிர்க்கவும்</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>மூல ஊடகத்திலிருந்து நகலெடுத்த தரவை நீக்கு</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>எதிர்பாராத தவறு நிகழ்ந்தது.
 

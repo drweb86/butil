@@ -369,6 +369,9 @@
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>دمخه وارد شوي فایلونه پریږدئ</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>له سرچینې رسنۍ څخه کاپي شوي معلومات ړنګ کړئ</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>یوه ناڅاپي تېروتنه رامنځته شوه.
 

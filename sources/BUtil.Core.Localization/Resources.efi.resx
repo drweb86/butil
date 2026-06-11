@@ -366,6 +366,9 @@ See application web-site for documentation how to setup file transmission via WI
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Skip already imported files</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Sio mme data emi ẹkopide ke source media</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>An unexpected error occurred.
 

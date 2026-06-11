@@ -18,12 +18,12 @@ public static class InteractiveConsoleMode
 
         var options = new[]
         {
+            Resources.Task_Launch,
             Resources.LogFile_BrowseLogsFolder,
             Resources.TechnicalTool_EncryptAes256_Title,
             Resources.TechnicalTool_DecryptAes256_Title,
             Resources.TechnicalTool_CompressBrotli_Title,
             Resources.TechnicalTool_DecompressBrotli_Title,
-            Resources.Task_Launch_Hint,
         };
 
         var selected = ConsoleSelector.SelectWithArrowKeys(Resources.Task_Field_Choose, options);

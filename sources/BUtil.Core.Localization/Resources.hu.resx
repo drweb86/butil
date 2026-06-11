@@ -369,6 +369,9 @@ Az alkalmazás weboldalán találja a dokumentációt a WI-FI-n keresztüli fáj
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Már importált fájlok kihagyása</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Másolt adatok törlése a forrás adathordozóról</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Váratlan hiba történt.
 

@@ -369,6 +369,9 @@ Shihni faqen e internetit të aplikacionit për dokumentacionin se si të konfig
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Anashkalo skedarët e importuar tashmë</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Fshi të dhënat e kopjuara nga media burimore</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Ndodhi një gabim i papritur.
 

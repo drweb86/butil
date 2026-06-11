@@ -369,6 +369,9 @@
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>पहले से आयातित फ़ाइलों को छोड़ें</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>स्रोत मीडिया से कॉपी किया गया डेटा हटाएं</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>एक अप्रत्याशित त्रुटि हुई।
 

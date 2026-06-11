@@ -368,6 +368,9 @@
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>跳过已导入的文件</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>从源媒体删除已复制的数据</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>发生意外错误。
 

@@ -369,6 +369,9 @@
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Инде кертелгән файлларны калдырыгыз</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Күчерелгән мәгълүматны чыганак медиадан бетерү</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Көтелмәгән хата килеп чыкты.
 

@@ -369,6 +369,9 @@ Vede u situ web di l'applicazioni per a documentazione cumu cunfigurà a trasmis
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Salta i fugliali digià impurtati</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Sguassà i dati cupiati nant&apos;à u media surghjente</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Un errore imprevisu hè accadutu.
 

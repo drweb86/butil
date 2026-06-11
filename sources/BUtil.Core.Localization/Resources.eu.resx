@@ -369,6 +369,9 @@ Ikusi aplikazioaren webgunea telefonoko FTP Zerbitzariaren aplikazioaren bidez W
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Saltatu dagoeneko inportatutako fitxategiak</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Ezabatu kopiatutako datuak iturburu-euskarritik</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Ustekabeko errore bat gertatu da.
 

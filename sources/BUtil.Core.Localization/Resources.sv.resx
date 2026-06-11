@@ -369,6 +369,9 @@ Se applikationens webbplats för dokumentation om hur du konfigurerar filöverf�
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Hoppa över redan importerade filer</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Ta bort kopierade data från källmediet</value>
+  </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Ett oväntat fel uppstod.
 
