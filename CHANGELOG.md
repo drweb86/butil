@@ -1,4 +1,11 @@
-﻿# 2026.06.11
+﻿# 2026.06.23
+(unpublished)
+
+## Changes
+- Some libraries were updated.
+- Italian language was updated by https://github.com/bovirus .
+
+# 2026.06.11
 
 ## New Features
 - UI: Start screen.
