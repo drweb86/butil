@@ -5,7 +5,7 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="AWSSDK.S3" Version="4.0.25.3" />
+    <PackageReference Include="AWSSDK.S3" Version="4.0.100.2" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="../BUtil.Core/BUtil.Core.csproj" />
