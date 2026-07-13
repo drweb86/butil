@@ -1,0 +1,16 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="BUtil.UI.Controls.WeatherSunCloudsCanvas">
+	<Canvas>
+		<Ellipse Canvas.Left="28" Canvas.Top="13" Width="24" Height="24" Fill="Gold"/>
+		<Line StartPoint="40,10" EndPoint="40,4"  Stroke="Gold" StrokeThickness="3" StrokeLineCap="Round"/>
+		<Line StartPoint="55,25" EndPoint="61,25" Stroke="Gold" StrokeThickness="3" StrokeLineCap="Round"/>
+		<Line StartPoint="25,25" EndPoint="19,25" Stroke="Gold" StrokeThickness="3" StrokeLineCap="Round"/>
+		<Line StartPoint="51,14" EndPoint="55,10" Stroke="Gold" StrokeThickness="3" StrokeLineCap="Round"/>
+		<Line StartPoint="29,14" EndPoint="25,10" Stroke="Gold" StrokeThickness="3" StrokeLineCap="Round"/>
+		<Ellipse Canvas.Left="5"  Canvas.Top="40" Width="30" Height="26" Fill="LightSlateGray"/>
+		<Ellipse Canvas.Left="26" Canvas.Top="33" Width="32" Height="28" Fill="LightSlateGray"/>
+		<Ellipse Canvas.Left="52" Canvas.Top="38" Width="26" Height="24" Fill="LightSlateGray"/>
+		<Rectangle Canvas.Left="5" Canvas.Top="51" Width="73" Height="13" Fill="LightSlateGray"/>
+	</Canvas>
+</UserControl>

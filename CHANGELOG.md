@@ -1,9 +1,10 @@
-﻿# 2026.06.23
+﻿# 2026.07.13
 (unpublished)
 
 ## Changes
 - Some libraries were updated.
 - Italian language was updated by https://github.com/bovirus .
+- Error status is improved.
 
 # 2026.06.11
 
