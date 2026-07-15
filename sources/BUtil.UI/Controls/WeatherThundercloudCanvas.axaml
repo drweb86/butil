@@ -6,6 +6,11 @@
 		<Ellipse Canvas.Left="20" Canvas.Top="5"  Width="32" Height="28" Fill="SlateGray"/>
 		<Ellipse Canvas.Left="46" Canvas.Top="10" Width="28" Height="24" Fill="SlateGray"/>
 		<Rectangle Canvas.Left="3" Canvas.Top="24" Width="71" Height="14" Fill="SlateGray"/>
-		<Path Fill="Gold" Data="M 44,38 L 33,56 L 41,56 L 31,74 L 52,55 L 44,55 Z"/>
+		<Line x:Name="Rain1" Canvas.Left="10" Canvas.Top="40" StartPoint="0,0" EndPoint="2,7" Stroke="CornflowerBlue" StrokeThickness="1.5" StrokeLineCap="Round"/>
+		<Line x:Name="Rain2" Canvas.Left="24" Canvas.Top="52" StartPoint="0,0" EndPoint="2,7" Stroke="CornflowerBlue" StrokeThickness="1.5" StrokeLineCap="Round"/>
+		<Line x:Name="Rain3" Canvas.Left="37" Canvas.Top="44" StartPoint="0,0" EndPoint="2,7" Stroke="CornflowerBlue" StrokeThickness="1.5" StrokeLineCap="Round"/>
+		<Line x:Name="Rain4" Canvas.Left="52" Canvas.Top="60" StartPoint="0,0" EndPoint="2,7" Stroke="CornflowerBlue" StrokeThickness="1.5" StrokeLineCap="Round"/>
+		<Line x:Name="Rain5" Canvas.Left="64" Canvas.Top="47" StartPoint="0,0" EndPoint="2,7" Stroke="CornflowerBlue" StrokeThickness="1.5" StrokeLineCap="Round"/>
+		<Path x:Name="Lightning" Fill="Gold" Data="M 44,38 L 33,56 L 41,56 L 31,74 L 52,55 L 44,55 Z"/>
 	</Canvas>
 </UserControl>
