@@ -18,7 +18,7 @@
 			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
 
-		<decor:ViewDecoration Grid.Row="0" Kind="TechnicalTool" />
+		<controls:HackerDecorationCanvas Grid.Row="0" />
 		<ScrollViewer Grid.Row="0"
 				ScrollViewer.VerticalScrollBarVisibility="Visible"
 				ScrollViewer.HorizontalScrollBarVisibility="Disabled">

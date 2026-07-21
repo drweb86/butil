@@ -3,6 +3,7 @@
 
 ## Changes
 - Some libraries were updated.
+- Encryption technical view was improved visually.
 
 # 2026.07.15
 

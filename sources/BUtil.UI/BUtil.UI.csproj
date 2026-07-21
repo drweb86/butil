@@ -66,6 +66,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Controls\HackerDecorationCanvas.axaml.cs">
+      <DependentUpon>HackerDecorationCanvas.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Controls\TaskExecuterView.axaml.cs">
       <DependentUpon>TaskExecuterView.axaml</DependentUpon>
     </Compile>
