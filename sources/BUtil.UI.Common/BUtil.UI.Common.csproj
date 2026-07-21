@@ -12,7 +12,7 @@
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="12.1.0" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
-    <PackageReference Include="DialogHost.Avalonia" Version="0.12.2" />
+    <PackageReference Include="DialogHost.Avalonia" Version="0.12.3" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="../BUtil.Core/BUtil.Core.csproj" />
