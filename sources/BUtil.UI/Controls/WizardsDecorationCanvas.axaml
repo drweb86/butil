@@ -1,0 +1,29 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="BUtil.UI.Controls.WizardsDecorationCanvas"
+             IsHitTestVisible="False"
+             Width="480" Height="368"
+             HorizontalAlignment="Right"
+             VerticalAlignment="Bottom"
+             Margin="0 0 14 14"
+             Opacity="0.95">
+    <Canvas Width="480" Height="368" ClipToBounds="True">
+
+        <!-- Wizard photo with transparent background -->
+        <Image Source="/Assets/wizards.png" Canvas.Top="63" Width="480" Height="305" Stretch="Uniform"/>
+
+        <!-- Pulsing glow over the boiling potion -->
+        <Ellipse x:Name="GlowEllipse" Canvas.Left="140" Canvas.Top="203" Width="250" Height="90">
+            <Ellipse.Fill>
+                <RadialGradientBrush>
+                    <GradientStop Color="#3866FF33" Offset="0"/>
+                    <GradientStop Color="#0066FF33" Offset="1"/>
+                </RadialGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+
+        <!-- Rising potion bubbles and fire sparks are generated in code behind -->
+        <Canvas x:Name="ParticlesCanvas" Width="480" Height="368" />
+
+    </Canvas>
+</UserControl>

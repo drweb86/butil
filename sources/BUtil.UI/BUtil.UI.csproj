@@ -69,6 +69,9 @@
     <Compile Update="Controls\HackerDecorationCanvas.axaml.cs">
       <DependentUpon>HackerDecorationCanvas.axaml</DependentUpon>
     </Compile>
+    <Compile Update="Controls\WizardsDecorationCanvas.axaml.cs">
+      <DependentUpon>WizardsDecorationCanvas.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Controls\TaskExecuterView.axaml.cs">
       <DependentUpon>TaskExecuterView.axaml</DependentUpon>
     </Compile>

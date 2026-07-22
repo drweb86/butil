@@ -38,3 +38,7 @@ Urdu, Uzbek, Vietnamese, Welsh, Yue Chinese, English
 ## [Documentation](https://github.com/drweb86/butil/tree/master/help)
 
 - [Changelog](./CHANGELOG.md)
+
+---
+
+<sub>This software is crafted with the help of Command Code — an AI pair programmer.</sub>

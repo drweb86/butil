@@ -18,7 +18,8 @@
 			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
 
-		<controls:HackerDecorationCanvas Grid.Row="0" />
+		<controls:HackerDecorationCanvas Grid.Row="0" IsVisible="{Binding IsAesTool}" />
+		<controls:WizardsDecorationCanvas Grid.Row="0" IsVisible="{Binding IsBrotliTool}" />
 		<ScrollViewer Grid.Row="0"
 				ScrollViewer.VerticalScrollBarVisibility="Visible"
 				ScrollViewer.HorizontalScrollBarVisibility="Disabled">

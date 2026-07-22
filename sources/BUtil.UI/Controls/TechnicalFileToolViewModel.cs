@@ -38,6 +38,11 @@ public class TechnicalFileToolViewModel : ViewModelBase
     public bool IsPasswordVisible =>
         Kind is TechnicalFileToolKind.DecryptAes256 or TechnicalFileToolKind.EncryptAes256;
 
+    public bool IsBrotliTool =>
+        Kind is TechnicalFileToolKind.DecompressBrotli or TechnicalFileToolKind.CompressBrotli;
+
+    public bool IsAesTool => !IsBrotliTool;
+
     public string InputPath
     {
         get => _inputPath;
