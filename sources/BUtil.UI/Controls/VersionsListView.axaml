@@ -18,7 +18,7 @@
 			<TextBlock TextWrapping="Wrap" Text="{Binding StorageSize}" Margin="8 0 0 0" VerticalAlignment="Center" />
 		</WrapPanel>
 
-		<Expander Margin="24 8 24 24" HorizontalAlignment="Stretch" IsExpanded="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent" IsEnabled="{Binding !ParentViewModel.TaskExecuterViewModel.TaskNotCompleted}" >
+		<Expander Classes="TaskSection" Margin="24 8 24 24" HorizontalAlignment="Stretch" IsExpanded="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent" IsEnabled="{Binding !ParentViewModel.TaskExecuterViewModel.TaskNotCompleted}" >
 			<Expander.Header>
 				<WrapPanel Orientation="Horizontal" Margin="0 8 0 8">
 					<Image Width="16" Height="16" Source="/Assets/CrystalProject_EveraldoCoelho_SourceItems48x48.png" VerticalAlignment="Center" />
@@ -72,7 +72,7 @@
 			</TreeView>
 		</Expander>
 
-		<Expander Margin="24 0 24 24" HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent" IsEnabled="{Binding !ParentViewModel.TaskExecuterViewModel.TaskNotCompleted}" >
+		<Expander Classes="TaskSection" Margin="24 0 24 24" HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent" IsEnabled="{Binding !ParentViewModel.TaskExecuterViewModel.TaskNotCompleted}" >
 			<Expander.Header>
 				<WrapPanel Orientation="Horizontal" Margin="0 8 0 8">
 					<Image Width="16" Height="16" Source="/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png" VerticalAlignment="Center" />
@@ -100,7 +100,7 @@
 			</ItemsRepeater>
 		</Expander>
 
-		<Expander Margin="24 0 24 24" HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent"
+		<Expander Classes="TaskSection" Margin="24 0 24 24" HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent"
 				  IsVisible="{Binding SelectedFileIsVisible}">
 			<Expander.Header>
 				<WrapPanel Orientation="Horizontal" Margin="0 8 0 8">

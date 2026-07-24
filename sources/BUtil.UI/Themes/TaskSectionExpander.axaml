@@ -1,0 +1,133 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<Styles.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.ThemeDictionaries>
+				<ResourceDictionary x:Key="Dark">
+					<SolidColorBrush x:Key="TaskSectionBackground">#2B2A31</SolidColorBrush>
+					<SolidColorBrush x:Key="TaskSectionHeaderBackground">#35343C</SolidColorBrush>
+					<SolidColorBrush x:Key="TaskSectionHeaderPointerOverBackground">#3C3B44</SolidColorBrush>
+					<SolidColorBrush x:Key="TaskSectionBorderBrush">#45444D</SolidColorBrush>
+				</ResourceDictionary>
+				<ResourceDictionary x:Key="Light">
+					<SolidColorBrush x:Key="TaskSectionBackground">#FFFFFF</SolidColorBrush>
+					<SolidColorBrush x:Key="TaskSectionHeaderBackground">#F6F8FA</SolidColorBrush>
+					<SolidColorBrush x:Key="TaskSectionHeaderPointerOverBackground">#EAEEF2</SolidColorBrush>
+					<SolidColorBrush x:Key="TaskSectionBorderBrush">#D0D7DE</SolidColorBrush>
+				</ResourceDictionary>
+			</ResourceDictionary.ThemeDictionaries>
+
+			<ControlTheme x:Key="TaskSectionExpanderHeader" TargetType="ToggleButton">
+				<Setter Property="Background" Value="{DynamicResource TaskSectionHeaderBackground}" />
+				<Setter Property="CornerRadius" Value="6" />
+				<Setter Property="Padding" Value="12,8" />
+				<Setter Property="HorizontalContentAlignment" Value="Stretch" />
+				<Setter Property="VerticalContentAlignment" Value="Center" />
+				<Setter Property="Template">
+					<ControlTemplate>
+						<Border x:Name="HeaderRoot"
+						        Background="{TemplateBinding Background}"
+						        CornerRadius="{TemplateBinding CornerRadius}"
+						        Padding="{TemplateBinding Padding}">
+							<Grid ColumnDefinitions="Auto,*">
+								<Path x:Name="ExpandCollapseChevron"
+								      Grid.Column="0"
+								      Margin="0,0,8,0"
+								      HorizontalAlignment="Center"
+								      VerticalAlignment="Center"
+								      Data="M 0 0 L 7 7 L 14 0"
+								      RenderTransformOrigin="50%,50%"
+								      Stroke="{TemplateBinding Foreground}"
+								      StrokeThickness="1">
+									<Path.RenderTransform>
+										<RotateTransform Angle="-90" />
+									</Path.RenderTransform>
+								</Path>
+								<ContentPresenter Grid.Column="1"
+								                  Content="{TemplateBinding Content}"
+								                  ContentTemplate="{TemplateBinding ContentTemplate}"
+								                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+								                  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+							</Grid>
+						</Border>
+					</ControlTemplate>
+				</Setter>
+				<Style Selector="^:pointerover /template/ Border#HeaderRoot">
+					<Setter Property="Background" Value="{DynamicResource TaskSectionHeaderPointerOverBackground}" />
+				</Style>
+				<Style Selector="^:checked /template/ Path#ExpandCollapseChevron">
+					<Style.Animations>
+						<Animation FillMode="Both" Duration="0:0:0.15">
+							<KeyFrame Cue="0%">
+								<Setter Property="RotateTransform.Angle" Value="-90" />
+							</KeyFrame>
+							<KeyFrame Cue="100%">
+								<Setter Property="RotateTransform.Angle" Value="0" />
+							</KeyFrame>
+						</Animation>
+					</Style.Animations>
+				</Style>
+				<Style Selector="^:not(:checked) /template/ Path#ExpandCollapseChevron">
+					<Style.Animations>
+						<Animation FillMode="Both" Duration="0:0:0.15">
+							<KeyFrame Cue="0%">
+								<Setter Property="RotateTransform.Angle" Value="0" />
+							</KeyFrame>
+							<KeyFrame Cue="100%">
+								<Setter Property="RotateTransform.Angle" Value="-90" />
+							</KeyFrame>
+						</Animation>
+					</Style.Animations>
+				</Style>
+			</ControlTheme>
+
+			<ControlTheme x:Key="TaskSectionExpander" TargetType="Expander">
+				<Setter Property="Background" Value="{DynamicResource TaskSectionBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource TaskSectionBorderBrush}" />
+				<Setter Property="BorderThickness" Value="1" />
+				<Setter Property="CornerRadius" Value="6" />
+				<Setter Property="HorizontalAlignment" Value="Stretch" />
+				<Setter Property="Template">
+					<ControlTemplate>
+						<Border x:Name="ExpanderRoot"
+						        Background="{TemplateBinding Background}"
+						        BorderBrush="{TemplateBinding BorderBrush}"
+						        BorderThickness="{TemplateBinding BorderThickness}"
+						        CornerRadius="{TemplateBinding CornerRadius}">
+							<Grid RowDefinitions="Auto,Auto,Auto">
+								<ToggleButton x:Name="PART_HeaderToggleButton"
+								              Grid.Row="0"
+								              Theme="{StaticResource TaskSectionExpanderHeader}"
+								              Content="{TemplateBinding Header}"
+								              ContentTemplate="{TemplateBinding HeaderTemplate}"
+								              IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}" />
+								<Border x:Name="HeaderSeparator"
+								        Grid.Row="1"
+								        Height="1"
+								        Background="{TemplateBinding BorderBrush}"
+								        IsVisible="False" />
+								<ContentPresenter x:Name="PART_ContentPresenter"
+								                  Grid.Row="2"
+								                  Padding="12,4,12,12"
+								                  Content="{TemplateBinding Content}"
+								                  ContentTemplate="{TemplateBinding ContentTemplate}"
+								                  IsVisible="{TemplateBinding IsExpanded}" />
+							</Grid>
+						</Border>
+					</ControlTemplate>
+				</Setter>
+				<Style Selector="^:expanded /template/ ToggleButton#PART_HeaderToggleButton">
+					<Setter Property="CornerRadius" Value="6,6,0,0" />
+				</Style>
+				<Style Selector="^:expanded /template/ Border#HeaderSeparator">
+					<Setter Property="IsVisible" Value="True" />
+				</Style>
+			</ControlTheme>
+		</ResourceDictionary>
+	</Styles.Resources>
+
+	<Style Selector="Expander.TaskSection">
+		<Setter Property="Theme" Value="{StaticResource TaskSectionExpander}" />
+	</Style>
+</Styles>

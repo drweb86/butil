@@ -7,7 +7,7 @@
              x:Class="BUtil.UI.Controls.UpdateCheckExpanderView"
 			 x:DataType="cvm:UpdateCheckExpanderViewModel"
 			 IsVisible="{Binding IsUpdateAvailable}">
-	<Expander IsVisible="{Binding IsUpdateAvailable}" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Stretch">
+	<Expander Classes="TaskSection" IsVisible="{Binding IsUpdateAvailable}" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Stretch">
 		<Expander.Header>
 			<WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch" MaxWidth="{Binding $parent.Bounds.Width}" >
 				<TextBlock

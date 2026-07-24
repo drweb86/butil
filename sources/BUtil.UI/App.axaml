@@ -9,5 +9,6 @@
     <Application.Styles>
         <FluentTheme />
 		<dialogHostAvalonia:DialogHostStyles />
+		<StyleInclude Source="avares://BUtil.UI/Themes/TaskSectionExpander.axaml" />
     </Application.Styles>
 </Application>

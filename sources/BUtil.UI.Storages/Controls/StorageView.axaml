@@ -7,7 +7,7 @@
              mc:Ignorable="d"
              x:Class="BUtil.UI.Controls.StorageView"
              x:DataType="cvm:StorageViewModel">
-	<Expander HorizontalAlignment="Stretch" IsExpanded="{Binding IsExpanded}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
+	<Expander Classes="TaskSection" HorizontalAlignment="Stretch" IsExpanded="{Binding IsExpanded}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 		<Expander.Header>
 			<StackPanel Orientation="Horizontal">
 				<Image Width="16" Height="16" Source="{Binding IconSource}" VerticalAlignment="Center" />
@@ -123,7 +123,7 @@
 			</DockPanel>
 
 			<!-- Mount/unmount scripts (shown only when platform supports script execution) -->
-			<Expander IsVisible="{Binding CanLaunchScripts}" IsExpanded="{Binding IsExpanded}" HorizontalAlignment="Stretch">
+			<Expander Classes="TaskSection" IsVisible="{Binding CanLaunchScripts}" IsExpanded="{Binding IsExpanded}" HorizontalAlignment="Stretch">
 				<Expander.Header>
 					<TextBlock Text="{Binding DataStorage_Scripts_Header}" VerticalAlignment="Center" />
 				</Expander.Header>

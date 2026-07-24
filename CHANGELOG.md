@@ -5,6 +5,7 @@
 - Some libraries were updated.
 - Encryption technical view was improved visually.
 - Compress/Decompress technical view was improved visually.
+- Expanders became better visually.
 
 # 2026.07.15
 

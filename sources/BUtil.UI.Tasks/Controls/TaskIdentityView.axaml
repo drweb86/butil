@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="BUtil.UI.Tasks.Controls.TaskIdentityView"
              x:DataType="cvm:TaskIdentityViewModel">
-	<Expander HorizontalAlignment="Stretch" IsExpanded="{Binding IsExpanded}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
+	<Expander Classes="TaskSection" HorizontalAlignment="Stretch" IsExpanded="{Binding IsExpanded}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 		<Expander.Header>
 			<StackPanel Orientation="Horizontal">
 				<Image Width="16" Height="16" Source="avares://BUtil.UI/Assets/CrystalClear_EveraldoCoelho_BackupTask48x48.png" VerticalAlignment="Center" />
