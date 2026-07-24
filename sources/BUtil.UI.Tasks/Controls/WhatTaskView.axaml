@@ -17,7 +17,7 @@
 			<WrapPanel Orientation="Horizontal" Margin="0 8 0 8">
 				<Button Margin="4 4 4 4" Content="{Binding SourceItem_AddFolders}" Click="BrowseFoldersCommand" />
 			</WrapPanel>
-			<ListBox Margin="0 8 0 8" MinHeight="50" ItemsSource="{Binding Items}" IsVisible="{Binding !!Items.Count}">
+			<ListBox Margin="0 8 0 8" MinHeight="50" ItemsSource="{Binding Items}" IsVisible="{Binding !!Items.Count}" Background="Transparent">
 				<ListBox.ItemTemplate>
 					<DataTemplate x:DataType="cvm:SourceItemV2ViewModel">
 						<Grid>

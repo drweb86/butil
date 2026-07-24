@@ -31,14 +31,14 @@
 				ScrollViewer.VerticalScrollBarVisibility="Visible"
 				ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 			<StackPanel>
-				<tasks:TaskIdentityView Margin="24 24 24 8" DataContext="{Binding TaskIdentityViewModel}" />
-				<controls:FolderSectionView Margin="24 8 24 8" DataContext="{Binding FolderSectionViewModel}" />
-				<controls:StorageView Margin="24 8 24 8" DataContext="{Binding StorageViewModel}"/>
-				<controls:WhenTaskView Margin="24 8 24 8" DataContext="{Binding WhenTaskViewModel}" />
+				<tasks:TaskIdentityView Margin="16 16 16 8" DataContext="{Binding TaskIdentityViewModel}" />
+				<controls:FolderSectionView Margin="16 8 16 8" DataContext="{Binding FolderSectionViewModel}" />
+				<controls:StorageView Margin="16 8 16 8" DataContext="{Binding StorageViewModel}"/>
+				<controls:WhenTaskView Margin="16 8 16 8" DataContext="{Binding WhenTaskViewModel}" />
 			</StackPanel>
 		</ScrollViewer>
 
-		<StackPanel Grid.Row="1" Margin="24 8 24 24" Orientation="Horizontal" HorizontalAlignment="Right">
+		<StackPanel Grid.Row="1" Margin="16 8 16 16" Orientation="Horizontal" HorizontalAlignment="Right">
 			<Button MinWidth="120" Padding="0 8 0 8" VerticalAlignment="Center" Content="{Binding Button_OK}" HorizontalContentAlignment="Center" Margin="8 0 8 0" Command="{Binding ButtonOkCommand}" />
 			<Button MinWidth="120" Padding="0 8 0 8" VerticalAlignment="Center" Content="{Binding Button_Cancel}" HorizontalContentAlignment="Center" Command="{Binding ButtonCancelCommand}" />
 		</StackPanel>
