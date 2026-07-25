@@ -466,6 +466,9 @@ Ju lutem bëni njërën nga këto:
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Ekzekuto në hyrje</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Ky seksion është opsional. Nëse e anashkaloni, detyra do të ekzekutohet vetëm kur ta nisni manualisht.</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Ku?</value>
   </data>

@@ -463,6 +463,9 @@
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>लॉगिनवर चालवा</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>हा विभाग पर्यायी आहे. तुम्ही तो वगळला तर, कार्य फक्त तुम्ही ते मॅन्युअली लॉन्च कराल तेव्हाच चालेल.</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>कुठे?</value>
   </data>

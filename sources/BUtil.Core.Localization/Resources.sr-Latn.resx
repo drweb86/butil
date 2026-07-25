@@ -466,6 +466,9 @@ Molimo izaberite jednu od opcija:
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Pokreni pri prijavi</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Ovaj odeljak nije obavezan. Ako ga preskočite, zadatak će se izvršavati samo kada ga ručno pokrenete.</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Gde?</value>
   </data>

@@ -467,6 +467,9 @@
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Нэвтрэхэд ажиллуулах</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Энэ хэсэг нь заавал биш. Хэрэв та алгасвал даалгавар зөвхөн гараар эхлүүлэхэд л ажиллана.</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Хаана?</value>
   </data>

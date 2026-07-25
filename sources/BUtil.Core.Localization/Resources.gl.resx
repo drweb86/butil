@@ -463,6 +463,9 @@ Por favor:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Aquí podes configurar un planificador. Shceduler pode axudarche a automatizar o lanzamento de tarefas.</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Esta sección é opcional. Se a omites, a tarefa só se executará cando a lances manualmente.</value>
+  </data>
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Executar ao iniciar sesión</value>
   </data>

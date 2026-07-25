@@ -367,7 +367,7 @@
     <value>د معلوماتو سرچینې وارد کړئ</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
-    <value>دمخه وارد شوي فایلونه پریږدئ</value>
+    <value>دمخه وارد شوي فایلونه پرېږدئ</value>
   </data>
   <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
     <value>له سرچینې رسنۍ څخه کاپي شوي معلومات ړنګ کړئ</value>
@@ -465,6 +465,9 @@
   </data>
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>د ننوتلو پر مهال اجرا</value>
+  </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>دا برخه اختیاري ده. که تاسو یې پرېږدئ، دنده به یوازې هغه وخت چلېږي کله چې تاسو یې په لاسي ډول پیل کړئ.</value>
   </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>چیرته؟</value>
@@ -1030,7 +1033,7 @@ See detailed description in the following link.</value>
 2. د MinIO کنسول یا &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos; له لارې بالټ جوړ کړئ.
 3. په MinIO کنسول کې د لاسرسي کیلي رامینځته کړئ → د لاسرسي کیلي (په تولید کې د روټ اسنادو څخه ډډه وکړئ).
 4. د خدمت URL: ستاسو د سرور پای ټکی، د بیلګې په توګه. http://192.168.1.10:9000 یا https://minio.example.com.
-5. سیمه: هر ارزښت (د مثال په توګه us-east-1) - یا خالي پریږدئ که چیرې سرور دا پلي نه کړي.</value>
+5. سیمه: هر ارزښت (د مثال په توګه us-east-1) - یا خالي پرېږدئ که چیرې سرور دا پلي نه کړي.</value>
   </data>
   <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
     <value>ډیجیټل اوشین ځایونه - د S3 سره مطابقت لرونکي څیز ذخیره کول.

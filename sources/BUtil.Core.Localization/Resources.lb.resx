@@ -466,6 +466,9 @@ Weg entweder:
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Beim Login ausféieren</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Dës Sektioun ass optional. Wann Dir se iwwerspréngt, leeft d'Aufgab nëmmen wann Dir se manuell start.</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Wou?</value>
   </data>

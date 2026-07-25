@@ -466,6 +466,9 @@
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Покрени при пријави</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Овај одељак није обавезан. Ако га прескочите, задатак ће се извршавати само када га ручно покренете.</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Где?</value>
   </data>

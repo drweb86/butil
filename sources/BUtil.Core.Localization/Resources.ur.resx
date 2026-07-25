@@ -454,6 +454,9 @@
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>لاگ اِن پر چلائیں</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>یہ سیکشن اختیاری ہے۔ اگر آپ اسے چھوڑ دیتے ہیں تو کام صرف اس وقت چلے گا جب آپ اسے دستی طور پر چلائیں گے۔</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>کہاں؟</value>
   </data>

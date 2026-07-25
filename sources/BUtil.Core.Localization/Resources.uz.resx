@@ -467,6 +467,9 @@ Iltimos:
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Kirishda ishga tushirish</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Bu bo'lim ixtiyoriy. Uni o'tkazib yuborsangiz, vazifa faqat qo'lda ishga tushirilganda bajariladi.</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Qayerga?</value>
   </data>

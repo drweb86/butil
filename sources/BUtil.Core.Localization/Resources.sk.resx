@@ -466,6 +466,9 @@ Prosím vyberte jednu z možností:
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Spustiť pri prihlásení</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Táto sekcia je nepovinná. Ak ju preskočíte, úloha pobeží iba vtedy, keď ju spustíte ručne.</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Kam?</value>
   </data>

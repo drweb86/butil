@@ -463,6 +463,9 @@ Please either:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Here you can set up a scheduler. Shceduler can help you to automate task launch.</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Esta seición ye opcional. Si la saltes, la xera namás va executase cuando la lances manualmente.</value>
+  </data>
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Executar al aniciar sesión</value>
   </data>

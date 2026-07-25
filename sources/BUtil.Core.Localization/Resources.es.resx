@@ -463,6 +463,9 @@ Por favor:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Aquí puedes configurar un programador. El programador puede ayudarte a automatizar el lanzamiento de tareas.</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Esta sección es opcional. Si la omite, la tarea solo se ejecutará cuando la lance manualmente.</value>
+  </data>
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Ejecutar al iniciar sesión</value>
   </data>

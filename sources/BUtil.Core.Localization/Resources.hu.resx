@@ -463,6 +463,9 @@ Kérjük, válasszon:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Itt állíthat be ütemezőt. Az ütemező segíthet a feladat automatikus indításában.</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Ez a szakasz nem kötelező. Ha kihagyja, a feladat csak akkor fut, amikor manuálisan indítja.</value>
+  </data>
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Futtatás bejelentkezéskor</value>
   </data>

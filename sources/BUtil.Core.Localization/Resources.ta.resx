@@ -465,6 +465,9 @@
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>உள்நுழைவில் இயக்கு</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>இந்தப் பிரிவு விருப்பமானது. நீங்கள் அதைத் தவிர்த்தால், நீங்கள் கைமுறையாகத் தொடங்கும்போது மட்டுமே பணி இயங்கும்.</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>எங்கே?</value>
   </data>

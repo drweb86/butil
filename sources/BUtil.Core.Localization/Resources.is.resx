@@ -463,6 +463,9 @@ Vinsamlegast annaðhvort:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Hér getur þú sett upp tímaáætlun. Tímaáætlun getur hjálpað þér að sjálfvirknivæða keyrslu verkefna.</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Þessi hluti er valkvæður. Ef þú sleppir honum keyrir verkefnið aðeins þegar þú ræsir það handvirkt.</value>
+  </data>
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Keyra við innskráningu</value>
   </data>

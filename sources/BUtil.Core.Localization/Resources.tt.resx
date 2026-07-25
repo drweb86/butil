@@ -466,6 +466,9 @@ Changesзгәрешләр гадәттә түбән булганлыктан, а
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Керү вакытында эшләт</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Бу бүлек мәҗбүри түгел. Әгәр сез аны калдырсагыз, бирем фәкать кулдан башлаганда гына эшләячәк.</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Кайда?</value>
   </data>

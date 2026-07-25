@@ -465,6 +465,9 @@
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>登录时运行</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>此部分为可选。如果跳过，任务将仅在您手动启动时运行。</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>哪里？</value>
   </data>

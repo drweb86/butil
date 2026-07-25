@@ -463,6 +463,9 @@ Abeg do one of dese:
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Run at login</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Dis section no dey compulsory. If you skip am, the task go only run when you start am by hand.</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Where?</value>
   </data>

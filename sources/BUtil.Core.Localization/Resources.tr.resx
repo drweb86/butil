@@ -463,6 +463,9 @@ Lütfen şunlardan birini yapın:
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Oturum açılışında çalıştır</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Bu bölüm isteğe bağlıdır. Atlarsanız görev yalnızca el ile başlattığınızda çalışır.</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Nerede?</value>
   </data>

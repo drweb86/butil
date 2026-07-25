@@ -459,6 +459,9 @@
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>లాగిన్‌లో నడుపు</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>ఈ విభాగం ఐచ్ఛికం. మీరు దాన్ని దాటవేస్తే, మీరు మాన్యువల్‌గా ప్రారంభించినప్పుడు మాత్రమే టాస్క్ నడుస్తుంది.</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>ఎక్కడ?</value>
   </data>

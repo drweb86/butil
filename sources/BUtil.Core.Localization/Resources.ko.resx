@@ -467,6 +467,9 @@ FTP 서버 앱을 사용한 WI-FI 파일 전송 설정 방법은 앱 웹사이�
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>로그인 시 실행</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>이 섹션은 선택 사항입니다. 건너뛰면 작업은 수동으로 실행할 때만 실행됩니다.</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>어디에?</value>
   </data>

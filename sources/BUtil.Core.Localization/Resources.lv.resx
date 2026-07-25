@@ -466,6 +466,9 @@ Lūdzu, izvēlieties vienu no opcijām:
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Palaist pie pieslēgšanās</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Šī sadaļa nav obligāta. Ja to izlaidīsiet, uzdevums darbosies tikai tad, kad to palaidīsiet manuāli.</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Kur?</value>
   </data>

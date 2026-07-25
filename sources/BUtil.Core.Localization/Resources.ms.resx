@@ -466,6 +466,9 @@ Sila lakukan salah satu:
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Jalankan semasa log masuk</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Bahagian ini adalah pilihan. Jika anda langkau, tugas hanya akan berjalan apabila anda melancarkannya secara manual.</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Di mana?</value>
   </data>

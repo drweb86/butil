@@ -463,6 +463,9 @@ Vui lòng:
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Chạy khi đăng nhập</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Phần này là tùy chọn. Nếu bạn bỏ qua, tác vụ sẽ chỉ chạy khi bạn khởi chạy thủ công.</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Ở đâu?</value>
   </data>

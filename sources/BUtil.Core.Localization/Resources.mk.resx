@@ -466,6 +466,9 @@
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Стартувај при најава</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Овој дел не е задолжителен. Ако го прескокнете, задачата ќе се извршува само кога ќе ја стартувате рачно.</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Каде?</value>
   </data>

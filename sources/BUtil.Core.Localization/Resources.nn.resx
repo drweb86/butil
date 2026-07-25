@@ -466,6 +466,9 @@ Ver venleg og gjer eitt av følgjande:
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Køyr ved innlogging</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Denne delen er valfri. Hvis du hoppar over han, køyrer oppgåva berre når du startar ho manuelt.</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Kvar?</value>
   </data>

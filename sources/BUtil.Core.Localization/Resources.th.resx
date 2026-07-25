@@ -466,6 +466,9 @@
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>เรียกใช้เมื่อเข้าสู่ระบบ</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>ส่วนนี้ไม่บังคับ หากคุณข้ามไป งานจะทำงานเฉพาะเมื่อคุณเริ่มด้วยตนเองเท่านั้น</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>ที่ไหน?</value>
   </data>

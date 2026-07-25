@@ -43,6 +43,7 @@ public class WhenTaskViewModel : ObservableObject
 
     #region Labels
     public static string LeftMenu_When => Resources.LeftMenu_When;
+    public static string LeftMenu_When_Optional_Hint => Resources.LeftMenu_When_Optional_Hint;
     public static string Days_Field_Choose => Resources.Days_Field_Choose;
 
     public static string Days_Monday => Resources.Days_Monday;

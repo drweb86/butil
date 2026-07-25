@@ -463,6 +463,9 @@ Os gwelwch yn dda naill ai:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Yma gallwch chi sefydlu trefnydd. Gall Shceduler eich helpu i awtomeiddio lansio tasg.</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Mae'r adran hon yn ddewisol. Os ydych chi'n ei hepgor, bydd y dasg yn rhedeg dim ond pan fyddwch yn ei lansio â llaw.</value>
+  </data>
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Rhedeg wrth fewngofnodi</value>
   </data>

@@ -467,6 +467,9 @@ Ji kerema xwe:
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Demê têketinê bide destpêkirin</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Ev beş vebijarkî ye. Heke hûn wê derbas bikin, kar tenê dema ku hûn wê bi destan bidin destpêkirin dê bixebite.</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Li ku?</value>
   </data>

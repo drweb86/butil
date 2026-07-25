@@ -463,6 +463,9 @@ Bonvolu ĉu:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Ĉi tie vi povas agordi planilon. Shceduler povas helpi vin aŭtomatigi taskolanĉon.</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Ĉi tiu sekcio estas laŭvola. Se vi preterlasos ĝin, la tasko funkcios nur kiam vi lanĉos ĝin permane.</value>
+  </data>
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Lanĉi ĉe ensaluto</value>
   </data>

@@ -466,6 +466,9 @@ Proszę:
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Uruchamiaj przy logowaniu</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Ta sekcja jest opcjonalna. Jeśli ją pominiesz, zadanie będzie uruchamiane tylko wtedy, gdy uruchomisz je ręcznie.</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Gdzie?</value>
   </data>

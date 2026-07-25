@@ -483,6 +483,9 @@
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>登入時執行</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>此部分為可選。如果你略過佢，任務只會喺你手動啟動時先會執行。</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>哪裡？</value>
   </data>

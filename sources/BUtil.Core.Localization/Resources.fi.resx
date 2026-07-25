@@ -463,6 +463,9 @@ Ole hyvä ja joko:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Täällä voit asettaa ajastimen. Ajastin voi auttaa sinua automatisoimaan tehtävän käynnistyksen.</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Tämä osio on valinnainen. Jos ohitat sen, tehtävä suoritetaan vain, kun käynnistät sen manuaalisesti.</value>
+  </data>
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Suorita kirjautuessa</value>
   </data>

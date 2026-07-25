@@ -463,6 +463,9 @@ Feuch an dàrna cuid:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>An seo faodaidh tu clàr-ama a stèidheachadh. Faodaidh Shceduler do chuideachadh le bhith a’ cur air bhog gnìomh gu fèin-ghluasadach.</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Tha an earrann seo roghainneil. Ma leigeas tu seachad i, cha ruith an gnìomh ach nuair a chuireas tu air bhog i le làimh.</value>
+  </data>
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Ruith aig clàradh a-steach</value>
   </data>

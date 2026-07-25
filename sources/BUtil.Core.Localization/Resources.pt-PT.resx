@@ -466,6 +466,9 @@ Por favor:
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Executar ao iniciar sessão</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Esta secção é opcional. Se a ignorar, a tarefa só será executada quando a lançar manualmente.</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Onde?</value>
   </data>

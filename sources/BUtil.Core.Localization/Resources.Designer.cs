@@ -1085,6 +1085,15 @@ namespace BUtil.Core.Localization {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to This section is optional. If you skip it, the task will run only when you launch it manually..
+        /// </summary>
+        public static string LeftMenu_When_Optional_Hint {
+            get {
+                return ResourceManager.GetString("LeftMenu_When_Optional_Hint", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Run at Login.
         /// </summary>
         public static string RunAtLogin_Label {

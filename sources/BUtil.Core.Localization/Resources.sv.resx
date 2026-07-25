@@ -466,6 +466,9 @@ Vänligen välj:
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Kör vid inloggning</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Det här avsnittet är valfritt. Om du hoppar över det körs uppgiften bara när du startar den manuellt.</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Var?</value>
   </data>

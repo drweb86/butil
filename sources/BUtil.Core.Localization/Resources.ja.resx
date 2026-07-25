@@ -454,6 +454,9 @@
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>ログイン時に実行</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>このセクションは任意です。スキップした場合、タスクは手動で起動したときのみ実行されます。</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>どこですか？</value>
   </data>

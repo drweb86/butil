@@ -464,6 +464,9 @@
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>در اینجا می‌توانید یک زمان‌بند تنظیم کنید. زمان‌بند می‌تواند به شما در خودکارسازی اجرای وظیفه کمک کند.</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>این بخش اختیاری است. اگر از آن صرف‌نظر کنید، کار فقط زمانی اجرا می‌شود که آن را به‌صورت دستی راه‌اندازی کنید.</value>
+  </data>
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>اجرا هنگام ورود</value>
   </data>

@@ -463,6 +463,9 @@ Asseblief óf:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Hier kan jy 'n skeduleerder opstel. Shceduler kan jou help om taakbekendstelling te outomatiseer.</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Hierdie afdeling is opsioneel. As u dit oorslaan, sal die taak net loop wanneer u dit handmatig begin.</value>
+  </data>
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Hardloop by aanmelding</value>
   </data>

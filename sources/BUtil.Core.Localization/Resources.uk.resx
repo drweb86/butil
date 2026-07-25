@@ -467,6 +467,9 @@
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Запускати при вході</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Цей розділ необов’язковий. Якщо ви його пропустите, завдання запускатиметься лише при ручному запуску.</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Куди?</value>
   </data>

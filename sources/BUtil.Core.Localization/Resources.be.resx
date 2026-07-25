@@ -463,6 +463,9 @@
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Тут вы можаце наладзіць расклад. Планіроўшчык можа дапамагчы аўтаматызаваць запуск задачы.</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Гэты раздзел неабавязковы. Калі вы яго прапусціце, заданне будзе працаваць толькі пры ручным запуску.</value>
+  </data>
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Запуск пры ўваходзе</value>
   </data>

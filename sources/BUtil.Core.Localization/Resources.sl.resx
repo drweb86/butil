@@ -466,6 +466,9 @@ Prosimo, izberite eno od možnosti:
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Zaženi ob prijavi</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Ta razdelek ni obvezen. Če ga preskočite, se bo naloga zagnala le, ko jo zaženete ročno.</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Kam?</value>
   </data>

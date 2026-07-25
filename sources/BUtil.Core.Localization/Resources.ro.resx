@@ -466,6 +466,9 @@ Vă rugăm să:
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Rulează la autentificare</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Această secțiune este opțională. Dacă o omiteți, sarcina va rula doar atunci când o lansați manual.</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Unde?</value>
   </data>

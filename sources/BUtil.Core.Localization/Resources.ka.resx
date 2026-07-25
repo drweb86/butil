@@ -466,6 +466,9 @@
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>გაშვება შესვლისას</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>ეს განყოფილება არასავალდებულოა. თუ გამოტოვებთ, ამოცანა შესრულდება მხოლოდ მაშინ, როდესაც ხელით გაუშვებთ.</value>
+  </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>სად?</value>
   </data>

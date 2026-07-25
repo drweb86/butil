@@ -469,6 +469,9 @@ Scegliere una delle seguenti opzioni:
     <value>Qui puoi impostare una pianificazione. 
 	La pianificazione può aiutarti ad automatizzare l'avvio delle attività.</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Questa sezione è facoltativa. Se la salti, l'attività verrà eseguita solo quando la avvii manualmente.</value>
+  </data>
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Esegui all'accesso</value>
   </data>

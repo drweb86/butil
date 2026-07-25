@@ -463,6 +463,9 @@ Si us plau:
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Aquí podeu configurar un programador. Shceduler us pot ajudar a automatitzar el llançament de tasques.</value>
   </data>
+  <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
+    <value>Aquesta secció és opcional. Si l'ometeu, la tasca només s'executarà quan l'engegueu manualment.</value>
+  </data>
   <data name="RunAtLogin_Label" xml:space="preserve">
     <value>Executar en iniciar sessió</value>
   </data>
