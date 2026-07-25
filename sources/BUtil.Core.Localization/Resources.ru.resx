@@ -459,7 +459,7 @@
     <value>Не указано, что обрабатывать.</value>
   </data>
   <data name="LeftMenu_When" xml:space="preserve">
-    <value>Как часто?</value>
+    <value>Когда?</value>
   </data>
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Здесь можно настроить планировщик. Планировщик позволяет автоматизировать выполнение задачи.</value>

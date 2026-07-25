@@ -9,7 +9,7 @@
 	<Expander Classes="TaskSection" HorizontalAlignment="Stretch" IsExpanded="{Binding IsExpanded}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 		<Expander.Header>
 			<StackPanel Orientation="Horizontal">
-				<Image Width="16" Height="16" Source="avares://BUtil.UI/Assets/CrystalClear_EveraldoCoelho_Schedule48x48.png" VerticalAlignment="Center" />
+				<TextBlock>⏰</TextBlock>
 				<TextBlock Text="{Binding LeftMenu_When}" Margin="8 0 0 0" VerticalAlignment="Center" />
 			</StackPanel>
 		</Expander.Header>
@@ -18,18 +18,18 @@
 				<StackPanel Spacing="8">
 					<TextBlock Text="{Binding Days_Field_Choose}" />
 					<WrapPanel>
-						<CheckBox Width="120" IsChecked="{Binding Monday}" Content="{Binding Days_Monday}" />
-						<CheckBox Width="120" IsChecked="{Binding Tuesday}" Content="{Binding Days_Tuesday}" />
-						<CheckBox Width="120" IsChecked="{Binding Wednesday}" Content="{Binding Days_Wednesday}" />
-						<CheckBox Width="120" IsChecked="{Binding Thursday}" Content="{Binding Days_Thursday}" />
-						<CheckBox Width="120" IsChecked="{Binding Friday}" Content="{Binding Days_Friday}" />
-						<CheckBox Width="120" IsChecked="{Binding Saturday}" Content="{Binding Days_Saturday}" />
-						<CheckBox Width="120" IsChecked="{Binding Sunday}" Content="{Binding Days_Sunday}" />
+						<CheckBox MinWidth="130" IsChecked="{Binding Monday}" Content="{Binding Days_Monday}" />
+						<CheckBox MinWidth="130" IsChecked="{Binding Tuesday}" Content="{Binding Days_Tuesday}" />
+						<CheckBox MinWidth="130" IsChecked="{Binding Wednesday}" Content="{Binding Days_Wednesday}" />
+						<CheckBox MinWidth="130" IsChecked="{Binding Thursday}" Content="{Binding Days_Thursday}" />
+						<CheckBox MinWidth="130" IsChecked="{Binding Friday}" Content="{Binding Days_Friday}" />
+						<CheckBox MinWidth="130" IsChecked="{Binding Saturday}" Content="{Binding Days_Saturday}" />
+						<CheckBox MinWidth="130" IsChecked="{Binding Sunday}" Content="{Binding Days_Sunday}" />
 					</WrapPanel>
 					<TimePicker HorizontalAlignment="Left" SelectedTime="{Binding Time}" />
 				</StackPanel>
 			</Border>
-			<Border BorderBrush="Gray" BorderThickness="1" CornerRadius="4" Padding="8">
+			<Border BorderBrush="Gray" BorderThickness="1" CornerRadius="4" Padding="8 0 8 0">
 				<CheckBox IsChecked="{Binding RunAtLogin}" Content="{Binding RunAtLogin_Label}" />
 			</Border>
 		</StackPanel>
