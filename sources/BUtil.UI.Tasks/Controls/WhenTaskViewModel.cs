@@ -17,8 +17,7 @@ public class WhenTaskViewModel : ObservableObject
         Friday = scheduleInfo.Days.Contains(System.DayOfWeek.Friday);
         Saturday = scheduleInfo.Days.Contains(System.DayOfWeek.Saturday);
         Sunday = scheduleInfo.Days.Contains(System.DayOfWeek.Sunday);
-        Hours = scheduleInfo.Time.Hours;
-        Minutes = scheduleInfo.Time.Minutes;
+        Time = scheduleInfo.Time;
         RunAtLogin = scheduleInfo.RunAtLogin;
     }
 
@@ -36,7 +35,7 @@ public class WhenTaskViewModel : ObservableObject
         if (Saturday) scheduleInfo.Days.Add(System.DayOfWeek.Saturday);
         if (Sunday) scheduleInfo.Days.Add(System.DayOfWeek.Sunday);
 
-        scheduleInfo.Time = new System.TimeSpan(Hours, Minutes, 0);
+        scheduleInfo.Time = Time.GetValueOrDefault();
         scheduleInfo.RunAtLogin = RunAtLogin;
 
         return scheduleInfo;
@@ -44,8 +43,6 @@ public class WhenTaskViewModel : ObservableObject
 
     #region Labels
     public static string LeftMenu_When => Resources.LeftMenu_When;
-    public static string Time_Field_Hour => Resources.Time_Field_Hour;
-    public static string Time_Field_Minute => Resources.Time_Field_Minute;
     public static string Days_Field_Choose => Resources.Days_Field_Choose;
 
     public static string Days_Monday => Resources.Days_Monday;
@@ -59,35 +56,18 @@ public class WhenTaskViewModel : ObservableObject
 
     #endregion
 
-    #region Hours
+    #region Time
 
-    private int _hours;
+    private System.TimeSpan? _time;
 
-    public int Hours
+    public System.TimeSpan? Time
     {
-        get { return _hours; }
+        get { return _time; }
         set
         {
-            if (value == _hours) return;
-            _hours = value;
-            OnPropertyChanged(nameof(Hours));
-        }
-    }
-
-    #endregion
-
-    #region Minutes
-
-    private int _minutes;
-
-    public int Minutes
-    {
-        get { return _minutes; }
-        set
-        {
-            if (value == _minutes) return;
-            _minutes = value;
-            OnPropertyChanged(nameof(Minutes));
+            if (value == _time) return;
+            _time = value;
+            OnPropertyChanged(nameof(Time));
         }
     }
 

@@ -2361,24 +2361,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hour:.
-        /// </summary>
-        public static string Time_Field_Hour {
-            get {
-                return ResourceManager.GetString("Time_Field_Hour", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Minute:.
-        /// </summary>
-        public static string Time_Field_Minute {
-            get {
-                return ResourceManager.GetString("Time_Field_Minute", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Waiting for timeout....
         /// </summary>
         public static string TimeoutTask_Title {

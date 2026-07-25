@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -864,12 +864,6 @@ bin.
   </data>
   <data name="Time_Field_Elapsed" xml:space="preserve">
     <value>Изминало:</value>
-  </data>
-  <data name="Time_Field_Hour" xml:space="preserve">
-    <value>Час:</value>
-  </data>
-  <data name="Time_Field_Minute" xml:space="preserve">
-    <value>Минута:</value>
   </data>
   <data name="TimeoutTask_Title" xml:space="preserve">
     <value>Изчакване на таймаут...</value>

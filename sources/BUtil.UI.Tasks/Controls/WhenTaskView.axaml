@@ -14,32 +14,19 @@
 			</StackPanel>
 		</Expander.Header>
 		<StackPanel Spacing="8">
-			<Border BorderBrush="Gray" BorderThickness="1" CornerRadius="4" Padding="8">
-				<StackPanel>
+			<Border BorderBrush="Gray" BorderThickness="1" CornerRadius="4" Padding="8" Margin="0 8 0 8">
+				<StackPanel Spacing="8">
 					<TextBlock Text="{Binding Days_Field_Choose}" />
-					<Grid>
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="*" />
-							<ColumnDefinition Width="*" />
-						</Grid.ColumnDefinitions>
-						<Grid.RowDefinitions>
-							<RowDefinition Height="Auto" />
-							<RowDefinition Height="Auto" />
-							<RowDefinition Height="Auto" />
-							<RowDefinition Height="Auto" />
-						</Grid.RowDefinitions>
-						<CheckBox Grid.Column="0" Grid.Row="0" IsChecked="{Binding Monday}" Content="{Binding Days_Monday}" />
-						<CheckBox Grid.Column="0" Grid.Row="1" IsChecked="{Binding Tuesday}" Content="{Binding Days_Tuesday}" />
-						<CheckBox Grid.Column="0" Grid.Row="2" IsChecked="{Binding Wednesday}" Content="{Binding Days_Wednesday}" />
-						<CheckBox Grid.Column="0" Grid.Row="3" IsChecked="{Binding Thursday}" Content="{Binding Days_Thursday}" />
-						<CheckBox Grid.Column="1" Grid.Row="0" IsChecked="{Binding Friday}" Content="{Binding Days_Friday}" />
-						<CheckBox Grid.Column="1" Grid.Row="1" IsChecked="{Binding Saturday}" Content="{Binding Days_Saturday}" />
-						<CheckBox Grid.Column="1" Grid.Row="2" IsChecked="{Binding Sunday}" Content="{Binding Days_Sunday}" />
-					</Grid>
-					<TextBlock Text="{Binding Time_Field_Hour}" Margin="0 4 0 4" />
-					<NumericUpDown Minimum="0" Maximum="23" FormatString="N0" Value="{Binding Hours}" />
-					<TextBlock Text="{Binding Time_Field_Minute}" Margin="0 4 0 4" />
-					<NumericUpDown Minimum="0" Maximum="59" FormatString="N0" Value="{Binding Minutes}" />
+					<WrapPanel>
+						<CheckBox Width="120" IsChecked="{Binding Monday}" Content="{Binding Days_Monday}" />
+						<CheckBox Width="120" IsChecked="{Binding Tuesday}" Content="{Binding Days_Tuesday}" />
+						<CheckBox Width="120" IsChecked="{Binding Wednesday}" Content="{Binding Days_Wednesday}" />
+						<CheckBox Width="120" IsChecked="{Binding Thursday}" Content="{Binding Days_Thursday}" />
+						<CheckBox Width="120" IsChecked="{Binding Friday}" Content="{Binding Days_Friday}" />
+						<CheckBox Width="120" IsChecked="{Binding Saturday}" Content="{Binding Days_Saturday}" />
+						<CheckBox Width="120" IsChecked="{Binding Sunday}" Content="{Binding Days_Sunday}" />
+					</WrapPanel>
+					<TimePicker HorizontalAlignment="Left" SelectedTime="{Binding Time}" />
 				</StackPanel>
 			</Border>
 			<Border BorderBrush="Gray" BorderThickness="1" CornerRadius="4" Padding="8">
