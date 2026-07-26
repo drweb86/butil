@@ -10,5 +10,6 @@
         <FluentTheme />
 		<dialogHostAvalonia:DialogHostStyles />
 		<StyleInclude Source="avares://BUtil.UI/Themes/TaskSectionExpander.axaml" />
+		<StyleInclude Source="avares://BUtil.UI/Themes/FormContent.axaml" />
     </Application.Styles>
 </Application>

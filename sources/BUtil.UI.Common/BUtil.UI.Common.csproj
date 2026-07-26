@@ -34,5 +34,8 @@
     <Compile Update="Controls\MessageBar.axaml.cs">
       <DependentUpon>MessageBar.axaml</DependentUpon>
     </Compile>
+    <Compile Update="Controls\DialogButtons.axaml.cs">
+      <DependentUpon>DialogButtons.axaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

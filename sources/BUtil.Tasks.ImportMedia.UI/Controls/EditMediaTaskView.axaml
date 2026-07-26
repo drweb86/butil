@@ -29,7 +29,8 @@
 		<decor:ViewDecoration Grid.Row="0" Kind="ImportMedia" />
 		<ScrollViewer Grid.Row="0"
 				ScrollViewer.VerticalScrollBarVisibility="Visible"
-				ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+				ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+					  Classes="FormContent">
 			<StackPanel>
 				<tasks:TaskIdentityView Margin="16 16 16 8" DataContext="{Binding TaskIdentityViewModel}" />
 				<controls:StorageView Margin="16 8 16 8" DataContext="{Binding SourceTaskViewModel}" />
@@ -37,9 +38,10 @@
 			</StackPanel>
 		</ScrollViewer>
 
-		<StackPanel Grid.Row="1" Margin="16 8 16 16" Orientation="Horizontal" HorizontalAlignment="Right">
-			<Button MinWidth="120" Padding="0 8 0 8" VerticalAlignment="Center" Content="{Binding Button_OK}" HorizontalContentAlignment="Center" Margin="8 0 8 0" Command="{Binding ButtonOkCommand}" />
-			<Button MinWidth="120" Padding="0 8 0 8" VerticalAlignment="Center" Content="{Binding Button_Cancel}" HorizontalContentAlignment="Center" Command="{Binding ButtonCancelCommand}" />
-		</StackPanel>
+		<decor:DialogButtons Grid.Row="1" Margin="16 8 16 16"
+				PrimaryText="{Binding Button_OK}"
+				PrimaryCommand="{Binding ButtonOkCommand}"
+				CancelText="{Binding Button_Cancel}"
+				CancelCommand="{Binding ButtonCancelCommand}" />
 	</Grid>
 </UserControl>

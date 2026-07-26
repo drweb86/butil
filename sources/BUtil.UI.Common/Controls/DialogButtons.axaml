@@ -1,0 +1,21 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="BUtil.UI.Controls.DialogButtons"
+             x:Name="Root">
+	<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+		<StackPanel.Styles>
+			<Style Selector="Button">
+				<Setter Property="Margin" Value="4" />
+				<Setter Property="MinWidth" Value="120" />
+				<Setter Property="HorizontalContentAlignment" Value="Center" />
+				<Setter Property="Padding" Value="32 32 32 32" />
+			</Style>
+		</StackPanel.Styles>
+		<Button IsDefault="True"
+				Content="{Binding #Root.PrimaryText}"
+				Command="{Binding #Root.PrimaryCommand}" />
+		<Button IsCancel="True"
+				Content="{Binding #Root.CancelText}"
+				Command="{Binding #Root.CancelCommand}" />
+	</StackPanel>
+</UserControl>
