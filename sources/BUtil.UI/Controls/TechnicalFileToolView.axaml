@@ -38,7 +38,7 @@
 						<Setter Property="Margin" Value="4" />
 						<Setter Property="MinWidth" Value="120" />
 						<Setter Property="HorizontalContentAlignment" Value="Center" />
-						<Setter Property="Padding" Value="16 32 16 32" />
+						<Setter Property="Padding" Value="32 32 32 32" />
 					</Style>
 				</StackPanel.Styles>
 				<Button IsDefault="True"
