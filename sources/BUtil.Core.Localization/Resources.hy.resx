@@ -793,9 +793,6 @@ bin.
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>Խմբագրում</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>Փակել</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>Գործողությունը հաջողությամբ ավարտվեց:</value>
   </data>
@@ -849,9 +846,6 @@ bin.
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Ընտրեք սկզբնաղբյուր ֆայլը</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>Վազիր</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Աղբյուրի ֆայլը.</value>

@@ -793,9 +793,6 @@ Lihat penerangan terperinci di pautan berikut.</value>
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>Mengedit</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>Tutup</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>Operasi berjaya diselesaikan.</value>
   </data>
@@ -849,9 +846,6 @@ Lihat penerangan terperinci di pautan berikut.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Pilih fail sumber</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>Jalankan</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Fail sumber:</value>

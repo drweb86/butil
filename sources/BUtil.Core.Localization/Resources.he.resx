@@ -793,9 +793,6 @@ bin.
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>עורך</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>סגור</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>הפעולה הושלמה בהצלחה.</value>
   </data>
@@ -849,9 +846,6 @@ bin.
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>בחר קובץ מקור</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>הפעל</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>קובץ מקור:</value>

@@ -793,9 +793,6 @@ Vaadake üksikasjalikku kirjeldust järgmisel lingil.</value>
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>Muutmine</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>Sulge</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>Toiming lõppes edukalt.</value>
   </data>
@@ -849,9 +846,6 @@ Vaadake üksikasjalikku kirjeldust järgmisel lingil.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Valige lähtefail</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>Käivita</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Lähtefail:</value>

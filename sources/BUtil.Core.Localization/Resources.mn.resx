@@ -794,9 +794,6 @@ bin.
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>Засварлаж байна</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>Хаах</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>Үйлдэл амжилттай дууслаа.</value>
   </data>
@@ -850,9 +847,6 @@ bin.
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Эх файл сонгох</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>Ажиллуулах</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Эх файл:</value>

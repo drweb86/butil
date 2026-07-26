@@ -19,8 +19,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Controls\ValidationError.axaml.cs">
+      <DependentUpon>ValidationError.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Controls\ViewDecoration.axaml.cs">
       <DependentUpon>ViewDecoration.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\TextField.axaml.cs">
+      <DependentUpon>TextField.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\TextFieldWithAction.axaml.cs">
+      <DependentUpon>TextFieldWithAction.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\MessageBar.axaml.cs">
+      <DependentUpon>MessageBar.axaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>

@@ -793,9 +793,6 @@ See detailed description in the following link.</value>
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>Edição</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>Fechar</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>Operação concluída com sucesso.</value>
   </data>
@@ -849,9 +846,6 @@ See detailed description in the following link.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Selecione o arquivo de origem</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>Correr</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Arquivo fonte:</value>

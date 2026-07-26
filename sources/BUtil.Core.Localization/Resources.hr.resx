@@ -793,9 +793,6 @@ Pogledajte detaljni opis na sljedećoj poveznici.</value>
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>Uređivanje</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>Zatvori</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>Operacija uspješno završena.</value>
   </data>
@@ -849,9 +846,6 @@ Pogledajte detaljni opis na sljedećoj poveznici.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Odaberite izvornu datoteku</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>Pokreni</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Izvorna datoteka:</value>

@@ -793,9 +793,6 @@ Skatiet detalizētu aprakstu šajā saitē.</value>
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>Rediģēšana</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>Aizvērt</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>Darbība veiksmīgi pabeigta.</value>
   </data>
@@ -849,9 +846,6 @@ Skatiet detalizētu aprakstu šajā saitē.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Izvēlieties avota failu</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>Palaist</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Avota fails:</value>

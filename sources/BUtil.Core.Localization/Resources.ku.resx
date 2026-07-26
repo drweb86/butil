@@ -794,9 +794,6 @@ Ji bo danasîna berfireh lînka jêrîn bibînin.</value>
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>Guhertin</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>Bigire</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>Operasyon bi serkeftî qediya.</value>
   </data>
@@ -850,9 +847,6 @@ Ji bo danasîna berfireh lînka jêrîn bibînin.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Pela çavkaniyê hilbijêrin</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>Bimeşîne</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Pela çavkaniyê:</value>

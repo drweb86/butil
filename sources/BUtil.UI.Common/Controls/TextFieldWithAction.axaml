@@ -1,0 +1,28 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:BUtil.UI.Controls"
+			 xmlns:decor="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Common"
+             x:Class="BUtil.UI.Controls.TextFieldWithAction"
+             x:Name="Root"
+             Margin="0 8 0 8">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="Auto" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition />
+			<RowDefinition />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+		<TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding #Root.Label}" Margin="0 0 0 8" />
+		<TextBox Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="0 0 8 0"
+				Text="{Binding #Root.Text, Mode=TwoWay}" />
+		<Button Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"
+								Content="{Binding #Root.ActionText}"
+				Command="{Binding #Root.ActionCommand}" />
+		<decor:ValidationError
+			Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+			Error="{Binding #Root.Error}" />
+	</Grid>
+</UserControl>

@@ -794,9 +794,6 @@ bin.
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>편집 중</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>닫기</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>작업이 성공적으로 완료되었습니다.</value>
   </data>
@@ -850,9 +847,6 @@ bin.
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>원본 파일 선택</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>실행</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>원본 파일:</value>

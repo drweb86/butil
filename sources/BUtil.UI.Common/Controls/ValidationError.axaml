@@ -1,0 +1,10 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="BUtil.UI.Controls.ValidationError"
+             x:Name="Root"
+             Margin="0 4 0 0">
+	<TextBlock Margin="0 4 0 0"
+			   IsVisible="{Binding #Root.Error, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
+			   Foreground="{DynamicResource ErrorForegroundBrush}"
+			   Text="{Binding #Root.Error}" />
+</UserControl>

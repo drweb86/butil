@@ -44,6 +44,10 @@ public partial class App : Application
             {
                 DataContext = new MainWindowViewModel()
             };
+
+            Resources["ErrorForegroundBrush"] = ColorPalette.GetBrush(SemanticColor.Error);
+            Resources["SuccessBackgroundBrush"] = ColorPalette.GetBrush(SemanticColor.Success);
+            Resources["ErrorBackgroundBrush"] = ColorPalette.GetBrush(SemanticColor.Error);
         }
 
         base.OnFrameworkInitializationCompleted();

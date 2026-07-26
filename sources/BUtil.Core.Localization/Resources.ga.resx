@@ -793,9 +793,6 @@ See detailed description in the following link.</value>
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>Eagarthóireacht</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>Dún</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>Críochnaíodh an oibríocht go rathúil.</value>
   </data>
@@ -849,9 +846,6 @@ See detailed description in the following link.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Roghnaigh comhad foinse</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>Rith</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Comhad foinse:</value>

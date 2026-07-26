@@ -793,9 +793,6 @@ bin.
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>Επεξεργασία</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>Κλείσιμο</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>Η λειτουργία ολοκληρώθηκε επιτυχώς.</value>
   </data>
@@ -849,9 +846,6 @@ bin.
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Επιλογή αρχείου πηγής</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>Εκτέλεση</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Αρχείο πηγής:</value>

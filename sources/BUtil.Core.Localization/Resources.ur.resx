@@ -780,9 +780,6 @@
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>ترمیم</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>بند کریں</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>آپریشن کامیابی سے مکمل ہوا۔</value>
   </data>
@@ -836,9 +833,6 @@
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>ماخذ فائل منتخب کریں</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>چلائیں</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>ماخذ فائل:</value>

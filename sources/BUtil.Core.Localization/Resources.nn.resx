@@ -793,9 +793,6 @@ Sjå detaljert skildring i følgjande lenkje.</value>
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>Redigerer</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>Lukk</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>Operasjonen fullført vellukka.</value>
   </data>
@@ -849,9 +846,6 @@ Sjå detaljert skildring i følgjande lenkje.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Vel kjeldefil</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>Køyr</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Kjeldefil:</value>

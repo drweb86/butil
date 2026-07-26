@@ -1,0 +1,18 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="BUtil.UI.Controls.MessageBar"
+             x:Name="Root"
+             Margin="0 8 0 8"
+             IsVisible="{Binding #Root.Text, Converter={x:Static StringConverters.IsNotNullOrEmpty}}">
+	<UserControl.Styles>
+		<Style Selector="Border.success">
+			<Setter Property="Background" Value="{DynamicResource SuccessBackgroundBrush}" />
+		</Style>
+		<Style Selector="Border.error">
+			<Setter Property="Background" Value="{DynamicResource ErrorBackgroundBrush}" />
+		</Style>
+	</UserControl.Styles>
+	<Border x:Name="BarBorder" CornerRadius="4" Padding="12 8">
+		<TextBlock Text="{Binding #Root.Text}" Foreground="White" TextWrapping="Wrap" />
+	</Border>
+</UserControl>

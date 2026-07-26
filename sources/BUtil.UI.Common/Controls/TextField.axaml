@@ -1,0 +1,13 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:decor="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Common"
+             x:Class="BUtil.UI.Controls.TextField"
+             x:Name="Root"
+             Margin="0 8 0 8">
+	<StackPanel>
+		<TextBlock Margin="0 0 0 8"
+				   Text="{Binding #Root.Label}" />
+		<TextBox Text="{Binding #Root.Text, Mode=TwoWay}" />
+		<decor:ValidationError Error="{Binding #Root.Error}" />
+	</StackPanel>
+</UserControl>

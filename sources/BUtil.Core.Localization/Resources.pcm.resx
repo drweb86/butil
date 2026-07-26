@@ -790,9 +790,6 @@ Abeg do one of dese:
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>Editing</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>Close am</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>Operation don finish well-well.</value>
   </data>
@@ -846,9 +843,6 @@ Abeg do one of dese:
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Choose source file</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>Run am</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Source file:</value>

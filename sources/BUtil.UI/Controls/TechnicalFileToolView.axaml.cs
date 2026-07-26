@@ -1,5 +1,4 @@
 using Avalonia.Controls;
-using Avalonia.Interactivity;
 using Avalonia.Platform.Storage;
 using BUtil.Core.Misc;
 using System;
@@ -16,17 +15,7 @@ public partial class TechnicalFileToolView : UserControl, IViewLocatorAware<Tech
         InitializeComponent();
     }
 
-    private void BrowseSourceClick(object? sender, RoutedEventArgs e)
-    {
-        _ = BrowseSourceAsync();
-    }
-
-    private void BrowseOutputClick(object? sender, RoutedEventArgs e)
-    {
-        _ = BrowseOutputAsync();
-    }
-
-    private async Task BrowseSourceAsync()
+    public async Task BrowseSourceAsync()
     {
         var root = TopLevel.GetTopLevel(this) ?? throw new InvalidOperationException();
         var vm = DataContext as TechnicalFileToolViewModel ?? throw new InvalidOperationException();
@@ -47,7 +36,7 @@ public partial class TechnicalFileToolView : UserControl, IViewLocatorAware<Tech
             vm.InputPath = files[0].TryGetLocalPath() ?? files[0].Path.ToString();
     }
 
-    private async Task BrowseOutputAsync()
+    public async Task BrowseOutputAsync()
     {
         var root = TopLevel.GetTopLevel(this) ?? throw new InvalidOperationException();
         var vm = DataContext as TechnicalFileToolViewModel ?? throw new InvalidOperationException();

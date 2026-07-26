@@ -793,9 +793,6 @@ bin.
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>Редактиране</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>Затваряне</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>Операцията завърши успешно.</value>
   </data>
@@ -849,9 +846,6 @@ bin.
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Изберете входен файл</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>Изпълнение</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Входен файл:</value>

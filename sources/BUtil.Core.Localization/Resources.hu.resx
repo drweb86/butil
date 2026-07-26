@@ -793,9 +793,6 @@ A részletes leírást az alábbi linken találja.</value>
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>Szerkesztés</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>Bezárás</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>A művelet sikeresen befejeződött.</value>
   </data>
@@ -849,9 +846,6 @@ A részletes leírást az alábbi linken találja.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Forrásfájl kiválasztása</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>Futtatás</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Forrásfájl:</value>

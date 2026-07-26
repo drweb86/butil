@@ -790,9 +790,6 @@
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>संपादन</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>बंद करा</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>ऑपरेशन यशस्वीरित्या पूर्ण झाले.</value>
   </data>
@@ -846,9 +843,6 @@
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>स्त्रोत फाइल निवडा</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>चालवा</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>स्त्रोत फाइल:</value>

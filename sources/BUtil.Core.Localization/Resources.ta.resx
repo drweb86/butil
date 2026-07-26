@@ -792,9 +792,6 @@ bin.
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>திருத்துகிறது</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>மூடு</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>செயல்பாடு வெற்றிகரமாக முடிந்தது.</value>
   </data>
@@ -848,9 +845,6 @@ bin.
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>மூலக் கோப்பைத் தேர்ந்தெடு</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>இயக்கு</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>மூலக் கோப்பு:</value>

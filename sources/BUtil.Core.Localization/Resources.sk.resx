@@ -793,9 +793,6 @@ Pozrite si podrobný popis na nasledujúcom odkaze.</value>
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>Úprava</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>Zavrieť</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>Operácia bola úspešne dokončená.</value>
   </data>
@@ -849,9 +846,6 @@ Pozrite si podrobný popis na nasledujúcom odkaze.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Vyberte zdrojový súbor</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>Spustiť</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Zdrojový súbor:</value>

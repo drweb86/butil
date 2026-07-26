@@ -793,9 +793,6 @@ Sjá nákvæma lýsingu á eftirfarandi tengli.</value>
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>Breyta</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>Loka</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>Aðgerð tókst.</value>
   </data>
@@ -849,9 +846,6 @@ Sjá nákvæma lýsingu á eftirfarandi tengli.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Velja upprunaskrá</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>Keyra</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Upprunaskrá:</value>

@@ -793,9 +793,6 @@ Siehe detaillierte Beschreibung im folgenden Link.</value>
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>Bearbeiten</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>Schließen</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>Vorgang erfolgreich abgeschlossen.</value>
   </data>
@@ -849,9 +846,6 @@ Siehe detaillierte Beschreibung im folgenden Link.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Quelldatei auswählen</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>Ausführen</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Quelldatei:</value>

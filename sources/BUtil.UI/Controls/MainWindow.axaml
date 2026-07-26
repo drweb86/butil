@@ -50,6 +50,7 @@
 								Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHost:DialogHost}, Path=CloseDialogCommand}"
 								CommandParameter="{Binding Button1Arg}"
 								Content="{Binding Button1Text}"
+								IsDefault="True"
 						/>
 						<Button Margin="8 8 8 8"
 								MinHeight="32"
@@ -60,6 +61,7 @@
 								Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHost:DialogHost}, Path=CloseDialogCommand}"
 								CommandParameter="{Binding Button2Arg}"
 								Content="{Binding Button2Text}"
+								IsCancel="True"
 						/>
 					</WrapPanel>
 				</StackPanel>

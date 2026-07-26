@@ -801,9 +801,6 @@ Scegliere una delle seguenti opzioni:
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>Modifica</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>Chiudi</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>Operazione completata correttamente.</value>
   </data>
@@ -857,9 +854,6 @@ Scegliere una delle seguenti opzioni:
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Seleziona file di origine</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>Esegui</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>File di origine:</value>

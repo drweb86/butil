@@ -2145,15 +2145,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Close.
-        /// </summary>
-        public static string TechnicalTool_Close {
-            get {
-                return ResourceManager.GetString("TechnicalTool_Close", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Operation completed successfully..
         /// </summary>
         public static string TechnicalTool_Completed {
@@ -2312,15 +2303,6 @@ namespace BUtil.Core.Localization {
         public static string TechnicalTool_PickSourceFile {
             get {
                 return ResourceManager.GetString("TechnicalTool_PickSourceFile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Run.
-        /// </summary>
-        public static string TechnicalTool_Run {
-            get {
-                return ResourceManager.GetString("TechnicalTool_Run", resourceCulture);
             }
         }
         

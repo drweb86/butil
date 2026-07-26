@@ -793,9 +793,6 @@ Shihni përshkrimin e detajuar në lidhjen vijuese.</value>
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>Redaktimi</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>Mbyll</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>Operacioni përfundoi me sukses.</value>
   </data>
@@ -849,9 +846,6 @@ Shihni përshkrimin e detajuar në lidhjen vijuese.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Zgjidhni skedarin burim</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>Ekzekuto</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Skedari burim:</value>

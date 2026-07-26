@@ -5,83 +5,49 @@
              xmlns:controls="clr-namespace:BUtil.UI.Controls"
              xmlns:decor="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Common"
              mc:Ignorable="d"
-             d:DesignWidth="800"
-             d:DesignHeight="450"
              x:Class="BUtil.UI.Controls.TechnicalFileToolView"
+             x:Name="Root"
              x:DataType="controls:TechnicalFileToolViewModel">
-	<UserControl.Resources>
-		<StreamGeometry x:Key="play_regular">M 3,2 C 3,2 3,0.5 5,1.8 L 21,10.5 C 23,11.5 23,12.5 21,13.5 L 5,22.2 C 3,23.5 3,22 3,22 Z</StreamGeometry>
-	</UserControl.Resources>
 	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="*" />
-			<RowDefinition Height="Auto"/>
-		</Grid.RowDefinitions>
+		<controls:HackerDecorationCanvas IsVisible="{Binding IsAesTool}" />
+		<controls:WizardsDecorationCanvas IsVisible="{Binding IsBrotliTool}" />
+		<StackPanel Margin="24" MaxWidth="720" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+			<TextBlock Text="{Binding WindowTitle}" FontSize="20" FontWeight="Bold" Margin="0 0 0 8" />
+			<decor:TextFieldWithAction
+					Label="{Binding TechnicalTool_SourceFile}"
+					Text="{Binding InputPath}"
+					ActionText="{Binding Field_File_Browse}"
+					ActionCommand="{Binding #Root.BrowseSourceAsync}"
+					Error="{Binding InputPathError}" />
+			<decor:TextFieldWithAction
+					Label="{Binding TechnicalTool_OutputFile}"
+					Text="{Binding OutputPath}"
+					ActionText="{Binding Field_File_Browse}"
+					ActionCommand="{Binding #Root.BrowseOutputAsync}"
+					Error="{Binding OutputPathError}" />
+			<decor:TextField
+					IsVisible="{Binding IsPasswordVisible}"
+					Label="{Binding Password_Field}"
+					Text="{Binding Password}"
+					Error="{Binding PasswordError}" />
+			<decor:MessageBar Text="{Binding StatusText}" Kind="{Binding StatusKind}" />
 
-		<controls:HackerDecorationCanvas Grid.Row="0" IsVisible="{Binding IsAesTool}" />
-		<controls:WizardsDecorationCanvas Grid.Row="0" IsVisible="{Binding IsBrotliTool}" />
-		<ScrollViewer Grid.Row="0"
-				ScrollViewer.VerticalScrollBarVisibility="Visible"
-				ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-			<StackPanel Margin="24 24 24 8">
-				<Grid Margin="0 0 0 12">
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="Auto" />
-						<ColumnDefinition Width="*" />
-						<ColumnDefinition Width="Auto" />
-					</Grid.ColumnDefinitions>
-					<TextBlock Grid.Column="0" Text="{Binding TechnicalTool_SourceFile}" VerticalAlignment="Center" Margin="0 0 8 0" />
-					<TextBox Grid.Column="1" Text="{Binding InputPath}" VerticalAlignment="Center" Margin="0 0 8 0" />
-					<Button Grid.Column="2" Content="{Binding Field_File_Browse}" VerticalAlignment="Center"
-							Click="BrowseSourceClick" />
-				</Grid>
-				<Grid Margin="0 0 0 12">
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="Auto" />
-						<ColumnDefinition Width="*" />
-						<ColumnDefinition Width="Auto" />
-					</Grid.ColumnDefinitions>
-					<TextBlock Grid.Column="0" Text="{Binding TechnicalTool_OutputFile}" VerticalAlignment="Center" Margin="0 0 8 0" />
-					<TextBox Grid.Column="1" Text="{Binding OutputPath}" VerticalAlignment="Center" Margin="0 0 8 0" />
-					<Button Grid.Column="2" Content="{Binding Field_File_Browse}" VerticalAlignment="Center"
-							Click="BrowseOutputClick" />
-				</Grid>
-				<Grid IsVisible="{Binding IsPasswordVisible}">
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="Auto" />
-						<ColumnDefinition Width="*" />
-					</Grid.ColumnDefinitions>
-					<TextBlock Grid.Column="0" Text="{Binding Password_Field}" VerticalAlignment="Center" Margin="0 0 8 0" />
-					<TextBox Grid.Column="1" Text="{Binding Password}" VerticalAlignment="Center" />
-				</Grid>
+			<StackPanel Margin="0 8 0 0" Orientation="Horizontal" HorizontalAlignment="Right">
+				<StackPanel.Styles>
+					<Style Selector="Button">
+						<Setter Property="Margin" Value="4" />
+						<Setter Property="MinWidth" Value="120" />
+						<Setter Property="HorizontalContentAlignment" Value="Center" />
+						<Setter Property="Padding" Value="16 32 16 32" />
+					</Style>
+				</StackPanel.Styles>
+				<Button IsDefault="True"
+						Content="{Binding WindowTitle}" 
+						Command="{Binding RunCommand}" />
+				<Button IsCancel="True"
+						Content="{Binding Button_Cancel}"
+						Command="{Binding CloseCommand}" />
 			</StackPanel>
-		</ScrollViewer>
-
-		<StackPanel Grid.Row="1" Margin="24 8 24 24" Orientation="Horizontal" HorizontalAlignment="Right">
-			<Button Margin="4"
-					Padding="16"
-					VerticalAlignment="Center"
-					ToolTip.Tip="{Binding TechnicalTool_Run}"
-					HorizontalContentAlignment="Center" 
-					Command="{Binding RunCommand}">
-				<Path
-					Data="{StaticResource play_regular}"
-					Fill="#94F591"
-					Width="32"
-					Height="32"
-					Stretch="Uniform"
-				/>
-			</Button>
-			<Button MinWidth="120"
-					Margin="4"
-					Padding="16" 
-					MinHeight="66"
-					VerticalAlignment="Center"
-					Content="{Binding TechnicalTool_Close}"
-					HorizontalContentAlignment="Center"
-					VerticalContentAlignment="Center"
-					Command="{Binding CloseCommand}"
-			/>
 		</StackPanel>
 	</Grid>
 </UserControl>

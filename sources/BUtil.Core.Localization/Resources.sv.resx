@@ -793,9 +793,6 @@ Se detaljerad beskrivning i följande länk.</value>
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>Redigerar</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>Stäng</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>Åtgärden slutfördes framgångsrikt.</value>
   </data>
@@ -849,9 +846,6 @@ Se detaljerad beskrivning i följande länk.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Välj källfil</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>Kör</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Källfil:</value>

@@ -7,7 +7,6 @@ using BUtil.Core.Services;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Threading.Tasks;
 
 namespace BUtil.UI.Controls;
 
@@ -19,6 +18,11 @@ public class TechnicalFileToolViewModel : ViewModelBase
     private string _inputPath = string.Empty;
     private string _outputPath = string.Empty;
     private string _password = string.Empty;
+    private string? _inputPathError;
+    private string? _outputPathError;
+    private string? _passwordError;
+    private string? _statusText;
+    private MessageBarKind _statusKind;
 
     public TechnicalFileToolViewModel(TechnicalFileToolKind kind)
     {
@@ -52,6 +56,8 @@ public class TechnicalFileToolViewModel : ViewModelBase
                 return;
             _inputPath = value;
             OnPropertyChanged(nameof(InputPath));
+            InputPathError = null;
+            StatusText = null;
             ApplySuggestedOutputFromInput();
         }
     }
@@ -65,6 +71,8 @@ public class TechnicalFileToolViewModel : ViewModelBase
                 return;
             _outputPath = value;
             OnPropertyChanged(nameof(OutputPath));
+            OutputPathError = null;
+            StatusText = null;
         }
     }
 
@@ -77,13 +85,74 @@ public class TechnicalFileToolViewModel : ViewModelBase
                 return;
             _password = value;
             OnPropertyChanged(nameof(Password));
+            PasswordError = null;
+            StatusText = null;
+        }
+    }
+
+    public string? InputPathError
+    {
+        get => _inputPathError;
+        set
+        {
+            if (value == _inputPathError)
+                return;
+            _inputPathError = value;
+            OnPropertyChanged(nameof(InputPathError));
+        }
+    }
+
+    public string? OutputPathError
+    {
+        get => _outputPathError;
+        set
+        {
+            if (value == _outputPathError)
+                return;
+            _outputPathError = value;
+            OnPropertyChanged(nameof(OutputPathError));
+        }
+    }
+
+    public string? PasswordError
+    {
+        get => _passwordError;
+        set
+        {
+            if (value == _passwordError)
+                return;
+            _passwordError = value;
+            OnPropertyChanged(nameof(PasswordError));
+        }
+    }
+
+    public string? StatusText
+    {
+        get => _statusText;
+        set
+        {
+            if (value == _statusText)
+                return;
+            _statusText = value;
+            OnPropertyChanged(nameof(StatusText));
+        }
+    }
+
+    public MessageBarKind StatusKind
+    {
+        get => _statusKind;
+        set
+        {
+            if (value == _statusKind)
+                return;
+            _statusKind = value;
+            OnPropertyChanged(nameof(StatusKind));
         }
     }
 
     public static string TechnicalTool_SourceFile => Resources.TechnicalTool_SourceFile;
     public static string TechnicalTool_OutputFile => Resources.TechnicalTool_OutputFile;
-    public static string TechnicalTool_Run => Resources.TechnicalTool_Run;
-    public static string TechnicalTool_Close => Resources.TechnicalTool_Close;
+    public static string Button_Cancel => Resources.Button_Cancel;
     public static string Password_Field => Resources.Password_Field;
     public static string Field_File_Browse => Resources.Field_File_Browse;
 
@@ -142,27 +211,21 @@ public class TechnicalFileToolViewModel : ViewModelBase
         WindowManager.SwitchView(new TasksViewModel());
     }
 
-    public async Task RunCommand()
+    public void RunCommand()
     {
+        StatusText = null;
+
         var input = InputPath.Trim();
         var output = OutputPath.Trim();
-        if (string.IsNullOrWhiteSpace(input) || string.IsNullOrWhiteSpace(output))
-        {
-            await Messages.ShowErrorBox(Resources.TechnicalTool_Error_PathRequired);
-            return;
-        }
 
-        if (!File.Exists(input))
-        {
-            await Messages.ShowErrorBox(Resources.TechnicalTool_Error_FileNotFound + Environment.NewLine + input);
-            return;
-        }
+        InputPathError = string.IsNullOrWhiteSpace(input)
+            ? Resources.TechnicalTool_Error_PathRequired
+            : !File.Exists(input) ? Resources.TechnicalTool_Error_FileNotFound + Environment.NewLine + input : null;
+        OutputPathError = string.IsNullOrWhiteSpace(output) ? Resources.TechnicalTool_Error_PathRequired : null;
+        PasswordError = IsPasswordVisible && string.IsNullOrEmpty(Password) ? Resources.TechnicalTool_Error_PasswordRequired : null;
 
-        if (IsPasswordVisible && string.IsNullOrEmpty(Password))
-        {
-            await Messages.ShowErrorBox(Resources.TechnicalTool_Error_PasswordRequired);
+        if (InputPathError is not null || OutputPathError is not null || PasswordError is not null)
             return;
-        }
 
         try
         {
@@ -188,11 +251,13 @@ public class TechnicalFileToolViewModel : ViewModelBase
         }
         catch (Exception e)
         {
-            await Messages.ShowErrorBox(ExceptionHelper.ToString(e));
+            StatusKind = MessageBarKind.Error;
+            StatusText = ExceptionHelper.ToString(e);
             return;
         }
 
-        await Messages.ShowInformationBox(Resources.TechnicalTool_Completed);
+        StatusKind = MessageBarKind.Success;
+        StatusText = Resources.TechnicalTool_Completed;
     }
 
     private void ApplySuggestedOutputFromInput()

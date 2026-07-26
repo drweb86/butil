@@ -777,9 +777,6 @@ bin.
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>編集</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>閉じる</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>操作が正常に完了しました。</value>
   </data>
@@ -833,9 +830,6 @@ bin.
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>元のファイルを選択</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>実行</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>元のファイル:</value>

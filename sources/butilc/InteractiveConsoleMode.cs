@@ -88,7 +88,7 @@ public static class InteractiveConsoleMode
 
         if (!File.Exists(input))
         {
-            Console.WriteLine(Resources.TechnicalTool_Error_FileNotFound);
+            Console.WriteLine(Resources.TechnicalTool_Error_FileNotFound + Environment.NewLine + input);
             Console.WriteLine(input);
             Environment.Exit(-1);
         }

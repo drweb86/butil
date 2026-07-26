@@ -793,9 +793,6 @@ See detailed description in the following link.</value>
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>Редакцияләү</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>Ябу</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>Операция уңышлы тәмамланды.</value>
   </data>
@@ -849,9 +846,6 @@ See detailed description in the following link.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Чыганак файлын сайлагыз</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>Йөгер</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Чыганак файл:</value>

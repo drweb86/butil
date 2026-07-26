@@ -793,9 +793,6 @@ bin.
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>Redagavimas</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>Uždaryti</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>Operacija sėkmingai baigta.</value>
   </data>
@@ -849,9 +846,6 @@ bin.
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Pasirinkite šaltinio failą</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>Vykdyti</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Šaltinio failas:</value>

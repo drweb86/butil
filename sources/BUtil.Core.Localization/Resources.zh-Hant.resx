@@ -793,9 +793,6 @@ bin。
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>編輯中</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>關閉</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>作業已成功完成。</value>
   </data>
@@ -849,9 +846,6 @@ bin。
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>選擇來源檔案</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>執行</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>來源檔案：</value>

@@ -793,9 +793,6 @@ See detailed description in the following link.</value>
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>Edizioa</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>Itxi</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>Eragiketa behar bezala burutu da.</value>
   </data>
@@ -849,9 +846,6 @@ See detailed description in the following link.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Hautatu iturburu-fitxategia</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>Korrika</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Iturburu fitxategia:</value>

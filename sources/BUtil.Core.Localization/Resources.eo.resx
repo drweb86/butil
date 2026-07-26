@@ -793,9 +793,6 @@ See detailed description in the following link.</value>
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>Redaktado</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>Fermu</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>Operacio kompletigita sukcese.</value>
   </data>
@@ -849,9 +846,6 @@ See detailed description in the following link.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Elektu fontdosieron</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>Kuru</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Fontdosiero:</value>

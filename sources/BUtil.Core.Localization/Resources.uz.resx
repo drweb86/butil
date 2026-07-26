@@ -794,9 +794,6 @@ Batafsil tavsifni quyidagi havoladan ko'ring.</value>
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>Tahrirlash</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>Yopish</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>Amal muvaffaqiyatli bajarildi.</value>
   </data>
@@ -850,9 +847,6 @@ Batafsil tavsifni quyidagi havoladan ko'ring.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Manba faylini tanlang</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>Ishga tushirish</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Manba fayli:</value>

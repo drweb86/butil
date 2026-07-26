@@ -790,9 +790,6 @@ Aşağıdaki bağlantıda detaylı açıklama bulun.</value>
   <data name="Task_WindowTitle_Editing" xml:space="preserve">
     <value>Düzenleniyor</value>
   </data>
-  <data name="TechnicalTool_Close" xml:space="preserve">
-    <value>Kapat</value>
-  </data>
   <data name="TechnicalTool_Completed" xml:space="preserve">
     <value>İşlem başarıyla tamamlandı.</value>
   </data>
@@ -846,9 +843,6 @@ Aşağıdaki bağlantıda detaylı açıklama bulun.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Kaynak dosyayı seç</value>
-  </data>
-  <data name="TechnicalTool_Run" xml:space="preserve">
-    <value>Çalıştır</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Kaynak dosya:</value>
