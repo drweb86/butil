@@ -24,6 +24,9 @@
     <Compile Update="Controls\TaskIdentityView.axaml.cs">
       <DependentUpon>TaskIdentityView.axaml</DependentUpon>
     </Compile>
+    <Compile Update="Controls\ExpanderHeader.axaml.cs">
+      <DependentUpon>ExpanderHeader.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Controls\EncryptionTaskView.axaml.cs">
       <DependentUpon>EncryptionTaskView.axaml</DependentUpon>
     </Compile>

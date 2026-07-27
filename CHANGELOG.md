@@ -4,7 +4,7 @@
 ## Changes
 - Some libraries were updated.
 - Encryption, Compress/Decompress technical views was improved visually.
-- Technical tools, Expanders, When? views became better visually.
+- Technical tools, Expanders, When?, Encruption views became better visually.
 
 # 2026.07.15
 

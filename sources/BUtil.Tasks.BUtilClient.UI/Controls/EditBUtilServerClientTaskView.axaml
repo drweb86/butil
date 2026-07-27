@@ -23,26 +23,23 @@
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="*" />
-			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
 
 		<decor:ViewDecoration Grid.Row="0" Kind="BUtilClient" />
 		<ScrollViewer Grid.Row="0"
 				ScrollViewer.VerticalScrollBarVisibility="Visible"
-				ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-					  Classes="FormContent">
-			<StackPanel>
-				<tasks:TaskIdentityView Margin="16 16 16 8" DataContext="{Binding TaskIdentityViewModel}" />
-				<controls:FolderSectionView Margin="16 8 16 8" DataContext="{Binding FolderSectionViewModel}" />
-				<controls:StorageView Margin="16 8 16 8" DataContext="{Binding StorageViewModel}"/>
-				<controls:WhenTaskView Margin="16 8 16 8" DataContext="{Binding WhenTaskViewModel}" />
+				ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+			<StackPanel Spacing="8" Classes="FormContent">
+				<tasks:TaskIdentityView DataContext="{Binding TaskIdentityViewModel}" />
+				<controls:FolderSectionView DataContext="{Binding FolderSectionViewModel}" />
+				<controls:StorageView DataContext="{Binding StorageViewModel}"/>
+				<controls:WhenTaskView DataContext="{Binding WhenTaskViewModel}" />
+				<decor:DialogButtons
+					PrimaryText="{Binding Button_OK}"
+					PrimaryCommand="{Binding ButtonOkCommand}"
+					CancelText="{Binding Button_Cancel}"
+					CancelCommand="{Binding ButtonCancelCommand}" />
 			</StackPanel>
 		</ScrollViewer>
-
-		<decor:DialogButtons Grid.Row="1" Margin="16 8 16 16"
-				PrimaryText="{Binding Button_OK}"
-				PrimaryCommand="{Binding ButtonOkCommand}"
-				CancelText="{Binding Button_Cancel}"
-				CancelCommand="{Binding ButtonCancelCommand}" />
 	</Grid>
 </UserControl>

@@ -18,6 +18,12 @@ public partial class DialogButtons : UserControl
     public static readonly StyledProperty<ICommand?> CancelCommandProperty =
         AvaloniaProperty.Register<DialogButtons, ICommand?>(nameof(CancelCommand));
 
+    public static readonly StyledProperty<string?> MessageTextProperty =
+        AvaloniaProperty.Register<DialogButtons, string?>(nameof(MessageText));
+
+    public static readonly StyledProperty<MessageBarKind> MessageKindProperty =
+        AvaloniaProperty.Register<DialogButtons, MessageBarKind>(nameof(MessageKind));
+
     public string? PrimaryText
     {
         get => GetValue(PrimaryTextProperty);
@@ -40,6 +46,18 @@ public partial class DialogButtons : UserControl
     {
         get => GetValue(CancelCommandProperty);
         set => SetValue(CancelCommandProperty, value);
+    }
+
+    public string? MessageText
+    {
+        get => GetValue(MessageTextProperty);
+        set => SetValue(MessageTextProperty, value);
+    }
+
+    public MessageBarKind MessageKind
+    {
+        get => GetValue(MessageKindProperty);
+        set => SetValue(MessageKindProperty, value);
     }
 
     public DialogButtons()

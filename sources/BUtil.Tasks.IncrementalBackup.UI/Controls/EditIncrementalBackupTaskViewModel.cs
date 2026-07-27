@@ -31,6 +31,11 @@ public class EditIncrementalBackupTaskViewModel : BUtil.UI.Controls.ViewModelBas
         SetWindowTitleForEdit(taskName, isNew);
         var model = (IncrementalBackupModelOptionsV2)task.Model;
         EncryptionTaskViewModel = new BUtil.UI.Controls.EncryptionTaskViewModel(model.Password, isNew, !isNew, isNew);
+        EncryptionTaskViewModel.PropertyChanged += (_, e) =>
+        {
+            if (e.PropertyName == nameof(BUtil.UI.Controls.EncryptionTaskViewModel.Password))
+                FormErrorsText = null;
+        };
 
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
         WhenTaskViewModel = new BUtil.UI.Controls.WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule.GetSchedule(taskName) ?? new ScheduleInfo(), isNew);
@@ -45,6 +50,24 @@ public class EditIncrementalBackupTaskViewModel : BUtil.UI.Controls.ViewModelBas
     public BUtil.UI.Controls.StorageViewModel StorageViewModel { get; }
     public BUtil.UI.Controls.WhatTaskViewModel WhatTaskViewModel { get; }
 
+    #region FormErrorsText
+
+    private string? _formErrorsText;
+
+    public string? FormErrorsText
+    {
+        get => _formErrorsText;
+        set
+        {
+            if (value == _formErrorsText)
+                return;
+            _formErrorsText = value;
+            OnPropertyChanged(nameof(FormErrorsText));
+        }
+    }
+
+    #endregion
+
     #region Commands
 
 #pragma warning disable CA1822
@@ -56,6 +79,13 @@ public class EditIncrementalBackupTaskViewModel : BUtil.UI.Controls.ViewModelBas
 
     public async Task ButtonOkCommand()
     {
+        FormErrorsText = null;
+        if (!EncryptionTaskViewModel.Validate())
+        {
+            FormErrorsText = $"{Resources.LeftMenu_Encryption}: {EncryptionTaskViewModel.PasswordError}";
+            return;
+        }
+
         var newTask = new TaskV2
         {
             Name = TaskIdentityViewModel.Name.TrimEnd(),

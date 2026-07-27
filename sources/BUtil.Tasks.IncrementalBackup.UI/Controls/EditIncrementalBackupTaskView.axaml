@@ -23,27 +23,27 @@
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="*" />
-			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
 
 		<decor:ViewDecoration Grid.Row="0" Kind="IncrementalBackup" />
 		<ScrollViewer Grid.Row="0"
 				ScrollViewer.VerticalScrollBarVisibility="Visible"
-				ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-					  Classes="FormContent">
-			<StackPanel>
-				<tasks:TaskIdentityView Margin="16 16 16 8" DataContext="{Binding TaskIdentityViewModel}" />
-				<controls:WhatTaskView Margin="16 8 16 8" DataContext="{Binding WhatTaskViewModel}" />
-				<controls:WhenTaskView Margin="16 8 16 8" DataContext="{Binding WhenTaskViewModel}" />
-				<controls:StorageView Margin="16 8 16 8" DataContext="{Binding StorageViewModel}"/>
-				<controls:EncryptionTaskView Margin="16 8 16 8" DataContext="{Binding EncryptionTaskViewModel}" />
+				ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+			<StackPanel Spacing="8" Classes="FormContent">
+				<tasks:TaskIdentityView DataContext="{Binding TaskIdentityViewModel}" />
+				<controls:WhatTaskView DataContext="{Binding WhatTaskViewModel}" />
+				<controls:WhenTaskView DataContext="{Binding WhenTaskViewModel}" />
+				<controls:StorageView DataContext="{Binding StorageViewModel}"/>
+				<controls:EncryptionTaskView DataContext="{Binding EncryptionTaskViewModel}" />
+				<decor:DialogButtons
+					PrimaryText="{Binding Button_OK}"
+					PrimaryCommand="{Binding ButtonOkCommand}"
+					CancelText="{Binding Button_Cancel}"
+					CancelCommand="{Binding ButtonCancelCommand}"
+					MessageText="{Binding FormErrorsText}"
+					MessageKind="Error"
+				/>
 			</StackPanel>
 		</ScrollViewer>
-
-		<decor:DialogButtons Grid.Row="1" Margin="16 8 16 16"
-				PrimaryText="{Binding Button_OK}"
-				PrimaryCommand="{Binding ButtonOkCommand}"
-				CancelText="{Binding Button_Cancel}"
-				CancelCommand="{Binding ButtonCancelCommand}" />
 	</Grid>
 </UserControl>

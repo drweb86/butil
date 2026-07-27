@@ -8,10 +8,7 @@
 			 x:DataType="cvm:WhenTaskViewModel">
 	<Expander Classes="TaskSection" HorizontalAlignment="Stretch" IsExpanded="{Binding IsExpanded}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 		<Expander.Header>
-			<StackPanel Orientation="Horizontal">
-				<TextBlock>⏰</TextBlock>
-				<TextBlock Text="{Binding LeftMenu_When}" Margin="8 0 0 0" VerticalAlignment="Center" />
-			</StackPanel>
+			<cvm:ExpanderHeader Icon="⏰" Text="{Binding LeftMenu_When}" />
 		</Expander.Header>
 		<StackPanel Spacing="8">
 			<TextBlock Text="{Binding LeftMenu_When_Optional_Hint}" TextWrapping="Wrap" Margin="0 8 0 0" />

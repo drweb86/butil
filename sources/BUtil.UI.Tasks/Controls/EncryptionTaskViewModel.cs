@@ -1,13 +1,25 @@
 using BUtil.Core.Localization;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Security.Cryptography;
 
 namespace BUtil.UI.Controls;
 
-public class EncryptionTaskViewModel(string password, bool isPasswordCreateMode = true, bool isReadonly = false, bool isExpanded = false) : ObservableObject
+public class EncryptionTaskViewModel : ObservableObject
 {
-    public void PasswordGenerateCommand()
+    public EncryptionTaskViewModel(string password, bool isPasswordCreateMode = true, bool isReadonly = false, bool isExpanded = false)
+    {
+        _password = password;
+        IsPasswordCreateMode = isPasswordCreateMode;
+        IsReadonly = isReadonly;
+        IsExpanded = isExpanded;
+        PasswordGenerateCommand = new RelayCommand(GeneratePassword, () => IsPasswordCreateMode && !IsReadonly);
+    }
+
+    public IRelayCommand PasswordGenerateCommand { get; }
+
+    private void GeneratePassword()
     {
         int count = 255;
         string temp = string.Empty;
@@ -52,7 +64,8 @@ public class EncryptionTaskViewModel(string password, bool isPasswordCreateMode 
 
     #region Password
 
-    private string _password = password;
+    private string _password;
+    private string? _passwordError;
 
     public string Password
     {
@@ -66,12 +79,38 @@ public class EncryptionTaskViewModel(string password, bool isPasswordCreateMode 
                 return;
             _password = value;
             OnPropertyChanged(nameof(Password));
+            PasswordError = null;
         }
     }
 
-    public bool IsPasswordCreateMode { get; } = isPasswordCreateMode;
-    public bool IsReadonly { get; } = isReadonly;
-    public bool IsExpanded { get; } = isExpanded;
+    public string? PasswordError
+    {
+        get
+        {
+            return _passwordError;
+        }
+        private set
+        {
+            if (value == _passwordError)
+                return;
+            _passwordError = value;
+            OnPropertyChanged(nameof(PasswordError));
+        }
+    }
+
+    public bool Validate()
+    {
+        PasswordError = string.IsNullOrWhiteSpace(Password)
+            ? Resources.Password_Field_Validation_NotSpecified
+            : null;
+        return PasswordError is null;
+    }
+
+    public string? Help => IsPasswordCreateMode ? Password_Help : null;
+
+    public bool IsPasswordCreateMode { get; }
+    public bool IsReadonly { get; }
+    public bool IsExpanded { get; }
 
     #endregion
 }

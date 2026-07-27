@@ -4,5 +4,6 @@
 		<Setter Property="MaxWidth" Value="720" />
 		<Setter Property="HorizontalAlignment" Value="Stretch" />
 		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="Margin" Value="24" />
 	</Style>
 </Styles>

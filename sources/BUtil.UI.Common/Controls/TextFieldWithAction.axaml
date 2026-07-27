@@ -14,15 +14,20 @@
 			<RowDefinition />
 			<RowDefinition />
 			<RowDefinition />
+			<RowDefinition />
 		</Grid.RowDefinitions>
 		<TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding #Root.Label}" Margin="0 0 0 8" />
 		<TextBox Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="0 0 8 0"
+				IsReadOnly="{Binding #Root.IsReadOnly}"
 				Text="{Binding #Root.Text, Mode=TwoWay}" />
 		<Button Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"
-								Content="{Binding #Root.ActionText}"
+				Content="{Binding #Root.ActionText}"
 				Command="{Binding #Root.ActionCommand}" />
+		<TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+				IsVisible="{Binding #Root.Help, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
+				Text="{Binding #Root.Help}" TextWrapping="Wrap" Margin="0 8 0 0" />
 		<decor:ValidationError
-			Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+			Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
 			Error="{Binding #Root.Error}" />
 	</Grid>
 </UserControl>

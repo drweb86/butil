@@ -11,8 +11,8 @@
 	<Grid>
 		<controls:HackerDecorationCanvas IsVisible="{Binding IsAesTool}" />
 		<controls:WizardsDecorationCanvas IsVisible="{Binding IsBrotliTool}" />
-		<StackPanel Margin="24" Classes="FormContent">
-			<TextBlock Text="{Binding WindowTitle}" FontSize="20" FontWeight="Bold" Margin="0 0 0 8" />
+		<StackPanel Classes="FormContent">
+			<TextBlock Text="{Binding WindowTitle}" FontSize="20" FontWeight="Bold" />
 			<decor:TextFieldWithAction
 					Label="{Binding TechnicalTool_SourceFile}"
 					Text="{Binding InputPath}"
@@ -30,13 +30,13 @@
 					Label="{Binding Password_Field}"
 					Text="{Binding Password}"
 					Error="{Binding PasswordError}" />
-			<decor:MessageBar Text="{Binding StatusText}" Kind="{Binding StatusKind}" />
-
-			<decor:DialogButtons Margin="0 8 0 0"
+			<decor:DialogButtons
 					PrimaryText="{Binding WindowTitle}"
 					PrimaryCommand="{Binding RunCommand}"
 					CancelText="{Binding Button_Cancel}"
-					CancelCommand="{Binding CloseCommand}" />
+					CancelCommand="{Binding CloseCommand}"
+					MessageText="{Binding StatusText}"
+					MessageKind="{Binding StatusKind}" />
 		</StackPanel>
 	</Grid>
 </UserControl>

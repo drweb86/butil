@@ -21,6 +21,12 @@ public partial class TextFieldWithAction : UserControl
     public static readonly StyledProperty<string?> ErrorProperty =
         AvaloniaProperty.Register<TextFieldWithAction, string?>(nameof(Error));
 
+    public static readonly StyledProperty<string?> HelpProperty =
+        AvaloniaProperty.Register<TextFieldWithAction, string?>(nameof(Help));
+
+    public static readonly StyledProperty<bool> IsReadOnlyProperty =
+        AvaloniaProperty.Register<TextFieldWithAction, bool>(nameof(IsReadOnly));
+
     public string? Label
     {
         get => GetValue(LabelProperty);
@@ -49,6 +55,18 @@ public partial class TextFieldWithAction : UserControl
     {
         get => GetValue(ErrorProperty);
         set => SetValue(ErrorProperty, value);
+    }
+
+    public string? Help
+    {
+        get => GetValue(HelpProperty);
+        set => SetValue(HelpProperty, value);
+    }
+
+    public bool IsReadOnly
+    {
+        get => GetValue(IsReadOnlyProperty);
+        set => SetValue(IsReadOnlyProperty, value);
     }
 
     public TextFieldWithAction()

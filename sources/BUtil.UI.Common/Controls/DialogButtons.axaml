@@ -1,8 +1,10 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:BUtil.UI.Controls"
              x:Class="BUtil.UI.Controls.DialogButtons"
-             x:Name="Root">
-	<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+             x:Name="Root"
+			 Margin="0 8 0 8">
+	<StackPanel>
 		<StackPanel.Styles>
 			<Style Selector="Button">
 				<Setter Property="Margin" Value="4" />
@@ -11,11 +13,14 @@
 				<Setter Property="Padding" Value="32 32 32 32" />
 			</Style>
 		</StackPanel.Styles>
-		<Button IsDefault="True"
-				Content="{Binding #Root.PrimaryText}"
-				Command="{Binding #Root.PrimaryCommand}" />
-		<Button IsCancel="True"
-				Content="{Binding #Root.CancelText}"
-				Command="{Binding #Root.CancelCommand}" />
+		<local:MessageBar Text="{Binding #Root.MessageText}" Kind="{Binding #Root.MessageKind}" />
+		<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+			<Button IsDefault="True"
+					Content="{Binding #Root.PrimaryText}"
+					Command="{Binding #Root.PrimaryCommand}" />
+			<Button IsCancel="True"
+					Content="{Binding #Root.CancelText}"
+					Command="{Binding #Root.CancelCommand}" />
+		</StackPanel>
 	</StackPanel>
 </UserControl>
