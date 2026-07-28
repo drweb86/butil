@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -74,10 +74,10 @@
     <value>Se scegli qualcosa di diverso da "Non fare nulla", 
 	il programma, se verranno registrati eventuali errori o avvisi, 
 	configurerà il sistema operativo per visualizzare 
-	un rapporto al successivo accesso al sistema .</value>
+	un rapporto al successivo accesso al sistema.</value>
   </data>
   <data name="AfterTaskSelection_LogOff" xml:space="preserve">
-    <value>Disconnettiti</value>
+    <value>Disconnetti</value>
   </data>
   <data name="AfterTaskSelection_Reboot" xml:space="preserve">
     <value>Riavvia</value>
@@ -121,10 +121,10 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
     <value>VERSIONI</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Seleziona il file o la cartella da ripristinare nella struttura e seleziona "Ripristina".</value>
+    <value>Seleziona nella struttura il file o la cartella da ripristinare e "Ripristina".</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
-    <value>Connessione al server terminata inaspettatamente (Le password su Client e Server sono identiche?)</value>
+    <value>Connessione al server terminata inaspettatamente (le password per client e server sono identiche?)</value>
   </data>
   <data name="Button_Cancel" xml:space="preserve">
     <value>Annulla</value>
@@ -151,7 +151,7 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
     <value>Salva</value>
   </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
-    <value>Visita {0} per gli argomenti della riga di comando.</value>
+    <value>Per gli argomenti della riga di comando visita {0}.</value>
   </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Argomenti riga di comando non validi.</value>
@@ -177,7 +177,7 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
   <data name="DataStorage_Field_UploadQuota_Help" xml:space="preserve">
     <value>Limita la quantità di dati inviati allo spazio di archiviazione durante l'esecuzione di un'attività. 0 - nessun limite.
 	Quando la quota viene superata, gli altri file verranno ignorati e verranno elaborati la volta successiva.
-	Scenario di utilizzo: copi i dati sul server remoto. 
+	Scenario di uso: copi i dati sul server remoto. 
 	C'è un problema: l'ISP riduce la velocità di caricamento dopo diversi GB. 
 	Questa impostazione ti consente di gestirlo.</value>
   </data>
@@ -191,7 +191,7 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
     <value>Se la cartella diventa disponibile dopo l'esecuzione di alcuni comandi, specifica gli script {0} per la connessione e la disconnessione.</value>
   </data>
   <data name="DataStorage_Scripts_Header" xml:space="preserve">
-    <value>Script (prima del montaggio / dopo lo smontaggio)</value>
+    <value>Script (prima del montaggio/dopo lo smontaggio)</value>
   </data>
   <data name="DataStorage_State_Get" xml:space="preserve">
     <value>Ottieni stato archivio dati</value>
@@ -200,7 +200,7 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
     <value>Scrittura stato archiviazione</value>
   </data>
   <data name="DataStorage_Title" xml:space="preserve">
-    <value>Storage</value>
+    <value>Archivio</value>
   </data>
   <data name="DataStorage_Validation_NotSpecified" xml:space="preserve">
     <value>Non è stato impostato lo spazio di archiviazione.</value>
@@ -284,7 +284,7 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
     <value>Salvataggio script verifica integrità</value>
   </data>
   <data name="File_LastWriteTime_Min_Field" xml:space="preserve">
-    <value>Elabora file più vecchi di allora:</value>
+    <value>Elabora file più vecchi di:</value>
   </data>
   <data name="File_List_Saving" xml:space="preserve">
     <value>Salvataggio file</value>
@@ -299,10 +299,10 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
     <value>Upload "{0}"</value>
   </data>
   <data name="FingerPrintSHA256_Field" xml:space="preserve">
-    <value>Impronta SHA-256:</value>
+    <value>Firma SHA-256:</value>
   </data>
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
-    <value>Impronta SHA-256 non specificata.</value>
+    <value>Firma SHA-256 non specificata.</value>
   </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Esplicita</value>
@@ -320,7 +320,7 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
     <value>Condividi cartella in rete (Server FTPS)</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Puoi condividere qualsiasi cartella per l'accesso in lettura-scrittura tramite il protocollo FTPS (crittografia esplicita con certificato autofirmato) all'interno della tua rete locale.</value>
+    <value>Puoi condividere qualsiasi cartella per l'accesso in lettura-scrittura tramite il protocollo FTPS (crittografia esplicita con certificato auto firmato) all'interno della rete locale.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Aggiungi icona carattere al testo</value>
@@ -332,7 +332,7 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
     <value>Attività importazione multimedia</value>
   </data>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
-    <value>Modifica  "{0}" attività importazione multimedia</value>
+    <value>Modifica "{0}" attività importazione multimedia</value>
   </data>
   <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
     <value>Cartella destinazione:</value>
@@ -342,7 +342,7 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
     <value>Esempio:
-	L'immagina deve contenere  il file {0} (modificato in {1}).
+	l'immagina deve contenere  il file {0} (modificato in {1}).
 	Con questa cartella e il file stringa della maschera verrà archiviato come:
 	{2}</value>
   </data>
@@ -361,9 +361,9 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
     <value>Importa "{0}"</value>
   </data>
   <data name="ImportMediaTask_Help" xml:space="preserve">
-    <value>Importa audio, foto, video dalla scheda SD della fotocamera, registratore; foto e video dal telefono tramite WI-FI tramite l'applicazione server FTP usando modelli di nome file.
+    <value>Importa audio, foto, video dalla scheda SD della fotocamera, registratore; foto e video dal telefono tramite Wi-Fi tramite l'applicazione server FTP usando modelli di nome file.
 
-Consulta il sito web dell'applicazione per la documentazione su come impostare la trasmissione di file tramite WI-FI tramite l'applicazione server FTP sul telefono.</value>
+Per la documentazione su come impostare la trasmissione di file tramite Wi-Fi tramite l'applicazione server FTP sul telefono consulta il sito web dell'applicazione.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Sorgente dati importazione</value>
@@ -407,14 +407,14 @@ Consulta il sito web dell'applicazione per la documentazione su come impostare l
     <value>Attività backup incrementale</value>
   </data>
   <data name="Installer_AdminRequired" xml:space="preserve">
-    <value>Sono necessari i privilegi di amministratore per installare per tutti gli utenti.
-Eseguire il programma di installazione come amministratore oppure utilizzare /CURRENTUSER.</value>
+    <value>Per installare per tutti gli utenti sono necessari i privilegi di amministratore.
+Esegui il programma di installazione come amministratore o usa /CURRENTUSER.</value>
   </data>
   <data name="Installer_AdminRequiredDetailed" xml:space="preserve">
-    <value>Sono necessari i privilegi di amministratore per installare per tutti gli utenti.
+    <value>Per installare per tutti gli utenti sono necessari i privilegi di amministratore.
 
-Scegliere una delle seguenti opzioni:
-- Selezionare 'Installa solo per utente attuale', o
+Sceglie una delle seguenti opzioni:
+- Seleziona "Installa solo per utente attuale", o
 - Esegui il programma di installazione come amministratore</value>
   </data>
   <data name="Installer_AllUsersDescription" xml:space="preserve">
@@ -424,7 +424,7 @@ Scegliere una delle seguenti opzioni:
     <value>Installa per &amp;tutti gli utenti (richiede privilegi di amministratore)</value>
   </data>
   <data name="Installer_ArchRequired" xml:space="preserve">
-    <value>Questo programma di installazione richiede una versione x64 o arm64 di Windows.</value>
+    <value>Questo programma di installazione richiede una versione di Windows a 64bit o ARM64.</value>
   </data>
   <data name="Installer_CurrentUserDescription" xml:space="preserve">
     <value>Consigliato. L'applicazione sarà disponibile solo per il proprio account utente.</value>
@@ -436,10 +436,10 @@ Scegliere una delle seguenti opzioni:
     <value>Installazione per:</value>
   </data>
   <data name="Installer_InstallModeDescription" xml:space="preserve">
-    <value>Scegliere se installare BUtil solo per sé o per tutti gli utenti di questo computer.</value>
+    <value>Scegli se installare BUtil solo per l'utente attuale o per tutti gli utenti di questo computer.</value>
   </data>
   <data name="Installer_InstallModeSubtitle" xml:space="preserve">
-    <value>Selezionare chi può utilizzare questa applicazione</value>
+    <value>Seleziona chi può usare questa applicazione</value>
   </data>
   <data name="Installer_InstallModeTitle" xml:space="preserve">
     <value>Scegli il tipo di installazione</value>
@@ -491,7 +491,7 @@ Scegliere una delle seguenti opzioni:
     <value>Scrittura stato locale</value>
   </data>
   <data name="LogFile_BrowseLogsFolder" xml:space="preserve">
-    <value>Apri cartella dei registri</value>
+    <value>Apri cartella registri</value>
   </data>
   <data name="LogFile_Marker_Errors" xml:space="preserve">
     <value>Errori</value>
@@ -524,7 +524,7 @@ Scegliere una delle seguenti opzioni:
     <value>Il nome è vuoto o contiene nel percorso caratteri non supportati.</value>
   </data>
   <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
-    <value>La lunghezza del nome '{0}' eccede il limite di {1} caratteri.</value>
+    <value>La lunghezza del nome "{0}" eccede il limite di {1} caratteri.</value>
   </data>
   <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
     <value>Esiste già un'attività con questo nome.</value>
@@ -536,10 +536,10 @@ Scegliere una delle seguenti opzioni:
     <value>Lettera unità:</value>
   </data>
   <data name="Nfs_Field_MountOptions" xml:space="preserve">
-    <value>Opzioni di mount:</value>
+    <value>Opzioni mount:</value>
   </data>
   <data name="Nfs_Field_MountPoint" xml:space="preserve">
-    <value>Punto di mount:</value>
+    <value>Punto mount:</value>
   </data>
   <data name="Nfs_Field_SharePath" xml:space="preserve">
     <value>Percorso condivisione:</value>
@@ -578,7 +578,7 @@ Scegliere una delle seguenti opzioni:
     <value>Use</value>
   </data>
   <data name="RestoreFrom_Field_Validation_NoStateFiles" xml:space="preserve">
-    <value>Impossibile individuare i file "{0}" nella cartella. 
+    <value>Impossibile individuare nella cartella i file "{0}".
 
 	Punta ad una cartella contenente questo file.</value>
   </data>
@@ -622,7 +622,7 @@ Scegliere una delle seguenti opzioni:
     <value>Nessun elemento da elaborare.</value>
   </data>
   <data name="SourceItem_Validation_NotExists" xml:space="preserve">
-    <value>"{0}" non esiste.</value>
+    <value>'{0}' non esiste.</value>
   </data>
   <data name="State_File_Get" xml:space="preserve">
     <value>Richiedi stato del file "{0}"</value>
@@ -631,7 +631,7 @@ Scegliere una delle seguenti opzioni:
     <value>Richiedi stato elementi sorgenti e archivi</value>
   </data>
   <data name="Storage_Field_AccessKey" xml:space="preserve">
-    <value>Chiave di accesso:</value>
+    <value>Chiave accesso:</value>
   </data>
   <data name="Storage_Field_AccountKey" xml:space="preserve">
     <value>Chiave account:</value>
@@ -652,13 +652,13 @@ Scegliere una delle seguenti opzioni:
     <value>HTTPS:</value>
   </data>
   <data name="Storage_Field_PasswordOrToken" xml:space="preserve">
-    <value>Password / Token OAuth:</value>
+    <value>Password/token OAuth:</value>
   </data>
   <data name="Storage_Field_PathPrefix" xml:space="preserve">
     <value>Prefisso percorso:</value>
   </data>
   <data name="Storage_Field_Preset" xml:space="preserve">
-    <value>Preimpostazione:</value>
+    <value>Pre-impostazione:</value>
   </data>
   <data name="Storage_Field_Provider" xml:space="preserve">
     <value>Provider:</value>
@@ -749,13 +749,13 @@ Scegliere una delle seguenti opzioni:
     <value>Nella CLI non è possibile modificare questo tipo di attività.</value>
   </data>
   <data name="Task_Field_Choose" xml:space="preserve">
-    <value>Scegli l'attività:</value>
+    <value>Scegli attività:</value>
   </data>
   <data name="Task_Field_Name_NewDefaultValue" xml:space="preserve">
     <value>Nuova attività</value>
   </data>
   <data name="Task_LastExecution_State" xml:space="preserve">
-    <value>Stata</value>
+    <value>Stato</value>
   </data>
   <data name="Task_Launch" xml:space="preserve">
     <value>Esegui</value>
@@ -790,7 +790,7 @@ Scegliere una delle seguenti opzioni:
     <value>Sconosciuto</value>
   </data>
   <data name="Task_Validation_NotFound" xml:space="preserve">
-    <value>Non è stata trovata l'attività '{0}'.</value>
+    <value>Non è stata trovata l'attività "{0}".</value>
   </data>
   <data name="Task_Validation_NotSupported" xml:space="preserve">
     <value>Questo tipo di attività non è supportato.</value>
@@ -820,10 +820,10 @@ Scegliere una delle seguenti opzioni:
     <value>Il file non esiste:</value>
   </data>
   <data name="TechnicalTool_Error_PasswordRequired" xml:space="preserve">
-    <value>Inserire una password.</value>
+    <value>Inserisci una password.</value>
   </data>
   <data name="TechnicalTool_Error_PathRequired" xml:space="preserve">
-    <value>Specificare i percorsi del file di origine e di output.</value>
+    <value>Specifica percorsi file sorgente e destinazione.</value>
   </data>
   <data name="TechnicalTool_FileFilter_Aes256V1" xml:space="preserve">
     <value>Cifrato AES-256 (*.{0})</value>
@@ -847,16 +847,16 @@ Scegliere una delle seguenti opzioni:
     <value>Cifra AES-256…</value>
   </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
-    <value>File di output:</value>
+    <value>File destinazione:</value>
   </data>
   <data name="TechnicalTool_PickOutputFile" xml:space="preserve">
-    <value>Seleziona file di output</value>
+    <value>Seleziona file destinazione</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
-    <value>Seleziona file di origine</value>
+    <value>Seleziona file sorgente</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
-    <value>File di origine:</value>
+    <value>File sorgente:</value>
   </data>
   <data name="Theme_Title" xml:space="preserve">
     <value>Tema</value>
@@ -877,10 +877,10 @@ Scegliere una delle seguenti opzioni:
     <value>Avviso analisi certificato: {0}</value>
   </data>
   <data name="TrustDetected_Ftps_Instruction" xml:space="preserve">
-    <value>Verificare l'identità del certificato, quindi fai nuovamente clic su Salva per memorizzarlo.</value>
+    <value>Verifica l'identità del certificato, quindi per memorizzarlo seleziona nuovamente "Salva".</value>
   </data>
   <data name="TrustDetected_Ftps_Title" xml:space="preserve">
-    <value>Certificato del server FTPS rilevato durante il test..</value>
+    <value>Certificato server FTPS rilevato durante il test..</value>
   </data>
   <data name="TrustDetected_Label_CertificateRawHex" xml:space="preserve">
     <value>Certificato (hex RAW): {0}</value>
@@ -949,7 +949,7 @@ Scegliere una delle seguenti opzioni:
     <value>sconosciuta</value>
   </data>
   <data name="TrustDetected_Sftp_Instruction" xml:space="preserve">
-    <value>Verifica l'impronta digitale, quindi fai di nuovo clic su Salva per memorizzarla.</value>
+    <value>Verifica la firma digitale, quindi per memorizzarla seleziona di nuovo "Salva".</value>
   </data>
   <data name="TrustDetected_Sftp_Title" xml:space="preserve">
     <value>Informazioni sull'attendibilità del server SFTP rilevate durante il test.</value>
@@ -976,7 +976,7 @@ Scegliere una delle seguenti opzioni:
     <value>Non è stato specificato l'utente.</value>
   </data>
   <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
-    <value>Alibaba Cloud OSS: storage di oggetti compatibile con S3 di Alibaba.
+    <value>Alibaba Cloud OSS: storage oggetti compatibile con S3 di Alibaba.
 
 1. Nella console OSS (https://oss.console.aliyun.com/), creare un bucket. Nota la sua regione (ad esempio oss-cn-hangzhou).
 2. Nella Console RAM → Utenti → crea un utente → collega AliyunOSSFullAccess → crea una AccessKey.
@@ -1006,17 +1006,17 @@ Scegliere una delle seguenti opzioni:
 1. In Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Bucket, crea un bucket.
 2. Vai su Chiavi app → Aggiungi una nuova chiave applicazione, adattala al bucket.
    Copia keyID (= Access Key) e applicationKey (= Secret Key).
-3. URL del servizio: endpoint del tuo bucket mostrato nei dettagli del bucket, ad es. https://s3.us-west-004.backblazeb2.com
+3. URL del servizio: endpoint del  bucket visualizzato nei dettagli del bucket, ad es. https://s3.us-west-004.backblazeb2.com
 4. Regione: il segmento tra &apos;s3.&apos; e &apos;.backblazeb2.com&apos;, ad es. noi-ovest-004.</value>
   </data>
   <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
     <value>Cloudflare R2: storage zero-egress compatibile con S3.
 
-1. Nella dashboard di Cloudflare (https://dash.cloudflare.com/) → R2 → crea un bucket.
+1. Nel pannello Cloudflare (https://dash.cloudflare.com/) → R2 → crea un bucket.
 2. Vai a R2 → Gestisci token API R2 → Crea token API con lettura e scrittura oggetto.
    Copia l&apos;ID della chiave di accesso e la chiave di accesso segreta.
 3. URL del servizio: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
-   Il tuo ID account è mostrato nella pagina di panoramica R2.
+   L&apos;ID account è visualizzato nella pagina panoramica R2.
 4. Compila: bucket, chiave di accesso, chiave segreta e URL del servizio. La regione viene impostata automaticamente su &quot;auto&quot;.</value>
   </data>
   <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
@@ -1031,10 +1031,10 @@ Scegliere una delle seguenti opzioni:
   <data name="S3_Provider_Custom_Help" xml:space="preserve">
     <value>MinIO o qualsiasi server compatibile con S3.
 
-1. Avvia il tuo server MinIO (o altro server compatibile con S3).
+1. Avvia il server MinIO (o altro server compatibile con S3).
 2. Crea un bucket tramite la console MinIO o &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;.
 3. Creare una chiave di accesso in Console MinIO → Chiavi di accesso (evitare le credenziali root in produzione).
-4. URL del servizio: l&apos;endpoint del tuo server, ad es. http://192.168.1.10:9000 o https://minio.example.com.
+4. URL servizio: l&apos;endpoint del server, ad es. http://192.168.1.10:9000 o https://minio.example.com.
 5. Regione: qualsiasi valore (ad esempio us-east-1) — o lasciare vuoto se il server non lo impone.</value>
   </data>
   <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
@@ -1087,7 +1087,7 @@ Scegliere una delle seguenti opzioni:
   <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
     <value>Scaleway Object Storage: storage compatibile con S3 europeo.
 
-1. Nella Console Scaleway (https://console.scaleway.com/object-storage/buckets), creare un bucket. Nota la sua regione (ad esempio fr-par).
+1. Nella console Scaleway (https://console.scaleway.com/object-storage/buckets), creare un bucket. Nota la sua regione (ad esempio fr-par).
 2. Vai a IAM → Chiavi API → Genera chiave API con autorizzazioni di scrittura Object Storage.
    Copia la chiave di accesso e la chiave segreta.
 3. URL del servizio: https://s3.&lt;REGION&gt;.scw.cloud (es. https://s3.fr-par.scw.cloud).
@@ -1096,7 +1096,7 @@ Scegliere una delle seguenti opzioni:
   <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
     <value>Selectel Object Storage: spazio di archiviazione russo compatibile con S3.
 
-1. Nel Pannello Selectel (https://my.selectel.ru/) → Cloud Storage → crea un contenitore (= bucket).
+1. Nel pannello Selectel (https://my.selectel.ru/) → Cloud Storage → crea un contenitore (= bucket).
 2. In Utenti e ruoli, crea un utente del servizio con accesso allo spazio di archiviazione → Chiavi S3 → crea una coppia di chiavi.
    Copia la chiave di accesso e la chiave segreta.
 3. Compila: Bucket, Access Key, Secret Key.
@@ -1115,7 +1115,7 @@ Scegliere una delle seguenti opzioni:
     <value>VK Cloud Object Storage: spazio di archiviazione compatibile con S3 di VK Cloud.
 
 1. Nel portale VK Cloud (https://msk.cloud.vk.com/) → Cloud Storage → crea un bucket.
-2. Nel tuo account → Chiavi di accesso → crea una nuova coppia di chiavi.
+2. Nell&apos;account → Chiavi di accesso → crea una nuova coppia di chiavi.
    Copia la chiave di accesso e la chiave segreta.
 3. Compila: Bucket, Chiave di accesso, Chiave segreta e Regione se richiesto (ad esempio ru-msk).
    L&apos;URL del servizio viene compilato automaticamente.</value>
@@ -1123,7 +1123,7 @@ Scegliere una delle seguenti opzioni:
   <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
     <value>Volcano Engine TOS (ByteDance): spazio di archiviazione compatibile con S3.
 
-1. Nella console di Volcano Engine (https://console.volcengine.com/tos), crea un bucket. Annota la sua regione (ad esempio cn-pechino).
+1. Nella console Volcano Engine (https://console.volcengine.com/tos), crea un bucket. Annota la sua regione (ad esempio cn-pechino).
 2. Vai a IAM → Chiavi di accesso → crea una chiave.
    Copia l&apos;ID della chiave di accesso e la chiave di accesso segreta.
 3. URL del servizio: https://tos-s3-&lt;REGION&gt;.volces.com (ad esempio https://tos-s3-cn-beijing.volces.com).
@@ -1150,16 +1150,16 @@ Scegliere una delle seguenti opzioni:
     <value>Box: spazio di archiviazione cloud aziendale con supporto WebDAV.
 
 1. Accedi a app.box.com. Tieni presente che Box WebDAV è disponibile solo per i piani a pagamento.
-2. Inserisci l&apos;e-mail del tuo account Box come Utente.
-3. Inserisci la password del tuo Box come Password.
-   Se utilizzi SSO, potrebbe essere necessario impostare una password WebDAV separata nelle Impostazioni account.
+2. Inserisci l&apos;e-mail dell&apos;account Box come Utente.
+3. Inserisci la password del Box come Password.
+   Se usi SSO, potrebbe essere necessario impostare una password WebDAV separata nelle Impostazioni account.
    L&apos;indirizzo del server, HTTPS, la porta e il percorso di base vengono configurati automaticamente.</value>
   </data>
   <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
     <value>Server WebDAV generico (Nextcloud, ownCloud, Synology DSM, Seafile, Apache, ecc.)
 
-1. Immettere l&apos;indirizzo del server, scegliere HTTPS (consigliato) e impostare la porta (0 = predefinita: 80 per HTTP, 443 per HTTPS).
-2. Immettere il percorso di base per l&apos;endpoint WebDAV.
+1. Inserisci l&apos;indirizzo del server, scegliere HTTPS (consigliato) e impostare la porta (0 = predefinita: 80 per HTTP, 443 per HTTPS).
+2. Inserisci il percorso di base per l&apos;endpoint WebDAV.
    Esempio Nextcloud: /remote.php/dav/files/&lt;nomeutente&gt;/Backups
    Synology DSM: /
 3. Enter your username and password (or an app-specific password if your server requires it).</value>
@@ -1169,25 +1169,25 @@ Scegliere una delle seguenti opzioni:
 
 1. Accedi a hidrive.ionos.com → Impostazioni → App e servizi connessi → WebDAV.
    Oppure accedi direttamente a WebDAV con le tue credenziali esistenti.
-2. Inserisci il tuo nome utente HiDrive come Utente.
-3. Inserisci la tua password HiDrive come Password.
+2. Inserisci il nome utente HiDrive come Utente.
+3. Inserisci la password HiDrive come Password.
    L&apos;indirizzo del server, HTTPS, la porta e il percorso di base vengono configurati automaticamente.</value>
   </data>
   <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
     <value>Jianguoyun (坚果云) — popolare spazio di archiviazione cloud cinese con supporto WebDAV nativo.
 
 1. Accedi a jianguoyun.com → Informazioni sull&apos;account → Sicurezza → Gestione app di terze parti → Aggiungi applicazione.
-   Copia la password dell&apos;app generata: viene mostrata solo una volta.
-2. Inserisci il tuo indirizzo email Jianguoyun come Utente.
-3. Immettere la password dell&apos;app generata come Password.
+   Copia la password dell&apos;app generata: viene visualizzata solo una volta.
+2. Inserisci l&apos;indirizzo email Jianguoyun come Utente.
+3. Inserisci la password dell&apos;app generata come Password.
    L&apos;indirizzo del server, HTTPS, la porta e il percorso di base vengono configurati automaticamente.</value>
   </data>
   <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
     <value>Koofr: storage cloud rispettoso della privacy con sede in Slovenia (UE).
 
 1. Vai su app.koofr.eu → Preferenze → Password → Password app → Aggiungi password.
-2. Inserisci l&apos;e-mail del tuo account Koofr come Utente.
-3. Immettere la password dell&apos;app generata come Password.
+2. Inserisci l&apos;e-mail dell&apos;account Koofr come Utente.
+3. Inserisci la password dell&apos;app generata come Password.
    L&apos;indirizzo del server, HTTPS, la porta e il percorso di base vengono configurati automaticamente.</value>
   </data>
   <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
@@ -1195,61 +1195,61 @@ Scegliere una delle seguenti opzioni:
 
 1. Vai su account.mail.ru → Sicurezza → Password app → Crea password app.
    Seleziona &quot;Mail&quot; o &quot;Tutti&quot; come tipo, quindi copia la password generata.
-2. Inserisci il tuo indirizzo email Mail.ru come Utente.
-3. Immettere la password dell&apos;app come Password.
+2. Inserisci l&apos;indirizzo email Mail.ru come Utente.
+3. Inserisci la password dell&apos;app come Password.
    L&apos;indirizzo del server, HTTPS, la porta e il percorso di base vengono configurati automaticamente.</value>
   </data>
   <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
     <value>Nextcloud: popolare sincronizzazione e condivisione di file self-hosted.
 
-1. Inserisci l&apos;indirizzo del tuo server Nextcloud (ad esempio nextcloud.example.com).
+1. Inserisci l&apos;indirizzo del server Nextcloud (ad esempio nextcloud.example.com).
 2. Il percorso di base è precompilato: /remote.php/dav/files/&lt;nomeutente&gt;/
-   Sostituisci &lt;nome utente&gt; con il tuo nome utente Nextcloud effettivo.
+   Sostituisci &lt;nome utente&gt; con il nome utente Nextcloud effettivo.
 3. Inserisci il nome utente e la password di Nextcloud (o la password dell&apos;app da
    Impostazioni → Sicurezza → Dispositivi e sessioni → Password app).</value>
   </data>
   <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
     <value>ownCloud: sincronizzazione e condivisione di file self-hosted.
 
-1. Inserisci l&apos;indirizzo del tuo server ownCloud (ad esempio owncloud.example.com).
+1. Inserisci l&apos;indirizzo del server ownCloud (ad esempio owncloud.example.com).
 2. Il percorso di base è precompilato: /remote.php/dav/files/&lt;nomeutente&gt;/
    Sostituisci &lt;nomeutente&gt; con il tuo vero nome utente ownCloud.
-3. Inserisci il tuo nome utente e password ownCloud (o la password dell&apos;app se 2FA è abilitato).</value>
+3. Inserisci il nome utente e password ownCloud (o la password dell&apos;app se 2FA è abilitato).</value>
   </data>
   <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
     <value>pCloud: archiviazione cloud con data center UE e USA.
 
 1. Accedi a my.pcloud.com → Impostazioni → Sicurezza → Password app → Crea.
    Copia la password dell&apos;app: viene visualizzata solo una volta.
-2. Inserisci l&apos;e-mail del tuo account pCloud come Utente.
-3. Immettere la password dell&apos;app come Password.
-   Per i data center UE: ewebdav.pcloud.com viene utilizzato automaticamente.
+2. Inserisci l&apos;e-mail dell&apos;account pCloud come Utente.
+3. Inserisci la password dell&apos;app come Password.
+   Per i data center UE: ewebdav.pcloud.com viene usato automaticamente.
    Per il data center statunitense: cambia l&apos;host in webdav.pcloud.com.</value>
   </data>
   <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
     <value>Disco Yandex tramite WebDAV.
 
 1. Vai su id.yandex.com → Sicurezza → Password app → Crea password app per &quot;Accesso WebDAV&quot;.
-   Copia la password generata: viene mostrata solo una volta.
-2. Inserisci il tuo login Yandex come Utente.
+   Copia la password generata: viene visualizzata una sola volta.
+2. Inserisci il login Yandex come Utente.
 3. Inserisci la password dell&apos;app (non la password dell&apos;account Yandex) come Password.
    L&apos;indirizzo del server, HTTPS e la porta vengono configurati automaticamente.</value>
   </data>
 
   <data name="Winget_Description" xml:space="preserve">
-    <value>Backup/sincronizza i tuoi dati su Windows, Linux.
-Importa foto dal telefono tramite WI-FI e altro ancora.
+    <value>Backup/sincronizza i dati in Windows, Linux.
+Importa foto dal telefono tramite Wi-Fi e altro ancora.
 
 Funzionalità:
-- Backup incrementale con deduplicazione dei file e supporto trasporti WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS;
-- Sincronizzazione dei file tra dispositivi utilizzando archiviazione centralizzata e supporto versioning;
-- Importazione media - Importa audio, foto, video dalla scheda SD di fotocamera, registratore; foto e video dal tuo telefono tramite WI-FI attraverso l'applicazione FTPS Server usando nomi file modello o tramite;
+- Backup incrementale con de-duplicazione dei file e supporto trasporti WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS;
+- Sincronizzazione dei file tra dispositivi usando archiviazione centralizzata e supporto versioning;
+- Importazione media - Importa audio, foto, video dalla scheda SD di fotocamera, registratore; foto e video dal telefono tramite Wi-Fi attraverso l'applicazione Server FTPS usando nomi file modello o tramite;
 - Console per la pianificazione dell'automazione;
 - Crittografia AES-256.
 
 Piattaforme: Windows 11 x64, ARM64 o Ubuntu 24+.</value>
   </data>
   <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil crea backup incrementali, sincronizzazione incrementale e importa contenuti multimediali sul tuo PC con deduplicazione e supporto trasporti WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS per Windows e Linux.</value>
+    <value>BUtil crea backup incrementali, sincronizzazione incrementale e importa contenuti multimediali nel PC con de-duplicazione e supporto trasporti WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS per Windows e Linux.</value>
   </data>
 </root>
