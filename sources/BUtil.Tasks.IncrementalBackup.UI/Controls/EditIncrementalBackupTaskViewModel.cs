@@ -10,6 +10,8 @@ using BUtil.Core.Options;
 using BUtil.Core.Services;
 using BUtil.UI;
 using BUtil.UI.Tasks.Controls;
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace BUtil.Tasks.IncrementalBackup.UI.Controls;
@@ -28,6 +30,11 @@ public class EditIncrementalBackupTaskViewModel : BUtil.UI.Controls.ViewModelBas
             ? new TaskV2 { Name = taskName, Model = new IncrementalBackupModelOptionsV2() }
             : storeService.Load(taskName) ?? new TaskV2 { Name = taskName, Model = new IncrementalBackupModelOptionsV2() };
         TaskIdentityViewModel = new TaskIdentityViewModel(isNew, task.Model, task.Name);
+        TaskIdentityViewModel.PropertyChanged += (_, e) =>
+        {
+            if (e.PropertyName == nameof(TaskIdentityViewModel.Name))
+                FormErrorsText = null;
+        };
         SetWindowTitleForEdit(taskName, isNew);
         var model = (IncrementalBackupModelOptionsV2)task.Model;
         EncryptionTaskViewModel = new BUtil.UI.Controls.EncryptionTaskViewModel(model.Password, isNew, !isNew, isNew);
@@ -80,9 +87,14 @@ public class EditIncrementalBackupTaskViewModel : BUtil.UI.Controls.ViewModelBas
     public async Task ButtonOkCommand()
     {
         FormErrorsText = null;
+        var errors = new List<string>();
+        if (!TaskIdentityViewModel.Validate(IsNew ? null : _taskName))
+            errors.Add($"{Resources.Name_Title}: {TaskIdentityViewModel.NameError}");
         if (!EncryptionTaskViewModel.Validate())
+            errors.Add($"{Resources.LeftMenu_Encryption}: {EncryptionTaskViewModel.PasswordError}");
+        if (errors.Count > 0)
         {
-            FormErrorsText = $"{Resources.LeftMenu_Encryption}: {EncryptionTaskViewModel.PasswordError}";
+            FormErrorsText = string.Join(Environment.NewLine, errors);
             return;
         }
 

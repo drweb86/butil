@@ -29,6 +29,11 @@ public class EditBUtilServerTaskViewModel : BUtil.UI.Controls.ViewModelBase
             ? new TaskV2 { Name = taskName, Model = new BUtilServerModelOptionsV2 { Folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) } }
             : storeService.Load(taskName) ?? new TaskV2 { Name = taskName, Model = new BUtilServerModelOptionsV2 { Folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) } };
         TaskIdentityViewModel = new TaskIdentityViewModel(isNew, task.Model, task.Name);
+        TaskIdentityViewModel.PropertyChanged += (_, e) =>
+        {
+            if (e.PropertyName == nameof(TaskIdentityViewModel.Name))
+                FormErrorsText = null;
+        };
         SetWindowTitleForEdit(taskName, isNew);
         var model = (BUtilServerModelOptionsV2)task.Model;
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
@@ -41,6 +46,24 @@ public class EditBUtilServerTaskViewModel : BUtil.UI.Controls.ViewModelBase
     public BUtil.UI.Controls.WhenTaskViewModel WhenTaskViewModel { get; }
     public BUtil.UI.Controls.FolderAndPortSectionViewModel FolderAndPortSectionViewModel { get; }
 
+    #region FormErrorsText
+
+    private string? _formErrorsText;
+
+    public string? FormErrorsText
+    {
+        get => _formErrorsText;
+        set
+        {
+            if (value == _formErrorsText)
+                return;
+            _formErrorsText = value;
+            OnPropertyChanged(nameof(FormErrorsText));
+        }
+    }
+
+    #endregion
+
     #region Commands
 
 #pragma warning disable CA1822
@@ -52,6 +75,13 @@ public class EditBUtilServerTaskViewModel : BUtil.UI.Controls.ViewModelBase
 
     public async Task ButtonOkCommand()
     {
+        FormErrorsText = null;
+        if (!TaskIdentityViewModel.Validate(IsNew ? null : _taskName))
+        {
+            FormErrorsText = $"{Resources.Name_Title}: {TaskIdentityViewModel.NameError}";
+            return;
+        }
+
         var newTask = new TaskV2
         {
             Name = TaskIdentityViewModel.Name.TrimEnd(),

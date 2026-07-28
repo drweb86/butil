@@ -27,6 +27,11 @@ public class EditMediaTaskViewModel : BUtil.UI.Controls.ViewModelBase
             ? new TaskV2 { Name = taskName, Model = new ImportMediaTaskModelOptionsV2() }
             : storeService.Load(taskName) ?? new TaskV2() { Model = new ImportMediaTaskModelOptionsV2() };
         TaskIdentityViewModel = new TaskIdentityViewModel(isNew, task.Model, task.Name);
+        TaskIdentityViewModel.PropertyChanged += (_, e) =>
+        {
+            if (e.PropertyName == nameof(TaskIdentityViewModel.Name))
+                FormErrorsText = null;
+        };
         SetWindowTitleForEdit(taskName, isNew);
         var model = (ImportMediaTaskModelOptionsV2)task.Model;
 
@@ -38,6 +43,24 @@ public class EditMediaTaskViewModel : BUtil.UI.Controls.ViewModelBase
     public TaskIdentityViewModel TaskIdentityViewModel { get; }
     public BUtil.UI.Controls.StorageViewModel SourceTaskViewModel { get; }
     public bool IsNew { get; set; }
+
+    #region FormErrorsText
+
+    private string? _formErrorsText;
+
+    public string? FormErrorsText
+    {
+        get => _formErrorsText;
+        set
+        {
+            if (value == _formErrorsText)
+                return;
+            _formErrorsText = value;
+            OnPropertyChanged(nameof(FormErrorsText));
+        }
+    }
+
+    #endregion
 
     #region Labels
     public static string Button_Cancel => Resources.Button_Cancel;
@@ -55,6 +78,13 @@ public class EditMediaTaskViewModel : BUtil.UI.Controls.ViewModelBase
 
     public async Task ButtonOkCommand()
     {
+        FormErrorsText = null;
+        if (!TaskIdentityViewModel.Validate(IsNew ? null : _taskName))
+        {
+            FormErrorsText = $"{Resources.Name_Title}: {TaskIdentityViewModel.NameError}";
+            return;
+        }
+
         var newTask = new TaskV2
         {
             Name = TaskIdentityViewModel.Name.TrimEnd(),

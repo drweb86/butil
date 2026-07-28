@@ -3,36 +3,21 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:cvm="clr-namespace:BUtil.UI.Tasks.Controls"
+             xmlns:tasks="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Tasks"
+             xmlns:decor="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Common"
              mc:Ignorable="d"
              x:Class="BUtil.UI.Tasks.Controls.TaskIdentityView"
              x:DataType="cvm:TaskIdentityViewModel">
 	<Expander Classes="TaskSection" HorizontalAlignment="Stretch" IsExpanded="{Binding IsExpanded}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 		<Expander.Header>
-			<StackPanel Orientation="Horizontal">
-				<Image Width="16" Height="16" Source="avares://BUtil.UI/Assets/CrystalClear_EveraldoCoelho_BackupTask48x48.png" VerticalAlignment="Center" />
-				<TextBlock Text="{Binding Name_Title}" Margin="8,0,0,0" VerticalAlignment="Center" />
-			</StackPanel>
+			<tasks:ExpanderHeader Icon="✅" Text="{Binding Name_Title}" />
 		</Expander.Header>
-		<Grid>
-			<Grid.RowDefinitions>
-				<RowDefinition Height="Auto" />
-				<RowDefinition Height="Auto" />
-			</Grid.RowDefinitions>
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="Auto" />
-				<ColumnDefinition Width="*" />
-				<ColumnDefinition Width="Auto" />
-			</Grid.ColumnDefinitions>
-
-			<TextBlock Grid.Column="0" Grid.Row="0" Text="{Binding Name_Field}" VerticalAlignment="Center" Margin="0,0,8,0" />
-			<TextBox Grid.Column="1" Grid.Row="0" Text="{Binding Name}" VerticalAlignment="Center" />
-			<Button
-					Grid.Column="2" Grid.Row="0"
-					VerticalAlignment="Center" Margin="4 0 0 0"
-					IsVisible="{Binding CanOpenLink}"
-					Command="{Binding OpenCharsPageCommand}"
-					Content="{Binding Icons_Help_Link}" />
-			<TextBlock Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="1" Text="{Binding Help}" TextWrapping="Wrap" Margin="0,8,0,0" />
-		</Grid>
+		<decor:TextFieldWithAction
+			Label="{Binding Name_Field}"
+			Text="{Binding Name}"
+			ActionText="{Binding Icons_Help_Link}"
+			ActionCommand="{Binding OpenCharsPageCommand}"
+			Help="{Binding Help}"
+			Error="{Binding NameError}" />
 	</Expander>
 </UserControl>

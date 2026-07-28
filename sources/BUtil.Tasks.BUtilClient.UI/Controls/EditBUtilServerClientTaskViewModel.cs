@@ -28,6 +28,11 @@ public class EditBUtilServerClientTaskViewModel : BUtil.UI.Controls.ViewModelBas
             ? new TaskV2 { Name = taskName, Model = new BUtilClientModelOptionsV2(string.Empty, FileSenderDirection.ToServer, new FolderStorageSettingsV2()) }
             : storeService.Load(taskName) ?? new TaskV2 { Name = taskName, Model = new BUtilClientModelOptionsV2(string.Empty, FileSenderDirection.ToServer, new FolderStorageSettingsV2()) };
         TaskIdentityViewModel = new TaskIdentityViewModel(isNew, task.Model, task.Name);
+        TaskIdentityViewModel.PropertyChanged += (_, e) =>
+        {
+            if (e.PropertyName == nameof(TaskIdentityViewModel.Name))
+                FormErrorsText = null;
+        };
         SetWindowTitleForEdit(taskName, isNew);
         var model = (BUtilClientModelOptionsV2)task.Model;
 
@@ -44,6 +49,24 @@ public class EditBUtilServerClientTaskViewModel : BUtil.UI.Controls.ViewModelBas
     public BUtil.UI.Controls.FolderSectionViewModel FolderSectionViewModel { get; }
     public BUtil.UI.Controls.StorageViewModel StorageViewModel { get; }
 
+    #region FormErrorsText
+
+    private string? _formErrorsText;
+
+    public string? FormErrorsText
+    {
+        get => _formErrorsText;
+        set
+        {
+            if (value == _formErrorsText)
+                return;
+            _formErrorsText = value;
+            OnPropertyChanged(nameof(FormErrorsText));
+        }
+    }
+
+    #endregion
+
     #region Commands
 
 #pragma warning disable CA1822
@@ -55,6 +78,13 @@ public class EditBUtilServerClientTaskViewModel : BUtil.UI.Controls.ViewModelBas
 
     public async Task ButtonOkCommand()
     {
+        FormErrorsText = null;
+        if (!TaskIdentityViewModel.Validate(IsNew ? null : _taskName))
+        {
+            FormErrorsText = $"{Resources.Name_Title}: {TaskIdentityViewModel.NameError}";
+            return;
+        }
+
         var newTask = new TaskV2
         {
             Name = TaskIdentityViewModel.Name.TrimEnd(),

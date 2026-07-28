@@ -37,7 +37,9 @@
 					PrimaryText="{Binding Button_OK}"
 					PrimaryCommand="{Binding ButtonOkCommand}"
 					CancelText="{Binding Button_Cancel}"
-					CancelCommand="{Binding ButtonCancelCommand}" />
+					CancelCommand="{Binding ButtonCancelCommand}"
+					MessageText="{Binding FormErrorsText}"
+					MessageKind="Error" />
 			</StackPanel>
 		</ScrollViewer>
 	</Grid>
