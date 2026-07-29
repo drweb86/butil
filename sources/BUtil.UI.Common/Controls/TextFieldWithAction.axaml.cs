@@ -20,6 +20,9 @@ public partial class TextFieldWithAction : UserControl
     public static readonly StyledProperty<string?> ActionTextProperty =
         AvaloniaProperty.Register<TextFieldWithAction, string?>(nameof(ActionText));
 
+    public static readonly StyledProperty<string?> ActionIconProperty =
+        AvaloniaProperty.Register<TextFieldWithAction, string?>(nameof(ActionIcon));
+
     public static readonly StyledProperty<ICommand?> ActionCommandProperty =
         AvaloniaProperty.Register<TextFieldWithAction, ICommand?>(nameof(ActionCommand));
 
@@ -60,6 +63,12 @@ public partial class TextFieldWithAction : UserControl
     {
         get => GetValue(ActionTextProperty);
         set => SetValue(ActionTextProperty, value);
+    }
+
+    public string? ActionIcon
+    {
+        get => GetValue(ActionIconProperty);
+        set => SetValue(ActionIconProperty, value);
     }
 
     public ICommand? ActionCommand

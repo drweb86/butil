@@ -16,12 +16,14 @@
 			<decor:TextFieldWithAction
 					Label="{Binding TechnicalTool_SourceFile}"
 					Text="{Binding InputPath}"
+					ActionIcon="📂"
 					ActionText="{Binding Field_File_Browse}"
 					ActionCommand="{Binding #Root.BrowseSourceAsync}"
 					Error="{Binding InputPathError}" />
 			<decor:TextFieldWithAction
 					Label="{Binding TechnicalTool_OutputFile}"
 					Text="{Binding OutputPath}"
+					ActionIcon="💾"
 					ActionText="{Binding Field_File_Browse}"
 					ActionCommand="{Binding #Root.BrowseOutputAsync}"
 					Error="{Binding OutputPathError}" />

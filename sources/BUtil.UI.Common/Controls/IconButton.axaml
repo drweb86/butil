@@ -7,7 +7,9 @@
 			 Margin="0 8 0 8">
 	<Button Command="{Binding #Root.Command}">
 		<StackPanel Orientation="Horizontal" Spacing="4">
-			<TextBlock Text="{Binding #Root.Icon}" />
+			<TextBlock
+				IsVisible="{Binding #Root.Icon, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
+				Text="{Binding #Root.Icon}" />
 			<TextBlock Text="{Binding #Root.Text}" />
 		</StackPanel>
 	</Button>
