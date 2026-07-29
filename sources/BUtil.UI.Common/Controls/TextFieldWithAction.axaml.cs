@@ -1,5 +1,6 @@
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Media;
 using System.Windows.Input;
 
 namespace BUtil.UI.Controls;
@@ -26,6 +27,15 @@ public partial class TextFieldWithAction : UserControl
 
     public static readonly StyledProperty<bool> IsReadOnlyProperty =
         AvaloniaProperty.Register<TextFieldWithAction, bool>(nameof(IsReadOnly));
+
+    public static readonly StyledProperty<bool> IsMultilineProperty =
+        AvaloniaProperty.Register<TextFieldWithAction, bool>(nameof(IsMultiline));
+
+    public static readonly StyledProperty<TextWrapping> TextWrappingProperty =
+        AvaloniaProperty.Register<TextFieldWithAction, TextWrapping>(nameof(TextWrapping));
+
+    public static readonly StyledProperty<double> TextBoxMinHeightProperty =
+        AvaloniaProperty.Register<TextFieldWithAction, double>(nameof(TextBoxMinHeight));
 
     public string? Label
     {
@@ -67,6 +77,24 @@ public partial class TextFieldWithAction : UserControl
     {
         get => GetValue(IsReadOnlyProperty);
         set => SetValue(IsReadOnlyProperty, value);
+    }
+
+    public bool IsMultiline
+    {
+        get => GetValue(IsMultilineProperty);
+        set => SetValue(IsMultilineProperty, value);
+    }
+
+    public TextWrapping TextWrapping
+    {
+        get => GetValue(TextWrappingProperty);
+        set => SetValue(TextWrappingProperty, value);
+    }
+
+    public double TextBoxMinHeight
+    {
+        get => GetValue(TextBoxMinHeightProperty);
+        set => SetValue(TextBoxMinHeightProperty, value);
     }
 
     public TextFieldWithAction()
