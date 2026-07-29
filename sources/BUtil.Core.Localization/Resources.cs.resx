@@ -454,6 +454,9 @@ Prosím vyberte:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Zde můžete přidat složky a soubory, které potřebujete zpracovat.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Zde můžete zadat složky, které chcete zálohovat.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Žádné položky ke zpracování.</value>
   </data>

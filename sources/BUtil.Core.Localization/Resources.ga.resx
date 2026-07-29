@@ -454,6 +454,9 @@ Le do thoil ceachtar:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Anseo is féidir leat fillteáin agus comhaid a theastaíonn uait a phróiseáil a chur leis.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Anseo is féidir leat na fillteáin ar mhaith leat cúltaca a dhéanamh díobh a shonrú.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Níl aon mhíreanna le próiseáil.</value>
   </data>

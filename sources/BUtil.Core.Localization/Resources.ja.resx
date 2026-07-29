@@ -442,6 +442,9 @@
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>ここで処理が必要なフォルダやファイルを追加できます。</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>ここでバックアップしたいフォルダーを指定できます。</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>処理する項目がありません。</value>
   </data>

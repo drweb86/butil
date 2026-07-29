@@ -454,6 +454,9 @@ Prosím vyberte jednu z možností:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Tu môžete pridať priečinky a súbory, ktoré potrebujete spracovať.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Tu môžete zadať priečinky, ktoré chcete zálohovať.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Žiadne položky na spracovanie.</value>
   </data>

@@ -1058,6 +1058,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Here you can specify folders you'd like to backup..
+        /// </summary>
+        public static string WhatTask_Description {
+            get {
+                return ResourceManager.GetString("WhatTask_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No items to process..
         /// </summary>
         public static string LeftMenu_What_Validation {

@@ -454,6 +454,9 @@ Vennligst gjør ett av følgende:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Her kan du legge til mapper og filer du trenger å behandle.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Her kan du angi mappene du vil sikkerhetskopiere.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Ingen elementer å behandle.</value>
   </data>

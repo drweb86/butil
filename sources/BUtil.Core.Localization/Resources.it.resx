@@ -459,6 +459,9 @@ Sceglie una delle seguenti opzioni:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Qui puoi aggiungere cartelle e file che vuoi elaborare.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Qui puoi specificare le cartelle di cui desideri eseguire il backup.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Nessun elemento da elaborare.</value>
   </data>

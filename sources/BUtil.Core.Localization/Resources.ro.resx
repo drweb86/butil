@@ -454,6 +454,9 @@ Vă rugăm să:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Aici puteți adăuga foldere și fișiere pe care trebuie să le procesați.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Aici puteți specifica folderele pentru care doriți să faceți backup.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Nu există elemente de procesat.</value>
   </data>

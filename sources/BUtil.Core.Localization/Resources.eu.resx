@@ -454,6 +454,9 @@ Mesedez, bai:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Hemen prozesatu behar dituzun karpetak eta fitxategiak gehi ditzakezu.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Hemen babeskopia egin nahi diezun karpetak zehaztu ditzakezu.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Ez dago prozesatu beharreko elementurik.</value>
   </data>

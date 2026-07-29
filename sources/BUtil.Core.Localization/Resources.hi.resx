@@ -454,6 +454,9 @@
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>यहाँ आप वे फोल्डर और फ़ाइलें जोड़ सकते हैं जिन्हें आप प्रोसेस करना चाहते हैं।</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>यहां आप उन फ़ोल्डरों को निर्दिष्ट कर सकते हैं जिनका आप बैकअप लेना चाहते हैं।</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>प्रोसेस करने के लिए कोई आइटम नहीं।</value>
   </data>

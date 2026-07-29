@@ -451,6 +451,9 @@ Please either:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Here you may add folders and files you need to process.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Ke emi, afo ekeme ndikpep mme folda emi afo oyomde ndikpeme ndise.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>No items to process.</value>
   </data>

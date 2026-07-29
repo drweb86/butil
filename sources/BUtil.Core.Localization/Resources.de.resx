@@ -454,6 +454,9 @@ Bitte wählen Sie eine der folgenden Optionen:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Hier können Sie Ordner und Dateien hinzufügen, die Sie verarbeiten müssen.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Hier können Sie die Ordner angeben, die Sie sichern möchten.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Keine zu verarbeitenden Elemente.</value>
   </data>

@@ -454,6 +454,9 @@ Please either:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Here you may add folders and files you need to process.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Equí pues especificar les carpetes que quies facer copia de seguridá.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>No items to process.</value>
   </data>

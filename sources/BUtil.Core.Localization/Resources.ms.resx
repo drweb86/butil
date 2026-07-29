@@ -454,6 +454,9 @@ Sila lakukan salah satu:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Di sini anda boleh menambah folder dan fail yang perlu diproses.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Di sini anda boleh menentukan folder yang ingin anda sandarkan.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Tiada item untuk diproses.</value>
   </data>

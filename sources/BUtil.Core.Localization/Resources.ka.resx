@@ -454,6 +454,9 @@
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>აქ შეგიძლიათ დაამატოთ საქაღალდეები და ფაილები, რომლებიც უნდა დამუშავდეს.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>აქ შეგიძლიათ მიუთითოთ საქაღალდეები, რომელთა სარეზერვო ასლის შექმნაც გსურთ.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>დასამუშავებელი ელემენტები არ არის.</value>
   </data>

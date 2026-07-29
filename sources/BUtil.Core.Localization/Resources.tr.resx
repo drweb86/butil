@@ -451,6 +451,9 @@ Lütfen şunlardan birini yapın:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Burada işlemek istediğiniz klasörleri ve dosyaları ekleyebilirsiniz.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Burada yedeklemek istediğiniz klasörleri belirtebilirsiniz.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>İşlenecek öğe yok.</value>
   </data>

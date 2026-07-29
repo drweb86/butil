@@ -451,6 +451,9 @@ Vui lòng:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Tại đây bạn có thể thêm các thư mục và tệp bạn cần xử lý.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Tại đây bạn có thể chỉ định các thư mục muốn sao lưu.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Không có mục nào để xử lý.</value>
   </data>

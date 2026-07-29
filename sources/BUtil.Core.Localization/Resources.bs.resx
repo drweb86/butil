@@ -454,6 +454,9 @@ Molimo uradite jedno od sljedećeg:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Ovdje možete dodati foldere i datoteke koje trebate obraditi.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Ovdje možete navesti foldere koje želite sigurnosno kopirati.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Nema stavki za obradu.</value>
   </data>

@@ -455,6 +455,9 @@
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Эндээс та боловсруулах шаардлагатай хавтас, файлуудыг нэмж болно.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Энд та нөөцлөхийг хүссэн хавтаснуудаа зааж өгч болно.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Боловсруулах зүйл байхгүй.</value>
   </data>

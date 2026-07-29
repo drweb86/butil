@@ -454,6 +454,9 @@ Per piacè sia:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Quì pudete aghjunghje cartulare è schedari chì avete bisognu di processà.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Quì pudete specificà i cartulari chì vulete salvà in copia di salvezza.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Nisun articulu per processà.</value>
   </data>

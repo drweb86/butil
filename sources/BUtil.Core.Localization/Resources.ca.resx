@@ -454,6 +454,9 @@ Si us plau:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Aquí podeu afegir carpetes i fitxers que necessiteu processar.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Aquí podeu especificar les carpetes de les quals voleu fer una còpia de seguretat.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>No hi ha elements per processar.</value>
   </data>

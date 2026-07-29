@@ -454,6 +454,9 @@ Palun tehke üks järgmistest:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Siin saate lisada kaustu ja faile, mida peate töötlema.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Siin saate määrata kaustad, mida soovite varundada.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Töödeldavaid üksusi pole.</value>
   </data>

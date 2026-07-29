@@ -454,6 +454,9 @@ Ver venleg og gjer eitt av følgjande:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Her kan du leggje til mapper og filer du treng å handsame.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Her kan du angi mappene du vil ta tryggleikskopi av.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Ingen element å handsame.</value>
   </data>

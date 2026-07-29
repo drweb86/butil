@@ -447,6 +447,9 @@
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>మీరు ప్రాసెస్ చేయాలి అనుకుంటున్న ఫోల్డర్లను మరియు ఫైల్స్‌ని ఇక్కడ జోడించవచ్చు.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>ఇక్కడ మీరు బ్యాకప్ చేయాలనుకునే ఫోల్డర్లను పేర్కొనవచ్చు.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>ప్రాసెస్ చేయడానికి ఐటమ్స్ లేవు.</value>
   </data>

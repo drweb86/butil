@@ -1,23 +1,23 @@
 using Avalonia.Controls;
-using Avalonia.Interactivity;
 using Avalonia.Platform.Storage;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace BUtil.UI.Controls;
 
 public partial class WhatTaskView : UserControl
 {
+    public ICommand BrowseFoldersCommand { get; }
+
     public WhatTaskView()
     {
+        BrowseFoldersCommand = new RelayCommand(() => _ = BrowseFoldersCommandInternal());
+
         InitializeComponent();
 
         DataContext = new WhatTaskViewModel([], []);
-    }
-
-    public void BrowseFoldersCommand(object? sender, RoutedEventArgs args)
-    {
-        _ = BrowseFoldersCommandInternal();
     }
 
     private async Task BrowseFoldersCommandInternal()

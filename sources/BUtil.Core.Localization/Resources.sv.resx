@@ -454,6 +454,9 @@ Vänligen välj:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Här kan du lägga till mappar och filer som du vill bearbeta.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Här kan du ange de mappar som du vill säkerhetskopiera.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Inga objekt att bearbeta.</value>
   </data>

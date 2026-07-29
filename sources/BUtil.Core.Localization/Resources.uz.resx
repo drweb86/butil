@@ -455,6 +455,9 @@ Iltimos:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Bu yerda siz qayta ishlash kerak bo'lgan papka va fayllarni qo'shishingiz mumkin.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Bu yerda zaxiralamoqchi bo'lgan papkalarni ko'rsatishingiz mumkin.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Qayta ishlash uchun elementlar yo'q.</value>
   </data>

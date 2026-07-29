@@ -454,6 +454,9 @@ Kies een van de volgende opties:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Hier kunt u mappen en bestanden toevoegen die u wilt verwerken.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Hier kunt u de mappen opgeven waarvan u een back-up wilt maken.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Geen items om te verwerken.</value>
   </data>

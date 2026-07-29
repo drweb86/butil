@@ -454,6 +454,9 @@
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>هنا يمكنك إضافة المجلدات والملفات التي تحتاج لمعالجتها.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>هنا يمكنك تحديد المجلدات التي تريد نسخها احتياطيًا.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>لا توجد عناصر للمعالجة.</value>
   </data>

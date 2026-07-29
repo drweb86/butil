@@ -1,0 +1,14 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:local="clr-namespace:BUtil.UI.Controls"
+             x:Class="BUtil.UI.Controls.IconButton"
+			 x:Name="Root"
+			 x:DataType="local:IconButton"
+			 Margin="0 8 0 8">
+	<Button Command="{Binding #Root.Command}">
+		<StackPanel Orientation="Horizontal" Spacing="4">
+			<TextBlock Text="{Binding #Root.Icon}" />
+			<TextBlock Text="{Binding #Root.Text}" />
+		</StackPanel>
+	</Button>
+</UserControl>

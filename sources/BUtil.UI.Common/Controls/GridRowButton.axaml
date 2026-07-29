@@ -1,0 +1,14 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:local="clr-namespace:BUtil.UI.Controls"
+             x:Class="BUtil.UI.Controls.GridRowButton"
+			 x:Name="Root"
+			 x:DataType="local:GridRowButton"
+			 Margin="4">
+	<local:IconButton
+		VerticalAlignment="Center"
+		Icon="{Binding #Root.Icon}"
+		Text="{Binding #Root.Text}"
+		Command="{Binding #Root.Command}"
+		Margin="0" />
+</UserControl>

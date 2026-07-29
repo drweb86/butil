@@ -31,6 +31,12 @@
     <Compile Update="Controls\TextFieldWithAction.axaml.cs">
       <DependentUpon>TextFieldWithAction.axaml</DependentUpon>
     </Compile>
+    <Compile Update="Controls\IconButton.axaml.cs">
+      <DependentUpon>IconButton.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\GridRowButton.axaml.cs">
+      <DependentUpon>GridRowButton.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Controls\MessageBar.axaml.cs">
       <DependentUpon>MessageBar.axaml</DependentUpon>
     </Compile>

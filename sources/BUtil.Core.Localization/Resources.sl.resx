@@ -454,6 +454,9 @@ Prosimo, izberite eno od možnosti:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Tukaj lahko dodate mape in datoteke, ki jih morate obdelati.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Tukaj lahko določite mape, ki jih želite varnostno kopirati.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Ni elementov za obdelavo.</value>
   </data>

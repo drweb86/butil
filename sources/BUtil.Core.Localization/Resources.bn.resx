@@ -448,6 +448,9 @@
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>এখানে আপনি প্রক্রিয়াকরণের জন্য আপনাকে প্রয়োজনীয় ফোল্ডার এবং ফাইল যুক্ত করতে পারেন।</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>এখানে আপনি যে ফোল্ডারগুলোর ব্যাকআপ নিতে চান সেগুলো নির্দিষ্ট করতে পারেন।</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>প্রক্রিয়াকরণের জন্য কোন আইটেম নেই।</value>
   </data>

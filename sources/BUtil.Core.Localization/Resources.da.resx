@@ -454,6 +454,9 @@ Vælg venligst:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Her kan du tilføje mapper og filer, du vil behandle.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Her kan du angive de mapper, du vil sikkerhedskopiere.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Ingen elementer at behandle.</value>
   </data>

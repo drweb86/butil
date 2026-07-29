@@ -455,6 +455,9 @@ Ji kerema xwe:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Li vir hûn dikarin peldank û pelên ku divê bêne pêvajokirin zêde bikin.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Li vir hûn dikarin peldankên ku hûn dixwazin piştgirî bikin diyar bikin.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Ti hêmanek ji bo pêvajokirin tune.</value>
   </data>

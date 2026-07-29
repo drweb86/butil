@@ -454,6 +454,9 @@ Por favor, escolha uma das opções:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Aqui você pode adicionar pastas e arquivos que precisam ser processados.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Aqui pode especificar as pastas das quais pretende fazer backup.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Nenhum item para processar.</value>
   </data>

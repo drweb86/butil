@@ -454,6 +454,9 @@ Asseblief óf:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Hier kan jy dopgehou en lêers byvoeg wat jy moet verwerk.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Hier kan jy vouers spesifiseer wat jy wil rugsteun.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Geen items om te verwerk nie.</value>
   </data>

@@ -454,6 +454,9 @@ Feuch an dàrna cuid:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>An seo faodaidh tu pasganan agus faidhlichean a dh'fheumas tu a phròiseasadh a chur ris.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>An seo faodaidh tu na pasganan a bu toil leat cùl-taic a dhèanamh dhiubh a shònrachadh.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Gun stuthan ri phròiseasadh.</value>
   </data>

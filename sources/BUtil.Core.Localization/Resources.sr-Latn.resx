@@ -454,6 +454,9 @@ Molimo izaberite jednu od opcija:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Ovde možete dodati fascikle i datoteke koje treba da obradite.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Ovde možete da navedete fascikle koje želite da napravite rezervnu kopiju.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Nema stavki za obradu.</value>
   </data>

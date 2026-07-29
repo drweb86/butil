@@ -454,6 +454,9 @@ Kérjük, válasszon:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Itt adhat hozzá feldolgozandó mappákat és fájlokat.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Itt megadhatja azokat a mappákat, amelyekről biztonsági mentést szeretne készíteni.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Nincsenek feldolgozandó elemek.</value>
   </data>

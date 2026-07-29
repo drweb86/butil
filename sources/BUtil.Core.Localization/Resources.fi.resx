@@ -454,6 +454,9 @@ Ole hyvä ja joko:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Täällä voit lisätä kansioita ja tiedostoja, jotka haluat käsitellä.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Tässä voit määrittää kansiot, jotka haluat varmuuskopioida.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Ei käsiteltäviä kohteita.</value>
   </data>

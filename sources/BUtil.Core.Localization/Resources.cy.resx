@@ -454,6 +454,9 @@ Os gwelwch yn dda naill ai:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Yma gallwch ychwanegu ffolderi a ffeiliau y mae angen i chi eu prosesu.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Yma gallwch nodi'r ffolderi yr hoffech eu gwneud copi wrth gefn ohonynt.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Dim eitemau i'w prosesu.</value>
   </data>

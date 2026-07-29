@@ -451,6 +451,9 @@
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>येथे तुम्ही प्रक्रिया करण्यासाठी आवश्यक फोल्डर आणि फाइल्स जोडू शकता.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>येथे आपण बॅकअप घ्यायचे फोल्डर निर्दिष्ट करू शकता.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>प्रक्रिया करण्यास काहीही नाही.</value>
   </data>

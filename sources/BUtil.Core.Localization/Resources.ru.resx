@@ -455,6 +455,9 @@
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Сюда можете добавлять файлы и папки, предназначенные для обработки.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Здесь можно указать папки, которые вы хотите включить в резервную копию.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Не указано, что обрабатывать.</value>
   </data>

@@ -3,20 +3,23 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:cvm="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Tasks"
+			 xmlns:decor="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Common"
              mc:Ignorable="d"
              x:Class="BUtil.UI.Controls.WhatTaskView"
+			 x:Name="Root"
 			 x:DataType="cvm:WhatTaskViewModel">
 	<Expander Classes="TaskSection" HorizontalAlignment="Stretch" IsExpanded="{Binding IsExpanded}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 		<Expander.Header>
-			<StackPanel Orientation="Horizontal">
-				<Image Width="16" Height="16" Source="avares://BUtil.UI/Assets/CrystalProject_EveraldoCoelho_SourceItems48x48.png" VerticalAlignment="Center" />
-				<TextBlock Text="{Binding LeftMenu_What}" Margin="8 0 0 0" VerticalAlignment="Center" />
-			</StackPanel>
+			<cvm:ExpanderHeader Icon="💾" Text="{Binding LeftMenu_What}" />
 		</Expander.Header>
 		<StackPanel Orientation="Vertical">
-			<WrapPanel Orientation="Horizontal" Margin="0 8 0 8">
-				<Button Margin="4 4 4 4" Content="{Binding SourceItem_AddFolders}" Click="BrowseFoldersCommand" />
-			</WrapPanel>
+			<TextBlock Text="{Binding WhatTask_Description}" TextWrapping="Wrap" Margin="0 8 0 8" />
+
+			<decor:IconButton
+				Icon="➕"
+				Text="{Binding SourceItem_AddFolders}"
+				Command="{Binding #Root.BrowseFoldersCommand}" />
+
 			<ListBox Margin="0 8 0 8" MinHeight="50" ItemsSource="{Binding Items}" IsVisible="{Binding !!Items.Count}" Background="Transparent">
 				<ListBox.ItemTemplate>
 					<DataTemplate x:DataType="cvm:SourceItemV2ViewModel">
@@ -24,48 +27,38 @@
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="Auto" />
 								<ColumnDefinition Width="*" />
-								<ColumnDefinition Width="Auto" />
-								<ColumnDefinition Width="Auto" />
 							</Grid.ColumnDefinitions>
-							<Image
+							<Grid.RowDefinitions>
+								<RowDefinition />
+								<RowDefinition />
+							</Grid.RowDefinitions>
+							<TextBlock
 								Grid.Column="0"
-								Width="16"
-								Height="16"
-								Margin="2"
-								Source="{Binding IconSource}"
-								VerticalAlignment="Center" />
+								Grid.Row="0"
+								VerticalAlignment="Center"
+								Text="📁" />
 							<TextBlock
 								Grid.Column="1"
-								Text="{Binding Target}" VerticalAlignment="Center" />
-							<Button
-								Grid.Column="2"
+								Grid.Row="0"
+								Margin="4 0 0 0"
+								TextWrapping="Wrap"
 								VerticalAlignment="Center"
-								Margin="2"
-								Padding="4"
-								ToolTip.Tip="{Binding SourceItem_OpenInExplorer}"
-								IsVisible="{Binding CanOpenLink}"
-								Command="{Binding SourceItemOpenInExplorerCommand}">
-								<Image
-									Width="12"
-									Height="12"
-									Source="avares://BUtil.UI/Assets/www.wefunction.com_FunctionFreeIconSet_Folder_48.png"
-									VerticalAlignment="Center" />
-							</Button>
+								Text="{Binding Target}" />
+							<WrapPanel Grid.Row="1"
+									Grid.Column="0"
+									Grid.ColumnSpan="2"
+									Orientation="Horizontal"
+									Margin="0 4 0 0">
+								<decor:GridRowButton
+									Icon="📂"
+									Text="{Binding SourceItem_OpenInExplorer}"
+									Command="{Binding SourceItemOpenInExplorerCommand}" />
 
-							<Button
-								Grid.Column="3"
-								VerticalAlignment="Center"
-								Margin="2"
-								Padding="4"
-								Foreground="Red"
-								ToolTip.Tip="{Binding Button_Remove}"
-								Command="{Binding TaskDeleteCommand}">
-								<Image
-									Width="12"
-									Height="12"
-									Source="avares://BUtil.UI/Assets/www.wefunction.com_FunctionFreeIconSet_cross_48.png"
-									VerticalAlignment="Center" />
-							</Button>
+								<decor:GridRowButton
+									Icon="✖"
+									Text="{Binding Button_Remove}"
+									Command="{Binding TaskDeleteCommand}" />
+							</WrapPanel>
 						</Grid>
 					</DataTemplate>
 				</ListBox.ItemTemplate>

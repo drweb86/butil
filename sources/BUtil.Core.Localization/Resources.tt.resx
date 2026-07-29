@@ -454,6 +454,9 @@ Changesзгәрешләр гадәттә түбән булганлыктан, а
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Монда сез эшкәртү өчен кирәкле папкалар һәм файллар өсти аласыз.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Монда сез резерв күчермәсен ясарга теләгән папкаларны күрсәтә аласыз.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Эшкәртү өчен әйберләр юк.</value>
   </data>

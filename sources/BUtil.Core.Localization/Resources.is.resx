@@ -454,6 +454,9 @@ Vinsamlegast annaðhvort:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Hér getur þú bætt við möppum og skrám sem þú þarft að vinna úr.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Hér geturðu tilgreint möppur sem þú vilt taka öryggisafrit af.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Engin atriði til að vinna úr.</value>
   </data>

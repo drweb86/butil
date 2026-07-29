@@ -454,6 +454,9 @@ Por favor:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Aquí puedes agregar carpetas y archivos que necesitas procesar.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Aquí puede especificar las carpetas de las que desea hacer una copia de seguridad.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>No hay elementos para procesar.</value>
   </data>

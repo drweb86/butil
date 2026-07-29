@@ -454,6 +454,9 @@ Lūdzu, izvēlieties vienu no opcijām:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Šeit varat pievienot mapes un failus, kurus nepieciešams apstrādāt.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Šeit varat norādīt mapes, kuras vēlaties dublēt.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Nav elementu apstrādei.</value>
   </data>

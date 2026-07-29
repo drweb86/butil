@@ -3,6 +3,7 @@ using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using BUtil.Core;
 using BUtil.Core.Localization;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.ObjectModel;
 
@@ -23,6 +24,8 @@ public class SourceItemV2ViewModel
         _items = items;
         var src = !isFolder ? "/Assets/CrystalClear_FileNew.png" : "/Assets/www.wefunction.com_FunctionFreeIconSet_Folder_48.png";
         IconSource = LoadFromResource(new Uri("avares://BUtil.UI" + src));
+        SourceItemOpenInExplorerCommand = new RelayCommand(OpenInExplorer, () => CanOpenLink);
+        TaskDeleteCommand = new RelayCommand(Delete);
     }
 
     public Bitmap? IconSource { get; }
@@ -38,7 +41,11 @@ public class SourceItemV2ViewModel
     public bool CanOpenLink { get; } = PlatformSpecificExperience.Instance.SupportManager.CanOpenLink;
 
     #region Commands
-    public void SourceItemOpenInExplorerCommand()
+    public IRelayCommand SourceItemOpenInExplorerCommand { get; }
+
+    public IRelayCommand TaskDeleteCommand { get; }
+
+    private void OpenInExplorer()
     {
         var service = PlatformSpecificExperience.Instance.GetFolderService();
         if (IsFolder)
@@ -47,7 +54,7 @@ public class SourceItemV2ViewModel
             service.OpenFileInShell(Target);
     }
 
-    public void TaskDeleteCommand()
+    private void Delete()
     {
         _items.Remove(this);
     }

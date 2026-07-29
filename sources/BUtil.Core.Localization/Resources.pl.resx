@@ -454,6 +454,9 @@ Proszę:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Tutaj możesz dodać foldery i pliki, które chcesz przetworzyć.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Tutaj możesz wskazać foldery, które chcesz uwzględnić w kopii zapasowej.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Brak elementów do przetworzenia.</value>
   </data>

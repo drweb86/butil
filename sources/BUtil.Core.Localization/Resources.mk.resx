@@ -454,6 +454,9 @@
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Тука можете да додадете папки и датотеки што треба да се обработат.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Тука можете да ги наведете папките за кои сакате да направите резервна копија.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Нема елементи за обработка.</value>
   </data>

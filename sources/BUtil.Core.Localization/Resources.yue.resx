@@ -471,6 +471,9 @@
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>在這裡您可以添加需要處理的資料夾和文件。</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>你可以喺呢度指定想備份嘅資料夾。</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>沒有項目可處理。</value>
   </data>

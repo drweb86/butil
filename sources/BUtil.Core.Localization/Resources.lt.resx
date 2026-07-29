@@ -454,6 +454,9 @@ Prašome pasirinkti vieną iš variantų:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Čia galite pridėti aplankus ir failus, kuriuos reikia apdoroti.</value>
   </data>
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Čia galite nurodyti aplankus, kurių atsargines kopijas norite kurti.</value>
+  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Nėra elementų apdorojimui.</value>
   </data>
