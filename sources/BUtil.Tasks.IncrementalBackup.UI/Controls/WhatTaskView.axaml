@@ -2,15 +2,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-			 xmlns:cvm="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Tasks"
+			 xmlns:local="clr-namespace:BUtil.Tasks.IncrementalBackup.UI.Controls;assembly=BUtil.Tasks.IncrementalBackup.UI"
 			 xmlns:decor="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Common"
+			 xmlns:tasks="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Tasks"
              mc:Ignorable="d"
-             x:Class="BUtil.UI.Controls.WhatTaskView"
+             x:Class="BUtil.Tasks.IncrementalBackup.UI.Controls.WhatTaskView"
 			 x:Name="Root"
-			 x:DataType="cvm:WhatTaskViewModel">
+			 x:DataType="local:WhatTaskViewModel">
 	<Expander Classes="TaskSection" HorizontalAlignment="Stretch" IsExpanded="{Binding IsExpanded}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 		<Expander.Header>
-			<cvm:ExpanderHeader Icon="💾" Text="{Binding LeftMenu_What}" />
+			<tasks:ExpanderHeader Icon="💾" Text="{Binding LeftMenu_What}" />
 		</Expander.Header>
 		<StackPanel Orientation="Vertical">
 			<TextBlock Text="{Binding WhatTask_Description}" TextWrapping="Wrap" Margin="0 8 0 8" />
@@ -22,7 +23,7 @@
 
 			<ListBox Margin="0 8 0 8" MinHeight="50" ItemsSource="{Binding Items}" IsVisible="{Binding !!Items.Count}" Background="Transparent">
 				<ListBox.ItemTemplate>
-					<DataTemplate x:DataType="cvm:SourceItemV2ViewModel">
+					<DataTemplate x:DataType="local:SourceItemV2ViewModel">
 						<Grid>
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="Auto" />
@@ -63,7 +64,7 @@
 					</DataTemplate>
 				</ListBox.ItemTemplate>
 			</ListBox>
-			<cvm:ExcludePatternsField Patterns="{Binding FileExcludePatterns}" />
+			<local:ExcludePatternsField Patterns="{Binding FileExcludePatterns}" />
 		</StackPanel>
 	</Expander>
 </UserControl>

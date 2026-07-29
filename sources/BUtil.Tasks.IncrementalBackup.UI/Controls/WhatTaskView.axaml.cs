@@ -5,7 +5,7 @@ using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace BUtil.UI.Controls;
+namespace BUtil.Tasks.IncrementalBackup.UI.Controls;
 
 public partial class WhatTaskView : UserControl
 {

@@ -11,6 +11,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="12.1.1" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="../BUtil.Tasks.IncrementalBackup/BUtil.Tasks.IncrementalBackup.csproj" />
@@ -22,6 +23,12 @@
   <ItemGroup>
     <Compile Update="Controls\EditIncrementalBackupTaskView.axaml.cs">
       <DependentUpon>EditIncrementalBackupTaskView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\WhatTaskView.axaml.cs">
+      <DependentUpon>WhatTaskView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\ExcludePatternsField.axaml.cs">
+      <DependentUpon>ExcludePatternsField.axaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>

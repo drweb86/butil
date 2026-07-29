@@ -4,6 +4,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:BUtil.UI.Controls"
     xmlns:decor="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Common"
+    xmlns:local="clr-namespace:BUtil.Tasks.IncrementalBackup.UI.Controls;assembly=BUtil.Tasks.IncrementalBackup.UI"
     xmlns:tasks="clr-namespace:BUtil.UI.Tasks.Controls;assembly=BUtil.UI.Tasks"
     xmlns:vm="clr-namespace:BUtil.Tasks.IncrementalBackup.UI.Controls;assembly=BUtil.Tasks.IncrementalBackup.UI"
     mc:Ignorable="d"
@@ -31,7 +32,7 @@
 				ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 			<StackPanel Spacing="8" Classes="FormContent">
 				<tasks:TaskIdentityView DataContext="{Binding TaskIdentityViewModel}" />
-				<controls:WhatTaskView DataContext="{Binding WhatTaskViewModel}" />
+				<local:WhatTaskView DataContext="{Binding WhatTaskViewModel}" />
 				<controls:WhenTaskView DataContext="{Binding WhenTaskViewModel}" />
 				<controls:StorageView DataContext="{Binding StorageViewModel}"/>
 				<controls:EncryptionTaskView DataContext="{Binding EncryptionTaskViewModel}" />

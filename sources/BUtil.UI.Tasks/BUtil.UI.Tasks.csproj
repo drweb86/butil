@@ -33,9 +33,6 @@
     <Compile Update="Controls\WhenTaskView.axaml.cs">
       <DependentUpon>WhenTaskView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Controls\WhatTaskView.axaml.cs">
-      <DependentUpon>WhatTaskView.axaml</DependentUpon>
-    </Compile>
     <Compile Update="Controls\SynchronizationWhatView.axaml.cs">
       <DependentUpon>SynchronizationWhatView.axaml</DependentUpon>
     </Compile>

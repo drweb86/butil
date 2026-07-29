@@ -1,13 +1,12 @@
 using Avalonia;
 using Avalonia.Controls;
 using BUtil.Core;
-using BUtil.Core.Localization;
 using BUtil.Core.Misc;
 using CommunityToolkit.Mvvm.Input;
 using System.Windows.Input;
 using Loc = BUtil.Core.Localization.Resources;
 
-namespace BUtil.UI.Controls;
+namespace BUtil.Tasks.IncrementalBackup.UI.Controls;
 
 public partial class ExcludePatternsField : UserControl
 {
