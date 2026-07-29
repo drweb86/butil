@@ -30,6 +30,7 @@
 				ScrollViewer.VerticalScrollBarVisibility="Visible"
 				ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 			<StackPanel Spacing="8" Classes="FormContent">
+				<decor:FormHeader Text="{Binding WindowTitle}" />
 				<tasks:TaskIdentityView DataContext="{Binding TaskIdentityViewModel}" />
 				<controls:FolderSectionView DataContext="{Binding FolderSectionViewModel}" />
 				<controls:StorageView DataContext="{Binding StorageViewModel}"/>

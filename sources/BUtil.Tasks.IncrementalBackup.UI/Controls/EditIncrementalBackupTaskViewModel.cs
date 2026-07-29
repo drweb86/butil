@@ -48,6 +48,11 @@ public class EditIncrementalBackupTaskViewModel : BUtil.UI.Controls.ViewModelBas
         WhenTaskViewModel = new BUtil.UI.Controls.WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule.GetSchedule(taskName) ?? new ScheduleInfo(), isNew);
         StorageViewModel = new BUtil.UI.Controls.StorageViewModel(model.To, Resources.LeftMenu_Where, "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png", isNew);
         WhatTaskViewModel = new WhatTaskViewModel(model.Items, model.FileExcludePatterns, isNew);
+        WhatTaskViewModel.PropertyChanged += (_, e) =>
+        {
+            if (e.PropertyName == nameof(WhatTaskViewModel.SourceItemsError))
+                FormErrorsText = null;
+        };
     }
 
     public bool IsNew { get; set; }
@@ -92,6 +97,8 @@ public class EditIncrementalBackupTaskViewModel : BUtil.UI.Controls.ViewModelBas
             errors.Add($"{Resources.Name_Title}: {TaskIdentityViewModel.NameError}");
         if (!EncryptionTaskViewModel.Validate())
             errors.Add($"{Resources.LeftMenu_Encryption}: {EncryptionTaskViewModel.PasswordError}");
+        if (!WhatTaskViewModel.Validate())
+            errors.Add($"{Resources.LeftMenu_What}: {WhatTaskViewModel.SourceItemsError}");
         if (errors.Count > 0)
         {
             FormErrorsText = string.Join(Environment.NewLine, errors);

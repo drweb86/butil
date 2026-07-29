@@ -12,7 +12,7 @@
 		<controls:HackerDecorationCanvas IsVisible="{Binding IsAesTool}" />
 		<controls:WizardsDecorationCanvas IsVisible="{Binding IsBrotliTool}" />
 		<StackPanel Classes="FormContent">
-			<TextBlock Text="{Binding WindowTitle}" FontSize="20" FontWeight="Bold" />
+			<decor:FormHeader Text="{Binding WindowTitle}" />
 			<decor:TextFieldWithAction
 					Label="{Binding TechnicalTool_SourceFile}"
 					Text="{Binding InputPath}"

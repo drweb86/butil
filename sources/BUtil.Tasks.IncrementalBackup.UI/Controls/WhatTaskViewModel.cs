@@ -6,7 +6,9 @@ using BUtil.Interop.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 
 namespace BUtil.Tasks.IncrementalBackup.UI.Controls;
@@ -22,6 +24,7 @@ public class WhatTaskViewModel : ObservableObject
     {
         IsExpanded = isExpanded;
         items.ForEach(x => _items.Add(new SourceItemV2ViewModel(x.Id, x.Target, x.IsFolder, _items)));
+        _items.CollectionChanged += ItemsCollectionChanged;
         FileExcludePatterns = string.Join(Environment.NewLine, fileExcludePatterns);
     }
 
@@ -45,6 +48,46 @@ public class WhatTaskViewModel : ObservableObject
     #region Items
 
     public ObservableCollection<SourceItemV2ViewModel> Items => _items;
+
+    private string? _sourceItemsError;
+
+    public string? SourceItemsError
+    {
+        get => _sourceItemsError;
+        private set
+        {
+            if (value == _sourceItemsError)
+                return;
+            _sourceItemsError = value;
+            OnPropertyChanged(nameof(SourceItemsError));
+        }
+    }
+
+    public bool Validate()
+    {
+        SourceItemsError = _items.Count == 0
+            ? Resources.SourceItem_Validation_Empty
+            : _items
+                .Select(ValidateSourceItem)
+                .FirstOrDefault(error => error is not null);
+
+        return SourceItemsError is null;
+    }
+
+    private static string? ValidateSourceItem(SourceItemV2ViewModel item)
+    {
+        if (!item.IsFolder)
+            return $"Please edit task and remove source item {item.Target}. Its support is dropped. You can add folders only";
+
+        return Directory.Exists(item.Target)
+            ? null
+            : string.Format(Resources.SourceItem_Validation_NotExists, item.Target);
+    }
+
+    private void ItemsCollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
+    {
+        SourceItemsError = null;
+    }
 
     public List<SourceItemV2> GetListSourceItemV2s()
     {

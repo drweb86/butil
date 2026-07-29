@@ -40,6 +40,9 @@
     <Compile Update="Controls\MessageBar.axaml.cs">
       <DependentUpon>MessageBar.axaml</DependentUpon>
     </Compile>
+    <Compile Update="Controls\FormHeader.axaml.cs">
+      <DependentUpon>FormHeader.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Controls\DialogButtons.axaml.cs">
       <DependentUpon>DialogButtons.axaml</DependentUpon>
     </Compile>
