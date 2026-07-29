@@ -7,6 +7,10 @@ namespace BUtil.UI.Controls;
 
 public partial class TextFieldWithAction : UserControl
 {
+    private const double MinTextBoxWidthForSideAction = 400;
+
+    private double _lastRightActionButtonWidth;
+
     public static readonly StyledProperty<string?> LabelProperty =
         AvaloniaProperty.Register<TextFieldWithAction, string?>(nameof(Label));
 
@@ -36,6 +40,9 @@ public partial class TextFieldWithAction : UserControl
 
     public static readonly StyledProperty<double> TextBoxMinHeightProperty =
         AvaloniaProperty.Register<TextFieldWithAction, double>(nameof(TextBoxMinHeight));
+
+    public static readonly StyledProperty<bool> IsActionBelowProperty =
+        AvaloniaProperty.Register<TextFieldWithAction, bool>(nameof(IsActionBelow));
 
     public string? Label
     {
@@ -82,7 +89,11 @@ public partial class TextFieldWithAction : UserControl
     public bool IsMultiline
     {
         get => GetValue(IsMultilineProperty);
-        set => SetValue(IsMultilineProperty, value);
+        set
+        {
+            SetValue(IsMultilineProperty, value);
+            UpdateActionPlacement();
+        }
     }
 
     public TextWrapping TextWrapping
@@ -97,8 +108,59 @@ public partial class TextFieldWithAction : UserControl
         set => SetValue(TextBoxMinHeightProperty, value);
     }
 
+    public bool IsActionBelow
+    {
+        get => GetValue(IsActionBelowProperty);
+        private set => SetValue(IsActionBelowProperty, value);
+    }
+
     public TextFieldWithAction()
     {
         InitializeComponent();
+
+        InputTextBox.PropertyChanged += (_, e) =>
+        {
+            if (e.Property == BoundsProperty)
+                UpdateActionPlacement();
+        };
+
+        RightActionButton.PropertyChanged += (_, e) =>
+        {
+            if (e.Property == BoundsProperty)
+            {
+                var width = RightActionButton.Bounds.Width;
+                if (width > 0)
+                    _lastRightActionButtonWidth = width;
+                UpdateActionPlacement();
+            }
+        };
+    }
+
+    protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
+    {
+        base.OnPropertyChanged(change);
+
+        if (change.Property == IsMultilineProperty || change.Property == BoundsProperty)
+            UpdateActionPlacement();
+    }
+
+    private void UpdateActionPlacement()
+    {
+        if (InputTextBox is null)
+            return;
+
+        IsActionBelow = IsMultiline || GetSideTextBoxWidth() < MinTextBoxWidthForSideAction;
+    }
+
+    private double GetSideTextBoxWidth()
+    {
+        if (!IsActionBelow)
+            return InputTextBox.Bounds.Width;
+
+        var actionWidth = _lastRightActionButtonWidth;
+        if (actionWidth <= 0)
+            return InputTextBox.Bounds.Width;
+
+        return Bounds.Width - actionWidth - InputTextBox.Margin.Right;
     }
 }

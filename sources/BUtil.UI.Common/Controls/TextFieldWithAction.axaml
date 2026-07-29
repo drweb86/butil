@@ -18,18 +18,18 @@
 			<RowDefinition />
 		</Grid.RowDefinitions>
 		<TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding #Root.Label}" Margin="0 0 0 8" />
-		<TextBox Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="0 0 8 0"
+		<TextBox x:Name="InputTextBox" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="0 0 8 0"
 				IsReadOnly="{Binding #Root.IsReadOnly}"
 				AcceptsReturn="{Binding #Root.IsMultiline}"
 				TextWrapping="{Binding #Root.TextWrapping}"
 				MinHeight="{Binding #Root.TextBoxMinHeight}"
 				Text="{Binding #Root.Text, Mode=TwoWay}" />
-		<Button Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"
-				IsVisible="{Binding !#Root.IsMultiline}"
+		<Button x:Name="RightActionButton" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"
+				IsVisible="{Binding !#Root.IsActionBelow}"
 				Content="{Binding #Root.ActionText}"
 				Command="{Binding #Root.ActionCommand}" />
 		<Button Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Margin="0 8 0 0"
-				IsVisible="{Binding #Root.IsMultiline}"
+				IsVisible="{Binding #Root.IsActionBelow}"
 				Content="{Binding #Root.ActionText}"
 				Command="{Binding #Root.ActionCommand}" />
 		<TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
