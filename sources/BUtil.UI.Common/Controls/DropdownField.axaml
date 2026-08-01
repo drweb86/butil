@@ -12,6 +12,10 @@
 				  ItemsSource="{Binding #Root.ItemsSource}"
 				  SelectedItem="{Binding #Root.SelectedItem, Mode=TwoWay}"
 				  ItemTemplate="{Binding #Root.ItemTemplate}" />
+		<TextBlock Margin="0 8 0 0"
+				IsVisible="{Binding #Root.Help, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
+				Text="{Binding #Root.Help}"
+				TextWrapping="Wrap" />
 		<decor:ValidationError Error="{Binding #Root.Error}" />
 	</StackPanel>
 </UserControl>

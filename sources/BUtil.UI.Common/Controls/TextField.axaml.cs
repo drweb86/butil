@@ -11,6 +11,12 @@ public partial class TextField : UserControl
     public static readonly StyledProperty<string?> TextProperty =
         AvaloniaProperty.Register<TextField, string?>(nameof(Text), defaultBindingMode: Avalonia.Data.BindingMode.TwoWay);
 
+    public static readonly StyledProperty<string?> PlaceholderProperty =
+        AvaloniaProperty.Register<TextField, string?>(nameof(Placeholder));
+
+    public static readonly StyledProperty<char> PasswordCharProperty =
+        AvaloniaProperty.Register<TextField, char>(nameof(PasswordChar));
+
     public static readonly StyledProperty<string?> ErrorProperty =
         AvaloniaProperty.Register<TextField, string?>(nameof(Error));
 
@@ -24,6 +30,18 @@ public partial class TextField : UserControl
     {
         get => GetValue(TextProperty);
         set => SetValue(TextProperty, value);
+    }
+
+    public string? Placeholder
+    {
+        get => GetValue(PlaceholderProperty);
+        set => SetValue(PlaceholderProperty, value);
+    }
+
+    public char PasswordChar
+    {
+        get => GetValue(PasswordCharProperty);
+        set => SetValue(PasswordCharProperty, value);
     }
 
     public string? Error

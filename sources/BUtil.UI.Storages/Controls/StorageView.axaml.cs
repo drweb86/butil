@@ -1,5 +1,4 @@
 using Avalonia.Controls;
-using Avalonia.Interactivity;
 using Avalonia.Platform.Storage;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.UI.Controls.StorageFields;
@@ -13,22 +12,19 @@ public partial class StorageView : UserControl
     public StorageView()
     {
         InitializeComponent();
+        DataContextChanged += OnDataContextChanged;
         DataContext = new StorageViewModel(
             new FolderStorageSettingsV2(),
-            BUtil.Core.Localization.Resources.LeftMenu_Where,
-            "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png");
+            BUtil.Core.Localization.Resources.LeftMenu_Where);
     }
 
-    public void FieldBrowseFolderCommand(object? sender, RoutedEventArgs args)
+    private void OnDataContextChanged(object? sender, EventArgs e)
     {
-        if ((sender as Button)?.DataContext is FolderFieldViewModel vm)
-            _ = BrowseFolderAsync(vm);
-    }
-
-    public void FieldBrowseFileCommand(object? sender, RoutedEventArgs args)
-    {
-        if ((sender as Button)?.DataContext is FileFieldViewModel vm)
-            _ = BrowseFileAsync(vm);
+        if (DataContext is StorageViewModel vm)
+        {
+            vm.BrowseFolderAsync = BrowseFolderAsync;
+            vm.BrowseFileAsync = BrowseFileAsync;
+        }
     }
 
     private async Task BrowseFolderAsync(FolderFieldViewModel vm)

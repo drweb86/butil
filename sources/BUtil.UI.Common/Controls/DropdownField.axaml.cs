@@ -23,6 +23,9 @@ public partial class DropdownField : UserControl
     public static readonly StyledProperty<string?> DisplayMemberProperty =
         AvaloniaProperty.Register<DropdownField, string?>(nameof(DisplayMember));
 
+    public static readonly StyledProperty<string?> HelpProperty =
+        AvaloniaProperty.Register<DropdownField, string?>(nameof(Help));
+
     public static readonly StyledProperty<string?> ErrorProperty =
         AvaloniaProperty.Register<DropdownField, string?>(nameof(Error));
 
@@ -54,6 +57,12 @@ public partial class DropdownField : UserControl
     {
         get => GetValue(DisplayMemberProperty);
         set => SetValue(DisplayMemberProperty, value);
+    }
+
+    public string? Help
+    {
+        get => GetValue(HelpProperty);
+        set => SetValue(HelpProperty, value);
     }
 
     public string? Error

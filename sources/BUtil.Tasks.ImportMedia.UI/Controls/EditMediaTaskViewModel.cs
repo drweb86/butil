@@ -36,7 +36,7 @@ public class EditMediaTaskViewModel : BUtil.UI.Controls.ViewModelBase
         var model = (ImportMediaTaskModelOptionsV2)task.Model;
 
         ImportMediaTaskWhereTaskViewModel = new BUtil.UI.Controls.ImportMediaTaskWhereTaskViewModel(model.DestinationFolder, model.SkipAlreadyImportedFiles, model.DeleteCopiedDataOnSourceMedia, model.TransformFileName, model.FileLastWriteTimeMin, isNew);
-        SourceTaskViewModel = new BUtil.UI.Controls.StorageViewModel(model.From, Resources.LeftMenu_What, "/Assets/CrystalProject_EveraldoCoelho_SourceItems48x48.png", isNew);
+        SourceTaskViewModel = new BUtil.UI.Controls.StorageViewModel(model.From, Resources.LeftMenu_What, isNew);
     }
 
     public BUtil.UI.Controls.ImportMediaTaskWhereTaskViewModel ImportMediaTaskWhereTaskViewModel { get; }

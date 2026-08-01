@@ -1,5 +1,6 @@
 using BUtil.Core.Localization;
 using BUtil.Core.Storages;
+using System.Windows.Input;
 
 namespace BUtil.UI.Controls.StorageFields;
 
@@ -19,6 +20,8 @@ public class FileFieldViewModel(StorageFieldDescriptor descriptor) : StorageFiel
     }
 
     public static string BrowseLabel => Resources.Field_File_Browse;
+
+    public ICommand? BrowseCommand { get; set; }
 
     public override string? GetValue() => Value.Length == 0 ? null : Value;
     public override void SetValue(string? value) => Value = value ?? string.Empty;

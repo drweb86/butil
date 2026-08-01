@@ -1,5 +1,3 @@
-using Avalonia.Media.Imaging;
-using Avalonia.Platform;
 using BUtil.Core;
 using BUtil.Core.ConfigurationFileModels.V2;
 using BUtil.Core.Localization;
@@ -33,11 +31,11 @@ public sealed class StorageProviderItem
 
 public class StorageViewModel : ObservableObject
 {
-    public StorageViewModel(IStorageSettingsV2 storageSettings, string title, string iconUrl, bool isExpanded = false)
+    public StorageViewModel(IStorageSettingsV2 storageSettings, string title, bool isExpanded = false, string? help = null)
     {
         IsExpanded = isExpanded;
         Title = title;
-        IconSource = LoadFromResource(new Uri("avares://BUtil.UI" + iconUrl));
+        Help = help;
 
         Providers = new ObservableCollection<StorageProviderItem>(
             StorageProviderRegistry.GetProviders().Select(entry => new StorageProviderItem(entry)));
@@ -60,10 +58,32 @@ public class StorageViewModel : ObservableObject
 
     private void RebuildFields()
     {
+        if (_selectedProvider == null)
+            return;
+
         DetachEnumUiRuleHandlers();
         Fields.Clear();
         foreach (var descriptor in _selectedProvider.Entry.Provider.Fields)
-            Fields.Add(StorageFieldViewModelFactory.Create(descriptor));
+        {
+            var field = StorageFieldViewModelFactory.Create(descriptor);
+            if (field is FolderFieldViewModel folder)
+            {
+                folder.BrowseCommand = new AsyncRelayCommand(async () =>
+                {
+                    if (BrowseFolderAsync != null)
+                        await BrowseFolderAsync(folder);
+                });
+            }
+            else if (field is FileFieldViewModel file)
+            {
+                file.BrowseCommand = new AsyncRelayCommand(async () =>
+                {
+                    if (BrowseFileAsync != null)
+                        await BrowseFileAsync(file);
+                });
+            }
+            Fields.Add(field);
+        }
         AttachEnumUiRuleHandlers();
         ApplyEnumUiRules();
     }
@@ -115,17 +135,17 @@ public class StorageViewModel : ObservableObject
             await Messages.ShowErrorBox(Resources.DataStorage_Field_DisconnectionScript_Bad + Environment.NewLine + Environment.NewLine + memoryLog);
     }
 
-    private static Bitmap LoadFromResource(Uri resourceUri) =>
-        new(AssetLoader.Open(resourceUri));
-
     public string Title { get; }
-    public Bitmap? IconSource { get; }
+    public string? Help { get; }
     public bool IsExpanded { get; }
     public bool CanLaunchScripts { get; } = PlatformSpecificExperience.Instance.SupportManager.CanLaunchScripts;
     public ObservableCollection<StorageProviderItem> Providers { get; }
     public ObservableCollection<StorageFieldViewModel> Fields { get; } = [];
     public IAsyncRelayCommand MountScriptLaunchCommand { get; }
     public IAsyncRelayCommand UnmountScriptLaunchCommand { get; }
+
+    internal Func<FolderFieldViewModel, Task>? BrowseFolderAsync { get; set; }
+    internal Func<FileFieldViewModel, Task>? BrowseFileAsync { get; set; }
 
     private readonly List<(EnumFieldViewModel Vm, PropertyChangedEventHandler Handler)> _enumUiHandlers = [];
 

@@ -23,6 +23,7 @@
 				AcceptsReturn="{Binding #Root.IsMultiline}"
 				TextWrapping="{Binding #Root.TextWrapping}"
 				MinHeight="{Binding #Root.TextBoxMinHeight}"
+				PlaceholderText="{Binding #Root.Placeholder}"
 				Text="{Binding #Root.Text, Mode=TwoWay}" />
 		<decor:IconButton x:Name="RightActionButton" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="0"
 				IsVisible="{Binding !#Root.IsActionBelow}"

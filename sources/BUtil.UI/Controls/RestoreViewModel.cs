@@ -13,7 +13,7 @@ public class RestoreViewModel : ViewModelBase
     {
         WindowTitle = Resources.Task_Restore;
 
-        StorageViewModel = new StorageViewModel(storageSettingsV2 ?? new FolderStorageSettingsV2(), Resources.Task_Restore, "/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png");
+        StorageViewModel = new StorageViewModel(storageSettingsV2 ?? new FolderStorageSettingsV2(), Resources.Task_Restore);
         EncryptionTaskViewModel = new EncryptionTaskViewModel(password ?? string.Empty, false);
         VersionsListViewModel = new VersionsListViewModel(this);
     }

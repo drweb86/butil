@@ -4,20 +4,20 @@ namespace BUtil.UI.Controls.StorageFields;
 
 public class IntegerFieldViewModel : StorageFieldViewModel
 {
-    private readonly decimal _min;
-    private readonly decimal _max;
+    private readonly long _min;
+    private readonly long _max;
     private readonly long _defaultLong;
-    private decimal _value;
+    private long _value;
 
     public IntegerFieldViewModel(StorageFieldDescriptor descriptor) : base(descriptor)
     {
-        _min = (decimal)(descriptor.Min ?? 0);
-        _max = (decimal)(descriptor.Max ?? 65535);
+        _min = (long)(descriptor.Min ?? 0);
+        _max = (long)(descriptor.Max ?? 65535);
         _defaultLong = descriptor.DefaultValue is long d ? d : 0L;
-        _value = (decimal)_defaultLong;
+        _value = _defaultLong;
     }
 
-    public decimal Value
+    public long Value
     {
         get => _value;
         set
@@ -28,9 +28,9 @@ public class IntegerFieldViewModel : StorageFieldViewModel
         }
     }
 
-    public decimal Minimum => _min;
-    public decimal Maximum => _max;
+    public long Minimum => _min;
+    public long Maximum => _max;
 
-    public override string? GetValue() => ((long)_value).ToString();
+    public override string? GetValue() => _value.ToString();
     public override void SetValue(string? value) => Value = long.TryParse(value, out var v) ? v : _defaultLong;
 }

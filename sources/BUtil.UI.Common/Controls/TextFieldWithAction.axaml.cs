@@ -17,6 +17,9 @@ public partial class TextFieldWithAction : UserControl
     public static readonly StyledProperty<string?> TextProperty =
         AvaloniaProperty.Register<TextFieldWithAction, string?>(nameof(Text), defaultBindingMode: Avalonia.Data.BindingMode.TwoWay);
 
+    public static readonly StyledProperty<string?> PlaceholderProperty =
+        AvaloniaProperty.Register<TextFieldWithAction, string?>(nameof(Placeholder));
+
     public static readonly StyledProperty<string?> ActionTextProperty =
         AvaloniaProperty.Register<TextFieldWithAction, string?>(nameof(ActionText));
 
@@ -57,6 +60,12 @@ public partial class TextFieldWithAction : UserControl
     {
         get => GetValue(TextProperty);
         set => SetValue(TextProperty, value);
+    }
+
+    public string? Placeholder
+    {
+        get => GetValue(PlaceholderProperty);
+        set => SetValue(PlaceholderProperty, value);
     }
 
     public string? ActionText

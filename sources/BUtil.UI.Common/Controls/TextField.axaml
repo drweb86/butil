@@ -7,7 +7,9 @@
 	<StackPanel>
 		<TextBlock Margin="0 0 0 8"
 				   Text="{Binding #Root.Label}" />
-		<TextBox Text="{Binding #Root.Text, Mode=TwoWay}" />
+		<TextBox Text="{Binding #Root.Text, Mode=TwoWay}"
+				 PlaceholderText="{Binding #Root.Placeholder}"
+				 PasswordChar="{Binding #Root.PasswordChar}" />
 		<decor:ValidationError Error="{Binding #Root.Error}" />
 	</StackPanel>
 </UserControl>

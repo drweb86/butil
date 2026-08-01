@@ -10,6 +10,7 @@
 		<NumericUpDown HorizontalAlignment="Stretch"
 					   Value="{Binding #Root.Value}"
 					   Minimum="{Binding #Root.Minimum}"
+					   Maximum="{Binding #Root.Maximum}"
 					   FormatString="N0"
 					   ParsingNumberStyle="Integer" />
 		<TextBlock Margin="0 8 0 0"

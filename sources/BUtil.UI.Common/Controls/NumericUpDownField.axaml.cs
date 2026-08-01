@@ -15,6 +15,9 @@ public partial class NumericUpDownField : UserControl
     public static readonly StyledProperty<long> MinimumProperty =
         AvaloniaProperty.Register<NumericUpDownField, long>(nameof(Minimum));
 
+    public static readonly StyledProperty<long> MaximumProperty =
+        AvaloniaProperty.Register<NumericUpDownField, long>(nameof(Maximum), long.MaxValue);
+
     public static readonly StyledProperty<string?> HelpProperty =
         AvaloniaProperty.Register<NumericUpDownField, string?>(nameof(Help));
 
@@ -34,6 +37,12 @@ public partial class NumericUpDownField : UserControl
     {
         get => GetValue(MinimumProperty);
         set => SetValue(MinimumProperty, value);
+    }
+
+    public long Maximum
+    {
+        get => GetValue(MaximumProperty);
+        set => SetValue(MaximumProperty, value);
     }
 
     public string? Help
