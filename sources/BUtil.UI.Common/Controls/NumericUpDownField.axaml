@@ -1,0 +1,20 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:decor="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Common"
+             x:Class="BUtil.UI.Controls.NumericUpDownField"
+             x:Name="Root"
+             Margin="0 8 0 8">
+	<StackPanel>
+		<TextBlock Margin="0 0 0 8"
+				   Text="{Binding #Root.Label}" />
+		<NumericUpDown HorizontalAlignment="Stretch"
+					   Value="{Binding #Root.Value}"
+					   Minimum="{Binding #Root.Minimum}"
+					   FormatString="N0"
+					   ParsingNumberStyle="Integer" />
+		<TextBlock Margin="0 8 0 0"
+				IsVisible="{Binding #Root.Help, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
+				Text="{Binding #Root.Help}"
+				TextWrapping="Wrap" />
+	</StackPanel>
+</UserControl>

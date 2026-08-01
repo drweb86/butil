@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:cvm="clr-namespace:BUtil.UI.Controls"
              xmlns:sfvm="clr-namespace:BUtil.UI.Controls.StorageFields"
+             xmlns:decor="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Common"
              mc:Ignorable="d"
              x:Class="BUtil.UI.Controls.StorageView"
              x:DataType="cvm:StorageViewModel">
@@ -17,18 +18,11 @@
 		<StackPanel Spacing="4" Margin="0 4 0 0">
 
 			<!-- Transport protocol -->
-			<DockPanel>
-				<TextBlock DockPanel.Dock="Left" MinWidth="160" Text="{Binding Field_TransportProtocol}" VerticalAlignment="Center" Margin="0 0 4 0" />
-				<ComboBox HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="4 2"
-				          ItemsSource="{Binding Providers}"
-				          SelectedItem="{Binding SelectedProvider}">
-					<ComboBox.ItemTemplate>
-						<DataTemplate>
-							<TextBlock Text="{Binding DisplayName}" />
-						</DataTemplate>
-					</ComboBox.ItemTemplate>
-				</ComboBox>
-			</DockPanel>
+			<decor:DropdownField
+				Label="{Binding Field_TransportProtocol}"
+				ItemsSource="{Binding Providers}"
+				SelectedItem="{Binding SelectedProvider}"
+				DisplayMember="DisplayName" />
 
 			<!-- Per-storage-type fields — rendered from provider metadata, no XAML changes needed for new types -->
 				<ItemsControl ItemsSource="{Binding Fields}">
@@ -113,34 +107,37 @@
 			</ItemsControl>
 
 			<!-- Quota (common to all storage types) — placed after storage-specific fields -->
-			<DockPanel>
-				<TextBlock DockPanel.Dock="Left" MinWidth="160"
-				           Text="{Binding DataStorage_Field_UploadQuota}"
-				           ToolTip.Tip="{Binding DataStorage_Field_UploadQuota_Help}"
-				           TextDecorations="Underline"
-				           VerticalAlignment="Center" Margin="0 0 4 0" />
-				<NumericUpDown Minimum="0" Margin="4 2" VerticalAlignment="Center" Value="{Binding Quota}" />
-			</DockPanel>
+			<decor:NumericUpDownField
+				Label="{Binding DataStorage_Field_UploadQuota}"
+				Minimum="0"
+				Value="{Binding Quota}"
+				Help="{Binding DataStorage_Field_UploadQuota_Help}" />
 
 			<!-- Mount/unmount scripts (shown only when platform supports script execution) -->
-			<Expander Classes="TaskSection" IsVisible="{Binding CanLaunchScripts}" IsExpanded="{Binding IsExpanded}" HorizontalAlignment="Stretch">
+			<Expander Classes="TaskSection" IsVisible="{Binding CanLaunchScripts}" HorizontalAlignment="Stretch">
 				<Expander.Header>
-					<TextBlock Text="{Binding DataStorage_Scripts_Header}" VerticalAlignment="Center" />
+					<decor:ExpanderHeader Icon="🌍" Text="{Binding DataStorage_Scripts_Header}" />
 				</Expander.Header>
-				<StackPanel Spacing="8">
+				<StackPanel>
 					<TextBlock Text="{Binding DataStorage_Script_Help}" VerticalAlignment="Center" TextWrapping="Wrap" />
-					<Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto,Auto">
-						<TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding DataStorage_Field_ConnectScript}" VerticalAlignment="Center" Margin="0 0 0 4" />
-						<TextBox Grid.Row="0" Grid.Column="1" AcceptsReturn="True" Margin="4 0 4 4"
-						         PlaceholderText="net use X: \\myserver\myfolder myPassword /user:myUser"
-						         Text="{Binding MountScript}" Height="150" MinWidth="200" />
-						<Button Grid.Row="0" Grid.Column="2" Content="{Binding Task_Launch}" VerticalAlignment="Center" Margin="0 0 0 4" Click="MountScriptLaunchCommand" />
-						<TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding DataStorage_Field_DisconnectionScript}" VerticalAlignment="Center" Margin="0 0 0 4" />
-						<TextBox Grid.Row="1" Grid.Column="1" AcceptsReturn="True" Margin="4 0 4 4"
-						         PlaceholderText="net use X: /delete"
-						         Text="{Binding UnmountScript}" Height="150" MinWidth="200" />
-						<Button Grid.Row="1" Grid.Column="2" Content="{Binding Task_Launch}" VerticalAlignment="Center" Margin="0 0 0 4" Click="UnmountScriptLaunchCommand" />
-					</Grid>
+					<decor:TextFieldWithAction
+						Label="{Binding DataStorage_Field_ConnectScript}"
+						Text="{Binding MountScript}"
+						IsMultiline="True"
+						TextWrapping="Wrap"
+						TextBoxMinHeight="150"
+						ActionIcon="🚀"
+						ActionText="{Binding Task_Launch}"
+						ActionCommand="{Binding MountScriptLaunchCommand}" />
+					<decor:TextFieldWithAction
+						Label="{Binding DataStorage_Field_DisconnectionScript}"
+						Text="{Binding UnmountScript}"
+						IsMultiline="True"
+						TextWrapping="Wrap"
+						TextBoxMinHeight="150"
+						ActionIcon="🚀"
+						ActionText="{Binding Task_Launch}"
+						ActionCommand="{Binding UnmountScriptLaunchCommand}" />
 				</StackPanel>
 			</Expander>
 

@@ -31,12 +31,6 @@ public partial class StorageView : UserControl
             _ = BrowseFileAsync(vm);
     }
 
-    public void MountScriptLaunchCommand(object? sender, RoutedEventArgs args) =>
-        _ = ((StorageViewModel)DataContext!).MountTaskLaunchCommand();
-
-    public void UnmountScriptLaunchCommand(object? sender, RoutedEventArgs args) =>
-        _ = ((StorageViewModel)DataContext!).UnmountTaskLaunchCommand();
-
     private async Task BrowseFolderAsync(FolderFieldViewModel vm)
     {
         var root = TopLevel.GetTopLevel(this) ?? throw new InvalidOperationException("No TopLevel found.");

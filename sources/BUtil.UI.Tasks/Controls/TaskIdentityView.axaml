@@ -3,14 +3,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:cvm="clr-namespace:BUtil.UI.Tasks.Controls"
-             xmlns:tasks="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Tasks"
              xmlns:decor="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Common"
              mc:Ignorable="d"
              x:Class="BUtil.UI.Tasks.Controls.TaskIdentityView"
              x:DataType="cvm:TaskIdentityViewModel">
 	<Expander Classes="TaskSection" HorizontalAlignment="Stretch" IsExpanded="{Binding IsExpanded}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 		<Expander.Header>
-			<tasks:ExpanderHeader Icon="✅" Text="{Binding Name_Title}" />
+			<decor:ExpanderHeader Icon="✅" Text="{Binding Name_Title}" />
 		</Expander.Header>
 		<decor:TextFieldWithAction
 			Label="{Binding Name_Field}"

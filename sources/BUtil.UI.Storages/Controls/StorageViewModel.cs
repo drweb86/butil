@@ -9,6 +9,7 @@ using BUtil.Core.Misc;
 using BUtil.Core.Storages;
 using BUtil.UI.Controls.StorageFields;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -49,6 +50,8 @@ public class StorageViewModel : ObservableObject
         Quota = storageSettings.SingleBackupQuotaGb;
         MountScript = storageSettings.MountPowershellScript;
         UnmountScript = storageSettings.UnmountPowershellScript;
+        MountScriptLaunchCommand = new AsyncRelayCommand(MountTaskLaunchCommand);
+        UnmountScriptLaunchCommand = new AsyncRelayCommand(UnmountTaskLaunchCommand);
 
         _selectedProvider = provider;
         RebuildFields();
@@ -121,6 +124,8 @@ public class StorageViewModel : ObservableObject
     public bool CanLaunchScripts { get; } = PlatformSpecificExperience.Instance.SupportManager.CanLaunchScripts;
     public ObservableCollection<StorageProviderItem> Providers { get; }
     public ObservableCollection<StorageFieldViewModel> Fields { get; } = [];
+    public IAsyncRelayCommand MountScriptLaunchCommand { get; }
+    public IAsyncRelayCommand UnmountScriptLaunchCommand { get; }
 
     private readonly List<(EnumFieldViewModel Vm, PropertyChangedEventHandler Handler)> _enumUiHandlers = [];
 

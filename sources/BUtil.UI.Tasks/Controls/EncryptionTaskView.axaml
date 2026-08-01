@@ -9,7 +9,7 @@
 			 x:DataType="cvm:EncryptionTaskViewModel">
 	<Expander Classes="TaskSection" HorizontalAlignment="Stretch" IsExpanded="{Binding IsExpanded}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 		<Expander.Header>
-			<cvm:ExpanderHeader Icon="🔒" Text="{Binding LeftMenu_Encryption}" />
+			<decor:ExpanderHeader Icon="🔒" Text="{Binding LeftMenu_Encryption}" />
 		</Expander.Header>
 		<decor:TextFieldWithAction
 			Label="{Binding Password_Field}"

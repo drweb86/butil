@@ -4,14 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:local="clr-namespace:BUtil.Tasks.IncrementalBackup.UI.Controls;assembly=BUtil.Tasks.IncrementalBackup.UI"
 			 xmlns:decor="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Common"
-			 xmlns:tasks="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Tasks"
              mc:Ignorable="d"
              x:Class="BUtil.Tasks.IncrementalBackup.UI.Controls.WhatTaskView"
 			 x:Name="Root"
 			 x:DataType="local:WhatTaskViewModel">
 	<Expander Classes="TaskSection" HorizontalAlignment="Stretch" IsExpanded="{Binding IsExpanded}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 		<Expander.Header>
-			<tasks:ExpanderHeader Icon="💾" Text="{Binding LeftMenu_What}" />
+			<decor:ExpanderHeader Icon="💾" Text="{Binding LeftMenu_What}" />
 		</Expander.Header>
 		<StackPanel Orientation="Vertical">
 			<TextBlock Text="{Binding WhatTask_Description}" TextWrapping="Wrap" Margin="0 8 0 8" />

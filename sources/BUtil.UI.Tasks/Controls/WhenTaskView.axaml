@@ -3,12 +3,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:cvm="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Tasks"
+			 xmlns:decor="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Common"
              mc:Ignorable="d"
              x:Class="BUtil.UI.Controls.WhenTaskView"
 			 x:DataType="cvm:WhenTaskViewModel">
 	<Expander Classes="TaskSection" HorizontalAlignment="Stretch" IsExpanded="{Binding IsExpanded}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 		<Expander.Header>
-			<cvm:ExpanderHeader Icon="⏰" Text="{Binding LeftMenu_When}" />
+			<decor:ExpanderHeader Icon="⏰" Text="{Binding LeftMenu_When}" />
 		</Expander.Header>
 		<StackPanel Spacing="8">
 			<TextBlock Text="{Binding LeftMenu_When_Optional_Hint}" TextWrapping="Wrap" Margin="0 8 0 0" />

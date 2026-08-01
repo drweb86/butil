@@ -1,0 +1,17 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:decor="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Common"
+             x:Class="BUtil.UI.Controls.DropdownField"
+             x:Name="Root"
+             Margin="0 8 0 8">
+	<StackPanel>
+		<TextBlock Margin="0 0 0 8"
+				   Text="{Binding #Root.Label}" />
+		<ComboBox x:Name="InputComboBox"
+				  HorizontalAlignment="Stretch"
+				  ItemsSource="{Binding #Root.ItemsSource}"
+				  SelectedItem="{Binding #Root.SelectedItem, Mode=TwoWay}"
+				  ItemTemplate="{Binding #Root.ItemTemplate}" />
+		<decor:ValidationError Error="{Binding #Root.Error}" />
+	</StackPanel>
+</UserControl>

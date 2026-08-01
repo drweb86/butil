@@ -28,6 +28,15 @@
     <Compile Update="Controls\TextField.axaml.cs">
       <DependentUpon>TextField.axaml</DependentUpon>
     </Compile>
+    <Compile Update="Controls\DropdownField.axaml.cs">
+      <DependentUpon>DropdownField.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\ExpanderHeader.axaml.cs">
+      <DependentUpon>ExpanderHeader.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\NumericUpDownField.axaml.cs">
+      <DependentUpon>NumericUpDownField.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Controls\TextFieldWithAction.axaml.cs">
       <DependentUpon>TextFieldWithAction.axaml</DependentUpon>
     </Compile>
