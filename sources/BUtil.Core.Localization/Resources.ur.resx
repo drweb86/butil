@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -356,6 +356,9 @@
 
   فائل کی ترسیل کے طریقے کے لئے ایپلیکیشن کی ویب سائٹ پر دستاویزات دیکھیں۔</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>میڈیا درآمد کرنے کا ماخذ بتائیں — مثال کے طور پر ایک SD کارڈ، کیمرہ فولڈر، یا FTPS کے ذریعے فون۔</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>درآمد ڈیٹا کا ماخذ</value>
   </data>
@@ -376,6 +379,9 @@
   چونکہ تبدیلیاں عام طور پر کم ہوتی ہیں، انکریمنٹل بیک اپ مکمل بیک اپ کے مقابلے میں بہت چھوٹے اور تیز ہوتے ہیں۔ 
   مثال کے طور پر، جمعہ کو مکمل بیک اپ کے بعد، پیر کا بیک اپ صرف وہ فائلیں شامل کرے گا جو جمعہ کے بعد بدلی ہیں۔ منگل کا بیک اپ صرف وہی فائلیں شامل کرے گا جو پیر کے بعد بدلی ہیں، اور اسی طرح آگے۔ 
   اگر بنائی گئی کسی بھی کاپی میں ناکام ہوجائیں، بشمول پہلی (مکمل)، بحالی مکمل نہیں ہوگی۔</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>ایک منفرد مرکزی اسٹوریج بتائیں جہاں بیک اپ ورژنز محفوظ کیے جائیں گے۔ اس مقام کا انتظام مکمل طور پر ایپ کرتی ہے — بشمول ڈیٹا کا حذف کرنا — اس لیے اسے کسی اور مقصد کے لیے استعمال نہ کریں، اور اسے متعدد ٹاسکس کے درمیان شیئر نہ کریں۔</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>انکریمنٹل بیک اپ</value>
@@ -705,6 +711,9 @@
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>مختلف ڈیوائسز کے درمیان فائلوں کی دونوں طرف کی ہم وقت سازی کرتے ہوئے مرکزی اسٹوریج کا استعمال کرتے ہیں۔</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>ایک منفرد مرکزی اسٹوریج بتائیں جس کے ذریعے آلات ہم آہنگ ہوتے ہیں۔ تمام شریک آلات کو ایک ہی اسٹوریج مقام استعمال کرنا چاہیے۔ اس مقام کا انتظام مکمل طور پر ایپ کرتی ہے — بشمول ڈیٹا کا حذف کرنا — اس لیے اسے کسی اور مقصد کے لیے استعمال نہ کریں، اور اسے متعدد ٹاسکس کے درمیان شیئر نہ کریں۔</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>نیا</value>
   </data>
@@ -755,6 +764,9 @@
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>بحال کریں</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>وہ اسٹوریج بتائیں جس میں وہ بیک اپ موجود ہے جسے آپ بحال کرنا چاہتے ہیں۔ وہی ترتیبات استعمال کریں جو بیک اپ بناتے وقت استعمال کی گئی تھیں۔</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>ناکام (کھلے لاگ میں دیکھیں)</value>
@@ -944,6 +956,9 @@
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>پہلے سے موجود فائلوں کو اوور رائٹ کرتے ہوئے فولڈر کے مواد اپ لوڈ کر سکتے ہیں۔</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>منزل اسٹوریج بتائیں جہاں فولڈر کا مواد اپ لوڈ کیا جائے گا۔ منزل میں موجود فائلیں اوور رائٹ ہو جائیں گی۔</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>یو آر ایل:</value>

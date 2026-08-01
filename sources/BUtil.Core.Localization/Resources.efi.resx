@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -360,6 +360,9 @@ To see all options google "C# DateTime format".</value>
 
 See application web-site for documentation how to setup file transmission via WI-FI through FTP Server application on the phone.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Select the source to import media from — for example an SD card, camera folder, or phone over FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Import data source</value>
   </data>
@@ -385,6 +388,9 @@ Since changes are typically low, incremental backups are much smaller and quicke
 For instance, following a full backup on Friday, a Monday backup will contain only those files that changed since Friday. A Tuesday backup contains only those files that changed since Monday, and so on. 
 
 Should any one of the copies created fail, including the first (full), restoration will be incomplete.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Select one special storage location where backup copies will be kept. This location is fully managed by the app, including deleting data, so do not use it for anything else, and do not share it between multiple tasks.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Incremental backup</value>
@@ -715,6 +721,9 @@ See detailed description in the following link.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Two-way synchronization of files between devices using centralized storage.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Select one special storage location that devices use to sync. All devices taking part should use the same storage location. This location is fully managed by the app, including deleting data, so do not use it for anything else, and do not share it between multiple tasks.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>New</value>
   </data>
@@ -765,6 +774,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Restore</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Select the storage that has the backup you want to restore. Use the same settings that were used when the backup was made.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Failed (see opened log)</value>
@@ -954,6 +966,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>You can upload folder contents with overwriting already existing files.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Select the storage where the folder content will be uploaded to. Files that already exist there will be overwritten.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ Por vidi ĉiujn opciojn guglo "C# DateTime formato".</value>
 
 Vidu aplikaĵon retejon por dokumentado kiel agordi dosiertranssendon per WI-FI per FTP-Servilo-aplikaĵo sur la telefono.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Specifu la fonton, de kie importi aŭdvidaĵojn — ekzemple SD-karton, kameran dosierujon, aŭ telefonon per FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Importi datumfonton</value>
   </data>
@@ -388,6 +391,9 @@ Apliko nun fermiĝos.</value>
 Ekzemple, post plena sekurkopio vendrede, lunda sekurkopio enhavos nur tiujn dosierojn, kiuj ŝanĝiĝis ekde vendredo. Marda sekurkopio enhavas nur tiujn dosierojn, kiuj ŝanĝiĝis ekde lundo, ktp. 
 
 Se iu el la kreitaj kopioj malsukcesos, inkluzive de la unua (plena), restarigo estos nekompleta.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Specifu unikan centran konservejon, kie estos konservataj versioj de la sekurkopio. Ĉi tiu loko estas tute administrata de la aplikaĵo — inkluzive de la forigo de datumoj — do ne uzu ĝin por io alia, kaj ne kunhavigu ĝin inter pluraj taskoj.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Pliiga sekurkopio</value>
@@ -718,6 +724,9 @@ See detailed description in the following link.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Dudirekta sinkronigo de dosieroj inter aparatoj uzantaj centralizitan stokadon.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Specifu unikan centran konservejon, per kiu aparatoj sinkroniĝas. Ĉiuj partoprenantaj aparatoj devus uzi la saman konservejan lokon. Ĉi tiu loko estas tute administrata de la aplikaĵo — inkluzive de la forigo de datumoj — do ne uzu ĝin por io alia, kaj ne kunhavigu ĝin inter pluraj taskoj.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Nova</value>
   </data>
@@ -768,6 +777,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Restarigi</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Specifu la konservejon, kiu enhavas la sekurkopion, kiun vi volas restaŭri. Uzu la samajn agordojn kiel kiam la sekurkopio estis kreita.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Malsukcesis (vidu malfermitan protokolon)</value>
@@ -957,6 +969,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Vi povas alŝuti dosierujojn kun anstataŭigo de jam ekzistantaj dosieroj.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Specifu la celan konservejon, al kiu la enhavo de la dosierujo estos alŝutita. Ekzistantaj dosieroj ĉe la celo estos anstataŭigitaj.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

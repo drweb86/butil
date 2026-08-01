@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -360,6 +360,9 @@ Tüm seçenekleri görmek için "C# DateTime format"ını Google'da arayın.</va
 
 Dosya iletimi için telefon üzerindeki FTP Sunucu uygulamasıyla WI-FI üzerinden nasıl kurulum yapılacağı hakkında belge için uygulama web sitesini inceleyin.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Medyanın içe aktarılacağı kaynağı belirtin — örneğin bir SD kart, kamera klasörü veya FTPS üzerinden bir telefon.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Veri kaynağını içe aktar</value>
   </data>
@@ -385,6 +388,9 @@ Değişiklikler genellikle az olduğundan, artımlı yedeklemeler tam yedeklemel
 Örneğin, Cuma günü yapılan tam yedekten sonra, Pazartesi yedeği yalnızca Cuma'dan bu yana değişen dosyaları içerecektir. Salı yedeği yalnızca Pazartesi'den bu yana değişen dosyaları içerir, ve bu şekilde devam eder.
 
 Yapılan yedeklerden herhangi biri başarısız olursa, birincisi (tam yedek) de dahil olmak üzere, geri yükleme tamamlanamayacaktır.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Yedekleme sürümlerinin kaydedileceği benzersiz, merkezi bir depolama alanı belirtin. Bu konum tamamen uygulama tarafından yönetilir — veri silme dahil — bu nedenle başka hiçbir şey için kullanmayın ve birden fazla görev arasında paylaşmayın.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Artımlı yedekleme</value>
@@ -715,6 +721,9 @@ Aşağıdaki bağlantıda detaylı açıklama bulun.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Merkezi depolama kullanarak cihazlar arasında dosyaların iki yönlü senkronizasyonu.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Cihazların senkronize olduğu benzersiz, merkezi bir depolama alanı belirtin. Katılan tüm cihazlar aynı depolama konumunu kullanmalıdır. Bu konum tamamen uygulama tarafından yönetilir — veri silme dahil — bu nedenle başka hiçbir şey için kullanmayın ve birden fazla görev arasında paylaşmayın.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Yeni</value>
   </data>
@@ -765,6 +774,9 @@ Aşağıdaki bağlantıda detaylı açıklama bulun.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Geri yükle</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Geri yüklemek istediğiniz yedeği içeren depolama alanını belirtin. Yedek oluşturulduğunda kullanılan aynı ayarları kullanın.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Başarısız (açılan günlük dosyasına bak)</value>
@@ -954,6 +966,9 @@ Aşağıdaki bağlantıda detaylı açıklama bulun.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Zaten var olan dosyaların üzerine yazarak klasör içeriğini yükleyebilirsiniz.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Klasör içeriğinin yükleneceği hedef depolama alanını belirtin. Hedefteki mevcut dosyaların üzerine yazılacaktır.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

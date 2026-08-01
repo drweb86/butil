@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ Til að sjá alla valkosti, leitaðu að "C# DateTime format".</value>
 
 Sjá vefsíðu forritsins fyrir leiðbeiningar um hvernig á að setja upp skráaflutning í gegnum WI-FI með FTP-þjónsforritinu á símanum.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Tilgreindu upprunann sem á að flytja inn efni frá — til dæmis SD-kort, myndavélarmöppu eða síma yfir FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Flytja inn gagnagjafa</value>
   </data>
@@ -388,6 +391,9 @@ Forritið mun nú lokast.</value>
 Til dæmis, eftir fullt öryggisafrit á föstudegi mun öryggisafrit á mánudegi aðeins innihalda þær skrár sem breyttust síðan á föstudegi. Öryggisafrit á þriðjudegi inniheldur aðeins þær skrár sem breyttust síðan á mánudegi, og svo framvegis. 
 
 Ef eitthvert afritanna sem búið er til mistekst, þ.m.t. það fyrsta (fulla), verður endurheimt ófullnægjandi.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Tilgreindu einstaka, miðlæga geymslu þar sem afritsútgáfur verða vistaðar. Forritið sér alfarið um þessa staðsetningu — þar með talið eyðingu gagna — svo notaðu hana ekki í neitt annað og deildu henni ekki milli margra verkefna.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Stigvaxandi öryggisafrit</value>
@@ -718,6 +724,9 @@ Sjá nákvæma lýsingu á eftirfarandi tengli.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Tvíátta samstilling skráa milli tækja með miðlægri geymslu.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Tilgreindu einstaka, miðlæga geymslu sem tæki samstilla í gegnum. Öll þátttökutæki ættu að nota sömu geymslustaðsetningu. Forritið sér alfarið um þessa staðsetningu — þar með talið eyðingu gagna — svo notaðu hana ekki í neitt annað og deildu henni ekki milli margra verkefna.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Nýtt</value>
   </data>
@@ -768,6 +777,9 @@ Sjá nákvæma lýsingu á eftirfarandi tengli.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Endurheimta</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Tilgreindu geymsluna sem inniheldur afritið sem þú vilt endurheimta. Notaðu sömu stillingar og þegar afritið var búið til.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Mistókst (sjá opna atvikaskrá)</value>
@@ -957,6 +969,9 @@ Sjá nákvæma lýsingu á eftirfarandi tengli.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Þú getur hlaðið upp innihaldi möppu og skrifað yfir skrár sem þegar eru til.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Tilgreindu úttaksgeymsluna sem innihald möppunnar verður hlaðið upp í. Núverandi skrár á áfangastað verða yfirskrifaðar.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

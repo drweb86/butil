@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -358,6 +358,9 @@
     
     ఫోన్ పైకి Wi-Fi ద్వారా FTP సర్వర్ అప్లికేషన్ ద్వారా డాక్యుమెంట్ యొక్క ఫైల్ ద్రవ్యం సెటప్ ఎలా జరగాలో ఆప్ వెబ్-సైట్‌ను చూడండి.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>మీడియాను దిగుమతి చేసుకునే మూలాన్ని పేర్కొనండి — ఉదాహరణకు SD కార్డు, కెమెరా ఫోల్డర్, లేదా FTPS ద్వారా ఫోన్.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>డేటా త్రేణిని దిగుమతి చేయండి</value>
   </data>
@@ -381,6 +384,9 @@
     ఆ మార్పులు సాధారణంగా తక్కువగా ఉండటం వలన, పరిమితి నంతలో increments కి చాలా చిన్న మరియు తక్షణంగా ఉంటుంది. 
     
     ఉదాహరణకు, శుక్రవారం పూర్తి బ్యాకప్ చేసినను, సోమవారం బ్యాకప్ కేవలం శుక్రవారం నుండి మార్పులు చేసిన ఫైల్స్ మాత్రమే ఉండాలి. మంగళవారం బ్యాకప్ కేవలం సోమవారం కు మార్పులు చేసిన ఫైల్స్ వాటిని మాత్రమే మహమ్మారి తదితర వివరాలు.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>బ్యాకప్ వెర్షన్‌లు సేవ్ చేయబడే ఒక ప్రత్యేకమైన కేంద్రీకృత నిల్వను పేర్కొనండి. ఈ స్థానం పూర్తిగా యాప్ ద్వారా నిర్వహించబడుతుంది — డేటాను తొలగించడంతో సహా — కాబట్టి దీన్ని మరే ఇతర పనికి ఉపయోగించవద్దు, మరియు బహుళ టాస్క్‌ల మధ్య పంచుకోవద్దు.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>ఇంక్రిమెంటల్ బ్యాకప్</value>
@@ -711,6 +717,9 @@
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>కేంద్రిత నిల్వ(using) మధ్య ఫైల్స్ రెండువైపు పొందుపరచడం.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>పరికరాలు సింక్ చేయడానికి ఉపయోగించే ఒక ప్రత్యేకమైన కేంద్రీకృత నిల్వను పేర్కొనండి. పాల్గొనే అన్ని పరికరాలు ఒకే నిల్వ స్థానాన్ని ఉపయోగించాలి. ఈ స్థానం పూర్తిగా యాప్ ద్వారా నిర్వహించబడుతుంది — డేటాను తొలగించడంతో సహా — కాబట్టి దీన్ని మరే ఇతర పనికి ఉపయోగించవద్దు, మరియు బహుళ టాస్క్‌ల మధ్య పంచుకోవద్దు.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>కొత్త</value>
   </data>
@@ -761,6 +770,9 @@
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>పునరుద్ధరించు</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>మీరు పునరుద్ధరించాలనుకుంటున్న బ్యాకప్ ఉన్న నిల్వను పేర్కొనండి. బ్యాకప్ సృష్టించినప్పుడు ఉపయోగించిన అదే సెట్టింగ్‌లను ఉపయోగించండి.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>ఊసరవేళ (ఉంచిన లాగును చూడండి)</value>
@@ -950,6 +962,9 @@
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>ఇప్పటికే ఉన్న ఫైళ్ళను తిరిగి రాస్తూ ఫోల్డర్ కంటెంట్‌ను అప్‌లోడ్ చేయవచ్చు.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>ఫోల్డర్ కంటెంట్ అప్‌లోడ్ చేయబడే గమ్య నిల్వను పేర్కొనండి. గమ్యంలో ఇప్పటికే ఉన్న ఫైళ్లు ఓవర్‌రైట్ చేయబడతాయి.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ Para ver todas as opções, pesquise "C# DateTime format".</value>
 
 Consulte o site do aplicativo para documentação sobre como configurar a transmissão de arquivos via WI-FI através do aplicativo Servidor FTP no telefone.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Especifique a origem de onde a mídia será importada — por exemplo, um cartão SD, uma pasta da câmera ou um telefone via FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Importar fonte de dados</value>
   </data>
@@ -388,6 +391,9 @@ Como as mudanças são tipicamente baixas, os backups incrementais são muito me
 Por exemplo, após um backup completo na sexta-feira, um backup na segunda-feira conterá apenas aqueles arquivos que mudaram desde sexta-feira. Um backup na terça-feira conterá apenas aqueles arquivos que mudaram desde segunda-feira, e assim por diante.
 
 Se qualquer uma das cópias criadas falhar, incluindo a primeira (completa), a restauração ficará incompleta.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Especifique um armazenamento centralizado exclusivo onde as versões do backup serão salvas. Este local é totalmente gerenciado pelo aplicativo — incluindo a exclusão de dados — portanto, não o utilize para mais nada e não o compartilhe entre várias tarefas.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Backup incremental</value>
@@ -718,6 +724,9 @@ Veja a descrição detalhada no seguinte link.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Sincronização bidirecional de arquivos entre dispositivos usando armazenamento centralizado.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Especifique um armazenamento centralizado exclusivo através do qual os dispositivos sincronizam. Todos os dispositivos participantes devem usar o mesmo local de armazenamento. Este local é totalmente gerenciado pelo aplicativo — incluindo a exclusão de dados — portanto, não o utilize para mais nada e não o compartilhe entre várias tarefas.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Novo</value>
   </data>
@@ -768,6 +777,9 @@ Veja a descrição detalhada no seguinte link.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Restaurar</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Especifique o armazenamento que contém o backup que deseja restaurar. Use as mesmas configurações utilizadas quando o backup foi criado.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Falhou (veja o log aberto)</value>
@@ -957,6 +969,9 @@ Veja a descrição detalhada no seguinte link.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Pode carregar o conteúdo da pasta substituindo os ficheiros já existentes.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Especifique o armazenamento de destino para onde o conteúdo da pasta será enviado. Os arquivos já existentes no destino serão substituídos.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

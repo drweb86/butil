@@ -40,7 +40,7 @@ public class EditBUtilServerClientTaskViewModel : BUtil.UI.Controls.ViewModelBas
         WhenTaskViewModel = new BUtil.UI.Controls.WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule.GetSchedule(taskName) ?? new ScheduleInfo(), isNew);
 
         FolderSectionViewModel = new BUtil.UI.Controls.FolderSectionViewModel(model.Folder, isNew);
-        StorageViewModel = new BUtil.UI.Controls.StorageViewModel(model.To, Resources.LeftMenu_Where, isNew);
+        StorageViewModel = new BUtil.UI.Controls.StorageViewModel(model.To, Resources.LeftMenu_Where, isNew, Resources.UploadFolderTask_Storage_Help);
     }
 
     public bool IsNew { get; set; }

@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ Zoek op "C# DateTime format" om alle opties te zien.</value>
 
 Zie de website van de toepassing voor documentatie over het instellen van bestandsoverdracht via WI-FI via de FTP Server-toepassing op de telefoon.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Geef de bron op waaruit media moet worden geïmporteerd — bijvoorbeeld een SD-kaart, cameramap of telefoon via FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Gegevensbron importeren</value>
   </data>
@@ -388,6 +391,9 @@ Aangezien wijzigingen doorgaans klein zijn, zijn incrementele back-ups veel klei
 Bijvoorbeeld, na een volledige back-up op vrijdag, bevat de back-up van maandag alleen de bestanden die sinds vrijdag zijn gewijzigd. De back-up van dinsdag bevat alleen de bestanden die sinds maandag zijn gewijzigd, enzovoort.
 
 Als een van de gemaakte kopieën uitvalt, inclusief de eerste (volledige), zal het herstel onvolledig zijn.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Geef een unieke, gecentraliseerde opslaglocatie op waar back-upversies worden opgeslagen. Deze locatie wordt volledig beheerd door de app — inclusief het verwijderen van gegevens — dus gebruik deze nergens anders voor en deel deze niet tussen meerdere taken.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Incrementele back-up</value>
@@ -718,6 +724,9 @@ Zie gedetailleerde beschrijving via de volgende link.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Tweerichtingssynchronisatie van bestanden tussen apparaten met gecentraliseerde opslag.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Geef een unieke, gecentraliseerde opslaglocatie op waarmee apparaten synchroniseren. Alle deelnemende apparaten moeten dezelfde opslaglocatie gebruiken. Deze locatie wordt volledig beheerd door de app — inclusief het verwijderen van gegevens — dus gebruik deze nergens anders voor en deel deze niet tussen meerdere taken.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Nieuw</value>
   </data>
@@ -768,6 +777,9 @@ Zie gedetailleerde beschrijving via de volgende link.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Herstellen</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Geef de opslag op die de back-up bevat die u wilt herstellen. Gebruik dezelfde instellingen als toen de back-up werd gemaakt.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Mislukt (zie geopend logboek)</value>
@@ -957,6 +969,9 @@ Zie gedetailleerde beschrijving via de volgende link.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>U kunt mapinhoud uploaden waarbij bestaande bestanden worden overschreven.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Geef de doelopslag op waarnaar de inhoud van de map wordt geüpload. Bestaande bestanden op de bestemming worden overschreven.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

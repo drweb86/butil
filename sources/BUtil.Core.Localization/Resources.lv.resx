@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ Lai redzētu visas opcijas, meklējiet „C# DateTime format".</value>
 
 Skatiet lietotnes tīmekļa vietni dokumentācijai par failu pārsūtīšanas iestatīšanu, izmantojot WI-FI caur FTP servera lietotni tālrunī.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Norādiet avotu, no kura importēt multividi — piemēram, SD karti, kameras mapi vai tālruni, izmantojot FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Importēt datu avotu</value>
   </data>
@@ -388,6 +391,9 @@ Tā kā izmaiņas parasti ir nelielas, inkrementālās rezerves kopijas ir daudz
 Piemēram, pēc pilnas rezerves kopijas piektdienā, pirmdienas kopija saturēs tikai tos failus, kas mainījušies kopš piektdienas. Otrdienas kopija satur tikai tos failus, kas mainījušies kopš pirmdienas, un tā tālāk. 
 
 Ja kāda no izveidotajām kopijām neizdodas, ieskaitot pirmo (pilno), atjaunošana būs nepilnīga.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Norādiet unikālu, centralizētu krātuvi, kurā tiks saglabātas dublējuma versijas. Šo atrašanās vietu pilnībā pārvalda lietotne — tostarp datu dzēšanu, — tāpēc neizmantojiet to nekam citam un nekopīgojiet to vairākiem uzdevumiem.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Inkrementālā rezerves kopija</value>
@@ -718,6 +724,9 @@ Skatiet detalizētu aprakstu šajā saitē.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Divvirzienu failu sinhronizācija starp ierīcēm, izmantojot centralizētu krātuvi.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Norādiet unikālu, centralizētu krātuvi, caur kuru ierīces sinhronizējas. Visām iesaistītajām ierīcēm jāizmanto viena un tā pati krātuves atrašanās vieta. Šo atrašanās vietu pilnībā pārvalda lietotne — tostarp datu dzēšanu, — tāpēc neizmantojiet to nekam citam un nekopīgojiet to vairākiem uzdevumiem.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Jauns</value>
   </data>
@@ -768,6 +777,9 @@ Skatiet detalizētu aprakstu šajā saitē.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Atjaunot</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Norādiet krātuvi, kurā ir dublējums, ko vēlaties atjaunot. Izmantojiet tos pašus iestatījumus, kas bija spēkā, izveidojot dublējumu.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Neizdevās (skatiet atvērto žurnālu)</value>
@@ -957,6 +969,9 @@ Skatiet detalizētu aprakstu šajā saitē.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Jūs varat augšupielādēt mapes saturu, pārrakstot jau esošos failus.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Norādiet mērķa krātuvi, uz kuru tiks augšupielādēts mapes saturs. Esošie faili galamērķī tiks pārrakstīti.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ I weld yr holl opsiynau google "Fformat C# DateTime".</value>
 
 Gweler gwefan y cais am ddogfennaeth sut i osod trosglwyddiad ffeil trwy WI-FI trwy raglen FTP Server ar y ffôn.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Nodwch y ffynhonnell i fewnforio cyfryngau ohoni — er enghraifft cerdyn SD, ffolder camera, neu ffôn dros FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Mewnforio ffynhonnell data</value>
   </data>
@@ -388,6 +391,9 @@ Gan fod newidiadau fel arfer yn isel, mae copïau wrth gefn cynyddrannol yn llaw
 Er enghraifft, yn dilyn copi wrth gefn llawn ddydd Gwener, bydd copi wrth gefn dydd Llun yn cynnwys y ffeiliau hynny sydd wedi newid ers dydd Gwener yn unig. Mae copi wrth gefn dydd Mawrth yn cynnwys y ffeiliau hynny a newidiodd ers dydd Llun yn unig, ac ati. 
 
 Os bydd unrhyw un o'r copïau a grëwyd yn methu, gan gynnwys y cyntaf (llawn), bydd y gwaith adfer yn anghyflawn.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Nodwch storfa ganolog unigryw lle bydd fersiynau wrth gefn yn cael eu cadw. Mae'r lleoliad hwn yn cael ei reoli'n gyfan gwbl gan yr ap — gan gynnwys dileu data — felly peidiwch â'i ddefnyddio ar gyfer unrhyw beth arall, a pheidiwch â'i rannu rhwng sawl tasg.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>copi wrth gefn cynyddrannol</value>
@@ -718,6 +724,9 @@ See detailed description in the following link.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Cydamseru dwy ffordd o ffeiliau rhwng dyfeisiau gan ddefnyddio storfa ganolog.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Nodwch storfa ganolog unigryw y mae dyfeisiau'n cydweddu drwyddi. Dylai pob dyfais sy'n cymryd rhan ddefnyddio'r un lleoliad storio. Mae'r lleoliad hwn yn cael ei reoli'n gyfan gwbl gan yr ap — gan gynnwys dileu data — felly peidiwch â'i ddefnyddio ar gyfer unrhyw beth arall, a pheidiwch â'i rannu rhwng sawl tasg.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Newydd</value>
   </data>
@@ -768,6 +777,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Adfer</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Nodwch y storfa sy'n cynnwys y copi wrth gefn rydych am ei adfer. Defnyddiwch yr un gosodiadau ag pan grëwyd y copi wrth gefn.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Wedi methu (gweler y log a agorwyd)</value>
@@ -957,6 +969,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Gallwch uwchlwytho cynnwys ffolder gyda throsysgrifo ffeiliau sydd eisoes yn bodoli.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Nodwch y storfa gyrchfan lle bydd cynnwys y ffolder yn cael ei lwytho i fyny. Bydd ffeiliau presennol yn y gyrchfan yn cael eu trosysgrifo.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

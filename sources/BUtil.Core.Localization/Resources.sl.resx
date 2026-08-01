@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ Za vse možnosti poiščite „C# DateTime format".</value>
 
 Glejte spletno stran aplikacije za dokumentacijo o nastavitvi prenosa datotek prek WI-FI s pomočjo FTP strežniške aplikacije na telefonu.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Navedite vir, iz katerega želite uvoziti medije — na primer kartico SD, mapo fotoaparata ali telefon prek FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Uvozi vir podatkov</value>
   </data>
@@ -388,6 +391,9 @@ Ker so spremembe običajno majhne, so inkrementalne varnostne kopije veliko manj
 Na primer, po polni varnostni kopiji v petek bo ponedeljkova kopija vsebovala samo datoteke, ki so se spremenile od petka. Torkova kopija vsebuje samo datoteke, ki so se spremenile od ponedeljka, in tako naprej. 
 
 Če katera od ustvarjenih kopij odpove, vključno s prvo (polno), bo obnovitev nepopolna.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Navedite edinstveno centralizirano shrambo, v kateri bodo shranjene različice varnostne kopije. To mesto v celoti upravlja aplikacija — vključno z brisanjem podatkov — zato ga ne uporabljajte za nič drugega in ga ne delite med več opravili.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Inkrementalna varnostna kopija</value>
@@ -718,6 +724,9 @@ Glejte podroben opis na naslednji povezavi.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Dvosmerna sinhronizacija datotek med napravami z uporabo centralizirane shrambe.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Navedite edinstveno centralizirano shrambo, prek katere se naprave sinhronizirajo. Vse sodelujoče naprave naj uporabljajo isto lokacijo shrambe. To mesto v celoti upravlja aplikacija — vključno z brisanjem podatkov — zato ga ne uporabljajte za nič drugega in ga ne delite med več opravili.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Novo</value>
   </data>
@@ -768,6 +777,9 @@ Glejte podroben opis na naslednji povezavi.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Obnovi</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Navedite shrambo, ki vsebuje varnostno kopijo, ki jo želite obnoviti. Uporabite enake nastavitve, kot so bile uporabljene pri ustvarjanju varnostne kopije.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Neuspešno (glejte odprti dnevnik)</value>
@@ -957,6 +969,9 @@ Glejte podroben opis na naslednji povezavi.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Lahko naložite vsebino mape s prepisovanjem že obstoječih datotek.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Navedite ciljno shrambo, v katero bo naložena vsebina mape. Obstoječe datoteke v cilju bodo prepisane.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ Aukera guztiak ikusteko google "C# DateTime formatua".</value>
 
 Ikusi aplikazioaren webgunea telefonoko FTP Zerbitzariaren aplikazioaren bidez WI-FI bidez fitxategien transmisioa nola konfiguratu behar den dokumentatzeko.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Zehaztu multimedia inportatzeko iturria — adibidez, SD txartel bat, kamera-karpeta bat, edo telefono bat FTPS bidez.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Inportatu datu-iturria</value>
   </data>
@@ -388,6 +391,9 @@ Aldaketak normalean baxuak direnez, segurtasun-kopia inkrementalak askoz txikiag
 Esate baterako, ostiraleko babeskopia osoa egin ondoren, asteleheneko babeskopiak ostiralaz geroztik aldatutako fitxategiak soilik izango ditu. Astearteko babeskopiak astelehenaz geroztik aldatu diren fitxategiak bakarrik ditu, eta abar. 
 
 Sortutako kopiaren batek huts egiten badu, lehenengoa barne (osoa), zaharberritzea osatu gabe egongo da.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Zehaztu babeskopiaren bertsioak gordeko diren biltegi zentralizatu bakarra. Kokapen hori guztiz aplikazioak kudeatzen du — datuak ezabatzea barne —, beraz, ez erabili beste ezertarako, eta ez partekatu zenbait ataza artean.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Babeskopia gehigarria</value>
@@ -718,6 +724,9 @@ See detailed description in the following link.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Biltegiratze zentralizatua erabiliz gailuen arteko fitxategien bi norabideko sinkronizazioa.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Zehaztu gailuek sinkronizatzeko erabiltzen duten biltegi zentralizatu bakarra. Parte hartzen duten gailu guztiek biltegiratze-kokapen bera erabili behar dute. Kokapen hori guztiz aplikazioak kudeatzen du — datuak ezabatzea barne —, beraz, ez erabili beste ezertarako, eta ez partekatu zenbait ataza artean.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Berria</value>
   </data>
@@ -768,6 +777,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Berreskuratu</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Zehaztu leheneratu nahi duzun babeskopia duen biltegia. Erabili babeskopia sortu zenean erabilitako ezarpen berberak.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Huts egin du (ikusi irekitako erregistroa)</value>
@@ -957,6 +969,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Karpeten edukia karga dezakezu lehendik dauden fitxategiak gainidatziz.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Zehaztu karpetaren edukia igoko den helburuko biltegia. Helburuan dauden fitxategiak gainidatzi egingo dira.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

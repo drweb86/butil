@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ Za sve opcije pretražite „C# DateTime format".</value>
 
 Pogledajte web stranicu aplikacije za dokumentaciju o postavljanju prijenosa datoteka putem WI-FI kroz FTP poslužiteljsku aplikaciju na telefonu.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Odredite izvor iz kojeg se uvoze mediji — na primjer SD karticu, mapu fotoaparata ili telefon putem FTPS-a.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Uvezi izvor podataka</value>
   </data>
@@ -388,6 +391,9 @@ Budući da su promjene obično male, inkrementalne sigurnosne kopije mnogo su ma
 Na primjer, nakon punog sigurnosnog kopiranja u petak, kopija u ponedjeljak sadržavat će samo datoteke koje su se promijenile od petka. Kopija u utorak sadržava samo datoteke koje su se promijenile od ponedjeljka, i tako dalje. 
 
 Ako bilo koja od stvorenih kopija zakaže, uključujući prvu (punu), obnova će biti nepotpuna.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Odredite jedinstvenu centraliziranu pohranu u kojoj će se spremati verzije sigurnosne kopije. Ovom lokacijom u potpunosti upravlja aplikacija — uključujući brisanje podataka — stoga je nemojte koristiti ni za što drugo i nemojte je dijeliti između više zadataka.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Inkrementalno sigurnosno kopiranje</value>
@@ -718,6 +724,9 @@ Pogledajte detaljni opis na sljedećoj poveznici.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Dvosmjerna sinkronizacija datoteka između uređaja koristeći centraliziranu pohranu.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Odredite jedinstvenu centraliziranu pohranu putem koje se uređaji sinkroniziraju. Svi uređaji koji sudjeluju trebaju koristiti istu lokaciju pohrane. Ovom lokacijom u potpunosti upravlja aplikacija — uključujući brisanje podataka — stoga je nemojte koristiti ni za što drugo i nemojte je dijeliti između više zadataka.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Novi</value>
   </data>
@@ -768,6 +777,9 @@ Pogledajte detaljni opis na sljedećoj poveznici.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Vrati</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Odredite pohranu koja sadrži sigurnosnu kopiju koju želite vratiti. Koristite ista postavke kao kada je sigurnosna kopija stvorena.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Neuspješno (pogledajte otvoreni zapis)</value>
@@ -957,6 +969,9 @@ Pogledajte detaljni opis na sljedećoj poveznici.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Možete prenijeti sadržaj mape s prepisivanjem već postojećih datoteka.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Odredite odredišnu pohranu u koju će se prenijeti sadržaj mape. Postojeće datoteke na odredištu bit će prepisane.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

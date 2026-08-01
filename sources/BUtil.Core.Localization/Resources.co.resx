@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ Per vede tutte l'opzioni Google "formatu C# DateTime".</value>
 
 Vede u situ web di l'applicazioni per a documentazione cumu cunfigurà a trasmissione di file via WI-FI attraversu l'applicazione Server FTP in u telefunu.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Specificate a fonte da induve impurtà i media — per esempiu una carta SD, una cartella di camera, o un telefunu via FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Import fonte di dati</value>
   </data>
@@ -388,6 +391,9 @@ Siccomu i cambiamenti sò tipicamente bassu, i backup incrementali sò assai pi�
 Per esempiu, dopu una copia di salvezza cumpleta u venneri, una copia di salvezza di u luni cuntene solu quelli fugliali chì anu cambiatu da u venneri. Una copia di salvezza di u marti cuntene solu quelli schedarii chì anu cambiatu da u luni, è cusì. 
 
 Se una di e copie create falla, cumpresa a prima (piena), a risturazione serà incompleta.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Specificate un almacenamentu centralizatu unicu induve seranu salvate e versione di salvaguardia. Stu locu hè gistitu interamente da l'appiecazione — cumpresa a cancellazione di i dati — dunque ùn l'utilizate per nunda d'altru, è ùn u sparte trà parechje task.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Backup incrementale</value>
@@ -718,6 +724,9 @@ See detailed description in the following link.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Sincronizazione bidirezionale di i fugliali trà i dispositi chì utilizanu u almacenamentu centralizatu.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Specificate un almacenamentu centralizatu unicu à traversu quale i dispusitivi si sincronizeghjanu. Tutti i dispusitivi participanti devenu utilizà a listessa lucalizazione d'almacenamentu. Stu locu hè gistitu interamente da l'appiecazione — cumpresa a cancellazione di i dati — dunque ùn l'utilizate per nunda d'altru, è ùn u sparte trà parechje task.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Novu</value>
   </data>
@@ -768,6 +777,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Risturà</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Specificate l'almacenamentu chì cuntene a salvaguardia chì vulete risturà. Utilizate e listesse impostazioni ch'è quandu a salvaguardia hè stata creata.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Fiascu (vede u logu apertu)</value>
@@ -957,6 +969,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Pudete carricà u cuntenutu di u cartulare cù sovrascrittura di i fugliali esistenti.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Specificate l'almacenamentu di destinazione induve seranu caricati i cuntenuti di a cartella. I schedarii esistenti in a destinazione seranu rimpiazzati.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

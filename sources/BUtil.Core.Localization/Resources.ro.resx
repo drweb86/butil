@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ Pentru a vedea toate opțiunile, căutați „C# DateTime format".</value>
 
 Consultați site-ul web al aplicației pentru documentația despre cum să configurați transmisia de fișiere prin WI-FI prin aplicația FTP Server pe telefon.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Specificați sursa din care vor fi importate fișierele media — de exemplu un card SD, un folder al camerei sau un telefon prin FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Import sursă de date</value>
   </data>
@@ -388,6 +391,9 @@ Deoarece modificările sunt de obicei puține, backup-urile incrementale sunt mu
 De exemplu, după un backup complet vineri, un backup de luni va conține doar fișierele care s-au modificat de vineri. Un backup de marți conține doar fișierele care s-au modificat de luni, și așa mai departe.
 
 Dacă oricare dintre copiile create eșuează, inclusiv prima (completă), restaurarea va fi incompletă.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Specificați un spațiu de stocare centralizat unic în care vor fi salvate versiunile copiei de rezervă. Această locație este gestionată integral de aplicație — inclusiv ștergerea datelor — așadar nu o utilizați în alt scop și nu o partajați între mai multe sarcini.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Backup incremental</value>
@@ -718,6 +724,9 @@ Consultați descrierea detaliată în următorul link.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Sincronizare bidirecțională a fișierelor între dispozitive utilizând stocare centralizată.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Specificați un spațiu de stocare centralizat unic prin care se sincronizează dispozitivele. Toate dispozitivele participante ar trebui să utilizeze aceeași locație de stocare. Această locație este gestionată integral de aplicație — inclusiv ștergerea datelor — așadar nu o utilizați în alt scop și nu o partajați între mai multe sarcini.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Nou</value>
   </data>
@@ -768,6 +777,9 @@ Consultați descrierea detaliată în următorul link.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Restaurare</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Specificați spațiul de stocare care conține copia de rezervă pe care doriți să o restaurați. Utilizați aceleași setări ca la momentul creării copiei de rezervă.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Eșuat (vezi jurnalul deschis)</value>
@@ -957,6 +969,9 @@ Consultați descrierea detaliată în următorul link.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Puteți încărca conținutul folderului suprascriind fișierele deja existente.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Specificați spațiul de stocare de destinație în care va fi încărcat conținutul folderului. Fișierele existente la destinație vor fi suprascrise.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

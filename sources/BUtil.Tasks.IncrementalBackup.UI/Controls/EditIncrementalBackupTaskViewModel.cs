@@ -46,7 +46,7 @@ public class EditIncrementalBackupTaskViewModel : BUtil.UI.Controls.ViewModelBas
 
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
         WhenTaskViewModel = new BUtil.UI.Controls.WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule.GetSchedule(taskName) ?? new ScheduleInfo(), isNew);
-        StorageViewModel = new BUtil.UI.Controls.StorageViewModel(model.To, Resources.LeftMenu_Where, isNew);
+        StorageViewModel = new BUtil.UI.Controls.StorageViewModel(model.To, Resources.LeftMenu_Where, isNew, Resources.IncrementalBackup_Storage_Help);
         WhatTaskViewModel = new WhatTaskViewModel(model.Items, model.FileExcludePatterns, isNew);
         WhatTaskViewModel.PropertyChanged += (_, e) =>
         {

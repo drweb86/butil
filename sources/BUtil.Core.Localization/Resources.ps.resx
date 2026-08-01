@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@
 
 د اسنادو لپاره د غوښتنلیک ویب پاڼه وګورئ چې څنګه په تلیفون کې د FTP سرور غوښتنلیک له لارې د WI-FI له لارې د فایل لیږد تنظیم کړئ.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>هغه سرچینه وټاکئ چې میډیا به ترې راوړل کیږي — د بیلګې په توګه SD کارت، د کیمرې فولډر، یا د FTPS له لارې موبایل.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>د معلوماتو سرچینې وارد کړئ</value>
   </data>
@@ -388,6 +391,9 @@
 د مثال په توګه، د جمعې په ورځ د بشپړ بیک اپ تعقیب، د دوشنبې بیک اپ به یوازې هغه فایلونه ولري چې د جمعې راهیسې بدل شوي. د سه شنبې بیک اپ یوازې هغه فایلونه لري چې د دوشنبې راهیسې بدل شوي، او داسې نور. 
 
 که هر یو جوړ شوي کاپي ناکام شي، په شمول د لومړي (بشپړ)، بیا رغونه به نیمګړې وي.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>یو ځانګړی مرکزي زیرمه ځای وټاکئ چې د بیک اپ نسخې به پکې خوندي شي. دا ځای په بشپړه توګه د اپلیکیشن لخوا اداره کیږي — د معلوماتو حذف کول هم پکې شامل دي — نو دا د بل هیڅ شي لپاره مه کاروئ، او د څو دندو ترمنځ یې شریک مه کوئ.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>زیاتیدونکي بیک اپ</value>
@@ -718,6 +724,9 @@ See detailed description in the following link.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>د مرکزي ذخیرې په کارولو سره د وسیلو ترمینځ د فایلونو دوه اړخیز همغږي کول.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>یو ځانګړی مرکزي زیرمه ځای وټاکئ چې وسایل به د هغې له لارې همغږي کیږي. ټول ګډونوال وسایل باید یو ډول زیرمه ځای وکاروي. دا ځای په بشپړه توګه د اپلیکیشن لخوا اداره کیږي — د معلوماتو حذف کول هم پکې شامل دي — نو دا د بل هیڅ شي لپاره مه کاروئ، او د څو دندو ترمنځ یې شریک مه کوئ.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>نوی</value>
   </data>
@@ -768,6 +777,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>بیا رغول</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>هغه زیرمه ځای وټاکئ چې هغه بیک اپ لري چې تاسو یې بیرته راستنول غواړئ. هماغه امستنې وکاروئ چې د بیک اپ جوړولو پر مهال کارول شوې وې.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>ناکام شوی (پرانستل شوی لاګ وګورئ)</value>
@@ -957,6 +969,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>تاسو کولی شئ د فولډر مینځپانګې د دمخه موجود فایلونو له سره لیکلو سره اپلوډ کړئ.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>د منزل هغه زیرمه ځای وټاکئ چې د فولډر منځپانګه به هلته اپلوډ شي. په منزل کې موجود فایلونه به بیا ولیکل شي.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>یو آر ایل:</value>

@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@
 
 Տեսեք հավելվածի կայքէջը փաստաթղթերի համար, թե ինչպես կարելի է կարգավորել ֆայլի փոխանցումը WI-FI-ի միջոցով FTP Server հավելվածի միջոցով հեռախոսի վրա:</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Նշեք աղբյուրը, որտեղից կներմուծվի մեդիան՝ օրինակ SD քարտ, տեսախցիկի պանակ կամ հեռախոս FTPS-ի միջոցով։</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Ներմուծեք տվյալների աղբյուրը</value>
   </data>
@@ -388,6 +391,9 @@
 Օրինակ, ուրբաթ օրվա ամբողջական կրկնօրինակումից հետո, երկուշաբթի կրկնօրինակը կպարունակի միայն այն ֆայլերը, որոնք փոխվել են ուրբաթ օրվանից: Երեքշաբթի կրկնօրինակը պարունակում է միայն այն ֆայլերը, որոնք փոխվել են երկուշաբթի օրվանից և այլն: 
 
 Եթե ​​ստեղծված կրկնօրինակներից որևէ մեկը ձախողվի, ներառյալ առաջինը (ամբողջականը), վերականգնումը թերի կլինի:</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Նշեք եզակի կենտրոնացված պահեստ, որտեղ կպահվեն պահուստավորման տարբերակները։ Այս գտնվելու վայրը ամբողջությամբ կառավարվում է հավելվածի կողմից՝ ներառյալ տվյալների ջնջումը, ուստի մի օգտագործեք այն այլ նպատակով, և մի կիսվեք դրանով մի քանի առաջադրանքների միջև։</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Աճող կրկնօրինակում</value>
@@ -718,6 +724,9 @@ bin.
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Ֆայլերի երկկողմանի համաժամացում սարքերի միջև՝ օգտագործելով կենտրոնացված պահեստավորում:</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Նշեք եզակի կենտրոնացված պահեստ, որի միջոցով սարքերը համաժամանակացվում են։ Բոլոր մասնակից սարքերը պետք է օգտագործեն նույն պահեստի գտնվելու վայրը։ Այս գտնվելու վայրը ամբողջությամբ կառավարվում է հավելվածի կողմից՝ ներառյալ տվյալների ջնջումը, ուստի մի օգտագործեք այն այլ նպատակով, և մի կիսվեք դրանով մի քանի առաջադրանքների միջև։</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Նոր</value>
   </data>
@@ -768,6 +777,9 @@ bin.
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Վերականգնել</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Նշեք պահեստը, որը պարունակում է վերականգնել ցանկացած պահուստը։ Օգտագործեք նույն կարգավորումները, ինչ պահուստը ստեղծելիս էին։</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Չհաջողվեց (տես բացված մատյան)</value>
@@ -957,6 +969,9 @@ bin.
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Դուք կարող եք վերբեռնել թղթապանակի բովանդակությունը՝ վերագրելով արդեն գոյություն ունեցող ֆայլերը:</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Նշեք նպատակակետի պահեստը, որտեղ կվերբեռնվի պանակի պարունակությունը։ Նպատակակետում առկա ֆայլերը կվերագրվեն։</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

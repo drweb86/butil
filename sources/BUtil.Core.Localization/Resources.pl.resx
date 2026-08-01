@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ Aby zobaczyć wszystkie opcje, wyszukaj "C# DateTime format".</value>
 
 Szczegóły konfiguracji transmisji plików przez WI-FI za pomocą aplikacji serwera FTP na telefonie znajdziesz na stronie internetowej aplikacji.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Wskaż źródło, z którego mają być importowane multimedia — na przykład kartę SD, folder aparatu lub telefon przez FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Importuj źródło danych</value>
   </data>
@@ -388,6 +391,9 @@ Ponieważ zmiany są zazwyczaj niewielkie, kopie przyrostowe są znacznie mniejs
 Na przykład, po pełnej kopii zapasowej w piątek, kopia w poniedziałek będzie zawierać tylko pliki zmienione od piątku. Kopia we wtorek zawiera tylko pliki zmienione od poniedziałku, i tak dalej.
 
 Jeśli jakakolwiek z utworzonych kopii ulegnie awarii, w tym pierwsza (pełna), przywracanie będzie niekompletne.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Wskaż unikalny scentralizowany magazyn, w którym będą zapisywane wersje kopii zapasowej. Ta lokalizacja jest w pełni zarządzana przez aplikację — łącznie z usuwaniem danych — dlatego nie używaj jej do niczego innego i nie udostępniaj jej pomiędzy różnymi zadaniami.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Kopia przyrostowa</value>
@@ -718,6 +724,9 @@ Szczegółowy opis znajdziesz pod poniższym linkiem.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Dwukierunkowa synchronizacja plików między urządzeniami z użyciem scentralizowanego magazynu.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Wskaż unikalny scentralizowany magazyn, za pośrednictwem którego synchronizują się urządzenia. Wszystkie uczestniczące urządzenia powinny korzystać z tej samej lokalizacji magazynu. Ta lokalizacja jest w pełni zarządzana przez aplikację — łącznie z usuwaniem danych — dlatego nie używaj jej do niczego innego i nie udostępniaj jej pomiędzy różnymi zadaniami.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Nowe</value>
   </data>
@@ -768,6 +777,9 @@ Szczegółowy opis znajdziesz pod poniższym linkiem.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Przywróć</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Wskaż magazyn zawierający kopię zapasową, którą chcesz przywrócić. Użyj tych samych ustawień, co podczas tworzenia kopii zapasowej.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Niepowodzenie (zobacz otwarty dziennik)</value>
@@ -957,6 +969,9 @@ Szczegółowy opis znajdziesz pod poniższym linkiem.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Możesz przesłać zawartość folderu, nadpisując istniejące pliki.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Wskaż magazyn docelowy, do którego zostanie przesłana zawartość folderu. Istniejące pliki w miejscu docelowym zostaną nadpisane.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

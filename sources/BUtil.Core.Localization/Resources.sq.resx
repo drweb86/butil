@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ Për të parë të gjitha opsionet, kërkoni "C# DateTime format".</value>
 
 Shihni faqen e internetit të aplikacionit për dokumentacionin se si të konfiguroni transferimin e skedarëve përmes WI-FI nëpërmjet aplikacionit të Serverit FTP në telefon.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Specifikoni burimin nga i cili do të importohen media — për shembull një kartë SD, një dosje kamere, ose një telefon nëpërmjet FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Importo burimin e të dhënave</value>
   </data>
@@ -388,6 +391,9 @@ Meqenëse ndryshimet janë zakonisht të vogla, kopjet rezervë inkrementale jan
 Për shembull, pas një kopjeje të plotë rezervë të premten, një kopje rezervë të hënën do të përmbajë vetëm skedarët që ndryshuan që nga e premtja. Një kopje rezervë të martën përmban vetëm skedarët që ndryshuan që nga e hëna, e kështu me radhë.
 
 Nëse ndonjëra nga kopjet e krijuara dështon, përfshirë të parën (të plotën), rikthimi do të jetë i paplotë.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Specifikoni një hapësirë ruajtjeje të centralizuar unike ku do të ruhen versionet e kopjes rezervë. Ky vend menaxhohet plotësisht nga aplikacioni — përfshirë fshirjen e të dhënave — prandaj mos e përdorni për asgjë tjetër dhe mos e ndani midis disa detyrave.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Kopje rezervë inkrementale</value>
@@ -718,6 +724,9 @@ Shihni përshkrimin e detajuar në lidhjen vijuese.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Sinkronizim dydrejtimësh i skedarëve ndërmjet pajisjeve duke përdorur ruajtje të centralizuar.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Specifikoni një hapësirë ruajtjeje të centralizuar unike përmes së cilës sinkronizohen pajisjet. Të gjitha pajisjet pjesëmarrëse duhet të përdorin të njëjtin vend ruajtjeje. Ky vend menaxhohet plotësisht nga aplikacioni — përfshirë fshirjen e të dhënave — prandaj mos e përdorni për asgjë tjetër dhe mos e ndani midis disa detyrave.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>E re</value>
   </data>
@@ -768,6 +777,9 @@ Shihni përshkrimin e detajuar në lidhjen vijuese.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Rikthe</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Specifikoni hapësirën e ruajtjes që përmban kopjen rezervë që dëshironi të rikthe. Përdorni të njëjtat cilësime si kur u krijua kopja rezervë.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Dështoi (shihni regjistrin e hapur)</value>
@@ -957,6 +969,9 @@ Shihni përshkrimin e detajuar në lidhjen vijuese.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Mund të ngarkoni përmbajtjen e dosjes duke mbishkruar skedarët ekzistues.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Specifikoni hapësirën e ruajtjes së destinacionit ku do të ngarkohet përmbajtja e dosjes. Skedarët ekzistues në destinacion do të mbishkruhen.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

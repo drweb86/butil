@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ Ji bo dîtina hemû vebijarkan "C# DateTime format" bigerin.</value>
 
 Ji bo agahdariya li ser çawaniya sazkirina veguheztina pelan bi WI-FI bi serlêdana Servera FTP ya li ser telefonê, malpera serlêdanê bibînin.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Çavkaniya ku medya jê were import kirin diyar bikin — mînakî karta SD, peldanka kamerayê, an têlefon bi rêya FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Çavkaniya daneyê hawird bike</value>
   </data>
@@ -389,6 +392,9 @@ Ji ber ku guhertin bi gelemperî hindik in, hilanînên zêdeyî ji hilanînên 
 Mînakî, li dû hilanînek tevahî ya Îniyê, hilanîna Duşemê tenê wan pelan dihewîne ku ji Îniyê ve hatine guhertin. Hilanîna Sêşemê tenê wan pelan dihewîne ku ji Duşemê ve hatine guhertin, û hwd.
 
 Ger yek ji kopiyên çêkirî têk biçe, tevî ya yekem (tevahî), vegerandin dê netemam be.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Cîhek hilanînê ya navendî û yekta diyar bikin ku guhertoyên yedekê lê werin tomarkirin. Ev cî bi tevahî ji hêla sepanê ve tê rêvebirin — di nav de jêbirina daneyan jî — ji ber vê yekê wê ji bo tiştek din bikar neynin, û navbera çend erkan de par nekin.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Hilanîna zêdeyî</value>
@@ -719,6 +725,9 @@ Ji bo danasîna berfireh lînka jêrîn bibînin.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Hevdemkirina du-alî ya pelan di navbera amûran de bi karanîna hilanîna navendî.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Cîhek hilanînê ya navendî û yekta diyar bikin ku amûr bi rêya wê hevdemî dikin. Divê hemû amûrên beşdar heman cîhê hilanînê bikar bînin. Ev cî bi tevahî ji hêla sepanê ve tê rêvebirin — di nav de jêbirina daneyan jî — ji ber vê yekê wê ji bo tiştek din bikar neynin, û navbera çend erkan de par nekin.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Nû</value>
   </data>
@@ -769,6 +778,9 @@ Ji bo danasîna berfireh lînka jêrîn bibînin.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Vegerîne</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Hilanîna ku yedeka ku hûn dixwazin vegerînin lê ye diyar bikin. Heman mîhengên ku dema yedek hate afirandin bikar bînin.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Têk çû (têketina vekirî bibînin)</value>
@@ -958,6 +970,9 @@ Ji bo danasîna berfireh lînka jêrîn bibînin.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Hûn dikarin naveroka peldankê bi nivîsandina li ser pelên heyî bar bikin.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Hilanîna armanc a ku naveroka peldankê lê were barkirin diyar bikin. Pelên heyî yên li armancê dê werin nivîsandin.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

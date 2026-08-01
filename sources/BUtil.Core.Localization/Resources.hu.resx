@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ Az összes lehetőség megtekintéséhez keressen a „C# DateTime format" kifej
 
 Az alkalmazás weboldalán találja a dokumentációt a WI-FI-n keresztüli fájlátvitel beállításáról az FTP Server alkalmazással a telefonon.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Adja meg a forrást, ahonnan a médiát importálni szeretné — például SD-kártya, kamera mappa vagy telefon FTPS-en keresztül.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Adatforrás importálása</value>
   </data>
@@ -388,6 +391,9 @@ Mivel a változások jellemzően csekélyek, a növekményes biztonsági mentés
 Például egy pénteki teljes biztonsági mentés után a hétfői mentés csak a péntek óta megváltozott fájlokat tartalmazza. A keddi mentés csak a hétfő óta megváltozott fájlokat tartalmazza, és így tovább.
 
 Ha a létrehozott másolatok bármelyike meghibásodik, beleértve az elsőt (teljeset), a helyreállítás nem lesz teljes.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Adjon meg egy egyedi, központosított tárolót, ahová a biztonsági mentés verziói mentésre kerülnek. Ezt a helyet teljes egészében az alkalmazás kezeli — beleértve az adatok törlését is —, ezért ne használja semmi másra, és ne ossza meg több feladat között.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Növekményes biztonsági mentés</value>
@@ -718,6 +724,9 @@ A részletes leírást az alábbi linken találja.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Kétirányú fájlszinkronizáció eszközök között központosított tároló használatával.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Adjon meg egy egyedi, központosított tárolót, amelyen keresztül az eszközök szinkronizálnak. Minden résztvevő eszköznek ugyanazt a tárolási helyet kell használnia. Ezt a helyet teljes egészében az alkalmazás kezeli — beleértve az adatok törlését is —, ezért ne használja semmi másra, és ne ossza meg több feladat között.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Új</value>
   </data>
@@ -768,6 +777,9 @@ A részletes leírást az alábbi linken találja.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Visszaállítás</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Adja meg azt a tárolót, amely a visszaállítani kívánt biztonsági mentést tartalmazza. Használja ugyanazokat a beállításokat, mint a biztonsági mentés létrehozásakor.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Sikertelen (lásd a megnyitott naplót)</value>
@@ -957,6 +969,9 @@ A részletes leírást az alábbi linken találja.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Feltöltheti a mappa tartalmát a meglévő fájlok felülírásával.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Adja meg a célként szolgáló tárolót, ahová a mappa tartalma feltöltésre kerül. A célhelyen már meglévő fájlok felülíródnak.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

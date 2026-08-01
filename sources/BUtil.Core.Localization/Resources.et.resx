@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ Kõigi valikute vaatamiseks otsige "C# DateTime format".</value>
 
 Vaadake rakenduse veebisaidilt juhiseid, kuidas seadistada failiedastust WI-FI kaudu FTP-serveri rakenduse abil telefonis.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Määrake allikas, kust meediat importida — näiteks SD-kaart, kaamera kaust või telefon FTPS-i kaudu.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Impordi andmeallikas</value>
   </data>
@@ -388,6 +391,9 @@ Kuna muudatused on tavaliselt väikesed, on inkrementaalsed varukoopiad palju v�
 Näiteks pärast reedest täielikku varundamist sisaldab esmaspäevane varukoopia ainult neid faile, mis on pärast reedet muutunud. Teisipäevane varukoopia sisaldab ainult neid faile, mis on pärast esmaspäeva muutunud, jne.
 
 Kui mõni loodud koopiatest ebaõnnestub, sealhulgas esimene (täielik), on taastamine puudulik.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Määrake unikaalne tsentraalne salvestuskoht, kuhu varukoopia versioonid salvestatakse. Seda asukohta haldab täielikult rakendus — sealhulgas andmete kustutamine —, seega ärge kasutage seda millegi muu jaoks ega jagage seda mitme ülesande vahel.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Inkrementaalne varundamine</value>
@@ -718,6 +724,9 @@ Vaadake üksikasjalikku kirjeldust järgmisel lingil.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Kahesuunaline failide sünkroniseerimine seadmete vahel tsentraliseeritud hoidla abil.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Määrake unikaalne tsentraalne salvestuskoht, mille kaudu seadmed sünkroonivad. Kõik osalevad seadmed peaksid kasutama sama salvestuskohta. Seda asukohta haldab täielikult rakendus — sealhulgas andmete kustutamine —, seega ärge kasutage seda millegi muu jaoks ega jagage seda mitme ülesande vahel.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Uus</value>
   </data>
@@ -768,6 +777,9 @@ Vaadake üksikasjalikku kirjeldust järgmisel lingil.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Taasta</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Määrake salvestuskoht, mis sisaldab taastatavat varukoopiat. Kasutage samu sätteid, mis olid varukoopia loomise ajal.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Ebaõnnestus (vaadake avatud logi)</value>
@@ -957,6 +969,9 @@ Vaadake üksikasjalikku kirjeldust järgmisel lingil.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Saate laadida kausta sisu üles, kirjutades olemasolevad failid üle.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Määrake sihtkoha salvestusruum, kuhu kausta sisu üles laaditakse. Sihtkohas olemasolevad failid kirjutatakse üle.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

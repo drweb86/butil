@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -360,6 +360,9 @@ Với thư mục và chuỗi mẫu này, tệp sẽ được lưu trữ là:
 
 Xem trang web ứng dụng để biết tài liệu về cách thiết lập truyền tệp qua WI-FI thông qua ứng dụng máy chủ FTP trên điện thoại.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Chỉ định nguồn để nhập phương tiện — ví dụ như thẻ SD, thư mục máy ảnh, hoặc điện thoại qua FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Nhập nguồn dữ liệu</value>
   </data>
@@ -385,6 +388,9 @@ Vì các thay đổi thường là ít, sao lưu gia tăng nhỏ hơn và nhanh 
 Chẳng hạn, sau khi sao lưu đầy đủ vào thứ Sáu, một bản sao lưu vào thứ Hai sẽ chỉ chứa những tệp đã thay đổi kể từ thứ Sáu. Một bản sao lưu vào thứ Ba chỉ chứa những tệp đã thay đổi kể từ thứ Hai, và cứ như vậy.
 
 Nếu bất kỳ bản sao nào được tạo ra thất bại, bao gồm cả bản sao đầu tiên (đầy đủ), việc phục hồi sẽ không hoàn chỉnh.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Chỉ định một vị trí lưu trữ tập trung duy nhất, nơi các phiên bản sao lưu sẽ được lưu. Vị trí này hoàn toàn do ứng dụng quản lý — bao gồm cả việc xóa dữ liệu — vì vậy đừng dùng nó cho mục đích khác và đừng chia sẻ nó giữa nhiều tác vụ.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Sao lưu gia tăng</value>
@@ -715,6 +721,9 @@ Xem mô tả chi tiết trong liên kết sau.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Đồng bộ hóa hai chiều của các tệp giữa các thiết bị sử dụng lưu trữ tập trung.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Chỉ định một vị trí lưu trữ tập trung duy nhất mà các thiết bị dùng để đồng bộ hóa. Tất cả các thiết bị tham gia nên sử dụng cùng một vị trí lưu trữ. Vị trí này hoàn toàn do ứng dụng quản lý — bao gồm cả việc xóa dữ liệu — vì vậy đừng dùng nó cho mục đích khác và đừng chia sẻ nó giữa nhiều tác vụ.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Mới</value>
   </data>
@@ -765,6 +774,9 @@ Xem mô tả chi tiết trong liên kết sau.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Khôi phục</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Chỉ định vị trí lưu trữ chứa bản sao lưu mà bạn muốn khôi phục. Sử dụng cùng cài đặt như khi bản sao lưu được tạo.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Thất bại (xem nhật ký đã mở)</value>
@@ -954,6 +966,9 @@ Xem mô tả chi tiết trong liên kết sau.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Bạn có thể tải lên nội dung thư mục và ghi đè lên các tệp đã tồn tại.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Chỉ định vị trí lưu trữ đích nơi nội dung thư mục sẽ được tải lên. Các tệp hiện có tại đích sẽ bị ghi đè.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

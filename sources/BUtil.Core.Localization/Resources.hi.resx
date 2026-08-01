@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@
 
 फोन पर वाई-फाई के माध्यम से FTP सर्वर एप्लिकेशन के माध्यम से फ़ाइल ट्रांसमिशन सेटअप के लिए दस्तावेज़ीकरण देखने के लिए एप्लिकेशन वेबसाइट देखें।</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>मीडिया आयात करने का स्रोत निर्दिष्ट करें — उदाहरण के लिए एक SD कार्ड, कैमरा फ़ोल्डर, या FTPS के माध्यम से फ़ोन।</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>डेटा स्रोत आयात करें</value>
   </data>
@@ -388,6 +391,9 @@
 उदाहरण के लिए, शुक्रवार को पूर्ण बैकअप के बाद, सोमवार का बैकअप केवल उन फ़ाइलों को शामिल करेगा जो शुक्रवार के बाद से बदल गई हैं। मंगलवार का बैकअप केवल उन फ़ाइलों को शामिल करेगा जो सोमवार के बाद से बदल गई हैं, और इसी तरह। 
 
 यदि बनाई गई प्रतियों में से कोई एक विफल हो जाती है, जिसमें पहला (पूर्ण) भी शामिल है, तो पुनर्स्थापना अधूरी होगी।</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>एक विशिष्ट केंद्रीकृत संग्रहण निर्दिष्ट करें जहाँ बैकअप संस्करण सहेजे जाएंगे। इस स्थान का प्रबंधन पूरी तरह से ऐप द्वारा किया जाता है — जिसमें डेटा को हटाना भी शामिल है — इसलिए इसे किसी अन्य कार्य के लिए उपयोग न करें, और इसे कई कार्यों के बीच साझा न करें।</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>इंक्रीमेंटल बैकअप</value>
@@ -718,6 +724,9 @@ bin.
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>केंद्रीकृत संग्रहण का उपयोग करके उपकरणों के बीच फाइलों का द्वि-दिशात्मक सिंक्रनाइज़ेशन।</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>एक विशिष्ट केंद्रीकृत संग्रहण निर्दिष्ट करें जिसके माध्यम से डिवाइस सिंक होते हैं। सभी भाग लेने वाले डिवाइस को एक ही संग्रहण स्थान का उपयोग करना चाहिए। इस स्थान का प्रबंधन पूरी तरह से ऐप द्वारा किया जाता है — जिसमें डेटा को हटाना भी शामिल है — इसलिए इसे किसी अन्य कार्य के लिए उपयोग न करें, और इसे कई कार्यों के बीच साझा न करें।</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>नया</value>
   </data>
@@ -768,6 +777,9 @@ bin.
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>पुनर्स्थापित करें</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>उस संग्रहण को निर्दिष्ट करें जिसमें वह बैकअप है जिसे आप पुनर्स्थापित करना चाहते हैं। बैकअप बनाते समय उपयोग की गई समान सेटिंग्स का उपयोग करें।</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>असफल (खुले हुए लॉग को देखें)</value>
@@ -957,6 +969,9 @@ bin.
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>आप मौजूदा फ़ाइलों को ओवरराइट करते हुए फ़ोल्डर सामग्री अपलोड कर सकते हैं।</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>गंतव्य संग्रहण निर्दिष्ट करें जहाँ फ़ोल्डर की सामग्री अपलोड की जाएगी। गंतव्य में मौजूदा फ़ाइलें अधिलेखित कर दी जाएंगी।</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>यूआरएल:</value>

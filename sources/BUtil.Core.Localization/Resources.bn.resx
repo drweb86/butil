@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -357,6 +357,9 @@
 
   ফাইল স্থানান্তর সেটআপ করার জন্য অ্যাপ্লিকেশন ওয়েব-সাইট দেখুন WIFI এর মাধ্যমে FTP সার্ভার অ্যাপ্লিকেশন ফোনে।</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>মিডিয়া আমদানি করার উৎস নির্দিষ্ট করুন — যেমন একটি SD কার্ড, ক্যামেরা ফোল্ডার, বা FTPS-এর মাধ্যমে ফোন।</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>আমদানিকারক ডেটা উৎস</value>
   </data>
@@ -382,6 +385,9 @@
   উদাহরণস্বরূপ, শুক্রবার একটি সম্পূর্ণ ব্যাকআপ করার পরে, সোমবারের ব্যাকআপে শুধুমাত্র সেই ফাইলগুলি থাকবে যা শুক্রবার থেকে পরিবর্তিত হয়েছে। মঙ্গলবারের ব্যাকআপে শুধুমাত্র সেই ফাইলগুলি থাকবে যা সোমবার থেকে পরিবর্তিত হয়েছে এবং তাই। 
 
   যদি কোনও একটি তৈরি কপি ব্যর্থ হয়, প্রথম (সম্পূর্ণ) সহ, পুনরুদ্ধরণ অসম্পূর্ণ হবে।</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>একটি অনন্য কেন্দ্রীভূত স্টোরেজ নির্দিষ্ট করুন যেখানে ব্যাকআপ সংস্করণ সংরক্ষণ করা হবে। এই স্থানটি সম্পূর্ণরূপে অ্যাপ দ্বারা পরিচালিত হয় — ডেটা মুছে ফেলাসহ — তাই এটি অন্য কোনো কাজে ব্যবহার করবেন না এবং একাধিক টাস্কের মধ্যে এটি ভাগ করবেন না।</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>ইনক্রিমেন্টাল ব্যাকআপ</value>
@@ -712,6 +718,9 @@
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>ডিভাইসগুলির মধ্যে কেন্দ্রীভূত সঞ্চয়ের মাধ্যমে ফাইলগুলির দুই দিকের সমন্বয়।</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>একটি অনন্য কেন্দ্রীভূত স্টোরেজ নির্দিষ্ট করুন যার মাধ্যমে ডিভাইসগুলো সিঙ্ক্রোনাইজ হয়। সমস্ত অংশগ্রহণকারী ডিভাইসের একই স্টোরেজ অবস্থান ব্যবহার করা উচিত। এই স্থানটি সম্পূর্ণরূপে অ্যাপ দ্বারা পরিচালিত হয় — ডেটা মুছে ফেলাসহ — তাই এটি অন্য কোনো কাজে ব্যবহার করবেন না এবং একাধিক টাস্কের মধ্যে এটি ভাগ করবেন না।</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>নতুন</value>
   </data>
@@ -762,6 +771,9 @@
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>পুনরুদ্ধার করুন</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>যে ব্যাকআপটি পুনরুদ্ধার করতে চান তা ধারণকারী স্টোরেজ নির্দিষ্ট করুন। ব্যাকআপ তৈরির সময় ব্যবহৃত একই সেটিংস ব্যবহার করুন।</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>ব্যর্থ হয়েছে (মোড লগ দেখুন)</value>
@@ -951,6 +963,9 @@
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>আপনি পূর্বে বিদ্যমান ফাইলগুলি ওভাররাইট করে ফোল্ডারের বিষয়বস্তু আপলোড করতে পারেন।</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>গন্তব্য স্টোরেজ নির্দিষ্ট করুন যেখানে ফোল্ডারের বিষয়বস্তু আপলোড করা হবে। গন্তব্যে বিদ্যমান ফাইলগুলো ওভাররাইট করা হবে।</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>ইউআরএল:</value>

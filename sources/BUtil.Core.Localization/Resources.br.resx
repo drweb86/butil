@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ To see all options google "C# DateTime format".</value>
 
 See application web-site for documentation how to setup file transmission via WI-FI through FTP Server application on the phone.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Erspizit an tarzh da importiñ media dioutañ — da skouer ur gartenn SD, ur renkell benveg-luc'hskeudennañ, pe ur pellgomz dre FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Import data source</value>
   </data>
@@ -388,6 +391,9 @@ Since changes are typically low, incremental backups are much smaller and quicke
 For instance, following a full backup on Friday, a Monday backup will contain only those files that changed since Friday. A Tuesday backup contains only those files that changed since Monday, and so on. 
 
 Should any one of the copies created fail, including the first (full), restoration will be incomplete.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Erspizit ur bladenn kadaviñ kreizennekaet hepken ma vo enrollet an handelvadoù gwarediñ. Merañ a ra an arload ar bladenn-mañ en he fezh — en o zouez dilemel roadennoù — neuze n'eo ket dav he implijout evit un dra all, ha n'eo ket dav he rannañ etre meur a dreuzoberiadur.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Incremental backup</value>
@@ -718,6 +724,9 @@ See detailed description in the following link.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Two-way synchronization of files between devices using centralized storage.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Erspizit ur bladenn kadaviñ kreizennekaet hepken en em sinkronaocha an trevnadoù drezi. Ret eo d'an holl drevnadoù kemeret perzh en implijout ar memes lec'h kadaviñ. Merañ a ra an arload ar bladenn-mañ en he fezh — en o zouez dilemel roadennoù — neuze n'eo ket dav he implijout evit un dra all, ha n'eo ket dav he rannañ etre meur a dreuzoberiadur.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>New</value>
   </data>
@@ -768,6 +777,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Restore</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Erspizit ar bladenn kadaviñ enni emañ ar wareziñ a fell deoc'h assav. Implijit an hevelep arventennoù ha pa voe krouet ar wareziñ.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Failed (see opened log)</value>
@@ -957,6 +969,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>You can upload folder contents with overwriting already existing files.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Erspizit ar bladenn kadaviñ arvez ma vo pellgaset enni endalc'hadoù ar renkell. Ar restroù a zo c'hoazh er bladenn arvez a vo flastret.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

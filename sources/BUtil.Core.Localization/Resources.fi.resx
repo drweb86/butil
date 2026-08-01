@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ Nähdäksesi kaikki vaihtoehdot hae "C# DateTime format".</value>
 
 Katso sovelluksen verkkosivustolta ohjeet tiedostonsiirron määrittämiseen WI-FI:n kautta FTP-palvelinsovelluksella puhelimessa.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Määritä lähde, josta media tuodaan — esimerkiksi SD-kortti, kamerakansio tai puhelin FTPS:n kautta.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Tuo tietolähde</value>
   </data>
@@ -388,6 +391,9 @@ Koska muutokset ovat tyypillisesti pieniä, inkrementaaliset varmuuskopiot ovat 
 Esimerkiksi perjantain täyden varmuuskopion jälkeen maanantain varmuuskopio sisältää vain ne tiedostot, jotka muuttuivat perjantain jälkeen. Tiistain varmuuskopio sisältää vain ne tiedostot, jotka muuttuivat maanantain jälkeen, ja niin edelleen.
 
 Jos jokin luoduista kopioista epäonnistuu, mukaan lukien ensimmäinen (täysi), palautus on puutteellinen.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Määritä yksilöllinen keskitetty tallennustila, johon varmuuskopioversiot tallennetaan. Sovellus hallinnoi tätä sijaintia kokonaan — mukaan lukien tietojen poistaminen — joten älä käytä sitä mihinkään muuhun äläkä jaa sitä useiden tehtävien kesken.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Inkrementaalinen varmuuskopio</value>
@@ -718,6 +724,9 @@ Katso yksityiskohtainen kuvaus seuraavasta linkistä.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Kaksisuuntainen tiedostojen synkronointi laitteiden välillä keskitettyä tallennustilaa käyttäen.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Määritä yksilöllinen keskitetty tallennustila, jonka kautta laitteet synkronoituvat. Kaikkien osallistuvien laitteiden tulisi käyttää samaa tallennussijaintia. Sovellus hallinnoi tätä sijaintia kokonaan — mukaan lukien tietojen poistaminen — joten älä käytä sitä mihinkään muuhun äläkä jaa sitä useiden tehtävien kesken.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Uusi</value>
   </data>
@@ -768,6 +777,9 @@ Katso yksityiskohtainen kuvaus seuraavasta linkistä.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Palauta</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Määritä tallennustila, joka sisältää palautettavan varmuuskopion. Käytä samoja asetuksia kuin varmuuskopiota luotaessa.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Epäonnistui (katso avattu loki)</value>
@@ -957,6 +969,9 @@ Katso yksityiskohtainen kuvaus seuraavasta linkistä.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Voit ladata kansion sisällön korvaten jo olemassa olevat tiedostot.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Määritä kohdetallennustila, johon kansion sisältö ladataan. Kohteessa olevat olemassa olevat tiedostot korvataan.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

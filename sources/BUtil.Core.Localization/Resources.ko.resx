@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@
 
 FTP 서버 앱을 사용한 WI-FI 파일 전송 설정 방법은 앱 웹사이트 문서를 참조하세요.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>미디어를 가져올 소스를 지정하세요 — 예: SD 카드, 카메라 폴더 또는 FTPS를 통한 휴대폰.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>데이터 소스 가져오기</value>
   </data>
@@ -389,6 +392,9 @@ FTP 서버 앱을 사용한 WI-FI 파일 전송 설정 방법은 앱 웹사이�
 예를 들어, 금요일에 전체 백업을 수행한 후 월요일 백업에는 금요일 이후 변경된 파일만 포함됩니다. 화요일 백업에는 월요일 이후 변경된 파일만 포함되며, 이런 식으로 계속됩니다.
 
 생성된 복사본 중 첫 번째(전체) 복사본을 포함하여 하나라도 실패하면 복원이 불완전해집니다.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>백업 버전이 저장될 고유한 중앙 집중식 저장소를 지정하세요. 이 위치는 데이터 삭제를 포함하여 앱이 전적으로 관리하므로 다른 용도로 사용하지 말고 여러 작업 간에 공유하지 마세요.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>증분 백업</value>
@@ -719,6 +725,9 @@ bin.
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>중앙 저장소를 사용한 장치 간 양방향 파일 동기화.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>장치가 동기화하는 데 사용할 고유한 중앙 집중식 저장소를 지정하세요. 참여하는 모든 장치는 동일한 저장 위치를 사용해야 합니다. 이 위치는 데이터 삭제를 포함하여 앱이 전적으로 관리하므로 다른 용도로 사용하지 말고 여러 작업 간에 공유하지 마세요.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>새로 만들기</value>
   </data>
@@ -769,6 +778,9 @@ bin.
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>복원</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>복원하려는 백업이 포함된 저장소를 지정하세요. 백업을 생성할 때와 동일한 설정을 사용하세요.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>실패 (열린 로그 참조)</value>
@@ -958,6 +970,9 @@ bin.
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>기존 파일을 덮어쓰면서 폴더 내용을 업로드할 수 있습니다.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>폴더 내용이 업로드될 대상 저장소를 지정하세요. 대상에 있는 기존 파일은 덮어쓰기됩니다.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

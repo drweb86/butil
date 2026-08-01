@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ Gus a h-uile roghainn fhaicinn google "C# DateTime cruth".</value>
 
 Faic làrach-lìn an tagraidh airson sgrìobhainnean mar a shuidhicheas tu tar-chuir faidhle tro WI-FI tro thagradh FTP Server air a’ fòn.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Sònraich an tùs bhon tèid meadhanan a thoirt a-steach — mar eisimpleir cairt SD, pasgan camara, no fòn tro FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Cuir a-steach stòr dàta</value>
   </data>
@@ -388,6 +391,9 @@ Leis gu bheil atharrachaidhean mar as trice ìosal, tha cùl-taic mean air mhean
 Mar eisimpleir, às deidh làn chùl-taic Dihaoine, cha bhith ann an cùl-taic Diluain ach na faidhlichean sin a dh’ atharraich bho Dhihaoine. Chan eil ann an cùl-taic Dimàirt ach na faidhlichean sin a dh'atharraich bho Diluain, agus mar sin air adhart. 
 
 Ma dh’ fhailicheas gin de na lethbhric a chaidh a chruthachadh, a’ gabhail a-steach a’ chiad (làn), bidh ath-nuadhachadh neo-chrìochnach.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Sònraich stòradh meadhanaichte àraidh far an tèid dreachan lethbhreac-glèidhidh a shàbhaladh. Tha an t-àite seo air a stiùireadh gu tur leis an aplacaid — a' gabhail a-steach sguabadh às dàta — mar sin na cleachd e airson dad eile, agus na co-roinn e eadar iomadh gnìomh.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Cùl-taic mean air mhean</value>
@@ -718,6 +724,9 @@ See detailed description in the following link.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Sioncronadh faidhlichean dà-shligheach eadar innealan a’ cleachdadh stòradh meadhanaichte.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Sònraich stòradh meadhanaichte àraidh tro bheil innealan a' sioncronachadh. Bu chòir do gach inneal a tha an sàs an aon àite stòraidh a chleachdadh. Tha an t-àite seo air a stiùireadh gu tur leis an aplacaid — a' gabhail a-steach sguabadh às dàta — mar sin na cleachd e airson dad eile, agus na co-roinn e eadar iomadh gnìomh.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Ùr</value>
   </data>
@@ -768,6 +777,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Ath-bheothaich</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Sònraich an stòradh anns a bheil an lethbhreac-glèidhidh a tha thu airson aiseag. Cleachd na h-aon roghainnean 's a bha ann nuair a chaidh an lethbhreac-glèidhidh a chruthachadh.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Dh'fhàillig (faic an loga fosgailte)</value>
@@ -957,6 +969,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Faodaidh tu susbaint pasgan a luchdachadh suas le ath-sgrìobhadh air faidhlichean a tha ann mu thràth.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Sònraich an stòradh ceann-uidhe far an tèid susbaint a' phasgain a luchdachadh suas. Thèid faidhlichean a tha ann mu thràth aig a' cheann-uidhe a sgrìobhadh thairis.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

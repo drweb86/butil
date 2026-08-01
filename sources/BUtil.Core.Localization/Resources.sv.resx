@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ Sök efter "C# DateTime format" för att se alla alternativ.</value>
 
 Se applikationens webbplats för dokumentation om hur du konfigurerar filöverföring via WI-FI genom FTP Server-applikationen på telefonen.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Ange källan att importera media från — till exempel ett SD-kort, en kameramapp eller en telefon via FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Importera datakälla</value>
   </data>
@@ -388,6 +391,9 @@ Eftersom ändringar vanligtvis är små, är inkrementella säkerhetskopior myck
 Till exempel, efter en fullständig säkerhetskopiering på fredagen, innehåller en säkerhetskopia på måndagen bara de filer som ändrats sedan fredagen. En säkerhetskopia på tisdagen innehåller bara filer som ändrats sedan måndagen, och så vidare.
 
 Om någon av de skapade kopiorna misslyckas, inklusive den första (fullständiga), blir återställningen ofullständig.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Ange en unik, centraliserad lagringsplats där säkerhetskopieversioner sparas. Denna plats hanteras helt av appen — inklusive borttagning av data — så använd den inte till något annat och dela den inte mellan flera uppgifter.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Inkrementell säkerhetskopiering</value>
@@ -718,6 +724,9 @@ Se detaljerad beskrivning i följande länk.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Tvåvägssynkronisering av filer mellan enheter med centraliserad lagring.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Ange en unik, centraliserad lagringsplats som enheter synkroniserar genom. Alla deltagande enheter bör använda samma lagringsplats. Denna plats hanteras helt av appen — inklusive borttagning av data — så använd den inte till något annat och dela den inte mellan flera uppgifter.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Ny</value>
   </data>
@@ -768,6 +777,9 @@ Se detaljerad beskrivning i följande länk.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Återställ</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Ange lagringsplatsen som innehåller säkerhetskopian du vill återställa. Använd samma inställningar som när säkerhetskopian skapades.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Misslyckades (se öppnad logg)</value>
@@ -957,6 +969,9 @@ Se detaljerad beskrivning i följande länk.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Du kan ladda upp mappinnehåll och skriva över redan befintliga filer.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Ange mållagringsplatsen dit mappinnehållet laddas upp. Befintliga filer på destinationen skrivs över.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

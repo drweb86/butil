@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@
 
 برای مستندات نحوه تنظیم انتقال فایل از طریق WI-FI با استفاده از برنامه FTP Server در تلفن، به وب‌سایت برنامه مراجعه کنید.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>منبعی را که می‌خواهید رسانه از آن وارد شود مشخص کنید — برای مثال کارت SD، پوشه دوربین، یا گوشی از طریق FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>وارد کردن منبع داده</value>
   </data>
@@ -389,6 +392,9 @@
 به عنوان مثال، پس از یک پشتیبان کامل در روز جمعه، پشتیبان روز دوشنبه فقط شامل فایل‌هایی است که از جمعه تغییر کرده‌اند. پشتیبان روز سه‌شنبه فقط شامل فایل‌هایی است که از دوشنبه تغییر کرده‌اند و به همین ترتیب.
 
 اگر هر یک از نسخه‌های ایجاد شده شکست بخورد، از جمله اولین (کامل)، بازیابی ناقص خواهد بود.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>یک فضای ذخیره‌سازی متمرکز و منحصربه‌فرد مشخص کنید که نسخه‌های پشتیبان در آن ذخیره شوند. این مکان به‌طور کامل توسط برنامه مدیریت می‌شود — از جمله حذف داده‌ها — بنابراین از آن برای هیچ منظور دیگری استفاده نکنید و آن را بین چندین وظیفه به اشتراک نگذارید.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>پشتیبان‌گیری تدریجی</value>
@@ -719,6 +725,9 @@ bin.
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>همگام‌سازی دوطرفه فایل‌ها بین دستگاه‌ها با استفاده از فضای ذخیره‌سازی متمرکز.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>یک فضای ذخیره‌سازی متمرکز و منحصربه‌فرد مشخص کنید که دستگاه‌ها از طریق آن همگام‌سازی می‌شوند. همه دستگاه‌های شرکت‌کننده باید از یک محل ذخیره‌سازی یکسان استفاده کنند. این مکان به‌طور کامل توسط برنامه مدیریت می‌شود — از جمله حذف داده‌ها — بنابراین از آن برای هیچ منظور دیگری استفاده نکنید و آن را بین چندین وظیفه به اشتراک نگذارید.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>جدید</value>
   </data>
@@ -769,6 +778,9 @@ bin.
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>بازیابی</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>فضای ذخیره‌سازی حاوی پشتیبانی که می‌خواهید بازیابی کنید را مشخص کنید. از همان تنظیماتی استفاده کنید که هنگام ایجاد پشتیبان استفاده شده بود.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>ناموفق (گزارش باز شده را ببینید)</value>
@@ -958,6 +970,9 @@ bin.
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>می‌توانید محتویات پوشه را با بازنویسی فایل‌های موجود آپلود کنید.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>فضای ذخیره‌سازی مقصد را که محتوای پوشه در آن بارگذاری می‌شود مشخص کنید. فایل‌های موجود در مقصد بازنویسی خواهند شد.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

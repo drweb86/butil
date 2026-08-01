@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ To see all options google "C# DateTime format".</value>
 
 See application web-site for documentation how to setup file transmission via WI-FI through FTP Server application on the phone.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Especifica la fonte dende la que importar medios — por exemplu una tarxeta SD, una carpeta de cámara, o un teléfonu per FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Import data source</value>
   </data>
@@ -388,6 +391,9 @@ Since changes are typically low, incremental backups are much smaller and quicke
 For instance, following a full backup on Friday, a Monday backup will contain only those files that changed since Friday. A Tuesday backup contains only those files that changed since Monday, and so on. 
 
 Should any one of the copies created fail, including the first (full), restoration will be incomplete.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Especifica un almacenamientu centralizáu únicu au se guardarán les versiones de la copia de seguridá. Esti llugar ye xestionáu enteramente pola aplicación — incluyendo la desaniciu de datos — asina que nun lu uses pa nada más, y nun lu compartas ente delles xeres.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Incremental backup</value>
@@ -718,6 +724,9 @@ See detailed description in the following link.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Two-way synchronization of files between devices using centralized storage.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Especifica un almacenamientu centralizáu únicu al traviés del cual sincronicen los preseos. Tolos preseos participantes tienen d'usar el mesmu llugar d'almacenamientu. Esti llugar ye xestionáu enteramente pola aplicación — incluyendo la desaniciu de datos — asina que nun lu uses pa nada más, y nun lu compartas ente delles xeres.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>New</value>
   </data>
@@ -768,6 +777,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Restore</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Especifica l'almacenamientu que caltién la copia de seguridá que quies restaurar. Usa la mesma configuración qu'había cuando se creó la copia de seguridá.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Failed (see opened log)</value>
@@ -957,6 +969,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>You can upload folder contents with overwriting already existing files.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Especifica l'almacenamientu de destín au se xubirán los conteníos de la carpeta. Los ficheros esistentes nel destín sobrescribiránse.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -360,6 +360,9 @@
     
     See application web-site for documentation on how to set up file transmission via WI-FI through FTP Server application on the phone.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Choose the place wey you wan import media come from — like SD card, camera folder, or phone through FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Import data source</value>
   </data>
@@ -385,6 +388,9 @@
     For instance, after full backup on Friday, Monday backup go contain only those files wey don change since Friday. Tuesday backup contain only those files wey don change since Monday, and so on.
     
     If any of the copies wey dem create fail, including the first (full), restoration go dey incomplete.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Choose one special storage wey be for backup versions only, and no do anything else with am. The app go dey manage the storage well-well — including to delete data — so no use am for anything else, and no share am between different tasks.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Incremental backup</value>
@@ -715,6 +721,9 @@ Abeg do one of dese:
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Two-way synchronization of files between devices using centralized storage.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Choose one special storage wey all the devices go dey use to sync. All the devices wey dey involved must use the same storage location. The app go dey manage the storage well-well — including to delete data — so no use am for anything else, and no share am between different tasks.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>New</value>
   </data>
@@ -765,6 +774,9 @@ Abeg do one of dese:
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Restore</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Choose the storage wey get the backup wey you wan restore. Use the same settings wey you use when you first create the backup.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Failed (see opened log)</value>
@@ -954,6 +966,9 @@ Abeg do one of dese:
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>You fit upload wetin dey inside folder, e go overwrite files wey dey before.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Choose where you wan upload the folder content go. If file dey there already, e go overwrite am.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

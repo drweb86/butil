@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ Pour voir toutes les options, recherchez "C# DateTime format".</value>
 
 Consultez le site web de l'application pour voir la documentation sur la configuration de la transmission de fichiers via WI-FI à l'aide de l'application serveur FTP sur le téléphone.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Indiquez la source à partir de laquelle importer les médias — par exemple une carte SD, un dossier d'appareil photo ou un téléphone via FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Importer la source de données</value>
   </data>
@@ -385,6 +388,9 @@ L'application va maintenant se fermer.</value>
 Étant donné que les changements sont généralement faibles, les sauvegardes incrémentielles sont beaucoup plus petites et plus rapides que les sauvegardes complètes. 
 
 Par exemple, après une sauvegarde complète le vendredi, une sauvegarde le lundi contiendra uniquement les fichiers qui ont changé depuis vendredi. Une sauvegarde le mardi contient uniquement les fichiers qui ont changé depuis lundi, et ainsi de suite. Si l'une des copies créées échoue, y compris la première (complète), la restauration sera incomplète.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Indiquez un stockage centralisé unique où les versions de sauvegarde seront enregistrées. Cet emplacement est entièrement géré par l'application — y compris la suppression des données — ne l'utilisez donc pour rien d'autre et ne le partagez pas entre plusieurs tâches.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Sauvegarde incrémentielle</value>
@@ -716,6 +722,9 @@ Consultez la description détaillée dans le lien suivant.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>La synchronisation bidirectionnelle des fichiers entre les appareils utilisant un stockage centralisé.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Indiquez un stockage centralisé unique par lequel les appareils se synchronisent. Tous les appareils participants doivent utiliser le même emplacement de stockage. Cet emplacement est entièrement géré par l'application — y compris la suppression des données — ne l'utilisez donc pour rien d'autre et ne le partagez pas entre plusieurs tâches.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Nouvelle</value>
   </data>
@@ -766,6 +775,9 @@ Consultez la description détaillée dans le lien suivant.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Restaurer</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Indiquez le stockage contenant la sauvegarde que vous souhaitez restaurer. Utilisez les mêmes paramètres que lors de la création de la sauvegarde.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Échoué (voir journal ouvert)</value>
@@ -955,6 +967,9 @@ Consultez la description détaillée dans le lien suivant.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Vous pouvez téléverser le contenu du dossier en écrasant les fichiers déjà existants.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Indiquez le stockage de destination vers lequel le contenu du dossier sera téléchargé. Les fichiers existants à destination seront écrasés.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url :</value>

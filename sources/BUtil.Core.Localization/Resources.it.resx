@@ -365,6 +365,9 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
 
 Per la documentazione su come impostare la trasmissione di file tramite Wi-Fi tramite l'applicazione server FTP sul telefono consulta il sito web dell'applicazione.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Specifica l'origine da cui importare i contenuti multimediali — ad esempio una scheda SD, una cartella della fotocamera o un telefono tramite FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Sorgente dati importazione</value>
   </data>
@@ -393,6 +396,9 @@ Per la documentazione su come impostare la trasmissione di file tramite Wi-Fi tr
 
 	Un ripristino completo dei dati sarà naturalmente più lento, poiché dovranno essere ripristinati tutti gli incrementi. 
 	Se una qualsiasi delle copie create dovesse fallire, inclusa la prima (completa), il ripristino risulterà incompleto.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Specifica un archivio centralizzato univoco in cui verranno salvate le versioni del backup. Questa posizione è gestita interamente dall'app — inclusa l'eliminazione dei dati — quindi non utilizzarla per altri scopi e non condividerla tra più attività.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Backup incrementale</value>
@@ -724,6 +730,9 @@ Sceglie una delle seguenti opzioni:
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Sincronizzazione bidirezionale file tra dispositivi mediante archiviazione centralizzata.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Specifica un archivio centralizzato univoco tramite cui i dispositivi si sincronizzano. Tutti i dispositivi partecipanti devono utilizzare la stessa posizione di archiviazione. Questa posizione è gestita interamente dall'app — inclusa l'eliminazione dei dati — quindi non utilizzarla per altri scopi e non condividerla tra più attività.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Crea</value>
   </data>
@@ -774,6 +783,9 @@ Sceglie una delle seguenti opzioni:
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Ripristina</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Specifica l'archivio che contiene il backup che desideri ripristinare. Utilizza le stesse impostazioni utilizzate al momento della creazione del backup.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Non riuscita (vedi registro aperto)</value>
@@ -965,6 +977,9 @@ Sceglie una delle seguenti opzioni:
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Puoi caricare il contenuto della cartella sovrascrivendo i file già esistenti.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Specifica l'archivio di destinazione in cui verrà caricato il contenuto della cartella. I file esistenti nella destinazione verranno sovrascritti.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

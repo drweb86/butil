@@ -13,7 +13,7 @@ public class RestoreViewModel : ViewModelBase
     {
         WindowTitle = Resources.Task_Restore;
 
-        StorageViewModel = new StorageViewModel(storageSettingsV2 ?? new FolderStorageSettingsV2(), Resources.Task_Restore);
+        StorageViewModel = new StorageViewModel(storageSettingsV2 ?? new FolderStorageSettingsV2(), Resources.Task_Restore, help: Resources.Task_Restore_Storage_Help);
         EncryptionTaskViewModel = new EncryptionTaskViewModel(password ?? string.Empty, false);
         VersionsListViewModel = new VersionsListViewModel(this);
     }

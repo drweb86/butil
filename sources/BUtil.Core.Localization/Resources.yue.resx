@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -381,6 +381,9 @@
 
 請參閱應用程序網站以了解如何設置通過 FTP 服務器應用程序在手機上進行 Wi-Fi 文件傳輸的文檔。</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>指定要匯入媒體嘅來源——例如SD卡、相機資料夾，或者透過FTPS嘅電話。</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>導入數據源</value>
   </data>
@@ -405,6 +408,9 @@
 例如，在星期五進行完整備份後，星期一的備份將僅包含自星期五以來已更改的文件。星期二的備份僅包含自星期一以來已更改的文件，以此類推。
 
 如果其中任何一個創建的副本失敗，包括第一個（完整的），恢復將不完整。</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>指定一個獨一無二嘅集中式儲存空間，用嚟儲存備份版本。呢個位置完全由應用程式管理——包括刪除數據喺內——所以唔好用嚟做其他嘢，亦都唔好喺多個任務之間共用。</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>增量備份</value>
@@ -735,6 +741,9 @@ bin。
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>使用集中存儲進行設備之間的文件雙向同步。</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>指定一個獨一無二嘅集中式儲存空間，畀裝置用嚟同步。所有參與嘅裝置都應該用同一個儲存位置。呢個位置完全由應用程式管理——包括刪除數據喺內——所以唔好用嚟做其他嘢，亦都唔好喺多個任務之間共用。</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>新建</value>
   </data>
@@ -785,6 +794,9 @@ bin。
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>恢復</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>指定包含你想還原嘅備份嘅儲存空間。用返同備份建立嗰陣一樣嘅設定。</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>失敗（請查看打開的日誌）</value>
@@ -974,6 +986,9 @@ bin。
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>你可以上傳文件夾內容，並覆蓋已經存在嘅檔案。</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>指定資料夾內容會上傳到嘅目標儲存空間。目標入面已經存在嘅檔案會畀覆蓋。</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>網址：</value>

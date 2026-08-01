@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ Untuk melihat semua pilihan, cari "C# DateTime format".</value>
 
 Lihat laman web aplikasi untuk dokumentasi tentang cara menyediakan pemindahan fail melalui WI-FI menerusi aplikasi Pelayan FTP pada telefon.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Nyatakan sumber untuk mengimport media — contohnya kad SD, folder kamera, atau telefon melalui FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Import sumber data</value>
   </data>
@@ -388,6 +391,9 @@ Memandangkan perubahan biasanya kecil, sandaran inkremental jauh lebih kecil dan
 Contohnya, selepas sandaran penuh pada hari Jumaat, sandaran pada hari Isnin hanya akan mengandungi fail yang berubah sejak hari Jumaat. Sandaran pada hari Selasa mengandungi hanya fail yang berubah sejak hari Isnin, dan seterusnya.
 
 Sekiranya mana-mana salinan yang dibuat gagal, termasuk yang pertama (penuh), pemulihan akan tidak lengkap.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Nyatakan storan berpusat unik tempat versi sandaran akan disimpan. Lokasi ini diuruskan sepenuhnya oleh aplikasi — termasuk pemadaman data — jadi jangan gunakannya untuk apa-apa yang lain, dan jangan kongsikannya antara beberapa tugas.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Sandaran inkremental</value>
@@ -718,6 +724,9 @@ Lihat penerangan terperinci di pautan berikut.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Penyegerakan dua hala fail antara peranti menggunakan storan berpusat.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Nyatakan storan berpusat unik yang digunakan peranti untuk penyegerakan. Semua peranti yang mengambil bahagian harus menggunakan lokasi storan yang sama. Lokasi ini diuruskan sepenuhnya oleh aplikasi — termasuk pemadaman data — jadi jangan gunakannya untuk apa-apa yang lain, dan jangan kongsikannya antara beberapa tugas.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Baharu</value>
   </data>
@@ -768,6 +777,9 @@ Lihat penerangan terperinci di pautan berikut.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Pulihkan</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Nyatakan storan yang mengandungi sandaran yang anda ingin pulihkan. Gunakan tetapan yang sama seperti semasa sandaran dicipta.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Gagal (lihat log yang dibuka)</value>
@@ -957,6 +969,9 @@ Lihat penerangan terperinci di pautan berikut.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Anda boleh memuat naik kandungan folder dengan menimpa fail yang sudah wujud.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Nyatakan storan destinasi tempat kandungan folder akan dimuat naik. Fail sedia ada di destinasi akan ditulis ganti.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

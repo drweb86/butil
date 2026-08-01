@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ Per veure totes les opcions, busqueu a Google "Format C# DateTime".</value>
 
 Consulteu el lloc web de l'aplicació per obtenir informació sobre com configurar la transmissió de fitxers mitjançant WI-FI mitjançant l'aplicació del servidor FTP al telèfon.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Especifiqueu la font des d'on importar contingut multimèdia — per exemple una targeta SD, una carpeta de la càmera o un telèfon per FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Importa la font de dades</value>
   </data>
@@ -388,6 +391,9 @@ Com que els canvis solen ser baixos, les còpies de seguretat incrementals són 
 Per exemple, després d'una còpia de seguretat completa divendres, una còpia de seguretat de dilluns només contindrà els fitxers que han canviat des de divendres. Una còpia de seguretat de dimarts conté només els fitxers que han canviat des de dilluns, etc. 
 
 Si alguna de les còpies creades falla, inclosa la primera (completa), la restauració serà incompleta.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Especifiqueu un emmagatzematge centralitzat únic on es desaran les versions de la còpia de seguretat. Aquesta ubicació és gestionada completament per l'aplicació — inclosa l'eliminació de dades — per la qual cosa no l'utilitzeu per a res més, ni la compartiu entre diverses tasques.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Còpia de seguretat incremental</value>
@@ -718,6 +724,9 @@ See detailed description in the following link.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Sincronització bidireccional de fitxers entre dispositius mitjançant emmagatzematge centralitzat.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Especifiqueu un emmagatzematge centralitzat únic mitjançant el qual se sincronitzen els dispositius. Tots els dispositius participants han d'utilitzar la mateixa ubicació d'emmagatzematge. Aquesta ubicació és gestionada completament per l'aplicació — inclosa l'eliminació de dades — per la qual cosa no l'utilitzeu per a res més, ni la compartiu entre diverses tasques.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Nou</value>
   </data>
@@ -768,6 +777,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Restaurar</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Especifiqueu l'emmagatzematge que conté la còpia de seguretat que voleu restaurar. Utilitzeu la mateixa configuració que quan es va crear la còpia de seguretat.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Ha fallat (vegeu el registre obert)</value>
@@ -957,6 +969,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Podeu carregar el contingut de la carpeta sobreescriure els fitxers ja existents.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Especifiqueu l'emmagatzematge de destinació on es pujaran els continguts de la carpeta. Els fitxers existents a la destinació se sobreescriuran.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

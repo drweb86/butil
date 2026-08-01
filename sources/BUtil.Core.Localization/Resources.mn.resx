@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@
 
 Утсан дээрх FTP серверийн программаар WI-FI-аар файл дамжуулах тохиргоог програмын вэбсайтаас харна уу.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Медиа импортлох эх сурвалжийг зааж өгнө үү — жишээ нь SD карт, камерын хавтас, эсвэл FTPS-ээр дамжуулан утас.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Өгөгдлийн эх үүсвэрийг импортлох</value>
   </data>
@@ -389,6 +392,9 @@
 Жишээ нь, Баасан гарагийн бүрэн нөөцлөлтийн дараа Даваа гарагийн нөөцлөлт нь зөвхөн Баасан гарагаас хойш өөрчлөгдсөн файлуудыг агуулна. Мягмар гарагийн нөөцлөлт нь зөвхөн Даваа гарагаас хойш өөрчлөгдсөн файлуудыг агуулна гэх мэт.
 
 Хэрэв үүсгэгдсэн хуулбаруудын аль нэг нь, түүний дотор эхний (бүрэн) хуулбар амжилтгүй болвол, сэргээлт дутуу болно.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Нөөшлөлтийн хувилбарууд хадгалагдах өвөрмөц, төвлөрсөн хадгалалтыг зааж өгнө үү. Энэ байршлыг апп бүрэн удирддаг — өгөгдлийг устгах зэргийг оролцуулан — тиймээс үүнийг өөр зорилгоор бүү ашиглаж, олон даалгаврын хооронд бүү хуваалцаарай.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Нэмэгдэл нөөцлөлт</value>
@@ -719,6 +725,9 @@ bin.
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Төвлөрсөн санах ой ашиглан төхөөрөмжүүдийн хооронд файлуудын хоёр чиглэлтэй синхрончлол.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Төхөөрөмжүүд синхрончлолд ашиглах өвөрмөц, төвлөрсөн хадгалалтыг зааж өгнө үү. Оролцож буй бүх төхөөрөмж ижил хадгалалтын байршлыг ашиглах ёстой. Энэ байршлыг апп бүрэн удирддаг — өгөгдлийг устгах зэргийг оролцуулан — тиймээс үүнийг өөр зорилгоор бүү ашиглаж, олон даалгаврын хооронд бүү хуваалцаарай.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Шинэ</value>
   </data>
@@ -769,6 +778,9 @@ bin.
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Сэргээх</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Сэргээхийг хүсэж буй нөөшлөлтийг агуулсан хадгалалтыг зааж өгнө үү. Нөөшлөлт үүсгэх үед ашигласантай ижил тохиргоог ашиглана уу.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Амжилтгүй (нээгдсэн логийг харна уу)</value>
@@ -958,6 +970,9 @@ bin.
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Та хавтасны агуулгыг одоо байгаа файлуудыг дарж бичих замаар байршуулж болно.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Хавтасны агуулгыг байршуулах зорилтот хадгалалтыг зааж өгнө үү. Зорилтот газарт байгаа файлууд дарагдана.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

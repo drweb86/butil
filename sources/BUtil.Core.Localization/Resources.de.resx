@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ Um alle Optionen zu sehen, googeln Sie "C# DateTime format".</value>
 
 Weitere Informationen zur Einrichtung der Dateiübertragung über WI-FI durch die FTP-Server-Anwendung auf dem Telefon finden Sie auf der Website der Anwendung.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Geben Sie die Quelle an, aus der Medien importiert werden sollen — zum Beispiel eine SD-Karte, ein Kameraordner oder ein Telefon über FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Datenquelle importieren</value>
   </data>
@@ -388,6 +391,9 @@ Da Änderungen normalerweise gering sind, sind inkrementelle Backups viel kleine
 Zum Beispiel enthält ein Backup am Montag nach einem vollständigen Backup am Freitag nur die Dateien, die sich seit Freitag geändert haben. Ein Backup am Dienstag enthält nur die Dateien, die sich seit Montag geändert haben, und so weiter.
 
 Wenn eine der erstellten Kopien ausfällt, einschließlich der ersten (vollständigen), wird die Wiederherstellung unvollständig sein.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Geben Sie einen eindeutigen, zentralen Speicherort an, an dem Sicherungsversionen gespeichert werden. Dieser Speicherort wird vollständig von der App verwaltet — einschließlich des Löschens von Daten —, verwenden Sie ihn daher für nichts anderes und teilen Sie ihn nicht zwischen mehreren Aufgaben.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Inkrementelles Backup</value>
@@ -718,6 +724,9 @@ Siehe detaillierte Beschreibung im folgenden Link.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Zwei-Wege-Synchronisierung von Dateien zwischen Geräten unter Verwendung eines zentralisierten Speichers.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Geben Sie einen eindeutigen, zentralen Speicherort an, über den Geräte synchronisiert werden. Alle beteiligten Geräte sollten denselben Speicherort verwenden. Dieser Speicherort wird vollständig von der App verwaltet — einschließlich des Löschens von Daten —, verwenden Sie ihn daher für nichts anderes und teilen Sie ihn nicht zwischen mehreren Aufgaben.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Neu</value>
   </data>
@@ -768,6 +777,9 @@ Siehe detaillierte Beschreibung im folgenden Link.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Wiederherstellen</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Geben Sie den Speicherort an, der die wiederherzustellende Sicherung enthält. Verwenden Sie dieselben Einstellungen wie bei der Erstellung der Sicherung.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Fehlgeschlagen (siehe geöffnetes Protokoll)</value>
@@ -957,6 +969,9 @@ Siehe detaillierte Beschreibung im folgenden Link.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Sie können Ordnerinhalte hochladen und dabei bereits vorhandene Dateien überschreiben.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Geben Sie den Zielspeicherort an, in den der Ordnerinhalt hochgeladen wird. Vorhandene Dateien am Ziel werden überschrieben.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

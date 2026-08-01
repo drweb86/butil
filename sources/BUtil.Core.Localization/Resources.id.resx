@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -360,6 +360,9 @@
     
     Lihat situs web aplikasi untuk dokumentasi tentang cara mengatur transmisi file melalui WI-FI menggunakan aplikasi FTP Server di ponsel.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Tentukan sumber untuk mengimpor media — misalnya kartu SD, folder kamera, atau ponsel melalui FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Sumber data impor</value>
   </data>
@@ -385,6 +388,9 @@
     Misalnya, setelah pencadangan penuh pada hari Jumat, pencadangan hari Senin hanya akan berisi file yang berubah sejak hari Jumat. Pencadangan hari Selasa hanya berisi file yang berubah sejak hari Senin, dan seterusnya.
     
     Jika salah satu salinan yang dibuat gagal, termasuk yang pertama (penuh), pemulihan akan tidak lengkap.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Tentukan penyimpanan terpusat unik tempat versi cadangan akan disimpan. Lokasi ini sepenuhnya dikelola oleh aplikasi — termasuk penghapusan data — jadi jangan gunakan untuk hal lain, dan jangan bagikan antar beberapa tugas.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Pencadangan inkremental</value>
@@ -715,6 +721,9 @@ Silakan:
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Sinkronisasi dua arah file antara perangkat dengan menggunakan penyimpanan terpusat.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Tentukan penyimpanan terpusat unik tempat perangkat melakukan sinkronisasi. Semua perangkat yang berpartisipasi harus menggunakan lokasi penyimpanan yang sama. Lokasi ini sepenuhnya dikelola oleh aplikasi — termasuk penghapusan data — jadi jangan gunakan untuk hal lain, dan jangan bagikan antar beberapa tugas.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Baru</value>
   </data>
@@ -765,6 +774,9 @@ Silakan:
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Pulihkan</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Tentukan penyimpanan yang berisi cadangan yang ingin Anda pulihkan. Gunakan pengaturan yang sama seperti saat cadangan dibuat.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Gagal (lihat log yang dibuka)</value>
@@ -954,6 +966,9 @@ Silakan:
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Anda dapat mengunggah isi folder dengan menimpa file yang sudah ada.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Tentukan penyimpanan tujuan tempat konten folder akan diunggah. File yang sudah ada di tujuan akan ditimpa.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

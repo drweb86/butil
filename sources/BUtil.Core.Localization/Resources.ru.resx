@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@
 
 На сайте приложения размещена инструкция по настройке передачи файлов через WI-FI через приложение FTP Server на телефоне.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Укажите источник, из которого нужно импортировать медиафайлы, — например, SD-карту, папку камеры или телефон через FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Указать источник данных</value>
   </data>
@@ -389,6 +392,9 @@
 Например, сделав полный бэкап в пятницу, в понедельник РК будет содержать только те файлы, что изменились с пятницы. А бэкап во вторник- только те файлы, что изменились с понедельника, и т.д.
 
 Если хотя бы одна из копий упадет, включая первую (полную), восстановление будет неполным.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Укажите уникальное централизованное хранилище, в котором будут сохраняться версии резервных копий. Это расположение полностью управляется приложением — включая удаление данных, — поэтому не используйте его для чего-либо ещё и не делите между несколькими задачами.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Инкрементное резервное копирование</value>
@@ -719,6 +725,9 @@ bin.
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Двухсторонняя синхронизация файлов между устройствами с использованием централизованного хранилища.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Укажите уникальное централизованное хранилище, через которое синхронизируются устройства. Все участвующие устройства должны использовать одно и то же расположение хранилища. Это расположение полностью управляется приложением — включая удаление данных, — поэтому не используйте его для чего-либо ещё и не делите между несколькими задачами.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Новая задача</value>
   </data>
@@ -769,6 +778,9 @@ bin.
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Восстановить</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Укажите хранилище, содержащее резервную копию, которую вы хотите восстановить. Используйте те же настройки, что и при создании резервной копии.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Ошибка (Посмотрите лог)</value>
@@ -958,6 +970,9 @@ bin.
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Вы можете загрузить содержимое папки с перезаписью уже существующих файлов.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Укажите целевое хранилище, куда будет загружено содержимое папки. Существующие файлы в месте назначения будут перезаписаны.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Урл:</value>

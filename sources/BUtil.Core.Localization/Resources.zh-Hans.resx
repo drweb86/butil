@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -362,6 +362,9 @@
 
 参见应用程序网站了解如何设置通过WI-FI通过FTP服务器应用程序在手机上传输文件的文档。</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>指定要导入媒体的来源——例如 SD 卡、相机文件夹，或通过 FTPS 连接的手机。</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>导入数据源</value>
   </data>
@@ -387,6 +390,9 @@
 例如，在周五进行完全备份之后，周一的备份将仅包含自周五以来更改的文件。周二的备份仅包含自周一以来更改的文件，依此类推。
 
 如果创建的任何一个备份失败，包括第一个（完全备份），则恢复将不完整。</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>指定一个唯一的集中式存储位置，备份版本将保存在此处。该位置完全由应用程序管理——包括删除数据——因此请勿将其用于其他任何用途，也不要在多个任务之间共享。</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>增量备份</value>
@@ -717,6 +723,9 @@ bin。
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>使用集中存储的设备之间的双向文件同步。</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>指定一个唯一的集中式存储位置，设备将通过它进行同步。所有参与的设备都应使用相同的存储位置。该位置完全由应用程序管理——包括删除数据——因此请勿将其用于其他任何用途，也不要在多个任务之间共享。</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>新建</value>
   </data>
@@ -767,6 +776,9 @@ bin。
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>恢复</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>指定包含要还原的备份的存储位置。请使用创建备份时所用的相同设置。</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>失败（参见打开的日志）</value>
@@ -956,6 +968,9 @@ bin。
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>您可以上传文件夹内容，并覆盖已经存在的文件。</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>指定要将文件夹内容上传到的目标存储位置。目标位置中已存在的文件将被覆盖。</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>网址:</value>

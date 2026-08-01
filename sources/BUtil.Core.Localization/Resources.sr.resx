@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@
 
 Погледајте веб страницу апликације за документацију о подешавању преноса датотека путем WI-FI кроз FTP серверску апликацију на телефону.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Наведите извор из ког ће се увозити медији — на пример SD картицу, фасциклу камере или телефон путем FTPS-а.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Увези извор података</value>
   </data>
@@ -388,6 +391,9 @@
 На пример, после пуне резервне копије у петак, копија у понедељак ће садржати само датотеке које су се промениле од петка. Копија у уторак садржи само датотеке које су се промениле од понедељка, и тако даље. 
 
 Ако било која од направљених копија откаже, укључујући прву (пуну), обнављање ће бити непотпуно.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Наведите јединствено централизовано складиште у ком ће се чувати верзије резервне копије. Овом локацијом у потпуности управља апликација — укључујући брисање података — стога је немојте користити ни за шта друго и немојте је делити између више задатака.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Инкрементална резервна копија</value>
@@ -718,6 +724,9 @@ bin.
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Двосмерна синхронизација датотека између уређаја коришћењем централизованог складишта.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Наведите јединствено централизовано складиште преко ког се уређаји синхронизују. Сви уређаји који учествују треба да користе исту локацију складишта. Овом локацијом у потпуности управља апликација — укључујући брисање података — стога је немојте користити ни за шта друго и немојте је делити између више задатака.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Нови</value>
   </data>
@@ -768,6 +777,9 @@ bin.
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Врати</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Наведите складиште које садржи резервну копију коју желите да вратите. Користите иста подешавања као када је резервна копија направљена.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Неуспешно (погледајте отворени записник)</value>
@@ -957,6 +969,9 @@ bin.
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Можете отпремити садржај фасцикле уз преписивање већ постојећих датотека.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Наведите одредишно складиште у које ће се отпремити садржај фасцикле. Постојеће датотеке на одредишту биће преписане.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

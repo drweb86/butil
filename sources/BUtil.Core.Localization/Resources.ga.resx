@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ Chun na roghanna go léir a fheiceáil google "Formáid C# DateTime".</value>
 
 Féach láithreán gréasáin an fheidhmchláir le haghaidh doiciméadú ar conas tarchur comhad a shocrú trí WI-FI trí fheidhmchlár FTP Server ar an bhfón.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Sonraigh an fhoinse óna n-iompórtálfar meáin — mar shampla cárta SD, fillteán ceamara, nó fón trí FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Iompórtáil foinse sonraí</value>
   </data>
@@ -388,6 +391,9 @@ Dúnfar an t-iarratas anois.</value>
 Mar shampla, tar éis cúltaca iomlán Dé hAoine, ní bheidh i gcúltaca Dé Luain ach na comhaid sin a d’athraigh ón Aoine. Níl i gcúltaca Dé Máirt ach na comhaid sin a d'athraigh ó Dé Luain, agus mar sin de. 
 
 Má theipeann ar aon cheann de na cóipeanna a cruthaíodh, lena n-áirítear an chéad cheann (iomlán), beidh athchóiriú neamhiomlán.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Sonraigh stóras láraithe uathúil ina sábhálfar leaganacha cúltaca. Bainistíonn an aip an suíomh seo go hiomlán — lena n-áirítear scriosadh sonraí — mar sin ná húsáid é le haghaidh aon ní eile, agus ná roinn é idir tascanna éagsúla.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Cúltaca incriminteach</value>
@@ -718,6 +724,9 @@ See detailed description in the following link.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Comhaid a shioncronú dhá bhealach idir gléasanna ag baint úsáide as stóráil láraithe.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Sonraigh stóras láraithe uathúil trína sioncronaíonn gléasanna. Ba cheart go n-úsáidfeadh gach gléas rannpháirteach an suíomh stórála céanna. Bainistíonn an aip an suíomh seo go hiomlán — lena n-áirítear scriosadh sonraí — mar sin ná húsáid é le haghaidh aon ní eile, agus ná roinn é idir tascanna éagsúla.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Nua</value>
   </data>
@@ -768,6 +777,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Athchóirigh</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Sonraigh an stóras ina bhfuil an cúltaca ar mhaith leat a athchóiriú. Úsáid na socruithe céanna a bhí ann nuair a cruthaíodh an cúltaca.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Theip (féach loga oscailte)</value>
@@ -957,6 +969,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Is féidir leat ábhar fillteáin a uaslódáil agus comhaid atá ann cheana a fhorscríobh.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Sonraigh an stóras ceann scríbe ina n-uaslódálfar ábhar an fhillteáin. Forscríobhfar comhaid atá ann cheana sa cheann scríbe.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

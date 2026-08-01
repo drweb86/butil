@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@
 
 ראה את אתר האפליקציה לתיעוד כיצד להגדיר העברת קבצים דרך WI-FI באמצעות אפליקציית FTP Server בטלפון.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>ציינו את המקור שממנו ייובאו קבצי המדיה — לדוגמה כרטיס SD, תיקיית מצלמה, או טלפון דרך FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>ייבא מקור נתונים</value>
   </data>
@@ -388,6 +391,9 @@
 לדוגמה, לאחר גיבוי מלא ביום שישי, גיבוי ביום שני יכיל רק את הקבצים שהשתנו מאז יום שישי. גיבוי ביום שלישי מכיל רק את הקבצים שהשתנו מאז יום שני, וכן הלאה.
 
 אם אחד מהעותקים שנוצרו ייכשל, כולל הראשון (המלא), השחזור יהיה חלקי.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>ציינו מיקום אחסון מרכזי וייחודי שבו יישמרו גרסאות הגיבוי. מיקום זה מנוהל במלואו על ידי האפליקציה — כולל מחיקת נתונים — לכן אין להשתמש בו לכל מטרה אחרת, ואין לשתף אותו בין כמה משימות.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>גיבוי מצטבר</value>
@@ -718,6 +724,9 @@ bin.
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>סנכרון דו-כיווני של קבצים בין התקנים באמצעות אחסון מרכזי.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>ציינו מיקום אחסון מרכזי וייחודי שדרכו יתבצע הסנכרון בין המכשירים. על כל המכשירים המשתתפים להשתמש באותו מיקום אחסון. מיקום זה מנוהל במלואו על ידי האפליקציה — כולל מחיקת נתונים — לכן אין להשתמש בו לכל מטרה אחרת, ואין לשתף אותו בין כמה משימות.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>חדש</value>
   </data>
@@ -768,6 +777,9 @@ bin.
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>שחזר</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>ציינו את מיקום האחסון המכיל את הגיבוי שברצונכם לשחזר. השתמשו באותן הגדרות שבהן נעשה שימוש בעת יצירת הגיבוי.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>נכשל (ראה יומן פתוח)</value>
@@ -957,6 +969,9 @@ bin.
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>באפשרותך להעלות תוכן תיקייה תוך דריסת קבצים קיימים.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>ציינו את אחסון היעד שאליו יועלה תוכן התיקייה. קבצים קיימים ביעד יידרסו.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

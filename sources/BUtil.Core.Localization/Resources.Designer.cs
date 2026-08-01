@@ -928,6 +928,15 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("ImportMediaTask_Help", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Specify the source to import media from — for example an SD card, camera folder, or phone over FTPS..
+        /// </summary>
+        public static string ImportMediaTask_Storage_Help {
+            get {
+                return ResourceManager.GetString("ImportMediaTask_Storage_Help", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to Import data source.
@@ -982,6 +991,15 @@ namespace BUtil.Core.Localization {
         public static string IncrementalBackup_Help {
             get {
                 return ResourceManager.GetString("IncrementalBackup_Help", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Specify a unique centralized storage where backup versions will be saved. This location is managed entirely by the app — including deletion of data — so do not use it for anything else, and do not share it between multiple tasks..
+        /// </summary>
+        public static string IncrementalBackup_Storage_Help {
+            get {
+                return ResourceManager.GetString("IncrementalBackup_Storage_Help", resourceCulture);
             }
         }
         
@@ -1918,6 +1936,15 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("SynchronizationTask_Help", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Specify a unique centralized storage that devices sync through. All participating devices should use the same storage location. This location is managed entirely by the app — including deletion of data — so do not use it for anything else, and do not share it between multiple tasks..
+        /// </summary>
+        public static string SynchronizationTask_Storage_Help {
+            get {
+                return ResourceManager.GetString("SynchronizationTask_Storage_Help", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to New.
@@ -2069,6 +2096,15 @@ namespace BUtil.Core.Localization {
         public static string Task_Restore {
             get {
                 return ResourceManager.GetString("Task_Restore", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Specify the storage that contains the backup you want to restore. Use the same settings as when the backup was created..
+        /// </summary>
+        public static string Task_Restore_Storage_Help {
+            get {
+                return ResourceManager.GetString("Task_Restore_Storage_Help", resourceCulture);
             }
         }
         
@@ -2636,6 +2672,15 @@ namespace BUtil.Core.Localization {
         public static string UploadFolderTask_Help {
             get {
                 return ResourceManager.GetString("UploadFolderTask_Help", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Specify the destination storage where folder contents will be uploaded. Existing files in the destination will be overwritten..
+        /// </summary>
+        public static string UploadFolderTask_Storage_Help {
+            get {
+                return ResourceManager.GetString("UploadFolderTask_Storage_Help", resourceCulture);
             }
         }
         

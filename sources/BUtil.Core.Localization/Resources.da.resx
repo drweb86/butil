@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ Søg efter "C# DateTime format" for at se alle muligheder.</value>
 
 Se applikationens hjemmeside for dokumentation om opsætning af filoverførsel via WI-FI gennem FTP Server-applikationen på telefonen.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Angiv den kilde, du vil importere medier fra — fx et SD-kort, en kameramappe eller en telefon via FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Importér datakilde</value>
   </data>
@@ -388,6 +391,9 @@ Da ændringer typisk er små, er inkrementelle backups meget mindre og hurtigere
 For eksempel, efter en fuld backup om fredagen, vil en backup om mandagen kun indeholde de filer, der er ændret siden fredag. En backup om tirsdagen indeholder kun de filer, der er ændret siden mandag, og så videre.
 
 Hvis en af de oprettede kopier fejler, inklusiv den første (fulde), vil gendannelsen være ufuldstændig.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Angiv en unik, centraliseret lagerplacering, hvor sikkerhedskopiversioner gemmes. Denne placering administreres udelukkende af appen — herunder sletning af data — så brug den ikke til andet, og del den ikke mellem flere opgaver.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Inkrementel backup</value>
@@ -718,6 +724,9 @@ Se detaljeret beskrivelse i følgende link.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Tovejs synkronisering af filer mellem enheder med centraliseret lager.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Angiv en unik, centraliseret lagerplacering, som enheder synkroniserer gennem. Alle deltagende enheder bør bruge den samme lagerplacering. Denne placering administreres udelukkende af appen — herunder sletning af data — så brug den ikke til andet, og del den ikke mellem flere opgaver.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Ny</value>
   </data>
@@ -768,6 +777,9 @@ Se detaljeret beskrivelse i følgende link.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Gendan</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Angiv den lagerplacering, der indeholder den sikkerhedskopi, du vil gendanne. Brug de samme indstillinger som da sikkerhedskopien blev oprettet.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Mislykket (se åbnet log)</value>
@@ -957,6 +969,9 @@ Se detaljeret beskrivelse i følgende link.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Du kan uploade mappeindhold og overskrive allerede eksisterende filer.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Angiv den destinationslagerplacering, hvor mappens indhold uploades til. Eksisterende filer på destinationen bliver overskrevet.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

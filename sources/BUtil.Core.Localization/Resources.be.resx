@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@
 
 Глядзіце вэб-сайт праграмы для дакументацыі па наладжванні перадачы файлаў праз WI-FI праз праграму FTP-сервера на тэлефоне.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Вызначце крыніцу, з якой імпартаваць медыяфайлы, — напрыклад, SD-карту, папку камеры або тэлефон праз FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Імпарт крыніцы даных</value>
   </data>
@@ -388,6 +391,9 @@
 Напрыклад, пасля поўнага рэзервовага капіявання ў пятніцу, копія ў панядзелак будзе змяшчаць толькі тыя файлы, якія змяніліся з пятніцы. Копія ва аўторак змяшчае толькі файлы, змененыя з панядзелка, і г.д. 
 
 Калі любая з створаных копій пашкодзіцца, уключаючы першую (поўную), аднаўленне будзе няпоўным.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Вызначце унікальнае цэнтралізаванае сховішча, дзе будуць захоўвацца версіі рэзервовага капіявання. Гэтае месца цалкам кіруецца праграмай — уключаючы выдаленне даных, — таму не выкарыстоўвайце яго ні для чаго іншага і не дзяліце паміж некалькімі задачамі.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Інкрэментальнае рэзервовае капіяванне</value>
@@ -718,6 +724,9 @@ bin.
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Двухбаковая сінхранізацыя файлаў паміж прыладамі з выкарыстаннем цэнтралізаванага сховішча.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Вызначце унікальнае цэнтралізаванае сховішча, праз якое сінхранізуюцца прылады. Усе прылады, якія ўдзельнічаюць, павінны выкарыстоўваць адно і тое ж сховішча. Гэтае месца цалкам кіруецца праграмай — уключаючы выдаленне даных, — таму не выкарыстоўвайце яго ні для чаго іншага і не дзяліце паміж некалькімі задачамі.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Новая</value>
   </data>
@@ -768,6 +777,9 @@ bin.
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Аднавіць</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Вызначце сховішча, якое змяшчае рэзервовую копію, якую вы хочаце аднавіць. Выкарыстоўвайце тыя ж налады, што і пры стварэнні рэзервовай копіі.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Не атрымалася (глядзіце адкрыты журнал)</value>
@@ -957,6 +969,9 @@ bin.
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Вы можаце загрузіць змесціва папкі з перазапісам ужо існуючых файлаў.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Вызначце мэтавае сховішча, куды будзе загружацца змесціва папкі. Існуючыя файлы ў мэтавым месцы будуць перазапісаны.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

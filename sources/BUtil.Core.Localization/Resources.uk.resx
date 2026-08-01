@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@
 
 На сайті програми розміщено інструкцію з налаштування передавання файлів через WI-FI у програмі FTP Server на телефоні.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Вкажіть джерело, з якого імпортувати медіафайли — наприклад, SD-карту, папку камери або телефон через FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Вказати джерело даних</value>
   </data>
@@ -389,6 +392,9 @@
 Наприклад, повну резервну копію зроблено в п'ятницю, у понеділок резервна копія міститиме лише ті файли, що змінилися з п'ятниці. А резервна копія у вівторок - лише ті файли, що змінилися з понеділка, і так далі.
 
 Але якщо хоча б одну з копій, включно з першою (повною), буде пошкоджено, повне відновлення буде неможливим.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Вкажіть унікальне централізоване сховище, у якому зберігатимуться версії резервної копії. Це розташування повністю керується застосунком — включно з видаленням даних, — тому не використовуйте його для чогось іншого і не діліть між кількома завданнями.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Інкрементне резервне копіювання</value>
@@ -719,6 +725,9 @@ bin.
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Двостороння синхронізація файлів між пристроями за допомогою централізованого сховища.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Вкажіть унікальне централізоване сховище, через яке синхронізуються пристрої. Усі пристрої-учасники мають використовувати одне й те саме розташування сховища. Це розташування повністю керується застосунком — включно з видаленням даних, — тому не використовуйте його для чогось іншого і не діліть між кількома завданнями.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Нове завдання</value>
   </data>
@@ -769,6 +778,9 @@ bin.
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Відновити</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Вкажіть сховище, яке містить резервну копію, яку ви хочете відновити. Використовуйте ті самі налаштування, що й під час створення резервної копії.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Помилка (Дивіться журнал)</value>
@@ -958,6 +970,9 @@ bin.
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Ви можете завантажити вміст теки з перезаписом уже існуючих файлів.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Вкажіть цільове сховище, куди буде завантажено вміст папки. Наявні файли у місці призначення буде перезаписано.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

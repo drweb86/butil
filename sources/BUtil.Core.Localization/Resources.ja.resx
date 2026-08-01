@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -357,6 +357,9 @@
     <value>カメラやレコーダーのSDカードから音声、写真、動画をインポートします; お使いのスマートフォンからFTPサーバアプリを使用して写真や動画をWi-Fi経由でインポートします。
 ファイル傳送の設定方法については、アプリケーションのウェブサイトのドキュメントをご覧ください。</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>メディアのインポート元を指定してください（例：SDカード、カメラのフォルダ、またはFTPS経由の携帯電話）。</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>インポートデータソース</value>
   </data>
@@ -376,6 +379,9 @@
     <value>最も基本的な増分バックアップの形は、前回のバックアップ以来変更されたファイルのみを特定し、記録することです。
 変更されているファイルが通常少ないため、増分バックアップはフルバックアップよりもはるかに小さく、迅速です。
 例えば、金曜日にフルバックアップを行った場合、月曜日のバックアップには金曜日以来変更されたファイルのみが含まれます。火曜日のバックアップには月曜日以来変更されたファイルのみが含まれます。</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>バックアップのバージョンを保存する、専用の一元管理されたストレージを指定してください。この場所はデータの削除も含めてアプリが完全に管理するため、他の用途には使用せず、複数のタスク間で共有しないでください。</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>増分バックアップ</value>
@@ -705,6 +711,9 @@ bin.
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>中央集約型ストレージを使用したデバイス間のファイルの双方向同期。</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>デバイスが同期に使用する、専用の一元管理されたストレージを指定してください。参加するすべてのデバイスは同じストレージの場所を使用する必要があります。この場所はデータの削除も含めてアプリが完全に管理するため、他の用途には使用せず、複数のタスク間で共有しないでください。</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>新しい</value>
   </data>
@@ -752,6 +761,9 @@ bin.
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>復元</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>復元したいバックアップが含まれているストレージを指定してください。バックアップ作成時と同じ設定を使用してください。</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>失敗しました（開いたログを参照）</value>
@@ -941,6 +953,9 @@ bin.
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>既存のファイルを上書きしてフォルダの内容をアップロードできます。</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>フォルダの内容がアップロードされる保存先ストレージを指定してください。保存先に既存のファイルがある場合は上書きされます。</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

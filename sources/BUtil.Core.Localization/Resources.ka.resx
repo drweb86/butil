@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@
 
 იხილეთ აპლიკაციის ვებ-გვერდი დოკუმენტაციისთვის, თუ როგორ დააყენოთ ფაილის გადაცემა WI-FI-ით FTP სერვერის აპლიკაციით ტელეფონზე.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>მიუთითეთ წყარო, საიდანაც მოხდება მედიის იმპორტი — მაგალითად, SD ბარათი, კამერის საქაღალდე ან ტელეფონი FTPS-ის მეშვეობით.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>მონაცემთა წყაროს იმპორტი</value>
   </data>
@@ -388,6 +391,9 @@
 მაგალითად, პარასკევს სრული სარეზერვო ასლის შემდეგ, ორშაბათის სარეზერვო ასლი შეიცავს მხოლოდ იმ ფაილებს, რომლებიც შეიცვალა პარასკევიდან. სამშაბათის სარეზერვო ასლი შეიცავს მხოლოდ იმ ფაილებს, რომლებიც შეიცვალა ორშაბათიდან, და ა.შ. 
 
 თუ რომელიმე შექმნილი ასლი ვერ მოხერხდება, პირველის (სრულის) ჩათვლით, აღდგენა იქნება არასრული.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>მიუთითეთ უნიკალური ცენტრალიზებული საცავი, სადაც შეინახება სარეზერვო ასლის ვერსიები. ეს ადგილმდებარეობა მთლიანად იმართება აპლიკაციის მიერ — მონაცემების წაშლის ჩათვლით — ამიტომ არ გამოიყენოთ ის სხვა მიზნით და არ გაუზიაროთ რამდენიმე ამოცანას.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>ინკრემენტული სარეზერვო ასლი</value>
@@ -718,6 +724,9 @@ bin.
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>ფაილების ორმხრივი სინქრონიზაცია მოწყობილობებს შორის ცენტრალიზებული საცავის გამოყენებით.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>მიუთითეთ უნიკალური ცენტრალიზებული საცავი, რომლის მეშვეობითაც მოწყობილობები სინქრონიზდებიან. ყველა მონაწილე მოწყობილობამ უნდა გამოიყენოს ერთი და იგივე საცავის მდებარეობა. ეს ადგილმდებარეობა მთლიანად იმართება აპლიკაციის მიერ — მონაცემების წაშლის ჩათვლით — ამიტომ არ გამოიყენოთ ის სხვა მიზნით და არ გაუზიაროთ რამდენიმე ამოცანას.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>ახალი</value>
   </data>
@@ -768,6 +777,9 @@ bin.
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>აღდგენა</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>მიუთითეთ საცავი, რომელიც შეიცავს იმ სარეზერვო ასლს, რომლის აღდგენაც გსურთ. გამოიყენეთ იგივე პარამეტრები, რაც სარეზერვო ასლის შექმნისას გქონდათ.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>ვერ მოხერხდა (იხილეთ გახსნილი ჟურნალი)</value>
@@ -957,6 +969,9 @@ bin.
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>შეგიძლიათ ატვირთოთ საქაღალდის შიგთავსი უკვე არსებული ფაილების გადაწერით.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>მიუთითეთ დანიშნულების საცავი, სადაც აიტვირთება საქაღალდის შიგთავსი. დანიშნულების ადგილას არსებული ფაილები ზედგადაწერილი იქნება.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

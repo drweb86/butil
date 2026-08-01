@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ Norėdami pamatyti visas parinktis, ieškokite „C# DateTime format".</value>
 
 Žiūrėkite programos svetainę dokumentacijai apie failų perdavimo per WI-FI nustatymą naudojant FTP serverio programą telefone.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Nurodykite šaltinį, iš kurio bus importuojama medija — pavyzdžiui, SD kortelę, fotoaparato aplanką ar telefoną per FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Importuoti duomenų šaltinį</value>
   </data>
@@ -388,6 +391,9 @@ Kadangi pakeitimai paprastai yra nedideli, inkrementinės atsarginės kopijos yr
 Pavyzdžiui, po pilnos atsarginės kopijos penktadienį, pirmadienio kopija turės tik tuos failus, kurie pasikeitė nuo penktadienio. Antradienio kopija turės tik tuos failus, kurie pasikeitė nuo pirmadienio, ir taip toliau. 
 
 Jei kuri nors sukurta kopija suges, įskaitant pirmąją (pilną), atkūrimas bus nepilnas.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Nurodykite unikalią centralizuotą saugyklą, kurioje bus išsaugotos atsarginės kopijos versijos. Šią vietą visiškai valdo programa — įskaitant duomenų trynimą, — todėl nenaudokite jos jokiam kitam tikslui ir nesidalykite ja tarp kelių užduočių.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Inkrementinė atsarginė kopija</value>
@@ -718,6 +724,9 @@ bin.
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Dvikryptė failų sinchronizacija tarp įrenginių naudojant centralizuotą saugyklą.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Nurodykite unikalią centralizuotą saugyklą, per kurią sinchronizuojami įrenginiai. Visi dalyvaujantys įrenginiai turėtų naudoti tą pačią saugyklos vietą. Šią vietą visiškai valdo programa — įskaitant duomenų trynimą, — todėl nenaudokite jos jokiam kitam tikslui ir nesidalykite ja tarp kelių užduočių.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Nauja</value>
   </data>
@@ -768,6 +777,9 @@ bin.
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Atkurti</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Nurodykite saugyklą, kurioje yra atsarginė kopija, kurią norite atkurti. Naudokite tuos pačius nustatymus, kurie buvo naudojami kuriant atsarginę kopiją.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Nepavyko (žiūrėkite atidarytą žurnalą)</value>
@@ -957,6 +969,9 @@ bin.
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Galite įkelti aplanko turinį perrašydami jau esančius failus.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Nurodykite paskirties saugyklą, į kurią bus įkeltas aplanko turinys. Esami failai paskirties vietoje bus perrašyti.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

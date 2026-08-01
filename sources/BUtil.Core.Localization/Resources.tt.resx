@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@
 
 Телефондагы FTP Server кушымтасы аша WI-FI аша файл тапшыруны ничек урнаштырырга икәнлеген документлаштыру өчен кушымта веб-сайтын карагыз.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Медиа импортлау өчен чыганакны күрсәтегез — мәсәлән, SD карта, камера папкасы яки FTPS аша телефон.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Мәгълүмат чыганагын импортлау</value>
   </data>
@@ -388,6 +391,9 @@ Changesзгәрешләр гадәттә түбән булганлыктан, а
 Мәсәлән, җомга көнне тулы резервтан соң, дүшәмбе резервында җомга көннән үзгәргән файллар гына булачак. Сишәмбе резервында дүшәмбедән бирле үзгәргән файллар гына бар. 
 
 Ясалган күчермәләрнең берсе уңышсыз булса, беренче (тулы), реставрация тулы булмас.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Резерв күчермә версияләре саклана торган уникаль үзәкләштерелгән саклагычны күрсәтегез. Бу урынны тулысынча кушымта идарә итә — моңа мәгълүматны бетерү дә керә — шуңа күрә аны башка бернәрсә өчен дә кулланмагыз һәм берничә бурыч арасында бүлешмәгез.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Арттыру резервы</value>
@@ -718,6 +724,9 @@ See detailed description in the following link.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Centralзәкләштерелгән саклагыч ярдәмендә җайланмалар арасында файлларны ике яклы синхронизацияләү.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Җайланмалар синхронлаштыру өчен кулланган уникаль үзәкләштерелгән саклагычны күрсәтегез. Катнашучы бөтен җайланмалар бер үк саклагыч урынын кулланырга тиеш. Бу урынны тулысынча кушымта идарә итә — моңа мәгълүматны бетерү дә керә — шуңа күрә аны башка бернәрсә өчен дә кулланмагыз һәм берничә бурыч арасында бүлешмәгез.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Яңа</value>
   </data>
@@ -768,6 +777,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Реставрация</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Сез кайтарырга теләгән резерв күчермә булган саклагычны күрсәтегез. Резерв күчермә ясалганда кулланылган шул ук көйләүләрне кулланыгыз.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Уңайсыз (ачылган бүрәнәне карагыз)</value>
@@ -957,6 +969,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Сез инде булган файлларны яңадан язу белән папка эчтәлеген йөкли аласыз.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Папка эчтәлеге йөкләнәчәк максатчан саклагычны күрсәтегез. Максатта булган файллар өстенә язылачак.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

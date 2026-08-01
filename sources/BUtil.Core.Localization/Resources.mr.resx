@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -360,6 +360,9 @@
     
     फाइल ट्रान्समिशन सेटअप कसा करावा याबद्दलची माहिती पाहण्यासाठी अनुप्रयोगाच्या वेब साइटला भेट द्या.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>मीडिया आयात करण्याचा स्रोत निर्दिष्ट करा — उदाहरणार्थ SD कार्ड, कॅमेरा फोल्डर, किंवा FTPS द्वारे फोन.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>डेटा स्रोत आयात करा</value>
   </data>
@@ -385,6 +388,9 @@
     उदाहरणार्थ, शुक्रवारी पूर्ण बॅकअप घेतल्यास, सोमवारी बॅकअपमध्ये केवळ शुक्रवारी बदललेल्या फाइल्स असतील. मंगळवारी बॅकअपमध्ये केवळ सोमवारपासून बदललेल्या फाइल्स असतील, आणि असेच चालू राहील.
     
     जर तयार केलेल्या कोणत्याही प्रतिमध्ये अयशस्वी झाल्यास, पहिल्या (पूर्ण) समावेशासहित, पुनर्स्थापन अपूर्ण असेल.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>एक अद्वितीय केंद्रीकृत स्टोरेज निर्दिष्ट करा जिथे बॅकअप आवृत्त्या जतन केल्या जातील. हे स्थान संपूर्णपणे अ‍ॅपद्वारे व्यवस्थापित केले जाते — डेटा हटवण्यासह — त्यामुळे ते इतर कोणत्याही गोष्टीसाठी वापरू नका आणि अनेक कार्यांमध्ये सामायिक करू नका.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>इन्क्रमेंटल बॅकअप</value>
@@ -715,6 +721,9 @@
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>संपूर्ण संचयाचे संदेशाच्या वापरातून फाईल्सचे दोन मार्ग समानांतर.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>उपकरणे सिंक करण्यासाठी वापरतील असे एक अद्वितीय केंद्रीकृत स्टोरेज निर्दिष्ट करा. सहभागी होणाऱ्या सर्व उपकरणांनी समान स्टोरेज स्थान वापरावे. हे स्थान संपूर्णपणे अ‍ॅपद्वारे व्यवस्थापित केले जाते — डेटा हटवण्यासह — त्यामुळे ते इतर कोणत्याही गोष्टीसाठी वापरू नका आणि अनेक कार्यांमध्ये सामायिक करू नका.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>नवीन</value>
   </data>
@@ -765,6 +774,9 @@
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>पुनर्स्थापित करा</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>तुम्हाला पुनर्संचयित करायचा असलेला बॅकअप असलेले स्टोरेज निर्दिष्ट करा. बॅकअप तयार करताना वापरलेल्या समान सेटिंग्ज वापरा.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>अयशस्वी (उघडलेल्या लॉगला पहा)</value>
@@ -954,6 +966,9 @@
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>आधीपासून अस्तित्वात असलेल्या फाइल्सवर लिहून फोल्डरमधील मजकूर अपलोड करू शकता.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>फोल्डरची सामग्री अपलोड केली जाईल असे गंतव्य स्टोरेज निर्दिष्ट करा. गंतव्यस्थानातील विद्यमान फाइल्स अधिलिखित केल्या जातील.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>यूआरएल:</value>

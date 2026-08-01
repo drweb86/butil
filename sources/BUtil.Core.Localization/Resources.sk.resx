@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ Pre zobrazenie všetkých možností vyhľadajte „C# DateTime format".</value>
 
 Pozrite si webovú stránku aplikácie pre dokumentáciu, ako nastaviť prenos súborov cez WI-FI prostredníctvom FTP serverovej aplikácie na telefóne.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Zadajte zdroj, z ktorého sa má importovať médium — napríklad SD kartu, priečinok fotoaparátu alebo telefón cez FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Importovať zdroj dát</value>
   </data>
@@ -388,6 +391,9 @@ Keďže zmeny sú zvyčajne malé, inkrementálne zálohy sú oveľa menšie a r
 Napríklad po úplnej zálohe v piatok bude záloha v pondelok obsahovať iba súbory, ktoré sa zmenili od piatku. Záloha v utorok obsahuje iba súbory, ktoré sa zmenili od pondelka, a tak ďalej. 
 
 Ak niektorá z vytvorených kópií zlyhá, vrátane prvej (úplnej), obnova bude neúplná.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Zadajte jedinečné centralizované úložisko, do ktorého sa budú ukladať verzie zálohy. Toto umiestnenie úplne spravuje aplikácia — vrátane mazania údajov —, preto ho nepoužívajte na nič iné a nezdieľajte ho medzi viacerými úlohami.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Inkrementálna záloha</value>
@@ -718,6 +724,9 @@ Pozrite si podrobný popis na nasledujúcom odkaze.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Obojsmerná synchronizácia súborov medzi zariadeniami pomocou centralizovaného úložiska.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Zadajte jedinečné centralizované úložisko, cez ktoré sa zariadenia synchronizujú. Všetky zúčastnené zariadenia by mali používať rovnaké umiestnenie úložiska. Toto umiestnenie úplne spravuje aplikácia — vrátane mazania údajov —, preto ho nepoužívajte na nič iné a nezdieľajte ho medzi viacerými úlohami.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Nová</value>
   </data>
@@ -768,6 +777,9 @@ Pozrite si podrobný popis na nasledujúcom odkaze.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Obnoviť</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Zadajte úložisko, ktoré obsahuje zálohu, ktorú chcete obnoviť. Použite rovnaké nastavenia ako pri vytváraní zálohy.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Neúspešné (pozrite si otvorený protokol)</value>
@@ -957,6 +969,9 @@ Pozrite si podrobný popis na nasledujúcom odkaze.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Môžete nahrať obsah priečinka s prepísaním už existujúcich súborov.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Zadajte cieľové úložisko, do ktorého sa nahrá obsah priečinka. Existujúce súbory v cieli budú prepísané.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

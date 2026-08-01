@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -362,6 +362,9 @@
 
 தொலைபேசியில் FTP சர்வர் செயலி மூலம் கோப்பு அனுப்புவதற்கான ஆவணத்திற்காக செயலியின் இணையதளத்தைப் பார்க்கவும்.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>மீடியாவை இறக்குமதி செய்யும் மூலத்தை குறிப்பிடவும் — உதாரணமாக SD அட்டை, கேமரா கோப்புறை, அல்லது FTPS வழியாக தொலைபேசி.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>தரவிற் கொள்க</value>
   </data>
@@ -387,6 +390,9 @@
 உதாரணமாக, வெள்ளிக்கிழமையில் முழு காப்பீடு பிறகு, ஒரு திங்கட்கிழமையில் காப்பீடு வெள்ளிக்கிழமை முதல் மாறிய கோப்புகளை மட்டுமே உள்ளடக்கியது. செவ்வாய்க்கிழமை காப்பீடு திங்கட்கிழமையிலிருந்து மாறிய கோப்புகளை மட்டுமே கொண்டுள்ளது, மற்றும் அதற்குப் பிறகு.
 
 உருவாக்கப்பட்ட எதாவது காப்பியால் தோல்வி அடைந்தால், முதலாவது (முழு) உட்பட, மீட்பு மாறுபாட்டாக இருக்கும்.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>காப்பு பதிப்புகள் சேமிக்கப்படும் தனித்துவமான மையப்படுத்தப்பட்ட சேமிப்பகத்தை குறிப்பிடவும். இந்த இடம் முழுவதுமாக பயன்பாட்டால் நிர்வகிக்கப்படுகிறது — தரவை நீக்குவது உட்பட — எனவே இதை வேறு எதற்கும் பயன்படுத்த வேண்டாம், மேலும் பல பணிகளுக்கு இடையே பகிர வேண்டாம்.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Incremental backup</value>
@@ -717,6 +723,9 @@ bin.
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>கென்ட்ரலீசிட் சேமிப்பைப் பயன்படுத்தி சாதனங்களுக்கு இடையே கோப்புகளின் இரு வழி ஒத்திசைவு.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>சாதனங்கள் ஒத்திசைவதற்குப் பயன்படுத்தும் தனித்துவமான மையப்படுத்தப்பட்ட சேமிப்பகத்தை குறிப்பிடவும். பங்கேற்கும் அனைத்து சாதனங்களும் ஒரே சேமிப்பக இடத்தைப் பயன்படுத்த வேண்டும். இந்த இடம் முழுவதுமாக பயன்பாட்டால் நிர்வகிக்கப்படுகிறது — தரவை நீக்குவது உட்பட — எனவே இதை வேறு எதற்கும் பயன்படுத்த வேண்டாம், மேலும் பல பணிகளுக்கு இடையே பகிர வேண்டாம்.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>புதிய</value>
   </data>
@@ -767,6 +776,9 @@ bin.
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>மீட்டமை</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>நீங்கள் மீட்டெடுக்க விரும்பும் காப்பு உள்ள சேமிப்பகத்தை குறிப்பிடவும். காப்பு உருவாக்கப்பட்டபோது பயன்படுத்தப்பட்ட அதே அமைப்புகளைப் பயன்படுத்தவும்.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>ஏற்கனவே தோல்வியுற்றது (தோன்றிய பதிவைப் பாருங்கள்)</value>
@@ -956,6 +968,9 @@ bin.
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>ஏற்கனவே இருக்கும் கோப்புகளை மேலெழுதி கோப்புறை உள்ளடக்கங்களை பதிவேற்றலாம்.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>கோப்புறை உள்ளடக்கம் பதிவேற்றப்படும் இலக்கு சேமிப்பகத்தை குறிப்பிடவும். இலக்கில் ஏற்கனவே உள்ள கோப்புகள் மேலெழுதப்படும்.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

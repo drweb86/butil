@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ Fir all Optiounen ze gesinn Google "C # DateTime Format".</value>
 
 Kuckt d'Applikatioun Websäit fir Dokumentatioun wéi d'Dateiiwwerdroung iwwer WI-FI duerch FTP Server Applikatioun um Telefon ageriicht gëtt.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Gitt d'Quell un, vun där Medien importéiert solle ginn — zum Beispill eng SD-Kaart, en Kamera-Dossier, oder en Handy iwwer FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Import Daten Quell</value>
   </data>
@@ -388,6 +391,9 @@ Zënter Ännerungen typesch niddereg sinn, sinn inkrementell Backups vill méi k
 Zum Beispill, no engem komplette Backup um Freideg, enthält e Méindeg Backup nëmmen déi Dateien déi zënter Freideg geännert hunn. En Dënschdeg Backup enthält nëmmen déi Dateien déi zënter e Méindeg geännert hunn, a sou weider. 
 
 Sollt eng vun den erstallte Kopien versoen, och déi éischt (voll), wäert d'Restauratioun onkomplett sinn.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Gitt eng eenzegaarteg, zentraliséiert Späicherplaz un, wou d'Backupversiounen gespäichert ginn. Dës Plaz gëtt komplett vun der App verwalt — dorënner d'Läschen vun Donnéeën — dofir benotzt se net fir eppes anescht, an deelt se net tëscht méi Aufgaben.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Inkrementell Backupsatellit</value>
@@ -718,6 +724,9 @@ See detailed description in the following link.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Zwee-Wee Synchroniséierung vu Dateien tëscht Geräter mat zentraliséierter Späichere.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Gitt eng eenzegaarteg, zentraliséiert Späicherplaz un, iwwer déi Apparater synchroniséieren. All deelhuelend Apparat soll déiselwecht Späicherplaz benotzen. Dës Plaz gëtt komplett vun der App verwalt — dorënner d'Läschen vun Donnéeën — dofir benotzt se net fir eppes anescht, an deelt se net tëscht méi Aufgaben.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Nei</value>
   </data>
@@ -768,6 +777,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Restauréieren</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Gitt d'Späicherplaz un, déi de Backup enthält, deen Dir wëllt restauréieren. Benotzt déiselwecht Astellungen wéi wéi de Backup erstallt gouf.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Ausgefall (kuckt opgemaach Log)</value>
@@ -957,6 +969,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Dir kënnt Dossier Inhalt eropluede mat scho existéierende Dateien iwwerschreiwe.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Gitt d'Zilspäicherplaz un, wouhin den Inhalt vum Dossier eropgeluede gëtt. Bestehend Fichieren um Zil ginn iwwerschriwwen.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

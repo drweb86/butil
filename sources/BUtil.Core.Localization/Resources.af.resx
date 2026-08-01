@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ Om alle opsies te sien, google "C# DateTime format".</value>
 
 Sien toepassingswebwerf vir dokumentasie hoe om lêerversending via WI-FI deur FTP-bedienertoepassing op die telefoon op te stel.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Spesifiseer die bron waarvandaan media ingevoer moet word — byvoorbeeld 'n SD-kaart, kameralêergids, of foon via FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Voer databron in</value>
   </data>
@@ -388,6 +391,9 @@ Aangesien veranderinge tipies laag is, is inkrementele rugsteun baie kleiner en 
 Byvoorbeeld, na 'n volledige rugsteun op Vrydag, sal 'n Maandag-rugsteun slegs die lêers bevat wat sedert Vrydag verander het. 'n Dinsdag-rugsteun bevat slegs daardie lêers wat sedert Maandag verander het, ensovoorts. 
 
 Indien enige een van die kopieë wat geskep is, misluk, insluitend die eerste (volledige), sal herstel onvolledig wees.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Spesifiseer 'n unieke, gesentraliseerde bergingsplek waar rugsteunweergawes gestoor sal word. Hierdie plek word heeltemal deur die app bestuur — insluitend die verwydering van data — moet dit dus nie vir enigiets anders gebruik nie, en moenie dit tussen verskeie take deel nie.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Inkrementele rugsteun</value>
@@ -718,6 +724,9 @@ See detailed description in the following link.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Tweerigtingsinchronisasie van lêers tussen toestelle met behulp van gesentraliseerde berging.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Spesifiseer 'n unieke, gesentraliseerde bergingsplek waardeur toestelle sinkroniseer. Alle deelnemende toestelle moet dieselfde bergingsplek gebruik. Hierdie plek word heeltemal deur die app bestuur — insluitend die verwydering van data — moet dit dus nie vir enigiets anders gebruik nie, en moenie dit tussen verskeie take deel nie.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Nuut</value>
   </data>
@@ -768,6 +777,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Herstel</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Spesifiseer die berging wat die rugsteun bevat wat u wil herstel. Gebruik dieselfde instellings as toe die rugsteun geskep is.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Misluk (sien oopgemaakte logboek)</value>
@@ -957,6 +969,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>U kan vouerinhoud oplaai deur reeds bestaande lêers te oorskryf.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Spesifiseer die bestemmingsberging waarheen die inhoud van die lêergids opgelaai sal word. Bestaande lêers by die bestemming sal oorskryf word.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

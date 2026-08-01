@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@ Barcha variantlarni ko'rish uchun "C# DateTime format" ni qidiring.</value>
 
 Telefondagi FTP Server ilovasi orqali WI-FI bo'yicha fayl uzatishni sozlash bo'yicha ma'lumot uchun ilova veb-saytiga qarang.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Mediani import qilish manbasini belgilang — masalan, SD karta, kamera papkasi yoki FTPS orqali telefon.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Ma'lumot manbayini import qilish</value>
   </data>
@@ -389,6 +392,9 @@ O'zgarishlar odatda kam bo'lgani uchun bosqichma-bosqich zaxiralar to'liq zaxira
 Masalan, juma kungi to'liq zaxiradan keyin dushanba kuni zaxirasi faqat jumadan beri o'zgargan fayllarni o'z ichiga oladi. Seshanba kuni zaxirasi faqat dushanbadan beri o'zgargan fayllarni o'z ichiga oladi va hokazo.
 
 Agar yaratilgan nusxalardan birortasi, jumladan birinchisi (to'liq) ishlamay qolsa, tiklash to'liq bo'lmaydi.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Zaxira nusxa versiyalari saqlanadigan noyob markazlashtirilgan saqlash joyini belgilang. Bu joyni ilova to'liq boshqaradi — ma'lumotlarni o'chirishni ham o'z ichiga olgan holda — shuning uchun uni boshqa hech narsa uchun ishlatmang va bir nechta vazifalar o'rtasida ulashmang.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Bosqichma-bosqich zaxiralash</value>
@@ -719,6 +725,9 @@ Batafsil tavsifni quyidagi havoladan ko'ring.</value>
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Markazlashtirilgan xotira yordamida qurilmalar o'rtasida fayllarning ikki tomonlama sinxronizatsiyasi.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Qurilmalar sinxronlash uchun foydalanadigan noyob markazlashtirilgan saqlash joyini belgilang. Barcha ishtirok etuvchi qurilmalar bir xil saqlash joyidan foydalanishi kerak. Bu joyni ilova to'liq boshqaradi — ma'lumotlarni o'chirishni ham o'z ichiga olgan holda — shuning uchun uni boshqa hech narsa uchun ishlatmang va bir nechta vazifalar o'rtasida ulashmang.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Yangi</value>
   </data>
@@ -769,6 +778,9 @@ Batafsil tavsifni quyidagi havoladan ko'ring.</value>
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Tiklash</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Tiklamoqchi bo'lgan zaxira nusxangiz joylashgan saqlash joyini belgilang. Zaxira nusxa yaratilganda ishlatilgan sozlamalarning aynan o'zidan foydalaning.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Muvaffaqiyatsiz (ochilgan logni ko'ring)</value>
@@ -958,6 +970,9 @@ Batafsil tavsifni quyidagi havoladan ko'ring.</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Siz papka tarkibini mavjud fayllarni qayta yozish orqali yuklashingiz mumkin.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Papka tarkibi yuklanadigan manzil saqlash joyini belgilang. Manzilda mavjud fayllar ustidan yoziladi.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

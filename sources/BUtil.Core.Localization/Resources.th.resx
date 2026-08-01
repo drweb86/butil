@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@
 
 ดูเว็บไซต์แอปพลิเคชันสำหรับเอกสารวิธีตั้งค่าการส่งไฟล์ผ่าน WI-FI ผ่านแอปพลิเคชัน FTP Server บนโทรศัพท์</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>ระบุแหล่งที่มาสำหรับนำเข้าสื่อ — เช่น การ์ด SD โฟลเดอร์กล้อง หรือโทรศัพท์ผ่าน FTPS</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>นำเข้าแหล่งข้อมูล</value>
   </data>
@@ -388,6 +391,9 @@
 ตัวอย่างเช่น หลังจากการสำรองข้อมูลแบบเต็มในวันศุกร์ การสำรองข้อมูลในวันจันทร์จะมีเฉพาะไฟล์ที่เปลี่ยนแปลงตั้งแต่วันศุกร์ การสำรองข้อมูลในวันอังคารจะมีเฉพาะไฟล์ที่เปลี่ยนแปลงตั้งแต่วันจันทร์ และอื่นๆ
 
 หากสำเนาใดก็ตามที่สร้างขึ้นล้มเหลว รวมถึงสำเนาแรก (แบบเต็ม) การกู้คืนจะไม่สมบูรณ์</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>ระบุพื้นที่จัดเก็บส่วนกลางที่ไม่ซ้ำกันซึ่งจะใช้บันทึกเวอร์ชันของข้อมูลสำรอง ตำแหน่งนี้ได้รับการจัดการทั้งหมดโดยแอป — รวมถึงการลบข้อมูล — ดังนั้นอย่าใช้เพื่อวัตถุประสงค์อื่น และอย่าแชร์ระหว่างงานหลายงาน</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>การสำรองข้อมูลแบบเพิ่มหน่วย</value>
@@ -718,6 +724,9 @@ bin
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>การซิงโครไนซ์ไฟล์แบบสองทางระหว่างอุปกรณ์โดยใช้ที่เก็บข้อมูลส่วนกลาง</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>ระบุพื้นที่จัดเก็บส่วนกลางที่ไม่ซ้ำกันซึ่งอุปกรณ์จะใช้ในการซิงค์ อุปกรณ์ที่เข้าร่วมทั้งหมดควรใช้ตำแหน่งที่จัดเก็บเดียวกัน ตำแหน่งนี้ได้รับการจัดการทั้งหมดโดยแอป — รวมถึงการลบข้อมูล — ดังนั้นอย่าใช้เพื่อวัตถุประสงค์อื่น และอย่าแชร์ระหว่างงานหลายงาน</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>สร้างใหม่</value>
   </data>
@@ -768,6 +777,9 @@ bin
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>กู้คืน</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>ระบุพื้นที่จัดเก็บที่มีข้อมูลสำรองที่คุณต้องการกู้คืน ใช้การตั้งค่าเดียวกับตอนที่สร้างข้อมูลสำรอง</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>ล้มเหลว (ดูบันทึกที่เปิดอยู่)</value>
@@ -957,6 +969,9 @@ bin
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>คุณสามารถอัปโหลดเนื้อหาโฟลเดอร์โดยเขียนทับไฟล์ที่มีอยู่แล้ว</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>ระบุพื้นที่จัดเก็บปลายทางที่จะอัปโหลดเนื้อหาโฟลเดอร์ ไฟล์ที่มีอยู่แล้วในปลายทางจะถูกเขียนทับ</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

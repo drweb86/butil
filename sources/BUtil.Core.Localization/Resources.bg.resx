@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
@@ -363,6 +363,9 @@
 
 Вижте уебсайта на приложението за документация как да настроите прехвърляне на файлове чрез WI-FI чрез приложение FTP сървър на телефона.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Посочете източника, от който да се импортират медийни файлове — например SD карта, папка на камера или телефон през FTPS.</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Импортиране на източник на данни</value>
   </data>
@@ -388,6 +391,9 @@
 Например, след пълен архив в петък, архивът в понеделник ще съдържа само файловете, които са се променили от петък. Архивът във вторник съдържа само файловете, които са се променили от понеделник, и т.н. 
 
 Ако някое от създадените копия се повреди, включително първото (пълно), възстановяването ще бъде непълно.</value>
+  </data>
+  <data name="IncrementalBackup_Storage_Help" xml:space="preserve">
+    <value>Посочете уникално централизирано хранилище, в което ще се запазват версиите на резервното копие. Това място се управлява изцяло от приложението — включително изтриването на данни, — затова не го използвайте за нищо друго и не го споделяйте между няколко задачи.</value>
   </data>
   <data name="IncrementalBackup_Title" xml:space="preserve">
     <value>Инкрементално архивиране</value>
@@ -718,6 +724,9 @@ bin.
   <data name="SynchronizationTask_Help" xml:space="preserve">
     <value>Двупосочна синхронизация на файлове между устройства с помощта на централизирано хранилище.</value>
   </data>
+  <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
+    <value>Посочете уникално централизирано хранилище, чрез което устройствата се синхронизират. Всички участващи устройства трябва да използват едно и също място за съхранение. Това място се управлява изцяло от приложението — включително изтриването на данни, — затова не го използвайте за нищо друго и не го споделяйте между няколко задачи.</value>
+  </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Нова</value>
   </data>
@@ -768,6 +777,9 @@ bin.
   </data>
   <data name="Task_Restore" xml:space="preserve">
     <value>Възстановяване</value>
+  </data>
+  <data name="Task_Restore_Storage_Help" xml:space="preserve">
+    <value>Посочете хранилището, съдържащо резервното копие, което искате да възстановите. Използвайте същите настройки, както при създаването на резервното копие.</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Неуспешно (вижте отворения лог)</value>
@@ -957,6 +969,9 @@ bin.
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
     <value>Можете да качите съдържанието на папка с презаписване на вече съществуващи файлове.</value>
+  </data>
+  <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
+    <value>Посочете целевото хранилище, в което ще се качва съдържанието на папката. Съществуващите файлове в местоназначението ще бъдат презаписани.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>
