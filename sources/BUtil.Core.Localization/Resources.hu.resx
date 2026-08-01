@@ -263,6 +263,9 @@ Használati eset: Adatokat másol egy távoli kiszolgálóra. Probléma: az inte
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>A mappa nincs megadva.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} nincs megadva.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>A mappa nem létezik.</value>
   </data>

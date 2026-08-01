@@ -263,6 +263,9 @@
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>ไม่ได้ระบุโฟลเดอร์</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>ไม่ได้ระบุ {0}</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>โฟลเดอร์ไม่มีอยู่</value>
   </data>

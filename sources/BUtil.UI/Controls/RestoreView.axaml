@@ -41,8 +41,12 @@
 			HorizontalAlignment="Stretch"
 			Grid.Row="1"
 			Margin="24 8 24 0"
+			RowDefinitions="Auto, Auto"
 			ColumnDefinitions="*, Auto, Auto">
-			<Button Grid.Column="1"
+			<decor:MessageBar Grid.Row="0" Grid.ColumnSpan="3"
+				Text="{Binding FormErrorsText}"
+				Kind="Error" />
+			<Button Grid.Row="1" Grid.Column="1"
 				VerticalAlignment="Center"
 				HorizontalContentAlignment="Center"
 				IsVisible="{Binding IsSetupVisible}"
@@ -52,7 +56,7 @@
 				Content="{Binding Button_Continue}"
 				Command="{Binding ContinueCommand}" 
 				/>
-			<Button Grid.Column="2"
+			<Button Grid.Row="1" Grid.Column="2"
 				VerticalAlignment="Center"
 				HorizontalContentAlignment="Center"
 				Margin="4"

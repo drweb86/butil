@@ -263,6 +263,9 @@ Scenariusz użycia: Kopiujesz dane na zdalny serwer. Jest problem: dostawca inte
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Folder nie został określony.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} nie zostało określone.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Folder nie istnieje.</value>
   </data>

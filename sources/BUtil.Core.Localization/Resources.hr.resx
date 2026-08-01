@@ -263,6 +263,9 @@ Scenarij korištenja: Kopirate podatke na udaljeni poslužitelj. Problem: ISP sm
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Mapa nije navedena.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} nije naveden.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Mapa ne postoji.</value>
   </data>

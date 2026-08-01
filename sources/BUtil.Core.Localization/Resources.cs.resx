@@ -263,6 +263,9 @@ Scénář použití: Kopírujete data na vzdálený server. Problém: Poskytovat
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Složka není zadána.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} není zadán.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Složka neexistuje.</value>
   </data>

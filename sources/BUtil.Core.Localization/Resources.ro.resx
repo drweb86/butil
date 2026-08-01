@@ -263,6 +263,9 @@ Scenariu de utilizare: Copiați date pe un server la distanță. Există o probl
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Folderul nu este specificat.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} nu este specificat.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Folderul nu există.</value>
   </data>

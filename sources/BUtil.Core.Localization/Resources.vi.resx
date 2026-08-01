@@ -260,6 +260,9 @@ Kịch bản sử dụng: Bạn sao chép dữ liệu đến máy chủ từ xa.
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Thư mục không được chỉ định.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} không được chỉ định.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Thư mục không tồn tại.</value>
   </data>

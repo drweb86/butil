@@ -9,6 +9,7 @@ public abstract class StorageFieldViewModel(StorageFieldDescriptor descriptor) :
     private string? _uiLabelOverride;
     private bool _uiHidden;
     private string? _uiPlaceholderOverride;
+    private string? _error;
 
     public StorageFieldDescriptor Descriptor { get; } = descriptor;
 
@@ -29,6 +30,21 @@ public abstract class StorageFieldViewModel(StorageFieldDescriptor descriptor) :
     /// When false, the entire row (including per-option help for enums) is hidden.
     /// </summary>
     public bool IsFieldVisible => !_uiHidden;
+
+    public string? Error
+    {
+        get => _error;
+        protected set
+        {
+            if (value == _error) return;
+            _error = value;
+            OnPropertyChanged(nameof(Error));
+        }
+    }
+
+    public void ClearError() => Error = null;
+
+    public void SetError(string? error) => Error = error;
 
     internal void ResetUiCustomization()
     {
@@ -61,6 +77,34 @@ public abstract class StorageFieldViewModel(StorageFieldDescriptor descriptor) :
             _uiPlaceholderOverride = placeholderOverride;
             OnPropertyChanged(nameof(DisplayPlaceholder));
         }
+    }
+
+    public virtual bool Validate()
+    {
+        if (!IsFieldVisible || Descriptor.IsOptional)
+        {
+            Error = null;
+            return true;
+        }
+
+        if (string.IsNullOrWhiteSpace(GetValue()))
+        {
+            Error = GetEmptyValidationMessage();
+            return false;
+        }
+
+        Error = null;
+        return true;
+    }
+
+    protected virtual string GetEmptyValidationMessage()
+    {
+        return Descriptor.Type switch
+        {
+            StorageFieldType.Folder => Resources.Field_Folder_Validation_Empty,
+            StorageFieldType.Password => Resources.Password_Field_Validation_NotSpecified,
+            _ => string.Format(Resources.Field_Validation_NotSpecified, Descriptor.Label),
+        };
     }
 
     public abstract string? GetValue();

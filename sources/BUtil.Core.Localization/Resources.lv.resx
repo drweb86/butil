@@ -263,6 +263,9 @@ Lietošanas scenārijs: Jūs kopējat datus uz attālo serveri. Problēma: inter
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Mape nav norādīta.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} nav norādīts.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Mape neeksistē.</value>
   </data>

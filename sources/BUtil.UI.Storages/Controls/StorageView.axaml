@@ -34,7 +34,8 @@
 							IsVisible="{Binding IsFieldVisible}"
 							Label="{Binding DisplayLabel}"
 							Placeholder="{Binding DisplayPlaceholder}"
-							Text="{Binding Value}" />
+							Text="{Binding Value}"
+							Error="{Binding Error}" />
 					</DataTemplate>
 
 					<DataTemplate x:DataType="sfvm:PasswordFieldViewModel">
@@ -42,7 +43,8 @@
 							IsVisible="{Binding IsFieldVisible}"
 							Label="{Binding DisplayLabel}"
 							PasswordChar="*"
-							Text="{Binding Value}" />
+							Text="{Binding Value}"
+							Error="{Binding Error}" />
 					</DataTemplate>
 
 					<DataTemplate x:DataType="sfvm:IntegerFieldViewModel">
@@ -51,7 +53,8 @@
 							Label="{Binding DisplayLabel}"
 							Minimum="{Binding Minimum}"
 							Maximum="{Binding Maximum}"
-							Value="{Binding Value}" />
+							Value="{Binding Value}"
+							Error="{Binding Error}" />
 					</DataTemplate>
 
 					<DataTemplate x:DataType="sfvm:FolderFieldViewModel">
@@ -62,7 +65,8 @@
 							Text="{Binding Value}"
 							ActionText="{Binding BrowseLabel}"
 							ActionIcon="📂"
-							ActionCommand="{Binding BrowseCommand}" />
+							ActionCommand="{Binding BrowseCommand}"
+							Error="{Binding Error}" />
 					</DataTemplate>
 
 					<DataTemplate x:DataType="sfvm:FileFieldViewModel">
@@ -73,7 +77,8 @@
 							Text="{Binding Value}"
 							ActionText="{Binding BrowseLabel}"
 							ActionIcon="📂"
-							ActionCommand="{Binding BrowseCommand}" />
+							ActionCommand="{Binding BrowseCommand}"
+							Error="{Binding Error}" />
 					</DataTemplate>
 
 					<DataTemplate x:DataType="sfvm:EnumFieldViewModel">
@@ -82,7 +87,8 @@
 							Label="{Binding DisplayLabel}"
 							ItemsSource="{Binding DisplayOptions}"
 							SelectedItem="{Binding SelectedDisplay}"
-							Help="{Binding ChoiceHelp}" />
+							Help="{Binding ChoiceHelp}"
+							Error="{Binding Error}" />
 					</DataTemplate>
 
 				</ItemsControl.DataTemplates>
@@ -93,7 +99,8 @@
 				Label="{Binding DataStorage_Field_UploadQuota}"
 				Minimum="0"
 				Value="{Binding Quota}"
-				Help="{Binding DataStorage_Field_UploadQuota_Help}" />
+				Help="{Binding DataStorage_Field_UploadQuota_Help}"
+				Error="{Binding QuotaError}" />
 
 			<!-- Mount/unmount scripts (shown only when platform supports script execution) -->
 			<Expander Classes="TaskSection" IsVisible="{Binding CanLaunchScripts}" HorizontalAlignment="Stretch">
@@ -111,6 +118,9 @@
 						ActionIcon="🚀"
 						ActionText="{Binding Task_Launch}"
 						ActionCommand="{Binding MountScriptLaunchCommand}" />
+					<decor:MessageBar
+						Text="{Binding MountScriptMessage}"
+						Kind="{Binding MountScriptMessageKind}" />
 					<decor:TextFieldWithAction
 						Label="{Binding DataStorage_Field_DisconnectionScript}"
 						Text="{Binding UnmountScript}"
@@ -120,8 +130,13 @@
 						ActionIcon="🚀"
 						ActionText="{Binding Task_Launch}"
 						ActionCommand="{Binding UnmountScriptLaunchCommand}" />
+					<decor:MessageBar
+						Text="{Binding UnmountScriptMessage}"
+						Kind="{Binding UnmountScriptMessageKind}" />
 				</StackPanel>
 			</Expander>
+
+			<decor:ValidationError Error="{Binding Error}" Margin="0 0 0 8" />
 
 		</StackPanel>
 	</Expander>

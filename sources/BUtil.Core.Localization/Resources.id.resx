@@ -260,6 +260,9 @@
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Folder tidak ditentukan.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} tidak ditentukan.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Folder tidak ada.</value>
   </data>

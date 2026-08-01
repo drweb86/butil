@@ -263,6 +263,9 @@ Brugsscenarie: Du kopierer data til en fjernserver. Der er et problem: Internetu
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Mappe er ikke angivet.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} er ikke angivet.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Mappen findes ikke.</value>
   </data>

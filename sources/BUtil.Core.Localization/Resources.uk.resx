@@ -263,6 +263,9 @@
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Папку не вказано.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} не вказано.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Папки не існує.</value>
   </data>

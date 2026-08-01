@@ -260,6 +260,9 @@
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Folder no dey specified.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} no dey specified.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Folder no dey exist.</value>
   </data>

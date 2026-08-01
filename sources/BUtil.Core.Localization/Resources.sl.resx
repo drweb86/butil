@@ -263,6 +263,9 @@ Scenarij uporabe: Kopirate podatke na oddaljeni strežnik. Težava: ponudnik int
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Mapa ni navedena.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} ni naveden.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Mapa ne obstaja.</value>
   </data>

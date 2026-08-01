@@ -61,6 +61,24 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to English.
+        /// </summary>
+        public static string _Technical_NsisLanguage {
+            get {
+                return ResourceManager.GetString("_Technical_NsisLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to en-US.
+        /// </summary>
+        public static string _Technical_WingetLocale {
+            get {
+                return ResourceManager.GetString("_Technical_WingetLocale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do nothing.
         /// </summary>
         public static string AfterTaskSelection_DoNothing {
@@ -662,6 +680,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} is not specified..
+        /// </summary>
+        public static string Field_Validation_NotSpecified {
+            get {
+                return ResourceManager.GetString("Field_Validation_NotSpecified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Version:.
         /// </summary>
         public static string Field_Version {
@@ -842,6 +869,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete copied data on source media.
+        /// </summary>
+        public static string ImportMediaTask_DeleteCopiedDataOnSourceMedia {
+            get {
+                return ResourceManager.GetString("ImportMediaTask_DeleteCopiedDataOnSourceMedia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit &quot;{0}&quot; media import task.
         /// </summary>
         public static string ImportMediaTask_Edit_Title {
@@ -928,15 +964,6 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("ImportMediaTask_Help", resourceCulture);
             }
         }
-
-        /// <summary>
-        ///   Looks up a localized string similar to Specify the source to import media from — for example an SD card, camera folder, or phone over FTPS..
-        /// </summary>
-        public static string ImportMediaTask_Storage_Help {
-            get {
-                return ResourceManager.GetString("ImportMediaTask_Storage_Help", resourceCulture);
-            }
-        }
         
         /// <summary>
         ///   Looks up a localized string similar to Import data source.
@@ -948,20 +975,20 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete copied data on source media.
-        /// </summary>
-        public static string ImportMediaTask_DeleteCopiedDataOnSourceMedia {
-            get {
-                return ResourceManager.GetString("ImportMediaTask_DeleteCopiedDataOnSourceMedia", resourceCulture);
-            }
-        }
-
-        /// <summary>
         ///   Looks up a localized string similar to Skip already imported files.
         /// </summary>
         public static string ImportMediaTask_SkipAlreadyImportedFiles {
             get {
                 return ResourceManager.GetString("ImportMediaTask_SkipAlreadyImportedFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specify the source to import media from — for example an SD card, camera folder, or phone over FTPS..
+        /// </summary>
+        public static string ImportMediaTask_Storage_Help {
+            get {
+                return ResourceManager.GetString("ImportMediaTask_Storage_Help", resourceCulture);
             }
         }
         
@@ -993,7 +1020,7 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("IncrementalBackup_Help", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Specify a unique centralized storage where backup versions will be saved. This location is managed entirely by the app — including deletion of data — so do not use it for anything else, and do not share it between multiple tasks..
         /// </summary>
@@ -1040,6 +1067,119 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Administrator privileges required to install for all users.
+        ///Please run the installer as administrator or use /CURRENTUSER..
+        /// </summary>
+        public static string Installer_AdminRequired {
+            get {
+                return ResourceManager.GetString("Installer_AdminRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Administrator privileges are required to install for all users.
+        ///
+        ///Please either:
+        ///- Choose &apos;Install for current user only&apos;, or
+        ///- Run this installer as administrator.
+        /// </summary>
+        public static string Installer_AdminRequiredDetailed {
+            get {
+                return ResourceManager.GetString("Installer_AdminRequiredDetailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The application will be available for all users on this computer..
+        /// </summary>
+        public static string Installer_AllUsersDescription {
+            get {
+                return ResourceManager.GetString("Installer_AllUsersDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Install for &amp;all users (requires administrator privileges).
+        /// </summary>
+        public static string Installer_AllUsersOption {
+            get {
+                return ResourceManager.GetString("Installer_AllUsersOption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This installer requires a x64 or arm64 version of Windows..
+        /// </summary>
+        public static string Installer_ArchRequired {
+            get {
+                return ResourceManager.GetString("Installer_ArchRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recommended. The application will only be available for your user account..
+        /// </summary>
+        public static string Installer_CurrentUserDescription {
+            get {
+                return ResourceManager.GetString("Installer_CurrentUserDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Install for &amp;current user only.
+        /// </summary>
+        public static string Installer_CurrentUserOption {
+            get {
+                return ResourceManager.GetString("Installer_CurrentUserOption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Installing for:.
+        /// </summary>
+        public static string Installer_InstallingFor {
+            get {
+                return ResourceManager.GetString("Installer_InstallingFor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please choose whether you want to install BUtil for yourself only or for all users of this computer..
+        /// </summary>
+        public static string Installer_InstallModeDescription {
+            get {
+                return ResourceManager.GetString("Installer_InstallModeDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select who can use this application.
+        /// </summary>
+        public static string Installer_InstallModeSubtitle {
+            get {
+                return ResourceManager.GetString("Installer_InstallModeSubtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose Installation Type.
+        /// </summary>
+        public static string Installer_InstallModeTitle {
+            get {
+                return ResourceManager.GetString("Installer_InstallModeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Launch App.
+        /// </summary>
+        public static string Installer_LaunchApp {
+            get {
+                return ResourceManager.GetString("Installer_LaunchApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Key file:.
         /// </summary>
         public static string KeyFile_Field {
@@ -1076,15 +1216,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Here you can specify folders you'd like to backup..
-        /// </summary>
-        public static string WhatTask_Description {
-            get {
-                return ResourceManager.GetString("WhatTask_Description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to No items to process..
         /// </summary>
         public static string LeftMenu_What_Validation {
@@ -1110,22 +1241,13 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("LeftMenu_When_Help", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to This section is optional. If you skip it, the task will run only when you launch it manually..
         /// </summary>
         public static string LeftMenu_When_Optional_Hint {
             get {
                 return ResourceManager.GetString("LeftMenu_When_Optional_Hint", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to Run at Login.
-        /// </summary>
-        public static string RunAtLogin_Label {
-            get {
-                return ResourceManager.GetString("RunAtLogin_Label", resourceCulture);
             }
         }
         
@@ -1238,15 +1360,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Information.
-        /// </summary>
-        public static string Messages_Header_Information {
-            get {
-                return ResourceManager.GetString("Messages_Header_Information", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Question.
         /// </summary>
         public static string Messages_Header_Question {
@@ -1274,15 +1387,6 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Name &apos;{0}&apos; length exceeds limit by {1} chars..
-        /// </summary>
-        public static string Name_Field_Validation_ExceedsLimit {
-            get {
-                return ResourceManager.GetString("Name_Field_Validation_ExceedsLimit", resourceCulture);
-            }
-        }
-
-        /// <summary>
         ///   Looks up a localized string similar to A task with this name already exists..
         /// </summary>
         public static string Name_Field_Validation_Duplicate {
@@ -1290,7 +1394,16 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("Name_Field_Validation_Duplicate", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name &apos;{0}&apos; length exceeds limit by {1} chars..
+        /// </summary>
+        public static string Name_Field_Validation_ExceedsLimit {
+            get {
+                return ResourceManager.GetString("Name_Field_Validation_ExceedsLimit", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
@@ -1299,7 +1412,7 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("Name_Title", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Drive Letter:.
         /// </summary>
@@ -1308,7 +1421,7 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("Nfs_Field_DriveLetter", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Mount Options:.
         /// </summary>
@@ -1317,7 +1430,7 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("Nfs_Field_MountOptions", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Mount Point:.
         /// </summary>
@@ -1326,7 +1439,7 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("Nfs_Field_MountPoint", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Share Path:.
         /// </summary>
@@ -1335,7 +1448,7 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("Nfs_Field_SharePath", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to (optional).
         /// </summary>
@@ -1452,6 +1565,300 @@ namespace BUtil.Core.Localization {
         public static string RestoreFrom_Field_Validation_StateInvalid {
             get {
                 return ResourceManager.GetString("RestoreFrom_Field_Validation_StateInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Run at Login.
+        /// </summary>
+        public static string RunAtLogin_Label {
+            get {
+                return ResourceManager.GetString("RunAtLogin_Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alibaba Cloud OSS — S3-compatible object storage from Alibaba.
+        ///
+        ///1. In OSS Console (https://oss.console.aliyun.com/), create a bucket. Note its region (e.g. oss-cn-hangzhou).
+        ///2. In RAM Console → Users → create a user → attach AliyunOSSFullAccess → create an AccessKey.
+        ///   Copy the AccessKey ID (= Access Key) and AccessKey Secret (= Secret Key).
+        ///3. Service URL: https://oss-&lt;REGION&gt;.aliyuncs.com (e.g. https://oss-cn-hangzhou.aliyuncs.com).
+        ///4. Region: e.g. oss-cn-hangzhou..
+        /// </summary>
+        public static string S3_Provider_AlibabaCloudOSS_Help {
+            get {
+                return ResourceManager.GetString("S3_Provider_AlibabaCloudOSS_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AWS S3 — Amazon&apos;s original object storage.
+        ///
+        ///1. Open the S3 Console (https://s3.console.aws.amazon.com/) and create a bucket. Note its region (e.g. us-east-1).
+        ///2. Open IAM → Users → create a user → attach the AmazonS3FullAccess policy.
+        ///3. Under Security credentials, create an Access key — copy the Key ID and Secret.
+        ///4. Fill in: Bucket, Access Key, Secret Key, and Region..
+        /// </summary>
+        public static string S3_Provider_AWSS3_Help {
+            get {
+                return ResourceManager.GetString("S3_Provider_AWSS3_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backblaze B2 — affordable S3-compatible storage.
+        ///
+        ///1. In Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets, create a bucket.
+        ///2. Go to App Keys → Add a New Application Key, scope it to the bucket.
+        ///   Copy the keyID (= Access Key) and applicationKey (= Secret Key).
+        ///3. Service URL: your bucket&apos;s endpoint shown in bucket details, e.g. https://s3.us-west-004.backblazeb2.com
+        ///4. Region: the segment between &apos;s3.&apos; and &apos;.backblazeb2.com&apos;, e.g. us-west-004..
+        /// </summary>
+        public static string S3_Provider_BackblazeB2_Help {
+            get {
+                return ResourceManager.GetString("S3_Provider_BackblazeB2_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Baidu Cloud BOS — S3-compatible object storage from Baidu.
+        ///
+        ///1. In BOS Console (https://console.bce.baidu.com/bos/), create a bucket. Note its region (e.g. bj, gz, su).
+        ///2. Go to Security → Access Keys — copy your Access Key ID and Secret Access Key.
+        ///3. Service URL: https://s3.&lt;REGION&gt;.bcebos.com (e.g. https://s3.bj.bcebos.com).
+        ///4. Region: e.g. bj..
+        /// </summary>
+        public static string S3_Provider_BaiduCloudBOS_Help {
+            get {
+                return ResourceManager.GetString("S3_Provider_BaiduCloudBOS_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cloudflare R2 — zero-egress S3-compatible storage.
+        ///
+        ///1. In Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → create a bucket.
+        ///2. Go to R2 → Manage R2 API Tokens → Create API Token with Object Read &amp; Write.
+        ///   Copy the Access Key ID and Secret Access Key.
+        ///3. Service URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+        ///   Your Account ID is shown on the R2 overview page.
+        ///4. Fill in: Bucket, Access Key, Secret Key, and Service URL. Region is set to &apos;auto&apos; automatically..
+        /// </summary>
+        public static string S3_Provider_CloudflareR2_Help {
+            get {
+                return ResourceManager.GetString("S3_Provider_CloudflareR2_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cloud.ru (SberCloud) Object Storage — S3-compatible OBS storage.
+        ///
+        ///1. In Cloud.ru Console (https://cloud.ru/) → Object Storage Service (OBS) → create a bucket.
+        ///2. Go to My Credentials → Access Keys → Add Access Key.
+        ///   Copy the Access Key and Secret Access Key.
+        ///3. Fill in: Bucket, Access Key, Secret Key, and Region (e.g. ru-moscow-1).
+        ///   Service URL is filled in automatically..
+        /// </summary>
+        public static string S3_Provider_CloudRuStorage_Help {
+            get {
+                return ResourceManager.GetString("S3_Provider_CloudRuStorage_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MinIO or any S3-compatible server.
+        ///
+        ///1. Start your MinIO (or other S3-compatible) server.
+        ///2. Create a bucket via the MinIO Console or &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;.
+        ///3. Create an access key in MinIO Console → Access Keys (avoid root credentials in production).
+        ///4. Service URL: your server endpoint, e.g. http://192.168.1.10:9000 or https://minio.example.com.
+        ///5. Region: any value (e.g. us-east-1) — or leave empty if the server does not enforce it..
+        /// </summary>
+        public static string S3_Provider_Custom_Help {
+            get {
+                return ResourceManager.GetString("S3_Provider_Custom_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DigitalOcean Spaces — S3-compatible object storage.
+        ///
+        ///1. In Spaces (https://cloud.digitalocean.com/spaces), create a Space. Note its region (e.g. nyc3).
+        ///2. Go to API → Spaces Keys → Generate New Key. Copy the Key (= Access Key) and Secret.
+        ///3. Service URL: https://&lt;REGION&gt;.digitaloceanspaces.com (e.g. https://nyc3.digitaloceanspaces.com).
+        ///4. Region: same short code, e.g. nyc3..
+        /// </summary>
+        public static string S3_Provider_DigitalOceanSpaces_Help {
+            get {
+                return ResourceManager.GetString("S3_Provider_DigitalOceanSpaces_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Google Cloud Storage — via the S3 interoperability API.
+        ///
+        ///1. In Google Cloud Console (https://console.cloud.google.com/storage), create a bucket.
+        ///2. Go to Cloud Storage → Settings → Interoperability → create an HMAC key for a service account.
+        ///   Copy the Access Key and Secret.
+        ///3. Fill in: Bucket, Access Key (HMAC key), Secret Key (HMAC secret).
+        ///   Service URL and region are set automatically..
+        /// </summary>
+        public static string S3_Provider_GoogleCloudStorage_Help {
+            get {
+                return ResourceManager.GetString("S3_Provider_GoogleCloudStorage_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Huawei Cloud OBS — S3-compatible object storage from Huawei.
+        ///
+        ///1. In OBS Console (https://console.huaweicloud.com/obs/), create a bucket. Note its region (e.g. cn-north-4).
+        ///2. Go to My Credentials → Access Keys → Create Access Key.
+        ///   Copy the AK (= Access Key) and SK (= Secret Key).
+        ///3. Service URL: https://obs.&lt;REGION&gt;.myhuaweicloud.com (e.g. https://obs.cn-north-4.myhuaweicloud.com).
+        ///4. Region: e.g. cn-north-4..
+        /// </summary>
+        public static string S3_Provider_HuaweiCloudOBS_Help {
+            get {
+                return ResourceManager.GetString("S3_Provider_HuaweiCloudOBS_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Linode (Akamai) Object Storage — S3-compatible storage.
+        ///
+        ///1. In Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets), create a bucket. Note its cluster.
+        ///2. Go to Object Storage → Access Keys → Create an Access Key scoped to the bucket.
+        ///   Copy the Access Key and Secret Key.
+        ///3. Service URL: https://&lt;CLUSTER&gt;.linodeobjects.com (e.g. https://us-east-1.linodeobjects.com).
+        ///4. Region: same cluster code, e.g. us-east-1..
+        /// </summary>
+        public static string S3_Provider_LinodeObjectStorage_Help {
+            get {
+                return ResourceManager.GetString("S3_Provider_LinodeObjectStorage_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Qiniu Cloud Kodo — S3-compatible storage from Qiniu.
+        ///
+        ///1. In Qiniu Portal (https://portal.qiniu.com/kodo/bucket), create a bucket. Note its region.
+        ///2. Go to Personal Center → Key Management — copy your AccessKey and SecretKey.
+        ///3. Service URL by region:
+        ///   East China:    https://s3-cn-east-1.qiniucs.com
+        ///   North China:   https://s3-cn-north-1.qiniucs.com
+        ///   South China:   https://s3-cn-south-1.qiniucs.com
+        ///   North America: https://s3-us-north-1.qiniucs.com
+        ///4. Region: matching code, e.g. cn-east-1..
+        /// </summary>
+        public static string S3_Provider_QiniuCloudKodo_Help {
+            get {
+                return ResourceManager.GetString("S3_Provider_QiniuCloudKodo_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scaleway Object Storage — European S3-compatible storage.
+        ///
+        ///1. In Scaleway Console (https://console.scaleway.com/object-storage/buckets), create a bucket. Note its region (e.g. fr-par).
+        ///2. Go to IAM → API Keys → Generate API Key with Object Storage write permissions.
+        ///   Copy the Access Key and Secret Key.
+        ///3. Service URL: https://s3.&lt;REGION&gt;.scw.cloud (e.g. https://s3.fr-par.scw.cloud).
+        ///4. Region: e.g. fr-par, nl-ams, pl-waw..
+        /// </summary>
+        public static string S3_Provider_ScalewayObjectStorage_Help {
+            get {
+                return ResourceManager.GetString("S3_Provider_ScalewayObjectStorage_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selectel Object Storage — S3-compatible Russian storage.
+        ///
+        ///1. In Selectel Panel (https://my.selectel.ru/) → Cloud Storage → create a container (= bucket).
+        ///2. Under Users &amp; Roles, create a service user with storage access → S3 Keys → create a key pair.
+        ///   Copy the Access Key and Secret Key.
+        ///3. Fill in: Bucket, Access Key, Secret Key.
+        ///   Service URL is filled in automatically..
+        /// </summary>
+        public static string S3_Provider_SelectelStorage_Help {
+            get {
+                return ResourceManager.GetString("S3_Provider_SelectelStorage_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tencent Cloud COS — S3-compatible object storage from Tencent.
+        ///
+        ///1. In COS Console (https://console.cloud.tencent.com/cos), create a bucket. Note the AppId and Region (e.g. ap-beijing).
+        ///2. In Access Management → API Keys → Create Key.
+        ///   Copy the SecretId (= Access Key) and SecretKey (= Secret Key).
+        ///3. Service URL: https://cos.&lt;REGION&gt;.myqcloud.com (e.g. https://cos.ap-beijing.myqcloud.com).
+        ///4. Bucket name format: &lt;name&gt;-&lt;AppId&gt; (e.g. mybucket-1250000000). Region: e.g. ap-beijing..
+        /// </summary>
+        public static string S3_Provider_TencentCloudCOS_Help {
+            get {
+                return ResourceManager.GetString("S3_Provider_TencentCloudCOS_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VK Cloud Object Storage — S3-compatible storage from VK Cloud.
+        ///
+        ///1. In VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → create a bucket.
+        ///2. Under your account → Access Keys → create a new key pair.
+        ///   Copy the Access Key and Secret Key.
+        ///3. Fill in: Bucket, Access Key, Secret Key, and Region if required (e.g. ru-msk).
+        ///   Service URL is filled in automatically..
+        /// </summary>
+        public static string S3_Provider_VKCloudStorage_Help {
+            get {
+                return ResourceManager.GetString("S3_Provider_VKCloudStorage_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Volcano Engine TOS (ByteDance) — S3-compatible storage.
+        ///
+        ///1. In Volcano Engine Console (https://console.volcengine.com/tos), create a bucket. Note its region (e.g. cn-beijing).
+        ///2. Go to IAM → Access Keys → create a key.
+        ///   Copy the Access Key ID and Secret Access Key.
+        ///3. Service URL: https://tos-s3-&lt;REGION&gt;.volces.com (e.g. https://tos-s3-cn-beijing.volces.com).
+        ///4. Region: e.g. cn-beijing..
+        /// </summary>
+        public static string S3_Provider_VolcanoEngineTOS_Help {
+            get {
+                return ResourceManager.GetString("S3_Provider_VolcanoEngineTOS_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wasabi — hot cloud storage with no egress fees.
+        ///
+        ///1. In Wasabi Console (https://console.wasabisys.com/) → Buckets → Create Bucket. Choose a region.
+        ///2. Go to Access Keys → Create New Access Key. Copy the Access Key and Secret Key.
+        ///3. Fill in: Bucket, Access Key, Secret Key, and Region (e.g. us-east-1, eu-central-1).
+        ///   Service URL is filled in automatically..
+        /// </summary>
+        public static string S3_Provider_Wasabi_Help {
+            get {
+                return ResourceManager.GetString("S3_Provider_Wasabi_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yandex Object Storage — S3-compatible Russian cloud storage.
+        ///
+        ///1. In Yandex Cloud Console (https://console.yandex.cloud/) → Object Storage → create a bucket.
+        ///2. Go to Service Accounts → create one with the storage.editor role → create a Static access key.
+        ///   Copy the Key ID (= Access Key) and Secret key.
+        ///3. Fill in: Bucket, Access Key, Secret Key.
+        ///   Service URL and region are set automatically..
+        /// </summary>
+        public static string S3_Provider_YandexObjectStorage_Help {
+            get {
+                return ResourceManager.GetString("S3_Provider_YandexObjectStorage_Help", resourceCulture);
             }
         }
         
@@ -1589,95 +1996,7 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("State_LoadFromEverywhere", resourceCulture);
             }
         }
-
-        public static string S3_Provider_AlibabaCloudOSS_Help {
-            get { return ResourceManager.GetString("S3_Provider_AlibabaCloudOSS_Help", resourceCulture); }
-        }
-        public static string S3_Provider_AWSS3_Help {
-            get { return ResourceManager.GetString("S3_Provider_AWSS3_Help", resourceCulture); }
-        }
-        public static string S3_Provider_BaiduCloudBOS_Help {
-            get { return ResourceManager.GetString("S3_Provider_BaiduCloudBOS_Help", resourceCulture); }
-        }
-        public static string S3_Provider_BackblazeB2_Help {
-            get { return ResourceManager.GetString("S3_Provider_BackblazeB2_Help", resourceCulture); }
-        }
-        public static string S3_Provider_CloudflareR2_Help {
-            get { return ResourceManager.GetString("S3_Provider_CloudflareR2_Help", resourceCulture); }
-        }
-        public static string S3_Provider_CloudRuStorage_Help {
-            get { return ResourceManager.GetString("S3_Provider_CloudRuStorage_Help", resourceCulture); }
-        }
-        public static string S3_Provider_Custom_Help {
-            get { return ResourceManager.GetString("S3_Provider_Custom_Help", resourceCulture); }
-        }
-        public static string S3_Provider_DigitalOceanSpaces_Help {
-            get { return ResourceManager.GetString("S3_Provider_DigitalOceanSpaces_Help", resourceCulture); }
-        }
-        public static string S3_Provider_GoogleCloudStorage_Help {
-            get { return ResourceManager.GetString("S3_Provider_GoogleCloudStorage_Help", resourceCulture); }
-        }
-        public static string S3_Provider_HuaweiCloudOBS_Help {
-            get { return ResourceManager.GetString("S3_Provider_HuaweiCloudOBS_Help", resourceCulture); }
-        }
-        public static string S3_Provider_LinodeObjectStorage_Help {
-            get { return ResourceManager.GetString("S3_Provider_LinodeObjectStorage_Help", resourceCulture); }
-        }
-        public static string S3_Provider_QiniuCloudKodo_Help {
-            get { return ResourceManager.GetString("S3_Provider_QiniuCloudKodo_Help", resourceCulture); }
-        }
-        public static string S3_Provider_ScalewayObjectStorage_Help {
-            get { return ResourceManager.GetString("S3_Provider_ScalewayObjectStorage_Help", resourceCulture); }
-        }
-        public static string S3_Provider_SelectelStorage_Help {
-            get { return ResourceManager.GetString("S3_Provider_SelectelStorage_Help", resourceCulture); }
-        }
-        public static string S3_Provider_TencentCloudCOS_Help {
-            get { return ResourceManager.GetString("S3_Provider_TencentCloudCOS_Help", resourceCulture); }
-        }
-        public static string S3_Provider_VKCloudStorage_Help {
-            get { return ResourceManager.GetString("S3_Provider_VKCloudStorage_Help", resourceCulture); }
-        }
-        public static string S3_Provider_VolcanoEngineTOS_Help {
-            get { return ResourceManager.GetString("S3_Provider_VolcanoEngineTOS_Help", resourceCulture); }
-        }
-        public static string S3_Provider_Wasabi_Help {
-            get { return ResourceManager.GetString("S3_Provider_Wasabi_Help", resourceCulture); }
-        }
-        public static string S3_Provider_YandexObjectStorage_Help {
-            get { return ResourceManager.GetString("S3_Provider_YandexObjectStorage_Help", resourceCulture); }
-        }
-        public static string WebDav_Preset_Box_Help {
-            get { return ResourceManager.GetString("WebDav_Preset_Box_Help", resourceCulture); }
-        }
-        public static string WebDav_Preset_Custom_Help {
-            get { return ResourceManager.GetString("WebDav_Preset_Custom_Help", resourceCulture); }
-        }
-        public static string WebDav_Preset_IONOSHiDrive_Help {
-            get { return ResourceManager.GetString("WebDav_Preset_IONOSHiDrive_Help", resourceCulture); }
-        }
-        public static string WebDav_Preset_Jianguoyun_Help {
-            get { return ResourceManager.GetString("WebDav_Preset_Jianguoyun_Help", resourceCulture); }
-        }
-        public static string WebDav_Preset_Koofr_Help {
-            get { return ResourceManager.GetString("WebDav_Preset_Koofr_Help", resourceCulture); }
-        }
-        public static string WebDav_Preset_MailRuCloud_Help {
-            get { return ResourceManager.GetString("WebDav_Preset_MailRuCloud_Help", resourceCulture); }
-        }
-        public static string WebDav_Preset_Nextcloud_Help {
-            get { return ResourceManager.GetString("WebDav_Preset_Nextcloud_Help", resourceCulture); }
-        }
-        public static string WebDav_Preset_ownCloud_Help {
-            get { return ResourceManager.GetString("WebDav_Preset_ownCloud_Help", resourceCulture); }
-        }
-        public static string WebDav_Preset_pCloud_Help {
-            get { return ResourceManager.GetString("WebDav_Preset_pCloud_Help", resourceCulture); }
-        }
-        public static string WebDav_Preset_YandexDisk_Help {
-            get { return ResourceManager.GetString("WebDav_Preset_YandexDisk_Help", resourceCulture); }
-        }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Access Key:.
         /// </summary>
@@ -1686,7 +2005,7 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("Storage_Field_AccessKey", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Account Key:.
         /// </summary>
@@ -1695,7 +2014,7 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("Storage_Field_AccountKey", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Account Name:.
         /// </summary>
@@ -1704,7 +2023,7 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("Storage_Field_AccountName", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Base Path:.
         /// </summary>
@@ -1713,7 +2032,7 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("Storage_Field_BasePath", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Bucket:.
         /// </summary>
@@ -1722,7 +2041,7 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("Storage_Field_Bucket", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Container:.
         /// </summary>
@@ -1731,7 +2050,7 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("Storage_Field_Container", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to HTTPS:.
         /// </summary>
@@ -1740,7 +2059,7 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("Storage_Field_Https", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Password / OAuth Token:.
         /// </summary>
@@ -1749,7 +2068,7 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("Storage_Field_PasswordOrToken", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Path Prefix:.
         /// </summary>
@@ -1758,7 +2077,7 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("Storage_Field_PathPrefix", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Preset:.
         /// </summary>
@@ -1767,7 +2086,7 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("Storage_Field_Preset", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Provider:.
         /// </summary>
@@ -1776,7 +2095,7 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("Storage_Field_Provider", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Region:.
         /// </summary>
@@ -1785,7 +2104,7 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("Storage_Field_Region", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Secret Key:.
         /// </summary>
@@ -1794,7 +2113,7 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("Storage_Field_SecretKey", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Service URL:.
         /// </summary>
@@ -1803,7 +2122,7 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("Storage_Field_ServiceUrl", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Add file exclude pattern.
         /// </summary>
@@ -1819,6 +2138,15 @@ namespace BUtil.Core.Localization {
         public static string StorageItem_ExcludePattern_Edit {
             get {
                 return ResourceManager.GetString("StorageItem_ExcludePattern_Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exclude files.
+        /// </summary>
+        public static string StorageItem_ExcludePattern_ExpanderHeader {
+            get {
+                return ResourceManager.GetString("StorageItem_ExcludePattern_ExpanderHeader", resourceCulture);
             }
         }
         
@@ -1853,15 +2181,6 @@ namespace BUtil.Core.Localization {
         public static string StorageItem_ExcludePattern_Hint {
             get {
                 return ResourceManager.GetString("StorageItem_ExcludePattern_Hint", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Exclude files.
-        /// </summary>
-        public static string StorageItem_ExcludePattern_ExpanderHeader {
-            get {
-                return ResourceManager.GetString("StorageItem_ExcludePattern_ExpanderHeader", resourceCulture);
             }
         }
         
@@ -1936,7 +2255,7 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("SynchronizationTask_Help", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Specify a unique centralized storage that devices sync through. All participating devices should use the same storage location. This location is managed entirely by the app — including deletion of data — so do not use it for anything else, and do not share it between multiple tasks..
         /// </summary>
@@ -2098,7 +2417,7 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("Task_Restore", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Specify the storage that contains the backup you want to restore. Use the same settings as when the backup was created..
         /// </summary>
@@ -2674,7 +2993,7 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("UploadFolderTask_Help", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Specify the destination storage where folder contents will be uploaded. Existing files in the destination will be overwritten..
         /// </summary>
@@ -2717,6 +3036,188 @@ namespace BUtil.Core.Localization {
         public static string User_Field_Validation {
             get {
                 return ResourceManager.GetString("User_Field_Validation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Box — enterprise cloud storage with WebDAV support.
+        ///
+        ///1. Log in at app.box.com. Note that Box WebDAV is available only for paid plans.
+        ///2. Enter your Box account email as the User.
+        ///3. Enter your Box password as the Password.
+        ///   If you use SSO, you may need to set a separate WebDAV password in Account Settings.
+        ///   Server address, HTTPS, port, and base path are configured automatically..
+        /// </summary>
+        public static string WebDav_Preset_Box_Help {
+            get {
+                return ResourceManager.GetString("WebDav_Preset_Box_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generic WebDAV server (Nextcloud, ownCloud, Synology DSM, Seafile, Apache, etc.)
+        ///
+        ///1. Enter the server Address, choose HTTPS (recommended), and set the port (0 = default: 80 for HTTP, 443 for HTTPS).
+        ///2. Enter the base path for the WebDAV endpoint.
+        ///   Nextcloud example:  /remote.php/dav/files/&lt;username&gt;/Backups
+        ///   Synology DSM:       /
+        ///3. Enter your username and password (or an app-specific password if your server requires it)..
+        /// </summary>
+        public static string WebDav_Preset_Custom_Help {
+            get {
+                return ResourceManager.GetString("WebDav_Preset_Custom_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IONOS HiDrive — German cloud storage with strong privacy focus.
+        ///
+        ///1. Log in at hidrive.ionos.com → Settings → Apps &amp; connected services → WebDAV.
+        ///   Or access WebDAV with your existing credentials directly.
+        ///2. Enter your HiDrive username as the User.
+        ///3. Enter your HiDrive password as the Password.
+        ///   Server address, HTTPS, port, and base path are configured automatically..
+        /// </summary>
+        public static string WebDav_Preset_IONOSHiDrive_Help {
+            get {
+                return ResourceManager.GetString("WebDav_Preset_IONOSHiDrive_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Jianguoyun (坚果云) — popular Chinese cloud storage with native WebDAV support.
+        ///
+        ///1. Log in at jianguoyun.com → Account Info → Security → Third-Party App Management → Add Application.
+        ///   Copy the generated app password — it is shown only once.
+        ///2. Enter your Jianguoyun email address as the User.
+        ///3. Enter the generated app password as the Password.
+        ///   Server address, HTTPS, port, and base path are configured automatically..
+        /// </summary>
+        public static string WebDav_Preset_Jianguoyun_Help {
+            get {
+                return ResourceManager.GetString("WebDav_Preset_Jianguoyun_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Koofr — privacy-friendly cloud storage based in Slovenia (EU).
+        ///
+        ///1. Go to app.koofr.eu → Preferences → Password → App passwords → Add password.
+        ///2. Enter your Koofr account email as the User.
+        ///3. Enter the generated app password as the Password.
+        ///   Server address, HTTPS, port, and base path are configured automatically..
+        /// </summary>
+        public static string WebDav_Preset_Koofr_Help {
+            get {
+                return ResourceManager.GetString("WebDav_Preset_Koofr_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mail.ru Cloud via WebDAV.
+        ///
+        ///1. Go to account.mail.ru → Security → App passwords → Create app password.
+        ///   Select &apos;Mail&apos; or &apos;All&apos; as the type, then copy the generated password.
+        ///2. Enter your Mail.ru email address as the User.
+        ///3. Enter the app password as the Password.
+        ///   Server address, HTTPS, port, and base path are configured automatically..
+        /// </summary>
+        public static string WebDav_Preset_MailRuCloud_Help {
+            get {
+                return ResourceManager.GetString("WebDav_Preset_MailRuCloud_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nextcloud — popular self-hosted file sync and share.
+        ///
+        ///1. Enter your Nextcloud server address (e.g. nextcloud.example.com).
+        ///2. The base path is pre-filled: /remote.php/dav/files/&lt;username&gt;/
+        ///   Replace &lt;username&gt; with your actual Nextcloud username.
+        ///3. Enter your Nextcloud username and password (or an app password from
+        ///   Settings → Security → Devices &amp; sessions → App passwords)..
+        /// </summary>
+        public static string WebDav_Preset_Nextcloud_Help {
+            get {
+                return ResourceManager.GetString("WebDav_Preset_Nextcloud_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ownCloud — self-hosted file sync and share.
+        ///
+        ///1. Enter your ownCloud server address (e.g. owncloud.example.com).
+        ///2. The base path is pre-filled: /remote.php/dav/files/&lt;username&gt;/
+        ///   Replace &lt;username&gt; with your actual ownCloud username.
+        ///3. Enter your ownCloud username and password (or an app password if 2FA is enabled)..
+        /// </summary>
+        public static string WebDav_Preset_ownCloud_Help {
+            get {
+                return ResourceManager.GetString("WebDav_Preset_ownCloud_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to pCloud — cloud storage with EU and US data centers.
+        ///
+        ///1. Log in at my.pcloud.com → Settings → Security → App Passwords → Create.
+        ///   Copy the app password — it is shown only once.
+        ///2. Enter your pCloud account email as the User.
+        ///3. Enter the app password as the Password.
+        ///   For EU data center: ewebdav.pcloud.com is used automatically.
+        ///   For US data center: change the host to webdav.pcloud.com..
+        /// </summary>
+        public static string WebDav_Preset_pCloud_Help {
+            get {
+                return ResourceManager.GetString("WebDav_Preset_pCloud_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yandex Disk via WebDAV.
+        ///
+        ///1. Go to id.yandex.com → Security → App passwords → Create app password for &apos;WebDAV access&apos;.
+        ///   Copy the generated password — it is shown only once.
+        ///2. Enter your Yandex login as the User.
+        ///3. Enter the app password (not your Yandex account password) as the Password.
+        ///   Server address, HTTPS, and port are configured automatically..
+        /// </summary>
+        public static string WebDav_Preset_YandexDisk_Help {
+            get {
+                return ResourceManager.GetString("WebDav_Preset_YandexDisk_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Here you can specify folders you&apos;d like to backup..
+        /// </summary>
+        public static string WhatTask_Description {
+            get {
+                return ResourceManager.GetString("WhatTask_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backup/synchronize your data on Windows and Linux.
+        ///Import photos from phone via Wi-Fi and more.
+        ///
+        ///Features:
+        ///- Incremental backup with deduplication and support for local folders, WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS storages;
+        ///- Synchronization of files between devices using centralized storage with versioning support;
+        ///- Import media — import audio, photos, videos from SD cards, cameras, recorders; import photos and videos from your phone via Wi-Fi through the FTPS Server compani [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Winget_Description {
+            get {
+                return ResourceManager.GetString("Winget_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BUtil creates incremental backups, synchronization, and media imports on Windows and Linux with deduplication and support for WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, and SMB/CIFS storages..
+        /// </summary>
+        public static string Winget_ShortDescription {
+            get {
+                return ResourceManager.GetString("Winget_ShortDescription", resourceCulture);
             }
         }
     }

@@ -262,6 +262,9 @@
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>கோப்பகம் குறிப்பிடப்படவில்லை.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} குறிப்பிடப்படவில்லை.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>கோப்பகம் இல்லை.</value>
   </data>

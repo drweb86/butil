@@ -263,6 +263,9 @@ Bruksscenario: Du kopierer data til ein ekstern tenar. Det er eit problem: ISP r
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Mappe er ikkje oppgjeve.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} er ikkje oppgjeve.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Mappa finst ikkje.</value>
   </data>

@@ -262,6 +262,9 @@
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>未指定文件夹。</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>未指定{0}。</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>文件夹不存在。</value>
   </data>

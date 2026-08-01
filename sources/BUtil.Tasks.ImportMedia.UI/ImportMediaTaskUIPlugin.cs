@@ -10,7 +10,7 @@ public sealed class ImportMediaTaskUIPlugin : ITaskUIPlugin
     public void Register()
     {
         TaskUIProviderRegistry.Register<ImportMediaTaskModelOptionsV2>(
-            createNewFactory: () => new EditMediaTaskViewModel(string.Empty, true),
+            createNewFactory: () => new EditMediaTaskViewModel(Resources.ImportMediaTask_Create, true),
             editFactory: name => new EditMediaTaskViewModel(name, false),
             createHeader: Resources.ImportMediaTask_Create,
             group: "local",

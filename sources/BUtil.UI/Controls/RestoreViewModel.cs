@@ -3,7 +3,7 @@ using BUtil.Interop.Tasks.Events;
 using BUtil.Core.Localization;
 using BUtil.Tasks.Common.States;
 using System;
-using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace BUtil.UI.Controls;
 
@@ -14,7 +14,19 @@ public class RestoreViewModel : ViewModelBase
         WindowTitle = Resources.Task_Restore;
 
         StorageViewModel = new StorageViewModel(storageSettingsV2 ?? new FolderStorageSettingsV2(), Resources.Task_Restore, help: Resources.Task_Restore_Storage_Help);
+        StorageViewModel.PropertyChanged += (_, e) =>
+        {
+            if (e.PropertyName is nameof(StorageViewModel.SelectedProvider)
+                or nameof(StorageViewModel.Quota)
+                or nameof(StorageViewModel.Error))
+                FormErrorsText = null;
+        };
         EncryptionTaskViewModel = new EncryptionTaskViewModel(password ?? string.Empty, false);
+        EncryptionTaskViewModel.PropertyChanged += (_, e) =>
+        {
+            if (e.PropertyName == nameof(EncryptionTaskViewModel.Password))
+                FormErrorsText = null;
+        };
         VersionsListViewModel = new VersionsListViewModel(this);
     }
 
@@ -24,10 +36,7 @@ public class RestoreViewModel : ViewModelBase
 
     public bool IsSetupVisible
     {
-        get
-        {
-            return _isSetupVisible;
-        }
+        get => _isSetupVisible;
         set
         {
             if (value == _isSetupVisible)
@@ -39,16 +48,31 @@ public class RestoreViewModel : ViewModelBase
 
     #endregion
 
+    #region FormErrorsText
+
+    private string? _formErrorsText;
+
+    public string? FormErrorsText
+    {
+        get => _formErrorsText;
+        set
+        {
+            if (value == _formErrorsText)
+                return;
+            _formErrorsText = value;
+            OnPropertyChanged(nameof(FormErrorsText));
+        }
+    }
+
+    #endregion
+
     #region TaskExecuterViewModel
 
     private TaskExecuterViewModel? _taskExecuterViewModel;
 
     public TaskExecuterViewModel? TaskExecuterViewModel
     {
-        get
-        {
-            return _taskExecuterViewModel;
-        }
+        get => _taskExecuterViewModel;
         set
         {
             if (value == _taskExecuterViewModel)
@@ -74,19 +98,21 @@ public class RestoreViewModel : ViewModelBase
         WindowManager.SwitchView(new TasksViewModel());
     }
 
-    public async Task ContinueCommand()
+    public void ContinueCommand()
     {
-        var storageOptions = StorageViewModel.GetStorageSettings();
-        if (storageOptions == null)
+        FormErrorsText = null;
+        var errors = new List<string>();
+        if (!StorageViewModel.Validate())
+            errors.Add($"{StorageViewModel.Title}: {StorageViewModel.Error}");
+        if (!EncryptionTaskViewModel.Validate())
+            errors.Add($"{Resources.LeftMenu_Encryption}: {EncryptionTaskViewModel.PasswordError}");
+        if (errors.Count > 0)
         {
+            FormErrorsText = string.Join(Environment.NewLine, errors);
             return;
         }
 
-        if (string.IsNullOrWhiteSpace(EncryptionTaskViewModel.Password))
-        {
-            await Messages.ShowErrorBox(Resources.Password_Field_Validation_NotSpecified);
-            return;
-        }
+        var storageOptions = StorageViewModel.GetStorageSettings();
 
         var taskEvents = new TaskEvents();
         GetExistingVersionStateFromStorageRootTask openIncrementalBackupTask = null!;

@@ -263,6 +263,9 @@ Anwendungsszenario: Sie kopieren Daten auf einen entfernten Server. Es gibt ein 
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Ordner ist nicht angegeben.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} ist nicht angegeben.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Ordner existiert nicht.</value>
   </data>

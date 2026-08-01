@@ -31,6 +31,7 @@ public class EnumFieldViewModel : StorageFieldViewModel
             if (value == _selectedDisplay) return;
             _selectedDisplay = value;
             OnPropertyChanged(nameof(SelectedDisplay));
+            Error = null;
             RefreshChoiceHelp();
         }
     }

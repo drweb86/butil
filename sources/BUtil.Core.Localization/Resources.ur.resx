@@ -256,6 +256,9 @@
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>فولڈر کی وضاحت نہیں کی گئی۔</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} کی وضاحت نہیں کی گئی۔</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>فولڈر موجود نہیں۔</value>
   </data>

@@ -263,6 +263,9 @@ Käyttöskenaario: Kopioit tietoja etäpalvelimelle. Ongelma: ISP laskee latausn
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Kansiota ei ole määritetty.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} ei ole määritetty.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Kansiota ei löydy.</value>
   </data>

@@ -263,6 +263,9 @@ Escenari d'ús: copieu dades al servidor remot. Hi ha un problema: l'ISP baixa l
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>La carpeta no està especificada.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} no està especificat.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>La carpeta no existeix.</value>
   </data>

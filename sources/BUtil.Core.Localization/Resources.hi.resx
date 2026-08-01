@@ -263,6 +263,9 @@
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>फ़ोल्डर निर्दिष्ट नहीं है।</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} निर्दिष्ट नहीं है।</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>फ़ोल्डर मौजूद नहीं है।</value>
   </data>

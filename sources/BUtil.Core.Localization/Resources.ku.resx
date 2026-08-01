@@ -263,6 +263,9 @@ Senaryoya bikaranînê: Hûn daneyan li serverek dûr kopî dikin. Pirsgirêk he
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Peldank nehatiye diyarkirin.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} nehatiye diyarkirin.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Peldank tune ye.</value>
   </data>

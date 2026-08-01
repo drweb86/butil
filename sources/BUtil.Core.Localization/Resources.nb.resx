@@ -263,6 +263,9 @@ Bruksscenario: Du kopierer data til en ekstern server. Det er et problem: ISP re
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Mappe er ikke angitt.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} er ikke angitt.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Mappen finnes ikke.</value>
   </data>

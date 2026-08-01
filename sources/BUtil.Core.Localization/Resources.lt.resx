@@ -263,6 +263,9 @@ Naudojimo scenarijus: Kopijuojate duomenis į nuotolinį serverį. Problema: int
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Aplankas nenurodytas.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} nenurodytas.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Aplankas neegzistuoja.</value>
   </data>

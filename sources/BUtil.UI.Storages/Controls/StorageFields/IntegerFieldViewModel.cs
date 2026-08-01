@@ -25,11 +25,30 @@ public class IntegerFieldViewModel : StorageFieldViewModel
             if (value == _value) return;
             _value = value;
             OnPropertyChanged(nameof(Value));
+            Error = null;
         }
     }
 
     public long Minimum => _min;
     public long Maximum => _max;
+
+    public override bool Validate()
+    {
+        if (!IsFieldVisible || Descriptor.IsOptional)
+        {
+            Error = null;
+            return true;
+        }
+
+        if (_value < _min || _value > _max)
+        {
+            Error = GetEmptyValidationMessage();
+            return false;
+        }
+
+        Error = null;
+        return true;
+    }
 
     public override string? GetValue() => _value.ToString();
     public override void SetValue(string? value) => Value = long.TryParse(value, out var v) ? v : _defaultLong;

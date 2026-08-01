@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Text;
 
 namespace BUtil.Core.Misc;
@@ -24,7 +24,7 @@ public static class ExceptionHelper
             builder.Append(innerException.Message);
         }
         while (depth > 0);
-        
+
         return builder.ToString();
     }
 }

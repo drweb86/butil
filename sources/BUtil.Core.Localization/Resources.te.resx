@@ -258,6 +258,9 @@
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>ఫోల్డర్‌ను సూచించబడలేదు.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} సూచించబడలేదు.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>ఫోల్డర్ లేదు.</value>
   </data>

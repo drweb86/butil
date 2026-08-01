@@ -17,5 +17,6 @@
 				IsVisible="{Binding #Root.Help, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
 				Text="{Binding #Root.Help}"
 				TextWrapping="Wrap" />
+		<decor:ValidationError Error="{Binding #Root.Error}" />
 	</StackPanel>
 </UserControl>

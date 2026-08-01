@@ -263,6 +263,9 @@ Scenár použitia: Kopírujete dáta na vzdialený server. Problém: ISP znižuj
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Priečinok nie je zadaný.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} nie je zadaný.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Priečinok neexistuje.</value>
   </data>

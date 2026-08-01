@@ -263,6 +263,9 @@ Cás úsáide: Déanann tú sonraí a chóipeáil chuig an gcianfhreastalaí. T�
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Níl fillteán sonraithe.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>Níl {0} sonraithe.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Níl fillteán ann.</value>
   </data>

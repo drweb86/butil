@@ -263,6 +263,9 @@ Användningsscenario: Du kopierar data till en fjärrserver. Det finns ett probl
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Mapp är inte angiven.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} är inte angivet.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Mappen finns inte.</value>
   </data>

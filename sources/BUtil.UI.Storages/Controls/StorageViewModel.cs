@@ -61,6 +61,7 @@ public class StorageViewModel : ObservableObject
         if (_selectedProvider == null)
             return;
 
+        DetachFieldChangeHandlers();
         DetachEnumUiRuleHandlers();
         Fields.Clear();
         foreach (var descriptor in _selectedProvider.Entry.Provider.Fields)
@@ -85,7 +86,9 @@ public class StorageViewModel : ObservableObject
             Fields.Add(field);
         }
         AttachEnumUiRuleHandlers();
+        AttachFieldChangeHandlers();
         ApplyEnumUiRules();
+        ClearValidationErrors();
     }
 
     private void PopulateFields(IReadOnlyDictionary<string, string?> values)
@@ -104,35 +107,101 @@ public class StorageViewModel : ObservableObject
         return _selectedProvider.Entry.Provider.GetSettings(fieldValues, Quota, MountScript, UnmountScript);
     }
 
+    public bool Validate()
+    {
+        var ok = true;
+        string? firstError = null;
+
+        foreach (var field in Fields)
+        {
+            if (field.Validate())
+                continue;
+
+            ok = false;
+            firstError ??= field.Error;
+        }
+
+        QuotaError = Quota < 0
+            ? Resources.DataStorage_Field_UploadQuota_Validation
+            : null;
+        if (QuotaError != null)
+        {
+            ok = false;
+            firstError ??= QuotaError;
+        }
+
+        Error = firstError;
+        return ok;
+    }
+
+    public void ApplyExternalError(string error)
+    {
+        Error = error;
+    }
+
+    private void ClearValidationErrors()
+    {
+        foreach (var field in Fields)
+            field.ClearError();
+        QuotaError = null;
+        Error = null;
+    }
+
     public string? ApplyDetectedConnectionTrustAndBuildInfo(IStorageSettingsV2 testedSettings)
     {
         var currentValues = Fields.ToDictionary(f => f.Descriptor.Key, f => f.GetValue());
         var message = _selectedProvider.Entry.Provider.TryApplyDetectedTrust(testedSettings, currentValues, out var updated);
         if (updated != null)
+        {
             PopulateFields(updated);
+            var fieldError = message?
+                .Split(['\r', '\n'], StringSplitOptions.RemoveEmptyEntries)
+                .FirstOrDefault();
+            foreach (var key in updated.Keys)
+            {
+                var field = Fields.FirstOrDefault(f => f.Descriptor.Key == key);
+                field?.SetError(fieldError);
+            }
+        }
+        if (!string.IsNullOrWhiteSpace(message))
+            ApplyExternalError(message);
         return message;
     }
 
-    public async Task MountTaskLaunchCommand()
+    public Task MountTaskLaunchCommand()
     {
-        if (string.IsNullOrWhiteSpace(MountScript)) return;
-        if (!PlatformSpecificExperience.Instance.SupportManager.CanLaunchScripts) return;
+        if (string.IsNullOrWhiteSpace(MountScript)) return Task.CompletedTask;
+        if (!PlatformSpecificExperience.Instance.SupportManager.CanLaunchScripts) return Task.CompletedTask;
         var memoryLog = new MemoryLog();
         if (PlatformSpecificExperience.Instance.SupportManager.LaunchScript(memoryLog, MountScript, "***"))
-            await Messages.ShowInformationBox(Resources.DataStorage_Field_DisconnectionScript_Ok);
+        {
+            MountScriptMessageKind = MessageBarKind.Success;
+            MountScriptMessage = Resources.DataStorage_Field_DisconnectionScript_Ok;
+        }
         else
-            await Messages.ShowErrorBox(Resources.DataStorage_Field_DisconnectionScript_Bad + Environment.NewLine + Environment.NewLine + memoryLog);
+        {
+            MountScriptMessageKind = MessageBarKind.Error;
+            MountScriptMessage = Resources.DataStorage_Field_DisconnectionScript_Bad + Environment.NewLine + Environment.NewLine + memoryLog;
+        }
+        return Task.CompletedTask;
     }
 
-    public async Task UnmountTaskLaunchCommand()
+    public Task UnmountTaskLaunchCommand()
     {
-        if (string.IsNullOrWhiteSpace(UnmountScript)) return;
-        if (!PlatformSpecificExperience.Instance.SupportManager.CanLaunchScripts) return;
+        if (string.IsNullOrWhiteSpace(UnmountScript)) return Task.CompletedTask;
+        if (!PlatformSpecificExperience.Instance.SupportManager.CanLaunchScripts) return Task.CompletedTask;
         var memoryLog = new MemoryLog();
         if (PlatformSpecificExperience.Instance.SupportManager.LaunchScript(memoryLog, UnmountScript, "***"))
-            await Messages.ShowInformationBox(Resources.DataStorage_Field_DisconnectionScript_Ok);
+        {
+            UnmountScriptMessageKind = MessageBarKind.Success;
+            UnmountScriptMessage = Resources.DataStorage_Field_DisconnectionScript_Ok;
+        }
         else
-            await Messages.ShowErrorBox(Resources.DataStorage_Field_DisconnectionScript_Bad + Environment.NewLine + Environment.NewLine + memoryLog);
+        {
+            UnmountScriptMessageKind = MessageBarKind.Error;
+            UnmountScriptMessage = Resources.DataStorage_Field_DisconnectionScript_Bad + Environment.NewLine + Environment.NewLine + memoryLog;
+        }
+        return Task.CompletedTask;
     }
 
     public string Title { get; }
@@ -148,6 +217,32 @@ public class StorageViewModel : ObservableObject
     internal Func<FileFieldViewModel, Task>? BrowseFileAsync { get; set; }
 
     private readonly List<(EnumFieldViewModel Vm, PropertyChangedEventHandler Handler)> _enumUiHandlers = [];
+    private readonly List<(StorageFieldViewModel Vm, PropertyChangedEventHandler Handler)> _fieldChangeHandlers = [];
+
+    private void AttachFieldChangeHandlers()
+    {
+        foreach (var field in Fields)
+        {
+            PropertyChangedEventHandler handler = (_, e) =>
+            {
+                if (e.PropertyName is nameof(TextFieldViewModel.Value)
+                    or nameof(EnumFieldViewModel.SelectedDisplay)
+                    or nameof(IntegerFieldViewModel.Value))
+                {
+                    Error = null;
+                }
+            };
+            field.PropertyChanged += handler;
+            _fieldChangeHandlers.Add((field, handler));
+        }
+    }
+
+    private void DetachFieldChangeHandlers()
+    {
+        foreach (var (vm, handler) in _fieldChangeHandlers)
+            vm.PropertyChanged -= handler;
+        _fieldChangeHandlers.Clear();
+    }
 
     private void AttachEnumUiRuleHandlers()
     {
@@ -251,6 +346,7 @@ public class StorageViewModel : ObservableObject
     #region Quota
 
     private long _quota;
+    private string? _quotaError;
 
     public long Quota
     {
@@ -260,6 +356,36 @@ public class StorageViewModel : ObservableObject
             if (value == _quota) return;
             _quota = value;
             OnPropertyChanged(nameof(Quota));
+            QuotaError = null;
+            Error = null;
+        }
+    }
+
+    public string? QuotaError
+    {
+        get => _quotaError;
+        private set
+        {
+            if (value == _quotaError) return;
+            _quotaError = value;
+            OnPropertyChanged(nameof(QuotaError));
+        }
+    }
+
+    #endregion
+
+    #region Error
+
+    private string? _error;
+
+    public string? Error
+    {
+        get => _error;
+        private set
+        {
+            if (value == _error) return;
+            _error = value;
+            OnPropertyChanged(nameof(Error));
         }
     }
 
@@ -268,6 +394,8 @@ public class StorageViewModel : ObservableObject
     #region MountScript
 
     private string? _mountScript;
+    private string? _mountScriptMessage;
+    private MessageBarKind _mountScriptMessageKind;
 
     public string? MountScript
     {
@@ -277,6 +405,29 @@ public class StorageViewModel : ObservableObject
             if (value == _mountScript) return;
             _mountScript = value;
             OnPropertyChanged(nameof(MountScript));
+            MountScriptMessage = null;
+        }
+    }
+
+    public string? MountScriptMessage
+    {
+        get => _mountScriptMessage;
+        private set
+        {
+            if (value == _mountScriptMessage) return;
+            _mountScriptMessage = value;
+            OnPropertyChanged(nameof(MountScriptMessage));
+        }
+    }
+
+    public MessageBarKind MountScriptMessageKind
+    {
+        get => _mountScriptMessageKind;
+        private set
+        {
+            if (value == _mountScriptMessageKind) return;
+            _mountScriptMessageKind = value;
+            OnPropertyChanged(nameof(MountScriptMessageKind));
         }
     }
 
@@ -285,6 +436,8 @@ public class StorageViewModel : ObservableObject
     #region UnmountScript
 
     private string? _unmountScript;
+    private string? _unmountScriptMessage;
+    private MessageBarKind _unmountScriptMessageKind;
 
     public string? UnmountScript
     {
@@ -294,6 +447,29 @@ public class StorageViewModel : ObservableObject
             if (value == _unmountScript) return;
             _unmountScript = value;
             OnPropertyChanged(nameof(UnmountScript));
+            UnmountScriptMessage = null;
+        }
+    }
+
+    public string? UnmountScriptMessage
+    {
+        get => _unmountScriptMessage;
+        private set
+        {
+            if (value == _unmountScriptMessage) return;
+            _unmountScriptMessage = value;
+            OnPropertyChanged(nameof(UnmountScriptMessage));
+        }
+    }
+
+    public MessageBarKind UnmountScriptMessageKind
+    {
+        get => _unmountScriptMessageKind;
+        private set
+        {
+            if (value == _unmountScriptMessageKind) return;
+            _unmountScriptMessageKind = value;
+            OnPropertyChanged(nameof(UnmountScriptMessageKind));
         }
     }
 

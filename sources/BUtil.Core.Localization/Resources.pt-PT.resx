@@ -263,6 +263,9 @@ Cenário de uso: você copia dados para um servidor remoto. Há um problema: o I
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>A pasta não foi especificada.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} não foi especificado.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>A pasta não existe.</value>
   </data>

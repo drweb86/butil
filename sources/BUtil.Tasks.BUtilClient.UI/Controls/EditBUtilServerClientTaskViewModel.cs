@@ -10,7 +10,8 @@ using BUtil.Core.Options;
 using BUtil.Core.Services;
 using BUtil.UI;
 using BUtil.UI.Tasks.Controls;
-using System.Threading.Tasks;
+using System;
+using System.Collections.Generic;
 
 namespace BUtil.Tasks.BUtilClient.UI.Controls;
 
@@ -41,6 +42,13 @@ public class EditBUtilServerClientTaskViewModel : BUtil.UI.Controls.ViewModelBas
 
         FolderSectionViewModel = new BUtil.UI.Controls.FolderSectionViewModel(model.Folder, isNew);
         StorageViewModel = new BUtil.UI.Controls.StorageViewModel(model.To, Resources.LeftMenu_Where, isNew, Resources.UploadFolderTask_Storage_Help);
+        StorageViewModel.PropertyChanged += (_, e) =>
+        {
+            if (e.PropertyName is nameof(BUtil.UI.Controls.StorageViewModel.SelectedProvider)
+                or nameof(BUtil.UI.Controls.StorageViewModel.Quota)
+                or nameof(BUtil.UI.Controls.StorageViewModel.Error))
+                FormErrorsText = null;
+        };
     }
 
     public bool IsNew { get; set; }
@@ -76,12 +84,17 @@ public class EditBUtilServerClientTaskViewModel : BUtil.UI.Controls.ViewModelBas
         TaskUINavigation.ReturnToTasksList();
     }
 
-    public async Task ButtonOkCommand()
+    public void ButtonOkCommand()
     {
         FormErrorsText = null;
+        var errors = new List<string>();
         if (!TaskIdentityViewModel.Validate(IsNew ? null : _taskName))
+            errors.Add($"{Resources.Name_Title}: {TaskIdentityViewModel.NameError}");
+        if (!StorageViewModel.Validate())
+            errors.Add($"{StorageViewModel.Title}: {StorageViewModel.Error}");
+        if (errors.Count > 0)
         {
-            FormErrorsText = $"{Resources.Name_Title}: {TaskIdentityViewModel.NameError}";
+            FormErrorsText = string.Join(Environment.NewLine, errors);
             return;
         }
 
@@ -96,10 +109,11 @@ public class EditBUtilServerClientTaskViewModel : BUtil.UI.Controls.ViewModelBas
             var detectedInfo = StorageViewModel.ApplyDetectedConnectionTrustAndBuildInfo(((BUtilClientModelOptionsV2)newTask.Model).To);
             if (!string.IsNullOrWhiteSpace(detectedInfo))
             {
-                await Messages.ShowInformationBox(detectedInfo);
+                FormErrorsText = detectedInfo;
                 return;
             }
-            await Messages.ShowErrorBox(error);
+            StorageViewModel.ApplyExternalError(error);
+            FormErrorsText = $"{StorageViewModel.Title}: {error}";
             return;
         }
 

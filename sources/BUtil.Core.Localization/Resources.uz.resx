@@ -263,6 +263,9 @@ Foydalanish stsenariysi: Siz masofaviy serverga ma'lumotlarni nusxalaysiz. Muamm
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Papka ko'rsatilmagan.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} ko'rsatilmagan.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Papka mavjud emas.</value>
   </data>

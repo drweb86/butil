@@ -263,6 +263,9 @@ Gebruiksscenario: U kopieert gegevens naar een externe server. Er is een problee
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Map is niet opgegeven.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} is niet opgegeven.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Map bestaat niet.</value>
   </data>

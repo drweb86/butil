@@ -263,6 +263,9 @@ Benotzungsszenario: Dir kopéiert Daten op Remote Server. Et gëtt e Problem: IS
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Dossier ass net spezifizéiert.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} ass net uginn.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Dossier existéiert net.</value>
   </data>

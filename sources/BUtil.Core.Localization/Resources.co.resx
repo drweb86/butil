@@ -263,6 +263,9 @@ Scenariu d'usu: Copiate i dati à u servitore remotu. Ci hè un prublema: l'ISP 
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>U cartulare ùn hè micca specificatu.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} ùn hè micca specificatu.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>U cartulare ùn esiste micca.</value>
   </data>

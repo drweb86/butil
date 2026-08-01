@@ -263,6 +263,9 @@ Suidheachadh cleachdaidh: Bidh thu a’ dèanamh lethbhreac den dàta gu frithea
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Chan eil am pasgan air a shònrachadh.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>Chan eil {0} air a shònrachadh.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Chan eil pasgan ann.</value>
   </data>

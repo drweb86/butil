@@ -12,7 +12,6 @@ using BUtil.UI;
 using BUtil.UI.Tasks.Controls;
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace BUtil.Tasks.Synchronization.UI.Controls;
 
@@ -48,6 +47,13 @@ public class EditSynchronizationTaskViewModel : BUtil.UI.Controls.ViewModelBase
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
         WhenTaskViewModel = new BUtil.UI.Controls.WhenTaskViewModel(isNew ? new ScheduleInfo() { Time = new System.TimeSpan(Constants.DefaultHours, Constants.DefaultMinutes, 0), Days = [System.DayOfWeek.Monday, System.DayOfWeek.Tuesday, System.DayOfWeek.Wednesday, System.DayOfWeek.Thursday, System.DayOfWeek.Friday, System.DayOfWeek.Saturday, System.DayOfWeek.Sunday] } : schedule.GetSchedule(taskName) ?? new ScheduleInfo(), isNew);
         StorageViewModel = new BUtil.UI.Controls.StorageViewModel(model.To, Resources.LeftMenu_Where, isNew, Resources.SynchronizationTask_Storage_Help);
+        StorageViewModel.PropertyChanged += (_, e) =>
+        {
+            if (e.PropertyName is nameof(BUtil.UI.Controls.StorageViewModel.SelectedProvider)
+                or nameof(BUtil.UI.Controls.StorageViewModel.Quota)
+                or nameof(BUtil.UI.Controls.StorageViewModel.Error))
+                FormErrorsText = null;
+        };
         What = new BUtil.UI.Controls.SynchronizationWhatViewModel(model.LocalFolder, model.SynchronizationMode, isNew);
     }
 
@@ -85,7 +91,7 @@ public class EditSynchronizationTaskViewModel : BUtil.UI.Controls.ViewModelBase
         TaskUINavigation.ReturnToTasksList();
     }
 
-    public async Task ButtonOkCommand()
+    public void ButtonOkCommand()
     {
         FormErrorsText = null;
         var errors = new List<string>();
@@ -93,6 +99,8 @@ public class EditSynchronizationTaskViewModel : BUtil.UI.Controls.ViewModelBase
             errors.Add($"{Resources.Name_Title}: {TaskIdentityViewModel.NameError}");
         if (!EncryptionTaskViewModel.Validate())
             errors.Add($"{Resources.LeftMenu_Encryption}: {EncryptionTaskViewModel.PasswordError}");
+        if (!StorageViewModel.Validate())
+            errors.Add($"{StorageViewModel.Title}: {StorageViewModel.Error}");
         if (errors.Count > 0)
         {
             FormErrorsText = string.Join(Environment.NewLine, errors);
@@ -116,10 +124,11 @@ public class EditSynchronizationTaskViewModel : BUtil.UI.Controls.ViewModelBase
             var detectedInfo = StorageViewModel.ApplyDetectedConnectionTrustAndBuildInfo(((SynchronizationTaskModelOptionsV2)newTask.Model).To);
             if (!string.IsNullOrWhiteSpace(detectedInfo))
             {
-                await Messages.ShowInformationBox(detectedInfo);
+                FormErrorsText = detectedInfo;
                 return;
             }
-            await Messages.ShowErrorBox(error);
+            StorageViewModel.ApplyExternalError(error);
+            FormErrorsText = $"{StorageViewModel.Title}: {error}";
             return;
         }
 

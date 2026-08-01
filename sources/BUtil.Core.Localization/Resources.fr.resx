@@ -264,6 +264,9 @@ Il y a un problème : le fournisseur d'accès réduit la vitesse d'upload après
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Le dossier n'est pas spécifié.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} n'est pas spécifié.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Le dossier n'existe pas.</value>
   </data>

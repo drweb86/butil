@@ -263,6 +263,9 @@ Scenaro de uzado: Vi kopias datumojn al fora servilo. Estas problemo: ISP malpli
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Dosierujo ne estas specifita.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} ne estas specifita.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Dosierujo ne ekzistas.</value>
   </data>

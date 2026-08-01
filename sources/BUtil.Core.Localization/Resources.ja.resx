@@ -258,6 +258,9 @@
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>フォルダーが指定されていません。</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0}が指定されていません。</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>フォルダーが存在しません。</value>
   </data>

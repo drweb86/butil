@@ -257,6 +257,9 @@
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>ফোল্ডার নির্দিষ্ট করা হয়নি।</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} নির্দিষ্ট করা হয়নি।</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>ফোল্ডার বিদ্যমান নয়।</value>
   </data>

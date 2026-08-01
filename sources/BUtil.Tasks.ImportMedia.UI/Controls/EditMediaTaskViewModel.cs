@@ -11,7 +11,7 @@ using BUtil.Core.State;
 using BUtil.UI;
 using BUtil.UI.Tasks.Controls;
 using System;
-using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace BUtil.Tasks.ImportMedia.UI.Controls;
 
@@ -37,6 +37,13 @@ public class EditMediaTaskViewModel : BUtil.UI.Controls.ViewModelBase
 
         ImportMediaTaskWhereTaskViewModel = new BUtil.UI.Controls.ImportMediaTaskWhereTaskViewModel(model.DestinationFolder, model.SkipAlreadyImportedFiles, model.DeleteCopiedDataOnSourceMedia, model.TransformFileName, model.FileLastWriteTimeMin, isNew);
         SourceTaskViewModel = new BUtil.UI.Controls.StorageViewModel(model.From, Resources.LeftMenu_What, isNew, Resources.ImportMediaTask_Storage_Help);
+        SourceTaskViewModel.PropertyChanged += (_, e) =>
+        {
+            if (e.PropertyName is nameof(BUtil.UI.Controls.StorageViewModel.SelectedProvider)
+                or nameof(BUtil.UI.Controls.StorageViewModel.Quota)
+                or nameof(BUtil.UI.Controls.StorageViewModel.Error))
+                FormErrorsText = null;
+        };
     }
 
     public BUtil.UI.Controls.ImportMediaTaskWhereTaskViewModel ImportMediaTaskWhereTaskViewModel { get; }
@@ -76,12 +83,17 @@ public class EditMediaTaskViewModel : BUtil.UI.Controls.ViewModelBase
         TaskUINavigation.ReturnToTasksList();
     }
 
-    public async Task ButtonOkCommand()
+    public void ButtonOkCommand()
     {
         FormErrorsText = null;
+        var errors = new List<string>();
         if (!TaskIdentityViewModel.Validate(IsNew ? null : _taskName))
+            errors.Add($"{Resources.Name_Title}: {TaskIdentityViewModel.NameError}");
+        if (!SourceTaskViewModel.Validate())
+            errors.Add($"{SourceTaskViewModel.Title}: {SourceTaskViewModel.Error}");
+        if (errors.Count > 0)
         {
-            FormErrorsText = $"{Resources.Name_Title}: {TaskIdentityViewModel.NameError}";
+            FormErrorsText = string.Join(Environment.NewLine, errors);
             return;
         }
 
@@ -104,10 +116,11 @@ public class EditMediaTaskViewModel : BUtil.UI.Controls.ViewModelBase
             var detectedInfo = SourceTaskViewModel.ApplyDetectedConnectionTrustAndBuildInfo(((ImportMediaTaskModelOptionsV2)newTask.Model).From);
             if (!string.IsNullOrWhiteSpace(detectedInfo))
             {
-                await Messages.ShowInformationBox(detectedInfo);
+                FormErrorsText = detectedInfo;
                 return;
             }
-            await Messages.ShowErrorBox(error);
+            SourceTaskViewModel.ApplyExternalError(error);
+            FormErrorsText = $"{SourceTaskViewModel.Title}: {error}";
             return;
         }
 
@@ -124,7 +137,7 @@ public class EditMediaTaskViewModel : BUtil.UI.Controls.ViewModelBase
         }
         catch (Exception e)
         {
-            await Messages.ShowErrorBox(ExceptionHelper.ToString(e));
+            FormErrorsText = ExceptionHelper.ToString(e);
             return;
         }
 

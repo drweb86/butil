@@ -263,6 +263,9 @@ Skenari i përdorimit: Ju kopjoni të dhëna në një server të largët. Ka nj�
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Dosja nuk është specifikuar.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} nuk është specifikuar.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Dosja nuk ekziston.</value>
   </data>

@@ -263,6 +263,9 @@ Erabilera eszenatokia: datuak urruneko zerbitzarian kopiatzen dituzu. Arazo bat 
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Karpeta ez dago zehaztuta.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} ez dago zehaztuta.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Karpeta ez da existitzen.</value>
   </data>

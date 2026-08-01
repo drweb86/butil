@@ -16,6 +16,7 @@ public class FileFieldViewModel(StorageFieldDescriptor descriptor) : StorageFiel
             if (value == _value) return;
             _value = value;
             OnPropertyChanged(nameof(Value));
+            Error = null;
         }
     }
 

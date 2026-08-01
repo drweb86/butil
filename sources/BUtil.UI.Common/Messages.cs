@@ -7,11 +7,6 @@ namespace BUtil.UI;
 
 public static class Messages
 {
-    public static async Task ShowInformationBox(string message)
-    {
-        await DialogHost.Show(new DialogViewModel(Resources.Messages_Header_Information, message));
-    }
-
     public static async Task ShowErrorBox(string message)
     {
         await DialogHost.Show(new DialogViewModel(Resources.Messages_Header_Error, message));

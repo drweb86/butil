@@ -322,6 +322,9 @@ Usage scenario: You copy data to remote server. There's a problem: ISP drops upl
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Folder is not specified.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} is not specified.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Folder does not exist.</value>
   </data>
@@ -572,9 +575,6 @@ Please either:
   </data>
   <data name="Messages_Header_Error" xml:space="preserve">
     <value>Error</value>
-  </data>
-  <data name="Messages_Header_Information" xml:space="preserve">
-    <value>Information</value>
   </data>
   <data name="Messages_Header_Question" xml:space="preserve">
     <value>Question</value>

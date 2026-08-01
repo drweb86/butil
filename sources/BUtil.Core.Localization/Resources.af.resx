@@ -263,6 +263,9 @@ Gebruik scenario: Jy kopieer data na afgeleë bediener. Daar is 'n probleem: ISP
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Vouer is nie gespesifiseer nie.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} is nie gespesifiseer nie.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Vouer bestaan ​​nie.</value>
   </data>

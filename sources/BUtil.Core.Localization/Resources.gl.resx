@@ -263,6 +263,9 @@ Escenario de uso: copia os datos ao servidor remoto. Hai un problema: o ISP redu
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Non se especifica o cartafol.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>Non se especifica {0}.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>O cartafol non existe.</value>
   </data>

@@ -263,6 +263,9 @@ Senario defnydd: Rydych chi'n copïo data i'r gweinydd pell. Mae yna broblem: ma
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Nid yw ffolder wedi'i nodi.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>Nid yw {0} wedi'i nodi.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Nid yw ffolder yn bodoli.</value>
   </data>

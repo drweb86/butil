@@ -263,6 +263,9 @@ Escenario de uso: Copia datos a un servidor remoto. Hay un problema: el ISP redu
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>La carpeta no está especificada.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>No se ha especificado {0}.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>La carpeta no existe.</value>
   </data>

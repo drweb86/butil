@@ -263,6 +263,9 @@ Kasutusjuht: kopeerite andmeid kaugserverisse. Probleem on selles, et ISP vähen
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Kaust pole määratud.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} pole määratud.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Kausta ei ole olemas.</value>
   </data>

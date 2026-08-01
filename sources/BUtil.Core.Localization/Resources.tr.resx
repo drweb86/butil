@@ -260,6 +260,9 @@ Kullanım senaryosu: Verileri uzak sunucuya kopyalıyorsunuz. Bir sorun var: ISS
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Klasör belirtilmemiş.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} belirtilmemiş.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Klasör mevcut değil.</value>
   </data>

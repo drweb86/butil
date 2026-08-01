@@ -263,6 +263,9 @@ Senario penggunaan: Anda menyalin data ke pelayan jauh. Terdapat masalah: ISP me
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Folder tidak dinyatakan.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} tidak dinyatakan.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Folder tidak wujud.</value>
   </data>

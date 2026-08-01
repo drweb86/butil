@@ -263,6 +263,9 @@
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Ο φάκελος δεν έχει καθοριστεί.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>Το {0} δεν έχει καθοριστεί.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Ο φάκελος δεν υπάρχει.</value>
   </data>

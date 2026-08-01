@@ -263,6 +263,9 @@ Scenario korišćenja: Kopirate podatke na udaljeni server. Problem: provajder s
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Fascikla nije navedena.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} nije naveden.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Fascikla ne postoji.</value>
   </data>

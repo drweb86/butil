@@ -265,6 +265,9 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Non è stata specificata la cartella.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>Non è stato specificato {0}.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>La cartella non esiste.</value>
   </data>

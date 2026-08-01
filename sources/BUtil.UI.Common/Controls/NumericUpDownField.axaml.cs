@@ -18,38 +18,47 @@ public partial class NumericUpDownField : UserControl
     public static readonly StyledProperty<long> MaximumProperty =
         AvaloniaProperty.Register<NumericUpDownField, long>(nameof(Maximum), long.MaxValue);
 
-    public static readonly StyledProperty<string?> HelpProperty =
-        AvaloniaProperty.Register<NumericUpDownField, string?>(nameof(Help));
+	public static readonly StyledProperty<string?> HelpProperty =
+		AvaloniaProperty.Register<NumericUpDownField, string?>(nameof(Help));
 
-    public string? Label
-    {
-        get => GetValue(LabelProperty);
-        set => SetValue(LabelProperty, value);
-    }
+	public static readonly StyledProperty<string?> ErrorProperty =
+		AvaloniaProperty.Register<NumericUpDownField, string?>(nameof(Error));
 
-    public long Value
-    {
-        get => GetValue(ValueProperty);
-        set => SetValue(ValueProperty, value);
-    }
+	public string? Label
+	{
+		get => GetValue(LabelProperty);
+		set => SetValue(LabelProperty, value);
+	}
 
-    public long Minimum
-    {
-        get => GetValue(MinimumProperty);
-        set => SetValue(MinimumProperty, value);
-    }
+	public long Value
+	{
+		get => GetValue(ValueProperty);
+		set => SetValue(ValueProperty, value);
+	}
 
-    public long Maximum
-    {
-        get => GetValue(MaximumProperty);
-        set => SetValue(MaximumProperty, value);
-    }
+	public long Minimum
+	{
+		get => GetValue(MinimumProperty);
+		set => SetValue(MinimumProperty, value);
+	}
 
-    public string? Help
-    {
-        get => GetValue(HelpProperty);
-        set => SetValue(HelpProperty, value);
-    }
+	public long Maximum
+	{
+		get => GetValue(MaximumProperty);
+		set => SetValue(MaximumProperty, value);
+	}
+
+	public string? Help
+	{
+		get => GetValue(HelpProperty);
+		set => SetValue(HelpProperty, value);
+	}
+
+	public string? Error
+	{
+		get => GetValue(ErrorProperty);
+		set => SetValue(ErrorProperty, value);
+	}
 
     public NumericUpDownField()
     {

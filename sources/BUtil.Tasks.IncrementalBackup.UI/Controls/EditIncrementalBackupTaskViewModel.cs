@@ -12,7 +12,6 @@ using BUtil.UI;
 using BUtil.UI.Tasks.Controls;
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace BUtil.Tasks.IncrementalBackup.UI.Controls;
 
@@ -47,6 +46,13 @@ public class EditIncrementalBackupTaskViewModel : BUtil.UI.Controls.ViewModelBas
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
         WhenTaskViewModel = new BUtil.UI.Controls.WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule.GetSchedule(taskName) ?? new ScheduleInfo(), isNew);
         StorageViewModel = new BUtil.UI.Controls.StorageViewModel(model.To, Resources.LeftMenu_Where, isNew, Resources.IncrementalBackup_Storage_Help);
+        StorageViewModel.PropertyChanged += (_, e) =>
+        {
+            if (e.PropertyName is nameof(BUtil.UI.Controls.StorageViewModel.SelectedProvider)
+                or nameof(BUtil.UI.Controls.StorageViewModel.Quota)
+                or nameof(BUtil.UI.Controls.StorageViewModel.Error))
+                FormErrorsText = null;
+        };
         WhatTaskViewModel = new WhatTaskViewModel(model.Items, model.FileExcludePatterns, isNew);
         WhatTaskViewModel.PropertyChanged += (_, e) =>
         {
@@ -89,7 +95,7 @@ public class EditIncrementalBackupTaskViewModel : BUtil.UI.Controls.ViewModelBas
         TaskUINavigation.ReturnToTasksList();
     }
 
-    public async Task ButtonOkCommand()
+    public void ButtonOkCommand()
     {
         FormErrorsText = null;
         var errors = new List<string>();
@@ -99,6 +105,8 @@ public class EditIncrementalBackupTaskViewModel : BUtil.UI.Controls.ViewModelBas
             errors.Add($"{Resources.LeftMenu_Encryption}: {EncryptionTaskViewModel.PasswordError}");
         if (!WhatTaskViewModel.Validate())
             errors.Add($"{Resources.LeftMenu_What}: {WhatTaskViewModel.SourceItemsError}");
+        if (!StorageViewModel.Validate())
+            errors.Add($"{StorageViewModel.Title}: {StorageViewModel.Error}");
         if (errors.Count > 0)
         {
             FormErrorsText = string.Join(Environment.NewLine, errors);
@@ -122,10 +130,11 @@ public class EditIncrementalBackupTaskViewModel : BUtil.UI.Controls.ViewModelBas
             var detectedInfo = StorageViewModel.ApplyDetectedConnectionTrustAndBuildInfo(((IncrementalBackupModelOptionsV2)newTask.Model).To);
             if (!string.IsNullOrWhiteSpace(detectedInfo))
             {
-                await Messages.ShowInformationBox(detectedInfo);
+                FormErrorsText = detectedInfo;
                 return;
             }
-            await Messages.ShowErrorBox(error);
+            StorageViewModel.ApplyExternalError(error);
+            FormErrorsText = $"{StorageViewModel.Title}: {error}";
             return;
         }
 

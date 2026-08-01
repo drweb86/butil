@@ -263,6 +263,9 @@ Notkunardæmi: Þú afritar gögn á fjarlægan þjón. Vandamál er: Netþjónu
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Mappa er ekki tilgreind.</value>
   </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} er ekki tilgreint.</value>
+  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Mappa er ekki til.</value>
   </data>
