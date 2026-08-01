@@ -573,9 +573,6 @@ Please either:
   <data name="MainWindow_SearchWatermark" xml:space="preserve">
     <value>Search</value>
   </data>
-  <data name="Messages_Header_Error" xml:space="preserve">
-    <value>Error</value>
-  </data>
   <data name="Messages_Header_Question" xml:space="preserve">
     <value>Question</value>
   </data>

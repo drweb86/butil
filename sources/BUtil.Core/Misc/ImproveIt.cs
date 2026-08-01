@@ -10,10 +10,6 @@ namespace BUtil.Core.Misc;
 
 public static class ImproveIt
 {
-#pragma warning disable CA2211 // Non-constant fields should not be visible
-    public static Action<string>? HandleUiError;
-#pragma warning restore CA2211 // Non-constant fields should not be visible
-
     static ImproveIt()
     {
         AppDomain.CurrentDomain.UnhandledException +=
@@ -25,8 +21,10 @@ public static class ImproveIt
     {
         try
         {
+            var userMessage = string.Format(Resources.ImproveIt_Message, Files.BugReportFile);
+
             StringBuilder builder = new();
-            builder.AppendLine();
+            builder.AppendLine(userMessage);
             builder.AppendLine();
             builder.AppendLine("BUtil " + CopyrightInfo.Version + " - Bug report (" + DateTime.Now.ToString("g", CultureInfo.InvariantCulture) + ")");
             builder.AppendLine("Please report about it here: ");
@@ -54,7 +52,14 @@ public static class ImproveIt
 
             File.AppendAllText(Files.BugReportFile, builder.ToString());
 
-            HandleUiError?.Invoke(string.Format(Resources.ImproveIt_Message, Files.BugReportFile));
+            try
+            {
+                ProcessHelper.ShellExecute(Files.BugReportFile);
+            }
+            catch
+            {
+                // Best-effort: the process is already terminating.
+            }
         }
         finally
         {

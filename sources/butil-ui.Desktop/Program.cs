@@ -1,8 +1,6 @@
 ﻿using Avalonia;
-using Avalonia.Threading;
 using BUtil.Core.Misc;
 using System;
-using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -16,7 +14,6 @@ class Program
     [STAThread]
     public static void Main(string[] args)
     {
-        ImproveIt.HandleUiError = HandleUiError;
         TaskScheduler.UnobservedTaskException += TaskScheduler_UnobservedTaskException;
         AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
         try
@@ -28,11 +25,6 @@ class Program
         {
             ImproveIt.ProcessUnhandledException(ex);
         }
-    }
-
-    private static void HandleUiError(string message)
-    {
-        Dispatcher.UIThread.Invoke(async () => await Messages.ShowErrorBox(message)).Wait(10000);
     }
 
     private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)

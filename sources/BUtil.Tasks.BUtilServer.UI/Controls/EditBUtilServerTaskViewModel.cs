@@ -11,7 +11,6 @@ using BUtil.Core.Services;
 using BUtil.UI;
 using BUtil.UI.Tasks.Controls;
 using System;
-using System.Threading.Tasks;
 
 namespace BUtil.Tasks.BUtilServer.UI.Controls;
 
@@ -73,7 +72,7 @@ public class EditBUtilServerTaskViewModel : BUtil.UI.Controls.ViewModelBase
         TaskUINavigation.ReturnToTasksList();
     }
 
-    public async Task ButtonOkCommand()
+    public void ButtonOkCommand()
     {
         FormErrorsText = null;
         if (!TaskIdentityViewModel.Validate(IsNew ? null : _taskName))
@@ -95,7 +94,7 @@ public class EditBUtilServerTaskViewModel : BUtil.UI.Controls.ViewModelBase
 
         if (!TaskV2Validator.TryValidate(newTask, true, IsNew ? null : _taskName, out var error))
         {
-            await Messages.ShowErrorBox(error);
+            FormErrorsText = error;
             return;
         }
 
