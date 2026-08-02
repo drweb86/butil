@@ -732,6 +732,15 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("Field_Version", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to This list shows available backup versions. When you select a version, the files below show the state of that version.
+        /// </summary>
+        public static string Field_Version_Help {
+            get {
+                return ResourceManager.GetString("Field_Version_Help", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to Deleting &quot;{0}&quot;.
@@ -2507,6 +2516,15 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("Task_Restore", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Restore {0}....
+        /// </summary>
+        public static string Task_Restore_Selected {
+            get {
+                return ResourceManager.GetString("Task_Restore_Selected", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to Specify the storage that contains the backup you want to restore. Use the same settings as when the backup was created..
@@ -3083,9 +3101,27 @@ namespace BUtil.Core.Localization {
                 return ResourceManager.GetString("UploadFolderTask_Help", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Do not overwrite existing files.
+        /// </summary>
+        public static string UploadFolderTask_SkipExistingFiles {
+            get {
+                return ResourceManager.GetString("UploadFolderTask_SkipExistingFiles", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to When enabled, files that already exist at the destination are skipped instead of being overwritten.
+        /// </summary>
+        public static string UploadFolderTask_SkipExistingFiles_Help {
+            get {
+                return ResourceManager.GetString("UploadFolderTask_SkipExistingFiles_Help", resourceCulture);
+            }
+        }
         
         /// <summary>
-        ///   Looks up a localized string similar to Specify the destination storage where folder contents will be uploaded. Existing files in the destination will be overwritten..
+        ///   Looks up a localized string similar to Specify the destination storage where folder contents will be uploaded.
         /// </summary>
         public static string UploadFolderTask_Storage_Help {
             get {

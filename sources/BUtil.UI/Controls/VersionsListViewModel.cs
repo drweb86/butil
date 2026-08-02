@@ -36,6 +36,18 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
 
     #endregion
 
+    public string VersionFieldHelp =>
+        string.IsNullOrEmpty(StorageSize)
+            ? Resources.Field_Version_Help
+            : $"{Resources.Field_Version_Help} {StorageSize}";
+
+    public string RestoreSelectedText =>
+        SelectedNode == null
+            ? Resources.Task_Restore
+            : string.Format(Resources.Task_Restore_Selected, SelectedNode.Target);
+
+    public bool IsRestoreEnabled => SelectedNode != null;
+
     #region ConfirmMessage
 
     private string? _confirmMessage;
@@ -106,6 +118,8 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
                 BackupVersion_FileVersion_Title = null;
             }
             OnPropertyChanged(nameof(SelectedNode));
+            OnPropertyChanged(nameof(RestoreSelectedText));
+            OnPropertyChanged(nameof(IsRestoreEnabled));
         }
     }
 
@@ -256,6 +270,7 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
                 return;
             _storageSize = value;
             OnPropertyChanged(nameof(StorageSize));
+            OnPropertyChanged(nameof(VersionFieldHelp));
         }
     }
 

@@ -14,6 +14,13 @@ internal class BUtilClientUploadToServerFileTask(BUtilClientIoc ioc, TaskEvents 
         string relativeFileName = SourceItemHelper.GetSourceItemRelativeFileName(options.Folder, fileState);
         LogDebug($"{relativeFileName}");
 
+        if (options.SkipExistingFiles && ioc.StorageSpecificServices.Storage.Exists(relativeFileName))
+        {
+            LogDebug($"Skipped (already exists): {relativeFileName}");
+            IsSkipped = true;
+            return;
+        }
+
         ioc.StorageSpecificServices.Storage.Upload(fileState.FileName, relativeFileName);
     }
 }

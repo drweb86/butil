@@ -10,61 +10,26 @@
 	d:DesignWidth="800"
 	d:DesignHeight="450"
     x:Class="BUtil.UI.Controls.RestoreView"
-	x:DataType="vm:RestoreViewModel" Margin="0 0 0 24">
-	<UserControl.Styles>
-		<Style Selector="Expander">
-			<Setter Property="VerticalAlignment" Value="Top" />
-		</Style>
-		<Style Selector="Expander:expanded">
-			<Setter Property="VerticalAlignment" Value="Stretch" />
-		</Style>
-	</UserControl.Styles>
+	x:DataType="vm:RestoreViewModel">
 	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="*" />
-			<RowDefinition Height="Auto"/>
-		</Grid.RowDefinitions>
-		<decor:ViewDecoration Grid.Row="0" Kind="Restore" />
+		<decor:ViewDecoration Kind="Restore" />
 		<ScrollViewer
-				Grid.Row="0"
 				ScrollViewer.VerticalScrollBarVisibility="Visible"
 				ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-			<StackPanel Orientation="Vertical">
-				<controls:TaskExecuterView Margin="24 8 24 8" DataContext="{Binding TaskExecuterViewModel}" IsVisible="{Binding $parent[v:RestoreView].((vm:RestoreViewModel)DataContext).TaskExecuterViewModel, Converter={x:Static ObjectConverters.IsNotNull}}" />
-				<controls:StorageView Margin="24 8 24 8" DataContext="{Binding StorageViewModel}" IsVisible="{Binding $parent[v:RestoreView].((vm:RestoreViewModel)DataContext).IsSetupVisible}"/>
-				<controls:EncryptionTaskView Margin="24 8 24 8" DataContext="{Binding EncryptionTaskViewModel}" IsVisible="{Binding $parent[v:RestoreView].((vm:RestoreViewModel)DataContext).IsSetupVisible}"/>
+			<StackPanel Classes="FormContent" Spacing="8">
+				<controls:TaskExecuterView DataContext="{Binding TaskExecuterViewModel}" IsVisible="{Binding $parent[v:RestoreView].((vm:RestoreViewModel)DataContext).TaskExecuterViewModel, Converter={x:Static ObjectConverters.IsNotNull}}" />
+				<controls:StorageView DataContext="{Binding StorageViewModel}" IsVisible="{Binding $parent[v:RestoreView].((vm:RestoreViewModel)DataContext).IsSetupVisible}"/>
+				<controls:EncryptionTaskView DataContext="{Binding EncryptionTaskViewModel}" IsVisible="{Binding $parent[v:RestoreView].((vm:RestoreViewModel)DataContext).IsSetupVisible}"/>
 				<controls:VersionsListView DataContext="{Binding VersionsListViewModel}" IsVisible="{Binding !$parent[v:RestoreView].((vm:RestoreViewModel)DataContext).IsSetupVisible}"/>
+				<decor:DialogButtons
+					PrimaryText="{Binding Button_Continue}"
+					PrimaryCommand="{Binding ContinueCommand}"
+					IsPrimaryVisible="{Binding IsSetupVisible}"
+					CancelText="{Binding Button_Close}"
+					CancelCommand="{Binding CloseCommand}"
+					MessageText="{Binding FormErrorsText}"
+					MessageKind="Error" />
 			</StackPanel>
 		</ScrollViewer>
-
-		<Grid
-			HorizontalAlignment="Stretch"
-			Grid.Row="1"
-			Margin="24 8 24 0"
-			RowDefinitions="Auto, Auto"
-			ColumnDefinitions="*, Auto, Auto">
-			<decor:MessageBar Grid.Row="0" Grid.ColumnSpan="3"
-				Text="{Binding FormErrorsText}"
-				Kind="Error" />
-			<Button Grid.Row="1" Grid.Column="1"
-				VerticalAlignment="Center"
-				HorizontalContentAlignment="Center"
-				IsVisible="{Binding IsSetupVisible}"
-				Margin="4"
-				Padding="16 8 16 8"
-				MinWidth="120"
-				Content="{Binding Button_Continue}"
-				Command="{Binding ContinueCommand}" 
-				/>
-			<Button Grid.Row="1" Grid.Column="2"
-				VerticalAlignment="Center"
-				HorizontalContentAlignment="Center"
-				Margin="4"
-				Padding="16 8 16 8"
-				MinWidth="120"
-				Content="{Binding Button_Close}"
-				Command="{Binding CloseCommand}"
-				/>
-		</Grid>
 	</Grid>
 </UserControl>

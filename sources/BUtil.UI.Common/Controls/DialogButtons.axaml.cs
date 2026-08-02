@@ -24,6 +24,9 @@ public partial class DialogButtons : UserControl
     public static readonly StyledProperty<MessageBarKind> MessageKindProperty =
         AvaloniaProperty.Register<DialogButtons, MessageBarKind>(nameof(MessageKind));
 
+    public static readonly StyledProperty<bool> IsPrimaryVisibleProperty =
+        AvaloniaProperty.Register<DialogButtons, bool>(nameof(IsPrimaryVisible), true);
+
     public string? PrimaryText
     {
         get => GetValue(PrimaryTextProperty);
@@ -58,6 +61,12 @@ public partial class DialogButtons : UserControl
     {
         get => GetValue(MessageKindProperty);
         set => SetValue(MessageKindProperty, value);
+    }
+
+    public bool IsPrimaryVisible
+    {
+        get => GetValue(IsPrimaryVisibleProperty);
+        set => SetValue(IsPrimaryVisibleProperty, value);
     }
 
     public DialogButtons()

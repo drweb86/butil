@@ -33,6 +33,7 @@
 				VerticalAlignment="Center"
 				Margin="0"
 				IsVisible="{Binding #Root.ShowSideAction}"
+				IsEnabled="{Binding #Root.ActionIsEnabled}"
 				Icon="{Binding #Root.ActionIcon}"
 				Text="{Binding #Root.ActionText}"
 				Command="{Binding #Root.ActionCommand}" />
@@ -40,6 +41,7 @@
 				HorizontalAlignment="Left"
 				Margin="0 8 0 0"
 				IsVisible="{Binding #Root.ShowBelowAction}"
+				IsEnabled="{Binding #Root.ActionIsEnabled}"
 				Icon="{Binding #Root.ActionIcon}"
 				Text="{Binding #Root.ActionText}"
 				Command="{Binding #Root.ActionCommand}" />

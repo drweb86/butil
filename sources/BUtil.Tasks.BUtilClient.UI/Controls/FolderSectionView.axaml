@@ -19,6 +19,10 @@
 				ActionText="{Binding Field_Folder_Browse}"
 				ActionCommand="{Binding BrowseFolderCommand}"
 				Error="{Binding FolderError}" />
+			<decor:CheckboxField
+				Label="{Binding UploadFolderTask_SkipExistingFiles}"
+				IsChecked="{Binding SkipExistingFiles}"
+				Help="{Binding UploadFolderTask_SkipExistingFiles_Help}" />
 		</StackPanel>
 	</Expander>
 </UserControl>

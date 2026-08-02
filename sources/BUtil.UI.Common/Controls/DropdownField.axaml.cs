@@ -51,6 +51,9 @@ public partial class DropdownField : UserControl
     public static readonly StyledProperty<ICommand?> ActionCommandProperty =
         AvaloniaProperty.Register<DropdownField, ICommand?>(nameof(ActionCommand));
 
+    public static readonly StyledProperty<bool> ActionIsEnabledProperty =
+        AvaloniaProperty.Register<DropdownField, bool>(nameof(ActionIsEnabled), true);
+
     public static readonly StyledProperty<bool> ShowSideActionProperty =
         AvaloniaProperty.Register<DropdownField, bool>(nameof(ShowSideAction));
 
@@ -127,6 +130,12 @@ public partial class DropdownField : UserControl
     {
         get => GetValue(ActionCommandProperty);
         set => SetValue(ActionCommandProperty, value);
+    }
+
+    public bool ActionIsEnabled
+    {
+        get => GetValue(ActionIsEnabledProperty);
+        set => SetValue(ActionIsEnabledProperty, value);
     }
 
     public bool ShowSideAction

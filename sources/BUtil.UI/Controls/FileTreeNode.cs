@@ -15,21 +15,22 @@ public class FileTreeNode : ObservableObject
         StorageFile = storageFile;
         if (virtualFolder != null)
         {
-            ImageSource = "/Assets/www.wefunction.com_FunctionFreeIconSet_Folder_48.png";
+            Icon = "📁";
             Target = virtualFolder;
         }
         else if (storageFile != null)
         {
-            ImageSource = "/Assets/CrystalClear_FileNew.png";
+            Icon = "🗋";
             Target = System.IO.Path.GetFileName(storageFile.FileState.FileName) ?? string.Empty;
         }
         else
         {
-            ImageSource = "/Assets/CrystalProject_EveraldoCoelho_SourceItems48x48.png";
+            Icon = "💾";
             Target = sourceItem.Target;
         }
     }
-    public string ImageSource { get; }
+
+    public string Icon { get; }
     public string Target { get; }
     public SourceItemV2 SourceItem { get; }
     public StorageFile? StorageFile { get; }

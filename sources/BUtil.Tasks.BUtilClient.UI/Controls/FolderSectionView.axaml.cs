@@ -11,7 +11,7 @@ public partial class FolderSectionView : UserControl
     {
         InitializeComponent();
         DataContextChanged += OnDataContextChanged;
-        DataContext = new FolderSectionViewModel("the folder");
+        DataContext = new FolderSectionViewModel("the folder", false, false);
     }
 
     private void OnDataContextChanged(object? sender, EventArgs e)

@@ -26,8 +26,8 @@ public class EditBUtilServerClientTaskViewModel : BUtil.UI.Controls.ViewModelBas
 
         var storeService = new TaskStore(new LocalFileSystem());
         var task = isNew
-            ? new TaskV2 { Name = taskName, Model = new BUtilClientModelOptionsV2(string.Empty, FileSenderDirection.ToServer, new FolderStorageSettingsV2()) }
-            : storeService.Load(taskName) ?? new TaskV2 { Name = taskName, Model = new BUtilClientModelOptionsV2(string.Empty, FileSenderDirection.ToServer, new FolderStorageSettingsV2()) };
+            ? new TaskV2 { Name = taskName, Model = new BUtilClientModelOptionsV2(string.Empty, FileSenderDirection.ToServer, new FolderStorageSettingsV2(), false) }
+            : storeService.Load(taskName) ?? new TaskV2 { Name = taskName, Model = new BUtilClientModelOptionsV2(string.Empty, FileSenderDirection.ToServer, new FolderStorageSettingsV2(), false) };
         TaskIdentityViewModel = new TaskIdentityViewModel(isNew, task.Model, task.Name);
         TaskIdentityViewModel.PropertyChanged += (_, e) =>
         {
@@ -40,7 +40,7 @@ public class EditBUtilServerClientTaskViewModel : BUtil.UI.Controls.ViewModelBas
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
         WhenTaskViewModel = new BUtil.UI.Controls.WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule.GetSchedule(taskName) ?? new ScheduleInfo(), isNew);
 
-        FolderSectionViewModel = new FolderSectionViewModel(model.Folder, isNew);
+        FolderSectionViewModel = new FolderSectionViewModel(model.Folder, model.SkipExistingFiles, isNew);
         FolderSectionViewModel.PropertyChanged += (_, e) =>
         {
             if (e.PropertyName is nameof(FolderSectionViewModel.Folder)
@@ -109,7 +109,7 @@ public class EditBUtilServerClientTaskViewModel : BUtil.UI.Controls.ViewModelBas
         var newTask = new TaskV2
         {
             Name = TaskIdentityViewModel.Name.TrimEnd(),
-            Model = new BUtilClientModelOptionsV2(FolderSectionViewModel.Folder, FileSenderDirection.ToServer, StorageViewModel.GetStorageSettings())
+            Model = new BUtilClientModelOptionsV2(FolderSectionViewModel.Folder, FileSenderDirection.ToServer, StorageViewModel.GetStorageSettings(), FolderSectionViewModel.SkipExistingFiles)
         };
 
         if (!TaskV2Validator.TryValidate(newTask, true, IsNew ? null : _taskName, out var error))

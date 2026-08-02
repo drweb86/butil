@@ -11,13 +11,21 @@
 		<Expander.Header>
 			<decor:ExpanderHeader Icon="🔒" Text="{Binding LeftMenu_Encryption}" />
 		</Expander.Header>
-		<decor:TextFieldWithAction
-			Label="{Binding Password_Field}"
-			Text="{Binding Password}"
-			IsReadOnly="{Binding IsReadonly}"
-			ActionText="{Binding Password_Generate}"
-			ActionCommand="{Binding PasswordGenerateCommand}"
-			Help="{Binding Help}"
-			Error="{Binding PasswordError}" />
+		<StackPanel>
+			<decor:TextFieldWithAction
+				IsVisible="{Binding IsPasswordCreateMode}"
+				Label="{Binding Password_Field}"
+				Text="{Binding Password}"
+				IsReadOnly="{Binding IsReadonly}"
+				ActionText="{Binding Password_Generate}"
+				ActionCommand="{Binding PasswordGenerateCommand}"
+				Help="{Binding Help}"
+				Error="{Binding PasswordError}" />
+			<decor:TextField
+				IsVisible="{Binding !IsPasswordCreateMode}"
+				Label="{Binding Password_Field}"
+				Text="{Binding Password}"
+				Error="{Binding PasswordError}" />
+		</StackPanel>
 	</Expander>
 </UserControl>

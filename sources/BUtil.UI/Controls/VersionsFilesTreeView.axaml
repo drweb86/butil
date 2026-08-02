@@ -1,0 +1,55 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:cvm="clr-namespace:BUtil.UI.Controls"
+			 xmlns:decor="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Common"
+             mc:Ignorable="d"
+             x:Class="BUtil.UI.Controls.VersionsFilesTreeView"
+			 x:Name="Root"
+			 x:DataType="cvm:VersionsListViewModel">
+	<Expander Classes="TaskSection" HorizontalAlignment="Stretch" IsExpanded="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent"
+			  IsEnabled="{Binding !ParentViewModel.TaskExecuterViewModel.TaskNotCompleted}">
+		<Expander.Header>
+			<decor:ExpanderHeader Icon="💾" Text="{Binding BackupVersion_Files_Title}" />
+		</Expander.Header>
+		<StackPanel>
+			<TextBlock TextWrapping="Wrap" Margin="0 0 0 8" Text="{Binding BackupVersion_Viewer_Help}" />
+			<TextBox
+				Text="{Binding SearchText}"
+				PlaceholderText="{Binding SearchTextBoxWatermark}"
+				Margin="0 0 0 8"
+				VerticalContentAlignment="Center" />
+			<decor:IconButton
+				Icon="💾"
+				Text="{Binding RestoreSelectedText}"
+				IsEnabled="{Binding IsRestoreEnabled}"
+				Command="{Binding #Root.BrowseRestoreFolderAsync}" />
+			<TreeView
+				ItemsSource="{Binding Nodes}"
+				SelectionMode="Single"
+				SelectedItem="{Binding SelectedNode}"
+				HorizontalAlignment="Stretch">
+				<TreeView.Styles>
+					<Style Selector="TreeViewItem" x:DataType="cvm:FileTreeNode">
+						<Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
+					</Style>
+				</TreeView.Styles>
+				<TreeView.ItemTemplate>
+					<TreeDataTemplate ItemsSource="{Binding Nodes}">
+						<StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Spacing="4">
+							<TextBlock
+								VerticalAlignment="Center"
+								Text="{Binding Icon}" />
+							<TextBlock
+								TextWrapping="Wrap"
+								VerticalAlignment="Center"
+								HorizontalAlignment="Stretch"
+								Text="{Binding Target}" />
+						</StackPanel>
+					</TreeDataTemplate>
+				</TreeView.ItemTemplate>
+			</TreeView>
+		</StackPanel>
+	</Expander>
+</UserControl>

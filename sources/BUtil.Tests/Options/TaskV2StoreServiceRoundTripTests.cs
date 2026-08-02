@@ -133,7 +133,8 @@ public class TaskV2StoreServiceRoundTripTests
             Model = new BUtilClientModelOptionsV2(
                 folder: "D:\\client-drop",
                 direction: FileSenderDirection.ToServer,
-                to: FolderStorage("F:\\backup\\client")),
+                to: FolderStorage("F:\\backup\\client"),
+                skipExistingFiles: false),
         }];
     }
 

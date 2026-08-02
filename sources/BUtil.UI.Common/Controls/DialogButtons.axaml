@@ -16,6 +16,7 @@
 		<local:MessageBar Text="{Binding #Root.MessageText}" Kind="{Binding #Root.MessageKind}" />
 		<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
 			<Button IsDefault="True"
+					IsVisible="{Binding #Root.IsPrimaryVisible}"
 					Content="{Binding #Root.PrimaryText}"
 					Command="{Binding #Root.PrimaryCommand}" />
 			<Button IsCancel="True"

@@ -9,10 +9,11 @@ namespace BUtil.Tasks.BUtilClient.UI.Controls;
 
 public class FolderSectionViewModel : ObservableObject
 {
-    public FolderSectionViewModel(string folder, bool isExpanded = false)
+    public FolderSectionViewModel(string folder, bool skipExistingFiles, bool isExpanded)
     {
         IsExpanded = isExpanded;
         Folder = folder;
+        SkipExistingFiles = skipExistingFiles;
 
         BrowseFolderCommand = new AsyncRelayCommand(async () =>
         {
@@ -30,6 +31,25 @@ public class FolderSectionViewModel : ObservableObject
     public static string LeftMenu_What => Resources.LeftMenu_What;
     public static string Field_Folder => Resources.Field_Folder;
     public static string Field_Folder_Browse => Resources.Field_Folder_Browse;
+    public static string UploadFolderTask_SkipExistingFiles => Resources.UploadFolderTask_SkipExistingFiles;
+    public static string UploadFolderTask_SkipExistingFiles_Help => Resources.UploadFolderTask_SkipExistingFiles_Help;
+
+    #endregion
+
+    #region SkipExistingFiles
+
+    private bool _skipExistingFiles;
+
+    public bool SkipExistingFiles
+    {
+        get => _skipExistingFiles;
+        set
+        {
+            if (value == _skipExistingFiles) return;
+            _skipExistingFiles = value;
+            OnPropertyChanged(nameof(SkipExistingFiles));
+        }
+    }
 
     #endregion
 

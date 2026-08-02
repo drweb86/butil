@@ -12,130 +12,85 @@
 		<cvm:BitmapAssetValueConverter x:Key="variableImage"/>
 	</UserControl.Resources>
 	<Grid>
-	<StackPanel Orientation="Vertical">
-		<WrapPanel Orientation="Horizontal" Margin="24 8 24 8" Background="{Binding HeaderBackground}" HorizontalAlignment="Stretch" IsEnabled="{Binding !ParentViewModel.TaskExecuterViewModel.TaskNotCompleted}">
-			<TextBlock Margin="8 0 8 0" Text="{Binding Field_Version}" VerticalAlignment="Center" />
-			<ComboBox Margin="0 4 4 4" HorizontalAlignment="Stretch" VerticalAlignment="Center" SelectedValue="{Binding SelectedVersion}" ItemsSource="{Binding Versions}" DisplayMemberBinding="{Binding Title}" />
-			<Button Padding="8" VerticalAlignment="Center" Content="{Binding BackupVersion_Button_Delete}" HorizontalContentAlignment="Center" Margin="8 0 8 0" Command="{Binding DeleteBackupVersionCommand}" IsEnabled="{Binding IsDeleteBackupVersionEnabled}" />
-			<TextBlock TextWrapping="Wrap" Text="{Binding StorageSize}" Margin="8 0 0 0" VerticalAlignment="Center" />
-		</WrapPanel>
+		<StackPanel Classes="FormContent" Spacing="8" Margin="0">
+			<decor:DropdownField
+				IsEnabled="{Binding !ParentViewModel.TaskExecuterViewModel.TaskNotCompleted}"
+				Label="{Binding Field_Version}"
+				ItemsSource="{Binding Versions}"
+				SelectedItem="{Binding SelectedVersion}"
+				DisplayMember="Title"
+				ActionIcon="🗙"
+				ActionText="{Binding BackupVersion_Button_Delete}"
+				ActionCommand="{Binding DeleteBackupVersionCommand}"
+				ActionIsEnabled="{Binding IsDeleteBackupVersionEnabled}"
+				Help="{Binding VersionFieldHelp}" />
 
-		<Expander Classes="TaskSection" Margin="24 8 24 24" HorizontalAlignment="Stretch" IsExpanded="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent" IsEnabled="{Binding !ParentViewModel.TaskExecuterViewModel.TaskNotCompleted}" >
-			<Expander.Header>
-				<WrapPanel Orientation="Horizontal" Margin="0 8 0 8">
-					<Image Width="16" Height="16" Source="/Assets/CrystalProject_EveraldoCoelho_SourceItems48x48.png" VerticalAlignment="Center" />
-					<TextBlock TextDecorations="Underline" ToolTip.Tip="{Binding BackupVersion_Viewer_Help}" Margin="8 0 8 0" Text="{Binding BackupVersion_Files_Title}" VerticalAlignment="Center" />
-					<TextBox
-						Text="{Binding SearchText}"
-						PlaceholderText="{Binding SearchTextBoxWatermark}"
-						MinWidth="160"
-						VerticalAlignment="Center"
-						Margin="8 0 0 0"
-						VerticalContentAlignment="Center" />
-				</WrapPanel>
-			</Expander.Header>
-			<TreeView
-				x:Name="_test"
-				ItemsSource="{Binding Nodes}"
-				SelectionMode="Single"
-				SelectedItem="{Binding SelectedNode}"
-				HorizontalAlignment="Stretch">
-				<TreeView.Styles>
-					<Style Selector="TreeViewItem" x:DataType="cvm:FileTreeNode">
-						<Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
-					</Style>
-				</TreeView.Styles>
-				<TreeView.ItemTemplate>
-					<TreeDataTemplate ItemsSource="{Binding Nodes}">
-						<StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-							<Image
-								Width="16"
-								Height="16"
-								VerticalAlignment="Center"
-								Source="{Binding ImageSource, Converter={StaticResource variableImage}}"
-								Margin="0 0 4 0"
-							/>
-							<TextBlock
-								TextWrapping="Wrap"
-								VerticalAlignment="Center"
-								HorizontalAlignment="Stretch"
-								Text="{Binding Target}" />
-							<Button
-								VerticalAlignment="Center"
-								IsVisible="{Binding IsSelected}"
-								Content="{Binding $parent[cvm:VersionsListView].((cvm:VersionsListViewModel)DataContext).Task_Restore}"
-								Margin="24 0 0 0"
-								Padding="8 4 8 4"
-								Click="BrowseFoldersCommand"
-							/>
-						</StackPanel>
-					</TreeDataTemplate>
-				</TreeView.ItemTemplate>
-			</TreeView>
-		</Expander>
+			<controls:VersionsFilesTreeView DataContext="{Binding}" />
 
-		<Expander Classes="TaskSection" Margin="24 0 24 24" HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent" IsEnabled="{Binding !ParentViewModel.TaskExecuterViewModel.TaskNotCompleted}" >
-			<Expander.Header>
-				<WrapPanel Orientation="Horizontal" Margin="0 8 0 8">
-					<Image Width="16" Height="16" Source="/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png" VerticalAlignment="Center" />
-					<TextBlock Margin="8 0 8 0" Text="{Binding BackupVersion_Changes_Title}" VerticalAlignment="Center" />
-				</WrapPanel>
-			</Expander.Header>
-			<ItemsRepeater ItemsSource="{Binding FileChangeViewItems}">
-				<ItemsRepeater.ItemTemplate>
-					<DataTemplate>
-						<WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-							<Image
-								Width="16"
-								Height="16"
-								VerticalAlignment="Center"
-								Source="{Binding ImageSource, Converter={StaticResource variableImage}}"
-								Margin="0 0 4 0" />
-							<TextBlock
-								Text="{Binding Path=Title}"
-								TextWrapping="Wrap"
-								VerticalAlignment="Center"
+			<Expander Classes="TaskSection" HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent" IsEnabled="{Binding !ParentViewModel.TaskExecuterViewModel.TaskNotCompleted}" >
+				<Expander.Header>
+					<WrapPanel Orientation="Horizontal" Margin="0 8 0 8">
+						<Image Width="16" Height="16" Source="/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png" VerticalAlignment="Center" />
+						<TextBlock Margin="8 0 8 0" Text="{Binding BackupVersion_Changes_Title}" VerticalAlignment="Center" />
+					</WrapPanel>
+				</Expander.Header>
+				<ItemsRepeater ItemsSource="{Binding FileChangeViewItems}">
+					<ItemsRepeater.ItemTemplate>
+						<DataTemplate>
+							<WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+								<Image
+									Width="16"
+									Height="16"
+									VerticalAlignment="Center"
+									Source="{Binding ImageSource, Converter={StaticResource variableImage}}"
+									Margin="0 0 4 0" />
+								<TextBlock
+									Text="{Binding Path=Title}"
+									TextWrapping="Wrap"
+									VerticalAlignment="Center"
 									/>
-						</WrapPanel>
-					</DataTemplate>
-				</ItemsRepeater.ItemTemplate>
-			</ItemsRepeater>
-		</Expander>
+							</WrapPanel>
+						</DataTemplate>
+					</ItemsRepeater.ItemTemplate>
+				</ItemsRepeater>
+			</Expander>
 
-		<Expander Classes="TaskSection" Margin="24 0 24 24" HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent"
-				  IsVisible="{Binding SelectedFileIsVisible}">
-			<Expander.Header>
-				<WrapPanel Orientation="Horizontal" Margin="0 8 0 8">
-					<Image Width="16" Height="16" Source="/Assets/CrystalClear_FileNew.png" VerticalAlignment="Center" />
-					<TextBlock Margin="8 0 8 0" Text="{Binding BackupVersion_FileVersion_Title}" VerticalAlignment="Center" />
-				</WrapPanel>
-			</Expander.Header>
-			<ItemsRepeater ItemsSource="{Binding BlameViewItems}">
-				<ItemsRepeater.ItemTemplate>
-					<DataTemplate>
-						<WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-							<Image
-								Width="16"
-								Height="16"
-								VerticalAlignment="Center"
-								Source="{Binding ImageSource, Converter={StaticResource variableImage}}"
-								Margin="0 0 4 0" />
-							<TextBlock
-								Text="{Binding Path=Title}"
-								TextWrapping="Wrap"
-								VerticalAlignment="Center" />
-						</WrapPanel>
-					</DataTemplate>
-				</ItemsRepeater.ItemTemplate>
-			</ItemsRepeater>
-		</Expander>
-	</StackPanel>
-	<decor:ConfirmPanel
-		ZIndex="10"
-		Message="{Binding ConfirmMessage}"
-		ConfirmText="{Binding Button_OK}"
-		ConfirmCommand="{Binding ConfirmDeleteBackupVersionCommand}"
-		CancelText="{Binding Button_Cancel}"
-		CancelCommand="{Binding CancelConfirmCommand}" />
+			<Expander Classes="TaskSection" HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent"
+					  IsVisible="{Binding SelectedFileIsVisible}">
+				<Expander.Header>
+					<WrapPanel Orientation="Horizontal" Margin="0 8 0 8">
+						<Image Width="16" Height="16" Source="/Assets/CrystalClear_FileNew.png" VerticalAlignment="Center" />
+						<TextBlock Margin="8 0 8 0" Text="{Binding BackupVersion_FileVersion_Title}" VerticalAlignment="Center" />
+					</WrapPanel>
+				</Expander.Header>
+				<ItemsRepeater ItemsSource="{Binding BlameViewItems}">
+					<ItemsRepeater.ItemTemplate>
+						<DataTemplate>
+							<WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+								<Image
+									Width="16"
+									Height="16"
+									VerticalAlignment="Center"
+									Source="{Binding ImageSource, Converter={StaticResource variableImage}}"
+									Margin="0 0 4 0" />
+								<TextBlock
+									Text="{Binding Path=Title}"
+									TextWrapping="Wrap"
+									VerticalAlignment="Center" />
+							</WrapPanel>
+						</DataTemplate>
+					</ItemsRepeater.ItemTemplate>
+				</ItemsRepeater>
+			</Expander>
+
+
+		</StackPanel>
+		<decor:ConfirmPanel
+			ZIndex="10"
+			Message="{Binding ConfirmMessage}"
+			ConfirmText="{Binding Button_OK}"
+			ConfirmCommand="{Binding ConfirmDeleteBackupVersionCommand}"
+			CancelText="{Binding Button_Cancel}"
+			CancelCommand="{Binding CancelConfirmCommand}" />
 	</Grid>
 </UserControl>
