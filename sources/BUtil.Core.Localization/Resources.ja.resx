@@ -372,7 +372,7 @@
 ファイル傳送の設定方法については、アプリケーションのウェブサイトのドキュメントをご覧ください。</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>インポートデータソース</value>
+    <value>メディアソース</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>既にインポートされたファイルをスキップ</value>

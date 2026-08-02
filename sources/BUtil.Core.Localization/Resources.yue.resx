@@ -396,7 +396,7 @@
 請參閱應用程序網站以了解如何設置通過 FTP 服務器應用程序在手機上進行 Wi-Fi 文件傳輸的文檔。</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>導入數據源</value>
+    <value>媒體來源</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>跳過已導入的文件</value>

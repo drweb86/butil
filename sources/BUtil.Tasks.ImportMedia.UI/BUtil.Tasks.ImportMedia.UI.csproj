@@ -26,6 +26,9 @@
     <Compile Update="Controls\EditMediaTaskView.axaml.cs">
       <DependentUpon>EditMediaTaskView.axaml</DependentUpon>
     </Compile>
+    <Compile Update="Controls\ImportDataSelectionView.axaml.cs">
+      <DependentUpon>ImportDataSelectionView.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Controls\ImportMediaTaskWhereTaskView.axaml.cs">
       <DependentUpon>ImportMediaTaskWhereTaskView.axaml</DependentUpon>
     </Compile>

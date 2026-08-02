@@ -375,7 +375,7 @@
     फाइल ट्रान्समिशन सेटअप कसा करावा याबद्दलची माहिती पाहण्यासाठी अनुप्रयोगाच्या वेब साइटला भेट द्या.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>डेटा स्रोत आयात करा</value>
+    <value>मीडिया स्रोत</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>आधीच आयात केलेल्या फाइल्स वगळा</value>

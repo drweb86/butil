@@ -378,7 +378,7 @@ Za vse možnosti poiščite „C# DateTime format".</value>
 Glejte spletno stran aplikacije za dokumentacijo o nastavitvi prenosa datotek prek WI-FI s pomočjo FTP strežniške aplikacije na telefonu.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Uvozi vir podatkov</value>
+    <value>Vir predstavnosti</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Preskoči že uvožene datoteke</value>

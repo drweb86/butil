@@ -378,7 +378,7 @@
 Вижте уебсайта на приложението за документация как да настроите прехвърляне на файлове чрез WI-FI чрез приложение FTP сървър на телефона.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Импортиране на източник на данни</value>
+    <value>Медиен източник</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Пропускане на вече импортирани файлове</value>

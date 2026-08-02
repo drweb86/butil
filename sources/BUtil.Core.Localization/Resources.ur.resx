@@ -371,7 +371,7 @@
   فائل کی ترسیل کے طریقے کے لئے ایپلیکیشن کی ویب سائٹ پر دستاویزات دیکھیں۔</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>درآمد ڈیٹا کا ماخذ</value>
+    <value>میڈیا ماخذ</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>پہلے سے درآمد شدہ فائلوں کو چھوڑ دیں</value>

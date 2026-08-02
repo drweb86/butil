@@ -378,7 +378,7 @@ For å se alle alternativer, google "C# DateTime format".</value>
 Se applikasjonens nettside for dokumentasjon om hvordan du setter opp filoverføring via WI-FI gjennom FTP-serverapplikasjon på telefonen.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Importer datakilde</value>
+    <value>Mediekilde</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Hopp over allerede importerte filer</value>

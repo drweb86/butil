@@ -378,7 +378,7 @@ Az összes lehetőség megtekintéséhez keressen a „C# DateTime format" kifej
 Az alkalmazás weboldalán találja a dokumentációt a WI-FI-n keresztüli fájlátvitel beállításáról az FTP Server alkalmazással a telefonon.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Adatforrás importálása</value>
+    <value>Médiaforrás</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Már importált fájlok kihagyása</value>

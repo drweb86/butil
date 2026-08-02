@@ -378,7 +378,7 @@ Por vidi ĉiujn opciojn guglo "C# DateTime formato".</value>
 Vidu aplikaĵon retejon por dokumentado kiel agordi dosiertranssendon per WI-FI per FTP-Servilo-aplikaĵo sur la telefono.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Importi datumfonton</value>
+    <value>Aŭdvidaĵa fonto</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Saltu jam importitajn dosierojn</value>

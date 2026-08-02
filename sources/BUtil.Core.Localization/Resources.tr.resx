@@ -375,7 +375,7 @@ Tüm seçenekleri görmek için "C# DateTime format"ını Google'da arayın.</va
 Dosya iletimi için telefon üzerindeki FTP Sunucu uygulamasıyla WI-FI üzerinden nasıl kurulum yapılacağı hakkında belge için uygulama web sitesini inceleyin.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Veri kaynağını içe aktar</value>
+    <value>Medya kaynağı</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Daha önce içe aktarılan dosyaları atla</value>

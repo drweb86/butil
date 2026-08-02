@@ -378,7 +378,7 @@ I weld yr holl opsiynau google "Fformat C# DateTime".</value>
 Gweler gwefan y cais am ddogfennaeth sut i osod trosglwyddiad ffeil trwy WI-FI trwy raglen FTP Server ar y ffôn.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Mewnforio ffynhonnell data</value>
+    <value>Ffynhonnell cyfryngau</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Hepgor ffeiliau sydd eisoes wedi'u mewnforio</value>

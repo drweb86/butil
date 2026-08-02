@@ -13,12 +13,7 @@ public partial class ImportMediaTaskWhereTaskView : UserControl
         DataContextChanged += OnDataContextChanged;
         DataContext = new ImportMediaTaskWhereTaskViewModel(
             "the folder",
-            false,
-            false,
-            "transform file name",
-            null,
-            null,
-            isNew: true);
+            "transform file name");
     }
 
     private void OnDataContextChanged(object? sender, EventArgs e)

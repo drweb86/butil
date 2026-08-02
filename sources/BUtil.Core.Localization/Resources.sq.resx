@@ -378,7 +378,7 @@ Për të parë të gjitha opsionet, kërkoni "C# DateTime format".</value>
 Shihni faqen e internetit të aplikacionit për dokumentacionin se si të konfiguroni transferimin e skedarëve përmes WI-FI nëpërmjet aplikacionit të Serverit FTP në telefon.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Importo burimin e të dhënave</value>
+    <value>Burimi i medias</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Anashkalo skedarët e importuar tashmë</value>

@@ -375,7 +375,7 @@ Với thư mục và chuỗi mẫu này, tệp sẽ được lưu trữ là:
 Xem trang web ứng dụng để biết tài liệu về cách thiết lập truyền tệp qua WI-FI thông qua ứng dụng máy chủ FTP trên điện thoại.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Nhập nguồn dữ liệu</value>
+    <value>Nguồn phương tiện</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Bỏ qua các tệp đã nhập trước đó</value>

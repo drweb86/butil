@@ -378,7 +378,7 @@
 На сайте приложения размещена инструкция по настройке передачи файлов через WI-FI через приложение FTP Server на телефоне.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Указать источник данных</value>
+    <value>Источник медиа</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Пропускать ранее импортированные файлы</value>

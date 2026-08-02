@@ -378,7 +378,7 @@
 ดูเว็บไซต์แอปพลิเคชันสำหรับเอกสารวิธีตั้งค่าการส่งไฟล์ผ่าน WI-FI ผ่านแอปพลิเคชัน FTP Server บนโทรศัพท์</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>นำเข้าแหล่งข้อมูล</value>
+    <value>แหล่งสื่อ</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>ข้ามไฟล์ที่นำเข้าแล้ว</value>

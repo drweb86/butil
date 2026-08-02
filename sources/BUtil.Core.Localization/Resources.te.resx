@@ -373,7 +373,7 @@
     ఫోన్ పైకి Wi-Fi ద్వారా FTP సర్వర్ అప్లికేషన్ ద్వారా డాక్యుమెంట్ యొక్క ఫైల్ ద్రవ్యం సెటప్ ఎలా జరగాలో ఆప్ వెబ్-సైట్‌ను చూడండి.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>డేటా త్రేణిని దిగుమతి చేయండి</value>
+    <value>మీడియా మూలం</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>ఇప్పటికే దిగుమతి చేసుకున్న ఫైల్స్‌ను సంక్రమించండి</value>

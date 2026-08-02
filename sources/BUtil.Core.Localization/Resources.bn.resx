@@ -372,7 +372,7 @@
   ফাইল স্থানান্তর সেটআপ করার জন্য অ্যাপ্লিকেশন ওয়েব-সাইট দেখুন WIFI এর মাধ্যমে FTP সার্ভার অ্যাপ্লিকেশন ফোনে।</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>আমদানিকারক ডেটা উৎস</value>
+    <value>মিডিয়া উৎস</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>আগে আমদানি করা ফাইল উপেক্ষা করুন</value>

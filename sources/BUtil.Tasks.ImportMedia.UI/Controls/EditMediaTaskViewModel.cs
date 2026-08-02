@@ -35,24 +35,30 @@ public class EditMediaTaskViewModel : BUtil.UI.Controls.ViewModelBase
         SetWindowTitleForEdit(taskName, isNew);
         var model = (ImportMediaTaskModelOptionsV2)task.Model;
 
-        ImportMediaTaskWhereTaskViewModel = new BUtil.UI.Controls.ImportMediaTaskWhereTaskViewModel(
-            model.DestinationFolder,
+        ImportDataSelectionViewModel = new BUtil.UI.Controls.ImportDataSelectionViewModel(
             model.SkipAlreadyImportedFiles,
             model.DeleteCopiedDataOnSourceMedia,
-            model.TransformFileName,
             model.FileLastWriteTimeMin,
             model.FileExtensions,
             isNew,
+            isNew);
+        ImportDataSelectionViewModel.PropertyChanged += (_, e) =>
+        {
+            if (e.PropertyName is nameof(BUtil.UI.Controls.ImportDataSelectionViewModel.FileExtensionsText))
+                FormErrorsText = null;
+        };
+        ImportMediaTaskWhereTaskViewModel = new BUtil.UI.Controls.ImportMediaTaskWhereTaskViewModel(
+            model.DestinationFolder,
+            model.TransformFileName,
             isNew);
         ImportMediaTaskWhereTaskViewModel.PropertyChanged += (_, e) =>
         {
             if (e.PropertyName is nameof(BUtil.UI.Controls.ImportMediaTaskWhereTaskViewModel.OutputFolder)
                 or nameof(BUtil.UI.Controls.ImportMediaTaskWhereTaskViewModel.TransformFileName)
-                or nameof(BUtil.UI.Controls.ImportMediaTaskWhereTaskViewModel.FileExtensionsText)
                 or nameof(BUtil.UI.Controls.ImportMediaTaskWhereTaskViewModel.Error))
                 FormErrorsText = null;
         };
-        SourceTaskViewModel = new BUtil.UI.Controls.StorageViewModel(model.From, Resources.LeftMenu_What, isNew, Resources.ImportMediaTask_Storage_Help);
+        SourceTaskViewModel = new BUtil.UI.Controls.StorageViewModel(model.From, Resources.ImportMediaTask_ImportDataSource, isNew, Resources.ImportMediaTask_Storage_Help);
         SourceTaskViewModel.PropertyChanged += (_, e) =>
         {
             if (e.PropertyName is nameof(BUtil.UI.Controls.StorageViewModel.SelectedProvider)
@@ -62,6 +68,7 @@ public class EditMediaTaskViewModel : BUtil.UI.Controls.ViewModelBase
         };
     }
 
+    public BUtil.UI.Controls.ImportDataSelectionViewModel ImportDataSelectionViewModel { get; }
     public BUtil.UI.Controls.ImportMediaTaskWhereTaskViewModel ImportMediaTaskWhereTaskViewModel { get; }
     public TaskIdentityViewModel TaskIdentityViewModel { get; }
     public BUtil.UI.Controls.StorageViewModel SourceTaskViewModel { get; }
@@ -115,16 +122,16 @@ public class EditMediaTaskViewModel : BUtil.UI.Controls.ViewModelBase
             return;
         }
 
-        var fileExtensions = ImportMediaTaskWhereTaskViewModel.GetFileExtensions();
+        var fileExtensions = ImportDataSelectionViewModel.GetFileExtensions();
         var newTask = new TaskV2
         {
             Name = TaskIdentityViewModel.Name.TrimEnd(),
             Model = new ImportMediaTaskModelOptionsV2
             {
                 DestinationFolder = ImportMediaTaskWhereTaskViewModel.OutputFolder,
-                SkipAlreadyImportedFiles = ImportMediaTaskWhereTaskViewModel.SkipAlreadyImportedFiles,
-                DeleteCopiedDataOnSourceMedia = ImportMediaTaskWhereTaskViewModel.DeleteCopiedDataOnSourceMedia,
-                FileLastWriteTimeMin = ImportMediaTaskWhereTaskViewModel.FileLastWriteTimeMin,
+                SkipAlreadyImportedFiles = ImportDataSelectionViewModel.SkipAlreadyImportedFiles,
+                DeleteCopiedDataOnSourceMedia = ImportDataSelectionViewModel.DeleteCopiedDataOnSourceMedia,
+                FileLastWriteTimeMin = ImportDataSelectionViewModel.FileLastWriteTimeMin,
                 TransformFileName = ImportMediaTaskWhereTaskViewModel.TransformFileName,
                 FileExtensions = fileExtensions.Count == 0 ? null : fileExtensions,
                 From = SourceTaskViewModel.GetStorageSettings()

@@ -378,7 +378,7 @@
 Видете ја веб-страницата на апликацијата за документација како да поставите пренос на датотеки преку WI-FI преку апликација FTP-сервер на телефонот.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Увези извор на податоци</value>
+    <value>Медиумски извор</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Прескокни веќе увезени датотеки</value>

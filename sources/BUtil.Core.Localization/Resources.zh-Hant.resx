@@ -378,7 +378,7 @@
 請參閱應用程式網站以了解如何在手機上透過 FTP Server 應用程式設定 WI-FI 檔案傳輸。</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>匯入資料來源</value>
+    <value>媒體來源</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>略過已匯入的檔案</value>

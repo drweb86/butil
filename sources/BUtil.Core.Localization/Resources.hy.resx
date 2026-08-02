@@ -378,7 +378,7 @@
 Տեսեք հավելվածի կայքէջը փաստաթղթերի համար, թե ինչպես կարելի է կարգավորել ֆայլի փոխանցումը WI-FI-ի միջոցով FTP Server հավելվածի միջոցով հեռախոսի վրա:</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Ներմուծեք տվյալների աղբյուրը</value>
+    <value>Մեդիա աղբյուր</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Բաց թողնել արդեն ներմուծված ֆայլերը</value>

@@ -375,7 +375,7 @@
     Lihat situs web aplikasi untuk dokumentasi tentang cara mengatur transmisi file melalui WI-FI menggunakan aplikasi FTP Server di ponsel.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Sumber data impor</value>
+    <value>Sumber media</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Lewati file yang sudah diimpor</value>

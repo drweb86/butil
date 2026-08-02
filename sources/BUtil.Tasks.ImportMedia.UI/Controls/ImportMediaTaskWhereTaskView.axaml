@@ -20,25 +20,6 @@
 				ActionCommand="{Binding BrowseOutputFolderCommand}"
 				Error="{Binding OutputFolderError}" />
 
-			<decor:CheckboxField
-				Label="{Binding ImportMediaTask_SkipAlreadyImportedFiles}"
-				IsChecked="{Binding SkipAlreadyImportedFiles}"
-				Help="{Binding ImportMediaTask_SkipAlreadyImportedFiles_Help}" />
-
-			<decor:CheckboxField
-				Label="{Binding ImportMediaTask_DeleteCopiedDataOnSourceMedia}"
-				IsChecked="{Binding DeleteCopiedDataOnSourceMedia}" />
-
-			<decor:DateField
-				Label="{Binding File_LastWriteTime_Min_Field}"
-				SelectedDate="{Binding FileLastWriteTimeMin}" />
-
-			<decor:TextField
-				Label="{Binding ImportMediaTask_Field_FileExtensions}"
-				Text="{Binding FileExtensionsText}"
-				Help="{Binding ImportMediaTask_Field_FileExtensions_Help}"
-				Error="{Binding FileExtensionsError}" />
-
 			<decor:DropdownField
 				Label="{Binding ImportMediaTask_Field_TransformFileName}"
 				IsEditable="True"

@@ -378,7 +378,7 @@ Para ver todas as opções, pesquise "C# DateTime format".</value>
 Consulte o site do aplicativo para documentação sobre como configurar a transmissão de arquivos via WI-FI através do aplicativo Servidor FTP no telefone.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Importar fonte de dados</value>
+    <value>Fonte de mídia</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Pular arquivos já importados</value>

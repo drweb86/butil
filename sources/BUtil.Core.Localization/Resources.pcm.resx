@@ -375,7 +375,7 @@
     See application web-site for documentation on how to set up file transmission via WI-FI through FTP Server application on the phone.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Import data source</value>
+    <value>Media Source</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Skip files wey don already import</value>

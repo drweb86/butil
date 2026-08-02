@@ -26,7 +26,7 @@
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
 
-		<decor:ViewDecoration Grid.Row="0" Kind="IncrementalBackup" />
+		<!-- <decor:ViewDecoration Grid.Row="0" Kind="IncrementalBackup" /> -->
 		<ScrollViewer Grid.Row="0"
 				ScrollViewer.VerticalScrollBarVisibility="Visible"
 				ScrollViewer.HorizontalScrollBarVisibility="Disabled">

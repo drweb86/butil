@@ -378,7 +378,7 @@ Per veure totes les opcions, busqueu a Google "Format C# DateTime".</value>
 Consulteu el lloc web de l'aplicació per obtenir informació sobre com configurar la transmissió de fitxers mitjançant WI-FI mitjançant l'aplicació del servidor FTP al telèfon.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Importa la font de dades</value>
+    <value>Font multimèdia</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Omet els fitxers ja importats</value>

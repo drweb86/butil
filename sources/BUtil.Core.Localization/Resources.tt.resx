@@ -378,7 +378,7 @@
 Телефондагы FTP Server кушымтасы аша WI-FI аша файл тапшыруны ничек урнаштырырга икәнлеген документлаштыру өчен кушымта веб-сайтын карагыз.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Мәгълүмат чыганагын импортлау</value>
+    <value>Медиа чыганак</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Инде кертелгән файлларны калдырыгыз</value>

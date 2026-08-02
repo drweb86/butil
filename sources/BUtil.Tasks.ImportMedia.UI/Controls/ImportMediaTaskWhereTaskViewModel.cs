@@ -15,24 +15,13 @@ public class ImportMediaTaskWhereTaskViewModel : ObservableObject
 {
     public ImportMediaTaskWhereTaskViewModel(
         string outputFolder,
-        bool skipAlreadyImportedFiles,
-        bool deleteCopiedDataOnSourceMedia,
         string transformFileName,
-        DateTime? fileLastWriteTimeMin,
-        IReadOnlyList<string>? fileExtensions,
-        bool isNew,
         bool isExpanded = false
         )
     {
         IsExpanded = isExpanded;
         OutputFolder = outputFolder;
-        SkipAlreadyImportedFiles = skipAlreadyImportedFiles;
-        DeleteCopiedDataOnSourceMedia = deleteCopiedDataOnSourceMedia;
         TransformFileName = transformFileName;
-        _fileLastWriteTimeMin = fileLastWriteTimeMin;
-        FileExtensionsText = isNew && (fileExtensions == null || fileExtensions.Count == 0)
-            ? ImportMediaFileExtensions.FormatForEditor(ImportMediaFileExtensions.Default)
-            : ImportMediaFileExtensions.FormatForEditor(fileExtensions);
 
         BrowseOutputFolderCommand = new AsyncRelayCommand(async () =>
         {
@@ -54,17 +43,11 @@ public class ImportMediaTaskWhereTaskViewModel : ObservableObject
 
     #region Labels
 
-    public static string File_LastWriteTime_Min_Field => Resources.File_LastWriteTime_Min_Field;
     public static string LeftMenu_Where => Resources.LeftMenu_Where;
     public static string ImportMediaTask_Field_OutputFolder => Resources.ImportMediaTask_Field_OutputFolder;
     public static string Field_Folder_Browse => Resources.Field_Folder_Browse;
-    public static string ImportMediaTask_SkipAlreadyImportedFiles => Resources.ImportMediaTask_SkipAlreadyImportedFiles;
-    public static string ImportMediaTask_SkipAlreadyImportedFiles_Help => Resources.ImportMediaTask_SkipAlreadyImportedFiles_Help;
-    public static string ImportMediaTask_DeleteCopiedDataOnSourceMedia => Resources.ImportMediaTask_DeleteCopiedDataOnSourceMedia;
     public static string ImportMediaTask_Field_TransformFileName => Resources.ImportMediaTask_Field_TransformFileName;
     public static string ImportMediaTask_Field_TransformFileName_Documentation => Resources.ImportMediaTask_Field_TransformFileName_Documentation;
-    public static string ImportMediaTask_Field_FileExtensions => Resources.ImportMediaTask_Field_FileExtensions;
-    public static string ImportMediaTask_Field_FileExtensions_Help => Resources.ImportMediaTask_Field_FileExtensions_Help;
 
     #endregion
 
@@ -111,23 +94,6 @@ public class ImportMediaTaskWhereTaskViewModel : ObservableObject
 
     #endregion
 
-    #region FileLastWriteTimeMin
-
-    private DateTime? _fileLastWriteTimeMin;
-
-    public DateTime? FileLastWriteTimeMin
-    {
-        get => _fileLastWriteTimeMin;
-        set
-        {
-            if (value == _fileLastWriteTimeMin) return;
-            _fileLastWriteTimeMin = value;
-            OnPropertyChanged(nameof(FileLastWriteTimeMin));
-        }
-    }
-
-    #endregion
-
     #region OutputFolder
 
     private string _outputFolder = string.Empty;
@@ -154,72 +120,6 @@ public class ImportMediaTaskWhereTaskViewModel : ObservableObject
             if (value == _outputFolderError) return;
             _outputFolderError = value;
             OnPropertyChanged(nameof(OutputFolderError));
-        }
-    }
-
-    #endregion
-
-    #region FileExtensionsText
-
-    private string _fileExtensionsText = string.Empty;
-    private string? _fileExtensionsError;
-
-    public string FileExtensionsText
-    {
-        get => _fileExtensionsText;
-        set
-        {
-            if (value == _fileExtensionsText) return;
-            _fileExtensionsText = value;
-            OnPropertyChanged(nameof(FileExtensionsText));
-            FileExtensionsError = null;
-        }
-    }
-
-    public string? FileExtensionsError
-    {
-        get => _fileExtensionsError;
-        private set
-        {
-            if (value == _fileExtensionsError) return;
-            _fileExtensionsError = value;
-            OnPropertyChanged(nameof(FileExtensionsError));
-        }
-    }
-
-    public List<string> GetFileExtensions() => ImportMediaFileExtensions.Parse(FileExtensionsText);
-
-    #endregion
-
-    #region SkipAlreadyImportedFiles
-
-    private bool _skipAlreadyImportedFiles;
-
-    public bool SkipAlreadyImportedFiles
-    {
-        get => _skipAlreadyImportedFiles;
-        set
-        {
-            if (value == _skipAlreadyImportedFiles) return;
-            _skipAlreadyImportedFiles = value;
-            OnPropertyChanged(nameof(SkipAlreadyImportedFiles));
-        }
-    }
-
-    #endregion
-
-    #region DeleteCopiedDataOnSourceMedia
-
-    private bool _deleteCopiedDataOnSourceMedia;
-
-    public bool DeleteCopiedDataOnSourceMedia
-    {
-        get => _deleteCopiedDataOnSourceMedia;
-        set
-        {
-            if (value == _deleteCopiedDataOnSourceMedia) return;
-            _deleteCopiedDataOnSourceMedia = value;
-            OnPropertyChanged(nameof(DeleteCopiedDataOnSourceMedia));
         }
     }
 
@@ -252,10 +152,7 @@ public class ImportMediaTaskWhereTaskViewModel : ObservableObject
 
         TransformFileNameError = ImportMediaTransformFileName.Validate(TransformFileName);
 
-        // Empty extensions means "all files" (legacy-compatible). No validation error.
-        FileExtensionsError = null;
-
-        Error = OutputFolderError ?? TransformFileNameError ?? FileExtensionsError;
+        Error = OutputFolderError ?? TransformFileNameError;
         return Error is null;
     }
 

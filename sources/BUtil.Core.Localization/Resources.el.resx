@@ -378,7 +378,7 @@
 Δείτε τον ιστότοπο της εφαρμογής για τεκμηρίωση σχετικά με τη ρύθμιση μεταφοράς αρχείων μέσω WI-FI μέσω εφαρμογής FTP Server στο τηλέφωνο.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Εισαγωγή πηγής δεδομένων</value>
+    <value>Πηγή πολυμέσων</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Παράλειψη ήδη εισαγμένων αρχείων</value>

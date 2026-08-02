@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -438,7 +438,7 @@ To see all options google "C# DateTime format".</value>
 See application web-site for documentation how to setup file transmission via WI-FI through FTP Server application on the phone.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Import data source</value>
+    <value>Media Source</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Skip already imported files</value>

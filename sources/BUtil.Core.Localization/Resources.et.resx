@@ -378,7 +378,7 @@ Kõigi valikute vaatamiseks otsige "C# DateTime format".</value>
 Vaadake rakenduse veebisaidilt juhiseid, kuidas seadistada failiedastust WI-FI kaudu FTP-serveri rakenduse abil telefonis.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Impordi andmeallikas</value>
+    <value>Meediaallikas</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Jäta juba imporditud failid vahele</value>

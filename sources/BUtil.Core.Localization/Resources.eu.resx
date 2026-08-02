@@ -378,7 +378,7 @@ Aukera guztiak ikusteko google "C# DateTime formatua".</value>
 Ikusi aplikazioaren webgunea telefonoko FTP Zerbitzariaren aplikazioaren bidez WI-FI bidez fitxategien transmisioa nola konfiguratu behar den dokumentatzeko.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Inportatu datu-iturria</value>
+    <value>Multimedia iturria</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Saltatu dagoeneko inportatutako fitxategiak</value>

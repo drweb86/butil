@@ -378,7 +378,7 @@ Lai redzētu visas opcijas, meklējiet „C# DateTime format".</value>
 Skatiet lietotnes tīmekļa vietni dokumentācijai par failu pārsūtīšanas iestatīšanu, izmantojot WI-FI caur FTP servera lietotni tālrunī.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Importēt datu avotu</value>
+    <value>Multivides avots</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Izlaist jau importētus failus</value>

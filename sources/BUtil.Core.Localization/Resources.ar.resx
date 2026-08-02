@@ -378,7 +378,7 @@
 راجع موقع الويب الخاص بالتطبيق للحصول على وثائق حول كيفية إعداد نقل الملفات عبر الواي فاي باستخدام تطبيق خادم FTP على الهاتف.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>استيراد مصدر البيانات</value>
+    <value>مصدر الوسائط</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>تخطي الملفات التي تم استيرادها بالفعل</value>

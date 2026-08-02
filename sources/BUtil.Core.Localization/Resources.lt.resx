@@ -378,7 +378,7 @@ Norėdami pamatyti visas parinktis, ieškokite „C# DateTime format".</value>
 Žiūrėkite programos svetainę dokumentacijai apie failų perdavimo per WI-FI nustatymą naudojant FTP serverio programą telefone.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Importuoti duomenų šaltinį</value>
+    <value>Medijos šaltinis</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Praleisti jau importuotus failus</value>

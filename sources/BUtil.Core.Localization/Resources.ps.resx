@@ -378,7 +378,7 @@
 د اسنادو لپاره د غوښتنلیک ویب پاڼه وګورئ چې څنګه په تلیفون کې د FTP سرور غوښتنلیک له لارې د WI-FI له لارې د فایل لیږد تنظیم کړئ.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>د معلوماتو سرچینې وارد کړئ</value>
+    <value>د میډیا سرچینه</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>دمخه وارد شوي فایلونه پرېږدئ</value>

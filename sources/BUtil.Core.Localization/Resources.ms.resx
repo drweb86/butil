@@ -378,7 +378,7 @@ Untuk melihat semua pilihan, cari "C# DateTime format".</value>
 Lihat laman web aplikasi untuk dokumentasi tentang cara menyediakan pemindahan fail melalui WI-FI menerusi aplikasi Pelayan FTP pada telefon.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Import sumber data</value>
+    <value>Sumber media</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Langkau fail yang telah diimport</value>

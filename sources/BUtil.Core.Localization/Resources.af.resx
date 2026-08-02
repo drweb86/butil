@@ -378,7 +378,7 @@ Om alle opsies te sien, google "C# DateTime format".</value>
 Sien toepassingswebwerf vir dokumentasie hoe om lêerversending via WI-FI deur FTP-bedienertoepassing op die telefoon op te stel.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Voer databron in</value>
+    <value>Media-bron</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Slaan reeds ingevoerde lêers oor</value>

@@ -378,7 +378,7 @@ Barcha variantlarni ko'rish uchun "C# DateTime format" ni qidiring.</value>
 Telefondagi FTP Server ilovasi orqali WI-FI bo'yicha fayl uzatishni sozlash bo'yicha ma'lumot uchun ilova veb-saytiga qarang.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Ma'lumot manbayini import qilish</value>
+    <value>Media manbai</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Allaqachon import qilingan fayllarni o'tkazib yuborish</value>

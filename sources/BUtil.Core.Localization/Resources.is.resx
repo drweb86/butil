@@ -378,7 +378,7 @@ Til að sjá alla valkosti, leitaðu að "C# DateTime format".</value>
 Sjá vefsíðu forritsins fyrir leiðbeiningar um hvernig á að setja upp skráaflutning í gegnum WI-FI með FTP-þjónsforritinu á símanum.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Flytja inn gagnagjafa</value>
+    <value>Miðlagjafi</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Sleppa þegar innfluttum skrám</value>

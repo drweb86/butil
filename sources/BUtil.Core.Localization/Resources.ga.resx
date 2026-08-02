@@ -378,7 +378,7 @@ Chun na roghanna go léir a fheiceáil google "Formáid C# DateTime".</value>
 Féach láithreán gréasáin an fheidhmchláir le haghaidh doiciméadú ar conas tarchur comhad a shocrú trí WI-FI trí fheidhmchlár FTP Server ar an bhfón.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Iompórtáil foinse sonraí</value>
+    <value>Foinse meán</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Léim ar chomhaid a iompórtáladh cheana</value>

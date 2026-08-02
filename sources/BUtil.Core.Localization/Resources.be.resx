@@ -378,7 +378,7 @@
 Глядзіце вэб-сайт праграмы для дакументацыі па наладжванні перадачы файлаў праз WI-FI праз праграму FTP-сервера на тэлефоне.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Імпарт крыніцы даных</value>
+    <value>Крыніца медыя</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Прапусціць ужо імпартаваныя файлы</value>

@@ -1,0 +1,35 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:cvm="clr-namespace:BUtil.UI.Controls;assembly=BUtil.Tasks.ImportMedia.UI"
+			 xmlns:decor="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Common"
+             mc:Ignorable="d"
+             x:Class="BUtil.UI.Controls.ImportDataSelectionView"
+			 x:DataType="cvm:ImportDataSelectionViewModel">
+	<Expander Classes="TaskSection" HorizontalAlignment="Stretch" IsExpanded="{Binding IsExpanded}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+		<Expander.Header>
+			<decor:ExpanderHeader Icon="📷" Text="{Binding LeftMenu_What}" />
+		</Expander.Header>
+		<StackPanel>
+			<decor:CheckboxField
+				Label="{Binding ImportMediaTask_SkipAlreadyImportedFiles}"
+				IsChecked="{Binding SkipAlreadyImportedFiles}"
+				Help="{Binding ImportMediaTask_SkipAlreadyImportedFiles_Help}" />
+
+			<decor:CheckboxField
+				Label="{Binding ImportMediaTask_DeleteCopiedDataOnSourceMedia}"
+				IsChecked="{Binding DeleteCopiedDataOnSourceMedia}" />
+
+			<decor:DateField
+				Label="{Binding File_LastWriteTime_Min_Field}"
+				SelectedDate="{Binding FileLastWriteTimeMin}" />
+
+			<decor:TextField
+				Label="{Binding ImportMediaTask_Field_FileExtensions}"
+				Text="{Binding FileExtensionsText}"
+				Help="{Binding ImportMediaTask_Field_FileExtensions_Help}"
+				Error="{Binding FileExtensionsError}" />
+		</StackPanel>
+	</Expander>
+</UserControl>

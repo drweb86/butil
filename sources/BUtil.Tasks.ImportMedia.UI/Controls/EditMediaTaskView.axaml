@@ -25,7 +25,7 @@
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
 
-		<decor:ViewDecoration Grid.Row="0" Kind="ImportMedia" />
+		<!-- <decor:ViewDecoration Grid.Row="0" Kind="ImportMedia" /> -->
 		<ScrollViewer Grid.Row="0"
 				ScrollViewer.VerticalScrollBarVisibility="Visible"
 				ScrollViewer.HorizontalScrollBarVisibility="Disabled">
@@ -33,6 +33,7 @@
 				<decor:FormHeader Text="{Binding WindowTitle}" />
 				<tasks:TaskIdentityView DataContext="{Binding TaskIdentityViewModel}" />
 				<controls:StorageView DataContext="{Binding SourceTaskViewModel}" />
+				<controls:ImportDataSelectionView DataContext="{Binding ImportDataSelectionViewModel}" />
 				<controls:ImportMediaTaskWhereTaskView DataContext="{Binding ImportMediaTaskWhereTaskViewModel}" />
 				<decor:DialogButtons
 					PrimaryText="{Binding Button_OK}"

@@ -378,7 +378,7 @@ Aby zobaczyć wszystkie opcje, wyszukaj "C# DateTime format".</value>
 Szczegóły konfiguracji transmisji plików przez WI-FI za pomocą aplikacji serwera FTP na telefonie znajdziesz na stronie internetowej aplikacji.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Importuj źródło danych</value>
+    <value>Źródło multimediów</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Pomiń już zaimportowane pliki</value>

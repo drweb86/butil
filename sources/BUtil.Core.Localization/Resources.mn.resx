@@ -378,7 +378,7 @@
 Утсан дээрх FTP серверийн программаар WI-FI-аар файл дамжуулах тохиргоог програмын вэбсайтаас харна уу.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Өгөгдлийн эх үүсвэрийг импортлох</value>
+    <value>Медиа эх сурвалж</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Аль хэдийн импортлогдсон файлуудыг алгасах</value>

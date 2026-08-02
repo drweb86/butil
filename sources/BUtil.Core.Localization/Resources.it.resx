@@ -380,7 +380,7 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
 Per la documentazione su come impostare la trasmissione di file tramite Wi-Fi tramite l'applicazione server FTP sul telefono consulta il sito web dell'applicazione.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Sorgente dati importazione</value>
+    <value>Origine multimediale</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Salta file già importati</value>

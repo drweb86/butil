@@ -378,7 +378,7 @@ Fir all Optiounen ze gesinn Google "C # DateTime Format".</value>
 Kuckt d'Applikatioun Websäit fir Dokumentatioun wéi d'Dateiiwwerdroung iwwer WI-FI duerch FTP Server Applikatioun um Telefon ageriicht gëtt.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Import Daten Quell</value>
+    <value>Medienquell</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Iwwersprangen scho importéiert Dateien</value>

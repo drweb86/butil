@@ -378,7 +378,7 @@ Gus a h-uile roghainn fhaicinn google "C# DateTime cruth".</value>
 Faic làrach-lìn an tagraidh airson sgrìobhainnean mar a shuidhicheas tu tar-chuir faidhle tro WI-FI tro thagradh FTP Server air a’ fòn.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Cuir a-steach stòr dàta</value>
+    <value>Stòr mheadhanan</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Thoir leum air faidhlichean a chaidh a thoirt a-steach mu thràth</value>

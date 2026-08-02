@@ -378,7 +378,7 @@
 फोन पर वाई-फाई के माध्यम से FTP सर्वर एप्लिकेशन के माध्यम से फ़ाइल ट्रांसमिशन सेटअप के लिए दस्तावेज़ीकरण देखने के लिए एप्लिकेशन वेबसाइट देखें।</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>डेटा स्रोत आयात करें</value>
+    <value>मीडिया स्रोत</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>पहले से आयातित फ़ाइलों को छोड़ें</value>

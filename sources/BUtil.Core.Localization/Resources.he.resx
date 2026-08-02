@@ -378,7 +378,7 @@
 ראה את אתר האפליקציה לתיעוד כיצד להגדיר העברת קבצים דרך WI-FI באמצעות אפליקציית FTP Server בטלפון.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>ייבא מקור נתונים</value>
+    <value>מקור מדיה</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>דלג על קבצים שכבר יובאו</value>

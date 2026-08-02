@@ -378,7 +378,7 @@ Nähdäksesi kaikki vaihtoehdot hae "C# DateTime format".</value>
 Katso sovelluksen verkkosivustolta ohjeet tiedostonsiirron määrittämiseen WI-FI:n kautta FTP-palvelinsovelluksella puhelimessa.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Tuo tietolähde</value>
+    <value>Medialähde</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Ohita jo tuodut tiedostot</value>

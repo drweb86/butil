@@ -377,7 +377,7 @@
 தொலைபேசியில் FTP சர்வர் செயலி மூலம் கோப்பு அனுப்புவதற்கான ஆவணத்திற்காக செயலியின் இணையதளத்தைப் பார்க்கவும்.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>தரவிற் கொள்க</value>
+    <value>ஊடக மூலம்</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>ஏற்கனவே இறக்குமதி செய்யப்பட்ட கோப்புகளை தவிர்க்கவும்</value>

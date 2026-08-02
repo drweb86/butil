@@ -378,7 +378,7 @@
 برای مستندات نحوه تنظیم انتقال فایل از طریق WI-FI با استفاده از برنامه FTP Server در تلفن، به وب‌سایت برنامه مراجعه کنید.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>وارد کردن منبع داده</value>
+    <value>منبع رسانه</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>رد کردن فایل‌های قبلاً وارد شده</value>

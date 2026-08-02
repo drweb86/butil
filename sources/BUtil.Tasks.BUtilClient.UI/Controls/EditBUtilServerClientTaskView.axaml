@@ -25,7 +25,7 @@
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
 
-		<decor:ViewDecoration Grid.Row="0" Kind="BUtilClient" />
+		<!-- <decor:ViewDecoration Grid.Row="0" Kind="BUtilClient" /> -->
 		<ScrollViewer Grid.Row="0"
 				ScrollViewer.VerticalScrollBarVisibility="Visible"
 				ScrollViewer.HorizontalScrollBarVisibility="Disabled">

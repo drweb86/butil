@@ -377,7 +377,7 @@
 参见应用程序网站了解如何设置通过WI-FI通过FTP服务器应用程序在手机上传输文件的文档。</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>导入数据源</value>
+    <value>媒体源</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>跳过已导入的文件</value>

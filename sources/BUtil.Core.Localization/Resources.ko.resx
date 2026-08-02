@@ -378,7 +378,7 @@
 FTP 서버 앱을 사용한 WI-FI 파일 전송 설정 방법은 앱 웹사이트 문서를 참조하세요.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>데이터 소스 가져오기</value>
+    <value>미디어 소스</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>이미 가져온 파일 건너뛰기</value>

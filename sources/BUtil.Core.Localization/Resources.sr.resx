@@ -378,7 +378,7 @@
 Погледајте веб страницу апликације за документацију о подешавању преноса датотека путем WI-FI кроз FTP серверску апликацију на телефону.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>Увези извор података</value>
+    <value>Медијски извор</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Прескочи већ увезене датотеке</value>

@@ -378,7 +378,7 @@
 იხილეთ აპლიკაციის ვებ-გვერდი დოკუმენტაციისთვის, თუ როგორ დააყენოთ ფაილის გადაცემა WI-FI-ით FTP სერვერის აპლიკაციით ტელეფონზე.</value>
   </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
-    <value>მონაცემთა წყაროს იმპორტი</value>
+    <value>მედია წყარო</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>უკვე იმპორტირებული ფაილების გამოტოვება</value>
